@@ -25,6 +25,14 @@ view = root / '.lake/article-check/lib/lean'
 logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
+    'NLS.SequenceSpaces.HillMixedKernel',
+    'NLS.SequenceSpaces.InfinityMatrix',
+    'NLS.SequenceSpaces.NegativeSpectralWeight',
+    'NLS.SequenceSpaces.ShiftReflection',
+    'NLS.KdV.FreeHill',
+    'NLS.KdV.PseudomeasureKernel',
+    'NLS.KdV.PseudomeasurePerturbation',
+    'NLS.KdV.PseudomeasureTailInverse',
     'NLS.SequenceSpaces.WienerWeakStar',
     'NLS.SequenceSpaces.WeightedWienerWeakStar',
     'NLS.SequenceSpaces.WeightedWeakStarCompactness',
@@ -38,7 +46,7 @@ modules = [
     'NLS.Dynamics.WeightedWeakStarPhaseFlow',
 ] + ['NLS.Articles.KdVPseudomeasures.' + m for m in [
     'WeakStarEndpoint', 'WeightedWeakStarEndpoint', 'PeriodicWeakStarEndpoint',
-    'AppendixBWeakStar', 'AppendixBLowerTopology', 'TrajectoryTopology', 'SourceSpaces', 'RealPredualTopology', 'Audit']]
+    'AppendixBWeakStar', 'AppendixBLowerTopology', 'TrajectoryTopology', 'SourceSpaces', 'RealPredualTopology', 'SpectralEndpoint', 'Audit']]
 # Expand only directories that need local compiled outputs. All reference
 # imports remain symlinks; no compiler output may traverse those symlinks.
 def local_directory(path):

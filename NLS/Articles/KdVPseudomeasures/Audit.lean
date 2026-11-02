@@ -1,3 +1,11 @@
+import NLS.SequenceSpaces.HillMixedKernel
+import NLS.SequenceSpaces.InfinityMatrix
+import NLS.SequenceSpaces.NegativeSpectralWeight
+import NLS.SequenceSpaces.ShiftReflection
+import NLS.KdV.FreeHill
+import NLS.KdV.PseudomeasureKernel
+import NLS.KdV.PseudomeasurePerturbation
+import NLS.KdV.PseudomeasureTailInverse
 import NLS.SequenceSpaces.WienerWeakStar
 import NLS.SequenceSpaces.WeightedWienerWeakStar
 import NLS.SequenceSpaces.WeightedWeakStarCompactness
@@ -17,7 +25,83 @@ import NLS.Articles.KdVPseudomeasures.AppendixBLowerTopology
 import NLS.Articles.KdVPseudomeasures.TrajectoryTopology
 import NLS.Articles.KdVPseudomeasures.SourceSpaces
 import NLS.Articles.KdVPseudomeasures.RealPredualTopology
+import NLS.Articles.KdVPseudomeasures.SpectralEndpoint
 
+#print axioms NLS.ReciprocalSeries.mixed_power_le_max_decay
+#print axioms NLS.ReciprocalSeries.puncturedPower
+#print axioms NLS.ReciprocalSeries.mixedHillKernel
+#print axioms NLS.ReciprocalSeries.mixedHillKernel_nonneg
+#print axioms NLS.ReciprocalSeries.mixedHillKernel_le
+#print axioms NLS.ReciprocalSeries.summable_mixedHillKernel
+#print axioms NLS.ReciprocalSeries.tsum_mixedHillKernel_le
+#print axioms NLS.Coeff.summable_norm_matrixRow
+#print axioms NLS.Coeff.norm_matrixRow_tsum_le
+#print axioms NLS.Coeff.infinityMatrixSum
+#print axioms NLS.Coeff.infinityMatrixCLM
+#print axioms NLS.Coeff.infinityMatrixCLM_apply
+#print axioms NLS.Coeff.norm_infinityMatrixCLM_apply_le
+#print axioms NLS.SpectralWeight.negativeSobolev
+#print axioms NLS.SpectralWeight.negativeSobolev_apply
+#print axioms NLS.SpectralWeight.negativeSobolev_eq_product
+#print axioms NLS.SpectralWeight.negativeSobolev_neg
+#print axioms NLS.SpectralWeight.negativeSobolev_shift_ratio_le
+#print axioms NLS.SpectralWeight.negativeSobolev_shift_le
+#print axioms NLS.SpectralWeight.negativeShiftEquiv
+#print axioms NLS.SpectralWeight.negativeShiftEquiv_apply
+#print axioms NLS.SpectralWeight.negativeShiftEquiv_symm_apply
+#print axioms NLS.SpectralWeight.negativeShiftedNorm
+#print axioms NLS.WeightedCoeff.weightReflection
+#print axioms NLS.WeightedCoeff.weightReflection_apply
+#print axioms NLS.WeightedCoeff.shiftReflection
+#print axioms NLS.WeightedCoeff.shiftReflection_apply
+#print axioms NLS.WeightedCoeff.shiftReflection_symm_apply
+#print axioms NLS.KdV.freeHillValue
+#print axioms NLS.KdV.freeHillValue_neg
+#print axioms NLS.KdV.reducedHillStrip
+#print axioms NLS.KdV.nat_le_abs_sq_sub_sq
+#print axioms NLS.KdV.freeHill_denominator_lower
+#print axioms NLS.KdV.freeHill_denominator_ge_index
+#print axioms NLS.KdV.freeHill_denominator_ne_zero
+#print axioms NLS.KdV.reducedHillSymbol
+#print axioms NLS.KdV.reducedHillResolvent
+#print axioms NLS.KdV.reducedHillResolvent_apply
+#print axioms NLS.KdV.reducedHillResolvent_right_inverse
+#print axioms NLS.KdV.norm_reducedHillResolvent_apply_le
+#print axioms NLS.KdV.weightedReducedHillResolvent
+#print axioms NLS.KdV.weightedReducedHillResolvent_apply
+#print axioms NLS.KdV.norm_weightedReducedHillResolvent_apply_le
+#print axioms NLS.KdV.reducedHillResolvent_unique
+#print axioms NLS.KdV.sobolev_factor_sq_le
+#print axioms NLS.KdV.freeHill_inverse_norm_le_product
+#print axioms NLS.KdV.hill_resonance_iff
+#print axioms NLS.KdV.sobolevReducedSymbol_bound
+#print axioms NLS.KdV.endpointHillMatrix
+#print axioms NLS.KdV.endpointHillMatrix_bound
+#print axioms NLS.KdV.endpointHillConstant
+#print axioms NLS.KdV.endpointHillNormalizedPerturbation
+#print axioms NLS.KdV.endpointHillPerturbation
+#print axioms NLS.KdV.norm_endpointHillPerturbation_le
+#print axioms NLS.KdV.endpointHillMatrix_term
+#print axioms NLS.KdV.summable_norm_endpointHill_terms
+#print axioms NLS.KdV.endpointHillPerturbation_apply
+#print axioms NLS.KdV.reducedHillSymbol_neg
+#print axioms NLS.KdV.endpointHillPerturbationMinus
+#print axioms NLS.KdV.norm_endpointHillPerturbationMinus_le
+#print axioms NLS.KdV.endpointHillPerturbationMinus_apply
+#print axioms NLS.KdV.summable_norm_endpointHillMinus_terms
+#print axioms NLS.KdV.unshiftedEndpointHillPerturbation
+#print axioms NLS.KdV.unshiftedEndpointHillPerturbation_apply
+#print axioms NLS.KdV.negativeShift_unshiftedEndpointHillPerturbation
+#print axioms NLS.KdV.negativeShiftedNorm_endpointHillPerturbation_le
+#print axioms NLS.KdV.endpointHillConstant_pos
+#print axioms NLS.KdV.endpointHillConstant_mono
+#print axioms NLS.KdV.exists_endpointHill_cutoff
+#print axioms NLS.KdV.norm_endpointHillPerturbation_operator_le
+#print axioms NLS.KdV.norm_endpointHillPerturbationMinus_operator_le
+#print axioms NLS.KdV.exists_endpointHill_uniform_contraction
+#print axioms NLS.KdV.exists_endpointHill_tail_inverse
+#print axioms NLS.KdV.exists_endpointHill_tail_inverseMinus
+#print axioms NLS.KdV.exists_endpointHill_uniform_tail_isUnit
 #print axioms NLS.Coeff.wienerWeakStar
 #print axioms NLS.Coeff.wienerWeakStar_apply
 #print axioms NLS.Coeff.tendsto_wienerWeakStar_of_bounded_coefficients
@@ -160,3 +244,10 @@ import NLS.Articles.KdVPseudomeasures.RealPredualTopology
 #print axioms NLS.Articles.KdVPseudomeasures.realWienerAction_im_zero
 #print axioms NLS.Articles.KdVPseudomeasures.originalRealWienerAction_im_zero
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_iff_originalRealWienerTests
+#print axioms NLS.Articles.KdVPseudomeasures.spectralEndpointConstant
+#print axioms NLS.Articles.KdVPseudomeasures.source_negativeWeight_apply
+#print axioms NLS.Articles.KdVPseudomeasures.spectralEndpointConstant_one_le
+#print axioms NLS.Articles.KdVPseudomeasures.spectralEndpointConstant_antitone
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_4_coefficient_bounds
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCorollary2_5_coefficient_tail_invertible
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_4_shiftedNorm_bounds

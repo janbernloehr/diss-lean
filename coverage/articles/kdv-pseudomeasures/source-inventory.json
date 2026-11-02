@@ -84,7 +84,9 @@
       "proved_dependencies": [
         "NLS.Articles.KdVPseudomeasures.potentialCoordinateEquiv",
         "NLS.Articles.KdVPseudomeasures.isEmbedding_originalRealWienerEvaluations_on_bounded",
-        "NLS.Articles.KdVPseudomeasures.potentialHminusOne_val"
+        "NLS.Articles.KdVPseudomeasures.potentialHminusOne_val",
+        "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_shiftedNorm_bounds",
+        "NLS.Articles.KdVPseudomeasures.sourceCorollary2_5_coefficient_tail_invertible"
       ]
     },
     {
@@ -117,7 +119,7 @@
         6
       ],
       "content": "Every normalized symmetric monotone submultiplicative weight w, -1/2<s<=0, complex q in FL_0^(w,s,infinity): gap lengths gamma_n and tau_n-mu_n are in ell^(w,s,infinity)(N), with locally bounded maps.",
-      "status": "unproved; consume shared Hill foundation and prove endpoint estimates"
+      "status": "Lemma 2.4 coefficient-space endpoint bound, both shifts, and Corollary 2.5 contraction/tail inverses now proved with corrected radius-6n strips. Physical singular multiplication/spectrum and the stated gap/midpoint-Dirichlet asymptotics remain unproved."
     },
     {
       "label": "2.2",
@@ -135,6 +137,17 @@
       ],
       "content": "All real s: unit-ball weak-star compactness, sequential compactness and metrizability; for sequences weak-star convergence iff boundedness plus coefficient convergence iff boundedness plus convergence in a lower weighted finite-p space with (s-sigma)*p>1; compactness equivalences and coincidence of induced topologies on bounded subsets.",
       "status": "Generalized endpoint compactness/topology results proved; real/even/mean-zero physical source characterization and exact original real-Wiener testing topology on bounded source subsets now proved. Full physical KdV constructions remain outside Appendix B."
+    },
+    {
+      "label": "2.4 / 2.5",
+      "pages": [
+        9,
+        10
+      ],
+      "status": "Verified coefficient-operator bounds and uniform tail inverses; physical operator identification and singular spectral strip inclusion remain.",
+      "coverage": "spectral-endpoint-map.json",
+      "constant": "C_s=8+16/(1+2s)",
+      "strip_correction": "Radius6n instead of printed12n; actual eigenvalue inclusion must be proved separately."
     }
   ],
   "reuse_map": [
@@ -187,6 +200,12 @@
       "module": "NLS/Dynamics/ActionDependentWeightedPhaseFlow.lean",
       "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
       "reuse": "Shared generic action-dependent flow imported unchanged from the frequencies branch and freshly checked; extended to actual weak-star endpoint in WeightedWeakStarPhaseFlow."
+    },
+    {
+      "module": "NLS/KdV/FreeHill.lean",
+      "source_branch": "articles/kdv-estimates",
+      "git_blob": "befebe847bb8f5ca3fff6d8bdcd0ddd3a78bc047",
+      "reuse": "Imported byte-identically and freshly checked. Shared free Hill denominator and reduced symbol used directly; no competing Hill symbol or strip implementation."
     }
   ],
   "remaining_obligations": [

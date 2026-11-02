@@ -22,6 +22,7 @@
     ]
   },
   "essential_open_obligations": [
+    "Identify the actual negative-regularity endpoint Fourier perturbation with singular physical Hill multiplication and eigen-equations; establish corrected strip inclusion and gap estimates.",
     "Physical Hill spectrum and Birkhoff map.",
     "Endpoint spectral estimates and inverse regularity needed by 1.4.",
     "Actual KdV H^-1 smooth-approximation solution extension, invariance and continuity.",
@@ -41,5 +42,10 @@
     "Full real Wiener predual original-distribution equivalence with exact norm.",
     "On bounded source subsets, equality of real-Wiener test and complex weak-star induced topologies.",
     "Original H^-1 inclusion changes neither the physical distribution nor the source restrictions."
+  ],
+  "verified_endpoint_spectral_dependencies": [
+    "Exact weighted-infinity Fourier operators and absolute convergence, including negative weights and both shifts.",
+    "Coefficient-space sourceLemma2_4_shiftedNorm_bounds on the original unshifted source Banach space, with corrected radius6n.",
+    "Uniform half-contraction cutoff preceding all weights/potentials/lambdas and bounded two-sided endpoint tail inverses."
   ]
 }

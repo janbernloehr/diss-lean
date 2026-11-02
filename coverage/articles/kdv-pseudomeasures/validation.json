@@ -1,11 +1,19 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "exact physical source constraints and bounded real-Wiener predual topology",
+  "phase": "negative-regularity endpoint Hill perturbation bounds and tail inverses",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
   "modules_checked": [
+    "NLS/SequenceSpaces/HillMixedKernel.lean",
+    "NLS/SequenceSpaces/InfinityMatrix.lean",
+    "NLS/SequenceSpaces/NegativeSpectralWeight.lean",
+    "NLS/SequenceSpaces/ShiftReflection.lean",
+    "NLS/KdV/FreeHill.lean",
+    "NLS/KdV/PseudomeasureKernel.lean",
+    "NLS/KdV/PseudomeasurePerturbation.lean",
+    "NLS/KdV/PseudomeasureTailInverse.lean",
     "NLS/SequenceSpaces/WienerWeakStar.lean",
     "NLS/SequenceSpaces/WeightedWienerWeakStar.lean",
     "NLS/SequenceSpaces/WeightedWeakStarCompactness.lean",
@@ -25,13 +33,14 @@
     "NLS/Articles/KdVPseudomeasures/TrajectoryTopology.lean",
     "NLS/Articles/KdVPseudomeasures/SourceSpaces.lean",
     "NLS/Articles/KdVPseudomeasures/RealPredualTopology.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 105,
-  "definitions": 37,
+  "proved_theorems": 166,
+  "definitions": 58,
   "axiom_audit": {
-    "method": "Lean #print axioms for every inventoried definition and theorem, including qualified declaration names and nested namespaces. Exact source/audit/output set comparison; all axioms checked against allowlist.",
-    "declarations": 142,
+    "method": "Lean #print axioms on every source-inventoried public definition/theorem, with nested namespaces and qualified names supported. Exact inventory/audit/output set match, followed by allowlist check. Private imported proofs are covered transitively.",
+    "declarations": 224,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -67,15 +76,30 @@
     "RealWienerTest(r) is bijective and norm preserving with the entire original real mean-zero physically one-periodic Wiener space. The proof is not restricted to finite tests.",
     "The physical action of source potentials on real Wiener tests is real valued, so the real-part evaluation used for sigma topology loses no information.",
     "On every norm-bounded source subset, actual original real-Wiener test evaluations form a topological embedding. This proves the exact real-predual weak-star topology and arbitrary-filter convergence criterion on the bounded sets needed by main Theorems 1.1, 1.3 and 1.4.",
-    "At 0<=r<1/2, the original source potential embeds into original H^-1 as literally the same smooth-test distribution; all physical source restrictions and normalization are unchanged."
+    "At 0<=r<1/2, the original source potential embeds into original H^-1 as literally the same smooth-test distribution; all physical source restrictions and normalization are unchanged.",
+    "Mixed reciprocal Hill lattice sum has explicit bound (4+8/a)*n^(-a/2) for every 0<a<=1; summability and the bound are proved without a finite source exponent.",
+    "For every source spectral weight w and negative Sobolev order s=-r with 0<=r<1/2, the shifted convolution weight ratio is bounded by exactly one squared positive Sobolev factor, independently of w.",
+    "The normalized weighted-infinity rows define a continuous linear operator. The original Fourier rows are absolutely convergent and equal sum_k q_(m-k)*reducedHillSymbol(k)*f_k.",
+    "Both +n and -n shifted norms satisfy the operator bound C_s*n^(-(1/2-|s|))*norm(q), with C_s=8+16/(1+2s). C_s>=1 and is antitone in s.",
+    "Coefficient-preserving continuous shift equivalences transport both realizations to the same operator on the original unshifted source Banach space. Its two shifted norms satisfy the literal source bound.",
+    "For every regularity and potential norm bound, a single cutoff precedes every weight, potential, mode and lambda and makes both shifted operators half contractions.",
+    "The actual endpoint tail equations have two-sided continuous linear inverses of norm at most two; eventual invertibility of both shifted operators follows uniformly on each potential norm ball."
   ],
-  "source_correspondence": "Appendix B and source-domain/topology dependencies for Theorems 1.1, 1.3 and 1.4. Exact real/even/mean-zero original distributions and full real Wiener tests are identified, with equality of induced weak-star topologies on every bounded subset. No physical KdV main theorem is yet proved.",
-  "build_isolation": "All 20 focused modules passed with worktree-local compiler outputs and immutable canonical compiled imports; complete 142-declaration transitive axiom audit passed. No canonical tracked-source or build-output edits.",
+  "source_correspondence": "Coefficient-space Lemma 2.4 and Corollary 2.5 dependency proofs, retaining all -1/2<s<=0, arbitrary w, both shifted norms and the original Fourier formula. Corrected strip radius 6n replaces printed 12n. Identification with singular-potential physical multiplication and the rough Hill spectrum remains unproved; no main theorem is verified.",
+  "build_isolation": "All 29 focused modules passed using worktree-local outputs and read-only canonical compiled imports. Full 224-public-declaration transitive audit passed. No writing build in the canonical checkout.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
-  "publication_status": "Validated source-identification milestone ready for branch commit/push; main integration remains separate.",
+  "publication_status": "Validated endpoint-spectral milestone ready for commit/push; main integration separate.",
   "source_hash": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
   "output_sha256": {
+    "NLS/SequenceSpaces/HillMixedKernel.lean": "20c291246496d1c314e5f3df2db3cb038990b714bb66d6c1d4e381486c219c6c",
+    "NLS/SequenceSpaces/InfinityMatrix.lean": "db5010ffc574d3779e99c246708de4cb1831ab6c5e85cf16ed59e01b0091ff12",
+    "NLS/SequenceSpaces/NegativeSpectralWeight.lean": "c232030772ff29cfda17db38f2219069466702031ef056d1a558fb58fa66eafa",
+    "NLS/SequenceSpaces/ShiftReflection.lean": "60240db4cfe2229c4c4d112815163341636552473ef588295432f0b24c0df676",
+    "NLS/KdV/FreeHill.lean": "4ce1fd6c85430f8f4dfca502245530a7768ef05647495fae99726f40835d0030",
+    "NLS/KdV/PseudomeasureKernel.lean": "f01c07d26885a0f79ee7ca89c786174d27cc1ec121eff8366b2eb2125a76aa8b",
+    "NLS/KdV/PseudomeasurePerturbation.lean": "8a02466f93b8d9e3280cb298001b67a5e8e69c0ae4692a660298506b4cc04068",
+    "NLS/KdV/PseudomeasureTailInverse.lean": "0f60d715cdeb16187046db635eb81e0acbfbc1e01663a6469bcd9159d67a9f8b",
     "NLS/SequenceSpaces/WienerWeakStar.lean": "2a076d7574d6563ce90040c202599697876fb6d01b6ed7c1dba84ad35a0c378c",
     "NLS/SequenceSpaces/WeightedWienerWeakStar.lean": "7015840f12a415b9c63ed5398e6bd9e1ddf9d2fe888a747520b7689c6a70be1c",
     "NLS/SequenceSpaces/WeightedWeakStarCompactness.lean": "63a47548a5996ab048ff3f4fdd2437c6c08ea01bb9c7a46f0d280582089b1d7b",
@@ -95,7 +119,8 @@
     "NLS/Articles/KdVPseudomeasures/TrajectoryTopology.lean": "2fb656b877222b76070bebe4820f8f1076bf04da513df28cdbbe49181a64891a",
     "NLS/Articles/KdVPseudomeasures/SourceSpaces.lean": "6edca9a208e8907aea31c16bfed9259409a5dfadb403a4d9c5776cef104cda83",
     "NLS/Articles/KdVPseudomeasures/RealPredualTopology.lean": "b4f9aee7596cc594a209d0416acbe5a8e7b72daf1d0f9e183f707cee24394cbc",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "3ea7dfa2ee9ebfd8ac5267b963d1196ef4f42f9e9c1623a7b58cd2d133989a48"
+    "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean": "5b41f954d564c81e63dff0ea9d5af6eefa6d274eb49879e5ae1f589ade246376",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "62774623c62494975441919b1f95290cb1d154312c0722b23055191ae9dc4adf"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -103,9 +128,10 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "prior_checked_declarations": 94,
-    "additional_declarations": 48,
-    "reused_shared_flow_declarations_in_total": 14
+    "prior_checked_declarations": 142,
+    "newly_authored_declarations": 66,
+    "reused_FreeHill_declarations": 16,
+    "previously_reused_shared_action_flow_declarations": 14
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -115,12 +141,25 @@
   },
   "shared_spectral_state_inspected": {
     "branch": "articles/kdv-estimates",
-    "head": "0b58631",
+    "head": "99fa6eefb8eff03a57e0feab57867f6ced811570",
     "available": [
-      "NLS/KdV/FreeHill.lean",
-      "NLS/KdV/HillComplement.lean",
-      "NLS/KdV/HillReduction.lean"
+      "FreeHill",
+      "HillComplement",
+      "HillReduction",
+      "HillSobolev",
+      "HillPhysical",
+      "HillAnalytic",
+      "HillLocalization",
+      "HillZeroCount"
     ],
-    "remaining": "The shared branch now proves a two-mode Fourier determinant reduction. It does not yet supply the physical spectrum, Birkhoff map or negative-regularity endpoint spectral estimates."
+    "qualification": "Shared developments include the physical H2/L2-potential Fourier eigen-equation and analytic high-strip determinant localization with two zeros. Extension to singular endpoint potentials, their physical multiplication and Birkhoff coordinates remains necessary."
+  },
+  "shared_FreeHill_reuse": {
+    "branch": "articles/kdv-estimates",
+    "source_commit": "99fa6eefb8eff03a57e0feab57867f6ced811570",
+    "file": "NLS/KdV/FreeHill.lean",
+    "git_blob": "befebe847bb8f5ca3fff6d8bdcd0ddd3a78bc047",
+    "byte_identical": true,
+    "rechecked_locally": true
   }
 }

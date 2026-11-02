@@ -1,0 +1,41 @@
+{
+  "source": "arXiv:1610.00278v1, Section 2, Lemma 2.4 (pp.9-10) and Corollary 2.5 (p.10)",
+  "main_theorems_verified": false,
+  "domains": {
+    "s": "-1/2<s<=0, including s=0",
+    "r": "r=-s, 0<=r<1/2",
+    "weight": "Every SpectralWeight w in the source class M. The product weight w(k)<k>^s need not itself be submultiplicative or bounded below by one.",
+    "source": "WeightedCoeff (w.negativeSobolev (-s)) infinity; exact equality to w(k)<k>^s is proved.",
+    "shifted_norm": "norm(negativeShiftEquiv w (-s) (+-n) f), on the same original unshifted coefficient space.",
+    "symbol": "Period-two symbol pi^2*k^2; resonant modes k=+-n deleted."
+  },
+  "correction": {
+    "printed_strip": "abs(Re(lambda)-pi^2*n^2)<=12*n",
+    "verified_strip": "abs(Re(lambda)-pi^2*n^2)<=6*n",
+    "reason": "The shared radius-6n strip supports the required denominator bound at every n>=1. The larger printed strip does not support that uniform statement. No separate refutation proof is added.",
+    "remaining_use_obligation": "Prove eventual inclusion of the actual singular-potential periodic eigenvalues in the corrected strip before using these estimates for spectral regularity."
+  },
+  "constant": "C_s=8+16/(1+2s), >=1 and decreasing with s; independent of w, q, lambda and n.",
+  "declarations": {
+    "kernel": "NLS.ReciprocalSeries.tsum_mixedHillKernel_le",
+    "negative_weight_ratio": "NLS.SpectralWeight.negativeSobolev_shift_ratio_le",
+    "same_source_space_shift_equivalence": "NLS.SpectralWeight.negativeShiftEquiv",
+    "actual_raw_operator": "NLS.KdV.unshiftedEndpointHillPerturbation_apply",
+    "both_shift_norms": "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_shiftedNorm_bounds",
+    "operator_norms_on_shifted_carriers": "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_coefficient_bounds",
+    "uniform_cutoff": "NLS.KdV.exists_endpointHill_uniform_contraction",
+    "bounded_tail_inverses": [
+      "NLS.KdV.exists_endpointHill_tail_inverse",
+      "NLS.KdV.exists_endpointHill_tail_inverseMinus"
+    ],
+    "uniform_tail_invertibility": "NLS.Articles.KdVPseudomeasures.sourceCorollary2_5_coefficient_tail_invertible"
+  },
+  "quantifier_order": "For each s and potential norm bound R, choose one N>=1 before w, q with norm(q)<=R, n>=N and lambda in the corrected strip. Both shifted operators are then half contractions and invertible.",
+  "verified_scope": "Literal complex Fourier-coefficient operators, absolute row summability, both shifted estimates on one original source space, and uniform inverse consequences. No unknown mathematical estimate or inverse is supplied by a caller.",
+  "remaining_physical_obligations": [
+    "Identify the constructed Fourier product with multiplication by the singular original distribution q on the physical H1 Hill domain.",
+    "Prove resolvent regularity gain and equivalence with the physical Hill eigen-equation for these rough potentials.",
+    "Extend/consume shared analytic determinant reduction, zero localization, and labels in the corrected strip for singular potentials.",
+    "Complete the gap and Dirichlet asymptotics and inverse regularity needed by Theorems 2.1, 2.2 and 1.4."
+  ]
+}
