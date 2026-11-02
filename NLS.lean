@@ -4924,4 +4924,5 @@ import NLS.ZakharovShabat.PeriodTwoExplicitHeight
 import NLS.ZakharovShabat.SourceCorrectedHeightContours
 import NLS.ZakharovShabat.SourceLemma34CorrectedSubsums
 import NLS.KdV.FreeHill
+import NLS.KdV.HillComplement
 import NLS.Articles.KdVEstimates.EstimateAdapter

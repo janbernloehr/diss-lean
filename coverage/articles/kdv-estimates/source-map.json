@@ -168,12 +168,26 @@
     }
   ],
   "next_shared_milestones": [
-    "Prove the complementary inverse gains the weighted l1 regularity needed for convolution, then construct Hill perturbation and the two-mode Schur complement with explicit strip constants.",
-    "Define the genuine periodic Hill operator and prove agreement with its Fourier realization, spectral labels, multiplicities and localization.",
-    "Construct Hill discriminant, root branches, action integrals, real positivity, and the physical canonical Birkhoff map with exact positive-mode and norm conventions.",
-    "Prove the hierarchy trace identity and tame estimates needed for Theorem 2; connect Theorem 1 through the checked adapters.",
-    "Prove weighted gap/action estimates and the source's interpolated-weight evaluations for Theorem 3."
+    "Construct the two-mode Schur complement from the proved complementary Fourier inversion, including dependence on lambda and q.",
+    "Identify the genuine periodic Hill operator with its Fourier realization and period-one potential embedding; prove spectral labels, multiplicities and localization.",
+    "Construct the Hill discriminant, root branches, contour actions, real positivity and physical canonical Birkhoff map with exact positive-mode and norm conventions.",
+    "Prove the hierarchy trace identity and tame action estimates for Theorem 2; connect Theorem 1 through the checked adapters.",
+    "Prove the weighted gap/action bounds and piecewise interpolated weight evaluations required for Theorem 3."
   ],
   "workspace_need": "Isolation approved. Branch articles/kdv-estimates; worktree path recorded in validation record. Continue small validated shared-foundation commits and push only this branch.",
-  "accepted_reference_scope": "coverage/MAIN_THEOREMS.md and coverage/ACCEPTED_REFERENCE.md were read. The dissertation verification is left intact. The accepted Grebert-Kappeler NLS manuscript does not replace a proof of Hill/KdV-specific assertions."
+  "accepted_reference_scope": "coverage/MAIN_THEOREMS.md and coverage/ACCEPTED_REFERENCE.md were read. The dissertation verification is left intact. The accepted Grebert-Kappeler NLS manuscript does not replace a proof of Hill/KdV-specific assertions.",
+  "continued_proved_foundation": {
+    "module": "NLS/KdV/HillComplement.lean",
+    "source_correspondence": "Lemma A.3, PDF/printed page 27, and the Neumann inversion at the start of page 28, on the explicit narrower radius-6*n strips.",
+    "proved": [
+      "The actual complementary reciprocal symbol belongs to l2 with norm at most 4/n; this follows from the existing reciprocal series estimates via two translated punctured lattices.",
+      "hillComplementToL1 is a continuous linear map from weighted l2 to weighted l1 with the literal reciprocal coefficient formula and bound 4/n.",
+      "hillTailPerturbation is the literal weighted convolution q*(A_lambda^-1 Q_n a), with operator norm at most 4*||q||_w/n.",
+      "The l2-to-l1 and tail perturbation bounds hold uniformly for every integer shift of the weighted norm.",
+      "When n>=8*||q||_w, the tail operator has norm at most 1/2, and id minus that operator admits an actual two-sided bounded inverse of norm at most 2. The existence proof reuses NLS.exists_inverse_norm_le_two_mul_of_composition_near."
+    ],
+    "constant_changes": "Uses 4/n for the summability and tail estimates, cutoff 8*||q||, and strip radius 6*n; no assertion of the printed 2/n estimate or radius 12*n follows.",
+    "essential_missing_identifications": "This is the period-two Fourier coefficient realization for a general weighted potential sequence. Physical function/operator domain identification, embedding of period-one potentials with the source w_(2n) convention, two-mode Schur complement and eigenvalue counting/localization remain to be proved.",
+    "main_theorems_verified": false
+  }
 }

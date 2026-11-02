@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned tooling; DISS_LEAN_REFERENCE_CHECKOUT set to read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 37,
+    "declarations": 62,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates"
@@ -28,7 +28,16 @@
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "4ce1fd6c85430f8f4dfca502245530a7768ef05647495fae99726f40835d0030",
+    "NLS/KdV/HillComplement.lean": "abf8fbb912e4e629f97cc6b2b44a060382f5945fc8793fede162227bd49326fd",
     "NLS/Articles/KdVEstimates/EstimateAdapter.lean": "d6b2f6e78b438e5ada6499c28149a64509d0df78ad6760258042804ec9633fec"
   },
-  "remaining": "Physical Hill operator/spectrum, discriminant/actions/Birkhoff identification, and Theorems 1\u20133 analytic estimates remain unproved."
+  "remaining": "Physical Hill operator/Fourier identification, two-mode Schur complement and spectral localization, discriminant/actions/Birkhoff construction, and main Theorems 1\u20133 analytic estimates remain unproved.",
+  "milestone": "Integrated free Hill foundation, weighted summability gain, uniform shifted tail bounds and quantitative complementary inversion",
+  "foundation_commit": "ae26edc",
+  "foundation_pushed": true,
+  "focused_modules": [
+    "NLS.KdV.FreeHill",
+    "NLS.KdV.HillComplement",
+    "NLS.Articles.KdVEstimates.EstimateAdapter"
+  ]
 }

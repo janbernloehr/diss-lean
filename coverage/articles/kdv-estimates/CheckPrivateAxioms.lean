@@ -1,8 +1,9 @@
 import NLS.KdV.FreeHill
+import NLS.KdV.HillComplement
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
-/-! Transitive audit of all declarations introduced by this private candidate.
+/-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
 
 open Lean in
@@ -18,4 +19,4 @@ run_cmd do
       checked := checked + 1
   if checked == 0 then
     throwError "No candidate declarations were audited."
-  logInfo m!"Private KdV candidate: transitive axiom audit passed for {checked} declarations."
+  logInfo m!"KdV foundation: transitive axiom audit passed for {checked} declarations."
