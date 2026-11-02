@@ -344,10 +344,41 @@
     {
       "module": "Mathlib.MeasureTheory.Integral.IntervalIntegral.MeanValue: exists_eq_const_mul_intervalIntegral_of_nonneg",
       "role": "Directly supplies the exact source mean-value relation on every closed actual gap, including the collapsed case. Its hypotheses are established from the actual signed arcosh profile; no mean-value spectral datum is assumed."
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "7e066ef5a1d4576a3b1ae2db33dc46fb9422e677",
+      "module": "NLS/ComplexAnalysis/AnalyticDiscSquareRoot.lean",
+      "blob": "e39b7ee15bc41f767f76a43a2cf6ec3a5ebfe464",
+      "role": "Reused unchanged after reading the complete proof. Supplies actual analytic disc/unit roots, the full two-zero cut root, or exact deflation including double zeros. All imported modules are included in the strict focused build and transitive audit."
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "7e066ef5a1d4576a3b1ae2db33dc46fb9422e677",
+      "module": "NLS/ComplexAnalysis/AnalyticTwoZeroRoot.lean",
+      "blob": "ac0d144d05ee292fb29dae5f95e80b0c11eba196",
+      "role": "Reused unchanged after reading the complete proof. Supplies actual analytic disc/unit roots, the full two-zero cut root, or exact deflation including double zeros. All imported modules are included in the strict focused build and transitive audit."
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "7e066ef5a1d4576a3b1ae2db33dc46fb9422e677",
+      "module": "NLS/ComplexAnalysis/TwoZeroDeflation.lean",
+      "blob": "22e8bfec92b5c229a856b77ffa8866071081a753",
+      "role": "Reused unchanged after reading the complete proof. Supplies actual analytic disc/unit roots, the full two-zero cut root, or exact deflation including double zeros. All imported modules are included in the strict focused build and transitive audit."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/PrimitiveOnDiscComplement.lean",
+      "sha256": "cb1b5a46815816dab3a8a4bc333f977ef854198a6ec4014e3ba50ee28c953ea6",
+      "role": "Existing annular Cauchy/radial construction extends the actual zero-period differential to a primitive on the full disc minus the gap. The source hash agrees with the pinned prebuilt reference."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/SegmentPrimitiveBoundary.lean",
+      "sha256": "11dde93aa1daae99340729eb42b07262fd1c4c7076d56337ca58fc0494a2a1ce",
+      "role": "Existing slit-coordinate theorem gives a single finite endpoint limit for all cut-complement approaches, from the new checked inverse-square-root bound. The source hash agrees with the pinned prebuilt reference."
     }
   ],
   "next_shared_milestones": [
-    "Identify the free-normalized high contour moments with the checked positive real gap integrals, including endpoint limits and collapsed gaps. Reuse the inspected two-zero cut-root, slit/segment boundary-limit and normalized-primitive uniqueness libraries to establish the canonical sheet and required real-band gluing. Then prove quantitative action-gap bounds and globally canonical action identification.",
+    "Normalize the constructed full high-gap cut primitive against its source value, identify its finite endpoint values and prove the open-gap boundary jump. Deform its polynomial moments to the now-checked positive real gap integrals, retaining the exact contour orientation and factor 2/pi. The collapsed high-gap comparison is already proved.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Establish the action-gap estimates and Hamiltonian/higher-action trace identities needed for Theorem 2; inspect the shared native Miura/Hill Hamiltonian and actual primitive moment developments before reimplementing them.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -1052,6 +1083,35 @@
     "gap_profile": "The actual real function f_n(x)=arcosh((-1)^n*Re(Delta(q,x))/2) is continuous and nonnegative on the closed actual gap, zero at its endpoints and strictly positive in its interior.",
     "literal_integrals": "G_(n,m)(q)=(2/pi)*integral_{lambda_n^-}^{lambda_n^+} x^m*f_n(x) dx. They are interval integrable at every level, vanish on collapsed gaps and are nonnegative at even levels. G_(n,0)>0 iff lambda_n^-<lambda_n^+.",
     "mean_value": "For every n>=1 and m>=0, there is zeta in the closed actual gap with G_(n,m)=zeta^m*G_(n,0), by the existing weighted interval-integral mean-value theorem. If the left endpoint is nonnegative, (lambda_n^-)^m*G_(n,0)<=G_(n,m)<=(lambda_n^+)^m*G_(n,0).",
-    "qualification": "These are actual trace integrals with the exact source normalization, not postulated action data. Their equality to the globally canonical contour-defined actions and the already-constructed high contour moments is still unproved. No positivity theorem for those contour moments, Hamiltonian trace identity, KdV Birkhoff map, action-gap bound or main Theorem 1-3 is claimed."
+    "qualification": "The literal real gap integrals have the exact source normalization. Equality to the actual source contour moments is now proved at every level for collapsed intrinsic high gaps n>=2 at cutoff eight. The open-gap comparison, globally canonical contour action identification, quantitative action-gap estimates, Hamiltonian trace identities, KdV Birkhoff map and main Theorems 1-3 remain unverified."
+  },
+  "actual_high_cut_root_primitive_and_boundary": {
+    "modules": [
+      "NLS/ComplexAnalysis/AnalyticDiscSquareRoot.lean",
+      "NLS/ComplexAnalysis/AnalyticTwoZeroRoot.lean",
+      "NLS/ComplexAnalysis/TwoZeroDeflation.lean",
+      "NLS/ComplexAnalysis/TwoZeroRootEndpointBound.lean",
+      "NLS/KdV/HillL2GapCutRoots.lean",
+      "NLS/KdV/HillL2GapCutPrimitives.lean",
+      "NLS/KdV/HillL2GapCutBoundary.lean",
+      "NLS/KdV/HillL2CollapsedGapMoments.lean"
+    ],
+    "declarations": [
+      "NLS.KdV.HillRealHighGapPair.deriv_zero_of_collapsed",
+      "NLS.KdV.HillRealHighGapPair.deflated_unit",
+      "NLS.KdV.HillRealHighGapPair.exists_source_normalized_cut_root",
+      "NLS.KdV.HillRealHighGapPair.exists_source_cut_primitive",
+      "NLS.ComplexAnalysis.exists_two_zero_root_endpoint_bound",
+      "NLS.KdV.HillRealHighGapPair.primitive_endpoint_limits",
+      "NLS.KdV.HillRealHighGapPair.trace_deriv_zero_of_collapsed",
+      "NLS.KdV.HillRealHighGapPair.collapsed_moment_zero",
+      "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral_of_closed"
+    ],
+    "source_correspondence": "Section 2, PDF pages 9-13: actual root branches away from gaps, zero-period primitive continuation, integrable endpoint singularities and contour-to-gap action comparison. The general open-gap jump/normalization and comparison are still incomplete.",
+    "actual_root": "For every checked actual high pair and n>=max(1,8*||q||_2), the actual characteristic deflates as Delta^2-4=(lambda-lambda_minus)*(lambda-lambda_plus)*Q with Q analytic and nowhere zero on the full closed radius-n disc. A disc unit root and the standard endpoint root construct R on the complete open disc minus the straight actual gap. Its sign agrees with the physical L2 source root on the connected radius-3*n/4 circle. A collapsed pair gives a root analytic on the whole open disc.",
+    "cut_primitive": "The matched differential Delta_prime/R has zero period on the radius-3*n/4 circle. Shared annular/radial continuation constructs an analytic primitive P on the full radius-7*n/8 disc minus the actual gap. For every integer m>=0 the actual previously constructed high contour moment equals -pi^-1 times the radius-3*n/4 integral of lambda^m*P. The additive constant of P is not yet normalized; it does not affect these polynomial circle moments.",
+    "endpoint_limits": "For an open pair, the nonzero deflated endpoint unit supplies a genuine inverse-square-root derivative bound. The existing segment/slit theorem gives finite limits of P at both endpoints for every approach in the full cut complement, including both sides. The constants may depend on the actual gap; no uniform lower gap-length bound is used. Their exact values and jump formula remain unproved.",
+    "collapsed_bridge": "At a collapsed high pair, Delta_prime vanishes at the double characteristic zero. A filled divided difference divided by the nonzero disc unit root extends the actual logarithmic differential holomorphically through the collapsed point. Every polynomial source contour moment is exactly zero. For intrinsic labels n>=2 at cutoff 8*||q||, this proves equality to the actual real gap integral, also zero, at every integer level.",
+    "qualifications": "The cut root and primitive are constructed pointwise from actual physical characteristic pairs whose existence and canonical high labeling are proved. Joint analyticity of endpoint choices or pointwise cut primitives across a collision is not claimed. The actual high contour moments retain their previously proved Banach analyticity. The open-gap contour/real-integral equality, exact primitive endpoint normalization, arbitrary low-gap canonical sheets, action-gap estimates, Hamiltonian identities, Birkhoff coordinates and main Theorems 1-3 remain unverified."
   }
 }

@@ -69,6 +69,14 @@ import NLS.KdV.HillRealBands
 import NLS.ComplexAnalysis.RealSimpleZeroSigns
 import NLS.KdV.HillRealGapSigns
 import NLS.KdV.HillRealGapIntegrals
+import NLS.ComplexAnalysis.AnalyticDiscSquareRoot
+import NLS.ComplexAnalysis.AnalyticTwoZeroRoot
+import NLS.ComplexAnalysis.TwoZeroDeflation
+import NLS.ComplexAnalysis.TwoZeroRootEndpointBound
+import NLS.KdV.HillL2GapCutRoots
+import NLS.KdV.HillL2GapCutPrimitives
+import NLS.KdV.HillL2GapCutBoundary
+import NLS.KdV.HillL2CollapsedGapMoments
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -112,7 +120,24 @@ run_cmd do
     ``NLS.ComplexAnalysis.positive_right_of_negative_left,
     ``NLS.ComplexAnalysis.positive_left_of_negative_right,
     ``NLS.ComplexAnalysis.above_pos_level_of_square_gt,
-    ``NLS.ComplexAnalysis.above_pos_level_of_square_gt_left]
+    ``NLS.ComplexAnalysis.above_pos_level_of_square_gt_left,
+    ``NLS.ComplexAnalysis.analyticOnNhd_continuous_squareRoot,
+    ``NLS.ComplexAnalysis.exists_analytic_squareRoot_on_ball,
+    ``NLS.ComplexAnalysis.endpointRoot,
+    ``NLS.ComplexAnalysis.midpoint_mem_complex_segment,
+    ``NLS.ComplexAnalysis.endpointRoot_sq,
+    ``NLS.ComplexAnalysis.analyticOnNhd_endpointRoot,
+    ``NLS.ComplexAnalysis.exists_analytic_squareRoot_on_two_zero_cut,
+    ``NLS.ComplexAnalysis.twoZeroQuotient,
+    ``NLS.ComplexAnalysis.dslope_zero_at_second_zero,
+    ``NLS.ComplexAnalysis.twoZeroQuotient_factor,
+    ``NLS.ComplexAnalysis.analyticOnNhd_twoZeroQuotient,
+    ``NLS.ComplexAnalysis.twoZeroQuotient_ne_zero,
+    ``NLS.ComplexAnalysis.norm_twoZeroQuotient_le,
+    ``NLS.ComplexAnalysis.exists_two_zero_root_endpoint_bound,
+    ``NLS.ComplexAnalysis.exists_primitive_on_disc_complement_of_zero_period,
+    ``NLS.ComplexAnalysis.exists_primitive_segment_left_boundary_limit,
+    ``NLS.ComplexAnalysis.exists_primitive_segment_right_boundary_limit]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

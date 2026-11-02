@@ -4994,4 +4994,12 @@ import NLS.KdV.HillRealBands
 import NLS.ComplexAnalysis.RealSimpleZeroSigns
 import NLS.KdV.HillRealGapSigns
 import NLS.KdV.HillRealGapIntegrals
+import NLS.ComplexAnalysis.AnalyticDiscSquareRoot
+import NLS.ComplexAnalysis.AnalyticTwoZeroRoot
+import NLS.ComplexAnalysis.TwoZeroDeflation
+import NLS.ComplexAnalysis.TwoZeroRootEndpointBound
+import NLS.KdV.HillL2GapCutRoots
+import NLS.KdV.HillL2GapCutPrimitives
+import NLS.KdV.HillL2GapCutBoundary
+import NLS.KdV.HillL2CollapsedGapMoments
 import NLS.Articles.KdVEstimates.EstimateAdapter
