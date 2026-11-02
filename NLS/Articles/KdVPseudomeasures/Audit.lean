@@ -1,5 +1,7 @@
+import NLS.SequenceSpaces.ConjugateReflection
 import NLS.SequenceSpaces.WeightedAnalyticRealization
 import NLS.SequenceSpaces.EvenTailReplacement
+import NLS.SequenceSpaces.EvenTailConjugation
 import NLS.ComplexAnalysis.JointSpectralDerivative
 import NLS.ComplexAnalysis.AnalyticImplicitRoot
 import NLS.ComplexAnalysis.AnalyticImplicitBanachRoot
@@ -70,6 +72,7 @@ import NLS.KdV.PseudomeasureH1Analytic
 import NLS.KdV.PseudomeasureBilinearSymmetry
 import NLS.KdV.PseudomeasureLocalization
 import NLS.KdV.PseudomeasureCoefficients
+import NLS.KdV.PseudomeasureConjugation
 import NLS.KdV.PseudomeasureWeightInclusion
 import NLS.KdV.PseudomeasureWeightedCoefficients
 import NLS.KdV.PseudomeasureReconstructionAnalytic
@@ -89,6 +92,7 @@ import NLS.KdV.PseudomeasureComplexRiesz
 import NLS.KdV.PseudomeasureComplexCounting
 import NLS.KdV.PseudomeasureSpectralLipschitz
 import NLS.KdV.PseudomeasureDiagonalRoot
+import NLS.KdV.PseudomeasureDiagonalRootConjugation
 import NLS.KdV.PseudomeasureDiagonalRootAnalytic
 import NLS.KdV.PseudomeasureRootSeparation
 import NLS.KdV.PseudomeasureRealPairs
@@ -153,10 +157,16 @@ import NLS.Articles.KdVPseudomeasures.SpectralDiagonalRoot
 import NLS.Articles.KdVPseudomeasures.SpectralAdaptedCoefficients
 import NLS.Articles.KdVPseudomeasures.SpectralAdaptedFourier
 import NLS.Articles.KdVPseudomeasures.SpectralAdaptedInverse
+import NLS.Articles.KdVPseudomeasures.SpectralRealAdapted
 import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 
 /-! Exact transitive axiom audit of all selected public definitions and theorems. -/
 
+#print axioms NLS.WeightedCoeff.conjugateReflection
+#print axioms NLS.WeightedCoeff.conjugateReflection_apply
+#print axioms NLS.WeightedCoeff.conjugateReflection_involutive
+#print axioms NLS.WeightedCoeff.norm_conjugateReflection
+#print axioms NLS.WeightedCoeff.conj_tsum_convolution
 #print axioms NLS.WeightedCoeff.ofFunctionOrZero
 #print axioms NLS.WeightedCoeff.ofFunctionOrZero_eq_of_coordinates
 #print axioms NLS.WeightedCoeff.analytic_realization_of_bound
@@ -169,6 +179,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.evenTailReplacement_error_le
 #print axioms NLS.WeightedCoeff.exists_infty_of_bound
 #print axioms NLS.WeightedCoeff.exists_evenTailReplacement
+#print axioms NLS.evenTailReplacement_conj_of_pairs
 #print axioms NLS.ComplexAnalysis.deriv_spectral_section_eq_fderiv
 #print axioms NLS.ComplexAnalysis.continuousOn_spectral_deriv_of_analyticOnNhd
 #print axioms NLS.ComplexAnalysis.analyticAt_implicitRoot
@@ -849,6 +860,18 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.KdV.endpointCoupling_errors_le
 #print axioms NLS.KdV.analyticAt_endpointEffective_coefficient
 #print axioms NLS.KdV.analyticAt_endpointCoefficients
+#print axioms NLS.KdV.endpointConjugate
+#print axioms NLS.KdV.endpointConjugate_apply
+#print axioms NLS.KdV.norm_endpointConjugate
+#print axioms NLS.KdV.endpointConjugate_involutive
+#print axioms NLS.KdV.endpointConjugate_sub
+#print axioms NLS.KdV.mem_reducedHillStrip_conj
+#print axioms NLS.KdV.reducedHillSymbol_conj
+#print axioms NLS.KdV.unshiftedEndpointHillPerturbation_conj
+#print axioms NLS.KdV.endpointHillTailInverse_conj
+#print axioms NLS.KdV.negativeModulation_conj
+#print axioms NLS.KdV.endpointHillCorrectedMode_conj
+#print axioms NLS.KdV.endpointCoefficients_conj
 #print axioms NLS.KdV.endpointWeightInclusion
 #print axioms NLS.KdV.endpointWeightInclusion_apply
 #print axioms NLS.KdV.norm_endpointWeightInclusion_le
@@ -1027,6 +1050,8 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.KdV.endpointHillDiagonalRoot_interior
 #print axioms NLS.KdV.endpointHillDiagonalRoot_unique
 #print axioms NLS.KdV.endpointHillDiagonalRoot_error_le
+#print axioms NLS.KdV.endpointHillDiagonalRoot_conj
+#print axioms NLS.KdV.endpointHillDiagonalRoot_im_eq_zero
 #print axioms NLS.KdV.continuousAt_endpointHillDiagonalRoot
 #print axioms NLS.KdV.norm_deriv_endpointDiagonal_at_root_le
 #print axioms NLS.KdV.analyticAt_endpointHillDiagonalRoot
@@ -1158,11 +1183,6 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.WeightedCoeff.weakStarActionPhaseFlow_mem_realMeanZero
 #print axioms NLS.WeightedCoeff.weakStarInvariantActionTrajectory
 #print axioms NLS.WeightedCoeff.continuous_weakStarInvariantActionTrajectory
-
-
-
-
-
 #print axioms NLS.Articles.KdVPseudomeasures.hminusOne_threshold
 #print axioms NLS.Articles.KdVPseudomeasures.hminusOneMapOn
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_trajectory_iff_hminusOne
@@ -1573,6 +1593,22 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_low
 #print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_weight_agreement
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_adaptedFourier_inverse
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedConjugate
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedConjugate_val
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceWeightedConjugate
+#print axioms NLS.Articles.KdVPseudomeasures.sourceForgetWeight_conj
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointCoefficients_conj
+#print axioms NLS.Articles.KdVPseudomeasures.sourceDiagonalRoot_conj
+#print axioms NLS.Articles.KdVPseudomeasures.sourceDiagonalRoot_im_eq_zero_of_real
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointEntries_conj
+#print axioms NLS.Articles.KdVPseudomeasures.sourceAdaptedCouplings_conj
+#print axioms NLS.Articles.KdVPseudomeasures.sourceAdaptedFourierValues_conj
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedDiagonalRoot_im_eq_zero_of_real
+#print axioms NLS.Articles.KdVPseudomeasures.sourceAdaptedCouplings_real
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_conj
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_real
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_real_iff
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_real_adapted_inverse
 #print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGapValues
 #print axioms NLS.Articles.KdVPseudomeasures.norm_sourceWeightedCanonicalGapValues_high_le
 #print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGapBound

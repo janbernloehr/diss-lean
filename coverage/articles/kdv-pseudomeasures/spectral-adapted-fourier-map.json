@@ -6,7 +6,7 @@
   "weighted_banach_analyticity_verified": true,
   "closed_half_ball_image_coverage_verified": true,
   "analytic_inverse_near_closed_half_ball_verified": true,
-  "real_type_symmetry_verified": false,
+  "real_type_symmetry_verified": true,
   "base_to_weighted_inverse_regularity_gain_verified": false,
   "modules": [
     "NLS/SequenceSpaces/EvenTailReplacement.lean",
@@ -60,7 +60,7 @@
     "source_derivative": "Operator difference from Id<=1/16 on CLOSED source radius-m ball.",
     "source_norms": "One half norm(q)<=norm(Omega(q))<=2norm(q) on CLOSED source radius-m ball.",
     "inverse": "Complex analytic on OPEN target radius3m/4 ball;for ALL targets of norm<=3m/4,its value is in OPEN source radius-m ball and is an actual preimage. Source injectivity holds on CLOSED radius-m ball. The left inverse identity holds for source norm<=m whose image norm<=3m/4.",
-    "inverse_constraints": "For target norm<=m/2,the inverse has exactly the original target mean and is period-one iff the target is period-one. Real-type symmetry is not yet proved.",
+    "inverse_constraints": "For target norm<=m/2,the actual inverse original distribution is real,mean-zero,period-one iff the target is. Mean and period-one equivalences from the previous proof are retained;physical reality is now proved.",
     "weight_compatibility": "Forward maps at different weights give identical ENTIRE output distributions for identical inputs in the verified balls. This is not yet the base-to-stronger-weight inverse regularity conclusion."
   },
   "constants": {
@@ -85,14 +85,13 @@
   ],
   "qualifications": [
     "No root,adapted map,image coverage,injectivity or analytic inverse is supplied as a caller assumption. All come from the actual original physical coefficients and proved uniform errors.",
-    "Source Proposition2.18 is not marked fully complete:real-type symmetry and the full-image inverse formulation remain open. The proved complex inverse covers a larger open target ball than the source closed half ball.",
+    "Source Proposition2.18 is not marked fully complete:the full-image inverse formulation remains open. Physical real-type symmetry and real inverse preservation near the closed half-ball are now proved.",
     "Source Proposition2.19 base-to-weighted inverse restriction and source Theorem2.2 are not claimed from the separate weighted inverse factories alone.",
     "Full source Theorem2.1(i) and all AppendixB clauses remain complete. Original Dirichlet Theorem2.1(ii),inverse Theorem2.2 and all MAIN theorems remain unproved."
   ],
   "remaining": [
-    "Prove physical conjugation/real-type symmetry: alpha_n(q) is real for real physical q,and the actual adapted Fourier map and its inverse preserve the real locus. Complex analyticity and real-scalar analyticity into complex numbers do not imply this.",
-    "Complete the source Proposition2.18 full-image analytic inverse formulation and source Proposition2.19 weighted inverse restriction. The actual weighted Fourier map,source derivative/norm bounds,injectivity,closed half-ball coverage and complex analytic inverse near that target ball are now proved. Forward equality of the ENTIRE adapted distributions across weights is also proved;the inverse regularity gain for a merely base-space source is not yet proved.",
-    "Use the actual adapted map/inverse with spectral gap lower comparisons and the finite-p original inverse spectral input to prove source Theorem2.2 regularity and original norm-bounded/weak-star-compact isospectral sets. Complete actual physical boundary parity,required low interlacing and original Dirichlet comparison source Theorem2.1(ii). The full direct general-weight gap Theorem2.1(i) and AppendixB remain complete.",
+    "Complete the full-image analytic inverse formulation of source Proposition2.18 and source Proposition2.19 base-to-stronger-weight inverse regularity. The actual map,weighted Banach analyticity,physical real-type symmetry,source derivative/norm bounds,closed-ball injectivity,closed half-ball coverage and complex analytic inverse preserving the full original real source locus are now PROVED. Forward equality of ENTIRE adapted distributions across weights is also proved;the inverse regularity gain from merely base-space source data remains open.",
+    "Prove the actual spectral gap lower comparison for adapted coefficients and use the original finite-p inverse spectral input to establish source Theorem2.2 regularity and norm-bounded/weak-star-compact isospectral sets. Complete physical periodic/antiperiodic boundary parity,required low interlacing and actual Dirichlet comparison source Theorem2.1(ii). Full direct general-weight Theorem2.1(i) and AppendixB remain complete.",
     "Construct and verify the ORIGINAL Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original hypotheses,normalizations,quantifiers and topology. All MAIN theorems remain unproved."
   ],
   "validation": {
@@ -110,5 +109,29 @@
     ],
     "empty_axiom_sets_allowed": true,
     "log": ".lake/article-check/logs/validation-adapted-fourier.log"
-  }
+  },
+  "subsequent_progress": [
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-real-adapted-map.json",
+      "results": [
+        "Physical endpointConjugate is the verified conjugate reflection of ORIGINAL Fourier coefficients,with norm preservation,involution and exact subtraction. The full corrected real-part strip and free complementary Fourier symbol obey physical conjugation.",
+        "The ACTUAL infinite Fourier perturbation commutes with physical conjugation at conjugate(q),conjugate(lambda),by the exact Fourier row formula and index reversal. Applying this to the actual tail equation and using endpointHillTailInverse_unique proves conjugation of the bounded tail inverse. No spectral reality assertion substitutes for this operator identity.",
+        "Physical conjugation swaps the two resonant modulation forcings and the ACTUAL corrected Fourier columns. Existing physical bilinear Green symmetry supplies equality of the two diagonals. Consequently the actual diagonal satisfies a(conjugate(q),conjugate(lambda))=conjugate(a(q,lambda)),and the upper/lower physical couplings swap and conjugate.",
+        "Uniqueness on the ENTIRE corrected strip proves endpointHillDiagonalRoot_conj for the actual constructed root. In particular the actual alpha has zero imaginary part for real potentials. Alpha is still an auxiliary diagonal root,not asserted to be an eigenvalue or midpoint.",
+        "The article adapter proves these identities for the ENTIRE original smooth-test distributions and exact original norms. sourceDiagonalRoot_im_eq_zero_of_real and sourceWeightedDiagonalRoot_im_eq_zero_of_real now prove the previously open physical real-valuedness of alpha in every source spectral weight. These complement the already proved source Lemma2.17 equation,analyticity,bounds and uniqueness.",
+        "sourceAdaptedCouplings_conj proves conjugate-swap symmetry at the ACTUAL alpha. For real original potentials,the actual lower coupling equals the conjugate upper coupling. The shared even-tail replacement conjugation lemma requires this symmetry only for the ACTUALLY REPLACED high pairs,not for unused low spectral slots.",
+        "sourceWeightedAdaptedFourier_conj proves that the ACTUAL adapted Fourier map commutes with physical conjugation on EVERY original smooth test. Hence it preserves real original distributions. The common cutoff is still chosen BEFORE BOTH weights and potentials;mean-zero and period-one preservation are unchanged.",
+        "On the verified injective CLOSED radius-m source ball,reality of the adapted image is EQUIVALENT to reality of the original source. source_uniform_real_adapted_inverse constructs the SAME complex analytic inverse near the CLOSED target half-ball and proves that its original distribution is real,mean-zero and period-one iff the target is. It is the actual inverse,not a separately postulated real inverse."
+      ]
+    }
+  ],
+  "current_status": {
+    "supersedes_older_open_claims_in_historical_results": true,
+    "actual_diagonal_root_real_on_real_inputs": true,
+    "actual_adapted_map_commutes_with_physical_conjugation": true,
+    "actual_analytic_inverse_preserves_full_original_real_source_locus_on_half_ball": true,
+    "full_image_inverse_formulation": false,
+    "base_to_weighted_inverse_regularity_gain": false
+  },
+  "actual_analytic_inverse_preserves_full_original_real_source_locus_on_half_ball": true
 }

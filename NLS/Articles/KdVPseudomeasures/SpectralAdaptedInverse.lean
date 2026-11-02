@@ -16,7 +16,9 @@ The common cutoff precedes both weights and potentials. Real-type symmetry is
 a separate assertion, not inferred from complex analyticity. -/
 theorem source_uniform_adaptedFourier_inverse (r : ℝ) (hr : AdmissiblePredualOrder r)
     (m : ℝ) (hm : 0 < m) :
-    ∃ N : ℕ, 1 ≤ N ∧ ∀ w : SpectralWeight,
+    ∃ N : ℕ, 1 ≤ N ∧
+      (∀ n : ℕ, 1 ≤ n → N ≤ n → endpointHillConstant r*(n:ℝ)^(r-1/2)*(64*(2*m)) ≤ 1/2) ∧
+      ∀ w : SpectralWeight,
       AnalyticOnNhd ℂ (sourceWeightedAdaptedFourier w r hr N) (ball 0 (2*m)) ∧
       (∀ q : PeriodicFourierLebesgue (2:ℝ) (w.negativeSobolev r) ⊤, ‖q‖ ≤ m →
         ‖fderiv ℂ (sourceWeightedAdaptedFourier w r hr N) q-
@@ -34,7 +36,7 @@ theorem source_uniform_adaptedFourier_inverse (r : ℝ) (hr : AdmissiblePredualO
           (g y).val (mode 0) = y.val (mode 0) ∧
           (IsPeriodicDistribution 1 (g y).val.toTempered ↔ IsPeriodicDistribution 1 y.val.toTempered) := by
   obtain ⟨N, hN, hcut, hmap⟩ := source_uniform_adaptedFourier r hr (2*m) (by positivity)
-  refine ⟨N, hN, fun w => ?_⟩
+  refine ⟨N, hN, hcut, fun w => ?_⟩
   let : CompleteSpace (PeriodicFourierLebesgue (2:ℝ) (w.negativeSobolev r) ⊤) :=
     PeriodicFourierLebesgue.completeSpace _ _ (w.hasTemperedInverse_negativeSobolev r)
   obtain ⟨hf, hspec⟩ := hmap w

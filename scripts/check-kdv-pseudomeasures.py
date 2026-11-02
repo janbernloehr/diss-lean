@@ -31,8 +31,10 @@ view = root / '.lake/article-check/lib/lean'
 logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
+    'NLS.SequenceSpaces.ConjugateReflection',
     'NLS.SequenceSpaces.WeightedAnalyticRealization',
     'NLS.SequenceSpaces.EvenTailReplacement',
+    'NLS.SequenceSpaces.EvenTailConjugation',
     'NLS.ComplexAnalysis.JointSpectralDerivative',
     'NLS.ComplexAnalysis.AnalyticImplicitRoot',
     'NLS.ComplexAnalysis.AnalyticImplicitBanachRoot',
@@ -103,6 +105,7 @@ modules = [
     'NLS.KdV.PseudomeasureBilinearSymmetry',
     'NLS.KdV.PseudomeasureLocalization',
     'NLS.KdV.PseudomeasureCoefficients',
+    'NLS.KdV.PseudomeasureConjugation',
     'NLS.KdV.PseudomeasureWeightInclusion',
     'NLS.KdV.PseudomeasureWeightedCoefficients',
     'NLS.KdV.PseudomeasureReconstructionAnalytic',
@@ -122,6 +125,7 @@ modules = [
     'NLS.KdV.PseudomeasureComplexCounting',
     'NLS.KdV.PseudomeasureSpectralLipschitz',
     'NLS.KdV.PseudomeasureDiagonalRoot',
+    'NLS.KdV.PseudomeasureDiagonalRootConjugation',
     'NLS.KdV.PseudomeasureDiagonalRootAnalytic',
     'NLS.KdV.PseudomeasureRootSeparation',
     'NLS.KdV.PseudomeasureRealPairs',
@@ -186,6 +190,7 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralAdaptedCoefficients',
     'NLS.Articles.KdVPseudomeasures.SpectralAdaptedFourier',
     'NLS.Articles.KdVPseudomeasures.SpectralAdaptedInverse',
+    'NLS.Articles.KdVPseudomeasures.SpectralRealAdapted',
     'NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]

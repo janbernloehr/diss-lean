@@ -1,0 +1,112 @@
+{
+  "source": "arXiv:1610.00278v1 actual physical coefficient symmetry,source Lemma2.17 and Section2.6 Proposition2.18 real-type dependencies.",
+  "main_theorems_verified": false,
+  "real_type_symmetry_verified": true,
+  "actual_diagonal_root_real_on_real_potentials": true,
+  "actual_adapted_map_commutes_with_original_conjugation": true,
+  "actual_analytic_inverse_preserves_full_original_real_source_locus_on_half_ball": true,
+  "full_source_propositions_2_18_2_19_verified": false,
+  "modules": [
+    "NLS/SequenceSpaces/EvenTailConjugation.lean",
+    "NLS/KdV/PseudomeasureConjugation.lean",
+    "NLS/KdV/PseudomeasureDiagonalRootConjugation.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralRealAdapted.lean"
+  ],
+  "declarations": [
+    "NLS.evenTailReplacement_conj_of_pairs",
+    "NLS.KdV.endpointConjugate",
+    "NLS.KdV.endpointConjugate_apply",
+    "NLS.KdV.norm_endpointConjugate",
+    "NLS.KdV.endpointConjugate_involutive",
+    "NLS.KdV.endpointConjugate_sub",
+    "NLS.KdV.mem_reducedHillStrip_conj",
+    "NLS.KdV.reducedHillSymbol_conj",
+    "NLS.KdV.unshiftedEndpointHillPerturbation_conj",
+    "NLS.KdV.endpointHillTailInverse_conj",
+    "NLS.KdV.negativeModulation_conj",
+    "NLS.KdV.endpointHillCorrectedMode_conj",
+    "NLS.KdV.endpointCoefficients_conj",
+    "NLS.KdV.endpointHillDiagonalRoot_conj",
+    "NLS.KdV.endpointHillDiagonalRoot_im_eq_zero",
+    "NLS.Articles.KdVPseudomeasures.sourceWeightedConjugate",
+    "NLS.Articles.KdVPseudomeasures.sourceWeightedConjugate_val",
+    "NLS.Articles.KdVPseudomeasures.norm_sourceWeightedConjugate",
+    "NLS.Articles.KdVPseudomeasures.sourceForgetWeight_conj",
+    "NLS.Articles.KdVPseudomeasures.sourceEndpointCoefficients_conj",
+    "NLS.Articles.KdVPseudomeasures.sourceDiagonalRoot_conj",
+    "NLS.Articles.KdVPseudomeasures.sourceDiagonalRoot_im_eq_zero_of_real",
+    "NLS.Articles.KdVPseudomeasures.sourceEndpointEntries_conj",
+    "NLS.Articles.KdVPseudomeasures.sourceAdaptedCouplings_conj",
+    "NLS.Articles.KdVPseudomeasures.sourceAdaptedFourierValues_conj",
+    "NLS.Articles.KdVPseudomeasures.sourceWeightedDiagonalRoot_im_eq_zero_of_real",
+    "NLS.Articles.KdVPseudomeasures.sourceAdaptedCouplings_real",
+    "NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_conj",
+    "NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_real",
+    "NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_real_iff",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_real_adapted_inverse"
+  ],
+  "results": [
+    "Physical endpointConjugate is the verified conjugate reflection of ORIGINAL Fourier coefficients,with norm preservation,involution and exact subtraction. The full corrected real-part strip and free complementary Fourier symbol obey physical conjugation.",
+    "The ACTUAL infinite Fourier perturbation commutes with physical conjugation at conjugate(q),conjugate(lambda),by the exact Fourier row formula and index reversal. Applying this to the actual tail equation and using endpointHillTailInverse_unique proves conjugation of the bounded tail inverse. No spectral reality assertion substitutes for this operator identity.",
+    "Physical conjugation swaps the two resonant modulation forcings and the ACTUAL corrected Fourier columns. Existing physical bilinear Green symmetry supplies equality of the two diagonals. Consequently the actual diagonal satisfies a(conjugate(q),conjugate(lambda))=conjugate(a(q,lambda)),and the upper/lower physical couplings swap and conjugate.",
+    "Uniqueness on the ENTIRE corrected strip proves endpointHillDiagonalRoot_conj for the actual constructed root. In particular the actual alpha has zero imaginary part for real potentials. Alpha is still an auxiliary diagonal root,not asserted to be an eigenvalue or midpoint.",
+    "The article adapter proves these identities for the ENTIRE original smooth-test distributions and exact original norms. sourceDiagonalRoot_im_eq_zero_of_real and sourceWeightedDiagonalRoot_im_eq_zero_of_real now prove the previously open physical real-valuedness of alpha in every source spectral weight. These complement the already proved source Lemma2.17 equation,analyticity,bounds and uniqueness.",
+    "sourceAdaptedCouplings_conj proves conjugate-swap symmetry at the ACTUAL alpha. For real original potentials,the actual lower coupling equals the conjugate upper coupling. The shared even-tail replacement conjugation lemma requires this symmetry only for the ACTUALLY REPLACED high pairs,not for unused low spectral slots.",
+    "sourceWeightedAdaptedFourier_conj proves that the ACTUAL adapted Fourier map commutes with physical conjugation on EVERY original smooth test. Hence it preserves real original distributions. The common cutoff is still chosen BEFORE BOTH weights and potentials;mean-zero and period-one preservation are unchanged.",
+    "On the verified injective CLOSED radius-m source ball,reality of the adapted image is EQUIVALENT to reality of the original source. source_uniform_real_adapted_inverse constructs the SAME complex analytic inverse near the CLOSED target half-ball and proves that its original distribution is real,mean-zero and period-one iff the target is. It is the actual inverse,not a separately postulated real inverse."
+  ],
+  "domains": {
+    "potentials": "Full original complex period-two weighted endpoint distributions,0<=r<1/2,s=-r. Reality is equality with physical conjugation on EVERY original smooth periodic test,not coefficientwise real-valuedness without index reversal.",
+    "Fourier_conjugation": "q_k maps to conjugate(q_-k). The native conjugate reflection and original smooth-test distribution conjugation are identified exactly. Every source weight is symmetric and the exact norm is preserved.",
+    "operators": "Actual unshifted infinite Fourier perturbation and actual tail inverse. Spectral parameter maps to conjugate(lambda),the corrected real-part strip is unchanged,and resonant mode j maps to -j.",
+    "diagonal": "a(conjugate(q),conjugate(lambda))=conjugate(a(q,lambda)),using proved equality of the two physical diagonals for ALL complex q. Root uniqueness gives alpha(conjugate(q))=conjugate(alpha(q)).",
+    "couplings": "b_plus(conjugate(q),alpha(conjugate(q)))=conjugate(b_minus(q,alpha(q))) and conversely. For real q,the two ACTUAL adapted couplings are conjugates.",
+    "forward_map": "The ENTIRE original distribution of Omega(conjugate(q)) equals the physical conjugate of Omega(q),under the already verified uniform cutoff and original norm bound.",
+    "inverse": "For m>0,ONE cutoff BEFORE weights and potentials gives a complex analytic inverse on the OPEN radius3m/4 target ball. For EVERY target norm<=m/2,its actual preimage lies in OPEN radiusm and is real,mean-zero,period-one iff the target is.",
+    "cutoff": "The existing quantitative contraction/analyticity cutoffs are retained. No new weight-dependent or real-potential-dependent cutoff is introduced."
+  },
+  "conclusions": {
+    "sourceDiagonalRoot_conj": "NLS.Articles.KdVPseudomeasures.sourceDiagonalRoot_conj",
+    "sourceDiagonalRoot_im_eq_zero_of_real": "NLS.Articles.KdVPseudomeasures.sourceDiagonalRoot_im_eq_zero_of_real",
+    "sourceWeightedDiagonalRoot_im_eq_zero_of_real": "NLS.Articles.KdVPseudomeasures.sourceWeightedDiagonalRoot_im_eq_zero_of_real",
+    "sourceAdaptedCouplings_conj": "NLS.Articles.KdVPseudomeasures.sourceAdaptedCouplings_conj",
+    "sourceAdaptedCouplings_real": "NLS.Articles.KdVPseudomeasures.sourceAdaptedCouplings_real",
+    "sourceWeightedAdaptedFourier_conj": "NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_conj",
+    "sourceWeightedAdaptedFourier_real_iff": "NLS.Articles.KdVPseudomeasures.sourceWeightedAdaptedFourier_real_iff",
+    "source_uniform_real_adapted_inverse": "NLS.Articles.KdVPseudomeasures.source_uniform_real_adapted_inverse"
+  },
+  "unchanged_shared_reuse": [
+    {
+      "file": "NLS/SequenceSpaces/ConjugateReflection.lean",
+      "private_source_commit": "f370d7f2212c538812cc82ce9dc25610cd4ea633"
+    }
+  ],
+  "qualifications": [
+    "This proves real-valuedness of alpha on real physical potentials,not merely AnalyticAt over real scalars of a complex-valued map.",
+    "The actual physical operator and tail equations prove conjugation;no assumed spectral/root/coupling symmetry or formal substituted characteristic is used.",
+    "Alpha remains an auxiliary diagonal root. It is not asserted to be a spectral eigenvalue or midpoint.",
+    "The source Proposition2.18 full-image inverse formulation and Proposition2.19 inverse regularity gain remain open. The actual inverse near the closed half-ball and its full original real source preservation are proved.",
+    "All MAIN Theorems1.1,1.3,1.4,5.1,5.9 remain unproved. AppendixB and direct source Theorem2.1(i) remain complete."
+  ],
+  "remaining": [
+    "Complete the full-image analytic inverse formulation of source Proposition2.18 and source Proposition2.19 base-to-stronger-weight inverse regularity. The actual map,weighted Banach analyticity,physical real-type symmetry,source derivative/norm bounds,closed-ball injectivity,closed half-ball coverage and complex analytic inverse preserving the full original real source locus are now PROVED. Forward equality of ENTIRE adapted distributions across weights is also proved;the inverse regularity gain from merely base-space source data remains open.",
+    "Prove the actual spectral gap lower comparison for adapted coefficients and use the original finite-p inverse spectral input to establish source Theorem2.2 regularity and norm-bounded/weak-star-compact isospectral sets. Complete physical periodic/antiperiodic boundary parity,required low interlacing and actual Dirichlet comparison source Theorem2.1(ii). Full direct general-weight Theorem2.1(i) and AppendixB remain complete.",
+    "Construct and verify the ORIGINAL Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original hypotheses,normalizations,quantifiers and topology. All MAIN theorems remain unproved."
+  ],
+  "validation": {
+    "fresh_build": true,
+    "modules_checked": 162,
+    "audited_declarations": 1461,
+    "theorems": 1204,
+    "definitions": 257,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "log": ".lake/article-check/logs/validation-real-adapted.log"
+  }
+}
