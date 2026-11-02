@@ -120,5 +120,42 @@
     "quantifiers": "All real r in the Appendix B results. Every finite p>=1 satisfying (-r-t)*p.toReal>1 in fixed-exponent statements; literal existential statements also require t<-r and use the uniform witness t=-r-2,p=1. Boundedness is derived for convergent sequences and compact sets; no global bounded-range claim is made for arbitrary convergent nets.",
     "new_public_definitions_and_theorems": 31,
     "main_theorems_verified": false
+  },
+  "bounded_physical_limits_and_trajectory_criteria": {
+    "modules": [
+      "NLS/Articles/KdVPseudomeasures/SourceWeakStarLimits.lean",
+      "NLS/Articles/KdVPseudomeasures/SourceWeakStarTrajectories.lean"
+    ],
+    "new_public_theorems": 18,
+    "declarations": [
+      "isClosed_sourceNormBall",
+      "lowerSemicontinuous_sourceNorm",
+      "sourceNorm_le_of_tendsto",
+      "sourceNorm_le_of_mem_closure",
+      "potentialNormBounded_closure_iff",
+      "exists_source_of_tendsto_lower_normBound",
+      "continuous_source_iff_coefficients",
+      "continuous_source_iff_lowerDistribution",
+      "continuous_from_source_iff_seqContinuous",
+      "mem_closure_source_iff_seq_limit",
+      "isClosed_source_iff_seq_limits",
+      "exists_source_subseq_all_lower_of_bounded",
+      "tendsto_sourceTrajectory_iff_lowerDistribution",
+      "tendsto_sourceTrajectory_iff_uniformOn_compacts",
+      "tendsto_sourceTrajectory_iff_uniform_lower",
+      "continuous_sourceTrajectory_iff_uniform_lower",
+      "continuous_sourceTrajectory_iff_seq_uniform_lower",
+      "tendsto_sourceTrajectory_iff_uniform_originalHminusOne"
+    ],
+    "results": [
+      "The original physical endpoint norm is weak-star lower semicontinuous. Any specified bound is retained under weak-star closure and under limits of eventually bounded nets.",
+      "A lower finite-p norm limit of eventually endpoint-bounded original physical potentials is the identical lower distribution of an endpoint potential with the same norm bound and all physical conditions.",
+      "For bounded original physical source sets, ambient closure consists exactly of sequential limits within the set; ambient weak-star closedness can be checked with sequences. Maps out of such bounded sets are continuous iff sequentially continuous.",
+      "One physical weak-star subsequence converges in every admissible original lower finite-p norm space, with the subsequence chosen before the exponents.",
+      "Continuity into bounded physical sets can be tested using all original Fourier coefficients or any admissible lower norm realization.",
+      "Arbitrary-filter compact-open weak-star trajectory convergence equals uniform lower norm convergence on every compact time set. On compact domains it has the explicit single-eventual-error-bound-for-all-times criterion.",
+      "On bounded physical initial-data sets, sequential uniform lower norm dependence suffices for continuity into the full compact-time weak-star trajectory space. In the article range the lower norm can be the identical original H-minus-one norm."
+    ],
+    "qualifications": "Sequential closure and continuity criteria require endpoint norm-bounded source sets. Limit-bound statements for arbitrary filters require a nontrivial filter; uniform compact-time criteria retain a common endpoint-bounded target. No global bounded-range assertion is made for arbitrary convergent nets. All lower exponents retain the exact strict finite-p threshold."
   }
 }

@@ -85,6 +85,8 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SourceSpaces',
     'NLS.Articles.KdVPseudomeasures.RealPredualTopology',
     'NLS.Articles.KdVPseudomeasures.SourceWeakStarTopology',
+    'NLS.Articles.KdVPseudomeasures.SourceWeakStarLimits',
+    'NLS.Articles.KdVPseudomeasures.SourceWeakStarTrajectories',
     'NLS.Articles.KdVPseudomeasures.SpectralEndpoint',
     'NLS.Articles.KdVPseudomeasures.SpectralReduction',
     'NLS.Articles.KdVPseudomeasures.SpectralAnalytic',

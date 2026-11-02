@@ -21,7 +21,9 @@
       "continuous_weakStarInvariantActionTrajectory",
       "continuous_trajectory_iff_originalHminusOne",
       "isEmbedding_sourceLowerDistributionTrajectory",
-      "continuous_sourceTrajectory_iff_lowerDistribution"
+      "continuous_sourceTrajectory_iff_lowerDistribution",
+      "tendsto_sourceTrajectory_iff_uniform_originalHminusOne",
+      "continuous_sourceTrajectory_iff_seq_uniform_lower"
     ],
     "1.4": [
       "sourceLemma2_4_physical_identification",
@@ -111,7 +113,14 @@
     "Weak-star closure commutes with every admissible lower norm realization; bounded weak-star closedness is equivalent to lower-image closedness.",
     "WeakStarPotential explicitly equips the original constrained distribution space with its full Wiener weak-star topology. Source B.1(i)-(iv) now have direct original-norm/original-distribution statements, including all literal existential clauses.",
     "Bounded original source subsets are metrizable; physical weak-star subsequential limits stay within the original source space. Closure and ambient closedness commute with every admissible original lower norm realization.",
-    "On bounded original physical source sets, all original real Wiener tests and every admissible lower norm distribution realization induce the same topology, including arbitrary filters and compact-open trajectory spaces."
+    "On bounded original physical source sets, all original real Wiener tests and every admissible lower norm distribution realization induce the same topology, including arbitrary filters and compact-open trajectory spaces.",
+    "The original physical endpoint norm is weak-star lower semicontinuous. Any specified bound is retained under weak-star closure and under limits of eventually bounded nets.",
+    "A lower finite-p norm limit of eventually endpoint-bounded original physical potentials is the identical lower distribution of an endpoint potential with the same norm bound and all physical conditions.",
+    "For bounded original physical source sets, ambient closure consists exactly of sequential limits within the set; ambient weak-star closedness can be checked with sequences. Maps out of such bounded sets are continuous iff sequentially continuous.",
+    "One physical weak-star subsequence converges in every admissible original lower finite-p norm space, with the subsequence chosen before the exponents.",
+    "Continuity into bounded physical sets can be tested using all original Fourier coefficients or any admissible lower norm realization.",
+    "Arbitrary-filter compact-open weak-star trajectory convergence equals uniform lower norm convergence on every compact time set. On compact domains it has the explicit single-eventual-error-bound-for-all-times criterion.",
+    "On bounded physical initial-data sets, sequential uniform lower norm dependence suffices for continuity into the full compact-time weak-star trajectory space. In the article range the lower norm can be the identical original H-minus-one norm."
   ],
   "workspace_status": "Existing private article worktree retained; validated milestones are committed and pushed on its article branch under the active goal. The pending workspace decision does not change canonical source/build read-only isolation. No workspace attachment or canonical integration is performed.",
   "goal_turn_classification": "progress"

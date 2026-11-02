@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Actual singular Hill algebraic root spaces, exact compact-resolvent transport and generalized-eigenvector endpoint regularity",
+  "phase": "Appendix B consequences: exact endpoint bounds under weak-star and lower norm limits, bounded sequential closures and uniform compact-time physical trajectory topology",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
@@ -66,6 +66,8 @@
     "NLS/Articles/KdVPseudomeasures/SourceSpaces.lean",
     "NLS/Articles/KdVPseudomeasures/RealPredualTopology.lean",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarTopology.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarLimits.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarTrajectories.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralAnalytic.lean",
@@ -74,11 +76,11 @@
     "NLS/Articles/KdVPseudomeasures/SpectralMultiplicity.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 534,
+  "proved_theorems": 552,
   "definitions": 148,
   "axiom_audit": {
     "method": "Lean #print axioms on every source-inventoried public definition/theorem, with nested namespaces and qualified names supported. Exact inventory/audit/output set match, followed by allowlist check. Private imported proofs are covered transitively.",
-    "declarations": 682,
+    "declarations": 700,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -178,10 +180,17 @@
     "Actual full algebraic root spaces are finite dimensional globally in complex lambda and stabilize after finitely many steps. Actual algebraic multiplicity is defined from their finite natural dimension, equals compact-resolvent algebraic multiplicity and is positive exactly on the actual physical spectrum.",
     "Every generalized eigenvector has an original H1 representative with an original H1 right-hand side. AppendixC.2 therefore gives two-order improved endpoint regularity for the entire physical algebraic root space, preserving the whole original smooth-test distribution.",
     "Exact original complex source wrappers retain all domain, normalization and full-root-space conclusions. No equality with the analytic order of the endpoint determinant, algebraic bound2 or semisimplicity claim is inferred.",
-    "All67 modules were rebuilt from a fresh empty private output view. The exact682-public-definition/theorem inventory, audit and axiom-report sets agree. No warnings, diagnostic suggestions, sorryAx or nonstandard axioms occurred."
+    "All67 modules were rebuilt from a fresh empty private output view. The exact682-public-definition/theorem inventory, audit and axiom-report sets agree. No warnings, diagnostic suggestions, sorryAx or nonstandard axioms occurred.",
+    "The original physical endpoint norm is weak-star lower semicontinuous. Any specified bound is retained under weak-star closure and under limits of eventually bounded nets.",
+    "A lower finite-p norm limit of eventually endpoint-bounded original physical potentials is the identical lower distribution of an endpoint potential with the same norm bound and all physical conditions.",
+    "For bounded original physical source sets, ambient closure consists exactly of sequential limits within the set; ambient weak-star closedness can be checked with sequences. Maps out of such bounded sets are continuous iff sequentially continuous.",
+    "One physical weak-star subsequence converges in every admissible original lower finite-p norm space, with the subsequence chosen before the exponents.",
+    "Continuity into bounded physical sets can be tested using all original Fourier coefficients or any admissible lower norm realization.",
+    "Arbitrary-filter compact-open weak-star trajectory convergence equals uniform lower norm convergence on every compact time set. On compact domains it has the explicit single-eventual-error-bound-for-all-times criterion.",
+    "On bounded physical initial-data sets, sequential uniform lower norm dependence suffices for continuity into the full compact-time weak-star trajectory space. In the article range the lower norm can be the identical original H-minus-one norm."
   ],
-  "source_correspondence": "The actual closed original H-minus-one Hill operator, full compact resolvent, global point-spectrum criterion and finite bounded spectral regions remain proved for the source endpoint range. Actual physical algebraic root spaces are now proved equal, at every finite chain level and at the full union, to the nonzero generalized eigenspaces of any actual compact resolvent. They are finite dimensional, stabilize after finitely many steps and define actual physical algebraic multiplicities, positive exactly on the spectrum. Every generalized eigenvector has order2-r infinity regularity with identical original distribution. Comparison of these actual multiplicities with analytic orders of the actual two-mode determinant remains open, as do canonical spectral labels/asymptotic enumeration, eventual corrected-strip assignment, physical gap/Dirichlet estimates, inverse regularity, Birkhoff maps and actual KdV main theorem constructions. All main theorem completion flags remain false.",
-  "build_isolation": "All67 modules rebuilt in a fresh empty private output view; canonical/package imports stay read-only symlinks and every compiler destination is checked to remain private. Exact682-declaration audit passed without warnings. Canonical tracked sources and build outputs were not written.",
+  "source_correspondence": "All Appendix B.1(i)-(iv) conclusions were already proved. This continuation adds exact original endpoint bound preservation, lower norm limit recovery, bounded sequential closure/continuity criteria and explicit uniform compact-time trajectory criteria. All distribution normalizations and physical constraints are retained. No actual KdV flow is assumed or constructed by these topology lemmas. The existing singular Hill spectral and root-space results are unchanged; their remaining determinant-order, spectral-label and main-theorem obligations remain open. All main theorem completion flags remain false.",
+  "build_isolation": "All69 modules rebuilt in a fresh empty private output view; canonical/package imports stay read-only symlinks and every compiler destination is checked to remain private. Exact700-declaration audit passed without warnings or tactic suggestions. Canonical tracked sources and build outputs were not written.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
@@ -247,13 +256,15 @@
     "NLS/Articles/KdVPseudomeasures/SourceSpaces.lean": "6edca9a208e8907aea31c16bfed9259409a5dfadb403a4d9c5776cef104cda83",
     "NLS/Articles/KdVPseudomeasures/RealPredualTopology.lean": "5f3475f566b679766c434d4e7a17f1b45f0b1431adabba2fd793e94be335a1ab",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarTopology.lean": "1b0ea267b508e2342e9d4914221fde4f7d21818a6dc9f1a4ead9f17fd24023f8",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarLimits.lean": "e15159ff276dd52d5f4b38f79d80c8492f82842fd1d41fc1bc1b97ec5c6cf5df",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarTrajectories.lean": "551c221bd4b5fb475278d550ab078750a51213a315a06d34fc2fa98ca23f54f1",
     "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean": "62c67807890561beb0cdecd5f27538f68a43e2a8d2a7dbe1be7e5b1e9f40f8b4",
     "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean": "fab4636881beb929d63dfc108d2f1dcccb4a378d9fa13a6fbce180ed1cbaec31",
     "NLS/Articles/KdVPseudomeasures/SpectralAnalytic.lean": "adfb2bfa36acc624c77753f9b1756b6b14602e5a17c364d5dd5f948f6378bf1c",
     "NLS/Articles/KdVPseudomeasures/SpectralCoefficients.lean": "36579b70fe03c0416a74ae900a9844090bd2689e788b43bd398eeff66d4d1841",
     "NLS/Articles/KdVPseudomeasures/SpectralResolvent.lean": "942a045acfdb02962e3da1aee171a52b9656c6ba46d375a031725b13b145c652",
     "NLS/Articles/KdVPseudomeasures/SpectralMultiplicity.lean": "dee6bd768ae0e46dc60501527061e7741ce80012972674dcb3d2c6318fc95661",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "d3fd181918f98ab388691c8e37a5dcf75b25b754f6adee8845ec89932f72c970"
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "b8cd7619bf46591a9f9a8145096d4a2b79d8184150c9eae4ff153ac60f31bb2c"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -261,13 +272,13 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 636,
-    "newly_authored_declarations_this_continuation": 46,
-    "new_theorems": 40,
-    "new_definitions": 6,
+    "previous_checked_declarations": 682,
+    "newly_authored_declarations_this_continuation": 18,
+    "new_theorems": 18,
+    "new_definitions": 0,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 682,
-    "previous_reuse": "Prior pinned shared copies remain unchanged and rechecked. Generic LinearPMapRootSpace and CompactGeneralized facts are reused as read-only shared imports and audited transitively."
+    "total_checked_declarations": 700,
+    "previous_reuse": "Existing verified imports remain unchanged and are covered by the transitive axiom audit."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -298,7 +309,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-physical-root-spaces.log",
+  "validation_log": ".lake/article-check/logs/validation-source-limits-trajectories.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",

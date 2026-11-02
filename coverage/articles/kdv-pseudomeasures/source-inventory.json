@@ -65,7 +65,9 @@
         "NLS.Articles.KdVPseudomeasures.isEmbedding_originalRealWienerEvaluations_on_bounded",
         "NLS.Articles.KdVPseudomeasures.potentialHminusOne_val",
         "NLS.Articles.KdVPseudomeasures.isEmbedding_sourceLowerDistributionTrajectory",
-        "NLS.Articles.KdVPseudomeasures.continuous_sourceTrajectory_iff_lowerDistribution"
+        "NLS.Articles.KdVPseudomeasures.continuous_sourceTrajectory_iff_lowerDistribution",
+        "NLS.Articles.KdVPseudomeasures.tendsto_sourceTrajectory_iff_uniform_originalHminusOne",
+        "NLS.Articles.KdVPseudomeasures.continuous_sourceTrajectory_iff_seq_uniform_lower"
       ],
       "qualification": "These are proved topology/generic flow dependencies, not the physical KdV main theorem."
     },
@@ -141,7 +143,20 @@
         38
       ],
       "content": "All real s: unit-ball weak-star compactness, sequential compactness and metrizability; for sequences weak-star convergence iff boundedness plus coefficient convergence iff boundedness plus convergence in a lower weighted finite-p space with (s-sigma)*p>1; compactness equivalences and coincidence of induced topologies on bounded subsets.",
-      "status": "Proved in generalized weighted endpoint spaces and directly on WeakStarPotential(r), which retains the original physical distribution. All B.1(i)-(iv) conclusions include exact original norms, finite-p strict thresholds and literal existential clauses. Bounded closure, subsequences, ambient lower-image closedness, original real-Wiener testing and compact-open trajectory topology are proved. No physical KdV main theorem completion is inferred."
+      "status": "Proved in generalized weighted endpoint spaces and directly on WeakStarPotential(r), which retains the original physical distribution. All B.1(i)-(iv) conclusions include exact original norms, finite-p strict thresholds and literal existential clauses. Bounded closure, subsequences, ambient lower-image closedness, original real-Wiener testing and compact-open trajectory topology are proved. No physical KdV main theorem completion is inferred.",
+      "additional_consequences": [
+        "The original physical endpoint norm is weak-star lower semicontinuous. Any specified bound is retained under weak-star closure and under limits of eventually bounded nets.",
+        "A lower finite-p norm limit of eventually endpoint-bounded original physical potentials is the identical lower distribution of an endpoint potential with the same norm bound and all physical conditions.",
+        "For bounded original physical source sets, ambient closure consists exactly of sequential limits within the set; ambient weak-star closedness can be checked with sequences. Maps out of such bounded sets are continuous iff sequentially continuous.",
+        "One physical weak-star subsequence converges in every admissible original lower finite-p norm space, with the subsequence chosen before the exponents.",
+        "Continuity into bounded physical sets can be tested using all original Fourier coefficients or any admissible lower norm realization.",
+        "Arbitrary-filter compact-open weak-star trajectory convergence equals uniform lower norm convergence on every compact time set. On compact domains it has the explicit single-eventual-error-bound-for-all-times criterion.",
+        "On bounded physical initial-data sets, sequential uniform lower norm dependence suffices for continuity into the full compact-time weak-star trajectory space. In the article range the lower norm can be the identical original H-minus-one norm."
+      ],
+      "additional_modules": [
+        "NLS/Articles/KdVPseudomeasures/SourceWeakStarLimits.lean",
+        "NLS/Articles/KdVPseudomeasures/SourceWeakStarTrajectories.lean"
+      ]
     },
     {
       "label": "2.4 / 2.5",

@@ -58,6 +58,8 @@ import NLS.Articles.KdVPseudomeasures.TrajectoryTopology
 import NLS.Articles.KdVPseudomeasures.SourceSpaces
 import NLS.Articles.KdVPseudomeasures.RealPredualTopology
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarTopology
+import NLS.Articles.KdVPseudomeasures.SourceWeakStarLimits
+import NLS.Articles.KdVPseudomeasures.SourceWeakStarTrajectories
 import NLS.Articles.KdVPseudomeasures.SpectralEndpoint
 import NLS.Articles.KdVPseudomeasures.SpectralReduction
 import NLS.Articles.KdVPseudomeasures.SpectralAnalytic
@@ -65,7 +67,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralCoefficients
 import NLS.Articles.KdVPseudomeasures.SpectralResolvent
 import NLS.Articles.KdVPseudomeasures.SpectralMultiplicity
 
-/-! Exact public-declaration transitive axiom audit. -/
+/-! Transitive axiom audit of every public article dependency. -/
 
 #print axioms NLS.FunctionalAnalysis.mem_genEigenspace_succ_iff
 #print axioms NLS.FunctionalAnalysis.genEigenspace_le_range_of_ne_zero
@@ -701,6 +703,24 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicity
 #print axioms NLS.Articles.KdVPseudomeasures.isEmbedding_sourceLowerDistributionTrajectory
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_sourceTrajectory_iff_lowerDistribution
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLowerDistribution_eq_potentialHminusOne
+#print axioms NLS.Articles.KdVPseudomeasures.isClosed_sourceNormBall
+#print axioms NLS.Articles.KdVPseudomeasures.lowerSemicontinuous_sourceNorm
+#print axioms NLS.Articles.KdVPseudomeasures.sourceNorm_le_of_tendsto
+#print axioms NLS.Articles.KdVPseudomeasures.sourceNorm_le_of_mem_closure
+#print axioms NLS.Articles.KdVPseudomeasures.potentialNormBounded_closure_iff
+#print axioms NLS.Articles.KdVPseudomeasures.exists_source_of_tendsto_lower_normBound
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_source_iff_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_source_iff_lowerDistribution
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_from_source_iff_seqContinuous
+#print axioms NLS.Articles.KdVPseudomeasures.mem_closure_source_iff_seq_limit
+#print axioms NLS.Articles.KdVPseudomeasures.isClosed_source_iff_seq_limits
+#print axioms NLS.Articles.KdVPseudomeasures.exists_source_subseq_all_lower_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceTrajectory_iff_lowerDistribution
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceTrajectory_iff_uniformOn_compacts
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceTrajectory_iff_uniform_lower
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_sourceTrajectory_iff_uniform_lower
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_sourceTrajectory_iff_seq_uniform_lower
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceTrajectory_iff_uniform_originalHminusOne
 #print axioms NLS.Articles.KdVPseudomeasures.spectralEndpointConstant
 #print axioms NLS.Articles.KdVPseudomeasures.source_negativeWeight_apply
 #print axioms NLS.Articles.KdVPseudomeasures.spectralEndpointConstant_one_le
