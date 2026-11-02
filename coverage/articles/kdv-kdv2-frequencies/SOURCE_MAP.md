@@ -163,7 +163,10 @@ The frequency-moment analytic and contour-decomposition steps of Lemmas
 3.1, 3.2 and 4.1 have since been proved in the shared `NLS/KdV` layer;
 see [FREQUENCY_MOMENTS.md](FREQUENCY_MOMENTS.md). The actual spectral
 factors, zeroth periods, physical frequency identification, sharp estimates
-and infinite-series convergence remain open.
+remain open. The fixed-mode infinite-series summation implication from
+local spectral remainder bounds is now proved; see
+[FREQUENCY_SERIES.md](FREQUENCY_SERIES.md). No actual spectral estimate
+or main theorem is thereby marked verified.
 
 ## Integration boundary
 

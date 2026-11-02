@@ -18,10 +18,12 @@ its existing Hilbert specialization and a transitive audit.
 | `NLS/Dynamics/FixedTimePhaseObstruction.lean` | A relative phase tending to pi rules out a common fixed-time output limit, independently of convergence of the individual frequencies. |
 | `NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion.lean` | Finite signed perturbations with an exact prescribed mass increment; endpoint regularity; norm convergence for every sigma<1/2. |
 | `NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension.lean` | Fixed-time coordinate nonextension via two constructed approximating families, given the actual correction and endpoint phase identity. |
+| `NLS/SequenceSpaces/LocallyBoundedAnalyticSummation.lean` | Analytic ℓ¹ realization from local norm bounds, absolute summability and locally uniform convergence. |
+| `NLS/KdV/FrequencySeriesBounds.lean` and `NLS/KdV/FrequencySeries.lean` | Exact quadratic-denominator kernel bounds; Hölder and bounded-kernel row estimates; analytic positive-index sums with locally uniform positive partial sums, given local spectral remainder bounds. |
 | `NLS/KdV/FrequencyMoments.lean` | Literal weighted moments, Banach analyticity, odd and analytic-removal cancellations, norm estimate and binomial period expansions. |
 | `NLS/KdV/FrequencyContourDecomposition.lean` | Exact cubic/fifth-power coefficients and finite-gap normalized exterior-period decompositions, using the proved finite-hole Cauchy theorem. |
 
-All twelve selected modules compile with pinned **Lean 4.33.1**, commit
+All fifteen selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -31,6 +33,9 @@ No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 Final output of `bash scripts/check-kdv-kdv2-frequencies.sh`:
 
 ```text
+PASS NLS/SequenceSpaces/LocallyBoundedAnalyticSummation
+PASS NLS/KdV/FrequencySeriesBounds
+PASS NLS/KdV/FrequencySeries
 PASS NLS/SequenceSpaces/NonnegativeEnergyDivergence
 PASS NLS/SequenceSpaces/HilbertEnergyDivergence
 PASS NLS/Dynamics/ActionDependentWeightedPhaseFlow
@@ -43,11 +48,11 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 218 candidate declarations; 1593 declarations total.
+Axiom audit passed: 244 candidate declarations; 1658 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the twelve selected modules (including generated and private declarations)
+the fifteen selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -70,6 +75,9 @@ compiled imports, and writes these ordinary output files solely under this
 worktree's `.lake/build/lib/lean/`:
 
 ```text
+NLS/SequenceSpaces/LocallyBoundedAnalyticSummation.olean
+NLS/KdV/FrequencySeriesBounds.olean
+NLS/KdV/FrequencySeries.olean
 NLS/SequenceSpaces/NonnegativeEnergyDivergence.olean
 NLS/SequenceSpaces/HilbertEnergyDivergence.olean
 NLS/Dynamics/ActionDependentWeightedPhaseFlow.olean
@@ -140,5 +148,7 @@ It checks the actual contour algebra, not construction of spectral factors
 or physical frequencies. Zeroth-period normalization and spectral analytic
 properties remain explicit hypotheses to be discharged by their
 construction. Neither finite sums nor the general contour norm estimate
-replace the sharp spectral bounds and locally uniform infinite-series
-convergence needed for Theorems 1.2 and 1.9.
+replace the sharp spectral bounds needed for Theorems 1.2 and 1.9.
+The subsequent summation milestone proves the infinite-series convergence
+and analyticity implication from local remainder bounds; the actual
+spectral estimates remain open. See `FREQUENCY_SERIES.md`.

@@ -291,6 +291,48 @@
       "scope": "Finite-hole deformation and exact normalized coefficients; zeroth spectral periods and Hamiltonian-frequency identity still required",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "cb7817eb75d37a18fd90e08227f1f7e4abfc72ae04537cd68d3d59692bd8821e"
+    },
+    {
+      "path": "NLS/SequenceSpaces/LocallyBoundedAnalyticSummation.lean",
+      "source_labels": [
+        "Theorems 3.4 and 4.3 analytic summation dependency"
+      ],
+      "source_pages": [
+        31,
+        42,
+        43
+      ],
+      "scope": "Generic analytic sum and locally uniform partial sums from local actual ℓ¹ norm bounds",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c18ec66b1b2615278d637bd3206fc933838c9534803534015dd1646063cf6f43"
+    },
+    {
+      "path": "NLS/KdV/FrequencySeriesBounds.lean",
+      "source_labels": [
+        "Theorems 3.4 and 4.3 fixed-mode kernel estimates"
+      ],
+      "source_pages": [
+        31,
+        42,
+        43
+      ],
+      "scope": "Exact quadratic-denominator kernel estimates and locally bounded analytic row sums; sharp spectral remainders remain explicit inputs",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5402023754c2552d52487a4d3820b50f54cd55534eb67e909c090e4bca6037d8"
+    },
+    {
+      "path": "NLS/KdV/FrequencySeries.lean",
+      "source_labels": [
+        "Theorems 3.4 and 4.3 positive-index summation step"
+      ],
+      "source_pages": [
+        31,
+        42,
+        43
+      ],
+      "scope": "Absolute and locally uniform positive sums with analytic limits given spectral remainder estimates; no physical frequency identification",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5e00d2e28bd3789438cd71bc0fad33970e05ef8f2cfe50030f77714f7ceac320"
     }
   ],
   "dependencies_needed": [
@@ -321,8 +363,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 218,
-    "total_declarations_audited": 1593,
+    "candidate_declarations_audited": 244,
+    "total_declarations_audited": 1658,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -367,9 +409,10 @@
   "progress_record": "PROGRESS.md",
   "endpoint_mass_record": "MASS_NONEXTENSION.md",
   "shared_developments_inspected": {
-    "articles/kdv-estimates": "0b58631c37a1bf066ea0d21d5179b1a43844ed5c",
-    "articles/kdv-convexity": "be9eba062019e5eb715d4eaf62ce25b0038140fb"
+    "articles/kdv-estimates": "1806362e18c4924a0e58e902455a42d8dc8c90d3",
+    "articles/kdv-convexity": "2135a680ab46ba7c476060e9a66db7d5753f8b29"
   },
   "fixed_time_record": "FIXED_TIME_NONEXTENSION.md",
-  "frequency_moment_record": "FREQUENCY_MOMENTS.md"
+  "frequency_moment_record": "FREQUENCY_MOMENTS.md",
+  "frequency_series_record": "FREQUENCY_SERIES.md"
 }

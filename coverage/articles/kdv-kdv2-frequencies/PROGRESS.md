@@ -150,3 +150,26 @@ required by the main theorems. All twelve selected modules pass strict
 checks; the transitive audit covers 218 selected-module declarations and
 1593 declarations including imported NLS dependencies. Main-theorem
 completion remains unset.
+
+
+## Infinite frequency-series milestone
+
+The summation step of Theorems 3.4 and 4.3 is now proved with explicit
+spectral remainder estimates as inputs. It retains the exact quadratic
+denominator geometry, handles the diagonal separately, and concludes
+absolute summability, analytic sums and locally uniform convergence of
+ordinary positive partial sums. The general ℓ¹ analytic realization and
+summation proof reuses existing Banach sequence and Dini theory.
+See [FREQUENCY_SERIES.md](FREQUENCY_SERIES.md) for the declaration map,
+constants, exponent qualifications and remaining spectral obligations.
+
+All fifteen selected modules pass strict compilation. The transitive
+axiom audit covers 244 selected declarations and 1658 declarations including
+imported NLS dependencies. Actual main theorems remain open.
+
+The shared branches were inspected through Hill commit `1806362` and
+action/discriminant commit `2135a68`. The latter newly constructs an actual
+continuous-potential discriminant and local primitive charts; it provides
+a concrete dependency for the next construction step, while rough-potential
+identification, global gap normalization and psi functions remain open.
+These commits were not imported by this summation milestone.

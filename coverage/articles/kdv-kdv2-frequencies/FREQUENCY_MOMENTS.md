@@ -101,3 +101,11 @@ Poisson/outer-period identities; sharp spectral moment estimates; locally
 uniform convergence of the infinite weighted moment sums; action descent;
 and the stated asymptotics and compact derivatives. These remain explicit
 open obligations in the main source map.
+
+
+The subsequent [frequency-series milestone](FREQUENCY_SERIES.md) proves
+absolute convergence, analyticity and locally uniform positive partial
+sums from explicit local remainder bounds. The actual spectral moment
+estimates and physical frequency identification remain open. The counts
+above are historical for the contour milestone; `VALIDATION.md` records
+the current complete focused run.
