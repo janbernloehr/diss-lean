@@ -5083,3 +5083,11 @@ import NLS.KdV.HillL2RegularBoundary
 import NLS.ComplexAnalysis.RealCoshTrace
 import NLS.KdV.HillL2BoundaryGapProfile
 import NLS.KdV.HillL2UpperCutAgreement
+
+import NLS.ComplexAnalysis.UpperLogarithmBoundary
+import NLS.KdV.HillL2AllBoundaryLimits
+import NLS.ComplexAnalysis.ParametricUpperLogarithmBoundary
+import NLS.KdV.HillL2BoundaryLabelContinuity
+import NLS.KdV.HillL2AllEndpointNormalization
+import NLS.KdV.HillL2GlobalGapBoundaryValues
+import NLS.KdV.HillL2BandContinuation

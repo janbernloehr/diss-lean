@@ -157,6 +157,13 @@ import NLS.ComplexAnalysis.RealCoshTrace
 import NLS.KdV.HillL2BoundaryGapProfile
 import NLS.KdV.HillL2UpperCutAgreement
 import Lean.Util.CollectAxioms
+import NLS.ComplexAnalysis.UpperLogarithmBoundary
+import NLS.KdV.HillL2AllBoundaryLimits
+import NLS.ComplexAnalysis.ParametricUpperLogarithmBoundary
+import NLS.KdV.HillL2BoundaryLabelContinuity
+import NLS.KdV.HillL2AllEndpointNormalization
+import NLS.KdV.HillL2GlobalGapBoundaryValues
+import NLS.KdV.HillL2BandContinuation
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -299,7 +306,10 @@ run_cmd do
     ``NLS.ComplexAnalysis.abs_real_cosh_trace_of_re_ne_zero,
     ``NLS.ComplexAnalysis.re_eq_zero_of_real_cosh_trace_band,
     ``NLS.ComplexAnalysis.re_eq_arcosh_of_real_cosh_trace_gap,
-    ``NLS.ComplexAnalysis.phase_eq_on_of_sin_eq_zero]
+    ``NLS.ComplexAnalysis.phase_eq_on_of_sin_eq_zero,
+    ``NLS.ComplexAnalysis.exists_upper_logarithm_boundary_limit,
+    ``NLS.ComplexAnalysis.continuous_real_boundary_of_upper_limits,
+    ``NLS.ComplexAnalysis.continuous_boundary_logarithm_of_constant_exponential]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
