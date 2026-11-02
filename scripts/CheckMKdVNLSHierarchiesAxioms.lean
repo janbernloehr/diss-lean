@@ -7,6 +7,7 @@ import NLS.Articles.MKdVNLSHierarchies.GradientSymmetries
 import NLS.ZakharovShabat.NLSRiccatiResolvent
 import NLS.DifferentialPolynomial.RiccatiResolventVariation
 import NLS.Articles.MKdVNLSHierarchies.GradientRecurrence
+import NLS.Articles.MKdVNLSHierarchies.SmoothHierarchy
 import Lean.Util.CollectAxioms
 
 /-! Audit every new public declaration and its generated auxiliary declarations.
@@ -82,6 +83,14 @@ run_cmd do
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[``NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero,
     ``NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler,
+    ``NLS.DifferentialPolynomial.differentialRiccatiSeries_miura,
+    ``NLS.DifferentialPolynomial.differentialRiccatiSequence_miura,
+    ``NLS.DifferentialPolynomial.derivation_logarithmicPrimitiveCoefficient,
+    ``NLS.MKdV.classicalNLSHamiltonian_odd_diagonal_eq_miuraHill,
+    ``NLS.MKdV.hasDerivAt_classicalMiuraHillHamiltonian,
+    ``NLS.MKdV.classicalMiuraHillGradient_eq_oddNLS,
+    ``NLS.Articles.MKdVNLSHierarchies.proposition6_smooth_miura,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem1_smooth_miura_hierarchy,
     ``NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian,
     ``NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_eq_gradient,
     ``NLS.DifferentialPolynomial.constructed_riccati_resolvent_identities,

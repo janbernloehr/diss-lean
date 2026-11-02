@@ -311,3 +311,63 @@ The goal remains incomplete. Theorems 1, 3 and 4 still require the independent
 all-order mKdV/Hill Hamiltonian identification, the sharp H^m diagonal flow
 extension, and the spectral action, coordinate, bracket and frequency
 comparisons, including the remaining source sign/mean qualifications.
+
+
+## 2026-11-02 — All-order smooth scalar Hill/Miura hierarchy and flow restriction
+
+The scalar Hamiltonian hierarchy is now independently constructed from the
+Hill Riccati recurrence at `q=u_prime+u^2`, with seed `rho_0=-q`, first
+coefficient `rho_1=-Dq`, and scalar quadratic coefficient one. Its Hamiltonian
+of index m is `(-1)^m/2` times the periodic integral of `rho_(2m-2)`.
+This definition does not use the diagonal NLS Hamiltonian. The first two
+members are proved equal to the already specified mKdV mass and energy.
+
+The generic differential-algebra theorem `differentialRiccatiSeries_miura`
+constructs the exact gauge transformation from the canonical diagonal NLS
+Riccati series R. The gauge factor is `1+X R`, which has constant coefficient
+one and therefore a constructed formal inverse. Its correction is
+`D R/(1+X R)`. The new `logarithmicPrimitiveCoefficient` uses the finite
+Taylor coefficient of `log(1+X R)/X`; its derivative is proved equal to each
+correction coefficient by the finite geometric-sum identity. No formal
+convergence assumption, finite-gap hypothesis or caller-supplied Riccati
+solution appears in the resulting coefficient theorem.
+
+`proposition6_smooth_miura` now proves the factor-two periodic Hamiltonian
+identity at every order on smooth complex periodic fields. The independently
+specified scalar density has a certified physical first variation in
+`hasDerivAt_classicalMiuraHillHamiltonian`. Uniqueness of smooth periodic
+variational tests identifies its Euler gradient with an odd NLS gradient
+component. The two odd NLS components agree on the diagonal, as proved by
+the constructed resolvent parity. Combining these results with the existing
+normalized gradient recurrence proves the all-order Gardner/NLS flow
+identity. `theorem1_smooth_miura_hierarchy` includes both that identity and
+actual even NLS Hamiltonian vanishing, for every integer m>=1.
+
+Theorem 1 remains partial: the sharp H^m extension, and full identification
+with the article's spectral mKdV hierarchy, are not asserted by this smooth
+interface. The spectral gaps, action integrals, Birkhoff coordinates,
+brackets and frequencies needed for Theorems 3 and 4 remain open. Theorem 2
+retains its previously verified full original domains and matrix correction.
+
+The latest shared article branches were inspected read-only. The KdV
+convexity branch `963d5bb` supplies independently calibrated low Hill
+coefficients and actual scalar trace estimates; it does not complete the
+all-order mKdV comparison. The mKdV-below-L2 branch `205c11c` adds analytic
+weighted H4 candidates on physical Banach spaces, and the KdV-frequency
+branch `a4d0bd4` adds actual Hill numerators and finite period normalization.
+These do not supply the remaining scalar mKdV action/coordinate comparison;
+no unrelated article target is counted as completed here. The current
+proofs reuse the checked generic Riccati, physical NLS gradient, periodic
+integration and Fourier uniqueness developments in this worktree.
+
+All 59 article/shared modules and the NLS aggregate compiled with the pinned
+Lean 4.33.1 toolchain, `autoImplicit=false`, and warnings as errors. The
+expanded targeted transitive audit passed for 570 declarations and generated
+auxiliaries; the combined aggregate/article audit passed for 45,750 NLS
+declarations. Only `propext`, `Classical.choice` and `Quot.sound` are allowed.
+The public theorem/definition inventory now contains 298 declarations:
+230 theorems and 68 definitions. Validation used the shared build lock,
+read-only pinned compiled imports and private writable outputs; the entire
+dependency tree was not rebuilt from source. No admitted proof, new axiom,
+disabled linter or caller-supplied essential variation identity was added.
+Canonical main remains clean at `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.

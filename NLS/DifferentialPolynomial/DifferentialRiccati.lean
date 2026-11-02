@@ -79,6 +79,26 @@ theorem differentialRiccatiSeries_equation (D : Derivation K A A) (a b : A) :
       PowerSeries.coeff_mul]
     exact differentialRiccatiSequence_recurrence D a b n
 
+/-- The formal Riccati equation uniquely specifies the constructed series. -/
+theorem differentialRiccatiSeries_unique (D : Derivation K A A) (a b : A)
+    (R : PowerSeries A)
+    (hR : R = PowerSeries.C (-b) + powerSeriesDerivation D R * PowerSeries.X +
+      (PowerSeries.C a * (R*R)) * PowerSeries.X^2) :
+    R = differentialRiccatiSeries D a b := by
+  have he := differentialRiccatiSequence_unique D a b (fun n => PowerSeries.coeff n R)
+    (by simpa using congrArg (PowerSeries.coeff 0) hR)
+    (by simpa [PowerSeries.coeff_mul_X_pow'] using congrArg (PowerSeries.coeff 1) hR)
+    (by
+      intro n
+      have hc := congrArg (PowerSeries.coeff (n+2)) hR
+      rw [map_add, map_add, PowerSeries.coeff_C, if_neg (by omega), zero_add,
+        PowerSeries.coeff_mul_X_pow] at hc
+      rw [show n+2 = (n+1)+1 by omega, PowerSeries.coeff_succ_mul_X,
+        PowerSeries.coeff_C_mul] at hc
+      simpa only [coeff_powerSeriesDerivation, PowerSeries.coeff_mul] using hc)
+  ext n
+  simpa only [coeff_differentialRiccatiSeries] using congrFun he n
+
 theorem differentialRiccatiSequence_neg_derivation (D : Derivation K A A) (a b : A) (n : ℕ) :
     differentialRiccatiSequence (-D) a b n = (-1 : A)^n*differentialRiccatiSequence D a b n := by
   have hp (k : ℕ) : D ((-1 : A)^k) = 0 := by

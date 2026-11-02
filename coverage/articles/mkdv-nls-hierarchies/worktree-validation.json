@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 515,
+  "audited_declarations_and_auxiliaries": 570,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -1344,12 +1344,177 @@
       "kind": "theorem",
       "name": "theorem2_ii_corrected",
       "file": "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "differentialRiccatiSeries_unique",
+      "file": "NLS/DifferentialPolynomial/DifferentialRiccati.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "riccatiResolventB_eq_rescale_A_diagonal",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "coeff_riccatiResolventB_even_diagonal",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHierarchyGradient_odd_diagonal_components",
+      "file": "NLS/MKdV/HierarchyGradientRecurrence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "logarithmicPrimitiveCoefficient",
+      "file": "NLS/DifferentialPolynomial/LogarithmicDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "derivation_logarithmicPrimitiveCoefficient",
+      "file": "NLS/DifferentialPolynomial/LogarithmicDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miura_riccati_identity",
+      "file": "NLS/DifferentialPolynomial/MiuraRiccati.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraRiccatiGaugeInverse",
+      "file": "NLS/DifferentialPolynomial/MiuraRiccati.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRiccatiGauge_mul_inverse",
+      "file": "NLS/DifferentialPolynomial/MiuraRiccati.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "differentialRiccatiSeries_miura",
+      "file": "NLS/DifferentialPolynomial/MiuraRiccati.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "differentialRiccatiSequence_miura",
+      "file": "NLS/DifferentialPolynomial/MiuraRiccati.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHillPotentialPolynomial",
+      "file": "NLS/MKdV/MiuraHierarchyHamiltonians.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHillRiccatiPolynomial",
+      "file": "NLS/MKdV/MiuraHierarchyHamiltonians.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalMiuraHillHamiltonian",
+      "file": "NLS/MKdV/MiuraHierarchyHamiltonians.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraDiagonalPolynomialMap",
+      "file": "NLS/MKdV/MiuraHierarchyHamiltonians.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillRiccatiPolynomial_eq_diagonal_plus_derivative",
+      "file": "NLS/MKdV/MiuraHierarchyHamiltonians.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "integral_miuraHillRiccatiPolynomial",
+      "file": "NLS/MKdV/MiuraHierarchyHamiltonians.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHamiltonian_odd_diagonal_eq_miuraHill",
+      "file": "NLS/MKdV/MiuraHierarchyHamiltonians.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalMiuraHillHamiltonian_one",
+      "file": "NLS/MKdV/MiuraHierarchyHamiltonians.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalMiuraHillHamiltonian_two",
+      "file": "NLS/MKdV/MiuraHierarchyHamiltonians.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHamiltonian_even_diagonal_eq_zero",
+      "file": "NLS/MKdV/MiuraHierarchyHamiltonians.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHillHamiltonianPolynomial",
+      "file": "NLS/MKdV/MiuraHierarchyFlowRestriction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "integral_evaluate_miuraHillHamiltonianPolynomial",
+      "file": "NLS/MKdV/MiuraHierarchyFlowRestriction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalMiuraHillGradient",
+      "file": "NLS/MKdV/MiuraHierarchyFlowRestriction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "contDiff_classicalMiuraHillGradient",
+      "file": "NLS/MKdV/MiuraHierarchyFlowRestriction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodic_classicalMiuraHillGradient",
+      "file": "NLS/MKdV/MiuraHierarchyFlowRestriction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalMiuraHillHamiltonian",
+      "file": "NLS/MKdV/MiuraHierarchyFlowRestriction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalMiuraHillGradient_eq_oddNLS",
+      "file": "NLS/MKdV/MiuraHierarchyFlowRestriction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalNLSHierarchyVectorField",
+      "file": "NLS/MKdV/MiuraHierarchyFlowRestriction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalMiuraHillVectorField",
+      "file": "NLS/MKdV/MiuraHierarchyFlowRestriction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHierarchyVectorField_even_diagonal",
+      "file": "NLS/MKdV/MiuraHierarchyFlowRestriction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "proposition6_smooth_miura",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SmoothHierarchy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem1_smooth_miura_hierarchy",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SmoothHierarchy.lean"
     }
   ],
-  "public_declaration_count": 265,
-  "theorem_count": 207,
-  "definition_count": 58,
-  "full_build": "All 54 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 298,
+  "theorem_count": 230,
+  "definition_count": 68,
+  "full_build": "All 59 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
   "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit",
   "sha256": {
@@ -1372,8 +1537,8 @@
     "NLS/ZakharovShabat/ClassicalNLSFourthHamiltonian.lean": "7eb0973075e5414613b80cc73466c087d362422265902d0aa2425bf0a3e38f73",
     "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean": "8f507c2d54caf16dfecb3a42cbaec191cc2c4d1453c5080bc6f877129d32280f",
     "NLS/ZakharovShabat/ClassicalVolterraTrace.lean": "af489d580fb8de14051b7abf002235b0507570e6fab8b2b9aafd7a4fc82be41f",
-    "scripts/check_mkdv_nls.py": "1ca9832a0371f97faa630f82fa2c381dbfe8e1daaa1d7fb8b52da8c0777ed79a",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "5e73eef25e7e5add6361d1ea0b0eb90e233535922eabd40c722828a6264024f6",
+    "scripts/check_mkdv_nls.py": "62f309ef94d596fdadccbd0196781a1d5fb0c0919c06a7e500c124c354af2d99",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "f4d584db649d94a0d7549c832b2623bd6d577527e15a835e2cc014cc789a4e5c",
     "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean": "140b863a21c489adf60995da8e53101c3a7cf0bd66b6dc993b8f54fe0900f306",
     "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "1ab05b74ffcd892bb75226b50d4517286a96f197100a7e86e453b3eecf82534b",
     "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "99944ccf33c348be7a7324ae93bb9559761bccdff6a34fbcd5e719f93bb4aafe",
@@ -1392,9 +1557,9 @@
     "NLS/Articles/MKdVNLSHierarchies/GradientSymmetries.lean": "6d9c5a78ae585509e6ac7a724a7705ece8f2664e13b54f0f46311bf973a24fa1",
     "NLS/DifferentialPolynomial/PowerSeriesDerivation.lean": "6434ba24b8a86ab9e4cfcae4b371e01b73f07d0056137cc7893ad562bab71809",
     "NLS/DifferentialPolynomial/RiccatiResolvent.lean": "872b0969d07ef40a70c763dc7db0a706aefac6d0130614751675e60a5e8dab38",
-    "NLS/DifferentialPolynomial/DifferentialRiccati.lean": "fae3ebf533d18f2326daaadb58edf5bbf10b70219ab893afed48eb0fc8d514f7",
+    "NLS/DifferentialPolynomial/DifferentialRiccati.lean": "4b1b37cebff45cc01e6f8f8a30fe53cbaf75af757794f52f40cc26b48e8e57ed",
     "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean": "2429c2624f85d8a7fe9452430c1dfde0225760b35adf143ef951c6b4308c0190",
-    "NLS/DifferentialPolynomial/RiccatiResolventParity.lean": "df7bee1d370d3c77a2f8a2c6ad100982f97ae78238cfa694e629e65dc1a7e658",
+    "NLS/DifferentialPolynomial/RiccatiResolventParity.lean": "3228af34816ef7bc0fc31f43bd4c2fa6bfd94b93c79dd303f2e2a351b6a60de4",
     "NLS/DifferentialPolynomial/RiccatiResolventVariation.lean": "57323be404ebe674eb02cbd03f164170f283436230cf723cf81e4af3db9496bc",
     "NLS/ZakharovShabat/NLSRiccatiResolvent.lean": "b738cf2502d7bb1912309606d96096c78a390ec284edf3fc01962061a9b0320c",
     "NLS/DifferentialPolynomial/MultiJet.lean": "585b347d3267cb858b8002e3d92750d9b409eafe5b0f5a58a23ce05dae039843",
@@ -1406,12 +1571,17 @@
     "NLS/Fourier/PeriodOneDistributionDerivative.lean": "63388da28ec4f50b25fd5c3a8343e576d9ecf5977ca05688c004b82ee8d1a7e8",
     "NLS/ZakharovShabat/NLSRiccatiResolventVariation.lean": "9ca27b6be4097a6cbcd8d421aea360180978b75f961e3d97809c6a9ba449a576",
     "NLS/ZakharovShabat/NLSRiccatiResolventGradient.lean": "32a77884a27801aca020a735f7222d8e7d2675044dbcaefca5dd9ef4aba97d6b",
-    "NLS/MKdV/HierarchyGradientRecurrence.lean": "d263ef32f6b8d996f6f2e730f59d972fe2a5b1aba090f27e85d4cefccc002b10",
+    "NLS/MKdV/HierarchyGradientRecurrence.lean": "db7650bc43134e51662a8f9a7614f84adbece2b243fe2736ba730b01d9c29f80",
     "NLS/MKdV/SobolevHierarchyGradientRecurrence.lean": "802ea418bc96e67121c7db3bd4ee3f374bbb612d46fa5524cb46e1dd7ab3f1db",
-    "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f"
+    "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f",
+    "NLS/DifferentialPolynomial/LogarithmicDerivative.lean": "f015066fe2957161d29a531cb11300365f6e92f239bc5b692e0262980cc64880",
+    "NLS/DifferentialPolynomial/MiuraRiccati.lean": "a51622b2bf42eaf37ba8d744122e23f092fa03c3959d84361152a20f780a26b1",
+    "NLS/MKdV/MiuraHierarchyHamiltonians.lean": "867e05e2e2941464e1f5da8d022ab1eac8c6e15e4c4e12e4684ef0fd30670d22",
+    "NLS/MKdV/MiuraHierarchyFlowRestriction.lean": "4c423d37c81527b0380aaf2abd8fa975469cb42a97e94cc248662d34a5f76409",
+    "NLS/Articles/MKdVNLSHierarchies/SmoothHierarchy.lean": "badb16925c1d37d1ea09db916002d213e78564bc03f48ba0e930dbd525dbc10c"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 54,
+  "focused_module_count": 59,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -1454,11 +1624,17 @@
       "audit_count": 515,
       "combined_NLS_audit_count": 45695,
       "aggregate_compiled": true
+    },
+    {
+      "milestone": "all-order independent smooth scalar Hill/Miura Hamiltonians, physical first variations and diagonal flow restriction",
+      "audit_count": 570,
+      "combined_NLS_audit_count": 45750,
+      "aggregate_compiled": true
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 45695,
+  "combined_audited_NLS_declarations": 45750,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log"
 }

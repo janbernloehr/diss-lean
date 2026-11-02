@@ -36,6 +36,17 @@ theorem rescale_riccatiResolventInverse_diagonal (D : Derivation K A A) (a : A) 
         PowerSeries.rescale (-1) (riccatiResolventInverse D a a))*riccatiResolventInverse D a a := by ring
     _ = riccatiResolventInverse D a a := by rw [hr, one_mul]
 
+theorem riccatiResolventB_eq_rescale_A_diagonal (D : Derivation K A A) (a : A) :
+    riccatiResolventB D a a = PowerSeries.rescale (-1) (riccatiResolventA D a a) := by
+  simp only [riccatiResolventA, riccatiResolventB, map_mul,
+    ← differentialRiccatiSeries_neg_derivation, rescale_riccatiResolventInverse_diagonal]
+
+theorem coeff_riccatiResolventB_even_diagonal (D : Derivation K A A) (a : A) (m : ℕ) :
+    PowerSeries.coeff (2*m) (riccatiResolventB D a a) =
+      PowerSeries.coeff (2*m) (riccatiResolventA D a a) := by
+  rw [riccatiResolventB_eq_rescale_A_diagonal, PowerSeries.coeff_rescale,
+    pow_mul, neg_one_sq, one_pow, one_mul]
+
 theorem rescale_riccatiResolventCoupling_diagonal (D : Derivation K A A) (a : A) :
     PowerSeries.rescale (-1) (riccatiResolventCoupling D a a) =
       -riccatiResolventCoupling D a a := by

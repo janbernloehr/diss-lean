@@ -44,6 +44,21 @@ private theorem evaluate_diagonalPolynomialMap (u : ℝ → ℂ) (p : Differenti
   simp only [evaluate, Function.comp_def, ite_self]
   rfl
 
+/-- The odd Hamiltonian gradient has equal components on the complex diagonal. -/
+theorem classicalHierarchyGradient_odd_diagonal_components (u : ℝ → ℂ)
+    (hu : ContDiff ℝ ∞ u) (hp : Function.Periodic u 1) (m : ℕ) (x : ℝ) :
+    (classicalNLSHierarchyGradient u u (2*m+1) x).2 =
+      (classicalNLSHierarchyGradient u u (2*m+1) x).1 := by
+  have he : diagonalPolynomialMap (nlsResolventCoefficientB (2*m)) =
+      diagonalPolynomialMap (nlsResolventCoefficientA (2*m)) := by
+    rw [diagonalPolynomialMap_B, diagonalPolynomialMap_A,
+      coeff_riccatiResolventB_even_diagonal]
+  have hv := congrArg (fun p => evaluate u u p x) he
+  change evaluate u u (diagonalPolynomialMap _) x = evaluate u u (diagonalPolynomialMap _) x at hv
+  rw [evaluate_diagonalPolynomialMap, evaluate_diagonalPolynomialMap] at hv
+  rw [classicalNLSHierarchyGradient_eq_resolvent u u hu hu hp hp]
+  exact congrArg (fun c : ℂ => (-I)^(2*m+2)*c) hv
+
 theorem evaluate_nlsResolventA_odd_diagonal (u : ℝ → ℂ) (hu : ContDiff ℝ ∞ u) (m : ℕ) :
     evaluate u u (nlsResolventCoefficientA (2*m+1)) =
       deriv (evaluate u u (nlsResolventCoefficientA (2*m))) := by

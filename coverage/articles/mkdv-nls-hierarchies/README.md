@@ -63,7 +63,7 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 
 | Source statement | Domain and quantifier order | Current proved correspondence | Remaining work |
 | --- | --- | --- | --- |
-| Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | `theorem1_even_vanishing_original_domain` proves scalar vanishing on H^(2m-1), including the exact H^1 endpoint m=1. `classicalNLSHamiltonian_one_diagonal` and `classicalNLSHamiltonian_three_diagonal` prove the physical factor-two identities for K1 and K2. `theorem1_m2_smooth` now proves both clauses on smooth complex periodic potentials. | All-order independent mKdV/Hill Hamiltonian identification; physical gradients and vector fields; the sharper H^m even-order extension for m>1. |
+| Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | `theorem1_even_vanishing_original_domain` proves scalar vanishing on H^(2m-1), including the exact H^1 endpoint m=1. `classicalNLSHamiltonian_one_diagonal` and `classicalNLSHamiltonian_three_diagonal` prove the physical factor-two identities for K1 and K2. `theorem1_m2_smooth` proves both clauses at m=2. `theorem1_smooth_miura_hierarchy` now proves both clauses at every smooth complex periodic order for independently constructed scalar Hill/Miura Hamiltonians. Their physical first variations and K1/K2 calibration are checked. | The sharp H^m extension and identification with the article's full spectral mKdV hierarchy. |
 | Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None. |
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
 | Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Construct/identify the mKdV actions, frequency and brackets; settle the printed sign against the adopted normalization. |
@@ -88,6 +88,21 @@ the actual physical integral variation, and Fourier test uniqueness identifies
 both components with the certified Euler gradients. Smooth density extends
 the diagonal recurrence to the exact Sobolev domain. Reciprocal phase scaling
 and the actual distribution derivative give the corrected part (ii).
+
+The independent scalar Hill/Miura hierarchy now has an all-order smooth
+comparison. Its Riccati seed is `rho_0=-(u'+u^2)`, with scalar quadratic
+coefficient one. `differentialRiccatiSeries_miura` proves the exact gauge
+identity with the diagonal NLS series, and
+`derivation_logarithmicPrimitiveCoefficient` constructs each correction as a
+finite polynomial total derivative. Thus
+`classicalNLSHamiltonian_odd_diagonal_eq_miuraHill` proves the factor-two
+integral identity at every order. These scalar Hamiltonians are defined by
+the scalar recurrence, independently of the NLS restriction; their first two
+members equal the previously specified physical mKdV mass and energy.
+`hasDerivAt_classicalMiuraHillHamiltonian` certifies their actual first
+variations. `theorem1_smooth_miura_hierarchy` then proves both flow equality
+and even vanishing at every smooth complex periodic order. This does not yet
+identify the sharp Sobolev extension or the full spectral mKdV hierarchy.
 
 Theorem 5 is now proved as
 `NLS.Articles.MKdVNLSHierarchies.theorem5_discriminant_identity`, for every
@@ -210,3 +225,13 @@ the aggregate `NLS.lean` are deferred to sequential main integration.
 The initial patch passed `git apply --check` before integration. Subsequent
 commits and validation milestones are recorded in the article progress log.
 Integration into main remains sequential, with shared foundations first.
+
+
+Latest milestone: the independent all-order smooth scalar Hill/Miura
+Hamiltonian and flow comparison. All 59 article/shared modules and the NLS
+aggregate compiled; the targeted audit passed for 570 declarations and
+auxiliaries and the combined audit for 45,750 NLS declarations, allowing only
+the three standard axioms. The current inventory is 298 theorem/definition
+declarations (230 theorems, 68 definitions). This used pinned cached imports,
+not a rebuild of the entire dependency tree. Full details and remaining
+Sobolev/spectral obligations are in [the progress log](PROGRESS.md).
