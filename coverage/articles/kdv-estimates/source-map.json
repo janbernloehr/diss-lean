@@ -209,10 +209,14 @@
     {
       "module": "NLS/ComplexAnalysis/ZeroCountComparison.lean and Rouche.lean",
       "role": "Actually reused to count two analytic zeros from the proved quantitative boundary comparison."
+    },
+    {
+      "module": "NLS/SequenceSpaces/Pairing.lean and Reflection.lean",
+      "role": "Actually reused for absolute convergence of the physical bilinear coefficient pairing and the double convolution sum; reverse Fourier indices without introducing a Hermitian-pairing assumption."
     }
   ],
   "next_shared_milestones": [
-    "Prove the diagonal symmetry and coefficient estimates of the effective two-mode operator needed for weighted spectral gap bounds.",
+    "Use the proved equal diagonal and weighted coupling bounds to derive spectral root separation and weighted gap-tail estimates with explicit corrected constants.",
     "Identify determinant analytic orders with the relevant periodic operator/characteristic multiplicities, construct ordered global spectral labels and prove the remaining central/exterior spectral bounds.",
     "Apply the period-one/mean-zero potential embedding in the exact source norm and weighted w_(2n) convention.",
     "Construct the Hill discriminant, root branches, contour actions, real positivity and physical canonical Birkhoff map with exact positive-mode and norm conventions.",
@@ -265,7 +269,7 @@
     "statement": "For a positive integer n, |Re(z)-pi^2*n^2|<=6*n, and n>=8*||q||_w, the determinant of the constructed operator on C x C vanishes iff there exists a nonzero weighted l1 sequence f with (z-pi^2*k^2)*f_k=(q*f)_k for every integer k. Reconstruction and resonant coefficient extraction recover the solutions in both directions. The full potential is the literal weighted convolution.",
     "free_case": "At zero potential the constructed operator is (z-pi^2*n^2)*id, and its determinant is exactly (z-pi^2*n^2)^2.",
     "not_assumed": "No unspecified finite block, arbitrary spectral package, or unproved inverse hypothesis is supplied by a caller. The bounded inverse is chosen from the previously proved existence theorem.",
-    "remaining_qualifications": "The physical H2 identification and joint analyticity of a matching determinant family are now proved. The equality of its diagonal correction terms, agreement of analytic determinant orders with operator algebraic multiplicities, and global eigenvalue labeling remain to be proved. The checked high-strip localization and two-analytic-zero count are recorded separately."
+    "remaining_qualifications": "The physical H2 identification, joint analytic matching determinant, equal complex diagonal corrections, and shifted weighted coefficient bounds are proved. Agreement of determinant analytic orders with operator algebraic multiplicities and global eigenvalue labeling remain outstanding. The high-strip localization and two-analytic-zero count are recorded separately."
   },
   "other_article_branches_inspected": [
     {
@@ -377,5 +381,30 @@
     "zero_count_scope": "For n>=1 and n>=16*||q||, the actual determinant has analyticZeroCount=2 on the closed radius-n disc about pi^2*n^2. The quantitative bound |D(z)-(z-pi^2*n^2)^2|<=8*|z-pi^2*n^2|*||q||+32*||q||^2 proves the strict Rouche inequality. Localization proves the same count exhausts the whole closed radius-6*n real strip. This includes q=0 without a separate positive-norm assumption and allows colliding roots.",
     "corrections": "The complementary inverse strip remains radius 6*n. Localization uses cutoff 8*||q|| and bound 4*||q||. The two-zero count uses cutoff 16*||q|| and a radius-n counting circle. No assertion of the printed wider strip or printed cutoff follows by notation alone.",
     "multiplicity_qualification": "Analytic orders of this specific determinant are counted. Their equality with operator algebraic multiplicities, global periodic spectral labels, and the Hill discriminant zero orders remain outstanding."
+  },
+  "weighted_effective_coefficients": {
+    "modules": [
+      "NLS/KdV/HillWeightedCoefficients.lean",
+      "NLS/KdV/HillBilinearSymmetry.lean"
+    ],
+    "source_correspondence": "Appendix A page 28: equality a_n=a_-n and Lemma A.4. The estimates are pointwise uniformly throughout the explicit closed radius-6*n real strip, with cutoff n>=8*||q||_w.",
+    "declarations": [
+      "NLS.KdV.shiftedNorm_hillTailInverse_le",
+      "NLS.KdV.hill_convolution_single",
+      "NLS.KdV.shiftedNorm_modulation_cancel",
+      "NLS.KdV.shiftedNorm_coefficient_le",
+      "NLS.KdV.hillCorrectedMode_coefficient_error",
+      "NLS.KdV.hillDiagonal_error_le",
+      "NLS.KdV.hillDiagonal_le_of_mean_zero",
+      "NLS.KdV.hillUpperCoupling_error_le",
+      "NLS.KdV.hillLowerCoupling_error_le",
+      "NLS.KdV.hillReconstruct_residual_equation",
+      "NLS.KdV.hillReduced_bilinearSymmetry",
+      "NLS.KdV.hillDiagonal_eq_opposite"
+    ],
+    "proved": "The tail inverse has norm at most two in every shifted weighted norm. Corrected unit-mode coefficients differ from the literal modulated potential by at most 8*||q||_w^2/n after multiplication by the appropriate shifted weight. In particular |a_n-q_0|<=8*||q||_w^2/n and w(2*n)*|c_+/-n-q_(+/-2*n)|<=8*||q||_w^2/n. The two diagonal terms agree for arbitrary complex potentials.",
+    "symmetry_proof": "The actual reconstructed functions satisfy the full Fourier equation with exactly their resonant residual. The complex bilinear pairing sums a_k*b_-k without conjugation. Absolute convergence and convolution summation interchange reuse the verified coefficient-pairing library. The even free symbol gives the Green identity, which proves equality of the two diagonals without a reality or evenness hypothesis on q.",
+    "normalization_qualification": "q_(+/-2*n) denotes the raw period-two Fourier coefficient. Identifying it with the source period-one coefficient q_(+/-n), and matching the weighted source norm, require the pending explicit period-doubling adapter.",
+    "remaining": "No spectral gap bound or source main theorem is claimed by these coefficient estimates alone."
   }
 }

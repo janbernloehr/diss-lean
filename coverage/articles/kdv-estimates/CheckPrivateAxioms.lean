@@ -6,6 +6,8 @@ import NLS.KdV.HillPhysical
 import NLS.KdV.HillAnalytic
 import NLS.KdV.HillLocalization
 import NLS.KdV.HillZeroCount
+import NLS.KdV.HillWeightedCoefficients
+import NLS.KdV.HillBilinearSymmetry
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
