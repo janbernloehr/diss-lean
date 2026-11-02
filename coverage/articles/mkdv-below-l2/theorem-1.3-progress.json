@@ -69,10 +69,35 @@
       "declaration": "NLS.ZakharovShabat.sourceLemma5_3",
       "scope": "All finite p≥2; original roots and actual atlas constructed together. Full sharp off-diagonal rows, literal q-power bounds, and fixed mixed diagonal decomposition on one connected open real-containing complex domain. Local neighborhoods before q; collapsed gaps included.",
       "verified": true
+    },
+    {
+      "source": "Theorem 5.4(i), analytic weighted-sum dependency",
+      "declaration": "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_analytic_weightedSecondMomentRows",
+      "scope": "Every finite p>1. Actual full weighted moment rows are analytic as ℓ1-valued maps on one constructed connected real-containing complex domain. Local norm bounds are uniform in n after division by 1+|n|; zero coordinate retained."
+    },
+    {
+      "source": "Theorem 5.4(i), scalar candidate analyticity",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_analytic_fourthFrequencyCandidate",
+      "scope": "Literal -12 weighted moment sum is complex analytic on one constructed connected real-containing domain. Follows from continuous ℓ1 summation, rather than an unproved uniform-tail assumption. Does not identify the physical H4 derivative."
+    },
+    {
+      "source": "Theorem 5.4(ii), weighted sequence target dependency",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_analytic_fourthFrequencySequence",
+      "scope": "For every finite p>1, one constructed complex source domain precedes all finite r>1 with p/2≤r. Candidate sequence is analytic into the actual (1+|n|)^(-1)-weighted ℓr space and every raw coordinate equals the same scalar candidate, including n=0."
+    },
+    {
+      "source": "Theorem 1.3, physical real-analytic candidate",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence_real_analytic",
+      "scope": "Original physical distribution pair and full real Banach source. For finite p>1 and finite r>1 with p/2≤r, the actual candidate is real analytic into ℓ^(-1,r). In particular r=p/2 is allowed for p>2; at p=2 every finite r>1 is allowed. Domain is shared with the fixed Theorem 1.2 Birkhoff family."
+    },
+    {
+      "source": "Cross-exponent physical extension compatibility",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence_eq_of_same_distributions",
+      "scope": "For equal real physical distributions, the candidate sequences agree as elements of every common finite weighted target. The chosen actual moment atlas supplies all raw coordinates."
     }
   ],
   "remaining": [
-    "Identify the weighted candidate with the physical normalized H4 action derivative, with exact constants.",
-    "Prove analyticity of the full candidate and its maps into each stated weighted sequence target, and the refined asymptotic remainder."
+    "Identify the analytic weighted candidate with the independently defined physical normalized H4 action derivative, with exact constants.",
+    "Prove the refined remainder using actual spectral actions, with fixed ℓ^(p/3)+ℓ^(1+) components and locally uniform bounds; state the asymptotic at nonzero indices without silently asserting vanishing of the general complex zero mode."
   ]
 }

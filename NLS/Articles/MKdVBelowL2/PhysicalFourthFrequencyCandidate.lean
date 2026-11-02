@@ -1,4 +1,4 @@
-import NLS.Articles.MKdVBelowL2.FourthMomentSharpSummability
+import NLS.Articles.MKdVBelowL2.FourthMomentSequence
 import NLS.Articles.MKdVBelowL2.CompatibleBirkhoffFamily
 
 /-! # Physical adapter for the convergent fourth-frequency candidate
@@ -7,8 +7,8 @@ A fixed actual moment atlas is transported from the original distributions,
 using the same Fourier convention and physical Birkhoff family as Theorem 1.2.
 For every finite p > 1 the candidate has an absolutely convergent weighted-moment
 representation on an open complex neighborhood of all real inputs. This
-adapter does not assert analyticity of the infinite sum or identify it with
-the physical H₄ action derivative.
+adapter proves analyticity of the infinite sum. Identification with the
+physical H₄ action derivative remains separate.
 -/
 noncomputable section
 set_option autoImplicit false
@@ -31,12 +31,17 @@ structure FourthMomentChart (hp : p ≠ ⊤) (hp1 : 1 < p) where
   subset_atlas : domain ⊆ atlas.domain
   summable : ∀ ψ ∈ domain, ∀ n : ℤ,
     Summable (fun k : ℤ => ‖(k : ℂ)*atlas.moment n k 2 ψ‖)
+  candidate_analytic : ∀ n : ℤ, AnalyticOnNhd ℂ (fourthFrequencyCandidate atlas n) domain
+  sequence_analytic : ∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r →
+    ENNReal.ofReal (p.toReal/2) ≤ r →
+    (∀ ψ ∈ domain, ∀ n, (fourthFrequencySequence atlas r ψ).val n = fourthFrequencyCandidate atlas n ψ) ∧
+      AnalyticOnNhd ℂ (fourthFrequencySequence atlas r) domain
 
 /-- All chart inputs are constructed; no spectral or convergence premise remains. -/
 theorem exists_fourthMomentChart (hp : p ≠ ⊤) (hp1 : 1 < p) :
     Nonempty (FourthMomentChart hp hp1) := by
-  obtain ⟨W,V,_,_,s,hs,A,U,hU,_,hreal,hUV,hconv⟩ := exists_fourthMoment_summableAtlas hp hp1
-  exact ⟨⟨W,V,s,A,hs,U,hU,hreal,fun ψ hψ => (hUV hψ).1,hconv⟩⟩
+  obtain ⟨W,V,_,_,s,hs,A,U,hU,_,hreal,hUV,hconv,han,hseq⟩ := exists_fourthMoment_sequenceAtlas hp hp1
+  exact ⟨⟨W,V,s,A,hs,U,hU,hreal,fun ψ hψ => (hUV hψ).1,hconv,han,hseq⟩⟩
 
 /-- One actual moment chart at every finite exponent greater than one. -/
 def fourthMomentChart (hp : p ≠ ⊤) (hp1 : 1 < p) : FourthMomentChart hp hp1 :=
@@ -58,6 +63,12 @@ def physicalFourthFrequencyCandidate (hp : p ≠ ⊤) (hp1 : 1 < p)
     (n : ℤ) (u : PhysicalFL p × PhysicalFL p) : ℂ :=
   fourthFrequencyCandidate (fourthMomentChart hp hp1).atlas n (physicalCoefficients u)
 
+/-- The weighted candidate sequence on the original physical distributions. -/
+def physicalFourthFrequencySequence (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (r : ℝ≥0∞) [Fact (1 ≤ r)] (u : PhysicalFL p × PhysicalFL p) :
+    WeightedCoeff (Weight.sobolev (-1)) r :=
+  fourthFrequencySequence (fourthMomentChart hp hp1).atlas r (physicalCoefficients u)
+
 /-- The common physical domain is open and contains the entire real Banach space. -/
 theorem physicalFourthCandidateDomain_open_real (hp : p ≠ ⊤) (hp1 : 1 < p) :
     IsOpen (physicalFourthCandidateDomain hp hp1) ∧
@@ -75,6 +86,37 @@ theorem physicalFourthMoment_analytic (hp : p ≠ ⊤) (hp1 : 1 < p) (n k : ℤ)
   intro u hu
   exact ((fourthMomentChart hp hp1).atlas.analytic_moment n k 2 _
     ((fourthMomentChart hp hp1).subset_atlas hu.2)).comp (physicalCoefficients.analyticAt u)
+
+/-- The infinite weighted candidate is holomorphic for physical distributions. -/
+theorem physicalFourthFrequencyCandidate_analytic (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ) :
+    AnalyticOnNhd ℂ (physicalFourthFrequencyCandidate hp hp1 n)
+      (physicalFourthCandidateDomain hp hp1) := by
+  intro u hu
+  exact ((fourthMomentChart hp hp1).candidate_analytic n _ hu.2).comp
+    (physicalCoefficients.analyticAt u)
+
+/-- The actual physical candidate is holomorphic into each stated
+weighted Banach target, on the same domain for all target exponents. -/
+theorem physicalFourthFrequencySequence_analytic
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (r : ℝ≥0∞) [Fact (1 ≤ r)]
+    (hr : r ≠ ⊤) (hr1 : 1 < r) (hpr : ENNReal.ofReal (p.toReal/2) ≤ r) :
+    (∀ u ∈ physicalFourthCandidateDomain hp hp1, ∀ n,
+      (physicalFourthFrequencySequence hp hp1 r u).val n = physicalFourthFrequencyCandidate hp hp1 n u) ∧
+      AnalyticOnNhd ℂ (physicalFourthFrequencySequence hp hp1 r) (physicalFourthCandidateDomain hp hp1) := by
+  obtain ⟨he,ha⟩ := (fourthMomentChart hp hp1).sequence_analytic r hr hr1 hpr
+  refine ⟨fun u hu n => he _ hu.2 n,?_⟩
+  intro u hu
+  exact (ha _ hu.2).comp (physicalCoefficients.analyticAt u)
+
+/-- Real analyticity holds on the full physical real Banach space. -/
+theorem physicalFourthFrequencySequence_real_analytic
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (r : ℝ≥0∞) [Fact (1 ≤ r)]
+    (hr : r ≠ ⊤) (hr1 : 1 < r) (hpr : ENNReal.ofReal (p.toReal/2) ≤ r) :
+    AnalyticOnNhd ℝ (fun u : PhysicalRealInput p => physicalFourthFrequencySequence hp hp1 r u.val) univ := by
+  intro u _
+  have ha := (physicalFourthFrequencySequence_analytic hp hp1 r hr hr1 hpr).2
+    u.val ((physicalFourthCandidateDomain_open_real hp hp1).2 u)
+  exact ha.restrictScalars.comp ((physicalRealSubspace p).subtypeL.analyticAt u)
 
 /-- Absolute convergence and the actual sum hold for original physical distributions. -/
 theorem physicalFourthFrequencyCandidate_hasSum
@@ -114,5 +156,22 @@ theorem physicalFourthFrequencyCandidate_eq_of_same_distributions
   rw [(physicalCoefficients_apply v.val j).1,(physicalCoefficients_apply u.val j).1,
     (physicalCoefficients_apply v.val j).2,(physicalCoefficients_apply u.val j).2,huv.1,huv.2]
   exact ⟨rfl,rfl⟩
+
+/-- The analytic weighted sequences agree at every common target exponent
+for the same real physical distributions. -/
+theorem physicalFourthFrequencySequence_eq_of_same_distributions
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (hq : q ≠ ⊤) (hq1 : 1 < q)
+    (r : ℝ≥0∞) [Fact (1 ≤ r)] (hr : r ≠ ⊤) (hr1 : 1 < r)
+    (hpr : ENNReal.ofReal (p.toReal/2) ≤ r) (hqr : ENNReal.ofReal (q.toReal/2) ≤ r)
+    (u : PhysicalRealInput p) (v : PhysicalRealInput q)
+    (huv : u.val.1.val = v.val.1.val ∧ u.val.2.val = v.val.2.val) :
+    physicalFourthFrequencySequence hp hp1 r u.val = physicalFourthFrequencySequence hq hq1 r v.val := by
+  apply Subtype.ext
+  funext n
+  rw [(physicalFourthFrequencySequence_analytic hp hp1 r hr hr1 hpr).1 u.val
+    ((physicalFourthCandidateDomain_open_real hp hp1).2 u) n,
+    (physicalFourthFrequencySequence_analytic hq hq1 r hr hr1 hqr).1 v.val
+    ((physicalFourthCandidateDomain_open_real hq hq1).2 v) n]
+  exact physicalFourthFrequencyCandidate_eq_of_same_distributions hp hp1 hq hq1 u v huv n
 
 end NLS.Articles.MKdVBelowL2

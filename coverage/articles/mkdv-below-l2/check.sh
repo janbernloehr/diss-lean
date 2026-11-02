@@ -70,6 +70,9 @@ modules=(
   ZakharovShabat/SourceAbelianMomentOnePlus
   ZakharovShabat/SourceAbelianMomentOnePlusDomain
   ZakharovShabat/SourceLemma5_3
+  SequenceSpaces/WeightedReciprocalRows
+  SequenceSpaces/WeightedIndexRealization
+  ZakharovShabat/SourceAbelianMomentWeightedRows
   FunctionalAnalysis/ComplexRealEquiv
   Dynamics/ComplexBirkhoffCoordinatesExponent
   Dynamics/ConjugatePairEquiv
@@ -93,6 +96,8 @@ modules=(
   Articles/MKdVBelowL2/ClassicalRenormalizedFourthFlow
   Articles/MKdVBelowL2/FourthMomentSummability
   Articles/MKdVBelowL2/FourthMomentSharpSummability
+  Articles/MKdVBelowL2/FourthMomentAnalytic
+  Articles/MKdVBelowL2/FourthMomentSequence
   Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate
 )
 for module in "${modules[@]}"; do

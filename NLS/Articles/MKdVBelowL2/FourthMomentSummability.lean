@@ -1,5 +1,5 @@
 import NLS.ZakharovShabat.SourceAbelianMomentLemma20_3
-import NLS.SequenceSpaces.RefinedTripleProduct
+import NLS.SequenceSpaces.WeightedReciprocalRows
 import NLS.ZakharovShabat.SourceAbelianMomentSquaredGapAtlas
 import NLS.ZakharovShabat.SourceAbelianMomentExponent
 
@@ -31,17 +31,8 @@ theorem exists_summable_cube (hp : p ≠ ⊤) (hp1 : 1 < p) (hp3 : p ≤ 3)
 
 /-- Multiplication by k costs at most |n|+1 in the off-diagonal reciprocal kernel. -/
 theorem norm_index_ratio_le (n k : ℤ) (hk : k ≠ n) :
-    ‖(k : ℂ) / ((n - k : ℤ) : ℂ)‖ ≤ |(n : ℝ)| + 1 := by
-  have hne : n - k ≠ 0 := sub_ne_zero.mpr hk.symm
-  have hone : (1 : ℝ) ≤ |((n - k : ℤ) : ℝ)| := by
-    exact_mod_cast Int.one_le_abs hne
-  have htri : |(k : ℝ)| ≤ |(n : ℝ)| + |((n - k : ℤ) : ℝ)| := by
-    have h := abs_sub_le (n : ℝ) 0 ((n - k : ℤ) : ℝ)
-    push_cast at h ⊢
-    simpa [abs_sub_comm] using h
-  rw [norm_div, Complex.norm_intCast, Complex.norm_intCast]
-  apply (div_le_iff₀ (lt_of_lt_of_le zero_lt_one hone)).mpr
-  nlinarith [abs_nonneg (n : ℝ)]
+    ‖(k : ℂ) / ((n - k : ℤ) : ℂ)‖ ≤ |(n : ℝ)| + 1 :=
+  Coeff.norm_index_ratio_le n k hk
 
 variable [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
   {W V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}

@@ -31,6 +31,9 @@
     "ZakharovShabat/SourceAbelianMomentOnePlus",
     "ZakharovShabat/SourceAbelianMomentOnePlusDomain",
     "ZakharovShabat/SourceLemma5_3",
+    "SequenceSpaces/WeightedReciprocalRows",
+    "SequenceSpaces/WeightedIndexRealization",
+    "ZakharovShabat/SourceAbelianMomentWeightedRows",
     "FunctionalAnalysis/ComplexRealEquiv",
     "Dynamics/ComplexBirkhoffCoordinatesExponent",
     "Dynamics/ConjugatePairEquiv",
@@ -54,6 +57,8 @@
     "Articles/MKdVBelowL2/ClassicalRenormalizedFourthFlow",
     "Articles/MKdVBelowL2/FourthMomentSummability",
     "Articles/MKdVBelowL2/FourthMomentSharpSummability",
+    "Articles/MKdVBelowL2/FourthMomentAnalytic",
+    "Articles/MKdVBelowL2/FourthMomentSequence",
     "Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate"
   ],
   "strict_options": [
@@ -1140,6 +1145,116 @@
       "propext",
       "Classical.choice",
       "Quot.sound"
+    ],
+    "NLS.Coeff.norm_index_ratio_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Coeff.exists_cubic_dual_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Coeff.exists_weighted_cubic_reciprocal_row": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Coeff.norm_weighted_tsum_sub_index_tsum_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Coeff.inverseBracketCoeffs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Coeff.inverseBracketCoeffs_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Coeff.norm_inverseBracket_mul_index_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Coeff.exists_negOne_weighted_of_bounded_error": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceAbelianMomentAtlas.weightedSecondMomentRow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_analytic_weightedSecondMomentRows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_analytic_fourthFrequencyCandidate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_fourthMoment_analyticAtlas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_difference_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthFrequencySequence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_analytic_fourthFrequencySequence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_fourthMoment_sequenceAtlas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_offDiagonal_onePlus_all": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_analytic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence_analytic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence_real_analytic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence_eq_of_same_distributions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
     ]
   },
   "allowed_axioms": [
@@ -1147,7 +1262,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Focused strict build of 54 new and consumed modules; transitive audit of 216 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Focused strict build of 59 new and consumed modules; transitive audit of 238 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",

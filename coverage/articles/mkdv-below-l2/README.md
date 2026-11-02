@@ -10,7 +10,8 @@ comparison, relative product estimate, and normalizing-period stability are
 checked, including a constructed uniform lower bound for the actual
 comparison period. Proposition 4.1's all-finite-p root bootstrap is now
 verified. The full Lemma 5.3 moment bounds are checked for every finite p≥2.
-The full frequency analyticity and physical H₄ derivative identification
+The candidate is now analytic into the weighted targets of Theorem 1.3.
+Physical H₄ derivative identification and the refined action remainder
 remain open.
 See [the current progress record](PROGRESS.md) and the
 [Theorem 1.2 clause map](theorem-1.2.json).
@@ -64,12 +65,12 @@ track normalizations before transporting physical assertions.
 * **Theorem 1.3, p. 6.** One physical normalized H₄ frequency map is defined
   on FL_r² with values in the intersection of ℓ^(-1,r), r>1, and is real
   analytic into each such target. For each finite p>2 it has a real analytic
-  extension on FL_r^p with values in complex ℓ^(-1,p/2). Its refined remainder
-  satisfies ω_n^(4)* + 12πn I_n = n(a_n+b_n), where a is ℓ^(p/3) and b
+  extension on FL_r^p with values in complex ℓ^(-1,p/2). At nonzero indices its refined asymptotic
+  is ω_n^(4)* + 12πn I_n = n(a_n+b_n), where a is ℓ^(p/3) and b
   belongs to every ℓ^r, r>1, with estimates locally uniform in the potential.
   When p<3 the ℓ^(p/3) term has exponent below one: do not replace its
-  summability statement with a Banach-space hypothesis. Retain n=0 in
-  the actual formula; dividing by n needs a separate zero-mode statement.
+  summability statement with a Banach-space hypothesis. The weighted sequence includes n=0. The n-times-remainder notation is
+  asymptotic at infinity; dividing by n must not assert zero-mode vanishing.
 
 ## Physical conventions
 
@@ -220,9 +221,24 @@ Theorem 1.2 Birkhoff domain, and proves this common domain is open and contains
 every physical real-type input. Every individual moment is holomorphic there.
 The literal candidate `-12 ∑ k, k Ω²ₙₖ` converges absolutely and agrees across
 exponents for the same real distributions. Birkhoff coordinate products on
-this domain remain the actual spectral actions of the same input. Neither
-analyticity of the infinite candidate sum nor physical H₄ derivative
-identification is asserted.
+this domain remain the actual spectral actions of the same input.
+
+`SourceAbelianMomentWeightedRows` realizes each full weighted row as an
+analytic ℓ¹-valued map, with locally uniform linear growth in n. Continuous
+summation gives analyticity of the infinite scalar candidate. The exact
+identity comparing the weighted sum with n times the unweighted moment sum
+bounds their difference by a cubic Hölder product. With the literal
+normalizations this compares the H₄ candidate with 6πn times the established
+unweighted candidate. Reusing the latter's sequence bounds proves complex
+analyticity into ℓ^(-1,r) for every finite r>1 with r≥p/2, on one domain chosen
+before r. The inverse-bracket realization retains the raw zero coordinate.
+
+`physicalFourthFrequencySequence_real_analytic` transports this to the full
+physical real Banach source. Thus r=p/2 is available at p>2, and every finite
+r>1 at p=2. The weighted sequences agree for the same real distributions
+at all common target exponents. These are candidate assertions: equality
+with the physical normalized H₄ derivative and the refined action remainder
+are still open.
 
 ## Outstanding dependencies and integration order
 
@@ -257,10 +273,10 @@ read-only, with new outputs under this checkout's private
 `ELAN_HOME`, `LEAN_BIN` and `MKDV_BUILD_ROOT` overrides; it never invokes Lake
 or writes through the imported symlinks.
 
-The expanded focused checker covers 54 new article/shared modules and the
+The expanded focused checker covers 59 new article/shared modules and the
 consumed smooth hierarchy foundations, with `autoImplicit=false` and
 `warningAsError=true`. `AxiomAudit.lean` audits all explicitly named new
-and consumed declarations (216 total), including the main Theorem 1.2 declarations;
+and consumed declarations (238 total), including the main Theorem 1.2 declarations;
 only `propext`, `Classical.choice` and `Quot.sound` occur. No new axiom,
 sorry or disabled linter was introduced. `validation.txt` captures the checks.
 This is focused validation, not a full repository build or completed article

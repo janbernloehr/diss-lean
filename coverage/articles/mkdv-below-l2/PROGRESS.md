@@ -311,3 +311,50 @@ The final assembly was checked after the initial 53-module build, followed
 by the expanded full audit. No holes, new axioms, disabled linters or higher
 heartbeat limits were added. This is focused validation using the canonical
 compiled dependencies read-only, not a fresh whole-repository rebuild.
+
+
+## Eighth checkpoint: analytic scalar and weighted physical candidates
+
+The full weighted moment row is now an actual analytic ℓ¹-valued map for
+every finite p>1. `WeightedReciprocalRows` proves the cubic dual-product bound
+and the bounded index-ratio realization, including the selected coordinate.
+`SourceAbelianMomentWeightedRows` combines these with the established actual
+diagonal formula and scalar moment analyticity. It obtains locally uniform
+bounds of the form (1+|n|)C on one neighborhood before n.
+`FourthMomentAnalytic` then composes the ℓ¹ row with continuous summation.
+It does not assume uniform coordinate tails of bounded ℓp row families.
+
+`FourthMomentSequence` proves the exact normalized comparison
+‖candidate_n − (6π)n·unweightedCandidate_n‖ ≤ 12‖gap‖³‖a_n‖.
+The actual row is the canonical cubic coefficient, and both sums are proved
+absolutely convergent. The shared unweighted frequency bounds and this
+uniformly bounded difference yield actual weighted ℓr realizations.
+`WeightedIndexRealization` uses the literal weight (1+|n|)^(-1) and retains
+the raw coordinate at n=0. No division by n or zero-mode vanishing is used.
+
+The resulting candidate sequence is complex analytic into ℓ^(-1,r) for each
+finite r>1 with r≥p/2, on one connected real-containing complex domain
+selected before r. `exists_fourthMoment_sequenceAtlas` constructs the roots,
+actual atlas, domain, scalar candidate and all target maps together.
+The physical adapter now uses this chart, shares its domain with the fixed
+Theorem 1.2 Birkhoff family, and is real analytic on the entire physical real
+Banach source. Its weighted sequences agree for equal real distributions at
+every common target exponent. In particular it supplies the candidate target
+r=p/2 for p>2 and every finite r>1 for p=2.
+
+Theorem 1.2 remains verified. Main Theorems 1.1 and 1.3 remain open. The
+remaining Theorem 1.3 obligations are physical normalized H₄ derivative
+identification and the refined actual-action remainder. Candidate analyticity
+is now established, but it is not used to claim the unproved identification.
+The printed n-times-remainder asymptotic must be stated at nonzero indices
+(or with an explicit finite-coordinate convention); it must not silently
+force the general complex zero frequency to vanish.
+
+
+Strict validation for the eighth checkpoint passed: all 59 focused modules
+compiled with `autoImplicit=false` and `warningAsError=true`. The transitive
+audit of 238 named declarations exactly matched `AxiomAudit.lean` and used
+only `propext`, `Classical.choice` and `Quot.sound`. No holes, new axioms,
+disabled linters or increased heartbeat limits were introduced. Validation
+uses the canonical compiled dependencies read-only and is not a fresh
+whole-repository rebuild.

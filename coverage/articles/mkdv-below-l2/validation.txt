@@ -29,6 +29,9 @@ ZakharovShabat/SourcePsiCriticalProductOnePlus: checked
 ZakharovShabat/SourceAbelianMomentOnePlus: checked
 ZakharovShabat/SourceAbelianMomentOnePlusDomain: checked
 ZakharovShabat/SourceLemma5_3: checked
+SequenceSpaces/WeightedReciprocalRows: checked
+SequenceSpaces/WeightedIndexRealization: checked
+ZakharovShabat/SourceAbelianMomentWeightedRows: checked
 FunctionalAnalysis/ComplexRealEquiv: checked
 Dynamics/ComplexBirkhoffCoordinatesExponent: checked
 Dynamics/ConjugatePairEquiv: checked
@@ -52,6 +55,8 @@ Articles/MKdVBelowL2/Theorem12: checked
 Articles/MKdVBelowL2/ClassicalRenormalizedFourthFlow: checked
 Articles/MKdVBelowL2/FourthMomentSummability: checked
 Articles/MKdVBelowL2/FourthMomentSharpSummability: checked
+Articles/MKdVBelowL2/FourthMomentAnalytic: checked
+Articles/MKdVBelowL2/FourthMomentSequence: checked
 Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -415,3 +420,45 @@ Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate: checked
 'NLS.ZakharovShabat.SourceLemma5_3Data.row_power_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_lemma5_3' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.ZakharovShabat.sourceLemma5_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Coeff.norm_index_ratio_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Coeff.exists_cubic_dual_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Coeff.exists_weighted_cubic_reciprocal_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Coeff.norm_weighted_tsum_sub_index_tsum_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Coeff.inverseBracketCoeffs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Coeff.inverseBracketCoeffs_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Coeff.norm_inverseBracket_mul_index_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Coeff.exists_negOne_weighted_of_bounded_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentAtlas.weightedSecondMomentRow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_analytic_weightedSecondMomentRows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_analytic_fourthFrequencyCandidate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_fourthMoment_analyticAtlas' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_difference_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthFrequencySequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_analytic_fourthFrequencySequence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_fourthMoment_sequenceAtlas' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_offDiagonal_onePlus_all' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_analytic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence_analytic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence_real_analytic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence_eq_of_same_distributions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

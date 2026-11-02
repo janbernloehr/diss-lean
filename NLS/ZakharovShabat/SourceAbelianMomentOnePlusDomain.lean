@@ -1,3 +1,4 @@
+import NLS.ZakharovShabat.SourceAbelianMomentOffDiagonalNeighborhood
 import NLS.ZakharovShabat.SourceAbelianMomentOnePlus
 import NLS.ZakharovShabat.SourceAngularOriginalDomain
 
@@ -54,6 +55,35 @@ theorem SourceAbelianMomentAtlas.exists_offDiagonal_onePlus
     intro q hq hq1
     obtain ⟨M,hM,hbound⟩ := hrows φ q hq hq1
     exact ⟨M,hM,fun χ hχ n => hbound χ hχ.1 n⟩
+
+/-- At exponents at most two, the earlier half-exponent bound already
+implies every q > 1; above two use the critical-root improvement. -/
+theorem SourceAbelianMomentAtlas.exists_offDiagonal_onePlus_all
+    (A : SourceAbelianMomentAtlas hp hp1 W s)
+    (H : SourceLemma12_11Data hp hp1 W₀ V s)
+    (hs : SourcePsiSquaredGapComplexExtension hp hp1 V s)
+    (hV : IsOpen V) (hrealV : realTypeSourceLocus p ⊆ V) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus p ⊆ U ∧
+      U ⊆ A.domain ∩ V ∧ ∀ ψ ∈ U, ∃ T : Set (CoeffPair p),
+        IsOpen T ∧ ψ ∈ T ∧ T ⊆ U ∧
+        ∀ q : ℝ≥0∞, q ≠ ⊤ → 1 < q → ∃ M : ℝ, 0 ≤ M ∧
+          ∀ χ ∈ T, ∀ n : ℤ, ∃ a : Coeff q,
+            (∀ k, a k = sourceSecondMomentCubicCoefficient A n χ k) ∧ a n = 0 ∧ ‖a‖ ≤ M ∧
+            ∀ k : ℤ, k ≠ n → A.moment n k 2 χ =
+              (sourcePeriodicGapDisplacement hp hp1 χ k)^3/((n-k:ℤ):ℂ)*a k := by
+  by_cases hgt : 2 < p
+  · exact A.exists_offDiagonal_onePlus H hs hgt hV hrealV
+  · have hhalf : ENNReal.ofReal (p.toReal/2) ≤ 1 := by
+      rw [Coeff.halfExponent_eq_div hp]
+      exact (ENNReal.div_le_iff (by norm_num) (by norm_num)).mpr (by simpa using not_lt.mp hgt)
+    obtain ⟨U,hU,hUc,hreal,hUV,hlocal⟩ :=
+      A.exists_almostReal_offDiagonal_secondMoment_coefficients hs hV hrealV
+    refine ⟨U,hU,hUc,hreal,hUV,?_⟩
+    intro ψ hψ
+    obtain ⟨ρ,hρ,hball,hrows⟩ := hlocal ψ hψ
+    refine ⟨Metric.ball ψ ρ,Metric.isOpen_ball,Metric.mem_ball_self hρ,hball,?_⟩
+    intro q hq hq1
+    exact hrows q hq hq1 (hhalf.trans hq1.le)
 
 /-- Construct both the original root family and its sharp actual moment atlas.
 There is no independently assumed compatibility or spectral premise. -/

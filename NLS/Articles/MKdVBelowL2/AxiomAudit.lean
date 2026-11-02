@@ -1,3 +1,8 @@
+import NLS.SequenceSpaces.WeightedReciprocalRows
+import NLS.SequenceSpaces.WeightedIndexRealization
+import NLS.ZakharovShabat.SourceAbelianMomentWeightedRows
+import NLS.Articles.MKdVBelowL2.FourthMomentAnalytic
+import NLS.Articles.MKdVBelowL2.FourthMomentSequence
 import NLS.ZakharovShabat.SourceLemma5_3
 import NLS.ComplexAnalysis.QuadraticCosineWeightedCancellation
 import NLS.ZakharovShabat.SourceAbelianCriticalWeightedPeriod
@@ -274,3 +279,26 @@ import NLS.Articles.MKdVBelowL2.FourthMomentSummability
 #print axioms NLS.ZakharovShabat.SourceLemma5_3Data.row_power_sum
 #print axioms NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_lemma5_3
 #print axioms NLS.ZakharovShabat.sourceLemma5_3
+
+#print axioms NLS.Coeff.norm_index_ratio_le
+#print axioms NLS.Coeff.exists_cubic_dual_product
+#print axioms NLS.Coeff.exists_weighted_cubic_reciprocal_row
+#print axioms NLS.Coeff.norm_weighted_tsum_sub_index_tsum_le
+#print axioms NLS.Coeff.inverseBracketCoeffs
+#print axioms NLS.Coeff.inverseBracketCoeffs_apply
+#print axioms NLS.Coeff.norm_inverseBracket_mul_index_le_one
+#print axioms NLS.Coeff.exists_negOne_weighted_of_bounded_error
+#print axioms NLS.ZakharovShabat.SourceAbelianMomentAtlas.weightedSecondMomentRow
+#print axioms NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_analytic_weightedSecondMomentRows
+#print axioms NLS.Articles.MKdVBelowL2.exists_analytic_fourthFrequencyCandidate
+#print axioms NLS.Articles.MKdVBelowL2.exists_fourthMoment_analyticAtlas
+#print axioms NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_difference_bound
+#print axioms NLS.Articles.MKdVBelowL2.fourthFrequencySequence
+#print axioms NLS.Articles.MKdVBelowL2.exists_analytic_fourthFrequencySequence
+#print axioms NLS.Articles.MKdVBelowL2.exists_fourthMoment_sequenceAtlas
+#print axioms NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_offDiagonal_onePlus_all
+#print axioms NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence
+#print axioms NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_analytic
+#print axioms NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence_analytic
+#print axioms NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence_real_analytic
+#print axioms NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence_eq_of_same_distributions
