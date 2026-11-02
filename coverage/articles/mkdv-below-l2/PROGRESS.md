@@ -895,3 +895,40 @@ comparison. A fresh full transitive audit checks 702 declarations, only
 propext, Classical.choice and Quot.sound. The checker now lists 152 modules.
 No holes, added axioms, disabled linters or increased heartbeat or recursion
 limits were introduced. Canonical compiled dependencies remain read-only.
+
+
+## Twentieth checkpoint: physical momentum and pointwise finite-gap mKdV
+
+The independently defined physical H2 now has full native action dependence,
+actual complex analytic germs and local action factors in the original raw
+ell^(3,1) actions. Original Section 20 data calibrate every open physical
+momentum action derivative as minus 2*pi*n along the reduction curve. Closed
+actions have zero full cotangent. The native weighted chain rule and complex
+real-form determination identify the entire physical momentum derivative.
+Testing weighted Fourier singles determines the full original Hilbert
+cotangent. Hence the explicit signed finite action sum LP is exactly the
+independent physical H2 cotangent, with no remaining calibration assumption.
+
+The actual fixed finite-gap fourth trajectory on the physical diagonal now
+has full source-norm velocity equal to the independently calibrated physical
+H4 field minus 6M times the positive spatial derivative. Original action
+invariance preserves the original Hilbert mass. The actual physical H1
+representative is differentiable in time at every real time. Evaluation and
+Fourier uniqueness give the pointwise scalar renormalized mKdV equation at
+every real time and spatial point, with the exact negative third derivative,
+cubic coefficient and mass correction. The physical field is real; its
+initial unit-period square integral is exactly M. No source-norm derivative
+has been passed through pointwise evaluation without the H1 justification.
+
+Theorem 1.1 remains incomplete: this PDE agreement is finite-gap only.
+Arbitrary smooth-data agreement, scalar trajectory packaging and the exact
+smooth-approximation/uniqueness requirements, and fixed-time divergent-mass
+nonextension remain necessary. Theorems 1.2 and 1.3 remain verified.
+
+All 13 final new modules pass strict Lean 4.33.1 checks; 152 unchanged parent
+modules reuse 9a2d23c9f2cf513921eb89cdb69b9a57eed3a3fc after source comparison.
+The fresh full transitive audit checks 749 declarations, using only propext,
+Classical.choice and Quot.sound. The checker lists 165 modules. No holes,
+new axioms, disabled linters or increased heartbeat or recursion limits were
+introduced. Canonical compiled dependencies remain read-only. This is an
+incremental focused validation, not a fresh whole-repository rebuild.

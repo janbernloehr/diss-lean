@@ -192,6 +192,19 @@ modules=(
   ZakharovShabat/SourceFiniteGapPhysicalFourthCoefficients
   ZakharovShabat/SourceActionPhaseFiniteGap
   Articles/MKdVBelowL2/FourthFiniteGapPhysicalCotangent
+  ZakharovShabat/SourceNativeFunctionalActionDependence
+  ZakharovShabat/SourceNativeMomentumBirkhoff
+  ZakharovShabat/SourceNativeMomentumComplexGerm
+  ZakharovShabat/SourceNativeMomentumActionFactors
+  ZakharovShabat/SourceNativeMomentumActionDerivatives
+  ZakharovShabat/SourceWeightedCotangentUniqueness
+  ZakharovShabat/SourceNativeMomentumCotangent
+  ZakharovShabat/SourceActionPhaseHilbertMass
+  Articles/MKdVBelowL2/FourthFiniteGapRenormalizedODE
+  ZakharovShabat/SourceActionPhaseSobolevTime
+  Fourier/PeriodOneCoefficientLinear
+  Articles/MKdVBelowL2/ClassicalRenormalizedFourthRegularity
+  Articles/MKdVBelowL2/FourthFiniteGapPointwiseMKdV
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"

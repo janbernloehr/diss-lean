@@ -79,9 +79,9 @@ for nearby data; one invariant neighborhood of zero works before every time
 interval. The full compact-time source trajectory maps are continuous in the
 uniform norm, and convergent approximants have uniformly convergent lift
 trajectories. The same physical Birkhoff coordinates, original action products,
-time-addition law and admissible inverse steps are verified. These are
-rotation-lift results: diagonal invariance and agreement with smooth mKdV PDE
-solutions have not yet been proved.
+time-addition law and admissible inverse steps are verified. The full physical diagonal is preserved at every admissible time. The actual
+finite-gap lift now satisfies the scalar renormalized mKdV equation pointwise.
+Agreement for arbitrary smooth data remains open.
 
 Every physical input outside the Hilbert pair space now has a nonzero first
 Birkhoff mode at n≠0. Here Hilbert membership means that exactly the same two
@@ -123,8 +123,16 @@ action chain rule and independent physical frequencies. Fourier-mode first
 variations identify its Poisson direction with the certified third-order
 physical fourth field. The actual fixed-family trajectory has a corrected
 cotangent ODE with physical H4, physical mass, and the explicit signed momentum
-action sum. Identification of that last sum with the physical H2 cotangent
-remains necessary before claiming the smooth renormalized PDE.
+action sum. The signed action sum is now identified with the independently defined physical
+H2 cotangent, including closed actions. Native momentum action dependence, actual
+local analytic action factors, original angle-momentum normalization and full
+complex cotangent uniqueness prove this identity. The fixed finite-gap trajectory
+therefore has the physical H4 velocity minus 6M times the positive spatial
+derivative. Its strong H1 time derivative and Fourier uniqueness give the
+pointwise scalar equation at every real time and spatial point. The physical
+field is real, and M is exactly the unit-period integral of the square of the
+initial physical field. This is finite-gap PDE agreement; the arbitrary smooth
+data requirement remains open.
 
 ## Physical conventions and corrections
 
@@ -148,10 +156,8 @@ Theorem 7.1 is a cross-reference typo; that theorem has three items.
 
 ## Remaining integration order for Theorem 1.1
 
-1. Complete physical momentum calibration in the actual corrected finite-gap
-   cotangent ODE, then prove the pointwise smooth renormalized PDE and agreement
-   for the required smooth data. The full complex H4 cotangent and its physical
-   third-order Poisson field are now verified, as is full finite-p preservation.
+1. Extend the verified pointwise finite-gap renormalized PDE agreement to the
+   required arbitrary smooth data and exact smooth-approximation solution notion.
 2. Package the local and invariant small-data trajectories in the scalar real
    mKdV phase space and prove the exact smooth-approximation solution property,
    uniqueness and continuity in the uniform trajectory norm.
@@ -160,13 +166,13 @@ Theorem 7.1 is a cross-reference typo; that theorem has three items.
 
 ## Validation
 
-The focused checker `check.sh` lists 152 article/shared modules and the
+The focused checker `check.sh` lists 165 article/shared modules and the
 consumed hierarchy foundations. Lean 4.33.1 checks use `autoImplicit=false`
-and `warningAsError=true`. The nineteenth checkpoint strictly checks all 9
-final new modules and reuses 143 parent modules after verifying their sources
-are unchanged from `1da0001479d89ea2584a38f20d59187041ebca0f`.
+and `warningAsError=true`. The twentieth checkpoint strictly checks all 13
+final new modules and reuses 152 parent modules after verifying their sources
+are unchanged from `9a2d23c9f2cf513921eb89cdb69b9a57eed3a3fc`.
 
-The fresh full transitive audit checks all 702 named declarations, including
+The fresh full transitive audit checks all 749 named declarations, including
 the main Theorems 1.2 and 1.3. Only `propext`, `Classical.choice` and
 `Quot.sound` occur. No holes, new axioms, disabled linters or increased
 heartbeat limits were introduced. `validation.txt` captures the checks;

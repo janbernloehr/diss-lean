@@ -141,13 +141,23 @@
     {
       "source": "Finite-gap preservation and the fixed-family corrected cotangent ODE",
       "declaration": "NLS.Articles.MKdVBelowL2.exists_fourthFiniteGap_physical_cotangent_ODE",
-      "scope": "Every original real Hilbert finite-gap datum and every real time. The actual fixed fourth-frequency image lift remains finite-gap and has a native representative of the same raw fields. Its full source-norm time derivative is the original Poisson direction of L4 - 6H2*dH1 - 6H1*LP, where L4 restricts exactly to the full independent physical H4 derivative, dH1 is the independently calibrated physical mass cotangent, and LP is explicitly the finite sum of 2*pi*n times the original action cotangent on one fixed original cutoff. Identifying LP with the physical momentum cotangent is still required; this statement does not yet assert the renormalized PDE."
+      "scope": "Every original real Hilbert finite-gap datum and every real time. The actual fixed fourth-frequency image lift remains finite-gap and has a native representative of the same raw fields. Its full source-norm time derivative is the original Poisson direction of L4 - 6H2*dH1 - 6H1*LP, where L4 restricts exactly to the full independent physical H4 derivative, dH1 is the independently calibrated physical mass cotangent, and LP is explicitly the finite sum of 2*pi*n times the original action cotangent on one fixed original cutoff. The separate physical momentum calibration now identifies LP with the independent H2 cotangent; the derived pointwise finite-gap PDE theorem supplies the equation."
+    },
+    {
+      "source": "Actual physical H2 momentum cotangent calibration",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finite_action_sum_eq_physicalMomentumCotangent",
+      "scope": "At every native real finite-gap source and every cutoff supporting all action cotangents, the signed sum of 2*pi*n times dI_n equals the independently defined physical H2 Hilbert cotangent. Native analytic action dependence and original angle-momentum calibration give the open derivatives; closed actions have zero full cotangent. Equality holds on all complex Hilbert directions."
+    },
+    {
+      "source": "Pointwise renormalized mKdV on the actual fixed finite-gap flow",
+      "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthFiniteGapPhysicalFlow_mKdV",
+      "scope": "Every original Hilbert finite-gap datum with equal physical fields, every real time and every spatial point. The actual fixed fourth trajectory has pointwise velocity -u_xxx+6*(u^2-M)*u_x, with the original period-one constants. The physical field is real at all times and M equals the integral over [0,1] of the square of its initial physical field. Strong H1 time differentiability and Fourier uniqueness establish the equation. Arbitrary smooth non-finite-gap data are not yet covered."
     }
   ],
   "remaining": [
-    "Complete the smooth physical renormalized mKdV PDE bridge. The full complex native physical H4 cotangent and its actual third-order source Poisson field are now calibrated. The actual fixed-family finite-gap trajectory has the corrected cotangent ODE L4 - 6H2*dH1 - 6H1*LP. Identify the explicit signed momentum-action cotangent LP with independently defined physical H2, then prove the pointwise equation and agreement for the required smooth data. The physical correction is H4 - 6H1*H2; H2 vanishing on the diagonal does not make its differential vanish.",
+    "Extend the actual pointwise finite-gap renormalized mKdV PDE agreement to the required arbitrary smooth data and exact smooth-approximation solution notion. Physical H4 and H2 cotangents, the conserved original mass, the positive spatial derivative normalization and the scalar finite-gap equation are now verified.",
     "Package the actual diagonal-preserving local and invariant small-data pair trajectories as scalar real mKdV trajectories, and establish the exact smooth-approximation solution and uniqueness requirements of Theorem 1.1.",
     "Construct controlled smooth approximations with tunable divergent physical mass at every datum outside L² and use the verified nonzero signed Birkhoff mode to prove nonextension at each fixed t>0. A trajectory obstruction alone does not prove this fixed-time claim."
   ],
-  "validation": "Nine final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 143 unchanged parent modules reused from 1da0001479d89ea2584a38f20d59187041ebca0f. Full transitive audit of 702 declarations uses only propext, Classical.choice and Quot.sound."
+  "validation": "Thirteen final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 152 unchanged parent modules reused from 9a2d23c9f2cf513921eb89cdb69b9a57eed3a3fc after source comparison. Full transitive audit of 749 declarations uses only propext, Classical.choice and Quot.sound."
 }
