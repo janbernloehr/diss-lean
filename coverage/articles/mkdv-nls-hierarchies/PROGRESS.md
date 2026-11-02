@@ -80,3 +80,48 @@ axiom audit passes for 72 declarations and generated auxiliaries, with the same
 three allowed classical axioms. There are 50 public declarations: 35 theorems
 and 15 definitions. Main-theorem completion, the independent Hill comparison
 and the full repository rebuild remain pending.
+
+## 2026-11-02 — independent physical H¹ Hill discriminant identity
+
+Commit `9614f05` adds the shared bounded complex-linear Volterra initial-value
+map and the general intertwining/trace theorem. These generic results are in
+`NLS/FunctionalAnalysis/LinearVolterraFlow.lean`; the exact ZS trace adapter is
+in `NLS/ZakharovShabat/ClassicalVolterraTrace.lean`.
+
+The independent scalar Hill construction starts from the quasi-derivative
+system `g'=u*g+w`, `w'=-mu*g-u*w`. This continuous-coefficient IVP uses no ZS
+data. A constant intertwiner with the diagonal ZS equation gives its trace
+identity away from zero, and independent analyticity extends the identity to
+the zero spectral parameter.
+
+The physical justification is also proved. For absolutely continuous u, every
+scalar column and its actual derivative are absolutely continuous and satisfy
+`-g''+(u'+u²)*g=mu*g` almost everywhere. Conversely any scalar solution in this
+physical class with the given initial position and derivative equals the
+constructed column. `PhysicalHillDiscriminant.lean` normalizes the independent
+columns by `(g(0),g'(0))=(1,0)` and `(0,1)`, then defines the discriminant by
+the literal endpoint diagonal sum. Matching endpoint values of u prove its
+trace agrees with the quasi-derivative trace.
+
+For every original complex period-one H¹ source these conditions are supplied
+by the existing Fourier representative and absolute-continuity theorems.
+`NLS.Articles.MKdVNLSHierarchies.theorem5_discriminant_identity` consequently
+proves the paper's Theorem 5, including the squared spectral parameter and
+zero. `hill_column_spec` records the physical equation, regularity and initial
+normalization as constructed facts. No essential identification is passed in
+as a hypothesis.
+
+All 19 article modules and the aggregate compiled against the pinned read-only
+dependencies. The article transitive axiom audit passed for 141 declarations
+and auxiliaries. A combined audit importing the full aggregate and all article
+modules passed for 45,386 NLS declarations, with only `propext`,
+`Classical.choice` and `Quot.sound` allowed. The expensive validation ran under
+the shared build lock; all writable outputs stayed in this worktree. This used
+the existing pinned compiled dependency cache, rather than rebuilding that
+entire dependency tree from source.
+
+There are now 96 public declarations in the article's shared/interface modules:
+71 theorems and 25 definitions. Theorem 5 is a necessary dependency, not one of
+the four introductory main theorems. All-order Hamiltonian identification and
+gradients, the sharp Sobolev flow restrictions, and the spectral actions,
+coordinates and frequencies required by the main theorems remain incomplete.

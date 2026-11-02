@@ -1,6 +1,7 @@
 import NLS.Articles.MKdVNLSHierarchies.InitialChecks
 import NLS.Articles.MKdVNLSHierarchies.SmoothFourthFlow
 import NLS.MKdV.MiuraBoundaryTransfer
+import NLS.Articles.MKdVNLSHierarchies.DiscriminantIdentity
 import Lean.Util.CollectAxioms
 
 /-! Audit every new public declaration and its generated auxiliary declarations.
@@ -23,7 +24,15 @@ run_cmd do
     `NLS.ZakharovShabat.classicalNLSHamiltonian_four_variation_fst,
     `NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_fst,
     `NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_snd,
-    `NLS.ZakharovShabat.classicalNLSFourthGradient]
+    `NLS.ZakharovShabat.classicalNLSFourthGradient,
+    `NLS.ZakharovShabat.solutionMap_classicalCoefficientCurve,
+    `NLS.ZakharovShabat.classicalDiscriminant_eq_flowTrace,
+    `NLS.LinearVolterra.absolutelyContinuous_solution,
+    `NLS.LinearVolterra.solutionMap,
+    `NLS.LinearVolterra.solutionMap_apply,
+    `NLS.LinearVolterra.solutionMap_intertwine,
+    `NLS.LinearVolterra.trace_solutionMap_intertwine,
+    `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[``NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero,
     ``NLS.MKdV.classicalNLSHamiltonian_three_diagonal,
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_covectors,
@@ -33,7 +42,12 @@ run_cmd do
     ``NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_fst,
     ``NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_snd,
     ``NLS.MKdV.miura_equation_classicalSolution,
-    ``NLS.MKdV.miura_floquet_condition_iff]
+    ``NLS.MKdV.miura_floquet_condition_iff,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem5_discriminant_identity,
+    ``NLS.Articles.MKdVNLSHierarchies.hill_column_spec,
+    ``NLS.MKdV.physicalMiuraSolution_unique,
+    ``NLS.MKdV.quasiHillDiscriminant_eq_ZS,
+    ``NLS.LinearVolterra.trace_solutionMap_intertwine]
   let env ← getEnv
   for name in expected do
     unless (env.find? name).isSome do

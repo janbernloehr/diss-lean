@@ -83,11 +83,14 @@
     {
       "label": "Theorem 5",
       "page": 9,
-      "status": "actual_scalar_miura_equation_and_boundary_transfer_proved_independent_hill_comparison_pending",
+      "status": "verified_physical_H1_IVP_discriminant_identity",
       "proved": [
-        "NLS.MKdV.miura_equation_classicalSolution",
-        "NLS.MKdV.miura_floquet_condition_iff"
-      ]
+        "NLS.Articles.MKdVNLSHierarchies.theorem5_discriminant_identity",
+        "NLS.Articles.MKdVNLSHierarchies.hill_column_spec",
+        "NLS.MKdV.physicalMiuraSolution_unique"
+      ],
+      "quantifiers": "forall original complex period-one H1 input a, forall complex z, including z=0",
+      "physical_identification": "Independent Hill columns have initial conditions (1,0) and (0,1) in position/derivative coordinates; both column and derivative are absolutely continuous; the actual equation -g_second+(u_prime+u_squared)*g=mu*g holds almost everywhere; physical uniqueness is proved."
     },
     {
       "label": "Proposition 6",
@@ -116,8 +119,8 @@
         "NLS.MKdV.miura_equation_classicalSolution"
       ],
       "limits": [
-        "Actual constructed ZS solution, scalar equation at differentiability points in the open unit interval.",
-        "Independent Hill solution and discriminant identification remain open."
+        "The scalar equation and actual IVP intertwining are proved; the independent physical discriminant comparison has now been proved on original H1 inputs.",
+        "Hilbert operator spectrum/gap labels and the paper literal matrix-conjugacy formula are not claimed as separate completed declarations."
       ]
     }
   ],
@@ -137,5 +140,12 @@
     "article_upper_right_potential": "phi2",
     "library_classicalODECoefficient_upper_right": "i*phi.1",
     "remaining": "Reconcile physical field order, spectral reflection and integer gap labels before importing the spectral action trace as an article statement."
-  }
+  },
+  "remaining_essential_dependencies": [
+    "all-order physical Hamiltonian identification and variational recurrence",
+    "sharp Sobolev vector-field restriction",
+    "Hill operator spectral gap labels and action integrals",
+    "mKdV Birkhoff coordinates, brackets and frequency identification",
+    "recorded main-source matrix/sign/signed-mean qualifications"
+  ]
 }

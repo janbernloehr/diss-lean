@@ -75,6 +75,19 @@ Theorem 6 (pp. 13–14, discriminant symmetries), Lemma 10 (pp. 16–17,
 action-gradient identities) and Proposition 11 (pp. 17–18, hierarchy gradients).
 These are dependencies of the four main theorems, not extra completion targets.
 
+Theorem 5 is now proved as
+`NLS.Articles.MKdVNLSHierarchies.theorem5_discriminant_identity`, for every
+original complex H¹ input and every complex spectral parameter, including zero.
+Its independently constructed Hill columns have the actual initial conditions
+`(g(0),g'(0))=(1,0)` and `(0,1)`. The shared library proves absolute continuity
+of each column and its derivative, the physical equation
+`-g''+(u'+u²)*g=mu*g` almost everywhere, and uniqueness in that physical IVP
+class. The discriminant is the literal sum `g1(1)+g2'(1)`. The period-one Fourier
+representative and the `2*pi*i*n` derivative normalization are retained by the
+existing even-insertion map. No Hill/ZS discriminant equality is an input to
+the construction. The Hilbert operator spectrum, gap labels, action integrals
+and Birkhoff identification required by Theorem 4 are still separate obligations.
+
 ## Source corrections still to resolve
 
 These observations are recorded to prevent an incorrect formal target. No Lean
@@ -135,14 +148,15 @@ inspection was main; no alternative article proof was found to duplicate.
 - `NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean`: article-facing
   statements with the exact current domains and explicit limitations.
 
-The first phase added no aggregate NLS import, axiom, admitted proof, disabled linter or essential
-unproved assumption was added. A conditional analogue is not being substituted
+The first phase added no aggregate NLS import, axiom, admitted proof, disabled
+linter or essential unproved assumption. A conditional analogue is not being substituted
 for a main theorem. There are 22 public declarations in these three modules,
 15 theorems and 7 definitions. The transitive axiom audit additionally covers
 generated auxiliaries; its initial audit passed for 35 declarations and allows only
 `propext`, `Classical.choice` and `Quot.sound`.
 
-The subsequent physical smooth m=2 identification and expanded validation are
+The subsequent physical smooth m=2 identification, independent H¹ Hill/ZS
+discriminant identity and expanded validation are
 recorded in [the progress log](PROGRESS.md). The original full main theorems
 remain incomplete.
 
@@ -172,7 +186,7 @@ The checker uses an overlay of cached read-only imports. Every writable output
 is inside this worktree's `.lake/build`; it neither copies the full cache nor
 invokes a writing build in the canonical checkout. By default it checks the
 article modules and their transitive axiom audit. Use `--full-audit` to compile
-the aggregate and run the full NLS transitive axiom audit under
+the aggregate and run a combined NLS/article transitive axiom audit under
 `/tmp/diss-lean-article-build.lock`. `--module-only PATH` performs a focused
 module check and can be repeated in dependency order. A focused check is not a
 fresh full repository build. The article imports are explicit; additions to

@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 72,
+  "audited_declarations_and_auxiliaries": 141,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -171,6 +171,196 @@
       "file": "NLS/MKdV/MiuraClassicalSolution.lean"
     },
     {
+      "kind": "def",
+      "name": "physicalMiuraSolution",
+      "file": "NLS/MKdV/PhysicalHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalMiuraSolution_zero",
+      "file": "NLS/MKdV/PhysicalHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "deriv_physicalMiuraSolution",
+      "file": "NLS/MKdV/PhysicalHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "deriv_physicalMiuraSolution_zero",
+      "file": "NLS/MKdV/PhysicalHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalMiuraSolution_spec",
+      "file": "NLS/MKdV/PhysicalHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalMiuraSolution_unique",
+      "file": "NLS/MKdV/PhysicalHillDiscriminant.lean"
+    },
+    {
+      "kind": "def",
+      "name": "physicalMiuraDiscriminant",
+      "file": "NLS/MKdV/PhysicalHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalMiuraDiscriminant_eq_quasiHill",
+      "file": "NLS/MKdV/PhysicalHillDiscriminant.lean"
+    },
+    {
+      "kind": "def",
+      "name": "quasiHillCoefficient",
+      "file": "NLS/MKdV/QuasiHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillCoefficient_apply",
+      "file": "NLS/MKdV/QuasiHillDiscriminant.lean"
+    },
+    {
+      "kind": "def",
+      "name": "quasiHillCoefficientCurve",
+      "file": "NLS/MKdV/QuasiHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillCoefficientCurve_apply",
+      "file": "NLS/MKdV/QuasiHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_quasiHillCoefficientCurve",
+      "file": "NLS/MKdV/QuasiHillDiscriminant.lean"
+    },
+    {
+      "kind": "def",
+      "name": "quasiHillSolution",
+      "file": "NLS/MKdV/QuasiHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillSolution_zero",
+      "file": "NLS/MKdV/QuasiHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_quasiHillSolution",
+      "file": "NLS/MKdV/QuasiHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_fst_quasiHillSolution",
+      "file": "NLS/MKdV/QuasiHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_snd_quasiHillSolution",
+      "file": "NLS/MKdV/QuasiHillDiscriminant.lean"
+    },
+    {
+      "kind": "def",
+      "name": "quasiHillDiscriminant",
+      "file": "NLS/MKdV/QuasiHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_quasiHillDiscriminant",
+      "file": "NLS/MKdV/QuasiHillDiscriminant.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_deriv_fst_quasiHillSolution",
+      "file": "NLS/MKdV/QuasiHillPhysicalEquation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillSolution_scalar_equation",
+      "file": "NLS/MKdV/QuasiHillPhysicalEquation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillSolution_scalar_equation_ae",
+      "file": "NLS/MKdV/QuasiHillPhysicalEquation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillSolution_scalar_regular",
+      "file": "NLS/MKdV/QuasiHillPhysicalUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalMiuraSolution_eq_quasiHill",
+      "file": "NLS/MKdV/QuasiHillPhysicalUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillCoefficient_intertwine",
+      "file": "NLS/MKdV/QuasiHillZSComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillSolution_eq_transformedZS",
+      "file": "NLS/MKdV/QuasiHillZSComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillDiscriminant_eq_ZS_of_ne_zero",
+      "file": "NLS/MKdV/QuasiHillZSComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillDiscriminant_eq_ZS",
+      "file": "NLS/MKdV/QuasiHillZSComparison.lean"
+    },
+    {
+      "kind": "def",
+      "name": "periodOneMiuraCurve",
+      "file": "NLS/MKdV/SobolevQuasiHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneMiuraCurve_apply",
+      "file": "NLS/MKdV/SobolevQuasiHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneMiuraCurve_endpoints",
+      "file": "NLS/MKdV/SobolevQuasiHill.lean"
+    },
+    {
+      "kind": "def",
+      "name": "periodOneMiuraDiscriminant",
+      "file": "NLS/MKdV/SobolevQuasiHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneMiuraDiscriminant_eq_ZS",
+      "file": "NLS/MKdV/SobolevQuasiHill.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneMiuraSolution_scalar_equation_ae",
+      "file": "NLS/MKdV/SobolevQuasiHill.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDiscriminant",
+      "file": "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem5_discriminant_identity",
+      "file": "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hill_column_spec",
+      "file": "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean"
+    },
+    {
       "kind": "theorem",
       "name": "theorem1_even_vanishing_original_domain",
       "file": "NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean"
@@ -194,6 +384,36 @@
       "kind": "theorem",
       "name": "theorem1_m2_smooth",
       "file": "NLS/Articles/MKdVNLSHierarchies/SmoothFourthFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "absolutelyContinuous_solution",
+      "file": "NLS/FunctionalAnalysis/LinearVolterraFlow.lean"
+    },
+    {
+      "kind": "def",
+      "name": "solutionMap",
+      "file": "NLS/FunctionalAnalysis/LinearVolterraFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "solutionMap_apply",
+      "file": "NLS/FunctionalAnalysis/LinearVolterraFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "solutionMap_intertwine",
+      "file": "NLS/FunctionalAnalysis/LinearVolterraFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "trace_solutionMap_intertwine",
+      "file": "NLS/FunctionalAnalysis/LinearVolterraFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "trace_pairCLM",
+      "file": "NLS/FunctionalAnalysis/LinearVolterraFlow.lean"
     },
     {
       "kind": "def",
@@ -269,30 +489,49 @@
       "kind": "theorem",
       "name": "hasDerivAt_classicalNLSHamiltonian_four_snd",
       "file": "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "solutionMap_classicalCoefficientCurve",
+      "file": "NLS/ZakharovShabat/ClassicalVolterraTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalDiscriminant_eq_flowTrace",
+      "file": "NLS/ZakharovShabat/ClassicalVolterraTrace.lean"
     }
   ],
-  "public_declaration_count": 50,
-  "theorem_count": 35,
-  "definition_count": 15,
-  "full_build": "not performed; shared full-build lock held by another process; waiting command cancelled",
+  "public_declaration_count": 96,
+  "theorem_count": 71,
+  "definition_count": 25,
+  "full_build": "All 19 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit",
   "sha256": {
     "NLS/MKdV/ClassicalEnergyVariation.lean": "1c8340633e26be0c870faaad5cffd32dcbc2fc4ca62a006dff4bebd4bbf77d2d",
     "NLS/MKdV/ClassicalFourthFlowRestriction.lean": "52e10d66dd8d0e009feda41ff23f68d0bd3dfe30b353fa8a5877e69475e01558",
     "NLS/MKdV/HierarchyRestriction.lean": "6ffee4097f33659f6e95bf440cb02e30074dfa0b9e364467ea947fe6f9a07853",
     "NLS/MKdV/MiuraBoundaryTransfer.lean": "d8747dde2efaa7415650cc8f00b1f3a15c8345f34ed1b3812ed4ba7f6fd5fc2d",
     "NLS/MKdV/MiuraClassicalSolution.lean": "8ff694a65deec068d661b9132c593c09042c97e622c6e147aa5346fa85ddd42f",
+    "NLS/MKdV/PhysicalHillDiscriminant.lean": "297660f9d77db5e24a4ab61cc6ed2b7e890c4f0ddd3ccb8bb554fac302aee9aa",
+    "NLS/MKdV/QuasiHillDiscriminant.lean": "ee370b555779313027d7ee306269031630a2ce465c90cecadac8ae7fe1a6b726",
+    "NLS/MKdV/QuasiHillPhysicalEquation.lean": "d0d58280e8aec3c56f89343c37f938f934892f2ea93f75a24e92cda86bd983d0",
+    "NLS/MKdV/QuasiHillPhysicalUniqueness.lean": "349d7cba9f46de07507714abb474d5cef01c1be8488181d43e8190f72fd87f89",
+    "NLS/MKdV/QuasiHillZSComparison.lean": "0731af226de4d930dbc04de21ceb8cf0c363a68ab4cfb788760064c23ea2cf0c",
+    "NLS/MKdV/SobolevQuasiHill.lean": "6233ab01fc3fd86933062f2f374db91e8464fcc25c6fd0a6a6e9655b208905a3",
+    "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
     "NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean": "743e4e169ec2fdb2b8b08a06f778dc91672bff3c1bbc9063feca15ec3c034edd",
     "NLS/Articles/MKdVNLSHierarchies/SmoothFourthFlow.lean": "21399990f0be798e393caa0cf2905e8b18fea3e9cba135ee6386a68161ad44a9",
+    "NLS/FunctionalAnalysis/LinearVolterraFlow.lean": "cd27c0c270665ea606ace800acbb8580e75d3211f424bdd79eb694cda4fe0a9f",
     "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean": "ac722225fd4362ba3ba74149df58d8f233899e1a5a2950cb4a4833516f7755ca",
     "NLS/ZakharovShabat/ClassicalNLSFourthHamiltonian.lean": "7eb0973075e5414613b80cc73466c087d362422265902d0aa2425bf0a3e38f73",
     "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean": "8f507c2d54caf16dfecb3a42cbaec191cc2c4d1453c5080bc6f877129d32280f",
-    "scripts/check_mkdv_nls.py": "b4c26626e10fe419930d1860a54e0318648a9e9ad902be6f22c452de92d7d34c",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "ce0bcb7b8b885d27279c5ff4795eb366a8de9213704f2825b9e39f073505a2d8"
+    "NLS/ZakharovShabat/ClassicalVolterraTrace.lean": "af489d580fb8de14051b7abf002235b0507570e6fab8b2b9aafd7a4fc82be41f",
+    "scripts/check_mkdv_nls.py": "16713db2ccf183e9853457156b6ad5fff769072b37cd8676c8c69644ed7d50d2",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "cb213baf112b84c815348f8b102dde41814db64771b524e33b82c251f16e300f"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 10,
+  "focused_module_count": 19,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -305,6 +544,17 @@
     {
       "milestone": "actual Miura equation and Floquet boundary transfer",
       "audit_count": 72
+    },
+    {
+      "milestone": "independent physical H1 Hill discriminant identity",
+      "audit_count": 141,
+      "combined_NLS_audit_count": 45386,
+      "aggregate_compiled": true
     }
-  ]
+  ],
+  "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
+  "aggregate_compilation_passed": true,
+  "combined_aggregate_article_axiom_audit_passed": true,
+  "combined_audited_NLS_declarations": 45386,
+  "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log"
 }

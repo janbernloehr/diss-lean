@@ -42,6 +42,15 @@ modules = [
     "NLS/Articles/MKdVNLSHierarchies/SmoothFourthFlow.lean",
     "NLS/MKdV/MiuraClassicalSolution.lean",
     "NLS/MKdV/MiuraBoundaryTransfer.lean",
+    "NLS/FunctionalAnalysis/LinearVolterraFlow.lean",
+    "NLS/MKdV/QuasiHillDiscriminant.lean",
+    "NLS/ZakharovShabat/ClassicalVolterraTrace.lean",
+    "NLS/MKdV/QuasiHillZSComparison.lean",
+    "NLS/MKdV/QuasiHillPhysicalEquation.lean",
+    "NLS/MKdV/QuasiHillPhysicalUniqueness.lean",
+    "NLS/MKdV/SobolevQuasiHill.lean",
+    "NLS/MKdV/PhysicalHillDiscriminant.lean",
+    "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")
@@ -99,5 +108,9 @@ with (open("/tmp/diss-lean-article-build.lock", "a") if args.full_audit else
     if not args.module_only:
         run("scripts/CheckMKdVNLSHierarchiesAxioms.lean")
     if args.full_audit:
-        run("scripts/CheckAxioms.lean")
+        combined = logs / "CombinedAxioms.lean"
+        imports = "".join(f"import {str(Path(module).with_suffix('')).replace('/', '.')}\n"
+                          for module in modules if module != "NLS.lean")
+        combined.write_text(imports + (root / "scripts/CheckAxioms.lean").read_text())
+        run(str(combined.relative_to(root)))
     print("Requested compilation and axiom checks passed.", flush=True)
