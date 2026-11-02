@@ -3,6 +3,9 @@ import NLS.KdV.HillComplement
 import NLS.KdV.HillReduction
 import NLS.KdV.HillSobolev
 import NLS.KdV.HillPhysical
+import NLS.KdV.HillAnalytic
+import NLS.KdV.HillLocalization
+import NLS.KdV.HillZeroCount
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 

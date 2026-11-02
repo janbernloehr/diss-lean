@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned tooling; DISS_LEAN_REFERENCE_CHECKOUT set to read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 192,
+    "declarations": 243,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates"
@@ -32,10 +32,13 @@
     "NLS/Articles/KdVEstimates/EstimateAdapter.lean": "d6b2f6e78b438e5ada6499c28149a64509d0df78ad6760258042804ec9633fec",
     "NLS/KdV/HillReduction.lean": "5fdcf6cb4585f9bbf67e31a617f257b727eb481e4b6577590e45396fac65717f",
     "NLS/KdV/HillSobolev.lean": "5600e5993044383e575f8a6278f38e13ab65fafa66cac8aadd12a23baf07b07a",
-    "NLS/KdV/HillPhysical.lean": "5634227fb1ed59ef6c4827408fdd3878586333e2e82dcf489275efd429650d5c"
+    "NLS/KdV/HillPhysical.lean": "5634227fb1ed59ef6c4827408fdd3878586333e2e82dcf489275efd429650d5c",
+    "NLS/KdV/HillAnalytic.lean": "597b1af3e1c6ed8a970121c493235cbd5c621f033ebb7bab86592f3ac67fecbc",
+    "NLS/KdV/HillLocalization.lean": "e474899bb3496f751cbfe51d28155d58137d5c67dea09b0290fe24fc5038d1e9",
+    "NLS/KdV/HillZeroCount.lean": "df8ee129779e93d6d4bb3ec6a617a7b3807481f0da81ee60ad148426f33ac82b"
   },
-  "remaining": "Main Theorems 1\u20133 are still unverified. Analytic effective determinant and spectral labeling/counting/localization, source potential restriction adapters, discriminant/actions/Birkhoff construction, hierarchy trace identities, and analytic norm estimates remain outstanding.",
-  "milestone": "Exact periodic physical H2 domain realization, automatic Fourier eigenvector regularity, actual -d2/dx2+q action, and physical determinant/eigenvector equivalence",
+  "remaining": "Main Theorems 1\u20133 are still unverified. Global spectral labels and multiplicities/central bounds, weighted spectral gap estimates, source potential restriction adapters, discriminant/actions/Birkhoff construction, hierarchy trace identities and analytic norm estimates remain outstanding.",
+  "milestone": "Joint analytic Hill determinant, physical high-strip eigenvalue localization and a proved two-analytic-zero Rouche count with explicit corrected cutoffs",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -44,6 +47,9 @@
     "NLS.KdV.HillReduction",
     "NLS.KdV.HillSobolev",
     "NLS.KdV.HillPhysical",
+    "NLS.KdV.HillAnalytic",
+    "NLS.KdV.HillLocalization",
+    "NLS.KdV.HillZeroCount",
     "NLS.Articles.KdVEstimates.EstimateAdapter"
   ],
   "proof_commits": [
@@ -61,6 +67,11 @@
       "commit": "0b58631c37a1bf066ea0d21d5179b1a43844ed5c",
       "scope": "Exact two-mode Fourier eigenvector/determinant reduction and free squared dispersion determinant",
       "pushed": true
+    },
+    {
+      "commit": "91fa81c3efaef0dcf27f267e2409a4e086deb99d",
+      "scope": "Exact physical periodic H2 domain, actual weak Hill operator and physical eigen-equation",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -76,11 +87,11 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All six modules checked with pinned Lean 4.33.1 and autoImplicit=false by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All nine modules checked with pinned Lean 4.33.1 and autoImplicit=false by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 192 declarations.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 243 declarations.",
     "new_module_warnings": [],
-    "aggregate_scope": "Full aggregate/build/examples remain unrerun; the prior deferred aggregate check is not treated as a pass."
+    "aggregate_scope": "Full aggregate/build/examples remain unrerun; the earlier deferred aggregate check is not treated as a pass."
   }
 }

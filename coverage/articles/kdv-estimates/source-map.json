@@ -67,7 +67,7 @@
         "A_m^2 <= d_m^2*(Q_(2*m+1)+(1+Q_(2*m-1))^m*Q_(2*m-1))"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "Construct physical Hill actions, trace identities, spectral localization, and the forward/inverse estimates. Generic NLS action estimates alone do not establish these assertions.",
+      "remaining": "Construct physical Hill actions and hierarchy trace identities, complete global spectral/gap estimates, and prove the forward/inverse action bounds. The corrected-constant high-strip operator localization is now checked, but is not the theorem itself.",
       "status": "not_verified"
     },
     {
@@ -197,14 +197,26 @@
     {
       "module": "NLS/Fourier/SobolevIdentification.lean and SobolevDerivative.lean",
       "role": "Actually reused for absolute continuity, actual derivative membership, coefficient recovery and the unique periodic H2 realization."
+    },
+    {
+      "module": "NLS/SequenceSpaces/BoundedCoordinateAnalytic.lean and LocallyBoundedRealization.lean",
+      "role": "Actually reused to assemble the reciprocal family and prove Banach-valued analyticity from its literal scalar coefficients and proved uniform Hilbert bound."
+    },
+    {
+      "module": "NLS/FunctionalAnalysis/AnalyticSchurComplement.lean and FiniteSpectralDeterminant.lean",
+      "role": "Actually reused for analytic operator composition and the finite determinant."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/ZeroCountComparison.lean and Rouche.lean",
+      "role": "Actually reused to count two analytic zeros from the proved quantitative boundary comparison."
     }
   ],
   "next_shared_milestones": [
-    "Prove analytic dependence of the constructed complementary inverse and effective two-mode determinant, including the diagonal symmetry and quantitative coefficient bounds.",
-    "Establish the spectral facts needed for contour counting and global labeling, including compactness/self-adjointness where used; prove localization with Rouche theory.",
+    "Prove the diagonal symmetry and coefficient estimates of the effective two-mode operator needed for weighted spectral gap bounds.",
+    "Identify determinant analytic orders with the relevant periodic operator/characteristic multiplicities, construct ordered global spectral labels and prove the remaining central/exterior spectral bounds.",
     "Apply the period-one/mean-zero potential embedding in the exact source norm and weighted w_(2n) convention.",
     "Construct the Hill discriminant, root branches, contour actions, real positivity and physical canonical Birkhoff map with exact positive-mode and norm conventions.",
-    "Reuse the shared ActionHamiltonianMoments/Trace/FiniteGap developments from the convexity branch when their literal primitive inputs have been constructed; prove the hierarchy trace identities and tame action estimates for Theorem 2.",
+    "Reuse the shared ActionHamiltonianMoments/Trace/FiniteGap developments when the literal Hill primitive has been constructed; prove the hierarchy trace identities and tame action estimates for Theorem 2.",
     "Connect Theorem 1 through the checked adapters and prove the weighted gap/action bounds and interpolated weight evaluations for Theorem 3."
   ],
   "workspace_need": "Isolation approved. Branch articles/kdv-estimates; worktree path recorded in validation record. Continue small validated shared-foundation commits and push only this branch.",
@@ -220,7 +232,7 @@
       "When n>=8*||q||_w, the tail operator has norm at most 1/2, and id minus that operator admits an actual two-sided bounded inverse of norm at most 2. The existence proof reuses NLS.exists_inverse_norm_le_two_mul_of_composition_near."
     ],
     "constant_changes": "Uses 4/n for the summability and tail estimates, cutoff 8*||q||, and strip radius 6*n; no assertion of the printed 2/n estimate or radius 12*n follows.",
-    "essential_missing_identifications": "The physical H2 operator realization is now proved in HillSobolev/HillPhysical, and the two-mode Fourier reduction in HillReduction. The source period-one potential embedding with w_(2n), analytic determinant, and eigenvalue labeling/counting/localization remain outstanding.",
+    "essential_missing_identifications": "Physical H2 realization, actual two-mode reduction, analytic determinant and corrected-constant high-strip zero localization/count are proved. The source period-one/mean-zero weighted embedding, full spectral multiplicity/labeling, and central spectral estimates remain outstanding.",
     "main_theorems_verified": false
   },
   "two_mode_reduction": {
@@ -253,7 +265,7 @@
     "statement": "For a positive integer n, |Re(z)-pi^2*n^2|<=6*n, and n>=8*||q||_w, the determinant of the constructed operator on C x C vanishes iff there exists a nonzero weighted l1 sequence f with (z-pi^2*k^2)*f_k=(q*f)_k for every integer k. Reconstruction and resonant coefficient extraction recover the solutions in both directions. The full potential is the literal weighted convolution.",
     "free_case": "At zero potential the constructed operator is (z-pi^2*n^2)*id, and its determinant is exactly (z-pi^2*n^2)^2.",
     "not_assumed": "No unspecified finite block, arbitrary spectral package, or unproved inverse hypothesis is supplied by a caller. The bounded inverse is chosen from the previously proved existence theorem.",
-    "remaining_qualifications": "The physical H2 operator/domain identification is now proved in HillSobolev/HillPhysical. Analytic dependence on z and q, equality of diagonal correction terms, spectral multiplicity as the order of a determinant zero, and eigenvalue labeling/localization remain to be proved."
+    "remaining_qualifications": "The physical H2 identification and joint analyticity of a matching determinant family are now proved. The equality of its diagonal correction terms, agreement of analytic determinant orders with operator algebraic multiplicities, and global eigenvalue labeling remain to be proved. The checked high-strip localization and two-analytic-zero count are recorded separately."
   },
   "other_article_branches_inspected": [
     {
@@ -280,6 +292,15 @@
         "NLS/KdV/ActionHamiltonianFiniteGap.lean"
       ],
       "finding": "Shared primitive-action integration by parts, quartic gap period and finite-gap contour trace proofs inspected. Reserve these for reuse after constructing the literal Hill primitive; they are not imported into this operator-domain milestone and do not by themselves establish the physical energy trace."
+    },
+    {
+      "branch": "articles/mkdv-nls-hierarchies",
+      "commit": "d48309c",
+      "modules": [
+        "NLS/MKdV/MiuraClassicalSolution.lean",
+        "NLS/MKdV/MiuraBoundaryTransfer.lean"
+      ],
+      "finding": "Actual Miura scalar equation with potential u prime+u^2 and spectral parameter z^2, and Floquet boundary transfer at z nonzero, inspected for future reuse. The branch explicitly leaves the independent Hill IVP/monodromy/discriminant comparison open; no ZS-to-Hill spectral identification is assumed here."
     }
   ],
   "physical_hill_realization": {
@@ -320,5 +341,41 @@
     "operator_description": "The free part has symbol pi^2*k^2. It is the negative second derivative as a genuine tempered distribution. The potential term is the actual L2 product of the potential and the continuous H2 representative, by the existing physical convolution theorem. The physical output equals -G prime + q*F almost everywhere.",
     "eigenvector_regularization": "Every unit-weight summable solution of the full Fourier eigen-equation automatically has Sobolev order two. The two-mode determinant therefore vanishes exactly when the constructed physical H2 Hill operator has a nonzero domain eigenvector on the stated strips and cutoff.",
     "scope_qualifications": "The result works for arbitrary complex L2 potentials on the period-two circle. Source period-one/mean-zero potential restrictions still need their explicit application adapter. No compact resolvent, self-adjointness, eigenvalue labeling/counting/multiplicity, analytic determinant, or physical Birkhoff map is asserted by this milestone."
+  },
+  "analytic_localization_zero_count": {
+    "modules": [
+      "NLS/KdV/HillAnalytic.lean",
+      "NLS/KdV/HillLocalization.lean",
+      "NLS/KdV/HillZeroCount.lean"
+    ],
+    "source_correspondence": "Appendix A pages 27-29: analytic complementary inverse and effective determinant, the localization inclusion of Proposition A.1/Lemma A.5, and the two-root Rouche argument. These are proved for the explicit corrected strips/cutoffs below, and do not verify the global spectral enumeration or low central bounds of Proposition A.1.",
+    "analytic_declarations": [
+      "NLS.KdV.analyticOnNhd_hillReciprocal",
+      "NLS.KdV.analyticOnNhd_hillComplementFamily",
+      "NLS.KdV.analyticAt_hillTailFamily",
+      "NLS.KdV.hillInverseFamily_eq",
+      "NLS.KdV.analyticAt_hillInverseFamily",
+      "NLS.KdV.hillReducedFamily_eq",
+      "NLS.KdV.analyticAt_hillReducedFamily",
+      "NLS.KdV.analyticAt_hillReducedDeterminant",
+      "NLS.KdV.hillReducedDeterminant_eq",
+      "NLS.KdV.analyticOnNhd_hillReducedDeterminant_spectral"
+    ],
+    "analytic_scope": "Joint complex Banach analyticity in the weighted l2 potential and spectral parameter at all points with |Re(z)-pi^2*n^2|<6*n and n>=8*||q||_w. The total determinant family is explicitly constructed, and equality with the original proof-indexed two-mode operator is proved. The inverse is constructed using Ring.inverse and its unit condition is derived from the checked tail bound.",
+    "localization_declarations": [
+      "NLS.KdV.norm_hillEffectiveCorrection_one_le",
+      "NLS.KdV.hillReduced_kernel_localization",
+      "NLS.KdV.hillReducedDeterminant_zero_localization",
+      "NLS.KdV.physicalHillEigenvector_localization"
+    ],
+    "localization_scope": "For unit sequence weight, n>=1, |Re(z)-pi^2*n^2|<=6*n and n>=8*||q||, every effective determinant zero and every nonzero physical H2 eigenvector satisfies |z-pi^2*n^2|<=4*||q||. The proof uses the actual reconstructed correction and does not assume an eigenvalue estimate.",
+    "zero_count_declarations": [
+      "NLS.KdV.hillReducedDeterminant_free_error_le",
+      "NLS.KdV.hillReducedDeterminant_two_zeros",
+      "NLS.KdV.hillReducedDeterminant_strip_two_zeros"
+    ],
+    "zero_count_scope": "For n>=1 and n>=16*||q||, the actual determinant has analyticZeroCount=2 on the closed radius-n disc about pi^2*n^2. The quantitative bound |D(z)-(z-pi^2*n^2)^2|<=8*|z-pi^2*n^2|*||q||+32*||q||^2 proves the strict Rouche inequality. Localization proves the same count exhausts the whole closed radius-6*n real strip. This includes q=0 without a separate positive-norm assumption and allows colliding roots.",
+    "corrections": "The complementary inverse strip remains radius 6*n. Localization uses cutoff 8*||q|| and bound 4*||q||. The two-zero count uses cutoff 16*||q|| and a radius-n counting circle. No assertion of the printed wider strip or printed cutoff follows by notation alone.",
+    "multiplicity_qualification": "Analytic orders of this specific determinant are counted. Their equality with operator algebraic multiplicities, global periodic spectral labels, and the Hill discriminant zero orders remain outstanding."
   }
 }
