@@ -106,6 +106,46 @@ import NLS.ComplexAnalysis.NestedCircleHomotopy
 import NLS.ComplexAnalysis.AnalyticCutContour
 import NLS.KdV.HillL2GapContourIntegral
 import NLS.KdV.HillL2HighGapMoments
+import NLS.KdV.HillL2DiscAsymptotics
+import NLS.ZakharovShabat.ContinuousPotentialL2Bound
+import NLS.KdV.ClassicalSpectralEmbedding
+import NLS.KdV.ClassicalHillSpectrum
+import NLS.KdV.ClassicalSourcePrimitive
+import NLS.KdV.ClassicalContourCoverage
+import NLS.KdV.ClassicalHillDiscAsymptotics
+import NLS.KdV.ClassicalHillHighTracePhase
+import NLS.KdV.HillL2TraceControl
+import NLS.ZakharovShabat.ClassicalSolutionInjectivity
+import NLS.KdV.ClassicalHillGreen
+import NLS.KdV.ClassicalHighGapPairs
+import NLS.KdV.ClassicalHillReality
+import NLS.KdV.ClassicalHillPrimitiveSheets
+import NLS.KdV.ClassicalHillPrimitiveReflection
+import NLS.KdV.ClassicalHillBandNormalization
+import NLS.KdV.ClassicalHillHighPrimitiveStrip
+import NLS.KdV.HillL2PrimitiveStrip
+import NLS.KdV.ClassicalBranchPrimitive
+import NLS.KdV.ClassicalCoshStripControl
+import NLS.KdV.ClassicalHillSmallDiscTrace
+import NLS.KdV.ClassicalHillSmallGapCoverage
+import NLS.KdV.ClassicalHillHighEndpointNormalization
+import NLS.KdV.ClassicalHillSquaredPrimitiveMatching
+import NLS.KdV.ClassicalHillWholeGapSquares
+import NLS.KdV.HillL2WholeGapSquares
+import NLS.ComplexAnalysis.AnalyticLocalLipschitz
+import NLS.KdV.ClassicalHillFreeSquareComparison
+import NLS.KdV.HillL2FreeSquareComparison
+import NLS.KdV.HillL2HighGapPairs
+import NLS.KdV.HillL2SmallGapCoverage
+import NLS.KdV.HillL2GapSquareFamilies
+import NLS.KdV.HillL2GapQuotients
+import NLS.ComplexAnalysis.NormalizedSquareRootBounds
+import NLS.KdV.HillL2GapQuotientAsymptotics
+import NLS.KdV.HillHighMomentComparison
+import NLS.KdV.HillL2GapSquareIdentification
+import NLS.KdV.HillRealGapUnitBound
+import NLS.KdV.HillEventualActionGapBound
+import NLS.KdV.HillWeightedRealActions
 import Lean.Util.CollectAxioms
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
@@ -229,7 +269,16 @@ run_cmd do
     ``NLS.ComplexAnalysis.lineMap_circleMap_centers_radii,
     ``NLS.ComplexAnalysis.affineCircleHomotopy_ne_of_mem_both_balls,
     ``NLS.ComplexAnalysis.affineCircleHomotopy_mem_outer_closedBall,
-    ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
+    ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles,
+    ``NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc,
+    ``NLS.ZakharovShabat.norm_continuousPotentialL2Class_le_two_norm,
+    ``NLS.ZakharovShabat.continuousPotentialL2CLM,
+    ``NLS.ZakharovShabat.continuousPotentialL2CLM_apply,
+    ``NLS.ZakharovShabat.classicalSolution_injective_initial,
+    ``NLS.ZakharovShabat.classicalSolution_eq_zero_imp_initial_eq_zero,
+    ``NLS.ComplexAnalysis.exists_local_lipschitz_bound_of_analyticAt,
+    ``NLS.ComplexAnalysis.norm_sqrt_sub_one_le,
+    ``NLS.ComplexAnalysis.prescribedSquareRoot_analytic_and_close]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

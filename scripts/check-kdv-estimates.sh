@@ -27,6 +27,7 @@ ensure_private_dir NLS/FunctionalAnalysis
 ensure_private_dir NLS/SequenceSpaces
 ensure_private_dir NLS/ComplexAnalysis
 ensure_private_dir NLS/Fourier
+ensure_private_dir NLS/ZakharovShabat
 for imported_entry in "$reference"/.lake/build/lib/lean/NLS/*; do
   target="$build_root/NLS/${imported_entry##*/}"
   if [[ ! -e "$target" && ! -L "$target" ]]; then
@@ -54,6 +55,7 @@ modules+=(NLS/ComplexAnalysis/LogarithmStripNormalization NLS/KdV/HillL2RealSour
 modules+=(NLS/ComplexAnalysis/GapPrimitiveSquare NLS/ComplexAnalysis/CoshSquareCoordinate NLS/KdV/HillL2CutPrimitiveSquare NLS/KdV/HillL2CutSquareTrace NLS/KdV/HillL2CutSquareDeflation)
 modules+=(NLS/ComplexAnalysis/RealTwoZeroUnit NLS/ComplexAnalysis/RealEndpointRootBoundary NLS/KdV/HillL2CutPrimitiveUnit NLS/KdV/HillL2CutUnitOrientation NLS/KdV/HillL2GapBoundaryValues)
 modules+=(NLS/ComplexAnalysis/RealGapEllipse NLS/ComplexAnalysis/RealGapEllipseHomotopy NLS/ComplexAnalysis/RealGapEllipseIntegral NLS/ComplexAnalysis/RealGapEllipseLimit NLS/ComplexAnalysis/RealCutCircleIntegral NLS/ComplexAnalysis/NestedCircleHomotopy NLS/ComplexAnalysis/AnalyticCutContour NLS/KdV/HillL2GapContourIntegral NLS/KdV/HillL2HighGapMoments)
+modules+=(NLS/KdV/HillL2DiscAsymptotics NLS/ZakharovShabat/ContinuousPotentialL2Bound NLS/KdV/ClassicalSpectralEmbedding NLS/KdV/ClassicalHillSpectrum NLS/KdV/ClassicalSourcePrimitive NLS/KdV/ClassicalContourCoverage NLS/KdV/ClassicalHillDiscAsymptotics NLS/KdV/ClassicalHillHighTracePhase NLS/KdV/HillL2TraceControl NLS/ZakharovShabat/ClassicalSolutionInjectivity NLS/KdV/ClassicalHillGreen NLS/KdV/ClassicalHighGapPairs NLS/KdV/ClassicalHillReality NLS/KdV/ClassicalHillPrimitiveSheets NLS/KdV/ClassicalHillPrimitiveReflection NLS/KdV/ClassicalHillBandNormalization NLS/KdV/ClassicalHillHighPrimitiveStrip NLS/KdV/HillL2PrimitiveStrip NLS/KdV/ClassicalBranchPrimitive NLS/KdV/ClassicalCoshStripControl NLS/KdV/ClassicalHillSmallDiscTrace NLS/KdV/ClassicalHillSmallGapCoverage NLS/KdV/ClassicalHillHighEndpointNormalization NLS/KdV/ClassicalHillSquaredPrimitiveMatching NLS/KdV/ClassicalHillWholeGapSquares NLS/KdV/HillL2WholeGapSquares NLS/ComplexAnalysis/AnalyticLocalLipschitz NLS/KdV/ClassicalHillFreeSquareComparison NLS/KdV/HillL2FreeSquareComparison NLS/KdV/HillL2HighGapPairs NLS/KdV/HillL2SmallGapCoverage NLS/KdV/HillL2GapSquareFamilies NLS/KdV/HillL2GapQuotients NLS/ComplexAnalysis/NormalizedSquareRootBounds NLS/KdV/HillL2GapQuotientAsymptotics NLS/KdV/HillHighMomentComparison NLS/KdV/HillL2GapSquareIdentification NLS/KdV/HillRealGapUnitBound NLS/KdV/HillEventualActionGapBound NLS/KdV/HillWeightedRealActions)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

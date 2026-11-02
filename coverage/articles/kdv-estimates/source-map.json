@@ -74,7 +74,8 @@
         "NLS.KdV.hillL2HighContourMoment_nonneg_even",
         "NLS.KdV.hillL2HighContourMoment_pos_iff",
         "NLS.KdV.hillL2HighContourMoment_mean_value"
-      ]
+      ],
+      "checked_high_hierarchy_comparison": "NLS.KdV.hillL2HighContourMoment_high_comparison"
     },
     {
       "label": "Theorem 3",
@@ -90,13 +91,19 @@
         "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "The exact w(2*n) coefficient embedding, canonical weight-independent physical labels/gaps and corrected high-gap individual/tail bounds are proved. Construct the canonical Hill actions and the physical KdV Birkhoff map, prove action-gap and interpolation estimates, and establish both stated weighted norm inequalities. Actual high source moments now have the exact real-gap formula, positivity and all-level mean-value relation, at n>=2 and 8*||q||_2<=n. The remaining global, quantitative and coordinate identifications are not discharged by this comparison.",
+      "remaining": "The exact weight-independent real-gap action sequence is now defined and has finite l1 norm with w(2*n)^2*(2*pi*n), including an eventual corrected gap-tail bound. The cutoff for the quadratic action-gap bound depends on the potential. Low canonical contour identification, the physical KdV Birkhoff map and explicit source norm-dependent action-gap/interpolation estimates remain unproved, as do both stated main inequalities.",
       "status": "not_verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
         "NLS.KdV.hillL2HighContourMoment_nonneg_even",
         "NLS.KdV.hillL2HighContourMoment_pos_iff",
         "NLS.KdV.hillL2HighContourMoment_mean_value"
+      ],
+      "checked_real_action_summability": [
+        "NLS.KdV.hillPeriodOneAction_eq_of_coeff_eq",
+        "NLS.KdV.hillPeriodOneAction_eq_highContourMoment",
+        "NLS.KdV.exists_hillPeriodOneAction_weighted_tail_bound",
+        "NLS.KdV.summable_hillPeriodOneAction_weighted"
       ]
     }
   ],
@@ -327,7 +334,10 @@
       "commit": "ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503",
       "module": "NLS/KdV/ClassicalSourcePrimitive.lean",
       "blob": "7885ecb19ca33beb55138da03787ce99e3c18315",
-      "role": "The complete two-source-log construction was read and generalized to the reusable TracePrimitiveFamily over any complex normed source space. The actual rough L2 Hill trace is an instance; the classical file itself was not copied or imported here. Existing ParametricSourceLogDomain and ContinuousLogarithmUnique are reused directly."
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair.",
+      "sha256": "a64f5c9c03ebffd71ec4ed56dc21f5d544f58f4db9d14ad3e6f1366576abe093",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848"
     },
     {
       "branch": "articles/kdv-convexity",
@@ -341,7 +351,10 @@
       "commit": "15182450397dfd2fd3a4ab64840488e3e1ff5a16",
       "module": "NLS/KdV/ClassicalHillPrimitiveReflection.lean",
       "blob": "5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750",
-      "role": "Read the full source-path root/log reflection proof and generalized it to TracePrimitiveFamily.SourceSchwarzData for arbitrary complex normed source spaces. The rough actual L2 trace supplies the Schwarz data by the new density theorem."
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair.",
+      "sha256": "baf154f2a26608f7be7c6312404e833b4a48048c091f2fb4c4bd16efbd479cc4",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848"
     },
     {
       "module": "NLS/ComplexAnalysis/CirclePolynomialIntegrationByParts.lean",
@@ -376,7 +389,10 @@
       "commit": "7e066ef5a1d4576a3b1ae2db33dc46fb9422e677",
       "module": "NLS/ComplexAnalysis/TwoZeroDeflation.lean",
       "blob": "22e8bfec92b5c229a856b77ffa8866071081a753",
-      "role": "Reused unchanged after reading the complete proof. Supplies actual analytic disc/unit roots, the full two-zero cut root, or exact deflation including double zeros. All imported modules are included in the strict focused build and transitive audit."
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair.",
+      "sha256": "8faa25c184aa51d1406b6868e009b7bd5fda84147d3d95c41b928e9cd022ee42",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848"
     },
     {
       "module": "NLS/ComplexAnalysis/PrimitiveOnDiscComplement.lean",
@@ -436,12 +452,243 @@
       "source_branch": "articles/kdv-convexity",
       "source_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
       "role": "Complete proof read and reused unchanged; freshly strict-compiled and all public declarations included in the expanded transitive axiom audit. It compares enclosing circles inside the common analytic cut domain without any spectral or NLS real-type hypotheses."
+    },
+    {
+      "module": "NLS/KdV/HillL2DiscAsymptotics.lean",
+      "sha256": "800ccd8f77de8989b527dc70a3e71404c40802c2da5a61e38f0a24765063ee37",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean",
+      "sha256": "6036371a2cadb92169894a505e58daefeb9d493fbe81d1e10a2387c9a65459a5",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalSpectralEmbedding.lean",
+      "sha256": "380b88836452638e10b6a47fcf341535c58ced2981c159f97f6464ebcf0d1651",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillSpectrum.lean",
+      "sha256": "0a3737f2c419589beecafffa4c62b3e4020a9c25596755bc4acca6eb2882a9af",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalContourCoverage.lean",
+      "sha256": "3c3c840a66b0d32b15653d5957b80d5dfeb8f2e31a76de0b7e39f6c420e97a48",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillDiscAsymptotics.lean",
+      "sha256": "115a47f8fb4d6e73b316d814c590cabd9e26d9152f9c51bc62f89471a61604c4",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillHighTracePhase.lean",
+      "sha256": "3ee5a5c4a0c94ea1f087c6ea6417deba7b86428fafda3001de4648f12e57a529",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/HillL2TraceControl.lean",
+      "sha256": "20018f822389a08bbe50b0f0d7de706453c7c190973a3bf1b4b5b0c1fac64e11",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/ZakharovShabat/ClassicalSolutionInjectivity.lean",
+      "sha256": "9affcd40ecb7e9e599273563a89975108cf86ad2326d1656de83713014cb52a4",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillGreen.lean",
+      "sha256": "917739d4f68ad00ee3d23895cd596379e000727d5b344b54effef565ee34bf8e",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHighGapPairs.lean",
+      "sha256": "473c73273c862dc8d707967a3414b6e0f2eace08c66f5894da6108aebe27a074",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillReality.lean",
+      "sha256": "67c9490a6560522007d48875121e0f8e2b3f6b9b25bbe98b0c2a43fa514c573f",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillPrimitiveSheets.lean",
+      "sha256": "9a8c1dea2892bda9513bed0f3b78102a25875b24f901a879a27361818796f3a8",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillBandNormalization.lean",
+      "sha256": "6fba685e4b7c13fb68960248ebe7b21a19ba22fd88021edb8ca68e1e489bd3f2",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillHighPrimitiveStrip.lean",
+      "sha256": "6a00c0d729e1f5f4a9faea56371a4e5437a1e4718bb618709613311ae5722c40",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/HillL2PrimitiveStrip.lean",
+      "sha256": "73b83c0b2494d6b5305fe8a9b56467fa3437690047dc1c06bfcef73b1d95e99f",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalBranchPrimitive.lean",
+      "sha256": "9b23f82158ff2a6f4dc00d8fead2fa19601f40378c2de5bff6a7a7ec61f6759d",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalCoshStripControl.lean",
+      "sha256": "91d1711d9d44ba3eaa547f2d9bd9aa138c8cbcea750799d64194358aa79ce9db",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillSmallDiscTrace.lean",
+      "sha256": "0b3000b01b892f67fb1927c537e9d5563ff96704f6b075e0645472217524e57c",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillSmallGapCoverage.lean",
+      "sha256": "dc905b799da8b91815ebf4a90a9ae1caac9078322b7c288eaf6aa07055dd310b",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillHighEndpointNormalization.lean",
+      "sha256": "49a842e6f9b4d235cdf9e76966b178c0c58c4187f18bb6d744055b921a91bf06",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillSquaredPrimitiveMatching.lean",
+      "sha256": "2c081969580ba524e62c6cf2e51e3258323f9c269c33f28504e73ad22bffa52d",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillWholeGapSquares.lean",
+      "sha256": "054e7aefe03fbb3926743e7fdf76c43194a576670b2aeddab090635539f72350",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/HillL2WholeGapSquares.lean",
+      "sha256": "3502f22f0569b0088ad069dca1537283bf3780a264cc0b6167f941cf024704ce",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/AnalyticLocalLipschitz.lean",
+      "sha256": "b53e1fb16dca07cfab90640da1907b3608e6db7e7102a8236edc8d1ce7f8e01a",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/ClassicalHillFreeSquareComparison.lean",
+      "sha256": "4d95c6d3f3cae31edd58b516662d974ddb1a46624dc90bc74fb16471f56432bb",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/HillL2FreeSquareComparison.lean",
+      "sha256": "603e6339027a0a33d5712e5ddad308983f83a267a539978edb0a550f40689143",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/HillL2HighGapPairs.lean",
+      "sha256": "51cdb3570f97e138349a6f6d5a1fe7b5811e730b27015142116d1bf71a7add8f",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/HillL2SmallGapCoverage.lean",
+      "sha256": "583ebf93761561e142f112929fef148ee38c460899a7161994a25fbd77e2bba9",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/HillL2GapSquareFamilies.lean",
+      "sha256": "e1aa3594dc555f8a0717d36bc67f7fa1388f04e94cb45b4dfa4aab143eec0f22",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/HillL2GapQuotients.lean",
+      "sha256": "60d8f41777cd00d3d4439283abcffc4bf7d8d54d80d68351e36246ee3144acee",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/NormalizedSquareRootBounds.lean",
+      "sha256": "2a6a4da47dbbdee147f05543aaf118f93907622fbd1957eb960c1be8af29fd91",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
+    },
+    {
+      "module": "NLS/KdV/HillL2GapQuotientAsymptotics.lean",
+      "sha256": "e0886aa022c13460e827be2b55a3d5393a32a5c5dbcd19657d07dc30a8acb75b",
+      "source_branch": "articles/kdv-convexity",
+      "source_commit": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+      "role": "Integrated unchanged and freshly strict-compiled. This is a verified dependency of the uniform complex L2 high-gap charts and near-free analytic unit estimates. The potential-dependent cutoff is not substituted for the quantitative source cutoff eight. No NLS real-type property is imposed on the constant-upper Hill pair."
     }
   ],
   "next_shared_milestones": [
-    "Extend the actual canonical primitive/action construction to all low gaps and identify the globally selected canonical sheet. The high contour-to-real-gap identity, even-level nonnegativity, open-gap positivity and exact all-level mean-value relation are now proved at n>=2 and 8*||q||_2<=n, including collapsed gaps; they do not by themselves provide a global action theory or quantitative action-gap comparison.",
+    "Identify the actual real-gap action integrals with globally canonical contours also at low gaps, and establish the global sheet normalization. The high Arnold comparison and weighted real-action summability are now proved; low canonical contours and physical Birkhoff coordinates are not supplied by this definition.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
-    "Establish the action-gap estimates and Hamiltonian/higher-action trace identities needed for Theorem 2; inspect the shared native Miura/Hill Hamiltonian and actual primitive moment developments before reimplementing them.",
+    "Prove explicit norm-dependent action-gap bounds with the source cutoff/weight evaluation, then Hamiltonian/higher-action trace identities and the tame action estimates for Theorem 2. The potential-dependent eventual bound n*I_n<=gamma_n^2, weighted action summability and the high Proposition 5 comparison at cutoff eight are now checked.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
     "Construct/identify the physical KdV Birkhoff map and its action-coordinate identities, prove the tame forward/inverse action bounds and connect Theorem 1 through the checked adapters.",
     "Prove the weighted action estimates and interpolated weight evaluations for Theorem 3, using the checked intrinsic w(2*n) gaps and their weight-independent physical labels."
@@ -1119,7 +1366,7 @@
     "annular_scope": "For every complex even-supported L2 q, n>=max(1,8*||q||), and 4*||q||<r<=R<=n, the entire closed concentric annulus lies on the same source-normalized sheet. Thus all primitive moments are invariant between these radii, their Arnold formulas hold at each radius, and the logarithmic derivative has zero period. This does not yet prove arbitrary loop deformation around a source canonical gap.",
     "reality": "The actual rough energy trace obeys Delta(conj(lambda),q)=conj(Delta(lambda,q)) for every Fourier-real L2 q, without any even-support assumption. Scalar real-flow symmetry is extended by L2 density after symmetrizing the actual finite Fourier functions. Both source branches have the exact minus-conjugate reflection sign. At admissible real energies F is purely imaginary and its actual multiplier has unit norm. Every checked high polynomial contour moment of a real period-one potential is real.",
     "normalization_and_hypotheses": "No first-order NLS real-type assertion is made for (-1,-q). The symmetry uses actual physical Fourier conjugate reflection. Moment reality is distinct from positivity. The source-segment domain still has the explicit slit-plane/nonvanishing condition.",
-    "remaining": "Main Theorems 1-3 remain unverified. The actual high contour moments now equal the real-gap integrals with the exact factor 2/pi at every integer level, for Fourier-real even-supported L2 potentials, n>=2 and 8*||q||_2<=n, including open and collapsed intrinsic gaps. Their even-level nonnegativity, level-zero strict positivity exactly for open gaps and exact weighted mean-value relation are proved. Global canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations."
+    "remaining": "Main Theorems 1-3 remain unverified. Actual high contour moments equal real-gap integrals at every integer level, with the exact factor 2/pi, positivity and mean-value relation. Their uniform high-level comparisons are proved at n>=2 and 8*||q||_2<=n. A potential-dependent high cutoff gives n*I_n<=gamma_n^2 for the actual real-gap action integral, including collapsed gaps. The period-one real-gap actions are weight independent and satisfy the exact weighted l1 summability with w(2*n)^2*(2*pi*n), together with a tail bound from corrected gap estimates. This supplies a real-action summability prerequisite; it does not identify a physical Birkhoff map or prove Theorem 3. Low-gap canonical contour identification, globally canonical sheets, explicit norm-dependent action-gap estimates with the source weight evaluation, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm inequalities remain essential. Scalar Hill operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate."
   },
   "real_open_band_trace_bounds": {
     "module": "NLS/KdV/HillRealBands.lean",
@@ -1220,7 +1467,7 @@
     "source_correspondence": "Section 2, PDF pages 9-13: primitive normalization and branch identities needed before the action contour-to-gap formula.",
     "hypotheses": "Actual HillRealHighGapPair at n>=1 and cutoff 8*||q||_2<=n for an even-supported raw L2 potential. Reflection and real-band purity additionally assume Fourier reality. The finite endpoint-value theorem assumes the pair is open. No mean-zero hypothesis or positive gap lower bound is used.",
     "result": "For every actual high pair at n>=1 and 8*||q||_2<=n, one source-circle value fixes the additive constant of the analytic primitive on the full radius-7*n/8 disc minus the actual straight gap. The exponential is (Delta+R)/2, hence 2*cosh(F)=Delta and 2*sinh(F)=R throughout this cut domain. Connected logarithm uniqueness identifies F with the physical source primitive on the entire radius-3*n/4 circle, retaining every polynomial high contour moment with its exact factor and orientation. This construction includes collapsed gaps. For Fourier-real q, root and primitive have the exact free-sheet minus-conjugate reflection on the full local cut. In particular F is purely imaginary on every real point there. For an open pair, existing finite full-cut endpoint limits A and B satisfy exp(A)=Delta(left)/2, exp(B)=Delta(right)/2, 2*cosh(A)=Delta(left), 2*cosh(B)=Delta(right) and sinh(A)=sinh(B)=0. The actual cut root tends to zero at both endpoints along all approaches in this domain. These algebraic endpoint identities do not select the integer multiples of pi*i. No joint analytic dependence of the chosen pointwise cut primitive across collisions is asserted. The high contour moments retain their previously proved Banach analyticity. The subsequent real-phase and exact-normalization theorems now select these endpoint limits as -i*n*pi for open real intrinsic high gaps n>=2 at cutoff eight. The subsequent actual high-gap boundary-value theorem now orients the primitive on both sides of the gap and proves its pointwise jump, including at the endpoints. Main Theorems 1-3 remain unverified. The actual source-normalized high cut primitive now has the exact indexed endpoint values, analytic shifted-square/unit factorization and the full oriented upper/lower boundary values +profile/-profile for F+i*n*pi at every point of an open real intrinsic high gap n>=2 with 8*||q||_2<=n, including its endpoints. The literal upper-minus-lower jump of F is twice the positive real arcosh profile. The contour-to-real-gap integral identity with the exact orientation and factor 2/pi remains unproved for open gaps. Collapsed high source moments already equal their zero real gap integrals. Globally canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian trace identities, physical KdV Birkhoff coordinates and main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations.",
-    "remaining": "Main Theorems 1-3 remain unverified. The actual high contour moments now equal the real-gap integrals with the exact factor 2/pi at every integer level, for Fourier-real even-supported L2 potentials, n>=2 and 8*||q||_2<=n, including open and collapsed intrinsic gaps. Their even-level nonnegativity, level-zero strict positivity exactly for open gaps and exact weighted mean-value relation are proved. Global canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations."
+    "remaining": "Main Theorems 1-3 remain unverified. Actual high contour moments equal real-gap integrals at every integer level, with the exact factor 2/pi, positivity and mean-value relation. Their uniform high-level comparisons are proved at n>=2 and 8*||q||_2<=n. A potential-dependent high cutoff gives n*I_n<=gamma_n^2 for the actual real-gap action integral, including collapsed gaps. The period-one real-gap actions are weight independent and satisfy the exact weighted l1 summability with w(2*n)^2*(2*pi*n), together with a tail bound from corrected gap estimates. This supplies a real-action summability prerequisite; it does not identify a physical Birkhoff map or prove Theorem 3. Low-gap canonical contour identification, globally canonical sheets, explicit norm-dependent action-gap estimates with the source weight evaluation, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm inequalities remain essential. Scalar Hill operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate."
   },
   "exact_high_endpoint_normalization": {
     "modules": [
@@ -1249,7 +1496,7 @@
     "hypotheses": "Fourier-real even-supported L2 potential, intrinsic high n>=2, 8*||q||_2<=n, and an open nth gap. The raw admissible-real-energy source phase lemma needs Fourier reality and actual source-domain membership only. High-circle and real-band phase statements hold for n>=1, including a collapsed pair.",
     "result": "For every Fourier-real raw L2 potential and every admissible real source energy x, the actual source primitive is purely imaginary along t*q and its root never vanishes. A continuous real phase therefore stays between the same consecutive integer multiples of pi as -sqrt(x). For real even-supported q, n>=1 and 8*||q||_2<=n, the two actual real source-circle crossings at pi^2*n^2 +/- 3*n/4 have phases respectively in (-n*pi,-(n-1)*pi) and (-(n+1)*pi,-n*pi). The normalized cut primitive has the same phase intervals throughout both adjacent real parts of its radius-7*n/8 cut disc. At every open actual pair with n>=2, canonical label uniqueness gives the exact endpoint trace parity 2*(-1)^n. The previously proved finite limits have exponentials (-1)^n. Passing the real-band phase bounds to those limits and exponential uniqueness in the closed pi strip forces both limits to equal -i*n*pi. Consequently F+i*n*pi tends to zero at both endpoints from all approaches in the full local cut domain. No positive gap-length bound, potential-dependent unspecified high cutoff, mean-zero hypothesis or analytic motion of endpoint choices is assumed. The phase and source-circle results include collapsed gaps; the finite full-cut endpoint-normalization theorem in this milestone is for open gaps. The subsequent actual high-gap boundary-value theorem now orients the primitive on both sides of the gap and proves its pointwise jump, including at the endpoints. Main Theorems 1-3 remain unverified. The actual source-normalized high cut primitive now has the exact indexed endpoint values, analytic shifted-square/unit factorization and the full oriented upper/lower boundary values +profile/-profile for F+i*n*pi at every point of an open real intrinsic high gap n>=2 with 8*||q||_2<=n, including its endpoints. The literal upper-minus-lower jump of F is twice the positive real arcosh profile. The contour-to-real-gap integral identity with the exact orientation and factor 2/pi remains unproved for open gaps. Collapsed high source moments already equal their zero real gap integrals. Globally canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian trace identities, physical KdV Birkhoff coordinates and main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations.",
     "joint_scope": "Limits are from the full local cut complement, including approaches from both nonreal sides and adjacent real bands. No joint limit in moving potential/energy variables or analytic choice of endpoints across collisions is claimed.",
-    "remaining": "Main Theorems 1-3 remain unverified. The actual high contour moments now equal the real-gap integrals with the exact factor 2/pi at every integer level, for Fourier-real even-supported L2 potentials, n>=2 and 8*||q||_2<=n, including open and collapsed intrinsic gaps. Their even-level nonnegativity, level-zero strict positivity exactly for open gaps and exact weighted mean-value relation are proved. Global canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations."
+    "remaining": "Main Theorems 1-3 remain unverified. Actual high contour moments equal real-gap integrals at every integer level, with the exact factor 2/pi, positivity and mean-value relation. Their uniform high-level comparisons are proved at n>=2 and 8*||q||_2<=n. A potential-dependent high cutoff gives n*I_n<=gamma_n^2 for the actual real-gap action integral, including collapsed gaps. The period-one real-gap actions are weight independent and satisfy the exact weighted l1 summability with w(2*n)^2*(2*pi*n), together with a tail bound from corrected gap estimates. This supplies a real-action summability prerequisite; it does not identify a physical Birkhoff map or prove Theorem 3. Low-gap canonical contour identification, globally canonical sheets, explicit norm-dependent action-gap estimates with the source weight evaluation, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm inequalities remain essential. Scalar Hill operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate."
   },
   "actual_high_shifted_square_and_gap_profile": {
     "modules": [
@@ -1288,7 +1535,7 @@
     "hypotheses": "Fourier-real even-supported L2 potential; actual intrinsic high pair n>=2; 8*||q||_2<=n; open gap. There is no mean-zero condition, positive lower bound on gap length, or unspecified potential-dependent high cutoff.",
     "result": "For each actual open real high pair at n>=2 and 8*||q||_2<=n, let Fn=F+i*n*pi for the source-normalized cut primitive. An analytic root of the nonzero deflated characteristic unit writes the actual differential as an analytic numerator divided by a pure quadratic root. The checked zero endpoint limits of Fn allow the existing gapPrimitiveSquareExtension_spec theorem to extend Fn^2 to a scalar analytic X throughout the full open radius-7*n/8 disc. X agrees with Fn^2 off the segment, vanishes at both actual endpoints, obeys Schwarz reflection and is real on the real diameter. The shared entire coordinate C(w)=cosh(sqrt(w)) is independent of the square-root branch and has C_prime(0)=1/2. Density extends C(X)=(-1)^n*Delta/2 across the whole disc. Thus X has no zeros other than the actual endpoints. On the open real gap, the signed actual trace is greater than two. Since C has real part at most one on the nonpositive real axis, X is positive there; inversion of real cosh gives exactly X=arcosh((-1)^n*Re(Delta)/2)^2. Differentiation at a zero gives X_prime=(-1)^n*Delta_prime. The known simple actual characteristic endpoints have nonzero Delta_prime, so both X zeros are simple. Existing two-zero deflation now yields an analytic nowhere-zero unit Q with X=(lambda-left)*(lambda-right)*Q on this open disc. No bound uniform in gap length or joint analyticity in moving endpoint/potential variables is asserted. The subsequent actual high-gap boundary-value theorem now orients the primitive on both sides of the gap and proves its pointwise jump, including at the endpoints. Main Theorems 1-3 remain unverified. The actual source-normalized high cut primitive now has the exact indexed endpoint values, analytic shifted-square/unit factorization and the full oriented upper/lower boundary values +profile/-profile for F+i*n*pi at every point of an open real intrinsic high gap n>=2 with 8*||q||_2<=n, including its endpoints. The literal upper-minus-lower jump of F is twice the positive real arcosh profile. The contour-to-real-gap integral identity with the exact orientation and factor 2/pi remains unproved for open gaps. Collapsed high source moments already equal their zero real gap integrals. Globally canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian trace identities, physical KdV Birkhoff coordinates and main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations.",
     "scope": "The scalar energy square is analytic on the open radius-7*n/8 disc, including every point of the actual straight gap. The analytic unit is nonzero on this open disc. Closed radius-n control belongs to the characteristic quotient, not to this smaller primitive-square extension. The exact positive arcosh-square value is proved on the open real gap; endpoint values are separately zero.",
-    "remaining": "Main Theorems 1-3 remain unverified. The actual high contour moments now equal the real-gap integrals with the exact factor 2/pi at every integer level, for Fourier-real even-supported L2 potentials, n>=2 and 8*||q||_2<=n, including open and collapsed intrinsic gaps. Their even-level nonnegativity, level-zero strict positivity exactly for open gaps and exact weighted mean-value relation are proved. Global canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations."
+    "remaining": "Main Theorems 1-3 remain unverified. Actual high contour moments equal real-gap integrals at every integer level, with the exact factor 2/pi, positivity and mean-value relation. Their uniform high-level comparisons are proved at n>=2 and 8*||q||_2<=n. A potential-dependent high cutoff gives n*I_n<=gamma_n^2 for the actual real-gap action integral, including collapsed gaps. The period-one real-gap actions are weight independent and satisfy the exact weighted l1 summability with w(2*n)^2*(2*pi*n), together with a tail bound from corrected gap estimates. This supplies a real-action summability prerequisite; it does not identify a physical Birkhoff map or prove Theorem 3. Low-gap canonical contour identification, globally canonical sheets, explicit norm-dependent action-gap estimates with the source weight evaluation, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm inequalities remain essential. Scalar Hill operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate."
   },
   "actual_high_gap_boundary_values": {
     "modules": [
@@ -1315,7 +1562,7 @@
     "hypotheses": "Fourier-real, even-supported L2 potential; actual intrinsic high pair n>=2; 8*||q||_2<=n; open gap; x in the closed actual gap interval. Endpoint boundary values are included. No mean-zero or positive lower gap-length hypothesis is imposed.",
     "result": "For an actual open real high pair at n>=2 and 8*||q||_2<=n, the analytic nonzero two-zero unit Q of the filled shifted-primitive square has an analytic root H on the full open radius-7*n/8 disc. Connected square-root uniqueness fixes one sign so that F+i*n*pi=endpointRoot(left,right)*H on the entire cut complement. Reflection of the two-zero factorization shows Q is real on the real diameter; its negative value in the gap and nonvanishing propagate negativity along that whole diameter. Thus H is purely imaginary and nonzero there. The source-normalized phase on the right band, together with the generic negative real sign of the standard endpoint root, selects Im(H)>0 everywhere on the real diameter. The existing joint standard-root boundary theorem is rewritten in actual real endpoint coordinates: its upper/lower limits are respectively -i*sqrt((x-left)*(right-x)) and the opposite sign. Multiplication by the continuous oriented H gives full half-plane limits of the actual shifted primitive. The filled-square arcosh identity and nonnegative real orientation identify the limits exactly as +arcosh((-1)^n*Re(Delta)/2) above and its negative below, at every point of the closed actual gap, including both zero endpoints. The limits allow arbitrary nonreal approaches within the given half-plane, with fixed potential. Their difference along vertical approaches is exactly twice this profile; the index constant cancels. No NLS real-type property is imposed on the Hill first-order pair, no positive gap-length lower bound is assumed, and no joint endpoint chart or uniform action-gap bound is claimed. Main Theorems 1-3 remain unverified. The actual source-normalized high cut primitive now has the exact indexed endpoint values, analytic shifted-square/unit factorization and the full oriented upper/lower boundary values +profile/-profile for F+i*n*pi at every point of an open real intrinsic high gap n>=2 with 8*||q||_2<=n, including its endpoints. The literal upper-minus-lower jump of F is twice the positive real arcosh profile. The contour-to-real-gap integral identity with the exact orientation and factor 2/pi remains unproved for open gaps. Collapsed high source moments already equal their zero real gap integrals. Globally canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian trace identities, physical KdV Birkhoff coordinates and main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations.",
     "qualification": "Fixed-potential limits through each entire nonreal half-plane; not only vertical approaches. There is no joint limit in moving potential/endpoint variables. The pointwise boundary jump does not yet prove the contour-to-real-integral identity or positivity of open-gap contour actions.",
-    "remaining": "Main Theorems 1-3 remain unverified. The actual high contour moments now equal the real-gap integrals with the exact factor 2/pi at every integer level, for Fourier-real even-supported L2 potentials, n>=2 and 8*||q||_2<=n, including open and collapsed intrinsic gaps. Their even-level nonnegativity, level-zero strict positivity exactly for open gaps and exact weighted mean-value relation are proved. Global canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations."
+    "remaining": "Main Theorems 1-3 remain unverified. Actual high contour moments equal real-gap integrals at every integer level, with the exact factor 2/pi, positivity and mean-value relation. Their uniform high-level comparisons are proved at n>=2 and 8*||q||_2<=n. A potential-dependent high cutoff gives n*I_n<=gamma_n^2 for the actual real-gap action integral, including collapsed gaps. The period-one real-gap actions are weight independent and satisfy the exact weighted l1 summability with w(2*n)^2*(2*pi*n), together with a tail bound from corrected gap estimates. This supplies a real-action summability prerequisite; it does not identify a physical Birkhoff map or prove Theorem 3. Low-gap canonical contour identification, globally canonical sheets, explicit norm-dependent action-gap estimates with the source weight evaluation, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm inequalities remain essential. Scalar Hill operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate."
   },
   "actual_high_contour_to_gap_integrals": {
     "modules": [
@@ -1375,6 +1622,82 @@
     "result": "A reusable clockwise ellipse z=c+(d+epsilon)*cos(theta)-i*epsilon*sin(theta) is smooth, avoids the entire enclosed real segment for d,epsilon>0, and stays in the radius-(d+epsilon) closed disc. Its affine homotopy to the reversed circle keeps the horizontal projection fixed, stays inside that disc and avoids both endpoints and the full cut. Holomorphic homotopy invariance identifies its integral with the negative standard circle integral. The original angle parameter integral, limiting cosine tangent, lower/upper half-plane approaches and uniform tangent bound are proved. A constant majorant and Lebesgue dominated convergence on the two angular halves give the integral of the upper-minus-lower jump; cosine substitution fixes the left-to-right orientation. Annular Cauchy deformation yields a generic bounded-holomorphic real-cut circle-to-jump theorem. A continuous filled square bounds either branch uniformly on a compact set. For the actual rough high Hill primitive, the analytic extension of z^(2*m)*(F+i*n*pi)^2 provides this bound on a midpoint disc. Intrinsic endpoint localization gives |midpoint-pi^2*n^2| + halfgap <= 4*||q||_2, so nested enclosing circles stay in the checked radius-7*n/8 analytic domain at cutoff eight. The reused nested-circle theorem transfers the midpoint contour to the original source circle. The full gap-side limits then give -2 times the real weighted arcosh-profile integral. The polynomial index shift has zero circle integral. Multiplication by -1/pi proves source formula (7) exactly for every high open gap; the previously checked collapsed-gap theorem handles collisions without division by the gap. The actual contour moments inherit even-level nonnegativity, level-zero positivity iff the intrinsic gap is open, and source formula (8), with its mean-value point in the closed actual gap, at every integer hierarchy level. Main Theorems 1-3 remain unverified. The actual high contour moments now equal the real-gap integrals with the exact factor 2/pi at every integer level, for Fourier-real even-supported L2 potentials, n>=2 and 8*||q||_2<=n, including open and collapsed intrinsic gaps. Their even-level nonnegativity, level-zero strict positivity exactly for open gaps and exact weighted mean-value relation are proved. Global canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations.",
     "normalization": "The standard counterclockwise circle integral of z^m*(F+i*n*pi) is -2 times the left-to-right real weighted profile integral. The polynomial shift has zero integral. Actual moments are -1/pi times the unshifted primitive circle integral, hence exactly (2/pi) times the real gap integral.",
     "qualification": "This is an actual fixed-potential contour-to-gap theorem. Neither the positive gap length nor a uniform lower gap separation is used in the final statement. It does not identify the low-gap global canonical actions, a physical Birkhoff coordinate map, hierarchy trace identities or the main estimates.",
-    "remaining": "Main Theorems 1-3 remain unverified. The actual high contour moments now equal the real-gap integrals with the exact factor 2/pi at every integer level, for Fourier-real even-supported L2 potentials, n>=2 and 8*||q||_2<=n, including open and collapsed intrinsic gaps. Their even-level nonnegativity, level-zero strict positivity exactly for open gaps and exact weighted mean-value relation are proved. Global canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm estimates remain essential. Joint endpoint charts across collisions, abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations."
+    "remaining": "Main Theorems 1-3 remain unverified. Actual high contour moments equal real-gap integrals at every integer level, with the exact factor 2/pi, positivity and mean-value relation. Their uniform high-level comparisons are proved at n>=2 and 8*||q||_2<=n. A potential-dependent high cutoff gives n*I_n<=gamma_n^2 for the actual real-gap action integral, including collapsed gaps. The period-one real-gap actions are weight independent and satisfy the exact weighted l1 summability with w(2*n)^2*(2*pi*n), together with a tail bound from corrected gap estimates. This supplies a real-action summability prerequisite; it does not identify a physical Birkhoff map or prove Theorem 3. Low-gap canonical contour identification, globally canonical sheets, explicit norm-dependent action-gap estimates with the source weight evaluation, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm inequalities remain essential. Scalar Hill operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate."
+  },
+  "actual_weighted_real_actions": {
+    "modules": [
+      "NLS/KdV/HillL2DiscAsymptotics.lean",
+      "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean",
+      "NLS/KdV/ClassicalSpectralEmbedding.lean",
+      "NLS/KdV/ClassicalHillSpectrum.lean",
+      "NLS/KdV/ClassicalSourcePrimitive.lean",
+      "NLS/KdV/ClassicalContourCoverage.lean",
+      "NLS/KdV/ClassicalHillDiscAsymptotics.lean",
+      "NLS/KdV/ClassicalHillHighTracePhase.lean",
+      "NLS/KdV/HillL2TraceControl.lean",
+      "NLS/ZakharovShabat/ClassicalSolutionInjectivity.lean",
+      "NLS/KdV/ClassicalHillGreen.lean",
+      "NLS/KdV/ClassicalHighGapPairs.lean",
+      "NLS/KdV/ClassicalHillReality.lean",
+      "NLS/KdV/ClassicalHillPrimitiveSheets.lean",
+      "NLS/KdV/ClassicalHillPrimitiveReflection.lean",
+      "NLS/KdV/ClassicalHillBandNormalization.lean",
+      "NLS/KdV/ClassicalHillHighPrimitiveStrip.lean",
+      "NLS/KdV/HillL2PrimitiveStrip.lean",
+      "NLS/KdV/ClassicalBranchPrimitive.lean",
+      "NLS/KdV/ClassicalCoshStripControl.lean",
+      "NLS/KdV/ClassicalHillSmallDiscTrace.lean",
+      "NLS/KdV/ClassicalHillSmallGapCoverage.lean",
+      "NLS/KdV/ClassicalHillHighEndpointNormalization.lean",
+      "NLS/KdV/ClassicalHillSquaredPrimitiveMatching.lean",
+      "NLS/KdV/ClassicalHillWholeGapSquares.lean",
+      "NLS/KdV/HillL2WholeGapSquares.lean",
+      "NLS/ComplexAnalysis/AnalyticLocalLipschitz.lean",
+      "NLS/KdV/ClassicalHillFreeSquareComparison.lean",
+      "NLS/KdV/HillL2FreeSquareComparison.lean",
+      "NLS/KdV/HillL2HighGapPairs.lean",
+      "NLS/KdV/HillL2SmallGapCoverage.lean",
+      "NLS/KdV/HillL2GapSquareFamilies.lean",
+      "NLS/KdV/HillL2GapQuotients.lean",
+      "NLS/ComplexAnalysis/NormalizedSquareRootBounds.lean",
+      "NLS/KdV/HillL2GapQuotientAsymptotics.lean",
+      "NLS/KdV/HillHighMomentComparison.lean",
+      "NLS/KdV/HillL2GapSquareIdentification.lean",
+      "NLS/KdV/HillRealGapUnitBound.lean",
+      "NLS/KdV/HillEventualActionGapBound.lean",
+      "NLS/KdV/HillWeightedRealActions.lean"
+    ],
+    "declarations": [
+      "NLS.KdV.hillRealGap_point_localization",
+      "NLS.KdV.hillRealGap_point_high_bounds",
+      "NLS.KdV.hillRealGapIntegral_high_comparison",
+      "NLS.KdV.hillL2HighContourMoment_high_comparison",
+      "NLS.KdV.hillClosedBall_subset_hillL2HighEnergyRegion",
+      "NLS.KdV.HillL2HighGapPair.eq_or_swap_real",
+      "NLS.KdV.HillL2NormalizedCutPrimitive.square_eq_on_of_trace_and_zero",
+      "NLS.KdV.HillL2NormalizedCutPrimitive.gapIntegral_le_of_unit_bound",
+      "NLS.KdV.exists_hillRealGapIntegral_quadratic_tail_bound",
+      "NLS.KdV.hillPeriodOneAction",
+      "NLS.KdV.hillRealGapIntegral_congr",
+      "NLS.KdV.hillPeriodOneAction_eq_of_coeff_eq",
+      "NLS.KdV.hillPeriodOneAction_nonneg",
+      "NLS.KdV.hillPeriodOneAction_eq_highContourMoment",
+      "NLS.KdV.exists_hillPeriodOneAction_weighted_tail_bound",
+      "NLS.KdV.summable_hillPeriodOneAction_weighted",
+      "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc",
+      "NLS.ZakharovShabat.norm_continuousPotentialL2Class_le_two_norm",
+      "NLS.ZakharovShabat.continuousPotentialL2CLM",
+      "NLS.ZakharovShabat.continuousPotentialL2CLM_apply",
+      "NLS.ZakharovShabat.classicalSolution_injective_initial",
+      "NLS.ZakharovShabat.classicalSolution_eq_zero_imp_initial_eq_zero",
+      "NLS.ComplexAnalysis.exists_local_lipschitz_bound_of_analyticAt",
+      "NLS.ComplexAnalysis.norm_sqrt_sub_one_le",
+      "NLS.ComplexAnalysis.prescribedSquareRoot_analytic_and_close"
+    ],
+    "source_correspondence": "Proposition 5, high-index comparison on PDF page 15, and the weighted-action summability prerequisite of Theorem 3 on page 4 and Section 5. The main Theorem 3 explicit inequalities and Birkhoff mapping are not proved.",
+    "result": "The exact all-level mean-value relation and intrinsic endpoint localization put every high gap point between half and twice pi^2*n^2, with distance at most 4*||q||_2 from that free energy. This proves the high part of Proposition 5 with the checked cutoff eight and comparison factors 2^(-m),2^m. The shared complex L2 whole-disc squared primitives, analytic endpoint quotient and near-free unit roots are integrated from the pinned convexity branch, together with their verified continuous physical realization and scalar Hill normalization dependencies. A new compatibility theorem proves the common complex high-energy region contains the radius-n real-label disc; an open intrinsic ordered pair therefore equals the shared unordered pair up to swap. The two squared primitives satisfy the same entire squared-cosh equation and vanish at a common endpoint. The shared local inverse uniqueness and the analytic identity theorem identify them throughout the common connected domain, rather than assuming a sheet match from equal squares. A bound ||H||<=1/n for the matched analytic unit gives profile<=gap/n on the real interval. Integrating this estimate with the actual 2/pi normalization yields n*I_n<=gap^2 for all sufficiently large n, including closed gaps through the previously proved zero action theorem. The cutoff is potential dependent and is not claimed to be 8*||q||. The period-one action integral is independent of its auxiliary spectral weight and equals the actual high contour moment at the quantitative cutoff. For any admissible spectral weight and real weighted period-one Fourier potential, its exact weighted positive-index action series is summable. Above the eventual action cutoff and the checked weighted spectral cutoff, the tail is bounded by 2*pi*(9*||R_N q||_w^2+2304*||q||_w^4/N). The finite head is handled by the summable-tail equivalence. No Birkhoff-map mapping property, explicit uniform main norm estimate or low-gap canonical contour formula is inferred from this real-action series result. Main Theorems 1-3 remain unverified. Actual high contour moments equal real-gap integrals at every integer level, with the exact factor 2/pi, positivity and mean-value relation. Their uniform high-level comparisons are proved at n>=2 and 8*||q||_2<=n. A potential-dependent high cutoff gives n*I_n<=gamma_n^2 for the actual real-gap action integral, including collapsed gaps. The period-one real-gap actions are weight independent and satisfy the exact weighted l1 summability with w(2*n)^2*(2*pi*n), together with a tail bound from corrected gap estimates. This supplies a real-action summability prerequisite; it does not identify a physical Birkhoff map or prove Theorem 3. Low-gap canonical contour identification, globally canonical sheets, explicit norm-dependent action-gap estimates with the source weight evaluation, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm inequalities remain essential. Scalar Hill operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate.",
+    "hypotheses": "Real Fourier coefficients in the exact source period-one w.doubleIndex weighted Hilbert space, arbitrary SpectralWeight; even period-two insertion is proved. Quantitative hierarchy comparison uses n>=2 and 8*||q||_2<=n. Eventual quadratic action-gap control has a potential-dependent cutoff. Weighted tails also assume N>=2 and 8*||q||_w<=N.",
+    "qualification": "The action here is the actual trace real-gap integral for every positive index, with checked high Arnold-contour identification. Its low-gap canonical contour identity and physical Birkhoff-coordinate identification remain essential. Weighted summability is not the explicit norm-dependent Theorem 3 estimate.",
+    "remaining": "Main Theorems 1-3 remain unverified. Actual high contour moments equal real-gap integrals at every integer level, with the exact factor 2/pi, positivity and mean-value relation. Their uniform high-level comparisons are proved at n>=2 and 8*||q||_2<=n. A potential-dependent high cutoff gives n*I_n<=gamma_n^2 for the actual real-gap action integral, including collapsed gaps. The period-one real-gap actions are weight independent and satisfy the exact weighted l1 summability with w(2*n)^2*(2*pi*n), together with a tail bound from corrected gap estimates. This supplies a real-action summability prerequisite; it does not identify a physical Birkhoff map or prove Theorem 3. Low-gap canonical contour identification, globally canonical sheets, explicit norm-dependent action-gap estimates with the source weight evaluation, Hamiltonian/higher-action trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm inequalities remain essential. Scalar Hill operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate."
   }
 }

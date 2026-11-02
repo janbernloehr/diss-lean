@@ -104,4 +104,46 @@ theorem norm_twoZeroQuotient_le (f : ℂ → ℂ) (a b c : ℂ) (R B : ℝ) (hR 
   · rw [closure_ball c hR.ne']
     exact hz
 
+/-- A local disc version of the two-root model comparison. The quotient
+functions need be analytic near the closed disc, rather than entire. -/
+theorem norm_two_root_quotient_sub_le_on_disc
+    (F F₀ Q Q₀ : ℂ → ℂ) (a b c : ℂ) (r epsilon A B : ℝ)
+    (hr : 0 < r) (hepsilon : 0 ≤ epsilon) (hepsilonr : epsilon ≤ r/2) (hB : 0 ≤ B)
+    (ha : ‖a-c‖ ≤ epsilon) (hb : ‖b-c‖ ≤ epsilon)
+    (hQ : AnalyticOnNhd ℂ Q (closedBall c r)) (hQ₀ : AnalyticOnNhd ℂ Q₀ (closedBall c r))
+    (hF : ∀ z, F z = (z-a)*(z-b)*Q z)
+    (hF₀ : ∀ z, F₀ z = (z-c)^2*Q₀ z)
+    (herror : ∀ z ∈ sphere c r, ‖F z-F₀ z‖ ≤ A)
+    (hmodel : ∀ z ∈ sphere c r, ‖Q₀ z‖ ≤ B) :
+    ∀ z ∈ closedBall c r, ‖Q z-Q₀ z‖ ≤ 4*(A+B*(2*r*epsilon+epsilon^2))/r^2 := by
+  have hdc : DiffContOnCl ℂ (fun z => Q z-Q₀ z) (ball c r) := by
+    refine ⟨fun z hz => ((hQ z (ball_subset_closedBall hz)).sub
+      (hQ₀ z (ball_subset_closedBall hz))).differentiableAt.differentiableWithinAt,?_⟩
+    rw [closure_ball c hr.ne']
+    exact hQ.continuousOn.sub hQ₀.continuousOn
+  intro z hz
+  apply Complex.norm_le_of_forall_mem_frontier_norm_le isBounded_ball hdc
+  · intro w hw
+    rw [frontier_ball c hr.ne'] at hw
+    have hwr : ‖w-c‖ = r := by simpa only [mem_sphere,dist_eq_norm] using hw
+    have hlo := sq_radius_le_four_mul_norm_two_root_factor a b c w r epsilon hr hepsilonr ha hb hwr
+    have hfactor := norm_two_root_factor_sub_center_sq_le a b c w r epsilon hepsilon ha hb hwr
+    have hid : (Q w-Q₀ w)*((w-a)*(w-b)) =
+        F w-F₀ w-Q₀ w*((w-a)*(w-b)-(w-c)^2) := by
+      rw [hF w,hF₀ w]
+      ring
+    have hmul : ‖Q w-Q₀ w‖*(r^2/4) ≤ A+B*(2*r*epsilon+epsilon^2) := by
+      calc
+        _ ≤ ‖Q w-Q₀ w‖*‖(w-a)*(w-b)‖ := mul_le_mul_of_nonneg_left hlo (norm_nonneg _)
+        _ = ‖F w-F₀ w-Q₀ w*((w-a)*(w-b)-(w-c)^2)‖ := by rw [← norm_mul,hid]
+        _ ≤ ‖F w-F₀ w‖+‖Q₀ w*((w-a)*(w-b)-(w-c)^2)‖ := norm_sub_le _ _
+        _ ≤ A+B*(2*r*epsilon+epsilon^2) := by
+          rw [norm_mul]
+          exact add_le_add (herror w hw) (mul_le_mul (hmodel w hw) hfactor (norm_nonneg _) hB)
+    calc
+      _ ≤ (A+B*(2*r*epsilon+epsilon^2))/(r^2/4) := (le_div_iff₀ (by positivity)).mpr hmul
+      _ = _ := by ring
+  · rw [closure_ball c hr.ne']
+    exact hz
+
 end NLS.ComplexAnalysis
