@@ -5,8 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [native periodic conjugation](coverage/SECTION_2.md). Actual smooth-test conjugation, exact symmetric weighted norm, and the original real-pair condition at every positive period, real Sobolev order and Banach exponent.
-The [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: the [notation-page comparison](coverage/NOTATIONS_ASSERTIONS.md) maps 38 groups to their original objects, normalizations and domains. The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T05:56:14.899334+00:00",
-  "base_commit": "e9fb2f3688eecf7ab1481b32f1d0b0bca355ce8a",
+  "published_utc": "2026-11-02T05:57:06.374754+00:00",
+  "base_commit": "c23702bdbb42dd6a2566cd5173c587f7ce41d82e",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 219,
-    "module_hash_checks": 4558,
-    "distinct_modules": 2249
+    "review_records": 220,
+    "module_hash_checks": 4613,
+    "distinct_modules": 2260
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "e9fb2f3688eecf7ab1481b32f1d0b0bca355ce8a",
-    "validated_state": "Fresh full check after native periodic conjugation.",
+    "base_commit": "c23702bdbb42dd6a2566cd5173c587f7ce41d82e",
+    "validated_state": "Notation comparison changes documentation only; the exact Lean snapshot retains the native-conjugation full check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8654,
     "public_examples": 7729,
@@ -45,7 +45,8 @@
     },
     "full_gate_log_sha256": "aaf07250cc3111a3318f6d43bce32212f546446e06a59dfe528c4abdb12b95ca",
     "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/NativePeriodicConjugationFullCheck.log"
+    "full_gate_log": "work/NativePeriodicConjugationFullCheck.log",
+    "validation_reused_from_commit": "c23702bdbb42dd6a2566cd5173c587f7ce41d82e"
   },
   "named_statements": [
     {
@@ -75037,6 +75038,3017 @@
         "log_sha256": "aaf07250cc3111a3318f6d43bce32212f546446e06a59dfe528c4abdb12b95ca"
       },
       "source_record_sha256": "41695dc4cb66f3d5962c00b76b720dd3166b8524f7619e000fbe034c341dfcb8"
+    },
+    "NotationsOrderedSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "c23702bdbb42dd6a2566cd5173c587f7ce41d82e",
+      "updated_utc": "2026-11-02T05:57:06.319924+00:00",
+      "source_lines": [
+        [
+          11766,
+          11894
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "id": "NOT-SPACES",
+          "source_lines": [
+            [
+              11770,
+              11794
+            ]
+          ],
+          "claim": "Original periodic Fourier-Lebesgue carriers and their scalar weighted coefficient realization.",
+          "declarations": [
+            "NLS.Fourier.FourierLebesgueSpace",
+            "NLS.Fourier.PeriodicFourierLebesgue.coefficientsIsometry",
+            "NLS.Weight.sobolev_zero_eq_one"
+          ],
+          "qualification": "The positive physical period and real Sobolev order remain explicit. The native carrier uses original smooth-test distributions. Pair conventions retain the separate infinity norm described in the Section 2 comparison; this row does not identify it with the maximum product norm. The zero-order abbreviations specialize s=0 and physical period one, using the exact equality of the order-zero weight with the unit weight; H^s specializes p=2.",
+          "support_body_scopes": {
+            "NLS/Fourier/PeriodicFourierLebesgueSpace.lean": {
+              "scope": "full, lines 1-150 and 151-206",
+              "chunks": [
+                "fa3683",
+                "10e398"
+              ],
+              "sha256": "f42a14f5a1d0322ff0c074b7a295719b59022ec063a147ba96e5fbda5c6974c8"
+            },
+            "NLS/SequenceSpaces/PairNorm.lean": {
+              "scope": "lines 90-144",
+              "chunk": "e6ec0b",
+              "sha256": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3"
+            }
+          },
+          "ordered_group": "NOT-001",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Original periodic Fourier-Lebesgue carriers and their scalar weighted coefficient realization.",
+          "reviewed_claims": [
+            "Original periodic Fourier-Lebesgue carriers and their scalar weighted coefficient realization."
+          ]
+        },
+        {
+          "id": "NOT-ISOLATION",
+          "source_lines": [
+            [
+              11801,
+              11807
+            ],
+            [
+              11813,
+              11813
+            ]
+          ],
+          "claim": "Common almost-real neighborhood and local isolating disc families.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma10_1"
+          ],
+          "qualification": "Finite p>1; one local family works for every nearby source and every spectral index. Real centers, quantitative separation and the exact free tail remain part of the theorem.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceLemma10_1.lean": {
+              "scope": "lines 1-105",
+              "chunk": "5d85e8",
+              "sha256": "45e5c251de6602bf526928eb827607687bb3428c3dd99950a0941ed2c8c93816"
+            }
+          },
+          "ordered_group": "NOT-002",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Common almost-real neighborhood and local isolating disc families.",
+          "reviewed_claims": [
+            "Common almost-real neighborhood and local isolating disc families."
+          ]
+        },
+        {
+          "id": "NOT-STRIP",
+          "source_lines": [
+            [
+              11808,
+              11808
+            ]
+          ],
+          "claim": "Full closed vertical strip of half-width pi/2.",
+          "declarations": [
+            "NLS.ZakharovShabat.resonantStrip"
+          ],
+          "qualification": "The unpunctured strip is used, including its central lattice point.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ComplementaryStrip.lean": {
+              "scope": "lines 1-30",
+              "chunk": "311575",
+              "sha256": "194d6025fbbf10bc2f9ec2a4ba6c8b859e7a50e8e00fd48020653e1f06baca92"
+            }
+          },
+          "ordered_group": "NOT-003",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Full closed vertical strip of half-width pi/2.",
+          "reviewed_claims": [
+            "Full closed vertical strip of half-width pi/2."
+          ]
+        },
+        {
+          "id": "NOT-DISK",
+          "source_lines": [
+            [
+              11816,
+              11816
+            ]
+          ],
+          "claim": "Open disk centered at n*pi with radius pi/4.",
+          "declarations": [
+            "NLS.ZakharovShabat.refinedResonantDisk"
+          ],
+          "qualification": "The definition retains the open boundary convention.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ResonantDeterminantBounds.lean": {
+              "scope": "lines 1-32",
+              "chunk": "13fa4c",
+              "sha256": "3c7412a3ab4307242209fd8ca378aeb64c25b0b3cd80daef1bba64bc30b50c38"
+            }
+          },
+          "ordered_group": "NOT-004",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Open disk centered at n*pi with radius pi/4.",
+          "reviewed_claims": [
+            "Open disk centered at n*pi with radius pi/4."
+          ]
+        },
+        {
+          "id": "NOT-ISOSPECTRAL",
+          "source_lines": [
+            [
+              11821,
+              11821
+            ]
+          ],
+          "claim": "The real isospectral set is exactly equality of the entire discriminant.",
+          "declarations": [
+            "NLS.ZakharovShabat.mem_sourceIsospectralSet_iff_discriminant_eq"
+          ],
+          "qualification": "Finite p>1 and the real-type source locus are retained.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceIsospectralSet.lean": {
+              "scope": "lines 1-110",
+              "chunk": "51e73b",
+              "sha256": "d829150b833f3fe97ef7b84e69b7fb1bb29179f04e52affcdc20a7a2b59eda62"
+            }
+          },
+          "ordered_group": "NOT-005",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The real isospectral set is exactly equality of the entire discriminant.",
+          "reviewed_claims": [
+            "The real isospectral set is exactly equality of the entire discriminant."
+          ]
+        },
+        {
+          "id": "NOT-OPERATOR",
+          "source_lines": [
+            [
+              11770,
+              11783
+            ]
+          ],
+          "claim": "Actual physical expression diag(i,-i) times the derivative plus the off-diagonal potential.",
+          "declarations": [
+            "NLS.ZakharovShabat.physicalOperator"
+          ],
+          "qualification": "The definition uses actual component derivatives; domains and almost-everywhere realizations retain their separate existing hypotheses.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/PhysicalOperator.lean": {
+              "scope": "lines 1-60",
+              "chunk": "0c77cf",
+              "sha256": "0b504c156c2d0f19637da34849686189731fa5a9b7433396c4495946af80e28e"
+            }
+          },
+          "ordered_group": "NOT-006",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Actual physical expression diag(i,-i) times the derivative plus the off-diagonal potential.",
+          "reviewed_claims": [
+            "Actual physical expression diag(i,-i) times the derivative plus the off-diagonal potential."
+          ]
+        },
+        {
+          "id": "NOT-TRANSFORM",
+          "source_lines": [
+            [
+              11804,
+              11807
+            ]
+          ],
+          "claim": "The vector transformation T has factor 1/sqrt(2).",
+          "declarations": [
+            "NLS.ZakharovShabat.aknsToZS"
+          ],
+          "qualification": "This is the vector-coordinate normalization. The separately normalized potential transformation remains as in the existing AKNS domain comparison.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/AKNSCoordinates.lean": {
+              "scope": "lines 1-110",
+              "chunk": "5df59b",
+              "sha256": "4372d3deffa364b08eb51a697a88728bcca37fa3b50a7c85fde27d2bb62f3079"
+            }
+          },
+          "ordered_group": "NOT-007",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The vector transformation T has factor 1/sqrt(2).",
+          "reviewed_claims": [
+            "The vector transformation T has factor 1/sqrt(2)."
+          ]
+        },
+        {
+          "id": "NOT-ACTIONROOT",
+          "source_lines": [
+            [
+              11859,
+              11861
+            ]
+          ],
+          "claim": "Principal square root of the normalized action.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceNormalizedActionRoot"
+          ],
+          "qualification": "At a collapsed gap the analytic normalized-action extension is used. The raw quotient 4I/gamma^2 is interpreted only off collapse.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceNormalizedActionCollapsedPositive.lean": {
+              "scope": "lines 106-160",
+              "chunk": "63febe",
+              "sha256": "ad3924543e2544bcc02801e7f7d21672f501ce57241d46173a00278d9ebad5f2"
+            }
+          },
+          "ordered_group": "NOT-008",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Principal square root of the normalized action.",
+          "reviewed_claims": [
+            "Principal square root of the normalized action."
+          ]
+        },
+        {
+          "id": "NOT-LATTICE",
+          "source_lines": [
+            [
+              11867,
+              11875
+            ]
+          ],
+          "claim": "Free reference roots and the zero-index product denominator.",
+          "declarations": [
+            "NLS.ZakharovShabat.displacedRoots",
+            "NLS.ZakharovShabat.singleSpectralDenominator"
+          ],
+          "qualification": "Zero displacement gives n*pi. The denominator is n*pi for nonzero n and one at n=0.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/RestoredSpectralPairs.lean": {
+              "scope": "lines 1-40",
+              "chunk": "13fa4c",
+              "sha256": "d58aab71ce9dcd67c58bc54424ee3c87e60d093878fab7ce89cd8cdb967541ba"
+            },
+            "NLS/ZakharovShabat/SingleSpectralProducts.lean": {
+              "scope": "lines 1-55",
+              "chunk": "0c77cf",
+              "sha256": "42f12055442be191d73fe7670ec5be19e201a270f9c65a57529bbf3c51aedb52"
+            }
+          },
+          "ordered_group": "NOT-009",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Free reference roots and the zero-index product denominator.",
+          "reviewed_claims": [
+            "Free reference roots and the zero-index product denominator."
+          ]
+        },
+        {
+          "id": "NOT-PRIMITIVE",
+          "source_lines": [
+            [
+              11878,
+              11883
+            ]
+          ],
+          "claim": "F_n is the endpoint-normalized primitive and F is F_0.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.endpoint_integrals",
+            "NLS.ZakharovShabat.SourceSection19Data.index_shift"
+          ],
+          "qualification": "The original complex primitive uses the common Section 19 source data. Either endpoint integral agrees with it on the root domain; F_n=F_0+i*pi*n. No claim is made from the real-source primitive alone.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceSection19Primitive.lean": {
+              "scope": "lines 1-120",
+              "chunk": "8e7e5b",
+              "sha256": "4efc5379e4acec3fef6b588cfe3026f0c4f9ca563c886269c293afe493b7fb5c"
+            }
+          },
+          "ordered_group": "NOT-010",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "F_n is the endpoint-normalized primitive and F is F_0.",
+          "reviewed_claims": [
+            "F_n is the endpoint-normalized primitive and F is F_0."
+          ]
+        },
+        {
+          "id": "NOT-PSIPRODUCT",
+          "source_lines": [
+            [
+              11851,
+              11854
+            ]
+          ],
+          "claim": "The literal psi product has prefactor -2/pi_n and factor denominators pi_m.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection7_psi_product"
+          ],
+          "qualification": "The denominator printed on this final notation page agrees with the implemented correction to the earlier Section 7 display. This row concerns the product identity; unrestricted period uniqueness is established in its separate Section 7 publication.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceSection7PsiProduct.lean": {
+              "scope": "full",
+              "chunk": "0c77cf",
+              "sha256": "e8ee58e5c5338d591de1935d9b49f63de43012d75afff214143e18b74806b8df"
+            }
+          },
+          "ordered_group": "NOT-011",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The literal psi product has prefactor -2/pi_n and factor denominators pi_m.",
+          "reviewed_claims": [
+            "The literal psi product has prefactor -2/pi_n and factor denominators pi_m."
+          ]
+        },
+        {
+          "id": "NOT-MODIFIEDZETA",
+          "source_lines": [
+            [
+              11863,
+              11866
+            ]
+          ],
+          "claim": "The modified zeta omits two indices and retains i divided by the additionally omitted standard root.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePsiZeta_eq_product"
+          ],
+          "qualification": "The selected psi family is an explicit displacement parameter although the notation suppresses it. The product identity is literal, with no division by numerator factors; its analytic use retains the established root-domain hypotheses.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean": {
+              "scope": "full",
+              "chunk": "63febe",
+              "sha256": "399cf46571a84a8feb2b55e418d68fdf92d73ccd8316eb9158bfb5fd1681f4cb"
+            }
+          },
+          "ordered_group": "NOT-012",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The modified zeta omits two indices and retains i divided by the additionally omitted standard root.",
+          "reviewed_claims": [
+            "The modified zeta omits two indices and retains i divided by the additionally omitted standard root."
+          ]
+        },
+        {
+          "id": "NOT-CHI",
+          "source_lines": [
+            [
+              11867,
+              11871
+            ]
+          ],
+          "claim": "Chi is the product of critical-root numerators divided by standard roots, omitting n.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceActionChi"
+          ],
+          "qualification": "The product and its root domain retain the finite-exponent and omitted-factor hypotheses. The derivative quotient carries its separately proved -i factor.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceActionChi.lean": {
+              "scope": "full",
+              "chunk": "5df59b",
+              "sha256": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4"
+            }
+          },
+          "ordered_group": "NOT-013",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Chi is the product of critical-root numerators divided by standard roots, omitting n.",
+          "reviewed_claims": [
+            "Chi is the product of critical-root numerators divided by standard roots, omitting n."
+          ]
+        },
+        {
+          "id": "NOT-STANDARDROOT",
+          "source_lines": [
+            [
+              11885,
+              11885
+            ]
+          ],
+          "claim": "The standard root uses (tau-z)*sqrt(1-gamma^2/(4*(tau-z)^2)).",
+          "declarations": [
+            "NLS.ZakharovShabat.normalizedStandardRoot"
+          ],
+          "qualification": "The formula uses the principal square root and its existing spectral-domain interpretation.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceStandardRootAlgebra.lean": {
+              "scope": "lines 1-100",
+              "chunk": "74e3f1",
+              "sha256": "64a3720ca89aea6366fedcc8f084f7e8a129bd284e363ea455188e841c043bd2"
+            }
+          },
+          "ordered_group": "NOT-014",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The standard root uses (tau-z)*sqrt(1-gamma^2/(4*(tau-z)^2)).",
+          "reviewed_claims": [
+            "The standard root uses (tau-z)*sqrt(1-gamma^2/(4*(tau-z)^2))."
+          ]
+        },
+        {
+          "id": "NOT-CANONICALROOT",
+          "source_lines": [
+            [
+              11886,
+              11891
+            ]
+          ],
+          "claim": "The canonical root is 2i times the symmetric product of standard roots divided by pi_m.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCanonicalRoot"
+          ],
+          "qualification": "The definition and its convergence retain the common root domain and finite p>1. This is not a claim about arbitrary branch choices.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceCanonicalRootProduct.lean": {
+              "scope": "lines 1-60",
+              "chunk": "0c77cf",
+              "sha256": "4eca92d04190a6fe63dc9f441b9a7a48cda553f4369ffebd74c4cf1c60cb846f"
+            }
+          },
+          "ordered_group": "NOT-015",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The canonical root is 2i times the symmetric product of standard roots divided by pi_m.",
+          "reviewed_claims": [
+            "The canonical root is 2i times the symmetric product of standard roots divided by pi_m."
+          ]
+        },
+        {
+          "id": "NOT-REALTYPE",
+          "source_lines": [
+            [
+              11774,
+              11776
+            ]
+          ],
+          "claim": "The physical real form is conjugate pairing of the two fields.",
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_conjugate",
+            "NLS.Fourier.PeriodicFourierLebesgue.sobolev_real_pair_iff",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate_apply",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.eq_conjugate_iff_coefficients",
+            "NLS.ZakharovShabat.IsRealType",
+            "NLS.ZakharovShabat.realTypeSourceLocus"
+          ],
+          "qualification": "In ordinary scalar Fourier coefficients physical conjugation reverses the frequency. The native bridge acts on every original smooth periodic test, preserves the exact symmetric weighted norm, and identifies the real-pair condition at every positive period, real Sobolev order and Banach exponent including infinity. The existing zero-order source locus has the same coefficient reflection. The coordinatewise-real sequence target and the Section 2 pair-norm convention remain distinct.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/RealType.lean": {
+              "scope": "lines 1-68",
+              "chunk": "b0e4c2",
+              "sha256": "5dac5380180fcfe61f1d3b0f9522adc41467ab5a9ecf5406e6c13462589d2709"
+            },
+            "NLS/ZakharovShabat/SourceRealTypeConvex.lean": {
+              "scope": "lines 1-38",
+              "chunk": "b0e4c2",
+              "sha256": "fa4797b92e8f5ea60745e3792283a10c811a943ca2ebb9e96b4bbd275c0f87a2"
+            },
+            "NLS/Fourier/NativePeriodicConjugation.lean": {
+              "scope": "full",
+              "chunk": "43fac3",
+              "sha256": "6e0254f6c7e774a25328b7b46c24ca9c9abc1e3ea500ded6a323cd681b68ab74"
+            }
+          },
+          "ordered_group": "NOT-016",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The physical real form is conjugate pairing of the two fields.",
+          "reviewed_claims": [
+            "The physical real form is conjugate pairing of the two fields."
+          ]
+        },
+        {
+          "id": "NOT-REALCOEFF",
+          "source_lines": [
+            [
+              11790,
+              11794
+            ]
+          ],
+          "claim": "The real sequence carrier consists of real raw coefficients with the original weighted norm.",
+          "declarations": [
+            "NLS.WeightedCoeff.realLocus",
+            "NLS.WeightedRealCoeff"
+          ],
+          "qualification": "Take the product of two such real spaces for the rectangular pair target. Positive weighting preserves and reflects reality. These are not the physical conjugate-pair source coordinates.",
+          "support_body_scopes": {
+            "NLS/SequenceSpaces/WeightedRealCoeff.lean": {
+              "scope": "lines 1-85",
+              "chunk": "b0e4c2",
+              "sha256": "908a8a5db6ad3d8e8d350176d242abd6a8227ec6c753f95a67101e551e562671"
+            }
+          },
+          "ordered_group": "NOT-017",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The real sequence carrier consists of real raw coefficients with the original weighted norm.",
+          "reviewed_claims": [
+            "The real sequence carrier consists of real raw coefficients with the original weighted norm."
+          ]
+        },
+        {
+          "id": "NOT-NONNEGATIVE",
+          "source_lines": [
+            [
+              11795,
+              11796
+            ]
+          ],
+          "claim": "The nonnegative cone has real nonnegative coordinates.",
+          "declarations": [
+            "NLS.WeightedCoeff.nonnegativeLocus"
+          ],
+          "qualification": "Zero coefficients are included. The inherited weighted cone is identified with the unweighted cone by positive weighting.",
+          "support_body_scopes": {
+            "NLS/SequenceSpaces/WeightedNonnegativeActions.lean": {
+              "scope": "full",
+              "chunk": "b0e4c2",
+              "sha256": "889e8fb0f27b55813eff84b90f87c7672a0c799d2da03753f838a60fc472c778"
+            }
+          },
+          "ordered_group": "NOT-018",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The nonnegative cone has real nonnegative coordinates.",
+          "reviewed_claims": [
+            "The nonnegative cone has real nonnegative coordinates."
+          ]
+        },
+        {
+          "id": "NOT-COLLAPSED",
+          "source_lines": [
+            [
+              11819,
+              11819
+            ]
+          ],
+          "claim": "Z_n is the zero-gap locus within the selected common source neighborhood.",
+          "declarations": [
+            "NLS.ZakharovShabat.mem_sourceActionGapZeroLocus_iff",
+            "NLS.ZakharovShabat.sourceActionGapZeroLocus"
+          ],
+          "qualification": "The analytic defining function is the squared canonical gap; its zero set is exactly the zero set of the oriented gap. The chosen ambient W remains explicit.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceActionGapZeroLocus.lean": {
+              "scope": "full",
+              "chunk": "7ee753",
+              "sha256": "3fec845b190186e9455f97cb4191e6bede2a52756e088f7f1d4196276c29ba93"
+            }
+          },
+          "ordered_group": "NOT-019",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Z_n is the zero-gap locus within the selected common source neighborhood.",
+          "reviewed_claims": [
+            "Z_n is the zero-gap locus within the selected common source neighborhood."
+          ]
+        },
+        {
+          "id": "NOT-PERIODIC",
+          "source_lines": [
+            [
+              11826,
+              11827
+            ]
+          ],
+          "claim": "The two canonical sequences enumerate the actual periodic endpoints.",
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalPeriodicEndpoints_exhaustive",
+            "NLS.ZakharovShabat.canonicalPeriodicLeft",
+            "NLS.ZakharovShabat.canonicalPeriodicRight"
+          ],
+          "qualification": "The original global lexicographic labeling and multiplicities are retained, with the established finite p>1 and period-one embedding hypotheses.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/CanonicalPeriodicEndpoints.lean": {
+              "scope": "full",
+              "chunk": "345ff0",
+              "sha256": "89f297e577280aba47cd9c52f7fdd9c075562203fffa547e255be80fb7bb40d2"
+            }
+          },
+          "ordered_group": "NOT-020",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The two canonical sequences enumerate the actual periodic endpoints.",
+          "reviewed_claims": [
+            "The two canonical sequences enumerate the actual periodic endpoints."
+          ]
+        },
+        {
+          "id": "NOT-GAPMIDPOINT",
+          "source_lines": [
+            [
+              11829,
+              11830
+            ],
+            [
+              11834,
+              11838
+            ]
+          ],
+          "claim": "G_n is the straight segment, gamma_n the oriented endpoint difference, and tau_n their midpoint.",
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalPeriodicGap",
+            "NLS.ZakharovShabat.canonicalPeriodicMidpoint",
+            "NLS.ZakharovShabat.sourcePeriodicSegment"
+          ],
+          "qualification": "For complex sources the segment is the real affine segment joining complex endpoints. The midpoint and gap formulas retain their literal factors.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceGlobalIsolation.lean": {
+              "scope": "lines 1-80",
+              "chunk": "74e3f1",
+              "sha256": "aa4b97740ff659848bb77f952920d6233babf616232baa854fd80c3d5e180f98"
+            },
+            "NLS/ZakharovShabat/DiscriminantPairFactorization.lean": {
+              "scope": "lines 1-65",
+              "chunk": "7ee753",
+              "sha256": "776c4c305d0bb5b3747d5b7591d2b18b564a74eadff71cfc6f078f3f03df90e5"
+            }
+          },
+          "ordered_group": "NOT-021",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "G_n is the straight segment, gamma_n the oriented endpoint difference, and tau_n their midpoint.",
+          "reviewed_claims": [
+            "G_n is the straight segment, gamma_n the oriented endpoint difference, and tau_n their midpoint."
+          ]
+        },
+        {
+          "id": "NOT-DIRICHLET",
+          "source_lines": [
+            [
+              11832,
+              11832
+            ]
+          ],
+          "claim": "Mu_n denotes the canonical ordinary Dirichlet root.",
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots",
+            "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_exhaustive",
+            "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_multiplicity"
+          ],
+          "qualification": "Specialize the boundary condition to dirichlet. The actual ordinary interval extension and original algebraic multiplicities are retained.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/CanonicalPeriodOneBoundaryRoots.lean": {
+              "scope": "lines 1-68",
+              "chunk": "9ba8e1",
+              "sha256": "2c3ff197758fdebbd0258f623e53e39ca8d4b27263c68d468b9564042b82f11f"
+            }
+          },
+          "ordered_group": "NOT-022",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Mu_n denotes the canonical ordinary Dirichlet root.",
+          "reviewed_claims": [
+            "Mu_n denotes the canonical ordinary Dirichlet root."
+          ]
+        },
+        {
+          "id": "NOT-DISCRIMINANT",
+          "source_lines": [
+            [
+              11840,
+              11840
+            ]
+          ],
+          "claim": "The discriminant is the trace of the monodromy.",
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalDiscriminant_finite_eq_classical",
+            "NLS.ZakharovShabat.classicalDiscriminant"
+          ],
+          "qualification": "The classical definition is literal; the completed source function agrees on dense finite Fourier data and retains the previously reviewed extension.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ClassicalFundamentalSolution.lean": {
+              "scope": "lines 108-130",
+              "chunk": "345ff0",
+              "sha256": "377d2066c8320a02b91513ee3654d2eb539b94b0fc8ef79f6615e51537be3993"
+            },
+            "NLS/ZakharovShabat/SourceAntiDiscriminantIdentity.lean": {
+              "scope": "lines 1-100 and 165-197; tool chunks 9ba8e1 and 7f7652",
+              "chunk": "7f7652",
+              "sha256": "db917f943d57c028655cf295a61bb43fd5ae48bf5ca8c6ddeb96c01c46923afc"
+            }
+          },
+          "ordered_group": "NOT-023",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The discriminant is the trace of the monodromy.",
+          "reviewed_claims": [
+            "The discriminant is the trace of the monodromy."
+          ]
+        },
+        {
+          "id": "NOT-ANTIDISCRIMINANT",
+          "source_lines": [
+            [
+              11842,
+              11842
+            ]
+          ],
+          "claim": "The anti-discriminant is the sum of the off-diagonal monodromy entries.",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalAntiDiscriminant",
+            "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_finite_eq_classical_of_exponent"
+          ],
+          "qualification": "The completed source candidate uses the domain-based Neumann-minus-Dirichlet auxiliary characteristics. Its finite-source normalization agrees with the actual monodromy anti-trace.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ClassicalSeparatedCharacteristics.lean": {
+              "scope": "lines 1-65",
+              "chunk": "fda48f",
+              "sha256": "0002ad25924ec3d48a50d62d9859d9cc33116999c34d62afdc24877b06779bc1"
+            },
+            "NLS/ZakharovShabat/SourceAntiDiscriminantCandidate.lean": {
+              "scope": "full",
+              "chunk": "345ff0",
+              "sha256": "6024ab343c516082e08ce722ac94a226ad288b193c6edbb8396078f644a90004"
+            },
+            "NLS/ZakharovShabat/FiniteSourceAntiDiscriminant.lean": {
+              "scope": "lines 1-62 and 78-111; tool chunks 6efb8b and a1b86e",
+              "chunk": "a1b86e",
+              "sha256": "70f0bf5bb30e35cbd93e20ac9e73d1e47ead4a25bef240debe6cfff6496c1586"
+            }
+          },
+          "ordered_group": "NOT-024",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The anti-discriminant is the sum of the off-diagonal monodromy entries.",
+          "reviewed_claims": [
+            "The anti-discriminant is the sum of the off-diagonal monodromy entries."
+          ]
+        },
+        {
+          "id": "NOT-SWAP",
+          "source_lines": [
+            [
+              11786,
+              11789
+            ]
+          ],
+          "claim": "P swaps the two vector components.",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalODECoefficient_swap"
+          ],
+          "qualification": "The matrix acts as the existing Prod.swap operation. Its ODE covariance uses the separately signed potential swap; the vector swap itself introduces no sign.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ClassicalSwapSymmetry.lean": {
+              "scope": "full",
+              "chunk": "e99499",
+              "sha256": "209882dec17615df42d689804b33feeebc767767960c2205d75638addeb0ae89"
+            }
+          },
+          "ordered_group": "NOT-025",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "P swaps the two vector components.",
+          "reviewed_claims": [
+            "P swaps the two vector components."
+          ]
+        },
+        {
+          "id": "NOT-PHASE",
+          "source_lines": [
+            [
+              11791,
+              11794
+            ]
+          ],
+          "claim": "R multiplies the first component by i and the second by -i.",
+          "declarations": [
+            "NLS.ZakharovShabat.auxiliaryPotential_apply"
+          ],
+          "qualification": "The exact coefficient phase acts componentwise, with the same physical normalization.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/AuxiliaryPhase.lean": {
+              "scope": "lines 1-90",
+              "chunk": "e8660a",
+              "sha256": "7d556ea6c3c7d73440fdfa122d8ed4bc6452f08a5786896935fb35a5fd257f9e"
+            }
+          },
+          "ordered_group": "NOT-026",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "R multiplies the first component by i and the second by -i.",
+          "reviewed_claims": [
+            "R multiplies the first component by i and the second by -i."
+          ]
+        },
+        {
+          "id": "NOT-J",
+          "source_lines": [
+            [
+              11796,
+              11800
+            ]
+          ],
+          "claim": "J sends (u_minus,u_plus) to (u_plus,-u_minus).",
+          "declarations": [
+            "NLS.Poisson.signedJ",
+            "NLS.Poisson.signedJ_physical"
+          ],
+          "qualification": "Signed pair coordinates require frequency reflection; the physical formula has the printed signs.",
+          "support_body_scopes": {
+            "NLS/Poisson/SobolevBivector.lean": {
+              "scope": "lines 112-157",
+              "chunk": "e8660a",
+              "sha256": "9873f41cb3f57752dc14fd1009c7e0566ccc8a571b11ed26652c1f10495bff49"
+            }
+          },
+          "ordered_group": "NOT-027",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "J sends (u_minus,u_plus) to (u_plus,-u_minus).",
+          "reviewed_claims": [
+            "J sends (u_minus,u_plus) to (u_plus,-u_minus)."
+          ]
+        },
+        {
+          "id": "NOT-WAVES",
+          "source_lines": [
+            [
+              11808,
+              11818
+            ]
+          ],
+          "claim": "The signed free waves are (0,exp(i*n*pi*x)) and (exp(-i*n*pi*x),0).",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalFreeVector"
+          ],
+          "qualification": "Substitute z=n*pi and the two coordinate vectors in the literal free evolution. These are period-two spectral waves; unit-period Fourier extraction uses its established rescaling.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ClassicalFirstBorn.lean": {
+              "scope": "lines 1-52",
+              "chunk": "52b287",
+              "sha256": "79d54874798826b77127ac433a40162cbf48ffb3eb8614414fb78d6cca004378"
+            }
+          },
+          "ordered_group": "NOT-028",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The signed free waves are (0,exp(i*n*pi*x)) and (exp(-i*n*pi*x),0).",
+          "reviewed_claims": [
+            "The signed free waves are (0,exp(i*n*pi*x)) and (exp(-i*n*pi*x),0)."
+          ]
+        },
+        {
+          "id": "NOT-PAIRINGS",
+          "source_lines": [
+            [
+              11831,
+              11834
+            ]
+          ],
+          "claim": "Sesquilinear and real dual products retain the Section 2 Fourier conventions.",
+          "declarations": [
+            "NLS.WeightedCoeff.sobolevBilinearPairing_apply",
+            "NLS.WeightedCoeffPair.sobolevSesquilinearPairing_physical"
+          ],
+          "qualification": "The pair product sums component sesquilinear products. Physical real duality uses the bilinear product with opposite scalar Fourier indices. Conjugate Sobolev orders and exponents are explicit, and the separate infinity pair norm remains as in Section 2.",
+          "support_body_scopes": {
+            "NLS/SequenceSpaces/SobolevPairSesquilinear.lean": {
+              "scope": "lines 1-95",
+              "chunk": "2eb4f4",
+              "sha256": "47b5e3bafd31f211239f96b3aa3793bd6f7e2b3f1952b6f946efb607c6d23627"
+            },
+            "NLS/SequenceSpaces/SobolevBilinearPairing.lean": {
+              "scope": "full",
+              "chunk": "a1b86e",
+              "sha256": "14c47d68626207bcaa760b3ab7cfaf339f2446895c151ed3adc251fb17ba659b"
+            }
+          },
+          "ordered_group": "NOT-029",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Sesquilinear and real dual products retain the Section 2 Fourier conventions.",
+          "reviewed_claims": [
+            "Sesquilinear and real dual products retain the Section 2 Fourier conventions."
+          ]
+        },
+        {
+          "id": "NOT-BRACKET",
+          "source_lines": [
+            [
+              11836,
+              11836
+            ]
+          ],
+          "claim": "The Poisson bracket has factor -i and physical matrix J.",
+          "declarations": [
+            "NLS.Poisson.commonSobolevBracket_physical"
+          ],
+          "qualification": "Automatic full-gradient recovery uses finite source exponents, including p=1 with its separate infinity pair norm. Functionals on an infinity-exponent source require supplied representatives as already qualified in Section 2. No closure assertion for arbitrary nested brackets is added.",
+          "support_body_scopes": {
+            "NLS/Poisson/SobolevCommonBracket.lean": {
+              "scope": "lines 1-78",
+              "chunk": "2eb4f4",
+              "sha256": "8bc4b27219ed668bee0db592e8eee1275876ad98e20936ca0c551a12acef5c4b"
+            },
+            "NLS/Poisson/SobolevBivector.lean": {
+              "scope": "lines 112-157",
+              "chunk": "e8660a",
+              "sha256": "9873f41cb3f57752dc14fd1009c7e0566ccc8a571b11ed26652c1f10495bff49"
+            }
+          },
+          "ordered_group": "NOT-030",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The Poisson bracket has factor -i and physical matrix J.",
+          "reviewed_claims": [
+            "The Poisson bracket has factor -i and physical matrix J."
+          ]
+        },
+        {
+          "id": "NOT-HAMILTONIANS",
+          "source_lines": [
+            [
+              11851,
+              11856
+            ]
+          ],
+          "claim": "H1 is the physical mass and H=H3 is kinetic plus quartic NLS energy.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixH_hamiltonian_eq_integral_of_coefficients",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_one",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_three",
+            "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+            "NLS.ZakharovShabat.periodOneSobolevMass_eq_integral"
+          ],
+          "qualification": "The hierarchy identities retain the unit-period normalization. The integration-by-parts identity for H3 is stated for smooth periodic fields; the same integral energy is defined on all complex H1 pairs. The full H0 mass identity is also covered by the published Appendix H physical Hamiltonian integral step.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": {
+              "scope": "lines 1-36 and 101-143",
+              "chunk": "8f2baa",
+              "sha256": "8ba49915bc9afb39744a9439c878af0c7d72d9c2a9c59a2aec7ae1c1ccc64398"
+            },
+            "NLS/ZakharovShabat/PeriodOneSobolevHamiltonian.lean": {
+              "scope": "lines 1-112",
+              "chunk": "81a719",
+              "sha256": "8ec9db0c737d7b8acc9b2401f85d0ffdaf9db719683e6d8c94dc85ef9e73bc4f"
+            },
+            "NLS/ZakharovShabat/AppendixHPhysicalHamiltonian.lean": {
+              "scope": "full, prior positive proof and canonical publication review",
+              "chunk": "d6fd9d",
+              "sha256": "d31119713824e7aa1d968635a8c2701299ccad51aa9a6371493cdde8cf4e2c03"
+            }
+          },
+          "ordered_group": "NOT-031",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "H1 is the physical mass and H=H3 is kinetic plus quartic NLS energy.",
+          "reviewed_claims": [
+            "H1 is the physical mass and H=H3 is kinetic plus quartic NLS energy."
+          ]
+        },
+        {
+          "id": "NOT-GAPPHASES",
+          "source_lines": [
+            [
+              11863,
+              11866
+            ]
+          ],
+          "claim": "The gap-weighted coordinates are gamma_n times exp(plus/minus i eta_n) on open gaps.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_signed",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_phase_limit"
+          ],
+          "qualification": "The eta is the original normalized integral phase. Collapsed gaps use the analytic extension and its open-gap limits, rather than assigning an angle there.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceGapWeightedEtaOriginal.lean": {
+              "scope": "lines 1-115",
+              "chunk": "81a719",
+              "sha256": "4709b37039213e8efedb5e80113abb5d3de07e0bb80161b50d9d5d80da2c962d"
+            },
+            "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalCollapsed.lean": {
+              "scope": "lines 1-100",
+              "chunk": "7f7652",
+              "sha256": "485225d8432e487e04c080329a375d1e7648d788a664ac6a119f32c3b69cc5d5"
+            }
+          },
+          "ordered_group": "NOT-032",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The gap-weighted coordinates are gamma_n times exp(plus/minus i eta_n) on open gaps.",
+          "reviewed_claims": [
+            "The gap-weighted coordinates are gamma_n times exp(plus/minus i eta_n) on open gaps."
+          ]
+        },
+        {
+          "id": "NOT-ZETA",
+          "source_lines": [
+            [
+              11855,
+              11861
+            ]
+          ],
+          "claim": "The single-omitted zeta is the product of (sigma_k-z)/w_k over k different from m.",
+          "declarations": [
+            "NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype"
+          ],
+          "qualification": "The entire selected root family is an explicit displacement parameter; the product is evaluated on the standard-root omitted domain. Numerator zeros are allowed.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceSingleRootQuotientAbsolute.lean": {
+              "scope": "lines 115-156",
+              "chunk": "ca7782",
+              "sha256": "d538ed0bee3ebdf3281876119dcccd7fdb0cccdb53b2ce595c84b847979325e8"
+            }
+          },
+          "ordered_group": "NOT-033",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The single-omitted zeta is the product of (sigma_k-z)/w_k over k different from m.",
+          "reviewed_claims": [
+            "The single-omitted zeta is the product of (sigma_k-z)/w_k over k different from m."
+          ]
+        },
+        {
+          "id": "NOT-SINE",
+          "source_lines": [
+            [
+              11872,
+              11877
+            ]
+          ],
+          "claim": "Sine is minus the symmetric free product, with the exceptional denominator at zero.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDProduct_zero",
+            "NLS.ZakharovShabat.tendsto_appendixDProduct"
+          ],
+          "qualification": "Set the displacement sequence to zero; the symmetric finite products converge with exactly the printed minus sign.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/AppendixDSineProducts.lean": {
+              "scope": "lines 1-105",
+              "chunk": "c818a1",
+              "sha256": "9563136a94276efe23629a9bc03dd57cf703b5f862feb175f5a330f1b0bd78d9"
+            }
+          },
+          "ordered_group": "NOT-034",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Sine is minus the symmetric free product, with the exceptional denominator at zero.",
+          "reviewed_claims": [
+            "Sine is minus the symmetric free product, with the exceptional denominator at zero."
+          ]
+        },
+        {
+          "id": "NOT-CRITICALPRODUCT",
+          "source_lines": [
+            [
+              11846,
+              11850
+            ]
+          ],
+          "claim": "The discriminant derivative has the critical-point product with prefactor two.",
+          "declarations": [
+            "NLS.ZakharovShabat.discriminant_derivative_eq_canonicalCriticalProduct",
+            "NLS.ZakharovShabat.singleSpectralPartialProduct"
+          ],
+          "qualification": "The critical sequence is the actual complete ordered sequence. Its product retains the exceptional zero denominator and symmetric cutoff normalization.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/CanonicalCriticalPoints.lean": {
+              "scope": "lines 1-90",
+              "chunk": "ca7782",
+              "sha256": "732d0760eb4441d1b0077c42fe23d662fbbaaffaf87ea8832418a9d84c27d9a3"
+            },
+            "NLS/ZakharovShabat/SingleSpectralProducts.lean": {
+              "scope": "lines 1-55",
+              "chunk": "0c77cf",
+              "sha256": "42f12055442be191d73fe7670ec5be19e201a270f9c65a57529bbf3c51aedb52"
+            }
+          },
+          "ordered_group": "NOT-035",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The discriminant derivative has the critical-point product with prefactor two.",
+          "reviewed_claims": [
+            "The discriminant derivative has the critical-point product with prefactor two."
+          ]
+        },
+        {
+          "id": "NOT-PAIREDPRODUCT",
+          "source_lines": [
+            [
+              11841,
+              11845
+            ]
+          ],
+          "claim": "The squared discriminant minus four is -4 times the paired endpoint product.",
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalPeriodicEndpoints_product",
+            "NLS.ZakharovShabat.canonicalPeriodic_eq_discriminant_sq_sub_four_finite",
+            "NLS.ZakharovShabat.spectralPairPartialProduct",
+            "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_entireSpectralPairProduct"
+          ],
+          "qualification": "The actual canonical endpoints give the complete entire product. The zero-mode denominator is one, the prefactor is -4, and local uniform convergence includes the free lattice.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/PeriodicEndpointProducts.lean": {
+              "scope": "lines 65-86",
+              "chunk": "702a91",
+              "sha256": "603fd7728a5b0ecf6e3e9ef11f4a2afc58ca21164a390267c586498f522a1a54"
+            },
+            "NLS/ZakharovShabat/FiniteParityCompatibility.lean": {
+              "scope": "lines 55-79",
+              "chunk": "a1b86e",
+              "sha256": "9c28952d957a04d6ba07578d71ce1379f4d95b6559089cf722c02cc7fcda764d"
+            },
+            "NLS/ZakharovShabat/PerturbedSpectralProducts.lean": {
+              "scope": "lines 1-65",
+              "chunk": "6efb8b",
+              "sha256": "eab1045dfe0d6ba8106b201ba18de46c5c8a8ba850782feca137de90fbf0ce9c"
+            },
+            "NLS/ZakharovShabat/EntireSpectralPairProducts.lean": {
+              "scope": "full",
+              "chunk": "8f2baa",
+              "sha256": "f896de045d23e90397829efbb74d000eb8f5ab4c8a4dd5c7e11b877def0d8ef9"
+            }
+          },
+          "ordered_group": "NOT-036",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The squared discriminant minus four is -4 times the paired endpoint product.",
+          "reviewed_claims": [
+            "The squared discriminant minus four is -4 times the paired endpoint product."
+          ]
+        },
+        {
+          "id": "NOT-TERMINALSHEET",
+          "source_lines": [
+            [
+              11892,
+              11894
+            ]
+          ],
+          "claim": "The starred terminal root is normalized to the anti-discriminant at the Dirichlet root.",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_sourceAngularRootSheet_dirichlet_normalization",
+            "NLS.ZakharovShabat.sourceAngularRootSheet_dirichlet_base",
+            "NLS.ZakharovShabat.sourceDiscriminant_sq_sub_four_at_canonicalDirichletRoot"
+          ],
+          "qualification": "At a nonzero terminal anti-discriminant the prescribed analytic sheet realizes this equality and persists locally. The square identity includes zero terminal values and multiple roots; no regular analytic square-root neighborhood is asserted at a zero terminal value.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceAntiDiscriminantIdentity.lean": {
+              "scope": "lines 1-100 and 165-197; tool chunks 9ba8e1 and 7f7652",
+              "chunk": "7f7652",
+              "sha256": "db917f943d57c028655cf295a61bb43fd5ae48bf5ca8c6ddeb96c01c46923afc"
+            },
+            "NLS/ZakharovShabat/SourceAngularRootSheet.lean": {
+              "scope": "full; tool chunks 702a91 and 017c48",
+              "chunk": "017c48",
+              "sha256": "f9d48f38f21349cd82064668c809b6745494c32261544670b78c82a1421189ea"
+            }
+          },
+          "ordered_group": "NOT-037",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The starred terminal root is normalized to the anti-discriminant at the Dirichlet root.",
+          "reviewed_claims": [
+            "The starred terminal root is normalized to the anti-discriminant at the Dirichlet root."
+          ]
+        },
+        {
+          "id": "NOT-DIFFERENTIALS",
+          "source_lines": [
+            [
+              11823,
+              11823
+            ],
+            [
+              11825,
+              11825
+            ],
+            [
+              11828,
+              11828
+            ]
+          ],
+          "claim": "The dot denotes the spectral derivative, d the source differential, and the partial symbol its gradient representative.",
+          "declarations": [
+            "NLS.WeightedCoeffPair.existsUnique_sobolevFiniteGradient",
+            "NLS.WeightedCoeffPair.existsUnique_sobolevOneGradient",
+            "NLS.WeightedCoeffPair.sobolevFiniteGradient_represents",
+            "NLS.WeightedCoeffPair.sobolevOneGradient_represents",
+            "NLS.ZakharovShabat.fderiv_source_discriminant_deriv_eq_deriv_spectral_fderiv_source",
+            "NLS.ZakharovShabat.sourceDiscriminantCotangent"
+          ],
+          "qualification": "This row reconciles notation, rather than asserting differentiability for an arbitrary function. The source discriminant uses deriv in the complex spectral variable and fderiv in the potential; their interchange theorem retains finite p>1. For a finite source exponent the full continuous differential has a unique reciprocal-Sobolev gradient under the physical bilinear pairing: the finite conjugate pair norm for p>1, and the separate infinity pair norm for p=1. No automatic representation of every functional on an infinity-exponent source is asserted; any use there retains its supplied-representative hypothesis.",
+          "support_body_scopes": {
+            "NLS/SequenceSpaces/SobolevPairGradient.lean": {
+              "scope": "full (153 lines; output truncation occurs after this complete body in the following search results)",
+              "chunk": "7651d7",
+              "sha256": "a8a7a1c8c529155ab85cef36c87e275a7570337f639a02c0ca90b36a7c510255"
+            },
+            "NLS/ZakharovShabat/SourceDiscriminantCotangent.lean": {
+              "scope": "full",
+              "chunk": "9bc1b8",
+              "sha256": "4d5c0b579d7ca36e9952eecbbc3914019abb407a34c7666fb4d3b822245e2109"
+            },
+            "NLS/ZakharovShabat/SourceDiscriminantMixedDerivative.lean": {
+              "scope": "full",
+              "chunk": "9bc1b8",
+              "sha256": "4380138ea9c0b2690d72d978db75345354e494f722d98254c5194f3ad3286cc6"
+            }
+          },
+          "ordered_group": "NOT-038",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The dot denotes the spectral derivative, d the source differential, and the partial symbol its gradient representative.",
+          "reviewed_claims": [
+            "The dot denotes the spectral derivative, d the source differential, and the partial symbol its gradient representative."
+          ]
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "id": "NOT-SPACES",
+          "source_lines": [
+            [
+              11770,
+              11794
+            ]
+          ],
+          "claim": "Original periodic Fourier-Lebesgue carriers and their scalar weighted coefficient realization.",
+          "declarations": [
+            "NLS.Fourier.FourierLebesgueSpace",
+            "NLS.Fourier.PeriodicFourierLebesgue.coefficientsIsometry",
+            "NLS.Weight.sobolev_zero_eq_one"
+          ],
+          "qualification": "The positive physical period and real Sobolev order remain explicit. The native carrier uses original smooth-test distributions. Pair conventions retain the separate infinity norm described in the Section 2 comparison; this row does not identify it with the maximum product norm. The zero-order abbreviations specialize s=0 and physical period one, using the exact equality of the order-zero weight with the unit weight; H^s specializes p=2.",
+          "support_body_scopes": {
+            "NLS/Fourier/PeriodicFourierLebesgueSpace.lean": {
+              "scope": "full, lines 1-150 and 151-206",
+              "chunks": [
+                "fa3683",
+                "10e398"
+              ],
+              "sha256": "f42a14f5a1d0322ff0c074b7a295719b59022ec063a147ba96e5fbda5c6974c8"
+            },
+            "NLS/SequenceSpaces/PairNorm.lean": {
+              "scope": "lines 90-144",
+              "chunk": "e6ec0b",
+              "sha256": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3"
+            }
+          },
+          "ordered_group": "NOT-001",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Original periodic Fourier-Lebesgue carriers and their scalar weighted coefficient realization.",
+          "reviewed_claims": [
+            "Original periodic Fourier-Lebesgue carriers and their scalar weighted coefficient realization."
+          ]
+        },
+        {
+          "id": "NOT-ISOLATION",
+          "source_lines": [
+            [
+              11801,
+              11807
+            ],
+            [
+              11813,
+              11813
+            ]
+          ],
+          "claim": "Common almost-real neighborhood and local isolating disc families.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma10_1"
+          ],
+          "qualification": "Finite p>1; one local family works for every nearby source and every spectral index. Real centers, quantitative separation and the exact free tail remain part of the theorem.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceLemma10_1.lean": {
+              "scope": "lines 1-105",
+              "chunk": "5d85e8",
+              "sha256": "45e5c251de6602bf526928eb827607687bb3428c3dd99950a0941ed2c8c93816"
+            }
+          },
+          "ordered_group": "NOT-002",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Common almost-real neighborhood and local isolating disc families.",
+          "reviewed_claims": [
+            "Common almost-real neighborhood and local isolating disc families."
+          ]
+        },
+        {
+          "id": "NOT-STRIP",
+          "source_lines": [
+            [
+              11808,
+              11808
+            ]
+          ],
+          "claim": "Full closed vertical strip of half-width pi/2.",
+          "declarations": [
+            "NLS.ZakharovShabat.resonantStrip"
+          ],
+          "qualification": "The unpunctured strip is used, including its central lattice point.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ComplementaryStrip.lean": {
+              "scope": "lines 1-30",
+              "chunk": "311575",
+              "sha256": "194d6025fbbf10bc2f9ec2a4ba6c8b859e7a50e8e00fd48020653e1f06baca92"
+            }
+          },
+          "ordered_group": "NOT-003",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Full closed vertical strip of half-width pi/2.",
+          "reviewed_claims": [
+            "Full closed vertical strip of half-width pi/2."
+          ]
+        },
+        {
+          "id": "NOT-DISK",
+          "source_lines": [
+            [
+              11816,
+              11816
+            ]
+          ],
+          "claim": "Open disk centered at n*pi with radius pi/4.",
+          "declarations": [
+            "NLS.ZakharovShabat.refinedResonantDisk"
+          ],
+          "qualification": "The definition retains the open boundary convention.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ResonantDeterminantBounds.lean": {
+              "scope": "lines 1-32",
+              "chunk": "13fa4c",
+              "sha256": "3c7412a3ab4307242209fd8ca378aeb64c25b0b3cd80daef1bba64bc30b50c38"
+            }
+          },
+          "ordered_group": "NOT-004",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Open disk centered at n*pi with radius pi/4.",
+          "reviewed_claims": [
+            "Open disk centered at n*pi with radius pi/4."
+          ]
+        },
+        {
+          "id": "NOT-ISOSPECTRAL",
+          "source_lines": [
+            [
+              11821,
+              11821
+            ]
+          ],
+          "claim": "The real isospectral set is exactly equality of the entire discriminant.",
+          "declarations": [
+            "NLS.ZakharovShabat.mem_sourceIsospectralSet_iff_discriminant_eq"
+          ],
+          "qualification": "Finite p>1 and the real-type source locus are retained.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceIsospectralSet.lean": {
+              "scope": "lines 1-110",
+              "chunk": "51e73b",
+              "sha256": "d829150b833f3fe97ef7b84e69b7fb1bb29179f04e52affcdc20a7a2b59eda62"
+            }
+          },
+          "ordered_group": "NOT-005",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The real isospectral set is exactly equality of the entire discriminant.",
+          "reviewed_claims": [
+            "The real isospectral set is exactly equality of the entire discriminant."
+          ]
+        },
+        {
+          "id": "NOT-OPERATOR",
+          "source_lines": [
+            [
+              11770,
+              11783
+            ]
+          ],
+          "claim": "Actual physical expression diag(i,-i) times the derivative plus the off-diagonal potential.",
+          "declarations": [
+            "NLS.ZakharovShabat.physicalOperator"
+          ],
+          "qualification": "The definition uses actual component derivatives; domains and almost-everywhere realizations retain their separate existing hypotheses.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/PhysicalOperator.lean": {
+              "scope": "lines 1-60",
+              "chunk": "0c77cf",
+              "sha256": "0b504c156c2d0f19637da34849686189731fa5a9b7433396c4495946af80e28e"
+            }
+          },
+          "ordered_group": "NOT-006",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Actual physical expression diag(i,-i) times the derivative plus the off-diagonal potential.",
+          "reviewed_claims": [
+            "Actual physical expression diag(i,-i) times the derivative plus the off-diagonal potential."
+          ]
+        },
+        {
+          "id": "NOT-TRANSFORM",
+          "source_lines": [
+            [
+              11804,
+              11807
+            ]
+          ],
+          "claim": "The vector transformation T has factor 1/sqrt(2).",
+          "declarations": [
+            "NLS.ZakharovShabat.aknsToZS"
+          ],
+          "qualification": "This is the vector-coordinate normalization. The separately normalized potential transformation remains as in the existing AKNS domain comparison.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/AKNSCoordinates.lean": {
+              "scope": "lines 1-110",
+              "chunk": "5df59b",
+              "sha256": "4372d3deffa364b08eb51a697a88728bcca37fa3b50a7c85fde27d2bb62f3079"
+            }
+          },
+          "ordered_group": "NOT-007",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The vector transformation T has factor 1/sqrt(2).",
+          "reviewed_claims": [
+            "The vector transformation T has factor 1/sqrt(2)."
+          ]
+        },
+        {
+          "id": "NOT-ACTIONROOT",
+          "source_lines": [
+            [
+              11859,
+              11861
+            ]
+          ],
+          "claim": "Principal square root of the normalized action.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceNormalizedActionRoot"
+          ],
+          "qualification": "At a collapsed gap the analytic normalized-action extension is used. The raw quotient 4I/gamma^2 is interpreted only off collapse.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceNormalizedActionCollapsedPositive.lean": {
+              "scope": "lines 106-160",
+              "chunk": "63febe",
+              "sha256": "ad3924543e2544bcc02801e7f7d21672f501ce57241d46173a00278d9ebad5f2"
+            }
+          },
+          "ordered_group": "NOT-008",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Principal square root of the normalized action.",
+          "reviewed_claims": [
+            "Principal square root of the normalized action."
+          ]
+        },
+        {
+          "id": "NOT-LATTICE",
+          "source_lines": [
+            [
+              11867,
+              11875
+            ]
+          ],
+          "claim": "Free reference roots and the zero-index product denominator.",
+          "declarations": [
+            "NLS.ZakharovShabat.displacedRoots",
+            "NLS.ZakharovShabat.singleSpectralDenominator"
+          ],
+          "qualification": "Zero displacement gives n*pi. The denominator is n*pi for nonzero n and one at n=0.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/RestoredSpectralPairs.lean": {
+              "scope": "lines 1-40",
+              "chunk": "13fa4c",
+              "sha256": "d58aab71ce9dcd67c58bc54424ee3c87e60d093878fab7ce89cd8cdb967541ba"
+            },
+            "NLS/ZakharovShabat/SingleSpectralProducts.lean": {
+              "scope": "lines 1-55",
+              "chunk": "0c77cf",
+              "sha256": "42f12055442be191d73fe7670ec5be19e201a270f9c65a57529bbf3c51aedb52"
+            }
+          },
+          "ordered_group": "NOT-009",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Free reference roots and the zero-index product denominator.",
+          "reviewed_claims": [
+            "Free reference roots and the zero-index product denominator."
+          ]
+        },
+        {
+          "id": "NOT-PRIMITIVE",
+          "source_lines": [
+            [
+              11878,
+              11883
+            ]
+          ],
+          "claim": "F_n is the endpoint-normalized primitive and F is F_0.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSection19Data.endpoint_integrals",
+            "NLS.ZakharovShabat.SourceSection19Data.index_shift"
+          ],
+          "qualification": "The original complex primitive uses the common Section 19 source data. Either endpoint integral agrees with it on the root domain; F_n=F_0+i*pi*n. No claim is made from the real-source primitive alone.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceSection19Primitive.lean": {
+              "scope": "lines 1-120",
+              "chunk": "8e7e5b",
+              "sha256": "4efc5379e4acec3fef6b588cfe3026f0c4f9ca563c886269c293afe493b7fb5c"
+            }
+          },
+          "ordered_group": "NOT-010",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "F_n is the endpoint-normalized primitive and F is F_0.",
+          "reviewed_claims": [
+            "F_n is the endpoint-normalized primitive and F is F_0."
+          ]
+        },
+        {
+          "id": "NOT-PSIPRODUCT",
+          "source_lines": [
+            [
+              11851,
+              11854
+            ]
+          ],
+          "claim": "The literal psi product has prefactor -2/pi_n and factor denominators pi_m.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceSection7_psi_product"
+          ],
+          "qualification": "The denominator printed on this final notation page agrees with the implemented correction to the earlier Section 7 display. This row concerns the product identity; unrestricted period uniqueness is established in its separate Section 7 publication.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceSection7PsiProduct.lean": {
+              "scope": "full",
+              "chunk": "0c77cf",
+              "sha256": "e8ee58e5c5338d591de1935d9b49f63de43012d75afff214143e18b74806b8df"
+            }
+          },
+          "ordered_group": "NOT-011",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The literal psi product has prefactor -2/pi_n and factor denominators pi_m.",
+          "reviewed_claims": [
+            "The literal psi product has prefactor -2/pi_n and factor denominators pi_m."
+          ]
+        },
+        {
+          "id": "NOT-MODIFIEDZETA",
+          "source_lines": [
+            [
+              11863,
+              11866
+            ]
+          ],
+          "claim": "The modified zeta omits two indices and retains i divided by the additionally omitted standard root.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourcePsiZeta_eq_product"
+          ],
+          "qualification": "The selected psi family is an explicit displacement parameter although the notation suppresses it. The product identity is literal, with no division by numerator factors; its analytic use retains the established root-domain hypotheses.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean": {
+              "scope": "full",
+              "chunk": "63febe",
+              "sha256": "399cf46571a84a8feb2b55e418d68fdf92d73ccd8316eb9158bfb5fd1681f4cb"
+            }
+          },
+          "ordered_group": "NOT-012",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The modified zeta omits two indices and retains i divided by the additionally omitted standard root.",
+          "reviewed_claims": [
+            "The modified zeta omits two indices and retains i divided by the additionally omitted standard root."
+          ]
+        },
+        {
+          "id": "NOT-CHI",
+          "source_lines": [
+            [
+              11867,
+              11871
+            ]
+          ],
+          "claim": "Chi is the product of critical-root numerators divided by standard roots, omitting n.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceActionChi"
+          ],
+          "qualification": "The product and its root domain retain the finite-exponent and omitted-factor hypotheses. The derivative quotient carries its separately proved -i factor.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceActionChi.lean": {
+              "scope": "full",
+              "chunk": "5df59b",
+              "sha256": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4"
+            }
+          },
+          "ordered_group": "NOT-013",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Chi is the product of critical-root numerators divided by standard roots, omitting n.",
+          "reviewed_claims": [
+            "Chi is the product of critical-root numerators divided by standard roots, omitting n."
+          ]
+        },
+        {
+          "id": "NOT-STANDARDROOT",
+          "source_lines": [
+            [
+              11885,
+              11885
+            ]
+          ],
+          "claim": "The standard root uses (tau-z)*sqrt(1-gamma^2/(4*(tau-z)^2)).",
+          "declarations": [
+            "NLS.ZakharovShabat.normalizedStandardRoot"
+          ],
+          "qualification": "The formula uses the principal square root and its existing spectral-domain interpretation.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceStandardRootAlgebra.lean": {
+              "scope": "lines 1-100",
+              "chunk": "74e3f1",
+              "sha256": "64a3720ca89aea6366fedcc8f084f7e8a129bd284e363ea455188e841c043bd2"
+            }
+          },
+          "ordered_group": "NOT-014",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The standard root uses (tau-z)*sqrt(1-gamma^2/(4*(tau-z)^2)).",
+          "reviewed_claims": [
+            "The standard root uses (tau-z)*sqrt(1-gamma^2/(4*(tau-z)^2))."
+          ]
+        },
+        {
+          "id": "NOT-CANONICALROOT",
+          "source_lines": [
+            [
+              11886,
+              11891
+            ]
+          ],
+          "claim": "The canonical root is 2i times the symmetric product of standard roots divided by pi_m.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCanonicalRoot"
+          ],
+          "qualification": "The definition and its convergence retain the common root domain and finite p>1. This is not a claim about arbitrary branch choices.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceCanonicalRootProduct.lean": {
+              "scope": "lines 1-60",
+              "chunk": "0c77cf",
+              "sha256": "4eca92d04190a6fe63dc9f441b9a7a48cda553f4369ffebd74c4cf1c60cb846f"
+            }
+          },
+          "ordered_group": "NOT-015",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The canonical root is 2i times the symmetric product of standard roots divided by pi_m.",
+          "reviewed_claims": [
+            "The canonical root is 2i times the symmetric product of standard roots divided by pi_m."
+          ]
+        },
+        {
+          "id": "NOT-REALTYPE",
+          "source_lines": [
+            [
+              11774,
+              11776
+            ]
+          ],
+          "claim": "The physical real form is conjugate pairing of the two fields.",
+          "declarations": [
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_conjugate",
+            "NLS.Fourier.PeriodicFourierLebesgue.sobolev_real_pair_iff",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate_apply",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.eq_conjugate_iff_coefficients",
+            "NLS.ZakharovShabat.IsRealType",
+            "NLS.ZakharovShabat.realTypeSourceLocus"
+          ],
+          "qualification": "In ordinary scalar Fourier coefficients physical conjugation reverses the frequency. The native bridge acts on every original smooth periodic test, preserves the exact symmetric weighted norm, and identifies the real-pair condition at every positive period, real Sobolev order and Banach exponent including infinity. The existing zero-order source locus has the same coefficient reflection. The coordinatewise-real sequence target and the Section 2 pair-norm convention remain distinct.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/RealType.lean": {
+              "scope": "lines 1-68",
+              "chunk": "b0e4c2",
+              "sha256": "5dac5380180fcfe61f1d3b0f9522adc41467ab5a9ecf5406e6c13462589d2709"
+            },
+            "NLS/ZakharovShabat/SourceRealTypeConvex.lean": {
+              "scope": "lines 1-38",
+              "chunk": "b0e4c2",
+              "sha256": "fa4797b92e8f5ea60745e3792283a10c811a943ca2ebb9e96b4bbd275c0f87a2"
+            },
+            "NLS/Fourier/NativePeriodicConjugation.lean": {
+              "scope": "full",
+              "chunk": "43fac3",
+              "sha256": "6e0254f6c7e774a25328b7b46c24ca9c9abc1e3ea500ded6a323cd681b68ab74"
+            }
+          },
+          "ordered_group": "NOT-016",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The physical real form is conjugate pairing of the two fields.",
+          "reviewed_claims": [
+            "The physical real form is conjugate pairing of the two fields."
+          ]
+        },
+        {
+          "id": "NOT-REALCOEFF",
+          "source_lines": [
+            [
+              11790,
+              11794
+            ]
+          ],
+          "claim": "The real sequence carrier consists of real raw coefficients with the original weighted norm.",
+          "declarations": [
+            "NLS.WeightedCoeff.realLocus",
+            "NLS.WeightedRealCoeff"
+          ],
+          "qualification": "Take the product of two such real spaces for the rectangular pair target. Positive weighting preserves and reflects reality. These are not the physical conjugate-pair source coordinates.",
+          "support_body_scopes": {
+            "NLS/SequenceSpaces/WeightedRealCoeff.lean": {
+              "scope": "lines 1-85",
+              "chunk": "b0e4c2",
+              "sha256": "908a8a5db6ad3d8e8d350176d242abd6a8227ec6c753f95a67101e551e562671"
+            }
+          },
+          "ordered_group": "NOT-017",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The real sequence carrier consists of real raw coefficients with the original weighted norm.",
+          "reviewed_claims": [
+            "The real sequence carrier consists of real raw coefficients with the original weighted norm."
+          ]
+        },
+        {
+          "id": "NOT-NONNEGATIVE",
+          "source_lines": [
+            [
+              11795,
+              11796
+            ]
+          ],
+          "claim": "The nonnegative cone has real nonnegative coordinates.",
+          "declarations": [
+            "NLS.WeightedCoeff.nonnegativeLocus"
+          ],
+          "qualification": "Zero coefficients are included. The inherited weighted cone is identified with the unweighted cone by positive weighting.",
+          "support_body_scopes": {
+            "NLS/SequenceSpaces/WeightedNonnegativeActions.lean": {
+              "scope": "full",
+              "chunk": "b0e4c2",
+              "sha256": "889e8fb0f27b55813eff84b90f87c7672a0c799d2da03753f838a60fc472c778"
+            }
+          },
+          "ordered_group": "NOT-018",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The nonnegative cone has real nonnegative coordinates.",
+          "reviewed_claims": [
+            "The nonnegative cone has real nonnegative coordinates."
+          ]
+        },
+        {
+          "id": "NOT-COLLAPSED",
+          "source_lines": [
+            [
+              11819,
+              11819
+            ]
+          ],
+          "claim": "Z_n is the zero-gap locus within the selected common source neighborhood.",
+          "declarations": [
+            "NLS.ZakharovShabat.mem_sourceActionGapZeroLocus_iff",
+            "NLS.ZakharovShabat.sourceActionGapZeroLocus"
+          ],
+          "qualification": "The analytic defining function is the squared canonical gap; its zero set is exactly the zero set of the oriented gap. The chosen ambient W remains explicit.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceActionGapZeroLocus.lean": {
+              "scope": "full",
+              "chunk": "7ee753",
+              "sha256": "3fec845b190186e9455f97cb4191e6bede2a52756e088f7f1d4196276c29ba93"
+            }
+          },
+          "ordered_group": "NOT-019",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Z_n is the zero-gap locus within the selected common source neighborhood.",
+          "reviewed_claims": [
+            "Z_n is the zero-gap locus within the selected common source neighborhood."
+          ]
+        },
+        {
+          "id": "NOT-PERIODIC",
+          "source_lines": [
+            [
+              11826,
+              11827
+            ]
+          ],
+          "claim": "The two canonical sequences enumerate the actual periodic endpoints.",
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalPeriodicEndpoints_exhaustive",
+            "NLS.ZakharovShabat.canonicalPeriodicLeft",
+            "NLS.ZakharovShabat.canonicalPeriodicRight"
+          ],
+          "qualification": "The original global lexicographic labeling and multiplicities are retained, with the established finite p>1 and period-one embedding hypotheses.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/CanonicalPeriodicEndpoints.lean": {
+              "scope": "full",
+              "chunk": "345ff0",
+              "sha256": "89f297e577280aba47cd9c52f7fdd9c075562203fffa547e255be80fb7bb40d2"
+            }
+          },
+          "ordered_group": "NOT-020",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The two canonical sequences enumerate the actual periodic endpoints.",
+          "reviewed_claims": [
+            "The two canonical sequences enumerate the actual periodic endpoints."
+          ]
+        },
+        {
+          "id": "NOT-GAPMIDPOINT",
+          "source_lines": [
+            [
+              11829,
+              11830
+            ],
+            [
+              11834,
+              11838
+            ]
+          ],
+          "claim": "G_n is the straight segment, gamma_n the oriented endpoint difference, and tau_n their midpoint.",
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalPeriodicGap",
+            "NLS.ZakharovShabat.canonicalPeriodicMidpoint",
+            "NLS.ZakharovShabat.sourcePeriodicSegment"
+          ],
+          "qualification": "For complex sources the segment is the real affine segment joining complex endpoints. The midpoint and gap formulas retain their literal factors.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceGlobalIsolation.lean": {
+              "scope": "lines 1-80",
+              "chunk": "74e3f1",
+              "sha256": "aa4b97740ff659848bb77f952920d6233babf616232baa854fd80c3d5e180f98"
+            },
+            "NLS/ZakharovShabat/DiscriminantPairFactorization.lean": {
+              "scope": "lines 1-65",
+              "chunk": "7ee753",
+              "sha256": "776c4c305d0bb5b3747d5b7591d2b18b564a74eadff71cfc6f078f3f03df90e5"
+            }
+          },
+          "ordered_group": "NOT-021",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "G_n is the straight segment, gamma_n the oriented endpoint difference, and tau_n their midpoint.",
+          "reviewed_claims": [
+            "G_n is the straight segment, gamma_n the oriented endpoint difference, and tau_n their midpoint."
+          ]
+        },
+        {
+          "id": "NOT-DIRICHLET",
+          "source_lines": [
+            [
+              11832,
+              11832
+            ]
+          ],
+          "claim": "Mu_n denotes the canonical ordinary Dirichlet root.",
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots",
+            "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_exhaustive",
+            "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_multiplicity"
+          ],
+          "qualification": "Specialize the boundary condition to dirichlet. The actual ordinary interval extension and original algebraic multiplicities are retained.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/CanonicalPeriodOneBoundaryRoots.lean": {
+              "scope": "lines 1-68",
+              "chunk": "9ba8e1",
+              "sha256": "2c3ff197758fdebbd0258f623e53e39ca8d4b27263c68d468b9564042b82f11f"
+            }
+          },
+          "ordered_group": "NOT-022",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Mu_n denotes the canonical ordinary Dirichlet root.",
+          "reviewed_claims": [
+            "Mu_n denotes the canonical ordinary Dirichlet root."
+          ]
+        },
+        {
+          "id": "NOT-DISCRIMINANT",
+          "source_lines": [
+            [
+              11840,
+              11840
+            ]
+          ],
+          "claim": "The discriminant is the trace of the monodromy.",
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalDiscriminant_finite_eq_classical",
+            "NLS.ZakharovShabat.classicalDiscriminant"
+          ],
+          "qualification": "The classical definition is literal; the completed source function agrees on dense finite Fourier data and retains the previously reviewed extension.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ClassicalFundamentalSolution.lean": {
+              "scope": "lines 108-130",
+              "chunk": "345ff0",
+              "sha256": "377d2066c8320a02b91513ee3654d2eb539b94b0fc8ef79f6615e51537be3993"
+            },
+            "NLS/ZakharovShabat/SourceAntiDiscriminantIdentity.lean": {
+              "scope": "lines 1-100 and 165-197; tool chunks 9ba8e1 and 7f7652",
+              "chunk": "7f7652",
+              "sha256": "db917f943d57c028655cf295a61bb43fd5ae48bf5ca8c6ddeb96c01c46923afc"
+            }
+          },
+          "ordered_group": "NOT-023",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The discriminant is the trace of the monodromy.",
+          "reviewed_claims": [
+            "The discriminant is the trace of the monodromy."
+          ]
+        },
+        {
+          "id": "NOT-ANTIDISCRIMINANT",
+          "source_lines": [
+            [
+              11842,
+              11842
+            ]
+          ],
+          "claim": "The anti-discriminant is the sum of the off-diagonal monodromy entries.",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalAntiDiscriminant",
+            "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_finite_eq_classical_of_exponent"
+          ],
+          "qualification": "The completed source candidate uses the domain-based Neumann-minus-Dirichlet auxiliary characteristics. Its finite-source normalization agrees with the actual monodromy anti-trace.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ClassicalSeparatedCharacteristics.lean": {
+              "scope": "lines 1-65",
+              "chunk": "fda48f",
+              "sha256": "0002ad25924ec3d48a50d62d9859d9cc33116999c34d62afdc24877b06779bc1"
+            },
+            "NLS/ZakharovShabat/SourceAntiDiscriminantCandidate.lean": {
+              "scope": "full",
+              "chunk": "345ff0",
+              "sha256": "6024ab343c516082e08ce722ac94a226ad288b193c6edbb8396078f644a90004"
+            },
+            "NLS/ZakharovShabat/FiniteSourceAntiDiscriminant.lean": {
+              "scope": "lines 1-62 and 78-111; tool chunks 6efb8b and a1b86e",
+              "chunk": "a1b86e",
+              "sha256": "70f0bf5bb30e35cbd93e20ac9e73d1e47ead4a25bef240debe6cfff6496c1586"
+            }
+          },
+          "ordered_group": "NOT-024",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The anti-discriminant is the sum of the off-diagonal monodromy entries.",
+          "reviewed_claims": [
+            "The anti-discriminant is the sum of the off-diagonal monodromy entries."
+          ]
+        },
+        {
+          "id": "NOT-SWAP",
+          "source_lines": [
+            [
+              11786,
+              11789
+            ]
+          ],
+          "claim": "P swaps the two vector components.",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalODECoefficient_swap"
+          ],
+          "qualification": "The matrix acts as the existing Prod.swap operation. Its ODE covariance uses the separately signed potential swap; the vector swap itself introduces no sign.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ClassicalSwapSymmetry.lean": {
+              "scope": "full",
+              "chunk": "e99499",
+              "sha256": "209882dec17615df42d689804b33feeebc767767960c2205d75638addeb0ae89"
+            }
+          },
+          "ordered_group": "NOT-025",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "P swaps the two vector components.",
+          "reviewed_claims": [
+            "P swaps the two vector components."
+          ]
+        },
+        {
+          "id": "NOT-PHASE",
+          "source_lines": [
+            [
+              11791,
+              11794
+            ]
+          ],
+          "claim": "R multiplies the first component by i and the second by -i.",
+          "declarations": [
+            "NLS.ZakharovShabat.auxiliaryPotential_apply"
+          ],
+          "qualification": "The exact coefficient phase acts componentwise, with the same physical normalization.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/AuxiliaryPhase.lean": {
+              "scope": "lines 1-90",
+              "chunk": "e8660a",
+              "sha256": "7d556ea6c3c7d73440fdfa122d8ed4bc6452f08a5786896935fb35a5fd257f9e"
+            }
+          },
+          "ordered_group": "NOT-026",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "R multiplies the first component by i and the second by -i.",
+          "reviewed_claims": [
+            "R multiplies the first component by i and the second by -i."
+          ]
+        },
+        {
+          "id": "NOT-J",
+          "source_lines": [
+            [
+              11796,
+              11800
+            ]
+          ],
+          "claim": "J sends (u_minus,u_plus) to (u_plus,-u_minus).",
+          "declarations": [
+            "NLS.Poisson.signedJ",
+            "NLS.Poisson.signedJ_physical"
+          ],
+          "qualification": "Signed pair coordinates require frequency reflection; the physical formula has the printed signs.",
+          "support_body_scopes": {
+            "NLS/Poisson/SobolevBivector.lean": {
+              "scope": "lines 112-157",
+              "chunk": "e8660a",
+              "sha256": "9873f41cb3f57752dc14fd1009c7e0566ccc8a571b11ed26652c1f10495bff49"
+            }
+          },
+          "ordered_group": "NOT-027",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "J sends (u_minus,u_plus) to (u_plus,-u_minus).",
+          "reviewed_claims": [
+            "J sends (u_minus,u_plus) to (u_plus,-u_minus)."
+          ]
+        },
+        {
+          "id": "NOT-WAVES",
+          "source_lines": [
+            [
+              11808,
+              11818
+            ]
+          ],
+          "claim": "The signed free waves are (0,exp(i*n*pi*x)) and (exp(-i*n*pi*x),0).",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalFreeVector"
+          ],
+          "qualification": "Substitute z=n*pi and the two coordinate vectors in the literal free evolution. These are period-two spectral waves; unit-period Fourier extraction uses its established rescaling.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ClassicalFirstBorn.lean": {
+              "scope": "lines 1-52",
+              "chunk": "52b287",
+              "sha256": "79d54874798826b77127ac433a40162cbf48ffb3eb8614414fb78d6cca004378"
+            }
+          },
+          "ordered_group": "NOT-028",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The signed free waves are (0,exp(i*n*pi*x)) and (exp(-i*n*pi*x),0).",
+          "reviewed_claims": [
+            "The signed free waves are (0,exp(i*n*pi*x)) and (exp(-i*n*pi*x),0)."
+          ]
+        },
+        {
+          "id": "NOT-PAIRINGS",
+          "source_lines": [
+            [
+              11831,
+              11834
+            ]
+          ],
+          "claim": "Sesquilinear and real dual products retain the Section 2 Fourier conventions.",
+          "declarations": [
+            "NLS.WeightedCoeff.sobolevBilinearPairing_apply",
+            "NLS.WeightedCoeffPair.sobolevSesquilinearPairing_physical"
+          ],
+          "qualification": "The pair product sums component sesquilinear products. Physical real duality uses the bilinear product with opposite scalar Fourier indices. Conjugate Sobolev orders and exponents are explicit, and the separate infinity pair norm remains as in Section 2.",
+          "support_body_scopes": {
+            "NLS/SequenceSpaces/SobolevPairSesquilinear.lean": {
+              "scope": "lines 1-95",
+              "chunk": "2eb4f4",
+              "sha256": "47b5e3bafd31f211239f96b3aa3793bd6f7e2b3f1952b6f946efb607c6d23627"
+            },
+            "NLS/SequenceSpaces/SobolevBilinearPairing.lean": {
+              "scope": "full",
+              "chunk": "a1b86e",
+              "sha256": "14c47d68626207bcaa760b3ab7cfaf339f2446895c151ed3adc251fb17ba659b"
+            }
+          },
+          "ordered_group": "NOT-029",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Sesquilinear and real dual products retain the Section 2 Fourier conventions.",
+          "reviewed_claims": [
+            "Sesquilinear and real dual products retain the Section 2 Fourier conventions."
+          ]
+        },
+        {
+          "id": "NOT-BRACKET",
+          "source_lines": [
+            [
+              11836,
+              11836
+            ]
+          ],
+          "claim": "The Poisson bracket has factor -i and physical matrix J.",
+          "declarations": [
+            "NLS.Poisson.commonSobolevBracket_physical"
+          ],
+          "qualification": "Automatic full-gradient recovery uses finite source exponents, including p=1 with its separate infinity pair norm. Functionals on an infinity-exponent source require supplied representatives as already qualified in Section 2. No closure assertion for arbitrary nested brackets is added.",
+          "support_body_scopes": {
+            "NLS/Poisson/SobolevCommonBracket.lean": {
+              "scope": "lines 1-78",
+              "chunk": "2eb4f4",
+              "sha256": "8bc4b27219ed668bee0db592e8eee1275876ad98e20936ca0c551a12acef5c4b"
+            },
+            "NLS/Poisson/SobolevBivector.lean": {
+              "scope": "lines 112-157",
+              "chunk": "e8660a",
+              "sha256": "9873f41cb3f57752dc14fd1009c7e0566ccc8a571b11ed26652c1f10495bff49"
+            }
+          },
+          "ordered_group": "NOT-030",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The Poisson bracket has factor -i and physical matrix J.",
+          "reviewed_claims": [
+            "The Poisson bracket has factor -i and physical matrix J."
+          ]
+        },
+        {
+          "id": "NOT-HAMILTONIANS",
+          "source_lines": [
+            [
+              11851,
+              11856
+            ]
+          ],
+          "claim": "H1 is the physical mass and H=H3 is kinetic plus quartic NLS energy.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixH_hamiltonian_eq_integral_of_coefficients",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_one",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_three",
+            "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+            "NLS.ZakharovShabat.periodOneSobolevMass_eq_integral"
+          ],
+          "qualification": "The hierarchy identities retain the unit-period normalization. The integration-by-parts identity for H3 is stated for smooth periodic fields; the same integral energy is defined on all complex H1 pairs. The full H0 mass identity is also covered by the published Appendix H physical Hamiltonian integral step.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": {
+              "scope": "lines 1-36 and 101-143",
+              "chunk": "8f2baa",
+              "sha256": "8ba49915bc9afb39744a9439c878af0c7d72d9c2a9c59a2aec7ae1c1ccc64398"
+            },
+            "NLS/ZakharovShabat/PeriodOneSobolevHamiltonian.lean": {
+              "scope": "lines 1-112",
+              "chunk": "81a719",
+              "sha256": "8ec9db0c737d7b8acc9b2401f85d0ffdaf9db719683e6d8c94dc85ef9e73bc4f"
+            },
+            "NLS/ZakharovShabat/AppendixHPhysicalHamiltonian.lean": {
+              "scope": "full, prior positive proof and canonical publication review",
+              "chunk": "d6fd9d",
+              "sha256": "d31119713824e7aa1d968635a8c2701299ccad51aa9a6371493cdde8cf4e2c03"
+            }
+          },
+          "ordered_group": "NOT-031",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "H1 is the physical mass and H=H3 is kinetic plus quartic NLS energy.",
+          "reviewed_claims": [
+            "H1 is the physical mass and H=H3 is kinetic plus quartic NLS energy."
+          ]
+        },
+        {
+          "id": "NOT-GAPPHASES",
+          "source_lines": [
+            [
+              11863,
+              11866
+            ]
+          ],
+          "claim": "The gap-weighted coordinates are gamma_n times exp(plus/minus i eta_n) on open gaps.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_signed",
+            "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_phase_limit"
+          ],
+          "qualification": "The eta is the original normalized integral phase. Collapsed gaps use the analytic extension and its open-gap limits, rather than assigning an angle there.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceGapWeightedEtaOriginal.lean": {
+              "scope": "lines 1-115",
+              "chunk": "81a719",
+              "sha256": "4709b37039213e8efedb5e80113abb5d3de07e0bb80161b50d9d5d80da2c962d"
+            },
+            "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalCollapsed.lean": {
+              "scope": "lines 1-100",
+              "chunk": "7f7652",
+              "sha256": "485225d8432e487e04c080329a375d1e7648d788a664ac6a119f32c3b69cc5d5"
+            }
+          },
+          "ordered_group": "NOT-032",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The gap-weighted coordinates are gamma_n times exp(plus/minus i eta_n) on open gaps.",
+          "reviewed_claims": [
+            "The gap-weighted coordinates are gamma_n times exp(plus/minus i eta_n) on open gaps."
+          ]
+        },
+        {
+          "id": "NOT-ZETA",
+          "source_lines": [
+            [
+              11855,
+              11861
+            ]
+          ],
+          "claim": "The single-omitted zeta is the product of (sigma_k-z)/w_k over k different from m.",
+          "declarations": [
+            "NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype"
+          ],
+          "qualification": "The entire selected root family is an explicit displacement parameter; the product is evaluated on the standard-root omitted domain. Numerator zeros are allowed.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceSingleRootQuotientAbsolute.lean": {
+              "scope": "lines 115-156",
+              "chunk": "ca7782",
+              "sha256": "d538ed0bee3ebdf3281876119dcccd7fdb0cccdb53b2ce595c84b847979325e8"
+            }
+          },
+          "ordered_group": "NOT-033",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The single-omitted zeta is the product of (sigma_k-z)/w_k over k different from m.",
+          "reviewed_claims": [
+            "The single-omitted zeta is the product of (sigma_k-z)/w_k over k different from m."
+          ]
+        },
+        {
+          "id": "NOT-SINE",
+          "source_lines": [
+            [
+              11872,
+              11877
+            ]
+          ],
+          "claim": "Sine is minus the symmetric free product, with the exceptional denominator at zero.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixDProduct_zero",
+            "NLS.ZakharovShabat.tendsto_appendixDProduct"
+          ],
+          "qualification": "Set the displacement sequence to zero; the symmetric finite products converge with exactly the printed minus sign.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/AppendixDSineProducts.lean": {
+              "scope": "lines 1-105",
+              "chunk": "c818a1",
+              "sha256": "9563136a94276efe23629a9bc03dd57cf703b5f862feb175f5a330f1b0bd78d9"
+            }
+          },
+          "ordered_group": "NOT-034",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "Sine is minus the symmetric free product, with the exceptional denominator at zero.",
+          "reviewed_claims": [
+            "Sine is minus the symmetric free product, with the exceptional denominator at zero."
+          ]
+        },
+        {
+          "id": "NOT-CRITICALPRODUCT",
+          "source_lines": [
+            [
+              11846,
+              11850
+            ]
+          ],
+          "claim": "The discriminant derivative has the critical-point product with prefactor two.",
+          "declarations": [
+            "NLS.ZakharovShabat.discriminant_derivative_eq_canonicalCriticalProduct",
+            "NLS.ZakharovShabat.singleSpectralPartialProduct"
+          ],
+          "qualification": "The critical sequence is the actual complete ordered sequence. Its product retains the exceptional zero denominator and symmetric cutoff normalization.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/CanonicalCriticalPoints.lean": {
+              "scope": "lines 1-90",
+              "chunk": "ca7782",
+              "sha256": "732d0760eb4441d1b0077c42fe23d662fbbaaffaf87ea8832418a9d84c27d9a3"
+            },
+            "NLS/ZakharovShabat/SingleSpectralProducts.lean": {
+              "scope": "lines 1-55",
+              "chunk": "0c77cf",
+              "sha256": "42f12055442be191d73fe7670ec5be19e201a270f9c65a57529bbf3c51aedb52"
+            }
+          },
+          "ordered_group": "NOT-035",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The discriminant derivative has the critical-point product with prefactor two.",
+          "reviewed_claims": [
+            "The discriminant derivative has the critical-point product with prefactor two."
+          ]
+        },
+        {
+          "id": "NOT-PAIREDPRODUCT",
+          "source_lines": [
+            [
+              11841,
+              11845
+            ]
+          ],
+          "claim": "The squared discriminant minus four is -4 times the paired endpoint product.",
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalPeriodicEndpoints_product",
+            "NLS.ZakharovShabat.canonicalPeriodic_eq_discriminant_sq_sub_four_finite",
+            "NLS.ZakharovShabat.spectralPairPartialProduct",
+            "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_entireSpectralPairProduct"
+          ],
+          "qualification": "The actual canonical endpoints give the complete entire product. The zero-mode denominator is one, the prefactor is -4, and local uniform convergence includes the free lattice.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/PeriodicEndpointProducts.lean": {
+              "scope": "lines 65-86",
+              "chunk": "702a91",
+              "sha256": "603fd7728a5b0ecf6e3e9ef11f4a2afc58ca21164a390267c586498f522a1a54"
+            },
+            "NLS/ZakharovShabat/FiniteParityCompatibility.lean": {
+              "scope": "lines 55-79",
+              "chunk": "a1b86e",
+              "sha256": "9c28952d957a04d6ba07578d71ce1379f4d95b6559089cf722c02cc7fcda764d"
+            },
+            "NLS/ZakharovShabat/PerturbedSpectralProducts.lean": {
+              "scope": "lines 1-65",
+              "chunk": "6efb8b",
+              "sha256": "eab1045dfe0d6ba8106b201ba18de46c5c8a8ba850782feca137de90fbf0ce9c"
+            },
+            "NLS/ZakharovShabat/EntireSpectralPairProducts.lean": {
+              "scope": "full",
+              "chunk": "8f2baa",
+              "sha256": "f896de045d23e90397829efbb74d000eb8f5ab4c8a4dd5c7e11b877def0d8ef9"
+            }
+          },
+          "ordered_group": "NOT-036",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The squared discriminant minus four is -4 times the paired endpoint product.",
+          "reviewed_claims": [
+            "The squared discriminant minus four is -4 times the paired endpoint product."
+          ]
+        },
+        {
+          "id": "NOT-TERMINALSHEET",
+          "source_lines": [
+            [
+              11892,
+              11894
+            ]
+          ],
+          "claim": "The starred terminal root is normalized to the anti-discriminant at the Dirichlet root.",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_sourceAngularRootSheet_dirichlet_normalization",
+            "NLS.ZakharovShabat.sourceAngularRootSheet_dirichlet_base",
+            "NLS.ZakharovShabat.sourceDiscriminant_sq_sub_four_at_canonicalDirichletRoot"
+          ],
+          "qualification": "At a nonzero terminal anti-discriminant the prescribed analytic sheet realizes this equality and persists locally. The square identity includes zero terminal values and multiple roots; no regular analytic square-root neighborhood is asserted at a zero terminal value.",
+          "support_body_scopes": {
+            "NLS/ZakharovShabat/SourceAntiDiscriminantIdentity.lean": {
+              "scope": "lines 1-100 and 165-197; tool chunks 9ba8e1 and 7f7652",
+              "chunk": "7f7652",
+              "sha256": "db917f943d57c028655cf295a61bb43fd5ae48bf5ca8c6ddeb96c01c46923afc"
+            },
+            "NLS/ZakharovShabat/SourceAngularRootSheet.lean": {
+              "scope": "full; tool chunks 702a91 and 017c48",
+              "chunk": "017c48",
+              "sha256": "f9d48f38f21349cd82064668c809b6745494c32261544670b78c82a1421189ea"
+            }
+          },
+          "ordered_group": "NOT-037",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The starred terminal root is normalized to the anti-discriminant at the Dirichlet root.",
+          "reviewed_claims": [
+            "The starred terminal root is normalized to the anti-discriminant at the Dirichlet root."
+          ]
+        },
+        {
+          "id": "NOT-DIFFERENTIALS",
+          "source_lines": [
+            [
+              11823,
+              11823
+            ],
+            [
+              11825,
+              11825
+            ],
+            [
+              11828,
+              11828
+            ]
+          ],
+          "claim": "The dot denotes the spectral derivative, d the source differential, and the partial symbol its gradient representative.",
+          "declarations": [
+            "NLS.WeightedCoeffPair.existsUnique_sobolevFiniteGradient",
+            "NLS.WeightedCoeffPair.existsUnique_sobolevOneGradient",
+            "NLS.WeightedCoeffPair.sobolevFiniteGradient_represents",
+            "NLS.WeightedCoeffPair.sobolevOneGradient_represents",
+            "NLS.ZakharovShabat.fderiv_source_discriminant_deriv_eq_deriv_spectral_fderiv_source",
+            "NLS.ZakharovShabat.sourceDiscriminantCotangent"
+          ],
+          "qualification": "This row reconciles notation, rather than asserting differentiability for an arbitrary function. The source discriminant uses deriv in the complex spectral variable and fderiv in the potential; their interchange theorem retains finite p>1. For a finite source exponent the full continuous differential has a unique reciprocal-Sobolev gradient under the physical bilinear pairing: the finite conjugate pair norm for p>1, and the separate infinity pair norm for p=1. No automatic representation of every functional on an infinity-exponent source is asserted; any use there retains its supplied-representative hypothesis.",
+          "support_body_scopes": {
+            "NLS/SequenceSpaces/SobolevPairGradient.lean": {
+              "scope": "full (153 lines; output truncation occurs after this complete body in the following search results)",
+              "chunk": "7651d7",
+              "sha256": "a8a7a1c8c529155ab85cef36c87e275a7570337f639a02c0ca90b36a7c510255"
+            },
+            "NLS/ZakharovShabat/SourceDiscriminantCotangent.lean": {
+              "scope": "full",
+              "chunk": "9bc1b8",
+              "sha256": "4d5c0b579d7ca36e9952eecbbc3914019abb407a34c7666fb4d3b822245e2109"
+            },
+            "NLS/ZakharovShabat/SourceDiscriminantMixedDerivative.lean": {
+              "scope": "full",
+              "chunk": "9bc1b8",
+              "sha256": "4380138ea9c0b2690d72d978db75345354e494f722d98254c5194f3ad3286cc6"
+            }
+          },
+          "ordered_group": "NOT-038",
+          "status": "matched",
+          "ordered_status": "matched",
+          "requirement": "The dot denotes the spectral derivative, d the source differential, and the partial symbol its gradient representative.",
+          "reviewed_claims": [
+            "The dot denotes the spectral derivative, d the source differential, and the partial symbol its gradient representative."
+          ]
+        }
+      ],
+      "ordered_counts": {
+        "matched": 38,
+        "corrected": 0,
+        "contextual": 0,
+        "partial": 0,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/Fourier/PeriodicFourierLebesgueSpace.lean": "f42a14f5a1d0322ff0c074b7a295719b59022ec063a147ba96e5fbda5c6974c8",
+        "NLS/SequenceSpaces/PairNorm.lean": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3",
+        "NLS/ZakharovShabat/SourceLemma10_1.lean": "45e5c251de6602bf526928eb827607687bb3428c3dd99950a0941ed2c8c93816",
+        "NLS/ZakharovShabat/ComplementaryStrip.lean": "194d6025fbbf10bc2f9ec2a4ba6c8b859e7a50e8e00fd48020653e1f06baca92",
+        "NLS/ZakharovShabat/ResonantDeterminantBounds.lean": "3c7412a3ab4307242209fd8ca378aeb64c25b0b3cd80daef1bba64bc30b50c38",
+        "NLS/ZakharovShabat/SourceIsospectralSet.lean": "d829150b833f3fe97ef7b84e69b7fb1bb29179f04e52affcdc20a7a2b59eda62",
+        "NLS/ZakharovShabat/PhysicalOperator.lean": "0b504c156c2d0f19637da34849686189731fa5a9b7433396c4495946af80e28e",
+        "NLS/ZakharovShabat/AKNSCoordinates.lean": "4372d3deffa364b08eb51a697a88728bcca37fa3b50a7c85fde27d2bb62f3079",
+        "NLS/ZakharovShabat/SourceNormalizedActionCollapsedPositive.lean": "ad3924543e2544bcc02801e7f7d21672f501ce57241d46173a00278d9ebad5f2",
+        "NLS/ZakharovShabat/RestoredSpectralPairs.lean": "d58aab71ce9dcd67c58bc54424ee3c87e60d093878fab7ce89cd8cdb967541ba",
+        "NLS/ZakharovShabat/SingleSpectralProducts.lean": "42f12055442be191d73fe7670ec5be19e201a270f9c65a57529bbf3c51aedb52",
+        "NLS/ZakharovShabat/SourceSection19Primitive.lean": "4efc5379e4acec3fef6b588cfe3026f0c4f9ca563c886269c293afe493b7fb5c",
+        "NLS/ZakharovShabat/SourceSection7PsiProduct.lean": "e8ee58e5c5338d591de1935d9b49f63de43012d75afff214143e18b74806b8df",
+        "NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean": "399cf46571a84a8feb2b55e418d68fdf92d73ccd8316eb9158bfb5fd1681f4cb",
+        "NLS/ZakharovShabat/SourceActionChi.lean": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4",
+        "NLS/ZakharovShabat/SourceStandardRootAlgebra.lean": "64a3720ca89aea6366fedcc8f084f7e8a129bd284e363ea455188e841c043bd2",
+        "NLS/ZakharovShabat/SourceCanonicalRootProduct.lean": "4eca92d04190a6fe63dc9f441b9a7a48cda553f4369ffebd74c4cf1c60cb846f",
+        "NLS/ZakharovShabat/RealType.lean": "5dac5380180fcfe61f1d3b0f9522adc41467ab5a9ecf5406e6c13462589d2709",
+        "NLS/ZakharovShabat/SourceRealTypeConvex.lean": "fa4797b92e8f5ea60745e3792283a10c811a943ca2ebb9e96b4bbd275c0f87a2",
+        "NLS/Fourier/NativePeriodicConjugation.lean": "6e0254f6c7e774a25328b7b46c24ca9c9abc1e3ea500ded6a323cd681b68ab74",
+        "NLS/SequenceSpaces/WeightedRealCoeff.lean": "908a8a5db6ad3d8e8d350176d242abd6a8227ec6c753f95a67101e551e562671",
+        "NLS/SequenceSpaces/WeightedNonnegativeActions.lean": "889e8fb0f27b55813eff84b90f87c7672a0c799d2da03753f838a60fc472c778",
+        "NLS/ZakharovShabat/SourceActionGapZeroLocus.lean": "3fec845b190186e9455f97cb4191e6bede2a52756e088f7f1d4196276c29ba93",
+        "NLS/ZakharovShabat/CanonicalPeriodicEndpoints.lean": "89f297e577280aba47cd9c52f7fdd9c075562203fffa547e255be80fb7bb40d2",
+        "NLS/ZakharovShabat/SourceGlobalIsolation.lean": "aa4b97740ff659848bb77f952920d6233babf616232baa854fd80c3d5e180f98",
+        "NLS/ZakharovShabat/DiscriminantPairFactorization.lean": "776c4c305d0bb5b3747d5b7591d2b18b564a74eadff71cfc6f078f3f03df90e5",
+        "NLS/ZakharovShabat/CanonicalPeriodOneBoundaryRoots.lean": "2c3ff197758fdebbd0258f623e53e39ca8d4b27263c68d468b9564042b82f11f",
+        "NLS/ZakharovShabat/ClassicalFundamentalSolution.lean": "377d2066c8320a02b91513ee3654d2eb539b94b0fc8ef79f6615e51537be3993",
+        "NLS/ZakharovShabat/SourceAntiDiscriminantIdentity.lean": "db917f943d57c028655cf295a61bb43fd5ae48bf5ca8c6ddeb96c01c46923afc",
+        "NLS/ZakharovShabat/ClassicalSeparatedCharacteristics.lean": "0002ad25924ec3d48a50d62d9859d9cc33116999c34d62afdc24877b06779bc1",
+        "NLS/ZakharovShabat/SourceAntiDiscriminantCandidate.lean": "6024ab343c516082e08ce722ac94a226ad288b193c6edbb8396078f644a90004",
+        "NLS/ZakharovShabat/FiniteSourceAntiDiscriminant.lean": "70f0bf5bb30e35cbd93e20ac9e73d1e47ead4a25bef240debe6cfff6496c1586",
+        "NLS/ZakharovShabat/ClassicalSwapSymmetry.lean": "209882dec17615df42d689804b33feeebc767767960c2205d75638addeb0ae89",
+        "NLS/ZakharovShabat/AuxiliaryPhase.lean": "7d556ea6c3c7d73440fdfa122d8ed4bc6452f08a5786896935fb35a5fd257f9e",
+        "NLS/Poisson/SobolevBivector.lean": "9873f41cb3f57752dc14fd1009c7e0566ccc8a571b11ed26652c1f10495bff49",
+        "NLS/ZakharovShabat/ClassicalFirstBorn.lean": "79d54874798826b77127ac433a40162cbf48ffb3eb8614414fb78d6cca004378",
+        "NLS/SequenceSpaces/SobolevPairSesquilinear.lean": "47b5e3bafd31f211239f96b3aa3793bd6f7e2b3f1952b6f946efb607c6d23627",
+        "NLS/SequenceSpaces/SobolevBilinearPairing.lean": "14c47d68626207bcaa760b3ab7cfaf339f2446895c151ed3adc251fb17ba659b",
+        "NLS/Poisson/SobolevCommonBracket.lean": "8bc4b27219ed668bee0db592e8eee1275876ad98e20936ca0c551a12acef5c4b",
+        "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "8ba49915bc9afb39744a9439c878af0c7d72d9c2a9c59a2aec7ae1c1ccc64398",
+        "NLS/ZakharovShabat/PeriodOneSobolevHamiltonian.lean": "8ec9db0c737d7b8acc9b2401f85d0ffdaf9db719683e6d8c94dc85ef9e73bc4f",
+        "NLS/ZakharovShabat/AppendixHPhysicalHamiltonian.lean": "d31119713824e7aa1d968635a8c2701299ccad51aa9a6371493cdde8cf4e2c03",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaOriginal.lean": "4709b37039213e8efedb5e80113abb5d3de07e0bb80161b50d9d5d80da2c962d",
+        "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalCollapsed.lean": "485225d8432e487e04c080329a375d1e7648d788a664ac6a119f32c3b69cc5d5",
+        "NLS/ZakharovShabat/SourceSingleRootQuotientAbsolute.lean": "d538ed0bee3ebdf3281876119dcccd7fdb0cccdb53b2ce595c84b847979325e8",
+        "NLS/ZakharovShabat/AppendixDSineProducts.lean": "9563136a94276efe23629a9bc03dd57cf703b5f862feb175f5a330f1b0bd78d9",
+        "NLS/ZakharovShabat/CanonicalCriticalPoints.lean": "732d0760eb4441d1b0077c42fe23d662fbbaaffaf87ea8832418a9d84c27d9a3",
+        "NLS/ZakharovShabat/PeriodicEndpointProducts.lean": "603fd7728a5b0ecf6e3e9ef11f4a2afc58ca21164a390267c586498f522a1a54",
+        "NLS/ZakharovShabat/FiniteParityCompatibility.lean": "9c28952d957a04d6ba07578d71ce1379f4d95b6559089cf722c02cc7fcda764d",
+        "NLS/ZakharovShabat/PerturbedSpectralProducts.lean": "eab1045dfe0d6ba8106b201ba18de46c5c8a8ba850782feca137de90fbf0ce9c",
+        "NLS/ZakharovShabat/EntireSpectralPairProducts.lean": "f896de045d23e90397829efbb74d000eb8f5ab4c8a4dd5c7e11b877def0d8ef9",
+        "NLS/ZakharovShabat/SourceAngularRootSheet.lean": "f9d48f38f21349cd82064668c809b6745494c32261544670b78c82a1421189ea",
+        "NLS/SequenceSpaces/SobolevPairGradient.lean": "a8a7a1c8c529155ab85cef36c87e275a7570337f639a02c0ca90b36a7c510255",
+        "NLS/ZakharovShabat/SourceDiscriminantCotangent.lean": "4d5c0b579d7ca36e9952eecbbc3914019abb407a34c7666fb4d3b822245e2109",
+        "NLS/ZakharovShabat/SourceDiscriminantMixedDerivative.lean": "4380138ea9c0b2690d72d978db75345354e494f722d98254c5194f3ad3286cc6"
+      },
+      "reviewed_modules_read_in_full": false,
+      "support_dependency_comparison_complete": false,
+      "supporting_body_scopes": {
+        "NOT-001": {
+          "NLS/Fourier/PeriodicFourierLebesgueSpace.lean": {
+            "scope": "full, lines 1-150 and 151-206",
+            "chunks": [
+              "fa3683",
+              "10e398"
+            ],
+            "sha256": "f42a14f5a1d0322ff0c074b7a295719b59022ec063a147ba96e5fbda5c6974c8"
+          },
+          "NLS/SequenceSpaces/PairNorm.lean": {
+            "scope": "lines 90-144",
+            "chunk": "e6ec0b",
+            "sha256": "1cd1778739ec097f17d3397b07c2005ef361714f2ab0e130bdb3dfb51e80b6a3"
+          }
+        },
+        "NOT-002": {
+          "NLS/ZakharovShabat/SourceLemma10_1.lean": {
+            "scope": "lines 1-105",
+            "chunk": "5d85e8",
+            "sha256": "45e5c251de6602bf526928eb827607687bb3428c3dd99950a0941ed2c8c93816"
+          }
+        },
+        "NOT-003": {
+          "NLS/ZakharovShabat/ComplementaryStrip.lean": {
+            "scope": "lines 1-30",
+            "chunk": "311575",
+            "sha256": "194d6025fbbf10bc2f9ec2a4ba6c8b859e7a50e8e00fd48020653e1f06baca92"
+          }
+        },
+        "NOT-004": {
+          "NLS/ZakharovShabat/ResonantDeterminantBounds.lean": {
+            "scope": "lines 1-32",
+            "chunk": "13fa4c",
+            "sha256": "3c7412a3ab4307242209fd8ca378aeb64c25b0b3cd80daef1bba64bc30b50c38"
+          }
+        },
+        "NOT-005": {
+          "NLS/ZakharovShabat/SourceIsospectralSet.lean": {
+            "scope": "lines 1-110",
+            "chunk": "51e73b",
+            "sha256": "d829150b833f3fe97ef7b84e69b7fb1bb29179f04e52affcdc20a7a2b59eda62"
+          }
+        },
+        "NOT-006": {
+          "NLS/ZakharovShabat/PhysicalOperator.lean": {
+            "scope": "lines 1-60",
+            "chunk": "0c77cf",
+            "sha256": "0b504c156c2d0f19637da34849686189731fa5a9b7433396c4495946af80e28e"
+          }
+        },
+        "NOT-007": {
+          "NLS/ZakharovShabat/AKNSCoordinates.lean": {
+            "scope": "lines 1-110",
+            "chunk": "5df59b",
+            "sha256": "4372d3deffa364b08eb51a697a88728bcca37fa3b50a7c85fde27d2bb62f3079"
+          }
+        },
+        "NOT-008": {
+          "NLS/ZakharovShabat/SourceNormalizedActionCollapsedPositive.lean": {
+            "scope": "lines 106-160",
+            "chunk": "63febe",
+            "sha256": "ad3924543e2544bcc02801e7f7d21672f501ce57241d46173a00278d9ebad5f2"
+          }
+        },
+        "NOT-009": {
+          "NLS/ZakharovShabat/RestoredSpectralPairs.lean": {
+            "scope": "lines 1-40",
+            "chunk": "13fa4c",
+            "sha256": "d58aab71ce9dcd67c58bc54424ee3c87e60d093878fab7ce89cd8cdb967541ba"
+          },
+          "NLS/ZakharovShabat/SingleSpectralProducts.lean": {
+            "scope": "lines 1-55",
+            "chunk": "0c77cf",
+            "sha256": "42f12055442be191d73fe7670ec5be19e201a270f9c65a57529bbf3c51aedb52"
+          }
+        },
+        "NOT-010": {
+          "NLS/ZakharovShabat/SourceSection19Primitive.lean": {
+            "scope": "lines 1-120",
+            "chunk": "8e7e5b",
+            "sha256": "4efc5379e4acec3fef6b588cfe3026f0c4f9ca563c886269c293afe493b7fb5c"
+          }
+        },
+        "NOT-011": {
+          "NLS/ZakharovShabat/SourceSection7PsiProduct.lean": {
+            "scope": "full",
+            "chunk": "0c77cf",
+            "sha256": "e8ee58e5c5338d591de1935d9b49f63de43012d75afff214143e18b74806b8df"
+          }
+        },
+        "NOT-012": {
+          "NLS/ZakharovShabat/SourcePsiDoubleOmittedProduct.lean": {
+            "scope": "full",
+            "chunk": "63febe",
+            "sha256": "399cf46571a84a8feb2b55e418d68fdf92d73ccd8316eb9158bfb5fd1681f4cb"
+          }
+        },
+        "NOT-013": {
+          "NLS/ZakharovShabat/SourceActionChi.lean": {
+            "scope": "full",
+            "chunk": "5df59b",
+            "sha256": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4"
+          }
+        },
+        "NOT-014": {
+          "NLS/ZakharovShabat/SourceStandardRootAlgebra.lean": {
+            "scope": "lines 1-100",
+            "chunk": "74e3f1",
+            "sha256": "64a3720ca89aea6366fedcc8f084f7e8a129bd284e363ea455188e841c043bd2"
+          }
+        },
+        "NOT-015": {
+          "NLS/ZakharovShabat/SourceCanonicalRootProduct.lean": {
+            "scope": "lines 1-60",
+            "chunk": "0c77cf",
+            "sha256": "4eca92d04190a6fe63dc9f441b9a7a48cda553f4369ffebd74c4cf1c60cb846f"
+          }
+        },
+        "NOT-016": {
+          "NLS/ZakharovShabat/RealType.lean": {
+            "scope": "lines 1-68",
+            "chunk": "b0e4c2",
+            "sha256": "5dac5380180fcfe61f1d3b0f9522adc41467ab5a9ecf5406e6c13462589d2709"
+          },
+          "NLS/ZakharovShabat/SourceRealTypeConvex.lean": {
+            "scope": "lines 1-38",
+            "chunk": "b0e4c2",
+            "sha256": "fa4797b92e8f5ea60745e3792283a10c811a943ca2ebb9e96b4bbd275c0f87a2"
+          },
+          "NLS/Fourier/NativePeriodicConjugation.lean": {
+            "scope": "full",
+            "chunk": "43fac3",
+            "sha256": "6e0254f6c7e774a25328b7b46c24ca9c9abc1e3ea500ded6a323cd681b68ab74"
+          }
+        },
+        "NOT-017": {
+          "NLS/SequenceSpaces/WeightedRealCoeff.lean": {
+            "scope": "lines 1-85",
+            "chunk": "b0e4c2",
+            "sha256": "908a8a5db6ad3d8e8d350176d242abd6a8227ec6c753f95a67101e551e562671"
+          }
+        },
+        "NOT-018": {
+          "NLS/SequenceSpaces/WeightedNonnegativeActions.lean": {
+            "scope": "full",
+            "chunk": "b0e4c2",
+            "sha256": "889e8fb0f27b55813eff84b90f87c7672a0c799d2da03753f838a60fc472c778"
+          }
+        },
+        "NOT-019": {
+          "NLS/ZakharovShabat/SourceActionGapZeroLocus.lean": {
+            "scope": "full",
+            "chunk": "7ee753",
+            "sha256": "3fec845b190186e9455f97cb4191e6bede2a52756e088f7f1d4196276c29ba93"
+          }
+        },
+        "NOT-020": {
+          "NLS/ZakharovShabat/CanonicalPeriodicEndpoints.lean": {
+            "scope": "full",
+            "chunk": "345ff0",
+            "sha256": "89f297e577280aba47cd9c52f7fdd9c075562203fffa547e255be80fb7bb40d2"
+          }
+        },
+        "NOT-021": {
+          "NLS/ZakharovShabat/SourceGlobalIsolation.lean": {
+            "scope": "lines 1-80",
+            "chunk": "74e3f1",
+            "sha256": "aa4b97740ff659848bb77f952920d6233babf616232baa854fd80c3d5e180f98"
+          },
+          "NLS/ZakharovShabat/DiscriminantPairFactorization.lean": {
+            "scope": "lines 1-65",
+            "chunk": "7ee753",
+            "sha256": "776c4c305d0bb5b3747d5b7591d2b18b564a74eadff71cfc6f078f3f03df90e5"
+          }
+        },
+        "NOT-022": {
+          "NLS/ZakharovShabat/CanonicalPeriodOneBoundaryRoots.lean": {
+            "scope": "lines 1-68",
+            "chunk": "9ba8e1",
+            "sha256": "2c3ff197758fdebbd0258f623e53e39ca8d4b27263c68d468b9564042b82f11f"
+          }
+        },
+        "NOT-023": {
+          "NLS/ZakharovShabat/ClassicalFundamentalSolution.lean": {
+            "scope": "lines 108-130",
+            "chunk": "345ff0",
+            "sha256": "377d2066c8320a02b91513ee3654d2eb539b94b0fc8ef79f6615e51537be3993"
+          },
+          "NLS/ZakharovShabat/SourceAntiDiscriminantIdentity.lean": {
+            "scope": "lines 1-100 and 165-197; tool chunks 9ba8e1 and 7f7652",
+            "chunk": "7f7652",
+            "sha256": "db917f943d57c028655cf295a61bb43fd5ae48bf5ca8c6ddeb96c01c46923afc"
+          }
+        },
+        "NOT-024": {
+          "NLS/ZakharovShabat/ClassicalSeparatedCharacteristics.lean": {
+            "scope": "lines 1-65",
+            "chunk": "fda48f",
+            "sha256": "0002ad25924ec3d48a50d62d9859d9cc33116999c34d62afdc24877b06779bc1"
+          },
+          "NLS/ZakharovShabat/SourceAntiDiscriminantCandidate.lean": {
+            "scope": "full",
+            "chunk": "345ff0",
+            "sha256": "6024ab343c516082e08ce722ac94a226ad288b193c6edbb8396078f644a90004"
+          },
+          "NLS/ZakharovShabat/FiniteSourceAntiDiscriminant.lean": {
+            "scope": "lines 1-62 and 78-111; tool chunks 6efb8b and a1b86e",
+            "chunk": "a1b86e",
+            "sha256": "70f0bf5bb30e35cbd93e20ac9e73d1e47ead4a25bef240debe6cfff6496c1586"
+          }
+        },
+        "NOT-025": {
+          "NLS/ZakharovShabat/ClassicalSwapSymmetry.lean": {
+            "scope": "full",
+            "chunk": "e99499",
+            "sha256": "209882dec17615df42d689804b33feeebc767767960c2205d75638addeb0ae89"
+          }
+        },
+        "NOT-026": {
+          "NLS/ZakharovShabat/AuxiliaryPhase.lean": {
+            "scope": "lines 1-90",
+            "chunk": "e8660a",
+            "sha256": "7d556ea6c3c7d73440fdfa122d8ed4bc6452f08a5786896935fb35a5fd257f9e"
+          }
+        },
+        "NOT-027": {
+          "NLS/Poisson/SobolevBivector.lean": {
+            "scope": "lines 112-157",
+            "chunk": "e8660a",
+            "sha256": "9873f41cb3f57752dc14fd1009c7e0566ccc8a571b11ed26652c1f10495bff49"
+          }
+        },
+        "NOT-028": {
+          "NLS/ZakharovShabat/ClassicalFirstBorn.lean": {
+            "scope": "lines 1-52",
+            "chunk": "52b287",
+            "sha256": "79d54874798826b77127ac433a40162cbf48ffb3eb8614414fb78d6cca004378"
+          }
+        },
+        "NOT-029": {
+          "NLS/SequenceSpaces/SobolevPairSesquilinear.lean": {
+            "scope": "lines 1-95",
+            "chunk": "2eb4f4",
+            "sha256": "47b5e3bafd31f211239f96b3aa3793bd6f7e2b3f1952b6f946efb607c6d23627"
+          },
+          "NLS/SequenceSpaces/SobolevBilinearPairing.lean": {
+            "scope": "full",
+            "chunk": "a1b86e",
+            "sha256": "14c47d68626207bcaa760b3ab7cfaf339f2446895c151ed3adc251fb17ba659b"
+          }
+        },
+        "NOT-030": {
+          "NLS/Poisson/SobolevCommonBracket.lean": {
+            "scope": "lines 1-78",
+            "chunk": "2eb4f4",
+            "sha256": "8bc4b27219ed668bee0db592e8eee1275876ad98e20936ca0c551a12acef5c4b"
+          },
+          "NLS/Poisson/SobolevBivector.lean": {
+            "scope": "lines 112-157",
+            "chunk": "e8660a",
+            "sha256": "9873f41cb3f57752dc14fd1009c7e0566ccc8a571b11ed26652c1f10495bff49"
+          }
+        },
+        "NOT-031": {
+          "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": {
+            "scope": "lines 1-36 and 101-143",
+            "chunk": "8f2baa",
+            "sha256": "8ba49915bc9afb39744a9439c878af0c7d72d9c2a9c59a2aec7ae1c1ccc64398"
+          },
+          "NLS/ZakharovShabat/PeriodOneSobolevHamiltonian.lean": {
+            "scope": "lines 1-112",
+            "chunk": "81a719",
+            "sha256": "8ec9db0c737d7b8acc9b2401f85d0ffdaf9db719683e6d8c94dc85ef9e73bc4f"
+          },
+          "NLS/ZakharovShabat/AppendixHPhysicalHamiltonian.lean": {
+            "scope": "full, prior positive proof and canonical publication review",
+            "chunk": "d6fd9d",
+            "sha256": "d31119713824e7aa1d968635a8c2701299ccad51aa9a6371493cdde8cf4e2c03"
+          }
+        },
+        "NOT-032": {
+          "NLS/ZakharovShabat/SourceGapWeightedEtaOriginal.lean": {
+            "scope": "lines 1-115",
+            "chunk": "81a719",
+            "sha256": "4709b37039213e8efedb5e80113abb5d3de07e0bb80161b50d9d5d80da2c962d"
+          },
+          "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalCollapsed.lean": {
+            "scope": "lines 1-100",
+            "chunk": "7f7652",
+            "sha256": "485225d8432e487e04c080329a375d1e7648d788a664ac6a119f32c3b69cc5d5"
+          }
+        },
+        "NOT-033": {
+          "NLS/ZakharovShabat/SourceSingleRootQuotientAbsolute.lean": {
+            "scope": "lines 115-156",
+            "chunk": "ca7782",
+            "sha256": "d538ed0bee3ebdf3281876119dcccd7fdb0cccdb53b2ce595c84b847979325e8"
+          }
+        },
+        "NOT-034": {
+          "NLS/ZakharovShabat/AppendixDSineProducts.lean": {
+            "scope": "lines 1-105",
+            "chunk": "c818a1",
+            "sha256": "9563136a94276efe23629a9bc03dd57cf703b5f862feb175f5a330f1b0bd78d9"
+          }
+        },
+        "NOT-035": {
+          "NLS/ZakharovShabat/CanonicalCriticalPoints.lean": {
+            "scope": "lines 1-90",
+            "chunk": "ca7782",
+            "sha256": "732d0760eb4441d1b0077c42fe23d662fbbaaffaf87ea8832418a9d84c27d9a3"
+          },
+          "NLS/ZakharovShabat/SingleSpectralProducts.lean": {
+            "scope": "lines 1-55",
+            "chunk": "0c77cf",
+            "sha256": "42f12055442be191d73fe7670ec5be19e201a270f9c65a57529bbf3c51aedb52"
+          }
+        },
+        "NOT-036": {
+          "NLS/ZakharovShabat/PeriodicEndpointProducts.lean": {
+            "scope": "lines 65-86",
+            "chunk": "702a91",
+            "sha256": "603fd7728a5b0ecf6e3e9ef11f4a2afc58ca21164a390267c586498f522a1a54"
+          },
+          "NLS/ZakharovShabat/FiniteParityCompatibility.lean": {
+            "scope": "lines 55-79",
+            "chunk": "a1b86e",
+            "sha256": "9c28952d957a04d6ba07578d71ce1379f4d95b6559089cf722c02cc7fcda764d"
+          },
+          "NLS/ZakharovShabat/PerturbedSpectralProducts.lean": {
+            "scope": "lines 1-65",
+            "chunk": "6efb8b",
+            "sha256": "eab1045dfe0d6ba8106b201ba18de46c5c8a8ba850782feca137de90fbf0ce9c"
+          },
+          "NLS/ZakharovShabat/EntireSpectralPairProducts.lean": {
+            "scope": "full",
+            "chunk": "8f2baa",
+            "sha256": "f896de045d23e90397829efbb74d000eb8f5ab4c8a4dd5c7e11b877def0d8ef9"
+          }
+        },
+        "NOT-037": {
+          "NLS/ZakharovShabat/SourceAntiDiscriminantIdentity.lean": {
+            "scope": "lines 1-100 and 165-197; tool chunks 9ba8e1 and 7f7652",
+            "chunk": "7f7652",
+            "sha256": "db917f943d57c028655cf295a61bb43fd5ae48bf5ca8c6ddeb96c01c46923afc"
+          },
+          "NLS/ZakharovShabat/SourceAngularRootSheet.lean": {
+            "scope": "full; tool chunks 702a91 and 017c48",
+            "chunk": "017c48",
+            "sha256": "f9d48f38f21349cd82064668c809b6745494c32261544670b78c82a1421189ea"
+          }
+        },
+        "NOT-038": {
+          "NLS/SequenceSpaces/SobolevPairGradient.lean": {
+            "scope": "full (153 lines; output truncation occurs after this complete body in the following search results)",
+            "chunk": "7651d7",
+            "sha256": "a8a7a1c8c529155ab85cef36c87e275a7570337f639a02c0ca90b36a7c510255"
+          },
+          "NLS/ZakharovShabat/SourceDiscriminantCotangent.lean": {
+            "scope": "full",
+            "chunk": "9bc1b8",
+            "sha256": "4d5c0b579d7ca36e9952eecbbc3914019abb407a34c7666fb4d3b822245e2109"
+          },
+          "NLS/ZakharovShabat/SourceDiscriminantMixedDerivative.lean": {
+            "scope": "full",
+            "chunk": "9bc1b8",
+            "sha256": "4380138ea9c0b2690d72d978db75345354e494f722d98254c5194f3ad3286cc6"
+          }
+        }
+      },
+      "remaining_comparisons": [
+        "Reconcile the complete source inventory, publish the contextual bibliography, and address the remaining exact 2014 construction and rough sheet-sign motion qualifications. Correct constants directly; add no new refutations. Commit and push each completed step."
+      ],
+      "ordered_inventory": "coverage/NOTATIONS_ASSERTIONS.md",
+      "ordered_inventory_sha256": "ef91b5e62475d10a308b49cef96e4a29e6a22a7cd594508f024e4cb736b39ea8",
+      "resolved_declarations": [
+        "NLS.Fourier.FourierLebesgueSpace",
+        "NLS.Fourier.PeriodicFourierLebesgue.coefficientsIsometry",
+        "NLS.Fourier.PeriodicFourierLebesgue.norm_conjugate",
+        "NLS.Fourier.PeriodicFourierLebesgue.sobolev_real_pair_iff",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate_apply",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.eq_conjugate_iff_coefficients",
+        "NLS.Poisson.commonSobolevBracket_physical",
+        "NLS.Poisson.signedJ",
+        "NLS.Poisson.signedJ_physical",
+        "NLS.Weight.sobolev_zero_eq_one",
+        "NLS.WeightedCoeff.nonnegativeLocus",
+        "NLS.WeightedCoeff.realLocus",
+        "NLS.WeightedCoeff.sobolevBilinearPairing_apply",
+        "NLS.WeightedCoeffPair.existsUnique_sobolevFiniteGradient",
+        "NLS.WeightedCoeffPair.existsUnique_sobolevOneGradient",
+        "NLS.WeightedCoeffPair.sobolevFiniteGradient_represents",
+        "NLS.WeightedCoeffPair.sobolevOneGradient_represents",
+        "NLS.WeightedCoeffPair.sobolevSesquilinearPairing_physical",
+        "NLS.WeightedRealCoeff",
+        "NLS.ZakharovShabat.IsRealType",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeightedEta_original_signed",
+        "NLS.ZakharovShabat.SourceLemma12_12Data.gapWeighted_original_phase_limit",
+        "NLS.ZakharovShabat.SourceSection19Data.endpoint_integrals",
+        "NLS.ZakharovShabat.SourceSection19Data.index_shift",
+        "NLS.ZakharovShabat.aknsToZS",
+        "NLS.ZakharovShabat.appendixDProduct_zero",
+        "NLS.ZakharovShabat.appendixH_hamiltonian_eq_integral_of_coefficients",
+        "NLS.ZakharovShabat.auxiliaryPotential_apply",
+        "NLS.ZakharovShabat.canonicalDiscriminant_finite_eq_classical",
+        "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots",
+        "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_exhaustive",
+        "NLS.ZakharovShabat.canonicalPeriodOneBoundaryRoots_multiplicity",
+        "NLS.ZakharovShabat.canonicalPeriodicEndpoints_exhaustive",
+        "NLS.ZakharovShabat.canonicalPeriodicEndpoints_product",
+        "NLS.ZakharovShabat.canonicalPeriodicGap",
+        "NLS.ZakharovShabat.canonicalPeriodicLeft",
+        "NLS.ZakharovShabat.canonicalPeriodicMidpoint",
+        "NLS.ZakharovShabat.canonicalPeriodicRight",
+        "NLS.ZakharovShabat.canonicalPeriodic_eq_discriminant_sq_sub_four_finite",
+        "NLS.ZakharovShabat.classicalAntiDiscriminant",
+        "NLS.ZakharovShabat.classicalDiscriminant",
+        "NLS.ZakharovShabat.classicalFreeVector",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_one",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_three",
+        "NLS.ZakharovShabat.classicalODECoefficient_swap",
+        "NLS.ZakharovShabat.discriminant_derivative_eq_canonicalCriticalProduct",
+        "NLS.ZakharovShabat.displacedRoots",
+        "NLS.ZakharovShabat.exists_local_sourceAngularRootSheet_dirichlet_normalization",
+        "NLS.ZakharovShabat.fderiv_source_discriminant_deriv_eq_deriv_spectral_fderiv_source",
+        "NLS.ZakharovShabat.hasProd_sourceSingleRootQuotient_subtype",
+        "NLS.ZakharovShabat.mem_sourceActionGapZeroLocus_iff",
+        "NLS.ZakharovShabat.mem_sourceIsospectralSet_iff_discriminant_eq",
+        "NLS.ZakharovShabat.normalizedStandardRoot",
+        "NLS.ZakharovShabat.periodOneSobolevHamiltonian_eq_integral",
+        "NLS.ZakharovShabat.periodOneSobolevMass_eq_integral",
+        "NLS.ZakharovShabat.physicalOperator",
+        "NLS.ZakharovShabat.realTypeSourceLocus",
+        "NLS.ZakharovShabat.refinedResonantDisk",
+        "NLS.ZakharovShabat.resonantStrip",
+        "NLS.ZakharovShabat.singleSpectralDenominator",
+        "NLS.ZakharovShabat.singleSpectralPartialProduct",
+        "NLS.ZakharovShabat.sourceActionChi",
+        "NLS.ZakharovShabat.sourceActionGapZeroLocus",
+        "NLS.ZakharovShabat.sourceAngularRootSheet_dirichlet_base",
+        "NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_finite_eq_classical_of_exponent",
+        "NLS.ZakharovShabat.sourceCanonicalRoot",
+        "NLS.ZakharovShabat.sourceDiscriminantCotangent",
+        "NLS.ZakharovShabat.sourceDiscriminant_sq_sub_four_at_canonicalDirichletRoot",
+        "NLS.ZakharovShabat.sourceLemma10_1",
+        "NLS.ZakharovShabat.sourceNormalizedActionRoot",
+        "NLS.ZakharovShabat.sourcePeriodicSegment",
+        "NLS.ZakharovShabat.sourcePsiZeta_eq_product",
+        "NLS.ZakharovShabat.sourceSection7_psi_product",
+        "NLS.ZakharovShabat.spectralPairPartialProduct",
+        "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_entireSpectralPairProduct",
+        "NLS.ZakharovShabat.tendsto_appendixDProduct"
+      ],
+      "declaration_inventory_count": 45116,
+      "qualification": "Each matched group compares the printed notation with the stated definition and domain, subject to its explicit qualification. This mapping does not assert a new theorem or certify complete formalization of the dissertation. The complete rendered two-column notation page was inspected. The record preserves selected supporting-body scopes and reconciles prior positive proof publications. It does not claim that all supporting modules or transitive dependencies were freshly read in full. The source bibliography, precise 2014 edition comparison and rough physical sheet-sign direction clause remain separate.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          145
+        ],
+        "images": {
+          "work/NotationSourceReview-145.png": "89e55dbbedf09b9250444fcc230d8a9f08aa5fe114f8b2049115222cba179598"
+        }
+      },
+      "reconciled_previous_reviews": {
+        "work/NativePeriodicConjugationSourceComparison-2026-11-02.json": "41695dc4cb66f3d5962c00b76b720dd3166b8524f7619e000fbe034c341dfcb8",
+        "work/Section7PsiPeriodUniquenessSourceComparison-2026-11-02.json": "5b4cec761ddd916905f12f1b27bf8a97d9e53da74b0aeb68eb10524766952209",
+        "work/AppendixHPhysicalHamiltonianSourceComparison-2026-11-02.json": "be26a963ea676aef5aca6ec1e5b8ef62bd94ee3be3d632267a7099ac1d0dd881"
+      },
+      "validation_lean_sources": {
+        "files": 4916,
+        "sha256": "399b5add3a6ef88137ff1576297dfa1338b8e0af55905c404e1d5f7fc09542a2"
+      },
+      "validation_reused_from_commit": "c23702bdbb42dd6a2566cd5173c587f7ce41d82e",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 30705,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/NativePeriodicConjugationFullCheck.log",
+        "log_sha256": "aaf07250cc3111a3318f6d43bce32212f546446e06a59dfe528c4abdb12b95ca"
+      },
+      "source_record_sha256": "3f9b5a7b20b7ee5bfd9a7abe30c08950de36f862c8c88023054d1e81d283c7c7"
     }
   }
 }

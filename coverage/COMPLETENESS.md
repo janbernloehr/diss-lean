@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [notation-page comparison](NOTATIONS_ASSERTIONS.md) maps all 38 notation groups with their explicit domains and qualifications. It reconciles the native distribution conjugation, psi product and original Hamiltonian integral publications. The whole-source reconciliation, contextual bibliography and previously recorded unresolved comparisons remain.
+
 The [native periodic conjugation](SECTION_2.md) proofs add 14 checked positive theorems. Publish the reviewed notation-page comparison after reconciling the now-published proof queue, then finish the whole-dissertation source reconciliation and its remaining qualifications. Correct constants directly; add no new refutations. The broader completeness qualifications below remain.
 
 The [Section 7 unrestricted psi uniqueness](SECTION_7.md) proofs add 8 checked positive theorems. Continue the whole-dissertation reconciliation. The rough sheet-sign direction-of-motion clause in S7-002 and the precise cited 2014 construction comparison remain open. Retain the recorded source qualifications, correct constants directly, and commit and push each completed step. The broader completeness qualifications below remain.

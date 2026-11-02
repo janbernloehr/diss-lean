@@ -1,6 +1,20 @@
 # Implementation plan
 
-## Current milestone: native periodic conjugation
+## Current milestone: notation-page comparison
+
+The [notation-page comparison](coverage/NOTATIONS_ASSERTIONS.md) maps 38 groups on printed p.145. Each definition and convention retains its explicit domain and qualification.
+
+Physical conjugation is identified on the original periodic distributions at every positive period, real Sobolev order and Banach exponent. Exact product constants, sheet choices, actual Hamiltonian integrals, physical pairings and differential conventions are retained.
+
+The comparison records 55 supporting modules and 76 declaration references with the actual inspected body scopes. This documentation step adds no Lean proof or refutation.
+
+The unchanged Lean snapshot reuses the full check at commit c23702bdbb42dd6a2566cd5173c587f7ce41d82e: 8,654 build jobs, 7,729 public examples and an axiom audit of 45,116 NLS declarations. The 21 inherited warnings are unchanged and there are no new warnings. All 76 declaration references, 55 supporting-module hashes, the review index and local links are checked again. This establishes validation of the recorded snapshot, not complete formalization of the dissertation.
+
+Reconcile the complete source inventory, publish the contextual bibliography, and address the remaining exact 2014 construction and rough sheet-sign motion qualifications. Correct constants directly; add no new refutations. Commit and push each completed step.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: native periodic conjugation
 
 The [native physical conjugation bridge](NLS/Fourier/NativePeriodicConjugation.lean) acts on every original smooth periodic test by pointwise conjugation and on distributions by conjugate(u(conjugate(test))). The construction proves continuity in the original derivative-seminorm topology.
 
