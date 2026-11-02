@@ -1,5 +1,28 @@
 # Current completion assessment
 
+The dissertation formalization is not yet certified complete. The [whole-dissertation index](WHOLE_DISSERTATION.md) connects 41 units and 1,229 source groups to their existing comparisons. Every nonblank source line is accounted for, including 293 separately inspected navigation fragments. These counts establish navigation and traceability; they are not proof-completion percentages.
+
+The latest [positive constant corrections](SECTION_3.md) prove the literal Lemma 3.4 near and far bounds at every finite Banach exponent, including p=1, every signed center, and 0<r<=1 (covering the printed radius range). The near coefficient is 4*p^2/r^2 with the exact Fourier remainder; the far coefficient is 64*p^2/r^2 with (r+abs(n))^(-1/p) decay. Lemma 3.2 adopts the proved two-component factor 2^(1-1/p) for nonzero imaginary part. Corrected spectral heights and their contour arguments are also published. No new refutations were added in these steps.
+
+## Remaining requirements
+
+| Source passage | Established evidence | Still required |
+| --- | --- | --- |
+| [Section 7, S7-002](SECTION_7.md), p.45 | Actual physical NLS nonconservation and the exact smooth Dirichlet-root velocity, including the sheet sign and its real multiplier, are proved. | Settle the informal direction remark for general L2 data, or explicitly accept the smooth formula as its intended precise interpretation. A pending question does not narrow the required domain. |
+| [Section 14, S14-010](SECTION_14_ASSERTIONS.md), [Section 17, S17-007](SECTION_17_ASSERTIONS.md), and [Section 18, S18-003](SECTION_18_ASSERTIONS.md) | The physical Hilbert map, its analytic global inverse, and weighted Sobolev canonical maps are constructed internally. Earlier-manuscript conventions have been compared. | Compare the construction with the exact 2014 edition of Grébert–Kappeler cited as [23]. The inspected 2013 manuscript and earlier drafts do not establish that edition identity. |
+
+These are the explicitly partial source groups. Other rows retain their detailed corrections and domain qualifications. In particular, [Appendix G.2](APPENDIX_G.md) uses the adopted explicit integral H1 norm and length factor sqrt(t^(-1)+t); the source does not specify its local norm. The proved unit-interval consequence remains available. Finite-exponent, endpoint-realization and infinity-norm qualifications remain in the original section comparisons.
+
+## Validation and publication
+
+The latest proof snapshot passed 8,662 build jobs, all 7,729 public examples and the transitive axiom audit for 45,245 NLS declarations. Its 21 inherited warnings are unchanged, with no new warnings. This documentation reconciliation reuses that identical Lean snapshot. The [source review index](source-review-index.json) and [source assertion inventory](source-assertion-inventory.json) retain exact evidence rows and source intervals.
+
+Each completed implementation step is committed and pushed. Current validation is necessary evidence for the formalization, but it does not resolve the remaining interpretation or reference-edition requirements. Literal printed discrepancies and their adopted positive corrections remain distinguished.
+
+## Historical assessments
+
+The entries below preserve earlier milestones and their then-current next steps. Statements below about pending publications or unfinished source navigation are historical; the current requirements are stated above.
+
 The [positive constant corrections](SECTION_3.md) adopt the corrected bounds in section_3-007, section_3-023 and section_3-024. The new subsum proofs include p=1 and every signed center while preserving the exact original scalar norms and Fourier remainder. Earlier evidence and the separate interpretation and reference-edition qualifications remain.
 
 The [corrected-height contour arguments](SECTION_4.md) now adopt the positive corrections in section_3-034, section_4-027, section_4-033, section_4-035 and section_5-015. The ordinary and auxiliary packages retain the original spaces, full ambient and restricted analytic families, shared neighborhoods and original-domain ranks. All earlier evidence and the separate interpretation and reference-edition qualifications remain.

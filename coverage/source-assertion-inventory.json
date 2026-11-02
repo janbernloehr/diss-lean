@@ -1,10 +1,10 @@
 {
   "status": "published_source_navigation",
-  "updated_utc": "2026-11-02T08:08:09.182610+00:00",
-  "base_commit": "6f30fca821e4185d6b8b8234eedf0ea060072253",
+  "updated_utc": "2026-11-02T08:09:45.609830+00:00",
+  "base_commit": "be2ce1ffa6db2dd141453e9b47473086d240be76",
   "source_text_sha256": "64640083a811e0e05710297d056d23d7e1f2aadad7fb1f1a1271819b90978619",
   "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
-  "published_source_index_sha256": "27001ae6d48317ab1af903ba6a6b837080662faa5931836bd29a3a6abceec21f",
+  "published_source_index_sha256": "a4c6375f4a397550a85e572a8ab51de459c9c89791a3273bedf4dcf38bb9b58a",
   "scope": "Consolidation of existing source assessments, not a fresh semantic audit of all transitive dependencies.",
   "completion_claim": false,
   "units": [
@@ -57511,5 +57511,11 @@
       "section_3-023",
       "section_3-024"
     ]
+  },
+  "current_completion_assessment": {
+    "document": "coverage/COMPLETENESS.md",
+    "scope": "Current requirements separated from preserved historical assessments.",
+    "completion_claim": false,
+    "proof_snapshot_reused_from_commit": "be2ce1ffa6db2dd141453e9b47473086d240be76"
   }
 }

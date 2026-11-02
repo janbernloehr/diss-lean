@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T08:08:08.373573+00:00",
-  "base_commit": "6f30fca821e4185d6b8b8234eedf0ea060072253",
+  "published_utc": "2026-11-02T08:09:45.568131+00:00",
+  "base_commit": "be2ce1ffa6db2dd141453e9b47473086d240be76",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -23,6 +23,7 @@
     "distinct_modules": 2288
   },
   "unresolved": [
+    "Section 7 group S7-002 retains the informal direction-of-motion interpretation for general L2 sources. The exact smooth physical NLS velocity and its sheet-sign multiplier are proved; a general rough-source interpretation has not been established or accepted as unnecessary.",
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
     "Appendix G.2 uses an adopted correction with the explicit unnormalized integral H1 norm and interval-length constant sqrt(t^(-1)+t). The source does not specify its local norm, so this correction is not asserted to identify the intended convention. The unit-interval consequence is proved.",
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
@@ -45,7 +46,8 @@
     },
     "full_gate_log_sha256": "33cb8ec9079472b368699f50ddda724935bc1fead5707302b95717e16c8b62f2",
     "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/Lemma34CorrectedSubsumFullCheck.log"
+    "full_gate_log": "work/Lemma34CorrectedSubsumFullCheck.log",
+    "validation_reused_from_commit": "be2ce1ffa6db2dd141453e9b47473086d240be76"
   },
   "named_statements": [
     {
