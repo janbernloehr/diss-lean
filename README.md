@@ -5,8 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix I weighted uniform cutoffs](coverage/APPENDIX_I.md). Exact weighted tails, quarter-to-half neighborhoods, one cutoff along compact source sets and actual real-atlas complex germs, and the lower-block bound on the tail space. Eight positive proofs and one bounded-operator definition.
-The [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: the [ordered Appendix I comparison](coverage/APPENDIX_I_ASSERTIONS.md) records thirteen matched groups, three direct corrections and two contextual passages. Exact weighted cutoff bounds and the relative real local-inverse theorem are retained. The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

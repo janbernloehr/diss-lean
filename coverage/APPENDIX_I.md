@@ -1,5 +1,21 @@
 # Appendix I: a generic local diffeomorphism property
 
+## Ordered source comparison
+
+The [ordered Appendix I comparison](APPENDIX_I_ASSERTIONS.md) covers 18 groups on pp.139–140: thirteen matched, three directly corrected and two contextual. No partial or pending groups remain in this local ledger.
+
+The Schur equivalence assumes lower-block invertibility and uses Id+A-B(Id+D)^(-1)C. The lower block acts on the tail space Y. The exact weighted I.3 tail gives the quarter bound at each compact source and the half bound on a neighborhood, with one cutoff along compact source sets.
+
+The real-analytic source atlas constructs the complex germs and identifies their derivatives. Relative openness and density follow from local Schur determinants and analytic uniqueness on the nonnegative cone. The original weighted norms and actual real inverse maps with both inverse identities are retained. One global holomorphic extension is not assumed.
+
+This documentation step adds no Lean proof or refutation.
+
+The unchanged Lean snapshot reuses the successful full check at commit 7f0cc3a7d585a7296d162abe47eb178b80afc596: 8,646 build jobs, 7,729 public examples and an axiom audit of 45,015 NLS declarations. The check has 21 inherited warnings and no new warnings. All 58 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: reconcile the whole-dissertation ledger. The [broader completion qualifications](COMPLETENESS.md), including the precise 2014 construction comparison, remain.
+
+Earlier entries retain their historical scope; the adopted corrections above govern this comparison.
+
 ## Appendix I weighted uniform cutoffs
 
 The [weighted uniform cutoff proofs](../NLS/SequenceSpaces/AppendixIUniformCutoff.lean) use the exact tail |n|>N in the original weighted norm. Compactness gives a quarter bound at a source point, and continuity gives a half bound on a neighborhood, with the same cutoff valid for every larger N.

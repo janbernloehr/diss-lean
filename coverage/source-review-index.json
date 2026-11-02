@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T04:02:20.765210+00:00",
-  "base_commit": "829617b1fe3c30d9edda3515dc68110197d38432",
+  "published_utc": "2026-11-02T04:03:31.212520+00:00",
+  "base_commit": "7f0cc3a7d585a7296d162abe47eb178b80afc596",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 213,
-    "module_hash_checks": 4476,
-    "distinct_modules": 2217
+    "review_records": 214,
+    "module_hash_checks": 4502,
+    "distinct_modules": 2230
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "829617b1fe3c30d9edda3515dc68110197d38432",
-    "validated_state": "Fresh full check after Appendix I weighted uniform cutoffs.",
+    "base_commit": "7f0cc3a7d585a7296d162abe47eb178b80afc596",
+    "validated_state": "Appendix I ordered comparison changes documentation only; the exact Lean snapshot retains the successful weighted uniform cutoff check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8646,
     "public_examples": 7729,
@@ -44,8 +44,9 @@
       "sha256": "44cd60e6119b813894622c77fab316f381fffc8d0e468efe60483a58a6645559"
     },
     "full_gate_log_sha256": "2aafa8116d0439b2de9319feb10e92b648bbf6aa87ae7e8a89889b965d76b1b4",
-    "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/AppendixIUniformCutoffFullCheck.log"
+    "qualification": "Unchanged Lean sources and locks retain the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
+    "full_gate_log": "work/AppendixIUniformCutoffFullCheck.log",
+    "validation_reused_from_commit": "7f0cc3a7d585a7296d162abe47eb178b80afc596"
   },
   "named_statements": [
     {
@@ -73325,6 +73326,968 @@
         "log_sha256": "2aafa8116d0439b2de9319feb10e92b648bbf6aa87ae7e8a89889b965d76b1b4"
       },
       "source_record_sha256": "96116d74fc52b890a61bde534b318db3ac7882325807c49a936b8548bc85d3d4"
+    },
+    "AppendixIOrderedSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "7f0cc3a7d585a7296d162abe47eb178b80afc596",
+      "updated_utc": "2026-11-02T04:03:31.156195+00:00",
+      "source_lines": [
+        [
+          11429,
+          11540
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "id": "I001",
+          "source_lines": [
+            11431,
+            11436
+          ],
+          "status": "matched",
+          "claim": "The original Banach-space operator is represented in bounded direct-sum coordinates.",
+          "declarations": [
+            "NLS.SchurComplement.block",
+            "NLS.SchurComplement.block_apply",
+            "NLS.SchurComplement.one_add_block",
+            "NLS.SchurComplement.source_operator_isUnit_iff"
+          ],
+          "qualification": "A bounded linear equivalence to the product identifies the original Id+T with its two-by-two block operator. The first block need not be finite dimensional at this stage.",
+          "ordered_group": "I-001",
+          "ordered_status": "matched",
+          "requirement": "The original Banach-space operator is represented in bounded direct-sum coordinates.",
+          "reviewed_claims": [
+            "The original Banach-space operator is represented in bounded direct-sum coordinates."
+          ]
+        },
+        {
+          "id": "I002",
+          "source_lines": [
+            11439,
+            11444
+          ],
+          "status": "corrected",
+          "claim": "Assuming Id+D invertible, Id+T is invertible exactly when Id+A-B(Id+D)^(-1)C is invertible.",
+          "declarations": [
+            "NLS.SchurComplement.sourceSchur",
+            "NLS.SchurComplement.sourceSchur_apply",
+            "NLS.SchurComplement.sourceLemmaI1_corrected",
+            "NLS.SchurComplement.sourceLemmaI1_sufficient",
+            "NLS.SchurComplement.sourceLemmaI1_on_decomposition"
+          ],
+          "qualification": "Adopt lower-block invertibility as a premise of the equivalence. The sufficient direction retains the source hypotheses. Historical counterexamples remain unchanged; this comparison adds no refutation.",
+          "ordered_group": "I-002",
+          "ordered_status": "corrected",
+          "requirement": "Assuming Id+D invertible, Id+T is invertible exactly when Id+A-B(Id+D)^(-1)C is invertible.",
+          "reviewed_claims": [
+            "Assuming Id+D invertible, Id+T is invertible exactly when Id+A-B(Id+D)^(-1)C is invertible."
+          ]
+        },
+        {
+          "id": "I003",
+          "source_lines": [
+            11446,
+            11450
+          ],
+          "status": "matched",
+          "claim": "For a finite-dimensional first block, det S nonzero and norm(D)<1 imply invertibility.",
+          "declarations": [
+            "NLS.SchurComplement.source_lower_isUnit_of_norm_lt_one",
+            "NLS.SchurComplement.sourceCorollaryI2_iff",
+            "NLS.SchurComplement.sourceCorollaryI2",
+            "NLS.SchurComplement.sourceCorollaryI2_on_decomposition"
+          ],
+          "qualification": "The strict norm bound gives invertibility of Id+D by the Neumann argument. Under that bound the determinant criterion is also necessary, in the original Banach-space coordinates.",
+          "ordered_group": "I-003",
+          "ordered_status": "matched",
+          "requirement": "For a finite-dimensional first block, det S nonzero and norm(D)<1 imply invertibility.",
+          "reviewed_claims": [
+            "For a finite-dimensional first block, det S nonzero and norm(D)<1 imply invertibility."
+          ]
+        },
+        {
+          "id": "I004",
+          "source_lines": [
+            11452,
+            11453
+          ],
+          "status": "contextual",
+          "claim": "Compactness is equivalent to total boundedness and completeness.",
+          "declarations": [
+            "NLS.Coeff.sourceLemmaI3_compact",
+            "NLS.Coeff.sourceLemmaI3_compactClosure",
+            "NLS.WeightedCoeff.sourceLemmaI3_compact"
+          ],
+          "qualification": "This is the standard metric-space compactness criterion. In the complete coefficient spaces the specialized statements use closedness; they also characterize the compact closure of an arbitrary unweighted set.",
+          "ordered_group": "I-004",
+          "ordered_status": "contextual",
+          "requirement": "Compactness is equivalent to total boundedness and completeness.",
+          "reviewed_claims": [
+            "Compactness is equivalent to total boundedness and completeness."
+          ]
+        },
+        {
+          "id": "I005",
+          "source_lines": [
+            11463,
+            11464
+          ],
+          "status": "matched",
+          "claim": "I.3 retains arbitrary sets, raw pointwise bounds, finite p>=1 and one symmetric tail cutoff for every positive error.",
+          "declarations": [
+            "NLS.Coeff.sourceI3Projection",
+            "NLS.Coeff.sourceI3Tail",
+            "NLS.Coeff.sourceI3Tail_apply",
+            "NLS.Coeff.sourceI3Tail_eq_fourierTail",
+            "NLS.Coeff.sourceLemmaI3",
+            "NLS.WeightedCoeff.sourceLemmaI3",
+            "NLS.WeightedCoeff.norm_sourceI3Tail"
+          ],
+          "qualification": "The head is exactly |n|<=N, the tail |n|>N, and N>=1. Coefficient bounds may depend on n; no global norm bound is supplied. Every positive weight preserves the exact norm and raw coefficient interpretation.",
+          "ordered_group": "I-005",
+          "ordered_status": "matched",
+          "requirement": "I.3 retains arbitrary sets, raw pointwise bounds, finite p>=1 and one symmetric tail cutoff for every positive error.",
+          "reviewed_claims": [
+            "I.3 retains arbitrary sets, raw pointwise bounds, finite p>=1 and one symmetric tail cutoff for every positive error."
+          ]
+        },
+        {
+          "id": "I006",
+          "source_lines": [
+            11470,
+            11479
+          ],
+          "status": "matched",
+          "claim": "I.4 starts with a real-analytic cone map and compact complexified derivative minus identity at its source points.",
+          "declarations": [
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.toComplex",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.toComplex_restriction",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.toComplex_derivative",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.complexifiedDerivative_eq"
+          ],
+          "qualification": "The domain is relatively open in the nonnegative cone. Local real analytic extensions define analyticity at its boundary. Their complex germs and derivative compatibility are constructed. Compactness is assumed only at cone points. Arbitrary positive weights cover every real Sobolev order.",
+          "ordered_group": "I-006",
+          "ordered_status": "matched",
+          "requirement": "I.4 starts with a real-analytic cone map and compact complexified derivative minus identity at its source points.",
+          "reviewed_claims": [
+            "I.4 starts with a real-analytic cone map and compact complexified derivative minus identity at its source points."
+          ]
+        },
+        {
+          "id": "I007",
+          "source_lines": [
+            11481,
+            11481
+          ],
+          "status": "matched",
+          "claim": "One actual local real inverse provides the seed.",
+          "declarations": [
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.localInversePoints",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.toComplex_realLocalInversePoints",
+            "NLS.WeightedCoeff.sourcePropositionI4_real_analytic_of_differentiable_seed"
+          ],
+          "qualification": "The seed is an inverse germ of the original real extension, with both inverse identities. The separately proved weaker seed is a differentiable real left inverse; it does not strengthen the printed hypotheses.",
+          "ordered_group": "I-007",
+          "ordered_status": "matched",
+          "requirement": "One actual local real inverse provides the seed.",
+          "reviewed_claims": [
+            "One actual local real inverse provides the seed."
+          ]
+        },
+        {
+          "id": "I008",
+          "source_lines": [
+            11483,
+            11483
+          ],
+          "status": "matched",
+          "claim": "The set of local diffeomorphism points is relatively open and dense.",
+          "declarations": [
+            "NLS.WeightedCoeff.sourcePropositionI4_real_analytic",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.exists_localInverse",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.localInversePoints_eq_of_atlas"
+          ],
+          "qualification": "The theorem uses preconnectedness, which is weaker than path connectedness. It gives actual real analytic inverses on ambient real neighborhoods, both identities, and recovery of the original cone map near the center. The inverse locus is independent of the atlas.",
+          "ordered_group": "I-008",
+          "ordered_status": "matched",
+          "requirement": "The set of local diffeomorphism points is relatively open and dense.",
+          "reviewed_claims": [
+            "The set of local diffeomorphism points is relatively open and dense."
+          ]
+        },
+        {
+          "id": "I009",
+          "source_lines": [
+            11486,
+            11493
+          ],
+          "status": "matched",
+          "claim": "Compactness of the unit-ball image yields an operator-norm output tail at most one quarter.",
+          "declarations": [
+            "NLS.Coeff.exists_sourceI3Tail_comp_norm_le",
+            "NLS.Coeff.tendsto_sourceI3Tail_comp",
+            "NLS.WeightedCoeff.appendixI_tailOperator",
+            "NLS.WeightedCoeff.appendixI_tailOperator_apply",
+            "NLS.WeightedCoeff.appendixI_compact_tail_cutoff"
+          ],
+          "qualification": "The weighted operator is the exact I.3 tail. All input columns remain present. The cutoff works for every larger N and for any positive error, including 1/4.",
+          "ordered_group": "I-009",
+          "ordered_status": "matched",
+          "requirement": "Compactness of the unit-ball image yields an operator-norm output tail at most one quarter.",
+          "reviewed_claims": [
+            "Compactness of the unit-ball image yields an operator-norm output tail at most one quarter."
+          ]
+        },
+        {
+          "id": "I010",
+          "source_lines": [
+            11495,
+            11499
+          ],
+          "status": "matched",
+          "claim": "Continuity improves the center quarter bound to a half bound on a complex neighborhood.",
+          "declarations": [
+            "NLS.WeightedCoeff.appendixI_local_tail_cutoff",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.appendixI_local_derivative_cutoff"
+          ],
+          "qualification": "The complex neighborhood belongs to the constructed local extension of the original real map. The norm is the original weighted operator norm. Compactness is not assumed on that ambient complex neighborhood.",
+          "ordered_group": "I-010",
+          "ordered_status": "matched",
+          "requirement": "Continuity improves the center quarter bound to a half bound on a complex neighborhood.",
+          "reviewed_claims": [
+            "Continuity improves the center quarter bound to a half bound on a complex neighborhood."
+          ]
+        },
+        {
+          "id": "I011",
+          "source_lines": [
+            11502,
+            11509
+          ],
+          "status": "matched",
+          "claim": "A common cutoff works along a compact path and on neighborhoods of its points.",
+          "declarations": [
+            "NLS.WeightedCoeff.appendixI_norm_tailOperator_comp_antitone",
+            "NLS.WeightedCoeff.appendixI_compact_family_tail_cutoff",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.appendixI_compact_derivative_cutoff"
+          ],
+          "qualification": "The compact-family theorem gives one cutoff on an open neighborhood whenever a continuous ambient family is given. For the actual source atlas, one cutoff gives a relative quarter bound near any compact subset and a complex half-bound neighborhood for each of its germs. The final density proof uses these intrinsic local germs and local Schur determinants; it does not assert a single globally chosen holomorphic extension along the whole path.",
+          "ordered_group": "I-011",
+          "ordered_status": "matched",
+          "requirement": "A common cutoff works along a compact path and on neighborhoods of its points.",
+          "reviewed_claims": [
+            "A common cutoff works along a compact path and on neighborhoods of its points."
+          ]
+        },
+        {
+          "id": "I012",
+          "source_lines": [
+            11512,
+            11514
+          ],
+          "status": "contextual",
+          "claim": "The proof introduces finite-head and complementary-tail block coordinates.",
+          "declarations": [
+            "NLS.Coeff.sourceI3Projection",
+            "NLS.Coeff.sourceI3Tail",
+            "NLS.SchurComplement.sourceLemmaI1_on_decomposition",
+            "NLS.CompactSpectrum.exists_invertible_complement_compact_shift"
+          ],
+          "qualification": "The printed cutoff notation is compared with the exact symmetric projections. The canonical final Fredholm argument constructs a finite-dimensional invariant summand and a closed invertible complement at each point. This is an alternative local decomposition, not a claim that its summands equal the printed Fourier head and tail.",
+          "ordered_group": "I-012",
+          "ordered_status": "contextual",
+          "requirement": "The proof introduces finite-head and complementary-tail block coordinates.",
+          "reviewed_claims": [
+            "The proof introduces finite-head and complementary-tail block coordinates."
+          ]
+        },
+        {
+          "id": "I013",
+          "source_lines": [
+            11516,
+            11518
+          ],
+          "status": "corrected",
+          "claim": "The lower block acts on the tail space Y and its norm is at most the full output-tail norm.",
+          "declarations": [
+            "NLS.WeightedCoeff.appendixI_tail_block_norm"
+          ],
+          "qualification": "Use L(Y_N), correcting the displayed L(X_N). The positive theorem constructs D on the actual range of the tail projection and proves the bound with constant one. Combining it with the half bound gives the strict premise of I.2.",
+          "ordered_group": "I-013",
+          "ordered_status": "corrected",
+          "requirement": "The lower block acts on the tail space Y and its norm is at most the full output-tail norm.",
+          "reviewed_claims": [
+            "The lower block acts on the tail space Y and its norm is at most the full output-tail norm."
+          ]
+        },
+        {
+          "id": "I014",
+          "source_lines": [
+            11522,
+            11525
+          ],
+          "status": "matched",
+          "claim": "A nonzero finite-dimensional Schur determinant detects invertibility of the derivative.",
+          "declarations": [
+            "NLS.SchurComplement.sourceCorollaryI2_iff",
+            "NLS.SchurComplement.isUnit_block_iff_det_ne_zero",
+            "NLS.CompactSpectrum.exists_local_determinant_of_invertible_complement"
+          ],
+          "qualification": "The determinant is the actual determinant of the finite block. Lower-block invertibility is established before applying the criterion; no determinant of an infinite-dimensional operator is used.",
+          "ordered_group": "I-014",
+          "ordered_status": "matched",
+          "requirement": "A nonzero finite-dimensional Schur determinant detects invertibility of the derivative.",
+          "reviewed_claims": [
+            "A nonzero finite-dimensional Schur determinant detects invertibility of the derivative."
+          ]
+        },
+        {
+          "id": "I015",
+          "source_lines": [
+            11527,
+            11530
+          ],
+          "status": "corrected",
+          "claim": "The Schur expression is Id+A-B(Id+D)^(-1)C.",
+          "declarations": [
+            "NLS.SchurComplement.sourceSchur",
+            "NLS.SchurComplement.sourceSchur_apply",
+            "NLS.SchurComplement.analyticAt_expression"
+          ],
+          "qualification": "Adopt the signs from I.1 directly in the adjacent proof display. The analytic formula is composed from the same blocks and the inverse of the invertible lower block. No new false-positive example is proved.",
+          "ordered_group": "I-015",
+          "ordered_status": "corrected",
+          "requirement": "The Schur expression is Id+A-B(Id+D)^(-1)C.",
+          "reviewed_claims": [
+            "The Schur expression is Id+A-B(Id+D)^(-1)C."
+          ]
+        },
+        {
+          "id": "I016",
+          "source_lines": [
+            11530,
+            11532
+          ],
+          "status": "matched",
+          "claim": "The corrected Schur complement and its finite determinant are analytic.",
+          "declarations": [
+            "NLS.SchurComplement.analyticAt_expression",
+            "NLS.SchurComplement.exists_local_analytic_determinant",
+            "NLS.CompactSpectrum.exists_local_analytic_determinant"
+          ],
+          "qualification": "Local analytic inversion gives the lower-block inverse near the center. Polynomial determinant composition gives a scalar analytic criterion. The final proof allows different local determinants at different centers.",
+          "ordered_group": "I-016",
+          "ordered_status": "matched",
+          "requirement": "The corrected Schur complement and its finite determinant are analytic.",
+          "reviewed_claims": [
+            "The corrected Schur complement and its finite determinant are analytic."
+          ]
+        },
+        {
+          "id": "I017",
+          "source_lines": [
+            11532,
+            11534
+          ],
+          "status": "matched",
+          "claim": "Analytic uniqueness propagates nonvanishing into every nonempty relatively open source set.",
+          "declarations": [
+            "NLS.ComplexAnalysis.subset_closure_of_local_analytic_nonvanishing",
+            "NLS.Coeff.eventuallyEq_of_nonnegative_agreement",
+            "NLS.Coeff.subset_closure_of_nonnegative_local_analytic_nonvanishing",
+            "NLS.WeightedCoeff.eventuallyEq_of_nonnegative_restriction"
+          ],
+          "qualification": "The cone need not have ambient interior. Agreement on its relatively open part determines the ambient analytic germ, including boundary points. A connectedness argument propagates local nonvanishing criteria without requiring one global determinant.",
+          "ordered_group": "I-017",
+          "ordered_status": "matched",
+          "requirement": "Analytic uniqueness propagates nonvanishing into every nonempty relatively open source set.",
+          "reviewed_claims": [
+            "Analytic uniqueness propagates nonvanishing into every nonempty relatively open source set."
+          ]
+        },
+        {
+          "id": "I018",
+          "source_lines": [
+            11534,
+            11535
+          ],
+          "status": "matched",
+          "claim": "The derivative-invertible locus is open and dense and equals the real local-inverse locus.",
+          "declarations": [
+            "NLS.Coeff.open_dense_isUnit_of_nonnegative_analytic_compact_shift",
+            "NLS.WeightedCoeff.open_dense_isUnit_of_nonnegative_analytic_compact_shift",
+            "NLS.WeightedCoeff.NonnegativeAnalyticAtlas.localInversePoints_eq",
+            "NLS.WeightedCoeff.sourcePropositionI4_real_analytic",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.exists_localInverse"
+          ],
+          "qualification": "Openness follows from operator-norm continuity and openness of the units. Relative density follows from the local analytic criteria, and the real inverse theorem supplies both actual inverse identities. The conclusion includes cone boundary points.",
+          "ordered_group": "I-018",
+          "ordered_status": "matched",
+          "requirement": "The derivative-invertible locus is open and dense and equals the real local-inverse locus.",
+          "reviewed_claims": [
+            "The derivative-invertible locus is open and dense and equals the real local-inverse locus."
+          ]
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "id": "I001",
+          "source_lines": [
+            11431,
+            11436
+          ],
+          "status": "matched",
+          "claim": "The original Banach-space operator is represented in bounded direct-sum coordinates.",
+          "declarations": [
+            "NLS.SchurComplement.block",
+            "NLS.SchurComplement.block_apply",
+            "NLS.SchurComplement.one_add_block",
+            "NLS.SchurComplement.source_operator_isUnit_iff"
+          ],
+          "qualification": "A bounded linear equivalence to the product identifies the original Id+T with its two-by-two block operator. The first block need not be finite dimensional at this stage.",
+          "ordered_group": "I-001",
+          "ordered_status": "matched",
+          "requirement": "The original Banach-space operator is represented in bounded direct-sum coordinates.",
+          "reviewed_claims": [
+            "The original Banach-space operator is represented in bounded direct-sum coordinates."
+          ]
+        },
+        {
+          "id": "I002",
+          "source_lines": [
+            11439,
+            11444
+          ],
+          "status": "corrected",
+          "claim": "Assuming Id+D invertible, Id+T is invertible exactly when Id+A-B(Id+D)^(-1)C is invertible.",
+          "declarations": [
+            "NLS.SchurComplement.sourceSchur",
+            "NLS.SchurComplement.sourceSchur_apply",
+            "NLS.SchurComplement.sourceLemmaI1_corrected",
+            "NLS.SchurComplement.sourceLemmaI1_sufficient",
+            "NLS.SchurComplement.sourceLemmaI1_on_decomposition"
+          ],
+          "qualification": "Adopt lower-block invertibility as a premise of the equivalence. The sufficient direction retains the source hypotheses. Historical counterexamples remain unchanged; this comparison adds no refutation.",
+          "ordered_group": "I-002",
+          "ordered_status": "corrected",
+          "requirement": "Assuming Id+D invertible, Id+T is invertible exactly when Id+A-B(Id+D)^(-1)C is invertible.",
+          "reviewed_claims": [
+            "Assuming Id+D invertible, Id+T is invertible exactly when Id+A-B(Id+D)^(-1)C is invertible."
+          ]
+        },
+        {
+          "id": "I003",
+          "source_lines": [
+            11446,
+            11450
+          ],
+          "status": "matched",
+          "claim": "For a finite-dimensional first block, det S nonzero and norm(D)<1 imply invertibility.",
+          "declarations": [
+            "NLS.SchurComplement.source_lower_isUnit_of_norm_lt_one",
+            "NLS.SchurComplement.sourceCorollaryI2_iff",
+            "NLS.SchurComplement.sourceCorollaryI2",
+            "NLS.SchurComplement.sourceCorollaryI2_on_decomposition"
+          ],
+          "qualification": "The strict norm bound gives invertibility of Id+D by the Neumann argument. Under that bound the determinant criterion is also necessary, in the original Banach-space coordinates.",
+          "ordered_group": "I-003",
+          "ordered_status": "matched",
+          "requirement": "For a finite-dimensional first block, det S nonzero and norm(D)<1 imply invertibility.",
+          "reviewed_claims": [
+            "For a finite-dimensional first block, det S nonzero and norm(D)<1 imply invertibility."
+          ]
+        },
+        {
+          "id": "I004",
+          "source_lines": [
+            11452,
+            11453
+          ],
+          "status": "contextual",
+          "claim": "Compactness is equivalent to total boundedness and completeness.",
+          "declarations": [
+            "NLS.Coeff.sourceLemmaI3_compact",
+            "NLS.Coeff.sourceLemmaI3_compactClosure",
+            "NLS.WeightedCoeff.sourceLemmaI3_compact"
+          ],
+          "qualification": "This is the standard metric-space compactness criterion. In the complete coefficient spaces the specialized statements use closedness; they also characterize the compact closure of an arbitrary unweighted set.",
+          "ordered_group": "I-004",
+          "ordered_status": "contextual",
+          "requirement": "Compactness is equivalent to total boundedness and completeness.",
+          "reviewed_claims": [
+            "Compactness is equivalent to total boundedness and completeness."
+          ]
+        },
+        {
+          "id": "I005",
+          "source_lines": [
+            11463,
+            11464
+          ],
+          "status": "matched",
+          "claim": "I.3 retains arbitrary sets, raw pointwise bounds, finite p>=1 and one symmetric tail cutoff for every positive error.",
+          "declarations": [
+            "NLS.Coeff.sourceI3Projection",
+            "NLS.Coeff.sourceI3Tail",
+            "NLS.Coeff.sourceI3Tail_apply",
+            "NLS.Coeff.sourceI3Tail_eq_fourierTail",
+            "NLS.Coeff.sourceLemmaI3",
+            "NLS.WeightedCoeff.sourceLemmaI3",
+            "NLS.WeightedCoeff.norm_sourceI3Tail"
+          ],
+          "qualification": "The head is exactly |n|<=N, the tail |n|>N, and N>=1. Coefficient bounds may depend on n; no global norm bound is supplied. Every positive weight preserves the exact norm and raw coefficient interpretation.",
+          "ordered_group": "I-005",
+          "ordered_status": "matched",
+          "requirement": "I.3 retains arbitrary sets, raw pointwise bounds, finite p>=1 and one symmetric tail cutoff for every positive error.",
+          "reviewed_claims": [
+            "I.3 retains arbitrary sets, raw pointwise bounds, finite p>=1 and one symmetric tail cutoff for every positive error."
+          ]
+        },
+        {
+          "id": "I006",
+          "source_lines": [
+            11470,
+            11479
+          ],
+          "status": "matched",
+          "claim": "I.4 starts with a real-analytic cone map and compact complexified derivative minus identity at its source points.",
+          "declarations": [
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.toComplex",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.toComplex_restriction",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.toComplex_derivative",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.complexifiedDerivative_eq"
+          ],
+          "qualification": "The domain is relatively open in the nonnegative cone. Local real analytic extensions define analyticity at its boundary. Their complex germs and derivative compatibility are constructed. Compactness is assumed only at cone points. Arbitrary positive weights cover every real Sobolev order.",
+          "ordered_group": "I-006",
+          "ordered_status": "matched",
+          "requirement": "I.4 starts with a real-analytic cone map and compact complexified derivative minus identity at its source points.",
+          "reviewed_claims": [
+            "I.4 starts with a real-analytic cone map and compact complexified derivative minus identity at its source points."
+          ]
+        },
+        {
+          "id": "I007",
+          "source_lines": [
+            11481,
+            11481
+          ],
+          "status": "matched",
+          "claim": "One actual local real inverse provides the seed.",
+          "declarations": [
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.localInversePoints",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.toComplex_realLocalInversePoints",
+            "NLS.WeightedCoeff.sourcePropositionI4_real_analytic_of_differentiable_seed"
+          ],
+          "qualification": "The seed is an inverse germ of the original real extension, with both inverse identities. The separately proved weaker seed is a differentiable real left inverse; it does not strengthen the printed hypotheses.",
+          "ordered_group": "I-007",
+          "ordered_status": "matched",
+          "requirement": "One actual local real inverse provides the seed.",
+          "reviewed_claims": [
+            "One actual local real inverse provides the seed."
+          ]
+        },
+        {
+          "id": "I008",
+          "source_lines": [
+            11483,
+            11483
+          ],
+          "status": "matched",
+          "claim": "The set of local diffeomorphism points is relatively open and dense.",
+          "declarations": [
+            "NLS.WeightedCoeff.sourcePropositionI4_real_analytic",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.exists_localInverse",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.localInversePoints_eq_of_atlas"
+          ],
+          "qualification": "The theorem uses preconnectedness, which is weaker than path connectedness. It gives actual real analytic inverses on ambient real neighborhoods, both identities, and recovery of the original cone map near the center. The inverse locus is independent of the atlas.",
+          "ordered_group": "I-008",
+          "ordered_status": "matched",
+          "requirement": "The set of local diffeomorphism points is relatively open and dense.",
+          "reviewed_claims": [
+            "The set of local diffeomorphism points is relatively open and dense."
+          ]
+        },
+        {
+          "id": "I009",
+          "source_lines": [
+            11486,
+            11493
+          ],
+          "status": "matched",
+          "claim": "Compactness of the unit-ball image yields an operator-norm output tail at most one quarter.",
+          "declarations": [
+            "NLS.Coeff.exists_sourceI3Tail_comp_norm_le",
+            "NLS.Coeff.tendsto_sourceI3Tail_comp",
+            "NLS.WeightedCoeff.appendixI_tailOperator",
+            "NLS.WeightedCoeff.appendixI_tailOperator_apply",
+            "NLS.WeightedCoeff.appendixI_compact_tail_cutoff"
+          ],
+          "qualification": "The weighted operator is the exact I.3 tail. All input columns remain present. The cutoff works for every larger N and for any positive error, including 1/4.",
+          "ordered_group": "I-009",
+          "ordered_status": "matched",
+          "requirement": "Compactness of the unit-ball image yields an operator-norm output tail at most one quarter.",
+          "reviewed_claims": [
+            "Compactness of the unit-ball image yields an operator-norm output tail at most one quarter."
+          ]
+        },
+        {
+          "id": "I010",
+          "source_lines": [
+            11495,
+            11499
+          ],
+          "status": "matched",
+          "claim": "Continuity improves the center quarter bound to a half bound on a complex neighborhood.",
+          "declarations": [
+            "NLS.WeightedCoeff.appendixI_local_tail_cutoff",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.appendixI_local_derivative_cutoff"
+          ],
+          "qualification": "The complex neighborhood belongs to the constructed local extension of the original real map. The norm is the original weighted operator norm. Compactness is not assumed on that ambient complex neighborhood.",
+          "ordered_group": "I-010",
+          "ordered_status": "matched",
+          "requirement": "Continuity improves the center quarter bound to a half bound on a complex neighborhood.",
+          "reviewed_claims": [
+            "Continuity improves the center quarter bound to a half bound on a complex neighborhood."
+          ]
+        },
+        {
+          "id": "I011",
+          "source_lines": [
+            11502,
+            11509
+          ],
+          "status": "matched",
+          "claim": "A common cutoff works along a compact path and on neighborhoods of its points.",
+          "declarations": [
+            "NLS.WeightedCoeff.appendixI_norm_tailOperator_comp_antitone",
+            "NLS.WeightedCoeff.appendixI_compact_family_tail_cutoff",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.appendixI_compact_derivative_cutoff"
+          ],
+          "qualification": "The compact-family theorem gives one cutoff on an open neighborhood whenever a continuous ambient family is given. For the actual source atlas, one cutoff gives a relative quarter bound near any compact subset and a complex half-bound neighborhood for each of its germs. The final density proof uses these intrinsic local germs and local Schur determinants; it does not assert a single globally chosen holomorphic extension along the whole path.",
+          "ordered_group": "I-011",
+          "ordered_status": "matched",
+          "requirement": "A common cutoff works along a compact path and on neighborhoods of its points.",
+          "reviewed_claims": [
+            "A common cutoff works along a compact path and on neighborhoods of its points."
+          ]
+        },
+        {
+          "id": "I012",
+          "source_lines": [
+            11512,
+            11514
+          ],
+          "status": "contextual",
+          "claim": "The proof introduces finite-head and complementary-tail block coordinates.",
+          "declarations": [
+            "NLS.Coeff.sourceI3Projection",
+            "NLS.Coeff.sourceI3Tail",
+            "NLS.SchurComplement.sourceLemmaI1_on_decomposition",
+            "NLS.CompactSpectrum.exists_invertible_complement_compact_shift"
+          ],
+          "qualification": "The printed cutoff notation is compared with the exact symmetric projections. The canonical final Fredholm argument constructs a finite-dimensional invariant summand and a closed invertible complement at each point. This is an alternative local decomposition, not a claim that its summands equal the printed Fourier head and tail.",
+          "ordered_group": "I-012",
+          "ordered_status": "contextual",
+          "requirement": "The proof introduces finite-head and complementary-tail block coordinates.",
+          "reviewed_claims": [
+            "The proof introduces finite-head and complementary-tail block coordinates."
+          ]
+        },
+        {
+          "id": "I013",
+          "source_lines": [
+            11516,
+            11518
+          ],
+          "status": "corrected",
+          "claim": "The lower block acts on the tail space Y and its norm is at most the full output-tail norm.",
+          "declarations": [
+            "NLS.WeightedCoeff.appendixI_tail_block_norm"
+          ],
+          "qualification": "Use L(Y_N), correcting the displayed L(X_N). The positive theorem constructs D on the actual range of the tail projection and proves the bound with constant one. Combining it with the half bound gives the strict premise of I.2.",
+          "ordered_group": "I-013",
+          "ordered_status": "corrected",
+          "requirement": "The lower block acts on the tail space Y and its norm is at most the full output-tail norm.",
+          "reviewed_claims": [
+            "The lower block acts on the tail space Y and its norm is at most the full output-tail norm."
+          ]
+        },
+        {
+          "id": "I014",
+          "source_lines": [
+            11522,
+            11525
+          ],
+          "status": "matched",
+          "claim": "A nonzero finite-dimensional Schur determinant detects invertibility of the derivative.",
+          "declarations": [
+            "NLS.SchurComplement.sourceCorollaryI2_iff",
+            "NLS.SchurComplement.isUnit_block_iff_det_ne_zero",
+            "NLS.CompactSpectrum.exists_local_determinant_of_invertible_complement"
+          ],
+          "qualification": "The determinant is the actual determinant of the finite block. Lower-block invertibility is established before applying the criterion; no determinant of an infinite-dimensional operator is used.",
+          "ordered_group": "I-014",
+          "ordered_status": "matched",
+          "requirement": "A nonzero finite-dimensional Schur determinant detects invertibility of the derivative.",
+          "reviewed_claims": [
+            "A nonzero finite-dimensional Schur determinant detects invertibility of the derivative."
+          ]
+        },
+        {
+          "id": "I015",
+          "source_lines": [
+            11527,
+            11530
+          ],
+          "status": "corrected",
+          "claim": "The Schur expression is Id+A-B(Id+D)^(-1)C.",
+          "declarations": [
+            "NLS.SchurComplement.sourceSchur",
+            "NLS.SchurComplement.sourceSchur_apply",
+            "NLS.SchurComplement.analyticAt_expression"
+          ],
+          "qualification": "Adopt the signs from I.1 directly in the adjacent proof display. The analytic formula is composed from the same blocks and the inverse of the invertible lower block. No new false-positive example is proved.",
+          "ordered_group": "I-015",
+          "ordered_status": "corrected",
+          "requirement": "The Schur expression is Id+A-B(Id+D)^(-1)C.",
+          "reviewed_claims": [
+            "The Schur expression is Id+A-B(Id+D)^(-1)C."
+          ]
+        },
+        {
+          "id": "I016",
+          "source_lines": [
+            11530,
+            11532
+          ],
+          "status": "matched",
+          "claim": "The corrected Schur complement and its finite determinant are analytic.",
+          "declarations": [
+            "NLS.SchurComplement.analyticAt_expression",
+            "NLS.SchurComplement.exists_local_analytic_determinant",
+            "NLS.CompactSpectrum.exists_local_analytic_determinant"
+          ],
+          "qualification": "Local analytic inversion gives the lower-block inverse near the center. Polynomial determinant composition gives a scalar analytic criterion. The final proof allows different local determinants at different centers.",
+          "ordered_group": "I-016",
+          "ordered_status": "matched",
+          "requirement": "The corrected Schur complement and its finite determinant are analytic.",
+          "reviewed_claims": [
+            "The corrected Schur complement and its finite determinant are analytic."
+          ]
+        },
+        {
+          "id": "I017",
+          "source_lines": [
+            11532,
+            11534
+          ],
+          "status": "matched",
+          "claim": "Analytic uniqueness propagates nonvanishing into every nonempty relatively open source set.",
+          "declarations": [
+            "NLS.ComplexAnalysis.subset_closure_of_local_analytic_nonvanishing",
+            "NLS.Coeff.eventuallyEq_of_nonnegative_agreement",
+            "NLS.Coeff.subset_closure_of_nonnegative_local_analytic_nonvanishing",
+            "NLS.WeightedCoeff.eventuallyEq_of_nonnegative_restriction"
+          ],
+          "qualification": "The cone need not have ambient interior. Agreement on its relatively open part determines the ambient analytic germ, including boundary points. A connectedness argument propagates local nonvanishing criteria without requiring one global determinant.",
+          "ordered_group": "I-017",
+          "ordered_status": "matched",
+          "requirement": "Analytic uniqueness propagates nonvanishing into every nonempty relatively open source set.",
+          "reviewed_claims": [
+            "Analytic uniqueness propagates nonvanishing into every nonempty relatively open source set."
+          ]
+        },
+        {
+          "id": "I018",
+          "source_lines": [
+            11534,
+            11535
+          ],
+          "status": "matched",
+          "claim": "The derivative-invertible locus is open and dense and equals the real local-inverse locus.",
+          "declarations": [
+            "NLS.Coeff.open_dense_isUnit_of_nonnegative_analytic_compact_shift",
+            "NLS.WeightedCoeff.open_dense_isUnit_of_nonnegative_analytic_compact_shift",
+            "NLS.WeightedCoeff.NonnegativeAnalyticAtlas.localInversePoints_eq",
+            "NLS.WeightedCoeff.sourcePropositionI4_real_analytic",
+            "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.exists_localInverse"
+          ],
+          "qualification": "Openness follows from operator-norm continuity and openness of the units. Relative density follows from the local analytic criteria, and the real inverse theorem supplies both actual inverse identities. The conclusion includes cone boundary points.",
+          "ordered_group": "I-018",
+          "ordered_status": "matched",
+          "requirement": "The derivative-invertible locus is open and dense and equals the real local-inverse locus.",
+          "reviewed_claims": [
+            "The derivative-invertible locus is open and dense and equals the real local-inverse locus."
+          ]
+        }
+      ],
+      "ordered_counts": {
+        "matched": 13,
+        "corrected": 3,
+        "contextual": 2,
+        "partial": 0,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/FunctionalAnalysis/SourceSchurComplement.lean": "6627a31f0641f24901b635c4dc68181f00642cd5a92d6ab180730f638c4d7aa1",
+        "NLS/FunctionalAnalysis/SchurComplement.lean": "77bee65a7e93f1cdb5d1cf751ba54f637052311989f922b1c04d7106fbb21b53",
+        "NLS/FunctionalAnalysis/AnalyticSchurComplement.lean": "228d7a728017facb438ebc63c6fb819853a3c20be26c70e0d87ed3ffcf8a846b",
+        "NLS/FunctionalAnalysis/AnalyticFredholmDensity.lean": "d6f833161af80fad83246e9ffa77471e0d315627beefbe8c9cccbc6c2be5b879",
+        "NLS/FunctionalAnalysis/CompactAnalyticDeterminant.lean": "27e053b2d881800a3cbc62e38c3db4d79ce45a34ccbf87720ff31b917eeefc09",
+        "NLS/FunctionalAnalysis/CompactInvertibleComplement.lean": "47bac9b0dc3c498c5a836b6d392b365760968e758d6885f4a91cb80dc8383748",
+        "NLS/ComplexAnalysis/LocalAnalyticNonvanishing.lean": "0686b39c7a0f5a9fac44be47b048fbe164bbf9ea998cb90e618c11e5835725f7",
+        "NLS/FunctionalAnalysis/NonnegativeAnalyticFredholm.lean": "bce06539e6400a6671d8f7c84bb4de729bbbc1d1c878d83e8098005955f2872d",
+        "NLS/FunctionalAnalysis/WeightedNonnegativeAnalyticFredholm.lean": "30386d5c8c7f9b79323e9d4ad1f91df0c66f74f349ecf1a5445112934956c674",
+        "NLS/SequenceSpaces/SourceLemmaI3.lean": "be8b7788b70aab7f91f52ac94dc1352a92e48c8bfc7ad64ba62b03a04c744e93",
+        "NLS/SequenceSpaces/WeightedSourceLemmaI3.lean": "2c9831b8d34cd3f1e4ad271cd9bc06b37c5027eb44c9a5cd797ab24a512573d0",
+        "NLS/SequenceSpaces/TotalBoundedTails.lean": "29fd4936576e17c2c64c1fff31248acfe506171dd2c54e5cbce9b673d4941a10",
+        "NLS/SequenceSpaces/Compact.lean": "928b78c60136e22cadefe7c3791fcc649052218fe2e0118c44d60c09ea89c578",
+        "NLS/SequenceSpaces/Weighted.lean": "a8c59185e90c1b1b4346ff35ad8ee754ee084cc3a0894c664d01a02ef12732d9",
+        "NLS/SequenceSpaces/SourceCompactProjection.lean": "611f37208aadcccfd525784f3aefee36c486933b66aa4f8b00834d76e0b45a4c",
+        "NLS/SequenceSpaces/NonnegativeAnalyticAtlas.lean": "cd6583ad35b5fa98123400d786b222375b7ed81d56313a9044bcf1c7a2e398b6",
+        "NLS/SequenceSpaces/WeightedNonnegativeAnalyticAtlas.lean": "c738f2ed628014130135c5fdd28b1db886c1076143618ce3a394c074e7711a13",
+        "NLS/SequenceSpaces/NonnegativeAnalyticDensity.lean": "69d828480045328fb3fe31b50edd685f3b95322be7630e191f681b7ea384d92a",
+        "NLS/SequenceSpaces/SourcePropositionI4RealAnalytic.lean": "320194c9583da6d9622d21fc09db62243a3df46663ef4b02bae4988ab414c34d",
+        "NLS/SequenceSpaces/WeightedRealAnalyticAtlas.lean": "6fd9cbc1048deefdac40255230579dfb5be3697011f39dee0375390b3d21f187",
+        "NLS/SequenceSpaces/SourcePropositionI4WeightedReal.lean": "1f79a2d95e86f10c76baf90ca95e8420bc4acf1047252822eeb10aaeeafd1735",
+        "NLS/SequenceSpaces/SourcePropositionI4RealCore.lean": "52791ea5d42e39170f26a001ebafc87eaba95cd627e0aa2b93dc9dd0ba8aae5f",
+        "NLS/SequenceSpaces/RealAtlasInversePredicate.lean": "02a96818b4e84418c566f92fd1d04d0749ed940730540a08f37a75da99294ad9",
+        "NLS/SequenceSpaces/RealAtlasComplexification.lean": "e2167bdceccfd8d66a1b0376d4e79ed5ec8c8677048ba455766829e877a295c1",
+        "NLS/SequenceSpaces/RealAtlasCoordinateGerms.lean": "043e33bf091f542c22e9f82c0406ad16540b8cf075062aaf14efb49851c558be",
+        "NLS/SequenceSpaces/AppendixIUniformCutoff.lean": "24df41859dd7f7086b7f4bc4caba3b025e441e9a2cec31286c564aadc95caa35"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/FunctionalAnalysis/SourceSchurComplement.lean",
+        "NLS/FunctionalAnalysis/SchurComplement.lean",
+        "NLS/FunctionalAnalysis/AnalyticSchurComplement.lean",
+        "NLS/FunctionalAnalysis/AnalyticFredholmDensity.lean",
+        "NLS/FunctionalAnalysis/CompactAnalyticDeterminant.lean",
+        "NLS/FunctionalAnalysis/CompactInvertibleComplement.lean",
+        "NLS/ComplexAnalysis/LocalAnalyticNonvanishing.lean",
+        "NLS/FunctionalAnalysis/NonnegativeAnalyticFredholm.lean",
+        "NLS/FunctionalAnalysis/WeightedNonnegativeAnalyticFredholm.lean",
+        "NLS/SequenceSpaces/SourceLemmaI3.lean",
+        "NLS/SequenceSpaces/WeightedSourceLemmaI3.lean",
+        "NLS/SequenceSpaces/TotalBoundedTails.lean",
+        "NLS/SequenceSpaces/Compact.lean",
+        "NLS/SequenceSpaces/Weighted.lean",
+        "NLS/SequenceSpaces/SourceCompactProjection.lean",
+        "NLS/SequenceSpaces/NonnegativeAnalyticAtlas.lean",
+        "NLS/SequenceSpaces/WeightedNonnegativeAnalyticAtlas.lean",
+        "NLS/SequenceSpaces/NonnegativeAnalyticDensity.lean",
+        "NLS/SequenceSpaces/SourcePropositionI4RealAnalytic.lean",
+        "NLS/SequenceSpaces/WeightedRealAnalyticAtlas.lean",
+        "NLS/SequenceSpaces/SourcePropositionI4WeightedReal.lean",
+        "NLS/SequenceSpaces/SourcePropositionI4RealCore.lean",
+        "NLS/SequenceSpaces/RealAtlasInversePredicate.lean",
+        "NLS/SequenceSpaces/RealAtlasComplexification.lean",
+        "NLS/SequenceSpaces/RealAtlasCoordinateGerms.lean",
+        "NLS/SequenceSpaces/AppendixIUniformCutoff.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "ordered_inventory": "coverage/APPENDIX_I_ASSERTIONS.md",
+      "ordered_inventory_sha256": "d4a22784ef6a284b7dae009cc1cf1e085fe3daa14e0d408959a7db8012b0af7b",
+      "resolved_declarations": [
+        "NLS.Coeff.eventuallyEq_of_nonnegative_agreement",
+        "NLS.Coeff.exists_sourceI3Tail_comp_norm_le",
+        "NLS.Coeff.open_dense_isUnit_of_nonnegative_analytic_compact_shift",
+        "NLS.Coeff.sourceI3Projection",
+        "NLS.Coeff.sourceI3Tail",
+        "NLS.Coeff.sourceI3Tail_apply",
+        "NLS.Coeff.sourceI3Tail_eq_fourierTail",
+        "NLS.Coeff.sourceLemmaI3",
+        "NLS.Coeff.sourceLemmaI3_compact",
+        "NLS.Coeff.sourceLemmaI3_compactClosure",
+        "NLS.Coeff.subset_closure_of_nonnegative_local_analytic_nonvanishing",
+        "NLS.Coeff.tendsto_sourceI3Tail_comp",
+        "NLS.CompactSpectrum.exists_invertible_complement_compact_shift",
+        "NLS.CompactSpectrum.exists_local_analytic_determinant",
+        "NLS.CompactSpectrum.exists_local_determinant_of_invertible_complement",
+        "NLS.ComplexAnalysis.subset_closure_of_local_analytic_nonvanishing",
+        "NLS.SchurComplement.analyticAt_expression",
+        "NLS.SchurComplement.block",
+        "NLS.SchurComplement.block_apply",
+        "NLS.SchurComplement.exists_local_analytic_determinant",
+        "NLS.SchurComplement.isUnit_block_iff_det_ne_zero",
+        "NLS.SchurComplement.one_add_block",
+        "NLS.SchurComplement.sourceCorollaryI2",
+        "NLS.SchurComplement.sourceCorollaryI2_iff",
+        "NLS.SchurComplement.sourceCorollaryI2_on_decomposition",
+        "NLS.SchurComplement.sourceLemmaI1_corrected",
+        "NLS.SchurComplement.sourceLemmaI1_on_decomposition",
+        "NLS.SchurComplement.sourceLemmaI1_sufficient",
+        "NLS.SchurComplement.sourceSchur",
+        "NLS.SchurComplement.sourceSchur_apply",
+        "NLS.SchurComplement.source_lower_isUnit_of_norm_lt_one",
+        "NLS.SchurComplement.source_operator_isUnit_iff",
+        "NLS.WeightedCoeff.NonnegativeAnalyticAtlas.localInversePoints_eq",
+        "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas",
+        "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.appendixI_compact_derivative_cutoff",
+        "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.appendixI_local_derivative_cutoff",
+        "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.complexifiedDerivative_eq",
+        "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.exists_localInverse",
+        "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.localInversePoints",
+        "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.localInversePoints_eq_of_atlas",
+        "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.toComplex",
+        "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.toComplex_derivative",
+        "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.toComplex_realLocalInversePoints",
+        "NLS.WeightedCoeff.NonnegativeRealAnalyticAtlas.toComplex_restriction",
+        "NLS.WeightedCoeff.appendixI_compact_family_tail_cutoff",
+        "NLS.WeightedCoeff.appendixI_compact_tail_cutoff",
+        "NLS.WeightedCoeff.appendixI_local_tail_cutoff",
+        "NLS.WeightedCoeff.appendixI_norm_tailOperator_comp_antitone",
+        "NLS.WeightedCoeff.appendixI_tailOperator",
+        "NLS.WeightedCoeff.appendixI_tailOperator_apply",
+        "NLS.WeightedCoeff.appendixI_tail_block_norm",
+        "NLS.WeightedCoeff.eventuallyEq_of_nonnegative_restriction",
+        "NLS.WeightedCoeff.norm_sourceI3Tail",
+        "NLS.WeightedCoeff.open_dense_isUnit_of_nonnegative_analytic_compact_shift",
+        "NLS.WeightedCoeff.sourceLemmaI3",
+        "NLS.WeightedCoeff.sourceLemmaI3_compact",
+        "NLS.WeightedCoeff.sourcePropositionI4_real_analytic",
+        "NLS.WeightedCoeff.sourcePropositionI4_real_analytic_of_differentiable_seed"
+      ],
+      "declaration_inventory_count": 45015,
+      "qualification": "The eighteen ordered Appendix I groups comprise thirteen matched, three directly corrected and two contextual passages. No partial or pending group remains within this local comparison. The Schur equivalence assumes lower-block invertibility, and its expression has the signs Id+A-B(Id+D)^(-1)C. The lower block acts on the tail space Y. The exact weighted I.3 tails give quarter-to-half operator bounds, one cutoff near compact parameter sets and a common cutoff for the constructed complex germs of the real source atlas. The final relative density theorem uses local compact decompositions, local Schur determinants and analytic uniqueness on the nonnegative cone; one globally chosen holomorphic extension or pathwise determinant is not asserted. Actual real inverse maps and both inverse identities are retained. The precise 2014 reference comparison and broader dissertation completeness remain separate. Historical refutations are unchanged; no new refutations are added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          139,
+          140
+        ],
+        "images": {
+          "work/AppendixHPage139.png": "2d3d4d8b726c1f7d8292ec9ce0764b0c22b1074862e2f5ff2f7fff1f989a9649",
+          "work/tmp/pdfs/appendix-i-ordered-140.png": "a623cac68fc7cf95a962d514452c2ee5ae0a0ec57292fef3f4148aaeb5b4ca45"
+        }
+      },
+      "preceding_review_hash": "96116d74fc52b890a61bde534b318db3ac7882325807c49a936b8548bc85d3d4",
+      "reconciled_previous_reviews": {
+        "work/AppendixISourceComparison-2026-10-27.json": "786af1e3dfca2c6692e98718a1947d7c58c307c2be33e35da58478a51bbd1233",
+        "work/AppendixIUniformCutoffSourceComparison-2026-11-02.json": "96116d74fc52b890a61bde534b318db3ac7882325807c49a936b8548bc85d3d4"
+      },
+      "validation_lean_sources": {
+        "files": 4908,
+        "sha256": "44cd60e6119b813894622c77fab316f381fffc8d0e468efe60483a58a6645559"
+      },
+      "validation_reused_from_commit": "7f0cc3a7d585a7296d162abe47eb178b80afc596",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 48290,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixIUniformCutoffFullCheck.log",
+        "log_sha256": "2aafa8116d0439b2de9319feb10e92b648bbf6aa87ae7e8a89889b965d76b1b4"
+      },
+      "source_record_sha256": "5435cdd21ec16910bbd0a605c32bc3a21ad1d6988133d2f921f66c4133cdbbbb"
     }
   }
 }

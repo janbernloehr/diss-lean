@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [ordered Appendix I ledger](APPENDIX_I_ASSERTIONS.md) compares 18 groups: thirteen matched, three corrected and two contextual. The direct corrections retain lower-block invertibility, the Schur signs and the tail-space domain. Uniform weighted cutoffs connect the actual real source atlas to its complex local germs. The final density proof uses local Schur determinants and cone uniqueness, with actual real inverse maps. The exact 2014 reference comparison and the final whole-dissertation reconciliation remain open.
+
 The [Appendix I weighted uniform cutoffs](APPENDIX_I.md) add 8 checked positive theorems. Publish the reviewed eighteen-group ordered Appendix I comparison, retaining the corrected Schur premise, signs and lower-block space, and the local analytic proof on the original nonnegative cone. Then reconcile the whole-dissertation ledger and its remaining qualifications. The broader completeness qualifications below remain.
 
 The [ordered Appendix H ledger](APPENDIX_H_ASSERTIONS.md) compares 14 groups: twelve matched, one corrected and one contextual. The literal Hamiltonian integrals retain the original H^(k-1) regularity; H.1 keeps the weak derivative and canonical graded remainder. The direct phase correction is absorbed in the reduced H.2 polynomial, chosen before all real H^m sources. The exact 2014 reference comparison remains open. Appendix I is next.
