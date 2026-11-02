@@ -59,6 +59,7 @@ modules+=(NLS/KdV/HillL2DiscAsymptotics NLS/ZakharovShabat/ContinuousPotentialL2
 modules+=(NLS/KdV/ActionHamiltonianMoments NLS/ComplexAnalysis/TracePrimitiveFunctoriality NLS/KdV/ClassicalL2PrimitiveAgreement NLS/ComplexAnalysis/PositiveRealPart NLS/KdV/HillL2HalfPlaneSheets NLS/ComplexAnalysis/UpperTracePrimitiveExtension NLS/KdV/HillL2RegularBoundary NLS/ComplexAnalysis/RealCoshTrace NLS/KdV/HillL2BoundaryGapProfile NLS/KdV/HillL2UpperCutAgreement)
 modules+=(NLS/ComplexAnalysis/UpperLogarithmBoundary NLS/KdV/HillL2AllBoundaryLimits NLS/ComplexAnalysis/ParametricUpperLogarithmBoundary NLS/KdV/HillL2BoundaryLabelContinuity NLS/KdV/HillL2AllEndpointNormalization NLS/KdV/HillL2GlobalGapBoundaryValues NLS/KdV/HillL2BandContinuation)
 modules+=(NLS/ComplexAnalysis/ClosedUpperExtension NLS/KdV/HillL2CutBounds NLS/ComplexAnalysis/RealGapDiscIsolation NLS/KdV/HillRealGapContours NLS/ComplexAnalysis/BoundedPuncturedCircleIntegral NLS/KdV/HillL2AllGapContourIntegrals NLS/KdV/HillL2RealCutDifferential NLS/KdV/HillL2RealContourMoments)
+modules+=(NLS/ComplexAnalysis/BoundaryAnalyticCoordinate NLS/ComplexAnalysis/CoshSquareLocalCoordinate NLS/KdV/HillL2AllGapSquares NLS/ComplexAnalysis/ShiftedSquarePeriod NLS/KdV/HillL2SquareGapPeriods NLS/KdV/HillHierarchyMomentSummability NLS/KdV/HillL2EndpointContinuity NLS/KdV/HillL2GroundSquare)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

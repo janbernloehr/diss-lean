@@ -172,6 +172,14 @@ import NLS.ComplexAnalysis.BoundedPuncturedCircleIntegral
 import NLS.KdV.HillL2AllGapContourIntegrals
 import NLS.KdV.HillL2RealCutDifferential
 import NLS.KdV.HillL2RealContourMoments
+import NLS.ComplexAnalysis.BoundaryAnalyticCoordinate
+import NLS.ComplexAnalysis.CoshSquareLocalCoordinate
+import NLS.KdV.HillL2AllGapSquares
+import NLS.ComplexAnalysis.ShiftedSquarePeriod
+import NLS.KdV.HillL2SquareGapPeriods
+import NLS.KdV.HillHierarchyMomentSummability
+import NLS.KdV.HillL2EndpointContinuity
+import NLS.KdV.HillL2GroundSquare
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -323,7 +331,11 @@ run_cmd do
     ``NLS.ComplexAnalysis.exists_bound_realBoundaryExtension_on_closedBall,
     ``NLS.ComplexAnalysis.ofReal_mem_ordered_segment,
     ``NLS.ComplexAnalysis.real_gap_disc_exterior_band,
-    ``NLS.ComplexAnalysis.circleIntegral_eq_zero_of_bounded_puncture]
+    ``NLS.ComplexAnalysis.circleIntegral_eq_zero_of_bounded_puncture,
+    ``NLS.ComplexAnalysis.continuousAt_realBoundaryExtension_of_limits,
+    ``NLS.ComplexAnalysis.analyticAt_of_continuousAt_coordinate,
+    ``NLS.ComplexAnalysis.deriv_coshSquareCoordinate_sq_ne_zero,
+    ``NLS.ComplexAnalysis.circleIntegral_pow_mul_shifted_square]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
