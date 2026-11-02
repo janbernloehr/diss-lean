@@ -146,10 +146,17 @@
         "NLS.KdV.exists_classicalHill_high_primitive_strip",
         "NLS.KdV.classicalHillTrace_level_of_zero_and_phase",
         "NLS.KdV.tendsto_classicalHillShiftedPrimitive_at_branch",
-        "NLS.KdV.exists_classicalHill_high_energy_endpoint_normalization"
+        "NLS.KdV.exists_classicalHill_high_energy_endpoint_normalization",
+        "NLS.KdV.tendsto_classicalHillShiftedPrimitive_joint_at_branch",
+        "NLS.KdV.eventuallyEq_of_squaredCosh_eq",
+        "NLS.KdV.classicalHill_squared_primitive_germ_unique",
+        "NLS.KdV.classicalHill_squared_primitive_fderiv",
+        "NLS.KdV.classicalHill_squared_primitive_energy_order",
+        "NLS.KdV.ClassicalHillHighGapPair.squared_primitive_multiplicity",
+        "NLS.KdV.exists_classicalHill_high_squared_primitive_matching"
       ],
       "remaining": [
-        "Use the proved high endpoint limits F -> -i*n*pi to fill and identify joint analytic squared-primitive charts and canonical gap cuts; handle the central endpoints and identify the shared global L2 labels. Prove nonpositivity and gap-scale bounds for the actual moments.",
+        "Glue the identified joint endpoint squared-primitive charts across entire gaps and canonical cuts; fill the unsquared endpoint values, handle central endpoints and identify the shared global L2 labels. Prove nonpositivity and gap-scale bounds for actual moments.",
         "Construct physical KdV contour moments and analytic descent on one complex neighborhood of the weighted ell^(-1,1) nonnegative cone (Lemma 4.6(ii)).",
         "Prove locally common complex-neighborhood bounds |8*n*pi*R_n| <= C*|I_n|^2 for those moments.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
@@ -283,7 +290,9 @@
     "simple_spectral_zero_assumed": false,
     "global_gap_normalization_proved": false,
     "action_descent_proved": false,
-    "matching": "The local squared primitive agrees with the square of every sufficiently small normalized branch satisfying 2*cosh(F)=sigma*Delta, sigma^2=1."
+    "matching": "The local squared primitive agrees with the square of every sufficiently small normalized branch satisfying 2*cosh(F)=sigma*Delta, sigma^2=1.",
+    "actual_high_squared_primitive_identified_on_joint_endpoint_charts": true,
+    "actual_high_squared_primitive_multiplicities_identified": true
   },
   "source_continuation_progress": {
     "domain": "Energy in the complex slit plane; Delta(lambda,s*q)^2-4 nonzero for every real s in [0,1].",
@@ -314,7 +323,9 @@
     "primitive_pure_imaginary_at_admissible_real_energies": true,
     "indexed_high_endpoint_limits_proved": true,
     "high_shifted_primitive_uniform_imaginary_strip": "|Im(F(z^2,q)+i*n*pi)|<pi/2 at all admissible high-disc points on a common complex potential neighborhood.",
-    "uniform_free_trace_approximation_on_complete_high_discs": true
+    "uniform_free_trace_approximation_on_complete_high_discs": true,
+    "joint_energy_potential_high_endpoint_limit_proved": true,
+    "actual_high_squared_primitive_joint_local_matching_proved": true
   },
   "high_contour_progress": {
     "potential_topology": "Sup-norm Banach space C([0,1], C), allowing complex perturbations.",
@@ -399,7 +410,14 @@
     "collapsed_high_gaps_included": true,
     "literal_total_formula_value_at_branch_point_asserted": false,
     "central_endpoint_limits_proved": false,
-    "joint_squared_primitive_matching_proved": false,
-    "Hminus1_or_action_space_extension_proved": false
+    "joint_squared_primitive_matching_proved": true,
+    "Hminus1_or_action_space_extension_proved": false,
+    "joint_energy_potential_endpoint_limit_proved": true,
+    "joint_squared_primitive_matching_scope": "Local open joint charts at every high branch point, agreeing with actual F_n^2 on admissible parameters of the high energy region; no entire-gap gluing yet.",
+    "normalized_squared_chart_unique_as_joint_germ": true,
+    "full_joint_squared_chart_derivative": "dK=(-1)^n*dDelta",
+    "squared_chart_energy_order_equals_actual_radicand_order": true,
+    "actual_high_pair_multiplicities_retained_including_double_zeros": true,
+    "entire_gap_squared_primitive_gluing_proved": false
   }
 }

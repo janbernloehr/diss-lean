@@ -45,40 +45,38 @@ theorem classicalHillTrace_level_of_zero_and_phase
   · rw [he] at hphase
     norm_num at hphase
 
-/-- Along any admissible approach with the canonical imaginary strip,
-the shifted primitive tends to zero at the actual parity branch point.
-The statement imposes no simplicity or noncollapsed-gap hypothesis. -/
-theorem tendsto_classicalHillShiftedPrimitive_at_branch
-    {A : Type*} {l : Filter A} (q : Curve ℂ) (n : ℕ) (b : ℂ) (w : A → ℂ)
-    (hw : Tendsto w l (𝓝 b))
-    (hdom : ∀ᶠ i in l, (w i^2,q) ∈ classicalHillContinuationDomain)
+/-- The normalized endpoint limit is joint in energy and complex potential.
+Only actual domain membership and the canonical imaginary strip are needed
+along the approach; no spectral root is required to move analytically. -/
+theorem tendsto_classicalHillShiftedPrimitive_joint_at_branch
+    {A : Type*} {l : Filter A} (p : ℂ × Curve ℂ) (n : ℕ) (v : A → ℂ × Curve ℂ)
+    (hv : Tendsto v l (𝓝 p))
+    (hdom : ∀ᶠ i in l, v i ∈ classicalHillContinuationDomain)
     (hstrip : ∀ᶠ i in l,
-      |(classicalHillContinuedPrimitive (w i^2,q)+I*(n : ℂ)*Real.pi).im| < Real.pi/2)
-    (hbranch : classicalHillDiscriminant q (b^2) = 2*(-1 : ℂ)^n) :
-    Tendsto (fun i => classicalHillContinuedPrimitive (w i^2,q)+I*(n : ℂ)*Real.pi) l (𝓝 0) := by
-  have hparam : Continuous (fun z : ℂ => (z^2,q)) := by fun_prop
-  have hall : Continuous (fun p : ℂ × Curve ℂ => classicalHillDiscriminant p.2 p.1) :=
+      |(classicalHillContinuedPrimitive (v i)+I*(n : ℂ)*Real.pi).im| < Real.pi/2)
+    (hbranch : classicalHillDiscriminant p.2 p.1 = 2*(-1 : ℂ)^n) :
+    Tendsto (fun i => classicalHillContinuedPrimitive (v i)+I*(n : ℂ)*Real.pi) l (𝓝 0) := by
+  have hall : Continuous (fun t : ℂ × Curve ℂ => classicalHillDiscriminant t.2 t.1) :=
     analyticOnNhd_classicalHillDiscriminant_joint.continuous
-  have hcont : Continuous (fun z : ℂ => classicalHillDiscriminant q (z^2)) :=
-    hall.comp (f := fun z : ℂ => (z^2,q)) hparam
-  have hD := (hcont.tendsto b).comp hw
-  rw [hbranch] at hD
+  have hD : Tendsto (fun i => classicalHillDiscriminant (v i).2 (v i).1) l
+      (𝓝 (2*(-1 : ℂ)^n)) := by
+    simpa only [Function.comp_def,hbranch] using (hall.tendsto p).comp hv
   have hs : ((-1 : ℂ)^n)^2 = 1 := by simpa only [pow_two] using index_sign_mul_self n
-  have hR : Tendsto (fun i => classicalHillRadicand (w i^2,q)) l (𝓝 0) := by
+  have hR : Tendsto (fun i => classicalHillRadicand (v i)) l (𝓝 0) := by
     have h := (hD.pow 2).sub_const 4
     have he : (2*(-1 : ℂ)^n)^2-4 = 0 := by rw [mul_pow,hs]; norm_num
     simpa only [classicalHillRadicand,he,Function.comp_def] using h
-  have hroot : Tendsto (fun i => classicalHillContinuedRoot (w i^2,q)) l (𝓝 0) := by
+  have hroot : Tendsto (fun i => classicalHillContinuedRoot (v i)) l (𝓝 0) := by
     apply tendsto_zero_iff_norm_tendsto_zero.mpr
-    have hn : Tendsto (fun i => ‖classicalHillRadicand (w i^2,q)‖) l (𝓝 0) := by
+    have hn : Tendsto (fun i => ‖classicalHillRadicand (v i)‖) l (𝓝 0) := by
       simpa only [norm_zero] using hR.norm
     have ht := Real.continuous_sqrt.continuousAt.tendsto.comp hn
-    have heq : (fun i => Real.sqrt ‖classicalHillRadicand (w i^2,q)‖) =ᶠ[l]
-        fun i => ‖classicalHillContinuedRoot (w i^2,q)‖ := by
+    have heq : (fun i => Real.sqrt ‖classicalHillRadicand (v i)‖) =ᶠ[l]
+        fun i => ‖classicalHillContinuedRoot (v i)‖ := by
       filter_upwards [hdom] with i hi
       rw [← classicalHillContinuedRoot_sq _ hi,norm_pow,Real.sqrt_sq (norm_nonneg _)]
     simpa only [Real.sqrt_zero] using ht.congr' heq
-  have hE : Tendsto (fun i => exp (classicalHillContinuedPrimitive (w i^2,q)+I*(n : ℂ)*Real.pi))
+  have hE : Tendsto (fun i => exp (classicalHillContinuedPrimitive (v i)+I*(n : ℂ)*Real.pi))
       l (𝓝 1) := by
     have h := ((hD.add hroot).div_const 2).const_mul ((-1 : ℂ)^n)
     have he : (-1 : ℂ)^n*((2*(-1 : ℂ)^n+0)/2) = 1 := by
@@ -90,13 +88,28 @@ theorem tendsto_classicalHillShiftedPrimitive_at_branch
     rfl
   have hlog := (continuousAt_clog (by simp : (1 : ℂ) ∈ slitPlane)).tendsto.comp hE
   have hlog0 : Tendsto (fun i => log (exp
-      (classicalHillContinuedPrimitive (w i^2,q)+I*(n : ℂ)*Real.pi))) l (𝓝 0) := by
+      (classicalHillContinuedPrimitive (v i)+I*(n : ℂ)*Real.pi))) l (𝓝 0) := by
     simpa only [log_one,Function.comp_def] using hlog
   apply hlog0.congr'
   filter_upwards [hstrip] with i hi
   apply log_exp
   · linarith [(abs_lt.mp hi).1,Real.pi_pos]
   · linarith [(abs_lt.mp hi).2,Real.pi_pos]
+
+/-- Fixed-potential frequency approaches are a special case of the
+joint endpoint normalization, including multiple and collapsed zeros. -/
+theorem tendsto_classicalHillShiftedPrimitive_at_branch
+    {A : Type*} {l : Filter A} (q : Curve ℂ) (n : ℕ) (b : ℂ) (w : A → ℂ)
+    (hw : Tendsto w l (𝓝 b))
+    (hdom : ∀ᶠ i in l, (w i^2,q) ∈ classicalHillContinuationDomain)
+    (hstrip : ∀ᶠ i in l,
+      |(classicalHillContinuedPrimitive (w i^2,q)+I*(n : ℂ)*Real.pi).im| < Real.pi/2)
+    (hbranch : classicalHillDiscriminant q (b^2) = 2*(-1 : ℂ)^n) :
+    Tendsto (fun i => classicalHillContinuedPrimitive (w i^2,q)+I*(n : ℂ)*Real.pi) l (𝓝 0) := by
+  have hparam : Continuous (fun z : ℂ => (z^2,q)) := by fun_prop
+  have hp : Tendsto (fun i => (w i^2,q)) l (𝓝 (b^2,q)) := by
+    simpa only [Function.comp_def] using (hparam.tendsto b).comp hw
+  exact tendsto_classicalHillShiftedPrimitive_joint_at_branch (b^2,q) n _ hp hdom hstrip hbranch
 
 /-- At every actual high branch point of every real potential in one
 complex neighborhood, the normalized limit is zero from both nonreal

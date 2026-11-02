@@ -18,7 +18,9 @@ are ordered. The actual half-plane sheets and reflected primitive are now
 identified from the free normalization, giving reality of the actual high
 cubic moments. Uniform high-disc approximation now fixes the shifted
 primitive strip and its indexed limits at every actual high branch point,
-including double roots. The analytic summation also allows a local finite spectral cutoff.
+including double roots. Joint analytic endpoint charts now agree with the
+actual shifted primitive square and preserve physical multiplicities.
+The analytic summation also allows a local finite spectral cutoff.
 Analytic squared primitive charts at
 both signs of the branch locus are also constructed. The earlier local
 concavity/inverse preparation is preserved.
@@ -478,8 +480,9 @@ This is derived from the actual periodic root-space parity and canonical
 trace-level theorem. It holds for complex potentials, without imposing
 the NLS real-type condition. It fixes the trace sign; the global primitive
 limits `F -> -i*n*pi` at these high endpoints are now proved below from
-both nonreal energy half-planes. Filling the normalized squared-primitive
-charts and matching the complete canonical cuts remain required.
+both nonreal energy half-planes. The joint endpoint squared-primitive charts are now matched below.
+Gluing across the entire gaps and matching the complete canonical cuts
+remain required.
 
 The energy midpoint and squared gap are constructed from the intrinsic
 frequency midpoint `m` and squared gap `g` by the exact formulas
@@ -641,9 +644,46 @@ F(mu,q) -> -i*n*pi as mu -> lambda through Im(mu) != 0.
 Both energy half-planes are included in the same limit. Simple and double
 zeros are treated identically. No value of the total source-domain formula
 at an excluded branch point is asserted: the theorem constructs the
-normalized boundary limit. Continuous endpoint filling, joint analytic
-squared-primitive matching, central endpoints, the gap-scale estimates
-and the H^-1/action identification remain required.
+normalized boundary limit. The joint analytic squared-primitive matching is now proved below.
+Continuous unsquared endpoint filling, entire-gap gluing, central endpoints,
+the gap-scale estimates and the H^-1/action identification remain required.
+
+## Actual joint squared-primitive matching at high endpoints
+
+The endpoint normalization is now strengthened to joint approaches in
+energy and complex continuous potential. The endpoint need not move
+analytically: `tendsto_classicalHillShiftedPrimitive_joint_at_branch` allows
+any convergent joint parameter family satisfying the actual continuation
+domain and the proved imaginary strip. Its proof retains the physical
+root, multiplier and free-normalized logarithm.
+
+[`ClassicalHillSquaredPrimitiveMatching.lean`](../../../NLS/KdV/ClassicalHillSquaredPrimitiveMatching.lean)
+uses that limit to remove the earlier small-branch matching hypothesis.
+`exists_classicalHill_high_squared_primitive_matching` chooses a cutoff and
+complex potential neighborhood before every high index and every actual
+branch point. At each such point it constructs a complex open joint patch
+and an analytic function K with
+
+```
+K(lambda,q) = 0,
+squaredCosh(K(mu,a)) = (-1)^n * Delta(a,mu)/2,
+K(mu,a) = (F(mu,a)+i*n*pi)^2 on admissible parameters in the high region.
+```
+
+Thus the local inverse is identified with the actual squared primitive,
+not an arbitrary cosh branch. This includes collapsed gaps and complex
+potential perturbations. The equality is on an actual open joint patch
+intersected with the constructed admissible high domain, not only along
+one selected spectral sequence. It does not yet glue these endpoint
+patches across an entire gap or fill a full canonical cut complement.
+
+Normalized squared-primitive charts are unique as joint germs, including
+on the branch locus, by the local squared-cosh inverse. Their exact full
+joint derivative is `dK = (-1)^n * dDelta`. The energy analytic order of K
+is proved equal to that of the actual radicand. In particular, the actual
+high-pair multiplicity theorem transfers unchanged: a double collapsed
+endpoint gives analytic order two for K. These conclusions impose no
+nonzero energy derivative and do not assume simple zeros.
 
 ## Earlier checked local consequences
 
@@ -672,9 +712,10 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    proved, including actual unordered high energy pairs, their analytic
    symmetric data, real ordering, global off-real primitive coverage and common
    high-contour coverage in the continuous potential norm; complete global
-   spectral matching, central endpoint normalization, joint squared-primitive
-   matching and rough-operator identification remain. The high indexed
-   endpoint limits at real continuous potentials are now proved.
+   spectral matching, central endpoint normalization, entire-gap gluing of
+   the identified joint squared-primitive charts and rough-operator
+   identification remain. The high indexed endpoint limits and local
+   joint squared-primitive matching are now proved.
    Prove analytic descent to
    the weighted actions on a common complex neighborhood (Lemma 4.6(ii)).
 2. Prove their **complex-neighborhood** quadratic action bounds, including
@@ -720,10 +761,10 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All thirty-nine modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All forty modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
-426 constants in their two namespaces, including generated declarations,
+435 constants in their two namespaces, including generated declarations,
 transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
