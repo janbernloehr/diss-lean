@@ -31,6 +31,7 @@ view = root / '.lake/article-check/lib/lean'
 logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
+    'NLS.RealAnalysis.SplitRootGap',
     'NLS.Fourier.PeriodicWeightCongruence',
     'NLS.SequenceSpaces.ConjugateReflection',
     'NLS.SequenceSpaces.WeightedAnalyticRealization',
@@ -128,11 +129,13 @@ modules = [
     'NLS.KdV.PseudomeasureComplexRiesz',
     'NLS.KdV.PseudomeasureComplexCounting',
     'NLS.KdV.PseudomeasureSpectralLipschitz',
+    'NLS.KdV.PseudomeasureCouplingLipschitz',
     'NLS.KdV.PseudomeasureDiagonalRoot',
     'NLS.KdV.PseudomeasureDiagonalRootConjugation',
     'NLS.KdV.PseudomeasureDiagonalRootAnalytic',
     'NLS.KdV.PseudomeasureRootSeparation',
     'NLS.KdV.PseudomeasureRealPairs',
+    'NLS.KdV.PseudomeasureRealGapComparison',
     'NLS.KdV.PseudomeasureComplexPairs',
     'NLS.KdV.PseudomeasureWeightedGaps',
     'NLS.KdV.PseudomeasureWideLocalization',
@@ -196,6 +199,7 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralAdaptedInverse',
     'NLS.Articles.KdVPseudomeasures.SpectralRealAdapted',
     'NLS.Articles.KdVPseudomeasures.SpectralInverseRestriction',
+    'NLS.Articles.KdVPseudomeasures.SpectralInverseGapComparison',
     'NLS.Articles.KdVPseudomeasures.SpectralAdaptedDiffeomorphism',
     'NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps',
     'NLS.Articles.KdVPseudomeasures.Audit',

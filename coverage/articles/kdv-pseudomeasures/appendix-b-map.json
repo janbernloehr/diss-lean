@@ -186,10 +186,10 @@
     "net_qualification": "Arbitrary-filter statements require specified eventual endpoint bounds; no inference that arbitrary weak-star convergent nets are eventually norm bounded is used.",
     "validation": {
       "fresh_build": true,
-      "modules_checked": 168,
-      "audited_declarations": 1480,
-      "theorems": 1220,
-      "definitions": 260,
+      "modules_checked": 172,
+      "audited_declarations": 1494,
+      "theorems": 1232,
+      "definitions": 262,
       "warnings": 0,
       "tactic_suggestions": 0,
       "allowed_axioms": [
@@ -198,7 +198,7 @@
         "Quot.sound"
       ],
       "empty_axiom_sets_allowed": true,
-      "log": ".lake/article-check/logs/validation-inverse-restriction.log"
+      "log": ".lake/article-check/logs/validation-real-gap-comparison.log"
     },
     "canonical_checkout": "Sources and build outputs kept read-only.",
     "main_theorems_verified": false,
