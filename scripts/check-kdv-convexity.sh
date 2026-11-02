@@ -14,7 +14,11 @@ if [[ "$build" == "$reference/.lake" || "$build" == "$reference/.lake/"* ]]; the
 fi
 lean_bin="$ELAN_HOME/toolchains/leanprover--lean4---v4.33.1/bin/lean"
 [[ -x "$lean_bin" ]]
-mkdir -p -- "$build/lib/NLS/Articles/KdVConvexity" "$build/logs"
+if [[ -L "$build/lib/NLS/KdV" ]]; then
+  echo "Refusing shared-library output through a linked KdV import directory." >&2
+  exit 1
+fi
+mkdir -p -- "$build/lib/NLS/KdV" "$build/lib/NLS/Articles/KdVConvexity" "$build/logs"
 # Only specific Lean output paths below are writable build targets. Generic
 # namespace links are imports; this directory must never be used by lake build.
 for entry in "$reference/.lake/build/lib/lean/NLS/"*; do
@@ -30,11 +34,12 @@ done
 export LEAN_PATH
 LEAN_PATH="$(IFS=:; echo "${import_paths[*]}")"
 cd -- "$repo"
-for module in LocalConsequences AnalyticSeries GlobalExtension ActionEmbedding BaseContourSeries; do
+for module in KdV/ActionHamiltonianMoments KdV/ActionHamiltonianTrace KdV/ActionHamiltonianFiniteGap Articles/KdVConvexity/LocalConsequences Articles/KdVConvexity/AnalyticSeries Articles/KdVConvexity/GlobalExtension Articles/KdVConvexity/ActionEmbedding Articles/KdVConvexity/BaseContourSeries; do
+  log_name="${module//\//.}"
   if ! "$lean_bin" -R "$repo" -DwarningAsError=true \
-      -o "$build/lib/NLS/Articles/KdVConvexity/$module.olean" \
-      "$repo/NLS/Articles/KdVConvexity/$module.lean" > "$build/logs/$module.log" 2>&1; then
-    cat -- "$build/logs/$module.log"
+      -o "$build/lib/NLS/$module.olean" \
+      "$repo/NLS/$module.lean" > "$build/logs/$log_name.log" 2>&1; then
+    cat -- "$build/logs/$log_name.log"
     exit 1
   fi
   echo "Checked $module"

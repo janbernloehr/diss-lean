@@ -60,7 +60,15 @@
         "NLS.Articles.KdVConvexity.baseActionInclusion",
         "NLS.Articles.KdVConvexity.norm_baseActionInclusion",
         "NLS.Articles.KdVConvexity.preimage_base_neighborhood",
-        "NLS.Articles.KdVConvexity.global_analytic_contour_sum_from_base_moments"
+        "NLS.Articles.KdVConvexity.global_analytic_contour_sum_from_base_moments",
+        "NLS.KdV.primitiveAction_eq_derivative_period",
+        "NLS.KdV.cubicMoment_eq_zero_of_analyticOnNhd",
+        "NLS.KdV.norm_cubicMoment_le",
+        "NLS.KdV.norm_weighted_cubicMoment_le_action_sq",
+        "NLS.KdV.analyticOnNhd_cubicMoment",
+        "NLS.KdV.even_period_eq_zero",
+        "NLS.KdV.quartic_gap_contribution",
+        "NLS.KdV.finite_gap_contour_identity"
       ],
       "remaining": [
         "Construct physical KdV contour moments and analytic descent on one complex neighborhood of the weighted ell^(-1,1) nonnegative cone (Lemma 4.6(ii)).",
@@ -126,7 +134,7 @@
       ]
     }
   ],
-  "completion_status": "partial_article_verification_global_analytic_summation_proved_physical_inputs_missing",
+  "completion_status": "partial_verification_analytic_summation_and_shared_contour_calculus_proved_physical_data_missing",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean",
   "branch": "articles/kdv-convexity",
   "global_extension_progress": {
@@ -137,5 +145,28 @@
     "base_action_norm": "sum_{n>=1} |I_n|/(1+n)",
     "exact_weighted_summand": "8*n*pi*R_n",
     "derivative_at_zero_from_quadratic_bound_proved": true
+  },
+  "contour_calculus_progress": {
+    "source_labels": [
+      "(4.8)",
+      "(4.11)",
+      "(4.12)",
+      "Proposition 4.5 contour calculation",
+      "Lemma 4.6 contour bound and analytic integration step"
+    ],
+    "source_pages": [
+      28,
+      29,
+      30
+    ],
+    "normalization": "counterclockwise contours; I=-(1/pi)*integral F_n, R=(1/pi)*integral F_n^3; coefficients 8*n^3*pi^3 and 8*n*pi",
+    "literal_integrals_defined": true,
+    "contour_decomposition_proved": true,
+    "primitive_joint_analyticity_implies_moment_analyticity_proved": true,
+    "primitive_gap_bounds_imply_quadratic_action_estimate_proved": true,
+    "physical_primitive_constructed": false,
+    "physical_energy_identification_proved": false,
+    "explicit_quadratic_constant": "16*pi*B*A^3*K^2 when radius <= B*gamma, |F| <= A*gamma/n, gamma^2/n <= K*|I|",
+    "remaining": "Physical Hill primitive and analytic squares; admissible contours and complex-neighborhood primitive/gap-action bounds; action-space descent; physical high-energy expansion (4.7)."
   }
 }

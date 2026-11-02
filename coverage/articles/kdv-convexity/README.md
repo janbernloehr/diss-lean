@@ -108,6 +108,58 @@ bounds |8*n*pi*R_n| <= C*|I_n|^2 hold there. These spectral hypotheses are
 explicit arguments. The result neither constructs R_n nor asserts that an
 arbitrary input family is the KdV Hamiltonian.
 
+## Shared contour-moment and trace proofs
+
+[`NLS/KdV/ActionHamiltonianMoments.lean`](../../../NLS/KdV/ActionHamiltonianMoments.lean)
+defines the literal counterclockwise quantities
+`primitiveAction F = -(1/pi)*integral F` and
+`cubicMoment F = (1/pi)*integral F^3` from (4.8) and the integration by
+parts preceding (4.12). It proves:
+
+- `primitiveAction_eq_derivative_period`: equality to the original
+  `(1/pi)*integral lambda*F'(lambda)` expression, using the existing
+  closed-circle integration-by-parts theorem.
+- `cubicMoment_eq_zero_of_analyticOnNhd`: zero moment when the primitive
+  extends analytically through the enclosed gap.
+- `norm_cubicMoment_le`: the explicit bound `|R| <= 2*r*A^3` from a
+  primitive bound A on a radius-r circle.
+- `norm_weighted_cubicMoment_le_action_sq`: if `r<=B*gamma`,
+  `|F|<=A*gamma/n` on the contour and `gamma^2/n<=K*|I|`, then
+  `|8*n*pi*R|<=16*pi*B*A^3*K^2*|I|^2`. The action may be complex.
+- `analyticOnNhd_cubicMoment`: joint analyticity of the primitive on a
+  neighborhood of one fixed contour throughout an open parameter
+  neighborhood gives analytic cubic moments in the Banach parameter norm.
+
+[`NLS/KdV/ActionHamiltonianTrace.lean`](../../../NLS/KdV/ActionHamiltonianTrace.lean)
+proves vanishing of all even primitive periods from analyticity of the
+square through the disc. `quartic_gap_contribution` then proves exactly
+(4.12), including both normalization constants and the sign:
+
+```text
+-4/(2*pi*i) integral (F_n-i*n*pi)^4
+  = (8*n^3*pi^3)*primitiveAction(F_n) + (8*n*pi)*cubicMoment(F_n).
+```
+
+[`NLS/KdV/ActionHamiltonianFiniteGap.lean`](../../../NLS/KdV/ActionHamiltonianFiniteGap.lean)
+reuses the existing finite-hole Cauchy theorem.
+`finite_gap_contour_identity` proves that the normalized exterior quartic
+period is the finite sum of those linear action and nonlinear moment
+terms. The analytic hypotheses concern the actual quartic function on a
+perforated disc, disjoint/enclosed isolating circles, and the local
+normalized primitives and their analytic squares. No contour deformation
+identity or Hamiltonian trace conclusion is supplied as an assumption.
+
+These are reusable KdV developments, rather than copies under the article
+namespace. They discharge the contour calculations of (4.11)–(4.12) and
+the analytic/norm step for the literal cubic integrals. They do **not**
+construct the physical Hill primitive, prove its gap bounds or action
+descent, or identify the exterior coefficient with physical energy. In
+particular, Proposition 4.5 itself still needs the physical high-energy
+expansion (4.7) and the physical action identification. The moment estimate
+on a shrinking circle also needs an admissible deformation and spectral
+bounds when applied to the actual primitive; a real cut estimate alone
+has not been substituted for a complex-neighborhood estimate.
+
 ## Earlier checked local consequences
 
 [`LocalConsequences.lean`](../../../NLS/Articles/KdVConvexity/LocalConsequences.lean)
@@ -133,8 +185,11 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    |R_n|=O(gamma_n^4/n^3) and gamma_n^2/n=O(I_n), with local constants
    uniform in n. Real-axis estimates alone cannot supply these hypotheses.
 3. Apply the checked analytic reduction to those actual moments. Then prove
-   the finite-gap physical energy identity (Proposition 4.5, pp. 28–29)
-   and its extension (Corollary 4.8, pp. 30–31), identifying the sum with H*.
+   the identification of the exterior quartic coefficient with the physical
+   energy from (4.7). The contour decomposition and calculation in
+   (4.11)–(4.12) are now proved in the shared KdV library; the physical
+   inputs are not. Extend the resulting physical identity as in
+   Corollary 4.8 (pp. 30–31), identifying the sum with H*.
 4. Identify the gradient with the existing physical frequencies minus
    8*pi^3*n^3 on V intersect V0, and prove the KdV quadratic coefficients
    giving the full -6*Id derivative. Apply the checked local consequences
@@ -157,10 +212,11 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All five modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All eight modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
-`CheckAxioms.lean` imports every article module and audits 60 article
-constants, including generated declarations, transitively. Only `propext`,
+`CheckAxioms.lean` imports all article and new shared KdV modules and audits
+94 constants in their two namespaces, including generated declarations,
+transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 See `validation.json` for exact file hashes and scope.
 
