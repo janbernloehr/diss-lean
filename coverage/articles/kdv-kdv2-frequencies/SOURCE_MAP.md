@@ -310,3 +310,19 @@ The product still includes zero and omitted-mode placeholders; it has not
 yet been identified with the canonical Psi_n product. Completeness for
 Psi_n, the exact prefactor, full omitted-index uniformity, rough/global
 compatibility and every main row remain open.
+
+The selected signed root product has now been paired into an entire
+positive energy product, and its omitted cutoffs have the literal source
+2/(n*pi) prefactor with locally uniform convergence on the whole energy
+plane. That candidate has exactly the selected retained simple roots.
+The actual normalized Psi_n factors as that product times an entire
+quotient, which is nonzero at the selected roots and equals one on the
+whole free slice. Constructed local families retain all original periods.
+See [NORMALIZED_ENERGY_PRODUCTS.md](NORMALIZED_ENERGY_PRODUCTS.md) and
+`exists_classicalHill_local_normalized_product_factorizations`.
+
+The candidate prefactor does not yet identify the Psi_n prefactor at
+nonzero potentials: the entire quotient has not been proved constant or
+one. Completeness for Psi_n, exact (52), common omitted-index uniformity,
+real gap/sharp root estimates (54), rough/global source domains and every
+main inventory row remain open.

@@ -129,3 +129,9 @@ sharp normalized moments, physical Hamiltonian-frequency identities,
 action descent, weighted asymptotics, compact derivatives and physical
 Birkhoff/PDE identification remain essential. No main theorem is marked
 verified by this local simple-zero construction.
+
+Subsequent progress: `NORMALIZED_ENERGY_PRODUCTS.md` records the constructed
+omitted positive energy product and its exact literal prefactor, complete
+simple candidate zero set, actual entire Psi_n quotient and exact free
+quotient value one. Constancy and normalization of this quotient at
+nonzero potentials, hence the source Psi_n product identity, remain open.

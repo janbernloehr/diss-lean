@@ -58,4 +58,19 @@ theorem analyticAt_filledSimpleQuotient
     filter_upwards [hg.continuousAt.eventually_ne hz] with w hw
     exact (filledSimpleQuotient_eq_div hw).symm
 
+/-- Filling the quotient preserves the exact factor identity. -/
+theorem filledSimpleQuotient_mul (f g : ℂ → ℂ) (z : ℂ)
+    (hzero : g z = 0 → f z = 0) : filledSimpleQuotient f g z*g z = f z := by
+  by_cases hg : g z = 0
+  · rw [hg,hzero hg,mul_zero]
+  · rw [filledSimpleQuotient_eq_div hg]
+    exact div_mul_cancel₀ (f z) hg
+
+/-- At a common simple zero the filled quotient is nonzero. -/
+theorem filledSimpleQuotient_ne_zero_of_simple_zeros (f g : ℂ → ℂ) (z : ℂ)
+    (hg : g z = 0) (hdf : deriv f z ≠ 0) (hdg : deriv g z ≠ 0) :
+    filledSimpleQuotient f g z ≠ 0 := by
+  simp only [filledSimpleQuotient,hg,ite_true]
+  exact div_ne_zero hdf hdg
+
 end NLS.ComplexAnalysis

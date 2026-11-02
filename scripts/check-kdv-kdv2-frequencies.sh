@@ -65,6 +65,7 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ActionHamiltonianMoments
   NLS/KdV/ClassicalContourMoments
   NLS/KdV/ClassicalHighContourMoments
+  NLS/ComplexAnalysis/AnalyticSquareDescent
   NLS/KdV/ClassicalBranchPrimitive
   NLS/SequenceSpaces/LocallyBoundedAnalyticSummation
   NLS/KdV/FrequencySeriesBounds
@@ -121,8 +122,16 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalNormalizedSimpleZeros
   NLS/ZakharovShabat/SourceGapInterpolationProduct
   NLS/KdV/ClassicalCandidateRootProducts
+  NLS/ComplexAnalysis/CauchyFiniteHoles
+  NLS/ComplexAnalysis/OddSquareDescent
+  NLS/ZakharovShabat/PairedEnergyProduct
+  NLS/ZakharovShabat/PairedEnergyZeros
+  NLS/ZakharovShabat/OmittedPairedEnergyProduct
   NLS/KdV/ClassicalCriticalEnergyProduct
   NLS/KdV/ClassicalCriticalBasisProduct
+  NLS/KdV/ClassicalCandidateEnergyProducts
+  NLS/ComplexAnalysis/FilledSimpleQuotient
+  NLS/KdV/ClassicalNormalizedProductQuotient
   NLS/KdV/FrequencyPrimitiveContinuation
   NLS/KdV/FrequencyContourDecomposition
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow

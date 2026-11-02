@@ -461,3 +461,28 @@ Completeness and canonical products of Psi_n, exact prefactors, omitted-
 index uniformity, rough/global compatibility and every main theorem remain
 open. The strict 123-module check and full transitive audit are recorded
 in `VALIDATION.md` and `source.json`.
+
+## Selected energy products and actual entire normalized quotients
+
+The signed candidate product now descends to the entire energy plane.
+Literal positive energy products converge locally uniformly everywhere;
+deleting the omitted mode gives the literal prefactor 2/(n*pi), including
+the filled omitted energy. The candidate product has exactly the selected
+retained roots and all are simple. At zero displacement it agrees with
+the actual critical basis.
+
+The actual normalized Psi_n divided by this product has an entire filled
+quotient, nonzero at every selected root. Its multiplication identity
+holds at every energy, and its free-potential value is exactly one,
+including at the free zeros. Constructed local families retain every
+original normalization period and the actual analytic zero branch. See
+[NORMALIZED_ENERGY_PRODUCTS.md](NORMALIZED_ENERGY_PRODUCTS.md).
+
+Constancy and the exact value of the entire quotient at nonzero potentials
+remain open, so this does not yet prove completeness or source (52) for
+Psi_n. Omitted-index uniformity, rough/global compatibility and every main
+theorem also remain open.
+
+Strict validation: all 132 selected modules pass; the complete transitive
+axiom audit covers 1495 selected declarations and 13635 declarations
+including imported NLS dependencies. See `VALIDATION.md` and `source.json`.

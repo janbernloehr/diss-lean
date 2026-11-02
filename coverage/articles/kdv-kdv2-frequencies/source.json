@@ -1701,6 +1701,114 @@
       "scope": "Existing generic product zero-set and simplicity theorems for arbitrary l^p-displaced injective sequences, directly recompiled; the particular theorems used require no real-type or gap placement hypothesis",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "75e10c53dbd3e5c4898a26653dc90d78051cad142b5e0d0cf7523616e147ce3e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/OddSquareDescent.lean",
+      "source_labels": [
+        "Equation (52) paired frequency-to-energy descent"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Any odd entire function divided by twice its argument descends to an entire function of the square, including zero, with an exact factor identity",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9a9be38f397edcb60bebb5749427ea455031cc6f6d3e6325cef210772ab3c5b9"
+    },
+    {
+      "path": "NLS/ZakharovShabat/PairedEnergyProduct.lean",
+      "source_labels": [
+        "Equation (52) literal paired energy products"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Arbitrary complex paired l^p frequency roots give literal positive energy cutoff products converging locally uniformly on the whole energy plane; exact sign and denominators are retained",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "98fb322e1d367e507a7ff1c5cca84a5c0fb4f027ce2046cbfca8373e29e33bfe"
+    },
+    {
+      "path": "NLS/ZakharovShabat/PairedEnergyZeros.lean",
+      "source_labels": [
+        "Equation (52) candidate energy product zero set"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "The paired entire product is nonzero at zero and has exactly the positive squared root labels as simple zeros when the signed roots are injective",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "392c40813824474b9ce0e0588bea17c07325ea67f65163376431bb1e0264741a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/OmittedPairedEnergyProduct.lean",
+      "source_labels": [
+        "Equation (52) literal omitted candidate product"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Constructed entire omitted product with exact literal 2/(n*pi) prefactor, filled factor identity, locally uniform whole-plane convergence, exact omitted zero set and simplicity; no identity with a normalized Psi is assumed",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ab64970949b4141a088bcd554ed1cd102b78b75e294ceb9dee43a55f09a21131"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCandidateEnergyProducts.lean",
+      "source_labels": [
+        "Equation (52) actual selected Hill energy products"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Actual selected signed Hill frequencies instantiate the paired and omitted energy products; every candidate zero and filled omitted energy is included; zero displacement recovers the actual critical basis",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2d9e37d85bf4cc0cc21b83c7d07215e47356fac5ac1c37a8d27b03a1da0cb888"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedProductQuotient.lean",
+      "source_labels": [
+        "Equations (52)-(53) actual normalized entire product quotient"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "The actual normalized Psi_n factors by its selected omitted energy product with an entire filled quotient, nonzero at selected roots and exactly one on the whole free slice; constructed local families retain all periods; nonzero-potential constancy and normalization remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "47f36df650ec365acf300038dcf5138f004dbdc9d20cfcbd8d01d58327eca6c6"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticSquareDescent.lean",
+      "source_labels": [
+        "Paired energy descent dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Existing analytic square descent, directly recompiled, including the ramification point zero",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1da226ec119b04cbe6a90c2bf59237a5ee458e9e622619d6905f39563890d94c"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CauchyFiniteHoles.lean",
+      "source_labels": [
+        "Filled energy product dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Existing entire divided-difference analyticity, directly recompiled; reused to fill zero and omitted factors",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f63501142a1ec07898d54ede0997ac96b61658de9ee900594fc3350c44ae7ed4"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/FilledSimpleQuotient.lean",
+      "source_labels": [
+        "Actual normalized quotient dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Existing simple-zero analytic quotient, directly recompiled, with proved multiplication identity and nonzero value at common simple zeros",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7ad70527bc9ccf7b379552de1293eba196de153668c16fb8d8152d5b209907a3"
     }
   ],
   "dependencies_needed": [
@@ -1732,15 +1840,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 1395,
-    "total_declarations_audited": 13537,
+    "candidate_declarations_audited": 1495,
+    "total_declarations_audited": 13635,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 123
+    "selected_modules": 132
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -1810,5 +1918,6 @@
   "weighted_normalized_coefficients_record": "WEIGHTED_NORMALIZED_COEFFICIENTS.md",
   "two_weighted_normalized_coefficients_record": "TWO_WEIGHTED_NORMALIZED_COEFFICIENTS.md",
   "normalized_zeros_record": "NORMALIZED_ZEROS.md",
-  "simple_normalized_zeros_record": "SIMPLE_NORMALIZED_ZEROS.md"
+  "simple_normalized_zeros_record": "SIMPLE_NORMALIZED_ZEROS.md",
+  "normalized_energy_products_record": "NORMALIZED_ENERGY_PRODUCTS.md"
 }
