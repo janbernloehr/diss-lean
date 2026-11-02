@@ -70,4 +70,25 @@ theorem exists_threshold_entireSingleSpectralProduct_ratio_le_four
   apply (div_le_iff₀ hGnorm).mpr
   linarith
 
+/-- Ratios of two free-normalized l^p root products tend to one along
+every separated path escaping to infinity. -/
+theorem tendsto_entireSingleSpectralProduct_ratio_of_separated
+    {p : ENNReal} [Fact (1 ≤ p)] {T : Type*} {l : Filter T}
+    (hp : p ≠ ⊤) (xi eta : ℤ → ℂ)
+    (hxi : Memℓp (fun j => xi j-(Real.pi : ℂ)*j) p)
+    (heta : Memℓp (fun j => eta j-(Real.pi : ℂ)*j) p)
+    (z : T → ℂ) (hz : Tendsto (fun i => ‖z i‖) l atTop)
+    {r : ℝ} (hr : 0 < r) (hrpi : r ≤ Real.pi/4)
+    (hsep : ∀ i (j : ℤ), r ≤ ‖z i-(Real.pi : ℂ)*j‖) :
+    Tendsto (fun i => entireSingleSpectralProduct xi (z i)/entireSingleSpectralProduct eta (z i)) l (𝓝 1) := by
+  have hx := tendsto_entireSingleSpectralProduct_div_free_of_separated hp xi hxi z hz hr hrpi hsep
+  have he := tendsto_entireSingleSpectralProduct_div_free_of_separated hp eta heta z hz hr hrpi hsep
+  have hh := hx.div he (by norm_num : (1 : ℂ) ≠ 0)
+  simp only [div_one] at hh
+  apply hh.congr'
+  filter_upwards [] with i
+  have hf : -2*sin (z i) ≠ 0 := mul_ne_zero (by norm_num)
+    (sin_ne_zero_of_notMem_freeLattice (notMem_freeLattice_of_separated hr (hsep i)))
+  exact div_div_div_cancel_right₀ hf _ _
+
 end NLS.ZakharovShabat

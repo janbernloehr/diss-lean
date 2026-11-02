@@ -1809,6 +1809,114 @@
       "scope": "Existing simple-zero analytic quotient, directly recompiled, with proved multiplication identity and nonzero value at common simple zeros",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "7ad70527bc9ccf7b379552de1293eba196de153668c16fb8d8152d5b209907a3"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveOddMultiplier.lean",
+      "source_labels": [
+        "Equation (52) actual paired resolvent direction"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "A bounded positive-index multiplier of an actual l^p vector constructs an actual odd l^p extension, without assumed membership",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5467a63e9fc0cfab2196c0eb7191a013c50f31dbae93ba43615dcc437e0e2429"
+    },
+    {
+      "path": "NLS/ZakharovShabat/PairedEnergyResolventExterior.lean",
+      "source_labels": [
+        "Equation (52) paired energy resolvent decay"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Exact absolutely convergent pairing into an energy resolvent remainder and uniform smallness on the large separated complex frequency exterior, including avoidance of all energies",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d48df7aadfd7fa277bbb6e4fba7804fd400ac3155031a6b8727122bdb1b2cdaf"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedResolventExterior.lean",
+      "source_labels": [
+        "Equation (52) actual normalized leading scalar"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Actual analytic l1 residue sum and exact free scalar one; bounded critical multiplier constructs a genuine odd Hilbert direction from the actual twice-weighted inverse column; actual energy resolvent leading asymptotic",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b7d6169e3beea44cc92ce20db18fd2081730ed9935d6a056ab09036731834487"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedProductAsymptotics.lean",
+      "source_labels": [
+        "Equation (52) actual quotient exterior normalization"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Exact actual quotient/resolvent/signed-product identity on the zero-free exterior and the actual leading scalar limit along every separated escaping path",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3b35282e2fe316f9062d2ff445c2eb732713cf488eb77e62ec0c154fc903c460"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedProductConstant.lean",
+      "source_labels": [
+        "Equations (52)-(53) complete actual normalized zeros and scalar product"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "The actual entire quotient is constant in energy, equals the analytic residue scalar and is nonzero; constructed local families have complete simple Psi_n zeros and whole-plane locally uniform actual products multiplied by this scalar, retaining every period; exact nonzero-potential scalar one and full source domains remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "242562016d4cb1e07fbf4cd46fb2a6e537742e94f6ecdc938beb84c881b7a59c"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiRootResolventExterior.lean",
+      "source_labels": [
+        "Paired actual energy resolvent dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Existing arbitrary-complex l^p root-resolvent exterior comparison, absolute sums and uniform smallness, directly recompiled; no RealType hypothesis used",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ad9c6c2c6481bbd5cd78eaf78aa5d5569084294f82494ae7c1c7cd69dc01f18d"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SingleSpectralProductRatioExterior.lean",
+      "source_labels": [
+        "Actual normalized product ratio dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Existing arbitrary-complex product ratio bound, directly recompiled, with added proved separated-path limit one for ratios of two free-normalized l^p root products",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2f2ad902240ef0e00567ca77fc939c12c3b2100ebafc9bf55c25c17a6b9c57aa"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EntireCircleDecay.lean",
+      "source_labels": [
+        "Actual normalized quotient constancy dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Existing entire-function vanishing from decay on expanding circles, directly recompiled and applied to the square pullback of the actual quotient minus its proved leading scalar",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e5843de720247c3fa46e8127e1b90159979d4f356e892c3db3f0b41c7a94d477"
+    },
+    {
+      "path": "NLS/ZakharovShabat/CentralCircleThresholds.lean",
+      "source_labels": [
+        "Actual normalized quotient circle dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Existing expanding half-integer circle radii and uniform threshold tools, directly recompiled",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ab2b8a456c59709725e9735604cd6d92fae8f19dfc632a66f27723f7a1949bed"
     }
   ],
   "dependencies_needed": [
@@ -1840,15 +1948,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 1495,
-    "total_declarations_audited": 13635,
+    "candidate_declarations_audited": 1582,
+    "total_declarations_audited": 13743,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 132
+    "selected_modules": 141
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -1919,5 +2027,6 @@
   "two_weighted_normalized_coefficients_record": "TWO_WEIGHTED_NORMALIZED_COEFFICIENTS.md",
   "normalized_zeros_record": "NORMALIZED_ZEROS.md",
   "simple_normalized_zeros_record": "SIMPLE_NORMALIZED_ZEROS.md",
-  "normalized_energy_products_record": "NORMALIZED_ENERGY_PRODUCTS.md"
+  "normalized_energy_products_record": "NORMALIZED_ENERGY_PRODUCTS.md",
+  "normalized_product_constant_record": "NORMALIZED_PRODUCT_CONSTANT.md"
 }

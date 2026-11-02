@@ -326,3 +326,19 @@ nonzero potentials: the entire quotient has not been proved constant or
 one. Completeness for Psi_n, exact (52), common omitted-index uniformity,
 real gap/sharp root estimates (54), rough/global source domains and every
 main inventory row remain open.
+
+The actual entire quotient in the normalized energy product factorization
+is now constant in energy, equal to the actual analytic residue scalar
+L_n=(1/n)*sum_m m*(R e_n)_m. It is nonzero on the constructed U_n and
+exactly one at the free source. The selected retained roots are now the
+complete actual Psi_n zero set, all simple. Literal energy products
+multiplied by L_n converge locally uniformly to Psi_n on the whole energy
+plane, and every original normalization period is retained. See
+[NORMALIZED_PRODUCT_CONSTANT.md](NORMALIZED_PRODUCT_CONSTANT.md) and
+`exists_classicalHill_local_complete_normalized_products`.
+
+The scalar's exact value at nonzero potentials is not proved. Therefore
+this local nonzero scalar product identity does not close exact source
+(52), nor its full W domain or common omitted-index uniformity. Real gap
+placement, sharp root estimates (54), rough/global source compatibility
+and every main inventory row remain open.

@@ -100,3 +100,10 @@ frequency/flow theorems remain open. All main inventory rows stay open.
 Strict full validation and audit counts are recorded in `VALIDATION.md`
 and `source.json`; no new axioms, placeholders, heartbeat increases or
 linter exceptions are used.
+
+Subsequent progress: `NORMALIZED_PRODUCT_CONSTANT.md` proves the entire
+quotient constant in energy, identifies its actual analytic residue sum,
+proves it nonzero, and establishes completeness and simplicity of all
+actual Psi_n zeros on U_n. Literal products multiplied by this scalar
+converge locally uniformly to Psi_n. Its exact value one at nonzero
+potentials, hence exact source (52), remains open.

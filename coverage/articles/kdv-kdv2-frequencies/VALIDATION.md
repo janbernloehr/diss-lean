@@ -60,8 +60,10 @@ its existing Hilbert specialization and a transitive audit.
 | `ClassicalCandidateRootProducts.lean` and two newly selected existing reflection/product modules | Genuine l2 signed free displacement and locally uniform entire signed product with its exact simple root set; this still includes zero/omitted placeholders and is not the Psi_n product identity. |
 | `OddSquareDescent.lean`, `PairedEnergyProduct.lean`, `PairedEnergyZeros.lean`, `OmittedPairedEnergyProduct.lean` | Reusable exact paired/omitted positive energy products, whole-plane local uniform cutoff convergence, exact simple product zero sets and literal omitted prefactor. |
 | `ClassicalCandidateEnergyProducts.lean`, `ClassicalNormalizedProductQuotient.lean` and three directly recompiled existing analytic dependencies | Actual selected Hill products, zero-displacement critical basis, constructed entire normalized quotient/factorization, nonzero selected-root quotient and exact free value one; all original periods retained. |
+| `PositiveOddMultiplier.lean`, `PairedEnergyResolventExterior.lean`, `ClassicalNormalizedResolventExterior.lean` | Constructed actual odd Hilbert direction from two-weight inverse coefficients; exact paired energy resolvent, analytic leading scalar/free value and actual exterior asymptotic. |
+| `ClassicalNormalizedProductAsymptotics.lean`, `ClassicalNormalizedProductConstant.lean` and four directly recompiled exterior/circle dependencies | Actual quotient limit and constancy, nonzero analytic scalar, complete simple actual Psi_n zero set and locally uniform actual products multiplied by that scalar, with constructed local families and every period retained. |
 
-All 132 selected modules compile with pinned **Lean 4.33.1**, commit
+All 141 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -74,8 +76,9 @@ Final output of `bash scripts/check-kdv-kdv2-frequencies.sh`:
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
-PASS NLS/ZakharovShabat/ClassicalHorizontalStripBounds
 PASS NLS/SequenceSpaces/Multiplier
+PASS NLS/SequenceSpaces/PositiveOddMultiplier
+PASS NLS/ZakharovShabat/ClassicalHorizontalStripBounds
 PASS NLS/SequenceSpaces/PositiveIndexWeight
 PASS NLS/SequenceSpaces/PuncturedLattice
 PASS NLS/SequenceSpaces/PositiveIndexPowerWeight
@@ -188,6 +191,9 @@ PASS NLS/KdV/ClassicalCandidateRootProducts
 PASS NLS/ComplexAnalysis/CauchyFiniteHoles
 PASS NLS/ComplexAnalysis/OddSquareDescent
 PASS NLS/ZakharovShabat/PairedEnergyProduct
+PASS NLS/ZakharovShabat/SourcePsiRootResolventExterior
+PASS NLS/ZakharovShabat/PairedEnergyResolventExterior
+PASS NLS/ZakharovShabat/SingleSpectralProductRatioExterior
 PASS NLS/ZakharovShabat/PairedEnergyZeros
 PASS NLS/ZakharovShabat/OmittedPairedEnergyProduct
 PASS NLS/KdV/ClassicalCriticalEnergyProduct
@@ -195,6 +201,11 @@ PASS NLS/KdV/ClassicalCriticalBasisProduct
 PASS NLS/KdV/ClassicalCandidateEnergyProducts
 PASS NLS/ComplexAnalysis/FilledSimpleQuotient
 PASS NLS/KdV/ClassicalNormalizedProductQuotient
+PASS NLS/KdV/ClassicalNormalizedResolventExterior
+PASS NLS/KdV/ClassicalNormalizedProductAsymptotics
+PASS NLS/ComplexAnalysis/EntireCircleDecay
+PASS NLS/ZakharovShabat/CentralCircleThresholds
+PASS NLS/KdV/ClassicalNormalizedProductConstant
 PASS NLS/KdV/FrequencyPrimitiveContinuation
 PASS NLS/KdV/FrequencyContourDecomposition
 PASS NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
@@ -203,11 +214,11 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 1495 candidate declarations; 13635 declarations total.
+Axiom audit passed: 1582 candidate declarations; 13743 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 132 selected modules (including generated and private declarations)
+the 141 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -637,3 +648,33 @@ nonzero potentials. Completeness for Psi_n, exact source (52), common
 omitted-index uniformity, real gap/sharp root estimates (54), rough/global
 compatibility and every main theorem remain open. No main inventory row
 is closed by this milestone.
+
+
+## Constant actual quotient and complete normalized zero set
+
+The current milestone is detailed in `NORMALIZED_PRODUCT_CONSTANT.md`.
+The actual normalized energy resolvent has a proved residue-sum leading
+asymptotic, using an odd Hilbert direction constructed from the actual
+two-weight inverse column. Free-normalized product ratios and entire
+circle decay identify the entire quotient with the analytic leading
+scalar. Simplicity at one retained actual root proves this scalar
+nonzero. The selected retained roots are now the complete actual Psi_n
+zero set, all simple, and literal products multiplied by the scalar
+converge locally uniformly to Psi_n on the whole energy plane. The
+constructed local families retain every original period and free value.
+
+All 141 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The complete transitive audit passes for 1582
+selected declarations and 13743 declarations including imported NLS
+dependencies, using only propext, Classical.choice and Quot.sound. All
+141 source hashes and checker/audit/coverage selections agree. There are
+no additional axioms, placeholders, heartbeat changes, disabled linters
+or warning exceptions. The full run is serialized by the shared build
+lock; all selected outputs are private and canonical sources/builds
+remain read only.
+
+The nonzero-potential value L_n=1 remains unproved. This milestone
+therefore does not close exact source (52), its rough/global W domain
+or the common omitted-index source neighborhood. Real gap/sharp root
+estimates (54), physical frequency/flow identification and every article
+main theorem remain open. No main inventory row is marked verified.

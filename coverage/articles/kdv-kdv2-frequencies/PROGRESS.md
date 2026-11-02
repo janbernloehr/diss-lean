@@ -486,3 +486,30 @@ theorem also remain open.
 Strict validation: all 132 selected modules pass; the complete transitive
 axiom audit covers 1495 selected declarations and 13635 declarations
 including imported NLS dependencies. See `VALIDATION.md` and `source.json`.
+
+## Constant actual normalized quotient and complete simple zero set
+
+The entire normalized quotient is now proved constant in energy, equal
+to the analytic scalar L_n=(1/n)*sum_m m*(R e_n)_m. A bounded positive
+multiplier of the actual two-weight inverse vector constructs an odd
+Hilbert direction; its paired frequency resolvent is the exact energy
+remainder. Existing arbitrary-complex exterior estimates and the common
+free sine normalization give the quotient limit. Entire circle decay
+then proves constancy on the whole energy plane.
+
+Simplicity at one retained actual root proves L_n nonzero. Hence the
+selected retained roots are the complete Psi_n zero set, all simple,
+and the literal products multiplied by L_n converge locally uniformly
+to the actual normalized entire function. Constructed local families
+retain every original normalization period, analytic root branches,
+free energies and exact free scalar one. See
+[NORMALIZED_PRODUCT_CONSTANT.md](NORMALIZED_PRODUCT_CONSTANT.md).
+
+The exact nonzero-potential scalar value L_n=1 remains open, so source
+(52) with its precise Psi_n prefactor is not yet verified. Common omitted-
+index uniformity, real gap/sharp root estimates, rough/global compatibility,
+physical frequency/flow identification and every main theorem remain open.
+
+Strict validation: all 141 selected modules pass; the complete transitive
+axiom audit covers 1582 selected declarations and 13743 declarations
+including imported NLS dependencies. See `VALIDATION.md` and `source.json`.

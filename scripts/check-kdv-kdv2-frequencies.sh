@@ -11,8 +11,9 @@ article_imports="$article_root/.lake/article-imports"
 modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/SequenceSpaces/Convolution
   NLS/SequenceSpaces/Reflection
-  NLS/ZakharovShabat/ClassicalHorizontalStripBounds
   NLS/SequenceSpaces/Multiplier
+  NLS/SequenceSpaces/PositiveOddMultiplier
+  NLS/ZakharovShabat/ClassicalHorizontalStripBounds
   NLS/SequenceSpaces/PositiveIndexWeight
   NLS/SequenceSpaces/PuncturedLattice
   NLS/SequenceSpaces/PositiveIndexPowerWeight
@@ -125,6 +126,9 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/ComplexAnalysis/CauchyFiniteHoles
   NLS/ComplexAnalysis/OddSquareDescent
   NLS/ZakharovShabat/PairedEnergyProduct
+  NLS/ZakharovShabat/SourcePsiRootResolventExterior
+  NLS/ZakharovShabat/PairedEnergyResolventExterior
+  NLS/ZakharovShabat/SingleSpectralProductRatioExterior
   NLS/ZakharovShabat/PairedEnergyZeros
   NLS/ZakharovShabat/OmittedPairedEnergyProduct
   NLS/KdV/ClassicalCriticalEnergyProduct
@@ -132,6 +136,11 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalCandidateEnergyProducts
   NLS/ComplexAnalysis/FilledSimpleQuotient
   NLS/KdV/ClassicalNormalizedProductQuotient
+  NLS/KdV/ClassicalNormalizedResolventExterior
+  NLS/KdV/ClassicalNormalizedProductAsymptotics
+  NLS/ComplexAnalysis/EntireCircleDecay
+  NLS/ZakharovShabat/CentralCircleThresholds
+  NLS/KdV/ClassicalNormalizedProductConstant
   NLS/KdV/FrequencyPrimitiveContinuation
   NLS/KdV/FrequencyContourDecomposition
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
