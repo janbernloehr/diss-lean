@@ -216,3 +216,13 @@ The high critical displacement tail is Banach analytic in ℓ² and uniformly
 small near zero. See [UNIFORM_CRITICAL_BASIS.md](UNIFORM_CRITICAL_BASIS.md).
 The infinite normalized period operator, source canonical products, rough
 scale and physical frequency statements remain open; no main row is closed.
+
+The actual infinite scalar period matrix is now defined on compatible
+finite-head energy circles and fixed high frequency circles. One open
+neighborhood supports every analytic entry, with the whole free matrix
+equal to the identity. On one uniform off-diagonal tail, the actual
+quadratic energy separation and the exact squared-denominator primitive
+formula are proved. A quantitative scalar estimate retains an explicit
+shifted-primitive bound. See [UNIFORM_PERIOD_ENTRIES.md](UNIFORM_PERIOD_ENTRIES.md).
+Bounded operator realization, its inverse and the source's fully normalized
+infinite family remain open. This closes no main-theorem row.

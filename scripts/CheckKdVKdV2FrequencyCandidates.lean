@@ -1,6 +1,7 @@
 import NLS.Dynamics.ActionDependentWeightedPhaseFlow
 import NLS.Dynamics.FixedTimePhaseObstruction
 import NLS.KdV.ClassicalUniformCriticalBasis
+import NLS.KdV.ClassicalPeriodIntegrationByParts
 import NLS.KdV.ClassicalCriticalTailAnalytic
 import NLS.KdV.ClassicalFiniteNormalizedDifferentials
 import NLS.KdV.FreeFrequencyPsi
@@ -28,21 +29,30 @@ run_cmd do
     `NLS.ZakharovShabat.SourceDistantCriticalPointsAnalyticNeighborhood,
     `NLS.KdV.ClassicalSpectralEmbedding,
     `NLS.KdV.ClassicalContourCoverage,
+    `NLS.KdV.ActionHamiltonianMoments,
+    `NLS.KdV.ClassicalContourMoments,
+    `NLS.KdV.ClassicalHighContourMoments,
     `NLS.KdV.ClassicalHighCriticalPoints,
+    `NLS.KdV.HighEnergyContourSeparation,
     `NLS.KdV.ClassicalUniformCriticalBasis,
     `NLS.KdV.ClassicalCriticalTailAnalytic,
     `NLS.ComplexAnalysis.JointSpectralDerivative,
     `NLS.ComplexAnalysis.ParametricDividedDifference,
     `NLS.ComplexAnalysis.AnalyticFinitePeriodNormalization,
+    `NLS.ComplexAnalysis.RightHalfPlaneSquareRoot,
+    `NLS.ComplexAnalysis.RationalCircleIntegrationByParts,
     `NLS.KdV.ClassicalCriticalPointBranch,
     `NLS.KdV.ClassicalCriticalNumerator,
     `NLS.KdV.ClassicalCriticalPeriods,
     `NLS.KdV.ClassicalFiniteNormalizedDifferentials,
+    `NLS.KdV.ClassicalUniformPeriodEntries,
+    `NLS.KdV.ClassicalPeriodIntegrationByParts,
     `NLS.KdV.ClassicalHillFlow,
     `NLS.KdV.ClassicalHillSpectrum,
     `NLS.KdV.ClassicalSourcePrimitive,
     `NLS.KdV.ClassicalFreePrimitive,
     `NLS.KdV.FreeFrequencyPsi,
+    `NLS.KdV.FreeHighContourPeriods,
     `NLS.KdV.ConstantUpperSpectralBridge,
     `NLS.KdV.ClassicalSpectralSymmetry,
     `NLS.KdV.ClassicalDiscriminant,

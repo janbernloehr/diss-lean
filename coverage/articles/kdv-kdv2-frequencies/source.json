@@ -667,10 +667,127 @@
       "scope": "Actual positive spectral-frequency critical displacement tail is Banach analytic in ℓ², norm bounded, and uniformly small near zero; not the Hamiltonian frequency map",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "b39cd6fe783f27bdae092ac3521f7d66544d8908f8516c1111ae3bc27ae517bc"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RightHalfPlaneSquareRoot.lean",
+      "source_labels": [
+        "Equation (53) free high-contour normalization dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Principal energy square root cancels squaring in the open right half-plane, fixing the pullback sign",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6a1581f7d85e12cbbbf3770e6267b5da52bf8ce915f819e1f21f7c3cff97bd94"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RationalCircleIntegrationByParts.lean",
+      "source_labels": [
+        "Equation (53) infinite period estimate dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Closed-circle quotient integration by parts from analyticity near the contour, without interior analyticity",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "24b7ffca854f55da23f1873a18da5c754daa2d4b00ae26cae96dcf847d90f8bf"
+    },
+    {
+      "path": "NLS/KdV/FreeHighContourPeriods.lean",
+      "source_labels": [
+        "Equation (53) exact free normalization on the fixed high contour family"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "All positive fixed frequency circles, exact energy Jacobian, and unconditional positive 2*pi*delta periods",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "82f52ca334aa0a53e4df8c944853a6e4017c62ef67625d2acf99c38fb8134348"
+    },
+    {
+      "path": "NLS/KdV/ClassicalUniformPeriodEntries.lean",
+      "source_labels": [
+        "Equation (53) actual infinite scalar period entries"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "One common complex continuous-potential neighborhood supports every analytic matrix entry and the full free identity; no bounded operator is asserted",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e7811ca652da909d012c038ee12c4777dde732a0d68b7948ce11760fb120eec0"
+    },
+    {
+      "path": "NLS/KdV/HighEnergyContourSeparation.lean",
+      "source_labels": [
+        "Equation (53) quadratic energy denominator dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Actual uniform off-diagonal high critical energy separation on one neighborhood at every complex continuous potential",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "891207d3dbff76111674e58dbd87041ff24b9512923c8d7587023c0fec9ad9bf"
+    },
+    {
+      "path": "NLS/KdV/ClassicalPeriodIntegrationByParts.lean",
+      "source_labels": [
+        "Equation (53) actual uniform period tail formula"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Actual common-neighborhood tail formula with exact coefficient n and squared denominator; scalar 20/pi estimate retains an explicit shifted-primitive bound",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "08976271c07eac0e4874246878bb7fd5ae5b765998bfc787eab0c12ba8bd233b"
+    },
+    {
+      "path": "NLS/KdV/ActionHamiltonianMoments.lean",
+      "source_labels": [
+        "Shared contour moment foundation (dependency)"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing shared primitive action/cubic-moment integration and analytic bounds; recompiled as a consumed contour-path dependency",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2bb6abfa6e912decb75ebf991312566b32d371680c1a44257ac73289e2e51feb"
+    },
+    {
+      "path": "NLS/KdV/ClassicalContourMoments.lean",
+      "source_labels": [
+        "Shared actual classical contour foundation (dependency)"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing actual continued primitive contour periods and cubic moments, now directly selected by the frequency checker",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e566ce44ade32b02ecd53fc7bb0ecb914db88121a8431898ff397c94c5e8fbe0"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHighContourMoments.lean",
+      "source_labels": [
+        "Shared actual high energy contour path (dependency)"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing squared frequency path and exact holomorphic one-form Jacobian used by the actual period entries",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1ef7d0ef1cbdd400973ecf79afd3744f8de8da747ada245a36f2f8ec19cd1ee6"
     }
   ],
   "dependencies_needed": [
-    "infinite normalized period operator and its inverse; common-neighborhood infinite numerator basis and analytic ℓ² critical tail are now constructed",
+    "bounded infinite period operator, uniform primitive-error and critical-shift bounds, and normalized inverse; actual common-neighborhood entries, free identity and uniform tail formulas are now constructed",
     "shared rough Hill/KdV spectral and Birkhoff foundations; global gap and canonical sheet normalization",
     "shared KdV action Hamiltonians",
     "actual KdV and KdV2 frequency moment identities and uniform analytic bounds",
@@ -698,14 +815,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 570,
-    "total_declarations_audited": 12091,
+    "candidate_declarations_audited": 662,
+    "total_declarations_audited": 12186,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
-    "main_theorems_verified": []
+    "main_theorems_verified": [],
+    "selected_modules": 49
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -766,5 +884,6 @@
   "goal_turn_classification": "progress",
   "free_frequency_psi_record": "FREE_FREQUENCY_PSI.md",
   "finite_normalization_record": "FINITE_NORMALIZATION.md",
-  "uniform_critical_basis_record": "UNIFORM_CRITICAL_BASIS.md"
+  "uniform_critical_basis_record": "UNIFORM_CRITICAL_BASIS.md",
+  "uniform_period_entries_record": "UNIFORM_PERIOD_ENTRIES.md"
 }

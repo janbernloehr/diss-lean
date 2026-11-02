@@ -11,6 +11,8 @@ article_imports="$article_root/.lake/article-imports"
 modules=(NLS/ComplexAnalysis/JointSpectralDerivative
   NLS/ComplexAnalysis/ParametricDividedDifference
   NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
+  NLS/ComplexAnalysis/RightHalfPlaneSquareRoot
+  NLS/ComplexAnalysis/RationalCircleIntegrationByParts
   NLS/ZakharovShabat/ContinuousPotentialL2Bound
   NLS/ZakharovShabat/SourceDistantCriticalPointsAnalyticNeighborhood
   NLS/KdV/ConstantUpperSpectralBridge
@@ -23,6 +25,9 @@ modules=(NLS/ComplexAnalysis/JointSpectralDerivative
   NLS/KdV/ClassicalSourcePrimitive
   NLS/KdV/ClassicalSpectralEmbedding
   NLS/KdV/ClassicalContourCoverage
+  NLS/KdV/ActionHamiltonianMoments
+  NLS/KdV/ClassicalContourMoments
+  NLS/KdV/ClassicalHighContourMoments
   NLS/KdV/ClassicalBranchPrimitive
   NLS/SequenceSpaces/LocallyBoundedAnalyticSummation
   NLS/KdV/FrequencySeriesBounds
@@ -33,13 +38,17 @@ modules=(NLS/ComplexAnalysis/JointSpectralDerivative
   NLS/Dynamics/FixedTimePhaseObstruction
   NLS/KdV/FrequencyMoments
   NLS/KdV/FreeFrequencyPsi
+  NLS/KdV/FreeHighContourPeriods
   NLS/KdV/ClassicalCriticalPointBranch
   NLS/KdV/ClassicalHighCriticalPoints
+  NLS/KdV/HighEnergyContourSeparation
   NLS/KdV/ClassicalUniformCriticalBasis
   NLS/KdV/ClassicalCriticalTailAnalytic
   NLS/KdV/ClassicalCriticalNumerator
   NLS/KdV/ClassicalCriticalPeriods
   NLS/KdV/ClassicalFiniteNormalizedDifferentials
+  NLS/KdV/ClassicalUniformPeriodEntries
+  NLS/KdV/ClassicalPeriodIntegrationByParts
   NLS/KdV/FrequencyPrimitiveContinuation
   NLS/KdV/FrequencyContourDecomposition
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
@@ -90,6 +99,9 @@ for module in modules:
     link.symlink_to(target)
 fill(reference, overlay / 'NLS')
 PY
+if [[ "${1:-}" == --prepare-only ]]; then
+  exit 0
+fi
 export LEAN_PATH="$article_imports:$reference_root/.lake/build/lib/lean"
 for package in "$reference_root"/.lake/packages/*; do
   if [[ -d "$package/.lake/build/lib/lean" ]]; then

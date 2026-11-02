@@ -287,3 +287,22 @@ The shared integration recheck passes all 26 modules, the positive-index
 example and its 337-declaration transitive shared-namespace audit. This
 milestone preserves the upstream spectral commit ancestry and keeps the
 canonical checkout unchanged.
+
+## Actual infinite period entries and uniform tail milestone
+
+The actual common-neighborhood numerator basis now has a compatible
+infinite contour period matrix. Every scalar entry is analytic on one
+complex neighborhood chosen before either index, and the complete free
+matrix is the identity. The high contours have the exact mapped energy
+path interpretation, orientation and Jacobian.
+
+A new actual energy separation estimate and a reusable contour integration
+by parts theorem give the exact primitive formula on one uniform
+off-diagonal tail. The scalar norm estimate has coefficient 20/pi and
+quadratic energy denominator squared. It explicitly retains the necessary
+shifted-primitive bound; no small operator norm or infinite inverse is
+assumed. See [UNIFORM_PERIOD_ENTRIES.md](UNIFORM_PERIOD_ENTRIES.md).
+
+The full main inventory remains open. All 49 selected modules and their
+complete transitive audit are checked by the focused frequency command;
+the final output and counts are recorded in `VALIDATION.md` and `source.json`.
