@@ -1717,3 +1717,31 @@ angles/final angle-sum factorization and full corrected frequency comparison
 remain essential. The overall main-theorem goal remains active.
 
 Validation: all 328 article/shared modules have validated private outputs. The 316 unchanged prefix source hashes match 809e52c and their outputs were reused; all 12 added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 3,876 declarations/auxiliaries and the combined audit for 48,810 NLS declarations, using only the standard allowed axioms. All 330 mathematical source/checker hashes match the frozen inputs. The public inventory is 1,964 declarations (1,588 theorems and 376 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source.
+
+
+## Native nonlinear inverse charts at zero on every integer Sobolev space
+
+The actual free positive Cartesian Jacobian is now identified with an
+explicit bounded linear equivalence at every native integer Sobolev order.
+Even source weights commute with the two signed Fourier modes, while the
+Cartesian half-order weight factorization gives the exact target transport.
+The literal signed mean is preserved. A generic Banach-equivalence lemma
+keeps mean transport separate from concrete weighted-space instance data;
+all proofs check under the existing kernel and heartbeat limits.
+
+The actual nonlinear maps therefore have analytic inverse charts on full
+open complex H^s and positive-index h^(s+1/2) times complex-mean neighborhoods
+of zero, for every integer s>=0. Both inverse identities, image equality,
+bijectivity and Banach analyticity of the forward and inverse maps are proved
+in their complete native norms. The original complex H1 domain ScalarDomain 2
+itself has the corresponding full order-three-halves inverse chart; its
+actual derivative is the transported bounded free equivalence.
+
+These are local inverse results at the free profile. Physical real-form
+inverse restrictions, a global inverse and Gardner canonicity at general
+profiles, general nonzero-fiber uniqueness/surjectivity, global forward
+action factorization, independent angles/final angle-sum factorization and
+full corrected frequency comparison remain essential. Global properness
+remains an original physical real L2 result. The main-theorem goal stays active.
+
+Validation: all 335 article/shared modules have validated private outputs. The 328 unchanged prefix source hashes match 9640ed7 and their outputs were reused; all seven added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 3,937 declarations/auxiliaries and the combined audit for 48,871 NLS declarations, using only the standard allowed axioms. All 337 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,001 declarations (1,615 theorems and 386 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

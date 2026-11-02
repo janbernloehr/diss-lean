@@ -362,6 +362,13 @@ modules = [
     "NLS/MKdV/MiuraCartesianLocalInverse.lean",
     "NLS/MKdV/MiuraPositiveCartesianProperness.lean",
     "NLS/Articles/MKdVNLSHierarchies/CartesianLocalInverseIdentification.lean",
+    "NLS/SequenceSpaces/PositiveWeightEquivalence.lean",
+    "NLS/ComplexAnalysis/LinearEquivMeanTransport.lean",
+    "NLS/MKdV/MiuraSobolevPositiveCartesian.lean",
+    "NLS/MKdV/MiuraSobolevCartesianFreeEquivalence.lean",
+    "NLS/ComplexAnalysis/AnalyticNativeInverseNeighborhoods.lean",
+    "NLS/MKdV/MiuraSobolevCartesianLocalInverse.lean",
+    "NLS/Articles/MKdVNLSHierarchies/SobolevCartesianLocalInverseIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

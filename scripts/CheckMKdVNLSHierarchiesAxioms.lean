@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.SobolevCartesianLocalInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianLocalInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.SobolevCartesianIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianSequenceIdentification
@@ -44,6 +45,15 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.WeightedCoeff.positiveWeightMap,
+    `NLS.WeightedCoeff.positiveWeightMap_apply,
+    `NLS.WeightedCoeff.positiveWeightMap_inverse,
+    `NLS.WeightedCoeff.positiveWeightEquiv,
+    `NLS.WeightedCoeff.positiveWeightEquiv_apply,
+    `NLS.WeightedCoeff.positiveWeightEquiv_symm_apply,
+    `NLS.ComplexAnalysis.prodCongr_refl_symm_snd,
+    `NLS.ComplexAnalysis.trans_prodCongr_refl_symm_snd,
+    `NLS.ComplexAnalysis.exists_analytic_inverse_neighborhoods_of_fderiv_equiv,
     `NLS.ZakharovShabat.sourceDiagonalActionRatio_zero,
     `NLS.ZakharovShabat.sourceDiagonalActionRoot_zero,
     `NLS.ZakharovShabat.sourceDiagonalActionRoot_zero_ne_zero,
