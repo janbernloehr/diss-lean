@@ -1,6 +1,18 @@
 # Implementation status
 
-## Current milestone: notation-page comparison
+## Current milestone: bibliographic source context
+
+The [bibliographic source context](coverage/BIBLIOGRAPHY.md) records the 67 source attributions on pp.141–144 with their exact text locations. These contextual records are separate from mathematical proof reviews.
+
+The cited external results and publication metadata are not independently certified by this step. The precise 2014 construction comparison remains open in Sections 14, 17 and 18.
+
+This documentation change reuses the unchanged Lean snapshot validated at c23702bdbb42dd6a2566cd5173c587f7ce41d82e: 8,654 build jobs, 7,729 public examples and an axiom audit of 45,116 NLS declarations. The source text locations and document links were checked separately. The Lean validation does not validate the cited external works.
+
+Reconcile the complete source inventory and its inspected navigation gaps. Retain the exact 2014 construction and rough physical sheet-sign direction qualifications. Correct constants directly; add no new refutations. Commit and push each completed step.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: notation-page comparison
 
 The [notation-page comparison](coverage/NOTATIONS_ASSERTIONS.md) maps 38 groups on printed p.145. Each definition and convention retains its explicit domain and qualification.
 

@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Bibliography, pp.141–144 | [Source context](coverage/BIBLIOGRAPHY.md) | 67 contextual attributions; no claim of validating cited external results. |
 | Notations, p.145 | [Definition comparison](coverage/NOTATIONS_ASSERTIONS.md) | 38 qualified definition matches; original spaces, physical conjugation, operators, pairings, integrals, products and roots. |
 | native periodic conjugation, p.145 | [Positive proofs](coverage/SECTION_2.md) | Actual smooth-test conjugation, exact symmetric weighted norm, and the original real-pair condition at every positive period, real Sobolev order and Banach exponent. No new refutations. |
 | Appendix I, pp.139–140 | [Ordered comparison](coverage/APPENDIX_I_ASSERTIONS.md) | 18 groups: thirteen matched, three corrected and two contextual. Corrected Schur premise, signs and lower-block space; exact weighted cutoffs and actual real local inverses on the cone. No new refutations. |

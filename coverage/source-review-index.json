@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T05:57:06.374754+00:00",
-  "base_commit": "c23702bdbb42dd6a2566cd5173c587f7ce41d82e",
+  "published_utc": "2026-11-02T05:58:18.916635+00:00",
+  "base_commit": "6076e9f22f5d7b4ba21f2a151f0690dfab2f0b08",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "c23702bdbb42dd6a2566cd5173c587f7ce41d82e",
-    "validated_state": "Notation comparison changes documentation only; the exact Lean snapshot retains the native-conjugation full check.",
+    "base_commit": "6076e9f22f5d7b4ba21f2a151f0690dfab2f0b08",
+    "validated_state": "Bibliographic context changes documentation only; the exact Lean snapshot retains its full check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8654,
     "public_examples": 7729,
@@ -78049,6 +78049,849 @@
         "log_sha256": "aaf07250cc3111a3318f6d43bce32212f546446e06a59dfe528c4abdb12b95ca"
       },
       "source_record_sha256": "3f9b5a7b20b7ee5bfd9a7abe30c08950de36f862c8c88023054d1e81d283c7c7"
+    }
+  },
+  "contextual_source_records": {
+    "BibliographyContextSourceRecord-2026-11-02": {
+      "status": "published_contextual_source_record",
+      "base_commit": "6076e9f22f5d7b4ba21f2a151f0690dfab2f0b08",
+      "updated_utc": "2026-11-02T05:58:18.894157+00:00",
+      "source_text_sha256": "64640083a811e0e05710297d056d23d7e1f2aadad7fb1f1a1271819b90978619",
+      "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+      "source_lines": [
+        [
+          11541,
+          11765
+        ]
+      ],
+      "printed_pages": [
+        141,
+        142,
+        143,
+        144
+      ],
+      "rows": [
+        {
+          "id": "BIB-001",
+          "source_lines": [
+            11542,
+            11542
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [1].",
+          "source_entry": " [1] Dispersive Wiki. http://wiki.math.toronto.edu/DispersiveWiki/",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-002",
+          "source_lines": [
+            11544,
+            11545
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [2].",
+          "source_entry": " [2] Ablowitz, M.J., Kaup, D.J., Newell, A.C., Segur, H.: The inverse scattering transform-Fourier analysis for\n     nonlinear problems. Studies in Appl. Math. 53(4), 249–315, 1974.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-003",
+          "source_lines": [
+            11547,
+            11548
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [3].",
+          "source_entry": " [3] Bättig, D., Bloch, A.M., Guillot, J.C., Kappeler, T.: On the symplectic structure of the phase space for\n     periodic KdV, Toda, and defocusing NLS. Duke Math. J. 79(3), 549–604, 1995.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-004",
+          "source_lines": [
+            11550,
+            11551
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [4].",
+          "source_entry": " [4] Bättig, D., Grébert, B., Guillot, J.C., Kappeler, T.: Foliation of phase space for the cubic nonlinear\n     Schrödinger equation. Compos. Math. 85(2), 163–199, 1993.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-005",
+          "source_lines": [
+            11553,
+            11554
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [5].",
+          "source_entry": " [5] Bikbaev, R.F., Kuksin, S.B.: A periodic boundary value problem for the sine-Gordon equation, its small\n     Hamiltonian perturbations, and KAM-deformations of finite-gap tori. Algebra i Analiz 4(3), 42–78, 1992.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-006",
+          "source_lines": [
+            11556,
+            11557
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [6].",
+          "source_entry": " [6] Bobenko, A.I., Kuksin, S.B.: Finite-gap periodic solutions of the KdV equation are nondegenerate. Phys.\n     Lett. A 161(3), 274–276, 1991.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-007",
+          "source_lines": [
+            11559,
+            11560
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [7].",
+          "source_entry": " [7] Bourgain, J.: Global solutions of nonlinear Schrödinger equations, American Mathematical Society Collo-\n     quium Publications, vol. 46. American Mathematical Society, Providence, RI, 1999.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-008",
+          "source_lines": [
+            11562,
+            11563
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [8].",
+          "source_entry": " [8] Burq, N., Gérard, P., Tzvetkov, N.: An instability property of the nonlinear Schrödinger equation on S d .\n     Math. Res. Lett. 9(2-3), 323–335, 2002.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-009",
+          "source_lines": [
+            11565,
+            11566
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [9].",
+          "source_entry": " [9] Chodos, A.: Simple connection between conservation laws in the Korteweg-de Vries and sine-Gordon\n     systems. Phys. Rev. D 21(10), 2818–2822, 1980.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-010",
+          "source_lines": [
+            11568,
+            11568
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [10].",
+          "source_entry": "[10] Christ, M.: Nonuniqueness of weak solutions of the nonlinear Schroedinger equation. arXiv , 2005.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-011",
+          "source_lines": [
+            11570,
+            11571
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [11].",
+          "source_entry": "[11] Christ, M.: Power series solution of a nonlinear Schrödinger equation. In: Mathematical aspects of non-\n     linear dispersive equations, pp. 131–155. Princeton Univ. Press, Princeton, NJ, 2007.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-012",
+          "source_lines": [
+            11573,
+            11574
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [12].",
+          "source_entry": "[12] Christ, M., Colliander, J., Tao, T.: Asymptotics, frequency modulation, and low regularity ill-posedness\n     for canonical defocusing equations. Amer. J. Math. 125(6), 1235–1293, 2003.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-013",
+          "source_lines": [
+            11576,
+            11577
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [13].",
+          "source_entry": "[13] Colliander, J., Oh, T.: Almost sure well-posedness of the cubic nonlinear Schrödinger equation below\n     L2 (T). Duke Math. J. 161(3), 367–414, 2012.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-014",
+          "source_lines": [
+            11579,
+            11580
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [14].",
+          "source_entry": "[14] Colliander, J., Tao, T., Keel, M., Staffilani, G., Takaoka, H.: Global well-posedness for Schrödinger equa-\n     tions with derivative. SIAM J. Math. Anal. 33(3), 649–669 (electronic), 2001.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-015",
+          "source_lines": [
+            11582,
+            11583
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [15].",
+          "source_entry": "[15] Colliander, J., Tao, T., Keel, M., Staffilani, G., Takaoka, H.: Multilinear estimates for periodic KdV equa-\n     tions, and applications. J. Funct. Anal. 211(1), 173–218, 2004.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-016",
+          "source_lines": [
+            11585,
+            11586
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [16].",
+          "source_entry": "[16] Colliander, J., Tao, T., Keel, M., Staffilani, G., Takaoka, H.: Transfer of energy to high frequencies in the\n     cubic defocusing nonlinear Schrödinger equation. Invent. Math. 181(1), 39–113, 2010.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-017",
+          "source_lines": [
+            11588,
+            11588
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [17].",
+          "source_entry": "[17] Delpech, S.: A short proof of Pitt’s compactness theorem. Proc. Amer. Math. Soc. 137(4), 1371–1372, 2009.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-018",
+          "source_lines": [
+            11599,
+            11600
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [18].",
+          "source_entry": "[18] Djakov, P., Mityagin, B.: Instability zones of periodic 1-dimensional Schrödinger and Dirac operators.\n      Russian Math. Surveys 61, 663–766, 2006.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-019",
+          "source_lines": [
+            11602,
+            11603
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [19].",
+          "source_entry": "[19] Gardner, C.S., Greene, J.M., Kruskal, M.D., Miura, R.M.: Method for solving the Korteweg-deVries equation.\n      Physical Review Letters , 1967.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-020",
+          "source_lines": [
+            11605,
+            11606
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [20].",
+          "source_entry": "[20] Grébert, B., Guillot, J.C.: Gaps of one-dimensional periodic AKNS systems. Forum Math. 5(5), 459–504,\n      1993.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-021",
+          "source_lines": [
+            11608,
+            11609
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [21].",
+          "source_entry": "[21] Grébert, B., Kappeler, T.: Estimates on periodic and Dirichlet eigenvalues for the Zakharov-Shabat system.\n      Asymptot. Anal. 25(3-4), 201–237, 2001.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-022",
+          "source_lines": [
+            11611,
+            11612
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [22].",
+          "source_entry": "[22] Grébert, B., Kappeler, T.: Perturbations of the defocusing nonlinear Schrödinger equation. Milan J. Math.\n      71, 141–174, 2003.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-023",
+          "source_lines": [
+            11614,
+            11615
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [23].",
+          "source_entry": "[23] Grébert, B., Kappeler, T.: The defocusing NLS equation and its normal form. European Mathematical\n      Society (EMS), Zürich, 2014.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-024",
+          "source_lines": [
+            11617,
+            11618
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [24].",
+          "source_entry": "[24] Grébert, B., Kappeler, T., Mityagin, B.: Gap estimates of the spectrum of the Zakharov-Shabat system.\n      Appl. Math. Lett. 11(4), 95–97, 1998.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-025",
+          "source_lines": [
+            11620,
+            11621
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [25].",
+          "source_entry": "[25] Grünrock, A., Herr, S.: Low regularity local well-posedness of the derivative nonlinear Schrödinger equa-\n      tion with periodic initial data. SIAM J. Math. Anal. 39(6), 1890–1920, 2008.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-026",
+          "source_lines": [
+            11623,
+            11624
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [26].",
+          "source_entry": "[26] Henrici, A., Kappeler, T.: Global Birkhoff coordinates for the periodic Toda lattice. Nonlinearity 21(12),\n      2731–2758, 2008.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-027",
+          "source_lines": [
+            11626,
+            11627
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [27].",
+          "source_entry": "[27] Kappeler, T., Maspero, A., Molnar, J.C., Topalov, P.: On the convexity of the KdV Hamiltonian. Comm.\n      Math. Phys. (to appear), 2016.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-028",
+          "source_lines": [
+            11629,
+            11630
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [28].",
+          "source_entry": "[28] Kappeler, T., Mityagin, B.: Gap estimates of the spectrum of Hill’s equation and action variables for KdV.\n      Trans. Amer. Math. Soc. 351(2), 619–646, 1999.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-029",
+          "source_lines": [
+            11632,
+            11633
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [29].",
+          "source_entry": "[29] Kappeler, T., Mityagin, B.: Estimates for periodic and Dirichlet eigenvalues of the Schrödinger operator.\n      SIAM J. Math. Anal. 33(1), 113–152, 2001.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-030",
+          "source_lines": [
+            11635,
+            11636
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [30].",
+          "source_entry": "[30] Kappeler, T., Möhr, C.: Estimates for periodic and Dirichlet eigenvalues of the Schrödinger operator with\n      singular potentials. J. Funct. Anal. 186(1), 62–91, 2001.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-031",
+          "source_lines": [
+            11638,
+            11639
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [31].",
+          "source_entry": "[31] Kappeler, T., Möhr, C., Topalov, P.: Birkhoff coordinates for KdV on phase spaces of distributions. Selecta\n      Math. (N.S.) 11(1), 37–98, 2005.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-032",
+          "source_lines": [
+            11641,
+            11641
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [32].",
+          "source_entry": "[32] Kappeler, T., Molnar, J.: On the frequency map of the KdV and the KdV2 equations (in preparation), 2016.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-033",
+          "source_lines": [
+            11643,
+            11643
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [33].",
+          "source_entry": "[33] Kappeler, T., Pöschel, J.: KdV & KAM. Springer, Berlin, 2003.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-034",
+          "source_lines": [
+            11645,
+            11646
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [34].",
+          "source_entry": "[34] Kappeler, T., Pöschel, J.: On the periodic KdV equation in weighted Sobolev spaces. Ann. Inst. H. Poincaré\n      Anal. Non Linéaire 26(3), 841–853, 2009.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-035",
+          "source_lines": [
+            11648,
+            11649
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [35].",
+          "source_entry": "[35] Kappeler, T., Schaad, B., Topalov, P.: mKdV and its Birkhoff coordinates. Phys. D 237(10-12), 1655–1662,\n      2008.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-036",
+          "source_lines": [
+            11651,
+            11652
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [36].",
+          "source_entry": "[36] Kappeler, T., Serier, F., Topalov, P.: On the symplectic phase space of KdV. Proc. Amer. Math. Soc. 136(5),\n      1691–1698, 2008.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-037",
+          "source_lines": [
+            11654,
+            11655
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [37].",
+          "source_entry": "[37] Kappeler, T., Serier, F., Topalov, P.: On the characterization of the smoothness of skew-adjoint potentials\n      in periodic Dirac operators. J. Funct. Anal. 256(7), 2069–2112, 2009.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-038",
+          "source_lines": [
+            11666,
+            11666
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [38].",
+          "source_entry": "[38] Kappeler, T., Topalov, P.: Global wellposedness of KdV in H − 1(T, R). Duke Math. J. 135(2), 327–360, 2006.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-039",
+          "source_lines": [
+            11668,
+            11668
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [39].",
+          "source_entry": "[39] Kappeler, T., Topalov, P., Schaad, B.: Asymptotics of spectral quantities of Zhakarov-Shabat operators",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-040",
+          "source_lines": [
+            11670,
+            11670
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [40].",
+          "source_entry": "[40] Kato, T.: Perturbation theory for linear operators. Second edn. Springer-Verlag, Berlin-New York, 1976.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-041",
+          "source_lines": [
+            11672,
+            11673
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [41].",
+          "source_entry": "[41] Katznelson, Y.: An introduction to harmonic analysis. Cambridge Mathematical Library, third edn.\n     Cambridge University Press, Cambridge, 2004.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-042",
+          "source_lines": [
+            11675,
+            11676
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [42].",
+          "source_entry": "[42] Kenig, C.E., Ponce, G., Vega, L.: On the ill-posedness of some canonical dispersive equations. Duke Math.\n     J. 106(3), 617–633, 2001.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-043",
+          "source_lines": [
+            11678,
+            11679
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [43].",
+          "source_entry": "[43] Koch, H., Tataru, D.: A priori bounds for the 1D cubic NLS in negative Sobolev spaces. Int. Math. Res. Not.\n     (16), Art. ID rnm053–36, 2007.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-044",
+          "source_lines": [
+            11681,
+            11681
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [44].",
+          "source_entry": "[44] Korotyaev, E.: Estimates for the Hill operator. I. J. Differential Equations 162(1), 1–26, 2000.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-045",
+          "source_lines": [
+            11683,
+            11684
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [45].",
+          "source_entry": "[45] Korotyaev, E.: Inverse problem and estimates for periodic Zakharov-Shabat systems. J. Reine Angew.\n     Math. 583, 87–115, 2005.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-046",
+          "source_lines": [
+            11686,
+            11686
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [46].",
+          "source_entry": "[46] Korotyaev, E.: Estimates for the Hill operator. II. J. Differential Equations 223(2), 229–260, 2006.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-047",
+          "source_lines": [
+            11688,
+            11689
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [47].",
+          "source_entry": "[47] Korotyaev, E.: Hamiltonian and small action variables for dNLS on the circle. Int. Math. Res. Not. (10),\n     2203–2239, 2013.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-048",
+          "source_lines": [
+            11691,
+            11692
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [48].",
+          "source_entry": "[48] Korotyaev, E., Kargaev, P.: Estimates for periodic Zakharov–Shabat operators. J. Differential Equations\n     249(1), 76–93, 2010.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-049",
+          "source_lines": [
+            11694,
+            11695
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [49].",
+          "source_entry": "[49] Korotyaev, E., Kuksin, S.B.: KdV Hamiltonian as a Function of Actions. J. Dyn. Control Syst. (online),\n     2015.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-050",
+          "source_lines": [
+            11697,
+            11698
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [50].",
+          "source_entry": "[50] Krichever, I.M.: Perturbation Theory in Periodic Problems for Two-Dimensional Integrable Systems. Sov.\n     Sci. Rev. C. Math. Phys. 9, 1–103, 1992.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-051",
+          "source_lines": [
+            11700,
+            11701
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [51].",
+          "source_entry": "[51] Kuksin, S., Pöschel, J.:      Invariant Cantor manifolds of quasi-periodic oscillations for a nonlinear\n     Schrödinger equation. Ann. of Math. (2) 143(1), 149–179, 1996.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-052",
+          "source_lines": [
+            11703,
+            11704
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [52].",
+          "source_entry": "[52] Lax, P.D.: Integrals of nonlinear equations of evolution and solitary waves. Comm. Pure Appl. Math. 21,\n     467–490, 1968.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-053",
+          "source_lines": [
+            11706,
+            11707
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [53].",
+          "source_entry": "[53] Li, Y., McLaughlin, D.W.: Morse and Mel’nikov functions for NLS PDEs. Comm. Math. Phys. 162(1), 175–214,\n     1994.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-054",
+          "source_lines": [
+            11709,
+            11710
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [54].",
+          "source_entry": "[54] Lions, J.L., Magenes, E.: Non-homogeneous boundary value problems and applications. Vol. I. Springer-\n     Verlag, New York-Heidelberg, 1972.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-055",
+          "source_lines": [
+            11712,
+            11713
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [55].",
+          "source_entry": "[55] McKean, H.P., Vaninsky, K.L.: Action-angle variables for the cubic Schrödinger equation. Comm. Pure\n     Appl. Math. 50(6), 489–562, 1997.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-056",
+          "source_lines": [
+            11715,
+            11716
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [56].",
+          "source_entry": "[56] Mityagin, B.: Spectral expansions of one-dimensional periodic Dirac operators. Dyn. Partial Differ. Equ.\n     1(2), 125–191, 2004.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-057",
+          "source_lines": [
+            11718,
+            11719
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [57].",
+          "source_entry": "[57] Molinet, L.: On ill-posedness for the one-dimensional periodic cubic Schrodinger equation. Math. Res.\n     Lett. 16(1), 111–120, 2009.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-058",
+          "source_lines": [
+            11721,
+            11721
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [58].",
+          "source_entry": "[58] Molnar, J., Widmer, Y.: On the mKdV and NLS hierarchies (in preparation), 2016.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-059",
+          "source_lines": [
+            11732,
+            11733
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [59].",
+          "source_entry": "[59] Molnar, J.C.: New estimates of the nonlinear Fourier transform for the defocusing NLS equation. Int.\n      Math. Res. Not. 2015(17), 8309–8352, 2014.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-060",
+          "source_lines": [
+            11735,
+            11736
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [60].",
+          "source_entry": "[60] Molnar, J.C.: On Two-Sided Estimates for the Nonlinear Fourier Transform of KdV. Discrete Contin. Dyn.\n      Syst. (to appear), 2016.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-061",
+          "source_lines": [
+            11738,
+            11738
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [61].",
+          "source_entry": "[61] Newell, A.C., Moloney, J.V.: Newell: Nonlinear optics. Advanced Topics in the... - Google Scholar, 1992.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-062",
+          "source_lines": [
+            11740,
+            11741
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [62].",
+          "source_entry": "[62] Oh, T., Sulem, C.: On the one-dimensional cubic nonlinear Schrödinger equation below L2 (T). Kyoto J.\n      Math. 52(1), 99–115, 2012.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-063",
+          "source_lines": [
+            11743,
+            11744
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [63].",
+          "source_entry": "[63] Pöschel, J.: Hill’s potentials in weighted Sobolev spaces and their spectral gaps. Math. Ann. 349(2), 433–\n      458, 2011.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-064",
+          "source_lines": [
+            11746,
+            11747
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [64].",
+          "source_entry": "[64] Rudin, W.: Functional analysis. International Series in Pure and Applied Mathematics, second edn.\n      McGraw-Hill Inc., New York, 1991.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-065",
+          "source_lines": [
+            11749,
+            11750
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [65].",
+          "source_entry": "[65] Tao, T., Colliander, J., Keel, M., Staffilani, G., Takaoka, H.: Global well-posedness for KdV in Sobolev spaces\n      of negative index. Electron. J. Differential Equations pp. 1–7, 2001.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-066",
+          "source_lines": [
+            11752,
+            11753
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [66].",
+          "source_entry": "[66] Zakharov, V.E., Shabat, A.B.: A scheme for integrating the nonlinear equations of mathematical physics\n      by the method of the inverse scattering problem. I. Funct. Anal. Appl. 8(3), 226–235, 1975.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        },
+        {
+          "id": "BIB-067",
+          "source_lines": [
+            11755,
+            11755
+          ],
+          "status": "contextual",
+          "claim": "Bibliographic attribution [67].",
+          "source_entry": "[67] Zygmund, A.: On singular integrals. Rend. Mat. e Appl. (5) 16, 468–505, 1957.",
+          "declarations": [],
+          "qualification": "Recorded as source attribution. This entry does not independently certify the cited result, publication metadata or present research status."
+        }
+      ],
+      "document": "coverage/BIBLIOGRAPHY.md",
+      "document_sha256": "f9a2726a62fad029329e5ad2eb85f91cc22bf47ae96e5984888b88100ce01f60",
+      "source_read_chunks": [
+        "fe0087",
+        "8549d9"
+      ],
+      "qualification": "Keep these attribution records separate from the mathematical reviews; no fabricated Lean module evidence or claim of validating the cited external results.",
+      "new_lean_proofs": 0,
+      "new_refutations": 0,
+      "completion_claim": false,
+      "validation_lean_sources": {
+        "files": 4916,
+        "sha256": "399b5add3a6ef88137ff1576297dfa1338b8e0af55905c404e1d5f7fc09542a2"
+      },
+      "validation_reused_from_commit": "c23702bdbb42dd6a2566cd5173c587f7ce41d82e",
+      "source_record_sha256": "014e3d78edcbd9c2d48e8f7daf4f59f36905972b0007ee7218f06d383517dd00"
     }
   }
 }

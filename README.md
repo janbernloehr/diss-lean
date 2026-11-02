@@ -5,7 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [notation-page comparison](coverage/NOTATIONS_ASSERTIONS.md) maps 38 groups to their original objects, normalizations and domains. The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: [bibliographic source context](coverage/BIBLIOGRAPHY.md) records 67 attributions separately from mathematical reviews. The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

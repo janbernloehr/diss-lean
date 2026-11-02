@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [bibliographic source context](BIBLIOGRAPHY.md) records all 67 attributions separately from mathematical reviews. This documentation step leaves the exact 2014 edition comparison, rough physical sheet-sign direction clause and whole-source reconciliation open.
+
 The [notation-page comparison](NOTATIONS_ASSERTIONS.md) maps all 38 notation groups with their explicit domains and qualifications. It reconciles the native distribution conjugation, psi product and original Hamiltonian integral publications. The whole-source reconciliation, contextual bibliography and previously recorded unresolved comparisons remain.
 
 The [native periodic conjugation](SECTION_2.md) proofs add 14 checked positive theorems. Publish the reviewed notation-page comparison after reconciling the now-published proof queue, then finish the whole-dissertation source reconciliation and its remaining qualifications. Correct constants directly; add no new refutations. The broader completeness qualifications below remain.
