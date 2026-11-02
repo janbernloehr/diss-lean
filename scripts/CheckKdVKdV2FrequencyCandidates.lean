@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneNormalizedOddMoments
 import NLS.KdV.HillHminusOneNormalizedMoments
 import NLS.KdV.HillHminusOnePeriodEntries
 import NLS.KdV.HillHminusOneCriticalNumerators
@@ -387,7 +388,14 @@ run_cmd do
     `NLS.KdV.HillHminusOneNumeratorHilbert,
     `NLS.KdV.HillHminusOneHilbertPeriod,
     `NLS.KdV.HillHminusOneNormalizedDifferentials,
-    `NLS.KdV.HillHminusOneNormalizedMoments]
+    `NLS.KdV.HillHminusOneNormalizedMoments,
+    `NLS.ComplexAnalysis.AnalyticImplicitUniqueness,
+    `NLS.KdV.ClassicalRoughEmbedding,
+    `NLS.KdV.ClassicalRoughCriticalCompatibility,
+    `NLS.ComplexAnalysis.ParametricDividedDifferenceCongruence,
+    `NLS.KdV.ClassicalRoughNormalizationCompatibility,
+    `NLS.ComplexAnalysis.DenseLinearAnalyticUniqueness,
+    `NLS.KdV.HillHminusOneNormalizedOddMoments]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

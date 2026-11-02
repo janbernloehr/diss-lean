@@ -17,7 +17,20 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual rough normalization progress
+## Latest continuous/rough agreement and odd moments
+
+The actual continuous interval Fourier realization is now a bounded linear,
+dense inclusion into Hminus1. Exact trace, continuation-domain, root and
+primitive agreement is proved without endpoint matching. One common
+continuous neighborhood identifies every selected critical energy, filled
+numerator, period matrix, bounded operator, inverse, normalized entire
+numerator and moment. Analytic uniqueness through the dense linear
+pullback extends every odd cancellation to one full rough-open ball,
+retaining all moment analyticity, free values and exact zeroth periods.
+See `HMINUS_NORMALIZED_ODD_MOMENTS.md`. Full W and physical frequency
+identification remain open; no main theorem is marked verified.
+
+## Earlier rough normalization milestone
 
 The actual infinite period operator and its analytic two-sided inverse
 are now constructed on an Hminus1-open neighborhood of zero. Hilbert
@@ -740,3 +753,8 @@ Current strict validation: all 334 selected modules pass, with 4052
 selected declarations and 25355 imported NLS declarations in the
 transitive axiom audit. See `HMINUS_NORMALIZED_MOMENTS.md`, `VALIDATION.md`
 and `source.json`. All main theorems remain open.
+
+Current strict validation: all 341 selected modules pass, with 4102
+selected declarations and 25405 imported NLS declarations in the
+transitive axiom audit. See `HMINUS_NORMALIZED_ODD_MOMENTS.md`, `VALIDATION.md`
+and `source.json`. Every main theorem remains open.

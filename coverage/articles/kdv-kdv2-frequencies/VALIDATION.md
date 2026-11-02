@@ -73,8 +73,9 @@ its existing Hilbert specialization and a transitive audit.
 | `DiagonalBilinearPairing.lean`, `AnalyticTailSummation.lean`, `ClassicalTwoWeightedMomentBounds.lean`, `ClassicalFrequencyGapMajorant.lean`, `ClassicalNormalizedFrequencySeries.lean`, and the existing canonical gap identification | Actual weighted high second-moment bound and locally bounded l1 frequency-gap majorant; constructed normalized second-moment series is absolutely convergent, analytic and locally uniformly convergent near zero for every output index. Physical frequency identification and full rough/global scope remain open. |
 | Selected actual Hminus1 trace/Miura/source-sheet dependencies from convexity `08db7a5`, `AnalyticSimpleCriticalBranch.lean`, `HillHminusOneCriticalPoints.lean`, `HillHminusOneCriticalNumerators.lean`, and `HillHminusOnePeriodEntries.lean` | Actual simple high critical energies at arbitrary complex rough sources; exact free labels; a common entire critical basis and all original contour/analytic period entries on one Hminus1-open neighborhood, with the full free identity matrix. Rough operator inversion and normalized moments remain open. |
 | `HillHminusOneCriticalControl`, `HillHminusOneUniformPrimitiveBounds`, `HillHminusOnePeriodBounds`, `HillHminusOnePeriodInverse`, `HillHminusOneNumeratorHilbert`, `HillHminusOneHilbertPeriod`, `HillHminusOneNormalizedDifferentials`, `HillHminusOneNormalizedMoments` and shared elementary bounds | Actual rough uniform contour estimates; constructed bounded analytic period operator and two-sided inverse; normalized entire differentials and all-order moment analyticity with exact zeroth periods on one Hminus1-open neighborhood of zero. Full W and physical frequencies remain open. |
+| `ClassicalRoughEmbedding`, `ClassicalRoughCriticalCompatibility`, `ClassicalRoughNormalizationCompatibility`, `HillHminusOneNormalizedOddMoments` and three generic uniqueness/congruence modules | Exact continuous interval/rough trace and normalized-family agreement, including all indices, filled centers and actual inverses; analytic propagation and true Fourier density give all odd normalized cancellation on one Hminus1-open ball. Full W and physical frequencies remain open. |
 
-All 334 selected modules compile with pinned **Lean 4.33.1**, commit
+All 341 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -418,11 +419,18 @@ PASS NLS/KdV/HillHminusOneNumeratorHilbert
 PASS NLS/KdV/HillHminusOneHilbertPeriod
 PASS NLS/KdV/HillHminusOneNormalizedDifferentials
 PASS NLS/KdV/HillHminusOneNormalizedMoments
-Axiom audit passed: 4052 candidate declarations; 25355 declarations total.
+PASS NLS/ComplexAnalysis/AnalyticImplicitUniqueness
+PASS NLS/KdV/ClassicalRoughEmbedding
+PASS NLS/KdV/ClassicalRoughCriticalCompatibility
+PASS NLS/ComplexAnalysis/ParametricDividedDifferenceCongruence
+PASS NLS/KdV/ClassicalRoughNormalizationCompatibility
+PASS NLS/ComplexAnalysis/DenseLinearAnalyticUniqueness
+PASS NLS/KdV/HillHminusOneNormalizedOddMoments
+Axiom audit passed: 4102 candidate declarations; 25405 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 334 selected modules (including generated and private declarations)
+the 341 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1161,3 +1169,34 @@ No main-theorem inventory row is verified.
 A final trailing-blank-line cleanup in `CompactSliceBounds.lean` was strictly
 recompiled; its compiled object is byte-identical to the fully audited
 object. The source hash was refreshed and all final checks passed.
+
+
+## Exact continuous/rough agreement and all normalized rough odd moments
+
+The current milestone is detailed in `HMINUS_NORMALIZED_ODD_MOMENTS.md`.
+The actual continuous unit-interval Fourier realization is bounded linear
+and dense in Hminus1, with exact physical trace, source-sheet and primitive
+agreement and no endpoint matching assumption. One common continuous
+neighborhood identifies every critical energy, filled numerator, matrix,
+bounded operator, inverse, normalized entire numerator and moment.
+Analytic uniqueness through the connected dense linear pullback gives
+all odd normalized cancellation on one genuine rough-open ball, before
+all positive indices and odd orders. Exact free values, all-order moment
+analyticity, zeroth periods and actual rough contour data are retained.
+
+All 341 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The complete transitive audit passes for 4102
+selected declarations and 25405 declarations including imported NLS
+dependencies, using only propext, Classical.choice and Quot.sound.
+All source/provenance hashes and ordered checker/audit/PASS selections
+agree. Selected outputs are private and fresh. The canonical main checkout
+remains unchanged and clean. All 334 previously selected Lean source files
+are byte-identical, and all six earlier provenance records remain valid.
+There are seven new own proved modules, with no new external source import,
+placeholder, new axiom, heartbeat increase, disabled linter or warning
+exception. Earlier milestone paragraphs describe their historical scope;
+continuous/rough compatibility and local rough odd cancellation are now
+proved. Full W, even collapsed cancellation in the full required scope,
+sharp rough moment bounds/summation, the exact canonical prefactor and
+physical frequency/action/Birkhoff identifications remain open. No
+main-theorem inventory row is verified.

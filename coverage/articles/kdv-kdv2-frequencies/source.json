@@ -5733,6 +5733,104 @@
       "scope": "Existing unchanged generic complex ZS displacement bounds directly selected and strictly recompiled for actual rough critical control; no RealType inference for the Hill pair",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "e547e0d72c356745374af558241d499450546be931a2e9981536261c08fb0e84"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticImplicitUniqueness.lean",
+      "source_labels": [
+        "Generic actual implicit branch uniqueness"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Continuous local zero selections of a jointly analytic Banach equation with bijective unknown derivative agree near their common base value; scalar specialization requires a nonzero derivative and uses an actual inverse-function chart",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ae00ad18dae356c3a2df868a2d873aed70f21b64d81ae3580ab0ef7365629264"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/DenseLinearAnalyticUniqueness.lean",
+      "source_labels": [
+        "Generic analytic uniqueness through a dense stronger source"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "On an open convex target neighborhood of zero, analytic scalar functions vanishing after a dense bounded complex-linear pullback near source zero vanish throughout the target; analytic identity on the connected preimage precedes density, and bounded stronger balls are not assumed dense",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "93894f63b8f6b182b21b1aa6a67970db907dcccd9fca3362d487bcb1632547e1"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricDividedDifferenceCongruence.lean",
+      "source_labels": [
+        "Generic filled moving division congruence"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "For arbitrary parameter types, matching centers and literal scalar slices imply equality of filled moving divided differences, including the moving center",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0b7a032b5c84f1a50bcf8114e9202129ed3f09a1865175ec7c5450a5fbcd4b7f"
+    },
+    {
+      "path": "NLS/KdV/ClassicalRoughCriticalCompatibility.lean",
+      "source_labels": [
+        "Actual all-mode continuous/rough critical compatibility"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "For arbitrary constructed all-contour families and different finite-head cutoffs, a single continuous-source neighborhood gives equality of every actual rough and classical critical energy; high scalar uniqueness and finite implicit uniqueness are proved and used",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e3af4986575af3d38574de412830836d9925f683fa2edd9614ccdd2fd77bab5f"
+    },
+    {
+      "path": "NLS/KdV/ClassicalRoughEmbedding.lean",
+      "source_labels": [
+        "Actual bounded dense continuous-interval to Hminus1 realization"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Actual unit-interval Fourier/L2 and rough bounded linear inclusions preserve the literal physical trace at every complex energy, its derivative, continuation domain, root and primitive; finite polynomials prove genuine density, with no endpoint matching or periodic-C0 assumption",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d6fa54607dfa85f832c366d34d2adda701f45fec52ed913722d6cb6d3efb6e75"
+    },
+    {
+      "path": "NLS/KdV/ClassicalRoughNormalizationCompatibility.lean",
+      "source_labels": [
+        "Actual continuous/rough normalized differential and moment agreement"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Filled numerator, literal matrix, bounded operator, inverse, Hilbert realization, normalized entire numerator and all-order moment equality are proved. For any actual continuous period inverse, a rough counterpart and common continuous neighborhood are constructed, retaining exact rough free slices and zeroth periods",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6636390e20dc61256646fd0aa0e4796351a6c37424a7adcd86d3a60ce1e8b5b5"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneNormalizedOddMoments.lean",
+      "source_labels": [
+        "Actual all-mode rough normalized odd cancellation"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Constructs a genuine Hminus1-open ball of zero before all positive numerator/contour indices and odd orders. Every odd normalized moment vanishes there, including low, diagonal and collapsed indices; joint entire numerator analyticity, exact free values, all moment analyticity and original zeroth normalization retained. Full W and physical frequencies remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "89aa11b39243b8711771cded42e5097552dc06786ed3538275b70edb1c9cdfe8"
     }
   ],
   "dependencies_needed": [
@@ -5764,15 +5862,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4052,
-    "total_declarations_audited": 25355,
+    "candidate_declarations_audited": 4102,
+    "total_declarations_audited": 25405,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 334
+    "selected_modules": 341
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -5896,5 +5994,6 @@
   "hminus_period_data_record": "HMINUS_PERIOD_DATA.md",
   "shared_hminus_normalization_import_record": "SHARED_HMINUS_NORMALIZATION_IMPORT.json",
   "hminus_normalized_moments_record": "HMINUS_NORMALIZED_MOMENTS.md",
-  "shared_hminus_primitive_import_record": "SHARED_HMINUS_PRIMITIVE_IMPORT.json"
+  "shared_hminus_primitive_import_record": "SHARED_HMINUS_PRIMITIVE_IMPORT.json",
+  "hminus_normalized_odd_moments_record": "HMINUS_NORMALIZED_ODD_MOMENTS.md"
 }

@@ -341,7 +341,14 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/HillHminusOneNumeratorHilbert
   NLS/KdV/HillHminusOneHilbertPeriod
   NLS/KdV/HillHminusOneNormalizedDifferentials
-  NLS/KdV/HillHminusOneNormalizedMoments)
+  NLS/KdV/HillHminusOneNormalizedMoments
+  NLS/ComplexAnalysis/AnalyticImplicitUniqueness
+  NLS/KdV/ClassicalRoughEmbedding
+  NLS/KdV/ClassicalRoughCriticalCompatibility
+  NLS/ComplexAnalysis/ParametricDividedDifferenceCongruence
+  NLS/KdV/ClassicalRoughNormalizationCompatibility
+  NLS/ComplexAnalysis/DenseLinearAnalyticUniqueness
+  NLS/KdV/HillHminusOneNormalizedOddMoments)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

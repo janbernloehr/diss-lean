@@ -1,5 +1,10 @@
 # Actual normalized Hill differentials and moments in Hminus1
 
+The later [compatibility and odd-moment milestone](HMINUS_NORMALIZED_ODD_MOMENTS.md)
+proves continuous/rough normalized-family agreement and all odd cancellation
+on a genuine rough-open neighborhood. Those obligations listed as open
+below describe this earlier milestone's scope.
+
 `exists_hillHminus_analytic_normalized_moments` constructs one complex
 `PeriodOneHminusOne`-open neighborhood of zero before every positive
 numerator index, positive contour index and nonnegative moment order.
