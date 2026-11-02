@@ -85,6 +85,12 @@ import NLS.ComplexAnalysis.LogarithmStripNormalization
 import NLS.KdV.HillL2RealSourcePhase
 import NLS.KdV.HillL2CutRealPhase
 import NLS.KdV.HillL2CutEndpointNormalization
+import NLS.ComplexAnalysis.RealCutConjugation
+import NLS.ComplexAnalysis.GapPrimitiveSquare
+import NLS.ComplexAnalysis.CoshSquareCoordinate
+import NLS.KdV.HillL2CutPrimitiveSquare
+import NLS.KdV.HillL2CutSquareTrace
+import NLS.KdV.HillL2CutSquareDeflation
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -157,7 +163,19 @@ run_cmd do
     ``NLS.ComplexAnalysis.sinh_eq_zero_of_re_zero_im_int_pi,
     ``NLS.ComplexAnalysis.exp_neg_I_nat_pi,
     ``NLS.ComplexAnalysis.eq_zero_of_exp_eq_one_of_abs_im_le_pi,
-    ``NLS.ComplexAnalysis.eq_of_exp_eq_of_abs_im_sub_le_pi]
+    ``NLS.ComplexAnalysis.eq_of_exp_eq_of_abs_im_sub_le_pi,
+    ``NLS.ComplexAnalysis.conj_mem_real_cut,
+    ``NLS.ComplexAnalysis.gapPrimitiveSquareExtension,
+    ``NLS.ComplexAnalysis.gapPrimitiveSquareExtension_spec,
+    ``NLS.ComplexAnalysis.coshSquareCoordinate,
+    ``NLS.ComplexAnalysis.coshSquareCoordinate_sq,
+    ``NLS.ComplexAnalysis.analyticOnNhd_coshSquareCoordinate,
+    ``NLS.ComplexAnalysis.coshSquareCoordinate_ofReal,
+    ``NLS.ComplexAnalysis.coshSquareCoordinate_neg_ofReal,
+    ``NLS.ComplexAnalysis.coshSquareCoordinate_re_le_one_of_nonpos,
+    ``NLS.ComplexAnalysis.cosh_add_I_nat_pi,
+    ``NLS.ComplexAnalysis.deriv_coshSquareCoordinate_zero,
+    ``NLS.ComplexAnalysis.deriv_ne_zero_of_analyticOrderNatAt_eq_one]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

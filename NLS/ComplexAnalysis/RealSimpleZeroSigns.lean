@@ -16,6 +16,20 @@ noncomputable section
 open Set Filter Topology Complex
 namespace NLS.ComplexAnalysis
 
+theorem deriv_ne_zero_of_analyticOrderNatAt_eq_one
+    (F : ℂ → ℂ) (a : ℂ) (hf : AnalyticAt ℂ F a)
+    (ho : analyticOrderNatAt F a = 1) : deriv F a ≠ 0 := by
+  intro hd0
+  have hz : F a = 0 := apply_eq_zero_of_analyticOrderNatAt_ne_zero (by omega)
+  have horder : analyticOrderAt F a = 1 :=
+    (ENat.toNat_eq_iff (by norm_num : (1 : ℕ) ≠ 0)).mp ho
+  have htwo : (2 : ℕ∞) ≤ analyticOrderAt F a :=
+    (natCast_le_analyticOrderAt_iff_iteratedDeriv_eq_zero hf).mpr (by
+      intro i hi
+      interval_cases i <;> simp [iteratedDeriv_zero,iteratedDeriv_one,hz,hd0])
+  rw [horder] at htwo
+  norm_num at htwo
+
 theorem not_isLocalExtr_of_simple_real_zero (F : ℂ → ℂ) (a : ℝ)
     (hf : AnalyticAt ℂ F (a : ℂ)) (hr : ∀ t : ℝ, (F t).im = 0)
     (ho : analyticOrderNatAt F a = 1) :
@@ -29,19 +43,7 @@ theorem not_isLocalExtr_of_simple_real_zero (F : ℂ → ℂ) (a : ℝ)
   rw [he] at him
   have himzero : (deriv F (a : ℂ)).im = 0 := him.unique (hasDerivAt_const a (0 : ℝ))
   have hd0 : deriv F (a : ℂ) = 0 := Complex.ext hre himzero
-  have hz : F (a : ℂ) = 0 := apply_eq_zero_of_analyticOrderNatAt_ne_zero (by omega)
-  have hfinite : analyticOrderAt F (a : ℂ) ≠ ⊤ := by
-    intro hh
-    simp [analyticOrderNatAt,hh] at ho
-  have horder : analyticOrderAt F (a : ℂ) = 1 := by
-    have hh := congrArg (fun k : ℕ => (k : ℕ∞)) ho
-    simpa only [Nat.cast_analyticOrderNatAt hfinite,Nat.cast_one] using hh
-  have htwo : (2 : ℕ∞) ≤ analyticOrderAt F (a : ℂ) :=
-    (natCast_le_analyticOrderAt_iff_iteratedDeriv_eq_zero hf).mpr (by
-      intro i hi
-      interval_cases i <;> simp [iteratedDeriv_zero,iteratedDeriv_one,hz,hd0])
-  rw [horder] at htwo
-  norm_num at htwo
+  exact deriv_ne_zero_of_analyticOrderNatAt_eq_one F a hf ho hd0
 
 theorem negative_on_preconnected_of_nonzero
     (g : ℝ → ℝ) (S : Set ℝ) (hS : IsPreconnected S) (hg : ContinuousOn g S)

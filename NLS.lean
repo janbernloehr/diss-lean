@@ -5010,4 +5010,9 @@ import NLS.ComplexAnalysis.LogarithmStripNormalization
 import NLS.KdV.HillL2RealSourcePhase
 import NLS.KdV.HillL2CutRealPhase
 import NLS.KdV.HillL2CutEndpointNormalization
+import NLS.ComplexAnalysis.RealCutConjugation
+import NLS.ComplexAnalysis.CoshSquareCoordinate
+import NLS.KdV.HillL2CutPrimitiveSquare
+import NLS.KdV.HillL2CutSquareTrace
+import NLS.KdV.HillL2CutSquareDeflation
 import NLS.Articles.KdVEstimates.EstimateAdapter
