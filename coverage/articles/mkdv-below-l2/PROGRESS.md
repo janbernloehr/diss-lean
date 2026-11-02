@@ -625,3 +625,55 @@ that their sources are unchanged. The full transitive audit was rerun: all
 `Classical.choice` and `Quot.sound`. There are no holes, new axioms, disabled
 linters or increased heartbeat limits. The focused checker now lists 104
 modules. The canonical checkout and compiled dependencies remain read-only.
+
+## Fifteenth checkpoint: actual fourth-frequency rotations and a nonzero signed mode
+
+A reusable source action-frequency family now lifts real Hamiltonian rotations
+through the actual open Birkhoff image at every finite p>1. Coordinatewise
+frequency continuity suffices for full norm continuity of the phase path.
+The first Hamiltonian component has the negative phase sign. Every original
+spectral action is preserved, frequencies remain constant, time parameters
+add, and every admissible step has an admissible negative-time inverse.
+All source inverse statements retain the actual image-domain condition.
+
+The article's constructed cubic-plus-normalized fourth-frequency family
+supplies all generic data: both continuity and original action invariance are
+proved. On the original H^(3/2) domain its frequency equals the independently
+defined physical H4 derivative minus the exact 6H2 and 12*pi*n*H1 shifts.
+No identification with the H3 frequency is used.
+
+The fixed Theorem 1.2 map now provides actual physical distribution-pair
+trajectories. Their coordinates are exactly the prescribed rotations of the
+same Birkhoff family. A common positive time interval and open neighborhood
+exist at every source. A single invariant open neighborhood of zero works
+before every real time interval. The complete compact-time source trajectory
+maps are continuous in the uniform norm. Convergent sequences or filtered
+families give uniformly convergent actual source paths; openness supplies
+eventual admissibility on the common interval.
+
+The nonzero-index requirement in the fixed-time nonextension argument is now
+proved on the actual physical inputs. Finite support of just the first complex
+Birkhoff component forces actual spectral finite-gap regularity. Its unique
+Hilbert model has the same original Fourier coefficients. Fourier uniqueness
+then gives exactly the same two original period-one distributions. Hence an
+input outside the physical Hilbert domain has a nonzero first Birkhoff mode
+at n!=0. The mass-dependent phase therefore cannot be confined to its
+degenerate zero index. Controlled divergent-mass approximations and the full
+fixed-time separation argument are still required.
+
+Theorem 1.1 remains open. These results concern actual fourth-frequency
+rotation lifts on real-type pairs, not yet solutions on the smaller real
+mKdV diagonal. The diagonal Birkhoff correspondence and odd frequency symmetry,
+smooth PDE agreement, scalar diagonal restriction and the exact solution
+notion, and the tunable-mass fixed-time obstruction remain to be proved.
+The existing spatial-reflection-fixed source slice is distinct from the
+mKdV diagonal; its symmetry results have not been substituted for that gap.
+Theorems 1.2 and 1.3 remain verified.
+
+All 8 final new modules pass strict Lean 4.33.1 checks. The 104 parent modules
+reuse validation at `020ba7305cbfaabc0ac2be0c8398c16ec1995cd6` after verifying
+that their sources are unchanged. The fresh full transitive audit checks all
+522 declarations, exactly matching `AxiomAudit.lean`; only `propext`,
+`Classical.choice` and `Quot.sound` occur. No holes, new axioms, disabled
+linters or increased heartbeat limits were introduced. The focused checker
+now lists 112 modules. The canonical checkout remains untouched.

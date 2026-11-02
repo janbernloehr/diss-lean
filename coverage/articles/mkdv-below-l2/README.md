@@ -10,7 +10,8 @@ compiled dependencies are unchanged. The workspace decision remains separate.
 
 See the [Theorem 1.2 clause map](theorem-1.2.json),
 [Theorem 1.3 clause map](theorem-1.3.json),
-[dependency history](theorem-1.3-progress.json), and
+[H4 dependency history](theorem-1.3-progress.json),
+[Theorem 1.1 progress](theorem-1.1-progress.json), and
 [checkpoint history](PROGRESS.md).
 
 ## Pinned source
@@ -72,6 +73,23 @@ pointwise-in-time limit curve. The original equation must have no continuous
 extension at any datum in FL^p outside L², at each fixed t>0 as stated in
 Corollary 7.2(iii).
 
+The actual cubic-plus-normalized H4 rotations now have physical distribution
+source lifts through the fixed Birkhoff image. A common local interval works
+for nearby data; one invariant neighborhood of zero works before every time
+interval. The full compact-time source trajectory maps are continuous in the
+uniform norm, and convergent approximants have uniformly convergent lift
+trajectories. The same physical Birkhoff coordinates, original action products,
+time-addition law and admissible inverse steps are verified. These are
+rotation-lift results: diagonal invariance and agreement with smooth mKdV PDE
+solutions have not yet been proved.
+
+Every physical input outside the Hilbert pair space now has a nonzero first
+Birkhoff mode at n≠0. Here Hilbert membership means that exactly the same two
+original distributions are represented by a real FL² input. The proof uses
+actual finite-gap regularity and Fourier uniqueness, not finite input Fourier
+support. The divergent-mass approximation and fixed-time phase separation
+steps remain open.
+
 ## Physical conventions and corrections
 
 Fourier synthesis uses exp(2πinx); coefficients use exp(-2πinx). The original
@@ -96,9 +114,10 @@ Theorem 7.1 is a cross-reference typo; that theorem has three items.
 
 1. Prove the smaller physical mKdV diagonal's Birkhoff conjugation/reflection
    symmetry and invariance, consuming the verified smooth hierarchy bridge.
-2. Identify the physical renormalized evolution with the corresponding
-   rotation, and keep it locally in the open Birkhoff image. A small ball
-   supplies the global-near-zero clause.
+2. Identify the verified fourth-frequency rotation lift with the smooth
+   physical renormalized evolution. The common local interval, invariant
+   small neighborhood and uniform-norm trajectory continuity are now proved
+   for this lift on real-type distribution pairs.
 3. Prove the exact smooth-approximation solution property and continuity in
    the uniform trajectory norm.
 4. Prove fixed-time nonextension at every FL^p datum outside L² using controlled
@@ -106,13 +125,13 @@ Theorem 7.1 is a cross-reference typo; that theorem has three items.
 
 ## Validation
 
-The focused checker `check.sh` lists 104 article/shared modules and the
+The focused checker `check.sh` lists 112 article/shared modules and the
 consumed hierarchy foundations. Lean 4.33.1 checks use `autoImplicit=false`
-and `warningAsError=true`. The fourteenth checkpoint strictly checks all 16
-final new modules and reuses 88 parent modules after verifying their sources
-are unchanged from `896298fd1ab33359c906eeea93d922c78fe909a0`.
+and `warningAsError=true`. The fifteenth checkpoint strictly checks all 8
+final new modules and reuses 104 parent modules after verifying their sources
+are unchanged from `020ba7305cbfaabc0ac2be0c8398c16ec1995cd6`.
 
-The fresh full transitive audit checks all 460 named declarations, including
+The fresh full transitive audit checks all 522 named declarations, including
 the main Theorems 1.2 and 1.3. Only `propext`, `Classical.choice` and
 `Quot.sound` occur. No holes, new axioms, disabled linters or increased
 heartbeat limits were introduced. `validation.txt` captures the checks;

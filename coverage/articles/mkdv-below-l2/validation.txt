@@ -1,21 +1,13 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
-Incremental validation: 88 unchanged modules reuse commit 896298fd1ab33359c906eeea93d922c78fe909a0; 16 final new modules checked strictly below.
-ZakharovShabat/SourceSobolevComplexInverseAgreement: checked
-SequenceSpaces/WeightedPairRealCoordinates: checked
-ZakharovShabat/SourceSobolevFourthComplexGerm: checked
-SequenceSpaces/RealGermScalarActionDescent: checked
-ZakharovShabat/SourceSobolevFourthActions: checked
-FunctionalAnalysis/LocalActionFactorTransport: checked
-ZakharovShabat/SourceSobolevFourthActionFactors: checked
-ZakharovShabat/SourceSobolevFourthActionCurves: checked
-ComplexAnalysis/QuadraticActionDerivative: checked
-ZakharovShabat/SourceSobolevFourthActionDerivatives: checked
-ZakharovShabat/SourceSobolevFourthFrequencyRegularity: checked
-ZakharovShabat/SourceSobolevFourthLowerHamiltonians: checked
-ZakharovShabat/SourceWeightedFiniteGapEquality: checked
-ZakharovShabat/SourceSobolevFourthMomentIdentification: checked
-Articles/MKdVBelowL2/PhysicalFourthSobolevAdapter: checked
-Articles/MKdVBelowL2/Theorem13: checked
+Incremental validation: 104 unchanged modules reuse commit 020ba7305cbfaabc0ac2be0c8398c16ec1995cd6; 8 final new modules checked strictly below.
+ZakharovShabat/SourceActionPhaseFlow: checked
+ZakharovShabat/SourceActionPhaseLocalFlow: checked
+ZakharovShabat/SourceActionPhaseTrajectories: checked
+Articles/MKdVBelowL2/FourthHamiltonianPhaseFamily: checked
+Articles/MKdVBelowL2/PhysicalFourthImageFlow: checked
+Articles/MKdVBelowL2/PhysicalFourthImageIdentities: checked
+ZakharovShabat/SourceBirkhoffNonzeroIndex: checked
+Articles/MKdVBelowL2/PhysicalNonzeroBirkhoffIndex: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -880,3 +872,137 @@ Articles/MKdVBelowL2/Theorem13: checked
 'NLS.Articles.MKdVBelowL2.theorem1_3_hilbert' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.theorem1_3_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.theorem1_3_asymptotic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory_action' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.continuous_phaseTrajectory' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.zero_mem_imageDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.complex_map_imageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.isOpen_imageDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.continuousOn_imageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_action' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.frequency_imageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory_imageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.mem_imageDomain_restart_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.neg_mem_imageDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.exists_local_imageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.exists_small_imageDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.exists_invariant_small_phaseFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectoryOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.continuous_phaseTrajectoryOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.trajectoryDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageTrajectoryOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.isOpen_trajectoryDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.continuous_imagePath' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageTrajectoryOn_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.continuousOn_imageTrajectoryOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_eq_of_actions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_complex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_eq_physical_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalImageDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.zero_mem_fourthPhysicalImageDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.isOpen_fourthPhysicalImageDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.continuousOn_fourthPhysicalImageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalTrajectoryDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalTrajectoryOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.isOpen_fourthPhysicalTrajectoryDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalTrajectoryOn_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.continuousOn_fourthPhysicalTrajectoryOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_local_fourthPhysicalTrajectory' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_global_small_fourthPhysicalTrajectory' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_coordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_actions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.neg_mem_fourthPhysicalImageDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthPhysicalImageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGap_of_complex_fst_vanishes_off' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.mem_hilbert_of_complex_fst_vanishes_off' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_nonzero_complex_birkhoff_index' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalPairHasHilbertRepresentative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalPairHasHilbertRepresentative_of_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_nonzero_physical_birkhoff_index' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

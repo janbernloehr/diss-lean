@@ -1,3 +1,11 @@
+import NLS.ZakharovShabat.SourceActionPhaseFlow
+import NLS.ZakharovShabat.SourceActionPhaseLocalFlow
+import NLS.ZakharovShabat.SourceActionPhaseTrajectories
+import NLS.Articles.MKdVBelowL2.FourthHamiltonianPhaseFamily
+import NLS.Articles.MKdVBelowL2.PhysicalFourthImageFlow
+import NLS.Articles.MKdVBelowL2.PhysicalFourthImageIdentities
+import NLS.ZakharovShabat.SourceBirkhoffNonzeroIndex
+import NLS.Articles.MKdVBelowL2.PhysicalNonzeroBirkhoffIndex
 import NLS.ZakharovShabat.SourceSobolevComplexInverseAgreement
 import NLS.SequenceSpaces.WeightedPairRealCoordinates
 import NLS.ZakharovShabat.SourceSobolevFourthComplexGerm
@@ -575,3 +583,66 @@ import NLS.Articles.MKdVBelowL2.FourthMomentSummability
 #print axioms NLS.Articles.MKdVBelowL2.theorem1_3_hilbert
 #print axioms NLS.Articles.MKdVBelowL2.theorem1_3_extension
 #print axioms NLS.Articles.MKdVBelowL2.theorem1_3_asymptotic
+
+#print axioms NLS.ZakharovShabat.SourceActionFrequency
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory_zero
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory_action
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory_real
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory_norm
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.continuous_phaseTrajectory
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.imageDomain
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.imageFlow
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.zero_mem_imageDomain
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.complex_map_imageFlow
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.imageFlow_zero
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.isOpen_imageDomain
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.continuousOn_imageFlow
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.imageFlow_action
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.frequency_imageFlow
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory_imageFlow
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.mem_imageDomain_restart_iff
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.imageFlow_add
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.neg_mem_imageDomain
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.imageFlow_neg
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.exists_local_imageFlow
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.exists_small_imageDomain
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.exists_invariant_small_phaseFlow
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectoryOn
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.continuous_phaseTrajectoryOn
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.trajectoryDomain
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.imageTrajectoryOn
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.isOpen_trajectoryDomain
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.continuous_imagePath
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.imageTrajectoryOn_apply
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.continuousOn_imageTrajectoryOn
+#print axioms NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_eq_of_actions
+#print axioms NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency
+#print axioms NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_complex
+#print axioms NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_eq_physical_derivative
+#print axioms NLS.Articles.MKdVBelowL2.fourthPhysicalImageDomain
+#print axioms NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow
+#print axioms NLS.Articles.MKdVBelowL2.zero_mem_fourthPhysicalImageDomain
+#print axioms NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_zero
+#print axioms NLS.Articles.MKdVBelowL2.isOpen_fourthPhysicalImageDomain
+#print axioms NLS.Articles.MKdVBelowL2.continuousOn_fourthPhysicalImageFlow
+#print axioms NLS.Articles.MKdVBelowL2.fourthPhysicalTrajectoryDomain
+#print axioms NLS.Articles.MKdVBelowL2.fourthPhysicalTrajectoryOn
+#print axioms NLS.Articles.MKdVBelowL2.isOpen_fourthPhysicalTrajectoryDomain
+#print axioms NLS.Articles.MKdVBelowL2.fourthPhysicalTrajectoryOn_apply
+#print axioms NLS.Articles.MKdVBelowL2.continuousOn_fourthPhysicalTrajectoryOn
+#print axioms NLS.Articles.MKdVBelowL2.exists_local_fourthPhysicalTrajectory
+#print axioms NLS.Articles.MKdVBelowL2.exists_global_small_fourthPhysicalTrajectory
+#print axioms NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_coefficients
+#print axioms NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_coordinates
+#print axioms NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_actions
+#print axioms NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_add
+#print axioms NLS.Articles.MKdVBelowL2.neg_mem_fourthPhysicalImageDomain
+#print axioms NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_neg
+#print axioms NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthPhysicalImageFlow
+#print axioms NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGap_of_complex_fst_vanishes_off
+#print axioms NLS.ZakharovShabat.SourceBirkhoffMapComplexData.mem_hilbert_of_complex_fst_vanishes_off
+#print axioms NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_nonzero_complex_birkhoff_index
+#print axioms NLS.Articles.MKdVBelowL2.physicalPairHasHilbertRepresentative
+#print axioms NLS.Articles.MKdVBelowL2.physicalPairHasHilbertRepresentative_of_finiteGap
+#print axioms NLS.Articles.MKdVBelowL2.exists_nonzero_physical_birkhoff_index

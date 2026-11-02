@@ -1,0 +1,44 @@
+{
+  "main_theorem": "1.1",
+  "source_page": 3,
+  "verified": false,
+  "checked_dependencies": [
+    {
+      "source": "Hamiltonian time orientation for the renormalized mKdV frequency",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_eq_physical_derivative",
+      "scope": "The actual cubic-plus-normalized fourth frequency equals the independently defined H4 action derivative minus 6H2 and 12*pi*n*H1 on the full original fractional source, at every index. The first Hamiltonian phase has the negative sign. H2 vanishing on the mKdV diagonal is not assumed by this declaration."
+    },
+    {
+      "source": "Local existence in the fixed physical Birkhoff image",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_local_fourthPhysicalTrajectory",
+      "scope": "Every finite p>1 and every original physical real-type pair has one open neighborhood and one positive common time interval. The actual H4 phase rotation lifts through the actual image inverse of the fixed Theorem 1.2 map. The lift is continuous into C([-T,T],FL_r^p) in the uniform norm. This is a rotation-lift result, not yet a mKdV PDE wellposedness theorem."
+    },
+    {
+      "source": "One small neighborhood before all time intervals",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_global_small_fourthPhysicalTrajectory",
+      "scope": "A single open physical real-type source neighborhood of zero is invariant under every real time step. On this same neighborhood the actual rotation lift has continuous uniform-norm trajectory maps for every compact time interval. No global Birkhoff surjectivity at p>2 is assumed. Diagonal restriction remains open."
+    },
+    {
+      "source": "Exact physical coordinates and local flow algebra",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_coordinates",
+      "scope": "The actual original period-one distribution pair maps under the fixed Theorem 1.2 Birkhoff family to precisely the Hamiltonian rotation with cubic-plus-normalized physical H4 frequency. Separate verified declarations preserve coordinate products, add time parameters and reverse admissible steps. Image conditions are explicit."
+    },
+    {
+      "source": "Uniform convergence of source trajectories",
+      "declaration": "NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthPhysicalImageFlow",
+      "scope": "Every convergent sequence or filtered family of original physical real-type inputs has uniformly convergent actual inverse-lift trajectories on any common admissible compact interval. Openness gives eventual admissibility without an extra assumption on the approximants. Identifying these lifts with smooth mKdV solutions is still required."
+    },
+    {
+      "source": "Nonzero signed mode required by the fixed-time obstruction",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_nonzero_physical_birkhoff_index",
+      "scope": "Every actual physical real-type pair outside the physical Hilbert domain has a nonzero first complex Birkhoff coordinate at some n!=0. The Hilbert domain is defined by existence of a real FL² pair representing exactly the same two original distributions. Finite first-coordinate support forces actual finite-gap regularity and a coefficient-preserving physical Hilbert representative. The mass-dependent phase at n=0 is not used."
+    }
+  ],
+  "remaining": [
+    "Prove the actual Birkhoff correspondence for the smaller real mKdV diagonal, its preserved phase symmetry and the necessary odd fourth-frequency identity; the existing reflection-fixed source slice is a different slice.",
+    "Prove that the constructed fourth-frequency inverse lifts agree with smooth physical renormalized mKdV solutions, consuming the verified hierarchy first-variation bridge and the actual physical mass and momentum normalizations.",
+    "Restrict the actual rotation-lift local and small-data trajectory results to the scalar real mKdV phase space and establish the exact smooth-approximation solution and uniqueness requirements of the source.",
+    "Construct controlled smooth approximations with tunable divergent physical mass at every datum outside L² and use the verified nonzero signed Birkhoff mode to prove nonextension at each fixed t>0. A trajectory obstruction alone does not prove this fixed-time claim."
+  ],
+  "validation": "Eight final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 104 unchanged parent modules reused from 020ba7305cbfaabc0ac2be0c8398c16ec1995cd6. Full transitive audit of 522 declarations uses only propext, Classical.choice and Quot.sound."
+}

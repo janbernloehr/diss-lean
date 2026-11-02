@@ -144,6 +144,14 @@ modules=(
   ZakharovShabat/SourceSobolevFourthMomentIdentification
   Articles/MKdVBelowL2/PhysicalFourthSobolevAdapter
   Articles/MKdVBelowL2/Theorem13
+  ZakharovShabat/SourceActionPhaseFlow
+  ZakharovShabat/SourceActionPhaseLocalFlow
+  ZakharovShabat/SourceActionPhaseTrajectories
+  Articles/MKdVBelowL2/FourthHamiltonianPhaseFamily
+  Articles/MKdVBelowL2/PhysicalFourthImageFlow
+  Articles/MKdVBelowL2/PhysicalFourthImageIdentities
+  ZakharovShabat/SourceBirkhoffNonzeroIndex
+  Articles/MKdVBelowL2/PhysicalNonzeroBirkhoffIndex
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"
