@@ -44,6 +44,18 @@ structure ClassicalHillHighGapPair (q : NLS.LinearVolterra.Curve ℂ) (n : ℕ+)
   midpoint_eq : classicalHillHighMidpoint q n = (l+r)/2
   squaredGap_eq : classicalHillHighSquaredGap q n = (l-r)^2
 
+theorem ClassicalHillHighGapPair.swap
+    {q : NLS.LinearVolterra.Curve ℂ} {n : ℕ+} {l r : ℂ}
+    (h : ClassicalHillHighGapPair q n l r) : ClassicalHillHighGapPair q n r l := by
+  refine ⟨h.right_mem,h.left_mem,h.right_zero,h.left_zero,?_,?_,h.trace_right,h.trace_left,?_,?_⟩
+  · intro lam hlam
+    rw [h.zeros_iff lam hlam,or_comm]
+  · intro lam hlam
+    rw [h.multiplicity lam hlam,Multiset.pair_comm]
+  · rw [h.midpoint_eq,add_comm l r]
+  · rw [h.squaredGap_eq]
+    ring
+
 /-- The actual high spectral roots have the trace level fixed by the
 index parity, including complex perturbations and repeated roots. -/
 theorem classicalHillDiscriminant_high_root_level

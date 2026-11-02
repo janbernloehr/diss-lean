@@ -11,7 +11,11 @@ joint open source-continuation domain. One cutoff and one complex potential
 neighborhood now cover every high squared-frequency contour, and their
 actual cubic moments form analytic families there. The high energy regions now
 have actual two-root Hill pairs with exact analytic multiplicities and parity
-trace levels, and analytic energy midpoints and squared gaps. Analytic squared primitive charts at
+trace levels, and analytic energy midpoints and squared gaps. For real continuous
+potentials all actual unit-modulus Floquet energies are now proved real; the
+primitive covers both complete nonreal energy half-planes, and the high pairs
+are ordered. The analytic summation also allows a local finite spectral cutoff.
+Analytic squared primitive charts at
 both signs of the branch locus are also constructed. The earlier local
 concavity/inverse preparation is preserved.
 This record does not reopen the completed dissertation verification.
@@ -88,6 +92,25 @@ reality/nonpositivity inherited from the terms, and value zero are retained.
 the quadratic estimate, without assuming a Taylor coefficient identity.
 In these generic lemmas the summand is the full weighted term
 T_n=8*n*pi*R_n of the paper.
+
+### Locally chosen spectral cutoffs
+
+[`TailExtension.lean`](../../../NLS/Articles/KdVConvexity/TailExtension.lean)
+proves that a quadratic estimate is needed only outside a finite set of
+indices. The literal full series splits into a finite analytic head and an
+analytic ell1 tail. `globalTailSeriesDomain` is the union of all such patches;
+each patch may choose its own cutoff and bound. It contains the previous
+all-index domain. `global_analytic_sum_of_local_tail_bounds` proves that
+local tail estimates at every nonnegative action give one complex open
+neighborhood of the entire positive ell2 quadrant, including all boundary
+points, with absolute convergence there. Termwise reality and nonpositivity
+pass to the sum. No vanishing or zero differential at the origin is inferred
+from a tail bound alone, since the finite head can contribute.
+
+`global_analytic_contour_sum_from_base_tail_bounds` in `BaseContourSeries`
+proves the same conclusion on the exact pulled-back weighted base domain,
+retaining the factor `8*n*pi`. Constructing the physical action-dependent
+moments and their uniform complex tail estimate remains required.
 
 ### Actual weighted action inclusion
 
@@ -475,9 +498,46 @@ on a common domain, not yet a Banach-valued sequence estimate.
 
 The high unordered pairs have not yet been integrated with a complete
 globally ordered Hill spectrum and its central labels. Their comparison
-with the rough Fourier Hill operator, reality/ordering at real potentials,
-global primitive normalization, weighted action descent, and the required
+with the rough Fourier Hill operator, global primitive normalization,
+weighted action descent, and the required
 uniform quadratic action estimates remain open.
+
+## Actual spectral reality and global nonreal primitive coverage
+
+[`ClassicalSolutionInjectivity.lean`](../../../NLS/ZakharovShabat/ClassicalSolutionInjectivity.lean)
+uses the actual determinant-one fundamental matrix to prove injectivity of
+state propagation at every point of the closed unit interval.
+[`ClassicalHillGreen.lean`](../../../NLS/KdV/ClassicalHillGreen.lean)
+transfers this to the scalar Hill flow. Every nonzero initial state has
+strictly positive physical position mass `integral_0^1 |F|^2`. Differentiation
+and the fundamental theorem of calculus prove the actual imaginary Green
+identity
+
+```
+-lambda.im * integral_0^1 |F|^2 = Im(conj(F(1))*F'(1)) - Im(conj(F(0))*F'(0)).
+```
+
+Consequently every unit-modulus Floquet multiplier of a real continuous
+potential has real energy, including periodic and antiperiodic solutions.
+This uses no NLS real-type assumption for the pair `(-1,-q)`.
+
+[`ClassicalHillReality.lean`](../../../NLS/KdV/ClassicalHillReality.lean)
+proves that every branch point at real continuous q is real. Each scaled
+potential `s*q`, 0<=s<=1, remains real, so the constructed free-normalized
+primitive covers **both entire nonreal energy half-planes**, with analytic
+dependence in energy and local joint analytic neighborhoods already supplied
+by the source-domain construction. Its exponential is an actual scalar
+Floquet multiplier, and its real part is nonzero at nonreal energies.
+
+The actual high pairs can be chosen with real endpoints in increasing order,
+including collapsed pairs. Real points of the n-th squared-frequency disc
+lie strictly between `(n*pi-pi/4)^2` and `(n*pi+pi/4)^2`; thus pairs at different
+high indices cannot cross. `exists_analytic_ordered_classicalHillHighGapFamilies`
+combines this with one complex neighborhood and cutoff for all analytic
+midpoints, squared gaps and cubic moments, at every real potential in that
+neighborhood. Complete central/global labels and the endpoint normalization
+`F(lambda_n^+/-)=-i*n*pi` remain unproved. These reality results concern
+continuous potentials; no L2 or H^-1 extension of the Green proof is claimed.
 
 ## Earlier checked local consequences
 
@@ -504,8 +564,9 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    Hill discriminant and normalized primitive. The discriminant, local
    squared primitive and free-normalized source continuation above are now
    proved, including actual unordered high energy pairs, their analytic
-   symmetric data and common high-contour coverage in the continuous
-   potential norm; complete global spectral labels, primitive endpoint matching and rough-operator
+   symmetric data, real ordering, global off-real primitive coverage and common
+   high-contour coverage in the continuous potential norm; complete global
+   spectral labels, primitive endpoint matching and rough-operator
    identification remain.
    Prove analytic descent to
    the weighted actions on a common complex neighborhood (Lemma 4.6(ii)).
@@ -523,16 +584,16 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    giving the full -6*Id derivative. Apply the checked local consequences
    after positive-index Hessian/real-cone transport.
 
-The `kdv-estimates` branch was re-inspected through commit `194ec4b`.
+The `kdv-estimates` branch was re-inspected through commit `b209737`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
-two-mode reduction, joint analytic determinant, high-strip two-zero
-localization, spectral Lipschitz control, weighted root separation and
-source-normalized gap tails. Its new scalar flow reuses the discriminant
-constructed on this branch, and its weak H2 eigenvectors are identified
-with that flow on the unit interval. The flow module is reused here
-unchanged; the separate Fourier/Hill modules are not duplicated. The
-period-two spectral equivalence, global labels and multiplicities, the
-rough-distribution domain, and action/Birkhoff construction remain open.
+two-mode reduction, weighted root separation and physical gap tails. The
+period-one L2 Hill discriminant is jointly entire after square descent,
+agrees with the continuous discriminant, and its zeros are identified with
+actual Fourier Hill eigenvectors and the reduced determinant. Those new
+Fourier/L2 modules are available on that branch and have not been duplicated
+or validated as part of this branch's focused check. The scalar flow module
+is reused here unchanged. Complete globally ordered labels, central bounds,
+rough H^-1 spectral/action theory, and the Birkhoff construction remain open.
 No separate messages were sent to other article chats.
 
 ## Validation and worktree
@@ -544,14 +605,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All twenty-six modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All thirty modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
-336 constants in their two namespaces, including generated declarations,
+374 constants in their two namespaces, including generated declarations,
 transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
-The three public declarations of the new shared bounded physical-class
-inclusion are explicitly included in the same transitive audit.
+The three public declarations of the shared bounded physical-class
+inclusion and both new propagation injectivity theorems are explicitly
+included in the same transitive audit.
 See `validation.json` for exact file hashes and scope.
 
 Reproduce from this worktree:

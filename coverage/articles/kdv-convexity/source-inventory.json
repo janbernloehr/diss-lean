@@ -111,7 +111,20 @@
         "NLS.KdV.exists_classicalHillHighGapPair_of_counting",
         "NLS.KdV.ClassicalHillHighGapPair.eq_or_swap",
         "NLS.KdV.analyticAt_classicalHillHigh_symmetric",
-        "NLS.KdV.exists_analytic_classicalHillHighGapFamilies"
+        "NLS.KdV.exists_analytic_classicalHillHighGapFamilies",
+        "NLS.Articles.KdVConvexity.analyticOnNhd_tsum_of_tail_quadratic_bound",
+        "NLS.Articles.KdVConvexity.global_analytic_sum_of_local_tail_bounds",
+        "NLS.Articles.KdVConvexity.global_analytic_contour_sum_from_base_tail_bounds",
+        "NLS.KdV.classicalHillGreen_im_identity",
+        "NLS.KdV.classicalHillFlow_energy_im_eq_zero_of_unit_multiplier",
+        "NLS.KdV.classicalHillRadicand_energy_im_eq_zero",
+        "NLS.KdV.mem_classicalHillContinuationDomain_of_im_ne_zero",
+        "NLS.KdV.analyticOnNhd_classicalHillContinuedPrimitive_off_real",
+        "NLS.KdV.exists_classicalHillContinued_floquet_vector",
+        "NLS.KdV.classicalHillContinuedPrimitive_re_ne_zero_off_real",
+        "NLS.KdV.exists_ordered_classicalHillHighGapPair_of_counting",
+        "NLS.KdV.ClassicalHillHighGapPair.right_lt_left_of_index_lt",
+        "NLS.KdV.exists_analytic_ordered_classicalHillHighGapFamilies"
       ],
       "remaining": [
         "Construct physical KdV contour moments and analytic descent on one complex neighborhood of the weighted ell^(-1,1) nonnegative cone (Lemma 4.6(ii)).",
@@ -187,7 +200,10 @@
     "positive_index_action_space": true,
     "base_action_norm": "sum_{n>=1} |I_n|/(1+n)",
     "exact_weighted_summand": "8*n*pi*R_n",
-    "derivative_at_zero_from_quadratic_bound_proved": true
+    "derivative_at_zero_from_quadratic_bound_proved": true,
+    "local_finite_spectral_cutoffs_allowed": true,
+    "literal_full_series_analytic_with_tail_only_estimates": true,
+    "tail_only_estimates_imply_zero_differential": false
   },
   "contour_calculus_progress": {
     "source_labels": [
@@ -262,7 +278,10 @@
     "action_indexed_Rn_identified": false,
     "action_descent_proved": false,
     "uniform_action_quadratic_bounds_proved": false,
-    "high_squared_frequency_contours_covered_on_common_neighborhood": true
+    "high_squared_frequency_contours_covered_on_common_neighborhood": true,
+    "all_nonreal_energies_at_real_continuous_potentials_covered": true,
+    "continued_exponential_is_actual_Floquet_multiplier": true,
+    "primitive_real_part_nonzero_at_nonreal_energy_for_real_continuous_q": true
   },
   "high_contour_progress": {
     "potential_topology": "Sup-norm Banach space C([0,1], C), allowing complex perturbations.",
@@ -297,9 +316,22 @@
     "common_neighborhood_for_all_high_pairs_symmetric_data_and_cubic_moments": true,
     "individual_roots_assumed_analytic": false,
     "full_globally_ordered_Hill_labels_constructed": false,
-    "reality_of_energy_roots_at_real_q_proved": false,
+    "reality_of_energy_roots_at_real_q_proved": true,
     "primitive_endpoint_values_minus_i_n_pi_proved": false,
     "weighted_action_descent_proved": false,
-    "quadratic_action_bounds_proved": false
+    "quadratic_action_bounds_proved": false,
+    "reality_scope": "Real continuous potentials only; actual Green identity for any unit-modulus Floquet multiplier.",
+    "high_pairs_can_be_ordered_at_real_potentials": true,
+    "distinct_high_pairs_do_not_cross": true,
+    "common_complex_neighborhood_with_ordered_pairs_at_every_real_potential": true
+  },
+  "spectral_reality_progress": {
+    "potential_space": "C([0,1], C), real-valued locus",
+    "actual_state_propagation_injective": true,
+    "positive_position_L2_mass_for_nonzero_state": true,
+    "imaginary_Green_identity_proved": true,
+    "all_unit_modulus_Floquet_energies_real": true,
+    "periodic_and_antiperiodic_energies_real": true,
+    "L2_or_Hminus1_reality_extension_proved": false
   }
 }

@@ -12,7 +12,9 @@ run_cmd do
   let namespaces := #[`NLS.Articles.KdVConvexity, `NLS.KdV]
   let additional := #[``NLS.ZakharovShabat.norm_continuousPotentialL2Class_le_two_norm,
     ``NLS.ZakharovShabat.continuousPotentialL2CLM,
-    ``NLS.ZakharovShabat.continuousPotentialL2CLM_apply]
+    ``NLS.ZakharovShabat.continuousPotentialL2CLM_apply,
+    ``NLS.ZakharovShabat.classicalSolution_injective_initial,
+    ``NLS.ZakharovShabat.classicalSolution_eq_zero_imp_initial_eq_zero]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do

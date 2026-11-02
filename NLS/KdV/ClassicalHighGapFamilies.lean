@@ -1,5 +1,6 @@
 import NLS.KdV.ClassicalHighGapPairs
 import NLS.KdV.ClassicalHighContourMoments
+import NLS.KdV.ClassicalHillReality
 
 /-! # A common complex neighborhood for actual high Hill gap data
 
@@ -40,5 +41,29 @@ theorem exists_analytic_classicalHillHighGapFamilies (q : NLS.LinearVolterra.Cur
     exact (analyticAt_classicalHillHigh_symmetric a Nc (hdata a ha.1 Nc le_rfl) n hnc).2
   · intro a ha
     exact exists_classicalHillHighGapPair_of_counting a Nc (hdata a ha.1 Nc le_rfl) n hnc
+
+/-- One complex neighborhood supports the analytic high families and
+real ordered pairs at every real potential in that neighborhood. The
+ordering assertion includes double endpoints and uses the actual flow. -/
+theorem exists_analytic_ordered_classicalHillHighGapFamilies
+    (q : NLS.LinearVolterra.Curve ℂ) :
+    ∃ N : ℕ, ∃ V : Set (NLS.LinearVolterra.Curve ℂ), 0 < N ∧ IsOpen V ∧ q ∈ V ∧
+      ∀ n : ℕ+, N < (n : ℕ) →
+        AnalyticOnNhd ℂ (fun a => classicalHillHighMidpoint a n) V ∧
+        AnalyticOnNhd ℂ (fun a => classicalHillHighSquaredGap a n) V ∧
+        AnalyticOnNhd ℂ (classicalHillHighContourMoment n) V ∧
+        ∀ a ∈ V, (∀ t, (a t).im = 0) → ∃ l r : ℂ,
+          ClassicalHillHighGapPair a n l r ∧ l.im = 0 ∧ r.im = 0 ∧ l.re ≤ r.re := by
+  obtain ⟨N,V,hN,hV,hq,hfamily⟩ := exists_analytic_classicalHillHighGapFamilies q
+  refine ⟨N,V,hN,hV,hq,?_⟩
+  intro n hn
+  obtain ⟨hm,hg,hR,hpairs⟩ := hfamily n hn
+  refine ⟨hm,hg,hR,?_⟩
+  intro a ha hreal
+  obtain ⟨l,r,hpair⟩ := hpairs a ha
+  obtain ⟨hl,hr⟩ := hpair.im_eq_zero hreal
+  by_cases he : l.re ≤ r.re
+  · exact ⟨l,r,hpair,hl,hr,he⟩
+  · exact ⟨r,l,hpair.swap,hr,hl,le_of_lt (lt_of_not_ge he)⟩
 
 end NLS.KdV
