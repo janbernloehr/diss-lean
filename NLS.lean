@@ -5006,4 +5006,8 @@ import NLS.ComplexAnalysis.TraceRootPrimitive
 import NLS.KdV.HillL2NormalizedCutPrimitive
 import NLS.KdV.HillL2CutPrimitiveReflection
 import NLS.KdV.HillL2CutPrimitiveEndpointValues
+import NLS.ComplexAnalysis.LogarithmStripNormalization
+import NLS.KdV.HillL2RealSourcePhase
+import NLS.KdV.HillL2CutRealPhase
+import NLS.KdV.HillL2CutEndpointNormalization
 import NLS.Articles.KdVEstimates.EstimateAdapter
