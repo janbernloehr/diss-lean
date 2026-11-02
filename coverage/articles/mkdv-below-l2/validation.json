@@ -1,6 +1,13 @@
 {
   "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "modules_checked": [
+    "ComplexAnalysis/RelativeProductComparison",
+    "ComplexAnalysis/RootPeriodComparison",
+    "ZakharovShabat/SourceSingleRootRelativeComparison",
+    "ZakharovShabat/SourcePsiCriticalRootComparison",
+    "ZakharovShabat/SourceCriticalRelativeComparison",
+    "ZakharovShabat/SourcePsiCriticalComparisonDomain",
+    "ZakharovShabat/SourceRootPeriodPerturbation",
     "FunctionalAnalysis/ComplexRealEquiv",
     "Dynamics/ComplexBirkhoffCoordinatesExponent",
     "Dynamics/ConjugatePairEquiv",
@@ -22,7 +29,8 @@
     "Articles/MKdVBelowL2/RealBirkhoffFamily",
     "Articles/MKdVBelowL2/Theorem12",
     "Articles/MKdVBelowL2/ClassicalRenormalizedFourthFlow",
-    "Articles/MKdVBelowL2/FourthMomentSummability"
+    "Articles/MKdVBelowL2/FourthMomentSummability",
+    "Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate"
   ],
   "strict_options": [
     "autoImplicit=false",
@@ -628,6 +636,181 @@
       "propext",
       "Classical.choice",
       "Quot.sound"
+    ],
+    "NLS.ComplexAnalysis.product_eq_mul_relative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ComplexAnalysis.norm_product_difference_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ComplexAnalysis.norm_product_difference_le_uniform": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ComplexAnalysis.root_comparison_period_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ComplexAnalysis.norm_root_difference_le_of_period_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceRootRelativePerturbation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.summable_sourceRootRelativePerturbation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.norm_sourceSingleRootQuotient_sub_le_relative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceCriticalRoot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourcePsiCriticalFilledQuotient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceCriticalDeletedQuotient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourcePsiCriticalComparisonIdentity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourcePsiContourIntegrand_critical_fill": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceTheorem12_1Data.psi_critical_root_comparison": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourcePsiCriticalRelativeEstimate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.critical_relative_separation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.norm_quotient_sub_critical_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.norm_psiFilledQuotient_sub_critical_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.exists_sourcePsi_critical_comparison": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.norm_normalized_period_le_of_gap_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.norm_normalized_period_add_I_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.normalized_period_lower_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.period_ne_zero_of_gap_error_lt_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.root_difference_le_of_gap_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.FourthMomentChart": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_fourthMomentChart": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthMomentChart": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthCandidateDomain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthMoment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthCandidateDomain_open_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthMoment_analytic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_hasSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.compatibleBirkhoff_action_on_fourthDomain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_of_same_distributions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
     ]
   },
   "allowed_axioms": [
@@ -635,7 +818,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Focused build of 22 new and consumed modules; transitive audit of 120 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Focused build of 30 new and consumed modules; transitive audit of 155 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",

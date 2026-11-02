@@ -1,4 +1,11 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+ComplexAnalysis/RelativeProductComparison: checked
+ComplexAnalysis/RootPeriodComparison: checked
+ZakharovShabat/SourceSingleRootRelativeComparison: checked
+ZakharovShabat/SourcePsiCriticalRootComparison: checked
+ZakharovShabat/SourceCriticalRelativeComparison: checked
+ZakharovShabat/SourcePsiCriticalComparisonDomain: checked
+ZakharovShabat/SourceRootPeriodPerturbation: checked
 FunctionalAnalysis/ComplexRealEquiv: checked
 Dynamics/ComplexBirkhoffCoordinatesExponent: checked
 Dynamics/ConjugatePairEquiv: checked
@@ -21,6 +28,7 @@ Articles/MKdVBelowL2/RealBirkhoffFamily: checked
 Articles/MKdVBelowL2/Theorem12: checked
 Articles/MKdVBelowL2/ClassicalRenormalizedFourthFlow: checked
 Articles/MKdVBelowL2/FourthMomentSummability: checked
+Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -183,5 +191,70 @@ Articles/MKdVBelowL2/FourthMomentSummability: checked
 'NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.exists_fourthFrequencyCandidate' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_eq_of_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ComplexAnalysis.product_eq_mul_relative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ComplexAnalysis.norm_product_difference_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ComplexAnalysis.norm_product_difference_le_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ComplexAnalysis.root_comparison_period_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ComplexAnalysis.norm_root_difference_le_of_period_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceRootRelativePerturbation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.summable_sourceRootRelativePerturbation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.norm_sourceSingleRootQuotient_sub_le_relative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceCriticalRoot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourcePsiCriticalFilledQuotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceCriticalDeletedQuotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourcePsiCriticalComparisonIdentity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourcePsiContourIntegrand_critical_fill' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceTheorem12_1Data.psi_critical_root_comparison' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourcePsiCriticalRelativeEstimate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceIsolatingNeighborhoods.critical_relative_separation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceIsolatingNeighborhoods.norm_quotient_sub_critical_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceIsolatingNeighborhoods.norm_psiFilledQuotient_sub_critical_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.exists_sourcePsi_critical_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.norm_normalized_period_le_of_gap_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.norm_normalized_period_add_I_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.normalized_period_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.period_ne_zero_of_gap_error_lt_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.root_difference_le_of_gap_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.FourthMomentChart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_fourthMomentChart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthMomentChart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthCandidateDomain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthMoment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthCandidateDomain_open_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthMoment_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_hasSum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.compatibleBirkhoff_action_on_fourthDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_of_same_distributions' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]

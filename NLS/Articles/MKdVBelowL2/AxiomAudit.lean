@@ -1,3 +1,11 @@
+import NLS.ComplexAnalysis.RelativeProductComparison
+import NLS.ComplexAnalysis.RootPeriodComparison
+import NLS.ZakharovShabat.SourceSingleRootRelativeComparison
+import NLS.ZakharovShabat.SourcePsiCriticalRootComparison
+import NLS.ZakharovShabat.SourceCriticalRelativeComparison
+import NLS.ZakharovShabat.SourcePsiCriticalComparisonDomain
+import NLS.ZakharovShabat.SourceRootPeriodPerturbation
+import NLS.Articles.MKdVBelowL2.PhysicalFourthFrequencyCandidate
 import NLS.FunctionalAnalysis.ComplexRealEquiv
 import NLS.Dynamics.ComplexBirkhoffCoordinatesExponent
 import NLS.Dynamics.ConjugatePairEquiv
@@ -141,3 +149,39 @@ import NLS.Articles.MKdVBelowL2.FourthMomentSummability
 #print axioms NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate
 #print axioms NLS.Articles.MKdVBelowL2.exists_fourthFrequencyCandidate
 #print axioms NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_eq_of_coefficients
+
+#print axioms NLS.ComplexAnalysis.product_eq_mul_relative
+#print axioms NLS.ComplexAnalysis.norm_product_difference_le
+#print axioms NLS.ComplexAnalysis.norm_product_difference_le_uniform
+#print axioms NLS.ComplexAnalysis.root_comparison_period_identity
+#print axioms NLS.ComplexAnalysis.norm_root_difference_le_of_period_identity
+#print axioms NLS.ZakharovShabat.sourceRootRelativePerturbation
+#print axioms NLS.ZakharovShabat.summable_sourceRootRelativePerturbation
+#print axioms NLS.ZakharovShabat.norm_sourceSingleRootQuotient_sub_le_relative
+#print axioms NLS.ZakharovShabat.sourceCriticalRoot
+#print axioms NLS.ZakharovShabat.sourcePsiCriticalFilledQuotient
+#print axioms NLS.ZakharovShabat.sourceCriticalDeletedQuotient
+#print axioms NLS.ZakharovShabat.SourcePsiCriticalComparisonIdentity
+#print axioms NLS.ZakharovShabat.sourcePsiContourIntegrand_critical_fill
+#print axioms NLS.ZakharovShabat.SourceTheorem12_1Data.psi_critical_root_comparison
+#print axioms NLS.ZakharovShabat.SourcePsiCriticalRelativeEstimate
+#print axioms NLS.ZakharovShabat.SourceIsolatingNeighborhoods.critical_relative_separation
+#print axioms NLS.ZakharovShabat.SourceIsolatingNeighborhoods.norm_quotient_sub_critical_le
+#print axioms NLS.ZakharovShabat.SourceIsolatingNeighborhoods.norm_psiFilledQuotient_sub_critical_le
+#print axioms NLS.ZakharovShabat.exists_sourcePsi_critical_comparison
+#print axioms NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.norm_normalized_period_le_of_gap_bound
+#print axioms NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.norm_normalized_period_add_I_le
+#print axioms NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.normalized_period_lower_bound
+#print axioms NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.period_ne_zero_of_gap_error_lt_one
+#print axioms NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.root_difference_le_of_gap_bounds
+#print axioms NLS.Articles.MKdVBelowL2.FourthMomentChart
+#print axioms NLS.Articles.MKdVBelowL2.exists_fourthMomentChart
+#print axioms NLS.Articles.MKdVBelowL2.fourthMomentChart
+#print axioms NLS.Articles.MKdVBelowL2.physicalFourthCandidateDomain
+#print axioms NLS.Articles.MKdVBelowL2.physicalFourthMoment
+#print axioms NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate
+#print axioms NLS.Articles.MKdVBelowL2.physicalFourthCandidateDomain_open_real
+#print axioms NLS.Articles.MKdVBelowL2.physicalFourthMoment_analytic
+#print axioms NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_hasSum
+#print axioms NLS.Articles.MKdVBelowL2.compatibleBirkhoff_action_on_fourthDomain
+#print axioms NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_of_same_distributions

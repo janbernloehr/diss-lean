@@ -1,10 +1,14 @@
-# mKdV below L² — initial private verification step
+# mKdV below L² — private verification
 
 Status: **Theorem 1.2 is verified under the accepted manuscript reference.**
 Theorems 1.1 and 1.3 remain unverified. The physical Birkhoff family now has
 precise article statements, complex-domain compatibility and canonicality,
 complete real source/target models, analytic inverses and accepted Hilbert
-identification. The earlier H₄ candidate convergence remains at 1<p≤3.
+identification. The H₄ candidate convergence remains at 1<p≤3, now transported to actual
+physical distributions on a common Birkhoff domain. The actual root-period
+comparison, relative product estimate, and normalizing-period stability are
+checked; the all-finite-p bootstrap and physical H₄ derivative identification
+remain open.
 See [the current progress record](PROGRESS.md) and the
 [Theorem 1.2 clause map](theorem-1.2.json).
 
@@ -142,6 +146,35 @@ as an operator on real FL^p distributions remains separate work.
   to the physical dNLS energy derivative, with a mass shift 4. Its equation
   theorem cannot replace mKdV's mass coefficient 12πn or H₄ identification.
 
+## H₄ root estimates and physical candidate adapter
+
+`SourcePsiCriticalComparisonDomain.exists_sourcePsi_critical_comparison`
+constructs a common open neighborhood of the entire real source locus. It
+provides equation (38) for the actual psi roots, critical roots and quotient
+products, with one spectral-separation constant uniform in both indices at
+each source. On the selected closed discs the actual relative perturbation
+sum is summable and the product difference obeys
+`‖ζ−χ‖ ≤ ‖χ‖ exp(S) S`. Hölder also bounds S by the displacement norm times
+the reciprocal-lattice norm and the isolating-disc constant. All zero periods,
+contours and root separation are constructed from established spectral data.
+
+`SourceRootPeriodPerturbation` proves that a complex analytic numerator f
+with `‖f−1‖ ≤ ε` on the gap has normalized period within ε of -i. It follows
+that the period norm is at least 1−ε. The quantitative root estimate follows
+from the cancellation identity and gap bounds. These are criteria: uniform
+tail smallness for the actual numerator and the iterated sequence improvement
+of Proposition 4.1 are still to be proved.
+
+`PhysicalFourthFrequencyCandidate` fixes a constructed actual moment chart
+for each 1<p≤3, intersects its physical convergence domain with the chosen
+Theorem 1.2 Birkhoff domain, and proves this common domain is open and contains
+every physical real-type input. Every individual moment is holomorphic there.
+The literal candidate `-12 ∑ k, k Ω²ₙₖ` converges absolutely and agrees across
+exponents for the same real distributions. Birkhoff coordinate products on
+this domain remain the actual spectral actions of the same input. Neither
+analyticity of the infinite candidate sum nor physical H₄ derivative
+identification is asserted.
+
 ## Outstanding dependencies and integration order
 
 1. The smooth physical fourth-flow bridge has been consumed from the hierarchy
@@ -175,10 +208,10 @@ read-only, with new outputs under this checkout's private
 `ELAN_HOME`, `LEAN_BIN` and `MKDV_BUILD_ROOT` overrides; it never invokes Lake
 or writes through the imported symlinks.
 
-The expanded focused checker covers 22 new article/shared modules and the
+The expanded focused checker covers 30 new article/shared modules and the
 consumed smooth hierarchy foundations, with `autoImplicit=false` and
 `warningAsError=true`. `AxiomAudit.lean` audits all explicitly named new
-and consumed declarations (120 total), including the main Theorem 1.2 declarations;
+and consumed declarations (155 total), including the main Theorem 1.2 declarations;
 only `propext`, `Classical.choice` and `Quot.sound` occur. No new axiom,
 sorry or disabled linter was introduced. `validation.txt` captures the checks.
 This is focused validation, not a full repository build or completed article

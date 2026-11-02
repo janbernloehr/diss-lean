@@ -1,0 +1,38 @@
+{
+  "main_theorem": "1.3",
+  "verified": false,
+  "checked_dependencies": [
+    {
+      "source": "Section 4 equation (38), pp. 17\u201318",
+      "declaration": "NLS.ZakharovShabat.exists_sourcePsi_critical_comparison",
+      "scope": "Constructed open real-containing domain; actual root periods and closed-disc relative-product estimates; one separation constant uniform in n,k at each source."
+    },
+    {
+      "source": "Section 4 product comparison",
+      "declaration": "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.norm_psiFilledQuotient_sub_critical_le",
+      "scope": "Actual quotient products; absolute relative perturbation sum and H\u00f6lder bound on closed isolating discs."
+    },
+    {
+      "source": "Section 4 normalizing period",
+      "declaration": "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.root_difference_le_of_gap_bounds",
+      "scope": "Quantitative estimate conditional on explicit analytic numerator and gap-error bounds. Actual locally uniform smallness remains open."
+    },
+    {
+      "source": "Section 5 weighted second moments",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_hasSum",
+      "scope": "Physical distributions; absolute convergence for 1<p\u22643 on constructed common complex domain."
+    },
+    {
+      "source": "Physical exponent compatibility",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_of_same_distributions",
+      "scope": "Same real physical distributions, both exponents in 1<p\u22643; actual chosen atlases."
+    }
+  ],
+  "remaining": [
+    "Locally uniform tail smallness of the actual normalizing numerator.",
+    "Proposition 4.1 root-difference sequence bootstrap for every finite p>2.",
+    "Sharper Lemma 5.3 rows and weighted-sum estimates at every finite p>2.",
+    "Identification with the physical normalized H4 action derivative, with exact constants.",
+    "Analyticity into each stated weighted sequence target and the refined asymptotic remainder."
+  ]
+}

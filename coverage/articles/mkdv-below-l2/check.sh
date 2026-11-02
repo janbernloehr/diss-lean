@@ -11,7 +11,7 @@ lean_bin="${LEAN_BIN:-$ELAN_HOME/toolchains/leanprover--lean4---v4.33.1/bin/lean
 build_root="${MKDV_BUILD_ROOT:-$project_dir/.lake/mkdv-below-l2/lib/lean}"
 mkdir -p "$build_root/NLS/Articles/MKdVBelowL2"
 # New modules coexist with read-only symlinks to the established namespaces.
-for namespace in FunctionalAnalysis ZakharovShabat MKdV Dynamics Poisson; do
+for namespace in ComplexAnalysis FunctionalAnalysis ZakharovShabat MKdV Dynamics Poisson; do
   target="$build_root/NLS/$namespace"
   if [[ -L "$target" ]]; then
     rm "$target"
@@ -40,6 +40,13 @@ done
 cd "$project_dir"
 "$lean_bin" --version
 modules=(
+  ComplexAnalysis/RelativeProductComparison
+  ComplexAnalysis/RootPeriodComparison
+  ZakharovShabat/SourceSingleRootRelativeComparison
+  ZakharovShabat/SourcePsiCriticalRootComparison
+  ZakharovShabat/SourceCriticalRelativeComparison
+  ZakharovShabat/SourcePsiCriticalComparisonDomain
+  ZakharovShabat/SourceRootPeriodPerturbation
   FunctionalAnalysis/ComplexRealEquiv
   Dynamics/ComplexBirkhoffCoordinatesExponent
   Dynamics/ConjugatePairEquiv
@@ -62,6 +69,7 @@ modules=(
   Articles/MKdVBelowL2/Theorem12
   Articles/MKdVBelowL2/ClassicalRenormalizedFourthFlow
   Articles/MKdVBelowL2/FourthMomentSummability
+  Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"

@@ -115,3 +115,48 @@ warnings treated as errors, and all 120 audited declarations used only the
 three permitted standard axioms. Theorem 1.2 is marked verified under the
 accepted manuscript reference in `theorem-1.2.json`; Theorems 1.1 and 1.3 are
 explicitly unverified. `validation.json` stores every audited declaration.
+
+
+## Fourth checkpoint — actual root comparison and physical H₄ candidate
+
+The exact cancellation identity (38), pp. 17–18, is now checked for the
+actual spectral roots and actual deleted products. The theorem
+`exists_sourcePsi_critical_comparison` constructs its open domain, zero
+periods, isolating contours and separation. One comparison constant works
+for all n,k at each source, and the product bound holds on each full closed
+comparison disc, including collapsed gaps.
+
+Reusable complex product estimates use absolute relative perturbations:
+if a_m=b_m(1+u_m), then the actual products satisfy
+`‖A−B‖ ≤ ‖B‖ exp(∑‖u_m‖) ∑‖u_m‖`. For the actual spectral quotients,
+`u_m=(a_m−b_m)/(λdot_m−z)` away from the omitted index. The denominator
+separation is proved from isolating discs, and Hölder supplies the finite
+uniform reciprocal-row bound. The proof uses convergent products directly.
+
+The original root period of an analytic numerator close to one on the gap
+is within ε of -i after division by 2π. Thus its norm is at least 1−ε and is
+nonzero when ε<1. The cancellation identity and the two analytic gap-error
+bounds then imply `‖σ−ρ‖ ≤ (e+q)/(1−ε)`. The smallness condition is explicit;
+its required locally uniform tail verification for the actual numerator has
+not yet been proved. Proposition 4.1's all-p sequence bootstrap also remains
+open. These intermediate lemmas do not claim that proposition.
+
+The new physical adapter constructs a fixed actual moment atlas and an open
+physical domain containing the entire real-type space for 1<p≤3. It shares
+the established physical Birkhoff domain and the same original Fourier
+coefficients. It proves individual-moment holomorphy, the actual absolutely
+convergent -12 weighted sum, spectral-action coordinate products, and
+cross-exponent agreement for equal real physical distributions. The infinite
+sum is still a candidate: its analytic sequence estimates and identification
+with the physical H₄ Hamiltonian derivative are outstanding.
+
+Theorems 1.1 and 1.3 remain unverified; Theorem 1.2 remains verified. The next
+mathematical steps are uniform smallness of the actual normalizing numerator,
+the root-difference exponent bootstrap, the sharper Lemma 5.3 moment rows,
+and physical H₄ frequency identification using the consumed hierarchy bridge.
+
+Strict validation for the fourth checkpoint passed: all 30 focused modules
+compiled with `autoImplicit=false` and `warningAsError=true`. All 155 named
+declarations passed transitive axiom checks, using only `propext`,
+`Classical.choice` and `Quot.sound`. The recorded declaration set was matched
+exactly against `AxiomAudit.lean`; no warnings or sorry axioms occurred.
