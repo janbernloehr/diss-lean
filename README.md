@@ -5,7 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [corrected auxiliary spectral height](coverage/SECTION_5.md) proves the explicit norm-height bound and exact counts for both auxiliary problems at every finite p>1. The [remaining qualifications](coverage/COMPLETENESS.md) are retained.
+Latest step: [corrected spectral heights](coverage/SPECTRAL_OVERVIEW.md) adopts the proved periodic and ordinary-boundary bounds and adds the full period-two Proposition 3.1 correction, including p=1. The [remaining qualifications](coverage/COMPLETENESS.md) are retained.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

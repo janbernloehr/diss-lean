@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [periodic and ordinary-boundary height corrections](SPECTRAL_OVERVIEW.md) are adopted directly in spectral-11, spectral-21 and section_3-003. The new period-two package retains every finite Banach exponent, including p=1, and arbitrary input. These positive corrections preserve all earlier evidence and the separate interpretation and reference-edition qualifications.
+
 The [auxiliary spectral-height correction](SECTION_5.md) now gives the explicit (1+8*p*E_p*norm(phi))^p bound at every finite p>1, with both exact central counts and exhaustive localization in the original source norm. This adopts the correction directly and adds two positive proofs. The remaining source qualifications are unchanged.
 
 The [whole-dissertation source index](WHOLE_DISSERTATION.md) now accounts for every nonblank extracted source line. This completes the navigation reconciliation, not every mathematical requirement. The precise 2014 construction comparison and other recorded interpretation qualifications remain. Earlier entries below retain their then-current scope.

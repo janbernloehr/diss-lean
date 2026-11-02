@@ -1,5 +1,21 @@
 # Section 3: periodic spectrum
 
+## Corrected Proposition 3.1 at every finite Banach exponent
+
+The new `exists_periodTwo_periodicCounting_corrected_height` retains arbitrary period-two input, including p=1, with no even-support premise. It states discreteness and real-type reality for every neighbor. Its `PeriodicCountingData` keeps the conditional parity clauses; the corrected-height cluster and actual rectangle projection equal the original central ones. This adopts the correction in section_3-003.
+
+The [period-two theorem](../NLS/ZakharovShabat/PeriodTwoExplicitHeight.lean) proves the corrected Proposition 3.1 on its full original domain. The existing [period-one](../NLS/ZakharovShabat/SourcePeriodicExplicitHeight.lean) and [ordinary-boundary](../NLS/ZakharovShabat/SourceBoundaryExplicitHeight.lean) bounds are now adopted as the corrections to Theorems 1.1 and 1.4. Their older API names retain the word proposed.
+
+The periodic correction is (1+8*p*norm(phi))^p in the original source norm. Theorem 1.1 retains period-one input, while the new Proposition 3.1 package covers arbitrary period-two input and every finite Banach exponent, including p=1. The ordinary-boundary correction in Theorem 1.4 is (1+8*p*E_p*norm(phi))^p for every finite p>1, with E_p the proved interval-extension bound. All three packages keep a common source neighborhood and every larger cutoff, full algebraic counts and exhaustive localization. Periodic counts retain conditional parity and actual analytic moving-height projections. The previously proved sharper printed-height ranges remain valid.
+
+Two new positive period-two theorems add no definitions, public examples or refutations. The other two source corrections reuse already proved theorems.
+
+The full check passed: 8,660 build jobs, 7,729 public examples and an axiom audit of 45,200 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings.
+
+Continue the remaining source comparisons and direct corrections, retaining the general Hilbert-space direction and exact cited 2014 construction qualifications. Commit and push each completed step.
+
+## Previous source comparisons
+
 This audit covers the operator setup, Proposition 3.1, Lemmas 3.2, 3.4,
 3.6 and 3.7, Corollaries 3.3 and 3.5, and equations (1.4)–(1.5) on printed
 pages 23–27.

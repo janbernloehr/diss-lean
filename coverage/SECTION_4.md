@@ -1,5 +1,21 @@
 # Section 4: Dirichlet and Neumann spectra
 
+## Adopted ordinary-boundary height correction
+
+`sourceTheorem1_4_proposed_height` now supplies the adopted corrected height for every finite p>1, in the original source norm, with both central counts 2N+1, simple high roots and exhaustion on a common neighborhood. The sharper p=2 theorem is retained. This updates the counting conclusion; the older proof reviews below preserve their inspected scopes.
+
+The [period-two theorem](../NLS/ZakharovShabat/PeriodTwoExplicitHeight.lean) proves the corrected Proposition 3.1 on its full original domain. The existing [period-one](../NLS/ZakharovShabat/SourcePeriodicExplicitHeight.lean) and [ordinary-boundary](../NLS/ZakharovShabat/SourceBoundaryExplicitHeight.lean) bounds are now adopted as the corrections to Theorems 1.1 and 1.4. Their older API names retain the word proposed.
+
+The periodic correction is (1+8*p*norm(phi))^p in the original source norm. Theorem 1.1 retains period-one input, while the new Proposition 3.1 package covers arbitrary period-two input and every finite Banach exponent, including p=1. The ordinary-boundary correction in Theorem 1.4 is (1+8*p*E_p*norm(phi))^p for every finite p>1, with E_p the proved interval-extension bound. All three packages keep a common source neighborhood and every larger cutoff, full algebraic counts and exhaustive localization. Periodic counts retain conditional parity and actual analytic moving-height projections. The previously proved sharper printed-height ranges remain valid.
+
+Two new positive period-two theorems add no definitions, public examples or refutations. The other two source corrections reuse already proved theorems.
+
+The full check passed: 8,660 build jobs, 7,729 public examples and an axiom audit of 45,200 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings.
+
+Continue the remaining source comparisons and direct corrections, retaining the general Hilbert-space direction and exact cited 2014 construction qualifications. Commit and push each completed step.
+
+## Previous source comparisons
+
 This is a statement-by-statement audit against the original spaces and
 physical expressions on printed pages 28 onward. Existing later results do
 not by themselves certify this section or the full dissertation complete.

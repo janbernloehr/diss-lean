@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Theorems 1.1, 1.4 and Proposition 3.1 corrected heights | [Overview](coverage/SPECTRAL_OVERVIEW.md), [period-two proof](coverage/SECTION_3.md) | Periodic coefficient 8*p and ordinary-boundary coefficient 8*p*E_p, original norms, common neighborhoods, full counts and exhaustion. Period-two input includes p=1; parity retains its period-one condition. Two new positive proofs; no new refutations. |
 | Proposition 5.2 corrected height, p.34 | [Positive proofs](coverage/SECTION_5.md) | (1+8*p*E_p*norm(phi))^p at every finite p>1; original norm, both central counts 2N+1, simple high roots and exhaustion on one common neighborhood. Two positive theorems; no new refutations. |
 | Complete source navigation | [Source index](coverage/WHOLE_DISSERTATION.md) | All nonblank text locations accounted for; original assessments and qualifications retained. |
 | Section 7 physical NLS velocity, p.45 | [Positive proofs](coverage/SECTION_7.md) | Exact physical NLS Dirichlet velocity and sheet multiplier for every smooth classical trajectory and the constructed global solution, with original Fourier sources and signed indices. The general Hilbert-space direction clause remains open. No new refutations. |

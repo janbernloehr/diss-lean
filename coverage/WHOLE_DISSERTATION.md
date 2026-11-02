@@ -77,4 +77,6 @@ Source-text and document hashes tie the inventory to the published comparisons. 
 
 The [auxiliary height correction](SECTION_5.md) updates groups section_5-012 and section_5-013 with the proved exponent-dependent bound, retaining every historical evidence row. The source accounting and four explicitly partial groups are unchanged.
 
-The full check passed: 8,659 build jobs, 7,729 public examples and an axiom audit of 45,198 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings. Source-line accounting, exact evidence references and document links are checked separately.
+The [general spectral-height corrections](SPECTRAL_OVERVIEW.md) update spectral-11, spectral-21 and section_3-003 with their proved exponent-dependent bounds. The full period-two scope includes p=1. Every historical evidence row is retained.
+
+The full check passed: 8,660 build jobs, 7,729 public examples and an axiom audit of 45,200 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings. Source-line accounting, exact evidence references and document links are checked separately.

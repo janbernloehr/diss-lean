@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T06:59:05.763185+00:00",
-  "base_commit": "6965cc5f9034c73941c3d7b4077377b0d26b1e2d",
+  "published_utc": "2026-11-02T07:20:55.483048+00:00",
+  "base_commit": "888f986f57921c939a8695c831295081aae5a781",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 222,
-    "module_hash_checks": 4650,
-    "distinct_modules": 2280
+    "review_records": 223,
+    "module_hash_checks": 4665,
+    "distinct_modules": 2285
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "6965cc5f9034c73941c3d7b4077377b0d26b1e2d",
-    "validated_state": "Fresh full check after the positive auxiliary height correction.",
+    "base_commit": "888f986f57921c939a8695c831295081aae5a781",
+    "validated_state": "Fresh full check after the general spectral-height corrections.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8659,
+    "build_jobs": 8660,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 45198,
+    "transitive_NLS_declarations": 45200,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 99109,
+    "gate_session": 14894,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4921,
-      "sha256": "01845dd60120b931c193afed94a2eb1942ef4f051fcee2ee27bdd223ef4f7a7d"
+      "files": 4922,
+      "sha256": "466878611d145d98f4153136b68e0dc3a2e938fadafdac4153f03eeff3d1d643"
     },
-    "full_gate_log_sha256": "fb586f61da19615ee0a5e62af25a1eaf0db14fb2b1067f60939a445697bf71c9",
+    "full_gate_log_sha256": "4310b5442ee12ef5ef550f6b6e7dde286dfdfa068bcac5edf9abde1d80f4142c",
     "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/Section5CorrectedAuxiliaryHeightFullCheck.log"
+    "full_gate_log": "work/GeneralSpectralHeightCorrectionsFullCheck.log"
   },
   "named_statements": [
     {
@@ -78628,6 +78628,197 @@
         "log_sha256": "fb586f61da19615ee0a5e62af25a1eaf0db14fb2b1067f60939a445697bf71c9"
       },
       "source_record_sha256": "9d8de45994c1c866aacee5dfe80440872c8c139551fb85217137eec72c744619"
+    },
+    "GeneralSpectralHeightCorrectionsSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "888f986f57921c939a8695c831295081aae5a781",
+      "updated_utc": "2026-11-02T07:20:55.444039+00:00",
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "spectral-11",
+          "source_lines": [
+            865,
+            884
+          ],
+          "requirement": "Theorem 1.1 with exponent-dependent height (1+8*p*norm(phi))^p.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceTheorem1_1_proposed_height",
+            "NLS.ZakharovShabat.sourcePeriodicSpectrum_abs_im_lt_explicit_height",
+            "NLS.ZakharovShabat.periodOnePotential_mem",
+            "NLS.ZakharovShabat.discreteTopology_periodicSpectrum",
+            "NLS.ZakharovShabat.periodicSpectrum_im_eq_zero_of_realType",
+            "NLS.ZakharovShabat.isRealType_periodOnePotential"
+          ],
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Original period-one input, common neighborhood containing source and zero, all larger cutoffs; corrected-height cluster equals the central cluster with full multiplicity 4N+2.",
+            "PeriodicCountingData retains high-disk multiplicity two and conditional parity; periodOnePotential_mem supplies even support for every source input. The corrected rectangle projection equals the central projection and is analytic.",
+            "The spectrum is discrete at every finite exponent. Real-type source coefficients remain real type under periodOnePotential and give real spectrum. Earlier printed-height-range results and historical refutations are retained."
+          ]
+        },
+        {
+          "ordered_group": "spectral-21",
+          "source_lines": [
+            1018,
+            1034
+          ],
+          "requirement": "Theorem 1.4 with exponent-dependent height (1+8*p*E_p*norm(phi))^p.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceTheorem1_4_proposed_height",
+            "NLS.ZakharovShabat.sourceBoundarySpectrum_abs_im_lt_explicit_height",
+            "NLS.ZakharovShabat.sourceBoundarySpectrum_closed_discrete",
+            "NLS.ZakharovShabat.sourceBoundarySpectrum_im_eq_zero"
+          ],
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Every finite p>1; same original norm and both actual ordinary boundary spectra. One common neighborhood and all larger cutoffs.",
+            "The corrected-height cluster equals the actual central cluster; full algebraic multiplicity 2N+1, simple high roots and exhaustion follow from the retained boundary counting data.",
+            "Discreteness and real-type reality are retained from sourceBoundarySpectrum_closed_discrete and sourceBoundarySpectrum_im_eq_zero; the sharper p=2 printed bound remains."
+          ]
+        },
+        {
+          "ordered_group": "section_3-003",
+          "source_lines": [
+            1243,
+            1263
+          ],
+          "requirement": "Proposition 3.1 on the full period-two original source at all finite Banach exponents.",
+          "declarations": [
+            "NLS.ZakharovShabat.mem_resolventSet_of_periodTwoExplicitHeight",
+            "NLS.ZakharovShabat.exists_periodTwo_periodicCounting_corrected_height"
+          ],
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The checked theorem retains p=1 and arbitrary period-two input; no implicit period-one restriction.",
+            "Original norm height (1+8*p*norm(phi))^p, closed exterior resolvent, full algebraic counts, corrected cluster and actual rectangle projection, analytic common-neighborhood dependence, discreteness and real-type reality.",
+            "The additional parity conclusions remain conditional on even support through the retained PeriodicCountingData; original input and neighbors are unrestricted."
+          ]
+        }
+      ],
+      "source_lines": [
+        [
+          865,
+          884
+        ],
+        [
+          1018,
+          1034
+        ],
+        [
+          1243,
+          1263
+        ]
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourcePeriodicExplicitHeight.lean": "4c8a2649d389a597294bd9a98800753c5953f7e3c3178c4c566c027aa7eb660f",
+        "NLS/ZakharovShabat/SourceBoundaryExplicitHeight.lean": "82b0aed1e0a3b841c80d9ccbc9f255c8218a405c87abec2a15c83e089997880a",
+        "NLS/ZakharovShabat/SourcePrintedHeightCounting.lean": "3e5376d0cf9bc69f8f3d5e33a872ebcd312f31c4ed7db18fc8972e91e8271d05",
+        "NLS/ZakharovShabat/SourceBoundaryPrintedHeight.lean": "efd2af32860007f1d695b826a9adeea6341d3540c55e317eaafd09721c7f78b6",
+        "NLS/ZakharovShabat/PeriodTwoPrintedHeightCounting.lean": "d6da287fe85a595a84d6bd6ebb563aa3b60317cc4878fadffd9295580a6079e4",
+        "NLS/ZakharovShabat/ExplicitHeight.lean": "1a3cec8382e64083eb5e4c2123e16ac3d3952343c8eabd11e5c5061e28cce57a",
+        "NLS/ZakharovShabat/PeriodicCounting.lean": "a26a681c54f1adf208291578cdd42b931253a9e00bad1c03e2c0ab7b7afaa348",
+        "NLS/ZakharovShabat/BoundaryCounting.lean": "a1ad226901eb9b61536e292a1aa3d5cd34cc7fd11f0080fc798e0d4c591d1ccd",
+        "NLS/ZakharovShabat/Proposition3_1.lean": "c3030ee49f893c95067faef65e3f50c05b5faf2613e93f6d60b3753756fc1890",
+        "NLS/ZakharovShabat/PeriodOneEmbedding.lean": "60761ac490ec2b1bc3d77ff845ecf29908b36a8b9e53aefb4b8d5d2683ed855a",
+        "NLS/ZakharovShabat/SourceBoundaryOverview.lean": "e797d71de5a23f455e376c785497c83e2a27b5f1669e07e1cde9d887e3ce2dd5",
+        "NLS/ZakharovShabat/PeriodicSpectrum.lean": "49538b96a06339ca0c1f48f68954c48c7b52c04f47cc67ddee93fce149a2e6b1",
+        "NLS/ZakharovShabat/RealType.lean": "5dac5380180fcfe61f1d3b0f9522adc41467ab5a9ecf5406e6c13462589d2709",
+        "NLS/ZakharovShabat/FiniteSourceRealization.lean": "cc1e46f0014c40265143c7df6a9d84b9c7f55d396700290f2745f7b4945d74c2",
+        "NLS/ZakharovShabat/PeriodTwoExplicitHeight.lean": "1d0c2ce646752f61203bd395eee61d02625b14426d49da5683edf5afe2e4cf8f"
+      },
+      "reviewed_modules_read_in_full": false,
+      "support_dependency_comparison_complete": false,
+      "support_body_scopes": {
+        "NLS/ZakharovShabat/SourcePeriodicExplicitHeight.lean": "full",
+        "NLS/ZakharovShabat/SourceBoundaryExplicitHeight.lean": "full",
+        "NLS/ZakharovShabat/SourcePrintedHeightCounting.lean": "full",
+        "NLS/ZakharovShabat/SourceBoundaryPrintedHeight.lean": "full",
+        "NLS/ZakharovShabat/PeriodTwoPrintedHeightCounting.lean": "full",
+        "NLS/ZakharovShabat/ExplicitHeight.lean": "full",
+        "NLS/ZakharovShabat/PeriodicCounting.lean": "lines 45-96",
+        "NLS/ZakharovShabat/BoundaryCounting.lean": "lines 117-151",
+        "NLS/ZakharovShabat/Proposition3_1.lean": "lines 1-88",
+        "NLS/ZakharovShabat/PeriodOneEmbedding.lean": "full",
+        "NLS/ZakharovShabat/SourceBoundaryOverview.lean": "full",
+        "NLS/ZakharovShabat/PeriodicSpectrum.lean": "lines 93-109; bounded finiteness and discreteness",
+        "NLS/ZakharovShabat/RealType.lean": "lines 127-152; eigenvalue and whole-spectrum reality",
+        "NLS/ZakharovShabat/FiniteSourceRealization.lean": "lines 82-92; real-type preservation under period-one embedding",
+        "NLS/ZakharovShabat/PeriodTwoExplicitHeight.lean": "full"
+      },
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourcePeriodicExplicitHeight.lean",
+        "NLS/ZakharovShabat/SourceBoundaryExplicitHeight.lean",
+        "NLS/ZakharovShabat/SourcePrintedHeightCounting.lean",
+        "NLS/ZakharovShabat/SourceBoundaryPrintedHeight.lean",
+        "NLS/ZakharovShabat/PeriodTwoPrintedHeightCounting.lean",
+        "NLS/ZakharovShabat/ExplicitHeight.lean",
+        "NLS/ZakharovShabat/PeriodOneEmbedding.lean",
+        "NLS/ZakharovShabat/SourceBoundaryOverview.lean",
+        "NLS/ZakharovShabat/PeriodTwoExplicitHeight.lean"
+      ],
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          18,
+          20,
+          23
+        ],
+        "images": {
+          "work/Section3InventoryReview-023.png": "49fc48e6e7091eb9440895629d19c53f1f9053f53511bfccc5a8bf2b1112e3b0",
+          "work/SpectralOverviewComplexCurrentReview-018.png": "c6af5c91e50956f88b703ccd60ae55265400cf633089bc431e2e9596c9ccafc6",
+          "work/SpectralOverviewAKNSDomainCurrentReview-020.png": "0014bdfde5f4d0e024d2182110c4b7ec19fbe9b82a643aab2c324d05c77a5d2f"
+        }
+      },
+      "early_group_reconciliation": {
+        "spectral-11": {
+          "previous": "named_result_with_refuted_unrestricted_height",
+          "current": "corrected"
+        },
+        "spectral-21": {
+          "previous": "named_result_with_refuted_unrestricted_height",
+          "current": "corrected"
+        },
+        "section_3-003": {
+          "previous": "mixed_proved_and_formally_refuted",
+          "current": "corrected"
+        }
+      },
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.discreteTopology_periodicSpectrum",
+        "NLS.ZakharovShabat.exists_periodTwo_periodicCounting_corrected_height",
+        "NLS.ZakharovShabat.isRealType_periodOnePotential",
+        "NLS.ZakharovShabat.mem_resolventSet_of_periodTwoExplicitHeight",
+        "NLS.ZakharovShabat.periodOnePotential_mem",
+        "NLS.ZakharovShabat.periodicSpectrum_im_eq_zero_of_realType",
+        "NLS.ZakharovShabat.sourceBoundarySpectrum_abs_im_lt_explicit_height",
+        "NLS.ZakharovShabat.sourceBoundarySpectrum_closed_discrete",
+        "NLS.ZakharovShabat.sourceBoundarySpectrum_im_eq_zero",
+        "NLS.ZakharovShabat.sourcePeriodicSpectrum_abs_im_lt_explicit_height",
+        "NLS.ZakharovShabat.sourceTheorem1_1_proposed_height",
+        "NLS.ZakharovShabat.sourceTheorem1_4_proposed_height"
+      ],
+      "qualification": "The periodic correction is (1+8*p*norm(phi))^p in the original source norm. Theorem 1.1 retains period-one input, while the new Proposition 3.1 package covers arbitrary period-two input and every finite Banach exponent, including p=1. The ordinary-boundary correction in Theorem 1.4 is (1+8*p*E_p*norm(phi))^p for every finite p>1, with E_p the proved interval-extension bound. All three packages keep a common source neighborhood and every larger cutoff, full algebraic counts and exhaustive localization. Periodic counts retain conditional parity and actual analytic moving-height projections. The previously proved sharper printed-height ranges remain valid. Supporting declarations and selected bodies were inspected; this is not a fresh audit of every transitive dependency. Historical refutations and other source qualifications are retained.",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 2,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "completion_claim": false,
+      "validation_lean_sources": {
+        "files": 4922,
+        "sha256": "466878611d145d98f4153136b68e0dc3a2e938fadafdac4153f03eeff3d1d643"
+      },
+      "full_gate": {
+        "session": 14894,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/GeneralSpectralHeightCorrectionsFullCheck.log",
+        "log_sha256": "4310b5442ee12ef5ef550f6b6e7dde286dfdfa068bcac5edf9abde1d80f4142c"
+      },
+      "source_record_sha256": "b6cd8c19078ec5a9b1c7f66b3a4dbf475d6ea69d71f61f5dce7c5505a1f52630"
     }
   },
   "contextual_source_records": {

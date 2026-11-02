@@ -1,10 +1,10 @@
 {
   "status": "published_source_navigation",
-  "updated_utc": "2026-11-02T06:59:06.580517+00:00",
-  "base_commit": "6965cc5f9034c73941c3d7b4077377b0d26b1e2d",
+  "updated_utc": "2026-11-02T07:20:56.287341+00:00",
+  "base_commit": "888f986f57921c939a8695c831295081aae5a781",
   "source_text_sha256": "64640083a811e0e05710297d056d23d7e1f2aadad7fb1f1a1271819b90978619",
   "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
-  "published_source_index_sha256": "09b1f238c4960dbefa40dea79228f9a104b4bd3b7825e355a64799246f52e439",
+  "published_source_index_sha256": "2a3838b0013adfc66b674d7410d7fbbb1f90830b99574c9f884192a1c2abed79",
   "scope": "Consolidation of existing source assessments, not a fresh semantic audit of all transitive dependencies.",
   "completion_claim": false,
   "units": [
@@ -2559,7 +2559,7 @@
     {
       "unit": "section_1",
       "document": "coverage/SPECTRAL_OVERVIEW.md",
-      "document_sha256": "f7a1c7b45265dbc3cf87ff2c1d2e83f4d4bf2fed50c35a38dfbf0c0b46ca4dfa",
+      "document_sha256": "23f82657606f55bb94e4270937f35c2f4a2757c04571e136d1f06a3a6ac7be88",
       "groups": [
         {
           "group": "spectral-01",
@@ -3256,7 +3256,7 @@
         },
         {
           "group": "spectral-11",
-          "assessment": "named_result_with_refuted_unrestricted_height",
+          "assessment": "corrected",
           "source_lines": [
             [
               865,
@@ -3294,6 +3294,35 @@
                   "exists_source_periodicCounting_printed_height_up_to_four",
                   "not_sourceTheorem1_1_printed_exhaustion",
                   "sourcePeriodicPrintedHeight_counterexample"
+                ]
+              }
+            },
+            {
+              "review": "GeneralSpectralHeightCorrectionsSourceComparison-2026-11-02",
+              "field": "unnumbered",
+              "index": 0,
+              "source_record_sha256": "b6cd8c19078ec5a9b1c7f66b3a4dbf475d6ea69d71f61f5dce7c5505a1f52630",
+              "row": {
+                "ordered_group": "spectral-11",
+                "source_lines": [
+                  865,
+                  884
+                ],
+                "requirement": "Theorem 1.1 with exponent-dependent height (1+8*p*norm(phi))^p.",
+                "declarations": [
+                  "NLS.ZakharovShabat.sourceTheorem1_1_proposed_height",
+                  "NLS.ZakharovShabat.sourcePeriodicSpectrum_abs_im_lt_explicit_height",
+                  "NLS.ZakharovShabat.periodOnePotential_mem",
+                  "NLS.ZakharovShabat.discreteTopology_periodicSpectrum",
+                  "NLS.ZakharovShabat.periodicSpectrum_im_eq_zero_of_realType",
+                  "NLS.ZakharovShabat.isRealType_periodOnePotential"
+                ],
+                "status": "corrected",
+                "ordered_status": "corrected",
+                "reviewed_claims": [
+                  "Original period-one input, common neighborhood containing source and zero, all larger cutoffs; corrected-height cluster equals the central cluster with full multiplicity 4N+2.",
+                  "PeriodicCountingData retains high-disk multiplicity two and conditional parity; periodOnePotential_mem supplies even support for every source input. The corrected rectangle projection equals the central projection and is analytic.",
+                  "The spectrum is discrete at every finite exponent. Real-type source coefficients remain real type under periodOnePotential and give real spectrum. Earlier printed-height-range results and historical refutations are retained."
                 ]
               }
             }
@@ -3779,7 +3808,7 @@
         },
         {
           "group": "spectral-21",
-          "assessment": "named_result_with_refuted_unrestricted_height",
+          "assessment": "corrected",
           "source_lines": [
             [
               1018,
@@ -3819,6 +3848,33 @@
                   "sourceBoundarySpectrum_closed_discrete",
                   "sourceBoundarySpectrum_im_eq_zero",
                   "sourceTheorem1_4_two"
+                ]
+              }
+            },
+            {
+              "review": "GeneralSpectralHeightCorrectionsSourceComparison-2026-11-02",
+              "field": "unnumbered",
+              "index": 1,
+              "source_record_sha256": "b6cd8c19078ec5a9b1c7f66b3a4dbf475d6ea69d71f61f5dce7c5505a1f52630",
+              "row": {
+                "ordered_group": "spectral-21",
+                "source_lines": [
+                  1018,
+                  1034
+                ],
+                "requirement": "Theorem 1.4 with exponent-dependent height (1+8*p*E_p*norm(phi))^p.",
+                "declarations": [
+                  "NLS.ZakharovShabat.sourceTheorem1_4_proposed_height",
+                  "NLS.ZakharovShabat.sourceBoundarySpectrum_abs_im_lt_explicit_height",
+                  "NLS.ZakharovShabat.sourceBoundarySpectrum_closed_discrete",
+                  "NLS.ZakharovShabat.sourceBoundarySpectrum_im_eq_zero"
+                ],
+                "status": "corrected",
+                "ordered_status": "corrected",
+                "reviewed_claims": [
+                  "Every finite p>1; same original norm and both actual ordinary boundary spectra. One common neighborhood and all larger cutoffs.",
+                  "The corrected-height cluster equals the actual central cluster; full algebraic multiplicity 2N+1, simple high roots and exhaustion follow from the retained boundary counting data.",
+                  "Discreteness and real-type reality are retained from sourceBoundarySpectrum_closed_discrete and sourceBoundarySpectrum_im_eq_zero; the sharper p=2 printed bound remains."
                 ]
               }
             }
@@ -4488,7 +4544,7 @@
     {
       "unit": "section_3",
       "document": "coverage/SECTION_3.md",
-      "document_sha256": "e1f3bc6a12e35c0b8515c18adb0088c2b271b0c93debad90ed3b5649471a1e55",
+      "document_sha256": "638a471a3e1aaa69bae8fb8a7603cbaf706b8691045177138c9af920a6982b49",
       "groups": [
         {
           "group": "section_3-001",
@@ -4592,7 +4648,7 @@
         },
         {
           "group": "section_3-003",
-          "assessment": "mixed_proved_and_formally_refuted",
+          "assessment": "corrected",
           "source_lines": [
             [
               1243,
@@ -4699,6 +4755,31 @@
                   "NLS.ZakharovShabat.proposition3_1_discreteness_and_reality",
                   "NLS.ZakharovShabat.proposition3_1_printed_height_counterexample",
                   "NLS.ZakharovShabat.sourcePeriodicSpectrum_im_eq_zero_of_realType"
+                ]
+              }
+            },
+            {
+              "review": "GeneralSpectralHeightCorrectionsSourceComparison-2026-11-02",
+              "field": "unnumbered",
+              "index": 2,
+              "source_record_sha256": "b6cd8c19078ec5a9b1c7f66b3a4dbf475d6ea69d71f61f5dce7c5505a1f52630",
+              "row": {
+                "ordered_group": "section_3-003",
+                "source_lines": [
+                  1243,
+                  1263
+                ],
+                "requirement": "Proposition 3.1 on the full period-two original source at all finite Banach exponents.",
+                "declarations": [
+                  "NLS.ZakharovShabat.mem_resolventSet_of_periodTwoExplicitHeight",
+                  "NLS.ZakharovShabat.exists_periodTwo_periodicCounting_corrected_height"
+                ],
+                "status": "corrected",
+                "ordered_status": "corrected",
+                "reviewed_claims": [
+                  "The checked theorem retains p=1 and arbitrary period-two input; no implicit period-one restriction.",
+                  "Original norm height (1+8*p*norm(phi))^p, closed exterior resolvent, full algebraic counts, corrected cluster and actual rectangle projection, analytic common-neighborhood dependence, discreteness and real-type reality.",
+                  "The additional parity conclusions remain conditional on even support through the retained PeriodicCountingData; original input and neighbors are unrestricted."
                 ]
               }
             }
@@ -6709,7 +6790,7 @@
     {
       "unit": "section_4",
       "document": "coverage/SECTION_4.md",
-      "document_sha256": "7e7f90ec4fbbb74824eed3e43c772594dcc1c57858f23974723d42060111b761",
+      "document_sha256": "f7f20f4d42c7ece939e7d934f8cdb3275e42b48a5877446f65b74fd258aa3050",
       "groups": [
         {
           "group": "section_4-001",
@@ -53344,7 +53425,7 @@
   "queued_not_published": [],
   "qualification": "This reconciles previously published assessments and inspected source navigation. It is not a new semantic review of all proof dependencies. Full source-line accounting does not imply every mathematical claim is proved. Earlier detailed qualifications and historical corrections remain unchanged. Partial/pending counts cover those explicit statuses only, not every qualified assessment.",
   "preparation_ready": true,
-  "source_inventory_draft_sha256": "e13cffb1eb46703c9f891f692564416fa2366ff78ab11eeab0f197906e4c1d05",
+  "source_inventory_draft_sha256": "ce11c37d3f11b625fb3e34848b2c772f21dff0bc52818992e0ee6af3e71d9239",
   "gap_inspection_sha256": "c48c6ccf005af940aca0f35634990455bb7501c5a717db71d1fac01e7efb91fb",
   "tail_inspection_sha256": "f8b4bc671ff240da2f8b2543a80a39606c9c30cde0da3cb1af3d94ce13dc84fb",
   "inspected_navigation_gaps": [
@@ -57162,23 +57243,24 @@
   "all_nonblank_source_lines_assigned": true,
   "new_lean_proofs": 2,
   "new_refutations": 0,
-  "preceding_navigation_sha256": "8a3e3f7e45439326774d324a84e94aac7926cb72f0033b54dc94649af509265e",
+  "preceding_navigation_sha256": "1f4c6f7506fdcd7e240d137ce5fb91e93ed74c3d2bdc9663edf1402ed74be28b",
   "validation_lean_sources": {
-    "files": 4921,
-    "sha256": "01845dd60120b931c193afed94a2eb1942ef4f051fcee2ee27bdd223ef4f7a7d"
+    "files": 4922,
+    "sha256": "466878611d145d98f4153136b68e0dc3a2e938fadafdac4153f03eeff3d1d643"
   },
   "validation": {
-    "session": 99109,
+    "session": 14894,
     "exit": 0,
     "exit_observed": true,
-    "log": "work/Section5CorrectedAuxiliaryHeightFullCheck.log",
-    "log_sha256": "fb586f61da19615ee0a5e62af25a1eaf0db14fb2b1067f60939a445697bf71c9"
+    "log": "work/GeneralSpectralHeightCorrectionsFullCheck.log",
+    "log_sha256": "4310b5442ee12ef5ef550f6b6e7dde286dfdfa068bcac5edf9abde1d80f4142c"
   },
   "assessment_update": {
-    "review": "Section5CorrectedAuxiliaryHeightSourceComparison-2026-11-02",
+    "review": "GeneralSpectralHeightCorrectionsSourceComparison-2026-11-02",
     "adopted_groups": [
-      "section_5-012",
-      "section_5-013"
+      "spectral-11",
+      "spectral-21",
+      "section_3-003"
     ]
   }
 }
