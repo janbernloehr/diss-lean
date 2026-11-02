@@ -181,7 +181,15 @@
     "Articles/MKdVBelowL2/FourthNativePhysicalField",
     "Articles/MKdVBelowL2/FourthClassicalPhysicalFlow",
     "Articles/MKdVBelowL2/FourthClassicalTimeEquation",
-    "Articles/MKdVBelowL2/FourthClassicalMKdV"
+    "Articles/MKdVBelowL2/FourthClassicalMKdV",
+    "ZakharovShabat/SourceNativeSmoothRealization",
+    "ZakharovShabat/SourceActionPhaseImageInclusion",
+    "Articles/MKdVBelowL2/PhysicalFourthExponentFlow",
+    "ZakharovShabat/SourceNativeSobolevSmoothness",
+    "Articles/MKdVBelowL2/SmoothPhysicalMKdV",
+    "Articles/MKdVBelowL2/SmoothSpatialFourthTrajectory",
+    "Articles/MKdVBelowL2/PhysicalScalarSmoothFourth",
+    "Articles/MKdVBelowL2/ScalarSmoothFourierApproximation"
   ],
   "strict_options": [
     "autoImplicit=false",
@@ -4413,6 +4421,156 @@
       "Classical.choice",
       "Quot.sound"
     ],
+    "NLS.ZakharovShabat.periodOneCoefficient_eq_interval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.exists_nativeSobolevSource_of_smooth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.nativeSobolevPhysicalJet_eq_smooth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.exists_nativeSobolevSource_of_smooth_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.mem_imageDomain_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.imageFlow_exponent_of_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealCoefficients_exponent_of_same_distributions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.same_distributions_of_physicalRealCoefficients_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_of_hilbert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.contDiff_nativeSobolevPhysicalJet_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.periodOneCoefficient_nativeSobolevPhysicalJet_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.contDiff_of_all_nativeSobolev_representations": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalValue_periodic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_of_smooth_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_pointwise_mKdV_of_smooth_initial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.contDiff_fourthClassicalPhysicalValue_of_smooth_initial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_spatially_smooth_mKdV_of_smooth_initial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.IsSmoothPhysicalScalarInput": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalInput": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_of_smooth_scalar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthScalarImageDomain_of_smooth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryDomain_of_smooth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_smooth_fourthScalarImageFlow_coefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.isSmoothPhysicalScalarInput_of_finiteSupport": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.isSmoothPhysicalScalarInput_truncate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.dense_smoothPhysicalScalarInput": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_smoothPhysicalScalar_sequence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthScalarImageFlow_of_smooth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_unique_smooth_approximation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "NLS.ZakharovShabat.componentSwapBoundary": [],
     "NLS.ZakharovShabat.componentSwapBoundary_involutive": []
   },
@@ -4421,7 +4579,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Incremental focused validation: 9 new modules checked strictly; 172 unchanged modules reuse parent validation. Full transitive audit of 847 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Incremental focused validation: 8 new modules checked strictly; 181 unchanged modules reuse parent validation. Full transitive audit of 877 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",
@@ -4431,8 +4589,8 @@
     "9b664f9",
     "09fa657"
   ],
-  "validation_method": "Incremental strict checks of 9 final new modules and a full transitive audit; 172 parent modules reused after checking their sources are unchanged.",
-  "validation_basis_commit": "e2665c38af2b1d98c9ec996c92843bca3230847f",
+  "validation_method": "Incremental strict checks of 8 final new modules and a full transitive audit; 181 parent modules reused after checking their sources are unchanged.",
+  "validation_basis_commit": "88199cb1afc52ebfe569c6f43fd63a124860c0c1",
   "unchanged_modules_reused": [
     "ComplexAnalysis/RelativeProductComparison",
     "ComplexAnalysis/RootPeriodComparison",
@@ -4605,9 +4763,7 @@
     "Articles/MKdVBelowL2/ScalarFourthTrajectory",
     "Articles/MKdVBelowL2/ScalarFourthApproximation",
     "Articles/MKdVBelowL2/FourthFiniteGapFullPhysicalODE",
-    "Articles/MKdVBelowL2/FourthSobolevTrajectory"
-  ],
-  "modules_checked_this_checkpoint": [
+    "Articles/MKdVBelowL2/FourthSobolevTrajectory",
     "FunctionalAnalysis/DenseParameterDerivative",
     "ZakharovShabat/SourceSobolevPhysicalPhase",
     "Articles/MKdVBelowL2/FourthFiniteGapFullPointwise",
@@ -4617,6 +4773,16 @@
     "Articles/MKdVBelowL2/FourthClassicalPhysicalFlow",
     "Articles/MKdVBelowL2/FourthClassicalTimeEquation",
     "Articles/MKdVBelowL2/FourthClassicalMKdV"
+  ],
+  "modules_checked_this_checkpoint": [
+    "ZakharovShabat/SourceNativeSmoothRealization",
+    "ZakharovShabat/SourceActionPhaseImageInclusion",
+    "Articles/MKdVBelowL2/PhysicalFourthExponentFlow",
+    "ZakharovShabat/SourceNativeSobolevSmoothness",
+    "Articles/MKdVBelowL2/SmoothPhysicalMKdV",
+    "Articles/MKdVBelowL2/SmoothSpatialFourthTrajectory",
+    "Articles/MKdVBelowL2/PhysicalScalarSmoothFourth",
+    "Articles/MKdVBelowL2/ScalarSmoothFourierApproximation"
   ],
   "checked_source_sha256": {
     "ComplexAnalysis/RelativeProductComparison": "9fde40048b371faeaaf6824bad52dc3777f14114339734bbaa9e83d5061ee22d",
@@ -4799,6 +4965,14 @@
     "Articles/MKdVBelowL2/FourthNativePhysicalField": "0d81dcef4c8258e6f98ef4533625b8e2cc0ea5eef15acc1523d2fc483fee91a1",
     "Articles/MKdVBelowL2/FourthClassicalPhysicalFlow": "ed1e544c721f911872267453a78dc65e3e73be150fa883740c410b2fca0baf8b",
     "Articles/MKdVBelowL2/FourthClassicalTimeEquation": "bc9b91de87cd9103a4909b02b9242c154afb3170810fbd037650f0107c1932ae",
-    "Articles/MKdVBelowL2/FourthClassicalMKdV": "0adadbfecfce42913b1a90aabf328994fa9a45cea3b77964cfdd3c964f1bece4"
+    "Articles/MKdVBelowL2/FourthClassicalMKdV": "0adadbfecfce42913b1a90aabf328994fa9a45cea3b77964cfdd3c964f1bece4",
+    "ZakharovShabat/SourceNativeSmoothRealization": "f8a3993ac7e1ed51be951416506da09c3e57e21367bc8bfb9595e30f33040b6c",
+    "ZakharovShabat/SourceActionPhaseImageInclusion": "77e33e9b643ec2fb73cd345ded28aa803b4091d229e593f8c0343e1958d141b1",
+    "Articles/MKdVBelowL2/PhysicalFourthExponentFlow": "00729960b1957fe26619b1a289cd4402cbfe2460f99d92616fc2d9ab62f6e7fd",
+    "ZakharovShabat/SourceNativeSobolevSmoothness": "01884edcd3272256ae0a8bcf75601f2bc0f431c2f5dc92c7dacd5090796ba7ba",
+    "Articles/MKdVBelowL2/SmoothPhysicalMKdV": "6751b41e17c5cb4ba37f8f9beb9ba83ab15979f66fc90198f8e986037312d1b6",
+    "Articles/MKdVBelowL2/SmoothSpatialFourthTrajectory": "ad4fbdc67adeef8087408c90dd13260299b47d1fe4eaf45fb2ebdd6e79b1ed14",
+    "Articles/MKdVBelowL2/PhysicalScalarSmoothFourth": "b58892c04899cc94f9282bd528c66e33bc6e362396532c38b8589ef450fd674f",
+    "Articles/MKdVBelowL2/ScalarSmoothFourierApproximation": "41e8f518c27504a9e98284b9fe0170dd9657938a5c42e08efefa625c3a6b1fc5"
   }
 }

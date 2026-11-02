@@ -202,12 +202,47 @@
       "source": "Scalar renormalized mKdV on the entire native H4 diagonal",
       "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalValue_mKdV",
       "scope": "Every real native H⁴ source with equal original fields, every real time and every spatial point. The actual constructed scalar field is real and satisfies u_t=-u_xxx+6*(u^2-M)*u_x. Its classical third derivative is the bounded physical third jet, and M equals the original integral over [0,1] of the square of the initial physical field. Actual full-source diagonal preservation removes physical momentum. This is the constructed flow equation, not an assumption or proof of uniqueness for arbitrary classical PDE trajectories."
+    },
+    {
+      "source": "All-order native representations of arbitrary smooth real physical fields",
+      "declaration": "NLS.ZakharovShabat.exists_nativeSobolevSource_of_smooth_real",
+      "scope": "Every integer Sobolev order and every smooth real period-one physical function. Its original Fourier integrals define a native real source with exactly equal raw fields; native lower jets recover the classical physical derivatives. The construction is not restricted to finite Fourier or finite-gap sources."
+    },
+    {
+      "source": "Actual admissibility transfer under exponent inclusion",
+      "declaration": "NLS.ZakharovShabat.SourceActionFrequency.mem_imageDomain_exponent",
+      "scope": "Any compatible actual action-frequency families, any increasing finite source exponents, and any admissible lower-exponent time. The included actual source trajectory supplies a point in the larger Birkhoff image. The larger image is not assumed surjective, and its image condition is discharged rather than assumed."
+    },
+    {
+      "source": "Global physical Hilbert lifts in larger finite exponents",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_of_hilbert",
+      "scope": "Every actual physical Hilbert pair, every larger finite exponent p, and every p-pair representing the same two original distributions. Every real time is admissible in the larger exponent, and both evolved original distributions equal the Hilbert flow distributions. No arbitrary rough-data global inverse is asserted."
+    },
+    {
+      "source": "Spatially smooth actual mKdV trajectory for every smooth real initial field",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_spatially_smooth_mKdV_of_smooth_initial",
+      "scope": "Every smooth real period-one physical field. One actual native H⁴ input gives the exact initial physical function and a globally defined trajectory, spatially C∞, periodic and real at every time. Its pointwise time derivative satisfies renormalized mKdV with the original initial square integral. All-order native representatives and fixed-family source-flow equality prove spatial smoothness. This is a constructed-flow existence result, not uniqueness against every classical PDE trajectory."
+    },
+    {
+      "source": "Exact smooth scalar finite-p physical PDE adapter",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_smooth_fourthScalarImageFlow_coefficients",
+      "scope": "Every smooth original real scalar distribution at every finite p>=2. Its actual scalar inverse lift is admissible at every real time and every compact interval. Each signed Fourier coefficient equals that of one fixed globally defined spatially smooth physical mKdV trajectory, with its actual initial mass and pointwise PDE. The scalar lift is the same fixed Theorem 1.2 family used throughout."
+    },
+    {
+      "source": "Genuine smooth real Fourier approximants in the original scalar norm",
+      "declaration": "NLS.Articles.MKdVBelowL2.isSmoothPhysicalScalarInput_truncate",
+      "scope": "Every finite physical Fourier-support scalar real input has a smooth real periodic representative of exactly the same original distribution coefficients. Actual symmetric scalar cutoffs are therefore smooth, and they converge in the original norm at every finite exponent. Smooth scalar data are dense and a smooth approximation sequence exists at every input. Finite Fourier support is not replaced by a finite-gap claim."
+    },
+    {
+      "source": "Uniform smooth-approximation limits and their uniqueness for the constructed physical flow",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_unique_smooth_approximation",
+      "scope": "On every common admissible compact interval, every norm-convergent smooth scalar family has uniformly convergent actual scalar trajectories; smooth approximant times are globally admissible. Any curve with the all-smooth-sequences pointwise limit property for these actual smooth physical lifts is uniquely the fixed scalar lift. Smooth approximation sequences exist, so the property is not vacuous. Classical PDE uniqueness is still needed to identify this constructed smooth map with the source canonical smooth solution map."
     }
   ],
   "remaining": [
-    "Complete the exact classical-solution identification for Theorem 1.1: represent the required arbitrary smooth physical data in the native source, transfer the actual scalar lifts across finite p, and prove any required uniqueness among classical PDE solutions. The constructed flow now satisfies the full physical equation at every native H⁴ input and scalar mKdV at every native H⁴ diagonal input, with exact original Fourier coefficients and physical mass.",
-    "Establish the exact smooth-approximation solution and uniqueness requirements of Theorem 1.1 using the verified scalar real phase space, local and invariant small-data uniform trajectories, and uniqueness of actual lift limits. Native H⁴ PDE existence and lift-limit uniqueness alone do not identify all arbitrary smooth PDE trajectories.",
+    "Prove uniqueness/identification against arbitrary classical mKdV PDE trajectories, thereby identifying the constructed smooth physical flow with the canonical smooth solution map used by the source. Every smooth real datum now has the exact native representation, spatially smooth real periodic pointwise PDE trajectory, and globally admissible scalar finite-p lift with unchanged original distributions.",
+    "Integrate the canonical smooth-map identification into the exact Theorem 1.1 smooth-approximation solution clause and its local and invariant small-data uniform trajectory maps. Genuine smooth Fourier approximants, density, all-smooth-family uniform actual lift convergence and uniqueness of the approximation limit are now verified.",
     "Construct controlled smooth approximations with tunable divergent physical mass at every datum outside L² and use the verified nonzero signed Birkhoff mode to prove nonextension at each fixed t>0. A trajectory obstruction alone does not prove this fixed-time claim."
   ],
-  "validation": "Nine final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 172 unchanged parent modules reused from e2665c38af2b1d98c9ec996c92843bca3230847f after source comparison. Fresh full transitive audit of 847 declarations uses only propext, Classical.choice and Quot.sound."
+  "validation": "Eight final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 181 unchanged parent modules reused from 88199cb1afc52ebfe569c6f43fd63a124860c0c1 after source comparison. Fresh full transitive audit of 877 declarations uses only propext, Classical.choice and Quot.sound."
 }

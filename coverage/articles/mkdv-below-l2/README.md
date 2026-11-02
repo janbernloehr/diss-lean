@@ -193,28 +193,55 @@ establishes the constructed flow's PDE on the full native H⁴ diagonal;
 classical PDE uniqueness and the precise smooth-data/finite-p solution
 identification required by Theorem 1.1 are not inferred from it.
 
+Every smooth real physical period-one field now has a native real source at
+every integer Sobolev order, with its actual Fourier integrals. The original
+initial physical function is recovered exactly. All weighted lifts forget
+to the same source trajectory, so Fourier uniqueness and all-order regularity
+prove that this constructed trajectory stays spatially C∞ at every real time.
+It is real, periodic, and satisfies pointwise renormalized mKdV with the
+original initial square mass.
+
+Admissibility itself now transfers under increasing source exponents: the
+included actual source trajectory is a witness in the larger Birkhoff image.
+Hilbert data therefore have global actual lifts in every larger finite
+exponent, with exactly the same two evolved original distributions. For any
+smooth scalar physical input at finite p>=2, its actual scalar lift is
+globally admissible and has precisely the Fourier coefficients of the same
+spatially smooth physical mKdV trajectory. This does not assert a global
+inverse at arbitrary rough data.
+
+Original scalar Fourier cutoffs are now certified as actual smooth real
+periodic distributions. They give norm-convergent smooth sequences at every
+finite-p datum. Every convergent smooth family has uniformly convergent
+actual scalar trajectories on a common admissible compact interval. The
+curve with the all-smooth-sequences limit property for this constructed
+smooth physical flow is uniquely the actual lift. The remaining classical
+identification must establish uniqueness against arbitrary classical PDE
+trajectories, so that this constructed smooth map is the source's canonical
+smooth solution map. Fixed-time nonextension outside L² is also still open.
+
 ## Remaining integration order for Theorem 1.1
 
-1. Complete the exact classical-solution identification: represent the required
-   smooth physical data in the native source, compare their scalar finite-p
-   lifts, and prove any required uniqueness among classical PDE solutions.
-   The constructed physical equation on every native H⁴ diagonal datum is now
-   verified, with its original Fourier coefficients and mass normalization.
-2. Use the verified scalar real adapter and uniform trajectories to establish
-   the exact smooth-approximation solution property and PDE uniqueness. The
-   scalar lift and approximation limits themselves are already constructed.
+1. Prove the remaining classical PDE uniqueness/identification with the
+   source's canonical smooth solution map. Native representation of every
+   smooth real physical datum, spatial smoothness of the constructed PDE
+   trajectory, and its scalar finite-p identification are now verified.
+2. Integrate that canonical smooth-map identification with the precise
+   smooth-approximation solution clause and the local/small-data uniform
+   trajectory statements. Smooth density, uniform convergence of all actual
+   smooth lift approximants, and uniqueness of their limit are already proved.
 3. Prove fixed-time nonextension at every FL^p datum outside L² using controlled
    smooth approximations, tunable divergent mass and a nonzero signed mode.
 
 ## Validation
 
-The focused checker `check.sh` lists 181 article/shared modules and the
+The focused checker `check.sh` lists 189 article/shared modules and the
 consumed hierarchy foundations. Lean 4.33.1 checks use `autoImplicit=false`
-and `warningAsError=true`. The twenty-second checkpoint strictly checks all 9
-final new modules and reuses 172 parent modules after verifying their sources
-are unchanged from `e2665c38af2b1d98c9ec996c92843bca3230847f`.
+and `warningAsError=true`. The twenty-third checkpoint strictly checks all 8
+final new modules and reuses 181 parent modules after verifying their sources
+are unchanged from `88199cb1afc52ebfe569c6f43fd63a124860c0c1`.
 
-The fresh full transitive audit checks all 847 named declarations, including
+The fresh full transitive audit checks all 877 named declarations, including
 the main Theorems 1.2 and 1.3. Only `propext`, `Classical.choice` and
 `Quot.sound` occur. No holes, new axioms, disabled linters or increased
 heartbeat limits were introduced. `validation.txt` captures the checks;

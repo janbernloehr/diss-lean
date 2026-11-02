@@ -1,14 +1,13 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
-Incremental validation: 172 unchanged modules reuse commit e2665c38af2b1d98c9ec996c92843bca3230847f; 9 final new modules checked strictly below.
-FunctionalAnalysis/DenseParameterDerivative: checked
-ZakharovShabat/SourceSobolevPhysicalPhase: checked
-Articles/MKdVBelowL2/FourthFiniteGapFullPointwise: checked
-ZakharovShabat/SourceNativeSobolevPhysicalJets: checked
-ZakharovShabat/SourceNativeSobolevH1Pair: checked
-Articles/MKdVBelowL2/FourthNativePhysicalField: checked
-Articles/MKdVBelowL2/FourthClassicalPhysicalFlow: checked
-Articles/MKdVBelowL2/FourthClassicalTimeEquation: checked
-Articles/MKdVBelowL2/FourthClassicalMKdV: checked
+Incremental validation: 181 unchanged modules reuse commit 88199cb1afc52ebfe569c6f43fd63a124860c0c1; 8 final new modules checked strictly below.
+ZakharovShabat/SourceNativeSmoothRealization: checked
+ZakharovShabat/SourceActionPhaseImageInclusion: checked
+Articles/MKdVBelowL2/PhysicalFourthExponentFlow: checked
+ZakharovShabat/SourceNativeSobolevSmoothness: checked
+Articles/MKdVBelowL2/SmoothPhysicalMKdV: checked
+Articles/MKdVBelowL2/SmoothSpatialFourthTrajectory: checked
+Articles/MKdVBelowL2/PhysicalScalarSmoothFourth: checked
+Articles/MKdVBelowL2/ScalarSmoothFourierApproximation: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -1656,5 +1655,75 @@ Articles/MKdVBelowL2/FourthClassicalMKdV: checked
  Classical.choice,
  Quot.sound]
 'NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalValue_mKdV' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.periodOneCoefficient_eq_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.exists_nativeSobolevSource_of_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.nativeSobolevPhysicalJet_eq_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.exists_nativeSobolevSource_of_smooth_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.mem_imageDomain_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_exponent_of_mem' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealCoefficients_exponent_of_same_distributions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.same_distributions_of_physicalRealCoefficients_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_of_hilbert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.contDiff_nativeSobolevPhysicalJet_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.periodOneCoefficient_nativeSobolevPhysicalJet_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.contDiff_of_all_nativeSobolev_representations' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalValue_periodic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_of_smooth_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_pointwise_mKdV_of_smooth_initial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.contDiff_fourthClassicalPhysicalValue_of_smooth_initial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_spatially_smooth_mKdV_of_smooth_initial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.IsSmoothPhysicalScalarInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_of_smooth_scalar' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarImageDomain_of_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryDomain_of_smooth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_smooth_fourthScalarImageFlow_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.isSmoothPhysicalScalarInput_of_finiteSupport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.isSmoothPhysicalScalarInput_truncate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.dense_smoothPhysicalScalarInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_smoothPhysicalScalar_sequence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthScalarImageFlow_of_smooth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_unique_smooth_approximation' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]

@@ -1031,3 +1031,55 @@ lists 181 modules. No holes, new axioms, disabled linters or increased
 heartbeat or recursion limits were introduced. Canonical compiled dependencies
 remain read-only; this is incremental focused validation, not a whole-repository
 rebuild.
+
+
+## Twenty-third checkpoint: arbitrary smooth data and the actual scalar adapter
+
+Every arbitrary smooth real period-one physical field now has native real
+Sobolev representatives at every integer order, with its actual Fourier
+integrals and exactly equal raw fields. More generally smooth conjugate
+physical pairs have native real representatives. Lower native jets recover
+the actual smooth classical physical derivatives. All-order regularity and
+Fourier uniqueness identify a continuous periodic field as spatially smooth.
+For the fixed fourth trajectory, representatives of the same smooth datum at
+every order forget to the same unweighted source flow. Consequently the actual
+H⁴ physical trajectory stays spatially C∞ at every real time, retains its
+exact initial physical field, reality and period, and solves the pointwise
+renormalized mKdV equation with the original initial square mass.
+
+Actual image-domain admissibility now transfers under increasing exponents:
+the included admissible source trajectory is a concrete point in the larger
+Birkhoff image. The larger inverse is not assumed globally surjective. This
+proves that every actual Hilbert physical pair has a global lift in every
+larger finite exponent, retaining both evolved original distributions. A
+smooth original scalar distribution therefore has a globally admissible
+finite-p scalar lift whose every signed Fourier coefficient equals the same
+spatially smooth physical PDE trajectory. Its scalar model, actual Birkhoff
+family, physical period and original distributions are unchanged.
+
+Finite physical Fourier support now implies actual smooth scalar reality
+and periodicity. Thus the existing symmetric scalar Fourier cutoffs give
+genuine smooth approximants in the original norm at every finite exponent;
+smooth data are dense and such sequences exist at every datum. Every convergent
+smooth family has uniformly convergent actual scalar lift trajectories on a
+common admissible compact interval, with globally admissible smooth times.
+A curve with the all-smooth-sequences limit property for these constructed
+smooth physical lifts is uniquely the fixed lift. The approximation property
+is not vacuous. This is not yet a proof of uniqueness against all arbitrary
+classical PDE trajectories.
+
+Theorem 1.1 remains incomplete: classical PDE uniqueness/identification with
+the source's canonical smooth solution map must still be established and
+integrated with the exact main statement. Every-fixed-time nonextension at
+every datum outside L² still requires controlled smooth approximants with
+tunable divergent physical mass and the nonzero signed mode. Theorems 1.2
+and 1.3 remain verified. Constructed smooth PDE existence and uniqueness of
+approximation limits have not been substituted for classical PDE uniqueness.
+
+Eight final new modules pass strict Lean 4.33.1 checks; 181 unchanged parent
+focused modules reuse 88199cb1afc52ebfe569c6f43fd63a124860c0c1 after source comparison.
+A fresh full transitive audit checks 877 named declarations, with only propext,
+Classical.choice and Quot.sound. The checker lists 189 modules. No holes, new
+axioms, disabled linters or increased heartbeat/recursion limits were added.
+Canonical compiled dependencies remain read-only. Validation is incremental
+and focused, not a fresh whole-repository rebuild.

@@ -1,3 +1,11 @@
+import NLS.ZakharovShabat.SourceNativeSmoothRealization
+import NLS.ZakharovShabat.SourceActionPhaseImageInclusion
+import NLS.Articles.MKdVBelowL2.PhysicalFourthExponentFlow
+import NLS.ZakharovShabat.SourceNativeSobolevSmoothness
+import NLS.Articles.MKdVBelowL2.SmoothPhysicalMKdV
+import NLS.Articles.MKdVBelowL2.SmoothSpatialFourthTrajectory
+import NLS.Articles.MKdVBelowL2.PhysicalScalarSmoothFourth
+import NLS.Articles.MKdVBelowL2.ScalarSmoothFourierApproximation
 import NLS.FunctionalAnalysis.DenseParameterDerivative
 import NLS.ZakharovShabat.SourceSobolevPhysicalPhase
 import NLS.Articles.MKdVBelowL2.FourthFiniteGapFullPointwise
@@ -1047,3 +1055,34 @@ import NLS.Articles.MKdVBelowL2.FourthMomentSummability
 #print axioms NLS.Articles.MKdVBelowL2.fourthClassicalMomentum_flow_diagonal
 #print axioms NLS.Articles.MKdVBelowL2.fourthClassicalMass_eq_integral_square
 #print axioms NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalValue_mKdV
+
+#print axioms NLS.ZakharovShabat.periodOneCoefficient_eq_interval
+#print axioms NLS.ZakharovShabat.exists_nativeSobolevSource_of_smooth
+#print axioms NLS.ZakharovShabat.nativeSobolevPhysicalJet_eq_smooth
+#print axioms NLS.ZakharovShabat.exists_nativeSobolevSource_of_smooth_real
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.mem_imageDomain_exponent
+#print axioms NLS.ZakharovShabat.SourceActionFrequency.imageFlow_exponent_of_mem
+#print axioms NLS.Articles.MKdVBelowL2.physicalRealCoefficients_exponent_of_same_distributions
+#print axioms NLS.Articles.MKdVBelowL2.same_distributions_of_physicalRealCoefficients_exponent
+#print axioms NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_exponent
+#print axioms NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_of_hilbert
+#print axioms NLS.ZakharovShabat.contDiff_nativeSobolevPhysicalJet_zero
+#print axioms NLS.ZakharovShabat.periodOneCoefficient_nativeSobolevPhysicalJet_zero
+#print axioms NLS.ZakharovShabat.contDiff_of_all_nativeSobolev_representations
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalValue_periodic
+#print axioms NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_of_smooth_real
+#print axioms NLS.Articles.MKdVBelowL2.exists_pointwise_mKdV_of_smooth_initial
+#print axioms NLS.Articles.MKdVBelowL2.contDiff_fourthClassicalPhysicalValue_of_smooth_initial
+#print axioms NLS.Articles.MKdVBelowL2.exists_spatially_smooth_mKdV_of_smooth_initial
+#print axioms NLS.Articles.MKdVBelowL2.IsSmoothPhysicalScalarInput
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalInput
+#print axioms NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_of_smooth_scalar
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarImageDomain_of_smooth
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryDomain_of_smooth
+#print axioms NLS.Articles.MKdVBelowL2.exists_smooth_fourthScalarImageFlow_coefficients
+#print axioms NLS.Articles.MKdVBelowL2.isSmoothPhysicalScalarInput_of_finiteSupport
+#print axioms NLS.Articles.MKdVBelowL2.isSmoothPhysicalScalarInput_truncate
+#print axioms NLS.Articles.MKdVBelowL2.dense_smoothPhysicalScalarInput
+#print axioms NLS.Articles.MKdVBelowL2.exists_smoothPhysicalScalar_sequence
+#print axioms NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthScalarImageFlow_of_smooth
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_unique_smooth_approximation

@@ -221,6 +221,14 @@ modules=(
   Articles/MKdVBelowL2/FourthClassicalPhysicalFlow
   Articles/MKdVBelowL2/FourthClassicalTimeEquation
   Articles/MKdVBelowL2/FourthClassicalMKdV
+  ZakharovShabat/SourceNativeSmoothRealization
+  ZakharovShabat/SourceActionPhaseImageInclusion
+  Articles/MKdVBelowL2/PhysicalFourthExponentFlow
+  ZakharovShabat/SourceNativeSobolevSmoothness
+  Articles/MKdVBelowL2/SmoothPhysicalMKdV
+  Articles/MKdVBelowL2/SmoothSpatialFourthTrajectory
+  Articles/MKdVBelowL2/PhysicalScalarSmoothFourth
+  Articles/MKdVBelowL2/ScalarSmoothFourierApproximation
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"
