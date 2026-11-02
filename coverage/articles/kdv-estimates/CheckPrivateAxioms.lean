@@ -66,6 +66,9 @@ import NLS.KdV.HillL2Conjugation
 import NLS.ComplexAnalysis.TracePrimitiveReflection
 import NLS.KdV.HillL2PrimitiveReflection
 import NLS.KdV.HillRealBands
+import NLS.ComplexAnalysis.RealSimpleZeroSigns
+import NLS.KdV.HillRealGapSigns
+import NLS.KdV.HillRealGapIntegrals
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -103,7 +106,13 @@ run_cmd do
     ``NLS.Fourier.continuousFourierCLM_star,
     ``NLS.ComplexAnalysis.circleIntegral_pow_mul_deriv_eq_neg,
     ``NLS.ComplexAnalysis.circleIntegral_eq_conj_of_anti_conj,
-    ``NLS.ComplexAnalysis.circleIntegral_im_eq_zero_of_anti_conj]
+    ``NLS.ComplexAnalysis.circleIntegral_im_eq_zero_of_anti_conj,
+    ``NLS.ComplexAnalysis.not_isLocalExtr_of_simple_real_zero,
+    ``NLS.ComplexAnalysis.negative_on_preconnected_of_nonzero,
+    ``NLS.ComplexAnalysis.positive_right_of_negative_left,
+    ``NLS.ComplexAnalysis.positive_left_of_negative_right,
+    ``NLS.ComplexAnalysis.above_pos_level_of_square_gt,
+    ``NLS.ComplexAnalysis.above_pos_level_of_square_gt_left]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

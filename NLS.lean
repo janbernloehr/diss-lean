@@ -4991,4 +4991,7 @@ import NLS.KdV.HillL2Conjugation
 import NLS.ComplexAnalysis.TracePrimitiveReflection
 import NLS.KdV.HillL2PrimitiveReflection
 import NLS.KdV.HillRealBands
+import NLS.ComplexAnalysis.RealSimpleZeroSigns
+import NLS.KdV.HillRealGapSigns
+import NLS.KdV.HillRealGapIntegrals
 import NLS.Articles.KdVEstimates.EstimateAdapter
