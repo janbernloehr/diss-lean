@@ -1,67 +1,42 @@
 # KdV Hamiltonian convexity
 
-**Theorems 1.1–1.3 are not yet verified.** The analytic summation and
-Hilbert-to-weighted-action inclusion needed for the global extension are
-proved, with the physical contour moments and their spectral estimates
-retained as explicit missing inputs. The physical smooth KdV energy
-coefficients, the actual scalar Hill solution bridge and its all-order real-axis trace estimates are also
-proved. The actual discriminant is now jointly entire in energy and continuous
-potential. A free-normalized primitive is now constructed on an explicit
-joint open source-continuation domain. One cutoff and one complex potential
-neighborhood now cover every high squared-frequency contour, and their
-actual cubic moments form analytic families there. The high energy regions now
-have actual two-root Hill pairs with exact analytic multiplicities and parity
-trace levels, and analytic energy midpoints and squared gaps. For real continuous
-potentials all actual unit-modulus Floquet energies are now proved real; the
-primitive covers both complete nonreal energy half-planes, and the high pairs
-are ordered. The actual half-plane sheets and reflected primitive are now
-identified from the free normalization, giving reality of the actual high
-cubic moments. Uniform high-disc approximation now fixes the shifted
-primitive strip and its indexed limits at every actual high branch point,
-including double roots. Joint analytic endpoint charts now agree with the
-actual shifted primitive square and preserve physical multiplicities.
-One bounded analytic square now covers a full energy disc containing
-each complete high complex gap, on a common potential neighborhood.
-The endpoint-deflated quotient is now analytic and nonvanishing, with
-norm at most 4/(n*pi*r)^2. This gives the gap-length bound for the actual
-primitive wherever admissible, and constructs analytic roots with the
-same bound on the full local cut domain. Their physical sign is fixed
-on the complete high integration circle and both half-discs in H^-1,
-as proved in the latest section below. Full real-band gluing remains open.
-The actual high cubic moments now satisfy the quartic gap bound on a
-common complex potential neighborhood, by fixing one sign on a connected
-small circle and deforming that circle. This does not require global
-matching on every overlap component.
-The endpoint-deflated square now also has its quantitative free-model
-normalization and an analytic root close to i/(2*n*pi), on each complete
-high disc. The exact endpoint-root period now gives the high Arnold-period lower
-bound gamma^2/n <= 16*pi*|A_n| and the equivalence A_n=0 iff the
-actual gap collapses. Consequently |8*n*pi*R_n| <= C*|A_n|^2 holds on
-one common complex continuous-potential neighborhood, with both families
-analytic there. Identification of these periods with global H^-1 Birkhoff
-actions and analytic descent to action space remain open.
-The analytic summation also allows a local finite spectral cutoff.
-Analytic squared primitive charts at
-both signs of the branch locus are also constructed. The earlier local
-concavity/inverse preparation is preserved.
-The original Arnold and cubic periods now agree exactly with the shared
-L2 energy-circle periods. The actual L2 trace also admits uniform free
-approximation on full high discs and source paths in complex L2 neighborhoods;
-the corresponding quartic gap, Arnold-period comparison and quadratic
-weighted moment bounds are now proved on complex L2 neighborhoods.
-The high analytic square construction, complete actual L2 gap containment,
-joint indexed branch limits and common high-moment analytic domains are
-now proved in the L2 topology as well.
-Local analytic shifted-Miura lifts are now constructed near every complex H^-1
-potential, with mass uniform on bounded balls, exact constant energy translation
-and H1 regularity when the Miura image is L2. Physical spectral matching
-through these charts and gluing of the jointly entire H^-1 trace are now proved;
-uniform H^-1 trace estimates and common high-moment analytic domains are now proved.
-Actual two-root counts, exact multiplicities, quartic-gap and
-quadratic-Arnold-period bounds are now proved on common complex H^-1
-neighborhoods. Global KdV Birkhoff action identification and analytic
-weighted-action descent remain open.
-This record does not reopen the completed dissertation verification.
+**Theorems 1.1–1.3 are not yet verified.** The checked analytic reduction
+constructs one complex neighborhood of the entire nonnegative weighted
+action cone, descends real-action-invariant analytic coordinate families
+there, and sums their quadratic tails analytically on the positive-ell2
+preimage. The actual KdV Birkhoff map, action identity and real isospectral
+invariance needed to apply this reduction remain open.
+
+On potential space, the actual unit-period Hill discriminant is jointly
+entire in energy and complex H^-1 potentials. Local analytic shifted-Miura
+charts give the physical L2 comparison and uniform H^-1 high-energy
+estimates. The source-normalized root and primitive cover both full
+nonreal half-planes at real inputs, satisfy exact Schwarz reflection, and
+have strict physical sheet signs. Actual high cut roots match the source
+primitive on complete integration circles and both half-discs, including
+collapsed gaps.
+
+On one common complex H^-1 neighborhood, the literal high Arnold and
+cubic periods are analytic and satisfy
+|R_n|<=C*gamma_n^4/n^3, gamma_n^2/n<=16*pi*|A_n| and
+|8*n*pi*R_n|<=C*|A_n|^2. The actual high cubic periods are real and
+nonpositive at every real input there. No global Birkhoff action has been
+substituted for the proved Arnold period A_n.
+
+Exterior confinement now accounts for every actual H^-1 characteristic
+root. Source-path separators give the exact central count 2*N-1 with
+analytic multiplicities. The central roots are sorted and joined to the
+ordered high pairs in slots 2*n-1 and 2*n. This constructs an exhaustive
+nondecreasing real characteristic labeling on one common neighborhood,
+and an intrinsic lowest characteristic root. Cutoff-independent
+uniqueness and H^-1 continuity of the full labeling, central trace parity
+and finite central canonical gap contours remain unproved.
+
+Physical energy/frequency identification, the -6*Id quadratic coefficient
+and the Fourier-Lebesgue assertions in Theorems 1.2–1.3 also remain open.
+The earlier verified local concavity and inverse-function consequences
+are retained as conditional preparation. This record does not reopen the
+completed dissertation verification.
 
 ## Source and conventions
 
@@ -1563,6 +1538,54 @@ filled-gap squares and convergent hierarchy trace gap series are available
 for subsequent reuse; no additional shared sources are imported in this
 four-module milestone.
 
+## Exhaustive H^-1 roots and global real characteristic labels
+
+`HillHminusOneExteriorRoots.lean` uses the actual Miura-chart identity
+with the NLS discriminant at sqrt(lambda+c). A locally uniform exterior
+periodic-product ratio excludes every root outside the translated free
+frequency neighborhoods and a bounded central region. This covers all
+actual characteristic roots, including those outside the previously
+constructed high discs. Finite chart covers give a single neighborhood
+and constants near compact H^-1 sets and along every complete straight
+source path. No bound on L2 approximants is assumed.
+
+`HillCentralRegionGeometry.lean` separates the free-energy lattice with
+the existing separator pi^2*N^2-12*N.
+`HillHminusOneRootRegions.lean` prescribes the high-disc radius first,
+then chooses one complex H^-1 neighborhood and a cutoff. Every larger
+cutoff works on that neighborhood. Each source-path root lies strictly
+above -N^2 and either below the separator or in an actual high energy
+disc strictly above it. The entire separator line and the left half-plane
+are zero-free. There are no unaccounted roots between high discs.
+
+`HillHminusOneCentralCounting.lean` combines the proved source separators
+with real H^-1 root reality. The diameter circle is zero-free throughout
+the source homotopy. Its exact analytic zero count is 2*N-1: one free
+simple lowest root and N-1 free double roots. Multiple central roots
+retain their full analytic orders.
+`HillHminusOneCentralRoots.lean` adapts the existing L2 root-multiset
+construction to these actual H^-1 controls and sorts the finite cluster.
+
+`HillHminusOneRealPairs.lean` retains each actual ordered high pair and
+proves strict separation between different indices and from the central
+cluster. `HillHminusOneGlobalRealLabels.lean` appends the pairs to the
+sorted central cluster. The resulting sequence is nondecreasing, every
+entry is a genuine H^-1 radicand root, and every radicand root receives a
+label. High pairs occupy exactly slots 2*n-1 and 2*n, with their analytic
+multiplicities, and the central slots retain the exact root-multiset
+counts. One complex neighborhood and cutoff precede all these assertions
+for every real input there. No caller supplies the missing central roots.
+
+The same construction proves existence of the intrinsic lowest real
+characteristic root, its root identity and minimality among all actual
+complex characteristic zeros. Minimality determines its value uniquely.
+Cutoff-independent uniqueness and H^-1 continuity of the entire labeling,
+lowest-root simplicity, central trace parity and canonical finite gap
+contours remain unproved. This is a labeling of the constructed entire
+H^-1 characteristic; its singular-operator identification and global
+KdV Birkhoff-action interpretation remain open. Theorem 1.1 and all other
+main theorem flags remain unverified.
+
 ## Remaining essential KdV work
 
 1. Continue the constructed free-normalized primitive from its explicit
@@ -1635,15 +1658,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `2632da7` contains 317 source modules. Every
-baseline source hash remains unchanged. Four authored modules pass
-incremental Lean 4.33.1/mathlib v4.33.1 checks with `warningAsError=true`.
-The full reproducible script now lists 321 source modules. The
-positive-index example passes.
+The validated baseline at `f812873` contains 321 source modules. Every
+baseline source hash remains unchanged. Seven authored or adapted modules
+pass incremental Lean 4.33.1/mathlib v4.33.1 checks with
+`warningAsError=true`. The full reproducible script now lists 328 source
+modules. The positive-index example passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
 helpers and all declarations originating in 165 additional shared modules:
-3525 declarations in total, transitively. Only `propext`,
+3614 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
