@@ -203,6 +203,12 @@ modules = [
     "NLS/ZakharovShabat/SourceIndexedActionCosineIntegral.lean",
     "NLS/MKdV/MiuraActionReflection.lean",
     "NLS/Articles/MKdVNLSHierarchies/ActionIdentification.lean",
+    "NLS/ComplexAnalysis/NonrealBoundaryExtension.lean",
+    "NLS/MKdV/MiuraHillBoundaryExtension.lean",
+    "NLS/MKdV/MiuraHillGapComplement.lean",
+    "NLS/MKdV/MiuraCanonicalHillSheets.lean",
+    "NLS/MKdV/MiuraHillPrimitiveEndpoint.lean",
+    "NLS/Articles/MKdVNLSHierarchies/CanonicalPrimitiveIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

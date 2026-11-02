@@ -843,3 +843,62 @@ Quot.sound are allowed. The public inventory contains 1,157 entries
 (929 theorems, 228 definitions; aliases and structures excluded), with
 171 SHA256 source/checker hashes. The checks use pinned cached imports;
 the entire dependency tree was not rebuilt from source.
+
+
+## 2026-11-02 — full real-H1 canonical Hill sheets and Lemmas 4 and 5
+
+`NonrealBoundaryExtension.lean` constructs a function's values by limits
+from nonreal energies. The nonreal relative neighborhood filter is
+nontrivial at every complex point. Agreement off the real axis with a
+continuous germ determines each limit; analytic germs make the filled
+function analytic. This is reusable complex analysis, with no NLS import.
+
+`MiuraHillBoundaryExtension.lean` applies that construction to the original
+independent physical quasi-Hill root and primitive. No NLS function enters
+either definition. The already checked nonreal comparison then proves
+existence of the limits and their equality with the actual NLS sheets
+through the principal energy square root. This includes every real band,
+removing the earlier nonreal-frequency restriction. On the old admissible
+source-continuation domain the filled functions equal the original
+independently constructed functions, also for complex H1 profiles.
+
+`MiuraHillGapComplement.lean` uses only the actual independent Hill labels
+to define its energy cut complement: the real ray below and including the
+ground label and every positive closed gap are removed. The exact indexed
+gap identities prove that squaring the right frequency half-plane maps the
+original NLS cut complement exactly to this physical Hill domain. The
+principal square root supplies the converse witness, and the domain is open.
+
+`MiuraCanonicalHillSheets.lean` proves spectral analyticity throughout that
+full real-H1 domain. Continuity from nonreal energies retains the actual
+L2 Hill trace and the root/primitive hyperbolic identities. The root squares
+to the physical Hill radicand and never vanishes there. Differentiating the
+physical trace gives the exact energy derivative Delta_prime/root. The
+first-band sign is the source's positive real value of i times the root.
+
+`MiuraHillPrimitiveEndpoint.lean` proves the exact signed endpoint limits,
+including a zero limit at the actual ground energy even when it is zero.
+For every smooth integrable connector from that ground energy through the
+physical gap complement, the integral of the actual Hill Delta_prime/root
+one-form equals the filled primitive. This supplies the source's original
+path-integral normalization, rather than only a local logarithm identity.
+
+The article exports full-domain lemma4_root_real_H1_gapComplement and
+lemma5_primitive_real_H1_gapComplement, the exact square-domain comparison,
+spectral analyticity, physical trace and energy derivative, and equations
+(10) and (11). Lemmas 4 and 5 are complete on their original real-H1
+domain. Joint complex-source continuation on arbitrary real-band
+neighborhoods, inverse-energy-weighted mKdV action contours, spectral
+Hamiltonian identification, geometric eigenspace multiplicities and main
+Theorems 1, 3 and 4 remain incomplete.
+
+Validation covers 175 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. Every source hash of the 169
+unchanged modules matches the previous validated milestone; their private
+outputs were reused. The six new modules and NLS aggregate compiled, and
+the complete audits passed for 2,223 targeted declarations and auxiliaries
+and 47,402 combined NLS declarations. Only propext, Classical.choice and
+Quot.sound are allowed. The public inventory contains 1,201 entries
+(967 theorems, 234 definitions; aliases and structures excluded), with
+177 SHA256 source/checker hashes. The checks use pinned cached imports;
+the entire dependency tree was not rebuilt from source.

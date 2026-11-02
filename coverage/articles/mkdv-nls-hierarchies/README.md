@@ -421,7 +421,7 @@ shared build lock; the entire dependency tree was not rebuilt from source.
 Canonical main remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.
 
 
-Latest milestone: two actual action clauses of Theorem 4(i) are proved on
+Previous milestone: two actual action clauses of Theorem 4(i) are proved on
 the full original real H1 domain. The central restricted NLS action
 vanishes exactly when the literal physical mean vanishes, and the
 restricted NLS actions at signed indices n and -n are equal. These are the
@@ -445,4 +445,33 @@ and 47,343 combined NLS declarations. Only propext, Classical.choice and
 Quot.sound are allowed. The public inventory contains 1,157 entries
 (929 theorems, 228 definitions; aliases and structures excluded), with
 171 SHA256 source/checker hashes. The checks use pinned cached imports;
+the entire dependency tree was not rebuilt from source.
+
+
+Latest milestone: Lemmas 4 and 5 hold on the entire original real H1
+right-half-plane cut complement, including real spectral bands. The full
+Hill sheets are constructed as nonreal-energy limits of the independent
+physical quasi-Hill sheets. The definitions contain no NLS root or
+primitive. Checked NLS comparisons prove existence and analyticity of the
+limits at every point of the physical labeled gap complement.
+
+The actual Hill domain removes the ground half-line and every intrinsic
+positive closed gap. Squaring matches it exactly with the original NLS
+right-half-plane cut complement. The extended sheets retain the physical
+L2 Hill trace, the exact energy derivative, the first-band branch sign
+in (10), zero ground-endpoint normalization, and the actual path integral
+in (11). They agree with the earlier independent source-continuation
+constructions wherever those are admissible. The source real-H1 sheet
+assertions are complete; weighted action contours, spectral Hamiltonians,
+complex-source action neighborhoods and main Theorems 1, 3 and 4 remain open.
+
+Validation covers 175 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. Every source hash of the 169
+unchanged modules matches the previous validated milestone; their private
+outputs were reused. The six new modules and NLS aggregate compiled, and
+the complete audits passed for 2,223 targeted declarations and auxiliaries
+and 47,402 combined NLS declarations. Only propext, Classical.choice and
+Quot.sound are allowed. The public inventory contains 1,201 entries
+(967 theorems, 234 definitions; aliases and structures excluded), with
+177 SHA256 source/checker hashes. The checks use pinned cached imports;
 the entire dependency tree was not rebuilt from source.

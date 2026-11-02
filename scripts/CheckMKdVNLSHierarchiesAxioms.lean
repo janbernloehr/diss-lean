@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.CanonicalPrimitiveIdentification
 import NLS.Articles.MKdVNLSHierarchies.ActionIdentification
 import NLS.Articles.MKdVNLSHierarchies.GapIdentification
 import NLS.Articles.MKdVNLSHierarchies.SpectralIdentification
@@ -26,6 +27,11 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ComplexAnalysis.nonrealBoundaryExtension,
+    `NLS.ComplexAnalysis.nhdsWithin_nonreal_neBot,
+    `NLS.ComplexAnalysis.nonrealBoundaryExtension_eq_of_continuousAt,
+    `NLS.ComplexAnalysis.nonrealBoundaryExtension_eq_self,
+    `NLS.ComplexAnalysis.analyticAt_nonrealBoundaryExtension,
     `NLS.ZakharovShabat.classicalSolution_diagonal_zero,
     `NLS.ZakharovShabat.classicalDiscriminant_diagonal_zero,
     `NLS.ZakharovShabat.sourceIndexedAction_eq_cosineIntegral,
