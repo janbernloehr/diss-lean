@@ -16,7 +16,9 @@ potentials all actual unit-modulus Floquet energies are now proved real; the
 primitive covers both complete nonreal energy half-planes, and the high pairs
 are ordered. The actual half-plane sheets and reflected primitive are now
 identified from the free normalization, giving reality of the actual high
-cubic moments. The analytic summation also allows a local finite spectral cutoff.
+cubic moments. Uniform high-disc approximation now fixes the shifted
+primitive strip and its indexed limits at every actual high branch point,
+including double roots. The analytic summation also allows a local finite spectral cutoff.
 Analytic squared primitive charts at
 both signs of the branch locus are also constructed. The earlier local
 concavity/inverse preparation is preserved.
@@ -475,7 +477,9 @@ Delta(l,q) = Delta(r,q) = 2 when n is even, and -2 when n is odd.
 This is derived from the actual periodic root-space parity and canonical
 trace-level theorem. It holds for complex potentials, without imposing
 the NLS real-type condition. It fixes the trace sign; the global primitive
-endpoint values `F(l)=F(r)=-i*n*pi` still require continuation and matching.
+limits `F -> -i*n*pi` at these high endpoints are now proved below from
+both nonreal energy half-planes. Filling the normalized squared-primitive
+charts and matching the complete canonical cuts remain required.
 
 The energy midpoint and squared gap are constructed from the intrinsic
 frequency midpoint `m` and squared gap `g` by the exact formulas
@@ -537,8 +541,8 @@ lie strictly between `(n*pi-pi/4)^2` and `(n*pi+pi/4)^2`; thus pairs at differen
 high indices cannot cross. `exists_analytic_ordered_classicalHillHighGapFamilies`
 combines this with one complex neighborhood and cutoff for all analytic
 midpoints, squared gaps and cubic moments, at every real potential in that
-neighborhood. Complete central/global labels and the endpoint normalization
-`F(lambda_n^+/-)=-i*n*pi` remain unproved. These reality results concern
+neighborhood. The high endpoint limits are now proved below. Complete
+central/global matching and the canonical cut construction remain unproved. These reality results concern
 continuous potentials; no L2 or H^-1 extension of the Green proof is claimed.
 
 ## Physical primitive sheets, reflection and moment reality
@@ -581,9 +585,65 @@ are real on admissible real-centered energy circles. The same calculation
 applies to the actual squared-frequency contours, with the exact Jacobian
 `2*z`. One cutoff and one complex open potential neighborhood support all
 analytic high moments, real at every real potential in that neighborhood.
-Nonpositivity, endpoint values `F(lambda_n^+/-)=-i*n*pi`, the gap-scale
-bounds and weighted action descent remain unproved. No L2 or H^-1 extension
+The high endpoint limits `F -> -i*n*pi` are now proved below. Nonpositivity,
+the central endpoint construction, gap-scale bounds and weighted action
+descent remain unproved. No L2 or H^-1 extension
 of these primitive results is asserted here.
+
+## High-band and endpoint normalization
+
+[`ClassicalHillBandNormalization.lean`](../../../NLS/KdV/ClassicalHillBandNormalization.lean)
+proves that the imaginary primitive at an admissible real energy never
+meets an integer multiple of pi: such a value would force its actual
+nonvanishing root to vanish. Continuity along `s*q` therefore preserves
+both strict inequalities of the free imaginary band. The free energy
+square root is also identified with every right-half-plane frequency.
+
+[`ClassicalHillDiscAsymptotics.lean`](../../../NLS/KdV/ClassicalHillDiscAsymptotics.lean)
+transfers the established complex ZS exterior trace estimates to the
+actual Hill trace. The maximum-modulus principle gives arbitrarily small
+uniform errors `|Delta(q,z^2)-2*cos(z)|` throughout **complete high discs**,
+including their branch points. A compact-cover argument and source-domain
+tube give one complex potential neighborhood and cutoff for every source
+path. The constant-upper affine Fourier map is not assumed to send zero
+to the zero ZS potential.
+
+[`ClassicalHillHighTracePhase.lean`](../../../NLS/KdV/ClassicalHillHighTracePhase.lean)
+uses these errors to prove `Re((-1)^n*Delta)>0` on all complete high discs
+and all source paths of nearby complex potentials.
+[`ClassicalHillHighPrimitiveStrip.lean`](../../../NLS/KdV/ClassicalHillHighPrimitiveStrip.lean)
+then proves the exact strip
+
+```
+|Im(F(z^2,q)+i*n*pi)| < pi/2.
+```
+
+It applies at every admissible point of every sufficiently high disc,
+with the cutoff and complex neighborhood chosen first. The parity trace
+half-plane prevents crossing either strip boundary; the free primitive
+selects the component. This part is valid for complex perturbations as
+well as for real potentials.
+
+[`ClassicalHillHighEndpointNormalization.lean`](../../../NLS/KdV/ClassicalHillHighEndpointNormalization.lean)
+proves that the actual high radicand zero has trace `2*(-1)^n` from its
+parity half-plane, without assuming a labeled trace value. Along an
+admissible approach the root tends to zero by its squared radicand
+identity. The shifted multiplier tends to one, and the proved strip
+recovers the actual shifted primitive by `log(exp(F_n))=F_n`.
+`exists_classicalHill_high_energy_endpoint_normalization` gives one
+cutoff and complex open neighborhood such that, at **every real continuous
+potential** in it and **every actual high energy radicand zero**,
+
+```
+F(mu,q) -> -i*n*pi as mu -> lambda through Im(mu) != 0.
+```
+
+Both energy half-planes are included in the same limit. Simple and double
+zeros are treated identically. No value of the total source-domain formula
+at an excluded branch point is asserted: the theorem constructs the
+normalized boundary limit. Continuous endpoint filling, joint analytic
+squared-primitive matching, central endpoints, the gap-scale estimates
+and the H^-1/action identification remain required.
 
 ## Earlier checked local consequences
 
@@ -612,8 +672,9 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    proved, including actual unordered high energy pairs, their analytic
    symmetric data, real ordering, global off-real primitive coverage and common
    high-contour coverage in the continuous potential norm; complete global
-   spectral labels, primitive endpoint matching and rough-operator
-   identification remain.
+   spectral matching, central endpoint normalization, joint squared-primitive
+   matching and rough-operator identification remain. The high indexed
+   endpoint limits at real continuous potentials are now proved.
    Prove analytic descent to
    the weighted actions on a common complex neighborhood (Lemma 4.6(ii)).
 2. Prove their **complex-neighborhood** quadratic action bounds, including
@@ -630,7 +691,7 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    giving the full -6*Id derivative. Apply the checked local consequences
    after positive-index Hessian/real-cone transport.
 
-The `kdv-estimates` branch was re-inspected through commit `82b3467`.
+The `kdv-estimates` branch was re-inspected through commit `78200b7`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
 two-mode reduction, weighted root separation and physical gap tails. The
 period-one L2 Hill discriminant is jointly entire after square descent,
@@ -638,11 +699,16 @@ agrees with the continuous discriminant, and its zeros are identified with
 actual Fourier Hill eigenvectors and the reduced determinant. It now also
 proves reality for real L2 Hill potentials by Fourier operator symmetry,
 physical characteristic multiplicities and ordered high pairs at a checked
-linear cutoff. Those new
+linear cutoff. Its latest work bounds the central spectrum, counts the
+central characteristic roots as `2*N-1`, sorts them with multiplicities,
+and appends the high pairs to construct global nondecreasing real L2
+characteristic labels in the exact tail slots `2*n-1` and `2*n`. Those new
 Fourier/L2 modules are available on that branch and have not been duplicated
 or validated as part of this branch's focused check. The scalar flow module
-is reused here unchanged. Complete globally ordered labels, central bounds,
-rough H^-1 spectral/action theory, and the Birkhoff construction remain open.
+is reused here unchanged. Identification of those L2 labels with this
+branch's continuous contour construction, continuity/analyticity of labels
+in the required rough topology, H^-1 spectral/action theory, and the
+Birkhoff construction remain open.
 No separate messages were sent to other article chats.
 
 ## Validation and worktree
@@ -654,10 +720,10 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All thirty-four modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All thirty-nine modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
-399 constants in their two namespaces, including generated declarations,
+426 constants in their two namespaces, including generated declarations,
 transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class

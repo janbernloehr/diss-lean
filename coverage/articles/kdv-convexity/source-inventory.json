@@ -137,10 +137,19 @@
         "NLS.KdV.classicalHillContinuedPrimitive_re_eq_zero_of_im_eq_zero",
         "NLS.KdV.classicalHillContinuedMoment_im_eq_zero",
         "NLS.KdV.classicalHillHighContourMoment_im_eq_zero_of_coverage",
-        "NLS.KdV.exists_analytic_real_classicalHillHighContourMoments"
+        "NLS.KdV.exists_analytic_real_classicalHillHighContourMoments",
+        "NLS.KdV.classicalHillContinuedPrimitive_im_in_free_band",
+        "NLS.KdV.classicalHillContinuedPrimitive_ofReal_sq_band",
+        "NLS.KdV.exists_classicalHill_disc_trace_approximation_near_compact",
+        "NLS.KdV.exists_classicalHill_source_disc_trace_approximation",
+        "NLS.KdV.exists_classicalHill_source_high_trace_phase",
+        "NLS.KdV.exists_classicalHill_high_primitive_strip",
+        "NLS.KdV.classicalHillTrace_level_of_zero_and_phase",
+        "NLS.KdV.tendsto_classicalHillShiftedPrimitive_at_branch",
+        "NLS.KdV.exists_classicalHill_high_energy_endpoint_normalization"
       ],
       "remaining": [
-        "Match the canonical indexed primitive endpoint values F(lambda_n^+/-)=-i*n*pi, including collapsed gaps and the central spectrum; prove nonpositivity and gap-scale bounds for the actual moments. The continuous-potential high moments are now proved real on a common analytic neighborhood.",
+        "Use the proved high endpoint limits F -> -i*n*pi to fill and identify joint analytic squared-primitive charts and canonical gap cuts; handle the central endpoints and identify the shared global L2 labels. Prove nonpositivity and gap-scale bounds for the actual moments.",
         "Construct physical KdV contour moments and analytic descent on one complex neighborhood of the weighted ell^(-1,1) nonnegative cone (Lemma 4.6(ii)).",
         "Prove locally common complex-neighborhood bounds |8*n*pi*R_n| <= C*|I_n|^2 for those moments.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
@@ -302,7 +311,10 @@
     "lower_half_plane_primitive_real_part_negative": true,
     "continued_root_conjugation": "r(conj(lambda),q)=-conj(r(lambda,q)) on the admissible source domain at real continuous q.",
     "continued_primitive_conjugation": "F(conj(lambda),q)=-conj(F(lambda,q)) on the admissible source domain at real continuous q.",
-    "primitive_pure_imaginary_at_admissible_real_energies": true
+    "primitive_pure_imaginary_at_admissible_real_energies": true,
+    "indexed_high_endpoint_limits_proved": true,
+    "high_shifted_primitive_uniform_imaginary_strip": "|Im(F(z^2,q)+i*n*pi)|<pi/2 at all admissible high-disc points on a common complex potential neighborhood.",
+    "uniform_free_trace_approximation_on_complete_high_discs": true
   },
   "high_contour_progress": {
     "potential_topology": "Sup-norm Banach space C([0,1], C), allowing complex perturbations.",
@@ -346,7 +358,9 @@
     "reality_scope": "Real continuous potentials only; actual Green identity for any unit-modulus Floquet multiplier.",
     "high_pairs_can_be_ordered_at_real_potentials": true,
     "distinct_high_pairs_do_not_cross": true,
-    "common_complex_neighborhood_with_ordered_pairs_at_every_real_potential": true
+    "common_complex_neighborhood_with_ordered_pairs_at_every_real_potential": true,
+    "primitive_endpoint_limits_minus_i_n_pi_proved": true,
+    "endpoint_limit_scope": "At every actual high radicand zero, for real continuous potentials on a common complex neighborhood and cutoff, from both nonreal energy half-planes; no simplicity assumed. Literal values at excluded branch points not asserted."
   },
   "spectral_reality_progress": {
     "potential_space": "C([0,1], C), real-valued locus",
@@ -367,6 +381,25 @@
     "complete_real_gap_boundary_values_constructed": false,
     "endpoint_minus_i_n_pi_matching_proved": false,
     "nonpositive_cubic_moments_proved": false,
-    "action_descent_proved": false
+    "action_descent_proved": false,
+    "endpoint_minus_i_n_pi_limits_proved_for_high_real_continuous_spectrum": true
+  },
+  "high_endpoint_progress": {
+    "potential_space": "C([0,1], C), real-valued locus, common complex potential neighborhood",
+    "uniform_trace_error_on_complete_high_discs": true,
+    "uniform_trace_error_along_all_source_paths": true,
+    "parity_trace_real_part_positive": true,
+    "shifted_primitive_imaginary_strip": "(-pi/2,pi/2)",
+    "free_real_band_index_preserved": true,
+    "actual_high_branch_trace_level_derived_from_zero_and_phase": true,
+    "frequency_coordinate_endpoint_limit_proved": true,
+    "energy_coordinate_endpoint_limit_proved": true,
+    "limit_from_both_nonreal_energy_half_planes": true,
+    "simple_zero_assumed": false,
+    "collapsed_high_gaps_included": true,
+    "literal_total_formula_value_at_branch_point_asserted": false,
+    "central_endpoint_limits_proved": false,
+    "joint_squared_primitive_matching_proved": false,
+    "Hminus1_or_action_space_extension_proved": false
   }
 }

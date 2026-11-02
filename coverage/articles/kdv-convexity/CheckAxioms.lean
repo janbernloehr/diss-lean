@@ -3,6 +3,7 @@ import NLS.KdV.ClassicalBranchPrimitive
 import NLS.KdV.ClassicalContourMoments
 import NLS.KdV.ClassicalHighGapFamilies
 import NLS.KdV.ClassicalHillMomentReality
+import NLS.KdV.ClassicalHillHighEndpointNormalization
 import NLS.KdV.ActionHamiltonianFiniteGap
 import NLS.Articles.KdVConvexity.LocalConsequences
 import NLS.Articles.KdVConvexity.BaseContourSeries

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-02",
-  "milestone": "Actual Hill primitive half-plane sheet signs, source-domain reflection and reality of the normalized cubic contour moments at real continuous potentials",
+  "milestone": "Uniform actual high Hill disc asymptotics, canonical shifted primitive strips, and indexed endpoint limits from both nonreal energy half-planes, including double roots",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -37,6 +37,11 @@
     "NLS.KdV.ClassicalHillConjugation",
     "NLS.KdV.ClassicalHillPrimitiveSheets",
     "NLS.KdV.ClassicalHillPrimitiveReflection",
+    "NLS.KdV.ClassicalHillBandNormalization",
+    "NLS.KdV.ClassicalHillDiscAsymptotics",
+    "NLS.KdV.ClassicalHillHighTracePhase",
+    "NLS.KdV.ClassicalHillHighPrimitiveStrip",
+    "NLS.KdV.ClassicalHillHighEndpointNormalization",
     "NLS.KdV.ClassicalBranchPrimitive",
     "NLS.KdV.ClassicalTraceAsymptotics",
     "NLS.KdV.ActionHamiltonianMoments",
@@ -55,7 +60,7 @@
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 399,
+    "declarations": 426,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -94,9 +99,14 @@
     "NLS/KdV/ClassicalHighContourMoments.lean": "1ef7d0ef1cbdd400973ecf79afd3744f8de8da747ada245a36f2f8ec19cd1ee6",
     "NLS/KdV/ClassicalHighGapFamilies.lean": "5159acab52f9f977df82b203f95df8dd0942c194c941d5be0f8aacd3c3832928",
     "NLS/KdV/ClassicalHighGapPairs.lean": "473c73273c862dc8d707967a3414b6e0f2eace08c66f5894da6108aebe27a074",
+    "NLS/KdV/ClassicalHillBandNormalization.lean": "6fba685e4b7c13fb68960248ebe7b21a19ba22fd88021edb8ca68e1e489bd3f2",
     "NLS/KdV/ClassicalHillConjugation.lean": "ffc639b592eceeca6524e069dae7020800eb034b83338121e78ebb8e302cf659",
+    "NLS/KdV/ClassicalHillDiscAsymptotics.lean": "115a47f8fb4d6e73b316d814c590cabd9e26d9152f9c51bc62f89471a61604c4",
     "NLS/KdV/ClassicalHillFlow.lean": "0ed242a792e6b2f46c93ecb280f9c7fc25cf4a75669cff6248e11e925d56bd8e",
     "NLS/KdV/ClassicalHillGreen.lean": "917739d4f68ad00ee3d23895cd596379e000727d5b344b54effef565ee34bf8e",
+    "NLS/KdV/ClassicalHillHighEndpointNormalization.lean": "1f86a60c9f316605ac6e4343d371488028d56a2ca11774310ef72b524b8020aa",
+    "NLS/KdV/ClassicalHillHighPrimitiveStrip.lean": "6a00c0d729e1f5f4a9faea56371a4e5437a1e4718bb618709613311ae5722c40",
+    "NLS/KdV/ClassicalHillHighTracePhase.lean": "3ee5a5c4a0c94ea1f087c6ea6417deba7b86428fafda3001de4648f12e57a529",
     "NLS/KdV/ClassicalHillMomentReality.lean": "28634829d60a4078de9f536625e982d0df158f8f30c76ccffa8f0a09106d46a3",
     "NLS/KdV/ClassicalHillPrimitiveReflection.lean": "baf154f2a26608f7be7c6312404e833b4a48048c091f2fb4c4bd16efbd479cc4",
     "NLS/KdV/ClassicalHillPrimitiveSheets.lean": "9a8c1dea2892bda9513bed0f3b78102a25875b24f901a879a27361818796f3a8",
@@ -111,31 +121,31 @@
     "NLS/KdV/RiccatiEnergy.lean": "9161a7fd1215485b207cb6b2f07efa86183f31016cba2346c40f1e2dc797d34a",
     "NLS/ZakharovShabat/ClassicalSolutionInjectivity.lean": "9affcd40ecb7e9e599273563a89975108cf86ad2326d1656de83713014cb52a4",
     "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean": "6036371a2cadb92169894a505e58daefeb9d493fbe81d1e10a2387c9a65459a5",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "1a9275a0bf649c1ca590bf2459e66def5cf6c3c9af31e8b2fcbdc6db51befc44",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "db44767fbfdd3f2415ff186efe734e47a820cb11eeff4e2e03a59f365ed61610",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
-    "scripts/check-kdv-convexity.sh": "14208e4097a724f3a5363c8a1877abf2e6fe3c9d3eba1a8c3dcf7a268cccd6d7"
+    "scripts/check-kdv-convexity.sh": "ac97f0bf5a1a53111524e6a9cf11e9600a4f590625a7e48902c1bf1722059d06"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/focused-validation-primitive-sheets.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/focused-validation-high-endpoints.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
   "dissertation_validation_replaced": false,
   "shared_foundation_inspected": {
     "branch": "articles/kdv-estimates",
-    "commit": "82b34672c3c689555a78eba599cea210ebd38e1b",
-    "available": "Actual periodic H2 weak Hill operator and two-mode reduction; jointly entire period-one L2 energy discriminant and actual Fourier characteristic criterion; physical multiplicity comparison with the reduced determinant, Fourier-symmetry proof of reality for real L2 potentials, ordered real high pairs at the checked linear cutoff, weighted physical gap bounds and tails. These new Fourier/L2 modules are available on the shared branch, not duplicated or validated in this focused build.",
-    "not_yet_available": "Complete globally ordered labels and central bounds, H^-1 Hill/action/Birkhoff construction."
+    "commit": "78200b7544a7badd3e554a9a1a67df99017c8678",
+    "available": "Actual periodic H2 weak Hill operator and period-one L2 characteristic, Fourier spectral equivalence, real high pairs and physical multiplicities; wide high-tail coverage and lower/central spectral bounds; exact central count 2*N-1 and ordered global real L2 characteristic labels with high pairs in slots 2*n-1 and 2*n; weighted physical gap bounds and tails. These modules are available on the shared branch, not duplicated or validated in this focused build.",
+    "not_yet_available": "Required continuity/analyticity and identification of the global L2 labels in the rough source topology, H^-1 spectral/action/Birkhoff construction."
   },
   "limits": [
     "All main theorems remain unverified.",
-    "At real continuous potentials the actual primitive half-plane sheets are now fixed globally by the free anchor, and the root and logarithm satisfy their reflected signs on the complete admissible source domain. The actual normalized cubic moments are real, including the squared-frequency Jacobian. Complete central/global labels, endpoint values -i*n*pi, nonpositivity and gap-scale bounds, rough Hill/Birkhoff identification and weighted action descent remain unproved. The shared branch has L2 spectral reality, not imported into this primitive construction.",
+    "Actual high endpoint limits F -> -i*n*pi are proved from both nonreal energy half-planes for every real continuous potential in one common complex neighborhood, including double roots. The free trace approximation and shifted imaginary strip are uniform on complete high discs and along source paths. Values of the total source-domain formula at excluded branch points are not asserted. Central endpoint normalization, joint squared-primitive matching, nonpositivity and gap-scale bounds, rough Hill/Birkhoff identification and weighted action descent remain open. Shared global L2 characteristic labels are available but have not been imported or identified with these contour labels.",
     "The cosh trace identity and full joint logarithmic differential are proved on the source-continuation domain. Extending its square to the physical finite-gap exterior and constructing the normalized inversion remainder remain required for Lemma 4.4.",
     "The global analytic reduction now allows locally chosen finite spectral cutoffs. The physical action extension still needs actual contour moment action descent and uniform complex-neighborhood tail quadratic bounds; no origin vanishing is inferred from a tail bound alone.",
     "Theorems 1.2 and 1.3, positive-index Hessian transport, and KdV physical frequency identification remain unproved.",
     "No full repository build or replacement of the dissertation validation is claimed."
   ],
-  "previous_progress_commit": "e848349c4d93aa6ffd4912235b8c345d26006318",
+  "previous_progress_commit": "15182450397dfd2fd3a4ab64840488e3e1ff5a16",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -185,7 +195,16 @@
     "Complex.cpow_inv_two_re",
     "intermediate_value_Icc'",
     "IsPreconnected.eq_of_sq_eq",
-    "NLS.ComplexAnalysis.circleIntegral_im_eq_zero_of_anti_conj"
+    "NLS.ComplexAnalysis.circleIntegral_im_eq_zero_of_anti_conj",
+    "NLS.ZakharovShabat.exists_uniform_discriminant_error_exp",
+    "NLS.ZakharovShabat.freeCircle_separated",
+    "NLS.ZakharovShabat.freeCircle_im_le",
+    "NLS.ZakharovShabat.exists_free_center_cutoff",
+    "NLS.ZakharovShabat.norm_ge_of_mem_freeSphere",
+    "NLS.ComplexAnalysis.norm_le_of_sphere_bound",
+    "Complex.log_exp",
+    "Complex.continuousAt_clog",
+    "Real.continuous_sqrt"
   ],
   "other_shared_branch_inspected": {
     "branch": "articles/mkdv-nls-hierarchies",
@@ -239,7 +258,10 @@
     "lower_half_plane_primitive_real_part_negative": true,
     "continued_root_conjugation": "r(conj(lambda),q)=-conj(r(lambda,q)) on the admissible source domain at real continuous q.",
     "continued_primitive_conjugation": "F(conj(lambda),q)=-conj(F(lambda,q)) on the admissible source domain at real continuous q.",
-    "primitive_pure_imaginary_at_admissible_real_energies": true
+    "primitive_pure_imaginary_at_admissible_real_energies": true,
+    "indexed_high_endpoint_limits_proved": true,
+    "high_shifted_primitive_uniform_imaginary_strip": "|Im(F(z^2,q)+i*n*pi)|<pi/2 at all admissible high-disc points on a common complex potential neighborhood.",
+    "uniform_free_trace_approximation_on_complete_high_discs": true
   },
   "private_overlay": "Real private KdV and ZakharovShabat output directories. Reference ZakharovShabat files are symlinked for imports only; output-file links are removed before compilation. Canonical build products are not compilation targets.",
   "high_contour_progress": {
@@ -284,7 +306,9 @@
     "reality_scope": "Real continuous potentials only; actual Green identity for any unit-modulus Floquet multiplier.",
     "high_pairs_can_be_ordered_at_real_potentials": true,
     "distinct_high_pairs_do_not_cross": true,
-    "common_complex_neighborhood_with_ordered_pairs_at_every_real_potential": true
+    "common_complex_neighborhood_with_ordered_pairs_at_every_real_potential": true,
+    "primitive_endpoint_limits_minus_i_n_pi_proved": true,
+    "endpoint_limit_scope": "At every actual high radicand zero, for real continuous potentials on a common complex neighborhood and cutoff, from both nonreal energy half-planes; no simplicity assumed. Literal values at excluded branch points not asserted."
   },
   "global_extension_progress": {
     "source": "Proposition 4.7(ii), p. 30",
@@ -317,6 +341,25 @@
     "complete_real_gap_boundary_values_constructed": false,
     "endpoint_minus_i_n_pi_matching_proved": false,
     "nonpositive_cubic_moments_proved": false,
-    "action_descent_proved": false
+    "action_descent_proved": false,
+    "endpoint_minus_i_n_pi_limits_proved_for_high_real_continuous_spectrum": true
+  },
+  "high_endpoint_progress": {
+    "potential_space": "C([0,1], C), real-valued locus, common complex potential neighborhood",
+    "uniform_trace_error_on_complete_high_discs": true,
+    "uniform_trace_error_along_all_source_paths": true,
+    "parity_trace_real_part_positive": true,
+    "shifted_primitive_imaginary_strip": "(-pi/2,pi/2)",
+    "free_real_band_index_preserved": true,
+    "actual_high_branch_trace_level_derived_from_zero_and_phase": true,
+    "frequency_coordinate_endpoint_limit_proved": true,
+    "energy_coordinate_endpoint_limit_proved": true,
+    "limit_from_both_nonreal_energy_half_planes": true,
+    "simple_zero_assumed": false,
+    "collapsed_high_gaps_included": true,
+    "literal_total_formula_value_at_branch_point_asserted": false,
+    "central_endpoint_limits_proved": false,
+    "joint_squared_primitive_matching_proved": false,
+    "Hminus1_or_action_space_extension_proved": false
   }
 }
