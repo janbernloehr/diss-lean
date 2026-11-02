@@ -1,5 +1,6 @@
 import NLS.FunctionalAnalysis.PencilRootChains
 import NLS.FunctionalAnalysis.PencilRootSemisimple
+import NLS.FunctionalAnalysis.EquivalentNormNeumann
 import NLS.ComplexAnalysis.PoweredAnalyticJet
 import NLS.ComplexAnalysis.BanachFiniteJets
 import NLS.ComplexAnalysis.AffinePencilJets
@@ -16,6 +17,7 @@ import NLS.SequenceSpaces.NegativeModulation
 import NLS.SequenceSpaces.SignedSobolevConvolution
 import NLS.SequenceSpaces.ShiftReflection
 import NLS.KdV.FreeHill
+import NLS.KdV.FreeHillWideGeometry
 import NLS.KdV.HillComplement
 import NLS.KdV.HillReduction
 import NLS.KdV.FreeHillRegularity
@@ -36,9 +38,11 @@ import NLS.SequenceSpaces.WeightedWeakStarLowerTopology
 import NLS.SequenceSpaces.EndpointCompactInclusion
 import NLS.KdV.PseudomeasureRegularity
 import NLS.KdV.PseudomeasureMultiplication
+import NLS.KdV.PseudomeasureWideComparison
 import NLS.KdV.PseudomeasureFredholm
 import NLS.KdV.PseudomeasureEllipticRegularity
 import NLS.KdV.PseudomeasureTailInverse
+import NLS.KdV.PseudomeasureWideTail
 import NLS.KdV.PseudomeasureReduction
 import NLS.KdV.PseudomeasureAnalytic
 import NLS.KdV.PseudomeasureH1Analytic
@@ -59,6 +63,7 @@ import NLS.KdV.PseudomeasureRealSpectrum
 import NLS.KdV.PseudomeasureSpectralLipschitz
 import NLS.KdV.PseudomeasureRootSeparation
 import NLS.KdV.PseudomeasureRealPairs
+import NLS.KdV.PseudomeasureWideLocalization
 import NLS.Fourier.PeriodicPseudomeasureWeakStar
 import NLS.Fourier.PeriodicWeightedWeakStar
 import NLS.Fourier.PeriodicDistributionParity
@@ -91,6 +96,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicityOrder
 import NLS.Articles.KdVPseudomeasures.SpectralReality
 import NLS.Articles.KdVPseudomeasures.SpectralPairs
 import NLS.Articles.KdVPseudomeasures.SpectralGapTail
+import NLS.Articles.KdVPseudomeasures.SpectralWideLocalization
 
 /-! Transitive axiom audit of every public article dependency. -/
 
@@ -114,6 +120,11 @@ import NLS.Articles.KdVPseudomeasures.SpectralGapTail
 #print axioms NLS.FunctionalAnalysis.pencilKerRootEquiv
 #print axioms NLS.FunctionalAnalysis.pencilRootSpace_le_one_of_no_associated
 #print axioms NLS.FunctionalAnalysis.pencilRootSpaceTop_eq_one_of_no_associated
+#print axioms NLS.FunctionalAnalysis.norm_equiv_solution_le_two
+#print axioms NLS.FunctionalAnalysis.exists_equivalentNorm_neumann_inverse
+#print axioms NLS.FunctionalAnalysis.equivalentNormNeumannInverse
+#print axioms NLS.FunctionalAnalysis.equivalentNormNeumannInverse_left
+#print axioms NLS.FunctionalAnalysis.equivalentNormNeumannInverse_right
 #print axioms NLS.ComplexAnalysis.iteratedDeriv_pow_smul_zero
 #print axioms NLS.ComplexAnalysis.iteratedDeriv_eq_zero_of_powered_germ
 #print axioms NLS.ComplexAnalysis.iteratedDeriv_chainPolynomial
@@ -255,6 +266,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralGapTail
 #print axioms NLS.KdV.freeHillValue
 #print axioms NLS.KdV.freeHillValue_neg
 #print axioms NLS.KdV.reducedHillStrip
+#print axioms NLS.KdV.two_mul_nat_sub_one_le_abs_sq_sub_sq
 #print axioms NLS.KdV.nat_le_abs_sq_sub_sq
 #print axioms NLS.KdV.freeHill_denominator_lower
 #print axioms NLS.KdV.freeHill_denominator_ge_index
@@ -268,6 +280,10 @@ import NLS.Articles.KdVPseudomeasures.SpectralGapTail
 #print axioms NLS.KdV.weightedReducedHillResolvent_apply
 #print axioms NLS.KdV.norm_weightedReducedHillResolvent_apply_le
 #print axioms NLS.KdV.reducedHillResolvent_unique
+#print axioms NLS.KdV.wideHillStrip
+#print axioms NLS.KdV.freeHill_denominator_lower_wide
+#print axioms NLS.KdV.exists_wideHillStrip_of_ge
+#print axioms NLS.KdV.exists_wideHillStrip_of_ge_lower_edge
 #print axioms NLS.KdV.reducedHillSymbol_memlp_two
 #print axioms NLS.KdV.reducedHillHilbertSymbol
 #print axioms NLS.KdV.reducedHillHilbertSymbol_apply
@@ -503,6 +519,24 @@ import NLS.Articles.KdVPseudomeasures.SpectralGapTail
 #print axioms NLS.KdV.endpointH1Multiplication_apply
 #print axioms NLS.KdV.endpointH1Multiplication_physical
 #print axioms NLS.KdV.endpointH1Multiplication_resolvent
+#print axioms NLS.KdV.wideHillCenter
+#print axioms NLS.KdV.wideHillCenter_mem
+#print axioms NLS.KdV.norm_wideHillCenter_sub_le
+#print axioms NLS.KdV.wideHillSymbol
+#print axioms NLS.KdV.wideHillRatio
+#print axioms NLS.KdV.wideHill_denominator_ge
+#print axioms NLS.KdV.wideHill_denominator_ne_zero
+#print axioms NLS.KdV.norm_wideHillRatio_le
+#print axioms NLS.KdV.reducedHillSymbol_mul_wideHillRatio
+#print axioms NLS.KdV.wideHillMultiplier
+#print axioms NLS.KdV.wideHillMultiplier_apply
+#print axioms NLS.KdV.negativeShiftedNorm_wideHillMultiplier_le
+#print axioms NLS.KdV.wideEndpointHillResolventH1
+#print axioms NLS.KdV.wideEndpointHillResolventH1_coefficient
+#print axioms NLS.KdV.wideEndpointHillPerturbation
+#print axioms NLS.KdV.wideEndpointHillPerturbation_apply
+#print axioms NLS.KdV.endpointH1Multiplication_wideResolvent
+#print axioms NLS.KdV.negativeShiftedNorm_wideEndpointHillPerturbation_le
 #print axioms NLS.KdV.isCompactOperator_endpointHillHminusOne
 #print axioms NLS.KdV.isCompactOperator_singularHillDomainInclusion
 #print axioms NLS.KdV.isCompactOperator_endpointH1Multiplication_physical
@@ -538,6 +572,13 @@ import NLS.Articles.KdVPseudomeasures.SpectralGapTail
 #print axioms NLS.KdV.endpointHillTailInverse_right
 #print axioms NLS.KdV.endpointHillTailInverse_unique
 #print axioms NLS.KdV.negativeShiftedNorm_endpointHillTailInverse_le
+#print axioms NLS.KdV.exists_wideEndpointHill_cutoff
+#print axioms NLS.KdV.norm_wideEndpointHillPerturbation_conjugate_le
+#print axioms NLS.KdV.wideEndpointHillTailInverse
+#print axioms NLS.KdV.wideEndpointHillTailInverse_left
+#print axioms NLS.KdV.wideEndpointHillTailInverse_right
+#print axioms NLS.KdV.wideEndpointHillTailInverse_unique
+#print axioms NLS.KdV.negativeShiftedNorm_wideEndpointHillTailInverse_le
 #print axioms NLS.KdV.endpointHillH1Modes
 #print axioms NLS.KdV.endpointHillH1Modes_coefficient
 #print axioms NLS.KdV.endpointHillH1Coordinates
@@ -783,6 +824,19 @@ import NLS.Articles.KdVPseudomeasures.SpectralGapTail
 #print axioms NLS.KdV.EndpointHillRealPair.normalized_gap_le
 #print axioms NLS.KdV.EndpointHillRealPair.weighted_gap_le
 #print axioms NLS.KdV.EndpointHillRealPair.right_lt_left
+#print axioms NLS.KdV.wideEndpointHillEffectivePotential
+#print axioms NLS.KdV.singularHillEigenvector_decompose_wide
+#print axioms NLS.KdV.singularHillEigenvector_potential_wide
+#print axioms NLS.KdV.singularHillEigenvector_wide_coordinates_ne_zero
+#print axioms NLS.KdV.singularHillEigenvector_wide_equation
+#print axioms NLS.KdV.wideEndpointHillEffectivePotential_basis_shifted
+#print axioms NLS.KdV.wideEndpointHillEffectiveCorrection_columns_le
+#print axioms NLS.KdV.singularHillEigenvector_localization_wide_raw
+#print axioms NLS.KdV.endpointHill_small_of_wide_small
+#print axioms NLS.KdV.singularHillEigenvector_localization_wide
+#print axioms NLS.KdV.endpointHillSpectrum_wide_localization
+#print axioms NLS.KdV.endpointHillSpectrum_real_high_cover
+#print axioms NLS.KdV.endpointHillSpectrum_high_iff_pair
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.pseudomeasureWeakStar
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.tendsto_pseudomeasureWeakStar_of_bounded_coefficients
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.coefficientWeakDualHomeomorph
@@ -1041,3 +1095,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralGapTail
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHighGapTail_apply
 #print axioms NLS.Articles.KdVPseudomeasures.norm_sourceHighGapTail_le
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_ordered_real_tail_with_gap_space
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_wide_localization
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_real_high_cover
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_high_iff_pair
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_exhaustive_real_tail

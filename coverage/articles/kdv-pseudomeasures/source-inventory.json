@@ -328,6 +328,20 @@
         "NLS/Articles/KdVPseudomeasures/SpectralGapTail.lean"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-real-pairs-map.json"
+    },
+    {
+      "label": "Wide singular localization and high source spectrum exhaustion",
+      "content": "Every actual source spectral point above pi^2*N^2-12N belongs to the constructed ordered physical pairs. A single original norm-ball cutoff gives exhaustive high pairs with exact algebraic multiplicities and the infinity-Sobolev high-gap tail.",
+      "status": "Proved using the entire original H1/H-minus-one operator, without regular L2 or H2 substitution. Lower spectral bound, exact central count and canonical global slots remain open.",
+      "modules": [
+        "NLS/FunctionalAnalysis/EquivalentNormNeumann.lean",
+        "NLS/KdV/FreeHillWideGeometry.lean",
+        "NLS/KdV/PseudomeasureWideComparison.lean",
+        "NLS/KdV/PseudomeasureWideTail.lean",
+        "NLS/KdV/PseudomeasureWideLocalization.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralWideLocalization.lean"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-wide-localization-map.json"
     }
   ],
   "reuse_map": [

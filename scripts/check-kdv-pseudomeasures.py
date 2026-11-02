@@ -27,6 +27,7 @@ logs.mkdir(parents=True, exist_ok=True)
 modules = [
     'NLS.FunctionalAnalysis.PencilRootChains',
     'NLS.FunctionalAnalysis.PencilRootSemisimple',
+    'NLS.FunctionalAnalysis.EquivalentNormNeumann',
     'NLS.ComplexAnalysis.PoweredAnalyticJet',
     'NLS.ComplexAnalysis.BanachFiniteJets',
     'NLS.ComplexAnalysis.AffinePencilJets',
@@ -43,6 +44,7 @@ modules = [
     'NLS.SequenceSpaces.SignedSobolevConvolution',
     'NLS.SequenceSpaces.ShiftReflection',
     'NLS.KdV.FreeHill',
+    'NLS.KdV.FreeHillWideGeometry',
     'NLS.KdV.HillComplement',
     'NLS.KdV.HillReduction',
     'NLS.KdV.FreeHillRegularity',
@@ -63,9 +65,11 @@ modules = [
     'NLS.SequenceSpaces.EndpointCompactInclusion',
     'NLS.KdV.PseudomeasureRegularity',
     'NLS.KdV.PseudomeasureMultiplication',
+    'NLS.KdV.PseudomeasureWideComparison',
     'NLS.KdV.PseudomeasureFredholm',
     'NLS.KdV.PseudomeasureEllipticRegularity',
     'NLS.KdV.PseudomeasureTailInverse',
+    'NLS.KdV.PseudomeasureWideTail',
     'NLS.KdV.PseudomeasureReduction',
     'NLS.KdV.PseudomeasureAnalytic',
     'NLS.KdV.PseudomeasureH1Analytic',
@@ -86,6 +90,7 @@ modules = [
     'NLS.KdV.PseudomeasureSpectralLipschitz',
     'NLS.KdV.PseudomeasureRootSeparation',
     'NLS.KdV.PseudomeasureRealPairs',
+    'NLS.KdV.PseudomeasureWideLocalization',
     'NLS.Fourier.PeriodicPseudomeasureWeakStar',
     'NLS.Fourier.PeriodicWeightedWeakStar',
     'NLS.Fourier.PeriodicDistributionParity',
@@ -118,6 +123,7 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralReality',
     'NLS.Articles.KdVPseudomeasures.SpectralPairs',
     'NLS.Articles.KdVPseudomeasures.SpectralGapTail',
+    'NLS.Articles.KdVPseudomeasures.SpectralWideLocalization',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

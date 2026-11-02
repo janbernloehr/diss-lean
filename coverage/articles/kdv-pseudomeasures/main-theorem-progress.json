@@ -62,7 +62,7 @@
     ]
   },
   "essential_open_obligations": [
-    "Construct the canonical periodic/antiperiodic labels, asymptotic enumeration and eventual corrected-strip assignment; prove physical gap/Dirichlet estimates.",
+    "Prove a lower real spectral bound and exact central count, then canonical periodic/antiperiodic global labels and low-mode offset/boundary-condition identification. Actual high-spectrum exhaustion and ordered high pairs are proved. Complete physical gap/Dirichlet estimates.",
     "Construct the Birkhoff map with its global bijectivity, analyticity and endpoint inverse regularity.",
     "Endpoint spectral estimates and inverse regularity needed by 1.4.",
     "Actual KdV H^-1 smooth-approximation solution extension, invariance and continuity.",
@@ -153,7 +153,15 @@
     "Actual pair endpoints lie within sqrt(n)/4 of pi^2*n^2. Their gap is nonnegative and at most sqrt(n)/2, and their midpoint lies within sqrt(n)/4. The actual pairs are strictly separated across distinct high mode numbers, also for different potentials whenever both pairs have been constructed.",
     "The full-strip actual coupling radius has explicit bound2*(1+2n)^r*norm(q), reusing one common pointwise coupling-product bound. The actual physical gap obeys the source square-root-six coupling estimate, hence the doubled-frequency normalized bound2*sqrt6*norm(q) and ordinary mode-number weighted bound6*sqrt6*norm(q).",
     "Original physical source wrappers retain the complete original potential distribution, exact original norm, real mean-zero period-one constraints and full original H1 eigenvectors. One cutoff chosen before the potential on each original norm ball constructs an actual ordered high-pair family.",
-    "The actual high-gap sequence, evenly extended to signed indices and explicitly zero below the cutoff, belongs to WeightedCoeff(Weight.sobolev(-r),infinity) with its true infinity-exponent norm at most6*sqrt6*norm(q). A single original norm-ball cutoff gives the ordered family and this weighted sequence, without a finite-p substitute."
+    "The actual high-gap sequence, evenly extended to signed indices and explicitly zero below the cutoff, belongs to WeightedCoeff(Weight.sobolev(-r),infinity) with its true infinity-exponent norm at most6*sqrt6*norm(q). A single original norm-ball cutoff gives the ordered family and this weighted sequence, without a finite-p substitute.",
+    "Shared lattice geometry supplies the exact nearest-neighbor squared-mode gap and radius12n wide strips for n>=2. These overlapping strips cover the high real half-line from free_N-12N. Only potential-independent geometry is reused from the regular branch.",
+    "At a wide-strip point z, the comparison center mu=free_n+i*Im(z) belongs to the existing narrow strip. The diagonal ratio(mu-free_k)/(z-free_k), with harmless resonant identities, has norm at most13 in every original weighted exponent and every translated endpoint norm.",
+    "The actual wide complementary inverse is the original narrow H1 inverse composed with that diagonal comparison. It retains the full original H1 codomain and exactly the wide reciprocal Fourier coefficients. Actual original potential multiplication after it equals the constructed wide endpoint perturbation.",
+    "The actual wide perturbation has both opposite shifted bounds13*C_r*n^(r-1/2)*norm(q). A reusable equivalent-norm Neumann theorem constructs a two-sided inverse on the unchanged original carrier. The very same inverse has bound2 in both opposite shifted endpoint norms.",
+    "Every nonzero original H1 eigenvector on a wide strip decomposes into its actual two resonant modes plus the original H1 wide inverse of its proved endpoint potential term. Its resonant coordinates are nonzero and satisfy the actual finite equation; no additional eigenvector regularity premise is assumed.",
+    "Under the explicit wide cutoff13*C_r*n^(r-1/2)*norm(q)<=1/2, every actual singular wide-strip eigenvalue lies within sqrt(n)/4 of the free center and therefore lies in its corrected narrow strip. This holds for full original complex endpoint potentials and all complex parameters on the wide strip.",
+    "For native real endpoint potentials, wide covering and actual spectral reality prove that every physical spectral point with Re(z)>=free_N-12N lies in a corrected narrow strip with n>=N. There are no additional sufficiently high real spectral values between those strips.",
+    "Original source wrappers preserve the entire real mean-zero physically period-one potential distribution, exact original norm and original H-minus-one/H1 operator. One cutoff chosen before q on each original norm ball gives an ordered physical pair family that exhausts the entire high source spectrum and retains the genuine infinity-Sobolev gap-tail bound6*sqrt6*norm(q)."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
