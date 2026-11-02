@@ -1573,3 +1573,39 @@ corrected frequency comparison remain essential obligations. Properness
 here is in L2; no H1 compactness claim is made. The overall goal stays active.
 
 Validation: all 294 article/shared modules have validated private outputs. The 281 unchanged prefix source hashes match d8b5061 and their outputs were reused; all 13 added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 3,533 declarations/auxiliaries and the combined audit for 48,467 NLS declarations, using only the standard allowed axioms. All 296 mathematical source/checker hashes match the frozen inputs. The public inventory is 1,797 declarations (1,459 theorems and 338 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source.
+
+
+## Selected Cartesian coordinates through closed physical actions
+
+The actual Laurent contour is factored by the squared canonical gap without
+inverting a gap or action in the regularized contour. Rationalizing the
+normalized root subtracts its zero-gap baseline tau-z; the baseline has
+zero contour integral. The remaining fixed-circle factor is Banach analytic.
+At a closed gap its value is the exact Cauchy residue -i/4 times the
+holomorphic spectral weight and full Abelian quotient at the midpoint.
+
+Real open-gap density identifies the level-one contour factor with the
+independently normalized NLS action at closed gaps. The real-form identity
+principle identifies their complex germs. A chart-independent normalized
+inverse-frequency action is consequently analytic near every real diagonal.
+The physical ratio J_n/I_n is real and strictly positive for every positive
+index. Its closed-gap value is 1/(2*tau_n), retaining the actual midpoint
+and the physical one-half normalization. Its principal root is analytic
+through a closed selected action.
+
+Multiplying the original NLS Cartesian pair by this root, with the second
+coordinate negated, constructs an actual selected pair on original complex
+L2. It is analytic near every physical profile, real on the physical locus,
+and has squared radius exactly 2*J_n. On original H1 this J_n is the
+independent physical Hill-contour action. A zero action is equivalent to
+collapse of precisely its selected Cartesian pair. Zero mean and other
+closed actions are unrestricted.
+
+This proves selected-coordinate regularity through collapsed actions.
+Infinite weighted Cartesian sequence analyticity, Gardner canonicity,
+an independent global mKdV inverse, general nonzero-fiber geometry,
+surjectivity, forward action factorization, independent angles/final
+angle-sum factorization and full corrected frequency comparison remain
+essential. The overall main-theorem goal stays active.
+
+Validation: all 301 article/shared modules have validated private outputs. The 294 unchanged prefix source hashes match bcb9049 and their outputs were reused; all seven added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 3,625 declarations/auxiliaries and the combined audit for 48,559 NLS declarations, using only the standard allowed axioms. All 303 mathematical source/checker hashes match the frozen inputs. The public inventory is 1,837 declarations (1,492 theorems and 345 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source.

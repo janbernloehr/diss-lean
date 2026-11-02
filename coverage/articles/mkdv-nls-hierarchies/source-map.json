@@ -145,7 +145,10 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem4_real_finite_action_submersion",
         "NLS.Articles.MKdVNLSHierarchies.theorem4_real_finite_action_sections",
         "NLS.Articles.MKdVNLSHierarchies.theorem4_mkdv_action_mean_map_analytic",
-        "NLS.Articles.MKdVNLSHierarchies.theorem4_weighted_action_summability"
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_weighted_action_summability",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_L2_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_radius",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_closed_iff"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -167,7 +170,10 @@
       "proved_dependencies": [
         "NLS.Articles.MKdVNLSHierarchies.lemma7",
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_global_angle_transport",
-        "NLS.Articles.MKdVNLSHierarchies.theorem4_action_directions_independent"
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_action_directions_independent",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_L2_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_radius",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_closed_iff"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -711,5 +717,24 @@
     "compact_action_mean_fibers": "NLS.Articles.MKdVNLSHierarchies.native_L2_action_mean_fiber_compact",
     "scope": "Entire original physical real L2 scalar Banach space, including zero mean and arbitrary collapsed positive actions. Original actual Laurent extensions, with exact independent Hill-contour recovery on every original real H1 input. The target is the full weighted l1 order-one action norm paired with the literal signed mean. Positive indices are encoded in Z with nonpositive entries zero.",
     "limits": "Properness and compact fibers are proved in original L2. This does not assert compactness in H1, general action-fiber uniqueness, surjectivity of the positive action cone, an independent global mKdV inverse chart, forward restricted-NLS-action factorization, final angle-sum factorization or full corrected frequency comparison."
+  },
+  "collapsed_action_Cartesian_regularization": {
+    "squared_gap_contour_factor": "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.laurentPrimitiveCircle_eq_squaredGap_mul",
+    "Banach_analytic_contour_factor": "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.laurentSquaredGapCircle_analytic",
+    "exact_closed_gap_residue": "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.laurentSquaredGapCircle_zeroGap",
+    "ordinary_factor_identification": "NLS.ZakharovShabat.SourceDiagonalLaurentLocalChart.exists_normalizedAction_one_eq",
+    "normalized_inverse_frequency_action": "NLS.ZakharovShabat.sourceNormalizedDiagonalLaurentAction",
+    "chart_independent_analytic_factor": "NLS.ZakharovShabat.exists_local_sourceNormalizedDiagonalLaurentAction_analytic_factor",
+    "positive_spectral_mean_value": "NLS.ZakharovShabat.sourceRealLaurentAction_zero_eq_inverse_mul_action",
+    "actual_ratio_real_positive": "NLS.ZakharovShabat.sourceDiagonalActionRatio_real_positive",
+    "closed_ratio_calibration": "NLS.ZakharovShabat.sourceDiagonalActionRatio_zeroGap",
+    "analytic_square_root": "NLS.ZakharovShabat.exists_local_sourceDiagonalActionRoot_analytic_factor",
+    "actual_L2_Cartesian_pair": "NLS.MKdV.miuraL2CartesianCoordinates",
+    "original_L2_analyticity": "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_L2_analytic",
+    "independent_physical_H1_action_radius": "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_radius",
+    "closed_physical_action_iff_collapsed_pair": "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_closed_iff",
+    "scope": "Every physical real L2 profile and every selected positive index, including a closed selected action, zero mean, and arbitrary other closed gaps. The selected pair is complex Banach analytic on an ambient original L2 neighborhood, real on physical profiles, and has squared radius twice the actual physical mKdV action. Independent original H1 Hill-contour action identification is retained.",
+    "normalization": "Jn = one half of the actual inverse-frequency Laurent action. The regularized ratio Jn/In is positive; at a closed gap it is 1/(2*tau_n), with the true spectral midpoint tau_n. The normalized root has zero-gap baseline tau_n-z, so the residue factor is -i/4 times the holomorphic quotient.",
+    "limits": "These are selected Cartesian regularity and radius results. Infinite weighted Cartesian sequence analyticity, an independent Gardner-canonical mKdV chart and inverse, general nonzero-fiber geometry, surjectivity, forward action factorization, final angle-sum factorization and corrected frequency identification remain essential."
   }
 }

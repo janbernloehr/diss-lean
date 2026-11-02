@@ -328,6 +328,13 @@ modules = [
     "NLS/MKdV/MiuraL2ActionCoefficientContinuity.lean",
     "NLS/MKdV/MiuraL2ActionProperness.lean",
     "NLS/Articles/MKdVNLSHierarchies/L2ActionGeometryIdentification.lean",
+    "NLS/ZakharovShabat/SourceLaurentSquaredGapFactor.lean",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentNormalizedFactor.lean",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentActionRatio.lean",
+    "NLS/ZakharovShabat/SourceDiagonalNormalizedLaurentAction.lean",
+    "NLS/ZakharovShabat/SourceDiagonalActionRoot.lean",
+    "NLS/MKdV/MiuraL2CartesianCoordinates.lean",
+    "NLS/Articles/MKdVNLSHierarchies/CartesianActionIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")
