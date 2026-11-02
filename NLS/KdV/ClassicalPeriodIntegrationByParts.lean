@@ -136,6 +136,9 @@ theorem exists_classicalHill_uniform_period_tail_formula :
       0 < N ∧ N ≤ M ∧ IsOpen V ∧ 0 ∈ V ∧
       (∀ n k : ℕ+, AnalyticOnNhd ℂ (classicalHillUniformPeriod N n k) V ∧
         classicalHillUniformPeriod N n k 0 = if n = k then 1 else 0) ∧
+      (∀ n : ℕ+, ∀ q ∈ V, ∀ lam : ℂ,
+        (lam-classicalHillUniformCriticalPoint N n q)*classicalHillUniformNumerator N n (lam,q) =
+          (2*(n : ℂ)*Real.pi)*deriv (classicalHillDiscriminant q) lam) ∧
       ∀ n k : ℕ+, M < (n : ℕ) → M < (k : ℕ) → n ≠ k → ∀ q ∈ V,
         (∀ z ∈ sphere ((Real.pi : ℂ)*(k : ℕ)) (Real.pi/4),
           Real.pi^2/4 * |(k : ℝ)^2-(n : ℝ)^2| ≤
@@ -148,7 +151,8 @@ theorem exists_classicalHill_uniform_period_tail_formula :
     exists_analytic_classicalHill_uniform_period_entries
   obtain ⟨L,U,_,hU,h0U,hhigh⟩ := exists_analytic_classicalHillHighCriticalPoints 0
   refine ⟨N,max N L,W ∩ U,hN,le_max_left _ _,hW.inter hU,⟨h0W,h0U⟩,
-    fun n k => ⟨((hentries n k).1.mono inter_subset_left),(hentries n k).2⟩,?_⟩
+    fun n k => ⟨((hentries n k).1.mono inter_subset_left),(hentries n k).2⟩,
+    fun n q hq => hfactor n q hq.1,?_⟩
   intro n k hn hk hnk q hq
   have hnN := (le_max_left N L).trans_lt hn
   have hkN := (le_max_left N L).trans_lt hk

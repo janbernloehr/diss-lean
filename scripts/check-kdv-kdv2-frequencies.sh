@@ -8,7 +8,9 @@ export PATH="$ELAN_HOME/bin:$PATH"
 export MATHLIB_CACHE_DIR="${MATHLIB_CACHE_DIR:-/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/cache/mathlib}"
 article_build="$article_root/.lake/build/lib/lean"
 article_imports="$article_root/.lake/article-imports"
-modules=(NLS/ComplexAnalysis/JointSpectralDerivative
+modules=(NLS/ComplexAnalysis/BanachTaylorBounds
+  NLS/ZakharovShabat/ClassicalHorizontalStripBounds
+  NLS/ComplexAnalysis/JointSpectralDerivative
   NLS/ComplexAnalysis/ParametricDividedDifference
   NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
   NLS/ComplexAnalysis/RightHalfPlaneSquareRoot
@@ -19,6 +21,7 @@ modules=(NLS/ComplexAnalysis/JointSpectralDerivative
   NLS/KdV/ClassicalSpectralSymmetry
   NLS/KdV/ClassicalDiscriminant
   NLS/KdV/ClassicalLocalPrimitive
+  NLS/KdV/ClassicalDiscriminantUniformVariation
   NLS/KdV/ClassicalFreePrimitive
   NLS/KdV/ClassicalHillFlow
   NLS/KdV/ClassicalHillSpectrum
@@ -39,16 +42,21 @@ modules=(NLS/ComplexAnalysis/JointSpectralDerivative
   NLS/KdV/FrequencyMoments
   NLS/KdV/FreeFrequencyPsi
   NLS/KdV/FreeHighContourPeriods
+  NLS/KdV/FreeContourUniformLowerBound
+  NLS/KdV/ClassicalUniformRootBounds
+  NLS/KdV/ClassicalUniformPrimitiveBounds
   NLS/KdV/ClassicalCriticalPointBranch
   NLS/KdV/ClassicalHighCriticalPoints
   NLS/KdV/HighEnergyContourSeparation
   NLS/KdV/ClassicalUniformCriticalBasis
   NLS/KdV/ClassicalCriticalTailAnalytic
+  NLS/KdV/ClassicalUniformCriticalLocalization
   NLS/KdV/ClassicalCriticalNumerator
   NLS/KdV/ClassicalCriticalPeriods
   NLS/KdV/ClassicalFiniteNormalizedDifferentials
   NLS/KdV/ClassicalUniformPeriodEntries
   NLS/KdV/ClassicalPeriodIntegrationByParts
+  NLS/KdV/ClassicalUniformPeriodBounds
   NLS/KdV/FrequencyPrimitiveContinuation
   NLS/KdV/FrequencyContourDecomposition
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow

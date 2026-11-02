@@ -226,3 +226,12 @@ formula are proved. A quantitative scalar estimate retains an explicit
 shifted-primitive bound. See [UNIFORM_PERIOD_ENTRIES.md](UNIFORM_PERIOD_ENTRIES.md).
 Bounded operator realization, its inverse and the source's fully normalized
 infinite family remain open. This closes no main-theorem row.
+
+The uniform primitive estimates are now proved for the actual continued
+sheet: one ball supports every positive contour, a common root lower
+bound, and primitive error O(norm q) relative to the exact free slice.
+The actual off-diagonal period tail has a uniform reciprocal-square bound.
+Every selected critical frequency can be localized within pi/8 of its
+free center, retaining the critical equation and simplicity. See
+[UNIFORM_PRIMITIVE_BOUNDS.md](UNIFORM_PRIMITIVE_BOUNDS.md). Full matrix
+operator realization, normalization and the main-theorem rows remain open.

@@ -306,3 +306,21 @@ assumed. See [UNIFORM_PERIOD_ENTRIES.md](UNIFORM_PERIOD_ENTRIES.md).
 The full main inventory remains open. All 49 selected modules and their
 complete transitive audit are checked by the focused frequency command;
 the final output and counts are recorded in `VALIDATION.md` and `source.json`.
+
+## Actual uniform primitive-error and period-tail milestone
+
+The actual IVP horizontal-strip bound and Banach Cauchy estimate now give
+uniform potential derivatives of the Hill discriminant. A compact free
+circle lower bound and source variation control every continued root
+simultaneously on all positive contours, including low modes. The actual
+primitive error is O(norm q) and its shifted value is uniformly bounded.
+
+Consequently the actual period tail has a reciprocal-square off-diagonal
+bound on one neighborhood, with no primitive estimate supplied as an
+assumption. All selected critical frequencies can also be localized
+inside half the contour radius, and diagonal energy separation is proved.
+See [UNIFORM_PRIMITIVE_BOUNDS.md](UNIFORM_PRIMITIVE_BOUNDS.md).
+
+The full period operator and inverse remain to be constructed; no main
+theorem is marked verified. The 57-module strict check and full transitive
+audit are recorded in `VALIDATION.md` and `source.json`.

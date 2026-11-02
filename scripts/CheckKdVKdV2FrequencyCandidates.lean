@@ -2,6 +2,8 @@ import NLS.Dynamics.ActionDependentWeightedPhaseFlow
 import NLS.Dynamics.FixedTimePhaseObstruction
 import NLS.KdV.ClassicalUniformCriticalBasis
 import NLS.KdV.ClassicalPeriodIntegrationByParts
+import NLS.KdV.ClassicalUniformPeriodBounds
+import NLS.KdV.ClassicalUniformCriticalLocalization
 import NLS.KdV.ClassicalCriticalTailAnalytic
 import NLS.KdV.ClassicalFiniteNormalizedDifferentials
 import NLS.KdV.FreeFrequencyPsi
@@ -47,6 +49,14 @@ run_cmd do
     `NLS.KdV.ClassicalFiniteNormalizedDifferentials,
     `NLS.KdV.ClassicalUniformPeriodEntries,
     `NLS.KdV.ClassicalPeriodIntegrationByParts,
+    `NLS.ComplexAnalysis.BanachTaylorBounds,
+    `NLS.ZakharovShabat.ClassicalHorizontalStripBounds,
+    `NLS.KdV.ClassicalDiscriminantUniformVariation,
+    `NLS.KdV.FreeContourUniformLowerBound,
+    `NLS.KdV.ClassicalUniformRootBounds,
+    `NLS.KdV.ClassicalUniformPrimitiveBounds,
+    `NLS.KdV.ClassicalUniformCriticalLocalization,
+    `NLS.KdV.ClassicalUniformPeriodBounds,
     `NLS.KdV.ClassicalHillFlow,
     `NLS.KdV.ClassicalHillSpectrum,
     `NLS.KdV.ClassicalSourcePrimitive,

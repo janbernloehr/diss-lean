@@ -138,3 +138,10 @@ sharp physical frequency moments, action descent, weighted asymptotics,
 compact derivatives and actual Birkhoff/PDE flow identification remain
 essential. Equations (52)-(53) are not yet proved in full at nonzero
 potentials, and no main-theorem status is changed.
+
+The subsequent [uniform primitive milestone](UNIFORM_PRIMITIVE_BOUNDS.md)
+discharges the actual uniform primitive bound and proves its error relative
+to the free primitive is O(norm q). It also establishes a uniform
+reciprocal-square bound for the actual off-diagonal period tail and
+all-mode critical localization. Full operator realization and inversion
+remain open.

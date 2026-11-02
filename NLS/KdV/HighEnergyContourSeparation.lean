@@ -13,6 +13,35 @@ private theorem norm_three_sum_le (a b c : ℂ) :
     ‖a+b+c‖ ≤ ‖a‖+‖b‖+‖c‖ :=
   (norm_add_le _ _).trans (add_le_add (norm_add_le _ _) le_rfl)
 
+/-- Half-radius localization also separates the same-mode critical
+energy from its contour, with a lower bound growing linearly in n. -/
+theorem highEnergyContour_diagonal_separation (n : ℕ+) (z w : ℂ)
+    (hz : z ∈ sphere ((Real.pi : ℂ)*(n : ℕ)) (Real.pi/4))
+    (hw : w ∈ closedBall ((Real.pi : ℂ)*(n : ℕ)) (Real.pi/8)) :
+    Real.pi^2/8*(n : ℝ) ≤ ‖z^2-w^2‖ := by
+  have hzn : ‖(Real.pi : ℂ)*(n : ℕ)-z‖ = Real.pi/4 := by
+    rw [norm_sub_rev]
+    exact mem_sphere_iff_norm.mp hz
+  have hwn : ‖w-(Real.pi : ℂ)*(n : ℕ)‖ ≤ Real.pi/8 := mem_closedBall_iff_norm.mp hw
+  have hwrev : ‖(Real.pi : ℂ)*(n : ℕ)-w‖ ≤ Real.pi/8 := by rwa [norm_sub_rev]
+  have hminus : Real.pi/8 ≤ ‖z-w‖ := by
+    have ht := norm_add_le (z-w) (w-(Real.pi : ℂ)*(n : ℕ))
+    have he : z-w+(w-(Real.pi : ℂ)*(n : ℕ)) = z-(Real.pi : ℂ)*(n : ℕ) := by ring
+    rw [he,mem_sphere_iff_norm.mp hz] at ht
+    linarith
+  have hplus : Real.pi*(n : ℝ) ≤ ‖z+w‖ := by
+    have ht := norm_three_sum_le ((Real.pi : ℂ)*(n : ℕ)-z) (z+w)
+      ((Real.pi : ℂ)*(n : ℕ)-w)
+    have he : (Real.pi : ℂ)*(n : ℕ)-z+(z+w)+((Real.pi : ℂ)*(n : ℕ)-w) =
+        2*((Real.pi : ℂ)*(n : ℕ)) := by ring
+    rw [he,norm_mul,norm_ofNat,norm_mul,Complex.norm_real,Real.norm_eq_abs,
+      abs_of_pos Real.pi_pos,Complex.norm_natCast,hzn] at ht
+    have hn : (1 : ℝ) ≤ n := by exact_mod_cast n.property
+    nlinarith [Real.pi_pos]
+  have he : z^2-w^2 = (z-w)*(z+w) := by ring
+  rw [he,norm_mul]
+  nlinarith [mul_le_mul hminus hplus (by positivity) (norm_nonneg (z-w))]
+
 /-- The estimate is uniform in both distinct positive indices and all
 points of the selected contour and critical disc. -/
 theorem highEnergyContour_separation (n k : ℕ+) (hnk : n ≠ k) (z w : ℂ)

@@ -35,8 +35,11 @@ its existing Hilbert specialization and a transitive audit.
 | `NLS/KdV/FreeHighContourPeriods.lean`, `ClassicalUniformPeriodEntries.lean` | All fixed positive free contour periods, exact mapped energy path/Jacobian, and every analytic scalar period entry on one common neighborhood with full free identity. |
 | `NLS/KdV/HighEnergyContourSeparation.lean`, `ClassicalPeriodIntegrationByParts.lean` | Actual uniform high energy separation and exact primitive tail formula; scalar 20/pi norm estimate retains a shifted-primitive bound. |
 | `NLS/KdV/ActionHamiltonianMoments.lean`, `ClassicalContourMoments.lean`, `ClassicalHighContourMoments.lean` | Previously imported shared moment and actual contour-path dependencies, now compiled directly by the frequency checker. |
+| `NLS/KdV/ClassicalDiscriminantUniformVariation.lean`, `FreeContourUniformLowerBound.lean`, `ClassicalUniformRootBounds.lean` | Uniform actual source derivatives, compact free-circle lower bound and one continued-root lower bound for all positive contours on a small potential ball. |
+| `NLS/KdV/ClassicalUniformPrimitiveBounds.lean`, `ClassicalUniformCriticalLocalization.lean`, `ClassicalUniformPeriodBounds.lean` | Actual primitive error O(norm q), all-mode half-radius critical control, and an actual uniform reciprocal-square off-diagonal period tail bound. |
+| `NLS/ComplexAnalysis/BanachTaylorBounds.lean`, `NLS/ZakharovShabat/ClassicalHorizontalStripBounds.lean` | Existing shared Banach Cauchy and actual IVP strip estimates, now directly recompiled as consumed dependencies. |
 
-All forty-nine selected modules compile with pinned **Lean 4.33.1**, commit
+All fifty-seven selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -46,6 +49,8 @@ No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 Final output of `bash scripts/check-kdv-kdv2-frequencies.sh`:
 
 ```text
+PASS NLS/ComplexAnalysis/BanachTaylorBounds
+PASS NLS/ZakharovShabat/ClassicalHorizontalStripBounds
 PASS NLS/ComplexAnalysis/JointSpectralDerivative
 PASS NLS/ComplexAnalysis/ParametricDividedDifference
 PASS NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
@@ -57,6 +62,7 @@ PASS NLS/KdV/ConstantUpperSpectralBridge
 PASS NLS/KdV/ClassicalSpectralSymmetry
 PASS NLS/KdV/ClassicalDiscriminant
 PASS NLS/KdV/ClassicalLocalPrimitive
+PASS NLS/KdV/ClassicalDiscriminantUniformVariation
 PASS NLS/KdV/ClassicalFreePrimitive
 PASS NLS/KdV/ClassicalHillFlow
 PASS NLS/KdV/ClassicalHillSpectrum
@@ -77,16 +83,21 @@ PASS NLS/Dynamics/FixedTimePhaseObstruction
 PASS NLS/KdV/FrequencyMoments
 PASS NLS/KdV/FreeFrequencyPsi
 PASS NLS/KdV/FreeHighContourPeriods
+PASS NLS/KdV/FreeContourUniformLowerBound
+PASS NLS/KdV/ClassicalUniformRootBounds
+PASS NLS/KdV/ClassicalUniformPrimitiveBounds
 PASS NLS/KdV/ClassicalCriticalPointBranch
 PASS NLS/KdV/ClassicalHighCriticalPoints
 PASS NLS/KdV/HighEnergyContourSeparation
 PASS NLS/KdV/ClassicalUniformCriticalBasis
 PASS NLS/KdV/ClassicalCriticalTailAnalytic
+PASS NLS/KdV/ClassicalUniformCriticalLocalization
 PASS NLS/KdV/ClassicalCriticalNumerator
 PASS NLS/KdV/ClassicalCriticalPeriods
 PASS NLS/KdV/ClassicalFiniteNormalizedDifferentials
 PASS NLS/KdV/ClassicalUniformPeriodEntries
 PASS NLS/KdV/ClassicalPeriodIntegrationByParts
+PASS NLS/KdV/ClassicalUniformPeriodBounds
 PASS NLS/KdV/FrequencyPrimitiveContinuation
 PASS NLS/KdV/FrequencyContourDecomposition
 PASS NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
@@ -95,11 +106,11 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 662 candidate declarations; 12186 declarations total.
+Axiom audit passed: 700 candidate declarations; 12209 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the forty-nine selected modules (including generated and private declarations)
+the fifty-seven selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -321,3 +332,21 @@ output directories for focused checks. The default command still performs
 the full strict build and transitive audit. No warning exceptions, disabled
 linters, additional axioms or raised heartbeat limits are introduced.
 All main-theorem statuses remain open.
+
+
+The actual uniform primitive milestone is detailed in `UNIFORM_PRIMITIVE_BOUNDS.md`.
+It discharges the preceding scalar primitive-bound input, gives an actual
+uniform reciprocal-square period tail, localizes every selected critical
+frequency inside half the contour radius, and proves diagonal energy separation.
+
+Final strict run: all 57 selected modules pass; the complete transitive audit
+passes for 700 selected declarations and 12209 declarations including
+all imported NLS dependencies. Only `propext`, `Classical.choice` and
+`Quot.sound` are permitted. All 57 source hashes match the checked files,
+and the checker, axiom audit and coverage selections agree exactly.
+
+Both newly selected shared dependencies are compiled before their consumers
+in the private import overlay. The full run uses strict options and default
+heartbeats, without warning exceptions, disabled linters or additional axioms.
+No new shared merge or canonical mutation is required. Full matrix operator
+realization, infinite normalization and all main-theorem statuses remain open.

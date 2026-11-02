@@ -729,9 +729,9 @@
         14,
         21
       ],
-      "scope": "Actual uniform off-diagonal high critical energy separation on one neighborhood at every complex continuous potential",
+      "scope": "Actual uniform off-diagonal high critical energy separation on one neighborhood at every complex continuous potential; diagonal contour separation under half-radius critical localization is also proved",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "891207d3dbff76111674e58dbd87041ff24b9512923c8d7587023c0fec9ad9bf"
+      "sha256": "36496b7f7396d1d562dc852a5c73ed51a8c29a46602f99f1ec1bb6b857c72a82"
     },
     {
       "path": "NLS/KdV/ClassicalPeriodIntegrationByParts.lean",
@@ -744,7 +744,7 @@
       ],
       "scope": "Actual common-neighborhood tail formula with exact coefficient n and squared denominator; scalar 20/pi estimate retains an explicit shifted-primitive bound",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "08976271c07eac0e4874246878bb7fd5ae5b765998bfc787eab0c12ba8bd233b"
+      "sha256": "d67bb77fbb148312000d58633b52e6d8e766f3ba24072bfaa7f6b9eb9776f922"
     },
     {
       "path": "NLS/KdV/ActionHamiltonianMoments.lean",
@@ -784,10 +784,114 @@
       "scope": "Existing squared frequency path and exact holomorphic one-form Jacobian used by the actual period entries",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "1ef7d0ef1cbdd400973ecf79afd3744f8de8da747ada245a36f2f8ec19cd1ee6"
+    },
+    {
+      "path": "NLS/KdV/ClassicalDiscriminantUniformVariation.lean",
+      "source_labels": [
+        "Uniform period operator dependency: actual discriminant source bounds"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Actual horizontal-strip IVP bound and Banach Cauchy estimate give explicit uniform source derivatives and discriminant/radicand errors",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "229b736bed8dde26f29c30d38e02f12c479e7bed7ae82219c3f42c81b6dad28c"
+    },
+    {
+      "path": "NLS/KdV/FreeContourUniformLowerBound.lean",
+      "source_labels": [
+        "Uniform period operator dependency: free root nonvanishing"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "One positive sine/radicand lower bound for all positive fixed frequency circles, from lattice translation and a compact minimum",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "49780a2f79a94cc9226c619999a7235337187c24d0c4a00ec26e3884838eb8b4"
+    },
+    {
+      "path": "NLS/KdV/ClassicalUniformRootBounds.lean",
+      "source_labels": [
+        "Uniform period operator dependency: actual continued root lower bound"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "One norm ball supports every positive contour and its full straight source segment, with a common positive continued-root norm lower bound",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6391b3dd2d9e8e4fcdfbb3e2ab199b95bce82f19a45ff7aa4c06390c18e658f7"
+    },
+    {
+      "path": "NLS/KdV/ClassicalUniformPrimitiveBounds.lean",
+      "source_labels": [
+        "Uniform period operator dependency: actual primitive error"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Exact source primitive derivative, uniform derivative bound, actual free-primitive error O(norm q), and shifted primitive bound on every positive contour",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8c91553e57707b8cc1df751b7f209c4ff427499436a5109cc0894304c7e8ff33"
+    },
+    {
+      "path": "NLS/KdV/ClassicalUniformCriticalLocalization.lean",
+      "source_labels": [
+        "Uniform period operator dependency: diagonal critical localization"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "One neighborhood puts every selected principal critical frequency within pi/8 of its free center, retaining actual critical equation, simplicity, analyticity and free values",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "111162605bdfff8ba47a4bd8b05a23dd6962e55e4407b757085d7412ec3588ce"
+    },
+    {
+      "path": "NLS/KdV/ClassicalUniformPeriodBounds.lean",
+      "source_labels": [
+        "Equation (53) actual uniform off-diagonal period bound"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Constructed actual period tail bound K/abs(k-n)^2 on one neighborhood, discharging the primitive and denominator inputs; no full bounded operator or inverse asserted",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "05833046b5436fa5e77d9a1c9f3aff607c914aac5d137f082cc1570fb332ac7e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/BanachTaylorBounds.lean",
+      "source_labels": [
+        "Banach Cauchy source estimate (shared dependency)"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing general complex Banach ball derivative and Taylor estimates, now directly recompiled for uniform actual source bounds",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e75db211483525ebd1e8b3cd673015782257db2ba25a3597db30c5d4b0ebaa90"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ClassicalHorizontalStripBounds.lean",
+      "source_labels": [
+        "Actual IVP horizontal-strip growth (shared dependency)"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing real spectral gauge and actual solution/discriminant strip bounds independent of the real spectral parameter",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2d5f46f01168bd4eaa3675d13e6424e870a10508259566e8181b7e0e0e34c5a7"
     }
   ],
   "dependencies_needed": [
-    "bounded infinite period operator, uniform primitive-error and critical-shift bounds, and normalized inverse; actual common-neighborhood entries, free identity and uniform tail formulas are now constructed",
+    "full bounded infinite period operator, diagonal/head assembly and operator-norm analyticity/continuity at the free identity, then normalized inverse and convergent entire family; actual uniform primitive errors, reciprocal-square period tail and all-mode critical localization are proved",
     "shared rough Hill/KdV spectral and Birkhoff foundations; global gap and canonical sheet normalization",
     "shared KdV action Hamiltonians",
     "actual KdV and KdV2 frequency moment identities and uniform analytic bounds",
@@ -815,15 +919,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 662,
-    "total_declarations_audited": 12186,
+    "candidate_declarations_audited": 700,
+    "total_declarations_audited": 12209,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 49
+    "selected_modules": 57
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -862,8 +966,8 @@
   "progress_record": "PROGRESS.md",
   "endpoint_mass_record": "MASS_NONEXTENSION.md",
   "shared_developments_inspected": {
-    "articles/kdv-convexity": "963d5bb053684ec65427e0a319ffb729beaaa9f0",
-    "articles/kdv-estimates": "b2097376825d45ff2468d2c2db239c95b61dea59"
+    "articles/kdv-convexity": "e848349c4d93aa6ffd4912235b8c345d26006318",
+    "articles/kdv-estimates": "f8812447fbc1430f8b3be41d7c68feac860eed89"
   },
   "fixed_time_record": "FIXED_TIME_NONEXTENSION.md",
   "frequency_moment_record": "FREQUENCY_MOMENTS.md",
@@ -885,5 +989,6 @@
   "free_frequency_psi_record": "FREE_FREQUENCY_PSI.md",
   "finite_normalization_record": "FINITE_NORMALIZATION.md",
   "uniform_critical_basis_record": "UNIFORM_CRITICAL_BASIS.md",
-  "uniform_period_entries_record": "UNIFORM_PERIOD_ENTRIES.md"
+  "uniform_period_entries_record": "UNIFORM_PERIOD_ENTRIES.md",
+  "uniform_primitive_bounds_record": "UNIFORM_PRIMITIVE_BOUNDS.md"
 }
