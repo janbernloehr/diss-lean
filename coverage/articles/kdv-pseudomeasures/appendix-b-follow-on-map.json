@@ -1,0 +1,68 @@
+{
+  "source": "arXiv:1610.00278v1, Appendix B, Lemma B.1(i)-(iv)",
+  "date": "2026-11-03",
+  "scope": "Consequences of the previously verified Appendix B compactness and bounded-set topology results. These are additional tools, not newly uncovered clauses of Lemma B.1.",
+  "remaining_lemma_B1_obligations": [],
+  "new_modules": [
+    "NLS/FunctionalAnalysis/CompactClosedGraph.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarClosedGraph.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarIntersections.lean"
+  ],
+  "new_theorems": [
+    "NLS.continuous_iff_isClosed_graph_compact_target",
+    "NLS.Articles.KdVPseudomeasures.continuous_source_iff_isClosed_graph_of_bounded",
+    "NLS.Articles.KdVPseudomeasures.continuous_source_iff_seq_graph_of_bounded",
+    "NLS.Articles.KdVPseudomeasures.continuous_source_iff_seq_lower_graph_of_bounded",
+    "NLS.Articles.KdVPseudomeasures.continuous_source_iff_seq_originalHminusOne_graph_of_bounded",
+    "NLS.Articles.KdVPseudomeasures.exists_source_mem_all_of_finite_constraints",
+    "NLS.Articles.KdVPseudomeasures.exists_finite_source_constraints_obstruction",
+    "NLS.Articles.KdVPseudomeasures.exists_source_coefficients_of_finite_constraints",
+    "NLS.Articles.KdVPseudomeasures.exists_source_mem_all_of_antitone",
+    "NLS.Articles.KdVPseudomeasures.exists_source_norm_minimizer_on_closed"
+  ],
+  "norm": "Every physical endpoint bound is the exact original FourierLebesgueSpace(2,-r,infinity) norm. The source constraints retain the entire distribution, reality, zero mean and physical period one.",
+  "compactness": [
+    "An arbitrary family of weak-star closed constraints has a common physical realization in a specified endpoint norm ball whenever every finite subfamily has one in that same ball. The radius is fixed before the finite subfamily.",
+    "If the whole constraint family has no realization in that ball, a finite subfamily already has no realization there. The Fourier specialization allows a separate arbitrary closed subset of C at each original Fourier mode.",
+    "A decreasing sequence of nonempty weak-star closed physical sets has a common point if its first set is endpoint norm bounded.",
+    "Every nonempty weak-star closed physical set contains a point of least original endpoint norm. The entire constraint set need not be bounded; compactness is used on its intersection with one norm sublevel."
+  ],
+  "topology": [
+    "For a map from any topological domain into physical potentials, an endpoint norm bound on its range makes weak-star continuity equivalent to closedness of its graph in the full weak-star product.",
+    "If the domain is itself a bounded physical subset, continuity is equivalent to uniqueness of the output limit for every convergent graph sequence. Metrizability is used only for the bounded domain and the compact closure of the bounded range.",
+    "The graph-sequence test may independently use any admissible original lower finite-p norm on the domain and the codomain, retaining both endpoint bounds.",
+    "In the article range, both graph limits can use the norm of the identical original H-minus-one distributions, with no substituted potential or frequency normalization."
+  ],
+  "qualifications": [
+    "The uniform endpoint image bound is a hypothesis of the closed-graph criteria, not a consequence of a closed graph.",
+    "The graph-sequence criterion assumes a bounded physical domain. No metrizability or sequentiality of the entire physical weak-star space is asserted.",
+    "The lower norm criteria require finite Banach exponents and the strict Sobolev summability threshold on both sides independently.",
+    "No actual KdV/Birkhoff map or missing isospectral bound is constructed by these consequences. All five main theorems remain unproved."
+  ],
+  "validation": {
+    "fresh_build": true,
+    "modules_checked": 220,
+    "audited_declarations": 1916,
+    "new_theorems": 10,
+    "definitions": 339,
+    "theorems": 1577,
+    "result": "passed",
+    "directory": ".lake/appendix-b-check-20261103",
+    "log": ".lake/appendix-b-check-20261103/logs/validation-appendix-b-follow-on.log",
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true
+  },
+  "canonical_checkout_written": false,
+  "preserved_work_in_progress": "Unrelated uncommitted H-minus-one discriminant imports and period-one realization remain in the working tree. They are excluded from this milestone and its exact committed checker/Audit inventory.",
+  "output_sha256": {
+    "NLS/FunctionalAnalysis/CompactClosedGraph.lean": "1a0ec9f8c20af06ad3d4a84d4ada6a33bad67b99e0ecd98559314c6819bc03df",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarClosedGraph.lean": "7996907b2129995f64549fba8c3c99b31edc416d91124c2a00ffc81486566f3d",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarIntersections.lean": "3355e519a468040f76f6c1549c4d33281cd20d2018e58eab803aa63073ca37f6"
+  }
+}

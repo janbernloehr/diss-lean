@@ -27,8 +27,9 @@ root = Path(__file__).resolve().parent.parent
 repo = Path(os.environ.get('DISS_LEAN_REFERENCE_ROOT', '/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls'))
 elan = Path(os.environ.get('DISS_LEAN_ELAN_HOME', str(repo.parent.parent / 'work/tooling/elan')))
 lean = elan / 'toolchains/leanprover--lean4---v4.33.1/bin/lean'
-view = root / '.lake/article-check/lib/lean'
-logs = root / '.lake/article-check/logs'
+check_dir = root / os.environ.get('DISS_LEAN_CHECK_DIR', '.lake/article-check')
+view = check_dir / 'lib/lean'
+logs = check_dir / 'logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
     'NLS.SequenceSpaces.WeightedFiniteCoefficients',
@@ -247,6 +248,9 @@ modules = [
     'NLS.KdV.SingularHillL2Domain',
     'NLS.KdV.SingularHillL2Characteristic',
     'NLS.Articles.KdVPseudomeasures.OriginalL2Characteristic',
+    'NLS.FunctionalAnalysis.CompactClosedGraph',
+    'NLS.Articles.KdVPseudomeasures.SourceWeakStarClosedGraph',
+    'NLS.Articles.KdVPseudomeasures.SourceWeakStarIntersections',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

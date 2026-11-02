@@ -359,5 +359,23 @@
       "empty_axiom_sets_allowed": true,
       "log": ".lake/article-check/logs/validation-label-continuity.log"
     }
+  },
+  "closed_graph_and_compact_constraints": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-follow-on-map.json",
+    "new_theorems": [
+      "NLS.continuous_iff_isClosed_graph_compact_target",
+      "NLS.Articles.KdVPseudomeasures.continuous_source_iff_isClosed_graph_of_bounded",
+      "NLS.Articles.KdVPseudomeasures.continuous_source_iff_seq_graph_of_bounded",
+      "NLS.Articles.KdVPseudomeasures.continuous_source_iff_seq_lower_graph_of_bounded",
+      "NLS.Articles.KdVPseudomeasures.continuous_source_iff_seq_originalHminusOne_graph_of_bounded",
+      "NLS.Articles.KdVPseudomeasures.exists_source_mem_all_of_finite_constraints",
+      "NLS.Articles.KdVPseudomeasures.exists_finite_source_constraints_obstruction",
+      "NLS.Articles.KdVPseudomeasures.exists_source_coefficients_of_finite_constraints",
+      "NLS.Articles.KdVPseudomeasures.exists_source_mem_all_of_antitone",
+      "NLS.Articles.KdVPseudomeasures.exists_source_norm_minimizer_on_closed"
+    ],
+    "scope": "Consequences of the previously verified Appendix B compactness and bounded-set topology results. These are additional tools, not newly uncovered clauses of Lemma B.1.",
+    "remaining_lemma_B1_obligations": [],
+    "main_theorems_verified": false
   }
 }

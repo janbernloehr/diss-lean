@@ -214,8 +214,12 @@ import NLS.KdV.HillL2EnergyDiscriminant
 import NLS.KdV.SingularHillL2Domain
 import NLS.KdV.SingularHillL2Characteristic
 import NLS.Articles.KdVPseudomeasures.OriginalL2Characteristic
+import NLS.FunctionalAnalysis.CompactClosedGraph
+import NLS.Articles.KdVPseudomeasures.SourceWeakStarClosedGraph
+import NLS.Articles.KdVPseudomeasures.SourceWeakStarIntersections
 
-/-! Transitive axiom audit of every selected public declaration. -/
+/-! Exact transitive axiom audit for all checked public definitions and theorems. -/
+
 #print axioms NLS.WeightedCoeff.ofFinsupp
 #print axioms NLS.WeightedCoeff.ofFinsupp_apply
 #print axioms NLS.WeightedCoeff.denseRange_ofFinsupp
@@ -2122,3 +2126,13 @@ import NLS.Articles.KdVPseudomeasures.OriginalL2Characteristic
 #print axioms NLS.KdV.singularHillSpectrum_L2_iff_frequencyDiscriminant
 #print axioms NLS.Articles.KdVPseudomeasures.originalL2_coefficients_mem_even
 #print axioms NLS.Articles.KdVPseudomeasures.original_spectrum_iff_L2_discriminant
+#print axioms NLS.continuous_iff_isClosed_graph_compact_target
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_source_iff_isClosed_graph_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_source_iff_seq_graph_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_source_iff_seq_lower_graph_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_source_iff_seq_originalHminusOne_graph_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.exists_source_mem_all_of_finite_constraints
+#print axioms NLS.Articles.KdVPseudomeasures.exists_finite_source_constraints_obstruction
+#print axioms NLS.Articles.KdVPseudomeasures.exists_source_coefficients_of_finite_constraints
+#print axioms NLS.Articles.KdVPseudomeasures.exists_source_mem_all_of_antitone
+#print axioms NLS.Articles.KdVPseudomeasures.exists_source_norm_minimizer_on_closed
