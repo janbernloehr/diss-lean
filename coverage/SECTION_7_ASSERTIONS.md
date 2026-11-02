@@ -2,12 +2,12 @@
 
 This ledger follows the extraction order of printed pp.45–47. The unit-period
 source space and its physical spectral realization are retained. All 21 passage
-groups have now been compared: eighteen are matched, two are corrected and one
-is partial. These counts describe review scope, not a completion percentage.
+groups have now been compared: eighteen are matched and three are corrected.
+These counts describe review scope, not a completion percentage.
 
 S7-002 retains the physical NLS nonconservation proof and now has the exact
-smooth physical velocity formula. The general Hilbert-space direction
-interpretation remains unresolved. S7-013 now has a proved corrected
+smooth physical velocity formula. On 2026-11-02 the user accepted this precise,
+explicitly smooth interpretation of the informal direction remark. S7-013 has a proved corrected
 product, exact periods and uniqueness of the entire function among all
 stated complex products, without root placement or root reality assumptions. The corrected
 real codimension in S7-014 is two. The exact cited 2014 construction remains
@@ -21,7 +21,7 @@ proved replacement constant.
 | Group | Source lines | Passage | Status |
 | --- | --- | --- | --- |
 | S7-001 | 3305–3312 | Lax conservation and invariant isospectral sets | matched |
-| S7-002 | 3312–3316 | Actual Dirichlet eigenvalues and sheet signs | partial |
+| S7-002 | 3312–3316 | Actual Dirichlet eigenvalues and sheet signs | corrected |
 | S7-003 | 3318–3319 | Compact connected tori, exact dimension and generic infinitely many gaps | matched |
 | S7-004 | 3319–3321 | Squared gaps determine the periodic spectrum | matched |
 | S7-005 | 3322–3325 | Action radii and Dirichlet angles | matched |
@@ -67,7 +67,7 @@ Additional public evidence: `NLS.ZakharovShabat.section7_exists_physicalNLS_diri
 
 Additional velocity evidence: `NLS.ZakharovShabat.IsClassicalNLSTrajectory.hasDerivAt_dirichletRoot`, `NLS.ZakharovShabat.IsClassicalNLSTrajectory.dirichletRoot_velocity_sign`, `NLS.ZakharovShabat.SmoothNLSData.hasDerivAt_ordinarySource_dirichletRoot`, `NLS.ZakharovShabat.SmoothNLSData.ordinarySource_dirichletRoot_velocity_sign`; the [physical NLS trajectory proof](../NLS/ZakharovShabat/SmoothNLSDirichletVelocity.lean) supplies these statements.
 
-The parameterization retains the original Hilbert topology, infinitely many open gaps and endpoint data. The physical nonconservation result retains the exact approximation-solution notion. The informal direction description is replaced by the explicit velocity multiplier for smooth classical solutions, including the constructed global ordinary solution. Differentiability for arbitrary rough Hilbert trajectories is not asserted. The general Hilbert-space direction interpretation remains unresolved, so this group stays partial.
+The parameterization retains the original Hilbert topology, infinitely many open gaps and endpoint data. The physical nonconservation result retains the exact approximation-solution notion. The informal direction description is interpreted by the explicit velocity multiplier for smooth classical solutions, including the constructed global ordinary solution. The user accepted this interpretation on 2026-11-02, so this group is corrected and its interpretation requirement is closed. Differentiability for arbitrary rough Hilbert trajectories is not asserted. The additional real multiplier is retained; the sheet sign alone is not the velocity sign.
 
 ### S7-003: Compact connected tori, exact dimension and generic infinitely many gaps
 
@@ -259,8 +259,8 @@ and [the actual real rough source](../NLS/ZakharovShabat/SourceSection7RoughInpu
 
 ## Remaining work
 
-Resolve the general Hilbert-space direction interpretation in S7-002.
-The exact smooth physical NLS velocity and sign formula are now proved.
+S7-002 is closed under the accepted smooth-solution interpretation.
+The exact smooth physical NLS velocity and sign formula remain the precise claim.
 Physical Dirichlet nonconservation and the unrestricted psi-function
 characterization remain proved. The exact cited 2014 Birkhoff construction
 and the broader source reconciliation remain open. Appendix G.2 adopts

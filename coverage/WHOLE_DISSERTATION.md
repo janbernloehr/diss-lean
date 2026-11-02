@@ -18,7 +18,7 @@ The inventory contains 1,229 groups in 41 units, plus 293 inspected navigation f
 | [section 4](SECTION_4.md) | 38 | Detailed original qualifications retained in the linked review |
 | [section 5](SECTION_5.md) | 17 | Detailed original qualifications retained in the linked review |
 | [section 6](SECTION_6_ASSERTIONS.md) | 47 | 9 corrected; 1 interpreted; 37 matched |
-| [section 7](SECTION_7_ASSERTIONS.md) | 21 | 2 corrected; 18 matched; 1 partial |
+| [section 7](SECTION_7_ASSERTIONS.md) | 21 | 3 corrected; 18 matched |
 | [section 8](SECTION_8_ASSERTIONS.md) | 36 | 8 corrected; 28 matched |
 | [section 9](SECTION_9_ASSERTIONS.md) | 15 | 3 corrected; 12 matched |
 | [section 10](SECTION_10_ASSERTIONS.md) | 52 | 8 corrected; 44 matched |
@@ -60,14 +60,13 @@ The table lists groups carrying these exact statuses. Other qualifications remai
 
 | Group | Source lines | Assessment |
 | --- | --- | --- |
-| [S7-002](SECTION_7_ASSERTIONS.md) | 3312–3316 | partial |
 | [S14-010](SECTION_14_ASSERTIONS.md) | 5968–5968 | partial |
 | [S17-007](SECTION_17_ASSERTIONS.md) | 6397–6399 | partial |
 | [S18-003](SECTION_18_ASSERTIONS.md) | 6662–6670 | partial |
 
 The exact comparison with the cited 2014 Birkhoff construction remains qualified in Sections 14, 17 and 18. A proved internal construction does not establish that external-edition identification.
 
-Section 7 retains the general Hilbert-space interpretation of its sheet-sign direction remark as an open clause. The smooth physical velocity formula has its own precise hypotheses and additional real multiplier.
+On 2026-11-02 the user accepted the precise smooth-solution interpretation of Section 7's sheet-sign direction remark. S7-002 is corrected, with the smoothness hypotheses and additional real multiplier retained. The three explicitly partial groups above concern the cited 2014 construction.
 
 ## Corrections and validation
 
@@ -75,7 +74,7 @@ Corrected statements retain the qualifications recorded with their positive proo
 
 Source-text and document hashes tie the inventory to the published comparisons. Full source accounting is checked separately from Lean verification. Publication requires the preceding proof step’s observed successful full check and an unchanged Lean source snapshot.
 
-The [auxiliary height correction](SECTION_5.md) updates groups section_5-012 and section_5-013 with the proved exponent-dependent bound, retaining every historical evidence row. The source accounting and four explicitly partial groups are unchanged.
+The [auxiliary height correction](SECTION_5.md) updates groups section_5-012 and section_5-013 with the proved exponent-dependent bound, retaining every historical evidence row and the source accounting.
 
 The [general spectral-height corrections](SPECTRAL_OVERVIEW.md) update spectral-11, spectral-21 and section_3-003 with their proved exponent-dependent bounds. The full period-two scope includes p=1. Every historical evidence row is retained.
 

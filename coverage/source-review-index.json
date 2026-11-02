@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T08:09:45.568131+00:00",
-  "base_commit": "be2ce1ffa6db2dd141453e9b47473086d240be76",
+  "published_utc": "2026-11-02T08:43:19.205355+00:00",
+  "base_commit": "6ba6954eb7fbd7a83d9cabe30cfa22fac3b509d7",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -23,8 +23,7 @@
     "distinct_modules": 2288
   },
   "unresolved": [
-    "Section 7 group S7-002 retains the informal direction-of-motion interpretation for general L2 sources. The exact smooth physical NLS velocity and its sheet-sign multiplier are proved; a general rough-source interpretation has not been established or accepted as unnecessary.",
-    "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
+    "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. Inspected manuscript copies support the recorded formulas; identity with the published 2014 construction remains unverified.",
     "Appendix G.2 uses an adopted correction with the explicit unnormalized integral H1 norm and interval-length constant sqrt(t^(-1)+t). The source does not specify its local norm, so this correction is not asserted to identify the intended convention. The unit-interval consequence is proved.",
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
@@ -80181,5 +80180,25 @@
       "validation_reused_from_commit": "c23702bdbb42dd6a2566cd5173c587f7ce41d82e",
       "source_record_sha256": "014e3d78edcbd9c2d48e8f7daf4f59f36905972b0007ee7218f06d383517dd00"
     }
-  }
+  },
+  "accepted_source_interpretations": [
+    {
+      "group": "S7-002",
+      "date": "2026-11-02",
+      "status": "corrected",
+      "source_lines": [
+        3312,
+        3316
+      ],
+      "user_decision": "Use the precise smooth-solution interpretation",
+      "interpretation": "The informal sheet-sign direction remark is interpreted by the proved exact velocity formula for smooth classical physical NLS solutions, including the constructed global ordinary solution.",
+      "qualification": "The additional real multiplier and smoothness hypotheses are retained. Differentiability for arbitrary rough L2 solutions is not asserted.",
+      "evidence_reviews": [
+        "Section7PhysicalNLSMotionSourceComparison-2026-11-02",
+        "Section7PhysicalNLSVelocitySourceComparison-2026-11-02"
+      ],
+      "new_lean_proofs": 0,
+      "new_refutations": 0
+    }
+  ]
 }

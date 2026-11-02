@@ -6,9 +6,10 @@ The latest [positive constant corrections](SECTION_3.md) prove the literal Lemma
 
 ## Remaining requirements
 
+On 2026-11-02 the user accepted the precise smooth-solution interpretation of the informal Section 7 direction remark. [S7-002](SECTION_7_ASSERTIONS.md) is therefore corrected and closed: the proved velocity formula retains its additional real multiplier and smoothness hypotheses. This does not assert differentiability for arbitrary rough L2 solutions.
+
 | Source passage | Established evidence | Still required |
 | --- | --- | --- |
-| [Section 7, S7-002](SECTION_7.md), p.45 | Actual physical NLS nonconservation and the exact smooth Dirichlet-root velocity, including the sheet sign and its real multiplier, are proved. | Settle the informal direction remark for general L2 data, or explicitly accept the smooth formula as its intended precise interpretation. A pending question does not narrow the required domain. |
 | [Section 14, S14-010](SECTION_14_ASSERTIONS.md), [Section 17, S17-007](SECTION_17_ASSERTIONS.md), and [Section 18, S18-003](SECTION_18_ASSERTIONS.md) | The physical Hilbert map, its analytic global inverse, and weighted Sobolev canonical maps are constructed internally. Earlier-manuscript conventions have been compared. | Compare the construction with the exact 2014 edition of Grébert–Kappeler cited as [23]. The inspected 2013 manuscript and earlier drafts do not establish that edition identity. |
 
 These are the explicitly partial source groups. Other rows retain their detailed corrections and domain qualifications. In particular, [Appendix G.2](APPENDIX_G.md) uses the adopted explicit integral H1 norm and length factor sqrt(t^(-1)+t); the source does not specify its local norm. The proved unit-interval consequence remains available. Finite-exponent, endpoint-realization and infinity-norm qualifications remain in the original section comparisons.
@@ -17,7 +18,7 @@ These are the explicitly partial source groups. Other rows retain their detailed
 
 The latest proof snapshot passed 8,662 build jobs, all 7,729 public examples and the transitive axiom audit for 45,245 NLS declarations. Its 21 inherited warnings are unchanged, with no new warnings. This documentation reconciliation reuses that identical Lean snapshot. The [source review index](source-review-index.json) and [source assertion inventory](source-assertion-inventory.json) retain exact evidence rows and source intervals.
 
-Each completed implementation step is committed and pushed. Current validation is necessary evidence for the formalization, but it does not resolve the remaining interpretation or reference-edition requirements. Literal printed discrepancies and their adopted positive corrections remain distinguished.
+Each completed implementation step is committed and pushed. Current validation is necessary evidence for the formalization, but it does not resolve the remaining reference-edition requirement. Literal printed discrepancies and their adopted positive corrections remain distinguished.
 
 ## Historical assessments
 

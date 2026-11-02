@@ -1,10 +1,10 @@
 {
   "status": "published_source_navigation",
-  "updated_utc": "2026-11-02T08:09:45.609830+00:00",
-  "base_commit": "be2ce1ffa6db2dd141453e9b47473086d240be76",
+  "updated_utc": "2026-11-02T08:43:19.205355+00:00",
+  "base_commit": "6ba6954eb7fbd7a83d9cabe30cfa22fac3b509d7",
   "source_text_sha256": "64640083a811e0e05710297d056d23d7e1f2aadad7fb1f1a1271819b90978619",
   "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
-  "published_source_index_sha256": "a4c6375f4a397550a85e572a8ab51de459c9c89791a3273bedf4dcf38bb9b58a",
+  "published_source_index_sha256": "9f90c3270a25e43fe318ddf64270cae4c7e7f3c59d9840f7a2787f59717c63b8",
   "scope": "Consolidation of existing source assessments, not a fresh semantic audit of all transitive dependencies.",
   "completion_claim": false,
   "units": [
@@ -11589,7 +11589,7 @@
     {
       "unit": "section_7",
       "document": "coverage/SECTION_7_ASSERTIONS.md",
-      "document_sha256": "41b3077f10c41ff10cdd75679cad9da8c6d5abe8be263b53e5234e21c1c9e27a",
+      "document_sha256": "9fd675ee6ccd963c0d67f540212495d0b8edd5e08af6ec645501d3436d8c315e",
       "groups": [
         {
           "group": "S7-001",
@@ -11633,7 +11633,7 @@
         },
         {
           "group": "S7-002",
-          "assessment": "partial",
+          "assessment": "corrected",
           "source_lines": [
             [
               3312,
@@ -11825,7 +11825,25 @@
                 "status": "matched_subclause"
               }
             }
-          ]
+          ],
+          "accepted_interpretation": {
+            "group": "S7-002",
+            "date": "2026-11-02",
+            "status": "corrected",
+            "source_lines": [
+              3312,
+              3316
+            ],
+            "user_decision": "Use the precise smooth-solution interpretation",
+            "interpretation": "The informal sheet-sign direction remark is interpreted by the proved exact velocity formula for smooth classical physical NLS solutions, including the constructed global ordinary solution.",
+            "qualification": "The additional real multiplier and smoothness hypotheses are retained. Differentiability for arbitrary rough L2 solutions is not asserted.",
+            "evidence_reviews": [
+              "Section7PhysicalNLSMotionSourceComparison-2026-11-02",
+              "Section7PhysicalNLSVelocitySourceComparison-2026-11-02"
+            ],
+            "new_lean_proofs": 0,
+            "new_refutations": 0
+          }
         },
         {
           "group": "S7-003",
@@ -51283,203 +51301,6 @@
   ],
   "outstanding_published_groups": [
     {
-      "unit": "section_7",
-      "group": "S7-002",
-      "assessment": "partial",
-      "source_lines": [
-        [
-          3312,
-          3316
-        ]
-      ],
-      "evidence": [
-        {
-          "review": "Section7OpeningSourceComparison-2026-10-29",
-          "field": "unnumbered",
-          "index": 1,
-          "source_record_sha256": "a82ebd1638797f9730c074c6b827d65c4838a6a22718d2c7eee87d31709bf5ce",
-          "row": {
-            "ordered_group": "S7-002",
-            "source_lines": [
-              3312,
-              3316
-            ],
-            "requirement": "Actual Dirichlet eigenvalues and sheet signs",
-            "status": "partial",
-            "ordered_status": "partial",
-            "reviewed_claims": [
-              "Each actual Hilbert isospectral set is homeomorphic to the product of its signed Dirichlet gap sheets. The base coordinate is the original Dirichlet eigenvalue, and the sign is its actual anti-discriminant sign.",
-              "Every allowable full signed data family determines a unique source in that isospectral set. The two sheet branches are glued at the endpoints, where the sign is zero.",
-              "The additional assertion of nonconservation under physical NLS, and its rough description of signs as directions of NLS motion, remain outside this completed comparison."
-            ],
-            "declarations": [
-              "NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph",
-              "NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph_base",
-              "NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph_sign",
-              "NLS.ZakharovShabat.existsUnique_isospectral_source_with_signed_dirichletData",
-              "NLS.ZakharovShabat.sourceSignedDirichletSheet_sign_zero_iff_endpoint",
-              "NLS.ZakharovShabat.isQuotientMap_sourceSignedDirichletSheet_branches"
-            ],
-            "qualification": "The parameterization uses the original Hilbert topology and includes infinitely many open gaps and endpoint data. Indexed spectral flows are not being identified with ordinary physical NLS time. The dynamical clause remains unresolved, so this passage is partial."
-          }
-        },
-        {
-          "review": "Section7PhysicalNLSMotionSourceComparison-2026-11-02",
-          "field": "unnumbered",
-          "index": 0,
-          "source_record_sha256": "361485177d4f2f809153ecaad68bf5aced23990033bb39be091b8877e5927a53",
-          "row": {
-            "ordered_group": "S7-002",
-            "source_lines": [
-              3312,
-              3316
-            ],
-            "requirement": "Physical NLS nonconservation of actual Dirichlet eigenvalues",
-            "status": "matched_subclause",
-            "declarations": [
-              "NLS.ZakharovShabat.section7_constant_isClassicalRenormalized",
-              "NLS.ZakharovShabat.section7_constant_phase_isClassical",
-              "NLS.ZakharovShabat.SmoothNLSData.section7_ordinary_eq_constant_phase",
-              "NLS.ZakharovShabat.section7_constant_phase_half_turn",
-              "NLS.ZakharovShabat.section7_periodOneCoefficient_const",
-              "NLS.ZakharovShabat.section7_smoothPeriodOneSourceAt_const",
-              "NLS.ZakharovShabat.SmoothNLSData.section7_ordinarySource_eq_constant_phase",
-              "NLS.ZakharovShabat.section7_hasDerivAt_dirichlet_diagonal_constant",
-              "NLS.ZakharovShabat.section7_exists_constant_dirichlet_pair",
-              "NLS.ZakharovShabat.section7_exists_physicalNLS_dirichlet_motion",
-              "NLS.ZakharovShabat.SmoothNLSData.section7_ordinarySource_isSolution",
-              "NLS.ZakharovShabat.section7_exists_ordinaryNLSSolution_dirichlet_motion"
-            ],
-            "reviewed_claims": [
-              "The exact classical phase satisfies the scalar physical PDE and is the constructed global ordinary solution of constant smooth data.",
-              "Literal Fourier coefficients retain the original real source and its canonical Dirichlet coordinate.",
-              "A positive physical time changes the actual central Dirichlet coordinate for a suitable real constant datum.",
-              "The trajectory satisfies the dissertation all-smooth-sequence solution definition for every 1<p<=2, including p=2."
-            ],
-            "qualification": "Existential nonconservation of Dirichlet coordinates is proved. The rough sheet-sign direction-of-motion clause remains unresolved, so ordered group S7-002 remains partial. Indexed spectral flow is not used as physical time."
-          }
-        },
-        {
-          "review": "Section7PhysicalNLSVelocitySourceComparison-2026-11-02",
-          "field": "unnumbered",
-          "index": 0,
-          "source_record_sha256": "4ae6bfd58421d0c0db35064695cd06f4f709ace5ebe124d65be02f66720a653b",
-          "row": {
-            "ordered_group": "S7-002",
-            "source_lines": [
-              3312,
-              3316
-            ],
-            "requirement": "Physical Lax transport and exact characteristic velocity",
-            "declarations": [
-              "NLS.ZakharovShabat.classicalNLSTransport",
-              "NLS.ZakharovShabat.classicalNLSTransport_endpoints",
-              "NLS.ZakharovShabat.continuous_classicalNLSTransport_solution",
-              "NLS.ZakharovShabat.hasDerivAt_classicalNLSTransport_solution",
-              "NLS.ZakharovShabat.classicalNLS_potentialVariation_eq",
-              "NLS.ZakharovShabat.classicalNLSTimeMatrix",
-              "NLS.ZakharovShabat.fderiv_classicalMonodromy_physicalNLS_commutator",
-              "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor",
-              "NLS.ZakharovShabat.fderiv_classicalDirichletCharacteristic_physicalNLS_at_root",
-              "NLS.ZakharovShabat.classicalNLSDirichletSpeedFactor_real",
-              "NLS.ZakharovShabat.fderiv_classicalDirichletRoot_physicalNLS",
-              "NLS.ZakharovShabat.hasDerivAt_classicalDirichletRoot_physicalNLS"
-            ],
-            "reviewed_claims": [
-              "The time Lax matrix is verified against the physical NLS vector field and the original spatial ODE. Uniqueness identifies the actual potential variation.",
-              "Periodic endpoints give the actual monodromy commutator. At a Dirichlet zero the characteristic variation equals terminal anti-discriminant times P; a simple root has velocity -delta*P/chi_prime.",
-              "For the real pair, P=2*mu^2-2*mu*Re(a(0))+abs(a(0))^2+Im(a_prime(0))."
-            ],
-            "qualification": "The original Hilbert source and indexed roots are retained. The physical time derivative is proved for smooth classical NLS trajectories and their constructed global solutions; no differentiability assertion for arbitrary rough Hilbert trajectories is inferred. The precise direction is the sheet sign times the displayed real multiplier, including zeros. No new refutation is added."
-          }
-        },
-        {
-          "review": "Section7PhysicalNLSVelocitySourceComparison-2026-11-02",
-          "field": "unnumbered",
-          "index": 1,
-          "source_record_sha256": "4ae6bfd58421d0c0db35064695cd06f4f709ace5ebe124d65be02f66720a653b",
-          "row": {
-            "ordered_group": "S7-002",
-            "source_lines": [
-              3312,
-              3316
-            ],
-            "requirement": "Original indexed Hilbert root differential and sheet multiplier",
-            "declarations": [
-              "NLS.ZakharovShabat.sourceDirichletRoot_physicalNLS_differential",
-              "NLS.ZakharovShabat.sourceNLSDirichletVelocityMultiplier",
-              "NLS.ZakharovShabat.sourceDirichletRoot_physicalNLS_real_differential",
-              "NLS.ZakharovShabat.sourceDirichletRoot_physicalNLS_velocity_sign",
-              "NLS.ZakharovShabat.hasDerivAt_sourceDirichletRoot_physicalNLS"
-            ],
-            "reviewed_claims": [
-              "Continuous representatives identify the differential of every original indexed Hilbert Dirichlet root.",
-              "The velocity multiplier is -P/Re(chi_prime). The original sheet sign enters the velocity sign multiplicatively, including zeros."
-            ],
-            "qualification": "The original Hilbert source and indexed roots are retained. The physical time derivative is proved for smooth classical NLS trajectories and their constructed global solutions; no differentiability assertion for arbitrary rough Hilbert trajectories is inferred. The precise direction is the sheet sign times the displayed real multiplier, including zeros. No new refutation is added."
-          }
-        },
-        {
-          "review": "Section7PhysicalNLSVelocitySourceComparison-2026-11-02",
-          "field": "unnumbered",
-          "index": 2,
-          "source_record_sha256": "4ae6bfd58421d0c0db35064695cd06f4f709ace5ebe124d65be02f66720a653b",
-          "row": {
-            "ordered_group": "S7-002",
-            "source_lines": [
-              3312,
-              3316
-            ],
-            "requirement": "Continuous physical Fourier source and its actual time derivative",
-            "declarations": [
-              "NLS.ZakharovShabat.physicalNLSPeriodHalveCLM",
-              "NLS.ZakharovShabat.physicalNLSUnitFourierCLM",
-              "NLS.ZakharovShabat.physicalNLSUnitFourierCLM_apply",
-              "NLS.ZakharovShabat.physicalNLSSourceCLM",
-              "NLS.ZakharovShabat.physicalNLSSourceCLM_fst",
-              "NLS.ZakharovShabat.physicalNLSSourceCLM_snd",
-              "NLS.ZakharovShabat.physicalNLSSourceCLM_eq_smoothSource",
-              "NLS.ZakharovShabat.IsClassicalNLSTrajectory.hasDerivAt_hilbertSource"
-            ],
-            "reviewed_claims": [
-              "The physical Fourier source map is bounded and real linear in the continuous physical norm, with the original unit-period coefficient normalization.",
-              "Uniform physical time differentiability gives the derivative of the exact smooth Hilbert source."
-            ],
-            "qualification": "The original Hilbert source and indexed roots are retained. The physical time derivative is proved for smooth classical NLS trajectories and their constructed global solutions; no differentiability assertion for arbitrary rough Hilbert trajectories is inferred. The precise direction is the sheet sign times the displayed real multiplier, including zeros. No new refutation is added."
-          }
-        },
-        {
-          "review": "Section7PhysicalNLSVelocitySourceComparison-2026-11-02",
-          "field": "unnumbered",
-          "index": 3,
-          "source_record_sha256": "4ae6bfd58421d0c0db35064695cd06f4f709ace5ebe124d65be02f66720a653b",
-          "row": {
-            "ordered_group": "S7-002",
-            "source_lines": [
-              3312,
-              3316
-            ],
-            "requirement": "Actual classical NLS trajectory and global-solution direction formula",
-            "declarations": [
-              "NLS.ZakharovShabat.physicalNLSSourceCLM_representative",
-              "NLS.ZakharovShabat.physicalNLSSourceCLM_eq_extend",
-              "NLS.ZakharovShabat.IsClassicalNLSTrajectory.hasDerivAt_dirichletRoot",
-              "NLS.ZakharovShabat.IsClassicalNLSTrajectory.dirichletRoot_velocity_sign",
-              "NLS.ZakharovShabat.SmoothNLSData.hasDerivAt_ordinarySource_dirichletRoot",
-              "NLS.ZakharovShabat.SmoothNLSData.ordinarySource_dirichletRoot_velocity_sign"
-            ],
-            "reviewed_claims": [
-              "Literal Fourier coefficients reconstruct the physical source and its tangent on the original unit interval.",
-              "Every IsClassicalNLSTrajectory supplies the required physical representative and tangent from its PDE.",
-              "At every real time and signed index the exact root derivative and sign formula hold. The constructed global ordinary solution satisfies the same formula."
-            ],
-            "qualification": "The original Hilbert source and indexed roots are retained. The physical time derivative is proved for smooth classical NLS trajectories and their constructed global solutions; no differentiability assertion for arbitrary rough Hilbert trajectories is inferred. The precise direction is the sheet sign times the displayed real multiplier, including zeros. No new refutation is added.",
-            "status": "matched_subclause"
-          }
-        }
-      ]
-    },
-    {
       "unit": "section_14",
       "group": "S14-010",
       "assessment": "partial",
@@ -57517,5 +57338,25 @@
     "scope": "Current requirements separated from preserved historical assessments.",
     "completion_claim": false,
     "proof_snapshot_reused_from_commit": "be2ce1ffa6db2dd141453e9b47473086d240be76"
-  }
+  },
+  "accepted_source_interpretations": [
+    {
+      "group": "S7-002",
+      "date": "2026-11-02",
+      "status": "corrected",
+      "source_lines": [
+        3312,
+        3316
+      ],
+      "user_decision": "Use the precise smooth-solution interpretation",
+      "interpretation": "The informal sheet-sign direction remark is interpreted by the proved exact velocity formula for smooth classical physical NLS solutions, including the constructed global ordinary solution.",
+      "qualification": "The additional real multiplier and smoothness hypotheses are retained. Differentiability for arbitrary rough L2 solutions is not asserted.",
+      "evidence_reviews": [
+        "Section7PhysicalNLSMotionSourceComparison-2026-11-02",
+        "Section7PhysicalNLSVelocitySourceComparison-2026-11-02"
+      ],
+      "new_lean_proofs": 0,
+      "new_refutations": 0
+    }
+  ]
 }

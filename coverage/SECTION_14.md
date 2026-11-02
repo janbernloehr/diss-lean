@@ -136,6 +136,24 @@ global bi-analytic map and its Fourier derivative at zero. These checks
 confirm the publication context and broad theorem, but do not establish
 identity of the construction formulas in the chapters requiring a subscription.
 
+An additional manuscript copy was inspected on 2026-11-02. It has 141 PDF
+pages, a July 2013 preface, and SHA-256
+`eceee60e4bd785605a1404c0449ebb08bcc454bf6e71d0a0c30bc13a27509849`.
+The following passages agree with the conventions recorded above:
+
+| Location in this copy | Checked convention or statement |
+| --- | --- |
+| Section 13, printed pp. 65–66 (PDF pp. 72–73) | Counterclockwise action integral with factor 1/pi; positive principal root of 4 I_n / gamma_n^2, equal to one at zero. |
+| Section 15, printed pp. 80–81 (PDF pp. 87–88) | theta=eta+beta, left periodic endpoint, and terminal root value fixed by the anti-discriminant. |
+| Section 16, printed p. 88 (PDF p. 95) | x_n=sqrt(2 I_n) cos(theta_n), y_n=sqrt(2 I_n) sin(theta_n), with the same positive sine orientation. |
+| Theorem 19.3, printed pp. 101–102 (PDF pp. 108–109) | The map is proper, bijective and norm-preserving. |
+
+The coordinate formulas and Theorem 19.3 were also checked in rendered
+pages. The files are not byte-identical and their PDF pagination differs;
+the comparison above is limited to the named passages. This copy supplies
+further manuscript evidence for the implemented formulas. Its identity
+with the published 2014 construction has not been established.
+
 ## The original physical Hilbert spaces and map
 
 [`UnitIntervalL2Equiv.lean`](../NLS/Fourier/UnitIntervalL2Equiv.lean)
