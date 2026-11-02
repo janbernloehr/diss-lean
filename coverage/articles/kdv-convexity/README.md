@@ -1250,9 +1250,9 @@ Fourier evaluation module is recompiled. Three compatible private source
 differences are retained and documented: two original independent proofs
 and the additional proved strict free-Hill spacing lemma. The original
 37-source manifest remains unchanged. The focused validation covers
-279 source modules are now listed for reproducibility; the present milestone
-checks its 57 additional sources incrementally over the unchanged validated
-222-module baseline. This is not a full 2,393-module or repository build.
+288 source modules are now listed for reproducibility; the present milestone
+checks its nine additional sources incrementally over the unchanged validated
+279-module baseline. This is not a full 2,393-module or repository build.
 
 Uniform H^-1 high-disc/source-path trace estimates, full analytic primitive
 squares and common high-moment analytic domains are now proved below.
@@ -1414,6 +1414,53 @@ modules, pinned and hashed in `action-descent-shared-imports.json` against
 the already inherited tree at `9d67a0f`. They are checked in dependency
 order in the private cache and included in the combined axiom audit.
 
+## Actual real H^-1 spectra, sheets and contour-period reality
+
+`PeriodOneHminusOneRealDensity.lean` defines distributional reality by
+q(-k)=conj(q(k)) in the raw unit-period Fourier convention. Symmetric
+finite supports preserve this condition. The corresponding literal L2
+potentials converge in H^-1, without any bounded-L2-norm assumption.
+`ClosedZeroPersistence.lean` proves that a jointly continuous family of
+entire scalar functions inherits a closed zero constraint from dense
+parameters whenever the limit slice is nontrivial. Local zero-count
+stability includes multiple zeros.
+
+`HillHminusOneReality.lean` proves nonconstancy of the actual discriminant
+and radicand at every complex H^-1 potential from their genuine high count
+of two. Every analytic energy order is finite. Applying closed-zero
+persistence to the existing physical L2 Hill reality theorem proves that
+all characteristic zeros at real H^-1 potentials are real, including
+central and multiple roots, with no high cutoff and no mean-zero input.
+Both entries of every constructed high pair are real. Every nonreal energy
+belongs to the actual source domain; its root and primitive are analytic
+throughout both nonreal half-planes.
+
+`HillHminusOneReflection.lean` transfers Schwarz symmetry of the physical
+trace by real Fourier density. The existing source-reflection theorem
+fixes the exact identities R(conj lambda)=-conj R(lambda) and
+F(conj lambda)=-conj F(lambda), retaining the original free sheet and
+logarithm period. At every admissible real energy, F is purely imaginary
+and the actual multiplier exp(F) has norm one.
+`HillHminusOneMomentReality.lean` combines this reflection with orientation
+reversal of a real-centered circle. Every integer-level Arnold period and
+the literal cubic period with factor 1/pi are real on every admissible
+such circle. One complex H^-1-open neighborhood and cutoff support the
+whole high analytic family with reality at every real potential there.
+
+Four exact sources from `articles/kdv-estimates` at `54ab8cf` are reused:
+continuous Fourier conjugation, L2 trace conjugation, generic source-sheet
+reflection and L2 primitive reflection. The hashed manifest is
+`hminus-real-shared-imports.json`. The already checked private classical
+conjugation source is retained at the import boundary; its difference
+from the shared branch is recorded, and all four exact imported modules
+compile against this boundary and pass the combined axiom audit.
+
+Reality does not assert positivity of Arnold actions or nonpositivity of
+cubic periods. The singular operator's intrinsic characteristic identity,
+canonical product-root identification, finite central canonical contours,
+full H^-1 real-band continuation and global KdV Birkhoff/action matching
+remain unproved. The main theorems remain unverified.
+
 ## Earlier checked local consequences
 
 [`LocalConsequences.lean`](../../../NLS/Articles/KdVConvexity/LocalConsequences.lean)
@@ -1501,15 +1548,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The 222-module baseline passed focused Lean 4.33.1/mathlib v4.33.1 checks
-with `warningAsError=true` at commit `9d67a0f`. Every baseline source hash
-remains unchanged. The 51 newly required inherited dependencies and six
-authored modules pass incremental checks with the same settings. The full
-reproducible script now lists 279 modules. The positive-index example passes.
+The validated baseline at `08db7a5` contains 279 source modules. Every
+baseline source hash remains unchanged. Four exact shared modules and five
+authored modules pass incremental Lean 4.33.1/mathlib v4.33.1 checks with
+`warningAsError=true`. The full reproducible script now lists 288 source
+modules. The positive-index example passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 146 additional shared modules:
-3039 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 150 additional shared modules:
+3136 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

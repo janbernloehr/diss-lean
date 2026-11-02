@@ -1,0 +1,60 @@
+{
+  "source_branch": "articles/kdv-estimates",
+  "source_commit": "2fef357d3542763e699e37951f061a67b3ebb5bc",
+  "dependency_order": [
+    "NLS.Fourier.ContinuousConjugation",
+    "NLS.KdV.HillL2Conjugation",
+    "NLS.ComplexAnalysis.TracePrimitiveReflection",
+    "NLS.KdV.HillL2PrimitiveReflection"
+  ],
+  "source_files_unchanged": true,
+  "files": {
+    "NLS/Fourier/ContinuousConjugation.lean": "5e4f809136c6c885be366072a09d40618856a5f9096589a04c2b1c9601509f9b",
+    "NLS/KdV/HillL2Conjugation.lean": "9f60336f9dd4e6394501ed3bd9529be74b7194e2b46925272dd8f3b07376adb2",
+    "NLS/ComplexAnalysis/TracePrimitiveReflection.lean": "7fb5b83b83f8558d01480d2aee5ad09f24bb127123a67f7642c90043b050190a",
+    "NLS/KdV/HillL2PrimitiveReflection.lean": "c8cd3618f737f85ac73095969665dd9be6ccc3842a9b626c8888baf207c250a6"
+  },
+  "retained_existing_import_boundary": {
+    "NLS/KdV/ClassicalHillConjugation.lean": {
+      "private_sha256": "ffc639b592eceeca6524e069dae7020800eb034b83338121e78ebb8e302cf659",
+      "shared_sha256": "1d6040cff5bf6aa03b0b16de145469b29ca84fcb17668be161747f601b8a7f89",
+      "identical": false
+    },
+    "NLS/KdV/HillRealSpectrum.lean": {
+      "private_sha256": "6e460523615ac54f3162f702c2495b85a002dcfdd0bc39f0ccd0bd49bc813476",
+      "shared_sha256": "6e460523615ac54f3162f702c2495b85a002dcfdd0bc39f0ccd0bd49bc813476",
+      "identical": true
+    },
+    "NLS/KdV/HillCharacteristicZeros.lean": {
+      "private_sha256": "de0bfcdb98786591abb517c366b06ba069c9d7db2d1b234fe609ebb25b199498",
+      "shared_sha256": "de0bfcdb98786591abb517c366b06ba069c9d7db2d1b234fe609ebb25b199498",
+      "identical": true
+    },
+    "NLS/Fourier/ContinuousSynthesis.lean": {
+      "private_sha256": "d8dc6dd628d884b8397efcedfcee90875ff6d0ed94999cfed7ddb869def2f975",
+      "shared_sha256": "d8dc6dd628d884b8397efcedfcee90875ff6d0ed94999cfed7ddb869def2f975",
+      "identical": true
+    },
+    "NLS/SequenceSpaces/Reflection.lean": {
+      "private_sha256": "c26f7430ea57dd0fb147fe3f4c84c03ec0bea0d6bde3ec6a6030b547b06a57ef",
+      "shared_sha256": "c26f7430ea57dd0fb147fe3f4c84c03ec0bea0d6bde3ec6a6030b547b06a57ef",
+      "identical": true
+    },
+    "NLS/KdV/HillL2ContourDeformation.lean": {
+      "private_sha256": "459dd87f37c8ec230aa61ea921304f19a9e7085bd786fb798dc6d83e461e1a49",
+      "shared_sha256": "459dd87f37c8ec230aa61ea921304f19a9e7085bd786fb798dc6d83e461e1a49",
+      "identical": true
+    },
+    "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean": {
+      "private_sha256": "b72a10890423ba6070d235e90a5f745cfcb69fcba1f234933be9d2451c5c7ffb",
+      "shared_sha256": "b72a10890423ba6070d235e90a5f745cfcb69fcba1f234933be9d2451c5c7ffb",
+      "identical": true
+    },
+    "NLS/ComplexAnalysis/RealCircleIntegralReflection.lean": {
+      "private_sha256": "ddbf6f6c2a440e9515b6eb5a0209dd388db7bb18ad6c91ec1cb405c7b7872b0a",
+      "shared_sha256": "ddbf6f6c2a440e9515b6eb5a0209dd388db7bb18ad6c91ec1cb405c7b7872b0a",
+      "identical": true
+    }
+  },
+  "boundary_policy": "Existing private sources retained; differences from the shared branch are recorded. The imported exact new modules must compile and pass the combined audit against this retained boundary."
+}
