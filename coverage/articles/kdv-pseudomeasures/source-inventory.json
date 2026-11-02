@@ -517,6 +517,18 @@
         "NLS/Articles/KdVPseudomeasures/SpectralInverseGapComparison.lean"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-real-gap-comparison-map.json"
+    },
+    {
+      "label": "Original endpoint bootstrap and AppendixB weak-star compactness transfer",
+      "content": "Shared scaled polynomial weights w(k)=(1+c*abs(k))^(r-t),0<c<=1,are genuine symmetric monotone submultiplicative source weights. Their combined negative weight W satisfies c^(r-t)*Sob(-t,k)<=W(k)<=Sob(-t,k). For c=1/(2N+1),the finite head abs(k)<=2N has w(k)<=2. W(2n)<=Sob(-t,n) retains the exact coefficient/gap frequency normalization. Shared original periodic endpoint membership is constructed directly on the ENTIRE supplied smooth-test distribution from pointwise weighted coefficient bounds. A positive lower weight comparison recovers target membership of that SAME distribution with an explicit norm bound. Weighted coefficient estimates are also available at every Banach exponent. The cutoff returned by the actual inverse-restriction factory already has N>=2 when m>=1. The adapted map is not changed after choosing its inverse. For physical base q with norm<=R and actual canonical target gap bound G,the ACTUAL adapted image belongs to W with norm<=2R+G:the unchanged head is bounded by2R,the two even tails byG,and physical odd modes vanish. source_uniform_endpoint_bootstrap proves stronger original endpoint membership and a uniform norm bound from base norm R and ACTUAL canonical gap bound G. Choose m=4*(R+G+1),N from the verified inverse,c=1/(2N+1),and C=m/c^(r-t),all BEFORE q. The genuine source Proposition2.19 inverse gains W-regularity;weight comparison yields a physical Potential(t) with ENTIRE value equal to the original Potential(r). No target membership of q is assumed. sourceReinterpretationSet contains exactly the target physical representatives of a supplied original family. The Appendix B compactness transfer proves it weak-star compact from a proved uniform target bound and a compact lower finite-p realization with the SAME ENTIRE distribution range. Every original family member has a target representative. A compact original finite-p realization at base order-r supplies the base endpoint norm bound via all-p coefficient bounds. Combining this with the actual gap bootstrap gives target weak-star compactness whenever1<(r-t)*p.toReal,p finite>=1,and the compact realization has the exact original distribution range. The missing original isospectral compactness result is retained as an EXPLICIT hypothesis rather than claimed as proved.",
+      "status": "Uniform bootstrap and conditional compactness transfer PROVED. Original finite-p input,full Theorem2.2,Lemma2.21 and all MAIN theorems remain open.",
+      "modules": [
+        "NLS/SequenceSpaces/ScaledSobolevApproximation.lean",
+        "NLS/Fourier/PeriodicEndpointBounds.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralEndpointBootstrap.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralEndpointCompactness.lean"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-endpoint-bootstrap-map.json"
     }
   ],
   "reuse_map": [
@@ -596,9 +608,10 @@
     }
   ],
   "remaining_obligations": [
-    "Combine the now-proved REAL adapted-coefficient gap LOWER comparison and actual Omega tail estimate with source Proposition2.19 to prove endpoint regularity/norm-boundedness of original isospectral sets. Formalize a suitable small-head polynomial-weight family and the full original-distribution bootstrap. The original finite-p inverse spectral regularity/isospectral compactness input used by source[7,Corollaries3-4] still requires a verified proof/import. Source Theorem2.2 remains open.",
-    "Complete physical periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual original Dirichlet comparison source Theorem2.1(ii). Full direct general-weight Theorem2.1(i),endpoint Propositions2.18-2.19,actual real-type symmetry and all AppendixB clauses remain complete. The general complex-ratio source Lemma2.20 is not claimed by the proved real case.",
-    "Construct and verify the ORIGINAL Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original hypotheses,normalizations,quantifiers and topology. All MAIN theorems remain unproved."
+    "Source Theorem2.2 and full Lemma2.21 remain unproved:the uniform endpoint bootstrap and conditional Appendix B compactness transfer are now PROVED,but the verified ORIGINAL finite-p inverse spectral regularity and isospectral compactness input cited as[7,Corollaries3-4] is still required. The compact finite-p realization in the new theorem must be constructed for the ACTUAL original H-minus-one isospectral set;it is not supplied by this milestone.",
+    "Identify the SAME intrinsic canonical spectrum/gaps across different predual orders for the same entire original distribution. Actual original H-minus-one operators/root spaces agree,and canonical ordering/multiplicity uniqueness should give this identity;it has not yet been separately proved.",
+    "Complete physical periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual original Dirichlet comparison source Theorem2.1(ii). Direct general-weight Theorem2.1(i),endpoint Propositions2.18-2.19,REAL source Lemma2.20 and all AppendixB clauses remain proved. The general complex-ratio Lemma2.20 remains unproved.",
+    "Construct and verify the ORIGINAL Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",

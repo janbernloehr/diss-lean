@@ -31,6 +31,7 @@ view = root / '.lake/article-check/lib/lean'
 logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
+    'NLS.Fourier.PeriodicEndpointBounds',
     'NLS.RealAnalysis.SplitRootGap',
     'NLS.Fourier.PeriodicWeightCongruence',
     'NLS.SequenceSpaces.ConjugateReflection',
@@ -71,6 +72,7 @@ modules = [
     'NLS.SequenceSpaces.HillMixedKernel',
     'NLS.SequenceSpaces.InfinityMatrix',
     'NLS.SequenceSpaces.NegativeSpectralWeight',
+    'NLS.SequenceSpaces.ScaledSobolevApproximation',
     'NLS.SequenceSpaces.NegativeModulation',
     'NLS.SequenceSpaces.SignedSobolevConvolution',
     'NLS.SequenceSpaces.ShiftReflection',
@@ -200,6 +202,8 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralRealAdapted',
     'NLS.Articles.KdVPseudomeasures.SpectralInverseRestriction',
     'NLS.Articles.KdVPseudomeasures.SpectralInverseGapComparison',
+    'NLS.Articles.KdVPseudomeasures.SpectralEndpointBootstrap',
+    'NLS.Articles.KdVPseudomeasures.SpectralEndpointCompactness',
     'NLS.Articles.KdVPseudomeasures.SpectralAdaptedDiffeomorphism',
     'NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps',
     'NLS.Articles.KdVPseudomeasures.Audit',

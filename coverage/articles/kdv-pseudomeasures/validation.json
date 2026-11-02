@@ -1,11 +1,12 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Actual real canonical gap lower comparison and inverse adapted-Fourier tail bounds",
+  "phase": "Uniform original endpoint regularity bootstrap and Appendix B compactness transfer",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
   "modules_checked": [
+    "NLS/Fourier/PeriodicEndpointBounds.lean",
     "NLS/RealAnalysis/SplitRootGap.lean",
     "NLS/Fourier/PeriodicWeightCongruence.lean",
     "NLS/SequenceSpaces/ConjugateReflection.lean",
@@ -46,6 +47,7 @@
     "NLS/SequenceSpaces/HillMixedKernel.lean",
     "NLS/SequenceSpaces/InfinityMatrix.lean",
     "NLS/SequenceSpaces/NegativeSpectralWeight.lean",
+    "NLS/SequenceSpaces/ScaledSobolevApproximation.lean",
     "NLS/SequenceSpaces/NegativeModulation.lean",
     "NLS/SequenceSpaces/SignedSobolevConvolution.lean",
     "NLS/SequenceSpaces/ShiftReflection.lean",
@@ -175,15 +177,17 @@
     "NLS/Articles/KdVPseudomeasures/SpectralRealAdapted.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralInverseRestriction.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralInverseGapComparison.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralEndpointBootstrap.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralEndpointCompactness.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralAdaptedDiffeomorphism.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralWeightedGaps.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 1232,
-  "definitions": 262,
+  "proved_theorems": 1247,
+  "definitions": 264,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 1494,
+    "declarations": 1511,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -441,15 +445,22 @@
     "SourceHillRealPair.adapted_gap_comparison retains the ENTIRE original distribution and exact source norms. source_canonical_adapted_gap_comparison identifies the ACTUAL intrinsic canonical slots2n-1,2n,including all algebraic repetitions. It proves the two-sided coupling comparison and brackets alpha by those SAME canonical labels.",
     "sourceLemma2_20_real proves the exact real-case squared source bounds: norm(b_plus(alpha)*b_minus(alpha))<=norm(gamma_n)^2<=9norm(b_plus(alpha)*b_minus(alpha)). It requires no open-gap,nonzero-coupling or ratio hypothesis,because real physical data make the couplings conjugates. Thus every collapsed gap is included. The general complex-ratio version is NOT claimed.",
     "source_uniform_real_coupling_gap_comparison chooses ONE cutoff BEFORE original real potentials on every exact norm ball,then proves both norm and squared-product comparisons at EVERY later high mode. No pair table,root branch or canonical-label hypothesis is supplied by the caller in this uniform theorem.",
-    "sourceAdaptedFourier_tail_le_canonical_gap bounds BOTH signed high coefficients of the ACTUAL original adapted Fourier map by the ACTUAL canonical gap at mode n. source_uniform_adapted_fourier_tail_gap_bound chooses its cutoff BEFORE original potentials and all later modes,retaining the quantitative construction criterion. This supplies the inverse-spectral Omega tail estimate for Section2.7."
+    "sourceAdaptedFourier_tail_le_canonical_gap bounds BOTH signed high coefficients of the ACTUAL original adapted Fourier map by the ACTUAL canonical gap at mode n. source_uniform_adapted_fourier_tail_gap_bound chooses its cutoff BEFORE original potentials and all later modes,retaining the quantitative construction criterion. This supplies the inverse-spectral Omega tail estimate for Section2.7.",
+    "Shared scaled polynomial weights w(k)=(1+c*abs(k))^(r-t),0<c<=1,are genuine symmetric monotone submultiplicative source weights. Their combined negative weight W satisfies c^(r-t)*Sob(-t,k)<=W(k)<=Sob(-t,k). For c=1/(2N+1),the finite head abs(k)<=2N has w(k)<=2. W(2n)<=Sob(-t,n) retains the exact coefficient/gap frequency normalization.",
+    "Shared original periodic endpoint membership is constructed directly on the ENTIRE supplied smooth-test distribution from pointwise weighted coefficient bounds. A positive lower weight comparison recovers target membership of that SAME distribution with an explicit norm bound. Weighted coefficient estimates are also available at every Banach exponent.",
+    "The cutoff returned by the actual inverse-restriction factory already has N>=2 when m>=1. The adapted map is not changed after choosing its inverse. For physical base q with norm<=R and actual canonical target gap bound G,the ACTUAL adapted image belongs to W with norm<=2R+G:the unchanged head is bounded by2R,the two even tails byG,and physical odd modes vanish.",
+    "source_uniform_endpoint_bootstrap proves stronger original endpoint membership and a uniform norm bound from base norm R and ACTUAL canonical gap bound G. Choose m=4*(R+G+1),N from the verified inverse,c=1/(2N+1),and C=m/c^(r-t),all BEFORE q. The genuine source Proposition2.19 inverse gains W-regularity;weight comparison yields a physical Potential(t) with ENTIRE value equal to the original Potential(r). No target membership of q is assumed.",
+    "sourceReinterpretationSet contains exactly the target physical representatives of a supplied original family. The Appendix B compactness transfer proves it weak-star compact from a proved uniform target bound and a compact lower finite-p realization with the SAME ENTIRE distribution range. Every original family member has a target representative.",
+    "A compact original finite-p realization at base order-r supplies the base endpoint norm bound via all-p coefficient bounds. Combining this with the actual gap bootstrap gives target weak-star compactness whenever1<(r-t)*p.toReal,p finite>=1,and the compact realization has the exact original distribution range. The missing original isospectral compactness result is retained as an EXPLICIT hypothesis rather than claimed as proved."
   ],
-  "source_correspondence": "The REAL original source Lemma2.20 gap comparison needed for Theorem2.2 is now PROVED from the ACTUAL physical coefficients and canonical spectrum. Both real scalar branch roots are constructed and identified with actual physical pair endpoints;the actual alpha brackets them,and norm(b(alpha))<=actual_gap<=3norm(b(alpha)),including collapsed gaps. The exact squared real-case source constants1 and9 and BOTH actual signed Omega coefficient bounds are proved with cutoffs before the original potentials. The general complex-ratio Lemma2.20 is not claimed. The endpoint isospectral bootstrap,original finite-p inverse spectral input,Dirichlet/inverse spectral results,original Birkhoff/KdV and every MAIN theorem remain open.",
-  "build_isolation": "All172 modules rebuilt in a fresh empty private output view. Canonical and package imports remain read-only symlinks;every compiler destination is private. The exact1494-declaration transitive audit passed without warnings or tactic suggestions. No canonical source or build output was written.",
+  "source_correspondence": "The source Section2.7 endpoint bootstrap and subsequent Appendix B argument are proved CONDITIONAL on an actual compact lower finite-p realization with the same original distribution range. The bootstrap itself requires no target membership assumption and gives constants BEFORE q. The proof uses equivalent genuine scaled polynomial source weights in place of the source minimum/exponential auxiliary family. The missing cited finite-p inverse spectral/isospectral compactness result is NOT proved or imported. Source Theorem2.2,full Lemma2.21,Dirichlet/Birkhoff/KdV and every MAIN theorem remain open.",
+  "build_isolation": "All176 modules rebuilt in a fresh empty private output view. Canonical and package imports remain read-only symlinks;every compiler destination is private. The exact1511-declaration transitive audit passed without warnings or tactic suggestions. No canonical source or build output was written.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
   "source_hash": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
   "output_sha256": {
+    "NLS/Fourier/PeriodicEndpointBounds.lean": "8b26d2466ed033d0c5f65a3a8a8d1c2794acc2f54c18d7e2654a33776b609228",
     "NLS/RealAnalysis/SplitRootGap.lean": "d3a5b3aa34d78f0109a47d395dcec5df91a065fc80082b33260441b0768d1c9d",
     "NLS/Fourier/PeriodicWeightCongruence.lean": "12cdbdbe5aa66ab3496110595ecee7c7239495826755ed0d1cab2cffe7a9baad",
     "NLS/SequenceSpaces/ConjugateReflection.lean": "785b7915c423f963d41847357061e92b194d42a5a46bda4b07b92a2faa03c101",
@@ -490,6 +501,7 @@
     "NLS/SequenceSpaces/HillMixedKernel.lean": "20c291246496d1c314e5f3df2db3cb038990b714bb66d6c1d4e381486c219c6c",
     "NLS/SequenceSpaces/InfinityMatrix.lean": "db5010ffc574d3779e99c246708de4cb1831ab6c5e85cf16ed59e01b0091ff12",
     "NLS/SequenceSpaces/NegativeSpectralWeight.lean": "fb0339634ff5d28f9bfc442f51907a1367ad4fee3815fa16cd232c16f80706b2",
+    "NLS/SequenceSpaces/ScaledSobolevApproximation.lean": "ede38de7a06851e54f675ab91e165cd8192372b46f2d6b83a8a2abb146b2c321",
     "NLS/SequenceSpaces/NegativeModulation.lean": "673ab91d9ec56869e589df04eeff4afc372278e87375a28614dc6936859d5cdc",
     "NLS/SequenceSpaces/SignedSobolevConvolution.lean": "2a59cc5b9417182e3bcb4438af84ddfc4d12641fc34eae24bf68c436cada6fcd",
     "NLS/SequenceSpaces/ShiftReflection.lean": "60240db4cfe2229c4c4d112815163341636552473ef588295432f0b24c0df676",
@@ -619,9 +631,11 @@
     "NLS/Articles/KdVPseudomeasures/SpectralRealAdapted.lean": "920d67d62a01b974c0a141a4b700bb9cfefde18b66c7764ff211f6f6a1d00d12",
     "NLS/Articles/KdVPseudomeasures/SpectralInverseRestriction.lean": "81556adae849ccb27b710f03f676b78f30ae980f7ee93ca08099777562d4138e",
     "NLS/Articles/KdVPseudomeasures/SpectralInverseGapComparison.lean": "d8092ac04209c9379f76cff3b351b1080380893abb51e7d973130efcf6b31615",
+    "NLS/Articles/KdVPseudomeasures/SpectralEndpointBootstrap.lean": "09d28b0a42c1c86a2401138dbe505124ddd8e9e87f22bf49b1c9daf6efb055f6",
+    "NLS/Articles/KdVPseudomeasures/SpectralEndpointCompactness.lean": "c504e5f7e69be0a64dfede193cdb63a787225c06a1db085255230e64e73ee935",
     "NLS/Articles/KdVPseudomeasures/SpectralAdaptedDiffeomorphism.lean": "be91a6763b1511a7c615bc156ed332752603efac41b98b45acf3e09cb2528c02",
     "NLS/Articles/KdVPseudomeasures/SpectralWeightedGaps.lean": "ab15c771dfb57907c97b997ccc61dc9650e41c07a2298991e724cc7cc88edebd",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "bfb0a7f0ecbbc2c510e701d6b50f82ae14b1c7a7f2f53ee8e44b16d690493e74"
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "77be4ffdc72ffe439b0714f40366bee6897333852cc86d2fec8a94d448e553ad"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -629,17 +643,17 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 1480,
-    "newly_checked_declarations_this_continuation": 14,
-    "newly_authored_or_adapted_declarations_this_continuation": 14,
-    "new_theorems": 12,
+    "previous_checked_declarations": 1494,
+    "newly_checked_declarations_this_continuation": 17,
+    "newly_authored_or_adapted_declarations_this_continuation": 17,
+    "new_theorems": 15,
     "new_definitions": 2,
-    "authored_or_adapted_theorems": 12,
+    "authored_or_adapted_theorems": 15,
     "authored_or_adapted_definitions": 2,
     "already_present_shared_declarations_newly_audited": 0,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 1494,
-    "reuse": "Reuses verified physical conjugation,actual corrected-mode spectral variation,bilinear diagonal equality,actual diagonal-root construction,actual full physical pair exhaustion and intrinsic canonical-label factories. Generic real scalar branch/root comparison placed in shared NLS/RealAnalysis. No spectral/root/coupling model is assumed;no additional cutoff is needed for the native coupling Lipschitz bound."
+    "total_checked_declarations": 1511,
+    "reuse": "Reuses actual source inverse gain,actual canonical gap comparison,original normalized coefficients,physical parity,and original AppendixB compactness/topology. Generic weight and original-distribution membership bounds are shared. No original finite-p inverse spectral theorem is assumed implicitly."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -670,7 +684,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-real-gap-comparison.log",
+  "validation_log": ".lake/article-check/logs/validation-endpoint-bootstrap.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",

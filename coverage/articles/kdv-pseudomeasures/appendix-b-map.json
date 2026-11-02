@@ -186,10 +186,10 @@
     "net_qualification": "Arbitrary-filter statements require specified eventual endpoint bounds; no inference that arbitrary weak-star convergent nets are eventually norm bounded is used.",
     "validation": {
       "fresh_build": true,
-      "modules_checked": 172,
-      "audited_declarations": 1494,
-      "theorems": 1232,
-      "definitions": 262,
+      "modules_checked": 176,
+      "audited_declarations": 1511,
+      "theorems": 1247,
+      "definitions": 264,
       "warnings": 0,
       "tactic_suggestions": 0,
       "allowed_axioms": [
@@ -198,7 +198,7 @@
         "Quot.sound"
       ],
       "empty_axiom_sets_allowed": true,
-      "log": ".lake/article-check/logs/validation-real-gap-comparison.log"
+      "log": ".lake/article-check/logs/validation-endpoint-bootstrap.log"
     },
     "canonical_checkout": "Sources and build outputs kept read-only.",
     "main_theorems_verified": false,
@@ -276,6 +276,32 @@
       ],
       "empty_axiom_sets_allowed": true,
       "log": ".lake/article-check/logs/validation-compact-sets.log"
+    }
+  },
+  "endpoint_regularity_compactness_application": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-endpoint-bootstrap-map.json",
+    "conditional_application_verified": true,
+    "lower_compact_realization_required": true,
+    "original_finite_p_inverse_spectral_input_verified": false,
+    "results": [
+      "sourceReinterpretationSet contains exactly the target physical representatives of a supplied original family. The Appendix B compactness transfer proves it weak-star compact from a proved uniform target bound and a compact lower finite-p realization with the SAME ENTIRE distribution range. Every original family member has a target representative.",
+      "A compact original finite-p realization at base order-r supplies the base endpoint norm bound via all-p coefficient bounds. Combining this with the actual gap bootstrap gives target weak-star compactness whenever1<(r-t)*p.toReal,p finite>=1,and the compact realization has the exact original distribution range. The missing original isospectral compactness result is retained as an EXPLICIT hypothesis rather than claimed as proved."
+    ],
+    "validation": {
+      "fresh_build": true,
+      "modules_checked": 176,
+      "audited_declarations": 1511,
+      "theorems": 1247,
+      "definitions": 264,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "empty_axiom_sets_allowed": true,
+      "log": ".lake/article-check/logs/validation-endpoint-bootstrap.log"
     }
   }
 }

@@ -1,0 +1,95 @@
+{
+  "source": "arXiv:1610.00278v1 Section2.7 Lemma2.21 endpoint bootstrap and Theorem2.2 AppendixB compactness argument,conditional on the separate cited original finite-p input.",
+  "main_theorems_verified": false,
+  "source_theorem_2_2_verified": false,
+  "full_source_lemma_2_21_verified": false,
+  "uniform_endpoint_bootstrap_verified": true,
+  "conditional_original_weak_star_compactness_transfer_verified": true,
+  "original_finite_p_inverse_spectral_input_verified": false,
+  "modules": [
+    "NLS/SequenceSpaces/ScaledSobolevApproximation.lean",
+    "NLS/Fourier/PeriodicEndpointBounds.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralEndpointBootstrap.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralEndpointCompactness.lean"
+  ],
+  "declarations": [
+    "NLS.SpectralWeight.scaledSobolev_le_sobolev",
+    "NLS.SpectralWeight.mul_sobolev_le_scaledSobolev",
+    "NLS.SpectralWeight.scaledNegativeSobolev_bounds",
+    "NLS.SpectralWeight.inverseHeadScale",
+    "NLS.SpectralWeight.inverseHeadScale_pos_le_one",
+    "NLS.SpectralWeight.scaledSobolev_inverseHeadScale_le_two",
+    "NLS.SpectralWeight.scaledNegativeSobolev_double_le",
+    "NLS.Fourier.PeriodicFourierLebesgue.weight_mul_norm_coefficient_le",
+    "NLS.Fourier.PeriodicFourierLebesgue.exists_of_endpoint_bound",
+    "NLS.Fourier.PeriodicFourierLebesgue.exists_of_endpoint_weight_lower_bound",
+    "NLS.Articles.KdVPseudomeasures.source_inverse_cutoff_ge_two",
+    "NLS.Articles.KdVPseudomeasures.sourceAdaptedFourier_scaled_weight_bound",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_bootstrap",
+    "NLS.Articles.KdVPseudomeasures.sourceReinterpretationSet",
+    "NLS.Articles.KdVPseudomeasures.isCompact_sourceReinterpretationSet_of_lower_compact",
+    "NLS.Articles.KdVPseudomeasures.source_normBounded_of_compact_finite_realization",
+    "NLS.Articles.KdVPseudomeasures.isCompact_sourceReinterpretationSet_of_gap_bound"
+  ],
+  "results": [
+    "Shared scaled polynomial weights w(k)=(1+c*abs(k))^(r-t),0<c<=1,are genuine symmetric monotone submultiplicative source weights. Their combined negative weight W satisfies c^(r-t)*Sob(-t,k)<=W(k)<=Sob(-t,k). For c=1/(2N+1),the finite head abs(k)<=2N has w(k)<=2. W(2n)<=Sob(-t,n) retains the exact coefficient/gap frequency normalization.",
+    "Shared original periodic endpoint membership is constructed directly on the ENTIRE supplied smooth-test distribution from pointwise weighted coefficient bounds. A positive lower weight comparison recovers target membership of that SAME distribution with an explicit norm bound. Weighted coefficient estimates are also available at every Banach exponent.",
+    "The cutoff returned by the actual inverse-restriction factory already has N>=2 when m>=1. The adapted map is not changed after choosing its inverse. For physical base q with norm<=R and actual canonical target gap bound G,the ACTUAL adapted image belongs to W with norm<=2R+G:the unchanged head is bounded by2R,the two even tails byG,and physical odd modes vanish.",
+    "source_uniform_endpoint_bootstrap proves stronger original endpoint membership and a uniform norm bound from base norm R and ACTUAL canonical gap bound G. Choose m=4*(R+G+1),N from the verified inverse,c=1/(2N+1),and C=m/c^(r-t),all BEFORE q. The genuine source Proposition2.19 inverse gains W-regularity;weight comparison yields a physical Potential(t) with ENTIRE value equal to the original Potential(r). No target membership of q is assumed.",
+    "sourceReinterpretationSet contains exactly the target physical representatives of a supplied original family. The Appendix B compactness transfer proves it weak-star compact from a proved uniform target bound and a compact lower finite-p realization with the SAME ENTIRE distribution range. Every original family member has a target representative.",
+    "A compact original finite-p realization at base order-r supplies the base endpoint norm bound via all-p coefficient bounds. Combining this with the actual gap bootstrap gives target weak-star compactness whenever1<(r-t)*p.toReal,p finite>=1,and the compact realization has the exact original distribution range. The missing original isospectral compactness result is retained as an EXPLICIT hypothesis rather than claimed as proved."
+  ],
+  "domains": {
+    "base": "Original REAL,mean-zero,physically period-one Potential(r) with0<=r<1/2.",
+    "target": "Original Potential(t),0<=t<=r;the source regularities are sigma=-r and s=-t.",
+    "gap_bound": "For every n>=1,Sob(-t,n)*norm(sourceCanonicalGapValues(r,hr,q,n))<=G. These are the ACTUAL intrinsic canonical gaps,not supplied surrogate coefficients.",
+    "base_bound": "Original endpoint norm(q)<=R,R>=0;the compact finite-p corollary DERIVES this bound from its compact realization.",
+    "normalization": "Exact original period-two Fourier modes exp(i*pi*k*x);adapted coefficients at+/-2n use actual gap at n. Entire original smooth-test distributions agree.",
+    "lower_compactness": "A genuine K compact in original FL(2,-r,p),finite p>=1,with1<(r-t)*p.toReal,and equality between its ENTIRE distribution range and that of A: Set(Potential(r)). This is an explicit additional hypothesis.",
+    "topology": "Target WeakStarPotential(t) with the original real/complex Wiener weak-star topology from AppendixB,using the exact original endpoint norm."
+  },
+  "constants": {
+    "m": "4*(R+G+1)",
+    "N": "Chosen once from source_uniform_weighted_inverse_restriction BEFORE q and weights;the same cutoff is proved>=2.",
+    "c": "1/(2N+1)",
+    "auxiliary_weight": "w(k)=(1+c*abs(k))^(r-t)",
+    "image_bound": "norm(Omega_N(q))_W<=2R+G<=m/2",
+    "target_bound": "norm(q)_(-t,infinity)<=C=m/c^(r-t),uniform BEFORE q."
+  },
+  "conclusions": {
+    "source_uniform_endpoint_bootstrap": "NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_bootstrap",
+    "sourceReinterpretationSet": "NLS.Articles.KdVPseudomeasures.sourceReinterpretationSet",
+    "isCompact_sourceReinterpretationSet_of_lower_compact": "NLS.Articles.KdVPseudomeasures.isCompact_sourceReinterpretationSet_of_lower_compact",
+    "source_normBounded_of_compact_finite_realization": "NLS.Articles.KdVPseudomeasures.source_normBounded_of_compact_finite_realization",
+    "isCompact_sourceReinterpretationSet_of_gap_bound": "NLS.Articles.KdVPseudomeasures.isCompact_sourceReinterpretationSet_of_gap_bound"
+  },
+  "qualifications": [
+    "Every target representative is the SAME entire original distribution;reality,mean-zero and physical period-one are transported by this equality. No stronger membership of the input is presumed.",
+    "The scaled polynomial auxiliary family is genuinely submultiplicative and equivalent to the target weight with explicit constant. It replaces the printed exponential/minimum construction without changing target spaces or conclusions;auxiliary constants differ.",
+    "The compactness corollary is conditional on a genuine compact original finite-p realization of the same family. It does not assert that the original H-minus-one isospectral set has that realization.",
+    "The actual original finite-p inverse spectral regularity/compactness input from source[7,Corollaries3-4] remains unproved/unimported. Full source Theorem2.2,Lemma2.21 and all MAIN theorems remain open.",
+    "At equal orders t=r,the regularity bootstrap still holds. The compactness corollary has the strict threshold1<(r-t)*p.toReal,so it requires an actual positive regularity gap."
+  ],
+  "remaining": [
+    "Source Theorem2.2 and full Lemma2.21 remain unproved:the uniform endpoint bootstrap and conditional Appendix B compactness transfer are now PROVED,but the verified ORIGINAL finite-p inverse spectral regularity and isospectral compactness input cited as[7,Corollaries3-4] is still required. The compact finite-p realization in the new theorem must be constructed for the ACTUAL original H-minus-one isospectral set;it is not supplied by this milestone.",
+    "Identify the SAME intrinsic canonical spectrum/gaps across different predual orders for the same entire original distribution. Actual original H-minus-one operators/root spaces agree,and canonical ordering/multiplicity uniqueness should give this identity;it has not yet been separately proved.",
+    "Complete physical periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual original Dirichlet comparison source Theorem2.1(ii). Direct general-weight Theorem2.1(i),endpoint Propositions2.18-2.19,REAL source Lemma2.20 and all AppendixB clauses remain proved. The general complex-ratio Lemma2.20 remains unproved.",
+    "Construct and verify the ORIGINAL Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
+  ],
+  "validation": {
+    "fresh_build": true,
+    "modules_checked": 176,
+    "audited_declarations": 1511,
+    "theorems": 1247,
+    "definitions": 264,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "log": ".lake/article-check/logs/validation-endpoint-bootstrap.log"
+  }
+}

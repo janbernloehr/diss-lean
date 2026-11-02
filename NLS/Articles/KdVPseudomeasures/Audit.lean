@@ -1,3 +1,4 @@
+import NLS.Fourier.PeriodicEndpointBounds
 import NLS.RealAnalysis.SplitRootGap
 import NLS.Fourier.PeriodicWeightCongruence
 import NLS.SequenceSpaces.ConjugateReflection
@@ -38,6 +39,7 @@ import NLS.Fourier.PeriodicH1FormBound
 import NLS.SequenceSpaces.HillMixedKernel
 import NLS.SequenceSpaces.InfinityMatrix
 import NLS.SequenceSpaces.NegativeSpectralWeight
+import NLS.SequenceSpaces.ScaledSobolevApproximation
 import NLS.SequenceSpaces.NegativeModulation
 import NLS.SequenceSpaces.SignedSobolevConvolution
 import NLS.SequenceSpaces.ShiftReflection
@@ -167,11 +169,15 @@ import NLS.Articles.KdVPseudomeasures.SpectralAdaptedInverse
 import NLS.Articles.KdVPseudomeasures.SpectralRealAdapted
 import NLS.Articles.KdVPseudomeasures.SpectralInverseRestriction
 import NLS.Articles.KdVPseudomeasures.SpectralInverseGapComparison
+import NLS.Articles.KdVPseudomeasures.SpectralEndpointBootstrap
+import NLS.Articles.KdVPseudomeasures.SpectralEndpointCompactness
 import NLS.Articles.KdVPseudomeasures.SpectralAdaptedDiffeomorphism
 import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 
-/-! Exact transitive axiom audit of all selected public definitions and theorems. -/
-
+/-! Transitive axiom audit of every selected public declaration. -/
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.weight_mul_norm_coefficient_le
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.exists_of_endpoint_bound
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.exists_of_endpoint_weight_lower_bound
 #print axioms NLS.RealAnalysis.exists_split_roots_gap_comparison
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.weightCongr
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.weightCongr_val
@@ -408,6 +414,13 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.SpectralWeight.negativeShiftEquiv_apply
 #print axioms NLS.SpectralWeight.negativeShiftEquiv_symm_apply
 #print axioms NLS.SpectralWeight.negativeShiftedNorm
+#print axioms NLS.SpectralWeight.scaledSobolev_le_sobolev
+#print axioms NLS.SpectralWeight.mul_sobolev_le_scaledSobolev
+#print axioms NLS.SpectralWeight.scaledNegativeSobolev_bounds
+#print axioms NLS.SpectralWeight.inverseHeadScale
+#print axioms NLS.SpectralWeight.inverseHeadScale_pos_le_one
+#print axioms NLS.SpectralWeight.scaledSobolev_inverseHeadScale_le_two
+#print axioms NLS.SpectralWeight.scaledNegativeSobolev_double_le
 #print axioms NLS.WeightedCoeff.shiftWeightIsometry
 #print axioms NLS.WeightedCoeff.shiftWeightIsometry_apply
 #print axioms NLS.SpectralWeight.negativeModulation
@@ -1651,6 +1664,13 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_real_coupling_gap_comparison
 #print axioms NLS.Articles.KdVPseudomeasures.sourceAdaptedFourier_tail_le_canonical_gap
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_adapted_fourier_tail_gap_bound
+#print axioms NLS.Articles.KdVPseudomeasures.source_inverse_cutoff_ge_two
+#print axioms NLS.Articles.KdVPseudomeasures.sourceAdaptedFourier_scaled_weight_bound
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_bootstrap
+#print axioms NLS.Articles.KdVPseudomeasures.sourceReinterpretationSet
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_sourceReinterpretationSet_of_lower_compact
+#print axioms NLS.Articles.KdVPseudomeasures.source_normBounded_of_compact_finite_realization
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_sourceReinterpretationSet_of_gap_bound
 #print axioms NLS.Articles.KdVPseudomeasures.sourceProposition2_18
 #print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGapValues
 #print axioms NLS.Articles.KdVPseudomeasures.norm_sourceWeightedCanonicalGapValues_high_le
