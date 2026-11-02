@@ -8,6 +8,9 @@ import NLS.KdV.HillLocalization
 import NLS.KdV.HillZeroCount
 import NLS.KdV.HillWeightedCoefficients
 import NLS.KdV.HillBilinearSymmetry
+import NLS.FunctionalAnalysis.TwoDimensionalDeterminant
+import NLS.KdV.HillSpectralLipschitz
+import NLS.KdV.HillRootSeparation
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -19,7 +22,9 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
-    if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name then
+    if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
+        name == `NLS.FiniteSpectralDeterminant.det_prod_formula ||
+        name == `NLS.FiniteSpectralDeterminant.determinant_shift_bound then
       let axioms ← collectAxioms name
       for ax in axioms do
         unless allowed.contains ax do

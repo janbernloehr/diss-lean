@@ -4933,4 +4933,7 @@ import NLS.KdV.HillLocalization
 import NLS.KdV.HillZeroCount
 import NLS.KdV.HillWeightedCoefficients
 import NLS.KdV.HillBilinearSymmetry
+import NLS.FunctionalAnalysis.TwoDimensionalDeterminant
+import NLS.KdV.HillSpectralLipschitz
+import NLS.KdV.HillRootSeparation
 import NLS.Articles.KdVEstimates.EstimateAdapter

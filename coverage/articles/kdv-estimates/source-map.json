@@ -213,10 +213,14 @@
     {
       "module": "NLS/SequenceSpaces/Pairing.lean and Reflection.lean",
       "role": "Actually reused for absolute convergence of the physical bilinear coefficient pairing and the double convolution sum; reverse Fourier indices without introducing a Hermitian-pairing assumption."
+    },
+    {
+      "module": "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean",
+      "role": "Shared product determinant formula and quantitative scalar-shift estimate, extracted from the original Hill zero-count proof and reused by the homogeneous-diagonal factorization."
     }
   ],
   "next_shared_milestones": [
-    "Use the proved equal diagonal and weighted coupling bounds to derive spectral root separation and weighted gap-tail estimates with explicit corrected constants.",
+    "Sum the proved weighted two-root separation bounds to obtain gap-tail estimates, then identify the determinant roots with globally labeled physical periodic eigenvalues.",
     "Identify determinant analytic orders with the relevant periodic operator/characteristic multiplicities, construct ordered global spectral labels and prove the remaining central/exterior spectral bounds.",
     "Apply the period-one/mean-zero potential embedding in the exact source norm and weighted w_(2n) convention.",
     "Construct the Hill discriminant, root branches, contour actions, real positivity and physical canonical Birkhoff map with exact positive-mode and norm conventions.",
@@ -406,5 +410,30 @@
     "symmetry_proof": "The actual reconstructed functions satisfy the full Fourier equation with exactly their resonant residual. The complex bilinear pairing sums a_k*b_-k without conjugation. Absolute convergence and convolution summation interchange reuse the verified coefficient-pairing library. The even free symbol gives the Green identity, which proves equality of the two diagonals without a reality or evenness hypothesis on q.",
     "normalization_qualification": "q_(+/-2*n) denotes the raw period-two Fourier coefficient. Identifying it with the source period-one coefficient q_(+/-n), and matching the weighted source norm, require the pending explicit period-doubling adapter.",
     "remaining": "No spectral gap bound or source main theorem is claimed by these coefficient estimates alone."
+  },
+  "spectral_root_separation": {
+    "modules": [
+      "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean",
+      "NLS/KdV/HillSpectralLipschitz.lean",
+      "NLS/KdV/HillRootSeparation.lean"
+    ],
+    "source_correspondence": "Appendix A pages 29-30: homogeneous-diagonal determinant factorization and the root-separation step in Lemma A.6/Proposition A.7, with corrected strip/cutoff/constants.",
+    "proved_declarations": [
+      "NLS.KdV.hillComplementToL1_sub",
+      "NLS.KdV.shiftedNorm_hillComplementToL1_sub_le",
+      "NLS.KdV.hillTailInverse_sub",
+      "NLS.KdV.shiftedNorm_hillCorrectedMode_sub_le",
+      "NLS.KdV.hillDiagonal_sub_le",
+      "NLS.KdV.hillDiagonal_sub_le_quarter",
+      "NLS.KdV.hillReducedOperator_apply",
+      "NLS.KdV.hillReducedDeterminant_factorization",
+      "NLS.KdV.hillReduced_root_shift_bound",
+      "NLS.KdV.hillReduced_roots_weighted_separation"
+    ],
+    "spectral_variation": "For any z,y in the closed radius-6*n real strip, the diagonal difference is at most (16*||q||_w^2/n^2)*|z-y|. At cutoff n>=8*||q||_w this is at most |z-y|/4. The proof uses the literal complementary resolvent identity, a proved inverse-difference identity, and shifted norms; it does not assume a Cauchy derivative estimate.",
+    "factorization": "The constructed operator sends u to ((z-sigma_n-a_n)*u_1-c_n*u_2,(z-sigma_n-a_n)*u_2-c_-n*u_1), and its actual analytic determinant equals (z-sigma_n-a_n)^2-c_n*c_-n.",
+    "root_separation": "For n>=1, n>=8*||q||_w and any two zeros z,y of the constructed determinant in the stated strip: w(2*n)^2*|z-y|^2 <= 9*w(2*n)^2*(|q_(2*n)|^2+|q_(-2*n)|^2)+1152*||q||_w^4/n^2. Coincident roots are allowed.",
+    "reuse": "The product determinant formula and quantitative determinant-shift bound previously private to HillZeroCount have been moved to a single shared two-dimensional determinant module, generalized to any nontrivially normed field and reused by both Hill consumers.",
+    "remaining_qualifications": "The bound concerns actual determinant zeros, not an assumed spectral package. Global periodic eigenvalue labels, equality of determinant orders and operator multiplicities, the period-one coefficient adapter, and the summed tail estimate remain to be supplied. Main Theorems 1-3 remain unverified."
   }
 }
