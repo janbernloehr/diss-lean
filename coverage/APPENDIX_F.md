@@ -1,5 +1,30 @@
 # Appendix F: analyticity of the primitive
 
+## Actual-source open-gap endpoint assembly
+
+The [common endpoint spokes](../NLS/ZakharovShabat/AppendixFOpenGapSpokes.lean)
+choose both outward rays on the original isolating boundary and analytic
+unordered endpoint branches on one source neighborhood. The branches
+retain the printed quarter-distance margins, and their punctured spokes
+stay in the original closed disc and avoid every spectral gap.
+
+The [actual endpoint integrals](../NLS/ZakharovShabat/AppendixFSourceEndpointAnalytic.lean)
+identify the literal improper integral with its inverse-square-root
+parameter integral, including the full coefficient -i*(nu-rho).
+The actual source supplies the standard root, critical-point analyticity
+and regular chi factor. Both endpoint integrals are analytic on one
+common source neighborhood, with branches, paths and integrability
+derived from the explicit Section 10 and local Cauchy data.
+
+Two modules add six positive theorems and no new definitions,
+examples or refutations.
+
+The full check passed: 8,637 build jobs, 7,729 public examples and an axiom audit of 44,968 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The 31-group ordered Appendix F comparison remains open. The
+half-gap root-count passage and final reconciliation remain separate.
+The [broader completion qualifications](COMPLETENESS.md) remain.
+
 ## Source neighborhoods and continuity at collapsed gaps
 
 The [source-chart construction](../NLS/ZakharovShabat/AppendixFSourceChartCover.lean)

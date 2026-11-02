@@ -225,6 +225,15 @@ under explicit measurability and regular-factor hypotheses; eventual
 normalized-gap smallness is derived. Seventeen positive theorems and
 three examples add no new refutation. Full source-family assembly,
 other-gap exclusion and improper-path substitutions remain open.
+The [Appendix F open-gap source assembly](APPENDIX_F.md)
+constructs both original-boundary endpoint spokes with the printed
+quarter-distance margins. The actual improper integrals equal the
+singular parameter integrals with the full -i displacement coefficient.
+Actual source regularity gives integrability and analyticity of both
+endpoint integrals on one neighborhood. Six positive theorems add no
+new refutation. The half-gap root-count comparison and final ordered
+reconciliation remain separate.
+
 The [Appendix F source-neighborhood and continuity proofs](APPENDIX_F.md)
 construct chart coverage for the collapsed restriction and transport
 the corrected midpoint limit to any fixed original boundary point.

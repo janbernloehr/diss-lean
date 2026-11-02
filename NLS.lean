@@ -4896,3 +4896,5 @@ import NLS.ZakharovShabat.AppendixFMidpointIdentity
 import NLS.ZakharovShabat.AppendixFRescaledIdentity
 import NLS.ZakharovShabat.AppendixFSourceChartCover
 import NLS.ZakharovShabat.AppendixFFixedBoundary
+import NLS.ZakharovShabat.AppendixFOpenGapSpokes
+import NLS.ZakharovShabat.AppendixFSourceEndpointAnalytic

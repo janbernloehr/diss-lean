@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T01:14:43.395800+00:00",
-  "base_commit": "4caa9805d9e1021dcbf46c7f33312331464611cb",
+  "published_utc": "2026-11-02T01:36:01.167080+00:00",
+  "base_commit": "1970205b1b9b371981d285b36818c44fd338d6a6",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 203,
-    "module_hash_checks": 4228,
-    "distinct_modules": 2131
+    "review_records": 204,
+    "module_hash_checks": 4236,
+    "distinct_modules": 2133
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "4caa9805d9e1021dcbf46c7f33312331464611cb",
-    "validated_state": "Fresh full check after two Appendix F source-neighborhood and continuity modules; public examples unchanged.",
+    "base_commit": "1970205b1b9b371981d285b36818c44fd338d6a6",
+    "validated_state": "Fresh full check after two Appendix F open-gap source-assembly modules; public examples unchanged.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8635,
+    "build_jobs": 8637,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 44961,
+    "transitive_NLS_declarations": 44968,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 35069,
+    "gate_session": 77010,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4897,
-      "sha256": "281eb49630bb2deeba8d1b34837aafdbbed87083e053cd7c87b08817893f699d"
+      "files": 4899,
+      "sha256": "29b1ea7b531bd40b38f4b6d7583e2582f7e46674931fa097f5fdffe0f8bfd282"
     },
-    "full_gate_log_sha256": "a27ae663fb730e1a4015641a624675996fd7d37729fc4e2d4afc1f1f16f78def",
+    "full_gate_log_sha256": "df42c383075381ddfe194847f0b3cbc89977e5d6074083b1b3f532dc58f0ce5a",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix F and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixFSourceAssemblyFullCheck.log"
+    "full_gate_log": "work/AppendixFOpenGapAssemblyFullCheck.log"
   },
   "named_statements": [
     {
@@ -67859,6 +67859,149 @@
         "log_sha256": "a27ae663fb730e1a4015641a624675996fd7d37729fc4e2d4afc1f1f16f78def"
       },
       "source_record_sha256": "655caab6b135d9c605f9c46fbf92e3f55c346c1ff9c66027327a965438141fd4"
+    },
+    "AppendixFOpenGapAssemblySourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "1970205b1b9b371981d285b36818c44fd338d6a6",
+      "updated_utc": "2026-11-02T01:36:01.113980+00:00",
+      "source_lines": [
+        [
+          10890,
+          10907
+        ],
+        [
+          10953,
+          10965
+        ],
+        [
+          10953,
+          10965
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10890,
+            10907
+          ],
+          "requirement": "Both original-boundary endpoint spokes on a common source neighborhood",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_exists_boundary_ray",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_common_open_gap_spokes"
+          ],
+          "reviewed_claims": [
+            "Each outward ray meets the original disc boundary.",
+            "One source neighborhood supports analytic unordered endpoint branches with the printed quarter-distance margins.",
+            "Both punctured endpoint spokes lie in the original closed disc and avoid every source gap."
+          ],
+          "qualification": "No continuity of canonical endpoint labels is assumed; the analytic pair is unordered."
+        },
+        {
+          "source_lines": [
+            10953,
+            10965
+          ],
+          "requirement": "Actual-source identification and analyticity of the singular endpoint integral",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixF_source_root_eq_of_endpoint_pair",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_endpoint_parameter_identity",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_source_endpoint_integral_analytic"
+          ],
+          "reviewed_claims": [
+            "The unordered endpoint pair determines the actual standard root.",
+            "The genuine primitive endpoint limit and FTC give the improper integral with the full -i displacement coefficient.",
+            "Actual chi and critical-point analyticity supply the hypotheses of the inverse-square-root parameter-integral theorem."
+          ],
+          "qualification": "The identification with the literal polygonal endpoint integral uses the existing independent primitive construction."
+        },
+        {
+          "source_lines": [
+            10953,
+            10965
+          ],
+          "requirement": "Both actual endpoint integrals analytic on a single source neighborhood",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_open_endpoint_integrals_analytic"
+          ],
+          "reviewed_claims": [
+            "The source data constructs both terminal boundary points, both analytic branches and admissible spokes.",
+            "Both literal improper endpoint integrals are analytic on one common source neighborhood."
+          ],
+          "qualification": "The final theorem has explicit Section 10 data, isolating-family and local Cauchy-family inputs. Branch selection, path admissibility, integrability and regular-factor analyticity are derived."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ComplexAnalysis/AppendixFSpokeGeometry.lean": "6c8b099f987e88a081af9d9b47f14e356032e4d8bdeb82d62a01a95daef74243",
+        "NLS/ZakharovShabat/AppendixFOpenGapBranches.lean": "3b28c4483fd3802edec4c047cea0032fee97c659eed34780ce0075756af23610",
+        "NLS/ZakharovShabat/AppendixFSourceSpokes.lean": "7fe83dc2d1625aafa5a4ad28560178714be32f1efc173019a0801ec124e6a9bd",
+        "NLS/ZakharovShabat/AppendixFEndpointAnalytic.lean": "c0a73eee4197cef7eeb85a9b31832829c44dd0826f432891c8046a9582e1fb1f",
+        "NLS/ZakharovShabat/SourceAbelianEndpointIntegrals.lean": "32bb4ef6cb929323c6dc732c4b375dd72ce16cdd95429161b27c1c28a7264301",
+        "NLS/ZakharovShabat/SourceActionChi.lean": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4",
+        "NLS/ZakharovShabat/AppendixFOpenGapSpokes.lean": "23aec44de61a49873c7adb29fb1f184586482f8aab0898ce6df7d90f338c0b24",
+        "NLS/ZakharovShabat/AppendixFSourceEndpointAnalytic.lean": "06258ebe720c6898ecdbc43e21e35e4b496386eadd3126ed777b225f888b7ed4"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ComplexAnalysis/AppendixFSpokeGeometry.lean",
+        "NLS/ZakharovShabat/AppendixFOpenGapBranches.lean",
+        "NLS/ZakharovShabat/AppendixFSourceSpokes.lean",
+        "NLS/ZakharovShabat/AppendixFEndpointAnalytic.lean",
+        "NLS/ZakharovShabat/SourceAbelianEndpointIntegrals.lean",
+        "NLS/ZakharovShabat/SourceActionChi.lean",
+        "NLS/ZakharovShabat/AppendixFOpenGapSpokes.lean",
+        "NLS/ZakharovShabat/AppendixFSourceEndpointAnalytic.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all 31 ordered Appendix F groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.appendixF_exists_boundary_ray",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_endpoint_parameter_identity",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_open_endpoint_integrals_analytic",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_source_endpoint_integral_analytic",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_common_open_gap_spokes",
+        "NLS.ZakharovShabat.appendixF_source_root_eq_of_endpoint_pair"
+      ],
+      "declaration_inventory_count": 44968,
+      "qualification": "Two modules add six positive theorems assembling the actual-source open-gap endpoint integrals. Both outward rays meet the original isolating boundary. Analytic unordered endpoint branches satisfy the printed quarter-distance margins on one common source neighborhood, and both punctured spokes avoid every gap. The unordered pair identifies the actual standard root. A primitive FTC with its genuine endpoint limit identifies the literal improper endpoint integral with the inverse-square-root parameter integral and its full -i displacement coefficient. Actual chi and critical-point analyticity supply the regularity hypotheses, and both improper endpoint integrals are analytic on a common source neighborhood. The final theorem constructs the branches and admissible paths and derives integrability; it assumes the explicit Section 10 data, isolating family and local Cauchy family. The half-gap root-count comparison remains separate. No new definition, example or refutation is added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          131,
+          132,
+          133,
+          134
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271",
+          "work/tmp/pdfs/appendix-f-ordered-132.png": "a96d8aaab751ae81affe9f561e4c85c18cd84f4a74e021d7a2d10eebe106ecac",
+          "work/tmp/pdfs/appendix-f-ordered-133.png": "b15b972871d0116e43cfcfaedacd02307f64124d54384756f66901907be92a9c",
+          "work/tmp/pdfs/appendix-f-ordered-134.png": "e833be52e2f68ebb794206466caa59bcb046e4d5f773cdb83c46b941f5d43656"
+        }
+      },
+      "preceding_review_hash": "655caab6b135d9c605f9c46fbf92e3f55c346c1ff9c66027327a965438141fd4",
+      "validation_lean_sources": {
+        "files": 4899,
+        "sha256": "29b1ea7b531bd40b38f4b6d7583e2582f7e46674931fa097f5fdffe0f8bfd282"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 6,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ComplexAnalysis.appendixF_exists_boundary_ray._simp_1_1"
+      ],
+      "full_gate": {
+        "session": 77010,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixFOpenGapAssemblyFullCheck.log",
+        "log_sha256": "df42c383075381ddfe194847f0b3cbc89977e5d6074083b1b3f532dc58f0ce5a"
+      },
+      "source_record_sha256": "1bca5b98ecf8d26eb945407acd28e471d2a8a42267ae20bd8e90996f0b5590a1"
     }
   }
 }

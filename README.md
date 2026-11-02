@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix F source neighborhoods and continuity](coverage/APPENDIX_F.md)
-constructs the collapsed restriction's source neighborhoods, transports
-the corrected midpoint limit to any fixed original boundary point,
-and proves continuity through mixed collapsed and open-gap sequences.
-Eight positive theorems add no new refutation.
+Latest step: [Appendix F open-gap endpoint assembly](coverage/APPENDIX_F.md)
+constructs both original-boundary spokes and proves analyticity of
+both actual improper endpoint integrals on one source neighborhood.
+The exact parameter integral retains its full -i displacement coefficient.
+Six positive theorems add no new refutation.
 The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
