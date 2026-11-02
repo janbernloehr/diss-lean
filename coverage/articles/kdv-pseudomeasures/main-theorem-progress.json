@@ -1,0 +1,40 @@
+{
+  "main_theorems_verified": false,
+  "source_theorems": [
+    "1.1",
+    "1.3",
+    "1.4",
+    "5.1",
+    "5.9"
+  ],
+  "verified_dependencies": {
+    "1.1": [
+      "weakStarActionPhaseFlow_add",
+      "norm_weakStarActionPhaseFlow",
+      "continuous_weakStarActionPhaseFlow_orbit",
+      "continuous_sobolevPseudomeasureWeakStar_of_bounded_coefficients"
+    ],
+    "1.3": [
+      "isEmbedding_lowerWeakStarTrajectory",
+      "continuous_weakStarTrajectory_iff_lower",
+      "continuous_trajectory_iff_hminusOne",
+      "continuous_weakStarInvariantActionTrajectory"
+    ]
+  },
+  "essential_open_obligations": [
+    "Physical Hill spectrum and Birkhoff map.",
+    "Endpoint spectral estimates and inverse regularity needed by 1.4.",
+    "Actual KdV H^-1 smooth-approximation solution extension, invariance and continuity.",
+    "Exact paper real-predual/even-mode source identifications.",
+    "Wiener Birkhoff diffeomorphism and actual KdV analytic trajectory map."
+  ],
+  "no_completion_claim": "The generic frequency functional \u03a9 is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
+  "shared_module_moves": {
+    "WeakStarEndpoint": "NLS/SequenceSpaces/WienerWeakStar.lean",
+    "WeightedWeakStarEndpoint": "NLS/SequenceSpaces/WeightedWienerWeakStar.lean",
+    "AppendixBWeakStar": "NLS/SequenceSpaces/WeightedWeakStarCompactness.lean",
+    "AppendixBLowerTopology": "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean",
+    "PeriodicWeakStarEndpoint": "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean"
+  },
+  "goal_status": "active"
+}

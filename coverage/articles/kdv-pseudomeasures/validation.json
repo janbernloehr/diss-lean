@@ -1,23 +1,32 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "isolated article branch; Appendix B compactness and topology",
+  "phase": "shared endpoint dynamics, physical weak-star identification and compact-open trajectory transfer",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
   "modules_checked": [
-    "NLS/Articles/KdVPseudomeasures/AppendixBLowerTopology.lean",
-    "NLS/Articles/KdVPseudomeasures/AppendixBWeakStar.lean",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean",
-    "NLS/Articles/KdVPseudomeasures/PeriodicWeakStarEndpoint.lean",
+    "NLS/SequenceSpaces/WienerWeakStar.lean",
+    "NLS/SequenceSpaces/WeightedWienerWeakStar.lean",
+    "NLS/SequenceSpaces/WeightedWeakStarCompactness.lean",
+    "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean",
+    "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean",
+    "NLS/Fourier/PeriodicWeightedWeakStar.lean",
+    "NLS/Dynamics/ActionDependentWeightedPhaseFlow.lean",
+    "NLS/Dynamics/WeightedWeakStarPhaseFlow.lean",
     "NLS/Articles/KdVPseudomeasures/WeakStarEndpoint.lean",
-    "NLS/Articles/KdVPseudomeasures/WeightedWeakStarEndpoint.lean"
+    "NLS/Articles/KdVPseudomeasures/WeightedWeakStarEndpoint.lean",
+    "NLS/Articles/KdVPseudomeasures/PeriodicWeakStarEndpoint.lean",
+    "NLS/Articles/KdVPseudomeasures/AppendixBWeakStar.lean",
+    "NLS/Articles/KdVPseudomeasures/AppendixBLowerTopology.lean",
+    "NLS/Articles/KdVPseudomeasures/TrajectoryTopology.lean",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 40,
-  "definitions": 10,
+  "proved_theorems": 73,
+  "definitions": 21,
   "axiom_audit": {
-    "method": "Lean #print axioms for every new definition and theorem; checker matches declaration set and rejects axioms outside allowlist",
-    "declarations": 50,
+    "method": "Lean #print axioms on all 94 checked definitions/theorems. Checker derives the declaration inventory from source and matches it exactly to audit entries and output before checking the allowlist.",
+    "declarations": 94,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -38,23 +47,62 @@
     "For every finite ENNReal exponent p with Fact(1<=p), at (-r-t)*p.toReal>1, the lower norm realization preserves raw coefficients and induces exactly the weak-star topology on bounded sets.",
     "Weak-star sequence convergence is equivalent to boundedness plus lower weighted norm convergence at every admissible pair (t,p).",
     "A set is weak-star compact iff norm bounded and its actual lower weighted norm image is compact.",
-    "Real conjugate-symmetric mean-zero coefficients form a closed subset; its intersections with weighted norm balls are compact, metrizable and sequentially compact."
+    "Real conjugate-symmetric mean-zero coefficients form a closed subset; its intersections with weighted norm balls are compact, metrizable and sequentially compact.",
+    "Reusable endpoint results moved to shared NLS/SequenceSpaces and NLS/Fourier modules, preserving existing article import paths.",
+    "Existing ActionDependentWeightedPhaseFlow reused byte-for-byte from c794d144d9e58aa28e05833c4338bb050df607ef on articles/kdv-kdv2-frequencies; its 14 declarations are included in the fresh audit.",
+    "For arbitrary real frequencies depending on squared amplitudes, the weighted endpoint flow has the group law and exactly preserves its strong dual norm at every time.",
+    "Every endpoint orbit is weak-star continuous without a continuity hypothesis on the frequency functional.",
+    "On bounded input families, coordinatewise continuous realized frequencies give joint weak-star continuity and continuous dependence in the compact-open compact-time trajectory space.",
+    "For bounded invariant subsets, continuous dependence is proved with codomain C([-T,T],V), retaining the weak-star subtype topology. Odd frequencies preserve the real mean-zero locus.",
+    "Existing PeriodicSobolevDuality transports to a proved coefficientWeakDualHomeomorph. Weighted original-distribution norm balls are compact in the actual original Wiener weak dual; smooth-test evaluation is exactly the original normalized distribution action.",
+    "The compact-open trajectory topology is induced by the lower realization on all bounded subsets. Article specialization gives the H^-1 coefficient trajectory topology exactly for s>-1/2."
   ],
-  "source_correspondence": "Appendix B.1(i)-(iv), pp.37-38: proved on the full complex weighted dual, with closed real mean-zero ball restriction. Exact paper distribution/even-mode and real-predual topology identifications remain explicit integration obligations; no KdV main theorem verified.",
-  "build_isolation": "Separate worktree .lake/article-check outputs; private import-view symlinks read canonical compiled NLS modules and pinned package compiled imports. No writing lake build, no .lake copy; focused direct compiler checks only.",
+  "source_correspondence": "Appendix B endpoint results plus dynamical/topological dependencies for Theorems 1.1 and 1.3. Weighted coefficient/original complex distribution weak-star identification now proved. Generic action flow is not identified with KdV. Paper real-predual and period-two even-mode source restrictions remain to finish. No article main theorem is verified.",
+  "build_isolation": "Worktree-local .lake/article-check outputs. The focused checker expands read-only reference import symlinks only where local outputs are needed and asserts that no output path traverses a symlink outside the private build root. All 15 focused module checks and transitive audits passed; no writing build or .lake copy in canonical checkout.",
   "canonical_checkout_modified_by_this_task": false,
-  "branch_or_worktree_created": false,
-  "publication_status": "Validated branch commit/push follows this record; no main integration.",
+  "branch_or_worktree_created": true,
+  "publication_status": "Validated milestone ready for branch commit and push; main integration is separate.",
   "source_hash": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
   "output_sha256": {
-    "NLS/Articles/KdVPseudomeasures/AppendixBLowerTopology.lean": "62345fed7462118a26d1cfbb8885eaff8b78b9e646073175e470dd4670a38e09",
-    "NLS/Articles/KdVPseudomeasures/AppendixBWeakStar.lean": "ba29ff9d34943fb47a3b10b97da8f52a32ed951f0845c2c0aee304f0b79adb9f",
-    "NLS/Articles/KdVPseudomeasures/PeriodicWeakStarEndpoint.lean": "c821ef46e5e10b81899798df71e23e54a0541ab442748a4bd78e6af6079efba4",
-    "NLS/Articles/KdVPseudomeasures/WeakStarEndpoint.lean": "2a076d7574d6563ce90040c202599697876fb6d01b6ed7c1dba84ad35a0c378c",
-    "NLS/Articles/KdVPseudomeasures/WeightedWeakStarEndpoint.lean": "02d51b1687827c7a5f643990ffb54b88f6f2dbcba67a507f2395677f394a0854"
+    "NLS/SequenceSpaces/WienerWeakStar.lean": "2a076d7574d6563ce90040c202599697876fb6d01b6ed7c1dba84ad35a0c378c",
+    "NLS/SequenceSpaces/WeightedWienerWeakStar.lean": "7015840f12a415b9c63ed5398e6bd9e1ddf9d2fe888a747520b7689c6a70be1c",
+    "NLS/SequenceSpaces/WeightedWeakStarCompactness.lean": "63a47548a5996ab048ff3f4fdd2437c6c08ea01bb9c7a46f0d280582089b1d7b",
+    "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean": "ba8dc80200df71f8b0caca6517a85bedfe4a772afd87f1ca394e2178063ee5af",
+    "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean": "03ae1556984317c6d46a0d110226c0359a6a0bdad43c0ae25a16fc882e09cb51",
+    "NLS/Fourier/PeriodicWeightedWeakStar.lean": "d0cd997aec48bbc96a77797449dd8a5f46552e918c1bff17e6aa8fba9cc291ba",
+    "NLS/Dynamics/ActionDependentWeightedPhaseFlow.lean": "291e9ae1fca267a2338b4bc8ef45b102bf1157213480e79c828d4b1eb163e895",
+    "NLS/Dynamics/WeightedWeakStarPhaseFlow.lean": "50c2152b061e6fc41fc5794708b1d4619cc1ee288a0de75a0bce8590782b784e",
+    "NLS/Articles/KdVPseudomeasures/WeakStarEndpoint.lean": "71117c48b2360252e23bf9fc45f502776f6439bc81d6803c3231bc609062d655",
+    "NLS/Articles/KdVPseudomeasures/WeightedWeakStarEndpoint.lean": "0197cdbdef74dbcdd866a50d992e88a6d777c3a1509e01aed61e6b626ccb69ad",
+    "NLS/Articles/KdVPseudomeasures/PeriodicWeakStarEndpoint.lean": "63c6b33ed88e7ae5d92a02186d60ba65d4771d8e70de180e4affcdc6162b8b19",
+    "NLS/Articles/KdVPseudomeasures/AppendixBWeakStar.lean": "dea711737323aa539b8c8e8c0868017a47e32200033efddaec50d360820096c6",
+    "NLS/Articles/KdVPseudomeasures/AppendixBLowerTopology.lean": "7f14bb7e852aadfccbc01e6605aa0831a3d4c952388c68c5485f519b122e3222",
+    "NLS/Articles/KdVPseudomeasures/TrajectoryTopology.lean": "2fb656b877222b76070bebe4820f8f1076bf04da513df28cdbbe49181a64891a",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "526113c0834e46ac57d5ade24272cf826d49bf5fd44b474c3328a63ad5e51242"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
   "branch": "articles/kdv-pseudomeasures",
-  "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted."
+  "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
+  "goal_turn_classification": "progress",
+  "authorship_counts": {
+    "prior_moved_declarations": 50,
+    "reused_shared_flow_declarations": 14,
+    "additional_declarations": 30
+  },
+  "shared_reuse": {
+    "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
+    "branch": "articles/kdv-kdv2-frequencies",
+    "file": "NLS/Dynamics/ActionDependentWeightedPhaseFlow.lean",
+    "byte_identical": true
+  },
+  "shared_spectral_state_inspected": {
+    "branch": "articles/kdv-estimates",
+    "head": "5b29695",
+    "available": [
+      "NLS/KdV/FreeHill.lean",
+      "NLS/KdV/HillComplement.lean"
+    ],
+    "remaining": "Physical Hill spectrum, Birkhoff map and endpoint spectral estimates are not supplied by these modules."
+  }
 }

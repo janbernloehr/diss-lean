@@ -1,8 +1,17 @@
+import NLS.SequenceSpaces.WienerWeakStar
+import NLS.SequenceSpaces.WeightedWienerWeakStar
+import NLS.SequenceSpaces.WeightedWeakStarCompactness
+import NLS.SequenceSpaces.WeightedWeakStarLowerTopology
+import NLS.Fourier.PeriodicPseudomeasureWeakStar
+import NLS.Fourier.PeriodicWeightedWeakStar
+import NLS.Dynamics.ActionDependentWeightedPhaseFlow
+import NLS.Dynamics.WeightedWeakStarPhaseFlow
 import NLS.Articles.KdVPseudomeasures.WeakStarEndpoint
 import NLS.Articles.KdVPseudomeasures.WeightedWeakStarEndpoint
 import NLS.Articles.KdVPseudomeasures.PeriodicWeakStarEndpoint
 import NLS.Articles.KdVPseudomeasures.AppendixBWeakStar
 import NLS.Articles.KdVPseudomeasures.AppendixBLowerTopology
+import NLS.Articles.KdVPseudomeasures.TrajectoryTopology
 
 #print axioms NLS.Coeff.wienerWeakStar
 #print axioms NLS.Coeff.wienerWeakStar_apply
@@ -13,8 +22,6 @@ import NLS.Articles.KdVPseudomeasures.AppendixBLowerTopology
 #print axioms NLS.WeightedCoeff.sobolevWeakStar_apply
 #print axioms NLS.WeightedCoeff.tendsto_sobolevWeakStar_of_bounded_coefficients
 #print axioms NLS.WeightedCoeff.tendsto_sobolevWeakStar_truncate
-#print axioms NLS.Fourier.PeriodicFourierLebesgue.pseudomeasureWeakStar
-#print axioms NLS.Fourier.PeriodicFourierLebesgue.tendsto_pseudomeasureWeakStar_of_bounded_coefficients
 #print axioms NLS.WeightedCoeff.wienerDualRealization
 #print axioms NLS.WeightedCoeff.weakStarCoordinates
 #print axioms NLS.WeightedCoeff.continuous_weakStarCoordinates
@@ -54,3 +61,49 @@ import NLS.Articles.KdVPseudomeasures.AppendixBLowerTopology
 #print axioms NLS.WeightedCoeff.isCompact_iff_lowerWeakStarRealization_image
 #print axioms NLS.WeightedCoeff.tendsto_weakStar_seq_iff_bounded_lower
 #print axioms NLS.WeightedCoeff.isCompact_weakStar_iff_bounded_lower_compact
+#print axioms NLS.WeightedCoeff.lowerWeakStarMapOn
+#print axioms NLS.WeightedCoeff.isEmbedding_lowerWeakStarTrajectory
+#print axioms NLS.WeightedCoeff.continuous_weakStarTrajectory_iff_lower
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.pseudomeasureWeakStar
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.tendsto_pseudomeasureWeakStar_of_bounded_coefficients
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.coefficientWeakDualHomeomorph
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.sobolevPseudomeasureWeakStar
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.sobolevPseudomeasureWeakStar_eq
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.sobolevPseudomeasureWeakStar_ofSmooth
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.isCompact_sobolevPseudomeasureWeakStar_closedBall
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.continuous_sobolevPseudomeasureWeakStar_of_bounded_coefficients
+#print axioms NLS.WeightedCoeff.continuous_phaseFlow_family
+#print axioms NLS.WeightedCoeff.squaredAmplitudes
+#print axioms NLS.WeightedCoeff.squaredAmplitudes_phaseFlow
+#print axioms NLS.WeightedCoeff.actionPhaseFlow
+#print axioms NLS.WeightedCoeff.actionPhaseFlow_apply
+#print axioms NLS.WeightedCoeff.squaredAmplitudes_actionPhaseFlow
+#print axioms NLS.WeightedCoeff.actionPhaseFlow_zero
+#print axioms NLS.WeightedCoeff.actionPhaseFlow_add
+#print axioms NLS.WeightedCoeff.norm_actionPhaseFlow
+#print axioms NLS.WeightedCoeff.continuous_actionPhaseFlow_orbit
+#print axioms NLS.WeightedCoeff.continuous_actionPhaseFlow
+#print axioms NLS.WeightedCoeff.actionPhaseTrajectory
+#print axioms NLS.WeightedCoeff.continuous_actionPhaseTrajectory
+#print axioms NLS.WeightedCoeff.actionPhaseHomeomorph
+#print axioms NLS.WeightedCoeff.weakStarCoeff_wienerDualRealization
+#print axioms NLS.WeightedCoeff.wienerDualRealization_weakStarCoeff
+#print axioms NLS.WeightedCoeff.norm_weakStarCoeff
+#print axioms NLS.WeightedCoeff.norm_wienerDualRealization
+#print axioms NLS.WeightedCoeff.weakStarActionPhaseFlow
+#print axioms NLS.WeightedCoeff.weakStarCoordinates_actionPhaseFlow
+#print axioms NLS.WeightedCoeff.norm_weakStarActionPhaseFlow
+#print axioms NLS.WeightedCoeff.weakStarActionPhaseFlow_zero
+#print axioms NLS.WeightedCoeff.weakStarActionPhaseFlow_add
+#print axioms NLS.WeightedCoeff.continuous_weakStar_of_bounded_coordinates
+#print axioms NLS.WeightedCoeff.isBounded_weakStarActionPhaseFlow_family
+#print axioms NLS.WeightedCoeff.continuous_weakStarActionPhaseFlow_family
+#print axioms NLS.WeightedCoeff.continuous_weakStarActionPhaseFlow_orbit
+#print axioms NLS.WeightedCoeff.weakStarActionPhaseTrajectory
+#print axioms NLS.WeightedCoeff.continuous_weakStarActionPhaseTrajectory_family
+#print axioms NLS.WeightedCoeff.weakStarActionPhaseFlow_mem_realMeanZero
+#print axioms NLS.WeightedCoeff.weakStarInvariantActionTrajectory
+#print axioms NLS.WeightedCoeff.continuous_weakStarInvariantActionTrajectory
+#print axioms NLS.Articles.KdVPseudomeasures.hminusOne_threshold
+#print axioms NLS.Articles.KdVPseudomeasures.hminusOneMapOn
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_trajectory_iff_hminusOne

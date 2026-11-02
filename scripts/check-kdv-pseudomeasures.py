@@ -1,35 +1,84 @@
+"""Focused pinned Lean checks with read-only reference imports and private outputs."""
 from pathlib import Path
-import os, subprocess, sys
-root=Path(__file__).resolve().parent.parent
-repo=Path('/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls')
-lean=Path('/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/tooling/elan/toolchains/leanprover--lean4---v4.33.1/bin/lean')
-# Lean selects one root per module prefix. Make a private read-only import view.
-view=root/'.lake/article-check/lib/lean'
-(view/'NLS/Articles/KdVPseudomeasures').mkdir(parents=True,exist_ok=True)
-(root/'.lake/article-check/logs').mkdir(parents=True,exist_ok=True)
-for child in (repo/'.lake/build/lib/lean/NLS').iterdir():
-    target=view/'NLS'/child.name
-    if not target.exists(): target.symlink_to(child, target_is_directory=child.is_dir())
-paths=[view]+list((repo/'.lake/packages').glob('*/.lake/build/lib/lean'))
-elan=repo.parent.parent/'work/tooling/elan'
-env=dict(os.environ, LEAN_PATH=':'.join(map(str,paths)), ELAN_HOME=str(elan),
-    PATH=str(elan/'bin')+os.pathsep+os.environ.get('PATH',''),
-    MATHLIB_CACHE_DIR=str(repo.parent.parent/'work/cache/mathlib'))
-modules=sys.argv[1:] or ['WeakStarEndpoint','WeightedWeakStarEndpoint','PeriodicWeakStarEndpoint','AppendixBWeakStar','AppendixBLowerTopology','Audit']
+import os, re, subprocess, sys
+root = Path(__file__).resolve().parent.parent
+repo = Path(os.environ.get('DISS_LEAN_REFERENCE_ROOT', '/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls'))
+elan = Path(os.environ.get('DISS_LEAN_ELAN_HOME', str(repo.parent.parent / 'work/tooling/elan')))
+lean = elan / 'toolchains/leanprover--lean4---v4.33.1/bin/lean'
+view = root / '.lake/article-check/lib/lean'
+logs = root / '.lake/article-check/logs'
+logs.mkdir(parents=True, exist_ok=True)
+modules = [
+    'NLS.SequenceSpaces.WienerWeakStar',
+    'NLS.SequenceSpaces.WeightedWienerWeakStar',
+    'NLS.SequenceSpaces.WeightedWeakStarCompactness',
+    'NLS.SequenceSpaces.WeightedWeakStarLowerTopology',
+    'NLS.Fourier.PeriodicPseudomeasureWeakStar',
+    'NLS.Fourier.PeriodicWeightedWeakStar',
+    'NLS.Dynamics.ActionDependentWeightedPhaseFlow',
+    'NLS.Dynamics.WeightedWeakStarPhaseFlow',
+] + ['NLS.Articles.KdVPseudomeasures.' + m for m in [
+    'WeakStarEndpoint', 'WeightedWeakStarEndpoint', 'PeriodicWeakStarEndpoint',
+    'AppendixBWeakStar', 'AppendixBLowerTopology', 'TrajectoryTopology', 'Audit']]
+# Expand only directories that need local compiled outputs. All reference
+# imports remain symlinks; no compiler output may traverse those symlinks.
+def local_directory(path):
+    if path.is_symlink():
+        reference = path.resolve(strict=True)
+        path.unlink()
+        path.mkdir()
+        for child in reference.iterdir():
+            (path / child.name).symlink_to(child, target_is_directory=child.is_dir())
+    else:
+        path.mkdir(parents=True, exist_ok=True)
+(view / 'NLS').mkdir(parents=True, exist_ok=True)
+for child in (repo / '.lake/build/lib/lean/NLS').iterdir():
+    target = view / 'NLS' / child.name
+    if not target.exists():
+        target.symlink_to(child, target_is_directory=child.is_dir())
 for module in modules:
-    source=root/'NLS/Articles/KdVPseudomeasures'/f'{module}.lean'
-    output=view/'NLS/Articles/KdVPseudomeasures'/f'{module}.olean'
-    p=subprocess.run([str(lean),'-DautoImplicit=false','-R',str(root),'-o',str(output),str(source)],env=env,capture_output=True,text=True)
-    (root/'.lake/article-check/logs'/f'check-{module}.log').write_text(p.stdout+p.stderr)
-    print(module, 'exit:',p.returncode)
-    print(p.stdout+p.stderr,end='')
-    if p.returncode: sys.exit(p.returncode)
-    if module == 'Audit':
-        import re
-        reports=re.findall(r"'([^']+)' depends on axioms: \[(.*?)\]",p.stdout,re.S)
-        expected=re.findall(r'^#print axioms (\S+)',source.read_text(),re.M)
-        assert {d for d,_ in reports}==set(expected), reports
-        allowed={'propext','Classical.choice','Quot.sound'}
+    rel = Path(*module.split('.'))
+    for parent in reversed(rel.parents):
+        local_directory(view / parent)
+    target = (view / rel).with_suffix('.olean')
+    if target.is_symlink():
+        target.unlink()
+paths = [view] + list((repo / '.lake/packages').glob('*/.lake/build/lib/lean'))
+env = dict(os.environ, LEAN_PATH=':'.join(map(str, paths)), ELAN_HOME=str(elan),
+           PATH=str(elan / 'bin') + os.pathsep + os.environ.get('PATH', ''),
+           MATHLIB_CACHE_DIR=str(repo.parent.parent / 'work/cache/mathlib'))
+requested = sys.argv[1:]
+selected = [m if m.startswith('NLS.') else 'NLS.Articles.KdVPseudomeasures.' + m for m in requested] if requested else modules
+for module in selected:
+    rel = Path(*module.split('.'))
+    source = (root / rel).with_suffix('.lean')
+    output = (view / rel).with_suffix('.olean')
+    assert not output.is_symlink() and output.parent.resolve().is_relative_to(view), output
+    result = subprocess.run([str(lean), '-DautoImplicit=false', '-R', str(root), '-o', str(output), str(source)],
+                            env=env, capture_output=True, text=True)
+    (logs / ('check-' + module.split('.')[-1] + '.log')).write_text(result.stdout + result.stderr)
+    print(module, 'exit:', result.returncode)
+    if result.returncode or module.endswith('.Audit'):
+        print(result.stdout + result.stderr, end='')
+    elif result.stdout or result.stderr:
+        print(result.stdout + result.stderr, end='')
+    if result.returncode:
+        sys.exit(result.returncode)
+    if module.endswith('.Audit'):
+        reports = re.findall(r"'([^']+)' depends on axioms: \[(.*?)\]", result.stdout, re.S)
+        expected = re.findall(r'^#print axioms (\S+)', source.read_text(), re.M)
+        inventory = []
+        for checked in modules:
+            if checked.endswith('.Audit'):
+                continue
+            text = (root / Path(*checked.split('.'))).with_suffix('.lean').read_text()
+            namespaces = re.findall(r'^namespace (\S+)\s*$', text, re.M)
+            if namespaces:
+                assert len(namespaces) == 1, (checked, namespaces)
+                inventory += [namespaces[0] + '.' + n for n in re.findall(r'^(?:@\[[^\n]*\]\s*)?(?:def|theorem)\s+(\w+)', text, re.M)]
+        assert len(inventory) == len(set(inventory)), inventory
+        assert set(expected) == set(inventory), (set(expected) ^ set(inventory))
+        assert {d for d, _ in reports} == set(expected), reports
         for declaration, axioms in reports:
-            assert {a.strip() for a in axioms.split(',')} <= allowed, (declaration,axioms)
-print('All requested private checks passed.')
+            assert {a.strip() for a in axioms.split(',')} <= {'propext', 'Classical.choice', 'Quot.sound'}, (declaration, axioms)
+print('All requested isolated checks passed.')

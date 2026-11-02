@@ -23,7 +23,7 @@
     "solution": "Unique H^-1 limit of smooth-data KdV solutions, for every smooth approximating sequence converging in H^-1, pointwise in time; imported existence and uniform-on-compact-time continuity must be supplied.",
     "weak_star": "sigma(FL_0^(s,infinity), FL_0^(-s,1)); coordinate version sigma(ell_0^(s,infinity), ell_0^(-s,1)). Actual predual topology, not full-dual weak topology.",
     "trajectory_topology": "Continuous maps on [-T,T] into the weak-star space, with compact-open/uniform-on-compact topology; pointwise-in-time dependence alone is insufficient.",
-    "library_pairing": "Library distributions act complex-linearly. Physical bilinear pairing is sum a_n*b_(-n). For the paper sesquilinear tests, conjugation changes the test variable; on real-symmetric test space reversal equals coefficient conjugation. Current lemmas are ambient complex results; paper real/mean-zero/even-mode subtype identification still to be implemented."
+    "library_pairing": "Library distributions act complex-linearly with physical bilinear pairing sum a_n*b_(-n). The coefficient/original complex Wiener weak duals are now proved homeomorphic using the existing full Sobolev dual isometry. Smooth-test action has the exact original normalization. Real-predual, mean-zero and even-mode source restriction identifications remain."
   },
   "main_statements": [
     {
@@ -37,7 +37,12 @@
         "sup over all real t of norm S(t,q) is finite.",
         "t maps to S(t,q) is weak-star continuous."
       ],
-      "status": "unproved"
+      "status": "unproved",
+      "proved_dependencies": [
+        "NLS.Fourier.PeriodicFourierLebesgue.continuous_sobolevPseudomeasureWeakStar_of_bounded_coefficients",
+        "NLS.WeightedCoeff.continuous_weakStarActionPhaseFlow_orbit",
+        "NLS.WeightedCoeff.norm_weakStarActionPhaseFlow"
+      ]
     },
     {
       "label": "1.3",
@@ -49,7 +54,12 @@
       "conclusions": [
         "The restriction q maps to (t maps to S(t,q)) is continuous V_weakstar -> C([-T,T],V_weakstar)."
       ],
-      "status": "unproved"
+      "status": "unproved",
+      "proved_dependencies": [
+        "NLS.Articles.KdVPseudomeasures.continuous_trajectory_iff_hminusOne",
+        "NLS.WeightedCoeff.continuous_weakStarInvariantActionTrajectory"
+      ],
+      "qualification": "These are proved topology/generic flow dependencies, not the physical KdV main theorem."
     },
     {
       "label": "1.4",
@@ -113,7 +123,7 @@
         38
       ],
       "content": "All real s: unit-ball weak-star compactness, sequential compactness and metrizability; for sequences weak-star convergence iff boundedness plus coefficient convergence iff boundedness plus convergence in a lower weighted finite-p space with (s-sigma)*p>1; compactness equivalences and coincidence of induced topologies on bounded subsets.",
-      "status": "Compactness, metrizability, sequential compactness, bounded+coordinate and bounded+lower-norm sequence criteria, bounded-set induced topology equality proved for actual complex weighted duals; real mean-zero norm-ball restriction proved closed and compact. Source distribution/even-mode and real-predual topology identification remains."
+      "status": "Generalized endpoint compactness/topology results proved in shared library; real mean-zero ball restriction proved. Full complex coefficient-to-original distribution weak-star homeomorphism now proved. Paper real-predual/even-mode restriction still to finish."
     }
   ],
   "reuse_map": [
@@ -153,14 +163,27 @@
       "module": "Mathlib/Topology/Algebra/Module/Spaces/WeakDual.lean",
       "declaration": "tendsto_iff_forall_eval_tendsto_topDualPairing",
       "reuse": "Actual mathlib WeakDual convergence criterion."
+    },
+    {
+      "module": "NLS/Fourier/PeriodicSobolevDuality.lean",
+      "declarations": [
+        "sobolevDualIsometry",
+        "sobolevDualIsometry_ofSmooth"
+      ],
+      "reuse": "Existing full physical Sobolev duality at p=1 reused to prove weighted original-distribution weak-star identification; no new full duality proof."
+    },
+    {
+      "module": "NLS/Dynamics/ActionDependentWeightedPhaseFlow.lean",
+      "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
+      "reuse": "Shared generic action-dependent flow imported unchanged from the frequencies branch and freshly checked; extended to actual weak-star endpoint in WeightedWeakStarPhaseFlow."
     }
   ],
   "remaining_obligations": [
-    "Construct and identify paper real/mean-zero/even-mode subspaces and sesquilinear convention adapters.",
-    "Complete exact paper real-predual and distribution/even-mode identifications for the generalized Appendix B lemmas.",
+    "Finish the paper real-predual, mean-zero and period-two even-mode source restrictions; complex coefficient/original distribution weak-star homeomorphism is now proved.",
+    "Transfer the generalized Appendix B statements through the remaining exact paper real/even-mode source subtype identifications.",
     "Consume shared physical Hill spectrum and KdV Birkhoff construction, prove endpoint spectral regularity and inverse estimates.",
     "Establish H^-1 solution extension and physical flow identification.",
-    "Prove bounded-invariant-subset uniform-in-time weak-star continuity and global orbit boundedness.",
+    "Identify the verified generic weak-star action flow with actual KdV (if using normal forms), or supply physical H^-1 solution continuity and invariant bounded endpoint sets for the checked trajectory-topology transfer. No unknown KdV frequency map is assumed proved.",
     "Prove Wiener Birkhoff inverse analyticity and analytic trajectory dependence, retaining N integer >=0.",
     "Audit all main-theorem constructions transitively after isolated branch integration."
   ],

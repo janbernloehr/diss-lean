@@ -26,10 +26,11 @@
   "B.1(iv)": [
     "isEmbedding_lowerWeakStarRealization_on_bounded"
   ],
-  "qualification": "Generalized actual complex-dual statements; no main-theorem verification claimed. Coordinate recovery, full dual surjectivity and norm identification use existing proved SobolevFullDuality. Closed real mean-zero ball included; exact real-predual topology and original distribution identifications remain for article interfaces.",
+  "qualification": "Generalized complex-dual statements and real mean-zero ball restriction. Weighted original periodic distribution/coefficient weak duals now identified by a proved homeomorphism; exact real-predual/even-mode source restrictions remain.",
   "namespace": "NLS.WeightedCoeff",
   "new_modules": [
-    "NLS/Articles/KdVPseudomeasures/AppendixBWeakStar.lean",
-    "NLS/Articles/KdVPseudomeasures/AppendixBLowerTopology.lean"
-  ]
+    "NLS/SequenceSpaces/WeightedWeakStarCompactness.lean",
+    "NLS/SequenceSpaces/WeightedWeakStarLowerTopology.lean"
+  ],
+  "physical_weak_star_adapter": "NLS/Fourier/PeriodicWeightedWeakStar.lean"
 }
