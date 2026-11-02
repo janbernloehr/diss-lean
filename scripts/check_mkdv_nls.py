@@ -197,6 +197,12 @@ modules = [
     "NLS/MKdV/MiuraSquaredEndpointMultiplicity.lean",
     "NLS/MKdV/MiuraGapIdentification.lean",
     "NLS/Articles/MKdVNLSHierarchies/GapIdentification.lean",
+    "NLS/ZakharovShabat/ClassicalDiagonalZeroEnergy.lean",
+    "NLS/MKdV/MiuraZeroEnergy.lean",
+    "NLS/MKdV/MiuraActionZeroIdentification.lean",
+    "NLS/ZakharovShabat/SourceIndexedActionCosineIntegral.lean",
+    "NLS/MKdV/MiuraActionReflection.lean",
+    "NLS/Articles/MKdVNLSHierarchies/ActionIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

@@ -790,3 +790,56 @@ structure declarations excluded), with 165 SHA256 source/checker hashes.
 The complete sequential run used pinned read-only cached imports under the
 shared build lock; the entire dependency tree was not rebuilt from source.
 Canonical main remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.
+
+
+## 2026-11-02 — actual central and reflected NLS actions in Theorem 4(i)
+
+`ClassicalDiagonalZeroEnergy.lean` solves the original ZS IVP at zero
+frequency for every continuous complex diagonal profile. The normalized
+solution matrix has diagonal entries cosh(integral_0^x u) and off-diagonal
+entries i*sinh(integral_0^x u), -i*sinh(integral_0^x u). IVP uniqueness
+identifies this explicit formula with the independently constructed flow;
+its actual monodromy trace is 2*cosh(integral_0^1 u).
+
+`MiuraZeroEnergy.lean` identifies the literal physical unit-interval mean
+of every original complex H1 profile with its original zeroth Fourier
+coefficient. It proves equation (21) for the independently constructed L2
+Hill discriminant and the original NLS discriminant. On the full real H1
+slice, the central canonical NLS gap collapses exactly when this mean
+vanishes. Ordered endpoint separation excludes all other gap indices from
+zero; no smoothness or nonzero-mean hypothesis is introduced.
+
+`MiuraActionZeroIdentification.lean` uses the existing sourceIndexedAction
+contour integral on the literal diagonal source. The central action
+vanishes exactly when the physical mean vanishes. At every positive index
+the actual NLS action vanishes exactly when the independently constructed
+physical Hill gap collapses. Nonnegativity and reality also follow from
+the existing action theorem.
+
+`SourceIndexedActionCosineIntegral.lean` connects the existing indexed
+contour action to the independently checked first primitive moment and its
+real-gap cosine integral. `MiuraActionReflection.lean` uses the exact
+signed endpoint reflection, the even physical discriminant, and the
+substitution theta -> pi-theta to prove I_(-n)#=I_n# at every signed index,
+including closed gaps. The source action is not defined by this symmetry
+or a gap-zero criterion.
+
+The article exports equation21_physical_mean_trace,
+theorem4_i_central_action_zero, theorem4_i_action_reflection and
+theorem4_i_positive_action_zero_iff_hillGap_collapsed. The central and
+reflection clauses of Theorem 4(i) are now proved. The actual contour-defined
+mKdV actions J_n, their comparison and analytic factorization, angle and
+frequency identities, full real-band primitive extension and the printed
+geometric multiplicity comparison remain open. Main Theorems 1, 3 and 4
+remain incomplete.
+
+Validation covers 169 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. Every source hash of the 163
+unchanged modules matches the prior complete run; their private validated
+outputs were reused. The six new modules and NLS aggregate compiled, and
+the complete audits passed for 2,164 targeted declarations and auxiliaries
+and 47,343 combined NLS declarations. Only propext, Classical.choice and
+Quot.sound are allowed. The public inventory contains 1,157 entries
+(929 theorems, 228 definitions; aliases and structures excluded), with
+171 SHA256 source/checker hashes. The checks use pinned cached imports;
+the entire dependency tree was not rebuilt from source.

@@ -67,7 +67,7 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 | Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None. |
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
 | Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Construct/identify the mKdV actions, frequency and brackets; settle the printed sign against the adopted normalization. |
-| Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | The actual H1 Miura/Hill discriminant, every fixed endpoint index and exact gap-collapse correspondence are proved. Existing physical NLS actions are available. | Connect the actual Hill actions and central mean; prove action reflection. |
+| Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | **Central and reflection clauses proved** by `theorem4_i_central_action_zero` and `theorem4_i_action_reflection`, using the actual NLS contour actions on the full real H1 domain. At each positive index the NLS action vanishes exactly when the physical Hill gap collapses. | Identify the contour-defined mKdV actions J_n and their zero-gap criterion on this domain. |
 | Theorem 4(ii), p. 4 | On real H^1, each I_n# is analytic in the mKdV actions and mean; conversely each J_n and the printed mean are analytic in NLS actions alone. | No new analytic factorization is claimed. | Prove action factorization and specify the signed-mean branch/correction discussed below. |
 | Theorem 4(iii), p. 4 | For all positive n,m, the angle-action Gardner bracket is delta_mn where the relevant angle is defined; angle sums then depend on actions and mean. | Existing NLS canonical identities are potential inputs only. | Construct mKdV angle domains, handle collapsed gaps correctly, and prove bracket transfer and analytic continuation. |
 
@@ -394,7 +394,7 @@ The entire dependency tree was not rebuilt from source. Canonical main
 remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.
 
 
-Latest milestone: every intrinsic Miura Hill endpoint now equals the square
+Previous milestone: every intrinsic Miura Hill endpoint now equals the square
 of the corresponding original canonical NLS endpoint on the full real H1
 domain. The central Hill label is the square of either central NLS
 endpoint. For every positive index the full closed Hill gap is exactly the
@@ -419,3 +419,30 @@ structure declarations excluded), with 165 SHA256 source/checker hashes.
 The complete sequential run used pinned read-only cached imports under the
 shared build lock; the entire dependency tree was not rebuilt from source.
 Canonical main remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.
+
+
+Latest milestone: two actual action clauses of Theorem 4(i) are proved on
+the full original real H1 domain. The central restricted NLS action
+vanishes exactly when the literal physical mean vanishes, and the
+restricted NLS actions at signed indices n and -n are equal. These are the
+existing source contour actions, including collapsed gaps. At every
+positive index their zero set is exactly collapse of the independent
+physical Hill gap. The remaining comparison with the article's
+contour-defined mKdV J_n is still open, so Theorem 4(i) remains partial.
+
+The independent physical zero-energy trace is exactly 2*cosh(mean u) for
+all complex H1 profiles. The proof solves the actual continuous-profile
+ZS IVP explicitly and computes its monodromy trace. A reusable theorem
+identifies the existing indexed NLS action with its real-gap cosine
+integral; fixed-index endpoint reflection then proves action reflection.
+
+Validation covers 169 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. Every source hash of the 163
+unchanged modules matches the prior complete run; their private validated
+outputs were reused. The six new modules and NLS aggregate compiled, and
+the complete audits passed for 2,164 targeted declarations and auxiliaries
+and 47,343 combined NLS declarations. Only propext, Classical.choice and
+Quot.sound are allowed. The public inventory contains 1,157 entries
+(929 theorems, 228 definitions; aliases and structures excluded), with
+171 SHA256 source/checker hashes. The checks use pinned cached imports;
+the entire dependency tree was not rebuilt from source.

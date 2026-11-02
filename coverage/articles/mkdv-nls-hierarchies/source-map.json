@@ -92,15 +92,25 @@
     {
       "label": "Theorem 4(i)",
       "page": 4,
-      "status": "unproved",
+      "status": "partial_central_mean_and_signed_index_action_reflection_proved",
       "quantifiers": "forall real u in H1; forall positive n",
       "target": "I_0#=0 iff mean=0; I_n#=0 iff J_n=0; I_(-n)#=I_n#",
       "dependencies_proved": [
-        "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_collapsed_iff"
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_collapsed_iff",
+        "NLS.Articles.MKdVNLSHierarchies.equation21_physical_mean_trace"
       ],
       "limits": [
-        "Exact gap-collapse correspondence is proved; actual Hill/NLS action-zero and central mean identifications remain to be connected."
-      ]
+        "The central action is the original indexed NLS contour action. It vanishes exactly when the literal physical unit-interval mean, equal to the original zeroth Fourier coefficient, vanishes.",
+        "The actual restricted NLS action at every signed index -n equals that at n, including collapsed gaps and the central index.",
+        "At every positive index the NLS action vanishes exactly when the independently constructed physical Hill gap collapses. The comparison with the article contour-defined mKdV action J_n remains open."
+      ],
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_central_action_zero",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_action_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_positive_action_zero_iff_hillGap_collapsed"
+      ],
+      "action_definition": "NLS.MKdV.miuraNLSAction = original sourceIndexedAction on sobolevSourceInclusion(a,a); not a surrogate action defined through a gap criterion",
+      "mean_identification": "NLS.MKdV.unitIntervalMean_periodOneMiuraCurve"
     },
     {
       "label": "Theorem 4(ii)",
@@ -230,7 +240,8 @@
     "mkdv_energy": "K2=integral((u_prime)^2+u^4)/2",
     "higher_action_trace": "sum I_(j,k)=S_k/2^(k-1)",
     "nls_coordinate_bracket": -1,
-    "mkdv_coordinate_bracket": 1
+    "mkdv_coordinate_bracket": 1,
+    "mkdv_spectral_action": "Source (13): J_n=-(1/(4*pi))*contour_integral(mu^(-1)*F_mKdV(mu), Sigma_n), counterclockwise around the positive indexed Hill gap and excluding the origin. This is the Gardner/mKdV action, not the ordinary unweighted KdV primitive moment."
   },
   "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
   "workspace": "Separate standard Git worktree authorized and created; branch articles/mkdv-nls-hierarchies; app-managed attachment unavailable.",
@@ -286,7 +297,7 @@
     "physical_operator_bridge": "NLS.MKdV.physicalMiuraDiscriminant_eq_classicalHill",
     "root_and_primitive_comparison": "NLS.MKdV.miuraHill_sheets_eq_NLS",
     "path": "s*u maps to s*u_prime+s_squared*u_squared, rather than s*(u_prime+u_squared)",
-    "remaining": "Full Sobolev and labeled gap/action identifications."
+    "remaining": "Full real-band sheet and contour-defined mKdV action identifications; exact H1 fixed gap indices and central/reflected NLS action clauses are proved."
   },
   "independent_H1_primitive": {
     "construction": "NLS.MKdV.quasiHillPrimitiveData",
@@ -299,7 +310,7 @@
     "physical_trace": "NLS.Articles.MKdVNLSHierarchies.hillPrimitive_physical_trace",
     "physical_energy_derivative": "NLS.Articles.MKdVNLSHierarchies.hillPrimitive_hasDerivAt",
     "scope": "full complex H1 physical trace and derivative wherever the source-continuation domain is admissible; full real H1 root/primitive comparison for Re z>0 and Im z!=0",
-    "remaining": "real bands, canonical gap labels, spectral action and frequency identifications"
+    "remaining": "real-band extension, full spectral action and frequency identifications (fixed gap indices now proved)"
   },
   "shared_hill_L2_labels_integration": {
     "branch": "articles/kdv-estimates",
@@ -319,5 +330,16 @@
     "indexing": "mu0=hillLabels0; mu_n_minus=hillLabels(2*n-1), mu_n_plus=hillLabels(2*n); original NLS lambda_n_minus/plus at signed integer n",
     "zero_ramification": "The positive NLS half-sequence has one central slot; original NLS multiplicity at zero is exactly twice its count. This equals twice the Hill energy characteristic order, so the independent ordered sequences also agree at zero.",
     "limits": "analytic characteristic multiplicity only; geometric eigenspace multiplicity and spectral actions remain separate"
+  },
+  "physical_zero_energy_and_actions": {
+    "continuous_IVP_solution": "NLS.ZakharovShabat.classicalSolution_diagonal_zero",
+    "continuous_physical_trace": "NLS.ZakharovShabat.classicalDiscriminant_diagonal_zero",
+    "original_H1_Hill_trace": "NLS.MKdV.hillL2Discriminant_miura_zero",
+    "original_H1_NLS_trace": "NLS.MKdV.canonicalDiscriminant_miura_zero",
+    "actual_action_gap_formula": "NLS.ZakharovShabat.sourceIndexedAction_eq_cosineIntegral",
+    "central_action": "NLS.MKdV.miuraNLSAction_zero_iff_mean_zero",
+    "reflected_actions": "NLS.MKdV.miuraNLSAction_reflection",
+    "scope": "mean/trace identity on all complex H1 profiles; actual action assertions on all real H1 profiles at all signed indices; no nonzero-mean or open-gap restriction",
+    "remaining": "Contour-defined mKdV J_n and full action comparison; real-band independent primitive extension; Theorem 4(ii)-(iii) and frequency identification"
   }
 }
