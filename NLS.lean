@@ -5109,3 +5109,10 @@ import NLS.KdV.HillL2SquareGapPeriods
 import NLS.KdV.HillHierarchyMomentSummability
 import NLS.KdV.HillL2EndpointContinuity
 import NLS.KdV.HillL2GroundSquare
+import NLS.ComplexAnalysis.RealCenteredHoleGeometry
+import NLS.KdV.HillFiniteBandCover
+import NLS.KdV.HillOuterTraceGeometry
+import NLS.KdV.HillOuterTraceDomain
+import NLS.KdV.HillFiniteTraceContour
+import NLS.KdV.HillOuterTraceExhaustion
+import NLS.KdV.HillOuterTraceLimit

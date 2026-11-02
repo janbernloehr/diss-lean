@@ -1,3 +1,11 @@
+import NLS.ComplexAnalysis.RealCenteredHoleGeometry
+import NLS.KdV.HillFiniteBandCover
+import NLS.KdV.HillOuterTraceGeometry
+import NLS.ComplexAnalysis.FiniteCircleHoleDecomposition
+import NLS.KdV.HillOuterTraceDomain
+import NLS.KdV.HillFiniteTraceContour
+import NLS.KdV.HillOuterTraceExhaustion
+import NLS.KdV.HillOuterTraceLimit
 import NLS.KdV.FreeHill
 import NLS.KdV.HillComplement
 import NLS.KdV.HillReduction
@@ -335,7 +343,10 @@ run_cmd do
     ``NLS.ComplexAnalysis.continuousAt_realBoundaryExtension_of_limits,
     ``NLS.ComplexAnalysis.analyticAt_of_continuousAt_coordinate,
     ``NLS.ComplexAnalysis.deriv_coshSquareCoordinate_sq_ne_zero,
-    ``NLS.ComplexAnalysis.circleIntegral_pow_mul_shifted_square]
+    ``NLS.ComplexAnalysis.circleIntegral_pow_mul_shifted_square,
+    ``NLS.ComplexAnalysis.real_closedBall_subset_diameter_ball,
+    ``NLS.ComplexAnalysis.real_closedBalls_disjoint_of_separated,
+    ``NLS.ComplexAnalysis.circleIntegral_eq_sum_of_finite_holes]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
