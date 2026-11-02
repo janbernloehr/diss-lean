@@ -1,10 +1,10 @@
 # The mKdV and NLS hierarchies revisited — verification coverage
 
-Status: **Theorem 2 proved on its original complex Sobolev domains, with the
-matrix correction in part (ii); Theorem 4(i) proved on the full original
+Status: **Theorems 1 and 2 proved on their original complex Sobolev domains,
+with the matrix correction in Theorem 2(ii); Theorem 4(i) proved on the full original
 real H1 domain; Theorem 4(iii)'s angle-action bracket clause proved on its
 original real H1 angle domain. Theorem 4(ii)'s converse J_n clause and its
-sign-invariant mean-squared correction are proved. Theorems 1, 3 and 4(ii)-(iii) as whole
+sign-invariant mean-squared correction are proved. Theorems 3 and 4(ii)-(iii) as whole
 statements remain incomplete**.
 Prepared 2026-11-02 against canonical commit
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
@@ -67,7 +67,7 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 
 | Source statement | Domain and quantifier order | Current proved correspondence | Remaining work |
 | --- | --- | --- | --- |
-| Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | **Scalar clause proved on the exact H^m domain** by `theorem1_even_vanishing_sharp`. `theorem1_native_miura_hierarchy` proves both clauses on every complex H^m input using independently constructed K_m on its full native H^(m-1) domain, with actual Frechet gradients and the genuine distribution derivative. `proposition6_native_miura` proves the odd factor-two identity on all complex H^(m-1), including the L2 mass endpoint. The literal Hill discriminant now has an all-order trace estimate with phase coefficients 2*K_m. | Finite-gap spectral Laurent calibration is now proved with the native K coefficients; complete the extension/uniqueness identification on the entire original native complex Sobolev domains. |
+| Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | **Proved** by `theorem1`, with the actual native Frechet gradient and Gardner distribution derivative. `smoothMiuraSpectralHamiltonian` extracts K_m from the independent physical Hill discriminant through recursive coefficient limits on all smooth complex profiles. Its unique continuous extension to the complete complex H^(m-1) domain exists and is entire analytic; `miuraSpectralHillHamiltonian_eq_native` identifies it with the independent scalar Riccati hierarchy. `proposition6` gives the full native factor-two identity, including the L2 mass endpoint. | None for Theorem 1. The source's actual finite-gap primitive Laurent series also has exactly these spectral Hamiltonians as its coefficients. |
 | Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None. |
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
 | Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Complete action factorization and independent mKdV angle/frequency identification with the recorded sign correction; the actual Gardner bracket transfer is proved. |
@@ -651,7 +651,7 @@ checks use pinned cached imports; the entire dependency tree was not
 rebuilt from source.
 
 
-Latest milestone: **The converse action clause of Theorem 4(ii) is proved** by
+Previous milestone: **The converse action clause of Theorem 4(ii) is proved** by
 `theorem4_ii_mkdv_actions_of_nls_actions` on every original real H1 input.
 Each positive physical mKdV action J_n is a holomorphic, hence real
 analytic, function of the complete original signed NLS action sequence
@@ -698,5 +698,59 @@ complete targeted and combined audits passed for 2,924 and 47,895
 declarations respectively. Only propext, Classical.choice and Quot.sound
 are allowed. The public inventory has 1,468 entries (1,187 theorems and
 281 definitions; aliases and structures excluded), with 226 SHA256
+source/checker hashes. The checks use pinned cached imports; the entire
+dependency tree was not rebuilt from source.
+
+
+Latest milestone: **Theorem 1 is complete on its original complex Sobolev domains** in
+`theorem1`. At every integer m>=1 and every complex H^m input, the
+restricted even NLS vector field equals the diagonal Gardner vector field
+of the physical spectral mKdV Hamiltonian, and the even Hamiltonian
+vanishes. The scalar Hamiltonian is constructed on the entire native
+complex H^(m-1) domain, including the L2 mass endpoint. Its actual Frechet
+derivative supplies the native Sobolev bilinear gradient, and Gardner
+differentiation is the actual period-one tempered distribution derivative.
+`proposition6` gives the odd factor-two identity on the entire native
+domain and even vanishing on H^m.
+
+The remaining spectral identification is supplied by literal coefficient
+limits of the independent physical Hill discriminant. At frequencies
+r_j=pi*(j+1/2), the free cosine vanishes and its hyperbolic sine carrier
+has norm one. Dividing the actual trace by that carrier and applying one
+fixed analytic inverse of sinh at zero extracts an actual small phase.
+All-order physical monodromy estimates recover every phase coefficient
+by a recursive scaled limit after subtracting the previous coefficients.
+Every limit is proved to exist for every smooth complex periodic profile,
+including infinitely many open gaps. No convergent exterior Laurent
+series is assumed in this general smooth argument.
+
+The scalar spectral K_(s+1) is -i/2 times coefficient number 2*s, giving
+exactly the source normalization. It agrees with the independent scalar
+Hill/Riccati hierarchy on all smooth complex profiles. Smooth density
+then constructs and uniquely identifies its continuous extension on the
+complete native complex H^s space. This extension exists, is entire
+analytic, and equals the independent native scalar Hamiltonian. The
+spectral extension, its analyticity and its gradient are constructed,
+not caller-supplied assumptions. No diagonal finite-gap density premise
+is needed. `equation12_spectral_native_laurent` also identifies precisely
+these spectral Hamiltonians in the original ground-normalized finite-gap
+physical Hill primitive's convergent Laurent series.
+
+Theorems 1 and 2, Theorem 4(i), the converse J_n clause of Theorem 4(ii)
+and its corrected mean-squared recovery, and the angle-action clause of
+Theorem 4(iii) are proved. The forward factorization of restricted NLS
+actions through mKdV actions and mean, the independent mKdV angles and
+final angle-sum factorization, and the corrected full frequency comparison
+in Theorem 3 remain essential open obligations. The overall goal remains
+incomplete.
+
+Validation covers 230 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 224 unchanged prefix module
+source hashes match the previous 1fd6953 milestone; their private outputs
+were reused. Six added modules and the NLS aggregate compiled. The
+complete targeted and combined audits passed for 3,016 and 47,987
+declarations respectively. Only propext, Classical.choice and Quot.sound
+are allowed. The public inventory has 1,513 entries (1,221 theorems and
+292 definitions; aliases and structures excluded), with 232 SHA256
 source/checker hashes. The checks use pinned cached imports; the entire
 dependency tree was not rebuilt from source.

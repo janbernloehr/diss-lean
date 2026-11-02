@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "article_id": "mkdv-nls-hierarchies",
-  "status": "partial_main_theorems_1_3_4_incomplete",
+  "status": "partial_main_theorems_3_4_incomplete",
   "source": {
     "abstract_url": "https://arxiv.org/abs/1601.07580v1",
     "pdf_url": "https://arxiv.org/pdf/1601.07580v1",
@@ -15,7 +15,7 @@
     {
       "label": "Theorem 1",
       "page": 3,
-      "status": "partial",
+      "status": "proved_original_complex_Hm_domains_for_uniquely_extended_physical_spectral_hierarchy",
       "quantifiers": "forall integer m>=1, forall complex u in H^m",
       "target": "X_(S_(2m))# = (Y_(K_m),Y_(K_m)); S_(2m)# = 0",
       "proved": [
@@ -27,19 +27,24 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem1_sharp_miura_hierarchy",
         "NLS.Articles.MKdVNLSHierarchies.proposition6_native_miura",
         "NLS.Articles.MKdVNLSHierarchies.theorem1_native_miura_hierarchy",
-        "NLS.Articles.MKdVNLSHierarchies.equation12_finiteGap_native_laurent"
+        "NLS.Articles.MKdVNLSHierarchies.equation12_finiteGap_native_laurent",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1",
+        "NLS.Articles.MKdVNLSHierarchies.proposition6",
+        "NLS.Articles.MKdVNLSHierarchies.spectral_hierarchy_native_identification",
+        "NLS.Articles.MKdVNLSHierarchies.equation12_spectral_native_laurent"
       ],
       "limits": [
-        "Scalar vanishing is proved on every complex H^m input using the analytic physical even Hamiltonian extension, compatible with the original higher-regularity hierarchy.",
-        "Both clauses hold on all original complex H^m inputs with the independently constructed K_m on complex H^(m-1), including m=1. Its actual Frechet gradient is constructed on that native domain; Gardner differentiation is the genuine physical distribution derivative.",
-        "The literal physical Hill trace at r^2 has all-order real-axis estimates with odd phase coefficients 2*K_m.",
-        "The independently constructed physical Hill sheets now agree with the original NLS root and primitive on the entire original real H1 right-half-plane cut complement, including real bands. The physical Hill trace and energy derivative, first-band normalization, ground-endpoint limit and actual path integral are proved there. Complex H1 source analyticity remains certified on the earlier source-continuation domain. Full spectral action and Hamiltonian identification remains open.",
-        "The physical H1 Miura potential, actual L2 Hill operator spectrum and characteristic multiplicities, fixed positive gap indices, full real-H1 sheets and real-H1 inverse-energy-weighted mKdV spectral actions are now constructed and compared. Full source spectral Hamiltonian calibration and complex source action/frequency machinery remain open.",
-        "The independently defined physical Hill primitive now has the convergent source Laurent series with exact native K coefficients at every real finite-gap H1 source, including exterior collapsed gaps and zero mean. This uses the finite-gap locus of the intrinsic physical Hill labels, proved equivalent to finite support of actual mKdV actions and to the original NLS finite-gap locus. Identification/uniqueness on the entire original complex native Sobolev domains is still open."
+        "Both source clauses hold for every integer m>=1 and every original complex H^m input. The scalar Hamiltonian K_m has its full native complex H^(m-1) domain, including the L2 mass endpoint. No finite-gap, smoothness, real-type or nonzero-mean hypothesis enters theorem1.",
+        "The scalar spectral Hamiltonians are extracted on every smooth complex periodic profile from literal samples of the independent physical Hill discriminant. A fixed local inverse of sinh recovers a small phase at r_j=pi*(j+1/2), and recursive scaled limits extract its coefficients. All those limits are proved to exist. The normalization is K_(s+1)=(-i/2) times the coefficient of (2*r)^(-(2*s+1)).",
+        "The extensions from all smooth complex profiles to the full native complex Sobolev domains are constructed and proved uniquely continuous there, using smooth density. The independent scalar Riccati hierarchy realizes them and proves they are entire analytic. No candidate extension, analyticity, gradient, spectral identification, or diagonal finite-gap density is an input assumption.",
+        "The scalar gradient comes from the actual Frechet derivative of the uniquely extended spectral Hamiltonian, through the certified native Sobolev bilinear duality. Its Gardner field is the actual period-one tempered distribution derivative. The field identity is proved as equality of those genuine distributions.",
+        "The source finite-gap physical Hill primitive has the convergent Laurent series with exactly these native spectral coefficients, retaining its factor 2, original intrinsic gap labels, zero mean and collapsed exterior gaps. General smooth complex coefficient extraction does not assert convergence of the infinite Laurent series outside the finite-gap setting."
       ],
       "scalar_clause_status": "proved_exact_complex_Hm_domain",
-      "weak_flow_status": "proved_exact_complex_Hm_inputs_for_independent_scalar_Hill_Miura_hierarchy",
-      "native_scalar_domain_status": "proved_exact_complex_Hm_minus_one_including_L2_mass"
+      "weak_flow_status": "proved_exact_complex_Hm_inputs_for_actual_physical_spectral_hierarchy_with_actual_native_gradient_and_distribution_derivative",
+      "native_scalar_domain_status": "proved_exact_complex_Hm_minus_one_including_L2_mass",
+      "source_spectral_identification_status": "proved_unique_continuous_native_extension_of_actual_physical_trace_coefficient_limits_on_all_smooth_complex_profiles",
+      "flow_codomain": "Actual period-one tempered distributions; the scalar Frechet gradient is represented in its native opposite Sobolev space."
     },
     {
       "label": "Theorem 2(i)",
@@ -182,15 +187,17 @@
     {
       "label": "Proposition 6",
       "page": 12,
-      "status": "verified_native_identity_and_finiteGap_spectral_calibration_full_native_identification_open",
+      "status": "proved_full_native_complex_domains_for_physical_spectral_hierarchy",
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.proposition6_native_miura",
         "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_sharp",
         "NLS.Articles.MKdVNLSHierarchies.proposition6_finiteGap_native",
-        "NLS.Articles.MKdVNLSHierarchies.equation12_finiteGap_native_laurent"
+        "NLS.Articles.MKdVNLSHierarchies.equation12_finiteGap_native_laurent",
+        "NLS.Articles.MKdVNLSHierarchies.proposition6",
+        "NLS.Articles.MKdVNLSHierarchies.spectral_hierarchy_native_identification"
       ],
       "limits": [
-        "The full complex native scalar hierarchy identity is proved and its physical spectral Laurent calibration is proved at all real finite-gap H1 sources. Identifying the source spectral hierarchy by extension/uniqueness on the entire original complex H^(m-1) domain remains open."
+        "The odd factor-two identity holds for every complex H^(m-1) input and m>=1, including H0 mass; even vanishing holds on all complex H^m inputs. The scalar spectral Hamiltonian is the uniquely constructed native continuous extension of the actual physical Hill trace coefficient limits. Its equality with the independent Riccati hierarchy and entire analyticity are proved."
       ]
     },
     {
@@ -320,10 +327,9 @@
     "remaining": "The diagonal physical discriminant, original fixed-index endpoints, canonical sheets and actual weighted contour actions have now been identified. Remaining normal-form angle, frequency and Poisson-bracket conventions must be carried through their actual constructions."
   },
   "remaining_essential_dependencies": [
-    "full native Sobolev extension/uniqueness identification of the source spectral scalar Hill/Miura Hamiltonians; real finite-gap spectral calibration and native physical hierarchy identities are proved",
-    "analytic factorization through independent mKdV action coordinates and the corrected sign-invariant mean data",
+    "forward analytic factorization of restricted NLS actions through independent physical mKdV actions and mean; converse physical J_n and corrected mean-squared factors in original NLS actions are proved",
     "independent mKdV Birkhoff angle construction, the final angle-sum factorization and full frequency identification; Theorem 4(iii) angle-action bracket clause and actual Gardner transfer are proved",
-    "recorded frequency-sign and signed-mean corrections in the main source statements; geometric eigenspace multiplicity in the auxiliary spectral comparison remains distinct from the proved characteristic multiplicity"
+    "corrected frequency-sign convention in Theorem 3; the global signed-mean claim in Theorem 4(ii) is replaced by the proved mean-squared statement, while signed recovery requires a branch restriction"
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -366,7 +372,7 @@
     "physical_operator_bridge": "NLS.MKdV.physicalMiuraDiscriminant_eq_classicalHill",
     "root_and_primitive_comparison": "NLS.MKdV.miuraHill_sheets_eq_NLS",
     "path": "s*u maps to s*u_prime+s_squared*u_squared, rather than s*(u_prime+u_squared)",
-    "remaining": "Full native spectral Hamiltonian identification, forward mKdV action factorization, independent angles and frequencies. The full real-H1 contours, complex L2 action extensions, Gardner bracket transfer and converse J_n/mean-squared action factors are proved."
+    "remaining": "Forward mKdV action factorization, independent mKdV angles and final angle-sum factorization, and corrected full frequency identification. The physical spectral scalar Hamiltonians are now uniquely identified on their complete native complex Sobolev domains."
   },
   "independent_H1_primitive": {
     "construction": "NLS.MKdV.quasiHillPrimitiveData",
@@ -379,7 +385,7 @@
     "physical_trace": "NLS.Articles.MKdVNLSHierarchies.hillPrimitive_physical_trace",
     "physical_energy_derivative": "NLS.Articles.MKdVNLSHierarchies.hillPrimitive_hasDerivAt",
     "scope": "full complex H1 physical trace and derivative wherever the source-continuation domain is admissible; full real H1 root/primitive comparison for Re z>0 and Im z!=0",
-    "remaining": "Full spectral Hamiltonian native-domain identification, forward mKdV action factorization, independent angles and frequencies."
+    "remaining": "Forward mKdV action factorization, independent mKdV angles and final angle-sum factorization, and corrected full frequency identification. The physical spectral scalar Hamiltonians are now uniquely identified on their complete native complex Sobolev domains."
   },
   "shared_hill_L2_labels_integration": {
     "branch": "articles/kdv-estimates",
@@ -426,7 +432,7 @@
     "ground_endpoint_normalization": "NLS.MKdV.canonicalMiuraHillPrimitive_ground_limit",
     "actual_path_integral": "NLS.Articles.MKdVNLSHierarchies.equation11_physical_Hill_pathIntegral",
     "scope": "every original real H1 profile and every energy in the full physical closed-gap complement; old complex-H1 source-continuation sheets are preserved on their admissible domain",
-    "limits": "Values on excluded cuts are not asserted. Joint complex-source continuation beyond the old admissible domain, spectral Hamiltonian calibration and complex source action/frequency machinery remain separate; actual real-H1 inverse-energy-weighted action contours are now proved."
+    "limits": "Values on excluded cuts are not asserted. The actual native spectral Hamiltonian extensions, complex L2 action extensions, converse NLS-action factors and Gardner transfer are proved. Broader joint complex-source sheet continuation, forward mKdV action factorization and full angle/frequency identifications remain separate."
   },
   "actual_mKdV_spectral_actions": {
     "definition": "NLS.MKdV.miuraMKdVAction",
@@ -458,7 +464,8 @@
     "convergent_Hill_Laurent_series": "NLS.Articles.MKdVNLSHierarchies.equation12_finiteGap_native_laurent",
     "normalization": "F_Hill(z^2)=-i*z+sum_{k>=0} i*(2*K_(k+1))/(2*z)^(2*k+1)",
     "scope": "every real H1 profile with finitely many open intrinsic physical Hill gaps; no supplied smoothness, finite Fourier support, nonzero mean or open-gap hypothesis; convergence at every sufficiently large right-half-plane frequency, including collapsed exterior gaps",
-    "remaining": "unique extension/identification of the source spectral Hamiltonians on the complete original complex native Sobolev domains; this is still an essential Theorem 1 obligation"
+    "remaining": "None for the spectral scalar Hamiltonian native-domain identification: actual coefficient extraction on all smooth complex profiles and unique native continuous extension are now proved.",
+    "native_spectral_series": "NLS.Articles.MKdVNLSHierarchies.equation12_spectral_native_laurent"
   },
   "complex_L2_Laurent_action_extension": {
     "real_diagonal": "NLS.ZakharovShabat.realDiagonalSourceLocus",
@@ -474,7 +481,7 @@
     "actual_Frechet_derivative": "NLS.MKdV.hasFDerivAt_miuraComplexActionLevel",
     "scope": "common open full complex L2 pair-source neighborhood of every real L2 diagonal, all nonzero signed indices and all integer levels; generic construction works for all finite source exponents p>1; exact real H1 physical Hill-contour comparison at all positive indices, including closed gaps and zero mean",
     "central_index": "excluded, consistently with the positive-index Lemma 7; no negative-weight assertion about a central contour enclosing zero",
-    "remaining": "source spectral Hamiltonian full native-domain extension/uniqueness, action normal-form factorizations, independent mKdV angles and full frequency identities; the original angle-action Gardner bracket clause is proved"
+    "remaining": "Forward mKdV action factorization, independent mKdV angles and final angle-sum factorization, and corrected full frequency identification. The physical spectral scalar Hamiltonians are now uniquely identified on their complete native complex Sobolev domains."
   },
   "shared_component_swap_integration": {
     "branch": "articles/mkdv-below-l2",
@@ -505,7 +512,7 @@
     "angle_action_bracket": "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
     "action_invariance": "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_restricted_action_invariance",
     "scope": "all original real H1 inputs and every positive action index, including zero mean and closed action gaps; only the chosen angle action must be nonzero",
-    "remaining": "independent mKdV angles and normal-form factorizations, including the final angle-sum assertion; full spectral Hamiltonian native-domain identification and frequencies"
+    "remaining": "Forward mKdV action factorization, independent mKdV angles and final angle-sum factorization, and corrected full frequency identification. The physical spectral scalar Hamiltonians are now uniquely identified on their complete native complex Sobolev domains."
   },
   "shared_action_swap_integration": {
     "branch": "articles/mkdv-below-l2",
@@ -532,6 +539,27 @@
     "central_square_invariance": "NLS.ZakharovShabat.sourceAbelianSquare_eq_of_isospectral",
     "literal_mean_squared": "NLS.MKdV.miuraPrimitiveSquare_eq_mean_sq",
     "corrected_mean_action_factor": "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mean_square_of_nls_actions",
-    "remaining": "Forward mKdV normal-form factorization, independent mKdV angles and angle-sum factorization, source spectral Hamiltonian identification on full native domains, and corrected frequency comparison."
+    "remaining": "Forward mKdV action factorization, independent mKdV angles and final angle-sum factorization, and corrected full frequency identification. The physical spectral scalar Hamiltonians are now uniquely identified on their complete native complex Sobolev domains."
+  },
+  "native_physical_spectral_hierarchy": {
+    "literal_physical_trace": "NLS.MKdV.physicalMiuraDiscriminant",
+    "free_cosine_zero_lattice": "NLS.ComplexAnalysis.sampleFrequency",
+    "actual_extracted_small_phase": "NLS.ComplexAnalysis.sampledTracePhase",
+    "recursive_scaled_limit_coefficients": "NLS.ComplexAnalysis.sampledPhaseCoefficient",
+    "general_smooth_complex_coefficient_identification": "NLS.ZakharovShabat.sampledPhaseCoefficient_classicalDiscriminant",
+    "general_smooth_complex_scalar_spectral_hamiltonian": "NLS.MKdV.smoothMiuraSpectralHamiltonian",
+    "smooth_scalar_identification": "NLS.MKdV.smoothMiuraSpectralHamiltonian_eq_classical",
+    "full_native_extension_existence_and_uniqueness": "NLS.MKdV.existsUnique_miuraSpectralHamiltonianExtension",
+    "full_native_spectral_hamiltonian": "NLS.MKdV.miuraSpectralHillHamiltonian",
+    "independent_Riccati_hierarchy_identification": "NLS.MKdV.miuraSpectralHillHamiltonian_eq_native",
+    "entire_analyticity": "NLS.MKdV.analyticAt_miuraSpectralHillHamiltonian",
+    "actual_native_Frechet_gradient": "NLS.MKdV.miuraSpectralHillGradient",
+    "gradient_representation": "NLS.MKdV.miuraSpectralHillGradient_represents",
+    "actual_Gardner_distribution_derivative": "NLS.MKdV.miuraSpectralHillVectorField",
+    "original_domain_Theorem1": "NLS.Articles.MKdVNLSHierarchies.theorem1",
+    "original_domain_Proposition6": "NLS.Articles.MKdVNLSHierarchies.proposition6",
+    "original_finite_gap_Hill_primitive_series": "NLS.Articles.MKdVNLSHierarchies.equation12_spectral_native_laurent",
+    "normalization": "Source K_(s+1), s>=0; coefficient number 2*s of the small phase equals i*S_(2*s+1)=2*i*K_(s+1). Multiplication by -i/2 fixes the literal physical Hill normalization.",
+    "scope": "All smooth complex periodic physical profiles for coefficient extraction; unique entire analytic extension to every full original complex H^s native domain; both Theorem 1 clauses on every complex H^(s+1) input. Source physical finite-gap primitive series uses exactly these same coefficients."
   }
 }

@@ -258,6 +258,12 @@ modules = [
     "NLS/MKdV/MiuraActionDescent.lean",
     "NLS/MKdV/MiuraMeanSquareDescent.lean",
     "NLS/Articles/MKdVNLSHierarchies/ActionDescentIdentification.lean",
+    "NLS/ComplexAnalysis/DiscriminantSamples.lean",
+    "NLS/ComplexAnalysis/SampledPhaseCoefficients.lean",
+    "NLS/ZakharovShabat/NLSHamiltonianSampledPhase.lean",
+    "NLS/ZakharovShabat/NLSHamiltonianSpectralCoefficients.lean",
+    "NLS/MKdV/SpectralMiuraHamiltonians.lean",
+    "NLS/Articles/MKdVNLSHierarchies/SpectralHierarchyIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")
