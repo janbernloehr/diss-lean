@@ -573,3 +573,55 @@ transitive audit was rerun: all 392 named declarations exactly matched
 No holes, new axioms, disabled linters or increased heartbeat limits were
 introduced. The focused checker now lists all 88 modules; this checkpoint
 is incremental validation, not a fresh whole-repository rebuild.
+
+## Fourteenth checkpoint: full physical action derivatives and Theorem 1.3
+
+The physical H₄ now has genuine local complex analytic factors in its original
+ell^(3,1) action space. Actual holomorphic inverse germs agree with the global
+native Sobolev inverse on complete real neighborhoods. A reusable real-germ
+scalar descent handles closed tail actions and arbitrary infinite zero sets.
+Exact complex and real coordinate normalization transports the factors to the
+original weighted action norm. The action map's raw coordinates are exactly
+the original source actions and remain in the nonnegative weighted cone.
+
+The independent full-domain physical frequencies now equal the factor
+partials in raw unit action directions. Open modes use the original unit-speed
+reduction curve; closed modes use the second derivative of the amplitude line,
+whose action is precisely t²/2. Both curve identities are proved in the full
+weighted Banach norm. The frequency is therefore real analytic on every
+original H^(3/2) source, including across collapsed gaps.
+
+The lower renormalization terms are independent physical H¹ mass and momentum,
+transported coefficient-for-coefficient from the fractional source. Their
+finite-gap values agree with the original Riccati hierarchy. Actual spectral
+finite-gap approximation in the native weighted topology, full frequency
+continuity, and analytic moment sums extend Lemma 5.2 to every original source
+and every signed index. No moment candidate enters the physical frequency's
+definition or its derivative interpretation.
+
+The physical adapter uses the fixed accepted Hilbert Birkhoff family from
+Theorem 1.2 and preserves both original period-one distributions. The chosen
+moment candidate and every finite real weighted realization now equal the
+independent physical action derivatives throughout the original domain.
+Compatibility transports these same values to every source exponent.
+
+Theorem 1.3 is now assembled and verified. Its Hilbert clause covers every
+real ell^(-1,r) target, 1<r≤infinity. Its extension clause has the literal
+complex ell^(-1,p/2) target at every finite p>2 and agrees on equal physical
+distributions. Its locally uniform refined asymptotic uses the fixed
+ell^(p/3) and OnePlus components with actual products of the chosen Birkhoff
+coordinates. The quasi-norm p/3<1 is retained; the asymptotic is stated at
+n≠0 and the exact all-index formula retains the zero-coordinate singleton.
+
+Theorems 1.2 and 1.3 are verified under the accepted intrinsic Birkhoff
+reference. Theorem 1.1 remains open: the smaller mKdV diagonal, physical
+renormalized rotations and trajectory continuity, smooth-approximation
+agreement, and fixed-time nonextension outside L² still require proof.
+
+All 16 final new modules pass strict Lean 4.33.1 checks. The 88 parent modules
+reuse the validation at `896298fd1ab33359c906eeea93d922c78fe909a0` after verifying
+that their sources are unchanged. The full transitive audit was rerun: all
+460 declarations exactly match `AxiomAudit.lean` and use only `propext`,
+`Classical.choice` and `Quot.sound`. There are no holes, new axioms, disabled
+linters or increased heartbeat limits. The focused checker now lists 104
+modules. The canonical checkout and compiled dependencies remain read-only.

@@ -1,0 +1,40 @@
+{
+  "main_theorem": "1.3",
+  "source_page": 6,
+  "verified": true,
+  "namespace": "NLS.Articles.MKdVBelowL2",
+  "clauses": [
+    {
+      "source": "Hilbert frequency extension and intersection of real weighted targets",
+      "declaration": "theorem1_3_hilbert",
+      "scope": "Every actual real physical distribution pair in FL²; every r in (1,infinity], including infinity. A real analytic map into the native real ell^(-1,r) space has the same raw normalized frequency coordinates. At every original H^(3/2) source, every coordinate equals the independent normalized physical H4 action derivative, including all closed actions. Equality of the raw coordinates across all r describes one map with values in the target intersection."
+    },
+    {
+      "source": "Real analytic extension for every finite p>2",
+      "declaration": "theorem1_3_extension",
+      "scope": "Every finite ENNReal exponent p>2; literal complex target ell^(-1,p/2), with the Banach lower bound proved from p>2. The full original real FL^p pair space maps real analytically to this target. Equal physical distributions give the same Hilbert frequency coordinates and the same independent original-domain physical action derivatives."
+    },
+    {
+      "source": "Locally uniform refined asymptotic",
+      "declaration": "theorem1_3_asymptotic",
+      "scope": "At every real physical FL^p pair, p finite and p>2, an open complex neighborhood is fixed first, followed by one ell^(p/3) remainder map and one OnePlus remainder map. The maps precede every finite q>1; their respective quasi-norm and q-norm bounds are locally uniform. At every n!=0 the normalized frequency plus 12*pi*n times the actual product of the fixed Theorem 1.2 Birkhoff coordinates equals n times the sum of these remainders."
+    }
+  ],
+  "physical_identification": [
+    "NLS.ZakharovShabat.periodOneSobolevFourthHamiltonian_eq_classical",
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sobolevFourth_action_factor_with_frequencies",
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedSobolevFourthFrequency_eq_moments",
+    "NLS.Articles.MKdVBelowL2.fourthSobolevPhysicalInput_coefficients",
+    "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_sobolev_actionDerivative",
+    "NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_eq_sobolev_actionDerivative"
+  ],
+  "normalization": "omega4star_n = dH4/dI_n - (2*pi*n)^3 - 6*H2 - 12*pi*n*H1 = -12*sum_k k*Omega^2_nk",
+  "qualifications": [
+    "The fixed Hilbert Birkhoff family uses the same accepted intrinsic manuscript reference as the verified Theorem 1.2.",
+    "The printed n-times-remainder expression is an asymptotic as |n| tends to infinity. The Lean asymptotic clause is stated at n!=0. The exact all-index reconstruction is separately proved in physicalFourthFrequencyCandidate_remainder with the actual singleton contribution at n=0; no general complex zero-frequency vanishing is asserted.",
+    "The ell^(p/3) component retains its quasi-norm when 2<p<3; no Banach assumption is inserted.",
+    "The physical lower Hamiltonians are independently defined mass and momentum on the original full fractional source and calibrated against the Riccati hierarchy; they are not defined by rearranging the desired frequency identity."
+  ],
+  "validation": "Strict Lean 4.33.1 checks and a fresh transitive audit of all 460 named declarations; only propext, Classical.choice and Quot.sound. Sixteen final new modules were checked, and 88 unchanged parent modules reused from 896298fd1ab33359c906eeea93d922c78fe909a0.",
+  "remaining": []
+}

@@ -1,31 +1,17 @@
 # mKdV below L² — private verification
 
-Status: **Theorem 1.2 is verified under the accepted manuscript reference.**
-Theorems 1.1 and 1.3 remain unverified. The physical Birkhoff family now has
-precise article statements, complex-domain compatibility and canonicality,
-complete real source/target models, analytic inverses and accepted Hilbert
-identification. The H₄ candidate now converges absolutely for every finite p>1 on an open
-physical domain shared with the Birkhoff family. The actual root-period
-comparison, relative product estimate, and normalizing-period stability are
-checked, including a constructed uniform lower bound for the actual
-comparison period. Proposition 4.1's all-finite-p root bootstrap is now
-verified. The full Lemma 5.3 moment bounds are checked for every finite p≥2.
-The candidate is now analytic into the weighted targets of Theorem 1.3.
-The refined actual-action remainder is checked on the same physical
-chart. Physical H₄ derivative identification is checked at all finite-gap
-inputs, including closed actions; the full H^(3/2) classical-domain
-identification remains open. The real weighted Hilbert targets are verified,
-with exact inclusion into the same complex candidate sequence. The physical
-H₄ Hamiltonian is now constructed and calibrated on the full H^(3/2) domain;
-its full action dependence is now verified. Independent physical open and
-closed frequencies are defined on that domain and calibrated at finite gaps.
-Their full moment-candidate identification is still required.
-See [the current progress record](PROGRESS.md) and the
-[Theorem 1.2 clause map](theorem-1.2.json).
+Status: **Theorems 1.2 and 1.3 are verified under the accepted intrinsic
+Birkhoff reference. Theorem 1.1 remains open.**
 
-The user approved separate worktrees on 2026-11-02. Work is now on
-`articles/mkdv-below-l2`, based on `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
-The canonical main checkout and its compiled dependencies remain unchanged.
+Work is confined to the authorized private worktree on
+`articles/mkdv-below-l2`, based on canonical commit
+`c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. The canonical checkout and its
+compiled dependencies are unchanged. The workspace decision remains separate.
+
+See the [Theorem 1.2 clause map](theorem-1.2.json),
+[Theorem 1.3 clause map](theorem-1.3.json),
+[dependency history](theorem-1.3-progress.json), and
+[checkpoint history](PROGRESS.md).
 
 ## Pinned source
 
@@ -34,323 +20,103 @@ Kappeler–Molnar, *On the wellposedness of the defocusing mKdV equation below L
 [PDF](https://arxiv.org/pdf/1606.07052v1), downloaded 2026-11-02.
 33 PDF pages; printed page numbers equal PDF page numbers.
 SHA-256: `7ac1baa898365f4a556aec4d2e3182e82a9dbe782d8a183114ae81acb486e8c1`.
-The PDF itself displays November 14, 2021 (including creation metadata), although
-its arXiv watermark and requested version are v1, 22 June 2016. The hash pins the
-actual served bytes; no claim of byte identity with a 2016 download is made.
-PDF/text are scratch files at `work/source/1606.07052v1.{pdf,txt}`, outside
-candidate tracked sources.
+The served PDF displays November 14, 2021 although the watermark and requested
+version are v1, 22 June 2016. The hash pins the actual served bytes.
+Downloaded PDF/text and compiler outputs are not tracked.
 
-## Main statements and quantifiers
+## Main statements and coverage
 
-All spaces below are on T = R/Z; n ranges over Z. FL^p is the space of real
-periodic distributions with norm equal to the ℓ^p norm of their Fourier
-coefficients, not the distribution weak topology. FL_c^p is its complex pair
-space, FL_r^p the conjugate pair locus. E_r^p is the real diagonal (u,u).
-Sequence weights are (1+|n|)^s; compare any library weight by equivalence and
-track normalizations before transporting physical assertions.
+All spaces are on T = R/Z; indices range over Z. Physical FL^p consists of
+periodic distributions with their Fourier coefficient ell^p norm. FL_c^p is
+the complex pair space; FL_r^p is the conjugate-reflection real form. The
+smaller real mKdV diagonal is E_r^p. Weighted sequence norms use (1+|n|)^s.
 
-* **Theorem 1.1, p. 3.** For each finite p>2, the renormalized equation (2)
-  is locally C⁰ wellposed on all real FL^p and globally C⁰ wellposed on a
-  neighborhood of zero. Precisely, for each w there exist a neighborhood U
-  of w and T>0 working for every v in U, with continuous solution map
-  U → C([-T,T],FL^p) in the uniform trajectory norm. For the global clause,
-  choose one neighborhood U₀ first, then every T>0 admits a continuous
-  trajectory map on that U₀. Solutions have the smooth approximation meaning
-  on p. 2: every smooth sequence converging to the datum has pointwise-in-time
-  convergence to the same continuous curve. The original equation's solution
-  map has no continuous extension at any datum of FL^p outside L².
-  Corollary 7.2(iii), p. 30, explicitly strengthens/specifies this for every
-  fixed t>0; a trajectory obstruction alone will not cover that claim.
-* **Theorem 1.2, p. 5.** For every finite p≥2 there is a complex open
-  neighborhood W_p of FL_r^p and an analytic map Φ_p: W_p → ℓ_c^p, fixing
-  zero, real analytic and canonical, agreeing with Φ_q on common domains
-  for every finite q≥2. On the real locus it is injective, a local
-  diffeomorphism at every point, and has open dense image in ℓ_r^p.
-  At p=2 it is the accepted Hilbert Birkhoff map and is onto, hence a
-  bi-real analytic diffeomorphism. The family and cross-exponent agreement
-  must be constructed together, not separately assumed.
-* **Theorem 1.3, p. 6.** One physical normalized H₄ frequency map is defined
-  on FL_r² with values in the intersection of ℓ^(-1,r), r>1, and is real
-  analytic into each such target. For each finite p>2 it has a real analytic
-  extension on FL_r^p with values in complex ℓ^(-1,p/2). At nonzero indices its refined asymptotic
-  is ω_n^(4)* + 12πn I_n = n(a_n+b_n), where a is ℓ^(p/3) and b
-  belongs to every ℓ^r, r>1, with estimates locally uniform in the potential.
-  When p<3 the ℓ^(p/3) term has exponent below one: do not replace its
-  summability statement with a Banach-space hypothesis. The weighted sequence includes n=0. The n-times-remainder notation is
-  asymptotic at infinity; dividing by n must not assert zero-mode vanishing.
+**Theorem 1.2, p. 5, verified.** For every finite p≥2, the fixed compatible
+physical Birkhoff family is analytic on a complex open neighborhood of all
+FL_r^p, fixes zero and is canonical for the physical Fourier bracket. The
+maps agree on common complex domains at every pair of exponents. Their real
+restrictions are injective local diffeomorphisms with open dense image in the
+actual conjugate-pair Banach target. At p=2 the map equals the accepted
+intrinsic Hilbert map and has a global real analytic inverse.
 
-## Physical conventions
+**Theorem 1.3, p. 6, verified.** The normalized physical H₄ frequency map
+extends to all real physical FL², takes values in every actual real weighted
+ell^(-1,r), 1<r≤infinity, and is real analytic into each target. For every
+finite p>2 it extends real analytically on all FL_r^p into the literal complex
+ell^(-1,p/2) target. Equal physical distributions have the same coordinates.
+These are the physical H₄ action frequencies: the extensions agree with the
+independently constructed original H^(3/2) Hamiltonian derivatives at every
+source and index, including closed actions.
 
-Equation (1): u_t = -u_xxx + 6u²u_x. Equation (2):
-u_t = -u_xxx + 6(u²-M)u_x, M = ∫₀¹u²dx, conserved in time.
-Fourier synthesis is ∑ a_n exp(2πinx); coefficients use exp(-2πinx).
-The original-to-renormalized translation is v(t,x)=u(t,x-6Mt).
-Its inverse uses x+6Mt. These signs directly satisfy equations (1)–(2);
-we use this corrected sign for the conversion discussed on p. 29.
-The physical coefficient multiplier is exp(-12πinMt), and its inverse
-is exp(+12πinMt).
+The original H₄ has local complex analytic factors in the actual ell^(3,1)
+actions. Its physical open-action frequency is the derivative along unit-speed
+action reduction. Its closed-action frequency is the second amplitude
+derivative, with action exactly t²/2. Both equal the same raw unit action
+partial derivative. This proves full-source real analyticity and continuity
+across collapsed gaps. Actual spectral finite-gap approximation in the native
+weighted norm then extends Lemma 5.2 to the full domain. The chosen article
+moment atlas and physical distribution adapter preserve this identity.
 
-On the action side, H₁ = ∑ I_n and H₂ = ∑ 2πn I_n.
-The normalization is ω_n^(4)* = ∂_{I_n}H₄ -(2πn)³ -6H₂ -12πnH₁,
-not the dNLS H₃ frequency normalization. On E_r^p, H₂ vanishes where
-classically defined, and ω_n^# = (2πn)³ + ω_n^(4)*. H₄ is scaled relative
-to the accepted reference as explained on p. 5; retain the (-i)^(n+1)
-scaling for hierarchy Hamiltonians n≥2.
+The refined asymptotic has fixed ell^(p/3) and OnePlus remainder maps, with
+one neighborhood and both maps preceding all finite q>1. Their bounds hold
+locally uniformly. The p/3 quasi-norm is retained for 2<p<3. The asymptotic
+identity is stated at n≠0, as appropriate at infinity; the separately proved
+exact all-index formula retains the actual singleton term at n=0.
 
-## Checked new declarations
+**Theorem 1.1, p. 3, open.** For each finite p>2 the remaining target is local
+C⁰ wellposedness of the renormalized mKdV equation on every real FL^p datum,
+with a common neighborhood and T>0 and a continuous map into trajectories
+in the uniform norm. The global clause requires one neighborhood of zero
+working before every T>0. Smooth approximations must give the same
+pointwise-in-time limit curve. The original equation must have no continuous
+extension at any datum in FL^p outside L², at each fixed t>0 as stated in
+Corollary 7.2(iii).
 
-`NLS/Articles/MKdVBelowL2/SmoothRenormalization.lean` proves:
+## Physical conventions and corrections
 
-* `hasDerivAt_renormalizing_translation`: the actual time-space derivative
-  of an original smooth solution, evaluated along (t,x-6Mt), gives exactly
-  -u_xxx+6(u²-M)u_x.
-* `hasDerivAt_original_translation`: the inverse chain rule gives exactly
-  the original velocity along (t,x+6Mt).
+Fourier synthesis uses exp(2πinx); coefficients use exp(-2πinx). The original
+equation is u_t=-u_xxx+6u²u_x. The renormalized equation is
+u_t=-u_xxx+6(u²-M)u_x, with M=integral from 0 to 1 of u².
+Original-to-renormalized translation is v(t,x)=u(t,x-6Mt), with inverse
+x+6Mt and coefficient multiplier exp(-12πinMt). This sign directly satisfies
+the equations and corrects the conversion discussed on p. 29.
 
-The derivative assumptions are explicit pointwise classical hypotheses.
-These are local calculus lemmas; M is an arbitrary fixed real parameter.
-Neither conservation nor identification of M with the integral is silently
-included. Spatial derivative transport and mass conservation remain necessary
-to package a full classical-solution equivalence.
+The action normalization is
+omega4star_n = dH4/dI_n - (2πn)^3 - 6H2 - 12πnH1.
+The actual moment expression is -12 sum_k k Omega²_nk. It is not the H₃
+frequency. H₁ is the physical mass and H₂ the physical momentum, retaining
+the original period-one constants. On the mKdV diagonal H₂ vanishes where
+classically defined, and omegaSharp_n=(2πn)^3+omega4star_n.
 
-`NLS/Articles/MKdVBelowL2/TranslationFourier.lean` proves:
+The nonextension argument must select n≠0: the mass-dependent phase in
+Theorem 7.1(iii) vanishes at n=0. Corollary 7.2's reference to item (iv) of
+Theorem 7.1 is a cross-reference typo; that theorem has three items.
 
-* `coefficient_renormalizing_translation`;
-* `coefficient_original_translation`.
+## Remaining integration order for Theorem 1.1
 
-These identify the actual period-one Fourier integrals of synthesized ℓ¹
-functions under the two physical translations. They reuse
-`NLS.Fourier.periodOneCoefficient_translated_synthesis`; they do not assume
-that a Birkhoff rotation is physical translation. Time-dependent smooth
-profiles can instantiate the identity at each time. Extending this identity
-as an operator on real FL^p distributions remains separate work.
-
-## Existing proofs inspected and proposed reuse
-
-* `NLS/Fourier/PeriodicFourierLebesgueSpace.lean`: original smooth-test
-  distributions, coefficient isometry, finite-p Fourier truncation.
-  `PeriodicFourierLebesgueStrictness.lean` proves actual distributions in
-  FL^p outside FL². Its complex witness alone is not the required real datum.
-* `NLS/Fourier/SpatialTranslation.lean`: exact period-one physical Fourier
-  translation; used directly. `CircleTranslation.lean` concerns period two
-  and actual L² classes, so do not silently substitute its π scale.
-* `NLS/ZakharovShabat/SourceBirkhoffImageInverse.lean`: open image,
-  injectivity, analytic image inverse, and zero value. The weighted variants
-  `SourceBirkhoffWeightedImageInverse.lean` and
-  `SourceBirkhoffWeightedComplexAnalytic.lean` retain native coefficient
-  values and analytic domains. These supplied Theorem 1.2's physical family,
-  with the constructed data, complex coordinate change, cross-p agreement,
-  canonical sign, dense image and p=2 comparison now assembled in
-  `NLS/Articles/MKdVBelowL2/Theorem12.lean`.
-* `NLS/Dynamics/PhaseContinuityEstimate.lean`, `PhaseContinuityChoice.lean`,
-  and `NLS/SequenceSpaces/SpatialTranslation.lean`: reusable finite-head/tail
-  phase control and continuous translation. No new competing proofs needed.
-* `NLS/Dynamics/UnboundedPhaseObstruction.lean` and
-  `VariableAmplitudePhaseObstruction.lean`: exclude uniform trajectory
-  convergence under diverging positive frequencies and a nonzero amplitude.
-  `PhaseSubsequenceSeparation.lean` permits variable separating times.
-  None alone proves nonextension at a prescribed fixed time.
-* `NLS/SequenceSpaces/RealActionMassNonextension.lean`: total action has no
-  continuous extension at zero above ℓ¹. The mKdV obstruction must instead
-  work at every real FL^p datum outside L² and preserve symmetric actions.
-* `NLS/ZakharovShabat/SourceOrdinaryFrequencyNonextension.lean` is specific
-  to the physical dNLS energy derivative, with a mass shift 4. Its equation
-  theorem cannot replace mKdV's mass coefficient 12πn or H₄ identification.
-
-## H₄ root estimates and physical candidate adapter
-
-`SourcePsiCriticalComparisonDomain.exists_sourcePsi_critical_comparison`
-constructs a common open neighborhood of the entire real source locus. It
-provides equation (38) for the actual psi roots, critical roots and quotient
-products, with one spectral-separation constant uniform in both indices at
-each source. On the selected closed discs the actual relative perturbation
-sum is summable and the product difference obeys
-`‖ζ−χ‖ ≤ ‖χ‖ exp(S) S`. Hölder also bounds S by the displacement norm times
-the reciprocal-lattice norm and the isolating-disc constant. All zero periods,
-contours and root separation are constructed from established spectral data.
-
-`SourceRootPeriodPerturbation` proves that a complex analytic numerator f
-with `‖f−1‖ ≤ ε` on the gap has normalized period within ε of -i. It follows
-that the period norm is at least 1−ε. The quantitative root estimate follows
-from the cancellation identity and gap bounds. `SourcePsiCriticalPeriodLowerBound.exists_sourcePsi_critical_period_control`
-now discharges the actual tail smallness requirement: it constructs an open
-neighborhood of the entire real locus where the normalized actual comparison
-period has norm at least 1/2, uniformly in both indices and locally uniformly
-at every complex source. Its construction reuses compactness of the real gap
-product, equicontinuity of the original root family, norm continuity of the
-critical displacement and quantitative spectral separation.
-
-`SourceCriticalRelativeRowBound` retains the linear absolute reciprocal row
-in the actual product difference, with only the exponential bounded by the
-full displacement norm. `Fourier/AbsoluteReciprocalYoungRows` bounds these
-rows at every admissible Young triple whose kernel exponent is above one,
-allowing a small exponent loss instead of the fixed doubled output exponent.
-`SourcePsiCriticalRootBound` gives the actual inequality
-`‖σ−ρ‖ ≤ 2(gD+g²M/d)` from the constructed period control and explicit gap,
-product-error, product-size and denominator bounds.
-
-`sourceProposition4_1` in `SourceProposition4_1.lean` now proves the full
-Proposition 4.1 for every finite p>2. The normalized sequence is the actual
-critical-filled root difference divided by the actual gap, with value zero
-at collapsed gaps. The same scalar sequence belongs to every finite q>1,
-with norm bounds uniform in the deleted index. The complex source neighborhood
-is chosen before q, and the estimates are locally uniform at every complex
-source in a constructed open neighborhood of the entire real locus.
-The proof combines the original squared-gap initial bound, the actual
-reciprocal inequality, and a reusable finite iteration of reciprocal
-exponents. Hölder product exponents below one are embedded contractively into
-ℓ¹ before Young is used. The sharp off-diagonal Lemma 5.3 estimate now consumes this root input;
-Theorem 1.3 remains open.
-See the exact [Proposition 4.1 map](proposition-4.1.json).
-
-`SourceAbelianMomentOnePlusDomain.exists_sourceAbelianMoment_onePlusAtlas`
-constructs the sharp off-diagonal moment estimate for every finite p>2 using
-exactly the original normalized roots. The actual squared Abelian primitive
-has zero critical-weighted period; a quadratic cosine cancellation proves
-the same identity on the gap without dividing by a vanishing gap or sine.
-The resulting three-term numerator bound combines the gap-normalized root
-row, the actual product-difference row and the reciprocal denominator row.
-Its canonical cubic coefficient belongs to every finite q>1, uniformly in n
-and locally uniformly on one connected neighborhood chosen before q.
-`SourceLemma5_3.sourceLemma5_3` assembles both clauses, including p=2,
-on one connected domain. It retains fixed diagonal maps into ℓ^(p/2) and
-ℓ^(1+), the actual canonical sharp rows, and the literal uniform q-power sums.
-See the [Lemma 5.3 clause map](lemma-5.3.json).
-
-`FourthMomentSharpSummability.exists_fourthMoment_summableAtlas` removes the
-p≤3 restriction from absolute convergence of the weighted sum. Above three,
-the cubic gap in ℓ^(p/3) is paired with the actual row in its conjugate
-exponent. The physical adapter below now uses this all-finite-p construction.
-
-`PhysicalFourthFrequencyCandidate` fixes a constructed actual moment chart
-for every finite p>1, intersects its physical convergence domain with the chosen
-Theorem 1.2 Birkhoff domain, and proves this common domain is open and contains
-every physical real-type input. Every individual moment is holomorphic there.
-The literal candidate `-12 ∑ k, k Ω²ₙₖ` converges absolutely and agrees across
-exponents for the same real distributions. Birkhoff coordinate products on
-this domain remain the actual spectral actions of the same input.
-
-`SourceAbelianMomentWeightedRows` realizes each full weighted row as an
-analytic ℓ¹-valued map, with locally uniform linear growth in n. Continuous
-summation gives analyticity of the infinite scalar candidate. The exact
-identity comparing the weighted sum with n times the unweighted moment sum
-bounds their difference by a cubic Hölder product. With the literal
-normalizations this compares the H₄ candidate with 6πn times the established
-unweighted candidate. Reusing the latter's sequence bounds proves complex
-analyticity into ℓ^(-1,r) for every finite r>1 with r≥p/2, on one domain chosen
-before r. The inverse-bracket realization retains the raw zero coordinate.
-
-`physicalFourthFrequencySequence_real_analytic` transports this to the full
-physical real Banach source. Thus r=p/2 is available at p>2, and every finite
-r>1 at p=2. The weighted sequences agree for the same real distributions
-at all common target exponents. The refined candidate remainder is now checked as well.
-`FourthMomentActionRemainder` reuses the established unweighted actual-action
-correction and the bounded weighted-sum difference. Dividing by the index
-with a zero fallback gives simultaneous refined bounds and hence one fixed
-ℓ^(p/3)+ℓ^(1+) decomposition. `PhysicalFourthFrequencyRemainder` transports
-both maps to the same physical chart and uses the actual products of the
-chosen Birkhoff coordinates as actions. Its nonzero-index reconstruction is
-exact; the all-index version retains the actual zero coordinate explicitly.
-Equality with the independently defined physical normalized H₄ derivative
-is now verified at every real finite-gap input, including closed selected
-actions. Identification throughout the original H^(3/2) domain remains open.
-
-`QuarticInversionRemainder` and `QuarticInversionContour` prove the quartic
-Laurent coefficient and its exact contour period. The source theorem
-`exists_sourceFullAbelian_hamiltonian_fourth_contour_of_chart` identifies
-the exterior contour with the independently defined physical H₄−6H₁H₂,
-with normalization 2i/π. This is the physical-value input to Lemma 5.2;
-its action derivative and conversion to weighted moments are now verified.
-`SourceLemma5_2` defines open frequencies by the negative physical H₄ action
-reduction derivative and closed frequencies by the physical second amplitude
-derivative. Fixed finite-support contour identities give analyticity of H₂
-and H₄ on the opening line, and the exact action t²/2 fixes the closed limit.
-The actual cubic psi contour expansion supplies −12 times the weighted moments
-and (2πn)³. The result is independent of Birkhoff realization and transports
-across every finite source exponent above one. The chosen physical adapter
-consumes it in `PhysicalFourthFrequencyIdentification`. See the
-[Lemma 5.2 clause map](lemma-5.2.json).
-
-`FourthMomentReality` proves that the weighted candidate is real at every real
-source by the shared positive even-moment reality theorem. The physical adapter
-`PhysicalFourthFrequencyReality` realizes the candidate in the actual closed
-real weighted subspace. Its complex inclusion is the same established sequence;
-all coordinates, cross-exponent compatibility and finite-gap physical derivative
-identities are preserved. At p=2 this supplies every finite real target r>1.
-
-The new `PeriodOneSobolevFourthHamiltonian` defines physical H₄ on the full
-H^(3/2) pair using a bounded distributional third-derivative pairing and the
-H¹ cubic product. It is entire complex analytic and equals the independently
-defined Riccati H₄ for every smooth periodic coefficient-identical pair.
-`SourceSobolevFourthHamiltonian` transports this construction to the exact
-native weighted real source, proves reality by explicit finite-gap sequences
-in that weighted norm, and gives an analytic map into the actual real scalar
-codomain. `SourceSobolevFourthBirkhoff` uses the global weighted inverse on the
-full rectangular target. Its native opening-line Hamiltonian equals the
-original physical finite-gap function at every amplitude, so the closed
-second derivative keeps its independent physical normalization. No
-full-domain action-only factorization or frequency equality is claimed yet.
-
-`SourceFiniteGapHamiltonianIsospectral` proves action dependence of every
-physical finite-gap Hamiltonian order directly from the all-order exterior
-trace. `SourceSobolevFourthActionDependence` extends H₄ invariance to the full
-original fractional source by simultaneous native Birkhoff truncations.
-`WeightedRealActionReduction` and `SourceSobolevActionReduction` retain the
-physical unit-speed action parameter in the actual weighted norm, and agree
-with the established Hilbert source curve coefficient-for-coefficient.
-`SourceSobolevFourthFrequency` defines physical open and closed frequencies
-on the entire original H^(3/2) source independently of every moment formula.
-The finite-gap values are calibrated at every index. Identification with the
-chosen analytic moment candidate throughout the full domain remains open.
-
-## Outstanding dependencies and integration order
-
-1. The smooth physical fourth-flow bridge has been consumed from the hierarchy
-   branch. Continue its use for the diagonal Birkhoff symmetry and frequency
-   identification; do not create an alternative hierarchy bridge.
-2. Theorem 1.2's physical FL^p/Birkhoff family, canonicality, dense image and
-   accepted Hilbert comparison are now implemented. The smaller mKdV diagonal's
-   conjugation/reflection invariance is still needed for Theorem 1.1.
-3. The analytic weighted candidate, refined action remainder and full finite-gap
-   Lemma 5.2 are now checked. Extend the physical H₄ derivative identification
-   to the original H^(3/2) domain and then assemble Theorem 1.3. The physical
-   fractional Hamiltonian and its native weighted Birkhoff transport are now
-   constructed, and full-domain action dependence is proved. Independent open
-   and closed physical frequency definitions now cover the full domain;
-   their equality with the chosen candidate and the original analytic
-   action-factor derivative interpretation remain.
-   The real Hilbert targets are verified with exact inclusion into the
-   same complex frequency sequence. The H₃ bounds were reused through an exact weighted
-   comparison identity; they do not by themselves identify H₄.
-4. Show the physical renormalized flow is the specified rotation, preserves
-   the diagonal, and stays locally in the open Birkhoff image. A small ball
-   gives the global-near-zero clause; prove smooth-approximation agreement.
-5. Prove fixed-time nonextension by controlled smooth approximations with
-   divergent and tunable mass, using a nonzero signed mode. Theorem 7.1(iii)
-   is printed for all n, but the mass term vanishes at n=0; the argument
-   should select n≠0. Corollary 7.2(iii) needs such a mode, available outside
-   L² after the physical coordinate identification. Its reference to item
-   (iv) of Theorem 7.1 is a cross-reference typo; 7.1 has three items.
-6. Continue on the authorized `articles/mkdv-below-l2` worktree, validate and
-   audit each main-theorem milestone, and commit/push it. Main integration
-   remains sequential.
+1. Prove the smaller physical mKdV diagonal's Birkhoff conjugation/reflection
+   symmetry and invariance, consuming the verified smooth hierarchy bridge.
+2. Identify the physical renormalized evolution with the corresponding
+   rotation, and keep it locally in the open Birkhoff image. A small ball
+   supplies the global-near-zero clause.
+3. Prove the exact smooth-approximation solution property and continuity in
+   the uniform trajectory norm.
+4. Prove fixed-time nonextension at every FL^p datum outside L² using controlled
+   smooth approximations, tunable divergent mass and a nonzero signed mode.
 
 ## Validation
 
-Run `coverage/articles/mkdv-below-l2/check.sh` from this checkout. It uses the
-pinned Lean 4.33.1 executable and canonical mathlib v4.33.1 compiled imports
-read-only, with new outputs under this checkout's private
-`.lake/mkdv-below-l2/lib/lean`. The script supports `CANONICAL_NLS_ROOT`,
-`ELAN_HOME`, `LEAN_BIN` and `MKDV_BUILD_ROOT` overrides; it never invokes Lake
-or writes through the imported symlinks.
+The focused checker `check.sh` lists 104 article/shared modules and the
+consumed hierarchy foundations. Lean 4.33.1 checks use `autoImplicit=false`
+and `warningAsError=true`. The fourteenth checkpoint strictly checks all 16
+final new modules and reuses 88 parent modules after verifying their sources
+are unchanged from `896298fd1ab33359c906eeea93d922c78fe909a0`.
 
-The expanded focused checker lists 88 new article/shared modules and the
-consumed smooth hierarchy foundations, with `autoImplicit=false` and
-`warningAsError=true`. Current incremental validation strictly rechecks the
-6 new modules and reuses the 82 unchanged modules validated at `4a0d0a4`.
-The full transitive audit is rerun after those checks. `AxiomAudit.lean` audits all explicitly named new
-and consumed declarations (392 total), including the main Theorem 1.2 declarations;
-only `propext`, `Classical.choice` and `Quot.sound` occur. No new axiom,
-sorry or disabled linter was introduced. `validation.txt` captures the checks.
-This is focused validation, not a full repository build or completed article
-verification. Downloaded PDF/text and compiler outputs are not tracked.
+The fresh full transitive audit checks all 460 named declarations, including
+the main Theorems 1.2 and 1.3. Only `propext`, `Classical.choice` and
+`Quot.sound` occur. No holes, new axioms, disabled linters or increased
+heartbeat limits were introduced. `validation.txt` captures the checks;
+`validation.json` records the build basis, source hashes and audit results.
+Canonical compiled dependencies are imported read-only. This is incremental
+focused validation, not a fresh whole-repository build or a completed
+verification of the entire article.

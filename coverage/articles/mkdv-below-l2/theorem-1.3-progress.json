@@ -1,6 +1,6 @@
 {
   "main_theorem": "1.3",
-  "verified": false,
+  "verified": true,
   "checked_dependencies": [
     {
       "source": "Section 4 equation (38), pp. 17–18",
@@ -200,9 +200,37 @@
       "source": "Full-domain physical frequency finite-gap calibration",
       "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_eq_finiteGap",
       "scope": "Every actual finite-gap point in the full original fractional domain and every index, including closed selected actions. The entire physical reduction-line function is the original Riccati H4 function at every parameter, so the independent open and closed derivatives retain their previously verified normalization."
+    },
+    {
+      "source": "Original H4 analytic action factors on ell^(3,1)",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sourceSobolevFourth_local_action_factor",
+      "scope": "Actual holomorphic inverse germs agree with the global native inverse on a full real neighborhood. Real action dependence gives genuine local complex analytic action factors, including closed tail actions and arbitrary infinite zero sets."
+    },
+    {
+      "source": "Original physical partial derivatives",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sobolevFourth_action_factor_with_frequencies",
+      "scope": "On one common native neighborhood, every independently defined physical H4 frequency is the local factor differential in the raw unit ell^(3,1) action direction. Open reduction has unit action speed; closed opening has exactly action t²/2."
+    },
+    {
+      "source": "Full original-domain frequency regularity",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticAt_sobolevFourthFrequency",
+      "scope": "Each independent physical frequency is real analytic on the entire H^(3/2) source, including across collapsed gaps."
+    },
+    {
+      "source": "Full H^(3/2) Lemma 5.2 identification",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedSobolevFourthFrequency_eq_moments",
+      "scope": "Every native original fractional source and every signed index. The exact three physical renormalization terms use independently calibrated H1 mass and H2 momentum. Actual weighted spectral finite-gap approximation and full frequency continuity extend the moment identity without restricting selected gaps."
+    },
+    {
+      "source": "Full physical frequency extension adapter",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_sobolev_actionDerivative",
+      "scope": "The chosen article candidate equals the independently defined physical action derivative on every original H^(3/2) source, preserving both period-one distributions and the fixed accepted Hilbert Birkhoff family."
     }
   ],
-  "remaining": [
-    "Identify the independently defined full-domain physical H4 frequencies with the chosen normalized moment candidate at every real H^(3/2) source, including closed actions; verify the original local action-factor derivative interpretation and assemble Theorem 1.3. Full-source H4 action dependence and finite-gap calibration are now verified."
+  "remaining": [],
+  "completed_by": [
+    "NLS.Articles.MKdVBelowL2.theorem1_3_hilbert",
+    "NLS.Articles.MKdVBelowL2.theorem1_3_extension",
+    "NLS.Articles.MKdVBelowL2.theorem1_3_asymptotic"
   ]
 }

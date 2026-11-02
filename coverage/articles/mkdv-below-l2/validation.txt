@@ -1,93 +1,21 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
-Incremental basis: 4a0d0a4; 82 unchanged modules reuse parent checks; 6 new modules checked strictly in this checkpoint.
-ComplexAnalysis/RelativeProductComparison: checked
-ComplexAnalysis/RootPeriodComparison: checked
-ComplexAnalysis/QuarticInversionRemainder: checked
-ComplexAnalysis/QuarticInversionContour: checked
-ZakharovShabat/SourceFullAbelianFourthHamiltonianContour: checked
-ZakharovShabat/SourceFullAbelianFourthContourPoisson: checked
-ZakharovShabat/SourceFullAbelianFourthContourLocal: checked
-ZakharovShabat/SourceAbelianMomentCubicShift: checked
-ZakharovShabat/SourceAbelianMomentFourthContour: checked
-ZakharovShabat/SourceFiniteGapFourthOpenFrequency: checked
-ZakharovShabat/SourceFiniteGapFourthOpenMoments: checked
-ZakharovShabat/SourceFiniteGapFourthOpening: checked
-ZakharovShabat/SourceFiniteGapFourthClosedFrequency: checked
-ZakharovShabat/SourceLemma5_2: checked
-ZakharovShabat/SourceFiniteGapFourthFrequencyExponent: checked
-ZakharovShabat/SourceSingleRootRelativeComparison: checked
-ZakharovShabat/SourcePsiCriticalRootComparison: checked
-ZakharovShabat/SourceCriticalRelativeComparison: checked
-ZakharovShabat/SourcePsiCriticalComparisonDomain: checked
-ZakharovShabat/SourceRootPeriodPerturbation: checked
-Fourier/AbsoluteReciprocalYoungRows: checked
-ZakharovShabat/SourceCriticalRelativeRowBound: checked
-ZakharovShabat/SourceCriticalTailSeparation: checked
-ZakharovShabat/SourcePsiCriticalFilledTail: checked
-ZakharovShabat/SourcePsiCriticalNormalizer: checked
-ZakharovShabat/SourcePsiCriticalPeriodLowerBound: checked
-ZakharovShabat/SourcePsiCriticalRootBound: checked
-SequenceSpaces/ReciprocalBootstrapExponents: checked
-SequenceSpaces/ReciprocalBootstrapStep: checked
-SequenceSpaces/ReciprocalBootstrap: checked
-ZakharovShabat/SourcePsiCriticalInitialOffset: checked
-ZakharovShabat/SourcePsiCriticalReciprocalInequality: checked
-ZakharovShabat/SourceProposition4_1: checked
-ComplexAnalysis/QuadraticCosineWeightedCancellation: checked
-ZakharovShabat/SourceAbelianCriticalWeightedPeriod: checked
-ZakharovShabat/SourceAbelianCriticalCosineCancellation: checked
-ZakharovShabat/SourceAbelianMomentCriticalComparison: checked
-ZakharovShabat/SourceAbelianMomentCriticalBound: checked
-ZakharovShabat/SourcePsiCriticalSummableDifference: checked
-ZakharovShabat/SourcePsiCriticalProductOnePlus: checked
-ZakharovShabat/SourceAbelianMomentOnePlus: checked
-ZakharovShabat/SourceAbelianMomentOnePlusDomain: checked
-ZakharovShabat/SourceLemma5_3: checked
-SequenceSpaces/WeightedReciprocalRows: checked
-SequenceSpaces/WeightedIndexRealization: checked
-ZakharovShabat/SourceAbelianMomentWeightedRows: checked
-FunctionalAnalysis/ComplexRealEquiv: checked
-Dynamics/ComplexBirkhoffCoordinatesExponent: checked
-Dynamics/ConjugatePairEquiv: checked
-Poisson/ComplexCanonicalCoordinates: checked
-ZakharovShabat/SourceRealBallCoreIdentity: checked
-ZakharovShabat/SourceComplexBirkhoffCanonical: checked
-ZakharovShabat/SobolevHierarchySymmetries: checked
-MKdV/HierarchyRestriction: checked
-ZakharovShabat/ClassicalNLSFourthHamiltonian: checked
-ZakharovShabat/ClassicalNLSFourthVariation: checked
-MKdV/ClassicalEnergyVariation: checked
-MKdV/ClassicalFourthFlowRestriction: checked
-Articles/MKdVBelowL2/SmoothRenormalization: checked
-Articles/MKdVBelowL2/TranslationFourier: checked
-Articles/MKdVBelowL2/PhysicalBirkhoff: checked
-Articles/MKdVBelowL2/CompatibleBirkhoffFamily: checked
-Articles/MKdVBelowL2/PhysicalBirkhoffCanonical: checked
-Articles/MKdVBelowL2/HilbertBirkhoffIdentification: checked
-Articles/MKdVBelowL2/RealBirkhoffFamily: checked
-Articles/MKdVBelowL2/Theorem12: checked
-Articles/MKdVBelowL2/ClassicalRenormalizedFourthFlow: checked
-Articles/MKdVBelowL2/FourthMomentSummability: checked
-Articles/MKdVBelowL2/FourthMomentSharpSummability: checked
-Articles/MKdVBelowL2/FourthMomentAnalytic: checked
-Articles/MKdVBelowL2/FourthMomentSequence: checked
-Articles/MKdVBelowL2/FourthMomentActionRemainder: checked
-Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate: checked
-Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder: checked
-Articles/MKdVBelowL2/PhysicalFourthFrequencyIdentification: checked
-Articles/MKdVBelowL2/FourthMomentReality: checked
-Articles/MKdVBelowL2/PhysicalFourthFrequencyReality: checked
-ZakharovShabat/PeriodOneSobolevFourthHamiltonian: checked
-ZakharovShabat/PeriodOneSobolevFourthClassical: checked
-ZakharovShabat/SourceFiniteGapHamiltonianReality: checked
-ZakharovShabat/SourceSobolevFourthHamiltonian: checked
-ZakharovShabat/SourceSobolevFourthBirkhoff: checked
-ZakharovShabat/SourceFiniteGapHamiltonianIsospectral: checked
-SequenceSpaces/WeightedRealTruncation: checked
-ZakharovShabat/SourceSobolevFourthActionDependence: checked
-SequenceSpaces/WeightedRealActionReduction: checked
-ZakharovShabat/SourceSobolevActionReduction: checked
-ZakharovShabat/SourceSobolevFourthFrequency: checked
+Incremental validation: 88 unchanged modules reuse commit 896298fd1ab33359c906eeea93d922c78fe909a0; 16 final new modules checked strictly below.
+ZakharovShabat/SourceSobolevComplexInverseAgreement: checked
+SequenceSpaces/WeightedPairRealCoordinates: checked
+ZakharovShabat/SourceSobolevFourthComplexGerm: checked
+SequenceSpaces/RealGermScalarActionDescent: checked
+ZakharovShabat/SourceSobolevFourthActions: checked
+FunctionalAnalysis/LocalActionFactorTransport: checked
+ZakharovShabat/SourceSobolevFourthActionFactors: checked
+ZakharovShabat/SourceSobolevFourthActionCurves: checked
+ComplexAnalysis/QuadraticActionDerivative: checked
+ZakharovShabat/SourceSobolevFourthActionDerivatives: checked
+ZakharovShabat/SourceSobolevFourthFrequencyRegularity: checked
+ZakharovShabat/SourceSobolevFourthLowerHamiltonians: checked
+ZakharovShabat/SourceWeightedFiniteGapEquality: checked
+ZakharovShabat/SourceSobolevFourthMomentIdentification: checked
+Articles/MKdVBelowL2/PhysicalFourthSobolevAdapter: checked
+Articles/MKdVBelowL2/Theorem13: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -830,3 +758,125 @@ ZakharovShabat/SourceSobolevFourthFrequency: checked
 'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_eq_finiteGap' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_leftInverse_sobolev_agreement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_complex_sobolevInverse_germ' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Birkhoff.weightedComplexCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Birkhoff.weightedComplexCoordinates_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Birkhoff.weightedComplexCoordinates_snd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Birkhoff.weightedComplexCoordinates_symm_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Birkhoff.weightedComplexCoordinates_symm_snd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Birkhoff.weightedComplexCoordinates_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Birkhoff.weightedComplexCoordinates_symm_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Birkhoff.weightedRealCoordinates_pairAction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthNativeComplexSourceCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthNativeComplexSourceCLM_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceComplexSobolevFourthHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.analyticAt_sourceComplexSobolevFourthHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceComplexSobolevFourthHamiltonian_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_complex_sobolevFourthBirkhoff_germ' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedSobolevFourthHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_complex_normalizedSobolevFourth_germ' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedSobolevFourthHamiltonian_eq_of_actions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Coeff.exists_local_scalar_action_factor_of_real_germ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevActionWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.FourthSobolevActions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevActionWeight_eq_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevActions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevActions_weighted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevActions_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevActions_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.analyticOnNhd_fourthSobolevActions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.fourthSobolevActions_realMap_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.fourthSobolevActions_realMap_eq_complexAction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.local_action_factor_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_normalizedSobolevFourth_action_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sobolevFourth_local_action_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sourceSobolevFourth_local_action_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevActionDirection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevActions_actionReduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthSobolevActions_actionOpening' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ComplexAnalysis.second_deriv_quadratic_action' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.deriv_sobolevFourth_actionReduction_of_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.second_deriv_sobolevFourth_actionOpening_of_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_eq_action_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sobolevFourth_action_factor_with_frequencies' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticAt_sobolevFourthFrequency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.continuous_sobolevFourthFrequency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.fourthNativeH1PairCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthNativeH1PairCLM_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthNativeH1PairCLM_snd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.fourthNativeH1PairCLM_eq_finiteGap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceFourthSobolevMass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceFourthSobolevMomentum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.analyticAt_sourceFourthSobolevMass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.analyticAt_sourceFourthSobolevMomentum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceFourthSobolevMass_eq_finiteGap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceFourthSobolevMomentum_eq_finiteGap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.eq_of_continuous_weighted_finiteGap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedSobolevFourthFrequency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.analyticAt_normalizedSobolevFourthFrequency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedSobolevFourthFrequency_eq_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthSobolevPhysicalInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthSobolevPhysicalInput_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalSobolevFourthFrequency' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_sobolev_actionDerivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalSobolevFourthFrequency_im_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_eq_sobolev_actionDerivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_sobolev_of_same_distributions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_3_hilbert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_3_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_3_asymptotic' depends on axioms: [propext, Classical.choice, Quot.sound]

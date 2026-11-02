@@ -21,13 +21,15 @@
     {
       "label": "1.3",
       "page": 6,
-      "verified": false
+      "verified": true
     }
   ],
-  "status": "theorem_1_2_verified_theorems_1_1_and_1_3_open",
+  "status": "theorems_1_2_and_1_3_verified_theorem_1_1_open",
   "branch": "articles/mkdv-below-l2",
-  "audited_declarations": 189,
+  "audited_declarations": 460,
   "verified_dependencies": [
-    "NLS.ZakharovShabat.sourceProposition4_1"
+    "NLS.ZakharovShabat.sourceProposition4_1",
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sobolevFourth_action_factor_with_frequencies",
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedSobolevFourthFrequency_eq_moments"
   ]
 }

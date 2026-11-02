@@ -128,6 +128,22 @@ modules=(
   SequenceSpaces/WeightedRealActionReduction
   ZakharovShabat/SourceSobolevActionReduction
   ZakharovShabat/SourceSobolevFourthFrequency
+  ZakharovShabat/SourceSobolevComplexInverseAgreement
+  SequenceSpaces/WeightedPairRealCoordinates
+  ZakharovShabat/SourceSobolevFourthComplexGerm
+  SequenceSpaces/RealGermScalarActionDescent
+  ZakharovShabat/SourceSobolevFourthActions
+  FunctionalAnalysis/LocalActionFactorTransport
+  ZakharovShabat/SourceSobolevFourthActionFactors
+  ZakharovShabat/SourceSobolevFourthActionCurves
+  ComplexAnalysis/QuadraticActionDerivative
+  ZakharovShabat/SourceSobolevFourthActionDerivatives
+  ZakharovShabat/SourceSobolevFourthFrequencyRegularity
+  ZakharovShabat/SourceSobolevFourthLowerHamiltonians
+  ZakharovShabat/SourceWeightedFiniteGapEquality
+  ZakharovShabat/SourceSobolevFourthMomentIdentification
+  Articles/MKdVBelowL2/PhysicalFourthSobolevAdapter
+  Articles/MKdVBelowL2/Theorem13
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"
