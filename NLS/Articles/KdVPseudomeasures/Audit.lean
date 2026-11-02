@@ -62,6 +62,8 @@ import NLS.KdV.PseudomeasureH1Analytic
 import NLS.KdV.PseudomeasureBilinearSymmetry
 import NLS.KdV.PseudomeasureLocalization
 import NLS.KdV.PseudomeasureCoefficients
+import NLS.KdV.PseudomeasureWeightInclusion
+import NLS.KdV.PseudomeasureWeightedCoefficients
 import NLS.KdV.PseudomeasureReconstructionAnalytic
 import NLS.KdV.PseudomeasureInhomogeneousReduction
 import NLS.KdV.PseudomeasureZeroCount
@@ -81,6 +83,7 @@ import NLS.KdV.PseudomeasureSpectralLipschitz
 import NLS.KdV.PseudomeasureRootSeparation
 import NLS.KdV.PseudomeasureRealPairs
 import NLS.KdV.PseudomeasureComplexPairs
+import NLS.KdV.PseudomeasureWeightedGaps
 import NLS.KdV.PseudomeasureWideLocalization
 import NLS.KdV.PseudomeasureLowerSpectrum
 import NLS.Fourier.PeriodicPseudomeasureWeakStar
@@ -135,6 +138,8 @@ import NLS.Articles.KdVPseudomeasures.SpectralCanonicalLabels
 import NLS.Articles.KdVPseudomeasures.SpectralCanonicalGaps
 import NLS.Articles.KdVPseudomeasures.SpectralComplexCanonical
 import NLS.Articles.KdVPseudomeasures.SpectralComplexGaps
+import NLS.Articles.KdVPseudomeasures.SourceWeightedSpectral
+import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 
 /-! Exact transitive axiom audit of every selected public definition and theorem. -/
 
@@ -804,6 +809,24 @@ import NLS.Articles.KdVPseudomeasures.SpectralComplexGaps
 #print axioms NLS.KdV.endpointCoupling_errors_le
 #print axioms NLS.KdV.analyticAt_endpointEffective_coefficient
 #print axioms NLS.KdV.analyticAt_endpointCoefficients
+#print axioms NLS.KdV.endpointWeightInclusion
+#print axioms NLS.KdV.endpointWeightInclusion_apply
+#print axioms NLS.KdV.norm_endpointWeightInclusion_le
+#print axioms NLS.KdV.endpointHillHminusOne_weightInclusion
+#print axioms NLS.KdV.endpointReducedHillResolventH1Original_weightInclusion
+#print axioms NLS.KdV.unshiftedEndpointHillPerturbation_weightInclusion
+#print axioms NLS.KdV.endpointHill_small_weightInclusion
+#print axioms NLS.KdV.endpointHillTailInverse_weightInclusion
+#print axioms NLS.KdV.negativeModulation_weightInclusion
+#print axioms NLS.KdV.endpointHillCorrectedMode_weightInclusion
+#print axioms NLS.KdV.endpointForgetWeight
+#print axioms NLS.KdV.endpointForgetWeight_apply
+#print axioms NLS.KdV.norm_endpointForgetWeight_le
+#print axioms NLS.KdV.endpointHill_small_forgetWeight
+#print axioms NLS.KdV.endpointHillCorrectedMode_forgetWeight_coefficient
+#print axioms NLS.KdV.endpointCoefficients_eq_weightedCorrectedModes
+#print axioms NLS.KdV.endpointCoefficients_weighted_errors_le
+#print axioms NLS.KdV.endpointCouplings_weighted_le
 #print axioms NLS.KdV.endpointPhysicalPencilFamily
 #print axioms NLS.KdV.analyticAt_endpointPhysicalPencilFamily
 #print axioms NLS.KdV.endpointReconstructionFamily
@@ -999,6 +1022,11 @@ import NLS.Articles.KdVPseudomeasures.SpectralComplexGaps
 #print axioms NLS.KdV.EndpointHillComplexPair.right_re_lt_left
 #print axioms NLS.KdV.EndpointHillComplexPair.gap_le_weight_norm
 #print axioms NLS.KdV.EndpointHillComplexPair.weighted_gap_le
+#print axioms NLS.KdV.sqrt_endpointCouplingProduct_le_weighted_norm
+#print axioms NLS.KdV.endpointCouplingRadius_le_weighted_norm
+#print axioms NLS.KdV.negativeSobolev_mode_le_three_double
+#print axioms NLS.KdV.EndpointHillComplexPair.double_weighted_gap_le
+#print axioms NLS.KdV.EndpointHillComplexPair.general_weighted_gap_le
 #print axioms NLS.KdV.wideEndpointHillEffectivePotential
 #print axioms NLS.KdV.singularHillEigenvector_decompose_wide
 #print axioms NLS.KdV.singularHillEigenvector_potential_wide
@@ -1437,6 +1465,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralComplexGaps
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_canonical_complex_labels
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillComplexLabeling_of_real
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillComplexLabels_ofPotential
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_canonical_complex_labels_with_contraction
 #print axioms NLS.Articles.KdVPseudomeasures.sourceComplexCanonicalGapValues
 #print axioms NLS.Articles.KdVPseudomeasures.sourceComplexCanonicalGapValues_zero
 #print axioms NLS.Articles.KdVPseudomeasures.sourceComplexCanonicalGapValues_neg
@@ -1448,3 +1477,27 @@ import NLS.Articles.KdVPseudomeasures.SpectralComplexGaps
 #print axioms NLS.Articles.KdVPseudomeasures.norm_sourceComplexCanonicalGaps_le
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_complex_canonical_gap_bound
 #print axioms NLS.Articles.KdVPseudomeasures.sourceComplexCanonicalGapValues_ofPotential
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedEndpointCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedEndpointCoefficients_apply
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceWeightedEndpointCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.sourceForgetWeight
+#print axioms NLS.Articles.KdVPseudomeasures.sourceForgetWeight_val
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceForgetWeight_le
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointCoefficients_forgetWeight
+#print axioms NLS.Articles.KdVPseudomeasures.sourceComplexHminusOne_forgetWeight
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_9_weighted_errors
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_sourceWeightedEndpointEntries
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGapValues
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceWeightedCanonicalGapValues_high_le
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGapBound
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceWeightedCanonicalGapValues_le
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGapValues_mem
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGaps
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGaps_apply
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceWeightedCanonicalGaps_le
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_weighted_canonical_gap_bound
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem2_1_i
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGapValues_zero
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGapValues_neg
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGaps_nat_apply
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGaps_locallyBounded

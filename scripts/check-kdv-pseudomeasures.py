@@ -95,6 +95,8 @@ modules = [
     'NLS.KdV.PseudomeasureBilinearSymmetry',
     'NLS.KdV.PseudomeasureLocalization',
     'NLS.KdV.PseudomeasureCoefficients',
+    'NLS.KdV.PseudomeasureWeightInclusion',
+    'NLS.KdV.PseudomeasureWeightedCoefficients',
     'NLS.KdV.PseudomeasureReconstructionAnalytic',
     'NLS.KdV.PseudomeasureInhomogeneousReduction',
     'NLS.KdV.PseudomeasureZeroCount',
@@ -114,6 +116,7 @@ modules = [
     'NLS.KdV.PseudomeasureRootSeparation',
     'NLS.KdV.PseudomeasureRealPairs',
     'NLS.KdV.PseudomeasureComplexPairs',
+    'NLS.KdV.PseudomeasureWeightedGaps',
     'NLS.KdV.PseudomeasureWideLocalization',
     'NLS.KdV.PseudomeasureLowerSpectrum',
     'NLS.Fourier.PeriodicPseudomeasureWeakStar',
@@ -168,6 +171,8 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralCanonicalGaps',
     'NLS.Articles.KdVPseudomeasures.SpectralComplexCanonical',
     'NLS.Articles.KdVPseudomeasures.SpectralComplexGaps',
+    'NLS.Articles.KdVPseudomeasures.SourceWeightedSpectral',
+    'NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

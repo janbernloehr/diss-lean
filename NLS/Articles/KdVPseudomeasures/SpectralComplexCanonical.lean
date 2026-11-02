@@ -130,4 +130,21 @@ theorem sourceHillComplexLabels_ofPotential (r : ℝ) (hr : AdmissiblePredualOrd
   exact (sourceHillComplexLabels_eq_of_labeling r hr q.val (sourceHillLabelCutoff r hr q) _
     (sourceHillComplexLabeling_of_real r hr q _ _ (sourceHillLabels_spec r hr q))).symm
 
+/-- The common canonical cutoff retains the ORIGINAL norm-radius contraction,
+so it works simultaneously for all stronger spectral weights as well. -/
+theorem source_uniform_canonical_complex_labels_with_contraction (r : ℝ)
+    (hr : AdmissiblePredualOrder r) (R : ℝ) :
+    ∃ N : ℕ, 2 ≤ N ∧
+      (∀ n : ℕ, N ≤ n → 13*endpointHillConstant r*(n:ℝ)^(r-1/2)*R ≤ 1/2) ∧
+      ∀ q : FourierLebesgueSpace (2:ℝ) (-r) ⊤, ‖q‖ ≤ R →
+        SourceHillComplexLabeling r hr q N (sourceHillComplexLabels r hr q) := by
+  obtain ⟨N, hN, hs, hc⟩ := source_uniform_all_complex_central_counts r hr R
+  refine ⟨N, hN, hs, fun q hq => ?_⟩
+  have hsmall (n : ℕ) (hn : N ≤ n) : 13*endpointHillConstant r*(n:ℝ)^(r-1/2)*‖q‖ ≤ 1/2 :=
+    (mul_le_mul_of_nonneg_left hq (by positivity [endpointHillConstant_pos r hr.2])).trans (hs n hn)
+  obtain ⟨ell, hm, hsp, hp, hcnt, hb⟩ := exists_sourceHillComplexLabels r hr q N hN hsmall (hc q hq N le_rfl)
+  have he : SourceHillComplexLabeling r hr q N ell := ⟨hN, hsmall, hm, hsp, hp, hcnt, hb⟩
+  have hu := sourceHillComplexLabels_eq_of_labeling r hr q N ell he
+  rwa [hu] at he
+
 end NLS.Articles.KdVPseudomeasures

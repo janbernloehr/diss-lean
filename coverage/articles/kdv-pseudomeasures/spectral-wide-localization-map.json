@@ -119,9 +119,9 @@
     "No actual KdV frequency, Birkhoff map or physical solution flow is inferred from these spectral dependencies."
   ],
   "remaining": [
-    "Prove physical original periodic/antiperiodic boundary-condition parity and any required low simplicity/interlacing;construct physical Dirichlet spectral comparisons. Original complex canonical ordering,actual multiplicities,global high slots and full complex unit-extra-weight direct gap regularity are now proved.",
-    "Complete the arbitrary-extra-weight direct estimates in source Theorem2.1 where required;unit extra weight w=1 is proved for all original COMPLEX endpoint potentials. Prove source Theorem2.2 endpoint inverse spectral regularity and original norm-bounded/weak-star-compact isospectral sets.",
-    "Construct and verify the original Birkhoff maps with global bijectivity,real analyticity and the stated weak-star homeomorphisms,and the actual H-minus-one smooth-approximation KdV flow with invariance and analytic/weak-star trajectory assertions.",
+    "Prove physical original periodic/antiperiodic boundary-condition parity and any required low simplicity/interlacing;construct the physical Dirichlet comparison and complete source Theorem2.1(ii) for the actual Dirichlet midpoint differences. The FULL arbitrary-weight complex direct canonical-gap theorem2.1(i) is now proved.",
+    "Construct the actual adapted Fourier-coordinate map Omega^(m) of source Sections2.6-2.7 and its weighted analytic inverse;prove source Theorem2.2 endpoint inverse spectral regularity and original norm-bounded/weak-star-compact isospectral sets. General-weight actual coefficient errors and joint norm analyticity are now available.",
+    "Construct and verify the ORIGINAL Birkhoff maps with global bijectivity,real analyticity and stated weak-star homeomorphisms,and the actual H-minus-one smooth-approximation KdV flow with invariance and analytic/weak-star trajectory assertions.",
     "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses,quantifiers,normalizations and topology. All remain unproved."
   ],
   "validation": {
@@ -175,6 +175,19 @@
         "sourceHillComplexLabels is the intrinsic global complex labeling in the exact source order(real part first,imaginary part second). It exhausts the entire original spectrum,has exact full algebraic multiplicities,has a lexicographically least actual value at index0,and puts each high actual pair in its required slots. One cutoff is uniform BEFORE every potential in an original complex norm ball. No ground-state simplicity or physical boundary parity is inferred.",
         "sourceHillComplexLabels_ofPotential proves literal pointwise equality with the existing real canonical labels on the original real mean-zero period-one source. This is the same physical spectral model,not a compatible alternative.",
         "Actual complex high gaps obey the original full-strip coupling estimate and the exact endpoint Sobolev weighted bound6*sqrt(6)*norm(q). The complete sourceComplexCanonicalGaps,including its finite central prefix,belongs to the genuine infinity Sobolev space of order-r. The full gap map is bounded on EVERY exact original complex endpoint norm ball,with one constant chosen BEFORE q. Its coefficients agree literally with the existing original real gaps."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-weighted-gap-map.json",
+      "results": [
+        "Norm-decreasing inclusions between arbitrary source spectral weights preserve every raw Fourier coefficient,the full original H-minus-one potential,and the full original H1 reduced resolvent. The actual perturbation commutes with inclusion;uniqueness proves equality of weighted tail inverses and corrected resonant modes under inclusion.",
+        "The original physical unit-weight effective diagonal and both couplings are proved equal to the weighted corrected-mode coefficients. The full-strip general-weight diagonal/coupling error estimates and coupling size bounds therefore concern the SAME original singular operator,not a replacement weighted characteristic.",
+        "The actual full-strip coupling radius retains the entire arbitrary spectral weight. Every actual complex physical high pair satisfies the DOUBLE-frequency bound W(2n)*abs(gap)<=2*sqrt(6)*norm(q),and the mode-number bound W(n)*abs(gap)<=6*sqrt(6)*norm(q),where W(k)=w(k)*(1+abs(k))^(-r). No cutoff or constant depends on w.",
+        "SourceWeightedSpectral realizes the original general-weight complex distributions isometrically. Forgetting only the extra weight decreases the exact original norm with constant1 and preserves EVERY smooth-test action,so mean-zero,reality and physical period-one constraints remain unchanged on restriction. The coefficient adapter and original H-minus-one inclusion agree exactly with the verified native physical operator.",
+        "Source Lemma2.9 weighted diagonal/coupling errors hold for the literal original physical entries and source Fourier coefficients on the whole corrected strip. Those entries are jointly complex analytic in the EXACT original weighted norm and spectral parameter.",
+        "The actual sourceWeightedCanonicalGaps is the COMPLETE canonical lexicographic gap sequence,including its central prefix,for the SAME original weighted source distribution. It belongs to the genuine general-weight endpoint infinity space. Positive-index values are explicitly lambda_(2n)-lambda_(2n-1);the signed extension is even and zero at0.",
+        "One cutoff is chosen BEFORE BOTH the source spectral weight and original potential on every exact original weighted norm ball. The explicit full bound is abs(w(N)*(8*sourceSpectralBound(r,R)+4*pi^2*N^2)+6*sqrt(6)*R),with N independent of w. The statement retains N in this bound. Literal local boundedness is proved in the original weighted norm topology.",
+        "sourceTheorem2_1_i proves the general-weight direct gap regularity and norm-ball boundedness of source Theorem2.1(i),with the exact original period-two Fourier normalization explicitly used by the paper. The proof applies to the full period-two complex weighted distribution space,so in particular to the original complex mean-zero physically period-one source. Theorem2.1(ii),inverse Theorem2.2 and every main theorem remain open."
       ]
     }
   ]
