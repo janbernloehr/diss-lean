@@ -39,5 +39,29 @@
     "NLS.KdV.FreeHill",
     "NLS.KdV.HillComplement",
     "NLS.Articles.KdVEstimates.EstimateAdapter"
-  ]
+  ],
+  "proof_commits": [
+    {
+      "commit": "ae26edc7593219a4a1a8dc479585e42ad129490e",
+      "scope": "Free Hill resolvent and conditional estimate adapters",
+      "pushed": true
+    },
+    {
+      "commit": "47ae6bb6e5f5b5e5ee9e75255ef310cd6217c783",
+      "scope": "Weighted Hilbert-to-summable gain, shifted tail bounds, high-frequency two-sided inversion",
+      "pushed": true
+    }
+  ],
+  "aggregate_check": {
+    "status": "deferred_not_run",
+    "command": "flock /tmp/diss-lean-article-build.lock lean -DautoImplicit=false -o .lake/build/lib/lean/NLS.olean NLS.lean",
+    "reason": "Shared lock occupied by other article validation. Only this chat's verified queued flock process was terminated before compilation began. No other process was stopped.",
+    "full_build_or_full_examples_claimed": false
+  },
+  "worktree_attachment": {
+    "create_worktree_result": "Rejected: canonical sourceRoot is not an exact registered chat workspace folder.",
+    "attach_worktree_result": "Rejected: ordinary Git worktree is not managed.",
+    "active_path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-estimates/outputs/diss-lean",
+    "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
+  }
 }

@@ -165,6 +165,22 @@
     {
       "module": "NLS/ZakharovShabat/FreeResolvent.lean",
       "role": "Inspected only as an API example; its first-order pi*n lattice and two-component operator are not imported as Hill spectral facts."
+    },
+    {
+      "module": "NLS/SequenceSpaces/WeightedHolderMultiplier.lean",
+      "role": "Actually reused for the complementary weighted l2-to-l1 map and uniform shifted estimate."
+    },
+    {
+      "module": "NLS/SequenceSpaces/SpectralConvolution.lean",
+      "role": "Actually reused for weighted multiplication and shifted Young bounds."
+    },
+    {
+      "module": "NLS/FunctionalAnalysis/NeumannCompositionBound.lean",
+      "role": "Actually reused to prove existence of a two-sided complementary inverse of norm at most two."
+    },
+    {
+      "module": "NLS/FunctionalAnalysis/SchurComplement.lean and SourceSchurComplement.lean",
+      "role": "Inspected for the next finite-mode reduction; reuse these bounded-block elimination theorems rather than duplicating them. No physical Hill block identification has yet been supplied."
     }
   ],
   "next_shared_milestones": [
