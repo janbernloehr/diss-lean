@@ -276,6 +276,12 @@ modules = [
     "NLS/MKdV/MiuraActionFlowInvariants.lean",
     "NLS/MKdV/MiuraActionFlowUniqueness.lean",
     "NLS/Articles/MKdVNLSHierarchies/ActionFlowIdentification.lean",
+    "NLS/FunctionalAnalysis/ScalarLinearODE.lean",
+    "NLS/ZakharovShabat/SourcePairedActionAngleFlow.lean",
+    "NLS/MKdV/MiuraAngleActionFlow.lean",
+    "NLS/MKdV/MiuraActionIndependence.lean",
+    "NLS/MKdV/MiuraActionCotangentIndependence.lean",
+    "NLS/Articles/MKdVNLSHierarchies/ActionAngleFlowIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

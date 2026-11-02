@@ -1260,3 +1260,61 @@ are allowed. The public inventory has 1,606 entries (1,300 theorems and
 306 definitions; aliases and structures excluded), with 244 SHA256
 source/checker hashes. The checks use pinned cached imports; the entire
 dependency tree was not rebuilt from source.
+
+
+## 2026-11-02 — exact global spectral angle transport and physical action regularity
+
+`theorem4_iii_global_angle_transport` proves the literal phase law along
+the complete physical Gardner group. For every positive m,n, every
+original real H1 input with J_m!=0 and every real time t, the actual
+restricted NLS phase exp(2*i*theta_m) gains the multiplier exp(2*i*t)
+when m=n and is constant otherwise. The factor two belongs to the
+existing single-valued phase convention; the original angle speed is
+the printed Kronecker delta. No open-gap condition is imposed on n.
+
+The shared source theorem works with independently chosen normalized
+angular and Birkhoff families. The full original periodic isospectral
+data give equality of the canonically labelled gap, so the actual angle
+remains defined on the entire real time line. Its analytic phase chain
+rule and the proved canonical action bracket give the scalar equation
+with constant logarithmic velocity. Actual autonomous ODE uniqueness
+then proves the exponential law for every real time. No angular branch
+or unproved global angle lift is assumed.
+
+The restricted angle differentials are biorthogonal to the actual
+Gardner action vectors. Thus the vectors of every open physical action
+are linearly independent, with no restriction on other gaps. A physical
+action vector vanishes exactly when that action closes: stationarity
+gives one implication, and the actual unit angle-action bracket rules
+out the other. The statement includes all closed-action strata.
+
+Physical action cotangents and the mean are also independent. For any
+finite collection of open actions, a zero linear combination of their
+actual complex Frechet derivatives and the literal zero Fourier
+coefficient has only zero coefficients. Applying the physical spatial
+Fourier multiplier to the relation kills the mean differential and
+produces a relation between the independent Gardner vectors. Evaluation
+on the constant Fourier mode then determines the remaining mean
+coefficient. This proves the ambient L2 statement for the checked
+analytic extensions of the independent physical Hill actions. The
+actual Frechet chain rule and dense H1 inclusion prove the corresponding
+statement on the entire original H1 domain. Zero mean is allowed.
+
+These results move the remaining coordinate construction beyond bracket
+identities to global angle transport and regular physical action strata.
+They do not construct an independent global mKdV Birkhoff chart. The
+forward restricted-action factorization, independent mKdV angles and
+final angle-sum factorization, and the corrected full frequency comparison
+in Theorem 3 remain essential open obligations. The overall goal remains
+incomplete.
+
+Validation covers 248 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 242 unchanged prefix module
+source hashes match the previous ba19069 milestone; their private outputs
+were reused. Six added modules and the NLS aggregate compiled. The
+complete targeted and combined audits passed for 3,182 and 48,152
+declarations respectively. Only propext, Classical.choice and Quot.sound
+are allowed. The public inventory has 1,626 entries (1,320 theorems and
+306 definitions; aliases and structures excluded), with 250 SHA256
+source/checker hashes. The checks use pinned cached imports; the entire
+dependency tree was not rebuilt from source.

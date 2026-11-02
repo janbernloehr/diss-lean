@@ -137,7 +137,9 @@
       "source_issue": "The printed global signed mean cannot be recovered from NLS actions without a sign branch. The sign-invariant mean-squared replacement is now proved, including at zero mean.",
       "proved_dependencies": [
         "NLS.Articles.MKdVNLSHierarchies.lemma7",
-        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_restricted_action_invariance"
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_restricted_action_invariance",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_complete_action_flows",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_H1_action_differentials_independent"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -157,7 +159,9 @@
       "quantifiers": "Every original real H1 input; every positive m,n; the angle at m is defined when its own actual mKdV action J_m is nonzero. No nonzero/open-gap hypothesis is imposed on the action J_n.",
       "target": "Gardner bracket of theta_m# and J_n equals delta_mn; angle sum depends on actions and mean.",
       "proved_dependencies": [
-        "NLS.Articles.MKdVNLSHierarchies.lemma7"
+        "NLS.Articles.MKdVNLSHierarchies.lemma7",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_global_angle_transport",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_action_directions_independent"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -582,5 +586,19 @@
     "construction": "Opposite original NLS action rotations at n and -n solve the actual analytic source Hamiltonian difference field. Actual ODE uniqueness gives component-swap covariance, preservation of the original diagonal and independence of the chosen normalized NLS Birkhoff family. Gardner transfer identifies the scalar H1 equation with the independently defined physical J_n action.",
     "scope": "Complete commuting 2*pi-periodic real action flows on each full native integer H^s, s>=0, continuous in its native norm. The actual Gardner equation, intrinsic uniqueness, all physical J_m and signed NLS I_m invariants, and signed-mean conservation are proved on the entire original real H1 domain. Closed gaps and zero mean are included. No global signed-mean factor through NLS actions is claimed.",
     "remaining": "This is action-torus machinery needed by Theorems 3 and 4(ii)-(iii). The independent mKdV Birkhoff chart, forward factorization through J and mean, final angle-sum factorization and frequency comparison remain open."
+  },
+  "global_spectral_angle_transport": {
+    "general_source_angle_flow": "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.phase_pairedActionFlow",
+    "actual_phase_velocity": "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.hasDerivAt_phase_pairedActionFlow",
+    "angular_family_scope": "The normalized angular family and the Birkhoff family constructing the physical flow may be chosen independently.",
+    "original_H1_transport": "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_global_angle_transport",
+    "normalization": "The single-valued phase is exp(2*i*theta_m). Along the complete physical J_n flow it is multiplied by exp(2*i*t) when m=n and is unchanged otherwise; the original angle velocity is delta_mn.",
+    "domain": "Every original real H1 input where the angle action J_m is nonzero, all positive m,n and every real time. The action index n may have a closed gap. Isospectrality preserves the entire selected angle domain.",
+    "physical_action_vector_independence": "NLS.Articles.MKdVNLSHierarchies.theorem4_action_directions_independent",
+    "closed_action_vector_characterization": "NLS.MKdV.miuraGardnerDirection_eq_zero_iff",
+    "ambient_L2_cotangent_independence": "NLS.MKdV.miuraActionCotangent_coefficients_unique",
+    "original_H1_cotangent_independence": "NLS.Articles.MKdVNLSHierarchies.theorem4_H1_action_differentials_independent",
+    "cotangent_scope": "Every finite linear combination of the open physical action Frechet differentials and the actual mean differential has unique complex coefficients. All other gaps may close; zero mean is included. The ambient L2 statement uses the checked physical analytic action extensions, and density transfers it to their actual original H1 Frechet derivatives.",
+    "remaining": "These are local regularity and global action-angle transport ingredients, not an independent mKdV Birkhoff chart. Forward factorization, the final independent-angle sum factorization and the corrected frequency comparison remain open."
   }
 }

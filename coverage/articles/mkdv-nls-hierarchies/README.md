@@ -786,3 +786,36 @@ are allowed. The public inventory has 1,606 entries (1,300 theorems and
 306 definitions; aliases and structures excluded), with 244 SHA256
 source/checker hashes. The checks use pinned cached imports; the entire
 dependency tree was not rebuilt from source.
+
+
+## Exact global angle transport and regular action strata
+
+`theorem4_iii_global_angle_transport` integrates the checked angle-action
+bracket along the complete physical Gardner group. The actual spectral
+phase exp(2*i*theta_m) is multiplied by exp(2*i*t) along J_m and is
+constant along every other J_n. This holds for every real time on the
+full original real H1 angle domain J_m!=0; the action index n may have
+a closed gap. The selected angle domain is preserved by isospectrality.
+The general source result permits independent choices of the normalized
+angular family and the Birkhoff family used to construct the flow.
+
+The physical Gardner vectors for all open actions are linearly
+independent. A vector vanishes exactly when its physical action closes.
+Every finite linear combination of the open physical action Frechet
+differentials and the literal mean differential has unique coefficients,
+both for the ambient complex L2 extensions and on the original H1
+domain. Other gaps may close and zero mean is included. These results
+supply regularity needed for action coordinates. The global independent
+mKdV chart, forward action factorization, final angle-sum factorization
+and corrected frequency comparison remain open.
+
+Validation covers 248 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 242 unchanged prefix module
+source hashes match the previous ba19069 milestone; their private outputs
+were reused. Six added modules and the NLS aggregate compiled. The
+complete targeted and combined audits passed for 3,182 and 48,152
+declarations respectively. Only propext, Classical.choice and Quot.sound
+are allowed. The public inventory has 1,626 entries (1,320 theorems and
+306 definitions; aliases and structures excluded), with 250 SHA256
+source/checker hashes. The checks use pinned cached imports; the entire
+dependency tree was not rebuilt from source.

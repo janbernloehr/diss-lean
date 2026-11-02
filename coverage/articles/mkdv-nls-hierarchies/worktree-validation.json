@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 3161,
+  "audited_declarations_and_auxiliaries": 3182,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -8049,14 +8049,114 @@
       "kind": "theorem",
       "name": "theorem4_closed_action_flow",
       "file": "NLS/Articles/MKdVNLSHierarchies/ActionFlowIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "eq_scalarExponential_of_hasDerivAt",
+      "file": "NLS/FunctionalAnalysis/ScalarLinearODE.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "canonicalPeriodicGap_eq_of_source_isospectral",
+      "file": "NLS/ZakharovShabat/SourcePairedActionAngleFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "phase_fderiv_actionDifference",
+      "file": "NLS/ZakharovShabat/SourcePairedActionAngleFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_phase_pairedActionFlow",
+      "file": "NLS/ZakharovShabat/SourcePairedActionAngleFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "phase_pairedActionFlow",
+      "file": "NLS/ZakharovShabat/SourcePairedActionAngleFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSGap_ne_zero_of_action_ne_zero",
+      "file": "NLS/MKdV/MiuraAngleActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraThetaPhase_ne_zero",
+      "file": "NLS/MKdV/MiuraAngleActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_miuraThetaPhase",
+      "file": "NLS/MKdV/MiuraAngleActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraThetaPhase_miuraActionFlow",
+      "file": "NLS/MKdV/MiuraAngleActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_miuraThetaPhase_actionFlow",
+      "file": "NLS/MKdV/MiuraAngleActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "linearIndependent_miuraGardnerDirections",
+      "file": "NLS/MKdV/MiuraActionIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraGardnerDirection_eq_zero_of_action_zero",
+      "file": "NLS/MKdV/MiuraActionIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraGardnerDirection_eq_zero_iff",
+      "file": "NLS/MKdV/MiuraActionIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraGardnerDirection_apply_fderiv",
+      "file": "NLS/MKdV/MiuraActionCotangentIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionCotangent_coefficients_unique",
+      "file": "NLS/MKdV/MiuraActionCotangentIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraL2Action_H1",
+      "file": "NLS/MKdV/MiuraActionCotangentIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1ActionCotangent_coefficients_unique",
+      "file": "NLS/MKdV/MiuraActionCotangentIndependence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_iii_global_angle_transport",
+      "file": "NLS/Articles/MKdVNLSHierarchies/ActionAngleFlowIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_action_directions_independent",
+      "file": "NLS/Articles/MKdVNLSHierarchies/ActionAngleFlowIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_H1_action_differentials_independent",
+      "file": "NLS/Articles/MKdVNLSHierarchies/ActionAngleFlowIdentification.lean"
     }
   ],
-  "public_declaration_count": 1606,
-  "theorem_count": 1300,
+  "public_declaration_count": 1626,
+  "theorem_count": 1320,
   "definition_count": 306,
-  "full_build": "242 article/shared modules have validated private outputs. All 230 unchanged prefix module source hashes match the prior d85907d milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "full_build": "248 article/shared modules have validated private outputs. All 242 unchanged prefix module source hashes match the prior ba19069 milestone; their private outputs were reused. Six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/RealPairedActionRotation.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/FunctionalAnalysis/ScalarLinearODE.lean",
   "sha256": {
     "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
     "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f",
@@ -8214,8 +8314,8 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "ee95d29c6f5a999a869b8a083398cf742c3ef8985a64aea0c4ff59f531d52219",
-    "scripts/check_mkdv_nls.py": "8e97d6d6893c1a3dae4de60fd2c9d927c060a08036f9a33dd937ef047ffd2357",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "9aae3116f9af52e5ccdab03bbcb7056bacb26a51760f3d250892ab665125d6e9",
+    "scripts/check_mkdv_nls.py": "beab6777c020c3025b3dafe9b06bb5be3fbfe320959efb37e7f86888e6c36af5",
     "NLS/SequenceSpaces/OrderedNaturalEnumerationUnique.lean": "4445901ea20db8b136cc06b97b4afc71de6961d5594aa281878962ab1b704e0f",
     "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean": "460545a5f30908fff23521c0e37293ee18d18f6441f92452538ea6bfe8bcea7f",
     "NLS/MKdV/MiuraNLSPositiveEndpoints.lean": "3f5c49a6dc937669104d321db0d076ed7e58d317c45984ad041e9ea4eda9781d",
@@ -8301,10 +8401,16 @@
     "NLS/MKdV/MiuraActionFlowGroup.lean": "ae9d435cd60927e084fd010b6490f2e7457eee437ceaf873d5732a461cce68d0",
     "NLS/MKdV/MiuraActionFlowInvariants.lean": "e5c99eba4b5714565ddbb0533001e73a17081325a67684b3c2c6515759eb82ed",
     "NLS/MKdV/MiuraActionFlowUniqueness.lean": "068bec6228bf85ea2f2b4c95939f4d63b9edc6b4d4d9d7accac0967690b665c1",
-    "NLS/Articles/MKdVNLSHierarchies/ActionFlowIdentification.lean": "5452c8ce9130785972583c9f8290fd22a80e468da3022f7206d7917559c04610"
+    "NLS/Articles/MKdVNLSHierarchies/ActionFlowIdentification.lean": "5452c8ce9130785972583c9f8290fd22a80e468da3022f7206d7917559c04610",
+    "NLS/FunctionalAnalysis/ScalarLinearODE.lean": "bc75accf3edb4bf4109b2f81298d7e4cae99426325643097cdcfeaf6ecc94673",
+    "NLS/ZakharovShabat/SourcePairedActionAngleFlow.lean": "5810c25813da1e9be14054414171d1255e83fafa30927e57f4b3d948c54a0379",
+    "NLS/MKdV/MiuraAngleActionFlow.lean": "5fe7c328e62a930551d1ac0a4a2f15bb34cee3206bcd67624055a37102fbb550",
+    "NLS/MKdV/MiuraActionIndependence.lean": "be10500209171b5c91a06174e89efcdac41ef2da4e04589a592d66b49181dad3",
+    "NLS/MKdV/MiuraActionCotangentIndependence.lean": "0ec2cc7eb2eeadd2c01890525813ae830062b5f4659a6f70413d7c737f895fd1",
+    "NLS/Articles/MKdVNLSHierarchies/ActionAngleFlowIdentification.lean": "b3f3e63f112a93654c970e5e4b79d592dc31973fe7ed5fcaf612c98da860fd39"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 242,
+  "focused_module_count": 248,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -8458,12 +8564,19 @@
       "combined_NLS_audit_count": 48131,
       "aggregate_compiled": true,
       "validation_scope": "All 230 unchanged prefix module source hashes match the prior d85907d milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
+    },
+    {
+      "milestone": "Exact global restricted spectral angle transport along complete physical Gardner action flows, with independently chosen angular and Birkhoff families; independent open-action Gardner vectors, zero-vector iff closed-action characterization, and independent physical action and mean Frechet differentials in ambient L2 and on the original H1 domain",
+      "audit_count": 3182,
+      "combined_NLS_audit_count": 48152,
+      "aggregate_compiled": true,
+      "validation_scope": "All 242 unchanged prefix module source hashes match the prior ba19069 milestone; their private outputs were reused. Six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 48131,
+  "combined_audited_NLS_declarations": 48152,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -8471,7 +8584,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 230 unchanged prefix module source hashes match the prior d85907d milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3161 declarations/auxiliaries and combined audit for 48131 NLS declarations. All 244 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
+  "last_run_notes": "All 242 unchanged prefix module source hashes match the prior ba19069 milestone; their private outputs were reused. Six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3182 declarations/auxiliaries and combined audit for 48152 NLS declarations. All 250 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

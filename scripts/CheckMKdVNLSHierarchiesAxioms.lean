@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.ActionAngleFlowIdentification
 import NLS.Articles.MKdVNLSHierarchies.ActionFlowIdentification
 import NLS.Articles.MKdVNLSHierarchies.SpectralHierarchyIdentification
 import NLS.Articles.MKdVNLSHierarchies.ActionDescentIdentification
@@ -34,6 +35,11 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.FunctionalAnalysis.eq_scalarExponential_of_hasDerivAt,
+    `NLS.ZakharovShabat.canonicalPeriodicGap_eq_of_source_isospectral,
+    `NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.phase_fderiv_actionDifference,
+    `NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.hasDerivAt_phase_pairedActionFlow,
+    `NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.phase_pairedActionFlow,
     `NLS.RealCoeff.pairedActionRotation,
     `NLS.RealCoeff.pairMode_actionRotation_ne,
     `NLS.RealCoeff.actionRotationVector_actionRotation_ne,
@@ -416,7 +422,16 @@ run_cmd do
     `NLS.LinearVolterra.solutionMap_intertwine,
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
-  let expected := #[``NLS.Articles.MKdVNLSHierarchies.theorem4_complete_action_flows,
+  let expected := #[``NLS.Articles.MKdVNLSHierarchies.theorem4_iii_global_angle_transport,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem4_action_directions_independent,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem4_H1_action_differentials_independent,
+    ``NLS.MKdV.miuraThetaPhase_miuraActionFlow,
+    ``NLS.MKdV.miuraGardnerDirection_eq_zero_iff,
+    ``NLS.MKdV.miuraActionCotangent_coefficients_unique,
+    ``NLS.MKdV.miuraH1ActionCotangent_coefficients_unique,
+    ``NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.phase_pairedActionFlow,
+    ``NLS.FunctionalAnalysis.eq_scalarExponential_of_hasDerivAt,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem4_complete_action_flows,
     ``NLS.Articles.MKdVNLSHierarchies.theorem4_action_flow_commutation,
     ``NLS.Articles.MKdVNLSHierarchies.theorem4_closed_action_flow,
     ``NLS.MKdV.miuraH1ActionFlow_unique,
