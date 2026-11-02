@@ -5124,3 +5124,11 @@ import NLS.ZakharovShabat.NLSHamiltonianWeightedAsymptotics
 import NLS.KdV.RiccatiEnergy
 import NLS.KdV.ClassicalTraceAsymptotics
 import NLS.KdV.ClassicalWeightedTraceAsymptotics
+import NLS.ComplexAnalysis.ContinuousIntervalBranch
+import NLS.ComplexAnalysis.WeightedCoshInverse
+import NLS.ComplexAnalysis.ImaginaryCoshInverse
+import NLS.ComplexAnalysis.ConnectedPhaseControl
+import NLS.KdV.HillL2BandPhase
+import NLS.KdV.HillL2BandAnchors
+import NLS.KdV.HillFreeUpperArcs
+import NLS.KdV.HillL2UpperArcAsymptotics

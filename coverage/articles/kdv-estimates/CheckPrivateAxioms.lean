@@ -1,3 +1,14 @@
+import NLS.ComplexAnalysis.LocalSinhComparison
+import NLS.ComplexAnalysis.ContinuousIntervalBranch
+import NLS.ComplexAnalysis.WeightedCoshInverse
+import NLS.ComplexAnalysis.ImaginaryCoshInverse
+import NLS.ComplexAnalysis.ConnectedPhaseControl
+import NLS.KdV.HillL2BandPhase
+import NLS.ZakharovShabat.FreeCosineZeroAudit
+import NLS.ZakharovShabat.NLSHamiltonianPhasePolynomial
+import NLS.KdV.HillL2BandAnchors
+import NLS.KdV.HillFreeUpperArcs
+import NLS.KdV.HillL2UpperArcAsymptotics
 import NLS.ComplexAnalysis.UnimodularWeightedTraceError
 import NLS.ZakharovShabat.ClassicalWeightedResidualStability
 import NLS.ZakharovShabat.NLSWKBCarrierWeightedBounds
@@ -370,7 +381,30 @@ run_cmd do
     ``NLS.ZakharovShabat.classicalSolution_one_snd,
     ``NLS.ZakharovShabat.nlsHamiltonianPhase,
     ``NLS.ZakharovShabat.exists_classicalDiscriminant_hamiltonian_error_bound,
-    ``NLS.ZakharovShabat.exists_classicalDiscriminant_upper_hamiltonian_error_bound]
+    ``NLS.ZakharovShabat.exists_classicalDiscriminant_upper_hamiltonian_error_bound,
+    ``NLS.ComplexAnalysis.exists_norm_sub_le_two_mul_sinh_sub,
+    ``NLS.ComplexAnalysis.norm_cosh_shift_sub,
+    ``NLS.ComplexAnalysis.exists_norm_phase_sub_le_discriminant_error,
+    ``NLS.ComplexAnalysis.mem_Ioo_of_continuous_avoiding_endpoint_levels,
+    ``NLS.ComplexAnalysis.norm_sinh_increment_weighted_le,
+    ``NLS.ComplexAnalysis.norm_phase_sub_le_weighted_cosh_error,
+    ``NLS.ComplexAnalysis.norm_imaginary_phase_le_cosh_shift,
+    ``NLS.ComplexAnalysis.norm_lt_everywhere_of_local_improvement,
+    ``NLS.ComplexAnalysis.cosh_phase_control_of_anchor,
+    ``NLS.ZakharovShabat.freeCosineZero,
+    ``NLS.ZakharovShabat.freeCosineZero_im,
+    ``NLS.ZakharovShabat.freeCosineZero_mem_verticalStrip,
+    ``NLS.ZakharovShabat.freeCosineZero_separated,
+    ``NLS.ZakharovShabat.tendsto_norm_freeCosineZero,
+    ``NLS.ZakharovShabat.freeDiscriminant_freeCosineZero,
+    ``NLS.ZakharovShabat.norm_div_free_at_freeCosineZero,
+    ``NLS.ZakharovShabat.not_exists_exterior_cosine_quotient_bound,
+    ``NLS.ZakharovShabat.nlsHamiltonianCorrection,
+    ``NLS.ZakharovShabat.nlsHamiltonianCorrection_zero,
+    ``NLS.ZakharovShabat.analyticAt_nlsHamiltonianCorrection,
+    ``NLS.ZakharovShabat.nlsHamiltonianPhase_eq_correction,
+    ``NLS.ZakharovShabat.nlsHamiltonianCorrection_tendsto,
+    ``NLS.ZakharovShabat.iteratedDeriv_nlsHamiltonianCorrection]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
