@@ -420,5 +420,10 @@
     ],
     "empty_axiom_sets_allowed": true,
     "log": ".lake/article-check/logs/validation-l2-characteristic.log"
+  },
+  "subsequent_full_HminusOne_zero_set_identification": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-hminus-one-characteristic-map.json",
+    "full_complex_HminusOne_zero_set_proved": true,
+    "physical_multiplicity_analytic_order_identified": false
   }
 }

@@ -214,11 +214,113 @@ import NLS.KdV.HillL2EnergyDiscriminant
 import NLS.KdV.SingularHillL2Domain
 import NLS.KdV.SingularHillL2Characteristic
 import NLS.Articles.KdVPseudomeasures.OriginalL2Characteristic
+import NLS.MKdV.MiuraClassicalSolution
+import NLS.MKdV.SobolevMiuraPotential
+import NLS.FunctionalAnalysis.LinearVolterraFlow
+import NLS.MKdV.QuasiHillDiscriminant
+import NLS.MKdV.MiuraBoundaryTransfer
+import NLS.ZakharovShabat.ClassicalVolterraTrace
+import NLS.MKdV.QuasiHillZSComparison
+import NLS.KdV.ClassicalLocalPrimitive
+import NLS.KdV.ClassicalFreePrimitive
+import NLS.MKdV.QuasiHillJointAnalytic
+import NLS.ComplexAnalysis.SourceDiscriminantPrimitive
+import NLS.ZakharovShabat.ContinuousPotentialL2Bound
+import NLS.ZakharovShabat.ContinuousPotentialSource
+import NLS.MKdV.QuasiHillSourcePrimitive
+import NLS.DifferentialPolynomial.UngradedIntegrationByParts
+import NLS.DifferentialPolynomial.PowerSeriesDerivation
+import NLS.DifferentialPolynomial.DifferentialRiccati
+import NLS.DifferentialPolynomial.RiccatiResolvent
+import NLS.DifferentialPolynomial.LogarithmicDerivative
+import NLS.DifferentialPolynomial.MiuraRiccati
+import NLS.DifferentialPolynomial.ConstructedRiccatiResolvent
+import NLS.DifferentialPolynomial.RiccatiResolventNaturality
+import NLS.FunctionalAnalysis.PeriodicIntegrationByParts
+import NLS.DifferentialPolynomial.MultiJet
+import NLS.ZakharovShabat.SobolevHierarchySymmetries
+import NLS.MKdV.HierarchyRestriction
+import NLS.DifferentialPolynomial.RiccatiResolventParity
+import NLS.ZakharovShabat.NLSRiccatiResolvent
+import NLS.MKdV.MiuraHierarchyHamiltonians
+import NLS.DifferentialPolynomial.PolynomialVariation
+import NLS.DifferentialPolynomial.AlgebraicPolynomialVariation
+import NLS.DifferentialPolynomial.EulerLagrange
+import NLS.DifferentialPolynomial.IndependentJetVariation
+import NLS.DifferentialPolynomial.RiccatiResolventVariation
+import NLS.ZakharovShabat.NLSRiccatiResolventVariation
+import NLS.FunctionalAnalysis.UnitIntervalMean
+import NLS.DifferentialPolynomial.SmoothVariation
+import NLS.ZakharovShabat.ClassicalNLSHierarchyVariation
+import NLS.DifferentialPolynomial.EulerScalar
+import NLS.Fourier.PeriodicVariationalUniqueness
+import NLS.ZakharovShabat.NLSRiccatiResolventGradient
+import NLS.MKdV.HierarchyGradientRecurrence
+import NLS.MKdV.MiuraHierarchyFlowRestriction
+import NLS.DifferentialPolynomial.EulerOrderBounds
+import NLS.ZakharovShabat.SobolevPolynomialL2
+import NLS.Fourier.CircleUnitCoefficients
+import NLS.ZakharovShabat.SobolevPolynomialVariation
+import NLS.ZakharovShabat.SobolevSourceCotangent
+import NLS.ZakharovShabat.SobolevSmoothFirstVariation
+import NLS.MKdV.SobolevMiuraHillHamiltonian
+import NLS.MKdV.MiuraHillRiccatiRemainder
+import NLS.Fourier.CircleBilinearMean
+import NLS.ZakharovShabat.SobolevPolynomialEndpointMean
+import NLS.ZakharovShabat.SobolevScalarSmoothDensity
+import NLS.MKdV.NativeMiuraHillHamiltonian
+import NLS.MKdV.QuasiHillPhysicalEquation
+import NLS.MKdV.QuasiHillPhysicalUniqueness
+import NLS.MKdV.PhysicalHillDiscriminant
+import NLS.MKdV.MiuraHillHamiltonianTrace
+import NLS.KdV.ClassicalHillSpectrum
+import NLS.ZakharovShabat.ClassicalSolutionInjectivity
+import NLS.KdV.ClassicalHillGreen
+import NLS.KdV.ClassicalSourcePrimitive
+import NLS.KdV.ClassicalSpectralEmbedding
+import NLS.KdV.ClassicalContourCoverage
+import NLS.KdV.ClassicalHighGapPairs
+import NLS.KdV.ClassicalHillReality
+import NLS.KdV.ClassicalHillConjugation
+import NLS.KdV.ClassicalHillPrimitiveSheets
+import NLS.KdV.ClassicalHillPrimitiveReflection
+import NLS.MKdV.MiuraHillSpectralBridge
+import NLS.KdV.ClassicalHillBandNormalization
+import NLS.KdV.HillNLSPrimitivePathComparison
+import NLS.MKdV.MiuraHillPrimitiveComparison
+import NLS.MKdV.QuasiHillPrimitiveComparison
+import NLS.MKdV.SobolevQuasiHill
+import NLS.MKdV.SobolevMiuraPrimitive
+import NLS.MKdV.MiuraL2HillDiscriminant
+import NLS.SequenceSpaces.PeriodOneMassResolvent
+import NLS.SequenceSpaces.PeriodOneMiuraQuadratic
+import NLS.ComplexAnalysis.SmallQuadraticInverse
+import NLS.SequenceSpaces.PeriodOneMiuraCharts
+import NLS.SequenceSpaces.PeriodOneMiuraRegularity
+import NLS.SequenceSpaces.PeriodOneMiuraShift
+import NLS.KdV.HillL2ConstantShift
+import NLS.KdV.HillMiuraL2Discriminant
+import NLS.SequenceSpaces.PeriodOneHminusOneDensity
+import NLS.KdV.HillHminusOneDiscriminant
+import NLS.SequenceSpaces.PeriodOneHminusOneRealDensity
+import NLS.SequenceSpaces.WeightedRestrictionTwo
+import NLS.KdV.PeriodOneHminusOneOriginal
 import NLS.FunctionalAnalysis.CompactClosedGraph
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarClosedGraph
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarIntersections
+import NLS.ComplexAnalysis.ShiftedSquareRootBounds
+import NLS.KdV.ClassicalHillDiscAsymptotics
+import NLS.KdV.ClassicalHillHighTracePhase
+import NLS.KdV.HillFreeEnergyShift
+import NLS.KdV.HillHminusOneDiscAsymptotics
+import NLS.ComplexAnalysis.ZeroCountHomotopy
+import NLS.ComplexAnalysis.ClosedZeroPersistence
+import NLS.KdV.SingularHillSpectralPersistence
+import NLS.ComplexAnalysis.ClosedZeroGraph
+import NLS.KdV.HminusOnePhysicalCharacteristic
+import NLS.Articles.KdVPseudomeasures.OriginalHminusOneCharacteristic
 
-/-! Exact transitive axiom audit for all checked public definitions and theorems. -/
+/-! Transitive axiom audit of every selected public definition and theorem. -/
 
 #print axioms NLS.WeightedCoeff.ofFinsupp
 #print axioms NLS.WeightedCoeff.ofFinsupp_apply
@@ -2126,6 +2228,654 @@ import NLS.Articles.KdVPseudomeasures.SourceWeakStarIntersections
 #print axioms NLS.KdV.singularHillSpectrum_L2_iff_frequencyDiscriminant
 #print axioms NLS.Articles.KdVPseudomeasures.originalL2_coefficients_mem_even
 #print axioms NLS.Articles.KdVPseudomeasures.original_spectrum_iff_L2_discriminant
+#print axioms NLS.MKdV.miuraPotential
+#print axioms NLS.MKdV.classicalMiuraSolution
+#print axioms NLS.MKdV.classicalMiuraPartner
+#print axioms NLS.MKdV.hasDerivAt_classicalMiuraSolution
+#print axioms NLS.MKdV.hasDerivAt_classicalMiuraPartner
+#print axioms NLS.MKdV.hasDerivAt_deriv_classicalMiuraSolution
+#print axioms NLS.MKdV.miura_equation_classicalSolution
+#print axioms NLS.Fourier.periodOneCoefficient_add_of_intervalIntegrable
+#print axioms NLS.MKdV.sobolevMiuraUnitPotential
+#print axioms NLS.MKdV.sobolevMiuraUnitPotential_apply
+#print axioms NLS.MKdV.analyticAt_sobolevMiuraUnitPotential
+#print axioms NLS.MKdV.sobolevMiuraUnitPotential_physical
+#print axioms NLS.MKdV.sobolevMiuraHillPotential
+#print axioms NLS.MKdV.analyticAt_sobolevMiuraHillPotential
+#print axioms NLS.MKdV.sobolevMiuraHillPotential_even
+#print axioms NLS.LinearVolterra.absolutelyContinuous_solution
+#print axioms NLS.LinearVolterra.solutionMap
+#print axioms NLS.LinearVolterra.solutionMap_apply
+#print axioms NLS.LinearVolterra.solutionMap_intertwine
+#print axioms NLS.LinearVolterra.trace_solutionMap_intertwine
+#print axioms NLS.LinearVolterra.trace_pairCLM
+#print axioms NLS.MKdV.quasiHillCoefficient
+#print axioms NLS.MKdV.quasiHillCoefficient_apply
+#print axioms NLS.MKdV.quasiHillCoefficientCurve
+#print axioms NLS.MKdV.quasiHillCoefficientCurve_apply
+#print axioms NLS.MKdV.analyticAt_quasiHillCoefficientCurve
+#print axioms NLS.MKdV.quasiHillSolution
+#print axioms NLS.MKdV.quasiHillSolution_zero
+#print axioms NLS.MKdV.hasDerivAt_quasiHillSolution
+#print axioms NLS.MKdV.hasDerivAt_fst_quasiHillSolution
+#print axioms NLS.MKdV.hasDerivAt_snd_quasiHillSolution
+#print axioms NLS.MKdV.quasiHillDiscriminant
+#print axioms NLS.MKdV.analyticAt_quasiHillDiscriminant
+#print axioms NLS.MKdV.miuraStateMap
+#print axioms NLS.MKdV.miuraStateMap_apply
+#print axioms NLS.MKdV.miuraStateMap_injective
+#print axioms NLS.MKdV.classicalMiuraState
+#print axioms NLS.MKdV.classicalMiuraState_eq
+#print axioms NLS.MKdV.miura_floquet_condition_iff
+#print axioms NLS.ZakharovShabat.solutionMap_classicalCoefficientCurve
+#print axioms NLS.ZakharovShabat.classicalDiscriminant_eq_flowTrace
+#print axioms NLS.MKdV.quasiHillCoefficient_intertwine
+#print axioms NLS.MKdV.quasiHillSolution_eq_transformedZS
+#print axioms NLS.MKdV.quasiHillDiscriminant_eq_ZS_of_ne_zero
+#print axioms NLS.MKdV.quasiHillDiscriminant_eq_ZS
+#print axioms NLS.KdV.classicalHillRadicand
+#print axioms NLS.KdV.analyticOnNhd_classicalHillRadicand
+#print axioms NLS.KdV.hasDerivAt_classicalHill_local_primitive
+#print axioms NLS.KdV.exists_classicalHill_local_primitive
+#print axioms NLS.KdV.exists_classicalHill_local_primitive_of_radicand_ne_zero
+#print axioms NLS.KdV.classicalSolution_constantUpper_zero_first
+#print axioms NLS.KdV.classicalSolution_constantUpper_zero_snd
+#print axioms NLS.KdV.classicalDiscriminant_constantUpper_zero
+#print axioms NLS.KdV.classicalHillDiscriminant_zero
+#print axioms NLS.KdV.classicalHillFreePrimitive
+#print axioms NLS.KdV.classicalHillFreeRoot
+#print axioms NLS.KdV.analyticOnNhd_classicalHillFreePrimitive
+#print axioms NLS.KdV.analyticOnNhd_classicalHillFreeRoot
+#print axioms NLS.KdV.two_cosh_classicalHillFreePrimitive
+#print axioms NLS.KdV.classicalHillFreeRoot_sq
+#print axioms NLS.KdV.exp_classicalHillFreePrimitive
+#print axioms NLS.MKdV.quasiHillSourceCurveCLM
+#print axioms NLS.MKdV.quasiHillSourceCurveCLM_apply
+#print axioms NLS.MKdV.quasiHillEnergyCurveCLM
+#print axioms NLS.MKdV.quasiHillEnergyCurveCLM_apply
+#print axioms NLS.MKdV.quasiHillCoefficientCurve_eq_affine
+#print axioms NLS.MKdV.analyticOnNhd_quasiHillCoefficientCurve_joint
+#print axioms NLS.MKdV.analyticOnNhd_quasiHillDiscriminant_joint
+#print axioms NLS.MKdV.quasiHillDiscriminant_zero
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.radicand
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.rootDomain
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.continuationDomain
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.freeRoot
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.root
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.multiplier
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.primitive
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.radicand_analytic
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.rootDomain_open
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.continuationDomain_open
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.continuationDomain_subset
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.continuationDomain_segment
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.continuationDomain_idempotent
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.freeRoot_analytic
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.freeRoot_sq
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.root_analytic
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.root_base
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.root_sq
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.root_ne_zero
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.multiplier_analytic
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.multiplier_product
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.multiplier_ne_zero
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.primitive_analytic
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.primitive_base
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.exp_primitive
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.primitive_trace
+#print axioms NLS.ComplexAnalysis.SourceDiscriminantData.primitive_hasFDerivAt
+#print axioms NLS.ZakharovShabat.norm_continuousPotentialL2Class_le_two_norm
+#print axioms NLS.ZakharovShabat.continuousPotentialL2CLM
+#print axioms NLS.ZakharovShabat.continuousPotentialL2CLM_apply
+#print axioms NLS.ZakharovShabat.continuousPotentialSource
+#print axioms NLS.ZakharovShabat.canonicalDiscriminant_continuousPotentialSource
+#print axioms NLS.ZakharovShabat.continuousPotentialSource_realType
+#print axioms NLS.MKdV.quasiHillPrimitiveData
+#print axioms NLS.MKdV.miuraHillContinuationDomain
+#print axioms NLS.MKdV.miuraHillRoot
+#print axioms NLS.MKdV.miuraHillPrimitive
+#print axioms NLS.MKdV.miuraDiagonalCurveCLM
+#print axioms NLS.MKdV.miuraDiagonalSourceCLM
+#print axioms NLS.MKdV.miuraDiagonalSource_realType
+#print axioms NLS.MKdV.miuraRealDiagonalSource
+#print axioms NLS.MKdV.canonicalDiscriminant_miuraDiagonalSource
+#print axioms NLS.MKdV.miuraHillRadicand_ne_zero_of_real
+#print axioms NLS.MKdV.mem_miuraHillContinuationDomain_of_real
+#print axioms NLS.MKdV.miuraHillRoot_sq
+#print axioms NLS.MKdV.miuraHillPrimitive_trace
+#print axioms NLS.MKdV.hasFDerivAt_miuraHillPrimitive
+#print axioms NLS.MKdV.hasDerivAt_miuraHillPrimitive
+#print axioms NLS.DifferentialPolynomial.exists_jet_reduction_of_derivativeOrder
+#print axioms NLS.DifferentialPolynomial.powerSeriesDerivation
+#print axioms NLS.DifferentialPolynomial.coeff_powerSeriesDerivation
+#print axioms NLS.DifferentialPolynomial.powerSeriesDerivation_C
+#print axioms NLS.DifferentialPolynomial.powerSeriesDerivation_X
+#print axioms NLS.DifferentialPolynomial.powerSeriesDerivation_commute
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSequence
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSequence_zero
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSequence_one
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSequence_recurrence
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSequence_unique
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSeries
+#print axioms NLS.DifferentialPolynomial.coeff_differentialRiccatiSeries
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSeries_equation
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSeries_unique
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSequence_neg_derivation
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSeries_neg_derivation
+#print axioms NLS.DifferentialPolynomial.powerSeriesDerivation_neg
+#print axioms NLS.DifferentialPolynomial.derivation_inverse_of_mul_eq_one
+#print axioms NLS.DifferentialPolynomial.riccati_resolvent_identities
+#print axioms NLS.DifferentialPolynomial.riccati_resolvent_variation_identity
+#print axioms NLS.DifferentialPolynomial.logarithmicPrimitiveCoefficient
+#print axioms NLS.DifferentialPolynomial.derivation_logarithmicPrimitiveCoefficient
+#print axioms NLS.DifferentialPolynomial.miura_riccati_identity
+#print axioms NLS.DifferentialPolynomial.miuraRiccatiGaugeInverse
+#print axioms NLS.DifferentialPolynomial.miuraRiccatiGauge_mul_inverse
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSeries_miura
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSequence_miura
+#print axioms NLS.DifferentialPolynomial.riccatiResolventDenominator
+#print axioms NLS.DifferentialPolynomial.constantCoeff_riccatiResolventDenominator
+#print axioms NLS.DifferentialPolynomial.riccatiResolventInverse
+#print axioms NLS.DifferentialPolynomial.riccatiResolvent_mul_inverse
+#print axioms NLS.DifferentialPolynomial.riccatiResolventA
+#print axioms NLS.DifferentialPolynomial.riccatiResolventB
+#print axioms NLS.DifferentialPolynomial.riccatiResolventCoupling
+#print axioms NLS.DifferentialPolynomial.constructed_riccati_resolvent_identities
+#print axioms NLS.DifferentialPolynomial.coeff_riccatiResolventA_succ
+#print axioms NLS.DifferentialPolynomial.coeff_riccatiResolventB_succ
+#print axioms NLS.DifferentialPolynomial.deriv_coeff_riccatiResolventCoupling
+#print axioms NLS.DifferentialPolynomial.map_differentialRiccatiSequence
+#print axioms NLS.DifferentialPolynomial.map_differentialRiccatiSeries
+#print axioms NLS.DifferentialPolynomial.map_riccatiResolventDenominator
+#print axioms NLS.DifferentialPolynomial.map_riccatiResolventInverse
+#print axioms NLS.DifferentialPolynomial.map_riccatiResolventA
+#print axioms NLS.DifferentialPolynomial.map_riccatiResolventB
+#print axioms NLS.DifferentialPolynomial.map_riccatiResolventCoupling
+#print axioms NLS.FunctionalAnalysis.periodic_deriv
+#print axioms NLS.FunctionalAnalysis.periodic_iteratedDeriv
+#print axioms NLS.FunctionalAnalysis.contDiff_iteratedDeriv
+#print axioms NLS.FunctionalAnalysis.integral_deriv_mul_periodic
+#print axioms NLS.FunctionalAnalysis.integral_iteratedDeriv_mul_periodic
+#print axioms NLS.DifferentialPolynomial.multiSpatialDerivative
+#print axioms NLS.DifferentialPolynomial.multiSpatialDerivative_X
+#print axioms NLS.DifferentialPolynomial.iterate_multiSpatialDerivative_X
+#print axioms NLS.DifferentialPolynomial.evolutionaryDerivative
+#print axioms NLS.DifferentialPolynomial.evolutionaryDerivative_X
+#print axioms NLS.DifferentialPolynomial.evolutionaryDerivative_commute
+#print axioms NLS.DifferentialPolynomial.renameFields
+#print axioms NLS.DifferentialPolynomial.renameFields_spatialDerivative
+#print axioms NLS.DifferentialPolynomial.evaluateMulti
+#print axioms NLS.DifferentialPolynomial.evaluateMulti_C
+#print axioms NLS.DifferentialPolynomial.evaluateMulti_add
+#print axioms NLS.DifferentialPolynomial.evaluateMulti_mul
+#print axioms NLS.DifferentialPolynomial.evaluateMulti_X
+#print axioms NLS.DifferentialPolynomial.evaluateMulti_sub
+#print axioms NLS.DifferentialPolynomial.hasDerivAt_evaluateMulti
+#print axioms NLS.DifferentialPolynomial.periodic_evaluateMulti
+#print axioms NLS.DifferentialPolynomial.continuous_evaluateMulti
+#print axioms NLS.DifferentialPolynomial.integral_evaluateMulti_spatialDerivative
+#print axioms NLS.ZakharovShabat.hierarchyComponentSwap
+#print axioms NLS.ZakharovShabat.hierarchyComponentSwap_apply
+#print axioms NLS.ZakharovShabat.sobolevNLSHamiltonian_neg
+#print axioms NLS.ZakharovShabat.sobolevNLSHamiltonian_swap
+#print axioms NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_swap
+#print axioms NLS.ZakharovShabat.hierarchyReciprocalScaling
+#print axioms NLS.ZakharovShabat.hierarchyReciprocalScaling_apply
+#print axioms NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_reciprocal_scaling
+#print axioms NLS.MKdV.hierarchyDiagonal
+#print axioms NLS.MKdV.hierarchyDiagonal_apply
+#print axioms NLS.MKdV.diagonalNLSHamiltonian
+#print axioms NLS.MKdV.analyticAt_diagonalNLSHamiltonian
+#print axioms NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero
+#print axioms NLS.MKdV.diagonalNLSHamiltonian_one
+#print axioms NLS.MKdV.classicalMKdVMass
+#print axioms NLS.MKdV.classicalMKdVEnergy
+#print axioms NLS.MKdV.classicalNLSHamiltonian_one_diagonal
+#print axioms NLS.MKdV.classicalNLSHamiltonian_three_diagonal
+#print axioms NLS.DifferentialPolynomial.rescale_riccatiResolventDenominator_diagonal
+#print axioms NLS.DifferentialPolynomial.rescale_riccatiResolventInverse_diagonal
+#print axioms NLS.DifferentialPolynomial.riccatiResolventB_eq_rescale_A_diagonal
+#print axioms NLS.DifferentialPolynomial.coeff_riccatiResolventB_even_diagonal
+#print axioms NLS.DifferentialPolynomial.rescale_riccatiResolventCoupling_diagonal
+#print axioms NLS.DifferentialPolynomial.coeff_riccatiResolventCoupling_even_diagonal
+#print axioms NLS.DifferentialPolynomial.coeff_riccatiResolventA_odd_diagonal
+#print axioms NLS.DifferentialPolynomial.coeff_riccatiResolventB_odd_diagonal
+#print axioms NLS.ZakharovShabat.nlsRiccatiPolynomial_eq_differentialRiccatiSequence
+#print axioms NLS.ZakharovShabat.coeff_nls_differentialRiccatiSeries
+#print axioms NLS.MKdV.miuraHillPotentialPolynomial
+#print axioms NLS.MKdV.miuraHillRiccatiPolynomial
+#print axioms NLS.MKdV.classicalMiuraHillHamiltonian
+#print axioms NLS.MKdV.miuraDiagonalPolynomialMap
+#print axioms NLS.MKdV.miuraHillRiccatiPolynomial_eq_diagonal_plus_derivative
+#print axioms NLS.MKdV.integral_miuraHillRiccatiPolynomial
+#print axioms NLS.MKdV.classicalNLSHamiltonian_odd_diagonal_eq_miuraHill
+#print axioms NLS.MKdV.classicalMiuraHillHamiltonian_one
+#print axioms NLS.MKdV.classicalMiuraHillHamiltonian_two
+#print axioms NLS.MKdV.classicalNLSHamiltonian_even_diagonal_eq_zero
+#print axioms NLS.DifferentialPolynomial.mkDerivation_eq_sum_pderiv
+#print axioms NLS.DifferentialPolynomial.hasDerivAt_eval_mvPolynomial
+#print axioms NLS.DifferentialPolynomial.hasDerivAt_aeval_mvPolynomial
+#print axioms NLS.DifferentialPolynomial.derivation_aeval_mvPolynomial
+#print axioms NLS.DifferentialPolynomial.eulerDerivative
+#print axioms NLS.DifferentialPolynomial.firstVariationDensity
+#print axioms NLS.DifferentialPolynomial.contDiff_evaluate
+#print axioms NLS.DifferentialPolynomial.evaluate_iterate_spatialDerivative
+#print axioms NLS.DifferentialPolynomial.evaluate_eulerDerivative
+#print axioms NLS.DifferentialPolynomial.integral_firstVariationDensity
+#print axioms NLS.DifferentialPolynomial.backgroundEmbedding
+#print axioms NLS.DifferentialPolynomial.backgroundEmbedding_X
+#print axioms NLS.DifferentialPolynomial.backgroundEmbedding_spatialDerivative
+#print axioms NLS.DifferentialPolynomial.independentJetVariation
+#print axioms NLS.DifferentialPolynomial.independentJetVariation_background_X
+#print axioms NLS.DifferentialPolynomial.independentJetVariation_commute
+#print axioms NLS.DifferentialPolynomial.variationFields
+#print axioms NLS.DifferentialPolynomial.evaluateMulti_backgroundEmbedding
+#print axioms NLS.DifferentialPolynomial.evaluate_independentJetVariation
+#print axioms NLS.DifferentialPolynomial.differentialRiccatiSeries_linearized
+#print axioms NLS.DifferentialPolynomial.constructed_riccati_resolvent_variation
+#print axioms NLS.DifferentialPolynomial.riccati_resolvent_coefficient_variation
+#print axioms NLS.ZakharovShabat.nlsResolventCoefficientA
+#print axioms NLS.ZakharovShabat.nlsResolventCoefficientB
+#print axioms NLS.ZakharovShabat.backgroundEmbedding_nlsResolventA
+#print axioms NLS.ZakharovShabat.backgroundEmbedding_nlsResolventB
+#print axioms NLS.ZakharovShabat.exists_nlsResolvent_jet_variation
+#print axioms NLS.ZakharovShabat.integral_firstVariationDensity_eq_resolvent
+#print axioms NLS.LinearVolterra.unitIntervalMean
+#print axioms NLS.LinearVolterra.unitIntervalMean_apply
+#print axioms NLS.DifferentialPolynomial.fieldCurve
+#print axioms NLS.DifferentialPolynomial.unitIntervalMean_fieldCurve
+#print axioms NLS.DifferentialPolynomial.jetCurve
+#print axioms NLS.DifferentialPolynomial.jetCurve_apply
+#print axioms NLS.DifferentialPolynomial.aeval_jetCurve
+#print axioms NLS.DifferentialPolynomial.iteratedDeriv_affine
+#print axioms NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate
+#print axioms NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler
+#print axioms NLS.ZakharovShabat.nlsHamiltonianPolynomial
+#print axioms NLS.ZakharovShabat.integral_evaluate_nlsHamiltonianPolynomial
+#print axioms NLS.ZakharovShabat.classicalNLSHierarchyGradient
+#print axioms NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian
+#print axioms NLS.ZakharovShabat.contDiff_classicalNLSHierarchyGradient
+#print axioms NLS.ZakharovShabat.periodic_classicalNLSHierarchyGradient
+#print axioms NLS.DifferentialPolynomial.iterate_spatialDerivative_C_mul
+#print axioms NLS.DifferentialPolynomial.eulerDerivative_C_mul
+#print axioms NLS.Fourier.eq_of_periodic_integral_mul_eq
+#print axioms NLS.ZakharovShabat.evaluate_euler_nlsRiccati_density_fst
+#print axioms NLS.ZakharovShabat.evaluate_euler_nlsRiccati_density_snd
+#print axioms NLS.ZakharovShabat.classicalNLSHierarchyGradient_eq_resolvent
+#print axioms NLS.MKdV.classicalHierarchyGradient_odd_diagonal_components
+#print axioms NLS.MKdV.evaluate_nlsResolventA_odd_diagonal
+#print axioms NLS.MKdV.evaluate_nlsResolventB_odd_diagonal
+#print axioms NLS.MKdV.classicalHierarchyGradient_diagonal_recurrence
+#print axioms NLS.MKdV.miuraHillHamiltonianPolynomial
+#print axioms NLS.MKdV.integral_evaluate_miuraHillHamiltonianPolynomial
+#print axioms NLS.MKdV.classicalMiuraHillGradient
+#print axioms NLS.MKdV.contDiff_classicalMiuraHillGradient
+#print axioms NLS.MKdV.periodic_classicalMiuraHillGradient
+#print axioms NLS.MKdV.hasDerivAt_classicalMiuraHillHamiltonian
+#print axioms NLS.MKdV.classicalMiuraHillGradient_eq_oddNLS
+#print axioms NLS.MKdV.classicalNLSHierarchyVectorField
+#print axioms NLS.MKdV.classicalMiuraHillVectorField
+#print axioms NLS.MKdV.classicalNLSHierarchyVectorField_even_diagonal
+#print axioms NLS.DifferentialPolynomial.Supported.pderiv
+#print axioms NLS.DifferentialPolynomial.JetOrderLE.pderiv
+#print axioms NLS.DifferentialPolynomial.DerivativeOrderLE.C
+#print axioms NLS.DifferentialPolynomial.DerivativeOrderLE.pderiv
+#print axioms NLS.DifferentialPolynomial.DerivativeOrderLE.iterate_spatialDerivative
+#print axioms NLS.DifferentialPolynomial.DerivativeOrderLE.eulerDerivative
+#print axioms NLS.DifferentialPolynomial.derivativeWeight_erase_top
+#print axioms NLS.ZakharovShabat.topSobolevJetCircleL2
+#print axioms NLS.ZakharovShabat.topSobolevJetCircleL2_eq_classical
+#print axioms NLS.ZakharovShabat.sobolevMonomialL2
+#print axioms NLS.ZakharovShabat.analyticAt_sobolevMonomialL2
+#print axioms NLS.ZakharovShabat.sobolevMonomialL2_eq_classical_of_jetOrder
+#print axioms NLS.ZakharovShabat.sobolevMonomialL2_eq_classical
+#print axioms NLS.ZakharovShabat.sobolevPolynomialL2
+#print axioms NLS.ZakharovShabat.analyticAt_sobolevPolynomialL2
+#print axioms NLS.ZakharovShabat.sobolevPolynomialL2_eq_classical_of_jetOrder
+#print axioms NLS.ZakharovShabat.sobolevPolynomialL2_eq_classical
+#print axioms NLS.Fourier.circleUnitCoefficients
+#print axioms NLS.Fourier.circleUnitCoefficients_apply
+#print axioms NLS.Fourier.circleUnitCoefficients_eq_classical
+#print axioms NLS.ZakharovShabat.sobolevPolynomialL2Mean
+#print axioms NLS.ZakharovShabat.analyticAt_sobolevPolynomialL2Mean
+#print axioms NLS.ZakharovShabat.sobolevPolynomialL2Mean_eq_classical
+#print axioms NLS.ZakharovShabat.sobolevPolynomialPartialCoefficients
+#print axioms NLS.ZakharovShabat.analyticAt_sobolevPolynomialPartialCoefficients
+#print axioms NLS.ZakharovShabat.sobolevPolynomialPartialCoefficients_eq_classical
+#print axioms NLS.ZakharovShabat.sobolevJetCovector
+#print axioms NLS.ZakharovShabat.sobolevJetCovector_apply
+#print axioms NLS.ZakharovShabat.sobolevPolynomialCovector
+#print axioms NLS.ZakharovShabat.analyticAt_sobolevPolynomialCovector
+#print axioms NLS.ZakharovShabat.sobolevPolynomialCovector_eq_classical
+#print axioms NLS.ZakharovShabat.fderiv_sobolevPolynomialL2Mean
+#print axioms NLS.ZakharovShabat.hierarchyFieldInjection
+#print axioms NLS.ZakharovShabat.hierarchyFieldCotangent
+#print axioms NLS.ZakharovShabat.hierarchyFieldCotangent_coefficient
+#print axioms NLS.ZakharovShabat.hierarchyWeakGradient
+#print axioms NLS.ZakharovShabat.analyticAt_hierarchyWeakGradient
+#print axioms NLS.ZakharovShabat.hierarchyWeakGradient_represents
+#print axioms NLS.ZakharovShabat.hierarchyFieldCotangent_eq_classical
+#print axioms NLS.ZakharovShabat.scalarCotangent_eq_classical
+#print axioms NLS.ZakharovShabat.sobolev_affine_coefficients
+#print axioms NLS.ZakharovShabat.fderiv_scalarSobolev_eq_smooth_variation
+#print axioms NLS.ZakharovShabat.fderiv_sobolevSource_eq_smooth_variation
+#print axioms NLS.MKdV.miuraHillRiccatiPolynomial_derivativeOrder
+#print axioms NLS.MKdV.miuraHillHamiltonianPolynomial_derivativeOrder
+#print axioms NLS.MKdV.exists_miuraHillHamiltonian_reduced_polynomial
+#print axioms NLS.MKdV.miuraHillReducedPolynomial
+#print axioms NLS.MKdV.miuraHillReducedPolynomial_order
+#print axioms NLS.MKdV.miuraHillReducedPolynomial_derivativeOrder
+#print axioms NLS.MKdV.sobolevMiuraHillHamiltonian
+#print axioms NLS.MKdV.analyticAt_sobolevMiuraHillHamiltonian
+#print axioms NLS.MKdV.sobolevMiuraHillHamiltonian_eq_classical
+#print axioms NLS.MKdV.sobolevMiuraHillGradient
+#print axioms NLS.MKdV.analyticAt_sobolevMiuraHillGradient
+#print axioms NLS.MKdV.sobolevMiuraHillGradient_represents
+#print axioms NLS.MKdV.sobolevMiuraHillGradient_eq_classical
+#print axioms NLS.MKdV.miuraHillRiccatiRemainder
+#print axioms NLS.MKdV.miuraHillRiccatiRemainder_zero
+#print axioms NLS.MKdV.miuraHillRiccatiRemainder_one
+#print axioms NLS.MKdV.miuraHillRiccatiRemainder_recurrence
+#print axioms NLS.MKdV.miuraHillRiccatiRemainder_derivativeOrder
+#print axioms NLS.MKdV.miuraHillNativeDensity
+#print axioms NLS.MKdV.miuraHillNativeDensity_derivativeOrder
+#print axioms NLS.MKdV.miuraHillNativeDensity_eq
+#print axioms NLS.MKdV.integral_miuraHillNativeDensity
+#print axioms NLS.MKdV.exists_miuraHillNativePolynomial
+#print axioms NLS.Fourier.circleBilinearMean
+#print axioms NLS.Fourier.circleBilinearMean_eq_classical
+#print axioms NLS.ZakharovShabat.sobolevTopMonomialProduct
+#print axioms NLS.ZakharovShabat.analyticAt_sobolevTopMonomialProduct
+#print axioms NLS.ZakharovShabat.sobolevTopMonomialProduct_eq_classical
+#print axioms NLS.ZakharovShabat.sobolevMonomialEndpointMean
+#print axioms NLS.ZakharovShabat.analyticAt_sobolevMonomialEndpointMean
+#print axioms NLS.ZakharovShabat.sobolevMonomialEndpointMean_eq_classical
+#print axioms NLS.ZakharovShabat.sobolevPolynomialEndpointMean
+#print axioms NLS.ZakharovShabat.analyticAt_sobolevPolynomialEndpointMean
+#print axioms NLS.ZakharovShabat.sobolevPolynomialEndpointMean_eq_classical
+#print axioms NLS.ZakharovShabat.eq_of_continuous_of_smooth_scalarSobolev
+#print axioms NLS.MKdV.miuraHillNativePolynomial
+#print axioms NLS.MKdV.miuraHillNativePolynomial_order
+#print axioms NLS.MKdV.miuraHillNativePolynomial_derivativeOrder
+#print axioms NLS.MKdV.miuraHillNativePolynomial_classical
+#print axioms NLS.MKdV.nativeMiuraMass
+#print axioms NLS.MKdV.analyticAt_nativeMiuraMass
+#print axioms NLS.MKdV.nativeMiuraMass_eq_classical
+#print axioms NLS.MKdV.nativeMiuraHillHamiltonian
+#print axioms NLS.MKdV.analyticAt_nativeMiuraHillHamiltonian
+#print axioms NLS.MKdV.nativeMiuraHillHamiltonian_eq_classical
+#print axioms NLS.MKdV.nativeMiuraHillHamiltonian_unique_continuous
+#print axioms NLS.MKdV.nativeMiuraHillHamiltonian_eq_previous
+#print axioms NLS.MKdV.nativeMiuraHillHamiltonian_odd_restriction
+#print axioms NLS.MKdV.nativeMiuraHillHamiltonian_mass_restriction
+#print axioms NLS.MKdV.hasDerivAt_deriv_fst_quasiHillSolution
+#print axioms NLS.MKdV.quasiHillSolution_scalar_equation
+#print axioms NLS.MKdV.quasiHillSolution_scalar_equation_ae
+#print axioms NLS.MKdV.quasiHillSolution_scalar_regular
+#print axioms NLS.MKdV.physicalMiuraSolution_eq_quasiHill
+#print axioms NLS.MKdV.physicalMiuraSolution
+#print axioms NLS.MKdV.physicalMiuraSolution_zero
+#print axioms NLS.MKdV.deriv_physicalMiuraSolution
+#print axioms NLS.MKdV.deriv_physicalMiuraSolution_zero
+#print axioms NLS.MKdV.physicalMiuraSolution_spec
+#print axioms NLS.MKdV.physicalMiuraSolution_unique
+#print axioms NLS.MKdV.physicalMiuraDiscriminant
+#print axioms NLS.MKdV.physicalMiuraDiscriminant_eq_quasiHill
+#print axioms NLS.MKdV.miuraProfileCurve
+#print axioms NLS.MKdV.physicalMiuraDiscriminant_profile_eq_ZS
+#print axioms NLS.MKdV.miuraHillHamiltonianPhase
+#print axioms NLS.MKdV.nlsHamiltonianPhase_diagonal_eq_miura
+#print axioms NLS.MKdV.exists_physicalMiuraDiscriminant_hamiltonian_error_bound
+#print axioms NLS.KdV.classicalHill_characteristic_eq_zero_iff
+#print axioms NLS.KdV.classicalHillDiscriminant_eq_two_iff
+#print axioms NLS.KdV.classicalHillDiscriminant_eq_neg_two_iff
+#print axioms NLS.KdV.classicalHillRadicand_eq_zero_iff
+#print axioms NLS.ZakharovShabat.classicalSolution_injective_initial
+#print axioms NLS.ZakharovShabat.classicalSolution_eq_zero_imp_initial_eq_zero
+#print axioms NLS.KdV.continuous_classicalHillFlow
+#print axioms NLS.KdV.classicalHillFlow_eq_zero_imp_initial_eq_zero
+#print axioms NLS.KdV.exists_classicalHillFlow_position_ne_zero
+#print axioms NLS.KdV.integral_classicalHillFlow_position_normSq_pos
+#print axioms NLS.KdV.hasDerivAt_classicalHillGreen_im
+#print axioms NLS.KdV.classicalHillGreen_im_identity
+#print axioms NLS.KdV.classicalHillFlow_energy_im_eq_zero_of_unit_multiplier
+#print axioms NLS.KdV.classicalHillRootDomain
+#print axioms NLS.KdV.isOpen_classicalHillRootDomain
+#print axioms NLS.KdV.classicalHillContinuationDomain
+#print axioms NLS.KdV.isOpen_classicalHillContinuationDomain
+#print axioms NLS.KdV.classicalHillContinuationDomain_subset
+#print axioms NLS.KdV.mem_classicalHillContinuationDomain_iff
+#print axioms NLS.KdV.classicalHillContinuationDomain_segment
+#print axioms NLS.KdV.classicalHillContinuedRoot
+#print axioms NLS.KdV.analyticOnNhd_classicalHillContinuedRoot
+#print axioms NLS.KdV.classicalHillContinuedRoot_base
+#print axioms NLS.KdV.classicalHillContinuedRoot_sq
+#print axioms NLS.KdV.classicalHillContinuedRoot_ne_zero
+#print axioms NLS.KdV.classicalHillContinuedMultiplier
+#print axioms NLS.KdV.analyticOnNhd_classicalHillContinuedMultiplier
+#print axioms NLS.KdV.classicalHillContinuedMultiplier_product
+#print axioms NLS.KdV.classicalHillContinuedMultiplier_ne_zero
+#print axioms NLS.KdV.classicalHillContinuedPrimitive
+#print axioms NLS.KdV.analyticOnNhd_classicalHillContinuedPrimitive
+#print axioms NLS.KdV.classicalHillContinuedPrimitive_base
+#print axioms NLS.KdV.exp_classicalHillContinuedPrimitive
+#print axioms NLS.KdV.classicalHillContinuedPrimitive_trace
+#print axioms NLS.KdV.hasDerivAt_classicalHillContinuedPrimitive
+#print axioms NLS.KdV.hasFDerivAt_classicalHillContinuedPrimitive
+#print axioms NLS.KdV.classicalHillContinuedPrimitive_unique
+#print axioms NLS.KdV.exists_classicalHillContinuation_neighborhood
+#print axioms NLS.KdV.classicalHillCoefficientPotential
+#print axioms NLS.KdV.continuous_classicalHillCoefficientPotential
+#print axioms NLS.KdV.analyticOnNhd_classicalHillCoefficientPotential
+#print axioms NLS.KdV.classicalHillCoefficientPotential_even
+#print axioms NLS.KdV.canonicalDiscriminant_classicalHillCoefficientPotential
+#print axioms NLS.KdV.classicalHillRadicand_sq_eq_zero_iff_periodicSpectrum
+#print axioms NLS.KdV.analyticOrderNatAt_classicalHillRadicand_sq
+#print axioms NLS.KdV.analyticOrderNatAt_classicalHillRadicand_energy
+#print axioms NLS.KdV.exists_classicalHillCounting_near_compact
+#print axioms NLS.KdV.re_pos_of_high_closedBall
+#print axioms NLS.KdV.sq_mem_slitPlane_of_high_closedBall
+#print axioms NLS.KdV.sq_injOn_high_closedBall
+#print axioms NLS.KdV.sq_mem_slitPlane_of_high_circle
+#print axioms NLS.KdV.exists_classicalHill_high_contour_neighborhood
+#print axioms NLS.KdV.classicalHillHighEnergyRegion
+#print axioms NLS.KdV.classicalHillHighMidpoint
+#print axioms NLS.KdV.classicalHillHighSquaredGap
+#print axioms NLS.KdV.ClassicalHillHighGapPair.swap
+#print axioms NLS.KdV.classicalHillDiscriminant_high_root_level
+#print axioms NLS.KdV.exists_classicalHillHighGapPair_of_counting
+#print axioms NLS.KdV.ClassicalHillHighGapPair.eq_or_swap
+#print axioms NLS.KdV.analyticAt_classicalHillHigh_symmetric
+#print axioms NLS.KdV.classicalHillRadicand_energy_im_eq_zero
+#print axioms NLS.KdV.mem_classicalHillContinuationDomain_of_im_ne_zero
+#print axioms NLS.KdV.analyticOnNhd_classicalHillContinuedPrimitive_off_real
+#print axioms NLS.KdV.exists_classicalHillContinued_floquet_vector
+#print axioms NLS.KdV.classicalHillContinuedPrimitive_re_ne_zero_off_real
+#print axioms NLS.KdV.ClassicalHillHighGapPair.im_eq_zero
+#print axioms NLS.KdV.exists_ordered_classicalHillHighGapPair_of_counting
+#print axioms NLS.KdV.classicalHillHighEnergyRegion_real_bounds
+#print axioms NLS.KdV.classicalHillHighEnergyRegion_real_order
+#print axioms NLS.KdV.ClassicalHillHighGapPair.right_lt_left_of_index_lt
+#print axioms NLS.KdV.classicalHillFlow_conj
+#print axioms NLS.KdV.classicalHillDiscriminant_conj
+#print axioms NLS.KdV.classicalHillRadicand_conj
+#print axioms NLS.KdV.classicalHillFreePrimitive_conj
+#print axioms NLS.KdV.classicalHillFreeRoot_conj
+#print axioms NLS.KdV.classicalHillFreePrimitive_re_sign
+#print axioms NLS.KdV.classicalHillContinuedPrimitive_re_sign
+#print axioms NLS.KdV.classicalHillContinuedPrimitive_re_pos
+#print axioms NLS.KdV.classicalHillContinuedPrimitive_re_neg
+#print axioms NLS.KdV.one_lt_norm_classicalHillContinuedMultiplier
+#print axioms NLS.KdV.norm_classicalHillContinuedMultiplier_lt_one
+#print axioms NLS.KdV.mem_classicalHillContinuationDomain_conj
+#print axioms NLS.KdV.classicalHillContinuedRoot_conj
+#print axioms NLS.KdV.classicalHillContinuedPrimitive_conj
+#print axioms NLS.KdV.classicalHillContinuedPrimitive_re_eq_zero_of_im_eq_zero
+#print axioms NLS.KdV.norm_classicalHillContinuedMultiplier_eq_one_of_im_eq_zero
+#print axioms NLS.MKdV.physicalMiuraState_eq_classicalHillFlow
+#print axioms NLS.MKdV.physicalMiuraDiscriminant_eq_classicalHill
+#print axioms NLS.MKdV.miuraHillProfileCurve
+#print axioms NLS.MKdV.physicalMiuraDiscriminant_profile_eq_classicalHill
+#print axioms NLS.MKdV.classicalHillDiscriminant_miura_eq_ZS
+#print axioms NLS.KdV.classicalHillFreePrimitive_ofReal_sq
+#print axioms NLS.KdV.classicalHillFreePrimitive_sq_of_re_pos
+#print axioms NLS.KdV.classicalHillContinuedPrimitive_im_ne_int_pi
+#print axioms NLS.KdV.classicalHillContinuedPrimitive_im_in_free_band
+#print axioms NLS.KdV.classicalHillContinuedPrimitive_ofReal_sq_band
+#print axioms NLS.KdV.classicalHillContinuedRoot_eq_NLS_along_path
+#print axioms NLS.KdV.classicalHillContinuedPrimitive_eq_NLS_along_path
+#print axioms NLS.MKdV.realDiagonalProfileSource
+#print axioms NLS.MKdV.miuraScaledHillProfileCurve
+#print axioms NLS.MKdV.continuous_miuraScaledHillProfileCurve
+#print axioms NLS.MKdV.miuraScaledHillProfileCurve_eq
+#print axioms NLS.MKdV.miuraScaledHillProfileCurve_real
+#print axioms NLS.MKdV.miuraHill_sheets_eq_NLS
+#print axioms NLS.MKdV.quasiHill_sheets_eq_NLS
+#print axioms NLS.MKdV.quasiHill_sheets_eq_classicalHill
+#print axioms NLS.MKdV.periodOneMiuraCurve
+#print axioms NLS.MKdV.periodOneMiuraCurve_apply
+#print axioms NLS.MKdV.periodOneMiuraCurve_endpoints
+#print axioms NLS.MKdV.periodOneMiuraDiscriminant
+#print axioms NLS.MKdV.periodOneMiuraDiscriminant_eq_ZS
+#print axioms NLS.MKdV.periodOneMiuraSolution_scalar_equation_ae
+#print axioms NLS.MKdV.periodOneMiuraCurveCLM
+#print axioms NLS.MKdV.periodOneMiuraCurveCLM_apply
+#print axioms NLS.MKdV.analyticAt_sobolevMiuraPrimitive
+#print axioms NLS.MKdV.periodOneMiuraCurve_real
+#print axioms NLS.MKdV.realDiagonalH1Source
+#print axioms NLS.MKdV.miuraDiagonalSource_periodOneMiuraCurve
+#print axioms NLS.MKdV.periodOneMiura_sheets_eq_NLS
+#print axioms NLS.MKdV.hillL2Discriminant_miura_smooth
+#print axioms NLS.MKdV.hillL2Discriminant_miura
+#print axioms NLS.periodOneMassSymbol
+#print axioms NLS.periodOneMassSymbol_ne_zero
+#print axioms NLS.periodOneMassSymbol_re_lower
+#print axioms NLS.periodOneMassSymbol_frequency_lower
+#print axioms NLS.norm_periodOneMassSymbol_inv_le_bracket
+#print axioms NLS.inverseBracketCoefficients
+#print axioms NLS.norm_inverseBracketCoefficients_apply
+#print axioms NLS.periodOneMassKernel
+#print axioms NLS.periodOneMassKernel_apply
+#print axioms NLS.tendsto_periodOneMassKernel_zero
+#print axioms NLS.periodOneMassOperator
+#print axioms NLS.periodOneMassInverse
+#print axioms NLS.periodOneMassOperator_apply
+#print axioms NLS.periodOneMassInverse_apply
+#print axioms NLS.norm_periodOneMassInverse_le
+#print axioms NLS.periodOneMassOperator_inverse
+#print axioms NLS.periodOneMassInverse_operator
+#print axioms NLS.periodOneMassInverse_injective
+#print axioms NLS.periodOneMassEquiv
+#print axioms NLS.youngRelation_two_two_top
+#print axioms NLS.boundedCoefficientsHminusOne
+#print axioms NLS.boundedCoefficientsHminusOne_apply
+#print axioms NLS.periodOneMiuraProduct
+#print axioms NLS.periodOneMiuraProduct_apply
+#print axioms NLS.periodOneMiuraProduct_comm
+#print axioms NLS.periodOneResolvedProduct
+#print axioms NLS.periodOneResolvedProduct_eq
+#print axioms NLS.norm_periodOneResolvedProduct_le
+#print axioms NLS.periodOneShiftedMiura
+#print axioms NLS.periodOneShiftedMiura_apply
+#print axioms NLS.analyticAt_periodOneShiftedMiura
+#print axioms NLS.periodOneMassInverse_shiftedMiura
+#print axioms NLS.ComplexAnalysis.quadratic_difference_bound
+#print axioms NLS.ComplexAnalysis.exists_small_quadratic_solution
+#print axioms NLS.ComplexAnalysis.isUnit_fderiv_small_quadratic
+#print axioms NLS.ComplexAnalysis.exists_small_quadratic_analytic_inverse
+#print axioms NLS.ComplexAnalysis.exists_analytic_right_inverse_of_small_quadratic
+#print axioms NLS.exists_periodOneMiuraCharts_on_bounded_ball
+#print axioms NLS.exists_periodOneMiuraChart
+#print axioms NLS.memlp_periodOneMassInverseSymbol
+#print axioms NLS.periodOneMiuraSolution_memlp_fourThirds
+#print axioms NLS.periodOneMiuraSolution_memlp_sobolev_one
+#print axioms NLS.periodOneL2Inclusion
+#print axioms NLS.periodOneL2Inclusion_apply
+#print axioms NLS.periodOneMiura
+#print axioms NLS.periodOneMiura_apply
+#print axioms NLS.periodOneMiuraProduct_single
+#print axioms NLS.periodOneMassOperator_single
+#print axioms NLS.periodOneMiura_shift
+#print axioms NLS.exists_periodOneMiura_energyChart
+#print axioms NLS.periodOneMiura_memlp_sobolev_one
+#print axioms NLS.KdV.classicalHillDiscriminant_add_const
+#print axioms NLS.KdV.continuousFourierCLM_const
+#print axioms NLS.KdV.hillL2Discriminant_add_const
+#print axioms NLS.KdV.hillMiuraDiagonal
+#print axioms NLS.KdV.hillMiuraDiagonal_fst
+#print axioms NLS.KdV.hillMiuraDiagonal_snd
+#print axioms NLS.KdV.hillMiuraDiagonal_scalarInclusion
+#print axioms NLS.KdV.hillMiuraFrequencyTrace
+#print axioms NLS.KdV.analyticOnNhd_hillMiuraFrequencyTrace_joint
+#print axioms NLS.KdV.hillMiuraFrequencyTrace_scalarInclusion
+#print axioms NLS.KdV.hillMiuraFrequencyTrace_even
+#print axioms NLS.KdV.hillMiuraL2Discriminant
+#print axioms NLS.KdV.analyticOnNhd_hillMiuraL2Discriminant_joint
+#print axioms NLS.KdV.hillMiuraL2Discriminant_scalarInclusion
+#print axioms NLS.KdV.hillMiuraL2Discriminant_eq_hillL2
+#print axioms NLS.KdV.periodDouble_single_zero
+#print axioms NLS.KdV.hillMiuraL2Discriminant_eq_hillL2_of_shifted_image
+#print axioms NLS.denseRange_periodOneL2Inclusion
+#print axioms NLS.eqOn_of_eqOn_periodOneL2Inclusion
+#print axioms NLS.KdV.exists_hillHminusMiuraChart
+#print axioms NLS.KdV.HillHminusMiuraChart.trace
+#print axioms NLS.KdV.HillHminusMiuraChart.analyticOnNhd_trace
+#print axioms NLS.KdV.HillHminusMiuraChart.analyticAt_trace_potential
+#print axioms NLS.KdV.HillHminusMiuraChart.trace_eq_hillL2
+#print axioms NLS.KdV.HillHminusMiuraChart.trace_eqOn_overlap
+#print axioms NLS.KdV.hillHminusMiuraChartAt
+#print axioms NLS.KdV.mem_hillHminusMiuraChartAt
+#print axioms NLS.KdV.hillHminusDiscriminant
+#print axioms NLS.KdV.hillHminusDiscriminant_eq_chart
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDiscriminant_joint
+#print axioms NLS.KdV.hillHminusDiscriminant_eq_hillL2
+#print axioms NLS.KdV.hillHminusDiscriminant_unique
+#print axioms NLS.IsRealPeriodOneHminusOne
+#print axioms NLS.IsRealPeriodOneHminusOne.smul_real
+#print axioms NLS.periodOneRealL2Inclusion
+#print axioms NLS.periodOneFiniteL2Approx
+#print axioms NLS.periodOneFiniteL2Approx_apply
+#print axioms NLS.periodOneL2Inclusion_finiteApprox
+#print axioms NLS.periodOneSymmetricSupport
+#print axioms NLS.mem_periodOneSymmetricSupport_neg
+#print axioms NLS.tendsto_periodOneSymmetricSupport
+#print axioms NLS.periodOneFiniteL2Approx_real
+#print axioms NLS.denseRange_periodOneRealL2Inclusion
+#print axioms NLS.Coeff.restrictTwo
+#print axioms NLS.Coeff.restrictTwo_apply
+#print axioms NLS.Coeff.norm_restrictTwo_le
+#print axioms NLS.Coeff.restrictTwoCLM
+#print axioms NLS.WeightedCoeff.restrictTwoCLM
+#print axioms NLS.WeightedCoeff.restrictTwoCLM_apply
+#print axioms NLS.WeightedCoeff.norm_restrictTwoCLM_le
+#print axioms NLS.WeightedCoeff.restrictTwoCLM_insertIsometry
+#print axioms NLS.WeightedCoeff.insertIsometry_restrictTwoCLM
+#print axioms NLS.KdV.periodOneOriginalWeight
+#print axioms NLS.KdV.periodOneOriginalWeight_bounds
+#print axioms NLS.KdV.periodOneOriginalCoefficients
+#print axioms NLS.KdV.periodOneOriginalCoefficients_even
+#print axioms NLS.KdV.periodOneOriginalCoefficients_odd
+#print axioms NLS.KdV.norm_periodOneOriginalCoefficients_le
+#print axioms NLS.KdV.periodOneOriginal
+#print axioms NLS.KdV.periodOneOriginal_even
+#print axioms NLS.KdV.periodOneOriginal_odd
+#print axioms NLS.KdV.norm_periodOneOriginal_le
+#print axioms NLS.KdV.periodOneOriginalExtract
+#print axioms NLS.KdV.periodOneOriginalExtract_apply
+#print axioms NLS.KdV.norm_periodOneOriginalExtract_le
+#print axioms NLS.KdV.periodOneOriginalExtract_original
+#print axioms NLS.KdV.periodOneOriginal_extract
+#print axioms NLS.KdV.periodOneOriginal_injective
+#print axioms NLS.KdV.norm_periodOneOriginal_bounds
+#print axioms NLS.KdV.periodOneOriginal_periodic
+#print axioms NLS.KdV.periodOneOriginal_real_iff
+#print axioms NLS.KdV.periodOneOriginalExtract_real
+#print axioms NLS.KdV.periodOneOriginal_meanZero_iff
+#print axioms NLS.KdV.periodOneOriginal_source_iff
+#print axioms NLS.KdV.periodOneL2OriginalCoefficients
+#print axioms NLS.KdV.periodOneL2OriginalCoefficients_apply
+#print axioms NLS.KdV.periodOneL2OriginalCoefficients_toCoeff
+#print axioms NLS.KdV.periodOneOriginal_L2
 #print axioms NLS.continuous_iff_isClosed_graph_compact_target
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_source_iff_isClosed_graph_of_bounded
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_source_iff_seq_graph_of_bounded
@@ -2136,3 +2886,40 @@ import NLS.Articles.KdVPseudomeasures.SourceWeakStarIntersections
 #print axioms NLS.Articles.KdVPseudomeasures.exists_source_coefficients_of_finite_constraints
 #print axioms NLS.Articles.KdVPseudomeasures.exists_source_mem_all_of_antitone
 #print axioms NLS.Articles.KdVPseudomeasures.exists_source_norm_minimizer_on_closed
+#print axioms NLS.ComplexAnalysis.re_sqrt_nonneg
+#print axioms NLS.ComplexAnalysis.norm_sqrt_sq_add_sub_le
+#print axioms NLS.ComplexAnalysis.exists_high_disc_sqrt_shift_small
+#print axioms NLS.KdV.exists_classicalHill_disc_trace_approximation
+#print axioms NLS.KdV.exists_classicalHill_disc_trace_approximation_near_compact
+#print axioms NLS.KdV.exists_classicalHill_source_disc_trace_approximation
+#print axioms NLS.KdV.one_half_lt_re_cos_of_norm_le
+#print axioms NLS.KdV.freeHillTrace_parity_shift
+#print axioms NLS.KdV.classicalHillTrace_parity_re_pos_of_error
+#print axioms NLS.KdV.exists_classicalHill_source_high_trace_phase
+#print axioms NLS.KdV.exists_high_disc_free_trace_shift_small
+#print axioms NLS.KdV.exists_hillHminus_chart_disc_trace_approximation
+#print axioms NLS.KdV.exists_hillHminus_disc_trace_approximation
+#print axioms NLS.KdV.exists_hillHminus_disc_trace_approximation_near_compact
+#print axioms NLS.KdV.exists_hillHminus_source_disc_trace_approximation
+#print axioms NLS.ComplexAnalysis.eventually_analyticZeroCount_eq_of_continuous_family
+#print axioms NLS.ComplexAnalysis.isLocallyConstant_analyticZeroCount
+#print axioms NLS.ComplexAnalysis.analyticZeroCount_eq_of_homotopy
+#print axioms NLS.ComplexAnalysis.analyticZeroCount_const
+#print axioms NLS.ComplexAnalysis.exists_isolated_zero_disc
+#print axioms NLS.ComplexAnalysis.zero_mem_closed_of_closure_parameters
+#print axioms NLS.KdV.exists_singularHill_resolvent_circle
+#print axioms NLS.KdV.singularHillRieszProjection_ne_zero_of_mem_spectrum
+#print axioms NLS.KdV.singularHillRieszProjection_eq_zero_of_closedBall_resolvent
+#print axioms NLS.KdV.eventually_singularHillRieszProjection_ne_zero
+#print axioms NLS.ComplexAnalysis.zero_graph_mem_closed_of_closure_parameters
+#print axioms NLS.KdV.singularHillSpectrum_periodOneL2_iff
+#print axioms NLS.KdV.exists_hminusOne_physical_characteristic_ne_zero
+#print axioms NLS.KdV.continuous_hminusOne_physical_characteristic
+#print axioms NLS.KdV.singularHillSpectrum_of_hminusOne_characteristic
+#print axioms NLS.KdV.hminusOne_characteristic_of_singularHillSpectrum
+#print axioms NLS.KdV.singularHillSpectrum_periodOne_iff_discriminant
+#print axioms NLS.Articles.KdVPseudomeasures.originalPeriodOneCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.periodOneOriginal_originalPeriodOneCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.originalPeriodOneCoefficients_real
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillDiscriminant
+#print axioms NLS.Articles.KdVPseudomeasures.original_spectrum_iff_HminusOne_discriminant
