@@ -1059,3 +1059,37 @@ angle-sum factorization and full corrected frequency comparison remain
 essential. The overall main-theorem goal remains active.
 
 Validation: all 310 article/shared modules have validated private outputs. The 301 unchanged prefix source hashes match 50c22c7 and their outputs were reused; all nine added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 3,685 declarations/auxiliaries and the combined audit for 48,619 NLS declarations, using only the standard allowed axioms. All 312 mathematical source/checker hashes match the frozen inputs. The public inventory is 1,874 declarations (1,521 theorems and 353 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source.
+
+
+## Full native Cartesian maps on the integer Sobolev scale
+
+The actual physical action roots times the half-order weight now form a
+bounded complex Banach analytic symbol sequence. The independently checked
+original weighted NLS map is pulled back along the actual scalar diagonal
+at every integer Sobolev order. Its full normalized coordinate pair has
+precisely the scalar source weight; original Fourier coefficients are
+preserved by all native source transports.
+
+Multiplying these actual normalized NLS sequences by the bounded symbol
+gives the full Cartesian map H^s -> h^(s+1/2) for every integer s>=0.
+Each map is complex Banach analytic on an open native source neighborhood
+containing the entire physical real H^s subspace. Every raw coefficient
+agrees with the original L2 family, and every output coordinate is real
+on physical profiles. Closed selected actions, infinitely many other
+closed actions, and zero mean are included without additional conditions.
+
+The square of the Cartesian weight is exactly the actual native action
+weight of order 2*s+1. The full analytic quadratic radius projection
+therefore recovers the complete original weighted l1 action sequence at
+every order. The original physical H1 space ScalarDomain 2 has its full
+native order-three-halves map, complex Banach analyticity and exact
+independent physical Hill-contour action radii.
+
+This closes native Sobolev Cartesian sequence analyticity. Gardner
+canonicity, an independent global inverse, general nonzero-fiber
+uniqueness/surjectivity, forward action factorization, independent
+angles/final angle-sum factorization and the full corrected frequency
+comparison remain essential. Properness is currently proved only in
+original L2. The overall main-theorem goal remains active.
+
+Validation: all 316 article/shared modules have validated private outputs. The 310 unchanged prefix source hashes match 9cba64b and their outputs were reused; all six added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 3,741 declarations/auxiliaries and the combined audit for 48,675 NLS declarations, using only the standard allowed axioms. All 318 mathematical source/checker hashes match the frozen inputs. The public inventory is 1,908 declarations (1,547 theorems and 361 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source.

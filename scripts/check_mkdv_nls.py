@@ -344,6 +344,12 @@ modules = [
     "NLS/MKdV/MiuraL2CartesianActions.lean",
     "NLS/MKdV/MiuraL2CartesianProperness.lean",
     "NLS/Articles/MKdVNLSHierarchies/CartesianSequenceIdentification.lean",
+    "NLS/ZakharovShabat/SourceDiagonalActionRootSequence.lean",
+    "NLS/MKdV/MiuraSobolevNLSCoordinates.lean",
+    "NLS/MKdV/MiuraSobolevCartesianSequence.lean",
+    "NLS/MKdV/MiuraSobolevCartesianActions.lean",
+    "NLS/MKdV/MiuraH1CartesianSequence.lean",
+    "NLS/Articles/MKdVNLSHierarchies/SobolevCartesianIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

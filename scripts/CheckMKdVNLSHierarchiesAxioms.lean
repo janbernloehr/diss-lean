@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.SobolevCartesianIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianSequenceIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianActionIdentification
 import NLS.Articles.MKdVNLSHierarchies.L2ActionGeometryIdentification
@@ -42,6 +43,9 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ZakharovShabat.sourceDiagonalScaledActionRoot,
+    `NLS.ZakharovShabat.sourceDiagonalActionRootSequence,
+    `NLS.ZakharovShabat.exists_local_sourceDiagonalActionRootSequence_analytic,
     `NLS.ZakharovShabat.SourceDiagonalLaurentLocalChart.exists_all_normalizedAction_analytic,
     `NLS.ZakharovShabat.exists_local_sourceNormalizedDiagonalLaurentAction_allIndices_analytic_factor,
     `NLS.ZakharovShabat.exists_local_hilbert_normalizedDiagonalLaurent_inverse_bound,
