@@ -55,7 +55,8 @@ Local analytic shifted-Miura lifts are now constructed near every complex H^-1
 potential, with mass uniform on bounded balls, exact constant energy translation
 and H1 regularity when the Miura image is L2. Physical spectral matching
 through these charts and gluing of the jointly entire H^-1 trace are now proved;
-uniform H^-1 high-gap and period estimates remain open.
+uniform H^-1 trace estimates and common high-moment analytic domains are now proved.
+Quartic-gap and quadratic-action moment bounds remain open.
 This record does not reopen the completed dissertation verification.
 
 ## Source and conventions
@@ -1244,13 +1245,76 @@ Fourier evaluation module is recompiled. Three compatible private source
 differences are retained and documented: two original independent proofs
 and the additional proved strict free-Hill spacing lemma. The original
 37-source manifest remains unchanged. The focused validation covers
-201 source modules; this is not a full 2,393-module or repository build.
+212 source modules; this is not a full 2,393-module or repository build.
 
-The uniform H^-1 high-disc and source-path estimates, full high-gap and
-period bounds, intrinsic singular-operator characteristic identification,
-global Birkhoff actions and analytic weighted-action descent remain open.
+Uniform H^-1 high-disc/source-path trace estimates, full analytic primitive
+squares and common high-moment analytic domains are now proved below.
+The full quartic-gap and quadratic-action bounds, intrinsic singular-operator
+characteristic identification, global Birkhoff actions and analytic
+weighted-action descent remain open.
 Theorem 1.1 and the positive-ell2 physical Hamiltonian extension remain
 unverified.
+
+## Uniform H^-1 high families and actual analytic contour periods
+
+`ShiftedSquareRootBounds.lean` proves the principal-root estimate
+|sqrt(z²+c)-z|<=|c|/Re(z) for Re(z)>0, and one high cutoff for any fixed
+energy shift. `HillFreeEnergyShift.lean` reduces the free cosine error to
+one compact disc by parity translation.
+`HillHminusOneDiscAsymptotics.lean` transfers the original exterior NLS
+estimate through an actual Miura chart at sqrt(z²+c). It gives one complex
+H^-1-open V and one N, before all nearby potentials, all positive high
+indices and every point of each complete closed frequency disc. Maximum
+modulus fills the boundary estimate. Compact-set and straight-source-path
+versions retain the same order of quantifiers. Openness uses continuity
+only on the actual chart domain; no globally continuous lift is assumed.
+
+`HillHminusOneTraceControl.lean` fixes the parity trace half-plane on full
+high discs and the near-one normalized trace on smaller discs.
+`HillHminusOnePrimitiveStrip.lean` proves |Im(F+i*n*pi)|<pi/2 at every
+admissible point, with the index fixed by the free source anchor.
+`HillHminusOneWholeGapSquares.lean` constructs K_n jointly analytic on
+full energy discs times one H^-1 neighborhood, arbitrarily small there,
+with squaredCosh(K_n)=(-1)^n*Delta/2. Its zeros are exactly the actual
+radicand zeros, with identical analytic energy orders. It equals
+(F+i*n*pi)^2 wherever the source primitive is admissible. The resulting
+indexed limits F -> -i*n*pi hold jointly in energy and H^-1 potential,
+including multiple zeros and all source-admissible approach directions.
+
+`HillHminusOneFreeSquareComparison.lean` fixes a radius before the error
+tolerance and compares these squares with both the exact free square
+and -(lambda-(n*pi)^2)^2/(4*(n*pi)^2), on whole closed energy discs.
+The potential neighborhood may depend on the tolerance.
+
+`HillHminusOneSmallGapCoverage.lean` confines every actual high trace root
+in any prescribed positive frequency radius. It uses the proved trace
+error and the filled-sine quotient bound, rather than assuming spectral
+labels. `HillHminusOneAnnulusCoverage.lean` covers complete high frequency
+annuli and energy shells rho*n<=|lambda-(n*pi)^2|<=n on one H^-1-open
+neighborhood, with no reality, mean-zero or parity hypothesis.
+
+`HillHminusOneHighMoments.lean` defines the literal high periods
+
+```
+A_n = -(1/pi)*integral F,
+R_n = (1/pi)*integral (F+i*n*pi)^3,
+```
+
+on the energy circle centered at (n*pi)^2 with radius n. Every integer
+hierarchy level has the original Arnold normalization. The periods
+vanish freely and agree exactly with the physical L2 periods under
+unit-period inclusion and explicit periodDouble insertion. For every
+H^-1 potential, one N and one complex open V support analyticity of all
+high polynomial and cubic periods simultaneously.
+`HillHminusOneMomentRadius.lean` proves uniform radius independence for
+every integer power of the shifted primitive on the same checked energy
+shells; the indexed shift contributes no constant Arnold period.
+
+The actual H^-1 two-root cluster construction and uniform quartic-gap /
+quadratic-action moment bounds remain open. Analyticity of the individual
+periods on one common domain does not yet prove convergence of the
+Hamiltonian series. Global Birkhoff action identification and analytic
+weighted-action descent remain required for Theorem 1.1.
 
 ## Earlier checked local consequences
 
@@ -1339,12 +1403,12 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All 201 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All 212 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in eighty-eight additional shared modules:
-2471 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in eighty-nine additional shared modules:
+2537 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
