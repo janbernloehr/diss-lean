@@ -54,7 +54,8 @@ now proved in the L2 topology as well.
 Local analytic shifted-Miura lifts are now constructed near every complex H^-1
 potential, with mass uniform on bounded balls, exact constant energy translation
 and H1 regularity when the Miura image is L2. Physical spectral matching
-through these charts remains open.
+through these charts and gluing of the jointly entire H^-1 trace are now proved;
+uniform H^-1 high-gap and period estimates remain open.
 This record does not reopen the completed dissertation verification.
 
 ## Source and conventions
@@ -1193,11 +1194,63 @@ The constant is inserted in the zeroth Fourier mode. L2-image H1
 regularity is also proved for this literal Miura map. The scalar Hill
 energy must therefore be translated by precisely (m+1)^2/4.
 
-The physical discriminant still needs to be matched through these
-charts and glued, followed by H^-1 period estimates, global Birkhoff
-action identification and analytic descent to the weighted action
-cone. These chart results do not yet prove the global positive-ell2
-Hamiltonian extension or any main theorem.
+The physical discriminant matching and gluing through these charts are
+now proved below. Uniform H^-1 period estimates, global Birkhoff action
+identification and analytic weighted-action descent remain open.
+The global positive-ell2 Hamiltonian extension is not yet proved.
+
+## The global H^-1 trace and its normalized source sheets
+
+`HillL2ConstantShift.lean` proves the exact identity
+Delta(q+c,lambda+c)=Delta(q,lambda) for the actual physical L2 monodromy.
+It follows first from equality of the scalar position/derivative state
+equations, then by continuous Fourier density.
+
+`HillMiuraL2Discriminant.lean` realizes the original diagonal canonical
+NLS trace on every complex L2 Miura input. The shared physical H1 identity
+and H1 density prove frequency evenness, and Cauchy-circle even descent
+gives joint energy/L2 analyticity, including energy zero. If an L2 input
+has an L2 distributional Miura image, the proved H1 regularity identifies
+its trace with the actual Hill monodromy. No analytic H1 dependence of
+the local lifts is assumed.
+
+`PeriodOneHminusOneDensity.lean` proves density of the coefficient-preserving
+unit-period L2 inclusion in the full complex H^-1 space. Continuous
+functions on an open H^-1 set are determined by their values on that
+range. `HillHminusOneDiscriminant.lean` applies this to the energy-shifted
+Miura chart traces: they agree on every open overlap, for all complex
+energies, independently of mass and inverse-branch choices. It constructs
+one trace, `hillHminusDiscriminant`, jointly entire on C x H^-1 and the
+unique continuous extension of the physical unit-period L2 trace:
+
+```
+Delta_Hminus(periodOneL2Inclusion(q),lambda)
+  = hillL2Discriminant(periodDouble(q),lambda).
+```
+
+`HillHminusOneSourcePrimitive.lean` constructs the free-normalized root
+and primitive on the explicit open straight-source continuation domain.
+The free primitive is -i*sqrt(lambda), and the trace, square-root and
+energy-derivative identities have their original constants. Under the
+L2 inclusion the continuation domains, roots and primitives agree
+exactly with the existing physical L2 construction. No additional sign
+or logarithm period is left undetermined.
+
+The physical H1 Miura comparison is reused from 65 exact source modules
+pinned in `miura-shared-imports.json`. Its transitive source graph has
+2,393 modules. One older baseline Hamiltonian module is aligned with the
+shared periodic integration-by-parts import; the existing periodic
+Fourier evaluation module is recompiled. Three compatible private source
+differences are retained and documented: two original independent proofs
+and the additional proved strict free-Hill spacing lemma. The original
+37-source manifest remains unchanged. The focused validation covers
+201 source modules; this is not a full 2,393-module or repository build.
+
+The uniform H^-1 high-disc and source-path estimates, full high-gap and
+period bounds, intrinsic singular-operator characteristic identification,
+global Birkhoff actions and analytic weighted-action descent remain open.
+Theorem 1.1 and the positive-ell2 physical Hamiltonian extension remain
+unverified.
 
 ## Earlier checked local consequences
 
@@ -1286,12 +1339,12 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All 131 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All 201 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in twenty-two additional shared modules:
-1542 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in eighty-eight additional shared modules:
+2471 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
@@ -1312,7 +1365,8 @@ The script uses the canonical compiled imports read-only and writes new
 outputs to this worktree's `.lake/article-checks/kdv-convexity/`. This is a
 standalone import cache, never a target for `lake build`. No canonical build
 products are copied wholesale or modified. `KdV`, `ZakharovShabat` and
-`ComplexAnalysis`, `FunctionalAnalysis` and `SequenceSpaces` outputs use
+`ComplexAnalysis`, `FunctionalAnalysis`, `SequenceSpaces`, `Fourier`,
+`DifferentialPolynomial` and `MKdV` outputs use
 real private directories; reference files in
 the shared namespaces are linked only for imports, and an output-file link is removed
 before compilation. No full repository validation
