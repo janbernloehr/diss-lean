@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 3937,
+  "audited_declarations_and_auxiliaries": 4024,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -10024,14 +10024,199 @@
       "kind": "theorem",
       "name": "physical_cartesian_original_H1_zero_inverse",
       "file": "NLS/Articles/MKdVNLSHierarchies/SobolevCartesianLocalInverseIdentification.lean"
+    },
+    {
+      "kind": "def",
+      "name": "conjugateReflectionRealCLM",
+      "file": "NLS/SequenceSpaces/PhysicalRealUnweightedProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "conjugateReflectionRealCLM_apply",
+      "file": "NLS/SequenceSpaces/PhysicalRealUnweightedProjection.lean"
+    },
+    {
+      "kind": "def",
+      "name": "physicalRealPart",
+      "file": "NLS/SequenceSpaces/PhysicalRealUnweightedProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalRealPart_apply",
+      "file": "NLS/SequenceSpaces/PhysicalRealUnweightedProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalRealPart_real",
+      "file": "NLS/SequenceSpaces/PhysicalRealUnweightedProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_real_linear_transport",
+      "file": "NLS/ComplexAnalysis/RealAnalyticEquivalentDerivativeInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_real_linear_transport",
+      "file": "NLS/ComplexAnalysis/RealAnalyticEquivalentDerivativeInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "inverse_germ_preserves_subspace",
+      "file": "NLS/ComplexAnalysis/RealAnalyticEquivalentDerivativeInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_real_analytic_openPartialHomeomorph_of_fderiv_equiv",
+      "file": "NLS/ComplexAnalysis/RealAnalyticEquivalentDerivativeInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_real_analytic_inverse_neighborhoods_of_fderiv_equiv",
+      "file": "NLS/ComplexAnalysis/RealAnalyticNativeInverseNeighborhoods.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianRealSubmodule",
+      "file": "NLS/MKdV/MiuraCartesianRealForm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isClosed_miuraCartesianRealSubmodule",
+      "file": "NLS/MKdV/MiuraCartesianRealForm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianFreeJacobian_physicalReal",
+      "file": "NLS/MKdV/MiuraCartesianRealForm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraFreeInverseSymbol_conj",
+      "file": "NLS/MKdV/MiuraCartesianRealForm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianFreeInverse_physicalReal",
+      "file": "NLS/MKdV/MiuraCartesianRealForm.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianRealProjection",
+      "file": "NLS/MKdV/MiuraCartesianRealForm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianRealProjection_real",
+      "file": "NLS/MKdV/MiuraCartesianRealForm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveCartesianMap_physicalReal",
+      "file": "NLS/MKdV/MiuraRealCartesianMap.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPhysicalCartesianMap",
+      "file": "NLS/MKdV/MiuraRealCartesianMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalCartesianMap_inclusion",
+      "file": "NLS/MKdV/MiuraRealCartesianMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraPhysicalCartesianMap",
+      "file": "NLS/MKdV/MiuraRealCartesianMap.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianRealFreeJacobian",
+      "file": "NLS/MKdV/MiuraRealCartesianMap.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianRealFreeInverse",
+      "file": "NLS/MKdV/MiuraRealCartesianMap.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianRealFreeEquiv",
+      "file": "NLS/MKdV/MiuraRealCartesianMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraPhysicalCartesianMap_zero",
+      "file": "NLS/MKdV/MiuraRealCartesianMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalCartesianMap_zero",
+      "file": "NLS/MKdV/MiuraRealCartesianMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPhysicalCartesian_localInverse_at_zero",
+      "file": "NLS/MKdV/MiuraRealCartesianLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveCartesian_complex_inverse_real_germ",
+      "file": "NLS/MKdV/MiuraRealCartesianLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraPhysicalCartesianMap",
+      "file": "NLS/MKdV/MiuraRealCartesianLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isProperMap_miuraPhysicalCartesianMap",
+      "file": "NLS/MKdV/MiuraRealCartesianLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_open_global_unique_preimages_of_proper_local_chart",
+      "file": "NLS/FunctionalAnalysis/ProperMapLocalUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalCartesianMap_eq_zero_iff",
+      "file": "NLS/MKdV/MiuraRealCartesianSmallData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPhysicalCartesian_global_unique_small_data",
+      "file": "NLS/MKdV/MiuraRealCartesianSmallData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_real_cartesian_free_jacobian_equivalence",
+      "file": "NLS/Articles/MKdVNLSHierarchies/RealCartesianLocalInverseIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_real_cartesian_zero_local_inverse",
+      "file": "NLS/Articles/MKdVNLSHierarchies/RealCartesianLocalInverseIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_real_cartesian_map_proper",
+      "file": "NLS/Articles/MKdVNLSHierarchies/RealCartesianLocalInverseIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_real_cartesian_global_unique_small_data",
+      "file": "NLS/Articles/MKdVNLSHierarchies/RealCartesianLocalInverseIdentification.lean"
     }
   ],
-  "public_declaration_count": 2001,
-  "theorem_count": 1615,
-  "definition_count": 386,
-  "full_build": "335 article/shared modules have validated private outputs. All 328 unchanged prefix module source hashes match the prior 9640ed7 milestone; their private outputs were reused. Seven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2038,
+  "theorem_count": 1644,
+  "definition_count": 394,
+  "full_build": "344 article/shared modules have validated private outputs. All 335 unchanged prefix module source hashes match the prior ff343bc milestone; their private outputs were reused. Nine added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/PositiveWeightEquivalence.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/PhysicalRealUnweightedProjection.lean",
   "sha256": {
     "NLS/Articles/MKdVNLSHierarchies/ActionAngleFlowIdentification.lean": "b3f3e63f112a93654c970e5e4b79d592dc31973fe7ed5fcaf612c98da860fd39",
     "NLS/Articles/MKdVNLSHierarchies/ActionDescentIdentification.lean": "9d86c19bec1b44ee195c8695a749fdeecf6daf0ee895da7c592ad0782f9f3cc4",
@@ -10055,6 +10240,7 @@
     "NLS/Articles/MKdVNLSHierarchies/MassActionTraceIdentification.lean": "130ab5988e12d8a434b430d9ccc3e64e3b02e6c193ca15b27161285ac7a7b9a5",
     "NLS/Articles/MKdVNLSHierarchies/NativeHierarchy.lean": "7c3522738c8d507d80afc3f9f87cbf24304b17a50d0adeee4a1e842f6ae40e08",
     "NLS/Articles/MKdVNLSHierarchies/PrimitiveIdentification.lean": "15ea93920c81e58b86cc6f064412d79d8777827a22a979356bd84f45db08f994",
+    "NLS/Articles/MKdVNLSHierarchies/RealCartesianLocalInverseIdentification.lean": "c4ea7e8d363fb494d628952e8ebb1d93d21466c8039260d97e9fe984aaceeb79",
     "NLS/Articles/MKdVNLSHierarchies/RealFiniteActionCoordinates.lean": "3b4df99feb318af8adb9b25de34201e641e0979e3feec5830461c437d98a0e27",
     "NLS/Articles/MKdVNLSHierarchies/SharpEvenVanishing.lean": "a5676e1168d3d4df4864ec7c240c53a6eea2f0d8afb95e793a60c336879f7ab4",
     "NLS/Articles/MKdVNLSHierarchies/SharpMiuraFlow.lean": "d4825b5f8d009c32377b6c9f14ffb5276bf8844797488a7e03b83c6e42c7c665",
@@ -10077,6 +10263,8 @@
     "NLS/ComplexAnalysis/NonrealBoundaryExtension.lean": "b7d741d3d033529c77560bba161467612fbab3732f96a8b7084143537b53e481",
     "NLS/ComplexAnalysis/PiecewiseSquareContour.lean": "ac4cffc1704db1d6588d592acc2a85c6837c9d0d5b63d0f6a67337e46832350a",
     "NLS/ComplexAnalysis/PiecewiseSquareWinding.lean": "ecf9d5b768108801081f9967480f71c0bdd5be99baa35828f6b9f6d4c4a46ea8",
+    "NLS/ComplexAnalysis/RealAnalyticEquivalentDerivativeInverse.lean": "97a1d35d27b9ac9e46b28cacbfa496b0fb34b3327a02b440f5524b171b80a9ac",
+    "NLS/ComplexAnalysis/RealAnalyticNativeInverseNeighborhoods.lean": "37a1faa588ee325b5a6870289839a36c2f07e25664b550197993a795c8afd7a4",
     "NLS/ComplexAnalysis/RealCenteredPositiveDisc.lean": "e0778a2725397d163746471c31fcde54ed6c7214913bd695c933143ba3dc1c52",
     "NLS/ComplexAnalysis/RealDiameterDisc.lean": "9c1ee677380624e534b243b093793234d1e9fc9f3653a23356fe838c04869c6d",
     "NLS/ComplexAnalysis/SampledPhaseCoefficients.lean": "38dcc2a58c33e7d725e1eee4b08bd6bcb736fae281f4031ab207d51c78fdc70f",
@@ -10113,6 +10301,7 @@
     "NLS/FunctionalAnalysis/LinearVolterraFlow.lean": "cd27c0c270665ea606ace800acbb8580e75d3211f424bdd79eb694cda4fe0a9f",
     "NLS/FunctionalAnalysis/LinearVolterraLinearity.lean": "bdcf939efdbed48af7a0a2e3da786c511ccc81cfdd1bb930e6185225c05f0b45",
     "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean": "140b863a21c489adf60995da8e53101c3a7cf0bd66b6dc993b8f54fe0900f306",
+    "NLS/FunctionalAnalysis/ProperMapLocalUniqueness.lean": "ab310c03ae296f4a75420b6ea0ea0aa922ae63fe3b4932925ae1e7ec01b413cb",
     "NLS/FunctionalAnalysis/RealAnalyticSubmersionSection.lean": "402802d2945afe058266ae87cce9e78246df54dad85b9c773a36a0dcac784867",
     "NLS/FunctionalAnalysis/ScalarLinearODE.lean": "bc75accf3edb4bf4109b2f81298d7e4cae99426325643097cdcfeaf6ecc94673",
     "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean": "e1242c43b5d115939c0335c4550df6159590b38352ad53810fd80c2a6256f56c",
@@ -10197,6 +10386,7 @@
     "NLS/MKdV/MiuraCartesianFreeEquivalence.lean": "9f26aa1da404af2014989f035d78abe8d79388ccd13cf32e5f3711c9ea50d569",
     "NLS/MKdV/MiuraCartesianFreeInverse.lean": "5fe00e1d6608076239c7fff9db6179a08ccfe4413794052fcd5657b015f44fdf",
     "NLS/MKdV/MiuraCartesianLocalInverse.lean": "08e1ee3e8ecf282f388e7607bd2e65fa39a237d638592ef638819de9f20758ce",
+    "NLS/MKdV/MiuraCartesianRealForm.lean": "348bf32860ab6d2a53cd2f6cc2b450f7925e55f5fa00a3e89bbcf6595b278fa2",
     "NLS/MKdV/MiuraClassicalSolution.lean": "8ff694a65deec068d661b9132c593c09042c97e622c6e147aa5346fa85ddd42f",
     "NLS/MKdV/MiuraConstantActions.lean": "db163d1a6d4d963a002d61624906cec48b75b315a9b66cdc67942d4012aa45a3",
     "NLS/MKdV/MiuraDiscriminantCotangent.lean": "1e866dff43c3574cbe81c6210095486a65a494e45bed1369b133881ff32eb4e2",
@@ -10240,6 +10430,9 @@
     "NLS/MKdV/MiuraPositiveCartesianMap.lean": "4f851eaddfe0de579a98d4d5813461e6f7bce79c6437c03daf02f878081f42dd",
     "NLS/MKdV/MiuraPositiveCartesianProperness.lean": "c7979f38ae58ca2f87088a6fbe5ef10a97c9575a546bc71f2d416bcb4549ba39",
     "NLS/MKdV/MiuraPositiveMultiplicity.lean": "d3791e39dd0071917f0885d67a320228191d4c7cfccccd2a0c7f1484d1dd3194",
+    "NLS/MKdV/MiuraRealCartesianLocalInverse.lean": "dcd04b2645df963b99ad09711fd420e37b5dd7bbd0fe011b21c8e42234e72581",
+    "NLS/MKdV/MiuraRealCartesianMap.lean": "ea6b9d0931321f1615922a5e15be8ea82730cbfecbfefa04a3dc7f625a24572e",
+    "NLS/MKdV/MiuraRealCartesianSmallData.lean": "7703a3dc02be7217ba5f0ab8721814480727869ca103b4a058a95370f00f3479",
     "NLS/MKdV/MiuraRealL2ActionMap.lean": "0778fcb8814df72a5acca3b64be20c3adce37e56bd84afdf208da8ebde5f585e",
     "NLS/MKdV/MiuraRestrictedActionBrackets.lean": "5c98d347643107fccf5930d8ddb8fa3ce57165ec302928ef492a7ee5810dc008",
     "NLS/MKdV/MiuraSobolevActionSequence.lean": "d93525a5049065e78da2b30ba2d50d17c7455312473b1e01ddb11178be508c0f",
@@ -10276,6 +10469,7 @@
     "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean": "3e4071aef6c8357dc5249cd8c807847792cce838965828a4e392c3e342592c26",
     "NLS/SequenceSpaces/PhysicalRealCoefficients.lean": "8d1359e9a91af4d40e53bba54beaa89782306ed3fad24eaa53db7d0aa5dc3718",
     "NLS/SequenceSpaces/PhysicalRealUnweightedCoefficients.lean": "5372a3385990bbad152a696375711071c7b5b323fb1e0b360c88b880660ae5a6",
+    "NLS/SequenceSpaces/PhysicalRealUnweightedProjection.lean": "06ee8a5bd6ac5377a8da57c7a3048eedb2a5221887cde41158f8366fded67d08",
     "NLS/SequenceSpaces/PositiveWeightEquivalence.lean": "344e7199a61e0f2257491f51486628c8cc3f1394a2a8b51d8abd77c00dfde858",
     "NLS/SequenceSpaces/PositiveWeightedCoefficients.lean": "a3aec04059afd4d53cfba8671bd00776eea9cb055c2a8d38545365dfa707ffdb",
     "NLS/SequenceSpaces/RealPairedActionRotation.lean": "c716205ab8374bb9984652c4826e431b73217573be245a65758daab20df4c181",
@@ -10368,11 +10562,11 @@
     "NLS/ZakharovShabat/SourceWeightedPrimitiveContour.lean": "26946412492d5f346f9155b8a37055e296e860d1d395cc00d37b7a5cd45e159f",
     "NLS/ZakharovShabat/SourceWeightedZeroLaurentAnalytic.lean": "7c328fc9fabdd864d7f1f8b850cae53f7178776b3d95a3a7c0930d980b2ed155",
     "NLS/ZakharovShabat/SourceWeightedZeroLaurentBound.lean": "26624c513ed96a9dde3f373a0d6d9049342bf2b46c074d2a60b893f841e3e24a",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "2f5fec05778bf811ef133daa761f32b3455aec6b7a1676a2b30db73cb113634b",
-    "scripts/check_mkdv_nls.py": "60abb34553c8f4fb06b38251fe05d611dad09bc314b49c5ee1a4e4f3609413ed"
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "e2e665706aa1113b4fce88778aae1115aaf0c2959783c4121bf002b28476e51c",
+    "scripts/check_mkdv_nls.py": "0c1ae568dd167a904a79d5bbe46178a683a60b674ff07ef87be5be0c11b0e56d"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 335,
+  "focused_module_count": 344,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -10603,12 +10797,25 @@
       "combined_NLS_audit_count": 48871,
       "aggregate_compiled": true,
       "validation_scope": "All 328 unchanged prefix module source hashes match the prior 9640ed7 milestone; their private outputs were reused. Seven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
+    },
+    {
+      "milestone": "Physical real L2 Cartesian inverse chart and globally unique small data",
+      "audit_count": 4024,
+      "combined_NLS_audit_count": 48958,
+      "aggregate_compiled": true,
+      "module_count": 344,
+      "reused_prefix_module_count": 335,
+      "reused_prefix_commit": "ff343bce7d0c160c4fd60bb4ad827571e472ecf6",
+      "frozen_source_checker_count": 346,
+      "public_declaration_count": 2038,
+      "theorem_count": 1644,
+      "definition_count": 394
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 48871,
+  "combined_audited_NLS_declarations": 48958,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -10616,7 +10823,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 328 unchanged prefix module source hashes match the prior 9640ed7 milestone; their private outputs were reused. Seven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3937 declarations/auxiliaries and combined audit for 48871 NLS declarations. All 337 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 335 unchanged prefix module source hashes match the prior ff343bc milestone; their private outputs were reused. Nine added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4024 declarations/auxiliaries and combined audit for 48958 NLS declarations. All 346 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

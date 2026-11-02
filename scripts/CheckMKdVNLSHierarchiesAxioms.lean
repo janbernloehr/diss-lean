@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.RealCartesianLocalInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.SobolevCartesianLocalInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianLocalInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.SobolevCartesianIdentification
@@ -45,6 +46,17 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.Coeff.conjugateReflectionRealCLM,
+    `NLS.Coeff.conjugateReflectionRealCLM_apply,
+    `NLS.Coeff.physicalRealPart,
+    `NLS.Coeff.physicalRealPart_apply,
+    `NLS.Coeff.physicalRealPart_real,
+    `NLS.ComplexAnalysis.analyticAt_real_linear_transport,
+    `NLS.ComplexAnalysis.hasFDerivAt_real_linear_transport,
+    `NLS.ComplexAnalysis.inverse_germ_preserves_subspace,
+    `NLS.ComplexAnalysis.exists_real_analytic_openPartialHomeomorph_of_fderiv_equiv,
+    `NLS.ComplexAnalysis.exists_real_analytic_inverse_neighborhoods_of_fderiv_equiv,
+    `NLS.FunctionalAnalysis.exists_open_global_unique_preimages_of_proper_local_chart,
     `NLS.WeightedCoeff.positiveWeightMap,
     `NLS.WeightedCoeff.positiveWeightMap_apply,
     `NLS.WeightedCoeff.positiveWeightMap_inverse,
@@ -559,6 +571,9 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_local_inverse,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_global_unique_small_data,
+    ``NLS.MKdV.miuraPositiveCartesian_complex_inverse_real_germ,
     ``NLS.ComplexAnalysis.tendstoUniformlyOn_of_joint_limits,
     ``NLS.Coeff.physicalRealSubmodule,
     ``NLS.Coeff.isClosed_physicalRealSubmodule,

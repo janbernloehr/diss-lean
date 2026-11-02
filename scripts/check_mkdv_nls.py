@@ -369,6 +369,15 @@ modules = [
     "NLS/ComplexAnalysis/AnalyticNativeInverseNeighborhoods.lean",
     "NLS/MKdV/MiuraSobolevCartesianLocalInverse.lean",
     "NLS/Articles/MKdVNLSHierarchies/SobolevCartesianLocalInverseIdentification.lean",
+    "NLS/SequenceSpaces/PhysicalRealUnweightedProjection.lean",
+    "NLS/ComplexAnalysis/RealAnalyticEquivalentDerivativeInverse.lean",
+    "NLS/ComplexAnalysis/RealAnalyticNativeInverseNeighborhoods.lean",
+    "NLS/MKdV/MiuraCartesianRealForm.lean",
+    "NLS/MKdV/MiuraRealCartesianMap.lean",
+    "NLS/MKdV/MiuraRealCartesianLocalInverse.lean",
+    "NLS/FunctionalAnalysis/ProperMapLocalUniqueness.lean",
+    "NLS/MKdV/MiuraRealCartesianSmallData.lean",
+    "NLS/Articles/MKdVNLSHierarchies/RealCartesianLocalInverseIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

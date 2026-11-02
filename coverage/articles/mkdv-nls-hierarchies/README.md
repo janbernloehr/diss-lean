@@ -1157,3 +1157,39 @@ full corrected frequency comparison remain essential. Global properness
 remains an original physical real L2 result. The main-theorem goal stays active.
 
 Validation: all 335 article/shared modules have validated private outputs. The 328 unchanged prefix source hashes match 9640ed7 and their outputs were reused; all seven added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 3,937 declarations/auxiliaries and the combined audit for 48,871 NLS declarations, using only the standard allowed axioms. All 337 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,001 declarations (1,615 theorems and 386 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Physical real L2 inverse chart and globally unique small Cartesian data
+
+The genuine physical real source is the closed conjugate-reflection form
+of the original L2 space. A bounded real projection onto this form is now
+proved. The genuine target is the closed real subspace of the positive
+half-order Hilbert pair and the literal real signed mean: every raw
+Cartesian coefficient and the mean have zero imaginary part.
+
+The explicit free Fourier Jacobian and its bounded inverse preserve these
+real forms. Their restrictions form an actual bounded real equivalence,
+which is identified with the derivative of the original nonlinear real
+Cartesian map. The map agrees exactly with the existing complex Cartesian
+representatives after inclusion and is real Banach analytic at every
+physical profile. It has an analytic inverse between full open real
+source/target neighborhoods of zero, with exact inverse identities, image
+equality and bijectivity. Every complex left inverse germ also preserves
+physical reality on nearby real target data.
+
+The actual real-target map remains globally proper. The original mass/action
+trace proves its zero fiber consists only of zero. A reusable topological
+lemma combines a singleton fiber, properness and a local chart to exclude
+extra distant preimages near that fiber. Consequently, every point in a
+full open real native target neighborhood of zero has exactly one preimage
+in the entire physical real L2 space. Closed actions and zero mean are
+included.
+
+These results do not identify a global Gardner-canonical mKdV Birkhoff map.
+Higher-Sobolev physical real inverse restrictions, the general-profile
+Jacobian/inverse and Gardner canonicity, general nonzero-fiber geometry and
+surjectivity, forward action factorization, independent angles/final
+angle-sum factorization and full corrected frequency comparison remain
+essential. The main-theorem goal stays active.
+
+Validation: all 344 article/shared modules have validated private outputs. The 335 unchanged prefix source hashes match ff343bc and their outputs were reused; all nine added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,024 declarations/auxiliaries and the combined audit for 48,958 NLS declarations, using only the standard allowed axioms. All 346 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,038 declarations (1,644 theorems and 394 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
