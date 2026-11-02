@@ -11,6 +11,11 @@ import NLS.KdV.HillBilinearSymmetry
 import NLS.FunctionalAnalysis.TwoDimensionalDeterminant
 import NLS.KdV.HillSpectralLipschitz
 import NLS.KdV.HillRootSeparation
+import NLS.SequenceSpaces.WeightedInsertion
+import NLS.SequenceSpaces.PositiveFourierTail
+import NLS.SequenceSpaces.ReciprocalSquareTail
+import NLS.KdV.HillPeriodOnePotential
+import NLS.KdV.HillGapTail
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -20,11 +25,19 @@ The article's main theorems are not claimed by this audit. -/
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
+  let shared := #[``NLS.FiniteSpectralDeterminant.det_prod_formula,
+    ``NLS.FiniteSpectralDeterminant.determinant_shift_bound,
+    ``NLS.Weight.pullback, ``NLS.Weight.pullback_apply,
+    ``NLS.WeightedCoeff.insertIsometry, ``NLS.WeightedCoeff.insertIsometry_image,
+    ``NLS.WeightedCoeff.insertIsometry_outside, ``NLS.WeightedCoeff.norm_insertIsometry,
+    ``NLS.Coeff.pair_sq_le_norm_sq, ``NLS.Coeff.positive_pair_tail_sq,
+    ``NLS.ReciprocalSeries.summable_nat_reciprocal_sq_tail,
+    ``NLS.ReciprocalSeries.tsum_nat_reciprocal_sq_tail_le,
+    ``NLS.SpectralWeight.doubleIndex, ``NLS.SpectralWeight.doubleIndex_apply]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
-        name == `NLS.FiniteSpectralDeterminant.det_prod_formula ||
-        name == `NLS.FiniteSpectralDeterminant.determinant_shift_bound then
+        shared.contains name then
       let axioms ← collectAxioms name
       for ax in axioms do
         unless allowed.contains ax do

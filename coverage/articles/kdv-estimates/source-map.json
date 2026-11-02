@@ -217,12 +217,24 @@
     {
       "module": "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean",
       "role": "Shared product determinant formula and quantitative scalar-shift estimate, extracted from the original Hill zero-count proof and reused by the homogeneous-diagonal factorization."
+    },
+    {
+      "module": "NLS/SequenceSpaces/Insertion.lean and PeriodDoubling.lean",
+      "role": "Actually reused: weighted zero insertion transports the existing injective insertion isometry; forgetting weights agrees with existing periodDouble."
+    },
+    {
+      "module": "NLS/Fourier/PeriodOneCoefficients.lean",
+      "role": "Actually reused to identify inserted coefficients with actual Fourier integrals of integrable period-one functions."
+    },
+    {
+      "module": "NLS/SequenceSpaces/FourierTail.lean and ReciprocalSeries.lean",
+      "role": "Actually reused for the exact source Fourier remainder and the integral-test bound sum_{n>=N} 1/n^2<=2/N."
     }
   ],
   "next_shared_milestones": [
-    "Sum the proved weighted two-root separation bounds to obtain gap-tail estimates, then identify the determinant roots with globally labeled physical periodic eigenvalues.",
+    "Identify the high-strip determinant root families with globally labeled periodic eigenvalues, including determinant/operator multiplicities and the remaining central bounds. Their source-normalized weighted individual and summed tail bounds are now proved.",
     "Identify determinant analytic orders with the relevant periodic operator/characteristic multiplicities, construct ordered global spectral labels and prove the remaining central/exterior spectral bounds.",
-    "Apply the period-one/mean-zero potential embedding in the exact source norm and weighted w_(2n) convention.",
+    "Reuse the checked exact period-one/mean-zero coefficient embedding and physical Fourier-integral adapter in the spectral-label/discriminant comparison.",
     "Construct the Hill discriminant, root branches, contour actions, real positivity and physical canonical Birkhoff map with exact positive-mode and norm conventions.",
     "Reuse the shared ActionHamiltonianMoments/Trace/FiniteGap developments when the literal Hill primitive has been constructed; prove the hierarchy trace identities and tame action estimates for Theorem 2.",
     "Connect Theorem 1 through the checked adapters and prove the weighted gap/action bounds and interpolated weight evaluations for Theorem 3."
@@ -309,6 +321,21 @@
         "NLS/MKdV/MiuraBoundaryTransfer.lean"
       ],
       "finding": "Actual Miura scalar equation with potential u prime+u^2 and spectral parameter z^2, and Floquet boundary transfer at z nonzero, inspected for future reuse. The branch explicitly leaves the independent Hill IVP/monodromy/discriminant comparison open; no ZS-to-Hill spectral identification is assumed here."
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "2135a680ab46ba7c476060e9a66db7d5753f8b29",
+      "modules": [
+        "NLS/KdV/ConstantUpperSpectralBridge.lean",
+        "NLS/KdV/ClassicalSpectralSymmetry.lean",
+        "NLS/KdV/ClassicalDiscriminant.lean"
+      ],
+      "finding": "New actual scalar normalized Hill IVP trace and joint analyticity inspected for immediate reuse in the next discriminant/operator comparison. The source itself explicitly does not identify the rough Fourier Hill spectrum or global gap labels."
+    },
+    {
+      "branch": "articles/mkdv-nls-hierarchies",
+      "commit": "80e7592c95785b3cc1361068435182c4078fcc78",
+      "finding": "Independent physical Miura-Hill IVP/discriminant identification has now been constructed on the complex H1 Miura domain. The direct constant-upper bridge of the KdV convexity branch is more appropriate for arbitrary Hill potentials here."
     }
   ],
   "physical_hill_realization": {
@@ -408,7 +435,7 @@
     ],
     "proved": "The tail inverse has norm at most two in every shifted weighted norm. Corrected unit-mode coefficients differ from the literal modulated potential by at most 8*||q||_w^2/n after multiplication by the appropriate shifted weight. In particular |a_n-q_0|<=8*||q||_w^2/n and w(2*n)*|c_+/-n-q_(+/-2*n)|<=8*||q||_w^2/n. The two diagonal terms agree for arbitrary complex potentials.",
     "symmetry_proof": "The actual reconstructed functions satisfy the full Fourier equation with exactly their resonant residual. The complex bilinear pairing sums a_k*b_-k without conjugation. Absolute convergence and convolution summation interchange reuse the verified coefficient-pairing library. The even free symbol gives the Green identity, which proves equality of the two diagonals without a reality or evenness hypothesis on q.",
-    "normalization_qualification": "q_(+/-2*n) denotes the raw period-two Fourier coefficient. Identifying it with the source period-one coefficient q_(+/-n), and matching the weighted source norm, require the pending explicit period-doubling adapter.",
+    "normalization_qualification": "The raw period-two q_(+/-2*n) convention is converted by HillPeriodOnePotential to the exact source q_(+/-n) convention with the source norm w(2*n). The physical Fourier-integral equality is proved for every integrable period-one function carrying those coefficients.",
     "remaining": "No spectral gap bound or source main theorem is claimed by these coefficient estimates alone."
   },
   "spectral_root_separation": {
@@ -434,6 +461,33 @@
     "factorization": "The constructed operator sends u to ((z-sigma_n-a_n)*u_1-c_n*u_2,(z-sigma_n-a_n)*u_2-c_-n*u_1), and its actual analytic determinant equals (z-sigma_n-a_n)^2-c_n*c_-n.",
     "root_separation": "For n>=1, n>=8*||q||_w and any two zeros z,y of the constructed determinant in the stated strip: w(2*n)^2*|z-y|^2 <= 9*w(2*n)^2*(|q_(2*n)|^2+|q_(-2*n)|^2)+1152*||q||_w^4/n^2. Coincident roots are allowed.",
     "reuse": "The product determinant formula and quantitative determinant-shift bound previously private to HillZeroCount have been moved to a single shared two-dimensional determinant module, generalized to any nontrivially normed field and reused by both Hill consumers.",
-    "remaining_qualifications": "The bound concerns actual determinant zeros, not an assumed spectral package. Global periodic eigenvalue labels, equality of determinant orders and operator multiplicities, the period-one coefficient adapter, and the summed tail estimate remain to be supplied. Main Theorems 1-3 remain unverified."
+    "remaining_qualifications": "The bound concerns actual determinant zeros. The exact source period-one coefficient/norm adapter and summed tail estimate are now supplied. Global periodic eigenvalue labels and equality of determinant orders and operator multiplicities remain open. Main Theorems 1-3 remain unverified."
+  },
+  "period_one_weighted_gap_tail": {
+    "modules": [
+      "NLS/SequenceSpaces/WeightedInsertion.lean",
+      "NLS/SequenceSpaces/PositiveFourierTail.lean",
+      "NLS/SequenceSpaces/ReciprocalSquareTail.lean",
+      "NLS/KdV/HillPeriodOnePotential.lean",
+      "NLS/KdV/HillGapTail.lean"
+    ],
+    "source_correspondence": "Appendix A page 30 Proposition A.7, with the exact period-one coefficient convention and corrected cutoff/quartic constant. The Sobolev norm adapter matches the main Theorems 1-2 norms on page 3; the weight adapter matches Theorem 3 on page 4.",
+    "declarations": [
+      "NLS.WeightedCoeff.insertIsometry",
+      "NLS.KdV.hillPeriodOnePotential",
+      "NLS.KdV.toCoeff_hillPeriodOnePotential",
+      "NLS.KdV.hillPeriodOnePotential_physical_coefficients",
+      "NLS.KdV.hillPeriodOnePotential_reality",
+      "NLS.KdV.hillPeriodOne_sobolev_norm_sq",
+      "NLS.KdV.hillPeriodOne_roots_weighted_separation",
+      "NLS.KdV.hillPeriodOne_gap_le",
+      "NLS.KdV.hillPeriodOne_gap_tail_bound"
+    ],
+    "norm_and_potential_identification": "Pullback of a positive weight along an integer embedding makes actual zero insertion an isometry. The target period-two weight w pulls back to the source weight k -> w(2*k), still in the source spectral-weight class. The raw even coefficient equals q_k, every odd coefficient vanishes, the mean coefficient and Fourier reality are preserved, and forgetting the weight gives the existing Coeff.periodDouble. For an integrable physical period-one function with those original coefficients, the embedded sequence equals its actual period-two Fourier integrals.",
+    "sobolev_normalization": "For each natural m, the squared weighted norm is exactly sum over k in Z of (1+|2*pi*k|)^(2*m)*|q_k|^2, proved as a HasSum statement. No equivalent-norm substitution is used.",
+    "individual_gap": "For n>=1, n>=8*||q||_w and any two zeros in the stated high strip, w(2*n)*|xi_plus-xi_minus|<=6*||q||_w.",
+    "summed_gap": "For N>=1 and N>=8*||q||_w, any actual determinant-root families lying in their respective high strips have summable squared weighted differences and sum_{n>=N} w(2*n)^2*|xi_plus_n-xi_minus_n|^2 <= 9*||R_N q||_w^2+(2304/N)*||q||_w^4. The source tail is represented by Coeff.fourierTail N applied to the actual weighted source coefficients, retaining the boundary |k|=N.",
+    "constant_corrections": "Retains source individual constant 6 and coefficient-tail factor 9, with cutoff 8*||q||_w, radius-6*n real strips, and quartic coefficient 2304 replacing the printed 576. These follow from the previously corrected inverse bound 4/n rather than the printed 2/n.",
+    "qualifications": "The root hypotheses concern the constructed analytic determinant, not freely supplied spectral data. Global eigenvalue labels, their agreement with these root families, operator algebraic multiplicities and the low central estimates remain unproved. The statements do not claim Theorems 1-3."
   }
 }

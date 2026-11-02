@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned tooling; DISS_LEAN_REFERENCE_CHECKOUT set to read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 314,
+    "declarations": 349,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates"
@@ -25,7 +25,19 @@
     ],
     "additional_shared_declarations": [
       "NLS.FiniteSpectralDeterminant.det_prod_formula",
-      "NLS.FiniteSpectralDeterminant.determinant_shift_bound"
+      "NLS.FiniteSpectralDeterminant.determinant_shift_bound",
+      "NLS.Weight.pullback",
+      "NLS.Weight.pullback_apply",
+      "NLS.WeightedCoeff.insertIsometry",
+      "NLS.WeightedCoeff.insertIsometry_image",
+      "NLS.WeightedCoeff.insertIsometry_outside",
+      "NLS.WeightedCoeff.norm_insertIsometry",
+      "NLS.Coeff.pair_sq_le_norm_sq",
+      "NLS.Coeff.positive_pair_tail_sq",
+      "NLS.ReciprocalSeries.summable_nat_reciprocal_sq_tail",
+      "NLS.ReciprocalSeries.tsum_nat_reciprocal_sq_tail_le",
+      "NLS.SpectralWeight.doubleIndex",
+      "NLS.SpectralWeight.doubleIndex_apply"
     ]
   },
   "full_repository_validation": "Not rerun; base dissertation validation is not replaced by this focused check.",
@@ -44,14 +56,22 @@
     "NLS/KdV/HillBilinearSymmetry.lean": "6cda4cd258aff982accd9383c415b763a1e455899ea30ede6408ff73d5149cff",
     "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean": "e1242c43b5d115939c0335c4550df6159590b38352ad53810fd80c2a6256f56c",
     "NLS/KdV/HillSpectralLipschitz.lean": "3deedd7aaace983a156285c4e5d19243f32f767722bf792f619e586b6bdc4248",
-    "NLS/KdV/HillRootSeparation.lean": "8e13327f8ef25ee2f7329610789523cf7e26d1a3031a54e53e2e90281f0e3911"
+    "NLS/KdV/HillRootSeparation.lean": "8e13327f8ef25ee2f7329610789523cf7e26d1a3031a54e53e2e90281f0e3911",
+    "NLS/SequenceSpaces/WeightedInsertion.lean": "a4aeffa707f59fb1ae02afacbb06963c9085a2b04601162b495faf0810eb20b6",
+    "NLS/SequenceSpaces/PositiveFourierTail.lean": "4ccf11f81e53f1a5913fcad1a5d4db66fa5173a7f46be936f1e8d0e02d792a37",
+    "NLS/SequenceSpaces/ReciprocalSquareTail.lean": "9a28254634336ce0922a7f97ad59c7798c5168eeaa5c8503a7aba5365e6bc90d",
+    "NLS/KdV/HillPeriodOnePotential.lean": "f806822d2c04863914268753ed469438257e3c7583064c99cd85ac5589bd7ec8",
+    "NLS/KdV/HillGapTail.lean": "47ab15f6cca152670aa39694c95688d788cc0e058aabe56528dee7d99854df0c"
   },
-  "remaining": "Main Theorems 1\u20133 are still unverified. Global spectral labels and multiplicities/central bounds, weighted spectral gap estimates, source potential restriction adapters, discriminant/actions/Birkhoff construction, hierarchy trace identities and analytic norm estimates remain outstanding.",
-  "milestone": "Spectral Lipschitz control, exact homogeneous-diagonal determinant factorization and corrected weighted two-root separation",
+  "remaining": "Main Theorems 1-3 remain unverified. Global periodic spectral labels, determinant/operator multiplicity comparison and low central bounds remain; the source-normalized individual and summed high-strip determinant-root gap bounds are proved. Discriminant/H2 comparison, actions/Birkhoff construction, hierarchy trace identities and main analytic norm bounds remain outstanding.",
+  "milestone": "Exact period-one weighted potential/Sobolev normalization and individual/summed high-frequency root-gap bounds",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
     "NLS.FunctionalAnalysis.TwoDimensionalDeterminant",
+    "NLS.SequenceSpaces.WeightedInsertion",
+    "NLS.SequenceSpaces.PositiveFourierTail",
+    "NLS.SequenceSpaces.ReciprocalSquareTail",
     "NLS.KdV.FreeHill",
     "NLS.KdV.HillComplement",
     "NLS.KdV.HillReduction",
@@ -64,6 +84,8 @@
     "NLS.KdV.HillBilinearSymmetry",
     "NLS.KdV.HillSpectralLipschitz",
     "NLS.KdV.HillRootSeparation",
+    "NLS.KdV.HillPeriodOnePotential",
+    "NLS.KdV.HillGapTail",
     "NLS.Articles.KdVEstimates.EstimateAdapter"
   ],
   "proof_commits": [
@@ -96,6 +118,11 @@
       "commit": "8c8c971",
       "scope": "Complex equal-diagonal Hill reduction and uniform shifted weighted coefficient estimates",
       "pushed": true
+    },
+    {
+      "commit": "1806362e18c4924a0e58e902455a42d8dc8c90d3",
+      "scope": "Spectral Lipschitz control, determinant factorization and weighted two-root separation",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -111,12 +138,13 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All fourteen modules checked with pinned Lean 4.33.1 and autoImplicit=false by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All nineteen modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 314 declarations, including the two new shared determinant lemmas.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 349 declarations, including all new shared weight insertion and tail lemmas.",
     "new_module_warnings": [],
     "aggregate_scope": "Full aggregate/build/examples remain unrerun; the earlier deferred aggregate check is not treated as a pass.",
     "private_overlay": "The focused script creates private real directories before compiling new shared namespaces, and removes only output-file symlinks before writing. Canonical build outputs are not compilation targets."
-  }
+  },
+  "warningAsError": true
 }

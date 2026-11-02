@@ -4936,4 +4936,9 @@ import NLS.KdV.HillBilinearSymmetry
 import NLS.FunctionalAnalysis.TwoDimensionalDeterminant
 import NLS.KdV.HillSpectralLipschitz
 import NLS.KdV.HillRootSeparation
+import NLS.SequenceSpaces.WeightedInsertion
+import NLS.SequenceSpaces.PositiveFourierTail
+import NLS.SequenceSpaces.ReciprocalSquareTail
+import NLS.KdV.HillPeriodOnePotential
+import NLS.KdV.HillGapTail
 import NLS.Articles.KdVEstimates.EstimateAdapter
