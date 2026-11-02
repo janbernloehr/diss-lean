@@ -5,8 +5,8 @@ import NLS.KdV.HillL2GapQuotientAsymptotics
 
 The shared complex L2 charts agree with the actual real normalized
 squares. Their uniform free-unit estimate gives a quadratic gap bound
-for every sufficiently high real action. The cutoff depends on the
-potential; this is not the explicit norm estimate in Theorem 3.
+for every sufficiently high real action, locally uniformly in the potential.
+The cutoff is not the explicit norm estimate in Theorem 3.
 -/
 
 noncomputable section
@@ -14,32 +14,29 @@ open Set Metric Complex
 open NLS.ComplexAnalysis
 namespace NLS.KdV
 
-theorem exists_hillRealGapIntegral_quadratic_tail_bound
-    (q : WeightedCoeff SpectralWeight.one.toWeight 2)
-    (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
-    (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) :
-    ∃ N : ℕ, 2 ≤ N ∧ ∀ n : ℕ, N ≤ n →
-      (n : ℝ) * hillRealGapIntegral q hq hr n 0 ≤
-        (hillRealLabels q hq hr (2 * n) - hillRealLabels q hq hr (2 * n - 1)) ^ 2 := by
-  obtain ⟨r, hrpos, hrpi, hfamily⟩ := exists_hillL2_near_free_gap_units (SpectralWeight.one.toCoeff q)
-  obtain ⟨N, V, _, _, hqV, hcharts⟩ := hfamily (1 / 2) (by norm_num) (by norm_num)
-  obtain ⟨A, hA⟩ := exists_nat_ge (8 * ‖q‖)
-  refine ⟨max 2 (max N A), le_max_left _ _, ?_⟩
-  intro n hn
-  have hn2 : 2 ≤ n := (le_max_left _ _).trans hn
-  have hnN : N ≤ n := (le_max_left N A).trans ((le_max_right 2 _).trans hn)
-  have hnA : A ≤ n := (le_max_right N A).trans ((le_max_right 2 _).trans hn)
-  have hcut : 8 * ‖q‖ ≤ (n : ℝ) := hA.trans (by exact_mod_cast hnA)
+theorem exists_hillRealGapIntegral_local_quadratic_tail_bound (q : Coeff 2) :
+    ∃ N : ℕ, ∃ V : Set (Coeff 2), IsOpen V ∧ q ∈ V ∧
+      ∀ p0 : WeightedCoeff SpectralWeight.one.toWeight 2,
+      ∀ hp0 : SpectralWeight.one.toCoeff p0 ∈ Coeff.paritySubspace 0,
+      ∀ hr : IsRealHillPotential (SpectralWeight.one.toCoeff p0),
+      SpectralWeight.one.toCoeff p0 ∈ V → ∀ n : ℕ, N ≤ n → 2 ≤ n →
+      8 * ‖p0‖ ≤ (n : ℝ) →
+      (n : ℝ) * hillRealGapIntegral p0 hp0 hr n 0 ≤
+        (hillRealLabels p0 hp0 hr (2*n) - hillRealLabels p0 hp0 hr (2*n-1))^2 := by
+  obtain ⟨r, hrpos, hrpi, hfamily⟩ := exists_hillL2_near_free_gap_units q
+  obtain ⟨N, V, _, hV, hqV, hcharts⟩ := hfamily (1 / 2) (by norm_num) (by norm_num)
+  refine ⟨N, V, hV, hqV, ?_⟩
+  intro p0 hp0 hr hpV n hnN hn2 hcut
   have hnpos : (0 : ℝ) < n := by exact_mod_cast (show 0 < n by omega)
   let ν : ℕ+ := ⟨n, by omega⟩
-  obtain ⟨p, hlabelL, hlabelR⟩ := hillRealLabels_high_pair q hq hr n hn2 hcut
+  obtain ⟨p, hlabelL, hlabelR⟩ := hillRealLabels_high_pair p0 hp0 hr n hn2 hcut
   by_cases hclosed : p.left = p.right
-  · have hc : hillRealLabels q hq hr (2 * n - 1) = hillRealLabels q hq hr (2 * n) :=
+  · have hc : hillRealLabels p0 hp0 hr (2 * n - 1) = hillRealLabels p0 hp0 hr (2 * n) :=
       hlabelL.trans (hclosed.trans hlabelR.symm)
-    rw [hillRealGapIntegral_closed q hq hr n 0 hc, hc, sub_self]
+    rw [hillRealGapIntegral_closed p0 hp0 hr n 0 hc, hc, sub_self]
     simp
   obtain ⟨K, hK, htrace, _, hpairs⟩ := hcharts ν hnN
-  obtain ⟨l, u, H, hpair, hl, hu, hH, hunit⟩ := hpairs _ hqV
+  obtain ⟨l, u, H, hpair, hl, hu, hH, hunit⟩ := hpairs _ hpV
   have horder := hpair.eq_or_swap_real p hclosed
   let E : ℂ := ((Real.pi : ℂ) * (n : ℂ)) ^ 2
   let ρ : ℝ := Real.pi * (n : ℝ) * r
@@ -61,12 +58,12 @@ theorem exists_hillRealGapIntegral_quadratic_tail_bound
   have hdisc (z : ℂ) (hz : z ∈ closedBall E ρ) : z ∈ hillL2GapSquareDisc ν r := by
     change z ∈ closedBall E ρ
     exact hz
-  have hKe : AnalyticOnNhd ℂ (fun z => K (z, SpectralWeight.one.toCoeff q)) (closedBall E ρ) := by
+  have hKe : AnalyticOnNhd ℂ (fun z => K (z, SpectralWeight.one.toCoeff p0)) (closedBall E ρ) := by
     intro z hz
-    exact (hK (z, SpectralWeight.one.toCoeff q) ⟨hdisc z hz, hqV⟩).comp
-      (f := fun z : ℂ => (z, SpectralWeight.one.toCoeff q)) (analyticAt_id.prod analyticAt_const)
+    exact (hK (z, SpectralWeight.one.toCoeff p0) ⟨hdisc z hz, hpV⟩).comp
+      (f := fun z : ℂ => (z, SpectralWeight.one.toCoeff p0)) (analyticAt_id.prod analyticAt_const)
   have hfactor (z : ℂ) (hz : z ∈ closedBall E ρ) :
-      K (z, SpectralWeight.one.toCoeff q) =
+      K (z, SpectralWeight.one.toCoeff p0) =
         (z - p.left) * (z - p.right) * H z ^ 2 := by
     have he := (hunit z (hdisc z hz)).2.2.1
     rcases horder with ⟨hl', hu'⟩ | ⟨hl', hu'⟩
@@ -74,7 +71,7 @@ theorem exists_hillRealGapIntegral_quadratic_tail_bound
     · rw [hl', hu'] at he
       rw [he]
       ring
-  have hloc := p.localization q hq n (by omega) hcut
+  have hloc := p.localization p0 hp0 n (by omega) hcut
   have hLΩ : (p.left : ℂ) ∈ Ω := by
     rw [mem_ball, dist_eq_norm, ← ofReal_sub, norm_real, Real.norm_eq_abs]
     linarith [hloc.1]
@@ -85,12 +82,12 @@ theorem exists_hillRealGapIntegral_quadratic_tail_bound
   have hRU : (p.right : ℂ) ∈ U := ⟨ball_subset_ball (by linarith) hR, hRΩ⟩
   have hUopen : IsOpen U := isOpen_ball.inter isOpen_ball
   have hUconv : Convex ℝ U := (convex_ball _ _).inter (convex_ball _ _)
-  obtain ⟨R, F, h⟩ := p.exists_normalized_source_cut_primitive q hq n (by omega) hcut
-  have hmatch := h.square_eq_on_of_trace_and_zero q hq hr n hn2 hcut p hclosed R F
-    (fun z => K (z, SpectralWeight.one.toCoeff q)) U hUopen hUconv.isPreconnected
+  obtain ⟨R, F, h⟩ := p.exists_normalized_source_cut_primitive p0 hp0 n (by omega) hcut
+  have hmatch := h.square_eq_on_of_trace_and_zero p0 hp0 hr n hn2 hcut p hclosed R F
+    (fun z => K (z, SpectralWeight.one.toCoeff p0)) U hUopen hUconv.isPreconnected
     (fun _ hz => hz.2) hLU (hKe.mono (fun _ hz => ball_subset_closedBall hz.1))
     (by rw [hfactor _ (ball_subset_closedBall hLU.1)]; simp)
-    (fun z hz => htrace (z, SpectralWeight.one.toCoeff q) ⟨hdisc z (ball_subset_closedBall hz.1), hqV⟩)
+    (fun z hz => htrace (z, SpectralWeight.one.toCoeff p0) ⟨hdisc z (ball_subset_closedBall hz.1), hpV⟩)
   have hrealU (x : ℝ) (hx : x ∈ Icc p.left p.right) : (x : ℂ) ∈ U := by
     apply hUconv.segment_subset hLU hRU
     have hxseg : x ∈ segment ℝ p.left p.right := by
@@ -110,10 +107,29 @@ theorem exists_hillRealGapIntegral_quadratic_tail_bound
       _ ≤ 1 / (n : ℝ) := by
         field_simp
         nlinarith [Real.pi_gt_three]
-  have hi := h.gapIntegral_le_of_unit_bound q hq hr n hn2 hcut p hclosed R F H
+  have hi := h.gapIntegral_le_of_unit_bound p0 hp0 hr n hn2 hcut p hclosed R F H
     (fun x hx => (hmatch (hrealU x ⟨hx.1.le, hx.2.le⟩)).symm.trans
       (hfactor x (ball_subset_closedBall (hrealU x ⟨hx.1.le, hx.2.le⟩).1)))
     (fun x hx => hHbound x (ball_subset_closedBall (hrealU x ⟨hx.1.le, hx.2.le⟩).1))
   simpa only [hlabelL, hlabelR] using hi
+
+
+theorem exists_hillRealGapIntegral_quadratic_tail_bound
+    (q : WeightedCoeff SpectralWeight.one.toWeight 2)
+    (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
+    (hr : IsRealHillPotential (SpectralWeight.one.toCoeff q)) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∀ n : ℕ, N ≤ n →
+      (n : ℝ) * hillRealGapIntegral q hq hr n 0 ≤
+        (hillRealLabels q hq hr (2 * n) - hillRealLabels q hq hr (2 * n - 1)) ^ 2 := by
+
+  obtain ⟨N, V, _, hqV, hbound⟩ :=
+    exists_hillRealGapIntegral_local_quadratic_tail_bound (SpectralWeight.one.toCoeff q)
+  obtain ⟨A, hA⟩ := exists_nat_ge (8 * ‖q‖)
+  refine ⟨max 2 (max N A), le_max_left _ _, ?_⟩
+  intro n hn
+  have hn2 : 2 ≤ n := (le_max_left _ _).trans hn
+  have hnN : N ≤ n := (le_max_left N A).trans ((le_max_right 2 _).trans hn)
+  have hnA : A ≤ n := (le_max_right N A).trans ((le_max_right 2 _).trans hn)
+  exact hbound q hq hr hqV n hnN hn2 (hA.trans (by exact_mod_cast hnA))
 
 end NLS.KdV

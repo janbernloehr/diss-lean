@@ -5143,3 +5143,4 @@ import NLS.KdV.HillL2UpperSquareAsymptotics
 import NLS.KdV.HillL2SquareCircleAsymptotics
 import NLS.KdV.HillSmoothQuadraticTraceLimit
 import NLS.KdV.HillSmoothQuadraticTrace
+import NLS.KdV.HillRealActionContinuity
