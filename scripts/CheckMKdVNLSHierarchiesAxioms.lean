@@ -10,6 +10,8 @@ import NLS.Articles.MKdVNLSHierarchies.GradientRecurrence
 import NLS.Articles.MKdVNLSHierarchies.SmoothHierarchy
 import NLS.Articles.MKdVNLSHierarchies.SharpEvenVanishing
 import NLS.Articles.MKdVNLSHierarchies.SharpMiuraFlow
+import NLS.Articles.MKdVNLSHierarchies.NativeHierarchy
+import NLS.MKdV.MiuraHillHamiltonianTrace
 import Lean.Util.CollectAxioms
 
 /-! Audit every new public declaration and its generated auxiliary declarations.
@@ -19,6 +21,22 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.Fourier.circleBilinearMean,
+    `NLS.Fourier.circleBilinearMean_eq_classical,
+    `NLS.ZakharovShabat.sobolevTopMonomialProduct,
+    `NLS.ZakharovShabat.analyticAt_sobolevTopMonomialProduct,
+    `NLS.ZakharovShabat.sobolevTopMonomialProduct_eq_classical,
+    `NLS.ZakharovShabat.sobolevMonomialEndpointMean,
+    `NLS.ZakharovShabat.analyticAt_sobolevMonomialEndpointMean,
+    `NLS.ZakharovShabat.sobolevMonomialEndpointMean_eq_classical,
+    `NLS.ZakharovShabat.sobolevPolynomialEndpointMean,
+    `NLS.ZakharovShabat.analyticAt_sobolevPolynomialEndpointMean,
+    `NLS.ZakharovShabat.sobolevPolynomialEndpointMean_eq_classical,
+    `NLS.ZakharovShabat.eq_of_continuous_of_smooth_scalarSobolev,
+    `NLS.ZakharovShabat.sharpOddNLSHamiltonian,
+    `NLS.ZakharovShabat.analyticAt_sharpOddNLSHamiltonian,
+    `NLS.ZakharovShabat.sharpOddNLSHamiltonian_eq_classical,
+    `NLS.ZakharovShabat.sharpOddNLSHamiltonian_unique_continuous,
     `NLS.Fourier.periodOneSobolevDistribution,
     `NLS.Fourier.periodOneSobolevDistribution_periodic,
     `NLS.Fourier.periodOneSobolevDistribution_coefficient,
@@ -134,6 +152,13 @@ run_cmd do
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[``NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero,
     ``NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler,
+    ``NLS.Articles.MKdVNLSHierarchies.proposition6_native_miura,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem1_native_miura_hierarchy,
+    ``NLS.MKdV.nativeMiuraHillHamiltonian_unique_continuous,
+    ``NLS.MKdV.nativeMiuraHillGradient_represents,
+    ``NLS.MKdV.nativeMiuraHillFlowRestriction,
+    ``NLS.MKdV.exists_physicalMiuraDiscriminant_hamiltonian_error_bound,
+    ``NLS.ZakharovShabat.sobolevPolynomialEndpointMean_eq_classical,
     ``NLS.Articles.MKdVNLSHierarchies.theorem1_sharp_miura_hierarchy,
     ``NLS.MKdV.sobolevMiuraHillFlowRestriction_coefficients,
     ``NLS.MKdV.sobolevMiuraHillGradient_represents,

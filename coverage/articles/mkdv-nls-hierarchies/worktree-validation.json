@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 720,
+  "audited_declarations_and_auxiliaries": 854,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -1864,12 +1864,287 @@
       "kind": "theorem",
       "name": "theorem1_sharp_miura_hierarchy",
       "file": "NLS/Articles/MKdVNLSHierarchies/SharpMiuraFlow.lean"
+    },
+    {
+      "kind": "def",
+      "name": "circleBilinearMean",
+      "file": "NLS/Fourier/CircleBilinearMean.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "circleBilinearMean_eq_classical",
+      "file": "NLS/Fourier/CircleBilinearMean.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevTopMonomialProduct",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialEndpointMean.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevTopMonomialProduct",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialEndpointMean.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevTopMonomialProduct_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialEndpointMean.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevMonomialEndpointMean",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialEndpointMean.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevMonomialEndpointMean",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialEndpointMean.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMonomialEndpointMean_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialEndpointMean.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevPolynomialEndpointMean",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialEndpointMean.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevPolynomialEndpointMean",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialEndpointMean.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevPolynomialEndpointMean_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialEndpointMean.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "eq_of_continuous_of_smooth_scalarSobolev",
+      "file": "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sharpOddNLSHamiltonian",
+      "file": "NLS/ZakharovShabat/SobolevOddHamiltonianAllOrders.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sharpOddNLSHamiltonian",
+      "file": "NLS/ZakharovShabat/SobolevOddHamiltonianAllOrders.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sharpOddNLSHamiltonian_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevOddHamiltonianAllOrders.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sharpOddNLSHamiltonian_unique_continuous",
+      "file": "NLS/ZakharovShabat/SobolevOddHamiltonianAllOrders.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHillRiccatiRemainder",
+      "file": "NLS/MKdV/MiuraHillRiccatiRemainder.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillRiccatiRemainder_zero",
+      "file": "NLS/MKdV/MiuraHillRiccatiRemainder.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillRiccatiRemainder_one",
+      "file": "NLS/MKdV/MiuraHillRiccatiRemainder.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillRiccatiRemainder_recurrence",
+      "file": "NLS/MKdV/MiuraHillRiccatiRemainder.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillRiccatiRemainder_derivativeOrder",
+      "file": "NLS/MKdV/MiuraHillRiccatiRemainder.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHillNativeDensity",
+      "file": "NLS/MKdV/MiuraHillRiccatiRemainder.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillNativeDensity_derivativeOrder",
+      "file": "NLS/MKdV/MiuraHillRiccatiRemainder.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillNativeDensity_eq",
+      "file": "NLS/MKdV/MiuraHillRiccatiRemainder.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "integral_miuraHillNativeDensity",
+      "file": "NLS/MKdV/MiuraHillRiccatiRemainder.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraHillNativePolynomial",
+      "file": "NLS/MKdV/MiuraHillRiccatiRemainder.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHillNativePolynomial",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillNativePolynomial_order",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillNativePolynomial_derivativeOrder",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillNativePolynomial_classical",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "def",
+      "name": "nativeMiuraMass",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_nativeMiuraMass",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nativeMiuraMass_eq_classical",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "def",
+      "name": "nativeMiuraHillHamiltonian",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_nativeMiuraHillHamiltonian",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nativeMiuraHillHamiltonian_eq_classical",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nativeMiuraHillHamiltonian_unique_continuous",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nativeMiuraHillHamiltonian_eq_previous",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nativeMiuraHillHamiltonian_odd_restriction",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nativeMiuraHillHamiltonian_mass_restriction",
+      "file": "NLS/MKdV/NativeMiuraHillHamiltonian.lean"
+    },
+    {
+      "kind": "def",
+      "name": "nativeMiuraHillGradient",
+      "file": "NLS/MKdV/NativeMiuraHillGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_nativeMiuraHillGradient",
+      "file": "NLS/MKdV/NativeMiuraHillGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nativeMiuraHillGradient_represents",
+      "file": "NLS/MKdV/NativeMiuraHillGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nativeMiuraHillGradient_eq_classical",
+      "file": "NLS/MKdV/NativeMiuraHillGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nativeMiuraHillGradient_eq_previous",
+      "file": "NLS/MKdV/NativeMiuraHillGradient.lean"
+    },
+    {
+      "kind": "def",
+      "name": "nativeMiuraHillVectorField",
+      "file": "NLS/MKdV/NativeMiuraHillGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nativeMiuraHillVectorField_eq_previous",
+      "file": "NLS/MKdV/NativeMiuraHillGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nativeMiuraHillFlowRestriction",
+      "file": "NLS/MKdV/NativeMiuraHillGradient.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraProfileCurve",
+      "file": "NLS/MKdV/MiuraHillHamiltonianTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalMiuraDiscriminant_profile_eq_ZS",
+      "file": "NLS/MKdV/MiuraHillHamiltonianTrace.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHillHamiltonianPhase",
+      "file": "NLS/MKdV/MiuraHillHamiltonianTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nlsHamiltonianPhase_diagonal_eq_miura",
+      "file": "NLS/MKdV/MiuraHillHamiltonianTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_physicalMiuraDiscriminant_hamiltonian_error_bound",
+      "file": "NLS/MKdV/MiuraHillHamiltonianTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "proposition6_native_miura",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NativeHierarchy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem1_native_miura_hierarchy",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NativeHierarchy.lean"
     }
   ],
-  "public_declaration_count": 369,
-  "theorem_count": 285,
-  "definition_count": 84,
-  "full_build": "All 71 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 424,
+  "theorem_count": 326,
+  "definition_count": 98,
+  "full_build": "All 80 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
   "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit",
   "sha256": {
@@ -1892,8 +2167,8 @@
     "NLS/ZakharovShabat/ClassicalNLSFourthHamiltonian.lean": "7eb0973075e5414613b80cc73466c087d362422265902d0aa2425bf0a3e38f73",
     "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean": "8f507c2d54caf16dfecb3a42cbaec191cc2c4d1453c5080bc6f877129d32280f",
     "NLS/ZakharovShabat/ClassicalVolterraTrace.lean": "af489d580fb8de14051b7abf002235b0507570e6fab8b2b9aafd7a4fc82be41f",
-    "scripts/check_mkdv_nls.py": "7a7ca47b917c05bca5b7bc48a93bd4c57b43596c6c300434dcac2083c7b93e56",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "0ee9944c0cc5458a35af0a6591fae3b89feb5ddd116926c71bafe84e0ef2fb41",
+    "scripts/check_mkdv_nls.py": "ea5876f754001fb47e22a7d51f3dc56f380f7fd5dc469923f8a7c51ce9c16175",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "85f04b5033a758ffb0d703f898887c9fccccf89782d9959b87b0b420999f969d",
     "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean": "140b863a21c489adf60995da8e53101c3a7cf0bd66b6dc993b8f54fe0900f306",
     "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "1ab05b74ffcd892bb75226b50d4517286a96f197100a7e86e453b3eecf82534b",
     "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "99944ccf33c348be7a7324ae93bb9559761bccdff6a34fbcd5e719f93bb4aafe",
@@ -1945,10 +2220,19 @@
     "NLS/ZakharovShabat/SobolevEvenHierarchyGradient.lean": "95493d9096b0b83695acc899d0cfea22ccbef1bf6c09b853dbcde1aea48c41e8",
     "NLS/MKdV/SobolevMiuraHillHamiltonian.lean": "438df70328c92c0021e092c91a56776a09235e511b9e1d5b37b8d502382140fd",
     "NLS/MKdV/SobolevMiuraHillFlowRestriction.lean": "21dda2d38b28e0979b669046de531276ce0f31491be942a3637d8abe3c306e83",
-    "NLS/Articles/MKdVNLSHierarchies/SharpMiuraFlow.lean": "d4825b5f8d009c32377b6c9f14ffb5276bf8844797488a7e03b83c6e42c7c665"
+    "NLS/Articles/MKdVNLSHierarchies/SharpMiuraFlow.lean": "d4825b5f8d009c32377b6c9f14ffb5276bf8844797488a7e03b83c6e42c7c665",
+    "NLS/Fourier/CircleBilinearMean.lean": "89eab9297d3cc3a345ce9a837e115251dd44c929b2e842445153034298bb1fea",
+    "NLS/ZakharovShabat/SobolevPolynomialEndpointMean.lean": "8982fbecf5cc9815eab3d5a624c79779df71d577aaddfac79f7df24d2805bba5",
+    "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
+    "NLS/ZakharovShabat/SobolevOddHamiltonianAllOrders.lean": "cb0c21d44ff1cadb023ac89f1a700915c9c7f49200ce5b4f5edbe55b0ad974b8",
+    "NLS/MKdV/MiuraHillRiccatiRemainder.lean": "f31f58259f585d8ce8c58c86ea88a6038a51f7d1da340e0101692fa8b6e93cca",
+    "NLS/MKdV/NativeMiuraHillHamiltonian.lean": "3d96f3716066e57838a30fa2fb9ffcd91bd785be69d6361c8c4cf82303c2fc8c",
+    "NLS/MKdV/NativeMiuraHillGradient.lean": "794e236aa305dacc823cd7c45b73ec2489da46346b4c7c6207dc240ed0ee90af",
+    "NLS/MKdV/MiuraHillHamiltonianTrace.lean": "4887fc79a1153bb3fe9a463d141037e897a309d4d73ade6d9cdc00622814369a",
+    "NLS/Articles/MKdVNLSHierarchies/NativeHierarchy.lean": "7c3522738c8d507d80afc3f9f87cbf24304b17a50d0adeee4a1e842f6ae40e08"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 71,
+  "focused_module_count": 80,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -2009,11 +2293,17 @@
       "audit_count": 720,
       "combined_NLS_audit_count": 45903,
       "aggregate_compiled": true
+    },
+    {
+      "milestone": "independent native Hm-minus-one scalar Hill Hamiltonians and gradients including L2 mass, native flow and Proposition 6 identities, and all-order actual Hill trace calibration",
+      "audit_count": 854,
+      "combined_NLS_audit_count": 46038,
+      "aggregate_compiled": true
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 45903,
+  "combined_audited_NLS_declarations": 46038,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log"
 }

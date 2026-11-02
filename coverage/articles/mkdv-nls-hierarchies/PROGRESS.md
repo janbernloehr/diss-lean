@@ -503,3 +503,78 @@ build lock, read-only pinned compiled dependencies and private writable
 outputs, without rebuilding the whole dependency tree. No admitted proof,
 new axiom or disabled linter was introduced. Canonical main remains clean
 at `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`; the goal remains active.
+
+
+## 2026-11-02 — Native scalar hierarchy and actual Hill trace calibration
+
+The independent scalar hierarchy is now constructed on its exact native
+complex domains: `nativeMiuraHillHamiltonian s` is K_(s+1) on all H^s,
+including the L2 mass endpoint s=0. No member is defined as half an NLS
+restriction. `proposition6_native_miura` proves the factor-two identity on
+exactly H^(m-1), and `theorem1_native_miura_hierarchy` uses the actual native
+Frechet gradient in the full H^m weak flow identity.
+
+The endpoint improvement is independent of NLS reduction. Subtracting the
+linear total derivative from the scalar Hill Riccati coefficient gives
+`miuraHillRiccatiRemainder`, with at most n total derivatives at index n.
+The normalized remainder at index 2s is reduced directly to jets through s,
+retaining at most 2s total derivatives. A new shared endpoint mean allows
+two top L2 factors, using bounded bilinear Parseval with continuous lower
+factors; the former construction allowed only one. Removing both top
+factors leaves derivative count zero. The zero-order mass is handled by
+its independent bilinear Hilbert pairing, rather than extending the
+continuous lower-factor argument to a false generic H0 assertion.
+
+Each native Hamiltonian is analytic on the whole complex H^s space. It
+agrees with the independent physical scalar Hill integral on every smooth
+periodic representative, is the unique continuous extension of that
+classical hierarchy, and agrees with the preceding H^(s+1) construction.
+Full Sobolev duality constructs its actual gradient in H^(-s), representing
+the entire Frechet differential. Smooth first variations identify its
+physical Fourier coefficients. Scalar smooth density proves compatibility
+with the higher-regularity gradient, despite their different opposite-order
+norms. The actual Gardner derivative then agrees with the checked even NLS
+field on every original complex H^(s+1) input.
+
+`SobolevOddHamiltonianAllOrders.lean` unifies the existing sharp odd NLS
+Hamiltonian with its H0 mass endpoint, retaining the original physical
+normalization and proving smooth agreement and continuous uniqueness.
+This is an adapter of checked NLS constructions. The resulting native
+Proposition 6 statement includes m=1 and all nonsmooth complex inputs.
+
+`MiuraHillHamiltonianTrace.lean` additionally proves all-order calibration
+of the literal physical Hill discriminant, defined by independent scalar
+position/derivative IVPs. Its trace at energy r^2 is approximated by
+`2*cos(i*phase_N)` with phase
+`-i*r + i*sum_{m=1..N} 2*K_m/(2*r)^(2*m-1)` and error bounded by
+`C/(2*abs(r))^(2*N)` for abs(r)>=1. The proof uses the actual Hill/ZS trace
+identity and the checked all-order physical NLS WKB estimate. Even terms
+vanish, and odd coefficients are the independently defined scalar Hill
+Hamiltonians. This is an actual spectral trace estimate, not only a formal
+Riccati recurrence or a caller-supplied asymptotic hypothesis.
+
+The latest shared branches were inspected read-only. KdV convexity
+`1518245` fixes physical Hill primitive sheets and proves cubic moment
+reality; KdV frequencies `3bc5c4e` constructs uniform infinite Hill period
+entries and actual tail formulas; mKdV-below-L2 `70da92c` verifies physical
+H4 finite-gap derivatives and Lemma 5.2. Their spectral developments remain
+available for the next source primitive/action identification. No unrelated
+candidate or article theorem is counted as a completed main result here.
+
+All 80 article/shared modules and the NLS aggregate compiled with pinned
+Lean 4.33.1, `autoImplicit=false` and warnings as errors. The targeted
+transitive audit passed for 854 declarations and generated auxiliaries;
+the combined aggregate/article audit passed for 46,038 NLS declarations.
+Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The current
+public inventory contains 424 theorem/definition declarations: 326 theorems
+and 98 definitions (aliases excluded). Validation used the shared build
+lock, read-only pinned compiled dependencies and private writable outputs,
+without rebuilding the whole dependency tree. No admitted proof, additional
+axiom or disabled linter was introduced.
+
+The goal remains incomplete. Full source free-normalized spectral
+primitive-sheet/action identification of the native scalar Hamiltonians is
+still essential. Theorems 3 and 4 also require fixed spectral gap labels,
+action comparisons, mKdV coordinates, brackets and frequency identification,
+with the recorded source sign and signed-mean qualifications. Theorem 2
+retains its verified exact original complex Sobolev domains.

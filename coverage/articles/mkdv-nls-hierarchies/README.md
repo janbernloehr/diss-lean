@@ -63,7 +63,7 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 
 | Source statement | Domain and quantifier order | Current proved correspondence | Remaining work |
 | --- | --- | --- | --- |
-| Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | **Scalar clause proved on the exact H^m domain** by `theorem1_even_vanishing_sharp`. `theorem1_sharp_miura_hierarchy` now proves both clauses on every complex H^m input for independently constructed scalar Hill/Miura Hamiltonians. Both gradients represent their actual Frechet derivatives, and the weak Gardner derivative is an actual physical distribution represented by the even NLS field at order -m. | Identify the scalar Hill/Miura hierarchy with the article's full spectral mKdV Hamiltonians and establish their native H^(m-1) extension. |
+| Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | **Scalar clause proved on the exact H^m domain** by `theorem1_even_vanishing_sharp`. `theorem1_native_miura_hierarchy` proves both clauses on every complex H^m input using independently constructed K_m on its full native H^(m-1) domain, with actual Frechet gradients and the genuine distribution derivative. `proposition6_native_miura` proves the odd factor-two identity on all complex H^(m-1), including the L2 mass endpoint. The literal Hill discriminant now has an all-order trace estimate with phase coefficients 2*K_m. | Complete source spectral primitive-sheet/action identification of the scalar Hill/Miura hierarchy. |
 | Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None. |
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
 | Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Construct/identify the mKdV actions, frequency and brackets; settle the printed sign against the adopted normalization. |
@@ -128,9 +128,27 @@ classical gradients; density gives the flow coefficient identity on every
 nonsmooth input. `periodOneSobolevDistribution_derivative_eq` identifies the
 multiplier with Mathlib's actual derivative, with exact physical period one.
 In particular the scalar derivative is represented by each even NLS field
-at order -m, and is not merely a formal Fourier sequence. The independent
-hierarchy's full source spectral identification and its native H^(m-1)
-Hamiltonian extension remain separate obligations.
+at order -m, and is not merely a formal Fourier sequence. The native extension is now proved as described below; the full source
+spectral primitive-sheet/action identification remains an essential obligation.
+
+The native scalar extension is now constructed directly on complex H^s as
+`nativeMiuraHillHamiltonian s`, corresponding to K_(s+1). Removing the
+linear total derivative from the scalar Hill Riccati coefficient lowers its
+maximum total derivative count from 2s+1 to 2s. A single reduced scalar
+polynomial then has jets through s, with at most two top L2 factors.
+`sobolevPolynomialEndpointMean` constructs the bounded physical mean using
+bilinear Parseval for those factors and continuous lower factors. The L2
+mass is constructed separately when s=0. Every native Hamiltonian is analytic,
+uniquely extends the independent classical hierarchy, and agrees with the
+previous H^(s+1) construction. Its full actual Frechet gradient is represented
+in H^(-s), and `theorem1_native_miura_hierarchy` uses that native gradient.
+
+`exists_physicalMiuraDiscriminant_hamiltonian_error_bound` also proves an
+all-order estimate for the independently constructed physical Hill trace at
+energy r^2. Its phase is `-i*r + i*sum 2*K_m/(2*r)^(2m-1)`, with error bounded
+by C/(2*|r|)^(2N) after N coefficients. This verifies actual operator trace
+calibration rather than only a formal recurrence. A chosen free-normalized
+spectral primitive and its source gap/action labels are still to be identified.
 
 Theorem 5 is now proved as
 `NLS.Articles.MKdVNLSHierarchies.theorem5_discriminant_identity`, for every
@@ -277,7 +295,7 @@ entire dependency tree. The full vector-field and spectral obligations are
 recorded in [the progress log](PROGRESS.md).
 
 
-Latest milestone: both Theorem 1 clauses hold on every original complex H^m
+Previous milestone: both Theorem 1 clauses hold on every original complex H^m
 input for the independently constructed scalar Hill/Miura hierarchy, with
 actual Frechet gradients and the genuine physical distribution derivative.
 All 71 article/shared modules and the NLS aggregate compiled. The targeted
@@ -288,3 +306,18 @@ axioms. The public theorem/definition inventory is 369 declarations
 imports, not a rebuild of the entire dependency tree. Source spectral
 identification, native scalar extension, and the remaining main-theorem
 obligations are in [the progress log](PROGRESS.md).
+
+
+Latest milestone: the scalar hierarchy is independently constructed on its
+native complex H^(m-1) domains, including the L2 mass endpoint. The native
+Proposition 6 identity holds there; the Theorem 1 comparison uses its native
+gradient on all complex H^m inputs. The literal physical Hill trace has
+all-order estimates with odd phase
+coefficients 2*K_m. All 80 article/shared modules and the NLS aggregate
+compiled. The targeted audit passed for 854 declarations and auxiliaries;
+the combined audit passed for 46,038 NLS declarations, allowing only the
+three standard axioms. The public inventory contains 424 theorem/definition
+declarations (326 theorems, 98 definitions; aliases excluded). Validation
+used pinned cached imports, not a rebuild of the entire dependency tree.
+Remaining source primitive/action and main-theorem obligations are in
+[the progress log](PROGRESS.md).
