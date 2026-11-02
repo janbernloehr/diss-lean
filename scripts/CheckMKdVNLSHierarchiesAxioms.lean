@@ -1,4 +1,5 @@
 import NLS.Articles.MKdVNLSHierarchies.SpectralActionIdentification
+import NLS.Articles.MKdVNLSHierarchies.FiniteGapHamiltonianIdentification
 import NLS.Articles.MKdVNLSHierarchies.CanonicalPrimitiveIdentification
 import NLS.Articles.MKdVNLSHierarchies.ActionIdentification
 import NLS.Articles.MKdVNLSHierarchies.GapIdentification
@@ -214,7 +215,11 @@ run_cmd do
     `NLS.LinearVolterra.solutionMap_intertwine,
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
-  let expected := #[``NLS.Articles.MKdVNLSHierarchies.theorem5_operator_discriminant_identity,
+  let expected := #[``NLS.Articles.MKdVNLSHierarchies.finiteGap_iff_diagonalNLS,
+    ``NLS.Articles.MKdVNLSHierarchies.finiteGap_iff_mKdV_action_support,
+    ``NLS.Articles.MKdVNLSHierarchies.proposition6_finiteGap_native,
+    ``NLS.Articles.MKdVNLSHierarchies.equation12_finiteGap_native_laurent,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem5_operator_discriminant_identity,
     ``NLS.Articles.MKdVNLSHierarchies.lemma3_spectral_set,
     ``NLS.Articles.MKdVNLSHierarchies.lemma3_real_spectrum_nonnegative,
     ``NLS.Articles.MKdVNLSHierarchies.lemma3_multiplicity_nonzero,

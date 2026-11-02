@@ -64,7 +64,7 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 
 | Source statement | Domain and quantifier order | Current proved correspondence | Remaining work |
 | --- | --- | --- | --- |
-| Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | **Scalar clause proved on the exact H^m domain** by `theorem1_even_vanishing_sharp`. `theorem1_native_miura_hierarchy` proves both clauses on every complex H^m input using independently constructed K_m on its full native H^(m-1) domain, with actual Frechet gradients and the genuine distribution derivative. `proposition6_native_miura` proves the odd factor-two identity on all complex H^(m-1), including the L2 mass endpoint. The literal Hill discriminant now has an all-order trace estimate with phase coefficients 2*K_m. | Complete source spectral primitive-sheet/action identification of the scalar Hill/Miura hierarchy. |
+| Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | **Scalar clause proved on the exact H^m domain** by `theorem1_even_vanishing_sharp`. `theorem1_native_miura_hierarchy` proves both clauses on every complex H^m input using independently constructed K_m on its full native H^(m-1) domain, with actual Frechet gradients and the genuine distribution derivative. `proposition6_native_miura` proves the odd factor-two identity on all complex H^(m-1), including the L2 mass endpoint. The literal Hill discriminant now has an all-order trace estimate with phase coefficients 2*K_m. | Finite-gap spectral Laurent calibration is now proved with the native K coefficients; complete the extension/uniqueness identification on the entire original native complex Sobolev domains. |
 | Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None. |
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
 | Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Construct/identify the mKdV actions, frequency and brackets; settle the printed sign against the adopted normalization. |
@@ -478,7 +478,7 @@ Quot.sound are allowed. The public inventory contains 1,201 entries
 the entire dependency tree was not rebuilt from source.
 
 
-Latest milestone: **all three clauses of Theorem 4(i) are proved on the
+Previous milestone: **all three clauses of Theorem 4(i) are proved on the
 full original real H1 domain** by `theorem4_i`. The actual NLS central
 action vanishes exactly at zero physical mean; the positive NLS and mKdV
 actions have identical zero sets; and I_(-n)#=I_n# at every signed index.
@@ -511,4 +511,43 @@ Only propext, Classical.choice and Quot.sound are allowed. The public
 inventory contains 1,269 entries (1,021 theorems, 248 definitions; aliases
 and structures excluded), with 188 SHA256 source/checker hashes. The
 checks use pinned cached imports; the entire dependency tree was not
+rebuilt from source.
+
+
+Latest milestone: the **actual physical Hill primitive has the convergent
+source Laurent series with the independent native K coefficients at every
+real finite-gap H1 source**. `equation12_finiteGap_native_laurent` proves
+
+```text
+F_Hill(z^2) + i*z = sum_(k>=0) i*(2*K_(k+1))/(2*z)^(2*k+1)
+```
+
+for every sufficiently large complex z with Re z>0. The normalization is
+exact, and collapsed exterior gaps are filled by the independent
+nonreal-energy limit. This does not assume primitive asymptotics,
+smoothness, finite Fourier support or nonzero mean. The original physical
+Hill labels define finite-gap; this is proved equivalent to finite support
+of the contour-defined mKdV actions and to finite-gap of the original
+diagonal NLS source. Its checked smooth Fourier representative preserves
+every original coefficient and lies in every native scalar Sobolev domain.
+`proposition6_finiteGap_native` gives the physical odd factor-two identity
+and even vanishing at every order, including the L2 mass endpoint.
+
+The proof reuses the checked NLS finite-gap bootstrap and convergent
+physical Hamiltonian Laurent expansion, then groups the odd coefficients
+and compares the filled primitive sheets. Extending/uniquely identifying
+the source spectral Hamiltonians on the complete original complex native
+Sobolev domains remains an essential Theorem 1 obligation. Theorems 1, 3
+and 4(ii)-(iii) remain incomplete.
+
+Validation covers 189 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 186 unchanged prefix module
+source hashes match the previous f606044 milestone; their private outputs
+were reused. The three new modules and NLS aggregate compiled, and the
+complete targeted and combined audits passed for 2,614 and 47,582
+declarations respectively. Only propext, Classical.choice and Quot.sound
+are allowed. The public inventory has 1,288 entries
+(1,037 theorems, 251 definitions; aliases and
+structures excluded), with 191 SHA256 source/checker hashes.
+The checks use pinned cached imports; the entire dependency tree was not
 rebuilt from source.

@@ -220,6 +220,9 @@ modules = [
     "NLS/ZakharovShabat/SourceLaurentActionContourPeriod.lean",
     "NLS/MKdV/MiuraSpectralActionContours.lean",
     "NLS/Articles/MKdVNLSHierarchies/SpectralActionIdentification.lean",
+    "NLS/MKdV/MiuraFiniteGap.lean",
+    "NLS/MKdV/MiuraFiniteGapLaurent.lean",
+    "NLS/Articles/MKdVNLSHierarchies/FiniteGapHamiltonianIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

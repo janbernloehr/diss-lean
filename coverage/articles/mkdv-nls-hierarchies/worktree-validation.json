@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 2581,
+  "audited_declarations_and_auxiliaries": 2614,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -6364,14 +6364,109 @@
       "kind": "theorem",
       "name": "theorem4_i",
       "file": "NLS/Articles/MKdVNLSHierarchies/SpectralActionIdentification.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraFiniteGap",
+      "file": "NLS/MKdV/MiuraFiniteGap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraFiniteGap_iff_action_support",
+      "file": "NLS/MKdV/MiuraFiniteGap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraFiniteGap_iff_sourceFiniteGap",
+      "file": "NLS/MKdV/MiuraFiniteGap.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraFiniteGapProfile",
+      "file": "NLS/MKdV/MiuraFiniteGap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceFiniteGapPhysicalPair_diagonal",
+      "file": "NLS/MKdV/MiuraFiniteGap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraFiniteGapProfile_smooth_periodic",
+      "file": "NLS/MKdV/MiuraFiniteGap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneCoefficient_miuraFiniteGapProfile",
+      "file": "NLS/MKdV/MiuraFiniteGap.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraFiniteGapSobolev",
+      "file": "NLS/MKdV/MiuraFiniteGap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraFiniteGapSobolev_apply",
+      "file": "NLS/MKdV/MiuraFiniteGap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceFiniteGapHamiltonians_miura",
+      "file": "NLS/MKdV/MiuraFiniteGap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nativeMiuraHillHamiltonian_eq_finiteGapProfile",
+      "file": "NLS/MKdV/MiuraFiniteGap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceFiniteGapHamiltonians_miura_native",
+      "file": "NLS/MKdV/MiuraFiniteGap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "canonicalMiuraHillPrimitive_eq_full",
+      "file": "NLS/MKdV/MiuraFiniteGapLaurent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_canonicalMiuraHillPrimitive_finiteGap_laurent",
+      "file": "NLS/MKdV/MiuraFiniteGapLaurent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_canonicalMiuraHillPrimitive_native_laurent",
+      "file": "NLS/MKdV/MiuraFiniteGapLaurent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "finiteGap_iff_diagonalNLS",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FiniteGapHamiltonianIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "finiteGap_iff_mKdV_action_support",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FiniteGapHamiltonianIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "proposition6_finiteGap_native",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FiniteGapHamiltonianIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "equation12_finiteGap_native_laurent",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FiniteGapHamiltonianIdentification.lean"
     }
   ],
-  "public_declaration_count": 1269,
-  "theorem_count": 1021,
-  "definition_count": 248,
-  "full_build": "186 article/shared modules have validated private outputs. The unchanged 175-module prefix was reused after checking every source SHA256 against the prior validated milestone; eleven new modules and the NLS aggregate compiled. Both complete targeted and combined aggregate/article audits passed under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 1288,
+  "theorem_count": 1037,
+  "definition_count": 251,
+  "full_build": "189 article/shared modules have validated private outputs. Every unchanged 186-module prefix source SHA256 matches the prior validated milestone; the three new modules and NLS aggregate compiled. Both complete targeted and combined aggregate/article audits passed under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/PiecewiseSquareContour.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/MKdV/MiuraFiniteGap.lean",
   "sha256": {
     "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
     "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f",
@@ -6529,8 +6624,8 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "53032dd1cab74a8155420b38644422660652a8a3cc2f6e6f060477e902806183",
-    "scripts/check_mkdv_nls.py": "b8a6f360cbab2ea78d5853fb55675de30e10526b3cf36b865140473f1baa9271",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "34ac3828f90cbf5be9806ccb953ce6921451e393faed083b04b312a9804586c1",
+    "scripts/check_mkdv_nls.py": "82e9d24c756199ab0b20664c9350fa8c0ab3f630f0b70bd6afc9d2fd3d4eced1",
     "NLS/SequenceSpaces/OrderedNaturalEnumerationUnique.lean": "4445901ea20db8b136cc06b97b4afc71de6961d5594aa281878962ab1b704e0f",
     "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean": "460545a5f30908fff23521c0e37293ee18d18f6441f92452538ea6bfe8bcea7f",
     "NLS/MKdV/MiuraNLSPositiveEndpoints.lean": "3f5c49a6dc937669104d321db0d076ed7e58d317c45984ad041e9ea4eda9781d",
@@ -6560,10 +6655,13 @@
     "NLS/MKdV/MiuraSpectralActions.lean": "e8f74b979787ad786b34cef080e30ce994fc206faad5434574f10f9222024725",
     "NLS/ZakharovShabat/SourceLaurentActionContourPeriod.lean": "5351210c576c242193f65f6c3964fbb7fd40ffb652fa84a4f56e455209fc9691",
     "NLS/MKdV/MiuraSpectralActionContours.lean": "4b9113a39d6e7ae6bda6c14d5dcd5f626e7745eceda4c68c3c778742618c6b87",
-    "NLS/Articles/MKdVNLSHierarchies/SpectralActionIdentification.lean": "4875db9cdf6f0385cf9b6eff5793f969a0e6eccf7d2c74449330b3932126d395"
+    "NLS/Articles/MKdVNLSHierarchies/SpectralActionIdentification.lean": "4875db9cdf6f0385cf9b6eff5793f969a0e6eccf7d2c74449330b3932126d395",
+    "NLS/MKdV/MiuraFiniteGap.lean": "1fcb73632faef711583822cbe0f928a4b5526628ab1e5293f0d25d6dc4da2e3c",
+    "NLS/MKdV/MiuraFiniteGapLaurent.lean": "8454304d4efddefbd46c5746bf7e0ef6dc18240b853879950e3eac93b8239b00",
+    "NLS/Articles/MKdVNLSHierarchies/FiniteGapHamiltonianIdentification.lean": "50342eb816094d235b7b9af915c242419aafc3a98b49704c61c7ca14a616f1ce"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 186,
+  "focused_module_count": 189,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -6675,12 +6773,19 @@
       "combined_NLS_audit_count": 47549,
       "aggregate_compiled": true,
       "validation_scope": "source-hash-checked 175-module validated prefix reused; eleven new modules and aggregate compiled; complete targeted and combined audits rerun with expanded shared-contour prefixes"
+    },
+    {
+      "milestone": "physical Hill finite-gap iff actual mKdV action finite support iff original diagonal NLS finite-gap; smooth coefficient-preserving realization in every native domain; convergent actual Hill primitive Laurent series with exact independent native K coefficients including exterior collapsed gaps",
+      "audit_count": 2614,
+      "combined_NLS_audit_count": 47582,
+      "aggregate_compiled": true,
+      "validation_scope": "source-hash-checked 186-module validated prefix reused; three new modules and aggregate compiled; complete targeted and combined audits rerun"
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 47549,
+  "combined_audited_NLS_declarations": 47582,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -6688,7 +6793,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "The 175 unchanged prefix source hashes match the previous d368d26 milestone. Eleven new modules and aggregate compiled with warnings as errors. The targeted prefix set was expanded to include the reusable piecewise contour and Cauchy-family developments. Targeted audit passed for 2581 declarations/auxiliaries and combined audit for 47549 NLS declarations. No mathematical source changed after validation.",
+  "last_run_notes": "All 186 unchanged prefix module source hashes match the prior f606044 milestone. Three new modules and aggregate compiled with warnings as errors. Targeted audit passed for 2614 declarations/auxiliaries and combined audit for 47582 NLS declarations. No mathematical source changed after validation.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

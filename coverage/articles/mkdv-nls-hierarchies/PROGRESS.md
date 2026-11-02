@@ -973,3 +973,38 @@ inventory contains 1,269 entries (1,021 theorems, 248 definitions; aliases
 and structures excluded), with 188 SHA256 source/checker hashes. The
 checks use pinned cached imports; the entire dependency tree was not
 rebuilt from source.
+
+
+## 2026-11-02 — finite-gap spectral calibration of native scalar K
+
+The independent physical Hill labels now define the actual finite-gap
+locus. Its equivalence with finite support of contour-defined mKdV actions
+and with finite-gap of the original diagonal NLS source is proved. The
+checked NLS bootstrap gives a smooth periodic profile preserving every
+original Fourier coefficient; the original coefficients belong to every
+native scalar Sobolev domain.
+
+`equation12_finiteGap_native_laurent` proves the convergent physical Hill
+primitive series with exact coefficients i*(2*K_(k+1))/(2*z)^(2*k+1),
+for all sufficiently large complex right-half-plane frequencies. The
+physical primitive is the independent nonreal-energy limit; its comparison
+with the filled NLS primitive also includes collapsed exterior cuts.
+`proposition6_finiteGap_native` calibrates the physical NLS odd and even
+Hamiltonians at all orders, including the L2 mass member. No smoothness,
+finite Fourier support, nonzero mean or primitive asymptotic is assumed.
+
+The source spectral hierarchy still needs its extension/uniqueness
+identification on the complete original complex native Sobolev domains.
+Theorems 1, 3 and 4(ii)-(iii) remain incomplete.
+
+Validation covers 189 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 186 unchanged prefix module
+source hashes match the previous f606044 milestone; their private outputs
+were reused. The three new modules and NLS aggregate compiled, and the
+complete targeted and combined audits passed for 2,614 and 47,582
+declarations respectively. Only propext, Classical.choice and Quot.sound
+are allowed. The public inventory has 1,288 entries
+(1,037 theorems, 251 definitions; aliases and
+structures excluded), with 191 SHA256 source/checker hashes.
+The checks use pinned cached imports; the entire dependency tree was not
+rebuilt from source.
