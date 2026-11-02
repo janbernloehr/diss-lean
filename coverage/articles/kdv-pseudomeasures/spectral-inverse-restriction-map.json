@@ -1,0 +1,97 @@
+{
+  "source": "arXiv:1610.00278v1 Section2.6 Proposition2.18 and Section2.7 Proposition2.19,printed pp23-24.",
+  "main_theorems_verified": false,
+  "source_proposition_2_18_endpoint_infinity_verified": true,
+  "source_proposition_2_19_verified": true,
+  "full_image_analytic_inverse_verified": true,
+  "base_to_weighted_inverse_regularity_gain_verified": true,
+  "modules": [
+    "NLS/Fourier/PeriodicWeightCongruence.lean",
+    "NLS/ComplexAnalysis/AnalyticInjectiveImage.lean",
+    "NLS/ComplexAnalysis/NearIdentityImageInverse.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralInverseRestriction.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralAdaptedDiffeomorphism.lean"
+  ],
+  "declarations": [
+    "NLS.Fourier.PeriodicFourierLebesgue.weightCongr",
+    "NLS.Fourier.PeriodicFourierLebesgue.weightCongr_val",
+    "NLS.ComplexAnalysis.exists_analytic_inverse_on_injective_open_image",
+    "NLS.ComplexAnalysis.norm_fderiv_sub_id_le_on_intermediate_ball",
+    "NLS.ComplexAnalysis.exists_analytic_inverse_on_near_identity_image",
+    "NLS.Articles.KdVPseudomeasures.sourceUnitWeightEquiv",
+    "NLS.Articles.KdVPseudomeasures.sourceUnitWeightEquiv_val",
+    "NLS.Articles.KdVPseudomeasures.sourceUnitWeightEquiv_symm_val",
+    "NLS.Articles.KdVPseudomeasures.sourceForgetUnitWeight_eq",
+    "NLS.Articles.KdVPseudomeasures.sourceAdaptedFourier",
+    "NLS.Articles.KdVPseudomeasures.sourceAdaptedFourier_val",
+    "NLS.Articles.KdVPseudomeasures.sourceAdaptedFourier_weight_agreement",
+    "NLS.Articles.KdVPseudomeasures.sourceAdaptedFourier_coefficients",
+    "NLS.Articles.KdVPseudomeasures.analyticOnNhd_sourceAdaptedFourier",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_weighted_inverse_restriction",
+    "NLS.Articles.KdVPseudomeasures.sourceProposition2_19",
+    "NLS.Articles.KdVPseudomeasures.sourceProposition2_18"
+  ],
+  "results": [
+    "The shared PeriodicFourierLebesgue.weightCongr identifies pointwise equal weights isometrically while retaining EVERY original smooth-test action. sourceUnitWeightEquiv therefore identifies the original FourierLebesgueSpace(2,-r,infinity) with the unit extra-weight source carrier,with no norm or frequency change. sourceForgetWeight(one) is exactly the inverse.",
+    "sourceAdaptedFourier defines the ACTUAL adapted map on the EXACT original unweighted endpoint Banach space. Its normalized Fourier coefficients are the SAME physical adapted b_plus/minus(alpha_n(q),q),with all low/odd/mean modes unchanged. Its complex analyticity is in the original endpoint norm. Every stronger weighted restriction is the SAME entire original output distribution.",
+    "source_uniform_weighted_inverse_restriction proves GENUINE inverse regularity gain. For a supplied merely BASE-SPACE original q with norm<=m,and a STRONGER-weight original y with norm<=m/2 equal to the actual adapted image,the proved weighted inverse constructs p in the stronger space. Entire-distribution weight compatibility and actual BASE-SPACE injectivity identify p.val=q.val,and the stronger norm is<=m. No stronger membership of q is assumed.",
+    "sourceProposition2_19 states the source result in literal ORIGINAL-distribution membership and norm form:if the actual original adapted image belongs to the stronger weighted CLOSED half-ball,then the identical original source distribution belongs to the stronger weighted CLOSED source ball. One cutoff precedes BOTH w and q. The stronger complex period-two result includes all original mean-zero physical period-one source potentials unchanged.",
+    "The shared AnalyticInjectiveImage theorem glues verified local analytic inverse branches by source injectivity to obtain ONE analytic inverse on the ENTIRE OPEN image of an injective open analytic domain with invertible derivative. Openness of that image and both inverse identities are proved,not assumed.",
+    "NearIdentityImageInverse derives a1/8 derivative difference from Id on the intermediate radius3m/2 source ball,using the actual m/32 error on the double ball and Cauchy radiusm/2. It proves injectivity and derivative invertibility there,then gives ONE analytic inverse on the ENTIRE actual OPEN intermediate image. This contains every image point of the CLOSED radiusm source ball,including boundary points.",
+    "sourceProposition2_18 gives the actual original weighted adapted Fourier diffeomorphism with ONE cutoff BEFORE weights/potentials. An OPEN V contains the ENTIRE image of the CLOSED radiusm source ball and carries a complex analytic inverse. The CLOSED target half-ball is contained in the image of the CLOSED source ball. Forward analyticity on the double ball,source derivative difference<=1/16,and original norm bounds1/2 and2 are retained.",
+    "The full-image actual inverse has both inverse identities and preserves the ENTIRE original real,mean-zero,physical period-one locus on V. This resolves the previous full-image inverse obligation,not merely the earlier inverse near the target half-ball. The endpoint is infinity throughout;isolated p labels in the source coverage display are read with the stated infinity domain,and no additional finite-p theorem is claimed."
+  ],
+  "domains": {
+    "potentials": "EXACT original complex period-two FourierLebesgueSpace(2,-r,infinity),0<=r<1/2,s=-r. Stronger weighted carrier is PeriodicFourierLebesgue(2,w.negativeSobolev(r),infinity). All original mean-zero,physical period-one sources are included;physical reality is retained by the inverse.",
+    "norm": "Exact original normalized Fourier norm with period-two exp(i*pi*k*x). The unit-weight identification is a linear ISOMETRY preserving every original smooth-test action. No renormalization or lower-topology substitution.",
+    "cutoff": "ONE N>=1 precedes BOTH weight and potential. Companion factories explicitly retain C_r*n^(r-1/2)*(64*(2m))<=1/2 for every n>=N. Source m>=1 is retained;the inverse gain factory also works for every m>0.",
+    "adapted_map": "sourceAdaptedFourier is the ACTUAL original unweighted map;its coefficients are sourceAdaptedFourierValues r hr N q. Every weighted map gives the SAME entire original output distribution.",
+    "proposition_2_19": "For base q with original norm<=m,if the actual original adapted image has weighted membership and weighted norm<=m/2,then q.val itself has that stronger weighted membership and weighted norm<=m. The theorem states this literal dependent membership/norm assertion,not an already-weighted-q hypothesis.",
+    "inverse_gain_proof": "The actual weighted inverse supplies p with stronger norm<m. Its base-space image is the same entire distribution as the supplied adapted image. Unit/base injectivity gives p.val=q.val. The stated conclusion is the source closed bound<=m.",
+    "full_image": "V is the ACTUAL image of the OPEN source ball of radius3m/2. It is OPEN,and contains the ENTIRE image of the CLOSED radiusm source ball. ONE complex analytic inverse is defined on V and satisfies both inverse identities. The CLOSED target half-ball is contained in the image of the CLOSED source ball.",
+    "physical_constraints": "On all V,the inverse original distribution is real,mean-zero,period-one iff the target is. Restricting forward and inverse to the original constrained source balls is therefore legitimate.",
+    "constants": "Uniform error m/32 on double ball gives derivative1/16 on CLOSED radiusm and1/8 on intermediate radius3m/2. Source norm bounds1/2 and2 and closed target-half-ball coverage are retained."
+  },
+  "conclusions": {
+    "sourceAdaptedFourier_coefficients": "NLS.Articles.KdVPseudomeasures.sourceAdaptedFourier_coefficients",
+    "analyticOnNhd_sourceAdaptedFourier": "NLS.Articles.KdVPseudomeasures.analyticOnNhd_sourceAdaptedFourier",
+    "sourceAdaptedFourier_weight_agreement": "NLS.Articles.KdVPseudomeasures.sourceAdaptedFourier_weight_agreement",
+    "source_uniform_weighted_inverse_restriction": "NLS.Articles.KdVPseudomeasures.source_uniform_weighted_inverse_restriction",
+    "sourceProposition2_19": "NLS.Articles.KdVPseudomeasures.sourceProposition2_19",
+    "sourceProposition2_18": "NLS.Articles.KdVPseudomeasures.sourceProposition2_18"
+  },
+  "unchanged_shared_reuse": [
+    {
+      "file": "NLS/ComplexAnalysis/AnalyticOpenInverse.lean",
+      "private_source_commit": "e7cefd227e61c1cfac601204a8e8c385a9c5a005"
+    }
+  ],
+  "qualifications": [
+    "The actual physical adapted map,weighted inverse and base injectivity are constructed/proved dependencies. No stronger source membership or unproved inverse compatibility is supplied as an assumption.",
+    "Source Proposition2.18 is verified at exponent infinity,as specified by its stated domain. The isolated p in its coverage/norm-difference displays is interpreted as infinity in that endpoint statement. No extra finite-p assertion is claimed.",
+    "The open inverse neighborhood contains EVERY image point of the CLOSED source ball,including its boundary;the theorem is not limited to the smaller target-half-ball neighborhood.",
+    "Proposition2.19 is strengthened to arbitrary original complex period-two inputs. All original mean-zero physical-period-one hypotheses can be retained by restricting inputs;the ENTIRE original distribution is unchanged in the conclusion.",
+    "Source Theorem2.2 remains unproved:actual adapted-coefficient gap lower comparisons and original finite-p inverse spectral input remain essential. Dirichlet2.1(ii),original Birkhoff/KdV and all MAIN theorems also remain open."
+  ],
+  "remaining": [
+    "Prove actual spectral gap LOWER comparison for the actual adapted coefficients,then combine the original finite-p inverse spectral input with the proved Proposition2.19 to establish source Theorem2.2 original endpoint regularity and norm-bounded/weak-star-compact isospectral sets. Propositions2.18-2.19 at the stated infinity endpoint are now proved,including the full-image inverse and genuine cross-weight inverse gain.",
+    "Complete physical periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual original Dirichlet comparison source Theorem2.1(ii). Full direct general-weight Theorem2.1(i),actual real-type symmetry and all AppendixB clauses remain complete.",
+    "Construct and verify the ORIGINAL Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original hypotheses,normalizations,quantifiers and topology. All MAIN theorems remain unproved."
+  ],
+  "validation": {
+    "fresh_build": true,
+    "modules_checked": 168,
+    "audited_declarations": 1480,
+    "theorems": 1220,
+    "definitions": 260,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "log": ".lake/article-check/logs/validation-inverse-restriction.log"
+  }
+}
