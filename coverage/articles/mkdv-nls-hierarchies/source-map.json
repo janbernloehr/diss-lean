@@ -31,19 +31,27 @@
     {
       "label": "Theorem 2(i)",
       "page": 3,
-      "status": "covector_symmetries_proved_gradient_identification_pending",
+      "status": "proved_on_original_complex_sobolev_domain",
       "quantifiers": "forall integer k>=1, forall phi in complex H^(k-1) pairs, forall real alpha",
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_covectors",
-        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_covectors"
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_gradients",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_gradients",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_vector_fields",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_vector_fields"
       ],
       "limits": [
-        "Frechet-covector symmetries hold on the printed Sobolev domain. Actual all-order physical gradients are now certified on smooth fields. Sharp Sobolev L2 gradients and the induced gradient/vector-field covariance remain open."
+        "No smoothness restriction, real-type restriction, nonzero-action assumption or caller-supplied gradient identification is required. Theorem 2(ii) is a separate unproved recurrence."
       ],
       "gradient_dependency": {
-        "proved": "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian",
-        "scope": "Every hierarchy order, arbitrary smooth complex period-one fields and smooth complex periodic variations; actual complex derivative equals the integral pairing with classicalNLSHierarchyGradient.",
-        "remaining": "Extension of the L2 gradient to the exact H^(k-1) domain and gradient/vector-field covariance."
+        "proved": "NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_eq_gradient",
+        "scope": "Every admissible hierarchy order on H^s with k<=s+1, including k=1 on H0; analytic L2 coefficients represent the actual complex Frechet derivative and agree with the physical first variation on smooth fields.",
+        "physical_identification": [
+          "NLS.ZakharovShabat.sobolevNLSHierarchyGradient_eq_classical",
+          "NLS.ZakharovShabat.hierarchyL2GradientCovector_eq_integral"
+        ],
+        "uniqueness": "NLS.ZakharovShabat.hierarchyL2GradientCovector_injective"
       }
     },
     {
@@ -147,7 +155,7 @@
     "remaining": "Reconcile physical field order, spectral reflection and integer gap labels before importing the spectral action trace as an article statement."
   },
   "remaining_essential_dependencies": [
-    "all-order independent mKdV/Hill Hamiltonian identification and physical variational recurrence; exact-domain L2-gradient extension",
+    "all-order independent mKdV/Hill Hamiltonian identification and corrected even/odd physical variational recurrence",
     "sharp Sobolev vector-field restriction",
     "Hill operator spectral gap labels and action integrals",
     "mKdV Birkhoff coordinates, brackets and frequency identification",
@@ -157,6 +165,7 @@
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
     "physical_first_variation": "NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler",
     "riccati_adapter": "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian",
-    "scope": "All polynomial and Hamiltonian orders on smooth complex periodic fields; no caller-supplied first-variation identity or order bound."
+    "scope": "All polynomial and Hamiltonian orders on smooth complex periodic fields; analytic L2 hierarchy gradients on every admissible H^s domain, including H0 mass. No caller-supplied variation identity or gradient identification.",
+    "sobolev_gradient": "NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_eq_gradient"
   }
 }

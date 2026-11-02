@@ -164,3 +164,49 @@ and 32 definitions. Main Theorems 1–4 remain incomplete. The next gradient
 obligation is the exact H^(k-1) L² extension and symmetry/vector-field
 identification; the even/odd hierarchy recurrence and independent all-order
 mKdV Hamiltonian identification also remain open.
+
+## 2026-11-02 — Theorem 2(i) on the original complex Sobolev domain
+
+All four assertions of Theorem 2(i), p. 3, are now proved for every k≥1,
+every complex pair in H^(k-1), and every real phase α:
+
+- `theorem2_i_swap_gradients` gives the printed gradient swap identity.
+- `theorem2_i_phase_gradients` gives the printed phase-gradient identity.
+- `theorem2_i_swap_vector_fields` gives the sign `(-1)^k` for the swapped field.
+- `theorem2_i_phase_vector_fields` gives phase covariance of the vector field.
+
+These declarations are in
+`NLS/Articles/MKdVNLSHierarchies/GradientSymmetries.lean`. They require no
+smoothness, real-type, open-gap or caller-supplied gradient-identification
+hypothesis. The k=1 H0 endpoint is included.
+
+The shared construction closes the gradient dependency. Partial polynomial
+differentiation removes exactly the selected jet's derivative weight, and
+the Euler spatial derivatives restore it. Thus the order-k gradient has total
+derivative count at most k−1. On H^s with s≥1 and k≤s+1, each monomial contains
+at most one top L2 derivative. Its remaining factors have continuous physical
+representatives, so the existing bounded circle multiplication supplies an
+analytic L2 realization. The bounded physical restriction coefficient map
+retains the actual period-one Fourier integrals. The H0 mass gradient is
+handled directly, with its two components exchanged.
+
+`fderiv_sobolevNLSHamiltonian_eq_gradient` proves that these analytic L2
+coefficients represent the existing physical Hamiltonian's actual complex
+Frechet derivative on every admissible H^s domain. It uses the checked smooth
+first variation and smooth density in both the base point and direction.
+Fourier modes prove uniqueness of this representation. The existing exact-domain
+covector symmetries consequently give the physical gradient symmetries, and
+the Poisson tensor `-iJ` gives the printed vector-field identities.
+
+All 35 article/shared modules and the NLS aggregate pass with Lean 4.33.1,
+`autoImplicit=false` and warnings as errors. The targeted transitive audit
+passes for 373 declarations and auxiliaries; the combined NLS/article audit
+passes for 45,550 declarations. Only `propext`, `Classical.choice` and
+`Quot.sound` are allowed. Validation used the pinned read-only compiled
+dependency cache and the shared build lock; this is not a fresh rebuild of
+all dependencies. There are 168 public declarations: 128 theorems and 40 definitions.
+
+The goal remains incomplete. Theorem 2(ii)'s corrected even/odd gradient
+recurrence, the sharp H^m diagonal flow restriction and independent all-order
+mKdV Hamiltonian identification in Theorem 1, and the action, coordinate,
+bracket and frequency identifications in Theorems 3–4 remain open.

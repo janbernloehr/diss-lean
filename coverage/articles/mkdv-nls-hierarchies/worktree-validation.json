@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 278,
+  "audited_declarations_and_auxiliaries": 373,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -649,12 +649,222 @@
       "kind": "theorem",
       "name": "periodic_classicalNLSHierarchyGradient",
       "file": "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "Supported.pderiv",
+      "file": "NLS/DifferentialPolynomial/EulerOrderBounds.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "DerivativeOrderLE.C",
+      "file": "NLS/DifferentialPolynomial/EulerOrderBounds.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "DerivativeOrderLE.pderiv",
+      "file": "NLS/DifferentialPolynomial/EulerOrderBounds.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "DerivativeOrderLE.iterate_spatialDerivative",
+      "file": "NLS/DifferentialPolynomial/EulerOrderBounds.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "DerivativeOrderLE.eulerDerivative",
+      "file": "NLS/DifferentialPolynomial/EulerOrderBounds.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "derivativeWeight_erase_top",
+      "file": "NLS/DifferentialPolynomial/EulerOrderBounds.lean"
+    },
+    {
+      "kind": "def",
+      "name": "circleUnitCoefficients",
+      "file": "NLS/Fourier/CircleUnitCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "circleUnitCoefficients_apply",
+      "file": "NLS/Fourier/CircleUnitCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "circleUnitCoefficients_eq_classical",
+      "file": "NLS/Fourier/CircleUnitCoefficients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "topSobolevJetCircleL2",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialL2.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "topSobolevJetCircleL2_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialL2.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevMonomialL2",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialL2.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevMonomialL2",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialL2.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMonomialL2_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialL2.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevPolynomialL2",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialL2.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevPolynomialL2",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialL2.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevPolynomialL2_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevPolynomialL2.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nlsHamiltonianPolynomial_derivativeOrder",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nlsHierarchyEuler_derivativeOrder",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nlsHamiltonianPolynomial_one",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalNLSHierarchyGradient_one",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradient.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevNLSHierarchyGradient",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevNLSHierarchyGradient",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHierarchyGradient_eq_classical",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradient.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hierarchyL2GradientCovector",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradientVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyL2GradientCovector_apply",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradientVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyL2GradientCovector_eq_integral",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradientVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_sobolevNLSHamiltonian_eq_gradient",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradientVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyL2GradientCovector_finite",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyL2GradientCovector_injective",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyL2GradientCovector_swap",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hierarchyL2GradientCovector_scaling",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHierarchyGradient_swap",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHierarchyGradient_reciprocal_scaling",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevNLSHierarchyVectorField",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHierarchyVectorField_swap",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHierarchyVectorField_reciprocal_scaling",
+      "file": "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean"
+    },
+    {
+      "kind": "def",
+      "name": "phaseRotationL2",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem2_i_swap_gradients",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem2_i_phase_gradients",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem2_i_phase_vector_fields",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GradientSymmetries.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem2_i_swap_vector_fields",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GradientSymmetries.lean"
     }
   ],
-  "public_declaration_count": 126,
-  "theorem_count": 94,
-  "definition_count": 32,
-  "full_build": "All 28 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 168,
+  "theorem_count": 128,
+  "definition_count": 40,
+  "full_build": "All 35 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
   "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit",
   "sha256": {
@@ -677,8 +887,8 @@
     "NLS/ZakharovShabat/ClassicalNLSFourthHamiltonian.lean": "7eb0973075e5414613b80cc73466c087d362422265902d0aa2425bf0a3e38f73",
     "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean": "8f507c2d54caf16dfecb3a42cbaec191cc2c4d1453c5080bc6f877129d32280f",
     "NLS/ZakharovShabat/ClassicalVolterraTrace.lean": "af489d580fb8de14051b7abf002235b0507570e6fab8b2b9aafd7a4fc82be41f",
-    "scripts/check_mkdv_nls.py": "a3024a66396ce193670f2d25b20f4b04a7df53fb9e4bc268237320951a33de34",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "e0d6c190fa7b3a6a9ba4a085cc8bb6ef715f332ef17cef7458a146944fe8d7c6",
+    "scripts/check_mkdv_nls.py": "b1e717ed002de06acc99aebbf72b6b84eeed42ce081ef1c466c85291468e16cd",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "5b161ff662b0b49f397a190ab712b7962b0709e25d923ccb2439ef316fc91d1b",
     "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean": "140b863a21c489adf60995da8e53101c3a7cf0bd66b6dc993b8f54fe0900f306",
     "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "1ab05b74ffcd892bb75226b50d4517286a96f197100a7e86e453b3eecf82534b",
     "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "99944ccf33c348be7a7324ae93bb9559761bccdff6a34fbcd5e719f93bb4aafe",
@@ -687,10 +897,17 @@
     "NLS/DifferentialPolynomial/PolynomialVariation.lean": "edca1e4571cc50d7e1549da618aa0407808cb25df9afc14ed9c09f686f312a15",
     "NLS/DifferentialPolynomial/EulerLagrange.lean": "fabe9650f9f92958f3f3be77cf8511c6b205ee84b68b917fc7ffcb9402997d3c",
     "NLS/DifferentialPolynomial/SmoothVariation.lean": "fa570f62c9f16361614e285f7fc0e7e98f3e43bcc0b901af9aace5e7bbdc1798",
-    "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean": "ff19772497df0fcf42d01ee39895bfc52de86a0dc7b781f1dddfa2bbebc756e3"
+    "NLS/ZakharovShabat/ClassicalNLSHierarchyVariation.lean": "ff19772497df0fcf42d01ee39895bfc52de86a0dc7b781f1dddfa2bbebc756e3",
+    "NLS/DifferentialPolynomial/EulerOrderBounds.lean": "c7100d492371a5c50067f66f3e1f9cdc42c75aba3c3f3da25845532c2f2b7c82",
+    "NLS/Fourier/CircleUnitCoefficients.lean": "44ef67e3ad199596fc4ae9238f3845df90c36e393f4d3cca8d1c932fc43e421a",
+    "NLS/ZakharovShabat/SobolevPolynomialL2.lean": "f2829e526aa4056ebf8f5a20daf9e122678155a3b2a8882b967f15394ad464f3",
+    "NLS/ZakharovShabat/SobolevHierarchyGradient.lean": "1a8b48802cf2968eb5f674dbcb16152a7e9daf6af4002799367a6e606f403372",
+    "NLS/ZakharovShabat/SobolevHierarchyGradientVariation.lean": "924a9af20ba8202b238c1087562b35aad7f633cfeaf34722c92db90d68be67f9",
+    "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean": "e94948ab867c62f403cada306f8e0ff19962502852d272c5864c0ca3a10e4b93",
+    "NLS/Articles/MKdVNLSHierarchies/GradientSymmetries.lean": "6d9c5a78ae585509e6ac7a724a7705ece8f2664e13b54f0f46311bf973a24fa1"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 28,
+  "focused_module_count": 35,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -715,11 +932,17 @@
       "audit_count": 278,
       "combined_NLS_audit_count": 45434,
       "aggregate_compiled": true
+    },
+    {
+      "milestone": "Theorem 2(i) on its original complex Sobolev domain",
+      "audit_count": 373,
+      "combined_NLS_audit_count": 45550,
+      "aggregate_compiled": true
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 45434,
+  "combined_audited_NLS_declarations": 45550,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log"
 }

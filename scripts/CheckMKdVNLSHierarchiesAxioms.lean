@@ -3,6 +3,7 @@ import NLS.Articles.MKdVNLSHierarchies.SmoothFourthFlow
 import NLS.MKdV.MiuraBoundaryTransfer
 import NLS.Articles.MKdVNLSHierarchies.DiscriminantIdentity
 import NLS.ZakharovShabat.ClassicalNLSHierarchyVariation
+import NLS.Articles.MKdVNLSHierarchies.GradientSymmetries
 import Lean.Util.CollectAxioms
 
 /-! Audit every new public declaration and its generated auxiliary declarations.
@@ -12,6 +13,21 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.Fourier.circleUnitCoefficients,
+    `NLS.ZakharovShabat.topSobolevJetCircleL2,
+    `NLS.ZakharovShabat.sobolevMonomialL2,
+    `NLS.ZakharovShabat.analyticAt_sobolevMonomialL2,
+    `NLS.ZakharovShabat.sobolevPolynomialL2,
+    `NLS.ZakharovShabat.analyticAt_sobolevPolynomialL2,
+    `NLS.ZakharovShabat.nlsHamiltonianPolynomial_derivativeOrder,
+    `NLS.ZakharovShabat.nlsHierarchyEuler_derivativeOrder,
+    `NLS.ZakharovShabat.nlsHamiltonianPolynomial_one,
+    `NLS.ZakharovShabat.classicalNLSHierarchyGradient_one,
+    `NLS.ZakharovShabat.sobolevNLSHierarchyGradient,
+    `NLS.ZakharovShabat.analyticAt_sobolevNLSHierarchyGradient,
+    `NLS.ZakharovShabat.hierarchyL2GradientCovector,
+    `NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_eq_gradient,
+    `NLS.ZakharovShabat.sobolevNLSHierarchyVectorField,
     `NLS.FunctionalAnalysis.periodic_deriv,
     `NLS.FunctionalAnalysis.periodic_iteratedDeriv,
     `NLS.FunctionalAnalysis.contDiff_iteratedDeriv,
@@ -51,6 +67,11 @@ run_cmd do
   let expected := #[``NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero,
     ``NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler,
     ``NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian,
+    ``NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_eq_gradient,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_gradients,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_gradients,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_vector_fields,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_vector_fields,
     ``NLS.MKdV.classicalNLSHamiltonian_three_diagonal,
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_covectors,
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_covectors,

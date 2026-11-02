@@ -1,6 +1,7 @@
 # The mKdV and NLS hierarchies revisited — initial verification
 
-Status: **partial progress; no complete article main theorem is claimed**.
+Status: **Theorem 2(i) proved on its original domain; the remaining main
+statements are incomplete**.
 Prepared 2026-11-02 against canonical commit
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
 
@@ -63,7 +64,7 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 | Source statement | Domain and quantifier order | Current proved correspondence | Remaining work |
 | --- | --- | --- | --- |
 | Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | `theorem1_even_vanishing_original_domain` proves scalar vanishing on H^(2m-1), including the exact H^1 endpoint m=1. `classicalNLSHamiltonian_one_diagonal` and `classicalNLSHamiltonian_three_diagonal` prove the physical factor-two identities for K1 and K2. `theorem1_m2_smooth` now proves both clauses on smooth complex periodic potentials. | All-order independent mKdV/Hill Hamiltonian identification; physical gradients and vector fields; the sharper H^m even-order extension for m>1. |
-| Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | `theorem2_i_swap_covectors` and `theorem2_i_phase_covectors` establish the corresponding **complex Frechet-covector** identities on precisely H^(k-1). `hasDerivAt_classicalNLSHamiltonian` certifies actual physical gradients at every order on smooth periodic fields. | Extend these gradients to the exact H^(k-1) domain, then prove gradient and physical vector-field covariance. The smooth first-variation result does not complete this main theorem. |
+| Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None for part (i); part (ii) remains separate. |
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the stated even/odd gradient recurrence. | Existing analytic Hamiltonians and new symmetries are available. | Resolve the matrix correction below and prove the physical gradient recurrence. No caller-supplied hierarchy-identification assumption is used as a substitute. |
 | Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Construct/identify the mKdV actions, frequency and brackets; settle the printed sign against the adopted normalization. |
 | Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | Existing physical NLS actions are available, not an mKdV action identification. | Prove the Miura/Hill discriminant and action comparison with fixed gap labels. |
