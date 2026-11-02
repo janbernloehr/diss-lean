@@ -187,6 +187,33 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillSpectrum
 import NLS.Articles.KdVPseudomeasures.SpectralEndpointCompactness
 import NLS.Articles.KdVPseudomeasures.SpectralAdaptedDiffeomorphism
 import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
+import NLS.KdV.HillSobolev
+import NLS.KdV.HillPhysical
+import NLS.KdV.HillFirstOrderReduction
+import NLS.KdV.HillAnalytic
+import NLS.KdV.HillWeightedCoefficients
+import NLS.KdV.HillBilinearSymmetry
+import NLS.KdV.HillSpectralLipschitz
+import NLS.KdV.HillRootSeparation
+import NLS.SequenceSpaces.WeightedInsertion
+import NLS.KdV.HillPeriodOnePotential
+import NLS.KdV.HillL2SpectralCriterion
+import NLS.KdV.ConstantUpperSpectralBridge
+import NLS.KdV.ClassicalSpectralSymmetry
+import NLS.KdV.ClassicalDiscriminant
+import NLS.KdV.ClassicalHillFlow
+import NLS.KdV.HillClassicalIdentification
+import NLS.FunctionalAnalysis.AbsoluteContinuityTranslation
+import NLS.KdV.HillFullPeriod
+import NLS.FunctionalAnalysis.LinearVolterraLinearity
+import NLS.KdV.ClassicalHillMultipliers
+import NLS.KdV.HillDiscriminantNecessity
+import NLS.KdV.HillDiscriminantComparison
+import NLS.ComplexAnalysis.EntireEvenSquareDescent
+import NLS.KdV.HillL2EnergyDiscriminant
+import NLS.KdV.SingularHillL2Domain
+import NLS.KdV.SingularHillL2Characteristic
+import NLS.Articles.KdVPseudomeasures.OriginalL2Characteristic
 
 /-! Transitive axiom audit of every selected public declaration. -/
 #print axioms NLS.WeightedCoeff.ofFinsupp
@@ -1840,3 +1867,258 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGapValues_neg
 #print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGaps_nat_apply
 #print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGaps_locallyBounded
+#print axioms NLS.KdV.memlp_sobolev_two_of_hillMoment
+#print axioms NLS.KdV.hillDomainToH1
+#print axioms NLS.KdV.hillDomainToL1
+#print axioms NLS.KdV.hillDomainToL1_apply
+#print axioms NLS.KdV.hillDomainToL2
+#print axioms NLS.KdV.hillDomainToL2_apply
+#print axioms NLS.KdV.hillDomainToL2_injective
+#print axioms NLS.KdV.hillLaplacian
+#print axioms NLS.KdV.hillLaplacian_apply
+#print axioms NLS.KdV.hillOperator
+#print axioms NLS.KdV.hillOperator_apply
+#print axioms NLS.KdV.hillDomainAsSummable
+#print axioms NLS.KdV.hillDomainAsSummable_apply
+#print axioms NLS.KdV.hillDomainAsSummable_injective
+#print axioms NLS.KdV.hillOperator_eigen_iff
+#print axioms NLS.KdV.hillFourierEigenvector_memlp_sobolev_two
+#print axioms NLS.KdV.hillEigenvectorLift
+#print axioms NLS.KdV.hillEigenvectorLift_apply
+#print axioms NLS.KdV.hillDomainAsSummable_eigenvectorLift
+#print axioms NLS.KdV.hillReduced_det_eq_zero_iff_domainEigenvector
+#print axioms NLS.KdV.hillRepresentative
+#print axioms NLS.KdV.hillRepresentative_coefficient
+#print axioms NLS.KdV.hillRepresentative_periodic
+#print axioms NLS.KdV.hillRepresentative_H1
+#print axioms NLS.KdV.hillFirstDerivative
+#print axioms NLS.KdV.hillFirstDerivative_apply
+#print axioms NLS.KdV.hillDerivativeRepresentative
+#print axioms NLS.KdV.hillDerivativeRepresentative_H1
+#print axioms NLS.KdV.hillRepresentative_deriv_ae
+#print axioms NLS.KdV.HasPeriodicHillH2
+#print axioms NLS.KdV.hillRepresentative_H2
+#print axioms NLS.KdV.hillRepresentative_injective
+#print axioms NLS.KdV.hasPeriodicHillH2_iff_domain
+#print axioms NLS.KdV.hill_distribution_first_derivative
+#print axioms NLS.KdV.hill_distribution_second_derivative
+#print axioms NLS.KdV.physicalHillOperator
+#print axioms NLS.KdV.physicalHillOperator_pointwise
+#print axioms NLS.KdV.l2Synthesis_hillOperator
+#print axioms NLS.KdV.hillRepresentative_toLp
+#print axioms NLS.KdV.physicalHillOperator_eigen_iff
+#print axioms NLS.KdV.physicalHillOperator_eigen_ae
+#print axioms NLS.KdV.hillReduced_det_eq_zero_iff_physicalEigenvector
+#print axioms NLS.KdV.hillFirstOrderPotential
+#print axioms NLS.KdV.hillFirstOrder_operator_fst_apply
+#print axioms NLS.KdV.hillFirstOrder_operator_snd_apply
+#print axioms NLS.KdV.hillFirstOrder_eigen_equations
+#print axioms NLS.KdV.hillFirstOrder_scalar_equation
+#print axioms NLS.KdV.exists_hillEigenvector_of_firstOrder
+#print axioms NLS.KdV.hillFirstOrderLift
+#print axioms NLS.KdV.hillFirstOrderLift_fst_apply
+#print axioms NLS.KdV.hillFirstOrderLift_snd_apply
+#print axioms NLS.KdV.hillFirstOrderLift_injective
+#print axioms NLS.KdV.hillFirstOrderLift_eigen
+#print axioms NLS.KdV.hill_eigenvector_iff_firstOrder
+#print axioms NLS.KdV.hill_eigenvector_iff_firstOrder_spectrum
+#print axioms NLS.KdV.openHillStrip
+#print axioms NLS.KdV.isOpen_openHillStrip
+#print axioms NLS.KdV.openHillStrip_subset
+#print axioms NLS.KdV.hillReciprocal
+#print axioms NLS.KdV.hillReciprocal_eq_symbol
+#print axioms NLS.KdV.hillReciprocal_apply
+#print axioms NLS.KdV.norm_hillReciprocal_le
+#print axioms NLS.KdV.analyticOnNhd_hillReciprocal
+#print axioms NLS.KdV.hillComplementFamily
+#print axioms NLS.KdV.hillComplementFamily_eq
+#print axioms NLS.KdV.analyticOnNhd_hillComplementFamily
+#print axioms NLS.KdV.hillTailFamily
+#print axioms NLS.KdV.hillTailFamily_eq
+#print axioms NLS.KdV.analyticAt_hillTailFamily
+#print axioms NLS.KdV.isUnit_one_sub_hillTailFamily
+#print axioms NLS.KdV.hillInverseFamily
+#print axioms NLS.KdV.hillInverseFamily_eq
+#print axioms NLS.KdV.analyticAt_hillInverseFamily
+#print axioms NLS.KdV.hillEffectiveFamily
+#print axioms NLS.KdV.hillReducedFamily
+#print axioms NLS.KdV.hillReducedFamily_eq
+#print axioms NLS.KdV.analyticAt_hillReducedFamily
+#print axioms NLS.KdV.hillReducedDeterminant
+#print axioms NLS.KdV.analyticAt_hillReducedDeterminant
+#print axioms NLS.KdV.hillReducedDeterminant_eq
+#print axioms NLS.KdV.shiftedNorm_hillTailInverse_le
+#print axioms NLS.KdV.hill_convolution_single
+#print axioms NLS.KdV.shiftedNorm_modulation_cancel
+#print axioms NLS.KdV.shiftedNorm_coefficient_le
+#print axioms NLS.KdV.hillCorrectedMode
+#print axioms NLS.KdV.hillCorrectedMode_pos
+#print axioms NLS.KdV.hillCorrectedMode_neg
+#print axioms NLS.KdV.shiftedNorm_hillCorrectedMode_le
+#print axioms NLS.KdV.hillCorrectedMode_coefficient_error
+#print axioms NLS.KdV.hillDiagonal
+#print axioms NLS.KdV.hillOppositeDiagonal
+#print axioms NLS.KdV.hillUpperCoupling
+#print axioms NLS.KdV.hillLowerCoupling
+#print axioms NLS.KdV.hillDiagonal_error_le
+#print axioms NLS.KdV.hillDiagonal_le_of_mean_zero
+#print axioms NLS.KdV.hillUpperCoupling_error_le
+#print axioms NLS.KdV.hillLowerCoupling_error_le
+#print axioms NLS.KdV.hillBilinear
+#print axioms NLS.KdV.summable_hillBilinear
+#print axioms NLS.KdV.hillBilinear_add_left
+#print axioms NLS.KdV.hillBilinear_single
+#print axioms NLS.KdV.hillBilinear_convolution_symmetric
+#print axioms NLS.KdV.hillResonantResidual
+#print axioms NLS.KdV.hillResonantResidual_apply
+#print axioms NLS.KdV.hillReconstruct_residual_equation
+#print axioms NLS.KdV.hillBilinear_residual
+#print axioms NLS.KdV.hillReduced_bilinearSymmetry
+#print axioms NLS.KdV.hillDiagonal_eq_opposite
+#print axioms NLS.KdV.shiftedNorm_weightedReducedHillResolvent_le
+#print axioms NLS.KdV.hillComplementToL1_sub
+#print axioms NLS.KdV.shiftedNorm_hillComplementToL1_sub_le
+#print axioms NLS.KdV.shiftedNorm_hillTailPerturbation_sub_le
+#print axioms NLS.KdV.hillTailInverse_sub
+#print axioms NLS.KdV.shiftedNorm_hillCorrectedMode_sub_le
+#print axioms NLS.KdV.hillDiagonal_sub_le
+#print axioms NLS.KdV.hillDiagonal_sub_le_quarter
+#print axioms NLS.KdV.hillEffectivePotential_decompose
+#print axioms NLS.KdV.hillReducedOperator_apply
+#print axioms NLS.KdV.hillReducedDeterminant_factorization
+#print axioms NLS.KdV.hillUpperCoupling_le
+#print axioms NLS.KdV.hillLowerCoupling_le
+#print axioms NLS.KdV.hillReduced_root_shift_bound
+#print axioms NLS.KdV.hillReduced_roots_weighted_separation
+#print axioms NLS.Weight.pullback
+#print axioms NLS.Weight.pullback_apply
+#print axioms NLS.WeightedCoeff.insertIsometry
+#print axioms NLS.WeightedCoeff.insertIsometry_image
+#print axioms NLS.WeightedCoeff.insertIsometry_outside
+#print axioms NLS.WeightedCoeff.norm_insertIsometry
+#print axioms NLS.SpectralWeight.doubleIndex
+#print axioms NLS.SpectralWeight.doubleIndex_apply
+#print axioms NLS.KdV.hillPeriodOnePotential
+#print axioms NLS.KdV.hillPeriodOnePotential_even
+#print axioms NLS.KdV.hillPeriodOnePotential_odd
+#print axioms NLS.KdV.norm_hillPeriodOnePotential
+#print axioms NLS.KdV.toCoeff_hillPeriodOnePotential
+#print axioms NLS.KdV.hillPeriodOnePotential_zero
+#print axioms NLS.KdV.hillPeriodOnePotential_reality
+#print axioms NLS.KdV.hillPeriodOnePotential_physical_coefficients
+#print axioms NLS.KdV.hillPeriodOneSobolevWeight
+#print axioms NLS.KdV.hillPeriodOne_weighted_coefficient_sq
+#print axioms NLS.KdV.hillPeriodOne_sobolev_norm_sq
+#print axioms NLS.KdV.hillPeriodOne_roots_weighted_separation
+#print axioms NLS.KdV.hillFirstOrderPotential_mem_even
+#print axioms NLS.KdV.hillL2FrequencyDiscriminant
+#print axioms NLS.KdV.analyticOnNhd_hillL2FrequencyDiscriminant_joint
+#print axioms NLS.KdV.hill_eigenvector_iff_l2FrequencyDiscriminant
+#print axioms NLS.KdV.hillReduced_zero_iff_l2FrequencyDiscriminant
+#print axioms NLS.KdV.hillL2FrequencyDiscriminant_spectral_condition_of_sq_eq
+#print axioms NLS.KdV.hillPeriodOne_eigenvector_iff_l2FrequencyDiscriminant
+#print axioms NLS.KdV.constantUpperPotential
+#print axioms NLS.KdV.constantUpperPotential_apply
+#print axioms NLS.KdV.constantUpperPosition
+#print axioms NLS.KdV.constantUpperStateMap
+#print axioms NLS.KdV.constantUpperStateMap_apply
+#print axioms NLS.KdV.constantUpperInitialVector
+#print axioms NLS.KdV.constantUpperStateMap_initialVector
+#print axioms NLS.KdV.constantUpperInitialVector_stateMap
+#print axioms NLS.KdV.constantUpperStateMap_injective
+#print axioms NLS.KdV.hasDerivAt_constantUpperPosition
+#print axioms NLS.KdV.hasDerivAt_deriv_constantUpperPosition
+#print axioms NLS.KdV.hill_equation_constantUpperPosition
+#print axioms NLS.KdV.constantUpperHillState
+#print axioms NLS.KdV.constantUpperHillState_eq
+#print axioms NLS.KdV.constantUpperHillState_initial
+#print axioms NLS.KdV.constantUpper_floquet_condition_iff
+#print axioms NLS.KdV.constantUpperHillTrace
+#print axioms NLS.KdV.constantUpperHillTrace_eq_discriminant
+#print axioms NLS.KdV.constantUpperSpectralTransition
+#print axioms NLS.KdV.constantUpperSpectralTransition_apply
+#print axioms NLS.KdV.constantUpperSpectralTransition_ode
+#print axioms NLS.KdV.classicalSolution_constantUpper_transition
+#print axioms NLS.KdV.classicalDiscriminant_constantUpper_eq_of_sq_eq
+#print axioms NLS.KdV.classicalDiscriminant_constantUpper_even
+#print axioms NLS.KdV.constantUpperHillTrace_eq_of_sq_eq
+#print axioms NLS.KdV.constantUpperLinearPotential
+#print axioms NLS.KdV.constantUpperOrigin
+#print axioms NLS.KdV.constantUpperPotential_eq_affine
+#print axioms NLS.KdV.analyticOnNhd_constantUpperPotential
+#print axioms NLS.KdV.analyticOnNhd_constantUpperTrace_joint
+#print axioms NLS.KdV.classicalHillDiscriminant
+#print axioms NLS.KdV.classicalHillDiscriminant_eq_of_sq
+#print axioms NLS.KdV.classicalHillDiscriminant_sq
+#print axioms NLS.KdV.analyticOnNhd_classicalHillDiscriminant_joint
+#print axioms NLS.KdV.analyticOnNhd_classicalHillDiscriminant
+#print axioms NLS.KdV.classicalHillDiscriminant_eq_scalar_trace
+#print axioms NLS.KdV.classicalHillCoefficient
+#print axioms NLS.KdV.classicalHillCoefficient_apply
+#print axioms NLS.KdV.classicalHillCoefficientCurve
+#print axioms NLS.KdV.classicalHillFlow
+#print axioms NLS.KdV.classicalHillFlow_zero
+#print axioms NLS.KdV.hasDerivAt_classicalHillFlow
+#print axioms NLS.KdV.classicalHillCoefficient_stateMap
+#print axioms NLS.KdV.classicalHillFlow_eq_constantUpper
+#print axioms NLS.KdV.classicalHillFlow_trace
+#print axioms NLS.KdV.classicalHillFlow_unique_of_ac
+#print axioms NLS.KdV.hillUnitPotentialCurve
+#print axioms NLS.KdV.physicalHillEigenvector_eq_classicalFlow
+#print axioms NLS.FunctionalAnalysis.absolutelyContinuousOnInterval_comp_add_right
+#print axioms NLS.KdV.hillPhysicalState
+#print axioms NLS.KdV.hillSecondPotentialCurve
+#print axioms NLS.KdV.physicalHillEigenvector_secondFlow
+#print axioms NLS.KdV.hillPhysicalState_two
+#print axioms NLS.KdV.physicalHillEigenvector_fullPeriod
+#print axioms NLS.LinearVolterra.solution_add
+#print axioms NLS.LinearVolterra.solution_zero_initial
+#print axioms NLS.KdV.classicalHillFlow_add
+#print axioms NLS.KdV.classicalHillFlow_zero_initial
+#print axioms NLS.KdV.exists_classicalHillFlow_multiplier_iff
+#print axioms NLS.KdV.classicalHillDiscriminant_eq_two_iff_flow
+#print axioms NLS.KdV.classicalHillDiscriminant_eq_neg_two_iff_flow
+#print axioms NLS.KdV.classicalHillRadicand_eq_zero_iff_flow
+#print axioms NLS.KdV.classicalHillRadicand_zero_of_double_fixed
+#print axioms NLS.KdV.physicalHillEigenvector_initial_ne_zero
+#print axioms NLS.KdV.physicalHillEigenvector_discriminant_zero
+#print axioms NLS.KdV.hillContinuousCoefficients
+#print axioms NLS.KdV.hillContinuousCoefficients_apply
+#print axioms NLS.KdV.l2Synthesis_hillContinuousCoefficients
+#print axioms NLS.KdV.hillReduced_zero_implies_classicalDiscriminant_zero
+#print axioms NLS.KdV.hillFirstOrder_continuous_compatibility
+#print axioms NLS.KdV.hillL2FrequencyDiscriminant_eq_classical
+#print axioms NLS.KdV.hillContinuousCoefficients_mem_even
+#print axioms NLS.KdV.physicalHillEigenvector_iff_classicalDiscriminant
+#print axioms NLS.ComplexAnalysis.complex_sqrt_sq
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_entire_even_square_descent
+#print axioms NLS.KdV.continuous_hillL2FrequencyDiscriminant_joint
+#print axioms NLS.KdV.hillL2FrequencyDiscriminant_even
+#print axioms NLS.KdV.hillL2FrequencyDiscriminant_eq_of_sq_eq
+#print axioms NLS.KdV.hillL2Discriminant
+#print axioms NLS.KdV.hillL2Discriminant_eq_of_sq
+#print axioms NLS.KdV.hillL2Discriminant_sq
+#print axioms NLS.KdV.analyticOnNhd_hillL2Discriminant_joint
+#print axioms NLS.KdV.analyticOnNhd_hillL2Discriminant
+#print axioms NLS.KdV.hillL2Discriminant_eq_classical
+#print axioms NLS.KdV.hill_eigenvector_iff_l2Discriminant
+#print axioms NLS.KdV.hillReduced_zero_iff_l2Discriminant
+#print axioms NLS.KdV.hillL2HminusOne
+#print axioms NLS.KdV.hillL2HminusOne_coefficient
+#print axioms NLS.KdV.singularHillH1AsSummable
+#print axioms NLS.KdV.singularHillH1AsSummable_apply
+#print axioms NLS.KdV.singularHillL2_eigen_iff_fourier
+#print axioms NLS.KdV.singularHillL2_eigen_memlp_sobolev_two
+#print axioms NLS.KdV.hillDomainOriginalH1
+#print axioms NLS.KdV.hillDomainOriginalH1_coefficient
+#print axioms NLS.KdV.hillDomainOriginalH1_injective
+#print axioms NLS.KdV.hillDomainOriginalH1_eigen_iff
+#print axioms NLS.KdV.hillDomainOriginalH1_zero
+#print axioms NLS.KdV.singularHillL2EigenvectorLift
+#print axioms NLS.KdV.singularHillL2EigenvectorLift_coefficient
+#print axioms NLS.KdV.hillDomainOriginalH1_singularHillL2EigenvectorLift
+#print axioms NLS.KdV.singularHillL2_exists_eigenvector_iff
+#print axioms NLS.KdV.singularHillSpectrum_L2_iff_discriminant
+#print axioms NLS.KdV.singularHillSpectrum_L2_iff_frequencyDiscriminant
+#print axioms NLS.Articles.KdVPseudomeasures.originalL2_coefficients_mem_even
+#print axioms NLS.Articles.KdVPseudomeasures.original_spectrum_iff_L2_discriminant
