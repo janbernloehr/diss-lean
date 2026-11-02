@@ -9,6 +9,7 @@ import NLS.DifferentialPolynomial.RiccatiResolventVariation
 import NLS.Articles.MKdVNLSHierarchies.GradientRecurrence
 import NLS.Articles.MKdVNLSHierarchies.SmoothHierarchy
 import NLS.Articles.MKdVNLSHierarchies.SharpEvenVanishing
+import NLS.Articles.MKdVNLSHierarchies.SharpMiuraFlow
 import Lean.Util.CollectAxioms
 
 /-! Audit every new public declaration and its generated auxiliary declarations.
@@ -18,6 +19,25 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.Fourier.periodOneSobolevDistribution,
+    `NLS.Fourier.periodOneSobolevDistribution_periodic,
+    `NLS.Fourier.periodOneSobolevDistribution_coefficient,
+    `NLS.Fourier.periodOneSobolevDistribution_derivative_eq,
+    `NLS.ZakharovShabat.hierarchyFieldInjection,
+    `NLS.ZakharovShabat.hierarchyFieldCotangent,
+    `NLS.ZakharovShabat.hierarchyFieldCotangent_coefficient,
+    `NLS.ZakharovShabat.hierarchyWeakGradient,
+    `NLS.ZakharovShabat.analyticAt_hierarchyWeakGradient,
+    `NLS.ZakharovShabat.hierarchyWeakGradient_represents,
+    `NLS.ZakharovShabat.hierarchyFieldCotangent_eq_classical,
+    `NLS.ZakharovShabat.scalarCotangent_eq_classical,
+    `NLS.ZakharovShabat.sobolev_affine_coefficients,
+    `NLS.ZakharovShabat.fderiv_scalarSobolev_eq_smooth_variation,
+    `NLS.ZakharovShabat.fderiv_sobolevSource_eq_smooth_variation,
+    `NLS.ZakharovShabat.sobolevEvenHierarchyGradient,
+    `NLS.ZakharovShabat.analyticAt_sobolevEvenHierarchyGradient,
+    `NLS.ZakharovShabat.sobolevEvenHierarchyGradient_represents,
+    `NLS.ZakharovShabat.sobolevEvenHierarchyGradient_eq_classical,
     `NLS.ZakharovShabat.sobolevMonomialL2_eq_classical_of_jetOrder,
     `NLS.ZakharovShabat.sobolevPolynomialL2_eq_classical_of_jetOrder,
     `NLS.ZakharovShabat.sobolevPolynomialL2Mean,
@@ -114,6 +134,12 @@ run_cmd do
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[``NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero,
     ``NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem1_sharp_miura_hierarchy,
+    ``NLS.MKdV.sobolevMiuraHillFlowRestriction_coefficients,
+    ``NLS.MKdV.sobolevMiuraHillGradient_represents,
+    ``NLS.ZakharovShabat.sobolevEvenHierarchyGradient_represents,
+    ``NLS.ZakharovShabat.hierarchyWeakGradient_represents,
+    ``NLS.Fourier.periodOneSobolevDistribution_derivative_eq,
     ``NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_sharp,
     ``NLS.ZakharovShabat.fderiv_sobolevPolynomialL2Mean,
     ``NLS.ZakharovShabat.fderiv_sobolevEvenHamiltonian_eq_covector,

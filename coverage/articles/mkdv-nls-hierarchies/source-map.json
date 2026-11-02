@@ -23,15 +23,17 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem1_m2_smooth",
         "NLS.Articles.MKdVNLSHierarchies.theorem1_smooth_miura_hierarchy",
         "NLS.Articles.MKdVNLSHierarchies.proposition6_smooth_miura",
-        "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_sharp"
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_sharp",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_sharp_miura_hierarchy"
       ],
       "limits": [
-        "Scalar vanishing is proved on every complex H^m input using the analytic physical even Hamiltonian extension; compatibility with the existing higher-regularity hierarchy and its full Frechet derivative are checked.",
-        "Both clauses are proved on all smooth complex periodic fields for independently constructed scalar Hill/Miura Hamiltonians, with K1/K2 normalization and actual first variations.",
-        "The sharp weak vector-field restriction remains open.",
-        "Full identification of the independently constructed scalar Hill hierarchy with the article spectral mKdV actions/primitive asymptotics remains open."
+        "Scalar vanishing is proved on every complex H^m input using the analytic physical even Hamiltonian extension, compatible with the original higher-regularity hierarchy.",
+        "Both clauses hold on all original complex H^m inputs for independently constructed scalar Hill/Miura Hamiltonians. The Hamiltonians are actual L2 density means; the gradients represent the complete actual Frechet derivatives; the Gardner derivative is Mathlib physical distribution derivative and is represented by each even NLS field at Sobolev order -m.",
+        "The scalar Hamiltonians are currently constructed on H^m; their native H^(m-1) extension remains to be proved.",
+        "Full identification with the article spectral mKdV Hamiltonians/actions/primitive asymptotics remains open."
       ],
-      "scalar_clause_status": "proved_exact_complex_Hm_domain"
+      "scalar_clause_status": "proved_exact_complex_Hm_domain",
+      "weak_flow_status": "proved_exact_complex_Hm_inputs_for_independent_scalar_Hill_Miura_hierarchy"
     },
     {
       "label": "Theorem 2(i)",
@@ -176,8 +178,8 @@
     "remaining": "Reconcile physical field order, spectral reflection and integer gap labels before importing the spectral action trace as an article statement."
   },
   "remaining_essential_dependencies": [
-    "sharp weak vector-field restriction on the original complex H^m domain",
-    "spectral identification and sharp scalar Hamiltonian extension of the independently constructed all-order Hill/Miura hierarchy",
+    "spectral identification of the independently constructed all-order scalar Hill/Miura Hamiltonians with the source mKdV hierarchy",
+    "native complex H^(m-1) scalar Hamiltonian extension",
     "Hill operator spectral gap labels and action integrals",
     "mKdV Birkhoff coordinates, brackets and frequency identification",
     "remaining frequency-sign and signed-mean qualifications in main-source statements"
@@ -203,6 +205,12 @@
     "logarithmic_total_derivative": "NLS.DifferentialPolynomial.derivation_logarithmicPrimitiveCoefficient",
     "scalar_Hill_physical_first_variation": "NLS.MKdV.hasDerivAt_classicalMiuraHillHamiltonian",
     "endpoint_polynomial_first_variation": "NLS.ZakharovShabat.fderiv_sobolevPolynomialL2Mean",
-    "sharp_even_hamiltonian": "NLS.ZakharovShabat.sobolevEvenHamiltonian"
+    "sharp_even_hamiltonian": "NLS.ZakharovShabat.sobolevEvenHamiltonian",
+    "weak_gradient": "NLS.ZakharovShabat.hierarchyWeakGradient",
+    "weak_gradient_representation": "NLS.ZakharovShabat.hierarchyWeakGradient_represents",
+    "period_one_negative_Sobolev_distribution": "NLS.Fourier.periodOneSobolevDistribution",
+    "actual_distribution_derivative": "NLS.Fourier.periodOneSobolevDistribution_derivative_eq",
+    "independent_Hm_scalar_Hamiltonian": "NLS.MKdV.sobolevMiuraHillHamiltonian",
+    "full_Hm_weak_flow": "NLS.MKdV.sobolevMiuraHillFlowRestriction"
   }
 }

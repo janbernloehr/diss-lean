@@ -435,3 +435,71 @@ compiled dependencies and private writable outputs, without rebuilding the
 entire dependency tree. No admitted proof, new axiom or disabled linter was
 introduced. The goal remains active while the essential vector-field and
 spectral obligations remain.
+
+
+## 2026-11-02 — Full H^m weak flow restriction for the independent Hill hierarchy
+
+`theorem1_sharp_miura_hierarchy` now proves both scalar vanishing and the
+actual weak vector-field identity for every integer m>=1 and every original
+complex u in H^m. No smoothness, real-type, nonzero-potential, or caller-supplied
+gradient-identification hypothesis is imposed. The scalar hierarchy is
+independently constructed from the Hill Riccati densities; its full source
+spectral identification remains an explicit essential obligation.
+
+The reusable Sobolev cotangent construction now represents the actual full
+Frechet differential of a scalar functional on a pair source by two gradients
+in the opposite Sobolev space. It uses the existing full scalar Sobolev duality,
+without changing the source product norm or introducing a conjugated pairing.
+Every raw Fourier coefficient is evaluated on the actual opposite mode.
+`hierarchyWeakGradient_represents` recovers the complete differential, rather
+than only its value on finite directions. Analytic functionals have analytic
+gradients. Smooth agreement and actual smooth first variations identify the
+physical period-one Fourier integrals of these weak gradients.
+
+`SobolevMiuraHillHamiltonian.lean` constructs the scalar H^m Hamiltonian directly
+from the scalar Hill density. A new generic integration-by-parts theorem
+handles densities without a common field-charge grading by reducing each
+monomial with its own gradings, preserving the total-derivative bound. The
+scalar Riccati densities have at most n+1 total derivatives. Their normalized
+Hamiltonian densities can thus be reduced to jets through m with at most
+2m-1 total derivatives, and their actual L2 means are analytic on H^m.
+No scalar Hamiltonian is defined as half an NLS restriction. The full scalar
+gradient is the actual Frechet derivative represented by Sobolev duality;
+its smooth comparison is proved from the already certified physical first
+variation of the independent classical Hill Hamiltonian.
+
+`SobolevEvenHierarchyGradient.lean` likewise identifies the weak gradient of
+the sharp even NLS Hamiltonian with its actual Frechet differential and
+physical smooth gradient. Finite Fourier sources are dense in the original
+complex Sobolev space. Analytic dependence in the negative Sobolev norm and
+the checked smooth hierarchy flow identity therefore prove the all-input
+coefficient identity `sobolevMiuraHillFlowRestriction_coefficients`.
+
+`periodOneSobolevDistribution` reuses the checked arbitrary-period weighted
+synthesis at every real Sobolev order. It is a genuine period-one tempered
+distribution with exactly the raw source coefficients. Its actual Mathlib
+distribution derivative has multiplier `2*pi*i*n`, including negative orders.
+`sobolevMiuraHillFlowRestriction` turns the coefficient comparison into the
+physical distribution equality: Gardner's derivative of the independent
+scalar gradient is represented by each even NLS field in H^(-m). Thus this
+result includes the original nonsmooth H^m inputs, with certified actual
+derivatives on both sides, rather than just a formal coefficient recurrence.
+
+The goal remains incomplete. The scalar Hill/Miura hierarchy still needs its
+full identification with the source's spectral mKdV Hamiltonians and its
+native H^(m-1) scalar Hamiltonian extension. Theorems 3 and 4 additionally
+require the fixed Hill gap labels, action integrals, mKdV coordinates,
+brackets and frequency identification, with the recorded sign and mean
+qualifications. Theorem 2 retains its previously verified exact domains.
+
+All 71 article/shared modules and the NLS aggregate compiled with the pinned
+Lean 4.33.1 toolchain, `autoImplicit=false` and warnings as errors. The
+targeted transitive audit passed for 720 declarations and generated
+auxiliaries. The combined aggregate/article audit passed for 45,903 NLS
+declarations. Only `propext`, `Classical.choice` and `Quot.sound` are allowed.
+The public theorem/definition inventory contains 369 declarations: 285
+theorems and 84 definitions (aliases excluded). Validation used the shared
+build lock, read-only pinned compiled dependencies and private writable
+outputs, without rebuilding the whole dependency tree. No admitted proof,
+new axiom or disabled linter was introduced. Canonical main remains clean
+at `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`; the goal remains active.

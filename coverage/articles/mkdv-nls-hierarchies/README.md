@@ -63,7 +63,7 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 
 | Source statement | Domain and quantifier order | Current proved correspondence | Remaining work |
 | --- | --- | --- | --- |
-| Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | **Scalar clause proved on the exact H^m domain** by `theorem1_even_vanishing_sharp`. `sobolevEvenHamiltonian` is the analytic extension of the actual physical hierarchy to all complex H^m pairs, compatible with the existing original hierarchy. Its full Frechet derivative is certified. `theorem1_smooth_miura_hierarchy` proves both clauses at every smooth complex periodic order for independent scalar Hill/Miura Hamiltonians, with K1/K2 calibration. | The sharp weak vector-field identity and identification with the article's full spectral mKdV hierarchy. |
+| Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | **Scalar clause proved on the exact H^m domain** by `theorem1_even_vanishing_sharp`. `theorem1_sharp_miura_hierarchy` now proves both clauses on every complex H^m input for independently constructed scalar Hill/Miura Hamiltonians. Both gradients represent their actual Frechet derivatives, and the weak Gardner derivative is an actual physical distribution represented by the even NLS field at order -m. | Identify the scalar Hill/Miura hierarchy with the article's full spectral mKdV Hamiltonians and establish their native H^(m-1) extension. |
 | Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None. |
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
 | Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Construct/identify the mKdV actions, frequency and brackets; settle the printed sign against the adopted normalization. |
@@ -101,8 +101,8 @@ the scalar recurrence, independently of the NLS restriction; their first two
 members equal the previously specified physical mKdV mass and energy.
 `hasDerivAt_classicalMiuraHillHamiltonian` certifies their actual first
 variations. `theorem1_smooth_miura_hierarchy` then proves both flow equality
-and even vanishing at every smooth complex periodic order. The even Hamiltonians now have their sharp Sobolev extension as described
-below; the sharp vector-field and full spectral mKdV identification remain open.
+and even vanishing at every smooth complex periodic order. The full H^m weak flow identity for this independent hierarchy is now proved
+as described below; its source spectral identification remains open.
 
 The scalar clause of Theorem 1 is now proved on its full complex H^m domain.
 `sobolevPolynomialL2_eq_classical_of_jetOrder` realizes densities with jets
@@ -115,8 +115,22 @@ agreement uniquely determines this extension. Component-swap antisymmetry
 then proves `theorem1_even_vanishing_sharp` for every complex H^m diagonal.
 The new shared `fderiv_sobolevPolynomialL2Mean` also certifies the bounded
 partial-jet covector as the actual Frechet derivative on all endpoint inputs
-and directions. This is the variational foundation for the remaining sharp
-weak vector-field comparison.
+and directions. This supplies the variational foundation used by the full H^m weak
+vector-field comparison below.
+
+`theorem1_sharp_miura_hierarchy` now gives both clauses on every complex
+H^m input for the independent Hill/Miura hierarchy. The scalar densities
+are reduced directly, monomial by monomial, and their actual L2 means define
+analytic Hamiltonians on H^m. Full Sobolev duality turns their actual Frechet
+derivatives into unique opposite-order gradients. Smooth first variations
+identify their Fourier integrals with the already certified physical
+classical gradients; density gives the flow coefficient identity on every
+nonsmooth input. `periodOneSobolevDistribution_derivative_eq` identifies the
+multiplier with Mathlib's actual derivative, with exact physical period one.
+In particular the scalar derivative is represented by each even NLS field
+at order -m, and is not merely a formal Fourier sequence. The independent
+hierarchy's full source spectral identification and its native H^(m-1)
+Hamiltonian extension remain separate obligations.
 
 Theorem 5 is now proved as
 `NLS.Articles.MKdVNLSHierarchies.theorem5_discriminant_identity`, for every
@@ -251,7 +265,7 @@ not a rebuild of the entire dependency tree. Full details and remaining
 Sobolev/spectral obligations are in [the progress log](PROGRESS.md).
 
 
-Latest milestone: the scalar clause of Theorem 1 is proved on its exact
+Previous milestone: the scalar clause of Theorem 1 is proved on its exact
 complex H^m domain, using the analytic physical even Hamiltonian extension.
 The full endpoint Frechet first variation is also certified. All 63
 article/shared modules and the NLS aggregate compiled; the targeted audit
@@ -261,3 +275,16 @@ inventory contains 330 theorem/definition declarations (256 theorems,
 74 definitions). This used pinned cached imports, not a rebuild of the
 entire dependency tree. The full vector-field and spectral obligations are
 recorded in [the progress log](PROGRESS.md).
+
+
+Latest milestone: both Theorem 1 clauses hold on every original complex H^m
+input for the independently constructed scalar Hill/Miura hierarchy, with
+actual Frechet gradients and the genuine physical distribution derivative.
+All 71 article/shared modules and the NLS aggregate compiled. The targeted
+transitive audit passed for 720 declarations and auxiliaries, and the
+combined audit for 45,903 NLS declarations, allowing only the three standard
+axioms. The public theorem/definition inventory is 369 declarations
+(285 theorems, 84 definitions; aliases excluded). This used pinned cached
+imports, not a rebuild of the entire dependency tree. Source spectral
+identification, native scalar extension, and the remaining main-theorem
+obligations are in [the progress log](PROGRESS.md).
