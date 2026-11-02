@@ -1,5 +1,29 @@
 # Appendix F: analyticity of the primitive
 
+## Collapsed-gap formulas on the original domains
+
+The [original-domain collapsed-gap proofs](../NLS/ZakharovShabat/AppendixFOriginalCollapsed.lean)
+extend the derivative formula -i*chi_n throughout the whole omitted-gap
+domain. Every C1 path in the original closed isolating disc computes
+the actual endpoint average, including paths through the collapsed
+point. The straight segment retains the coefficient -i*(nu-tau_n).
+
+The regular chi_n formula is analytic on the original source
+neighborhood V. Given a cover of V by source Cauchy charts, it agrees
+with the endpoint average on the collapsed-gap locus. The auxiliary
+chart may vary with the source; the original disc and terminal point
+stay fixed. No containment in an auxiliary Cauchy disc is required.
+
+One module adds five positive theorems and no new definitions,
+examples or refutations.
+
+The full check passed: 8,631 build jobs, 7,729 public examples and an axiom audit of 44,941 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The 31-group ordered Appendix F comparison remains open. Open-gap
+source-path assembly and the exact midpoint-spoke decomposition with
+its vanishing short-piece remainder remain separate.
+The [broader completion qualifications](COMPLETENESS.md) remain.
+
 ## Actual-source bounds and integral convergence
 
 The [actual-source convergence proofs](../NLS/ZakharovShabat/AppendixFSourceDomination.lean)

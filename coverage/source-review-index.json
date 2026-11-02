@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-01T23:42:06.383000+00:00",
-  "base_commit": "9e78f63a8d861996e3af03a2eb78c320a1aa8a6a",
+  "published_utc": "2026-11-02T00:04:28.780298+00:00",
+  "base_commit": "65221e23e6cb65897a8d5f2f766a55e8a95ebc49",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 199,
-    "module_hash_checks": 4205,
-    "distinct_modules": 2126
+    "review_records": 200,
+    "module_hash_checks": 4210,
+    "distinct_modules": 2127
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "9e78f63a8d861996e3af03a2eb78c320a1aa8a6a",
-    "validated_state": "Fresh full check after one Appendix F source-integral convergence module; public examples unchanged.",
+    "base_commit": "65221e23e6cb65897a8d5f2f766a55e8a95ebc49",
+    "validated_state": "Fresh full check after one Appendix F original-domain collapsed-gap formulas module; public examples unchanged.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8630,
+    "build_jobs": 8631,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 44935,
+    "transitive_NLS_declarations": 44941,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 35513,
+    "gate_session": 82483,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4892,
-      "sha256": "df51f8801d3697e83163321fac32aa82448657d0e28de5817d49c96c9d9f9bc9"
+      "files": 4893,
+      "sha256": "fd7869fdc776b3cf341ee8134cb60225db3b6be8d20ac924b7d5b4088a553bf7"
     },
-    "full_gate_log_sha256": "5157213e8ff68b4ba8854f0eab9b409e1e93bf8559ba0f3f4186102a188484d6",
+    "full_gate_log_sha256": "e64d6d46779f2c91396f25879f7ebd4f56a857cd74aed6282cf29ec7ce596c4e",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix F and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixFSourceDominationFullCheck.log"
+    "full_gate_log": "work/AppendixFOriginalCollapsedFullCheck.log"
   },
   "named_statements": [
     {
@@ -67316,6 +67316,138 @@
         "log_sha256": "5157213e8ff68b4ba8854f0eab9b409e1e93bf8559ba0f3f4186102a188484d6"
       },
       "source_record_sha256": "596e9ee60cb22e0f4cbb7317b242a1ad18268fbd15450298687ebbe7f9b9c89c"
+    },
+    "AppendixFOriginalCollapsedSourceComparison-2026-10-31": {
+      "status": "current_public_source_comparison",
+      "base_commit": "65221e23e6cb65897a8d5f2f766a55e8a95ebc49",
+      "updated_utc": "2026-11-02T00:04:28.723978+00:00",
+      "source_lines": [
+        [
+          10966,
+          10969
+        ],
+        [
+          10966,
+          10969
+        ],
+        [
+          10966,
+          10969
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            10966,
+            10969
+          ],
+          "requirement": "Derivative throughout the omitted-gap domain",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_derivative_omitted"
+          ],
+          "reviewed_claims": [
+            "The collapsed primitive derivative equals -i times the literal chi_n product throughout the whole omitted-gap domain."
+          ],
+          "qualification": "Only the selected collapsed point uses the auxiliary Cauchy chart; the original differential supplies the remaining points."
+        },
+        {
+          "source_lines": [
+            10966,
+            10969
+          ],
+          "requirement": "Arbitrary original-disc paths and exact segment formula",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_original_path",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_original_segment"
+          ],
+          "reviewed_claims": [
+            "Every C1 path in the original closed disc, including crossings of the collapsed point, computes the actual endpoint average.",
+            "The straight segment retains the exact -i*(nu-tau_n) coefficient."
+          ],
+          "qualification": "The source belongs to a Cauchy chart, but the original disc need not be contained in its auxiliary spectral disc."
+        },
+        {
+          "source_lines": [
+            10966,
+            10969
+          ],
+          "requirement": "Analytic extension on the unchanged original source domain",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_original_chi_integral_analytic",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_original_collapsed_analytic_extension"
+          ],
+          "reviewed_claims": [
+            "The regular literal chi_n segment formula is Banach analytic on the original V.",
+            "A source Cauchy-chart cover identifies its collapsed restriction with the actual endpoint average at a fixed original boundary point."
+          ],
+          "qualification": "The chart-cover hypothesis is explicit. Auxiliary charts may vary with the source; neither the source domain nor the original disc is shrunk by the theorem."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/AppendixFCollapsedPath.lean": "5015384d561089ded27d840b4636606b81a9c646bf8bd6f333ce35bd8b3bcdd3",
+        "NLS/ZakharovShabat/AppendixFCollapsedAnalytic.lean": "f9a26430d18ff25cd377a9dd8f74443037836a2735cdb87c144b32e2553f491a",
+        "NLS/ZakharovShabat/AppendixFSourceSpokes.lean": "7fe83dc2d1625aafa5a4ad28560178714be32f1efc173019a0801ec124e6a9bd",
+        "NLS/ZakharovShabat/SourceActionChi.lean": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4",
+        "NLS/ZakharovShabat/AppendixFOriginalCollapsed.lean": "db44f7d2fa36e91f471efe3d0cc52ddb47e0c4e27b665c47591b77eab3f70c22"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/AppendixFCollapsedPath.lean",
+        "NLS/ZakharovShabat/AppendixFCollapsedAnalytic.lean",
+        "NLS/ZakharovShabat/AppendixFSourceSpokes.lean",
+        "NLS/ZakharovShabat/SourceActionChi.lean",
+        "NLS/ZakharovShabat/AppendixFOriginalCollapsed.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all 31 ordered Appendix F groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_original_chi_integral_analytic",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_derivative_omitted",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_original_path",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_original_segment",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_original_collapsed_analytic_extension"
+      ],
+      "declaration_inventory_count": 44941,
+      "qualification": "One module adds five positive theorems reconciling the collapsed-gap formulas with the original isolating disc. The primitive derivative is -i times the literal chi_n product on the whole omitted-gap domain. Every C1 path in the original closed disc computes the actual endpoint average, with the exact segment displacement. The regular chi_n formula is analytic on the original V. An explicit cover of V by source Cauchy charts identifies its collapsed restriction with the actual endpoint average, allowing the auxiliary chart to vary with the source. No inclusion of the original spectral disc in a Cauchy disc is needed. Open-gap assembly and the source-specific short-piece identity remain separate. No new definition, example or refutation is added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          131,
+          132,
+          133,
+          134
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271",
+          "work/tmp/pdfs/appendix-f-ordered-132.png": "a96d8aaab751ae81affe9f561e4c85c18cd84f4a74e021d7a2d10eebe106ecac",
+          "work/tmp/pdfs/appendix-f-ordered-133.png": "b15b972871d0116e43cfcfaedacd02307f64124d54384756f66901907be92a9c",
+          "work/tmp/pdfs/appendix-f-ordered-134.png": "e833be52e2f68ebb794206466caa59bcb046e4d5f773cdb83c46b941f5d43656"
+        }
+      },
+      "preceding_review_hash": "596e9ee60cb22e0f4cbb7317b242a1ad18268fbd15450298687ebbe7f9b9c89c",
+      "validation_lean_sources": {
+        "files": 4893,
+        "sha256": "fd7869fdc776b3cf341ee8134cb60225db3b6be8d20ac924b7d5b4088a553bf7"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 5,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_original_path._simp_1_1"
+      ],
+      "full_gate": {
+        "session": 82483,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixFOriginalCollapsedFullCheck.log",
+        "log_sha256": "e64d6d46779f2c91396f25879f7ebd4f56a857cd74aed6282cf29ec7ce596c4e"
+      },
+      "source_record_sha256": "1f26630861e4dcf6ad722cd365b3e1b8c74acac6ae34fbebd517875bbb9fd259"
     }
   }
 }

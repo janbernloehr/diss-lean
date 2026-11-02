@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix F source-integral convergence](coverage/APPENDIX_F.md)
-derives common chi_n bounds and measurability, then proves convergence
-of the actual normalized-root integrals along one common admissible
-spoke for each member of a convergent source sequence. Four positive
-theorems add no new refutation. Identification with the improper
-endpoint average and the [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: [Appendix F original-domain formulas](coverage/APPENDIX_F.md)
+proves the collapsed endpoint formula on the original isolating disc
+and an analytic extension on the original source neighborhood under
+an explicit chart-cover hypothesis. Five positive theorems add no
+new refutation. The midpoint-spoke decomposition and the
+[broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

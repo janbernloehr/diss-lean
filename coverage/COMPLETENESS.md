@@ -225,6 +225,14 @@ under explicit measurability and regular-factor hypotheses; eventual
 normalized-gap smallness is derived. Seventeen positive theorems and
 three examples add no new refutation. Full source-family assembly,
 other-gap exclusion and improper-path substitutions remain open.
+The [Appendix F original-domain collapsed-gap proofs](APPENDIX_F.md)
+identify the actual endpoint average along every C1 path in the original
+closed disc. The regular chi_n formula is analytic on the original V;
+a cover by source Cauchy charts identifies its collapsed restriction.
+The auxiliary chart may vary with the source. Five positive theorems
+add no new refutation. Open-gap assembly and the midpoint-spoke
+decomposition with its vanishing remainder remain separate.
+
 The [Appendix F source-integral convergence proofs](APPENDIX_F.md)
 derive uniform chi_n bounds and measurability and give convergence of
 the actual normalized-root integrals with the full -i coefficient.
