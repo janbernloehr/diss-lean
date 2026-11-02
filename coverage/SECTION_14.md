@@ -3,8 +3,8 @@
 ## Ordered overview comparison and explicit working domain
 
 The eighteen passage groups in Section 14's overview are now classified:
-thirteen matched, one with an explicit common-domain restriction, one
-partial external comparison and three contextual remarks.
+fourteen matched, one with an explicit common-domain restriction and three
+contextual remarks, using the [accepted manuscript reference](ACCEPTED_REFERENCE.md).
 
 All five properties of Theorem 14.1 hold for the actual rectangular map
 on the constructed compatible complex neighborhood. The review records
@@ -19,21 +19,23 @@ finite-gap collision approximation, canonical mode preimages and the
 compact-perturbation Fredholm argument. The actual angle flows give the
 stronger-exponent displacement used in the surjectivity reduction.
 
-The exact comparison with the 2014 edition of [23] remains unresolved.
+The supplied manuscript is the accepted reference. Identity with the 2014
+edition is outside the agreed scope; earlier mentions of that requirement
+below describe the previous scope.
 The p>2 open question is recorded as a historical statement; the proposed
 minimal decay and related-equation references are contextual.
 
-This step freshly inspected 49 module bodies and resolved 70 declarations.
+The original ordered review inspected 49 module bodies and resolved 70 declarations.
 Existing proofs supply the mathematical results. No Lean theorem,
 definition, example or refutation was added.
 
 See the [ordered Section 14 ledger](SECTION_14_ASSERTIONS.md).
 
-This documentation-only step reuses the exact Lean and dependency snapshot of commit `5e8a261`. The completed full check on that snapshot passed 8,557 build jobs, 7,631 public examples and the transitive axiom audit of 44,598 NLS declarations, with 21 inherited warnings and no new warnings. No new full build is claimed. Current source hashes, declaration references, review integrity and documentation links are checked separately.
+The original ordered review reused the validated snapshot at `5e8a261`: 8,557 build jobs, 7,631 public examples and 44,598 audited NLS declarations. The reference adoption reuses the later unchanged proof snapshot documented in the [completion assessment](COMPLETENESS.md), with current evidence hashes and links checked separately.
 
-Next is Section 15, Analyticity. The overview comparison does not certify
-the later Chapter 3 arguments or the whole dissertation; wider qualifications
-remain in the [completion assessment](COMPLETENESS.md).
+The later chapter comparisons are recorded in the whole-dissertation index.
+Current scope and retained qualifications are in the
+[completion assessment](COMPLETENESS.md).
 
 Earlier entries retain their historical scope and validation.
 
@@ -62,7 +64,7 @@ Dirichlet-minus-periodic-midpoint displacement, as recorded below. The exact
 | Theorem 14.1(iii): canonical | `D.toSourceSection14OriginalData.canonical`, `D.complex.mixed_fourier_canonical` | All three brackets on the real locus, as in Lemma 15.3; actual coordinate derivatives and absolutely convergent Fourier pairings, including p<2 |
 | Theorem 14.1(iv): injective, local diffeomorphism, open dense image | `D.toSourceSection14OriginalData.real_geometry` | Actual real map; analytic local inverse at every point with both inverse identities |
 | Theorem 14.1(v): onto for 1<p≤2 | `D.toSourceSection14OriginalData.global_inverse` | Homeomorphism equal to the actual real map; forward and inverse maps analytic on their entire spaces |
-| Remark 14.2(i): agreement with the external Hilbert-space map | `sourceSection14_physicalHilbert`, `realSourcePhysicalL2Equiv`; 2013 manuscript audit below | Exact physical source and target Hilbert norms, global analytic real inverse, complex extension, and physical action contour integrals are proved. Independent physical spectral labels, canonical product, psi-functions, terminal-sheet angles, and the full integral-defined physical map are identified below for the inspected 2013 conventions. The literal physical canonical brackets and the exact Fourier derivatives of the intrinsic physical map and inverse at zero are now proved as well. The precise 2014 construction comparison remains unproved. |
+| Remark 14.2(i): agreement with the external Hilbert-space map | `sourceSection14_physicalHilbert`, `realSourcePhysicalL2Equiv`; 2013 manuscript audit below | Exact physical source and target Hilbert norms, global analytic real inverse, complex extension, and physical action contour integrals are proved. Independent physical spectral labels, canonical product, psi-functions, terminal-sheet angles, and the full integral-defined physical map are identified below for the inspected 2013 conventions. The literal physical canonical brackets and the exact Fourier derivatives of the intrinsic physical map and inverse at zero are now proved as well. The accepted manuscript supplies the reference conventions; published-edition identity is outside scope. |
 | Remark 14.2(ii): p>2 surjectivity | No such claim | The source states this as an open question |
 | Remark 14.2(iii): positive smoothness | `sourceSection14_sobolev_characterization`, `sourceSection14_sobolev_open_dense`, `sourceSection14_sobolev_continuous_bijective` | Exact original source/gap/output regularity at every real t>=0; continuous injection with open dense image for every finite p>1, bijective for 1<p<=2. Both weighted inverse identities and inverse exponent compatibility hold. Canonical coordinate identities and full native weighted complex analyticity are proved, with exact raw coefficients and compatibility of the full bounded Jacobian with unweighted inclusions. Full weighted complex exponent compatibility, native real analyticity, and native complex Jacobian bijectivity are proved. Actual complex analytic local inverses have both inverse germs. Real analytic local inverses and the analytic inverse on the actual open image are now constructed for every spectral weight. For 1<p<=2 the native Sobolev bijection is a homeomorphism with analytic inverse and the exact strict inverse derivative. These positive-smoothness inverse properties are supplied by `sourceSection14_sobolev_global_analytic_inverse`. |
 

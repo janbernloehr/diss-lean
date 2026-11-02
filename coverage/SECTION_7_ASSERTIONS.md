@@ -10,8 +10,7 @@ smooth physical velocity formula. On 2026-11-02 the user accepted this precise,
 explicitly smooth interpretation of the informal direction remark. S7-013 has a proved corrected
 product, exact periods and uniqueness of the entire function among all
 stated complex products, without root placement or root reality assumptions. The corrected
-real codimension in S7-014 is two. The exact cited 2014 construction remains
-a separate qualification. Existing focused proofs are in [Section 7](SECTION_7.md).
+real codimension in S7-014 is two. The supplied manuscript is the [accepted reference](ACCEPTED_REFERENCE.md). Existing focused proofs are in [Section 7](SECTION_7.md).
 
 Source locations use the pinned text extraction recorded in the
 [source-review index](source-review-index.json). The three rendered source
@@ -262,8 +261,8 @@ and [the actual real rough source](../NLS/ZakharovShabat/SourceSection7RoughInpu
 S7-002 is closed under the accepted smooth-solution interpretation.
 The exact smooth physical NLS velocity and sign formula remain the precise claim.
 Physical Dirichlet nonconservation and the unrestricted psi-function
-characterization remain proved. The exact cited 2014 Birkhoff construction
-and the broader source reconciliation remain open. Appendix G.2 adopts
+characterization remain proved. The supplied manuscript is accepted for
+the Birkhoff reference comparison. Appendix G.2 adopts
 the proved explicit integral-norm correction while retaining the source
 convention qualification. These remaining qualifications are recorded in
 [the completion assessment](COMPLETENESS.md).

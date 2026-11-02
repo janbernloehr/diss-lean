@@ -1,6 +1,14 @@
 # Implementation status
 
-## Current milestone: positive corrections to Lemmas 3.2 and 3.4
+## Current milestone: accepted reference and closed tracked requirements
+
+The user accepted the supplied Grébert–Kappeler manuscript as the reference and removed the published-edition identity requirement. The [reference correspondence](coverage/ACCEPTED_REFERENCE.md) connects its formulas and theorems to the existing physical Hilbert and Sobolev maps. S14-010, S17-007 and S18-003 are now matched. Together with the accepted smooth-solution interpretation of S7-002, this closes all explicitly partial or pending source groups.
+
+The [completion assessment](coverage/COMPLETENESS.md) retains the adopted constants, integral H1 norm, domains and other qualifications. The [whole-dissertation inventory](coverage/WHOLE_DISSERTATION.md) contains 41 units and 1,229 groups, with no unpublished implementation queue. All historical evidence remains available.
+
+No Lean changes were needed. The exact existing proof snapshot passed 8,662 build jobs, 7,729 public examples and the transitive axiom audit for 45,245 NLS declarations, with 21 inherited warnings. The reference update checks source-evidence integrity, document hashes and links separately. Earlier milestones below describe their then-current scope and validation.
+
+## Previous milestone: positive corrections to Lemmas 3.2 and 3.4
 
 The [positive subsum proofs](NLS/ZakharovShabat/SourceLemma34CorrectedSubsums.lean) supply explicit corrected constants for the intermediate bounds in Lemma 3.4. Eight positive theorems and one definition add no refutations or public examples.
 

@@ -1,5 +1,7 @@
 # Dissertation coverage audit
 
+Current scope uses the [accepted manuscript reference](coverage/ACCEPTED_REFERENCE.md) and the smooth-solution interpretation of Section 7. The [completion assessment](coverage/COMPLETENESS.md) records closure of the tracked requirements and retains the exact source qualifications. Earlier edition-identity requirements below are historical.
+
 This is a focused map of the dissertation's introductory results to the
 current public Lean API. It is not a completeness certificate for every
 chapter or appendix. All paths below are relative to the repository root;
@@ -31,7 +33,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 | Theorems 1.1, 1.4 and Proposition 3.1 corrected heights | [Overview](coverage/SPECTRAL_OVERVIEW.md), [period-two proof](coverage/SECTION_3.md) | Periodic coefficient 8*p and ordinary-boundary coefficient 8*p*E_p, original norms, common neighborhoods, full counts and exhaustion. Period-two input includes p=1; parity retains its period-one condition. Two new positive proofs; no new refutations. |
 | Proposition 5.2 corrected height, p.34 | [Positive proofs](coverage/SECTION_5.md) | (1+8*p*E_p*norm(phi))^p at every finite p>1; original norm, both central counts 2N+1, simple high roots and exhaustion on one common neighborhood. Two positive theorems; no new refutations. |
 | Complete source navigation | [Source index](coverage/WHOLE_DISSERTATION.md) | All nonblank text locations accounted for; original assessments and qualifications retained. |
-| Section 7 physical NLS velocity, p.45 | [Positive proofs](coverage/SECTION_7.md) | Exact physical NLS Dirichlet velocity and sheet multiplier for every smooth classical trajectory and the constructed global solution, with original Fourier sources and signed indices. The general Hilbert-space direction clause remains open. No new refutations. |
+| Section 7 physical NLS velocity, p.45 | [Positive proofs](coverage/SECTION_7.md) | Exact physical NLS Dirichlet velocity and sheet multiplier for every smooth classical trajectory and the constructed global solution, with original Fourier sources and signed indices. The user accepted this precise smooth-solution interpretation; its hypotheses and real multiplier remain explicit. No new refutations. |
 | Bibliography, pp.141–144 | [Source context](coverage/BIBLIOGRAPHY.md) | 67 contextual attributions; no claim of validating cited external results. |
 | Notations, p.145 | [Definition comparison](coverage/NOTATIONS_ASSERTIONS.md) | 38 qualified definition matches; original spaces, physical conjugation, operators, pairings, integrals, products and roots. |
 | native periodic conjugation, p.145 | [Positive proofs](coverage/SECTION_2.md) | Actual smooth-test conjugation, exact symmetric weighted norm, and the original real-pair condition at every positive period, real Sobolev order and Banach exponent. No new refutations. |

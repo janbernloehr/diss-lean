@@ -25,11 +25,11 @@ The inventory contains 1,229 groups in 41 units, plus 293 inspected navigation f
 | [section 11](SECTION_11_ASSERTIONS.md) | 22 | 2 corrected; 20 matched |
 | [section 12](SECTION_12_ASSERTIONS.md) | 67 | 12 corrected; 55 matched |
 | [section 13](SECTION_13_ASSERTIONS.md) | 14 | 14 matched |
-| [section 14](SECTION_14_ASSERTIONS.md) | 18 | 3 contextual; 1 corrected; 13 matched; 1 partial |
+| [section 14](SECTION_14_ASSERTIONS.md) | 18 | 3 contextual; 1 corrected; 14 matched |
 | [section 15](SECTION_15_ASSERTIONS.md) | 15 | 3 corrected; 12 matched |
 | [section 16](SECTION_16_ASSERTIONS.md) | 27 | 7 corrected; 20 matched |
-| [section 17](SECTION_17_ASSERTIONS.md) | 31 | 1 contextual; 8 corrected; 21 matched; 1 partial |
-| [section 18](SECTION_18_ASSERTIONS.md) | 39 | 5 contextual; 5 corrected; 28 matched; 1 partial |
+| [section 17](SECTION_17_ASSERTIONS.md) | 31 | 1 contextual; 8 corrected; 22 matched |
+| [section 18](SECTION_18_ASSERTIONS.md) | 39 | 5 contextual; 5 corrected; 29 matched |
 | [section 19](SECTION_19_ASSERTIONS.md) | 48 | 5 contextual; 8 corrected; 35 matched |
 | [section 20](SECTION_20_ASSERTIONS.md) | 56 | 2 contextual; 8 corrected; 46 matched |
 | [section 21](SECTION_21_ASSERTIONS.md) | 34 | 2 contextual; 5 corrected; 27 matched |
@@ -56,17 +56,9 @@ The notation groups compare definitions. Bibliography entries are contextual att
 
 ## Explicit partial or pending groups
 
-The table lists groups carrying these exact statuses. Other qualifications remain in the linked reviews, including the detailed assessments in the earlier chapters.
+There are no partial or pending groups in the current inventory and no unpublished implementation queue. S14-010, S17-007 and S18-003 use the [accepted manuscript reference](ACCEPTED_REFERENCE.md). Their mathematical proofs and the reference conventions are recorded separately; identity with the published 2014 edition is outside scope.
 
-| Group | Source lines | Assessment |
-| --- | --- | --- |
-| [S14-010](SECTION_14_ASSERTIONS.md) | 5968–5968 | partial |
-| [S17-007](SECTION_17_ASSERTIONS.md) | 6397–6399 | partial |
-| [S18-003](SECTION_18_ASSERTIONS.md) | 6662–6670 | partial |
-
-The exact comparison with the cited 2014 Birkhoff construction remains qualified in Sections 14, 17 and 18. A proved internal construction does not establish that external-edition identification.
-
-On 2026-11-02 the user accepted the precise smooth-solution interpretation of Section 7's sheet-sign direction remark. S7-002 is corrected, with the smoothness hypotheses and additional real multiplier retained. The three explicitly partial groups above concern the cited 2014 construction.
+The user accepted the precise smooth-solution interpretation of S7-002, including its real velocity multiplier. All other domain, norm and constant qualifications remain in the linked reviews and [completion assessment](COMPLETENESS.md).
 
 ## Corrections and validation
 

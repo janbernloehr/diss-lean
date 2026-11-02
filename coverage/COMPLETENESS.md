@@ -1,24 +1,24 @@
 # Current completion assessment
 
-The dissertation formalization is not yet certified complete. The [whole-dissertation index](WHOLE_DISSERTATION.md) connects 41 units and 1,229 source groups to their existing comparisons. Every nonblank source line is accounted for, including 293 separately inspected navigation fragments. These counts establish navigation and traceability; they are not proof-completion percentages.
+The recorded implementation and source-review workflow is complete under the accepted reference, interpretations and explicit corrections below. The current inventory has no partial or pending groups and no unpublished implementation queue. This closes the tracked requirements; it is not a claim that every printed assertion is true verbatim.
 
-The latest [positive constant corrections](SECTION_3.md) prove the literal Lemma 3.4 near and far bounds at every finite Banach exponent, including p=1, every signed center, and 0<r<=1 (covering the printed radius range). The near coefficient is 4*p^2/r^2 with the exact Fourier remainder; the far coefficient is 64*p^2/r^2 with (r+abs(n))^(-1/p) decay. Lemma 3.2 adopts the proved two-component factor 2^(1-1/p) for nonzero imaginary part. Corrected spectral heights and their contour arguments are also published. No new refutations were added in these steps.
+The [whole-dissertation index](WHOLE_DISSERTATION.md) connects 41 units and 1,229 source groups to their comparisons, with every nonblank source line accounted for and 293 separately inspected navigation fragments. The 161 named comparisons and these navigation counts describe scope, not proof-completion percentages. The mathematical evidence and exact qualifications remain in the individual reviews.
 
-## Remaining requirements
+## Accepted scope and retained qualifications
 
-On 2026-11-02 the user accepted the precise smooth-solution interpretation of the informal Section 7 direction remark. [S7-002](SECTION_7_ASSERTIONS.md) is therefore corrected and closed: the proved velocity formula retains its additional real multiplier and smoothness hypotheses. This does not assert differentiability for arbitrary rough L2 solutions.
-
-| Source passage | Established evidence | Still required |
-| --- | --- | --- |
-| [Section 14, S14-010](SECTION_14_ASSERTIONS.md), [Section 17, S17-007](SECTION_17_ASSERTIONS.md), and [Section 18, S18-003](SECTION_18_ASSERTIONS.md) | The physical Hilbert map, its analytic global inverse, and weighted Sobolev canonical maps are constructed internally. Earlier-manuscript conventions have been compared. | Compare the construction with the exact 2014 edition of Grébert–Kappeler cited as [23]. The inspected 2013 manuscript and earlier drafts do not establish that edition identity. |
-
-These are the explicitly partial source groups. Other rows retain their detailed corrections and domain qualifications. In particular, [Appendix G.2](APPENDIX_G.md) uses the adopted explicit integral H1 norm and length factor sqrt(t^(-1)+t); the source does not specify its local norm. The proved unit-interval consequence remains available. Finite-exponent, endpoint-realization and infinity-norm qualifications remain in the original section comparisons.
+- The supplied Grébert–Kappeler manuscript is the [accepted reference](ACCEPTED_REFERENCE.md). Its construction conventions, Theorem 19.3 and Sobolev Theorem 20.2 are compared with the existing physical and weighted maps. S14-010, S17-007 and S18-003 are matched under that reference choice. Identity with the published 2014 edition is outside scope.
+- The user accepted the precise smooth-solution interpretation of [S7-002](SECTION_7_ASSERTIONS.md). The proved velocity formula retains its additional real multiplier and smoothness hypotheses. Differentiability for arbitrary rough L2 solutions is not asserted.
+- The [positive constant corrections](SECTION_3.md) retain the literal near coefficient 4*p^2/r^2, far coefficient 64*p^2/r^2 and exact Fourier remainder, for all finite Banach exponents, signed centers and 0<r<=1. Lemma 3.2 uses the proved factor 2^(1-1/p); corrected spectral heights and contour arguments remain adopted.
+- [Appendix G.2](APPENDIX_G.md) uses the explicit integral H1 norm and proved length factor sqrt(t^(-1)+t). The source leaves its local norm unspecified; the implemented convention is explicit. Other finite-exponent, endpoint, domain and infinity-norm qualifications remain in their source comparisons.
+- Contextual attributions and historical open questions are recorded as context. They are not additional mathematical theorems certified by this project. Earlier refutations are preserved; this completion update adds none.
 
 ## Validation and publication
 
-The latest proof snapshot passed 8,662 build jobs, all 7,729 public examples and the transitive axiom audit for 45,245 NLS declarations. Its 21 inherited warnings are unchanged, with no new warnings. This documentation reconciliation reuses that identical Lean snapshot. The [source review index](source-review-index.json) and [source assertion inventory](source-assertion-inventory.json) retain exact evidence rows and source intervals.
+The unchanged Lean and dependency snapshot passed 8,662 build jobs, all 7,729 public examples and the transitive axiom audit for 45,245 NLS declarations. Its 21 inherited warnings are unchanged. This reference and scope reconciliation adds no Lean declarations and reuses that exact validated snapshot.
 
-Each completed implementation step is committed and pushed. Current validation is necessary evidence for the formalization, but it does not resolve the remaining reference-edition requirement. Literal printed discrepancies and their adopted positive corrections remain distinguished.
+The final integrity checks verify the [source review index](source-review-index.json), all source-inventory evidence references, current document hashes, documentation links and unchanged Lean snapshot. Every historical proof-evidence row is retained. The source line accounting, scope decisions and proof validation are distinct checks.
+
+Each completed implementation step is committed and pushed. The current source inventory has no outstanding implementation requirement. Earlier statements below about waiting for the exact 2014 edition or the Section 7 interpretation describe previous scope and are superseded by the accepted choices above.
 
 ## Historical assessments
 

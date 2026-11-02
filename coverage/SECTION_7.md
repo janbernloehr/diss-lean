@@ -12,7 +12,7 @@ Twenty-four positive theorems and seven definitions add no public examples or re
 
 The full check passed: 8,658 build jobs, 7,729 public examples and an axiom audit of 45,195 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
 
-The interpretation update adds no Lean declarations and reuses the unchanged validated proof snapshot. The exact cited 2014 construction comparison remains open. Correct constants directly and commit and push each completed step.
+The interpretation update adds no Lean declarations and reuses the unchanged validated proof snapshot. The supplied manuscript is now the [accepted reference](ACCEPTED_REFERENCE.md). Correct constants directly and commit and push each completed step.
 The [broader completion qualifications](COMPLETENESS.md) remain.
 
 ## Previous source review

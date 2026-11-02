@@ -1,10 +1,10 @@
 {
   "status": "published_source_navigation",
-  "updated_utc": "2026-11-02T08:43:19.205355+00:00",
-  "base_commit": "6ba6954eb7fbd7a83d9cabe30cfa22fac3b509d7",
+  "updated_utc": "2026-11-02T08:52:26.426628+00:00",
+  "base_commit": "68e63a1a562261d436eb6ce102f18dfccaabc6e4",
   "source_text_sha256": "64640083a811e0e05710297d056d23d7e1f2aadad7fb1f1a1271819b90978619",
   "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
-  "published_source_index_sha256": "9f90c3270a25e43fe318ddf64270cae4c7e7f3c59d9840f7a2787f59717c63b8",
+  "published_source_index_sha256": "7beb4fb95f8517f0cee253c98c10985f77e5a121019f046eed7f846e4daf46a4",
   "scope": "Consolidation of existing source assessments, not a fresh semantic audit of all transitive dependencies.",
   "completion_claim": false,
   "units": [
@@ -11589,7 +11589,7 @@
     {
       "unit": "section_7",
       "document": "coverage/SECTION_7_ASSERTIONS.md",
-      "document_sha256": "9fd675ee6ccd963c0d67f540212495d0b8edd5e08af6ec645501d3436d8c315e",
+      "document_sha256": "9bc005cca6dac37a3e80d767ba5d5ac6f4bc93a73c4ee6cee395d697e952f938",
       "groups": [
         {
           "group": "S7-001",
@@ -21743,7 +21743,7 @@
     {
       "unit": "section_14",
       "document": "coverage/SECTION_14_ASSERTIONS.md",
-      "document_sha256": "9722829fc52c77187484478148ac8d9303aa377b5cd6cab414b64f77ff0a201c",
+      "document_sha256": "642ae7bc7fd5281b05dc381ad2115dd83fa2a03d685793a11846b4b66183db82",
       "groups": [
         {
           "group": "S14-001",
@@ -22124,7 +22124,7 @@
         },
         {
           "group": "S14-010",
-          "assessment": "partial",
+          "assessment": "matched",
           "source_lines": [
             [
               5968,
@@ -22157,7 +22157,13 @@
                 "qualification": "The mathematical Hilbert map is constructed, but the precise external-edition comparison remains unresolved. This row is not marked proved."
               }
             }
-          ]
+          ],
+          "accepted_reference": {
+            "pdf_sha256": "eceee60e4bd785605a1404c0449ebb08bcc454bf6e71d0a0c30bc13a27509849",
+            "decision_date": "2026-11-02",
+            "comparison_document": "coverage/ACCEPTED_REFERENCE.md",
+            "qualification": "Matched under the explicitly accepted manuscript reference. No identity between editions is asserted."
+          }
         },
         {
           "group": "S14-011",
@@ -24165,7 +24171,7 @@
     {
       "unit": "section_17",
       "document": "coverage/SECTION_17_ASSERTIONS.md",
-      "document_sha256": "b08681db75c08a966c8c3b4d072840faa5c7cc252ef679f3202fe2563f3ecdfd",
+      "document_sha256": "32d4d4197e1369a888623f0dc2d256c6e4ff28329e17933a544018bff7f9eab6",
       "groups": [
         {
           "group": "S17-001",
@@ -24403,7 +24409,7 @@
         },
         {
           "group": "S17-007",
-          "assessment": "partial",
+          "assessment": "matched",
           "source_lines": [
             [
               6397,
@@ -24441,7 +24447,13 @@
                 "qualification": "Partial denotes the retained external-edition comparison only. The internal Hilbert inverse is a proved theorem, not an assumption."
               }
             }
-          ]
+          ],
+          "accepted_reference": {
+            "pdf_sha256": "eceee60e4bd785605a1404c0449ebb08bcc454bf6e71d0a0c30bc13a27509849",
+            "decision_date": "2026-11-02",
+            "comparison_document": "coverage/ACCEPTED_REFERENCE.md",
+            "qualification": "Matched under the explicitly accepted manuscript reference. No identity between editions is asserted."
+          }
         },
         {
           "group": "S17-008",
@@ -25400,7 +25412,7 @@
     {
       "unit": "section_18",
       "document": "coverage/SECTION_18_ASSERTIONS.md",
-      "document_sha256": "0b075c76d7e6bcf6cabbbf06320657df9dd0147b37bfd2dfc95b570eef72d652",
+      "document_sha256": "87e82fab484228d35ba99a53f351c575740416b06c5cad2f919cf1a973dfc9a0",
       "groups": [
         {
           "group": "S18-001",
@@ -25483,7 +25495,7 @@
         },
         {
           "group": "S18-003",
-          "assessment": "partial",
+          "assessment": "matched",
           "source_lines": [
             [
               6662,
@@ -25519,7 +25531,13 @@
                 "printed_page": 83
               }
             }
-          ]
+          ],
+          "accepted_reference": {
+            "pdf_sha256": "eceee60e4bd785605a1404c0449ebb08bcc454bf6e71d0a0c30bc13a27509849",
+            "decision_date": "2026-11-02",
+            "comparison_document": "coverage/ACCEPTED_REFERENCE.md",
+            "qualification": "Matched under the explicitly accepted manuscript reference. No identity between editions is asserted."
+          }
         },
         {
           "group": "S18-004",
@@ -51299,130 +51317,7 @@
       "assessment_convention": "Contextual attributions only; no validation of cited external results."
     }
   ],
-  "outstanding_published_groups": [
-    {
-      "unit": "section_14",
-      "group": "S14-010",
-      "assessment": "partial",
-      "source_lines": [
-        [
-          5968,
-          5968
-        ]
-      ],
-      "evidence": [
-        {
-          "review": "Section14OrderedSourceComparison-2026-10-30",
-          "field": "unnumbered",
-          "index": 9,
-          "source_record_sha256": "346e9ddb9e4763d942d3e947d77641e0cc6c961d30af5d6dd98676f2628e85fd",
-          "row": {
-            "ordered_group": "S14-010",
-            "source_lines": [
-              5968,
-              5968
-            ],
-            "printed_page": 73,
-            "requirement": "Remark 14.2(i): identification with the cited Hilbert-space construction.",
-            "status": "partial",
-            "ordered_status": "partial",
-            "declarations": [
-              "NLS.ZakharovShabat.sourceSection14_physicalHilbert"
-            ],
-            "reviewed_claims": [
-              "The current implementation constructs the physical Hilbert map, analytic global inverse, exact physical norm normalization, complex extension and literal action-angle formulas from the same original family.",
-              "The existing comparison with inspected 2013 manuscript conventions is preserved. This ordered review does not establish identity with the exact 2014 edition cited as [23]."
-            ],
-            "qualification": "The mathematical Hilbert map is constructed, but the precise external-edition comparison remains unresolved. This row is not marked proved."
-          }
-        }
-      ]
-    },
-    {
-      "unit": "section_17",
-      "group": "S17-007",
-      "assessment": "partial",
-      "source_lines": [
-        [
-          6397,
-          6399
-        ]
-      ],
-      "evidence": [
-        {
-          "review": "Section17OrderedSourceComparison-2026-10-30",
-          "field": "unnumbered",
-          "index": 6,
-          "source_record_sha256": "bb568c2dcb77453e3f9a9c5c3b43b1418411ebaea06ee1b1a2a37cb17a5fa4bf",
-          "row": {
-            "ordered_group": "S17-007",
-            "source_lines": [
-              6397,
-              6399
-            ],
-            "printed_page": 78,
-            "requirement": "The Hilbert base case and the cited external construction.",
-            "status": "partial",
-            "ordered_status": "partial",
-            "reviewed_claims": [
-              "The Hilbert map is internally proved globally bijective: the action-mass identity bounds sources, coefficient compactness and actual action continuity prove properness, and the trace identity gives a singleton zero fiber.",
-              "A closed local homeomorphism with a singleton fiber over the connected target is bijective. Its inverse agrees locally with the analytic inverses.",
-              "This proves the mathematical Hilbert base case used by the section. Equality with the exact construction in the cited 2014 edition of [23], Theorem 19.3, remains unverified."
-            ],
-            "declarations": [
-              "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_proper",
-              "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_eq_zero_iff",
-              "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_bijective",
-              "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertRealHomeomorph_symm_analytic",
-              "NLS.FunctionalAnalysis.bijective_of_closed_localHomeomorph_singleton_fiber"
-            ],
-            "qualification": "Partial denotes the retained external-edition comparison only. The internal Hilbert inverse is a proved theorem, not an assumption."
-          }
-        }
-      ]
-    },
-    {
-      "unit": "section_18",
-      "group": "S18-003",
-      "assessment": "partial",
-      "source_lines": [
-        [
-          6662,
-          6670
-        ]
-      ],
-      "evidence": [
-        {
-          "review": "Section18OrderedSourceComparison-2026-10-30",
-          "field": "unnumbered",
-          "index": 2,
-          "source_record_sha256": "d72824d23767d290da949f1348c863a06fd55a42ba58b743848a16ba090ad811",
-          "row": {
-            "ordered_group": "S18-003",
-            "source_lines": [
-              6662,
-              6670
-            ],
-            "requirement": "Sobolev canonical analytic Birkhoff diffeomorphism and weighted actions.",
-            "ordered_status": "partial",
-            "status": "partial",
-            "reviewed_claims": [
-              "The actual weighted Birkhoff map has a global real analytic inverse at every nonnegative real Sobolev order in the range 1<p<=2, hence at p=2 and every printed integer order.",
-              "Canonical brackets retain the physical factor -i and the rectangular sign convention. Weighted spectral actions are summable at every positive integer Sobolev order; the Hilbert case supplies summable actions at order zero."
-            ],
-            "declarations": [
-              "NLS.ZakharovShabat.NativeWeightedPeriodic.sobolevHomeomorph_analytic",
-              "NLS.ZakharovShabat.NativeWeightedPeriodic.birkhoff_canonical",
-              "NLS.ZakharovShabat.sourceWeightedAction_summable_on_Hm",
-              "NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.real_actions_mem"
-            ],
-            "qualification": "The mathematics is proved internally. Identification with the exact cited 2014 construction [23] remains qualified as in S17-007; inspecting the earlier 2013 manuscript does not close that external comparison.",
-            "printed_page": 83
-          }
-        }
-      ]
-    }
-  ],
+  "outstanding_published_groups": [],
   "navigation_span": [
     43,
     11894
@@ -57335,9 +57230,10 @@
   },
   "current_completion_assessment": {
     "document": "coverage/COMPLETENESS.md",
-    "scope": "Current requirements separated from preserved historical assessments.",
+    "scope": "All tracked requirements resolved under the accepted manuscript, smooth interpretation and explicit source corrections.",
     "completion_claim": false,
-    "proof_snapshot_reused_from_commit": "be2ce1ffa6db2dd141453e9b47473086d240be76"
+    "proof_snapshot_reused_from_commit": "be2ce1ffa6db2dd141453e9b47473086d240be76",
+    "accepted_scope_complete": true
   },
   "accepted_source_interpretations": [
     {
@@ -57358,5 +57254,27 @@
       "new_lean_proofs": 0,
       "new_refutations": 0
     }
-  ]
+  ],
+  "accepted_reference": {
+    "status": "accepted_by_user",
+    "date": "2026-11-02",
+    "title": "The defocusing NLS equation and its normal form",
+    "authors": [
+      "Benoît Grébert",
+      "Thomas Kappeler"
+    ],
+    "pdf_pages": 141,
+    "preface_date": "July 2013",
+    "pdf_sha256": "eceee60e4bd785605a1404c0449ebb08bcc454bf6e71d0a0c30bc13a27509849",
+    "decision": "Use the supplied manuscript as the reference; verification of identity with the 2014 edition is not required.",
+    "comparison_document": "coverage/ACCEPTED_REFERENCE.md",
+    "groups": [
+      "S14-010",
+      "S17-007",
+      "S18-003"
+    ],
+    "qualification": "Matched under the explicitly accepted manuscript reference. No identity between editions is asserted.",
+    "new_lean_proofs": 0,
+    "new_refutations": 0
+  }
 }

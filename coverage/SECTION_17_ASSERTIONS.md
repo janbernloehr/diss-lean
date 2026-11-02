@@ -1,6 +1,6 @@
 # Section 17 ordered assertion comparison
 
-All 31 ordered Section 17 passage groups are classified: 21 matched, eight corrected, one partial external-edition comparison and one contextual attribution. The actual original map is a local analytic diffeomorphism and globally injective for every finite p>1. Surjectivity, the global analytic inverse and complete isospectral images retain 1<p<=2. The Hilbert inverse is proved internally. The exact cited 2014 construction remains unverified in S17-007; this is not an unproved Hilbert-inverse premise. Corrected swapped canonical labels, selected enumeration indices, factor two, the 2N+1 cutoff and inward angle-flow signs are retained directly. The original theta flow is unique and C1 on its full pre-collapse interval, with continuous displacement in every finite exponent above one. Existing proofs supply the results; no Lean code or new refutation is added. Earlier source qualifications and the wider dissertation inventory remain unresolved.
+All 31 ordered Section 17 passage groups are classified: 22 matched, eight corrected and one contextual attribution. The actual original map is a local analytic diffeomorphism and globally injective for every finite p>1. Surjectivity, the global analytic inverse and complete isospectral images retain 1<p<=2. S17-007 is matched against Theorem 19.3 of the [accepted manuscript](ACCEPTED_REFERENCE.md); the Hilbert inverse is proved internally. Corrected swapped canonical labels, selected enumeration indices, factor two, the 2N+1 cutoff and inward angle-flow signs are retained directly. The original theta flow is unique and C1 on its full pre-collapse interval, with continuous displacement in every finite exponent above one. Existing proofs supply the results; no Lean code or new refutation is added. Earlier statement-specific qualifications remain explicit in the [completion assessment](COMPLETENESS.md).
 
 Source: printed pp. 78–81, text lines 6353–6624. Line numbers count newline characters,
 preserving form-feed characters. All four rendered pages were inspected.
@@ -13,7 +13,7 @@ preserving form-feed characters. All four rendered pages were inspected.
 | S17-004 | 6370–6374 | Canonical images with consistent swapped x/y labels. | corrected |
 | S17-005 | 6377–6384 | Dense modes and Jacobian invertibility, with the correct dual interpretation. | corrected |
 | S17-006 | 6388–6394 | Proposition 17.2: global injectivity. | matched |
-| S17-007 | 6397–6399 | The Hilbert base case and the cited external construction. | partial |
+| S17-007 | 6397–6399 | The Hilbert base case and the cited external construction. | matched |
 | S17-008 | 6400–6405 | Local inverse branches and Hilbert collision reduction. | matched |
 | S17-009 | 6409–6415 | Proposition 17.3: surjectivity for 1<p<=2. | matched |
 | S17-010 | 6418–6425 | Hilbert preimage and stronger-exponent membership goal. | matched |
@@ -123,7 +123,7 @@ The constructed original package has no supplied global-injectivity premise.
 
 - The Hilbert map is internally proved globally bijective: the action-mass identity bounds sources, coefficient compactness and actual action continuity prove properness, and the trace identity gives a singleton zero fiber.
 - A closed local homeomorphism with a singleton fiber over the connected target is bijective. Its inverse agrees locally with the analytic inverses.
-- This proves the mathematical Hilbert base case used by the section. Equality with the exact construction in the cited 2014 edition of [23], Theorem 19.3, remains unverified.
+- This proves the Hilbert base case and the properties in Theorem 19.3 of the accepted manuscript. Its coordinate conventions are identified by the existing intrinsic physical construction.
 
 Public declarations:
 
@@ -133,7 +133,7 @@ Public declarations:
 - `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertRealHomeomorph_symm_analytic`
 - `NLS.FunctionalAnalysis.bijective_of_closed_localHomeomorph_singleton_fiber`
 
-Partial denotes the retained external-edition comparison only. The internal Hilbert inverse is a proved theorem, not an assumption.
+This row is matched under the [accepted reference choice](ACCEPTED_REFERENCE.md). The Hilbert inverse remains a proved theorem; no external inverse is assumed.
 
 ### S17-008: Local inverse branches and Hilbert collision reduction.
 
@@ -173,7 +173,7 @@ Public declarations:
 - `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_real_map_bijective`
 - `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.realHomeomorph_symm_exponent`
 
-The contradiction formulation (3.5) and the direct recovery of p-membership prove the same conclusion. The exact cited 2014 identification remains qualified in S17-007.
+The contradiction formulation (3.5) and the direct recovery of p-membership prove the same conclusion. S17-007 records the accepted manuscript reference.
 
 ### S17-011: Origin inverse chart and the small target ball (3.6).
 
@@ -460,7 +460,7 @@ Public declarations:
 - `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.image_isospectralSet_eq_actionTorus`
 - `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.isCompact_isospectralSet`
 
-This establishes the mathematical converse internally; the exact external [23] edition comparison remains the qualification in S17-007.
+This establishes the mathematical converse internally; S17-007 records the accepted manuscript reference.
 
 ## Evidence and validation
 

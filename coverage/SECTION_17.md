@@ -3,8 +3,8 @@
 ## Ordered diffeomorphism comparison
 
 The [ordered Section 17 ledger](SECTION_17_ASSERTIONS.md) classifies
-all 31 passage groups: 21 matched, eight corrected, one partial external
-comparison and one contextual attribution.
+all 31 passage groups: 22 matched, eight corrected and one contextual
+attribution, using the [accepted manuscript reference](ACCEPTED_REFERENCE.md).
 
 The original Birkhoff map is locally bi-real-analytic and globally injective
 for every finite p>1. Surjectivity and the global analytic inverse retain
@@ -26,14 +26,15 @@ are compact for all finite p>1; complete isospectral images and source
 compactness are asserted only for p<=2.
 
 This comparison inspected 58 module bodies and two positive-proof excerpts,
-and resolved 92 declarations. It changes documentation only. The exact
-2014 [23] construction comparison remains partial in S17-007; the internal
-Hilbert inverse is proved. The attribution to [36] is contextual.
+and resolved 92 declarations. The reference update changes documentation
+only: S17-007 is matched against the accepted manuscript, with the internal
+Hilbert inverse proved. The attribution to [36] is contextual. Earlier
+mentions of an open 2014 comparison describe the previous scope.
 
-The Lean and dependency-lock snapshot is identical to pushed commit c8cbe87. Its successful full check is reused, not rerun: 8,559 build jobs, 7,635 public examples and the transitive axiom audit of 44,604 NLS declarations, with 21 inherited warnings and no new warnings. Current source hashes, declaration references, review integrity and local documentation links are checked separately. These integrity checks do not certify mathematical completeness.
+The original ordered review reused the validated snapshot at c8cbe87: 8,559 build jobs, 7,635 public examples and 44,604 audited NLS declarations. The reference adoption reuses the later unchanged proof snapshot documented in the [completion assessment](COMPLETENESS.md). Source-evidence and link checks are separate from mathematical proof validation.
 
-Next is Section 18, Overview of frequencies, convexity and wellposedness.
-Wider qualifications remain in the [completion assessment](COMPLETENESS.md).
+Current scope and retained qualifications are in the
+[completion assessment](COMPLETENESS.md).
 
 Earlier entries retain their historical scope and validation, with the pairing explanation corrected below.
 

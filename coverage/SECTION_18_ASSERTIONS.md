@@ -1,6 +1,6 @@
 # Section 18 ordered assertion comparison
 
-All 39 ordered Section 18 passage groups are classified: 28 matched, five corrected, one partial external-edition comparison and five contextual groups. The original Hamiltonian and frequency retain a common connected action domain, actual physical recovery, Taylor remainders, inverse and Fredholm conclusions, sign and local concavity. The corrected full Hessian is 4-2 delta_nm, H* includes both mass-square and weighted linear subtractions, and the gauge is exp(4 i mass t). The isolated S1 denotes H1. The action-image assertion uses an open source neighborhood inside the original complex domain. Wellposedness retains finite source exponents, the all-smooth-approximation solution class and compact-time uniform norms. The exact cited 2014 construction comparison remains qualified in S18-003. Literature attributions and the then-open question are historical, not independently verified results or claims about current research status. No new Lean code or refutation is added. Wider dissertation qualifications remain unresolved.
+All 39 ordered Section 18 passage groups are classified: 29 matched, five corrected and five contextual groups. The original Hamiltonian and frequency retain a common connected action domain, actual physical recovery, Taylor remainders, inverse and Fredholm conclusions, sign and local concavity. The corrected full Hessian is 4-2 delta_nm, H* includes both mass-square and weighted linear subtractions, and the gauge is exp(4 i mass t). The isolated S1 denotes H1. The action-image assertion uses an open source neighborhood inside the original complex domain. Wellposedness retains finite source exponents, the all-smooth-approximation solution class and compact-time uniform norms. S18-003 is matched against the [accepted manuscript](ACCEPTED_REFERENCE.md), retaining its canonical signs and Sobolev domains. Literature attributions and the then-open question are historical, not independently verified results or claims about current research status. No new Lean code or refutation is added. Statement-specific qualifications remain explicit in the [completion assessment](COMPLETENESS.md).
 
 Source: printed pp. 83–87, text lines 6643–6974. Line numbers count newline characters,
 preserving form-feed characters. All five rendered pages were inspected. The overview
@@ -10,7 +10,7 @@ continues onto p. 87 before the actual Section 19 heading.
 | --- | --- | --- | --- |
 | S18-001 | 6643–6653 | Hamiltonian integral and complex NLS system (4.1). | matched |
 | S18-002 | 6655–6659 | Real-type scalar dNLS equation (4.2). | matched |
-| S18-003 | 6662–6670 | Sobolev canonical analytic Birkhoff diffeomorphism and weighted actions. | partial |
+| S18-003 | 6662–6670 | Sobolev canonical analytic Birkhoff diffeomorphism and weighted actions. | matched |
 | S18-004 | 6671–6678 | Full Hamiltonian analyticity, action dependence and Taylor expansion. | matched |
 | S18-005 | 6680–6682 | Full Hamiltonian origin derivatives with the mass correction. | corrected |
 | S18-006 | 6684–6687 | Frequency Taylor expansion (4.3). | matched |
@@ -89,7 +89,7 @@ Public declarations:
 - `NLS.ZakharovShabat.sourceWeightedAction_summable_on_Hm`
 - `NLS.ZakharovShabat.SourceOriginalHilbertFrequencyData.real_actions_mem`
 
-The mathematics is proved internally. Identification with the exact cited 2014 construction [23] remains qualified as in S17-007; inspecting the earlier 2013 manuscript does not close that external comparison.
+The mathematics is proved internally for the original weighted map. Theorem 20.2 and the canonical relations of Theorem 18.8 in the accepted manuscript have the same Sobolev and sign conventions. Together with the physical map identification in S14-010, this closes S18-003 under the [accepted reference choice](ACCEPTED_REFERENCE.md).
 
 ### S18-004: Full Hamiltonian analyticity, action dependence and Taylor expansion.
 

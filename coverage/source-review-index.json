@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T08:43:19.205355+00:00",
-  "base_commit": "6ba6954eb7fbd7a83d9cabe30cfa22fac3b509d7",
+  "published_utc": "2026-11-02T08:52:26.426628+00:00",
+  "base_commit": "68e63a1a562261d436eb6ce102f18dfccaabc6e4",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -22,11 +22,7 @@
     "module_hash_checks": 4695,
     "distinct_modules": 2288
   },
-  "unresolved": [
-    "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. Inspected manuscript copies support the recorded formulas; identity with the published 2014 construction remains unverified.",
-    "Appendix G.2 uses an adopted correction with the explicit unnormalized integral H1 norm and interval-length constant sqrt(t^(-1)+t). The source does not specify its local norm, so this correction is not asserted to identify the intended convention. The unit-interval consequence is proved.",
-    "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
-  ],
+  "unresolved": [],
   "validation_snapshot": {
     "base_commit": "6f30fca821e4185d6b8b8234eedf0ea060072253",
     "validated_state": "Fresh full check after the positive Lemma 3.4 subsum corrections.",
@@ -80200,5 +80196,37 @@
       "new_lean_proofs": 0,
       "new_refutations": 0
     }
-  ]
+  ],
+  "accepted_reference": {
+    "status": "accepted_by_user",
+    "date": "2026-11-02",
+    "title": "The defocusing NLS equation and its normal form",
+    "authors": [
+      "Benoît Grébert",
+      "Thomas Kappeler"
+    ],
+    "pdf_pages": 141,
+    "preface_date": "July 2013",
+    "pdf_sha256": "eceee60e4bd785605a1404c0449ebb08bcc454bf6e71d0a0c30bc13a27509849",
+    "decision": "Use the supplied manuscript as the reference; verification of identity with the 2014 edition is not required.",
+    "comparison_document": "coverage/ACCEPTED_REFERENCE.md",
+    "groups": [
+      "S14-010",
+      "S17-007",
+      "S18-003"
+    ],
+    "qualification": "Matched under the explicitly accepted manuscript reference. No identity between editions is asserted.",
+    "new_lean_proofs": 0,
+    "new_refutations": 0
+  },
+  "retained_qualifications": [
+    "Appendix G.2 uses an adopted correction with the explicit unnormalized integral H1 norm and interval-length constant sqrt(t^(-1)+t). The source does not specify its local norm, so this correction is not asserted to identify the intended convention. The unit-interval consequence is proved.",
+    "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
+  ],
+  "scope_resolution": {
+    "status": "all_tracked_requirements_resolved",
+    "document": "coverage/COMPLETENESS.md",
+    "preserves_literal_source_qualifications": true,
+    "does_not_certify_every_printed_assertion_verbatim": true
+  }
 }

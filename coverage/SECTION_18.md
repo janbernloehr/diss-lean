@@ -3,8 +3,8 @@
 ## Ordered overview comparison
 
 The [ordered Section 18 ledger](SECTION_18_ASSERTIONS.md) classifies
-all 39 passage groups on pp. 83–87: 28 matched, five corrected, one partial
-external comparison and five contextual groups.
+all 39 passage groups on pp. 83–87: 29 matched, five corrected and five
+contextual groups, using the [accepted manuscript reference](ACCEPTED_REFERENCE.md).
 
 The existing proofs retain one original frequency and its Hamiltonian on
 a common connected action domain. The full energy has a cubic remainder;
@@ -29,14 +29,15 @@ remain finite, and the higher-exponent local result is not a global result
 for all data.
 
 The review inspected 52 full module bodies and four positive excerpts,
-and resolved 91 declarations. The exact 2014 [23] construction comparison
-remains partial in S18-003. Literature claims and the then-open question
+and resolved 91 declarations. S18-003 is matched against the accepted
+manuscript. Earlier mentions of an open 2014 comparison describe the
+previous scope. Literature claims and the then-open question
 are recorded as historical context, not as current research status.
 
-This documentation-only step reuses the successful full check from commit c8cbe87 on the exact unchanged Lean and dependency-lock snapshot: 8,559 build jobs, 7,635 public examples and the transitive axiom audit of 44,604 NLS declarations, with 21 inherited warnings and no new warnings. No new full build is claimed. Current source hashes, declaration references, review integrity and local documentation links are checked separately. These integrity checks do not certify mathematical completeness.
+The original ordered review reused the validated snapshot at c8cbe87: 8,559 build jobs, 7,635 public examples and 44,604 audited NLS declarations. The reference adoption reuses the later unchanged proof snapshot documented in the [completion assessment](COMPLETENESS.md). Source-evidence and link checks are separate from mathematical proof validation.
 
-Next is Section 19, The abelian integral F. Wider qualifications remain
-in the [completion assessment](COMPLETENESS.md).
+Current scope and retained qualifications are in the
+[completion assessment](COMPLETENESS.md).
 
 Earlier entries retain their historical scope and validation.
 

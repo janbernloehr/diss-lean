@@ -1,6 +1,6 @@
 # Section 14 ordered assertion comparison
 
-All eighteen Section 14 overview passage groups are classified: thirteen matched, one with an explicit common-domain restriction, one partial external comparison and three contextual remarks. The actual rectangular map retains the original root family, actions and integral-defined angles. The working Chapter 3 domain V is an open restriction containing the entire real locus, not an asserted equality with an arbitrarily fixed earlier W. All five Theorem 14.1 properties hold on this constructed compatible domain, with global surjectivity only for 1<p<=2. Native weighted results supply the positive-smoothness extension. The precise comparison with the cited 2014 edition of [23] remains unresolved; the previously inspected 2013 conventions do not settle it. Historical open-problem and minimal-decay remarks and related-equation references are contextual. The proof outline uses actual local inverses, finite-gap collision approximation, canonical mode preimages and compactness, with no new refutations. This completes classification of the overview passages, not proof of every source attribution, all later Chapter 3 arguments or the dissertation. Section 7 physical NLS Dirichlet motion and unrestricted psi characterization, Appendix G.2 norm interpretation and the broader source inventory retain their qualifications.
+All eighteen Section 14 overview passage groups are classified: fourteen matched, one with an explicit common-domain restriction and three contextual remarks. The actual rectangular map retains the original root family, actions and integral-defined angles. The working Chapter 3 domain V is an open restriction containing the entire real locus, not an asserted equality with an arbitrarily fixed earlier W. All five Theorem 14.1 properties hold on this constructed compatible domain, with global surjectivity only for 1<p<=2. Native weighted results supply the positive-smoothness extension. The user accepted the supplied manuscript as the reference on 2026-11-02; S14-010 is matched under that explicit choice. See [accepted reference conventions](ACCEPTED_REFERENCE.md). Historical open-problem and minimal-decay remarks and related-equation references are contextual. The proof outline uses actual local inverses, finite-gap collision approximation, canonical mode preimages and compactness, with no new refutations. This completes classification of the overview passages, not proof of every source attribution, all later Chapter 3 arguments or the dissertation. The accepted Section 7 smooth-solution interpretation, Appendix G.2 integral-norm convention and other statement-specific qualifications are retained in the completion assessment.
 
 Source: printed pp. 73–74, text lines 5919–6008. Line numbers count newline characters,
 preserving form-feed characters. Both rendered pages were inspected.
@@ -16,7 +16,7 @@ preserving form-feed characters. Both rendered pages were inspected.
 | S14-007 | 5956–5956 | Theorem 14.1(iii): canonical rectangular coordinates. | matched |
 | S14-008 | 5958–5961 | Theorem 14.1(iv): injectivity, local inverse and open dense image. | matched |
 | S14-009 | 5963–5965 | Theorem 14.1(v): global bi-real-analytic inverse for 1<p<=2. | matched |
-| S14-010 | 5968–5968 | Remark 14.2(i): identification with the cited Hilbert-space construction. | partial |
+| S14-010 | 5968–5968 | Remark 14.2(i): identification with the cited Hilbert-space construction. | matched |
 | S14-011 | 5970–5970 | Remark 14.2(ii): the stated open question above two. | contextual |
 | S14-012 | 5972–5973 | Remark 14.2(iii): positive-smoothness extension. | matched |
 | S14-013 | 5983–5987 | Remark 14.2(iv): isolated spectral pairs and the proposed minimal decay. | contextual |
@@ -174,13 +174,13 @@ The full onto and inverse assertions match exactly for 1<p<=2. No stronger expon
 ### S14-010: Remark 14.2(i): identification with the cited Hilbert-space construction.
 
 - The current implementation constructs the physical Hilbert map, analytic global inverse, exact physical norm normalization, complex extension and literal action-angle formulas from the same original family.
-- The existing comparison with inspected 2013 manuscript conventions is preserved. This ordered review does not establish identity with the exact 2014 edition cited as [23].
+- The supplied manuscript is the accepted reference. Its physical action, angle, canonical-product and psi conventions agree with the independent physical construction described in [Section 14](SECTION_14.md) and the [reference correspondence](ACCEPTED_REFERENCE.md).
 
 Public declarations:
 
 - `NLS.ZakharovShabat.sourceSection14_physicalHilbert`
 
-The mathematical Hilbert map is constructed, but the precise external-edition comparison remains unresolved. This row is not marked proved.
+This row is matched against the accepted manuscript. The physical formula identity, global analytic inverse, exact norm and canonical brackets are proved internally. Identity with the published 2014 edition is not a requirement.
 
 ### S14-011: Remark 14.2(ii): the stated open question above two.
 
@@ -283,7 +283,7 @@ The method matches, with the previously corrected inward flow orientation retain
 
 - The references to other dNLS constructions, KdV, modified KdV and Toda describe related literature. They are recorded as external attributions, not new dNLS implementation requirements.
 
-This pass does not formalize those other equations or independently certify the cited results. The exact [23] comparison remains the partial row S14-010.
+This pass does not formalize those other equations or independently certify the cited results. S14-010 uses the explicitly accepted manuscript reference.
 
 ## Evidence and validation
 

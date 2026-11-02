@@ -5,12 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [positive constant corrections](coverage/SECTION_3.md) prove the literal near and far bounds in Lemma 3.4 for every finite Banach exponent, including p=1, and adopt the existing Lemma 3.2 height factor. The [remaining qualifications](coverage/COMPLETENESS.md) are retained.
+The recorded implementation and source reviews are complete under the
+[accepted manuscript reference](coverage/ACCEPTED_REFERENCE.md), the precise
+smooth-solution interpretation of Section 7, and the documented corrections.
+There are no remaining partial or pending groups in the current inventory.
+The [completion assessment](coverage/COMPLETENESS.md) retains the exact domains,
+norm conventions and qualifications; this does not assert every printed claim
+verbatim.
 
-The physical formula comparison is complete for the inspected 2013
-manuscript's conventions. The precise 2014 edition comparison and the
-recorded G.2 norm qualification remain. The formalization of the dissertation remains
-incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the introduction main-results audit](coverage/INTRODUCTION.md),
 [the Section 12 audit](coverage/SECTION_12.md),
