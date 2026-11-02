@@ -25,6 +25,9 @@ view = root / '.lake/article-check/lib/lean'
 logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
+    'NLS.ComplexAnalysis.CircleOpenCollar',
+    'NLS.ComplexAnalysis.RealDiameterDisc',
+    'NLS.FunctionalAnalysis.CircleResolventProjection',
     'NLS.FunctionalAnalysis.PencilRootChains',
     'NLS.FunctionalAnalysis.PencilRootSemisimple',
     'NLS.FunctionalAnalysis.EquivalentNormNeumann',
@@ -37,6 +40,7 @@ modules = [
     'NLS.SequenceSpaces.SobolevConvolutionBounds',
     'NLS.SequenceSpaces.HilbertProductTame',
     'NLS.Fourier.PeriodicH1Multiplication',
+    'NLS.Fourier.PeriodicSingularMultiplicationFamily',
     'NLS.Fourier.PeriodicSobolevConjugation',
     'NLS.Fourier.PeriodicH1FormBound',
     'NLS.SequenceSpaces.HillMixedKernel',
@@ -87,6 +91,7 @@ modules = [
     'NLS.KdV.PseudomeasureResolvent',
     'NLS.KdV.PseudomeasureSpectrum',
     'NLS.KdV.PseudomeasureRootSpaces',
+    'NLS.KdV.PseudomeasureRieszProjection',
     'NLS.KdV.SingularHillChains',
     'NLS.KdV.PseudomeasureChainJets',
     'NLS.KdV.PseudomeasureTaylorKernel',
@@ -133,6 +138,7 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralLowerBound',
     'NLS.Articles.KdVPseudomeasures.SpectralCentralWindow',
     'NLS.Articles.KdVPseudomeasures.SpectralFreeCount',
+    'NLS.Articles.KdVPseudomeasures.SpectralCentralProjection',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

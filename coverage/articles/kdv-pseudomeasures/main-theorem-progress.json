@@ -62,7 +62,7 @@
     ]
   },
   "essential_open_obligations": [
-    "Prove homotopy invariance of the actual finite central algebraic count, whose free value2N-1 is now proved; then canonical global periodic/antiperiodic label slots and source parity. Complete physical gap/Dirichlet estimates.",
+    "Prove that the actual central Riesz projection range is exactly the sum of the enclosed actual physical root spaces, and that its rank equals sourceCentralAlgebraicCount. The projection is constructed, compact, idempotent, finite rank, continuous and rank-invariant along t*q; it fixes enclosed physical eigenvectors and annihilates exterior ones. The free ACTUAL algebraic count2N-1 is proved. Combine the range/count identity with these results to obtain central algebraic count2N-1 for nonzero original real potentials.",
     "Construct the Birkhoff map with its global bijectivity, analyticity and endpoint inverse regularity.",
     "Endpoint spectral estimates and inverse regularity needed by 1.4.",
     "Actual KdV H^-1 smooth-approximation solution extension, invariance and continuity.",
@@ -174,7 +174,16 @@
     "Actual physical unit modes are constructed from the original smooth Fourier modes. Scalar amplitudes biject with the full constant eigenspace; two signed amplitudes biject with every full positive free eigenspace. Their complex dimensions are exactly one and two.",
     "Native real semisimplicity transfers these geometric dimensions to the ACTUAL full physical algebraic multiplicities of the original zero source potential. The complete free multiplicity sequence is one at n=0 and two at every n>=1.",
     "For N>=2, the already verified central edge pi^2*N^2-12N cuts the actual free spectrum exactly at n<N. The actual finite source central spectrum equals the image of range(N) under n->pi^2*n^2.",
-    "sourceCentralAlgebraicCount_zero proves that the existing sum of ACTUAL original physical algebraic multiplicities in the free central spectrum is exactly2N-1. This is the free baseline; its invariance under a change of original potential remains unproved."
+    "sourceCentralAlgebraicCount_zero proves that the existing sum of ACTUAL original physical algebraic multiplicities in the free central spectrum is exactly2N-1. This is the free baseline; its invariance under a change of original potential remains unproved.",
+    "A shared proper-metric sphere-in-open-set theorem constructs an actual closed annular collar. Banach-algebra circle integration is continuous in arbitrary parameters. Fubini and the actual resolvent identity prove the nested-circle product formula; Cauchy on the collar proves that the normalized circle integral is idempotent.",
+    "Operator-norm circle integrals of compact operators are compact, using the closed submodule of compact operators and an actual integral in that complete submodule. A compact bounded idempotent has finite-dimensional range. No finite-rank projection is assumed as input.",
+    "Original H-minus-one multiplication depends bounded-linearly on its potential in operator norm. The actual normalized physical pencil and its entire H1/H-minus-one inverse are jointly norm analytic in the original potential and spectral parameter on the full physical resolvent.",
+    "PseudomeasureRieszProjection defines the actual operator-valued circle integral on the original H-minus-one base space, with the required negative sign converting the existing(L-z)inverse to(z-L)orientation. Every circle in the full physical resolvent gives a compact idempotent with finite-dimensional range.",
+    "The actual projection fixes every physical original-H1 eigenvector whose value is inside the circle and annihilates every physical eigenvector whose value is outside the closed disk. These statements reuse the actual full-domain scalar resolvent action.",
+    "Actual singular Riesz projections depend continuously in operator norm along any continuous endpoint potential family with a common physical resolvent circle. Their actual finite rank is constant on every such preconnected family, using the shared verified ProjectionRank theorem.",
+    "One central diameter circle, with left endpoint-B-1 and right endpoint pi^2*N^2-12N, lies in the full original physical resolvent for every native real source potential on the given original norm ball. Its interior cuts the actual real spectrum at exactly the existing central finite spectral set.",
+    "sourceCentralProjection is the actual original H-minus-one circle integral. It is idempotent, has finite-dimensional range, is operator-norm continuous on the entire original real norm ball, and fixes every original central physical eigenvector. Its actual rank equals its zero-potential rank along the actual homotopy t*q,0<=t<=1.",
+    "source_uniform_central_projection chooses one cutoff N>=2 BEFORE every original real potential on the entire exact norm ball and provides the actual finite-rank idempotent and its rank invariance. Equality of that rank with the sum of ACTUAL enclosed physical algebraic multiplicities is still a separate unproved obligation."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",

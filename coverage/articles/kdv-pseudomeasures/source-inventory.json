@@ -367,6 +367,20 @@
         "NLS/Articles/KdVPseudomeasures/SpectralFreeCount.lean"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-free-count-map.json"
+    },
+    {
+      "label": "Actual original singular Riesz projection and rank transport",
+      "content": "The original central circle gives an actual compact finite-rank idempotent, operator-norm continuous in the potential, fixing actual central physical eigenvectors. Its rank is invariant along the actual original potential homotopy.",
+      "status": "Proved. Identification of this actual rank with the sum of enclosed physical algebraic multiplicities still needs proof; exact perturbed central counting and all main theorem constructions remain open.",
+      "modules": [
+        "NLS/ComplexAnalysis/CircleOpenCollar.lean",
+        "NLS/ComplexAnalysis/RealDiameterDisc.lean",
+        "NLS/FunctionalAnalysis/CircleResolventProjection.lean",
+        "NLS/Fourier/PeriodicSingularMultiplicationFamily.lean",
+        "NLS/KdV/PseudomeasureRieszProjection.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralCentralProjection.lean"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-central-projection-map.json"
     }
   ],
   "reuse_map": [

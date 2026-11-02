@@ -1,11 +1,14 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Actual free original singular spectrum, full eigenspaces and exact free central algebraic count",
+  "phase": "Actual singular Riesz projections and homotopy-invariant central projection rank",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
   "modules_checked": [
+    "NLS/ComplexAnalysis/CircleOpenCollar.lean",
+    "NLS/ComplexAnalysis/RealDiameterDisc.lean",
+    "NLS/FunctionalAnalysis/CircleResolventProjection.lean",
     "NLS/FunctionalAnalysis/PencilRootChains.lean",
     "NLS/FunctionalAnalysis/PencilRootSemisimple.lean",
     "NLS/FunctionalAnalysis/EquivalentNormNeumann.lean",
@@ -18,6 +21,7 @@
     "NLS/SequenceSpaces/SobolevConvolutionBounds.lean",
     "NLS/SequenceSpaces/HilbertProductTame.lean",
     "NLS/Fourier/PeriodicH1Multiplication.lean",
+    "NLS/Fourier/PeriodicSingularMultiplicationFamily.lean",
     "NLS/Fourier/PeriodicSobolevConjugation.lean",
     "NLS/Fourier/PeriodicH1FormBound.lean",
     "NLS/SequenceSpaces/HillMixedKernel.lean",
@@ -68,6 +72,7 @@
     "NLS/KdV/PseudomeasureResolvent.lean",
     "NLS/KdV/PseudomeasureSpectrum.lean",
     "NLS/KdV/PseudomeasureRootSpaces.lean",
+    "NLS/KdV/PseudomeasureRieszProjection.lean",
     "NLS/KdV/SingularHillChains.lean",
     "NLS/KdV/PseudomeasureChainJets.lean",
     "NLS/KdV/PseudomeasureTaylorKernel.lean",
@@ -114,13 +119,14 @@
     "NLS/Articles/KdVPseudomeasures/SpectralLowerBound.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralWindow.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralFreeCount.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralCentralProjection.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 880,
-  "definitions": 209,
+  "proved_theorems": 925,
+  "definitions": 215,
   "axiom_audit": {
     "method": "Lean #print axioms on every source-inventoried public definition/theorem, with nested namespaces and qualified names supported. Exact inventory/audit/output set match, followed by allowlist check. Private imported proofs are covered transitively.",
-    "declarations": 1089,
+    "declarations": 1140,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -289,15 +295,27 @@
     "Actual physical unit modes are constructed from the original smooth Fourier modes. Scalar amplitudes biject with the full constant eigenspace; two signed amplitudes biject with every full positive free eigenspace. Their complex dimensions are exactly one and two.",
     "Native real semisimplicity transfers these geometric dimensions to the ACTUAL full physical algebraic multiplicities of the original zero source potential. The complete free multiplicity sequence is one at n=0 and two at every n>=1.",
     "For N>=2, the already verified central edge pi^2*N^2-12N cuts the actual free spectrum exactly at n<N. The actual finite source central spectrum equals the image of range(N) under n->pi^2*n^2.",
-    "sourceCentralAlgebraicCount_zero proves that the existing sum of ACTUAL original physical algebraic multiplicities in the free central spectrum is exactly2N-1. This is the free baseline; its invariance under a change of original potential remains unproved."
+    "sourceCentralAlgebraicCount_zero proves that the existing sum of ACTUAL original physical algebraic multiplicities in the free central spectrum is exactly2N-1. This is the free baseline; its invariance under a change of original potential remains unproved.",
+    "A shared proper-metric sphere-in-open-set theorem constructs an actual closed annular collar. Banach-algebra circle integration is continuous in arbitrary parameters. Fubini and the actual resolvent identity prove the nested-circle product formula; Cauchy on the collar proves that the normalized circle integral is idempotent.",
+    "Operator-norm circle integrals of compact operators are compact, using the closed submodule of compact operators and an actual integral in that complete submodule. A compact bounded idempotent has finite-dimensional range. No finite-rank projection is assumed as input.",
+    "Original H-minus-one multiplication depends bounded-linearly on its potential in operator norm. The actual normalized physical pencil and its entire H1/H-minus-one inverse are jointly norm analytic in the original potential and spectral parameter on the full physical resolvent.",
+    "PseudomeasureRieszProjection defines the actual operator-valued circle integral on the original H-minus-one base space, with the required negative sign converting the existing(L-z)inverse to(z-L)orientation. Every circle in the full physical resolvent gives a compact idempotent with finite-dimensional range.",
+    "The actual projection fixes every physical original-H1 eigenvector whose value is inside the circle and annihilates every physical eigenvector whose value is outside the closed disk. These statements reuse the actual full-domain scalar resolvent action.",
+    "Actual singular Riesz projections depend continuously in operator norm along any continuous endpoint potential family with a common physical resolvent circle. Their actual finite rank is constant on every such preconnected family, using the shared verified ProjectionRank theorem.",
+    "One central diameter circle, with left endpoint-B-1 and right endpoint pi^2*N^2-12N, lies in the full original physical resolvent for every native real source potential on the given original norm ball. Its interior cuts the actual real spectrum at exactly the existing central finite spectral set.",
+    "sourceCentralProjection is the actual original H-minus-one circle integral. It is idempotent, has finite-dimensional range, is operator-norm continuous on the entire original real norm ball, and fixes every original central physical eigenvector. Its actual rank equals its zero-potential rank along the actual homotopy t*q,0<=t<=1.",
+    "source_uniform_central_projection chooses one cutoff N>=2 BEFORE every original real potential on the entire exact norm ball and provides the actual finite-rank idempotent and its rank invariance. Equality of that rank with the sum of ACTUAL enclosed physical algebraic multiplicities is still a separate unproved obligation."
   ],
-  "source_correspondence": "The free original singular spectrum and actual full algebraic multiplicities are proved directly on the entire original H1/H-minus-one operator. The actual free central count is exactly2N-1. Invariance for nonzero original potentials, canonical global labels/parity, inverse regularity, original Birkhoff maps and actual KdV main theorems remain open. All main theorem completion flags remain false.",
-  "build_isolation": "All109 modules rebuilt in a fresh empty private output view. Canonical/package imports remain read-only symlinks and every compiler destination is private. Exact1089-declaration transitive audit passed with no warnings or tactic suggestions. Canonical tracked sources/build outputs were not written.",
+  "source_correspondence": "The original singular central spectral circle now gives an actual compact idempotent on the original H-minus-one base space, finite-dimensional range and norm-continuous, homotopy-invariant actual rank on original real norm balls. The projection fixes enclosed actual physical eigenvectors and annihilates exterior ones. Its rank has NOT yet been proved equal to the sum of actual enclosed physical algebraic multiplicities. The free actual algebraic count2N-1 is proved. Canonical global labels/parity, inverse regularity, original Birkhoff maps and actual KdV main theorems remain open; all main theorem flags stay false.",
+  "build_isolation": "All115 modules rebuilt in a fresh empty private output view. Canonical/package imports remain read-only symlinks, all compiler destinations are private, and the exact1140-declaration transitive audit passed without warnings or tactic suggestions. Canonical tracked sources/build outputs were not written.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
   "source_hash": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
   "output_sha256": {
+    "NLS/ComplexAnalysis/CircleOpenCollar.lean": "d888c02dc0baf41031e73b30e2ac5c53964dba6b4cb3caa7e829cbb60c64b79f",
+    "NLS/ComplexAnalysis/RealDiameterDisc.lean": "4d978853f2d9ee33b92ab05cf8657bae51fd41176f0de4e91c0ca8a9143e9371",
+    "NLS/FunctionalAnalysis/CircleResolventProjection.lean": "875fecafa6ac103cdc050e4178137f44b3e35090cbe14a5a123a9f2478fadc60",
     "NLS/FunctionalAnalysis/PencilRootChains.lean": "ca36c1bbe2d860e8dd0995634c109d7b9e71e44b9acf6c7221f6f57f38b6a5a0",
     "NLS/FunctionalAnalysis/PencilRootSemisimple.lean": "868a3d3bdc259c849a3e8849af636150ad5dea8cb4169121509a632507a0f5f6",
     "NLS/FunctionalAnalysis/EquivalentNormNeumann.lean": "64721e011a6a0125fb40d4cfe5c02eb545adc0e4046f3d549e86a82d27cb7bad",
@@ -310,6 +328,7 @@
     "NLS/SequenceSpaces/SobolevConvolutionBounds.lean": "4a607fc257db00cb10d991efe25cb91334054ed66703ba3ad8f8e85d248a6564",
     "NLS/SequenceSpaces/HilbertProductTame.lean": "2007625a626c8447965276c204d8edeece4ee3a8a273c3ea137d6cdb378cbbeb",
     "NLS/Fourier/PeriodicH1Multiplication.lean": "b4bb3d0c9bb9f6f93b3813462aa50bd9699db7604873d69d0b87f813431b433f",
+    "NLS/Fourier/PeriodicSingularMultiplicationFamily.lean": "b4fc4a8842a2e4434ad64c697af9f95c11e74a005bcde2541b936fb8417931c0",
     "NLS/Fourier/PeriodicSobolevConjugation.lean": "230392238ae2daf6d6ec26eda67c52bbf532e7a9998e6bc2eac2be477e371368",
     "NLS/Fourier/PeriodicH1FormBound.lean": "1f060ae6c6419dea87dc0356c7a261621fb9c9d74a1fef94137734e136a34a5d",
     "NLS/SequenceSpaces/HillMixedKernel.lean": "20c291246496d1c314e5f3df2db3cb038990b714bb66d6c1d4e381486c219c6c",
@@ -360,6 +379,7 @@
     "NLS/KdV/PseudomeasureResolvent.lean": "d718ad1cfc3be699c035e23672c43ab1f2bd44a32e366b73e13b380856abf9bc",
     "NLS/KdV/PseudomeasureSpectrum.lean": "22c430fe535e39da8ebbd4109c6717dc01d069f53f025ab53210823809abeb5a",
     "NLS/KdV/PseudomeasureRootSpaces.lean": "048dd52ee786e58563f9e8174b0eb7817e78c0d67c4077025d43bfad593332a5",
+    "NLS/KdV/PseudomeasureRieszProjection.lean": "42be33c3c17367b9a74cc365026ed4626d8cb1cb8b34ba5ed12b18a535269532",
     "NLS/KdV/SingularHillChains.lean": "bed5928f113d6d41ab40a4bae834cce9a26e671302324258d1c6b344635effb1",
     "NLS/KdV/PseudomeasureChainJets.lean": "adb3e009953d18d3f54cd31989df455d86b15020228167395ca7e870b3a8c964",
     "NLS/KdV/PseudomeasureTaylorKernel.lean": "45d62fca96af6b942890c691c9c1108dc421d64e89b59a57a88f64395c9bc24b",
@@ -406,7 +426,8 @@
     "NLS/Articles/KdVPseudomeasures/SpectralLowerBound.lean": "6970d2a80adbecff3ce7e0ac7e291ae279e2307349b42b519176f73340e6162d",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralWindow.lean": "6ef29dc4418c2038f990f5967e7bcd96620088da524912139c4f502f3a0818d7",
     "NLS/Articles/KdVPseudomeasures/SpectralFreeCount.lean": "c230e5b67050a8f1e7d2bf2356cb23cdc05da63ff412688933530906f6ce2c15",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "5ec4714f9ee7615d50e769c4f9715eb8acc10e7059f4551209af18988afa0873"
+    "NLS/Articles/KdVPseudomeasures/SpectralCentralProjection.lean": "cd164a8db6efe4513ee43a164ac83d828b374345f20a18cb338ffd747f1ba0dc",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "91c4a7bef4315336cb940a2c7cdd0e75ba0b793e1ebf287f1005a383918340d5"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -414,13 +435,24 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 1064,
-    "newly_authored_declarations_this_continuation": 25,
-    "new_theorems": 22,
-    "new_definitions": 3,
-    "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 1089,
-    "previous_reuse": "Original smooth physical Fourier modes, exact singular H1/H-minus-one eigen-equation, native semisimplicity, actual root-space multiplicities, full endpoint Fredholm alternative and existing central edge geometry. No regular-potential physical spectrum theorem is substituted."
+    "previous_checked_declarations": 1089,
+    "newly_authored_declarations_this_continuation": 48,
+    "new_theorems": 45,
+    "new_definitions": 6,
+    "newly_authored_theorems": 42,
+    "shared_declarations_copied_this_continuation": 3,
+    "total_checked_declarations": 1140,
+    "shared_copy_provenance": {
+      "branch": "articles/kdv-estimates",
+      "commit": "80ac538a3bf105feb1bcc5133efe35e70b55f816",
+      "file": "NLS/ComplexAnalysis/RealDiameterDisc.lean",
+      "copied_theorems": [
+        "ofReal_mem_realDiameter_closedBall_iff",
+        "ofReal_mem_realDiameter_sphere_iff",
+        "ne_zero_on_realDiameter_sphere"
+      ],
+      "qualification": "Three potential-independent geometry theorems copied and independently checked. The open-ball interval theorem is newly authored. No regular L2-potential physical counting or spectral theorem is instantiated as singular."
+    }
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -451,7 +483,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-free-count.log",
+  "validation_log": ".lake/article-check/logs/validation-riesz-projection.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",

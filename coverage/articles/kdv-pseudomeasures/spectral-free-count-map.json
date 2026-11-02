@@ -60,10 +60,10 @@
     "No canonical perturbed label, source parity identification, Birkhoff map, KdV frequency or actual KdV flow is claimed complete."
   ],
   "remaining": [
-    "Prove invariance of the ACTUAL finite central algebraic count through the original potential homotopy. Its exact free value2N-1 is now proved. The full original complex norm ball already has a common verified resolvent boundary and finite enclosed spectrum, but the counting/transport theorem still needs proof.",
-    "Use the invariant central count to fix canonical global periodic/antiperiodic label slots and the low-mode offset, and prove actual source period-one parity/boundary-condition identification.",
-    "Complete physical gap/Dirichlet and inverse spectral regularity estimates, the original Birkhoff maps and the actual H-minus-one KdV flow.",
-    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with full original domains, quantifiers, normalization and topology. All remain unproved."
+    "Prove that the actual central Riesz projection range is exactly the sum of the enclosed actual physical root spaces, and that its rank equals sourceCentralAlgebraicCount. The projection is constructed, compact, idempotent, finite rank, continuous and rank-invariant along t*q; it fixes enclosed physical eigenvectors and annihilates exterior ones. The free ACTUAL algebraic count2N-1 is proved. Combine the range/count identity with these results to obtain central algebraic count2N-1 for nonzero original real potentials.",
+    "Use the resulting exact central count to fix canonical global periodic/antiperiodic label slots and the low-mode offset, and prove actual source period-one parity/boundary-condition identification.",
+    "Complete physical gap/Dirichlet and inverse spectral regularity estimates, original Birkhoff maps and actual H-minus-one KdV flow.",
+    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with the full original domains, quantifiers, normalization and topology. All remain unproved."
   ],
   "validation": {
     "modules_checked": 109,
@@ -81,5 +81,6 @@
       "Quot.sound"
     ],
     "log": ".lake/article-check/logs/validation-free-count.log"
-  }
+  },
+  "subsequent_progress": "The actual original singular central Riesz projection is now constructed, compact, idempotent, finite rank and norm continuous; its rank is invariant along the original real potential homotopy. Rank/count equality remains unproved; see spectral-central-projection-map.json."
 }
