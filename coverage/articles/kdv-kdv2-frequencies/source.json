@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "article_id": "kdv-kdv2-frequencies",
+  "status": "not_yet_verified",
+  "stage": "dedicated_worktree_validated_progress",
+  "canonical_base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "checked_date": "2026-11-02",
+  "journal_title": "On the wellposedness of the KdV/KdV2 equations and their frequency maps",
+  "preprint_title": "On the extension of the frequency maps of the KdV and the KdV2 equations",
+  "authors": [
+    "Thomas Kappeler",
+    "Jan-Cornelius Molnar"
+  ],
+  "source": {
+    "abstract_url": "https://arxiv.org/abs/1605.06690v1",
+    "pdf_url": "https://arxiv.org/pdf/1605.06690v1",
+    "sha256": "b123dcf540ecca2f844e9e8337738b2cbaf402013410e8315ad53e445eb5dd7c",
+    "bytes": 1067594,
+    "pdf_pages": 76,
+    "version_in_pdf": "arXiv:1605.06690v1 [math.AP] 21 May 2016",
+    "title_page_date": "June 14, 2022",
+    "pdf_creation_utc": "2022-06-14T23:35:35Z",
+    "scratch_pdf": "work/source/1605.06690v1.pdf",
+    "scratch_text": "work/source/1605.06690v1.txt",
+    "journal_equivalence_checked": false
+  },
+  "main_statement_inventory": [
+    {
+      "label": "Theorem 1.1",
+      "pdf_pages": [
+        3
+      ],
+      "status": "open",
+      "role": "cited shared KdV background"
+    },
+    {
+      "label": "Theorem 1.2",
+      "pdf_pages": [
+        4
+      ],
+      "status": "open",
+      "role": "KdV frequency extension, asymptotics and compact derivative"
+    },
+    {
+      "label": "Theorem 1.3",
+      "pdf_pages": [
+        5
+      ],
+      "status": "open",
+      "role": "generic strict concavity of KdV Hamiltonian"
+    },
+    {
+      "label": "Corollary 1.4",
+      "pdf_pages": [
+        5
+      ],
+      "status": "open",
+      "role": "KdV generic local frequency inverse"
+    },
+    {
+      "label": "Corollary 1.5",
+      "pdf_pages": [
+        5
+      ],
+      "status": "open",
+      "role": "physical KdV frequency asymptotics and sharpness"
+    },
+    {
+      "label": "Corollary 1.7",
+      "pdf_pages": [
+        6
+      ],
+      "status": "open",
+      "role": "physical KdV one-smoothing relative to Airy"
+    },
+    {
+      "label": "Theorem 1.9",
+      "pdf_pages": [
+        6
+      ],
+      "status": "open",
+      "role": "KdV2 frequency extension and asymptotics"
+    },
+    {
+      "label": "Corollary 1.11",
+      "pdf_pages": [
+        6
+      ],
+      "status": "open",
+      "role": "KdV2 generic local frequency inverse"
+    },
+    {
+      "label": "Theorem 1.12",
+      "pdf_pages": [
+        7,
+        8
+      ],
+      "status": "open",
+      "role": "physical KdV2 wellposedness and illposedness"
+    },
+    {
+      "label": "Theorem 3.10",
+      "pdf_pages": [
+        36,
+        37
+      ],
+      "status": "open",
+      "role": "physical KdV analytic wellposedness and failure of Ck wellposedness"
+    },
+    {
+      "label": "Theorem 4.12",
+      "pdf_pages": [
+        49,
+        50
+      ],
+      "status": "open",
+      "role": "KdV2 action Hamiltonian analytic extension and local strict concavity"
+    }
+  ],
+  "candidate_sources": [
+    {
+      "path": "NLS/Dynamics/ActionDependentWeightedPhaseFlow.lean",
+      "source_labels": [
+        "Theorem E.1(i)",
+        "Theorem E.1(ii)"
+      ],
+      "source_pages": [
+        72,
+        73
+      ],
+      "scope": "Generic weighted action-dependent Z-indexed flow, not physical KdV",
+      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
+      "sha256": "291e9ae1fca267a2338b4bc8ef45b102bf1157213480e79c828d4b1eb163e895"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow.lean",
+      "source_labels": [
+        "Theorem 4.14(i) dependency",
+        "Theorem 1.12(i) dependency"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11,
+        12,
+        51,
+        52
+      ],
+      "scope": "Signed real locus and generic conserved-action flow; actual frequencies unsupplied",
+      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
+      "sha256": "0ccd9124c5303505154185941d0e616d051d9c63efae0aed0ee60e594e87c92a"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction.lean",
+      "source_labels": [
+        "Theorem 1.12(v) dependency",
+        "equation (90)"
+      ],
+      "source_pages": [
+        8,
+        51
+      ],
+      "scope": "Diverging specified mass and convergent correction obstruct uniform compact-time phase convergence; no physical approximation construction",
+      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
+      "sha256": "3d7368648e6831133235443cd20c4cfcc6e42a99e66b8f91502ceabbf6a727f8"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities.lean",
+      "source_labels": [
+        "equations (1)-(3)",
+        "Remarks 3.7(ii) and 4.6(ii)",
+        "Theorem 1.12 physical dependency"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        32,
+        44
+      ],
+      "scope": "Actual smooth differential identities, mean-shift formulas and periodic spatial mean/mass balances; spectral flow identification and time differentiation of solution integrals remain open",
+      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
+      "sha256": "5d543fac7fe00c9e39c2ad84fb2a55bceecabb23c63231ad9acf62ccff30d0f4"
+    }
+  ],
+  "dependencies_needed": [
+    "shared Hill/KdV spectral and Birkhoff foundations",
+    "shared KdV action Hamiltonians",
+    "actual KdV and KdV2 frequency moment identities and uniform analytic bounds",
+    "physical smooth solution identification and all-smooth-approximation property",
+    "fixed-mass analytic estimates and physical separating-sequence constructions"
+  ],
+  "workspace": {
+    "canonical_checkout_files_modified": false,
+    "canonical_checkout_branch_changed": false,
+    "worktree_created": true,
+    "managed_worktree": false,
+    "branch": "articles/kdv-kdv2-frequencies",
+    "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-kdv2-frequencies/outputs/dnls",
+    "other_chat_messages_sent": false,
+    "publication_record": "Git history on the article branch"
+  },
+  "source_map": "SOURCE_MAP.md",
+  "validation_record": "VALIDATION.md",
+  "validation": {
+    "command": "bash scripts/check-kdv-kdv2-frequencies.sh",
+    "exit_code": 0,
+    "lean_version": "4.33.1",
+    "mathlib_version": "v4.33.1",
+    "options": [
+      "-DautoImplicit=false",
+      "-E warning"
+    ],
+    "candidate_declarations_audited": 107,
+    "total_declarations_audited": 1302,
+    "allowed_transitive_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "main_theorems_verified": []
+  },
+  "supporting_source_pages": {
+    "Theorem 3.4": [
+      31
+    ],
+    "Theorem 3.6": [
+      32
+    ],
+    "Theorem 3.8": [
+      34
+    ],
+    "Theorem 3.9": [
+      36
+    ],
+    "Theorem 3.12": [
+      37
+    ],
+    "Theorem 4.3": [
+      42
+    ],
+    "Theorem 4.5": [
+      43
+    ],
+    "Corollary 4.7": [
+      46
+    ],
+    "Theorem 4.14": [
+      51,
+      52
+    ],
+    "Theorem E.1": [
+      72,
+      73
+    ]
+  },
+  "progress_record": "PROGRESS.md"
+}
