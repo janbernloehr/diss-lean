@@ -15,6 +15,12 @@
     "ZakharovShabat/SourcePsiCriticalNormalizer",
     "ZakharovShabat/SourcePsiCriticalPeriodLowerBound",
     "ZakharovShabat/SourcePsiCriticalRootBound",
+    "SequenceSpaces/ReciprocalBootstrapExponents",
+    "SequenceSpaces/ReciprocalBootstrapStep",
+    "SequenceSpaces/ReciprocalBootstrap",
+    "ZakharovShabat/SourcePsiCriticalInitialOffset",
+    "ZakharovShabat/SourcePsiCriticalReciprocalInequality",
+    "ZakharovShabat/SourceProposition4_1",
     "FunctionalAnalysis/ComplexRealEquiv",
     "Dynamics/ComplexBirkhoffCoordinatesExponent",
     "Dynamics/ConjugatePairEquiv",
@@ -918,6 +924,76 @@
       "propext",
       "Classical.choice",
       "Quot.sound"
+    ],
+    "NLS.exists_reciprocal_bootstrap_exponents": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.mem_of_clipped_increment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Coeff.exists_coeff_of_tail_majorant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Coeff.exists_reciprocal_bootstrap_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Coeff.exists_uniform_reciprocal_bootstrap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourcePsiCriticalDifference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourcePsiCriticalDifference_other": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourcePsiCriticalGapNormalized": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_difference_squared_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_gapNormalized_half_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_reciprocal_inequality": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_gapNormalized_onePlus": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceProposition4_1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourcePsiCriticalDifference_same": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
     ]
   },
   "allowed_axioms": [
@@ -925,7 +1001,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Focused build of 37 new and consumed modules; transitive audit of 175 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Focused build of 43 new and consumed modules; transitive audit of 189 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",

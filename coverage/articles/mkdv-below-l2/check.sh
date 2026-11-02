@@ -11,7 +11,7 @@ lean_bin="${LEAN_BIN:-$ELAN_HOME/toolchains/leanprover--lean4---v4.33.1/bin/lean
 build_root="${MKDV_BUILD_ROOT:-$project_dir/.lake/mkdv-below-l2/lib/lean}"
 mkdir -p "$build_root/NLS/Articles/MKdVBelowL2"
 # New modules coexist with read-only symlinks to the established namespaces.
-for namespace in Fourier ComplexAnalysis FunctionalAnalysis ZakharovShabat MKdV Dynamics Poisson; do
+for namespace in SequenceSpaces Fourier ComplexAnalysis FunctionalAnalysis ZakharovShabat MKdV Dynamics Poisson; do
   target="$build_root/NLS/$namespace"
   if [[ -L "$target" ]]; then
     rm "$target"
@@ -54,6 +54,12 @@ modules=(
   ZakharovShabat/SourcePsiCriticalNormalizer
   ZakharovShabat/SourcePsiCriticalPeriodLowerBound
   ZakharovShabat/SourcePsiCriticalRootBound
+  SequenceSpaces/ReciprocalBootstrapExponents
+  SequenceSpaces/ReciprocalBootstrapStep
+  SequenceSpaces/ReciprocalBootstrap
+  ZakharovShabat/SourcePsiCriticalInitialOffset
+  ZakharovShabat/SourcePsiCriticalReciprocalInequality
+  ZakharovShabat/SourceProposition4_1
   FunctionalAnalysis/ComplexRealEquiv
   Dynamics/ComplexBirkhoffCoordinatesExponent
   Dynamics/ConjugatePairEquiv

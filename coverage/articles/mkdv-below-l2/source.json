@@ -26,5 +26,8 @@
   ],
   "status": "theorem_1_2_verified_theorems_1_1_and_1_3_open",
   "branch": "articles/mkdv-below-l2",
-  "audited_declarations": 175
+  "audited_declarations": 189,
+  "verified_dependencies": [
+    "NLS.ZakharovShabat.sourceProposition4_1"
+  ]
 }

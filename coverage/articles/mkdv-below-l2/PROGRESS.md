@@ -212,3 +212,48 @@ declarations passed transitive axiom checks, using only `propext`,
 `Classical.choice` and `Quot.sound`. The audited declaration set matched
 `AxiomAudit.lean` exactly. There were no holes, new axioms or disabled linters
 in the seven new modules.
+
+
+## Sixth checkpoint — Proposition 4.1 at every finite p>2
+
+`sourceProposition4_1` now proves the actual psi-critical root refinement
+`σⁿₖ−λdotₖ = γₖ αⁿₖ` in every finite ℓq, q>1, on a constructed open
+neighborhood of the entire real source locus. The norm bound is uniform in
+the deleted index n and locally uniform at every complex source. The source
+neighborhood precedes the q quantifier. One fixed scalar sequence is retained:
+`sourcePsiCriticalGapNormalized`, the actual critical-filled displacement
+difference divided by the actual gap. Its value is zero at collapsed gaps,
+and its deleted coordinate is zero. The theorem retains explicit equality
+of every ℓq representative with that same scalar sequence.
+
+The initial squared-gap factorization is built from the original normalized
+psi offsets and the actual critical squared-gap quotient, with uniform norm
+bounds. A Hölder product gives the initial half-exponent estimate. The new
+actual reciprocal inequality uses the checked comparison periods, quantitative
+separation, actual quotient bounds, and critical-point-to-gap distance bounds.
+Its constants and selected-index cutoff are independent of n on a common
+complex source neighborhood. The quadratic remainder uses the exact π/2
+separation and the corresponding coefficient 8B²/π in its common constant.
+
+The reusable sequence-space bootstrap has three parts. A strict reciprocal
+gain is realized by a quasi-Hölder product, an optional contractive embedding
+into ℓ¹, and a Young kernel with exponent strictly above one. A quantitative
+one-step theorem retains the original coefficients, the finite central part,
+and the translated ℓ¹ error uniformly in n. A finite clipped arithmetic
+progression of reciprocal exponents reaches every prescribed finite q>1.
+The parameter neighborhood is unchanged during the iteration, and the norm
+constants remain uniform over the entire parameter and row family.
+
+This completes Proposition 4.1, rather than a restricted exponent variant.
+Theorem 1.3 still requires the sharper Lemma 5.3 moment rows, the all-p weighted
+sum and analytic sequence estimates, and identification with the physical H₄
+action derivative using the consumed hierarchy bridge. The current physical
+candidate convergence remains at 1<p≤3. Theorem 1.1 remains open; Theorem 1.2
+remains verified.
+
+Strict validation for the sixth checkpoint passed: all 43 focused modules
+compiled with `autoImplicit=false` and `warningAsError=true`. All 189 named
+declarations passed transitive axiom checks, including `sourceProposition4_1`,
+using only `propext`, `Classical.choice` and `Quot.sound`. The audited set
+matched `AxiomAudit.lean` exactly. No holes, new axioms, disabled linters or
+increased heartbeat limits were introduced in the six new modules.

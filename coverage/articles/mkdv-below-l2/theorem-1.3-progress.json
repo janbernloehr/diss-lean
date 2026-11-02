@@ -41,10 +41,15 @@
       "source": "Section 4 quantitative root inequality",
       "declaration": "NLS.ZakharovShabat.SourcePsiCriticalPeriodControl.root_difference_le",
       "scope": "Actual root difference bounded by 2(gD+g\u00b2M/d), with explicit pointwise gap, product-error, product-size and denominator bounds; constructed period control supplies the normalizing inverse."
+    },
+    {
+      "source": "Proposition 4.1, pp. 17\u201320",
+      "declaration": "NLS.ZakharovShabat.sourceProposition4_1",
+      "scope": "Every finite p>2; constructed open neighborhood of the entire real locus; one fixed actual gap-normalized sequence belongs to every finite q>1, uniformly in n and locally uniformly at every complex source. Neighborhood chosen before q; collapsed gaps included.",
+      "verified": true
     }
   ],
   "remaining": [
-    "Proposition 4.1 root-difference sequence bootstrap for every finite p>2.",
     "Sharper Lemma 5.3 rows and weighted-sum estimates at every finite p>2.",
     "Identification with the physical normalized H4 action derivative, with exact constants.",
     "Analyticity into each stated weighted sequence target and the refined asymptotic remainder."

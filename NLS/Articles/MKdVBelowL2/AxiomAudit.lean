@@ -1,3 +1,9 @@
+import NLS.SequenceSpaces.ReciprocalBootstrapExponents
+import NLS.SequenceSpaces.ReciprocalBootstrapStep
+import NLS.SequenceSpaces.ReciprocalBootstrap
+import NLS.ZakharovShabat.SourcePsiCriticalInitialOffset
+import NLS.ZakharovShabat.SourcePsiCriticalReciprocalInequality
+import NLS.ZakharovShabat.SourceProposition4_1
 import NLS.Fourier.AbsoluteReciprocalYoungRows
 import NLS.ZakharovShabat.SourceCriticalRelativeRowBound
 import NLS.ZakharovShabat.SourceCriticalTailSeparation
@@ -213,3 +219,18 @@ import NLS.Articles.MKdVBelowL2.FourthMomentSummability
 #print axioms NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_comparison_period_lower_bound
 #print axioms NLS.ZakharovShabat.exists_sourcePsi_critical_period_control
 #print axioms NLS.ZakharovShabat.SourcePsiCriticalPeriodControl.root_difference_le
+
+#print axioms NLS.exists_reciprocal_bootstrap_exponents
+#print axioms NLS.mem_of_clipped_increment
+#print axioms NLS.Coeff.exists_coeff_of_tail_majorant
+#print axioms NLS.Coeff.exists_reciprocal_bootstrap_step
+#print axioms NLS.Coeff.exists_uniform_reciprocal_bootstrap
+#print axioms NLS.ZakharovShabat.sourcePsiCriticalDifference
+#print axioms NLS.ZakharovShabat.sourcePsiCriticalDifference_other
+#print axioms NLS.ZakharovShabat.sourcePsiCriticalGapNormalized
+#print axioms NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_difference_squared_gap
+#print axioms NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_gapNormalized_half_exponent
+#print axioms NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_reciprocal_inequality
+#print axioms NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_gapNormalized_onePlus
+#print axioms NLS.ZakharovShabat.sourceProposition4_1
+#print axioms NLS.ZakharovShabat.sourcePsiCriticalDifference_same

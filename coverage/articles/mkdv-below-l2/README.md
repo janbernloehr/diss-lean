@@ -8,8 +8,9 @@ identification. The H₄ candidate convergence remains at 1<p≤3, now transport
 physical distributions on a common Birkhoff domain. The actual root-period
 comparison, relative product estimate, and normalizing-period stability are
 checked, including a constructed uniform lower bound for the actual
-comparison period. The all-finite-p bootstrap and physical H₄ derivative
-identification remain open.
+comparison period. Proposition 4.1's all-finite-p root bootstrap is now
+verified. The sharper moment bounds and physical H₄ derivative identification
+remain open.
 See [the current progress record](PROGRESS.md) and the
 [Theorem 1.2 clause map](theorem-1.2.json).
 
@@ -177,8 +178,21 @@ rows at every admissible Young triple whose kernel exponent is above one,
 allowing a small exponent loss instead of the fixed doubled output exponent.
 `SourcePsiCriticalRootBound` gives the actual inequality
 `‖σ−ρ‖ ≤ 2(gD+g²M/d)` from the constructed period control and explicit gap,
-product-error, product-size and denominator bounds. The iterated sequence
-improvement of Proposition 4.1 remains to be assembled.
+product-error, product-size and denominator bounds.
+
+`sourceProposition4_1` in `SourceProposition4_1.lean` now proves the full
+Proposition 4.1 for every finite p>2. The normalized sequence is the actual
+critical-filled root difference divided by the actual gap, with value zero
+at collapsed gaps. The same scalar sequence belongs to every finite q>1,
+with norm bounds uniform in the deleted index. The complex source neighborhood
+is chosen before q, and the estimates are locally uniform at every complex
+source in a constructed open neighborhood of the entire real locus.
+The proof combines the original squared-gap initial bound, the actual
+reciprocal inequality, and a reusable finite iteration of reciprocal
+exponents. Hölder product exponents below one are embedded contractively into
+ℓ¹ before Young is used. This supplies the root input for the sharper Lemma
+5.3 moments; it does not yet prove those moment estimates or Theorem 1.3.
+See the exact [Proposition 4.1 map](proposition-4.1.json).
 
 `PhysicalFourthFrequencyCandidate` fixes a constructed actual moment chart
 for each 1<p≤3, intersects its physical convergence domain with the chosen
@@ -223,10 +237,10 @@ read-only, with new outputs under this checkout's private
 `ELAN_HOME`, `LEAN_BIN` and `MKDV_BUILD_ROOT` overrides; it never invokes Lake
 or writes through the imported symlinks.
 
-The expanded focused checker covers 37 new article/shared modules and the
+The expanded focused checker covers 43 new article/shared modules and the
 consumed smooth hierarchy foundations, with `autoImplicit=false` and
 `warningAsError=true`. `AxiomAudit.lean` audits all explicitly named new
-and consumed declarations (175 total), including the main Theorem 1.2 declarations;
+and consumed declarations (189 total), including the main Theorem 1.2 declarations;
 only `propext`, `Classical.choice` and `Quot.sound` occur. No new axiom,
 sorry or disabled linter was introduced. `validation.txt` captures the checks.
 This is focused validation, not a full repository build or completed article

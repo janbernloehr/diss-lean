@@ -13,6 +13,12 @@ ZakharovShabat/SourcePsiCriticalFilledTail: checked
 ZakharovShabat/SourcePsiCriticalNormalizer: checked
 ZakharovShabat/SourcePsiCriticalPeriodLowerBound: checked
 ZakharovShabat/SourcePsiCriticalRootBound: checked
+SequenceSpaces/ReciprocalBootstrapExponents: checked
+SequenceSpaces/ReciprocalBootstrapStep: checked
+SequenceSpaces/ReciprocalBootstrap: checked
+ZakharovShabat/SourcePsiCriticalInitialOffset: checked
+ZakharovShabat/SourcePsiCriticalReciprocalInequality: checked
+ZakharovShabat/SourceProposition4_1: checked
 FunctionalAnalysis/ComplexRealEquiv: checked
 Dynamics/ComplexBirkhoffCoordinatesExponent: checked
 Dynamics/ConjugatePairEquiv: checked
@@ -309,3 +315,25 @@ Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate: checked
 'NLS.ZakharovShabat.SourcePsiCriticalPeriodControl.root_difference_le' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'NLS.exists_reciprocal_bootstrap_exponents' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.mem_of_clipped_increment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Coeff.exists_coeff_of_tail_majorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Coeff.exists_reciprocal_bootstrap_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Coeff.exists_uniform_reciprocal_bootstrap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourcePsiCriticalDifference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourcePsiCriticalDifference_other' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourcePsiCriticalGapNormalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_difference_squared_gap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_gapNormalized_half_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_reciprocal_inequality' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_gapNormalized_onePlus' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceProposition4_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourcePsiCriticalDifference_same' depends on axioms: [propext, Classical.choice, Quot.sound]

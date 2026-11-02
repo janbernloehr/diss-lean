@@ -1,0 +1,26 @@
+{
+  "source": "arXiv:1606.07052v1",
+  "label": "Proposition 4.1",
+  "pages": [
+    17,
+    18,
+    19,
+    20
+  ],
+  "verified": true,
+  "declaration": "NLS.ZakharovShabat.sourceProposition4_1",
+  "file": "NLS/ZakharovShabat/SourceProposition4_1.lean",
+  "domain": "Every finite p>2. Constructed complex open neighborhood U containing the entire real-type source locus, inside the original normalized psi domain.",
+  "formula": "sigma_k^n = lambda_dot_k + gamma_k alpha_k^n for k != n; alpha_n^n=0.",
+  "fixed_sequence": "NLS.ZakharovShabat.sourcePsiCriticalGapNormalized: actual critical-filled root difference divided by actual periodic gap; zero at collapsed gaps.",
+  "quantifiers": "At each complex source in U, one open neighborhood V is chosen before q. For each finite q>1 a norm bound M_q works for every source in V and every deleted index n. Every Coeff q representative equals the fixed scalar sequence at all signed indices.",
+  "proof_inputs": [
+    "Original normalized psi family and squared-gap lp offsets",
+    "Actual critical squared-gap quotient and lp bounds",
+    "Constructed uniform comparison-period invertibility",
+    "Actual spectral quotient product comparison retaining the absolute reciprocal row",
+    "Quasi-H\u00f6lder, contractive exponent embedding and arbitrary reciprocal Young rows",
+    "Finite iteration of clipped reciprocal exponents"
+  ],
+  "main_theorem_1_3_verified": false
+}
