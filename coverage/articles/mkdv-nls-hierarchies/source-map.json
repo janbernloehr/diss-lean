@@ -689,5 +689,27 @@
     "formula": "K1(u) = [u]^2/2 + sum_(n>=1) 2*pi*n*J_n(u)",
     "scope": "Every original real H1 scalar source, including zero mean and arbitrary collapsed gaps. Literal physical Hill contours, native K1 and original scalar L2 norm. Scalar series converges; action-field series converges unconditionally in original L2 norms. Only nonzero Fourier frequencies are divided out. No action or gap-length division.",
     "limits": "Does not construct an independent global mKdV Birkhoff chart or prove general nonzero action-fiber inverse geometry, forward restricted-NLS-action factorization, final angle-sum factorization or the complete corrected frequency comparison."
+  },
+  "original_L2_action_geometry": {
+    "original_real_Banach_form": "NLS.Coeff.physicalRealSubmodule",
+    "closed_real_form": "NLS.Coeff.isClosed_physicalRealSubmodule",
+    "bounded_coefficient_subsequence": "NLS.Coeff.exists_physicalReal_coefficientwise_subseq",
+    "original_L2_action_sequence": "NLS.MKdV.miuraL2ActionSequence",
+    "complex_analytic_native_sequence": "NLS.MKdV.exists_miuraL2ActionSequence_domain",
+    "physical_H1_recovery": "NLS.Articles.MKdVNLSHierarchies.native_L2_action_sequence_physical_H1",
+    "full_L2_mass_trace": "NLS.MKdV.miuraL2Mass_eq_mean_sq_add_actionMoment",
+    "actual_native_K1_endpoint": "NLS.Articles.MKdVNLSHierarchies.native_L2_mass_action_trace",
+    "convergent_actual_action_moment": "NLS.MKdV.hasSum_miuraL2ActionMoment",
+    "original_L2_norm_identity": "NLS.MKdV.miuraL2_norm_sq_eq_action_mean",
+    "explicit_full_target_norm_bound": "NLS.MKdV.miuraL2_norm_sq_le_actionMeanMap",
+    "no_norm_loss_strong_limit": "NLS.MKdV.tendsto_miuraRealL2_of_coefficientwise_of_actionMean",
+    "actual_profile_weak_continuity": "NLS.ZakharovShabat.tendstoUniformlyOn_sourceRealGapCosineProfile_of_bounded_coefficientwise",
+    "positive_gap_separation_from_zero": "NLS.ZakharovShabat.sourceDiagonal_positive_leftEndpoint",
+    "actual_Laurent_zero_weak_continuity": "NLS.ZakharovShabat.tendsto_sourceDiagonalLaurentAction_zero_of_bounded_coefficientwise",
+    "actual_scalar_action_weak_continuity": "NLS.MKdV.tendsto_miuraL2Action_of_bounded_coefficientwise",
+    "properness": "NLS.Articles.MKdVNLSHierarchies.native_L2_action_mean_map_proper",
+    "compact_action_mean_fibers": "NLS.Articles.MKdVNLSHierarchies.native_L2_action_mean_fiber_compact",
+    "scope": "Entire original physical real L2 scalar Banach space, including zero mean and arbitrary collapsed positive actions. Original actual Laurent extensions, with exact independent Hill-contour recovery on every original real H1 input. The target is the full weighted l1 order-one action norm paired with the literal signed mean. Positive indices are encoded in Z with nonpositive entries zero.",
+    "limits": "Properness and compact fibers are proved in original L2. This does not assert compactness in H1, general action-fiber uniqueness, surjectivity of the positive action cone, an independent global mKdV inverse chart, forward restricted-NLS-action factorization, final angle-sum factorization or full corrected frequency comparison."
   }
 }

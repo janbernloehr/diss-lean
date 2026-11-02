@@ -1529,3 +1529,47 @@ and full corrected frequency comparison remain essential obligations.
 Theorems 1 and 2 remain complete; the overall goal remains active.
 
 Validation: all 269 unchanged prefix module source hashes match 0e4eed8; their private outputs were reused. The twelve added modules and NLS aggregate compiled with warnings as errors. Targeted and combined transitive audits passed for 3,448 and 48,382 declarations respectively, using only propext, Classical.choice and Quot.sound. The public inventory is 1,748 declarations (1,419 theorems and 329 definitions; aliases and structures excluded), with 283 frozen mathematical source/checker hashes. Pinned cached imports were used; the entire dependency tree was not rebuilt from source.
+
+
+## 2026-11-02 — original L2 mass trace and proper action/mean geometry
+
+The checked L2 prototype is now split into shared native action-sequence,
+physical real Fourier-density and endpoint trace modules. The actual
+original L2 sequence is analytic in weighted l1 of order one on a complex
+neighborhood of the full physical real form. It retains original source
+coefficients and all physical H1 Hill-contour coordinates, and pairs with
+the literal signed mean. Native K1 on ScalarSobolev 0 is identified with
+the original bilinear L2 mass and its convergent actual action moment.
+
+The exact original scalar norm identity and a bound by the full native
+action/mean target norm are proved. This bounds source preimages of any
+bounded target family. Full target convergence together with coefficient
+convergence prevents norm loss and implies strong original L2 convergence.
+
+The weak spectral continuity needed for properness is also proved, without
+assuming strong source convergence. Actual indexed endpoints and entire
+discriminants converge on bounded Fourier families. Evaluation at moving
+cosine gap coordinates gives the arcosh-profile limit, including endpoints
+and collapsed gaps. A shared compact joint-limit lemma upgrades this to
+uniform convergence on compact parameter sets. Global ordering and zero
+in the central gap put every positive diagonal gap strictly to its right.
+The inverse-frequency real profile is therefore continuous, and its actual
+level-zero Laurent integral converges. Only a nonzero spectral frequency
+is inverted; no action or gap length is divided out.
+
+These results construct properness of the actual complete real L2 action
+and signed-mean map: every compact set of full native data has compact
+preimage in the original L2 topology. In particular every complete fiber
+is compact. The proof extracts bounded coefficient subsequences in the
+closed physical real Banach form, identifies all actual limiting actions
+and the signed mean, then uses the exact trace to obtain strong convergence.
+Zero mean and arbitrary collapsed actions are included.
+
+This closes a global compactness dependency, not the independent mKdV
+Birkhoff inverse construction. General nonzero-fiber uniqueness, positive
+action-cone surjectivity, collapsed Cartesian coordinate geometry, forward
+factorization, independent angles/final angle-sum factorization and full
+corrected frequency comparison remain essential obligations. Properness
+here is in L2; no H1 compactness claim is made. The overall goal stays active.
+
+Validation: all 294 article/shared modules have validated private outputs. The 281 unchanged prefix source hashes match d8b5061 and their outputs were reused; all 13 added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 3,533 declarations/auxiliaries and the combined audit for 48,467 NLS declarations, using only the standard allowed axioms. All 296 mathematical source/checker hashes match the frozen inputs. The public inventory is 1,797 declarations (1,459 theorems and 338 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source.

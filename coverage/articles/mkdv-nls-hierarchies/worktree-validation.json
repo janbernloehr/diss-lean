@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 3448,
+  "audited_declarations_and_auxiliaries": 3533,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -8759,14 +8759,259 @@
       "kind": "theorem",
       "name": "physical_zero_action_fiber_unique",
       "file": "NLS/Articles/MKdVNLSHierarchies/MassActionTraceIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendstoUniformlyOn_of_joint_limits",
+      "file": "NLS/ComplexAnalysis/CompactJointLimits.lean"
+    },
+    {
+      "kind": "def",
+      "name": "physicalRealSubmodule",
+      "file": "NLS/SequenceSpaces/PhysicalRealUnweightedCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isClosed_physicalRealSubmodule",
+      "file": "NLS/SequenceSpaces/PhysicalRealUnweightedCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_physicalReal_coefficientwise_subseq",
+      "file": "NLS/SequenceSpaces/PhysicalRealUnweightedCoefficients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "scalarL2H1Approx",
+      "file": "NLS/ZakharovShabat/ScalarRealL2Density.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarInclusion_scalarL2H1Approx",
+      "file": "NLS/ZakharovShabat/ScalarRealL2Density.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarL2H1Approx_coefficient",
+      "file": "NLS/ZakharovShabat/ScalarRealL2Density.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarL2H1Approx_real",
+      "file": "NLS/ZakharovShabat/ScalarRealL2Density.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_scalarInclusion_scalarL2H1Approx",
+      "file": "NLS/ZakharovShabat/ScalarRealL2Density.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "realL2_eq_of_realH1_agreement",
+      "file": "NLS/ZakharovShabat/ScalarRealL2Density.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraL2ActionSequence",
+      "file": "NLS/MKdV/MiuraL2ActionSequence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_miuraL2ActionSequence_domain",
+      "file": "NLS/MKdV/MiuraL2ActionSequence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraL2ActionSequence_domain",
+      "file": "NLS/MKdV/MiuraL2ActionSequence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2ActionSequence_nonpositive",
+      "file": "NLS/MKdV/MiuraL2ActionSequence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraL2ActionMomentSequence",
+      "file": "NLS/MKdV/MiuraL2ActionSequence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2ActionMomentSequence_apply",
+      "file": "NLS/MKdV/MiuraL2ActionSequence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraL2ActionMomentFunctional",
+      "file": "NLS/MKdV/MiuraL2ActionSequence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraL2ActionMoment",
+      "file": "NLS/MKdV/MiuraL2ActionSequence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraL2ActionMoment",
+      "file": "NLS/MKdV/MiuraL2ActionSequence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2ActionMoment_original_H1",
+      "file": "NLS/MKdV/MiuraL2ActionSequence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraL2ActionMeanMap",
+      "file": "NLS/MKdV/MiuraL2ActionSequence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraL2ActionMeanMap",
+      "file": "NLS/MKdV/MiuraL2ActionSequence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraL2Mass",
+      "file": "NLS/MKdV/MiuraL2MassTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2Mass_eq_mean_sq_add_actionMoment",
+      "file": "NLS/MKdV/MiuraL2MassTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nativeMiuraHillHamiltonian_zero_eq_L2Mass",
+      "file": "NLS/MKdV/MiuraL2MassGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2Mass_eq_half_norm_sq",
+      "file": "NLS/MKdV/MiuraL2MassGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2_norm_sq_eq_action_mean",
+      "file": "NLS/MKdV/MiuraL2MassGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasSum_miuraL2ActionMoment",
+      "file": "NLS/MKdV/MiuraL2MassGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2_norm_sq_le_actionMeanMap",
+      "file": "NLS/MKdV/MiuraL2MassGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiagonal_positive_leftEndpoint",
+      "file": "NLS/ZakharovShabat/SourceDiagonalPositiveGaps.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiagonal_positive_gapAffinePoint_cos",
+      "file": "NLS/ZakharovShabat/SourceDiagonalPositiveGaps.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_sourceInverseFrequencyGapProfile",
+      "file": "NLS/ZakharovShabat/SourceDiagonalPositiveGaps.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_realGapAffinePoint_cos_of_bounded_coefficientwise",
+      "file": "NLS/ZakharovShabat/SourceRealGapCoefficientContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_sourceRealGapCosineProfile_of_bounded_coefficientwise",
+      "file": "NLS/ZakharovShabat/SourceRealGapCoefficientContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendstoUniformlyOn_sourceRealGapCosineProfile_of_bounded_coefficientwise",
+      "file": "NLS/ZakharovShabat/SourceRealGapCoefficientContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_sourceInverseFrequencyGapProfile_of_bounded_coefficientwise",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentCoefficientContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_sourceRealLaurentAction_zero_of_bounded_coefficientwise",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentCoefficientContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_sourceDiagonalLaurentAction_zero_of_bounded_coefficientwise",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentCoefficientContinuity.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraRealL2ActionMeanMap",
+      "file": "NLS/MKdV/MiuraRealL2ActionMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraRealL2ActionMeanMap",
+      "file": "NLS/MKdV/MiuraRealL2ActionMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealL2_bounded_of_actionMean_bounded",
+      "file": "NLS/MKdV/MiuraRealL2ActionMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_miuraRealL2_of_coefficientwise_of_actionMean",
+      "file": "NLS/MKdV/MiuraRealL2ActionMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_miuraL2Action_of_bounded_coefficientwise",
+      "file": "NLS/MKdV/MiuraL2ActionCoefficientContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isProperMap_miuraRealL2ActionMeanMap",
+      "file": "NLS/MKdV/MiuraL2ActionProperness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompact_miuraRealL2ActionMeanFiber",
+      "file": "NLS/MKdV/MiuraL2ActionProperness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "native_L2_mass_action_trace",
+      "file": "NLS/Articles/MKdVNLSHierarchies/L2ActionGeometryIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "native_L2_action_mean_map_proper",
+      "file": "NLS/Articles/MKdVNLSHierarchies/L2ActionGeometryIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "native_L2_action_mean_fiber_compact",
+      "file": "NLS/Articles/MKdVNLSHierarchies/L2ActionGeometryIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "native_L2_action_sequence_physical_H1",
+      "file": "NLS/Articles/MKdVNLSHierarchies/L2ActionGeometryIdentification.lean"
     }
   ],
-  "public_declaration_count": 1748,
-  "theorem_count": 1419,
-  "definition_count": 329,
-  "full_build": "281 article/shared modules have validated private outputs. All 269 unchanged prefix module source hashes match the prior 0e4eed8 milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 1797,
+  "theorem_count": 1459,
+  "definition_count": 338,
+  "full_build": "294 article/shared modules have validated private outputs. All 281 unchanged prefix module source hashes match the prior d8b5061 milestone; their private outputs were reused. Thirteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ZakharovShabat/SourceSpatialActionInvariance.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/CompactJointLimits.lean",
   "sha256": {
     "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
     "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f",
@@ -8924,8 +9169,8 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "f0a162061ac4426acb8c0caac60daa53f5cfbb12111f5f0a782e7421cd2e42a8",
-    "scripts/check_mkdv_nls.py": "c6a11923dd1cc45e956d8cfe101f5c0b3bfc25aab327d168cd53ffc877f7bbe9",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "b61da8cdb184fee266bd93ca27e7d401ca15946061542875bdb96c6d22fe3a48",
+    "scripts/check_mkdv_nls.py": "40ad45cdb72aacf653361a57a1617a235a03e14f2abb7b7c38c33b6edd7e4a63",
     "NLS/SequenceSpaces/OrderedNaturalEnumerationUnique.lean": "4445901ea20db8b136cc06b97b4afc71de6961d5594aa281878962ab1b704e0f",
     "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean": "460545a5f30908fff23521c0e37293ee18d18f6441f92452538ea6bfe8bcea7f",
     "NLS/MKdV/MiuraNLSPositiveEndpoints.lean": "3f5c49a6dc937669104d321db0d076ed7e58d317c45984ad041e9ea4eda9781d",
@@ -9050,10 +9295,23 @@
     "NLS/ZakharovShabat/ScalarMeanCotangent.lean": "e1f585831ff85d81e7e86220920e6db98cefe07525fa13d3a62e05517337dd94",
     "NLS/MKdV/MiuraMassActionTrace.lean": "35856ae928fc98210d8f86306f740d23eda61cdd7fbe8eca4bdab5fa4da99f3a",
     "NLS/MKdV/MiuraZeroActionRigidity.lean": "0fc797bf8236528dfb7874b2566ebe444665ffb9fe53a5716a9b8d1f25b3d944",
-    "NLS/Articles/MKdVNLSHierarchies/MassActionTraceIdentification.lean": "130ab5988e12d8a434b430d9ccc3e64e3b02e6c193ca15b27161285ac7a7b9a5"
+    "NLS/Articles/MKdVNLSHierarchies/MassActionTraceIdentification.lean": "130ab5988e12d8a434b430d9ccc3e64e3b02e6c193ca15b27161285ac7a7b9a5",
+    "NLS/ComplexAnalysis/CompactJointLimits.lean": "cb5cf5fe48c55d23df9da8ff7cfe2d85f91096435c024518f1005679c5f73c73",
+    "NLS/SequenceSpaces/PhysicalRealUnweightedCoefficients.lean": "5372a3385990bbad152a696375711071c7b5b323fb1e0b360c88b880660ae5a6",
+    "NLS/ZakharovShabat/ScalarRealL2Density.lean": "585e298fbcad4a512caaf52bb20d5c9d4221b32af62a8c2b9cf5e3de961a5e0a",
+    "NLS/MKdV/MiuraL2ActionSequence.lean": "dd1675c21cc2f566b29ec68163f9da2778f71fb8a39af79aabf96a557b5f4dc2",
+    "NLS/MKdV/MiuraL2MassTrace.lean": "6f9e00f867564003c307b71d0ce7602e5516201ecbaf4c2456c93596f295f482",
+    "NLS/MKdV/MiuraL2MassGeometry.lean": "a1593b68368225ac72ef64cdd3ea44ba0351697d13472550279afff23b50411f",
+    "NLS/ZakharovShabat/SourceDiagonalPositiveGaps.lean": "0fae054b5db08796603219b9a3fefe1d977b679c2d105bd0f50446d0baf8b850",
+    "NLS/ZakharovShabat/SourceRealGapCoefficientContinuity.lean": "3db04169b6e49a133e8328c863ed74f780e1661efbc64d821a4546934418c240",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentCoefficientContinuity.lean": "1d99a18faa932b1553adf627b08af38e83c48a895c340bba04508d6b86c680f2",
+    "NLS/MKdV/MiuraRealL2ActionMap.lean": "0778fcb8814df72a5acca3b64be20c3adce37e56bd84afdf208da8ebde5f585e",
+    "NLS/MKdV/MiuraL2ActionCoefficientContinuity.lean": "d3d3ebd9d61c5ee457f53a2096e75e4be4ef0332bc97132078e7e11c50c664a6",
+    "NLS/MKdV/MiuraL2ActionProperness.lean": "e66002f6cf958da7b4fc3ffe30fd399fbfae2745376d4c8cc7511aac81a67d25",
+    "NLS/Articles/MKdVNLSHierarchies/L2ActionGeometryIdentification.lean": "4baa1390baa4c869832438793b19299764e2ff3087d2a57d9103c79f30f2a15a"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 281,
+  "focused_module_count": 294,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -9242,12 +9500,19 @@
       "combined_NLS_audit_count": 48382,
       "aggregate_compiled": true,
       "validation_scope": "All 269 unchanged prefix module source hashes match the prior 0e4eed8 milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
+    },
+    {
+      "milestone": "Actual original real-L2 complete action and signed-mean map properness and compact complete fibers; direct full native complex-L2 analytic action sequence, exact original mass trace, bounded coefficientwise continuity of actual inverse-frequency Laurent actions through collapsed gaps, and strong convergence from full target data without assuming an independent mKdV chart",
+      "audit_count": 3533,
+      "combined_NLS_audit_count": 48467,
+      "aggregate_compiled": true,
+      "validation_scope": "All 281 unchanged prefix module source hashes match the prior d8b5061 milestone; their private outputs were reused. Thirteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 48382,
+  "combined_audited_NLS_declarations": 48467,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -9255,7 +9520,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 269 unchanged prefix module source hashes match the prior 0e4eed8 milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3448 declarations/auxiliaries and combined audit for 48382 NLS declarations. All 283 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
+  "last_run_notes": "All 281 unchanged prefix module source hashes match the prior d8b5061 milestone; their private outputs were reused. Thirteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3533 declarations/auxiliaries and combined audit for 48467 NLS declarations. All 296 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

@@ -950,3 +950,38 @@ factorization and the complete corrected frequency comparison remain
 open. The overall main-theorem goal remains incomplete.
 
 Validation: all 269 unchanged prefix module source hashes match 0e4eed8; their private outputs were reused. The twelve added modules and NLS aggregate compiled with warnings as errors. Targeted and combined transitive audits passed for 3,448 and 48,382 declarations respectively, using only propext, Classical.choice and Quot.sound. The public inventory is 1,748 declarations (1,419 theorems and 329 definitions; aliases and structures excluded), with 283 frozen mathematical source/checker hashes. Pinned cached imports were used; the entire dependency tree was not rebuilt from source.
+
+
+## Original L2 endpoint action geometry
+
+The full original L2 action sequence is complex analytic into weighted l1
+of order one near the entire physical real form. Every positive coordinate
+is the actual inverse-frequency Laurent extension, and on original real H1
+it equals the independent physical Hill contour action. The signed mean
+pairs with the full sequence. A direct unit-weight physical realization
+avoids transporting the original L2 domain through a different model.
+
+The mass trace now holds at the complete original L2 endpoint. Native K1,
+the exact original scalar L2 norm and the convergent first action moment
+are identified. The full native action/mean target norm controls the source
+L2 norm, and convergence of that data prevents norm loss at a coefficient
+limit. Real H1 symmetric Fourier density proves the endpoint extension.
+
+`native_L2_action_mean_map_proper` proves properness of the actual real L2
+action and signed-mean map. `native_L2_action_mean_fiber_compact` gives
+compact complete fibers in original L2. The spectral input is proved:
+actual canonical endpoints and discriminants converge under bounded
+Fourier limits; the moving arcosh cosine profile converges uniformly on
+compact parameter sets. Every positive diagonal gap stays strictly away
+from zero, including collapsed gaps, so its inverse-frequency integral
+converges as well. The mass trace upgrades subsequential coefficient
+convergence to strong L2 convergence. No spectral-continuity premise or
+independent mKdV chart is supplied by the caller.
+
+Properness is a global compactness result. General nonzero-fiber inverse
+geometry, surjectivity of the positive action cone, collapsed Cartesian
+coordinates and the independent mKdV chart remain open, as do forward
+factorization, final angle-sum factorization and full corrected frequency
+comparison. No H1 compactness assertion is inferred from the L2 result.
+
+Validation: all 294 article/shared modules have validated private outputs. The 281 unchanged prefix source hashes match d8b5061 and their outputs were reused; all 13 added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 3,533 declarations/auxiliaries and the combined audit for 48,467 NLS declarations, using only the standard allowed axioms. All 296 mathematical source/checker hashes match the frozen inputs. The public inventory is 1,797 declarations (1,459 theorems and 338 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source.

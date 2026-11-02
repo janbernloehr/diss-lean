@@ -315,6 +315,19 @@ modules = [
     "NLS/MKdV/MiuraMassActionTrace.lean",
     "NLS/MKdV/MiuraZeroActionRigidity.lean",
     "NLS/Articles/MKdVNLSHierarchies/MassActionTraceIdentification.lean",
+    "NLS/ComplexAnalysis/CompactJointLimits.lean",
+    "NLS/SequenceSpaces/PhysicalRealUnweightedCoefficients.lean",
+    "NLS/ZakharovShabat/ScalarRealL2Density.lean",
+    "NLS/MKdV/MiuraL2ActionSequence.lean",
+    "NLS/MKdV/MiuraL2MassTrace.lean",
+    "NLS/MKdV/MiuraL2MassGeometry.lean",
+    "NLS/ZakharovShabat/SourceDiagonalPositiveGaps.lean",
+    "NLS/ZakharovShabat/SourceRealGapCoefficientContinuity.lean",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentCoefficientContinuity.lean",
+    "NLS/MKdV/MiuraRealL2ActionMap.lean",
+    "NLS/MKdV/MiuraL2ActionCoefficientContinuity.lean",
+    "NLS/MKdV/MiuraL2ActionProperness.lean",
+    "NLS/Articles/MKdVNLSHierarchies/L2ActionGeometryIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")
