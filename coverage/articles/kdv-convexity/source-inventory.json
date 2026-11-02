@@ -528,10 +528,16 @@
         "NLS.ComplexAnalysis.circleIntegral_cubic_re_nonpos_of_physical_cut_square",
         "NLS.KdV.hillHminus_filled_square_real",
         "NLS.KdV.exists_hillHminus_physical_cut_sign",
-        "NLS.KdV.exists_hillHminus_physical_high_cuts"
+        "NLS.KdV.exists_hillHminus_physical_high_cuts",
+        "NLS.ComplexAnalysis.re_sq_neg_of_near_imaginary",
+        "NLS.ComplexAnalysis.re_two_endpoint_square_nonneg",
+        "NLS.ComplexAnalysis.circleIntegral_cubic_re_nonpos_of_real_endpoints",
+        "NLS.KdV.exists_hillHminus_nonnegative_high_gap_squares",
+        "NLS.KdV.exists_hillHminus_high_cubic_period_nonpositive",
+        "NLS.KdV.exists_analytic_nonpositive_hillHminus_moments_with_action_bounds"
       ],
       "remaining": [
-        "Identify the singular Hill operator and global labels, construct finite central contours, and complete full real-band continuation. The actual primitive now has strict physical signs on both full nonreal half-planes, and actual high cut roots have those signs and exact full-circle matching on a common H^-1 neighborhood. Prove filled-square nonnegativity along the actual real gaps and apply the checked boundary-jump theorem to obtain cubic nonpositivity.",
+        "Identify the singular Hill operator and global H^-1 labels, construct finite central contours, and complete full real-band continuation. Actual high cubic periods are now proved real and nonpositive on a common H^-1 neighborhood, together with analyticity and quadratic Arnold-period bounds. Positive Arnold actions, finite central cubic signs, global Birkhoff-action identification and real isospectral invariance still remain.",
         "Identify the actual Arnold periods with the action coordinates of the same global H^-1 KdV Birkhoff map used in the article. The proved estimates concern the constructed spectral periods, not an arbitrary coordinate map.",
         "Apply the proved simultaneous descent/gluing and exact weighted-action summation mechanism to the actual KdV Birkhoff-coordinate cubic periods. This still requires the actual global H^-1 Birkhoff map and Arnold-period action identity, real isospectral invariance on its action fibers, and analytic finite central periods. No common action domain is now required as a separate abstract hypothesis.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
@@ -1509,7 +1515,7 @@
     "generic_square_root_full_halfplane_boundary_limits_include_zero_values": true,
     "generic_negative_cubic_jump_formula_proved": true,
     "generic_cubic_sign_hypotheses": "An analytic filled square, nonnegative real values along the entire cut, and strict expanding/contracting root signs on the two half-discs. Collapsed cuts use bounded removability.",
-    "generic_cubic_sign_instantiated_for_all_actual_high_Hminus1_cuts": false,
+    "generic_cubic_sign_instantiated_for_all_actual_high_Hminus1_cuts": true,
     "actual_cubic_period_nonpositivity_proved": false,
     "actual_Arnold_period_positivity_proved": false,
     "central_canonical_contours_or_full_Hminus1_band_gluing_proved": false,
@@ -1548,6 +1554,36 @@
       "NLS.ComplexAnalysis.RealCutCircleIntegral",
       "NLS.ComplexAnalysis.BoundedPuncturedCircleIntegral"
     ],
-    "shared_source_commit": "2fef357d3542763e699e37951f061a67b3ebb5bc"
+    "shared_source_commit": "2fef357d3542763e699e37951f061a67b3ebb5bc",
+    "actual_high_cubic_period_nonpositivity_proved": true
+  },
+  "Hminus1_high_cubic_sign_progress": {
+    "potential_space": "Real unit-period H^-1 distributions, with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
+    "nonnegative_actual_filled_square_on_real_high_gap_proved": true,
+    "unit_root_sign_source": "The existing actual deflated unit root is within one quarter of +i/(2*n*pi). Its square has strictly negative real part; the ordered real endpoint product is nonpositive on the gap.",
+    "ordered_actual_real_Hminus1_gap_pairs_retained": true,
+    "generic_cubic_sign_applied_to_actual_source_normalized_periods": true,
+    "off_center_gap_midpoint_deformation_proved": true,
+    "collapsed_gaps_included": true,
+    "actual_high_Rn_real_and_nonpositive_proved": true,
+    "source_result_scope": "The sign assertion of Lemma 4.6(i) for all sufficiently high indices on one local H^-1 neighborhood. The finite central indices in that source lemma are still missing.",
+    "exact_period_normalization": "R_n=(1/pi)*counterclockwise integral (F+i*n*pi)^3, on the original radius-n energy circle.",
+    "same_common_complex_Hminus1_neighborhood_for_analyticity_action_bound_and_real_sign": true,
+    "cutoff_and_neighborhood_precede_all_indices_and_real_inputs": true,
+    "quadratic_bound": "|8*n*pi*R_n| <= C*|A_n|^2 for the literal Arnold period A_n, also at nearby complex inputs.",
+    "actual_high_Arnold_nonnegativity_proved": false,
+    "all_finite_central_cubic_period_nonpositivity_proved": false,
+    "global_canonical_Hminus1_gap_labels_and_band_gluing_proved": false,
+    "actual_KdV_Birkhoff_action_identity_proved": false,
+    "actual_global_positive_ell2_Hamiltonian_extension_proved": false,
+    "new_authored_modules": [
+      "NLS.ComplexAnalysis.NearImaginarySquare",
+      "NLS.ComplexAnalysis.PhysicalCutCubicGeometry",
+      "NLS.KdV.HillHminusOneRealGapSquares",
+      "NLS.KdV.HillHminusOneCubicSign"
+    ],
+    "new_shared_modules_imported": 0,
+    "shared_branch_reinspected_at": "05e5530f4040c09502aa7099776f515980d223ed",
+    "new_shared_results_observed_not_imported": "Global L2 filled gap squares and convergent hierarchy trace gap series; H^-1 labels, finite contours and Birkhoff identification remain open."
   }
 }

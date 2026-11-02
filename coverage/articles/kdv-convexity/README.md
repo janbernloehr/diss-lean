@@ -1512,9 +1512,8 @@ formula: when the filled square is nonnegative along the entire cut,
 the counterclockwise cubic integral equals minus twice the integral of
 the cubed nonnegative real square root. Thus its real part is nonpositive
 and its imaginary part is zero. A collapsed cut uses bounded removability.
-This is a generic theorem with explicit hypotheses. Nonnegativity of the
-filled square on each actual gap, and its application to all actual
-H^-1 cubic periods, are not yet proved.
+This generic theorem is now applied to all sufficiently high actual
+H^-1 gaps below. Finite central cubic signs remain unproved.
 
 The 24 exact shared dependencies are pinned in
 `physical-cut-shared-imports.json` against `articles/kdv-estimates` at
@@ -1525,6 +1524,44 @@ The global KdV Birkhoff map, its Arnold-action identity, real isospectral
 invariance of the actual cubic moments and finite central periods remain
 required to instantiate the checked common-neighborhood action descent
 and global positive-ell2 summation. Theorem 1.1 remains unverified.
+
+## Nonpositive actual H^-1 high cubic periods
+
+`NearImaginarySquare.lean` proves that a complex value within one quarter
+of a positive imaginary model has a square with strictly negative real
+part. A two-endpoint factorization therefore has nonnegative real part
+between its ordered real endpoints.
+`HillHminusOneRealGapSquares.lean` applies this to the actual H^-1 unit
+root near +i/(2*n*pi), on the common complex neighborhood already proved
+for its uniform free approximation. It retains the actual ordered root
+pair, analytic filled square and nonvanishing analytic cut root. On the
+entire closed real gap the filled square is real and nonnegative.
+No nonnegativity of a model action is assumed.
+
+`PhysicalCutCubicGeometry.lean` deforms a free-centered circle to a
+nested circle around the actual gap midpoint and applies the proved
+boundary-jump theorem there. The gap may be off-center or collapsed.
+`HillHminusOneCubicSign.lean` matches the physical cut root on the whole
+source circle and uses the exact source-annulus deformation. The original
+period R_n=(1/pi)*integral (F+i*n*pi)^3 is real and nonpositive for every
+real H^-1 input in one open complex neighborhood and every index above
+one common cutoff. There is no undetermined sign or logarithm period.
+
+`exists_analytic_nonpositive_hillHminus_moments_with_action_bounds`
+chooses the same complex H^-1 neighborhood for cubic-period and
+Arnold-period analyticity, the exact weighted estimate
+|8*n*pi*R_n|<=C*|A_n|^2 at complex inputs, and the real cubic sign.
+The cutoff and neighborhood precede all indices and inputs. These are
+actual potential-space assertions; they do not yet supply the global
+Birkhoff coordinates, action identity, finite central moments or their
+real isospectral invariance needed to apply action descent.
+High Arnold positivity and finite central cubic signs remain open.
+Theorem 1.1 and the other main theorem flags remain unverified.
+
+The shared branch was re-inspected at `05e5530`. Its new global L2
+filled-gap squares and convergent hierarchy trace gap series are available
+for subsequent reuse; no additional shared sources are imported in this
+four-module milestone.
 
 ## Remaining essential KdV work
 
@@ -1563,7 +1600,7 @@ and global positive-ell2 summation. Theorem 1.1 remains unverified.
    giving the full -6*Id derivative. Apply the checked local consequences
    after positive-index Hessian/real-cone transport.
 
-The `kdv-estimates` branch was re-inspected through commit `2fef357`.
+The `kdv-estimates` branch was re-inspected through commit `05e5530`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
 two-mode reduction, weighted root separation and physical gap tails. The
 period-one L2 Hill discriminant is jointly entire after square descent,
@@ -1598,15 +1635,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `eaec79a` contains 288 source modules. Every
-baseline source hash remains unchanged. Twenty-four exact shared modules
-and five authored modules pass incremental Lean 4.33.1/mathlib v4.33.1
-checks with `warningAsError=true`. The full reproducible script now lists
-317 source modules. The positive-index example passes.
+The validated baseline at `2632da7` contains 317 source modules. Every
+baseline source hash remains unchanged. Four authored modules pass
+incremental Lean 4.33.1/mathlib v4.33.1 checks with `warningAsError=true`.
+The full reproducible script now lists 321 source modules. The
+positive-index example passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 163 additional shared modules:
-3513 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 165 additional shared modules:
+3525 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

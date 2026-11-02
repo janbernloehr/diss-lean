@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneCubicSign
 import NLS.KdV.HillHminusOnePhysicalHighCuts
 import NLS.ComplexAnalysis.PhysicalCutCubicSign
 import NLS.KdV.HillHminusOneMomentReality
@@ -62,6 +63,9 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.ComplexAnalysis.NearImaginarySquare,
+    `NLS.ComplexAnalysis.PhysicalCutCubicGeometry,
+
     `NLS.ComplexAnalysis.RealDiameterDisc,
     `NLS.SequenceSpaces.OrderedOneSidedEnumeration,
     `NLS.SequenceSpaces.OrderedFiniteContinuity,

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-02",
-  "milestone": "Strict physical H^-1 half-plane sheet signs and common-neighborhood high-cut normalization, with zero-inclusive square-root boundary limits and a generic cubic contour sign theorem",
+  "milestone": "Nonnegative filled squares on actual real H^-1 high gaps and nonpositive source-normalized cubic periods, on a common analytic neighborhood with quadratic Arnold-period bounds",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -334,11 +334,15 @@
     "NLS.ComplexAnalysis.SignedSquareBoundary",
     "NLS.ComplexAnalysis.PhysicalCutCubicSign",
     "NLS.KdV.HillHminusOnePhysicalCut",
-    "NLS.KdV.HillHminusOnePhysicalHighCuts"
+    "NLS.KdV.HillHminusOnePhysicalHighCuts",
+    "NLS.ComplexAnalysis.NearImaginarySquare",
+    "NLS.ComplexAnalysis.PhysicalCutCubicGeometry",
+    "NLS.KdV.HillHminusOneRealGapSquares",
+    "NLS.KdV.HillHminusOneCubicSign"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 3513,
+    "declarations": 3525,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -379,6 +383,8 @@
       "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc"
     ],
     "additional_shared_modules": [
+      "NLS.ComplexAnalysis.NearImaginarySquare",
+      "NLS.ComplexAnalysis.PhysicalCutCubicGeometry",
       "NLS.ComplexAnalysis.RealDiameterDisc",
       "NLS.SequenceSpaces.OrderedOneSidedEnumeration",
       "NLS.SequenceSpaces.OrderedFiniteContinuity",
@@ -574,8 +580,10 @@
     "NLS/ComplexAnalysis/FDerivCauchyFormula.lean": "402e8e6ddd8d097c1392f6995632fbb84a9424b6ddcee6750f421e25cd08e9ec",
     "NLS/ComplexAnalysis/HolomorphicCircleIntegral.lean": "f8952d0a8640a05f1eea98627bb8b808580cd523195633622a8b36d43916cce3",
     "NLS/ComplexAnalysis/LogarithmStripNormalization.lean": "bbc36395029fdd10fe849338e098af2ca10fbe7ec33ac0852f12676c2f08e622",
+    "NLS/ComplexAnalysis/NearImaginarySquare.lean": "17984a457423d56a33574b36475c42a5cb4c0eb086ea86dddb63c30739cb80f0",
     "NLS/ComplexAnalysis/NormalizedSquareRootBounds.lean": "2a6a4da47dbbdee147f05543aaf118f93907622fbd1957eb960c1be8af29fd91",
     "NLS/ComplexAnalysis/OpenMapDescent.lean": "56712915e98dec6c7ed1dcfbb005f0155a514c86a23f824c1ef152dc1844a614",
+    "NLS/ComplexAnalysis/PhysicalCutCubicGeometry.lean": "bda75f843d49b9dc40e56ae3e4727b12fc6769354f06426b99b88a1b0a357fcf",
     "NLS/ComplexAnalysis/PhysicalCutCubicSign.lean": "a8e0bf2fe39923e7b915cb97f07e443fe9dd08b983ab1bf4418851de1d28c1b6",
     "NLS/ComplexAnalysis/PositiveRealPart.lean": "ea765bc189af3af91a9da85e528be14c2577d39ccac0fac5098e5fc2af5c7d45",
     "NLS/ComplexAnalysis/QuadraticClusterCount.lean": "b945038db6b22d3dfe63ddf052c77fe34a32be81806bb56d29e3e8c9bd181c4c",
@@ -700,6 +708,7 @@
     "NLS/KdV/HillHminusOneAnnulusCoverage.lean": "916c9437bf30dfc5fee301e79168604c9cc83a6ccbb8518d0aac0d96ce6e7ffe",
     "NLS/KdV/HillHminusOneArnoldActionComparison.lean": "0b56591d7b68195d25c58d9976c9231554ccb68a160dfa2701e6b38e641bc660",
     "NLS/KdV/HillHminusOneCubicGapBounds.lean": "04d9ffd4a01047d88c32ca7cd234ddbfffc7b6dd9ee88a12d34254ae551f8905",
+    "NLS/KdV/HillHminusOneCubicSign.lean": "124dfdd2a462b3a5f52943adba995f3efda13032c6da990a5581d0123f175fa2",
     "NLS/KdV/HillHminusOneDiscAsymptotics.lean": "dd94b601b7f0a76227ace8f10fdd7356bb697aa05af802877546c66b7a6140b7",
     "NLS/KdV/HillHminusOneDiscriminant.lean": "99de415ddf7a75270281e46a1908745aba77fb24efc94d8ca497d60867533387",
     "NLS/KdV/HillHminusOneFreeSquareComparison.lean": "c962f371fd1a812574b89b8aeb24e7fa76433bceb5ad3138a1b9a1eb4c5fd472",
@@ -717,6 +726,7 @@
     "NLS/KdV/HillHminusOnePhysicalCut.lean": "eb3fa7232841695ce7c83a6784307603ac6d53036125faa9215127ec1fa42079",
     "NLS/KdV/HillHminusOnePhysicalHighCuts.lean": "c2a105320092913861adfdecee1917452d1b304131e6213906155b776df7bd3d",
     "NLS/KdV/HillHminusOnePrimitiveStrip.lean": "9984157753ef5d600407bd4d78dfcd4dcdbce25c1d6cf9c4aab69e2f328da0ed",
+    "NLS/KdV/HillHminusOneRealGapSquares.lean": "fa5fb527da3c68fda9e03282fb848a08e45e27fe82baaeb02888c64bd75c324c",
     "NLS/KdV/HillHminusOneReality.lean": "10e72d25c3441afac7098a88b212137432c8a967f1404cc2279ae62b19afef98",
     "NLS/KdV/HillHminusOneReflection.lean": "8005980b4e7fa831018704438f26b6b9c85c54a499f357d247c331a2b9415f4a",
     "NLS/KdV/HillHminusOneSmallGapCoverage.lean": "5989c880c8684c721597d98cbd91194db8bc7cce9439f77344888bf737ca8181",
@@ -864,17 +874,17 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "0f244a544b1ebb7c3212d50fa3362c667187a569c54c5dc62c9f13e146906c63",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "d925c9e821a46a823088a74f57f9e41eca15baf67da9964fc26cef26a0dae54f",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/hminus-real-shared-imports.json": "7cf3589bedf25268fd1f886149cae0a2205ff5625619a33bfc7ba6b44c2a78f0",
     "coverage/articles/kdv-convexity/miura-shared-imports.json": "03ff17c03499d952d3bc9ad51743ae761db5416ca4f93426e2e731fac0a39b00",
     "coverage/articles/kdv-convexity/physical-cut-shared-imports.json": "c6adf4965416cc426fc385ce324b4afb1aae45fec50e499debfbd5c2a2c5997f",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
-    "scripts/check-kdv-convexity.sh": "34ca37425c90679b6e82bc7cd811435df0867e8274abf899bb82aecffa95b38a"
+    "scripts/check-kdv-convexity.sh": "b11b4ab0f019a218158507364642b69df9433a01c562a42368dc050c2a09cf26"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-cut-validation.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-sign-validation.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -892,14 +902,14 @@
     "All main theorems remain unverified.",
     "The actual H^-1 spectral periods now satisfy uniform complex-neighborhood quartic-gap, gap/Arnold-period and quadratic weighted cubic-period estimates, including collapsed gaps. These are potential-space statements for the constructed source-normalized periods; global Birkhoff action identification and analytic action-space descent remain required.",
     "High cut roots now match the actual source primitive on complete integration circles and throughout both half-discs. Central contours, full real-band continuation, finite-gap exterior matching and the normalized inversion remainder required for Lemma 4.4 remain open.",
-    "Identify the singular Hill operator and global labels, construct finite central contours, and complete full real-band continuation. The actual primitive now has strict physical signs on both full nonreal half-planes, and actual high cut roots have those signs and exact full-circle matching on a common H^-1 neighborhood. Prove filled-square nonnegativity along the actual real gaps and apply the checked boundary-jump theorem to obtain cubic nonpositivity.",
-    "Strict physical sheet signs and the generic nonpositive cubic jump theorem are proved. Filled-square nonnegativity on actual gaps and the resulting actual Arnold positivity/cubic nonpositivity remain unproved.",
+    "Identify the singular Hill operator and global H^-1 labels, construct finite central contours, and complete full real-band continuation. Actual high cubic periods are now proved real and nonpositive on a common H^-1 neighborhood, together with analyticity and quadratic Arnold-period bounds. Positive Arnold actions, finite central cubic signs, global Birkhoff-action identification and real isospectral invariance still remain.",
+    "Actual high filled squares are nonnegative on the real gaps, and the actual high cubic periods are real and nonpositive, including collapsed gaps. Arnold positivity and the finite central cubic signs remain unproved.",
     "The energy-analytic endpoint unit root is controlled uniformly over nearby complex H^-1 inputs. Joint potential analyticity of that chosen deflated root and a single neighborhood for all error tolerances are not asserted.",
     "Physical energy and frequency identification, the KdV quadratic coefficients giving -6*Id, positive-index Hessian transport and main Theorems 1.2 and 1.3 remain unproved.",
     "No full repository build or replacement of the dissertation validation is claimed.",
     "The common-neighborhood descent, nonnegative overlap gluing, raw weighted-action bound transport and positive-ell2 analytic summation are now proved for analytic real-action-invariant coordinate families. The actual KdV Birkhoff map, its Arnold-period identity and real isospectral invariance of all actual moments, including the finite central ones, remain unproved inputs."
   ],
-  "previous_progress_commit": "eaec79ad4142bca91c3612b36b85903b79b54a89",
+  "previous_progress_commit": "2632da7428925819b2262adcb5b2e805a10150b3",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -1388,7 +1398,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation: all source hashes of the validated 288-module baseline remain unchanged; 24 exact shared modules and five authored modules pass warningAsError checks, followed by the positive-index example and combined transitive axiom audit. The full reproducible script lists 317 source modules.",
+  "focused_validation_scope": "Incremental validation: all source hashes of the validated 317-module baseline remain unchanged; four authored modules pass warningAsError checks, followed by the positive-index example and combined transitive axiom audit. The full reproducible script lists 321 source modules.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -1698,9 +1708,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 479,
-    "audit_modules_present": 163,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/PhysicalCutCoverageNames.log"
+    "declarations": 485,
+    "audit_modules_present": 165,
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/CubicSignCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -1788,16 +1798,12 @@
     ]
   },
   "incremental_validation": {
-    "baseline_commit": "eaec79ad4142bca91c3612b36b85903b79b54a89",
-    "baseline_modules": 288,
+    "baseline_commit": "2632da7428925819b2262adcb5b2e805a10150b3",
+    "baseline_modules": 317,
     "baseline_source_hashes_unchanged": true,
-    "newly_checked_exact_shared_modules": 24,
-    "newly_checked_authored_modules": 5,
-    "shared_validation_logs": [
-      "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/halfplane-shared-validation.log",
-      "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cut-jump-shared-validation.log"
-    ],
-    "authored_validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-cut-validation.log"
+    "newly_checked_exact_shared_modules": 0,
+    "newly_checked_authored_modules": 4,
+    "authored_validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/cubic-sign-validation.log"
   },
   "Hminus1_real_spectral_progress": {
     "potential_space": "Every real unit-period H^-1 potential, specified by conjugate reflection of its raw Fourier coefficients.",
@@ -1864,7 +1870,7 @@
     "generic_square_root_full_halfplane_boundary_limits_include_zero_values": true,
     "generic_negative_cubic_jump_formula_proved": true,
     "generic_cubic_sign_hypotheses": "An analytic filled square, nonnegative real values along the entire cut, and strict expanding/contracting root signs on the two half-discs. Collapsed cuts use bounded removability.",
-    "generic_cubic_sign_instantiated_for_all_actual_high_Hminus1_cuts": false,
+    "generic_cubic_sign_instantiated_for_all_actual_high_Hminus1_cuts": true,
     "actual_cubic_period_nonpositivity_proved": false,
     "actual_Arnold_period_positivity_proved": false,
     "central_canonical_contours_or_full_Hminus1_band_gluing_proved": false,
@@ -1903,6 +1909,36 @@
       "NLS.ComplexAnalysis.RealCutCircleIntegral",
       "NLS.ComplexAnalysis.BoundedPuncturedCircleIntegral"
     ],
-    "shared_source_commit": "2fef357d3542763e699e37951f061a67b3ebb5bc"
+    "shared_source_commit": "2fef357d3542763e699e37951f061a67b3ebb5bc",
+    "actual_high_cubic_period_nonpositivity_proved": true
+  },
+  "Hminus1_high_cubic_sign_progress": {
+    "potential_space": "Real unit-period H^-1 distributions, with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
+    "nonnegative_actual_filled_square_on_real_high_gap_proved": true,
+    "unit_root_sign_source": "The existing actual deflated unit root is within one quarter of +i/(2*n*pi). Its square has strictly negative real part; the ordered real endpoint product is nonpositive on the gap.",
+    "ordered_actual_real_Hminus1_gap_pairs_retained": true,
+    "generic_cubic_sign_applied_to_actual_source_normalized_periods": true,
+    "off_center_gap_midpoint_deformation_proved": true,
+    "collapsed_gaps_included": true,
+    "actual_high_Rn_real_and_nonpositive_proved": true,
+    "source_result_scope": "The sign assertion of Lemma 4.6(i) for all sufficiently high indices on one local H^-1 neighborhood. The finite central indices in that source lemma are still missing.",
+    "exact_period_normalization": "R_n=(1/pi)*counterclockwise integral (F+i*n*pi)^3, on the original radius-n energy circle.",
+    "same_common_complex_Hminus1_neighborhood_for_analyticity_action_bound_and_real_sign": true,
+    "cutoff_and_neighborhood_precede_all_indices_and_real_inputs": true,
+    "quadratic_bound": "|8*n*pi*R_n| <= C*|A_n|^2 for the literal Arnold period A_n, also at nearby complex inputs.",
+    "actual_high_Arnold_nonnegativity_proved": false,
+    "all_finite_central_cubic_period_nonpositivity_proved": false,
+    "global_canonical_Hminus1_gap_labels_and_band_gluing_proved": false,
+    "actual_KdV_Birkhoff_action_identity_proved": false,
+    "actual_global_positive_ell2_Hamiltonian_extension_proved": false,
+    "new_authored_modules": [
+      "NLS.ComplexAnalysis.NearImaginarySquare",
+      "NLS.ComplexAnalysis.PhysicalCutCubicGeometry",
+      "NLS.KdV.HillHminusOneRealGapSquares",
+      "NLS.KdV.HillHminusOneCubicSign"
+    ],
+    "new_shared_modules_imported": 0,
+    "shared_branch_reinspected_at": "05e5530f4040c09502aa7099776f515980d223ed",
+    "new_shared_results_observed_not_imported": "Global L2 filled gap squares and convergent hierarchy trace gap series; H^-1 labels, finite contours and Birkhoff identification remain open."
   }
 }
