@@ -203,12 +203,26 @@
         "NLS.KdV.hillL2ContinuedRoot_eq_classical",
         "NLS.KdV.hillL2ContinuedPrimitive_eq_classical",
         "NLS.KdV.hillL2HighContourMoment_zero_eq_classicalPrimitiveAction",
-        "NLS.KdV.hillL2HighContourMoment_zero_eq_shifted_classicalPrimitiveAction"
+        "NLS.KdV.hillL2HighContourMoment_zero_eq_shifted_classicalPrimitiveAction",
+        "NLS.ComplexAnalysis.exists_local_lipschitz_bound_of_analyticAt",
+        "NLS.ComplexAnalysis.norm_sqrt_sub_one_le",
+        "NLS.ComplexAnalysis.prescribedSquareRoot_analytic_and_close",
+        "NLS.KdV.classicalHillFreeShiftedSquare",
+        "NLS.KdV.classicalHillFreeQuadraticModel",
+        "NLS.KdV.norm_free_square_sub_quadratic_le",
+        "NLS.KdV.squaredCosh_classicalHillFreeShiftedSquare",
+        "NLS.KdV.exists_classicalHill_free_square_comparison",
+        "NLS.KdV.exists_classicalHill_quadratic_square_comparison",
+        "NLS.KdV.exists_classicalHill_normalized_gap_quotients",
+        "NLS.KdV.exists_classicalHill_near_free_gap_units",
+        "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc",
+        "NLS.KdV.squaredCosh_neg_sq",
+        "NLS.KdV.exists_classicalHill_whole_disc_small_squares"
       ],
       "remaining": [
         "Handle central gaps and the full canonical primitive needed by the physical trace identity. Identify the shared intrinsic real L2 labels with this contour construction, prove uniform rough-topology moment bounds and extend to H^-1; prove nonpositivity.",
         "Identify the constructed continuous-potential contour moments with the physical H^-1 spectral/action data, and prove analytic descent on one complex neighborhood of the weighted ell^(-1,1) nonnegative cone (Lemma 4.6(ii)).",
-        "Prove the actual complex-neighborhood action/gap comparison gamma_n^2/n<=C*|I_n|, then combine with the checked weighted quartic gap bound to obtain locally uniform |8*n*pi*R_n|<=Cprime*|I_n|^2 on the required action domain.",
+        "Use the near-free endpoint-deflated unit root to compute the endpoint-root period and prove the actual complex-neighborhood action/gap lower comparison gamma_n^2/n<=C*|I_n|. Combine it with the weighted quartic gap bound on the required action domain.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
         "Identify its bilinear Hilbert gradient with physical KdV frequencies minus 8*pi^3*n^3 on the full common domain.",
         "Prove the KdV quadratic Taylor coefficients giving -6*Id.",
@@ -492,7 +506,8 @@
     "gap_length_dependent_quotient_bound_proved": true,
     "central_gap_squares_constructed": false,
     "Hminus1_extension_proved": false,
-    "action_descent_proved": false
+    "action_descent_proved": false,
+    "arbitrarily_small_prescribed_square_norm_bound_proved": true
   },
   "gap_scale_and_cut_root_progress": {
     "potential_space": "C([0,1], C), complex sup-norm topology",
@@ -579,5 +594,34 @@
     "actual_action_gap_lower_comparison_proved": false,
     "global_Birkhoff_action_identification_proved": false,
     "analytic_weighted_action_descent_proved": false
+  },
+  "free_gap_quotient_normalization_progress": {
+    "potential_space": "C([0,1], C), complex sup-norm topology",
+    "quantifiers": "For each q, one r>0 with r<=pi/4 precedes every error tolerance. For each tolerance there are a positive cutoff N and a complex open V containing q, before all n>=N, all a in V and all energy-disc points.",
+    "energy_disc": "closedBall((n*pi)^2,n*pi*r)",
+    "arbitrarily_small_prescribed_square_norm_on_full_disc_proved": true,
+    "exact_free_square": "-(sqrt(lambda)-n*pi)^2",
+    "free_quadratic_model": "-(lambda-(n*pi)^2)^2/(4*(n*pi)^2)",
+    "exact_free_to_quadratic_error_bound": "5*r^3/(4*n*pi)",
+    "actual_square_to_either_model_bound": "epsilon*r^2, with r chosen before epsilon",
+    "local_disc_quotient_comparison_requires_entire_quotients": false,
+    "actual_endpoint_confinement": "norm(lambda_endpoint-(n*pi)^2)<(epsilon/64)*(n*pi*r)",
+    "quotient": "twoZeroQuotient(lambda -> K_n(lambda,a),lambda_left,lambda_right)",
+    "normalized_quotient_bound": "norm(4*(n*pi)^2*Q_n+1)<=epsilon for 0<epsilon<=1",
+    "analytic_unit_root_constructed": true,
+    "unit_root_normalization": "H_n^2=Q_n and norm(H_n-i/(2*n*pi))<=epsilon/(2*n*pi) for 0<epsilon<1",
+    "unit_root_energy_analytic_on_neighborhood_of_full_closed_disc": true,
+    "unit_root_nonzero_on_full_closed_disc": true,
+    "square_factorization": "K_n(lambda,a)=(lambda-left)*(lambda-right)*H_n(lambda)^2",
+    "uniform_in_nearby_complex_potentials_and_tail_indices": true,
+    "both_actual_endpoints_and_collapsed_gaps_included": true,
+    "analytic_individual_endpoint_labels_assumed": false,
+    "one_potential_neighborhood_for_all_tolerances_proved": false,
+    "one_chosen_square_family_for_all_tolerances_asserted": false,
+    "joint_potential_analyticity_of_endpoint_deflated_unit_root_proved": false,
+    "endpoint_root_period_computation_proved": false,
+    "actual_action_gap_lower_comparison_proved": false,
+    "Hminus1_extension_proved": false,
+    "weighted_action_descent_proved": false
   }
 }

@@ -9,6 +9,7 @@ import NLS.KdV.ClassicalHillWholeGapSquares
 import NLS.KdV.ClassicalHillGapCutRoots
 import NLS.KdV.ClassicalHillCubicGapBounds
 import NLS.KdV.ClassicalL2PrimitiveAgreement
+import NLS.KdV.ClassicalHillGapQuotientAsymptotics
 import NLS.KdV.ActionHamiltonianFiniteGap
 import NLS.Articles.KdVConvexity.LocalConsequences
 import NLS.Articles.KdVConvexity.BaseContourSeries
@@ -28,6 +29,7 @@ run_cmd do
     ``NLS.ComplexAnalysis.analyticOnNhd_twoZeroQuotient,
     ``NLS.ComplexAnalysis.twoZeroQuotient_ne_zero,
     ``NLS.ComplexAnalysis.norm_twoZeroQuotient_le,
+    ``NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc,
     ``NLS.ComplexAnalysis.analyticOnNhd_continuous_squareRoot,
     ``NLS.ComplexAnalysis.exists_analytic_squareRoot_on_ball,
     ``NLS.ComplexAnalysis.endpointRoot,
@@ -43,6 +45,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[`NLS.ComplexAnalysis.EntireEvenSquareDescent,
+    `NLS.ComplexAnalysis.AnalyticLocalLipschitz,
+    `NLS.ComplexAnalysis.NormalizedSquareRootBounds,
     `NLS.ComplexAnalysis.TracePrimitiveContinuation,
     `NLS.ComplexAnalysis.TracePrimitiveFunctoriality,
     `NLS.ComplexAnalysis.TwoZeroOrderComparison,

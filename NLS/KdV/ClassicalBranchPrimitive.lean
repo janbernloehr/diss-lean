@@ -33,6 +33,10 @@ private theorem sqrt_square (z : ℂ) : (Complex.sqrt z)^2 = z := by
 @[simp] theorem squaredCosh_zero : squaredCosh 0 = 1 := by
   simpa only [zero_pow (by decide : 2 ≠ 0),cosh_zero] using squaredCosh_sq 0
 
+@[simp] theorem squaredCosh_neg_sq (z : ℂ) : squaredCosh (-z^2) = cos z := by
+  have he : (z*I)^2 = -z^2 := by rw [mul_pow,I_sq]; ring
+  rw [← he,squaredCosh_sq,Complex.cosh_mul_I]
+
 theorem analyticOnNhd_squaredCosh : AnalyticOnNhd ℂ squaredCosh univ := by
   intro z _
   have h : AnalyticAt ℂ (fun w => squaredCosh (w^2)) (Complex.sqrt z) := by

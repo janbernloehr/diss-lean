@@ -31,6 +31,10 @@ The actual high cubic moments now satisfy the quartic gap bound on a
 common complex potential neighborhood, by fixing one sign on a connected
 small circle and deforming that circle. This does not require global
 matching on every overlap component.
+The endpoint-deflated square now also has its quantitative free-model
+normalization and an analytic root close to i/(2*n*pi), on each complete
+high disc. The comparison needed for the action lower bound is therefore
+available before the remaining endpoint-root period calculation.
 The analytic summation also allows a local finite spectral cutoff.
 Analytic squared primitive charts at
 both signs of the branch locus are also constructed. The earlier local
@@ -822,6 +826,56 @@ neighborhood. The potential space is still C([0,1],C); identifying actual
 actions, proving gamma^2/n<=C*|I_n| and descending analytically to the
 weighted action space remain essential for Theorem 1.1.
 
+### Free-model normalization of the endpoint quotient
+
+[`AnalyticLocalLipschitz.lean`](../../../NLS/ComplexAnalysis/AnalyticLocalLipschitz.lean)
+supplies a two-point Lipschitz bound for the squared-cosh inverse.
+The whole-disc square construction now permits any prescribed positive
+norm bound. This allows the same inverse chart to compare the actual
+square with the exact free model
+
+```
+K_free(lambda)=-(sqrt(lambda)-n*pi)^2.
+```
+
+[`ClassicalHillFreeSquareComparison.lean`](../../../NLS/KdV/ClassicalHillFreeSquareComparison.lean)
+fixes r>0 before the error tolerance. On the full energy discs, the
+actual square is arbitrarily close, with error epsilon*r^2, both to
+K_free and to the polynomial
+
+```
+K_quad(lambda)=-(lambda-(n*pi)^2)^2/(4*(n*pi)^2).
+```
+
+The explicit free-model error is at most 5*r^3/(4*n*pi).
+The local two-root comparison in
+[`TwoZeroDeflation.lean`](../../../NLS/ComplexAnalysis/TwoZeroDeflation.lean)
+requires analyticity near the closed disc; no entire quotient is assumed.
+[`ClassicalHillGapQuotientAsymptotics.lean`](../../../NLS/KdV/ClassicalHillGapQuotientAsymptotics.lean)
+combines it with actual endpoint confinement and proves
+
+```
+|4*(n*pi)^2*Q_n+1| <= epsilon,
+H_n^2=Q_n,
+|H_n-i/(2*n*pi)| <= epsilon/(2*n*pi).
+```
+
+Here Q_n is the actual filled endpoint quotient of K_n. The first bound
+holds for 0<epsilon<=1; the analytic unit root H_n is constructed for
+0<epsilon<1. Both estimates hold on the complete closed disc, including
+the actual endpoints and collapsed gaps.
+[`NormalizedSquareRootBounds.lean`](../../../NLS/ComplexAnalysis/NormalizedSquareRootBounds.lean)
+uses a prescribed normalized root and proves the quantitative estimate
+|sqrt(z)-1|<=|z-1|.
+
+The radius is chosen before epsilon; the cutoff and complex potential
+neighborhood may depend on epsilon. No single neighborhood for all
+tolerances is asserted. The roots H_n are analytic in energy, with a
+common estimate for all nearby complex potentials; joint potential
+analyticity of this endpoint-deflated root is not yet asserted. The
+remaining action estimate needs the exact endpoint-root period and its
+comparison with the physically normalized contour action.
+
 ### Agreement with the shared physical L2 primitive and Arnold periods
 
 The dependency closure of the shared L2 primitive and contour moments
@@ -936,17 +990,17 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All ninety-two modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All ninety-six modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in nine additional shared modules:
-1147 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in eleven additional shared modules:
+1177 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
-included in the same transitive audit, together with all nineteen
-public complex-analysis declarations.
+included in the same transitive audit. The authored complex-analysis
+helpers and reused shared-module declarations are covered as well.
 See `validation.json` for exact file hashes and scope.
 
 Reproduce from this worktree:

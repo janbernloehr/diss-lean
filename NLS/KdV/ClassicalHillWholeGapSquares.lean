@@ -85,12 +85,12 @@ theorem square_mem_energy_ball_of_small_frequency
 /-- A single inverse and a common complex potential neighborhood give
 one analytic square on every complete high energy disc. The actual
 shifted primitive agrees wherever its source continuation is admissible. -/
-theorem exists_classicalHill_whole_disc_squares (q : Curve ℂ) :
+theorem exists_classicalHill_whole_disc_small_squares (q : Curve ℂ) (B : ℝ) (hB : 0 < B) :
     ∃ r : ℝ, ∃ N : ℕ, ∃ V : Set (Curve ℂ),
       0 < r ∧ r ≤ Real.pi/4 ∧ 0 < N ∧ IsOpen V ∧ q ∈ V ∧
       ∀ n : ℕ+, N ≤ (n : ℕ) → ∃ K : ℂ × Curve ℂ → ℂ,
         AnalyticOnNhd ℂ K (classicalHillGapSquareDisc n r ×ˢ V) ∧
-        (∀ t ∈ classicalHillGapSquareDisc n r ×ˢ V, ‖K t‖ < 1) ∧
+        (∀ t ∈ classicalHillGapSquareDisc n r ×ˢ V, ‖K t‖ < B) ∧
         (∀ t ∈ classicalHillGapSquareDisc n r ×ˢ V,
           squaredCosh (K t) = (-1 : ℂ)^(n : ℕ)*classicalHillDiscriminant t.2 t.1/2) ∧
         (∀ t ∈ classicalHillGapSquareDisc n r ×ˢ V,
@@ -104,7 +104,7 @@ theorem exists_classicalHill_whole_disc_squares (q : Curve ℂ) :
   obtain ⟨d,hd,hcontrol⟩ := exists_delta_cosh_strip_control epsilon hepsilon
   obtain ⟨eta,heta,hsmallW⟩ := Metric.mem_nhds_iff.mp (hW.mem_nhds h1)
   obtain ⟨etaG,hetaG,hsmallG⟩ := Metric.continuousAt_iff.mp
-    ((hG 1 h1).continuousAt : ContinuousAt G (1 : ℂ)) 1 (by norm_num)
+    ((hG 1 h1).continuousAt : ContinuousAt G (1 : ℂ)) B hB
   let delta : ℝ := min 1 (min d (min eta etaG))
   have hdelta : 0 < delta := lt_min (by norm_num) (lt_min hd (lt_min heta hetaG))
   have hdelta1 : delta ≤ 1 := min_le_left _ _
@@ -188,6 +188,22 @@ theorem exists_classicalHill_whole_disc_squares (q : Curve ℂ) :
     change G (D t) = _
     rw [← hcosh,← squaredCosh_sq]
     exact hleft _ hFU
+
+/-- Unit-bounded version of the arbitrarily small whole-disc square
+construction, retained for the endpoint deflation and contour bounds. -/
+theorem exists_classicalHill_whole_disc_squares (q : Curve ℂ) :
+    ∃ r : ℝ, ∃ N : ℕ, ∃ V : Set (Curve ℂ),
+      0 < r ∧ r ≤ Real.pi/4 ∧ 0 < N ∧ IsOpen V ∧ q ∈ V ∧
+      ∀ n : ℕ+, N ≤ (n : ℕ) → ∃ K : ℂ × Curve ℂ → ℂ,
+        AnalyticOnNhd ℂ K (classicalHillGapSquareDisc n r ×ˢ V) ∧
+        (∀ t ∈ classicalHillGapSquareDisc n r ×ˢ V, ‖K t‖ < 1) ∧
+        (∀ t ∈ classicalHillGapSquareDisc n r ×ˢ V,
+          squaredCosh (K t) = (-1 : ℂ)^(n : ℕ)*classicalHillDiscriminant t.2 t.1/2) ∧
+        (∀ t ∈ classicalHillGapSquareDisc n r ×ˢ V,
+          K t = 0 ↔ classicalHillRadicand t = 0) ∧
+        ∀ t ∈ (classicalHillGapSquareDisc n r ×ˢ V) ∩ classicalHillContinuationDomain,
+          K t = (classicalHillContinuedPrimitive t+I*(n : ℂ)*Real.pi)^2 :=
+  exists_classicalHill_whole_disc_small_squares q 1 (by norm_num)
 
 /-- The analytic energy discs contain the whole actual high gaps, with
 one complex neighborhood and cutoff chosen before every pair. One square
