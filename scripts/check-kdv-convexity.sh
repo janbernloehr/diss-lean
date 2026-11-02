@@ -19,6 +19,19 @@ if [[ -L "$build/lib/NLS/KdV" ]]; then
   exit 1
 fi
 mkdir -p -- "$build/lib/NLS/KdV" "$build/lib/NLS/Articles/KdVConvexity" "$build/logs"
+# This shared namespace has a new bounded physical-class inclusion. Replace
+# only its private import-directory link, then link reference files as imports.
+# Compilation targets below are real files; the reference cache is never written.
+if [[ -L "$build/lib/NLS/ZakharovShabat" ]]; then
+  unlink -- "$build/lib/NLS/ZakharovShabat"
+fi
+mkdir -p -- "$build/lib/NLS/ZakharovShabat"
+for entry in "$reference/.lake/build/lib/lean/NLS/ZakharovShabat/"*; do
+  name="${entry##*/}"
+  if [[ ! -e "$build/lib/NLS/ZakharovShabat/$name" ]]; then
+    ln -s -- "$entry" "$build/lib/NLS/ZakharovShabat/$name"
+  fi
+done
 # Only specific Lean output paths below are writable build targets. Generic
 # namespace links are imports; this directory must never be used by lake build.
 for entry in "$reference/.lake/build/lib/lean/NLS/"*; do
@@ -34,8 +47,11 @@ done
 export LEAN_PATH
 LEAN_PATH="$(IFS=:; echo "${import_paths[*]}")"
 cd -- "$repo"
-for module in KdV/RiccatiEnergy KdV/ConstantUpperSpectralBridge KdV/ClassicalSpectralSymmetry KdV/ClassicalDiscriminant KdV/ClassicalLocalPrimitive KdV/ClassicalFreePrimitive KdV/ClassicalHillFlow KdV/ClassicalHillSpectrum KdV/ClassicalSourcePrimitive KdV/ClassicalBranchPrimitive KdV/ClassicalTraceAsymptotics KdV/ActionHamiltonianMoments KdV/ClassicalContourMoments KdV/ActionHamiltonianTrace KdV/ActionHamiltonianFiniteGap Articles/KdVConvexity/LocalConsequences Articles/KdVConvexity/AnalyticSeries Articles/KdVConvexity/GlobalExtension Articles/KdVConvexity/ActionEmbedding Articles/KdVConvexity/BaseContourSeries; do
+for module in ZakharovShabat/ContinuousPotentialL2Bound KdV/RiccatiEnergy KdV/ConstantUpperSpectralBridge KdV/ClassicalSpectralSymmetry KdV/ClassicalDiscriminant KdV/ClassicalLocalPrimitive KdV/ClassicalFreePrimitive KdV/ClassicalHillFlow KdV/ClassicalHillSpectrum KdV/ClassicalSourcePrimitive KdV/ClassicalSpectralEmbedding KdV/ClassicalContourCoverage KdV/ClassicalHighGapPairs KdV/ClassicalBranchPrimitive KdV/ClassicalTraceAsymptotics KdV/ActionHamiltonianMoments KdV/ClassicalContourMoments KdV/ClassicalHighContourMoments KdV/ClassicalHighGapFamilies KdV/ActionHamiltonianTrace KdV/ActionHamiltonianFiniteGap Articles/KdVConvexity/LocalConsequences Articles/KdVConvexity/AnalyticSeries Articles/KdVConvexity/GlobalExtension Articles/KdVConvexity/ActionEmbedding Articles/KdVConvexity/BaseContourSeries; do
   log_name="${module//\//.}"
+  if [[ -L "$build/lib/NLS/$module.olean" ]]; then
+    unlink -- "$build/lib/NLS/$module.olean"
+  fi
   if ! "$lean_bin" -R "$repo" -DwarningAsError=true \
       -o "$build/lib/NLS/$module.olean" \
       "$repo/NLS/$module.lean" > "$build/logs/$log_name.log" 2>&1; then

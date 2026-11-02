@@ -95,7 +95,23 @@
         "NLS.KdV.exists_classicalHillContinuation_neighborhood",
         "NLS.KdV.classicalHillContinued_period_eq_zero",
         "NLS.KdV.exists_analyticOnNhd_classicalHillContinuedMoment",
-        "NLS.KdV.classicalHillContinuedMoment_zero"
+        "NLS.KdV.classicalHillContinuedMoment_zero",
+        "NLS.ZakharovShabat.continuousPotentialL2CLM",
+        "NLS.KdV.canonicalDiscriminant_classicalHillCoefficientPotential",
+        "NLS.KdV.classicalHillRadicand_sq_eq_zero_iff_periodicSpectrum",
+        "NLS.KdV.exists_classicalHillCounting_near_compact",
+        "NLS.KdV.exists_classicalHill_high_contour_neighborhood",
+        "NLS.KdV.classicalHillHighContourMoment_eq_curveIntegral",
+        "NLS.KdV.exists_analytic_classicalHillHighContourMoments",
+        "NLS.KdV.classicalHillHighContourMoment_zero",
+        "NLS.KdV.analyticOnNhd_classicalHillCoefficientPotential",
+        "NLS.KdV.analyticOrderNatAt_classicalHillRadicand_energy",
+        "NLS.KdV.sq_injOn_high_closedBall",
+        "NLS.KdV.classicalHillDiscriminant_high_root_level",
+        "NLS.KdV.exists_classicalHillHighGapPair_of_counting",
+        "NLS.KdV.ClassicalHillHighGapPair.eq_or_swap",
+        "NLS.KdV.analyticAt_classicalHillHigh_symmetric",
+        "NLS.KdV.exists_analytic_classicalHillHighGapFamilies"
       ],
       "remaining": [
         "Construct physical KdV contour moments and analytic descent on one complex neighborhood of the weighted ell^(-1,1) nonnegative cone (Lemma 4.6(ii)).",
@@ -161,7 +177,7 @@
       ]
     }
   ],
-  "completion_status": "partial_verification_actual_free_normalized_source_continuation_and_contour_moments_proved",
+  "completion_status": "partial_verification_actual_high_energy_pairs_multiplicities_trace_levels_and_analytic_symmetric_data_proved",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean",
   "branch": "articles/kdv-convexity",
   "global_extension_progress": {
@@ -194,8 +210,9 @@
     "physical_primitive_constructed": false,
     "physical_energy_identification_proved": false,
     "explicit_quadratic_constant": "16*pi*B*A^3*K^2 when radius <= B*gamma, |F| <= A*gamma/n, gamma^2/n <= K*|I|",
-    "remaining": "Coverage of canonical gap contours by the constructed free-normalized continuation; indexed endpoint values and continuation through the actual cuts; rough Fourier/scalar spectral identification; complex-neighborhood gap/action bounds; action-space descent; physical high-energy expansion (4.7).",
-    "actual_contour_moments_on_explicit_joint_domain_constructed": true
+    "remaining": "Integrate the constructed actual unordered high pairs with complete globally ordered Hill labels and central contours; prove real spectral ordering and primitive endpoint values; continue across actual gap cuts; identify the rough Hill/action data; prove uniform complex gap/action bounds and action descent; identify physical high-energy expansion (4.7).",
+    "actual_contour_moments_on_explicit_joint_domain_constructed": true,
+    "common_high_contour_neighborhood_constructed": true
   },
   "physical_coefficient_progress": {
     "source": "Physical energy coefficient needed for Lemma 4.4 / (4.7), p. 28",
@@ -244,6 +261,45 @@
     "indexed_endpoint_values_proved": false,
     "action_indexed_Rn_identified": false,
     "action_descent_proved": false,
-    "uniform_action_quadratic_bounds_proved": false
+    "uniform_action_quadratic_bounds_proved": false,
+    "high_squared_frequency_contours_covered_on_common_neighborhood": true
+  },
+  "high_contour_progress": {
+    "potential_topology": "Sup-norm Banach space C([0,1], C), allowing complex perturbations.",
+    "physical_class_inclusion_bounded": true,
+    "actual_physical_ZS_trace_identification": true,
+    "real_type_ZS_assumption": false,
+    "uniform_counting_neighborhood_near_compact_potential_sets": true,
+    "high_contour_family": "Image under lambda=z^2 of the counterclockwise circle C(n*pi,pi/4), n>N.",
+    "quantifiers": "For every q, exists N>0 and complex open V containing q, before every a in V and every n>N. All source potentials s*a with 0<=s<=1 avoid the actual branch locus on those contours.",
+    "exact_energy_jacobian": "2*z",
+    "actual_curve_integral_equality_proved": true,
+    "moment_analyticity_on_same_V_for_entire_tail": true,
+    "free_high_contour_moments_zero": true,
+    "source_exact_gap_labels_identified": false,
+    "central_contour_coverage_proved": false,
+    "rough_Hill_operator_spectral_equivalence_proved": false,
+    "weighted_action_descent_proved": false,
+    "uniform_quadratic_action_bounds_proved": false,
+    "actual_unordered_high_energy_pairs_identified": true
+  },
+  "high_energy_pair_progress": {
+    "potential_space": "C([0,1], C), with complex sup-norm topology",
+    "energy_region": "Image of B(n*pi,pi/4) under lambda=z^2, for positive high indices",
+    "squaring_injective_on_closed_high_disc": true,
+    "frequency_algebraic_multiplicity_equals_actual_energy_analytic_order": true,
+    "actual_two_root_energy_pair_constructed": true,
+    "double_roots_included": true,
+    "unordered_pair_unique_up_to_exchange": true,
+    "endpoint_trace_levels": "Both Delta values equal 2 for even n and -2 for odd n",
+    "analytic_energy_midpoint": "m^2+g/4=(l+r)/2, using intrinsic frequency midpoint m and squared gap g",
+    "analytic_energy_squared_gap": "4*m^2*g=(l-r)^2",
+    "common_neighborhood_for_all_high_pairs_symmetric_data_and_cubic_moments": true,
+    "individual_roots_assumed_analytic": false,
+    "full_globally_ordered_Hill_labels_constructed": false,
+    "reality_of_energy_roots_at_real_q_proved": false,
+    "primitive_endpoint_values_minus_i_n_pi_proved": false,
+    "weighted_action_descent_proved": false,
+    "quadratic_action_bounds_proved": false
   }
 }

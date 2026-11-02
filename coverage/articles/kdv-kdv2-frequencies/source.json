@@ -573,10 +573,104 @@
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "a64f5c9c03ebffd71ec4ed56dc21f5d544f58f4db9d14ad3e6f1366576abe093",
       "upstream_commit": "ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean",
+      "source_labels": [
+        "Actual classical Hill spectral embedding dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Shared bounded continuous-potential inclusion into the actual L² spectral theory",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6036371a2cadb92169894a505e58daefeb9d493fbe81d1e10a2387c9a65459a5",
+      "upstream_commit": "963d5bb053684ec65427e0a319ffb729beaaa9f0"
+    },
+    {
+      "path": "NLS/KdV/ClassicalSpectralEmbedding.lean",
+      "source_labels": [
+        "Actual Hill critical/spectral identification dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Shared exact canonical/classical Hill trace and multiplicity comparisons for the literal constant-upper pair",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "380b88836452638e10b6a47fcf341535c58ced2981c159f97f6464ebcf0d1651",
+      "upstream_commit": "963d5bb053684ec65427e0a319ffb729beaaa9f0"
+    },
+    {
+      "path": "NLS/KdV/ClassicalContourCoverage.lean",
+      "source_labels": [
+        "Uniform actual gap contour dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Shared one-neighborhood actual source-path contour avoidance for the whole high family",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3c3c840a66b0d32b15653d5957b80d5dfeb8f2e31a76de0b7e39f6c420e97a48",
+      "upstream_commit": "963d5bb053684ec65427e0a319ffb729beaaa9f0"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceDistantCriticalPointsAnalyticNeighborhood.lean",
+      "source_labels": [
+        "Section 2.5 uniform critical analyticity dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "General complex-source distant analytic/simple roots on one neighborhood; real-type condition is not assumed for distant roots",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cecc3f386d896d8221cb0f5b1260b73d1fafc2ce9cfbff8c47e99fbf1bce0a1b"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHighCriticalPoints.lean",
+      "source_labels": [
+        "Section 2.5 actual uniform high critical points"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Actual analytic/simple high critical energy points and unique mapped-disc labeling on one neighborhood at every continuous complex potential",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f8c168845aeb2d2a7c6e22fb9b7254d7ed137456be22a50793bd069def46413f"
+    },
+    {
+      "path": "NLS/KdV/ClassicalUniformCriticalBasis.lean",
+      "source_labels": [
+        "Equations (52)-(53) actual infinite basis construction"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "One common neighborhood supports all positive critical branches and entire numerator basis elements; infinite normalization remains open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "252fef69cb28bd767195f3fc6c42682eeee9f0dfe87453e0c215a2510241e2b6"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCriticalTailAnalytic.lean",
+      "source_labels": [
+        "Uniform period-operator tail dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Actual positive spectral-frequency critical displacement tail is Banach analytic in ℓ², norm bounded, and uniformly small near zero; not the Hamiltonian frequency map",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b39cd6fe783f27bdae092ac3521f7d66544d8908f8516c1111ae3bc27ae517bc"
     }
   ],
   "dependencies_needed": [
-    "infinite normalized period family with uniform tail estimates; finite normalization near zero is now constructed",
+    "infinite normalized period operator and its inverse; common-neighborhood infinite numerator basis and analytic ℓ² critical tail are now constructed",
     "shared rough Hill/KdV spectral and Birkhoff foundations; global gap and canonical sheet normalization",
     "shared KdV action Hamiltonians",
     "actual KdV and KdV2 frequency moment identities and uniform analytic bounds",
@@ -604,8 +698,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 497,
-    "total_declarations_audited": 2148,
+    "candidate_declarations_audited": 570,
+    "total_declarations_audited": 12091,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -650,26 +744,27 @@
   "progress_record": "PROGRESS.md",
   "endpoint_mass_record": "MASS_NONEXTENSION.md",
   "shared_developments_inspected": {
-    "articles/kdv-estimates": "194ec4bd1254f88305d8743f13197fa775e97931",
-    "articles/kdv-convexity": "ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503"
+    "articles/kdv-convexity": "963d5bb053684ec65427e0a319ffb729beaaa9f0",
+    "articles/kdv-estimates": "b2097376825d45ff2468d2c2db239c95b61dea59"
   },
   "fixed_time_record": "FIXED_TIME_NONEXTENSION.md",
   "frequency_moment_record": "FREQUENCY_MOMENTS.md",
   "frequency_series_record": "FREQUENCY_SERIES.md",
   "primitive_continuation_record": "PRIMITIVE_CONTINUATION.md",
   "shared_developments_imported": {
-    "articles/kdv-convexity": "ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503"
+    "articles/kdv-convexity": "963d5bb053684ec65427e0a319ffb729beaaa9f0"
   },
   "shared_integration_recheck": {
     "command": "env ELAN_HOME=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/tooling/elan NLS_REFERENCE_CHECKOUT=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls bash scripts/check-kdv-convexity.sh",
     "exit_code": 0,
-    "modules": 20,
+    "modules": 26,
     "positive_index_example": "passed",
-    "transitive_audit_declarations": 269,
+    "transitive_audit_declarations": 337,
     "scope": "shared KdV and KdVConvexity namespaces; separate from full frequency NLS dependency audit",
     "canonical_checkout_modified": false
   },
   "goal_turn_classification": "progress",
   "free_frequency_psi_record": "FREE_FREQUENCY_PSI.md",
-  "finite_normalization_record": "FINITE_NORMALIZATION.md"
+  "finite_normalization_record": "FINITE_NORMALIZATION.md",
+  "uniform_critical_basis_record": "UNIFORM_CRITICAL_BASIS.md"
 }

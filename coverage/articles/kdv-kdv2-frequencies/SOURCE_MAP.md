@@ -208,3 +208,11 @@ analytic period entries and simultaneous normalization on any finite set
 of distinct positive modes. See [FINITE_NORMALIZATION.md](FINITE_NORMALIZATION.md).
 The neighborhood depends on that finite set. The infinite family, global
 canonical product identification and all main-theorem rows remain open.
+
+
+One common complex continuous-potential neighborhood now supports every
+positive actual critical branch and entire numerator basis element.
+The high critical displacement tail is Banach analytic in ℓ² and uniformly
+small near zero. See [UNIFORM_CRITICAL_BASIS.md](UNIFORM_CRITICAL_BASIS.md).
+The infinite normalized period operator, source canonical products, rough
+scale and physical frequency statements remain open; no main row is closed.

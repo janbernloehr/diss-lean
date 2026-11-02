@@ -11,6 +11,8 @@ article_imports="$article_root/.lake/article-imports"
 modules=(NLS/ComplexAnalysis/JointSpectralDerivative
   NLS/ComplexAnalysis/ParametricDividedDifference
   NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
+  NLS/ZakharovShabat/ContinuousPotentialL2Bound
+  NLS/ZakharovShabat/SourceDistantCriticalPointsAnalyticNeighborhood
   NLS/KdV/ConstantUpperSpectralBridge
   NLS/KdV/ClassicalSpectralSymmetry
   NLS/KdV/ClassicalDiscriminant
@@ -19,6 +21,8 @@ modules=(NLS/ComplexAnalysis/JointSpectralDerivative
   NLS/KdV/ClassicalHillFlow
   NLS/KdV/ClassicalHillSpectrum
   NLS/KdV/ClassicalSourcePrimitive
+  NLS/KdV/ClassicalSpectralEmbedding
+  NLS/KdV/ClassicalContourCoverage
   NLS/KdV/ClassicalBranchPrimitive
   NLS/SequenceSpaces/LocallyBoundedAnalyticSummation
   NLS/KdV/FrequencySeriesBounds
@@ -30,6 +34,9 @@ modules=(NLS/ComplexAnalysis/JointSpectralDerivative
   NLS/KdV/FrequencyMoments
   NLS/KdV/FreeFrequencyPsi
   NLS/KdV/ClassicalCriticalPointBranch
+  NLS/KdV/ClassicalHighCriticalPoints
+  NLS/KdV/ClassicalUniformCriticalBasis
+  NLS/KdV/ClassicalCriticalTailAnalytic
   NLS/KdV/ClassicalCriticalNumerator
   NLS/KdV/ClassicalCriticalPeriods
   NLS/KdV/ClassicalFiniteNormalizedDifferentials

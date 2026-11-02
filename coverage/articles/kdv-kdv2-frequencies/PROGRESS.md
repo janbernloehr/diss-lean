@@ -255,3 +255,35 @@ passes for 497 selected declarations and 2148 declarations including
 imported NLS dependencies, allowing only the three standard axioms.
 Canonical sources and build products were not modified. All main-theorem
 statuses remain open.
+
+
+## Actual uniform critical basis and analytic infinite tail milestone
+
+The shared actual high spectral embedding/coverage through `963d5bb` is now
+merged with ancestry preserved. A generic complex-source distant-critical
+analyticity theorem removes the real-type restriction for distant roots.
+The actual Hill energy critical family is analytic, simple and uniquely
+labeled in each high mapped disc, on one neighborhood at every complex
+continuous potential.
+
+Combining that uniform tail with a finite head yields an actual infinite
+critical and entire numerator basis on one common neighborhood of zero.
+The positive high critical displacement is also an actual Banach analytic
+ℓ² map; its whole norm can be made uniformly small near zero. See
+[UNIFORM_CRITICAL_BASIS.md](UNIFORM_CRITICAL_BASIS.md).
+
+This removes the previous mode-by-mode neighborhood limitation for the
+basis, but does not solve infinite period normalization. The full main
+inventory remains open. The 40-module strict build, complete transitive
+audit and shared integration recheck are recorded in `VALIDATION.md`.
+
+The final 40-module strict frequency run passes. Its complete transitive
+audit passes for 570 selected declarations and 12091 declarations including
+imported NLS dependencies. The common-neighborhood infinite numerator
+family and actual ℓ² tail norm assertions are verified; infinite period
+normalization and all main-theorem completion statuses remain open.
+
+The shared integration recheck passes all 26 modules, the positive-index
+example and its 337-declaration transitive shared-namespace audit. This
+milestone preserves the upstream spectral commit ancestry and keeps the
+canonical checkout unchanged.
