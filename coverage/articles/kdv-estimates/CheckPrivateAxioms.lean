@@ -1,5 +1,6 @@
 import NLS.KdV.FreeHill
 import NLS.KdV.HillComplement
+import NLS.KdV.HillReduction
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 

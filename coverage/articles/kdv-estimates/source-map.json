@@ -184,11 +184,12 @@
     }
   ],
   "next_shared_milestones": [
-    "Construct the two-mode Schur complement from the proved complementary Fourier inversion, including dependence on lambda and q.",
-    "Identify the genuine periodic Hill operator with its Fourier realization and period-one potential embedding; prove spectral labels, multiplicities and localization.",
+    "Identify solutions of the literal Fourier equation with the genuine period-two Hill differential operator, including H2 regularity and the period-one potential embedding.",
+    "Prove analytic parameter dependence of the constructed complementary inverse and effective two-mode determinant; prove the symmetry of its diagonal correction.",
+    "Use quantitative determinant estimates and Rouche theory to prove spectral labels, multiplicities and localization.",
     "Construct the Hill discriminant, root branches, contour actions, real positivity and physical canonical Birkhoff map with exact positive-mode and norm conventions.",
     "Prove the hierarchy trace identity and tame action estimates for Theorem 2; connect Theorem 1 through the checked adapters.",
-    "Prove the weighted gap/action bounds and piecewise interpolated weight evaluations required for Theorem 3."
+    "Prove weighted gap/action bounds and piecewise interpolated weight evaluations required for Theorem 3."
   ],
   "workspace_need": "Isolation approved. Branch articles/kdv-estimates; worktree path recorded in validation record. Continue small validated shared-foundation commits and push only this branch.",
   "accepted_reference_scope": "coverage/MAIN_THEOREMS.md and coverage/ACCEPTED_REFERENCE.md were read. The dissertation verification is left intact. The accepted Grebert-Kappeler NLS manuscript does not replace a proof of Hill/KdV-specific assertions.",
@@ -205,5 +206,54 @@
     "constant_changes": "Uses 4/n for the summability and tail estimates, cutoff 8*||q||, and strip radius 6*n; no assertion of the printed 2/n estimate or radius 12*n follows.",
     "essential_missing_identifications": "This is the period-two Fourier coefficient realization for a general weighted potential sequence. Physical function/operator domain identification, embedding of period-one potentials with the source w_(2n) convention, two-mode Schur complement and eigenvalue counting/localization remain to be proved.",
     "main_theorems_verified": false
-  }
+  },
+  "two_mode_reduction": {
+    "module": "NLS/KdV/HillReduction.lean",
+    "source_correspondence": "Appendix A, page 28: S_n=A_lambda-P_n*T_hat_n*V, the one-to-one correspondence of nontrivial solutions, and the effective determinant criterion.",
+    "proved_declarations": [
+      "NLS.KdV.hillTailInverse_left",
+      "NLS.KdV.hillTailInverse_right",
+      "NLS.KdV.norm_hillTailInverse_le",
+      "NLS.KdV.hillTailInverse_unique",
+      "NLS.KdV.hillModes",
+      "NLS.KdV.hillModeCoordinates",
+      "NLS.KdV.hillModePotential",
+      "NLS.KdV.hillEffectivePotential",
+      "NLS.KdV.hillReducedOperator",
+      "NLS.KdV.hillReconstruct",
+      "NLS.KdV.hillModeCoordinates_reconstruct",
+      "NLS.KdV.hillReconstruct_injective",
+      "NLS.KdV.convolution_hillReconstruct",
+      "NLS.KdV.hillReconstruct_isEigenvector",
+      "NLS.KdV.hillFourierEigenvector_decompose",
+      "NLS.KdV.hillFourierEigenvector_potential",
+      "NLS.KdV.hillFourierEigenvector_reduced",
+      "NLS.KdV.hillFourierEigenvector_reconstruct",
+      "NLS.KdV.exists_hillFourierEigenvector_iff",
+      "NLS.KdV.hillReduced_det_eq_zero_iff",
+      "NLS.KdV.hillReducedOperator_zero",
+      "NLS.KdV.hillReduced_det_zero_potential"
+    ],
+    "statement": "For a positive integer n, |Re(z)-pi^2*n^2|<=6*n, and n>=8*||q||_w, the determinant of the constructed operator on C x C vanishes iff there exists a nonzero weighted l1 sequence f with (z-pi^2*k^2)*f_k=(q*f)_k for every integer k. Reconstruction and resonant coefficient extraction recover the solutions in both directions. The full potential is the literal weighted convolution.",
+    "free_case": "At zero potential the constructed operator is (z-pi^2*n^2)*id, and its determinant is exactly (z-pi^2*n^2)^2.",
+    "not_assumed": "No unspecified finite block, arbitrary spectral package, or unproved inverse hypothesis is supplied by a caller. The bounded inverse is chosen from the previously proved existence theorem.",
+    "remaining_qualifications": "No claim yet that a zero of this determinant has the corresponding algebraic multiplicity as a physical periodic Hill eigenvalue. Analytic dependence on z and q, equality of the two diagonal correction terms, the H2 differential-operator domain identification, and eigenvalue labeling/localization remain to be proved."
+  },
+  "other_article_branches_inspected": [
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "be9eba062019e5eb715d4eaf62ce25b0038140fb",
+      "finding": "Analytic contour summation and action embedding modules; not a competing Hill reduction and not needed for this Fourier reduction step."
+    },
+    {
+      "branch": "articles/kdv-kdv2-frequencies",
+      "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
+      "finding": "Action-dependent phase flow and smooth KdV2 identities; no Hill operator/reduction to import."
+    },
+    {
+      "branch": "articles/kdv-pseudomeasures",
+      "commit": "fd8828689696949ee18fbd81f45e797496c13150",
+      "finding": "Weak-star topology and compactness results; no competing Hill reduction."
+    }
+  ]
 }
