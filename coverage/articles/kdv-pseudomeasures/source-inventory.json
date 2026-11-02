@@ -88,7 +88,10 @@
         "NLS.Articles.KdVPseudomeasures.isEmbedding_originalRealWienerEvaluations_on_bounded",
         "NLS.Articles.KdVPseudomeasures.potentialHminusOne_val",
         "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_shiftedNorm_bounds",
-        "NLS.Articles.KdVPseudomeasures.sourceCorollary2_5_coefficient_tail_invertible"
+        "NLS.Articles.KdVPseudomeasures.sourceCorollary2_5_coefficient_tail_invertible",
+        "NLS.Articles.KdVPseudomeasures.source_singularHill_compact_resolvent",
+        "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_mem_iff",
+        "NLS.Articles.KdVPseudomeasures.source_uniform_full_resolvent_criterion"
       ]
     },
     {
@@ -188,6 +191,23 @@
       "status": "Proved for the actual determinant uniformly on original complex endpoint norm balls: exactly two zeros by analytic order on the4sqrt(n) disc and full corrected6n strip, stronger sqrt(n)/4 localization, and literal sqrt6 full-strip-supremum root separation. Physical algebraic-multiplicity correspondence and spectral labels remain open.",
       "coverage": "spectral-coefficients-map.json",
       "declaration": "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform"
+    },
+    {
+      "label": "Appendix C spectral background (endpoint potential range)",
+      "pages": [
+        41,
+        42
+      ],
+      "content": "Original H-minus-one Schrodinger operator with full H1 domain: closed dense domain, nonempty compact resolvent, point spectrum with finite eigenspaces and finitely many values in bounded regions.",
+      "status": "Proved for every original complex endpoint potential in the main theorem range, with original normalization and arbitrary original H-minus-one right-hand sides. Canonical labels/asymptotic enumeration, periodic-antiperiodic assignment and algebraic multiplicities remain open; arbitrary H-minus-one potentials outside this endpoint range are not claimed.",
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.source_singularHill_closed",
+        "NLS.Articles.KdVPseudomeasures.source_singularHill_compact_resolvent",
+        "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_mem_iff",
+        "NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_finite_norm_le",
+        "NLS.Articles.KdVPseudomeasures.source_uniform_full_resolvent_criterion"
+      ],
+      "coverage": "spectral-resolvent-map.json"
     }
   ],
   "reuse_map": [

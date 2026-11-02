@@ -36,12 +36,17 @@
       "singularHillPencil_bilinear",
       "endpointHillEffectivePotential_diagonals_eq",
       "sourceLemma2_9_unit",
-      "sourceLemma2_11_uniform"
+      "sourceLemma2_11_uniform",
+      "source_singularHill_closed",
+      "source_singularHill_compact_resolvent",
+      "sourceHillSpectrum_mem_iff",
+      "sourceHillSpectrum_finite_norm_le",
+      "source_uniform_full_resolvent_criterion"
     ]
   },
   "essential_open_obligations": [
-    "Identify analytic determinant zero orders with physical algebraic multiplicities and construct/label the actual singular spectrum and eventual corrected-strip inclusion; prove physical gap/Dirichlet estimates.",
-    "Physical Hill spectrum and Birkhoff map.",
+    "Identify determinant zero orders with physical algebraic multiplicities and construct the canonical periodic/antiperiodic labels, asymptotic enumeration and eventual corrected-strip assignment; prove physical gap/Dirichlet estimates.",
+    "Construct the Birkhoff map with its global bijectivity, analyticity and endpoint inverse regularity.",
     "Endpoint spectral estimates and inverse regularity needed by 1.4.",
     "Actual KdV H^-1 smooth-approximation solution extension, invariance and continuity.",
     "Wiener Birkhoff diffeomorphism and actual KdV analytic trajectory map."
@@ -85,7 +90,11 @@
     "The actual effective determinant has equal diagonal corrections for complex as well as real potentials, and the exact scalar factorization is proved.",
     "The arbitrary-weight corrected resonant coefficients and their spectral variations obey proved endpoint shifted norm bounds. In the unit scale all scalar entries are jointly endpoint norm analytic with source coefficient errors.",
     "Under the existing cutoff the actual diagonal varies with spectral Lipschitz constant1/8 on the full corrected closed strip. The actual full-strip coupling supremum is finite; any two determinant zeros satisfy the literal sqrt6 separation estimate.",
-    "sourceLemma2_11_uniform combines the two-zero analytic-order count, source-disc localization and full root separation uniformly on exact original complex endpoint norm balls. It does not assert physical spectral labels or algebraic-multiplicity correspondence."
+    "sourceLemma2_11_uniform combines the two-zero analytic-order count, source-disc localization and full root separation uniformly on exact original complex endpoint norm balls. It does not assert physical spectral labels or algebraic-multiplicity correspondence.",
+    "The full original H1-to-H-minus-one endpoint Hill pencil is identity plus compact after a proved fixed physical free isomorphism. It is Fredholm of index zero at every complex lambda, with finite-dimensional actual physical eigenspaces.",
+    "The standard original H-minus-one partial operator has exactly the original H1 domain, proved dense and closed. Its resolvent is nonempty and compact on the original base space, with both inverse identities valid for arbitrary original H-minus-one right-hand sides.",
+    "The physical spectrum globally equals actual full-domain point spectrum. The high-strip determinant detects full physical pencil invertibility uniformly on exact original complex norm balls.",
+    "Actual resolvents satisfy the physical resolvent identity and are norm analytic on their open resolvent set. Every bounded physical spectral region has finitely many spectral values; no algebraic-multiplicity identification or canonical labels are inferred."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",

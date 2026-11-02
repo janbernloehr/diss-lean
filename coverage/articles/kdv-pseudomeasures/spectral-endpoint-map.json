@@ -44,7 +44,7 @@
   "quantifier_order": "For each s and potential norm bound R, choose one N>=1 before w, q with norm(q)<=R, n>=N and lambda in the corrected strip. Both shifted operators are then half contractions and invertible.",
   "verified_scope": "Actual weighted endpoint operators, absolute row summability, both shifted estimates, uniform tail inverses, two-derivative gain, original H1 resolvent domain, and equality with physical H-minus-one multiplication defined by full H1 duality. The singular Hill operator equals minus the genuine distributional second derivative plus the potential product, and its original H-minus-one eigen-equation is equivalent to the Fourier equation for every actual H1 domain element. No spectral enumeration, eigenvalue localization or Birkhoff map is assumed proved.",
   "remaining_physical_obligations": [
-    "Identify determinant analytic orders with physical algebraic multiplicities; prove actual singular spectral enumeration and eventual corrected-strip inclusion.",
+    "Identify determinant analytic orders with physical algebraic multiplicities; prove canonical spectral labels, asymptotic enumeration and eventual corrected-strip assignment. The closed actual operator, full compact resolvent and global point-spectrum criterion are proved.",
     "Complete physical gap/Dirichlet asymptotics and inverse regularity needed by Theorems2.1,2.2 and1.4 after establishing actual spectral labels."
   ],
   "physical_normalization": {
@@ -54,5 +54,6 @@
     "resolvent_bound": "For every n>=1 and z in the corrected strip, sobolev(2,k)*norm(d_n(z,k)) <= 4+2*norm(z), valid for all imaginary parts.",
     "orders": "All real r in the two-derivative gain; r<1/2 for endpoint-to-H1 and H-minus-one inclusion; 0<=r<1/2 for endpoint perturbation physical identification."
   },
-  "further_verified_dependencies": "Joint closed-strip endpoint-norm analyticity, actual equal-diagonal determinant factorization, coefficient bounds and full Lemma2.11 analytic-zero count/localization/root separation are proved; see spectral-analytic-map.json and spectral-coefficients-map.json."
+  "further_verified_dependencies": "Joint closed-strip endpoint-norm analyticity, actual equal-diagonal determinant factorization, coefficient bounds and full Lemma2.11 analytic-zero count/localization/root separation are proved; see spectral-analytic-map.json and spectral-coefficients-map.json.",
+  "full_physical_resolvent_dependencies": "See spectral-resolvent-map.json for the actual closed dense original operator, nonempty compact full H-minus-one resolvent, global point-spectrum criterion, finite bounded spectral regions and uniform determinant/invertibility equivalence."
 }
