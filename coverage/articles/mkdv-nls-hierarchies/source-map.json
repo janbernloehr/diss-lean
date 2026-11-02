@@ -82,7 +82,12 @@
   "dependency_labels": [
     {
       "label": "Theorem 5",
-      "page": 9
+      "page": 9,
+      "status": "actual_scalar_miura_equation_and_boundary_transfer_proved_independent_hill_comparison_pending",
+      "proved": [
+        "NLS.MKdV.miura_equation_classicalSolution",
+        "NLS.MKdV.miura_floquet_condition_iff"
+      ]
     },
     {
       "label": "Proposition 6",
@@ -103,6 +108,17 @@
     {
       "label": "Proposition 11",
       "page": 17
+    },
+    {
+      "label": "Lemma 2",
+      "page": 10,
+      "proved": [
+        "NLS.MKdV.miura_equation_classicalSolution"
+      ],
+      "limits": [
+        "Actual constructed ZS solution, scalar equation at differentiability points in the open unit interval.",
+        "Independent Hill solution and discriminant identification remain open."
+      ]
     }
   ],
   "normalization": {

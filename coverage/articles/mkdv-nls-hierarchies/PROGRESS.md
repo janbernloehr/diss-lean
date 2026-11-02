@@ -16,7 +16,7 @@ and generated auxiliaries both passed.
 
 ## 2026-11-02 — physical smooth m=2 theorem
 
-The next checkpoint adds the physical fourth-flow identification:
+Commit `09fa657`, pushed to the article branch, adds the physical fourth-flow identification:
 
 - `classicalNLSHamiltonian_four` derives the article's S4 integral directly
   from the existing Riccati Hamiltonian, retaining its sign and constants.
@@ -53,3 +53,30 @@ above completed independently of the full-build lock.
 Next required mathematics: all-order physical variational recurrence;
 sharp even-order Sobolev extensions; actual ZS/Miura/Hill spectral and action
 identifications; and the mKdV coordinate/frequency/bracket comparison.
+
+## 2026-11-02 — actual Miura solution and Floquet boundary transfer
+
+`MiuraClassicalSolution.lean` applies the first-order factorization to the
+existing constructed `classicalSolution`. Its scalar combination f1+i*f2 has
+second derivative `(u'+u^2-z^2)*(f1+i*f2)` at each interior point where u is
+differentiable. Thus it satisfies exactly the scalar Miura equation underlying
+Lemma 2 (p. 10), using the actual ZS solution rather than an assumed spectral
+identification. The potential identity on the closed unit interval and the
+pointwise differentiability assumption remain explicit.
+
+`MiuraBoundaryTransfer.lean` proves that the linear state map from the original
+solution vector to scalar position and derivative is injective for z!=0.
+When u(1)=u(0), an arbitrary complex Floquet multiplier satisfies the original
+ZS boundary condition if and only if it satisfies the transformed scalar-state
+boundary condition. The z=0 case is deliberately not included in this assertion.
+
+These results are inputs to the independent Hill IVP and discriminant
+comparison. They do not define the Hill discriminant using ZS data, and no
+equality of independently constructed spectral actions is claimed yet.
+No competing Hill-operator foundation was introduced.
+
+All ten article modules now pass the focused checker. The expanded transitive
+axiom audit passes for 72 declarations and generated auxiliaries, with the same
+three allowed classical axioms. There are 50 public declarations: 35 theorems
+and 15 definitions. Main-theorem completion, the independent Hill comparison
+and the full repository rebuild remain pending.

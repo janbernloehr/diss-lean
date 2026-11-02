@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 55,
+  "audited_declarations_and_auxiliaries": 72,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -104,6 +104,71 @@
       "kind": "theorem",
       "name": "classicalNLSHamiltonian_three_diagonal",
       "file": "NLS/MKdV/HierarchyRestriction.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraStateMap",
+      "file": "NLS/MKdV/MiuraBoundaryTransfer.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraStateMap_apply",
+      "file": "NLS/MKdV/MiuraBoundaryTransfer.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraStateMap_injective",
+      "file": "NLS/MKdV/MiuraBoundaryTransfer.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalMiuraState",
+      "file": "NLS/MKdV/MiuraBoundaryTransfer.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalMiuraState_eq",
+      "file": "NLS/MKdV/MiuraBoundaryTransfer.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miura_floquet_condition_iff",
+      "file": "NLS/MKdV/MiuraBoundaryTransfer.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPotential",
+      "file": "NLS/MKdV/MiuraClassicalSolution.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalMiuraSolution",
+      "file": "NLS/MKdV/MiuraClassicalSolution.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalMiuraPartner",
+      "file": "NLS/MKdV/MiuraClassicalSolution.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalMiuraSolution",
+      "file": "NLS/MKdV/MiuraClassicalSolution.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_classicalMiuraPartner",
+      "file": "NLS/MKdV/MiuraClassicalSolution.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_deriv_classicalMiuraSolution",
+      "file": "NLS/MKdV/MiuraClassicalSolution.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miura_equation_classicalSolution",
+      "file": "NLS/MKdV/MiuraClassicalSolution.lean"
     },
     {
       "kind": "theorem",
@@ -206,9 +271,9 @@
       "file": "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean"
     }
   ],
-  "public_declaration_count": 37,
-  "theorem_count": 27,
-  "definition_count": 10,
+  "public_declaration_count": 50,
+  "theorem_count": 35,
+  "definition_count": 15,
   "full_build": "not performed; shared full-build lock held by another process; waiting command cancelled",
   "aggregate_imports": "deferred to sequential main integration",
   "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT",
@@ -216,12 +281,30 @@
     "NLS/MKdV/ClassicalEnergyVariation.lean": "1c8340633e26be0c870faaad5cffd32dcbc2fc4ca62a006dff4bebd4bbf77d2d",
     "NLS/MKdV/ClassicalFourthFlowRestriction.lean": "52e10d66dd8d0e009feda41ff23f68d0bd3dfe30b353fa8a5877e69475e01558",
     "NLS/MKdV/HierarchyRestriction.lean": "6ffee4097f33659f6e95bf440cb02e30074dfa0b9e364467ea947fe6f9a07853",
+    "NLS/MKdV/MiuraBoundaryTransfer.lean": "d8747dde2efaa7415650cc8f00b1f3a15c8345f34ed1b3812ed4ba7f6fd5fc2d",
+    "NLS/MKdV/MiuraClassicalSolution.lean": "8ff694a65deec068d661b9132c593c09042c97e622c6e147aa5346fa85ddd42f",
     "NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean": "743e4e169ec2fdb2b8b08a06f778dc91672bff3c1bbc9063feca15ec3c034edd",
     "NLS/Articles/MKdVNLSHierarchies/SmoothFourthFlow.lean": "21399990f0be798e393caa0cf2905e8b18fea3e9cba135ee6386a68161ad44a9",
     "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean": "ac722225fd4362ba3ba74149df58d8f233899e1a5a2950cb4a4833516f7755ca",
     "NLS/ZakharovShabat/ClassicalNLSFourthHamiltonian.lean": "7eb0973075e5414613b80cc73466c087d362422265902d0aa2425bf0a3e38f73",
     "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean": "8f507c2d54caf16dfecb3a42cbaec191cc2c4d1453c5080bc6f877129d32280f",
-    "scripts/check_mkdv_nls.py": "89aac66ce621a8b222bc6b8c6c549e0b1cfc0356ea873ee6dcbfed678ef87c50",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "3cf7396a497fe210398f4aa949ad0c47c679faae8785441086c3700a5438379c"
-  }
+    "scripts/check_mkdv_nls.py": "b4c26626e10fe419930d1860a54e0318648a9e9ad902be6f22c452de92d7d34c",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "ce0bcb7b8b885d27279c5ff4795eb366a8de9213704f2825b9e39f073505a2d8"
+  },
+  "smooth_flow_commit": "09fa657",
+  "focused_module_count": 10,
+  "validation_history": [
+    {
+      "milestone": "initial hierarchy restrictions",
+      "audit_count": 35
+    },
+    {
+      "milestone": "physical smooth m2 flow",
+      "audit_count": 55
+    },
+    {
+      "milestone": "actual Miura equation and Floquet boundary transfer",
+      "audit_count": 72
+    }
+  ]
 }

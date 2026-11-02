@@ -40,6 +40,8 @@ modules = [
     "NLS/MKdV/ClassicalEnergyVariation.lean",
     "NLS/MKdV/ClassicalFourthFlowRestriction.lean",
     "NLS/Articles/MKdVNLSHierarchies/SmoothFourthFlow.lean",
+    "NLS/MKdV/MiuraClassicalSolution.lean",
+    "NLS/MKdV/MiuraBoundaryTransfer.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

@@ -1,5 +1,6 @@
 import NLS.Articles.MKdVNLSHierarchies.InitialChecks
 import NLS.Articles.MKdVNLSHierarchies.SmoothFourthFlow
+import NLS.MKdV.MiuraBoundaryTransfer
 import Lean.Util.CollectAxioms
 
 /-! Audit every new public declaration and its generated auxiliary declarations.
@@ -30,7 +31,9 @@ run_cmd do
     ``NLS.Articles.MKdVNLSHierarchies.theorem1_m2_smooth,
     ``NLS.MKdV.hasDerivAt_classicalMKdVEnergy,
     ``NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_fst,
-    ``NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_snd]
+    ``NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_snd,
+    ``NLS.MKdV.miura_equation_classicalSolution,
+    ``NLS.MKdV.miura_floquet_condition_iff]
   let env ← getEnv
   for name in expected do
     unless (env.find? name).isSome do
