@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [Section 7 unrestricted psi uniqueness](SECTION_7.md) proofs add 8 checked positive theorems. Continue the whole-dissertation reconciliation. The rough sheet-sign direction-of-motion clause in S7-002 and the precise cited 2014 construction comparison remain open. Retain the recorded source qualifications, correct constants directly, and commit and push each completed step. The broader completeness qualifications below remain.
+
 The [Section 28 complex central products](SECTION_28.md) proofs add 14 checked positive theorems. Continue the broader dissertation reconciliation, including the Section 7 rough sheet-sign clause and unrestricted psi uniqueness. Correct constants directly and commit and push each completed step. The broader completeness qualifications below remain.
 
 The [Section 28 complex enclosing-root ratio](SECTION_28.md) proofs add 7 checked positive theorems. Continue the remaining whole-dissertation reconciliation, retaining S28-006, S28-014 and S28-015, the Section 7 rough sheet-sign clause and unrestricted psi uniqueness, and the recorded broader qualifications. Correct constants directly and commit and push each completed step. The broader completeness qualifications below remain.
@@ -363,16 +365,17 @@ additional counterexamples are not required. Continue with Section 7, then
 later sections in source order.
 
 All 21 groups in the [ordered Section 7 ledger](SECTION_7_ASSERTIONS.md)
-have now been compared: eighteen matched, one corrected and two partial.
+have now been compared: eighteen matched, two corrected and one partial.
 The corrected product, constructed angle path sum and actual real rough
 source have direct interfaces. Physical NLS Dirichlet nonconservation is
 now proved in the exact approximation-solution sense. S7-002 retains the
-rough sheet-sign direction-of-motion clause;
-S7-013 retains uniqueness of psi among all stated entire products without
-the real-root placement premises of the existing uniqueness theorem.
-Its corrected product and exact periods are proved. The corrected real
-codimension in S7-014 is two. These remaining clauses prevent treating
-Section 7 as fully resolved.
+rough sheet-sign direction-of-motion clause. S7-013 now proves the corrected
+product and exact periods together with uniqueness of the entire function
+among arbitrary complex lp products, without root placement or reality
+assumptions. This holds at every real source for finite p>1, including p=2,
+and on every admissible original winding-one circuit family. The corrected
+real codimension in S7-014 is two. The remaining S7-002 direction clause
+prevents treating Section 7 as fully resolved.
 
 The [ordered Section 8 ledger](SECTION_8_ASSERTIONS.md) now compares all
 36 groups: 28 matched and eight corrected. The exact full-exterior sine

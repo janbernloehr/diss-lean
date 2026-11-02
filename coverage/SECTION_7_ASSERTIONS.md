@@ -2,13 +2,13 @@
 
 This ledger follows the extraction order of printed pp.45–47. The unit-period
 source space and its physical spectral realization are retained. All 21 passage
-groups have now been compared: eighteen are matched, one is corrected and two
-are partial. These counts describe review scope, not a completion percentage.
+groups have now been compared: eighteen are matched, two are corrected and one
+is partial. These counts describe review scope, not a completion percentage.
 
 S7-002 now has a physical NLS nonconservation proof; its rough sheet-sign
-direction clause remains unresolved. S7-013 has a proved
-corrected product and exact periods, but its unrestricted uniqueness wording
-is not covered by the existing theorem for placed real roots. The corrected
+direction clause remains unresolved. S7-013 now has a proved corrected
+product, exact periods and uniqueness of the entire function among all
+stated complex products, without root placement or root reality assumptions. The corrected
 real codimension in S7-014 is two. The exact cited 2014 construction remains
 a separate qualification. Existing focused proofs are in [Section 7](SECTION_7.md).
 
@@ -31,7 +31,7 @@ proved replacement constant.
 | S7-010 | 3374–3375 | One common analytic action neighborhood | matched |
 | S7-011 | 3376–3379 | Classical anti-discriminant | matched |
 | S7-012 | 3381–3396 | Angle formula (2.3), admissible paths and terminal root sign | matched |
-| S7-013 | 3397–3410 | Psi product, asymptotics and period normalization | partial |
+| S7-013 | 3397–3410 | Psi product, asymptotics and period normalization | corrected |
 | S7-014 | 3412–3415 | Angle conventions and the collapsed-gap locus | corrected |
 | S7-015 | 3416–3418 | Hilbert canonical Poisson relations | matched |
 | S7-016 | 3420–3426 | Rough Fourier-Lebesgue input and non-measure assertion | matched |
@@ -166,11 +166,14 @@ All geometry and integrability are constructed for the existence formula. Compar
 
 - The corrected literal symmetric psi product converges at every spectral point, retaining -2/pi_n outside the product and using pi_m for each retained factor, with pi_0=1.
 - The actual psi candidate is entire. At p=2 the constructed deleted root displacements belong to l2; the simultaneous family has exact Kronecker periods with factor 1/(2*pi) on every admissible original winding-one circuit.
-- The real root sequence solving the original equation is unique within the original real placement domain. An unrestricted characterization among all entire products with l2 displacements has not been established by this comparison.
+- At every real source and every finite p>1, normalized periods determine the entire function among all deleted products with complex lp displacements. The competing roots need not be real, placed in assigned gaps or distinct.
+- One constructed circle family works before all deleted indices. The same characterization holds for every admissible original winding-one piecewise C1 circuit family, including collapsed gaps.
 
 Public evidence: `NLS.ZakharovShabat.sourceSection7_psi_product`, `NLS.ZakharovShabat.analyticOnNhd_sourcePsiCandidate`, `NLS.ZakharovShabat.sourceTheorem12_1`, `NLS.ZakharovShabat.SourceTheorem12_1Data.circuit`, `NLS.ZakharovShabat.SourceLemma12_10Data.original_diagonal_raw_circuit`, `NLS.ZakharovShabat.SourceLemma12_4Data.originalRealSolution_unique`, `NLS.ZakharovShabat.SourceLemma12_4Data.existsUnique_originalRealSolution`.
 
-The printed repeated denominator pi_n is corrected to pi_m by a positive convergence theorem; no additional refutation is added. Existing uniqueness requires real roots placed in assigned original isolating discs, which are then proved to lie in the gaps. That premise is not explicit in the overview characterization, so its unrestricted uniqueness clause remains unresolved and this group is partial.
+Additional public evidence: `NLS.ZakharovShabat.section7_entire_zero_of_periods`, `NLS.ZakharovShabat.section7_psi_eq_of_periods`, `NLS.ZakharovShabat.section7_existsUnique_psi_product`, `NLS.ZakharovShabat.section7_psi_eq_gapRoot_of_original_circuit_periods`; the [entire period uniqueness](../NLS/ZakharovShabat/Section7EntirePeriodUniqueness.lean) and [unrestricted psi characterization](../NLS/ZakharovShabat/Section7PsiPeriodUniqueness.lean) supply these proofs.
+
+The printed repeated denominator pi_n is corrected directly to pi_m. Uniqueness concerns the entire function, not an arbitrary enumeration of its roots. The real-source hypothesis of the overview, the factors -2/pi_n and 1/(2*pi), all signed indices and the full finite p>1 range are retained. This group is corrected because of the denominator; no new refutation is added.
 
 ### S7-014: Angle conventions and the collapsed-gap locus
 
@@ -215,7 +218,7 @@ The normalization is the already corrected parity product. The discriminant is n
 
 Public evidence: `NLS.ZakharovShabat.tendsto_sourceCanonicalRootPartialProduct`, `NLS.ZakharovShabat.sourceCanonicalRoot_analyticOnNhd`, `NLS.ZakharovShabat.exists_sourceAction_common_analytic_neighborhood`, `NLS.ZakharovShabat.sourceTheorem12_1`, `NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_eq_products`, `NLS.ZakharovShabat.analyticOnNhd_sourceAntiDiscriminantCandidate_joint`, `NLS.ZakharovShabat.sourceAntiDiscriminantCandidate_eq_l2`, `NLS.ZakharovShabat.SourceLemma12_12Data.section7_exists_angle_path_sum`, `NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaThetaBracket_eq_zero_of_two_le`, `NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.thetaRegularCotangent_bivector_eq_zero`, `NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.corollary13_2_regular`.
 
-This matches the mathematical construction and transfer claims, not a textual comparison with the exact cited 2014 procedure, which remains open. The separate unrestricted psi-characterization clause in S7-013 is not discharged here. Finite Fourier support in the density proof does not mean finitely many open gaps.
+This matches the mathematical construction and transfer claims, not a textual comparison with the exact cited 2014 procedure, which remains open. The unrestricted psi characterization is now proved by the additional evidence in S7-013. Finite Fourier support in the density proof does not mean finitely many open gaps.
 
 ### S7-019: Theorem 7.1 common neighborhood and analytic actions
 
@@ -252,8 +255,10 @@ and [the actual real rough source](../NLS/ZakharovShabat/SourceSection7RoughInpu
 
 ## Remaining work
 
-Resolve the physical NLS motion clause in S7-002 and the unrestricted
-psi-function characterization in S7-013. The source-wide assertion inventory,
-exact cited 2014 Birkhoff construction and Appendix G.2 norm interpretation
-remain unfinished. A completed ordered comparison does not certify all its
-passages as proved.
+Resolve the rough sheet-sign direction-of-motion clause in S7-002.
+Physical NLS Dirichlet nonconservation and the unrestricted psi-function
+characterization are proved. The exact cited 2014 Birkhoff construction
+and the broader source reconciliation remain open. Appendix G.2 adopts
+the proved explicit integral-norm correction while retaining the source
+convention qualification. These remaining qualifications are recorded in
+[the completion assessment](COMPLETENESS.md).

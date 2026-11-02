@@ -4912,3 +4912,5 @@ import NLS.ZakharovShabat.Section28ComplexEnclosingRoot
 import NLS.ZakharovShabat.Section28AdjacentDistance
 import NLS.ZakharovShabat.Section28ComplexCentralProduct
 import NLS.ZakharovShabat.Section28ComplexChiRatio
+import NLS.ZakharovShabat.Section7EntirePeriodUniqueness
+import NLS.ZakharovShabat.Section7PsiPeriodUniqueness

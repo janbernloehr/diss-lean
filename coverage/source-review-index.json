@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T05:13:50.808308+00:00",
-  "base_commit": "2ac614c47ec1e61b96c5627b9131aad1e96f8d24",
+  "published_utc": "2026-11-02T05:34:56.006483+00:00",
+  "base_commit": "4a55ed388ae1977859596bc1c63f476e44831684",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 217,
-    "module_hash_checks": 4536,
-    "distinct_modules": 2244
+    "review_records": 218,
+    "module_hash_checks": 4553,
+    "distinct_modules": 2248
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "2ac614c47ec1e61b96c5627b9131aad1e96f8d24",
-    "validated_state": "Fresh full check after Section 28 complex central products.",
+    "base_commit": "4a55ed388ae1977859596bc1c63f476e44831684",
+    "validated_state": "Fresh full check after Section 7 unrestricted psi uniqueness.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8651,
+    "build_jobs": 8653,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 45081,
+    "transitive_NLS_declarations": 45094,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 53037,
+    "gate_session": 82464,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4913,
-      "sha256": "4a8e11670aff5891f9ead2564f4d925f6b54c56d6b74f0ce6ad8e095e237d510"
+      "files": 4915,
+      "sha256": "0cd7e038f0cf07d85856aa8d2a9dfd18a14a1d328e8d0aaf5ed4d7c0de342ead"
     },
-    "full_gate_log_sha256": "8a946169e078e2a583b4976977ba4b54f485f89ab4543d3413f38647e2348d94",
+    "full_gate_log_sha256": "0a14142c459205db983482f8f44b9b72677da9f02ef234a58620b9d8696f6c80",
     "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/Section28ComplexProductFullCheck.log"
+    "full_gate_log": "work/Section7PsiPeriodUniquenessFullCheck.log"
   },
   "named_statements": [
     {
@@ -74781,6 +74781,142 @@
         "pending": 0
       },
       "source_record_sha256": "8b654ff90d004dfbc44f3ddae49a6d5a2a0f6b81170553a373db572d34da4602"
+    },
+    "Section7PsiPeriodUniquenessSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "4a55ed388ae1977859596bc1c63f476e44831684",
+      "updated_utc": "2026-11-02T05:34:55.954185+00:00",
+      "source_lines": [
+        [
+          3397,
+          3410
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            3397,
+            3410
+          ],
+          "ordered_group": "S7-013",
+          "ordered_status": "corrected",
+          "requirement": "Unique entire psi function from its corrected literal product and normalized periods, without root placement or reality assumptions on the competing products",
+          "declarations": [
+            "NLS.ZakharovShabat.section7_entire_zero_of_gap_zeros",
+            "NLS.ZakharovShabat.section7_real_entire_zero_of_periods",
+            "NLS.ZakharovShabat.section7_entire_zero_of_periods",
+            "NLS.ZakharovShabat.section7_psi_sub_sine_growth",
+            "NLS.ZakharovShabat.section7_psi_eq_of_periods",
+            "NLS.ZakharovShabat.section7_psi_eq_gapRoot_of_normalized_periods",
+            "NLS.ZakharovShabat.section7_existsUnique_psi_product",
+            "NLS.ZakharovShabat.section7_psi_eq_gapRoot_of_original_circuit_periods"
+          ],
+          "reviewed_claims": [
+            "An entire numerator with sub-sine growth and zero periods around every actual gap vanishes. Real interpolation uses one zero in each open or collapsed gap; reflected real and imaginary parts extend it to arbitrary complex numerators.",
+            "Every deleted product with arbitrary complex lp displacements has the needed sub-sine growth on expanding half-integer circles. Equal periods therefore determine the entire function without root placement or root reality assumptions.",
+            "At every real source, one constructed family of circles works before all deleted indices. For each index exactly one function has the corrected literal symmetric product and normalized Kronecker periods. The same characterization holds for every admissible original winding-one piecewise C1 circuit family.",
+            "The statements hold for every finite p>1 and hence for the stated Hilbert case. All factors -2/pi_n and 1/(2*pi), mode-dependent denominators, signed indices and collapsed gaps are retained."
+          ],
+          "qualification": "Uniqueness concerns the entire function, not an arbitrary enumeration of its roots. The corrected denominator pi_m is retained directly. The source potential is real, as in the Section 7 overview; no stronger arbitrary-complex-source uniqueness claim is inferred. No new refutation is added."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ComplexAnalysis/RealCircleIntegralReflection.lean": "ddbf6f6c2a440e9515b6eb5a0209dd388db7bb18ad6c91ec1cb405c7b7872b0a",
+        "NLS/ComplexAnalysis/SimpleZeroInterpolation.lean": "dba36d669d9576dab485505fb7dae12e270f0bcb120f4984cec6f908d4aaf6c4",
+        "NLS/ComplexAnalysis/EntireCircleDecay.lean": "e5843de720247c3fa46e8127e1b90159979d4f356e892c3db3f0b41c7a94d477",
+        "NLS/ZakharovShabat/SourceEntireGapContourZeros.lean": "ea0c422b54406cc87ae68a71209f86eea22ec0fe23618237a79df745df7d0d95",
+        "NLS/ZakharovShabat/SourceLocalGapContourZeros.lean": "1fd983178d0a9e8478e854bf4c269f7e6b09e1656ac30883236a8b8d16f1aff4",
+        "NLS/ZakharovShabat/SourceGapInterpolationOuterCircles.lean": "ef1df7126daed2d9396e3909fc85244efe70df74fbdbffc1acba4597bebd9afc",
+        "NLS/ZakharovShabat/SourceGapInterpolationProduct.lean": "75e10c53dbd3e5c4898a26653dc90d78051cad142b5e0d0cf7523616e147ce3e",
+        "NLS/ZakharovShabat/SourceGapSampleSummability.lean": "d6cc0de629171b75667b00d68b16f2453c1435b4828a4b653e82ab76c0588ce5",
+        "NLS/ZakharovShabat/SourceStandardRootConjugation.lean": "8c9b2d8e0f5549a92dd467557fdc4ccc6f28e26ae0c4094276903730f6bc2e4d",
+        "NLS/ZakharovShabat/CanonicalPeriodicGapOrder.lean": "55ed05132943d26034a7f8f16999e7cc1de29dbad8d8b6ba4b99326422287801",
+        "NLS/ZakharovShabat/SourceSection7PsiProduct.lean": "e8ee58e5c5338d591de1935d9b49f63de43012d75afff214143e18b74806b8df",
+        "NLS/ZakharovShabat/SourcePsiRealNormalization.lean": "e12277ec953822f9b2bb68cc1899eacf92924f3abb148dea666fbe1a8a9ee657",
+        "NLS/ZakharovShabat/SourcePsiGlobalContourFamily.lean": "3a3e81c1e3f22dccc7857be3b80bf345edabfe83bb901d21aaaaa8ffda4eac5d",
+        "NLS/ZakharovShabat/SourcePsiPiecewiseContour.lean": "52c127904bfaa951e711e6948e2fa85ed34e65260a2341b0f34c12fe4281cc30",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriodCircle.lean": "edf5c19316fa2bd937d210e9a480d35aeca045320bfc4ad277f8bc3f3c8d14ba",
+        "NLS/ZakharovShabat/Section7EntirePeriodUniqueness.lean": "0adb1cfd73185f73fb34511a5d49275f81d0d67ed110ed8c4a61ec8b22e2b128",
+        "NLS/ZakharovShabat/Section7PsiPeriodUniqueness.lean": "31ec0162005c2f98f56b06da2258db9ef6303e296180818bf3bc38de3fa08f13"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ComplexAnalysis/RealCircleIntegralReflection.lean",
+        "NLS/ComplexAnalysis/SimpleZeroInterpolation.lean",
+        "NLS/ComplexAnalysis/EntireCircleDecay.lean",
+        "NLS/ZakharovShabat/SourceEntireGapContourZeros.lean",
+        "NLS/ZakharovShabat/SourceLocalGapContourZeros.lean",
+        "NLS/ZakharovShabat/SourceGapInterpolationOuterCircles.lean",
+        "NLS/ZakharovShabat/SourceGapInterpolationProduct.lean",
+        "NLS/ZakharovShabat/SourceGapSampleSummability.lean",
+        "NLS/ZakharovShabat/SourceStandardRootConjugation.lean",
+        "NLS/ZakharovShabat/CanonicalPeriodicGapOrder.lean",
+        "NLS/ZakharovShabat/SourceSection7PsiProduct.lean",
+        "NLS/ZakharovShabat/SourcePsiRealNormalization.lean",
+        "NLS/ZakharovShabat/SourcePsiGlobalContourFamily.lean",
+        "NLS/ZakharovShabat/SourcePsiPiecewiseContour.lean",
+        "NLS/ZakharovShabat/SourceCriticalRootPeriodCircle.lean",
+        "NLS/ZakharovShabat/Section7EntirePeriodUniqueness.lean",
+        "NLS/ZakharovShabat/Section7PsiPeriodUniqueness.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Continue the whole-dissertation reconciliation. The rough sheet-sign direction-of-motion clause in S7-002 and the precise cited 2014 construction comparison remain open. Retain the recorded source qualifications, correct constants directly, and commit and push each completed step."
+      ],
+      "ordered_counts_after_publication": {
+        "matched": 18,
+        "corrected": 2,
+        "partial": 1,
+        "contextual": 0,
+        "pending": 0
+      },
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.section7_entire_zero_of_gap_zeros",
+        "NLS.ZakharovShabat.section7_entire_zero_of_periods",
+        "NLS.ZakharovShabat.section7_existsUnique_psi_product",
+        "NLS.ZakharovShabat.section7_psi_eq_gapRoot_of_normalized_periods",
+        "NLS.ZakharovShabat.section7_psi_eq_gapRoot_of_original_circuit_periods",
+        "NLS.ZakharovShabat.section7_psi_eq_of_periods",
+        "NLS.ZakharovShabat.section7_psi_sub_sine_growth",
+        "NLS.ZakharovShabat.section7_real_entire_zero_of_periods"
+      ],
+      "declaration_inventory_count": 45094,
+      "qualification": "The [entire period uniqueness theorem](NLS/ZakharovShabat/Section7EntirePeriodUniqueness.lean) shows that an entire numerator with sub-sine growth and zero periods around every actual gap vanishes. The proof covers complex numerators through reflected real and imaginary parts and includes collapsed gaps.\n\nThe [psi characterization](NLS/ZakharovShabat/Section7PsiPeriodUniqueness.lean) applies this result to deleted products with arbitrary complex lp displacements. At every real source, for every finite p>1 (including p=2), normalized periods determine the entire function without root placement, root reality or distinctness assumptions. One constructed circle family precedes all deleted indices. Every admissible original winding-one piecewise C1 circuit family gives the same canonical function.\n\nThe literal symmetric product retains -2/pi_n outside, the corrected denominator pi_m in each factor, and 1/(2*pi) in the periods. Uniqueness is of the function, not an arbitrary enumeration of roots. Eight positive theorems add no definitions, examples or refutations. S7-013 is now corrected; the Section 7 ledger has eighteen matched groups, two corrected and one partial. The S7-002 rough sheet-sign clause remains unresolved; the broader dissertation audit remains separate.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          46
+        ],
+        "images": {
+          "work/Section7OrderedReview-046.png": "519eea9ea5e543866c5e96cb0c152353df7857d89516c7f7a866fb59656ee890"
+        }
+      },
+      "preceding_review_hash": "8b654ff90d004dfbc44f3ddae49a6d5a2a0f6b81170553a373db572d34da4602",
+      "validation_lean_sources": {
+        "files": 4915,
+        "sha256": "0cd7e038f0cf07d85856aa8d2a9dfd18a14a1d328e8d0aaf5ed4d7c0de342ead"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 8,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.section7_entire_zero_of_gap_zeros._proof_1_1",
+        "NLS.ZakharovShabat.section7_entire_zero_of_gap_zeros._proof_1_2",
+        "NLS.ZakharovShabat.section7_entire_zero_of_gap_zeros._proof_1_3",
+        "NLS.ZakharovShabat.section7_entire_zero_of_periods._simp_1_1",
+        "NLS.ZakharovShabat.section7_psi_sub_sine_growth._simp_1_1"
+      ],
+      "full_gate": {
+        "session": 82464,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section7PsiPeriodUniquenessFullCheck.log",
+        "log_sha256": "0a14142c459205db983482f8f44b9b72677da9f02ef234a58620b9d8696f6c80"
+      },
+      "source_record_sha256": "5b4cec761ddd916905f12f1b27bf8a97d9e53da74b0aeb68eb10524766952209"
     }
   }
 }

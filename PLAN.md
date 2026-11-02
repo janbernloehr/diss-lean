@@ -1,6 +1,21 @@
 # Implementation plan
 
-## Current milestone: Section 28 complex central products
+## Current milestone: Section 7 unrestricted psi uniqueness
+
+The [entire period uniqueness theorem](NLS/ZakharovShabat/Section7EntirePeriodUniqueness.lean) shows that an entire numerator with sub-sine growth and zero periods around every actual gap vanishes. The proof covers complex numerators through reflected real and imaginary parts and includes collapsed gaps.
+
+The [psi characterization](NLS/ZakharovShabat/Section7PsiPeriodUniqueness.lean) applies this result to deleted products with arbitrary complex lp displacements. At every real source, for every finite p>1 (including p=2), normalized periods determine the entire function without root placement, root reality or distinctness assumptions. One constructed circle family precedes all deleted indices. Every admissible original winding-one piecewise C1 circuit family gives the same canonical function.
+
+The literal symmetric product retains -2/pi_n outside, the corrected denominator pi_m in each factor, and 1/(2*pi) in the periods. Uniqueness is of the function, not an arbitrary enumeration of roots. Eight positive theorems add no definitions, examples or refutations. S7-013 is now corrected; the Section 7 ledger has eighteen matched groups, two corrected and one partial.
+
+The full check passed: 8,653 build jobs, 7,729 public examples and an axiom audit of 45,094 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Continue the whole-dissertation reconciliation. The rough sheet-sign direction-of-motion clause in S7-002 and the precise cited 2014 construction comparison remain open. Retain the recorded source qualifications, correct constants directly, and commit and push each completed step.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 28 complex central products
 
 The [adjacent-distance proof](NLS/ZakharovShabat/Section28AdjacentDistance.lean) uses uniform spectral continuity and a positive real gap margin to control both signed directions on one connected complex neighborhood. The neighborhood lies inside any prescribed open domain containing the real locus and precedes every index and every point of the target closed gap.
 

@@ -5,7 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Section 28 complex central products](coverage/SECTION_28.md). Actual complex adjacent-distance comparison, exact central telescoping and literal chi bound with absolute indices, constant 128 and root constants 2/5 and 3/10. One common neighborhood; N=0 and the cutoff boundary included. All 30 Section 28 groups reconciled.
+Latest step: [Section 7 unrestricted psi uniqueness](coverage/SECTION_7.md). Normalized periods uniquely determine the corrected entire psi product among arbitrary complex lp displacements at every real source for finite p>1, on the original admissible circuit families. No root placement or reality premise is required. Eight positive proofs.
 The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
