@@ -164,6 +164,14 @@ import NLS.KdV.HillL2BoundaryLabelContinuity
 import NLS.KdV.HillL2AllEndpointNormalization
 import NLS.KdV.HillL2GlobalGapBoundaryValues
 import NLS.KdV.HillL2BandContinuation
+import NLS.ComplexAnalysis.ClosedUpperExtension
+import NLS.KdV.HillL2CutBounds
+import NLS.ComplexAnalysis.RealGapDiscIsolation
+import NLS.KdV.HillRealGapContours
+import NLS.ComplexAnalysis.BoundedPuncturedCircleIntegral
+import NLS.KdV.HillL2AllGapContourIntegrals
+import NLS.KdV.HillL2RealCutDifferential
+import NLS.KdV.HillL2RealContourMoments
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -309,7 +317,13 @@ run_cmd do
     ``NLS.ComplexAnalysis.phase_eq_on_of_sin_eq_zero,
     ``NLS.ComplexAnalysis.exists_upper_logarithm_boundary_limit,
     ``NLS.ComplexAnalysis.continuous_real_boundary_of_upper_limits,
-    ``NLS.ComplexAnalysis.continuous_boundary_logarithm_of_constant_exponential]
+    ``NLS.ComplexAnalysis.continuous_boundary_logarithm_of_constant_exponential,
+    ``NLS.ComplexAnalysis.realBoundaryExtension,
+    ``NLS.ComplexAnalysis.continuousOn_realBoundaryExtension_upper,
+    ``NLS.ComplexAnalysis.exists_bound_realBoundaryExtension_on_closedBall,
+    ``NLS.ComplexAnalysis.ofReal_mem_ordered_segment,
+    ``NLS.ComplexAnalysis.real_gap_disc_exterior_band,
+    ``NLS.ComplexAnalysis.circleIntegral_eq_zero_of_bounded_puncture]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

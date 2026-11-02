@@ -5091,3 +5091,12 @@ import NLS.KdV.HillL2BoundaryLabelContinuity
 import NLS.KdV.HillL2AllEndpointNormalization
 import NLS.KdV.HillL2GlobalGapBoundaryValues
 import NLS.KdV.HillL2BandContinuation
+
+import NLS.ComplexAnalysis.ClosedUpperExtension
+import NLS.KdV.HillL2CutBounds
+import NLS.ComplexAnalysis.RealGapDiscIsolation
+import NLS.KdV.HillRealGapContours
+import NLS.ComplexAnalysis.BoundedPuncturedCircleIntegral
+import NLS.KdV.HillL2AllGapContourIntegrals
+import NLS.KdV.HillL2RealCutDifferential
+import NLS.KdV.HillL2RealContourMoments
