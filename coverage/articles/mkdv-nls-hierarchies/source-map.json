@@ -166,6 +166,14 @@
     "physical_first_variation": "NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler",
     "riccati_adapter": "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian",
     "scope": "All polynomial and Hamiltonian orders on smooth complex periodic fields; analytic L2 hierarchy gradients on every admissible H^s domain, including H0 mass. No caller-supplied variation identity or gradient identification.",
-    "sobolev_gradient": "NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_eq_gradient"
+    "sobolev_gradient": "NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_eq_gradient",
+    "resolvent_bridge": {
+      "canonical_input": "NLS.ZakharovShabat.nlsRiccatiPolynomial_eq_differentialRiccatiSequence",
+      "constructed_recurrence": "NLS.DifferentialPolynomial.constructed_riccati_resolvent_identities",
+      "all_order_variation": "NLS.DifferentialPolynomial.riccati_resolvent_coefficient_variation",
+      "diagonal_coupling_vanishes": "NLS.DifferentialPolynomial.coeff_riccatiResolventCoupling_even_diagonal",
+      "scope": "Canonical formal Riccati resolvent over a differential coefficient algebra; all-order variation modulo an explicit total derivative for commuting variation/spatial derivations; diagonal parity and raw coefficient recurrences.",
+      "remaining": "Construct arbitrary jet perturbations and identify both resolvent components with the certified physical Euler gradients. Then apply phase covariance and exact-domain continuity to the corrected Theorem 2(ii). No new main-theorem completion is claimed by this formal bridge."
+    }
   }
 }

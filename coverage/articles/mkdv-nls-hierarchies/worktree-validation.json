@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 373,
+  "audited_declarations_and_auxiliaries": 434,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -859,12 +859,217 @@
       "kind": "theorem",
       "name": "theorem2_i_swap_vector_fields",
       "file": "NLS/Articles/MKdVNLSHierarchies/GradientSymmetries.lean"
+    },
+    {
+      "kind": "def",
+      "name": "powerSeriesDerivation",
+      "file": "NLS/DifferentialPolynomial/PowerSeriesDerivation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "coeff_powerSeriesDerivation",
+      "file": "NLS/DifferentialPolynomial/PowerSeriesDerivation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "powerSeriesDerivation_C",
+      "file": "NLS/DifferentialPolynomial/PowerSeriesDerivation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "powerSeriesDerivation_X",
+      "file": "NLS/DifferentialPolynomial/PowerSeriesDerivation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "powerSeriesDerivation_commute",
+      "file": "NLS/DifferentialPolynomial/PowerSeriesDerivation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "derivation_inverse_of_mul_eq_one",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolvent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "riccati_resolvent_identities",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolvent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "riccati_resolvent_variation_identity",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolvent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "differentialRiccatiSequence",
+      "file": "NLS/DifferentialPolynomial/DifferentialRiccati.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "differentialRiccatiSequence_zero",
+      "file": "NLS/DifferentialPolynomial/DifferentialRiccati.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "differentialRiccatiSequence_one",
+      "file": "NLS/DifferentialPolynomial/DifferentialRiccati.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "differentialRiccatiSequence_recurrence",
+      "file": "NLS/DifferentialPolynomial/DifferentialRiccati.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "differentialRiccatiSequence_unique",
+      "file": "NLS/DifferentialPolynomial/DifferentialRiccati.lean"
+    },
+    {
+      "kind": "def",
+      "name": "differentialRiccatiSeries",
+      "file": "NLS/DifferentialPolynomial/DifferentialRiccati.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "coeff_differentialRiccatiSeries",
+      "file": "NLS/DifferentialPolynomial/DifferentialRiccati.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "differentialRiccatiSeries_equation",
+      "file": "NLS/DifferentialPolynomial/DifferentialRiccati.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "differentialRiccatiSequence_neg_derivation",
+      "file": "NLS/DifferentialPolynomial/DifferentialRiccati.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "differentialRiccatiSeries_neg_derivation",
+      "file": "NLS/DifferentialPolynomial/DifferentialRiccati.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "powerSeriesDerivation_neg",
+      "file": "NLS/DifferentialPolynomial/DifferentialRiccati.lean"
+    },
+    {
+      "kind": "def",
+      "name": "riccatiResolventDenominator",
+      "file": "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constantCoeff_riccatiResolventDenominator",
+      "file": "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "riccatiResolventInverse",
+      "file": "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "riccatiResolvent_mul_inverse",
+      "file": "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "riccatiResolventA",
+      "file": "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "riccatiResolventB",
+      "file": "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "riccatiResolventCoupling",
+      "file": "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constructed_riccati_resolvent_identities",
+      "file": "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "coeff_riccatiResolventA_succ",
+      "file": "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "coeff_riccatiResolventB_succ",
+      "file": "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "deriv_coeff_riccatiResolventCoupling",
+      "file": "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "rescale_riccatiResolventDenominator_diagonal",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "rescale_riccatiResolventInverse_diagonal",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "rescale_riccatiResolventCoupling_diagonal",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "coeff_riccatiResolventCoupling_even_diagonal",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "coeff_riccatiResolventA_odd_diagonal",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "coeff_riccatiResolventB_odd_diagonal",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "differentialRiccatiSeries_linearized",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "constructed_riccati_resolvent_variation",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "riccati_resolvent_coefficient_variation",
+      "file": "NLS/DifferentialPolynomial/RiccatiResolventVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nlsRiccatiPolynomial_eq_differentialRiccatiSequence",
+      "file": "NLS/ZakharovShabat/NLSRiccatiResolvent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "coeff_nls_differentialRiccatiSeries",
+      "file": "NLS/ZakharovShabat/NLSRiccatiResolvent.lean"
     }
   ],
-  "public_declaration_count": 168,
-  "theorem_count": 128,
-  "definition_count": 40,
-  "full_build": "All 35 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 209,
+  "theorem_count": 161,
+  "definition_count": 48,
+  "full_build": "All 42 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
   "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit",
   "sha256": {
@@ -887,8 +1092,8 @@
     "NLS/ZakharovShabat/ClassicalNLSFourthHamiltonian.lean": "7eb0973075e5414613b80cc73466c087d362422265902d0aa2425bf0a3e38f73",
     "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean": "8f507c2d54caf16dfecb3a42cbaec191cc2c4d1453c5080bc6f877129d32280f",
     "NLS/ZakharovShabat/ClassicalVolterraTrace.lean": "af489d580fb8de14051b7abf002235b0507570e6fab8b2b9aafd7a4fc82be41f",
-    "scripts/check_mkdv_nls.py": "b1e717ed002de06acc99aebbf72b6b84eeed42ce081ef1c466c85291468e16cd",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "5b161ff662b0b49f397a190ab712b7962b0709e25d923ccb2439ef316fc91d1b",
+    "scripts/check_mkdv_nls.py": "c916d2252ddd58c85df412d5e73e80ac31aabba0db11438cbbe9e24f5f7f4e0e",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "2e4461d990d593d79da0db889bff50ad2161369b5b5b9fe226c1369731c6c698",
     "NLS/FunctionalAnalysis/PeriodicIntegrationByParts.lean": "140b863a21c489adf60995da8e53101c3a7cf0bd66b6dc993b8f54fe0900f306",
     "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "1ab05b74ffcd892bb75226b50d4517286a96f197100a7e86e453b3eecf82534b",
     "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "99944ccf33c348be7a7324ae93bb9559761bccdff6a34fbcd5e719f93bb4aafe",
@@ -904,10 +1109,17 @@
     "NLS/ZakharovShabat/SobolevHierarchyGradient.lean": "1a8b48802cf2968eb5f674dbcb16152a7e9daf6af4002799367a6e606f403372",
     "NLS/ZakharovShabat/SobolevHierarchyGradientVariation.lean": "924a9af20ba8202b238c1087562b35aad7f633cfeaf34722c92db90d68be67f9",
     "NLS/ZakharovShabat/SobolevHierarchyGradientSymmetries.lean": "e94948ab867c62f403cada306f8e0ff19962502852d272c5864c0ca3a10e4b93",
-    "NLS/Articles/MKdVNLSHierarchies/GradientSymmetries.lean": "6d9c5a78ae585509e6ac7a724a7705ece8f2664e13b54f0f46311bf973a24fa1"
+    "NLS/Articles/MKdVNLSHierarchies/GradientSymmetries.lean": "6d9c5a78ae585509e6ac7a724a7705ece8f2664e13b54f0f46311bf973a24fa1",
+    "NLS/DifferentialPolynomial/PowerSeriesDerivation.lean": "6434ba24b8a86ab9e4cfcae4b371e01b73f07d0056137cc7893ad562bab71809",
+    "NLS/DifferentialPolynomial/RiccatiResolvent.lean": "872b0969d07ef40a70c763dc7db0a706aefac6d0130614751675e60a5e8dab38",
+    "NLS/DifferentialPolynomial/DifferentialRiccati.lean": "fae3ebf533d18f2326daaadb58edf5bbf10b70219ab893afed48eb0fc8d514f7",
+    "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean": "2429c2624f85d8a7fe9452430c1dfde0225760b35adf143ef951c6b4308c0190",
+    "NLS/DifferentialPolynomial/RiccatiResolventParity.lean": "df7bee1d370d3c77a2f8a2c6ad100982f97ae78238cfa694e629e65dc1a7e658",
+    "NLS/DifferentialPolynomial/RiccatiResolventVariation.lean": "57323be404ebe674eb02cbd03f164170f283436230cf723cf81e4af3db9496bc",
+    "NLS/ZakharovShabat/NLSRiccatiResolvent.lean": "b738cf2502d7bb1912309606d96096c78a390ec284edf3fc01962061a9b0320c"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 35,
+  "focused_module_count": 42,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -938,11 +1150,17 @@
       "audit_count": 373,
       "combined_NLS_audit_count": 45550,
       "aggregate_compiled": true
+    },
+    {
+      "milestone": "canonical all-order Riccati resolvent, differential variations and diagonal parity",
+      "audit_count": 434,
+      "combined_NLS_audit_count": 45611,
+      "aggregate_compiled": true
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 45550,
+  "combined_audited_NLS_declarations": 45611,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log"
 }

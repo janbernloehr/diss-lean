@@ -4,6 +4,8 @@ import NLS.MKdV.MiuraBoundaryTransfer
 import NLS.Articles.MKdVNLSHierarchies.DiscriminantIdentity
 import NLS.ZakharovShabat.ClassicalNLSHierarchyVariation
 import NLS.Articles.MKdVNLSHierarchies.GradientSymmetries
+import NLS.ZakharovShabat.NLSRiccatiResolvent
+import NLS.DifferentialPolynomial.RiccatiResolventVariation
 import Lean.Util.CollectAxioms
 
 /-! Audit every new public declaration and its generated auxiliary declarations.
@@ -13,6 +15,8 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ZakharovShabat.nlsRiccatiPolynomial_eq_differentialRiccatiSequence,
+    `NLS.ZakharovShabat.coeff_nls_differentialRiccatiSeries,
     `NLS.Fourier.circleUnitCoefficients,
     `NLS.ZakharovShabat.topSobolevJetCircleL2,
     `NLS.ZakharovShabat.sobolevMonomialL2,
@@ -68,6 +72,10 @@ run_cmd do
     ``NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler,
     ``NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian,
     ``NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_eq_gradient,
+    ``NLS.DifferentialPolynomial.constructed_riccati_resolvent_identities,
+    ``NLS.DifferentialPolynomial.riccati_resolvent_coefficient_variation,
+    ``NLS.DifferentialPolynomial.coeff_riccatiResolventCoupling_even_diagonal,
+    ``NLS.ZakharovShabat.coeff_nls_differentialRiccatiSeries,
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_gradients,
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_gradients,
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_vector_fields,

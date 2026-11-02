@@ -210,3 +210,57 @@ The goal remains incomplete. Theorem 2(ii)'s corrected even/odd gradient
 recurrence, the sharp H^m diagonal flow restriction and independent all-order
 mKdV Hamiltonian identification in Theorem 1, and the action, coordinate,
 bracket and frequency identifications in Theorems 3–4 remain open.
+
+## 2026-11-02 — constructed all-order Riccati resolvent and variation identity
+
+The next dependency toward the corrected Theorem 2(ii) is now proved in the
+shared differential-polynomial library. Spatial derivations extend
+coefficientwise to formal power series while fixing the spectral parameter.
+The generic Riccati recurrence constructs a unique series R; using the
+opposite spatial derivation and exchanged fields constructs S. The denominator
+`1+t^2*R*S` has constant coefficient one, so its inverse V is constructed over
+the coefficient algebra without dividing by either physical field.
+
+The components `A=R*V`, `B=S*V`, `C=t*R*S*V` satisfy the exact formal identities
+
+```
+A = -b + t*D(A) + 2*b*t*C
+B = -a - t*D(B) + 2*a*t*C
+D(C) = b*B - a*A.
+```
+
+`constructed_riccati_resolvent_identities` proves these from the actual
+constructed series. Their coefficient recurrences are also checked. On the
+diagonal, spectral reflection exchanges R and S, fixes V, and negates C.
+Every even coupling coefficient consequently vanishes; the first component's
+odd coefficient is the spatial derivative of its preceding even coefficient,
+and the second has the opposite sign. These are identities at every order.
+
+`riccati_resolvent_coefficient_variation` supplies the required variational
+bridge for any coefficient variation E commuting with D:
+
+```
+E(a*r_n) = E(a)*A_n + E(b)*B_n - D([t*B*E(R)]_n).
+```
+
+Thus the discarded total spatial derivative has an explicit primitive. The
+linearized Riccati equation used in this proof is derived from the constructed
+series, rather than passed in as an identification assumption.
+`NLSRiccatiResolvent.lean` proves that the canonical series input has exactly
+the existing NLS Riccati polynomials as its coefficients, fixing the seed and
+all orders of the physical recurrence.
+
+All 42 article/shared modules and the NLS aggregate pass with Lean 4.33.1,
+`autoImplicit=false` and warnings as errors. The targeted transitive audit
+passes for 434 declarations and auxiliaries, and the combined NLS/article
+audit passes for 45,611 declarations. Only `propext`, `Classical.choice` and
+`Quot.sound` are allowed. Validation used the read-only pinned dependency
+cache and shared build lock; all writable outputs are local. The entire
+dependency tree was not rebuilt from source. The public inventory now contains
+209 declarations: 161 theorems and 48 definitions.
+
+No additional main theorem is claimed by this formal bridge. To finish the
+corrected Theorem 2(ii), construct arbitrary jet perturbations, identify A_n
+and B_n with the certified physical Euler gradients, and transfer the diagonal
+identity through phase covariance and exact-domain continuity. Theorem 1's
+sharp diagonal flow/Hamiltonian identification and Theorems 3–4 remain open.

@@ -78,6 +78,16 @@ Theorem 6 (pp. 13–14, discriminant symmetries), Lemma 10 (pp. 16–17,
 action-gradient identities) and Proposition 11 (pp. 17–18, hierarchy gradients).
 These are dependencies of the four main theorems, not extra completion targets.
 
+The all-order Riccati resolvent bridge toward Theorem 2(ii) is now checked.
+`constructed_riccati_resolvent_identities` proves its coupled coefficient
+recurrences, and `riccati_resolvent_coefficient_variation` proves the variation
+formula modulo an explicit total spatial derivative. The diagonal coupling
+has zero even coefficients. Its canonical Riccati input is proved equal to
+the existing NLS hierarchy polynomials. The remaining step is to identify its
+two components with the already certified physical Euler gradients for
+arbitrary jet perturbations, then extend the corrected recurrence to the
+printed Sobolev domain. These formal results alone do not complete part (ii).
+
 Theorem 5 is now proved as
 `NLS.Articles.MKdVNLSHierarchies.theorem5_discriminant_identity`, for every
 original complex H¹ input and every complex spectral parameter, including zero.
