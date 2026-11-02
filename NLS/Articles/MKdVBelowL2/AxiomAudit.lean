@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVBelowL2.PhysicalFourthFrequencyReality
 import NLS.ZakharovShabat.SourceFullAbelianFourthContourPoisson
 import NLS.ZakharovShabat.SourceFullAbelianFourthContourLocal
 import NLS.ZakharovShabat.SourceAbelianMomentCubicShift
@@ -368,3 +369,13 @@ import NLS.Articles.MKdVBelowL2.FourthMomentSummability
 #print axioms NLS.ZakharovShabat.SourceAbelianMomentAtlas.weighted_moments_eq_physical_fourth_finiteGap
 #print axioms NLS.Articles.MKdVBelowL2.physicalFiniteGapFourthFrequency
 #print axioms NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_finiteGap_actionDerivative
+
+#print axioms NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_im_eq_zero
+#print axioms NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_im_eq_zero
+#print axioms NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence
+#print axioms NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_complex
+#print axioms NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_apply
+#print axioms NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_analytic
+#print axioms NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_hilbert
+#print axioms NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_eq_finiteGap_actionDerivative
+#print axioms NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_eq_of_same_distributions

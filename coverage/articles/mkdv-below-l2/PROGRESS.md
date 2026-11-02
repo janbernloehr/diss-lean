@@ -447,3 +447,35 @@ only `propext`, `Classical.choice` and `Quot.sound`. No holes, new axioms,
 disabled linters or increased heartbeat limits were introduced. Validation
 uses the canonical compiled dependencies read-only and is not a fresh
 whole-repository rebuild.
+
+
+## Eleventh checkpoint: actual real weighted H₄ targets
+
+The candidate now takes values in the real-coefficient weighted target, not
+merely in a complex target with a real-analytic parametrization. The shared
+positive even-moment reality theorem proves coefficient reality before the
+weighted summation. It applies at every real source, including collapsed
+gaps and the zero frequency, without a finite-gap approximation argument.
+
+`physicalRealFourthFrequencySequence` maps the original real distributions
+into the closed real subspace of the actual weighted sequence space. Its
+inclusion equals the already verified complex sequence exactly, and each
+raw coordinate equals the same literal −12 weighted moment sum. The map is
+real analytic for every finite p>1 and every finite r>1 with p/2≤r. In
+particular the Hilbert source has every finite real target r>1, as specified
+in Theorem 1.3. Exponent compatibility and the independent finite-gap
+physical action-derivative identity are preserved in these real targets.
+
+Theorem 1.2 remains verified. Theorems 1.1 and 1.3 remain open. The remaining
+Theorem 1.3 obligation is the identification with the independently defined
+physical H₄ frequency on the full original H^(3/2) domain, in its own
+topology. Neither the real target construction nor finite-gap agreement
+alone is used to claim that bridge.
+
+Strict validation for the eleventh checkpoint passed: all 77 focused modules
+compiled with `autoImplicit=false` and `warningAsError=true`. The transitive
+audit of 295 named declarations exactly matched `AxiomAudit.lean` and used
+only `propext`, `Classical.choice` and `Quot.sound`. No holes, new axioms,
+disabled linters or increased heartbeat limits were introduced. Validation
+uses the canonical compiled dependencies read-only and is not a fresh
+whole-repository rebuild.

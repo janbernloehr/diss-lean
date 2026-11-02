@@ -14,7 +14,8 @@ The candidate is now analytic into the weighted targets of Theorem 1.3.
 The refined actual-action remainder is checked on the same physical
 chart. Physical H₄ derivative identification is checked at all finite-gap
 inputs, including closed actions; the full H^(3/2) classical-domain
-identification and real Hilbert targets remain open.
+identification remains open. The real weighted Hilbert targets are now
+verified, with exact inclusion into the same complex candidate sequence.
 See [the current progress record](PROGRESS.md) and the
 [Theorem 1.2 clause map](theorem-1.2.json).
 
@@ -266,6 +267,13 @@ across every finite source exponent above one. The chosen physical adapter
 consumes it in `PhysicalFourthFrequencyIdentification`. See the
 [Lemma 5.2 clause map](lemma-5.2.json).
 
+`FourthMomentReality` proves that the weighted candidate is real at every real
+source by the shared positive even-moment reality theorem. The physical adapter
+`PhysicalFourthFrequencyReality` realizes the candidate in the actual closed
+real weighted subspace. Its complex inclusion is the same established sequence;
+all coordinates, cross-exponent compatibility and finite-gap physical derivative
+identities are preserved. At p=2 this supplies every finite real target r>1.
+
 ## Outstanding dependencies and integration order
 
 1. The smooth physical fourth-flow bridge has been consumed from the hierarchy
@@ -276,8 +284,9 @@ consumes it in `PhysicalFourthFrequencyIdentification`. See the
    conjugation/reflection invariance is still needed for Theorem 1.1.
 3. The analytic weighted candidate, refined action remainder and full finite-gap
    Lemma 5.2 are now checked. Extend the physical H₄ derivative identification
-   to the original H^(3/2) domain, realize the real Hilbert targets, and then
-   assemble Theorem 1.3. The H₃ bounds were reused through an exact weighted
+   to the original H^(3/2) domain and then assemble Theorem 1.3.
+   The real Hilbert targets are now verified with exact inclusion into the
+   same complex frequency sequence. The H₃ bounds were reused through an exact weighted
    comparison identity; they do not by themselves identify H₄.
 4. Show the physical renormalized flow is the specified rotation, preserves
    the diagonal, and stays locally in the open Birkhoff image. A small ball
@@ -301,10 +310,10 @@ read-only, with new outputs under this checkout's private
 `ELAN_HOME`, `LEAN_BIN` and `MKDV_BUILD_ROOT` overrides; it never invokes Lake
 or writes through the imported symlinks.
 
-The expanded focused checker covers 75 new article/shared modules and the
+The expanded focused checker covers 77 new article/shared modules and the
 consumed smooth hierarchy foundations, with `autoImplicit=false` and
 `warningAsError=true`. `AxiomAudit.lean` audits all explicitly named new
-and consumed declarations (286 total), including the main Theorem 1.2 declarations;
+and consumed declarations (295 total), including the main Theorem 1.2 declarations;
 only `propext`, `Classical.choice` and `Quot.sound` occur. No new axiom,
 sorry or disabled linter was introduced. `validation.txt` captures the checks.
 This is focused validation, not a full repository build or completed article

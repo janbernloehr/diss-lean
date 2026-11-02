@@ -135,10 +135,24 @@
       "source": "Chosen physical family identification at finite gaps",
       "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_finiteGap_actionDerivative",
       "scope": "The previously chosen analytic refined candidate agrees with the independently defined normalized physical H4 frequency for every real finite-gap physical distribution pair, including closed selected actions. Uses the same fixed Hilbert Birkhoff family as Theorem 1.2."
+    },
+    {
+      "source": "Theorem 1.3, real coefficient values",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_im_eq_zero",
+      "scope": "Every finite p>1, every real physical distribution pair, every index including zero and collapsed gaps. Uses actual positive even-moment reality before summation."
+    },
+    {
+      "source": "Theorem 1.3, real weighted Hilbert targets",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_hilbert",
+      "scope": "The full real Hilbert physical distribution space maps real analytically into the actual real-coefficient weighted space ℓ^(-1,r) for every finite r>1. Every raw coefficient is exactly the normalized moment candidate; inclusion recovers the established complex sequence."
+    },
+    {
+      "source": "Physical real target compatibility and finite-gap identification",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_eq_finiteGap_actionDerivative",
+      "scope": "All finite p>1 and all finite r>1 with p/2≤r. Real weighted coordinates equal independently defined normalized physical H4 action derivatives at all finite-gap inputs, including closed actions. The real sequence maps also agree for equal physical distributions across source exponents."
     }
   ],
   "remaining": [
-    "Extend identification from finite-gap action derivatives to the original full H^(3/2) classical frequency domain, with its independent physical H4 action derivative and topology.",
-    "Prove real-valued coefficients and realize the p=2 frequency in each weighted real target specified by Theorem 1.3; complex weighted analyticity of the candidate is already verified."
+    "Extend identification from finite-gap action derivatives to the original full H^(3/2) classical frequency domain, with its independent physical H4 action derivative and topology."
   ]
 }

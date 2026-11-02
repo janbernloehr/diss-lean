@@ -115,6 +115,8 @@ modules=(
   Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate
   Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder
   Articles/MKdVBelowL2/PhysicalFourthFrequencyIdentification
+  Articles/MKdVBelowL2/FourthMomentReality
+  Articles/MKdVBelowL2/PhysicalFourthFrequencyReality
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"

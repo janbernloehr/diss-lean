@@ -74,6 +74,8 @@ Articles/MKdVBelowL2/FourthMomentActionRemainder: checked
 Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate: checked
 Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder: checked
 Articles/MKdVBelowL2/PhysicalFourthFrequencyIdentification: checked
+Articles/MKdVBelowL2/FourthMomentReality: checked
+Articles/MKdVBelowL2/PhysicalFourthFrequencyReality: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -592,5 +594,32 @@ Articles/MKdVBelowL2/PhysicalFourthFrequencyIdentification: checked
  Quot.sound]
 'NLS.Articles.MKdVBelowL2.physicalFiniteGapFourthFrequency' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_finiteGap_actionDerivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_im_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_im_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_complex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_analytic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_hilbert' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_eq_finiteGap_actionDerivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_eq_of_same_distributions' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]

@@ -75,7 +75,9 @@
     "Articles/MKdVBelowL2/FourthMomentActionRemainder",
     "Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate",
     "Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder",
-    "Articles/MKdVBelowL2/PhysicalFourthFrequencyIdentification"
+    "Articles/MKdVBelowL2/PhysicalFourthFrequencyIdentification",
+    "Articles/MKdVBelowL2/FourthMomentReality",
+    "Articles/MKdVBelowL2/PhysicalFourthFrequencyReality"
   ],
   "strict_options": [
     "autoImplicit=false",
@@ -1511,6 +1513,51 @@
       "propext",
       "Classical.choice",
       "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_im_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_im_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_complex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_analytic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_hilbert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_eq_finiteGap_actionDerivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalRealFourthFrequencySequence_eq_of_same_distributions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
     ]
   },
   "allowed_axioms": [
@@ -1518,7 +1565,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Focused strict build of 75 new and consumed modules; transitive audit of 286 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Focused strict build of 77 new and consumed modules; transitive audit of 295 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",
