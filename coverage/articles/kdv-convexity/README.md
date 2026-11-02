@@ -51,6 +51,10 @@ weighted moment bounds are now proved on complex L2 neighborhoods.
 The high analytic square construction, complete actual L2 gap containment,
 joint indexed branch limits and common high-moment analytic domains are
 now proved in the L2 topology as well.
+Local analytic shifted-Miura lifts are now constructed near every complex H^-1
+potential, with mass uniform on bounded balls, exact constant energy translation
+and H1 regularity when the Miura image is L2. Physical spectral matching
+through these charts remains open.
 This record does not reopen the completed dissertation verification.
 
 ## Source and conventions
@@ -1133,6 +1137,68 @@ extension, identification with the global Birkhoff actions, analytic
 weighted-action descent, real nonpositivity and physical Hamiltonian
 identification remain open. Theorem 1.1 is not yet proved.
 
+## Analytic shifted Miura charts in the H^-1 topology
+
+`PeriodOneMassResolvent.lean` constructs the actual continuous linear
+isomorphism d/dx+(m+1):L2->H^-1 in unit-period Fourier coordinates.
+Its inverse has norm at most 2. Its inverse-symbol sequence kappa_m
+converges to zero in ell2; no convergence to zero of the H^-1-to-L2
+operator norm is asserted.
+
+`PeriodOneMiuraQuadratic.lean` constructs the actual convolution product
+L2 x L2 -> H^-1. Every raw coefficient is its absolutely convergent sum.
+After the massive inverse, its bilinear bound is
+
+```
+|inverse_mass(v*w)|_2 <= |kappa_m|_2 * |v|_2 * |w|_2.
+```
+
+`SmallQuadraticInverse.lean` proves the needed Banach-space argument:
+when C*R<=1/4 and |y|<=R/2, id+B(x,x)=y has a solution in the complete
+closed radius-R ball. Its derivative is invertible and it has an
+analytic inverse on open neighborhoods. A separate linear-normalization
+lemma transfers this chart to a different target Banach space.
+
+`PeriodOneMiuraCharts.lean` proves that for every B>=0 there is M such
+that for every m>=M and every complex H^-1 q with |q|<=B, there is an
+open neighborhood U of q and an analytic s:U->L2 satisfying
+
+```
+s(r)' + (m+1)*s(r) + s(r)^2 = r  for every r in U,
+|s(q)|_2 <= 4*B+1.
+```
+
+The mass is chosen before all potentials in the bounded ball. In
+particular every complex H^-1 potential has such a local analytic lift.
+No reality, mean-zero or smoothness hypothesis is needed. The derivative
+symbol is 2*pi*i*k, matching the article's unit-period normalization.
+The ambient period-two physical Hill model requires its explicit
+periodDouble insertion later.
+
+`PeriodOneMiuraRegularity.lean` proves that an L2 lift with an L2 image
+belongs to H1. The massive inverse first puts the lift in ell^(4/3),
+Young puts its square in ell2, and the derivative graph gives the full
+Sobolev derivative. This will permit comparison with the existing
+physical H1 Miura/Hill identities.
+
+`PeriodOneMiuraShift.lean` constructs the literal map u -> u'+u² and
+proves the exact shift identity. Replacing the shifted lift s by
+u=s+(m+1)/2 gives an analytic local lift satisfying
+
+```
+Miura(u(r)) = r + (m+1)^2/4.
+```
+
+The constant is inserted in the zeroth Fourier mode. L2-image H1
+regularity is also proved for this literal Miura map. The scalar Hill
+energy must therefore be translated by precisely (m+1)^2/4.
+
+The physical discriminant still needs to be matched through these
+charts and glued, followed by H^-1 period estimates, global Birkhoff
+action identification and analytic descent to the weighted action
+cone. These chart results do not yet prove the global positive-ell2
+Hamiltonian extension or any main theorem.
+
 ## Earlier checked local consequences
 
 [`LocalConsequences.lean`](../../../NLS/Articles/KdVConvexity/LocalConsequences.lean)
@@ -1220,12 +1286,12 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All 123 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All 131 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in fourteen additional shared modules:
-1427 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in twenty-two additional shared modules:
+1542 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

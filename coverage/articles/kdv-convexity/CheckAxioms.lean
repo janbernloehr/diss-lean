@@ -1,3 +1,6 @@
+import NLS.SequenceSpaces.PeriodOneMiuraShift
+import NLS.SequenceSpaces.PeriodOneMiuraCharts
+import NLS.SequenceSpaces.PeriodOneMiuraRegularity
 import NLS.KdV.ClassicalTraceAsymptotics
 import NLS.KdV.ClassicalBranchPrimitive
 import NLS.KdV.ClassicalContourMoments
@@ -50,7 +53,15 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_square_pullback_eq_energy_circle,
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let additionalModules := #[`NLS.ComplexAnalysis.EntireEvenSquareDescent,
+  let additionalModules := #[`NLS.ComplexAnalysis.AnalyticUnitDerivativeInverse,
+    `NLS.ComplexAnalysis.AnalyticOpenInverse,
+    `NLS.ComplexAnalysis.SmallQuadraticInverse,
+    `NLS.SequenceSpaces.PeriodOneMassResolvent,
+    `NLS.SequenceSpaces.PeriodOneMiuraQuadratic,
+    `NLS.SequenceSpaces.PeriodOneMiuraCharts,
+    `NLS.SequenceSpaces.PeriodOneMiuraRegularity,
+    `NLS.SequenceSpaces.PeriodOneMiuraShift,
+    `NLS.ComplexAnalysis.EntireEvenSquareDescent,
     `NLS.ComplexAnalysis.AnalyticLocalLipschitz,
     `NLS.ComplexAnalysis.NormalizedSquareRootBounds,
     `NLS.ComplexAnalysis.LogarithmStripNormalization,
