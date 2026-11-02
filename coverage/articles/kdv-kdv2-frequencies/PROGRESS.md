@@ -377,3 +377,22 @@ The normalized Psi_n have different zeros at nonzero potentials; their
 canonical products (52), the full rough/global version and all main
 theorems remain open. The 90-module strict build and complete transitive
 axiom audit are recorded in `VALIDATION.md` and `source.json`.
+
+## Actual weighted normalized coefficients
+
+The sharper actual period estimate constructs a bounded analytic period
+operator after multiplication of each positive matrix entry by row/column
+index. Its analytic inverse is constructed on one common neighborhood.
+A bounded reciprocal diagonal intertwines it with the unweighted operator
+and proves exact compatibility of the actual inverse columns.
+
+The resulting literal one-weight coefficient error is in l2, Banach
+analytic, zero at the free potential and uniformly small near zero with
+its exact column-index scaling. The same inverse defines the normalized
+entire functions and retains all their actual periods. See
+[WEIGHTED_NORMALIZED_COEFFICIENTS.md](WEIGHTED_NORMALIZED_COEFFICIENTS.md).
+
+A second weight and actual normalized zero/product identification remain
+open, as do global/rough compatibility and all main theorems. The strict
+96-module build and transitive axiom audit are recorded in `VALIDATION.md`
+and `source.json`.

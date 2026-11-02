@@ -265,3 +265,13 @@ the selected labeling; no real-type assumption on the Hill pair is used.
 See [CRITICAL_PRODUCTS.md](CRITICAL_PRODUCTS.md). These are critical basis
 products; the distinct normalized Psi_n products (52), the source's full
 rough/global domain and all main-theorem rows remain open.
+
+The normalized entire construction now has actual one-weight l2 inverse
+column errors, with Banach analyticity and all-index uniform smallness
+near zero. A constructed weighted period operator and inverse, together
+with bounded reciprocal-diagonal intertwining, prove literal coefficient
+identities for the same R used by the normalized entire functions. See
+[WEIGHTED_NORMALIZED_COEFFICIENTS.md](WEIGHTED_NORMALIZED_COEFFICIENTS.md).
+This is a decay step toward the normalized product (52); a second weight,
+actual normalized zeros, global/rough compatibility and every main row
+remain open.

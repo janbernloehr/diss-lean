@@ -1305,6 +1305,78 @@
       "scope": "Existing central critical zero multiset/count and shared labeling estimates, directly recompiled",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "a97562b6436bba70e72ab86953eaba1e8864950c5680f1fb2f5b7ef03df80ec0"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveIndexWeight.lean",
+      "source_labels": [
+        "Equation (52) weighted coefficient dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Positive integer weight with complementary identity block; a genuine bounded reciprocal coefficient symbol",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3ad867c21fa4eb3eae726408098ebed1572035f700f51c3fe2fd93070acda096"
+    },
+    {
+      "path": "NLS/SequenceSpaces/DiagonalIntertwining.lean",
+      "source_labels": [
+        "Equation (52) inverse coefficient compatibility dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Matrix entry identities give bounded diagonal intertwining on finite Banach sequence exponents; the identity passes to actual inverse maps and columns",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4463e5c6f2d24a9da0567ae5f94b6c4e578f975811c56c948d5382532d53f64e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticOperatorInverse.lean",
+      "source_labels": [
+        "Weighted actual period inverse dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "A generic operator-norm analytic family equal to identity at zero has a constructed local analytic two-sided inverse, exact free identity and norm at most two",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4b962e725e9c9cfb7bf476507c8101f20aa6a4dd3302feffef7a73ce4b5a9412"
+    },
+    {
+      "path": "NLS/KdV/ClassicalWeightedPeriodOperator.lean",
+      "source_labels": [
+        "Equation (52) actual one-weight period matrix"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "The sharper actual n*k/|k^2-n^2|^2 estimate constructs the index-rescaled period operator with exact entries, a common reciprocal-square majorant, operator-norm analyticity and free identity",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3a68e8a0f524b2debaae7f10bed3cfda09523c5d00e2e9482adb8254cb8114e1"
+    },
+    {
+      "path": "NLS/KdV/ClassicalWeightedPeriodInverse.lean",
+      "source_labels": [
+        "Equation (52) actual compatible weighted inverse"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Actual unweighted and one-weight period operators have simultaneous analytic two-sided inverses of norm at most two; bounded reciprocal intertwining proves literal weighted inverse-column identities on the same spectral neighborhood",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "691951fe3eda37088096fbcdc9bf65dd2c08175c9e692b2f6654c158fe6bf576"
+    },
+    {
+      "path": "NLS/KdV/ClassicalWeightedNormalizedCoefficients.lean",
+      "source_labels": [
+        "Equation (52) actual one-weight normalized coefficient errors"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Constructed literal one-weight inverse-column errors are in l2, Banach analytic and uniformly small near zero with exact column-index scaling; the same inverse retains the normalized entire family and every actual period; second weight and canonical zeros remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2a6b7b0cd1f83ab84385098fb89041e11ae24cc982a70d2c8df89ebc5965de0b"
     }
   ],
   "dependencies_needed": [
@@ -1336,15 +1408,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 1067,
-    "total_declarations_audited": 12429,
+    "candidate_declarations_audited": 1118,
+    "total_declarations_audited": 12480,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 90
+    "selected_modules": 96
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -1383,8 +1455,8 @@
   "progress_record": "PROGRESS.md",
   "endpoint_mass_record": "MASS_NONEXTENSION.md",
   "shared_developments_inspected": {
-    "articles/kdv-convexity": "e848349c4d93aa6ffd4912235b8c345d26006318",
-    "articles/kdv-estimates": "f8812447fbc1430f8b3be41d7c68feac860eed89"
+    "articles/kdv-convexity": "597fc93b8d751fe896ea849a20a0990632165c44",
+    "articles/kdv-estimates": "44071d89de13be985a6aa106b65801293ddbe27d"
   },
   "fixed_time_record": "FIXED_TIME_NONEXTENSION.md",
   "frequency_moment_record": "FREQUENCY_MOMENTS.md",
@@ -1410,5 +1482,6 @@
   "uniform_primitive_bounds_record": "UNIFORM_PRIMITIVE_BOUNDS.md",
   "analytic_period_inverse_record": "ANALYTIC_PERIOD_INVERSE.md",
   "infinite_normalized_differentials_record": "INFINITE_NORMALIZED_DIFFERENTIALS.md",
-  "critical_products_record": "CRITICAL_PRODUCTS.md"
+  "critical_products_record": "CRITICAL_PRODUCTS.md",
+  "weighted_normalized_coefficients_record": "WEIGHTED_NORMALIZED_COEFFICIENTS.md"
 }

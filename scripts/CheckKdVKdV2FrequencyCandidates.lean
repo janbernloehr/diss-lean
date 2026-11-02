@@ -1,3 +1,4 @@
+import NLS.KdV.ClassicalWeightedNormalizedCoefficients
 import NLS.KdV.ClassicalCriticalBasisProduct
 import NLS.Dynamics.ActionDependentWeightedPhaseFlow
 import NLS.Dynamics.FixedTimePhaseObstruction
@@ -34,11 +35,14 @@ run_cmd do
     `NLS.SequenceSpaces.Convolution,
     `NLS.ZakharovShabat.ClassicalHorizontalStripBounds,
     `NLS.SequenceSpaces.Multiplier,
+    `NLS.SequenceSpaces.PositiveIndexWeight,
+    `NLS.SequenceSpaces.OperatorBasisExt,
+    `NLS.SequenceSpaces.DiagonalIntertwining,
     `NLS.SequenceSpaces.PuncturedLattice,
     `NLS.SequenceSpaces.HolderEmbedding,
-    `NLS.SequenceSpaces.OperatorBasisExt,
     `NLS.SequenceSpaces.BoundedCoordinateAnalytic,
     `NLS.ComplexAnalysis.JointSpectralDerivative,
+    `NLS.ComplexAnalysis.AnalyticOperatorInverse,
     `NLS.SequenceSpaces.ConvolutionDominatedMatrix,
     `NLS.SequenceSpaces.LocallyBoundedRealization,
     `NLS.SequenceSpaces.FiniteHeadTailBound,
@@ -106,9 +110,12 @@ run_cmd do
     `NLS.KdV.ClassicalAllContourPeriodBounds,
     `NLS.KdV.ClassicalPeriodOperator,
     `NLS.KdV.ClassicalPeriodInverse,
+    `NLS.KdV.ClassicalWeightedPeriodOperator,
+    `NLS.KdV.ClassicalWeightedPeriodInverse,
     `NLS.KdV.ClassicalNumeratorHilbert,
     `NLS.KdV.ClassicalHilbertPeriod,
     `NLS.KdV.ClassicalNormalizedDifferentials,
+    `NLS.KdV.ClassicalWeightedNormalizedCoefficients,
     `NLS.KdV.ClassicalSignedCriticalProduct,
     `NLS.KdV.ClassicalCriticalEnergyProduct,
     `NLS.KdV.ClassicalCriticalBasisProduct,

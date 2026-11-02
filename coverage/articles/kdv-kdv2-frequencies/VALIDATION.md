@@ -46,8 +46,10 @@ its existing Hilbert specialization and a transitive audit.
 | Four newly selected existing sequence/integral modules and the square-root identity | Local realizations, finite head/tail membership, bilinear Holder duality, Bochner circle interchange, and the general public principal-root square identity are directly recompiled. |
 | Six new critical product/relabeling/convergence modules | Exact complete selected signed critical labeling, actual derivative product (15) on the full energy plane near zero, and the filled omitted-factor critical basis product. |
 | Six newly selected existing product/labeling/analysis dependencies | Complex derivative product, complete central multiplicities and labels, finite l^p modifications, entire-limit removal and local square-root charts are directly recompiled. |
+| `PositiveIndexWeight.lean`, `DiagonalIntertwining.lean`, `AnalyticOperatorInverse.lean` | Bounded reciprocal index symbol, actual operator/inverse intertwining, and a reusable constructed local analytic inverse near the identity. |
+| `ClassicalWeightedPeriodOperator.lean`, `ClassicalWeightedPeriodInverse.lean`, `ClassicalWeightedNormalizedCoefficients.lean` | Actual one-weight matrix bounds and compatible inverses; genuine analytic l2 weighted coefficient errors, uniformly small before all positive indices, retaining every normalization period. |
 
-All ninety selected modules compile with pinned **Lean 4.33.1**, commit
+All ninety-six selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -61,11 +63,14 @@ PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/ZakharovShabat/ClassicalHorizontalStripBounds
 PASS NLS/SequenceSpaces/Multiplier
+PASS NLS/SequenceSpaces/PositiveIndexWeight
+PASS NLS/SequenceSpaces/OperatorBasisExt
+PASS NLS/SequenceSpaces/DiagonalIntertwining
 PASS NLS/SequenceSpaces/PuncturedLattice
 PASS NLS/SequenceSpaces/HolderEmbedding
-PASS NLS/SequenceSpaces/OperatorBasisExt
 PASS NLS/SequenceSpaces/BoundedCoordinateAnalytic
 PASS NLS/ComplexAnalysis/JointSpectralDerivative
+PASS NLS/ComplexAnalysis/AnalyticOperatorInverse
 PASS NLS/SequenceSpaces/ConvolutionDominatedMatrix
 PASS NLS/SequenceSpaces/LocallyBoundedRealization
 PASS NLS/SequenceSpaces/FiniteHeadTailBound
@@ -133,9 +138,12 @@ PASS NLS/KdV/ClassicalAllContourPeriods
 PASS NLS/KdV/ClassicalAllContourPeriodBounds
 PASS NLS/KdV/ClassicalPeriodOperator
 PASS NLS/KdV/ClassicalPeriodInverse
+PASS NLS/KdV/ClassicalWeightedPeriodOperator
+PASS NLS/KdV/ClassicalWeightedPeriodInverse
 PASS NLS/KdV/ClassicalNumeratorHilbert
 PASS NLS/KdV/ClassicalHilbertPeriod
 PASS NLS/KdV/ClassicalNormalizedDifferentials
+PASS NLS/KdV/ClassicalWeightedNormalizedCoefficients
 PASS NLS/KdV/ClassicalSignedCriticalProduct
 PASS NLS/KdV/ClassicalCriticalEnergyProduct
 PASS NLS/KdV/ClassicalCriticalBasisProduct
@@ -147,11 +155,11 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 1067 candidate declarations; 12429 declarations total.
+Axiom audit passed: 1118 candidate declarations; 12480 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the ninety selected modules (including generated and private declarations)
+the ninety-six selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -450,3 +458,24 @@ The canonical product (52) of the normalized Psi_n, global/rough
 compatibility and every main-theorem inventory row remain open. Shared
 canonical sources and compiled dependencies are read only; no shared
 branch merge was needed for this milestone.
+
+
+The actual one-weight normalized coefficient milestone is detailed in
+`WEIGHTED_NORMALIZED_COEFFICIENTS.md`. The literal index-weighted inverse
+column error is a genuine l2 vector with Banach analyticity and all-index
+uniform smallness near zero. Both weighted and unweighted period maps and
+inverses are constructed from the actual period matrix on one common
+neighborhood, with exact compatibility via a bounded reciprocal diagonal.
+The same R defines the normalized entire family and all its actual periods.
+
+Final strict run: all 96 selected modules pass; the complete transitive
+audit passes for 1118 selected declarations and 12480 declarations
+including all imported NLS dependencies. All 96 checked source hashes
+match, and the checker, audit and coverage selections agree exactly.
+Only `propext`, `Classical.choice` and `Quot.sound` are permitted. There
+are no new axioms, placeholders, heartbeat increases, warning exceptions
+or disabled linters. Shared canonical sources/builds remain read only.
+
+A second index weight, actual normalized zeros/products, global/rough
+compatibility and every article main theorem remain open. No main-theorem
+inventory row is closed by the present coefficient estimate.
