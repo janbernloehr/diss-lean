@@ -34,7 +34,7 @@ done
 export LEAN_PATH
 LEAN_PATH="$(IFS=:; echo "${import_paths[*]}")"
 cd -- "$repo"
-for module in KdV/RiccatiEnergy KdV/ConstantUpperSpectralBridge KdV/ClassicalTraceAsymptotics KdV/ActionHamiltonianMoments KdV/ActionHamiltonianTrace KdV/ActionHamiltonianFiniteGap Articles/KdVConvexity/LocalConsequences Articles/KdVConvexity/AnalyticSeries Articles/KdVConvexity/GlobalExtension Articles/KdVConvexity/ActionEmbedding Articles/KdVConvexity/BaseContourSeries; do
+for module in KdV/RiccatiEnergy KdV/ConstantUpperSpectralBridge KdV/ClassicalSpectralSymmetry KdV/ClassicalDiscriminant KdV/ClassicalLocalPrimitive KdV/ClassicalBranchPrimitive KdV/ClassicalTraceAsymptotics KdV/ActionHamiltonianMoments KdV/ActionHamiltonianTrace KdV/ActionHamiltonianFiniteGap Articles/KdVConvexity/LocalConsequences Articles/KdVConvexity/AnalyticSeries Articles/KdVConvexity/GlobalExtension Articles/KdVConvexity/ActionEmbedding Articles/KdVConvexity/BaseContourSeries; do
   log_name="${module//\//.}"
   if ! "$lean_bin" -R "$repo" -DwarningAsError=true \
       -o "$build/lib/NLS/$module.olean" \

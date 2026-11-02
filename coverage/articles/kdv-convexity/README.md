@@ -5,7 +5,10 @@ Hilbert-to-weighted-action inclusion needed for the global extension are
 proved, with the physical contour moments and their spectral estimates
 retained as explicit missing inputs. The physical smooth KdV energy
 coefficients, the actual scalar Hill solution bridge and its all-order real-axis trace estimates are also
-proved. The earlier local concavity/inverse preparation is preserved.
+proved. The actual discriminant is now jointly entire in energy and continuous
+potential. Local primitive charts and analytic squared primitive charts at
+both signs of the branch locus are constructed. The earlier local
+concavity/inverse preparation is preserved.
 This record does not reopen the completed dissertation verification.
 
 ## Source and conventions
@@ -230,6 +233,59 @@ in this step. Existence and normalization of the Hill inversion remainder
 are still unproved here; no analogous dNLS primitive has been relabelled
 as the KdV primitive.
 
+## Joint energy analyticity and actual local primitives
+
+[`NLS/KdV/ClassicalSpectralSymmetry.lean`](../../../NLS/KdV/ClassicalSpectralSymmetry.lean)
+proves that the constructed classical discriminant for `(-1,-q)` depends
+only on `z^2`. A constant triangular state transformation intertwines the
+actual first-order equations at any two spectral parameters with the same
+square; IVP uniqueness and the normalized solution columns give the trace
+identity. This includes `z=0` and does not assume spectral symmetry.
+
+[`NLS/KdV/ClassicalDiscriminant.lean`](../../../NLS/KdV/ClassicalDiscriminant.lean)
+defines `classicalHillDiscriminant q lambda` using a total square-root
+representative and proves independence from every choice of square root.
+It equals the trace of the actual normalized scalar solutions.
+`analyticOnNhd_classicalHillDiscriminant_joint` proves entire joint
+analyticity in `(lambda,q)` for the sup-norm Banach space of continuous
+complex potentials on `[0,1]`. The source embedding `q -> (-1,-q)` is an
+explicit affine continuous-linear map. Even-family Cauchy descent handles
+`lambda=0`; no analytic square-root selection is assumed there.
+
+[`NLS/KdV/ClassicalLocalPrimitive.lean`](../../../NLS/KdV/ClassicalLocalPrimitive.lean)
+defines the actual radicand `Delta^2-4`. At every point where it is nonzero,
+`exists_classicalHill_local_primitive_of_radicand_ne_zero` constructs a
+joint analytic root `r` and primitive `F` on an actual complex open
+neighborhood. The prescribed-root version permits either sheet and proves:
+
+```text
+r^2 = Delta^2-4, exp(F) = (Delta+r)/2,
+2*cosh(F) = Delta, 2*sinh(F) = r, dF/dlambda = Delta'/r.
+```
+
+The logarithm is constructed locally by normalizing the multiplier to one;
+its base value may lie on the principal logarithm's cut. Thus this is an
+existence proof from the actual discriminant, rather than a primitive
+supplied as an input. It does not yet fix the paper's global normalization.
+
+[`NLS/KdV/ClassicalBranchPrimitive.lean`](../../../NLS/KdV/ClassicalBranchPrimitive.lean)
+constructs `squaredCosh`, the entire descent of `cosh(z)` through `z^2`,
+proves its derivative at zero is exactly `1/2`, and constructs its analytic
+inverse on open neighborhoods of zero and one. At every actual trace point
+`Delta=2*sigma`, `sigma^2=1`,
+`exists_classicalHill_local_squared_primitive` composes this inverse with
+`sigma*Delta/2`. The resulting `K` is jointly analytic, vanishes at the base
+point, and equals `F^2` for every sufficiently small branch satisfying
+`2*cosh(F)=sigma*Delta`. No simple-zero assumption is imposed, so this local
+construction also covers collapsed gaps and complex potential perturbations.
+
+These results provide local spectral charts needed for Lemmas 4.3 and 4.6.
+They do not construct a globally normalized Hill primitive on the full gap
+complement, continue its square along a whole isolating disc, identify the
+continuous-potential discriminant with the shared rough Fourier operator,
+or descend moments to the weighted action space. In particular the global
+analytic extension around the entire positive ell2 quadrant is still open.
+
 ## Earlier checked local consequences
 
 [`LocalConsequences.lean`](../../../NLS/Articles/KdVConvexity/LocalConsequences.lean)
@@ -247,9 +303,14 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
 
 ## Remaining essential KdV work
 
-1. Construct the physical contour moments
+1. Continue and globally normalize the constructed local primitive charts,
+   prove their endpoint values and compatibility across the actual gap
+   complement, and construct the physical contour moments
    R_n=(1/pi)*integral Gamma_n F_n^3, F_n=F+i*n*pi (4.8), using the shared
-   Hill discriminant and normalized primitive. Prove analytic descent to
+   Hill discriminant and normalized primitive. The local discriminant and
+   primitive/squared-primitive constructions above are now proved; global
+   spectral labels, normalization and rough-operator identification remain.
+   Prove analytic descent to
    the weighted actions on a common complex neighborhood (Lemma 4.6(ii)).
 2. Prove their **complex-neighborhood** quadratic action bounds, including
    |R_n|=O(gamma_n^4/n^3) and gamma_n^2/n=O(I_n), with local constants
@@ -284,10 +345,10 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All eleven modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All fifteen modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
-154 constants in their two namespaces, including generated declarations,
+198 constants in their two namespaces, including generated declarations,
 transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 See `validation.json` for exact file hashes and scope.
