@@ -8,6 +8,13 @@
     "ZakharovShabat/SourceCriticalRelativeComparison",
     "ZakharovShabat/SourcePsiCriticalComparisonDomain",
     "ZakharovShabat/SourceRootPeriodPerturbation",
+    "Fourier/AbsoluteReciprocalYoungRows",
+    "ZakharovShabat/SourceCriticalRelativeRowBound",
+    "ZakharovShabat/SourceCriticalTailSeparation",
+    "ZakharovShabat/SourcePsiCriticalFilledTail",
+    "ZakharovShabat/SourcePsiCriticalNormalizer",
+    "ZakharovShabat/SourcePsiCriticalPeriodLowerBound",
+    "ZakharovShabat/SourcePsiCriticalRootBound",
     "FunctionalAnalysis/ComplexRealEquiv",
     "Dynamics/ComplexBirkhoffCoordinatesExponent",
     "Dynamics/ConjugatePairEquiv",
@@ -811,6 +818,106 @@
       "propext",
       "Classical.choice",
       "Quot.sound"
+    ],
+    "NLS.Fourier.absoluteReciprocalYoungMajorant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Fourier.summable_absoluteReciprocalYoungRow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Fourier.norm_absoluteReciprocalYoungMajorant_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Fourier.norm_absoluteReciprocalYoungMajorant_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.tsum_sourceRootRelativePerturbation_le_reciprocalRow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.norm_quotient_sub_critical_le_reciprocalRow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.norm_quotient_sub_critical_le_youngMajorant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.exists_local_sourceCritical_tail_lattice_separation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceLemma12_11Data.critical_filled_graph_radius": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceLemma12_11Data.critical_filled_mem_gapProduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_uniform_critical_filled_difference_norm_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_filled_quotient_small_tail": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourcePsiCriticalNormalizer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.norm_root_ratio_mul_sub_one_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_normalizer_small_tail": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourcePsiCriticalPeriodControl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.analyticOnNhd_sourcePsiCriticalNormalizer": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_comparison_period_lower_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.exists_sourcePsi_critical_period_control": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourcePsiCriticalPeriodControl.root_difference_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
     ]
   },
   "allowed_axioms": [
@@ -818,7 +925,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Focused build of 30 new and consumed modules; transitive audit of 155 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Focused build of 37 new and consumed modules; transitive audit of 175 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",

@@ -6,6 +6,13 @@ ZakharovShabat/SourcePsiCriticalRootComparison: checked
 ZakharovShabat/SourceCriticalRelativeComparison: checked
 ZakharovShabat/SourcePsiCriticalComparisonDomain: checked
 ZakharovShabat/SourceRootPeriodPerturbation: checked
+Fourier/AbsoluteReciprocalYoungRows: checked
+ZakharovShabat/SourceCriticalRelativeRowBound: checked
+ZakharovShabat/SourceCriticalTailSeparation: checked
+ZakharovShabat/SourcePsiCriticalFilledTail: checked
+ZakharovShabat/SourcePsiCriticalNormalizer: checked
+ZakharovShabat/SourcePsiCriticalPeriodLowerBound: checked
+ZakharovShabat/SourcePsiCriticalRootBound: checked
 FunctionalAnalysis/ComplexRealEquiv: checked
 Dynamics/ComplexBirkhoffCoordinatesExponent: checked
 Dynamics/ConjugatePairEquiv: checked
@@ -256,5 +263,49 @@ Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate: checked
  Classical.choice,
  Quot.sound]
 'NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_of_same_distributions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Fourier.absoluteReciprocalYoungMajorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Fourier.summable_absoluteReciprocalYoungRow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Fourier.norm_absoluteReciprocalYoungMajorant_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Fourier.norm_absoluteReciprocalYoungMajorant_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.tsum_sourceRootRelativePerturbation_le_reciprocalRow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceIsolatingNeighborhoods.norm_quotient_sub_critical_le_reciprocalRow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceIsolatingNeighborhoods.norm_quotient_sub_critical_le_youngMajorant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.exists_local_sourceCritical_tail_lattice_separation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceLemma12_11Data.critical_filled_graph_radius' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceLemma12_11Data.critical_filled_mem_gapProduct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_uniform_critical_filled_difference_norm_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_filled_quotient_small_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourcePsiCriticalNormalizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.norm_root_ratio_mul_sub_one_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_normalizer_small_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourcePsiCriticalPeriodControl' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.analyticOnNhd_sourcePsiCriticalNormalizer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_comparison_period_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.exists_sourcePsi_critical_period_control' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourcePsiCriticalPeriodControl.root_difference_le' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]

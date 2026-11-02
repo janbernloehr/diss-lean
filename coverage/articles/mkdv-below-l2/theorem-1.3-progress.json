@@ -15,7 +15,7 @@
     {
       "source": "Section 4 normalizing period",
       "declaration": "NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.root_difference_le_of_gap_bounds",
-      "scope": "Quantitative estimate conditional on explicit analytic numerator and gap-error bounds. Actual locally uniform smallness remains open."
+      "scope": "General quantitative criterion; its actual uniform tail-smallness hypothesis is now discharged separately by exists_sourcePsi_critical_period_control."
     },
     {
       "source": "Section 5 weighted second moments",
@@ -26,10 +26,24 @@
       "source": "Physical exponent compatibility",
       "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_of_same_distributions",
       "scope": "Same real physical distributions, both exponents in 1<p\u22643; actual chosen atlases."
+    },
+    {
+      "source": "Section 4 equations (36), (39), p. 18",
+      "declaration": "NLS.ZakharovShabat.exists_sourcePsi_critical_period_control",
+      "scope": "Constructed open neighborhood of the entire real locus; actual normalized comparison period norm at least 1/2 uniformly in both indices and locally uniformly at every complex source. All circle/analyticity/separation inputs constructed."
+    },
+    {
+      "source": "Section 4 product error for exponent bootstrap",
+      "declaration": "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.norm_quotient_sub_critical_le_youngMajorant",
+      "scope": "Actual products controlled by an absolute reciprocal Young row at any admissible Banach triple with kernel exponent above one. Full displacement norm controls the exponential."
+    },
+    {
+      "source": "Section 4 quantitative root inequality",
+      "declaration": "NLS.ZakharovShabat.SourcePsiCriticalPeriodControl.root_difference_le",
+      "scope": "Actual root difference bounded by 2(gD+g\u00b2M/d), with explicit pointwise gap, product-error, product-size and denominator bounds; constructed period control supplies the normalizing inverse."
     }
   ],
   "remaining": [
-    "Locally uniform tail smallness of the actual normalizing numerator.",
     "Proposition 4.1 root-difference sequence bootstrap for every finite p>2.",
     "Sharper Lemma 5.3 rows and weighted-sum estimates at every finite p>2.",
     "Identification with the physical normalized H4 action derivative, with exact constants.",

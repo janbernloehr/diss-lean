@@ -7,8 +7,9 @@ complete real source/target models, analytic inverses and accepted Hilbert
 identification. The H₄ candidate convergence remains at 1<p≤3, now transported to actual
 physical distributions on a common Birkhoff domain. The actual root-period
 comparison, relative product estimate, and normalizing-period stability are
-checked; the all-finite-p bootstrap and physical H₄ derivative identification
-remain open.
+checked, including a constructed uniform lower bound for the actual
+comparison period. The all-finite-p bootstrap and physical H₄ derivative
+identification remain open.
 See [the current progress record](PROGRESS.md) and the
 [Theorem 1.2 clause map](theorem-1.2.json).
 
@@ -161,9 +162,23 @@ contours and root separation are constructed from established spectral data.
 `SourceRootPeriodPerturbation` proves that a complex analytic numerator f
 with `‖f−1‖ ≤ ε` on the gap has normalized period within ε of -i. It follows
 that the period norm is at least 1−ε. The quantitative root estimate follows
-from the cancellation identity and gap bounds. These are criteria: uniform
-tail smallness for the actual numerator and the iterated sequence improvement
-of Proposition 4.1 are still to be proved.
+from the cancellation identity and gap bounds. `SourcePsiCriticalPeriodLowerBound.exists_sourcePsi_critical_period_control`
+now discharges the actual tail smallness requirement: it constructs an open
+neighborhood of the entire real locus where the normalized actual comparison
+period has norm at least 1/2, uniformly in both indices and locally uniformly
+at every complex source. Its construction reuses compactness of the real gap
+product, equicontinuity of the original root family, norm continuity of the
+critical displacement and quantitative spectral separation.
+
+`SourceCriticalRelativeRowBound` retains the linear absolute reciprocal row
+in the actual product difference, with only the exponential bounded by the
+full displacement norm. `Fourier/AbsoluteReciprocalYoungRows` bounds these
+rows at every admissible Young triple whose kernel exponent is above one,
+allowing a small exponent loss instead of the fixed doubled output exponent.
+`SourcePsiCriticalRootBound` gives the actual inequality
+`‖σ−ρ‖ ≤ 2(gD+g²M/d)` from the constructed period control and explicit gap,
+product-error, product-size and denominator bounds. The iterated sequence
+improvement of Proposition 4.1 remains to be assembled.
 
 `PhysicalFourthFrequencyCandidate` fixes a constructed actual moment chart
 for each 1<p≤3, intersects its physical convergence domain with the chosen
@@ -208,10 +223,10 @@ read-only, with new outputs under this checkout's private
 `ELAN_HOME`, `LEAN_BIN` and `MKDV_BUILD_ROOT` overrides; it never invokes Lake
 or writes through the imported symlinks.
 
-The expanded focused checker covers 30 new article/shared modules and the
+The expanded focused checker covers 37 new article/shared modules and the
 consumed smooth hierarchy foundations, with `autoImplicit=false` and
 `warningAsError=true`. `AxiomAudit.lean` audits all explicitly named new
-and consumed declarations (155 total), including the main Theorem 1.2 declarations;
+and consumed declarations (175 total), including the main Theorem 1.2 declarations;
 only `propext`, `Classical.choice` and `Quot.sound` occur. No new axiom,
 sorry or disabled linter was introduced. `validation.txt` captures the checks.
 This is focused validation, not a full repository build or completed article

@@ -160,3 +160,55 @@ compiled with `autoImplicit=false` and `warningAsError=true`. All 155 named
 declarations passed transitive axiom checks, using only `propext`,
 `Classical.choice` and `Quot.sound`. The recorded declaration set was matched
 exactly against `AxiomAudit.lean`; no warnings or sorry axioms occurred.
+
+
+## Fifth checkpoint — uniform comparison-period invertibility
+
+The previous checkpoint's explicit normalizer smallness criterion is now
+verified for the actual roots and products. `SourcePsiCriticalFilledTail`
+proves that filling the original deleted root with the actual critical root
+preserves a graph radius uniform in the deleted index. At each real source
+the resulting full root vectors lie in the compact product of periodic gaps.
+The existing uniform-small quotient-tail theorem near that compact set then
+applies to the entire actual family on one complex source neighborhood.
+A separate local bound controls the full filled-root-minus-critical norm,
+which supplies the uniform exponential constant in product comparison.
+
+`SourceCriticalTailSeparation` handles all omitted indices at once. Small
+critical displacement tails give the distant omitted case; one larger
+selected-index cutoff handles the finite omitted head. The denominator is
+at least `(π/2)|n−k|` throughout each selected free eighth-π disc.
+
+`SourcePsiCriticalNormalizer` combines these bounds with uniformly small
+periodic gaps and the existing critical-point-to-gap distance bound. Its
+actual numerator ξ satisfies `‖ξ−1‖ ≤ 1/2` on every sufficiently distant
+gap, uniformly in n on one complex neighborhood. `SourcePsiCriticalPeriodLowerBound`
+places ξ analytically on original closed isolating discs and obtains a
+normalized period norm at least 1/2. Its global existence theorem constructs
+an open neighborhood of the entire real locus and establishes the estimate
+locally uniformly at every complex source. It retains the exact equation
+(38), actual numerator analyticity, denominator avoidance and relative
+product control on the same chosen circles.
+
+`SourceCriticalRelativeRowBound` bounds the product difference by its actual
+absolute reciprocal row, with a displacement norm bound used only inside
+the exponential. The reusable Fourier module `AbsoluteReciprocalYoungRows`
+provides summability, an exact majorant row identity and a norm bound at any
+admissible Young triple with kernel exponent strictly above one.
+`SourcePsiCriticalRootBound` derives the actual inequality
+`‖σ−ρ‖ ≤ 2(gD+g²M/d)` from the constructed invertible period and explicit
+pointwise gap/product/denominator bounds. These lemmas supply the quantitative
+inputs for the exponent iteration; they do not yet prove Proposition 4.1.
+
+Theorem 1.3 remains open: the next steps are to assemble the root exponent
+bootstrap, prove the sharper Lemma 5.3 moment estimates, and identify the
+resulting all-p analytic frequency map with the physical H₄ action derivative.
+The physical candidate convergence range remains 1<p≤3. Theorem 1.1 remains
+open, and Theorem 1.2 remains verified.
+
+Strict validation for the fifth checkpoint passed: all 37 focused modules
+compiled with `autoImplicit=false` and `warningAsError=true`. All 175 named
+declarations passed transitive axiom checks, using only `propext`,
+`Classical.choice` and `Quot.sound`. The audited declaration set matched
+`AxiomAudit.lean` exactly. There were no holes, new axioms or disabled linters
+in the seven new modules.
