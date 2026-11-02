@@ -122,6 +122,12 @@ modules=(
   ZakharovShabat/SourceFiniteGapHamiltonianReality
   ZakharovShabat/SourceSobolevFourthHamiltonian
   ZakharovShabat/SourceSobolevFourthBirkhoff
+  ZakharovShabat/SourceFiniteGapHamiltonianIsospectral
+  SequenceSpaces/WeightedRealTruncation
+  ZakharovShabat/SourceSobolevFourthActionDependence
+  SequenceSpaces/WeightedRealActionReduction
+  ZakharovShabat/SourceSobolevActionReduction
+  ZakharovShabat/SourceSobolevFourthFrequency
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"

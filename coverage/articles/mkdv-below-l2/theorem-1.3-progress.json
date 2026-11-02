@@ -175,9 +175,34 @@
       "source": "Physical closed-action calibration in the fractional topology",
       "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.second_deriv_sobolevFourthOpeningHamiltonian_finiteGap",
       "scope": "The complete native opening-line Hamiltonian equals the original physical finite-gap Riccati H4 at every amplitude. At a closed selected finite-gap action the native second derivative equals the independently defined physical closed frequency."
+    },
+    {
+      "source": "Physical hierarchy action dependence at finite gaps",
+      "declaration": "NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_actions",
+      "scope": "Every physical Riccati Hamiltonian order, every real finite-gap source, every finite exponent p>1. Equal original actions imply isospectral primitive equality; one common admissible exterior circle gives equal independently defined Hamiltonian values."
+    },
+    {
+      "source": "Full H^(3/2) physical H4 action dependence",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceSobolevFourthHamiltonian_eq_of_actions",
+      "scope": "Actual native full fractional source, including infinitely many open gaps. Simultaneous native weighted Birkhoff truncations preserve retained actions and converge in the original norm. Their inverse sources are actual finite-gap potentials. The real scalar Hamiltonian has the same invariance."
+    },
+    {
+      "source": "Physical unit-speed action curve in the fractional topology",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasDerivAt_sobolevActionReduction_zero",
+      "scope": "Every nonnegative real Sobolev order. The actual global weighted inverse lifts the raw one-mode reduction; its derivative is in the full stronger norm, its original coefficients equal the established Hilbert curve, and the selected physical action decreases at unit speed before collapse."
+    },
+    {
+      "source": "Independent full-domain physical H4 frequencies",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency",
+      "scope": "Full original native real H^(3/2) domain. Open frequencies are negative derivatives of the independently constructed physical H4 along actual unit-speed action reduction. Closed frequencies are second amplitude derivatives, with selected action exactly t²/2. No moment candidate enters the definition. Full equality with the article candidate and the original analytic action-factor derivative interpretation remain to be established."
+    },
+    {
+      "source": "Full-domain physical frequency finite-gap calibration",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_eq_finiteGap",
+      "scope": "Every actual finite-gap point in the full original fractional domain and every index, including closed selected actions. The entire physical reduction-line function is the original Riccati H4 function at every parameter, so the independent open and closed derivatives retain their previously verified normalization."
     }
   ],
   "remaining": [
-    "Prove action dependence and identify the physical H4 action derivatives throughout the full original H^(3/2) domain with the chosen normalized frequency candidate, then assemble Theorem 1.3. The fractional physical Hamiltonian itself, its real analyticity and its finite-gap calibration are now verified."
+    "Identify the independently defined full-domain physical H4 frequencies with the chosen normalized moment candidate at every real H^(3/2) source, including closed actions; verify the original local action-factor derivative interpretation and assemble Theorem 1.3. Full-source H4 action dependence and finite-gap calibration are now verified."
   ]
 }

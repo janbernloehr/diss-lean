@@ -1,4 +1,5 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+Incremental basis: 4a0d0a4; 82 unchanged modules reuse parent checks; 6 new modules checked strictly in this checkpoint.
 ComplexAnalysis/RelativeProductComparison: checked
 ComplexAnalysis/RootPeriodComparison: checked
 ComplexAnalysis/QuarticInversionRemainder: checked
@@ -81,6 +82,12 @@ ZakharovShabat/PeriodOneSobolevFourthClassical: checked
 ZakharovShabat/SourceFiniteGapHamiltonianReality: checked
 ZakharovShabat/SourceSobolevFourthHamiltonian: checked
 ZakharovShabat/SourceSobolevFourthBirkhoff: checked
+ZakharovShabat/SourceFiniteGapHamiltonianIsospectral: checked
+SequenceSpaces/WeightedRealTruncation: checked
+ZakharovShabat/SourceSobolevFourthActionDependence: checked
+SequenceSpaces/WeightedRealActionReduction: checked
+ZakharovShabat/SourceSobolevActionReduction: checked
+ZakharovShabat/SourceSobolevFourthFrequency: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -726,5 +733,100 @@ ZakharovShabat/SourceSobolevFourthBirkhoff: checked
  Classical.choice,
  Quot.sound]
 'NLS.ZakharovShabat.im_eq_zero_of_continuous_weighted_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_isospectral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_actions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.WeightedRealCoeff.truncate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.truncate_complex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.truncate_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.tendsto_truncate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.forget_truncate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.truncatePair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.truncatePair_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.truncatePair_snd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.tendsto_truncatePair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.forget_truncatePair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.RealCoeff.pairAction_truncatePair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.fourthSobolev_inverse_real_map' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.fourthSobolev_inverse_truncate_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.fourthSobolev_inverse_action' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthBirkhoffHamiltonian_eq_of_actions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceSobolevFourthHamiltonian_eq_of_actions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceRealSobolevFourthHamiltonian_eq_of_actions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.WeightedRealCoeff.truncateCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.truncateCLM_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.truncatePairCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.truncatePairCLM_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.pairModeCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.forget_pairModeCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.actionReduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.actionReduction_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.forget_actionReduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.hasDerivAt_actionReduction_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.pairAction_actionReduction_same' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.WeightedRealCoeff.pairAction_actionReduction_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevActionReduction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevActionReduction_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSource_sobolevActionReduction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasDerivAt_sobolevActionReduction_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevActionReduction_mem_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevActionReduction_action_same' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevActionReduction_action_ne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthActionReductionHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasDerivAt_sobolevFourthActionReductionHamiltonian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpenFrequency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpening_action_same_of_closed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthClosedFrequency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthActionReductionHamiltonian_eq_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpenFrequency_eq_finiteGap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_eq_finiteGap' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]

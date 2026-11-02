@@ -17,7 +17,9 @@ inputs, including closed actions; the full H^(3/2) classical-domain
 identification remains open. The real weighted Hilbert targets are verified,
 with exact inclusion into the same complex candidate sequence. The physical
 H₄ Hamiltonian is now constructed and calibrated on the full H^(3/2) domain;
-its full action-derivative identification is still required.
+its full action dependence is now verified. Independent physical open and
+closed frequencies are defined on that domain and calibrated at finite gaps.
+Their full moment-candidate identification is still required.
 See [the current progress record](PROGRESS.md) and the
 [Theorem 1.2 clause map](theorem-1.2.json).
 
@@ -289,6 +291,18 @@ original physical finite-gap function at every amplitude, so the closed
 second derivative keeps its independent physical normalization. No
 full-domain action-only factorization or frequency equality is claimed yet.
 
+`SourceFiniteGapHamiltonianIsospectral` proves action dependence of every
+physical finite-gap Hamiltonian order directly from the all-order exterior
+trace. `SourceSobolevFourthActionDependence` extends H₄ invariance to the full
+original fractional source by simultaneous native Birkhoff truncations.
+`WeightedRealActionReduction` and `SourceSobolevActionReduction` retain the
+physical unit-speed action parameter in the actual weighted norm, and agree
+with the established Hilbert source curve coefficient-for-coefficient.
+`SourceSobolevFourthFrequency` defines physical open and closed frequencies
+on the entire original H^(3/2) source independently of every moment formula.
+The finite-gap values are calibrated at every index. Identification with the
+chosen analytic moment candidate throughout the full domain remains open.
+
 ## Outstanding dependencies and integration order
 
 1. The smooth physical fourth-flow bridge has been consumed from the hierarchy
@@ -301,7 +315,10 @@ full-domain action-only factorization or frequency equality is claimed yet.
    Lemma 5.2 are now checked. Extend the physical H₄ derivative identification
    to the original H^(3/2) domain and then assemble Theorem 1.3. The physical
    fractional Hamiltonian and its native weighted Birkhoff transport are now
-   constructed; action dependence and full-domain action derivatives remain.
+   constructed, and full-domain action dependence is proved. Independent open
+   and closed physical frequency definitions now cover the full domain;
+   their equality with the chosen candidate and the original analytic
+   action-factor derivative interpretation remain.
    The real Hilbert targets are verified with exact inclusion into the
    same complex frequency sequence. The H₃ bounds were reused through an exact weighted
    comparison identity; they do not by themselves identify H₄.
@@ -327,10 +344,12 @@ read-only, with new outputs under this checkout's private
 `ELAN_HOME`, `LEAN_BIN` and `MKDV_BUILD_ROOT` overrides; it never invokes Lake
 or writes through the imported symlinks.
 
-The expanded focused checker covers 82 new article/shared modules and the
+The expanded focused checker lists 88 new article/shared modules and the
 consumed smooth hierarchy foundations, with `autoImplicit=false` and
-`warningAsError=true`. `AxiomAudit.lean` audits all explicitly named new
-and consumed declarations (345 total), including the main Theorem 1.2 declarations;
+`warningAsError=true`. Current incremental validation strictly rechecks the
+6 new modules and reuses the 82 unchanged modules validated at `4a0d0a4`.
+The full transitive audit is rerun after those checks. `AxiomAudit.lean` audits all explicitly named new
+and consumed declarations (392 total), including the main Theorem 1.2 declarations;
 only `propext`, `Classical.choice` and `Quot.sound` occur. No new axiom,
 sorry or disabled linter was introduced. `validation.txt` captures the checks.
 This is focused validation, not a full repository build or completed article

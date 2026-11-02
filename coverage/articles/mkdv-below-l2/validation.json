@@ -82,7 +82,13 @@
     "ZakharovShabat/PeriodOneSobolevFourthClassical",
     "ZakharovShabat/SourceFiniteGapHamiltonianReality",
     "ZakharovShabat/SourceSobolevFourthHamiltonian",
-    "ZakharovShabat/SourceSobolevFourthBirkhoff"
+    "ZakharovShabat/SourceSobolevFourthBirkhoff",
+    "ZakharovShabat/SourceFiniteGapHamiltonianIsospectral",
+    "SequenceSpaces/WeightedRealTruncation",
+    "ZakharovShabat/SourceSobolevFourthActionDependence",
+    "SequenceSpaces/WeightedRealActionReduction",
+    "ZakharovShabat/SourceSobolevActionReduction",
+    "ZakharovShabat/SourceSobolevFourthFrequency"
   ],
   "strict_options": [
     "autoImplicit=false",
@@ -1813,6 +1819,241 @@
       "propext",
       "Classical.choice",
       "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_isospectral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_eq_of_actions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.truncate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.truncate_complex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.truncate_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.tendsto_truncate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.forget_truncate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.truncatePair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.truncatePair_fst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.truncatePair_snd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.tendsto_truncatePair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.forget_truncatePair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.RealCoeff.pairAction_truncatePair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.fourthSobolev_inverse_real_map": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.fourthSobolev_inverse_truncate_finiteGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.fourthSobolev_inverse_action": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthBirkhoffHamiltonian_eq_of_actions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceSobolevFourthHamiltonian_eq_of_actions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceRealSobolevFourthHamiltonian_eq_of_actions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.truncateCLM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.truncateCLM_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.truncatePairCLM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.truncatePairCLM_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.pairModeCLM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.forget_pairModeCLM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.actionReduction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.actionReduction_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.forget_actionReduction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.hasDerivAt_actionReduction_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.pairAction_actionReduction_same": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.WeightedRealCoeff.pairAction_actionReduction_ne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevActionReduction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevActionReduction_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.originalWeightedRealSource_sobolevActionReduction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasDerivAt_sobolevActionReduction_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevActionReduction_mem_finiteGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevActionReduction_action_same": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevActionReduction_action_ne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthActionReductionHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasDerivAt_sobolevFourthActionReductionHamiltonian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpenFrequency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpening_action_same_of_closed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthClosedFrequency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthActionReductionHamiltonian_eq_finiteGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpenFrequency_eq_finiteGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_eq_finiteGap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
     ]
   },
   "allowed_axioms": [
@@ -1820,7 +2061,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Focused strict build of 82 new and consumed modules; transitive audit of 345 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Incremental focused validation: 6 new modules checked strictly; 82 unchanged modules reuse parent validation. Full transitive audit of 392 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",
@@ -1830,5 +2071,98 @@
     "9b664f9",
     "09fa657"
   ],
-  "validation_method": "Focused ordered build; repaired suffix rechecked before the full transitive audit; unchanged checked prefix retained."
+  "validation_method": "Incremental strict checks of six new modules and full transitive audit; 82 parent modules reused after checking their sources are unchanged.",
+  "validation_basis_commit": "4a0d0a46fc9a20b917c415d8d41acaedc516001e",
+  "unchanged_modules_reused": [
+    "ComplexAnalysis/RelativeProductComparison",
+    "ComplexAnalysis/RootPeriodComparison",
+    "ComplexAnalysis/QuarticInversionRemainder",
+    "ComplexAnalysis/QuarticInversionContour",
+    "ZakharovShabat/SourceFullAbelianFourthHamiltonianContour",
+    "ZakharovShabat/SourceFullAbelianFourthContourPoisson",
+    "ZakharovShabat/SourceFullAbelianFourthContourLocal",
+    "ZakharovShabat/SourceAbelianMomentCubicShift",
+    "ZakharovShabat/SourceAbelianMomentFourthContour",
+    "ZakharovShabat/SourceFiniteGapFourthOpenFrequency",
+    "ZakharovShabat/SourceFiniteGapFourthOpenMoments",
+    "ZakharovShabat/SourceFiniteGapFourthOpening",
+    "ZakharovShabat/SourceFiniteGapFourthClosedFrequency",
+    "ZakharovShabat/SourceLemma5_2",
+    "ZakharovShabat/SourceFiniteGapFourthFrequencyExponent",
+    "ZakharovShabat/SourceSingleRootRelativeComparison",
+    "ZakharovShabat/SourcePsiCriticalRootComparison",
+    "ZakharovShabat/SourceCriticalRelativeComparison",
+    "ZakharovShabat/SourcePsiCriticalComparisonDomain",
+    "ZakharovShabat/SourceRootPeriodPerturbation",
+    "Fourier/AbsoluteReciprocalYoungRows",
+    "ZakharovShabat/SourceCriticalRelativeRowBound",
+    "ZakharovShabat/SourceCriticalTailSeparation",
+    "ZakharovShabat/SourcePsiCriticalFilledTail",
+    "ZakharovShabat/SourcePsiCriticalNormalizer",
+    "ZakharovShabat/SourcePsiCriticalPeriodLowerBound",
+    "ZakharovShabat/SourcePsiCriticalRootBound",
+    "SequenceSpaces/ReciprocalBootstrapExponents",
+    "SequenceSpaces/ReciprocalBootstrapStep",
+    "SequenceSpaces/ReciprocalBootstrap",
+    "ZakharovShabat/SourcePsiCriticalInitialOffset",
+    "ZakharovShabat/SourcePsiCriticalReciprocalInequality",
+    "ZakharovShabat/SourceProposition4_1",
+    "ComplexAnalysis/QuadraticCosineWeightedCancellation",
+    "ZakharovShabat/SourceAbelianCriticalWeightedPeriod",
+    "ZakharovShabat/SourceAbelianCriticalCosineCancellation",
+    "ZakharovShabat/SourceAbelianMomentCriticalComparison",
+    "ZakharovShabat/SourceAbelianMomentCriticalBound",
+    "ZakharovShabat/SourcePsiCriticalSummableDifference",
+    "ZakharovShabat/SourcePsiCriticalProductOnePlus",
+    "ZakharovShabat/SourceAbelianMomentOnePlus",
+    "ZakharovShabat/SourceAbelianMomentOnePlusDomain",
+    "ZakharovShabat/SourceLemma5_3",
+    "SequenceSpaces/WeightedReciprocalRows",
+    "SequenceSpaces/WeightedIndexRealization",
+    "ZakharovShabat/SourceAbelianMomentWeightedRows",
+    "FunctionalAnalysis/ComplexRealEquiv",
+    "Dynamics/ComplexBirkhoffCoordinatesExponent",
+    "Dynamics/ConjugatePairEquiv",
+    "Poisson/ComplexCanonicalCoordinates",
+    "ZakharovShabat/SourceRealBallCoreIdentity",
+    "ZakharovShabat/SourceComplexBirkhoffCanonical",
+    "ZakharovShabat/SobolevHierarchySymmetries",
+    "MKdV/HierarchyRestriction",
+    "ZakharovShabat/ClassicalNLSFourthHamiltonian",
+    "ZakharovShabat/ClassicalNLSFourthVariation",
+    "MKdV/ClassicalEnergyVariation",
+    "MKdV/ClassicalFourthFlowRestriction",
+    "Articles/MKdVBelowL2/SmoothRenormalization",
+    "Articles/MKdVBelowL2/TranslationFourier",
+    "Articles/MKdVBelowL2/PhysicalBirkhoff",
+    "Articles/MKdVBelowL2/CompatibleBirkhoffFamily",
+    "Articles/MKdVBelowL2/PhysicalBirkhoffCanonical",
+    "Articles/MKdVBelowL2/HilbertBirkhoffIdentification",
+    "Articles/MKdVBelowL2/RealBirkhoffFamily",
+    "Articles/MKdVBelowL2/Theorem12",
+    "Articles/MKdVBelowL2/ClassicalRenormalizedFourthFlow",
+    "Articles/MKdVBelowL2/FourthMomentSummability",
+    "Articles/MKdVBelowL2/FourthMomentSharpSummability",
+    "Articles/MKdVBelowL2/FourthMomentAnalytic",
+    "Articles/MKdVBelowL2/FourthMomentSequence",
+    "Articles/MKdVBelowL2/FourthMomentActionRemainder",
+    "Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate",
+    "Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder",
+    "Articles/MKdVBelowL2/PhysicalFourthFrequencyIdentification",
+    "Articles/MKdVBelowL2/FourthMomentReality",
+    "Articles/MKdVBelowL2/PhysicalFourthFrequencyReality",
+    "ZakharovShabat/PeriodOneSobolevFourthHamiltonian",
+    "ZakharovShabat/PeriodOneSobolevFourthClassical",
+    "ZakharovShabat/SourceFiniteGapHamiltonianReality",
+    "ZakharovShabat/SourceSobolevFourthHamiltonian",
+    "ZakharovShabat/SourceSobolevFourthBirkhoff"
+  ],
+  "modules_checked_this_checkpoint": [
+    "ZakharovShabat/SourceFiniteGapHamiltonianIsospectral",
+    "SequenceSpaces/WeightedRealTruncation",
+    "ZakharovShabat/SourceSobolevFourthActionDependence",
+    "SequenceSpaces/WeightedRealActionReduction",
+    "ZakharovShabat/SourceSobolevActionReduction",
+    "ZakharovShabat/SourceSobolevFourthFrequency"
+  ]
 }

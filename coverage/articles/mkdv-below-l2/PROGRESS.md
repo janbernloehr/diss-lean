@@ -524,3 +524,52 @@ and used only `propext`, `Classical.choice` and `Quot.sound`. No holes, new
 axioms, disabled linters or increased heartbeat limits were introduced.
 Canonical compiled dependencies were imported read-only; this is not a fresh
 whole-repository rebuild.
+
+
+## Thirteenth checkpoint: full H₄ action dependence and independent frequencies
+
+Physical finite-gap Hamiltonians of every order now have verified action
+dependence. Equal actual actions determine the isospectral primitive. The
+all-order physical exterior trace then identifies the independently defined
+Riccati Hamiltonians on one common admissible circle, avoiding all periodic
+segments, including collapsed gaps. This works at every finite p>1.
+
+The full fractional H₄ is now constant on action level sets in both the
+native rectangular Birkhoff target and the original H^(3/2) real source.
+The proof uses simultaneous native weighted real truncations. They retain
+each selected raw coefficient and action, converge in the original weighted
+norm, and have actual finite-gap inverse sources. The independent physical
+Hamiltonians agree at those approximants and pass to the full-source limit.
+The genuine real scalar H₄ has the same action dependence.
+
+Native weighted action reduction is now a bounded raw-mode projection and
+an exact radial rescaling. Forgetting the weight gives the existing original
+curve without rescaling its time parameter. The selected physical action
+decreases at unit speed before collapse, and every other action is unchanged.
+The global weighted inverse lifts that curve in every nonnegative real
+Sobolev order. Its derivative is certified in the stronger source norm.
+
+The new `sobolevFourthFrequency` is defined on the full original real
+H^(3/2) source independently of Abelian moments. Open selected actions use
+the negative physical H₄ action-reduction derivative. Closed selected actions
+use the second physical amplitude derivative, with the original action
+exactly t²/2. The reduction derivative is the actual H₄ Birkhoff differential
+on the native radial vector. At every finite-gap source the entire reduction
+function is the original physical Riccati H₄ function, so both frequency
+branches retain their previously calibrated finite-gap values.
+
+Theorem 1.2 remains verified; Theorems 1.1 and 1.3 remain open. For Theorem
+1.3, equality of the independent full-domain frequencies with the chosen
+normalized moment candidate remains to be proved, including closed actions.
+The original local analytic action-factor derivative interpretation also
+remains to be verified. Full action dependence alone is not counted as an
+analytic action factorization or a full frequency identification.
+
+Incremental strict validation passed for all 6 new modules with
+`autoImplicit=false` and `warningAsError=true`. The 82 parent modules were
+reused after checking their sources are unchanged from `4a0d0a4`. The full
+transitive audit was rerun: all 392 named declarations exactly matched
+`AxiomAudit.lean` and used only `propext`, `Classical.choice` and `Quot.sound`.
+No holes, new axioms, disabled linters or increased heartbeat limits were
+introduced. The focused checker now lists all 88 modules; this checkpoint
+is incremental validation, not a fresh whole-repository rebuild.
