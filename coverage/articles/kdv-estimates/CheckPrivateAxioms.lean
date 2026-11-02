@@ -58,6 +58,14 @@ import NLS.KdV.HillRealTraceParity
 import NLS.ComplexAnalysis.TracePrimitiveContinuation
 import NLS.KdV.HillL2SourcePrimitive
 import NLS.KdV.HillL2HighContourMoments
+import NLS.ComplexAnalysis.TracePrimitiveMoments
+import NLS.KdV.HillL2ContourDeformation
+import NLS.Fourier.ContinuousConjugation
+import NLS.KdV.ClassicalHillConjugation
+import NLS.KdV.HillL2Conjugation
+import NLS.ComplexAnalysis.TracePrimitiveReflection
+import NLS.KdV.HillL2PrimitiveReflection
+import NLS.KdV.HillRealBands
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -91,7 +99,11 @@ run_cmd do
     ``NLS.monotone_appendPairedTail,
     ``NLS.ComplexAnalysis.eventually_analyticZeroCount_eq_of_continuous_family,
     ``NLS.finiteLowerCount, ``NLS.finiteLowerCount_le_iff,
-    ``NLS.index_lt_finiteLowerCount_iff, ``NLS.tendsto_ordered_finite_of_counts]
+    ``NLS.index_lt_finiteLowerCount_iff, ``NLS.tendsto_ordered_finite_of_counts,
+    ``NLS.Fourier.continuousFourierCLM_star,
+    ``NLS.ComplexAnalysis.circleIntegral_pow_mul_deriv_eq_neg,
+    ``NLS.ComplexAnalysis.circleIntegral_eq_conj_of_anti_conj,
+    ``NLS.ComplexAnalysis.circleIntegral_im_eq_zero_of_anti_conj]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -316,10 +316,34 @@
       "module": "NLS/KdV/ClassicalSourcePrimitive.lean",
       "blob": "7885ecb19ca33beb55138da03787ce99e3c18315",
       "role": "The complete two-source-log construction was read and generalized to the reusable TracePrimitiveFamily over any complex normed source space. The actual rough L2 Hill trace is an instance; the classical file itself was not copied or imported here. Existing ParametricSourceLogDomain and ContinuousLogarithmUnique are reused directly."
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "15182450397dfd2fd3a4ab64840488e3e1ff5a16",
+      "module": "NLS/KdV/ClassicalHillConjugation.lean",
+      "blob": "d807d6eea932f8384d76f8b4117716101d05212b",
+      "role": "Reused the actual scalar-IVP conjugation and free-normalization theorems. The local file replaces the ClassicalHillGreen import by ClassicalHillFlow and the explicit derivative-star import; its continuity input is the same underlying continuous_solution theorem, without the unused Green dependency."
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "15182450397dfd2fd3a4ab64840488e3e1ff5a16",
+      "module": "NLS/KdV/ClassicalHillPrimitiveReflection.lean",
+      "blob": "5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750",
+      "role": "Read the full source-path root/log reflection proof and generalized it to TracePrimitiveFamily.SourceSchwarzData for arbitrary complex normed source spaces. The rough actual L2 trace supplies the Schwarz data by the new density theorem."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/CirclePolynomialIntegrationByParts.lean",
+      "sha256": "d9d70fd4ffc49c2ac98d40eb98f1267d9c9541d2129f8f93a6a94cc09b5ff401",
+      "role": "Reused unchanged from the pinned prebuilt library; own and reference source hashes agree. Supplies all-level Arnold normalization 1/((m+1)*pi)."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/RealCircleIntegralReflection.lean",
+      "sha256": "ddbf6f6c2a440e9515b6eb5a0209dd388db7bb18ad6c91ec1cb405c7b7872b0a",
+      "role": "Reused unchanged from the pinned prebuilt library; own and reference source hashes agree. The orientation sign and reflected primitive sign cancel to prove actual contour moments real."
     }
   ],
   "next_shared_milestones": [
-    "Extend/glue the checked rough L2 source primitive across the required real bands and identify its high-contour moments with the globally canonical KdV actions. Prove contour independence, endpoint normalization, positivity and quantitative action-gap estimates.",
+    "Use the checked global open-band trace bounds and simple/double endpoint orders to establish the signed trace inequality in every open gap and the lower exterior. Extend/glue the normalized primitive with endpoint normalization, then identify the real, concentric-contour-independent high moments with globally canonical KdV actions and prove positivity and quantitative gap estimates.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Establish the action-gap estimates and Hamiltonian/higher-action trace identities needed for Theorem 2; inspect the shared native Miura/Hill Hamiltonian and actual primitive moment developments before reimplementing them.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -938,7 +962,57 @@
     "source_correspondence": "Section 2, source PDF pages 9-12: canonical-root/primitive normalization, Arnold contour integrand and polynomial primitive moments. This milestone proves the stated rough source-domain prerequisites and explicit high-contour functional; it does not prove the source global product/root identification or all action properties.",
     "domain": "Open subset of Complex x actual raw L2 coefficients: lambda is in the principal slit plane and Delta(lambda,s*q)^2-4 stays nonzero for every real s in [0,1]. The root and primitive are jointly Banach analytic on this domain. Every nonreal lambda lies in it for a real even-supported potential. At n>=max(1,8*||q||_2), the entire radius-n circle around pi^2*n^2 lies in it even for complex even-supported q, with one common open complex L2 potential neighborhood.",
     "normalization": "F(lambda,0)=-i*sqrt(lambda), R(lambda,0)=2*sinh(-i*sqrt(lambda)); R^2=Delta^2-4, 2*cosh(F)=Delta, 2*sinh(F)=R. The exact full differential is R^-1 times the differential of the actual physical trace; the energy derivative is Delta_prime/R.",
-    "moments": "M_(n,m)(q)=-pi^-1 integral_{|lambda-pi^2*n^2|=n} lambda^m F(lambda,q) d_lambda for m>=0. All fixed-circle moments are complex Banach analytic near each even-supported q at the cutoff and vanish at q=0. At m=0, integration by parts proves M_(n,0)=pi^-1 integral lambda*Delta_prime/R with the exact Arnold normalization.",
-    "qualifications": "No global action function, global canonical product/root matching, contour independence, positivity, action-gap bound, full real-band extension, KdV Birkhoff map, Hamiltonian hierarchy identity or main Theorem 1-3 is claimed."
+    "moments": "M_(n,m)=-pi^-1 integral lambda^m F(lambda,q) for all m>=0. The functionals are Banach analytic near every checked high potential and vanish at zero. Shared polynomial integration by parts now proves the exact hierarchy formula M_(n,m)=((m+1)*pi)^-1 integral lambda^(m+1)*Delta_prime/R at every level. Annular deformation and reality are recorded in the next milestone below.",
+    "qualifications": "The full global canonical product/root matching, arbitrary admissible contour identification, positivity, quantitative action-gap estimates, full real-band gluing, KdV Birkhoff map, hierarchy trace identities and main Theorems 1-3 remain unverified. Concentric high-circle invariance and actual moment reality are proved below."
+  },
+  "rough_contour_deformation_and_reflection": {
+    "modules": [
+      "NLS/ComplexAnalysis/TracePrimitiveMoments.lean",
+      "NLS/ComplexAnalysis/TracePrimitiveReflection.lean",
+      "NLS/Fourier/ContinuousConjugation.lean",
+      "NLS/KdV/ClassicalHillConjugation.lean",
+      "NLS/KdV/HillL2Conjugation.lean",
+      "NLS/KdV/HillL2ContourDeformation.lean",
+      "NLS/KdV/HillL2PrimitiveReflection.lean"
+    ],
+    "declarations": [
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.contourMoment_arnold",
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.period_eq_zero",
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.contourMoment_eq_of_annulus",
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.SourceSchwarzData.root_conj",
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.SourceSchwarzData.primitive_conj",
+      "NLS.Fourier.continuousFourierCLM_star",
+      "NLS.KdV.hillL2Discriminant_conj",
+      "NLS.KdV.hillL2Discriminant_real",
+      "NLS.KdV.mem_hillL2ContinuationDomain_of_high_distance",
+      "NLS.KdV.hillL2Continuation_high_annulus",
+      "NLS.KdV.hillL2HighContourMoment_arnold_level",
+      "NLS.KdV.hillL2HighContourMoment_eq_radius",
+      "NLS.KdV.hillL2HighContourMoment_arnold_radius",
+      "NLS.KdV.hillL2Continued_period_eq_zero_radius",
+      "NLS.KdV.hillL2ContinuedRoot_conj",
+      "NLS.KdV.hillL2ContinuedPrimitive_conj",
+      "NLS.KdV.hillL2ContinuedPrimitive_re_eq_zero",
+      "NLS.KdV.norm_hillL2ContinuedMultiplier_eq_one",
+      "NLS.KdV.hillL2HighContourMoment_im_eq_zero"
+    ],
+    "source_correspondence": "Section 2, PDF pages 9-14: hierarchy-level Arnold formulas, zero periods, contour deformation, real normalization and real action prerequisites.",
+    "all_level_formula": "All m>=0 have exactly 1/((m+1)*pi) times the integral of lambda^(m+1)*Delta_prime/R. The original level-zero theorem is retained as a consequence of the shared generic theorem.",
+    "annular_scope": "For every complex even-supported L2 q, n>=max(1,8*||q||), and 4*||q||<r<=R<=n, the entire closed concentric annulus lies on the same source-normalized sheet. Thus all primitive moments are invariant between these radii, their Arnold formulas hold at each radius, and the logarithmic derivative has zero period. This does not yet prove arbitrary loop deformation around a source canonical gap.",
+    "reality": "The actual rough energy trace obeys Delta(conj(lambda),q)=conj(Delta(lambda,q)) for every Fourier-real L2 q, without any even-support assumption. Scalar real-flow symmetry is extended by L2 density after symmetrizing the actual finite Fourier functions. Both source branches have the exact minus-conjugate reflection sign. At admissible real energies F is purely imaginary and its actual multiplier has unit norm. Every checked high polynomial contour moment of a real period-one potential is real.",
+    "normalization_and_hypotheses": "No first-order NLS real-type assertion is made for (-1,-q). The symmetry uses actual physical Fourier conjugate reflection. Moment reality is distinct from positivity. The source-segment domain still has the explicit slit-plane/nonvanishing condition.",
+    "remaining": "Global canonical action identification, full real-band gluing and endpoint normalization, positivity, action-gap estimates, hierarchy trace identities, Birkhoff coordinates and main Theorems 1-3 remain open."
+  },
+  "real_open_band_trace_bounds": {
+    "module": "NLS/KdV/HillRealBands.lean",
+    "declarations": [
+      "NLS.KdV.hillL2Radicand_ne_zero_between_labels",
+      "NLS.KdV.exists_hillL2Discriminant_zero_in_band",
+      "NLS.KdV.hillL2Discriminant_open_band_bounds"
+    ],
+    "hypotheses": "Every Fourier-real, even-supported L2 potential; no mean-zero, simplicity, open-gap, smallness or high-index cutoff hypothesis is used.",
+    "result": "For every n>=0, the open interval (label(2*n),label(2*n+1)) contains no characteristic root and contains a zero of the actual physical trace. Throughout this whole open band, -2<Re(Delta)<2; Delta is already proved real there. In particular Delta^2-4<0 in the real sense. This includes the band from the simple lowest energy to the first lower gap endpoint.",
+    "proof": "Canonical ordering excludes roots strictly between adjacent labels. The exact opposite endpoint trace levels yield an interior trace zero by the intermediate value theorem. Continuity and connectedness exclude a nonnegative trace-square-minus-four value anywhere else in the same open band.",
+    "remaining": "The strict signed trace inequality in open gaps and the lower exterior, global real-band primitive gluing, positivity, canonical action identification and main Theorems 1-3 remain open."
   }
 }

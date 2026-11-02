@@ -10,10 +10,10 @@
   "toolchain": "leanprover/lean4:v4.33.1",
   "mathlib": "v4.33.1",
   "autoImplicit": false,
-  "focused_command": "ELAN_HOME and PATH set to pinned tooling; DISS_LEAN_REFERENCE_CHECKOUT set to read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
+  "focused_command": "Pinned Lean/tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; scripts/check-kdv-estimates.sh passed for the 68-module reflection/deformation milestone, followed by strict compilation of the added HillRealBands module and a rerun of the complete expanded axiom audit. The script now includes all 69 modules.",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 980,
+    "declarations": 1050,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -59,10 +59,14 @@
       "NLS.finiteLowerCount",
       "NLS.finiteLowerCount_le_iff",
       "NLS.index_lt_finiteLowerCount_iff",
-      "NLS.tendsto_ordered_finite_of_counts"
+      "NLS.tendsto_ordered_finite_of_counts",
+      "NLS.Fourier.continuousFourierCLM_star",
+      "NLS.ComplexAnalysis.circleIntegral_pow_mul_deriv_eq_neg",
+      "NLS.ComplexAnalysis.circleIntegral_eq_conj_of_anti_conj",
+      "NLS.ComplexAnalysis.circleIntegral_im_eq_zero_of_anti_conj"
     ]
   },
-  "full_repository_validation": "All 61 focused modules passed with autoImplicit=false and warningAsError=true, as did the 980-declaration transitive axiom audit. The current aggregate did not start because the shared lock stayed occupied through a bounded 60-second wait. The preceding cutoff-eight milestone passed the NLS.lean aggregate at commit 828f0d3 with 58 focused modules. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 69 current focused modules passed with autoImplicit=false and warningAsError=true: the full 68-module focused script passed, followed by strict compilation of the added open-band module. The expanded 1050-declaration transitive axiom audit and the current NLS.lean aggregate import check under the shared build lock both passed. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -124,11 +128,19 @@
     "NLS/KdV/HillCanonicalFreeLabels.lean": "034965a15a5980b5fd1740e3e8dcecc83ee407e3ab876132d834148dc8b125ac",
     "NLS/KdV/HillRealTraceParity.lean": "c7652fa3faa8246f3ce8b968199101f9cc586215ce687aa9927a7f546f2dae82",
     "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean": "b72a10890423ba6070d235e90a5f745cfcb69fcba1f234933be9d2451c5c7ffb",
-    "NLS/KdV/HillL2SourcePrimitive.lean": "9c17a75c03b1206e2834a0a790e663d617b71a1d0113aa1bdbabb8f3bf2c7e79",
-    "NLS/KdV/HillL2HighContourMoments.lean": "067fe661032f9e59be76c9bc3be9edb6f8320b3882a78356f769f5aeb6e2eeb2"
+    "NLS/KdV/HillL2SourcePrimitive.lean": "040ada5e2c26eddba04fd10cc011f38ae20a25d9ec8e3b7fd8d0056098bcf471",
+    "NLS/KdV/HillL2HighContourMoments.lean": "72dea2e27d21264cb4902896ebd4fb36a8694e7c37d02b3331fb9c9100835a28",
+    "NLS/ComplexAnalysis/TracePrimitiveMoments.lean": "214de92b4daf02a9ce95ead6111039d2ab69fcab3f416a4e59cd6386230e9acb",
+    "NLS/ComplexAnalysis/TracePrimitiveReflection.lean": "7fb5b83b83f8558d01480d2aee5ad09f24bb127123a67f7642c90043b050190a",
+    "NLS/Fourier/ContinuousConjugation.lean": "5e4f809136c6c885be366072a09d40618856a5f9096589a04c2b1c9601509f9b",
+    "NLS/KdV/ClassicalHillConjugation.lean": "1d6040cff5bf6aa03b0b16de145469b29ca84fcb17668be161747f601b8a7f89",
+    "NLS/KdV/HillL2Conjugation.lean": "9f60336f9dd4e6394501ed3bd9529be74b7194e2b46925272dd8f3b07376adb2",
+    "NLS/KdV/HillL2ContourDeformation.lean": "459dd87f37c8ec230aa61ea921304f19a9e7085bd786fb798dc6d83e461e1a49",
+    "NLS/KdV/HillL2PrimitiveReflection.lean": "c8cd3618f737f85ac73095969665dd9be6ccc3842a9b626c8888baf207c250a6",
+    "NLS/KdV/HillRealBands.lean": "583ca2dd1a3b461f8ddcb3521e74a53ba9e72baf100066216be0edfc05f0b326"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. Intrinsic real labels, exact characteristic multiplicities, L2 continuity, trace parity and canonical weighted gaps at cutoff eight are checked. The actual rough L2 source-normalized root and primitive, their exact differentials, all nonreal energies at real potentials, full high contour coverage and analytic fixed-circle moments with the level-zero Arnold formula are now constructed. Remaining essential work includes global product/root matching and real-band gluing, globally canonical actions and their contour independence, positivity and estimates, physical KdV Birkhoff coordinates, hierarchy trace identities and the main norm estimates. Operator algebraic-multiplicity comparisons and sharper mean-zero low-energy bounds remain separate obligations.",
-  "milestone": "Free-normalized actual L2 Hill source root/primitive, full nonreal coverage and analytic high contour moments with the level-zero Arnold identity",
+  "remaining": "Main Theorems 1-3 remain unverified. Open-band trace bounds, all-level Arnold formulas, annular contour invariance and actual L2 reflection/reality are checked. Remaining essential work includes signed trace inequalities on gaps and the lower exterior, global product/root identification, real-band primitive gluing and endpoint normalization, globally canonical actions with positivity and quantitative action-gap bounds, KdV Birkhoff coordinates, hierarchy trace identities and the main norm estimates. Operator algebraic-multiplicity comparison and sharper mean-zero low-energy estimates remain separate obligations.",
+  "milestone": "All-level Arnold formulas, concentric annular contour invariance, actual rough trace/root/primitive reflection, real contour moments and strict trace bounds in every open spectral band",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -192,7 +204,15 @@
     "NLS.KdV.HillRealTraceParity",
     "NLS.ComplexAnalysis.TracePrimitiveContinuation",
     "NLS.KdV.HillL2SourcePrimitive",
-    "NLS.KdV.HillL2HighContourMoments"
+    "NLS.KdV.HillL2HighContourMoments",
+    "NLS.ComplexAnalysis.TracePrimitiveMoments",
+    "NLS.ComplexAnalysis.TracePrimitiveReflection",
+    "NLS.Fourier.ContinuousConjugation",
+    "NLS.KdV.ClassicalHillConjugation",
+    "NLS.KdV.HillL2Conjugation",
+    "NLS.KdV.HillL2ContourDeformation",
+    "NLS.KdV.HillL2PrimitiveReflection",
+    "NLS.KdV.HillRealBands"
   ],
   "proof_commits": [
     {
@@ -279,15 +299,19 @@
       "commit": "828f0d3e33f4a91a5ad35766544a1bb04bcf0879",
       "scope": "Sharp cutoff eight for actual characteristic counts, canonical real labels and weighted gap estimates; 58 focused modules, 886-declaration audit and aggregate passed",
       "pushed": true
+    },
+    {
+      "commit": "44071d89de13be985a6aa106b65801293ddbe27d",
+      "scope": "Actual rough L2 free-normalized source root/primitive and analytic high contour moments with the level-zero Arnold formula; 61 strict focused modules and 980-declaration audit passed",
+      "pushed": true
     }
   ],
   "aggregate_check": {
-    "status": "deferred_not_run",
-    "command": "flock -w 60 -E 75 /tmp/diss-lean-article-build.lock bash work/lean-worktree.sh -o .lake/build/lib/lean/NLS.olean NLS.lean",
-    "exit_code": 75,
-    "scope": "The nonblocking attempt and subsequent bounded 60-second lock wait both returned 75 before Lean started. All current 61 focused modules and the 980-declaration transitive axiom audit pass; the last successful aggregate is the preceding cutoff-eight milestone.",
-    "full_lake_build_or_full_examples_claimed": false,
-    "reason": "Shared article build lock remained occupied; no lock bypass or foreign process intervention."
+    "status": "passed",
+    "command": "flock -n -E 75 /tmp/diss-lean-article-build.lock bash work/lean-worktree.sh -o .lake/build/lib/lean/NLS.olean NLS.lean",
+    "exit_code": 0,
+    "scope": "The current NLS.lean aggregate passed after all rough reflection, annular deformation and global open-band declarations were imported. All 69 focused modules and the expanded 1050-declaration audit pass.",
+    "full_lake_build_or_full_examples_claimed": false
   },
   "worktree_attachment": {
     "create_worktree_result": "Rejected: canonical sourceRoot is not an exact registered chat workspace folder.",
@@ -296,16 +320,16 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All sixty-one focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All sixty-nine current modules pass autoImplicit=false and warningAsError=true. The 68-module focused script passed; the added HillRealBands leaf was then compiled with the same strict options and the full expanded audit rerun.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 980 declarations, including all TracePrimitiveFamily declarations, actual rough L2 root/primitive continuation, high contour coverage and analytic contour moments with the level-zero Arnold formula.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 1050 declarations, including all generic trace moment/reflection declarations, physical L2 Schwarz symmetry, annular contour invariance, all-level Arnold identities, real moments and global open-band bounds.",
     "new_module_warnings": [],
-    "aggregate_scope": "The nonblocking attempt and subsequent bounded 60-second lock wait both returned 75 before Lean started. All current 61 focused modules and the 980-declaration transitive axiom audit pass; the last successful aggregate is the preceding cutoff-eight milestone.",
-    "private_overlay": "The focused script creates private real directories before compiling new shared namespaces, and removes only output-file symlinks before writing. Canonical build outputs are not compilation targets.",
-    "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused.",
-    "mathematical_scope": "Shared trace primitive continuation works over an arbitrary complex normed source space and is instantiated with the jointly entire actual rough L2 Hill trace and exact free normalization -i*sqrt(lambda). The actual root squares to Delta^2-4; 2*cosh(F)=Delta, 2*sinh(F)=root and the exact full differential is root^-1*dDelta. The open source-segment domain includes both full nonreal half-planes at real period-one potentials and every checked high circle at cutoff eight, with a common open complex L2 source neighborhood. Fixed high polynomial contour moments are Banach analytic near those potentials and vanish at zero; integration by parts proves the level-zero Arnold integrand normalization. No global canonical actions, positivity, contour independence, quantitative action bounds, Birkhoff map or main Theorems 1-3 is claimed.",
-    "scope": "All 61 focused modules and the 980-declaration transitive axiom audit passed with warningAsError=true. Current aggregate deferred before Lean started because of shared lock contention; full Lake/examples not rerun."
+    "aggregate_scope": "The current NLS.lean aggregate passed after all rough reflection, annular deformation and global open-band declarations were imported. All 69 focused modules and the expanded 1050-declaration audit pass.",
+    "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
+    "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference.",
+    "mathematical_scope": "For every complex even-supported L2 q, n>=max(1,8*||q||), and 4*||q||<r<=R<=n, the entire closed concentric annulus lies on the same source-normalized sheet. Thus all primitive moments are invariant between these radii, their Arnold formulas hold at each radius, and the logarithmic derivative has zero period. This does not yet prove arbitrary loop deformation around a source canonical gap. The actual rough energy trace obeys Delta(conj(lambda),q)=conj(Delta(lambda,q)) for every Fourier-real L2 q, without any even-support assumption. Scalar real-flow symmetry is extended by L2 density after symmetrizing the actual finite Fourier functions. Both source branches have the exact minus-conjugate reflection sign. At admissible real energies F is purely imaginary and its actual multiplier has unit norm. Every checked high polynomial contour moment of a real period-one potential is real. Global canonical action identification, full real-band gluing and endpoint normalization, positivity, action-gap estimates, hierarchy trace identities, Birkhoff coordinates and main Theorems 1-3 remain open. Every actual open band from label(2*n) to label(2*n+1), n>=0, contains a trace zero and satisfies -2<Re(Delta)<2 throughout, with no spectral cutoff.",
+    "scope": "All 69 current focused modules passed with autoImplicit=false and warningAsError=true: the full 68-module focused script passed, followed by strict compilation of the added open-band module. The expanded 1050-declaration transitive axiom audit and the current NLS.lean aggregate import check under the shared build lock both passed. Full Lake rebuild and full repository examples were not rerun."
   },
   "warningAsError": true,
   "previous_aggregate_attempts": [
@@ -363,8 +387,8 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "commit": "828f0d3e33f4a91a5ad35766544a1bb04bcf0879",
-    "focused_modules": 58,
-    "scope": "NLS.lean aggregate passed after the cutoff-eight milestone. The subsequent three source-primitive/contour modules pass focused strict compilation and the expanded transitive axiom audit, but their aggregate run was deferred by the shared lock."
+    "milestone": "All-level Arnold formulas, concentric annular contour invariance, actual rough trace/root/primitive reflection, real contour moments and strict trace bounds in every open spectral band",
+    "focused_modules": 69,
+    "scope": "The current NLS.lean aggregate passed after all rough reflection, annular deformation and global open-band declarations were imported. All 69 focused modules and the expanded 1050-declaration audit pass."
   }
 }

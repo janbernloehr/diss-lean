@@ -26,6 +26,7 @@ ensure_private_dir NLS/Articles/KdVEstimates
 ensure_private_dir NLS/FunctionalAnalysis
 ensure_private_dir NLS/SequenceSpaces
 ensure_private_dir NLS/ComplexAnalysis
+ensure_private_dir NLS/Fourier
 for imported_entry in "$reference"/.lake/build/lib/lean/NLS/*; do
   target="$build_root/NLS/${imported_entry##*/}"
   if [[ ! -e "$target" && ! -L "$target" ]]; then
@@ -44,7 +45,8 @@ modules+=(NLS/KdV/HillWideLocalization)
 modules+=(NLS/ComplexAnalysis/RealDiameterDisc NLS/SequenceSpaces/OrderedOneSidedEnumeration NLS/KdV/HillFreeSpectrum NLS/KdV/HillCentralCounting NLS/KdV/HillCentralRoots NLS/KdV/HillGlobalRealLabels)
 modules+=(NLS/KdV/HillRealLabelingUniqueness NLS/KdV/HillCanonicalRealLabels NLS/KdV/HillCanonicalGapBounds)
 modules+=(NLS/SequenceSpaces/OrderedFiniteContinuity NLS/KdV/HillCumulativeCounts NLS/KdV/HillLabelContinuity NLS/KdV/HillCanonicalFreeLabels NLS/KdV/HillRealTraceParity)
-modules+=(NLS/ComplexAnalysis/TracePrimitiveContinuation NLS/KdV/HillL2SourcePrimitive NLS/KdV/HillL2HighContourMoments)
+modules+=(NLS/ComplexAnalysis/TracePrimitiveContinuation NLS/KdV/HillL2SourcePrimitive NLS/ComplexAnalysis/TracePrimitiveMoments NLS/KdV/HillL2HighContourMoments NLS/KdV/HillL2ContourDeformation NLS/Fourier/ContinuousConjugation NLS/KdV/ClassicalHillConjugation NLS/KdV/HillL2Conjugation NLS/ComplexAnalysis/TracePrimitiveReflection NLS/KdV/HillL2PrimitiveReflection)
+modules+=(NLS/KdV/HillRealBands)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

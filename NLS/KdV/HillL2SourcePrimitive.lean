@@ -145,6 +145,31 @@ theorem hillClosedBall_subset_slitPlane (n : ℕ) (hn : 1 ≤ n) :
     nlinarith [(abs_le.mp hd).1]
   exact mem_slitPlane_iff.mpr (Or.inl hpos)
 
+/-- The whole checked disc outside the source-localized roots lies on
+the free-normalized sheet, uniformly along the potential segment. -/
+theorem mem_hillL2ContinuationDomain_of_high_distance
+    (q : WeightedCoeff SpectralWeight.one.toWeight 2)
+    (hq : SpectralWeight.one.toCoeff q ∈ Coeff.paritySubspace 0)
+    (n : ℕ) (hn : 1 ≤ n) (hcut : 8*‖q‖ ≤ (n : ℝ))
+    (z : ℂ) (hz : z ∈ closedBall (freeHillValue n : ℂ) (n : ℝ))
+    (hfar : 4*‖q‖ < ‖z-(freeHillValue n : ℂ)‖) :
+    (z,SpectralWeight.one.toCoeff q) ∈ hillL2ContinuationDomain := by
+  rw [mem_hillL2ContinuationDomain_iff]
+  refine ⟨hillClosedBall_subset_slitPlane n hn hz,?_⟩
+  intro s hs hd
+  have hnorm : ‖(s : ℂ) • q‖ ≤ ‖q‖ := by
+    rw [norm_smul,Complex.norm_real,Real.norm_eq_abs,abs_of_nonneg hs.1]
+    exact mul_le_of_le_one_left (norm_nonneg q) hs.2
+  have hp : SpectralWeight.one.toCoeff ((s : ℂ) • q) ∈ Coeff.paritySubspace 0 := by
+    rw [map_smul]
+    exact (Coeff.paritySubspace 0).smul_mem _ hq
+  have hd' : hillL2Radicand (SpectralWeight.one.toCoeff ((s : ℂ) • q)) z = 0 := by
+    simpa only [map_smul] using hd
+  have hl := hillL2Radicand_zero_localization ((s : ℂ) • q) hp n hn z
+    (openHillStrip_subset n (hillClosedBall_subset_openStrip n hn hz))
+    (show 8*‖(s : ℂ) • q‖ ≤ (n : ℝ) by linarith) hd'
+  linarith
+
 /-- The complete high contour lies on the same free-normalized source
 sheet, including its two real crossings. This also holds for complex q. -/
 theorem mem_hillL2ContinuationDomain_high_sphere

@@ -4983,4 +4983,12 @@ import NLS.KdV.HillRealTraceParity
 import NLS.ComplexAnalysis.TracePrimitiveContinuation
 import NLS.KdV.HillL2SourcePrimitive
 import NLS.KdV.HillL2HighContourMoments
+import NLS.ComplexAnalysis.TracePrimitiveMoments
+import NLS.KdV.HillL2ContourDeformation
+import NLS.Fourier.ContinuousConjugation
+import NLS.KdV.ClassicalHillConjugation
+import NLS.KdV.HillL2Conjugation
+import NLS.ComplexAnalysis.TracePrimitiveReflection
+import NLS.KdV.HillL2PrimitiveReflection
+import NLS.KdV.HillRealBands
 import NLS.Articles.KdVEstimates.EstimateAdapter
