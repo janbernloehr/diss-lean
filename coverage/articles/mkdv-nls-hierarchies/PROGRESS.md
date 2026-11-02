@@ -1478,3 +1478,54 @@ sequence in the printed weighted space. No identification of distinct
 norm topologies is left as an assumption.
 
 Validation: all 259 unchanged prefix source hashes match c1ee709; their private outputs were reused. The ten added modules and NLS aggregate compiled with warnings as errors. Targeted and combined transitive audits passed for 3,333 and 48,303 declarations respectively, using only propext, Classical.choice and Quot.sound. The public inventory is 1,707 declarations (1,382 theorems and 325 definitions; aliases and structures excluded), with 271 frozen mathematical source/checker hashes. Pinned cached imports were used; the entire dependency tree was not rebuilt from source.
+
+
+## 2026-11-02 — actual physical mass trace and zero-action rigidity
+
+The source physical translation frequencies are now derived in the full
+rectangular Birkhoff Jacobian: (-2*pi*n*y_n, 2*pi*n*x_n), every signed
+n and every original real H1 pair. Open coordinates use actual action
+invariance and the normalized angle-momentum cotangent; a collapsed
+coordinate stays zero along its entire actual translation orbit. The
+angular and Birkhoff families can be independent.
+
+The bounded inverse Jacobian transports the unconditional Hilbert
+coordinate expansion into the norm-convergent source identity
+
+    partial_x phi = sum_(n in Z) 2*pi*n*X_(I_n)(phi).
+
+The original diagonal Gardner transfer and pairing positive/negative
+indices give the physical scalar identity
+
+    partial_x u = sum_(n>=1) 2*pi*n*Y_(J_n)(u)
+
+with convergence in original L2, not merely coordinatewise. Evaluating
+actual cotangents and canceling only a nonzero Fourier frequency gives
+the mass cotangent trace at each nonconstant mode. No action or gap
+length is divided out.
+
+The first action moment is a bounded functional of the actual native
+weighted l1 action map. Its full Banach derivative is an absolutely
+convergent scalar action-cotangent series. It agrees with the physical
+mass derivative on every original zero-mean H1 tangent, by unconditional
+Fourier density. Integrating along every real fixed-mean affine line
+and evaluating the constant profile proves
+
+    K1(u) = [u]^2/2 + sum_(n>=1) 2*pi*n*J_n(u).
+
+The native independently defined K1 and the original scalar L2 norm
+are identified. Every positive physical action vanishes at a constant;
+conversely the trace and Parseval imply that a profile with every
+positive action zero equals its literal mean. Thus the zero-action
+fiber on every fixed-mean leaf is a singleton. All claims are on the
+full original real H1 domain and include zero mean and arbitrary
+closed gaps.
+
+This is a global norm/zero-fiber dependency for the missing action
+geometry, not a construction of the independent global mKdV chart.
+General nonzero-fiber inverse geometry, forward restricted-NLS-action
+factorization, independent mKdV angles and final angle-sum factorization,
+and full corrected frequency comparison remain essential obligations.
+Theorems 1 and 2 remain complete; the overall goal remains active.
+
+Validation: all 269 unchanged prefix module source hashes match 0e4eed8; their private outputs were reused. The twelve added modules and NLS aggregate compiled with warnings as errors. Targeted and combined transitive audits passed for 3,448 and 48,382 declarations respectively, using only propext, Classical.choice and Quot.sound. The public inventory is 1,748 declarations (1,419 theorems and 329 definitions; aliases and structures excluded), with 283 frozen mathematical source/checker hashes. Pinned cached imports were used; the entire dependency tree was not rebuilt from source.

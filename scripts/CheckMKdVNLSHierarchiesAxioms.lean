@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.MassActionTraceIdentification
 import NLS.Articles.MKdVNLSHierarchies.ActionSequenceIdentification
 import NLS.Articles.MKdVNLSHierarchies.RealFiniteActionCoordinates
 import NLS.Articles.MKdVNLSHierarchies.FiniteActionCoordinates
@@ -38,6 +39,17 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ZakharovShabat.sourceComplexAction_spatialTranslation,
+    `NLS.ZakharovShabat.sourceActionDifferential_spatial_eq_zero,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.map_coordinates_spatial_of_closed_gap,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.map_coordinates_spatialDerivative,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_spatialDerivative_coordinates,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasSum_actionHamiltonian_spatialDerivative,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasSum_actionHamiltonian_spatial_cotangent,
+    `NLS.ZakharovShabat.sourcePeriodicGap_eq_zero_of_spatialDerivative_zero,
+    `NLS.ZakharovShabat.hasSum_scalarModes,
+    `NLS.ZakharovShabat.scalarCotangent_eq_zero_on_zero_mean,
+
     `NLS.ComplexAnalysis.exists_latticeDisc_inverse_bound,
     `NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.laurentActionCosineMean_analytic,
     `NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.laurentActionCosineMean_eq_boundaryIntegral,
@@ -451,7 +463,26 @@ run_cmd do
     `NLS.LinearVolterra.solutionMap_intertwine,
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
-  let expected := #[``NLS.Articles.MKdVNLSHierarchies.theorem4_mkdv_action_mean_map_analytic,
+  let expected := #[
+    ``NLS.ZakharovShabat.sourceComplexAction_spatialTranslation,
+    ``NLS.ZakharovShabat.sourceActionDifferential_spatial_eq_zero,
+    ``NLS.ZakharovShabat.SourceBirkhoffMapComplexData.map_coordinates_spatial_of_closed_gap,
+    ``NLS.ZakharovShabat.SourceBirkhoffMapComplexData.map_coordinates_spatialDerivative,
+    ``NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_spatialDerivative_coordinates,
+    ``NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasSum_actionHamiltonian_spatialDerivative,
+    ``NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasSum_actionHamiltonian_spatial_cotangent,
+    ``NLS.ZakharovShabat.sourcePeriodicGap_eq_zero_of_spatialDerivative_zero,
+    ``NLS.ZakharovShabat.hasSum_scalarModes,
+    ``NLS.ZakharovShabat.scalarCotangent_eq_zero_on_zero_mean,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_mass_action_trace,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_actions_mean_determine_L2_norm,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_action_field_trace,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_zero_action_fiber_unique,
+    ``NLS.MKdV.hasSum_miuraMKdVActions_mass,
+    ``NLS.MKdV.miuraH1Mass_eq_mean_sq_add_actionMoment,
+    ``NLS.MKdV.miuraL2_norm_sq_eq_actions_mean,
+    ``NLS.MKdV.miuraActions_zero_iff_derivative_zero,
+``NLS.Articles.MKdVNLSHierarchies.theorem4_mkdv_action_mean_map_analytic,
     ``NLS.Articles.MKdVNLSHierarchies.theorem4_weighted_action_summability,
     ``NLS.Articles.MKdVNLSHierarchies.native_mkdv_action_sequence_analytic,
     ``NLS.Articles.MKdVNLSHierarchies.native_mkdv_action_sequence_paper_topology,

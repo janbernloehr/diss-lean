@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 3333,
+  "audited_declarations_and_auxiliaries": 3448,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -8554,14 +8554,219 @@
       "kind": "theorem",
       "name": "theorem4_action_mean_sequence_conserved",
       "file": "NLS/Articles/MKdVNLSHierarchies/ActionSequenceIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceComplexAction_spatialTranslation",
+      "file": "NLS/ZakharovShabat/SourceSpatialActionInvariance.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceActionDifferential_spatial_eq_zero",
+      "file": "NLS/ZakharovShabat/SourceSpatialActionInvariance.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "map_coordinates_spatial_of_closed_gap",
+      "file": "NLS/ZakharovShabat/SourceSpatialActionInvariance.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "map_coordinates_spatialDerivative",
+      "file": "NLS/ZakharovShabat/SourceSobolevBirkhoffTranslation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "jacobian_spatialDerivative_coordinates",
+      "file": "NLS/ZakharovShabat/SourceSobolevBirkhoffTranslation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasSum_actionHamiltonian_spatialDerivative",
+      "file": "NLS/ZakharovShabat/SourceSobolevMomentumActionSum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasSum_actionHamiltonian_spatial_cotangent",
+      "file": "NLS/ZakharovShabat/SourceSobolevMomentumActionSum.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasSum_miuraGardnerDirections_spatialDerivative",
+      "file": "NLS/MKdV/MiuraActionFieldTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasSum_miuraGardnerDirections_cotangent",
+      "file": "NLS/MKdV/MiuraActionFieldTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasSum_miuraActionDifferentials_fourier",
+      "file": "NLS/MKdV/MiuraActionDifferentialTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicGap_eq_zero_of_spatialDerivative_zero",
+      "file": "NLS/ZakharovShabat/SourceSpatialZeroGaps.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraMKdVAction_eq_zero_of_derivative_zero",
+      "file": "NLS/MKdV/MiuraConstantActions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1ActionSequence_eq_zero_of_derivative_zero",
+      "file": "NLS/MKdV/MiuraConstantActions.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraActionMomentSequence",
+      "file": "NLS/MKdV/MiuraActionMoment.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionMomentSequence_apply",
+      "file": "NLS/MKdV/MiuraActionMoment.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraActionMomentFunctional",
+      "file": "NLS/MKdV/MiuraActionMoment.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraH1ActionMoment",
+      "file": "NLS/MKdV/MiuraActionMoment.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraH1ActionMoment",
+      "file": "NLS/MKdV/MiuraActionMoment.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasSum_miuraH1ActionMoment_physical",
+      "file": "NLS/MKdV/MiuraActionMoment.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraH1ActionSequence_coordinate",
+      "file": "NLS/MKdV/MiuraActionMoment.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraH1ActionSequence_nonpositive",
+      "file": "NLS/MKdV/MiuraActionMoment.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasSum_fderiv_miuraH1ActionMoment",
+      "file": "NLS/MKdV/MiuraActionMoment.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraH1ActionMoment_scalarMode",
+      "file": "NLS/MKdV/MiuraActionMoment.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasSum_scalarModes",
+      "file": "NLS/ZakharovShabat/ScalarMeanCotangent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarCotangent_eq_zero_on_zero_mean",
+      "file": "NLS/ZakharovShabat/ScalarMeanCotangent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraH1Mass",
+      "file": "NLS/MKdV/MiuraMassActionTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraH1Mass",
+      "file": "NLS/MKdV/MiuraMassActionTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_miuraH1Mass",
+      "file": "NLS/MKdV/MiuraMassActionTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraH1Mass_scalarMode",
+      "file": "NLS/MKdV/MiuraMassActionTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraMass_sub_actionMoment_zero_mean",
+      "file": "NLS/MKdV/MiuraMassActionTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1Mass_eq_mean_sq_add_actionMoment",
+      "file": "NLS/MKdV/MiuraMassActionTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1Mass_eq_nativeMiuraMass",
+      "file": "NLS/MKdV/MiuraMassActionTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraH1Mass_eq_half_norm_sq",
+      "file": "NLS/MKdV/MiuraMassActionTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2_norm_sq_eq_actions_mean",
+      "file": "NLS/MKdV/MiuraMassActionTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasSum_miuraMKdVActions_mass",
+      "file": "NLS/MKdV/MiuraMassActionTrace.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "eq_scalarMode_mean_of_miuraActions_zero",
+      "file": "NLS/MKdV/MiuraZeroActionRigidity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActions_zero_iff_derivative_zero",
+      "file": "NLS/MKdV/MiuraZeroActionRigidity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_mass_action_trace",
+      "file": "NLS/Articles/MKdVNLSHierarchies/MassActionTraceIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_actions_mean_determine_L2_norm",
+      "file": "NLS/Articles/MKdVNLSHierarchies/MassActionTraceIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_action_field_trace",
+      "file": "NLS/Articles/MKdVNLSHierarchies/MassActionTraceIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_zero_action_fiber_unique",
+      "file": "NLS/Articles/MKdVNLSHierarchies/MassActionTraceIdentification.lean"
     }
   ],
-  "public_declaration_count": 1707,
-  "theorem_count": 1382,
-  "definition_count": 325,
-  "full_build": "269 article/shared modules have validated private outputs. All 259 unchanged prefix module source hashes match the prior c1ee709 milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 1748,
+  "theorem_count": 1419,
+  "definition_count": 329,
+  "full_build": "281 article/shared modules have validated private outputs. All 269 unchanged prefix module source hashes match the prior 0e4eed8 milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/LatticeDiscInverseBound.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ZakharovShabat/SourceSpatialActionInvariance.lean",
   "sha256": {
     "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
     "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f",
@@ -8719,8 +8924,8 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "4bb23a085f061ecacadbc0936f1d8ce6217d9f7d8107adb09f46ce4cb08ad19c",
-    "scripts/check_mkdv_nls.py": "579d613eea731226e9dfdee4c15f0ea40e62bf52445bcf843fc59d0b8de27311",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "f0a162061ac4426acb8c0caac60daa53f5cfbb12111f5f0a782e7421cd2e42a8",
+    "scripts/check_mkdv_nls.py": "c6a11923dd1cc45e956d8cfe101f5c0b3bfc25aab327d168cd53ffc877f7bbe9",
     "NLS/SequenceSpaces/OrderedNaturalEnumerationUnique.lean": "4445901ea20db8b136cc06b97b4afc71de6961d5594aa281878962ab1b704e0f",
     "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean": "460545a5f30908fff23521c0e37293ee18d18f6441f92452538ea6bfe8bcea7f",
     "NLS/MKdV/MiuraNLSPositiveEndpoints.lean": "3f5c49a6dc937669104d321db0d076ed7e58d317c45984ad041e9ea4eda9781d",
@@ -8833,10 +9038,22 @@
     "NLS/MKdV/MiuraSobolevActionSequence.lean": "d93525a5049065e78da2b30ba2d50d17c7455312473b1e01ddb11178be508c0f",
     "NLS/MKdV/MiuraH1ActionSequence.lean": "1367d3a580a8b6c7184d43ede6ce089837fb06d6a8eccdb0059951ed25bbe3b2",
     "NLS/MKdV/MiuraActionSequenceTopology.lean": "ce80422f31e6cd826f7cbb22484b5129c7de9f47d5ba3ab236863886488c9407",
-    "NLS/Articles/MKdVNLSHierarchies/ActionSequenceIdentification.lean": "4803342a6529558ca44ef171944a5abfabc40893de1ef439383f7debba35ec4c"
+    "NLS/Articles/MKdVNLSHierarchies/ActionSequenceIdentification.lean": "4803342a6529558ca44ef171944a5abfabc40893de1ef439383f7debba35ec4c",
+    "NLS/ZakharovShabat/SourceSpatialActionInvariance.lean": "e12c918f7f3edfdb8509fe7761febf349b7d7f602444be8f9f9d6059bb8b371a",
+    "NLS/ZakharovShabat/SourceSobolevBirkhoffTranslation.lean": "e6e61c636b444e669b17c56e6658fe940d5957d516cfe207b2c06c5674bdc337",
+    "NLS/ZakharovShabat/SourceSobolevMomentumActionSum.lean": "8bf903a52e8a1e15566d2df2481687458edc97001f84152ab71e2589f09e8190",
+    "NLS/MKdV/MiuraActionFieldTrace.lean": "7d15e14536aa3989a124ec4f1a8e304f750a7c11989284253dbd63e89ca44488",
+    "NLS/MKdV/MiuraActionDifferentialTrace.lean": "1c1c9c018f52cc278f3105587f3cafa0e057fb6d37437f9f0477fe6837734627",
+    "NLS/ZakharovShabat/SourceSpatialZeroGaps.lean": "a2e3083bf5ad48c3a48544c25ebc1fa456a10ef4403b2deb23748972b6732213",
+    "NLS/MKdV/MiuraConstantActions.lean": "db163d1a6d4d963a002d61624906cec48b75b315a9b66cdc67942d4012aa45a3",
+    "NLS/MKdV/MiuraActionMoment.lean": "409d9e2ecdbc137cb469b14b9f24716a05605c9a180ea7df618f9218ae9c9254",
+    "NLS/ZakharovShabat/ScalarMeanCotangent.lean": "e1f585831ff85d81e7e86220920e6db98cefe07525fa13d3a62e05517337dd94",
+    "NLS/MKdV/MiuraMassActionTrace.lean": "35856ae928fc98210d8f86306f740d23eda61cdd7fbe8eca4bdab5fa4da99f3a",
+    "NLS/MKdV/MiuraZeroActionRigidity.lean": "0fc797bf8236528dfb7874b2566ebe444665ffb9fe53a5716a9b8d1f25b3d944",
+    "NLS/Articles/MKdVNLSHierarchies/MassActionTraceIdentification.lean": "130ab5988e12d8a434b430d9ccc3e64e3b02e6c193ca15b27161285ac7a7b9a5"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 269,
+  "focused_module_count": 281,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -9018,12 +9235,19 @@
       "combined_NLS_audit_count": 48303,
       "aggregate_compiled": true,
       "validation_scope": "All 259 unchanged prefix module source hashes match the prior c1ee709 milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
+    },
+    {
+      "milestone": "Actual original real-H1 physical mass action trace K1=mean-squared/2+sum 2*pi*n*J_n, exact native K1 and scalar L2 norm identification, zero-action fixed-mean fiber rigidity, actual signed rectangular translation frequencies at every open or closed gap, and unconditional original-L2 source/Gardner action-field expansions without assuming an independent mKdV chart",
+      "audit_count": 3448,
+      "combined_NLS_audit_count": 48382,
+      "aggregate_compiled": true,
+      "validation_scope": "All 269 unchanged prefix module source hashes match the prior 0e4eed8 milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 48303,
+  "combined_audited_NLS_declarations": 48382,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -9031,7 +9255,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 259 unchanged prefix module source hashes match the prior c1ee709 milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3333 declarations/auxiliaries and combined audit for 48303 NLS declarations. All 271 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
+  "last_run_notes": "All 269 unchanged prefix module source hashes match the prior 0e4eed8 milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3448 declarations/auxiliaries and combined audit for 48382 NLS declarations. All 283 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

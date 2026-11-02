@@ -916,3 +916,37 @@ retains the original topology, including the action target associated
 with the paper's h^s_* model.
 
 Validation: all 259 unchanged prefix source hashes match c1ee709; their private outputs were reused. The ten added modules and NLS aggregate compiled with warnings as errors. Targeted and combined transitive audits passed for 3,333 and 48,303 declarations respectively, using only propext, Classical.choice and Quot.sound. The public inventory is 1,707 declarations (1,382 theorems and 325 definitions; aliases and structures excluded), with 271 frozen mathematical source/checker hashes. Pinned cached imports were used; the entire dependency tree was not rebuilt from source.
+
+
+## Physical mass trace and the zero-action fiber
+
+On every original real H1 profile, the actual native mass Hamiltonian
+satisfies
+
+    K1(u) = [u]^2/2 + sum_(n>=1) 2*pi*n*J_n(u).
+
+Every J_n is the independent physical Hill contour action, and the
+series converges. `physical_actions_mean_determine_L2_norm` identifies
+the resulting scalar L2 norm exactly. Zero mean and arbitrary closed
+gaps are included. The proof differentiates the actual Banach analytic
+weighted action map, identifies its nonconstant cotangent with the
+physical mass cotangent, and integrates along original fixed-mean H1
+affine lines. Constants have zero positive actions by the actual
+angle-momentum bracket, without assuming an endpoint labeling there.
+
+The original source Birkhoff Jacobian sends physical translation to
+the signed 2*pi*n rectangular rotations, including collapsed selected
+gaps. Its bounded inverse transports the unconditional Hilbert mode
+expansion. Pairing signed modes and using the checked Gardner transfer
+then gives an unconditional L2 sum of the positive physical action
+fields equal to the original scalar spatial derivative.
+
+`physical_zero_action_fiber_unique` proves that each fixed-mean leaf
+has one zero-action profile: its literal constant mean. This supplies
+a global norm identity and zero-fiber rigidity for the remaining
+action-coordinate construction. General nonzero-fiber inverse geometry,
+the independent global mKdV chart, forward factorization, final angle-sum
+factorization and the complete corrected frequency comparison remain
+open. The overall main-theorem goal remains incomplete.
+
+Validation: all 269 unchanged prefix module source hashes match 0e4eed8; their private outputs were reused. The twelve added modules and NLS aggregate compiled with warnings as errors. Targeted and combined transitive audits passed for 3,448 and 48,382 declarations respectively, using only propext, Classical.choice and Quot.sound. The public inventory is 1,748 declarations (1,419 theorems and 329 definitions; aliases and structures excluded), with 283 frozen mathematical source/checker hashes. Pinned cached imports were used; the entire dependency tree was not rebuilt from source.

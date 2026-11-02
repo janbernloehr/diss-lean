@@ -667,5 +667,27 @@
     "literal_paper_weighted_sequence": "NLS.MKdV.miuraPaperSobolevActionSequence",
     "exact_paper_topology_interface": "NLS.Articles.MKdVNLSHierarchies.native_mkdv_action_sequence_paper_topology",
     "printed_weight_comparison": "1+|n|^(2*s+1) <= (1+|n|)^(2*s+1) <= 2^(2*s)*(1+|n|^(2*s+1)); both bounded linear directions preserve every raw action coordinate."
+  },
+  "physical_mass_action_trace": {
+    "article_mass_trace": "NLS.Articles.MKdVNLSHierarchies.physical_mass_action_trace",
+    "actual_native_K1_identification": "NLS.MKdV.miuraH1Mass_eq_nativeMiuraMass",
+    "original_real_H1_convergent_contour_trace": "NLS.MKdV.hasSum_miuraMKdVActions_mass",
+    "exact_scalar_L2_norm": "NLS.Articles.MKdVNLSHierarchies.physical_actions_mean_determine_L2_norm",
+    "analytic_native_action_moment": "NLS.MKdV.analyticAt_miuraH1ActionMoment",
+    "actual_Banach_derivative_sum": "NLS.MKdV.hasSum_fderiv_miuraH1ActionMoment",
+    "nonconstant_Fourier_cotangent_trace": "NLS.MKdV.hasSum_miuraActionDifferentials_fourier",
+    "source_translation_action_invariance": "NLS.ZakharovShabat.sourceComplexAction_spatialTranslation",
+    "closed_gap_translation_velocity": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.map_coordinates_spatial_of_closed_gap",
+    "actual_signed_rectangular_translation_frequency": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_spatialDerivative_coordinates",
+    "unconditional_source_L2_field_trace": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasSum_actionHamiltonian_spatialDerivative",
+    "unconditional_physical_Gardner_L2_field_trace": "NLS.Articles.MKdVNLSHierarchies.physical_action_field_trace",
+    "constant_source_noncentral_gap_closure": "NLS.ZakharovShabat.sourcePeriodicGap_eq_zero_of_spatialDerivative_zero",
+    "physical_constant_action_vanishing": "NLS.MKdV.miuraMKdVAction_eq_zero_of_derivative_zero",
+    "zero_action_rigidity": "NLS.MKdV.eq_scalarMode_mean_of_miuraActions_zero",
+    "zero_action_characterization": "NLS.MKdV.miuraActions_zero_iff_derivative_zero",
+    "fixed_mean_zero_fiber_uniqueness": "NLS.Articles.MKdVNLSHierarchies.physical_zero_action_fiber_unique",
+    "formula": "K1(u) = [u]^2/2 + sum_(n>=1) 2*pi*n*J_n(u)",
+    "scope": "Every original real H1 scalar source, including zero mean and arbitrary collapsed gaps. Literal physical Hill contours, native K1 and original scalar L2 norm. Scalar series converges; action-field series converges unconditionally in original L2 norms. Only nonzero Fourier frequencies are divided out. No action or gap-length division.",
+    "limits": "Does not construct an independent global mKdV Birkhoff chart or prove general nonzero action-fiber inverse geometry, forward restricted-NLS-action factorization, final angle-sum factorization or the complete corrected frequency comparison."
   }
 }

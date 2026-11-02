@@ -303,6 +303,18 @@ modules = [
     "NLS/MKdV/MiuraH1ActionSequence.lean",
     "NLS/MKdV/MiuraActionSequenceTopology.lean",
     "NLS/Articles/MKdVNLSHierarchies/ActionSequenceIdentification.lean",
+    "NLS/ZakharovShabat/SourceSpatialActionInvariance.lean",
+    "NLS/ZakharovShabat/SourceSobolevBirkhoffTranslation.lean",
+    "NLS/ZakharovShabat/SourceSobolevMomentumActionSum.lean",
+    "NLS/MKdV/MiuraActionFieldTrace.lean",
+    "NLS/MKdV/MiuraActionDifferentialTrace.lean",
+    "NLS/ZakharovShabat/SourceSpatialZeroGaps.lean",
+    "NLS/MKdV/MiuraConstantActions.lean",
+    "NLS/MKdV/MiuraActionMoment.lean",
+    "NLS/ZakharovShabat/ScalarMeanCotangent.lean",
+    "NLS/MKdV/MiuraMassActionTrace.lean",
+    "NLS/MKdV/MiuraZeroActionRigidity.lean",
+    "NLS/Articles/MKdVNLSHierarchies/MassActionTraceIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")
