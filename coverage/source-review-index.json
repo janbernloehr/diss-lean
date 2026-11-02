@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T03:08:06.806246+00:00",
-  "base_commit": "d7897be679e6fbcfa65554ee98442dea53fdf4a2",
+  "published_utc": "2026-11-02T03:08:42.187904+00:00",
+  "base_commit": "8cfab2712077bdc9296191d8d321ea724e8eb0f6",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 209,
-    "module_hash_checks": 4358,
-    "distinct_modules": 2168
+    "review_records": 210,
+    "module_hash_checks": 4432,
+    "distinct_modules": 2198
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "d7897be679e6fbcfa65554ee98442dea53fdf4a2",
-    "validated_state": "Fresh full check after Appendix G free-mode and gradient formulas.",
+    "base_commit": "8cfab2712077bdc9296191d8d321ea724e8eb0f6",
+    "validated_state": "Appendix G ordered comparison changes documentation only; the exact Lean snapshot retains the successful free-mode and gradient check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8644,
     "public_examples": 7729,
@@ -44,8 +44,9 @@
       "sha256": "f2ae956a461e480705e6c70c6c98752b18939c026fed7096311a50b1f44419e9"
     },
     "full_gate_log_sha256": "6691583fa9d9d258c6eae077105d741d03a7c4738936015449d0f6079de23232",
-    "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/AppendixGFreeGradientFullCheck.log"
+    "qualification": "Unchanged Lean sources and locks retain the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
+    "full_gate_log": "work/AppendixGFreeGradientFullCheck.log",
+    "validation_reused_from_commit": "8cfab2712077bdc9296191d8d321ea724e8eb0f6"
   },
   "named_statements": [
     {
@@ -70305,6 +70306,1996 @@
         "log_sha256": "6691583fa9d9d258c6eae077105d741d03a7c4738936015449d0f6079de23232"
       },
       "source_record_sha256": "be174e910a041b9f4e69015289f7b2b8032a89cad64c5d88fc177bd73648e2cc"
+    },
+    "AppendixGOrderedSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "8cfab2712077bdc9296191d8d321ea724e8eb0f6",
+      "updated_utc": "2026-11-02T03:08:42.132896+00:00",
+      "source_lines": [
+        [
+          11081,
+          11370
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "id": "G001",
+          "source_lines": [
+            11083,
+            11086
+          ],
+          "status": "contextual",
+          "claim": "Motivation: use spectral-gradient estimates to prove compactness in Lemma 16.1.",
+          "declarations": [],
+          "ordered_group": "G-001",
+          "ordered_status": "contextual",
+          "requirement": "Motivation: use spectral-gradient estimates to prove compactness in Lemma 16.1.",
+          "reviewed_claims": [
+            "Motivation: use spectral-gradient estimates to prove compactness in Lemma 16.1."
+          ],
+          "qualification": "Contextual source passage; no independent mathematical theorem is asserted."
+        },
+        {
+          "id": "G002",
+          "source_lines": [
+            11087,
+            11088
+          ],
+          "status": "matched",
+          "claim": "Actual physical periodic L2 fundamental solution: joint continuity and fixed-time complex analyticity.",
+          "declarations": [
+            "NLS.ZakharovShabat.continuous_l2PeriodicFundamentalMatrix_joint",
+            "NLS.ZakharovShabat.analyticOnNhd_l2PeriodicFundamentalMatrix_joint"
+          ],
+          "qualification": "The physical L2 solution is continued over all nonnegative times by monodromy; closed-period gluing proves joint continuity, and finite products give fixed-time complex analyticity.",
+          "ordered_group": "G-002",
+          "ordered_status": "matched",
+          "requirement": "Actual physical periodic L2 fundamental solution: joint continuity and fixed-time complex analyticity.",
+          "reviewed_claims": [
+            "Actual physical periodic L2 fundamental solution: joint continuity and fixed-time complex analyticity."
+          ]
+        },
+        {
+          "id": "G003",
+          "source_lines": [
+            11089,
+            11103
+          ],
+          "status": "matched",
+          "claim": "Original R, off-diagonal potential, free evolution, actual remainder and exponentially weighted Hermitian operator norm.",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalHermitianRemainderOperator_eq_matrix",
+            "NLS.ZakharovShabat.classicalNormalizedHermitianFirstBorn_eq",
+            "NLS.ZakharovShabat.classicalHermitianRemainder_duhamel",
+            "NLS.ZakharovShabat.sourceLemmaG1"
+          ],
+          "qualification": "The signed free propagator has diagonal exp(-i*z*t), exp(i*z*t), and the potential kernel has entries i*phi1 and -i*phi2. The actual M-E matrix acts on Euclidean two-vectors; its operator norm has the exact exp(-abs(Im z)*t) weight. The full physical L2 identification extends the continuous-potential construction.",
+          "ordered_group": "G-003",
+          "ordered_status": "matched",
+          "requirement": "Original R, off-diagonal potential, free evolution, actual remainder and exponentially weighted Hermitian operator norm.",
+          "reviewed_claims": [
+            "Original R, off-diagonal potential, free evolution, actual remainder and exponentially weighted Hermitian operator norm."
+          ]
+        },
+        {
+          "id": "G004",
+          "source_lines": [
+            11105,
+            11113
+          ],
+          "status": "matched",
+          "claim": "G.1 holds on the full physical L2 source with coefficient norm(phi)*exp(norm(phi)).",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG1"
+          ],
+          "ordered_group": "G-004",
+          "ordered_status": "matched",
+          "requirement": "G.1 holds on the full physical L2 source with coefficient norm(phi)*exp(norm(phi)).",
+          "reviewed_claims": [
+            "G.1 holds on the full physical L2 source with coefficient norm(phi)*exp(norm(phi))."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G005",
+          "source_lines": [
+            11116,
+            11122
+          ],
+          "status": "corrected",
+          "claim": "Adopt sqrt(t^(-1)+t)/abs(z) in the explicit unnormalized integral H1 norm; t=0 is the zero operator.",
+          "declarations": [
+            "NLS.ZakharovShabat.intervalHermitianFirstBornOperator_weighted_le_local_H1"
+          ],
+          "qualification": "This fixes a norm-qualified statement directly. It does not identify the unspecified printed local norm or verify the exact 2014 external reference.",
+          "ordered_group": "G-005",
+          "ordered_status": "corrected",
+          "requirement": "Adopt sqrt(t^(-1)+t)/abs(z) in the explicit unnormalized integral H1 norm; t=0 is the zero operator.",
+          "reviewed_claims": [
+            "Adopt sqrt(t^(-1)+t)/abs(z) in the explicit unnormalized integral H1 norm; t=0 is the zero operator."
+          ]
+        },
+        {
+          "id": "G006",
+          "source_lines": [
+            11124,
+            11128
+          ],
+          "status": "matched",
+          "claim": "The unit-interval consequence retains 3/(2*abs(z)) and the exact physical L2 coefficient, in the original periodic H1 source norm.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG2_remainder_unit",
+            "NLS.ZakharovShabat.sourceLemmaG2_classical_remainder_unit"
+          ],
+          "ordered_group": "G-006",
+          "ordered_status": "matched",
+          "requirement": "The unit-interval consequence retains 3/(2*abs(z)) and the exact physical L2 coefficient, in the original periodic H1 source norm.",
+          "reviewed_claims": [
+            "The unit-interval consequence retains 3/(2*abs(z)) and the exact physical L2 coefficient, in the original periodic H1 source norm."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G007",
+          "source_lines": [
+            11130,
+            11135
+          ],
+          "status": "corrected",
+          "claim": "The actual Born integration-by-parts identity retains the original free-mode signs. With R=diag(i,-i), the matrix prefactor is -R/(2*z).",
+          "declarations": [
+            "NLS.ComplexAnalysis.oscillatoryIntegral_parts",
+            "NLS.ZakharovShabat.appendixG_Born_operator_parts"
+          ],
+          "qualification": "The division-free operator identity also holds at z=0; the displayed quotient requires z nonzero. No new refutation is required.",
+          "ordered_group": "G-007",
+          "ordered_status": "corrected",
+          "requirement": "The actual Born integration-by-parts identity retains the original free-mode signs. With R=diag(i,-i), the matrix prefactor is -R/(2*z).",
+          "reviewed_claims": [
+            "The actual Born integration-by-parts identity retains the original free-mode signs. With R=diag(i,-i), the matrix prefactor is -R/(2*z)."
+          ]
+        },
+        {
+          "id": "G008",
+          "source_lines": [
+            11136,
+            11138
+          ],
+          "status": "corrected",
+          "claim": "The positive trace-and-variation estimate supplies the explicit interval-length constant.",
+          "declarations": [
+            "NLS.ComplexAnalysis.endpoint_variation_le_length_H1",
+            "NLS.ZakharovShabat.intervalHermitianFirstBornOperator_weighted_le_interval_H1"
+          ],
+          "ordered_group": "G-008",
+          "ordered_status": "corrected",
+          "requirement": "The positive trace-and-variation estimate supplies the explicit interval-length constant.",
+          "reviewed_claims": [
+            "The positive trace-and-variation estimate supplies the explicit interval-length constant."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G009",
+          "source_lines": [
+            11152,
+            11156
+          ],
+          "status": "matched",
+          "claim": "The actual H1 time norm is bounded uniformly over every index of a fixed near-free sequence and over the exact source H1 ball.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixG_source_remainder_H1_whole_sequence",
+            "NLS.ZakharovShabat.sourceLemmaG3_H1"
+          ],
+          "qualification": "The finite initial frequencies are included. Their contribution may depend on the fixed frequency sequence; the common tail bound is uniform over sequences with the stated displacement bound.",
+          "ordered_group": "G-009",
+          "ordered_status": "matched",
+          "requirement": "The actual H1 time norm is bounded uniformly over every index of a fixed near-free sequence and over the exact source H1 ball.",
+          "reviewed_claims": [
+            "The actual H1 time norm is bounded uniformly over every index of a fixed near-free sequence and over the exact source H1 ball."
+          ]
+        },
+        {
+          "id": "G010",
+          "source_lines": [
+            11156,
+            11158
+          ],
+          "status": "corrected",
+          "claim": "G.3 Fourier decay retains (q-1-epsilon)/(1-epsilon) for 0<epsilon<1; q=2 has a separate inverse-index statement.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG3_fourier_decay",
+            "NLS.ZakharovShabat.sourceLemmaG3_l2_decay"
+          ],
+          "ordered_group": "G-010",
+          "ordered_status": "corrected",
+          "requirement": "G.3 Fourier decay retains (q-1-epsilon)/(1-epsilon) for 0<epsilon<1; q=2 has a separate inverse-index statement.",
+          "reviewed_claims": [
+            "G.3 Fourier decay retains (q-1-epsilon)/(1-epsilon) for 0<epsilon<1; q=2 has a separate inverse-index statement."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G011",
+          "source_lines": [
+            11160,
+            11162
+          ],
+          "status": "matched",
+          "claim": "Inverse-index spectral displacement gives the shifted-free Fourier decay.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG3_shiftedFree_decay",
+            "NLS.ZakharovShabat.sourceLemmaG3_shiftedFree_l2_decay"
+          ],
+          "ordered_group": "G-011",
+          "ordered_status": "matched",
+          "requirement": "Inverse-index spectral displacement gives the shifted-free Fourier decay.",
+          "reviewed_claims": [
+            "Inverse-index spectral displacement gives the shifted-free Fourier decay."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G012",
+          "source_lines": [
+            11164,
+            11167
+          ],
+          "status": "matched",
+          "claim": "The actual remainder satisfies the two coordinate Volterra equations.",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalSolutionRemainder_fst_duhamel",
+            "NLS.ZakharovShabat.classicalSolutionRemainder_snd_duhamel"
+          ],
+          "ordered_group": "G-012",
+          "ordered_status": "matched",
+          "requirement": "The actual remainder satisfies the two coordinate Volterra equations.",
+          "reviewed_claims": [
+            "The actual remainder satisfies the two coordinate Volterra equations."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G013",
+          "source_lines": [
+            11169,
+            11172
+          ],
+          "status": "corrected",
+          "claim": "Differentiate with -z*R on the free evolution: the two actual coordinate integrals carry -i*z and +i*z.",
+          "declarations": [
+            "NLS.ZakharovShabat.hasDerivAt_classicalFreeVector",
+            "NLS.ZakharovShabat.appendixG_remainder_derivative_duhamel"
+          ],
+          "ordered_group": "G-013",
+          "ordered_status": "corrected",
+          "requirement": "Differentiate with -z*R on the free evolution: the two actual coordinate integrals carry -i*z and +i*z.",
+          "reviewed_claims": [
+            "Differentiate with -z*R on the free evolution: the two actual coordinate integrals carry -i*z and +i*z."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G014",
+          "source_lines": [
+            11174,
+            11179
+          ],
+          "status": "corrected",
+          "claim": "Weighted derivative estimates from the differentiated Volterra equation.",
+          "declarations": [
+            "NLS.ZakharovShabat.norm_deriv_classicalSolutionRemainder_weighted_le",
+            "NLS.ZakharovShabat.sourceLemmaG3_weighted_remainder_derivative"
+          ],
+          "qualification": "Use the equivalent actual ODE remainder identity and the explicit bound 4*(8+pi)*(2*M)*exp(8*M) on the exact source H1 ball. This replaces the unspecified local-norm estimate directly and is uniform in all nonzero complex frequencies and all unit-interval times.",
+          "ordered_group": "G-014",
+          "ordered_status": "corrected",
+          "requirement": "Weighted derivative estimates from the differentiated Volterra equation.",
+          "reviewed_claims": [
+            "Weighted derivative estimates from the differentiated Volterra equation."
+          ]
+        },
+        {
+          "id": "G015",
+          "source_lines": [
+            11181,
+            11184
+          ],
+          "status": "matched",
+          "claim": "Cauchy-Schwarz controls the potential-times-remainder integral.",
+          "declarations": [
+            "NLS.FunctionalAnalysis.integral_mul_le_sqrt_sq_mul_sqrt_sq"
+          ],
+          "qualification": "Cauchy-Schwarz is proved for the integral of two continuous nonnegative functions on any nonnegative interval. Applying it to the potential and weighted remainder norms gives the displayed product of L2 energies; the physical L2 G.1 theorem already uses the literal source norm.",
+          "ordered_group": "G-015",
+          "ordered_status": "matched",
+          "requirement": "Cauchy-Schwarz controls the potential-times-remainder integral.",
+          "reviewed_claims": [
+            "Cauchy-Schwarz controls the potential-times-remainder integral."
+          ]
+        },
+        {
+          "id": "G016",
+          "source_lines": [
+            11186,
+            11197
+          ],
+          "status": "matched",
+          "claim": "The Born time derivative has two endpoint terms of weight one half and a derivative-potential integral of weight one half.",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixG_hasDerivAt_oscillatoryIntegral",
+            "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_derivative_parts",
+            "NLS.ZakharovShabat.appendixG_hasDerivAt_classicalFirstBornVector"
+          ],
+          "ordered_group": "G-016",
+          "ordered_status": "matched",
+          "requirement": "The Born time derivative has two endpoint terms of weight one half and a derivative-potential integral of weight one half.",
+          "reviewed_claims": [
+            "The Born time derivative has two endpoint terms of weight one half and a derivative-potential integral of weight one half."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G017",
+          "source_lines": [
+            11198,
+            11199
+          ],
+          "status": "corrected",
+          "claim": "The derivative obeys a positive sqrt(T^(-1)+T) integral-H1 bound at all intermediate times; on the original periodic unit source the constant is sqrt(2).",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_derivative_interval_H1",
+            "NLS.ZakharovShabat.appendixG_Born_derivative_interval_H1",
+            "NLS.ZakharovShabat.appendixG_source_Born_derivative_unit"
+          ],
+          "qualification": "The source local interval norm is not silently identified with the explicit integral norm.",
+          "ordered_group": "G-017",
+          "ordered_status": "corrected",
+          "requirement": "The derivative obeys a positive sqrt(T^(-1)+T) integral-H1 bound at all intermediate times; on the original periodic unit source the constant is sqrt(2).",
+          "reviewed_claims": [
+            "The derivative obeys a positive sqrt(T^(-1)+T) integral-H1 bound at all intermediate times; on the original periodic unit source the constant is sqrt(2)."
+          ]
+        },
+        {
+          "id": "G018",
+          "source_lines": [
+            11201,
+            11203
+          ],
+          "status": "corrected",
+          "claim": "The uniform weighted derivative estimate applies to the actual remainder M-E.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG3_weighted_remainder_derivative"
+          ],
+          "ordered_group": "G-018",
+          "ordered_status": "corrected",
+          "requirement": "The uniform weighted derivative estimate applies to the actual remainder M-E.",
+          "reviewed_claims": [
+            "The uniform weighted derivative estimate applies to the actual remainder M-E."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G019",
+          "source_lines": [
+            11204,
+            11207
+          ],
+          "status": "matched",
+          "claim": "Uniform inverse-index supremum and L2 bounds, and uniform H1 bounds.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixG_source_remainder_uniform_time_decay",
+            "NLS.ZakharovShabat.sourceLemmaG3_l2_decay",
+            "NLS.ZakharovShabat.appendixG_source_remainder_H1_whole_sequence"
+          ],
+          "qualification": "The inverse-index estimates hold beyond a positive common cutoff. The H1 bound covers every index for each fixed sequence. Fourier l2 is realized by the actual time-integral coefficients.",
+          "ordered_group": "G-019",
+          "ordered_status": "matched",
+          "requirement": "Uniform inverse-index supremum and L2 bounds, and uniform H1 bounds.",
+          "reviewed_claims": [
+            "Uniform inverse-index supremum and L2 bounds, and uniform H1 bounds."
+          ]
+        },
+        {
+          "id": "G020",
+          "source_lines": [
+            11209,
+            11214
+          ],
+          "status": "corrected",
+          "claim": "H1-to-Fourier-Lebesgue embedding and interpolation yield the printed decay exponent.",
+          "declarations": [
+            "NLS.ZakharovShabat.norm_classicalSobolevRemainderFourierCoefficients_interpolate",
+            "NLS.ZakharovShabat.sourceLemmaG3_fourier_decay"
+          ],
+          "qualification": "Use 0<epsilon<1 and 1+epsilon<=q<=2. Interpolation uses the same actual coefficient sequence at both endpoints; its stronger power estimate implies the printed exponent. The q=2 endpoint is separately available without epsilon.",
+          "ordered_group": "G-020",
+          "ordered_status": "corrected",
+          "requirement": "H1-to-Fourier-Lebesgue embedding and interpolation yield the printed decay exponent.",
+          "reviewed_claims": [
+            "H1-to-Fourier-Lebesgue embedding and interpolation yield the printed decay exponent."
+          ]
+        },
+        {
+          "id": "G021",
+          "source_lines": [
+            11215,
+            11217
+          ],
+          "status": "matched",
+          "claim": "Shifted free exponentials have bounded Fourier-Lebesgue norm and displacement-sized L2 error.",
+          "declarations": [
+            "NLS.Fourier.appendixG_free_difference_coefficient",
+            "NLS.Fourier.appendixG_free_difference_fourier_bound",
+            "NLS.Fourier.appendixG_free_difference_l2_bound",
+            "NLS.ZakharovShabat.sourceLemmaG3_shiftedFree_decay"
+          ],
+          "qualification": "The new scalar estimates verify the two diagonal free modes. The full shifted-free conclusion uses time-bound interpolation of the combined error; it does not require periodic endpoint matching.",
+          "ordered_group": "G-021",
+          "ordered_status": "matched",
+          "requirement": "Shifted free exponentials have bounded Fourier-Lebesgue norm and displacement-sized L2 error.",
+          "reviewed_claims": [
+            "Shifted free exponentials have bounded Fourier-Lebesgue norm and displacement-sized L2 error."
+          ]
+        },
+        {
+          "id": "G022",
+          "source_lines": [
+            11227,
+            11234
+          ],
+          "status": "matched",
+          "claim": "G.4 gives actual operator-valued outer ell^p sequences for finite p>1 and q>1+1/p, including q=infinity.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCorollaryG4",
+            "NLS.ZakharovShabat.sourceG4_remainder_operator_memlp",
+            "NLS.ZakharovShabat.sourceG4_shiftedFree_operator_memlp"
+          ],
+          "qualification": "After fixing the sequence, a single nonnegative majorant controls every source in a fixed original H1 ball; finite heads are arbitrary.",
+          "ordered_group": "G-022",
+          "ordered_status": "matched",
+          "requirement": "G.4 gives actual operator-valued outer ell^p sequences for finite p>1 and q>1+1/p, including q=infinity.",
+          "reviewed_claims": [
+            "G.4 gives actual operator-valued outer ell^p sequences for finite p>1 and q>1+1/p, including q=infinity."
+          ]
+        },
+        {
+          "id": "G023",
+          "source_lines": [
+            11236,
+            11245
+          ],
+          "status": "matched",
+          "claim": "Choose epsilon sufficiently small to make the inverse-power tail ell^p.",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_fundamentalFourier_summability_exponents",
+            "NLS.ZakharovShabat.exists_classicalSobolevRemainder_fourier_memlp_majorant",
+            "NLS.ZakharovShabat.exists_classicalShiftedFree_fourier_memlp_majorant"
+          ],
+          "qualification": "The epsilon choice satisfies alpha*p>1. The same-coefficient inclusion handles larger q, including infinity, and inverse-power summability supplies a common tail majorant; the finite head is treated separately in the named corollary.",
+          "ordered_group": "G-023",
+          "ordered_status": "matched",
+          "requirement": "Choose epsilon sufficiently small to make the inverse-power tail ell^p.",
+          "reviewed_claims": [
+            "Choose epsilon sufficiently small to make the inverse-power tail ell^p."
+          ]
+        },
+        {
+          "id": "G024",
+          "source_lines": [
+            11247,
+            11251
+          ],
+          "status": "matched",
+          "claim": "Signed wave convention: e_minus(alpha)=(e(-alpha),0), e_plus(alpha)=(0,e(alpha)), e(alpha)(x)=exp(i*pi*alpha*x).",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalHermitianCorrectedFreeGradientMatrix_lattice",
+            "NLS.ZakharovShabat.classicalAntiDiscriminantGradientRemainder_lattice_mul_I",
+            "NLS.ZakharovShabat.sourceG7_free_signed_coefficients",
+            "NLS.ZakharovShabat.sourceG7SignedCoordinates_fst",
+            "NLS.ZakharovShabat.sourceG7SignedCoordinates_snd"
+          ],
+          "qualification": "Physical modes are exp(i*z*t); the first signed coefficient coordinate reverses frequency and the second does not. Matrix, characteristic and root references retain that convention, and lattice modes use wave(2*n), wave(-2*n).",
+          "ordered_group": "G-024",
+          "ordered_status": "matched",
+          "requirement": "Signed wave convention: e_minus(alpha)=(e(-alpha),0), e_plus(alpha)=(0,e(alpha)), e(alpha)(x)=exp(i*pi*alpha*x).",
+          "reviewed_claims": [
+            "Signed wave convention: e_minus(alpha)=(e(-alpha),0), e_plus(alpha)=(0,e(alpha)), e(alpha)(x)=exp(i*pi*alpha*x)."
+          ]
+        },
+        {
+          "id": "G025",
+          "source_lines": [
+            11253,
+            11259
+          ],
+          "status": "corrected",
+          "claim": "G.5 holds for finite p>=2 with upper minus and lower plus component in the actual free-gradient reference.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG5_corrected"
+          ],
+          "qualification": "Existing historical refutations are preserved; add none.",
+          "ordered_group": "G-025",
+          "ordered_status": "corrected",
+          "requirement": "G.5 holds for finite p>=2 with upper minus and lower plus component in the actual free-gradient reference.",
+          "reviewed_claims": [
+            "G.5 holds for finite p>=2 with upper minus and lower plus component in the actual free-gradient reference."
+          ]
+        },
+        {
+          "id": "G026",
+          "source_lines": [
+            11262,
+            11267
+          ],
+          "status": "corrected",
+          "claim": "The corrected finite-p G.5 estimate holds for the exact lattice reference under inverse-index displacement.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG5_shifted_corrected"
+          ],
+          "ordered_group": "G-026",
+          "ordered_status": "corrected",
+          "requirement": "The corrected finite-p G.5 estimate holds for the exact lattice reference under inverse-index displacement.",
+          "reviewed_claims": [
+            "The corrected finite-p G.5 estimate holds for the exact lattice reference under inverse-index displacement."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G027",
+          "source_lines": [
+            11270,
+            11275
+          ],
+          "status": "matched",
+          "claim": "The full actual potential gradient is the endpoint matrix times the quadratic column products.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixG_gradient_matrix_factorization",
+            "NLS.ZakharovShabat.fderiv_classicalEndpoint_eq_gradient_integral"
+          ],
+          "qualification": "The actual potential differential is represented by the physical gradient integral, and the new operator identity gives the literal terminal-matrix factorization.",
+          "ordered_group": "G-027",
+          "ordered_status": "matched",
+          "requirement": "The full actual potential gradient is the endpoint matrix times the quadratic column products.",
+          "reviewed_claims": [
+            "The full actual potential gradient is the endpoint matrix times the quadratic column products."
+          ]
+        },
+        {
+          "id": "G028",
+          "source_lines": [
+            11276,
+            11289
+          ],
+          "status": "matched",
+          "claim": "Expand each quadratic product into its corrected free wave, linear remainder terms and quadratic remainder.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixG_first_column_square",
+            "NLS.ZakharovShabat.appendixG_mixed_column_product",
+            "NLS.ZakharovShabat.appendixG_second_column_square",
+            "NLS.ZakharovShabat.norm_endpointGradientPolynomial_sub_le"
+          ],
+          "qualification": "All three displayed algebraic expansions now hold for the actual columns and remainders. The summability proof uses the proved cubic polynomial stability bound after these references are identified.",
+          "ordered_group": "G-028",
+          "ordered_status": "matched",
+          "requirement": "Expand each quadratic product into its corrected free wave, linear remainder terms and quadratic remainder.",
+          "reviewed_claims": [
+            "Expand each quadratic product into its corrected free wave, linear remainder terms and quadratic remainder."
+          ]
+        },
+        {
+          "id": "G029",
+          "source_lines": [
+            11291,
+            11299
+          ],
+          "status": "matched",
+          "claim": "Young-exponent choices and G.4 give gradient summability.",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_classicalGradient_fourier_uniform_memlp_of_time_bounds",
+            "NLS.ZakharovShabat.exists_classicalEndpointGradient_fourier_uniform_memlp",
+            "NLS.ZakharovShabat.conjugate_exponent_gt_gradient_threshold"
+          ],
+          "qualification": "Alternative proof: cubic polynomial stability supplies small time values, derivative bounds give Fourier interpolation, and alpha*p>1 gives a common summable majorant including the finite head. The conjugate exponent lies strictly above 1+1/p. The printed Young-convolution proof is not claimed as the implementation.",
+          "ordered_group": "G-029",
+          "ordered_status": "matched",
+          "requirement": "Young-exponent choices and G.4 give gradient summability.",
+          "reviewed_claims": [
+            "Young-exponent choices and G.4 give gradient summability."
+          ]
+        },
+        {
+          "id": "G030",
+          "source_lines": [
+            11301,
+            11305
+          ],
+          "status": "matched",
+          "claim": "Inverse-index shifts give the exact lattice-gradient comparison.",
+          "declarations": [
+            "NLS.ZakharovShabat.norm_classicalFreeFrequencyDifference_le",
+            "NLS.ZakharovShabat.norm_classicalEndpointGradientRemainder_shifted_le",
+            "NLS.ZakharovShabat.exists_classicalEndpointGradient_shifted_fourier_uniform_memlp",
+            "NLS.ZakharovShabat.classicalHermitianCorrectedFreeGradientMatrix_lattice",
+            "NLS.ZakharovShabat.sourceG5_shifted_gradient_uniform_majorant"
+          ],
+          "qualification": "Alternative proof: the displacement-sized free-vector bound controls all time values and terminal columns; the cubic gradient polynomial preserves one small factor. Time-derivative interpolation proves summability directly against the exact lattice reference, including its (-1)^n phase. It does not use separate printed Young estimates for each wave-shift term.",
+          "ordered_group": "G-030",
+          "ordered_status": "matched",
+          "requirement": "Inverse-index shifts give the exact lattice-gradient comparison.",
+          "reviewed_claims": [
+            "Inverse-index shifts give the exact lattice-gradient comparison."
+          ]
+        },
+        {
+          "id": "G031",
+          "source_lines": [
+            11307,
+            11308
+          ],
+          "status": "contextual",
+          "claim": "The signed-wave notation differs from reference [23].",
+          "declarations": [],
+          "ordered_group": "G-031",
+          "ordered_status": "contextual",
+          "requirement": "The signed-wave notation differs from reference [23].",
+          "reviewed_claims": [
+            "The signed-wave notation differs from reference [23]."
+          ],
+          "qualification": "Contextual source passage; no independent mathematical theorem is asserted."
+        },
+        {
+          "id": "G032",
+          "source_lines": [
+            11319,
+            11321
+          ],
+          "status": "matched",
+          "claim": "Discriminant and anti-discriminant gradients are the trace and anti-trace of the actual endpoint-matrix gradient.",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalDiscriminantGradient_eq_endpoint_sum",
+            "NLS.ZakharovShabat.classicalDiscriminantGradient_eq_remainder_sum",
+            "NLS.ZakharovShabat.classicalAntiDiscriminantGradientRemainder_eq_sum",
+            "NLS.ZakharovShabat.classicalAntiDiscriminantGradientRemainder_lattice_mul_I"
+          ],
+          "qualification": "The two diagonal entries sum to the discriminant gradient; the two off-diagonal entries give the anti-discriminant gradient. The latter retains the exact signed free-wave subtraction.",
+          "ordered_group": "G-032",
+          "ordered_status": "matched",
+          "requirement": "Discriminant and anti-discriminant gradients are the trace and anti-trace of the actual endpoint-matrix gradient.",
+          "reviewed_claims": [
+            "Discriminant and anti-discriminant gradients are the trace and anti-trace of the actual endpoint-matrix gradient."
+          ]
+        },
+        {
+          "id": "G033",
+          "source_lines": [
+            11323,
+            11326
+          ],
+          "status": "matched",
+          "claim": "The actual discriminant gradient is summable in the exact signed conjugate pair norm for finite p>=2.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCorollaryG6_discriminant",
+            "NLS.ZakharovShabat.sourceG6DiscriminantCoefficients_norm_rpow"
+          ],
+          "ordered_group": "G-033",
+          "ordered_status": "matched",
+          "requirement": "The actual discriminant gradient is summable in the exact signed conjugate pair norm for finite p>=2.",
+          "reviewed_claims": [
+            "The actual discriminant gradient is summable in the exact signed conjugate pair norm for finite p>=2."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G034",
+          "source_lines": [
+            11328,
+            11333
+          ],
+          "status": "corrected",
+          "claim": "The anti-discriminant reference uses wave index -2*n, with the exact signed pair norm and uniform H1-ball majorant.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCorollaryG6_antiDiscriminant_corrected",
+            "NLS.ZakharovShabat.sourceG6AntiDiscriminantCoefficients_norm_rpow"
+          ],
+          "ordered_group": "G-034",
+          "ordered_status": "corrected",
+          "requirement": "The anti-discriminant reference uses wave index -2*n, with the exact signed pair norm and uniform H1-ball majorant.",
+          "reviewed_claims": [
+            "The anti-discriminant reference uses wave index -2*n, with the exact signed pair norm and uniform H1-ball majorant."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G035",
+          "source_lines": [
+            11336,
+            11337
+          ],
+          "status": "matched",
+          "claim": "Midpoints and Dirichlet roots are real analytic on the real source locus.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma10_2",
+            "NLS.ZakharovShabat.exists_sourceSimpleSpectralDomain_within"
+          ],
+          "qualification": "One open connected complex neighborhood of the real source locus supports every analytic midpoint and every simple analytic Dirichlet root; real analyticity follows by restriction.",
+          "ordered_group": "G-035",
+          "ordered_status": "matched",
+          "requirement": "Midpoints and Dirichlet roots are real analytic on the real source locus.",
+          "reviewed_claims": [
+            "Midpoints and Dirichlet roots are real analytic on the real source locus."
+          ]
+        },
+        {
+          "id": "G036",
+          "source_lines": [
+            11339,
+            11343
+          ],
+          "status": "corrected",
+          "claim": "Both G.7 estimates hold for every finite p>1 on a common open complex neighborhood, with Dirichlet half-wave index -2*n.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG7_all_finite_corrected"
+          ],
+          "qualification": "The neighborhood may depend on p; pointwise H1-source summability is not a uniform bound on every H1 ball.",
+          "ordered_group": "G-036",
+          "ordered_status": "corrected",
+          "requirement": "Both G.7 estimates hold for every finite p>1 on a common open complex neighborhood, with Dirichlet half-wave index -2*n.",
+          "reviewed_claims": [
+            "Both G.7 estimates hold for every finite p>1 on a common open complex neighborhood, with Dirichlet half-wave index -2*n."
+          ]
+        },
+        {
+          "id": "G037",
+          "source_lines": [
+            11345,
+            11350
+          ],
+          "status": "matched",
+          "claim": "The actual midpoint derivative is the isolating-contour integral of Delta*dDelta/(Delta^2-4).",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_global_source_midpoint_gradient_contour",
+            "NLS.ZakharovShabat.source_midpoint_fderiv_eq_operator_contour",
+            "NLS.ZakharovShabat.exists_global_source_midpoint_contour_independent"
+          ],
+          "qualification": "The source derivative has the exact -1/(2*pi*i) contour formula on a common neighborhood. The formula includes collapsed gaps and its physical realization is independent of the admissible isolating circle.",
+          "ordered_group": "G-037",
+          "ordered_status": "matched",
+          "requirement": "The actual midpoint derivative is the isolating-contour integral of Delta*dDelta/(Delta^2-4).",
+          "reviewed_claims": [
+            "The actual midpoint derivative is the isolating-contour integral of Delta*dDelta/(Delta^2-4)."
+          ]
+        },
+        {
+          "id": "G038",
+          "source_lines": [
+            11351,
+            11354
+          ],
+          "status": "matched",
+          "claim": "Canonical high-frequency circles and uniform contour bounds give midpoint-gradient summability.",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_source_midpoint_gradient_tail_contour",
+            "NLS.ZakharovShabat.exists_classicalSobolev_contour_discriminant_quotient_bound",
+            "NLS.ZakharovShabat.exists_classicalDiscriminantGradient_discSup_uniform_memlp",
+            "NLS.ZakharovShabat.exists_sourceMidpointContourIntegrand_sobolev_uniform_memlp",
+            "NLS.ZakharovShabat.exists_global_source_midpoint_fderiv_sobolev_memlp"
+          ],
+          "qualification": "The actual pi/4 circles are constructed after a common cutoff. A positive denominator lower bound yields a uniform quotient bound, the spectral supremum precedes the outer summability norm, and the operator contour estimate transfers the majorant to actual midpoint derivatives, including finite heads.",
+          "ordered_group": "G-038",
+          "ordered_status": "matched",
+          "requirement": "Canonical high-frequency circles and uniform contour bounds give midpoint-gradient summability.",
+          "reviewed_claims": [
+            "Canonical high-frequency circles and uniform contour bounds give midpoint-gradient summability."
+          ]
+        },
+        {
+          "id": "G039",
+          "source_lines": [
+            11355,
+            11359
+          ],
+          "status": "matched",
+          "claim": "Simple Dirichlet roots supply the canonical eigenfunction from the sum of actual columns.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.boundary_multiplicity",
+            "NLS.ZakharovShabat.classicalDirichletDualSolution_of_root"
+          ],
+          "qualification": "Simplicity and analyticity hold at every index on one source neighborhood. The physical Dirichlet eigenfunction is the actual solution with initial vector (1,1), hence the sum of the two fundamental columns; at a root its dual solution is proportional to it.",
+          "ordered_group": "G-039",
+          "ordered_status": "matched",
+          "requirement": "Simple Dirichlet roots supply the canonical eigenfunction from the sum of actual columns.",
+          "reviewed_claims": [
+            "Simple Dirichlet roots supply the canonical eigenfunction from the sum of actual columns."
+          ]
+        },
+        {
+          "id": "G040",
+          "source_lines": [
+            11361,
+            11366
+          ],
+          "status": "matched",
+          "claim": "The actual Dirichlet gradient is the quadratic eigenfunction product divided by its nonzero bilinear normalization.",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalDirichletNormalization_ne_zero_of_simple",
+            "NLS.ZakharovShabat.classicalDirichletNormalizedGradient_eq_characteristic_quotient",
+            "NLS.ZakharovShabat.fderiv_classicalDirichletRoot_eq_normalized_integral",
+            "NLS.ZakharovShabat.classicalDirichletNormalization_canonicalRoot_ne_zero",
+            "NLS.ZakharovShabat.fderiv_canonicalDirichletRoot_eq_normalized_integral"
+          ],
+          "qualification": "The exact bilinear normalization is twice the unconjugated integral of the eigenfunction components. Simplicity proves it nonzero. The implicit derivative quotient equals the reversed squared-component gradient divided by that normalization; canonical real-source derivatives are identified without an assumed gradient formula.",
+          "ordered_group": "G-040",
+          "ordered_status": "matched",
+          "requirement": "The actual Dirichlet gradient is the quadratic eigenfunction product divided by its nonzero bilinear normalization.",
+          "reviewed_claims": [
+            "The actual Dirichlet gradient is the quadratic eigenfunction product divided by its nonzero bilinear normalization."
+          ]
+        },
+        {
+          "id": "G041",
+          "source_lines": [
+            11369,
+            11369
+          ],
+          "status": "matched",
+          "claim": "The gradient estimates conclude from the positive spectral and physical realization results.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG7_all_finite_corrected",
+            "NLS.ZakharovShabat.sourceLemmaG7_corrected_with_coefficients",
+            "NLS.ZakharovShabat.exists_global_sourceG7_canonical_midpoint_memlp",
+            "NLS.ZakharovShabat.exists_global_sourceG7_l2_memlp",
+            "NLS.ZakharovShabat.exists_global_sourceG7_below_two_physical_complex"
+          ],
+          "qualification": "For each finite p>1 a common complex neighborhood supports the corrected actual midpoint and normalized Dirichlet gradient sequences at every H1 source it contains. Physical Fourier realization and nonzero normalization are proved. This is pointwise source summability; no uniform H1-ball majorant on the entire neighborhood is claimed.",
+          "ordered_group": "G-041",
+          "ordered_status": "matched",
+          "requirement": "The gradient estimates conclude from the positive spectral and physical realization results.",
+          "reviewed_claims": [
+            "The gradient estimates conclude from the positive spectral and physical realization results."
+          ]
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "id": "G001",
+          "source_lines": [
+            11083,
+            11086
+          ],
+          "status": "contextual",
+          "claim": "Motivation: use spectral-gradient estimates to prove compactness in Lemma 16.1.",
+          "declarations": [],
+          "ordered_group": "G-001",
+          "ordered_status": "contextual",
+          "requirement": "Motivation: use spectral-gradient estimates to prove compactness in Lemma 16.1.",
+          "reviewed_claims": [
+            "Motivation: use spectral-gradient estimates to prove compactness in Lemma 16.1."
+          ],
+          "qualification": "Contextual source passage; no independent mathematical theorem is asserted."
+        },
+        {
+          "id": "G002",
+          "source_lines": [
+            11087,
+            11088
+          ],
+          "status": "matched",
+          "claim": "Actual physical periodic L2 fundamental solution: joint continuity and fixed-time complex analyticity.",
+          "declarations": [
+            "NLS.ZakharovShabat.continuous_l2PeriodicFundamentalMatrix_joint",
+            "NLS.ZakharovShabat.analyticOnNhd_l2PeriodicFundamentalMatrix_joint"
+          ],
+          "qualification": "The physical L2 solution is continued over all nonnegative times by monodromy; closed-period gluing proves joint continuity, and finite products give fixed-time complex analyticity.",
+          "ordered_group": "G-002",
+          "ordered_status": "matched",
+          "requirement": "Actual physical periodic L2 fundamental solution: joint continuity and fixed-time complex analyticity.",
+          "reviewed_claims": [
+            "Actual physical periodic L2 fundamental solution: joint continuity and fixed-time complex analyticity."
+          ]
+        },
+        {
+          "id": "G003",
+          "source_lines": [
+            11089,
+            11103
+          ],
+          "status": "matched",
+          "claim": "Original R, off-diagonal potential, free evolution, actual remainder and exponentially weighted Hermitian operator norm.",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalHermitianRemainderOperator_eq_matrix",
+            "NLS.ZakharovShabat.classicalNormalizedHermitianFirstBorn_eq",
+            "NLS.ZakharovShabat.classicalHermitianRemainder_duhamel",
+            "NLS.ZakharovShabat.sourceLemmaG1"
+          ],
+          "qualification": "The signed free propagator has diagonal exp(-i*z*t), exp(i*z*t), and the potential kernel has entries i*phi1 and -i*phi2. The actual M-E matrix acts on Euclidean two-vectors; its operator norm has the exact exp(-abs(Im z)*t) weight. The full physical L2 identification extends the continuous-potential construction.",
+          "ordered_group": "G-003",
+          "ordered_status": "matched",
+          "requirement": "Original R, off-diagonal potential, free evolution, actual remainder and exponentially weighted Hermitian operator norm.",
+          "reviewed_claims": [
+            "Original R, off-diagonal potential, free evolution, actual remainder and exponentially weighted Hermitian operator norm."
+          ]
+        },
+        {
+          "id": "G004",
+          "source_lines": [
+            11105,
+            11113
+          ],
+          "status": "matched",
+          "claim": "G.1 holds on the full physical L2 source with coefficient norm(phi)*exp(norm(phi)).",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG1"
+          ],
+          "ordered_group": "G-004",
+          "ordered_status": "matched",
+          "requirement": "G.1 holds on the full physical L2 source with coefficient norm(phi)*exp(norm(phi)).",
+          "reviewed_claims": [
+            "G.1 holds on the full physical L2 source with coefficient norm(phi)*exp(norm(phi))."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G005",
+          "source_lines": [
+            11116,
+            11122
+          ],
+          "status": "corrected",
+          "claim": "Adopt sqrt(t^(-1)+t)/abs(z) in the explicit unnormalized integral H1 norm; t=0 is the zero operator.",
+          "declarations": [
+            "NLS.ZakharovShabat.intervalHermitianFirstBornOperator_weighted_le_local_H1"
+          ],
+          "qualification": "This fixes a norm-qualified statement directly. It does not identify the unspecified printed local norm or verify the exact 2014 external reference.",
+          "ordered_group": "G-005",
+          "ordered_status": "corrected",
+          "requirement": "Adopt sqrt(t^(-1)+t)/abs(z) in the explicit unnormalized integral H1 norm; t=0 is the zero operator.",
+          "reviewed_claims": [
+            "Adopt sqrt(t^(-1)+t)/abs(z) in the explicit unnormalized integral H1 norm; t=0 is the zero operator."
+          ]
+        },
+        {
+          "id": "G006",
+          "source_lines": [
+            11124,
+            11128
+          ],
+          "status": "matched",
+          "claim": "The unit-interval consequence retains 3/(2*abs(z)) and the exact physical L2 coefficient, in the original periodic H1 source norm.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG2_remainder_unit",
+            "NLS.ZakharovShabat.sourceLemmaG2_classical_remainder_unit"
+          ],
+          "ordered_group": "G-006",
+          "ordered_status": "matched",
+          "requirement": "The unit-interval consequence retains 3/(2*abs(z)) and the exact physical L2 coefficient, in the original periodic H1 source norm.",
+          "reviewed_claims": [
+            "The unit-interval consequence retains 3/(2*abs(z)) and the exact physical L2 coefficient, in the original periodic H1 source norm."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G007",
+          "source_lines": [
+            11130,
+            11135
+          ],
+          "status": "corrected",
+          "claim": "The actual Born integration-by-parts identity retains the original free-mode signs. With R=diag(i,-i), the matrix prefactor is -R/(2*z).",
+          "declarations": [
+            "NLS.ComplexAnalysis.oscillatoryIntegral_parts",
+            "NLS.ZakharovShabat.appendixG_Born_operator_parts"
+          ],
+          "qualification": "The division-free operator identity also holds at z=0; the displayed quotient requires z nonzero. No new refutation is required.",
+          "ordered_group": "G-007",
+          "ordered_status": "corrected",
+          "requirement": "The actual Born integration-by-parts identity retains the original free-mode signs. With R=diag(i,-i), the matrix prefactor is -R/(2*z).",
+          "reviewed_claims": [
+            "The actual Born integration-by-parts identity retains the original free-mode signs. With R=diag(i,-i), the matrix prefactor is -R/(2*z)."
+          ]
+        },
+        {
+          "id": "G008",
+          "source_lines": [
+            11136,
+            11138
+          ],
+          "status": "corrected",
+          "claim": "The positive trace-and-variation estimate supplies the explicit interval-length constant.",
+          "declarations": [
+            "NLS.ComplexAnalysis.endpoint_variation_le_length_H1",
+            "NLS.ZakharovShabat.intervalHermitianFirstBornOperator_weighted_le_interval_H1"
+          ],
+          "ordered_group": "G-008",
+          "ordered_status": "corrected",
+          "requirement": "The positive trace-and-variation estimate supplies the explicit interval-length constant.",
+          "reviewed_claims": [
+            "The positive trace-and-variation estimate supplies the explicit interval-length constant."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G009",
+          "source_lines": [
+            11152,
+            11156
+          ],
+          "status": "matched",
+          "claim": "The actual H1 time norm is bounded uniformly over every index of a fixed near-free sequence and over the exact source H1 ball.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixG_source_remainder_H1_whole_sequence",
+            "NLS.ZakharovShabat.sourceLemmaG3_H1"
+          ],
+          "qualification": "The finite initial frequencies are included. Their contribution may depend on the fixed frequency sequence; the common tail bound is uniform over sequences with the stated displacement bound.",
+          "ordered_group": "G-009",
+          "ordered_status": "matched",
+          "requirement": "The actual H1 time norm is bounded uniformly over every index of a fixed near-free sequence and over the exact source H1 ball.",
+          "reviewed_claims": [
+            "The actual H1 time norm is bounded uniformly over every index of a fixed near-free sequence and over the exact source H1 ball."
+          ]
+        },
+        {
+          "id": "G010",
+          "source_lines": [
+            11156,
+            11158
+          ],
+          "status": "corrected",
+          "claim": "G.3 Fourier decay retains (q-1-epsilon)/(1-epsilon) for 0<epsilon<1; q=2 has a separate inverse-index statement.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG3_fourier_decay",
+            "NLS.ZakharovShabat.sourceLemmaG3_l2_decay"
+          ],
+          "ordered_group": "G-010",
+          "ordered_status": "corrected",
+          "requirement": "G.3 Fourier decay retains (q-1-epsilon)/(1-epsilon) for 0<epsilon<1; q=2 has a separate inverse-index statement.",
+          "reviewed_claims": [
+            "G.3 Fourier decay retains (q-1-epsilon)/(1-epsilon) for 0<epsilon<1; q=2 has a separate inverse-index statement."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G011",
+          "source_lines": [
+            11160,
+            11162
+          ],
+          "status": "matched",
+          "claim": "Inverse-index spectral displacement gives the shifted-free Fourier decay.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG3_shiftedFree_decay",
+            "NLS.ZakharovShabat.sourceLemmaG3_shiftedFree_l2_decay"
+          ],
+          "ordered_group": "G-011",
+          "ordered_status": "matched",
+          "requirement": "Inverse-index spectral displacement gives the shifted-free Fourier decay.",
+          "reviewed_claims": [
+            "Inverse-index spectral displacement gives the shifted-free Fourier decay."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G012",
+          "source_lines": [
+            11164,
+            11167
+          ],
+          "status": "matched",
+          "claim": "The actual remainder satisfies the two coordinate Volterra equations.",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalSolutionRemainder_fst_duhamel",
+            "NLS.ZakharovShabat.classicalSolutionRemainder_snd_duhamel"
+          ],
+          "ordered_group": "G-012",
+          "ordered_status": "matched",
+          "requirement": "The actual remainder satisfies the two coordinate Volterra equations.",
+          "reviewed_claims": [
+            "The actual remainder satisfies the two coordinate Volterra equations."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G013",
+          "source_lines": [
+            11169,
+            11172
+          ],
+          "status": "corrected",
+          "claim": "Differentiate with -z*R on the free evolution: the two actual coordinate integrals carry -i*z and +i*z.",
+          "declarations": [
+            "NLS.ZakharovShabat.hasDerivAt_classicalFreeVector",
+            "NLS.ZakharovShabat.appendixG_remainder_derivative_duhamel"
+          ],
+          "ordered_group": "G-013",
+          "ordered_status": "corrected",
+          "requirement": "Differentiate with -z*R on the free evolution: the two actual coordinate integrals carry -i*z and +i*z.",
+          "reviewed_claims": [
+            "Differentiate with -z*R on the free evolution: the two actual coordinate integrals carry -i*z and +i*z."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G014",
+          "source_lines": [
+            11174,
+            11179
+          ],
+          "status": "corrected",
+          "claim": "Weighted derivative estimates from the differentiated Volterra equation.",
+          "declarations": [
+            "NLS.ZakharovShabat.norm_deriv_classicalSolutionRemainder_weighted_le",
+            "NLS.ZakharovShabat.sourceLemmaG3_weighted_remainder_derivative"
+          ],
+          "qualification": "Use the equivalent actual ODE remainder identity and the explicit bound 4*(8+pi)*(2*M)*exp(8*M) on the exact source H1 ball. This replaces the unspecified local-norm estimate directly and is uniform in all nonzero complex frequencies and all unit-interval times.",
+          "ordered_group": "G-014",
+          "ordered_status": "corrected",
+          "requirement": "Weighted derivative estimates from the differentiated Volterra equation.",
+          "reviewed_claims": [
+            "Weighted derivative estimates from the differentiated Volterra equation."
+          ]
+        },
+        {
+          "id": "G015",
+          "source_lines": [
+            11181,
+            11184
+          ],
+          "status": "matched",
+          "claim": "Cauchy-Schwarz controls the potential-times-remainder integral.",
+          "declarations": [
+            "NLS.FunctionalAnalysis.integral_mul_le_sqrt_sq_mul_sqrt_sq"
+          ],
+          "qualification": "Cauchy-Schwarz is proved for the integral of two continuous nonnegative functions on any nonnegative interval. Applying it to the potential and weighted remainder norms gives the displayed product of L2 energies; the physical L2 G.1 theorem already uses the literal source norm.",
+          "ordered_group": "G-015",
+          "ordered_status": "matched",
+          "requirement": "Cauchy-Schwarz controls the potential-times-remainder integral.",
+          "reviewed_claims": [
+            "Cauchy-Schwarz controls the potential-times-remainder integral."
+          ]
+        },
+        {
+          "id": "G016",
+          "source_lines": [
+            11186,
+            11197
+          ],
+          "status": "matched",
+          "claim": "The Born time derivative has two endpoint terms of weight one half and a derivative-potential integral of weight one half.",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixG_hasDerivAt_oscillatoryIntegral",
+            "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_derivative_parts",
+            "NLS.ZakharovShabat.appendixG_hasDerivAt_classicalFirstBornVector"
+          ],
+          "ordered_group": "G-016",
+          "ordered_status": "matched",
+          "requirement": "The Born time derivative has two endpoint terms of weight one half and a derivative-potential integral of weight one half.",
+          "reviewed_claims": [
+            "The Born time derivative has two endpoint terms of weight one half and a derivative-potential integral of weight one half."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G017",
+          "source_lines": [
+            11198,
+            11199
+          ],
+          "status": "corrected",
+          "claim": "The derivative obeys a positive sqrt(T^(-1)+T) integral-H1 bound at all intermediate times; on the original periodic unit source the constant is sqrt(2).",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_derivative_interval_H1",
+            "NLS.ZakharovShabat.appendixG_Born_derivative_interval_H1",
+            "NLS.ZakharovShabat.appendixG_source_Born_derivative_unit"
+          ],
+          "qualification": "The source local interval norm is not silently identified with the explicit integral norm.",
+          "ordered_group": "G-017",
+          "ordered_status": "corrected",
+          "requirement": "The derivative obeys a positive sqrt(T^(-1)+T) integral-H1 bound at all intermediate times; on the original periodic unit source the constant is sqrt(2).",
+          "reviewed_claims": [
+            "The derivative obeys a positive sqrt(T^(-1)+T) integral-H1 bound at all intermediate times; on the original periodic unit source the constant is sqrt(2)."
+          ]
+        },
+        {
+          "id": "G018",
+          "source_lines": [
+            11201,
+            11203
+          ],
+          "status": "corrected",
+          "claim": "The uniform weighted derivative estimate applies to the actual remainder M-E.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG3_weighted_remainder_derivative"
+          ],
+          "ordered_group": "G-018",
+          "ordered_status": "corrected",
+          "requirement": "The uniform weighted derivative estimate applies to the actual remainder M-E.",
+          "reviewed_claims": [
+            "The uniform weighted derivative estimate applies to the actual remainder M-E."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G019",
+          "source_lines": [
+            11204,
+            11207
+          ],
+          "status": "matched",
+          "claim": "Uniform inverse-index supremum and L2 bounds, and uniform H1 bounds.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixG_source_remainder_uniform_time_decay",
+            "NLS.ZakharovShabat.sourceLemmaG3_l2_decay",
+            "NLS.ZakharovShabat.appendixG_source_remainder_H1_whole_sequence"
+          ],
+          "qualification": "The inverse-index estimates hold beyond a positive common cutoff. The H1 bound covers every index for each fixed sequence. Fourier l2 is realized by the actual time-integral coefficients.",
+          "ordered_group": "G-019",
+          "ordered_status": "matched",
+          "requirement": "Uniform inverse-index supremum and L2 bounds, and uniform H1 bounds.",
+          "reviewed_claims": [
+            "Uniform inverse-index supremum and L2 bounds, and uniform H1 bounds."
+          ]
+        },
+        {
+          "id": "G020",
+          "source_lines": [
+            11209,
+            11214
+          ],
+          "status": "corrected",
+          "claim": "H1-to-Fourier-Lebesgue embedding and interpolation yield the printed decay exponent.",
+          "declarations": [
+            "NLS.ZakharovShabat.norm_classicalSobolevRemainderFourierCoefficients_interpolate",
+            "NLS.ZakharovShabat.sourceLemmaG3_fourier_decay"
+          ],
+          "qualification": "Use 0<epsilon<1 and 1+epsilon<=q<=2. Interpolation uses the same actual coefficient sequence at both endpoints; its stronger power estimate implies the printed exponent. The q=2 endpoint is separately available without epsilon.",
+          "ordered_group": "G-020",
+          "ordered_status": "corrected",
+          "requirement": "H1-to-Fourier-Lebesgue embedding and interpolation yield the printed decay exponent.",
+          "reviewed_claims": [
+            "H1-to-Fourier-Lebesgue embedding and interpolation yield the printed decay exponent."
+          ]
+        },
+        {
+          "id": "G021",
+          "source_lines": [
+            11215,
+            11217
+          ],
+          "status": "matched",
+          "claim": "Shifted free exponentials have bounded Fourier-Lebesgue norm and displacement-sized L2 error.",
+          "declarations": [
+            "NLS.Fourier.appendixG_free_difference_coefficient",
+            "NLS.Fourier.appendixG_free_difference_fourier_bound",
+            "NLS.Fourier.appendixG_free_difference_l2_bound",
+            "NLS.ZakharovShabat.sourceLemmaG3_shiftedFree_decay"
+          ],
+          "qualification": "The new scalar estimates verify the two diagonal free modes. The full shifted-free conclusion uses time-bound interpolation of the combined error; it does not require periodic endpoint matching.",
+          "ordered_group": "G-021",
+          "ordered_status": "matched",
+          "requirement": "Shifted free exponentials have bounded Fourier-Lebesgue norm and displacement-sized L2 error.",
+          "reviewed_claims": [
+            "Shifted free exponentials have bounded Fourier-Lebesgue norm and displacement-sized L2 error."
+          ]
+        },
+        {
+          "id": "G022",
+          "source_lines": [
+            11227,
+            11234
+          ],
+          "status": "matched",
+          "claim": "G.4 gives actual operator-valued outer ell^p sequences for finite p>1 and q>1+1/p, including q=infinity.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCorollaryG4",
+            "NLS.ZakharovShabat.sourceG4_remainder_operator_memlp",
+            "NLS.ZakharovShabat.sourceG4_shiftedFree_operator_memlp"
+          ],
+          "qualification": "After fixing the sequence, a single nonnegative majorant controls every source in a fixed original H1 ball; finite heads are arbitrary.",
+          "ordered_group": "G-022",
+          "ordered_status": "matched",
+          "requirement": "G.4 gives actual operator-valued outer ell^p sequences for finite p>1 and q>1+1/p, including q=infinity.",
+          "reviewed_claims": [
+            "G.4 gives actual operator-valued outer ell^p sequences for finite p>1 and q>1+1/p, including q=infinity."
+          ]
+        },
+        {
+          "id": "G023",
+          "source_lines": [
+            11236,
+            11245
+          ],
+          "status": "matched",
+          "claim": "Choose epsilon sufficiently small to make the inverse-power tail ell^p.",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_fundamentalFourier_summability_exponents",
+            "NLS.ZakharovShabat.exists_classicalSobolevRemainder_fourier_memlp_majorant",
+            "NLS.ZakharovShabat.exists_classicalShiftedFree_fourier_memlp_majorant"
+          ],
+          "qualification": "The epsilon choice satisfies alpha*p>1. The same-coefficient inclusion handles larger q, including infinity, and inverse-power summability supplies a common tail majorant; the finite head is treated separately in the named corollary.",
+          "ordered_group": "G-023",
+          "ordered_status": "matched",
+          "requirement": "Choose epsilon sufficiently small to make the inverse-power tail ell^p.",
+          "reviewed_claims": [
+            "Choose epsilon sufficiently small to make the inverse-power tail ell^p."
+          ]
+        },
+        {
+          "id": "G024",
+          "source_lines": [
+            11247,
+            11251
+          ],
+          "status": "matched",
+          "claim": "Signed wave convention: e_minus(alpha)=(e(-alpha),0), e_plus(alpha)=(0,e(alpha)), e(alpha)(x)=exp(i*pi*alpha*x).",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalHermitianCorrectedFreeGradientMatrix_lattice",
+            "NLS.ZakharovShabat.classicalAntiDiscriminantGradientRemainder_lattice_mul_I",
+            "NLS.ZakharovShabat.sourceG7_free_signed_coefficients",
+            "NLS.ZakharovShabat.sourceG7SignedCoordinates_fst",
+            "NLS.ZakharovShabat.sourceG7SignedCoordinates_snd"
+          ],
+          "qualification": "Physical modes are exp(i*z*t); the first signed coefficient coordinate reverses frequency and the second does not. Matrix, characteristic and root references retain that convention, and lattice modes use wave(2*n), wave(-2*n).",
+          "ordered_group": "G-024",
+          "ordered_status": "matched",
+          "requirement": "Signed wave convention: e_minus(alpha)=(e(-alpha),0), e_plus(alpha)=(0,e(alpha)), e(alpha)(x)=exp(i*pi*alpha*x).",
+          "reviewed_claims": [
+            "Signed wave convention: e_minus(alpha)=(e(-alpha),0), e_plus(alpha)=(0,e(alpha)), e(alpha)(x)=exp(i*pi*alpha*x)."
+          ]
+        },
+        {
+          "id": "G025",
+          "source_lines": [
+            11253,
+            11259
+          ],
+          "status": "corrected",
+          "claim": "G.5 holds for finite p>=2 with upper minus and lower plus component in the actual free-gradient reference.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG5_corrected"
+          ],
+          "qualification": "Existing historical refutations are preserved; add none.",
+          "ordered_group": "G-025",
+          "ordered_status": "corrected",
+          "requirement": "G.5 holds for finite p>=2 with upper minus and lower plus component in the actual free-gradient reference.",
+          "reviewed_claims": [
+            "G.5 holds for finite p>=2 with upper minus and lower plus component in the actual free-gradient reference."
+          ]
+        },
+        {
+          "id": "G026",
+          "source_lines": [
+            11262,
+            11267
+          ],
+          "status": "corrected",
+          "claim": "The corrected finite-p G.5 estimate holds for the exact lattice reference under inverse-index displacement.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG5_shifted_corrected"
+          ],
+          "ordered_group": "G-026",
+          "ordered_status": "corrected",
+          "requirement": "The corrected finite-p G.5 estimate holds for the exact lattice reference under inverse-index displacement.",
+          "reviewed_claims": [
+            "The corrected finite-p G.5 estimate holds for the exact lattice reference under inverse-index displacement."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G027",
+          "source_lines": [
+            11270,
+            11275
+          ],
+          "status": "matched",
+          "claim": "The full actual potential gradient is the endpoint matrix times the quadratic column products.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixG_gradient_matrix_factorization",
+            "NLS.ZakharovShabat.fderiv_classicalEndpoint_eq_gradient_integral"
+          ],
+          "qualification": "The actual potential differential is represented by the physical gradient integral, and the new operator identity gives the literal terminal-matrix factorization.",
+          "ordered_group": "G-027",
+          "ordered_status": "matched",
+          "requirement": "The full actual potential gradient is the endpoint matrix times the quadratic column products.",
+          "reviewed_claims": [
+            "The full actual potential gradient is the endpoint matrix times the quadratic column products."
+          ]
+        },
+        {
+          "id": "G028",
+          "source_lines": [
+            11276,
+            11289
+          ],
+          "status": "matched",
+          "claim": "Expand each quadratic product into its corrected free wave, linear remainder terms and quadratic remainder.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixG_first_column_square",
+            "NLS.ZakharovShabat.appendixG_mixed_column_product",
+            "NLS.ZakharovShabat.appendixG_second_column_square",
+            "NLS.ZakharovShabat.norm_endpointGradientPolynomial_sub_le"
+          ],
+          "qualification": "All three displayed algebraic expansions now hold for the actual columns and remainders. The summability proof uses the proved cubic polynomial stability bound after these references are identified.",
+          "ordered_group": "G-028",
+          "ordered_status": "matched",
+          "requirement": "Expand each quadratic product into its corrected free wave, linear remainder terms and quadratic remainder.",
+          "reviewed_claims": [
+            "Expand each quadratic product into its corrected free wave, linear remainder terms and quadratic remainder."
+          ]
+        },
+        {
+          "id": "G029",
+          "source_lines": [
+            11291,
+            11299
+          ],
+          "status": "matched",
+          "claim": "Young-exponent choices and G.4 give gradient summability.",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_classicalGradient_fourier_uniform_memlp_of_time_bounds",
+            "NLS.ZakharovShabat.exists_classicalEndpointGradient_fourier_uniform_memlp",
+            "NLS.ZakharovShabat.conjugate_exponent_gt_gradient_threshold"
+          ],
+          "qualification": "Alternative proof: cubic polynomial stability supplies small time values, derivative bounds give Fourier interpolation, and alpha*p>1 gives a common summable majorant including the finite head. The conjugate exponent lies strictly above 1+1/p. The printed Young-convolution proof is not claimed as the implementation.",
+          "ordered_group": "G-029",
+          "ordered_status": "matched",
+          "requirement": "Young-exponent choices and G.4 give gradient summability.",
+          "reviewed_claims": [
+            "Young-exponent choices and G.4 give gradient summability."
+          ]
+        },
+        {
+          "id": "G030",
+          "source_lines": [
+            11301,
+            11305
+          ],
+          "status": "matched",
+          "claim": "Inverse-index shifts give the exact lattice-gradient comparison.",
+          "declarations": [
+            "NLS.ZakharovShabat.norm_classicalFreeFrequencyDifference_le",
+            "NLS.ZakharovShabat.norm_classicalEndpointGradientRemainder_shifted_le",
+            "NLS.ZakharovShabat.exists_classicalEndpointGradient_shifted_fourier_uniform_memlp",
+            "NLS.ZakharovShabat.classicalHermitianCorrectedFreeGradientMatrix_lattice",
+            "NLS.ZakharovShabat.sourceG5_shifted_gradient_uniform_majorant"
+          ],
+          "qualification": "Alternative proof: the displacement-sized free-vector bound controls all time values and terminal columns; the cubic gradient polynomial preserves one small factor. Time-derivative interpolation proves summability directly against the exact lattice reference, including its (-1)^n phase. It does not use separate printed Young estimates for each wave-shift term.",
+          "ordered_group": "G-030",
+          "ordered_status": "matched",
+          "requirement": "Inverse-index shifts give the exact lattice-gradient comparison.",
+          "reviewed_claims": [
+            "Inverse-index shifts give the exact lattice-gradient comparison."
+          ]
+        },
+        {
+          "id": "G031",
+          "source_lines": [
+            11307,
+            11308
+          ],
+          "status": "contextual",
+          "claim": "The signed-wave notation differs from reference [23].",
+          "declarations": [],
+          "ordered_group": "G-031",
+          "ordered_status": "contextual",
+          "requirement": "The signed-wave notation differs from reference [23].",
+          "reviewed_claims": [
+            "The signed-wave notation differs from reference [23]."
+          ],
+          "qualification": "Contextual source passage; no independent mathematical theorem is asserted."
+        },
+        {
+          "id": "G032",
+          "source_lines": [
+            11319,
+            11321
+          ],
+          "status": "matched",
+          "claim": "Discriminant and anti-discriminant gradients are the trace and anti-trace of the actual endpoint-matrix gradient.",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalDiscriminantGradient_eq_endpoint_sum",
+            "NLS.ZakharovShabat.classicalDiscriminantGradient_eq_remainder_sum",
+            "NLS.ZakharovShabat.classicalAntiDiscriminantGradientRemainder_eq_sum",
+            "NLS.ZakharovShabat.classicalAntiDiscriminantGradientRemainder_lattice_mul_I"
+          ],
+          "qualification": "The two diagonal entries sum to the discriminant gradient; the two off-diagonal entries give the anti-discriminant gradient. The latter retains the exact signed free-wave subtraction.",
+          "ordered_group": "G-032",
+          "ordered_status": "matched",
+          "requirement": "Discriminant and anti-discriminant gradients are the trace and anti-trace of the actual endpoint-matrix gradient.",
+          "reviewed_claims": [
+            "Discriminant and anti-discriminant gradients are the trace and anti-trace of the actual endpoint-matrix gradient."
+          ]
+        },
+        {
+          "id": "G033",
+          "source_lines": [
+            11323,
+            11326
+          ],
+          "status": "matched",
+          "claim": "The actual discriminant gradient is summable in the exact signed conjugate pair norm for finite p>=2.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCorollaryG6_discriminant",
+            "NLS.ZakharovShabat.sourceG6DiscriminantCoefficients_norm_rpow"
+          ],
+          "ordered_group": "G-033",
+          "ordered_status": "matched",
+          "requirement": "The actual discriminant gradient is summable in the exact signed conjugate pair norm for finite p>=2.",
+          "reviewed_claims": [
+            "The actual discriminant gradient is summable in the exact signed conjugate pair norm for finite p>=2."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G034",
+          "source_lines": [
+            11328,
+            11333
+          ],
+          "status": "corrected",
+          "claim": "The anti-discriminant reference uses wave index -2*n, with the exact signed pair norm and uniform H1-ball majorant.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCorollaryG6_antiDiscriminant_corrected",
+            "NLS.ZakharovShabat.sourceG6AntiDiscriminantCoefficients_norm_rpow"
+          ],
+          "ordered_group": "G-034",
+          "ordered_status": "corrected",
+          "requirement": "The anti-discriminant reference uses wave index -2*n, with the exact signed pair norm and uniform H1-ball majorant.",
+          "reviewed_claims": [
+            "The anti-discriminant reference uses wave index -2*n, with the exact signed pair norm and uniform H1-ball majorant."
+          ],
+          "qualification": "The cited public declarations retain the stated hypotheses and quantifiers."
+        },
+        {
+          "id": "G035",
+          "source_lines": [
+            11336,
+            11337
+          ],
+          "status": "matched",
+          "claim": "Midpoints and Dirichlet roots are real analytic on the real source locus.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemma10_2",
+            "NLS.ZakharovShabat.exists_sourceSimpleSpectralDomain_within"
+          ],
+          "qualification": "One open connected complex neighborhood of the real source locus supports every analytic midpoint and every simple analytic Dirichlet root; real analyticity follows by restriction.",
+          "ordered_group": "G-035",
+          "ordered_status": "matched",
+          "requirement": "Midpoints and Dirichlet roots are real analytic on the real source locus.",
+          "reviewed_claims": [
+            "Midpoints and Dirichlet roots are real analytic on the real source locus."
+          ]
+        },
+        {
+          "id": "G036",
+          "source_lines": [
+            11339,
+            11343
+          ],
+          "status": "corrected",
+          "claim": "Both G.7 estimates hold for every finite p>1 on a common open complex neighborhood, with Dirichlet half-wave index -2*n.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG7_all_finite_corrected"
+          ],
+          "qualification": "The neighborhood may depend on p; pointwise H1-source summability is not a uniform bound on every H1 ball.",
+          "ordered_group": "G-036",
+          "ordered_status": "corrected",
+          "requirement": "Both G.7 estimates hold for every finite p>1 on a common open complex neighborhood, with Dirichlet half-wave index -2*n.",
+          "reviewed_claims": [
+            "Both G.7 estimates hold for every finite p>1 on a common open complex neighborhood, with Dirichlet half-wave index -2*n."
+          ]
+        },
+        {
+          "id": "G037",
+          "source_lines": [
+            11345,
+            11350
+          ],
+          "status": "matched",
+          "claim": "The actual midpoint derivative is the isolating-contour integral of Delta*dDelta/(Delta^2-4).",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_global_source_midpoint_gradient_contour",
+            "NLS.ZakharovShabat.source_midpoint_fderiv_eq_operator_contour",
+            "NLS.ZakharovShabat.exists_global_source_midpoint_contour_independent"
+          ],
+          "qualification": "The source derivative has the exact -1/(2*pi*i) contour formula on a common neighborhood. The formula includes collapsed gaps and its physical realization is independent of the admissible isolating circle.",
+          "ordered_group": "G-037",
+          "ordered_status": "matched",
+          "requirement": "The actual midpoint derivative is the isolating-contour integral of Delta*dDelta/(Delta^2-4).",
+          "reviewed_claims": [
+            "The actual midpoint derivative is the isolating-contour integral of Delta*dDelta/(Delta^2-4)."
+          ]
+        },
+        {
+          "id": "G038",
+          "source_lines": [
+            11351,
+            11354
+          ],
+          "status": "matched",
+          "claim": "Canonical high-frequency circles and uniform contour bounds give midpoint-gradient summability.",
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_source_midpoint_gradient_tail_contour",
+            "NLS.ZakharovShabat.exists_classicalSobolev_contour_discriminant_quotient_bound",
+            "NLS.ZakharovShabat.exists_classicalDiscriminantGradient_discSup_uniform_memlp",
+            "NLS.ZakharovShabat.exists_sourceMidpointContourIntegrand_sobolev_uniform_memlp",
+            "NLS.ZakharovShabat.exists_global_source_midpoint_fderiv_sobolev_memlp"
+          ],
+          "qualification": "The actual pi/4 circles are constructed after a common cutoff. A positive denominator lower bound yields a uniform quotient bound, the spectral supremum precedes the outer summability norm, and the operator contour estimate transfers the majorant to actual midpoint derivatives, including finite heads.",
+          "ordered_group": "G-038",
+          "ordered_status": "matched",
+          "requirement": "Canonical high-frequency circles and uniform contour bounds give midpoint-gradient summability.",
+          "reviewed_claims": [
+            "Canonical high-frequency circles and uniform contour bounds give midpoint-gradient summability."
+          ]
+        },
+        {
+          "id": "G039",
+          "source_lines": [
+            11355,
+            11359
+          ],
+          "status": "matched",
+          "claim": "Simple Dirichlet roots supply the canonical eigenfunction from the sum of actual columns.",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.boundary_multiplicity",
+            "NLS.ZakharovShabat.classicalDirichletDualSolution_of_root"
+          ],
+          "qualification": "Simplicity and analyticity hold at every index on one source neighborhood. The physical Dirichlet eigenfunction is the actual solution with initial vector (1,1), hence the sum of the two fundamental columns; at a root its dual solution is proportional to it.",
+          "ordered_group": "G-039",
+          "ordered_status": "matched",
+          "requirement": "Simple Dirichlet roots supply the canonical eigenfunction from the sum of actual columns.",
+          "reviewed_claims": [
+            "Simple Dirichlet roots supply the canonical eigenfunction from the sum of actual columns."
+          ]
+        },
+        {
+          "id": "G040",
+          "source_lines": [
+            11361,
+            11366
+          ],
+          "status": "matched",
+          "claim": "The actual Dirichlet gradient is the quadratic eigenfunction product divided by its nonzero bilinear normalization.",
+          "declarations": [
+            "NLS.ZakharovShabat.classicalDirichletNormalization_ne_zero_of_simple",
+            "NLS.ZakharovShabat.classicalDirichletNormalizedGradient_eq_characteristic_quotient",
+            "NLS.ZakharovShabat.fderiv_classicalDirichletRoot_eq_normalized_integral",
+            "NLS.ZakharovShabat.classicalDirichletNormalization_canonicalRoot_ne_zero",
+            "NLS.ZakharovShabat.fderiv_canonicalDirichletRoot_eq_normalized_integral"
+          ],
+          "qualification": "The exact bilinear normalization is twice the unconjugated integral of the eigenfunction components. Simplicity proves it nonzero. The implicit derivative quotient equals the reversed squared-component gradient divided by that normalization; canonical real-source derivatives are identified without an assumed gradient formula.",
+          "ordered_group": "G-040",
+          "ordered_status": "matched",
+          "requirement": "The actual Dirichlet gradient is the quadratic eigenfunction product divided by its nonzero bilinear normalization.",
+          "reviewed_claims": [
+            "The actual Dirichlet gradient is the quadratic eigenfunction product divided by its nonzero bilinear normalization."
+          ]
+        },
+        {
+          "id": "G041",
+          "source_lines": [
+            11369,
+            11369
+          ],
+          "status": "matched",
+          "claim": "The gradient estimates conclude from the positive spectral and physical realization results.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaG7_all_finite_corrected",
+            "NLS.ZakharovShabat.sourceLemmaG7_corrected_with_coefficients",
+            "NLS.ZakharovShabat.exists_global_sourceG7_canonical_midpoint_memlp",
+            "NLS.ZakharovShabat.exists_global_sourceG7_l2_memlp",
+            "NLS.ZakharovShabat.exists_global_sourceG7_below_two_physical_complex"
+          ],
+          "qualification": "For each finite p>1 a common complex neighborhood supports the corrected actual midpoint and normalized Dirichlet gradient sequences at every H1 source it contains. Physical Fourier realization and nonzero normalization are proved. This is pointwise source summability; no uniform H1-ball majorant on the entire neighborhood is claimed.",
+          "ordered_group": "G-041",
+          "ordered_status": "matched",
+          "requirement": "The gradient estimates conclude from the positive spectral and physical realization results.",
+          "reviewed_claims": [
+            "The gradient estimates conclude from the positive spectral and physical realization results."
+          ]
+        }
+      ],
+      "ordered_counts": {
+        "matched": 26,
+        "corrected": 13,
+        "contextual": 2,
+        "partial": 0,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemmaG1.lean": "6c04f165960c58790f092d5b100bac262b79d5fb8948ad63df8a8cfcef7ebd9a",
+        "NLS/ZakharovShabat/SourceLemmaG2Unit.lean": "17b14859fea195050bb6a0e770534d8314b51d2a79dcd4e8b47e21c45fc62bc7",
+        "NLS/ZakharovShabat/SourceLemmaG3.lean": "1c7704bc4592676dd74792135005c27e59925ddb495c8f984d79bee7f578c9ba",
+        "NLS/ZakharovShabat/SourceCorollaryG4.lean": "7152b64678d4afe42a7af26b86a7bf170015d0bc99725ead6f2cfcab627672af",
+        "NLS/ZakharovShabat/SourceLemmaG5.lean": "308a0481e5762d692bdf392070060f1c781d692125886438764ec5ceb185ff91",
+        "NLS/ZakharovShabat/SourceCorollaryG6.lean": "0d6a243611040a3722b604d0454295e462c6ebdc442229a790778bdf0109386a",
+        "NLS/ZakharovShabat/SourceLemmaG7.lean": "910faf68fdf9cbde4056ac80f966bba6bfa04ff3db53d207dd1587e4e6eebae6",
+        "NLS/ZakharovShabat/SourceLemmaG7AllFinite.lean": "ccc79b15ce6a8d27392d2d522d315c7bb12d2fdd170f1a4942baf486e8269892",
+        "NLS/ZakharovShabat/SourceG3DerivativeCorrection.lean": "afcc487581ef00d0d5444d1a45f866cd3b2bbd9a6f494ab835adc018e94177f5",
+        "NLS/ZakharovShabat/IntervalH1LengthOperatorBound.lean": "a75820356bf4e4c25a4d5bfa3e2bb8128a4dafecd2eefe3e717e85e257b22283",
+        "NLS/ComplexAnalysis/IntervalH1LengthBound.lean": "bc561af3c2e7b33b9685cad8730ad3c6482f79edb6e41ee47437561540faa45d",
+        "NLS/ComplexAnalysis/OscillatoryIntegralParts.lean": "a7056954d1d668bc881375b0a919eb7bc47d851424548a7bfad92c08ab299504",
+        "NLS/ZakharovShabat/ClassicalFirstBorn.lean": "79d54874798826b77127ac433a40162cbf48ffb3eb8614414fb78d6cca004378",
+        "NLS/ZakharovShabat/ClassicalRemainderDerivativeBound.lean": "0973068a70996d182dfec2e14a459d2e2936afcbe416edffaccf39cd1fbb3879",
+        "NLS/ZakharovShabat/SourcePeriodicH1Norm.lean": "e42389d9b65addb53b2c80e6d09a4b9717f4d7e38f8c4a6332d6b9c82e110c2a",
+        "NLS/ZakharovShabat/ClassicalEndpointGradientRemainder.lean": "ccd8c17f94eb54b8cc33ff0cb82726e5e46805f70b6021857e35a234a5877b9d",
+        "NLS/ZakharovShabat/ClassicalEndpointGradientBounds.lean": "8e5d2aeaeee0f36e3a6ac812cf5b6c5d531728becd44f3f5a5cde19aee16be07",
+        "NLS/ComplexAnalysis/ScalarDuhamel.lean": "e2cc9481cb19f595af0fd38566f9f76ef546912b48655f0f7f15a13c4ccede90",
+        "NLS/ZakharovShabat/IntervalHermitianFirstBornBound.lean": "395b66d609dbfed55034af69c1988cbbde291754b70d5e6778957c89d570ec63",
+        "NLS/ZakharovShabat/ClassicalHermitianTimeBounds.lean": "ad1b0060eba0c90ceaca0c88e9cc2b9400bed098cadcfa3343b35acb580f444a",
+        "NLS/ZakharovShabat/IntervalH1OperatorBound.lean": "a23512a51b30a576698bc61425915dacdc1988c52e066a2a770858a6d72f5f5b",
+        "NLS/ZakharovShabat/L2PeriodicFundamental.lean": "4b7d3e8a93f4889563ae84a237532ae72a0fff097a5af36464fc3775253fc1d0",
+        "NLS/ZakharovShabat/L2HermitianOperatorBound.lean": "25d62ba5df5f4890e2ba872fdca2dfc31cacd6a628da19fcdc670a778e1555f3",
+        "NLS/FunctionalAnalysis/VariableForcingGronwall.lean": "de9df9728614d4e5e6da13369095d43627b08291d9ca284db298d08d7b3a5883",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderSequenceBounds.lean": "b47fe2347856f4b32f76dd1b8002e22b1fbdf29b6c941c45ef634057312383fb",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderFourierDecay.lean": "4fe4154cf87bc5ec314ab67b664548540b2ba77d465ce8a9fe254d63c140ee7a",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderInterpolation.lean": "fe29d3ad09b37ac57be07719442d1c9546c8313f447e44d05e78f8d10625e944",
+        "NLS/ZakharovShabat/ClassicalShiftedFreeFourierDecay.lean": "ede06f831b9337965847349b808ffcfb0e0a647a487b059fa92d01af47c2a5af",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderFourierBound.lean": "00ad815b9482762f91fbaa86c6931e50cf562566c60bc58b8aa77d8607d37760",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderTimeBounds.lean": "2664d722670a8d372f8e875dc90cee436ad1ce85351bdd1d146d92459cde12e7",
+        "NLS/ZakharovShabat/ClassicalFourierTailSummability.lean": "9e954cb9119476859b8d4d568c417879985676ddb87b9d68fec9688e6c9b086e",
+        "NLS/ZakharovShabat/FundamentalFourierSummabilityExponents.lean": "9073487fb0152bbeac9492cc38bb5271f76c48ffe771ef1edb50f596a7e5f2b5",
+        "NLS/SequenceSpaces/PowerDecaySummability.lean": "609d44d680c8aa011fc8ec24af45487f5dfb97a43a107ebdbef252fe9f82cc8b",
+        "NLS/SequenceSpaces/NormInterpolation.lean": "a6e8385f5ea4bd8d31a2d8a3c53cb62dcd39e3fda7acb484d29bba12992a7cd8",
+        "NLS/ZakharovShabat/ClassicalFreeFrequencyDifference.lean": "f9014605c99c1c4e9efccbf235a7f833bea79487a840c9b3ba64b02394b5b2fa",
+        "NLS/ZakharovShabat/ClassicalShiftedFreeRemainder.lean": "bb6b4381b5b3622c49241e374801937f7abe173045cbc0a6540bc319d7b3d1d7",
+        "NLS/ZakharovShabat/ClassicalEndpointPoisson.lean": "5826037ac7eed92e15c4dc34c11ebd8a05a8bee2ec9f6cffec7eddd1bfd3ab2a",
+        "NLS/ZakharovShabat/ClassicalGradientFourierSummability.lean": "8ebe3fd9370b36819dbc4e70cd52445641db41103581eaec4050f3c8bfe71cec",
+        "NLS/ZakharovShabat/EndpointGradientPolynomial.lean": "9d96ef2fa6a0cffb159b34830a6ffd7f95c8c13109ae5cc8688b1f36d951791b",
+        "NLS/ZakharovShabat/ClassicalHermitianGradientFourier.lean": "525879c84b342fb2a95b8042128d54d9fed82dd386652e03e2c06b72fbbeab2f",
+        "NLS/ZakharovShabat/ClassicalSeparatedGradient.lean": "4ebfa9fd483279fd4dcbe3013a0f60d11a2aa34394c30ad34516bdfadfad04e7",
+        "NLS/ZakharovShabat/SourceDirichletNormalizedGradient.lean": "ddee6b1069b1150197311fefb86f918c38b3973c4e97655218740bf8bdd62ec8",
+        "NLS/ZakharovShabat/L2CanonicalMidpointGradient.lean": "03e3cec3702cacccee3b9beff3161e4b682c1c8867109be500e3895bd2129045",
+        "NLS/ZakharovShabat/SourceMidpointGradientTail.lean": "cdef0d0e31a03c899b414b00f9c100a73781cc44268c3b2d22006539a1d9d0ee",
+        "NLS/ZakharovShabat/ClassicalDirichletRootGradient.lean": "c00733e5633ddf7a8ca4a0c08afa2b8aeac535572c59e769e8f3c3e5637f2b98",
+        "NLS/ZakharovShabat/ClassicalDirichletGradientNormalization.lean": "97c52b863e54883917e6d6994d4d4573975039190d5f830d3a4a6d0d03599172",
+        "NLS/ZakharovShabat/SourceMidpointGradientContour.lean": "0744d8aeb88a0db57944da5c7515bc7fafbeb5b42cafa3fcc2e03513869713ba",
+        "NLS/ZakharovShabat/ClassicalCharacteristicGradientRemainders.lean": "eba11cf7074aa6deb123f2f147f4e5bbaf567c7b02b16a674d4f433e17f7e621",
+        "NLS/ZakharovShabat/L2SourceG7ComplexBelowTwo.lean": "72564a5d3336fdfdc196417d71945bc4550a4ba4a27c86b42a6ab821fb99b2fd",
+        "NLS/ZakharovShabat/SourceMidpointSobolevSummability.lean": "2451d9a13057772a231e66d2dbe9e59f4f9aa6378638b039faa2abc67ad18a3b",
+        "NLS/ZakharovShabat/SourceMidpointGradientOperatorContour.lean": "663817e72140564fc756ebdaed62586d096c4d6b91d481772f920d3b319cc059",
+        "NLS/ZakharovShabat/SourceMidpointPhysicalFourierBound.lean": "d925efa36277879f38a12f75bd5be47ea81c13b8d977ad1cf5826ca124f6062d",
+        "NLS/ZakharovShabat/ClassicalContourGradientIntegrandBound.lean": "2f6c06c0f601139929db726e601480afbdcc76c8729ffa7dcca730e414d72c39",
+        "NLS/ZakharovShabat/SourceLemma10_2.lean": "b57121a1d820225062aacd65ece8dc7406dcebd963f72c3e73106a6c650907b5",
+        "NLS/ZakharovShabat/ClassicalSobolevContourQuotient.lean": "e1893a9b0e7ac6385315ee5bc5d0964da73f9a4930545aaaeab23b246b920e22",
+        "NLS/ZakharovShabat/ClassicalDiscriminantGradientDiscSup.lean": "b9f10728c90c182e2e48f13411941bd7cb2140383930d1cdd4d377e7124cf4cb",
+        "NLS/ZakharovShabat/SourceSimpleSpectralDomain.lean": "4a30751215d7053b2454923f3030e647ac47e81a680403fbf3ab6132c8bbaae2",
+        "NLS/ZakharovShabat/ClassicalEndpointGradientFiniteSummability.lean": "5bfa1621a815323843f0e99bc177df60b4a0a51789ccdebf566342cea17482bf",
+        "NLS/Fourier/SourceLemmaE3.lean": "1ece40b16cc16293c834d78c9823b82741a4d3ebf6671f968529e9f315e273c9",
+        "NLS/Fourier/ShiftedExponentialFourier.lean": "f56a49c1c38dfbb810e62520a2c163ffbb4bdc2408a7b4e3f4ed4534b9657d7b",
+        "NLS/Fourier/ShiftedExponentialCoefficientBound.lean": "c65ce07ab69f891a722554d750559ba79ff1870567cdff81fa8474bd9dcf7c4c",
+        "NLS/Fourier/IntervalCoefficientLinearity.lean": "a1e57bb4c07c7dbb018d6e11bec9cb4d3631cfab1efce17b2c74fa9ccdd61c2a",
+        "NLS/Fourier/UnitIntervalEnergyBound.lean": "b2063841ee37e59e65bc2f90452f9ec36c79fbc017e0574399fb3dca9800b0bf",
+        "NLS/ZakharovShabat/ClassicalHermitianOperatorBound.lean": "4609216d081ba0220dc1d76be3213d4f10651f92bf4ea5d25a7330c32ea02d9f",
+        "NLS/ZakharovShabat/ClassicalHermitianFourierDecay.lean": "13c1ef1f880d6c4ee78768547617729ee145aee486d45179771adb920e043cb3",
+        "NLS/ZakharovShabat/ClassicalHermitianDuhamel.lean": "32cfeb95fb5c66d9c1d488e07c3a0e76c8828802cae971a17290dad4bf7f6362",
+        "NLS/ZakharovShabat/L2SourceG7Gradients.lean": "8bbe4c34d80b672166d5ef317df61f141e1c59bd7ff47e26a8350218f4038a2f",
+        "NLS/ZakharovShabat/L2SourceG7BelowTwo.lean": "0a0682741d7cd8f33c46ee94b05d1c1cc17070262f3b0633974defe9808c9786",
+        "NLS/ComplexAnalysis/AppendixGBornDerivative.lean": "8c516914a6c70ba52d421c835ff9b6116c2ead8595fe0109806d95db1113bcd3",
+        "NLS/ZakharovShabat/AppendixGBornOperatorDerivative.lean": "4f97a81254b9faac166675c3a7b8e78b0b117b2209c9cda5b133d7c03e6e630b",
+        "NLS/ZakharovShabat/AppendixGVolterraDerivative.lean": "55dacbaf6ee443f8f068f2d0f74170afeda41b387337e2fbaca7183dfa4aaefa",
+        "NLS/ZakharovShabat/AppendixGWholeSequenceH1.lean": "9eabdc477a61a02d7332a56d85fa0014656ec624d5c10ed010a50bbc044d6210",
+        "NLS/ZakharovShabat/AppendixGGradientAlgebra.lean": "aefd5f8ddd7f238afc9edb06b8b8bd833d02825ec5c657fa521e47e39256b504",
+        "NLS/Fourier/AppendixGFreeFourier.lean": "3c6775082e0a0c89a74c79b90f02578f46c82948ff25764896a0ca677c118a62"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceLemmaG1.lean",
+        "NLS/ZakharovShabat/SourceLemmaG2Unit.lean",
+        "NLS/ZakharovShabat/SourceLemmaG3.lean",
+        "NLS/ZakharovShabat/SourceCorollaryG4.lean",
+        "NLS/ZakharovShabat/SourceLemmaG5.lean",
+        "NLS/ZakharovShabat/SourceCorollaryG6.lean",
+        "NLS/ZakharovShabat/SourceLemmaG7.lean",
+        "NLS/ZakharovShabat/SourceLemmaG7AllFinite.lean",
+        "NLS/ZakharovShabat/SourceG3DerivativeCorrection.lean",
+        "NLS/ZakharovShabat/IntervalH1LengthOperatorBound.lean",
+        "NLS/ComplexAnalysis/IntervalH1LengthBound.lean",
+        "NLS/ComplexAnalysis/OscillatoryIntegralParts.lean",
+        "NLS/ZakharovShabat/ClassicalFirstBorn.lean",
+        "NLS/ZakharovShabat/ClassicalRemainderDerivativeBound.lean",
+        "NLS/ZakharovShabat/SourcePeriodicH1Norm.lean",
+        "NLS/ZakharovShabat/ClassicalEndpointGradientRemainder.lean",
+        "NLS/ZakharovShabat/ClassicalEndpointGradientBounds.lean",
+        "NLS/ComplexAnalysis/ScalarDuhamel.lean",
+        "NLS/ZakharovShabat/IntervalHermitianFirstBornBound.lean",
+        "NLS/ZakharovShabat/ClassicalHermitianTimeBounds.lean",
+        "NLS/ZakharovShabat/IntervalH1OperatorBound.lean",
+        "NLS/ZakharovShabat/L2PeriodicFundamental.lean",
+        "NLS/ZakharovShabat/L2HermitianOperatorBound.lean",
+        "NLS/FunctionalAnalysis/VariableForcingGronwall.lean",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderSequenceBounds.lean",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderFourierDecay.lean",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderInterpolation.lean",
+        "NLS/ZakharovShabat/ClassicalShiftedFreeFourierDecay.lean",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderFourierBound.lean",
+        "NLS/ZakharovShabat/ClassicalSobolevRemainderTimeBounds.lean",
+        "NLS/ZakharovShabat/ClassicalFourierTailSummability.lean",
+        "NLS/ZakharovShabat/FundamentalFourierSummabilityExponents.lean",
+        "NLS/SequenceSpaces/PowerDecaySummability.lean",
+        "NLS/SequenceSpaces/NormInterpolation.lean",
+        "NLS/ZakharovShabat/ClassicalFreeFrequencyDifference.lean",
+        "NLS/ZakharovShabat/ClassicalShiftedFreeRemainder.lean",
+        "NLS/ZakharovShabat/ClassicalEndpointPoisson.lean",
+        "NLS/ZakharovShabat/ClassicalGradientFourierSummability.lean",
+        "NLS/ZakharovShabat/EndpointGradientPolynomial.lean",
+        "NLS/ZakharovShabat/ClassicalHermitianGradientFourier.lean",
+        "NLS/ZakharovShabat/ClassicalSeparatedGradient.lean",
+        "NLS/ZakharovShabat/SourceDirichletNormalizedGradient.lean",
+        "NLS/ZakharovShabat/L2CanonicalMidpointGradient.lean",
+        "NLS/ZakharovShabat/SourceMidpointGradientTail.lean",
+        "NLS/ZakharovShabat/ClassicalDirichletRootGradient.lean",
+        "NLS/ZakharovShabat/ClassicalDirichletGradientNormalization.lean",
+        "NLS/ZakharovShabat/SourceMidpointGradientContour.lean",
+        "NLS/ZakharovShabat/ClassicalCharacteristicGradientRemainders.lean",
+        "NLS/ZakharovShabat/L2SourceG7ComplexBelowTwo.lean",
+        "NLS/ZakharovShabat/SourceMidpointSobolevSummability.lean",
+        "NLS/ZakharovShabat/SourceMidpointGradientOperatorContour.lean",
+        "NLS/ZakharovShabat/SourceMidpointPhysicalFourierBound.lean",
+        "NLS/ZakharovShabat/ClassicalContourGradientIntegrandBound.lean",
+        "NLS/ZakharovShabat/SourceLemma10_2.lean",
+        "NLS/ZakharovShabat/ClassicalSobolevContourQuotient.lean",
+        "NLS/ZakharovShabat/ClassicalDiscriminantGradientDiscSup.lean",
+        "NLS/ZakharovShabat/SourceSimpleSpectralDomain.lean",
+        "NLS/ZakharovShabat/ClassicalEndpointGradientFiniteSummability.lean",
+        "NLS/Fourier/SourceLemmaE3.lean",
+        "NLS/Fourier/ShiftedExponentialFourier.lean",
+        "NLS/Fourier/ShiftedExponentialCoefficientBound.lean",
+        "NLS/Fourier/IntervalCoefficientLinearity.lean",
+        "NLS/Fourier/UnitIntervalEnergyBound.lean",
+        "NLS/ZakharovShabat/ClassicalHermitianOperatorBound.lean",
+        "NLS/ZakharovShabat/ClassicalHermitianFourierDecay.lean",
+        "NLS/ZakharovShabat/ClassicalHermitianDuhamel.lean",
+        "NLS/ZakharovShabat/L2SourceG7Gradients.lean",
+        "NLS/ZakharovShabat/L2SourceG7BelowTwo.lean",
+        "NLS/ComplexAnalysis/AppendixGBornDerivative.lean",
+        "NLS/ZakharovShabat/AppendixGBornOperatorDerivative.lean",
+        "NLS/ZakharovShabat/AppendixGVolterraDerivative.lean",
+        "NLS/ZakharovShabat/AppendixGWholeSequenceH1.lean",
+        "NLS/ZakharovShabat/AppendixGGradientAlgebra.lean",
+        "NLS/Fourier/AppendixGFreeFourier.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "ordered_inventory": "coverage/APPENDIX_G_ASSERTIONS.md",
+      "ordered_inventory_sha256": "5786353123fd0dfae63f529d72b5e6c791566bb1426ab03c0cfb349bd7f5288b",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.appendixG_hasDerivAt_oscillatoryIntegral",
+        "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_derivative_interval_H1",
+        "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_derivative_parts",
+        "NLS.ComplexAnalysis.endpoint_variation_le_length_H1",
+        "NLS.ComplexAnalysis.oscillatoryIntegral_parts",
+        "NLS.Fourier.appendixG_free_difference_coefficient",
+        "NLS.Fourier.appendixG_free_difference_fourier_bound",
+        "NLS.Fourier.appendixG_free_difference_l2_bound",
+        "NLS.FunctionalAnalysis.integral_mul_le_sqrt_sq_mul_sqrt_sq",
+        "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.boundary_multiplicity",
+        "NLS.ZakharovShabat.analyticOnNhd_l2PeriodicFundamentalMatrix_joint",
+        "NLS.ZakharovShabat.appendixG_Born_derivative_interval_H1",
+        "NLS.ZakharovShabat.appendixG_Born_operator_parts",
+        "NLS.ZakharovShabat.appendixG_first_column_square",
+        "NLS.ZakharovShabat.appendixG_gradient_matrix_factorization",
+        "NLS.ZakharovShabat.appendixG_hasDerivAt_classicalFirstBornVector",
+        "NLS.ZakharovShabat.appendixG_mixed_column_product",
+        "NLS.ZakharovShabat.appendixG_remainder_derivative_duhamel",
+        "NLS.ZakharovShabat.appendixG_second_column_square",
+        "NLS.ZakharovShabat.appendixG_source_Born_derivative_unit",
+        "NLS.ZakharovShabat.appendixG_source_remainder_H1_whole_sequence",
+        "NLS.ZakharovShabat.appendixG_source_remainder_uniform_time_decay",
+        "NLS.ZakharovShabat.classicalAntiDiscriminantGradientRemainder_eq_sum",
+        "NLS.ZakharovShabat.classicalAntiDiscriminantGradientRemainder_lattice_mul_I",
+        "NLS.ZakharovShabat.classicalDirichletDualSolution_of_root",
+        "NLS.ZakharovShabat.classicalDirichletNormalization_canonicalRoot_ne_zero",
+        "NLS.ZakharovShabat.classicalDirichletNormalization_ne_zero_of_simple",
+        "NLS.ZakharovShabat.classicalDirichletNormalizedGradient_eq_characteristic_quotient",
+        "NLS.ZakharovShabat.classicalDiscriminantGradient_eq_endpoint_sum",
+        "NLS.ZakharovShabat.classicalDiscriminantGradient_eq_remainder_sum",
+        "NLS.ZakharovShabat.classicalHermitianCorrectedFreeGradientMatrix_lattice",
+        "NLS.ZakharovShabat.classicalHermitianRemainderOperator_eq_matrix",
+        "NLS.ZakharovShabat.classicalHermitianRemainder_duhamel",
+        "NLS.ZakharovShabat.classicalNormalizedHermitianFirstBorn_eq",
+        "NLS.ZakharovShabat.classicalSolutionRemainder_fst_duhamel",
+        "NLS.ZakharovShabat.classicalSolutionRemainder_snd_duhamel",
+        "NLS.ZakharovShabat.conjugate_exponent_gt_gradient_threshold",
+        "NLS.ZakharovShabat.continuous_l2PeriodicFundamentalMatrix_joint",
+        "NLS.ZakharovShabat.exists_classicalDiscriminantGradient_discSup_uniform_memlp",
+        "NLS.ZakharovShabat.exists_classicalEndpointGradient_fourier_uniform_memlp",
+        "NLS.ZakharovShabat.exists_classicalEndpointGradient_shifted_fourier_uniform_memlp",
+        "NLS.ZakharovShabat.exists_classicalGradient_fourier_uniform_memlp_of_time_bounds",
+        "NLS.ZakharovShabat.exists_classicalShiftedFree_fourier_memlp_majorant",
+        "NLS.ZakharovShabat.exists_classicalSobolevRemainder_fourier_memlp_majorant",
+        "NLS.ZakharovShabat.exists_classicalSobolev_contour_discriminant_quotient_bound",
+        "NLS.ZakharovShabat.exists_fundamentalFourier_summability_exponents",
+        "NLS.ZakharovShabat.exists_global_sourceG7_below_two_physical_complex",
+        "NLS.ZakharovShabat.exists_global_sourceG7_canonical_midpoint_memlp",
+        "NLS.ZakharovShabat.exists_global_sourceG7_l2_memlp",
+        "NLS.ZakharovShabat.exists_global_source_midpoint_contour_independent",
+        "NLS.ZakharovShabat.exists_global_source_midpoint_fderiv_sobolev_memlp",
+        "NLS.ZakharovShabat.exists_global_source_midpoint_gradient_contour",
+        "NLS.ZakharovShabat.exists_local_source_midpoint_gradient_tail_contour",
+        "NLS.ZakharovShabat.exists_sourceMidpointContourIntegrand_sobolev_uniform_memlp",
+        "NLS.ZakharovShabat.exists_sourceSimpleSpectralDomain_within",
+        "NLS.ZakharovShabat.fderiv_canonicalDirichletRoot_eq_normalized_integral",
+        "NLS.ZakharovShabat.fderiv_classicalDirichletRoot_eq_normalized_integral",
+        "NLS.ZakharovShabat.fderiv_classicalEndpoint_eq_gradient_integral",
+        "NLS.ZakharovShabat.hasDerivAt_classicalFreeVector",
+        "NLS.ZakharovShabat.intervalHermitianFirstBornOperator_weighted_le_interval_H1",
+        "NLS.ZakharovShabat.intervalHermitianFirstBornOperator_weighted_le_local_H1",
+        "NLS.ZakharovShabat.norm_classicalEndpointGradientRemainder_shifted_le",
+        "NLS.ZakharovShabat.norm_classicalFreeFrequencyDifference_le",
+        "NLS.ZakharovShabat.norm_classicalSobolevRemainderFourierCoefficients_interpolate",
+        "NLS.ZakharovShabat.norm_deriv_classicalSolutionRemainder_weighted_le",
+        "NLS.ZakharovShabat.norm_endpointGradientPolynomial_sub_le",
+        "NLS.ZakharovShabat.sourceCorollaryG4",
+        "NLS.ZakharovShabat.sourceCorollaryG6_antiDiscriminant_corrected",
+        "NLS.ZakharovShabat.sourceCorollaryG6_discriminant",
+        "NLS.ZakharovShabat.sourceG4_remainder_operator_memlp",
+        "NLS.ZakharovShabat.sourceG4_shiftedFree_operator_memlp",
+        "NLS.ZakharovShabat.sourceG5_shifted_gradient_uniform_majorant",
+        "NLS.ZakharovShabat.sourceG6AntiDiscriminantCoefficients_norm_rpow",
+        "NLS.ZakharovShabat.sourceG6DiscriminantCoefficients_norm_rpow",
+        "NLS.ZakharovShabat.sourceG7SignedCoordinates_fst",
+        "NLS.ZakharovShabat.sourceG7SignedCoordinates_snd",
+        "NLS.ZakharovShabat.sourceG7_free_signed_coefficients",
+        "NLS.ZakharovShabat.sourceLemma10_2",
+        "NLS.ZakharovShabat.sourceLemmaG1",
+        "NLS.ZakharovShabat.sourceLemmaG2_classical_remainder_unit",
+        "NLS.ZakharovShabat.sourceLemmaG2_remainder_unit",
+        "NLS.ZakharovShabat.sourceLemmaG3_H1",
+        "NLS.ZakharovShabat.sourceLemmaG3_fourier_decay",
+        "NLS.ZakharovShabat.sourceLemmaG3_l2_decay",
+        "NLS.ZakharovShabat.sourceLemmaG3_shiftedFree_decay",
+        "NLS.ZakharovShabat.sourceLemmaG3_shiftedFree_l2_decay",
+        "NLS.ZakharovShabat.sourceLemmaG3_weighted_remainder_derivative",
+        "NLS.ZakharovShabat.sourceLemmaG5_corrected",
+        "NLS.ZakharovShabat.sourceLemmaG5_shifted_corrected",
+        "NLS.ZakharovShabat.sourceLemmaG7_all_finite_corrected",
+        "NLS.ZakharovShabat.sourceLemmaG7_corrected_with_coefficients",
+        "NLS.ZakharovShabat.source_midpoint_fderiv_eq_operator_contour"
+      ],
+      "declaration_inventory_count": 44999,
+      "qualification": "The forty-one ordered Appendix G groups comprise 26 matched, 13 directly corrected and two contextual passages. No partial or pending mathematical group remains within this local comparison. The explicit integral H1 norm and interval-length constants are adopted directly; the unspecified source convention is not identified. The comparison retains the finite exponent ranges, signed free waves, actual physical gradients, source-ball and common-neighborhood quantifiers, and finite spectral heads. The gradient summability proof uses cubic stability and time interpolation; the printed Young-convolution route is not claimed as its implementation. G.7 provides pointwise H1-source summability on a common complex neighborhood for each finite p>1, not a uniform bound on every H1 ball. The precise 2014 reference comparison and broader dissertation completeness remain separate. Historical refutations are unchanged; no new refutations are added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          135,
+          136,
+          137,
+          138
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-g-ordered-135.png": "3aa9ddd5b56601e03dd422fbed9d444a6977c4270c93cb6fb4fff5408efbee6a",
+          "work/tmp/pdfs/appendix-g-ordered-136.png": "6ee80e78324217ac2dd95f12b01dba89b8022776a69d728fe8ecbe91b2405edb",
+          "work/tmp/pdfs/appendix-g-ordered-137.png": "78c63bdefcfcb05a2a44f7f1da21db149137183d278db3fc763ccca490c92db9",
+          "work/tmp/pdfs/appendix-g-ordered-138.png": "2107406ce69dacef0417629d9a05f2d49c82987ac3f6c20495f09f8226b8b336"
+        }
+      },
+      "preceding_review_hash": "be174e910a041b9f4e69015289f7b2b8032a89cad64c5d88fc177bd73648e2cc",
+      "reconciled_previous_reviews": {
+        "work/AppendixGSourceComparison-2026-10-27.json": "24010fb74ac5b3ce926b07676e2ad9a3bd64b521a22c342e8b5a172cb36c1143",
+        "work/AppendixGBornDerivativeSourceComparison-2026-11-02.json": "2d4370d4d79a9dfde136f54a12fd8520e3e3a3f8b359300cb3ee5b997016aad3",
+        "work/AppendixGWholeSequenceH1SourceComparison-2026-11-02.json": "16b116d1e7c2c2c3849f85e6f23be1e05470694abef9e8360c0a8cc116f88cb4",
+        "work/AppendixGFreeGradientSourceComparison-2026-11-02.json": "be174e910a041b9f4e69015289f7b2b8032a89cad64c5d88fc177bd73648e2cc"
+      },
+      "validation_lean_sources": {
+        "files": 4906,
+        "sha256": "f2ae956a461e480705e6c70c6c98752b18939c026fed7096311a50b1f44419e9"
+      },
+      "validation_reused_from_commit": "8cfab2712077bdc9296191d8d321ea724e8eb0f6",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 10426,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixGFreeGradientFullCheck.log",
+        "log_sha256": "6691583fa9d9d258c6eae077105d741d03a7c4738936015449d0f6079de23232"
+      },
+      "source_record_sha256": "51380984413351381b1fdcb8d48ada2041b292bec5e761d90d1cd5e473585cd2"
     }
   }
 }

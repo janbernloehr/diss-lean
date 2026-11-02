@@ -5,8 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix G free-mode and gradient formulas](coverage/APPENDIX_G.md). Literal free-mode Fourier integrals and uniform bounds; actual terminal-matrix gradient factorization and three exact quadratic column expansions. Seven positive proofs.
-The [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: the [ordered Appendix G comparison](coverage/APPENDIX_G_ASSERTIONS.md) records 26 matched groups, 13 direct corrections and two contextual passages. Explicit norms, signed waves, actual physical gradients and source quantifiers retain their qualifications. Appendix H is next; the [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

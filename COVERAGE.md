@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Appendix G, pp.135–138 | [Ordered comparison](coverage/APPENDIX_G_ASSERTIONS.md) | 41 groups: 26 matched, 13 corrected and two contextual. Explicit norm constants, signed free modes, physical gradients and source quantifiers; alternative-proof qualifications retained. No new refutations. |
 | Appendix G free-mode and gradient formulas, pp.135–137 | [Positive proofs](coverage/APPENDIX_G.md) | Literal free-mode Fourier integrals and uniform bounds; actual terminal-matrix gradient factorization and three exact quadratic column expansions. Seven positive proofs. No new refutations. |
 | Appendix G whole-sequence remainder bounds, pp.135–137 | [Positive proofs](coverage/APPENDIX_G.md) | Physical H1 bound at all frequencies and every index of a fixed sequence; common-cutoff inverse-index operator remainder bound at every unit-interval time. Four positive proofs. No new refutations. |
 | Appendix G Born and Volterra derivatives, pp.135–137 | [Positive proofs](coverage/APPENDIX_G.md) | Exact Born derivative and half-weighted endpoints; explicit interval-length and periodic source constants; actual operator norm and differentiated Volterra identity. Twelve positive proofs. No new refutations. |

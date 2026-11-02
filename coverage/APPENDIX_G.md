@@ -1,5 +1,21 @@
 # Appendix G: current source audit
 
+## Ordered source comparison
+
+The [ordered Appendix G comparison](APPENDIX_G_ASSERTIONS.md) covers 41 groups on pp.135–138: 26 matched, 13 directly corrected and two contextual. No partial or pending groups remain in this local ledger.
+
+The implemented estimates use an explicit integral H1 norm and corrected interval-length constants. The Born and Volterra identities retain the actual free-mode signs. The whole-sequence H1 bound includes finite initial frequencies; the uniform-time inverse-index estimate has a common cutoff.
+
+The gradient and spectral estimates retain finite exponent ranges, signed coordinates, actual physical derivatives and common source neighborhoods. Cubic stability and time interpolation provide the gradient summability proof. G.7 retains pointwise source summability on a common complex neighborhood for each finite p>1.
+
+This documentation step adds no Lean proof or refutation.
+
+The unchanged Lean snapshot reuses the successful full check at commit 8cfab2712077bdc9296191d8d321ea724e8eb0f6: 8,644 build jobs, 7,729 public examples and an axiom audit of 44,999 NLS declarations. The check has 21 inherited warnings and no new warnings. All 92 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Appendix H. The [broader completion qualifications](COMPLETENESS.md), including the precise 2014 construction comparison, remain.
+
+Earlier entries retain their historical scope; the adopted corrections above govern this comparison.
+
 ## Appendix G free-mode and gradient formulas
 
 The [free-mode comparison](../NLS/Fourier/AppendixGFreeFourier.lean) identifies the coefficient difference with the literal Fourier integral. Its Fourier-Lebesgue norm is uniformly bounded near every signed pi-lattice point for q>1, including infinity. Its L2 norm is bounded by twice the displacement from a real reference when that displacement is at most one.
