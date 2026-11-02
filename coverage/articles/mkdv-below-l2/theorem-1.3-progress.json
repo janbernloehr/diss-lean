@@ -94,10 +94,34 @@
       "source": "Cross-exponent physical extension compatibility",
       "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence_eq_of_same_distributions",
       "scope": "For equal real physical distributions, the candidate sequences agree as elements of every common finite weighted target. The chosen actual moment atlas supplies all raw coordinates."
+    },
+    {
+      "source": "Theorem 5.4(ii), refined actual-action remainder dependency",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_fourthActionRemainder",
+      "scope": "For the actual atlas at every finite p>1, on one connected real-containing complex domain, the index-normalized candidate plus 12πn times the actual spectral action has fixed ℓ^(p/3)+ℓ^(1+) components. Local neighborhoods and both maps precede q; bounds hold locally uniformly at every complex source. Quasi-normed p/3<1 is retained."
+    },
+    {
+      "source": "Theorem 1.3, physical refined candidate asymptotic",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_asymptotic",
+      "scope": "The same chosen physical chart supports weighted analyticity and the fixed mixed remainder, with actual actions equal to products of the chosen Birkhoff coordinates. Exact displayed reconstruction holds for every n≠0, uniformly on the selected physical neighborhood. Both component maps precede every finite q>1."
+    },
+    {
+      "source": "Zero-coordinate interpretation of the asymptotic n factor",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_remainder",
+      "scope": "Exact all-index reconstruction includes an explicit singleton term at n=0, equal to the actual candidate zero coordinate. This does not assert general complex zero-frequency vanishing. It implies the printed asymptotic at infinity."
+    },
+    {
+      "source": "Corollary 3.5 and Lemma 5.2, quartic Laurent coefficient",
+      "declaration": "NLS.ComplexAnalysis.exists_phase_fourth_analytic_remainder",
+      "scope": "Actual analytic inversion germ with its first four physical Taylor coefficients. The quartic Laurent part is z^4−2H1 z^2−H2 z−(H3−3H1²)/2−(H4−6H1H2)/(4z), with an analytic z^(-2) remainder; the uniform exterior error bound is also verified."
+    },
+    {
+      "source": "Lemma 5.2, physical quartic Hamiltonian contour",
+      "declaration": "NLS.ZakharovShabat.exists_sourceFullAbelian_hamiltonian_fourth_contour_of_chart",
+      "scope": "Every real finite-gap source and every actual ambient spectral chart: H4−6H1H2 equals (2i/π) times the exterior F^4 contour on every sufficiently large circle. The independently defined physical Hamiltonians supply all Taylor coefficients. No frequency or action-derivative identity is assumed."
     }
   ],
   "remaining": [
-    "Identify the analytic weighted candidate with the independently defined physical normalized H4 action derivative, with exact constants.",
-    "Prove the refined remainder using actual spectral actions, with fixed ℓ^(p/3)+ℓ^(1+) components and locally uniform bounds; state the asymptotic at nonzero indices without silently asserting vanishing of the general complex zero mode."
+    "Identify the analytic refined candidate with the independently defined physical normalized H4 action derivative. The quartic contour value is verified; its action derivative, conversion to weighted moments, and closed-action endpoint still require proof."
   ]
 }

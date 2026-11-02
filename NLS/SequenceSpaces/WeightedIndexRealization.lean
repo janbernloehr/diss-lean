@@ -1,5 +1,5 @@
 import NLS.SequenceSpaces.WeightedAnalyticRealization
-import NLS.SequenceSpaces.SobolevEmbedding
+import NLS.SequenceSpaces.PuncturedLattice
 import NLS.SequenceSpaces.SandwichMajorant
 
 /-! # Weighted realization of an indexed sequence plus a bounded error
@@ -65,6 +65,43 @@ theorem exists_negOne_weighted_of_bounded_error
     exact lp.norm_mono (x := WeightedCoeff.weightEquiv (Weight.sobolev (-1)) r a)
       (y := B) (zero_lt_one.trans hr1).ne' hpoint
   apply ha.trans
+  apply (norm_add_le _ _).trans_eq
+  simp only [norm_smul,Complex.norm_real,Real.norm_of_nonneg (norm_nonneg c),Real.norm_of_nonneg hC,
+    norm_magnitude]
+  rfl
+
+/-- Dividing an indexed sequence plus a bounded error by its index
+retains an ℓr realization for r > 1, with value zero at the origin. -/
+theorem exists_index_quotient_of_bounded_error
+    {r : ℝ≥0∞} [Fact (1 ≤ r)] (hr1 : 1 < r)
+    (f : ℤ → ℂ) (b : Coeff r) (c : ℂ) (C : ℝ) (hC : 0 ≤ C)
+    (hf : ∀ n : ℤ, ‖f n-c*(n:ℂ)*b n‖ ≤ C) :
+    ∃ a : Coeff r, (∀ n, a n = f n/(n:ℂ)) ∧
+      ‖a‖ ≤ ‖c‖*‖b‖+C*‖puncturedLattice r hr1‖ := by
+  let d := puncturedLattice r hr1
+  let B := (‖c‖:ℂ) • magnitude b+(C:ℂ) • magnitude d
+  have hB (n : ℤ) : ‖B n‖ = ‖c‖*‖b n‖+C*‖d n‖ := by
+    simp only [B,lp.coeFn_add,Pi.add_apply,lp.coeFn_smul,Pi.smul_apply,smul_eq_mul,magnitude_apply,
+      ← Complex.ofReal_mul,← Complex.ofReal_add,Complex.norm_real]
+    exact Real.norm_of_nonneg (by positivity)
+  have hpoint (n : ℤ) : ‖f n/(n:ℂ)‖ ≤ ‖B n‖ := by
+    by_cases hn : n=0
+    · subst n
+      simp only [Int.cast_zero,div_zero,norm_zero]
+      exact norm_nonneg _
+    · have hnC : (n:ℂ) ≠ 0 := by exact_mod_cast hn
+      have he : f n/(n:ℂ) = c*b n+(f n-c*(n:ℂ)*b n)/(n:ℂ) := by
+        field_simp
+        ring
+      rw [he,hB]
+      apply (norm_add_le _ _).trans
+      rw [norm_mul,norm_div]
+      apply add_le_add le_rfl
+      simpa only [d,puncturedLattice_apply,if_neg hn,norm_inv,div_eq_mul_inv] using
+        div_le_div_of_nonneg_right (hf n) (norm_nonneg (n:ℂ))
+  let a : Coeff r := ⟨fun n => f n/(n:ℂ),(lp.memℓp B).mono' hpoint⟩
+  refine ⟨a,fun _ => rfl,?_⟩
+  apply (lp.norm_mono (x := a) (y := B) (zero_lt_one.trans hr1).ne' hpoint).trans
   apply (norm_add_le _ _).trans_eq
   simp only [norm_smul,Complex.norm_real,Real.norm_of_nonneg (norm_nonneg c),Real.norm_of_nonneg hC,
     norm_magnitude]

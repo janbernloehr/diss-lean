@@ -1,4 +1,4 @@
-import NLS.Articles.MKdVBelowL2.FourthMomentSequence
+import NLS.Articles.MKdVBelowL2.FourthMomentActionRemainder
 import NLS.Articles.MKdVBelowL2.CompatibleBirkhoffFamily
 
 /-! # Physical adapter for the convergent fourth-frequency candidate
@@ -36,12 +36,14 @@ structure FourthMomentChart (hp : p ≠ ⊤) (hp1 : 1 < p) where
     ENNReal.ofReal (p.toReal/2) ≤ r →
     (∀ ψ ∈ domain, ∀ n, (fourthFrequencySequence atlas r ψ).val n = fourthFrequencyCandidate atlas n ψ) ∧
       AnalyticOnNhd ℂ (fourthFrequencySequence atlas r) domain
+  remainder : ∀ φ ∈ domain, ∃ T : Set (CoeffPair p), IsOpen T ∧ φ ∈ T ∧ T ⊆ domain ∧
+    FourthActionRemainderData atlas T
 
 /-- All chart inputs are constructed; no spectral or convergence premise remains. -/
 theorem exists_fourthMomentChart (hp : p ≠ ⊤) (hp1 : 1 < p) :
     Nonempty (FourthMomentChart hp hp1) := by
-  obtain ⟨W,V,_,_,s,hs,A,U,hU,_,hreal,hUV,hconv,han,hseq⟩ := exists_fourthMoment_sequenceAtlas hp hp1
-  exact ⟨⟨W,V,s,A,hs,U,hU,hreal,fun ψ hψ => (hUV hψ).1,hconv,han,hseq⟩⟩
+  obtain ⟨W,V,_,_,s,hs,A,U,hU,_,hreal,hUV,hconv,han,hseq,hrem⟩ := exists_fourthMoment_refinedAtlas hp hp1
+  exact ⟨⟨W,V,s,A,hs,U,hU,hreal,fun ψ hψ => (hUV hψ).1,hconv,han,hseq,hrem⟩⟩
 
 /-- One actual moment chart at every finite exponent greater than one. -/
 def fourthMomentChart (hp : p ≠ ⊤) (hp1 : 1 < p) : FourthMomentChart hp hp1 :=

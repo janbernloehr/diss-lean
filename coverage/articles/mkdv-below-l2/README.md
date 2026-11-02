@@ -11,8 +11,8 @@ checked, including a constructed uniform lower bound for the actual
 comparison period. Proposition 4.1's all-finite-p root bootstrap is now
 verified. The full Lemma 5.3 moment bounds are checked for every finite p≥2.
 The candidate is now analytic into the weighted targets of Theorem 1.3.
-Physical H₄ derivative identification and the refined action remainder
-remain open.
+The refined actual-action remainder is checked on the same physical
+chart. Physical H₄ derivative identification remains open.
 See [the current progress record](PROGRESS.md) and the
 [Theorem 1.2 clause map](theorem-1.2.json).
 
@@ -236,9 +236,22 @@ before r. The inverse-bracket realization retains the raw zero coordinate.
 `physicalFourthFrequencySequence_real_analytic` transports this to the full
 physical real Banach source. Thus r=p/2 is available at p>2, and every finite
 r>1 at p=2. The weighted sequences agree for the same real distributions
-at all common target exponents. These are candidate assertions: equality
-with the physical normalized H₄ derivative and the refined action remainder
-are still open.
+at all common target exponents. The refined candidate remainder is now checked as well.
+`FourthMomentActionRemainder` reuses the established unweighted actual-action
+correction and the bounded weighted-sum difference. Dividing by the index
+with a zero fallback gives simultaneous refined bounds and hence one fixed
+ℓ^(p/3)+ℓ^(1+) decomposition. `PhysicalFourthFrequencyRemainder` transports
+both maps to the same physical chart and uses the actual products of the
+chosen Birkhoff coordinates as actions. Its nonzero-index reconstruction is
+exact; the all-index version retains the actual zero coordinate explicitly.
+Equality with the physical normalized H₄ action derivative remains open.
+
+`QuarticInversionRemainder` and `QuarticInversionContour` prove the quartic
+Laurent coefficient and its exact contour period. The source theorem
+`exists_sourceFullAbelian_hamiltonian_fourth_contour_of_chart` identifies
+the exterior contour with the independently defined physical H₄−6H₁H₂,
+with normalization 2i/π. This is the physical-value input to Lemma 5.2;
+its action derivative and conversion to the weighted moments remain open.
 
 ## Outstanding dependencies and integration order
 
@@ -273,10 +286,10 @@ read-only, with new outputs under this checkout's private
 `ELAN_HOME`, `LEAN_BIN` and `MKDV_BUILD_ROOT` overrides; it never invokes Lake
 or writes through the imported symlinks.
 
-The expanded focused checker covers 59 new article/shared modules and the
+The expanded focused checker covers 64 new article/shared modules and the
 consumed smooth hierarchy foundations, with `autoImplicit=false` and
 `warningAsError=true`. `AxiomAudit.lean` audits all explicitly named new
-and consumed declarations (238 total), including the main Theorem 1.2 declarations;
+and consumed declarations (254 total), including the main Theorem 1.2 declarations;
 only `propext`, `Classical.choice` and `Quot.sound` occur. No new axiom,
 sorry or disabled linter was introduced. `validation.txt` captures the checks.
 This is focused validation, not a full repository build or completed article

@@ -1,6 +1,9 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
 ComplexAnalysis/RelativeProductComparison: checked
 ComplexAnalysis/RootPeriodComparison: checked
+ComplexAnalysis/QuarticInversionRemainder: checked
+ComplexAnalysis/QuarticInversionContour: checked
+ZakharovShabat/SourceFullAbelianFourthHamiltonianContour: checked
 ZakharovShabat/SourceSingleRootRelativeComparison: checked
 ZakharovShabat/SourcePsiCriticalRootComparison: checked
 ZakharovShabat/SourceCriticalRelativeComparison: checked
@@ -57,7 +60,9 @@ Articles/MKdVBelowL2/FourthMomentSummability: checked
 Articles/MKdVBelowL2/FourthMomentSharpSummability: checked
 Articles/MKdVBelowL2/FourthMomentAnalytic: checked
 Articles/MKdVBelowL2/FourthMomentSequence: checked
+Articles/MKdVBelowL2/FourthMomentActionRemainder: checked
 Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate: checked
+Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -462,3 +467,29 @@ Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate: checked
 'NLS.Articles.MKdVBelowL2.physicalFourthFrequencySequence_eq_of_same_distributions' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'NLS.ComplexAnalysis.phaseFourthLaurentPart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ComplexAnalysis.exists_phase_fourth_analytic_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ComplexAnalysis.exists_phase_fourth_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ComplexAnalysis.exists_phase_fourth_contour' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.exists_sourceFullAbelian_finiteGap_fourth_contour' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.exists_sourceFullAbelian_finiteGap_hamiltonian_fourth_contour' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.exists_sourceFullAbelian_hamiltonian_fourth_contour_of_chart' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthActionRemainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthActionRemainder_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthActionRemainder_reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.FourthActionRemainderData' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_fourthActionRemainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_fourthMoment_refinedAtlas' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_asymptotic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Coeff.exists_index_quotient_of_bounded_error' depends on axioms: [propext, Classical.choice, Quot.sound]

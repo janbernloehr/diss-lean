@@ -3,6 +3,9 @@
   "modules_checked": [
     "ComplexAnalysis/RelativeProductComparison",
     "ComplexAnalysis/RootPeriodComparison",
+    "ComplexAnalysis/QuarticInversionRemainder",
+    "ComplexAnalysis/QuarticInversionContour",
+    "ZakharovShabat/SourceFullAbelianFourthHamiltonianContour",
     "ZakharovShabat/SourceSingleRootRelativeComparison",
     "ZakharovShabat/SourcePsiCriticalRootComparison",
     "ZakharovShabat/SourceCriticalRelativeComparison",
@@ -59,7 +62,9 @@
     "Articles/MKdVBelowL2/FourthMomentSharpSummability",
     "Articles/MKdVBelowL2/FourthMomentAnalytic",
     "Articles/MKdVBelowL2/FourthMomentSequence",
-    "Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate"
+    "Articles/MKdVBelowL2/FourthMomentActionRemainder",
+    "Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate",
+    "Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder"
   ],
   "strict_options": [
     "autoImplicit=false",
@@ -1255,6 +1260,86 @@
       "propext",
       "Classical.choice",
       "Quot.sound"
+    ],
+    "NLS.ComplexAnalysis.phaseFourthLaurentPart": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ComplexAnalysis.exists_phase_fourth_analytic_remainder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ComplexAnalysis.exists_phase_fourth_error_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ComplexAnalysis.exists_phase_fourth_contour": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.exists_sourceFullAbelian_finiteGap_fourth_contour": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.exists_sourceFullAbelian_finiteGap_hamiltonian_fourth_contour": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.exists_sourceFullAbelian_hamiltonian_fourth_contour_of_chart": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthActionRemainder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthActionRemainder_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthActionRemainder_reconstruct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.FourthActionRemainderData": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_fourthActionRemainder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_fourthMoment_refinedAtlas": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_remainder": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_asymptotic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Coeff.exists_index_quotient_of_bounded_error": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
     ]
   },
   "allowed_axioms": [
@@ -1262,7 +1347,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Focused strict build of 59 new and consumed modules; transitive audit of 238 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Focused strict build of 64 new and consumed modules; transitive audit of 254 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",

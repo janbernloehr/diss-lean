@@ -42,6 +42,9 @@ cd "$project_dir"
 modules=(
   ComplexAnalysis/RelativeProductComparison
   ComplexAnalysis/RootPeriodComparison
+  ComplexAnalysis/QuarticInversionRemainder
+  ComplexAnalysis/QuarticInversionContour
+  ZakharovShabat/SourceFullAbelianFourthHamiltonianContour
   ZakharovShabat/SourceSingleRootRelativeComparison
   ZakharovShabat/SourcePsiCriticalRootComparison
   ZakharovShabat/SourceCriticalRelativeComparison
@@ -98,7 +101,9 @@ modules=(
   Articles/MKdVBelowL2/FourthMomentSharpSummability
   Articles/MKdVBelowL2/FourthMomentAnalytic
   Articles/MKdVBelowL2/FourthMomentSequence
+  Articles/MKdVBelowL2/FourthMomentActionRemainder
   Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate
+  Articles/MKdVBelowL2/PhysicalFourthFrequencyRemainder
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"

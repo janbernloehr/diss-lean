@@ -358,3 +358,49 @@ only `propext`, `Classical.choice` and `Quot.sound`. No holes, new axioms,
 disabled linters or increased heartbeat limits were introduced. Validation
 uses the canonical compiled dependencies read-only and is not a fresh
 whole-repository rebuild.
+
+
+## Ninth checkpoint: refined physical remainder and the H₄ contour value
+
+The refined candidate action remainder is now verified on the same physical
+chart as all weighted analytic targets. `exists_fourthActionRemainder` uses
+the checked unweighted correction ν_n+2I_n and the bounded difference from
+6πnν_n. The shared index-quotient realization gives simultaneous bounds in
+every finite ℓr with r>1 and r≥p/3. A fixed mixed decomposition then provides
+one ℓ^(p/3) component and one genuine ℓ^(1+) component, including p/3<1.
+The local source neighborhood and both component maps precede q.
+
+`exists_fourthMoment_refinedAtlas` constructs all domains, roots, moments,
+analytic maps and remainder bounds together. The chosen physical chart now
+uses this construction. `physicalFourthFrequencyCandidate_asymptotic`
+proves the exact nonzero-index formula with the actual actions represented
+by products of the same Theorem 1.2 Birkhoff coordinates. The all-index
+reconstruction in `physicalFourthFrequencyCandidate_remainder` explicitly
+retains the actual zero-coordinate singleton. No zero-frequency vanishing
+is imposed on a general complex source.
+
+The physical H₄ identification has also advanced. The quartic inversion
+phase has Laurent part
+z⁴ − 2H₁z² − H₂z − (H₃−3H₁²)/2 − (H₄−6H₁H₂)/(4z).
+The first four Taylor coefficients come from the independently defined
+physical finite-gap hierarchy. The remainder factors as z^(-2) times an
+analytic inverse-frequency germ, with a uniform exterior bound.
+The exact quartic contour is −(πi/2)(H₄−6H₁H₂); hence the physical
+Hamiltonian combination is (2i/π) times that contour. This is verified
+for every actual ambient spectral chart at any real finite-gap source.
+It does not yet identify the H₄ action derivative with the candidate.
+
+Theorem 1.2 remains verified. Theorems 1.1 and 1.3 remain open. For Theorem
+1.3 the remaining gap is the independently defined physical H₄ derivative
+identity, including the closed-action endpoint. The quartic contour value,
+all candidate analytic targets and the refined actual-action remainder are
+now available for that identification.
+
+
+Strict validation for the ninth checkpoint passed: all 64 focused modules
+compiled with `autoImplicit=false` and `warningAsError=true`. The transitive
+audit of 254 named declarations exactly matched `AxiomAudit.lean` and used
+only `propext`, `Classical.choice` and `Quot.sound`. No holes, new axioms,
+disabled linters or increased heartbeat limits were introduced. Validation
+uses the canonical compiled dependencies read-only and is not a fresh
+whole-repository rebuild.
