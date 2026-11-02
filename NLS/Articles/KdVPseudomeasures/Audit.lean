@@ -1,3 +1,5 @@
+import NLS.FunctionalAnalysis.PencilRootChains
+import NLS.ComplexAnalysis.PoweredAnalyticJet
 import NLS.FunctionalAnalysis.ResolventRootSpace
 import NLS.FunctionalAnalysis.TwoDimensionalDeterminant
 import NLS.SequenceSpaces.SobolevConvolutionBounds
@@ -42,6 +44,8 @@ import NLS.KdV.PseudomeasureZeroCount
 import NLS.KdV.PseudomeasureResolvent
 import NLS.KdV.PseudomeasureSpectrum
 import NLS.KdV.PseudomeasureRootSpaces
+import NLS.KdV.SingularHillChains
+import NLS.KdV.PseudomeasureChainJets
 import NLS.KdV.PseudomeasureSpectralLipschitz
 import NLS.KdV.PseudomeasureRootSeparation
 import NLS.Fourier.PeriodicPseudomeasureWeakStar
@@ -70,9 +74,31 @@ import NLS.Articles.KdVPseudomeasures.SpectralCoefficients
 import NLS.Articles.KdVPseudomeasures.SpectralResolvent
 import NLS.Articles.KdVPseudomeasures.SpectralReconstruction
 import NLS.Articles.KdVPseudomeasures.SpectralMultiplicity
+import NLS.Articles.KdVPseudomeasures.SpectralChainJets
 
 /-! Transitive axiom audit of every public article dependency. -/
 
+#print axioms NLS.FunctionalAnalysis.pencilChainEndpoint
+#print axioms NLS.FunctionalAnalysis.pencilChainEndpoint_zero
+#print axioms NLS.FunctionalAnalysis.pencilChainEndpoint_succ
+#print axioms NLS.FunctionalAnalysis.pencilChainEndpoint_factor
+#print axioms NLS.FunctionalAnalysis.pencilChainSpace
+#print axioms NLS.FunctionalAnalysis.mem_pencilChainSpace_succ
+#print axioms NLS.FunctionalAnalysis.pencilChainEndpoint_mem
+#print axioms NLS.FunctionalAnalysis.exists_pencilChain_of_mem_rootSpace
+#print axioms NLS.FunctionalAnalysis.pencilChainEndpoint_injective
+#print axioms NLS.FunctionalAnalysis.pencilChainToRootSpace
+#print axioms NLS.FunctionalAnalysis.pencilChainRootEquiv
+#print axioms NLS.FunctionalAnalysis.pencilChainRootEquiv_apply
+#print axioms NLS.FunctionalAnalysis.finrank_pencilChainSpace
+#print axioms NLS.FunctionalAnalysis.pencilChainPolynomial
+#print axioms NLS.FunctionalAnalysis.pencilChainPolynomial_zero
+#print axioms NLS.FunctionalAnalysis.pencilChainPolynomial_succ
+#print axioms NLS.FunctionalAnalysis.pencilChainPolynomial_pencil
+#print axioms NLS.ComplexAnalysis.iteratedDeriv_pow_smul_zero
+#print axioms NLS.ComplexAnalysis.iteratedDeriv_eq_zero_of_powered_germ
+#print axioms NLS.ComplexAnalysis.iteratedDeriv_chainPolynomial
+#print axioms NLS.ComplexAnalysis.chainPolynomial_eq_zero_of_powered_germ
 #print axioms NLS.FunctionalAnalysis.mem_genEigenspace_succ_iff
 #print axioms NLS.FunctionalAnalysis.genEigenspace_le_range_of_ne_zero
 #print axioms NLS.FunctionalAnalysis.mem_genEigenspace_apply_iff_of_injective
@@ -593,6 +619,26 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicity
 #print axioms NLS.KdV.endpointHillAlgebraicMultiplicity_pos_iff
 #print axioms NLS.KdV.endpointHillHminusOne_H1EndpointInclusion
 #print axioms NLS.KdV.endpointHillRootSpaceTop_regular
+#print axioms NLS.KdV.singularHillChainSpace
+#print axioms NLS.KdV.singularHillChainRootEquiv
+#print axioms NLS.KdV.finrank_singularHillChainSpace
+#print axioms NLS.KdV.analyticAt_singularHillChainPolynomial
+#print axioms NLS.KdV.singularHillChainPolynomial_pencil
+#print axioms NLS.KdV.finiteDimensional_endpointHillChainSpace
+#print axioms NLS.KdV.eventually_finrank_endpointHillChainSpace
+#print axioms NLS.KdV.endpointHillChainPolynomial_forcing
+#print axioms NLS.KdV.singularHillChainCoordinates
+#print axioms NLS.KdV.endpointHillChainForcing
+#print axioms NLS.KdV.endpointHillChainReducedRemainder
+#print axioms NLS.KdV.endpointHillChainReconstructionRemainder
+#print axioms NLS.KdV.analyticAt_endpointHillChainReducedRemainder
+#print axioms NLS.KdV.analyticAt_endpointHillChainReconstructionRemainder
+#print axioms NLS.KdV.eventually_shift_mem_reducedHillStrip
+#print axioms NLS.KdV.endpointHillChain_reduced_germ
+#print axioms NLS.KdV.endpointHillChain_reconstruction_germ
+#print axioms NLS.KdV.endpointHillChain_reduced_derivatives_zero
+#print axioms NLS.KdV.endpointHillChain_reconstruction_derivatives_zero
+#print axioms NLS.KdV.endpointHillChainCoordinates_injective
 #print axioms NLS.KdV.negativeShiftedNorm_weightedReducedHillResolvent_le
 #print axioms NLS.KdV.summable_unshiftedEndpointHill_terms
 #print axioms NLS.KdV.unshiftedEndpointHillPerturbation_sub
@@ -817,3 +863,9 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicity
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillRootSpace_eq_resolvent
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_resolvent
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillRootSpaceTop_regular
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillChainRootEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.finiteDimensional_sourceHillChainSpace
+#print axioms NLS.Articles.KdVPseudomeasures.eventually_finrank_sourceHillChainSpace
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillChainCoordinates_injective
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillChain_reduced_derivatives_zero
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillChain_reconstruction_germ

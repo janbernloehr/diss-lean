@@ -50,7 +50,11 @@
       "sourceHillRootSpaceTop_regular",
       "analyticAt_sourceEndpointReconstruction",
       "source_inhomogeneous_physical_reduction",
-      "sourceEndpointReconstruction_residual_germ"
+      "sourceEndpointReconstruction_residual_germ",
+      "sourceHillChainRootEquiv",
+      "eventually_finrank_sourceHillChainSpace",
+      "sourceHillChainCoordinates_injective",
+      "sourceHillChain_reduced_derivatives_zero"
     ]
   },
   "essential_open_obligations": [
@@ -114,7 +118,13 @@
     "Reconstruction has the exact constant resonant-coordinate left inverse and the exact physical residual J*Modes*B. The complementary response is analytic, has zero resonant coordinates and its physical residual is the original forcing minus the solved finite resonant defect.",
     "Every original H1 solution with arbitrary endpoint right-hand side has the exact reconstruction f=F(lambda)*C*f+G(lambda)*g. Its two coordinates satisfy B(lambda)*C*f=C_endpoint*K(lambda)*g. Conversely these two conditions imply the full original physical equation, including at singular effective matrices.",
     "Actual determinant zeros lie strictly inside the corrected6n strip by the proved sqrt(n)/4 localization. The physical residual and constant-coordinate identities hold as spectral germs near every such zero, rather than only pointwise.",
-    "The source wrappers parameterize by the entire original complex endpoint Banach space with its exact norm, retain arbitrary original endpoint forcing and full original H1 solutions, and preserve the original physical H-minus-one distribution normalization."
+    "The source wrappers parameterize by the entire original complex endpoint Banach space with its exact norm, retain arbitrary original endpoint forcing and full original H1 solutions, and preserve the original physical H-minus-one distribution normalization.",
+    "For arbitrary complex modules, an injective original domain inclusion identifies each finite chain coefficient space linearly with the actual pencil root-space level by its last included vector. Empty chains are retained. No operator-domain assumptions are dropped.",
+    "A finite chain polynomial satisfies the affine pencil exactly with the chain-length monomial times the final included coefficient as its forcing, for every complex increment. For the singular Hill operator all polynomial coefficients belong to original H1 and the forcing is the identical original H-minus-one distribution of endpoint data.",
+    "Physical finite H1 coefficient chain spaces are finite dimensional in the source endpoint range. Their dimensions eventually equal the actual original algebraic multiplicity by the exact root-space equivalence and the already proved finite stabilization.",
+    "The full inhomogeneous reduction gives analytic powered remainders for the actual reduced residual and original H1 reconstruction error of every finite chain. All their derivatives of order below the chain length vanish. The generic Banach-valued helper also recovers finite polynomial coefficients with exact factorial normalization.",
+    "The coefficientwise projection of every physical finite chain onto its two resonant modes is injective under the existing cutoff at interior strip points. The proof uses the full original H1 reconstruction germ and the vanishing polynomial coefficient theorem, without any inverse of the effective matrix.",
+    "Original complex source wrappers retain exact norm and distribution normalization. At every actual determinant zero the existing localization proves the required strict strip interior, so the finite-chain coordinate injectivity and reduced derivative vanishing need no extra interior premise."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",

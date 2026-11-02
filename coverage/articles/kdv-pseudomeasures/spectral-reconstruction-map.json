@@ -100,5 +100,16 @@
     "Construct the exact finite physical root-chain/truncated effective Taylor-kernel equivalence.",
     "Use eventual matrix Taylor nullity to identify actual physical algebraic multiplicities with analytic determinant zero orders.",
     "Complete canonical spectral labels and asymptotic enumeration, endpoint gap/Dirichlet and inverse regularity estimates, original Birkhoff maps and physical KdV main theorems."
-  ]
+  ],
+  "finite_physical_chain_jet_consequences": {
+    "coverage": "spectral-chain-jets-map.json",
+    "results": [
+      "For arbitrary complex modules, an injective original domain inclusion identifies each finite chain coefficient space linearly with the actual pencil root-space level by its last included vector. Empty chains are retained. No operator-domain assumptions are dropped.",
+      "A finite chain polynomial satisfies the affine pencil exactly with the chain-length monomial times the final included coefficient as its forcing, for every complex increment. For the singular Hill operator all polynomial coefficients belong to original H1 and the forcing is the identical original H-minus-one distribution of endpoint data.",
+      "Physical finite H1 coefficient chain spaces are finite dimensional in the source endpoint range. Their dimensions eventually equal the actual original algebraic multiplicity by the exact root-space equivalence and the already proved finite stabilization.",
+      "The full inhomogeneous reduction gives analytic powered remainders for the actual reduced residual and original H1 reconstruction error of every finite chain. All their derivatives of order below the chain length vanish. The generic Banach-valued helper also recovers finite polynomial coefficients with exact factorial normalization.",
+      "The coefficientwise projection of every physical finite chain onto its two resonant modes is injective under the existing cutoff at interior strip points. The proof uses the full original H1 reconstruction germ and the vanishing polynomial coefficient theorem, without any inverse of the effective matrix.",
+      "Original complex source wrappers retain exact norm and distribution normalization. At every actual determinant zero the existing localization proves the required strict strip interior, so the finite-chain coordinate injectivity and reduced derivative vanishing need no extra interior premise."
+    ]
+  }
 }

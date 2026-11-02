@@ -255,6 +255,23 @@
         "NLS.Articles.KdVPseudomeasures.source_inhomogeneous_physical_reduction",
         "NLS.Articles.KdVPseudomeasures.sourceEndpointReconstruction_residual_germ"
       ]
+    },
+    {
+      "label": "Actual finite physical chains and reduced finite-jet conditions",
+      "pages": [
+        11,
+        41,
+        42
+      ],
+      "coverage": "spectral-chain-jets-map.json",
+      "content": "Exact linear equivalence of full-domain finite chains with actual root-space levels, eventual physical algebraic multiplicity, exact polynomial forcing, analytic powered remainders and injective two-mode chain coefficients.",
+      "status": "Proved. Formal matrix Taylor-kernel identification/surjectivity and physical multiplicity versus determinant order remain open.",
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceHillChainRootEquiv",
+        "NLS.Articles.KdVPseudomeasures.eventually_finrank_sourceHillChainSpace",
+        "NLS.Articles.KdVPseudomeasures.sourceHillChainCoordinates_injective",
+        "NLS.Articles.KdVPseudomeasures.sourceHillChain_reduced_derivatives_zero"
+      ]
     }
   ],
   "reuse_map": [

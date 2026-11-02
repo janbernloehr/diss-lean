@@ -1,11 +1,13 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Norm-analytic original H1 reconstruction and exact full-domain inhomogeneous physical two-mode reduction, including spectral germs at determinant zeros",
+  "phase": "Exact finite physical chain/root-space equivalence, polynomial forcing, powered analytic jet remainders and injective two-mode chain coordinates",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
   "modules_checked": [
+    "NLS/FunctionalAnalysis/PencilRootChains.lean",
+    "NLS/ComplexAnalysis/PoweredAnalyticJet.lean",
     "NLS/FunctionalAnalysis/ResolventRootSpace.lean",
     "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean",
     "NLS/SequenceSpaces/SobolevConvolutionBounds.lean",
@@ -50,6 +52,8 @@
     "NLS/KdV/PseudomeasureResolvent.lean",
     "NLS/KdV/PseudomeasureSpectrum.lean",
     "NLS/KdV/PseudomeasureRootSpaces.lean",
+    "NLS/KdV/SingularHillChains.lean",
+    "NLS/KdV/PseudomeasureChainJets.lean",
     "NLS/KdV/PseudomeasureSpectralLipschitz.lean",
     "NLS/KdV/PseudomeasureRootSeparation.lean",
     "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean",
@@ -78,13 +82,14 @@
     "NLS/Articles/KdVPseudomeasures/SpectralResolvent.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralReconstruction.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralMultiplicity.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralChainJets.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 588,
-  "definitions": 156,
+  "proved_theorems": 623,
+  "definitions": 168,
   "axiom_audit": {
     "method": "Lean #print axioms on every source-inventoried public definition/theorem, with nested namespaces and qualified names supported. Exact inventory/audit/output set match, followed by allowlist check. Private imported proofs are covered transitively.",
-    "declarations": 744,
+    "declarations": 791,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -197,15 +202,23 @@
     "Reconstruction has the exact constant resonant-coordinate left inverse and the exact physical residual J*Modes*B. The complementary response is analytic, has zero resonant coordinates and its physical residual is the original forcing minus the solved finite resonant defect.",
     "Every original H1 solution with arbitrary endpoint right-hand side has the exact reconstruction f=F(lambda)*C*f+G(lambda)*g. Its two coordinates satisfy B(lambda)*C*f=C_endpoint*K(lambda)*g. Conversely these two conditions imply the full original physical equation, including at singular effective matrices.",
     "Actual determinant zeros lie strictly inside the corrected6n strip by the proved sqrt(n)/4 localization. The physical residual and constant-coordinate identities hold as spectral germs near every such zero, rather than only pointwise.",
-    "The source wrappers parameterize by the entire original complex endpoint Banach space with its exact norm, retain arbitrary original endpoint forcing and full original H1 solutions, and preserve the original physical H-minus-one distribution normalization."
+    "The source wrappers parameterize by the entire original complex endpoint Banach space with its exact norm, retain arbitrary original endpoint forcing and full original H1 solutions, and preserve the original physical H-minus-one distribution normalization.",
+    "For arbitrary complex modules, an injective original domain inclusion identifies each finite chain coefficient space linearly with the actual pencil root-space level by its last included vector. Empty chains are retained. No operator-domain assumptions are dropped.",
+    "A finite chain polynomial satisfies the affine pencil exactly with the chain-length monomial times the final included coefficient as its forcing, for every complex increment. For the singular Hill operator all polynomial coefficients belong to original H1 and the forcing is the identical original H-minus-one distribution of endpoint data.",
+    "Physical finite H1 coefficient chain spaces are finite dimensional in the source endpoint range. Their dimensions eventually equal the actual original algebraic multiplicity by the exact root-space equivalence and the already proved finite stabilization.",
+    "The full inhomogeneous reduction gives analytic powered remainders for the actual reduced residual and original H1 reconstruction error of every finite chain. All their derivatives of order below the chain length vanish. The generic Banach-valued helper also recovers finite polynomial coefficients with exact factorial normalization.",
+    "The coefficientwise projection of every physical finite chain onto its two resonant modes is injective under the existing cutoff at interior strip points. The proof uses the full original H1 reconstruction germ and the vanishing polynomial coefficient theorem, without any inverse of the effective matrix.",
+    "Original complex source wrappers retain exact norm and distribution normalization. At every actual determinant zero the existing localization proves the required strict strip interior, so the finite-chain coordinate injectivity and reduced derivative vanishing need no extra interior premise."
   ],
-  "source_correspondence": "The actual physical H1 reconstruction and complementary response are now jointly operator-norm analytic and give an exact necessary-and-sufficient inhomogeneous reduction for every original H1 solution and arbitrary original endpoint forcing. The same reconstruction identities hold as spectral germs at every actual determinant zero. This supplies analytic and full-domain converse dependencies for the physical finite-root-chain/Taylor-kernel comparison; that comparison and equality of physical algebraic multiplicity with determinant analytic order remain open. Canonical labels/asymptotic enumeration, eventual strip assignment, physical gap/Dirichlet estimates, inverse regularity, Birkhoff maps and actual KdV main theorem constructions remain open. All main theorem completion flags remain false.",
-  "build_isolation": "All73 modules rebuilt in a fresh empty private output view; canonical/package imports stay read-only symlinks and every compiler destination is checked to remain private. Exact744-declaration audit passed without warnings or tactic suggestions. Canonical tracked sources and build outputs were not written.",
+  "source_correspondence": "Finite original H1 coefficient chains are now linearly equivalent to every actual physical finite root-space level, with eventual dimension equal to actual algebraic multiplicity. The finite polynomials have exact full-domain affine forcing and explicit analytic chain-length-powered remainders for the actual reduced residual and original H1 reconstruction error. Their lower derivatives vanish and their two-mode coefficient projection is injective. The explicit identification of these projected jets with the formal matrix Taylor kernel, surjectivity from that kernel and equality of physical algebraic multiplicity with determinant analytic order remain open. Canonical spectral labels, endpoint gap/Dirichlet estimates, inverse regularity, Birkhoff maps and actual KdV main theorems remain open. All main theorem completion flags remain false.",
+  "build_isolation": "All78 modules rebuilt in a fresh empty private output view; canonical/package imports stay read-only symlinks and every compiler destination is checked to remain private. Exact791-declaration audit passed without warnings or tactic suggestions. Canonical tracked sources and build outputs were not written.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
   "source_hash": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
   "output_sha256": {
+    "NLS/FunctionalAnalysis/PencilRootChains.lean": "ca36c1bbe2d860e8dd0995634c109d7b9e71e44b9acf6c7221f6f57f38b6a5a0",
+    "NLS/ComplexAnalysis/PoweredAnalyticJet.lean": "d7bd3babe85505a12c0a6f70aad51ed6187a759b89884f6b244d78c02f29ef9a",
     "NLS/FunctionalAnalysis/ResolventRootSpace.lean": "293c79c78a088a0d750c84225ab6057a2e26ae2be82c281c5c467b85953984ba",
     "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean": "e1242c43b5d115939c0335c4550df6159590b38352ad53810fd80c2a6256f56c",
     "NLS/SequenceSpaces/SobolevConvolutionBounds.lean": "4a607fc257db00cb10d991efe25cb91334054ed66703ba3ad8f8e85d248a6564",
@@ -250,6 +263,8 @@
     "NLS/KdV/PseudomeasureResolvent.lean": "d718ad1cfc3be699c035e23672c43ab1f2bd44a32e366b73e13b380856abf9bc",
     "NLS/KdV/PseudomeasureSpectrum.lean": "22c430fe535e39da8ebbd4109c6717dc01d069f53f025ab53210823809abeb5a",
     "NLS/KdV/PseudomeasureRootSpaces.lean": "048dd52ee786e58563f9e8174b0eb7817e78c0d67c4077025d43bfad593332a5",
+    "NLS/KdV/SingularHillChains.lean": "bed5928f113d6d41ab40a4bae834cce9a26e671302324258d1c6b344635effb1",
+    "NLS/KdV/PseudomeasureChainJets.lean": "adb3e009953d18d3f54cd31989df455d86b15020228167395ca7e870b3a8c964",
     "NLS/KdV/PseudomeasureSpectralLipschitz.lean": "56095be5961d84250521d0362911e603c09c3eba3e70708935f9c0fae050a55f",
     "NLS/KdV/PseudomeasureRootSeparation.lean": "514f840ea04fc243b5e3da1dacfe7e24b24fb6fd8090bdcd80900a2107f7a205",
     "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean": "03ae1556984317c6d46a0d110226c0359a6a0bdad43c0ae25a16fc882e09cb51",
@@ -278,7 +293,8 @@
     "NLS/Articles/KdVPseudomeasures/SpectralResolvent.lean": "942a045acfdb02962e3da1aee171a52b9656c6ba46d375a031725b13b145c652",
     "NLS/Articles/KdVPseudomeasures/SpectralReconstruction.lean": "7979cae356f20afbab1b4a20847373c86b42f0e84f2d679eec37f6d9c6aaf85b",
     "NLS/Articles/KdVPseudomeasures/SpectralMultiplicity.lean": "dee6bd768ae0e46dc60501527061e7741ce80012972674dcb3d2c6318fc95661",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "00a93db74aa39e34254cbfe5483074241b2d9c8a4628c77b2853ea2977edd0cf"
+    "NLS/Articles/KdVPseudomeasures/SpectralChainJets.lean": "76a4cbb3f3259bf9b41e6e6a6cb6c57e031b29f0fdca39ef3ba5425c4869eb86",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "d07d42506cccaca53ed9a2d14d8045a09d3f4388f5875e348889410c269177bf"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -286,13 +302,13 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 700,
-    "newly_authored_declarations_this_continuation": 44,
-    "new_theorems": 36,
-    "new_definitions": 8,
+    "previous_checked_declarations": 744,
+    "newly_authored_declarations_this_continuation": 47,
+    "new_theorems": 35,
+    "new_definitions": 12,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 744,
-    "previous_reuse": "Existing verified imports remain unchanged and are covered by the transitive axiom audit. Shared scalar/matrix Taylor algebra inspected for the remaining finite-chain bridge."
+    "total_checked_declarations": 791,
+    "previous_reuse": "Existing verified root-space and analytic inhomogeneous reduction imports are unchanged and audited transitively. New reusable complex-module chain algebra and Banach-valued jet lemmas are in FunctionalAnalysis and ComplexAnalysis."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -323,7 +339,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-analytic-reconstruction.log",
+  "validation_log": ".lake/article-check/logs/validation-physical-chain-jets.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
