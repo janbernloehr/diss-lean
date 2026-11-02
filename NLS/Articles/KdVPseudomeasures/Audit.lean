@@ -1,3 +1,4 @@
+import NLS.SequenceSpaces.WeightedFiniteCoefficients
 import NLS.Fourier.PeriodicEndpointBounds
 import NLS.RealAnalysis.SplitRootGap
 import NLS.Fourier.PeriodicWeightCongruence
@@ -90,12 +91,16 @@ import NLS.KdV.PseudomeasureSpectrum
 import NLS.KdV.PseudomeasureRootSpaces
 import NLS.KdV.PseudomeasureRieszProjection
 import NLS.KdV.SingularHillResolventFamily
+import NLS.KdV.SingularHillFredholm
+import NLS.KdV.SingularHillSpectrum
+import NLS.KdV.SingularHillAlgebraicMultiplicity
 import NLS.KdV.SingularHillChains
 import NLS.KdV.PseudomeasureChainJets
 import NLS.KdV.PseudomeasureTaylorKernel
 import NLS.KdV.PseudomeasureMultiplicityOrder
 import NLS.KdV.PseudomeasureRealSpectrum
 import NLS.KdV.PseudomeasureRieszRange
+import NLS.KdV.SingularHillSpectralProjection
 import NLS.KdV.PseudomeasureComplexRiesz
 import NLS.KdV.PseudomeasureComplexCounting
 import NLS.KdV.PseudomeasureSpectralLipschitz
@@ -178,11 +183,17 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeakStarResolvent
 import NLS.Articles.KdVPseudomeasures.SpectralCumulativeCounts
 import NLS.Articles.KdVPseudomeasures.SpectralLabelContinuity
 import NLS.Articles.KdVPseudomeasures.SpectralClosedFibers
+import NLS.Articles.KdVPseudomeasures.OriginalHillSpectrum
 import NLS.Articles.KdVPseudomeasures.SpectralEndpointCompactness
 import NLS.Articles.KdVPseudomeasures.SpectralAdaptedDiffeomorphism
 import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 
 /-! Transitive axiom audit of every selected public declaration. -/
+#print axioms NLS.WeightedCoeff.ofFinsupp
+#print axioms NLS.WeightedCoeff.ofFinsupp_apply
+#print axioms NLS.WeightedCoeff.denseRange_ofFinsupp
+#print axioms NLS.WeightedCoeff.evalCLM
+#print axioms NLS.WeightedCoeff.evalCLM_apply
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.weight_mul_norm_coefficient_le
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.exists_of_endpoint_bound
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.exists_of_endpoint_weight_lower_bound
@@ -1030,6 +1041,43 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.KdV.singularHillRieszProjection
 #print axioms NLS.KdV.singularHillRieszProjection_endpoint
 #print axioms NLS.KdV.continuousOn_singularHillRieszProjection
+#print axioms NLS.KdV.isCompactOperator_hminusOneMultiplication
+#print axioms NLS.KdV.singularHillNormalizedPencil_sub_one
+#print axioms NLS.KdV.isCompactOperator_singularHillNormalizedPencil_sub_one
+#print axioms NLS.KdV.singularHillNormalizedPencil_fredholm_index_zero
+#print axioms NLS.KdV.singularHillNormalizedPencil_bijective_of_injective
+#print axioms NLS.KdV.singularHillNormalizedPencil_apply_eq_zero_iff
+#print axioms NLS.KdV.not_mem_singularHillResolventSet_iff
+#print axioms NLS.KdV.mem_singularHillResolventSet_of_re_lt
+#print axioms NLS.KdV.singularHillResolventSet_nonempty
+#print axioms NLS.KdV.singularHillSpectrum
+#print axioms NLS.KdV.mem_singularHillSpectrum_iff
+#print axioms NLS.KdV.isOpen_singularHillResolventSet
+#print axioms NLS.KdV.singularHillGraph
+#print axioms NLS.KdV.singularHillGraph_eq
+#print axioms NLS.KdV.isClosed_singularHillGraph
+#print axioms NLS.KdV.singularHillBaseResolvent_eigenvector
+#print axioms NLS.KdV.singularHillSpectrum_compact_eigenvalue
+#print axioms NLS.KdV.finite_singularHillSpectrum_norm_le
+#print axioms NLS.KdV.isClosed_singularHillPartialOperator
+#print axioms NLS.KdV.singularHillSpectrum_im_zero_of_real
+#print axioms NLS.KdV.singularHillSpectrum_endpoint
+#print axioms NLS.KdV.singularHillPencilEquiv
+#print axioms NLS.KdV.singularHillPencilEquiv_apply
+#print axioms NLS.KdV.singularHillPencilEquiv_symm
+#print axioms NLS.KdV.pencilResolvent_singularHillPencilEquiv
+#print axioms NLS.KdV.singularHillPencil_eq_resolvent_shift
+#print axioms NLS.KdV.singularHillRootSpace_eq_resolvent
+#print axioms NLS.KdV.singularHillRootSpaceTop_eq_resolvent
+#print axioms NLS.KdV.singularHillRootSpaceTop_eq_bot_of_mem_resolvent
+#print axioms NLS.KdV.finiteDimensional_singularHillRootSpaceTop
+#print axioms NLS.KdV.exists_singularHillRootSpace_eq_top
+#print axioms NLS.KdV.singularHillAlgebraicMultiplicity
+#print axioms NLS.KdV.singularHillAlgebraicMultiplicity_eq_resolvent
+#print axioms NLS.KdV.singularHillRootSpace_stabilizes
+#print axioms NLS.KdV.singularHillAlgebraicMultiplicity_pos_iff
+#print axioms NLS.KdV.singularHillAlgebraicMultiplicity_endpoint
+#print axioms NLS.KdV.singularHillAlgebraicMultiplicity_eq_zero_of_im_ne_zero
 #print axioms NLS.KdV.singularHillChainSpace
 #print axioms NLS.KdV.singularHillChainRootEquiv
 #print axioms NLS.KdV.finrank_singularHillChainSpace
@@ -1080,6 +1128,23 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.KdV.endpointHillRootSpaceTop_eq_resolvent_all
 #print axioms NLS.KdV.independent_endpointHillRootSpaceTop
 #print axioms NLS.KdV.endpointHillRieszProjection_range_eq_roots
+#print axioms NLS.KdV.analyticAt_singularHillBaseResolvent
+#print axioms NLS.KdV.singularHillResolventToH1_sub_apply
+#print axioms NLS.KdV.singularHillBaseResolvent_sub
+#print axioms NLS.KdV.singularHill_oriented_resolvent_identity
+#print axioms NLS.KdV.isIdempotentElem_singularHillRieszProjection
+#print axioms NLS.KdV.isCompactOperator_singularHillRieszProjection
+#print axioms NLS.KdV.finiteDimensional_singularHillRieszProjection_range
+#print axioms NLS.KdV.singularHillRieszProjection_eigenvector_inside
+#print axioms NLS.KdV.singularHillRieszProjection_eigenvector_outside
+#print axioms NLS.KdV.singularHillBaseResolvent_injective
+#print axioms NLS.KdV.commute_singularHillBaseResolvent
+#print axioms NLS.KdV.commute_singularHillRieszProjection_resolvent
+#print axioms NLS.KdV.singularHillRieszProjection_range_invariant
+#print axioms NLS.KdV.singularHillRootSpaceTop_eq_resolvent_all
+#print axioms NLS.KdV.independent_singularHillRootSpaceTop
+#print axioms NLS.KdV.singularHillRieszProjection_range_eq_roots
+#print axioms NLS.KdV.eventually_singularHillRieszProjection_rank_eq
 #print axioms NLS.KdV.endpointHillRieszProjection_root_inside
 #print axioms NLS.KdV.endpointHillRieszProjection_root_outside
 #print axioms NLS.KdV.endpointHillRieszProjection_range_eq_roots_complex
@@ -1747,6 +1812,15 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber_spectrum
 #print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber_multiplicity
 #print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber_cross_order
+#print axioms NLS.Articles.KdVPseudomeasures.OriginalHminusOnePotential
+#print axioms NLS.Articles.KdVPseudomeasures.originalIsospectralSet
+#print axioms NLS.Articles.KdVPseudomeasures.mem_originalIsospectralSet_self
+#print axioms NLS.Articles.KdVPseudomeasures.originalIsospectralSet_spectrum
+#print axioms NLS.Articles.KdVPseudomeasures.sourceOriginalPotential
+#print axioms NLS.Articles.KdVPseudomeasures.sourceOriginalPotential_val
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_eq_original
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_original
+#print axioms NLS.Articles.KdVPseudomeasures.sourceOriginalPotential_mem_isospectral_iff
 #print axioms NLS.Articles.KdVPseudomeasures.sourceReinterpretationSet
 #print axioms NLS.Articles.KdVPseudomeasures.isCompact_sourceReinterpretationSet_of_lower_compact
 #print axioms NLS.Articles.KdVPseudomeasures.source_normBounded_of_compact_finite_realization

@@ -31,6 +31,7 @@ view = root / '.lake/article-check/lib/lean'
 logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
+    'NLS.SequenceSpaces.WeightedFiniteCoefficients',
     'NLS.Fourier.PeriodicEndpointBounds',
     'NLS.RealAnalysis.SplitRootGap',
     'NLS.Fourier.PeriodicWeightCongruence',
@@ -123,12 +124,16 @@ modules = [
     'NLS.KdV.PseudomeasureRootSpaces',
     'NLS.KdV.PseudomeasureRieszProjection',
     'NLS.KdV.SingularHillResolventFamily',
+    'NLS.KdV.SingularHillFredholm',
+    'NLS.KdV.SingularHillSpectrum',
+    'NLS.KdV.SingularHillAlgebraicMultiplicity',
     'NLS.KdV.SingularHillChains',
     'NLS.KdV.PseudomeasureChainJets',
     'NLS.KdV.PseudomeasureTaylorKernel',
     'NLS.KdV.PseudomeasureMultiplicityOrder',
     'NLS.KdV.PseudomeasureRealSpectrum',
     'NLS.KdV.PseudomeasureRieszRange',
+    'NLS.KdV.SingularHillSpectralProjection',
     'NLS.KdV.PseudomeasureComplexRiesz',
     'NLS.KdV.PseudomeasureComplexCounting',
     'NLS.KdV.PseudomeasureSpectralLipschitz',
@@ -211,6 +216,7 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralCumulativeCounts',
     'NLS.Articles.KdVPseudomeasures.SpectralLabelContinuity',
     'NLS.Articles.KdVPseudomeasures.SpectralClosedFibers',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSpectrum',
     'NLS.Articles.KdVPseudomeasures.SpectralEndpointCompactness',
     'NLS.Articles.KdVPseudomeasures.SpectralAdaptedDiffeomorphism',
     'NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps',
