@@ -257,3 +257,57 @@ declarations passed transitive axiom checks, including `sourceProposition4_1`,
 using only `propext`, `Classical.choice` and `Quot.sound`. The audited set
 matched `AxiomAudit.lean` exactly. No holes, new axioms, disabled linters or
 increased heartbeat limits were introduced in the six new modules.
+
+
+## Seventh checkpoint: sharp moment rows and all-p physical convergence
+
+The off-diagonal part of Lemma 5.3 is now checked for every finite p>2.
+`SourceAbelianMomentOnePlusDomain.exists_sourceAbelianMoment_onePlusAtlas`
+constructs the original psi roots, their squared-gap extension and the actual
+moment atlas together. On one connected open neighborhood of the entire real
+locus, the canonical cubic coefficient belongs to every finite ℓq, q>1.
+The local source neighborhood precedes q and the constants are uniform in n.
+Collapsed gaps and the finite central part retain the same actual coefficient.
+
+The proof uses actual critical-weighted cancellation of the squared Abelian
+primitive. The contour proof differentiates F³/3; the cosine proof differentiates
+the corresponding cubic primitive and includes both endpoints without division
+by a zero sine or gap. The three numerator terms use Proposition 4.1, summable
+actual root differences and their reciprocal Young rows, the actual relative
+product estimate, and critical-root denominator separation.
+
+`FourthMomentSharpSummability.exists_fourthMoment_summableAtlas` proves
+absolute convergence of the weighted H₄ candidate at every finite p>1.
+For p>3 it pairs the cubic gap sequence in ℓ^(p/3) with the sharp actual row
+in its conjugate exponent. The existing 1<p≤3 proof supplies the other case.
+`PhysicalFourthFrequencyCandidate` now fixes this all-p chart and transports
+it to the same physical distributions and Birkhoff domain as Theorem 1.2.
+Its actual sum converges absolutely, its individual moments are analytic,
+and its values agree across all finite physical exponents above one.
+
+Theorem 1.2 remains verified. Theorems 1.1 and 1.3 remain open. The full
+candidate's analyticity, its weighted target estimates and refined remainder,
+and its identification with the physical H₄ action derivative are not inferred
+from pointwise absolute convergence. The p=2 endpoint and diagonal clause are assembled below on the sharp
+common domain.
+
+
+`sourceLemma5_3` now assembles the full Lemma 5.3 at every finite p≥2.
+The Hilbert endpoint is supplied by the refined original moment estimate,
+whose half-exponent lower bound is one. The diagonal has a fixed
+ℓ^(p/2)+ℓ^(1+) decomposition from the shared verified moment library.
+Both diagonal and sharp rows hold on one connected open domain and on
+one local source neighborhood chosen before q. The actual row coefficient
+is retained, and `SourceLemma5_3Data.row_power_sum` proves the literal
+positive uniform q-power bound printed in the article. The exact clause
+mapping is recorded in `lemma-5.3.json`.
+
+
+Strict validation for the seventh checkpoint passed: 54 focused modules
+compiled with `autoImplicit=false` and `warningAsError=true`; 216 named
+declarations passed transitive audits using only `propext`, `Classical.choice`
+and `Quot.sound`. The audited declarations exactly match `AxiomAudit.lean`.
+The final assembly was checked after the initial 53-module build, followed
+by the expanded full audit. No holes, new axioms, disabled linters or higher
+heartbeat limits were added. This is focused validation using the canonical
+compiled dependencies read-only, not a fresh whole-repository rebuild.

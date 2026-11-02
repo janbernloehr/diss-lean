@@ -19,6 +19,16 @@ SequenceSpaces/ReciprocalBootstrap: checked
 ZakharovShabat/SourcePsiCriticalInitialOffset: checked
 ZakharovShabat/SourcePsiCriticalReciprocalInequality: checked
 ZakharovShabat/SourceProposition4_1: checked
+ComplexAnalysis/QuadraticCosineWeightedCancellation: checked
+ZakharovShabat/SourceAbelianCriticalWeightedPeriod: checked
+ZakharovShabat/SourceAbelianCriticalCosineCancellation: checked
+ZakharovShabat/SourceAbelianMomentCriticalComparison: checked
+ZakharovShabat/SourceAbelianMomentCriticalBound: checked
+ZakharovShabat/SourcePsiCriticalSummableDifference: checked
+ZakharovShabat/SourcePsiCriticalProductOnePlus: checked
+ZakharovShabat/SourceAbelianMomentOnePlus: checked
+ZakharovShabat/SourceAbelianMomentOnePlusDomain: checked
+ZakharovShabat/SourceLemma5_3: checked
 FunctionalAnalysis/ComplexRealEquiv: checked
 Dynamics/ComplexBirkhoffCoordinatesExponent: checked
 Dynamics/ConjugatePairEquiv: checked
@@ -41,6 +51,7 @@ Articles/MKdVBelowL2/RealBirkhoffFamily: checked
 Articles/MKdVBelowL2/Theorem12: checked
 Articles/MKdVBelowL2/ClassicalRenormalizedFourthFlow: checked
 Articles/MKdVBelowL2/FourthMomentSummability: checked
+Articles/MKdVBelowL2/FourthMomentSharpSummability: checked
 Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -337,3 +348,70 @@ Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate: checked
  Quot.sound]
 'NLS.ZakharovShabat.sourceProposition4_1' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.ZakharovShabat.sourcePsiCriticalDifference_same' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ComplexAnalysis.integral_quadraticCosinePrimitive_sq_mul_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceFullAbelian_square_critical_period_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceFullAbelian_square_critical_circle_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.fullSquare_critical_cosineMean_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.fullSquare_critical_cosineMean_eq_zero_of_chart' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.fullSquare_criticalDeleted_cosineMean_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceMomentRegularNumerator_criticalFilled' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceSecondMomentCriticalNumerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceSecondMomentCriticalNumerator_eq_three_terms' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.critical_comparison_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.norm_sourceSecondMomentCriticalNumerator_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.critical_cubic_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.critical_cubic_index_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_difference_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_difference_reciprocal_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceLemma12_11Data.exists_local_critical_product_onePlus_majorants' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentErrorDomain.exists_local_offDiagonal_onePlus_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_offDiagonal_onePlus' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.exists_sourceAbelianMoment_onePlusAtlas' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.summable_weighted_moment_of_product' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.summable_weighted_moment_of_sharp_row' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_fourthMoment_summableAtlas' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_offDiagonal_onePlus_of_two_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceLemma5_3Data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceLemma5_3Data.row_power_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_lemma5_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceLemma5_3' depends on axioms: [propext, Classical.choice, Quot.sound]

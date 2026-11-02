@@ -4,12 +4,13 @@ Status: **Theorem 1.2 is verified under the accepted manuscript reference.**
 Theorems 1.1 and 1.3 remain unverified. The physical Birkhoff family now has
 precise article statements, complex-domain compatibility and canonicality,
 complete real source/target models, analytic inverses and accepted Hilbert
-identification. The H₄ candidate convergence remains at 1<p≤3, now transported to actual
-physical distributions on a common Birkhoff domain. The actual root-period
+identification. The H₄ candidate now converges absolutely for every finite p>1 on an open
+physical domain shared with the Birkhoff family. The actual root-period
 comparison, relative product estimate, and normalizing-period stability are
 checked, including a constructed uniform lower bound for the actual
 comparison period. Proposition 4.1's all-finite-p root bootstrap is now
-verified. The sharper moment bounds and physical H₄ derivative identification
+verified. The full Lemma 5.3 moment bounds are checked for every finite p≥2.
+The full frequency analyticity and physical H₄ derivative identification
 remain open.
 See [the current progress record](PROGRESS.md) and the
 [Theorem 1.2 clause map](theorem-1.2.json).
@@ -190,12 +191,31 @@ source in a constructed open neighborhood of the entire real locus.
 The proof combines the original squared-gap initial bound, the actual
 reciprocal inequality, and a reusable finite iteration of reciprocal
 exponents. Hölder product exponents below one are embedded contractively into
-ℓ¹ before Young is used. This supplies the root input for the sharper Lemma
-5.3 moments; it does not yet prove those moment estimates or Theorem 1.3.
+ℓ¹ before Young is used. The sharp off-diagonal Lemma 5.3 estimate now consumes this root input;
+Theorem 1.3 remains open.
 See the exact [Proposition 4.1 map](proposition-4.1.json).
 
+`SourceAbelianMomentOnePlusDomain.exists_sourceAbelianMoment_onePlusAtlas`
+constructs the sharp off-diagonal moment estimate for every finite p>2 using
+exactly the original normalized roots. The actual squared Abelian primitive
+has zero critical-weighted period; a quadratic cosine cancellation proves
+the same identity on the gap without dividing by a vanishing gap or sine.
+The resulting three-term numerator bound combines the gap-normalized root
+row, the actual product-difference row and the reciprocal denominator row.
+Its canonical cubic coefficient belongs to every finite q>1, uniformly in n
+and locally uniformly on one connected neighborhood chosen before q.
+`SourceLemma5_3.sourceLemma5_3` assembles both clauses, including p=2,
+on one connected domain. It retains fixed diagonal maps into ℓ^(p/2) and
+ℓ^(1+), the actual canonical sharp rows, and the literal uniform q-power sums.
+See the [Lemma 5.3 clause map](lemma-5.3.json).
+
+`FourthMomentSharpSummability.exists_fourthMoment_summableAtlas` removes the
+p≤3 restriction from absolute convergence of the weighted sum. Above three,
+the cubic gap in ℓ^(p/3) is paired with the actual row in its conjugate
+exponent. The physical adapter below now uses this all-finite-p construction.
+
 `PhysicalFourthFrequencyCandidate` fixes a constructed actual moment chart
-for each 1<p≤3, intersects its physical convergence domain with the chosen
+for every finite p>1, intersects its physical convergence domain with the chosen
 Theorem 1.2 Birkhoff domain, and proves this common domain is open and contains
 every physical real-type input. Every individual moment is holomorphic there.
 The literal candidate `-12 ∑ k, k Ω²ₙₖ` converges absolutely and agrees across
@@ -237,10 +257,10 @@ read-only, with new outputs under this checkout's private
 `ELAN_HOME`, `LEAN_BIN` and `MKDV_BUILD_ROOT` overrides; it never invokes Lake
 or writes through the imported symlinks.
 
-The expanded focused checker covers 43 new article/shared modules and the
+The expanded focused checker covers 54 new article/shared modules and the
 consumed smooth hierarchy foundations, with `autoImplicit=false` and
 `warningAsError=true`. `AxiomAudit.lean` audits all explicitly named new
-and consumed declarations (189 total), including the main Theorem 1.2 declarations;
+and consumed declarations (216 total), including the main Theorem 1.2 declarations;
 only `propext`, `Classical.choice` and `Quot.sound` occur. No new axiom,
 sorry or disabled linter was introduced. `validation.txt` captures the checks.
 This is focused validation, not a full repository build or completed article

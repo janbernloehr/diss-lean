@@ -3,14 +3,14 @@
   "verified": false,
   "checked_dependencies": [
     {
-      "source": "Section 4 equation (38), pp. 17\u201318",
+      "source": "Section 4 equation (38), pp. 17–18",
       "declaration": "NLS.ZakharovShabat.exists_sourcePsi_critical_comparison",
       "scope": "Constructed open real-containing domain; actual root periods and closed-disc relative-product estimates; one separation constant uniform in n,k at each source."
     },
     {
       "source": "Section 4 product comparison",
       "declaration": "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.norm_psiFilledQuotient_sub_critical_le",
-      "scope": "Actual quotient products; absolute relative perturbation sum and H\u00f6lder bound on closed isolating discs."
+      "scope": "Actual quotient products; absolute relative perturbation sum and Hölder bound on closed isolating discs."
     },
     {
       "source": "Section 4 normalizing period",
@@ -20,12 +20,12 @@
     {
       "source": "Section 5 weighted second moments",
       "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_hasSum",
-      "scope": "Physical distributions; absolute convergence for 1<p\u22643 on constructed common complex domain."
+      "scope": "Physical distributions; absolute convergence for every finite p>1 on a constructed open common Birkhoff domain containing the entire real locus. Literal -12 weighted-sum normalization."
     },
     {
       "source": "Physical exponent compatibility",
       "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_of_same_distributions",
-      "scope": "Same real physical distributions, both exponents in 1<p\u22643; actual chosen atlases."
+      "scope": "Same real physical distributions, every pair of finite exponents p,q>1; actual chosen atlases."
     },
     {
       "source": "Section 4 equations (36), (39), p. 18",
@@ -40,18 +40,39 @@
     {
       "source": "Section 4 quantitative root inequality",
       "declaration": "NLS.ZakharovShabat.SourcePsiCriticalPeriodControl.root_difference_le",
-      "scope": "Actual root difference bounded by 2(gD+g\u00b2M/d), with explicit pointwise gap, product-error, product-size and denominator bounds; constructed period control supplies the normalizing inverse."
+      "scope": "Actual root difference bounded by 2(gD+g²M/d), with explicit pointwise gap, product-error, product-size and denominator bounds; constructed period control supplies the normalizing inverse."
     },
     {
-      "source": "Proposition 4.1, pp. 17\u201320",
+      "source": "Proposition 4.1, pp. 17–20",
       "declaration": "NLS.ZakharovShabat.sourceProposition4_1",
       "scope": "Every finite p>2; constructed open neighborhood of the entire real locus; one fixed actual gap-normalized sequence belongs to every finite q>1, uniformly in n and locally uniformly at every complex source. Neighborhood chosen before q; collapsed gaps included.",
+      "verified": true
+    },
+    {
+      "source": "Section 5 critical cancellation, equation (48), p. 23",
+      "declaration": "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.fullSquare_criticalDeleted_cosineMean_eq_zero",
+      "scope": "Actual squared Abelian primitive and critical-root product; cosine integral vanishes, including collapsed gaps; no boundary division by the gap."
+    },
+    {
+      "source": "Lemma 5.3, off-diagonal clause, pp. 23–25",
+      "declaration": "NLS.ZakharovShabat.exists_sourceAbelianMoment_onePlusAtlas",
+      "scope": "Every finite p>2; original root family and actual moment atlas constructed together. One open connected real-containing complex domain. Actual cubic coefficient sequence at all gaps belongs to every finite q>1, with uniform n and locally uniform complex-source bounds; neighborhood before q. The p=2 endpoint and diagonal clause are not newly assembled in this declaration.",
+      "verified_scope": "off_diagonal_finite_p_gt_2"
+    },
+    {
+      "source": "Theorem 5.4(i), absolute-convergence dependency",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_fourthMoment_summableAtlas",
+      "scope": "Every finite p>1; actual weighted second moments absolutely summable on one constructed open connected neighborhood of the full real locus. No assertion yet of physical H4 derivative equality or analyticity of the infinite sum."
+    },
+    {
+      "source": "Lemma 5.3, pp. 23–25, both clauses and Hilbert endpoint",
+      "declaration": "NLS.ZakharovShabat.sourceLemma5_3",
+      "scope": "All finite p≥2; original roots and actual atlas constructed together. Full sharp off-diagonal rows, literal q-power bounds, and fixed mixed diagonal decomposition on one connected open real-containing complex domain. Local neighborhoods before q; collapsed gaps included.",
       "verified": true
     }
   ],
   "remaining": [
-    "Sharper Lemma 5.3 rows and weighted-sum estimates at every finite p>2.",
-    "Identification with the physical normalized H4 action derivative, with exact constants.",
-    "Analyticity into each stated weighted sequence target and the refined asymptotic remainder."
+    "Identify the weighted candidate with the physical normalized H4 action derivative, with exact constants.",
+    "Prove analyticity of the full candidate and its maps into each stated weighted sequence target, and the refined asymptotic remainder."
   ]
 }

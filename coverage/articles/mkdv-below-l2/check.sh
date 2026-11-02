@@ -60,6 +60,16 @@ modules=(
   ZakharovShabat/SourcePsiCriticalInitialOffset
   ZakharovShabat/SourcePsiCriticalReciprocalInequality
   ZakharovShabat/SourceProposition4_1
+  ComplexAnalysis/QuadraticCosineWeightedCancellation
+  ZakharovShabat/SourceAbelianCriticalWeightedPeriod
+  ZakharovShabat/SourceAbelianCriticalCosineCancellation
+  ZakharovShabat/SourceAbelianMomentCriticalComparison
+  ZakharovShabat/SourceAbelianMomentCriticalBound
+  ZakharovShabat/SourcePsiCriticalSummableDifference
+  ZakharovShabat/SourcePsiCriticalProductOnePlus
+  ZakharovShabat/SourceAbelianMomentOnePlus
+  ZakharovShabat/SourceAbelianMomentOnePlusDomain
+  ZakharovShabat/SourceLemma5_3
   FunctionalAnalysis/ComplexRealEquiv
   Dynamics/ComplexBirkhoffCoordinatesExponent
   Dynamics/ConjugatePairEquiv
@@ -82,6 +92,7 @@ modules=(
   Articles/MKdVBelowL2/Theorem12
   Articles/MKdVBelowL2/ClassicalRenormalizedFourthFlow
   Articles/MKdVBelowL2/FourthMomentSummability
+  Articles/MKdVBelowL2/FourthMomentSharpSummability
   Articles/MKdVBelowL2/PhysicalFourthFrequencyCandidate
 )
 for module in "${modules[@]}"; do
