@@ -139,4 +139,59 @@ theorem exists_endpointHill_uniform_tail_isUnit (r : ℝ) (hr : 0≤r) (hr1 : r<
   exact ⟨isUnit_one_sub_of_norm_lt_one (hs.1.trans_lt (by norm_num)),
     isUnit_one_sub_of_norm_lt_one (hs.2.trans_lt (by norm_num))⟩
 
+/-- The canonical tail inverse on the one original unshifted endpoint carrier.
+It is obtained from the proved shifted inverse by coefficient-preserving transport. -/
+def endpointHillTailInverse (w : SpectralWeight) (r : ℝ) (hr : 0 ≤ r) (hr1 : r < 1/2)
+    (n : ℕ) (hn : 1 ≤ n) (z : ℂ) (hz : z ∈ reducedHillStrip n)
+    (q : WeightedCoeff (w.negativeSobolev r) ⊤)
+    (hsmall : endpointHillConstant r*(n:ℝ)^(r-1/2)*‖q‖ ≤ 1/2) :
+    WeightedCoeff (w.negativeSobolev r) ⊤ →L[ℂ] WeightedCoeff (w.negativeSobolev r) ⊤ :=
+  (w.negativeShiftEquiv r hr (n:ℤ) ⊤).symm.toContinuousLinearMap.comp
+    ((Classical.choose (exists_endpointHill_tail_inverse w r hr hr1 n hn z hz q hsmall)).comp
+      (w.negativeShiftEquiv r hr (n:ℤ) ⊤).toContinuousLinearMap)
+
+/-- Left inverse of the actual unshifted endpoint tail equation. -/
+theorem endpointHillTailInverse_left (w : SpectralWeight) (r : ℝ) (hr : 0 ≤ r) (hr1 : r < 1/2)
+    (n : ℕ) (hn : 1 ≤ n) (z : ℂ) (hz : z ∈ reducedHillStrip n)
+    (q : WeightedCoeff (w.negativeSobolev r) ⊤)
+    (hsmall : endpointHillConstant r*(n:ℝ)^(r-1/2)*‖q‖ ≤ 1/2)
+    (a : WeightedCoeff (w.negativeSobolev r) ⊤) :
+    endpointHillTailInverse w r hr hr1 n hn z hz q hsmall
+      (a-unshiftedEndpointHillPerturbation w r hr hr1 n hn z hz q a) = a := by
+  let e := w.negativeShiftEquiv r hr (n:ℤ) ⊤
+  let K := Classical.choose (exists_endpointHill_tail_inverse w r hr hr1 n hn z hz q hsmall)
+  have h := congrArg (fun A => A (e a))
+    (Classical.choose_spec (exists_endpointHill_tail_inverse w r hr hr1 n hn z hz q hsmall)).2.1
+  change K (e a-endpointHillPerturbation w r hr hr1 n hn z hz q (e a)) = e a at h
+  change e.symm (K (e (a-e.symm (endpointHillPerturbation w r hr hr1 n hn z hz q (e a))))) = a
+  rw [map_sub, ContinuousLinearEquiv.apply_symm_apply, h, ContinuousLinearEquiv.symm_apply_apply]
+
+/-- Right inverse of the actual unshifted endpoint tail equation. -/
+theorem endpointHillTailInverse_right (w : SpectralWeight) (r : ℝ) (hr : 0 ≤ r) (hr1 : r < 1/2)
+    (n : ℕ) (hn : 1 ≤ n) (z : ℂ) (hz : z ∈ reducedHillStrip n)
+    (q : WeightedCoeff (w.negativeSobolev r) ⊤)
+    (hsmall : endpointHillConstant r*(n:ℝ)^(r-1/2)*‖q‖ ≤ 1/2)
+    (a : WeightedCoeff (w.negativeSobolev r) ⊤) :
+    endpointHillTailInverse w r hr hr1 n hn z hz q hsmall a -
+      unshiftedEndpointHillPerturbation w r hr hr1 n hn z hz q
+        (endpointHillTailInverse w r hr hr1 n hn z hz q hsmall a) = a := by
+  let e := w.negativeShiftEquiv r hr (n:ℤ) ⊤
+  let K := Classical.choose (exists_endpointHill_tail_inverse w r hr hr1 n hn z hz q hsmall)
+  apply e.injective
+  change e (e.symm (K (e a))-e.symm
+    (endpointHillPerturbation w r hr hr1 n hn z hz q (e (e.symm (K (e a)))))) = e a
+  simp only [map_sub, ContinuousLinearEquiv.apply_symm_apply]
+  exact congrArg (fun A => A (e a))
+    (Classical.choose_spec (exists_endpointHill_tail_inverse w r hr hr1 n hn z hz q hsmall)).1
+
+/-- Uniqueness of every original endpoint tail solution. -/
+theorem endpointHillTailInverse_unique (w : SpectralWeight) (r : ℝ) (hr : 0 ≤ r) (hr1 : r < 1/2)
+    (n : ℕ) (hn : 1 ≤ n) (z : ℂ) (hz : z ∈ reducedHillStrip n)
+    (q : WeightedCoeff (w.negativeSobolev r) ⊤)
+    (hsmall : endpointHillConstant r*(n:ℝ)^(r-1/2)*‖q‖ ≤ 1/2)
+    (a b : WeightedCoeff (w.negativeSobolev r) ⊤)
+    (hab : a-unshiftedEndpointHillPerturbation w r hr hr1 n hn z hz q a = b) :
+    a = endpointHillTailInverse w r hr hr1 n hn z hz q hsmall b := by
+  rw [← hab, endpointHillTailInverse_left]
+
 end NLS.KdV

@@ -127,4 +127,16 @@ theorem singularHillOperator_eigen_iff (q : FourierLebesgueSpace (2:ℝ) (-1) 2)
     rw [singularHillOperator_coefficient, singularHillDomainInclusion_coefficient]
     linear_combination -(he m)
 
+/-- The full physical eigenspace in the original H1 domain. -/
+def singularHillEigenspace (q : FourierLebesgueSpace (2:ℝ) (-1) 2) (z : ℂ) :
+    Submodule ℂ (FourierLebesgueSpace (2:ℝ) 1 2) :=
+  LinearMap.ker (singularHillOperator q - z • singularHillDomainInclusion).toLinearMap
+
+/-- Membership uses the actual H-minus-one operator equation. -/
+theorem mem_singularHillEigenspace_iff (q : FourierLebesgueSpace (2:ℝ) (-1) 2)
+    (z : ℂ) (f : FourierLebesgueSpace (2:ℝ) 1 2) :
+    f ∈ singularHillEigenspace q z ↔ singularHillOperator q f = z • singularHillDomainInclusion f := by
+  change singularHillOperator q f - z • singularHillDomainInclusion f = 0 ↔ _
+  exact sub_eq_zero
+
 end NLS.KdV

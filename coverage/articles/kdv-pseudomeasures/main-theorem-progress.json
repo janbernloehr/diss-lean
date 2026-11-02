@@ -24,11 +24,14 @@
     "1.4": [
       "sourceLemma2_4_physical_identification",
       "sourceHill_eigen_iff",
-      "sourceCorollary2_5_coefficient_tail_invertible"
+      "sourceCorollary2_5_coefficient_tail_invertible",
+      "sourceLemma2_7_uniform_physical_reduction",
+      "sourceLemmaC_2",
+      "endpointHillKernelEquiv"
     ]
   },
   "essential_open_obligations": [
-    "Construct the singular-potential two-mode determinant reduction on the original H1 domain; prove spectral discreteness/enumeration, corrected-strip inclusion and gap estimates.",
+    "Prove analytic dependence and zero localization/counting for the endpoint reduced determinant; construct singular spectral enumeration and algebraic multiplicities, corrected-strip inclusion and gap/Dirichlet estimates.",
     "Physical Hill spectrum and Birkhoff map.",
     "Endpoint spectral estimates and inverse regularity needed by 1.4.",
     "Actual KdV H^-1 smooth-approximation solution extension, invariance and continuity.",
@@ -59,7 +62,12 @@
     "For s>-1/2, the reduced inverse of endpoint data lies in the original physical H1 space, with unchanged original distribution and Fourier coefficients.",
     "Bounded physical multiplication H1 times H1 to H1 is constructed using the existing convolution and Leibniz rule; transposition gives V_q:H1 to H^-1 for every original singular H^-1 potential.",
     "The singular potential product has genuinely absolutely convergent Fourier coefficients. The endpoint Fourier perturbation equals V_q after the original H1 reduced inverse as a bounded-operator equality.",
-    "The singular Hill operator is minus the actual second distributional derivative plus V_q on the entire original H1 domain. Its H^-1 eigen-equation is equivalent to the source Fourier equation."
+    "The singular Hill operator is minus the actual second distributional derivative plus V_q on the entire original H1 domain. Its H^-1 eigen-equation is equivalent to the source Fourier equation.",
+    "Every H1 input multiplied by a source endpoint potential has a proved endpoint realization, identified with the full physical H^-1 product.",
+    "The actual endpoint two-mode operator has a nontrivial kernel exactly when the physical singular Hill equation has a nonzero vector in its entire original H1 domain. Every such vector is reconstructed from its two physical amplitudes.",
+    "The effective kernel and physical eigenspace are linearly equivalent; late-strip physical eigenspaces are finite dimensional with geometric multiplicity at most two.",
+    "A cutoff uniform on exact original source norm balls precedes q, n and lambda in the physical determinant criterion.",
+    "Appendix C.2 regularity is proved for every complex spectral parameter and every endpoint right-hand side; the original inhomogeneous solution gains two endpoint orders with identical smooth-test action."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",

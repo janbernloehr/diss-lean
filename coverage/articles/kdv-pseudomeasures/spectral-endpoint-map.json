@@ -37,13 +37,15 @@
     "endpoint_physical_operator_identification": "NLS.Articles.KdVPseudomeasures.sourceLemma2_4_physical_identification",
     "singular_Hill_operator": "NLS.KdV.singularHillOperator",
     "actual_distributional_expression": "NLS.KdV.singularHillOperator_val",
-    "source_physical_eigen_equation": "NLS.Articles.KdVPseudomeasures.sourceHill_eigen_iff"
+    "source_physical_eigen_equation": "NLS.Articles.KdVPseudomeasures.sourceHill_eigen_iff",
+    "physical_determinant_criterion": "NLS.Articles.KdVPseudomeasures.sourceLemma2_7_uniform_physical_reduction",
+    "global_inhomogeneous_regularity": "NLS.Articles.KdVPseudomeasures.sourceLemmaC_2"
   },
   "quantifier_order": "For each s and potential norm bound R, choose one N>=1 before w, q with norm(q)<=R, n>=N and lambda in the corrected strip. Both shifted operators are then half contractions and invertible.",
   "verified_scope": "Actual weighted endpoint operators, absolute row summability, both shifted estimates, uniform tail inverses, two-derivative gain, original H1 resolvent domain, and equality with physical H-minus-one multiplication defined by full H1 duality. The singular Hill operator equals minus the genuine distributional second derivative plus the potential product, and its original H-minus-one eigen-equation is equivalent to the Fourier equation for every actual H1 domain element. No spectral enumeration, eigenvalue localization or Birkhoff map is assumed proved.",
   "remaining_physical_obligations": [
-    "Construct/extend the two-mode determinant reduction for singular endpoint potentials, including the physical domain of every recovered eigenvector.",
-    "Prove spectral discreteness/enumeration, determinant zero correspondence with multiplicities, and eventual inclusion of the actual singular-potential periodic eigenvalues in the corrected strip.",
+    "Construct the analytic endpoint determinant family and prove zero localization/counting.",
+    "Prove actual singular spectral enumeration, algebraic multiplicities and eventual corrected-strip inclusion.",
     "Complete gap and Dirichlet asymptotics and inverse regularity needed by Theorems 2.1, 2.2 and 1.4."
   ],
   "physical_normalization": {
@@ -52,5 +54,6 @@
     "original_pairing": "Full native complex-linear distribution action; the bilinear H1 duality identity is (q*f)(g)=q(f*g). H1 multiplication is proved to be the pointwise product of original continuous representatives. Conjugating g gives the source sesquilinear convention.",
     "resolvent_bound": "For every n>=1 and z in the corrected strip, sobolev(2,k)*norm(d_n(z,k)) <= 4+2*norm(z), valid for all imaginary parts.",
     "orders": "All real r in the two-derivative gain; r<1/2 for endpoint-to-H1 and H-minus-one inclusion; 0<=r<1/2 for endpoint perturbation physical identification."
-  }
+  },
+  "further_verified_dependencies": "See spectral-reduction-map.json for the full-domain unit-weight determinant criterion and global inhomogeneous regularity."
 }

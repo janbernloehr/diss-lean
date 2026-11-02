@@ -119,7 +119,7 @@
         6
       ],
       "content": "Every normalized symmetric monotone submultiplicative weight w, -1/2<s<=0, complex q in FL_0^(w,s,infinity): gap lengths gamma_n and tau_n-mu_n are in ell^(w,s,infinity)(N), with locally bounded maps.",
-      "status": "Lemma 2.4 coefficient-space endpoint bound, both shifts, and Corollary 2.5 contraction/tail inverses now proved with corrected radius-6n strips. Physical singular multiplication/spectrum and the stated gap/midpoint-Dirichlet asymptotics remain unproved."
+      "status": "Arbitrary-weight endpoint tail estimates, physical multiplication and inverse identities are proved. The full-domain physical determinant reduction is proved in the unit-weight main-theorem scale, with global endpoint inhomogeneous regularity. Singular spectral enumeration/localization, gap and midpoint-Dirichlet asymptotics remain unproved."
     },
     {
       "label": "2.2",
@@ -148,6 +148,24 @@
       "coverage": "spectral-endpoint-map.json",
       "constant": "C_s=8+16/(1+2s)",
       "strip_correction": "Radius6n instead of printed12n; actual eigenvalue inclusion must be proved separately."
+    },
+    {
+      "label": "2.7",
+      "pages": [
+        11
+      ],
+      "content": "For every source potential at late modes, lambda in the strip is a physical Hill eigenvalue iff the explicit effective determinant vanishes.",
+      "status": "Proved with corrected radius6n strips and one cutoff uniform on the exact original source norm ball. The entire original H1 domain is retained; full spectral labels and algebraic multiplicities remain unproved.",
+      "coverage": "spectral-reduction-map.json"
+    },
+    {
+      "label": "C.2",
+      "pages": [
+        42
+      ],
+      "content": "For every lambda in C, endpoint q and g, any original H1 solution of (L(q)-lambda)f=g has endpoint regularity s+2.",
+      "status": "Generic complex coefficient theorem and exact original physical source-potential interface proved, with every lambda and endpoint right-hand side; the original distribution is unchanged.",
+      "coverage": "spectral-reduction-map.json"
     }
   ],
   "reuse_map": [
@@ -206,6 +224,18 @@
       "source_branch": "articles/kdv-estimates",
       "git_blob": "befebe847bb8f5ca3fff6d8bdcd0ddd3a78bc047",
       "reuse": "Imported byte-identically and freshly checked. Shared free Hill denominator and reduced symbol used directly; no competing Hill symbol or strip implementation."
+    },
+    {
+      "module": "NLS/KdV/HillComplement.lean",
+      "commit": "194ec4bd1254f88305d8743f13197fa775e97931",
+      "source_branch": "articles/kdv-estimates",
+      "reuse": "Imported byte-identically and freshly checked; shared two-mode coordinates, finite amplitudes and determinant foundations are used directly in the singular endpoint reduction."
+    },
+    {
+      "module": "NLS/KdV/HillReduction.lean",
+      "commit": "194ec4bd1254f88305d8743f13197fa775e97931",
+      "source_branch": "articles/kdv-estimates",
+      "reuse": "Imported byte-identically and freshly checked; shared two-mode coordinates, finite amplitudes and determinant foundations are used directly in the singular endpoint reduction."
     }
   ],
   "remaining_obligations": [

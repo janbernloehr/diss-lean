@@ -1,0 +1,53 @@
+{
+  "source": "arXiv:1610.00278v1, Section 2.2, equation (17) and Lemma 2.7 (PDF/printed p.11); Appendix C Lemma C.2 (p.42)",
+  "main_theorems_verified": false,
+  "domains": {
+    "predual_order": "0<=r<1/2, source regularity s=-r, including s=0",
+    "potential": "Original Potential(r): real, mean-zero, physically period-one FL^(s,infinity) distributions. The coefficient-domain theorems hold for arbitrary complex endpoint potentials, without reality, mean-zero or parity assumptions.",
+    "physical_domain": "The entire original period-two FourierLebesgueSpace 2 1 2, identified by the full original H1/H^-1 duality and actual distributional derivatives. No endpoint regularity premise is imposed on an eigenvector.",
+    "rhs_C2": "Every original complex period-two FL^(-r,infinity) right-hand side, without mean, reality or parity restrictions.",
+    "lambda_C2": "Every complex lambda, without strip or tail hypotheses.",
+    "endpoint_reduction_weight": "Unit spectral weight, exactly the unweighted endpoint scale of the main Birkhoff theorems. Existing arbitrary-weight tail bounds and physical identifications remain available; the new full-domain determinant converse is stated in the unit-weight scale."
+  },
+  "quantifier_order": "For every admissible r and norm bound R, one N>=1 precedes every original source potential q with norm(q)<=R, every n>=N and every lambda in the corrected strip. The numerical half-contraction proof is produced by the uniform cutoff theorem.",
+  "normalization": "Period two, modes exp(i*pi*k*x), coefficient q(mode(-k)), free symbol pi^2*k^2, normalized original dual action with factor 1/2. Original distributions and the exact source endpoint norm are preserved.",
+  "correction": "The shared corrected strip abs(Re(lambda)-pi^2*n^2)<=6*n replaces printed12*n. Actual spectral labels and their eventual inclusion must still be established.",
+  "declarations": {
+    "physical_multiplication_full_domain": "NLS.KdV.endpointH1Multiplication_physical",
+    "actual_source_potential_norm": "NLS.Articles.KdVPseudomeasures.norm_sourceEndpointCoefficients",
+    "actual_source_potential_HminusOne": "NLS.Articles.KdVPseudomeasures.sourceEndpointCoefficients_HminusOne",
+    "tail_inverse_on_original_carrier": "NLS.KdV.endpointHillTailInverse",
+    "explicit_effective_operator": "NLS.KdV.endpointHillReducedOperator",
+    "physical_reconstruction": "NLS.KdV.endpointHillReconstruct",
+    "all_physical_eigenvectors_recovered": "NLS.KdV.singularHillEigenvector_reconstruct",
+    "determinant_criterion": "NLS.KdV.endpointHillReduced_det_eq_zero_iff",
+    "uniform_original_source_criterion": "NLS.Articles.KdVPseudomeasures.sourceLemma2_7_uniform_physical_reduction",
+    "physical_eigenspace_linear_equivalence": "NLS.KdV.endpointHillKernelEquiv",
+    "geometric_multiplicity_at_most_two": "NLS.KdV.finrank_singularHillEigenspace_le_two",
+    "global_inhomogeneous_regularization": "NLS.KdV.singularHill_inhomogeneous_memlp",
+    "original_source_C2": "NLS.Articles.KdVPseudomeasures.sourceLemmaC_2"
+  },
+  "regularity_C2": "If (L(q)-lambda)f=g holds as equality of original distributions with f in H1 and g of endpoint order s, an actual original FL^(s+2,infinity) distribution with identical smooth-test action is constructed.",
+  "shared_reuse": [
+    {
+      "file": "NLS/KdV/HillComplement.lean",
+      "commit": "194ec4bd1254f88305d8743f13197fa775e97931",
+      "branch": "articles/kdv-estimates",
+      "byte_identical": true,
+      "sha256": "abf8fbb912e4e629f97cc6b2b44a060382f5945fc8793fede162227bd49326fd"
+    },
+    {
+      "file": "NLS/KdV/HillReduction.lean",
+      "commit": "194ec4bd1254f88305d8743f13197fa775e97931",
+      "branch": "articles/kdv-estimates",
+      "byte_identical": true,
+      "sha256": "5fdcf6cb4585f9bbf67e31a617f257b727eb481e4b6577590e45396fac65717f"
+    }
+  ],
+  "remaining": [
+    "Analytic parameter family of the endpoint determinant and localization/counting of its zeros.",
+    "Actual singular spectrum, spectral labels, algebraic multiplicities and eventual corrected-strip inclusion.",
+    "Gap and Dirichlet estimates, inverse spectral regularity, Birkhoff maps and actual KdV main theorem proofs."
+  ],
+  "qualification": "The determinant criterion concerns the physical point eigen-equation, not an asserted equality between the full spectrum and a labeled sequence. The rank bound is geometric; no equality between algebraic multiplicity and determinant-zero order is inferred."
+}

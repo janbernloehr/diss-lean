@@ -11,6 +11,14 @@ noncomputable section
 open scoped ENNReal
 namespace NLS.KdV
 
+/-- The full inhomogeneous second-order weight is controlled by the Hill moment. -/
+theorem sobolev_two_le_freeHillValue (k : ℤ) :
+    Weight.sobolev 2 k ≤ 2*(1+freeHillValue k) := by
+  simp only [Weight.sobolev_apply, Real.rpow_two, freeHillValue]
+  have hpi : 1 ≤ Real.pi^2 := by nlinarith [Real.pi_gt_three]
+  nlinarith [sq_abs (k:ℝ), sq_nonneg (|(k:ℝ)|-1),
+    mul_nonneg (sub_nonneg.mpr hpi) (sq_nonneg (k:ℝ))]
+
 /-- Quadratic decay of the reduced symbol, with a finite constant for every
 point in the strip, including arbitrarily large imaginary parts. -/
 theorem sobolev_two_reducedHillSymbol_bound (n : ℕ) (hn : 1 ≤ n)
@@ -28,11 +36,7 @@ theorem sobolev_two_reducedHillSymbol_bound (n : ℕ) (hn : 1 ≤ n)
         _ = ‖(freeHillValue k:ℂ)‖ := by simp [abs_of_nonneg hv]
         _ = ‖z-(z-(freeHillValue k:ℂ))‖ := by congr 1; ring
         _ ≤ _ := norm_sub_le _ _
-    have hw : Weight.sobolev 2 k ≤ 2*(1+freeHillValue k) := by
-      simp only [Weight.sobolev_apply, Real.rpow_two, freeHillValue]
-      have hpi : 1 ≤ Real.pi^2 := by nlinarith [Real.pi_gt_three]
-      nlinarith [sq_abs (k:ℝ), sq_nonneg (|(k:ℝ)|-1),
-        mul_nonneg (sub_nonneg.mpr hpi) (sq_nonneg (k:ℝ))]
+    have hw := sobolev_two_le_freeHillValue k
     change Weight.sobolev 2 k * ‖if k.natAbs = n then (0:ℂ) else _‖ ≤ _
     rw [if_neg hk, norm_inv, ← div_eq_mul_inv]
     apply (div_le_iff₀ (by linarith : 0 < ‖z-(freeHillValue k:ℂ)‖)).mpr
