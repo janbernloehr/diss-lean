@@ -77,6 +77,10 @@ import NLS.KdV.HillL2GapCutRoots
 import NLS.KdV.HillL2GapCutPrimitives
 import NLS.KdV.HillL2GapCutBoundary
 import NLS.KdV.HillL2CollapsedGapMoments
+import NLS.ComplexAnalysis.TraceRootPrimitive
+import NLS.KdV.HillL2NormalizedCutPrimitive
+import NLS.KdV.HillL2CutPrimitiveReflection
+import NLS.KdV.HillL2CutPrimitiveEndpointValues
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -137,7 +141,14 @@ run_cmd do
     ``NLS.ComplexAnalysis.exists_two_zero_root_endpoint_bound,
     ``NLS.ComplexAnalysis.exists_primitive_on_disc_complement_of_zero_period,
     ``NLS.ComplexAnalysis.exists_primitive_segment_left_boundary_limit,
-    ``NLS.ComplexAnalysis.exists_primitive_segment_right_boundary_limit]
+    ``NLS.ComplexAnalysis.exists_primitive_segment_right_boundary_limit,
+    ``NLS.ComplexAnalysis.hasDerivAt_traceRoot_multiplier,
+    ``NLS.ComplexAnalysis.exp_primitive_of_traceRoot,
+    ``NLS.ComplexAnalysis.exp_neg_primitive_of_traceRoot,
+    ``NLS.ComplexAnalysis.traceRoot_identities_of_exp,
+    ``NLS.ComplexAnalysis.traceRoot_primitive_reflection,
+    ``NLS.ComplexAnalysis.traceRoot_primitive_boundary_values,
+    ``NLS.ComplexAnalysis.multiplier_eq_exp_of_normalized_primitive]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -49,6 +49,7 @@ modules+=(NLS/ComplexAnalysis/TracePrimitiveContinuation NLS/KdV/HillL2SourcePri
 modules+=(NLS/KdV/HillRealBands)
 modules+=(NLS/ComplexAnalysis/RealSimpleZeroSigns NLS/KdV/HillRealGapSigns NLS/KdV/HillRealGapIntegrals)
 modules+=(NLS/ComplexAnalysis/AnalyticDiscSquareRoot NLS/ComplexAnalysis/AnalyticTwoZeroRoot NLS/ComplexAnalysis/TwoZeroDeflation NLS/ComplexAnalysis/TwoZeroRootEndpointBound NLS/KdV/HillL2GapCutRoots NLS/KdV/HillL2GapCutPrimitives NLS/KdV/HillL2GapCutBoundary NLS/KdV/HillL2CollapsedGapMoments)
+modules+=(NLS/ComplexAnalysis/TraceRootPrimitive NLS/KdV/HillL2NormalizedCutPrimitive NLS/KdV/HillL2CutPrimitiveReflection NLS/KdV/HillL2CutPrimitiveEndpointValues)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

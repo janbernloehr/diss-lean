@@ -375,10 +375,30 @@
       "module": "NLS/ComplexAnalysis/SegmentPrimitiveBoundary.lean",
       "sha256": "11dde93aa1daae99340729eb42b07262fd1c4c7076d56337ca58fc0494a2a1ce",
       "role": "Existing slit-coordinate theorem gives a single finite endpoint limit for all cut-complement approaches, from the new checked inverse-square-root bound. The source hash agrees with the pinned prebuilt reference."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/NormalizedLogarithmicPrimitive.lean",
+      "sha256": "db187556da1062a2148909c38f73aeac4c32be8d5e4797e08b5efa8539cc7de4",
+      "role": "Existing integrating-factor and common-boundary-limit proof is reused at an interior source anchor to identify exp(F). The complete source was read; its hash agrees with the pinned prebuilt reference."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/ContinuousLogarithmUnique.lean",
+      "sha256": "56594b28bc4cacd4b1ec6c4d8864816c67a1f6b8438e927cb1f063175fdd5341",
+      "role": "Existing exponential-covering uniqueness identifies the two primitives on the connected source circle and proves full cut reflection. The complete source was read; its hash agrees with the pinned prebuilt reference."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/ComplexSegmentComplementConnected.lean",
+      "sha256": "75238d68841d25e32519eb694db536b43a179143f1bb6124a1d5cccd5cc71ddd",
+      "role": "Existing connectivity of open convex complex segment complements supplies the full cut domain, including a collapsed puncture. The complete source was read; its hash agrees with the pinned prebuilt reference."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/DenseSegmentComplement.lean",
+      "sha256": "e3cc6577891652d829379a1e1e37a6d07ef38eee250afa23d470a5211f420b57",
+      "role": "Existing density proves nontrivial endpoint approach filters, needed for uniqueness of the algebraic endpoint limits. The complete source was read; its hash agrees with the pinned prebuilt reference."
     }
   ],
   "next_shared_milestones": [
-    "Normalize the constructed full high-gap cut primitive against its source value, identify its finite endpoint values and prove the open-gap boundary jump. Deform its polynomial moments to the now-checked positive real gap integrals, retaining the exact contour orientation and factor 2/pi. The collapsed high-gap comparison is already proved.",
+    "Determine the exact endpoint limits -i*n*pi of the now-source-normalized full high-gap cut primitive and prove its open-gap boundary jump. Deform its polynomial moments to the checked positive real gap integrals, retaining the exact contour orientation and factor 2/pi. The additive constant, cut trace/reflection identities, finite algebraic endpoint-limit identities and collapsed high-gap comparison are already proved.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Establish the action-gap estimates and Hamiltonian/higher-action trace identities needed for Theorem 2; inspect the shared native Miura/Hill Hamiltonian and actual primitive moment developments before reimplementing them.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -491,6 +511,18 @@
         "NLS/KdV/ClassicalFreePrimitive.lean"
       ],
       "finding": "Imported these two modules unchanged. Direct IVP uniqueness computes the actual free Hill trace for (-1,0); local analytic root/logarithm charts and their physical derivative normalization are shared. This branch uses the exact free normalization in the rough characteristic homotopy count. The upstream high-contour developments were inspected for future reuse; they are not imported or claimed by this milestone."
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "4922e9958a88011c8d1e56255723350ebc36f19d",
+      "modules_inspected": [
+        "NLS/KdV/ClassicalHillHighPrimitiveStrip.lean",
+        "NLS/KdV/ClassicalHillHighEndpointNormalization.lean",
+        "NLS/KdV/ClassicalCoshStripControl.lean",
+        "NLS/KdV/ClassicalHillActionGapBounds.lean",
+        "NLS/KdV/ClassicalHillArnoldActionComparison.lean"
+      ],
+      "finding": "The endpoint normalization and strip proofs were read in full; the new action-gap comparison statements and construction were inspected for future reuse. They concern continuous potentials and a neighborhood-dependent unspecified high cutoff. No import or rough-L2/quantitative-cutoff identification is asserted for those results in this milestone. The present source-normalized cut construction uses the existing shared integrating-factor, segment connectivity and logarithm uniqueness proofs directly."
     }
   ],
   "physical_hill_realization": {
@@ -1109,9 +1141,34 @@
     ],
     "source_correspondence": "Section 2, PDF pages 9-13: actual root branches away from gaps, zero-period primitive continuation, integrable endpoint singularities and contour-to-gap action comparison. The general open-gap jump/normalization and comparison are still incomplete.",
     "actual_root": "For every checked actual high pair and n>=max(1,8*||q||_2), the actual characteristic deflates as Delta^2-4=(lambda-lambda_minus)*(lambda-lambda_plus)*Q with Q analytic and nowhere zero on the full closed radius-n disc. A disc unit root and the standard endpoint root construct R on the complete open disc minus the straight actual gap. Its sign agrees with the physical L2 source root on the connected radius-3*n/4 circle. A collapsed pair gives a root analytic on the whole open disc.",
-    "cut_primitive": "The matched differential Delta_prime/R has zero period on the radius-3*n/4 circle. Shared annular/radial continuation constructs an analytic primitive P on the full radius-7*n/8 disc minus the actual gap. For every integer m>=0 the actual previously constructed high contour moment equals -pi^-1 times the radius-3*n/4 integral of lambda^m*P. The additive constant of P is not yet normalized; it does not affect these polynomial circle moments.",
-    "endpoint_limits": "For an open pair, the nonzero deflated endpoint unit supplies a genuine inverse-square-root derivative bound. The existing segment/slit theorem gives finite limits of P at both endpoints for every approach in the full cut complement, including both sides. The constants may depend on the actual gap; no uniform lower gap-length bound is used. Their exact values and jump formula remain unproved.",
+    "cut_primitive": "The matched differential Delta_prime/R has zero period on the radius-3*n/4 circle. Shared annular/radial continuation constructs an analytic primitive P on the full radius-7*n/8 disc minus the actual gap. For every integer m>=0 the actual previously constructed high contour moment equals -pi^-1 times the radius-3*n/4 integral of lambda^m*P. The original existence theorem leaves the additive constant free; the subsequent HillL2NormalizedCutPrimitive module fixes it from one physical source-circle value and proves all cut trace identities and source-circle agreement.",
+    "endpoint_limits": "For an open pair, the nonzero deflated endpoint unit supplies a genuine inverse-square-root derivative bound. The existing segment/slit theorem gives finite limits of P at both endpoints for every approach in the full cut complement, including both sides. The constants may depend on the actual gap; no uniform lower gap-length bound is used. The subsequent normalized endpoint-value theorem fixes their exponentials and zero hyperbolic sine. Their exact values -i*n*pi and jump formula remain unproved.",
     "collapsed_bridge": "At a collapsed high pair, Delta_prime vanishes at the double characteristic zero. A filled divided difference divided by the nonzero disc unit root extends the actual logarithmic differential holomorphically through the collapsed point. Every polynomial source contour moment is exactly zero. For intrinsic labels n>=2 at cutoff 8*||q||, this proves equality to the actual real gap integral, also zero, at every integer level.",
     "qualifications": "The cut root and primitive are constructed pointwise from actual physical characteristic pairs whose existence and canonical high labeling are proved. Joint analyticity of endpoint choices or pointwise cut primitives across a collision is not claimed. The actual high contour moments retain their previously proved Banach analyticity. The open-gap contour/real-integral equality, exact primitive endpoint normalization, arbitrary low-gap canonical sheets, action-gap estimates, Hamiltonian identities, Birkhoff coordinates and main Theorems 1-3 remain unverified."
+  },
+  "normalized_high_cut_primitive": {
+    "modules": [
+      "NLS/ComplexAnalysis/TraceRootPrimitive.lean",
+      "NLS/KdV/HillL2NormalizedCutPrimitive.lean",
+      "NLS/KdV/HillL2CutPrimitiveReflection.lean",
+      "NLS/KdV/HillL2CutPrimitiveEndpointValues.lean"
+    ],
+    "declarations": [
+      "NLS.ComplexAnalysis.hasDerivAt_traceRoot_multiplier",
+      "NLS.ComplexAnalysis.exp_primitive_of_traceRoot",
+      "NLS.ComplexAnalysis.exp_neg_primitive_of_traceRoot",
+      "NLS.ComplexAnalysis.traceRoot_identities_of_exp",
+      "NLS.ComplexAnalysis.traceRoot_primitive_reflection",
+      "NLS.ComplexAnalysis.traceRoot_primitive_boundary_values",
+      "NLS.KdV.HillL2NormalizedCutPrimitive",
+      "NLS.KdV.HillRealHighGapPair.exists_normalized_source_cut_primitive",
+      "NLS.KdV.HillL2NormalizedCutPrimitive.reflection",
+      "NLS.KdV.HillL2NormalizedCutPrimitive.re_eq_zero",
+      "NLS.KdV.HillL2NormalizedCutPrimitive.endpoint_values"
+    ],
+    "source_correspondence": "Section 2, PDF pages 9-13: primitive normalization and branch identities needed before the action contour-to-gap formula.",
+    "hypotheses": "Actual HillRealHighGapPair at n>=1 and cutoff 8*||q||_2<=n for an even-supported raw L2 potential. Reflection and real-band purity additionally assume Fourier reality. The finite endpoint-value theorem assumes the pair is open. No mean-zero hypothesis or positive gap lower bound is used.",
+    "result": "For every actual high pair at n>=1 and 8*||q||_2<=n, one source-circle value fixes the additive constant of the analytic primitive on the full radius-7*n/8 disc minus the actual straight gap. The exponential is (Delta+R)/2, hence 2*cosh(F)=Delta and 2*sinh(F)=R throughout this cut domain. Connected logarithm uniqueness identifies F with the physical source primitive on the entire radius-3*n/4 circle, retaining every polynomial high contour moment with its exact factor and orientation. This construction includes collapsed gaps. For Fourier-real q, root and primitive have the exact free-sheet minus-conjugate reflection on the full local cut. In particular F is purely imaginary on every real point there. For an open pair, existing finite full-cut endpoint limits A and B satisfy exp(A)=Delta(left)/2, exp(B)=Delta(right)/2, 2*cosh(A)=Delta(left), 2*cosh(B)=Delta(right) and sinh(A)=sinh(B)=0. The actual cut root tends to zero at both endpoints along all approaches in this domain. These algebraic endpoint identities do not select the integer multiples of pi*i. No joint analytic dependence of the chosen pointwise cut primitive across collisions is asserted. The high contour moments retain their previously proved Banach analyticity. Main Theorems 1-3 remain unverified. The actual high cut primitive now has its source-normalized additive constant, exact exponential and hyperbolic trace identities on the whole local cut domain, agreement with the source primitive on the full enclosing circle, minus-conjugate reflection and purely imaginary values on its real bands. Its finite open-gap endpoint limits have exponentials equal to half the actual endpoint traces, zero hyperbolic sine and root limit zero. Selecting their exact values -i*n*pi, proving the open-gap jump and contour/real-integral comparison, globally canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm estimates remain essential. Abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations.",
+    "remaining": "Main Theorems 1-3 remain unverified. The actual high cut primitive now has its source-normalized additive constant, exact exponential and hyperbolic trace identities on the whole local cut domain, agreement with the source primitive on the full enclosing circle, minus-conjugate reflection and purely imaginary values on its real bands. Its finite open-gap endpoint limits have exponentials equal to half the actual endpoint traces, zero hyperbolic sine and root limit zero. Selecting their exact values -i*n*pi, proving the open-gap jump and contour/real-integral comparison, globally canonical sheets/actions including low gaps, quantitative action-gap estimates, Hamiltonian trace identities, physical KdV Birkhoff coordinates and the main tame/weighted norm estimates remain essential. Abstract operator algebraic multiplicity and sharper mean-zero low-energy bounds remain separate obligations."
   }
 }

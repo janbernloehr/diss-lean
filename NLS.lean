@@ -5002,4 +5002,8 @@ import NLS.KdV.HillL2GapCutRoots
 import NLS.KdV.HillL2GapCutPrimitives
 import NLS.KdV.HillL2GapCutBoundary
 import NLS.KdV.HillL2CollapsedGapMoments
+import NLS.ComplexAnalysis.TraceRootPrimitive
+import NLS.KdV.HillL2NormalizedCutPrimitive
+import NLS.KdV.HillL2CutPrimitiveReflection
+import NLS.KdV.HillL2CutPrimitiveEndpointValues
 import NLS.Articles.KdVEstimates.EstimateAdapter
