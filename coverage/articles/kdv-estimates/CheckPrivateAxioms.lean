@@ -50,6 +50,11 @@ import NLS.KdV.HillGlobalRealLabels
 import NLS.KdV.HillRealLabelingUniqueness
 import NLS.KdV.HillCanonicalRealLabels
 import NLS.KdV.HillCanonicalGapBounds
+import NLS.SequenceSpaces.OrderedFiniteContinuity
+import NLS.KdV.HillCumulativeCounts
+import NLS.KdV.HillLabelContinuity
+import NLS.KdV.HillCanonicalFreeLabels
+import NLS.KdV.HillRealTraceParity
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 
@@ -80,7 +85,10 @@ run_cmd do
     ``NLS.ComplexAnalysis.ne_zero_on_realDiameter_sphere,
     ``NLS.appendPairedTail, ``NLS.appendPairedTail_prefix,
     ``NLS.appendPairedTail_even, ``NLS.appendPairedTail_odd,
-    ``NLS.monotone_appendPairedTail]
+    ``NLS.monotone_appendPairedTail,
+    ``NLS.ComplexAnalysis.eventually_analyticZeroCount_eq_of_continuous_family,
+    ``NLS.finiteLowerCount, ``NLS.finiteLowerCount_le_iff,
+    ``NLS.index_lt_finiteLowerCount_iff, ``NLS.tendsto_ordered_finite_of_counts]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

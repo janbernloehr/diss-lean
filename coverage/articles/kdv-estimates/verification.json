@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned tooling; DISS_LEAN_REFERENCE_CHECKOUT set to read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 820,
+    "declarations": 884,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates"
@@ -53,10 +53,15 @@
       "NLS.appendPairedTail_prefix",
       "NLS.appendPairedTail_even",
       "NLS.appendPairedTail_odd",
-      "NLS.monotone_appendPairedTail"
+      "NLS.monotone_appendPairedTail",
+      "NLS.ComplexAnalysis.eventually_analyticZeroCount_eq_of_continuous_family",
+      "NLS.finiteLowerCount",
+      "NLS.finiteLowerCount_le_iff",
+      "NLS.index_lt_finiteLowerCount_iff",
+      "NLS.tendsto_ordered_finite_of_counts"
     ]
   },
-  "full_repository_validation": "All 53 focused modules and the 820-declaration transitive axiom audit passed. The latest NLS.lean aggregate was deferred before execution because the shared lock was occupied; the previous successful aggregate passed at commit 82b3467 with 43 focused modules. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 58 focused modules and the 884-declaration transitive axiom audit passed. The latest NLS.lean aggregate did not start because the verified active shared audit lock remained occupied through a 120-second bounded wait. The last successful aggregate passed at commit 82b3467 with 43 focused modules. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -95,7 +100,7 @@
     "NLS/KdV/HillL2EnergyDiscriminant.lean": "a34babb53505ec246af5a7401cd5bbfd87518a3ee433ffd5ca9dff1f43ec97d4",
     "NLS/KdV/HillWeightIndependence.lean": "8bcd9989c07262ad851b668344673f7d13b5805a953ab08a86a5f4f54a0ba438",
     "NLS/KdV/HillPhysicalGapBounds.lean": "7971dc2da98d8315e21350b6c5a8e8fbce84a6ca3c999f16a83695f688ba5c77",
-    "NLS/ComplexAnalysis/ZeroCountHomotopy.lean": "876ae2e371d9f1a4bbd204778774942405991cac35e70d199197fbf42407fe0e",
+    "NLS/ComplexAnalysis/ZeroCountHomotopy.lean": "48d8c4918fdbdb7c3b476841513b1fc4991c0520b171eb322c6a6dde33c82a7e",
     "NLS/ComplexAnalysis/TwoZeroOrderComparison.lean": "aa6c3045b534c3718d54ff0fc12873d9ee28fb4f4bda9fdac4ce1fefa3c0f306",
     "NLS/KdV/ClassicalLocalPrimitive.lean": "0a94fb21406949fcf4ad2ef5a09ffcbbf5385cdb8cd8ed5eec4fc303ecc1c327",
     "NLS/KdV/ClassicalFreePrimitive.lean": "5b3eb90418056ed0b8204348996a146f6407edd1da594b464ab3189718437e93",
@@ -111,10 +116,15 @@
     "NLS/KdV/HillGlobalRealLabels.lean": "4ead52510c68e8128942abee2d28507ca724bbfab50d10f75e4ff20357774939",
     "NLS/KdV/HillRealLabelingUniqueness.lean": "80523cb580e94c0c1afd5c9a6255853e4009c34dc5d6123e393f4e57beec40bc",
     "NLS/KdV/HillCanonicalRealLabels.lean": "de7f7dd148d4043a2559d0005a791aaf7cf0c2b65f6ee8b98695a5b5e7ccd230",
-    "NLS/KdV/HillCanonicalGapBounds.lean": "44532e9479d651cafbfd16223b82985804b22507835cca6e8bdff3992576d299"
+    "NLS/KdV/HillCanonicalGapBounds.lean": "44532e9479d651cafbfd16223b82985804b22507835cca6e8bdff3992576d299",
+    "NLS/SequenceSpaces/OrderedFiniteContinuity.lean": "845306a62ca86b944046d35727a675c24419dee39a0436e4b234dd317d9ebe6b",
+    "NLS/KdV/HillCumulativeCounts.lean": "9b37dc9bb7f4daab48b42187b5c193cdf0ec8e7eed70597383d808fe5f2dbe61",
+    "NLS/KdV/HillLabelContinuity.lean": "ace2a60cebb2488571380f97e18e53c8436355cd04fc53d4014c5c8816ec102b",
+    "NLS/KdV/HillCanonicalFreeLabels.lean": "034965a15a5980b5fd1740e3e8dcecc83ee407e3ab876132d834148dc8b125ac",
+    "NLS/KdV/HillRealTraceParity.lean": "c7652fa3faa8246f3ce8b968199101f9cc586215ce687aa9927a7f546f2dae82"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. The actual characteristic now has cutoff-independent canonical real labels, finite root fibers and exact full analytic multiplicities. The least actual energy is intrinsic, and source period-one labels/gaps are independent of the auxiliary weight. Individual and summed weighted high-gap estimates apply directly to these canonical gaps with no supplied root families. Label continuity, multiplier parity, strict central band separation, perturbed lowest-root simplicity and abstract operator algebraic multiplicities remain. Canonical entire products/root branches/actions, the physical KdV Birkhoff map, hierarchy trace identities and the main norm estimates remain outstanding.",
-  "milestone": "Intrinsic cutoff-independent characteristic labels and direct weighted canonical gap bounds",
+  "remaining": "Main Theorems 1-3 remain unverified. Intrinsic real labels now have full L2 continuity, exact free normalization, physical trace parity, strict neighboring bands, a simple lowest characteristic root and exact open/closed endpoint orders. The intrinsic high-pair cutoff still needs sharpening from 16*||q|| to 8*||q|| to retain the source exact weight argument in Theorem 3. Canonical global characteristic products/root branches/actions, the physical KdV Birkhoff map, hierarchy trace identities and the main norm estimates remain. Abstract operator algebraic multiplicities and sharper mean-zero low-energy bounds remain separate obligations.",
+  "milestone": "L2 continuity of intrinsic labels, exact trace parity, strict neighboring bands and simple/double characteristic orders",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -170,7 +180,12 @@
     "NLS.KdV.HillGlobalRealLabels",
     "NLS.KdV.HillRealLabelingUniqueness",
     "NLS.KdV.HillCanonicalRealLabels",
-    "NLS.KdV.HillCanonicalGapBounds"
+    "NLS.KdV.HillCanonicalGapBounds",
+    "NLS.SequenceSpaces.OrderedFiniteContinuity",
+    "NLS.KdV.HillCumulativeCounts",
+    "NLS.KdV.HillLabelContinuity",
+    "NLS.KdV.HillCanonicalFreeLabels",
+    "NLS.KdV.HillRealTraceParity"
   ],
   "proof_commits": [
     {
@@ -242,15 +257,20 @@
       "commit": "78200b7544a7badd3e554a9a1a67df99017c8678",
       "scope": "Exact central characteristic count, actual ordered central root multisets and global nondecreasing real labeling with source high-pair slots",
       "pushed": true
+    },
+    {
+      "commit": "5da8934e019a8a08f314988c311661754b89e925",
+      "scope": "Intrinsic cutoff-independent labels, full global characteristic multiplicities and direct weight-independent canonical gap bounds",
+      "pushed": true
     }
   ],
   "aggregate_check": {
     "status": "deferred_not_run",
-    "command": "flock -n -E 75 /tmp/diss-lean-article-build.lock bash work/lean-worktree.sh -o .lake/build/lib/lean/NLS.olean NLS.lean",
+    "command": "flock -w 120 -E 75 /tmp/diss-lean-article-build.lock bash work/lean-worktree.sh -o .lake/build/lib/lean/NLS.olean NLS.lean",
     "exit_code": 75,
-    "scope": "The current nonblocking attempt returned flock exit 75 before Lean started because /tmp/diss-lean-article-build.lock was occupied. No process was stopped and the lock was not bypassed. All 53 focused modules and the 820-declaration axiom audit passed.",
+    "scope": "The immediate nonblocking attempt and the subsequent 120-second bounded queue both returned flock exit 75 before Lean started. The lock holder was verified as a live mKdV hierarchy full-audit process. No foreign process was stopped and the lock was not bypassed. All 58 focused modules and the 884-declaration audit passed.",
     "full_lake_build_or_full_examples_claimed": false,
-    "reason": "Shared aggregate-build lock occupied."
+    "reason": "Verified active shared aggregate/full-audit lock; bounded wait expired."
   },
   "worktree_attachment": {
     "create_worktree_result": "Rejected: canonical sourceRoot is not an exact registered chat workspace folder.",
@@ -259,15 +279,15 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All fifty-three modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All fifty-eight modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 820 declarations, including full characteristic multiplicity preservation, intrinsic labeling uniqueness and direct weighted canonical gap bounds.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 884 declarations, including cumulative-count stability, finite order-statistic continuity, full L2 label continuity, physical trace parity and simple/double characteristic endpoint orders.",
     "new_module_warnings": [],
-    "aggregate_scope": "The current 53-module NLS.lean aggregate was deferred before Lean started because the shared article build lock was occupied. The last successful aggregate covers commit 82b3467 and 43 focused modules. All current 53 focused modules and the 820-declaration audit passed; full Lake/example suite not rerun.",
+    "aggregate_scope": "The current NLS.lean aggregate was deferred before execution after a nonblocking conflict and a 120-second bounded lock wait. The lock holder was verified live as the separate mKdV hierarchy full-audit process. The last successful aggregate covers commit 82b3467 with 43 focused modules. All current 58 focused modules and the 884-declaration audit passed; full Lake/examples not rerun.",
     "private_overlay": "The focused script creates private real directories before compiling new shared namespaces, and removes only output-file symlinks before writing. Canonical build outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded.",
-    "mathematical_scope": "Every root occurrence fiber of an actual constructed labeling is finite, and its full counting sum equals the analytic order of the actual characteristic. The shared ordered finite-exception uniqueness theorem makes all admissible label constructions identical. Canonical labels satisfy every admissible cutoff specification and identify the least actual energy. Exact period-one labels and gaps are invariant under realization of the same Fourier coefficients in another admissible weight. The individual constant-six gap estimate and the summed 9*FourierTail^2+(2304/N)*||q||_w^4 bound now hold for the intrinsic gaps themselves at N>=max(2,16*||q||_w). The main Theorems 1-3, actions/Birkhoff map, source multiplier parity, strict central band separation, lowest-root simplicity and operator algebraic multiplicities are not claimed."
+    "mathematical_scope": "Actual diameter-disc characteristic counts equal cumulative intrinsic label counts. Compact-boundary Rouch\u00e9 stability and a new shared finite order-statistic theorem prove every intrinsic label continuous in the L2 norm topology, including at closed gaps, for arbitrary continuous topological-parameter families. Exact free labels anchor the trace at 2*(-1)^floor((j+1)/2); continuous real-potential homotopy preserves that level. All neighboring bands are strictly separated, the actual lowest root has analytic order one, and each open-gap endpoint is simple while a closed gap has order two. No analyticity of individual closed-gap labels, abstract operator algebraic multiplicity theorem, canonical actions/Birkhoff map or main Theorem 1-3 is claimed."
   },
   "warningAsError": true,
   "previous_aggregate_attempts": [
@@ -297,6 +317,14 @@
       "nonblocking_attempts": 1,
       "exit_code": 75,
       "reason": "Shared /tmp/diss-lean-article-build.lock occupied. No aggregate compilation began."
+    },
+    {
+      "status": "deferred_not_run",
+      "milestone": "L2 label continuity, source trace parity and endpoint characteristic orders",
+      "nonblocking_attempts": 1,
+      "bounded_wait_seconds": 120,
+      "exit_code": 75,
+      "reason": "The lock holder was verified live as python3 scripts/check_mkdv_nls.py --full-audit in the separate mKdV hierarchy worktree. No aggregate compilation began; no foreign process was stopped."
     }
   ],
   "last_successful_aggregate_check": {

@@ -32,7 +32,7 @@
     "topologies": "Sobolev and weighted Hilbert norm topologies; weighted actions use the indicated l1 norm. Bi-analyticity means real analytic maps with real analytic inverse in these norm topologies.",
     "poisson": "Gardner bracket integral (d_u F)*partial_x(d_u G); {x_n,y_m}=delta_nm, {x_n,x_m}={y_n,y_m}=0. This sign must not be inherited from the accepted NLS convention.",
     "hill": "L(q)=-d^2/dx^2+q on [0,2] with periodic boundary conditions, q period one. Fourier basis exp(i*pi*k*x); free spectral value pi^2*k^2. Formula (2), page 5, fixes the second derivative; the page-8 display has an omitted exponent.",
-    "spectral_labels": "Source: lambda_0^+, then pairs lambda_n^-,lambda_n^+ for n>=1. Canonical real characteristic labels are now defined intrinsically: lambda_0^+=label(0), lambda_n^-=label(2*n-1), lambda_n^+=label(2*n). They are independent of all cutoff/enumeration choices, exhaust the actual characteristic roots and retain their full analytic multiplicities with finite occurrence sets. The source multiplier parity, strict central band separation and perturbed lowest-root simplicity remain unproved; abstract operator algebraic multiplicities are not asserted.",
+    "spectral_labels": "Source: lambda_0^+, then pairs lambda_n^-,lambda_n^+ for n>=1 (complex labels are lexicographic). For real period-one L2 potentials the intrinsic labels now satisfy lambda_0^+=label(0)<lambda_1^-=label(1)<=lambda_1^+=label(2)<lambda_2^-<=..., exhaust the physical characteristic roots and retain their analytic orders. They are continuous in the inherited L2 norm topology and independent of auxiliary cutoffs/weights. Delta(lambda_0^+)=2 and Delta(lambda_n^\u00b1)=2*(-1)^n. The lowest characteristic root is simple; an open gap has two simple endpoints and a closed gap has one double endpoint. The abstract operator algebraic-multiplicity comparison is not asserted.",
     "canonical_root": "-2*i*sqrt_+(lambda-lambda_0^+) times product_{k>=1} varsigma_k(lambda)/(k^2*pi^2)",
     "contour_action": "I_n=(1/pi) integral_Gamma_n lambda*Delta'(lambda)/sqrt_c(Delta(lambda)^2-4) d_lambda, with the branch/circuit conventions on pages 9-10. Higher actions J_(n,m) have lambda^(m+1)/((m+1)*pi)."
   },
@@ -67,7 +67,7 @@
         "A_m^2 <= d_m^2*(Q_(2*m+1)+(1+Q_(2*m-1))^m*Q_(2*m-1))"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "Construct canonical physical Hill actions and hierarchy trace identities, complete the source labeling details (lowest-root simplicity, multiplier parity and strict central band separation), and prove the forward/inverse action bounds. Actual global nondecreasing real characteristic labels, the central count, high-strip orders and weighted high-gap bounds are checked, but do not prove Theorem 2.",
+      "remaining": "Construct normalized physical Hill root branches/actions and hierarchy trace identities, connect them to the physical KdV Birkhoff map, and prove the forward/inverse action bounds. The full intrinsic real characteristic labeling, its L2 continuity, trace parity, strict neighboring-band separation, simple lowest root and open/closed endpoint analytic orders are now checked, as are the weighted high-gap estimates. These spectral results do not prove Theorem 2.",
       "status": "not_verified"
     },
     {
@@ -293,15 +293,32 @@
     {
       "module": "NLS/SequenceSpaces/OrderedEnumerationFiniteException.lean",
       "role": "Actually reused to prove cutoff-independent intrinsic real Hill labels: full characteristic multiplicities and finite root fibers are derived from the actual central and high clusters, while uniqueness of the actual high pairs fixes the common tail. The shared ordered finite-exception theorem identifies the complete label functions."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/ZeroCountHomotopy.lean",
+      "role": "Its existing Rouch\u00e9/compactness proof is factored into neighborhood stability of the count at a single zero-free parameter. Both the previous whole-homotopy count and the new ordered-label continuity use this shared theorem; no parameter differentiability or local compactness is assumed."
+    },
+    {
+      "module": "NLS/ComplexAnalysis/ZeroMultisetRestriction.lean and RealDiameterDisc.lean",
+      "role": "Actually reused to identify each diameter-disc characteristic count with the cumulative number of intrinsic central labels below its real threshold."
+    },
+    {
+      "module": "NLS/SequenceSpaces/OrderedFiniteContinuity.lean",
+      "role": "New shared finite order-statistic theorem: convergence of cumulative counts away from the limiting finite values gives convergence of every ordered slot, including repetitions. Used with actual characteristic zero counts to prove full L2 continuity of Hill labels."
+    },
+    {
+      "module": "Mathlib.Topology.Algebra.Field: IsPreconnected.eq_of_sq_eq",
+      "role": "Actually reused to transport the nonzero free trace level along the continuous real-potential segment. The trace squares to four at every actual canonical root, so its \u00b12 value is fixed by the exact free normalization."
     }
   ],
   "next_shared_milestones": [
-    "Prove continuity of the intrinsic ordered labels along real potential homotopies, establish source periodic/antiperiodic multiplier parity and strict central band separation, and prove simplicity of the lowest perturbed root. Canonical cutoff independence and full global characteristic multiplicities are now proved.",
-    "Identify analytic characteristic orders with algebraic multiplicities of the actual periodic Hill operator, and prove sharper mean-zero low-energy bounds required by the source estimates.",
-    "Use the jointly analytic rough energy discriminant, exact global real root enumeration and checked period-one embedding to prove the normalized entire product and canonical root identities.",
-    "Reuse the checked actual local/free Hill primitives and inspected upstream branch continuation results to construct globally normalized branches and contour actions on the required rough domains.",
-    "Reuse shared ActionHamiltonianMoments/Trace/FiniteGap results after identifying the actual Hill actions; prove the physical KdV Birkhoff map, hierarchy trace identities and tame action estimates for Theorem 2.",
-    "Connect Theorem 1 through the checked adapters and prove the weighted action estimates and interpolated weight evaluations for Theorem 3."
+    "Sharpen the actual high characteristic count and intrinsic-pair adapter from cutoff 16*||q|| to 8*||q|| using the boundary-zero-free potential homotopy. The source Theorem 3 proof uses N>=8*||q||_w^(3/2-r), hence exactly w(16*||q||_w^(3/2-r)); an extra factor two in that weight argument cannot in general be absorbed into a constant for arbitrary admissible weights. The existing canonical-gap cutoff 16 is a checked weaker prerequisite, not yet sufficient for the final exact weighted argument.",
+    "Construct the free-normalized physical Hill root and logarithmic primitive on the rough L2 source domains, reusing the shared source-log continuation library and inspected classical Hill primitive developments. Prove the required high-contour coverage and define the actual actions with the source normalization.",
+    "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
+    "Establish the action-gap estimates and Hamiltonian/higher-action trace identities needed for Theorem 2; inspect the shared native Miura/Hill Hamiltonian and actual primitive moment developments before reimplementing them.",
+    "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
+    "Construct/identify the physical KdV Birkhoff map and its action-coordinate identities, prove the tame forward/inverse action bounds and connect Theorem 1 through the checked adapters.",
+    "Prove the weighted action estimates and interpolated weight evaluations for Theorem 3, using the checked intrinsic w(2*n) gaps and their weight-independent physical labels."
   ],
   "workspace_need": "Isolation approved. Branch articles/kdv-estimates; worktree path recorded in validation record. Continue small validated shared-foundation commits and push only this branch.",
   "accepted_reference_scope": "coverage/MAIN_THEOREMS.md and coverage/ACCEPTED_REFERENCE.md were read. The dissertation verification is left intact. The accepted Grebert-Kappeler NLS manuscript does not replace a proof of Hill/KdV-specific assertions.",
@@ -561,7 +578,7 @@
     "individual_gap": "For n>=1, n>=8*||q||_w and any two zeros in the stated high strip, w(2*n)*|xi_plus-xi_minus|<=6*||q||_w.",
     "summed_gap": "For N>=1 and N>=8*||q||_w, any actual determinant-root families lying in their respective high strips have summable squared weighted differences and sum_{n>=N} w(2*n)^2*|xi_plus_n-xi_minus_n|^2 <= 9*||R_N q||_w^2+(2304/N)*||q||_w^4. The source tail is represented by Coeff.fourierTail N applied to the actual weighted source coefficients, retaining the boundary |k|=N.",
     "constant_corrections": "Retains source individual constant 6 and coefficient-tail factor 9, with cutoff 8*||q||_w, radius-6*n real strips, and quartic coefficient 2304 replacing the printed 576. These follow from the previously corrected inverse bound 4/n rather than the printed 2/n.",
-    "qualifications": "Auxiliary-weight independence and the actual physical characteristic root condition are checked. Unique ordered real high-strip endpoint pairs are now constructed, and the unit-weight determinant/characteristic analytic orders match. Global source labels, operator algebraic multiplicities and low central estimates remain open."
+    "qualifications": "Later modules now supply the complete intrinsic real characteristic labeling, its L2 continuity, trace parity and analytic endpoint multiplicities. Operator algebraic multiplicities, canonical normalized products/root branches/actions, the physical KdV Birkhoff map and the main norm estimates remain open; the original scope of this construction is unchanged."
   },
   "classical_discriminant_reuse": {
     "source_branch": "articles/kdv-convexity",
@@ -592,7 +609,7 @@
     "actual_construction": "The imported constant-upper state map is proved to turn actual constructed ZS IVP solutions for (-1,-q) into scalar Hill solutions of -F second+q*F=lambda*F, with bijective position/derivative initial state, including lambda=0. Even descent through the spectral square proves joint complex Banach analyticity of the literal normalized scalar trace in energy and the continuous potential with its sup norm.",
     "new_comparison": "A direct scalar Volterra state flow for (F,G) prime=(G,(q-lambda)*F) is constructed and proved identical to that shared scalar IVP, with its exact trace equal to classicalHillDiscriminant. Absolute-continuity uniqueness identifies every scalar weak solution with the same actual initial state. For a continuous physical circle potential Q, every eigenvector of this branch\u2019s actual periodic H2 Hill operator has this scalar state flow on [0,1], with F its continuous representative and G its actual continuous derivative representative.",
     "source_correspondence": "Section 2 pages 8-10: physical Hill discriminant and scalar solutions. This is the continuous-potential discriminant and weak-to-classical IVP comparison, not yet the global product/action construction.",
-    "qualifications": "Full-period continuous characteristic equivalence, actual L2 monodromy/operator comparison, joint analytic rough energy descent and auxiliary weight independence are proved. The new high-strip physical counts and unit determinant/characteristic analytic-order identities are recorded separately. Hill operator algebraic multiplicities, global source labels and central bounds remain open.",
+    "qualifications": "Later modules now supply the complete intrinsic real characteristic labeling, its L2 continuity, trace parity and analytic endpoint multiplicities. Operator algebraic multiplicities, canonical normalized products/root branches/actions, the physical KdV Birkhoff map and the main norm estimates remain open; the original scope of this construction is unchanged.",
     "refactored_provenance": {
       "file": "NLS/KdV/ClassicalDiscriminant.lean",
       "original_blob": "da51400726c5477a705099b48b397e770a3e9aad",
@@ -625,7 +642,7 @@
     "period_one": "For a continuous physical potential Q with actual period one, the two interval coefficient curves coincide. A state fixed by two iterations supplies a nonzero +1 or -1 multiplier. The scalar IVP multiplier criteria identify these with the actual discriminant values +2 and -2, including zero energy.",
     "complete_continuous_characteristic": "For every complex continuous period-one circle potential and every complex energy lambda, there exists a nonzero actual periodic H2 Hill eigenvector iff the normalized classical Hill discriminant squared equals four. The converse reuses the independently proved rough first-order/operator equivalence and the actual physical L2 monodromy criterion.",
     "trace_agreement": "The unit-interval physical L2 restriction of the specific coefficient potential (-1,-q) equals the continuous constant-upper coefficient class. Therefore the actual L2 trace in frequency z equals the shared classical Hill discriminant at energy z^2. This equality is for values, not merely zero sets.",
-    "qualifications": "Continuous full-period and rough L2 characteristic existence equivalences are proved. High-strip physical characteristic counts and unit determinant/characteristic analytic orders are now checked separately. Hill algebraic multiplicities, global labels and central estimates remain open."
+    "qualifications": "Later modules now supply the complete intrinsic real characteristic labeling, its L2 continuity, trace parity and analytic endpoint multiplicities. Operator algebraic multiplicities, canonical normalized products/root branches/actions, the physical KdV Birkhoff map and the main norm estimates remain open; the original scope of this construction is unchanged."
   },
   "l2_first_order_hill_identification": {
     "modules": [
@@ -650,7 +667,7 @@
     "analyticity": "The actual physical frequency trace is jointly analytic in frequency and raw L2 potential. Its value, not merely its spectral zero condition, is now proved even by finite Fourier density and its exact classical comparison. The shared Cauchy-circle argument descends it to a jointly analytic energy family, including zero energy.",
     "high_strip": "On the checked unit-weight high strip and cutoff, the constructed Hill determinant vanishes iff the actual L2 trace square equals four at any square root of the energy. This closes the rough physical characteristic zero-set comparison, without a continuity hypothesis on the potential.",
     "remaining": "High-strip unit determinant/characteristic analytic orders and unique ordered real endpoint pairs are now proved. Their identification with Hill operator algebraic multiplicities, the global labels and low central/exterior bounds remain. Auxiliary weighted realization independence is proved. No physical KdV Birkhoff map or main theorem is asserted.",
-    "qualifications": "These exact operator/monodromy and H2 eigenvector equivalences are now supplemented by a direct Hill symmetry proof, real roots and unique ordered real high-strip endpoints with analytic characteristic orders. Operator algebraic multiplicities, the global ordering and central bounds remain open."
+    "qualifications": "Later modules now supply the complete intrinsic real characteristic labeling, its L2 continuity, trace parity and analytic endpoint multiplicities. Operator algebraic multiplicities, canonical normalized products/root branches/actions, the physical KdV Birkhoff map and the main norm estimates remain open; the original scope of this construction is unchanged."
   },
   "energy_discriminant_and_weight_independence": {
     "modules": [
@@ -681,7 +698,7 @@
     "weight_independence": "The contractive raw-coefficient inclusion from a SpectralWeight space to unit weight commutes with literal convolution, the complementary reciprocal multiplier, and the tail perturbation. Uniqueness of the proved two-sided inverse identifies the actual inverse solutions, effective potential and finite two-mode operator. Consequently the analytic determinant values agree at every point of the checked closed strip with cutoff n>=8*||q||_w.",
     "weighted_characteristic": "The weighted determinant vanishes iff the same actual physical rough energy discriminant satisfies Delta(lambda)^2=4. The energy discriminant also depends jointly analytically on energy and the potential in every source weighted Banach norm via the bounded inclusion.",
     "physical_gap_bounds": "For actual characteristic root families in the respective high strips, the exact source period-one individual estimate w(2*n)*|xi_plus-xi_minus|<=6*||q||_w and the summed estimate sum_{n>=N} w(2*n)^2*|xi_plus_n-xi_minus_n|^2<=9*||R_N q||_w^2+(2304/N)*||q||_w^4 hold at the corrected cutoff N>=max(1,8*||q||_w). These are actual physical characteristic roots rather than caller-supplied abstract spectral data.",
-    "qualifications": "The rough energy discriminant and auxiliary weighted realization are identified. Unit-weight determinant/physical-characteristic analytic orders now agree in high strips at n>=16*||q||_2. Operator algebraic multiplicities, global labels, low central estimates, canonical global roots/actions and the physical Birkhoff map remain open. Main Theorems 1-3 remain unverified."
+    "qualifications": "Later modules now supply the complete intrinsic real characteristic labeling, its L2 continuity, trace parity and analytic endpoint multiplicities. Operator algebraic multiplicities, canonical normalized products/root branches/actions, the physical KdV Birkhoff map and the main norm estimates remain open; the original scope of this construction is unchanged."
   },
   "real_hill_characteristic_multiplicities": {
     "modules": [
@@ -724,7 +741,7 @@
         "imported_unchanged": true
       }
     ],
-    "qualifications": "The canonical labels are now proved independent of all admissible cutoffs/enumeration choices, with finite root fibers and exact full characteristic analytic multiplicities. Canonical source weighted gaps and their corrected high-tail estimates are supplied by HillCanonicalGapBounds. Source multiplier parity, continuity/strict central band separation, perturbed lowest-root simplicity and operator algebraic multiplicities remain. Canonical root branches/actions, Birkhoff coordinates and Theorems 1-3 remain unverified."
+    "qualifications": "Intrinsic cutoff/weight-independent labels, full analytic multiplicities, L2 continuity, source trace parity, strict adjacent-band separation, lowest-root simplicity and open/closed endpoint orders are now proved. The operator algebraic-multiplicity comparison and sharper mean-zero low-energy estimates remain separate. Canonical global root branches/actions, Birkhoff coordinates, hierarchy trace identities and Theorems 1-3 remain unverified."
   },
   "global_real_spectral_cover": {
     "modules": [
@@ -752,7 +769,7 @@
     "real_high_coverage": "The wide strips geometrically cover [pi^2*N^2-12*N,infinity) for N>=2. Therefore every real physical characteristic root in that half-line lies in an original narrow strip with index n>=N. That index is unique at N>=8*||q||_2. This closes the real gaps between narrow strips; no coverage of the complex high half-plane is inferred.",
     "central_bound": "For every complex even-supported L2 potential, N>=max(1,8*||q||_2) implies every physical characteristic root satisfies Re(lambda)>-N^2. The actual denominator estimate in this left half-plane proves this directly; neither reality nor mean zero is assumed for this bound. For real potentials and N>=max(2,8*||q||_2), every root is real and belongs either to (-N^2,pi^2*N^2-12*N) or to a unique high strip.",
     "separator": "The vertical line Re(lambda)=pi^2*N^2-12*N contains no actual characteristic roots uniformly on the even-supported complex L2 ball at N>=max(2,8*||q||_2). This is ready for a potential-homotopy central counting argument.",
-    "qualifications": "The central cluster is now counted and enumerated in order, and the high pairs occupy slots 2*n-1 and 2*n in a global nondecreasing characteristic labeling. The new central/global result is recorded separately. Source multiplier parity, strict central band separation, perturbed lowest-root simplicity and intrinsic cutoff independence remain. The coarse -N^2 bound is not the sharper mean-zero source estimate. Full operator algebraic multiplicities, normalized products/roots/actions, Birkhoff coordinates and main Theorems 1-3 remain unverified."
+    "qualifications": "The central cluster and high tail now form the complete intrinsic continuous real characteristic labeling with source trace parity, strict inter-band order and exact simple/double characteristic orders. The coarse -N^2 bound is not the sharper mean-zero source estimate. Full operator algebraic multiplicities, canonical normalized products/root branches/actions, Birkhoff coordinates and Theorems 1-3 remain unverified."
   },
   "central_count_and_global_real_labels": {
     "modules": [
@@ -791,7 +808,7 @@
       "NLS.appendPairedTail_odd",
       "NLS.monotone_appendPairedTail"
     ],
-    "qualifications": "The canonical labels are now proved independent of all admissible cutoffs/enumeration choices, with finite root fibers and exact full characteristic analytic multiplicities. Canonical source weighted gaps and their corrected high-tail estimates are supplied by HillCanonicalGapBounds. Source multiplier parity, continuity/strict central band separation, perturbed lowest-root simplicity and operator algebraic multiplicities remain. Canonical root branches/actions, Birkhoff coordinates and Theorems 1-3 remain unverified."
+    "qualifications": "Intrinsic cutoff/weight-independent labels, full analytic multiplicities, L2 continuity, source trace parity, strict adjacent-band separation, lowest-root simplicity and open/closed endpoint orders are now proved. The operator algebraic-multiplicity comparison and sharper mean-zero low-energy estimates remain separate. Canonical global root branches/actions, Birkhoff coordinates, hierarchy trace identities and Theorems 1-3 remain unverified."
   },
   "canonical_labels_and_intrinsic_gap_bounds": {
     "modules": [
@@ -822,6 +839,40 @@
     "source_weight_independence": "The period-one source potential in the w(2*k) norm is inserted at the even period-two indices and contractively included in unit weight. Its Fourier reality and even support are checked. The resulting canonical labels and gaps are identical when the same raw source Fourier coefficients are realized in any other admissible spectral weight; the auxiliary weight does not change the spectral object.",
     "canonical_gap_bounds": "gamma_n=label(2*n)-label(2*n-1) is nonnegative. For each n>=max(2,16*||q||_w), w(2*n)*gamma_n<=6*||q||_w. For N at the same cutoff the actual canonical gap squares are summable and sum_{k>=0} w(2*(k+N))^2*gamma_(k+N)^2<=9*||R_N q||_w^2+(2304/N)*||q||_w^4. These statements require only the actual real weighted potential; they do not assume any supplied root or endpoint families.",
     "cutoff_qualification": "The general root-family estimates retain their earlier cutoff 8*||q||_w. Specialization to the intrinsic labeled pairs uses the checked characteristic count and therefore the explicit cutoff max(2,16*||q||_w). The remainder coefficient is the previously corrected 2304, not the printed 576.",
-    "qualifications": "Source multiplier parity, continuity of the intrinsic labels, strict central band separation, perturbed lowest-root simplicity and the abstract operator algebraic-multiplicity comparison remain. Canonical entire products/root branches/actions, the physical KdV Birkhoff map, hierarchy trace identities and main Theorems 1-3 remain unverified. The new gap bounds do not prove the action bounds or the main norm inequalities."
+    "qualifications": "Intrinsic cutoff/weight-independent labels, full analytic multiplicities, L2 continuity, source trace parity, strict adjacent-band separation, lowest-root simplicity and open/closed endpoint orders are now proved. The operator algebraic-multiplicity comparison and sharper mean-zero low-energy estimates remain separate. Canonical global root branches/actions, Birkhoff coordinates, hierarchy trace identities and Theorems 1-3 remain unverified.",
+    "weighted_cutoff_constraint": "Inspection of the source proof on PDF page 24 confirms N>=8*||q||_w^(3/2-r) and low-index weight w(2*N-2)<=w(16*||q||_w^(3/2-r)). For large input norms the intrinsic high-pair cutoff therefore needs the sharper linear constant 8, rather than the current proved 16, to retain the exact source weight argument uniformly over admissible weights. The zero-free-boundary homotopy can potentially supply the sharper count without the larger Rouch\u00e9 comparison constant. This improvement remains a necessary quantitative proof obligation."
+  },
+  "continuous_real_spectral_order": {
+    "modules": [
+      "NLS/SequenceSpaces/OrderedFiniteContinuity.lean",
+      "NLS/KdV/HillCumulativeCounts.lean",
+      "NLS/KdV/HillLabelContinuity.lean",
+      "NLS/KdV/HillCanonicalFreeLabels.lean",
+      "NLS/KdV/HillRealTraceParity.lean"
+    ],
+    "source_correspondence": "The real periodic spectral ordering and periodic/antiperiodic parity on page 8, the simple lowest root and canonical gap endpoint multiplicities used in the root/action construction on pages 9-10.",
+    "proved_declarations": [
+      "NLS.tendsto_ordered_finite_of_counts",
+      "NLS.ComplexAnalysis.eventually_analyticZeroCount_eq_of_continuous_family",
+      "NLS.KdV.HillRealCharacteristicLabeling.cumulative_count",
+      "NLS.KdV.continuousAt_hillRealLabels_family",
+      "NLS.KdV.continuous_hillRealLabels",
+      "NLS.KdV.hillRealLabels_zero",
+      "NLS.KdV.hillRealLabels_zero_trace",
+      "NLS.KdV.hillRealLabels_trace_parity",
+      "NLS.KdV.hillRealLabels_pair_trace",
+      "NLS.KdV.hillRealLabels_band_strict",
+      "NLS.KdV.hillLowestEnergy_order_one",
+      "NLS.KdV.hillRealLabels_pair_order",
+      "NLS.KdV.hillRealLabels_open_gap_orders",
+      "NLS.KdV.hillRealLabels_closed_gap_order"
+    ],
+    "cumulative_counts": "The finite central label multiset equals the actual analytic root multiset. Restriction to a real diameter disc gives the cumulative count of labels below the threshold. The shared compact-boundary Rouch\u00e9 theorem makes that count stable near a parameter whose threshold is not a root. A shared finite ordered-count theorem then controls each slot between arbitrarily close non-root thresholds.",
+    "topology": "Every intrinsic slot is continuous on the real, even-supported period-two coefficient domain with the inherited L2 Hilbert norm topology. More generally every continuous family into that real period-one L2 domain has continuous labels for any topological parameter space. A locally uniform norm cutoff is selected near each parameter; no globally bounded family, simple-root hypothesis or open-gap hypothesis is assumed.",
+    "free_anchor": "At zero potential label(j)=pi^2*floor((j+1)/2)^2 for all j>=0, including the first three central slots. The exact normalized trace there is 2*(-1)^floor((j+1)/2).",
+    "trace_parity": "For every real period-one L2 q, the actual monodromy trace at label(j) is 2*(-1)^floor((j+1)/2). Along t*q the intrinsic label and actual trace are continuous; the characteristic equation fixes the trace square to four, and preconnected square-root uniqueness fixes its free sign. In particular both endpoints at index n>=1 have trace 2*(-1)^n.",
+    "strict_bands": "For every n>=0, label(2*n)<label(2*n+1). Opposite trace levels rule out equality, while intrinsic monotonicity supplies the weak order. Closed gaps inside slots 2*n-1 and 2*n remain allowed.",
+    "orders": "The lowest characteristic root has analytic order one, because strict separation from slot 1 and global multiplicity preservation leave only slot 0 in its fiber. Every non-lowest root can occur only in its own two gap slots. Thus open-gap endpoints each have order one and a closed gap has order two, including central pairs.",
+    "qualifications": "These are analytic characteristic orders and the actual normalized trace levels. No abstract unbounded-operator algebraic multiplicity theorem or analyticity of individual labels at closed gaps is asserted. Canonical global products/root branches/actions, the physical KdV Birkhoff map, hierarchy trace identities and main Theorems 1-3 remain unverified."
   }
 }

@@ -4975,4 +4975,9 @@ import NLS.KdV.HillGlobalRealLabels
 import NLS.KdV.HillRealLabelingUniqueness
 import NLS.KdV.HillCanonicalRealLabels
 import NLS.KdV.HillCanonicalGapBounds
+import NLS.SequenceSpaces.OrderedFiniteContinuity
+import NLS.KdV.HillCumulativeCounts
+import NLS.KdV.HillLabelContinuity
+import NLS.KdV.HillCanonicalFreeLabels
+import NLS.KdV.HillRealTraceParity
 import NLS.Articles.KdVEstimates.EstimateAdapter
