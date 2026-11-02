@@ -1,4 +1,5 @@
 import NLS.FunctionalAnalysis.PencilRootChains
+import NLS.FunctionalAnalysis.PencilRootSemisimple
 import NLS.ComplexAnalysis.PoweredAnalyticJet
 import NLS.ComplexAnalysis.BanachFiniteJets
 import NLS.ComplexAnalysis.AffinePencilJets
@@ -7,6 +8,7 @@ import NLS.FunctionalAnalysis.TwoDimensionalDeterminant
 import NLS.ComplexAnalysis.MatrixAnalyticJetAction
 import NLS.SequenceSpaces.SobolevConvolutionBounds
 import NLS.Fourier.PeriodicH1Multiplication
+import NLS.Fourier.PeriodicSobolevConjugation
 import NLS.SequenceSpaces.HillMixedKernel
 import NLS.SequenceSpaces.InfinityMatrix
 import NLS.SequenceSpaces.NegativeSpectralWeight
@@ -23,6 +25,8 @@ import NLS.KdV.SingularHillFreeIsomorphism
 import NLS.KdV.SingularHillOperatorDomain
 import NLS.KdV.SingularHillRootSpace
 import NLS.KdV.SingularHillBilinear
+import NLS.KdV.SingularHillSesquilinear
+import NLS.KdV.SingularHillRealSpectrum
 import NLS.KdV.PseudomeasureKernel
 import NLS.KdV.PseudomeasurePerturbation
 import NLS.SequenceSpaces.WienerWeakStar
@@ -51,6 +55,7 @@ import NLS.KdV.SingularHillChains
 import NLS.KdV.PseudomeasureChainJets
 import NLS.KdV.PseudomeasureTaylorKernel
 import NLS.KdV.PseudomeasureMultiplicityOrder
+import NLS.KdV.PseudomeasureRealSpectrum
 import NLS.KdV.PseudomeasureSpectralLipschitz
 import NLS.KdV.PseudomeasureRootSeparation
 import NLS.Fourier.PeriodicPseudomeasureWeakStar
@@ -82,6 +87,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralReconstruction
 import NLS.Articles.KdVPseudomeasures.SpectralMultiplicity
 import NLS.Articles.KdVPseudomeasures.SpectralChainJets
 import NLS.Articles.KdVPseudomeasures.SpectralMultiplicityOrder
+import NLS.Articles.KdVPseudomeasures.SpectralReality
 
 /-! Transitive axiom audit of every public article dependency. -/
 
@@ -102,6 +108,9 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicityOrder
 #print axioms NLS.FunctionalAnalysis.pencilChainPolynomial_zero
 #print axioms NLS.FunctionalAnalysis.pencilChainPolynomial_succ
 #print axioms NLS.FunctionalAnalysis.pencilChainPolynomial_pencil
+#print axioms NLS.FunctionalAnalysis.pencilKerRootEquiv
+#print axioms NLS.FunctionalAnalysis.pencilRootSpace_le_one_of_no_associated
+#print axioms NLS.FunctionalAnalysis.pencilRootSpaceTop_eq_one_of_no_associated
 #print axioms NLS.ComplexAnalysis.iteratedDeriv_pow_smul_zero
 #print axioms NLS.ComplexAnalysis.iteratedDeriv_eq_zero_of_powered_germ
 #print axioms NLS.ComplexAnalysis.iteratedDeriv_chainPolynomial
@@ -178,6 +187,15 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicityOrder
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.hminusOneProduct_coefficient
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.summable_norm_hminusOneProduct_terms
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.hasFourierProduct_hminusOneProduct
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.sobolevConjugation
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.sobolevConjugation_val
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.sobolevConjugation_coefficient
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.sobolevConjugation_mode
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.sobolevConjugation_involutive
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.sobolevDualIsometry_conjugation
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.sobolevDualIsometry_conjugate_left
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.h1Product_conjugation
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.hminusOneProduct_conjugation
 #print axioms NLS.ReciprocalSeries.mixed_power_le_max_decay
 #print axioms NLS.ReciprocalSeries.puncturedPower
 #print axioms NLS.ReciprocalSeries.mixedHillKernel
@@ -348,6 +366,30 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicityOrder
 #print axioms NLS.KdV.singularHillMultiplication_bilinear
 #print axioms NLS.KdV.singularHillOperator_bilinear
 #print axioms NLS.KdV.singularHillPencil_bilinear
+#print axioms NLS.KdV.singularHillDomainInclusion_conjugation
+#print axioms NLS.KdV.singularHillLaplacian_conjugation
+#print axioms NLS.KdV.singularHillOperator_conjugation
+#print axioms NLS.KdV.singularHillSesquilinear
+#print axioms NLS.KdV.singularHillSesquilinear_eq_tsum
+#print axioms NLS.KdV.summable_norm_singularHillSesquilinear
+#print axioms NLS.KdV.singularHillSesquilinear_add_left
+#print axioms NLS.KdV.singularHillSesquilinear_smul_left
+#print axioms NLS.KdV.singularHillSesquilinear_sub_left
+#print axioms NLS.KdV.singularHillPairing_conjugate_left
+#print axioms NLS.KdV.singularHillDomainInclusion_hermitian
+#print axioms NLS.KdV.singularHillOperator_hermitian
+#print axioms NLS.KdV.singularHillDomainInclusion_energy
+#print axioms NLS.KdV.summable_singularHillDomainInclusion_energy
+#print axioms NLS.KdV.singularHillDomainInclusion_energy_pos
+#print axioms NLS.KdV.singularHillDomainInclusion_energy_im
+#print axioms NLS.KdV.singularHillOperator_energy_im
+#print axioms NLS.KdV.singularHill_eigenvalue_im_eq_zero
+#print axioms NLS.KdV.singularHillPencil_pair_eigenvector
+#print axioms NLS.KdV.singularHill_no_associated_vector
+#print axioms NLS.KdV.singularHill_eigenvectors_orthogonal
+#print axioms NLS.KdV.singularHillEigenspaceRootEquiv
+#print axioms NLS.KdV.singularHillRootSpace_le_one_of_real
+#print axioms NLS.KdV.singularHillRootSpaceTop_eq_one_of_real
 #print axioms NLS.KdV.sobolev_factor_sq_le
 #print axioms NLS.KdV.freeHill_inverse_norm_le_product
 #print axioms NLS.KdV.hill_resonance_iff
@@ -688,6 +730,12 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicityOrder
 #print axioms NLS.KdV.endpointHillAlgebraicMultiplicity_eq_analyticOrderAt
 #print axioms NLS.KdV.endpointHillAlgebraicMultiplicity_eq_analyticOrderNatAt
 #print axioms NLS.KdV.endpointHill_strip_algebraic_count_two
+#print axioms NLS.KdV.endpointHillSpectrum_im_eq_zero
+#print axioms NLS.KdV.endpointHillAlgebraicMultiplicity_eq_geometric
+#print axioms NLS.KdV.finiteDimensional_realEndpointHillEigenspace
+#print axioms NLS.KdV.endpointReducedDeterminant_zero_im_eq_zero
+#print axioms NLS.KdV.endpointHillAlgebraicMultiplicity_le_two_of_real
+#print axioms NLS.KdV.endpointReducedDeterminant_order_le_two_of_real
 #print axioms NLS.KdV.negativeShiftedNorm_weightedReducedHillResolvent_le
 #print axioms NLS.KdV.summable_unshiftedEndpointHill_terms
 #print axioms NLS.KdV.unshiftedEndpointHillPerturbation_sub
@@ -930,3 +978,14 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicityOrder
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_analyticOrderNatAt
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHill_strip_algebraic_count_two
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_algebraic_count
+#print axioms NLS.Articles.KdVPseudomeasures.sourceComplexHminusOne_real
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_im_eq_zero
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_ofPotential_real
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillPencil_bijective_of_im_ne_zero
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillRootSpaceTop_eq_one_of_real
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_geometric
+#print axioms NLS.Articles.KdVPseudomeasures.finiteDimensional_realSourceHillEigenspace
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointDeterminant_zero_im_eq_zero
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_le_two_of_real
+#print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointDeterminant_order_le_two_of_real
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_real_spectral_tail

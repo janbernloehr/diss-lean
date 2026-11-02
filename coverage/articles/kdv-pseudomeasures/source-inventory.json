@@ -303,6 +303,20 @@
         "NLS.Articles.KdVPseudomeasures.sourceHill_strip_algebraic_count_two",
         "NLS.Articles.KdVPseudomeasures.sourceLemma2_11_uniform_algebraic_count"
       ]
+    },
+    {
+      "label": "Real singular Hill spectral background",
+      "content": "Actual eigenvalues and the full endpoint spectrum are real; no associated vectors on the original H1 domain; actual algebraic and geometric multiplicities agree. Original real norm balls have uniform real corrected-strip zeros of multiplicity one or two and total physical algebraic count two.",
+      "status": "Proved in the full original distribution domains. Canonical global spectral enumeration and the central offset remain open.",
+      "modules": [
+        "NLS/Fourier/PeriodicSobolevConjugation.lean",
+        "NLS/FunctionalAnalysis/PencilRootSemisimple.lean",
+        "NLS/KdV/SingularHillSesquilinear.lean",
+        "NLS/KdV/SingularHillRealSpectrum.lean",
+        "NLS/KdV/PseudomeasureRealSpectrum.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralReality.lean"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-reality-map.json"
     }
   ],
   "reuse_map": [

@@ -26,6 +26,7 @@ logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
     'NLS.FunctionalAnalysis.PencilRootChains',
+    'NLS.FunctionalAnalysis.PencilRootSemisimple',
     'NLS.ComplexAnalysis.PoweredAnalyticJet',
     'NLS.ComplexAnalysis.BanachFiniteJets',
     'NLS.ComplexAnalysis.AffinePencilJets',
@@ -34,6 +35,7 @@ modules = [
     'NLS.ComplexAnalysis.MatrixAnalyticJetAction',
     'NLS.SequenceSpaces.SobolevConvolutionBounds',
     'NLS.Fourier.PeriodicH1Multiplication',
+    'NLS.Fourier.PeriodicSobolevConjugation',
     'NLS.SequenceSpaces.HillMixedKernel',
     'NLS.SequenceSpaces.InfinityMatrix',
     'NLS.SequenceSpaces.NegativeSpectralWeight',
@@ -50,6 +52,8 @@ modules = [
     'NLS.KdV.SingularHillOperatorDomain',
     'NLS.KdV.SingularHillRootSpace',
     'NLS.KdV.SingularHillBilinear',
+    'NLS.KdV.SingularHillSesquilinear',
+    'NLS.KdV.SingularHillRealSpectrum',
     'NLS.KdV.PseudomeasureKernel',
     'NLS.KdV.PseudomeasurePerturbation',
     'NLS.SequenceSpaces.WienerWeakStar',
@@ -78,6 +82,7 @@ modules = [
     'NLS.KdV.PseudomeasureChainJets',
     'NLS.KdV.PseudomeasureTaylorKernel',
     'NLS.KdV.PseudomeasureMultiplicityOrder',
+    'NLS.KdV.PseudomeasureRealSpectrum',
     'NLS.KdV.PseudomeasureSpectralLipschitz',
     'NLS.KdV.PseudomeasureRootSeparation',
     'NLS.Fourier.PeriodicPseudomeasureWeakStar',
@@ -109,6 +114,7 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralMultiplicity',
     'NLS.Articles.KdVPseudomeasures.SpectralChainJets',
     'NLS.Articles.KdVPseudomeasures.SpectralMultiplicityOrder',
+    'NLS.Articles.KdVPseudomeasures.SpectralReality',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
