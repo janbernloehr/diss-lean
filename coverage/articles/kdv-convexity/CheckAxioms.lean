@@ -9,6 +9,8 @@ import NLS.KdV.ClassicalHillWholeGapSquares
 import NLS.KdV.ClassicalHillGapCutRoots
 import NLS.KdV.ClassicalHillCubicGapBounds
 import NLS.KdV.ClassicalL2PrimitiveAgreement
+import NLS.KdV.ClassicalL2ContourAgreement
+import NLS.KdV.HillL2DiscAsymptotics
 import NLS.KdV.ClassicalHillGapQuotientAsymptotics
 import NLS.KdV.ClassicalHillArnoldActionComparison
 import NLS.KdV.ActionHamiltonianFiniteGap
@@ -50,6 +52,7 @@ run_cmd do
     `NLS.ComplexAnalysis.NormalizedSquareRootBounds,
     `NLS.ComplexAnalysis.QuadraticRootContourPeriod,
     `NLS.ComplexAnalysis.TracePrimitiveContinuation,
+    `NLS.ComplexAnalysis.TracePrimitiveMoments,
     `NLS.ComplexAnalysis.TracePrimitiveFunctoriality,
     `NLS.ComplexAnalysis.TwoZeroOrderComparison,
     `NLS.ComplexAnalysis.ZeroCountHomotopy,

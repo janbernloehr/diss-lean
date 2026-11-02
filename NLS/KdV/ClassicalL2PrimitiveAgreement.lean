@@ -101,7 +101,7 @@ theorem hillL2HighContourMoment_zero_eq_classicalPrimitiveAction
     hillL2HighContourMoment n 0 (SpectralWeight.one.toCoeff (hillContinuousCoefficients Q)) =
       primitiveAction (fun z => classicalHillContinuedPrimitive (z,hillUnitPotentialCurve Q))
         (freeHillValue n : ℂ) (n : ℝ) := by
-  unfold hillL2HighContourMoment primitiveAction
+  unfold hillL2HighContourMoment TracePrimitiveFamily.contourMoment primitiveAction
   simp only [pow_zero,one_mul]
   congr 1
   apply circleIntegral.integral_congr (by positivity)

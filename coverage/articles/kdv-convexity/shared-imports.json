@@ -1,6 +1,6 @@
 {
   "source_branch": "articles/kdv-estimates",
-  "source_commit": "44071d89de13be985a6aa106b65801293ddbe27d",
+  "source_commit": "1b982605ff5c9308a527887f709b0de579c1b245",
   "source_files_unchanged": true,
   "dependency_order": [
     "NLS/KdV/FreeHill.lean",
@@ -35,8 +35,10 @@
     "NLS/KdV/HillCharacteristicZeros.lean",
     "NLS/KdV/HillRealSpectrum.lean",
     "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean",
+    "NLS/ComplexAnalysis/TracePrimitiveMoments.lean",
     "NLS/KdV/HillL2SourcePrimitive.lean",
-    "NLS/KdV/HillL2HighContourMoments.lean"
+    "NLS/KdV/HillL2HighContourMoments.lean",
+    "NLS/KdV/HillL2ContourDeformation.lean"
   ],
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -71,11 +73,14 @@
     "NLS/KdV/HillCharacteristicZeros.lean": "de0bfcdb98786591abb517c366b06ba069c9d7db2d1b234fe609ebb25b199498",
     "NLS/KdV/HillRealSpectrum.lean": "6e460523615ac54f3162f702c2495b85a002dcfdd0bc39f0ccd0bd49bc813476",
     "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean": "b72a10890423ba6070d235e90a5f745cfcb69fcba1f234933be9d2451c5c7ffb",
-    "NLS/KdV/HillL2SourcePrimitive.lean": "9c17a75c03b1206e2834a0a790e663d617b71a1d0113aa1bdbabb8f3bf2c7e79",
-    "NLS/KdV/HillL2HighContourMoments.lean": "067fe661032f9e59be76c9bc3be9edb6f8320b3882a78356f769f5aeb6e2eeb2"
+    "NLS/ComplexAnalysis/TracePrimitiveMoments.lean": "214de92b4daf02a9ce95ead6111039d2ab69fcab3f416a4e59cd6386230e9acb",
+    "NLS/KdV/HillL2SourcePrimitive.lean": "040ada5e2c26eddba04fd10cc011f38ae20a25d9ec8e3b7fd8d0056098bcf471",
+    "NLS/KdV/HillL2HighContourMoments.lean": "72dea2e27d21264cb4902896ebd4fb36a8694e7c37d02b3331fb9c9100835a28",
+    "NLS/KdV/HillL2ContourDeformation.lean": "459dd87f37c8ec230aa61ea921304f19a9e7085bd786fb798dc6d83e461e1a49"
   },
   "existing_import_boundary": [
     "NLS/ComplexAnalysis/CircleIntegralIntegrationByParts.lean",
+    "NLS/ComplexAnalysis/CirclePolynomialIntegrationByParts.lean",
     "NLS/ComplexAnalysis/ContinuousLogarithmUnique.lean",
     "NLS/ComplexAnalysis/IsolatedOrderStability.lean",
     "NLS/ComplexAnalysis/ParametricCircleIntegralHigher.lean",
@@ -114,5 +119,7 @@
     "NLS/ZakharovShabat/PeriodicSpectrum.lean"
   ],
   "existing_import_boundary_identical": true,
-  "private_validation": "scripts/check-kdv-convexity.sh"
+  "private_validation": "scripts/check-kdv-convexity.sh",
+  "previous_source_commit": "44071d89de13be985a6aa106b65801293ddbe27d",
+  "upgrade_scope": "All 36 imported sources exactly match the pinned shared commit. Two prior modules are upgraded; TracePrimitiveMoments and HillL2ContourDeformation are newly imported. All existing import boundaries remain byte-identical."
 }

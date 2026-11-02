@@ -43,6 +43,10 @@ The analytic summation also allows a local finite spectral cutoff.
 Analytic squared primitive charts at
 both signs of the branch locus are also constructed. The earlier local
 concavity/inverse preparation is preserved.
+The original Arnold and cubic periods now agree exactly with the shared
+L2 energy-circle periods. The actual L2 trace also admits uniform free
+approximation on full high discs and source paths in complex L2 neighborhoods;
+the corresponding uniform L2 moment estimates remain open.
 This record does not reopen the completed dissertation verification.
 
 ## Source and conventions
@@ -878,14 +882,14 @@ neighborhood may depend on epsilon. No single neighborhood for all
 tolerances is asserted. The roots H_n are analytic in energy, with a
 common estimate for all nearby complex potentials; joint potential
 analyticity of this endpoint-deflated root is not yet asserted. The
-remaining action estimate needs the exact endpoint-root period and its
-comparison with the physically normalized contour action.
+exact endpoint-root period and comparison with the original Arnold period
+are now proved below. Global Birkhoff action identification remains open.
 
 ### Agreement with the shared physical L2 primitive and Arnold periods
 
 The dependency closure of the shared L2 primitive and contour moments
-was imported unchanged from `articles/kdv-estimates`, commit `44071d8`:
-34 modules, including the actual Hill operator, monodromy trace,
+is imported exactly from `articles/kdv-estimates`, now pinned to commit
+`1b98260`: 36 modules, including the actual Hill operator, monodromy trace,
 characteristic equivalence, L2 spectral reality and source continuation.
 Every existing import at the boundary was identical to that commit.
 [`shared-imports.json`](shared-imports.json) records the exact files and
@@ -951,6 +955,70 @@ global Birkhoff action identification, and analytic descent to the weighted
 action neighborhood are still required before applying the global ell2
 summation theorem to the physical Hamiltonian.
 
+## Exact agreement with the L2 energy-circle periods
+
+The shared `TracePrimitiveMoments.lean` and `HillL2ContourDeformation.lean`
+are imported unchanged at `1b98260`. They supply all-level Arnold formulas
+and invariance on the actual source annuli. All 36 imported source modules
+match that commit byte for byte, including the two upgraded source files.
+
+`HillL2CubicContourMoments.lean` defines the actual cubic period
+(1/pi)*integral (F(lambda,q)+i*n*pi)^3 on the energy circle centered at
+pi^2*n^2 with radius n. It is analytic in the ambient complex L2 coefficient
+space near each checked high-index input, vanishes at zero, and is invariant
+under the checked annular radius changes.
+
+`ClassicalL2ContourAgreement.lean` proves that the original frequency
+contours defining both the Arnold action and cubic moment equal these L2
+energy-circle periods. The intermediate frequency radius is 1/(4*pi),
+and its squared contour deforms to the energy circle of radius n/2.
+The deformation stays in the actual source annulus with energy distances
+between n/4 and 3*n/4. The bound 16*|q|_L2<n ensures coverage, and the
+exact differential 2*z*dz and indexed shift F+i*n*pi are retained.
+
+For each complex continuous circle potential Q, one complex open
+neighborhood U of Q and one positive cutoff precede every period-one A
+in U and every high index. Both contour identities hold there. Consequently
+the actual L2 energy-circle periods satisfy the previously proved gap
+comparison, exact collapsed-gap zero locus, and quadratic bound
+
+```
+|8*n*pi*hillL2HighCubicContourMoment n q|
+  <= C*|hillL2HighContourMoment n 0 q|^2.
+```
+
+The common neighborhood controlling this inequality uses the continuous
+sup norm. Individual L2 analyticity does not supply a uniform L2 tail
+bound. Uniform rough-topology estimates, H^-1 extension, canonical global
+labels, Birkhoff action identification and analytic weighted-action descent
+remain open; the global ell2 Hamiltonian extension is not yet asserted.
+
+## Uniform high-disc trace control in the L2 topology
+
+`HillL2DiscAsymptotics.lean` realizes the actual constant-upper L2 system
+inside the canonical ZS trace, using physical interval restriction, the
+source Fourier isometry and the existing period-one coefficient map.
+This affine realization is continuous and complex analytic; its canonical
+discriminant equals the actual Hill L2 discriminant at lambda=z^2 exactly.
+It does not need to send the zero potential to the zero ZS pair.
+
+For every q in the full complex L2 coefficient space, every 0<r<=pi/4,
+and every epsilon>0, one positive cutoff N and one complex L2-open V
+containing q precede all a in V, all integers |n|>=N, and all z in the
+complete closed frequency disc of radius r about n*pi:
+
+```
+|hillL2Discriminant a (z^2)-2*cos(z)| <= epsilon.
+```
+
+The same theorem is proved uniformly near compact L2 sets and along all
+straight source paths s*a, 0<=s<=1, on one neighborhood and cutoff. No
+continuity or parity hypothesis on q is needed for these trace estimates.
+The proof transfers the established exterior ZS estimate and applies the
+maximum-modulus principle. This supplies an actual L2 starting point for
+the gap-square construction; uniform L2 unit-root, action-gap and quadratic
+moment estimates, and the H^-1 extension, remain to be proved.
+
 ## Earlier checked local consequences
 
 [`LocalConsequences.lean`](../../../NLS/Articles/KdVConvexity/LocalConsequences.lean)
@@ -1004,7 +1072,7 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    giving the full -6*Id derivative. Apply the checked local consequences
    after positive-index Hessian/real-cone transport.
 
-The `kdv-estimates` branch was re-inspected through commit `44071d8`.
+The `kdv-estimates` branch was re-inspected through commit `1b98260`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
 two-mode reduction, weighted root separation and physical gap tails. The
 period-one L2 Hill discriminant is jointly entire after square descent,
@@ -1018,13 +1086,15 @@ and appends the high pairs to construct global nondecreasing real L2
 characteristic labels in the exact tail slots `2*n-1` and `2*n`. Those
 labels are now intrinsic and independent of the cutoff, with the lowest
 energy characterized intrinsically and canonical weighted gap estimates
-proved directly for the actual labeled gaps. The 34-module dependency
-closure for its L2 source primitive and contour moments is now reused
-and validated here. The additional intrinsic global-label and canonical
+proved directly for the actual labeled gaps. The 36-module dependency
+closure for its L2 source primitive, contour moments and annular deformation
+is now reused and validated here. Two prior shared sources were upgraded
+and two shared modules were added, all exactly matching the pinned commit.
+The additional intrinsic global-label and canonical
 gap-tail modules remain available on that branch and are not imported
 in this focused build. Identification of those L2 labels with this
-branch's continuous contour construction, continuity/analyticity of labels
-in the required rough topology, H^-1 spectral/action theory, and the
+branch's continuous contour construction, continuity of spectral data and
+analyticity of symmetric combinations in the required H^-1 topology, and the
 Birkhoff construction remain open.
 No separate messages were sent to other article chats.
 
@@ -1037,12 +1107,12 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All one hundred modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All 105 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in twelve additional shared modules:
-1237 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in thirteen additional shared modules:
+1284 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
