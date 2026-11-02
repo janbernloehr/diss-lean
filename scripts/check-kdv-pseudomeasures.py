@@ -60,6 +60,7 @@ modules = [
     'NLS.KdV.SingularHillEnergy',
     'NLS.KdV.SingularHillSemibounded',
     'NLS.KdV.SingularHillRealSpectrum',
+    'NLS.KdV.SingularHillFreeSpectrum',
     'NLS.KdV.PseudomeasureKernel',
     'NLS.KdV.PseudomeasurePerturbation',
     'NLS.SequenceSpaces.WienerWeakStar',
@@ -131,6 +132,7 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralWideLocalization',
     'NLS.Articles.KdVPseudomeasures.SpectralLowerBound',
     'NLS.Articles.KdVPseudomeasures.SpectralCentralWindow',
+    'NLS.Articles.KdVPseudomeasures.SpectralFreeCount',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

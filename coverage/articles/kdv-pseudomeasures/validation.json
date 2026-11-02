@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Original singular form lower bound, finite complex central spectrum, lowest real eigenvalue and a uniform actual central resolvent boundary",
+  "phase": "Actual free original singular spectrum, full eigenspaces and exact free central algebraic count",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
@@ -41,6 +41,7 @@
     "NLS/KdV/SingularHillEnergy.lean",
     "NLS/KdV/SingularHillSemibounded.lean",
     "NLS/KdV/SingularHillRealSpectrum.lean",
+    "NLS/KdV/SingularHillFreeSpectrum.lean",
     "NLS/KdV/PseudomeasureKernel.lean",
     "NLS/KdV/PseudomeasurePerturbation.lean",
     "NLS/SequenceSpaces/WienerWeakStar.lean",
@@ -112,13 +113,14 @@
     "NLS/Articles/KdVPseudomeasures/SpectralWideLocalization.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralLowerBound.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralWindow.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralFreeCount.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 858,
-  "definitions": 206,
+  "proved_theorems": 880,
+  "definitions": 209,
   "axiom_audit": {
     "method": "Lean #print axioms on every source-inventoried public definition/theorem, with nested namespaces and qualified names supported. Exact inventory/audit/output set match, followed by allowlist check. Private imported proofs are covered transitively.",
-    "declarations": 1064,
+    "declarations": 1089,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -282,10 +284,15 @@
     "The global actual endpoint Fredholm alternative transfers those bounds to EVERY point of the full complex endpoint spectrum. Every left real half-plane contains only finitely many actual spectral values. Native real endpoint potentials have an actual lowest eigenvalue, using this finiteness and a proved nonempty high pair.",
     "Original complex source norm balls have one explicit lower/sector bound using the true norm of the original endpoint-to-H-minus-one inclusion. The left of that lower bound lies in the full original H1-to-H-minus-one resolvent. All source distributions and norms are retained.",
     "The actual finite central source spectrum is defined strictly below free_N-12N, and sourceCentralAlgebraicCount is the finite sum of ACTUAL physical algebraic multiplicities there. Each included multiplicity is positive. The required value2N-1 is not assumed or proved by these definitions.",
-    "The high-region edge lies strictly between the adjacent FREE centers free_(N-1) and free_N for N>=2. A single rectangle chosen before every complex source potential on a fixed original norm ball has all its sides in the full original physical resolvent and contains every actual central spectral point strictly inside. The left/horizontal sides use the sector estimate; the right side uses actual wide localization."
+    "The high-region edge lies strictly between the adjacent FREE centers free_(N-1) and free_N for N>=2. A single rectangle chosen before every complex source potential on a fixed original norm ball has all its sides in the full original physical resolvent and contains every actual central spectral point strictly inside. The left/horizontal sides use the sector estimate; the right side uses actual wide localization.",
+    "On the entire original period-two H1 domain, the zero-potential eigen-equation is exactly diagonal. A nonzero eigenvector exists exactly at a genuine free value pi^2*n^2, n>=0. No additional free spectral values exist in the original physical endpoint realization.",
+    "Actual physical unit modes are constructed from the original smooth Fourier modes. Scalar amplitudes biject with the full constant eigenspace; two signed amplitudes biject with every full positive free eigenspace. Their complex dimensions are exactly one and two.",
+    "Native real semisimplicity transfers these geometric dimensions to the ACTUAL full physical algebraic multiplicities of the original zero source potential. The complete free multiplicity sequence is one at n=0 and two at every n>=1.",
+    "For N>=2, the already verified central edge pi^2*N^2-12N cuts the actual free spectrum exactly at n<N. The actual finite source central spectrum equals the image of range(N) under n->pi^2*n^2.",
+    "sourceCentralAlgebraicCount_zero proves that the existing sum of ACTUAL original physical algebraic multiplicities in the free central spectrum is exactly2N-1. This is the free baseline; its invariance under a change of original potential remains unproved."
   ],
-  "source_correspondence": "The original full-domain singular Hill weak form now has a genuine norm-controlled lower bound. For all original complex endpoint potentials the full physical spectrum has lower real/sector bounds, every central left half-plane is finite, and native real source potentials have an actual lowest eigenvalue. One exact original complex norm-ball rectangle has verified physical resolvent on every side and encloses the entire actual central spectrum strictly inside. The actual finite central algebraic count is defined; its value2N-1 and homotopy invariance remain unproved. Canonical global labeling, parity, inverse regularity, original Birkhoff maps and actual KdV main theorems remain open; all main theorem completion flags remain false.",
-  "build_isolation": "All107 modules rebuilt in a fresh empty private output view; canonical/package imports stay read-only symlinks and every compiler destination is checked to remain private. Exact1064-declaration transitive audit passed without warnings or tactic suggestions. Canonical tracked sources and build outputs were not written.",
+  "source_correspondence": "The free original singular spectrum and actual full algebraic multiplicities are proved directly on the entire original H1/H-minus-one operator. The actual free central count is exactly2N-1. Invariance for nonzero original potentials, canonical global labels/parity, inverse regularity, original Birkhoff maps and actual KdV main theorems remain open. All main theorem completion flags remain false.",
+  "build_isolation": "All109 modules rebuilt in a fresh empty private output view. Canonical/package imports remain read-only symlinks and every compiler destination is private. Exact1089-declaration transitive audit passed with no warnings or tactic suggestions. Canonical tracked sources/build outputs were not written.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
@@ -326,6 +333,7 @@
     "NLS/KdV/SingularHillEnergy.lean": "351161fc3fa21af5ee9f5d49a48d4f6431f6db5581e711025f599f50f3dcdeec",
     "NLS/KdV/SingularHillSemibounded.lean": "cb97a27a233bc71e0b54f06bc94893a0b91d1d9a7a870e2860bb323784eb0b51",
     "NLS/KdV/SingularHillRealSpectrum.lean": "74b982e500d0b5ffc9fba83709fd1f22a5e4314007bc4a49b8e1beed35d675ac",
+    "NLS/KdV/SingularHillFreeSpectrum.lean": "011c4baac7145ff5c68a75e2e0381f47d42e2ea2e442b811dde371ef7e4c1b8d",
     "NLS/KdV/PseudomeasureKernel.lean": "f01c07d26885a0f79ee7ca89c786174d27cc1ec121eff8366b2eb2125a76aa8b",
     "NLS/KdV/PseudomeasurePerturbation.lean": "8a02466f93b8d9e3280cb298001b67a5e8e69c0ae4692a660298506b4cc04068",
     "NLS/SequenceSpaces/WienerWeakStar.lean": "2a076d7574d6563ce90040c202599697876fb6d01b6ed7c1dba84ad35a0c378c",
@@ -397,7 +405,8 @@
     "NLS/Articles/KdVPseudomeasures/SpectralWideLocalization.lean": "27469cac5deac75170eb8f867ff804ce909a84b293b24c0506f19e842c5a05d1",
     "NLS/Articles/KdVPseudomeasures/SpectralLowerBound.lean": "6970d2a80adbecff3ce7e0ac7e291ae279e2307349b42b519176f73340e6162d",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralWindow.lean": "6ef29dc4418c2038f990f5967e7bcd96620088da524912139c4f502f3a0818d7",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "3ed025bd89de1597c19258cef5e7eb37eb9e587548cdc8315ef8a2f1ad9f1126"
+    "NLS/Articles/KdVPseudomeasures/SpectralFreeCount.lean": "c230e5b67050a8f1e7d2bf2356cb23cdc05da63ff412688933530906f6ce2c15",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "5ec4714f9ee7615d50e769c4f9715eb8acc10e7059f4551209af18988afa0873"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -405,13 +414,13 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 999,
-    "newly_authored_declarations_this_continuation": 65,
-    "new_theorems": 55,
-    "new_definitions": 10,
+    "previous_checked_declarations": 1064,
+    "newly_authored_declarations_this_continuation": 25,
+    "new_theorems": 22,
+    "new_definitions": 3,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 1064,
-    "previous_reuse": "Reuses the verified Hilbert Agmon embedding, native physical Sobolev duality/conjugation/product, free derivative graph estimates, full actual endpoint Fredholm alternative/discreteness, original norm inclusions, high physical pairs and wide spectral localization. No endpoint infinity truncation convergence is assumed, and no regular L2-potential physical theorem is substituted."
+    "total_checked_declarations": 1089,
+    "previous_reuse": "Original smooth physical Fourier modes, exact singular H1/H-minus-one eigen-equation, native semisimplicity, actual root-space multiplicities, full endpoint Fredholm alternative and existing central edge geometry. No regular-potential physical spectrum theorem is substituted."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -442,7 +451,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-lower-spectrum.log",
+  "validation_log": ".lake/article-check/logs/validation-free-count.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",

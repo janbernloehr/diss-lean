@@ -357,6 +357,16 @@
         "NLS/Articles/KdVPseudomeasures/SpectralCentralWindow.lean"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-lower-bound-map.json"
+    },
+    {
+      "label": "Actual free singular spectrum and free central algebraic count",
+      "content": "The full original free operator has only pi^2*n^2,with actual algebraic multiplicity one at zero and two at each positive free value. Its actual central algebraic count below pi^2*N^2-12N is exactly2N-1 for N>=2.",
+      "status": "Proved on the entire original singular domain. Count invariance for nonzero potentials and all main theorem constructions remain open.",
+      "modules": [
+        "NLS/KdV/SingularHillFreeSpectrum.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralFreeCount.lean"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-free-count-map.json"
     }
   ],
   "reuse_map": [

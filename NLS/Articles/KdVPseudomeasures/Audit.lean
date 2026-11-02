@@ -33,6 +33,7 @@ import NLS.KdV.SingularHillSesquilinear
 import NLS.KdV.SingularHillEnergy
 import NLS.KdV.SingularHillSemibounded
 import NLS.KdV.SingularHillRealSpectrum
+import NLS.KdV.SingularHillFreeSpectrum
 import NLS.KdV.PseudomeasureKernel
 import NLS.KdV.PseudomeasurePerturbation
 import NLS.SequenceSpaces.WienerWeakStar
@@ -104,8 +105,9 @@ import NLS.Articles.KdVPseudomeasures.SpectralGapTail
 import NLS.Articles.KdVPseudomeasures.SpectralWideLocalization
 import NLS.Articles.KdVPseudomeasures.SpectralLowerBound
 import NLS.Articles.KdVPseudomeasures.SpectralCentralWindow
+import NLS.Articles.KdVPseudomeasures.SpectralFreeCount
 
-/-! Transitive axiom audit of every public article dependency. -/
+/-! Exact transitive axiom audit of all checked public declarations. -/
 
 #print axioms NLS.FunctionalAnalysis.pencilChainEndpoint
 #print axioms NLS.FunctionalAnalysis.pencilChainEndpoint_zero
@@ -451,6 +453,22 @@ import NLS.Articles.KdVPseudomeasures.SpectralCentralWindow
 #print axioms NLS.KdV.singularHillEigenspaceRootEquiv
 #print axioms NLS.KdV.singularHillRootSpace_le_one_of_real
 #print axioms NLS.KdV.singularHillRootSpaceTop_eq_one_of_real
+#print axioms NLS.KdV.freeHillValue_eq_iff
+#print axioms NLS.KdV.singularHill_zero_eigen_iff
+#print axioms NLS.KdV.singularHill_zero_eigen_iff_support
+#print axioms NLS.KdV.singularHillFreeMode
+#print axioms NLS.KdV.singularHillFreeMode_coefficient
+#print axioms NLS.KdV.singularHillFreeMode_apply
+#print axioms NLS.KdV.singularHillFreeMode_ne_zero
+#print axioms NLS.KdV.singularHillFreeMode_eigen
+#print axioms NLS.KdV.singularHill_zero_eigenvalue_iff
+#print axioms NLS.KdV.singularHillFreeConstantMap
+#print axioms NLS.KdV.singularHillFreeConstantMap_bijective
+#print axioms NLS.KdV.finrank_singularHillEigenspace_zero
+#print axioms NLS.KdV.singularHillFreePairMap
+#print axioms NLS.KdV.singularHillFreePairMap_bijective
+#print axioms NLS.KdV.finrank_singularHillEigenspace_free
+#print axioms NLS.KdV.strictMono_freeHillValues
 #print axioms NLS.KdV.sobolev_factor_sq_le
 #print axioms NLS.KdV.freeHill_inverse_norm_le_product
 #print axioms NLS.KdV.hill_resonance_iff
@@ -1171,3 +1189,12 @@ import NLS.Articles.KdVPseudomeasures.SpectralCentralWindow
 #print axioms NLS.Articles.KdVPseudomeasures.sourceCentralWindowBoundary_bijective
 #print axioms NLS.Articles.KdVPseudomeasures.sourceCentralSpectrum_inside_window
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_central_resolvent_window
+#print axioms NLS.Articles.KdVPseudomeasures.sourceComplexHminusOne_zero
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillSpectrum_zero_mem_iff
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_zero_zero
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_zero_free
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_zero_formula
+#print axioms NLS.Articles.KdVPseudomeasures.sourceFreeValue_lt_centralEdge_iff
+#print axioms NLS.Articles.KdVPseudomeasures.mem_sourceCentralSpectrum_zero_iff
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCentralSpectrum_zero_eq
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCentralAlgebraicCount_zero

@@ -62,7 +62,7 @@
     ]
   },
   "essential_open_obligations": [
-    "Prove invariance and the exact value2N-1 of the actual finite central algebraic count, then canonical periodic/antiperiodic global label slots and parity. High exhaustion, original lower bounds, central finiteness and a uniform physical resolvent boundary are proved. Complete physical gap/Dirichlet estimates.",
+    "Prove homotopy invariance of the actual finite central algebraic count, whose free value2N-1 is now proved; then canonical global periodic/antiperiodic label slots and source parity. Complete physical gap/Dirichlet estimates.",
     "Construct the Birkhoff map with its global bijectivity, analyticity and endpoint inverse regularity.",
     "Endpoint spectral estimates and inverse regularity needed by 1.4.",
     "Actual KdV H^-1 smooth-approximation solution extension, invariance and continuity.",
@@ -169,7 +169,12 @@
     "The global actual endpoint Fredholm alternative transfers those bounds to EVERY point of the full complex endpoint spectrum. Every left real half-plane contains only finitely many actual spectral values. Native real endpoint potentials have an actual lowest eigenvalue, using this finiteness and a proved nonempty high pair.",
     "Original complex source norm balls have one explicit lower/sector bound using the true norm of the original endpoint-to-H-minus-one inclusion. The left of that lower bound lies in the full original H1-to-H-minus-one resolvent. All source distributions and norms are retained.",
     "The actual finite central source spectrum is defined strictly below free_N-12N, and sourceCentralAlgebraicCount is the finite sum of ACTUAL physical algebraic multiplicities there. Each included multiplicity is positive. The required value2N-1 is not assumed or proved by these definitions.",
-    "The high-region edge lies strictly between the adjacent FREE centers free_(N-1) and free_N for N>=2. A single rectangle chosen before every complex source potential on a fixed original norm ball has all its sides in the full original physical resolvent and contains every actual central spectral point strictly inside. The left/horizontal sides use the sector estimate; the right side uses actual wide localization."
+    "The high-region edge lies strictly between the adjacent FREE centers free_(N-1) and free_N for N>=2. A single rectangle chosen before every complex source potential on a fixed original norm ball has all its sides in the full original physical resolvent and contains every actual central spectral point strictly inside. The left/horizontal sides use the sector estimate; the right side uses actual wide localization.",
+    "On the entire original period-two H1 domain, the zero-potential eigen-equation is exactly diagonal. A nonzero eigenvector exists exactly at a genuine free value pi^2*n^2, n>=0. No additional free spectral values exist in the original physical endpoint realization.",
+    "Actual physical unit modes are constructed from the original smooth Fourier modes. Scalar amplitudes biject with the full constant eigenspace; two signed amplitudes biject with every full positive free eigenspace. Their complex dimensions are exactly one and two.",
+    "Native real semisimplicity transfers these geometric dimensions to the ACTUAL full physical algebraic multiplicities of the original zero source potential. The complete free multiplicity sequence is one at n=0 and two at every n>=1.",
+    "For N>=2, the already verified central edge pi^2*N^2-12N cuts the actual free spectrum exactly at n<N. The actual finite source central spectrum equals the image of range(N) under n->pi^2*n^2.",
+    "sourceCentralAlgebraicCount_zero proves that the existing sum of ACTUAL original physical algebraic multiplicities in the free central spectrum is exactly2N-1. This is the free baseline; its invariance under a change of original potential remains unproved."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
