@@ -119,6 +119,7 @@ import NLS.Fourier.PeriodicWeakStarLowerTopology
 import NLS.Dynamics.ActionDependentWeightedPhaseFlow
 import NLS.Dynamics.WeightedWeakStarPhaseFlow
 import NLS.SequenceSpaces.OrderedNatEnumerationUnique
+import NLS.SequenceSpaces.OrderedFiniteContinuity
 import NLS.Articles.KdVPseudomeasures.WeakStarEndpoint
 import NLS.Articles.KdVPseudomeasures.WeightedWeakStarEndpoint
 import NLS.Articles.KdVPseudomeasures.PeriodicWeakStarEndpoint
@@ -174,6 +175,9 @@ import NLS.Articles.KdVPseudomeasures.SpectralInverseGapComparison
 import NLS.Articles.KdVPseudomeasures.SpectralEndpointBootstrap
 import NLS.Articles.KdVPseudomeasures.SpectralCrossOrder
 import NLS.Articles.KdVPseudomeasures.SpectralWeakStarResolvent
+import NLS.Articles.KdVPseudomeasures.SpectralCumulativeCounts
+import NLS.Articles.KdVPseudomeasures.SpectralLabelContinuity
+import NLS.Articles.KdVPseudomeasures.SpectralClosedFibers
 import NLS.Articles.KdVPseudomeasures.SpectralEndpointCompactness
 import NLS.Articles.KdVPseudomeasures.SpectralAdaptedDiffeomorphism
 import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
@@ -1245,6 +1249,10 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.WeightedCoeff.continuous_weakStarInvariantActionTrajectory
 #print axioms NLS.multiplicity_lt_of_first_ordered_discrepancy
 #print axioms NLS.ordered_nat_enumeration_eq_of_multiplicity
+#print axioms NLS.finiteLowerCount
+#print axioms NLS.finiteLowerCount_le_iff
+#print axioms NLS.index_lt_finiteLowerCount_iff
+#print axioms NLS.tendsto_ordered_finite_of_counts
 #print axioms NLS.Articles.KdVPseudomeasures.hminusOne_threshold
 #print axioms NLS.Articles.KdVPseudomeasures.hminusOneMapOn
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_trajectory_iff_hminusOne
@@ -1724,6 +1732,21 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.Articles.KdVPseudomeasures.sourceWeakStarRieszProjection_range_eq_roots
 #print axioms NLS.Articles.KdVPseudomeasures.sourceWeakStarRieszProjection_rank_eq_count
 #print axioms NLS.Articles.KdVPseudomeasures.eventually_sourceCircleAlgebraicCount_eq
+#print axioms NLS.Articles.KdVPseudomeasures.source_realDiameter_resolvent
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCircleAlgebraicCount_realDiameter_eq_lowerCount
+#print axioms NLS.Articles.KdVPseudomeasures.continuousAt_sourceHillLabels_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_sourceHillLabels_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_sourceHillLabels_sequence_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_sourceCanonicalGapValues_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_sourceCanonicalGapValues_sequence_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber
+#print axioms NLS.Articles.KdVPseudomeasures.isClosed_sourceCanonicalSpectralFiber_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_sourceNormBall_canonicalSpectralFiber
+#print axioms NLS.Articles.KdVPseudomeasures.isClosed_sourceCanonicalSpectralFiber_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_sourceCanonicalSpectralFiber_iff_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber_spectrum
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber_multiplicity
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber_cross_order
 #print axioms NLS.Articles.KdVPseudomeasures.sourceReinterpretationSet
 #print axioms NLS.Articles.KdVPseudomeasures.isCompact_sourceReinterpretationSet_of_lower_compact
 #print axioms NLS.Articles.KdVPseudomeasures.source_normBounded_of_compact_finite_realization

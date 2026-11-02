@@ -1,0 +1,106 @@
+{
+  "source": "Intrinsic physical spectral labels and AppendixB weak-star compactness step underlying source Theorem2.2 and Sections2-3;arXiv:1610.00278v1.",
+  "main_theorems_verified": false,
+  "source_theorem_2_2_verified": false,
+  "bounded_original_weak_star_canonical_real_label_continuity_verified": true,
+  "bounded_original_weak_star_canonical_signed_gap_continuity_verified": true,
+  "bounded_original_endpoint_canonical_fiber_relative_closedness_verified": true,
+  "entire_endpoint_canonical_fiber_compact_iff_endpoint_bounded_verified": true,
+  "full_original_HminusOne_isospectral_endpoint_membership_or_boundedness_verified": false,
+  "original_finite_p_inverse_spectral_input_verified": false,
+  "modules": [
+    "NLS/SequenceSpaces/OrderedFiniteContinuity.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralCumulativeCounts.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralLabelContinuity.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralClosedFibers.lean"
+  ],
+  "declarations": [
+    "NLS.finiteLowerCount",
+    "NLS.finiteLowerCount_le_iff",
+    "NLS.index_lt_finiteLowerCount_iff",
+    "NLS.tendsto_ordered_finite_of_counts",
+    "NLS.Articles.KdVPseudomeasures.source_realDiameter_resolvent",
+    "NLS.Articles.KdVPseudomeasures.sourceCircleAlgebraicCount_realDiameter_eq_lowerCount",
+    "NLS.Articles.KdVPseudomeasures.continuousAt_sourceHillLabels_on_bounded",
+    "NLS.Articles.KdVPseudomeasures.continuous_sourceHillLabels_on_bounded",
+    "NLS.Articles.KdVPseudomeasures.continuous_sourceHillLabels_sequence_on_bounded",
+    "NLS.Articles.KdVPseudomeasures.continuous_sourceCanonicalGapValues_on_bounded",
+    "NLS.Articles.KdVPseudomeasures.continuous_sourceCanonicalGapValues_sequence_on_bounded",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber",
+    "NLS.Articles.KdVPseudomeasures.isClosed_sourceCanonicalSpectralFiber_on_bounded",
+    "NLS.Articles.KdVPseudomeasures.isCompact_sourceNormBall_canonicalSpectralFiber",
+    "NLS.Articles.KdVPseudomeasures.isClosed_sourceCanonicalSpectralFiber_of_bounded",
+    "NLS.Articles.KdVPseudomeasures.isCompact_sourceCanonicalSpectralFiber_iff_bounded",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber_spectrum",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber_multiplicity",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber_cross_order"
+  ],
+  "results": [
+    "Reused and privately rebuilt the shared OrderedFiniteContinuity module from articles/kdv-convexity at its pinned recorded commit. Its three theorems and one definition prove continuity of finite ordered real entries from cumulative-count stability away from limiting entries,including repeated values. No source change was needed.",
+    "For the ACTUAL real original physical source spectrum,a real-diameter circle is in the full physical resolvent when its left endpoint is below the entire spectrum and its right endpoint is not spectral. The ACTUAL disk algebraic count is EXACTLY finiteLowerCount of the intrinsic canonical central prefix,including every full physical algebraic repetition. This is proved by finite double counting,not by assuming a supplied root list.",
+    "Every ACTUAL intrinsic canonical real label is now weak-star continuous on EVERY original endpoint norm-bounded physical set. The proof chooses one uniform norm-ball cutoff before the family,uses actual original spectral lower bounds,and applies the proved physical disk-count stability to the exact canonical cumulative counts. All repeated entries and closed gaps are included.",
+    "Every ACTUAL signed canonical gap is weak-star continuous on every bounded original physical set. The entire canonical label sequence and entire signed gap sequence are continuous in their product topologies. No continuity in the weighted infinity norm is asserted.",
+    "sourceCanonicalSpectralFiber prescribes the ENTIRE actual canonical spectrum with ALL algebraic repetitions. Such a fiber is relatively weak-star closed on EVERY bounded original physical set,and its intersection with each specified original endpoint norm ball is weak-star compact.",
+    "An ENTIRE original endpoint canonical spectral fiber is weak-star compact IFF it is bounded in the EXACT original endpoint norm. A globally bounded fiber is closed in the ENTIRE physical weak-star space. Actual spectrum exhaustion and all physical algebraic multiplicities are explicitly identified from the prescribed labels. Fiber membership is invariant under endpoint-order reinterpretation of the SAME entire original distribution."
+  ],
+  "shared_reuse": {
+    "branch": "articles/kdv-convexity",
+    "commit": "49a9b4a7fcfb71a073cb3719af912b1b48855f93",
+    "module": "NLS/SequenceSpaces/OrderedFiniteContinuity.lean",
+    "sha256": "845306a62ca86b944046d35727a675c24419dee39a0436e4b234dd317d9ebe6b",
+    "canonical_written": false
+  },
+  "domains": {
+    "potentials": "Original REAL,mean-zero,physically period-one WeakStarPotential(r),0<=r<1/2,with the exact original endpoint norm.",
+    "topology": "Inherited original Wiener weak-star topology on EVERY norm-bounded source subset;ordinary real/complex topology on individual labels/gaps and product topology on the entire sequences.",
+    "counts": "Actual original full-domain spectrum inside real-diameter disks,each value repeated by its full physical algebraic root-space dimension. The proved equality is to finiteLowerCount of the actual canonical prefix below the central separator.",
+    "label_order": "Exact intrinsic full natural-number canonical labels with actual algebraic repetitions and high slots2n-1,2n. Shared cutoff/root tables and simplicity/open gaps are not assumed.",
+    "gaps": "Actual sourceCanonicalGapValues at every signed integer,including zero,negative modes and collapsed gaps. Product continuity only;no weighted infinity-norm continuity claim.",
+    "fibers": "An ENTIRE prescribed canonical label sequence ell:Nat->Real. Relative closedness on any bounded set;intersection with any specified original endpoint norm ball compact. Whole fiber compact iff whole fiber endpoint norm bounded.",
+    "original_isospectral_scope": "The original H-minus-one isospectral set is NOT assumed to lie in an endpoint space by the fiber definition. Its missing endpoint membership and uniform bound are still essential obligations."
+  },
+  "conclusions": {
+    "sourceCircleAlgebraicCount_realDiameter_eq_lowerCount": "NLS.Articles.KdVPseudomeasures.sourceCircleAlgebraicCount_realDiameter_eq_lowerCount",
+    "continuousAt_sourceHillLabels_on_bounded": "NLS.Articles.KdVPseudomeasures.continuousAt_sourceHillLabels_on_bounded",
+    "continuous_sourceHillLabels_on_bounded": "NLS.Articles.KdVPseudomeasures.continuous_sourceHillLabels_on_bounded",
+    "continuous_sourceHillLabels_sequence_on_bounded": "NLS.Articles.KdVPseudomeasures.continuous_sourceHillLabels_sequence_on_bounded",
+    "continuous_sourceCanonicalGapValues_on_bounded": "NLS.Articles.KdVPseudomeasures.continuous_sourceCanonicalGapValues_on_bounded",
+    "continuous_sourceCanonicalGapValues_sequence_on_bounded": "NLS.Articles.KdVPseudomeasures.continuous_sourceCanonicalGapValues_sequence_on_bounded",
+    "sourceCanonicalSpectralFiber": "NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber",
+    "isClosed_sourceCanonicalSpectralFiber_on_bounded": "NLS.Articles.KdVPseudomeasures.isClosed_sourceCanonicalSpectralFiber_on_bounded",
+    "isCompact_sourceNormBall_canonicalSpectralFiber": "NLS.Articles.KdVPseudomeasures.isCompact_sourceNormBall_canonicalSpectralFiber",
+    "isClosed_sourceCanonicalSpectralFiber_of_bounded": "NLS.Articles.KdVPseudomeasures.isClosed_sourceCanonicalSpectralFiber_of_bounded",
+    "isCompact_sourceCanonicalSpectralFiber_iff_bounded": "NLS.Articles.KdVPseudomeasures.isCompact_sourceCanonicalSpectralFiber_iff_bounded",
+    "sourceCanonicalSpectralFiber_spectrum": "NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber_spectrum",
+    "sourceCanonicalSpectralFiber_multiplicity": "NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber_multiplicity",
+    "sourceCanonicalSpectralFiber_cross_order": "NLS.Articles.KdVPseudomeasures.sourceCanonicalSpectralFiber_cross_order"
+  },
+  "qualifications": [
+    "The compactness iff theorem does not prove its endpoint norm-boundedness side for the entire original H-minus-one isospectral set. It isolates the remaining analytic inverse-spectral obligation without assuming it implicitly.",
+    "All continuity assertions are on original endpoint norm-bounded physical sets. Arbitrary weak-star convergent nets are not claimed eventually norm bounded.",
+    "Repeated entries and collapsed gaps are included. Whole sequence continuity uses product topology,not weighted infinity norm topology.",
+    "Full source2.2/Lemma2.21 and all MAIN theorems remain unproved. The original finite-p inverse spectral regularity/isospectral bound is still required."
+  ],
+  "remaining": [
+    "Source Theorem2.2 and full Lemma2.21 remain unproved. The original endpoint topology step is now complete for norm-bounded actual canonical spectral fibers:labels/gaps are weak-star continuous,and entire canonical fibers are weak-star compact iff endpoint norm bounded. Still construct the actual original full H-minus-one isospectral family in a suitable base endpoint/finite-p space and establish the required UNIFORM bound. The cited ORIGINAL finite-p inverse spectral regularity/isospectral compactness input[7 Cor3-4] remains unproved/unimported,or must be replaced directly.",
+    "The convexity branch now provides exhaustive real H-minus-one CHARACTERISTIC labels and exact central counts,but its source report still leaves original singular-operator characteristic identification open. Match that full original H-minus-one characteristic with the actual unchanged H1-to-H-minus-one operator and full physical multiplicities before importing it as the article spectrum. It does not supply the original finite-p inverse theorem.",
+    "Complete physical periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual original Dirichlet comparison source Theorem2.1(ii). General-weight direct2.1(i),endpoint2.18-2.19,REAL2.20,uniform endpoint bootstrap,cross-order labels/gaps and all AppendixB clauses remain proved. General complex-ratio2.20 is not yet proved.",
+    "Construct and verify the ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
+  ],
+  "validation": {
+    "fresh_build": true,
+    "modules_checked": 184,
+    "audited_declarations": 1583,
+    "theorems": 1309,
+    "definitions": 274,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "log": ".lake/article-check/logs/validation-label-continuity.log"
+  }
+}

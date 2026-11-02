@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Full original H-minus-one resolvent and weak-star stability of actual spectral counts",
+  "phase": "Actual canonical label weak-star continuity and compactness of bounded complete spectral fibers",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
@@ -127,6 +127,7 @@
     "NLS/Dynamics/ActionDependentWeightedPhaseFlow.lean",
     "NLS/Dynamics/WeightedWeakStarPhaseFlow.lean",
     "NLS/SequenceSpaces/OrderedNatEnumerationUnique.lean",
+    "NLS/SequenceSpaces/OrderedFiniteContinuity.lean",
     "NLS/Articles/KdVPseudomeasures/WeakStarEndpoint.lean",
     "NLS/Articles/KdVPseudomeasures/WeightedWeakStarEndpoint.lean",
     "NLS/Articles/KdVPseudomeasures/PeriodicWeakStarEndpoint.lean",
@@ -182,16 +183,19 @@
     "NLS/Articles/KdVPseudomeasures/SpectralEndpointBootstrap.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralCrossOrder.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralWeakStarResolvent.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralCumulativeCounts.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralLabelContinuity.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralClosedFibers.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralEndpointCompactness.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralAdaptedDiffeomorphism.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralWeightedGaps.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 1292,
-  "definitions": 272,
+  "proved_theorems": 1309,
+  "definitions": 274,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 1564,
+    "declarations": 1583,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -467,10 +471,16 @@
     "A whole compact spectral circle remains in the full original resolvent on an OPEN set of H-minus-one potentials. The original circular Riesz projection is operator-norm continuous along every original H-minus-one continuous family with a common valid circle,and agrees literally with the verified actual endpoint projection.",
     "On EVERY original endpoint norm-bounded physical weak-star set,the exact original H-minus-one realization is continuous. Consequently the JOINT physical source resolvent locus is weak-star-times-C open,and the full original H1-valued inverse and compact H-minus-one resolvent are norm continuous at each valid pair. Membership of each fixed actual complex spectral value is weak-star closed within the bounded set.",
     "Validity of the ENTIRE compact physical resolvent circle is weak-star OPEN within every original endpoint norm-bounded set. The SAME ACTUAL projection varies continuously in operator norm on that full locus. It is an actual finite-rank idempotent;its rank is locally constant and both circle validity and rank persist throughout a weak-star neighborhood. No simple-eigenvalue or noncollapsed-gap assumption is imposed.",
-    "The finite ACTUAL physical spectrum inside any disk is constructed from existing full-spectrum local finiteness,without a supplied root list. The projection range is EXACTLY the sum of all enclosed original full physical algebraic root spaces. Their independence identifies projection rank with the sum of ACTUAL algebraic multiplicities,and this entire enclosed count is weak-star locally stable on bounded physical sets."
+    "The finite ACTUAL physical spectrum inside any disk is constructed from existing full-spectrum local finiteness,without a supplied root list. The projection range is EXACTLY the sum of all enclosed original full physical algebraic root spaces. Their independence identifies projection rank with the sum of ACTUAL algebraic multiplicities,and this entire enclosed count is weak-star locally stable on bounded physical sets.",
+    "Reused and privately rebuilt the shared OrderedFiniteContinuity module from articles/kdv-convexity at its pinned recorded commit. Its three theorems and one definition prove continuity of finite ordered real entries from cumulative-count stability away from limiting entries,including repeated values. No source change was needed.",
+    "For the ACTUAL real original physical source spectrum,a real-diameter circle is in the full physical resolvent when its left endpoint is below the entire spectrum and its right endpoint is not spectral. The ACTUAL disk algebraic count is EXACTLY finiteLowerCount of the intrinsic canonical central prefix,including every full physical algebraic repetition. This is proved by finite double counting,not by assuming a supplied root list.",
+    "Every ACTUAL intrinsic canonical real label is now weak-star continuous on EVERY original endpoint norm-bounded physical set. The proof chooses one uniform norm-ball cutoff before the family,uses actual original spectral lower bounds,and applies the proved physical disk-count stability to the exact canonical cumulative counts. All repeated entries and closed gaps are included.",
+    "Every ACTUAL signed canonical gap is weak-star continuous on every bounded original physical set. The entire canonical label sequence and entire signed gap sequence are continuous in their product topologies. No continuity in the weighted infinity norm is asserted.",
+    "sourceCanonicalSpectralFiber prescribes the ENTIRE actual canonical spectrum with ALL algebraic repetitions. Such a fiber is relatively weak-star closed on EVERY bounded original physical set,and its intersection with each specified original endpoint norm ball is weak-star compact.",
+    "An ENTIRE original endpoint canonical spectral fiber is weak-star compact IFF it is bounded in the EXACT original endpoint norm. A globally bounded fiber is closed in the ENTIRE physical weak-star space. Actual spectrum exhaustion and all physical algebraic multiplicities are explicitly identified from the prescribed labels. Fiber membership is invariant under endpoint-order reinterpretation of the SAME entire original distribution."
   ],
-  "source_correspondence": "The original full-domain H-minus-one resolvent is now jointly norm analytic in the ENTIRE original H-minus-one potential and spectral parameter. On norm-bounded original physical weak-star sets,valid circles are open and ACTUAL enclosed physical algebraic counts are locally stable. Projection rank is identified with the full original enclosed root-space multiplicity sum. Individual canonical label continuity and full isospectral closedness still require the ordered cumulative-count comparison. Original finite-p inverse spectral regularity/compactness,full Theorem2.2/Lemma2.21,Dirichlet/Birkhoff/KdV and every MAIN theorem remain open.",
-  "build_isolation": "All180 modules rebuilt from a fresh empty private output view. Canonical and package imports stay read-only symlinks;each compiler destination is private. The exact1564-declaration transitive axiom audit passed with zero warnings/suggestions,no holes/custom axioms,and only allowed standard axioms or empty sets. No canonical source/build output was written.",
+  "source_correspondence": "The ACTUAL entire canonical real labels and signed gaps are weak-star continuous on EVERY original endpoint norm-bounded physical set,including repeated entries and closed gaps. The physical disk algebraic count is identified with the exact canonical cumulative count;no source root model is assumed. Entire canonical spectral fibers are relatively closed on bounded sets,and compact iff bounded in the exact original endpoint norm. This does not establish endpoint membership/boundedness for the ENTIRE original H-minus-one isospectral set. Full source2.2/Lemma2.21,original finite-p inverse input,Dirichlet/Birkhoff/KdV and every MAIN theorem remain open.",
+  "build_isolation": "All184 modules rebuilt from a fresh empty private output view. Canonical and package imports remain read-only symlinks;all compiler destinations are private. The exact1583-declaration transitive audit passed with zero warnings/suggestions,no holes/custom axioms,and only allowed standard axioms or empty sets. Canonical sources/build outputs were not written.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
@@ -597,6 +607,7 @@
     "NLS/Dynamics/ActionDependentWeightedPhaseFlow.lean": "291e9ae1fca267a2338b4bc8ef45b102bf1157213480e79c828d4b1eb163e895",
     "NLS/Dynamics/WeightedWeakStarPhaseFlow.lean": "608ba771f934c746f8cf6494f11afb9e5c8975a7bf185fb0fb16e70aa5a585c1",
     "NLS/SequenceSpaces/OrderedNatEnumerationUnique.lean": "0f033f55911a635e745e405c65cd572c6ba63adc7c6f8d34b404c6ac70f53337",
+    "NLS/SequenceSpaces/OrderedFiniteContinuity.lean": "845306a62ca86b944046d35727a675c24419dee39a0436e4b234dd317d9ebe6b",
     "NLS/Articles/KdVPseudomeasures/WeakStarEndpoint.lean": "71117c48b2360252e23bf9fc45f502776f6439bc81d6803c3231bc609062d655",
     "NLS/Articles/KdVPseudomeasures/WeightedWeakStarEndpoint.lean": "0197cdbdef74dbcdd866a50d992e88a6d777c3a1509e01aed61e6b626ccb69ad",
     "NLS/Articles/KdVPseudomeasures/PeriodicWeakStarEndpoint.lean": "63c6b33ed88e7ae5d92a02186d60ba65d4771d8e70de180e4affcdc6162b8b19",
@@ -652,10 +663,13 @@
     "NLS/Articles/KdVPseudomeasures/SpectralEndpointBootstrap.lean": "09d28b0a42c1c86a2401138dbe505124ddd8e9e87f22bf49b1c9daf6efb055f6",
     "NLS/Articles/KdVPseudomeasures/SpectralCrossOrder.lean": "3a0d40980d5f335f92b4e9e1fcd43dbd5bed7744eec187a815009c37e29a40b0",
     "NLS/Articles/KdVPseudomeasures/SpectralWeakStarResolvent.lean": "0998792f67dfe67f8fde19be8c22c2c8d49677a85d1047d34287431e438be5ad",
+    "NLS/Articles/KdVPseudomeasures/SpectralCumulativeCounts.lean": "6a6546f42b56cc9eaa6d7830c601b03dd5f23a37391b19f56e7528d9158e599b",
+    "NLS/Articles/KdVPseudomeasures/SpectralLabelContinuity.lean": "f78c9912e7a61324e295eb80e7c3b84367746d2d0b62819f4dd23aa0ad8f0874",
+    "NLS/Articles/KdVPseudomeasures/SpectralClosedFibers.lean": "a9ee0ff7dd5f4e9b6cb4cd5ce774bfa8d1e181d5aab59c05d2f9ffe46d399401",
     "NLS/Articles/KdVPseudomeasures/SpectralEndpointCompactness.lean": "c504e5f7e69be0a64dfede193cdb63a787225c06a1db085255230e64e73ee935",
     "NLS/Articles/KdVPseudomeasures/SpectralAdaptedDiffeomorphism.lean": "be91a6763b1511a7c615bc156ed332752603efac41b98b45acf3e09cb2528c02",
     "NLS/Articles/KdVPseudomeasures/SpectralWeightedGaps.lean": "ab15c771dfb57907c97b997ccc61dc9650e41c07a2298991e724cc7cc88edebd",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "306e604f41779af914217993814d4e95fe7fff1ed8056df6b0bcb2d2a2bbab5d"
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "0f006ab91bd5d386324715c25b17c848e690679ca855328a096a0265ee24acfd"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -663,17 +677,17 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 1524,
-    "newly_checked_declarations_this_continuation": 40,
-    "newly_authored_or_adapted_declarations_this_continuation": 40,
-    "new_theorems": 32,
-    "new_definitions": 8,
-    "authored_or_adapted_theorems": 32,
-    "authored_or_adapted_definitions": 8,
-    "already_present_shared_declarations_newly_audited": 0,
-    "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 1564,
-    "reuse": "Reuses EXISTING full original hminusOneMultiplicationFamily,the fixed physical free isomorphism,actual endpoint compact resolvent/projection/root-space proofs,generic finite projection rank stability,and exact original bounded weak-star lower topology. No duplicate potential-multiplication family was introduced;no characteristic surrogate was substituted for physical spectral counts."
+    "previous_checked_declarations": 1564,
+    "newly_checked_declarations_this_continuation": 19,
+    "newly_authored_or_adapted_declarations_this_continuation": 15,
+    "new_theorems": 17,
+    "new_definitions": 2,
+    "authored_or_adapted_theorems": 14,
+    "authored_or_adapted_definitions": 1,
+    "already_present_shared_declarations_newly_audited": 4,
+    "shared_declarations_copied_this_continuation": 4,
+    "total_checked_declarations": 1583,
+    "reuse": "One existing shared OrderedFiniteContinuity module copied unchanged from the pinned convexity branch:3 theorems+1 definition. Fifteen original-physical article declarations authored:14 theorems+1 definition. Reuses verified original physical disk-count stability and canonical global multiplicities."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -683,11 +697,16 @@
   },
   "shared_spectral_state_inspected": {
     "branch": "articles/kdv-convexity",
-    "head": "f81287379dce33403dbdf4ddad6c232c8167b1d5",
+    "head": "49a9b4a7fcfb71a073cb3719af912b1b48855f93",
     "read_only": true,
-    "finding": "New shared L2 characteristic canonical labels/continuity and actual high H-minus-one physical-cut/cubic-sign developments are present. The global original H-minus-one KdV Birkhoff restriction and real isospectral invariance remain open in its source inventory. No original finite-p inverse spectral regularity/isospectral compactness theorem was supplied by the inspected changes.",
-    "modules_copied": 0,
-    "qualification": "The new HillCanonicalRealLabels/HillLabelContinuity modules have L2 potential domains and analytic characteristic multiplicities. They are not automatically the original H-minus-one full-domain physical labels;operator and multiplicity matching would be required before reuse."
+    "finding": "New exhaustive real H-minus-one characteristic label existence,actual central counts and lowest characteristic energy are proved. Canonical cutoff-independent uniqueness and singular-operator characteristic identification remain separate;the README explicitly leaves rough-operator identification and finite-p Birkhoff restriction open.",
+    "copied_modules": [
+      "NLS/SequenceSpaces/OrderedFiniteContinuity.lean"
+    ],
+    "not_imported": [
+      "NLS/KdV/HillHminusOneGlobalRealLabels.lean"
+    ],
+    "qualification": "Do not substitute characteristic multiplicities for actual original physical root-space dimensions without a verified operator/characteristic match."
   },
   "shared_FreeHill_reuse": {
     "branch": "articles/kdv-estimates",
@@ -697,7 +716,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-spectral-topology.log",
+  "validation_log": ".lake/article-check/logs/validation-label-continuity.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -794,5 +813,12 @@
       "NLS/KdV/HillRealTraceParity.lean"
     ],
     "qualification": "Inspected physical results use regular L2 potentials. Only generic zero-multiset/uniqueness methods are reused; no regular physical conclusion is instantiated as a singular endpoint theorem. Wide-strip geometry and proof strategy may support the next singular global-localization work."
+  },
+  "shared_ordered_finite_continuity_reuse": {
+    "branch": "articles/kdv-convexity",
+    "commit": "49a9b4a7fcfb71a073cb3719af912b1b48855f93",
+    "module": "NLS/SequenceSpaces/OrderedFiniteContinuity.lean",
+    "sha256": "845306a62ca86b944046d35727a675c24419dee39a0436e4b234dd317d9ebe6b",
+    "canonical_written": false
   }
 }

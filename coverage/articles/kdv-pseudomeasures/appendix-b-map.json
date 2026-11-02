@@ -186,10 +186,10 @@
     "net_qualification": "Arbitrary-filter statements require specified eventual endpoint bounds; no inference that arbitrary weak-star convergent nets are eventually norm bounded is used.",
     "validation": {
       "fresh_build": true,
-      "modules_checked": 180,
-      "audited_declarations": 1564,
-      "theorems": 1292,
-      "definitions": 272,
+      "modules_checked": 184,
+      "audited_declarations": 1583,
+      "theorems": 1309,
+      "definitions": 274,
       "warnings": 0,
       "tactic_suggestions": 0,
       "allowed_axioms": [
@@ -198,7 +198,7 @@
         "Quot.sound"
       ],
       "empty_axiom_sets_allowed": true,
-      "log": ".lake/article-check/logs/validation-spectral-topology.log"
+      "log": ".lake/article-check/logs/validation-label-continuity.log"
     },
     "canonical_checkout": "Sources and build outputs kept read-only.",
     "main_theorems_verified": false,
@@ -329,6 +329,35 @@
       ],
       "empty_axiom_sets_allowed": true,
       "log": ".lake/article-check/logs/validation-spectral-topology.log"
+    }
+  },
+  "canonical_label_continuity_and_fibers": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-label-continuity-map.json",
+    "bounded_original_weak_star_labels_and_gaps_continuous": true,
+    "bounded_canonical_spectral_fibers_closed": true,
+    "entire_endpoint_canonical_fiber_compact_iff_bounded": true,
+    "full_original_HminusOne_isospectral_endpoint_bound_proved": false,
+    "results": [
+      "Every ACTUAL intrinsic canonical real label is now weak-star continuous on EVERY original endpoint norm-bounded physical set. The proof chooses one uniform norm-ball cutoff before the family,uses actual original spectral lower bounds,and applies the proved physical disk-count stability to the exact canonical cumulative counts. All repeated entries and closed gaps are included.",
+      "Every ACTUAL signed canonical gap is weak-star continuous on every bounded original physical set. The entire canonical label sequence and entire signed gap sequence are continuous in their product topologies. No continuity in the weighted infinity norm is asserted.",
+      "sourceCanonicalSpectralFiber prescribes the ENTIRE actual canonical spectrum with ALL algebraic repetitions. Such a fiber is relatively weak-star closed on EVERY bounded original physical set,and its intersection with each specified original endpoint norm ball is weak-star compact.",
+      "An ENTIRE original endpoint canonical spectral fiber is weak-star compact IFF it is bounded in the EXACT original endpoint norm. A globally bounded fiber is closed in the ENTIRE physical weak-star space. Actual spectrum exhaustion and all physical algebraic multiplicities are explicitly identified from the prescribed labels. Fiber membership is invariant under endpoint-order reinterpretation of the SAME entire original distribution."
+    ],
+    "validation": {
+      "fresh_build": true,
+      "modules_checked": 184,
+      "audited_declarations": 1583,
+      "theorems": 1309,
+      "definitions": 274,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "empty_axiom_sets_allowed": true,
+      "log": ".lake/article-check/logs/validation-label-continuity.log"
     }
   }
 }
