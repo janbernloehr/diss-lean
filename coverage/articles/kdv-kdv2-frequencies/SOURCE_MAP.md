@@ -191,3 +191,12 @@ bounds are proved in `FrequencyPrimitiveContinuation.lean`; see
 continuous-potential dependencies of Lemmas 2.6 and 3.1, not their full rough
 potential and globally normalized gap statements. Main-theorem rows above
 remain open.
+
+
+The free normalized differential basis is now constructed from the actual
+Hill discriminant. Its entire numerator, nonzero omitted-mode value,
+critical-point nondegeneracy, actual isolating circles, exact positive
+`2*pi*delta_nk` periods, and all positive free frequency moments are proved;
+see [FREE_FREQUENCY_PSI.md](FREE_FREQUENCY_PSI.md). This is a base construction
+for equations (52)–(53) and Lemma 3.1, not a proof of the product identity or
+the normalized psi family at nonzero/rough potentials.

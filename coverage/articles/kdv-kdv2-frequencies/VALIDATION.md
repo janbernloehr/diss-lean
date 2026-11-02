@@ -19,13 +19,14 @@ its existing Hilbert specialization and a transitive audit.
 | `NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion.lean` | Finite signed perturbations with an exact prescribed mass increment; endpoint regularity; norm convergence for every sigma<1/2. |
 | `NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension.lean` | Fixed-time coordinate nonextension via two constructed approximating families, given the actual correction and endpoint phase identity. |
 | The five imported classical Hill modules from `ConstantUpperSpectralBridge.lean` through `ClassicalBranchPrimitive.lean` | Actual IVP-to-Hill trace bridge, energy symmetry, entire joint discriminant and constructed local primitive/squared-primitive charts on continuous potentials. |
+| `NLS/KdV/ClassicalFreePrimitive.lean` and `NLS/KdV/FreeFrequencyPsi.lean` | Actual free scalar trace/root/primitive, entire normalized numerator basis, omitted-mode and critical-point formulas, constructed isolating circles, exact periods and every positive free moment. |
 | `NLS/KdV/FrequencyPrimitiveContinuation.lean` | Constructed analytic unit factorization at branch points, exact primitive/root endpoint limit, locally uniform quotient and positive-moment bounds, and local odd-moment cancellation. |
 | `NLS/SequenceSpaces/LocallyBoundedAnalyticSummation.lean` | Analytic ℓ¹ realization from local norm bounds, absolute summability and locally uniform convergence. |
 | `NLS/KdV/FrequencySeriesBounds.lean` and `NLS/KdV/FrequencySeries.lean` | Exact quadratic-denominator kernel bounds; Hölder and bounded-kernel row estimates; analytic positive-index sums with locally uniform positive partial sums, given local spectral remainder bounds. |
 | `NLS/KdV/FrequencyMoments.lean` | Literal weighted moments, Banach analyticity, odd and analytic-removal cancellations, norm estimate and binomial period expansions. |
 | `NLS/KdV/FrequencyContourDecomposition.lean` | Exact cubic/fifth-power coefficients and finite-gap normalized exterior-period decompositions, using the proved finite-hole Cauchy theorem. |
 
-All twenty-one selected modules compile with pinned **Lean 4.33.1**, commit
+All twenty-three selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -39,6 +40,7 @@ PASS NLS/KdV/ConstantUpperSpectralBridge
 PASS NLS/KdV/ClassicalSpectralSymmetry
 PASS NLS/KdV/ClassicalDiscriminant
 PASS NLS/KdV/ClassicalLocalPrimitive
+PASS NLS/KdV/ClassicalFreePrimitive
 PASS NLS/KdV/ClassicalBranchPrimitive
 PASS NLS/SequenceSpaces/LocallyBoundedAnalyticSummation
 PASS NLS/KdV/FrequencySeriesBounds
@@ -48,6 +50,7 @@ PASS NLS/SequenceSpaces/HilbertEnergyDivergence
 PASS NLS/Dynamics/ActionDependentWeightedPhaseFlow
 PASS NLS/Dynamics/FixedTimePhaseObstruction
 PASS NLS/KdV/FrequencyMoments
+PASS NLS/KdV/FreeFrequencyPsi
 PASS NLS/KdV/FrequencyPrimitiveContinuation
 PASS NLS/KdV/FrequencyContourDecomposition
 PASS NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
@@ -56,11 +59,11 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 334 candidate declarations; 1918 declarations total.
+Axiom audit passed: 404 candidate declarations; 2002 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the twenty-one selected modules (including generated and private declarations)
+the twenty-three selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -87,6 +90,7 @@ NLS/KdV/ConstantUpperSpectralBridge.olean
 NLS/KdV/ClassicalSpectralSymmetry.olean
 NLS/KdV/ClassicalDiscriminant.olean
 NLS/KdV/ClassicalLocalPrimitive.olean
+NLS/KdV/ClassicalFreePrimitive.olean
 NLS/KdV/ClassicalBranchPrimitive.olean
 NLS/SequenceSpaces/LocallyBoundedAnalyticSummation.olean
 NLS/KdV/FrequencySeriesBounds.olean
@@ -96,6 +100,7 @@ NLS/SequenceSpaces/HilbertEnergyDivergence.olean
 NLS/Dynamics/ActionDependentWeightedPhaseFlow.olean
 NLS/Dynamics/FixedTimePhaseObstruction.olean
 NLS/KdV/FrequencyMoments.olean
+NLS/KdV/FreeFrequencyPsi.olean
 NLS/KdV/FrequencyPrimitiveContinuation.olean
 NLS/KdV/FrequencyContourDecomposition.olean
 NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow.olean
@@ -180,10 +185,27 @@ modules use a separate private output directory; none is built into the
 canonical checkout. Upstream shared coverage records are historical
 snapshots; current consumed-source hashes are in this article's source.json.
 
-The final frequency check compiles twenty-one selected modules with both
+The final frequency check compiles twenty-three selected modules with both
 strict options, and audits their private/generated declarations and all
 imported NLS dependencies. It does not claim the article's full main
 statements on rough potentials or a full dissertation-library build. Both
 integration checkers were serialized with the shared build lock. No new
 axioms, proof placeholders, disabled linters or increased heartbeats were
 introduced by this milestone.
+
+
+The free normalized differential milestone is detailed in
+`FREE_FREQUENCY_PSI.md`. It imports the shared free-normalized source
+continuation through `ecd0109` and proves the actual free numerator basis,
+periods and positive moments. Both the 23-module frequency checker and
+the updated shared integration checker are rerun on the current source.
+The source canonical product identity and the normalized psi functions
+away from zero remain open; no main theorem is marked verified.
+
+Final free-basis validation: all 23 selected frequency modules pass with
+`-DautoImplicit=false -DwarningAsError=true`. The full transitive frequency
+audit passes for 404 selected declarations and 2002 declarations including
+imported NLS dependencies. The updated shared checker passes all 20 shared
+modules, its positive-index example and the 269-declaration transitive
+shared-namespace audit. Both runs finish with exit code zero. The canonical
+checkout remains clean on main; no full repository validation is claimed.

@@ -12,6 +12,7 @@ modules=(NLS/KdV/ConstantUpperSpectralBridge
   NLS/KdV/ClassicalSpectralSymmetry
   NLS/KdV/ClassicalDiscriminant
   NLS/KdV/ClassicalLocalPrimitive
+  NLS/KdV/ClassicalFreePrimitive
   NLS/KdV/ClassicalBranchPrimitive
   NLS/SequenceSpaces/LocallyBoundedAnalyticSummation
   NLS/KdV/FrequencySeriesBounds
@@ -21,6 +22,7 @@ modules=(NLS/KdV/ConstantUpperSpectralBridge
   NLS/Dynamics/ActionDependentWeightedPhaseFlow
   NLS/Dynamics/FixedTimePhaseObstruction
   NLS/KdV/FrequencyMoments
+  NLS/KdV/FreeFrequencyPsi
   NLS/KdV/FrequencyPrimitiveContinuation
   NLS/KdV/FrequencyContourDecomposition
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow

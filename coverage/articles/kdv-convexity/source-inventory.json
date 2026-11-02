@@ -83,7 +83,19 @@
         "NLS.KdV.analyticOnNhd_classicalHillDiscriminant_joint",
         "NLS.KdV.exists_classicalHill_local_primitive_of_radicand_ne_zero",
         "NLS.KdV.hasDerivAt_classicalHill_local_primitive",
-        "NLS.KdV.exists_classicalHill_local_squared_primitive"
+        "NLS.KdV.exists_classicalHill_local_squared_primitive",
+        "NLS.KdV.classicalHill_characteristic_eq_zero_iff",
+        "NLS.KdV.classicalHillRadicand_eq_zero_iff",
+        "NLS.KdV.classicalDiscriminant_constantUpper_zero",
+        "NLS.KdV.classicalHillContinuationDomain",
+        "NLS.KdV.mem_classicalHillContinuationDomain_iff",
+        "NLS.KdV.analyticOnNhd_classicalHillContinuedPrimitive",
+        "NLS.KdV.classicalHillContinuedPrimitive_unique",
+        "NLS.KdV.hasFDerivAt_classicalHillContinuedPrimitive",
+        "NLS.KdV.exists_classicalHillContinuation_neighborhood",
+        "NLS.KdV.classicalHillContinued_period_eq_zero",
+        "NLS.KdV.exists_analyticOnNhd_classicalHillContinuedMoment",
+        "NLS.KdV.classicalHillContinuedMoment_zero"
       ],
       "remaining": [
         "Construct physical KdV contour moments and analytic descent on one complex neighborhood of the weighted ell^(-1,1) nonnegative cone (Lemma 4.6(ii)).",
@@ -149,7 +161,7 @@
       ]
     }
   ],
-  "completion_status": "partial_verification_actual_hill_joint_analyticity_and_local_primitive_charts_proved",
+  "completion_status": "partial_verification_actual_free_normalized_source_continuation_and_contour_moments_proved",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean",
   "branch": "articles/kdv-convexity",
   "global_extension_progress": {
@@ -182,7 +194,8 @@
     "physical_primitive_constructed": false,
     "physical_energy_identification_proved": false,
     "explicit_quadratic_constant": "16*pi*B*A^3*K^2 when radius <= B*gamma, |F| <= A*gamma/n, gamma^2/n <= K*|I|",
-    "remaining": "Global normalization and continuation of the actual local Hill primitive and its local analytic squares; admissible isolating contours and complex-neighborhood primitive/gap-action bounds; action-space descent; physical high-energy expansion (4.7)."
+    "remaining": "Coverage of canonical gap contours by the constructed free-normalized continuation; indexed endpoint values and continuation through the actual cuts; rough Fourier/scalar spectral identification; complex-neighborhood gap/action bounds; action-space descent; physical high-energy expansion (4.7).",
+    "actual_contour_moments_on_explicit_joint_domain_constructed": true
   },
   "physical_coefficient_progress": {
     "source": "Physical energy coefficient needed for Lemma 4.4 / (4.7), p. 28",
@@ -201,7 +214,7 @@
     "trace_error": "For every natural N, exists C>0 before all real |r|>=1, error <= C/(2*|r|)^(N+5), with the physical higher Hamiltonian tail retained.",
     "normalization": "Phase z-H0/(4*z^3)-Hkdv/(16*z^5), lambda=z^2",
     "all_complex_primitive_laurent_expansion_proved": false,
-    "remaining": "Construct normalized analytic finite-gap Hill inversion remainder and its cosh trace identity, then apply the existing generic Hamiltonian Laurent identification."
+    "remaining": "Continue the free-normalized source primitive to the canonical finite-gap cut complement, construct its exterior squared expansion and normalized analytic inversion remainder, then apply the existing generic Hamiltonian Laurent identification. The actual cosh trace identity is proved on the current continuation domain."
   },
   "local_spectral_progress": {
     "potential_space": "C([0,1], C), with its sup Banach norm",
@@ -215,5 +228,22 @@
     "global_gap_normalization_proved": false,
     "action_descent_proved": false,
     "matching": "The local squared primitive agrees with the square of every sufficiently small normalized branch satisfying 2*cosh(F)=sigma*Delta, sigma^2=1."
+  },
+  "source_continuation_progress": {
+    "domain": "Energy in the complex slit plane; Delta(lambda,s*q)^2-4 nonzero for every real s in [0,1].",
+    "joint_domain_open": true,
+    "primitive_constructed_without_input_root_or_primitive": true,
+    "free_normalization": "F(lambda,0)=-i*sqrt(lambda)",
+    "full_joint_differential": "dF=r^(-1)*dDelta",
+    "actual_scalar_floquet_characteristic_criterion": true,
+    "compact_contour_common_potential_neighborhood": true,
+    "cubic_moments_analytic_in_continuous_potential_norm": true,
+    "spectral_derivative_circle_period_zero": true,
+    "free_collapsed_moments_zero": true,
+    "canonical_gap_contours_covered": false,
+    "indexed_endpoint_values_proved": false,
+    "action_indexed_Rn_identified": false,
+    "action_descent_proved": false,
+    "uniform_action_quadratic_bounds_proved": false
   }
 }

@@ -203,3 +203,27 @@ Final strict validation passes for all 21 selected frequency modules. The
 transitive audit passes for 334 selected-module declarations and 1918
 declarations including imported NLS dependencies, with only the three
 standard axioms allowed. The canonical checkout remains clean on main.
+
+
+## Free normalized spectral-differential milestone
+
+The shared free-normalized continuation through `ecd0109` is now merged
+with ancestry preserved. `FreeFrequencyPsi.lean` constructs an entire
+numerator from the actual free discriminant derivative. It proves the
+exact omitted-mode value and critical-point nondegeneracy, constructs
+isolating circles rather than assuming them, normalizes all periods
+simultaneously to `2*pi*delta_nk`, and proves every positive weighted free
+moment vanishes, including the diagonal pole case. Actual free moments
+are defined with proved choices of isolating contours.
+See [FREE_FREQUENCY_PSI.md](FREE_FREQUENCY_PSI.md).
+
+The source product representation, infinite normalized family at nonzero
+potentials, rough-space compatibility, sharp bounds and physical frequency
+identification remain open. The free normalization does not substitute
+for any actual main theorem. Final checker counts are in `VALIDATION.md`.
+
+Final validation passes: 23 selected frequency modules, 404 selected-module
+declarations and 2002 declarations including imported NLS dependencies.
+The updated shared integration checker also passes its 20 modules, example
+and 269-declaration transitive audit. The canonical checkout remains clean.
+No main theorem is marked verified by the free-basis milestone.
