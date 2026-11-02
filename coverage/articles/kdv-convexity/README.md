@@ -1250,7 +1250,9 @@ Fourier evaluation module is recompiled. Three compatible private source
 differences are retained and documented: two original independent proofs
 and the additional proved strict free-Hill spacing lemma. The original
 37-source manifest remains unchanged. The focused validation covers
-222 source modules; this is not a full 2,393-module or repository build.
+279 source modules are now listed for reproducibility; the present milestone
+checks its 57 additional sources incrementally over the unchanged validated
+222-module baseline. This is not a full 2,393-module or repository build.
 
 Uniform H^-1 high-disc/source-path trace estimates, full analytic primitive
 squares and common high-moment analytic domains are now proved below.
@@ -1371,6 +1373,47 @@ central contours, the full canonical unsquared domain, real nonpositivity
 and the physical energy/frequency identities remain required. Theorem 1.1
 and all main theorem completion flags remain false.
 
+## Common action-family descent and exact weighted summation
+
+`LocalScalarActionFamilyDescent.lean` chooses one local source neighborhood
+and one open action image before the scalar function index. Every analytic
+invariant in the family factors there. It retains all zero tail actions.
+`RealScalarActionFamilyDescent.lean` derives complex tail sign invariance
+and rotation stationarity from real action-fiber invariance, using one
+finite nonzero head for the entire family.
+`ScalarActionFamilyGluing.lean` glues all components on the same union of
+balls with nonnegative centers. Compatibility only on nonnegative actions
+suffices, by the inherited holomorphic identity theorem; no interior of the
+infinite-dimensional cone is assumed.
+
+`GlobalScalarActionFamilyDescent.lean` constructs one complex neighborhood
+of the entire nonnegative action cone from coordinate-space analyticity,
+real action invariance and local quadratic tail bounds. Nearby nonnegative
+actions have real lifts in each local source chart. That supplies overlap
+compatibility. The local finite spectral cutoffs and quadratic estimates
+survive on every original ball, so they remain local estimates throughout
+the resulting global open domain.
+`WeightedScalarActionFamilyDescent.lean` transports this result to the
+original weighted action space. In normalized Hilbert coordinates the raw
+action is (x_k²+y_k²)/(2*w_k). The raw action is distinguished from its
+weighted sequence coordinate, and the estimates retain the raw values.
+
+`CoordinateActionExtension.lean` specializes the construction to the exact
+KdV base weight (1+n)^(-1), positive n:PNat, and the factor 8*n*pi. It
+constructs analytic moment factors R_n on one weighted neighborhood and
+applies the checked literal contour-series summation on its ell2 preimage.
+This proves the descent/gluing/summation step from real-invariant analytic
+coordinate moments with local raw-action tail bounds. It does not provide
+the actual KdV Birkhoff map or identify its actions with the proved Arnold
+periods. Those physical identities, real isospectral invariance of the
+actual periods and the finite central periods remain essential inputs.
+Theorem 1.1 and all main theorem flags remain unverified.
+
+The inherited descent dependency slice consists of 51 unchanged source
+modules, pinned and hashed in `action-descent-shared-imports.json` against
+the already inherited tree at `9d67a0f`. They are checked in dependency
+order in the private cache and included in the combined axiom audit.
+
 ## Earlier checked local consequences
 
 [`LocalConsequences.lean`](../../../NLS/Articles/KdVConvexity/LocalConsequences.lean)
@@ -1458,12 +1501,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All 222 modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
-`warningAsError=true`. The positive-index inverse example also passes.
+The 222-module baseline passed focused Lean 4.33.1/mathlib v4.33.1 checks
+with `warningAsError=true` at commit `9d67a0f`. Every baseline source hash
+remains unchanged. The 51 newly required inherited dependencies and six
+authored modules pass incremental checks with the same settings. The full
+reproducible script now lists 279 modules. The positive-index example passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in ninety additional shared modules:
-2629 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 146 additional shared modules:
+3039 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
