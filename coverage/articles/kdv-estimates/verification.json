@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned tooling; DISS_LEAN_REFERENCE_CHECKOUT set to read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 726,
+    "declarations": 820,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates"
@@ -56,7 +56,7 @@
       "NLS.monotone_appendPairedTail"
     ]
   },
-  "full_repository_validation": "All 50 focused modules and the 726-declaration transitive axiom audit passed. The latest NLS.lean aggregate was deferred before execution because another task held the shared lock; the previous successful aggregate passed at commit 82b3467 with 43 focused modules. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 53 focused modules and the 820-declaration transitive axiom audit passed. The latest NLS.lean aggregate was deferred before execution because the shared lock was occupied; the previous successful aggregate passed at commit 82b3467 with 43 focused modules. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -94,7 +94,7 @@
     "NLS/ComplexAnalysis/EntireEvenSquareDescent.lean": "e22eccc87b60618f7793db59cf0888949b690d1677752139a57db38372aac6c6",
     "NLS/KdV/HillL2EnergyDiscriminant.lean": "a34babb53505ec246af5a7401cd5bbfd87518a3ee433ffd5ca9dff1f43ec97d4",
     "NLS/KdV/HillWeightIndependence.lean": "8bcd9989c07262ad851b668344673f7d13b5805a953ab08a86a5f4f54a0ba438",
-    "NLS/KdV/HillPhysicalGapBounds.lean": "b8294c1b5d478b8cc9ff24edb1041397fa7841986f45cf8df01327ee4db9ab37",
+    "NLS/KdV/HillPhysicalGapBounds.lean": "7971dc2da98d8315e21350b6c5a8e8fbce84a6ca3c999f16a83695f688ba5c77",
     "NLS/ComplexAnalysis/ZeroCountHomotopy.lean": "876ae2e371d9f1a4bbd204778774942405991cac35e70d199197fbf42407fe0e",
     "NLS/ComplexAnalysis/TwoZeroOrderComparison.lean": "aa6c3045b534c3718d54ff0fc12873d9ee28fb4f4bda9fdac4ce1fefa3c0f306",
     "NLS/KdV/ClassicalLocalPrimitive.lean": "0a94fb21406949fcf4ad2ef5a09ffcbbf5385cdb8cd8ed5eec4fc303ecc1c327",
@@ -108,10 +108,13 @@
     "NLS/KdV/HillFreeSpectrum.lean": "2a6be7ef571cfb498f910ef641b614a21d432ed691e035fe14c8c8056147f6d3",
     "NLS/KdV/HillCentralCounting.lean": "5af6c7f9008cf7cfe969850c047915d3600632019b91c7daa0eb39cf14447831",
     "NLS/KdV/HillCentralRoots.lean": "2b7290d28ba637cd574d4e81929046ca8e8ec383b1438e58f104ffa573b083a2",
-    "NLS/KdV/HillGlobalRealLabels.lean": "4ead52510c68e8128942abee2d28507ca724bbfab50d10f75e4ff20357774939"
+    "NLS/KdV/HillGlobalRealLabels.lean": "4ead52510c68e8128942abee2d28507ca724bbfab50d10f75e4ff20357774939",
+    "NLS/KdV/HillRealLabelingUniqueness.lean": "80523cb580e94c0c1afd5c9a6255853e4009c34dc5d6123e393f4e57beec40bc",
+    "NLS/KdV/HillCanonicalRealLabels.lean": "de7f7dd148d4043a2559d0005a791aaf7cf0c2b65f6ee8b98695a5b5e7ccd230",
+    "NLS/KdV/HillCanonicalGapBounds.lean": "44532e9479d651cafbfd16223b82985804b22507835cca6e8bdff3992576d299"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. The actual central cluster now has exact count 2*N-1 and a constructed ordered multiset enumeration preserving analytic orders. A global nondecreasing labeling exhausts all real physical characteristic roots and places each high pair in slots 2*n-1 and 2*n. Cutoff-independent canonical labeling, source multiplier parity, strict central band separation, perturbed lowest-root simplicity and operator algebraic multiplicities remain. Normalized entire products/canonical roots/actions, the physical KdV Birkhoff map, hierarchy trace identities and the main norm estimates remain outstanding.",
-  "milestone": "Exact actual central characteristic count, ordered central multisets and a global nondecreasing real Hill labeling",
+  "remaining": "Main Theorems 1-3 remain unverified. The actual characteristic now has cutoff-independent canonical real labels, finite root fibers and exact full analytic multiplicities. The least actual energy is intrinsic, and source period-one labels/gaps are independent of the auxiliary weight. Individual and summed weighted high-gap estimates apply directly to these canonical gaps with no supplied root families. Label continuity, multiplier parity, strict central band separation, perturbed lowest-root simplicity and abstract operator algebraic multiplicities remain. Canonical entire products/root branches/actions, the physical KdV Birkhoff map, hierarchy trace identities and the main norm estimates remain outstanding.",
+  "milestone": "Intrinsic cutoff-independent characteristic labels and direct weighted canonical gap bounds",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -164,7 +167,10 @@
     "NLS.KdV.HillFreeSpectrum",
     "NLS.KdV.HillCentralCounting",
     "NLS.KdV.HillCentralRoots",
-    "NLS.KdV.HillGlobalRealLabels"
+    "NLS.KdV.HillGlobalRealLabels",
+    "NLS.KdV.HillRealLabelingUniqueness",
+    "NLS.KdV.HillCanonicalRealLabels",
+    "NLS.KdV.HillCanonicalGapBounds"
   ],
   "proof_commits": [
     {
@@ -231,13 +237,18 @@
       "commit": "f8812447fbc1430f8b3be41d7c68feac860eed89",
       "scope": "Actual real high-tail coverage, unique high indices, left spectral bound and zero-free central separator",
       "pushed": true
+    },
+    {
+      "commit": "78200b7544a7badd3e554a9a1a67df99017c8678",
+      "scope": "Exact central characteristic count, actual ordered central root multisets and global nondecreasing real labeling with source high-pair slots",
+      "pushed": true
     }
   ],
   "aggregate_check": {
     "status": "deferred_not_run",
     "command": "flock -n -E 75 /tmp/diss-lean-article-build.lock bash work/lean-worktree.sh -o .lake/build/lib/lean/NLS.olean NLS.lean",
     "exit_code": 75,
-    "scope": "The current nonblocking attempt returned flock exit 75 before Lean started because another task held /tmp/diss-lean-article-build.lock. No other process was stopped and the lock was not bypassed. All 50 focused modules and the 726-declaration audit passed.",
+    "scope": "The current nonblocking attempt returned flock exit 75 before Lean started because /tmp/diss-lean-article-build.lock was occupied. No process was stopped and the lock was not bypassed. All 53 focused modules and the 820-declaration axiom audit passed.",
     "full_lake_build_or_full_examples_claimed": false,
     "reason": "Shared aggregate-build lock occupied."
   },
@@ -248,15 +259,15 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All fifty modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All fifty-three modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 726 declarations, including the shared real-diameter contour geometry and ordered one-sided paired-tail construction.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 820 declarations, including full characteristic multiplicity preservation, intrinsic labeling uniqueness and direct weighted canonical gap bounds.",
     "new_module_warnings": [],
-    "aggregate_scope": "The current 50-module NLS.lean aggregate was deferred before Lean started because another task held the shared article build lock. The last successful aggregate covers commit 82b3467 and 43 focused modules. All current 50 focused modules and the 726-declaration audit passed; full Lake/example suite not rerun.",
+    "aggregate_scope": "The current 53-module NLS.lean aggregate was deferred before Lean started because the shared article build lock was occupied. The last successful aggregate covers commit 82b3467 and 43 focused modules. All current 53 focused modules and the 820-declaration audit passed; full Lake/example suite not rerun.",
     "private_overlay": "The focused script creates private real directories before compiling new shared namespaces, and removes only output-file symlinks before writing. Canonical build outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded.",
-    "mathematical_scope": "The actual free characteristic has the exact quadratic lattice zero set and a simple energy zero at 0. A real diameter circle and a boundary-zero-free rough real-potential homotopy prove the actual central characteristic count 2*N-1 at N>=max(2,8*||q||_2). Its root multiset is constructed and sorted with exact analytic multiplicities. At N>=max(2,16*||q||_2), a global nondecreasing real lambda:Nat->Real exhausts the actual characteristic zeros; its central prefix has the exact orders and interval bounds, and slots 2*n-1 and 2*n equal the actual high pair. Canonical cutoff independence, source parity/strict central band separation/lowest-root simplicity, full operator algebraic multiplicities, Birkhoff coordinates and main Theorems 1-3 are not claimed."
+    "mathematical_scope": "Every root occurrence fiber of an actual constructed labeling is finite, and its full counting sum equals the analytic order of the actual characteristic. The shared ordered finite-exception uniqueness theorem makes all admissible label constructions identical. Canonical labels satisfy every admissible cutoff specification and identify the least actual energy. Exact period-one labels and gaps are invariant under realization of the same Fourier coefficients in another admissible weight. The individual constant-six gap estimate and the summed 9*FourierTail^2+(2304/N)*||q||_w^4 bound now hold for the intrinsic gaps themselves at N>=max(2,16*||q||_w). The main Theorems 1-3, actions/Birkhoff map, source multiplier parity, strict central band separation, lowest-root simplicity and operator algebraic multiplicities are not claimed."
   },
   "warningAsError": true,
   "previous_aggregate_attempts": [
@@ -279,6 +290,13 @@
       "nonblocking_attempts": 1,
       "exit_code": 75,
       "reason": "Another task held /tmp/diss-lean-article-build.lock. No aggregate compilation began."
+    },
+    {
+      "status": "deferred_not_run",
+      "milestone": "Intrinsic canonical labels and direct weighted gap bounds",
+      "nonblocking_attempts": 1,
+      "exit_code": 75,
+      "reason": "Shared /tmp/diss-lean-article-build.lock occupied. No aggregate compilation began."
     }
   ],
   "last_successful_aggregate_check": {

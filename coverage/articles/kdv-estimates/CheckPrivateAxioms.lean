@@ -47,6 +47,9 @@ import NLS.KdV.HillFreeSpectrum
 import NLS.KdV.HillCentralCounting
 import NLS.KdV.HillCentralRoots
 import NLS.KdV.HillGlobalRealLabels
+import NLS.KdV.HillRealLabelingUniqueness
+import NLS.KdV.HillCanonicalRealLabels
+import NLS.KdV.HillCanonicalGapBounds
 import NLS.Articles.KdVEstimates.EstimateAdapter
 import Lean.Util.CollectAxioms
 

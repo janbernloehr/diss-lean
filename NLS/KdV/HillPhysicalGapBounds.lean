@@ -5,9 +5,10 @@ import NLS.KdV.HillGapTail
 
 The weighted reduction has now been identified with the actual rough
 energy discriminant. Thus the coefficient and tail estimates apply to
-its actual characteristic roots in the high strips. Global enumeration
-of those roots as the source's labeled periodic eigenvalues remains a
-separate obligation.
+its actual characteristic roots in the high strips. The intrinsic real
+labels and their direct gap bounds are supplied downstream by
+`HillCanonicalGapBounds`; these general results also support other
+characteristic-root families.
 -/
 
 noncomputable section
