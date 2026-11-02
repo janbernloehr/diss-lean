@@ -16,7 +16,7 @@
     {
       "source": "One small neighborhood before all time intervals",
       "declaration": "NLS.Articles.MKdVBelowL2.exists_global_small_fourthPhysicalTrajectory",
-      "scope": "A single open physical real-type source neighborhood of zero is invariant under every real time step. On this same neighborhood the actual rotation lift has continuous uniform-norm trajectory maps for every compact time interval. No global Birkhoff surjectivity at p>2 is assumed. Diagonal restriction remains open."
+      "scope": "A single open physical real-type source neighborhood of zero is invariant under every real time step. On this same neighborhood the actual rotation lift has continuous uniform-norm trajectory maps for every compact time interval. No global Birkhoff surjectivity at p>2 is assumed. The actual lift now separately preserves the physical mKdV diagonal at every admissible time; the scalar trajectory construction and smooth PDE calibration remain to be packaged."
     },
     {
       "source": "Exact physical coordinates and local flow algebra",
@@ -91,14 +91,38 @@
     {
       "source": "Odd cubic-plus-normalized Hamiltonian phase frequency",
       "declaration": "NLS.Articles.MKdVBelowL2.physicalMKdV_fourthSourcePhaseFrequency_odd",
-      "scope": "The exact rotation frequency used by the previously verified physical image lift is odd on every original physical real mKdV datum at every finite p>1. Actual source-flow diagonal preservation is still required; frequency parity alone does not assert the Birkhoff phase-angle part of equation (50)."
+      "scope": "The exact rotation frequency used by the physical image lift is odd on every original physical real mKdV datum at every finite p>1. Full off-diagonal reflected covariance and a separate original-Hamiltonian argument now prove actual source-flow preservation; parity alone was not substituted for that argument."
+    },
+    {
+      "source": "Full action cotangent reflection and original anti-Poisson covariance",
+      "declaration": "NLS.ZakharovShabat.sourceActionHamiltonianVector_componentSwap",
+      "scope": "Real action reflection determines the full complex analytic action germ at every real source. Differentiation transports the complete complex cotangent, including closed gaps. The original source Poisson operator changes sign under unsigned component exchange, so the actual action Hamiltonian field maps to minus the field at the reflected index."
+    },
+    {
+      "source": "Full off-diagonal fourth-frequency covariance",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_componentSwap",
+      "scope": "The independently defined native physical mass is swap-invariant and momentum is swap-antisymmetric, giving the exact normalized physical H4 reflected sign at arbitrary native sources. Coefficient-preserving Fourier approximation extends this covariance, not just diagonal oddness, to every finite p>1 original real source. Actual phase frequencies retain the value under exponent inclusion."
+    },
+    {
+      "source": "Generic original finite-action ODE and uniqueness",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_map_eq_phase_of_finiteAction_ode",
+      "scope": "An arbitrary action-invariant frequency family has a full source-norm derivative at finite coordinate support in the proven global Hilbert range. Injectivity of the actual Birkhoff differential identifies its original finite action Hamiltonian field. Scalar integrating-factor uniqueness in both time directions recovers precisely the original Birkhoff phase trajectory from this ODE and support."
+    },
+    {
+      "source": "Actual Hilbert source-flow component covariance",
+      "declaration": "NLS.ZakharovShabat.SourceActionFrequency.imageFlow_componentSwap",
+      "scope": "For a family with the proved reflected frequency sign, the anti-Poisson swap transports the actual finite Hamiltonian ODE. Original actions and closed-gap coordinate vanishing reflect its finite support; ODE uniqueness identifies the swapped source trajectory. Actual spectral finite-gap density extends covariance to every original real Hilbert source. No phase-angle equality is assumed."
+    },
+    {
+      "source": "Actual finite-p physical mKdV diagonal preservation",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_preserves_mKdV",
+      "scope": "Every finite p>1 and every physical real equal-distribution mKdV input. At every time in the actual open image domain, the fixed Theorem 1.2 Birkhoff inverse lift remains in the same closed physical mKdV subspace. Native finite Fourier representatives and exact phase/exponent compatibility transfer Hilbert preservation to finite Fourier inputs at arbitrary p; diagonal Fourier approximation and source-norm continuity on the actual open image domain prove the full rough-data result. Spectral finite-gap status is not asserted for Fourier truncations. This is actual source-flow preservation, with smooth physical PDE agreement still open."
     }
   ],
   "remaining": [
-    "Prove preservation of the actual smaller real mKdV diagonal by the fourth-frequency rotation lift. The necessary odd physical and normalized-frequency identities are now verified on the full finite-exponent diagonal, including every closed gap and the zero index. The Birkhoff phase-angle part of equation (50) remains open; even actions and odd frequencies alone do not prove preservation. A complete alternative proof via Hamiltonian covariance would also need to establish the same actual source-flow preservation.",
-    "Prove that the constructed fourth-frequency inverse lifts agree with smooth physical renormalized mKdV solutions, consuming the verified hierarchy first-variation bridge and actual mass normalization. Vanishing of the physical H2 momentum on the full original fractional diagonal is now verified.",
-    "Restrict the actual rotation-lift local and small-data trajectory results to the scalar real mKdV phase space and establish the exact smooth-approximation solution and uniqueness requirements of the source.",
+    "Identify the actual diagonal-preserving fourth-frequency inverse lift with smooth physical renormalized mKdV solutions, consuming the certified H4 hierarchy first variation and original mass normalization. Physical source-flow preservation is now verified for every finite p>1 at every admissible time by original Hamiltonian covariance, without assuming the auxiliary phase-angle identity of equation (50).",
+    "Package the actual diagonal-preserving local and invariant small-data pair trajectories as scalar real mKdV trajectories, and establish the exact smooth-approximation solution and uniqueness requirements of Theorem 1.1.",
     "Construct controlled smooth approximations with tunable divergent physical mass at every datum outside L² and use the verified nonzero signed Birkhoff mode to prove nonextension at each fixed t>0. A trajectory obstruction alone does not prove this fixed-time claim."
   ],
-  "validation": "Eight final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 122 unchanged parent modules reused from 40d1959bf83cadfd29557cf1a3035bec7db6028c. Full transitive audit of 634 declarations uses only propext, Classical.choice and Quot.sound."
+  "validation": "Thirteen final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 130 unchanged parent modules reused from fa047be0b6caacf63c5f7f67d447bee7cf83c434. Full transitive audit of 671 declarations uses only propext, Classical.choice and Quot.sound."
 }

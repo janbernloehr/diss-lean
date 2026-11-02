@@ -1,13 +1,18 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
-Incremental validation: 122 unchanged modules reuse commit 40d1959bf83cadfd29557cf1a3035bec7db6028c; 8 final new modules checked strictly below.
-ZakharovShabat/SourceComponentSwapHamiltonians: checked
-ZakharovShabat/SourceWeightedComponentSwap: checked
-ZakharovShabat/SourceSobolevFourthSwap: checked
-ZakharovShabat/SourceSobolevFourthFrequencySwap: checked
-ZakharovShabat/SourceWeightedFiniteSupport: checked
-ZakharovShabat/SourceSobolevFourthDiagonalFrequency: checked
-Articles/MKdVBelowL2/PhysicalFourthFourierApproximation: checked
-Articles/MKdVBelowL2/PhysicalMKdVFrequencySymmetry: checked
+Incremental validation: 130 unchanged modules reuse commit fa047be0b6caacf63c5f7f67d447bee7cf83c434; 13 final new modules checked strictly below.
+ZakharovShabat/SourceComponentSwapActionDifferential: checked
+ZakharovShabat/SourceComponentSwapPoisson: checked
+ZakharovShabat/SourceSobolevFourthRenormalizedSwap: checked
+ZakharovShabat/SourceComponentSwapRealTopology: checked
+Articles/MKdVBelowL2/FourthFrequencySwap: checked
+ZakharovShabat/SourceFiniteActionSwap: checked
+ZakharovShabat/SourceActionPhaseGlobalODE: checked
+Dynamics/ScalarPhaseUniqueness: checked
+ZakharovShabat/SourceFiniteActionODEUniqueness: checked
+ZakharovShabat/SourceActionPhaseSwap: checked
+ZakharovShabat/SourceActionPhaseExponent: checked
+ZakharovShabat/SourceActionPhaseDiagonalApproximation: checked
+Articles/MKdVBelowL2/PhysicalMKdVFlowPreservation: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -1196,5 +1201,94 @@ Articles/MKdVBelowL2/PhysicalMKdVFrequencySymmetry: checked
  Classical.choice,
  Quot.sound]
 'NLS.Articles.MKdVBelowL2.physicalMKdV_fourthSourcePhaseFrequency_odd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.eventually_sourceComplexAction_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.fderiv_sourceComplexAction_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceHamiltonianDirection_fst_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceHamiltonianDirection_snd_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceHamiltonianDirection_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceActionHamiltonianVector_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceFourthSobolevMass_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceFourthSobolevMomentum_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedSobolevFourthFrequency_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.realSourceComponentSwapCLM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.realSourceComponentSwapCLM_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.continuous_realSourceComponentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_eq_native_of_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_eq_of_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceFiniteActionHamiltonianVector_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_support_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.mem_imageDomain_of_le_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_eq_globalInverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.continuous_imageFlow_of_le_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.complex_support_imageFlow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.hasDerivAt_imageFlow_of_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.hasDerivAt_imageFlow_finiteAction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Dynamics.eq_exp_mul_of_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_map_eq_phase_of_finiteAction_ode' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_componentSwap_of_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_preserves_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory_exponent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceActionFrequency.imageFlow_preserves_diagonal_of_fourier_approx' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthHilbertImageFlow_preserves_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthImageFlow_preserves_diagonal_of_finiteSupport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthImageFlow_preserves_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_preserves_mKdV' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]

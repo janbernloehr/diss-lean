@@ -130,7 +130,20 @@
     "ZakharovShabat/SourceWeightedFiniteSupport",
     "ZakharovShabat/SourceSobolevFourthDiagonalFrequency",
     "Articles/MKdVBelowL2/PhysicalFourthFourierApproximation",
-    "Articles/MKdVBelowL2/PhysicalMKdVFrequencySymmetry"
+    "Articles/MKdVBelowL2/PhysicalMKdVFrequencySymmetry",
+    "ZakharovShabat/SourceComponentSwapActionDifferential",
+    "ZakharovShabat/SourceComponentSwapPoisson",
+    "ZakharovShabat/SourceSobolevFourthRenormalizedSwap",
+    "ZakharovShabat/SourceComponentSwapRealTopology",
+    "Articles/MKdVBelowL2/FourthFrequencySwap",
+    "ZakharovShabat/SourceFiniteActionSwap",
+    "ZakharovShabat/SourceActionPhaseGlobalODE",
+    "Dynamics/ScalarPhaseUniqueness",
+    "ZakharovShabat/SourceFiniteActionODEUniqueness",
+    "ZakharovShabat/SourceActionPhaseSwap",
+    "ZakharovShabat/SourceActionPhaseExponent",
+    "ZakharovShabat/SourceActionPhaseDiagonalApproximation",
+    "Articles/MKdVBelowL2/PhysicalMKdVFlowPreservation"
   ],
   "strict_options": [
     "autoImplicit=false",
@@ -3297,6 +3310,191 @@
       "Classical.choice",
       "Quot.sound"
     ],
+    "NLS.ZakharovShabat.eventually_sourceComplexAction_componentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.fderiv_sourceComplexAction_componentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceHamiltonianDirection_fst_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceHamiltonianDirection_snd_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceHamiltonianDirection_componentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceActionHamiltonianVector_componentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceFourthSobolevMass_componentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceFourthSobolevMomentum_componentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedSobolevFourthFrequency_componentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.realSourceComponentSwapCLM": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.realSourceComponentSwapCLM_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.continuous_realSourceComponentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_eq_native_of_coefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthFrequencyCandidate_componentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_componentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_eq_of_coefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceFiniteActionHamiltonianVector_componentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_support_componentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.mem_imageDomain_of_le_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.imageFlow_eq_globalInverse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.continuous_imageFlow_of_le_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.complex_support_imageFlow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.hasDerivAt_imageFlow_of_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.hasDerivAt_imageFlow_finiteAction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Dynamics.eq_exp_mul_of_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_map_eq_phase_of_finiteAction_ode": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.imageFlow_componentSwap_of_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.imageFlow_componentSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.imageFlow_preserves_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.phaseTrajectory_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.imageFlow_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.SourceActionFrequency.imageFlow_preserves_diagonal_of_fourier_approx": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthHilbertImageFlow_preserves_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthImageFlow_preserves_diagonal_of_finiteSupport": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthImageFlow_preserves_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_preserves_mKdV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "NLS.ZakharovShabat.componentSwapBoundary": [],
     "NLS.ZakharovShabat.componentSwapBoundary_involutive": []
   },
@@ -3305,7 +3503,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Incremental focused validation: 8 new modules checked strictly; 122 unchanged modules reuse parent validation. Full transitive audit of 634 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Incremental focused validation: 13 new modules checked strictly; 130 unchanged modules reuse parent validation. Full transitive audit of 671 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",
@@ -3315,8 +3513,8 @@
     "9b664f9",
     "09fa657"
   ],
-  "validation_method": "Incremental strict checks of 8 final new modules and a full transitive audit; 122 parent modules reused after checking their sources are unchanged.",
-  "validation_basis_commit": "40d1959bf83cadfd29557cf1a3035bec7db6028c",
+  "validation_method": "Incremental strict checks of 13 final new modules and a full transitive audit; 130 parent modules reused after checking their sources are unchanged.",
+  "validation_basis_commit": "fa047be0b6caacf63c5f7f67d447bee7cf83c434",
   "unchanged_modules_reused": [
     "ComplexAnalysis/RelativeProductComparison",
     "ComplexAnalysis/RootPeriodComparison",
@@ -3439,9 +3637,7 @@
     "ZakharovShabat/PeriodOneSobolevMomentumSymmetry",
     "ZakharovShabat/SourceSobolevFourthDiagonal",
     "Articles/MKdVBelowL2/PhysicalMKdVDiagonal",
-    "Articles/MKdVBelowL2/PhysicalMKdVSpectralSymmetry"
-  ],
-  "modules_checked_this_checkpoint": [
+    "Articles/MKdVBelowL2/PhysicalMKdVSpectralSymmetry",
     "ZakharovShabat/SourceComponentSwapHamiltonians",
     "ZakharovShabat/SourceWeightedComponentSwap",
     "ZakharovShabat/SourceSobolevFourthSwap",
@@ -3450,6 +3646,21 @@
     "ZakharovShabat/SourceSobolevFourthDiagonalFrequency",
     "Articles/MKdVBelowL2/PhysicalFourthFourierApproximation",
     "Articles/MKdVBelowL2/PhysicalMKdVFrequencySymmetry"
+  ],
+  "modules_checked_this_checkpoint": [
+    "ZakharovShabat/SourceComponentSwapActionDifferential",
+    "ZakharovShabat/SourceComponentSwapPoisson",
+    "ZakharovShabat/SourceSobolevFourthRenormalizedSwap",
+    "ZakharovShabat/SourceComponentSwapRealTopology",
+    "Articles/MKdVBelowL2/FourthFrequencySwap",
+    "ZakharovShabat/SourceFiniteActionSwap",
+    "ZakharovShabat/SourceActionPhaseGlobalODE",
+    "Dynamics/ScalarPhaseUniqueness",
+    "ZakharovShabat/SourceFiniteActionODEUniqueness",
+    "ZakharovShabat/SourceActionPhaseSwap",
+    "ZakharovShabat/SourceActionPhaseExponent",
+    "ZakharovShabat/SourceActionPhaseDiagonalApproximation",
+    "Articles/MKdVBelowL2/PhysicalMKdVFlowPreservation"
   ],
   "checked_source_sha256": {
     "ComplexAnalysis/RelativeProductComparison": "9fde40048b371faeaaf6824bad52dc3777f14114339734bbaa9e83d5061ee22d",
@@ -3581,6 +3792,19 @@
     "ZakharovShabat/SourceWeightedFiniteSupport": "51d513d1b9138f16389b0176b07603752199313fecdeb2729b4b0006f50d5f80",
     "ZakharovShabat/SourceSobolevFourthDiagonalFrequency": "cbe845a0fbc1aa1de64bc35d229bd85e7a62b9890d8acb6bd25ec5a79623b25d",
     "Articles/MKdVBelowL2/PhysicalFourthFourierApproximation": "71507592d94880d54580dbf078660ce7fc0cfc72bc7c4318144a1c2a8bc28eb8",
-    "Articles/MKdVBelowL2/PhysicalMKdVFrequencySymmetry": "fb5e2c8ddccb428117a6e95ed517b31869e79dc2e9d36f90021ea58509266325"
+    "Articles/MKdVBelowL2/PhysicalMKdVFrequencySymmetry": "fb5e2c8ddccb428117a6e95ed517b31869e79dc2e9d36f90021ea58509266325",
+    "ZakharovShabat/SourceComponentSwapActionDifferential": "a8e89f9a3bcf96b195b165cc79a3a43114325d8c64898c70a6e88a9c4dfe0595",
+    "ZakharovShabat/SourceComponentSwapPoisson": "dffb60351bd032001c9686800c60ba8b6058c3064ff0da745a3fc5a8c0cb618f",
+    "ZakharovShabat/SourceSobolevFourthRenormalizedSwap": "1eee017b1ced8834f6d4d9de07356d60349d4989777e2a0e2d62fde8602ac7c9",
+    "ZakharovShabat/SourceComponentSwapRealTopology": "be7364b67cd08d49142cd658d394f1617d3fe5b22915a2b9b7c4c13c6e432f50",
+    "Articles/MKdVBelowL2/FourthFrequencySwap": "4b95636119f91b8e75855fde7f580f34b009bcfa94f328be40bb677fe970379e",
+    "ZakharovShabat/SourceFiniteActionSwap": "d35150d8895e20ca75c67d32842bb122f22e4e02cdbd7e410843b06e4b2b26b8",
+    "ZakharovShabat/SourceActionPhaseGlobalODE": "04816533c00dbde0f1fdae754a7e18d2b5a0c34fb3b1c90024db737b4923779e",
+    "Dynamics/ScalarPhaseUniqueness": "d160389b3b99d7f616c0f1f7ab7d4f00cdfc04549616554e27e0edb2c28e4bac",
+    "ZakharovShabat/SourceFiniteActionODEUniqueness": "8e6575780fc44ec4f5b0eb1f18290f7bfa88727fe3be0eb72026c1af533991fc",
+    "ZakharovShabat/SourceActionPhaseSwap": "dc2798eed4f712f2d582b048e70592d8eca7aef8a9a50feb78c405a8cda5c0b4",
+    "ZakharovShabat/SourceActionPhaseExponent": "11b5ff982144aaaa9e1513e56bb38c493eebea06d75ad3f6bb18c56a2fddf006",
+    "ZakharovShabat/SourceActionPhaseDiagonalApproximation": "ad3b2e0337d0c46d463a2b6a8661597ee9382144e9d96d9d6adab30670447d0a",
+    "Articles/MKdVBelowL2/PhysicalMKdVFlowPreservation": "671babbcde53597a8f1b00edac74c65532e5fb00935c5a5250b78e3a8d056ac2"
   }
 }

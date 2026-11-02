@@ -109,8 +109,11 @@ diagonal, including closed gaps and the zero index. Native physical H4
 antisymmetry, the actual action derivatives and original-distribution Fourier
 approximants give this identity without an angle hypothesis. Both actual
 weighted sequence realizations and the cubic-plus-normalized phase frequency
-retain oddness. The phase-angle identity and actual source-flow diagonal
-preservation remain open.
+retain oddness. Actual source-flow preservation is now proved on the full
+finite-p physical diagonal at every admissible time. The full complex action
+cotangent and anti-Poisson swap transport the actual finite action ODE;
+Birkhoff-coordinate ODE uniqueness and norm approximation give preservation
+without assuming the auxiliary phase-angle identity.
 The independent physical H2 momentum is now proved zero on the full original
 fractional diagonal, giving the precise mass-only fourth-flow normalization.
 
@@ -136,30 +139,25 @@ Theorem 7.1 is a cross-reference typo; that theorem has three items.
 
 ## Remaining integration order for Theorem 1.1
 
-1. Prove preservation of the actual smaller mKdV diagonal. The physical
-   diagonal model, unsigned swap covariance, signed periodic endpoints,
-   root branches, even actions and full finite-p odd normalized-frequency
-   identity are now verified. The Birkhoff phase-angle correspondence remains open;
-   a complete alternative proof via Hamiltonian swap covariance must prove
-   the same actual source-flow preservation.
-2. Identify the verified fourth-frequency rotation lift with the smooth
-   physical renormalized evolution. The common local interval, invariant
-   small neighborhood and uniform-norm trajectory continuity are now proved
-   for this lift on real-type distribution pairs.
-3. Prove the exact smooth-approximation solution property and continuity in
-   the uniform trajectory norm.
-4. Prove fixed-time nonextension at every FL^p datum outside L² using controlled
+1. Identify the actual diagonal-preserving fourth-frequency rotation lift with
+   the smooth physical renormalized mKdV evolution, using the certified H4
+   variation and original mass normalization. Full finite-p physical diagonal
+   preservation is now verified by original Hamiltonian covariance.
+2. Package the local and invariant small-data trajectories in the scalar real
+   mKdV phase space and prove the exact smooth-approximation solution property,
+   uniqueness and continuity in the uniform trajectory norm.
+3. Prove fixed-time nonextension at every FL^p datum outside L² using controlled
    smooth approximations, tunable divergent mass and a nonzero signed mode.
 
 ## Validation
 
-The focused checker `check.sh` lists 130 article/shared modules and the
+The focused checker `check.sh` lists 143 article/shared modules and the
 consumed hierarchy foundations. Lean 4.33.1 checks use `autoImplicit=false`
-and `warningAsError=true`. The seventeenth checkpoint strictly checks all 8
-final new modules and reuses 122 parent modules after verifying their sources
-are unchanged from `40d1959bf83cadfd29557cf1a3035bec7db6028c`.
+and `warningAsError=true`. The eighteenth checkpoint strictly checks all 13
+final new modules and reuses 130 parent modules after verifying their sources
+are unchanged from `fa047be0b6caacf63c5f7f67d447bee7cf83c434`.
 
-The fresh full transitive audit checks all 634 named declarations, including
+The fresh full transitive audit checks all 671 named declarations, including
 the main Theorems 1.2 and 1.3. Only `propext`, `Classical.choice` and
 `Quot.sound` occur. No holes, new axioms, disabled linters or increased
 heartbeat limits were introduced. `validation.txt` captures the checks;

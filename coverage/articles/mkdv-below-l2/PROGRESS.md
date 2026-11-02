@@ -783,3 +783,57 @@ checks 634 declarations, with only propext, Classical.choice and Quot.sound.
 No holes, new axioms, disabled linters or increased heartbeat or recursion
 limits were introduced. The checker now lists 130 modules. Canonical compiled
 dependencies remain read-only; this is incremental focused validation.
+
+
+## Eighteenth checkpoint: actual physical mKdV diagonal flow preservation
+
+The full complex action germ at every real source is now proved to reflect
+under unsigned component exchange. Differentiation gives the entire complex
+cotangent transformation, including every closed gap. The original bounded
+source Poisson operator has the anti-Poisson sign under this swap, so each
+actual action Hamiltonian field transforms to minus the reflected-index field.
+For reflected frequencies the two minus signs cancel in a finite action sum.
+The original complex coordinate support reflects using actual actions and
+closed-gap vanishing, without an angle formula.
+
+The independently defined native physical mass is invariant under exchange,
+and momentum is antisymmetric, so normalized H4 frequencies have full
+OFF-diagonal reflected covariance. Native original-coefficient Fourier
+representatives, the physical derivative adapter and source-norm approximation
+extend the identity to every finite p>1 real source. Frequencies also agree
+coefficient-for-coefficient across exponents.
+
+For an arbitrary action-invariant frequency family, the actual global Hilbert
+image lift now has its original finite-action Hamiltonian ODE in the full
+source norm. Scalar integrating-factor uniqueness works in both time directions
+and identifies all actual Birkhoff coordinates from this ODE and finite support.
+Applying this to the swapped finite-support trajectory proves actual source-flow
+covariance. Spectral finite-gap density extends it to the full original real
+Hilbert source; the equal-field Hilbert diagonal is therefore preserved.
+
+The source phase trajectories and actual image lifts are now proved compatible
+under exponent inclusion, retaining explicit image conditions. Finite Fourier
+inputs have native Hilbert representatives with exactly the same original
+coefficients. Hilbert diagonal preservation therefore transfers to all such
+inputs at every finite p>1. Diagonal-preserving original Fourier approximants
+converge in the actual source norm, and the open image domain gives eventual
+admissibility at each admissible time. Continuity and the closed equal-field
+source slice prove preservation for every rough diagonal datum.
+
+The final physical adapter states that the actual fixed-family fourth image
+flow remains in the closed equal-DISTRIBUTION mKdV subspace at every admissible
+time, throughout the finite-p domain. This is actual source-flow preservation,
+not an inference from even actions and odd frequencies alone. The auxiliary
+angle identity of equation (50) is not assumed in this alternative proof.
+
+Theorem 1.1 remains incomplete: smooth physical PDE agreement, packaging the
+scalar real trajectory and its exact smooth-approximation/uniqueness notion,
+and controlled divergent-mass fixed-time nonextension are still required.
+Theorems 1.2 and 1.3 remain verified.
+
+All 13 final new modules pass strict Lean 4.33.1 checks. The 130 unchanged
+parent modules reuse fa047be0b6caacf63c5f7f67d447bee7cf83c434 after source
+comparison. The full fresh transitive audit checks 671 named declarations,
+with only propext, Classical.choice and Quot.sound. The checker lists 143
+modules. No holes, added axioms, disabled linters or increased heartbeat or
+recursion limits were introduced. Canonical compiled dependencies are read-only.
