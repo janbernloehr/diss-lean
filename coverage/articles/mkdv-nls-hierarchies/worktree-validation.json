@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 2614,
+  "audited_declarations_and_auxiliaries": 2770,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -6459,14 +6459,454 @@
       "kind": "theorem",
       "name": "equation12_finiteGap_native_laurent",
       "file": "NLS/Articles/MKdVNLSHierarchies/FiniteGapHamiltonianIdentification.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalComponentSwap",
+      "file": "NLS/ZakharovShabat/ClassicalComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalComponentSwap_apply",
+      "file": "NLS/ZakharovShabat/ClassicalComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalComponentSwap_involutive",
+      "file": "NLS/ZakharovShabat/ClassicalComponentSwap.lean"
+    },
+    {
+      "kind": "def",
+      "name": "componentSwapVector",
+      "file": "NLS/ZakharovShabat/ClassicalComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalODECoefficient_componentSwap",
+      "file": "NLS/ZakharovShabat/ClassicalComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalSolution_componentSwap",
+      "file": "NLS/ZakharovShabat/ClassicalComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalMonodromy_componentSwap",
+      "file": "NLS/ZakharovShabat/ClassicalComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalDiscriminant_componentSwap",
+      "file": "NLS/ZakharovShabat/ClassicalComponentSwap.lean"
+    },
+    {
+      "kind": "def",
+      "name": "componentSwapBoundary",
+      "file": "NLS/ZakharovShabat/ClassicalComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "componentSwapBoundary_involutive",
+      "file": "NLS/ZakharovShabat/ClassicalComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalSeparatedCharacteristic_componentSwap",
+      "file": "NLS/ZakharovShabat/ClassicalComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalAntiDiscriminant_componentSwap",
+      "file": "NLS/ZakharovShabat/ClassicalComponentSwap.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceComponentSwap",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceComponentSwap_fst",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceComponentSwap_snd",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceComponentSwap_involutive",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceComponentSwap_realType",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceComponentSwap_eq_self_iff",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "def",
+      "name": "realSourceComponentSwap",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "realSourceComponentSwap_val",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "realSourceComponentSwap_involutive",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceComponentSwap_ofFinsupp",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "finiteSourceCurve_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiscriminant_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceBoundaryCharacteristic_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceAntiDiscriminant_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiscriminant_even_of_diagonal",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceAntiDiscriminant_odd_of_diagonal",
+      "file": "NLS/ZakharovShabat/SourceComponentSwap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicSpectrum_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceComponentSwapSpectralData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourcePeriodicMultiplicity_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceComponentSwapSpectralData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "neg_mem_centralSpectralBox_iff",
+      "file": "NLS/ZakharovShabat/SourceComponentSwapSpectralData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCentralPeriodicSpectrum_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceComponentSwapSpectralData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCentralPeriodicRoots_count_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceComponentSwapSpectralData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiscriminant_deriv_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceComponentSwapSpectralData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "neg_mem_refinedResonantDisk_iff",
+      "file": "NLS/ZakharovShabat/SourceComponentSwapEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "neg_mem_resonantStrip_iff",
+      "file": "NLS/ZakharovShabat/SourceComponentSwapEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "componentSwap_periodicEndpointPair",
+      "file": "NLS/ZakharovShabat/SourceComponentSwapEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceCanonicalPeriodicEndpoints_componentSwap",
+      "file": "NLS/ZakharovShabat/SourceComponentSwapEndpoints.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceLaurentPrimitiveCircle_analyticOnNhd",
+      "file": "NLS/ZakharovShabat/SourceLaurentActionAnalytic.lean"
+    },
+    {
+      "kind": "def",
+      "name": "realDiagonalSourceLocus",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "zero_mem_central_segment_of_diagonal",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "zero_not_mem_noncentral_disc_of_diagonal",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentGeometry.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceRealLaurentAction",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentLocalChart.lean"
+    },
+    {
+      "kind": "def",
+      "name": "contourRadius",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentLocalChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "contourRadius_bounds",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentLocalChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "contourRadius_pos",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentLocalChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "zero_not_mem_contour_disc",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentLocalChart.lean"
+    },
+    {
+      "kind": "def",
+      "name": "action",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentLocalChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analytic_action",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentLocalChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "action_eq_real",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentLocalChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "action_eq_real_contour",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentLocalChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_sourceDiagonalLaurentLocalChart",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentLocalChart.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceBall",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "def",
+      "name": "domain",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "def",
+      "name": "action",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isOpen_domain",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "realDiagonal_subset_domain",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "localAction_eqOn",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "action_eq_local",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analytic_action",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "action_eq_real",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "action_eqOn",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "circle_representation",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_sourceDiagonalLaurentAtlas",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceDiagonalLaurentAtlas",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceDiagonalLaurentDomain",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceDiagonalLaurentAction",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isOpen_sourceDiagonalLaurentDomain",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "realDiagonal_subset_sourceDiagonalLaurentDomain",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_sourceDiagonalLaurentAction",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiagonalLaurentAction_eq_real",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceRealLaurentAction_nat",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "action_eq_higherAction",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiagonalLaurentAction_nat",
+      "file": "NLS/ZakharovShabat/SourceDiagonalLaurentCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "realDiagonalH1Source_mem_LaurentDomain",
+      "file": "NLS/MKdV/MiuraActionLevelExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiagonalLaurentAction_eq_two_miuraActionLevel",
+      "file": "NLS/MKdV/MiuraActionLevelExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraActionLevel_analytic_extension",
+      "file": "NLS/MKdV/MiuraActionLevelExtension.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraActionSourceCLM",
+      "file": "NLS/MKdV/MiuraActionLevelExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionSourceCLM_apply",
+      "file": "NLS/MKdV/MiuraActionLevelExtension.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraComplexActionDomain",
+      "file": "NLS/MKdV/MiuraActionLevelExtension.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraComplexActionLevel",
+      "file": "NLS/MKdV/MiuraActionLevelExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isOpen_miuraComplexActionDomain",
+      "file": "NLS/MKdV/MiuraActionLevelExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "real_mem_miuraComplexActionDomain",
+      "file": "NLS/MKdV/MiuraActionLevelExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_miuraComplexActionLevel",
+      "file": "NLS/MKdV/MiuraActionLevelExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraComplexActionLevel_eq_real",
+      "file": "NLS/MKdV/MiuraActionLevelExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_miuraComplexActionLevel",
+      "file": "NLS/MKdV/MiuraActionLevelExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma7_analytic_extension",
+      "file": "NLS/Articles/MKdVNLSHierarchies/AnalyticActionExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma7",
+      "file": "NLS/Articles/MKdVNLSHierarchies/AnalyticActionExtension.lean"
     }
   ],
-  "public_declaration_count": 1288,
-  "theorem_count": 1037,
-  "definition_count": 251,
-  "full_build": "189 article/shared modules have validated private outputs. Every unchanged 186-module prefix source SHA256 matches the prior validated milestone; the three new modules and NLS aggregate compiled. Both complete targeted and combined aggregate/article audits passed under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 1376,
+  "theorem_count": 1107,
+  "definition_count": 269,
+  "full_build": "200 article/shared modules have validated private outputs. Every unchanged 189-module prefix source SHA256 matches the prior validated milestone; eleven added modules (four unchanged shared integrations and seven new modules) and NLS aggregate compiled. Both complete targeted and combined aggregate/article audits passed under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/MKdV/MiuraFiniteGap.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ZakharovShabat/ClassicalComponentSwap.lean",
   "sha256": {
     "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
     "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f",
@@ -6624,8 +7064,8 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "34ac3828f90cbf5be9806ccb953ce6921451e393faed083b04b312a9804586c1",
-    "scripts/check_mkdv_nls.py": "82e9d24c756199ab0b20664c9350fa8c0ab3f630f0b70bd6afc9d2fd3d4eced1",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "91e1a64aef2aa8e98867bb44950cb9b3a2b67b13472bf6ba78152f1609577fd9",
+    "scripts/check_mkdv_nls.py": "40bfc3f2c39d0b369d45887a272ec2ab6fdf472331d4d0aa282d3ecdab73c623",
     "NLS/SequenceSpaces/OrderedNaturalEnumerationUnique.lean": "4445901ea20db8b136cc06b97b4afc71de6961d5594aa281878962ab1b704e0f",
     "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean": "460545a5f30908fff23521c0e37293ee18d18f6441f92452538ea6bfe8bcea7f",
     "NLS/MKdV/MiuraNLSPositiveEndpoints.lean": "3f5c49a6dc937669104d321db0d076ed7e58d317c45984ad041e9ea4eda9781d",
@@ -6658,10 +7098,21 @@
     "NLS/Articles/MKdVNLSHierarchies/SpectralActionIdentification.lean": "4875db9cdf6f0385cf9b6eff5793f969a0e6eccf7d2c74449330b3932126d395",
     "NLS/MKdV/MiuraFiniteGap.lean": "1fcb73632faef711583822cbe0f928a4b5526628ab1e5293f0d25d6dc4da2e3c",
     "NLS/MKdV/MiuraFiniteGapLaurent.lean": "8454304d4efddefbd46c5746bf7e0ef6dc18240b853879950e3eac93b8239b00",
-    "NLS/Articles/MKdVNLSHierarchies/FiniteGapHamiltonianIdentification.lean": "50342eb816094d235b7b9af915c242419aafc3a98b49704c61c7ca14a616f1ce"
+    "NLS/Articles/MKdVNLSHierarchies/FiniteGapHamiltonianIdentification.lean": "50342eb816094d235b7b9af915c242419aafc3a98b49704c61c7ca14a616f1ce",
+    "NLS/ZakharovShabat/ClassicalComponentSwap.lean": "7a80035614be3f0ce65da1aa46f34c136dfb4e1ee829ce4fab7c667418807509",
+    "NLS/ZakharovShabat/SourceComponentSwap.lean": "26d8f3161cccc1c01ab8351d4f090bfe184dae33a1373a4f9bdbfe1976f2a2b9",
+    "NLS/ZakharovShabat/SourceComponentSwapSpectralData.lean": "1e28f77162740399c546a619db8d83a06b04ca860ca093fb380a78c1e26644cf",
+    "NLS/ZakharovShabat/SourceComponentSwapEndpoints.lean": "9f038b6cecb05cc3fd2a0eb792ec9a5ad6c6efd0e7236b10bb7948d0e32c4d84",
+    "NLS/ZakharovShabat/SourceLaurentActionAnalytic.lean": "7b9ef62aba659e1ab805c37976be4969ad91a73aabeb372041b458e9fd987fda",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentGeometry.lean": "b5c0304165a1102c42b0d61394424ff2fa9911e93f1f4b4d2e02ba35f8fa4cb9",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentLocalChart.lean": "cdf6acb0b7a30cd612caa9e975df481c95aae8b6b7454012d5e1e763a25744ad",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean": "84121a7813a0f374df154055d28f0fd67272b67cceb2706510a8ae65803eda55",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentCompatibility.lean": "deea405084554d0e6f40713438bb386cd1ef870d93aae70e6ea8487e0ea0aa33",
+    "NLS/MKdV/MiuraActionLevelExtension.lean": "ff6d546c18e0ee1b0a625ca62214b96fd0755134afd5e13a870afa8587b89884",
+    "NLS/Articles/MKdVNLSHierarchies/AnalyticActionExtension.lean": "45e6f74e869940d63c4ea131359671ed3151f6a2391076dc7376490a42f6870a"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 189,
+  "focused_module_count": 200,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -6780,12 +7231,19 @@
       "combined_NLS_audit_count": 47582,
       "aggregate_compiled": true,
       "validation_scope": "source-hash-checked 186-module validated prefix reused; three new modules and aggregate compiled; complete targeted and combined audits rerun"
+    },
+    {
+      "milestone": "complete Lemma 7: common ambient complex L2 Laurent-action neighborhood of the full real diagonal, all noncentral indices and integer levels, genuine local contours, atlas independence and existing higher-action compatibility; actual real H1 Hill contour restriction, complex H1 mKdV extensions and Frechet derivatives",
+      "audit_count": 2770,
+      "combined_NLS_audit_count": 47739,
+      "aggregate_compiled": true,
+      "validation_scope": "source-hash-checked 189-module validated prefix reused; eleven added modules (four unchanged shared integrations and seven new modules) and aggregate compiled; complete targeted and combined audits rerun with expanded audit roots"
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 47582,
+  "combined_audited_NLS_declarations": 47739,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -6793,11 +7251,17 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 186 unchanged prefix module source hashes match the prior f606044 milestone. Three new modules and aggregate compiled with warnings as errors. Targeted audit passed for 2614 declarations/auxiliaries and combined audit for 47582 NLS declarations. No mathematical source changed after validation.",
+  "last_run_notes": "All 189 unchanged prefix module source hashes match the prior 35c0200 milestone. Four shared component-swap modules match 40d1959 byte for byte. Eleven added modules and aggregate compiled with warnings as errors. Targeted audit passed for 2770 declarations/auxiliaries and combined audit for 47739 NLS declarations. No mathematical source changed after validation.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",
     "module_count": 41,
+    "all_copied_sources_identical": true
+  },
+  "shared_component_swap_source": {
+    "branch": "articles/mkdv-below-l2",
+    "commit": "40d1959bf83cadfd29557cf1a3035bec7db6028c",
+    "module_count": 4,
     "all_copied_sources_identical": true
   }
 }

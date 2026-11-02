@@ -1008,3 +1008,45 @@ are allowed. The public inventory has 1,288 entries
 structures excluded), with 191 SHA256 source/checker hashes.
 The checks use pinned cached imports; the entire dependency tree was not
 rebuilt from source.
+
+
+## 2026-11-02 — complete Lemma 7 and ambient complex L2 action extensions
+
+`lemma7` now includes both the actual real-H1 contour identity and the
+source's final ambient complex-L2 analytic-extension clause. A single open
+subset of the full pair coefficient space contains the entire real L2
+diagonal before any index or level is chosen. At every positive n and
+every integer k, the actual NLS Laurent action I_(n,2k-2) is analytic
+there and restricts exactly to 2*J_(n,k) on every original real H1 input.
+Closed gaps and zero mean are included. The central index is excluded.
+
+The proof glues genuine local fixed-circle integrals, using real-form
+analytic uniqueness on the entire complex overlap. Each chart's common
+source ball is chosen once for the whole infinite contour family and all
+integer levels. The atlas is independent of choices, and its positive
+levels agree with the existing NLS higher actions on complex overlaps.
+The induced complex H1 mKdV actions agree with the physical contours;
+their actual Frechet derivatives retain the factor 1/2 and literal
+coefficient diagonal.
+
+Four checked component-swap modules were integrated unchanged from
+`articles/mkdv-below-l2` at `40d1959bf83cadfd29557cf1a3035bec7db6028c`.
+The fixed signed endpoint reflection places zero in the central gap at
+every real coefficient diagonal, so all noncentral discs exclude zero
+simultaneously. The generic construction works for every finite p>1.
+
+Theorem 1's source spectral Hamiltonian extension/uniqueness step, action
+factorization, angles and frequency/bracket identifications remain open.
+Theorems 1, 3 and 4(ii)-(iii) remain incomplete.
+
+Validation covers 200 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 189 unchanged prefix module
+source hashes match the previous 35c0200 milestone; their private outputs
+were reused. Eleven added modules (four unchanged shared integrations and
+seven new modules) and the NLS aggregate compiled. The complete targeted
+and combined audits passed for 2,770 and 47,739 declarations respectively.
+Only propext, Classical.choice and Quot.sound are allowed. The public
+inventory has 1,376 entries (1,107 theorems and 269 definitions; aliases
+and structures excluded), with 202 SHA256 source/checker hashes. The
+checks use pinned cached imports; the entire dependency tree was not
+rebuilt from source.

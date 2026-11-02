@@ -223,6 +223,17 @@ modules = [
     "NLS/MKdV/MiuraFiniteGap.lean",
     "NLS/MKdV/MiuraFiniteGapLaurent.lean",
     "NLS/Articles/MKdVNLSHierarchies/FiniteGapHamiltonianIdentification.lean",
+    "NLS/ZakharovShabat/ClassicalComponentSwap.lean",
+    "NLS/ZakharovShabat/SourceComponentSwap.lean",
+    "NLS/ZakharovShabat/SourceComponentSwapSpectralData.lean",
+    "NLS/ZakharovShabat/SourceComponentSwapEndpoints.lean",
+    "NLS/ZakharovShabat/SourceLaurentActionAnalytic.lean",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentGeometry.lean",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentLocalChart.lean",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean",
+    "NLS/ZakharovShabat/SourceDiagonalLaurentCompatibility.lean",
+    "NLS/MKdV/MiuraActionLevelExtension.lean",
+    "NLS/Articles/MKdVNLSHierarchies/AnalyticActionExtension.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")
