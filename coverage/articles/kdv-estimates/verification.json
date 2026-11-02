@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "article_id": "kdv-estimates",
+  "date": "2026-11-02",
+  "main_theorems_verified": false,
+  "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "branch": "articles/kdv-estimates",
+  "worktree_path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-estimates/outputs/diss-lean",
+  "worktree_kind": "ordinary Git worktree; app managed creation rejected because canonical sourceRoot is not a registered workspace folder",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "mathlib": "v4.33.1",
+  "autoImplicit": false,
+  "focused_command": "ELAN_HOME and PATH set to pinned tooling; DISS_LEAN_REFERENCE_CHECKOUT set to read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
+  "focused_exit_code": 0,
+  "transitive_axiom_audit": {
+    "declarations": 37,
+    "namespaces": [
+      "NLS.KdV",
+      "NLS.Articles.KdVEstimates"
+    ],
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "full_repository_validation": "Not rerun; base dissertation validation is not replaced by this focused check.",
+  "canonical_build_outputs_modified": false,
+  "files": {
+    "NLS/KdV/FreeHill.lean": "4ce1fd6c85430f8f4dfca502245530a7768ef05647495fae99726f40835d0030",
+    "NLS/Articles/KdVEstimates/EstimateAdapter.lean": "d6b2f6e78b438e5ada6499c28149a64509d0df78ad6760258042804ec9633fec"
+  },
+  "remaining": "Physical Hill operator/spectrum, discriminant/actions/Birkhoff identification, and Theorems 1\u20133 analytic estimates remain unproved."
+}

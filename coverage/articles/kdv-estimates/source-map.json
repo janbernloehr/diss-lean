@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "article_id": "kdv-estimates",
+  "status": "main_theorems_not_yet_verified",
+  "workspace_phase": "Integrated into isolated articles/kdv-estimates Git worktree after user approval; main checkout left unchanged",
+  "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "source": {
+    "title": "On Two-Sided Estimates for the Nonlinear Fourier Transform of KdV",
+    "author": "Jan-Cornelius Molnar",
+    "abstract_url": "https://arxiv.org/abs/1502.04550v1",
+    "pdf_url": "https://arxiv.org/pdf/1502.04550v1",
+    "requested_version": "1502.04550v1",
+    "arxiv_submission_date": "2015-02-16",
+    "pdf_visible_date": "September 4, 2018",
+    "version_note": "Pin refers to the exact bytes served by the explicitly versioned PDF URL; no inference of identity with the journal or a historical download is made.",
+    "sha256": "b275b8c6770a650f614acd0788611044c6b0ee8da4506857294dc3ae617666dd",
+    "bytes": 715691,
+    "pdf_pages": 37,
+    "pagination": "PDF page number equals printed page number throughout the inspected statements.",
+    "private_pdf": "work/source/1502.04550v1.pdf",
+    "private_text": "work/source/1502.04550v1.txt",
+    "text_sha256": "2747cee0de2eb96928858c9228e578ac37c0c3ccca077b44c8f72d677cadd54a",
+    "visual_checks": "Rendered PDF pages 3, 4 and 8 inspected; main inequalities checked against page images, not solely extracted text."
+  },
+  "common_conventions": {
+    "potential": "Real-valued, mean-zero, period-one functions on T=R/Z. The same physical KdV Birkhoff map Omega is used in all statements.",
+    "potential_sobolev_norm_squared": "sum_{k in Z} (1+|2*pi*k|)^(2*m) * |u_hat(k)|^2",
+    "coordinate_indices": "n >= 1, with two real coordinates x_n,y_n; no n=0 action or signed duplicate",
+    "coordinate_sobolev_norm_squared": "sum_{n>=1} (2*pi*n)^(2*m+1) * (x_n^2+y_n^2)",
+    "action": "I_n=(x_n^2+y_n^2)/2",
+    "action_weighted_norm": "Q_s=sum_{n>=1} (2*pi*n)^s * I_n; thus ||Omega(u)||_(h_*^m)^2=2*Q_(2*m+1)",
+    "topologies": "Sobolev and weighted Hilbert norm topologies; weighted actions use the indicated l1 norm. Bi-analyticity means real analytic maps with real analytic inverse in these norm topologies.",
+    "poisson": "Gardner bracket integral (d_u F)*partial_x(d_u G); {x_n,y_m}=delta_nm, {x_n,x_m}={y_n,y_m}=0. This sign must not be inherited from the accepted NLS convention.",
+    "hill": "L(q)=-d^2/dx^2+q on [0,2] with periodic boundary conditions, q period one. Fourier basis exp(i*pi*k*x); free spectral value pi^2*k^2. Formula (2), page 5, fixes the second derivative; the page-8 display has an omitted exponent.",
+    "spectral_labels": "lambda_0^+, then pairs lambda_n^-,lambda_n^+ for n>=1, ordered lexicographically for complex q. Free n=0 is simple and n>=1 double; no perturbed multiplicity theorem is proved by the candidate.",
+    "canonical_root": "-2*i*sqrt_+(lambda-lambda_0^+) times product_{k>=1} varsigma_k(lambda)/(k^2*pi^2)",
+    "contour_action": "I_n=(1/pi) integral_Gamma_n lambda*Delta'(lambda)/sqrt_c(Delta(lambda)^2-4) d_lambda, with the branch/circuit conventions on pages 9-10. Higher actions J_(n,m) have lambda^(m+1)/((m+1)*pi)."
+  },
+  "main_statements": [
+    {
+      "label": "Theorem 1",
+      "pages": [
+        3
+      ],
+      "quantifier_order": "Fix the same Omega; for every integer m>=1, there exist c_m>0,d_m>0, independent of u, such that for every u in H_0^m both estimates hold.",
+      "notation": "A_j=||u||_j, S_j=||Omega(u)||_(h_*^j)",
+      "conclusions": [
+        "S_m <= c_m*(A_m+(1+A_(m-1))^m*A_(m-1))",
+        "A_m <= d_m*(S_m+(1+S_(m-1))^m*S_(m-1))"
+      ],
+      "checked_partial_adapter": [
+        "NLS.Articles.KdVEstimates.directSobolevBound_of_actionBound",
+        "NLS.Articles.KdVEstimates.inverseSobolevBound_of_actionBound"
+      ],
+      "adapter_constants": "An action-bound constant C or D gives coordinate-bound constant 2*C or 2*D. These adapters require the physical identities and action bounds explicitly; they do not prove those hypotheses.",
+      "status": "not_verified"
+    },
+    {
+      "label": "Theorem 2",
+      "pages": [
+        3
+      ],
+      "quantifier_order": "For every integer m>=1, there exist c_m>0,d_m>0 before quantifying every u in H_0^m.",
+      "notation": "A_j=||u||_j, Q_s=||I(u)||_(l1_s)",
+      "conclusions": [
+        "Q_(2*m+1) <= c_m^2*(A_m^2+(1+A_(m-1))^(2*m)*A_(m-1)^2)",
+        "A_m^2 <= d_m^2*(Q_(2*m+1)+(1+Q_(2*m-1))^m*Q_(2*m-1))"
+      ],
+      "proved_matching_main_declarations": [],
+      "remaining": "Construct physical Hill actions, trace identities, spectral localization, and the forward/inverse estimates. Generic NLS action estimates alone do not establish these assertions.",
+      "status": "not_verified"
+    },
+    {
+      "label": "Theorem 3",
+      "pages": [
+        4
+      ],
+      "domain": "w_n=(1+|n|)^r*v_n, 0<=r<=1/2, v in M; H_0^w and h_*^w with weights w_(2*n), not w_n.",
+      "weight_class": "M: w_n>=1, w_(-n)=w_n, w_(n+k)<=w_n*w_k, and w_|n|<=w_(|n|+1). Piecewise linear interpolation to R is used in evaluating the bound.",
+      "quantifier_order": "For each admissible w,r there exists c_(w,r)>0 independent of u, then for every u in H_0^w, Omega(u) belongs to h_*^w and both estimates hold.",
+      "notation": "A=||u||_w, B=w(16*A^(3/2-r)), S=||Omega(u)||_(h_*^w), Q=sum_{n>=1} w_(2*n)^2*(2*pi*n)*I_n",
+      "conclusions": [
+        "S <= c_(w,r)*((1+A)+B)*A",
+        "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
+      ],
+      "proved_matching_main_declarations": [],
+      "remaining": "Reuse SpectralWeight for M, prove the interpolation interface and weighted Hill gap/action estimates, then identify them with the physical Omega and its image space.",
+      "status": "not_verified"
+    }
+  ],
+  "associated_corollaries": [
+    {
+      "label": "Corollary 1 (first occurrence)",
+      "pages": [
+        3
+      ],
+      "scope": "For integer m>=1, a global KdV solution with u(0)=u0 in H_0^m satisfies ||u(t)||_m<=alpha_m*(||u0||_m+(1+||u0||_(m-1))^(m^2+m-1)*||u0||_(m-1)) for every real t; alpha_m independent of u0,t.",
+      "status": "not_verified"
+    },
+    {
+      "label": "Corollary 1 (second occurrence)",
+      "pages": [
+        4,
+        5
+      ],
+      "scope": "For every real s>=0, exists c_s uniform in u in H_0^s: S_s<=c_s*(1+A_s)^max(1,s)*A_s and Q_(2*s+1)<=c_s^2*(1+A_s)^(2*max(1,s))*A_s^2, including the mapping property into h_*^s.",
+      "status": "not_verified"
+    }
+  ],
+  "new_proved_foundation": {
+    "module": "NLS/KdV/FreeHill.lean",
+    "source_correspondence": "The free Fourier denominator and complementary inverse used in the proof of Lemma A.3, page 27, after the P_n/Q_n splitting on page 26. This is not Lemma A.3's full convolution estimate ||V*A_lambda^-1*Q_n||<=2*||q||_w/n.",
+    "strip": "For n>=1: |Re(lambda)-pi^2*n^2|<=6*n. This explicit narrower strip replaces the printed radius 12*n for this candidate; no downstream localization constants are yet claimed.",
+    "declarations": [
+      "NLS.KdV.nat_le_abs_sq_sub_sq",
+      "NLS.KdV.freeHill_denominator_lower",
+      "NLS.KdV.freeHill_denominator_ge_index",
+      "NLS.KdV.freeHill_denominator_ne_zero",
+      "NLS.KdV.reducedHillSymbol",
+      "NLS.KdV.reducedHillResolvent",
+      "NLS.KdV.reducedHillResolvent_right_inverse",
+      "NLS.KdV.norm_reducedHillResolvent_apply_le",
+      "NLS.KdV.weightedReducedHillResolvent",
+      "NLS.KdV.weightedReducedHillResolvent_apply",
+      "NLS.KdV.norm_weightedReducedHillResolvent_apply_le",
+      "NLS.KdV.reducedHillResolvent_unique"
+    ],
+    "domains_and_topologies": "Complex Coeff p and WeightedCoeff w p, with 1<=p<=infinity and their Banach norms; arbitrary positive weight w. The reciprocal multiplier is zero when |k|=n and inverse(lambda-pi^2*k^2) otherwise.",
+    "proved_bounds": "|n^2-k^2|<=||lambda-pi^2*k^2|| for |k|!=n, and operator application norms <=(1/n)*||a|| for both unweighted and weighted spaces. The pointwise right inverse is the projection deleting the two resonant modes; uniqueness includes that deletion explicitly.",
+    "not_claimed": "No construction of perturbed Hill spectrum, periodic differential operator domain, discriminant, contour action, canonical coordinates or Birkhoff map. No result for the printed wider strips follows merely by renaming this strip."
+  },
+  "reuse_map": [
+    {
+      "module": "NLS/SequenceSpaces/Multiplier.lean",
+      "role": "Actually imported and reused: bounded Fourier symbols and multiplierCLM; no copied multiplier proof."
+    },
+    {
+      "module": "NLS/SequenceSpaces/Weighted.lean",
+      "role": "Actually imported and reused: weightIsometry transports the diagonal inverse to arbitrary positive weights."
+    },
+    {
+      "module": "NLS/SequenceSpaces/PeriodDoubling.lean",
+      "role": "Inspected for later use: period-one potentials insert at even period-two indices, with norm and convolution compatibility."
+    },
+    {
+      "module": "NLS/SequenceSpaces/SpectralWeight.lean",
+      "role": "Inspected for later use: exact normalized symmetric submultiplicative monotone weight class and pi-scaled Sobolev weights."
+    },
+    {
+      "module": "NLS/SequenceSpaces/QuadraticActions.lean",
+      "role": "Inspected for later use: actual analytic l2-pair to l1 quadratic map, nonnegativity, total-action normalization; signed index convention must be reconciled with positive KdV modes."
+    },
+    {
+      "module": "NLS/SequenceSpaces/RealHilbertPairFromSquares.lean",
+      "role": "Inspected for later use: a real Hilbert pair with sum-of-squares norm, avoiding the ordinary product maximum norm."
+    },
+    {
+      "module": "NLS/FunctionalAnalysis/ConjugatedSquaredNeumann.lean",
+      "role": "Inspected for later perturbative inverses; cannot supply a Hill perturbation bound by itself."
+    },
+    {
+      "module": "NLS/SequenceSpaces/OrderedPairedL2Enumeration.lean",
+      "role": "Inspected: its pi*n signed lattice is specialized to first-order spectral enumeration; it must not be applied to Hill's pi^2*n^2 lattice without a new theorem."
+    },
+    {
+      "module": "NLS/ZakharovShabat/FreeResolvent.lean",
+      "role": "Inspected only as an API example; its first-order pi*n lattice and two-component operator are not imported as Hill spectral facts."
+    }
+  ],
+  "next_shared_milestones": [
+    "Prove the complementary inverse gains the weighted l1 regularity needed for convolution, then construct Hill perturbation and the two-mode Schur complement with explicit strip constants.",
+    "Define the genuine periodic Hill operator and prove agreement with its Fourier realization, spectral labels, multiplicities and localization.",
+    "Construct Hill discriminant, root branches, action integrals, real positivity, and the physical canonical Birkhoff map with exact positive-mode and norm conventions.",
+    "Prove the hierarchy trace identity and tame estimates needed for Theorem 2; connect Theorem 1 through the checked adapters.",
+    "Prove weighted gap/action estimates and the source's interpolated-weight evaluations for Theorem 3."
+  ],
+  "workspace_need": "Isolation approved. Branch articles/kdv-estimates; worktree path recorded in validation record. Continue small validated shared-foundation commits and push only this branch.",
+  "accepted_reference_scope": "coverage/MAIN_THEOREMS.md and coverage/ACCEPTED_REFERENCE.md were read. The dissertation verification is left intact. The accepted Grebert-Kappeler NLS manuscript does not replace a proof of Hill/KdV-specific assertions."
+}
