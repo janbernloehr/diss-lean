@@ -15,8 +15,8 @@ set_option autoImplicit false
 open Set Metric Complex NLS.LinearVolterra NLS.ComplexAnalysis
 namespace NLS.KdV
 
-theorem classicalHill_moment_eq_signed_cut_moment
-    (a : Curve ℂ) (n : ℕ+) (r : ℝ) (K B : ℂ → ℂ) (l u : ℂ)
+theorem classicalHill_power_period_eq_signed_cut_period
+    (a : Curve ℂ) (n : ℕ+) (r : ℝ) (K B : ℂ → ℂ) (l u : ℂ) (m : ℕ) (P : ℂ)
     (hr : 0 < r) (hrpi : r ≤ Real.pi/4)
     (hl : l ∈ ball (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r/8))
     (hu : u ∈ ball (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r/8))
@@ -28,12 +28,12 @@ theorem classicalHill_moment_eq_signed_cut_moment
       K z = (classicalHillContinuedPrimitive (z,a)+I*(n : ℂ)*Real.pi)^2)
     (hsource : ∀ z ∈ sphere ((Real.pi : ℂ)*(n : ℕ)) (r/4),
       (z^2,a) ∈ classicalHillContinuationDomain)
-    (hmoment : classicalHillHighContourMoment n a =
+    (hmoment : P =
       (Real.pi : ℂ)⁻¹ * ∮ z in C((Real.pi : ℂ)*(n : ℕ),r/4),
-        (classicalHillFrequencyPrimitive (z,a)+I*(n : ℂ)*Real.pi)^3*(2*z)) :
+        (classicalHillFrequencyPrimitive (z,a)+I*(n : ℂ)*Real.pi)^m*(2*z)) :
     ∃ k : ℂ, (k = 1 ∨ k = -1) ∧
-      classicalHillHighContourMoment n a = k^3 *
-        cubicMoment B (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r/2) := by
+      P = k^m * ((Real.pi : ℂ)⁻¹ *
+        ∮ z in C((((Real.pi : ℂ)*(n : ℕ))^2),Real.pi*(n : ℕ)*r/2), B z^m) := by
   let c : ℝ := Real.pi*(n : ℕ)
   let R : ℝ := c*r
   let rho : ℝ := r/4
@@ -85,18 +85,18 @@ theorem classicalHill_moment_eq_signed_cut_moment
   obtain ⟨k,hk,hFG⟩ := exists_fixed_sign_of_sq_eq_on_preconnected F G (sphere (c : ℂ) rho)
     (isPreconnected_sphere (by simp) _ _) hF.continuousOn hG.continuousOn
     (fun z hz => (hsq' z hz).symm) hgne
-  have hint : (∮ z in C((c : ℂ),rho), F z^3*(2*z)) =
-      k^3*(∮ z in C((c : ℂ),rho), B (z^2)^3*(2*z)) := by
+  have hint : (∮ z in C((c : ℂ),rho), F z^m*(2*z)) =
+      k^m*(∮ z in C((c : ℂ),rho), B (z^2)^m*(2*z)) := by
     calc
-      _ = ∮ z in C((c : ℂ),rho), k^3*(B (z^2)^3*(2*z)) := by
+      _ = ∮ z in C((c : ℂ),rho), k^m*(B (z^2)^m*(2*z)) := by
         apply circleIntegral.integral_congr hrho.le
         intro z hz
-        change F z^3*(2*z) = k^3*(B (z^2)^3*(2*z))
-        rw [hFG z hz]
+        change F z^m*(2*z) = k^m*(B (z^2)^m*(2*z))
+        rw [hFG z hz,mul_pow]
         dsimp only [G]
         ring
       _ = _ := circleIntegral.integral_const_mul _ _ _ _
-  have hcut : AnalyticOnNhd ℂ (fun z => B z^3)
+  have hcut : AnalyticOnNhd ℂ (fun z => B z^m)
       (closedBall E (3*c*rho) \ closedBall E (c*rho)) := by
     intro z hz
     have hzlow : c*rho < ‖z-E‖ := by simpa only [mem_closedBall,dist_eq_norm,not_le] using hz.2
@@ -107,17 +107,40 @@ theorem classicalHill_moment_eq_signed_cut_moment
       have hh : ‖z-E‖ < R/8 := by simpa only [mem_ball,dist_eq_norm] using hseg he
       dsimp only [rho,R] at *
       nlinarith
-    exact (hB' z ⟨hzR,hzcut⟩).pow 3
-  have hp := circleIntegral_square_pullback_eq_energy_circle (fun z => B z^3) c rho hc hrho hrhoc hcut
+    exact (hB' z ⟨hzR,hzcut⟩).pow m
+  have hp := circleIntegral_square_pullback_eq_energy_circle (fun z => B z^m) c rho hc hrho hrhoc hcut
   refine ⟨k,hk,?_⟩
   rw [hmoment]
   have hcC : (Real.pi : ℂ)*(n : ℕ) = (c : ℂ) := by simp only [c,ofReal_mul,ofReal_natCast]
   rw [hcC]
-  change (Real.pi : ℂ)⁻¹*(∮ z in C((c : ℂ),rho), F z^3*(2*z)) = _
+  change (Real.pi : ℂ)⁻¹*(∮ z in C((c : ℂ),rho), F z^m*(2*z)) = _
   rw [hint,hp]
   have he : 2*c*rho = Real.pi*(n : ℕ)*r/2 := by dsimp only [c,rho]; ring
   rw [he]
-  simp only [c,ofReal_mul,ofReal_natCast,cubicMoment]
+  simp only [c,ofReal_mul,ofReal_natCast]
   ring
+
+
+theorem classicalHill_moment_eq_signed_cut_moment
+    (a : Curve ℂ) (n : ℕ+) (r : ℝ) (K B : ℂ → ℂ) (l u : ℂ)
+    (hr : 0 < r) (hrpi : r ≤ Real.pi/4)
+    (hl : l ∈ ball (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r/8))
+    (hu : u ∈ ball (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r/8))
+    (hB : AnalyticOnNhd ℂ B
+      (ball (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r) \ segment ℝ l u))
+    (hsq : ∀ z ∈ ball (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r) \ segment ℝ l u,
+      B z ≠ 0 ∧ B z^2 = K z)
+    (hmatch : ∀ z ∈ classicalHillGapSquareDisc n r, (z,a) ∈ classicalHillContinuationDomain →
+      K z = (classicalHillContinuedPrimitive (z,a)+I*(n : ℂ)*Real.pi)^2)
+    (hsource : ∀ z ∈ sphere ((Real.pi : ℂ)*(n : ℕ)) (r/4),
+      (z^2,a) ∈ classicalHillContinuationDomain)
+    (hmoment : classicalHillHighContourMoment n a =
+      (Real.pi : ℂ)⁻¹ * ∮ z in C((Real.pi : ℂ)*(n : ℕ),r/4),
+        (classicalHillFrequencyPrimitive (z,a)+I*(n : ℂ)*Real.pi)^3*(2*z)) :
+    ∃ k : ℂ, (k = 1 ∨ k = -1) ∧
+      classicalHillHighContourMoment n a = k^3 *
+        cubicMoment B (((Real.pi : ℂ)*(n : ℕ))^2) (Real.pi*(n : ℕ)*r/2) := by
+  exact classicalHill_power_period_eq_signed_cut_period a n r K B l u 3
+    (classicalHillHighContourMoment n a) hr hrpi hl hu hB hsq hmatch hsource hmoment
 
 end NLS.KdV

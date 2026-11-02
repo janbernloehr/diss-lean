@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-02",
-  "milestone": "Quantitative free-model normalization of actual endpoint-deflated high Hill squares and analytic near-free unit roots on complete complex discs",
+  "milestone": "Actual high Arnold-period gap comparison, collapsed-gap zero locus, and analytic quadratic cubic-moment bounds on common complex continuous-potential neighborhoods",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -25,6 +25,7 @@
     "NLS.ComplexAnalysis.AnalyticTwoZeroRoot",
     "NLS.ComplexAnalysis.SquaredCircleHomotopy",
     "NLS.ComplexAnalysis.AnalyticCutContour",
+    "NLS.ComplexAnalysis.QuadraticRootContourPeriod",
     "NLS.ZakharovShabat.ContinuousPotentialL2Bound",
     "NLS.ZakharovShabat.ClassicalSolutionInjectivity",
     "NLS.KdV.RiccatiEnergy",
@@ -70,6 +71,9 @@
     "NLS.KdV.ClassicalHillMomentRadius",
     "NLS.KdV.ClassicalHillMomentCutRoot",
     "NLS.KdV.ClassicalHillCubicGapBounds",
+    "NLS.KdV.ClassicalHillHighContourActions",
+    "NLS.KdV.ClassicalHillActionGapBounds",
+    "NLS.KdV.ClassicalHillArnoldActionComparison",
     "NLS.KdV.ActionHamiltonianTrace",
     "NLS.KdV.ActionHamiltonianFiniteGap",
     "NLS.Articles.KdVConvexity.LocalConsequences",
@@ -117,7 +121,7 @@
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 1177,
+    "declarations": 1237,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -161,6 +165,7 @@
       "NLS.ComplexAnalysis.EntireEvenSquareDescent",
       "NLS.ComplexAnalysis.AnalyticLocalLipschitz",
       "NLS.ComplexAnalysis.NormalizedSquareRootBounds",
+      "NLS.ComplexAnalysis.QuadraticRootContourPeriod",
       "NLS.ComplexAnalysis.TracePrimitiveContinuation",
       "NLS.ComplexAnalysis.TracePrimitiveFunctoriality",
       "NLS.ComplexAnalysis.TwoZeroOrderComparison",
@@ -185,6 +190,7 @@
     "NLS/ComplexAnalysis/AnalyticTwoZeroRoot.lean": "c770ee26b8bb2bf1ce4272b9e07fa0eb20aacae8989983249607215279e38f22",
     "NLS/ComplexAnalysis/EntireEvenSquareDescent.lean": "e22eccc87b60618f7793db59cf0888949b690d1677752139a57db38372aac6c6",
     "NLS/ComplexAnalysis/NormalizedSquareRootBounds.lean": "2a6a4da47dbbdee147f05543aaf118f93907622fbd1957eb960c1be8af29fd91",
+    "NLS/ComplexAnalysis/QuadraticRootContourPeriod.lean": "897fcfbc64f02b6232e117913bb775ca6024cb4737ae5ba034bebb5787daa75d",
     "NLS/ComplexAnalysis/SquaredCircleHomotopy.lean": "c865d50c33550ea88b1f6c7ea40200c2ad89bbe88dff7ce816a8080057ead502",
     "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean": "b72a10890423ba6070d235e90a5f745cfcb69fcba1f234933be9d2451c5c7ffb",
     "NLS/ComplexAnalysis/TracePrimitiveFunctoriality.lean": "284f588bf695820c3c55fc45dbc15b9b3ded2ceee27301158f535eaa78640d91",
@@ -195,7 +201,7 @@
     "NLS/FunctionalAnalysis/LinearVolterraLinearity.lean": "bdcf939efdbed48af7a0a2e3da786c511ccc81cfdd1bb930e6185225c05f0b45",
     "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean": "e1242c43b5d115939c0335c4550df6159590b38352ad53810fd80c2a6256f56c",
     "NLS/KdV/ActionHamiltonianFiniteGap.lean": "2982bd7b2b85da37657989c6db359a6e933e81e39d8c9c29e0345ffd2daf33d5",
-    "NLS/KdV/ActionHamiltonianMoments.lean": "82d6ad2d18629b2594fc4aac69892c362ee2b42cd725a55f62e89254017bafab",
+    "NLS/KdV/ActionHamiltonianMoments.lean": "3706e6c81dae7c2076ad6f9ad605b7a056671f2de2ce150c7e6a2764cff462e8",
     "NLS/KdV/ActionHamiltonianTrace.lean": "5988bb27f067619b70ac1d3016b669484758a22987fc175a19d9b862dc621608",
     "NLS/KdV/ClassicalBranchPrimitive.lean": "9b23f82158ff2a6f4dc00d8fead2fa19601f40378c2de5bff6a7a7ec61f6759d",
     "NLS/KdV/ClassicalContourCoverage.lean": "3c3c840a66b0d32b15653d5957b80d5dfeb8f2e31a76de0b7e39f6c420e97a48",
@@ -206,7 +212,9 @@
     "NLS/KdV/ClassicalHighContourMoments.lean": "1ef7d0ef1cbdd400973ecf79afd3744f8de8da747ada245a36f2f8ec19cd1ee6",
     "NLS/KdV/ClassicalHighGapFamilies.lean": "5159acab52f9f977df82b203f95df8dd0942c194c941d5be0f8aacd3c3832928",
     "NLS/KdV/ClassicalHighGapPairs.lean": "473c73273c862dc8d707967a3414b6e0f2eace08c66f5894da6108aebe27a074",
+    "NLS/KdV/ClassicalHillActionGapBounds.lean": "cdfde91187e4f7bccf3876019c6f412a0cb6e2c336561453211e1f881c0018a1",
     "NLS/KdV/ClassicalHillAnnulusCoverage.lean": "077e7665a6c7f6353eab8e7043bcaf66140544a8dabdce0fb26a97fb6e35b775",
+    "NLS/KdV/ClassicalHillArnoldActionComparison.lean": "3ac8de8f4058970bcc83e293f87630c09ed85ffa445622cf86f47a1062205fc0",
     "NLS/KdV/ClassicalHillBandNormalization.lean": "6fba685e4b7c13fb68960248ebe7b21a19ba22fd88021edb8ca68e1e489bd3f2",
     "NLS/KdV/ClassicalHillConjugation.lean": "ffc639b592eceeca6524e069dae7020800eb034b83338121e78ebb8e302cf659",
     "NLS/KdV/ClassicalHillCubicGapBounds.lean": "0fb46fa52a214336b79dc267c5400984404de5dc5f79acf846394a92e48442b5",
@@ -218,11 +226,12 @@
     "NLS/KdV/ClassicalHillGapQuotients.lean": "6c3183f3b83034a9d79fcdaedbbb15fde26eb11ad36ccab37432ab1eb1b316cc",
     "NLS/KdV/ClassicalHillGapScaleBounds.lean": "085763c78b98ad625822821eb1cd7ea6839898a14c68191c490414f262611e3e",
     "NLS/KdV/ClassicalHillGreen.lean": "917739d4f68ad00ee3d23895cd596379e000727d5b344b54effef565ee34bf8e",
+    "NLS/KdV/ClassicalHillHighContourActions.lean": "b5a5b11f4408bdc592b36903f2e709684dbef19d0509587336af94830ae4e230",
     "NLS/KdV/ClassicalHillHighEndpointNormalization.lean": "49a842e6f9b4d235cdf9e76966b178c0c58c4187f18bb6d744055b921a91bf06",
     "NLS/KdV/ClassicalHillHighPrimitiveStrip.lean": "6a00c0d729e1f5f4a9faea56371a4e5437a1e4718bb618709613311ae5722c40",
     "NLS/KdV/ClassicalHillHighTracePhase.lean": "3ee5a5c4a0c94ea1f087c6ea6417deba7b86428fafda3001de4648f12e57a529",
-    "NLS/KdV/ClassicalHillMomentCutRoot.lean": "695b260b3867b42ef1c50cb0b31b11b61be7757e7298b06eb9b502a689c7e79a",
-    "NLS/KdV/ClassicalHillMomentRadius.lean": "33351ff7be789aba923735271e4f9c7dc949ecab55413c48d027afa77ef25693",
+    "NLS/KdV/ClassicalHillMomentCutRoot.lean": "b962f4382c55e7501bd6f1a9bf01357ff468885bd49fa0f467f9a954da37aa95",
+    "NLS/KdV/ClassicalHillMomentRadius.lean": "08b471ecaf76388fa5aff3c620144bc71ef8e510c05b594737d0b28b3b715303",
     "NLS/KdV/ClassicalHillMomentReality.lean": "28634829d60a4078de9f536625e982d0df158f8f30c76ccffa8f0a09106d46a3",
     "NLS/KdV/ClassicalHillMultipliers.lean": "a3605c650ee4c1390cd54a297ad944a3aa50b748ce80a2bc05747258ab28ec68",
     "NLS/KdV/ClassicalHillPrimitiveReflection.lean": "baf154f2a26608f7be7c6312404e833b4a48048c091f2fb4c4bd16efbd479cc4",
@@ -269,13 +278,13 @@
     "NLS/SequenceSpaces/WeightedInsertion.lean": "a4aeffa707f59fb1ae02afacbb06963c9085a2b04601162b495faf0810eb20b6",
     "NLS/ZakharovShabat/ClassicalSolutionInjectivity.lean": "9affcd40ecb7e9e599273563a89975108cf86ad2326d1656de83713014cb52a4",
     "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean": "6036371a2cadb92169894a505e58daefeb9d493fbe81d1e10a2387c9a65459a5",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "d95b10effafaf5fefd7ce80b544cc54ee8885d87823f82e2eb5b2ea490a17fd7",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "ff8141eeed958bd8fa0b19a5226bbd102395edb174e6a95f1f9c4c82fad7f926",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/shared-imports.json": "2a47f538b21e96413bea9dd51b8be1bd27d2b9c9e0f07c4165a68a419ee65848",
-    "scripts/check-kdv-convexity.sh": "6e7746712af8e7fb47dae05baf08e71d168336851a29c360b317c8c49b513a29"
+    "scripts/check-kdv-convexity.sh": "cee5a045039129d9a904a8575a374ea6b816cd267214498d8202834252a7e9e3"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/focused-validation-gap-quotient-asymptotics.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/focused-validation-arnold-action-comparison.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -285,21 +294,21 @@
     "commit": "44071d89de13be985a6aa106b65801293ddbe27d",
     "imported_dependency_closure": "coverage/articles/kdv-convexity/shared-imports.json",
     "available": "Actual L2 Hill operator/monodromy trace, characteristic equivalence, spectral reality and free-normalized source primitives/Arnold periods are now reused and checked here. Additional intrinsic global-label and canonical weighted gap modules remain available on the shared branch and are not part of this imported dependency closure.",
-    "not_yet_available": "The H^-1 physical KdV Birkhoff construction, global canonical action identification, action-gap comparison and analytic action-space descent remain unverified.",
+    "not_yet_available": "The H^-1 physical KdV Birkhoff construction, global canonical action identification, uniform rough-topology action-gap comparison and analytic action-space descent remain unverified.",
     "latest_branch_head_observed": "b071d739affc16a1eea92277d8ef080fb35e0159",
     "latest_head_observation_scope": "Commit summary only: rough Hill moment reflection, contour invariance and open band bounds. The imported source dependency closure remains pinned to 44071d8."
   },
   "limits": [
     "All main theorems remain unverified.",
-    "Literal high-contour cubic moments now satisfy norm(R_n)<=C*gamma_n^4/n^3 and norm(8*n*pi*R_n)<=Cprime*(gamma_n^2/n)^2 on a common complex neighborhood of every continuous potential. The proof fixes one physical sign on a connected small frequency circle and deforms exact one-form integrals through the cut domain; collapsed gaps vanish. Rough topology, central gaps, nonpositivity, actual action/gap comparison, Birkhoff/action identification and analytic weighted-action descent remain open.",
+    "Literal high-contour cubic moments now satisfy norm(R_n)<=C*gamma_n^4/n^3 and norm(8*n*pi*R_n)<=Cprime*(gamma_n^2/n)^2 on a common complex neighborhood of every continuous potential. The proof fixes one physical sign on a connected small frequency circle and deforms exact one-form integrals through the cut domain; collapsed gaps vanish. The continuous Arnold-period action/gap comparison is now proved. Rough topology, central gaps, nonpositivity, Birkhoff/action identification and analytic weighted-action descent remain open.",
     "The cosh trace identity and full joint logarithmic differential are proved on the source-continuation domain. Extending its square to the physical finite-gap exterior and constructing the normalized inversion remainder remain required for Lemma 4.4.",
     "The global analytic reduction now allows locally chosen finite spectral cutoffs. The physical action extension still needs actual contour moment action descent and uniform complex-neighborhood tail quadratic bounds; no origin vanishing is inferred from a tail bound alone.",
     "Theorems 1.2 and 1.3, positive-index Hessian transport, and KdV physical frequency identification remain unproved.",
     "No full repository build or replacement of the dissertation validation is claimed.",
-    "The exact continuous/L2 primitive and Arnold-period agreement is verified on the common source domain, with no root sign or logarithm-period ambiguity. Shared operator/characteristic equivalence and L2 spectral reality are now imported and audited. This does not extend the quartic estimate uniformly to L2 or H^-1, identify global Birkhoff actions, or prove the action-gap comparison.",
-    "Actual high squares are quantitatively close to the exact free square and its quadratic polynomial model on complete energy discs. Endpoint deflation yields norm(4*(n*pi)^2*Q_n+1)<=epsilon and an energy-analytic unit root within epsilon/(2*n*pi) of i/(2*n*pi). The radius precedes epsilon, but the cutoff and potential neighborhood may depend on epsilon. No action lower bound, joint parameter analyticity of the deflated root, or rough/action-space extension follows without further proof."
+    "Continuous/L2 source primitives and checked energy-circle Arnold periods agree exactly. The new continuous-potential Arnold-period comparison does not establish uniform L2 or H^-1 bounds or identify global Birkhoff actions.",
+    "Actual high endpoint-root periods, the norm(gamma)^2/n <= 16*pi*norm(Arnold period) comparison, its exact collapsed-gap zero locus, and the resulting quadratic weighted cubic-moment estimate are proved on common complex continuous-potential neighborhoods. The sign-free argument does not prove action positivity, uniform rough-topology bounds, or analytic action-space descent."
   ],
-  "previous_progress_commit": "7e066ef5a1d4576a3b1ae2db33dc46fb9422e677",
+  "previous_progress_commit": "719e29e40f67220b02b0f634ac3dfe7a76d69e88",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -431,7 +440,9 @@
     "high_shifted_primitive_uniform_imaginary_strip": "|Im(F(z^2,q)+i*n*pi)|<pi/2 at all admissible high-disc points on a common complex potential neighborhood.",
     "uniform_free_trace_approximation_on_complete_high_discs": true,
     "joint_energy_potential_high_endpoint_limit_proved": true,
-    "actual_high_squared_primitive_joint_local_matching_proved": true
+    "actual_high_squared_primitive_joint_local_matching_proved": true,
+    "unqualified_action_bound_scope": "Global physical H^-1/Birkhoff actions; still open.",
+    "continuous_Arnold_period_quadratic_bounds_proved": true
   },
   "private_overlay": "Real private KdV, ZakharovShabat, ComplexAnalysis, FunctionalAnalysis and SequenceSpaces output directories. Individual reference files in shared namespaces are linked for imports only; output-file links are removed before compilation. Canonical build products are not compilation targets.",
   "high_contour_progress": {
@@ -454,7 +465,9 @@
     "actual_moments_real_at_real_continuous_potentials_on_common_tail_neighborhood": true,
     "nonpositivity_of_actual_moments_proved": false,
     "L2_Hill_operator_spectral_equivalence_proved": true,
-    "Hminus1_Hill_operator_spectral_equivalence_proved": false
+    "Hminus1_Hill_operator_spectral_equivalence_proved": false,
+    "unqualified_action_bound_scope": "Global physical H^-1/Birkhoff actions; still open.",
+    "continuous_Arnold_period_quadratic_bounds_proved": true
   },
   "high_energy_pair_progress": {
     "potential_space": "C([0,1], C), with complex sup-norm topology",
@@ -479,7 +492,9 @@
     "distinct_high_pairs_do_not_cross": true,
     "common_complex_neighborhood_with_ordered_pairs_at_every_real_potential": true,
     "primitive_endpoint_limits_minus_i_n_pi_proved": true,
-    "endpoint_limit_scope": "At every actual high radicand zero, for real continuous potentials on a common complex neighborhood and cutoff, from both nonreal energy half-planes; no simplicity assumed. Literal values at excluded branch points not asserted."
+    "endpoint_limit_scope": "At every actual high radicand zero, for real continuous potentials on a common complex neighborhood and cutoff, from both nonreal energy half-planes; no simplicity assumed. Literal values at excluded branch points not asserted.",
+    "unqualified_action_bound_scope": "Global physical H^-1/Birkhoff actions; still open.",
+    "continuous_Arnold_period_quadratic_bounds_proved": true
   },
   "global_extension_progress": {
     "source": "Proposition 4.7(ii), p. 30",
@@ -616,7 +631,10 @@
     "Hminus1_extension_proved": false,
     "physical_action_gap_comparison_proved": false,
     "weighted_action_descent_proved": false,
-    "physical_renormalized_Hamiltonian_identification_proved": false
+    "physical_renormalized_Hamiltonian_identification_proved": false,
+    "physical_action_gap_comparison_scope": "Global H^-1/Birkhoff action identification and bounds; still open.",
+    "continuous_Arnold_period_gap_comparison_proved": true,
+    "continuous_Arnold_period_quadratic_moment_bound_proved": true
   },
   "physical_L2_primitive_agreement_progress": {
     "shared_branch": "articles/kdv-estimates",
@@ -646,7 +664,8 @@
     "Hminus1_extension_proved": false,
     "actual_action_gap_lower_comparison_proved": false,
     "global_Birkhoff_action_identification_proved": false,
-    "analytic_weighted_action_descent_proved": false
+    "analytic_weighted_action_descent_proved": false,
+    "action_gap_comparison_scope": "Uniform L2 topology comparison; not inferred from the stronger continuous-potential norm."
   },
   "free_gap_quotient_normalization_progress": {
     "potential_space": "C([0,1], C), complex sup-norm topology",
@@ -672,9 +691,38 @@
     "one_potential_neighborhood_for_all_tolerances_proved": false,
     "one_chosen_square_family_for_all_tolerances_asserted": false,
     "joint_potential_analyticity_of_endpoint_deflated_unit_root_proved": false,
-    "endpoint_root_period_computation_proved": false,
-    "actual_action_gap_lower_comparison_proved": false,
+    "endpoint_root_period_computation_proved": true,
+    "actual_action_gap_lower_comparison_proved": true,
     "Hminus1_extension_proved": false,
-    "weighted_action_descent_proved": false
+    "weighted_action_descent_proved": false,
+    "actual_action_gap_lower_comparison_scope": "Constructed continuous-potential Arnold period on the original high contour; not yet the global H^-1 Birkhoff action.",
+    "global_Birkhoff_action_identification_proved": false
+  },
+  "arnold_action_comparison_progress": {
+    "potential_space": "C([0,1], C), complex sup-norm topology",
+    "quantifiers": "For every continuous complex q, one positive cutoff N, one complex open V containing q, and one positive moment-bound constant precede all n>=N and all a in V.",
+    "literal_action": "-(1/pi)*integral_frequency_circle (F(z^2,a)+i*n*pi)*2*z dz, center n*pi, radius pi/4",
+    "arnold_integrand_identity": "(1/pi)*integral_frequency_circle z^2*Delta_prime(z^2,a)/continued_root(z^2,a)*2*z dz",
+    "arnold_identity_has_extra_factor_i": false,
+    "exact_counterclockwise_endpoint_root_period": "integral_gap_length_circle endpointRoot(l,u) = (pi*i/4)*(l-u)^2",
+    "endpoint_root_period_requires_real_endpoints": false,
+    "unit_action_model": "(l-u)^2/(8*c), c=n*pi",
+    "unit_action_error_bound": "3*epsilon*norm(l-u)^2/(2*c)",
+    "unit_action_lower_bound": "norm(l-u)^2/(16*c) <= norm(primitiveAction(endpointRoot(l,u)*H)), for epsilon<=1/32",
+    "actual_high_pair_lower_bound": "norm(l-u)^2/n <= 16*pi*norm(classicalHillHighContourAction n a)",
+    "actual_period_zero_iff_collapsed_pair_proved": true,
+    "zero_locus": "classicalHillHighContourAction n a = 0 iff l = u for the actual high pair",
+    "actual_action_radius_independence_proved": true,
+    "actual_weighted_moment_quadratic_bound": "norm(8*n*pi*classicalHillHighContourMoment n a) <= C*norm(classicalHillHighContourAction n a)^2",
+    "moments_and_actions_analytic_on_same_complex_neighborhood": true,
+    "collapsed_gaps_included": true,
+    "analytic_individual_endpoint_labels_assumed": false,
+    "globally_fixed_positive_unsquared_sheet_assumed": false,
+    "real_action_nonnegativity_proved": false,
+    "uniform_L2_topology_extension_proved": false,
+    "Hminus1_extension_proved": false,
+    "global_Birkhoff_action_identification_proved": false,
+    "weighted_action_descent_proved": false,
+    "global_ell2_physical_Hamiltonian_extension_proved": false
   }
 }

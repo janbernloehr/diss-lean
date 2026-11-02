@@ -10,6 +10,7 @@ import NLS.KdV.ClassicalHillGapCutRoots
 import NLS.KdV.ClassicalHillCubicGapBounds
 import NLS.KdV.ClassicalL2PrimitiveAgreement
 import NLS.KdV.ClassicalHillGapQuotientAsymptotics
+import NLS.KdV.ClassicalHillArnoldActionComparison
 import NLS.KdV.ActionHamiltonianFiniteGap
 import NLS.Articles.KdVConvexity.LocalConsequences
 import NLS.Articles.KdVConvexity.BaseContourSeries
@@ -47,6 +48,7 @@ run_cmd do
   let additionalModules := #[`NLS.ComplexAnalysis.EntireEvenSquareDescent,
     `NLS.ComplexAnalysis.AnalyticLocalLipschitz,
     `NLS.ComplexAnalysis.NormalizedSquareRootBounds,
+    `NLS.ComplexAnalysis.QuadraticRootContourPeriod,
     `NLS.ComplexAnalysis.TracePrimitiveContinuation,
     `NLS.ComplexAnalysis.TracePrimitiveFunctoriality,
     `NLS.ComplexAnalysis.TwoZeroOrderComparison,

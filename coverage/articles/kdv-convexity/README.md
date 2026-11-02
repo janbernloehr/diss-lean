@@ -33,8 +33,12 @@ small circle and deforming that circle. This does not require global
 matching on every overlap component.
 The endpoint-deflated square now also has its quantitative free-model
 normalization and an analytic root close to i/(2*n*pi), on each complete
-high disc. The comparison needed for the action lower bound is therefore
-available before the remaining endpoint-root period calculation.
+high disc. The exact endpoint-root period now gives the high Arnold-period lower
+bound gamma^2/n <= 16*pi*|A_n| and the equivalence A_n=0 iff the
+actual gap collapses. Consequently |8*n*pi*R_n| <= C*|A_n|^2 holds on
+one common complex continuous-potential neighborhood, with both families
+analytic there. Identification of these periods with global H^-1 Birkhoff
+actions and analytic descent to action space remain open.
 The analytic summation also allows a local finite spectral cutoff.
 Analytic squared primitive charts at
 both signs of the branch locus are also constructed. The earlier local
@@ -823,8 +827,9 @@ The constants, cutoff and complex open potential neighborhood are chosen
 before all high indices and nearby complex potentials. Analyticity of
 the literal moment and its weighted gap estimate hold on the same
 neighborhood. The potential space is still C([0,1],C); identifying actual
-actions, proving gamma^2/n<=C*|I_n| and descending analytically to the
-weighted action space remain essential for Theorem 1.1.
+global Birkhoff actions and descending analytically to the weighted action
+space remain essential for Theorem 1.1. The Arnold-period version of
+gamma^2/n<=C*|A_n| is now proved below in the continuous topology.
 
 ### Free-model normalization of the endpoint quotient
 
@@ -903,7 +908,48 @@ holds with the exact indexed shift F+i*n*pi. The shared L2 integration by
 parts theorem supplies the Arnold integrand lambda*Delta_prime/root
 with factor 1/pi. These are checked contour identities and local L2
 analyticity; they do not yet identify a global Birkhoff action map or
-prove the quantitative action/gap comparison.
+prove the quantitative comparison in the L2 topology. The comparison
+for the constructed continuous-potential high Arnold periods is proved below.
+
+## Actual Arnold periods and quadratic moment control
+
+`QuadraticRootContourPeriod.lean` computes the counterclockwise endpoint-root
+period exactly, for complex as well as real distinct endpoints:
+integral endpointRoot(l,u) = (pi*i/4)*(l-u)^2 on the circle centered at
+(l+u)/2 with radius |l-u|. The proof differentiates
+(lambda-midpoint)*endpointRoot and uses the normalized inverse-root period.
+
+`ClassicalHillHighContourActions.lean` defines A_n as the literal period
+-(1/pi)*integral (F(z^2,a)+i*n*pi)*2*z dz on the original frequency circle
+centered at n*pi with radius pi/4. Integration by parts identifies it with
+the Arnold integrand (1/pi)*integral z^2*Delta_prime(z^2)/root(z^2)*2*z dz,
+with no extra factor i. It proves analyticity of the entire high family on
+one complex potential neighborhood and invariance under the checked
+frequency-radius changes.
+
+`ClassicalHillActionGapBounds.lean` compares the local cut-root action
+with (l-u)^2/(8*c), where c=n*pi. A unit-root error epsilon/(2*c)
+gives action error at most 3*epsilon*|l-u|^2/(2*c); for epsilon<=1/32 this
+yields |l-u|^2/(16*c)<=|A|. A nested-circle deformation transfers the
+estimate to the enclosing energy circle.
+
+`ClassicalHillArnoldActionComparison.lean` applies these estimates to the
+actual high Hill pairs and their constructed source-normalized periods.
+For every continuous complex potential q, one positive cutoff N and one
+complex open neighborhood V of q precede all n>=N and all a in V:
+
+- The actual high gap satisfies |l-u|^2/n <= 16*pi*|A_n(a)|.
+- A_n(a)=0 exactly when the actual pair collapses, l=u.
+- Both R_n and A_n are analytic on the same V, and
+  |8*n*pi*R_n(a)| <= C*|A_n(a)|^2 for one C>0.
+
+The argument includes collapsed gaps, does not assume analytic individual
+endpoint labels, and needs only equality up to a sign on a connected
+contour. It does not establish real action positivity. The potential
+topology is the complex sup norm on C([0,1],C). Uniform L2/H^-1 estimates,
+global Birkhoff action identification, and analytic descent to the weighted
+action neighborhood are still required before applying the global ell2
+summation theorem to the physical Hamiltonian.
 
 ## Earlier checked local consequences
 
@@ -943,9 +989,10 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    the weighted actions on a common complex neighborhood (Lemma 4.6(ii)).
 2. Extend the proved **complex-neighborhood** bound
    |R_n|=O(gamma_n^4/n^3) from continuous potentials to the required rough
-   action setting, and prove gamma_n^2/n=O(|I_n|). The latter comparison
-   converts the checked exact weighted gap estimate into the quadratic
-   action estimate, with local constants uniform in n.
+   action setting. The continuous-potential Arnold periods now satisfy
+   gamma_n^2/n<=16*pi*|A_n| and the resulting quadratic weighted moment
+   estimate, uniformly in n and nearby complex potentials. Extend this to
+   the rough topology and identify A_n with the global Birkhoff actions I_n.
 3. Apply the checked analytic reduction to those actual moments. Then prove
    the identification of the exterior quartic coefficient with the physical
    energy from (4.7). The contour decomposition and calculation in
@@ -990,12 +1037,12 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All ninety-six modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All one hundred modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in eleven additional shared modules:
-1177 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in twelve additional shared modules:
+1237 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
