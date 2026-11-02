@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [whole-dissertation source index](WHOLE_DISSERTATION.md) now accounts for every nonblank extracted source line. This completes the navigation reconciliation, not every mathematical requirement. The precise 2014 construction comparison and other recorded interpretation qualifications remain. Earlier entries below retain their then-current scope.
+
 The [Section 7 physical NLS velocity](SECTION_7.md) proofs add 24 checked positive theorems. Continue the general Hilbert-space direction interpretation in S7-002 and the whole-dissertation source reconciliation. Retain the exact cited 2014 construction qualification. Correct constants directly and commit and push each completed step. The broader completeness qualifications below remain.
 
 The [bibliographic source context](BIBLIOGRAPHY.md) records all 67 attributions separately from mathematical reviews. This documentation step leaves the exact 2014 edition comparison, rough physical sheet-sign direction clause and whole-source reconciliation open.

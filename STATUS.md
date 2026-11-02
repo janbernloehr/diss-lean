@@ -1,6 +1,18 @@
 # Implementation status
 
-## Current milestone: Section 7 physical NLS velocity
+## Current milestone: whole-dissertation source navigation
+
+The [whole-dissertation source index](coverage/WHOLE_DISSERTATION.md) connects 1,229 groups in 41 units to their published evidence. Every nonblank extracted source line is assigned, including the inspected navigation fragments, front matter and final page furniture.
+
+This source accounting preserves each existing mathematical assessment and qualification. It does not imply every dissertation claim has been proved. Notation and bibliographic context retain their distinct roles.
+
+This documentation step reuses the unchanged Lean source snapshot checked at 7f17218ef5258e4efa3e18ee62ba8af0a925a018: 8,658 build jobs, 7,729 public examples and an axiom audit of 45,195 NLS declarations. Source-line accounting and document links were checked separately. No new mathematical assessment is inferred from this validation.
+
+Resolve the remaining source qualifications, retaining the exact cited 2014 construction comparison and the separately recorded Section 7 interpretation. Correct constants directly, add no new refutations, and commit and push each completed step.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 7 physical NLS velocity
 
 The [physical Lax transport](NLS/ZakharovShabat/ClassicalNLSDirichletMotion.lean) is derived from the actual NLS vector field. Its monodromy commutator gives the Dirichlet velocity -delta*P/chi_prime, where delta is the original terminal anti-discriminant and chi_prime is the original characteristic derivative. For a real pair and real Dirichlet point mu, P=2*mu^2-2*mu*Re(a(0))+abs(a(0))^2+Im(a_prime(0)).
 
