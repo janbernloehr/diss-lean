@@ -151,7 +151,11 @@
     "One physical weak-star subsequence converges in every admissible original lower finite-p norm space, with the subsequence chosen before the exponents.",
     "Continuity into bounded physical sets can be tested using all original Fourier coefficients or any admissible lower norm realization.",
     "Arbitrary-filter compact-open weak-star trajectory convergence equals uniform lower norm convergence on every compact time set. On compact domains it has the explicit single-eventual-error-bound-for-all-times criterion.",
-    "On bounded physical initial-data sets, sequential uniform lower norm dependence suffices for continuity into the full compact-time weak-star trajectory space. In the article range the lower norm can be the identical original H-minus-one norm."
+    "On bounded physical initial-data sets, sequential uniform lower norm dependence suffices for continuity into the full compact-time weak-star trajectory space. In the article range the lower norm can be the identical original H-minus-one norm.",
+    "Arbitrary-filter weak-star convergence of norm-bounded original physical families is equivalent to convergence of every original Fourier coefficient and to convergence in each admissible original lower finite-p norm.",
+    "Both convergence criteria remain valid under only an eventual specified endpoint norm bound. No global bounded-range or eventual-boundedness conclusion is claimed for arbitrary weak-star convergent nets.",
+    "Pointwise Fourier limits of eventually endpoint-bounded nets uniquely represent an original real mean-zero period-one endpoint potential with the same bound, and the entire net converges weak-star to it.",
+    "A lower finite-p norm limit of an eventually endpoint-bounded net uniquely recovers the identical original physical endpoint distribution, preserves the specified bound and gives convergence of the entire net. In the article range this applies directly to the original H-minus-one norm."
   ],
   "workspace_status": "Existing private article worktree retained; validated milestones are committed and pushed on its article branch under the active goal. The pending workspace decision does not change canonical source/build read-only isolation. No workspace attachment or canonical integration is performed.",
   "goal_turn_classification": "progress"

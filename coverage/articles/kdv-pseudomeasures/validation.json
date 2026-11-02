@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Exact physical finite-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order, and uniform physical algebraic two-count",
+  "phase": "Appendix B continuation: eventually bounded nets, Fourier limit realization and unique physical weak-star limits",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
@@ -79,6 +79,7 @@
     "NLS/Articles/KdVPseudomeasures/RealPredualTopology.lean",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarTopology.lean",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarLimits.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarNets.lean",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarTrajectories.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean",
@@ -91,11 +92,11 @@
     "NLS/Articles/KdVPseudomeasures/SpectralMultiplicityOrder.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 663,
+  "proved_theorems": 670,
   "definitions": 175,
   "axiom_audit": {
     "method": "Lean #print axioms on every source-inventoried public definition/theorem, with nested namespaces and qualified names supported. Exact inventory/audit/output set match, followed by allowlist check. Private imported proofs are covered transitively.",
-    "declarations": 838,
+    "declarations": 845,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -222,10 +223,14 @@
     "The actual determinant has finite analytic order everywhere on the full corrected closed strip. Convexity of the strip and a proved actual physical resolvent point exclude the zero germ; no finite-order premise is supplied by a caller.",
     "Eventual physical finite-chain dimensions and the verified shared eventual matrix Taylor-nullity theorem prove that the actual full original operator algebraic multiplicity equals the actual effective determinant analytic order. The equality holds on the entire corrected closed strip, including its boundary and nonroots.",
     "The entire corrected strip contains exactly two actual physical eigenvalues counted with their full original algebraic multiplicities. This is the proved analytic two-zero count transported through the exact multiplicity/order correspondence.",
-    "Original complex source wrappers retain the full original H1/H-minus-one domains, exact original endpoint norms and distribution normalization. A single cutoff chosen before q,n,lambda on every exact original source norm ball gives both the multiplicity correspondence and physical algebraic two-count."
+    "Original complex source wrappers retain the full original H1/H-minus-one domains, exact original endpoint norms and distribution normalization. A single cutoff chosen before q,n,lambda on every exact original source norm ball gives both the multiplicity correspondence and physical algebraic two-count.",
+    "Arbitrary-filter weak-star convergence of norm-bounded original physical families is equivalent to convergence of every original Fourier coefficient and to convergence in each admissible original lower finite-p norm.",
+    "Both convergence criteria remain valid under only an eventual specified endpoint norm bound. No global bounded-range or eventual-boundedness conclusion is claimed for arbitrary weak-star convergent nets.",
+    "Pointwise Fourier limits of eventually endpoint-bounded nets uniquely represent an original real mean-zero period-one endpoint potential with the same bound, and the entire net converges weak-star to it.",
+    "A lower finite-p norm limit of an eventually endpoint-bounded net uniquely recovers the identical original physical endpoint distribution, preserves the specified bound and gives convergence of the entire net. In the article range this applies directly to the original H-minus-one norm."
   ],
-  "source_correspondence": "The full original physical finite-chain spaces are now linearly equivalent to the actual effective-matrix formal Taylor kernels at every finite length. Passing to eventual dimensions proves actual original operator algebraic multiplicity equals analytic determinant order on the entire corrected closed strip, with no caller finite-order or semisimplicity assumption. The source norm-ball cutoff uniformly gives exactly two actual physical eigenvalues counted with these actual algebraic multiplicities. Canonical periodic/antiperiodic labels/asymptotic enumeration and eventual strip assignment, physical gap/Dirichlet and inverse regularity estimates, original Birkhoff maps and actual KdV main theorems remain open. All main theorem completion flags remain false.",
-  "build_isolation": "All84 modules rebuilt in a fresh empty private output view; canonical/package imports stay read-only symlinks and every compiler destination is checked to remain private. Exact838-declaration audit passed without warnings or tactic suggestions. Canonical tracked sources and build outputs were not written.",
+  "source_correspondence": "All Appendix B.1(i)-(iv) conclusions were already proved. This continuation extends bounded-set convergence criteria to eventually endpoint-bounded nets and proves unique original physical limit realization from Fourier coefficients or lower norms. Nontrivial filters are required for existence and norm-bound retention. All physical distribution constraints and exact finite-p thresholds are retained. No actual KdV flow is constructed, and all main theorem completion flags remain false.",
+  "build_isolation": "All85 selected modules rebuilt in a fresh empty private output view; exact845-declaration transitive audit passed without warnings or tactic suggestions. Canonical sources and build outputs were not written. The unrelated pre-existing uncommitted PeriodicSobolevConjugation work was excluded from this milestone via an exact checker snapshot; its source and checker edit were preserved.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
@@ -304,6 +309,7 @@
     "NLS/Articles/KdVPseudomeasures/RealPredualTopology.lean": "5f3475f566b679766c434d4e7a17f1b45f0b1431adabba2fd793e94be335a1ab",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarTopology.lean": "1b0ea267b508e2342e9d4914221fde4f7d21818a6dc9f1a4ead9f17fd24023f8",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarLimits.lean": "e15159ff276dd52d5f4b38f79d80c8492f82842fd1d41fc1bc1b97ec5c6cf5df",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarNets.lean": "54a8737fbc72d9c281373f630ffa4f00e8d27117140cace8f1e01cb35da0040e",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarTrajectories.lean": "551c221bd4b5fb475278d550ab078750a51213a315a06d34fc2fa98ca23f54f1",
     "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean": "62c67807890561beb0cdecd5f27538f68a43e2a8d2a7dbe1be7e5b1e9f40f8b4",
     "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean": "fab4636881beb929d63dfc108d2f1dcccb4a378d9fa13a6fbce180ed1cbaec31",
@@ -314,7 +320,7 @@
     "NLS/Articles/KdVPseudomeasures/SpectralMultiplicity.lean": "dee6bd768ae0e46dc60501527061e7741ce80012972674dcb3d2c6318fc95661",
     "NLS/Articles/KdVPseudomeasures/SpectralChainJets.lean": "76a4cbb3f3259bf9b41e6e6a6cb6c57e031b29f0fdca39ef3ba5425c4869eb86",
     "NLS/Articles/KdVPseudomeasures/SpectralMultiplicityOrder.lean": "75f077ae23bb8f7369bcb6ff58d2d358552b382c4182e82f7a84acce520b21f2",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "8347bc0fc6e80fb0afcfb6a9bdc29a0a58c6633cbc8477e728491ba697ff15bf"
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "a6f300bd2f56fad97b607e75313419405ad013e6bade053a3aed90d7bb2b2e13"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -322,13 +328,13 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 791,
-    "newly_authored_declarations_this_continuation": 47,
-    "new_theorems": 40,
-    "new_definitions": 7,
+    "previous_checked_declarations": 838,
+    "newly_authored_declarations_this_continuation": 7,
+    "new_theorems": 7,
+    "new_definitions": 0,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 838,
-    "previous_reuse": "Verified shared formal scalar/matrix Taylor convolution, determinant extraction and eventual matrix nullity are imported unchanged and covered by the transitive axiom audit. New Banach finite-jet and affine-pencil lemmas are in ComplexAnalysis; actual singular physical equivalences are in KdV."
+    "total_checked_declarations": 845,
+    "previous_reuse": "Existing compactness, original-distribution duality, bounded-set embeddings and physical limit-recovery proofs are reused unchanged and audited transitively."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -359,7 +365,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-multiplicity-order.log",
+  "validation_log": ".lake/article-check/logs/validation-source-nets.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",

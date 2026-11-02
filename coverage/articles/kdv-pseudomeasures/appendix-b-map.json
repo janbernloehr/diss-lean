@@ -157,5 +157,25 @@
       "On bounded physical initial-data sets, sequential uniform lower norm dependence suffices for continuity into the full compact-time weak-star trajectory space. In the article range the lower norm can be the identical original H-minus-one norm."
     ],
     "qualifications": "Sequential closure and continuity criteria require endpoint norm-bounded source sets. Limit-bound statements for arbitrary filters require a nontrivial filter; uniform compact-time criteria retain a common endpoint-bounded target. No global bounded-range assertion is made for arbitrary convergent nets. All lower exponents retain the exact strict finite-p threshold."
+  },
+  "eventually_bounded_physical_nets": {
+    "module": "NLS/Articles/KdVPseudomeasures/SourceWeakStarNets.lean",
+    "new_public_theorems": 7,
+    "declarations": [
+      "NLS.Articles.KdVPseudomeasures.tendsto_source_iff_coefficients_of_bounded",
+      "NLS.Articles.KdVPseudomeasures.tendsto_source_iff_coefficients_of_eventually_normBound",
+      "NLS.Articles.KdVPseudomeasures.existsUnique_source_of_tendsto_coefficients_normBound",
+      "NLS.Articles.KdVPseudomeasures.tendsto_source_iff_lowerDistribution_of_bounded",
+      "NLS.Articles.KdVPseudomeasures.tendsto_source_iff_lowerDistribution_of_eventually_normBound",
+      "NLS.Articles.KdVPseudomeasures.existsUnique_source_of_tendsto_lower_normBound",
+      "NLS.Articles.KdVPseudomeasures.existsUnique_source_of_tendsto_originalHminusOne_normBound"
+    ],
+    "results": [
+      "Arbitrary-filter weak-star convergence of norm-bounded original physical families is equivalent to convergence of every original Fourier coefficient and to convergence in each admissible original lower finite-p norm.",
+      "Both convergence criteria remain valid under only an eventual specified endpoint norm bound. No global bounded-range or eventual-boundedness conclusion is claimed for arbitrary weak-star convergent nets.",
+      "Pointwise Fourier limits of eventually endpoint-bounded nets uniquely represent an original real mean-zero period-one endpoint potential with the same bound, and the entire net converges weak-star to it.",
+      "A lower finite-p norm limit of an eventually endpoint-bounded net uniquely recovers the identical original physical endpoint distribution, preserves the specified bound and gives convergence of the entire net. In the article range this applies directly to the original H-minus-one norm."
+    ],
+    "qualifications": "Topology equivalences accept arbitrary filters, assuming eventual membership in a specified original endpoint norm ball. Existence and specified-bound retention require a nontrivial filter. All lower norm exponents satisfy finite p>=1 and (-r-t)*p.toReal>1. Weak-star convergence alone is not asserted to imply eventual endpoint norm boundedness."
   }
 }

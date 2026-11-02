@@ -71,6 +71,7 @@ import NLS.Articles.KdVPseudomeasures.SourceSpaces
 import NLS.Articles.KdVPseudomeasures.RealPredualTopology
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarTopology
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarLimits
+import NLS.Articles.KdVPseudomeasures.SourceWeakStarNets
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarTrajectories
 import NLS.Articles.KdVPseudomeasures.SpectralEndpoint
 import NLS.Articles.KdVPseudomeasures.SpectralReduction
@@ -847,6 +848,13 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicityOrder
 #print axioms NLS.Articles.KdVPseudomeasures.mem_closure_source_iff_seq_limit
 #print axioms NLS.Articles.KdVPseudomeasures.isClosed_source_iff_seq_limits
 #print axioms NLS.Articles.KdVPseudomeasures.exists_source_subseq_all_lower_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_iff_coefficients_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_iff_coefficients_of_eventually_normBound
+#print axioms NLS.Articles.KdVPseudomeasures.existsUnique_source_of_tendsto_coefficients_normBound
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_iff_lowerDistribution_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_iff_lowerDistribution_of_eventually_normBound
+#print axioms NLS.Articles.KdVPseudomeasures.existsUnique_source_of_tendsto_lower_normBound
+#print axioms NLS.Articles.KdVPseudomeasures.existsUnique_source_of_tendsto_originalHminusOne_normBound
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceTrajectory_iff_lowerDistribution
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceTrajectory_iff_uniformOn_compacts
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceTrajectory_iff_uniform_lower
