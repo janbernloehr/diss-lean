@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T05:34:56.006483+00:00",
-  "base_commit": "4a55ed388ae1977859596bc1c63f476e44831684",
+  "published_utc": "2026-11-02T05:56:14.899334+00:00",
+  "base_commit": "e9fb2f3688eecf7ab1481b32f1d0b0bca355ce8a",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 218,
-    "module_hash_checks": 4553,
-    "distinct_modules": 2248
+    "review_records": 219,
+    "module_hash_checks": 4558,
+    "distinct_modules": 2249
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "4a55ed388ae1977859596bc1c63f476e44831684",
-    "validated_state": "Fresh full check after Section 7 unrestricted psi uniqueness.",
+    "base_commit": "e9fb2f3688eecf7ab1481b32f1d0b0bca355ce8a",
+    "validated_state": "Fresh full check after native periodic conjugation.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8653,
+    "build_jobs": 8654,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 45094,
+    "transitive_NLS_declarations": 45116,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 82464,
+    "gate_session": 30705,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4915,
-      "sha256": "0cd7e038f0cf07d85856aa8d2a9dfd18a14a1d328e8d0aaf5ed4d7c0de342ead"
+      "files": 4916,
+      "sha256": "399b5add3a6ef88137ff1576297dfa1338b8e0af55905c404e1d5f7fc09542a2"
     },
-    "full_gate_log_sha256": "0a14142c459205db983482f8f44b9b72677da9f02ef234a58620b9d8696f6c80",
+    "full_gate_log_sha256": "aaf07250cc3111a3318f6d43bce32212f546446e06a59dfe528c4abdb12b95ca",
     "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/Section7PsiPeriodUniquenessFullCheck.log"
+    "full_gate_log": "work/NativePeriodicConjugationFullCheck.log"
   },
   "named_statements": [
     {
@@ -74917,6 +74917,126 @@
         "log_sha256": "0a14142c459205db983482f8f44b9b72677da9f02ef234a58620b9d8696f6c80"
       },
       "source_record_sha256": "5b4cec761ddd916905f12f1b27bf8a97d9e53da74b0aeb68eb10524766952209"
+    },
+    "NativePeriodicConjugationSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "e9fb2f3688eecf7ab1481b32f1d0b0bca355ce8a",
+      "updated_utc": "2026-11-02T05:56:14.850085+00:00",
+      "source_lines": [
+        [
+          11770,
+          11785
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "id": "NOT-NATIVE-REAL-FORM",
+          "source_lines": [
+            11770,
+            11785
+          ],
+          "claim": "Physical conjugation of the original periodic distributions preserves every symmetric weighted norm and gives the literal real-pair Fourier condition at all real Sobolev orders.",
+          "declarations": [
+            "NLS.Fourier.SmoothPeriodicTest.conjugate",
+            "NLS.Fourier.SmoothPeriodicTest.conjugate_apply",
+            "NLS.Fourier.SmoothPeriodicTest.conjugate_conjugate",
+            "NLS.Fourier.SmoothPeriodicTest.conjugate_add",
+            "NLS.Fourier.SmoothPeriodicTest.conjugate_smul",
+            "NLS.Fourier.SmoothPeriodicTest.iteratedDeriv_conjugate",
+            "NLS.Fourier.SmoothPeriodicTest.cNorm_conjugate",
+            "NLS.Fourier.SmoothPeriodicTest.conjugate_mode",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate_apply",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate_conjugate",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate_coefficient",
+            "NLS.Fourier.SmoothPeriodicTest.Distribution.eq_conjugate_iff_coefficients",
+            "NLS.Fourier.PeriodicFourierLebesgue.conjugate",
+            "NLS.Fourier.PeriodicFourierLebesgue.coefficientsLM_conjugate",
+            "NLS.Fourier.PeriodicFourierLebesgue.norm_conjugate",
+            "NLS.Fourier.PeriodicFourierLebesgue.sobolev_real_pair_iff"
+          ],
+          "qualification": "The dual operation is conjugate(u(conjugate(test))) on every original smooth periodic test, with continuity in the original derivative-seminorm topology. All positive periods and Banach exponents 1<=p<=infinity are retained. The symmetry premise on the weight is explicit; every real Sobolev order satisfies it. The equality criterion is equality of the original distributions, not just a condition on chosen smoother representatives. This step identifies the real-pair convention and does not change the existing pair-norm convention.",
+          "requirement": "Physical conjugation of the original periodic distributions preserves every symmetric weighted norm and gives the literal real-pair Fourier condition at all real Sobolev orders.",
+          "reviewed_claims": [
+            "Physical conjugation of the original periodic distributions preserves every symmetric weighted norm and gives the literal real-pair Fourier condition at all real Sobolev orders."
+          ]
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/Fourier/SmoothPeriodicTestSpace.lean": "6e1932e0d0f37368b62a41e6c7b45120bb1366093b7fe3f5b16162d90dd63b95",
+        "NLS/Fourier/SmoothPeriodicDistribution.lean": "8e9ea86e525e64288073691dbc95de111df7c7c6466e85794e701303e6373b66",
+        "NLS/Fourier/PeriodicFourierLebesgueSpace.lean": "f42a14f5a1d0322ff0c074b7a295719b59022ec063a147ba96e5fbda5c6974c8",
+        "NLS/SequenceSpaces/ConjugateReflection.lean": "785b7915c423f963d41847357061e92b194d42a5a46bda4b07b92a2faa03c101",
+        "NLS/Fourier/NativePeriodicConjugation.lean": "6e0254f6c7e774a25328b7b46c24ca9c9abc1e3ea500ded6a323cd681b68ab74"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/Fourier/SmoothPeriodicTestSpace.lean",
+        "NLS/Fourier/SmoothPeriodicDistribution.lean",
+        "NLS/Fourier/PeriodicFourierLebesgueSpace.lean",
+        "NLS/SequenceSpaces/ConjugateReflection.lean",
+        "NLS/Fourier/NativePeriodicConjugation.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Publish the reviewed notation-page comparison and continue the broader source ledger."
+      ],
+      "resolved_declarations": [
+        "NLS.Fourier.PeriodicFourierLebesgue.coefficientsLM_conjugate",
+        "NLS.Fourier.PeriodicFourierLebesgue.conjugate",
+        "NLS.Fourier.PeriodicFourierLebesgue.norm_conjugate",
+        "NLS.Fourier.PeriodicFourierLebesgue.sobolev_real_pair_iff",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate_apply",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate_coefficient",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate_conjugate",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.eq_conjugate_iff_coefficients",
+        "NLS.Fourier.SmoothPeriodicTest.cNorm_conjugate",
+        "NLS.Fourier.SmoothPeriodicTest.conjugate",
+        "NLS.Fourier.SmoothPeriodicTest.conjugate_add",
+        "NLS.Fourier.SmoothPeriodicTest.conjugate_apply",
+        "NLS.Fourier.SmoothPeriodicTest.conjugate_conjugate",
+        "NLS.Fourier.SmoothPeriodicTest.conjugate_mode",
+        "NLS.Fourier.SmoothPeriodicTest.conjugate_smul",
+        "NLS.Fourier.SmoothPeriodicTest.iteratedDeriv_conjugate"
+      ],
+      "declaration_inventory_count": 45116,
+      "qualification": "The [native physical conjugation bridge](NLS/Fourier/NativePeriodicConjugation.lean) acts on every original smooth periodic test by pointwise conjugation and on distributions by conjugate(u(conjugate(test))). The construction proves continuity in the original derivative-seminorm topology.\n\nIts Fourier coefficients are exactly the conjugates at reversed indices. Conjugation stays in every symmetric weighted Fourier-Lebesgue space and preserves its exact norm, including the infinity exponent. The literal real-pair condition is therefore equivalent to the original Fourier coefficient condition at every positive physical period and every real Sobolev order.\n\nFourteen positive theorems and three definitions add no public examples or refutations. Existing pair-norm conventions are retained. The notation-page publication and broader dissertation audit remain separate.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          145
+        ],
+        "images": {
+          "work/NotationSourceReview-145.png": "89e55dbbedf09b9250444fcc230d8a9f08aa5fe114f8b2049115222cba179598"
+        }
+      },
+      "preceding_review_hash": "5b4cec761ddd916905f12f1b27bf8a97d9e53da74b0aeb68eb10524766952209",
+      "validation_lean_sources": {
+        "files": 4916,
+        "sha256": "399b5add3a6ef88137ff1576297dfa1338b8e0af55905c404e1d5f7fc09542a2"
+      },
+      "new_definitions": 3,
+      "positive_theorems_integrated": 14,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.Fourier.PeriodicFourierLebesgue.conjugate._proof_1",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate._proof_1",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate._proof_2",
+        "NLS.Fourier.SmoothPeriodicTest.Distribution.conjugate._proof_3",
+        "NLS.Fourier.SmoothPeriodicTest.conjugate._proof_1"
+      ],
+      "full_gate": {
+        "session": 30705,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/NativePeriodicConjugationFullCheck.log",
+        "log_sha256": "aaf07250cc3111a3318f6d43bce32212f546446e06a59dfe528c4abdb12b95ca"
+      },
+      "source_record_sha256": "41695dc4cb66f3d5962c00b76b720dd3166b8524f7619e000fbe034c341dfcb8"
     }
   }
 }

@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| native periodic conjugation, p.145 | [Positive proofs](coverage/SECTION_2.md) | Actual smooth-test conjugation, exact symmetric weighted norm, and the original real-pair condition at every positive period, real Sobolev order and Banach exponent. No new refutations. |
 | Appendix I, pp.139–140 | [Ordered comparison](coverage/APPENDIX_I_ASSERTIONS.md) | 18 groups: thirteen matched, three corrected and two contextual. Corrected Schur premise, signs and lower-block space; exact weighted cutoffs and actual real local inverses on the cone. No new refutations. |
 | Appendix I weighted uniform cutoffs, pp.139–140 | [Positive proofs](coverage/APPENDIX_I.md) | Exact weighted tails, quarter-to-half neighborhoods, one cutoff along compact source sets and actual real-atlas complex germs, and the lower-block bound on the tail space. Eight positive proofs and one bounded-operator definition. No new refutations. |
 | Appendix G, pp.135–138 | [Ordered comparison](coverage/APPENDIX_G_ASSERTIONS.md) | 41 groups: 26 matched, 13 corrected and two contextual. Explicit norm constants, signed free modes, physical gradients and source quantifiers; alternative-proof qualifications retained. No new refutations. |

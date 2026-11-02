@@ -1,5 +1,22 @@
 # Section 2: convergence, duality, gradients, and Poisson pairing
 
+## native periodic conjugation
+
+The [native physical conjugation bridge](../NLS/Fourier/NativePeriodicConjugation.lean) acts on every original smooth periodic test by pointwise conjugation and on distributions by conjugate(u(conjugate(test))). The construction proves continuity in the original derivative-seminorm topology.
+
+Its Fourier coefficients are exactly the conjugates at reversed indices. Conjugation stays in every symmetric weighted Fourier-Lebesgue space and preserves its exact norm, including the infinity exponent. The literal real-pair condition is therefore equivalent to the original Fourier coefficient condition at every positive physical period and every real Sobolev order.
+
+Fourteen positive theorems and three definitions add no public examples or refutations. Existing pair-norm conventions are retained.
+
+The full check passed: 8,654 build jobs, 7,729 public examples and an axiom audit of 45,116 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Publish the reviewed notation-page comparison after reconciling the now-published proof queue, then finish the whole-dissertation source reconciliation and its remaining qualifications. Correct constants directly; add no new refutations.
+The [broader completion qualifications](COMPLETENESS.md) remain.
+
+## Previous source review
+
+The following records retain their historical scope and validation.
+
 This records the Fourier-Lebesgue-space statements on printed pages 21–22,
 checked against the rendered source. The maps below identify proved scope
 and endpoint corrections. The bracket results below retain their explicit domain restrictions;

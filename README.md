@@ -5,7 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Section 7 unrestricted psi uniqueness](coverage/SECTION_7.md). Normalized periods uniquely determine the corrected entire psi product among arbitrary complex lp displacements at every real source for finite p>1, on the original admissible circuit families. No root placement or reality premise is required. Eight positive proofs.
+Latest step: [native periodic conjugation](coverage/SECTION_2.md). Actual smooth-test conjugation, exact symmetric weighted norm, and the original real-pair condition at every positive period, real Sobolev order and Banach exponent.
 The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013

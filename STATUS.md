@@ -1,6 +1,21 @@
 # Implementation status
 
-## Current milestone: Section 7 unrestricted psi uniqueness
+## Current milestone: native periodic conjugation
+
+The [native physical conjugation bridge](NLS/Fourier/NativePeriodicConjugation.lean) acts on every original smooth periodic test by pointwise conjugation and on distributions by conjugate(u(conjugate(test))). The construction proves continuity in the original derivative-seminorm topology.
+
+Its Fourier coefficients are exactly the conjugates at reversed indices. Conjugation stays in every symmetric weighted Fourier-Lebesgue space and preserves its exact norm, including the infinity exponent. The literal real-pair condition is therefore equivalent to the original Fourier coefficient condition at every positive physical period and every real Sobolev order.
+
+Fourteen positive theorems and three definitions add no public examples or refutations. Existing pair-norm conventions are retained.
+
+The full check passed: 8,654 build jobs, 7,729 public examples and an axiom audit of 45,116 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Publish the reviewed notation-page comparison after reconciling the now-published proof queue, then finish the whole-dissertation source reconciliation and its remaining qualifications. Correct constants directly; add no new refutations.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Section 7 unrestricted psi uniqueness
 
 The [entire period uniqueness theorem](NLS/ZakharovShabat/Section7EntirePeriodUniqueness.lean) shows that an entire numerator with sub-sine growth and zero periods around every actual gap vanishes. The proof covers complex numerators through reflected real and imaginary parts and includes collapsed gaps.
 
