@@ -17,6 +17,12 @@ def declaration_names(text):
             names.append('.'.join(stack + [decl.group(1)]))
     return names
 
+def axiom_reports(text):
+    """Lean prints a separate sentence for declarations with an empty axiom set."""
+    reports = re.findall(r"'([^']+)' depends on axioms: \[(.*?)\]", text, re.S)
+    reports += [(name, '') for name in re.findall(r"'([^']+)' does not depend on any axioms", text)]
+    return reports
+
 root = Path(__file__).resolve().parent.parent
 repo = Path(os.environ.get('DISS_LEAN_REFERENCE_ROOT', '/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls'))
 elan = Path(os.environ.get('DISS_LEAN_ELAN_HOME', str(repo.parent.parent / 'work/tooling/elan')))
@@ -25,6 +31,7 @@ view = root / '.lake/article-check/lib/lean'
 logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
+    'NLS.SequenceSpaces.OrderedOneSidedEnumeration',
     'NLS.ComplexAnalysis.CircleOpenCollar',
     'NLS.ComplexAnalysis.RealDiameterDisc',
     'NLS.FunctionalAnalysis.CircleResolventProjection',
@@ -123,6 +130,7 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SourceWeakStarTopology',
     'NLS.Articles.KdVPseudomeasures.SourceWeakStarLimits',
     'NLS.Articles.KdVPseudomeasures.SourceWeakStarNets',
+    'NLS.Articles.KdVPseudomeasures.SourceWeakStarCompactSets',
     'NLS.Articles.KdVPseudomeasures.SourceWeakStarTrajectories',
     'NLS.Articles.KdVPseudomeasures.SpectralEndpoint',
     'NLS.Articles.KdVPseudomeasures.SpectralReduction',
@@ -142,6 +150,11 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralFreeCount',
     'NLS.Articles.KdVPseudomeasures.SpectralCentralProjection',
     'NLS.Articles.KdVPseudomeasures.SpectralCentralCounting',
+    'NLS.Articles.KdVPseudomeasures.SpectralCentralRoots',
+    'NLS.Articles.KdVPseudomeasures.SpectralGlobalLabels',
+    'NLS.Articles.KdVPseudomeasures.SpectralLabelUniqueness',
+    'NLS.Articles.KdVPseudomeasures.SpectralCanonicalLabels',
+    'NLS.Articles.KdVPseudomeasures.SpectralCanonicalGaps',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
@@ -189,7 +202,7 @@ for module in selected:
     if result.returncode:
         sys.exit(result.returncode)
     if module.endswith('.Audit'):
-        reports = re.findall(r"'([^']+)' depends on axioms: \[(.*?)\]", result.stdout, re.S)
+        reports = axiom_reports(result.stdout)
         expected = re.findall(r'^#print axioms (\S+)', source.read_text(), re.M)
         inventory = []
         for checked in modules:
@@ -199,7 +212,7 @@ for module in selected:
             inventory += declaration_names(text)
         assert len(inventory) == len(set(inventory)), inventory
         assert set(expected) == set(inventory), (set(expected) ^ set(inventory))
-        assert {d for d, _ in reports} == set(expected), reports
+        assert len(reports) == len(expected) and {d for d, _ in reports} == set(expected), (set(expected) ^ {d for d, _ in reports})
         for declaration, axioms in reports:
-            assert {a.strip() for a in axioms.split(',')} <= {'propext', 'Classical.choice', 'Quot.sound'}, (declaration, axioms)
+            assert {a.strip() for a in axioms.split(',') if a.strip()} <= {'propext', 'Classical.choice', 'Quot.sound'}, (declaration, axioms)
 print('All requested isolated checks passed.')

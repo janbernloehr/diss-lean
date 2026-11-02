@@ -7,8 +7,8 @@ import NLS.KdV.PseudomeasureRootSeparation
 
 These pairs are constructed from the actual zeros and retain the exact physical
 algebraic multiplicities, with repetition at a collapsed gap. Each pair exhausts
-its full corrected closed strip. Global enumeration from the lowest eigenvalue
-and the central counting offset remain separate obligations.
+its full corrected closed strip. The article-level downstream developments prove
+the central count and global canonical enumeration without assuming them here.
 -/
 noncomputable section
 open Set

@@ -8,8 +8,8 @@ One cutoff chosen before every original real physical potential on a norm ball
 gives an ordered family that exhausts the entire sufficiently high real spectrum,
 with the already proved original infinity-Sobolev gap-tail bound. The full
 operator and every eigenvector retain the original H-minus-one/H1 domains.
-The global lower bound and exact real central count are proved in subsequent
-modules. Canonical global enumeration and physical source parity require further proofs.
+The global lower bound, exact real central count and canonical global enumeration
+are proved in subsequent modules. Physical source parity requires further proofs.
 -/
 noncomputable section
 open Set

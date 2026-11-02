@@ -80,7 +80,7 @@
   "qualifications": [
     "This verifies the AppendixC closed compact-resolvent/discreteness dependencies for the endpoint potential range needed by the main theorems, not for every arbitrary H-minus-one potential stated in the source background.",
     "Finite-dimensional eigenspaces and finitely many spectral values on bounded regions do not identify determinant zero order with physical algebraic multiplicity.",
-    "Canonical periodic/antiperiodic labels, asymptotic enumeration, eventual corrected-strip assignment and parity decomposition remain open.",
+    "Canonical real global labels, asymptotic high slot enumeration and corrected-strip assignment are now proved downstream. Physical periodic/antiperiodic parity decomposition remains open.",
     "Physical gap/Dirichlet estimates, inverse spectral regularity, Birkhoff maps and actual KdV main theorem constructions remain open. Main Theorems1.1,1.3,1.4,5.1,5.9 are not marked complete."
   ],
   "further_verified_dependencies": "Actual physical algebraic root spaces, global finite dimensionality/stabilization, exact compact-resolvent transport and generalized-eigenvector endpoint regularity are proved. The actual effective determinant order now equals actual physical algebraic multiplicity, with uniform physical algebraic two-count on corrected high strips; see spectral-multiplicity-order-map.json. Canonical labels remain open."

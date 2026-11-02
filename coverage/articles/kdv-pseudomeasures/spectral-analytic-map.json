@@ -43,7 +43,7 @@
     "public_declarations": 2
   },
   "qualifications": [
-    "The full root-separation estimate(23) is proved. Physical algebraic multiplicity now equals determinant analytic order and the actual algebraic two-count is proved; see spectral-multiplicity-order-map.json. Canonical physical spectral labels remain open.",
+    "The full root-separation estimate(23), physical algebraic/analytic multiplicity equality and actual two-count are proved. Canonical real physical labels are now proved downstream; see spectral-canonical-labels-map.json.",
     "Global singular spectrum, periodic/antiperiodic labels, eventual corrected-strip inclusion and the Birkhoff/KdV main theorem constructions remain open.",
     "The analytic statement is in the exact endpoint NORM topology. It does not claim Banach analyticity in the weak-star topology or identify a real Banach manifold structure on the constrained source subtype."
   ],

@@ -1,11 +1,12 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Actual physical Riesz range/count equality and exact real original singular central counting",
+  "phase": "Original physical compact-set topology; canonical real singular labels and full endpoint gap bounds",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
   "modules_checked": [
+    "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean",
     "NLS/ComplexAnalysis/CircleOpenCollar.lean",
     "NLS/ComplexAnalysis/RealDiameterDisc.lean",
     "NLS/FunctionalAnalysis/CircleResolventProjection.lean",
@@ -104,6 +105,7 @@
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarTopology.lean",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarLimits.lean",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarNets.lean",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarCompactSets.lean",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarTrajectories.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean",
@@ -123,19 +125,27 @@
     "NLS/Articles/KdVPseudomeasures/SpectralFreeCount.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralProjection.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralCounting.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralCentralRoots.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralGlobalLabels.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralLabelUniqueness.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralCanonicalLabels.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralCanonicalGaps.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 943,
-  "definitions": 215,
+  "proved_theorems": 993,
+  "definitions": 223,
   "axiom_audit": {
-    "method": "Lean #print axioms on every source-inventoried public definition/theorem, with nested namespaces and qualified names supported. Exact inventory/audit/output set match, followed by allowlist check. Private imported proofs are covered transitively.",
-    "declarations": 1158,
+    "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
+    "declarations": 1216,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
-    "result": "passed"
+    "result": "passed",
+    "empty_axiom_declarations": [
+      "NLS.appendPairedTail"
+    ]
   },
   "proof_results": [
     "Unweighted: bounded coefficientwise convergence to a bounded sequence implies actual WeakDual(Coeff 1) convergence for arbitrary filters.",
@@ -314,15 +324,24 @@
     "For every native real original endpoint potential and every physical resolvent circle, the actual Riesz projection range is exactly the sum of ALL enclosed full physical algebraic root spaces. The proof uses the finite invariant range, original full root-space transport and native semisimplicity; outside eigenvectors are annihilated and boundary eigenvectors are excluded by full physical invertibility.",
     "For the original central circle, the actual range is exactly the finite sum over sourceCentralSpectrum, with the original H1/H-minus-one domains unchanged. Its rank equals sourceCentralAlgebraicCount, the existing sum of ACTUAL physical algebraic multiplicities.",
     "Combining this proved rank/count identity with actual rank invariance along the ORIGINAL real t*q homotopy and the proved free actual count gives sourceCentralAlgebraicCount_eq: the real original singular central count is EXACTLY2N-1 under the existing wide cutoff, for every original native real potential on the exact source norm ball.",
-    "source_uniform_all_central_algebraic_counts chooses ONE cutoff N>=2 BEFORE q on each original real source norm ball. For EVERY subsequent n>=N the ACTUAL algebraic count strictly below pi^2*n^2-12n is exactly2n-1. The high-tail low-mode offset is therefore fixed at every later separator; canonical slot enumeration and physical source parity still need separate proofs."
+    "source_uniform_all_central_algebraic_counts chooses ONE cutoff N>=2 BEFORE q on each original real source norm ball. For EVERY subsequent n>=N the ACTUAL algebraic count strictly below pi^2*n^2-12n is exactly2n-1. The high-tail low-mode offset is therefore fixed at every later separator; canonical slot enumeration and physical source parity still need separate proofs.",
+    "The actual finite central spectral multiset repeats each native real singular eigenvalue according to its ACTUAL full original physical algebraic multiplicity and has cardinality2N-1. Sorting and appending the actual ordered high pairs produces a global monotone enumeration of the entire original spectrum.",
+    "Every global spectral fiber is finite and its cardinality equals the ACTUAL physical algebraic multiplicity. Intrinsic high-pair uniqueness and monotonicity prove that the entire labeling is independent of cutoff and enumeration choices.",
+    "Canonical sourceHillLabels exhaust the entire original real spectrum, put every sufficiently high actual pair in the exact slots2n-1,2n, and have an actual lowest value at index0, without any ground-state simplicity assertion.",
+    "The full signed canonical real gap sequence, including its finite central prefix, belongs to the genuine endpoint infinity Sobolev space of order-r. One explicit full-gap norm bound is uniform on each exact original real endpoint norm ball, with constants and cutoff chosen before q.",
+    "Weak-star closure is compact iff the original physical endpoint norm is bounded; the same equivalence holds for sequential compactness of the closure.",
+    "Every original Fourier coefficient is continuous on the full physical weak-star space. Any family of closed coefficient constraints is weak-star closed, and its intersection with a specified original endpoint norm ball is compact.",
+    "Every closed endpoint-bounded physical set is a closed embedding into each admissible original lower finite-p norm space. In particular the original endpoint norm ball has a closed lower-norm image, with its weak-star topology retained.",
+    "A sequence in a specified original norm ball satisfying arbitrary closed Fourier constraints has a strictly increasing subsequence whose original physical limit retains both the same norm bound and all constraints. That single subsequence converges in every admissible lower finite-p original distribution norm."
   ],
-  "source_correspondence": "The actual central Riesz range is proved equal to the sum of the enclosed ACTUAL original physical root spaces. Their independence gives rank equal to the ACTUAL algebraic count. The already proved original real potential homotopy transports that count from the free operator, giving exactly2n-1 below every sufficiently high separator, uniformly on exact original real norm balls with one cutoff chosen before q. Canonical global enumeration/parity, inverse regularity, original Birkhoff maps and actual KdV main theorems remain open; all main theorem completion flags remain false.",
-  "build_isolation": "All118 modules rebuilt in a fresh empty private output view. Canonical/package imports remain read-only symlinks and all compiler destinations are private. Exact1158-declaration transitive audit passed without warnings or tactic suggestions. Canonical tracked sources and build outputs were not written.",
+  "source_correspondence": "All Appendix B.1(i)-(iv) are already proved. The new compact-set consequences retain exact physical norms, distributions and all strict lower-exponent thresholds. Original native real canonical spectral labels and full actual unit-extra-weight endpoint gaps are now proved. The full complex/arbitrary-extra-weight source Theorem2.1 and every main theorem remain open.",
+  "build_isolation": "All125 modules rebuilt in a fresh empty private output view. Canonical and package imports are read-only symlinks; all compiler destinations are private. The exact1216-declaration transitive audit passed without warnings or tactic suggestions. No canonical source or build output was written.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
   "source_hash": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
   "output_sha256": {
+    "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean": "3e4071aef6c8357dc5249cd8c807847792cce838965828a4e392c3e342592c26",
     "NLS/ComplexAnalysis/CircleOpenCollar.lean": "d888c02dc0baf41031e73b30e2ac5c53964dba6b4cb3caa7e829cbb60c64b79f",
     "NLS/ComplexAnalysis/RealDiameterDisc.lean": "4d978853f2d9ee33b92ab05cf8657bae51fd41176f0de4e91c0ca8a9143e9371",
     "NLS/FunctionalAnalysis/CircleResolventProjection.lean": "875fecafa6ac103cdc050e4178137f44b3e35090cbe14a5a123a9f2478fadc60",
@@ -399,7 +418,7 @@
     "NLS/KdV/PseudomeasureRieszRange.lean": "a5be912ae1830da3af4b04077bb0f76b6e0a6e55ca09ca90a3984ef8e531f08f",
     "NLS/KdV/PseudomeasureSpectralLipschitz.lean": "56095be5961d84250521d0362911e603c09c3eba3e70708935f9c0fae050a55f",
     "NLS/KdV/PseudomeasureRootSeparation.lean": "ac7df1ef009060957d100aa5f140d4fe2dcddd5a3ca80c4787a25a5cd543aca3",
-    "NLS/KdV/PseudomeasureRealPairs.lean": "f1a192e03de32c0af09d3e7a4546403d17b167cfdecc9063c48dceced47b2dac",
+    "NLS/KdV/PseudomeasureRealPairs.lean": "b6a18bf103df09e0a5580425cf75d5f7561bc7bb285446106b1dd1eae8af1803",
     "NLS/KdV/PseudomeasureWideLocalization.lean": "585c42e05dcdd2a771c6f48c5e79e4abcca779832a8f2b02948a3fabe25f492f",
     "NLS/KdV/PseudomeasureLowerSpectrum.lean": "6e789b05fb6f2b790811990137e46a3f4edb67902cc5eb222e3a743ef54176cf",
     "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean": "03ae1556984317c6d46a0d110226c0359a6a0bdad43c0ae25a16fc882e09cb51",
@@ -421,6 +440,7 @@
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarTopology.lean": "1b0ea267b508e2342e9d4914221fde4f7d21818a6dc9f1a4ead9f17fd24023f8",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarLimits.lean": "e15159ff276dd52d5f4b38f79d80c8492f82842fd1d41fc1bc1b97ec5c6cf5df",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarNets.lean": "54a8737fbc72d9c281373f630ffa4f00e8d27117140cace8f1e01cb35da0040e",
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarCompactSets.lean": "7cfd48dfbd06e3503bb57e5dd5f03fb0ae762333b04aaa8e288b17fb2de31332",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarTrajectories.lean": "551c221bd4b5fb475278d550ab078750a51213a315a06d34fc2fa98ca23f54f1",
     "NLS/Articles/KdVPseudomeasures/SpectralEndpoint.lean": "62c67807890561beb0cdecd5f27538f68a43e2a8d2a7dbe1be7e5b1e9f40f8b4",
     "NLS/Articles/KdVPseudomeasures/SpectralReduction.lean": "fab4636881beb929d63dfc108d2f1dcccb4a378d9fa13a6fbce180ed1cbaec31",
@@ -432,15 +452,20 @@
     "NLS/Articles/KdVPseudomeasures/SpectralChainJets.lean": "76a4cbb3f3259bf9b41e6e6a6cb6c57e031b29f0fdca39ef3ba5425c4869eb86",
     "NLS/Articles/KdVPseudomeasures/SpectralMultiplicityOrder.lean": "75f077ae23bb8f7369bcb6ff58d2d358552b382c4182e82f7a84acce520b21f2",
     "NLS/Articles/KdVPseudomeasures/SpectralReality.lean": "90b78793b9bd6bd3155fcb0040beda3973c76433044ec49e026e11748e723d8c",
-    "NLS/Articles/KdVPseudomeasures/SpectralPairs.lean": "1c16f58a30782be56be3bdb744a9814e4c4b29741de60ab44d33fc86bebea75c",
-    "NLS/Articles/KdVPseudomeasures/SpectralGapTail.lean": "c11adebadf7441119600b930b6977f0673bc8f57b4753bee48b58e33b4a0d1b3",
-    "NLS/Articles/KdVPseudomeasures/SpectralWideLocalization.lean": "d2805f5a254d85d46e9d9a78fe10a0670547df644595a6f80d5c99028385df29",
+    "NLS/Articles/KdVPseudomeasures/SpectralPairs.lean": "17c5c7a9857b30dfdf345b2886b19b30894d5a3228afb8a361142cfb82faf08b",
+    "NLS/Articles/KdVPseudomeasures/SpectralGapTail.lean": "0b7c0d71d1646bac37c280c2a487344fa3f66f3cd89ce1e08389124e1bca3930",
+    "NLS/Articles/KdVPseudomeasures/SpectralWideLocalization.lean": "fa612a8a09acfade76140e37b2c29f56001243af0f5c1df36319cc89fdf7ed2c",
     "NLS/Articles/KdVPseudomeasures/SpectralLowerBound.lean": "6970d2a80adbecff3ce7e0ac7e291ae279e2307349b42b519176f73340e6162d",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralWindow.lean": "6ef29dc4418c2038f990f5967e7bcd96620088da524912139c4f502f3a0818d7",
     "NLS/Articles/KdVPseudomeasures/SpectralFreeCount.lean": "c230e5b67050a8f1e7d2bf2356cb23cdc05da63ff412688933530906f6ce2c15",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralProjection.lean": "23bd781e26f30d812e4f5259fc81c837586a32248312240c825ab9d8311df133",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralCounting.lean": "1ae52bd7c03d1f7710fb75dfc76db7cb85c474fd3b4b94ea14f37088c6f2562f",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "b3d48a6d6972b9a73157b37ada65249dc8d1f5194085c9053e4421d4852914f6"
+    "NLS/Articles/KdVPseudomeasures/SpectralCentralRoots.lean": "a4706327fa10485c2d983799112f4c87d67ea1d320b27288c2ba0c9f131438b5",
+    "NLS/Articles/KdVPseudomeasures/SpectralGlobalLabels.lean": "07428993b13ecf8d218c305928d40cd39247f9454de05474a4861d2568e6b36e",
+    "NLS/Articles/KdVPseudomeasures/SpectralLabelUniqueness.lean": "c9644752a494c408c3110dd25ec96ec636d642e8e53aba04c7fe78fd1b996f76",
+    "NLS/Articles/KdVPseudomeasures/SpectralCanonicalLabels.lean": "0ed2db7e47f73720e595b6f06023faea0839f1f2c6376de1bbe32a243b32b6f8",
+    "NLS/Articles/KdVPseudomeasures/SpectralCanonicalGaps.lean": "3b1e7a8493cfa65f9fb1a9b7a1f0b9c09646c8062727fa61b35b347e647a7ea5",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "ab9d514188808284cc3ea7f07828b371b1d2dbeb5d3df31f0690d8aba2aef6c8"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -448,13 +473,25 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 1140,
-    "newly_authored_declarations_this_continuation": 18,
-    "new_theorems": 18,
-    "new_definitions": 0,
-    "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 1158,
-    "previous_reuse": "Existing verified operator-norm Riesz construction, actual original compact-resolvent root-space transport, native real semisimplicity, actual projection rank homotopy, exact free physical count and mathlib finite-dimensional generalized-eigenspace decomposition. No regular-potential physical count is substituted."
+    "previous_checked_declarations": 1158,
+    "newly_checked_declarations_this_continuation": 58,
+    "newly_authored_declarations_this_continuation": 53,
+    "new_theorems": 50,
+    "new_definitions": 8,
+    "shared_declarations_copied_this_continuation": 5,
+    "total_checked_declarations": 1216,
+    "requested_appendix_follow_on": {
+      "new_theorems": 8,
+      "new_definitions": 0
+    },
+    "carried_forward_spectral_work": {
+      "checked_declarations": 50,
+      "authored_declarations": 45,
+      "copied_generic_declarations": 5,
+      "theorems": 42,
+      "definitions": 8
+    },
+    "additional_structure": "SourceHillRealLabeling is a Prop structure; its factory and property theorems are audited transitively. Structures are not separately counted by the standard definition/theorem inventory."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -485,7 +522,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-central-count.log",
+  "validation_log": ".lake/article-check/logs/validation-compact-sets.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",

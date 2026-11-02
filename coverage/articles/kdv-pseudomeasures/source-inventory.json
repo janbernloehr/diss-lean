@@ -392,6 +392,28 @@
         "NLS/Articles/KdVPseudomeasures/SpectralCentralCounting.lean"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-central-count-map.json"
+    },
+    {
+      "label": "Canonical actual real singular spectrum and full unit-extra-weight gaps",
+      "content": "The actual finite central spectral multiset repeats each native real singular eigenvalue according to its ACTUAL full original physical algebraic multiplicity and has cardinality2N-1. Sorting and appending the actual ordered high pairs produces a global monotone enumeration of the entire original spectrum. Every global spectral fiber is finite and its cardinality equals the ACTUAL physical algebraic multiplicity. Intrinsic high-pair uniqueness and monotonicity prove that the entire labeling is independent of cutoff and enumeration choices. Canonical sourceHillLabels exhaust the entire original real spectrum, put every sufficiently high actual pair in the exact slots2n-1,2n, and have an actual lowest value at index0, without any ground-state simplicity assertion. The full signed canonical real gap sequence, including its finite central prefix, belongs to the genuine endpoint infinity Sobolev space of order-r. One explicit full-gap norm bound is uniform on each exact original real endpoint norm ball, with constants and cutoff chosen before q.",
+      "status": "Proved for actual real source potentials with unit extra weight; full complex/arbitrary-weight Theorem2.1 remains open.",
+      "modules": [
+        "NLS/Articles/KdVPseudomeasures/SpectralCentralRoots.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralGlobalLabels.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralLabelUniqueness.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralCanonicalLabels.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralCanonicalGaps.lean"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-canonical-labels-map.json"
+    },
+    {
+      "label": "Original source compact sets and closed Fourier constraints",
+      "content": "Weak-star closure is compact iff the original physical endpoint norm is bounded; the same equivalence holds for sequential compactness of the closure. Every original Fourier coefficient is continuous on the full physical weak-star space. Any family of closed coefficient constraints is weak-star closed, and its intersection with a specified original endpoint norm ball is compact. Every closed endpoint-bounded physical set is a closed embedding into each admissible original lower finite-p norm space. In particular the original endpoint norm ball has a closed lower-norm image, with its weak-star topology retained. A sequence in a specified original norm ball satisfying arbitrary closed Fourier constraints has a strictly increasing subsequence whose original physical limit retains both the same norm bound and all constraints. That single subsequence converges in every admissible lower finite-p original distribution norm.",
+      "status": "Eight follow-on topology theorems proved; all Lemma B.1 clauses remain complete.",
+      "modules": [
+        "NLS/Articles/KdVPseudomeasures/SourceWeakStarCompactSets.lean"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-map.json"
     }
   ],
   "reuse_map": [

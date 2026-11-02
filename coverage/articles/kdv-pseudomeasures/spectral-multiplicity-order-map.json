@@ -101,7 +101,7 @@
   ],
   "qualifications": [
     "No semisimplicity hypothesis is imposed or inferred, including for complex potentials.",
-    "The two-count concerns the actual original period-two physical operator; canonical individual labels and periodic/antiperiodic enumeration still require proof.",
+    "The two-count concerns the actual original period-two physical operator. Canonical real individual labels and high slot assignment are now proved downstream; physical periodic/antiperiodic parity remains open.",
     "The source interval is0<=r<1/2. General H-minus-one potentials outside this endpoint range are not claimed."
   ],
   "remaining": [

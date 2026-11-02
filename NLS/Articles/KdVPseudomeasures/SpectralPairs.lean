@@ -9,8 +9,8 @@ Each pair consists of actual original H1-domain eigenvalues, exhausts its whole
 corrected strip, and retains the physical algebraic multiplicities. One cutoff
 chosen before the original potential on each norm ball constructs an ordered
 family with uniformly bounded endpoint-weighted gap widths. This is the actual
-high spectral tail; its assignment to global canonical slots needs the central
-count and global localization, which are not assumed here.
+high spectral tail; its canonical global slots are proved in the downstream
+SpectralCanonicalLabels module, without assuming them in the local pair construction.
 -/
 noncomputable section
 open Set

@@ -59,10 +59,10 @@
     "All original source norms, distributions, domains and actual algebraic multiplicities are retained. No Birkhoff map, KdV frequency or actual KdV flow is claimed complete."
   ],
   "remaining": [
-    "Construct the canonical globally ordered original periodic/antiperiodic spectral enumeration, counted with actual physical algebraic multiplicity. Use the proved exact2n-1 count below EVERY high separator and actual exhaustive ordered high pairs to identify their global slots2n-1,2n. Prove actual source period-one parity/boundary-condition identification and any needed low ground-state/interlacing assertions; do not assume them from the count alone.",
-    "Complete physical gap/Dirichlet and inverse spectral regularity estimates, including endpoint recovery and original norm-bounded isospectral sets.",
-    "Construct and verify the original Birkhoff maps and actual H-minus-one smooth-approximation KdV flow, including the stated invariance, weak-star and analytic trajectory properties.",
-    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with full source domains, hypotheses, quantifiers, normalization and topology. All remain unproved."
+    "Prove original periodic/antiperiodic boundary-condition parity and any required low ground-state simplicity/interlacing. Global real canonical enumeration, actual multiplicities, cutoff independence and full real unit-extra-weight direct gap regularity are now proved.",
+    "Complete physical Dirichlet comparisons, complex-potential and arbitrary extra-weight spectral estimates as needed for the full source Theorem2.1, endpoint inverse regularity and original norm-bounded isospectral sets.",
+    "Construct the original Birkhoff maps with global bijectivity, real analyticity and the stated weak-star homeomorphisms, and identify the actual H-minus-one smooth-approximation KdV flow.",
+    "Prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses and quantifiers. All remain unproved."
   ],
   "validation": {
     "modules_checked": 118,
@@ -80,5 +80,16 @@
       "Quot.sound"
     ],
     "log": ".lake/article-check/logs/validation-central-count.log"
-  }
+  },
+  "subsequent_progress": [
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-canonical-labels-map.json",
+      "results": [
+        "The actual finite central spectral multiset repeats each native real singular eigenvalue according to its ACTUAL full original physical algebraic multiplicity and has cardinality2N-1. Sorting and appending the actual ordered high pairs produces a global monotone enumeration of the entire original spectrum.",
+        "Every global spectral fiber is finite and its cardinality equals the ACTUAL physical algebraic multiplicity. Intrinsic high-pair uniqueness and monotonicity prove that the entire labeling is independent of cutoff and enumeration choices.",
+        "Canonical sourceHillLabels exhaust the entire original real spectrum, put every sufficiently high actual pair in the exact slots2n-1,2n, and have an actual lowest value at index0, without any ground-state simplicity assertion.",
+        "The full signed canonical real gap sequence, including its finite central prefix, belongs to the genuine endpoint infinity Sobolev space of order-r. One explicit full-gap norm bound is uniform on each exact original real endpoint norm ball, with constants and cutoff chosen before q."
+      ]
+    }
+  ]
 }

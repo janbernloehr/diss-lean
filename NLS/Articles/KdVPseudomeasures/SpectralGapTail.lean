@@ -7,8 +7,9 @@ The sequence contains the actual widths of the ordered physical high pairs,
 extended evenly to signed indices, with zero at all indices below the cutoff.
 Its norm is the genuine infinity-exponent Sobolev coefficient norm. This
 verifies the high-tail direct regularity estimate. The actual central count
-is proved in SpectralCentralCounting; global slot enumeration and physical
-source parity require their own proofs.
+is proved in SpectralCentralCounting. SpectralCanonicalLabels identifies the
+global slots, and SpectralCanonicalGaps controls the entire gap sequence. Physical
+source parity requires its own proof.
 -/
 noncomputable section
 open scoped ENNReal

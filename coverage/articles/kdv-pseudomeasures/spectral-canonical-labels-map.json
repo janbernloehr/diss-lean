@@ -1,0 +1,120 @@
+{
+  "source": "arXiv:1610.00278v1 Section2 singular physical spectrum and real unit-extra-weight direction of Theorem2.1(i).",
+  "main_theorems_verified": false,
+  "modules": [
+    "NLS/Articles/KdVPseudomeasures/SpectralCentralRoots.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralGlobalLabels.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralLabelUniqueness.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralCanonicalLabels.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralCanonicalGaps.lean"
+  ],
+  "declarations": [
+    "NLS.Articles.KdVPseudomeasures.sourceCentralRoots",
+    "NLS.Articles.KdVPseudomeasures.count_sourceCentralRoots",
+    "NLS.Articles.KdVPseudomeasures.mem_sourceCentralRoots_iff",
+    "NLS.Articles.KdVPseudomeasures.card_sourceCentralRoots",
+    "NLS.Articles.KdVPseudomeasures.sourceRealCentralRoots",
+    "NLS.Articles.KdVPseudomeasures.map_ofReal_sourceRealCentralRoots",
+    "NLS.Articles.KdVPseudomeasures.count_sourceRealCentralRoots",
+    "NLS.Articles.KdVPseudomeasures.mem_sourceRealCentralRoots_iff",
+    "NLS.Articles.KdVPseudomeasures.card_sourceRealCentralRoots",
+    "NLS.Articles.KdVPseudomeasures.exists_ordered_sourceCentralRoots",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.above_own_separator",
+    "NLS.Articles.KdVPseudomeasures.exists_sourceHillRealLabels",
+    "NLS.Articles.KdVPseudomeasures.exists_sourceHillRealLabeling",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.spectral",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.high_slot",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.tail_above_separator",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.occurrence_mem_pair",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.finite_support_and_multiplicity",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.finite_fiber",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.tail_agrees",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.unique",
+    "NLS.Articles.KdVPseudomeasures.sourceHillLabelCutoff",
+    "NLS.Articles.KdVPseudomeasures.sourceHillLabelCutoff_spec",
+    "NLS.Articles.KdVPseudomeasures.sourceHillLabels",
+    "NLS.Articles.KdVPseudomeasures.sourceHillLabels_spec",
+    "NLS.Articles.KdVPseudomeasures.sourceHillLabels_spec_at",
+    "NLS.Articles.KdVPseudomeasures.monotone_sourceHillLabels",
+    "NLS.Articles.KdVPseudomeasures.sourceHillLabels_spectrum_iff",
+    "NLS.Articles.KdVPseudomeasures.sourceHillLabels_finite_fiber",
+    "NLS.Articles.KdVPseudomeasures.sourceHillLabels_global_multiplicity",
+    "NLS.Articles.KdVPseudomeasures.sourceHillLabels_eq_pair",
+    "NLS.Articles.KdVPseudomeasures.sourceHillLabels_zero_lowest",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_canonical_labels",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_zero",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_neg",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_im",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalGapBound",
+    "NLS.Articles.KdVPseudomeasures.norm_sourceCanonicalGapValues_high_le",
+    "NLS.Articles.KdVPseudomeasures.norm_sourceCanonicalGapValues_le",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_mem",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalGaps",
+    "NLS.Articles.KdVPseudomeasures.sourceCanonicalGaps_apply",
+    "NLS.Articles.KdVPseudomeasures.norm_sourceCanonicalGaps_le",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_canonical_gap_bound"
+  ],
+  "results": [
+    "The actual finite central spectral multiset repeats each native real singular eigenvalue according to its ACTUAL full original physical algebraic multiplicity and has cardinality2N-1. Sorting and appending the actual ordered high pairs produces a global monotone enumeration of the entire original spectrum.",
+    "Every global spectral fiber is finite and its cardinality equals the ACTUAL physical algebraic multiplicity. Intrinsic high-pair uniqueness and monotonicity prove that the entire labeling is independent of cutoff and enumeration choices.",
+    "Canonical sourceHillLabels exhaust the entire original real spectrum, put every sufficiently high actual pair in the exact slots2n-1,2n, and have an actual lowest value at index0, without any ground-state simplicity assertion.",
+    "The full signed canonical real gap sequence, including its finite central prefix, belongs to the genuine endpoint infinity Sobolev space of order-r. One explicit full-gap norm bound is uniform on each exact original real endpoint norm ball, with constants and cutoff chosen before q."
+  ],
+  "domains": {
+    "potential": "The actual original real mean-zero period-one endpoint Potential(r),0<=r<1/2.",
+    "operator": "The full original singular H1-to-H-minus-one Hill pencil; actual algebraic multiplicities are full physical root-space dimensions.",
+    "norms": "Original exact endpoint distribution norm and genuine weighted coefficient infinity norm; the lower finite-p topology is not substituted.",
+    "gaps": "gamma0=0 and gamma_k=lambda_(2|k|)-lambda_(2|k|-1); real and even.",
+    "uniformity": "For every original norm radius R, constants and cutoff are chosen BEFORE q."
+  },
+  "conclusions": {
+    "sourceHillLabels_spectrum_iff": "NLS.Articles.KdVPseudomeasures.sourceHillLabels_spectrum_iff",
+    "sourceHillLabels_global_multiplicity": "NLS.Articles.KdVPseudomeasures.sourceHillLabels_global_multiplicity",
+    "sourceHillLabels_eq_pair": "NLS.Articles.KdVPseudomeasures.sourceHillLabels_eq_pair",
+    "sourceCanonicalGapValues_mem": "NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_mem",
+    "norm_sourceCanonicalGaps_le": "NLS.Articles.KdVPseudomeasures.norm_sourceCanonicalGaps_le",
+    "source_uniform_canonical_gap_bound": "NLS.Articles.KdVPseudomeasures.source_uniform_canonical_gap_bound"
+  },
+  "shared_copy_provenance": {
+    "file": "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean",
+    "branch": "articles/kdv-estimates",
+    "commit": "0a64af6ba85b92eeb480b500ef11cfa90ae69ece",
+    "declarations": [
+      "NLS.appendPairedTail",
+      "NLS.appendPairedTail_prefix",
+      "NLS.appendPairedTail_even",
+      "NLS.appendPairedTail_odd",
+      "NLS.monotone_appendPairedTail"
+    ],
+    "qualification": "Only the generic appendPairedTail sequence construction and its four algebraic/order theorems are literal copies. No regular physical spectral theorem is copied."
+  },
+  "method_adaptation": "Regular HillGlobalRealLabels and HillRealLabelingUniqueness supplied an architectural guide. Every physical singular-potential statement is newly proved for the actual original domains, spectrum and multiplicities.",
+  "qualifications": [
+    "This proves direct gap regularity only for native real potentials and unit extra weight w=1. Full complex-potential/arbitrary-weight source Theorem2.1(i) is not complete.",
+    "Global labeling does not assert low ground-state simplicity, all low interlacing, or periodic/antiperiodic parity.",
+    "One new Prop structure is not separately inventoried; its construction and properties are covered by the transitive theorem audits."
+  ],
+  "remaining": [
+    "Prove original periodic/antiperiodic boundary-condition parity and any required low ground-state simplicity/interlacing. Global real canonical enumeration, actual multiplicities, cutoff independence and full real unit-extra-weight direct gap regularity are now proved.",
+    "Complete physical Dirichlet comparisons, complex-potential and arbitrary extra-weight spectral estimates as needed for the full source Theorem2.1, endpoint inverse regularity and original norm-bounded isospectral sets.",
+    "Construct the original Birkhoff maps with global bijectivity, real analyticity and the stated weak-star homeomorphisms, and identify the actual H-minus-one smooth-approximation KdV flow.",
+    "Prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses and quantifiers. All remain unproved."
+  ],
+  "validation": {
+    "fresh_build": true,
+    "modules_checked": 125,
+    "audited_declarations": 1216,
+    "theorems": 993,
+    "definitions": 223,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "log": ".lake/article-check/logs/validation-compact-sets.log"
+  }
+}

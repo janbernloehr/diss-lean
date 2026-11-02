@@ -1,3 +1,4 @@
+import NLS.SequenceSpaces.OrderedOneSidedEnumeration
 import NLS.ComplexAnalysis.CircleOpenCollar
 import NLS.ComplexAnalysis.RealDiameterDisc
 import NLS.FunctionalAnalysis.CircleResolventProjection
@@ -96,6 +97,7 @@ import NLS.Articles.KdVPseudomeasures.RealPredualTopology
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarTopology
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarLimits
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarNets
+import NLS.Articles.KdVPseudomeasures.SourceWeakStarCompactSets
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarTrajectories
 import NLS.Articles.KdVPseudomeasures.SpectralEndpoint
 import NLS.Articles.KdVPseudomeasures.SpectralReduction
@@ -115,9 +117,19 @@ import NLS.Articles.KdVPseudomeasures.SpectralCentralWindow
 import NLS.Articles.KdVPseudomeasures.SpectralFreeCount
 import NLS.Articles.KdVPseudomeasures.SpectralCentralProjection
 import NLS.Articles.KdVPseudomeasures.SpectralCentralCounting
+import NLS.Articles.KdVPseudomeasures.SpectralCentralRoots
+import NLS.Articles.KdVPseudomeasures.SpectralGlobalLabels
+import NLS.Articles.KdVPseudomeasures.SpectralLabelUniqueness
+import NLS.Articles.KdVPseudomeasures.SpectralCanonicalLabels
+import NLS.Articles.KdVPseudomeasures.SpectralCanonicalGaps
 
-/-! Exact transitive axiom audit of all checked public declarations. -/
+/-! Exact transitive axiom audit of every selected public definition and theorem. -/
 
+#print axioms NLS.appendPairedTail
+#print axioms NLS.appendPairedTail_prefix
+#print axioms NLS.appendPairedTail_even
+#print axioms NLS.appendPairedTail_odd
+#print axioms NLS.monotone_appendPairedTail
 #print axioms NLS.exists_closedAnnulus_subset_of_sphere_subset_open
 #print axioms NLS.ComplexAnalysis.ofReal_mem_realDiameter_closedBall_iff
 #print axioms NLS.ComplexAnalysis.ofReal_mem_realDiameter_ball_iff
@@ -1113,6 +1125,14 @@ import NLS.Articles.KdVPseudomeasures.SpectralCentralCounting
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_source_iff_lowerDistribution_of_eventually_normBound
 #print axioms NLS.Articles.KdVPseudomeasures.existsUnique_source_of_tendsto_lower_normBound
 #print axioms NLS.Articles.KdVPseudomeasures.existsUnique_source_of_tendsto_originalHminusOne_normBound
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_closure_source_iff_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.isSeqCompact_closure_source_iff_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_sourceCoefficient
+#print axioms NLS.Articles.KdVPseudomeasures.isClosed_sourceCoefficientConstraints
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_sourceNormBall_coefficientConstraints
+#print axioms NLS.Articles.KdVPseudomeasures.isClosedEmbedding_sourceLowerDistribution_on_closed_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.isClosedEmbedding_sourceLowerDistribution_on_normBall
+#print axioms NLS.Articles.KdVPseudomeasures.exists_source_subseq_coefficientConstraints
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceTrajectory_iff_lowerDistribution
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceTrajectory_iff_uniformOn_compacts
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceTrajectory_iff_uniform_lower
@@ -1276,3 +1296,48 @@ import NLS.Articles.KdVPseudomeasures.SpectralCentralCounting
 #print axioms NLS.Articles.KdVPseudomeasures.sourceCentralAlgebraicCount_eq
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_central_algebraic_count
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_all_central_algebraic_counts
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCentralRoots
+#print axioms NLS.Articles.KdVPseudomeasures.count_sourceCentralRoots
+#print axioms NLS.Articles.KdVPseudomeasures.mem_sourceCentralRoots_iff
+#print axioms NLS.Articles.KdVPseudomeasures.card_sourceCentralRoots
+#print axioms NLS.Articles.KdVPseudomeasures.sourceRealCentralRoots
+#print axioms NLS.Articles.KdVPseudomeasures.map_ofReal_sourceRealCentralRoots
+#print axioms NLS.Articles.KdVPseudomeasures.count_sourceRealCentralRoots
+#print axioms NLS.Articles.KdVPseudomeasures.mem_sourceRealCentralRoots_iff
+#print axioms NLS.Articles.KdVPseudomeasures.card_sourceRealCentralRoots
+#print axioms NLS.Articles.KdVPseudomeasures.exists_ordered_sourceCentralRoots
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealPair.above_own_separator
+#print axioms NLS.Articles.KdVPseudomeasures.exists_sourceHillRealLabels
+#print axioms NLS.Articles.KdVPseudomeasures.exists_sourceHillRealLabeling
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.spectral
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.high_slot
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.tail_above_separator
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.occurrence_mem_pair
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.finite_support_and_multiplicity
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.finite_fiber
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.tail_agrees
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealLabeling.unique
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillLabelCutoff
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillLabelCutoff_spec
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillLabels
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillLabels_spec
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillLabels_spec_at
+#print axioms NLS.Articles.KdVPseudomeasures.monotone_sourceHillLabels
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillLabels_spectrum_iff
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillLabels_finite_fiber
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillLabels_global_multiplicity
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillLabels_eq_pair
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillLabels_zero_lowest
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_canonical_labels
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_zero
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_neg
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_im
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalGapBound
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceCanonicalGapValues_high_le
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceCanonicalGapValues_le
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_mem
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalGaps
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCanonicalGaps_apply
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceCanonicalGaps_le
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_canonical_gap_bound

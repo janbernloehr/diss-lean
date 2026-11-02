@@ -186,8 +186,10 @@
     "net_qualification": "Arbitrary-filter statements require specified eventual endpoint bounds; no inference that arbitrary weak-star convergent nets are eventually norm bounded is used.",
     "validation": {
       "fresh_build": true,
-      "modules_checked": 107,
-      "audited_declarations": 1064,
+      "modules_checked": 125,
+      "audited_declarations": 1216,
+      "theorems": 993,
+      "definitions": 223,
       "warnings": 0,
       "tactic_suggestions": 0,
       "allowed_axioms": [
@@ -195,9 +197,48 @@
         "Classical.choice",
         "Quot.sound"
       ],
-      "log": ".lake/article-check/logs/validation-lower-spectrum.log"
+      "empty_axiom_sets_allowed": true,
+      "log": ".lake/article-check/logs/validation-compact-sets.log"
     },
     "canonical_checkout": "Sources and build outputs kept read-only.",
     "main_theorems_verified": false
+  },
+  "compact_sets_and_closed_fourier_constraints": {
+    "module": "NLS/Articles/KdVPseudomeasures/SourceWeakStarCompactSets.lean",
+    "new_public_theorems": 8,
+    "declarations": [
+      "NLS.Articles.KdVPseudomeasures.isCompact_closure_source_iff_bounded",
+      "NLS.Articles.KdVPseudomeasures.isSeqCompact_closure_source_iff_bounded",
+      "NLS.Articles.KdVPseudomeasures.continuous_sourceCoefficient",
+      "NLS.Articles.KdVPseudomeasures.isClosed_sourceCoefficientConstraints",
+      "NLS.Articles.KdVPseudomeasures.isCompact_sourceNormBall_coefficientConstraints",
+      "NLS.Articles.KdVPseudomeasures.isClosedEmbedding_sourceLowerDistribution_on_closed_bounded",
+      "NLS.Articles.KdVPseudomeasures.isClosedEmbedding_sourceLowerDistribution_on_normBall",
+      "NLS.Articles.KdVPseudomeasures.exists_source_subseq_coefficientConstraints"
+    ],
+    "results": [
+      "Weak-star closure is compact iff the original physical endpoint norm is bounded; the same equivalence holds for sequential compactness of the closure.",
+      "Every original Fourier coefficient is continuous on the full physical weak-star space. Any family of closed coefficient constraints is weak-star closed, and its intersection with a specified original endpoint norm ball is compact.",
+      "Every closed endpoint-bounded physical set is a closed embedding into each admissible original lower finite-p norm space. In particular the original endpoint norm ball has a closed lower-norm image, with its weak-star topology retained.",
+      "A sequence in a specified original norm ball satisfying arbitrary closed Fourier constraints has a strictly increasing subsequence whose original physical limit retains both the same norm bound and all constraints. That single subsequence converges in every admissible lower finite-p original distribution norm."
+    ],
+    "parameters": "All real r; every finite p>=1 with1<(-r-t)*p.toReal. The original endpoint norm, reality, mean zero and physical period one are retained.",
+    "qualification": "Follow-on consequences of the already complete Lemma B.1. Closed lower images require endpoint boundedness and weak-star closedness. No global boundedness of arbitrary weak-star convergent nets is asserted.",
+    "validation": {
+      "fresh_build": true,
+      "modules_checked": 125,
+      "audited_declarations": 1216,
+      "theorems": 993,
+      "definitions": 223,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "empty_axiom_sets_allowed": true,
+      "log": ".lake/article-check/logs/validation-compact-sets.log"
+    }
   }
 }

@@ -62,15 +62,20 @@
       "sourceCentralProjection_range_eq_roots",
       "sourceCentralProjection_rank_eq_count",
       "sourceCentralAlgebraicCount_eq",
-      "source_uniform_all_central_algebraic_counts"
+      "source_uniform_all_central_algebraic_counts",
+      "NLS.Articles.KdVPseudomeasures.sourceHillLabels_spectrum_iff",
+      "NLS.Articles.KdVPseudomeasures.sourceHillLabels_global_multiplicity",
+      "NLS.Articles.KdVPseudomeasures.sourceHillLabels_eq_pair",
+      "NLS.Articles.KdVPseudomeasures.sourceCanonicalGapValues_mem",
+      "NLS.Articles.KdVPseudomeasures.norm_sourceCanonicalGaps_le",
+      "NLS.Articles.KdVPseudomeasures.source_uniform_canonical_gap_bound"
     ]
   },
   "essential_open_obligations": [
-    "Construct the canonical globally ordered original periodic/antiperiodic spectral enumeration, counted with actual physical algebraic multiplicity. Use the proved exact2n-1 count below EVERY high separator and actual exhaustive ordered high pairs to identify their global slots2n-1,2n. Prove actual source period-one parity/boundary-condition identification and any needed low ground-state/interlacing assertions; do not assume them from the count alone.",
-    "Construct the Birkhoff map with its global bijectivity, analyticity and endpoint inverse regularity.",
-    "Endpoint spectral estimates and inverse regularity needed by 1.4.",
-    "Actual KdV H^-1 smooth-approximation solution extension, invariance and continuity.",
-    "Wiener Birkhoff diffeomorphism and actual KdV analytic trajectory map."
+    "Prove original periodic/antiperiodic boundary-condition parity and any required low ground-state simplicity/interlacing. Global real canonical enumeration, actual multiplicities, cutoff independence and full real unit-extra-weight direct gap regularity are now proved.",
+    "Complete physical Dirichlet comparisons, complex-potential and arbitrary extra-weight spectral estimates as needed for the full source Theorem2.1, endpoint inverse regularity and original norm-bounded isospectral sets.",
+    "Construct the original Birkhoff maps with global bijectivity, real analyticity and the stated weak-star homeomorphisms, and identify the actual H-minus-one smooth-approximation KdV flow.",
+    "Prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses and quantifiers. All remain unproved."
   ],
   "no_completion_claim": "The generic frequency functional \u03a9 is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
   "shared_module_moves": {
@@ -194,7 +199,11 @@
     "For every native real original endpoint potential and every physical resolvent circle, the actual Riesz projection range is exactly the sum of ALL enclosed full physical algebraic root spaces. The proof uses the finite invariant range, original full root-space transport and native semisimplicity; outside eigenvectors are annihilated and boundary eigenvectors are excluded by full physical invertibility.",
     "For the original central circle, the actual range is exactly the finite sum over sourceCentralSpectrum, with the original H1/H-minus-one domains unchanged. Its rank equals sourceCentralAlgebraicCount, the existing sum of ACTUAL physical algebraic multiplicities.",
     "Combining this proved rank/count identity with actual rank invariance along the ORIGINAL real t*q homotopy and the proved free actual count gives sourceCentralAlgebraicCount_eq: the real original singular central count is EXACTLY2N-1 under the existing wide cutoff, for every original native real potential on the exact source norm ball.",
-    "source_uniform_all_central_algebraic_counts chooses ONE cutoff N>=2 BEFORE q on each original real source norm ball. For EVERY subsequent n>=N the ACTUAL algebraic count strictly below pi^2*n^2-12n is exactly2n-1. The high-tail low-mode offset is therefore fixed at every later separator; canonical slot enumeration and physical source parity still need separate proofs."
+    "source_uniform_all_central_algebraic_counts chooses ONE cutoff N>=2 BEFORE q on each original real source norm ball. For EVERY subsequent n>=N the ACTUAL algebraic count strictly below pi^2*n^2-12n is exactly2n-1. The high-tail low-mode offset is therefore fixed at every later separator; canonical slot enumeration and physical source parity still need separate proofs.",
+    "The actual finite central spectral multiset repeats each native real singular eigenvalue according to its ACTUAL full original physical algebraic multiplicity and has cardinality2N-1. Sorting and appending the actual ordered high pairs produces a global monotone enumeration of the entire original spectrum.",
+    "Every global spectral fiber is finite and its cardinality equals the ACTUAL physical algebraic multiplicity. Intrinsic high-pair uniqueness and monotonicity prove that the entire labeling is independent of cutoff and enumeration choices.",
+    "Canonical sourceHillLabels exhaust the entire original real spectrum, put every sufficiently high actual pair in the exact slots2n-1,2n, and have an actual lowest value at index0, without any ground-state simplicity assertion.",
+    "The full signed canonical real gap sequence, including its finite central prefix, belongs to the genuine endpoint infinity Sobolev space of order-r. One explicit full-gap norm bound is uniform on each exact original real endpoint norm ball, with constants and cutoff chosen before q."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -213,7 +222,11 @@
     "Arbitrary-filter weak-star convergence of norm-bounded original physical families is equivalent to convergence of every original Fourier coefficient and to convergence in each admissible original lower finite-p norm.",
     "Both convergence criteria remain valid under only an eventual specified endpoint norm bound. No global bounded-range or eventual-boundedness conclusion is claimed for arbitrary weak-star convergent nets.",
     "Pointwise Fourier limits of eventually endpoint-bounded nets uniquely represent an original real mean-zero period-one endpoint potential with the same bound, and the entire net converges weak-star to it.",
-    "A lower finite-p norm limit of an eventually endpoint-bounded net uniquely recovers the identical original physical endpoint distribution, preserves the specified bound and gives convergence of the entire net. In the article range this applies directly to the original H-minus-one norm."
+    "A lower finite-p norm limit of an eventually endpoint-bounded net uniquely recovers the identical original physical endpoint distribution, preserves the specified bound and gives convergence of the entire net. In the article range this applies directly to the original H-minus-one norm.",
+    "Weak-star closure is compact iff the original physical endpoint norm is bounded; the same equivalence holds for sequential compactness of the closure.",
+    "Every original Fourier coefficient is continuous on the full physical weak-star space. Any family of closed coefficient constraints is weak-star closed, and its intersection with a specified original endpoint norm ball is compact.",
+    "Every closed endpoint-bounded physical set is a closed embedding into each admissible original lower finite-p norm space. In particular the original endpoint norm ball has a closed lower-norm image, with its weak-star topology retained.",
+    "A sequence in a specified original norm ball satisfying arbitrary closed Fourier constraints has a strictly increasing subsequence whose original physical limit retains both the same norm bound and all constraints. That single subsequence converges in every admissible lower finite-p original distribution norm."
   ],
   "workspace_status": "Existing private article worktree retained; validated milestones are committed and pushed on its article branch under the active goal. The pending workspace decision does not change canonical source/build read-only isolation. No workspace attachment or canonical integration is performed.",
   "goal_turn_classification": "progress"
