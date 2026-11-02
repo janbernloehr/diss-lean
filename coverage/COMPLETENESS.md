@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [Appendix G Born and Volterra derivatives](APPENDIX_G.md) add 12 checked positive theorems. Publish the four whole-sequence H1 and uniform-time bounds, then the seven free-mode and gradient-algebra proofs and the ordered Appendix G comparison. The broader completeness qualifications below remain.
+
 The dissertation formalization is not yet certified complete. The public
 source-comparison snapshot contains comparisons for every named heading
 in its reviewed heading index, along with selected unnumbered definitions,
@@ -19,7 +21,7 @@ correction. It cannot be counted as a proof of the literal printed claim.
 | Original objects and quantifiers | The focused audits record physical operators, original distributions, full multiplicities, actual integrals, norms and common-neighborhood quantifiers. | Reconcile each remaining assertion against these specific interfaces, rather than infer agreement from similar names. |
 | Literal source discrepancies | [Source discrepancies](../SOURCE_ERRATA.md) separates refutations, proved corrections and qualified interpretations. The auxiliary-height history now reflects the proved p=2 case and unrestricted counterexample. | Retain all distinctions; do not silently replace an unresolved interpretation with a candidate correction. |
 | The cited 2014 Birkhoff construction | [Section 14](SECTION_14.md) records the inspected 2013 manuscript and independently proved physical coordinate formulas. | The exact construction in the cited 2014 edition still needs comparison. The different edition and public contents are insufficient evidence. |
-| Appendix G.2 interval norm | [Appendix G](APPENDIX_G.md) records the proved unit-interval result, a formal counterexample for the usual local integral norm, and an arbitrary-time correction candidate. | The source's intended arbitrary-time norm remains unspecified; the candidate correction has not been adopted as that interpretation. |
+| Appendix G.2 interval norm | [Appendix G](APPENDIX_G.md) adopts the proved correction using the explicit integral H1 norm and interval-length constant sqrt(t^(-1)+t); the original unit-interval consequence is proved. | The source does not specify its local norm. The adopted correction fixes the implemented convention without claiming to identify the intended one. |
 | Lean validation and publication | [Current status](../STATUS.md) records the build, all public examples, transitive axiom audit and documentation checks for each milestone. | Every implementation change must pass its required checks and be committed and pushed. Passing checks does not establish source completeness. |
 
 ## How the next assessment proceeds
@@ -507,9 +509,10 @@ A range inventory is navigation for this review, not a semantic validator.
 Previous selected comparisons can be reused with their stated scope and
 verified module hashes; they must not be relabeled as exhaustive reviews.
 
-The exact 2014 identification and G.2 interpretation remain open throughout
-that work. Existing unchanged questions and unavailable-source attempts
-need not be repeated without new information.
+The exact 2014 identification remains open. Appendix G.2 adopts the proved
+correction with the explicit integral norm; the unspecified source convention
+is retained as a qualification. Existing unavailable-source attempts need
+not be repeated without new information.
 
 ## Declaration reference clarification
 

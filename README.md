@@ -5,11 +5,8 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Appendix F comparison](coverage/APPENDIX_F_ASSERTIONS.md)
-records 27 matched groups, three direct corrections and one contextual
-passage. Actual endpoint integrals, original discs, common neighborhoods
-and corrected source limits retain explicit proof qualifications.
-Appendix G is next; [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: [Appendix G Born and Volterra derivatives](coverage/APPENDIX_G.md). Exact Born derivative and half-weighted endpoints; explicit interval-length and periodic source constants; actual operator norm and differentiated Volterra identity. Twelve positive proofs.
+The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

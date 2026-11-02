@@ -1,5 +1,22 @@
 # Appendix G: current source audit
 
+## Appendix G Born and Volterra derivatives
+
+The [scalar Born derivative](../NLS/ComplexAnalysis/AppendixGBornDerivative.lean) retains both half-weighted endpoint terms. The [operator identities](../NLS/ZakharovShabat/AppendixGBornOperatorDerivative.lean) give the actual derivative and its Hermitian norm, with the corrected -R/(2*z) integration-by-parts coefficient. The multiplied identity also holds at zero frequency.
+
+On [0,T], T>0, the exponentially normalized derivative is bounded by sqrt(T^(-1)+T) times the explicit integral H1 norm. On the original periodic unit source it is bounded by sqrt(2) times the exact source H1 norm. This adopts a norm-qualified correction directly; the unspecified printed local norm is not silently identified with this norm.
+
+The [differentiated Volterra identity](../NLS/ZakharovShabat/AppendixGVolterraDerivative.lean) retains the actual continuous-potential solution and the spectral factors -i*z and +i*z. Twelve positive theorems add no new definitions, examples or refutations.
+
+The full check passed: 8,641 build jobs, 7,729 public examples and an axiom audit of 44,984 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Publish the four whole-sequence H1 and uniform-time bounds, then the seven free-mode and gradient-algebra proofs and the ordered Appendix G comparison.
+The [broader completion qualifications](COMPLETENESS.md) remain.
+
+## Previous source review
+
+The following records retain their historical scope; the adopted corrections above govern the current proof step.
+
 This compares the statements on printed pages 135–138 with the public Lean
 API. It supersedes historical Appendix G progress notes in `COVERAGE.md`.
 It is not a completeness certificate for the dissertation. The G.3 proof

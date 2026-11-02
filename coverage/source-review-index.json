@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T02:00:58.335372+00:00",
-  "base_commit": "0766280d71852193457d5a4f3ccbc4cc2e6e24de",
+  "published_utc": "2026-11-02T02:24:52.792680+00:00",
+  "base_commit": "e1f357cb82f0079eab28da3dde091475bdac9725",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,35 +18,34 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 206,
-    "module_hash_checks": 4326,
-    "distinct_modules": 2144
+    "review_records": 207,
+    "module_hash_checks": 4339,
+    "distinct_modules": 2155
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
-    "Appendix G.2 does not specify the arbitrary-time interval H1 norm. The usual unnormalized integral norm gives a formal counterexample; the unit-interval consequence and a corrected estimate are proved. The intended norm still needs clarification.",
+    "Appendix G.2 uses an adopted correction with the explicit unnormalized integral H1 norm and interval-length constant sqrt(t^(-1)+t). The source does not specify its local norm, so this correction is not asserted to identify the intended convention. The unit-interval consequence is proved.",
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "0766280d71852193457d5a4f3ccbc4cc2e6e24de",
-    "validated_state": "Appendix F ordered comparison changes documentation only. The exact Lean snapshot retains the successful Appendix F half-gap root-count check.",
+    "base_commit": "e1f357cb82f0079eab28da3dde091475bdac9725",
+    "validated_state": "Fresh full check after Appendix G Born and Volterra derivatives.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8638,
+    "build_jobs": 8641,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 44972,
+    "transitive_NLS_declarations": 44984,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 59119,
+    "gate_session": 8379,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4900,
-      "sha256": "e95d8d8f529c515e1f8bcf2a0d5db63966fa66e3cf7c88705532caf85cb17fa3"
+      "files": 4903,
+      "sha256": "c18d608db6d7aa1214a39dbf0ae55ba1887979656755c9176dcedc64e6628a9f"
     },
-    "full_gate_log_sha256": "646ac3f67d9f2ab0fa588b7ea8a8536d739624bd04ee5bbb48334429e4b58438",
-    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
-    "full_gate_log": "work/AppendixFHalfGapCountFullCheck.log",
-    "validation_reused_from_commit": "0766280d71852193457d5a4f3ccbc4cc2e6e24de"
+    "full_gate_log_sha256": "881d094cdf46105bbf421f3b616e8cec43d8b0789731b4bb27a6b8d047adf8e9",
+    "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
+    "full_gate_log": "work/AppendixGBornDerivativeFullCheck.log"
   },
   "named_statements": [
     {
@@ -69859,6 +69858,184 @@
         "log_sha256": "646ac3f67d9f2ab0fa588b7ea8a8536d739624bd04ee5bbb48334429e4b58438"
       },
       "source_record_sha256": "af2e2274ea5fdba653a57e7c208d44b3a12f9c86583990219d56108fe7fdaf9b"
+    },
+    "AppendixGBornDerivativeSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "e1f357cb82f0079eab28da3dde091475bdac9725",
+      "updated_utc": "2026-11-02T02:24:52.745774+00:00",
+      "source_lines": [
+        [
+          11130,
+          11135
+        ],
+        [
+          11186,
+          11197
+        ],
+        [
+          11198,
+          11199
+        ],
+        [
+          11169,
+          11172
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            11130,
+            11135
+          ],
+          "requirement": "Physical Born integration by parts",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixG_Born_operator_parts"
+          ],
+          "reviewed_claims": [
+            "The actual operator retains both endpoint values and the derivative-potential integral with the corrected free-mode signs."
+          ],
+          "qualification": "The statement is multiplied by 2*z, so it remains valid at z=0; the quotient form requires z nonzero."
+        },
+        {
+          "source_lines": [
+            11186,
+            11197
+          ],
+          "requirement": "Actual time derivative and half-weighted endpoints",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_factor",
+            "NLS.ComplexAnalysis.appendixG_hasDerivAt_oscillatoryIntegral",
+            "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_derivative_parts",
+            "NLS.ZakharovShabat.appendixG_deriv_intervalHermitianFirstBornOperator",
+            "NLS.ZakharovShabat.appendixG_norm_deriv_intervalHermitianFirstBornOperator",
+            "NLS.ZakharovShabat.appendixG_hasDerivAt_classicalFirstBornVector"
+          ],
+          "reviewed_claims": [
+            "Factor the oscillatory kernel, differentiate the actual integral, and derive its exact half-weighted endpoint decomposition.",
+            "Linear column assembly gives the actual operator derivative and its exact Hermitian norm."
+          ],
+          "qualification": "Continuity is required for terminal-time differentiation. Integration by parts additionally assumes absolute continuity and an integrable derivative on the displayed interval."
+        },
+        {
+          "source_lines": [
+            11198,
+            11199
+          ],
+          "requirement": "Explicit positive derivative constants",
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_derivative_weighted_le",
+            "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_derivative_interval_H1",
+            "NLS.ZakharovShabat.appendixG_Born_derivative_interval_H1",
+            "NLS.ZakharovShabat.appendixG_source_Born_derivative_unit"
+          ],
+          "reviewed_claims": [
+            "The exponentially normalized derivative is bounded by half the combined endpoint and variation budget.",
+            "On [0,T], T>0, the derivative is bounded by sqrt(T^(-1)+T) times the explicit integral H1 norm at every intermediate time.",
+            "On the original periodic unit source the actual Born derivative is bounded by sqrt(2) times the exact Chapter 5 H1 norm, including z=0."
+          ],
+          "qualification": "The explicit integral norm is not silently identified with the unspecified printed local H1 norm. No new counterexample is introduced."
+        },
+        {
+          "source_lines": [
+            11169,
+            11172
+          ],
+          "requirement": "Differentiated actual Volterra identity",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixG_remainder_derivative_duhamel"
+          ],
+          "reviewed_claims": [
+            "The actual two-coordinate derivative identity has spectral integral factors -i*z and +i*z, equivalently -z*R."
+          ],
+          "qualification": "The identity uses the original continuous-potential solution on the closed unit interval and holds for every complex spectral parameter."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ComplexAnalysis/IntervalH1LengthBound.lean": "bc561af3c2e7b33b9685cad8730ad3c6482f79edb6e41ee47437561540faa45d",
+        "NLS/ComplexAnalysis/ScalarDuhamel.lean": "e2cc9481cb19f595af0fd38566f9f76ef546912b48655f0f7f15a13c4ccede90",
+        "NLS/ComplexAnalysis/OscillatoryIntegralParts.lean": "a7056954d1d668bc881375b0a919eb7bc47d851424548a7bfad92c08ab299504",
+        "NLS/ZakharovShabat/IntervalH1LengthOperatorBound.lean": "a75820356bf4e4c25a4d5bfa3e2bb8128a4dafecd2eefe3e717e85e257b22283",
+        "NLS/ZakharovShabat/ClassicalHermitianTimeBounds.lean": "ad1b0060eba0c90ceaca0c88e9cc2b9400bed098cadcfa3343b35acb580f444a",
+        "NLS/ZakharovShabat/SourcePeriodicH1Norm.lean": "e42389d9b65addb53b2c80e6d09a4b9717f4d7e38f8c4a6332d6b9c82e110c2a",
+        "NLS/ZakharovShabat/ClassicalRemainderDerivativeBound.lean": "0973068a70996d182dfec2e14a459d2e2936afcbe416edffaccf39cd1fbb3879",
+        "NLS/ZakharovShabat/ClassicalFirstBorn.lean": "79d54874798826b77127ac433a40162cbf48ffb3eb8614414fb78d6cca004378",
+        "NLS/ZakharovShabat/IntervalHermitianFirstBornBound.lean": "395b66d609dbfed55034af69c1988cbbde291754b70d5e6778957c89d570ec63",
+        "NLS/ZakharovShabat/IntervalH1OperatorBound.lean": "a23512a51b30a576698bc61425915dacdc1988c52e066a2a770858a6d72f5f5b",
+        "NLS/ComplexAnalysis/AppendixGBornDerivative.lean": "8c516914a6c70ba52d421c835ff9b6116c2ead8595fe0109806d95db1113bcd3",
+        "NLS/ZakharovShabat/AppendixGBornOperatorDerivative.lean": "4f97a81254b9faac166675c3a7b8e78b0b117b2209c9cda5b133d7c03e6e630b",
+        "NLS/ZakharovShabat/AppendixGVolterraDerivative.lean": "55dacbaf6ee443f8f068f2d0f74170afeda41b387337e2fbaca7183dfa4aaefa"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ComplexAnalysis/IntervalH1LengthBound.lean",
+        "NLS/ComplexAnalysis/ScalarDuhamel.lean",
+        "NLS/ComplexAnalysis/OscillatoryIntegralParts.lean",
+        "NLS/ZakharovShabat/IntervalH1LengthOperatorBound.lean",
+        "NLS/ZakharovShabat/ClassicalHermitianTimeBounds.lean",
+        "NLS/ZakharovShabat/SourcePeriodicH1Norm.lean",
+        "NLS/ZakharovShabat/ClassicalRemainderDerivativeBound.lean",
+        "NLS/ZakharovShabat/ClassicalFirstBorn.lean",
+        "NLS/ZakharovShabat/IntervalHermitianFirstBornBound.lean",
+        "NLS/ZakharovShabat/IntervalH1OperatorBound.lean",
+        "NLS/ComplexAnalysis/AppendixGBornDerivative.lean",
+        "NLS/ZakharovShabat/AppendixGBornOperatorDerivative.lean",
+        "NLS/ZakharovShabat/AppendixGVolterraDerivative.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Publish the ordered Appendix G comparison and continue the broader source ledger."
+      ],
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.appendixG_hasDerivAt_oscillatoryIntegral",
+        "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_derivative_interval_H1",
+        "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_derivative_parts",
+        "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_derivative_weighted_le",
+        "NLS.ComplexAnalysis.appendixG_oscillatoryIntegral_factor",
+        "NLS.ZakharovShabat.appendixG_Born_derivative_interval_H1",
+        "NLS.ZakharovShabat.appendixG_Born_operator_parts",
+        "NLS.ZakharovShabat.appendixG_deriv_intervalHermitianFirstBornOperator",
+        "NLS.ZakharovShabat.appendixG_hasDerivAt_classicalFirstBornVector",
+        "NLS.ZakharovShabat.appendixG_norm_deriv_intervalHermitianFirstBornOperator",
+        "NLS.ZakharovShabat.appendixG_remainder_derivative_duhamel",
+        "NLS.ZakharovShabat.appendixG_source_Born_derivative_unit"
+      ],
+      "declaration_inventory_count": 44984,
+      "qualification": "The [scalar Born derivative](NLS/ComplexAnalysis/AppendixGBornDerivative.lean) retains both half-weighted endpoint terms. The [operator identities](NLS/ZakharovShabat/AppendixGBornOperatorDerivative.lean) give the actual derivative and its Hermitian norm, with the corrected -R/(2*z) integration-by-parts coefficient. The multiplied identity also holds at zero frequency.\n\nOn [0,T], T>0, the exponentially normalized derivative is bounded by sqrt(T^(-1)+T) times the explicit integral H1 norm. On the original periodic unit source it is bounded by sqrt(2) times the exact source H1 norm. This adopts a norm-qualified correction directly; the unspecified printed local norm is not silently identified with this norm.\n\nThe [differentiated Volterra identity](NLS/ZakharovShabat/AppendixGVolterraDerivative.lean) retains the actual continuous-potential solution and the spectral factors -i*z and +i*z. Twelve positive theorems add no new definitions, examples or refutations. The forty-one-group ordered Appendix G comparison and the broader dissertation audit remain separate.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          135,
+          136,
+          137,
+          138
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-g-ordered-135.png": "3aa9ddd5b56601e03dd422fbed9d444a6977c4270c93cb6fb4fff5408efbee6a",
+          "work/tmp/pdfs/appendix-g-ordered-136.png": "6ee80e78324217ac2dd95f12b01dba89b8022776a69d728fe8ecbe91b2405edb",
+          "work/tmp/pdfs/appendix-g-ordered-137.png": "78c63bdefcfcb05a2a44f7f1da21db149137183d278db3fc763ccca490c92db9",
+          "work/tmp/pdfs/appendix-g-ordered-138.png": "2107406ce69dacef0417629d9a05f2d49c82987ac3f6c20495f09f8226b8b336"
+        }
+      },
+      "preceding_review_hash": "af2e2274ea5fdba653a57e7c208d44b3a12f9c86583990219d56108fe7fdaf9b",
+      "validation_lean_sources": {
+        "files": 4903,
+        "sha256": "c18d608db6d7aa1214a39dbf0ae55ba1887979656755c9176dcedc64e6628a9f"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 12,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [],
+      "full_gate": {
+        "session": 8379,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixGBornDerivativeFullCheck.log",
+        "log_sha256": "881d094cdf46105bbf421f3b616e8cec43d8b0789731b4bb27a6b8d047adf8e9"
+      },
+      "source_record_sha256": "2d4370d4d79a9dfde136f54a12fd8520e3e3a3f8b359300cb3ee5b997016aad3"
     }
   }
 }

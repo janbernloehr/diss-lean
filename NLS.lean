@@ -4899,3 +4899,6 @@ import NLS.ZakharovShabat.AppendixFFixedBoundary
 import NLS.ZakharovShabat.AppendixFOpenGapSpokes
 import NLS.ZakharovShabat.AppendixFSourceEndpointAnalytic
 import NLS.ZakharovShabat.AppendixFHalfGapCount
+import NLS.ComplexAnalysis.AppendixGBornDerivative
+import NLS.ZakharovShabat.AppendixGBornOperatorDerivative
+import NLS.ZakharovShabat.AppendixGVolterraDerivative
