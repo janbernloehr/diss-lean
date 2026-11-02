@@ -6,6 +6,7 @@ import NLS.KdV.ClassicalHillMomentReality
 import NLS.KdV.ClassicalHillHighEndpointNormalization
 import NLS.KdV.ClassicalHillSquaredPrimitiveMatching
 import NLS.KdV.ClassicalHillWholeGapSquares
+import NLS.KdV.ClassicalHillGapCutRoots
 import NLS.KdV.ActionHamiltonianFiniteGap
 import NLS.Articles.KdVConvexity.LocalConsequences
 import NLS.Articles.KdVConvexity.BaseContourSeries
@@ -18,7 +19,20 @@ run_cmd do
     ``NLS.ZakharovShabat.continuousPotentialL2CLM,
     ``NLS.ZakharovShabat.continuousPotentialL2CLM_apply,
     ``NLS.ZakharovShabat.classicalSolution_injective_initial,
-    ``NLS.ZakharovShabat.classicalSolution_eq_zero_imp_initial_eq_zero]
+    ``NLS.ZakharovShabat.classicalSolution_eq_zero_imp_initial_eq_zero,
+    ``NLS.ComplexAnalysis.twoZeroQuotient,
+    ``NLS.ComplexAnalysis.dslope_zero_at_second_zero,
+    ``NLS.ComplexAnalysis.twoZeroQuotient_factor,
+    ``NLS.ComplexAnalysis.analyticOnNhd_twoZeroQuotient,
+    ``NLS.ComplexAnalysis.twoZeroQuotient_ne_zero,
+    ``NLS.ComplexAnalysis.norm_twoZeroQuotient_le,
+    ``NLS.ComplexAnalysis.analyticOnNhd_continuous_squareRoot,
+    ``NLS.ComplexAnalysis.exists_analytic_squareRoot_on_ball,
+    ``NLS.ComplexAnalysis.endpointRoot,
+    ``NLS.ComplexAnalysis.midpoint_mem_complex_segment,
+    ``NLS.ComplexAnalysis.endpointRoot_sq,
+    ``NLS.ComplexAnalysis.analyticOnNhd_endpointRoot,
+    ``NLS.ComplexAnalysis.exists_analytic_squareRoot_on_two_zero_cut]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do

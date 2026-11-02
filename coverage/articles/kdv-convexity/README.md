@@ -22,6 +22,11 @@ including double roots. Joint analytic endpoint charts now agree with the
 actual shifted primitive square and preserve physical multiplicities.
 One bounded analytic square now covers a full energy disc containing
 each complete high complex gap, on a common potential neighborhood.
+The endpoint-deflated quotient is now analytic and nonvanishing, with
+norm at most 4/(n*pi*r)^2. This gives the gap-length bound for the actual
+primitive wherever admissible, and constructs analytic roots with the
+same bound on the full local cut domain. Their physical sign is fixed
+locally at any admissible regular anchor; global matching remains open.
 The analytic summation also allows a local finite spectral cutoff.
 Analytic squared primitive charts at
 both signs of the branch locus are also constructed. The earlier local
@@ -729,12 +734,47 @@ actual two-root pair on the same V and cutoff, including a repeated endpoint.
 Thus one joint analytic function covers both endpoints and the full gap;
 no gluing of independently chosen endpoint branches is assumed.
 
-The bound one is uniform throughout the entire tail. Gap-length-dependent
-bounds still require removing the exact two endpoint factors and estimating
-the resulting quotient. This construction concerns continuous complex
-potentials. Central gap squares, the full unsquared canonical primitive,
-nonpositivity, the H^-1/action extension and the physical Hamiltonian
-identification remain open.
+The bound one is uniform throughout the entire tail. The endpoint factors
+and resulting gap-length bounds are now proved as follows. This
+construction concerns continuous complex potentials.
+
+### Endpoint deflation, gap scale and analytic cut roots
+
+[`TwoZeroDeflation.lean`](../../../NLS/ComplexAnalysis/TwoZeroDeflation.lean)
+constructs the filled quotient Q=dslope(dslope(K,l),u). Exact orders give
+Q nonzero, including at a collapsed pair, without analytic individual
+endpoint labels. Its maximum-modulus estimate is local to the closed
+disc, so no entire extension of Q is assumed.
+
+[`ClassicalHillGapQuotients.lean`](../../../NLS/KdV/ClassicalHillGapQuotients.lean)
+applies this to the actual Hill square on one common complex neighborhood:
+
+```
+K_n(z) = (z-l_n)*(z-u_n)*Q_n(z),
+|Q_n(z)| <= 4/(n*pi*r)^2 on the complete energy disc,
+Q_n(z) != 0 on its interior.
+```
+
+Both actual endpoints lie within radius n*pi*r/8. On the closed ball
+centered at their midpoint with radius gamma=|l_n-u_n|,
+[`ClassicalHillGapScaleBounds.lean`](../../../NLS/KdV/ClassicalHillGapScaleBounds.lean)
+therefore proves |K_n|<=9*gamma^2/(n*pi*r)^2, and
+|F+i*n*pi|<=C*gamma/n wherever source continuation is admissible,
+with C=3/(pi*r) chosen before the whole tail.
+
+[`AnalyticDiscSquareRoot.lean`](../../../NLS/ComplexAnalysis/AnalyticDiscSquareRoot.lean)
+lifts a nonzero analytic function through the exponential on a disc and
+uses local square-root uniqueness to prove analyticity.
+[`AnalyticTwoZeroRoot.lean`](../../../NLS/ComplexAnalysis/AnalyticTwoZeroRoot.lean)
+combines that unit root with the library's normalized endpoint root.
+[`ClassicalHillGapCutRoots.lean`](../../../NLS/KdV/ClassicalHillGapCutRoots.lean)
+thus constructs B_n analytic on the entire open energy disc minus the
+straight gap, with B_n^2=K_n and |B_n|<=C*gamma/n on the gap-sized part.
+At any admissible regular anchor one of its two signs agrees as a germ
+with the actual shifted primitive. The same sign on all overlap
+components, physical contour deformation, and the cubic moment bound
+O(gamma^4/n^3) are not yet proved. Central gaps, the H^-1/action extension,
+nonpositivity and physical Hamiltonian identification also remain open.
 
 ## Earlier checked local consequences
 
@@ -766,7 +806,10 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    spectral matching, central endpoint normalization, the full canonical
    unsquared primitive and rough-operator identification remain. The high
    indexed endpoint limits, joint squared-primitive matching and bounded
-   analytic squares across entire high gaps are now proved.
+   analytic squares across entire high gaps are now proved. Endpoint
+   deflation and analytic roots on the local cut domain are also proved;
+   match their physical sign across the relevant overlaps and deform
+   the original contours.
    Prove analytic descent to
    the weighted actions on a common complex neighborhood (Lemma 4.6(ii)).
 2. Prove their **complex-neighborhood** quadratic action bounds, including
@@ -815,15 +858,16 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All forty-four modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All fifty modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
-456 constants in their two namespaces, including generated declarations,
-transitively. Only `propext`,
+their namespaces, including generated declarations, plus explicit shared
+helpers: 503 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
-included in the same transitive audit.
+included in the same transitive audit, together with all thirteen new
+public complex-analysis declarations.
 See `validation.json` for exact file hashes and scope.
 
 Reproduce from this worktree:
@@ -838,9 +882,9 @@ bash scripts/check-kdv-convexity.sh
 The script uses the canonical compiled imports read-only and writes new
 outputs to this worktree's `.lake/article-checks/kdv-convexity/`. This is a
 standalone import cache, never a target for `lake build`. No canonical build
-products are copied wholesale or modified. `KdV` and the new shared
-`ZakharovShabat` outputs use real private directories; reference files in
-the latter are linked only for imports, and an output-file link is removed
+products are copied wholesale or modified. `KdV`, `ZakharovShabat` and
+`ComplexAnalysis` outputs use real private directories; reference files in
+the shared namespaces are linked only for imports, and an output-file link is removed
 before compilation. No full repository validation
 is claimed, and the dissertation's existing record is unchanged. Shared
 main integration and aggregate imports remain sequential; serialize any

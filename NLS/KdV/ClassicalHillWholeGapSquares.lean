@@ -44,6 +44,23 @@ theorem sqrt_mem_closedBall_of_energy_disc (c r : ℝ) (hc : 0 < c) (z : ℂ)
   have hnorm : ‖Complex.sqrt z-(c : ℂ)‖ ≤ r := by nlinarith
   simpa only [mem_closedBall,dist_eq_norm] using hnorm
 
+theorem sqrt_mem_ball_of_energy_disc (c r : ℝ) (hc : 0 < c) (z : ℂ)
+    (hz : z ∈ ball ((c : ℂ)^2) (c*r)) :
+    Complex.sqrt z ∈ ball (c : ℂ) r := by
+  have hre : 0 ≤ (Complex.sqrt z).re := by rw [Complex.sqrt,cpow_inv_two_re]; positivity
+  have hsum : c ≤ ‖Complex.sqrt z+(c : ℂ)‖ := by
+    have h := re_le_norm (Complex.sqrt z+(c : ℂ))
+    simp only [add_re,ofReal_re] at h
+    linarith
+  have he : (Complex.sqrt z-(c : ℂ))*(Complex.sqrt z+(c : ℂ)) = z-(c : ℂ)^2 := by
+    linear_combination sqrt_square z
+  have hn := congrArg norm he
+  rw [norm_mul] at hn
+  have hb : ‖z-(c : ℂ)^2‖ < c*r := by simpa only [mem_ball,dist_eq_norm] using hz
+  have hprod := mul_le_mul_of_nonneg_left hsum (norm_nonneg (Complex.sqrt z-(c : ℂ)))
+  have hnorm : ‖Complex.sqrt z-(c : ℂ)‖ < r := by nlinarith
+  simpa only [mem_ball,dist_eq_norm] using hnorm
+
 /-- A smaller frequency disc maps strictly into the energy disc. This
 strict inclusion leaves room for the entire complex straight gap segment. -/
 theorem square_mem_energy_ball_of_small_frequency
