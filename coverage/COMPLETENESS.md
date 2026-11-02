@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [Section 28 complex central products](SECTION_28.md) proofs add 14 checked positive theorems. Continue the broader dissertation reconciliation, including the Section 7 rough sheet-sign clause and unrestricted psi uniqueness. Correct constants directly and commit and push each completed step. The broader completeness qualifications below remain.
+
 The [Section 28 complex enclosing-root ratio](SECTION_28.md) proofs add 7 checked positive theorems. Continue the remaining whole-dissertation reconciliation, retaining S28-006, S28-014 and S28-015, the Section 7 rough sheet-sign clause and unrestricted psi uniqueness, and the recorded broader qualifications. Correct constants directly and commit and push each completed step. The broader completeness qualifications below remain.
 
 The [Section 7 physical Dirichlet motion](SECTION_7.md) proofs add 12 checked positive theorems. Continue the remaining whole-dissertation reconciliation. Retain the unresolved rough sheet-sign direction clause in S7-002 and unrestricted entire-product uniqueness in S7-013, together with the other recorded source qualifications. Correct constants directly and commit and push each completed step. The broader completeness qualifications below remain.
@@ -157,12 +159,13 @@ It includes every M1 weight and admissible complex source. This
 direct norm correction preserves the final real and complex
 estimates. One positive theorem and two examples add no new
 refutation. The [ordered Section 28 ledger](SECTION_28_ASSERTIONS.md)
-compares 30 groups: 17 matched, eight corrected, three partial and two contextual.
+compares 30 groups: 19 matched, nine corrected and two contextual, with no partial or pending groups.
 The named final constants 2048, 4608, 2^20 and 2^21 remain proved. The
-complex enclosing-root ratio is now proved for signed indices with its exact
-constants and inclusive boundary. The reflected rational bound for chi,
-adjacent-disc comparison and central telescoping remain explicitly qualified.
-The independent final proof does not establish those intermediate claims.
+complex enclosing-root ratio, adjacent-distance comparison and central
+telescoping product are proved on one common neighborhood. The literal chi
+bound uses corrected absolute indices and includes the cutoff boundary and N=0.
+The independent final 2048 proof and corrected inclusive arithmetic remain.
+The new product proofs establish the intermediate bounds directly.
 
 The [ordered Appendix A ledger](APPENDIX_A_ASSERTIONS.md) compares
 32 groups: 27 matched, four corrected and one contextual. It retains

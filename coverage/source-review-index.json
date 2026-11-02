@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T04:48:54.138755+00:00",
-  "base_commit": "bc01c6ce1768c9593f0bb1ba9ff70ba7755884df",
+  "published_utc": "2026-11-02T05:13:50.808308+00:00",
+  "base_commit": "2ac614c47ec1e61b96c5627b9131aad1e96f8d24",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 216,
-    "module_hash_checks": 4521,
-    "distinct_modules": 2238
+    "review_records": 217,
+    "module_hash_checks": 4536,
+    "distinct_modules": 2244
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "bc01c6ce1768c9593f0bb1ba9ff70ba7755884df",
-    "validated_state": "Fresh full check after Section 28 complex enclosing-root ratio.",
+    "base_commit": "2ac614c47ec1e61b96c5627b9131aad1e96f8d24",
+    "validated_state": "Fresh full check after Section 28 complex central products.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8648,
+    "build_jobs": 8651,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 45037,
+    "transitive_NLS_declarations": 45081,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 3864,
+    "gate_session": 53037,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4910,
-      "sha256": "d66f787f5ad6e58576d8f98147014c6b37f94fd21ab09771f30a77900dce0eef"
+      "files": 4913,
+      "sha256": "4a8e11670aff5891f9ead2564f4d925f6b54c56d6b74f0ce6ad8e095e237d510"
     },
-    "full_gate_log_sha256": "ed2bdc3e428a90e973537ae275c4311b07ae1e64e2a224eabc2955460b1e226d",
+    "full_gate_log_sha256": "8a946169e078e2a583b4976977ba4b54f485f89ab4543d3413f38647e2348d94",
     "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/Section28ComplexEnclosingRootFullCheck.log"
+    "full_gate_log": "work/Section28ComplexProductFullCheck.log"
   },
   "named_statements": [
     {
@@ -74561,6 +74561,226 @@
         "contextual": 2
       },
       "source_record_sha256": "d804b47271d3d71baf6dc335f528a6d377265f8c550bfc1c0c8f8551482be47a"
+    },
+    "Section28ComplexProductSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "2ac614c47ec1e61b96c5627b9131aad1e96f8d24",
+      "updated_utc": "2026-11-02T05:13:50.757207+00:00",
+      "source_lines": [
+        [
+          9682,
+          9686
+        ],
+        [
+          9767,
+          9780
+        ],
+        [
+          9783,
+          9789
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            9682,
+            9686
+          ],
+          "ordered_group": "S28-006",
+          "ordered_status": "corrected",
+          "requirement": "Literal complex chi bound by the corrected signed rational expression",
+          "declarations": [
+            "NLS.ZakharovShabat.section28_complex_chi_ratio_neighborhood"
+          ],
+          "reviewed_claims": [
+            "The literal chi product is bounded by 128*(abs(n)+N+2/5)/(abs(n)-N+3/10) on one connected L2 neighborhood inside any prescribed almost-real domain, before all weighted H1 source realizations, cutoffs and signed indices. The source supplies its critical-offset bound and omitted domain. N=0 is handled by the empty central product. The independent final 2048 estimate and existing inclusive arithmetic qualification remain."
+          ],
+          "qualification": "Absolute indices correct the printed signed ratio. This proves the actual spectral bound, including N=0 and equality at the cutoff, rather than only scalar arithmetic. The original final 2048 theorem retains its independent proof; the inclusive rational chain retains its previously recorded arithmetic correction."
+        },
+        {
+          "source_lines": [
+            9767,
+            9780
+          ],
+          "ordered_group": "S28-014",
+          "ordered_status": "matched",
+          "requirement": "Both signed adjacent distance comparisons on one common complex source neighborhood",
+          "declarations": [
+            "NLS.ZakharovShabat.section28_uniform_critical_neighborhood",
+            "NLS.ZakharovShabat.section28_segment_near_segment",
+            "NLS.ZakharovShabat.section28_distance_lt_of_real_margin",
+            "NLS.ZakharovShabat.section28_real_uniform_gap_margin",
+            "NLS.ZakharovShabat.section28_distance_lt_of_real_margin_left",
+            "NLS.ZakharovShabat.section28_local_adjacent_distance",
+            "NLS.ZakharovShabat.section28_adjacent_distance_neighborhood_within"
+          ],
+          "reviewed_claims": [
+            "Uniform endpoint and critical sequence continuity and a positive real gap margin prove both strict adjacent distance comparisons on one connected complex source neighborhood inside any prescribed open domain containing the real locus. The neighborhood precedes every signed index and every point on the target closed gap."
+          ],
+          "qualification": "The source domain is chosen inside any prescribed open domain containing the real locus. The proof uses uniform spectral continuity and strict real gap separation; it does not assert the distance inequality for arbitrary disjoint discs. No hypothesis restricting the complex source to real type or only positive indices is added."
+        },
+        {
+          "source_lines": [
+            9783,
+            9789
+          ],
+          "ordered_group": "S28-015",
+          "ordered_status": "matched",
+          "requirement": "Exact telescoping bound for the actual complex central product",
+          "declarations": [
+            "NLS.ZakharovShabat.section28_product_predecessor",
+            "NLS.ZakharovShabat.section28_central_product_bound",
+            "NLS.ZakharovShabat.section28_central_product_reflection",
+            "NLS.ZakharovShabat.section28_central_product_bound_negative",
+            "NLS.ZakharovShabat.section28_critical_le_adjacent_root",
+            "NLS.ZakharovShabat.section28_complex_central_product_neighborhood"
+          ],
+          "reviewed_claims": [
+            "Exact predecessor ratios telescope without numerator nonvanishing assumptions. The negative case reindexes the finite product of the same source. Actual adjacent inequalities and common disjoint gaps give the complex central-product bound for N>=1, including |n|=N."
+          ],
+          "qualification": "Every denominator is proved nonzero from actual common gap separation. Numerator factors may vanish. For N>=1 the exact boundary roots are -N,N-1 on the right and N,-N+1 on the left. The zero cutoff is handled by the empty product in the assembled chi theorem."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourcePeriodicEndpointContinuity.lean": "e205afeab520f55e6b36d4fe0ca041d64c2d4093942a1aa34f292457ed788d50",
+        "NLS/ZakharovShabat/SourceCriticalDisplacementContinuity.lean": "4a762396bc54a3de542fe2dd60990001ffd7c3c2ae75c4a856fb19ddb797cde8",
+        "NLS/ZakharovShabat/SourceSegmentIndexSeparation.lean": "dc97dde7f23144313721479baeaa78daf5080cccf7252a715dabc2cc8d2a27f0",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioOuterArcs.lean": "6d3a5933271420d6781f95413f6ef74a3c5f3a495a9c75e115af664b5763d828",
+        "NLS/ZakharovShabat/CanonicalPeriodicGapOrder.lean": "55ed05132943d26034a7f8f16999e7cc1de29dbad8d8b6ba4b99326422287801",
+        "NLS/ZakharovShabat/SourceStandardRootNorm.lean": "abc0f774d4a024f0748cc7dba974ee24e01b0811578e3cda19f96ca54596ac61",
+        "NLS/ZakharovShabat/SourceCanonicalRootGapIsolation.lean": "d64603a1842c608280f4ce8d56400f89500f097bb36cd126ab888a2c2a85b23d",
+        "NLS/ZakharovShabat/SourceLemmaF1.lean": "03d88a2c94fae5f033094fa5d358a3a7359e885355508310b560bcc39ed7cd76",
+        "NLS/ZakharovShabat/SourceH1GapProductReduction.lean": "8711ba5e0425969e19fd085887b542941ece8a2551b39bc87caf451b13bbdad0",
+        "NLS/ZakharovShabat/SourceH1ExteriorProductBound.lean": "51855d386ed195b043c65a48ac6a90906b73f30217fbf77b5d5132475ab9ae40",
+        "NLS/ZakharovShabat/SourceActionChi.lean": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4",
+        "NLS/ZakharovShabat/Section28ComplexEnclosingRoot.lean": "9db01bdf3081538211daf35a8da761ed0a1aee0c8e3890ce961ee43d0a4d6ee7",
+        "NLS/ZakharovShabat/Section28AdjacentDistance.lean": "0dc2430bb4a3d5ab5e52e0262956d0e5ac60475655c322d142e166d8bed446fb",
+        "NLS/ZakharovShabat/Section28ComplexCentralProduct.lean": "6738b9e91fa03f5f9d4b40980101633bb67067d760c5e038053d22983a29c66b",
+        "NLS/ZakharovShabat/Section28ComplexChiRatio.lean": "63f36d09bad70e850a8481b6a6942fd2f57542f37865787e09f4aad1a29dda39"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourcePeriodicEndpointContinuity.lean",
+        "NLS/ZakharovShabat/SourceCriticalDisplacementContinuity.lean",
+        "NLS/ZakharovShabat/SourceSegmentIndexSeparation.lean",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioOuterArcs.lean",
+        "NLS/ZakharovShabat/CanonicalPeriodicGapOrder.lean",
+        "NLS/ZakharovShabat/SourceStandardRootNorm.lean",
+        "NLS/ZakharovShabat/SourceCanonicalRootGapIsolation.lean",
+        "NLS/ZakharovShabat/SourceLemmaF1.lean",
+        "NLS/ZakharovShabat/SourceH1GapProductReduction.lean",
+        "NLS/ZakharovShabat/SourceH1ExteriorProductBound.lean",
+        "NLS/ZakharovShabat/SourceActionChi.lean",
+        "NLS/ZakharovShabat/Section28ComplexEnclosingRoot.lean",
+        "NLS/ZakharovShabat/Section28AdjacentDistance.lean",
+        "NLS/ZakharovShabat/Section28ComplexCentralProduct.lean",
+        "NLS/ZakharovShabat/Section28ComplexChiRatio.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Continue the broader dissertation reconciliation, including the Section 7 rough sheet-sign clause and unrestricted psi uniqueness. Correct constants directly and commit and push each completed step."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.section28_adjacent_distance_neighborhood_within",
+        "NLS.ZakharovShabat.section28_central_product_bound",
+        "NLS.ZakharovShabat.section28_central_product_bound_negative",
+        "NLS.ZakharovShabat.section28_central_product_reflection",
+        "NLS.ZakharovShabat.section28_complex_central_product_neighborhood",
+        "NLS.ZakharovShabat.section28_complex_chi_ratio_neighborhood",
+        "NLS.ZakharovShabat.section28_critical_le_adjacent_root",
+        "NLS.ZakharovShabat.section28_distance_lt_of_real_margin",
+        "NLS.ZakharovShabat.section28_distance_lt_of_real_margin_left",
+        "NLS.ZakharovShabat.section28_local_adjacent_distance",
+        "NLS.ZakharovShabat.section28_product_predecessor",
+        "NLS.ZakharovShabat.section28_real_uniform_gap_margin",
+        "NLS.ZakharovShabat.section28_segment_near_segment",
+        "NLS.ZakharovShabat.section28_uniform_critical_neighborhood"
+      ],
+      "declaration_inventory_count": 45081,
+      "qualification": "The [adjacent-distance proof](NLS/ZakharovShabat/Section28AdjacentDistance.lean) uses uniform spectral continuity and a positive real gap margin to control both signed directions on one connected complex neighborhood. The neighborhood lies inside any prescribed open domain containing the real locus and precedes every index and every point of the target closed gap.\n\nThe [central-product proof](NLS/ZakharovShabat/Section28ComplexCentralProduct.lean) telescopes the actual complex root factors. Denominators are nonzero by common gap separation; numerator factors may vanish. Negative indices reindex the same source product.\n\nThe [literal chi theorem](NLS/ZakharovShabat/Section28ComplexChiRatio.lean) assembles the exterior constant 128 with the exact enclosing-root constants 2/5 and 3/10. It gives 128*(abs(n)+N+2/5)/(abs(n)-N+3/10), including N=0 and |n|=N, on a common L2 neighborhood before all weighted H1 realizations and indices. Absolute indices correct the printed ratio directly. The independent final 2048 proof and the corrected inclusive scalar arithmetic remain.\n\nFourteen positive theorems add no definitions, examples or refutations. S28-006 becomes corrected; S28-014 and S28-015 become matched. The 30-group ledger now has 19 matched, nine corrected and two contextual groups, with no partial or pending groups. The Section 28 ledger has no remaining partial or pending groups. The broader dissertation audit remains separate.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          117,
+          118
+        ],
+        "images": {
+          "work/tmp/pdfs/section28-ordered-117.png": "fa82641e50d8332ff9f90f8a34e014936eeb61d094f7485219781dce2a1c47e9",
+          "work/tmp/pdfs/section28-ordered-118.png": "c093e39c041e30ad6e150aa4fa7f1985f7bce8d0a4ccd1ad84c3f4f59454bd06"
+        }
+      },
+      "preceding_review_hash": "d804b47271d3d71baf6dc335f528a6d377265f8c550bfc1c0c8f8551482be47a",
+      "validation_lean_sources": {
+        "files": 4913,
+        "sha256": "4a8e11670aff5891f9ead2564f4d925f6b54c56d6b74f0ce6ad8e095e237d510"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 14,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.section28_central_product_bound._proof_1_1",
+        "NLS.ZakharovShabat.section28_central_product_bound._proof_1_3",
+        "NLS.ZakharovShabat.section28_central_product_bound._simp_1_2",
+        "NLS.ZakharovShabat.section28_central_product_bound_negative._proof_1_2",
+        "NLS.ZakharovShabat.section28_central_product_bound_negative._proof_1_3",
+        "NLS.ZakharovShabat.section28_central_product_bound_negative._simp_1_1",
+        "NLS.ZakharovShabat.section28_central_product_reflection._proof_1_2",
+        "NLS.ZakharovShabat.section28_central_product_reflection._proof_1_3",
+        "NLS.ZakharovShabat.section28_central_product_reflection._proof_1_4",
+        "NLS.ZakharovShabat.section28_central_product_reflection._simp_1_1",
+        "NLS.ZakharovShabat.section28_complex_central_product_neighborhood._proof_1_2",
+        "NLS.ZakharovShabat.section28_complex_central_product_neighborhood._proof_1_3",
+        "NLS.ZakharovShabat.section28_complex_central_product_neighborhood._proof_1_4",
+        "NLS.ZakharovShabat.section28_complex_central_product_neighborhood._proof_1_5",
+        "NLS.ZakharovShabat.section28_complex_central_product_neighborhood._proof_1_6",
+        "NLS.ZakharovShabat.section28_complex_central_product_neighborhood._proof_1_7",
+        "NLS.ZakharovShabat.section28_complex_central_product_neighborhood._simp_1_1",
+        "NLS.ZakharovShabat.section28_complex_chi_ratio_neighborhood._proof_1_2",
+        "NLS.ZakharovShabat.section28_complex_chi_ratio_neighborhood._proof_1_3",
+        "NLS.ZakharovShabat.section28_complex_chi_ratio_neighborhood._proof_1_4",
+        "NLS.ZakharovShabat.section28_complex_chi_ratio_neighborhood._proof_1_5",
+        "NLS.ZakharovShabat.section28_complex_chi_ratio_neighborhood._proof_1_6",
+        "NLS.ZakharovShabat.section28_local_adjacent_distance._proof_1_1",
+        "NLS.ZakharovShabat.section28_product_predecessor._proof_1_3",
+        "NLS.ZakharovShabat.section28_product_predecessor._proof_1_4",
+        "NLS.ZakharovShabat.section28_product_predecessor._proof_1_5",
+        "NLS.ZakharovShabat.section28_product_predecessor._simp_1_1",
+        "NLS.ZakharovShabat.section28_product_predecessor._simp_1_2",
+        "NLS.ZakharovShabat.section28_real_uniform_gap_margin._proof_1_1",
+        "NLS.ZakharovShabat.section28_real_uniform_gap_margin._proof_1_2"
+      ],
+      "full_gate": {
+        "session": 53037,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section28ComplexProductFullCheck.log",
+        "log_sha256": "8a946169e078e2a583b4976977ba4b54f485f89ab4543d3413f38647e2348d94"
+      },
+      "ordered_group_reconciliation": {
+        "groups": {
+          "S28-006": {
+            "previous": "partial",
+            "current": "corrected"
+          },
+          "S28-014": {
+            "previous": "partial",
+            "current": "matched"
+          },
+          "S28-015": {
+            "previous": "partial",
+            "current": "matched"
+          }
+        },
+        "matched": 19,
+        "corrected": 9,
+        "partial": 0,
+        "contextual": 2,
+        "pending": 0
+      },
+      "source_record_sha256": "8b654ff90d004dfbc44f3ddae49a6d5a2a0f6b81170553a373db572d34da4602"
     }
   }
 }

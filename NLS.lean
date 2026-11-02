@@ -4909,3 +4909,6 @@ import NLS.ZakharovShabat.AppendixHPhysicalHamiltonian
 import NLS.SequenceSpaces.AppendixIUniformCutoff
 import NLS.ZakharovShabat.Section7PhysicalNLSMotion
 import NLS.ZakharovShabat.Section28ComplexEnclosingRoot
+import NLS.ZakharovShabat.Section28AdjacentDistance
+import NLS.ZakharovShabat.Section28ComplexCentralProduct
+import NLS.ZakharovShabat.Section28ComplexChiRatio

@@ -1,5 +1,24 @@
 # Section 28: original weighted actions and gap lengths
 
+## Section 28 complex central products
+
+The [adjacent-distance proof](../NLS/ZakharovShabat/Section28AdjacentDistance.lean) uses uniform spectral continuity and a positive real gap margin to control both signed directions on one connected complex neighborhood. The neighborhood lies inside any prescribed open domain containing the real locus and precedes every index and every point of the target closed gap.
+
+The [central-product proof](../NLS/ZakharovShabat/Section28ComplexCentralProduct.lean) telescopes the actual complex root factors. Denominators are nonzero by common gap separation; numerator factors may vanish. Negative indices reindex the same source product.
+
+The [literal chi theorem](../NLS/ZakharovShabat/Section28ComplexChiRatio.lean) assembles the exterior constant 128 with the exact enclosing-root constants 2/5 and 3/10. It gives 128*(abs(n)+N+2/5)/(abs(n)-N+3/10), including N=0 and |n|=N, on a common L2 neighborhood before all weighted H1 realizations and indices. Absolute indices correct the printed ratio directly. The independent final 2048 proof and the corrected inclusive scalar arithmetic remain.
+
+Fourteen positive theorems add no definitions, examples or refutations. S28-006 becomes corrected; S28-014 and S28-015 become matched. The 30-group ledger now has 19 matched, nine corrected and two contextual groups, with no partial or pending groups.
+
+The full check passed: 8,651 build jobs, 7,729 public examples and an axiom audit of 45,081 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Continue the broader dissertation reconciliation, including the Section 7 rough sheet-sign clause and unrestricted psi uniqueness. Correct constants directly and commit and push each completed step.
+The [broader completion qualifications](COMPLETENESS.md) remain.
+
+## Previous source review
+
+The following records retain their historical scope and validation. The current comparison above closes the remaining Section 28 product passages.
+
 ## Section 28 complex enclosing-root ratio
 
 The [complex enclosing-root proof](../NLS/ZakharovShabat/Section28ComplexEnclosingRoot.lean) establishes the actual standard-root ratio in Section 28 with the exact constants 2/5 and 3/10. It uses complex H1 sources, the full target gap and the inclusive boundary index.

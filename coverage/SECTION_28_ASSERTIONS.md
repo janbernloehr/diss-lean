@@ -1,6 +1,6 @@
 # Section 28 ordered assertion comparison
 
-The ordered Section 28 comparison covers 30 groups on printed pp.117–119: 17 matched, eight directly corrected, three partial and two contextual, with no pending groups. Original indexed actions, exact weighted norms and all domain qualifications are retained. The final complex chi bound 2048, action-gap bound 4608, real action bound 2^20 and complex action bound 2^21 remain proved. The complex enclosing-root ratio is now proved with the exact constants 2/5 and 3/10, signed indices and the inclusive boundary. Three complex intermediate passages remain partial: the reflected rational bound for chi, adjacent-disc comparison and central telescoping. Seven positive enclosing-root theorems add no new refutation. Broader completeness qualifications remain.
+The ordered Section 28 comparison covers 30 groups on printed pp.117–119: 19 matched, nine directly corrected and two contextual, with no partial or pending groups. Original indexed actions, exact weighted norms and all domain qualifications are retained. The final complex chi bound 2048, action-gap bound 4608, real action bound 2^20 and complex action bound 2^21 remain proved. Fourteen new positive theorems supply the complex adjacent-distance comparison, exact central telescoping and the literal chi bound 128*(abs(n)+N+2/5)/(abs(n)-N+3/10), including the cutoff boundary and the empty central product at N=0. The neighborhood is chosen inside any prescribed open domain containing the real locus, before the weighted sources and indices. The independent final 2048 proof and the corrected inclusive scalar arithmetic remain. No new refutation is added. Broader completeness qualifications remain.
 
 Source: printed pp. 117–119, text lines 9632–9914. Line numbers count
 newline characters and preserve form feeds. All three rendered pages were inspected.
@@ -12,7 +12,7 @@ newline characters and preserve form feeds. All three rendered pages were inspec
 | S28-003 | 9649–9656 | Original contour action and deleted product | matched |
 | S28-004 | 9658–9669 | Gap shrinking and critical coordinate integral | matched |
 | S28-005 | 9671–9677 | Common critical-coordinate bound and formula (5.15) | matched |
-| S28-006 | 9682–9686 | Lemma 28.1 and its signed ratio | partial |
+| S28-006 | 9682–9686 | Lemma 28.1 and its signed ratio | corrected |
 | S28-007 | 9688–9697 | Inclusive cutoff and product split | matched |
 | S28-008 | 9700–9707 | Exterior endpoint localization and separation | corrected |
 | S28-009 | 9709–9713 | Individual gap and small ratio | corrected |
@@ -20,8 +20,8 @@ newline characters and preserve form feeds. All three rendered pages were inspec
 | S28-011 | 9731–9744 | Cauchy-Schwarz exterior sum | corrected |
 | S28-012 | 9746–9751 | Weighted gap-tail budget | matched |
 | S28-013 | 9753–9764 | Infinite exterior product constant 128 | matched |
-| S28-014 | 9767–9780 | Central isolating discs and formula (5.16) | partial |
-| S28-015 | 9783–9789 | Central telescoping product | partial |
+| S28-014 | 9767–9780 | Central isolating discs and formula (5.16) | matched |
+| S28-015 | 9783–9789 | Central telescoping product | matched |
 | S28-016 | 9791–9796 | Enclosing-root ratio | matched |
 | S28-017 | 9798–9802 | Inclusive boundary arithmetic | corrected |
 | S28-018 | 9804–9808 | Final complex chi estimate | matched |
@@ -106,16 +106,16 @@ The common L2 neighborhood precedes all weights, sources and indices; the bound 
 
 ### S28-006: Lemma 28.1 and its signed ratio
 
-- The final Lemma 28.1 estimate holds with 2048, signed indices, the inclusive bracket threshold and the exact physical H1 norm.
-- The literal signed rational expression is replaced by absolute-index arithmetic where it is used as a scalar comparison.
+- The literal chi product is bounded by 128*(abs(n)+N+2/5)/(abs(n)-N+3/10) on the full target gap.
+- One connected L2-open neighborhood is chosen inside any prescribed open domain containing the real locus, before every weighted H1 realization, cutoff and signed index.
+- The source supplies the critical-offset and omitted-domain conditions. N=0 uses the empty central product, and |n|=N is included.
 
 Public declarations:
 
+- `NLS.ZakharovShabat.section28_complex_chi_ratio_neighborhood`
 - `NLS.ZakharovShabat.SourceSection28Data.physical_H1_bounds`
-- `NLS.ZakharovShabat.lemma281_ratio_le_eight`
-- `NLS.ZakharovShabat.lemma281_ratio_le_two_of_exterior`
 
-The printed signed ratio is not asserted. A complex spectral bound by the reflected rational expression is not verified by these scalar theorems; the adjacent-factor and central telescoping steps S28-014 and S28-015 remain qualified. The independent final 2048 theorem is fully proved. No new refutation is added.
+The [literal product theorem](../NLS/ZakharovShabat/Section28ComplexChiRatio.lean) uses absolute indices as a direct correction. The final 2048 theorem retains its independent proof; S28-017 retains the inclusive scalar arithmetic correction.
 
 ### S28-007: Inclusive cutoff and product split
 
@@ -209,25 +209,29 @@ No replacement infinite-product candidate is introduced. The root-omitted domain
 
 ### S28-014: Central isolating discs and formula (5.16)
 
-- The reviewed central-product theorem supplies a squared-norm enclosing-interval bound for real sources and real spectral points.
-- The complex final estimate instead uses comparison with the projected real source and uniformly controlled distant modes.
+- Both strict adjacent-distance comparisons hold on one common complex neighborhood for every signed pair of indices and every point of the target closed gap.
+- Uniform endpoint and critical-sequence continuity preserve a positive real gap margin. The neighborhood lies inside any prescribed open domain containing the real locus.
 
 Public declarations:
 
-- `NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le`
-- `NLS.ZakharovShabat.exists_local_sourceM1_gapFactor_bound`
+- `NLS.ZakharovShabat.section28_local_adjacent_distance`
+- `NLS.ZakharovShabat.section28_adjacent_distance_neighborhood_within`
 
-The adjacent complex-disc distance comparison (5.16) is not proved by the reviewed support. The real theorem and independent complex final bound do not establish this printed intermediate assertion.
+The [actual spectral proof](../NLS/ZakharovShabat/Section28AdjacentDistance.lean) works for every finite p>1. It derives the distance comparison from spectral continuity and real separation; it does not assert this for arbitrary disjoint discs.
 
 ### S28-015: Central telescoping product
 
-- Ordered real gaps admit a direct squared-product estimate using their actual roots and critical points.
+- Exact predecessor-root ratios telescope over the finite central set. Denominators are nonzero by common gap separation; numerator factors may vanish.
+- Actual adjacent-distance inequalities bound the complex central product by the boundary-root ratio, including |n|=N for N>=1.
+- The negative case reindexes the same source product and uses roots N and -N+1; the positive case uses roots -N and N-1.
 
 Public declarations:
 
-- `NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le`
+- `NLS.ZakharovShabat.section28_central_product_bound`
+- `NLS.ZakharovShabat.section28_central_product_bound_negative`
+- `NLS.ZakharovShabat.section28_complex_central_product_neighborhood`
 
-The printed complex adjacent-factor telescoping estimate remains unverified. The real-only supporting theorem is not promoted to a complex statement.
+The [central-product proof](../NLS/ZakharovShabat/Section28ComplexCentralProduct.lean) uses the actual complex source. Its common neighborhood precedes all indices and cutoffs. N=0 is handled by the empty product in the assembled chi bound.
 
 ### S28-016: Enclosing-root ratio
 
@@ -241,7 +245,7 @@ Public declarations:
 - `NLS.ZakharovShabat.section28_complex_enclosing_root_ratio_signed`
 - `NLS.ZakharovShabat.section28_complex_enclosing_root_ratio_negative`
 
-The [complex root estimates](../NLS/ZakharovShabat/Section28ComplexEnclosingRoot.lean) retain the exact original weighted norm through its period-one source realization. They impose no reality or source-reflection premise. The central product is empty at N=0; the enclosing-root application concerns N>=1. This result does not discharge the adjacent-disc comparison or telescoping product.
+The [complex root estimates](../NLS/ZakharovShabat/Section28ComplexEnclosingRoot.lean) retain the exact original weighted norm through its period-one source realization. They impose no reality or source-reflection premise. The central product is empty at N=0; the enclosing-root application concerns N>=1. The adjacent-distance and central-product proofs above now supply the remaining factors in the literal chi bound.
 
 ### S28-017: Inclusive boundary arithmetic
 
@@ -278,7 +282,7 @@ Public declarations:
 
 - `NLS.ZakharovShabat.sourceReal_finite_gap_product_sq_le`
 
-The picture is contextual; the unverified complex distance and telescoping claims remain in S28-014 and S28-015. The enclosing-root ratio S28-016 is now proved.
+The picture is contextual. The actual complex distance comparison, telescoping product and enclosing-root ratio are proved in S28-014 through S28-016.
 
 ### S28-020: Proposition 28.2 action-gap estimate
 

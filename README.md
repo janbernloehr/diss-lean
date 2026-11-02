@@ -5,7 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Section 28 complex enclosing-root ratio](coverage/SECTION_28.md). Actual complex H1 enclosing-root ratio with constants 2/5 and 3/10, signed indices, the full target gap and the equality boundary. S28-016 is matched; three other Section 28 groups remain partial.
+Latest step: [Section 28 complex central products](coverage/SECTION_28.md). Actual complex adjacent-distance comparison, exact central telescoping and literal chi bound with absolute indices, constant 128 and root constants 2/5 and 3/10. One common neighborhood; N=0 and the cutoff boundary included. All 30 Section 28 groups reconciled.
 The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
