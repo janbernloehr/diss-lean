@@ -324,3 +324,22 @@ See [UNIFORM_PRIMITIVE_BOUNDS.md](UNIFORM_PRIMITIVE_BOUNDS.md).
 The full period operator and inverse remain to be constructed; no main
 theorem is marked verified. The 57-module strict check and full transitive
 audit are recorded in `VALIDATION.md` and `source.json`.
+
+## Actual bounded period operator and analytic inverse milestone
+
+The same selected critical and numerator family now supports all positive
+frequency circles, including the low modes. The full matrix has proved
+diagonal and reciprocal-square off-diagonal bounds. A reusable shifted
+diagonal series constructs its bounded action, and a bounded ℓ-infinity
+symbol assembly proves actual operator-norm analyticity.
+
+The exact free identity and the Neumann criterion construct an analytic
+two-sided inverse on a smaller common neighborhood, with inverse norm at
+most two. The actual matrix entries and all selected numerator/critical
+data are retained there. See [ANALYTIC_PERIOD_INVERSE.md](ANALYTIC_PERIOD_INVERSE.md).
+
+Convergence and contour normalization of the resulting entire differentials
+are the next obligation. Canonical products, rough/global compatibility
+and the full main-theorem inventory remain open. The strict 70-module
+check and complete transitive audit are recorded in `VALIDATION.md` and
+`source.json`.

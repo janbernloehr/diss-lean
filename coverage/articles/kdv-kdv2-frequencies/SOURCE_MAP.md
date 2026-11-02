@@ -235,3 +235,12 @@ Every selected critical frequency can be localized within pi/8 of its
 free center, retaining the critical equation and simplicity. See
 [UNIFORM_PRIMITIVE_BOUNDS.md](UNIFORM_PRIMITIVE_BOUNDS.md). Full matrix
 operator realization, normalization and the main-theorem rows remain open.
+
+The actual full all-frequency-circle period operator is now constructed
+on ℓ², with a uniform matrix majorant, operator-norm analyticity and the
+exact free identity. An analytic two-sided inverse of norm at most two
+is constructed on a smaller common neighborhood, retaining the identical
+selected critical/numerator data. See
+[ANALYTIC_PERIOD_INVERSE.md](ANALYTIC_PERIOD_INVERSE.md). The convergent
+entire normalized family, canonical products, rough/global compatibility
+and all main-theorem rows remain open.

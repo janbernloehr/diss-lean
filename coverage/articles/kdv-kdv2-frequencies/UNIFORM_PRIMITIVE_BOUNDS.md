@@ -121,3 +121,8 @@ normalized family be constructed. Canonical products, global/rough
 compatibility, sharp moment sums, physical frequency/action identities,
 weighted asymptotics, compact derivatives and actual Birkhoff/PDE flow
 remain essential open work. No main-theorem status is changed.
+
+The subsequent [analytic period inverse milestone](ANALYTIC_PERIOD_INVERSE.md)
+constructs the full bounded operator, proves operator-norm analyticity and
+constructs its analytic two-sided inverse near zero. The convergent entire
+normalized family, canonical products and actual main theorems remain open.

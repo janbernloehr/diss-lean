@@ -38,8 +38,11 @@ its existing Hilbert specialization and a transitive audit.
 | `NLS/KdV/ClassicalDiscriminantUniformVariation.lean`, `FreeContourUniformLowerBound.lean`, `ClassicalUniformRootBounds.lean` | Uniform actual source derivatives, compact free-circle lower bound and one continued-root lower bound for all positive contours on a small potential ball. |
 | `NLS/KdV/ClassicalUniformPrimitiveBounds.lean`, `ClassicalUniformCriticalLocalization.lean`, `ClassicalUniformPeriodBounds.lean` | Actual primitive error O(norm q), all-mode half-radius critical control, and an actual uniform reciprocal-square off-diagonal period tail bound. |
 | `NLS/ComplexAnalysis/BanachTaylorBounds.lean`, `NLS/ZakharovShabat/ClassicalHorizontalStripBounds.lean` | Existing shared Banach Cauchy and actual IVP strip estimates, now directly recompiled as consumed dependencies. |
+| `NLS/SequenceSpaces/ConvolutionDominatedMatrix.lean`, `ConvolutionMatrixAnalytic.lean`, `ReciprocalSquareKernel.lean` | Constructed bounded matrix actions, bounded linear matrix-symbol assembly, genuine operator-norm analyticity and a nonvanishing summable reciprocal-square majorant. |
+| `NLS/KdV/ClassicalAllContourPeriods.lean`, `ClassicalAllContourPeriodBounds.lean`, `ClassicalPeriodOperator.lean`, `ClassicalPeriodInverse.lean` | One all-mode actual spectral family, full matrix bounds including the diagonal, the constructed analytic period operator and its analytic two-sided inverse of norm at most two near zero. |
+| Six newly selected existing sequence modules | Multipliers, convolution, punctured reciprocal lattice, Holder products, operator basis equality and bounded-coordinate Banach analyticity; all directly recompiled before their consumers. |
 
-All fifty-seven selected modules compile with pinned **Lean 4.33.1**, commit
+All seventy selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -50,8 +53,17 @@ Final output of `bash scripts/check-kdv-kdv2-frequencies.sh`:
 
 ```text
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
+PASS NLS/SequenceSpaces/Convolution
 PASS NLS/ZakharovShabat/ClassicalHorizontalStripBounds
+PASS NLS/SequenceSpaces/Multiplier
+PASS NLS/SequenceSpaces/PuncturedLattice
+PASS NLS/SequenceSpaces/HolderEmbedding
+PASS NLS/SequenceSpaces/OperatorBasisExt
+PASS NLS/SequenceSpaces/BoundedCoordinateAnalytic
 PASS NLS/ComplexAnalysis/JointSpectralDerivative
+PASS NLS/SequenceSpaces/ConvolutionDominatedMatrix
+PASS NLS/SequenceSpaces/ConvolutionMatrixAnalytic
+PASS NLS/SequenceSpaces/ReciprocalSquareKernel
 PASS NLS/ComplexAnalysis/ParametricDividedDifference
 PASS NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
 PASS NLS/ComplexAnalysis/RightHalfPlaneSquareRoot
@@ -89,15 +101,19 @@ PASS NLS/KdV/ClassicalUniformPrimitiveBounds
 PASS NLS/KdV/ClassicalCriticalPointBranch
 PASS NLS/KdV/ClassicalHighCriticalPoints
 PASS NLS/KdV/HighEnergyContourSeparation
+PASS NLS/KdV/ClassicalCriticalNumerator
 PASS NLS/KdV/ClassicalUniformCriticalBasis
 PASS NLS/KdV/ClassicalCriticalTailAnalytic
 PASS NLS/KdV/ClassicalUniformCriticalLocalization
-PASS NLS/KdV/ClassicalCriticalNumerator
 PASS NLS/KdV/ClassicalCriticalPeriods
 PASS NLS/KdV/ClassicalFiniteNormalizedDifferentials
 PASS NLS/KdV/ClassicalUniformPeriodEntries
 PASS NLS/KdV/ClassicalPeriodIntegrationByParts
 PASS NLS/KdV/ClassicalUniformPeriodBounds
+PASS NLS/KdV/ClassicalAllContourPeriods
+PASS NLS/KdV/ClassicalAllContourPeriodBounds
+PASS NLS/KdV/ClassicalPeriodOperator
+PASS NLS/KdV/ClassicalPeriodInverse
 PASS NLS/KdV/FrequencyPrimitiveContinuation
 PASS NLS/KdV/FrequencyContourDecomposition
 PASS NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
@@ -106,11 +122,11 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 700 candidate declarations; 12209 declarations total.
+Axiom audit passed: 869 candidate declarations; 12291 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the fifty-seven selected modules (including generated and private declarations)
+the seventy selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -350,3 +366,22 @@ in the private import overlay. The full run uses strict options and default
 heartbeats, without warning exceptions, disabled linters or additional axioms.
 No new shared merge or canonical mutation is required. Full matrix operator
 realization, infinite normalization and all main-theorem statuses remain open.
+
+
+The actual analytic period-operator inverse milestone is detailed in
+`ANALYTIC_PERIOD_INVERSE.md`. It constructs the full operator in the
+Banach operator norm and its analytic two-sided inverse, retaining the
+same selected spectral data on the final neighborhood.
+
+Final strict run: all 70 selected modules pass; the complete transitive audit
+passes for 869 selected declarations and 12291 declarations including
+all imported NLS dependencies. Only `propext`, `Classical.choice` and
+`Quot.sound` are permitted. All 70 source hashes match the checked files,
+and the checker, axiom audit and coverage selections agree exactly.
+
+The static module list is ordered by transitive NLS imports so that every
+selected private output exists before any consumer is compiled. Strict
+warnings, default heartbeats, private outputs and read-only canonical imports
+are retained. No warnings are waived, linters disabled or axioms added.
+Convergent normalized entire differentials, canonical products and all main
+theorems remain open. No full dissertation build is claimed.

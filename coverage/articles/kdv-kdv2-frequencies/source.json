@@ -888,10 +888,179 @@
       "scope": "Existing real spectral gauge and actual solution/discriminant strip bounds independent of the real spectral parameter",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "2d5f46f01168bd4eaa3675d13e6424e870a10508259566e8181b7e0e0e34c5a7"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ConvolutionDominatedMatrix.lean",
+      "source_labels": [
+        "Infinite period operator construction dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Constructed bounded matrix action on every Banach coefficient space from an l1 convolution majorant, with exact entries and operator norm bound",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "20c771e0b5515a01013ad7fc5d4f1c139fb435c4ed40c4516523ca392f54071f"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ConvolutionMatrixAnalytic.lean",
+      "source_labels": [
+        "Infinite period operator analyticity dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Constructed bounded linear assembly of bounded matrix symbols, giving genuine Banach operator-norm analyticity from analytic entries and a fixed nonvanishing l1 majorant",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dc4e6cb5649f2ed6fab8d9819184824c2170a4df0606fb9e4f665ba2107f758e"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ReciprocalSquareKernel.lean",
+      "source_labels": [
+        "Infinite period operator summable majorant"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Actual l1 diagonal/reciprocal-square convolution kernel, nonzero at every coordinate and norm at most five",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8c0b3cee71cd1ce67af035e70a83473458c4d9a8e1d8a86e48cce421d9326379"
+    },
+    {
+      "path": "NLS/KdV/ClassicalAllContourPeriods.lean",
+      "source_labels": [
+        "Equation (53) actual all-mode period data"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "One constructed neighborhood and identical selected critical/numerator family support all positive frequency circles, actual factor identity, analytic entries and free identity; complete data retained under shrinking",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a020a87ec5e54c8e9336180466ae19f4dd66e8e577f9d3767c1751374c76786b"
+    },
+    {
+      "path": "NLS/KdV/ClassicalAllContourPeriodBounds.lean",
+      "source_labels": [
+        "Equation (53) actual full matrix bounds"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Diagonal bound 80*A/pi and off-diagonal bound 5*A/(pi*abs(k-n)^2), including every low mode on the identical constructed neighborhood",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4f8409e187b8891367eb935b4853f9713545c412faa045d55a039b6449e53302"
+    },
+    {
+      "path": "NLS/KdV/ClassicalPeriodOperator.lean",
+      "source_labels": [
+        "Equation (53) actual analytic infinite period operator"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Constructed bounded l2 period operator with genuine operator-norm analyticity, actual positive matrix entries, auxiliary complementary identity block and exact free identity",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d5bd848e7145e0f024a54533f19e743ac61e6e34eed393fd53ef981096a14f6d"
+    },
+    {
+      "path": "NLS/KdV/ClassicalPeriodInverse.lean",
+      "source_labels": [
+        "Equation (53) actual analytic infinite period inverse"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Constructed analytic two-sided inverse near zero, norm at most two, retaining the identical actual period and numerator data; convergent normalized entire functions still open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3beb042c58d15f17a46288034a90bc74f0688c70e0101bae795f9aaab76abbe5"
+    },
+    {
+      "path": "NLS/SequenceSpaces/Multiplier.lean",
+      "source_labels": [
+        "Shifted diagonal matrix assembly dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing bounded Fourier multipliers on all Banach coefficient spaces",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9f2942f6993033fad92fab256b1398cfb59c5a6273e8c8c55e21a501a1073d36"
+    },
+    {
+      "path": "NLS/SequenceSpaces/Convolution.lean",
+      "source_labels": [
+        "Norm-convergent operator series dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing Banach-series convolution and l1 Young bounds",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bfb72ea01d63f25aeee7e899a0674bf00cd909c779e7610d5627c38931746d9b"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PuncturedLattice.lean",
+      "source_labels": [
+        "Summable reciprocal-square majorant dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing punctured reciprocal sequence, including its verified Hilbert norm bound",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dd7910dc04ab5f23fc841db7aa6f0b063b821970b0e03e48a54b2df1cdad03a2"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HolderEmbedding.lean",
+      "source_labels": [
+        "Summable reciprocal-square majorant dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing pointwise Holder products and sharp norm bound",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "85e8da4db876e375315477b28ba33d26cea2b235619f22c4c0afbc1cce30187e"
+    },
+    {
+      "path": "NLS/SequenceSpaces/OperatorBasisExt.lean",
+      "source_labels": [
+        "Exact matrix realization and free identity dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing finite-exponent bounded operator equality from unit Fourier basis columns",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3d6495e89ef8dbd44373f9e70423867a3d3600889061679c0e53fa4fe9ea32cc"
+    },
+    {
+      "path": "NLS/SequenceSpaces/BoundedCoordinateAnalytic.lean",
+      "source_labels": [
+        "Operator-norm analytic matrix symbol dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Existing Banach analyticity theorem for locally bounded sequence maps with analytic scalar coordinates",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8f1a24d202eee0c765e1fff265c358b0f0672367e352e84864a1decc3b622aab"
     }
   ],
   "dependencies_needed": [
-    "full bounded infinite period operator, diagonal/head assembly and operator-norm analyticity/continuity at the free identity, then normalized inverse and convergent entire family; actual uniform primitive errors, reciprocal-square period tail and all-mode critical localization are proved",
+    "convergent entire normalized differentials from the actual analytic inverse columns, l2-valued numerator analyticity, positive-subspace compatibility and contour interchange, then canonical products; the full bounded operator and analytic two-sided inverse are now constructed",
     "shared rough Hill/KdV spectral and Birkhoff foundations; global gap and canonical sheet normalization",
     "shared KdV action Hamiltonians",
     "actual KdV and KdV2 frequency moment identities and uniform analytic bounds",
@@ -919,15 +1088,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 700,
-    "total_declarations_audited": 12209,
+    "candidate_declarations_audited": 869,
+    "total_declarations_audited": 12291,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 57
+    "selected_modules": 70
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -990,5 +1159,6 @@
   "finite_normalization_record": "FINITE_NORMALIZATION.md",
   "uniform_critical_basis_record": "UNIFORM_CRITICAL_BASIS.md",
   "uniform_period_entries_record": "UNIFORM_PERIOD_ENTRIES.md",
-  "uniform_primitive_bounds_record": "UNIFORM_PRIMITIVE_BOUNDS.md"
+  "uniform_primitive_bounds_record": "UNIFORM_PRIMITIVE_BOUNDS.md",
+  "analytic_period_inverse_record": "ANALYTIC_PERIOD_INVERSE.md"
 }

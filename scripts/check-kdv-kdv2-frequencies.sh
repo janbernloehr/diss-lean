@@ -9,8 +9,17 @@ export MATHLIB_CACHE_DIR="${MATHLIB_CACHE_DIR:-/home/janbernloehr/Documents/Code
 article_build="$article_root/.lake/build/lib/lean"
 article_imports="$article_root/.lake/article-imports"
 modules=(NLS/ComplexAnalysis/BanachTaylorBounds
+  NLS/SequenceSpaces/Convolution
   NLS/ZakharovShabat/ClassicalHorizontalStripBounds
+  NLS/SequenceSpaces/Multiplier
+  NLS/SequenceSpaces/PuncturedLattice
+  NLS/SequenceSpaces/HolderEmbedding
+  NLS/SequenceSpaces/OperatorBasisExt
+  NLS/SequenceSpaces/BoundedCoordinateAnalytic
   NLS/ComplexAnalysis/JointSpectralDerivative
+  NLS/SequenceSpaces/ConvolutionDominatedMatrix
+  NLS/SequenceSpaces/ConvolutionMatrixAnalytic
+  NLS/SequenceSpaces/ReciprocalSquareKernel
   NLS/ComplexAnalysis/ParametricDividedDifference
   NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
   NLS/ComplexAnalysis/RightHalfPlaneSquareRoot
@@ -48,15 +57,19 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalCriticalPointBranch
   NLS/KdV/ClassicalHighCriticalPoints
   NLS/KdV/HighEnergyContourSeparation
+  NLS/KdV/ClassicalCriticalNumerator
   NLS/KdV/ClassicalUniformCriticalBasis
   NLS/KdV/ClassicalCriticalTailAnalytic
   NLS/KdV/ClassicalUniformCriticalLocalization
-  NLS/KdV/ClassicalCriticalNumerator
   NLS/KdV/ClassicalCriticalPeriods
   NLS/KdV/ClassicalFiniteNormalizedDifferentials
   NLS/KdV/ClassicalUniformPeriodEntries
   NLS/KdV/ClassicalPeriodIntegrationByParts
   NLS/KdV/ClassicalUniformPeriodBounds
+  NLS/KdV/ClassicalAllContourPeriods
+  NLS/KdV/ClassicalAllContourPeriodBounds
+  NLS/KdV/ClassicalPeriodOperator
+  NLS/KdV/ClassicalPeriodInverse
   NLS/KdV/FrequencyPrimitiveContinuation
   NLS/KdV/FrequencyContourDecomposition
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
