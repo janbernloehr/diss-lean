@@ -1,6 +1,32 @@
 # Implementation plan
 
-## Current milestone: Appendix F midpoint identity and convergence
+## Current milestone: Appendix F rescaled-integral identities
+
+The [rescaled-integral identities](NLS/ZakharovShabat/AppendixFRescaledIdentity.lean)
+identify the actual normalized-root quotient with the literal
+principal-square-root expression on every positive midpoint parameter.
+Equality almost everywhere gives the full interval-integral substitution,
+retaining the -i*(nu-tau_n) coefficient.
+
+For the actual source, the improper endpoint average equals this
+rescaled integral plus its exact one-sided short-piece boundary value.
+The endpoint identity retains explicit admissibility, side and
+integrability hypotheses, supplied by the preceding source lemmas
+when applied along the collapsing sequence.
+
+One module adds four positive theorems and no new definitions,
+examples or refutations.
+
+The full check passed: 8,633 build jobs, 7,729 public examples and an axiom audit of 44,952 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+The 31-group ordered Appendix F comparison remains open. Fixed-boundary
+transport, mixed source sequences, original-domain chart coverage and
+open-gap endpoint path assembly remain separate.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Appendix F midpoint identity and convergence
 
 The [midpoint-spoke proofs](NLS/ZakharovShabat/AppendixFMidpointIdentity.lean)
 derive eventual integrability from the actual source data and the

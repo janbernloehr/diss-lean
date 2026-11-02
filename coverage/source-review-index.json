@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T00:26:44.295615+00:00",
-  "base_commit": "42517cbbf7354b44176cdbf40099b9ad7ebf94a4",
+  "published_utc": "2026-11-02T00:51:18.990327+00:00",
+  "base_commit": "4b04eacf9fa647fb685588343a1b449b42a01aea",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 201,
-    "module_hash_checks": 4218,
-    "distinct_modules": 2128
+    "review_records": 202,
+    "module_hash_checks": 4221,
+    "distinct_modules": 2129
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "42517cbbf7354b44176cdbf40099b9ad7ebf94a4",
-    "validated_state": "Fresh full check after one Appendix F midpoint identity and convergence module; public examples unchanged.",
+    "base_commit": "4b04eacf9fa647fb685588343a1b449b42a01aea",
+    "validated_state": "Fresh full check after one Appendix F rescaled-integral identities module; public examples unchanged.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8632,
+    "build_jobs": 8633,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 44948,
+    "transitive_NLS_declarations": 44952,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 67800,
+    "gate_session": 56459,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4894,
-      "sha256": "b3227e2dc47ce2d09629adac3124cc07bf14c6d5557542eea157151e2794c2e8"
+      "files": 4895,
+      "sha256": "ffb4f5cd2a36dab93ad3a575570e3c26958a908bc5798dba146981992441f24f"
     },
-    "full_gate_log_sha256": "403d912cbf76aadea72c8f0e807f22986a9bd290e7078ad3ae8ad4d7a06f9ec9",
+    "full_gate_log_sha256": "078676dfe28bfe17baaed41ba0e4bd77e4d33d46edb2734e6ba39bc6467041c9",
     "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix F and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixFMidpointIdentityFullCheck.log"
+    "full_gate_log": "work/AppendixFRescaledIdentityFullCheckRetry.log"
   },
   "named_statements": [
     {
@@ -67607,6 +67607,113 @@
         "log_sha256": "403d912cbf76aadea72c8f0e807f22986a9bd290e7078ad3ae8ad4d7a06f9ec9"
       },
       "source_record_sha256": "739e92529dc1980a5cf6384e68dc636d76c366dc8159dd5b9cfd628bccd1755a"
+    },
+    "AppendixFRescaledIdentitySourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "4b04eacf9fa647fb685588343a1b449b42a01aea",
+      "updated_utc": "2026-11-02T00:51:18.936755+00:00",
+      "source_lines": [
+        [
+          11008,
+          11020
+        ],
+        [
+          11002,
+          11020
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            11008,
+            11020
+          ],
+          "requirement": "Exact principal-root rescaling of the actual midpoint integral",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixF_spoke_quotient_eq_rescaled",
+            "NLS.ZakharovShabat.appendixF_spoke_integral_eq_rescaled",
+            "NLS.ZakharovShabat.appendixF_source_spoke_integral_eq_rescaled"
+          ],
+          "reviewed_claims": [
+            "For positive parameters the normalized-root quotient equals the literal rescaled principal-root quotient.",
+            "Almost-everywhere equality gives the exact interval-integral substitution, retaining the full -i displacement coefficient.",
+            "The actual source standard root and chi_n integrand satisfy that exact substitution."
+          ],
+          "qualification": "Only the zero-measure initial endpoint is excluded pointwise. Rescaling needs a nonzero displacement but no assumption that the square root is nonzero."
+        },
+        {
+          "source_lines": [
+            11002,
+            11020
+          ],
+          "requirement": "Corrected F.3 with the literal rescaled integral",
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_rescaled_endpoint_identity"
+          ],
+          "reviewed_claims": [
+            "The actual improper endpoint average is the rescaled principal-root integral with full -i displacement coefficient plus its exact one-sided midpoint boundary value."
+          ],
+          "qualification": "This combines the midpoint identity with the exact substitution. Admissibility, side and interval integrability are explicit; the previous source lemmas derive them along the collapsing sequence."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/AppendixFRootPath.lean": "82290d5d625498c077d891cec7c5bc1d885b05a361878aa4b4e0e021cfc52ca5",
+        "NLS/ZakharovShabat/AppendixFMidpointIdentity.lean": "bc1727ebed1e10e265296535361d0bde5b3e9fa8aab363155b09b23b002ee0e8",
+        "NLS/ZakharovShabat/AppendixFRescaledIdentity.lean": "53ebe60603442daeca1e9356c5b1cdb184e1f990e83cede25b25b63aa9b01d05"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/AppendixFRootPath.lean",
+        "NLS/ZakharovShabat/AppendixFMidpointIdentity.lean",
+        "NLS/ZakharovShabat/AppendixFRescaledIdentity.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Complete and reconcile all 31 ordered Appendix F groups."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_rescaled_endpoint_identity",
+        "NLS.ZakharovShabat.appendixF_source_spoke_integral_eq_rescaled",
+        "NLS.ZakharovShabat.appendixF_spoke_integral_eq_rescaled",
+        "NLS.ZakharovShabat.appendixF_spoke_quotient_eq_rescaled"
+      ],
+      "declaration_inventory_count": 44952,
+      "qualification": "One module adds four positive theorems identifying the midpoint integral with the literal rescaled principal-root expression. The pointwise quotient identity on positive parameters gives equality of interval integrals almost everywhere, retaining the full -i displacement coefficient. Specialization to the actual source and the exact midpoint identity express the improper endpoint average as the rescaled integral plus its one-sided short-piece term. No nonvanishing assumption on the square root is needed for the rescaling; the endpoint identity states admissibility, side and integrability hypotheses explicitly. Fixed-boundary transport, mixed source sequences and open-gap endpoint path assembly remain separate. No new definition, example or refutation is added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          131,
+          132,
+          133,
+          134
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271",
+          "work/tmp/pdfs/appendix-f-ordered-132.png": "a96d8aaab751ae81affe9f561e4c85c18cd84f4a74e021d7a2d10eebe106ecac",
+          "work/tmp/pdfs/appendix-f-ordered-133.png": "b15b972871d0116e43cfcfaedacd02307f64124d54384756f66901907be92a9c",
+          "work/tmp/pdfs/appendix-f-ordered-134.png": "e833be52e2f68ebb794206466caa59bcb046e4d5f773cdb83c46b941f5d43656"
+        }
+      },
+      "preceding_review_hash": "739e92529dc1980a5cf6384e68dc636d76c366dc8159dd5b9cfd628bccd1755a",
+      "validation_lean_sources": {
+        "files": 4895,
+        "sha256": "ffb4f5cd2a36dab93ad3a575570e3c26958a908bc5798dba146981992441f24f"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 4,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [],
+      "full_gate": {
+        "session": 56459,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixFRescaledIdentityFullCheckRetry.log",
+        "log_sha256": "078676dfe28bfe17baaed41ba0e4bd77e4d33d46edb2734e6ba39bc6467041c9"
+      },
+      "source_record_sha256": "4631839966b7d8a9c930a64ea5ba14ad7ba08489c1ee33c6c9f54b959dc9f593"
     }
   }
 }

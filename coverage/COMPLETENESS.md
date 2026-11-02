@@ -225,6 +225,14 @@ under explicit measurability and regular-factor hypotheses; eventual
 normalized-gap smallness is derived. Seventeen positive theorems and
 three examples add no new refutation. Full source-family assembly,
 other-gap exclusion and improper-path substitutions remain open.
+The [Appendix F rescaled-integral identities](APPENDIX_F.md)
+give the exact principal-root substitution and retain the full -i
+displacement coefficient. The actual improper endpoint average equals
+the rescaled integral plus its one-sided short-piece term. Four
+positive theorems add no new refutation. Fixed-boundary transport,
+mixed source sequences, original-domain chart coverage and open-gap
+endpoint path assembly remain separate.
+
 The [Appendix F midpoint-identity proofs](APPENDIX_F.md)
 derive eventual spoke integrability and identify the actual improper
 endpoint average with the full-coefficient midpoint integral plus its

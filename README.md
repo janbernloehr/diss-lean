@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix F midpoint identities](coverage/APPENDIX_F.md)
-proves the exact improper-integral decomposition, its vanishing
-short-piece remainder, and actual endpoint-average convergence at
-a common original boundary point. Seven positive theorems derive
-the required bounds and integrability and add no new refutation.
+Latest step: [Appendix F rescaled-integral identities](coverage/APPENDIX_F.md)
+proves the exact principal-root substitution with the full -i
+displacement coefficient and expresses the actual improper endpoint
+average as that integral plus its short-piece term. Four positive
+theorems add no new refutation.
 The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013

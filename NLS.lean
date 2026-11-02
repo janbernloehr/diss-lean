@@ -4893,3 +4893,4 @@ import NLS.ZakharovShabat.AppendixFSourceLimits
 import NLS.ZakharovShabat.AppendixFSourceDomination
 import NLS.ZakharovShabat.AppendixFOriginalCollapsed
 import NLS.ZakharovShabat.AppendixFMidpointIdentity
+import NLS.ZakharovShabat.AppendixFRescaledIdentity
