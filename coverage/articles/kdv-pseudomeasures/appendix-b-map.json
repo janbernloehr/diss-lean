@@ -186,10 +186,10 @@
     "net_qualification": "Arbitrary-filter statements require specified eventual endpoint bounds; no inference that arbitrary weak-star convergent nets are eventually norm bounded is used.",
     "validation": {
       "fresh_build": true,
-      "modules_checked": 143,
-      "audited_declarations": 1358,
-      "theorems": 1113,
-      "definitions": 245,
+      "modules_checked": 150,
+      "audited_declarations": 1391,
+      "theorems": 1142,
+      "definitions": 249,
       "warnings": 0,
       "tactic_suggestions": 0,
       "allowed_axioms": [
@@ -198,10 +198,47 @@
         "Quot.sound"
       ],
       "empty_axiom_sets_allowed": true,
-      "log": ".lake/article-check/logs/validation-weighted-gaps.log"
+      "log": ".lake/article-check/logs/validation-diagonal-root.log"
     },
     "canonical_checkout": "Sources and build outputs kept read-only.",
-    "main_theorems_verified": false
+    "main_theorems_verified": false,
+    "clause_signature_review": {
+      "date": "2026-11-02",
+      "source_pages": "printed pages 37-38",
+      "source_text_sha256": "1e1a9238da5d4b0fbe16d6e7e8df1b8698ae35f0b81df612cc6af910c16e1b7e",
+      "module": "NLS/Articles/KdVPseudomeasures/SourceWeakStarTopology.lean",
+      "clauses": {
+        "B.1(i)": [
+          "isCompact_sourceNormBall",
+          "metrizable_sourceNormBall",
+          "isSeqCompact_sourceNormBall"
+        ],
+        "B.1(ii)(a)-(b)": [
+          "tendsto_source_seq_iff_bounded_coefficients"
+        ],
+        "B.1(ii)(a)-(c)": [
+          "tendsto_source_seq_iff_bounded_some_lower"
+        ],
+        "B.1(iii)(a)-(b)": [
+          "isCompact_source_iff_isSeqCompact"
+        ],
+        "B.1(iii)(a)-(c)": [
+          "isCompact_source_iff_bounded_closed"
+        ],
+        "B.1(iii)(a)-(d)": [
+          "isCompact_source_iff_bounded_some_lower_compact"
+        ],
+        "B.1(iv)": [
+          "isEmbedding_sourceLowerDistribution_on_bounded"
+        ]
+      },
+      "remaining_appendix_b_obligations": [],
+      "result": "All original Appendix B clauses are already implemented. Source signatures, original endpoint norms, physical constraints, literal existential lower exponents and strict finite-p threshold were reviewed; the fresh private build and declaration audit include these theorems.",
+      "net_hypotheses": "Arbitrary-filter extensions retain a specified eventual endpoint norm bound; weak-star convergence alone is not claimed to imply eventual norm boundedness.",
+      "new_lean_declarations_needed": false,
+      "canonical_checkout_written": false,
+      "workspace_decision": "pending; continue using only the private checkout"
+    }
   },
   "compact_sets_and_closed_fourier_constraints": {
     "module": "NLS/Articles/KdVPseudomeasures/SourceWeakStarCompactSets.lean",

@@ -455,6 +455,19 @@
         "NLS/Articles/KdVPseudomeasures/SpectralWeightedGaps.lean"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-weighted-gap-map.json"
+    },
+    {
+      "label": "Actual analytic diagonal root and adapted physical coefficients",
+      "content": "A shared norm comparison bounds the difference of two actual fixed points using contraction only at those points. It proves continuity of a selected fixed-point family from a uniform local contraction and parameter continuity at the fixed base vector. The original endpoint cutoff implies norm(q)<=n/16. The ACTUAL physical diagonal is bounded by2norm(q) on the WHOLE corrected strip. Its fixed-point map preserves the complete disk centered pi^2*n^2 of radius2norm(q),strictly inside the strip. Banach contraction constructs an ACTUAL scalar diagonal root with no root supplied by the caller. endpointHillDiagonalRoot is the intrinsic actual root on the cutoff region. The ACTUAL equation,strict strip interior,quantitative original diagonal error and uniqueness on the ENTIRE corrected strip are proved. The total definition has a fallback outside the cutoff region;no root property is asserted there. Under the strict cutoff criterion,the actual root is norm continuous. Its spectral diagonal derivative has norm<=1/8,so the derivative of lambda-free_n-a_n is nonzero. The checked analytic implicit-function theorem then proves COMPLEX analyticity of the actual root in the full endpoint potential,without an assumed branch or continuity hypothesis. The article adapter retains original distributions and EXACT original endpoint norms. It proves the literal source equation,whole-strip uniqueness,mean-coefficient error,complex analyticity and real analyticity by scalar restriction. The same actual root is analytic on every stronger original source-weight space. One cutoff BEFORE the original norm-ball potentials gives analytic root families with error2*C_r*n^(r-1/2)*R^2 relative to free_n+q0,and mean-zero displacement<=R/8. With R=2m this is exactly the source Lemma2.17 form8*C_r*n^(r-1/2)*m^2 and displacement<=m/4. Whole-strip uniqueness is retained. One cutoff also works BEFORE BOTH weight and potential in every original weighted norm ball. sourceAdaptedCouplings defines the ACTUAL physical b_plus/minus evaluated at the proved intrinsic root. These coefficients are analytic in the EXACT original weighted norm,retain the full general-weight error bound,and have one uniform cutoff BEFORE BOTH weight and potential with shrinking error2*C_r*n^(r-1/2)*R^2. At the proved actual diagonal root,the ORIGINAL physical effective determinant is exactly minus the product of the two actual adapted coefficients. The auxiliary diagonal root is not asserted to be a spectral eigenvalue or a spectral midpoint. The full adapted Fourier map Omega and its analytic inverse are not yet constructed.",
+      "status": "Actual diagonal root,analyticity,source Lemma2.17 bounds/uniqueness and actual adapted-coupling estimates are proved. Real-type symmetry,Omega map/inverse,Dirichlet/inverse estimates and all MAIN theorems remain open.",
+      "modules": [
+        "NLS/FunctionalAnalysis/ContractingSelection.lean",
+        "NLS/KdV/PseudomeasureDiagonalRoot.lean",
+        "NLS/KdV/PseudomeasureDiagonalRootAnalytic.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralDiagonalRoot.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralAdaptedCoefficients.lean"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-diagonal-root-map.json"
     }
   ],
   "reuse_map": [

@@ -135,10 +135,10 @@
     "All Appendix B.1(i)-(iv) and compact-set topology consequences remain complete. All main theorems remain unproved."
   ],
   "remaining": [
-    "Prove physical original periodic/antiperiodic boundary-condition parity and any required low simplicity/interlacing;construct the physical Dirichlet comparison and complete source Theorem2.1(ii) for the actual Dirichlet midpoint differences. The FULL arbitrary-weight complex direct canonical-gap theorem2.1(i) is now proved.",
-    "Construct the actual adapted Fourier-coordinate map Omega^(m) of source Sections2.6-2.7 and its weighted analytic inverse;prove source Theorem2.2 endpoint inverse spectral regularity and original norm-bounded/weak-star-compact isospectral sets. General-weight actual coefficient errors and joint norm analyticity are now available.",
-    "Construct and verify the ORIGINAL Birkhoff maps with global bijectivity,real analyticity and stated weak-star homeomorphisms,and the actual H-minus-one smooth-approximation KdV flow with invariance and analytic/weak-star trajectory assertions.",
-    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses,quantifiers,normalizations and topology. All remain unproved."
+    "Construct the ACTUAL adapted Fourier-coordinate map Omega^(m) from the now-proved analytic diagonal root and actual adapted couplings. Prove Banach-valued analyticity,near-identity derivative estimates,image coverage,source constraint preservation and the weighted analytic inverse needed for Propositions2.18-2.19 and Theorem2.2.",
+    "Prove the physical conjugation/real-type symmetry that makes alpha_n(q) real and the adapted Fourier map real on real physical potentials. AnalyticAt over real scalars proved here is analyticity of a map to complex numbers;it does not by itself prove this real-valuedness.",
+    "Complete physical source periodic/antiperiodic boundary parity,required low simplicity/interlacing,and actual Dirichlet comparison source Theorem2.1(ii). Prove source Theorem2.2 endpoint inverse regularity and original norm-bounded/weak-star-compact isospectral sets. Full general-weight direct-gap Theorem2.1(i) remains complete.",
+    "Construct and verify the ORIGINAL Birkhoff maps and actual H-minus-one smooth-approximation KdV flow,then precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with all original hypotheses,normalizations,quantifiers and topology. All MAIN theorems remain unproved."
   ],
   "validation": {
     "fresh_build": true,
@@ -168,6 +168,19 @@
         "The actual sourceWeightedCanonicalGaps is the COMPLETE canonical lexicographic gap sequence,including its central prefix,for the SAME original weighted source distribution. It belongs to the genuine general-weight endpoint infinity space. Positive-index values are explicitly lambda_(2n)-lambda_(2n-1);the signed extension is even and zero at0.",
         "One cutoff is chosen BEFORE BOTH the source spectral weight and original potential on every exact original weighted norm ball. The explicit full bound is abs(w(N)*(8*sourceSpectralBound(r,R)+4*pi^2*N^2)+6*sqrt(6)*R),with N independent of w. The statement retains N in this bound. Literal local boundedness is proved in the original weighted norm topology.",
         "sourceTheorem2_1_i proves the general-weight direct gap regularity and norm-ball boundedness of source Theorem2.1(i),with the exact original period-two Fourier normalization explicitly used by the paper. The proof applies to the full period-two complex weighted distribution space,so in particular to the original complex mean-zero physically period-one source. Theorem2.1(ii),inverse Theorem2.2 and every main theorem remain open."
+      ]
+    },
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-diagonal-root-map.json",
+      "results": [
+        "A shared norm comparison bounds the difference of two actual fixed points using contraction only at those points. It proves continuity of a selected fixed-point family from a uniform local contraction and parameter continuity at the fixed base vector.",
+        "The original endpoint cutoff implies norm(q)<=n/16. The ACTUAL physical diagonal is bounded by2norm(q) on the WHOLE corrected strip. Its fixed-point map preserves the complete disk centered pi^2*n^2 of radius2norm(q),strictly inside the strip. Banach contraction constructs an ACTUAL scalar diagonal root with no root supplied by the caller.",
+        "endpointHillDiagonalRoot is the intrinsic actual root on the cutoff region. The ACTUAL equation,strict strip interior,quantitative original diagonal error and uniqueness on the ENTIRE corrected strip are proved. The total definition has a fallback outside the cutoff region;no root property is asserted there.",
+        "Under the strict cutoff criterion,the actual root is norm continuous. Its spectral diagonal derivative has norm<=1/8,so the derivative of lambda-free_n-a_n is nonzero. The checked analytic implicit-function theorem then proves COMPLEX analyticity of the actual root in the full endpoint potential,without an assumed branch or continuity hypothesis.",
+        "The article adapter retains original distributions and EXACT original endpoint norms. It proves the literal source equation,whole-strip uniqueness,mean-coefficient error,complex analyticity and real analyticity by scalar restriction. The same actual root is analytic on every stronger original source-weight space.",
+        "One cutoff BEFORE the original norm-ball potentials gives analytic root families with error2*C_r*n^(r-1/2)*R^2 relative to free_n+q0,and mean-zero displacement<=R/8. With R=2m this is exactly the source Lemma2.17 form8*C_r*n^(r-1/2)*m^2 and displacement<=m/4. Whole-strip uniqueness is retained. One cutoff also works BEFORE BOTH weight and potential in every original weighted norm ball.",
+        "sourceAdaptedCouplings defines the ACTUAL physical b_plus/minus evaluated at the proved intrinsic root. These coefficients are analytic in the EXACT original weighted norm,retain the full general-weight error bound,and have one uniform cutoff BEFORE BOTH weight and potential with shrinking error2*C_r*n^(r-1/2)*R^2.",
+        "At the proved actual diagonal root,the ORIGINAL physical effective determinant is exactly minus the product of the two actual adapted coefficients. The auxiliary diagonal root is not asserted to be a spectral eigenvalue or a spectral midpoint. The full adapted Fourier map Omega and its analytic inverse are not yet constructed."
       ]
     }
   ]

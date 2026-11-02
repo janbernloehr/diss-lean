@@ -31,6 +31,9 @@ view = root / '.lake/article-check/lib/lean'
 logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
+    'NLS.ComplexAnalysis.JointSpectralDerivative',
+    'NLS.ComplexAnalysis.AnalyticImplicitRoot',
+    'NLS.FunctionalAnalysis.ContractingSelection',
     'NLS.ComplexAnalysis.LexicographicOrder',
     'NLS.SequenceSpaces.OrderedOneSidedEnumeration',
     'NLS.ComplexAnalysis.CircleOpenCollar',
@@ -113,6 +116,8 @@ modules = [
     'NLS.KdV.PseudomeasureComplexRiesz',
     'NLS.KdV.PseudomeasureComplexCounting',
     'NLS.KdV.PseudomeasureSpectralLipschitz',
+    'NLS.KdV.PseudomeasureDiagonalRoot',
+    'NLS.KdV.PseudomeasureDiagonalRootAnalytic',
     'NLS.KdV.PseudomeasureRootSeparation',
     'NLS.KdV.PseudomeasureRealPairs',
     'NLS.KdV.PseudomeasureComplexPairs',
@@ -172,6 +177,8 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralComplexCanonical',
     'NLS.Articles.KdVPseudomeasures.SpectralComplexGaps',
     'NLS.Articles.KdVPseudomeasures.SourceWeightedSpectral',
+    'NLS.Articles.KdVPseudomeasures.SpectralDiagonalRoot',
+    'NLS.Articles.KdVPseudomeasures.SpectralAdaptedCoefficients',
     'NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
