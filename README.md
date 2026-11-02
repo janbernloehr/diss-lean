@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix F half-gap root count](coverage/APPENDIX_F.md)
-connects the exact quadratic estimate to Rouche and proves the literal
-differentiated-discriminant count on nearby actual source half-gap discs.
-Three positive theorems add no new refutation. The indexed critical-point
-bound retains its independent squared-gap proof; final ordered
-reconciliation and the [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: the [ordered Appendix F comparison](coverage/APPENDIX_F_ASSERTIONS.md)
+records 27 matched groups, three direct corrections and one contextual
+passage. Actual endpoint integrals, original discs, common neighborhoods
+and corrected source limits retain explicit proof qualifications.
+Appendix G is next; [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T01:59:30.210614+00:00",
-  "base_commit": "8fd4808cec41b48d557137ef8db711f32b9f7b4a",
+  "published_utc": "2026-11-02T02:00:58.335372+00:00",
+  "base_commit": "0766280d71852193457d5a4f3ccbc4cc2e6e24de",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 205,
-    "module_hash_checks": 4243,
-    "distinct_modules": 2135
+    "review_records": 206,
+    "module_hash_checks": 4326,
+    "distinct_modules": 2144
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "8fd4808cec41b48d557137ef8db711f32b9f7b4a",
-    "validated_state": "Fresh full check after one Appendix F half-gap root-count module; public examples unchanged.",
+    "base_commit": "0766280d71852193457d5a4f3ccbc4cc2e6e24de",
+    "validated_state": "Appendix F ordered comparison changes documentation only. The exact Lean snapshot retains the successful Appendix F half-gap root-count check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8638,
     "public_examples": 7729,
@@ -44,8 +44,9 @@
       "sha256": "e95d8d8f529c515e1f8bcf2a0d5db63966fa66e3cf7c88705532caf85cb17fa3"
     },
     "full_gate_log_sha256": "646ac3f67d9f2ab0fa588b7ea8a8536d739624bd04ee5bbb48334429e4b58438",
-    "qualification": "The exact Lean snapshot passes full build, public examples and transitive axiom audit. Ordered Appendix F and broader completeness qualifications remain open.",
-    "full_gate_log": "work/AppendixFHalfGapCountFullCheck.log"
+    "qualification": "Unchanged Lean sources and locks are verified against the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
+    "full_gate_log": "work/AppendixFHalfGapCountFullCheck.log",
+    "validation_reused_from_commit": "0766280d71852193457d5a4f3ccbc4cc2e6e24de"
   },
   "named_statements": [
     {
@@ -68134,6 +68135,1730 @@
         "log_sha256": "646ac3f67d9f2ab0fa588b7ea8a8536d739624bd04ee5bbb48334429e4b58438"
       },
       "source_record_sha256": "e31741e9665e9e3208586ee147c1847031687537dd2c02c7b72e5999e857a445"
+    },
+    "AppendixFOrderedSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "0766280d71852193457d5a4f3ccbc4cc2e6e24de",
+      "updated_utc": "2026-11-02T02:00:58.276369+00:00",
+      "source_lines": [
+        [
+          10764,
+          11080
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "F-001",
+          "source_lines": [
+            10766,
+            10772
+          ],
+          "requirement": "Literal differential and endpoint average",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The differential is the actual discriminant derivative divided by the canonical root, and F is the literal half-sum of the two improper endpoint integrals."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAbelianDifferential",
+            "NLS.ZakharovShabat.sourceAbelianEndpointAverage",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.tendsto_endpointPolygonalIntegral",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq",
+            "NLS.ZakharovShabat.sourceAbelianEndpointAverage_zero"
+          ],
+          "qualification": "Endpoint limits are proved along nontrivial approach filters. Free normalization is -i*nu+i*pi*n for every signed index."
+        },
+        {
+          "ordered_group": "F-002",
+          "source_lines": [
+            10774,
+            10775
+          ],
+          "requirement": "Attribution and extension of the cited proof",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The source attributes the approach to reference [59] and extends it beyond index zero and exponent two."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaF1",
+            "NLS.ZakharovShabat.sourceLemmaF2",
+            "NLS.ZakharovShabat.sourceCorollaryF3"
+          ],
+          "qualification": "The attribution is contextual; no fresh comparison with the cited external edition is claimed."
+        },
+        {
+          "ordered_group": "F-003",
+          "source_lines": [
+            10777,
+            10780
+          ],
+          "requirement": "F.1(i): local half-gap bound at complex collapsed gaps",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every complex collapsed gap in a constructed connected almost-real domain has a neighborhood with the critical-midpoint offset at most half the gap norm."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaF1",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_i",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.exists_collapsedGap_bound"
+          ],
+          "qualification": "The exact squared-gap identity supplies an alternative proof. No real-type assumption is imposed on the collapsed base point."
+        },
+        {
+          "ordered_group": "F-004",
+          "source_lines": [
+            10783,
+            10785
+          ],
+          "requirement": "F.1(ii): one real-source neighborhood for every signed index",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At every real source, one complex neighborhood controls the critical offset by the gap norm for all signed indices."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaF1",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_ii"
+          ],
+          "qualification": "The neighborhood precedes every index; the finite head and infinite tail are combined explicitly."
+        },
+        {
+          "ordered_group": "F-005",
+          "source_lines": [
+            10795,
+            10801
+          ],
+          "requirement": "Differentiated quadratic discriminant identity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The literal deleted periodic product gives the quadratic discriminant factorization and its differentiated identity at the indexed critical root."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalDiscriminant_sq_sub_four_eq_midpoint_mul",
+            "NLS.ZakharovShabat.discriminant_critical_midpoint_identity",
+            "NLS.ZakharovShabat.canonicalCriticalPoints_midpoint_offset_identity"
+          ],
+          "qualification": "The canonical factorization uses -4. Reversing the sign of the midpoint offset gives the displayed zero identity; it never divides by the gap."
+        },
+        {
+          "ordered_group": "F-006",
+          "source_lines": [
+            10803,
+            10813
+          ],
+          "requirement": "Deleted product, joint analyticity and exact zero set",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The literal deleted symmetric cutoffs converge locally uniformly in the spectral variable, retaining the omitted normalization. The product is entire and nonzero on the omitted-root domain, including the selected gap.",
+            "The literal deleted periodic-pair product and its spectral derivative are jointly analytic on all C times the unchanged source domain W.",
+            "Its zeros are precisely the actual endpoints indexed by m different from the deleted n."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.deletedSpectralPairPartialProduct",
+            "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_deletedSpectralPairProduct",
+            "NLS.ZakharovShabat.analyticOnNhd_canonicalDeletedPeriodicProduct",
+            "NLS.ZakharovShabat.canonicalDeletedPeriodicProduct_ne_zero_on_sourceOmittedDomain",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_joint_full",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_derivative_joint_full",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_eq_zero_iff"
+          ],
+          "qualification": "The proof combines the omitted-root square with the exact discriminant quotient, using the original common-domain isolation; it retains the deleted normalization and does not assume continuity of the endpoint labels. The six positive helpers are published."
+        },
+        {
+          "ordered_group": "F-007",
+          "source_lines": [
+            10814,
+            10817
+          ],
+          "requirement": "Uniform product and derivative bounds near a collapsed gap",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The independent squared-gap quotient argument gives the required collapsed-gap bound.",
+            "The closure of each original isolating disc avoids every other gap.",
+            "Compactness supplies one source neighborhood with a positive lower bound for the product and a positive upper bound for its spectral derivative on the whole closed disc.",
+            "At a collapsed complex source a further source restriction retains both bounds and gives norm(gap)*r <= s."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.exists_collapsedGap_bound",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.quotient_analytic",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedDisk_subset_omittedDomain",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_uniform_disk_bounds",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_collapsed_disk_bounds"
+          ],
+          "qualification": "The original spectral disc and common source domain are retained; only the local source neighborhood is restricted. Gap-norm continuity follows from analytic squared gaps, with no endpoint-label continuity assumption. The six positive helpers are published."
+        },
+        {
+          "ordered_group": "F-008",
+          "source_lines": [
+            10819,
+            10826
+          ],
+          "requirement": "Half-gap boundary estimate and root-count argument",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "On the half-gap circle, the scalar quadratic remainder is at most norm(gap)^2*r/2 and is strictly below s*norm(gap) under the stated smallness condition.",
+            "The differentiated quadratic factorization retains the exact normalization. The strict boundary estimate and Rouche theorem give one zero counted with analytic multiplicity.",
+            "Near a collapsed actual source, continuity places nearby half-gap discs inside the original isolating disc; the actual deleted-product bounds prove the literal differentiated-discriminant count."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_quadratic_boundary_estimate",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_i",
+            "NLS.ComplexAnalysis.appendixF_quadratic_derivative",
+            "NLS.ComplexAnalysis.appendixF_half_gap_zero_count",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.appendixF_local_half_gap_zero_count"
+          ],
+          "qualification": "The literal derivative of Delta squared minus four divided by four has one analytic zero in the half-gap disc. The indexed critical-point half-gap conclusion retains its independent squared-gap proof; the complete printed root-identification route is not claimed as its dependency."
+        },
+        {
+          "ordered_group": "F-009",
+          "source_lines": [
+            10827,
+            10836
+          ],
+          "requirement": "Distant quotient bound and uniform small-gap tail",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Use the proved finite-p quotient norm bound and one uniformly small gap tail to obtain any prescribed positive linear gap constant at all distant indices."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_uniform_sourceCriticalGapQuotient",
+            "NLS.ZakharovShabat.exists_local_sourceCriticalOffset_small_gap_tail"
+          ],
+          "qualification": "This directly replaces the displayed square-sum estimate in the proof of F.1(ii), whose base source is real. No refutation of the printed exponent is added, and no unproved arbitrary-complex-base norm bound is claimed."
+        },
+        {
+          "ordered_group": "F-010",
+          "source_lines": [
+            10836,
+            10844
+          ],
+          "requirement": "Finite-head intersection and real half-gap bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Real interlacing gives the half-gap estimate. Continuity at open head gaps and the collapsed-gap estimate combine over the finite head."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.norm_sourceCriticalPoint_sub_midpoint_le_halfGap_of_realType",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_ii",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.analyticAt_offset",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.continuousAt_gap_norm"
+          ],
+          "qualification": "Only finitely many head neighborhoods are intersected; the uniform tail is obtained separately."
+        },
+        {
+          "ordered_group": "F-011",
+          "source_lines": [
+            10847,
+            10856
+          ],
+          "requirement": "F.2: analytic literal endpoint average",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "On a constructed connected almost-real domain, every complex base point has one source neighborhood and isolating family for all signed indices and all boundary points. The literal endpoint average is analytic there."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaF2",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.sourceLemmaF2",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq"
+          ],
+          "qualification": "The proof identifies genuine endpoint integrals with the constructed joint primitive and includes collapsed gaps. It does not assume continuity of lexicographic endpoint labels."
+        },
+        {
+          "ordered_group": "F-012",
+          "source_lines": [
+            10858,
+            10861
+          ],
+          "requirement": "Analytic connecting integrals and change of boundary point",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual polygonal connecting integral is the difference of endpoint averages and is analytic for every pair of boundary points on the same source ball."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.polygonalIntegral_eq_endpointAverage_sub",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq_add_polygonalIntegral",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.boundaryPolygonalIntegral_analytic"
+          ],
+          "qualification": "Changing the boundary point retains the full coefficient of the connecting path."
+        },
+        {
+          "ordered_group": "F-013",
+          "source_lines": [
+            10862,
+            10866
+          ],
+          "requirement": "Analytic squared-gap zero set",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The squared gap is analytic on one open connected almost-real source domain, so its zero locus is the zero set of an analytic scalar function."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_global_source_analytic_midpoint_squaredGap",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.squaredGap_analytic"
+          ],
+          "qualification": "The current comparison uses the analytic scalar defining function; it does not introduce a separate analytic-subvariety data structure."
+        },
+        {
+          "ordered_group": "F-014",
+          "source_lines": [
+            10866,
+            10903
+          ],
+          "requirement": "Local analytic branches through complex noncollapsed endpoints",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At every distinct complex canonical pair, there are two local analytic branches through the prescribed base values, with the actual unordered pair and any positive tolerance."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.exists_local_analytic_pair_branches",
+            "NLS.ZakharovShabat.exists_appendixFOpenGapBranches"
+          ],
+          "qualification": "This proves the branch selection without continuous original labels. The source quarter-distance tolerance is obtained once its positive margin is supplied; geometric boundary selection is kept in the following group."
+        },
+        {
+          "ordered_group": "F-015",
+          "source_lines": [
+            10904,
+            10907
+          ],
+          "requirement": "Admissible endpoint spokes on one neighborhood",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Opposite real projections separate the straight spoke from the selected gap. Explicit quarter-gap and quarter-spoke tolerances keep the spoke in the original closed disc when both endpoints belong to it.",
+            "Both original boundary rays and analytic unordered branches are constructed on one source neighborhood with the printed quarter-distance margins. Both punctured endpoint spokes avoid all source gaps."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_opposite_segments_avoid",
+            "NLS.ComplexAnalysis.appendixF_perturbed_spoke_avoids_gap",
+            "NLS.ComplexAnalysis.appendixF_perturbed_spoke_in_disc",
+            "NLS.ComplexAnalysis.appendixF_exists_boundary_ray",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_common_open_gap_spokes"
+          ],
+          "qualification": "Both original boundary points, the positive distance margins and the common source neighborhood are constructed. Canonical endpoint labels need not be continuous."
+        },
+        {
+          "ordered_group": "F-016",
+          "source_lines": [
+            10908,
+            10915
+          ],
+          "requirement": "Four-path decomposition and individual endpoint integrals",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The four actual endpoint and connecting integrals add to twice the endpoint average, and each independently chosen endpoint-to-boundary integral is analytic."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_fourPath_split",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.selectedEndpointIntegral_analytic"
+          ],
+          "qualification": "Endpoint choices require no regularity. The four-path identity uses the genuine polygonal endpoint integrals and retains both full connecting coefficients."
+        },
+        {
+          "ordered_group": "F-017",
+          "source_lines": [
+            10916,
+            10930
+          ],
+          "requirement": "Literal deleted critical-root product and differential normalization",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The literal product omits precisely n and is identified with the analytic deleted quotient without dividing by a selected critical factor.",
+            "The actual critical displacement is an analytic map into the original ell-p space on the full retained domain, including at complex source points.",
+            "Substitution gives joint spectral/source analyticity on the full omitted moving-gap domain and on the entire selected original disc times the unchanged local source neighborhood.",
+            "The differential factorization retains exactly minus i times the selected critical-root ratio times the literal chi product.",
+            "Corollary 10.6 supplies a connected open almost-real domain with the required data for every finite p greater than one."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceActionChi",
+            "NLS.ZakharovShabat.sourceActionChi_eq_quotient",
+            "NLS.ZakharovShabat.sourceCriticalRootRatioExtension_eq_neg_I_chi",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_chi",
+            "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.criticalDisplacement_analytic",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_joint",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_fixed",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_disk",
+            "NLS.ZakharovShabat.sourceCorollary10_6"
+          ],
+          "qualification": "The assertion uses SourceCorollary10_6Data on its retained W, its original V subset W and the original isolating family. The full Banach-space critical displacement is substituted into the joint quotient; no real-base exterior restriction replaces the complex-domain claim. Common bounds and improper-path limits are supplied in the later groups."
+        },
+        {
+          "ordered_group": "F-018",
+          "source_lines": [
+            10932,
+            10941
+          ],
+          "requirement": "Affine quadratic factorization and square-root branch",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The affine endpoint parameterization has the exact quadratic factorization in the source.",
+            "The principal square root respects multiplication by any nonnegative real factor, including zero.",
+            "The actual normalized root has the literal endpoint-spoke formula, including the initial endpoint."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_endpoint_segment_factorization",
+            "NLS.ZakharovShabat.sourcePeriodicPair_factorization",
+            "NLS.ComplexAnalysis.appendixF_sqrt_nonnegative_scale",
+            "NLS.ZakharovShabat.appendixF_normalized_root_on_endpoint_spoke"
+          ],
+          "qualification": "Nonnegative real scaling fixes the principal branch, yielding the displayed identity for the actual normalized standard root, including the initial endpoint."
+        },
+        {
+          "ordered_group": "F-019",
+          "source_lines": [
+            10943,
+            10950
+          ],
+          "requirement": "Positive base-radicand lower bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For positive sigma and t in [0,1], the displayed scalar radicand is at least sigma/(1/2+sigma), which is strictly positive.",
+            "For nonzero complex gap and positive real outward displacement, the base radicand is exactly sigma*(1+t*sigma)/(1/2+t*sigma)^2."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_endpoint_radicand_lower",
+            "NLS.ZakharovShabat.appendixF_endpoint_base_radicand"
+          ],
+          "qualification": "The scalar inequality retains the printed constant. The exact complex-to-real identity supplies its use in the following whole-neighborhood branch argument."
+        },
+        {
+          "ordered_group": "F-020",
+          "source_lines": [
+            10953,
+            10965
+          ],
+          "requirement": "Uniform radicand control and analytic singular endpoint integral",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Individual endpoint-to-boundary integrals are analytic by their identification with the joint primitive. The positive scalar radicand lower bound is separately proved.",
+            "Positive helpers give explicit uniform nearby-source radicand bounds, a jointly continuous and source-analytic nonzero principal-root factor, and the exact inverse-square-root substitution.",
+            "The literal normalized-root endpoint integral is interval integrable and analytic under explicit branch and path-regularity hypotheses.",
+            "The actual source supplies the standard root, chi and critical-point analyticity. The inverse-square-root parameter integral is identified with the literal improper endpoint integral, retaining its full -i displacement coefficient.",
+            "Both actual endpoint integrals are analytic on a single source neighborhood, with branches, path admissibility and integrability constructed from explicit source data."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_endpoint_radicand_lower",
+            "NLS.ComplexAnalysis.appendixF_inverse_sqrt_integral_analytic",
+            "NLS.ComplexAnalysis.appendixF_inverse_sqrt_intervalIntegrable",
+            "NLS.ComplexAnalysis.appendixF_inverse_sqrt_substitution",
+            "NLS.ComplexAnalysis.appendixF_local_uniform_lower_bound",
+            "NLS.ComplexAnalysis.appendixF_sqrt_norm_lower",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.selectedEndpointIntegral_analytic",
+            "NLS.ZakharovShabat.appendixF_endpoint_integral_analytic",
+            "NLS.ZakharovShabat.appendixF_endpoint_integrand_weight",
+            "NLS.ZakharovShabat.appendixF_endpoint_uniform_branches",
+            "NLS.ZakharovShabat.appendixF_endpoint_uniform_radicand",
+            "NLS.ZakharovShabat.appendixF_source_root_eq_of_endpoint_pair",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_endpoint_parameter_identity",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_source_endpoint_integral_analytic",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_open_endpoint_integrals_analytic"
+          ],
+          "qualification": "The final source-assembly theorem retains explicit Section 10, isolating-family and local Cauchy-family data. Branch selection, admissibility, integrability and regular-factor analyticity are derived. The identification with the literal improper integral uses the independent primitive and its genuine endpoint limit."
+        },
+        {
+          "ordered_group": "F-021",
+          "source_lines": [
+            10966,
+            10969
+          ],
+          "requirement": "Collapsed-gap formula and weak analyticity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At a collapsed gap the filled primitive derivative is -i times the literal chi product throughout the whole omitted-gap domain.",
+            "Every admissible C1 path in the original closed isolating disc computes the actual endpoint average, including paths through the collapsed point and the exact segment displacement coefficient.",
+            "The regular chi integral is Banach analytic on the original source neighborhood. A constructed source-chart cover identifies its collapsed restriction with the actual endpoint average.",
+            "The chart construction gives a connected neighborhood of the real locus inside the Section 10 domain. One local source neighborhood and its original isolating family support the collapsed analytic extensions for every index and boundary point."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_global_sourceCriticalRootRatio_analytic_of_zeroGap",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.fullPrimitive_collapsed_endpoint_value",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_collapsed_differential",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_primitive_hasDerivAt",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_endpoint_path",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_path",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_segment",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_regular_chi_integral_analytic",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_analytic_extension",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_derivative_omitted",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_original_path",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_original_segment",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_original_chi_integral_analytic",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_original_collapsed_analytic_extension",
+            "NLS.ZakharovShabat.exists_appendixF_source_chart_cover",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_local_collapsed_analytic_extensions",
+            "NLS.ZakharovShabat.exists_appendixF_collapsed_analytic_extensions"
+          ],
+          "qualification": "Only the local source neighborhood is restricted. The original isolating discs are retained, and the auxiliary Cauchy chart need not contain those spectral discs. The final existence theorem constructs both the Section 10 data and chart cover."
+        },
+        {
+          "ordered_group": "F-022",
+          "source_lines": [
+            10970,
+            10972
+          ],
+          "requirement": "Continuity reduction at the collapsed locus",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The corrected midpoint identity, derived integral convergence and vanishing short piece prove convergence of actual improper endpoint averages for open-gap source sequences at a common boundary point.",
+            "Analyticity of the actual connecting integral transfers the limit to any fixed original boundary point.",
+            "A subsequence argument handles arbitrary mixtures of collapsed and open gaps; the sequence criterion proves continuity at the collapsed source."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_analytic",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_exists_endpointAverage_limit",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_mixed_endpointAverage_limit",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_endpointAverage_continuousAt_collapsed"
+          ],
+          "qualification": "The source-specific sequence argument is proved. Fixed-boundary transport uses the actual connecting integral identified directly with a difference of independent joint-primitive values; it does not assume endpoint-average continuity."
+        },
+        {
+          "ordered_group": "F-023",
+          "source_lines": [
+            10982,
+            10987
+          ],
+          "requirement": "Eventual half-gap estimate along collapsing sources",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At each complex collapsed gap, any sequence converging to the base point is eventually in a neighborhood carrying the half-gap estimate.",
+            "Published source proofs derive gap convergence directly from squared-gap analyticity and the local half-gap bound from the unchanged Lemma 10.10 data, without continuous endpoint labels."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_i",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.exists_collapsedGap_bound",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_gap_tendsto_zero",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_eventually_half_gap"
+          ],
+          "qualification": "The published open-neighborhood statement is stronger than the displayed eventual estimate and does not divide by the vanishing gap."
+        },
+        {
+          "ordered_group": "F-024",
+          "source_lines": [
+            10990,
+            11001
+          ],
+          "requirement": "Uniform short endpoint-piece bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The pi*M estimate retains its explicit half-gap and regular-factor hypotheses. Independently, one local positive constant for the actual Cauchy boundary profile is derived at every complex point of the source ball. It controls all angles and both sides before those choices, and gives vanishing along collapsing gap norms."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_norm_le_gap",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_tendsto_zero",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_exists_local_uniform_gapBoundary_bound",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_tendsto_zero_locally",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.fullPrimitive_tendsto_gapBoundary"
+          ],
+          "qualification": "Uniformity is proved by compactness of the fixed inner disc and joint analyticity of the Cauchy quotient. This is for a fixed signed gap; it does not claim one constant over all indices."
+        },
+        {
+          "ordered_group": "F-025",
+          "source_lines": [
+            11002,
+            11005
+          ],
+          "requirement": "Corrected full common-path coefficient in F.3",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The literal endpoint average changes by the full connecting path integral. The common-path coefficient is 1/i=-i.",
+            "The exact midpoint identity expresses the actual improper endpoint average as the full -i displacement integral plus its one-sided boundary value; that remainder tends to zero along collapsing source sequences."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq_add_polygonalIntegral",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_fourPath_split",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_product",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_integral_identity",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_remainder_tendsto_zero"
+          ],
+          "qualification": "The coefficient is corrected directly. Historical refutations are preserved without extension."
+        },
+        {
+          "ordered_group": "F-026",
+          "source_lines": [
+            11008,
+            11020
+          ],
+          "requirement": "Common terminal point and rescaled path formula",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The selected cut closed disc lies inside the complement of every actual gap.",
+            "For an arbitrary countable family of actual potentials in the original local source neighborhood, one original boundary point and all punctured midpoint spokes avoid every gap.",
+            "The actual normalized root has the rescaled principal-root expression at positive midpoint-path parameters.",
+            "For a countable family with open selected gaps, one original boundary point lies on a chosen side of each gap and every positive spoke is admissible.",
+            "The improper endpoint identity gives the exact actual normalized-root midpoint integral and its short-piece remainder.",
+            "The exact rescaling identifies the actual interval integral with the literal principal-root expression and gives the corrected improper endpoint identity with its short-piece term."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedCutDisk_subset_rootDomain",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.exists_common_source_midpoint_spokes",
+            "NLS.ZakharovShabat.appendixF_normalized_root_on_spoke",
+            "NLS.ZakharovShabat.appendixF_midpoint_spoke_mem_side",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.appendixF_exists_common_sided_spokes",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_integral_identity",
+            "NLS.ZakharovShabat.appendixF_spoke_quotient_eq_rescaled",
+            "NLS.ZakharovShabat.appendixF_spoke_integral_eq_rescaled",
+            "NLS.ZakharovShabat.appendixF_source_spoke_integral_eq_rescaled",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_rescaled_endpoint_identity"
+          ],
+          "qualification": "Common original boundary geometry, pointwise principal-root rescaling and the exact integral identities are proved. The individual endpoint identity retains explicit admissibility, side and integrability hypotheses; the assembled sequence theorem derives them eventually."
+        },
+        {
+          "ordered_group": "F-027",
+          "source_lines": [
+            11023,
+            11025
+          ],
+          "requirement": "Pointwise convergence of normalized root and numerator",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At every positive parameter the actual source standard root converges to the linear collapsed root.",
+            "The literal rescaled principal square root and numerator both converge to t, with the critical offset and gap limits derived from the common source data.",
+            "Joint analyticity of chi_n on the original closed disc supplies the actual full integrand limit with coefficient -i times the moving displacement."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_source_root_spoke_tendsto",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_rescaled_terms_tendsto",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_integrand_tendsto"
+          ],
+          "qualification": "The published pointwise statements are restricted to t>0, sufficient for the almost-everywhere argument. The initial endpoint has measure zero. Source-family domination and integral substitution are tracked separately."
+        },
+        {
+          "ordered_group": "F-028",
+          "source_lines": [
+            11027,
+            11040
+          ],
+          "requirement": "Valid replacement for the moving square-root majorant",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The positive weight sqrt(t+norm(epsilon))/sqrt(abs(t-norm(epsilon))) bounds any complex square-root quotient off its one moving singular point when the numerator offset has norm at most norm(epsilon)."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_square_root_norm_lower",
+            "NLS.ComplexAnalysis.appendixF_quotient_le_positive_majorant",
+            "NLS.ComplexAnalysis.appendixF_positive_majorant_le"
+          ],
+          "qualification": "The absolute lower distance corrects the weight on both sides of the moving point. No new proof that the printed version is wrong is added; the null singleton is excluded explicitly."
+        },
+        {
+          "ordered_group": "F-029",
+          "source_lines": [
+            11043,
+            11053
+          ],
+          "requirement": "Integrability and passage to the limit",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For 0 <= e <= 1 the corrected positive majorant is integrable on [0,1], and its L1 distance from one is at most 4*sqrt(2e). Its L1 distance therefore tends to zero when e tends to zero and this range holds eventually.",
+            "The moving-majorant theorem and normalized-root specialization give integral convergence under common regular-factor bounds and measurability; eventual normalized-gap smallness is derived.",
+            "The actual source supplies a common chi bound and measurability, one original boundary point and convergence of the full sequence of normalized-root integrals.",
+            "The assembled midpoint identity derives eventual integrability and the vanishing short piece, proving convergence of actual improper endpoint averages at the common boundary point.",
+            "The actual connecting polygonal integral is analytic on the original source neighborhood inside a Cauchy chart. Its limit transfers the argument to every fixed original boundary point."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_inverse_sqrt_distance_interval",
+            "NLS.ComplexAnalysis.appendixF_positive_majorant_integrable",
+            "NLS.ComplexAnalysis.appendixF_positive_majorant_L1_bound",
+            "NLS.ComplexAnalysis.appendixF_positive_majorant_tendsto_L1",
+            "NLS.ComplexAnalysis.appendixF_tendsto_integral_moving_majorant",
+            "NLS.ComplexAnalysis.appendixF_tendsto_intervalIntegral_positive_majorant",
+            "NLS.ZakharovShabat.appendixF_collapsing_spoke_integral_tendsto_of_gap_zero",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_chi_uniform_closedDisk_bound",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_spoke_integrand_measurable",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_spoke_integral_tendsto_locally",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_exists_common_convergent_spokes",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_source_spoke_intervalIntegrable",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_spoke_eventually_intervalIntegrable",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_integral_identity",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_remainder_tendsto_zero",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_exists_endpointAverage_limit",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.appendixF_frontier_subset_rootDomain",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_original_boundary_integral_analytic",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_fixed_endpointAverage_limit"
+          ],
+          "qualification": "The majorant range is an eventual condition derived from gap convergence and nonzero limiting displacement. The connecting-integral proof uses the independent joint primitive directly without assuming endpoint-average continuity."
+        },
+        {
+          "ordered_group": "F-030",
+          "source_lines": [
+            11056,
+            11057
+          ],
+          "requirement": "Continuity and final analytic conclusion",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual endpoint average is analytic at every allowed complex source on the constructed common neighborhood."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaF2",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_analytic"
+          ],
+          "qualification": "The analytic conclusion follows from the independent joint primitive. Continuity is also supplied by the explicit corrected source-sequence argument. The cited external extension theorem [23, A.6] is not separately formalized as this proof route."
+        },
+        {
+          "ordered_group": "F-031",
+          "source_lines": [
+            11060,
+            11071
+          ],
+          "requirement": "F.3: analytic integrals between arbitrary spectral endpoints",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual double improper integral between either endpoint of gap n and either endpoint of gap m equals i*pi*(n-m) and is analytic, including collapsed gaps and arbitrary pointwise endpoint choices."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCorollaryF3",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.tendsto_endpointIntegral",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointToEndpointIntegral_eq",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointToEndpointCurveIntegral_eq",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointToEndpointIntegral_analytic"
+          ],
+          "qualification": "Endpoint approaches are nontrivial and their limits are proved. Every integrable admissible C1 endpoint path agrees with the value."
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "ordered_group": "F-001",
+          "source_lines": [
+            10766,
+            10772
+          ],
+          "requirement": "Literal differential and endpoint average",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The differential is the actual discriminant derivative divided by the canonical root, and F is the literal half-sum of the two improper endpoint integrals."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAbelianDifferential",
+            "NLS.ZakharovShabat.sourceAbelianEndpointAverage",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.tendsto_endpointPolygonalIntegral",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq",
+            "NLS.ZakharovShabat.sourceAbelianEndpointAverage_zero"
+          ],
+          "qualification": "Endpoint limits are proved along nontrivial approach filters. Free normalization is -i*nu+i*pi*n for every signed index."
+        },
+        {
+          "ordered_group": "F-002",
+          "source_lines": [
+            10774,
+            10775
+          ],
+          "requirement": "Attribution and extension of the cited proof",
+          "ordered_status": "contextual",
+          "reviewed_claims": [
+            "The source attributes the approach to reference [59] and extends it beyond index zero and exponent two."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaF1",
+            "NLS.ZakharovShabat.sourceLemmaF2",
+            "NLS.ZakharovShabat.sourceCorollaryF3"
+          ],
+          "qualification": "The attribution is contextual; no fresh comparison with the cited external edition is claimed."
+        },
+        {
+          "ordered_group": "F-003",
+          "source_lines": [
+            10777,
+            10780
+          ],
+          "requirement": "F.1(i): local half-gap bound at complex collapsed gaps",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Every complex collapsed gap in a constructed connected almost-real domain has a neighborhood with the critical-midpoint offset at most half the gap norm."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaF1",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_i",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.exists_collapsedGap_bound"
+          ],
+          "qualification": "The exact squared-gap identity supplies an alternative proof. No real-type assumption is imposed on the collapsed base point."
+        },
+        {
+          "ordered_group": "F-004",
+          "source_lines": [
+            10783,
+            10785
+          ],
+          "requirement": "F.1(ii): one real-source neighborhood for every signed index",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At every real source, one complex neighborhood controls the critical offset by the gap norm for all signed indices."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaF1",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_ii"
+          ],
+          "qualification": "The neighborhood precedes every index; the finite head and infinite tail are combined explicitly."
+        },
+        {
+          "ordered_group": "F-005",
+          "source_lines": [
+            10795,
+            10801
+          ],
+          "requirement": "Differentiated quadratic discriminant identity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The literal deleted periodic product gives the quadratic discriminant factorization and its differentiated identity at the indexed critical root."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.canonicalDiscriminant_sq_sub_four_eq_midpoint_mul",
+            "NLS.ZakharovShabat.discriminant_critical_midpoint_identity",
+            "NLS.ZakharovShabat.canonicalCriticalPoints_midpoint_offset_identity"
+          ],
+          "qualification": "The canonical factorization uses -4. Reversing the sign of the midpoint offset gives the displayed zero identity; it never divides by the gap."
+        },
+        {
+          "ordered_group": "F-006",
+          "source_lines": [
+            10803,
+            10813
+          ],
+          "requirement": "Deleted product, joint analyticity and exact zero set",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The literal deleted symmetric cutoffs converge locally uniformly in the spectral variable, retaining the omitted normalization. The product is entire and nonzero on the omitted-root domain, including the selected gap.",
+            "The literal deleted periodic-pair product and its spectral derivative are jointly analytic on all C times the unchanged source domain W.",
+            "Its zeros are precisely the actual endpoints indexed by m different from the deleted n."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.deletedSpectralPairPartialProduct",
+            "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_deletedSpectralPairProduct",
+            "NLS.ZakharovShabat.analyticOnNhd_canonicalDeletedPeriodicProduct",
+            "NLS.ZakharovShabat.canonicalDeletedPeriodicProduct_ne_zero_on_sourceOmittedDomain",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_joint_full",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_derivative_joint_full",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_eq_zero_iff"
+          ],
+          "qualification": "The proof combines the omitted-root square with the exact discriminant quotient, using the original common-domain isolation; it retains the deleted normalization and does not assume continuity of the endpoint labels. The six positive helpers are published."
+        },
+        {
+          "ordered_group": "F-007",
+          "source_lines": [
+            10814,
+            10817
+          ],
+          "requirement": "Uniform product and derivative bounds near a collapsed gap",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The independent squared-gap quotient argument gives the required collapsed-gap bound.",
+            "The closure of each original isolating disc avoids every other gap.",
+            "Compactness supplies one source neighborhood with a positive lower bound for the product and a positive upper bound for its spectral derivative on the whole closed disc.",
+            "At a collapsed complex source a further source restriction retains both bounds and gives norm(gap)*r <= s."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.exists_collapsedGap_bound",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.quotient_analytic",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedDisk_subset_omittedDomain",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_uniform_disk_bounds",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_collapsed_disk_bounds"
+          ],
+          "qualification": "The original spectral disc and common source domain are retained; only the local source neighborhood is restricted. Gap-norm continuity follows from analytic squared gaps, with no endpoint-label continuity assumption. The six positive helpers are published."
+        },
+        {
+          "ordered_group": "F-008",
+          "source_lines": [
+            10819,
+            10826
+          ],
+          "requirement": "Half-gap boundary estimate and root-count argument",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "On the half-gap circle, the scalar quadratic remainder is at most norm(gap)^2*r/2 and is strictly below s*norm(gap) under the stated smallness condition.",
+            "The differentiated quadratic factorization retains the exact normalization. The strict boundary estimate and Rouche theorem give one zero counted with analytic multiplicity.",
+            "Near a collapsed actual source, continuity places nearby half-gap discs inside the original isolating disc; the actual deleted-product bounds prove the literal differentiated-discriminant count."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_quadratic_boundary_estimate",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_i",
+            "NLS.ComplexAnalysis.appendixF_quadratic_derivative",
+            "NLS.ComplexAnalysis.appendixF_half_gap_zero_count",
+            "NLS.ZakharovShabat.SourceLemma10_5Data.appendixF_local_half_gap_zero_count"
+          ],
+          "qualification": "The literal derivative of Delta squared minus four divided by four has one analytic zero in the half-gap disc. The indexed critical-point half-gap conclusion retains its independent squared-gap proof; the complete printed root-identification route is not claimed as its dependency."
+        },
+        {
+          "ordered_group": "F-009",
+          "source_lines": [
+            10827,
+            10836
+          ],
+          "requirement": "Distant quotient bound and uniform small-gap tail",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "Use the proved finite-p quotient norm bound and one uniformly small gap tail to obtain any prescribed positive linear gap constant at all distant indices."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_local_uniform_sourceCriticalGapQuotient",
+            "NLS.ZakharovShabat.exists_local_sourceCriticalOffset_small_gap_tail"
+          ],
+          "qualification": "This directly replaces the displayed square-sum estimate in the proof of F.1(ii), whose base source is real. No refutation of the printed exponent is added, and no unproved arbitrary-complex-base norm bound is claimed."
+        },
+        {
+          "ordered_group": "F-010",
+          "source_lines": [
+            10836,
+            10844
+          ],
+          "requirement": "Finite-head intersection and real half-gap bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Real interlacing gives the half-gap estimate. Continuity at open head gaps and the collapsed-gap estimate combine over the finite head."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.norm_sourceCriticalPoint_sub_midpoint_le_halfGap_of_realType",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_ii",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.analyticAt_offset",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.continuousAt_gap_norm"
+          ],
+          "qualification": "Only finitely many head neighborhoods are intersected; the uniform tail is obtained separately."
+        },
+        {
+          "ordered_group": "F-011",
+          "source_lines": [
+            10847,
+            10856
+          ],
+          "requirement": "F.2: analytic literal endpoint average",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "On a constructed connected almost-real domain, every complex base point has one source neighborhood and isolating family for all signed indices and all boundary points. The literal endpoint average is analytic there."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaF2",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.sourceLemmaF2",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq"
+          ],
+          "qualification": "The proof identifies genuine endpoint integrals with the constructed joint primitive and includes collapsed gaps. It does not assume continuity of lexicographic endpoint labels."
+        },
+        {
+          "ordered_group": "F-012",
+          "source_lines": [
+            10858,
+            10861
+          ],
+          "requirement": "Analytic connecting integrals and change of boundary point",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual polygonal connecting integral is the difference of endpoint averages and is analytic for every pair of boundary points on the same source ball."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.polygonalIntegral_eq_endpointAverage_sub",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq_add_polygonalIntegral",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.boundaryPolygonalIntegral_analytic"
+          ],
+          "qualification": "Changing the boundary point retains the full coefficient of the connecting path."
+        },
+        {
+          "ordered_group": "F-013",
+          "source_lines": [
+            10862,
+            10866
+          ],
+          "requirement": "Analytic squared-gap zero set",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The squared gap is analytic on one open connected almost-real source domain, so its zero locus is the zero set of an analytic scalar function."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_global_source_analytic_midpoint_squaredGap",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.squaredGap_analytic"
+          ],
+          "qualification": "The current comparison uses the analytic scalar defining function; it does not introduce a separate analytic-subvariety data structure."
+        },
+        {
+          "ordered_group": "F-014",
+          "source_lines": [
+            10866,
+            10903
+          ],
+          "requirement": "Local analytic branches through complex noncollapsed endpoints",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At every distinct complex canonical pair, there are two local analytic branches through the prescribed base values, with the actual unordered pair and any positive tolerance."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.exists_local_analytic_pair_branches",
+            "NLS.ZakharovShabat.exists_appendixFOpenGapBranches"
+          ],
+          "qualification": "This proves the branch selection without continuous original labels. The source quarter-distance tolerance is obtained once its positive margin is supplied; geometric boundary selection is kept in the following group."
+        },
+        {
+          "ordered_group": "F-015",
+          "source_lines": [
+            10904,
+            10907
+          ],
+          "requirement": "Admissible endpoint spokes on one neighborhood",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Opposite real projections separate the straight spoke from the selected gap. Explicit quarter-gap and quarter-spoke tolerances keep the spoke in the original closed disc when both endpoints belong to it.",
+            "Both original boundary rays and analytic unordered branches are constructed on one source neighborhood with the printed quarter-distance margins. Both punctured endpoint spokes avoid all source gaps."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_opposite_segments_avoid",
+            "NLS.ComplexAnalysis.appendixF_perturbed_spoke_avoids_gap",
+            "NLS.ComplexAnalysis.appendixF_perturbed_spoke_in_disc",
+            "NLS.ComplexAnalysis.appendixF_exists_boundary_ray",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_common_open_gap_spokes"
+          ],
+          "qualification": "Both original boundary points, the positive distance margins and the common source neighborhood are constructed. Canonical endpoint labels need not be continuous."
+        },
+        {
+          "ordered_group": "F-016",
+          "source_lines": [
+            10908,
+            10915
+          ],
+          "requirement": "Four-path decomposition and individual endpoint integrals",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The four actual endpoint and connecting integrals add to twice the endpoint average, and each independently chosen endpoint-to-boundary integral is analytic."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_fourPath_split",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.selectedEndpointIntegral_analytic"
+          ],
+          "qualification": "Endpoint choices require no regularity. The four-path identity uses the genuine polygonal endpoint integrals and retains both full connecting coefficients."
+        },
+        {
+          "ordered_group": "F-017",
+          "source_lines": [
+            10916,
+            10930
+          ],
+          "requirement": "Literal deleted critical-root product and differential normalization",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The literal product omits precisely n and is identified with the analytic deleted quotient without dividing by a selected critical factor.",
+            "The actual critical displacement is an analytic map into the original ell-p space on the full retained domain, including at complex source points.",
+            "Substitution gives joint spectral/source analyticity on the full omitted moving-gap domain and on the entire selected original disc times the unchanged local source neighborhood.",
+            "The differential factorization retains exactly minus i times the selected critical-root ratio times the literal chi product.",
+            "Corollary 10.6 supplies a connected open almost-real domain with the required data for every finite p greater than one."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceActionChi",
+            "NLS.ZakharovShabat.sourceActionChi_eq_quotient",
+            "NLS.ZakharovShabat.sourceCriticalRootRatioExtension_eq_neg_I_chi",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_chi",
+            "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.criticalDisplacement_analytic",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_joint",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_fixed",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_disk",
+            "NLS.ZakharovShabat.sourceCorollary10_6"
+          ],
+          "qualification": "The assertion uses SourceCorollary10_6Data on its retained W, its original V subset W and the original isolating family. The full Banach-space critical displacement is substituted into the joint quotient; no real-base exterior restriction replaces the complex-domain claim. Common bounds and improper-path limits are supplied in the later groups."
+        },
+        {
+          "ordered_group": "F-018",
+          "source_lines": [
+            10932,
+            10941
+          ],
+          "requirement": "Affine quadratic factorization and square-root branch",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The affine endpoint parameterization has the exact quadratic factorization in the source.",
+            "The principal square root respects multiplication by any nonnegative real factor, including zero.",
+            "The actual normalized root has the literal endpoint-spoke formula, including the initial endpoint."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_endpoint_segment_factorization",
+            "NLS.ZakharovShabat.sourcePeriodicPair_factorization",
+            "NLS.ComplexAnalysis.appendixF_sqrt_nonnegative_scale",
+            "NLS.ZakharovShabat.appendixF_normalized_root_on_endpoint_spoke"
+          ],
+          "qualification": "Nonnegative real scaling fixes the principal branch, yielding the displayed identity for the actual normalized standard root, including the initial endpoint."
+        },
+        {
+          "ordered_group": "F-019",
+          "source_lines": [
+            10943,
+            10950
+          ],
+          "requirement": "Positive base-radicand lower bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For positive sigma and t in [0,1], the displayed scalar radicand is at least sigma/(1/2+sigma), which is strictly positive.",
+            "For nonzero complex gap and positive real outward displacement, the base radicand is exactly sigma*(1+t*sigma)/(1/2+t*sigma)^2."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_endpoint_radicand_lower",
+            "NLS.ZakharovShabat.appendixF_endpoint_base_radicand"
+          ],
+          "qualification": "The scalar inequality retains the printed constant. The exact complex-to-real identity supplies its use in the following whole-neighborhood branch argument."
+        },
+        {
+          "ordered_group": "F-020",
+          "source_lines": [
+            10953,
+            10965
+          ],
+          "requirement": "Uniform radicand control and analytic singular endpoint integral",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "Individual endpoint-to-boundary integrals are analytic by their identification with the joint primitive. The positive scalar radicand lower bound is separately proved.",
+            "Positive helpers give explicit uniform nearby-source radicand bounds, a jointly continuous and source-analytic nonzero principal-root factor, and the exact inverse-square-root substitution.",
+            "The literal normalized-root endpoint integral is interval integrable and analytic under explicit branch and path-regularity hypotheses.",
+            "The actual source supplies the standard root, chi and critical-point analyticity. The inverse-square-root parameter integral is identified with the literal improper endpoint integral, retaining its full -i displacement coefficient.",
+            "Both actual endpoint integrals are analytic on a single source neighborhood, with branches, path admissibility and integrability constructed from explicit source data."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_endpoint_radicand_lower",
+            "NLS.ComplexAnalysis.appendixF_inverse_sqrt_integral_analytic",
+            "NLS.ComplexAnalysis.appendixF_inverse_sqrt_intervalIntegrable",
+            "NLS.ComplexAnalysis.appendixF_inverse_sqrt_substitution",
+            "NLS.ComplexAnalysis.appendixF_local_uniform_lower_bound",
+            "NLS.ComplexAnalysis.appendixF_sqrt_norm_lower",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.selectedEndpointIntegral_analytic",
+            "NLS.ZakharovShabat.appendixF_endpoint_integral_analytic",
+            "NLS.ZakharovShabat.appendixF_endpoint_integrand_weight",
+            "NLS.ZakharovShabat.appendixF_endpoint_uniform_branches",
+            "NLS.ZakharovShabat.appendixF_endpoint_uniform_radicand",
+            "NLS.ZakharovShabat.appendixF_source_root_eq_of_endpoint_pair",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_endpoint_parameter_identity",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_source_endpoint_integral_analytic",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_open_endpoint_integrals_analytic"
+          ],
+          "qualification": "The final source-assembly theorem retains explicit Section 10, isolating-family and local Cauchy-family data. Branch selection, admissibility, integrability and regular-factor analyticity are derived. The identification with the literal improper integral uses the independent primitive and its genuine endpoint limit."
+        },
+        {
+          "ordered_group": "F-021",
+          "source_lines": [
+            10966,
+            10969
+          ],
+          "requirement": "Collapsed-gap formula and weak analyticity",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At a collapsed gap the filled primitive derivative is -i times the literal chi product throughout the whole omitted-gap domain.",
+            "Every admissible C1 path in the original closed isolating disc computes the actual endpoint average, including paths through the collapsed point and the exact segment displacement coefficient.",
+            "The regular chi integral is Banach analytic on the original source neighborhood. A constructed source-chart cover identifies its collapsed restriction with the actual endpoint average.",
+            "The chart construction gives a connected neighborhood of the real locus inside the Section 10 domain. One local source neighborhood and its original isolating family support the collapsed analytic extensions for every index and boundary point."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.exists_global_sourceCriticalRootRatio_analytic_of_zeroGap",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.fullPrimitive_collapsed_endpoint_value",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_collapsed_differential",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_primitive_hasDerivAt",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_endpoint_path",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_path",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_segment",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_regular_chi_integral_analytic",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_analytic_extension",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_derivative_omitted",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_original_path",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_original_segment",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_original_chi_integral_analytic",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_original_collapsed_analytic_extension",
+            "NLS.ZakharovShabat.exists_appendixF_source_chart_cover",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_local_collapsed_analytic_extensions",
+            "NLS.ZakharovShabat.exists_appendixF_collapsed_analytic_extensions"
+          ],
+          "qualification": "Only the local source neighborhood is restricted. The original isolating discs are retained, and the auxiliary Cauchy chart need not contain those spectral discs. The final existence theorem constructs both the Section 10 data and chart cover."
+        },
+        {
+          "ordered_group": "F-022",
+          "source_lines": [
+            10970,
+            10972
+          ],
+          "requirement": "Continuity reduction at the collapsed locus",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The corrected midpoint identity, derived integral convergence and vanishing short piece prove convergence of actual improper endpoint averages for open-gap source sequences at a common boundary point.",
+            "Analyticity of the actual connecting integral transfers the limit to any fixed original boundary point.",
+            "A subsequence argument handles arbitrary mixtures of collapsed and open gaps; the sequence criterion proves continuity at the collapsed source."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_analytic",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_exists_endpointAverage_limit",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_mixed_endpointAverage_limit",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_endpointAverage_continuousAt_collapsed"
+          ],
+          "qualification": "The source-specific sequence argument is proved. Fixed-boundary transport uses the actual connecting integral identified directly with a difference of independent joint-primitive values; it does not assume endpoint-average continuity."
+        },
+        {
+          "ordered_group": "F-023",
+          "source_lines": [
+            10982,
+            10987
+          ],
+          "requirement": "Eventual half-gap estimate along collapsing sources",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At each complex collapsed gap, any sequence converging to the base point is eventually in a neighborhood carrying the half-gap estimate.",
+            "Published source proofs derive gap convergence directly from squared-gap analyticity and the local half-gap bound from the unchanged Lemma 10.10 data, without continuous endpoint labels."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_i",
+            "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.exists_collapsedGap_bound",
+            "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_gap_tendsto_zero",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_eventually_half_gap"
+          ],
+          "qualification": "The published open-neighborhood statement is stronger than the displayed eventual estimate and does not divide by the vanishing gap."
+        },
+        {
+          "ordered_group": "F-024",
+          "source_lines": [
+            10990,
+            11001
+          ],
+          "requirement": "Uniform short endpoint-piece bound",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The pi*M estimate retains its explicit half-gap and regular-factor hypotheses. Independently, one local positive constant for the actual Cauchy boundary profile is derived at every complex point of the source ball. It controls all angles and both sides before those choices, and gives vanishing along collapsing gap norms."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_norm_le_gap",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_tendsto_zero",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_exists_local_uniform_gapBoundary_bound",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_tendsto_zero_locally",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.fullPrimitive_tendsto_gapBoundary"
+          ],
+          "qualification": "Uniformity is proved by compactness of the fixed inner disc and joint analyticity of the Cauchy quotient. This is for a fixed signed gap; it does not claim one constant over all indices."
+        },
+        {
+          "ordered_group": "F-025",
+          "source_lines": [
+            11002,
+            11005
+          ],
+          "requirement": "Corrected full common-path coefficient in F.3",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The literal endpoint average changes by the full connecting path integral. The common-path coefficient is 1/i=-i.",
+            "The exact midpoint identity expresses the actual improper endpoint average as the full -i displacement integral plus its one-sided boundary value; that remainder tends to zero along collapsing source sequences."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq_add_polygonalIntegral",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_fourPath_split",
+            "NLS.ZakharovShabat.sourceCriticalRootRatio_product",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_integral_identity",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_remainder_tendsto_zero"
+          ],
+          "qualification": "The coefficient is corrected directly. Historical refutations are preserved without extension."
+        },
+        {
+          "ordered_group": "F-026",
+          "source_lines": [
+            11008,
+            11020
+          ],
+          "requirement": "Common terminal point and rescaled path formula",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The selected cut closed disc lies inside the complement of every actual gap.",
+            "For an arbitrary countable family of actual potentials in the original local source neighborhood, one original boundary point and all punctured midpoint spokes avoid every gap.",
+            "The actual normalized root has the rescaled principal-root expression at positive midpoint-path parameters.",
+            "For a countable family with open selected gaps, one original boundary point lies on a chosen side of each gap and every positive spoke is admissible.",
+            "The improper endpoint identity gives the exact actual normalized-root midpoint integral and its short-piece remainder.",
+            "The exact rescaling identifies the actual interval integral with the literal principal-root expression and gives the corrected improper endpoint identity with its short-piece term."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedCutDisk_subset_rootDomain",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.exists_common_source_midpoint_spokes",
+            "NLS.ZakharovShabat.appendixF_normalized_root_on_spoke",
+            "NLS.ZakharovShabat.appendixF_midpoint_spoke_mem_side",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.appendixF_exists_common_sided_spokes",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_integral_identity",
+            "NLS.ZakharovShabat.appendixF_spoke_quotient_eq_rescaled",
+            "NLS.ZakharovShabat.appendixF_spoke_integral_eq_rescaled",
+            "NLS.ZakharovShabat.appendixF_source_spoke_integral_eq_rescaled",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_rescaled_endpoint_identity"
+          ],
+          "qualification": "Common original boundary geometry, pointwise principal-root rescaling and the exact integral identities are proved. The individual endpoint identity retains explicit admissibility, side and integrability hypotheses; the assembled sequence theorem derives them eventually."
+        },
+        {
+          "ordered_group": "F-027",
+          "source_lines": [
+            11023,
+            11025
+          ],
+          "requirement": "Pointwise convergence of normalized root and numerator",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "At every positive parameter the actual source standard root converges to the linear collapsed root.",
+            "The literal rescaled principal square root and numerator both converge to t, with the critical offset and gap limits derived from the common source data.",
+            "Joint analyticity of chi_n on the original closed disc supplies the actual full integrand limit with coefficient -i times the moving displacement."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_source_root_spoke_tendsto",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_rescaled_terms_tendsto",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_integrand_tendsto"
+          ],
+          "qualification": "The published pointwise statements are restricted to t>0, sufficient for the almost-everywhere argument. The initial endpoint has measure zero. Source-family domination and integral substitution are tracked separately."
+        },
+        {
+          "ordered_group": "F-028",
+          "source_lines": [
+            11027,
+            11040
+          ],
+          "requirement": "Valid replacement for the moving square-root majorant",
+          "ordered_status": "corrected",
+          "reviewed_claims": [
+            "The positive weight sqrt(t+norm(epsilon))/sqrt(abs(t-norm(epsilon))) bounds any complex square-root quotient off its one moving singular point when the numerator offset has norm at most norm(epsilon)."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_square_root_norm_lower",
+            "NLS.ComplexAnalysis.appendixF_quotient_le_positive_majorant",
+            "NLS.ComplexAnalysis.appendixF_positive_majorant_le"
+          ],
+          "qualification": "The absolute lower distance corrects the weight on both sides of the moving point. No new proof that the printed version is wrong is added; the null singleton is excluded explicitly."
+        },
+        {
+          "ordered_group": "F-029",
+          "source_lines": [
+            11043,
+            11053
+          ],
+          "requirement": "Integrability and passage to the limit",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "For 0 <= e <= 1 the corrected positive majorant is integrable on [0,1], and its L1 distance from one is at most 4*sqrt(2e). Its L1 distance therefore tends to zero when e tends to zero and this range holds eventually.",
+            "The moving-majorant theorem and normalized-root specialization give integral convergence under common regular-factor bounds and measurability; eventual normalized-gap smallness is derived.",
+            "The actual source supplies a common chi bound and measurability, one original boundary point and convergence of the full sequence of normalized-root integrals.",
+            "The assembled midpoint identity derives eventual integrability and the vanishing short piece, proving convergence of actual improper endpoint averages at the common boundary point.",
+            "The actual connecting polygonal integral is analytic on the original source neighborhood inside a Cauchy chart. Its limit transfers the argument to every fixed original boundary point."
+          ],
+          "declarations": [
+            "NLS.ComplexAnalysis.appendixF_inverse_sqrt_distance_interval",
+            "NLS.ComplexAnalysis.appendixF_positive_majorant_integrable",
+            "NLS.ComplexAnalysis.appendixF_positive_majorant_L1_bound",
+            "NLS.ComplexAnalysis.appendixF_positive_majorant_tendsto_L1",
+            "NLS.ComplexAnalysis.appendixF_tendsto_integral_moving_majorant",
+            "NLS.ComplexAnalysis.appendixF_tendsto_intervalIntegral_positive_majorant",
+            "NLS.ZakharovShabat.appendixF_collapsing_spoke_integral_tendsto_of_gap_zero",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_chi_uniform_closedDisk_bound",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_spoke_integrand_measurable",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_spoke_integral_tendsto_locally",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_exists_common_convergent_spokes",
+            "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_source_spoke_intervalIntegrable",
+            "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_spoke_eventually_intervalIntegrable",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_integral_identity",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_remainder_tendsto_zero",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_exists_endpointAverage_limit",
+            "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.appendixF_frontier_subset_rootDomain",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_original_boundary_integral_analytic",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_fixed_endpointAverage_limit"
+          ],
+          "qualification": "The majorant range is an eventual condition derived from gap convergence and nonzero limiting displacement. The connecting-integral proof uses the independent joint primitive directly without assuming endpoint-average continuity."
+        },
+        {
+          "ordered_group": "F-030",
+          "source_lines": [
+            11056,
+            11057
+          ],
+          "requirement": "Continuity and final analytic conclusion",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual endpoint average is analytic at every allowed complex source on the constructed common neighborhood."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaF2",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_analytic"
+          ],
+          "qualification": "The analytic conclusion follows from the independent joint primitive. Continuity is also supplied by the explicit corrected source-sequence argument. The cited external extension theorem [23, A.6] is not separately formalized as this proof route."
+        },
+        {
+          "ordered_group": "F-031",
+          "source_lines": [
+            11060,
+            11071
+          ],
+          "requirement": "F.3: analytic integrals between arbitrary spectral endpoints",
+          "ordered_status": "matched",
+          "reviewed_claims": [
+            "The actual double improper integral between either endpoint of gap n and either endpoint of gap m equals i*pi*(n-m) and is analytic, including collapsed gaps and arbitrary pointwise endpoint choices."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCorollaryF3",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.tendsto_endpointIntegral",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointToEndpointIntegral_eq",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointToEndpointCurveIntegral_eq",
+            "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointToEndpointIntegral_analytic"
+          ],
+          "qualification": "Endpoint approaches are nontrivial and their limits are proved. Every integrable admissible C1 endpoint path agrees with the value."
+        }
+      ],
+      "ordered_counts": {
+        "matched": 27,
+        "corrected": 3,
+        "partial": 0,
+        "contextual": 1,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemmaF1.lean": "03d88a2c94fae5f033094fa5d358a3a7359e885355508310b560bcc39ed7cd76",
+        "NLS/ZakharovShabat/SourceCriticalHalfGapBounds.lean": "57644ea0ba317302a4a09949012086cecd10a8fb38f1a8f285d6f0b0d6bfeb2a",
+        "NLS/ZakharovShabat/SourceCriticalGapAnalyticDomain.lean": "47d8f81148a02c86cbf8d97bc441ea9a7a04263dd0e5fa77789fafb3ce325625",
+        "NLS/ZakharovShabat/SourceLemmaF2.lean": "dec24c4ccf8eac8c45183e893181c986057087c84f5c38603c9a94b059373715",
+        "NLS/ZakharovShabat/SourceCorollaryF3.lean": "4182bed71fe10bd353e8c2d8174eddab7ac815ce89743cd6a97d2a16cd5202bc",
+        "NLS/ZakharovShabat/SourceAbelianEndpointIntegrals.lean": "32bb4ef6cb929323c6dc732c4b375dd72ce16cdd95429161b27c1c28a7264301",
+        "NLS/ComplexAnalysis/AppendixFProofAudit.lean": "cd337889295c0314f2f556f0e001904c22a49fabcb320323b84b44f362666d67",
+        "NLS/ZakharovShabat/SourceFullAbelianUniformEndpoints.lean": "1104d42137a6185991e07a0954e62d83dfff57fd8ca882741987e7d710ea936d",
+        "NLS/ZakharovShabat/SourceFullAbelianUniformCauchyFamily.lean": "e8408808497ed0de6d3e57d4c9935521c511060ef16b6abca64bfc75e018fa3b",
+        "NLS/ComplexAnalysis/PolygonalEndpointIntegral.lean": "5f38c00d065b4d8d2e4dd659bd5227878a754c68c9362f9658fd27e86fa5af99",
+        "NLS/ComplexAnalysis/QuadraticCriticalIdentity.lean": "7820feec94871e0fba7a1ff2b3b755df9d0452ba9513c88adac4eb0fb7f56520",
+        "NLS/ZakharovShabat/SourceCriticalGapQuotientUniform.lean": "70a54088869c7ad6799557592aa3db55c7e187ccbf69a4636e561e2964aac68c",
+        "NLS/ZakharovShabat/CriticalMidpointGapSquared.lean": "9487933f646d509a5cc1222b2d7c57a456883824df8c4159e38d20a8f738cbec",
+        "NLS/ZakharovShabat/CriticalOffsetCoefficient.lean": "8dd71f06e01b164c812af94f6dea414eacd6c5ba8ca9b2884f8b66e870d34a08",
+        "NLS/ZakharovShabat/BoundarySimpleBranchAnalytic.lean": "7de8eecd56012695a9432aa659d5955e859890619da3f140df839cefe37b307e",
+        "NLS/ZakharovShabat/SourceSimpleSpectralDomain.lean": "4a30751215d7053b2454923f3030e647ac47e81a680403fbf3ab6132c8bbaae2",
+        "NLS/ZakharovShabat/CriticalMidpointOffset.lean": "a0ce50d1772d711c406d976395a73299a13f0158f1b0a334c158c5621936aa44",
+        "NLS/ZakharovShabat/SourceOpenGapEndpointAnalytic.lean": "b375334ef78abcfcf0aab46212b7d0b952aa0ab487ff6516561317d68be91403",
+        "NLS/ZakharovShabat/SourcePeriodicQuadratic.lean": "90f162eaaebe1d464b5e97edb667d86314a98006f534931c80fd0d4f5085b7c0",
+        "NLS/ZakharovShabat/DiscriminantPairFactorization.lean": "776c4c305d0bb5b3747d5b7591d2b18b564a74eadff71cfc6f078f3f03df90e5",
+        "NLS/ComplexAnalysis/LocalAnalyticSquareRoot.lean": "18aa042a371dafdb55bd13c5eea593f914a2c527c0e69befdeeef42bd8861511",
+        "NLS/ComplexAnalysis/AnalyticFromSquare.lean": "a7de20a0beaaa431701a8cca317f8fccc6732c650c59db165a03f15b255f62f5",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioProduct.lean": "f3e359bc472fd8f7a81269eca54c8dbfc7161bae4ab4963a99f6fa775aa49e7c",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioFactorization.lean": "ca94dc6ab5ed607a8470179da0108aa5734595154d561d1a250e33394169cb65",
+        "NLS/ZakharovShabat/SourceFullAbelianGapBoundary.lean": "5a39a07d56373a298298b48449e8a409529ba720a2c19820d3299d7ebc3ce902",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioJointExteriorAnalytic.lean": "ec1a16cec2f70e4ce6436a46eefb2eb7ed1e22a2d842492701ad2e42caa2a5a4",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioCollapsed.lean": "175754bb7e9d117064b7b5957cf97e9affa7e69ef79eab6843ec000d6d04af3d",
+        "NLS/ZakharovShabat/SourceSymmetricContour.lean": "8c7075ed20b486bdc4d92627d5303d6f8dabcea22fb6f5a58fc13923ed2baeb9",
+        "NLS/ZakharovShabat/SourceFullAbelianUniformGapBound.lean": "1f2a2300d18f75511b9f82af1d0418de312316a2308acd9e46210b7ba0c82fd6",
+        "NLS/ComplexAnalysis/CompactParameterBounds.lean": "2ed949fdf0bcc00f462615dd1c45f1bb58a8a7c90d02c0352f97ac7faa758449",
+        "NLS/ZakharovShabat/DeletedSpectralPairProducts.lean": "30a95ff41abffffba7e4f4465ab9adf50c6646b1239cec603101387ab4a534f2",
+        "NLS/ZakharovShabat/SourceDeletedPairOmittedSquare.lean": "acc95cd95d09d42564fbee85638c05249a471a6e1f29885e6ac0c621a3f1bae0",
+        "NLS/ZakharovShabat/SourceCriticalGapCommonIsolation.lean": "90bd27b95c7ab39ea8106065c73bffff0cb23758efad4693e71837547bbc6a6a",
+        "NLS/ZakharovShabat/SourceAbelianUniformDiscFamily.lean": "04b67a7c6e53ceb2bda304424fa54c749d55f2e9af43e40f5b49c6e0534d7953",
+        "NLS/ComplexAnalysis/InverseSqrtIntegral.lean": "b6e028611ded28f2b15366da1fb58a40a60beadc1bc1abe5fc55ab27f427efd4",
+        "NLS/ComplexAnalysis/SingularEndpointPathIntegrability.lean": "5f9e619f2248306832cd502b7426a85b09b034a49cb50342873b4961ff3951a8",
+        "NLS/ZakharovShabat/SourceStandardRootAlgebra.lean": "64a3720ca89aea6366fedcc8f084f7e8a129bd284e363ea455188e841c043bd2",
+        "NLS/ZakharovShabat/SourceStandardRootBranch.lean": "f4308354f828ea56486ca900a3017e9280fbe2a9c520b0ab2d11efaaf65002a6",
+        "NLS/ZakharovShabat/SourceStandardRootAnalytic.lean": "d3cc9cf08f3aa4ff329169e37e21b9bcc4762afeb7bf9abb4694f06f3c4c9fa6",
+        "NLS/ZakharovShabat/SourceCriticalDisplacementCommonAnalytic.lean": "ed03330f0249dc9297e9941da4275d18a11a55722b5fa900460e58fda684f876",
+        "NLS/ZakharovShabat/SourceActionChi.lean": "63172e66955ee00c3f27aa1b53fa4d8147c6469e6012bc2cfff74aab13887ef4",
+        "NLS/ZakharovShabat/SourceActionChiUniform.lean": "38d02bdfab9709056c0e7a7d3b7771168ee2edb4b3f57cd2f785346a2bc22e5b",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioCommonDomain.lean": "ccf1d3942e8880d2916e83bb706abda313d654260ad7cd454bc9a91188f508ce",
+        "NLS/ZakharovShabat/SourceCorollary10_6.lean": "d92a53a2ed4b3299577f9eafe276df92cb9e5898ce9606e32b40a705bc6ea1e4",
+        "NLS/ZakharovShabat/AppendixFBoundaryIntegral.lean": "c1cd9ad38d68b9113e1f6fe0827fe846d21141aecf1aeac70cd4492ea351825b",
+        "NLS/ZakharovShabat/AppendixFOpenGapBranches.lean": "3b28c4483fd3802edec4c047cea0032fee97c659eed34780ce0075756af23610",
+        "NLS/ComplexAnalysis/AppendixFProofEstimates.lean": "c351375ea8c8b45ef5e092de3ab19ba5d9c192ccc2f0ea503c82957947be0427",
+        "NLS/ZakharovShabat/AppendixFShortPiece.lean": "aad32becb3d1b15f744280df00074b2c3ba2e8c010c54132cd950cb7f0af2b2f",
+        "NLS/ZakharovShabat/AppendixFUniformShortPiece.lean": "9aa5acb5c830b6060c98219261c20e7a594d68e57531a9fa96fe9237a099991b",
+        "NLS/ComplexAnalysis/AppendixFSpokeGeometry.lean": "6c8b099f987e88a081af9d9b47f14e356032e4d8bdeb82d62a01a95daef74243",
+        "NLS/ComplexAnalysis/AppendixFPositiveMajorant.lean": "a4274432ef21288c8b456242e33a7f6e61f02ceb737f8eb00d5d89e83e6fd211",
+        "NLS/ZakharovShabat/SourceDeletedPairJointAnalytic.lean": "cb6a43c51a5e1ed1e817f66a024b85bbf11b425c99fe3879eb66650266b6ef0e",
+        "NLS/ZakharovShabat/CanonicalDiscriminant.lean": "a9d5daec0f419f69e7657ae85cadb225cc95754df17104e21176dfefecdd3511",
+        "NLS/ZakharovShabat/CanonicalPeriodicEndpoints.lean": "89f297e577280aba47cd9c52f7fdd9c075562203fffa547e255be80fb7bb40d2",
+        "NLS/ZakharovShabat/FiniteDiscriminant.lean": "fae74521d284620df5e4dd15e84c4a7d11584724fdcd61dd505af97b239c5b17",
+        "NLS/ZakharovShabat/SourceLemma10_5.lean": "2c6ac54dc5af2b2c8951eddfc5050a43b04172719781338c3471574f554ee12c",
+        "NLS/ComplexAnalysis/AppendixFCommonBoundary.lean": "5edcf7a3955cfb33b9f297796c5113aa6e33fdc3e65a5b1067f99c8fadd9662d",
+        "NLS/ZakharovShabat/AppendixFRootPath.lean": "82290d5d625498c077d891cec7c5bc1d885b05a361878aa4b4e0e021cfc52ca5",
+        "NLS/ComplexAnalysis/AppendixFMovingDominated.lean": "13e8521050b0954a793c35234c8cbf48d6be0f8492b306fd7c71b40e8069ec1a",
+        "NLS/ZakharovShabat/AppendixFPositiveIntegral.lean": "a9fda8e072a02be471c9ac690582f669a1139e73d27fd3e45c9114b90d60b0f0",
+        "NLS/ComplexAnalysis/ParametricIntervalIntegralAnalytic.lean": "66fb170452e18fe0d909daeffacec1f55bfdf1e1ede22e47720530727ea1701a",
+        "NLS/ZakharovShabat/AppendixFDeletedPair.lean": "cbc67bbfb1905fd92f1b97d9398ef093abf74b142325c3fa5aba876e422ee3fd",
+        "NLS/ZakharovShabat/AppendixFSourceSpokes.lean": "7fe83dc2d1625aafa5a4ad28560178714be32f1efc173019a0801ec124e6a9bd",
+        "NLS/ZakharovShabat/AppendixFEndpointRoot.lean": "14069040206390fd9a9b0a06dc29c94e82eeace44a059bb594febaf45887d7a3",
+        "NLS/ZakharovShabat/SourceLemma10_10.lean": "c86601f11d479d0e7986193fe9c36ec0e9e2d867dce510dc96ea7990962160cc",
+        "NLS/ComplexAnalysis/ConvexHolomorphicPrimitive.lean": "0afdee724416d77dbb385bd402264967573f9bd17377d57780b5567f641a8c44",
+        "NLS/ZakharovShabat/AppendixFUniformRadicand.lean": "6098cf13919ed00baecfe79ad2bccb22db045eafdd2c07016d5697eed7e76f15",
+        "NLS/ComplexAnalysis/AppendixFWeightedIntegral.lean": "68e4a07a7acd38e057c38e89a7ed59eb17d2e2eecfd16e2edf0266891d4ffbb0",
+        "NLS/ZakharovShabat/AppendixFEndpointAnalytic.lean": "c0a73eee4197cef7eeb85a9b31832829c44dd0826f432891c8046a9582e1fb1f",
+        "NLS/ZakharovShabat/AppendixFCollapsedPath.lean": "5015384d561089ded27d840b4636606b81a9c646bf8bd6f333ce35bd8b3bcdd3",
+        "NLS/ZakharovShabat/AppendixFCollapsedAnalytic.lean": "f9a26430d18ff25cd377a9dd8f74443037836a2735cdb87c144b32e2553f491a",
+        "NLS/ZakharovShabat/AppendixFSourceLimits.lean": "0e526f68b8e91ce5eacc092efcad08b9f92c9bb99457c1be4c07dd57209e77ec",
+        "NLS/ZakharovShabat/AppendixFSourceDomination.lean": "d397f9cd9a3aed1ad547f49bc5465ac1c78c50d0d607ea77ac8941daa1ba2a15",
+        "NLS/ZakharovShabat/AppendixFOriginalCollapsed.lean": "db44f7d2fa36e91f471efe3d0cc52ddb47e0c4e27b665c47591b77eab3f70c22",
+        "NLS/ZakharovShabat/AppendixFMidpointIdentity.lean": "bc1727ebed1e10e265296535361d0bde5b3e9fa8aab363155b09b23b002ee0e8",
+        "NLS/ComplexAnalysis/IsolatedOrderStability.lean": "1a55544296c42be5662b29875a87637de7b80da95ead7379aaa52c899025ea46",
+        "NLS/ComplexAnalysis/Rouche.lean": "f1178a82592f7f1a7b06b8729403ee1b8d9fb3033fca9c84bba839b499b3a8f8",
+        "NLS/ZakharovShabat/AppendixFRescaledIdentity.lean": "53ebe60603442daeca1e9356c5b1cdb184e1f990e83cede25b25b63aa9b01d05",
+        "NLS/ZakharovShabat/AppendixFSourceChartCover.lean": "174403603bd6b5462dc2fc2915dcf1c009e8b3d343a2db84ab0230c291210ce1",
+        "NLS/ZakharovShabat/AppendixFFixedBoundary.lean": "e65c79fbc6f0fd1166e5166f599a5bbac7d413a388b33b25c2336850ee02b86a",
+        "NLS/ZakharovShabat/AppendixFOpenGapSpokes.lean": "23aec44de61a49873c7adb29fb1f184586482f8aab0898ce6df7d90f338c0b24",
+        "NLS/ZakharovShabat/AppendixFSourceEndpointAnalytic.lean": "06258ebe720c6898ecdbc43e21e35e4b496386eadd3126ed777b225f888b7ed4",
+        "NLS/ZakharovShabat/AppendixFHalfGapCount.lean": "a012b1c10447bc8f94d91e2cfa346ff07de5658b8957563becb217822ab46c88"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceLemmaF1.lean",
+        "NLS/ZakharovShabat/SourceCriticalHalfGapBounds.lean",
+        "NLS/ZakharovShabat/SourceCriticalGapAnalyticDomain.lean",
+        "NLS/ZakharovShabat/SourceLemmaF2.lean",
+        "NLS/ZakharovShabat/SourceCorollaryF3.lean",
+        "NLS/ZakharovShabat/SourceAbelianEndpointIntegrals.lean",
+        "NLS/ComplexAnalysis/AppendixFProofAudit.lean",
+        "NLS/ZakharovShabat/SourceFullAbelianUniformEndpoints.lean",
+        "NLS/ZakharovShabat/SourceFullAbelianUniformCauchyFamily.lean",
+        "NLS/ComplexAnalysis/PolygonalEndpointIntegral.lean",
+        "NLS/ComplexAnalysis/QuadraticCriticalIdentity.lean",
+        "NLS/ZakharovShabat/SourceCriticalGapQuotientUniform.lean",
+        "NLS/ZakharovShabat/CriticalMidpointGapSquared.lean",
+        "NLS/ZakharovShabat/CriticalOffsetCoefficient.lean",
+        "NLS/ZakharovShabat/BoundarySimpleBranchAnalytic.lean",
+        "NLS/ZakharovShabat/SourceSimpleSpectralDomain.lean",
+        "NLS/ZakharovShabat/CriticalMidpointOffset.lean",
+        "NLS/ZakharovShabat/SourceOpenGapEndpointAnalytic.lean",
+        "NLS/ZakharovShabat/SourcePeriodicQuadratic.lean",
+        "NLS/ZakharovShabat/DiscriminantPairFactorization.lean",
+        "NLS/ComplexAnalysis/LocalAnalyticSquareRoot.lean",
+        "NLS/ComplexAnalysis/AnalyticFromSquare.lean",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioProduct.lean",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioFactorization.lean",
+        "NLS/ZakharovShabat/SourceFullAbelianGapBoundary.lean",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioJointExteriorAnalytic.lean",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioCollapsed.lean",
+        "NLS/ZakharovShabat/SourceSymmetricContour.lean",
+        "NLS/ZakharovShabat/SourceFullAbelianUniformGapBound.lean",
+        "NLS/ComplexAnalysis/CompactParameterBounds.lean",
+        "NLS/ZakharovShabat/DeletedSpectralPairProducts.lean",
+        "NLS/ZakharovShabat/SourceDeletedPairOmittedSquare.lean",
+        "NLS/ZakharovShabat/SourceCriticalGapCommonIsolation.lean",
+        "NLS/ZakharovShabat/SourceAbelianUniformDiscFamily.lean",
+        "NLS/ComplexAnalysis/InverseSqrtIntegral.lean",
+        "NLS/ComplexAnalysis/SingularEndpointPathIntegrability.lean",
+        "NLS/ZakharovShabat/SourceStandardRootAlgebra.lean",
+        "NLS/ZakharovShabat/SourceStandardRootBranch.lean",
+        "NLS/ZakharovShabat/SourceStandardRootAnalytic.lean",
+        "NLS/ZakharovShabat/SourceCriticalDisplacementCommonAnalytic.lean",
+        "NLS/ZakharovShabat/SourceActionChi.lean",
+        "NLS/ZakharovShabat/SourceActionChiUniform.lean",
+        "NLS/ZakharovShabat/SourceCriticalRootRatioCommonDomain.lean",
+        "NLS/ZakharovShabat/SourceCorollary10_6.lean",
+        "NLS/ZakharovShabat/AppendixFBoundaryIntegral.lean",
+        "NLS/ZakharovShabat/AppendixFOpenGapBranches.lean",
+        "NLS/ComplexAnalysis/AppendixFProofEstimates.lean",
+        "NLS/ZakharovShabat/AppendixFShortPiece.lean",
+        "NLS/ZakharovShabat/AppendixFUniformShortPiece.lean",
+        "NLS/ComplexAnalysis/AppendixFSpokeGeometry.lean",
+        "NLS/ComplexAnalysis/AppendixFPositiveMajorant.lean",
+        "NLS/ZakharovShabat/SourceDeletedPairJointAnalytic.lean",
+        "NLS/ZakharovShabat/CanonicalDiscriminant.lean",
+        "NLS/ZakharovShabat/CanonicalPeriodicEndpoints.lean",
+        "NLS/ZakharovShabat/FiniteDiscriminant.lean",
+        "NLS/ZakharovShabat/SourceLemma10_5.lean",
+        "NLS/ComplexAnalysis/AppendixFCommonBoundary.lean",
+        "NLS/ZakharovShabat/AppendixFRootPath.lean",
+        "NLS/ComplexAnalysis/AppendixFMovingDominated.lean",
+        "NLS/ZakharovShabat/AppendixFPositiveIntegral.lean",
+        "NLS/ComplexAnalysis/ParametricIntervalIntegralAnalytic.lean",
+        "NLS/ZakharovShabat/AppendixFDeletedPair.lean",
+        "NLS/ZakharovShabat/AppendixFSourceSpokes.lean",
+        "NLS/ZakharovShabat/AppendixFEndpointRoot.lean",
+        "NLS/ZakharovShabat/SourceLemma10_10.lean",
+        "NLS/ComplexAnalysis/ConvexHolomorphicPrimitive.lean",
+        "NLS/ZakharovShabat/AppendixFUniformRadicand.lean",
+        "NLS/ComplexAnalysis/AppendixFWeightedIntegral.lean",
+        "NLS/ZakharovShabat/AppendixFEndpointAnalytic.lean",
+        "NLS/ZakharovShabat/AppendixFCollapsedPath.lean",
+        "NLS/ZakharovShabat/AppendixFCollapsedAnalytic.lean",
+        "NLS/ZakharovShabat/AppendixFSourceLimits.lean",
+        "NLS/ZakharovShabat/AppendixFSourceDomination.lean",
+        "NLS/ZakharovShabat/AppendixFOriginalCollapsed.lean",
+        "NLS/ZakharovShabat/AppendixFMidpointIdentity.lean",
+        "NLS/ComplexAnalysis/IsolatedOrderStability.lean",
+        "NLS/ComplexAnalysis/Rouche.lean",
+        "NLS/ZakharovShabat/AppendixFRescaledIdentity.lean",
+        "NLS/ZakharovShabat/AppendixFSourceChartCover.lean",
+        "NLS/ZakharovShabat/AppendixFFixedBoundary.lean",
+        "NLS/ZakharovShabat/AppendixFOpenGapSpokes.lean",
+        "NLS/ZakharovShabat/AppendixFSourceEndpointAnalytic.lean",
+        "NLS/ZakharovShabat/AppendixFHalfGapCount.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "ordered_inventory": "coverage/APPENDIX_F_ASSERTIONS.md",
+      "ordered_inventory_sha256": "954793e9490039878d2f184b7466b3bfbfdd02392063e4b390428e480c400cef",
+      "resolved_declarations": [
+        "NLS.ComplexAnalysis.appendixF_endpoint_radicand_lower",
+        "NLS.ComplexAnalysis.appendixF_endpoint_segment_factorization",
+        "NLS.ComplexAnalysis.appendixF_exists_boundary_ray",
+        "NLS.ComplexAnalysis.appendixF_half_gap_zero_count",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_distance_interval",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_integral_analytic",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_intervalIntegrable",
+        "NLS.ComplexAnalysis.appendixF_inverse_sqrt_substitution",
+        "NLS.ComplexAnalysis.appendixF_local_uniform_lower_bound",
+        "NLS.ComplexAnalysis.appendixF_opposite_segments_avoid",
+        "NLS.ComplexAnalysis.appendixF_perturbed_spoke_avoids_gap",
+        "NLS.ComplexAnalysis.appendixF_perturbed_spoke_in_disc",
+        "NLS.ComplexAnalysis.appendixF_positive_majorant_L1_bound",
+        "NLS.ComplexAnalysis.appendixF_positive_majorant_integrable",
+        "NLS.ComplexAnalysis.appendixF_positive_majorant_le",
+        "NLS.ComplexAnalysis.appendixF_positive_majorant_tendsto_L1",
+        "NLS.ComplexAnalysis.appendixF_quadratic_boundary_estimate",
+        "NLS.ComplexAnalysis.appendixF_quadratic_derivative",
+        "NLS.ComplexAnalysis.appendixF_quotient_le_positive_majorant",
+        "NLS.ComplexAnalysis.appendixF_sqrt_nonnegative_scale",
+        "NLS.ComplexAnalysis.appendixF_sqrt_norm_lower",
+        "NLS.ComplexAnalysis.appendixF_square_root_norm_lower",
+        "NLS.ComplexAnalysis.appendixF_tendsto_integral_moving_majorant",
+        "NLS.ComplexAnalysis.appendixF_tendsto_intervalIntegral_positive_majorant",
+        "NLS.ComplexAnalysis.exists_local_analytic_pair_branches",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_chi_uniform_closedDisk_bound",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_original_chi_integral_analytic",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_source_spoke_intervalIntegrable",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.appendixF_spoke_integrand_measurable",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_disk",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_fixed",
+        "NLS.ZakharovShabat.SourceCorollary10_6Data.chi_joint",
+        "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.analyticAt_offset",
+        "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.continuousAt_gap_norm",
+        "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.exists_collapsedGap_bound",
+        "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.quotient_analytic",
+        "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_i",
+        "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.sourceLemmaF1_ii",
+        "NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain.squaredGap_analytic",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_analytic_extension",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_path",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_average_segment",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_derivative_omitted",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_endpoint_path",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_original_path",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_original_segment",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_collapsed_primitive_hasDerivAt",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_endpointAverage_continuousAt_collapsed",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_endpoint_parameter_identity",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_exists_endpointAverage_limit",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_exists_local_uniform_gapBoundary_bound",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_fixed_endpointAverage_limit",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_norm_le_gap",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_tendsto_zero",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_gapBoundary_tendsto_zero_locally",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_integral_identity",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_midpoint_remainder_tendsto_zero",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_mixed_endpointAverage_limit",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_open_endpoint_integrals_analytic",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_original_boundary_integral_analytic",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_regular_chi_integral_analytic",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_rescaled_endpoint_identity",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.appendixF_source_endpoint_integral_analytic",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.boundaryPolygonalIntegral_analytic",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_analytic",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_eq_add_polygonalIntegral",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointAverage_fourPath_split",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointToEndpointCurveIntegral_eq",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointToEndpointIntegral_analytic",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.endpointToEndpointIntegral_eq",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.fullPrimitive_collapsed_endpoint_value",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.fullPrimitive_tendsto_gapBoundary",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.polygonalIntegral_eq_endpointAverage_sub",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.selectedEndpointIntegral_analytic",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.sourceLemmaF2",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.tendsto_endpointIntegral",
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.tendsto_endpointPolygonalIntegral",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.appendixF_exists_common_sided_spokes",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.appendixF_frontier_subset_rootDomain",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedCutDisk_subset_rootDomain",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.closedDisk_subset_omittedDomain",
+        "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.exists_common_source_midpoint_spokes",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_collapsed_differential",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_eventually_half_gap",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_exists_common_convergent_spokes",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_local_collapsed_analytic_extensions",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_original_collapsed_analytic_extension",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_integrand_tendsto",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_rescaled_terms_tendsto",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_spoke_eventually_intervalIntegrable",
+        "NLS.ZakharovShabat.SourceLemma10_10Data.appendixF_source_spoke_integral_tendsto_locally",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_common_open_gap_spokes",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_gap_tendsto_zero",
+        "NLS.ZakharovShabat.SourceLemma10_2Data.appendixF_source_root_spoke_tendsto",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.appendixF_local_half_gap_zero_count",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_collapsed_disk_bounds",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_derivative_joint_full",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_eq_zero_iff",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_joint_full",
+        "NLS.ZakharovShabat.SourceLemma10_5Data.deletedPair_uniform_disk_bounds",
+        "NLS.ZakharovShabat.SourceSimpleSpectralDomainData.criticalDisplacement_analytic",
+        "NLS.ZakharovShabat.analyticOnNhd_canonicalDeletedPeriodicProduct",
+        "NLS.ZakharovShabat.appendixF_collapsing_spoke_integral_tendsto_of_gap_zero",
+        "NLS.ZakharovShabat.appendixF_endpoint_base_radicand",
+        "NLS.ZakharovShabat.appendixF_endpoint_integral_analytic",
+        "NLS.ZakharovShabat.appendixF_endpoint_integrand_weight",
+        "NLS.ZakharovShabat.appendixF_endpoint_uniform_branches",
+        "NLS.ZakharovShabat.appendixF_endpoint_uniform_radicand",
+        "NLS.ZakharovShabat.appendixF_midpoint_spoke_mem_side",
+        "NLS.ZakharovShabat.appendixF_normalized_root_on_endpoint_spoke",
+        "NLS.ZakharovShabat.appendixF_normalized_root_on_spoke",
+        "NLS.ZakharovShabat.appendixF_source_root_eq_of_endpoint_pair",
+        "NLS.ZakharovShabat.appendixF_source_spoke_integral_eq_rescaled",
+        "NLS.ZakharovShabat.appendixF_spoke_integral_eq_rescaled",
+        "NLS.ZakharovShabat.appendixF_spoke_quotient_eq_rescaled",
+        "NLS.ZakharovShabat.canonicalCriticalPoints_midpoint_offset_identity",
+        "NLS.ZakharovShabat.canonicalDeletedPeriodicProduct_ne_zero_on_sourceOmittedDomain",
+        "NLS.ZakharovShabat.canonicalDiscriminant_sq_sub_four_eq_midpoint_mul",
+        "NLS.ZakharovShabat.deletedSpectralPairPartialProduct",
+        "NLS.ZakharovShabat.discriminant_critical_midpoint_identity",
+        "NLS.ZakharovShabat.exists_appendixFOpenGapBranches",
+        "NLS.ZakharovShabat.exists_appendixF_collapsed_analytic_extensions",
+        "NLS.ZakharovShabat.exists_appendixF_source_chart_cover",
+        "NLS.ZakharovShabat.exists_global_sourceCriticalRootRatio_analytic_of_zeroGap",
+        "NLS.ZakharovShabat.exists_global_source_analytic_midpoint_squaredGap",
+        "NLS.ZakharovShabat.exists_local_sourceCriticalOffset_small_gap_tail",
+        "NLS.ZakharovShabat.exists_local_uniform_sourceCriticalGapQuotient",
+        "NLS.ZakharovShabat.norm_sourceCriticalPoint_sub_midpoint_le_halfGap_of_realType",
+        "NLS.ZakharovShabat.sourceAbelianDifferential",
+        "NLS.ZakharovShabat.sourceAbelianEndpointAverage",
+        "NLS.ZakharovShabat.sourceAbelianEndpointAverage_zero",
+        "NLS.ZakharovShabat.sourceActionChi",
+        "NLS.ZakharovShabat.sourceActionChi_eq_quotient",
+        "NLS.ZakharovShabat.sourceCorollary10_6",
+        "NLS.ZakharovShabat.sourceCorollaryF3",
+        "NLS.ZakharovShabat.sourceCriticalRootRatioExtension_eq_neg_I_chi",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_eq_selectedFactor_mul_chi",
+        "NLS.ZakharovShabat.sourceCriticalRootRatio_product",
+        "NLS.ZakharovShabat.sourceLemmaF1",
+        "NLS.ZakharovShabat.sourceLemmaF2",
+        "NLS.ZakharovShabat.sourcePeriodicPair_factorization",
+        "NLS.ZakharovShabat.tendstoLocallyUniformlyOn_deletedSpectralPairProduct"
+      ],
+      "declaration_inventory_count": 44972,
+      "qualification": "The ordered Appendix F comparison covers 31 groups on printed pp.131-134: 27 matched, three directly corrected and one contextual. No partial or pending mathematical group remains within this local comparison; all prerequisite proof steps have been published. It retains literal improper endpoint integrals, original isolating discs, unordered analytic branches, source neighborhoods, exact principal-root identities and the actual sequence limits. The finite-p tail estimate, full common-path coefficient and positive moving majorant are corrected directly. The indexed half-gap bound and final analytic conclusion retain their independent squared-gap and joint-primitive proofs; the printed root-identification and external extension-theorem routes are not claimed as those dependencies. Historical refutations and broader completeness qualifications remain unchanged; the local counts are not a dissertation completion percentage.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          131,
+          132,
+          133,
+          134
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-e-ordered-131.png": "00e4589646be3470fd9d6e60086150d1b465d8997e41e6ccec233bbd31275271",
+          "work/tmp/pdfs/appendix-f-ordered-132.png": "a96d8aaab751ae81affe9f561e4c85c18cd84f4a74e021d7a2d10eebe106ecac",
+          "work/tmp/pdfs/appendix-f-ordered-133.png": "b15b972871d0116e43cfcfaedacd02307f64124d54384756f66901907be92a9c",
+          "work/tmp/pdfs/appendix-f-ordered-134.png": "e833be52e2f68ebb794206466caa59bcb046e4d5f773cdb83c46b941f5d43656"
+        }
+      },
+      "preceding_review_hash": "e31741e9665e9e3208586ee147c1847031687537dd2c02c7b72e5999e857a445",
+      "reconciled_previous_reviews": {
+        "work/AppendixFSourceComparison-2026-10-27.json": "559725f40115af46c7e1703864f132eb61feb9cf10aaeb152cd6c3fe92b9f36b",
+        "work/AppendixFPositiveProofsSourceComparison-2026-10-31.json": "61597cfc72addce043afcacc59e0180cbbb48fc0fc875c3c999278738c39a614",
+        "work/AppendixFPathLimitsSourceComparison-2026-10-31.json": "a9cf3271f847121846b2970a7695cde3654c6e03b1a8ad11f0e74fbf3bc438c2",
+        "work/AppendixFDomainGeometrySourceComparison-2026-10-31.json": "d8db1181507d0d12b0fa2bd49506312a6983ed297293be700356d47fa7270e50",
+        "work/AppendixFEndpointAnalysisSourceComparison-2026-10-31.json": "5caa001538e4b91b73a540830f0141124829531e3175261ad765bcd7cabf36af",
+        "work/AppendixFCollapsedAnalysisSourceComparison-2026-10-31.json": "a6c1cf46d9e95360bf7fec7f9c3160706ba4b10465c8690d79ca6cf8d2999044",
+        "work/AppendixFSourceDominationSourceComparison-2026-10-31.json": "596e9ee60cb22e0f4cbb7317b242a1ad18268fbd15450298687ebbe7f9b9c89c",
+        "work/AppendixFOriginalCollapsedSourceComparison-2026-10-31.json": "1f26630861e4dcf6ad722cd365b3e1b8c74acac6ae34fbebd517875bbb9fd259",
+        "work/AppendixFMidpointIdentitySourceComparison-2026-11-02.json": "739e92529dc1980a5cf6384e68dc636d76c366dc8159dd5b9cfd628bccd1755a",
+        "work/AppendixFRescaledIdentitySourceComparison-2026-11-02.json": "4631839966b7d8a9c930a64ea5ba14ad7ba08489c1ee33c6c9f54b959dc9f593",
+        "work/AppendixFSourceAssemblySourceComparison-2026-11-02.json": "655caab6b135d9c605f9c46fbf92e3f55c346c1ff9c66027327a965438141fd4",
+        "work/AppendixFOpenGapAssemblySourceComparison-2026-11-02.json": "1bca5b98ecf8d26eb945407acd28e471d2a8a42267ae20bd8e90996f0b5590a1",
+        "work/AppendixFHalfGapCountSourceComparison-2026-11-02.json": "e31741e9665e9e3208586ee147c1847031687537dd2c02c7b72e5999e857a445"
+      },
+      "validation_lean_sources": {
+        "files": 4900,
+        "sha256": "e95d8d8f529c515e1f8bcf2a0d5db63966fa66e3cf7c88705532caf85cb17fa3"
+      },
+      "validation_reused_from_commit": "0766280d71852193457d5a4f3ccbc4cc2e6e24de",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 59119,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixFHalfGapCountFullCheck.log",
+        "log_sha256": "646ac3f67d9f2ab0fa588b7ea8a8536d739624bd04ee5bbb48334429e4b58438"
+      },
+      "source_record_sha256": "af2e2274ea5fdba653a57e7c208d44b3a12f9c86583990219d56108fe7fdaf9b"
     }
   }
 }

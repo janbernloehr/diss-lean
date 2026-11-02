@@ -1,6 +1,32 @@
 # Implementation plan
 
-## Current milestone: Appendix F half-gap root count
+## Current milestone: ordered Appendix F comparison
+
+The [ordered Appendix F comparison](coverage/APPENDIX_F_ASSERTIONS.md)
+covers 31 groups on pp.131-134: 27 matched, three directly corrected
+and one contextual. No partial or pending groups remain in this local ledger.
+
+The comparison retains actual improper endpoint integrals, original
+isolating discs, analytic unordered branches and common source
+neighborhoods. Exact principal-root identities and the corrected
+positive majorant give the source-sequence limits. The majorant bound
+retains 0 <= e <= 1, derived eventually along the sequence.
+
+The finite-p tail estimate, full common-path coefficient and moving
+majorant are corrected directly. The half-gap conclusion and final
+analytic theorem retain their independent squared-gap and joint-primitive
+proofs; the printed alternative routes are not claimed as their dependencies.
+
+This documentation step adds no Lean proof or refutation.
+
+The unchanged Lean snapshot reuses the successful full check recorded at commit 0766280d71852193457d5a4f3ccbc4cc2e6e24de: 8,638 build jobs, 7,729 public examples and an axiom audit of 44,972 NLS declarations, with 21 inherited warnings and zero new. All 143 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Appendix G. The [broader completion qualifications](coverage/COMPLETENESS.md)
+remain; these local counts do not certify the dissertation.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Appendix F half-gap root count
 
 The [half-gap root count](NLS/ZakharovShabat/AppendixFHalfGapCount.lean)
 retains the exact derivative normalization and the one-half quadratic

@@ -210,104 +210,21 @@ It retains symmetric interpolation, diagonal-omitted products, actual
 circle suprema, at-most-simple poles, the nonempty real slice and physical
 Fourier coefficients. The local Taylor assertions use the alternative
 complex-line argument. Historical refutations and broader qualifications
-remain unchanged. The [Appendix F proof details](APPENDIX_F.md)
-now retain the actual path integrals and coefficients, local complex
-endpoint branches, scalar constants and short-piece bounds.
-Compactness of the joint Cauchy quotient also supplies a local uniform
-constant without assuming a regular-factor bound. A corrected positive
-majorant has L1 error at most 4*sqrt(2e) and converges to one.
-Twenty-five positive theorems and four examples add no new refutation.
-The [Appendix F path limits](APPENDIX_F.md)
-now give a common boundary point for countably many gaps, actual
-standard-root rescaling and positive-parameter limits. The corrected
-majorant supplies the actual normalized-root path integral limit
-under explicit measurability and regular-factor hypotheses; eventual
-normalized-gap smallness is derived. Seventeen positive theorems and
-three examples add no new refutation. Full source-family assembly,
-other-gap exclusion and improper-path substitutions remain open.
-The [Appendix F half-gap root-count proofs](APPENDIX_F.md)
-connect the exact boundary estimate to Rouche and prove one analytic
-zero of the literal differentiated discriminant on nearby actual
-source half-gap discs. The original isolating disc supplies the
-uniform source bounds. The indexed critical-point bound retains its
-independent squared-gap proof. Three positive theorems add no new
-refutation. Final ordered reconciliation and publication remain separate.
+remain unchanged.
 
-The [Appendix F open-gap source assembly](APPENDIX_F.md)
-constructs both original-boundary endpoint spokes with the printed
-quarter-distance margins. The actual improper integrals equal the
-singular parameter integrals with the full -i displacement coefficient.
-Actual source regularity gives integrability and analyticity of both
-endpoint integrals on one neighborhood. Six positive theorems add no
-new refutation. The half-gap root-count comparison and final ordered
-reconciliation remain separate.
-
-The [Appendix F source-neighborhood and continuity proofs](APPENDIX_F.md)
-construct chart coverage for the collapsed restriction and transport
-the corrected midpoint limit to any fixed original boundary point.
-The actual connecting integral is analytic via the joint primitive.
-Mixed collapsed and open-gap sequences give continuity at a collapsed
-source. Eight positive theorems add no new refutation. The open-gap
-endpoint path assembly and half-gap root-count comparison remain.
-
-The [Appendix F rescaled-integral identities](APPENDIX_F.md)
-give the exact principal-root substitution and retain the full -i
-displacement coefficient. The actual improper endpoint average equals
-the rescaled integral plus its one-sided short-piece term. Four
-positive theorems add no new refutation. Fixed-boundary transport,
-mixed source sequences, original-domain chart coverage and open-gap
-endpoint path assembly remain separate.
-
-The [Appendix F midpoint-identity proofs](APPENDIX_F.md)
-derive eventual spoke integrability and identify the actual improper
-endpoint average with the full-coefficient midpoint integral plus its
-vanishing short-piece boundary value. At a common original boundary
-point, the actual endpoint averages converge without supplied bounds
-or integrability. Seven positive theorems add no new refutation.
-Transfer to any fixed boundary point, mixed source sequences and
-open-gap endpoint path assembly remain separate.
-
-The [Appendix F original-domain collapsed-gap proofs](APPENDIX_F.md)
-identify the actual endpoint average along every C1 path in the original
-closed disc. The regular chi_n formula is analytic on the original V;
-a cover by source Cauchy charts identifies its collapsed restriction.
-The auxiliary chart may vary with the source. Five positive theorems
-add no new refutation. Open-gap assembly and the midpoint-spoke
-decomposition with its vanishing remainder remain separate.
-
-The [Appendix F source-integral convergence proofs](APPENDIX_F.md)
-derive uniform chi_n bounds and measurability and give convergence of
-the actual normalized-root integrals with the full -i coefficient.
-A common original boundary point supplies admissible spokes for every
-member of the convergent source sequence. Four positive theorems add
-no new refutation. Identification with the improper endpoint average
-and the vanishing short-piece error remain separate.
-
-The [Appendix F collapsed-gap proofs](APPENDIX_F.md)
-identify the actual endpoint average with the regular chi_n integral,
-including paths through the collapsed point, and give an analytic
-extension of its collapsed restriction. Actual gap convergence and
-the half-gap bound give the chosen-root, numerator and full integrand
-limits at positive path parameters. Twelve positive theorems and
-three examples add no new refutation. Original-family reconciliation,
-open-gap path assembly and source integral convergence remain open.
-
-The [Appendix F endpoint analysis proofs](APPENDIX_F.md)
-now give explicit uniform denominator and radicand bounds, source-analytic
-principal roots, the exact inverse-square-root substitution, and
-integrability and analyticity of the literal normalized-root endpoint
-integral. Nine positive theorems and two examples add no new refutation.
-Actual source-family path verification and identification with the
-improper polygonal integral remain open.
-
-The [Appendix F domain and geometry proofs](APPENDIX_F.md)
-now retain the literal deleted product on the whole joint domain,
-its exact zero set, simultaneous original closed-disc bounds and
-the collapsed-gap smallness condition. A common original boundary
-point gives midpoint spokes avoiding all source gaps. Eleven positive
-theorems and three examples add no new refutation. Remaining branch
-assertions, source-family convergence and improper-path substitutions
-keep the 31-group ordered Appendix F comparison open.
+The [ordered Appendix F ledger](APPENDIX_F_ASSERTIONS.md)
+compares 31 groups: 27 matched, three corrected and one contextual.
+It retains actual improper endpoint integrals, original isolating discs,
+unordered analytic branches and constructed source neighborhoods. The
+finite-p tail estimate, full common-path coefficient and positive moving
+majorant are corrected directly. The explicit majorant bound retains
+0 <= e <= 1, derived eventually. Source-specific integral limits,
+fixed-boundary transport and mixed-sequence continuity are proved.
+The half-gap conclusion and final analytic theorem retain their
+independent squared-gap and joint-primitive proofs. No partial or pending
+groups remain in this local ledger. Earlier implementation milestones
+and their validation remain in the appendix audit. Historical refutations
+and broader qualifications remain unchanged. Appendix G is next.
 
 The direct contour corrections, original action-image scope and alternate
 convolution proof remain explicit. These local ledger counts do not
