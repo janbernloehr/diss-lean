@@ -44,8 +44,10 @@ its existing Hilbert specialization and a transitive audit.
 | `NLS/SequenceSpaces/AnalyticReciprocalTail.lean`, `NLS/KdV/ClassicalNumeratorHilbert.lean` | Actual local reciprocal numerator tails, genuine l2 membership and a jointly Banach analytic entire numerator basis. |
 | `NLS/KdV/ClassicalHilbertPeriod.lean`, `ClassicalNormalizedDifferentials.lean` | Actual Bochner period/row equality, absolutely convergent positive-index normalized entire functions, exact free slice and every normalization period on both frequency circles and mapped energy paths. |
 | Four newly selected existing sequence/integral modules and the square-root identity | Local realizations, finite head/tail membership, bilinear Holder duality, Bochner circle interchange, and the general public principal-root square identity are directly recompiled. |
+| Six new critical product/relabeling/convergence modules | Exact complete selected signed critical labeling, actual derivative product (15) on the full energy plane near zero, and the filled omitted-factor critical basis product. |
+| Six newly selected existing product/labeling/analysis dependencies | Complex derivative product, complete central multiplicities and labels, finite l^p modifications, entire-limit removal and local square-root charts are directly recompiled. |
 
-All seventy-eight selected modules compile with pinned **Lean 4.33.1**, commit
+All ninety selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -75,9 +77,18 @@ PASS NLS/SequenceSpaces/ReciprocalSquareKernel
 PASS NLS/ComplexAnalysis/ParametricDividedDifference
 PASS NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
 PASS NLS/ComplexAnalysis/RightHalfPlaneSquareRoot
+PASS NLS/ComplexAnalysis/EntireLimit
+PASS NLS/ComplexAnalysis/LocalAnalyticSquareRoot
+PASS NLS/ComplexAnalysis/SquareProductConvergence
+PASS NLS/ComplexAnalysis/RemovableFactorConvergence
 PASS NLS/ComplexAnalysis/RationalCircleIntegrationByParts
 PASS NLS/ZakharovShabat/ContinuousPotentialL2Bound
+PASS NLS/SequenceSpaces/FiniteModification
+PASS NLS/ZakharovShabat/FreeDerivativeZeroCounts
+PASS NLS/ZakharovShabat/CriticalPointLabeling
+PASS NLS/ZakharovShabat/DiscriminantDerivativeProduct
 PASS NLS/ZakharovShabat/SourceDistantCriticalPointsAnalyticNeighborhood
+PASS NLS/ZakharovShabat/NearFreeCriticalRelabeling
 PASS NLS/KdV/ConstantUpperSpectralBridge
 PASS NLS/KdV/ClassicalSpectralSymmetry
 PASS NLS/KdV/ClassicalDiscriminant
@@ -125,6 +136,9 @@ PASS NLS/KdV/ClassicalPeriodInverse
 PASS NLS/KdV/ClassicalNumeratorHilbert
 PASS NLS/KdV/ClassicalHilbertPeriod
 PASS NLS/KdV/ClassicalNormalizedDifferentials
+PASS NLS/KdV/ClassicalSignedCriticalProduct
+PASS NLS/KdV/ClassicalCriticalEnergyProduct
+PASS NLS/KdV/ClassicalCriticalBasisProduct
 PASS NLS/KdV/FrequencyPrimitiveContinuation
 PASS NLS/KdV/FrequencyContourDecomposition
 PASS NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
@@ -133,11 +147,11 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 949 candidate declarations; 12358 declarations total.
+Axiom audit passed: 1067 candidate declarations; 12429 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the seventy-eight selected modules (including generated and private declarations)
+the ninety selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -415,3 +429,24 @@ keep the joint analytic pairing proof within the default heartbeat budget.
 No heartbeat increases, warning exceptions, disabled linters or additional
 axioms are introduced. Canonical products, global/rough compatibility and
 all main-theorem statuses remain open. Canonical sources/builds are read only.
+
+
+The exact selected critical-product milestone is detailed in
+`CRITICAL_PRODUCTS.md`. Equation (15) holds for the actual selected
+critical energies near the free continuous potential, with locally
+uniform convergence on the entire complex energy plane. The omitted
+nth factor gives the actual filled critical basis, including its own
+critical energy. No normalized Psi_n zero/product identification is
+claimed by this critical-basis result.
+
+Final strict run: all 90 selected modules pass; the complete transitive
+audit passes for 1067 selected declarations and 12429 declarations
+including all imported NLS dependencies. The checker, audit and coverage
+selections agree exactly, and all 90 checked source hashes match. Only
+`propext`, `Classical.choice` and `Quot.sound` are permitted. Default
+heartbeats, strict warnings and all linters remain enabled.
+
+The canonical product (52) of the normalized Psi_n, global/rough
+compatibility and every main-theorem inventory row remain open. Shared
+canonical sources and compiled dependencies are read only; no shared
+branch merge was needed for this milestone.

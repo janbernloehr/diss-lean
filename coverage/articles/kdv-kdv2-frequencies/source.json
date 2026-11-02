@@ -1161,6 +1161,150 @@
       "scope": "Existing continuous linear and bilinear map interchange with actual Bochner circle integrals",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "ec97ea1b6afee053adb4b46206b1de87dceca1f332c50a193a13c57afd83c905"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NearFreeCriticalRelabeling.lean",
+      "source_labels": [
+        "Equation (15) complete selected critical labels"
+      ],
+      "source_pages": [
+        10
+      ],
+      "scope": "Actual uniformly near-free critical roots give the complete central multiplicity multiset and distant labels; finite relabeling transfers l^p displacement",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3182f94419c9653281e11592457bde857ea86767161e08a0338007273d052029"
+    },
+    {
+      "path": "NLS/KdV/ClassicalSignedCriticalProduct.lean",
+      "source_labels": [
+        "Equation (15) actual selected signed critical product"
+      ],
+      "source_pages": [
+        10
+      ],
+      "scope": "The exact signed family reflected from the selected positive Hill energies is complete, has l2 displacement and gives the actual frequency derivative entire product with locally uniform symmetric cutoffs, without real-type assumptions",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d7989a7da707fa996008d50cee02b7a11540aa0fbffc472a3722ca937c8aa78c"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SquareProductConvergence.lean",
+      "source_labels": [
+        "Equation (15) entire energy convergence dependency"
+      ],
+      "source_pages": [
+        10
+      ],
+      "scope": "Locally uniform convergence of weighted quadratic pullbacks descends to the whole energy plane by local analytic square roots and entire-limit removal at zero",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f09ec804469ad45e3ecd49017485088fa34877f0a2c4cf5a4732508f95496f61"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCriticalEnergyProduct.lean",
+      "source_labels": [
+        "Equation (15) local actual positive critical energy product"
+      ],
+      "source_pages": [
+        10
+      ],
+      "scope": "Exact pairing of signed factors gives the actual Hill discriminant derivative with minus sign and m^2*pi^2 denominators; locally uniform convergence includes zero and every critical energy on the selected continuous-potential neighborhood",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c7e761a4816c3ae7e1e18fb415818520b902e957e0c653c09241d5fd430a20bd"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RemovableFactorConvergence.lean",
+      "source_labels": [
+        "Filled critical basis product convergence dependency"
+      ],
+      "source_pages": [
+        10
+      ],
+      "scope": "Locally uniform convergence of entire sequences after multiplication by a fixed linear factor implies locally uniform convergence before multiplication, including the removed point",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "366022afcff20a62604e9888d52a2bcd63aa27ecc88ca5952951cba10c8af3ba"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCriticalBasisProduct.lean",
+      "source_labels": [
+        "Equation (15) omitted critical basis product"
+      ],
+      "source_pages": [
+        10
+      ],
+      "scope": "Actual filled critical basis B_n is the locally uniform omitted nth product with prefactor 2/(n*pi), including its own critical energy; this does not identify normalized Psi_n zeros or prove equation (52)",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d6ecdace66b512ad2543bf0ad2b5edbd12f4547d3e2da04e6048167a26f64637"
+    },
+    {
+      "path": "NLS/ZakharovShabat/DiscriminantDerivativeProduct.lean",
+      "source_labels": [
+        "Equation (15) shared derivative product dependency"
+      ],
+      "source_pages": [
+        10
+      ],
+      "scope": "Existing arbitrary complex coefficient-source entire derivative product for complete critical labels with l^p displacement, directly recompiled",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "20cc4df4b55b669044d5e78df4760b7ecc3f0f7af39257359d4ceb08dba34662"
+    },
+    {
+      "path": "NLS/SequenceSpaces/FiniteModification.lean",
+      "source_labels": [
+        "Complete selected critical displacement dependency"
+      ],
+      "source_pages": [
+        10
+      ],
+      "scope": "Existing invariance of genuine l^p membership under finitely many coordinate changes, directly recompiled",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8c44887737226036ca641d08fb4d389d79c89143a4183f2a8b24e7392fddfd7b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EntireLimit.lean",
+      "source_labels": [
+        "Whole-plane critical product convergence dependency"
+      ],
+      "source_pages": [
+        10
+      ],
+      "scope": "Existing entire sequence limit and locally uniform removal across a countable exceptional set, directly recompiled",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "db9181075bb84be4e850bd510ae893a86e01eb99add573e3a401bf5276a94ae1"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LocalAnalyticSquareRoot.lean",
+      "source_labels": [
+        "Whole-plane energy convergence dependency"
+      ],
+      "source_pages": [
+        10
+      ],
+      "scope": "Existing nonvanishing local analytic square-root charts with specified sign, directly recompiled",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "18aa042a371dafdb55bd13c5eea593f914a2c527c0e69befdeeef42bd8861511"
+    },
+    {
+      "path": "NLS/ZakharovShabat/CriticalPointLabeling.lean",
+      "source_labels": [
+        "Equation (15) complete complex critical labeling dependency"
+      ],
+      "source_pages": [
+        10
+      ],
+      "scope": "Existing complete central multiset and unique distant critical labels with l^p displacement for arbitrary complex even coefficient sources, directly recompiled",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ed9a93f818b87490984dca84c38bbead97fedef40e41fc1033055999cb3beb97"
+    },
+    {
+      "path": "NLS/ZakharovShabat/FreeDerivativeZeroCounts.lean",
+      "source_labels": [
+        "Equation (15) central critical multiplicity dependency"
+      ],
+      "source_pages": [
+        10
+      ],
+      "scope": "Existing central critical zero multiset/count and shared labeling estimates, directly recompiled",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a97562b6436bba70e72ab86953eaba1e8864950c5680f1fb2f5b7ef03df80ec0"
     }
   ],
   "dependencies_needed": [
@@ -1192,15 +1336,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 949,
-    "total_declarations_audited": 12358,
+    "candidate_declarations_audited": 1067,
+    "total_declarations_audited": 12429,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 78
+    "selected_modules": 90
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -1265,5 +1409,6 @@
   "uniform_period_entries_record": "UNIFORM_PERIOD_ENTRIES.md",
   "uniform_primitive_bounds_record": "UNIFORM_PRIMITIVE_BOUNDS.md",
   "analytic_period_inverse_record": "ANALYTIC_PERIOD_INVERSE.md",
-  "infinite_normalized_differentials_record": "INFINITE_NORMALIZED_DIFFERENTIALS.md"
+  "infinite_normalized_differentials_record": "INFINITE_NORMALIZED_DIFFERENTIALS.md",
+  "critical_products_record": "CRITICAL_PRODUCTS.md"
 }

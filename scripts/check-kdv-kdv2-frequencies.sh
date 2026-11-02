@@ -28,9 +28,18 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/ComplexAnalysis/ParametricDividedDifference
   NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
   NLS/ComplexAnalysis/RightHalfPlaneSquareRoot
+  NLS/ComplexAnalysis/EntireLimit
+  NLS/ComplexAnalysis/LocalAnalyticSquareRoot
+  NLS/ComplexAnalysis/SquareProductConvergence
+  NLS/ComplexAnalysis/RemovableFactorConvergence
   NLS/ComplexAnalysis/RationalCircleIntegrationByParts
   NLS/ZakharovShabat/ContinuousPotentialL2Bound
+  NLS/SequenceSpaces/FiniteModification
+  NLS/ZakharovShabat/FreeDerivativeZeroCounts
+  NLS/ZakharovShabat/CriticalPointLabeling
+  NLS/ZakharovShabat/DiscriminantDerivativeProduct
   NLS/ZakharovShabat/SourceDistantCriticalPointsAnalyticNeighborhood
+  NLS/ZakharovShabat/NearFreeCriticalRelabeling
   NLS/KdV/ConstantUpperSpectralBridge
   NLS/KdV/ClassicalSpectralSymmetry
   NLS/KdV/ClassicalDiscriminant
@@ -78,6 +87,9 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalNumeratorHilbert
   NLS/KdV/ClassicalHilbertPeriod
   NLS/KdV/ClassicalNormalizedDifferentials
+  NLS/KdV/ClassicalSignedCriticalProduct
+  NLS/KdV/ClassicalCriticalEnergyProduct
+  NLS/KdV/ClassicalCriticalBasisProduct
   NLS/KdV/FrequencyPrimitiveContinuation
   NLS/KdV/FrequencyContourDecomposition
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow

@@ -362,3 +362,18 @@ This constructs the local continuous-potential infinite family. Canonical
 products, global/rough compatibility and all main-theorem rows remain
 open. The strict 78-module build and complete transitive audit are recorded
 in `VALIDATION.md` and `source.json`.
+
+## Exact selected critical products
+
+The complete signed critical labeling now agrees with the selected actual
+Hill family, including central multiplicities. Pairing the signed factors
+proves the source derivative product (15), locally uniformly on the full
+energy plane. The omitted nth factor gives the actual filled critical
+basis B_n, including its own removable critical energy. Reusable entire
+convergence descent and linear-factor cancellation are proved separately.
+See [CRITICAL_PRODUCTS.md](CRITICAL_PRODUCTS.md).
+
+The normalized Psi_n have different zeros at nonzero potentials; their
+canonical products (52), the full rough/global version and all main
+theorems remain open. The 90-module strict build and complete transitive
+axiom audit are recorded in `VALIDATION.md` and `source.json`.

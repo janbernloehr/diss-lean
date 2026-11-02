@@ -255,3 +255,13 @@ formula with exact 1/(2*pi). See
 [INFINITE_NORMALIZED_DIFFERENTIALS.md](INFINITE_NORMALIZED_DIFFERENTIALS.md).
 This proves the local normalization step underlying (53); canonical
 products (52), global/rough compatibility and all main rows remain open.
+
+The actual selected critical family now gives equation (15) near zero in
+that same continuous-potential setting: exact minus sign, m²*pi²
+normalization and locally uniform convergence throughout the energy plane.
+The critical basis has its omitted nth factor product, including the filled
+own critical energy. A complete central multiplicity argument justifies
+the selected labeling; no real-type assumption on the Hill pair is used.
+See [CRITICAL_PRODUCTS.md](CRITICAL_PRODUCTS.md). These are critical basis
+products; the distinct normalized Psi_n products (52), the source's full
+rough/global domain and all main-theorem rows remain open.
