@@ -41,9 +41,9 @@ theorem exists_classicalHillCounting_near_compact
   have hNa : N a ≤ ∑ b ∈ S, N b := Finset.single_le_sum (fun _ _ => Nat.zero_le _) haS
   exact hd a q hqa M (by omega)
 
-/-- The squared closed high-frequency disc lies in the energy slit plane. -/
-theorem sq_mem_slitPlane_of_high_closedBall (n : ℕ) (hn : 1 ≤ n) (z : ℂ)
-    (hz : z ∈ closedBall ((Real.pi : ℂ)*n) (Real.pi/4)) : z^2 ∈ slitPlane := by
+/-- High frequency discs lie strictly in the right half-plane. -/
+theorem re_pos_of_high_closedBall (n : ℕ) (hn : 1 ≤ n) (z : ℂ)
+    (hz : z ∈ closedBall ((Real.pi : ℂ)*n) (Real.pi/4)) : 0 < z.re := by
   have hnorm : ‖z-(Real.pi : ℂ)*n‖ ≤ Real.pi/4 := by
     simpa only [mem_closedBall,dist_eq_norm] using hz
   have hre : |z.re-Real.pi*n| ≤ Real.pi/4 := by
@@ -51,7 +51,12 @@ theorem sq_mem_slitPlane_of_high_closedBall (n : ℕ) (hn : 1 ≤ n) (z : ℂ)
       mul_zero,zero_mul,sub_zero] using
       (abs_re_le_norm (z-(Real.pi : ℂ)*n)).trans hnorm
   have hnreal : (1 : ℝ) ≤ n := by exact_mod_cast hn
-  have hzre : 0 < z.re := by nlinarith [Real.pi_pos,(abs_le.mp hre).1]
+  nlinarith [Real.pi_pos,(abs_le.mp hre).1]
+
+/-- The squared closed high-frequency disc lies in the energy slit plane. -/
+theorem sq_mem_slitPlane_of_high_closedBall (n : ℕ) (hn : 1 ≤ n) (z : ℂ)
+    (hz : z ∈ closedBall ((Real.pi : ℂ)*n) (Real.pi/4)) : z^2 ∈ slitPlane := by
+  have hzre := re_pos_of_high_closedBall n hn z hz
   rw [mem_slitPlane_iff]
   by_cases hi : z.im = 0
   · left
@@ -63,6 +68,18 @@ theorem sq_mem_slitPlane_of_high_closedBall (n : ℕ) (hn : 1 ≤ n) (z : ℂ)
     intro he
     apply hprod
     linear_combination he/2
+
+/-- Squaring is injective on each of the positive high-frequency discs. -/
+theorem sq_injOn_high_closedBall (n : ℕ) (hn : 1 ≤ n) :
+    InjOn (fun z : ℂ => z^2) (closedBall ((Real.pi : ℂ)*n) (Real.pi/4)) := by
+  intro z hz w hw he
+  rcases eq_or_eq_neg_of_sq_eq_sq z w he with h | h
+  · exact h
+  have hzre := re_pos_of_high_closedBall n hn z hz
+  have hwre := re_pos_of_high_closedBall n hn w hw
+  have he := congrArg Complex.re h
+  simp only [neg_re] at he
+  linarith
 
 /-- Every squared high-frequency circle lies in the energy slit plane. -/
 theorem sq_mem_slitPlane_of_high_circle (n : ℕ) (hn : 1 ≤ n) (z : ℂ)

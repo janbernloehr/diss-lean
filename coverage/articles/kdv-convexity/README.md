@@ -9,7 +9,9 @@ proved. The actual discriminant is now jointly entire in energy and continuous
 potential. A free-normalized primitive is now constructed on an explicit
 joint open source-continuation domain. One cutoff and one complex potential
 neighborhood now cover every high squared-frequency contour, and their
-actual cubic moments form analytic families there. Analytic squared primitive charts at
+actual cubic moments form analytic families there. The high energy regions now
+have actual two-root Hill pairs with exact analytic multiplicities and parity
+trace levels, and analytic energy midpoints and squared gaps. Analytic squared primitive charts at
 both signs of the branch locus are also constructed. The earlier local
 concavity/inverse preparation is preserved.
 This record does not reopen the completed dissertation verification.
@@ -375,7 +377,8 @@ potential norm.
 defines the exact period-one Fourier realization of `(-1,-q)` through
 `sourcePhysicalL2Equiv`. The existing classical/L2/canonical trace
 comparison identifies its canonical discriminant with the actual scalar
-Hill trace. It proves that `Delta(z^2,q)^2-4=0` if and only if `z` belongs
+Hill trace. The coefficient realization is now proved complex analytic.
+It proves that `Delta(z^2,q)^2-4=0` if and only if `z` belongs
 to the already constructed periodic complex ZS spectrum. The generic
 complex spectral theorem is used; the pair `(-1,-q)` is not assumed to
 satisfy the NLS real-type condition.
@@ -419,6 +422,63 @@ matching, and locally uniform quadratic bounds in the actions remain
 essential inputs. In particular no global positive-ell2 Hamiltonian
 extension is asserted by these contour-coverage results.
 
+## Actual high energy pairs and analytic midpoint/gap data
+
+The spectral embedding additionally proves that the natural analytic order
+of `Delta(z^2,q)^2-4` is exactly the existing periodic spectral algebraic
+multiplicity. At every nonzero frequency, the analytic-order composition
+theorem transfers that order unchanged to the energy coordinate. The
+high-disc geometry proves strictly positive real part and injectivity of
+squaring on each closed high-frequency disc; no ramified zero-energy
+argument is used for this transfer.
+
+[`NLS/KdV/ClassicalHighGapPairs.lean`](../../../NLS/KdV/ClassicalHighGapPairs.lean)
+defines the high energy region as the image of the open quarter-pi
+frequency disc under squaring. `exists_classicalHillHighGapPair_of_counting`
+uses the existing two-root spectral count to construct an actual pair
+`l,r` of Hill radicand zeros there. The pair exhausts the zero set in that
+energy region, and its multiset counts equal the actual analytic orders.
+Thus two distinct simple zeros and a single double zero are both included.
+Its midpoint and squared gap make the pair unique up to exchange.
+
+Both endpoints have the exact trace level dictated by the high index:
+
+```text
+Delta(l,q) = Delta(r,q) = 2 when n is even, and -2 when n is odd.
+```
+
+This is derived from the actual periodic root-space parity and canonical
+trace-level theorem. It holds for complex potentials, without imposing
+the NLS real-type condition. It fixes the trace sign; the global primitive
+endpoint values `F(l)=F(r)=-i*n*pi` still require continuation and matching.
+
+The energy midpoint and squared gap are constructed from the intrinsic
+frequency midpoint `m` and squared gap `g` by the exact formulas
+
+```text
+energy midpoint = m^2+g/4 = (l+r)/2,
+energy squared gap = 4*m^2*g = (l-r)^2.
+```
+
+`analyticAt_classicalHillHigh_symmetric` proves their complex analyticity
+using the existing finite-rank contour trace invariants and the actual
+analytic potential embedding. It does not select analytic individual roots.
+
+[`NLS/KdV/ClassicalHighGapFamilies.lean`](../../../NLS/KdV/ClassicalHighGapFamilies.lean)
+proves `exists_analytic_classicalHillHighGapFamilies`: at every continuous
+complex potential, one positive cutoff and one complex open neighborhood
+support every sufficiently high actual energy pair, its analytic symmetric
+data, and the previously constructed analytic cubic contour moments.
+The cutoff and neighborhood are chosen before all tail indices and before
+all potentials in that neighborhood. These are scalar analytic functions
+on a common domain, not yet a Banach-valued sequence estimate.
+
+The high unordered pairs have not yet been integrated with a complete
+globally ordered Hill spectrum and its central labels. Their comparison
+with the rough Fourier Hill operator, reality/ordering at real potentials,
+global primitive normalization, weighted action descent, and the required
+uniform quadratic action estimates remain open.
+
 ## Earlier checked local consequences
 
 [`LocalConsequences.lean`](../../../NLS/Articles/KdVConvexity/LocalConsequences.lean)
@@ -443,8 +503,9 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    R_n=(1/pi)*integral Gamma_n F_n^3, F_n=F+i*n*pi (4.8), using the shared
    Hill discriminant and normalized primitive. The discriminant, local
    squared primitive and free-normalized source continuation above are now
-   proved, including common high-contour coverage in the continuous
-   potential norm; global spectral labels, endpoint matching and rough-operator
+   proved, including actual unordered high energy pairs, their analytic
+   symmetric data and common high-contour coverage in the continuous
+   potential norm; complete global spectral labels, primitive endpoint matching and rough-operator
    identification remain.
    Prove analytic descent to
    the weighted actions on a common complex neighborhood (Lemma 4.6(ii)).
@@ -483,10 +544,10 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All twenty-four modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All twenty-six modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
-301 constants in their two namespaces, including generated declarations,
+336 constants in their two namespaces, including generated declarations,
 transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the new shared bounded physical-class

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-02",
-  "milestone": "Uniform high-contour coverage at every continuous complex potential, through the existing physical ZS spectrum, and analytic mapped energy-contour moments",
+  "milestone": "Actual high Hill energy pairs with exact analytic multiplicities, parity trace levels, and analytic symmetric gap data on a common complex neighborhood",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -30,11 +30,13 @@
     "NLS.KdV.ClassicalSourcePrimitive",
     "NLS.KdV.ClassicalSpectralEmbedding",
     "NLS.KdV.ClassicalContourCoverage",
+    "NLS.KdV.ClassicalHighGapPairs",
     "NLS.KdV.ClassicalBranchPrimitive",
     "NLS.KdV.ClassicalTraceAsymptotics",
     "NLS.KdV.ActionHamiltonianMoments",
     "NLS.KdV.ClassicalContourMoments",
     "NLS.KdV.ClassicalHighContourMoments",
+    "NLS.KdV.ClassicalHighGapFamilies",
     "NLS.KdV.ActionHamiltonianTrace",
     "NLS.KdV.ActionHamiltonianFiniteGap",
     "NLS.Articles.KdVConvexity.LocalConsequences",
@@ -45,7 +47,7 @@
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 301,
+    "declarations": 336,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -76,9 +78,9 @@
     "NLS/Articles/KdVConvexity/BaseContourSeries.lean": "8a84db27117c935608f186e0f0c1396f38b0126611a9a98b1b57d19b5762001e",
     "NLS/Articles/KdVConvexity/GlobalExtension.lean": "a78d76d0fa33b892f8b981d49a64f59f7fd0eee4c04eb34c73817cd86359c11d",
     "NLS/Articles/KdVConvexity/LocalConsequences.lean": "35ba924320178bea8c6b3b35ef136d313a562a649b6b8c89646b886dbab8553d",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "6cb034e301ad86d54f0a1176e93511b35cbdbf223e9fb1fa968e1b03b889b261",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "a296aa2ace0983eed53214661719ac9fdf3a4407c510c99af8c63d5a0604eef1",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
-    "scripts/check-kdv-convexity.sh": "bf0b40296933bcbb1ec2cf8eeaa78a3f93e66c56888aa5817e00ebca7cef68c8",
+    "scripts/check-kdv-convexity.sh": "98ae65922be7eb9c93015f60c92102842b57cbabca97b262d7595e046ca8a533",
     "NLS/KdV/ClassicalSpectralSymmetry.lean": "2aa073ca860db8a7e59e2a91d79fafdd40eef5e5f4e324167c4a69f1b5cb0811",
     "NLS/KdV/ClassicalDiscriminant.lean": "a6f78abd90ddefc24cba3b6d958f4709364368cf00b1b84fdb830049a8361531",
     "NLS/KdV/ClassicalLocalPrimitive.lean": "0a94fb21406949fcf4ad2ef5a09ffcbbf5385cdb8cd8ed5eec4fc303ecc1c327",
@@ -89,12 +91,14 @@
     "NLS/KdV/ClassicalSourcePrimitive.lean": "a64f5c9c03ebffd71ec4ed56dc21f5d544f58f4db9d14ad3e6f1366576abe093",
     "NLS/KdV/ClassicalContourMoments.lean": "e566ce44ade32b02ecd53fc7bb0ecb914db88121a8431898ff397c94c5e8fbe0",
     "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean": "6036371a2cadb92169894a505e58daefeb9d493fbe81d1e10a2387c9a65459a5",
-    "NLS/KdV/ClassicalSpectralEmbedding.lean": "f032f822d7144f48b63103ca7ecb27bbbede4f001d0dfb5e8df5f644d6017f71",
-    "NLS/KdV/ClassicalContourCoverage.lean": "b537c10a6c5894f9081032fe9275425e25779a2eb6699d42a9b02c63f4420464",
-    "NLS/KdV/ClassicalHighContourMoments.lean": "1ef7d0ef1cbdd400973ecf79afd3744f8de8da747ada245a36f2f8ec19cd1ee6"
+    "NLS/KdV/ClassicalSpectralEmbedding.lean": "380b88836452638e10b6a47fcf341535c58ced2981c159f97f6464ebcf0d1651",
+    "NLS/KdV/ClassicalContourCoverage.lean": "3c3c840a66b0d32b15653d5957b80d5dfeb8f2e31a76de0b7e39f6c420e97a48",
+    "NLS/KdV/ClassicalHighContourMoments.lean": "1ef7d0ef1cbdd400973ecf79afd3744f8de8da747ada245a36f2f8ec19cd1ee6",
+    "NLS/KdV/ClassicalHighGapPairs.lean": "d12b692c80eed2ff447a39a9eafd7cf6fbf54a7f6f695fb883ae28cfe6fc3509",
+    "NLS/KdV/ClassicalHighGapFamilies.lean": "588f30118a75be821fd6f2c80d8306423edfbdaddb464bca0ab115ed65e959b0"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/focused-validation-high-contours.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/focused-validation-high-gap-pairs.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -107,13 +111,13 @@
   },
   "limits": [
     "All main theorems remain unverified.",
-    "The literal pair (-1,-q) is identified with the existing physical periodic complex ZS spectrum at lambda=z^2. Every continuous complex potential has a common complex neighborhood and cutoff covering all high mapped energy contours. The paper's exact Hill gap labels, finite central contours, endpoint matching, rough-distribution/Birkhoff identification and action descent remain unproved.",
+    "The actual high Hill energy regions now have unordered pairs exhausting their zero sets with exact analytic multiplicities, parity trace levels, and analytic energy midpoint/squared-gap data, on a common complex potential neighborhood with the cubic moments. Complete central/global ordered labels, reality/ordering at real potentials, rough Hill/Birkhoff identification and weighted action descent remain unproved.",
     "The cosh trace identity and full joint logarithmic differential are proved on the source-continuation domain. Extending its square to the physical finite-gap exterior and constructing the normalized inversion remainder remain required for Lemma 4.4.",
     "The global action extension still needs actual contour moment action descent and uniform complex-neighborhood spectral/action bounds.",
     "Theorems 1.2 and 1.3, positive-index Hessian transport, and KdV physical frequency identification remain unproved.",
     "No full repository build or replacement of the dissertation validation is claimed."
   ],
-  "previous_progress_commit": "ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503",
+  "previous_progress_commit": "84cae568525bd9909405a8add2beca105e01bbce",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -143,7 +147,15 @@
     "NLS.ZakharovShabat.canonicalDiscriminant_sq_eq_four_iff",
     "NLS.ZakharovShabat.exists_uniform_periodicCountingData",
     "NLS.ComplexAnalysis.holomorphicPathPullback_integral_and_integrability",
-    "NLS.ComplexAnalysis.curveIntegral_circlePath"
+    "NLS.ComplexAnalysis.curveIntegral_circlePath",
+    "NLS.ZakharovShabat.analyticOrderNatAt_canonicalPeriodicProduct",
+    "analyticOrderAt_comp_of_deriv_ne_zero",
+    "NLS.ZakharovShabat.PeriodicCountingData.disk_eigenvalue_pair",
+    "NLS.ZakharovShabat.PeriodicCountingData.disk_rootSpace_parity",
+    "NLS.ZakharovShabat.parityAlgebraicMultiplicity_eq_of_root_le",
+    "NLS.ZakharovShabat.canonicalDiscriminant_parity_levels",
+    "NLS.ZakharovShabat.PeriodicCountingData.midpoint_squaredGap_eq_pair",
+    "NLS.ZakharovShabat.analyticAt_contourMidpoint_and_squaredGap"
   ],
   "other_shared_branch_inspected": {
     "branch": "articles/mkdv-nls-hierarchies",
@@ -206,6 +218,26 @@
     "central_contour_coverage_proved": false,
     "rough_Hill_operator_spectral_equivalence_proved": false,
     "weighted_action_descent_proved": false,
-    "uniform_quadratic_action_bounds_proved": false
+    "uniform_quadratic_action_bounds_proved": false,
+    "actual_unordered_high_energy_pairs_identified": true
+  },
+  "high_energy_pair_progress": {
+    "potential_space": "C([0,1], C), with complex sup-norm topology",
+    "energy_region": "Image of B(n*pi,pi/4) under lambda=z^2, for positive high indices",
+    "squaring_injective_on_closed_high_disc": true,
+    "frequency_algebraic_multiplicity_equals_actual_energy_analytic_order": true,
+    "actual_two_root_energy_pair_constructed": true,
+    "double_roots_included": true,
+    "unordered_pair_unique_up_to_exchange": true,
+    "endpoint_trace_levels": "Both Delta values equal 2 for even n and -2 for odd n",
+    "analytic_energy_midpoint": "m^2+g/4=(l+r)/2, using intrinsic frequency midpoint m and squared gap g",
+    "analytic_energy_squared_gap": "4*m^2*g=(l-r)^2",
+    "common_neighborhood_for_all_high_pairs_symmetric_data_and_cubic_moments": true,
+    "individual_roots_assumed_analytic": false,
+    "full_globally_ordered_Hill_labels_constructed": false,
+    "reality_of_energy_roots_at_real_q_proved": false,
+    "primitive_endpoint_values_minus_i_n_pi_proved": false,
+    "weighted_action_descent_proved": false,
+    "quadratic_action_bounds_proved": false
   }
 }
