@@ -1,0 +1,31 @@
+{
+  "article": "mkdv-below-l2",
+  "source_url": "https://arxiv.org/abs/1606.07052v1",
+  "pdf_url": "https://arxiv.org/pdf/1606.07052v1",
+  "retrieved": "2026-11-02",
+  "pdf_sha256": "7ac1baa898365f4a556aec4d2e3182e82a9dbe782d8a183114ae81acb486e8c1",
+  "pdf_pages": 33,
+  "pdf_display_date": "November 14, 2021",
+  "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "main_theorems": [
+    {
+      "label": "1.1",
+      "page": 3,
+      "verified": false
+    },
+    {
+      "label": "1.2",
+      "page": 5,
+      "verified": false
+    },
+    {
+      "label": "1.3",
+      "page": 6,
+      "verified": false
+    }
+  ],
+  "checked_supporting_theorems": 21,
+  "status": "partial_adapters_and_weighted_moment_convergence",
+  "branch": "articles/mkdv-below-l2",
+  "audited_declarations": 30
+}
