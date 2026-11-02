@@ -16,7 +16,7 @@ def classicalHillWeightedPeriodMatrix (N : ℕ) (q : NLS.LinearVolterra.Curve �
   (NLS.Coeff.positiveIndexWeight m/NLS.Coeff.positiveIndexWeight n)*
     classicalHillPeriodMatrix N q m n
 
-private theorem weighted_squared_energy_kernel_le (n k : ℕ+) (hnk : n ≠ k) :
+theorem positiveIndex_weighted_squared_energy_kernel_le (n k : ℕ+) (hnk : n ≠ k) :
     ((k : ℝ)/(n : ℝ))*((n : ℝ)*(k : ℝ)/|(k : ℝ)^2-(n : ℝ)^2|^2) ≤
       1/|(k : ℝ)-(n : ℝ)|^2 := by
   have hn : (0 : ℝ) < n := by exact_mod_cast n.pos
@@ -65,7 +65,7 @@ theorem norm_weighted_offDiagonal_period_le (n k : ℕ+) (hnk : n ≠ k)
     _ = ((20/Real.pi)*A)*(((k : ℝ)/(n : ℝ))*
         ((n : ℝ)*(k : ℝ)/|(k : ℝ)^2-(n : ℝ)^2|^2)) := by ring
     _ ≤ ((20/Real.pi)*A)*(1/|(k : ℝ)-(n : ℝ)|^2) :=
-      mul_le_mul_of_nonneg_left (weighted_squared_energy_kernel_le n k hnk) (by positivity)
+      mul_le_mul_of_nonneg_left (positiveIndex_weighted_squared_energy_kernel_le n k hnk) (by positivity)
     _ = _ := by ring
 
 theorem weightedMatrix_bound (q : NLS.LinearVolterra.Curve ℂ) (hq : q ∈ V) (m n : ℤ) :

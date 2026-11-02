@@ -1352,7 +1352,7 @@
       ],
       "scope": "The sharper actual n*k/|k^2-n^2|^2 estimate constructs the index-rescaled period operator with exact entries, a common reciprocal-square majorant, operator-norm analyticity and free identity",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "3a68e8a0f524b2debaae7f10bed3cfda09523c5d00e2e9482adb8254cb8114e1"
+      "sha256": "7c02ab77c3641a7980c86c88ae12f6a5c8d2f3d6fd80e52471ab1bc60976ab74"
     },
     {
       "path": "NLS/KdV/ClassicalWeightedPeriodInverse.lean",
@@ -1377,6 +1377,90 @@
       "scope": "Constructed literal one-weight inverse-column errors are in l2, Banach analytic and uniformly small near zero with exact column-index scaling; the same inverse retains the normalized entire family and every actual period; second weight and canonical zeros remain open",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "2a6b7b0cd1f83ab84385098fb89041e11ae24cc982a70d2c8df89ebc5965de0b"
+    },
+    {
+      "path": "NLS/SequenceSpaces/RankOneDominatedMatrix.lean",
+      "source_labels": [
+        "Equation (52) far matrix tail dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Constructed actual Hilbert operator for any matrix dominated by an outer product of l2 sequences, with proved row/output membership, exact entries and norm bounded by the product of the l2 norms",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1ff0c31ca07a95da6b82a1263b113cd331f4c9f9caded8ee1b8201128cb3a035"
+    },
+    {
+      "path": "NLS/SequenceSpaces/MixedMajorantMatrix.lean",
+      "source_labels": [
+        "Equation (52) twice-weighted analytic operator dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Bounded matrix-symbol assembly and operator-norm analytic construction for a common convolution l1 plus outer-product l2 majorant",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "116ef12f4dc11019b54f3235b23017a2040da522a53ca8665f35b0bc1c18dddf"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveIndexPowerWeight.lean",
+      "source_labels": [
+        "Equation (52) bounded reciprocal power dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Genuine bounded reciprocal power symbols and positive reciprocal Hilbert sequence with norm at most two",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4e67529b40c6f183d6b49a67a33b8b6cbcb0516ab0f3df0e3e90ffa359f86ec7"
+    },
+    {
+      "path": "NLS/KdV/ClassicalTwoWeightedPeriodOperator.lean",
+      "source_labels": [
+        "Equation (52) actual two-weight period matrix"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Near/far kernel bound retains both 2/|k-n|^2 and 4/(n*k); the actual twice-weighted integral matrix defines an operator-norm analytic bounded operator, exact free identity and explicit norm bound on the same spectral neighborhood",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "55b6ac9edf0eae0eec3c6b50788abb26c84b666f73e863c5cf58c80759c65c9d"
+    },
+    {
+      "path": "NLS/KdV/ClassicalTwoWeightedPeriodInverse.lean",
+      "source_labels": [
+        "Equation (52) compatible actual two-weight inverse"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Constructed simultaneous unweighted and twice-weighted analytic inverses of norm at most two, with exact literal squared-index inverse-column compatibility from bounded reciprocal-square intertwining",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f453449c9197f6b0902af001a500ca9d6ce526ac9bfe82bbda63eed3a9815b10"
+    },
+    {
+      "path": "NLS/KdV/ClassicalTwoWeightedNormalizedCoefficients.lean",
+      "source_labels": [
+        "Equation (52) actual two-weight normalized errors"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "The literal squared-index inverse-column error belongs to l2, is Banach analytic, free-zero and uniformly small near zero with exact n^2 scaling; the identical R retains actual normalized entire functions and every period",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "abd1bcb5724c19a7c261426b3a0c4efa2109c9d32b7de7365065e720be7862e8"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedResidues.lean",
+      "source_labels": [
+        "Equation (52) actual critical resolvent coefficients"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Constructed actual positive m*(R e_n)_m residues as a Banach analytic l1 sequence; quadratic critical growth bounds all fixed-energy reciprocal denominators and proves absolute resolvent convergence; exact normalized entire-function resolvent identity off the critical energies",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7a482aeb15f6d8cdb48651394ab5fc2c1a319220ca3320328b12a7179b84b2d5"
     }
   ],
   "dependencies_needed": [
@@ -1408,15 +1492,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 1118,
-    "total_declarations_audited": 12480,
+    "candidate_declarations_audited": 1224,
+    "total_declarations_audited": 12586,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 96
+    "selected_modules": 103
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -1483,5 +1567,6 @@
   "analytic_period_inverse_record": "ANALYTIC_PERIOD_INVERSE.md",
   "infinite_normalized_differentials_record": "INFINITE_NORMALIZED_DIFFERENTIALS.md",
   "critical_products_record": "CRITICAL_PRODUCTS.md",
-  "weighted_normalized_coefficients_record": "WEIGHTED_NORMALIZED_COEFFICIENTS.md"
+  "weighted_normalized_coefficients_record": "WEIGHTED_NORMALIZED_COEFFICIENTS.md",
+  "two_weighted_normalized_coefficients_record": "TWO_WEIGHTED_NORMALIZED_COEFFICIENTS.md"
 }

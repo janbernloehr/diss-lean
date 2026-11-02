@@ -396,3 +396,23 @@ A second weight and actual normalized zero/product identification remain
 open, as do global/rough compatibility and all main theorems. The strict
 96-module build and transitive axiom audit are recorded in `VALIDATION.md`
 and `source.json`.
+
+## Two-weight coefficients and actual critical resolvents
+
+The twice-weighted actual period matrix is now bounded and analytic.
+Its proof retains both the reciprocal-square near-diagonal kernel and
+the necessary far outer-product Hilbert bound. Constructed inverses and
+a bounded reciprocal-square diagonal give exact compatibility with the
+unweighted inverse used by the normalized entire functions.
+
+The literal two-weight inverse-column error is a genuine analytic l2
+vector, uniformly small near zero with exact n² scaling. Its positive
+residue coefficients m*(R e_n)_m form an actual analytic l1 sequence.
+The normalized functions have an absolutely convergent critical resolvent
+expansion off the selected critical energies. See
+[TWO_WEIGHTED_NORMALIZED_COEFFICIENTS.md](TWO_WEIGHTED_NORMALIZED_COEFFICIENTS.md).
+
+Actual normalized zero equations, complete zero/product identification,
+rough/global compatibility and every main theorem remain open. The
+103-module strict build and complete transitive audit are recorded in
+`VALIDATION.md` and `source.json`.

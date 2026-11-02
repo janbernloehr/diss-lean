@@ -275,3 +275,14 @@ identities for the same R used by the normalized entire functions. See
 This is a decay step toward the normalized product (52); a second weight,
 actual normalized zeros, global/rough compatibility and every main row
 remain open.
+
+Two-weight actual normalized coefficient errors are now in l2 and Banach
+analytic, with a common neighborhood and exact n² smallness scaling.
+The proof constructs the twice-weighted period operator using both a
+convolution kernel and an outer-product Hilbert bound; compatible actual
+inverses recover the literal coefficient identities. The positive residue
+coefficients are analytic in l1 and give an absolutely convergent critical
+resolvent expansion of the actual normalized entire functions. See
+[TWO_WEIGHTED_NORMALIZED_COEFFICIENTS.md](TWO_WEIGHTED_NORMALIZED_COEFFICIENTS.md).
+Normalized zeros and their canonical product (52), the rough/global
+version and all main-theorem rows remain open.

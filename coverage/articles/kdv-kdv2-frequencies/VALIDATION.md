@@ -48,8 +48,11 @@ its existing Hilbert specialization and a transitive audit.
 | Six newly selected existing product/labeling/analysis dependencies | Complex derivative product, complete central multiplicities and labels, finite l^p modifications, entire-limit removal and local square-root charts are directly recompiled. |
 | `PositiveIndexWeight.lean`, `DiagonalIntertwining.lean`, `AnalyticOperatorInverse.lean` | Bounded reciprocal index symbol, actual operator/inverse intertwining, and a reusable constructed local analytic inverse near the identity. |
 | `ClassicalWeightedPeriodOperator.lean`, `ClassicalWeightedPeriodInverse.lean`, `ClassicalWeightedNormalizedCoefficients.lean` | Actual one-weight matrix bounds and compatible inverses; genuine analytic l2 weighted coefficient errors, uniformly small before all positive indices, retaining every normalization period. |
+| `RankOneDominatedMatrix.lean`, `MixedMajorantMatrix.lean`, `PositiveIndexPowerWeight.lean` | Actual Hilbert outer-product matrix bounds, analytic combined-majorant assembly, bounded reciprocal power symbols and the positive reciprocal Hilbert sequence. |
+| `ClassicalTwoWeightedPeriodOperator.lean`, `ClassicalTwoWeightedPeriodInverse.lean`, `ClassicalTwoWeightedNormalizedCoefficients.lean` | Constructed actual twice-weighted matrix and compatible inverse; genuine analytic two-weight l2 coefficient errors and all-index smallness with exact n² scaling, retaining the actual normalized periods. |
+| `ClassicalNormalizedResidues.lean` and the public one-weight energy kernel | Analytic actual l1 residue coefficients, fixed-energy reciprocal denominator bounds, absolute critical resolvent convergence and exact normalized entire-function identity; the one-weight estimate is reused as a public dependency. |
 
-All ninety-six selected modules compile with pinned **Lean 4.33.1**, commit
+All 103 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -64,9 +67,10 @@ PASS NLS/SequenceSpaces/Convolution
 PASS NLS/ZakharovShabat/ClassicalHorizontalStripBounds
 PASS NLS/SequenceSpaces/Multiplier
 PASS NLS/SequenceSpaces/PositiveIndexWeight
+PASS NLS/SequenceSpaces/PuncturedLattice
+PASS NLS/SequenceSpaces/PositiveIndexPowerWeight
 PASS NLS/SequenceSpaces/OperatorBasisExt
 PASS NLS/SequenceSpaces/DiagonalIntertwining
-PASS NLS/SequenceSpaces/PuncturedLattice
 PASS NLS/SequenceSpaces/HolderEmbedding
 PASS NLS/SequenceSpaces/BoundedCoordinateAnalytic
 PASS NLS/ComplexAnalysis/JointSpectralDerivative
@@ -78,6 +82,8 @@ PASS NLS/SequenceSpaces/AnalyticReciprocalTail
 PASS NLS/SequenceSpaces/ConjugateDuality
 PASS NLS/ComplexAnalysis/BilinearCircleIntegral
 PASS NLS/SequenceSpaces/ConvolutionMatrixAnalytic
+PASS NLS/SequenceSpaces/RankOneDominatedMatrix
+PASS NLS/SequenceSpaces/MixedMajorantMatrix
 PASS NLS/SequenceSpaces/ReciprocalSquareKernel
 PASS NLS/ComplexAnalysis/ParametricDividedDifference
 PASS NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
@@ -139,11 +145,15 @@ PASS NLS/KdV/ClassicalAllContourPeriodBounds
 PASS NLS/KdV/ClassicalPeriodOperator
 PASS NLS/KdV/ClassicalPeriodInverse
 PASS NLS/KdV/ClassicalWeightedPeriodOperator
+PASS NLS/KdV/ClassicalTwoWeightedPeriodOperator
 PASS NLS/KdV/ClassicalWeightedPeriodInverse
+PASS NLS/KdV/ClassicalTwoWeightedPeriodInverse
 PASS NLS/KdV/ClassicalNumeratorHilbert
 PASS NLS/KdV/ClassicalHilbertPeriod
 PASS NLS/KdV/ClassicalNormalizedDifferentials
 PASS NLS/KdV/ClassicalWeightedNormalizedCoefficients
+PASS NLS/KdV/ClassicalTwoWeightedNormalizedCoefficients
+PASS NLS/KdV/ClassicalNormalizedResidues
 PASS NLS/KdV/ClassicalSignedCriticalProduct
 PASS NLS/KdV/ClassicalCriticalEnergyProduct
 PASS NLS/KdV/ClassicalCriticalBasisProduct
@@ -155,11 +165,11 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 1118 candidate declarations; 12480 declarations total.
+Axiom audit passed: 1224 candidate declarations; 12586 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the ninety-six selected modules (including generated and private declarations)
+the 103 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -479,3 +489,28 @@ or disabled linters. Shared canonical sources/builds remain read only.
 A second index weight, actual normalized zeros/products, global/rough
 compatibility and every article main theorem remain open. No main-theorem
 inventory row is closed by the present coefficient estimate.
+
+
+The two-weight normalized coefficient and critical resolvent milestone is
+detailed in `TWO_WEIGHTED_NORMALIZED_COEFFICIENTS.md`. The actual squared-
+index inverse-column error is a Banach analytic l2 vector, uniformly small
+near zero with exact n² scaling. The bounded twice-weighted operator
+retains the necessary outer-product far tail, and its actual inverse is
+compatible with the R used by the normalized entire functions. Positive
+residue coefficients are genuinely analytic in l1; fixed-energy critical
+reciprocals are bounded, giving absolute critical resolvent convergence
+and the exact entire-function identity off the critical energies.
+
+Final strict run: all 103 selected modules pass; the complete transitive
+audit passes for 1224 selected declarations and 12586 declarations
+including all imported NLS dependencies. All 103 checked source hashes
+match, and the checker, audit and coverage selections agree exactly.
+The modified public one-weight energy kernel is directly recompiled.
+Only `propext`, `Classical.choice` and `Quot.sound` are permitted. There
+are no new axioms, placeholders, heartbeat increases, warning exceptions
+or disabled linters. Canonical sources and compiled dependencies remain
+read only; the full validation is serialized by the shared build lock.
+
+Actual normalized zeros, complete product identification (52), global/
+rough compatibility and every main theorem remain open. These weighted
+coefficient and resolvent results close no main-theorem inventory row.
