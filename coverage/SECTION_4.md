@@ -1,5 +1,19 @@
 # Section 4: Dirichlet and Neumann spectra
 
+## Corrected-height contours and original-domain ranks
+
+Groups section_4-027, section_4-033 and section_4-035 now use the corrected height throughout the localization and contour argument. The new common-neighborhood theorem includes full ambient and both restricted analytic projection families, the corrected exterior, actual contour equality, and both central ranks on the original one-derivative domain.
+
+The [corrected-height contour proofs](../NLS/ZakharovShabat/SourceCorrectedHeightContours.lean) carry the adopted constants through the actual original-norm contour arguments in Sections 3–5. Ten positive theorems and three definitions add no refutations or public examples.
+
+At every finite p>1, ordinary and auxiliary boundary problems use the corrected height (1+8*p*E_p*norm(phi))^p in the original input norm. One open convex connected neighborhood contains the input and zero before every larger cutoff. Full ambient moving rectangles and high circles, and both restricted projection families, are analytic on that same neighborhood. The moved integrals equal the original central integrals; both restricted ranks are 2N+1, also on the original one-derivative input domains. The full original resolvent is analytic on the corrected box-and-disk exterior. Retained counting data keeps full Jordan multiplicities and high-disk simplicity. The periodic proof passage also adopts the previously proved (1+8*p*norm(phi))^p correction, including p=1, with conditional parity and counts 4N+2 centrally and two per high disk.
+
+The full check passed: 8,661 build jobs, 7,729 public examples and an axiom audit of 45,232 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings.
+
+Continue the remaining source comparisons and direct corrections, retaining the general Hilbert-space direction and exact cited 2014 construction qualifications. Commit and push each completed step.
+
+## Previous source comparisons
+
 ## Adopted ordinary-boundary height correction
 
 `sourceTheorem1_4_proposed_height` now supplies the adopted corrected height for every finite p>1, in the original source norm, with both central counts 2N+1, simple high roots and exhaustion on a common neighborhood. The sharper p=2 theorem is retained. This updates the counting conclusion; the older proof reviews below preserve their inspected scopes.

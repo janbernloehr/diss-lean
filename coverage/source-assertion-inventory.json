@@ -1,10 +1,10 @@
 {
   "status": "published_source_navigation",
-  "updated_utc": "2026-11-02T07:20:56.287341+00:00",
-  "base_commit": "888f986f57921c939a8695c831295081aae5a781",
+  "updated_utc": "2026-11-02T07:46:35.599152+00:00",
+  "base_commit": "9013309a03250329e92502c40a53bb9cb7568eb5",
   "source_text_sha256": "64640083a811e0e05710297d056d23d7e1f2aadad7fb1f1a1271819b90978619",
   "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
-  "published_source_index_sha256": "2a3838b0013adfc66b674d7410d7fbbb1f90830b99574c9f884192a1c2abed79",
+  "published_source_index_sha256": "7d448b724c7d90eaf6f994054bf94d260c705d7b1bc235d7c3a953763cbae1d2",
   "scope": "Consolidation of existing source assessments, not a fresh semantic audit of all transitive dependencies.",
   "completion_claim": false,
   "units": [
@@ -4544,7 +4544,7 @@
     {
       "unit": "section_3",
       "document": "coverage/SECTION_3.md",
-      "document_sha256": "638a471a3e1aaa69bae8fb8a7603cbaf706b8691045177138c9af920a6982b49",
+      "document_sha256": "189bc8969370720a08a1f1fd154e147e2dc17f5f6f263345b926b45d38d99949",
       "groups": [
         {
           "group": "section_3-001",
@@ -6496,7 +6496,7 @@
         },
         {
           "group": "section_3-034",
-          "assessment": "proved_with_height_qualification",
+          "assessment": "corrected",
           "source_lines": [
             [
               1557,
@@ -6571,6 +6571,37 @@
                   "NLS.ZakharovShabat.periodicAlgebraicMultiplicity_zero",
                   "NLS.ZakharovShabat.periodicRootSpaceTop_zero_eq_range",
                   "NLS.ZakharovShabat.periodicRootSpace_one_zero_eq_top"
+                ]
+              }
+            },
+            {
+              "review": "CorrectedHeightContoursSourceComparison-2026-11-02",
+              "field": "unnumbered",
+              "index": 0,
+              "source_record_sha256": "777688bd618d6b1ac9d100946e4e371a827740831d04fa3290609547ab03edef",
+              "row": {
+                "ordered_group": "section_3-034",
+                "source_lines": [
+                  1557,
+                  1578
+                ],
+                "requirement": "Periodic projection ranks, conditional parity and exhaustion at the corrected original-norm height.",
+                "declarations": [
+                  "NLS.ZakharovShabat.exists_periodTwo_periodicCounting_corrected_height",
+                  "NLS.ZakharovShabat.mem_resolventSet_of_periodTwoExplicitHeight",
+                  "NLS.ZakharovShabat.PeriodicCountingData.central_parity",
+                  "NLS.ZakharovShabat.PeriodicCountingData.disk_parity",
+                  "NLS.ZakharovShabat.PeriodicCountingData.central_multiplicity",
+                  "NLS.ZakharovShabat.PeriodicCountingData.disk_multiplicity",
+                  "NLS.ZakharovShabat.sourceHeightExterior_subset_resolvent",
+                  "NLS.ZakharovShabat.sourceHeightRectangleIntegral_eq_central"
+                ],
+                "status": "corrected",
+                "ordered_status": "corrected",
+                "reviewed_claims": [
+                  "The proved period-two correction retains arbitrary finite-exponent input, including p=1, with exact central multiplicity 4N+2 and high-disk multiplicity two on a common neighborhood for all larger cutoffs.",
+                  "The actual moved rectangle equals the central algebraic projection. PeriodicCountingData retains central parity ranks 2N+2 and 2N and high-disk parity under precisely the even-support hypothesis. The existing deformation argument and full multiplicities are preserved.",
+                  "Exhaustion uses the corrected height (1+8*p*norm(phi))^p. The new original-norm integral equality and exterior transfer make the same strip correction available to the actual source resolvent."
                 ]
               }
             }
@@ -6790,7 +6821,7 @@
     {
       "unit": "section_4",
       "document": "coverage/SECTION_4.md",
-      "document_sha256": "f7f20f4d42c7ece939e7d934f8cdb3275e42b48a5877446f65b74fd258aa3050",
+      "document_sha256": "d2d61045aabf5732097a0263f89595375f3b82fdb43a220f9f27650f09ea4e70",
       "groups": [
         {
           "group": "section_4-001",
@@ -7750,7 +7781,7 @@
         },
         {
           "group": "section_4-027",
-          "assessment": "proved_with_height_qualification",
+          "assessment": "corrected",
           "source_lines": [
             [
               1991,
@@ -7782,6 +7813,34 @@
                 ],
                 "inventory_order": 27,
                 "classification": "proved_with_height_qualification"
+              }
+            },
+            {
+              "review": "CorrectedHeightContoursSourceComparison-2026-11-02",
+              "field": "unnumbered",
+              "index": 1,
+              "source_record_sha256": "777688bd618d6b1ac9d100946e4e371a827740831d04fa3290609547ab03edef",
+              "row": {
+                "ordered_group": "section_4-027",
+                "source_lines": [
+                  1991,
+                  1997
+                ],
+                "requirement": "The original reflected operator has discrete spectrum and locally uniform corrected-height localization.",
+                "declarations": [
+                  "NLS.ZakharovShabat.sourcePeriodicSpectrum_eq_sourceBoundary_union",
+                  "NLS.ZakharovShabat.discreteTopology_sourceBoundarySpectrum",
+                  "NLS.ZakharovShabat.sourceBoundarySpectrum_reflected",
+                  "NLS.ZakharovShabat.exists_uniform_sourceBoundary_corrected_height_contours",
+                  "NLS.ZakharovShabat.sourceTheorem1_4_proposed_height"
+                ],
+                "status": "corrected",
+                "ordered_status": "corrected",
+                "reviewed_claims": [
+                  "The previous original-domain reflection and operator identifications are retained. The actual ambient source spectrum is the union of its Dirichlet and Neumann restrictions; these restrictions remain discrete.",
+                  "At every finite p>1, the new ordinary contour theorem puts the complete corrected box-and-disk exterior in the domain of the analytic original resolvent on one source neighborhood, for every larger cutoff. The corrected coefficient is 8*p*E_p in the original input norm.",
+                  "The p=2 classical identification from the preceding review is retained; this correction does not replace those earlier domain proofs."
+                ]
               }
             }
           ]
@@ -7958,7 +8017,7 @@
         },
         {
           "group": "section_4-033",
-          "assessment": "proved_with_height_qualification",
+          "assessment": "corrected",
           "source_lines": [
             [
               2043,
@@ -7987,6 +8046,38 @@
                 ],
                 "inventory_order": 33,
                 "classification": "proved_with_height_qualification"
+              }
+            },
+            {
+              "review": "CorrectedHeightContoursSourceComparison-2026-11-02",
+              "field": "unnumbered",
+              "index": 2,
+              "source_record_sha256": "777688bd618d6b1ac9d100946e4e371a827740831d04fa3290609547ab03edef",
+              "row": {
+                "ordered_group": "section_4-033",
+                "source_lines": [
+                  2043,
+                  2052
+                ],
+                "requirement": "A common connected neighborhood supports analytic full and restricted corrected-height contours.",
+                "declarations": [
+                  "NLS.ZakharovShabat.sourceHeightRectangleIntegral",
+                  "NLS.ZakharovShabat.sourceHeightCorner_boundary_subset_resolvent",
+                  "NLS.ZakharovShabat.sourceHeightRectangleIntegral_eq_central",
+                  "NLS.ZakharovShabat.sourceBoundaryHeightProjection",
+                  "NLS.ZakharovShabat.sourceBoundaryHeightProjection_eq_central",
+                  "NLS.ZakharovShabat.sourceBoundaryHeightProjection_apply",
+                  "NLS.ZakharovShabat.exists_uniform_sourceBoundary_corrected_height_contours",
+                  "NLS.ZakharovShabat.sourceBoundaryProjection_commute_centralIntegral",
+                  "NLS.ZakharovShabat.sourceBoundaryProjection_commute_circleIntegral"
+                ],
+                "status": "corrected",
+                "ordered_status": "corrected",
+                "reviewed_claims": [
+                  "One open convex connected original-input neighborhood contains the potential and zero before every larger cutoff. The actual full moving rectangle and all high-circle integrals, as well as both actual boundary restrictions, are analytic on that same neighborhood.",
+                  "The corrected contour boundary is admissible and its actual original-norm integral equals the original central integral. Both compressed projections are the actual restrictions; their equality with the central restrictions preserves invariant ranges and finite-dimensional idempotence.",
+                  "The full original resolvent is analytic in the spectral parameter throughout the corrected box-and-disk exterior, using (1+8*p*E_p*norm(phi))^p for all finite p>1."
+                ]
               }
             }
           ]
@@ -8029,7 +8120,7 @@
         },
         {
           "group": "section_4-035",
-          "assessment": "proved_with_height_qualification",
+          "assessment": "corrected",
           "source_lines": [
             [
               2062,
@@ -8067,6 +8158,35 @@
                 ],
                 "inventory_order": 35,
                 "classification": "proved_with_height_qualification"
+              }
+            },
+            {
+              "review": "CorrectedHeightContoursSourceComparison-2026-11-02",
+              "field": "unnumbered",
+              "index": 3,
+              "source_record_sha256": "777688bd618d6b1ac9d100946e4e371a827740831d04fa3290609547ab03edef",
+              "row": {
+                "ordered_group": "section_4-035",
+                "source_lines": [
+                  2062,
+                  2070
+                ],
+                "requirement": "Full algebraic boundary counts and original-domain ranks at the corrected height.",
+                "declarations": [
+                  "NLS.ZakharovShabat.exists_uniform_sourceBoundary_corrected_height_contours",
+                  "NLS.ZakharovShabat.sourceTheorem1_4_proposed_height",
+                  "NLS.ZakharovShabat.sourceBoundaryCentralProjection_rank_eq_sum",
+                  "NLS.ZakharovShabat.SourceBoundaryCountingData.disk_domain_rank",
+                  "NLS.ZakharovShabat.SourceBoundaryCountingData.disk_unique_simple",
+                  "NLS.ZakharovShabat.range_sourceBoundaryCentralProjection_comp_inclusion"
+                ],
+                "status": "corrected",
+                "ordered_status": "corrected",
+                "reviewed_claims": [
+                  "Both corrected rectangle restrictions have rank 2N+1, including after restriction of their input to the original one-derivative boundary domain. The retained counting data gives high-circle rank one, including on that domain.",
+                  "The actual original central projection rank is the sum of full Jordan multiplicities. The adopted corrected-height count theorem identifies the corrected cluster and keeps both exact counts and exhaustive localization, with one simple root in each high disk.",
+                  "The existing free-rank and deformation proofs are preserved; the new work supplies the corrected-height actual contour and its original-domain rank, without a new refutation."
+                ]
               }
             }
           ]
@@ -8191,7 +8311,7 @@
     {
       "unit": "section_5",
       "document": "coverage/SECTION_5.md",
-      "document_sha256": "b87d78a4aab3ddc5f2f32110a133fdce63bf07a947f1825ae13cfa65899fbdf2",
+      "document_sha256": "4bda879d1fa12100cd89739ec4d1b71968d39e22965df862005fceca82c22903",
       "groups": [
         {
           "group": "section_5-001",
@@ -8757,7 +8877,7 @@
         },
         {
           "group": "section_5-015",
-          "assessment": "proved_analytic_contours_with_height_qualification",
+          "assessment": "corrected",
           "source_lines": [
             [
               2244,
@@ -8798,6 +8918,39 @@
                   "NLS.ZakharovShabat.SourceAuxiliaryExteriorContourData.ambient_spectrum_subset",
                   "NLS.ZakharovShabat.exists_uniform_sourceAuxiliaryExteriorContourData",
                   "NLS.ZakharovShabat.sourceCorollary3_5_all_larger"
+                ]
+              }
+            },
+            {
+              "review": "CorrectedHeightContoursSourceComparison-2026-11-02",
+              "field": "unnumbered",
+              "index": 4,
+              "source_record_sha256": "777688bd618d6b1ac9d100946e4e371a827740831d04fa3290609547ab03edef",
+              "row": {
+                "ordered_group": "section_5-015",
+                "source_lines": [
+                  2244,
+                  2253
+                ],
+                "requirement": "A common connected neighborhood supports the actual auxiliary corrected-height contour argument.",
+                "declarations": [
+                  "NLS.ZakharovShabat.mem_sourceResolventSet_of_auxiliaryExplicitHeight",
+                  "NLS.ZakharovShabat.sourceAuxiliaryHeightProjection",
+                  "NLS.ZakharovShabat.sourceAuxiliaryHeightProjection_eq_central",
+                  "NLS.ZakharovShabat.sourceAuxiliaryHeightProjection_apply",
+                  "NLS.ZakharovShabat.exists_uniform_sourceAuxiliary_corrected_height_contours",
+                  "NLS.ZakharovShabat.sourceAuxiliaryProjection_commute_centralIntegral",
+                  "NLS.ZakharovShabat.sourceAuxiliaryProjection_commute_circleIntegral",
+                  "NLS.ZakharovShabat.SourceAuxiliaryContourData.disk_domain_rank",
+                  "NLS.ZakharovShabat.sourceAuxiliaryCentralProjection_rank_eq_sum",
+                  "NLS.ZakharovShabat.sourceProposition5_2_corrected_height"
+                ],
+                "status": "corrected",
+                "ordered_status": "corrected",
+                "reviewed_claims": [
+                  "The auxiliary phase is an original-source isometry. The new ambient strip theorem transfers the same corrected coefficient 8*p*E_p without another norm factor, for every finite p>1.",
+                  "One open convex connected original-input neighborhood contains the input and zero and supports all larger cutoffs simultaneously: full actual moving rectangle and high-circle analyticity, both auxiliary restrictions, corrected-boundary admissibility, and spectral-parameter analyticity on the complete corrected exterior.",
+                  "The full moved integral and each auxiliary restriction equal their original central counterparts. Both restricted projections are finite-dimensional idempotents of rank 2N+1, with the same rank on the original one-derivative domains. The retained exterior contour data carries all original algebraic counts and high-circle properties."
                 ]
               }
             }
@@ -53425,7 +53578,7 @@
   "queued_not_published": [],
   "qualification": "This reconciles previously published assessments and inspected source navigation. It is not a new semantic review of all proof dependencies. Full source-line accounting does not imply every mathematical claim is proved. Earlier detailed qualifications and historical corrections remain unchanged. Partial/pending counts cover those explicit statuses only, not every qualified assessment.",
   "preparation_ready": true,
-  "source_inventory_draft_sha256": "ce11c37d3f11b625fb3e34848b2c772f21dff0bc52818992e0ee6af3e71d9239",
+  "source_inventory_draft_sha256": "a0646a43ec85be80ca2b1d48cffc0750d789f38e8687b003212e3bb3479000d4",
   "gap_inspection_sha256": "c48c6ccf005af940aca0f35634990455bb7501c5a717db71d1fac01e7efb91fb",
   "tail_inspection_sha256": "f8b4bc671ff240da2f8b2543a80a39606c9c30cde0da3cb1af3d94ce13dc84fb",
   "inspected_navigation_gaps": [
@@ -57241,26 +57394,28 @@
   ],
   "unassigned_nonblank_source_lines": [],
   "all_nonblank_source_lines_assigned": true,
-  "new_lean_proofs": 2,
+  "new_lean_proofs": 10,
   "new_refutations": 0,
-  "preceding_navigation_sha256": "1f4c6f7506fdcd7e240d137ce5fb91e93ed74c3d2bdc9663edf1402ed74be28b",
+  "preceding_navigation_sha256": "ae1f3bcc7cd3528cdfb07a4aac6a3f567eb181a6956b09db8677a01133f0dae1",
   "validation_lean_sources": {
-    "files": 4922,
-    "sha256": "466878611d145d98f4153136b68e0dc3a2e938fadafdac4153f03eeff3d1d643"
+    "files": 4923,
+    "sha256": "cbba275e56c41633ab80c89b91771dba18b42db32da07eb6f7e44a3cde0735e8"
   },
   "validation": {
-    "session": 14894,
+    "session": 29819,
     "exit": 0,
     "exit_observed": true,
-    "log": "work/GeneralSpectralHeightCorrectionsFullCheck.log",
-    "log_sha256": "4310b5442ee12ef5ef550f6b6e7dde286dfdfa068bcac5edf9abde1d80f4142c"
+    "log": "work/CorrectedHeightContoursFullCheck.log",
+    "log_sha256": "20ea9c4331c229085f1f85d4248b3436ae0a31b504facc4277ac2d0e6e6242ee"
   },
   "assessment_update": {
-    "review": "GeneralSpectralHeightCorrectionsSourceComparison-2026-11-02",
+    "review": "CorrectedHeightContoursSourceComparison-2026-11-02",
     "adopted_groups": [
-      "spectral-11",
-      "spectral-21",
-      "section_3-003"
+      "section_3-034",
+      "section_4-027",
+      "section_4-033",
+      "section_4-035",
+      "section_5-015"
     ]
   }
 }

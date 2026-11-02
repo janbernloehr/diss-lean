@@ -79,4 +79,6 @@ The [auxiliary height correction](SECTION_5.md) updates groups section_5-012 and
 
 The [general spectral-height corrections](SPECTRAL_OVERVIEW.md) update spectral-11, spectral-21 and section_3-003 with their proved exponent-dependent bounds. The full period-two scope includes p=1. Every historical evidence row is retained.
 
-The full check passed: 8,660 build jobs, 7,729 public examples and an axiom audit of 45,200 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings. Source-line accounting, exact evidence references and document links are checked separately.
+The [corrected-height contour proofs](SECTION_4.md) update the five remaining height-qualified proof passages in Sections 3–5, retaining all historical evidence. Full ambient and restricted contour analyticity and original-domain ranks now share the corrected-height neighborhood.
+
+The full check passed: 8,661 build jobs, 7,729 public examples and an axiom audit of 45,232 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings. Source-line accounting, exact evidence references and document links are checked separately.

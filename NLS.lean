@@ -4921,3 +4921,4 @@ import NLS.ZakharovShabat.SmoothNLSSourceDerivative
 import NLS.ZakharovShabat.SmoothNLSDirichletVelocity
 import NLS.ZakharovShabat.SourceAuxiliaryExplicitHeight
 import NLS.ZakharovShabat.PeriodTwoExplicitHeight
+import NLS.ZakharovShabat.SourceCorrectedHeightContours

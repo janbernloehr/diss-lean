@@ -1,5 +1,19 @@
 # Section 5: auxiliary Dirichlet and Neumann spectra
 
+## Corrected-height auxiliary contour argument
+
+Group section_5-015 now has a common-neighborhood theorem for the full ambient and both auxiliary corrected-height contour families. The phase isometry preserves the original norm and the same coefficient 8*p*E_p. Both central ranks remain 2N+1 on the original one-derivative domains.
+
+The [corrected-height contour proofs](../NLS/ZakharovShabat/SourceCorrectedHeightContours.lean) carry the adopted constants through the actual original-norm contour arguments in Sections 3–5. Ten positive theorems and three definitions add no refutations or public examples.
+
+At every finite p>1, ordinary and auxiliary boundary problems use the corrected height (1+8*p*E_p*norm(phi))^p in the original input norm. One open convex connected neighborhood contains the input and zero before every larger cutoff. Full ambient moving rectangles and high circles, and both restricted projection families, are analytic on that same neighborhood. The moved integrals equal the original central integrals; both restricted ranks are 2N+1, also on the original one-derivative input domains. The full original resolvent is analytic on the corrected box-and-disk exterior. Retained counting data keeps full Jordan multiplicities and high-disk simplicity. The periodic proof passage also adopts the previously proved (1+8*p*norm(phi))^p correction, including p=1, with conditional parity and counts 4N+2 centrally and two per high disk.
+
+The full check passed: 8,661 build jobs, 7,729 public examples and an axiom audit of 45,232 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings.
+
+Continue the remaining source comparisons and direct corrections, retaining the general Hilbert-space direction and exact cited 2014 construction qualifications. Commit and push each completed step.
+
+## Previous source comparisons
+
 ## Corrected all-exponent norm height
 
 The [positive auxiliary height proofs](../NLS/ZakharovShabat/SourceAuxiliaryExplicitHeight.lean) adopt the explicit exponent-dependent coefficient in Proposition 5.2.
