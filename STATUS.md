@@ -1,6 +1,21 @@
 # Implementation status
 
-## Current milestone: ordered Appendix G comparison
+## Current milestone: Appendix H physical Hamiltonian integrals
+
+The [physical Hamiltonian integral](NLS/ZakharovShabat/AppendixHPhysicalHamiltonian.lean) identifies the original kth Hamiltonian on every complex H^(k-1) source with the actual unit-period integral of the first field times its Riccati density. It retains the exact factor (-i)^(k+1), including the H^0 mass endpoint.
+
+Both factors use the existing unit-interval L2 synthesis. Bilinear Parseval gives the formula without extra smoothness or endpoint matching. Any L2 representatives with the original Fourier coefficients give the same integral.
+
+Three positive theorems add no new definitions, examples or refutations.
+
+The full check passed: 8,645 build jobs, 7,729 public examples and an axiom audit of 45,003 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Publish the reviewed fourteen-group ordered Appendix H comparison, retaining the direct phase correction, the weak H.1 derivative and the input-independent H.2 polynomial on its full H^m domain. Continue Appendix I afterward.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Appendix G comparison
 
 The [ordered Appendix G comparison](coverage/APPENDIX_G_ASSERTIONS.md) covers 41 groups on pp.135–138: 26 matched, 13 directly corrected and two contextual. No partial or pending groups remain in this local ledger.
 

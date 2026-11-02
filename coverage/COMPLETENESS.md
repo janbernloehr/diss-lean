@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [Appendix H physical Hamiltonian integrals](APPENDIX_H.md) add 3 checked positive theorems. Publish the reviewed fourteen-group ordered Appendix H comparison, retaining the direct phase correction, the weak H.1 derivative and the input-independent H.2 polynomial on its full H^m domain. Continue Appendix I afterward. The broader completeness qualifications below remain.
+
 The [ordered Appendix G ledger](APPENDIX_G_ASSERTIONS.md) compares 41 groups: 26 matched, 13 corrected and two contextual. The explicit interval norm and corrected constants are adopted directly. Actual physical gradients, finite exponent ranges and common-neighborhood quantifiers are retained. The alternative gradient proof uses cubic stability and time interpolation. G.7 remains pointwise source summability. The exact source local-norm convention is not identified; the 2014 reference comparison remains open. Appendix H is next.
 
 The [Appendix G free-mode and gradient formulas](APPENDIX_G.md) add 7 checked positive theorems. Publish the reviewed forty-one-group ordered Appendix G comparison, then continue with Appendix H and the broader outstanding source ledger. The broader completeness qualifications below remain.

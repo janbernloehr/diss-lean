@@ -4905,3 +4905,4 @@ import NLS.ZakharovShabat.AppendixGVolterraDerivative
 import NLS.ZakharovShabat.AppendixGWholeSequenceH1
 import NLS.Fourier.AppendixGFreeFourier
 import NLS.ZakharovShabat.AppendixGGradientAlgebra
+import NLS.ZakharovShabat.AppendixHPhysicalHamiltonian

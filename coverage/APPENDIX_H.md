@@ -1,5 +1,22 @@
 # Appendix H: current source audit
 
+## Appendix H physical Hamiltonian integrals
+
+The [physical Hamiltonian integral](../NLS/ZakharovShabat/AppendixHPhysicalHamiltonian.lean) identifies the original kth Hamiltonian on every complex H^(k-1) source with the actual unit-period integral of the first field times its Riccati density. It retains the exact factor (-i)^(k+1), including the H^0 mass endpoint.
+
+Both factors use the existing unit-interval L2 synthesis. Bilinear Parseval gives the formula without extra smoothness or endpoint matching. Any L2 representatives with the original Fourier coefficients give the same integral.
+
+Three positive theorems add no new definitions, examples or refutations.
+
+The full check passed: 8,645 build jobs, 7,729 public examples and an axiom audit of 45,003 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Publish the reviewed fourteen-group ordered Appendix H comparison, retaining the direct phase correction, the weak H.1 derivative and the input-independent H.2 polynomial on its full H^m domain. Continue Appendix I afterward.
+The [broader completion qualifications](COMPLETENESS.md) remain.
+
+## Previous source review
+
+The following records retain their historical scope; the adopted corrections above govern the current proof step.
+
 This compares the formulas and numbered results on printed pages 138–139
 with the public Lean API. It supersedes the historical Appendix H progress
 notes in `COVERAGE.md`, without certifying the rest of the dissertation.

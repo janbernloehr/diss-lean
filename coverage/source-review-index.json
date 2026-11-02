@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T03:08:42.187904+00:00",
-  "base_commit": "8cfab2712077bdc9296191d8d321ea724e8eb0f6",
+  "published_utc": "2026-11-02T03:34:08.285023+00:00",
+  "base_commit": "f612ba394b014896bec81fa1e04833ab7acac3e2",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 210,
-    "module_hash_checks": 4432,
-    "distinct_modules": 2198
+    "review_records": 211,
+    "module_hash_checks": 4437,
+    "distinct_modules": 2202
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "8cfab2712077bdc9296191d8d321ea724e8eb0f6",
-    "validated_state": "Appendix G ordered comparison changes documentation only; the exact Lean snapshot retains the successful free-mode and gradient check.",
+    "base_commit": "f612ba394b014896bec81fa1e04833ab7acac3e2",
+    "validated_state": "Fresh full check after Appendix H physical Hamiltonian integrals.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8644,
+    "build_jobs": 8645,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 44999,
+    "transitive_NLS_declarations": 45003,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 10426,
+    "gate_session": 7558,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4906,
-      "sha256": "f2ae956a461e480705e6c70c6c98752b18939c026fed7096311a50b1f44419e9"
+      "files": 4907,
+      "sha256": "2d67a19a460f3c58ecda7878959498d184a8b3a7ffe1ac25d8f7d72d76e05748"
     },
-    "full_gate_log_sha256": "6691583fa9d9d258c6eae077105d741d03a7c4738936015449d0f6079de23232",
-    "qualification": "Unchanged Lean sources and locks retain the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
-    "full_gate_log": "work/AppendixGFreeGradientFullCheck.log",
-    "validation_reused_from_commit": "8cfab2712077bdc9296191d8d321ea724e8eb0f6"
+    "full_gate_log_sha256": "3129c666cb79580984db3a8a0860e3b8333352b0a8b66edd397fe018e949fe92",
+    "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
+    "full_gate_log": "work/AppendixHPhysicalHamiltonianFullCheck.log"
   },
   "named_statements": [
     {
@@ -72296,6 +72295,96 @@
         "log_sha256": "6691583fa9d9d258c6eae077105d741d03a7c4738936015449d0f6079de23232"
       },
       "source_record_sha256": "51380984413351381b1fdcb8d48ada2041b292bec5e761d90d1cd5e473585cd2"
+    },
+    "AppendixHPhysicalHamiltonianSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "f612ba394b014896bec81fa1e04833ab7acac3e2",
+      "updated_utc": "2026-11-02T03:34:08.236644+00:00",
+      "source_lines": [
+        [
+          11375,
+          11384
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "source_lines": [
+            11375,
+            11384
+          ],
+          "requirement": "The normalized kth Hamiltonian is the actual unit-period physical integral on H^(k-1).",
+          "declarations": [
+            "NLS.Fourier.appendixH_unit_bilinear_parseval",
+            "NLS.ZakharovShabat.appendixH_hamiltonian_eq_physical_integral",
+            "NLS.ZakharovShabat.appendixH_hamiltonian_eq_integral_of_coefficients"
+          ],
+          "reviewed_claims": [
+            "Bilinear Parseval identifies the actual synthesized unit-interval L2 representatives.",
+            "The coefficient Hamiltonian equals the literal physical integral at every admissible Sobolev order, with factor (-i)^(k+1).",
+            "Any square-integrable representatives with the original field and Riccati coefficients give the same integral."
+          ],
+          "qualification": "Literal unit-period Hamiltonian integral on every complex H^(k-1) source using actual synthesized L2 representatives; any L2 representatives with the original coefficients give the same integral, with the exact phase. No additional regularity is assumed."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SobolevNLSHamiltonianHierarchy.lean": "9e4aaa44fb3d1ff4d9b4259fc9047807ad01c8a3a3311316daa5bf38b0937ab4",
+        "NLS/ZakharovShabat/SobolevRiccatiClassicalAgreement.lean": "2ebb68a49575952d9952e7f9ac40ddab87c4312d020c441d8fbf9054ed027a88",
+        "NLS/Fourier/IntervalBilinearParseval.lean": "b286690e622d20f7cb9e8c0fbd6a5b6710736c87fdc2682d05c18b8f068ae258",
+        "NLS/Fourier/UnitIntervalL2Equiv.lean": "7d1deb0d17f8594b42fbaa3bfbeb4ad3a250a845ca3708dd9495222c73698cea",
+        "NLS/ZakharovShabat/AppendixHPhysicalHamiltonian.lean": "d31119713824e7aa1d968635a8c2701299ccad51aa9a6371493cdde8cf4e2c03"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SobolevNLSHamiltonianHierarchy.lean",
+        "NLS/ZakharovShabat/SobolevRiccatiClassicalAgreement.lean",
+        "NLS/Fourier/IntervalBilinearParseval.lean",
+        "NLS/Fourier/UnitIntervalL2Equiv.lean",
+        "NLS/ZakharovShabat/AppendixHPhysicalHamiltonian.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "Publish the ordered Appendix H comparison and continue the broader source ledger."
+      ],
+      "resolved_declarations": [
+        "NLS.Fourier.appendixH_unit_bilinear_parseval",
+        "NLS.ZakharovShabat.appendixH_hamiltonian_eq_integral_of_coefficients",
+        "NLS.ZakharovShabat.appendixH_hamiltonian_eq_physical_integral"
+      ],
+      "declaration_inventory_count": 45003,
+      "qualification": "The [physical Hamiltonian integral](NLS/ZakharovShabat/AppendixHPhysicalHamiltonian.lean) identifies the original kth Hamiltonian on every complex H^(k-1) source with the actual unit-period integral of the first field times its Riccati density. It retains the exact factor (-i)^(k+1), including the H^0 mass endpoint.\n\nBoth factors use the existing unit-interval L2 synthesis. Bilinear Parseval gives the formula without extra smoothness or endpoint matching. Any L2 representatives with the original Fourier coefficients give the same integral.\n\nThree positive theorems add no new definitions, examples or refutations. The fourteen-group ordered Appendix H comparison and the broader dissertation audit remain separate.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          138,
+          139
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-g-ordered-138.png": "2107406ce69dacef0417629d9a05f2d49c82987ac3f6c20495f09f8226b8b336",
+          "work/AppendixHPage139.png": "2d3d4d8b726c1f7d8292ec9ce0764b0c22b1074862e2f5ff2f7fff1f989a9649"
+        }
+      },
+      "preceding_review_hash": "51380984413351381b1fdcb8d48ada2041b292bec5e761d90d1cd5e473585cd2",
+      "validation_lean_sources": {
+        "files": 4907,
+        "sha256": "2d67a19a460f3c58ecda7878959498d184a8b3a7ffe1ac25d8f7d72d76e05748"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 3,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [
+        "NLS.ZakharovShabat.appendixH_hamiltonian_eq_physical_integral._proof_1"
+      ],
+      "full_gate": {
+        "session": 7558,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixHPhysicalHamiltonianFullCheck.log",
+        "log_sha256": "3129c666cb79580984db3a8a0860e3b8333352b0a8b66edd397fe018e949fe92"
+      },
+      "source_record_sha256": "be26a963ea676aef5aca6ec1e5b8ef62bd94ee3be3d632267a7099ac1d0dd881"
     }
   }
 }
