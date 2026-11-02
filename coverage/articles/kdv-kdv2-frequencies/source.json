@@ -274,7 +274,7 @@
       ],
       "scope": "Literal weighted contours, Banach analyticity and continuation criteria; actual spectral factors and their continuation remain to be constructed",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "911877f4f7302efd0602cb89d74c859242e4dc83890f6ffdd112ef8867daf1cf"
+      "sha256": "789a5dfa1d9b98e9010b400002ea0a1d1335d379de52f266e2e86120ce3162e7"
     },
     {
       "path": "NLS/KdV/FrequencyContourDecomposition.lean",
@@ -396,7 +396,7 @@
       ],
       "scope": "Constructed analytic squared primitive at both branch signs, with public derivative identity extracted",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "901ca35bbfa1e5ac74f1a6aa25612548409f637a97dd90c9dc036058f8efdb5c",
+      "sha256": "f7107b18fc5df42b7525e38c6390d3d7b0113b039b4409270eaf3920fcafe72a",
       "upstream_commit": "2135a680ab46ba7c476060e9a66db7d5753f8b29"
     },
     {
@@ -1917,6 +1917,346 @@
       "scope": "Existing expanding half-integer circle radii and uniform threshold tools, directly recompiled",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "ab2b8a456c59709725e9735604cd6d92fae8f19dfc632a66f27723f7a1949bed"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCoshStripControl.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "91d1711d9d44ba3eaa547f2d9bd9aa138c8cbcea750799d64194358aa79ce9db"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHighGapPairs.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; modified; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "473c73273c862dc8d707967a3414b6e0f2eace08c66f5894da6108aebe27a074"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillAnnulusCoverage.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "077e7665a6c7f6353eab8e7043bcaf66140544a8dabdce0fb26a97fb6e35b775"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillBandNormalization.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "6fba685e4b7c13fb68960248ebe7b21a19ba22fd88021edb8ca68e1e489bd3f2"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillConjugation.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "ffc639b592eceeca6524e069dae7020800eb034b83338121e78ebb8e302cf659"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillDiscAsymptotics.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "115a47f8fb4d6e73b316d814c590cabd9e26d9152f9c51bc62f89471a61604c4"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillGreen.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "917739d4f68ad00ee3d23895cd596379e000727d5b344b54effef565ee34bf8e"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillHighEndpointNormalization.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "49a842e6f9b4d235cdf9e76966b178c0c58c4187f18bb6d744055b921a91bf06"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillHighPrimitiveStrip.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "6a00c0d729e1f5f4a9faea56371a4e5437a1e4718bb618709613311ae5722c40"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillHighTracePhase.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "3ee5a5c4a0c94ea1f087c6ea6417deba7b86428fafda3001de4648f12e57a529"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillLowOddDifferentialMoments.lean",
+      "source_labels": [
+        "Lemma 3.1(iii) all-mode common free-source neighborhood"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Constructed fixed-contour local filled charts and compact source tubes; finite-head intersection with high asymptotics gives one near-zero complex continuous-potential neighborhood before every positive contour, entire numerator and odd order",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1ed82cd5a56c52ba664407afec55dbbb8ed760dfc1766e31dd76a0a6472eb186"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillOddDifferentialMoments.lean",
+      "source_labels": [
+        "Lemma 3.1(iii) actual high differential moments"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Actual differential radius independence via whole-annulus source coverage and uniform high odd cancellation for every entire numerator, before all high contour indices and odd orders",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a23df32778c9a15ca6fe3371907d8136be723d0274884a80927057d5af9d5c9a"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillPrimitiveReflection.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "baf154f2a26608f7be7c6312404e833b4a48048c091f2fb4c4bd16efbd479cc4"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillPrimitiveSheets.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "9a8c1dea2892bda9513bed0f3b78102a25875b24f901a879a27361818796f3a8"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillReality.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "67c9490a6560522007d48875121e0f8e2b3f6b9b25bbe98b0c2a43fa514c573f"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillSmallDiscTrace.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "0b3000b01b892f67fb1927c537e9d5563ff96704f6b075e0645472217524e57c"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillSmallGapCoverage.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "dc905b799da8b91815ebf4a90a9ae1caac9078322b7c288eaf6aa07055dd310b"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillSquaredPrimitiveMatching.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "2c081969580ba524e62c6cf2e51e3258323f9c269c33f28504e73ad22bffa52d"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillWholeGapQuotients.lean",
+      "source_labels": [
+        "Lemma 2.6 actual whole-gap filled quotients"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "A common high family of actual squared primitives and nonzero analytic root quotients with exact continued sheet, radicand identity, endpoint value and complete complex gap enclosure; multiple and collapsed branch points included",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e2bd11218562ddcbdc1fdd97b19be6e4963a8cc9bebae17ba14dd8992725f2cb"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillWholeGapSquares.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; generalized_small_bound_preserving_original_interface; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "807f79c97cd5116cf11344cd0984f5b91db04768ea35f41ccf6518082d87bf43"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedMoments.lean",
+      "source_labels": [
+        "Lemma 3.1(i)-(ii) actual normalized moments"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Literal actual normalized frequency moments and exact mapped energy-contour/Jacobian identity; joint integrand and all moment analyticity, with exact original zeroth normalization from the actual inverse",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "536642ddc54ff8d61fbae007bdb209b46a9f9af5e0aa695ff9ba6a68eb690789"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedOddMoments.lean",
+      "source_labels": [
+        "Lemma 3.1(i)-(iii) actual local all-mode normalized moment family"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Genuine common-neighborhood construction with actual R, every positive output/contour index, all moment analyticity, exact zeroth periods and every odd cancellation including low, diagonal and collapsed contours; full rough/global W scope and even collapsed clause remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "369ec580cc8dc43fa3b2da2311f90bfa8510dc040f05b437bb22d17a58cc5f0b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ClassicalSolutionInjectivity.lean",
+      "source_labels": [
+        "Shared actual Hill whole-gap/continuation dependency"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Selected proved continuous-potential dependency from convexity 4b8896cdfc0e7fabc3b75df7db287ee472c532fe; new; directly recompiled for actual normalized moment cancellation, with no ZS RealType assumption imposed on complex Hill potentials",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "source_import_commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "sha256": "9affcd40ecb7e9e599273563a89975108cf86ad2326d1656de83713014cb52a4"
     }
   ],
   "dependencies_needed": [
@@ -1948,15 +2288,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 1582,
-    "total_declarations_audited": 13743,
+    "candidate_declarations_audited": 1778,
+    "total_declarations_audited": 13953,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 141
+    "selected_modules": 164
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -1995,8 +2335,8 @@
   "progress_record": "PROGRESS.md",
   "endpoint_mass_record": "MASS_NONEXTENSION.md",
   "shared_developments_inspected": {
-    "articles/kdv-convexity": "597fc93b8d751fe896ea849a20a0990632165c44",
-    "articles/kdv-estimates": "44071d89de13be985a6aa106b65801293ddbe27d"
+    "articles/kdv-convexity": "9d1741ce0f47d05e6bc63deaa43b5cdd043e7848",
+    "articles/kdv-estimates": "0a64af6ba85b92eeb480b500ef11cfa90ae69ece"
   },
   "fixed_time_record": "FIXED_TIME_NONEXTENSION.md",
   "frequency_moment_record": "FREQUENCY_MOMENTS.md",
@@ -2028,5 +2368,15 @@
   "normalized_zeros_record": "NORMALIZED_ZEROS.md",
   "simple_normalized_zeros_record": "SIMPLE_NORMALIZED_ZEROS.md",
   "normalized_energy_products_record": "NORMALIZED_ENERGY_PRODUCTS.md",
-  "normalized_product_constant_record": "NORMALIZED_PRODUCT_CONSTANT.md"
+  "normalized_product_constant_record": "NORMALIZED_PRODUCT_CONSTANT.md",
+  "normalized_odd_moments_record": "NORMALIZED_ODD_MOMENTS.md",
+  "shared_whole_gap_import_record": "SHARED_WHOLE_GAP_IMPORT.json",
+  "selected_shared_source_imports": [
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "4b8896cdfc0e7fabc3b75df7db287ee472c532fe",
+      "record": "SHARED_WHOLE_GAP_IMPORT.json",
+      "kind": "selected continuous-potential dependency sources; full branch not merged"
+    }
+  ]
 }

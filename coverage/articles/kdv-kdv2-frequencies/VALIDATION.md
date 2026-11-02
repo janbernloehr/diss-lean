@@ -62,8 +62,11 @@ its existing Hilbert specialization and a transitive audit.
 | `ClassicalCandidateEnergyProducts.lean`, `ClassicalNormalizedProductQuotient.lean` and three directly recompiled existing analytic dependencies | Actual selected Hill products, zero-displacement critical basis, constructed entire normalized quotient/factorization, nonzero selected-root quotient and exact free value one; all original periods retained. |
 | `PositiveOddMultiplier.lean`, `PairedEnergyResolventExterior.lean`, `ClassicalNormalizedResolventExterior.lean` | Constructed actual odd Hilbert direction from two-weight inverse coefficients; exact paired energy resolvent, analytic leading scalar/free value and actual exterior asymptotic. |
 | `ClassicalNormalizedProductAsymptotics.lean`, `ClassicalNormalizedProductConstant.lean` and four directly recompiled exterior/circle dependencies | Actual quotient limit and constancy, nonzero analytic scalar, complete simple actual Psi_n zero set and locally uniform actual products multiplied by that scalar, with constructed local families and every period retained. |
+| Selected proved whole-gap/annulus dependencies from convexity `4b8896c`, with local derivative additions preserved | Actual continuous-potential whole-gap analytic squares, source-strip normalization, branch matching and complete annulus source coverage; imported provenance and qualifications recorded separately. |
+| `ClassicalHillWholeGapQuotients.lean`, `ClassicalHillOddDifferentialMoments.lean`, `ClassicalHillLowOddDifferentialMoments.lean` | Nonzero analytic filled quotients on complete high gaps, exact sheet/endpoints, actual differential radius independence, uniform high cancellation and finite-head source tubes yielding all-mode common-neighborhood odd cancellation. |
+| `ClassicalNormalizedMoments.lean`, `ClassicalNormalizedOddMoments.lean`, extended `FrequencyMoments.lean` | Literal actual normalized moments, exact mapped energy contour and Jacobian, all-mode moment analyticity, exact original zeroth periods and every odd cancellation on one near-zero complex continuous-potential neighborhood. |
 
-All 141 selected modules compile with pinned **Lean 4.33.1**, commit
+All 164 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -214,11 +217,34 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 1582 candidate declarations; 13743 declarations total.
+PASS NLS/KdV/ClassicalCoshStripControl
+PASS NLS/KdV/ClassicalHillDiscAsymptotics
+PASS NLS/KdV/ClassicalHillHighTracePhase
+PASS NLS/KdV/ClassicalHillSmallDiscTrace
+PASS NLS/KdV/ClassicalHillSmallGapCoverage
+PASS NLS/ZakharovShabat/ClassicalSolutionInjectivity
+PASS NLS/KdV/ClassicalHillGreen
+PASS NLS/KdV/ClassicalHighGapPairs
+PASS NLS/KdV/ClassicalHillReality
+PASS NLS/KdV/ClassicalHillConjugation
+PASS NLS/KdV/ClassicalHillPrimitiveSheets
+PASS NLS/KdV/ClassicalHillPrimitiveReflection
+PASS NLS/KdV/ClassicalHillBandNormalization
+PASS NLS/KdV/ClassicalHillHighPrimitiveStrip
+PASS NLS/KdV/ClassicalHillHighEndpointNormalization
+PASS NLS/KdV/ClassicalHillSquaredPrimitiveMatching
+PASS NLS/KdV/ClassicalHillWholeGapSquares
+PASS NLS/KdV/ClassicalHillAnnulusCoverage
+PASS NLS/KdV/ClassicalHillWholeGapQuotients
+PASS NLS/KdV/ClassicalNormalizedMoments
+PASS NLS/KdV/ClassicalHillOddDifferentialMoments
+PASS NLS/KdV/ClassicalHillLowOddDifferentialMoments
+PASS NLS/KdV/ClassicalNormalizedOddMoments
+Axiom audit passed: 1778 candidate declarations; 13953 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 141 selected modules (including generated and private declarations)
+the 164 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -678,3 +704,38 @@ therefore does not close exact source (52), its rough/global W domain
 or the common omitted-index source neighborhood. Real gap/sharp root
 estimates (54), physical frequency/flow identification and every article
 main theorem remain open. No main inventory row is marked verified.
+
+
+## Actual normalized odd moments on one all-mode neighborhood
+
+The current milestone is detailed in `NORMALIZED_ODD_MOMENTS.md`.
+The actual literal normalized moments have exact mapped energy contour
+identities and Jacobians, all-mode analyticity and zeroth normalization.
+Every odd moment vanishes on one common near-zero complex continuous-
+potential neighborhood before all positive numerator/contour indices
+and moment orders. The low contours, diagonal and collapsed gaps are
+included. The proof constructs filled primitive/root quotients and uses
+shared whole-gap squares/annulus coverage for the tail, then actual
+compact free-source tubes and a finite intersection for the head.
+
+Selected source imports are recorded in `SHARED_WHOLE_GAP_IMPORT.json`.
+The local joint analytic derivative and exported squaredCosh derivative
+are retained. The whole-gap square theorem is generalized to arbitrary
+positive bounds, with its original unit-bound interface preserved.
+The whole convexity branch and its L2-only outputs are not merged.
+
+All 164 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The complete transitive audit passes for 1778
+selected declarations and 13953 declarations including imported NLS
+dependencies, using only propext, Classical.choice and Quot.sound. All
+164 source hashes and checker/audit/coverage selections agree. There are
+no additional axioms, placeholders, heartbeat increases, disabled linters
+or warning exceptions. The full run is serialized by the shared build
+lock; all selected outputs are private and canonical sources/builds
+remain read only.
+
+This does not close the full W/rough-topology version of Lemma 3.1,
+its even collapsed-moment clause, sharp moment/root estimates or the
+exact nonzero-potential canonical leading scalar. Physical frequency/
+Hamiltonian/Birkhoff flow identification and all main theorem rows
+remain open. No main inventory row is marked verified.

@@ -513,3 +513,30 @@ physical frequency/flow identification and every main theorem remain open.
 Strict validation: all 141 selected modules pass; the complete transitive
 axiom audit covers 1582 selected declarations and 13743 declarations
 including imported NLS dependencies. See `VALIDATION.md` and `source.json`.
+
+## Actual all-mode normalized odd moments near zero
+
+The literal normalized moment family now has exact mapped energy-contour
+identities, the original zeroth normalization and analyticity on one
+common complex source neighborhood. Every odd moment vanishes on that
+same neighborhood, before all positive numerator and contour indices.
+There is no finite-head or omitted-mode exception, and diagonal and
+collapsed gaps are included.
+
+Shared whole-gap squares and annulus coverage are imported from the
+convexity branch, with provenance and preserved local derivative lemmas.
+Nonzero analytic filled primitive/root quotients extend through complete
+high gaps. Fixed low contours use constructed compact source tubes at
+the free gap; a finite intersection joins them to the uniform tail.
+The proof applies first to every entire numerator and then to the actual
+normalized Psi_n defined by R. See
+[NORMALIZED_ODD_MOMENTS.md](NORMALIZED_ODD_MOMENTS.md).
+
+This is a local continuous-potential version of Lemma 3.1(i)–(iii), not
+its full rough/global source statement. The collapsed even-moment clause,
+sharp moment/root bounds, exact canonical leading scalar, physical
+frequency/flow identities and every main theorem remain open.
+
+Strict validation: all 164 selected modules pass; the complete transitive
+axiom audit covers 1778 selected declarations and 13953 declarations
+including imported NLS dependencies. See `VALIDATION.md` and `source.json`.

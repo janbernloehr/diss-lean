@@ -108,3 +108,10 @@ physical Hamiltonian-frequency/Birkhoff flow identities remain open,
 as do all main theorem rows. Analyticity in q and L_n(0)=1 alone do not
 prove the required normalization. The current constant-quotient theorem
 must not be reported as the exact source-normalized (52).
+
+Subsequent necessary moment progress is recorded in
+`NORMALIZED_ODD_MOMENTS.md`: the literal actual normalized moments now
+have all-mode analyticity, exact zeroth periods and every odd cancellation
+on one common near-zero complex continuous-potential neighborhood.
+This uses the original inverse R and does not assume the open exact
+canonical leading-scalar identity at nonzero potentials.

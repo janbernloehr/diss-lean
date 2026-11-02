@@ -342,3 +342,20 @@ this local nonzero scalar product identity does not close exact source
 (52), nor its full W domain or common omitted-index uniformity. Real gap
 placement, sharp root estimates (54), rough/global source compatibility
 and every main inventory row remain open.
+
+The actual normalized moment family now proves the local near-zero
+continuous-potential versions of Lemma 3.1(i)–(iii): exact zeroth periods,
+all moment analyticity, and every odd cancellation on one common complex
+neighborhood before all positive n,k and moment orders. The exact mapped
+energy contour/Jacobian is retained. Shared whole-gap squares yield
+actual filled primitive/root quotients through complete high gaps;
+constructed low-contour source tubes and a finite intersection remove
+the finite-head exception. No numerator root at a branch point is assumed.
+See [NORMALIZED_ODD_MOMENTS.md](NORMALIZED_ODD_MOMENTS.md) and
+`exists_classicalHill_normalized_all_odd_moments`. Imported source
+provenance is recorded in `SHARED_WHOLE_GAP_IMPORT.json`.
+
+The full W domain/rough topology of Lemma 3.1, its collapsed even-moment
+clause (iv), sharp moment/root estimates, exact leading scalar at nonzero
+potentials, physical frequency/flow identifications and every main
+inventory row remain open.

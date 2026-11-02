@@ -148,7 +148,30 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
   NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
   NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
-  NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension)
+  NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
+  NLS/KdV/ClassicalCoshStripControl
+  NLS/KdV/ClassicalHillDiscAsymptotics
+  NLS/KdV/ClassicalHillHighTracePhase
+  NLS/KdV/ClassicalHillSmallDiscTrace
+  NLS/KdV/ClassicalHillSmallGapCoverage
+  NLS/ZakharovShabat/ClassicalSolutionInjectivity
+  NLS/KdV/ClassicalHillGreen
+  NLS/KdV/ClassicalHighGapPairs
+  NLS/KdV/ClassicalHillReality
+  NLS/KdV/ClassicalHillConjugation
+  NLS/KdV/ClassicalHillPrimitiveSheets
+  NLS/KdV/ClassicalHillPrimitiveReflection
+  NLS/KdV/ClassicalHillBandNormalization
+  NLS/KdV/ClassicalHillHighPrimitiveStrip
+  NLS/KdV/ClassicalHillHighEndpointNormalization
+  NLS/KdV/ClassicalHillSquaredPrimitiveMatching
+  NLS/KdV/ClassicalHillWholeGapSquares
+  NLS/KdV/ClassicalHillAnnulusCoverage
+  NLS/KdV/ClassicalHillWholeGapQuotients
+  NLS/KdV/ClassicalNormalizedMoments
+  NLS/KdV/ClassicalHillOddDifferentialMoments
+  NLS/KdV/ClassicalHillLowOddDifferentialMoments
+  NLS/KdV/ClassicalNormalizedOddMoments)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

@@ -33,6 +33,10 @@ private theorem sqrt_square (z : ℂ) : (Complex.sqrt z)^2 = z := by
 @[simp] theorem squaredCosh_zero : squaredCosh 0 = 1 := by
   simpa only [zero_pow (by decide : 2 ≠ 0),cosh_zero] using squaredCosh_sq 0
 
+@[simp] theorem squaredCosh_neg_sq (z : ℂ) : squaredCosh (-z^2) = cos z := by
+  have he : (z*I)^2 = -z^2 := by rw [mul_pow,I_sq]; ring
+  rw [← he,squaredCosh_sq,Complex.cosh_mul_I]
+
 theorem analyticOnNhd_squaredCosh : AnalyticOnNhd ℂ squaredCosh univ := by
   intro z _
   have h : AnalyticAt ℂ (fun w => squaredCosh (w^2)) (Complex.sqrt z) := by
@@ -92,6 +96,23 @@ theorem exists_squaredCosh_inverse :
   refine ⟨U,W,hU,hW,h0,?_,G,hG,?_,hleft,hright⟩
   · simpa only [squaredCosh_zero] using h1
   · simpa only [squaredCosh_zero] using hleft 0 h0
+
+/-- The normalized squared primitive is locally unique. The inverse
+chart and continuity recover equality on a full neighborhood, without
+requiring any choice of the unsquared branch. -/
+theorem eventuallyEq_of_squaredCosh_eq
+    {X : Type*} [TopologicalSpace X] (K L : X → ℂ) (p : X)
+    (hK : ContinuousAt K p) (hL : ContinuousAt L p) (hK0 : K p = 0) (hL0 : L p = 0)
+    (he : (fun x => squaredCosh (K x)) =ᶠ[𝓝 p] (fun x => squaredCosh (L x))) :
+    K =ᶠ[𝓝 p] L := by
+  obtain ⟨U,_,hU,_,h0,_,G,_,_,hleft,_⟩ := exists_squaredCosh_inverse
+  have hKU : ∀ᶠ x in 𝓝 p, K x ∈ U := hK.eventually (by rw [hK0]; exact hU.mem_nhds h0)
+  have hLU : ∀ᶠ x in 𝓝 p, L x ∈ U := hL.eventually (by rw [hL0]; exact hU.mem_nhds h0)
+  filter_upwards [hKU,hLU,he] with x hxK hxL hx
+  calc
+    K x = G (squaredCosh (K x)) := (hleft _ hxK).symm
+    _ = G (squaredCosh (L x)) := congrArg G hx
+    _ = L x := hleft _ hxL
 
 /-- At either sign of the periodic/antiperiodic trace, the square of the
 small normalized primitive is jointly analytic in energy and potential.

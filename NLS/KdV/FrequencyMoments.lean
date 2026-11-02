@@ -40,6 +40,22 @@ theorem frequencyMoment_odd_eq_zero (F G : ℂ → ℂ) (c : ℂ) (r : ℝ) (hr 
   exact circleIntegral_eq_zero_of_differentiable_on_off_countable hr countable_empty
     hp.continuousOn (fun z hz => (hp z (ball_subset_closedBall hz.1)).differentiableAt)
 
+/-- Circle agreement with analytic filled extensions suffices; no values
+of the unfilled quotient are prescribed at its branch points. -/
+theorem frequencyMoment_odd_eq_zero_of_continuations
+    (F G K H : ℂ → ℂ) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hK : AnalyticOnNhd ℂ K (closedBall c r)) (hH : AnalyticOnNhd ℂ H (closedBall c r))
+    (hmatch : ∀ z ∈ sphere c r, K z = F z^2 ∧ H z = F z*G z) (l : ℕ) :
+    frequencyMoment F G c r (2*l+1) = 0 := by
+  have ha : AnalyticOnNhd ℂ (fun z => K z^l*H z) (closedBall c r) := (hK.pow l).mul hH
+  unfold frequencyMoment
+  rw [circleIntegral.integral_congr hr (fun z hz => ?_)]
+  · exact circleIntegral_eq_zero_of_differentiable_on_off_countable hr countable_empty
+      ha.continuousOn (fun z hz => (ha z (ball_subset_closedBall hz.1)).differentiableAt)
+  · rw [(hmatch z hz).1,(hmatch z hz).2]
+    rw [pow_add,pow_mul,pow_one]
+    ring
+
 /-- When F itself continues analytically through a collapsed gap, and its
 product with G does too, all positive moments vanish, including the
 diagonal case where G alone may still have a pole. -/
