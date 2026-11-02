@@ -61,6 +61,7 @@ modules+=(NLS/ComplexAnalysis/UpperLogarithmBoundary NLS/KdV/HillL2AllBoundaryLi
 modules+=(NLS/ComplexAnalysis/ClosedUpperExtension NLS/KdV/HillL2CutBounds NLS/ComplexAnalysis/RealGapDiscIsolation NLS/KdV/HillRealGapContours NLS/ComplexAnalysis/BoundedPuncturedCircleIntegral NLS/KdV/HillL2AllGapContourIntegrals NLS/KdV/HillL2RealCutDifferential NLS/KdV/HillL2RealContourMoments)
 modules+=(NLS/ComplexAnalysis/BoundaryAnalyticCoordinate NLS/ComplexAnalysis/CoshSquareLocalCoordinate NLS/KdV/HillL2AllGapSquares NLS/ComplexAnalysis/ShiftedSquarePeriod NLS/KdV/HillL2SquareGapPeriods NLS/KdV/HillHierarchyMomentSummability NLS/KdV/HillL2EndpointContinuity NLS/KdV/HillL2GroundSquare)
 modules+=(NLS/ComplexAnalysis/RealCenteredHoleGeometry NLS/KdV/HillFiniteBandCover NLS/KdV/HillOuterTraceGeometry NLS/ComplexAnalysis/FiniteCircleHoleDecomposition NLS/KdV/HillOuterTraceDomain NLS/KdV/HillFiniteTraceContour NLS/KdV/HillOuterTraceExhaustion NLS/KdV/HillOuterTraceLimit)
+modules+=(NLS/ComplexAnalysis/UnimodularWeightedTraceError NLS/ZakharovShabat/ClassicalWeightedResidualStability NLS/ZakharovShabat/NLSWKBCarrierWeightedBounds NLS/ZakharovShabat/NLSWKBComparison NLS/ZakharovShabat/NLSWKBWeightedComparison NLS/ZakharovShabat/NLSHamiltonianDiscriminantAsymptotics NLS/ZakharovShabat/NLSHamiltonianWeightedAsymptotics NLS/KdV/RiccatiEnergy NLS/KdV/ClassicalTraceAsymptotics NLS/KdV/ClassicalWeightedTraceAsymptotics)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

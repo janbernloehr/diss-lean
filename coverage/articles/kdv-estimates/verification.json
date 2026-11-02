@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 1958,
+    "declarations": 2010,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -186,10 +186,24 @@
       "NLS.ComplexAnalysis.circleIntegral_pow_mul_shifted_square",
       "NLS.ComplexAnalysis.real_closedBall_subset_diameter_ball",
       "NLS.ComplexAnalysis.real_closedBalls_disjoint_of_separated",
-      "NLS.ComplexAnalysis.circleIntegral_eq_sum_of_finite_holes"
+      "NLS.ComplexAnalysis.circleIntegral_eq_sum_of_finite_holes",
+      "NLS.ComplexAnalysis.norm_unimodular_trace_error_le_separate_bounds",
+      "NLS.ZakharovShabat.classical_zero_initial_forced_duhamel",
+      "NLS.ZakharovShabat.norm_zero_initial_forced_le_exp_weight",
+      "NLS.ZakharovShabat.exists_nlsWKBCarrier_weighted_bounds",
+      "NLS.ZakharovShabat.classicalPotentialOfFunctions",
+      "NLS.ZakharovShabat.classicalPotentialOfFunctions_apply",
+      "NLS.ZakharovShabat.exists_nlsWKBVector_solution_error_bound",
+      "NLS.ZakharovShabat.exists_nlsWKBVector_endpoint_error_bound",
+      "NLS.ZakharovShabat.exists_nlsWKBVector_upper_solution_error_bound",
+      "NLS.ZakharovShabat.exists_nlsWKBVector_upper_endpoint_error_bound",
+      "NLS.ZakharovShabat.classicalSolution_one_snd",
+      "NLS.ZakharovShabat.nlsHamiltonianPhase",
+      "NLS.ZakharovShabat.exists_classicalDiscriminant_hamiltonian_error_bound",
+      "NLS.ZakharovShabat.exists_classicalDiscriminant_upper_hamiltonian_error_bound"
     ]
   },
-  "full_repository_validation": "All 189 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 1958-declaration transitive axiom audit. The current aggregate import check was deferred because the shared build lock remained occupied (actual exit 75). The last successful aggregate check covered 158 focused modules; no current 189-module aggregate success is claimed. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 199 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2010-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -380,10 +394,20 @@
     "NLS/KdV/HillOuterTraceDomain.lean": "e31c65dacd826797502fa268d0ca013c1dcfe9860782f6698010723167d2027c",
     "NLS/KdV/HillFiniteTraceContour.lean": "71147fed2fa77ad941f581710e23b0a9892d164dd539452eba61f9dafcabfb41",
     "NLS/KdV/HillOuterTraceExhaustion.lean": "fdaa22108fb8969c58a5981d292b2764cde1fb3749e91e6e729d55813cb3ffe5",
-    "NLS/KdV/HillOuterTraceLimit.lean": "4699f359a899831be01b89bd07fc7c0bbdea19cb27995bdfb8e07fa259b83028"
+    "NLS/KdV/HillOuterTraceLimit.lean": "4699f359a899831be01b89bd07fc7c0bbdea19cb27995bdfb8e07fa259b83028",
+    "NLS/ComplexAnalysis/UnimodularWeightedTraceError.lean": "9108e8df6f28a8d9adb6cd1d5e23cd5715a68c64daf2b89d48941f4dcb341edc",
+    "NLS/ZakharovShabat/ClassicalWeightedResidualStability.lean": "4193f029ac24df4bb7ca8fc482ffbfd1d45bf4d1bde0d60b8234e30ccb565db4",
+    "NLS/ZakharovShabat/NLSWKBCarrierWeightedBounds.lean": "598627c6fdfe298720a1bdaf13f12fecc481348881d3f4fbb5aca3edd05bdcb9",
+    "NLS/ZakharovShabat/NLSWKBComparison.lean": "209b1d5b02b9b331d07455ce5766b90c2f8ef97419fa5a5ebfb5fa126ba5be1b",
+    "NLS/ZakharovShabat/NLSWKBWeightedComparison.lean": "f2c462bd99522f7ce2f3c33807ba05e132dc1adfc3fd93021de9d5ac0c5ec95e",
+    "NLS/ZakharovShabat/NLSHamiltonianDiscriminantAsymptotics.lean": "35f76034a734ca6b400700eec50d7e9001352e85fab95b6ae8970117a2bb92a5",
+    "NLS/ZakharovShabat/NLSHamiltonianWeightedAsymptotics.lean": "95a898e5714820c95510228a50913701bbbea451709e5b5fb7bc3cfa327276fb",
+    "NLS/KdV/RiccatiEnergy.lean": "9161a7fd1215485b207cb6b2f07efa86183f31016cba2346c40f1e2dc797d34a",
+    "NLS/KdV/ClassicalTraceAsymptotics.lean": "74c68e8196148c2ac4e5b7638f4e36b54bdbc8ee78257518c65d1eaced975e49",
+    "NLS/KdV/ClassicalWeightedTraceAsymptotics.lean": "c6b8cc6cc0f5f8f5936a01a713d113de399702e74a1128a7e36ad026139d7c29"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. Actual all-gap contour actions, global endpoint normalization, filled-square analyticity and exact single-gap period formulas are checked. The finite outer-circle integral of the actual unshifted squared primitive now equals the first N weighted hierarchy moments, with every enclosure, separation and analyticity hypothesis proved for the intrinsic real gap circles. The fixed-center outer circles escape uniformly in modulus, and on the physical period-one Sobolev domain the normalized outer periods converge to the absolutely convergent hierarchy moment series. Identifying that exterior limit with the physical Hamiltonians remains unproved. Physical exterior asymptotic coefficients, locally uniform action analyticity where needed, canonical infinite-product root identification, complex potential-analytic low charts, explicit uniform action-gap/interpolation estimates, the physical KdV Birkhoff map and the main norm inequalities remain essential.",
-  "milestone": "Actual finite Hill outer contours and their convergent Sobolev hierarchy-series limit",
+  "remaining": "Main Theorems 1-3 remain unverified. Actual all-gap actions, squared-primitive continuation, exact finite outer contours and the Sobolev contour-to-series limit are checked. All-order WKB solution and discriminant errors now have one constant on the entire upper frequency half-plane and retain exactly exp(Im(z)*t) or exp(Im(z)) as their growth factor. For smooth periodic mean-zero scalar potentials the actual Hill discriminant has the independently calculated physical H_0 and KdV energy phase coefficients with that uniform complex-frequency error and a uniform exponentially normalized inverse-power bound. Recovering the correctly normalized primitive/squared-primitive exterior expansion from these trace estimates, evaluating the outer-period limit as the physical Hamiltonian hierarchy and extending the physical identities to Sobolev domains remain unproved. Locally uniform low-action analyticity where needed, canonical infinite-product root identification, complex potential-analytic low charts, explicit uniform action-gap/interpolation estimates, the physical KdV Birkhoff map and the main norm inequalities remain essential.",
+  "milestone": "Uniform complex-frequency WKB and physical Hill trace coefficients",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -575,7 +599,17 @@
     "NLS.KdV.HillOuterTraceDomain",
     "NLS.KdV.HillFiniteTraceContour",
     "NLS.KdV.HillOuterTraceExhaustion",
-    "NLS.KdV.HillOuterTraceLimit"
+    "NLS.KdV.HillOuterTraceLimit",
+    "NLS.ComplexAnalysis.UnimodularWeightedTraceError",
+    "NLS.ZakharovShabat.ClassicalWeightedResidualStability",
+    "NLS.ZakharovShabat.NLSWKBCarrierWeightedBounds",
+    "NLS.ZakharovShabat.NLSWKBComparison",
+    "NLS.ZakharovShabat.NLSWKBWeightedComparison",
+    "NLS.ZakharovShabat.NLSHamiltonianDiscriminantAsymptotics",
+    "NLS.ZakharovShabat.NLSHamiltonianWeightedAsymptotics",
+    "NLS.KdV.RiccatiEnergy",
+    "NLS.KdV.ClassicalTraceAsymptotics",
+    "NLS.KdV.ClassicalWeightedTraceAsymptotics"
   ],
   "proof_commits": [
     {
@@ -732,13 +766,18 @@
       "commit": "05e5530f4040c09502aa7099776f515980d223ed",
       "scope": "Proved actual all-gap shifted squares, the global filled-square domain, exact single-gap weighted periods and Sobolev hierarchy-series convergence; 181 strict modules and 1905-declaration axiom audit passed, aggregate deferred by shared lock exit 75.",
       "pushed": true
+    },
+    {
+      "commit": "c364053e502da0a835968b5a7f665387439b9f8f",
+      "scope": "Proved actual finite Hill outer-contour decomposition, uniformly escaping circles and the Sobolev contour-to-series limit; 189 strict modules and 1958-declaration axiom audit passed, aggregate deferred by shared lock exit 75.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
-    "status": "deferred_shared_lock_busy",
-    "exit_code": 75,
+    "status": "passed",
+    "exit_code": 0,
     "command": "flock -w 45 -E 75 /tmp/diss-lean-article-build.lock bash work/lean-worktree.sh -DwarningAsError=true -o .lake/build/lib/lean/NLS.olean NLS.lean",
-    "scope": "The current aggregate import check was deferred because the shared build lock remained occupied (actual exit 75). The last successful aggregate check covered 158 focused modules; no current 189-module aggregate success is claimed.",
+    "scope": "The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock.",
     "full_lake_build_or_full_examples_claimed": false
   },
   "worktree_attachment": {
@@ -748,20 +787,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 189 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 199 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 1958 declarations. Includes real-centered hole geometry, the reusable finite-hole Cauchy decomposition, actual finite Hill band coverage, disjoint intrinsic hole enclosure, filled-square domain coverage, exact normalized finite outer periods, uniform escape of outer circles and the actual Sobolev contour-to-series limit.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 2010 declarations. Includes the actual zero-initial forced-system Duhamel formula and weighted stability, separate reciprocal multiplier trace bounds, complex carrier and reciprocal weights, actual upper-half-plane WKB solution and endpoint errors, uniform monodromy trace asymptotics, reused physical Riccati coefficients and the literal scalar Hill energy discriminant with its exponentially normalized error.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 189 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 1958-declaration transitive axiom audit. The current aggregate import check was deferred because the shared build lock remained occupied (actual exit 75). The last successful aggregate check covered 158 focused modules; no current 189-module aggregate success is claimed. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 199 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2010-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "Generic real-centered disc geometry proves strict enclosure from endpoint bounds and disjointness from separated projections. The actual Hill band order gives a finite band-cover lemma, with no high cutoff and with collapsed gaps allowed. Each intrinsic gap circle is enlarged from radius d+eta to d+3*eta/2 inside its analytic isolating disc. Adjacent band lengths control the collars and imply pairwise disjoint enlarged discs. A fixed outer center -abs(lambda_0)-1 and right endpoint at the Nth band midpoint strictly enclose all first-N enlarged discs. Avoidance of these holes places every real point of the closed perforated disc in an open band or below the ground energy, so the whole disc is in the checked filled-square domain. The reusable finite-hole Cauchy theorem therefore gives the literal finite outer-contour decomposition of lambda^m*F^2. Exact single-gap periods give the normalized sum of (2*n*pi)*J_(n,m). High spectral localization bounds the outer right endpoint below by n-4*norm(q), proving that its radius tends to infinity; the triangle inequality proves uniform escape of all points on the outer circles. For physical period-one potentials, the finite formula is rewritten as a range partial sum. Absolute Sobolev hierarchy-moment summability then identifies the limit of the actual normalized outer square periods with that series. No assumed exterior expansion, Hamiltonian trace value or finite-gap density theorem is used. Main Theorems 1-3 remain unverified. Actual all-gap contour actions, global endpoint normalization, filled-square analyticity and exact single-gap period formulas are checked. The finite outer-circle integral of the actual unshifted squared primitive now equals the first N weighted hierarchy moments, with every enclosure, separation and analyticity hypothesis proved for the intrinsic real gap circles. The fixed-center outer circles escape uniformly in modulus, and on the physical period-one Sobolev domain the normalized outer periods converge to the absolutely convergent hierarchy moment series. Identifying that exterior limit with the physical Hamiltonians remains unproved. Physical exterior asymptotic coefficients, locally uniform action analyticity where needed, canonical infinite-product root identification, complex potential-analytic low charts, explicit uniform action-gap/interpolation estimates, the physical KdV Birkhoff map and the main norm inequalities remain essential.",
-    "scope": "All 189 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 1958-declaration transitive axiom audit. The current aggregate import check was deferred because the shared build lock remained occupied (actual exit 75). The last successful aggregate check covered 158 focused modules; no current 189-module aggregate success is claimed. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Scalar free-propagator Duhamel formulas and the shared normalized convolution bound prove stability for a zero-initial forced spectral-system solution: forcing bounded by D*exp(abs(Im(z))*t) gives solution bounded by D*exp(norm(Phi))*exp(abs(Im(z))*t), uniformly at every complex frequency. Integral Gronwall supplies the estimate without an assumed bound on the unknown error. A new trace inequality for a determinant-one matrix retains separate bounds for its approximate multiplier and reciprocal. The finite Riccati correction gives a global carrier bound B*exp(Im(z)*t) and reciprocal bound B*exp(-Im(z)*t) at norm(z)>=1, with B independent of both frequency coordinates. Combining the actual WKB residual with the weighted stability theorem gives all-order actual initial-value and periodic endpoint errors C/(2*norm(z))^N*exp(Im(z)*t) on the upper half-plane. The determinant-one trace calculation uses the decaying reciprocal bound and cancels the extra exponential factors, yielding the corresponding actual monodromy trace estimate with exactly exp(Im(z)). The shared RiccatiEnergy and ClassicalTraceAsymptotics files are reused unchanged from articles/kdv-convexity at 2632da7: they independently calculate H_0=1/2 integral(q^2), H_1=integral((q_prime)^2/2+q^3), and the first five phase coefficients. Their actual scalar Hill bridge and these physical coefficients now instantiate the new uniform upper-half-plane trace estimate, retaining explicit higher NLS Hamiltonian phase terms. Multiplication by exp(i*z) removes the free exponential and gives a uniform inverse-power error bound even at arbitrarily large imaginary frequency. Theorems concern actual IVP discriminants and independently constructed physical coefficients, with no exterior primitive expansion supplied as a hypothesis. Main Theorems 1-3 remain unverified. Actual all-gap actions, squared-primitive continuation, exact finite outer contours and the Sobolev contour-to-series limit are checked. All-order WKB solution and discriminant errors now have one constant on the entire upper frequency half-plane and retain exactly exp(Im(z)*t) or exp(Im(z)) as their growth factor. For smooth periodic mean-zero scalar potentials the actual Hill discriminant has the independently calculated physical H_0 and KdV energy phase coefficients with that uniform complex-frequency error and a uniform exponentially normalized inverse-power bound. Recovering the correctly normalized primitive/squared-primitive exterior expansion from these trace estimates, evaluating the outer-period limit as the physical Hamiltonian hierarchy and extending the physical identities to Sobolev domains remain unproved. Locally uniform low-action analyticity where needed, canonical infinite-product root identification, complex potential-analytic low charts, explicit uniform action-gap/interpolation estimates, the physical KdV Birkhoff map and the main norm inequalities remain essential.",
+    "scope": "All 199 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2010-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "5347bf4656a4654d948063af10f330b8c5149a12c6bb94eadf1453f93f28aa1e",
-      "scripts/check-kdv-estimates.sh": "4960153c2bb9890268fb3d6fdcf69f681575d67690716aae1af231784a3f2126",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "f54f3dcadf8213acdf104eb1e10e2ea81b20060f59941c8220477095418f7cd4"
+      "NLS.lean": "f99d1baf726d6f8dc2510a4ee64459c7c04e10cd0634ea2f0cb3155af959e920",
+      "scripts/check-kdv-estimates.sh": "9debd85ead347b92855b8f5244464bb1f40534f351d39f8d20577d94a18eeadf",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "33861721e34d7b525c507b3477a74e016c7da83e9bd8fdd7d1d2bb1342a88c01"
     }
   },
   "warningAsError": true,
@@ -868,8 +907,8 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Global actual L2 Hill half-plane sheets and regular real boundary profiles",
-    "focused_modules": 158,
-    "scope": "All 158 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 1751-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Uniform complex-frequency WKB and physical Hill trace coefficients",
+    "focused_modules": 199,
+    "scope": "All 199 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2010-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   }
 }

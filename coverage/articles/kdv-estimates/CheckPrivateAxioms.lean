@@ -1,3 +1,13 @@
+import NLS.ComplexAnalysis.UnimodularWeightedTraceError
+import NLS.ZakharovShabat.ClassicalWeightedResidualStability
+import NLS.ZakharovShabat.NLSWKBCarrierWeightedBounds
+import NLS.ZakharovShabat.NLSWKBComparison
+import NLS.ZakharovShabat.NLSWKBWeightedComparison
+import NLS.ZakharovShabat.NLSHamiltonianDiscriminantAsymptotics
+import NLS.ZakharovShabat.NLSHamiltonianWeightedAsymptotics
+import NLS.KdV.RiccatiEnergy
+import NLS.KdV.ClassicalTraceAsymptotics
+import NLS.KdV.ClassicalWeightedTraceAsymptotics
 import NLS.ComplexAnalysis.RealCenteredHoleGeometry
 import NLS.KdV.HillFiniteBandCover
 import NLS.KdV.HillOuterTraceGeometry
@@ -346,7 +356,21 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_pow_mul_shifted_square,
     ``NLS.ComplexAnalysis.real_closedBall_subset_diameter_ball,
     ``NLS.ComplexAnalysis.real_closedBalls_disjoint_of_separated,
-    ``NLS.ComplexAnalysis.circleIntegral_eq_sum_of_finite_holes]
+    ``NLS.ComplexAnalysis.circleIntegral_eq_sum_of_finite_holes,
+    ``NLS.ComplexAnalysis.norm_unimodular_trace_error_le_separate_bounds,
+    ``NLS.ZakharovShabat.classical_zero_initial_forced_duhamel,
+    ``NLS.ZakharovShabat.norm_zero_initial_forced_le_exp_weight,
+    ``NLS.ZakharovShabat.exists_nlsWKBCarrier_weighted_bounds,
+    ``NLS.ZakharovShabat.classicalPotentialOfFunctions,
+    ``NLS.ZakharovShabat.classicalPotentialOfFunctions_apply,
+    ``NLS.ZakharovShabat.exists_nlsWKBVector_solution_error_bound,
+    ``NLS.ZakharovShabat.exists_nlsWKBVector_endpoint_error_bound,
+    ``NLS.ZakharovShabat.exists_nlsWKBVector_upper_solution_error_bound,
+    ``NLS.ZakharovShabat.exists_nlsWKBVector_upper_endpoint_error_bound,
+    ``NLS.ZakharovShabat.classicalSolution_one_snd,
+    ``NLS.ZakharovShabat.nlsHamiltonianPhase,
+    ``NLS.ZakharovShabat.exists_classicalDiscriminant_hamiltonian_error_bound,
+    ``NLS.ZakharovShabat.exists_classicalDiscriminant_upper_hamiltonian_error_bound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
