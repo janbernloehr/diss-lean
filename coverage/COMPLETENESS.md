@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [auxiliary spectral-height correction](SECTION_5.md) now gives the explicit (1+8*p*E_p*norm(phi))^p bound at every finite p>1, with both exact central counts and exhaustive localization in the original source norm. This adopts the correction directly and adds two positive proofs. The remaining source qualifications are unchanged.
+
 The [whole-dissertation source index](WHOLE_DISSERTATION.md) now accounts for every nonblank extracted source line. This completes the navigation reconciliation, not every mathematical requirement. The precise 2014 construction comparison and other recorded interpretation qualifications remain. Earlier entries below retain their then-current scope.
 
 The [Section 7 physical NLS velocity](SECTION_7.md) proofs add 24 checked positive theorems. Continue the general Hilbert-space direction interpretation in S7-002 and the whole-dissertation source reconciliation. Retain the exact cited 2014 construction qualification. Correct constants directly and commit and push each completed step. The broader completeness qualifications below remain.

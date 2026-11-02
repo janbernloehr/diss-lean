@@ -1,10 +1,10 @@
 {
   "status": "published_source_navigation",
-  "updated_utc": "2026-11-02T06:22:10.693832+00:00",
-  "base_commit": "7f17218ef5258e4efa3e18ee62ba8af0a925a018",
+  "updated_utc": "2026-11-02T06:59:06.580517+00:00",
+  "base_commit": "6965cc5f9034c73941c3d7b4077377b0d26b1e2d",
   "source_text_sha256": "64640083a811e0e05710297d056d23d7e1f2aadad7fb1f1a1271819b90978619",
   "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
-  "published_source_index_sha256": "e8cfc5c0997451fe8b718f68a514f7b15332110d821c804bc1196aa2e98f5bf0",
+  "published_source_index_sha256": "09b1f238c4960dbefa40dea79228f9a104b4bd3b7825e355a64799246f52e439",
   "scope": "Consolidation of existing source assessments, not a fresh semantic audit of all transitive dependencies.",
   "completion_claim": false,
   "units": [
@@ -8110,7 +8110,7 @@
     {
       "unit": "section_5",
       "document": "coverage/SECTION_5.md",
-      "document_sha256": "f6dce5750b502be5747d6f050f7b57c307f2db372575d5550811862510c09561",
+      "document_sha256": "b87d78a4aab3ddc5f2f32110a133fdce63bf07a947f1825ae13cfa65899fbdf2",
       "groups": [
         {
           "group": "section_5-001",
@@ -8524,7 +8524,7 @@
         },
         {
           "group": "section_5-012",
-          "assessment": "height_qualified_central_counts",
+          "assessment": "corrected",
           "source_lines": [
             [
               2236,
@@ -8554,12 +8554,35 @@
                   "NLS.ZakharovShabat.SourceAuxiliaryCountingData.central_height_multiplicity_of_realType"
                 ]
               }
+            },
+            {
+              "review": "Section5CorrectedAuxiliaryHeightSourceComparison-2026-11-02",
+              "field": "unnumbered",
+              "index": 0,
+              "source_record_sha256": "9d8de45994c1c866aacee5dfe80440872c8c139551fb85217137eec72c744619",
+              "row": {
+                "ordered_group": "section_5-012",
+                "source_lines": [
+                  2236,
+                  2238
+                ],
+                "status": "corrected",
+                "ordered_status": "corrected",
+                "requirement": "Original central algebraic counts with a corrected norm-dependent height.",
+                "reviewed_claims": [
+                  "For every finite 1<p<infinity, both actual auxiliary spectra have the corrected height (1+8*p*E_p*norm(phi))^p, where E_p is the proved interval-extension bound. The original source norm is unchanged. One open convex connected neighborhood containing the input and zero supports every larger cutoff, exact central Jordan count 2N+1, simple high roots and exhaustive localization. The existing sharper p=2 height remains valid.",
+                  "The corrected height cluster equals the existing actual central cluster."
+                ],
+                "declarations": [
+                  "NLS.ZakharovShabat.sourceProposition5_2_corrected_height"
+                ]
+              }
             }
           ]
         },
         {
           "group": "section_5-013",
-          "assessment": "printed_unrestricted_exhaustion_refuted",
+          "assessment": "corrected",
           "source_lines": [
             [
               2240,
@@ -8588,6 +8611,30 @@
                   "NLS.ZakharovShabat.SourceAuxiliaryCountingData.spectrum_subset",
                   "NLS.ZakharovShabat.sourceProposition5_2_two",
                   "NLS.ZakharovShabat.SourceAuxiliaryCountingData.spectrum_subset_height_of_realType"
+                ]
+              }
+            },
+            {
+              "review": "Section5CorrectedAuxiliaryHeightSourceComparison-2026-11-02",
+              "field": "unnumbered",
+              "index": 1,
+              "source_record_sha256": "9d8de45994c1c866aacee5dfe80440872c8c139551fb85217137eec72c744619",
+              "row": {
+                "ordered_group": "section_5-013",
+                "source_lines": [
+                  2240,
+                  2240
+                ],
+                "status": "corrected",
+                "ordered_status": "corrected",
+                "requirement": "Exhaustion in the corrected-height box and high disks.",
+                "reviewed_claims": [
+                  "Every actual spectral point has strict imaginary-part bound on each original norm ball.",
+                  "For every finite 1<p<infinity, both actual auxiliary spectra have the corrected height (1+8*p*E_p*norm(phi))^p, where E_p is the proved interval-extension bound. The original source norm is unchanged. One open convex connected neighborhood containing the input and zero supports every larger cutoff, exact central Jordan count 2N+1, simple high roots and exhaustive localization. The existing sharper p=2 height remains valid."
+                ],
+                "declarations": [
+                  "NLS.ZakharovShabat.sourceAuxiliarySpectrum_abs_im_lt_explicit_height",
+                  "NLS.ZakharovShabat.sourceProposition5_2_corrected_height"
                 ]
               }
             }
@@ -53297,7 +53344,7 @@
   "queued_not_published": [],
   "qualification": "This reconciles previously published assessments and inspected source navigation. It is not a new semantic review of all proof dependencies. Full source-line accounting does not imply every mathematical claim is proved. Earlier detailed qualifications and historical corrections remain unchanged. Partial/pending counts cover those explicit statuses only, not every qualified assessment.",
   "preparation_ready": true,
-  "source_inventory_draft_sha256": "790103f36f12988f829944e026e6e0cc8f90bec43f5044ded8bcb7bce7e4dc50",
+  "source_inventory_draft_sha256": "e13cffb1eb46703c9f891f692564416fa2366ff78ab11eeab0f197906e4c1d05",
   "gap_inspection_sha256": "c48c6ccf005af940aca0f35634990455bb7501c5a717db71d1fac01e7efb91fb",
   "tail_inspection_sha256": "f8b4bc671ff240da2f8b2543a80a39606c9c30cde0da3cb1af3d94ce13dc84fb",
   "inspected_navigation_gaps": [
@@ -57113,17 +57160,25 @@
   ],
   "unassigned_nonblank_source_lines": [],
   "all_nonblank_source_lines_assigned": true,
-  "new_lean_proofs": 0,
+  "new_lean_proofs": 2,
   "new_refutations": 0,
+  "preceding_navigation_sha256": "8a3e3f7e45439326774d324a84e94aac7926cb72f0033b54dc94649af509265e",
   "validation_lean_sources": {
-    "files": 4920,
-    "sha256": "b66bb2702457a681eefd4db95e42c7f67dc7c5338c2b89a4478a29a325999960"
+    "files": 4921,
+    "sha256": "01845dd60120b931c193afed94a2eb1942ef4f051fcee2ee27bdd223ef4f7a7d"
   },
-  "validation_reused_from_commit": "7f17218ef5258e4efa3e18ee62ba8af0a925a018",
   "validation": {
-    "gate_session": 82734,
-    "gate_exit": 0,
-    "gate_exit_observed": true,
-    "full_gate_log_sha256": "e738e906ee5f0e8de0c63e85fe0bd976530a7898dc7e70f9786a1bc5a4e6a7e3"
+    "session": 99109,
+    "exit": 0,
+    "exit_observed": true,
+    "log": "work/Section5CorrectedAuxiliaryHeightFullCheck.log",
+    "log_sha256": "fb586f61da19615ee0a5e62af25a1eaf0db14fb2b1067f60939a445697bf71c9"
+  },
+  "assessment_update": {
+    "review": "Section5CorrectedAuxiliaryHeightSourceComparison-2026-11-02",
+    "adopted_groups": [
+      "section_5-012",
+      "section_5-013"
+    ]
   }
 }

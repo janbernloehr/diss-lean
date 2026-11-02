@@ -75,4 +75,6 @@ Corrected statements retain the qualifications recorded with their positive proo
 
 Source-text and document hashes tie the inventory to the published comparisons. Full source accounting is checked separately from Lean verification. Publication requires the preceding proof step’s observed successful full check and an unchanged Lean source snapshot.
 
-This documentation step reuses the unchanged Lean source snapshot checked at 7f17218ef5258e4efa3e18ee62ba8af0a925a018: 8,658 build jobs, 7,729 public examples and an axiom audit of 45,195 NLS declarations. Source-line accounting and document links were checked separately. No new mathematical assessment is inferred from this validation.
+The [auxiliary height correction](SECTION_5.md) updates groups section_5-012 and section_5-013 with the proved exponent-dependent bound, retaining every historical evidence row. The source accounting and four explicitly partial groups are unchanged.
+
+The full check passed: 8,659 build jobs, 7,729 public examples and an axiom audit of 45,198 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings. Source-line accounting, exact evidence references and document links are checked separately.

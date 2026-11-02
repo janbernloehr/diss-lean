@@ -5,7 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [whole-dissertation source navigation](coverage/WHOLE_DISSERTATION.md) connects the source passages to their published evidence. Full source accounting preserves the [remaining qualifications](coverage/COMPLETENESS.md).
+Latest step: [corrected auxiliary spectral height](coverage/SECTION_5.md) proves the explicit norm-height bound and exact counts for both auxiliary problems at every finite p>1. The [remaining qualifications](coverage/COMPLETENESS.md) are retained.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

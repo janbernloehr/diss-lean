@@ -1,5 +1,23 @@
 # Section 5: auxiliary Dirichlet and Neumann spectra
 
+## Corrected all-exponent norm height
+
+The [positive auxiliary height proofs](../NLS/ZakharovShabat/SourceAuxiliaryExplicitHeight.lean) adopt the explicit exponent-dependent coefficient in Proposition 5.2.
+
+For every finite 1<p<infinity, both actual auxiliary spectra have the corrected height (1+8*p*E_p*norm(phi))^p, where E_p is the proved interval-extension bound. The original source norm is unchanged. One open convex connected neighborhood containing the input and zero supports every larger cutoff, exact central Jordan count 2N+1, simple high roots and exhaustive localization. The existing sharper p=2 height remains valid.
+
+Two positive theorems add no definitions, public examples or refutations.
+
+The full check passed: 8,659 build jobs, 7,729 public examples and an axiom audit of 45,198 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings.
+
+Continue the remaining source comparisons and direct corrections. Retain the general Hilbert-space direction interpretation and exact cited 2014 construction qualifications. Commit and push each completed step.
+
+`sourceAuxiliarySpectrum_abs_im_lt_explicit_height` gives a strict strip bound on every original norm ball. `sourceProposition5_2_corrected_height` identifies the prescribed-height cluster with the central cluster and retains both full multiplicity sums. The phase is an exact isometry, so it introduces no extra factor.
+
+This adopts the correction for source groups section_5-012 and section_5-013. Their older evidence below records the printed formula separately; historical statements that no replacement was adopted describe the earlier stage. No claim of optimality for the new coefficient is made.
+
+## Previous source comparisons
+
 This is a statement-by-statement audit against the original physical domains,
 reflections and norms, beginning on printed page 33. Existing later results
 alone do not certify the section or the dissertation complete.

@@ -4919,3 +4919,4 @@ import NLS.ZakharovShabat.ClassicalNLSDirichletMotion
 import NLS.ZakharovShabat.SourceNLSDirichletVelocity
 import NLS.ZakharovShabat.SmoothNLSSourceDerivative
 import NLS.ZakharovShabat.SmoothNLSDirichletVelocity
+import NLS.ZakharovShabat.SourceAuxiliaryExplicitHeight

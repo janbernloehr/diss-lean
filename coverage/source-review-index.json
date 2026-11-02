@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T06:20:27.025280+00:00",
-  "base_commit": "f62531ea51f378265e04df3bf396a3870b297a55",
+  "published_utc": "2026-11-02T06:59:05.763185+00:00",
+  "base_commit": "6965cc5f9034c73941c3d7b4077377b0d26b1e2d",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 221,
-    "module_hash_checks": 4643,
-    "distinct_modules": 2277
+    "review_records": 222,
+    "module_hash_checks": 4650,
+    "distinct_modules": 2280
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,24 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "f62531ea51f378265e04df3bf396a3870b297a55",
-    "validated_state": "Fresh full check after Section 7 physical NLS velocity.",
+    "base_commit": "6965cc5f9034c73941c3d7b4077377b0d26b1e2d",
+    "validated_state": "Fresh full check after the positive auxiliary height correction.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8658,
+    "build_jobs": 8659,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 45195,
+    "transitive_NLS_declarations": 45198,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 82734,
+    "gate_session": 99109,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4920,
-      "sha256": "b66bb2702457a681eefd4db95e42c7f67dc7c5338c2b89a4478a29a325999960"
+      "files": 4921,
+      "sha256": "01845dd60120b931c193afed94a2eb1942ef4f051fcee2ee27bdd223ef4f7a7d"
     },
-    "full_gate_log_sha256": "e738e906ee5f0e8de0c63e85fe0bd976530a7898dc7e70f9786a1bc5a4e6a7e3",
+    "full_gate_log_sha256": "fb586f61da19615ee0a5e62af25a1eaf0db14fb2b1067f60939a445697bf71c9",
     "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/Section7PhysicalNLSVelocityFullCheck.log"
+    "full_gate_log": "work/Section5CorrectedAuxiliaryHeightFullCheck.log"
   },
   "named_statements": [
     {
@@ -78506,6 +78506,128 @@
         "log_sha256": "e738e906ee5f0e8de0c63e85fe0bd976530a7898dc7e70f9786a1bc5a4e6a7e3"
       },
       "source_record_sha256": "4ae6bfd58421d0c0db35064695cd06f4f709ace5ebe124d65be02f66720a653b"
+    },
+    "Section5CorrectedAuxiliaryHeightSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "6965cc5f9034c73941c3d7b4077377b0d26b1e2d",
+      "updated_utc": "2026-11-02T06:59:05.724506+00:00",
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "section_5-012",
+          "source_lines": [
+            2236,
+            2238
+          ],
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "requirement": "Original central algebraic counts with a corrected norm-dependent height.",
+          "reviewed_claims": [
+            "For every finite 1<p<infinity, both actual auxiliary spectra have the corrected height (1+8*p*E_p*norm(phi))^p, where E_p is the proved interval-extension bound. The original source norm is unchanged. One open convex connected neighborhood containing the input and zero supports every larger cutoff, exact central Jordan count 2N+1, simple high roots and exhaustive localization. The existing sharper p=2 height remains valid.",
+            "The corrected height cluster equals the existing actual central cluster."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceProposition5_2_corrected_height"
+          ]
+        },
+        {
+          "ordered_group": "section_5-013",
+          "source_lines": [
+            2240,
+            2240
+          ],
+          "status": "corrected",
+          "ordered_status": "corrected",
+          "requirement": "Exhaustion in the corrected-height box and high disks.",
+          "reviewed_claims": [
+            "Every actual spectral point has strict imaginary-part bound on each original norm ball.",
+            "For every finite 1<p<infinity, both actual auxiliary spectra have the corrected height (1+8*p*E_p*norm(phi))^p, where E_p is the proved interval-extension bound. The original source norm is unchanged. One open convex connected neighborhood containing the input and zero supports every larger cutoff, exact central Jordan count 2N+1, simple high roots and exhaustive localization. The existing sharper p=2 height remains valid."
+          ],
+          "declarations": [
+            "NLS.ZakharovShabat.sourceAuxiliarySpectrum_abs_im_lt_explicit_height",
+            "NLS.ZakharovShabat.sourceProposition5_2_corrected_height"
+          ]
+        }
+      ],
+      "source_lines": [
+        [
+          2236,
+          2238
+        ],
+        [
+          2240,
+          2240
+        ]
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceAuxiliaryPotentialPhase.lean": "ab40b15d5c9fa47053c190cbf67a4a299518284e9fc13da9ee646b7dcef173c0",
+        "NLS/ZakharovShabat/SourceAuxiliaryCounting.lean": "028125ed959ea909143a1546a8a1fc5c7ad0f26bfdcb6c32ab7fae38ae20b254",
+        "NLS/ZakharovShabat/SourceAuxiliaryPrintedHeight.lean": "5a388d9ad4c1b13d2f36ba893e8a4cc46724c34cde05a9ec2be395a40fbeb000",
+        "NLS/ZakharovShabat/SourceBoundaryExplicitHeight.lean": "82b0aed1e0a3b841c80d9ccbc9f255c8218a405c87abec2a15c83e089997880a",
+        "NLS/ZakharovShabat/ExplicitHeight.lean": "1a3cec8382e64083eb5e4c2123e16ac3d3952343c8eabd11e5c5061e28cce57a",
+        "NLS/ZakharovShabat/BoundedIntervalExtension.lean": "c33fbf8b5e1c223e658dbc1e3daa5394c7f782e39788f61a42f14567deb1630c",
+        "NLS/ZakharovShabat/SourceAuxiliaryExplicitHeight.lean": "ea61f4a09acc9329aa7daf8ecfa0059752119fb9cee6bf0e1cb054238f43b0de"
+      },
+      "reviewed_modules_read_in_full": false,
+      "support_dependency_comparison_complete": false,
+      "support_body_scopes": {
+        "NLS/ZakharovShabat/SourceAuxiliaryPotentialPhase.lean": "full",
+        "NLS/ZakharovShabat/SourceAuxiliaryCounting.lean": "full",
+        "NLS/ZakharovShabat/SourceAuxiliaryPrintedHeight.lean": "full",
+        "NLS/ZakharovShabat/SourceBoundaryExplicitHeight.lean": "full",
+        "NLS/ZakharovShabat/ExplicitHeight.lean": "full",
+        "NLS/ZakharovShabat/BoundedIntervalExtension.lean": "lines 1-92; extension definition and bound",
+        "NLS/ZakharovShabat/SourceAuxiliaryExplicitHeight.lean": "full"
+      },
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceAuxiliaryPotentialPhase.lean",
+        "NLS/ZakharovShabat/SourceAuxiliaryCounting.lean",
+        "NLS/ZakharovShabat/SourceAuxiliaryPrintedHeight.lean",
+        "NLS/ZakharovShabat/SourceBoundaryExplicitHeight.lean",
+        "NLS/ZakharovShabat/ExplicitHeight.lean",
+        "NLS/ZakharovShabat/SourceAuxiliaryExplicitHeight.lean"
+      ],
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          34
+        ],
+        "images": {
+          "work/Section5ProofReview-034.png": "885429d86b93e0d53301684d7336edb477f2e639dd47bd26902bd5f65c96e114"
+        }
+      },
+      "early_group_reconciliation": {
+        "section_5-012": {
+          "previous": "height_qualified_central_counts",
+          "current": "corrected"
+        },
+        "section_5-013": {
+          "previous": "printed_unrestricted_exhaustion_refuted",
+          "current": "corrected"
+        }
+      },
+      "qualification": "For every finite 1<p<infinity, both actual auxiliary spectra have the corrected height (1+8*p*E_p*norm(phi))^p, where E_p is the proved interval-extension bound. The original source norm is unchanged. One open convex connected neighborhood containing the input and zero supports every larger cutoff, exact central Jordan count 2N+1, simple high roots and exhaustive localization. The existing sharper p=2 height remains valid. Selected dependency bodies were reviewed; this is not a fresh audit of every transitive dependency. Historical refutations and other source qualifications are retained.",
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.sourceAuxiliarySpectrum_abs_im_lt_explicit_height",
+        "NLS.ZakharovShabat.sourceProposition5_2_corrected_height"
+      ],
+      "new_definitions": 0,
+      "positive_theorems_integrated": 2,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "completion_claim": false,
+      "validation_lean_sources": {
+        "files": 4921,
+        "sha256": "01845dd60120b931c193afed94a2eb1942ef4f051fcee2ee27bdd223ef4f7a7d"
+      },
+      "full_gate": {
+        "session": 99109,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section5CorrectedAuxiliaryHeightFullCheck.log",
+        "log_sha256": "fb586f61da19615ee0a5e62af25a1eaf0db14fb2b1067f60939a445697bf71c9"
+      },
+      "source_record_sha256": "9d8de45994c1c866aacee5dfe80440872c8c139551fb85217137eec72c744619"
     }
   },
   "contextual_source_records": {

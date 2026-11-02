@@ -26,6 +26,7 @@ it does not certify semantic completeness or replace Lean proof validation.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
+| Proposition 5.2 corrected height, p.34 | [Positive proofs](coverage/SECTION_5.md) | (1+8*p*E_p*norm(phi))^p at every finite p>1; original norm, both central counts 2N+1, simple high roots and exhaustion on one common neighborhood. Two positive theorems; no new refutations. |
 | Complete source navigation | [Source index](coverage/WHOLE_DISSERTATION.md) | All nonblank text locations accounted for; original assessments and qualifications retained. |
 | Section 7 physical NLS velocity, p.45 | [Positive proofs](coverage/SECTION_7.md) | Exact physical NLS Dirichlet velocity and sheet multiplier for every smooth classical trajectory and the constructed global solution, with original Fourier sources and signed indices. The general Hilbert-space direction clause remains open. No new refutations. |
 | Bibliography, pp.141–144 | [Source context](coverage/BIBLIOGRAPHY.md) | 67 contextual attributions; no claim of validating cited external results. |

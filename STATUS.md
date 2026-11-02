@@ -1,6 +1,20 @@
 # Implementation status
 
-## Current milestone: whole-dissertation source navigation
+## Current milestone: corrected auxiliary spectral height
+
+The [positive auxiliary height proofs](NLS/ZakharovShabat/SourceAuxiliaryExplicitHeight.lean) adopt the explicit exponent-dependent coefficient in Proposition 5.2.
+
+For every finite 1<p<infinity, both actual auxiliary spectra have the corrected height (1+8*p*E_p*norm(phi))^p, where E_p is the proved interval-extension bound. The original source norm is unchanged. One open convex connected neighborhood containing the input and zero supports every larger cutoff, exact central Jordan count 2N+1, simple high roots and exhaustive localization. The existing sharper p=2 height remains valid.
+
+Two positive theorems add no definitions, public examples or refutations.
+
+The full check passed: 8,659 build jobs, 7,729 public examples and an axiom audit of 45,198 NLS declarations. The 21 inherited warnings are unchanged; there are no new warnings.
+
+Continue the remaining source comparisons and direct corrections. Retain the general Hilbert-space direction interpretation and exact cited 2014 construction qualifications. Commit and push each completed step.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: whole-dissertation source navigation
 
 The [whole-dissertation source index](coverage/WHOLE_DISSERTATION.md) connects 1,229 groups in 41 units to their published evidence. Every nonblank extracted source line is assigned, including the inspected navigation fragments, front matter and final page furniture.
 
