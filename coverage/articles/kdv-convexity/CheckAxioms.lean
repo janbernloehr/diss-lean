@@ -1,3 +1,5 @@
+import NLS.KdV.HillHminusOnePhysicalHighCuts
+import NLS.ComplexAnalysis.PhysicalCutCubicSign
 import NLS.KdV.HillHminusOneMomentReality
 import NLS.Articles.KdVConvexity.CoordinateActionExtension
 import NLS.KdV.HillHminusOneArnoldActionComparison
@@ -59,7 +61,21 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_square_pullback_eq_energy_circle,
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let additionalModules := #[`NLS.ComplexAnalysis.ClosedZeroPersistence,`NLS.SequenceSpaces.PeriodOneHminusOneRealDensity,`NLS.Fourier.ContinuousConjugation,`NLS.ComplexAnalysis.TracePrimitiveReflection,
+  let additionalModules := #[
+    `NLS.ComplexAnalysis.RealDiameterDisc,
+    `NLS.SequenceSpaces.OrderedOneSidedEnumeration,
+    `NLS.SequenceSpaces.OrderedFiniteContinuity,
+    `NLS.ComplexAnalysis.PositiveRealPart,
+    `NLS.ComplexAnalysis.RealCutConjugation,
+    `NLS.ComplexAnalysis.RealGapEllipse,
+    `NLS.ComplexAnalysis.RealGapEllipseHomotopy,
+    `NLS.ComplexAnalysis.RealGapEllipseIntegral,
+    `NLS.ComplexAnalysis.RealGapEllipseLimit,
+    `NLS.ComplexAnalysis.RealCutCircleIntegral,
+    `NLS.ComplexAnalysis.BoundedPuncturedCircleIntegral,
+    `NLS.ComplexAnalysis.SignedSquareBoundary,
+    `NLS.ComplexAnalysis.PhysicalCutCubicSign,
+`NLS.ComplexAnalysis.ClosedZeroPersistence,`NLS.SequenceSpaces.PeriodOneHminusOneRealDensity,`NLS.Fourier.ContinuousConjugation,`NLS.ComplexAnalysis.TracePrimitiveReflection,
     `NLS.ComplexAnalysis.HolomorphicCircleIntegral,`NLS.ComplexAnalysis.FDerivCauchyFormula,`NLS.ComplexAnalysis.AnalyticLineLimit,`NLS.ComplexAnalysis.AnalyticLineDerivative,`NLS.ComplexAnalysis.AnalyticLineDerivativeLinear,`NLS.ComplexAnalysis.AnalyticLineDerivativeBounds,`NLS.ComplexAnalysis.AnalyticLineRemainder,`NLS.ComplexAnalysis.AnalyticLineFrechet,`NLS.ComplexAnalysis.FDerivAnalyticLine,`NLS.ComplexAnalysis.BanachHolomorphicAnalytic,`NLS.SequenceSpaces.SignChange,`NLS.SequenceSpaces.FiniteCenterBall,`NLS.SequenceSpaces.MixedSquare,`NLS.ComplexAnalysis.QuadraticLineRoot,`NLS.SequenceSpaces.FiniteMixedSquareLineLift,`NLS.SequenceSpaces.AnalyticSequenceSlice,`NLS.SequenceSpaces.ComplexSignInvariance,`NLS.ComplexAnalysis.OpenMapDescent,`NLS.SequenceSpaces.TailSquareDescent,`NLS.SequenceSpaces.TailSquareDescentHeadAnalytic,`NLS.SequenceSpaces.TailSquareDescentCoordinateAnalytic,`NLS.SequenceSpaces.TailSquareDescentAnalyticSlice,`NLS.SequenceSpaces.TailSquareDescentFiniteLine,`NLS.SequenceSpaces.TailSquareDescentAnalyticLine,`NLS.SequenceSpaces.TailSquareDescentFrechet,`NLS.SequenceSpaces.TailSquareDescentAnalytic,`NLS.SequenceSpaces.ScalarTailSquareDescent,`NLS.SequenceSpaces.RealActionRotation,`NLS.SequenceSpaces.ComplexActionStationarity,`NLS.SequenceSpaces.ActionSplitDirection,`NLS.SequenceSpaces.PairCoordinateDensity,`NLS.SequenceSpaces.TailActionStationarity,`NLS.SequenceSpaces.TailActionInvariance,`NLS.SequenceSpaces.TailSumCoordinates,`NLS.SequenceSpaces.HeadActionSection,`NLS.SequenceSpaces.LocalTailSumDescent,`NLS.SequenceSpaces.HeadRotationStationarity,`NLS.SequenceSpaces.HeadRotationDescent,`NLS.SequenceSpaces.HeadActionPath,`NLS.SequenceSpaces.HeadActionPathAnalytic,`NLS.SequenceSpaces.HeadActionPathNeighborhood,`NLS.SequenceSpaces.HeadActionTangent,`NLS.SequenceSpaces.HeadActionCurveInvariance,`NLS.SequenceSpaces.LocalHeadActionDescent,`NLS.SequenceSpaces.LocalScalarActionDescent,`NLS.SequenceSpaces.NonzeroFiniteCenter,`NLS.SequenceSpaces.NonnegativeActionIdentity,`NLS.SequenceSpaces.NonnegativeActionOverlap,`NLS.SequenceSpaces.NonnegativeActionGluing,`NLS.SequenceSpaces.RealActionPairLifting,`NLS.SequenceSpaces.RealActionLifting,`NLS.SequenceSpaces.LocalScalarActionFamilyDescent,`NLS.SequenceSpaces.RealScalarActionFamilyDescent,`NLS.SequenceSpaces.ScalarActionFamilyGluing,`NLS.SequenceSpaces.GlobalScalarActionFamilyDescent,`NLS.SequenceSpaces.WeightedScalarActionFamilyDescent,
     `NLS.ComplexAnalysis.QuadraticClusterCount,
     `NLS.ComplexAnalysis.ShiftedSquareRootBounds,

@@ -26,7 +26,8 @@ The endpoint-deflated quotient is now analytic and nonvanishing, with
 norm at most 4/(n*pi*r)^2. This gives the gap-length bound for the actual
 primitive wherever admissible, and constructs analytic roots with the
 same bound on the full local cut domain. Their physical sign is fixed
-locally at any admissible regular anchor; global matching remains open.
+on the complete high integration circle and both half-discs in H^-1,
+as proved in the latest section below. Full real-band gluing remains open.
 The actual high cubic moments now satisfy the quartic gap bound on a
 common complex potential neighborhood, by fixing one sign on a connected
 small circle and deforming that circle. This does not require global
@@ -1249,10 +1250,9 @@ shared periodic integration-by-parts import; the existing periodic
 Fourier evaluation module is recompiled. Three compatible private source
 differences are retained and documented: two original independent proofs
 and the additional proved strict free-Hill spacing lemma. The original
-37-source manifest remains unchanged. The focused validation covers
-288 source modules are now listed for reproducibility; the present milestone
-checks its nine additional sources incrementally over the unchanged validated
-279-module baseline. This is not a full 2,393-module or repository build.
+37-source manifest remains unchanged. The focused validation is incremental; the latest cumulative scope is
+recorded under Validation and worktree below. This is not a full
+2,393-module or repository build.
 
 Uniform H^-1 high-disc/source-path trace estimates, full analytic primitive
 squares and common high-moment analytic domains are now proved below.
@@ -1476,6 +1476,56 @@ The local concavity adapter still uses integer-indexed `Coeff 2`.
 real-cone and Hessian transport into the article's positive-index interface
 remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
 
+## Physical H^-1 half-plane signs and common high cuts
+
+`HillHminusOneHalfPlaneSheets.lean` transfers the weak upper sign from
+literal real L2 potentials by H^-1 density and joint continuity. No bound
+on the approximants' L2 norms is assumed. The maximum modulus principle
+and the actual entire trace's nonconstancy make this sign strict.
+Exact reflection gives the negative lower sign. The actual normalized
+Floquet multiplier has modulus greater than one in the upper half-plane
+and less than one in the lower half-plane. These assertions hold at every
+real H^-1 input, at all nonreal energies, without a high cutoff or a
+mean-zero hypothesis.
+
+`HillHminusOnePhysicalCut.lean` proves that a filled shifted primitive
+square is real along a real disc diameter, including points where the
+source primitive is undefined. On any enclosing source circle, connected
+square-root uniqueness fixes one sign. Separate upper and lower anchors
+then match that same signed cut root to the actual primitive throughout
+both half-discs. The pure imaginary indexed shift preserves the strict
+real-part signs.
+
+`HillHminusOnePhysicalHighCuts.lean` applies this to the actual high H^-1
+spectral families. One open complex H^-1 neighborhood and one cutoff are
+chosen before every index and every real input in that neighborhood.
+The actual real endpoints, filled analytic square, analytic cut root,
+exact full-circle matching, strict upper/lower signs and real boundary
+square are obtained together. Collapsed gaps retain an analytic root
+through the endpoint. No arbitrary sheet sign remains on the integration
+circle or either nonreal half-disc.
+
+`SignedSquareBoundary.lean` proves full upper/lower boundary limits from
+the filled square and a strict real-part sign. Zero boundary values are
+included. `PhysicalCutCubicSign.lean` applies the exact real-cut jump
+formula: when the filled square is nonnegative along the entire cut,
+the counterclockwise cubic integral equals minus twice the integral of
+the cubed nonnegative real square root. Thus its real part is nonpositive
+and its imaginary part is zero. A collapsed cut uses bounded removability.
+This is a generic theorem with explicit hypotheses. Nonnegativity of the
+filled square on each actual gap, and its application to all actual
+H^-1 cubic periods, are not yet proved.
+
+The 24 exact shared dependencies are pinned in
+`physical-cut-shared-imports.json` against `articles/kdv-estimates` at
+`2fef357`. They include the physical L2 half-plane sign proof and its
+real spectral-label prerequisites, plus the real-cut jump and bounded
+puncture lemmas. Retained import boundaries are byte-identical.
+The global KdV Birkhoff map, its Arnold-action identity, real isospectral
+invariance of the actual cubic moments and finite central periods remain
+required to instantiate the checked common-neighborhood action descent
+and global positive-ell2 summation. Theorem 1.1 remains unverified.
+
 ## Remaining essential KdV work
 
 1. Continue the constructed free-normalized primitive from its explicit
@@ -1513,7 +1563,7 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    giving the full -6*Id derivative. Apply the checked local consequences
    after positive-index Hessian/real-cone transport.
 
-The `kdv-estimates` branch was re-inspected through commit `80ac538`.
+The `kdv-estimates` branch was re-inspected through commit `2fef357`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
 two-mode reduction, weighted root separation and physical gap tails. The
 period-one L2 Hill discriminant is jointly entire after square descent,
@@ -1531,12 +1581,12 @@ proved directly for the actual labeled gaps. The 37-module dependency
 closure for the L2 source/moment construction and generic phase barrier is
 now reused and validated here. All 36 prior shared sources are unchanged;
 the generic logarithm-strip normalization module is newly imported.
-The additional intrinsic global-label and canonical
-gap-tail modules remain available on that branch and are not imported
-in this focused build. Identification of those L2 labels with this
-branch's continuous contour construction, continuity of spectral data and
-analyticity of symmetric combinations in the required H^-1 topology, and the
-Birkhoff construction remain open.
+The intrinsic real L2 labels, their continuity and trace parity are now
+included as prerequisites of the physical L2 half-plane sign theorem in
+the 24-module import slice above. Canonical gap-tail modules remain
+available on that branch. Identification and continuity of global labels
+in the required H^-1 topology, finite central contour construction, and
+the Birkhoff construction remain open.
 No separate messages were sent to other article chats.
 
 ## Validation and worktree
@@ -1548,15 +1598,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `08db7a5` contains 279 source modules. Every
-baseline source hash remains unchanged. Four exact shared modules and five
-authored modules pass incremental Lean 4.33.1/mathlib v4.33.1 checks with
-`warningAsError=true`. The full reproducible script now lists 288 source
-modules. The positive-index example passes.
+The validated baseline at `eaec79a` contains 288 source modules. Every
+baseline source hash remains unchanged. Twenty-four exact shared modules
+and five authored modules pass incremental Lean 4.33.1/mathlib v4.33.1
+checks with `warningAsError=true`. The full reproducible script now lists
+317 source modules. The positive-index example passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 150 additional shared modules:
-3136 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 163 additional shared modules:
+3513 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

@@ -1,0 +1,115 @@
+{
+  "source_branch": "articles/kdv-estimates",
+  "source_commit": "2fef357d3542763e699e37951f061a67b3ebb5bc",
+  "source_files_unchanged": true,
+  "dependency_order": [
+    "NLS.KdV.HillFreeSpectrum",
+    "NLS.KdV.HillWideLocalization",
+    "NLS.ComplexAnalysis.RealDiameterDisc",
+    "NLS.KdV.HillCentralCounting",
+    "NLS.KdV.HillCentralRoots",
+    "NLS.KdV.HillRealGapPairs",
+    "NLS.SequenceSpaces.OrderedOneSidedEnumeration",
+    "NLS.KdV.HillGlobalRealLabels",
+    "NLS.KdV.HillRealLabelingUniqueness",
+    "NLS.KdV.HillCanonicalRealLabels",
+    "NLS.SequenceSpaces.OrderedFiniteContinuity",
+    "NLS.KdV.HillCumulativeCounts",
+    "NLS.KdV.HillLabelContinuity",
+    "NLS.KdV.HillCanonicalFreeLabels",
+    "NLS.KdV.HillRealTraceParity",
+    "NLS.ComplexAnalysis.PositiveRealPart",
+    "NLS.KdV.HillL2HalfPlaneSheets",
+    "NLS.ComplexAnalysis.RealCutConjugation",
+    "NLS.ComplexAnalysis.RealGapEllipse",
+    "NLS.ComplexAnalysis.RealGapEllipseHomotopy",
+    "NLS.ComplexAnalysis.RealGapEllipseIntegral",
+    "NLS.ComplexAnalysis.RealGapEllipseLimit",
+    "NLS.ComplexAnalysis.RealCutCircleIntegral",
+    "NLS.ComplexAnalysis.BoundedPuncturedCircleIntegral"
+  ],
+  "files": {
+    "NLS/KdV/HillFreeSpectrum.lean": "2a6be7ef571cfb498f910ef641b614a21d432ed691e035fe14c8c8056147f6d3",
+    "NLS/KdV/HillWideLocalization.lean": "5c318e26a1ba5048003efedb77d11dab9dda0cab983f146c346527af0f2a2032",
+    "NLS/ComplexAnalysis/RealDiameterDisc.lean": "9c1ee677380624e534b243b093793234d1e9fc9f3653a23356fe838c04869c6d",
+    "NLS/KdV/HillCentralCounting.lean": "5af6c7f9008cf7cfe969850c047915d3600632019b91c7daa0eb39cf14447831",
+    "NLS/KdV/HillCentralRoots.lean": "2b7290d28ba637cd574d4e81929046ca8e8ec383b1438e58f104ffa573b083a2",
+    "NLS/KdV/HillRealGapPairs.lean": "a16154e566916fcc08648aa818ff44a6af29fa5b8b16836a8732b70b46822af7",
+    "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean": "3e4071aef6c8357dc5249cd8c807847792cce838965828a4e392c3e342592c26",
+    "NLS/KdV/HillGlobalRealLabels.lean": "35cee3753ff96bb5d4184f4025e2b97996d90d01ef8cbca42edb1584b7d2ec2d",
+    "NLS/KdV/HillRealLabelingUniqueness.lean": "a26842c436b4a0a5b2857f87495bf3636bd52e1aa1d7c99e1570a4b5192a95b8",
+    "NLS/KdV/HillCanonicalRealLabels.lean": "9f583a7f78e80c1aa766ea9f586241cb4d30c00c65af9ddc85b34dc3954ab032",
+    "NLS/SequenceSpaces/OrderedFiniteContinuity.lean": "845306a62ca86b944046d35727a675c24419dee39a0436e4b234dd317d9ebe6b",
+    "NLS/KdV/HillCumulativeCounts.lean": "9b37dc9bb7f4daab48b42187b5c193cdf0ec8e7eed70597383d808fe5f2dbe61",
+    "NLS/KdV/HillLabelContinuity.lean": "0a44f93d606d839f8c512024e2c1bfa1a743b2c4b74a5b6bc8a866c0b7ca1167",
+    "NLS/KdV/HillCanonicalFreeLabels.lean": "034965a15a5980b5fd1740e3e8dcecc83ee407e3ab876132d834148dc8b125ac",
+    "NLS/KdV/HillRealTraceParity.lean": "c7652fa3faa8246f3ce8b968199101f9cc586215ce687aa9927a7f546f2dae82",
+    "NLS/ComplexAnalysis/PositiveRealPart.lean": "ea765bc189af3af91a9da85e528be14c2577d39ccac0fac5098e5fc2af5c7d45",
+    "NLS/KdV/HillL2HalfPlaneSheets.lean": "a0b8167afcc575e93cf313fede81e0831cce666d3188b9e3847f95ec73b80d56",
+    "NLS/ComplexAnalysis/RealCutConjugation.lean": "33967652635990b516d85750c516522c08b20cf62bd2b95a1319e313a663132d",
+    "NLS/ComplexAnalysis/RealGapEllipse.lean": "b0391686c068cc73429e035038d196ff351ddd0f13df25184d65541ef7396640",
+    "NLS/ComplexAnalysis/RealGapEllipseHomotopy.lean": "c8f638ceaa5242cb321229ed322b6da4997b93540223730497ca8f32a99e175e",
+    "NLS/ComplexAnalysis/RealGapEllipseIntegral.lean": "441fe23a8cfe8494f04c9c74c7c05b76267a186692dad7f3bdd075400fa3a595",
+    "NLS/ComplexAnalysis/RealGapEllipseLimit.lean": "67bc46c93fbda0c3533b474d3db2a21a8df016cb1bd238415855678eda2e1615",
+    "NLS/ComplexAnalysis/RealCutCircleIntegral.lean": "9cfaef9ee5c5adfa9cecd18e2b43a6578e12da64ff4d5e2c998e7f88bb76f196",
+    "NLS/ComplexAnalysis/BoundedPuncturedCircleIntegral.lean": "9e08017bc26d748134c766ece6e52b96af74c31bc5d92f354a19b6edf1541746"
+  },
+  "retained_existing_import_boundary": {
+    "NLS/KdV/ClassicalL2PrimitiveAgreement.lean": {
+      "private_sha256": "e7a68da9bccb85a5555f97f41c187de235f966cbcfa86c6fda5bec9d6eea9416",
+      "shared_sha256": "e7a68da9bccb85a5555f97f41c187de235f966cbcfa86c6fda5bec9d6eea9416",
+      "identical": true
+    },
+    "NLS/KdV/ClassicalHillPrimitiveSheets.lean": {
+      "private_sha256": "9a8c1dea2892bda9513bed0f3b78102a25875b24f901a879a27361818796f3a8",
+      "shared_sha256": "9a8c1dea2892bda9513bed0f3b78102a25875b24f901a879a27361818796f3a8",
+      "identical": true
+    },
+    "NLS/KdV/HillL2PrimitiveReflection.lean": {
+      "private_sha256": "c8cd3618f737f85ac73095969665dd9be6ccc3842a9b626c8888baf207c250a6",
+      "shared_sha256": "c8cd3618f737f85ac73095969665dd9be6ccc3842a9b626c8888baf207c250a6",
+      "identical": true
+    },
+    "NLS/KdV/HillCharacteristicZeros.lean": {
+      "private_sha256": "de0bfcdb98786591abb517c366b06ba069c9d7db2d1b234fe609ebb25b199498",
+      "shared_sha256": "de0bfcdb98786591abb517c366b06ba069c9d7db2d1b234fe609ebb25b199498",
+      "identical": true
+    },
+    "NLS/KdV/HillRealSpectrum.lean": {
+      "private_sha256": "6e460523615ac54f3162f702c2495b85a002dcfdd0bc39f0ccd0bd49bc813476",
+      "shared_sha256": "6e460523615ac54f3162f702c2495b85a002dcfdd0bc39f0ccd0bd49bc813476",
+      "identical": true
+    },
+    "NLS/SequenceSpaces/OrderedFiniteEnumeration.lean": {
+      "private_sha256": "8ae81bf1e2917f7fad566b7874055f92b8d4917bffd552517ae78f40a50d5dfa",
+      "shared_sha256": "8ae81bf1e2917f7fad566b7874055f92b8d4917bffd552517ae78f40a50d5dfa",
+      "identical": true
+    },
+    "NLS/SequenceSpaces/OrderedEnumerationFiniteException.lean": {
+      "private_sha256": "f6f89ee8592e36d99a8225f277ab5f6b52228313bfd265dced43a9079cfaa7d5",
+      "shared_sha256": "f6f89ee8592e36d99a8225f277ab5f6b52228313bfd265dced43a9079cfaa7d5",
+      "identical": true
+    },
+    "NLS/ComplexAnalysis/ZeroMultisetRestriction.lean": {
+      "private_sha256": "73d107b870031683040cd107930eea2a2bec04b5b0a1153a818557a753110b5e",
+      "shared_sha256": "73d107b870031683040cd107930eea2a2bec04b5b0a1153a818557a753110b5e",
+      "identical": true
+    },
+    "NLS/ComplexAnalysis/ContinuousLogarithmUnique.lean": {
+      "private_sha256": "56594b28bc4cacd4b1ec6c4d8864816c67a1f6b8438e927cb1f063175fdd5341",
+      "shared_sha256": "56594b28bc4cacd4b1ec6c4d8864816c67a1f6b8438e927cb1f063175fdd5341",
+      "identical": true
+    },
+    "NLS/ComplexAnalysis/AffineLoopHomotopy.lean": {
+      "private_sha256": "86338cda7ea69dbeab68a41e04ce1b76d433280b4acb68266d4e04f2ff4512d1",
+      "shared_sha256": "86338cda7ea69dbeab68a41e04ce1b76d433280b4acb68266d4e04f2ff4512d1",
+      "identical": true
+    },
+    "NLS/ComplexAnalysis/ComplexSegmentComplementConnected.lean": {
+      "private_sha256": "75238d68841d25e32519eb694db536b43a179143f1bb6124a1d5cccd5cc71ddd",
+      "shared_sha256": "75238d68841d25e32519eb694db536b43a179143f1bb6124a1d5cccd5cc71ddd",
+      "identical": true
+    }
+  },
+  "boundary_files_identical": true
+}
