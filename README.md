@@ -5,8 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix H physical Hamiltonian integrals](coverage/APPENDIX_H.md). Literal normalized Hamiltonian integral at the original H^(k-1) regularity, including nonsmooth inputs; independence of the chosen L2 representatives. Three positive proofs.
-The [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: the [ordered Appendix H comparison](coverage/APPENDIX_H_ASSERTIONS.md) records twelve matched groups, one direct phase correction and one contextual passage. Actual Hamiltonian integrals, weak derivatives, Sobolev domains and fixed polynomial quantifiers are retained. Appendix I is next; the [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

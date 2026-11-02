@@ -1,6 +1,22 @@
 # Implementation plan
 
-## Current milestone: Appendix H physical Hamiltonian integrals
+## Current milestone: ordered Appendix H comparison
+
+The [ordered Appendix H comparison](coverage/APPENDIX_H_ASSERTIONS.md) covers 14 groups on pp.138–139: twelve matched, one directly corrected and one contextual. No partial or pending groups remain in this local ledger.
+
+The original kth Hamiltonian is the literal physical integral on every complex H^(k-1) source, with its exact normalization. H.1 retains the weak H^-1 derivative and a fixed lower-jet polynomial with the stated total weight, field balance and derivative-count bound.
+
+The smooth odd-Hamiltonian display retains the phase (-1)^(m+1) on the unchanged unreduced remainder. The reduced H.2 polynomial includes that phase and works for every real H^m source. Integration by parts preserves both gradings and the actual physical integral.
+
+This documentation step adds no Lean proof or refutation.
+
+The unchanged Lean snapshot reuses the successful full check at commit 215e703ba0c1fde380f6f2f40d6cb88810691848: 8,645 build jobs, 7,729 public examples and an axiom audit of 45,003 NLS declarations. The check has 21 inherited warnings and no new warnings. All 46 declaration references, source and module hashes, the review index and local documentation links are checked again. These checks do not certify complete formalization of the dissertation.
+
+Next: Appendix I. The [broader completion qualifications](coverage/COMPLETENESS.md), including the precise 2014 construction comparison, remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Appendix H physical Hamiltonian integrals
 
 The [physical Hamiltonian integral](NLS/ZakharovShabat/AppendixHPhysicalHamiltonian.lean) identifies the original kth Hamiltonian on every complex H^(k-1) source with the actual unit-period integral of the first field times its Riccati density. It retains the exact factor (-i)^(k+1), including the H^0 mass endpoint.
 

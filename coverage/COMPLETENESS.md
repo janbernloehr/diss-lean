@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [ordered Appendix H ledger](APPENDIX_H_ASSERTIONS.md) compares 14 groups: twelve matched, one corrected and one contextual. The literal Hamiltonian integrals retain the original H^(k-1) regularity; H.1 keeps the weak derivative and canonical graded remainder. The direct phase correction is absorbed in the reduced H.2 polynomial, chosen before all real H^m sources. The exact 2014 reference comparison remains open. Appendix I is next.
+
 The [Appendix H physical Hamiltonian integrals](APPENDIX_H.md) add 3 checked positive theorems. Publish the reviewed fourteen-group ordered Appendix H comparison, retaining the direct phase correction, the weak H.1 derivative and the input-independent H.2 polynomial on its full H^m domain. Continue Appendix I afterward. The broader completeness qualifications below remain.
 
 The [ordered Appendix G ledger](APPENDIX_G_ASSERTIONS.md) compares 41 groups: 26 matched, 13 corrected and two contextual. The explicit interval norm and corrected constants are adopted directly. Actual physical gradients, finite exponent ranges and common-neighborhood quantifiers are retained. The alternative gradient proof uses cubic stability and time interpolation. G.7 remains pointwise source summability. The exact source local-norm convention is not identified; the 2014 reference comparison remains open. Appendix H is next.

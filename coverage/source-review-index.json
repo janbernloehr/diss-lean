@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T03:34:08.285023+00:00",
-  "base_commit": "f612ba394b014896bec81fa1e04833ab7acac3e2",
+  "published_utc": "2026-11-02T03:34:55.384309+00:00",
+  "base_commit": "215e703ba0c1fde380f6f2f40d6cb88810691848",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 211,
-    "module_hash_checks": 4437,
-    "distinct_modules": 2202
+    "review_records": 212,
+    "module_hash_checks": 4468,
+    "distinct_modules": 2213
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,8 +28,8 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "f612ba394b014896bec81fa1e04833ab7acac3e2",
-    "validated_state": "Fresh full check after Appendix H physical Hamiltonian integrals.",
+    "base_commit": "215e703ba0c1fde380f6f2f40d6cb88810691848",
+    "validated_state": "Appendix H ordered comparison changes documentation only; the exact Lean snapshot retains the successful physical Hamiltonian integral check.",
     "command": "./scripts/check.sh",
     "build_jobs": 8645,
     "public_examples": 7729,
@@ -44,8 +44,9 @@
       "sha256": "2d67a19a460f3c58ecda7878959498d184a8b3a7ffe1ac25d8f7d72d76e05748"
     },
     "full_gate_log_sha256": "3129c666cb79580984db3a8a0860e3b8333352b0a8b66edd397fe018e949fe92",
-    "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
-    "full_gate_log": "work/AppendixHPhysicalHamiltonianFullCheck.log"
+    "qualification": "Unchanged Lean sources and locks retain the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
+    "full_gate_log": "work/AppendixHPhysicalHamiltonianFullCheck.log",
+    "validation_reused_from_commit": "215e703ba0c1fde380f6f2f40d6cb88810691848"
   },
   "named_statements": [
     {
@@ -72385,6 +72386,787 @@
         "log_sha256": "3129c666cb79580984db3a8a0860e3b8333352b0a8b66edd397fe018e949fe92"
       },
       "source_record_sha256": "be26a963ea676aef5aca6ec1e5b8ef62bd94ee3be3d632267a7099ac1d0dd881"
+    },
+    "AppendixHOrderedSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "215e703ba0c1fde380f6f2f40d6cb88810691848",
+      "updated_utc": "2026-11-02T03:34:55.327696+00:00",
+      "source_lines": [
+        [
+          11372,
+          11427
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "id": "H001",
+          "source_lines": [
+            11374,
+            11375
+          ],
+          "status": "contextual",
+          "claim": "Literature introduction to the Hamiltonian hierarchy.",
+          "declarations": [],
+          "qualification": "The attribution to references [23] and [39] is contextual. This local comparison does not resolve the precise 2014 edition comparison.",
+          "ordered_group": "H-001",
+          "ordered_status": "contextual",
+          "requirement": "Literature introduction to the Hamiltonian hierarchy.",
+          "reviewed_claims": [
+            "Literature introduction to the Hamiltonian hierarchy."
+          ]
+        },
+        {
+          "id": "H002",
+          "source_lines": [
+            11375,
+            11379
+          ],
+          "status": "matched",
+          "claim": "The kth Hamiltonian on complex H^(k-1) has the actual physical integral with factor (-i)^(k+1).",
+          "declarations": [
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_succ_eq_tsum",
+            "NLS.ZakharovShabat.summable_norm_sobolevRiccatiMean",
+            "NLS.ZakharovShabat.analyticAt_sobolevNLSHamiltonian",
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_eq_classical",
+            "NLS.ZakharovShabat.appendixH_hamiltonian_eq_physical_integral",
+            "NLS.ZakharovShabat.appendixH_hamiltonian_eq_integral_of_coefficients"
+          ],
+          "qualification": "Lean uses density index n=k-1. The new Parseval specialization identifies the literal integral for the synthesized L2 representatives on every complex source at the printed regularity, including H^0 for mass. The representative-independent version assumes only the original Fourier coefficients and L2 membership.",
+          "ordered_group": "H-002",
+          "ordered_status": "matched",
+          "requirement": "The kth Hamiltonian on complex H^(k-1) has the actual physical integral with factor (-i)^(k+1).",
+          "reviewed_claims": [
+            "The kth Hamiltonian on complex H^(k-1) has the actual physical integral with factor (-i)^(k+1)."
+          ]
+        },
+        {
+          "id": "H003",
+          "source_lines": [
+            11381,
+            11384
+          ],
+          "status": "matched",
+          "claim": "The initial density and derivative-plus-product Riccati recurrence retain their source indices and signs.",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiDensity_zero",
+            "NLS.ZakharovShabat.nlsRiccatiDensity_one",
+            "NLS.ZakharovShabat.nlsRiccatiDensity_succ_succ",
+            "NLS.ZakharovShabat.sobolevRiccatiDensity_succ_succ",
+            "NLS.ZakharovShabat.weakSobolevRiccatiDensity_apply",
+            "NLS.ZakharovShabat.weakSobolevRiccatiDensity_eq_classical_coefficients"
+          ],
+          "qualification": "The antidiagonal sum is the source sum after shifting u_(n+1) to index n. Original period-one differentiation multiplies coefficients by 2*pi*i*j. The next density at the minimal source regularity is the actual weak H^-1 recurrence.",
+          "ordered_group": "H-003",
+          "ordered_status": "matched",
+          "requirement": "The initial density and derivative-plus-product Riccati recurrence retain their source indices and signs.",
+          "reviewed_claims": [
+            "The initial density and derivative-plus-product Riccati recurrence retain their source indices and signs."
+          ]
+        },
+        {
+          "id": "H004",
+          "source_lines": [
+            11395,
+            11398
+          ],
+          "status": "matched",
+          "claim": "H.1 separates the kth derivative of the second field from a fixed lower-jet remainder on H^(k-1).",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaH1",
+            "NLS.ZakharovShabat.sourceLemmaH1_weak",
+            "NLS.ZakharovShabat.sourceLemmaH1_distribution",
+            "NLS.ZakharovShabat.weakSobolevRiccatiDensity_unique"
+          ],
+          "qualification": "The equality holds coefficientwise, in H^-1, and in actual tempered distributions. No additional regularity is assumed. Smooth density and continuity identify the independent recurrence with the physical hierarchy.",
+          "ordered_group": "H-004",
+          "ordered_status": "matched",
+          "requirement": "H.1 separates the kth derivative of the second field from a fixed lower-jet remainder on H^(k-1).",
+          "reviewed_claims": [
+            "H.1 separates the kth derivative of the second field from a fixed lower-jet remainder on H^(k-1)."
+          ]
+        },
+        {
+          "id": "H005",
+          "source_lines": [
+            11400,
+            11400
+          ],
+          "status": "matched",
+          "claim": "The remainder q_k is homogeneous of total weight k+1 when each field and each derivative counts once.",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_totalWeight",
+            "NLS.ZakharovShabat.sourceLemmaH1_polynomial"
+          ],
+          "qualification": "The polynomial is fixed independently of its input. The jet (field,j) has total weight j+1.",
+          "ordered_group": "H-005",
+          "ordered_status": "matched",
+          "requirement": "The remainder q_k is homogeneous of total weight k+1 when each field and each derivative counts once.",
+          "reviewed_claims": [
+            "The remainder q_k is homogeneous of total weight k+1 when each field and each derivative counts once."
+          ]
+        },
+        {
+          "id": "H006",
+          "source_lines": [
+            11401,
+            11401
+          ],
+          "status": "matched",
+          "claim": "Each monomial of the nonlinear Hamiltonian density has total derivative count at most k-2.",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_grades",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_monomial",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_vars"
+          ],
+          "qualification": "The bound is on the sum of derivative orders, and therefore bounds every individual jet. Integer grading retains the negative bound at k=1; the remainder is zero there.",
+          "ordered_group": "H-006",
+          "ordered_status": "matched",
+          "requirement": "Each monomial of the nonlinear Hamiltonian density has total derivative count at most k-2.",
+          "reviewed_claims": [
+            "Each monomial of the nonlinear Hamiltonian density has total derivative count at most k-2."
+          ]
+        },
+        {
+          "id": "H007",
+          "source_lines": [
+            11402,
+            11402
+          ],
+          "status": "matched",
+          "claim": "Every monomial of the nonlinear Hamiltonian density has equal first-field and second-field counts.",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_fieldCharge",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_grades",
+            "NLS.ZakharovShabat.sourceLemmaH1_polynomial"
+          ],
+          "qualification": "Field charge is the second-field count minus the first-field count. Multiplication by the first field changes the remainder charge one to zero.",
+          "ordered_group": "H-007",
+          "ordered_status": "matched",
+          "requirement": "Every monomial of the nonlinear Hamiltonian density has equal first-field and second-field counts.",
+          "reviewed_claims": [
+            "Every monomial of the nonlinear Hamiltonian density has equal first-field and second-field counts."
+          ]
+        },
+        {
+          "id": "H008",
+          "source_lines": [
+            11404,
+            11405
+          ],
+          "status": "matched",
+          "claim": "The original u_k polynomials have weight k and use derivatives only through k-1.",
+          "declarations": [
+            "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
+            "NLS.ZakharovShabat.nlsRiccatiPolynomial_totalWeight",
+            "NLS.ZakharovShabat.nlsRiccatiPolynomial_derivativeOrder",
+            "NLS.DifferentialPolynomial.DerivativeOrderLE.jet_order"
+          ],
+          "qualification": "Canonical polynomial evaluation equals the actual smooth recurrence. The total derivative bound is stronger than the required individual jet bound, with the same shifted Lean index.",
+          "ordered_group": "H-008",
+          "ordered_status": "matched",
+          "requirement": "The original u_k polynomials have weight k and use derivatives only through k-1.",
+          "reviewed_claims": [
+            "The original u_k polynomials have weight k and use derivatives only through k-1."
+          ]
+        },
+        {
+          "id": "H009",
+          "source_lines": [
+            11405,
+            11406
+          ],
+          "status": "matched",
+          "claim": "Field rescaling holds for every complex scalar, including zero.",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiDensity_field_rescaling",
+            "NLS.ZakharovShabat.sobolevRiccatiDensity_field_rescaling",
+            "NLS.ZakharovShabat.weakSobolevRiccatiDensity_field_rescaling"
+          ],
+          "qualification": "Recurrence uniqueness proves u_k(a,c*b)=c*u_k(c*a,b) directly. Continuity transfers it to the available Sobolev densities and the weak H^-1 boundary without dividing by c.",
+          "ordered_group": "H-009",
+          "ordered_status": "matched",
+          "requirement": "Field rescaling holds for every complex scalar, including zero.",
+          "reviewed_claims": [
+            "Field rescaling holds for every complex scalar, including zero."
+          ]
+        },
+        {
+          "id": "H010",
+          "source_lines": [
+            11408,
+            11411
+          ],
+          "status": "corrected",
+          "claim": "The smooth real odd Hamiltonian is the top-derivative square integral plus (-1)^(m+1) times the unreduced H.1 remainder integral.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixH_odd_remainder_phase",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_odd_real_H1_remainder",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_odd_leading_remainder",
+            "NLS.DifferentialPolynomial.integral_balanced_derivatives"
+          ],
+          "qualification": "Adopt the exact phase from (-i)^(2m+2) directly. The same H.1 polynomial is retained before reduction; the final H.2 polynomial absorbs the phase. Historical refutations are unchanged and no new refutation is added.",
+          "ordered_group": "H-010",
+          "ordered_status": "corrected",
+          "requirement": "The smooth real odd Hamiltonian is the top-derivative square integral plus (-1)^(m+1) times the unreduced H.1 remainder integral.",
+          "reviewed_claims": [
+            "The smooth real odd Hamiltonian is the top-derivative square integral plus (-1)^(m+1) times the unreduced H.1 remainder integral."
+          ]
+        },
+        {
+          "id": "H011",
+          "source_lines": [
+            11413,
+            11415
+          ],
+          "status": "matched",
+          "claim": "Removing a factor of derivative order m+n leaves total derivative count at most m-2-n.",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_monomial",
+            "NLS.DifferentialPolynomial.weight_erase_one",
+            "NLS.DifferentialPolynomial.monomial_factor_jet"
+          ],
+          "qualification": "The exact monomial grading subtracts the removed jet order from the bound 2*m-2. The integration-by-parts implementation uses this subtraction for either field, with the coefficient and all remaining factors retained.",
+          "ordered_group": "H-011",
+          "ordered_status": "matched",
+          "requirement": "Removing a factor of derivative order m+n leaves total derivative count at most m-2-n.",
+          "reviewed_claims": [
+            "Removing a factor of derivative order m+n leaves total derivative count at most m-2-n."
+          ]
+        },
+        {
+          "id": "H012",
+          "source_lines": [
+            11415,
+            11417
+          ],
+          "status": "matched",
+          "claim": "Repeated integration by parts lowers every nonlinear factor to derivative order at most m-1.",
+          "declarations": [
+            "NLS.DifferentialPolynomial.exists_graded_jet_reduction",
+            "NLS.DifferentialPolynomial.integral_evaluate_eq_of_total_derivative",
+            "NLS.ZakharovShabat.exists_nlsOddRemainder_jet_reduction",
+            "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_reduced_polynomial"
+          ],
+          "qualification": "The construction records an explicit polynomial total derivative, terminates by the maximal jet order, preserves both gradings, and gives the same actual integral on every smooth periodic source.",
+          "ordered_group": "H-012",
+          "ordered_status": "matched",
+          "requirement": "Repeated integration by parts lowers every nonlinear factor to derivative order at most m-1.",
+          "reviewed_claims": [
+            "Repeated integration by parts lowers every nonlinear factor to derivative order at most m-1."
+          ]
+        },
+        {
+          "id": "H013",
+          "source_lines": [
+            11419,
+            11424
+          ],
+          "status": "matched",
+          "claim": "For each m>=1, one lower-jet polynomial gives H.2 for every real H^m source.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCorollaryH2",
+            "NLS.ZakharovShabat.sourceCorollaryH2_integral",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_eq_physical_integral",
+            "NLS.ZakharovShabat.hierarchySobolevJetL2_distribution_iterate",
+            "NLS.ZakharovShabat.integral_sq_sobolevTopJetPhysical",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_unique_continuous"
+          ],
+          "qualification": "The polynomial is chosen before the potential and uses only jets through m-1. The leading term is the actual squared L2 weak derivative with unit-period Parseval. The full H^m domain is retained; H^(2m) is not required. The complex counterpart uses the unconjugated bilinear leading integral.",
+          "ordered_group": "H-013",
+          "ordered_status": "matched",
+          "requirement": "For each m>=1, one lower-jet polynomial gives H.2 for every real H^m source.",
+          "reviewed_claims": [
+            "For each m>=1, one lower-jet polynomial gives H.2 for every real H^m source."
+          ]
+        },
+        {
+          "id": "H014",
+          "source_lines": [
+            11424,
+            11425
+          ],
+          "status": "matched",
+          "claim": "The same reduced polynomial has total weight 2m+2 and balanced field counts.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH2Polynomial_properties",
+            "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_reduced_polynomial"
+          ],
+          "qualification": "Both gradings survive the polynomial integration-by-parts reduction and multiplication by the exact scalar phase. These properties hold for the same polynomial in the physical H.2 formula.",
+          "ordered_group": "H-014",
+          "ordered_status": "matched",
+          "requirement": "The same reduced polynomial has total weight 2m+2 and balanced field counts.",
+          "reviewed_claims": [
+            "The same reduced polynomial has total weight 2m+2 and balanced field counts."
+          ]
+        }
+      ],
+      "current_ordered_rows": [
+        {
+          "id": "H001",
+          "source_lines": [
+            11374,
+            11375
+          ],
+          "status": "contextual",
+          "claim": "Literature introduction to the Hamiltonian hierarchy.",
+          "declarations": [],
+          "qualification": "The attribution to references [23] and [39] is contextual. This local comparison does not resolve the precise 2014 edition comparison.",
+          "ordered_group": "H-001",
+          "ordered_status": "contextual",
+          "requirement": "Literature introduction to the Hamiltonian hierarchy.",
+          "reviewed_claims": [
+            "Literature introduction to the Hamiltonian hierarchy."
+          ]
+        },
+        {
+          "id": "H002",
+          "source_lines": [
+            11375,
+            11379
+          ],
+          "status": "matched",
+          "claim": "The kth Hamiltonian on complex H^(k-1) has the actual physical integral with factor (-i)^(k+1).",
+          "declarations": [
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_succ_eq_tsum",
+            "NLS.ZakharovShabat.summable_norm_sobolevRiccatiMean",
+            "NLS.ZakharovShabat.analyticAt_sobolevNLSHamiltonian",
+            "NLS.ZakharovShabat.sobolevNLSHamiltonian_eq_classical",
+            "NLS.ZakharovShabat.appendixH_hamiltonian_eq_physical_integral",
+            "NLS.ZakharovShabat.appendixH_hamiltonian_eq_integral_of_coefficients"
+          ],
+          "qualification": "Lean uses density index n=k-1. The new Parseval specialization identifies the literal integral for the synthesized L2 representatives on every complex source at the printed regularity, including H^0 for mass. The representative-independent version assumes only the original Fourier coefficients and L2 membership.",
+          "ordered_group": "H-002",
+          "ordered_status": "matched",
+          "requirement": "The kth Hamiltonian on complex H^(k-1) has the actual physical integral with factor (-i)^(k+1).",
+          "reviewed_claims": [
+            "The kth Hamiltonian on complex H^(k-1) has the actual physical integral with factor (-i)^(k+1)."
+          ]
+        },
+        {
+          "id": "H003",
+          "source_lines": [
+            11381,
+            11384
+          ],
+          "status": "matched",
+          "claim": "The initial density and derivative-plus-product Riccati recurrence retain their source indices and signs.",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiDensity_zero",
+            "NLS.ZakharovShabat.nlsRiccatiDensity_one",
+            "NLS.ZakharovShabat.nlsRiccatiDensity_succ_succ",
+            "NLS.ZakharovShabat.sobolevRiccatiDensity_succ_succ",
+            "NLS.ZakharovShabat.weakSobolevRiccatiDensity_apply",
+            "NLS.ZakharovShabat.weakSobolevRiccatiDensity_eq_classical_coefficients"
+          ],
+          "qualification": "The antidiagonal sum is the source sum after shifting u_(n+1) to index n. Original period-one differentiation multiplies coefficients by 2*pi*i*j. The next density at the minimal source regularity is the actual weak H^-1 recurrence.",
+          "ordered_group": "H-003",
+          "ordered_status": "matched",
+          "requirement": "The initial density and derivative-plus-product Riccati recurrence retain their source indices and signs.",
+          "reviewed_claims": [
+            "The initial density and derivative-plus-product Riccati recurrence retain their source indices and signs."
+          ]
+        },
+        {
+          "id": "H004",
+          "source_lines": [
+            11395,
+            11398
+          ],
+          "status": "matched",
+          "claim": "H.1 separates the kth derivative of the second field from a fixed lower-jet remainder on H^(k-1).",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceLemmaH1",
+            "NLS.ZakharovShabat.sourceLemmaH1_weak",
+            "NLS.ZakharovShabat.sourceLemmaH1_distribution",
+            "NLS.ZakharovShabat.weakSobolevRiccatiDensity_unique"
+          ],
+          "qualification": "The equality holds coefficientwise, in H^-1, and in actual tempered distributions. No additional regularity is assumed. Smooth density and continuity identify the independent recurrence with the physical hierarchy.",
+          "ordered_group": "H-004",
+          "ordered_status": "matched",
+          "requirement": "H.1 separates the kth derivative of the second field from a fixed lower-jet remainder on H^(k-1).",
+          "reviewed_claims": [
+            "H.1 separates the kth derivative of the second field from a fixed lower-jet remainder on H^(k-1)."
+          ]
+        },
+        {
+          "id": "H005",
+          "source_lines": [
+            11400,
+            11400
+          ],
+          "status": "matched",
+          "claim": "The remainder q_k is homogeneous of total weight k+1 when each field and each derivative counts once.",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_totalWeight",
+            "NLS.ZakharovShabat.sourceLemmaH1_polynomial"
+          ],
+          "qualification": "The polynomial is fixed independently of its input. The jet (field,j) has total weight j+1.",
+          "ordered_group": "H-005",
+          "ordered_status": "matched",
+          "requirement": "The remainder q_k is homogeneous of total weight k+1 when each field and each derivative counts once.",
+          "reviewed_claims": [
+            "The remainder q_k is homogeneous of total weight k+1 when each field and each derivative counts once."
+          ]
+        },
+        {
+          "id": "H006",
+          "source_lines": [
+            11401,
+            11401
+          ],
+          "status": "matched",
+          "claim": "Each monomial of the nonlinear Hamiltonian density has total derivative count at most k-2.",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_grades",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_monomial",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_vars"
+          ],
+          "qualification": "The bound is on the sum of derivative orders, and therefore bounds every individual jet. Integer grading retains the negative bound at k=1; the remainder is zero there.",
+          "ordered_group": "H-006",
+          "ordered_status": "matched",
+          "requirement": "Each monomial of the nonlinear Hamiltonian density has total derivative count at most k-2.",
+          "reviewed_claims": [
+            "Each monomial of the nonlinear Hamiltonian density has total derivative count at most k-2."
+          ]
+        },
+        {
+          "id": "H007",
+          "source_lines": [
+            11402,
+            11402
+          ],
+          "status": "matched",
+          "claim": "Every monomial of the nonlinear Hamiltonian density has equal first-field and second-field counts.",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_fieldCharge",
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_grades",
+            "NLS.ZakharovShabat.sourceLemmaH1_polynomial"
+          ],
+          "qualification": "Field charge is the second-field count minus the first-field count. Multiplication by the first field changes the remainder charge one to zero.",
+          "ordered_group": "H-007",
+          "ordered_status": "matched",
+          "requirement": "Every monomial of the nonlinear Hamiltonian density has equal first-field and second-field counts.",
+          "reviewed_claims": [
+            "Every monomial of the nonlinear Hamiltonian density has equal first-field and second-field counts."
+          ]
+        },
+        {
+          "id": "H008",
+          "source_lines": [
+            11404,
+            11405
+          ],
+          "status": "matched",
+          "claim": "The original u_k polynomials have weight k and use derivatives only through k-1.",
+          "declarations": [
+            "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
+            "NLS.ZakharovShabat.nlsRiccatiPolynomial_totalWeight",
+            "NLS.ZakharovShabat.nlsRiccatiPolynomial_derivativeOrder",
+            "NLS.DifferentialPolynomial.DerivativeOrderLE.jet_order"
+          ],
+          "qualification": "Canonical polynomial evaluation equals the actual smooth recurrence. The total derivative bound is stronger than the required individual jet bound, with the same shifted Lean index.",
+          "ordered_group": "H-008",
+          "ordered_status": "matched",
+          "requirement": "The original u_k polynomials have weight k and use derivatives only through k-1.",
+          "reviewed_claims": [
+            "The original u_k polynomials have weight k and use derivatives only through k-1."
+          ]
+        },
+        {
+          "id": "H009",
+          "source_lines": [
+            11405,
+            11406
+          ],
+          "status": "matched",
+          "claim": "Field rescaling holds for every complex scalar, including zero.",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiDensity_field_rescaling",
+            "NLS.ZakharovShabat.sobolevRiccatiDensity_field_rescaling",
+            "NLS.ZakharovShabat.weakSobolevRiccatiDensity_field_rescaling"
+          ],
+          "qualification": "Recurrence uniqueness proves u_k(a,c*b)=c*u_k(c*a,b) directly. Continuity transfers it to the available Sobolev densities and the weak H^-1 boundary without dividing by c.",
+          "ordered_group": "H-009",
+          "ordered_status": "matched",
+          "requirement": "Field rescaling holds for every complex scalar, including zero.",
+          "reviewed_claims": [
+            "Field rescaling holds for every complex scalar, including zero."
+          ]
+        },
+        {
+          "id": "H010",
+          "source_lines": [
+            11408,
+            11411
+          ],
+          "status": "corrected",
+          "claim": "The smooth real odd Hamiltonian is the top-derivative square integral plus (-1)^(m+1) times the unreduced H.1 remainder integral.",
+          "declarations": [
+            "NLS.ZakharovShabat.appendixH_odd_remainder_phase",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_odd_real_H1_remainder",
+            "NLS.ZakharovShabat.classicalNLSHamiltonian_odd_leading_remainder",
+            "NLS.DifferentialPolynomial.integral_balanced_derivatives"
+          ],
+          "qualification": "Adopt the exact phase from (-i)^(2m+2) directly. The same H.1 polynomial is retained before reduction; the final H.2 polynomial absorbs the phase. Historical refutations are unchanged and no new refutation is added.",
+          "ordered_group": "H-010",
+          "ordered_status": "corrected",
+          "requirement": "The smooth real odd Hamiltonian is the top-derivative square integral plus (-1)^(m+1) times the unreduced H.1 remainder integral.",
+          "reviewed_claims": [
+            "The smooth real odd Hamiltonian is the top-derivative square integral plus (-1)^(m+1) times the unreduced H.1 remainder integral."
+          ]
+        },
+        {
+          "id": "H011",
+          "source_lines": [
+            11413,
+            11415
+          ],
+          "status": "matched",
+          "claim": "Removing a factor of derivative order m+n leaves total derivative count at most m-2-n.",
+          "declarations": [
+            "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_monomial",
+            "NLS.DifferentialPolynomial.weight_erase_one",
+            "NLS.DifferentialPolynomial.monomial_factor_jet"
+          ],
+          "qualification": "The exact monomial grading subtracts the removed jet order from the bound 2*m-2. The integration-by-parts implementation uses this subtraction for either field, with the coefficient and all remaining factors retained.",
+          "ordered_group": "H-011",
+          "ordered_status": "matched",
+          "requirement": "Removing a factor of derivative order m+n leaves total derivative count at most m-2-n.",
+          "reviewed_claims": [
+            "Removing a factor of derivative order m+n leaves total derivative count at most m-2-n."
+          ]
+        },
+        {
+          "id": "H012",
+          "source_lines": [
+            11415,
+            11417
+          ],
+          "status": "matched",
+          "claim": "Repeated integration by parts lowers every nonlinear factor to derivative order at most m-1.",
+          "declarations": [
+            "NLS.DifferentialPolynomial.exists_graded_jet_reduction",
+            "NLS.DifferentialPolynomial.integral_evaluate_eq_of_total_derivative",
+            "NLS.ZakharovShabat.exists_nlsOddRemainder_jet_reduction",
+            "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_reduced_polynomial"
+          ],
+          "qualification": "The construction records an explicit polynomial total derivative, terminates by the maximal jet order, preserves both gradings, and gives the same actual integral on every smooth periodic source.",
+          "ordered_group": "H-012",
+          "ordered_status": "matched",
+          "requirement": "Repeated integration by parts lowers every nonlinear factor to derivative order at most m-1.",
+          "reviewed_claims": [
+            "Repeated integration by parts lowers every nonlinear factor to derivative order at most m-1."
+          ]
+        },
+        {
+          "id": "H013",
+          "source_lines": [
+            11419,
+            11424
+          ],
+          "status": "matched",
+          "claim": "For each m>=1, one lower-jet polynomial gives H.2 for every real H^m source.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceCorollaryH2",
+            "NLS.ZakharovShabat.sourceCorollaryH2_integral",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_eq_physical_integral",
+            "NLS.ZakharovShabat.hierarchySobolevJetL2_distribution_iterate",
+            "NLS.ZakharovShabat.integral_sq_sobolevTopJetPhysical",
+            "NLS.ZakharovShabat.sobolevOddHamiltonian_unique_continuous"
+          ],
+          "qualification": "The polynomial is chosen before the potential and uses only jets through m-1. The leading term is the actual squared L2 weak derivative with unit-period Parseval. The full H^m domain is retained; H^(2m) is not required. The complex counterpart uses the unconjugated bilinear leading integral.",
+          "ordered_group": "H-013",
+          "ordered_status": "matched",
+          "requirement": "For each m>=1, one lower-jet polynomial gives H.2 for every real H^m source.",
+          "reviewed_claims": [
+            "For each m>=1, one lower-jet polynomial gives H.2 for every real H^m source."
+          ]
+        },
+        {
+          "id": "H014",
+          "source_lines": [
+            11424,
+            11425
+          ],
+          "status": "matched",
+          "claim": "The same reduced polynomial has total weight 2m+2 and balanced field counts.",
+          "declarations": [
+            "NLS.ZakharovShabat.sourceH2Polynomial_properties",
+            "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_reduced_polynomial"
+          ],
+          "qualification": "Both gradings survive the polynomial integration-by-parts reduction and multiplication by the exact scalar phase. These properties hold for the same polynomial in the physical H.2 formula.",
+          "ordered_group": "H-014",
+          "ordered_status": "matched",
+          "requirement": "The same reduced polynomial has total weight 2m+2 and balanced field counts.",
+          "reviewed_claims": [
+            "The same reduced polynomial has total weight 2m+2 and balanced field counts."
+          ]
+        }
+      ],
+      "ordered_counts": {
+        "matched": 12,
+        "corrected": 1,
+        "contextual": 1,
+        "partial": 0,
+        "pending": 0
+      },
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SourceLemmaH1.lean": "01d2b83895378344134fc3822eea6868027b2a2235bae28afa42775c77bbddab",
+        "NLS/ZakharovShabat/SourceLemmaH1Distribution.lean": "321be36f3c98fbb25fc2aa9be588def633632e9d315943f96637386b88aaee1d",
+        "NLS/ZakharovShabat/SourceCorollaryH2.lean": "3b0077f5db27585161f5a5eb53ea921bafd5b0338d602a6491298993c77a5750",
+        "NLS/ZakharovShabat/NLSRiccatiHierarchy.lean": "17260f818c702ec54c32e8fb32b94a53fa10077aee444b0cfb2dd302bd976540",
+        "NLS/ZakharovShabat/SobolevNLSHamiltonianHierarchy.lean": "9e4aaa44fb3d1ff4d9b4259fc9047807ad01c8a3a3311316daa5bf38b0937ab4",
+        "NLS/ZakharovShabat/NLSRiccatiRescaling.lean": "396e730de472247d6ea902ccfc88a39e571c151ce4ca7fdaa18f7ccbf3d87862",
+        "NLS/ZakharovShabat/SobolevRiccatiRescaling.lean": "2e51ebb5d4247ae0f3f151e6efa2577b152ec99e2acfb8b7bc29462d738c2957",
+        "NLS/ZakharovShabat/SobolevHamiltonianRescaling.lean": "80d6df81fdb9d573905795eae2582755be6a6b6a2e34831a27b8f873a93222de",
+        "NLS/ZakharovShabat/SobolevTopJetPhysical.lean": "844e881d115671e5800a433300d20ba539a9f155806c440f1783f807906f164b",
+        "NLS/ZakharovShabat/SourceAppendixHRemainderPhase.lean": "b77f381647a9f6405b9ba17831e45e6eebf707bddad5695fcbd7f7af8e0ff4fc",
+        "NLS/ZakharovShabat/NLSRiccatiPolynomialRemainder.lean": "2e26d009bdddcf348ad0e1380a0e71dbd5964c5e91162ada8c629e8650e99eaf",
+        "NLS/ZakharovShabat/NLSOddHamiltonianReducedPolynomial.lean": "d1025a6dac6dc595d422f65e8bbfec8efbba3e2bfbba2967f7dbc6b500edd29f",
+        "NLS/ZakharovShabat/SobolevRiccatiHierarchy.lean": "11c1617961c8513198979e77df19e54131980b32e9f593c29851dd4a9d20a46d",
+        "NLS/ZakharovShabat/SobolevRiccatiWeakHierarchy.lean": "e04791372c66508d27313a78d95578f2a6867017dabee968bc41906330aef0f6",
+        "NLS/ZakharovShabat/NLSRiccatiPolynomials.lean": "70c22830eaaedcac6d5a17add1da398344ac780d16b06d854438b296e42a2553",
+        "NLS/DifferentialPolynomial/BalancedJetProduct.lean": "afd501a4e7c4ef7e7c74dcc5502caf26e6849350eb41825515736714a0eacc57",
+        "NLS/DifferentialPolynomial/IntegrationByPartsReduction.lean": "6dd40c999ab4219008e6084dadf0c27d31679daff16f04c83787ceb45e2854d6",
+        "NLS/ZakharovShabat/SobolevOddHamiltonian.lean": "87d5874740112bae058627577484af379cb9964b5c18860c312c5a41fde4313d",
+        "NLS/ZakharovShabat/SobolevOddHamiltonianReal.lean": "c656302f1c03029fb6a727a69c4cdb8d813cd1983cc9191c333e2843f652952b",
+        "NLS/DifferentialPolynomial/JetOrderBounds.lean": "f555d7fab5f736aa3ed036b4057c54dc261b965023cd1ed60a69f52978765bfd",
+        "NLS/DifferentialPolynomial/PeriodicEvaluation.lean": "fafe3e36a07b94ee33cd9f0e5c29558bcd05d4862f7554b25ef755049d6d1218",
+        "NLS/ZakharovShabat/SobolevRiccatiClassicalAgreement.lean": "2ebb68a49575952d9952e7f9ac40ddab87c4312d020c441d8fbf9054ed027a88",
+        "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean": "8ba49915bc9afb39744a9439c878af0c7d72d9c2a9c59a2aec7ae1c1ccc64398",
+        "NLS/DifferentialPolynomial/JetDegrees.lean": "542e1f9da3fd22250e11935d95923aee067140d63ca18fb7be99d7f4ed03aaa0",
+        "NLS/ZakharovShabat/SobolevDifferentialPolynomial.lean": "e001d102ef3e321c1ea4af506ca2f15f8611609c88f1ca60585a8b63f4c5f114",
+        "NLS/ZakharovShabat/WeakRiccatiDistribution.lean": "06b9c5254c74fccf9472647c473cf3c8ac596d0b4d2bac25e2a1339d90175a5d",
+        "NLS/DifferentialPolynomial/JetAlgebra.lean": "8522b7b91f786c0a744a122a562bef40f694259c60e9f31290031e445c03c42a",
+        "NLS/ZakharovShabat/SobolevPhysicalJets.lean": "f89bb619d798283694160945311b46e6d3e8c337f8f45fccf4da90f31b9dbbbd",
+        "NLS/Fourier/IntervalBilinearParseval.lean": "b286690e622d20f7cb9e8c0fbd6a5b6710736c87fdc2682d05c18b8f068ae258",
+        "NLS/Fourier/UnitIntervalL2Equiv.lean": "7d1deb0d17f8594b42fbaa3bfbeb4ad3a250a845ca3708dd9495222c73698cea",
+        "NLS/ZakharovShabat/AppendixHPhysicalHamiltonian.lean": "d31119713824e7aa1d968635a8c2701299ccad51aa9a6371493cdde8cf4e2c03"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SourceLemmaH1.lean",
+        "NLS/ZakharovShabat/SourceLemmaH1Distribution.lean",
+        "NLS/ZakharovShabat/SourceCorollaryH2.lean",
+        "NLS/ZakharovShabat/NLSRiccatiHierarchy.lean",
+        "NLS/ZakharovShabat/SobolevNLSHamiltonianHierarchy.lean",
+        "NLS/ZakharovShabat/NLSRiccatiRescaling.lean",
+        "NLS/ZakharovShabat/SobolevRiccatiRescaling.lean",
+        "NLS/ZakharovShabat/SobolevHamiltonianRescaling.lean",
+        "NLS/ZakharovShabat/SobolevTopJetPhysical.lean",
+        "NLS/ZakharovShabat/SourceAppendixHRemainderPhase.lean",
+        "NLS/ZakharovShabat/NLSRiccatiPolynomialRemainder.lean",
+        "NLS/ZakharovShabat/NLSOddHamiltonianReducedPolynomial.lean",
+        "NLS/ZakharovShabat/SobolevRiccatiHierarchy.lean",
+        "NLS/ZakharovShabat/SobolevRiccatiWeakHierarchy.lean",
+        "NLS/ZakharovShabat/NLSRiccatiPolynomials.lean",
+        "NLS/DifferentialPolynomial/BalancedJetProduct.lean",
+        "NLS/DifferentialPolynomial/IntegrationByPartsReduction.lean",
+        "NLS/ZakharovShabat/SobolevOddHamiltonian.lean",
+        "NLS/ZakharovShabat/SobolevOddHamiltonianReal.lean",
+        "NLS/DifferentialPolynomial/JetOrderBounds.lean",
+        "NLS/DifferentialPolynomial/PeriodicEvaluation.lean",
+        "NLS/ZakharovShabat/SobolevRiccatiClassicalAgreement.lean",
+        "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean",
+        "NLS/DifferentialPolynomial/JetDegrees.lean",
+        "NLS/ZakharovShabat/SobolevDifferentialPolynomial.lean",
+        "NLS/ZakharovShabat/WeakRiccatiDistribution.lean",
+        "NLS/DifferentialPolynomial/JetAlgebra.lean",
+        "NLS/ZakharovShabat/SobolevPhysicalJets.lean",
+        "NLS/Fourier/IntervalBilinearParseval.lean",
+        "NLS/Fourier/UnitIntervalL2Equiv.lean",
+        "NLS/ZakharovShabat/AppendixHPhysicalHamiltonian.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [],
+      "ordered_inventory": "coverage/APPENDIX_H_ASSERTIONS.md",
+      "ordered_inventory_sha256": "faddf06bfc84ef6294aae63ba0b2af55c61584c6e2133e0ca2710e5e0f9bd7f8",
+      "resolved_declarations": [
+        "NLS.DifferentialPolynomial.DerivativeOrderLE.jet_order",
+        "NLS.DifferentialPolynomial.exists_graded_jet_reduction",
+        "NLS.DifferentialPolynomial.integral_balanced_derivatives",
+        "NLS.DifferentialPolynomial.integral_evaluate_eq_of_total_derivative",
+        "NLS.DifferentialPolynomial.monomial_factor_jet",
+        "NLS.DifferentialPolynomial.weight_erase_one",
+        "NLS.ZakharovShabat.analyticAt_sobolevNLSHamiltonian",
+        "NLS.ZakharovShabat.appendixH_hamiltonian_eq_integral_of_coefficients",
+        "NLS.ZakharovShabat.appendixH_hamiltonian_eq_physical_integral",
+        "NLS.ZakharovShabat.appendixH_odd_remainder_phase",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_odd_leading_remainder",
+        "NLS.ZakharovShabat.classicalNLSHamiltonian_odd_real_H1_remainder",
+        "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
+        "NLS.ZakharovShabat.exists_classicalNLSHamiltonian_odd_reduced_polynomial",
+        "NLS.ZakharovShabat.exists_nlsOddRemainder_jet_reduction",
+        "NLS.ZakharovShabat.hierarchySobolevJetL2_distribution_iterate",
+        "NLS.ZakharovShabat.integral_sq_sobolevTopJetPhysical",
+        "NLS.ZakharovShabat.nlsRiccatiDensity_field_rescaling",
+        "NLS.ZakharovShabat.nlsRiccatiDensity_one",
+        "NLS.ZakharovShabat.nlsRiccatiDensity_succ_succ",
+        "NLS.ZakharovShabat.nlsRiccatiDensity_zero",
+        "NLS.ZakharovShabat.nlsRiccatiPolynomial_derivativeOrder",
+        "NLS.ZakharovShabat.nlsRiccatiPolynomial_totalWeight",
+        "NLS.ZakharovShabat.nlsRiccatiRemainder_fieldCharge",
+        "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_grades",
+        "NLS.ZakharovShabat.nlsRiccatiRemainder_hamiltonian_monomial",
+        "NLS.ZakharovShabat.nlsRiccatiRemainder_totalWeight",
+        "NLS.ZakharovShabat.nlsRiccatiRemainder_vars",
+        "NLS.ZakharovShabat.sobolevNLSHamiltonian_eq_classical",
+        "NLS.ZakharovShabat.sobolevNLSHamiltonian_succ_eq_tsum",
+        "NLS.ZakharovShabat.sobolevOddHamiltonian_eq_physical_integral",
+        "NLS.ZakharovShabat.sobolevOddHamiltonian_unique_continuous",
+        "NLS.ZakharovShabat.sobolevRiccatiDensity_field_rescaling",
+        "NLS.ZakharovShabat.sobolevRiccatiDensity_succ_succ",
+        "NLS.ZakharovShabat.sourceCorollaryH2",
+        "NLS.ZakharovShabat.sourceCorollaryH2_integral",
+        "NLS.ZakharovShabat.sourceH2Polynomial_properties",
+        "NLS.ZakharovShabat.sourceLemmaH1",
+        "NLS.ZakharovShabat.sourceLemmaH1_distribution",
+        "NLS.ZakharovShabat.sourceLemmaH1_polynomial",
+        "NLS.ZakharovShabat.sourceLemmaH1_weak",
+        "NLS.ZakharovShabat.summable_norm_sobolevRiccatiMean",
+        "NLS.ZakharovShabat.weakSobolevRiccatiDensity_apply",
+        "NLS.ZakharovShabat.weakSobolevRiccatiDensity_eq_classical_coefficients",
+        "NLS.ZakharovShabat.weakSobolevRiccatiDensity_field_rescaling",
+        "NLS.ZakharovShabat.weakSobolevRiccatiDensity_unique"
+      ],
+      "declaration_inventory_count": 45003,
+      "qualification": "The fourteen ordered Appendix H groups comprise twelve matched, one directly corrected and one contextual passage. No partial or pending mathematical group remains within this local comparison. The original kth Hamiltonian is identified with the literal physical integral on every complex H^(k-1) source, using actual L2 representatives and the exact (-i)^(k+1) normalization. H.1 retains the actual weak H^-1 derivative and a fixed graded lower-jet polynomial. The smooth odd-Hamiltonian display uses (-1)^(m+1) on the unchanged unreduced H.1 remainder. The H.2 polynomial absorbs this phase and is chosen before all real H^m sources. The integration-by-parts reduction preserves total weight and balanced field counts. The precise 2014 reference comparison and broader dissertation completeness remain separate. Historical refutations are unchanged; no new refutations are added.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          138,
+          139
+        ],
+        "images": {
+          "work/tmp/pdfs/appendix-g-ordered-138.png": "2107406ce69dacef0417629d9a05f2d49c82987ac3f6c20495f09f8226b8b336",
+          "work/AppendixHPage139.png": "2d3d4d8b726c1f7d8292ec9ce0764b0c22b1074862e2f5ff2f7fff1f989a9649"
+        }
+      },
+      "preceding_review_hash": "be26a963ea676aef5aca6ec1e5b8ef62bd94ee3be3d632267a7099ac1d0dd881",
+      "reconciled_previous_reviews": {
+        "work/AppendixHSourceComparison-2026-10-27.json": "2d4077d00aa0be99bfacf3d4f9b7df35a1fb1a55edc2edee671c1e81a455b965",
+        "work/AppendixHPhaseSourceComparison-2026-10-21.json": "699fce81244e180205d0e813dcef2213252b7ba425725bf4be272ecc96ae3246",
+        "work/AppendixHPhysicalHamiltonianSourceComparison-2026-11-02.json": "be26a963ea676aef5aca6ec1e5b8ef62bd94ee3be3d632267a7099ac1d0dd881"
+      },
+      "validation_lean_sources": {
+        "files": 4907,
+        "sha256": "2d67a19a460f3c58ecda7878959498d184a8b3a7ffe1ac25d8f7d72d76e05748"
+      },
+      "validation_reused_from_commit": "215e703ba0c1fde380f6f2f40d6cb88810691848",
+      "new_definitions": 0,
+      "positive_theorems_integrated": 0,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "full_gate": {
+        "session": 7558,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/AppendixHPhysicalHamiltonianFullCheck.log",
+        "log_sha256": "3129c666cb79580984db3a8a0860e3b8333352b0a8b66edd397fe018e949fe92"
+      },
+      "source_record_sha256": "d1bace4285f43b8bd6afe2527d73a7a9a42d322968a7202ab3f07a02b52b0c3e"
     }
   }
 }
