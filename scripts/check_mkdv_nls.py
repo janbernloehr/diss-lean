@@ -287,6 +287,12 @@ modules = [
     "NLS/MKdV/MiuraFiniteActionProjection.lean",
     "NLS/MKdV/MiuraFiniteActionSections.lean",
     "NLS/Articles/MKdVNLSHierarchies/FiniteActionCoordinates.lean",
+    "NLS/SequenceSpaces/PhysicalRealCoefficients.lean",
+    "NLS/FunctionalAnalysis/RealAnalyticSubmersionSection.lean",
+    "NLS/MKdV/MiuraFiniteActionReality.lean",
+    "NLS/MKdV/MiuraFiniteRealActionProjection.lean",
+    "NLS/MKdV/MiuraFiniteRealActionSections.lean",
+    "NLS/Articles/MKdVNLSHierarchies/RealFiniteActionCoordinates.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

@@ -1369,3 +1369,54 @@ are allowed. The public inventory has 1,639 entries (1,331 theorems and
 308 definitions; aliases and structures excluded), with 255 SHA256
 source/checker hashes. The checks use pinned cached imports; the entire
 dependency tree was not rebuilt from source.
+
+
+## 2026-11-02 — real-preserving finite physical action sections
+
+`theorem4_real_finite_action_sections` closes the real-preserving local
+section dependency left by the preceding complex H1 sections. At every
+original real H1 base point, including zero mean, any finite collection
+of open positive physical actions together with the literal signed mean
+has a constructed local real analytic section. It passes through the
+base point, realizes the independent physical Hill contour actions and
+the signed zero Fourier coefficient exactly, remains inside any prescribed
+open real H1 neighborhood and retains strictly positive selected actions.
+There is no restriction on omitted closed gaps.
+
+The reusable weighted Fourier real-form construction uses physical
+conjugate reflection, not coefficientwise real Fourier data. This real
+subspace is closed and complete with the original weighted norm. A
+bounded real-part projection and exact real/imaginary complex
+decomposition are constructed and checked coefficient by coefficient.
+The physical real-gap formula makes the action projection real on every
+real H1 source. Differentiating its imaginary part along real H1 lines
+proves that the actual complex action cotangents take real values on
+real variations.
+
+`theorem4_real_finite_action_submersion` proves surjectivity of the
+actual real Frechet derivative. The physical real part of a complex
+right-inverse lift has exactly the same real target: apply each actual
+cotangent to the exact complex decomposition and use its proved
+real-variation property. This constructs a bounded real right inverse;
+none is assumed. The checked real analytic inverse theorem on its affine
+slice supplies the local real section. Its actual derivative equals
+that constructed right inverse. The target neighborhood is shrunk inside
+the positive selected-action cone, without excluding zero mean.
+
+These are finite local real coordinate results. The independent global
+mKdV Birkhoff chart, full infinite action topology, collapsed selected-action
+coordinates, forward action factorization, independent mKdV angles and
+final angle-sum factorization, and corrected full frequency comparison
+remain essential open obligations. Theorems 1 and 2 remain complete,
+and the overall main-theorem goal remains incomplete.
+
+Validation covers 259 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 253 unchanged prefix module
+source hashes match the previous 9af5306 milestone; their private outputs
+were reused. Six added modules and the NLS aggregate compiled. The
+complete targeted and combined audits passed for 3,242 and 48,212
+declarations respectively. Only propext, Classical.choice and Quot.sound
+are allowed. The public inventory has 1,662 entries (1,349 theorems and
+313 definitions; aliases and structures excluded), with 261 SHA256
+source/checker hashes. The checks use pinned cached imports; the entire
+dependency tree was not rebuilt from source.

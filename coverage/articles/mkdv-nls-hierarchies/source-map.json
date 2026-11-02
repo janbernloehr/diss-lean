@@ -141,7 +141,9 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem4_complete_action_flows",
         "NLS.Articles.MKdVNLSHierarchies.theorem4_H1_action_differentials_independent",
         "NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_submersion",
-        "NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_sections"
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_sections",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_real_finite_action_submersion",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_real_finite_action_sections"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -617,6 +619,25 @@
     "generic_analytic_section": "NLS.ComplexAnalysis.exists_analytic_section_of_derivative_rightInverse",
     "scope": "Every original real H1 base point; any finite collection of its positive open physical actions together with the literal mean. Other gaps may close and zero mean is allowed. The actual complex H1 analytic extensions have surjective derivative. A constructed holomorphic section passes through the base point, realizes all nearby selected complex action and mean values exactly, has the constructed right inverse as its actual derivative, and stays inside any prescribed open complex H1 neighborhood of the base point.",
     "construction": "Cotangent independence proves surjectivity by injectivity of the algebraic dual map. A linear right inverse is bounded because its domain is finite dimensional. The affine H1 slice through that right inverse has identity actual derivative under the physical projection; the analytic inverse theorem constructs the section on that slice.",
-    "limits": "These are finite local complex sections at real H1 base points, not real-preserving sections or an independent global mKdV Birkhoff chart. The infinite action topology, collapsed selected-action coordinates, global forward action factorization, independent mKdV angles and final angle-sum factorization, and corrected frequency comparison remain open."
+    "limits": "The finite complex sections are complemented by constructed real-preserving sections below. These do not construct an independent global mKdV Birkhoff chart. The infinite action topology, collapsed selected-action coordinates, global forward action factorization, independent mKdV angles and final angle-sum factorization, and corrected frequency comparison remain open."
+  },
+  "real_finite_physical_action_sections": {
+    "physical_real_Banach_space": "NLS.WeightedCoeff.physicalRealSubmodule",
+    "closed_real_form": "NLS.WeightedCoeff.isClosed_physicalRealSubmodule",
+    "bounded_physical_real_projection": "NLS.WeightedCoeff.physicalRealPart",
+    "exact_complex_decomposition": "NLS.WeightedCoeff.physicalRealPart_complex_decomp",
+    "physical_action_reality": "NLS.MKdV.finiteActionCoordinates_real_values",
+    "actual_cotangent_reality": "NLS.MKdV.finiteActionRows_real_variations",
+    "actual_real_action_projection": "NLS.MKdV.miuraFiniteRealActionCoordinates",
+    "actual_real_derivative": "NLS.MKdV.hasFDerivAt_miuraFiniteRealActionCoordinates",
+    "constructed_real_bounded_right_inverse": "NLS.MKdV.exists_miuraFiniteRealActionDerivative_rightInverse",
+    "real_derivative_surjectivity": "NLS.Articles.MKdVNLSHierarchies.theorem4_real_finite_action_submersion",
+    "real_preserving_sections": "NLS.Articles.MKdVNLSHierarchies.theorem4_real_finite_action_sections",
+    "section_derivative": "NLS.MKdV.exists_miuraFiniteRealAction_section",
+    "generic_real_analytic_section": "NLS.FunctionalAnalysis.exists_realAnalytic_section_of_derivative_rightInverse",
+    "scope": "Every original real H1 base point, including zero mean; any finite collection of its open positive physical actions; arbitrary other gaps may close. A constructed real analytic section into the closed physical real H1 space passes through that point, remains inside any prescribed real H1 neighborhood, realizes the literal signed mean and independent physical Hill contour actions exactly, keeps selected actions positive and has the constructed bounded real right inverse as its actual derivative.",
+    "physical_reality_convention": "Fourier conjugate reflection a_j=conj(a_-j), not coordinatewise real Fourier coefficients. The real form is a closed real Banach subspace with the original H1 norm.",
+    "construction": "Real gap formulas prove the physical action values real. Differentiating their imaginary parts along original real H1 lines proves reality of the actual complex cotangents. Exact physical real/imaginary decomposition shows that projecting any complex derivative lift to its physical real part preserves the real target. The real analytic inverse theorem on this constructed affine slice supplies the section.",
+    "limits": "This proves finite real local action geometry, not the independent global mKdV Birkhoff chart. The infinite action topology and collapsed selected-action coordinates, forward factorization through J and mean, independent mKdV angles and final angle-sum factorization, and corrected full frequency comparison remain open."
   }
 }

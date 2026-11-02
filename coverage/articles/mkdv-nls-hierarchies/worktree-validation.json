@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 3201,
+  "audited_declarations_and_auxiliaries": 3242,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -8214,14 +8214,129 @@
       "kind": "theorem",
       "name": "theorem4_finite_action_sections",
       "file": "NLS/Articles/MKdVNLSHierarchies/FiniteActionCoordinates.lean"
+    },
+    {
+      "kind": "def",
+      "name": "physicalRealSubmodule",
+      "file": "NLS/SequenceSpaces/PhysicalRealCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isClosed_physicalRealSubmodule",
+      "file": "NLS/SequenceSpaces/PhysicalRealCoefficients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "conjugateReflectionRealCLM",
+      "file": "NLS/SequenceSpaces/PhysicalRealCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "conjugateReflectionRealCLM_apply",
+      "file": "NLS/SequenceSpaces/PhysicalRealCoefficients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "physicalRealPart",
+      "file": "NLS/SequenceSpaces/PhysicalRealCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalRealPart_apply",
+      "file": "NLS/SequenceSpaces/PhysicalRealCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalRealPart_real",
+      "file": "NLS/SequenceSpaces/PhysicalRealCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalRealPart_complex_decomp",
+      "file": "NLS/SequenceSpaces/PhysicalRealCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_realAnalytic_localInverse_of_isUnit_fderiv",
+      "file": "NLS/FunctionalAnalysis/RealAnalyticSubmersionSection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_realAnalytic_section_of_derivative_rightInverse",
+      "file": "NLS/FunctionalAnalysis/RealAnalyticSubmersionSection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "finiteActionCoordinates_real_values",
+      "file": "NLS/MKdV/MiuraFiniteActionReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "finiteActionRows_real_variations",
+      "file": "NLS/MKdV/MiuraFiniteActionReality.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraFiniteRealActionCoordinates",
+      "file": "NLS/MKdV/MiuraFiniteRealActionProjection.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraFiniteRealActionRows",
+      "file": "NLS/MKdV/MiuraFiniteRealActionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraFiniteRealActionCoordinates",
+      "file": "NLS/MKdV/MiuraFiniteRealActionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_miuraFiniteRealActionCoordinates",
+      "file": "NLS/MKdV/MiuraFiniteRealActionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraFiniteActionRows_physicalRealPart",
+      "file": "NLS/MKdV/MiuraFiniteRealActionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraFiniteRealActionDerivative_rightInverse",
+      "file": "NLS/MKdV/MiuraFiniteRealActionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "surjective_miuraFiniteRealActionDerivative",
+      "file": "NLS/MKdV/MiuraFiniteRealActionProjection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraFiniteRealActionCoordinates_pos",
+      "file": "NLS/MKdV/MiuraFiniteRealActionSections.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraFiniteRealAction_section",
+      "file": "NLS/MKdV/MiuraFiniteRealActionSections.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_real_finite_action_submersion",
+      "file": "NLS/Articles/MKdVNLSHierarchies/RealFiniteActionCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_real_finite_action_sections",
+      "file": "NLS/Articles/MKdVNLSHierarchies/RealFiniteActionCoordinates.lean"
     }
   ],
-  "public_declaration_count": 1639,
-  "theorem_count": 1331,
-  "definition_count": 308,
-  "full_build": "253 article/shared modules have validated private outputs. All 248 unchanged prefix module source hashes match the prior 96c107c milestone; their private outputs were reused. Five added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 1662,
+  "theorem_count": 1349,
+  "definition_count": 313,
+  "full_build": "259 article/shared modules have validated private outputs. All 253 unchanged prefix module source hashes match the prior 9af5306 milestone; their private outputs were reused. Six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/FunctionalAnalysis/FiniteCotangentProjection.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/PhysicalRealCoefficients.lean",
   "sha256": {
     "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
     "NLS/Articles/MKdVNLSHierarchies/GradientRecurrence.lean": "00b96353e5cc2d467c35fd37944722cc4c730d263ccf5383633a2d6405b2f58f",
@@ -8379,8 +8494,8 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "e06c369cedebd6a6f0d3666ad1239a27736dd65b3b66a4a00f5831eb873bcd40",
-    "scripts/check_mkdv_nls.py": "d8dccebc1ab9c557777a308c31e7bb11c12e102975203c9d894a080e9b70223c",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "b479904422e6aa511ab0066385b5b4eafcf1e1a8375a5f456236ed4564d16e4d",
+    "scripts/check_mkdv_nls.py": "dacec240a776d0a9824234b72ee92b0ad2a0fa4dc2245d7be48d4845b4dceea0",
     "NLS/SequenceSpaces/OrderedNaturalEnumerationUnique.lean": "4445901ea20db8b136cc06b97b4afc71de6961d5594aa281878962ab1b704e0f",
     "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean": "460545a5f30908fff23521c0e37293ee18d18f6441f92452538ea6bfe8bcea7f",
     "NLS/MKdV/MiuraNLSPositiveEndpoints.lean": "3f5c49a6dc937669104d321db0d076ed7e58d317c45984ad041e9ea4eda9781d",
@@ -8477,10 +8592,16 @@
     "NLS/ComplexAnalysis/AnalyticSubmersionSection.lean": "8f4d9f9a7ecd7d789d3353ff17774cce89b394bee7cfd16501c87edc9ee47205",
     "NLS/MKdV/MiuraFiniteActionProjection.lean": "db26f8f63423a58820d4e578bf80d8e67e2089c4ccb71b8d3af5bd41e010b9c0",
     "NLS/MKdV/MiuraFiniteActionSections.lean": "d4536fdb4e27229b02423eeaa3bf6611b54768959b5ee14f80e8451832c45a6d",
-    "NLS/Articles/MKdVNLSHierarchies/FiniteActionCoordinates.lean": "f5782dcf6123f3d1c947bac6eb9192f4b7f18f0a95897085e710070a54e3f458"
+    "NLS/Articles/MKdVNLSHierarchies/FiniteActionCoordinates.lean": "f5782dcf6123f3d1c947bac6eb9192f4b7f18f0a95897085e710070a54e3f458",
+    "NLS/SequenceSpaces/PhysicalRealCoefficients.lean": "8d1359e9a91af4d40e53bba54beaa89782306ed3fad24eaa53db7d0aa5dc3718",
+    "NLS/FunctionalAnalysis/RealAnalyticSubmersionSection.lean": "402802d2945afe058266ae87cce9e78246df54dad85b9c773a36a0dcac784867",
+    "NLS/MKdV/MiuraFiniteActionReality.lean": "e28a740fb6a43434b97595755163f82466a0d7d6428411222d04fbb821380a0e",
+    "NLS/MKdV/MiuraFiniteRealActionProjection.lean": "0e07cf1a0c67da4030521c25879188d35f2b1747fc2fc7940fa80415baaf2734",
+    "NLS/MKdV/MiuraFiniteRealActionSections.lean": "2c340fb196094ce7fca8c311ade0ac6df835c13f96f27aa03a4f697498b1acc0",
+    "NLS/Articles/MKdVNLSHierarchies/RealFiniteActionCoordinates.lean": "3b4df99feb318af8adb9b25de34201e641e0979e3feec5830461c437d98a0e27"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 253,
+  "focused_module_count": 259,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -8648,12 +8769,19 @@
       "combined_NLS_audit_count": 48171,
       "aggregate_compiled": true,
       "validation_scope": "All 248 unchanged prefix module source hashes match the prior 96c107c milestone; their private outputs were reused. Five added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
+    },
+    {
+      "milestone": "Constructed real-preserving finite physical action and signed-mean sections at every original real H1 base point, zero mean included: closed physical weighted real Banach form, exact complex decomposition, actual action cotangent reality, proved real derivative surjectivity and bounded right inverse, real analytic sections inside any prescribed real H1 neighborhood with positive selected actions and exact physical recovery",
+      "audit_count": 3242,
+      "combined_NLS_audit_count": 48212,
+      "aggregate_compiled": true,
+      "validation_scope": "All 253 unchanged prefix module source hashes match the prior 9af5306 milestone; their private outputs were reused. Six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 48171,
+  "combined_audited_NLS_declarations": 48212,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -8661,7 +8789,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 248 unchanged prefix module source hashes match the prior 96c107c milestone; their private outputs were reused. Five added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3201 declarations/auxiliaries and combined audit for 48171 NLS declarations. All 255 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
+  "last_run_notes": "All 253 unchanged prefix module source hashes match the prior 9af5306 milestone; their private outputs were reused. Six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3242 declarations/auxiliaries and combined audit for 48212 NLS declarations. All 261 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

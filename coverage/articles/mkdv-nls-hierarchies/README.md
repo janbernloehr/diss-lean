@@ -834,11 +834,10 @@ right inverse. At the base point its action values equal the independent
 physical Hill contour actions. Zero mean and arbitrary omitted closed
 gaps are included.
 
-These are finite local complex sections. Real-preserving sections,
-the infinite action topology and collapsed selected-action coordinates,
-and the independent global mKdV chart remain open, together with the
-forward factorization, final angle-sum factorization and corrected
-frequency comparison required by the remaining main theorems.
+These finite local complex sections are now complemented by the real-preserving
+sections described below. The infinite action topology, collapsed selected-action
+coordinates and independent global mKdV chart remain open, together with forward
+factorization, final angle-sum factorization and corrected frequency comparison.
 
 Validation covers 253 article/shared modules with Lean 4.33.1,
 autoImplicit=false and warnings as errors. All 248 unchanged prefix module
@@ -848,5 +847,38 @@ complete targeted and combined audits passed for 3,201 and 48,171
 declarations respectively. Only propext, Classical.choice and Quot.sound
 are allowed. The public inventory has 1,639 entries (1,331 theorems and
 308 definitions; aliases and structures excluded), with 255 SHA256
+source/checker hashes. The checks use pinned cached imports; the entire
+dependency tree was not rebuilt from source.
+
+
+## Real-preserving local physical action sections
+
+`theorem4_real_finite_action_sections` constructs real analytic sections
+on the full original real H1 space through any base point, including
+zero mean. Any finite collection of its open physical actions and the
+literal signed mean can be prescribed independently nearby. The section
+stays inside any chosen real H1 neighborhood and keeps each selected
+action positive. Its actual derivative is a constructed bounded real
+right inverse; `theorem4_real_finite_action_submersion` proves actual
+real derivative surjectivity.
+
+The real space consists of Fourier coefficients with conjugate index
+reflection, with the original H1 norm. The physical real projection,
+closed Banach real form, action-value reality and actual derivative
+reality are proved. The real analytic inverse theorem supplies the
+section on a constructed affine slice. No real chart or inverse is an
+extra hypothesis. The independent global mKdV chart, infinite action
+topology and collapsed selected-action coordinates, forward factorization,
+final angle-sum factorization and corrected frequency comparison remain
+open; the main-theorem goal remains incomplete.
+
+Validation covers 259 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 253 unchanged prefix module
+source hashes match the previous 9af5306 milestone; their private outputs
+were reused. Six added modules and the NLS aggregate compiled. The
+complete targeted and combined audits passed for 3,242 and 48,212
+declarations respectively. Only propext, Classical.choice and Quot.sound
+are allowed. The public inventory has 1,662 entries (1,349 theorems and
+313 definitions; aliases and structures excluded), with 261 SHA256
 source/checker hashes. The checks use pinned cached imports; the entire
 dependency tree was not rebuilt from source.
