@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.CartesianSequenceIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianActionIdentification
 import NLS.Articles.MKdVNLSHierarchies.L2ActionGeometryIdentification
 import NLS.Articles.MKdVNLSHierarchies.MassActionTraceIdentification
@@ -41,6 +42,17 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ZakharovShabat.SourceDiagonalLaurentLocalChart.exists_all_normalizedAction_analytic,
+    `NLS.ZakharovShabat.exists_local_sourceNormalizedDiagonalLaurentAction_allIndices_analytic_factor,
+    `NLS.ZakharovShabat.exists_local_hilbert_normalizedDiagonalLaurent_inverse_bound,
+    `NLS.ZakharovShabat.exists_local_hilbert_diagonalActionRatio_analytic_inverse_bound,
+    `NLS.ZakharovShabat.sourceDiagonalActionRatio_eq_inverse_frequency,
+    `NLS.ZakharovShabat.exists_diagonalActionRatio_scaled_re_lower_bound,
+    `NLS.ZakharovShabat.sourceDiagonalScaledActionRatio,
+    `NLS.ZakharovShabat.sourceDiagonalActionRatioSequence,
+    `NLS.ZakharovShabat.exists_local_sourceDiagonalActionRatioSequence_analytic,
+    `NLS.ZakharovShabat.exists_local_sourceDiagonalActionRoot_allIndices_analytic_bound,
+    `NLS.WeightedCoeff.exists_of_two_sequence_bound,
     `NLS.ZakharovShabat.normalizedStandardRoot_rationalizing_denom_ne_zero,
     `NLS.ZakharovShabat.normalizedStandardRoot_sub_zeroGap_factor,
     `NLS.ZakharovShabat.normalizedPrimitiveCircle_squaredGap_factor,

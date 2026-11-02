@@ -148,7 +148,10 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem4_weighted_action_summability",
         "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_L2_analytic",
         "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_radius",
-        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_closed_iff"
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_closed_iff",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_sequence_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_actions_recovered",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_mean_map_proper"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -173,7 +176,10 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem4_action_directions_independent",
         "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_L2_analytic",
         "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_radius",
-        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_closed_iff"
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_closed_iff",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_sequence_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_actions_recovered",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_mean_map_proper"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -735,6 +741,25 @@
     "closed_physical_action_iff_collapsed_pair": "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_closed_iff",
     "scope": "Every physical real L2 profile and every selected positive index, including a closed selected action, zero mean, and arbitrary other closed gaps. The selected pair is complex Banach analytic on an ambient original L2 neighborhood, real on physical profiles, and has squared radius twice the actual physical mKdV action. Independent original H1 Hill-contour action identification is retained.",
     "normalization": "Jn = one half of the actual inverse-frequency Laurent action. The regularized ratio Jn/In is positive; at a closed gap it is 1/(2*tau_n), with the true spectral midpoint tau_n. The normalized root has zero-gap baseline tau_n-z, so the residue factor is -i/4 times the holomorphic quotient.",
-    "limits": "These are selected Cartesian regularity and radius results. Infinite weighted Cartesian sequence analyticity, an independent Gardner-canonical mKdV chart and inverse, general nonzero-fiber geometry, surjectivity, forward action factorization, final angle-sum factorization and corrected frequency identification remain essential."
+    "limits": "Selected Cartesian regularity is now assembled into the full native complex L2 weighted Hilbert sequence map and its signed-mean properness. Higher native Sobolev sequence analyticity, an independent Gardner-canonical mKdV chart and inverse, general nonzero-fiber geometry, surjectivity, forward action factorization, final angle-sum factorization and corrected frequency identification remain essential."
+  },
+  "native_L2_Cartesian_sequence": {
+    "common_normalized_factor_domain": "NLS.ZakharovShabat.exists_local_sourceNormalizedDiagonalLaurentAction_allIndices_analytic_factor",
+    "closed_gap_inverse_frequency_bound": "NLS.ZakharovShabat.exists_local_hilbert_normalizedDiagonalLaurent_inverse_bound",
+    "common_ratio_analytic_decay": "NLS.ZakharovShabat.exists_local_hilbert_diagonalActionRatio_analytic_inverse_bound",
+    "spectral_mean_value_ratio": "NLS.ZakharovShabat.sourceDiagonalActionRatio_eq_inverse_frequency",
+    "scaled_ratio_positive_lower_bound": "NLS.ZakharovShabat.exists_diagonalActionRatio_scaled_re_lower_bound",
+    "scaled_ratio_bounded_Banach_analytic_sequence": "NLS.ZakharovShabat.exists_local_sourceDiagonalActionRatioSequence_analytic",
+    "common_positive_root_domain_and_half_order_bound": "NLS.ZakharovShabat.exists_local_sourceDiagonalActionRoot_allIndices_analytic_bound",
+    "native_weighted_Cartesian_sequence": "NLS.MKdV.miuraL2CartesianSequence",
+    "full_Banach_analytic_domain": "NLS.MKdV.exists_miuraL2CartesianSequence_domain",
+    "article_analyticity": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_sequence_analytic",
+    "exact_positive_coordinate_recovery": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_sequence_positive",
+    "full_weighted_quadratic_action_projection": "NLS.MKdV.miuraL2CartesianActions",
+    "actual_action_sequence_recovered": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_actions_recovered",
+    "properness_with_signed_mean": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_mean_map_proper",
+    "compact_complete_Cartesian_fibers": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_mean_fiber_compact",
+    "scope": "The entire physical real L2 scalar space, including zero mean and arbitrarily many closed actions. A common complex source neighborhood supports genuine Banach analyticity into the full native weighted Hilbert pair with weight (1+|n|)^(1/2). Every positive raw pair is exactly the actual selected Cartesian coordinate; nonpositive entries are zero only for positive-index encoding. The quadratic radius map recovers the entire actual weighted l1 action sequence. Adding the literal signed mean gives a proper real L2 map.",
+    "limits": "This constructs full complex L2 Cartesian sequence analyticity and properness. Higher native Sobolev Cartesian sequence analyticity, Gardner canonicity, an independent global mKdV inverse, general nonzero-fiber uniqueness/surjectivity, forward action factorization, final angle-sum factorization and corrected frequency identification still require proof."
   }
 }

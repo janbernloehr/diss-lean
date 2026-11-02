@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 3625,
+  "audited_declarations_and_auxiliaries": 3685,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -9204,14 +9204,199 @@
       "kind": "theorem",
       "name": "physical_action_cartesian_original_H1_closed_iff",
       "file": "NLS/Articles/MKdVNLSHierarchies/CartesianActionIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_all_normalizedAction_analytic",
+      "file": "NLS/ZakharovShabat/SourceDiagonalNormalizedLaurentCommonDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_sourceNormalizedDiagonalLaurentAction_allIndices_analytic_factor",
+      "file": "NLS/ZakharovShabat/SourceDiagonalNormalizedLaurentCommonDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_hilbert_normalizedDiagonalLaurent_inverse_bound",
+      "file": "NLS/ZakharovShabat/SourceDiagonalNormalizedLaurentBound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_hilbert_diagonalActionRatio_analytic_inverse_bound",
+      "file": "NLS/ZakharovShabat/SourceDiagonalNormalizedLaurentBound.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiagonalActionRatio_eq_inverse_frequency",
+      "file": "NLS/ZakharovShabat/SourceDiagonalActionRatioSequence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_diagonalActionRatio_scaled_re_lower_bound",
+      "file": "NLS/ZakharovShabat/SourceDiagonalActionRatioSequence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceDiagonalScaledActionRatio",
+      "file": "NLS/ZakharovShabat/SourceDiagonalActionRatioSequence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceDiagonalActionRatioSequence",
+      "file": "NLS/ZakharovShabat/SourceDiagonalActionRatioSequence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_sourceDiagonalActionRatioSequence_analytic",
+      "file": "NLS/ZakharovShabat/SourceDiagonalActionRatioSequence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_sourceDiagonalActionRoot_allIndices_analytic_bound",
+      "file": "NLS/ZakharovShabat/SourceDiagonalActionRootCommonDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_of_two_sequence_bound",
+      "file": "NLS/SequenceSpaces/WeightedTwoSequenceBound.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraL2CartesianCoefficient",
+      "file": "NLS/MKdV/MiuraL2CartesianSequence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraL2CartesianSequence",
+      "file": "NLS/MKdV/MiuraL2CartesianSequence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_miuraL2CartesianSequence_analytic",
+      "file": "NLS/MKdV/MiuraL2CartesianSequence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraL2CartesianSequence",
+      "file": "NLS/MKdV/MiuraL2CartesianSequence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraL2CartesianSequence_domain",
+      "file": "NLS/MKdV/MiuraL2CartesianSequence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraL2CartesianActions",
+      "file": "NLS/MKdV/MiuraL2CartesianActions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2CartesianActions_apply",
+      "file": "NLS/MKdV/MiuraL2CartesianActions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_miuraL2CartesianActions",
+      "file": "NLS/MKdV/MiuraL2CartesianActions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraL2CartesianActions",
+      "file": "NLS/MKdV/MiuraL2CartesianActions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2CartesianActions_sequence_eq",
+      "file": "NLS/MKdV/MiuraL2CartesianActions.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2CartesianSequence_positive",
+      "file": "NLS/MKdV/MiuraL2CartesianProperness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2CartesianSequence_nonpositive",
+      "file": "NLS/MKdV/MiuraL2CartesianProperness.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraL2CartesianMeanMap",
+      "file": "NLS/MKdV/MiuraL2CartesianProperness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraL2CartesianMeanMap",
+      "file": "NLS/MKdV/MiuraL2CartesianProperness.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraRealL2CartesianMeanMap",
+      "file": "NLS/MKdV/MiuraL2CartesianProperness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraRealL2CartesianMeanMap",
+      "file": "NLS/MKdV/MiuraL2CartesianProperness.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianActionMeanProjection",
+      "file": "NLS/MKdV/MiuraL2CartesianProperness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraCartesianActionMeanProjection",
+      "file": "NLS/MKdV/MiuraL2CartesianProperness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianActionMeanProjection_map",
+      "file": "NLS/MKdV/MiuraL2CartesianProperness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isProperMap_miuraRealL2CartesianMeanMap",
+      "file": "NLS/MKdV/MiuraL2CartesianProperness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompact_miuraRealL2CartesianMeanFiber",
+      "file": "NLS/MKdV/MiuraL2CartesianProperness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "native_cartesian_L2_sequence_analytic",
+      "file": "NLS/Articles/MKdVNLSHierarchies/CartesianSequenceIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "native_cartesian_L2_sequence_positive",
+      "file": "NLS/Articles/MKdVNLSHierarchies/CartesianSequenceIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "native_cartesian_L2_actions_recovered",
+      "file": "NLS/Articles/MKdVNLSHierarchies/CartesianSequenceIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "native_cartesian_L2_mean_map_proper",
+      "file": "NLS/Articles/MKdVNLSHierarchies/CartesianSequenceIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "native_cartesian_L2_mean_fiber_compact",
+      "file": "NLS/Articles/MKdVNLSHierarchies/CartesianSequenceIdentification.lean"
     }
   ],
-  "public_declaration_count": 1837,
-  "theorem_count": 1492,
-  "definition_count": 345,
-  "full_build": "301 article/shared modules have validated private outputs. All 294 unchanged prefix module source hashes match the prior bcb9049 milestone; their private outputs were reused. Seven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 1874,
+  "theorem_count": 1521,
+  "definition_count": 353,
+  "full_build": "310 article/shared modules have validated private outputs. All 301 unchanged prefix module source hashes match the prior 50c22c7 milestone; their private outputs were reused. Nine added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ZakharovShabat/SourceLaurentSquaredGapFactor.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ZakharovShabat/SourceDiagonalNormalizedLaurentCommonDomain.lean",
   "sha256": {
     "NLS/Articles/MKdVNLSHierarchies/ActionAngleFlowIdentification.lean": "b3f3e63f112a93654c970e5e4b79d592dc31973fe7ed5fcaf612c98da860fd39",
     "NLS/Articles/MKdVNLSHierarchies/ActionDescentIdentification.lean": "9d86c19bec1b44ee195c8695a749fdeecf6daf0ee895da7c592ad0782f9f3cc4",
@@ -9221,6 +9406,7 @@
     "NLS/Articles/MKdVNLSHierarchies/AnalyticActionExtension.lean": "45e6f74e869940d63c4ea131359671ed3151f6a2391076dc7376490a42f6870a",
     "NLS/Articles/MKdVNLSHierarchies/CanonicalPrimitiveIdentification.lean": "cebc9eb7cdaa5350f8aa11532ad5d1c552e4fe496bed31a47b240466c07e459f",
     "NLS/Articles/MKdVNLSHierarchies/CartesianActionIdentification.lean": "65f13530cecabe58a90b386aac4bba093bd3ecc44b795cdc642fc623cdb745a0",
+    "NLS/Articles/MKdVNLSHierarchies/CartesianSequenceIdentification.lean": "e4212e37f62efd857f7e5da17c11d0e2d840610b6ae873b32c3463d5f8ea3f3c",
     "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
     "NLS/Articles/MKdVNLSHierarchies/FiniteActionCoordinates.lean": "f5782dcf6123f3d1c947bac6eb9192f4b7f18f0a95897085e710070a54e3f458",
     "NLS/Articles/MKdVNLSHierarchies/FiniteGapHamiltonianIdentification.lean": "50342eb816094d235b7b9af915c242419aafc3a98b49704c61c7ca14a616f1ce",
@@ -9393,7 +9579,10 @@
     "NLS/MKdV/MiuraL2ActionProperness.lean": "e66002f6cf958da7b4fc3ffe30fd399fbfae2745376d4c8cc7511aac81a67d25",
     "NLS/MKdV/MiuraL2ActionSequence.lean": "dd1675c21cc2f566b29ec68163f9da2778f71fb8a39af79aabf96a557b5f4dc2",
     "NLS/MKdV/MiuraL2Actions.lean": "5ac327b7e041f067d25ff696d11c4453cafeba854d5109442d843cdae550d38d",
+    "NLS/MKdV/MiuraL2CartesianActions.lean": "e594d8c472e1b6712ec7c25af4ec6ccb478eb01f0514f747d5081e4887ee17f8",
     "NLS/MKdV/MiuraL2CartesianCoordinates.lean": "0ce6c4eb02df288ce6dc9e28e91d68a8386d03ce5b3b4c752cb2f23096dcf776",
+    "NLS/MKdV/MiuraL2CartesianProperness.lean": "48957b1b9f683dc4e551e7d5db68e915244a8049894d189db418cf6959b06fc3",
+    "NLS/MKdV/MiuraL2CartesianSequence.lean": "8d5f8c14032a275e0b053cb8f6edbf168ae3adc3e99e00a0a82e8113ab09f729",
     "NLS/MKdV/MiuraL2HillDiscriminant.lean": "06e9de1a0ab42755acb5de2ef5dc878ceea45ef1a24aea5223660a8f56eb12d9",
     "NLS/MKdV/MiuraL2MassGeometry.lean": "a1593b68368225ac72ef64cdd3ea44ba0351697d13472550279afff23b50411f",
     "NLS/MKdV/MiuraL2MassTrace.lean": "6f9e00f867564003c307b71d0ce7602e5516201ecbaf4c2456c93596f295f482",
@@ -9435,6 +9624,7 @@
     "NLS/SequenceSpaces/RealPairedActionRotation.lean": "c716205ab8374bb9984652c4826e431b73217573be245a65758daab20df4c181",
     "NLS/SequenceSpaces/RealPairedActionRotationProperties.lean": "3ab9c689652c07f113350451ecece7eaa8902366e8bb12edf7363de28e981c1c",
     "NLS/SequenceSpaces/WeightedInsertion.lean": "a4aeffa707f59fb1ae02afacbb06963c9085a2b04601162b495faf0810eb20b6",
+    "NLS/SequenceSpaces/WeightedTwoSequenceBound.lean": "81dac6d9eb5aca789a0c16b87df57637b7604c69527b4401af2a937f20cf42b3",
     "NLS/ZakharovShabat/CanonicalPeriodicEvenReflection.lean": "460545a5f30908fff23521c0e37293ee18d18f6441f92452538ea6bfe8bcea7f",
     "NLS/ZakharovShabat/ClassicalComponentSwap.lean": "7a80035614be3f0ce65da1aa46f34c136dfb4e1ee829ce4fab7c667418807509",
     "NLS/ZakharovShabat/ClassicalDiagonalZeroEnergy.lean": "c5592fce7e18b60096363c612304c7aeea647bc0b59ceabd4a88a8885e2cf13d",
@@ -9477,7 +9667,9 @@
     "NLS/ZakharovShabat/SourceComponentSwapPoisson.lean": "dffb60351bd032001c9686800c60ba8b6058c3064ff0da745a3fc5a8c0cb618f",
     "NLS/ZakharovShabat/SourceComponentSwapRoots.lean": "dec2f24dbb8cbacb20d7809bb714959b80d40c94b473e710471ab236632b08cb",
     "NLS/ZakharovShabat/SourceComponentSwapSpectralData.lean": "1e28f77162740399c546a619db8d83a06b04ca860ca093fb380a78c1e26644cf",
+    "NLS/ZakharovShabat/SourceDiagonalActionRatioSequence.lean": "941bee303e706b4d76a924dac7a33c137afd41625380ff2c737f09fe30296812",
     "NLS/ZakharovShabat/SourceDiagonalActionRoot.lean": "8f3e4533a06224e1951449e6e96ab468b07f502cee931acd62a36e8fc5101fcf",
+    "NLS/ZakharovShabat/SourceDiagonalActionRootCommonDomain.lean": "cdeb700ac3c69ea5325950e0bb2ff2be91892b012b12c0d885ef04547c7601a9",
     "NLS/ZakharovShabat/SourceDiagonalLaurentActionRatio.lean": "7e5042cd2fcfdb6fd2f1953fb2c18e04fc4581dd1c3c0d5d52fefaf859342260",
     "NLS/ZakharovShabat/SourceDiagonalLaurentAtlas.lean": "84121a7813a0f374df154055d28f0fd67272b67cceb2706510a8ae65803eda55",
     "NLS/ZakharovShabat/SourceDiagonalLaurentCoefficientContinuity.lean": "1d99a18faa932b1553adf627b08af38e83c48a895c340bba04508d6b86c680f2",
@@ -9490,6 +9682,8 @@
     "NLS/ZakharovShabat/SourceDiagonalLaurentOrdinaryDifferential.lean": "c8d2c93bb10e13bca141d9e7614cd8cf0694050b0ab345bf9b7f7021637e7019",
     "NLS/ZakharovShabat/SourceDiagonalLaurentZeroBound.lean": "e2b7af262972431be6e109d1f4f6fffe9e12841e7e221626637a73a3bed9c5f1",
     "NLS/ZakharovShabat/SourceDiagonalNormalizedLaurentAction.lean": "34086938e7aff39edc1bb074594647890c50bd721c72a503c090d7b89d4f693a",
+    "NLS/ZakharovShabat/SourceDiagonalNormalizedLaurentBound.lean": "f4ee5f3969610479709bf2b45543d5a655847beaa29fb70d7ec68e3b12b114c7",
+    "NLS/ZakharovShabat/SourceDiagonalNormalizedLaurentCommonDomain.lean": "57a96bbc902ed46bfb82f1fa57fc2ec7c04c10157bd9b427e4f8a01b2284e3b3",
     "NLS/ZakharovShabat/SourceDiagonalPositiveGaps.lean": "0fae054b5db08796603219b9a3fefe1d977b679c2d105bd0f50446d0baf8b850",
     "NLS/ZakharovShabat/SourceDiagonalPrimitiveSquare.lean": "6444d1fd11499024ea8915d5c69946a8a5c999e8d5a97346d629b19bcc3fe3e8",
     "NLS/ZakharovShabat/SourceDiagonalReciprocalGapBound.lean": "986cda8e0a35775c2918f32e679d83b8e37e01f2de3a48f58bf2380e94da03a7",
@@ -9514,11 +9708,11 @@
     "NLS/ZakharovShabat/SourceWeightedPrimitiveContour.lean": "26946412492d5f346f9155b8a37055e296e860d1d395cc00d37b7a5cd45e159f",
     "NLS/ZakharovShabat/SourceWeightedZeroLaurentAnalytic.lean": "7c328fc9fabdd864d7f1f8b850cae53f7178776b3d95a3a7c0930d980b2ed155",
     "NLS/ZakharovShabat/SourceWeightedZeroLaurentBound.lean": "26624c513ed96a9dde3f373a0d6d9049342bf2b46c074d2a60b893f841e3e24a",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "b7a3afb9e1da1aaf86a2a07f1e1295b2f262089eb686fea60004c0652e2d7356",
-    "scripts/check_mkdv_nls.py": "662521b36d8087517a531bcf3ae81001a441f37c2c222f832ad7e8578ac6d04e"
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "0def06057bd31479e50d2f6c83294f08a0492a751b89bd6b578997acdb45f531",
+    "scripts/check_mkdv_nls.py": "e6104b8f7fe69fdcb03aef018dacb5b8a4a19bb104b4ed26535989d043ab400e"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 301,
+  "focused_module_count": 310,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -9721,12 +9915,19 @@
       "combined_NLS_audit_count": 48559,
       "aggregate_compiled": true,
       "validation_scope": "All 294 unchanged prefix module source hashes match the prior bcb9049 milestone; their private outputs were reused. Seven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
+    },
+    {
+      "milestone": "Full complex Banach analytic original-L2 physical Cartesian map in its native half-order weighted Hilbert pair, actual raw positive coordinate recovery, full weighted quadratic actual action recovery and properness of the full real Cartesian/signed-mean map through arbitrary closed actions; common analytic normalized-factor and root domains with uniform inverse-frequency and inverse-square-root estimates",
+      "audit_count": 3685,
+      "combined_NLS_audit_count": 48619,
+      "aggregate_compiled": true,
+      "validation_scope": "All 301 unchanged prefix module source hashes match the prior 50c22c7 milestone; their private outputs were reused. Nine added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source."
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 48559,
+  "combined_audited_NLS_declarations": 48619,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -9734,7 +9935,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 294 unchanged prefix module source hashes match the prior bcb9049 milestone; their private outputs were reused. Seven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3625 declarations/auxiliaries and combined audit for 48559 NLS declarations. All 303 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
+  "last_run_notes": "All 301 unchanged prefix module source hashes match the prior 50c22c7 milestone; their private outputs were reused. Nine added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 3685 declarations/auxiliaries and combined audit for 48619 NLS declarations. All 312 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

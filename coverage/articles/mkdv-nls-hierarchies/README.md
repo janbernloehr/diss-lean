@@ -1021,3 +1021,41 @@ angle-sum factorization and full corrected frequency comparison remain
 essential. The overall main-theorem goal stays active.
 
 Validation: all 301 article/shared modules have validated private outputs. The 294 unchanged prefix source hashes match bcb9049 and their outputs were reused; all seven added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 3,625 declarations/auxiliaries and the combined audit for 48,559 NLS declarations, using only the standard allowed axioms. All 303 mathematical source/checker hashes match the frozen inputs. The public inventory is 1,837 declarations (1,492 theorems and 345 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source.
+
+
+## Full native complex L2 Cartesian sequence and properness
+
+A single real-centered complex ball now supports every normalized Laurent
+factor. Real open-gap density followed by holomorphic continuation on the
+whole ball identifies all ordinary factors there; no infinite intersection
+of index-dependent neighborhoods is used. The existing actual Laurent
+bound can be cancelled at open complex gaps. At closed complex gaps the
+exact midpoint formula gives the same inverse-frequency estimate.
+
+The scaled physical ratios (1+|n|)*J_n/I_n form an actual bounded sequence
+that is analytic in its full linfinity Banach norm. On a real diagonal,
+the spectral mean-value formula and endpoint displacement estimate give
+a common strictly positive real lower bound for every positive index.
+Norm continuity of the sequence therefore gives one complex neighborhood
+where all principal roots are analytic simultaneously. Their native
+half-order weighted moduli are uniformly bounded, including at every
+closed selected gap.
+
+These estimates assemble the original selected Cartesian pairs into an
+actual full sequence in the weighted Hilbert pair of order one half.
+The map is complex Banach analytic near every original physical real L2
+profile. Every positive raw coefficient equals its constructed pair;
+nonpositive entries are zero solely to encode the positive-index target.
+The weighted Hilbert product constructs the full continuous quadratic
+radius map, which recovers exactly the entire actual weighted l1 action
+sequence. With the literal signed mean, the full Cartesian map is proper
+in original physical L2, so every complete Cartesian/mean fiber is compact.
+
+This closes the full complex L2 sequence-analyticity dependency. It does
+not prove Gardner canonicity or infinite-dimensional invertibility.
+Higher native Sobolev Cartesian maps, general nonzero-fiber uniqueness,
+surjectivity, forward action factorization, independent angles/final
+angle-sum factorization and full corrected frequency comparison remain
+essential. The overall main-theorem goal remains active.
+
+Validation: all 310 article/shared modules have validated private outputs. The 301 unchanged prefix source hashes match 50c22c7 and their outputs were reused; all nine added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 3,685 declarations/auxiliaries and the combined audit for 48,619 NLS declarations, using only the standard allowed axioms. All 312 mathematical source/checker hashes match the frozen inputs. The public inventory is 1,874 declarations (1,521 theorems and 353 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source.

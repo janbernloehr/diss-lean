@@ -335,6 +335,15 @@ modules = [
     "NLS/ZakharovShabat/SourceDiagonalActionRoot.lean",
     "NLS/MKdV/MiuraL2CartesianCoordinates.lean",
     "NLS/Articles/MKdVNLSHierarchies/CartesianActionIdentification.lean",
+    "NLS/ZakharovShabat/SourceDiagonalNormalizedLaurentCommonDomain.lean",
+    "NLS/ZakharovShabat/SourceDiagonalNormalizedLaurentBound.lean",
+    "NLS/ZakharovShabat/SourceDiagonalActionRatioSequence.lean",
+    "NLS/ZakharovShabat/SourceDiagonalActionRootCommonDomain.lean",
+    "NLS/SequenceSpaces/WeightedTwoSequenceBound.lean",
+    "NLS/MKdV/MiuraL2CartesianSequence.lean",
+    "NLS/MKdV/MiuraL2CartesianActions.lean",
+    "NLS/MKdV/MiuraL2CartesianProperness.lean",
+    "NLS/Articles/MKdVNLSHierarchies/CartesianSequenceIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")
