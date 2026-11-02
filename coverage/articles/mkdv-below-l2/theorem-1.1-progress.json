@@ -67,13 +67,38 @@
       "source": "Vanishing H2 shift in the original mKdV normalization",
       "declaration": "NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_eq_mKdV_derivative",
       "scope": "Physical H1 momentum is antisymmetric under exchange of its actual fields and vanishes on the whole H1 diagonal. The native H^(3/2) inclusion preserves equality of the original fields, so the constructed rotation frequency equals the independent physical H4 action derivative minus only 12*pi*n*H1 on every original fractional mKdV datum."
+    },
+    {
+      "source": "Independent physical Hamiltonian covariance on the native fractional domain",
+      "declaration": "NLS.ZakharovShabat.sourceSobolevFourthHamiltonian_componentSwap",
+      "scope": "The all-order physical finite-gap trace and exact higher-action reflection prove the physical hierarchy parity. A bounded original weighted component swap and native weighted finite-gap density extend physical H4 antisymmetry to all original H^(3/2) sources. The physical Hamiltonian is not defined by the trace sum."
+    },
+    {
+      "source": "Independent physical H4 derivatives, including every closed action",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_componentSwap",
+      "scope": "Full-domain action dependence compares actual reflected unit-speed action-reduction curves and the exact I=t²/2 opening curves. Differentiation gives omega4(S a,n)=-omega4(a,-n) on every original real H^(3/2) source. Both original derivative branches, not a surrogate frequency, are included. No Birkhoff angle correspondence is assumed."
+    },
+    {
+      "source": "Original-distribution native representatives of diagonal Fourier approximants",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_nativeFourth_physicalMKdVTruncate",
+      "scope": "Every symmetric diagonal Fourier cutoff has a genuine H^(3/2) representative of the same two original period-one distribution functionals. Its fields are equal. General shared weighted finite-support transport retains coefficients at every Banach exponent and spectral weight. No spectral finite-gap property is claimed for these cutoffs."
+    },
+    {
+      "source": "Corollary 6.1: odd normalized physical frequency on the full mKdV domain",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalMKdV_fourthFrequencyCandidate_odd",
+      "scope": "Every finite p>1, every actual equal-distribution physical mKdV pair and every signed index. Independent native derivative parity, the fixed original-domain adapter, the same-distribution exponent compatibility, diagonal-preserving Fourier truncation and norm continuity prove the full normalized frequency identity. The zero-index value vanishes and both actual real and complex weighted sequence realizations retain the symmetry."
+    },
+    {
+      "source": "Odd cubic-plus-normalized Hamiltonian phase frequency",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalMKdV_fourthSourcePhaseFrequency_odd",
+      "scope": "The exact rotation frequency used by the previously verified physical image lift is odd on every original physical real mKdV datum at every finite p>1. Actual source-flow diagonal preservation is still required; frequency parity alone does not assert the Birkhoff phase-angle part of equation (50)."
     }
   ],
   "remaining": [
-    "Prove preservation of the actual smaller real mKdV diagonal by the fourth-frequency rotation lift and the necessary odd normalized-frequency identity. The original unsigned-swap spectral covariance, exact signed endpoints, root branches, even actions, diagonal model and Fourier approximation are now verified. The Birkhoff phase-angle part of equation (50) remains open; even actions alone do not prove preservation. A complete alternative proof via actual Hamiltonian swap covariance would also need to establish the same source-flow preservation.",
+    "Prove preservation of the actual smaller real mKdV diagonal by the fourth-frequency rotation lift. The necessary odd physical and normalized-frequency identities are now verified on the full finite-exponent diagonal, including every closed gap and the zero index. The Birkhoff phase-angle part of equation (50) remains open; even actions and odd frequencies alone do not prove preservation. A complete alternative proof via Hamiltonian covariance would also need to establish the same actual source-flow preservation.",
     "Prove that the constructed fourth-frequency inverse lifts agree with smooth physical renormalized mKdV solutions, consuming the verified hierarchy first-variation bridge and actual mass normalization. Vanishing of the physical H2 momentum on the full original fractional diagonal is now verified.",
     "Restrict the actual rotation-lift local and small-data trajectory results to the scalar real mKdV phase space and establish the exact smooth-approximation solution and uniqueness requirements of the source.",
     "Construct controlled smooth approximations with tunable divergent physical mass at every datum outside L² and use the verified nonzero signed Birkhoff mode to prove nonextension at each fixed t>0. A trajectory obstruction alone does not prove this fixed-time claim."
   ],
-  "validation": "Ten final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 112 unchanged parent modules reused from 7558905e3dd119f6cd09294d54a21ebf522fd09d. Full transitive audit of 600 declarations uses only propext, Classical.choice and Quot.sound."
+  "validation": "Eight final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 122 unchanged parent modules reused from 40d1959bf83cadfd29557cf1a3035bec7db6028c. Full transitive audit of 634 declarations uses only propext, Classical.choice and Quot.sound."
 }

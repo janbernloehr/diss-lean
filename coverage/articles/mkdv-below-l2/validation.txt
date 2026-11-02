@@ -1,15 +1,13 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
-Incremental validation: 112 unchanged modules reuse commit 7558905e3dd119f6cd09294d54a21ebf522fd09d; 10 final new modules checked strictly below.
-ZakharovShabat/ClassicalComponentSwap: checked
-ZakharovShabat/SourceComponentSwap: checked
-ZakharovShabat/SourceComponentSwapSpectralData: checked
-ZakharovShabat/SourceComponentSwapEndpoints: checked
-ZakharovShabat/SourceComponentSwapRoots: checked
-ZakharovShabat/SourceComponentSwapActions: checked
-ZakharovShabat/PeriodOneSobolevMomentumSymmetry: checked
-ZakharovShabat/SourceSobolevFourthDiagonal: checked
-Articles/MKdVBelowL2/PhysicalMKdVDiagonal: checked
-Articles/MKdVBelowL2/PhysicalMKdVSpectralSymmetry: checked
+Incremental validation: 122 unchanged modules reuse commit 40d1959bf83cadfd29557cf1a3035bec7db6028c; 8 final new modules checked strictly below.
+ZakharovShabat/SourceComponentSwapHamiltonians: checked
+ZakharovShabat/SourceWeightedComponentSwap: checked
+ZakharovShabat/SourceSobolevFourthSwap: checked
+ZakharovShabat/SourceSobolevFourthFrequencySwap: checked
+ZakharovShabat/SourceWeightedFiniteSupport: checked
+ZakharovShabat/SourceSobolevFourthDiagonalFrequency: checked
+Articles/MKdVBelowL2/PhysicalFourthFourierApproximation: checked
+Articles/MKdVBelowL2/PhysicalMKdVFrequencySymmetry: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -1114,3 +1112,89 @@ Articles/MKdVBelowL2/PhysicalMKdVSpectralSymmetry: checked
 'NLS.Articles.MKdVBelowL2.physicalMKdV_canonicalRoot_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.physicalMKdV_complexAction_even' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.Articles.MKdVBelowL2.physicalMKdV_birkhoff_actions_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.realSourceComponentSwap_mem_finiteGap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceFiniteGapFourthHamiltonian_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.weightedRealSourceComponentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.weightedRealSourceComponentSwap_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.weightedRealSourceComponentSwap_snd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.originalWeightedRealSource_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.weightedRealSourceComponentSwap_involutive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.weightedRealSourceComponentSwap_eq_self_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceSobolevFourthHamiltonian_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceRealSobolevFourthHamiltonian_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.sourceSobolevFourthHamiltonian_eq_zero_of_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.nativeFourthAction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.nativeFourthAction_componentSwap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceSobolevFourthHamiltonian_eq_neg_of_reflected_actions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthActionReductionHamiltonian_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpenFrequency_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthOpeningHamiltonian_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthClosedFrequency_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_componentSwap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_odd_of_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.exists_weightedRealSource_of_finiteSupport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.nativeFourth_components_eq_of_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedSobolevFourthFrequency_odd_of_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.ZakharovShabat.SourceBirkhoffMapComplexData.normalizedSobolevFourthFrequency_zero_of_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_nativeFourth_of_physical_finiteSupport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_nativeFourth_physicalMKdVTruncate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalSobolevFourthFrequency_odd_of_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.continuous_physicalFourthFrequencyCandidate_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdV_fourthFrequencyCandidate_odd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdV_fourthFrequencyCandidate_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdV_fourthFrequencySequence_odd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdV_realFourthFrequencySequence_odd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.physicalMKdV_fourthSourcePhaseFrequency_odd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

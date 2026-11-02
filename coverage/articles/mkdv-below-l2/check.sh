@@ -162,6 +162,14 @@ modules=(
   ZakharovShabat/SourceSobolevFourthDiagonal
   Articles/MKdVBelowL2/PhysicalMKdVDiagonal
   Articles/MKdVBelowL2/PhysicalMKdVSpectralSymmetry
+  ZakharovShabat/SourceComponentSwapHamiltonians
+  ZakharovShabat/SourceWeightedComponentSwap
+  ZakharovShabat/SourceSobolevFourthSwap
+  ZakharovShabat/SourceSobolevFourthFrequencySwap
+  ZakharovShabat/SourceWeightedFiniteSupport
+  ZakharovShabat/SourceSobolevFourthDiagonalFrequency
+  Articles/MKdVBelowL2/PhysicalFourthFourierApproximation
+  Articles/MKdVBelowL2/PhysicalMKdVFrequencySymmetry
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"

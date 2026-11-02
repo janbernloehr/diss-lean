@@ -104,8 +104,13 @@ The principal standard-root branches and the full canonical root now have
 their exact reflected signs. All original higher actions have spectral-power
 parity. In particular, actual physical mKdV gaps and original Birkhoff action
 products are even in n and the canonical root is odd in the spectral variable.
-The phase-angle identity and odd normalized-frequency identity are still
-open; even actions alone are not counted as diagonal-flow preservation.
+The normalized physical frequency is now proved odd on the entire finite-p
+diagonal, including closed gaps and the zero index. Native physical H4
+antisymmetry, the actual action derivatives and original-distribution Fourier
+approximants give this identity without an angle hypothesis. Both actual
+weighted sequence realizations and the cubic-plus-normalized phase frequency
+retain oddness. The phase-angle identity and actual source-flow diagonal
+preservation remain open.
 The independent physical H2 momentum is now proved zero on the full original
 fractional diagonal, giving the precise mass-only fourth-flow normalization.
 
@@ -131,10 +136,10 @@ Theorem 7.1 is a cross-reference typo; that theorem has three items.
 
 ## Remaining integration order for Theorem 1.1
 
-1. Prove preservation of the actual smaller mKdV diagonal and the required
-   odd normalized-frequency identity. The physical diagonal model, unsigned
-   swap covariance, signed periodic endpoints, root branches and even actions
-   are now verified. The Birkhoff phase-angle correspondence remains open;
+1. Prove preservation of the actual smaller mKdV diagonal. The physical
+   diagonal model, unsigned swap covariance, signed periodic endpoints,
+   root branches, even actions and full finite-p odd normalized-frequency
+   identity are now verified. The Birkhoff phase-angle correspondence remains open;
    a complete alternative proof via Hamiltonian swap covariance must prove
    the same actual source-flow preservation.
 2. Identify the verified fourth-frequency rotation lift with the smooth
@@ -148,13 +153,13 @@ Theorem 7.1 is a cross-reference typo; that theorem has three items.
 
 ## Validation
 
-The focused checker `check.sh` lists 122 article/shared modules and the
+The focused checker `check.sh` lists 130 article/shared modules and the
 consumed hierarchy foundations. Lean 4.33.1 checks use `autoImplicit=false`
-and `warningAsError=true`. The sixteenth checkpoint strictly checks all 10
-final new modules and reuses 112 parent modules after verifying their sources
-are unchanged from `7558905e3dd119f6cd09294d54a21ebf522fd09d`.
+and `warningAsError=true`. The seventeenth checkpoint strictly checks all 8
+final new modules and reuses 122 parent modules after verifying their sources
+are unchanged from `40d1959bf83cadfd29557cf1a3035bec7db6028c`.
 
-The fresh full transitive audit checks all 600 named declarations, including
+The fresh full transitive audit checks all 634 named declarations, including
 the main Theorems 1.2 and 1.3. Only `propext`, `Classical.choice` and
 `Quot.sound` occur. No holes, new axioms, disabled linters or increased
 heartbeat limits were introduced. `validation.txt` captures the checks;

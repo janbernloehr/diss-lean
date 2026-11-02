@@ -26,7 +26,7 @@
   ],
   "status": "theorems_1_2_and_1_3_verified_theorem_1_1_open",
   "branch": "articles/mkdv-below-l2",
-  "audited_declarations": 600,
+  "audited_declarations": 634,
   "verified_dependencies": [
     "NLS.ZakharovShabat.sourceProposition4_1",
     "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sobolevFourth_action_factor_with_frequencies",
@@ -38,6 +38,11 @@
     "NLS.ZakharovShabat.sourceCanonicalPeriodicEndpoints_componentSwap",
     "NLS.ZakharovShabat.sourceRealHigherAction_componentSwap",
     "NLS.Articles.MKdVBelowL2.physicalMKdV_birkhoff_actions_even",
-    "NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_eq_mKdV_derivative"
+    "NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_eq_mKdV_derivative",
+    "NLS.ZakharovShabat.sourceFiniteGapNLSHamiltonian_componentSwap",
+    "NLS.ZakharovShabat.sourceSobolevFourthHamiltonian_componentSwap",
+    "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_componentSwap",
+    "NLS.Articles.MKdVBelowL2.physicalMKdV_fourthFrequencyCandidate_odd",
+    "NLS.Articles.MKdVBelowL2.physicalMKdV_fourthSourcePhaseFrequency_odd"
   ]
 }

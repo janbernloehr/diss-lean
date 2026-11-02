@@ -742,3 +742,44 @@ that their sources are unchanged. The fresh full transitive audit checks all
 `Classical.choice` and `Quot.sound` occur. No holes, new axioms, disabled
 linters or increased heartbeat or recursion limits were introduced. The
 focused checker now lists 122 modules. The canonical checkout remains untouched.
+
+
+## Seventeenth checkpoint: full physical diagonal frequency parity
+
+The physical hierarchy has its exact unsigned-swap parity at every positive
+order on actual finite-gap sources, by the all-order trace and higher-action
+reflection. The original weighted component swap is bounded in every native
+weighted real source norm and preserves raw coefficients. Native weighted
+finite-gap density extends physical H4 antisymmetry to the full H^(3/2) domain;
+H4 therefore vanishes on its actual equal-field diagonal.
+
+Full native H4 action dependence compares the actual reflected action-reduction
+Hamiltonians near zero and the closed-gap opening Hamiltonians at every
+amplitude. Their original unit-speed and I=t²/2 normalizations give the exact
+odd reflected physical derivative, including every closed action. With the
+already verified H2 vanishing, the normalized original physical frequency is
+odd on the full fractional diagonal.
+
+Every finite Fourier source has coefficient-preserving representatives at
+all weighted Banach exponents. In the physical adapter, diagonal-preserving
+Fourier cutoffs therefore have native H^(3/2) representatives of exactly the
+same two distribution functionals. The fixed Birkhoff-family physical
+frequency adapter and exponent compatibility identify their frequencies.
+Continuity passes the odd normalized identity to every actual mKdV datum at
+every finite p>1. The zero-index value vanishes. Both actual real and complex
+weighted sequence realizations and the exact cubic-plus-normalized rotation
+frequency retain this odd indexing. No angle identity is assumed.
+
+This discharges the frequency-parity obligation of Corollary 6.1. Actual
+source-flow diagonal preservation, smooth physical PDE agreement, the scalar
+smooth-approximation solution and uniqueness requirements, and the tunable
+divergent-mass fixed-time obstruction remain open. Theorem 1.1 remains
+incomplete; Theorems 1.2 and 1.3 remain verified.
+
+All eight final new modules pass strict Lean 4.33.1 checks. The 122 parent
+modules reuse the validation at 40d1959bf83cadfd29557cf1a3035bec7db6028c after
+checking that their sources are unchanged. The fresh full transitive audit
+checks 634 declarations, with only propext, Classical.choice and Quot.sound.
+No holes, new axioms, disabled linters or increased heartbeat or recursion
+limits were introduced. The checker now lists 130 modules. Canonical compiled
+dependencies remain read-only; this is incremental focused validation.
