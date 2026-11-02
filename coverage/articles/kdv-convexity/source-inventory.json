@@ -192,10 +192,21 @@
         "NLS.ComplexAnalysis.squaredCirclePath_contDiffOn",
         "NLS.ComplexAnalysis.squaredCircleHomotopy_annulus",
         "NLS.ComplexAnalysis.circleIntegral_square_pullback_eq_energy_circle",
-        "NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles"
+        "NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles",
+        "NLS.ComplexAnalysis.TracePrimitiveFamily.pullback",
+        "NLS.ComplexAnalysis.TracePrimitiveFamily.radicand_comp",
+        "NLS.ComplexAnalysis.TracePrimitiveFamily.continuationDomain_comp_iff",
+        "NLS.ComplexAnalysis.TracePrimitiveFamily.root_comp",
+        "NLS.ComplexAnalysis.TracePrimitiveFamily.primitive_comp",
+        "NLS.KdV.primitiveAction_add_const_of_analyticOnNhd",
+        "NLS.KdV.hillL2ContinuationDomain_iff_classical",
+        "NLS.KdV.hillL2ContinuedRoot_eq_classical",
+        "NLS.KdV.hillL2ContinuedPrimitive_eq_classical",
+        "NLS.KdV.hillL2HighContourMoment_zero_eq_classicalPrimitiveAction",
+        "NLS.KdV.hillL2HighContourMoment_zero_eq_shifted_classicalPrimitiveAction"
       ],
       "remaining": [
-        "Handle central gaps and the full canonical primitive needed by the physical trace identity. Identify the shared intrinsic real L2 labels in the rough topology, extend the actual high moment estimates to H^-1, and prove nonpositivity.",
+        "Handle central gaps and the full canonical primitive needed by the physical trace identity. Identify the shared intrinsic real L2 labels with this contour construction, prove uniform rough-topology moment bounds and extend to H^-1; prove nonpositivity.",
         "Identify the constructed continuous-potential contour moments with the physical H^-1 spectral/action data, and prove analytic descent on one complex neighborhood of the weighted ell^(-1,1) nonnegative cone (Lemma 4.6(ii)).",
         "Prove the actual complex-neighborhood action/gap comparison gamma_n^2/n<=C*|I_n|, then combine with the checked weighted quartic gap bound to obtain locally uniform |8*n*pi*R_n|<=Cprime*|I_n|^2 on the required action domain.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
@@ -297,7 +308,8 @@
     "explicit_quadratic_constant": "16*pi*B*A^3*K^2 when radius <= B*gamma, |F| <= A*gamma/n, gamma^2/n <= K*|I|",
     "remaining": "Integrate the constructed actual unordered high pairs with complete globally ordered Hill labels and central contours; prove real spectral ordering and primitive endpoint values; continue across actual gap cuts; identify the rough Hill/action data; prove uniform complex gap/action bounds and action descent; identify physical high-energy expansion (4.7).",
     "actual_contour_moments_on_explicit_joint_domain_constructed": true,
-    "common_high_contour_neighborhood_constructed": true
+    "common_high_contour_neighborhood_constructed": true,
+    "physical_primitive_constructed_scope": "Full canonical H^-1 cut-complement primitive, still unproved; the continuous and L2 source-domain primitives are constructed and exactly identified."
   },
   "physical_coefficient_progress": {
     "source": "Physical energy coefficient needed for Lemma 4.4 / (4.7), p. 28",
@@ -381,12 +393,13 @@
     "free_high_contour_moments_zero": true,
     "source_exact_gap_labels_identified": false,
     "central_contour_coverage_proved": false,
-    "rough_Hill_operator_spectral_equivalence_proved": false,
     "weighted_action_descent_proved": false,
     "uniform_quadratic_action_bounds_proved": false,
     "actual_unordered_high_energy_pairs_identified": true,
     "actual_moments_real_at_real_continuous_potentials_on_common_tail_neighborhood": true,
-    "nonpositivity_of_actual_moments_proved": false
+    "nonpositivity_of_actual_moments_proved": false,
+    "L2_Hill_operator_spectral_equivalence_proved": true,
+    "Hminus1_Hill_operator_spectral_equivalence_proved": false
   },
   "high_energy_pair_progress": {
     "potential_space": "C([0,1], C), with complex sup-norm topology",
@@ -420,7 +433,8 @@
     "imaginary_Green_identity_proved": true,
     "all_unit_modulus_Floquet_energies_real": true,
     "periodic_and_antiperiodic_energies_real": true,
-    "L2_or_Hminus1_reality_extension_proved": false
+    "L2_reality_extension_proved": true,
+    "Hminus1_reality_extension_proved": false
   },
   "primitive_sheet_progress": {
     "potential_space": "C([0,1], C), real-valued locus, no norm smallness assumption",
@@ -535,5 +549,35 @@
     "physical_action_gap_comparison_proved": false,
     "weighted_action_descent_proved": false,
     "physical_renormalized_Hamiltonian_identification_proved": false
+  },
+  "physical_L2_primitive_agreement_progress": {
+    "shared_branch": "articles/kdv-estimates",
+    "shared_commit": "44071d89de13be985a6aa106b65801293ddbe27d",
+    "unchanged_shared_source_modules_imported_and_rechecked": 34,
+    "existing_import_boundary_identical_to_shared_commit": true,
+    "generic_bounded_linear_source_functoriality_proved": true,
+    "continuous_source": "C(AddCircle 2,C), restricted to [0,1] for the actual scalar Hill flow",
+    "L2_realization": "Fourier.continuousFourierCLM, equal to SpectralWeight.one.toCoeff(hillContinuousCoefficients Q)",
+    "agreement_potential_scope": "Arbitrary complex continuous circle Q for domain/root/primitive agreement; period-one Q for the checked high Arnold-circle identification.",
+    "exact_equality_of_source_continuation_domains": true,
+    "exact_equality_of_actual_continued_roots": true,
+    "exact_equality_of_actual_continued_primitives": true,
+    "new_root_sign_assumed": false,
+    "additive_logarithm_period_assumed": false,
+    "free_normalization": "F(lambda,0)=-i*sqrt(lambda)",
+    "high_energy_circle": "center pi^2*n^2, radius n, counterclockwise",
+    "high_period_cutoff": "n>=1 and 8*norm(hillContinuousCoefficients Q)<=n",
+    "L2_level_zero_moment_equals_literal_classical_primitive_action": true,
+    "indexed_shift_F_plus_i_n_pi_preserves_the_same_action_period": true,
+    "Arnold_integrand": "(1/pi)*integral lambda*Delta_prime(lambda)/continued_root(lambda)",
+    "local_L2_Banach_analyticity_of_each_checked_Arnold_period": true,
+    "actual_periodic_H2_operator_L2_characteristic_equivalence_reused": true,
+    "L2_spectral_reality_reused": true,
+    "global_intrinsic_labels_imported_in_this_milestone": false,
+    "uniform_L2_quartic_gap_bound_proved": false,
+    "Hminus1_extension_proved": false,
+    "actual_action_gap_lower_comparison_proved": false,
+    "global_Birkhoff_action_identification_proved": false,
+    "analytic_weighted_action_descent_proved": false
   }
 }

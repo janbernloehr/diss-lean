@@ -8,6 +8,7 @@ import NLS.KdV.ClassicalHillSquaredPrimitiveMatching
 import NLS.KdV.ClassicalHillWholeGapSquares
 import NLS.KdV.ClassicalHillGapCutRoots
 import NLS.KdV.ClassicalHillCubicGapBounds
+import NLS.KdV.ClassicalL2PrimitiveAgreement
 import NLS.KdV.ActionHamiltonianFiniteGap
 import NLS.Articles.KdVConvexity.LocalConsequences
 import NLS.Articles.KdVConvexity.BaseContourSeries
@@ -41,9 +42,21 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_square_pullback_eq_energy_circle,
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
+  let additionalModules := #[`NLS.ComplexAnalysis.EntireEvenSquareDescent,
+    `NLS.ComplexAnalysis.TracePrimitiveContinuation,
+    `NLS.ComplexAnalysis.TracePrimitiveFunctoriality,
+    `NLS.ComplexAnalysis.TwoZeroOrderComparison,
+    `NLS.ComplexAnalysis.ZeroCountHomotopy,
+    `NLS.FunctionalAnalysis.AbsoluteContinuityTranslation,
+    `NLS.FunctionalAnalysis.LinearVolterraLinearity,
+    `NLS.FunctionalAnalysis.TwoDimensionalDeterminant,
+    `NLS.SequenceSpaces.WeightedInsertion]
   let mut checked : Nat := 0
-  for (name, _) in (← getEnv).constants do
-    if namespaces.any (fun ns => ns.isPrefixOf name) || additional.contains name then
+  let env ← getEnv
+  for (name, _) in env.constants do
+    let fromSharedModule := (env.getModuleIdxFor? name).any
+      (fun idx => additionalModules.contains env.header.moduleNames[idx.toNat]!)
+    if namespaces.any (fun ns => ns.isPrefixOf name) || additional.contains name || fromSharedModule then
       let axioms ← collectAxioms name
       for ax in axioms do
         unless allowed.contains ax do

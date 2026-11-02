@@ -32,6 +32,21 @@ theorem primitiveAction_eq_derivative_period
   unfold primitiveAction
   ring
 
+/-- The indexed additive normalization of a primitive leaves its action
+period unchanged. Only analyticity near the actual contour is needed. -/
+theorem primitiveAction_add_const_of_analyticOnNhd
+    (F : ℂ → ℂ) (D : Set ℂ) (hF : AnalyticOnNhd ℂ F D)
+    (c k : ℂ) (r : ℝ) (hr : 0 ≤ r) (hcircle : sphere c r ⊆ D) :
+    primitiveAction (fun z => F z+k) c r = primitiveAction F c r := by
+  have hshift : AnalyticOnNhd ℂ (fun z => F z+k) D := fun z hz => (hF z hz).add analyticAt_const
+  rw [primitiveAction_eq_derivative_period (fun z => F z+k) D hshift c r hr hcircle,
+    primitiveAction_eq_derivative_period F D hF c r hr hcircle]
+  congr 1
+  apply circleIntegral.integral_congr hr
+  intro z hz
+  change z*deriv (fun w => F w+k) z = z*deriv F z
+  rw [((hF z (hcircle hz)).differentiableAt.hasDerivAt.add_const k).deriv]
+
 /-- A primitive analytic through a closed gap has zero cubic contour moment. -/
 theorem cubicMoment_eq_zero_of_analyticOnNhd
     (F : ℂ → ℂ) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)

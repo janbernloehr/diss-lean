@@ -822,6 +822,35 @@ neighborhood. The potential space is still C([0,1],C); identifying actual
 actions, proving gamma^2/n<=C*|I_n| and descending analytically to the
 weighted action space remain essential for Theorem 1.1.
 
+### Agreement with the shared physical L2 primitive and Arnold periods
+
+The dependency closure of the shared L2 primitive and contour moments
+was imported unchanged from `articles/kdv-estimates`, commit `44071d8`:
+34 modules, including the actual Hill operator, monodromy trace,
+characteristic equivalence, L2 spectral reality and source continuation.
+Every existing import at the boundary was identical to that commit.
+[`shared-imports.json`](shared-imports.json) records the exact files and
+hashes; all are rechecked in this branch's private build.
+
+[`TracePrimitiveFunctoriality.lean`](../../../NLS/ComplexAnalysis/TracePrimitiveFunctoriality.lean)
+proves that a bounded complex linear source map preserving the actual
+trace and free normalization preserves the continuation domain, root
+and primitive. Connected source-path uniqueness removes both square-root
+sign and additive logarithm-period ambiguities.
+[`ClassicalL2PrimitiveAgreement.lean`](../../../NLS/KdV/ClassicalL2PrimitiveAgreement.lean)
+applies this to the actual Fourier realization of a continuous circle
+potential. The classical interval and L2 constructions have identical
+admissible domains and exactly equal roots and primitives there.
+
+For a period-one continuous potential and n>=max(1,8*norm(q)), the shared
+level-zero L2 moment equals the literal classical primitive action on
+the energy circle with center pi^2*n^2 and radius n. The same identity
+holds with the exact indexed shift F+i*n*pi. The shared L2 integration by
+parts theorem supplies the Arnold integrand lambda*Delta_prime/root
+with factor 1/pi. These are checked contour identities and local L2
+analyticity; they do not yet identify a global Birkhoff action map or
+prove the quantitative action/gap comparison.
+
 ## Earlier checked local consequences
 
 [`LocalConsequences.lean`](../../../NLS/Articles/KdVConvexity/LocalConsequences.lean)
@@ -874,7 +903,7 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    giving the full -6*Id derivative. Apply the checked local consequences
    after positive-index Hessian/real-cone transport.
 
-The `kdv-estimates` branch was re-inspected through commit `5da8934`.
+The `kdv-estimates` branch was re-inspected through commit `44071d8`.
 Its shared work now includes the actual periodic H2 weak Hill operator,
 two-mode reduction, weighted root separation and physical gap tails. The
 period-one L2 Hill discriminant is jointly entire after square descent,
@@ -888,10 +917,11 @@ and appends the high pairs to construct global nondecreasing real L2
 characteristic labels in the exact tail slots `2*n-1` and `2*n`. Those
 labels are now intrinsic and independent of the cutoff, with the lowest
 energy characterized intrinsically and canonical weighted gap estimates
-proved directly for the actual labeled gaps. Those new
-Fourier/L2 modules are available on that branch and have not been duplicated
-or validated as part of this branch's focused check. The scalar flow module
-is reused here unchanged. Identification of those L2 labels with this
+proved directly for the actual labeled gaps. The 34-module dependency
+closure for its L2 source primitive and contour moments is now reused
+and validated here. The additional intrinsic global-label and canonical
+gap-tail modules remain available on that branch and are not imported
+in this focused build. Identification of those L2 labels with this
 branch's continuous contour construction, continuity/analyticity of labels
 in the required rough topology, H^-1 spectral/action theory, and the
 Birkhoff construction remain open.
@@ -906,11 +936,12 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All fifty-six modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All ninety-two modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers: 539 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in nine additional shared modules:
+1147 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
@@ -931,7 +962,8 @@ The script uses the canonical compiled imports read-only and writes new
 outputs to this worktree's `.lake/article-checks/kdv-convexity/`. This is a
 standalone import cache, never a target for `lake build`. No canonical build
 products are copied wholesale or modified. `KdV`, `ZakharovShabat` and
-`ComplexAnalysis` outputs use real private directories; reference files in
+`ComplexAnalysis`, `FunctionalAnalysis` and `SequenceSpaces` outputs use
+real private directories; reference files in
 the shared namespaces are linked only for imports, and an output-file link is removed
 before compilation. No full repository validation
 is claimed, and the dissertation's existing record is unchanged. Shared
