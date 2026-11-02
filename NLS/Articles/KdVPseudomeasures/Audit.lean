@@ -89,6 +89,7 @@ import NLS.KdV.PseudomeasureResolvent
 import NLS.KdV.PseudomeasureSpectrum
 import NLS.KdV.PseudomeasureRootSpaces
 import NLS.KdV.PseudomeasureRieszProjection
+import NLS.KdV.SingularHillResolventFamily
 import NLS.KdV.SingularHillChains
 import NLS.KdV.PseudomeasureChainJets
 import NLS.KdV.PseudomeasureTaylorKernel
@@ -172,6 +173,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralInverseRestriction
 import NLS.Articles.KdVPseudomeasures.SpectralInverseGapComparison
 import NLS.Articles.KdVPseudomeasures.SpectralEndpointBootstrap
 import NLS.Articles.KdVPseudomeasures.SpectralCrossOrder
+import NLS.Articles.KdVPseudomeasures.SpectralWeakStarResolvent
 import NLS.Articles.KdVPseudomeasures.SpectralEndpointCompactness
 import NLS.Articles.KdVPseudomeasures.SpectralAdaptedDiffeomorphism
 import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
@@ -1006,6 +1008,24 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.KdV.endpointHillRieszProjection_eigenvector_outside
 #print axioms NLS.KdV.continuousOn_endpointHillRieszProjection
 #print axioms NLS.KdV.endpointHillRieszProjection_rank_eq
+#print axioms NLS.KdV.singularHillNormalizedPencil
+#print axioms NLS.KdV.singularHillResolventSet
+#print axioms NLS.KdV.mem_singularHillResolventSet_iff_isUnit
+#print axioms NLS.KdV.analyticAt_singularHillNormalizedPencil_joint
+#print axioms NLS.KdV.isOpen_singularHillJointResolvent
+#print axioms NLS.KdV.singularHillResolventToH1
+#print axioms NLS.KdV.singularHillBaseResolvent
+#print axioms NLS.KdV.singularHillResolventToH1_left
+#print axioms NLS.KdV.singularHillResolventToH1_right
+#print axioms NLS.KdV.analyticAt_singularHillResolventToH1_joint
+#print axioms NLS.KdV.analyticAt_singularHillBaseResolvent_joint
+#print axioms NLS.KdV.isCompactOperator_singularHillBaseResolvent
+#print axioms NLS.KdV.singularHillResolventToH1_endpoint
+#print axioms NLS.KdV.singularHillBaseResolvent_endpoint
+#print axioms NLS.KdV.isOpen_singularHillResolventCircle
+#print axioms NLS.KdV.singularHillRieszProjection
+#print axioms NLS.KdV.singularHillRieszProjection_endpoint
+#print axioms NLS.KdV.continuousOn_singularHillRieszProjection
 #print axioms NLS.KdV.singularHillChainSpace
 #print axioms NLS.KdV.singularHillChainRootEquiv
 #print axioms NLS.KdV.finrank_singularHillChainSpace
@@ -1682,6 +1702,28 @@ import NLS.Articles.KdVPseudomeasures.SpectralWeightedGaps
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillComplexLabels_eq_of_distribution_eq
 #print axioms NLS.Articles.KdVPseudomeasures.sourceComplexCanonicalGapValues_eq_of_distribution_eq
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_endpoint_bootstrap_preserves_spectrum
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_sourceHminusOne_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.source_not_mem_spectrum_iff_singular_resolvent
+#print axioms NLS.Articles.KdVPseudomeasures.isOpen_sourceJointResolvent_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.continuousAt_sourceResolventToH1_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.continuousAt_sourceBaseResolvent_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.isClosed_sourceSpectralValue_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeakStarRieszProjection
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeakStarRieszProjection_eq_endpoint
+#print axioms NLS.Articles.KdVPseudomeasures.source_resolventCircle_endpoint
+#print axioms NLS.Articles.KdVPseudomeasures.isOpen_sourceResolventCircle_on_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.continuousOn_sourceWeakStarRieszProjection
+#print axioms NLS.Articles.KdVPseudomeasures.isIdempotentElem_sourceWeakStarRieszProjection
+#print axioms NLS.Articles.KdVPseudomeasures.finiteDimensional_sourceWeakStarRieszProjection_range
+#print axioms NLS.Articles.KdVPseudomeasures.isLocallyConstant_sourceWeakStarRieszProjection_rank
+#print axioms NLS.Articles.KdVPseudomeasures.eventually_sourceWeakStarRieszProjection_rank_eq
+#print axioms NLS.Articles.KdVPseudomeasures.finite_sourceCircleSpectrum
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCircleSpectrum
+#print axioms NLS.Articles.KdVPseudomeasures.mem_sourceCircleSpectrum
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCircleAlgebraicCount
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeakStarRieszProjection_range_eq_roots
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeakStarRieszProjection_rank_eq_count
+#print axioms NLS.Articles.KdVPseudomeasures.eventually_sourceCircleAlgebraicCount_eq
 #print axioms NLS.Articles.KdVPseudomeasures.sourceReinterpretationSet
 #print axioms NLS.Articles.KdVPseudomeasures.isCompact_sourceReinterpretationSet_of_lower_compact
 #print axioms NLS.Articles.KdVPseudomeasures.source_normBounded_of_compact_finite_realization

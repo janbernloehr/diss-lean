@@ -186,10 +186,10 @@
     "net_qualification": "Arbitrary-filter statements require specified eventual endpoint bounds; no inference that arbitrary weak-star convergent nets are eventually norm bounded is used.",
     "validation": {
       "fresh_build": true,
-      "modules_checked": 178,
-      "audited_declarations": 1524,
-      "theorems": 1260,
-      "definitions": 264,
+      "modules_checked": 180,
+      "audited_declarations": 1564,
+      "theorems": 1292,
+      "definitions": 272,
       "warnings": 0,
       "tactic_suggestions": 0,
       "allowed_axioms": [
@@ -198,7 +198,7 @@
         "Quot.sound"
       ],
       "empty_axiom_sets_allowed": true,
-      "log": ".lake/article-check/logs/validation-cross-order.log"
+      "log": ".lake/article-check/logs/validation-spectral-topology.log"
     },
     "canonical_checkout": "Sources and build outputs kept read-only.",
     "main_theorems_verified": false,
@@ -302,6 +302,33 @@
       ],
       "empty_axiom_sets_allowed": true,
       "log": ".lake/article-check/logs/validation-endpoint-bootstrap.log"
+    }
+  },
+  "actual_spectral_count_application": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-weak-star-resolvent-map.json",
+    "bounded_original_weak_star_resolvent_and_actual_count_stability_verified": true,
+    "individual_canonical_label_continuity_verified": false,
+    "full_isospectral_closedness_verified": false,
+    "results": [
+      "On EVERY original endpoint norm-bounded physical weak-star set,the exact original H-minus-one realization is continuous. Consequently the JOINT physical source resolvent locus is weak-star-times-C open,and the full original H1-valued inverse and compact H-minus-one resolvent are norm continuous at each valid pair. Membership of each fixed actual complex spectral value is weak-star closed within the bounded set.",
+      "Validity of the ENTIRE compact physical resolvent circle is weak-star OPEN within every original endpoint norm-bounded set. The SAME ACTUAL projection varies continuously in operator norm on that full locus. It is an actual finite-rank idempotent;its rank is locally constant and both circle validity and rank persist throughout a weak-star neighborhood. No simple-eigenvalue or noncollapsed-gap assumption is imposed.",
+      "The finite ACTUAL physical spectrum inside any disk is constructed from existing full-spectrum local finiteness,without a supplied root list. The projection range is EXACTLY the sum of all enclosed original full physical algebraic root spaces. Their independence identifies projection rank with the sum of ACTUAL algebraic multiplicities,and this entire enclosed count is weak-star locally stable on bounded physical sets."
+    ],
+    "validation": {
+      "fresh_build": true,
+      "modules_checked": 180,
+      "audited_declarations": 1564,
+      "theorems": 1292,
+      "definitions": 272,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "empty_axiom_sets_allowed": true,
+      "log": ".lake/article-check/logs/validation-spectral-topology.log"
     }
   }
 }

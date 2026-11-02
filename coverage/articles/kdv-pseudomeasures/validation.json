@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Intrinsic original spectrum and canonical labels across endpoint predual orders",
+  "phase": "Full original H-minus-one resolvent and weak-star stability of actual spectral counts",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
@@ -97,6 +97,7 @@
     "NLS/KdV/PseudomeasureSpectrum.lean",
     "NLS/KdV/PseudomeasureRootSpaces.lean",
     "NLS/KdV/PseudomeasureRieszProjection.lean",
+    "NLS/KdV/SingularHillResolventFamily.lean",
     "NLS/KdV/SingularHillChains.lean",
     "NLS/KdV/PseudomeasureChainJets.lean",
     "NLS/KdV/PseudomeasureTaylorKernel.lean",
@@ -180,16 +181,17 @@
     "NLS/Articles/KdVPseudomeasures/SpectralInverseGapComparison.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralEndpointBootstrap.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralCrossOrder.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralWeakStarResolvent.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralEndpointCompactness.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralAdaptedDiffeomorphism.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralWeightedGaps.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 1260,
-  "definitions": 264,
+  "proved_theorems": 1292,
+  "definitions": 272,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 1524,
+    "declarations": 1564,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -459,10 +461,16 @@
     "The ENTIRE real canonical label enumerations of the same original physical distribution agree across arbitrary admissible orders,with all actual algebraic repetitions and NO shared cutoff assumption. This follows from the physical multiplicity equality and the new shared global ordered-count uniqueness theorem.",
     "The complete COMPLEX canonical labels also agree across arbitrary admissible endpoint orders. The order is exactly the source lexicographic order(real part first,imaginary part second),implemented locally by lifting the injective existing complexLexKey;the standard complex partial order is not substituted.",
     "Both real and complex entire signed canonical gap sequences agree across endpoint orders,including zero and negative modes and every collapsed gap. Exact period-two Fourier normalization and canonical slots2n-1,2n are retained.",
-    "source_uniform_endpoint_bootstrap_preserves_spectrum now DERIVES the target Potential(t),its uniform original norm bound,ENTIRE distribution equality,and equality of the ENTIRE canonical label and gap sequences. Constants are still chosen BEFORE q;no target membership,open-gap assumption,shared root table or common cutoff is supplied."
+    "source_uniform_endpoint_bootstrap_preserves_spectrum now DERIVES the target Potential(t),its uniform original norm bound,ENTIRE distribution equality,and equality of the ENTIRE canonical label and gap sequences. Constants are still chosen BEFORE q;no target membership,open-gap assumption,shared root table or common cutoff is supplied.",
+    "The shared full original H-minus-one physical pencil is normalized by the same fixed free H1-to-H-minus-one isomorphism. Its invertibility is EXACTLY physical full-domain bijectivity. Joint operator-norm analyticity uses the already-verified hminusOneMultiplicationFamily on the ENTIRE original H-minus-one potential space;no new endpoint convergence assumption is imposed.",
+    "The full original joint resolvent locus in H-minus-one times C is open. The actual H1-valued inverse and compact H-minus-one base resolvent are jointly norm analytic at every physical resolvent pair and satisfy both full-domain inverse identities,for ALL original H-minus-one data. These total inverse families agree EXACTLY with the previously verified endpoint inverses,on and off their resolvent sets.",
+    "A whole compact spectral circle remains in the full original resolvent on an OPEN set of H-minus-one potentials. The original circular Riesz projection is operator-norm continuous along every original H-minus-one continuous family with a common valid circle,and agrees literally with the verified actual endpoint projection.",
+    "On EVERY original endpoint norm-bounded physical weak-star set,the exact original H-minus-one realization is continuous. Consequently the JOINT physical source resolvent locus is weak-star-times-C open,and the full original H1-valued inverse and compact H-minus-one resolvent are norm continuous at each valid pair. Membership of each fixed actual complex spectral value is weak-star closed within the bounded set.",
+    "Validity of the ENTIRE compact physical resolvent circle is weak-star OPEN within every original endpoint norm-bounded set. The SAME ACTUAL projection varies continuously in operator norm on that full locus. It is an actual finite-rank idempotent;its rank is locally constant and both circle validity and rank persist throughout a weak-star neighborhood. No simple-eigenvalue or noncollapsed-gap assumption is imposed.",
+    "The finite ACTUAL physical spectrum inside any disk is constructed from existing full-spectrum local finiteness,without a supplied root list. The projection range is EXACTLY the sum of all enclosed original full physical algebraic root spaces. Their independence identifies projection rank with the sum of ACTUAL algebraic multiplicities,and this entire enclosed count is weak-star locally stable on bounded physical sets."
   ],
-  "source_correspondence": "The actual ENTIRE original spectrum,physical algebraic multiplicities,canonical labels and canonical gaps are now proved independent of endpoint predual realization whenever the original smooth-test distributions agree. Both the real and complex source enumerations are included,with exact lexicographic complex order and every algebraic repetition. The endpoint bootstrap explicitly preserves these intrinsic labels and gaps. The original finite-p inverse spectral and isospectral compactness input remains unproved/unimported;source Theorem2.2,full Lemma2.21,Dirichlet/Birkhoff/KdV and ALL MAIN theorems remain open.",
-  "build_isolation": "All178 modules rebuilt from a fresh empty private output view;canonical and package imports remain read-only symlinks. Every compiler destination is private. The exact1524-declaration transitive audit passed with zero warnings/suggestions,no holes/custom axioms,and only allowed standard axioms or empty sets. No canonical source or build output was written.",
+  "source_correspondence": "The original full-domain H-minus-one resolvent is now jointly norm analytic in the ENTIRE original H-minus-one potential and spectral parameter. On norm-bounded original physical weak-star sets,valid circles are open and ACTUAL enclosed physical algebraic counts are locally stable. Projection rank is identified with the full original enclosed root-space multiplicity sum. Individual canonical label continuity and full isospectral closedness still require the ordered cumulative-count comparison. Original finite-p inverse spectral regularity/compactness,full Theorem2.2/Lemma2.21,Dirichlet/Birkhoff/KdV and every MAIN theorem remain open.",
+  "build_isolation": "All180 modules rebuilt from a fresh empty private output view. Canonical and package imports stay read-only symlinks;each compiler destination is private. The exact1564-declaration transitive axiom audit passed with zero warnings/suggestions,no holes/custom axioms,and only allowed standard axioms or empty sets. No canonical source/build output was written.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
@@ -559,6 +567,7 @@
     "NLS/KdV/PseudomeasureSpectrum.lean": "22c430fe535e39da8ebbd4109c6717dc01d069f53f025ab53210823809abeb5a",
     "NLS/KdV/PseudomeasureRootSpaces.lean": "048dd52ee786e58563f9e8174b0eb7817e78c0d67c4077025d43bfad593332a5",
     "NLS/KdV/PseudomeasureRieszProjection.lean": "42be33c3c17367b9a74cc365026ed4626d8cb1cb8b34ba5ed12b18a535269532",
+    "NLS/KdV/SingularHillResolventFamily.lean": "d54b1773c3a4bc2cc2237bb4cbd01f92867e953ad35d67097d860c6e94d7a157",
     "NLS/KdV/SingularHillChains.lean": "bed5928f113d6d41ab40a4bae834cce9a26e671302324258d1c6b344635effb1",
     "NLS/KdV/PseudomeasureChainJets.lean": "adb3e009953d18d3f54cd31989df455d86b15020228167395ca7e870b3a8c964",
     "NLS/KdV/PseudomeasureTaylorKernel.lean": "45d62fca96af6b942890c691c9c1108dc421d64e89b59a57a88f64395c9bc24b",
@@ -642,10 +651,11 @@
     "NLS/Articles/KdVPseudomeasures/SpectralInverseGapComparison.lean": "d8092ac04209c9379f76cff3b351b1080380893abb51e7d973130efcf6b31615",
     "NLS/Articles/KdVPseudomeasures/SpectralEndpointBootstrap.lean": "09d28b0a42c1c86a2401138dbe505124ddd8e9e87f22bf49b1c9daf6efb055f6",
     "NLS/Articles/KdVPseudomeasures/SpectralCrossOrder.lean": "3a0d40980d5f335f92b4e9e1fcd43dbd5bed7744eec187a815009c37e29a40b0",
+    "NLS/Articles/KdVPseudomeasures/SpectralWeakStarResolvent.lean": "0998792f67dfe67f8fde19be8c22c2c8d49677a85d1047d34287431e438be5ad",
     "NLS/Articles/KdVPseudomeasures/SpectralEndpointCompactness.lean": "c504e5f7e69be0a64dfede193cdb63a787225c06a1db085255230e64e73ee935",
     "NLS/Articles/KdVPseudomeasures/SpectralAdaptedDiffeomorphism.lean": "be91a6763b1511a7c615bc156ed332752603efac41b98b45acf3e09cb2528c02",
     "NLS/Articles/KdVPseudomeasures/SpectralWeightedGaps.lean": "ab15c771dfb57907c97b997ccc61dc9650e41c07a2298991e724cc7cc88edebd",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "c5683e578d0bce58c77428861e85afa91095740db36264a678cd4c6cbaba2bee"
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "306e604f41779af914217993814d4e95fe7fff1ed8056df6b0bcb2d2a2bbab5d"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -653,17 +663,17 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 1511,
-    "newly_checked_declarations_this_continuation": 13,
-    "newly_authored_or_adapted_declarations_this_continuation": 13,
-    "new_theorems": 13,
-    "new_definitions": 0,
-    "authored_or_adapted_theorems": 13,
-    "authored_or_adapted_definitions": 0,
+    "previous_checked_declarations": 1524,
+    "newly_checked_declarations_this_continuation": 40,
+    "newly_authored_or_adapted_declarations_this_continuation": 40,
+    "new_theorems": 32,
+    "new_definitions": 8,
+    "authored_or_adapted_theorems": 32,
+    "authored_or_adapted_definitions": 8,
     "already_present_shared_declarations_newly_audited": 0,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 1524,
-    "reuse": "Reuses the exact original H-minus-one inclusion,full physical singular Hill operator/root spaces and existing canonical multiplicity theorems. New generic ordered multiplicity uniqueness lives in shared SequenceSpaces. No new spectral realization or topology is substituted."
+    "total_checked_declarations": 1564,
+    "reuse": "Reuses EXISTING full original hminusOneMultiplicationFamily,the fixed physical free isomorphism,actual endpoint compact resolvent/projection/root-space proofs,generic finite projection rank stability,and exact original bounded weak-star lower topology. No duplicate potential-multiplication family was introduced;no characteristic surrogate was substituted for physical spectral counts."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -687,7 +697,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-cross-order.log",
+  "validation_log": ".lake/article-check/logs/validation-spectral-topology.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
