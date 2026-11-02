@@ -5072,3 +5072,14 @@ import NLS.KdV.HillL2GapSquareIdentification
 import NLS.KdV.HillRealGapUnitBound
 import NLS.KdV.HillEventualActionGapBound
 import NLS.KdV.HillWeightedRealActions
+
+import NLS.KdV.ActionHamiltonianMoments
+import NLS.ComplexAnalysis.TracePrimitiveFunctoriality
+import NLS.KdV.ClassicalL2PrimitiveAgreement
+import NLS.ComplexAnalysis.PositiveRealPart
+import NLS.KdV.HillL2HalfPlaneSheets
+import NLS.ComplexAnalysis.UpperTracePrimitiveExtension
+import NLS.KdV.HillL2RegularBoundary
+import NLS.ComplexAnalysis.RealCoshTrace
+import NLS.KdV.HillL2BoundaryGapProfile
+import NLS.KdV.HillL2UpperCutAgreement

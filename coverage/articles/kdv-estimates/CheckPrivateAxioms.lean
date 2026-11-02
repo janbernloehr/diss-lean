@@ -146,6 +146,16 @@ import NLS.KdV.HillL2GapSquareIdentification
 import NLS.KdV.HillRealGapUnitBound
 import NLS.KdV.HillEventualActionGapBound
 import NLS.KdV.HillWeightedRealActions
+import NLS.KdV.ActionHamiltonianMoments
+import NLS.ComplexAnalysis.TracePrimitiveFunctoriality
+import NLS.KdV.ClassicalL2PrimitiveAgreement
+import NLS.ComplexAnalysis.PositiveRealPart
+import NLS.KdV.HillL2HalfPlaneSheets
+import NLS.ComplexAnalysis.UpperTracePrimitiveExtension
+import NLS.KdV.HillL2RegularBoundary
+import NLS.ComplexAnalysis.RealCoshTrace
+import NLS.KdV.HillL2BoundaryGapProfile
+import NLS.KdV.HillL2UpperCutAgreement
 import Lean.Util.CollectAxioms
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
@@ -278,7 +288,18 @@ run_cmd do
     ``NLS.ZakharovShabat.classicalSolution_eq_zero_imp_initial_eq_zero,
     ``NLS.ComplexAnalysis.exists_local_lipschitz_bound_of_analyticAt,
     ``NLS.ComplexAnalysis.norm_sqrt_sub_one_le,
-    ``NLS.ComplexAnalysis.prescribedSquareRoot_analytic_and_close]
+    ``NLS.ComplexAnalysis.prescribedSquareRoot_analytic_and_close,
+    ``NLS.ComplexAnalysis.re_pos_of_analyticOnNhd_nonneg_not_constant,
+    ``NLS.ComplexAnalysis.tendsto_real_upper_vertical,
+    ``NLS.ComplexAnalysis.real_upper_nhds_neBot,
+    ``NLS.ComplexAnalysis.exists_upper_trace_primitive_extension_on_ball,
+    ``NLS.ComplexAnalysis.cosh_real_coordinate,
+    ``NLS.ComplexAnalysis.cosh_imaginary_coordinate,
+    ``NLS.ComplexAnalysis.real_cosh_trace_coordinates,
+    ``NLS.ComplexAnalysis.abs_real_cosh_trace_of_re_ne_zero,
+    ``NLS.ComplexAnalysis.re_eq_zero_of_real_cosh_trace_band,
+    ``NLS.ComplexAnalysis.re_eq_arcosh_of_real_cosh_trace_gap,
+    ``NLS.ComplexAnalysis.phase_eq_on_of_sin_eq_zero]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
