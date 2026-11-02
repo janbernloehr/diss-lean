@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "published_utc": "2026-11-02T04:03:31.212520+00:00",
-  "base_commit": "7f0cc3a7d585a7296d162abe47eb178b80afc596",
+  "published_utc": "2026-11-02T04:26:10.571840+00:00",
+  "base_commit": "4d47ecc168caebe48c3f7c0bd5129c36f527165d",
   "scope": {
     "claims_complete_formalization": false,
     "description": "A snapshot of source-to-public-API comparisons. Each statement retains its original quantifiers, recorded corrections and qualifications. The integrity checker verifies locations and file snapshots; it does not verify semantic alignment or turn a recorded comparison into a proof.",
@@ -18,9 +18,9 @@
   },
   "counts": {
     "named_comparisons": 161,
-    "review_records": 214,
-    "module_hash_checks": 4502,
-    "distinct_modules": 2230
+    "review_records": 215,
+    "module_hash_checks": 4514,
+    "distinct_modules": 2235
   },
   "unresolved": [
     "The precise Birkhoff-coordinate construction in Grébert and Kappeler's 2014 book (dissertation reference [23]) has not been compared. The inspected 2013 manuscript is a different edition.",
@@ -28,25 +28,24 @@
     "A final completeness assessment must retain all source corrections and qualifications. The 161 named comparisons do not constitute a proof-completion percentage."
   ],
   "validation_snapshot": {
-    "base_commit": "7f0cc3a7d585a7296d162abe47eb178b80afc596",
-    "validated_state": "Appendix I ordered comparison changes documentation only; the exact Lean snapshot retains the successful weighted uniform cutoff check.",
+    "base_commit": "4d47ecc168caebe48c3f7c0bd5129c36f527165d",
+    "validated_state": "Fresh full check after Section 7 physical Dirichlet motion.",
     "command": "./scripts/check.sh",
-    "build_jobs": 8646,
+    "build_jobs": 8647,
     "public_examples": 7729,
-    "transitive_NLS_declarations": 45015,
+    "transitive_NLS_declarations": 45027,
     "existing_warnings": 21,
     "new_warnings": 0,
-    "gate_session": 48290,
+    "gate_session": 73382,
     "gate_exit": 0,
     "gate_exit_observed": true,
     "lean_sources": {
-      "files": 4908,
-      "sha256": "44cd60e6119b813894622c77fab316f381fffc8d0e468efe60483a58a6645559"
+      "files": 4909,
+      "sha256": "c0ececfee7d2db6e643c17cbad15897e4a615e9830db4c8bc6a34311f008d376"
     },
-    "full_gate_log_sha256": "2aafa8116d0439b2de9319feb10e92b648bbf6aa87ae7e8a89889b965d76b1b4",
-    "qualification": "Unchanged Lean sources and locks retain the successful full build, examples and transitive axiom audit. Direct corrections and broader completeness qualifications remain.",
-    "full_gate_log": "work/AppendixIUniformCutoffFullCheck.log",
-    "validation_reused_from_commit": "7f0cc3a7d585a7296d162abe47eb178b80afc596"
+    "full_gate_log_sha256": "fb35456644b61effb1c8116b7973cc1a0fce4eb6ce172fbd2eb24151c628bf71",
+    "qualification": "Exact Lean snapshot passes build, public examples and transitive axiom audit. Broader source completeness remains open.",
+    "full_gate_log": "work/Section7PhysicalNLSMotionFullCheck.log"
   },
   "named_statements": [
     {
@@ -74288,6 +74287,128 @@
         "log_sha256": "2aafa8116d0439b2de9319feb10e92b648bbf6aa87ae7e8a89889b965d76b1b4"
       },
       "source_record_sha256": "5435cdd21ec16910bbd0a605c32bc3a21ad1d6988133d2f921f66c4133cdbbbb"
+    },
+    "Section7PhysicalNLSMotionSourceComparison-2026-11-02": {
+      "status": "current_public_source_comparison",
+      "base_commit": "4d47ecc168caebe48c3f7c0bd5129c36f527165d",
+      "updated_utc": "2026-11-02T04:26:10.522002+00:00",
+      "source_lines": [
+        [
+          3312,
+          3316
+        ]
+      ],
+      "items": [],
+      "unnumbered": [
+        {
+          "ordered_group": "S7-002",
+          "source_lines": [
+            3312,
+            3316
+          ],
+          "requirement": "Physical NLS nonconservation of actual Dirichlet eigenvalues",
+          "status": "matched_subclause",
+          "declarations": [
+            "NLS.ZakharovShabat.section7_constant_isClassicalRenormalized",
+            "NLS.ZakharovShabat.section7_constant_phase_isClassical",
+            "NLS.ZakharovShabat.SmoothNLSData.section7_ordinary_eq_constant_phase",
+            "NLS.ZakharovShabat.section7_constant_phase_half_turn",
+            "NLS.ZakharovShabat.section7_periodOneCoefficient_const",
+            "NLS.ZakharovShabat.section7_smoothPeriodOneSourceAt_const",
+            "NLS.ZakharovShabat.SmoothNLSData.section7_ordinarySource_eq_constant_phase",
+            "NLS.ZakharovShabat.section7_hasDerivAt_dirichlet_diagonal_constant",
+            "NLS.ZakharovShabat.section7_exists_constant_dirichlet_pair",
+            "NLS.ZakharovShabat.section7_exists_physicalNLS_dirichlet_motion",
+            "NLS.ZakharovShabat.SmoothNLSData.section7_ordinarySource_isSolution",
+            "NLS.ZakharovShabat.section7_exists_ordinaryNLSSolution_dirichlet_motion"
+          ],
+          "reviewed_claims": [
+            "The exact classical phase satisfies the scalar physical PDE and is the constructed global ordinary solution of constant smooth data.",
+            "Literal Fourier coefficients retain the original real source and its canonical Dirichlet coordinate.",
+            "A positive physical time changes the actual central Dirichlet coordinate for a suitable real constant datum.",
+            "The trajectory satisfies the dissertation all-smooth-sequence solution definition for every 1<p<=2, including p=2."
+          ],
+          "qualification": "Existential nonconservation of Dirichlet coordinates is proved. The rough sheet-sign direction-of-motion clause remains unresolved, so ordered group S7-002 remains partial. Indexed spectral flow is not used as physical time."
+        }
+      ],
+      "reviewed_module_hashes": {
+        "NLS/ZakharovShabat/SmoothNLSData.lean": "8a972daa1507ad18eeda71f81f9c17c7fe9748c7affe91764836a9735f0e3f90",
+        "NLS/ZakharovShabat/ClassicalRenormalizedNLSGauge.lean": "483d5abd7c9455486b3949aa732c75a98dda9818ce0bde4fbe731a8ea52bf327",
+        "NLS/ZakharovShabat/ClassicalNLSUniqueness.lean": "99ca7dbca229a4c5b20ef892e17d05ebc4dc09249d7b64aa70cf35392a3fb740",
+        "NLS/ZakharovShabat/SourceConstantPeriodicSpectrum.lean": "fcb8cd39b0c3eaa01b62dab272ec9aa42cda25b08f8cfa7a4406ffce794b8262",
+        "NLS/ZakharovShabat/SmoothPeriodOneSourceExponent.lean": "5b74aeb5172f555dc7f58594592b3eef41504bf9d2cbe9a5f589069596b56712",
+        "NLS/ZakharovShabat/SourceFreeDirichletCotangent.lean": "e34218e4487fd3fef343f196b3eec1a79bb8f612ee3d3bea0900313a4ec0b89c",
+        "NLS/ZakharovShabat/L2GradientRestrictionFourier.lean": "1dbeafe8c64766064df89d8075865b1784b4430cc7f95108283a962977f9c5a0",
+        "NLS/ZakharovShabat/SourceSmoothApproximationSolutions.lean": "7fde2c751835a073eea2eccb5fe0db93f3414ccbd5623e24235ab3bde36b90ee",
+        "NLS/ZakharovShabat/SmoothApproximationSolution.lean": "f31131a74c1180235b7ccded46718f0a79e4ddd139fb53453bae8b898ce907af",
+        "NLS/ZakharovShabat/CanonicalPeriodOneBoundaryRoots.lean": "2c3ff197758fdebbd0258f623e53e39ca8d4b27263c68d468b9564042b82f11f",
+        "NLS/Fourier/PeriodOneCoefficients.lean": "1d792e7e0b7676544f2f7075c6f30c36325de00bf79d516de85229db2cef12ee",
+        "NLS/ZakharovShabat/Section7PhysicalNLSMotion.lean": "826bb46285e362c05cce821aa58958ac900d2095860fc6e5601912862a625874"
+      },
+      "reviewed_modules_read_in_full": true,
+      "freshly_read_module_bodies": [
+        "NLS/ZakharovShabat/SmoothNLSData.lean",
+        "NLS/ZakharovShabat/ClassicalRenormalizedNLSGauge.lean",
+        "NLS/ZakharovShabat/ClassicalNLSUniqueness.lean",
+        "NLS/ZakharovShabat/SourceConstantPeriodicSpectrum.lean",
+        "NLS/ZakharovShabat/SmoothPeriodOneSourceExponent.lean",
+        "NLS/ZakharovShabat/SourceFreeDirichletCotangent.lean",
+        "NLS/ZakharovShabat/L2GradientRestrictionFourier.lean",
+        "NLS/ZakharovShabat/SourceSmoothApproximationSolutions.lean",
+        "NLS/ZakharovShabat/SmoothApproximationSolution.lean",
+        "NLS/ZakharovShabat/CanonicalPeriodOneBoundaryRoots.lean",
+        "NLS/Fourier/PeriodOneCoefficients.lean",
+        "NLS/ZakharovShabat/Section7PhysicalNLSMotion.lean"
+      ],
+      "reviewed_source_excerpts": [],
+      "support_dependency_comparison_complete": true,
+      "remaining_comparisons": [
+        "S7-002 rough sheet-sign direction-of-physical-motion clause.",
+        "S7-013 unrestricted entire-product uniqueness without root reality or placement premises."
+      ],
+      "resolved_declarations": [
+        "NLS.ZakharovShabat.SmoothNLSData.section7_ordinarySource_eq_constant_phase",
+        "NLS.ZakharovShabat.SmoothNLSData.section7_ordinarySource_isSolution",
+        "NLS.ZakharovShabat.SmoothNLSData.section7_ordinary_eq_constant_phase",
+        "NLS.ZakharovShabat.section7_constant_isClassicalRenormalized",
+        "NLS.ZakharovShabat.section7_constant_phase_half_turn",
+        "NLS.ZakharovShabat.section7_constant_phase_isClassical",
+        "NLS.ZakharovShabat.section7_exists_constant_dirichlet_pair",
+        "NLS.ZakharovShabat.section7_exists_ordinaryNLSSolution_dirichlet_motion",
+        "NLS.ZakharovShabat.section7_exists_physicalNLS_dirichlet_motion",
+        "NLS.ZakharovShabat.section7_hasDerivAt_dirichlet_diagonal_constant",
+        "NLS.ZakharovShabat.section7_periodOneCoefficient_const",
+        "NLS.ZakharovShabat.section7_smoothPeriodOneSourceAt_const"
+      ],
+      "declaration_inventory_count": 45027,
+      "qualification": "The [physical Dirichlet motion proof](NLS/ZakharovShabat/Section7PhysicalNLSMotion.lean) constructs a smooth constant-in-space NLS solution and identifies its exact phase rotation by classical uniqueness. Literal Fourier integrals identify its original source at every exponent. A positive time changes its actual central Dirichlet eigenvalue.\n\nThe free-source derivative of the central coordinate is one along diagonal constants. This supplies a real constant whose central coordinate differs from that of its negative; the physical phase reaches that negative at half a period. Every smooth ordinary source trajectory satisfies the dissertation all-smooth-sequence solution definition for 1<p<=2, including the Hilbert space.\n\nTwelve positive theorems add no definitions, examples or refutations. They establish the existential nonconservation assertion in S7-002. Its rough interpretation of sheet signs as directions of physical motion remains unresolved, so that group remains partial. The S7-002 sheet-sign clause and S7-013 unrestricted uniqueness clause remain unresolved; the broader dissertation audit remains separate.",
+      "rendered_source": {
+        "source_pdf_sha256": "e8f94463e6f27d5356d4615c6ba980d18411eeede98a430885dea6797f48ee86",
+        "printed_pages": [
+          45
+        ],
+        "images": {
+          "work/Section7OrderedReview-045.png": "7138431a7e4339274003766dcee4759703f6de882a328881e1a1943ab4e10749"
+        }
+      },
+      "preceding_review_hash": "5435cdd21ec16910bbd0a605c32bc3a21ad1d6988133d2f921f66c4133cdbbbb",
+      "validation_lean_sources": {
+        "files": 4909,
+        "sha256": "c0ececfee7d2db6e643c17cbad15897e4a615e9830db4c8bc6a34311f008d376"
+      },
+      "new_definitions": 0,
+      "positive_theorems_integrated": 12,
+      "new_public_examples": 0,
+      "new_refutations": 0,
+      "generated_auxiliaries": [],
+      "full_gate": {
+        "session": 73382,
+        "exit": 0,
+        "exit_observed": true,
+        "log": "work/Section7PhysicalNLSMotionFullCheck.log",
+        "log_sha256": "fb35456644b61effb1c8116b7973cc1a0fce4eb6ce172fbd2eb24151c628bf71"
+      },
+      "source_record_sha256": "361485177d4f2f809153ecaad68bf5aced23990033bb39be091b8877e5927a53"
     }
   }
 }

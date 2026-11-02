@@ -5,7 +5,8 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the [ordered Appendix I comparison](coverage/APPENDIX_I_ASSERTIONS.md) records thirteen matched groups, three direct corrections and two contextual passages. Exact weighted cutoff bounds and the relative real local-inverse theorem are retained. The [broader qualifications](coverage/COMPLETENESS.md) remain.
+Latest step: [Section 7 physical Dirichlet motion](coverage/SECTION_7.md). A global smooth physical NLS solution changes its actual central Dirichlet eigenvalue at a positive time; the same trajectory satisfies the exact approximation-solution definition for 1<p<=2. The rough sheet-sign clause remains open.
+The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
 manuscript's conventions. The precise 2014 edition comparison and the

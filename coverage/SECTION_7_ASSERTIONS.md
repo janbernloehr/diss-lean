@@ -5,7 +5,8 @@ source space and its physical spectral realization are retained. All 21 passage
 groups have now been compared: eighteen are matched, one is corrected and two
 are partial. These counts describe review scope, not a completion percentage.
 
-S7-002 retains the unresolved physical NLS motion clause. S7-013 has a proved
+S7-002 now has a physical NLS nonconservation proof; its rough sheet-sign
+direction clause remains unresolved. S7-013 has a proved
 corrected product and exact periods, but its unrestricted uniqueness wording
 is not covered by the existing theorem for placed real roots. The corrected
 real codimension in S7-014 is two. The exact cited 2014 construction remains
@@ -55,11 +56,14 @@ The conservation conclusion is proved through the physical solution and uniquene
 
 - Each actual Hilbert isospectral set is homeomorphic to the product of its signed Dirichlet gap sheets. The base coordinate is the original Dirichlet eigenvalue, and the sign is its actual anti-discriminant sign.
 - Every allowable full signed data family determines a unique source in that isospectral set. The two sheet branches are glued at the endpoints, where the sign is zero.
-- The additional assertion of nonconservation under physical NLS, and its rough description of signs as directions of NLS motion, remain outside this completed comparison.
+- A global smooth physical NLS solution changes its actual central Dirichlet eigenvalue at a positive time. Its original source trajectory satisfies the all-smooth-sequence solution definition for 1<p<=2, including the Hilbert case.
+- The rough description of sheet signs as directions of physical NLS motion remains unresolved.
 
 Public evidence: `NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph`, `NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph_base`, `NLS.ZakharovShabat.sourceHilbertSignedDirichletHomeomorph_sign`, `NLS.ZakharovShabat.existsUnique_isospectral_source_with_signed_dirichletData`, `NLS.ZakharovShabat.sourceSignedDirichletSheet_sign_zero_iff_endpoint`, `NLS.ZakharovShabat.isQuotientMap_sourceSignedDirichletSheet_branches`.
 
-The parameterization uses the original Hilbert topology and includes infinitely many open gaps and endpoint data. Indexed spectral flows are not being identified with ordinary physical NLS time. The dynamical clause remains unresolved, so this passage is partial.
+Additional public evidence: `NLS.ZakharovShabat.section7_exists_physicalNLS_dirichlet_motion`, `NLS.ZakharovShabat.section7_exists_ordinaryNLSSolution_dirichlet_motion`; the [physical phase and Fourier-source construction](../NLS/ZakharovShabat/Section7PhysicalNLSMotion.lean) supplies both.
+
+The parameterization uses the original Hilbert topology and includes infinitely many open gaps and endpoint data. The new existential nonconservation proof uses a genuine physical NLS trajectory and the exact approximation-solution notion. It does not assert motion for every solution or identify the sheet sign with an unqualified velocity sign. That rough direction clause remains unresolved, so this passage is partial.
 
 ### S7-003: Compact connected tori, exact dimension and generic infinitely many gaps
 

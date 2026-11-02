@@ -1,6 +1,21 @@
 # Implementation plan
 
-## Current milestone: ordered Appendix I comparison
+## Current milestone: Section 7 physical Dirichlet motion
+
+The [physical Dirichlet motion proof](NLS/ZakharovShabat/Section7PhysicalNLSMotion.lean) constructs a smooth constant-in-space NLS solution and identifies its exact phase rotation by classical uniqueness. Literal Fourier integrals identify its original source at every exponent. A positive time changes its actual central Dirichlet eigenvalue.
+
+The free-source derivative of the central coordinate is one along diagonal constants. This supplies a real constant whose central coordinate differs from that of its negative; the physical phase reaches that negative at half a period. Every smooth ordinary source trajectory satisfies the dissertation all-smooth-sequence solution definition for 1<p<=2, including the Hilbert space.
+
+Twelve positive theorems add no definitions, examples or refutations. They establish the existential nonconservation assertion in S7-002. Its rough interpretation of sheet signs as directions of physical motion remains unresolved, so that group remains partial.
+
+The full check passed: 8,647 build jobs, 7,729 public examples and an axiom audit of 45,027 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Continue the remaining whole-dissertation reconciliation. Retain the unresolved rough sheet-sign direction clause in S7-002 and unrestricted entire-product uniqueness in S7-013, together with the other recorded source qualifications. Correct constants directly and commit and push each completed step.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: ordered Appendix I comparison
 
 The [ordered Appendix I comparison](coverage/APPENDIX_I_ASSERTIONS.md) covers 18 groups on pp.139–140: thirteen matched, three directly corrected and two contextual. No partial or pending groups remain in this local ledger.
 

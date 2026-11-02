@@ -1,5 +1,22 @@
 # Section 7: the action-angle overview
 
+## Section 7 physical Dirichlet motion
+
+The [physical Dirichlet motion proof](../NLS/ZakharovShabat/Section7PhysicalNLSMotion.lean) constructs a smooth constant-in-space NLS solution and identifies its exact phase rotation by classical uniqueness. Literal Fourier integrals identify its original source at every exponent. A positive time changes its actual central Dirichlet eigenvalue.
+
+The free-source derivative of the central coordinate is one along diagonal constants. This supplies a real constant whose central coordinate differs from that of its negative; the physical phase reaches that negative at half a period. Every smooth ordinary source trajectory satisfies the dissertation all-smooth-sequence solution definition for 1<p<=2, including the Hilbert space.
+
+Twelve positive theorems add no definitions, examples or refutations. They establish the existential nonconservation assertion in S7-002. Its rough interpretation of sheet signs as directions of physical motion remains unresolved, so that group remains partial.
+
+The full check passed: 8,647 build jobs, 7,729 public examples and an axiom audit of 45,027 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Continue the remaining whole-dissertation reconciliation. Retain the unresolved rough sheet-sign direction clause in S7-002 and unrestricted entire-product uniqueness in S7-013, together with the other recorded source qualifications. Correct constants directly and commit and push each completed step.
+The [broader completion qualifications](COMPLETENESS.md) remain.
+
+## Previous source review
+
+The following records retain their historical scope and then-current validation. The current nonconservation result and remaining sheet-sign qualification are stated above.
+
 Current status: the actual Hilbert isospectral torus description,
 global squared-gap spectral uniqueness, and exact numerical covering
 dimension equal to the open-gap count (including infinity) are proved.

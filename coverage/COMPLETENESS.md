@@ -1,5 +1,7 @@
 # Current completion assessment
 
+The [Section 7 physical Dirichlet motion](SECTION_7.md) proofs add 12 checked positive theorems. Continue the remaining whole-dissertation reconciliation. Retain the unresolved rough sheet-sign direction clause in S7-002 and unrestricted entire-product uniqueness in S7-013, together with the other recorded source qualifications. Correct constants directly and commit and push each completed step. The broader completeness qualifications below remain.
+
 The [ordered Appendix I ledger](APPENDIX_I_ASSERTIONS.md) compares 18 groups: thirteen matched, three corrected and two contextual. The direct corrections retain lower-block invertibility, the Schur signs and the tail-space domain. Uniform weighted cutoffs connect the actual real source atlas to its complex local germs. The final density proof uses local Schur determinants and cone uniqueness, with actual real inverse maps. The exact 2014 reference comparison and the final whole-dissertation reconciliation remain open.
 
 The [Appendix I weighted uniform cutoffs](APPENDIX_I.md) add 8 checked positive theorems. Publish the reviewed eighteen-group ordered Appendix I comparison, retaining the corrected Schur premise, signs and lower-block space, and the local analytic proof on the original nonnegative cone. Then reconcile the whole-dissertation ledger and its remaining qualifications. The broader completeness qualifications below remain.
@@ -357,7 +359,9 @@ later sections in source order.
 All 21 groups in the [ordered Section 7 ledger](SECTION_7_ASSERTIONS.md)
 have now been compared: eighteen matched, one corrected and two partial.
 The corrected product, constructed angle path sum and actual real rough
-source have direct interfaces. S7-002 retains the physical NLS motion clause;
+source have direct interfaces. Physical NLS Dirichlet nonconservation is
+now proved in the exact approximation-solution sense. S7-002 retains the
+rough sheet-sign direction-of-motion clause;
 S7-013 retains uniqueness of psi among all stated entire products without
 the real-root placement premises of the existing uniqueness theorem.
 Its corrected product and exact periods are proved. The corrected real
