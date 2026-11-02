@@ -20,6 +20,14 @@ variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 def IsSignedReal {w : Weight} (a : WeightedCoeff w p) : Prop :=
   a.val 0 = 0 ∧ ∀ n : ℤ, a.val (-n) = conj (a.val n)
 
+omit [Fact (1 ≤ p)] in
+theorem IsSignedReal.add {w : Weight} {a b : WeightedCoeff w p}
+    (ha : IsSignedReal a) (hb : IsSignedReal b) : IsSignedReal (a + b) := by
+  constructor
+  · simp only [WeightedCoeff.add_val, ha.1, hb.1, add_zero]
+  · intro n
+    simp only [WeightedCoeff.add_val, ha.2 n, hb.2 n, map_add]
+
 /-- The native weighted norm topology restricted to real signed coordinates. -/
 abbrev SignedCoordinates (w : Weight) (p : ℝ≥0∞) :=
   {a : WeightedCoeff w p // IsSignedReal a}

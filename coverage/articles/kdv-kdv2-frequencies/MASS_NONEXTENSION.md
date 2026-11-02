@@ -61,7 +61,9 @@ actual main theorem still requires all of:
 The source's later Theorem 4.14(v) also claims a **fixed-time coordinate**
 nonextension result. The new theorem concerns the uniform compact-time
 topology; it is not used to claim that stronger fixed-time assertion. The
-fixed-time proof and all actual-equation identifications remain open.
+separate fixed-time sequence argument is now proved as recorded in
+`FIXED_TIME_NONEXTENSION.md`; the actual spectral and physical
+identifications remain open.
 
 ## Shared development inspection
 

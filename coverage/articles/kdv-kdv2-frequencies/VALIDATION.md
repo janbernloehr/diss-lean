@@ -15,12 +15,15 @@ its existing Hilbert specialization and a transitive audit.
 | `NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction.lean` | Exact `20(2nπ)` mass coefficient and the resulting compact-time phase obstruction, conditional on mass divergence, correction convergence and a nonzero limiting amplitude. |
 | `NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities.lean` | Euler-Lagrange polynomials of the source doubled Hamiltonian densities; their gradients produce the literal PDE vector fields. Genuine smooth evaluation derivatives, exact constant-mean reductions, and period-one spatial balances of mean and quadratic mass. |
 | `NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence.lean` | Exact endpoint/mass equivalence; divergence for every endpoint-regular approximation; signed finite truncations converging in norm; compact-time coordinate nonextension once the actual correction and phase identity are supplied. |
+| `NLS/Dynamics/FixedTimePhaseObstruction.lean` | A relative phase tending to pi rules out a common fixed-time output limit, independently of convergence of the individual frequencies. |
+| `NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion.lean` | Finite signed perturbations with an exact prescribed mass increment; endpoint regularity; norm convergence for every sigma<1/2. |
+| `NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension.lean` | Fixed-time coordinate nonextension via two constructed approximating families, given the actual correction and endpoint phase identity. |
 
-All seven selected modules compile with pinned **Lean 4.33.1**, commit
+All ten selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
-`-DautoImplicit=false -E warning`. The default heartbeat budget is retained.
+`-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
 Final output of `bash scripts/check-kdv-kdv2-frequencies.sh`:
@@ -29,15 +32,18 @@ Final output of `bash scripts/check-kdv-kdv2-frequencies.sh`:
 PASS NLS/SequenceSpaces/NonnegativeEnergyDivergence
 PASS NLS/SequenceSpaces/HilbertEnergyDivergence
 PASS NLS/Dynamics/ActionDependentWeightedPhaseFlow
+PASS NLS/Dynamics/FixedTimePhaseObstruction
 PASS NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
 PASS NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction
 PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
-Axiom audit passed: 139 candidate declarations; 1343 declarations total.
+PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
+PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
+Axiom audit passed: 191 candidate declarations; 1489 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the seven selected modules (including generated and private declarations)
+the ten selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -63,10 +69,13 @@ worktree's `.lake/build/lib/lean/`:
 NLS/SequenceSpaces/NonnegativeEnergyDivergence.olean
 NLS/SequenceSpaces/HilbertEnergyDivergence.olean
 NLS/Dynamics/ActionDependentWeightedPhaseFlow.olean
+NLS/Dynamics/FixedTimePhaseObstruction.olean
 NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow.olean
 NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction.olean
 NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities.olean
 NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence.olean
+NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion.olean
+NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension.olean
 ```
 
 The separate `.lake/article-imports` directory is an import overlay with
@@ -89,8 +98,10 @@ spectral functions and their continuity/analyticity estimates remain to be
 proved. The mass obstruction is now instantiated with signed finite truncations,
 and mass divergence is proved from the exact endpoint condition. These
 approximants have not yet been identified with physical smooth data through
-an actual KdV Birkhoff map. It proves a compact-time obstruction, not the stronger fixed-time
-coordinate assertion printed later in the source.
+an actual KdV Birkhoff map. The original mass-divergence adapter proves a compact-time obstruction;
+the new separate fixed-time argument is recorded in
+`FIXED_TIME_NONEXTENSION.md`. Both still require actual-equation spectral
+and physical identifications.
 
 The new PDE module proves physical differential algebra and smooth spatial
 balances. It does not construct solutions, differentiate their time-dependent
@@ -109,3 +120,10 @@ installing a new or replaced output link, so adding a shared sequence module
 cannot write through a canonical-directory symlink. All selected output
 files are ordinary files under the private build tree. The local checker
 and all compiled proof modules remain separate from canonical build products.
+
+
+The warning policy was corrected in the fixed-time milestone: the previous
+`-E warning` flag did not enforce warnings as errors. The final ten-module
+run uses Lean's actual `warningAsError=true` option and passes without
+warnings. Previous passing logs contained no warnings, and their axiom
+audits remain valid; no linter is disabled by this correction.

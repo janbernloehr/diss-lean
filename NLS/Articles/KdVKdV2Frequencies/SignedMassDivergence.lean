@@ -33,6 +33,12 @@ theorem kdvMassTerm_nonneg {w : Weight} (a : SignedCoordinates w 2) (n : ℕ) :
 def HasHalfRegularity {w : Weight} (a : SignedCoordinates w 2) : Prop :=
   Memℓp (fun k => ((Weight.sobolev (1 / 2) k : ℝ) : ℂ) * a.val.val k) 2
 
+/-- Every finitely supported signed coordinate vector belongs to the mass endpoint. -/
+theorem hasHalfRegularity_of_finiteSupport {w : Weight} (a : SignedCoordinates w 2)
+    (ha : Function.HasFiniteSupport a.val.val) : HasHalfRegularity a :=
+  (memℓp_zero_iff.mpr (Function.HasFiniteSupport.mul_right
+    (fun k => ((Weight.sobolev (1 / 2) k : ℝ) : ℂ)) ha)).of_exponent_ge bot_le
+
 private theorem half_term {w : Weight} (a : SignedCoordinates w 2) (k : ℤ) :
     ‖((Weight.sobolev (1 / 2) k : ℝ) : ℂ) * a.val.val k‖ ^ 2 =
       (1 + |(k : ℝ)|) * ‖a.val.val k‖ ^ 2 := by

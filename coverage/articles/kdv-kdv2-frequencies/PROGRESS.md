@@ -113,3 +113,20 @@ The seven-module focused checker passes with warnings rejected; the
 transitive audit covers 139 candidate declarations and 1343 declarations
 including imported NLS dependencies. No article main theorem is yet marked
 verified.
+
+
+## Fixed-time nonextension milestone
+
+The fixed-time sequence-space obstruction of Theorem 4.14(v) is now proved,
+with the actual spectral correction and phase agreement still explicit
+requirements. The proof constructs two finite endpoint-regular families
+converging to the same datum, with a fixed positive mass difference and
+relative phase tending to pi at the specified positive time. It does not
+infer a fixed-time result from the earlier compact-time obstruction.
+See [the detailed theorem map](FIXED_TIME_NONEXTENSION.md).
+
+All ten selected modules pass with `-DwarningAsError=true`; the transitive
+axiom audit covers 191 selected-module declarations and 1489 declarations
+including imported NLS dependencies. The earlier `-E warning` option was
+replaced because it did not enforce the intended warning policy. No
+main theorem for the actual equation is yet marked verified.

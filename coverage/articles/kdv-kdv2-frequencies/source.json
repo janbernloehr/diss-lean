@@ -129,7 +129,7 @@
         73
       ],
       "scope": "Generic weighted action-dependent Z-indexed flow, not physical KdV",
-      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "291e9ae1fca267a2338b4bc8ef45b102bf1157213480e79c828d4b1eb163e895"
     },
     {
@@ -147,8 +147,8 @@
         52
       ],
       "scope": "Signed real locus and generic conserved-action flow; actual frequencies unsupplied",
-      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
-      "sha256": "0ccd9124c5303505154185941d0e616d051d9c63efae0aed0ee60e594e87c92a"
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2b71472e98028e5d38cd636e6d5dc7afd7cb6dec7185ebe1d37130bb690c2b73"
     },
     {
       "path": "NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction.lean",
@@ -161,7 +161,7 @@
         51
       ],
       "scope": "Diverging specified mass and convergent correction obstruct uniform compact-time phase convergence; no physical approximation construction",
-      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "3d7368648e6831133235443cd20c4cfcc6e42a99e66b8f91502ceabbf6a727f8"
     },
     {
@@ -181,7 +181,7 @@
         44
       ],
       "scope": "Actual smooth differential identities, mean-shift formulas and periodic spatial mean/mass balances; spectral flow identification and time differentiation of solution integrals remain open",
-      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "5d543fac7fe00c9e39c2ad84fb2a55bceecabb23c63231ad9acf62ccff30d0f4"
     },
     {
@@ -194,7 +194,7 @@
         54
       ],
       "scope": "Nonnegative finite-partial-sum divergence under coordinatewise convergence; reused by existing Hilbert energy proof",
-      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "76c70d7ba980e0d4875d4b9e24f2a9502db277c41c544dcad7d091c783d8efe5"
     },
     {
@@ -204,7 +204,7 @@
       ],
       "source_pages": [],
       "scope": "Proof refactored to the shared generic lemma, existing theorem statements unchanged",
-      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "faf9dbdad128e36d4bb523b45259259b1801562a2f60526760769fae25e738a2"
     },
     {
@@ -219,8 +219,45 @@
         54
       ],
       "scope": "Endpoint equivalence and mass-divergent signed norm approximants proved; spectral correction and physical identification still required",
-      "validation_status": "compiled_with_warnings_as_errors_and_transitively_axiom_audited",
-      "sha256": "f8b0a9b8b0da6217804339c037142f5b19608decf48ce2484aeb4eee87d95a52"
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c319e8501d57cada89ae5a6011b152622352101b31df7189bcdb69fa64857014"
+    },
+    {
+      "path": "NLS/Dynamics/FixedTimePhaseObstruction.lean",
+      "source_labels": [
+        "Theorem 4.14(v) generic fixed-time dependency"
+      ],
+      "source_pages": [
+        52
+      ],
+      "scope": "Relative phase pi prevents a common fixed-time limit, without convergence of individual frequencies",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ebafe028f7a6e183c899d3bb05f31d178393a796d47ab8a674324678a0707934"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion.lean",
+      "source_labels": [
+        "Theorem 4.14(v) separating approximants"
+      ],
+      "source_pages": [
+        52,
+        54
+      ],
+      "scope": "Explicit finite signed mass insertion, exact mass formula, endpoint regularity and subcritical native norm convergence",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "adb8a49df3d33b1ea8f245ddaea8b4c0031d9593a93429b0fc06db9e7bec9aca"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension.lean",
+      "source_labels": [
+        "Theorem 4.14(v) fixed-time coordinate argument"
+      ],
+      "source_pages": [
+        52
+      ],
+      "scope": "Fixed-time obstruction proved given the actual correction continuity and endpoint phase identity; physical main theorem remains open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "282c44242a07a92387bbc708bfa91665b6f655807b011777ea153ceda49bfa27"
     }
   ],
   "dependencies_needed": [
@@ -249,10 +286,10 @@
     "mathlib_version": "v4.33.1",
     "options": [
       "-DautoImplicit=false",
-      "-E warning"
+      "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 139,
-    "total_declarations_audited": 1343,
+    "candidate_declarations_audited": 191,
+    "total_declarations_audited": 1489,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -299,5 +336,6 @@
   "shared_developments_inspected": {
     "articles/kdv-estimates": "0b58631c37a1bf066ea0d21d5179b1a43844ed5c",
     "articles/kdv-convexity": "be9eba062019e5eb715d4eaf62ce25b0038140fb"
-  }
+  },
+  "fixed_time_record": "FIXED_TIME_NONEXTENSION.md"
 }

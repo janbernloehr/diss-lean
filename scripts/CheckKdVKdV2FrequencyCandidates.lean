@@ -1,8 +1,11 @@
 import NLS.Dynamics.ActionDependentWeightedPhaseFlow
+import NLS.Dynamics.FixedTimePhaseObstruction
 import NLS.Articles.KdVKdV2Frequencies.SignedPhaseFlow
 import NLS.Articles.KdVKdV2Frequencies.MassPhaseObstruction
 import NLS.Articles.KdVKdV2Frequencies.SmoothKdVIdentities
 import NLS.Articles.KdVKdV2Frequencies.SignedMassDivergence
+import NLS.Articles.KdVKdV2Frequencies.SignedMassInsertion
+import NLS.Articles.KdVKdV2Frequencies.FixedTimeNonextension
 import NLS.SequenceSpaces.HilbertEnergyDivergence
 import Lean.Util.CollectAxioms
 
@@ -16,10 +19,13 @@ run_cmd do
   let modules := #[`NLS.SequenceSpaces.NonnegativeEnergyDivergence,
     `NLS.SequenceSpaces.HilbertEnergyDivergence,
     `NLS.Dynamics.ActionDependentWeightedPhaseFlow,
+    `NLS.Dynamics.FixedTimePhaseObstruction,
     `NLS.Articles.KdVKdV2Frequencies.SignedPhaseFlow,
     `NLS.Articles.KdVKdV2Frequencies.MassPhaseObstruction,
     `NLS.Articles.KdVKdV2Frequencies.SmoothKdVIdentities,
-    `NLS.Articles.KdVKdV2Frequencies.SignedMassDivergence]
+    `NLS.Articles.KdVKdV2Frequencies.SignedMassDivergence,
+    `NLS.Articles.KdVKdV2Frequencies.SignedMassInsertion,
+    `NLS.Articles.KdVKdV2Frequencies.FixedTimeNonextension]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

@@ -153,6 +153,12 @@ and approximation obligations are discharged there. Actual spectral
 correction and physical Birkhoff-flow obligations in the main-theorem rows
 remain open.
 
+The separate fixed-time coordinate argument of Theorem 4.14(v) has since
+been proved with constructed mass-shifted finite approximants and explicit
+correction/phase-agreement inputs; see
+[FIXED_TIME_NONEXTENSION.md](FIXED_TIME_NONEXTENSION.md). This does not
+mark the actual spectral or PDE main theorems verified.
+
 ## Integration boundary
 
 The following describes the initial private stage; the subsequent user-approved

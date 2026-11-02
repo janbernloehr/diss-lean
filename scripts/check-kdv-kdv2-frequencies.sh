@@ -11,10 +11,13 @@ article_imports="$article_root/.lake/article-imports"
 modules=(NLS/SequenceSpaces/NonnegativeEnergyDivergence
   NLS/SequenceSpaces/HilbertEnergyDivergence
   NLS/Dynamics/ActionDependentWeightedPhaseFlow
+  NLS/Dynamics/FixedTimePhaseObstruction
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
   NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction
   NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
-  NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence)
+  NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
+  NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
+  NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys
@@ -66,9 +69,9 @@ done
 article_lean="$ELAN_HOME/toolchains/leanprover--lean4---v4.33.1/bin/lean"
 "$article_lean" --version
 for module in "${modules[@]}"; do
-  "$article_lean" -DautoImplicit=false -E warning -R "$article_root" \
+  "$article_lean" -DautoImplicit=false -DwarningAsError=true -R "$article_root" \
     -o "$article_build/$module.olean" "$article_root/$module.lean"
   echo "PASS $module"
 done
-"$article_lean" -DautoImplicit=false -E warning -R "$article_root" \
+"$article_lean" -DautoImplicit=false -DwarningAsError=true -R "$article_root" \
   "$article_root/scripts/CheckKdVKdV2FrequencyCandidates.lean"
