@@ -652,3 +652,32 @@ main theorem remains unverified.
 Strict validation: all 195 selected modules pass; the complete transitive
 axiom audit covers 2095 selected declarations and 14239 declarations
 including imported NLS dependencies. See `VALIDATION.md` and `source.json`.
+
+
+## An analytic actual normalized frequency series near zero
+
+For every fixed positive output index n, the literal series
+sum_k k*Omega_nk^2 now converges absolutely and locally uniformly on
+one constructed complex continuous-potential neighborhood of zero.
+Its sum times -12 is analytic. The same family retains the actual
+analytic inverse R, free identity, norm at most two, all-mode moment
+analyticity, original zeroth periods and every odd cancellation.
+
+The compatible twice-weighted inverse moves a reciprocal square index
+weight onto the actual Hilbert period vector. The resulting bound is
+norm(Omega_nk^2)<=1376*pi²*C³*n²*x_k/k² for high k, where
+x_k=norm(actual energy squared gap)/k². An actual locally bounded l1
+frequency squared-gap sequence g gives x_k<=16*pi²*norm(g_k).
+Analytic scalar head coordinates then fill the finite head. No unscaled
+energy-gap l2 bound, continuous individual root ordering, RealType
+assumption or canonical leading scalar identity is presumed.
+
+Read `NORMALIZED_FREQUENCY_SERIES.md`. This proves a local summation
+step toward Theorem 3.4, with the source coefficient -12. Physical
+frequency identity (69), continuation to full rough/global W, action
+dependence, sharp two-index/diagonal asymptotics, KdV2 series and all
+main theorem inventory rows remain open.
+
+Strict validation: all 201 selected modules pass; the complete transitive
+axiom audit covers 2167 selected declarations and 14311 declarations
+including imported NLS dependencies. See `VALIDATION.md` and `source.json`.

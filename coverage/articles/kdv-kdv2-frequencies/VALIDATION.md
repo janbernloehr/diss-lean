@@ -70,8 +70,9 @@ its existing Hilbert specialization and a transitive audit.
 | `ClassicalCriticalResolvent.lean`, `CirclePowerIntegrationByParts.lean`, `ClassicalNormalizedMomentResolvent.lean` | Actual analytic Hilbert critical/squared resolvents; all-mode original contour avoidance; exact all-order 2*pi/(m+1) moment formula; absolute positive-index convergence outside the integral via a Bochner integral and Holder pairing. |
 | Selected normalized endpoint-quotient sources from convexity `135b1fa`, extended `ClassicalCriticalTailAnalytic.lean`, and new `TwoZeroCriticalLocalization.lean`, `SquaredCoshCriticalDisc.lean`, `ClassicalCriticalGapLocalization.lean` | Arbitrarily small common high critical-frequency confinement at any continuous complex source; actual critical displacement at quadratic gap scale with arbitrarily small coefficient, analytic families, collapsed equality and diagonal critical-pole separation on gap circles. |
 | Selected cut-root and contour-homotopy sources from convexity `135b1fa`, existing affine/nested circle dependencies, and five new weighted-period/Hilbert/moment modules | Actual all-order high-gap critical kernel bounds and quadratic basis-period bounds; constructed normalized second moments with quadratic diagonal and quartic off-diagonal gap-length bounds, retaining all original periods and cancellations on one local family. |
+| `DiagonalBilinearPairing.lean`, `AnalyticTailSummation.lean`, `ClassicalTwoWeightedMomentBounds.lean`, `ClassicalFrequencyGapMajorant.lean`, `ClassicalNormalizedFrequencySeries.lean`, and the existing canonical gap identification | Actual weighted high second-moment bound and locally bounded l1 frequency-gap majorant; constructed normalized second-moment series is absolutely convergent, analytic and locally uniformly convergent near zero for every output index. Physical frequency identification and full rough/global scope remain open. |
 
-All 195 selected modules compile with pinned **Lean 4.33.1**, commit
+All 201 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -276,11 +277,17 @@ PASS NLS/KdV/WeightedCutGapBounds
 PASS NLS/KdV/ClassicalCriticalPrimitivePeriods
 PASS NLS/SequenceSpaces/HilbertCoordinateRemainder
 PASS NLS/KdV/ClassicalNormalizedGapMomentBounds
-Axiom audit passed: 2095 candidate declarations; 14239 declarations total.
+PASS NLS/SequenceSpaces/DiagonalBilinearPairing
+PASS NLS/KdV/ClassicalTwoWeightedMomentBounds
+PASS NLS/ZakharovShabat/CanonicalWeightedGapSummability
+PASS NLS/KdV/ClassicalFrequencyGapMajorant
+PASS NLS/SequenceSpaces/AnalyticTailSummation
+PASS NLS/KdV/ClassicalNormalizedFrequencySeries
+Axiom audit passed: 2167 candidate declarations; 14311 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 195 selected modules (including generated and private declarations)
+the 201 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -908,4 +915,34 @@ No ZS RealType wrapper is imposed on the Hill coefficient pair.
 Full sharp index dependence, diagonal asymptotics, finite low even
 collapsed contours, rough/global W compatibility, canonical scalar L_n=1
 and physical frequency/action/Birkhoff identification remain open.
+No main-theorem inventory row is marked verified.
+
+
+## Analytic actual normalized second-moment series
+
+The current milestone is detailed in `NORMALIZED_FREQUENCY_SERIES.md`.
+One constructed local complex continuous-potential normalized family has
+an absolutely convergent second-moment series for every output index,
+with an analytic sum times the source coefficient -12 and locally
+uniform ordinary positive partial sums. Original zeroth normalization,
+all-mode moment analyticity and odd cancellation are retained. The proof
+uses actual compatible twice-weighted inverse columns and an actual
+locally bounded l1 frequency-scale squared-gap majorant, without assuming
+unscaled energy-gap summability, continuous endpoint ordering, RealType
+or a canonical scalar identity. The finite head is controlled locally.
+
+All 201 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The complete transitive audit passes for 2167
+selected declarations and 14311 declarations including imported NLS
+dependencies, using only propext, Classical.choice and Quot.sound.
+All source/provenance hashes and checker/audit/coverage selections agree.
+Selected outputs are private; canonical sources and builds remain read
+only. No placeholders, new axioms, heartbeat increases, disabled linters
+or warning exceptions are introduced. The 195 previously selected sources
+remain byte-identical. No new external branch sources are imported.
+
+This is the local continuous-potential summation step toward source
+Theorem 3.4, (73), PDF page 31. Physical identity (69), rough/global W
+continuation, action descent, sharp two-index and diagonal asymptotics,
+KdV2 series and main frequency/flow theorem obligations remain open.
 No main-theorem inventory row is marked verified.

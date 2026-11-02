@@ -2723,6 +2723,102 @@
       "scope": "Unconjugated pairing coordinate split, coordinate control from a zero pairing, punctured lattice Hilbert majorant, and diagonal coordinate lower bound for an operator close to identity",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "13e057b5a200d9bcfd1de4861c114e41e329b5e8e02f5ac34d6dfc0d0089fb01"
+    },
+    {
+      "path": "NLS/SequenceSpaces/DiagonalBilinearPairing.lean",
+      "source_labels": [
+        "Bounded diagonal bilinear duality"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "scope": "Moves a bounded multiplier across the unconjugated Hilbert pairing and bounds an actual Hilbert vector by two coefficient majorants",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4807b3cc197c3f220256b517b25a712c5245a46ff0d8ba861b03aa933bfdd4d4"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticTailSummation.lean",
+      "source_labels": [
+        "Analytic summation with an uncontrolled finite head"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "scope": "Scalar analytic coordinates and a uniformly bounded l1 tail majorant give an absolutely convergent analytic sum with locally uniform symmetric partial sums; finite head controlled locally without assumed root ordering",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a641e34c4a03f2d480104820982e41592dea8db8783cbc861c3cc544cf820b83"
+    },
+    {
+      "path": "NLS/KdV/ClassicalTwoWeightedMomentBounds.lean",
+      "source_labels": [
+        "Actual twice-weighted normalized second moments"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "scope": "Uses the compatible actual twice-weighted inverse and actual weighted cut-period vector to prove normOmega_nk^2<=1376*pi^2*C^3*n^2*x_k/k^2 on the common high tail, including the diagonal, where x_k=norm(actual energy squared gap)/k^2; no canonical scalar identity or unscaled energy-gap summability assumed",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d3b6028c0428e021f75c91a0813cf6440d0cc98c611c3702cd48dad587703373"
+    },
+    {
+      "path": "NLS/KdV/ClassicalFrequencyGapMajorant.lean",
+      "source_labels": [
+        "Actual locally bounded l1 frequency squared-gap majorant"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "scope": "Constructs the square of the actual canonical frequency gap via Holder multiplication of l2 displacements; common canonical labeling/counting and midpoint bound give x_k<=16*pi^2*norm(g_k) on one common tail near every continuous complex source; no RealType or continuous individual endpoint ordering assumed",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7f9b4997ec061844d879967da5e8c5811d46faff3d5afb1b96e350eb44cfb965"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedFrequencySeries.lean",
+      "source_labels": [
+        "Actual analytic second-moment frequency series, partial Theorem 3.4"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "scope": "Constructs one actual normalized family near zero in the complex continuous-potential norm before every output index. Each literal sum of k*Omega_nk^2 is absolutely and locally uniformly convergent, its sum times -12 is analytic, and all original zeroth periods/all-mode moment analyticity/odd cancellation are retained. Physical identity (69), full rough/global W and action descent remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9638386966cb615aa2991d1e22bfb5cdac83c963c0cbc58f2b785c839a434333"
+    },
+    {
+      "path": "NLS/ZakharovShabat/CanonicalWeightedGapSummability.lean",
+      "source_labels": [
+        "Existing canonical weighted gap identification"
+      ],
+      "source_pages": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "scope": "Existing proved complex even-potential canonical squared-gap/contour identification directly selected and recompiled; no source change or new external source import",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "75e0a6a94410ec671c8f111596855343f8df3c2998b4a5c2f8443ff30ab24ddd"
     }
   ],
   "dependencies_needed": [
@@ -2754,15 +2850,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 2095,
-    "total_declarations_audited": 14239,
+    "candidate_declarations_audited": 2167,
+    "total_declarations_audited": 14311,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 195
+    "selected_modules": 201
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -2869,5 +2965,6 @@
   "critical_gap_localization_record": "CRITICAL_GAP_LOCALIZATION.md",
   "shared_critical_gap_import_record": "SHARED_CRITICAL_GAP_IMPORT.json",
   "normalized_second_gap_bounds_record": "NORMALIZED_SECOND_GAP_BOUNDS.md",
-  "shared_critical_period_gap_import_record": "SHARED_CRITICAL_PERIOD_GAP_IMPORT.json"
+  "shared_critical_period_gap_import_record": "SHARED_CRITICAL_PERIOD_GAP_IMPORT.json",
+  "normalized_frequency_series_record": "NORMALIZED_FREQUENCY_SERIES.md"
 }

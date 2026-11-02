@@ -202,7 +202,13 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/WeightedCutGapBounds
   NLS/KdV/ClassicalCriticalPrimitivePeriods
   NLS/SequenceSpaces/HilbertCoordinateRemainder
-  NLS/KdV/ClassicalNormalizedGapMomentBounds)
+  NLS/KdV/ClassicalNormalizedGapMomentBounds
+  NLS/SequenceSpaces/DiagonalBilinearPairing
+  NLS/KdV/ClassicalTwoWeightedMomentBounds
+  NLS/ZakharovShabat/CanonicalWeightedGapSummability
+  NLS/KdV/ClassicalFrequencyGapMajorant
+  NLS/SequenceSpaces/AnalyticTailSummation
+  NLS/KdV/ClassicalNormalizedFrequencySeries)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

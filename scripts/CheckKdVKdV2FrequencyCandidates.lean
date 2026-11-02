@@ -1,3 +1,5 @@
+import NLS.KdV.ClassicalNormalizedFrequencySeries
+import NLS.KdV.ClassicalTwoWeightedMomentBounds
 import NLS.KdV.ClassicalNormalizedGapMomentBounds
 import NLS.KdV.ClassicalCriticalPrimitivePeriods
 import NLS.ComplexAnalysis.AnalyticCutContour
@@ -242,7 +244,13 @@ run_cmd do
     `NLS.KdV.WeightedCutGapBounds,
     `NLS.KdV.ClassicalCriticalPrimitivePeriods,
     `NLS.SequenceSpaces.HilbertCoordinateRemainder,
-    `NLS.KdV.ClassicalNormalizedGapMomentBounds]
+    `NLS.KdV.ClassicalNormalizedGapMomentBounds,
+    `NLS.SequenceSpaces.DiagonalBilinearPairing,
+    `NLS.KdV.ClassicalTwoWeightedMomentBounds,
+    `NLS.ZakharovShabat.CanonicalWeightedGapSummability,
+    `NLS.KdV.ClassicalFrequencyGapMajorant,
+    `NLS.SequenceSpaces.AnalyticTailSummation,
+    `NLS.KdV.ClassicalNormalizedFrequencySeries]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

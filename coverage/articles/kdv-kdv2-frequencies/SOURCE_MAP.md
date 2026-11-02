@@ -435,3 +435,22 @@ sharp index dependence or diagonal leading term. It does not identify
 physical frequencies through (69), prove the rough/global W statement,
 or close a main theorem. See `NORMALIZED_SECOND_GAP_BOUNDS.md` and
 `SHARED_CRITICAL_PERIOD_GAP_IMPORT.json` for exact scope and provenance.
+
+
+### Analytic actual normalized second-moment series
+
+`exists_classicalHill_analytic_normalized_frequency_series` constructs
+one local complex continuous-potential actual normalized family before
+every n. For each n, the literal positive series sum_k k*Omega_nk^2 is
+absolutely convergent, has locally uniform positive partial sums, and
+its sum times -12 is analytic. The actual original zeroth periods and
+all-mode moment analyticity/odd cancellation are retained.
+
+This advances the summation assertion in Theorem 3.4, (73), PDF page 31.
+The physical identity (69) and the finite-gap/density continuation
+identifying this candidate with the physical frequency are still open,
+as are the full rough/global W domain and action descent. The new tail
+estimate uses the actual compatible twice-weighted inverse and a locally
+bounded l1 frequency-scale squared-gap sequence; it does not infer
+unscaled energy-gap summability. See `NORMALIZED_FREQUENCY_SERIES.md`.
+All main theorem inventory rows remain unverified.
