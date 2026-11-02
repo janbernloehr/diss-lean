@@ -51,8 +51,12 @@ its existing Hilbert specialization and a transitive audit.
 | `RankOneDominatedMatrix.lean`, `MixedMajorantMatrix.lean`, `PositiveIndexPowerWeight.lean` | Actual Hilbert outer-product matrix bounds, analytic combined-majorant assembly, bounded reciprocal power symbols and the positive reciprocal Hilbert sequence. |
 | `ClassicalTwoWeightedPeriodOperator.lean`, `ClassicalTwoWeightedPeriodInverse.lean`, `ClassicalTwoWeightedNormalizedCoefficients.lean` | Constructed actual twice-weighted matrix and compatible inverse; genuine analytic two-weight l2 coefficient errors and all-index smallness with exact n² scaling, retaining the actual normalized periods. |
 | `ClassicalNormalizedResidues.lean` and the public one-weight energy kernel | Analytic actual l1 residue coefficients, fixed-energy reciprocal denominator bounds, absolute critical resolvent convergence and exact normalized entire-function identity; the one-weight estimate is reused as a public dependency. |
+| Five new candidate geometry/row/zero-map modules | Full disc separation, positive quadratic resolvent bounds, actual analytic candidate roots, genuine analytic l2 resolvent rows and the actual jointly analytic l2 zero equation. |
+| `CoordinateQuadraticDerivative.lean`, `ClassicalNormalizedRootBranches.lean` | Actual bounded identity derivative and a constructed analytic Hilbert displacement solving every retained infinite root equation on one source neighborhood for fixed n. |
+| `ClassicalNormalizedZeroIdentity.lean`, `ClassicalNormalizedZeros.lean` | Literal normalized numerator zeros, including filled critical energies; distinct analytic energy zeros with exact free values and all original actual periods retained. |
+| Four newly selected existing sequence/implicit-function modules | Two-majorant membership, translated reciprocal rows, actual coordinate Frechet derivatives and verified analytic Banach implicit roots are directly recompiled. |
 
-All 103 selected modules compile with pinned **Lean 4.33.1**, commit
+All 116 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -71,12 +75,15 @@ PASS NLS/SequenceSpaces/PuncturedLattice
 PASS NLS/SequenceSpaces/PositiveIndexPowerWeight
 PASS NLS/SequenceSpaces/OperatorBasisExt
 PASS NLS/SequenceSpaces/DiagonalIntertwining
+PASS NLS/SequenceSpaces/BoundedCoordinateDifferentiable
+PASS NLS/SequenceSpaces/CoordinateQuadraticDerivative
 PASS NLS/SequenceSpaces/HolderEmbedding
 PASS NLS/SequenceSpaces/BoundedCoordinateAnalytic
 PASS NLS/ComplexAnalysis/JointSpectralDerivative
 PASS NLS/ComplexAnalysis/AnalyticOperatorInverse
 PASS NLS/SequenceSpaces/ConvolutionDominatedMatrix
 PASS NLS/SequenceSpaces/LocallyBoundedRealization
+PASS NLS/SequenceSpaces/TwoSequenceBound
 PASS NLS/SequenceSpaces/FiniteHeadTailBound
 PASS NLS/SequenceSpaces/AnalyticReciprocalTail
 PASS NLS/SequenceSpaces/ConjugateDuality
@@ -86,6 +93,7 @@ PASS NLS/SequenceSpaces/RankOneDominatedMatrix
 PASS NLS/SequenceSpaces/MixedMajorantMatrix
 PASS NLS/SequenceSpaces/ReciprocalSquareKernel
 PASS NLS/ComplexAnalysis/ParametricDividedDifference
+PASS NLS/ComplexAnalysis/AnalyticImplicitBanachRoot
 PASS NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
 PASS NLS/ComplexAnalysis/RightHalfPlaneSquareRoot
 PASS NLS/ComplexAnalysis/EntireLimit
@@ -131,6 +139,8 @@ PASS NLS/KdV/ClassicalUniformPrimitiveBounds
 PASS NLS/KdV/ClassicalCriticalPointBranch
 PASS NLS/KdV/ClassicalHighCriticalPoints
 PASS NLS/KdV/HighEnergyContourSeparation
+PASS NLS/KdV/HighEnergyDiscSeparation
+PASS NLS/KdV/PositiveEnergyResolventKernel
 PASS NLS/KdV/ClassicalCriticalNumerator
 PASS NLS/KdV/ClassicalUniformCriticalBasis
 PASS NLS/KdV/ClassicalCriticalTailAnalytic
@@ -154,6 +164,13 @@ PASS NLS/KdV/ClassicalNormalizedDifferentials
 PASS NLS/KdV/ClassicalWeightedNormalizedCoefficients
 PASS NLS/KdV/ClassicalTwoWeightedNormalizedCoefficients
 PASS NLS/KdV/ClassicalNormalizedResidues
+PASS NLS/KdV/ClassicalCandidateZeros
+PASS NLS/SequenceSpaces/CompactPuncturedKernel
+PASS NLS/KdV/ClassicalCandidateResolvents
+PASS NLS/KdV/ClassicalNormalizedZeroMap
+PASS NLS/KdV/ClassicalNormalizedRootBranches
+PASS NLS/KdV/ClassicalNormalizedZeroIdentity
+PASS NLS/KdV/ClassicalNormalizedZeros
 PASS NLS/KdV/ClassicalSignedCriticalProduct
 PASS NLS/KdV/ClassicalCriticalEnergyProduct
 PASS NLS/KdV/ClassicalCriticalBasisProduct
@@ -165,11 +182,11 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 1224 candidate declarations; 12586 declarations total.
+Axiom audit passed: 1332 candidate declarations; 12712 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 103 selected modules (including generated and private declarations)
+the 116 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -514,3 +531,28 @@ read only; the full validation is serialized by the shared build lock.
 Actual normalized zeros, complete product identification (52), global/
 rough compatibility and every main theorem remain open. These weighted
 coefficient and resolvent results close no main-theorem inventory row.
+
+
+The actual infinite normalized zero-family milestone is detailed in
+`NORMALIZED_ZEROS.md`. For each fixed omitted n, a jointly analytic l2
+zero equation has proved free partial derivative equal to the bounded
+identity. The verified Banach implicit-function theorem constructs one
+analytic l2 displacement solving every other positive index together.
+The result is connected to zeros of the actual normalized entire
+numerator, including at filled own critical energies, with distinct
+analytic energy values and exact free energies. All original actual
+normalization periods remain available on the common base neighborhood.
+
+Final strict run: all 116 selected modules pass; the complete transitive
+audit passes for 1332 selected declarations and 12712 declarations
+including all imported NLS dependencies. All 116 checked source hashes
+match, and the checker, audit and coverage selections agree exactly.
+Only `propext`, `Classical.choice` and `Quot.sound` are permitted. Default
+heartbeats, strict warnings and all linters are retained. There are no
+new axioms or placeholders. All canonical sources/builds remain read only.
+The full validation is serialized by the shared build lock.
+
+The zero subneighborhood may depend on n. Completeness, simplicity, real
+gap placement, exact canonical product/prefactor (52), omitted-index
+uniformity, the full rough/global domain and every main theorem remain
+open. No main-theorem inventory row is closed by this local result.

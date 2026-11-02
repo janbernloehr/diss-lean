@@ -286,3 +286,15 @@ resolvent expansion of the actual normalized entire functions. See
 [TWO_WEIGHTED_NORMALIZED_COEFFICIENTS.md](TWO_WEIGHTED_NORMALIZED_COEFFICIENTS.md).
 Normalized zeros and their canonical product (52), the rough/global
 version and all main-theorem rows remain open.
+
+Actual normalized numerator zeros are now constructed simultaneously over
+all positive gap labels other than a fixed omitted n. One analytic l2
+displacement branch, on a potential neighborhood U_n, gives distinct
+analytic energy zeros with exact free values. The sequence equation's
+partial derivative is the actual bounded identity at zero, and the
+verified analytic Banach implicit function theorem constructs the branch.
+The result is connected to the literal normalized entire numerator,
+including at a filled own critical energy. See
+[NORMALIZED_ZEROS.md](NORMALIZED_ZEROS.md). U_n may depend on n; complete
+zeros, simplicity, exact canonical product/prefactor (52), all-n common
+source uniformity, the rough/global domain and all main rows remain open.

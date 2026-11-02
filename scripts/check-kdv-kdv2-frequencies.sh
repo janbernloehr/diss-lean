@@ -17,12 +17,15 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/SequenceSpaces/PositiveIndexPowerWeight
   NLS/SequenceSpaces/OperatorBasisExt
   NLS/SequenceSpaces/DiagonalIntertwining
+  NLS/SequenceSpaces/BoundedCoordinateDifferentiable
+  NLS/SequenceSpaces/CoordinateQuadraticDerivative
   NLS/SequenceSpaces/HolderEmbedding
   NLS/SequenceSpaces/BoundedCoordinateAnalytic
   NLS/ComplexAnalysis/JointSpectralDerivative
   NLS/ComplexAnalysis/AnalyticOperatorInverse
   NLS/SequenceSpaces/ConvolutionDominatedMatrix
   NLS/SequenceSpaces/LocallyBoundedRealization
+  NLS/SequenceSpaces/TwoSequenceBound
   NLS/SequenceSpaces/FiniteHeadTailBound
   NLS/SequenceSpaces/AnalyticReciprocalTail
   NLS/SequenceSpaces/ConjugateDuality
@@ -32,6 +35,7 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/SequenceSpaces/MixedMajorantMatrix
   NLS/SequenceSpaces/ReciprocalSquareKernel
   NLS/ComplexAnalysis/ParametricDividedDifference
+  NLS/ComplexAnalysis/AnalyticImplicitBanachRoot
   NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
   NLS/ComplexAnalysis/RightHalfPlaneSquareRoot
   NLS/ComplexAnalysis/EntireLimit
@@ -77,6 +81,8 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalCriticalPointBranch
   NLS/KdV/ClassicalHighCriticalPoints
   NLS/KdV/HighEnergyContourSeparation
+  NLS/KdV/HighEnergyDiscSeparation
+  NLS/KdV/PositiveEnergyResolventKernel
   NLS/KdV/ClassicalCriticalNumerator
   NLS/KdV/ClassicalUniformCriticalBasis
   NLS/KdV/ClassicalCriticalTailAnalytic
@@ -100,6 +106,13 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/ClassicalWeightedNormalizedCoefficients
   NLS/KdV/ClassicalTwoWeightedNormalizedCoefficients
   NLS/KdV/ClassicalNormalizedResidues
+  NLS/KdV/ClassicalCandidateZeros
+  NLS/SequenceSpaces/CompactPuncturedKernel
+  NLS/KdV/ClassicalCandidateResolvents
+  NLS/KdV/ClassicalNormalizedZeroMap
+  NLS/KdV/ClassicalNormalizedRootBranches
+  NLS/KdV/ClassicalNormalizedZeroIdentity
+  NLS/KdV/ClassicalNormalizedZeros
   NLS/KdV/ClassicalSignedCriticalProduct
   NLS/KdV/ClassicalCriticalEnergyProduct
   NLS/KdV/ClassicalCriticalBasisProduct

@@ -416,3 +416,24 @@ Actual normalized zero equations, complete zero/product identification,
 rough/global compatibility and every main theorem remain open. The
 103-module strict build and complete transitive audit are recorded in
 `VALIDATION.md` and `source.json`.
+
+## Constructed actual simultaneous normalized zeros
+
+For each omitted n, a genuine jointly analytic l2 sequence equation now
+constructs all other positive normalized zeros on one potential
+neighborhood. The actual free partial derivative is proved to be the
+bounded identity; the verified analytic Banach implicit function theorem
+supplies the infinite displacement branch. The selected energy zeros are
+analytic, distinct and exact at the free potential.
+
+A separate identity connects every solved coordinate to the literal
+normalized entire numerator defined by the same inverse R. Filled own
+critical energies are treated directly using the entire numerator factors
+and the actual convergent series. All original normalization periods
+remain unchanged. See [NORMALIZED_ZEROS.md](NORMALIZED_ZEROS.md).
+
+The neighborhood still depends on the omitted n. Completeness, simplicity,
+canonical products/prefactors, full omitted-index uniformity, rough/global
+compatibility and every main theorem remain open. The strict 116-module
+build and transitive axiom audit are recorded in `VALIDATION.md` and
+`source.json`.

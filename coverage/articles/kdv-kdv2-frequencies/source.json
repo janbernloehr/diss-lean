@@ -1461,6 +1461,162 @@
       "scope": "Constructed actual positive m*(R e_n)_m residues as a Banach analytic l1 sequence; quadratic critical growth bounds all fixed-energy reciprocal denominators and proves absolute resolvent convergence; exact normalized entire-function resolvent identity off the critical energies",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "7a482aeb15f6d8cdb48651394ab5fc2c1a319220ca3320328b12a7179b84b2d5"
+    },
+    {
+      "path": "NLS/KdV/HighEnergyDiscSeparation.lean",
+      "source_labels": [
+        "Equation (52) full candidate-disc separation"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Uniform actual quadratic separation throughout both distinct closed positive frequency discs, extending the existing contour estimate",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b3257f369e9f6ebcbe9c074b18078e6bf7d7d9adb03a04de6dbea594ba781409"
+    },
+    {
+      "path": "NLS/KdV/PositiveEnergyResolventKernel.lean",
+      "source_labels": [
+        "Equation (52) simultaneous Hilbert row kernel"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Positive index spacing and quadratic resolvent row bounds by reciprocal plus translated reciprocal kernels",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f7a0cac2af4715f970ac567969d5c1bf30f17c9fd01c0e2d59632c6e018c04fa"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCandidateZeros.lean",
+      "source_labels": [
+        "Equation (52) actual candidate root coordinates"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Actual selected critical frequencies are analytic in a positive real-half-plane chart; all candidates in one Hilbert ball stay in their discs and are uniformly separated from different critical energies, with actual multiplier bounds",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6b368d1984e353d6e5116189c07a5c2a0f86bdff4bd95ba47e05823e981fdb93"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCandidateResolvents.lean",
+      "source_labels": [
+        "Equation (52) actual analytic Hilbert resolvent rows"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Genuine l2 rows omit their own critical factor and selected numerator index; a common row norm bound and exact coordinates prove joint Banach analyticity on one candidate ball times the actual source domain",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "031da082ce7ea6d3889508cdf5033e103c83f9e9b81cbfc3d80b3ba48876d34c"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedZeroMap.lean",
+      "source_labels": [
+        "Equation (52) actual jointly analytic infinite zero equation"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "The filled normalized root equations define a genuine l2-valued jointly Banach analytic map with a common actual norm bound and exact coordinates",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "80e71b5717e2f0b3239e46739c4e0e241a5f9ca89eeb27f1ed77d5e7951f6238"
+    },
+    {
+      "path": "NLS/SequenceSpaces/CoordinateQuadraticDerivative.lean",
+      "source_labels": [
+        "Infinite zero equation Banach derivative dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Given Banach differentiability, coordinate quadratic germs identify the actual bounded Frechet derivative with the identity, on every Banach coefficient exponent",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2961e441100fafec4260bfb7e0abed92e0b42615190683047904f95439008537"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedRootBranches.lean",
+      "source_labels": [
+        "Equation (52) constructed simultaneous infinite displacement branch"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Proved actual free partial derivative Id and used verified analytic Banach implicit-function theorem to construct one analytic l2 displacement solving all retained positive zero equations on a common source neighborhood for fixed omitted n",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7aa96146da0d845ca6086d5a41b5d4e2051034343c55fe88f983a3c000164348"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedZeroIdentity.lean",
+      "source_labels": [
+        "Equation (52) actual normalized entire-function zero identity"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Every retained solved equation gives a zero of the literal normalized numerator from the same R; absolute critical resolvents handle off-center values and entire basis factors handle filled own critical energies without dividing by zero",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "46d80755827c5a24e2a33b2ff94b7ab1450b7adba1899f0dbeb49a9452bfed08"
+    },
+    {
+      "path": "NLS/KdV/ClassicalNormalizedZeros.lean",
+      "source_labels": [
+        "Equation (52) actual local infinite normalized zero families"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "For each omitted n one constructed potential subneighborhood supports all other positive actual zeros, analytic distinct energies with exact free values and a genuine analytic l2 displacement; original actual normalization periods are retained; completeness, simplicity, product/prefactor, all-n uniformity and rough/global version remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "915963ac2a16b707325f2f088aac7ebca129e5f0da9b3023e947b1c0738cefbc"
+    },
+    {
+      "path": "NLS/SequenceSpaces/TwoSequenceBound.lean",
+      "source_labels": [
+        "Actual zero equation membership dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Existing genuine sequence membership and norm bounds under two coefficient majorants, directly recompiled",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "829609d4bd82ad2d66cd257b881775fef1e1960df457c1a1a62aaead83271ca9"
+    },
+    {
+      "path": "NLS/SequenceSpaces/CompactPuncturedKernel.lean",
+      "source_labels": [
+        "Actual resolvent row dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Existing translated punctured reciprocal norm identities and Hilbert bounds, directly recompiled",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e344d40f1aa94b39e037d059614b8a683332ee99a17f36994cecfe7dfc56c911"
+    },
+    {
+      "path": "NLS/SequenceSpaces/BoundedCoordinateDifferentiable.lean",
+      "source_labels": [
+        "Actual zero equation derivative dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Existing Banach differentiability and coordinate projection of the actual Frechet derivative, directly recompiled",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "044d75b118ddca0578d1e581f5327d1871cb6f779ca21878aeddb9e2f32c959d"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticImplicitBanachRoot.lean",
+      "source_labels": [
+        "Actual infinite normalized root construction dependency"
+      ],
+      "source_pages": [
+        21
+      ],
+      "scope": "Existing verified analytic Banach implicit root construction from a jointly analytic equation, a literal zero and a proved bijective partial derivative, directly recompiled",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d8267efd906bdf007cc30a8a83318fc20dc8d6e0ec9d34480818ab8f32cdc7c7"
     }
   ],
   "dependencies_needed": [
@@ -1492,15 +1648,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 1224,
-    "total_declarations_audited": 12586,
+    "candidate_declarations_audited": 1332,
+    "total_declarations_audited": 12712,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 103
+    "selected_modules": 116
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -1568,5 +1724,6 @@
   "infinite_normalized_differentials_record": "INFINITE_NORMALIZED_DIFFERENTIALS.md",
   "critical_products_record": "CRITICAL_PRODUCTS.md",
   "weighted_normalized_coefficients_record": "WEIGHTED_NORMALIZED_COEFFICIENTS.md",
-  "two_weighted_normalized_coefficients_record": "TWO_WEIGHTED_NORMALIZED_COEFFICIENTS.md"
+  "two_weighted_normalized_coefficients_record": "TWO_WEIGHTED_NORMALIZED_COEFFICIENTS.md",
+  "normalized_zeros_record": "NORMALIZED_ZEROS.md"
 }
