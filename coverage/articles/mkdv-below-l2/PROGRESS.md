@@ -979,3 +979,55 @@ introduced. Canonical compiled dependencies remain read-only. The existing
 shared real-inclusion source was restored unchanged after a filename collision;
 the new bounded helper has a separate file and its consumers were rebuilt.
 Validation is incremental and focused, not a fresh whole-repository rebuild.
+
+
+## Twenty-second checkpoint: the actual physical PDE on the full H4 source
+
+The physical corrected fourth equation is now verified for every original
+real-type native H⁴ datum, at every real time and spatial point. The same
+fixed-family trajectory is used throughout. The full finite-gap pointwise
+calibration retains both terms from H4 - 6H1H2, with positive 6H2 phase and
+negative 6H1 spatial translation. Actual H¹ time differentiability justifies
+bounded evaluation at finite gaps.
+
+A reusable dense-parameter derivative theorem extends a time equation from
+a dense parameter set whenever both the actual paths and their velocities
+are jointly continuous. Compact-open convergence gives locally uniform
+velocity convergence; the neighborhood filter of the dense set avoids a
+separate choice of approximation sequence. In normalized source coordinates
+this proves the classical spatial derivative identity for all consecutive
+lower physical Sobolev jets, at every integer order and every real source.
+The independent physical H¹ inclusion retains raw coefficients, reality and
+the actual equal-field diagonal.
+
+At order four, bounded synthesis of the third jet and the polynomial physical
+mass/momentum corrections give a jointly continuous complete physical field.
+Its expression is the classical corrected third-order differential field on
+all sources, not just finite gaps. The actual weighted source trajectory and
+its physical values are jointly continuous. Native finite-gap density and
+the dense-parameter theorem therefore give its full physical time equation.
+Every signed Fourier integral of its physical fields equals the original
+distribution coefficient of the same actual physical fourth image lift.
+
+On the full H⁴ diagonal, actual source preservation gives equal physical
+functions and zero independent physical H2. The fields retain conjugate
+reality, hence the scalar field is real. The exact scalar equation is
+u_t=-u_xxx+6(u²-M)u_x, with M the original unit-period integral of the square
+of the initial physical field. There is no finite-gap hypothesis in this
+scalar time equation.
+
+Theorem 1.1 remains incomplete. Exact representation/transfer of the required
+smooth physical inputs and identification with arbitrary classical PDE
+trajectories, the full smooth-approximation/uniqueness clause, and every-fixed-
+time divergent-mass nonextension remain necessary. Theorems 1.2 and 1.3 remain
+verified. Constructed-flow PDE existence has not been substituted for classical
+PDE uniqueness.
+
+Nine final new modules pass strict Lean 4.33.1 checks. The 172 unchanged
+focused parent modules reuse e2665c38af2b1d98c9ec996c92843bca3230847f after source
+comparison. A fresh full transitive audit checks 847 named declarations,
+using only propext, Classical.choice and Quot.sound. The focused checker
+lists 181 modules. No holes, new axioms, disabled linters or increased
+heartbeat or recursion limits were introduced. Canonical compiled dependencies
+remain read-only; this is incremental focused validation, not a whole-repository
+rebuild.

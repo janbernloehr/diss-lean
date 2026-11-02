@@ -80,8 +80,9 @@ interval. The full compact-time source trajectory maps are continuous in the
 uniform norm, and convergent approximants have uniformly convergent lift
 trajectories. The same physical Birkhoff coordinates, original action products,
 time-addition law and admissible inverse steps are verified. The full physical diagonal is preserved at every admissible time. The actual
-finite-gap lift now satisfies the scalar renormalized mKdV equation pointwise.
-Agreement for arbitrary smooth data remains open.
+flow now satisfies the scalar renormalized mKdV equation pointwise on the full
+native H⁴ diagonal, without a finite-gap hypothesis. Identifying arbitrary
+classical PDE solutions with this constructed flow remains open.
 
 Every physical input outside the Hilbert pair space now has a nonzero first
 Birkhoff mode at n≠0. Here Hilbert membership means that exactly the same two
@@ -173,10 +174,32 @@ that such spectral approximants preserve the smaller diagonal is made.
 The full finite-gap physical ODE on general real-type pairs retains both
 corrections from H4 - 6H1H2: positive 6H2 phase and negative 6H1 spatial translation.
 
+The physical time equation now holds for every original real-type H⁴ input,
+not only finite-gap data. A shared dense-parameter derivative theorem passes
+the actual equation through joint path and velocity continuity, using the
+neighborhood filter of the dense set directly. Normalized source coordinates
+keep the proof in one fixed Hilbert topology. For every integer source order,
+all consecutive lower bounded physical jets are proved to be actual classical
+spatial derivatives. At order four the complete corrected physical field is
+continuous, retains independent mass and momentum, and equals its classical
+third-order expression on the full source.
+
+The actual H⁴ diagonal trajectory therefore satisfies
+u_t=-u_xxx+6(u²-M)u_x at every real time and spatial point. Its physical field
+is real, and M is exactly the original unit-period square integral at time
+zero. Every signed Fourier integral of both physical fields agrees with the
+actual original distribution lift of the fixed Theorem 1.2 family. This
+establishes the constructed flow's PDE on the full native H⁴ diagonal;
+classical PDE uniqueness and the precise smooth-data/finite-p solution
+identification required by Theorem 1.1 are not inferred from it.
+
 ## Remaining integration order for Theorem 1.1
 
-1. Extend the verified pointwise finite-gap renormalized PDE agreement to the
-   required arbitrary smooth data and exact smooth-approximation solution notion.
+1. Complete the exact classical-solution identification: represent the required
+   smooth physical data in the native source, compare their scalar finite-p
+   lifts, and prove any required uniqueness among classical PDE solutions.
+   The constructed physical equation on every native H⁴ diagonal datum is now
+   verified, with its original Fourier coefficients and mass normalization.
 2. Use the verified scalar real adapter and uniform trajectories to establish
    the exact smooth-approximation solution property and PDE uniqueness. The
    scalar lift and approximation limits themselves are already constructed.
@@ -185,13 +208,13 @@ corrections from H4 - 6H1H2: positive 6H2 phase and negative 6H1 spatial transla
 
 ## Validation
 
-The focused checker `check.sh` lists 172 article/shared modules and the
+The focused checker `check.sh` lists 181 article/shared modules and the
 consumed hierarchy foundations. Lean 4.33.1 checks use `autoImplicit=false`
-and `warningAsError=true`. The twenty-first checkpoint strictly checks all 7
-final new modules and reuses 165 parent modules after verifying their sources
-are unchanged from `606aece4a8207eee0a27d57d41520f9337b723f7`.
+and `warningAsError=true`. The twenty-second checkpoint strictly checks all 9
+final new modules and reuses 172 parent modules after verifying their sources
+are unchanged from `e2665c38af2b1d98c9ec996c92843bca3230847f`.
 
-The fresh full transitive audit checks all 796 named declarations, including
+The fresh full transitive audit checks all 847 named declarations, including
 the main Theorems 1.2 and 1.3. Only `propext`, `Classical.choice` and
 `Quot.sound` occur. No holes, new axioms, disabled linters or increased
 heartbeat limits were introduced. `validation.txt` captures the checks;

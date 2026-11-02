@@ -1,3 +1,12 @@
+import NLS.FunctionalAnalysis.DenseParameterDerivative
+import NLS.ZakharovShabat.SourceSobolevPhysicalPhase
+import NLS.Articles.MKdVBelowL2.FourthFiniteGapFullPointwise
+import NLS.ZakharovShabat.SourceNativeSobolevPhysicalJets
+import NLS.ZakharovShabat.SourceNativeSobolevH1Pair
+import NLS.Articles.MKdVBelowL2.FourthNativePhysicalField
+import NLS.Articles.MKdVBelowL2.FourthClassicalPhysicalFlow
+import NLS.Articles.MKdVBelowL2.FourthClassicalTimeEquation
+import NLS.Articles.MKdVBelowL2.FourthClassicalMKdV
 import NLS.ZakharovShabat.SourceWeightedRealSourceInclusion
 import NLS.ZakharovShabat.SourceActionPhaseSobolevLift
 import NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput
@@ -986,3 +995,55 @@ import NLS.Articles.MKdVBelowL2.FourthMomentSummability
 #print axioms NLS.Articles.MKdVBelowL2.fourthSobolevTrajectoryOn_physical
 #print axioms NLS.Articles.MKdVBelowL2.continuous_fourthSobolevTrajectoryOn
 #print axioms NLS.Articles.MKdVBelowL2.tendsto_fourthSobolevTrajectoryOn
+
+#print axioms NLS.FunctionalAnalysis.hasDerivAt_of_dense_parameters
+#print axioms NLS.ZakharovShabat.sourceSobolevPhase
+#print axioms NLS.ZakharovShabat.sobolevSourceInclusion_phase
+#print axioms NLS.ZakharovShabat.periodOneSobolevSynthesis_phase
+#print axioms NLS.Articles.MKdVBelowL2.classicalCorrectedFourthField
+#print axioms NLS.Articles.MKdVBelowL2.periodOneSobolevSynthesis_eq_finiteGapCorrectedFourth
+#print axioms NLS.Articles.MKdVBelowL2.hasDerivAt_fourthFiniteGapPhysicalFlow_corrected
+#print axioms NLS.ZakharovShabat.nativeSobolevPhysicalJetCLM
+#print axioms NLS.ZakharovShabat.continuous_nativeSobolevPhysicalJet
+#print axioms NLS.ZakharovShabat.nativeSobolevPhysicalJet_eq_finiteGap
+#print axioms NLS.ZakharovShabat.hasDerivAt_nativeSobolevPhysicalJet_fst
+#print axioms NLS.ZakharovShabat.hasDerivAt_nativeSobolevPhysicalJet_snd
+#print axioms NLS.ZakharovShabat.iteratedDeriv_nativeSobolevPhysicalJet
+#print axioms NLS.ZakharovShabat.nativeSobolevH1PairCLM
+#print axioms NLS.ZakharovShabat.sobolevSourceInclusion_nativeSobolevH1PairCLM
+#print axioms NLS.ZakharovShabat.nativeSobolevH1PairCLM_eq_finiteGap
+#print axioms NLS.ZakharovShabat.nativeSobolevPhysicalJet_zero_eq_synthesis
+#print axioms NLS.ZakharovShabat.nativeSobolevH1PairCLM_real
+#print axioms NLS.ZakharovShabat.nativeSobolevH1PairCLM_diagonal
+#print axioms NLS.Articles.MKdVBelowL2.FourthClassicalSource
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalMass
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalMomentum
+#print axioms NLS.Articles.MKdVBelowL2.continuous_fourthClassicalMass
+#print axioms NLS.Articles.MKdVBelowL2.continuous_fourthClassicalMomentum
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalVelocity
+#print axioms NLS.Articles.MKdVBelowL2.continuous_fourthClassicalVelocity
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalVelocity_eq_classical
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalSourceFlow
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalSourceFlow_zero
+#print axioms NLS.Articles.MKdVBelowL2.originalWeightedRealSource_fourthClassicalSourceFlow
+#print axioms NLS.Articles.MKdVBelowL2.continuous_fourthClassicalSourceFlow
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalFlow
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalValue
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalVelocity
+#print axioms NLS.Articles.MKdVBelowL2.continuous_fourthClassicalPhysicalValue
+#print axioms NLS.Articles.MKdVBelowL2.continuous_fourthClassicalPhysicalVelocity
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalSourceFlow_finiteGap
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalValue_eq_finiteGap
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalMomentum_flow_eq_finiteGap
+#print axioms NLS.Articles.MKdVBelowL2.periodOneCoefficient_fourthClassicalPhysicalValue
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalValue_physical_coefficients
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalVelocity_eq_finiteGap
+#print axioms NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalValue_finiteGap
+#print axioms NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalValue
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalSourceFlow_diagonal
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalValue_diagonal
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalValue_real
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalValue_im_eq_zero
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalMomentum_flow_diagonal
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalMass_eq_integral_square
+#print axioms NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalValue_mKdV

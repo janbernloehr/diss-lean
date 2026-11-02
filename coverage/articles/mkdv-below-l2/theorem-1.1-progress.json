@@ -177,12 +177,37 @@
       "source": "All nonnegative Sobolev orders of the fixed actual physical fourth flow",
       "declaration": "NLS.Articles.MKdVBelowL2.fourthSobolevTrajectoryOn_physical",
       "scope": "Every nonnegative native Sobolev order and every compact real time interval. Forgetting the weighted path gives exactly the same original physical distribution pair under the same fixed Birkhoff family. Initial-data dependence is continuous in the full uniform weighted norm. Every given convergent family, including any given spectral finite-gap approximating family, has convergent whole trajectories in this norm. Weighted spectral finite-gap density is verified separately. No diagonal-preservation assertion for spectral approximants is made. Smooth PDE passage to this limit remains required."
+    },
+    {
+      "source": "Dense-parameter passage of the actual physical time equation",
+      "declaration": "NLS.FunctionalAnalysis.hasDerivAt_of_dense_parameters",
+      "scope": "For arbitrary topological initial parameters and real-time Banach-valued paths, joint continuity of the paths and their asserted velocities extends HasDerivAt from a dense set of parameters to all parameters. Locally uniform velocity convergence follows from the compact-open topology. The neighborhood filter is used directly; no chosen approximating sequence or additional differentiability hypothesis is required."
+    },
+    {
+      "source": "Classical spatial jets throughout each original native Sobolev source",
+      "declaration": "NLS.ZakharovShabat.iteratedDeriv_nativeSobolevPhysicalJet",
+      "scope": "Every integer source order s and lower jet k<s. Bounded physical synthesis retains the original coefficients; at actual finite gaps it equals the independent classical physical derivative. Normalized source coordinates, native weighted finite-gap density and the shared derivative-limit theorem identify all consecutive jets as actual classical spatial derivatives for every real native source."
+    },
+    {
+      "source": "Full physical corrected pointwise fourth equation, beyond finite gaps",
+      "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalValue",
+      "scope": "Every original real-type native H⁴ datum, every real time and every spatial point. The actual fixed-family Sobolev lift has both pointwise time derivatives equal to the continuous independent physical corrected field H4 - 6H1H2. The positive 6H2 phase and negative 6H1 spatial translation terms are both retained. Joint continuity and normalized dense-parameter passage extend the actual finite-gap equation. No finite-gap or diagonal approximation hypothesis is assumed."
+    },
+    {
+      "source": "Original physical-distribution identification of the full H4 time equation",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalValue_physical_coefficients",
+      "scope": "Every original real-type native H⁴ datum and every real time. Every signed period-one Fourier integral of the synthesized physical fields equals the corresponding original distribution functional of the actual fourth physical image lift of the same fixed Theorem 1.2 family. No frequency, exponent or physical Fourier normalization is changed."
+    },
+    {
+      "source": "Scalar renormalized mKdV on the entire native H4 diagonal",
+      "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalValue_mKdV",
+      "scope": "Every real native H⁴ source with equal original fields, every real time and every spatial point. The actual constructed scalar field is real and satisfies u_t=-u_xxx+6*(u^2-M)*u_x. Its classical third derivative is the bounded physical third jet, and M equals the original integral over [0,1] of the square of the initial physical field. Actual full-source diagonal preservation removes physical momentum. This is the constructed flow equation, not an assumption or proof of uniqueness for arbitrary classical PDE trajectories."
     }
   ],
   "remaining": [
-    "Extend the verified full finite-gap physical corrected ODE and scalar pointwise equation to arbitrary smooth data. Full native Sobolev trajectory continuity, uniform convergence for given approximating families, and weighted spectral finite-gap density are now available. The general pair correction retains the momentum phase term, so spectral approximants need not be assumed diagonal.",
-    "Establish the exact smooth-approximation solution and PDE uniqueness requirements of Theorem 1.1 using the verified scalar real phase space, local and invariant small-data uniform trajectories, and uniqueness of actual lift limits. Actual lift-limit uniqueness alone is not yet arbitrary smooth PDE agreement.",
+    "Complete the exact classical-solution identification for Theorem 1.1: represent the required arbitrary smooth physical data in the native source, transfer the actual scalar lifts across finite p, and prove any required uniqueness among classical PDE solutions. The constructed flow now satisfies the full physical equation at every native H⁴ input and scalar mKdV at every native H⁴ diagonal input, with exact original Fourier coefficients and physical mass.",
+    "Establish the exact smooth-approximation solution and uniqueness requirements of Theorem 1.1 using the verified scalar real phase space, local and invariant small-data uniform trajectories, and uniqueness of actual lift limits. Native H⁴ PDE existence and lift-limit uniqueness alone do not identify all arbitrary smooth PDE trajectories.",
     "Construct controlled smooth approximations with tunable divergent physical mass at every datum outside L² and use the verified nonzero signed Birkhoff mode to prove nonextension at each fixed t>0. A trajectory obstruction alone does not prove this fixed-time claim."
   ],
-  "validation": "Seven final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 165 unchanged parent modules reused from 606aece4a8207eee0a27d57d41520f9337b723f7 after source comparison. Fresh full transitive audit of 796 declarations uses only propext, Classical.choice and Quot.sound."
+  "validation": "Nine final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 172 unchanged parent modules reused from e2665c38af2b1d98c9ec996c92843bca3230847f after source comparison. Fresh full transitive audit of 847 declarations uses only propext, Classical.choice and Quot.sound."
 }
