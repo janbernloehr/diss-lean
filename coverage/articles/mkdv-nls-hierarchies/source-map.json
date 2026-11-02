@@ -19,11 +19,13 @@
       "quantifiers": "forall integer m>=1, forall complex u in H^m",
       "target": "X_(S_(2m))# = (Y_(K_m),Y_(K_m)); S_(2m)# = 0",
       "proved": [
-        "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_original_domain"
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_original_domain",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_m2_smooth"
       ],
       "limits": [
         "Scalar vanishing only on H^(2m-1); equals the printed domain when m=1.",
-        "Physical vector-field identity and all-order independent K_m identification remain open."
+        "Physical vector-field identity and all-order independent K_m identification remain open.",
+        "Both clauses proved at m=2 for smooth complex period-one functions, using gradients certified by actual physical first variations; full H2 extension remains open."
       ]
     },
     {

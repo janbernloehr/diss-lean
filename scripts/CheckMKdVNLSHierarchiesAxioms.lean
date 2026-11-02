@@ -1,4 +1,5 @@
 import NLS.Articles.MKdVNLSHierarchies.InitialChecks
+import NLS.Articles.MKdVNLSHierarchies.SmoothFourthFlow
 import Lean.Util.CollectAxioms
 
 /-! Audit every new public declaration and its generated auxiliary declarations.
@@ -14,11 +15,22 @@ run_cmd do
     `NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_swap,
     `NLS.ZakharovShabat.hierarchyReciprocalScaling,
     `NLS.ZakharovShabat.hierarchyReciprocalScaling_apply,
-    `NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_reciprocal_scaling]
+    `NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_reciprocal_scaling,
+    `NLS.ZakharovShabat.nlsRiccatiDensity_three,
+    `NLS.ZakharovShabat.classicalNLSHamiltonian_four,
+    `NLS.ZakharovShabat.classicalNLSHamiltonian_four_swap,
+    `NLS.ZakharovShabat.classicalNLSHamiltonian_four_variation_fst,
+    `NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_fst,
+    `NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_snd,
+    `NLS.ZakharovShabat.classicalNLSFourthGradient]
   let expected := #[``NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero,
     ``NLS.MKdV.classicalNLSHamiltonian_three_diagonal,
     ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_covectors,
-    ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_covectors]
+    ``NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_covectors,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem1_m2_smooth,
+    ``NLS.MKdV.hasDerivAt_classicalMKdVEnergy,
+    ``NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_fst,
+    ``NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian_four_snd]
   let env ← getEnv
   for name in expected do
     unless (env.find? name).isSome do

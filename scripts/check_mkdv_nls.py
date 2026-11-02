@@ -35,8 +35,14 @@ modules = [
     "NLS/ZakharovShabat/SobolevHierarchySymmetries.lean",
     "NLS/MKdV/HierarchyRestriction.lean",
     "NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean",
-    "NLS.lean",
+    "NLS/ZakharovShabat/ClassicalNLSFourthHamiltonian.lean",
+    "NLS/ZakharovShabat/ClassicalNLSFourthVariation.lean",
+    "NLS/MKdV/ClassicalEnergyVariation.lean",
+    "NLS/MKdV/ClassicalFourthFlowRestriction.lean",
+    "NLS/Articles/MKdVNLSHierarchies/SmoothFourthFlow.lean",
 ]
+if args.full_audit:
+    modules.append("NLS.lean")
 if args.module_only:
     if args.full_audit:
         parser.error("--module-only cannot be combined with --full-audit")
@@ -81,8 +87,8 @@ def run(source, output=None):
         sys.exit(result.returncode)
 
 # Serialize aggregate compilation and larger validation with the article lock.
-with (nullcontext(None) if args.module_only else
-      open("/tmp/diss-lean-article-build.lock", "a")) as lock:
+with (open("/tmp/diss-lean-article-build.lock", "a") if args.full_audit else
+      nullcontext(None)) as lock:
     if lock is not None:
         print("Waiting for shared article build lock", flush=True)
         fcntl.flock(lock, fcntl.LOCK_EX)

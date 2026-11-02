@@ -135,12 +135,16 @@ inspection was main; no alternative article proof was found to duplicate.
 - `NLS/Articles/MKdVNLSHierarchies/InitialChecks.lean`: article-facing
   statements with the exact current domains and explicit limitations.
 
-No aggregate NLS import, axiom, admitted proof, disabled linter or essential
+The first phase added no aggregate NLS import, axiom, admitted proof, disabled linter or essential
 unproved assumption was added. A conditional analogue is not being substituted
 for a main theorem. There are 22 public declarations in these three modules,
 15 theorems and 7 definitions. The transitive axiom audit additionally covers
-generated auxiliaries; it passed for 35 declarations and allows only
+generated auxiliaries; its initial audit passed for 35 declarations and allows only
 `propext`, `Classical.choice` and `Quot.sound`.
+
+The subsequent physical smooth m=2 identification and expanded validation are
+recorded in [the progress log](PROGRESS.md). The original full main theorems
+remain incomplete.
 
 ## Worktree integration and reproduction
 
@@ -166,11 +170,13 @@ python3 scripts/check_mkdv_nls.py --imports-from /path/to/canonical/dnls
 
 The checker uses an overlay of cached read-only imports. Every writable output
 is inside this worktree's `.lake/build`; it neither copies the full cache nor
-invokes a writing build in the canonical checkout. Aggregate compilation and
-larger checks acquire `/tmp/diss-lean-article-build.lock`. Use `--full-audit` to
-run the full NLS transitive axiom audit. `--module-only PATH` performs a focused
-module check without waiting for the expensive-build lock and can be repeated
-in dependency order. A focused check is not a fresh full repository build.
+invokes a writing build in the canonical checkout. By default it checks the
+article modules and their transitive axiom audit. Use `--full-audit` to compile
+the aggregate and run the full NLS transitive axiom audit under
+`/tmp/diss-lean-article-build.lock`. `--module-only PATH` performs a focused
+module check and can be repeated in dependency order. A focused check is not a
+fresh full repository build. The article imports are explicit; additions to
+the aggregate `NLS.lean` are deferred to sequential main integration.
 
 The initial patch passed `git apply --check` before integration. Subsequent
 commits and validation milestones are recorded in the article progress log.
