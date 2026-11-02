@@ -323,7 +323,7 @@ Remaining source primitive/action and main-theorem obligations are in
 [the progress log](PROGRESS.md).
 
 
-Latest milestone: the actual free-normalized Hill root and primitive equal
+Previous milestone: the actual free-normalized Hill root and primitive equal
 the original NLS canonical root and abelian primitive for real C1 periodic
 Miura profiles at nonreal frequencies with Re z>0. Physical IVP uniqueness
 identifies the independent Hill constructions, including zero energy for
@@ -344,3 +344,27 @@ excluded), with SHA256 hashes for all 104 checked sources and both checker
 files. Validation uses read-only pinned cached imports and private build
 outputs; the entire dependency tree was not rebuilt from source. Canonical
 main remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.
+
+
+Latest milestone: the independent physical Hill root and primitive agree
+with the original NLS functions on the full real H1 coefficient domain at
+nonreal frequencies with Re z>0. This removes the C1 restriction on the
+profile. Both sheets are constructed from the independent quasi-Hill IVP
+discriminant, and agree with the shared scalar construction on C1 profiles.
+The physical H1 trace and energy derivative and complex H1 source
+analyticity on the admissible continuation domain are proved. Real-band,
+gap/action and frequency identifications remain open.
+
+All 110 article/shared modules and the NLS aggregate compiled with Lean
+4.33.1, autoImplicit=false and warnings as errors. The targeted transitive
+axiom audit passed for 1,250 declarations and generated auxiliaries; the
+combined audit passed for 46,434 NLS declarations. Only propext,
+Classical.choice and Quot.sound are allowed. The public theorem/definition
+inventory contains 662 entries (514 theorems, 148 definitions; aliases and
+structure declarations excluded), with 112 SHA256 source/checker hashes.
+The checker can resume a failed run with --resume-from, requiring private
+outputs for the previously checked prefix while retaining the complete
+aggregate and axiom audits. This validation checked the unchanged prefix,
+repaired an H1 adapter elaboration, then resumed there; both complete
+audits passed. Validation uses pinned cached imports, not a rebuild of the
+entire dependency tree.

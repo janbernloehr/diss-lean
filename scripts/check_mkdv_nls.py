@@ -19,6 +19,8 @@ parser.add_argument("--lean", default=shutil.which("lean"))
 parser.add_argument("--full-audit", action="store_true")
 parser.add_argument("--module-only", action="append", metavar="PATH",
                     help="Check only this module, without aggregate compilation or audit (repeatable).")
+parser.add_argument("--resume-from", metavar="PATH",
+                    help="Resume a failed check here, reusing prior private validated module outputs.")
 args = parser.parse_args()
 if not args.lean:
     parser.error("Set PATH to the pinned toolchain or pass --lean.")
@@ -32,6 +34,7 @@ version = subprocess.check_output([args.lean, "--version"], text=True).strip()
 if not version.startswith("Lean (version 4.33.1,"):
     parser.error(f"Expected pinned Lean 4.33.1, got {version}")
 modules = [
+    "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean",
     "NLS/KdV/ConstantUpperSpectralBridge.lean",
     "NLS/KdV/ClassicalSpectralSymmetry.lean",
     "NLS/KdV/ClassicalDiscriminant.lean",
@@ -127,6 +130,8 @@ modules = [
     "NLS/MKdV/QuasiHillDiscriminant.lean",
     "NLS/ZakharovShabat/ClassicalVolterraTrace.lean",
     "NLS/MKdV/QuasiHillZSComparison.lean",
+    "NLS/MKdV/QuasiHillJointAnalytic.lean",
+    "NLS/MKdV/QuasiHillSourcePrimitive.lean",
     "NLS/MKdV/QuasiHillPhysicalEquation.lean",
     "NLS/MKdV/QuasiHillPhysicalUniqueness.lean",
     "NLS/MKdV/SobolevQuasiHill.lean",
@@ -134,8 +139,11 @@ modules = [
     "NLS/MKdV/MiuraHillHamiltonianTrace.lean",
     "NLS/MKdV/MiuraHillSpectralBridge.lean",
     "NLS/MKdV/MiuraHillPrimitiveComparison.lean",
+    "NLS/MKdV/QuasiHillPrimitiveComparison.lean",
+    "NLS/MKdV/SobolevMiuraPrimitive.lean",
     "NLS/Articles/MKdVNLSHierarchies/PrimitiveIdentification.lean",
     "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean",
+    "NLS/Articles/MKdVNLSHierarchies/SobolevPrimitiveIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")
@@ -143,6 +151,18 @@ if args.module_only:
     if args.full_audit:
         parser.error("--module-only cannot be combined with --full-audit")
     modules = args.module_only
+check_modules = modules
+if args.resume_from:
+    if args.module_only:
+        parser.error("--resume-from cannot be combined with --module-only")
+    if args.resume_from not in modules:
+        parser.error("--resume-from must name a checked module")
+    index = modules.index(args.resume_from)
+    for prior in modules[:index]:
+        cached = lib / Path(prior).with_suffix(".olean")
+        if not cached.exists() or cached.is_symlink():
+            parser.error(f"Missing prior private validated output: {cached}")
+    check_modules = modules[index:]
 targets = {Path(module).with_suffix(".olean") for module in modules}
 
 def overlay(source, target, prefix=Path()):
@@ -188,7 +208,7 @@ with (open("/tmp/diss-lean-article-build.lock", "a") if args.full_audit else
     if lock is not None:
         print("Waiting for shared article build lock", flush=True)
         fcntl.flock(lock, fcntl.LOCK_EX)
-    for module in modules:
+    for module in check_modules:
         run(module, lib / Path(module).with_suffix(".olean"))
     if not args.module_only:
         run("scripts/CheckMKdVNLSHierarchiesAxioms.lean")

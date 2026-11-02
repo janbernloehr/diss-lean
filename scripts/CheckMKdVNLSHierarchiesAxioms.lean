@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.SobolevPrimitiveIdentification
 import NLS.Articles.MKdVNLSHierarchies.PrimitiveIdentification
 import NLS.Articles.MKdVNLSHierarchies.InitialChecks
 import NLS.Articles.MKdVNLSHierarchies.SmoothFourthFlow
@@ -22,6 +23,7 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ComplexAnalysis.SourceDiscriminantData,
     `NLS.ZakharovShabat.continuousPotentialSource,
     `NLS.ZakharovShabat.continuousPotentialSource_realType,
     `NLS.ZakharovShabat.canonicalDiscriminant_continuousPotentialSource,
@@ -159,7 +161,13 @@ run_cmd do
     `NLS.LinearVolterra.solutionMap_intertwine,
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
-  let expected := #[``NLS.Articles.MKdVNLSHierarchies.lemma4_root_real_C1_right_halfPlane,
+  let expected := #[``NLS.Articles.MKdVNLSHierarchies.lemma4_root_real_H1_right_halfPlane,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma5_primitive_real_H1_right_halfPlane,
+    ``NLS.Articles.MKdVNLSHierarchies.hillPrimitive_physical_trace,
+    ``NLS.Articles.MKdVNLSHierarchies.hillPrimitive_hasDerivAt,
+    ``NLS.MKdV.quasiHill_sheets_eq_classicalHill,
+    ``NLS.ComplexAnalysis.SourceDiscriminantData.primitive_hasFDerivAt,
+    ``NLS.Articles.MKdVNLSHierarchies.lemma4_root_real_C1_right_halfPlane,
     ``NLS.Articles.MKdVNLSHierarchies.lemma5_primitive_real_C1_right_halfPlane,
     ``NLS.MKdV.physicalMiuraDiscriminant_eq_classicalHill,
     ``NLS.MKdV.diagonalNLSHamiltonian_even_eq_zero,

@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 1122,
+  "audited_declarations_and_auxiliaries": 1250,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -3009,12 +3009,332 @@
       "kind": "theorem",
       "name": "lemma5_primitive_real_C1_right_halfPlane",
       "file": "NLS/Articles/MKdVNLSHierarchies/PrimitiveIdentification.lean"
+    },
+    {
+      "kind": "def",
+      "name": "SourceDiscriminantData.radicand",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "SourceDiscriminantData.rootDomain",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "SourceDiscriminantData.continuationDomain",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "SourceDiscriminantData.freeRoot",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "SourceDiscriminantData.root",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "SourceDiscriminantData.multiplier",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "SourceDiscriminantData.primitive",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.radicand_analytic",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.rootDomain_open",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.continuationDomain_open",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.continuationDomain_subset",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.continuationDomain_segment",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.continuationDomain_idempotent",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.freeRoot_analytic",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.freeRoot_sq",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.root_analytic",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.root_sq",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.root_ne_zero",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.multiplier_analytic",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.multiplier_product",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.multiplier_ne_zero",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.primitive_analytic",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.primitive_base",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.exp_primitive",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.primitive_trace",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceDiscriminantData.primitive_hasFDerivAt",
+      "file": "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "quasiHillSourceCurveCLM",
+      "file": "NLS/MKdV/QuasiHillJointAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillSourceCurveCLM_apply",
+      "file": "NLS/MKdV/QuasiHillJointAnalytic.lean"
+    },
+    {
+      "kind": "def",
+      "name": "quasiHillEnergyCurveCLM",
+      "file": "NLS/MKdV/QuasiHillJointAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillEnergyCurveCLM_apply",
+      "file": "NLS/MKdV/QuasiHillJointAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillCoefficientCurve_eq_affine",
+      "file": "NLS/MKdV/QuasiHillJointAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_quasiHillCoefficientCurve_joint",
+      "file": "NLS/MKdV/QuasiHillJointAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_quasiHillDiscriminant_joint",
+      "file": "NLS/MKdV/QuasiHillJointAnalytic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHillDiscriminant_zero",
+      "file": "NLS/MKdV/QuasiHillJointAnalytic.lean"
+    },
+    {
+      "kind": "def",
+      "name": "quasiHillPrimitiveData",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHillContinuationDomain",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHillRoot",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHillPrimitive",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraDiagonalCurveCLM",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraDiagonalSourceCLM",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraDiagonalSource_realType",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraRealDiagonalSource",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "canonicalDiscriminant_miuraDiagonalSource",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillRadicand_ne_zero_of_real",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_miuraHillContinuationDomain_of_real",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillRoot_sq",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHillPrimitive_trace",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_miuraHillPrimitive",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_miuraHillPrimitive",
+      "file": "NLS/MKdV/QuasiHillSourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHill_sheets_eq_NLS",
+      "file": "NLS/MKdV/QuasiHillPrimitiveComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quasiHill_sheets_eq_classicalHill",
+      "file": "NLS/MKdV/QuasiHillPrimitiveComparison.lean"
+    },
+    {
+      "kind": "def",
+      "name": "periodOneMiuraCurveCLM",
+      "file": "NLS/MKdV/SobolevMiuraPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneMiuraCurveCLM_apply",
+      "file": "NLS/MKdV/SobolevMiuraPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sobolevMiuraPrimitive",
+      "file": "NLS/MKdV/SobolevMiuraPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneMiuraCurve_real",
+      "file": "NLS/MKdV/SobolevMiuraPrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "realDiagonalH1Source",
+      "file": "NLS/MKdV/SobolevMiuraPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraDiagonalSource_periodOneMiuraCurve",
+      "file": "NLS/MKdV/SobolevMiuraPrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneMiura_sheets_eq_NLS",
+      "file": "NLS/MKdV/SobolevMiuraPrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillRoot",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SobolevPrimitiveIdentification.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillPrimitive",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SobolevPrimitiveIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma4_root_real_H1_right_halfPlane",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SobolevPrimitiveIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "lemma5_primitive_real_H1_right_halfPlane",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SobolevPrimitiveIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPrimitive_physical_trace",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SobolevPrimitiveIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPrimitive_hasDerivAt",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SobolevPrimitiveIdentification.lean"
     }
   ],
-  "public_declaration_count": 598,
-  "theorem_count": 470,
-  "definition_count": 128,
-  "full_build": "All 104 article/shared modules and NLS aggregate compiled using the pinned cached imports; combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 662,
+  "theorem_count": 514,
+  "definition_count": 148,
+  "full_build": "All 110 article/shared modules and NLS aggregate compiled using pinned cached imports, with the unchanged prefix checked in the initial run and the repaired suffix checked by --resume-from. Complete combined aggregate/article audit passed under the shared lock. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
   "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit",
   "sha256": {
@@ -3028,6 +3348,8 @@
     "NLS/Articles/MKdVNLSHierarchies/SharpMiuraFlow.lean": "d4825b5f8d009c32377b6c9f14ffb5276bf8844797488a7e03b83c6e42c7c665",
     "NLS/Articles/MKdVNLSHierarchies/SmoothFourthFlow.lean": "21399990f0be798e393caa0cf2905e8b18fea3e9cba135ee6386a68161ad44a9",
     "NLS/Articles/MKdVNLSHierarchies/SmoothHierarchy.lean": "badb16925c1d37d1ea09db916002d213e78564bc03f48ba0e930dbd525dbc10c",
+    "NLS/Articles/MKdVNLSHierarchies/SobolevPrimitiveIdentification.lean": "ec30c5cfe97ddc06c06a82da4483526da98aab3447ff3b9fd028f6ba9ffd8958",
+    "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/DifferentialPolynomial/AlgebraicPolynomialVariation.lean": "f47e116f9798fd0279f23dabeea88fc34bd18148280e3c410f8ed23079f0e07f",
     "NLS/DifferentialPolynomial/ConstructedRiccatiResolvent.lean": "2429c2624f85d8a7fe9452430c1dfde0225760b35adf143ef951c6b4308c0190",
     "NLS/DifferentialPolynomial/DifferentialRiccati.lean": "4b1b37cebff45cc01e6f8f8a30fe53cbaf75af757794f52f40cc26b48e8e57ed",
@@ -3088,12 +3410,16 @@
     "NLS/MKdV/NativeMiuraHillHamiltonian.lean": "3d96f3716066e57838a30fa2fb9ffcd91bd785be69d6361c8c4cf82303c2fc8c",
     "NLS/MKdV/PhysicalHillDiscriminant.lean": "297660f9d77db5e24a4ab61cc6ed2b7e890c4f0ddd3ccb8bb554fac302aee9aa",
     "NLS/MKdV/QuasiHillDiscriminant.lean": "ee370b555779313027d7ee306269031630a2ce465c90cecadac8ae7fe1a6b726",
+    "NLS/MKdV/QuasiHillJointAnalytic.lean": "03c31e06422cedbaa5403c5095cc11b820daf3c66594aec33664dab6a1d3395a",
     "NLS/MKdV/QuasiHillPhysicalEquation.lean": "d0d58280e8aec3c56f89343c37f938f934892f2ea93f75a24e92cda86bd983d0",
     "NLS/MKdV/QuasiHillPhysicalUniqueness.lean": "349d7cba9f46de07507714abb474d5cef01c1be8488181d43e8190f72fd87f89",
+    "NLS/MKdV/QuasiHillPrimitiveComparison.lean": "10f23299731b004572742b40945325007dbe0e636f93f719d477d14f9c16fa08",
+    "NLS/MKdV/QuasiHillSourcePrimitive.lean": "7b57ffb08d81b2a2d6fd8e05829f5b2634b90a879bea371e0071fbed5310d365",
     "NLS/MKdV/QuasiHillZSComparison.lean": "0731af226de4d930dbc04de21ceb8cf0c363a68ab4cfb788760064c23ea2cf0c",
     "NLS/MKdV/SobolevHierarchyGradientRecurrence.lean": "802ea418bc96e67121c7db3bd4ee3f374bbb612d46fa5524cb46e1dd7ab3f1db",
     "NLS/MKdV/SobolevMiuraHillFlowRestriction.lean": "21dda2d38b28e0979b669046de531276ce0f31491be942a3637d8abe3c306e83",
     "NLS/MKdV/SobolevMiuraHillHamiltonian.lean": "438df70328c92c0021e092c91a56776a09235e511b9e1d5b37b8d502382140fd",
+    "NLS/MKdV/SobolevMiuraPrimitive.lean": "c2ab4e9b959535776a6b58c01f2443df9a75feafcc91c6d16a71136d83200c11",
     "NLS/MKdV/SobolevQuasiHill.lean": "6233ab01fc3fd86933062f2f374db91e8464fcc25c6fd0a6a6e9655b208905a3",
     "NLS/ZakharovShabat/ClassicalNLSEnergyVariation.lean": "99944ccf33c348be7a7324ae93bb9559761bccdff6a34fbcd5e719f93bb4aafe",
     "NLS/ZakharovShabat/ClassicalNLSFourthHamiltonian.lean": "7eb0973075e5414613b80cc73466c087d362422265902d0aa2425bf0a3e38f73",
@@ -3122,11 +3448,11 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "659dfbf5359ff5f66a24b8c8a79e05ec956fa81be56ba48f7ac921f4750be72f",
-    "scripts/check_mkdv_nls.py": "15ef03ee1363390156ad7e2f64e677e2c72d2b14c47e4fa960e50508435798f9"
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "e1b4db86046fc3f92d89cacb1e2ae5833388482be3d950c67d8cea130dec890a",
+    "scripts/check_mkdv_nls.py": "ad95b7ad35963ba3da975d500d89d5bad3888fce205dab727e8b0bf4a4aabfed"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 104,
+  "focused_module_count": 110,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -3199,17 +3525,24 @@
       "audit_count": 1122,
       "combined_NLS_audit_count": 46306,
       "aggregate_compiled": true
+    },
+    {
+      "milestone": "independent quasi-Hill root and primitive on continuous profiles; full real H1 source comparison at nonreal right frequencies; original physical H1 trace and energy derivative; bounded H1 source embedding and complex H1 analyticity",
+      "audit_count": 1250,
+      "combined_NLS_audit_count": 46434,
+      "aggregate_compiled": true
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 46306,
+  "combined_audited_NLS_declarations": 46434,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
     "commit": "d12831411f4ad00777304b6623dbb3226730b4eb",
     "module_count": 19,
     "all_copied_sources_identical": true
-  }
+  },
+  "last_run_notes": "Initial full run checked the unchanged prefix, then the H1 adapter elaboration was fixed and validation resumed there with --full-audit --resume-from NLS/MKdV/SobolevMiuraPrimitive.lean. The aggregate and both complete axiom audits include all 110 modules."
 }

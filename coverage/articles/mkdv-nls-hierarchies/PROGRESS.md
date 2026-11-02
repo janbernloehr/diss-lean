@@ -631,3 +631,57 @@ excluded), with SHA256 hashes for all 104 checked sources and both checker
 files. Validation uses read-only pinned cached imports and private build
 outputs; the entire dependency tree was not rebuilt from source. Canonical
 main remains clean at c5bcf6344cd2e2628ae537e98b85bb9ec1849dec.
+
+
+## 2026-11-02 — independent physical primitive on the full real H1 domain
+
+`SourceDiscriminantPrimitive.lean` factors the free-normalized continuation
+argument into a reusable construction for an actual entire discriminant
+on an arbitrary complex normed source space. It proves analyticity of the
+root, multiplier and primitive on the open source-continuation domain,
+the exact square and hyperbolic trace identities, and the full joint
+Frechet differential root_inverse times d_discriminant. All structure
+hypotheses are proved for the independent quasi-Hill IVP instance.
+
+`QuasiHillJointAnalytic.lean` proves that the actual quasi-derivative
+coefficient is affine, and its Volterra discriminant jointly entire, in
+energy and the continuous profile. `QuasiHillSourcePrimitive.lean` constructs
+the independent Miura root and primitive from that discriminant. Their
+definitions do not use NLS spectral functions. Actual NLS spectral reality
+proves admissibility of every real continuous profile at nonreal right
+frequency points; continuity from the literal free values then proves exact
+root and primitive equality with the original NLS functions.
+
+`QuasiHillPrimitiveComparison.lean` also proves agreement with the previously
+integrated independent scalar Hill construction for every C1 periodic real
+profile. `SobolevMiuraPrimitive.lean` identifies the physical Fourier source
+with the coefficient-preserving original diagonal H1 pair. The physical
+period-one representative is a bounded complex-linear map in the original
+H1 norm, and the primitive is analytic in that complex H1 source on its
+admissible domain. Conjugate reflection of the original coefficients
+supplies reality of every representative in the real H1 domain.
+
+The article now exports `lemma4_root_real_H1_right_halfPlane` and
+`lemma5_primitive_real_H1_right_halfPlane`. These remove the C1 restriction
+on the profile. It also proves the exact hyperbolic trace and energy
+derivative for the original physical H1 Hill discriminant, conditional
+only on membership in the constructed complex continuation domain.
+
+The frequency restriction Im z != 0, Re z > 0 remains in the comparison.
+Real bands, the whole labeled gap complement, spectral action integrals
+and mKdV coordinate/frequency comparison remain essential. Theorem 1
+for the source spectral hierarchy and Theorems 3 and 4 remain incomplete.
+
+All 110 article/shared modules and the NLS aggregate compiled with Lean
+4.33.1, autoImplicit=false and warnings as errors. The targeted transitive
+axiom audit passed for 1,250 declarations and generated auxiliaries; the
+combined audit passed for 46,434 NLS declarations. Only propext,
+Classical.choice and Quot.sound are allowed. The public theorem/definition
+inventory contains 662 entries (514 theorems, 148 definitions; aliases and
+structure declarations excluded), with 112 SHA256 source/checker hashes.
+The checker can resume a failed run with --resume-from, requiring private
+outputs for the previously checked prefix while retaining the complete
+aggregate and axiom audits. This validation checked the unchanged prefix,
+repaired an H1 adapter elaboration, then resumed there; both complete
+audits passed. Validation uses pinned cached imports, not a rebuild of the
+entire dependency tree.
