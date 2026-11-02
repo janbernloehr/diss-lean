@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.CartesianLocalInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.SobolevCartesianIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianSequenceIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianActionIdentification
@@ -43,6 +44,22 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ZakharovShabat.sourceDiagonalActionRatio_zero,
+    `NLS.ZakharovShabat.sourceDiagonalActionRoot_zero,
+    `NLS.ZakharovShabat.sourceDiagonalActionRoot_zero_ne_zero,
+    `NLS.ZakharovShabat.exists_diagonalActionRoot_scaled_inverse_bound,
+    `NLS.ZakharovShabat.sourceDiagonalActionRootInverseSequence,
+    `NLS.ZakharovShabat.sourceDiagonalActionRootInverseSequence_apply,
+    `NLS.ZakharovShabat.sourceDiagonalActionRootInverseSequence_mul,
+    `NLS.WeightedCoeff.positiveSubmodule,
+    `NLS.WeightedCoeff.isClosed_positiveSubmodule,
+    `NLS.WeightedCoeff.positiveAmbientProjection,
+    `NLS.WeightedCoeff.positiveAmbientProjection_apply,
+    `NLS.WeightedCoeff.positiveProjection,
+    `NLS.WeightedCoeff.positiveProjection_apply,
+    `NLS.WeightedCoeff.positiveProjection_eq_self,
+    `NLS.WeightedCoeff.positiveSubmoduleComplete,
+    `NLS.ComplexAnalysis.exists_analytic_openPartialHomeomorph_of_fderiv_equiv,
     `NLS.ZakharovShabat.sourceDiagonalScaledActionRoot,
     `NLS.ZakharovShabat.sourceDiagonalActionRootSequence,
     `NLS.ZakharovShabat.exists_local_sourceDiagonalActionRootSequence_analytic,

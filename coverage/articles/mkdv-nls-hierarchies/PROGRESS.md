@@ -1681,3 +1681,39 @@ comparison remain essential. Properness is currently proved only in
 original L2. The overall main-theorem goal remains active.
 
 Validation: all 316 article/shared modules have validated private outputs. The 310 unchanged prefix source hashes match 9cba64b and their outputs were reused; all six added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 3,741 declarations/auxiliaries and the combined audit for 48,675 NLS declarations, using only the standard allowed axioms. All 318 mathematical source/checker hashes match the frozen inputs. The public inventory is 1,908 declarations (1,547 theorems and 361 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source.
+
+
+## Actual free Jacobian equivalence and nonlinear native L2 inverse chart
+
+The exact free physical ratio is 1/(2*pi*n), and its positive root fixes
+the Fourier scaling of the actual Cartesian derivative. The derivative
+of the scaling contributes zero at the free profile because both original
+NLS rectangular coordinates vanish there. Differentiating the actual map
+therefore gives the signed and scaled scalar Fourier transform.
+
+The positive-index target is now a closed complex Banach subspace of the
+native half-order Hilbert space, paired twice and with the literal mean.
+Its bounded projection keeps every physical coordinate. A uniform lower
+bound for scaled physical ratios bounds the inverse scaling symbol at
+every physical diagonal, including closed actions. The explicit free
+inverse reconstructs the two signed Fourier coefficients from the positive
+Cartesian pair, and reconstructs the zero mode from the signed mean.
+
+Both operator inverse identities are proved on the entire original
+complex L2 space and the entire natural native Cartesian/mean target.
+They are not finite-mode identities or abstract invertibility hypotheses.
+The actual free derivative is consequently a bounded complex linear
+equivalence. A reusable inverse theorem for different native Banach
+source/target spaces constructs the original nonlinear map's analytic
+inverse on full open neighborhoods of zero, with both exact inverse
+identities, image equality and bijectivity. The physical real L2 map into
+the natural positive target is also globally proper.
+
+The nonlinear inverse is currently a complex L2 local chart at the free
+profile. Real-form and higher-Sobolev inverse restrictions, Gardner
+canonicity and a global inverse at general profiles, general nonzero-fiber
+uniqueness/surjectivity, global forward action factorization, independent
+angles/final angle-sum factorization and full corrected frequency comparison
+remain essential. The overall main-theorem goal remains active.
+
+Validation: all 328 article/shared modules have validated private outputs. The 316 unchanged prefix source hashes match 809e52c and their outputs were reused; all 12 added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 3,876 declarations/auxiliaries and the combined audit for 48,810 NLS declarations, using only the standard allowed axioms. All 330 mathematical source/checker hashes match the frozen inputs. The public inventory is 1,964 declarations (1,588 theorems and 376 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source.

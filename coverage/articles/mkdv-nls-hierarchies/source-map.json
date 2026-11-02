@@ -154,7 +154,10 @@
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_mean_map_proper",
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_allSobolev_analytic",
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_allSobolev_action_sequence",
-        "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_Banach_analytic"
+        "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_Banach_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_free_jacobian_equivalence",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_local_inverse",
+        "NLS.Articles.MKdVNLSHierarchies.native_positive_cartesian_real_L2_map_proper"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -185,7 +188,10 @@
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_mean_map_proper",
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_allSobolev_analytic",
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_allSobolev_action_sequence",
-        "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_Banach_analytic"
+        "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_Banach_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_free_jacobian_equivalence",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_local_inverse",
+        "NLS.Articles.MKdVNLSHierarchies.native_positive_cartesian_real_L2_map_proper"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -787,6 +793,27 @@
     "original_H1_independent_physical_radii": "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_native_radius",
     "H1_native_three_halves_weight": "NLS.MKdV.miuraCartesianWeight_one",
     "scope": "For every integer s>=0 the actual original Cartesian family is complex Banach analytic on an open native H^s neighborhood containing the entire physical real subspace, into the full weighted Hilbert pair with weight (1+|n|)^(s+1/2). Every raw coefficient agrees with the L2 family, including closed selected actions and zero mean. Outputs are real on physical sources. The analytic quadratic projection recovers the complete actual weighted l1 action sequence of order 2*s+1. Original ScalarDomain 2 H1 has its full order-three-halves map and exact independent Hill-contour action radii.",
-    "limits": "These are actual native analytic Cartesian representatives, not a proved independent Gardner-canonical Birkhoff diffeomorphism. Gardner canonicity, a global inverse, general nonzero-fiber uniqueness/surjectivity, forward restricted-NLS-action factorization, final angle-sum factorization and full corrected frequency identification remain essential. Properness is proved only in the original L2 topology."
+    "limits": "The natural positive-index original complex L2 Cartesian/mean map now has a genuine analytic inverse chart at the free profile, with an explicit bounded Fourier Jacobian inverse. Real-form and higher-Sobolev inverse restrictions, Gardner canonicity, a global inverse at general profiles, general nonzero-fiber uniqueness/surjectivity, forward action factorization, final angle-sum factorization and full corrected frequency identification remain essential. Global properness is proved only in original real L2."
+  },
+  "native_zero_Cartesian_inverse": {
+    "free_ratio_normalization": "NLS.ZakharovShabat.sourceDiagonalActionRatio_zero",
+    "positive_free_scale": "NLS.ZakharovShabat.sourceDiagonalActionRoot_zero",
+    "bounded_inverse_scaling_all_real_diagonals": "NLS.ZakharovShabat.exists_diagonalActionRoot_scaled_inverse_bound",
+    "actual_inverse_scaling_symbol": "NLS.ZakharovShabat.sourceDiagonalActionRootInverseSequence_apply",
+    "closed_native_positive_Banach_target": "NLS.WeightedCoeff.positiveSubmodule",
+    "closedness": "NLS.WeightedCoeff.isClosed_positiveSubmodule",
+    "actual_free_selected_derivative": "NLS.MKdV.fderiv_miuraL2CartesianCoordinates_zero_explicit",
+    "native_positive_cartesian_mean_map": "NLS.MKdV.miuraPositiveCartesianMap",
+    "actual_bounded_free_jacobian": "NLS.MKdV.miuraCartesianFreeJacobian",
+    "explicit_bounded_inverse": "NLS.MKdV.miuraCartesianFreeInverse",
+    "left_inverse_on_entire_original_complex_L2": "NLS.MKdV.miuraCartesianFreeInverse_jacobian",
+    "right_inverse_on_entire_natural_native_target": "NLS.MKdV.miuraCartesianFreeJacobian_inverse",
+    "bounded_linear_equivalence": "NLS.MKdV.miuraCartesianFreeEquiv",
+    "article_free_jacobian_equivalence": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_free_jacobian_equivalence",
+    "nonlinear_native_analytic_inverse_at_zero": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_local_inverse",
+    "global_physical_properness_in_natural_target": "NLS.Articles.MKdVNLSHierarchies.native_positive_cartesian_real_L2_map_proper",
+    "scope": "Actual original complex L2 source and closed native positive-index half-order weighted Hilbert pair plus the literal complex mean. The free Jacobian and its explicit inverse are bounded operators, with both inverse identities on the whole spaces and no finite-mode or source-reality restriction. The original nonlinear Cartesian map is a bijection between full open source/target neighborhoods of zero with complex Banach analytic inverse and both exact inverse identities. On the entire original physical real L2 source its natural positive-target map is proper.",
+    "normalization": "The free ratio is 1/(2*pi*n); the positive scaling is sqrt(1/(2*pi*n)). The second Cartesian coordinate has the checked negative sign. The inverse combines the two signed Fourier modes and reconstructs the zero mode from the signed mean.",
+    "limits": "The nonlinear inverse is currently a complex L2 local chart at the free profile. Physical real-form inverse restriction, higher Sobolev inverse branches, a global inverse and Gardner canonicity at general profiles, global forward restricted-NLS-action factorization, final angle-sum factorization and full corrected frequency identification remain essential."
   }
 }

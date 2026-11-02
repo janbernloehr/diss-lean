@@ -350,6 +350,18 @@ modules = [
     "NLS/MKdV/MiuraSobolevCartesianActions.lean",
     "NLS/MKdV/MiuraH1CartesianSequence.lean",
     "NLS/Articles/MKdVNLSHierarchies/SobolevCartesianIdentification.lean",
+    "NLS/ZakharovShabat/SourceDiagonalActionFree.lean",
+    "NLS/ZakharovShabat/SourceDiagonalActionRootInverse.lean",
+    "NLS/SequenceSpaces/PositiveWeightedCoefficients.lean",
+    "NLS/MKdV/MiuraCartesianFreeDifferential.lean",
+    "NLS/MKdV/MiuraPositiveCartesianMap.lean",
+    "NLS/MKdV/MiuraCartesianFreeInverse.lean",
+    "NLS/MKdV/CartesianFourierAlgebra.lean",
+    "NLS/MKdV/MiuraCartesianFreeEquivalence.lean",
+    "NLS/ComplexAnalysis/AnalyticEquivalentDerivativeInverse.lean",
+    "NLS/MKdV/MiuraCartesianLocalInverse.lean",
+    "NLS/MKdV/MiuraPositiveCartesianProperness.lean",
+    "NLS/Articles/MKdVNLSHierarchies/CartesianLocalInverseIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")
