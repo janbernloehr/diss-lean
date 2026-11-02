@@ -317,6 +317,17 @@
         "NLS/Articles/KdVPseudomeasures/SpectralReality.lean"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-reality-map.json"
+    },
+    {
+      "label": "Actual singular high pairs and direct high-gap endpoint regularity",
+      "content": "Unique ordered actual physical pairs exhaust every allowed corrected strip with exact algebraic multiplicities. They have strict order across high mode numbers, actual source full-domain eigenvectors, coupling gap bounds and an infinity-Sobolev high-gap tail with an explicit original-norm bound.",
+      "status": "Proved for the original endpoint source and full physical domains, uniformly on original norm balls. The global canonical slots, central offset and boundary-condition identification remain open; low indices of the constructed gap tail are explicitly zero.",
+      "modules": [
+        "NLS/KdV/PseudomeasureRealPairs.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralPairs.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralGapTail.lean"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-real-pairs-map.json"
     }
   ],
   "reuse_map": [

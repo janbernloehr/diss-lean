@@ -1,0 +1,133 @@
+{
+  "source": "arXiv:1610.00278v1 Section2 high periodic/antiperiodic spectral pairs and Lemma2.11(23); direct high-tail endpoint gap regularity needed for main Theorem1.4 and inverse spectral regularity Theorem5.1.",
+  "main_theorems_verified": false,
+  "phase": "Actual ordered singular high pairs, exact physical multiplicities, strict tail ordering and infinity-Sobolev regularity of the actual high-gap tail",
+  "modules": [
+    "NLS/KdV/PseudomeasureRealPairs.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralPairs.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralGapTail.lean"
+  ],
+  "modified_shared_module": "NLS/KdV/PseudomeasureRootSeparation.lean",
+  "declarations": [
+    "NLS.KdV.endpointReducedDeterminant_strip_hasFiniteSupport",
+    "NLS.KdV.exists_endpointHillRealPair",
+    "NLS.KdV.EndpointHillRealPair.endpoints_unique",
+    "NLS.KdV.EndpointHillRealPair.unique",
+    "NLS.KdV.endpointHillRealPair",
+    "NLS.KdV.EndpointHillRealPair.left_multiplicity",
+    "NLS.KdV.EndpointHillRealPair.right_multiplicity",
+    "NLS.KdV.EndpointHillRealPair.collapsed_iff_multiplicity_two",
+    "NLS.KdV.EndpointHillRealPair.gap",
+    "NLS.KdV.EndpointHillRealPair.midpoint",
+    "NLS.KdV.EndpointHillRealPair.gap_nonneg",
+    "NLS.KdV.EndpointHillRealPair.gap_eq_zero_iff",
+    "NLS.KdV.EndpointHillRealPair.gap_le",
+    "NLS.KdV.EndpointHillRealPair.midpoint_localized",
+    "NLS.KdV.EndpointHillRealPair.analytic_orders",
+    "NLS.KdV.EndpointHillRealPair.left_geometric_multiplicity",
+    "NLS.KdV.EndpointHillRealPair.right_geometric_multiplicity",
+    "NLS.KdV.EndpointHillRealPair.left_zero",
+    "NLS.KdV.EndpointHillRealPair.right_zero",
+    "NLS.KdV.EndpointHillRealPair.left_has_eigenvector",
+    "NLS.KdV.EndpointHillRealPair.right_has_eigenvector",
+    "NLS.KdV.EndpointHillRealPair.gap_le_couplingRadius",
+    "NLS.KdV.EndpointHillRealPair.gap_le_weight_norm",
+    "NLS.KdV.EndpointHillRealPair.normalized_gap_le",
+    "NLS.KdV.EndpointHillRealPair.weighted_gap_le",
+    "NLS.KdV.EndpointHillRealPair.right_lt_left",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair",
+    "NLS.Articles.KdVPseudomeasures.sourceHillRealPair",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.spectrum_iff",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.multiplicities",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.unique",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.left_has_eigenvector",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.right_has_eigenvector",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.left_multiplicity",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.right_multiplicity",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.gap_le_couplingRadius",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.normalized_gap_le",
+    "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.right_lt_left",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_ordered_real_tail",
+    "NLS.Articles.KdVPseudomeasures.sourceHighGapTailValues",
+    "NLS.Articles.KdVPseudomeasures.sourceHighGapTailValues_neg",
+    "NLS.Articles.KdVPseudomeasures.sourceHighGapTailValues_im",
+    "NLS.Articles.KdVPseudomeasures.norm_sourceHighGapTailValues_le",
+    "NLS.Articles.KdVPseudomeasures.sourceHighGapTail",
+    "NLS.Articles.KdVPseudomeasures.sourceHighGapTail_apply",
+    "NLS.Articles.KdVPseudomeasures.norm_sourceHighGapTail_le",
+    "NLS.Articles.KdVPseudomeasures.source_uniform_ordered_real_tail_with_gap_space",
+    "NLS.KdV.sqrt_endpointCouplingProduct_le_weight_norm",
+    "NLS.KdV.endpointCouplingRadius_le_weight_norm"
+  ],
+  "domains": {
+    "endpoint": "Original real H-minus-one realization of order-r infinity endpoint potentials,0<=r<1/2. Generic pair existence does not impose mean-zero or physical period-one.",
+    "source": "Original real mean-zero physically period-one Potential(r), whose distribution is unchanged by the verified coefficient and H-minus-one identifications.",
+    "domain": "The entire original period-two H1 space; actual endpoint eigenvectors solve the original H-minus-one operator equation.",
+    "strip": "The full corrected closed strip |Re(lambda)-pi^2*n^2|<=6*n,n>=1, under the existing half-contraction cutoff.",
+    "uniformity": "A single cutoff is chosen before q on every exact original endpoint norm ball, then n and lambda; all high pairs and signed high-gap coefficients use that cutoff.",
+    "gap_scale": "Weight.sobolev(-r) at signed mode numbers, genuine exponent infinity. High gaps are the widths of actual ordered pairs, evenly extended to signed indices; all indices below the cutoff are explicitly zero."
+  },
+  "conclusions": {
+    "intrinsic_actual_pair": "NLS.KdV.EndpointHillRealPair",
+    "existence": "NLS.KdV.exists_endpointHillRealPair",
+    "uniqueness": "NLS.KdV.EndpointHillRealPair.unique",
+    "full_strip_multiplicities": "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.multiplicities",
+    "actual_gap_coupling_bound": "NLS.Articles.KdVPseudomeasures.SourceHillRealPair.gap_le_couplingRadius",
+    "ordered_original_tail": "NLS.Articles.KdVPseudomeasures.source_uniform_ordered_real_tail",
+    "actual_high_gap_space": "NLS.Articles.KdVPseudomeasures.sourceHighGapTail",
+    "uniform_original_tail_with_gap_space": "NLS.Articles.KdVPseudomeasures.source_uniform_ordered_real_tail_with_gap_space"
+  },
+  "constants": {
+    "root_localization": "sqrt(n)/4",
+    "pair_gap_localization": "sqrt(n)/2",
+    "source_coupling_gap": "sqrt(6)*actual full-strip coupling radius",
+    "doubled_frequency_normalization": "(1+2n)^(-r)*gap <=2*sqrt(6)*norm(q)",
+    "ordinary_mode_normalization": "(1+n)^(-r)*gap <=6*sqrt(6)*norm(q)",
+    "weighted_tail_norm": "norm(g)<=6*sqrt(6)*norm(q); g_k=gap_{|k|} for |k|>=N and0 otherwise"
+  },
+  "shared_method": {
+    "branch": "articles/kdv-estimates",
+    "method": "Read-only inspection of regular L2 HillRealGapPairs. The reusable generic zero-multiset construction and elementary uniqueness strategy are reused after proving the actual singular hypotheses. Regular L2 physical conclusions are not instantiated as singular conclusions.",
+    "copied_files": 0
+  },
+  "results": [
+    "The actual analytic-order count has finite support on the entire unbounded corrected tail strip: physical spectral discreteness and the proved root localization place its support in a bounded actual physical spectral set.",
+    "The verified generic analytic zero-multiset theorem constructs two actual singular endpoint roots with their exact repetitions. Native spectral reality and sorting give an intrinsic ordered real pair; both endpoints are actual eigenvalues with nonzero vectors in the entire original H1 domain.",
+    "Each actual pair exhausts the full corrected closed strip, with actual original physical algebraic multiplicity equal to Multiset{left,right}.count at every strip point. The ordered pair is unique independently of its construction.",
+    "Distinct endpoints have actual algebraic multiplicity1, and a collapsed pair has actual multiplicity2. Native real semisimplicity gives the same geometric dimensions in the unchanged H1 domain.",
+    "Actual pair endpoints lie within sqrt(n)/4 of pi^2*n^2. Their gap is nonnegative and at most sqrt(n)/2, and their midpoint lies within sqrt(n)/4. The actual pairs are strictly separated across distinct high mode numbers, also for different potentials whenever both pairs have been constructed.",
+    "The full-strip actual coupling radius has explicit bound2*(1+2n)^r*norm(q), reusing one common pointwise coupling-product bound. The actual physical gap obeys the source square-root-six coupling estimate, hence the doubled-frequency normalized bound2*sqrt6*norm(q) and ordinary mode-number weighted bound6*sqrt6*norm(q).",
+    "Original physical source wrappers retain the complete original potential distribution, exact original norm, real mean-zero period-one constraints and full original H1 eigenvectors. One cutoff chosen before the potential on each original norm ball constructs an actual ordered high-pair family.",
+    "The actual high-gap sequence, evenly extended to signed indices and explicitly zero below the cutoff, belongs to WeightedCoeff(Weight.sobolev(-r),infinity) with its true infinity-exponent norm at most6*sqrt6*norm(q). A single original norm-ball cutoff gives the ordered family and this weighted sequence, without a finite-p substitute."
+  ],
+  "qualifications": [
+    "These are actual physical eigenvalue pairs, not freely specified roots, arbitrary frequency maps or auxiliary model spectra.",
+    "Global canonical labels, the low-mode offset and periodic/antiperiodic parity are not inferred from local pair counts or strict ordering.",
+    "The weighted gap result concerns the explicitly truncated actual high-pair tail. It does not replace or assert the unproved complete source canonical gap sequence or the inverse spectral regularity theorem.",
+    "The potential norm remains the full original infinity endpoint norm; no vanishing-tail, smaller regular potential class or finite-p substitution is assumed."
+  ],
+  "remaining": [
+    "Prove global wide localization and the exact central spectral count (or an equivalent full enumeration argument) to exclude extra spectral points outside the high strips and fix the low-mode offset.",
+    "Prove the actual period-one source parity/boundary-condition identification and identify the constructed high mode-number pairs with canonical periodic/antiperiodic global labels. Strict tail ordering and local two-counts alone do not supply this global assignment.",
+    "Complete physical gap/Dirichlet estimates and inverse spectral regularity, original Birkhoff maps and the actual H-minus-one KdV flow.",
+    "Precisely state and prove every main Theorem1.1,1.3,1.4,5.1,5.9 with all source domains, quantifiers, normalization and topology. These remain unproved."
+  ],
+  "validation": {
+    "modules_checked": 94,
+    "audited_declarations": 947,
+    "theorems": 761,
+    "definitions": 186,
+    "newly_audited_declarations": 49,
+    "new_theorems": 42,
+    "new_definitions": 7,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fresh_build": true,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "log": ".lake/article-check/logs/validation-real-pairs.log"
+  }
+}

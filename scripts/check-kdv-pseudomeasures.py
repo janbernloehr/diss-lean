@@ -85,6 +85,7 @@ modules = [
     'NLS.KdV.PseudomeasureRealSpectrum',
     'NLS.KdV.PseudomeasureSpectralLipschitz',
     'NLS.KdV.PseudomeasureRootSeparation',
+    'NLS.KdV.PseudomeasureRealPairs',
     'NLS.Fourier.PeriodicPseudomeasureWeakStar',
     'NLS.Fourier.PeriodicWeightedWeakStar',
     'NLS.Fourier.PeriodicDistributionParity',
@@ -115,6 +116,8 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralChainJets',
     'NLS.Articles.KdVPseudomeasures.SpectralMultiplicityOrder',
     'NLS.Articles.KdVPseudomeasures.SpectralReality',
+    'NLS.Articles.KdVPseudomeasures.SpectralPairs',
+    'NLS.Articles.KdVPseudomeasures.SpectralGapTail',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

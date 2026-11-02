@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Native real singular Hill spectrum, Hermitian weak form on the full H1 domain, semisimplicity and uniform real tail multiplicities",
+  "phase": "Actual ordered singular high pairs, exact physical multiplicities, strict tail ordering and infinity-Sobolev regularity of the actual high-gap tail",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
@@ -66,6 +66,7 @@
     "NLS/KdV/PseudomeasureRealSpectrum.lean",
     "NLS/KdV/PseudomeasureSpectralLipschitz.lean",
     "NLS/KdV/PseudomeasureRootSeparation.lean",
+    "NLS/KdV/PseudomeasureRealPairs.lean",
     "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean",
     "NLS/Fourier/PeriodicWeightedWeakStar.lean",
     "NLS/Fourier/PeriodicDistributionParity.lean",
@@ -96,13 +97,15 @@
     "NLS/Articles/KdVPseudomeasures/SpectralChainJets.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralMultiplicityOrder.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralReality.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralPairs.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralGapTail.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 719,
-  "definitions": 179,
+  "proved_theorems": 761,
+  "definitions": 186,
   "axiom_audit": {
     "method": "Lean #print axioms on every source-inventoried public definition/theorem, with nested namespaces and qualified names supported. Exact inventory/audit/output set match, followed by allowlist check. Private imported proofs are covered transitively.",
-    "declarations": 898,
+    "declarations": 947,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -242,10 +245,18 @@
     "Reusable pencil algebra identifies the original domain kernel with the first root-space level through an injective inclusion and proves that excluding length-two associated vectors collapses every finite chain and the full algebraic root space to that level.",
     "For native real original singular potentials, every actual algebraic root space is the first physical root level. For real endpoint potentials the actual algebraic multiplicity equals the full original geometric eigenspace dimension globally, at every complex spectral parameter.",
     "The full real endpoint spectrum is real and every original source pencil at a nonreal parameter is bijective on its full original H1 domain. These are actual spectral/resolvent statements, using the proved global Fredholm alternative.",
-    "On corrected tail strips, every actual real-source determinant zero is real, and actual physical algebraic multiplicity and analytic determinant order are at most two. A single cutoff chosen before every original real mean-zero physically period-one potential on each exact endpoint norm ball gives real zeros of actual multiplicity one or two and total algebraic count two."
+    "On corrected tail strips, every actual real-source determinant zero is real, and actual physical algebraic multiplicity and analytic determinant order are at most two. A single cutoff chosen before every original real mean-zero physically period-one potential on each exact endpoint norm ball gives real zeros of actual multiplicity one or two and total algebraic count two.",
+    "The actual analytic-order count has finite support on the entire unbounded corrected tail strip: physical spectral discreteness and the proved root localization place its support in a bounded actual physical spectral set.",
+    "The verified generic analytic zero-multiset theorem constructs two actual singular endpoint roots with their exact repetitions. Native spectral reality and sorting give an intrinsic ordered real pair; both endpoints are actual eigenvalues with nonzero vectors in the entire original H1 domain.",
+    "Each actual pair exhausts the full corrected closed strip, with actual original physical algebraic multiplicity equal to Multiset{left,right}.count at every strip point. The ordered pair is unique independently of its construction.",
+    "Distinct endpoints have actual algebraic multiplicity1, and a collapsed pair has actual multiplicity2. Native real semisimplicity gives the same geometric dimensions in the unchanged H1 domain.",
+    "Actual pair endpoints lie within sqrt(n)/4 of pi^2*n^2. Their gap is nonnegative and at most sqrt(n)/2, and their midpoint lies within sqrt(n)/4. The actual pairs are strictly separated across distinct high mode numbers, also for different potentials whenever both pairs have been constructed.",
+    "The full-strip actual coupling radius has explicit bound2*(1+2n)^r*norm(q), reusing one common pointwise coupling-product bound. The actual physical gap obeys the source square-root-six coupling estimate, hence the doubled-frequency normalized bound2*sqrt6*norm(q) and ordinary mode-number weighted bound6*sqrt6*norm(q).",
+    "Original physical source wrappers retain the complete original potential distribution, exact original norm, real mean-zero period-one constraints and full original H1 eigenvectors. One cutoff chosen before the potential on each original norm ball constructs an actual ordered high-pair family.",
+    "The actual high-gap sequence, evenly extended to signed indices and explicitly zero below the cutoff, belongs to WeightedCoeff(Weight.sobolev(-r),infinity) with its true infinity-exponent norm at most6*sqrt6*norm(q). A single original norm-ball cutoff gives the ordered family and this weighted sequence, without a finite-p substitute."
   ],
-  "source_correspondence": "Native real original H-minus-one potentials have a Hermitian weak form on the entire original H1 domain, real actual eigenvalues and no nonzero associated vectors. Every actual algebraic root space is the physical eigenspace. In the endpoint range, algebraic and geometric multiplicities agree globally and the full physical spectrum is real. The original source wrappers retain the entire distribution, physical constraints and exact original norm; a uniform norm-ball cutoff gives real tail determinant zeros of actual multiplicity one or two and total algebraic count two. Canonical global spectral labels, the central offset, physical gap/Dirichlet and inverse regularity estimates, original Birkhoff maps and all main KdV theorems remain open. All main theorem completion flags remain false.",
-  "build_isolation": "All91 modules rebuilt in a fresh empty private output view; canonical/package imports stay read-only symlinks and every compiler destination is checked to remain private. Exact898-declaration transitive audit passed without warnings or tactic suggestions. Canonical tracked sources and build outputs were not written. Previously uncommitted native conjugation work is now integrated and audited with this spectral-reality milestone.",
+  "source_correspondence": "The actual singular endpoint determinant now constructs a unique ordered physical high pair on every allowed corrected strip. The pair exhausts that entire strip with exact physical algebraic multiplicities, is strictly ordered across mode numbers, has actual original H1 eigenvectors and obeys the source coupling gap bound. Its actual high-gap tail belongs to the original infinity-exponent Sobolev coefficient scale with an explicit original-norm bound. Global wide localization, the central low-mode count, canonical periodic/antiperiodic labeling and boundary-condition identification remain open. The truncated high-gap sequence is explicitly zero below the cutoff and is not asserted to be the full canonically labeled source gap sequence. All main theorem completion flags remain false.",
+  "build_isolation": "All94 modules rebuilt in a fresh empty private output view; canonical/package imports stay read-only symlinks and every compiler destination is checked to remain private. Exact947-declaration transitive audit passed without warnings or tactic suggestions. Canonical tracked sources and build outputs were not written.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
@@ -310,7 +321,8 @@
     "NLS/KdV/PseudomeasureMultiplicityOrder.lean": "b75f4d4e01a6ad2cf080da3fe4c4da28f56a87939e891ce4ad6194843699f3ed",
     "NLS/KdV/PseudomeasureRealSpectrum.lean": "892e69f480e43eae347bd0d43145dc7a233f68b7a232ad806e193e0c14c0e7ac",
     "NLS/KdV/PseudomeasureSpectralLipschitz.lean": "56095be5961d84250521d0362911e603c09c3eba3e70708935f9c0fae050a55f",
-    "NLS/KdV/PseudomeasureRootSeparation.lean": "514f840ea04fc243b5e3da1dacfe7e24b24fb6fd8090bdcd80900a2107f7a205",
+    "NLS/KdV/PseudomeasureRootSeparation.lean": "ac7df1ef009060957d100aa5f140d4fe2dcddd5a3ca80c4787a25a5cd543aca3",
+    "NLS/KdV/PseudomeasureRealPairs.lean": "f1a192e03de32c0af09d3e7a4546403d17b167cfdecc9063c48dceced47b2dac",
     "NLS/Fourier/PeriodicPseudomeasureWeakStar.lean": "03ae1556984317c6d46a0d110226c0359a6a0bdad43c0ae25a16fc882e09cb51",
     "NLS/Fourier/PeriodicWeightedWeakStar.lean": "d0cd997aec48bbc96a77797449dd8a5f46552e918c1bff17e6aa8fba9cc291ba",
     "NLS/Fourier/PeriodicDistributionParity.lean": "4121127cdee0b0ac620cd83446b9918fa2b9d59be9d5fc3ff8739f2f89083b27",
@@ -341,7 +353,9 @@
     "NLS/Articles/KdVPseudomeasures/SpectralChainJets.lean": "76a4cbb3f3259bf9b41e6e6a6cb6c57e031b29f0fdca39ef3ba5425c4869eb86",
     "NLS/Articles/KdVPseudomeasures/SpectralMultiplicityOrder.lean": "75f077ae23bb8f7369bcb6ff58d2d358552b382c4182e82f7a84acce520b21f2",
     "NLS/Articles/KdVPseudomeasures/SpectralReality.lean": "90b78793b9bd6bd3155fcb0040beda3973c76433044ec49e026e11748e723d8c",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "680dfdb43a581d32786a056ecfafaa599edec306fb9e5b2d087967b7e128914c"
+    "NLS/Articles/KdVPseudomeasures/SpectralPairs.lean": "1c16f58a30782be56be3bdb744a9814e4c4b29741de60ab44d33fc86bebea75c",
+    "NLS/Articles/KdVPseudomeasures/SpectralGapTail.lean": "198ffd712eb720434162ee210c62f71254d23fa7db21130112e17c7620fc011c",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "988c3788724995b42e254d9fd27a64719de79b46af3c88404c41759e27c952af"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -349,15 +363,13 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 845,
-    "newly_checked_declarations_this_continuation": 53,
-    "newly_authored_declarations_this_continuation": 44,
-    "resumed_previously_uncommitted_declarations": 9,
-    "new_checked_theorems": 49,
-    "new_checked_definitions": 4,
+    "previous_checked_declarations": 898,
+    "newly_authored_declarations_this_continuation": 49,
+    "new_theorems": 42,
+    "new_definitions": 7,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 898,
-    "previous_reuse": "Existing native physical conjugation, full Sobolev duality, actual H1 multiplication, bilinear Green identities, exact original root spaces and actual multiplicity/order equality are reused. Generic pencil collapse and native Sobolev conjugation compatibility are in the shared library; article-specific wrappers retain original source domains."
+    "total_checked_declarations": 947,
+    "previous_reuse": "The shared analytic zero-multiset theorem and actual singular spectral discreteness, root localization, full physical multiplicity/order equality, real spectrum and semisimplicity are reused. The existing full-strip coupling proof is factored into a pointwise quantitative bound and its supremum bound."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -388,7 +400,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-real-spectrum.log",
+  "validation_log": ".lake/article-check/logs/validation-real-pairs.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -475,5 +487,15 @@
       "NLS/FunctionalAnalysis/LinearPMapRootSpace.lean"
     ],
     "qualification": "No existing physical finite-chain/Taylor-kernel equivalence was found in the inspected shared tree. No unverified physical multiplicity theorem is imported."
+  },
+  "shared_pair_state_inspected": {
+    "branch": "articles/kdv-estimates",
+    "head": "1cca5123c8c2713a6072d9e90b8a755636f414a7",
+    "files": [
+      "NLS/KdV/HillRealGapPairs.lean",
+      "NLS/KdV/HillWideLocalization.lean",
+      "NLS/KdV/HillRealTraceParity.lean"
+    ],
+    "qualification": "Inspected physical results use regular L2 potentials. Only generic zero-multiset/uniqueness methods are reused; no regular physical conclusion is instantiated as a singular endpoint theorem. Wide-strip geometry and proof strategy may support the next singular global-localization work."
   }
 }

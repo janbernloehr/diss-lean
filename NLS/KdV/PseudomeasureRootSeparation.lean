@@ -47,13 +47,11 @@ def endpointCouplingRadius : ℝ :=
     endpointLowerCoupling r hr hr1 n (q,z)‖) '' reducedHillStrip n)
 
 include hn hs in
-/-- The coupling supremum is finite, with the proved endpoint growth bound. -/
-theorem bddAbove_endpointCouplingRadii :
-    BddAbove ((fun z : ℂ => Real.sqrt ‖endpointUpperCoupling r hr hr1 n (q,z)*
-      endpointLowerCoupling r hr hr1 n (q,z)‖) '' reducedHillStrip n) := by
+/-- Every actual coupling product has the explicit endpoint growth bound. -/
+theorem sqrt_endpointCouplingProduct_le_weight_norm (z : ℂ) (hz : z ∈ reducedHillStrip n) :
+    Real.sqrt ‖endpointUpperCoupling r hr hr1 n (q,z)*endpointLowerCoupling r hr hr1 n (q,z)‖ ≤
+      2*Weight.sobolev r (2*(n:ℤ))*‖q‖ := by
   have hW := ((Weight.sobolev r).positive (2*(n:ℤ))).le
-  refine ⟨2*Weight.sobolev r (2*(n:ℤ))*‖q‖, ?_⟩
-  rintro _ ⟨z, hz, rfl⟩
   have h1 := (endpointHillEffectiveCorrection_columns_le r hr hr1 n hn z hz q hs).1
   have h2 := (endpointHillEffectiveCorrection_columns_le r hr hr1 n hn z hz q hs).2
   have hplus : ‖endpointUpperCoupling r hr hr1 n (q,z)‖ ≤
@@ -70,6 +68,29 @@ theorem bddAbove_endpointCouplingRadii :
   refine ⟨mul_nonneg (mul_nonneg (by norm_num) ((Weight.sobolev r).positive _).le) (norm_nonneg q), ?_⟩
   rw [norm_mul, pow_two]
   exact mul_le_mul hplus hminus (norm_nonneg _) (by positivity)
+
+include hn hs in
+/-- The coupling supremum is finite, with the proved endpoint growth bound. -/
+theorem bddAbove_endpointCouplingRadii :
+    BddAbove ((fun z : ℂ => Real.sqrt ‖endpointUpperCoupling r hr hr1 n (q,z)*
+      endpointLowerCoupling r hr hr1 n (q,z)‖) '' reducedHillStrip n) := by
+  refine ⟨2*Weight.sobolev r (2*(n:ℤ))*‖q‖, ?_⟩
+  rintro _ ⟨z, hz, rfl⟩
+  exact sqrt_endpointCouplingProduct_le_weight_norm r hr hr1 n hn q hs z hz
+
+include hn hs in
+/-- The full-strip supremum retains the same explicit endpoint growth bound. -/
+theorem endpointCouplingRadius_le_weight_norm :
+    endpointCouplingRadius r hr hr1 n q ≤ 2*Weight.sobolev r (2*(n:ℤ))*‖q‖ := by
+  have hz : (freeHillValue n:ℂ) ∈ reducedHillStrip n := by
+    change |(freeHillValue n:ℂ).re-freeHillValue n| ≤ 6*(n:ℝ)
+    simp only [Complex.ofReal_re, sub_self, abs_zero]
+    positivity
+  unfold endpointCouplingRadius
+  apply csSup_le
+  · exact ⟨_, ⟨(freeHillValue n:ℂ), hz, rfl⟩⟩
+  rintro _ ⟨z, hz, rfl⟩
+  exact sqrt_endpointCouplingProduct_le_weight_norm r hr hr1 n hn q hs z hz
 
 include hn hs in
 /-- Each coupling product is controlled by the actual full-strip supremum. -/

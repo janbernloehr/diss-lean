@@ -58,6 +58,7 @@ import NLS.KdV.PseudomeasureMultiplicityOrder
 import NLS.KdV.PseudomeasureRealSpectrum
 import NLS.KdV.PseudomeasureSpectralLipschitz
 import NLS.KdV.PseudomeasureRootSeparation
+import NLS.KdV.PseudomeasureRealPairs
 import NLS.Fourier.PeriodicPseudomeasureWeakStar
 import NLS.Fourier.PeriodicWeightedWeakStar
 import NLS.Fourier.PeriodicDistributionParity
@@ -88,6 +89,8 @@ import NLS.Articles.KdVPseudomeasures.SpectralMultiplicity
 import NLS.Articles.KdVPseudomeasures.SpectralChainJets
 import NLS.Articles.KdVPseudomeasures.SpectralMultiplicityOrder
 import NLS.Articles.KdVPseudomeasures.SpectralReality
+import NLS.Articles.KdVPseudomeasures.SpectralPairs
+import NLS.Articles.KdVPseudomeasures.SpectralGapTail
 
 /-! Transitive axiom audit of every public article dependency. -/
 
@@ -746,12 +749,40 @@ import NLS.Articles.KdVPseudomeasures.SpectralReality
 #print axioms NLS.KdV.endpointDiagonal_sub_le_eighth
 #print axioms NLS.KdV.endpointReducedDeterminant_factorization
 #print axioms NLS.KdV.endpointCouplingRadius
+#print axioms NLS.KdV.sqrt_endpointCouplingProduct_le_weight_norm
 #print axioms NLS.KdV.bddAbove_endpointCouplingRadii
+#print axioms NLS.KdV.endpointCouplingRadius_le_weight_norm
 #print axioms NLS.KdV.sqrt_endpointCouplingProduct_le_radius
 #print axioms NLS.KdV.endpointCouplingRadius_nonneg
 #print axioms NLS.KdV.endpointReduced_root_shift_bound
 #print axioms NLS.KdV.endpointReduced_roots_separation
 #print axioms NLS.KdV.endpointReduced_roots_separation_sqrt
+#print axioms NLS.KdV.endpointReducedDeterminant_strip_hasFiniteSupport
+#print axioms NLS.KdV.exists_endpointHillRealPair
+#print axioms NLS.KdV.EndpointHillRealPair.endpoints_unique
+#print axioms NLS.KdV.EndpointHillRealPair.unique
+#print axioms NLS.KdV.endpointHillRealPair
+#print axioms NLS.KdV.EndpointHillRealPair.left_multiplicity
+#print axioms NLS.KdV.EndpointHillRealPair.right_multiplicity
+#print axioms NLS.KdV.EndpointHillRealPair.collapsed_iff_multiplicity_two
+#print axioms NLS.KdV.EndpointHillRealPair.gap
+#print axioms NLS.KdV.EndpointHillRealPair.midpoint
+#print axioms NLS.KdV.EndpointHillRealPair.gap_nonneg
+#print axioms NLS.KdV.EndpointHillRealPair.gap_eq_zero_iff
+#print axioms NLS.KdV.EndpointHillRealPair.gap_le
+#print axioms NLS.KdV.EndpointHillRealPair.midpoint_localized
+#print axioms NLS.KdV.EndpointHillRealPair.analytic_orders
+#print axioms NLS.KdV.EndpointHillRealPair.left_geometric_multiplicity
+#print axioms NLS.KdV.EndpointHillRealPair.right_geometric_multiplicity
+#print axioms NLS.KdV.EndpointHillRealPair.left_zero
+#print axioms NLS.KdV.EndpointHillRealPair.right_zero
+#print axioms NLS.KdV.EndpointHillRealPair.left_has_eigenvector
+#print axioms NLS.KdV.EndpointHillRealPair.right_has_eigenvector
+#print axioms NLS.KdV.EndpointHillRealPair.gap_le_couplingRadius
+#print axioms NLS.KdV.EndpointHillRealPair.gap_le_weight_norm
+#print axioms NLS.KdV.EndpointHillRealPair.normalized_gap_le
+#print axioms NLS.KdV.EndpointHillRealPair.weighted_gap_le
+#print axioms NLS.KdV.EndpointHillRealPair.right_lt_left
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.pseudomeasureWeakStar
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.tendsto_pseudomeasureWeakStar_of_bounded_coefficients
 #print axioms NLS.Fourier.PeriodicFourierLebesgue.coefficientWeakDualHomeomorph
@@ -989,3 +1020,24 @@ import NLS.Articles.KdVPseudomeasures.SpectralReality
 #print axioms NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_le_two_of_real
 #print axioms NLS.Articles.KdVPseudomeasures.sourceEndpointDeterminant_order_le_two_of_real
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_real_spectral_tail
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealPair
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillRealPair
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealPair.spectrum_iff
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealPair.multiplicities
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealPair.unique
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealPair.left_has_eigenvector
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealPair.right_has_eigenvector
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealPair.left_multiplicity
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealPair.right_multiplicity
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealPair.gap_le_couplingRadius
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealPair.normalized_gap_le
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillRealPair.right_lt_left
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_ordered_real_tail
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHighGapTailValues
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHighGapTailValues_neg
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHighGapTailValues_im
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceHighGapTailValues_le
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHighGapTail
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHighGapTail_apply
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceHighGapTail_le
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_ordered_real_tail_with_gap_space
