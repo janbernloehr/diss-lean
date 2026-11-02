@@ -208,6 +208,22 @@
         "NLS.Articles.KdVPseudomeasures.source_uniform_full_resolvent_criterion"
       ],
       "coverage": "spectral-resolvent-map.json"
+    },
+    {
+      "label": "Appendix C algebraic multiplicity (endpoint potential range)",
+      "pages": [
+        41,
+        42
+      ],
+      "content": "Actual full domain-preserving algebraic root spaces, global finite dimensionality, eventual finite-chain stabilization and multiplicity transport to the actual compact resolvent.",
+      "status": "Proved for all original complex endpoint potentials in the main theorem range and every complex lambda, including the full actual partial-operator root chains and improved endpoint regularity of all generalized eigenvectors. Comparison with analytic two-mode determinant zero orders, canonical labels and the asymptotic enumeration remain open.",
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity",
+        "NLS.Articles.KdVPseudomeasures.sourceHillRootSpace_stabilizes",
+        "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_resolvent",
+        "NLS.Articles.KdVPseudomeasures.sourceHillRootSpaceTop_regular"
+      ],
+      "coverage": "spectral-multiplicity-map.json"
     }
   ],
   "reuse_map": [

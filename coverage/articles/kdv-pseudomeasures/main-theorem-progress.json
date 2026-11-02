@@ -41,7 +41,11 @@
       "source_singularHill_compact_resolvent",
       "sourceHillSpectrum_mem_iff",
       "sourceHillSpectrum_finite_norm_le",
-      "source_uniform_full_resolvent_criterion"
+      "source_uniform_full_resolvent_criterion",
+      "sourceHillAlgebraicMultiplicity",
+      "sourceHillAlgebraicMultiplicity_eq_resolvent",
+      "sourceHillRootSpace_stabilizes",
+      "sourceHillRootSpaceTop_regular"
     ]
   },
   "essential_open_obligations": [
@@ -94,7 +98,12 @@
     "The full original H1-to-H-minus-one endpoint Hill pencil is identity plus compact after a proved fixed physical free isomorphism. It is Fredholm of index zero at every complex lambda, with finite-dimensional actual physical eigenspaces.",
     "The standard original H-minus-one partial operator has exactly the original H1 domain, proved dense and closed. Its resolvent is nonempty and compact on the original base space, with both inverse identities valid for arbitrary original H-minus-one right-hand sides.",
     "The physical spectrum globally equals actual full-domain point spectrum. The high-strip determinant detects full physical pencil invertibility uniformly on exact original complex norm balls.",
-    "Actual resolvents satisfy the physical resolvent identity and are norm analytic on their open resolvent set. Every bounded physical spectral region has finitely many spectral values; no algebraic-multiplicity identification or canonical labels are inferred."
+    "Actual resolvents satisfy the physical resolvent identity and are norm analytic on their open resolvent set. Every bounded physical spectral region has finitely many spectral values; no algebraic-multiplicity identification or canonical labels are inferred.",
+    "Actual physical root-chain levels and the full original H-minus-one algebraic root space are defined on the unchanged H1 domain and proved equal to those of the actual standard partial operator, in either pencil sign.",
+    "Every finite physical root-chain level and the complete algebraic root space equal the generalized eigenspaces of any actual compact base resolvent at1/(lambda-a). The converse retains actual domain representatives at every step.",
+    "Full physical algebraic root spaces are finite dimensional and stabilize after finitely many steps. Actual algebraic multiplicity is defined from these spaces, is independent of resolvent realization, and is positive exactly on the actual physical spectrum.",
+    "Every physical generalized eigenvector has endpoint regularity2-r in the infinity norm, as the identical original distribution. This follows from the proved full-chain H1 domain property and AppendixC.2.",
+    "Actual algebraic multiplicity is not yet identified with the analytic order of the endpoint determinant; no algebraic bound2 or semisimplicity is inferred from the geometric rank theorem."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",

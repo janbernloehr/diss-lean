@@ -1,0 +1,81 @@
+{
+  "source": "arXiv:1610.00278v1 Appendix C pp.41-42: spectrum and eigenvalues counted with algebraic multiplicity. This continuation constructs and verifies actual algebraic root spaces for the original endpoint Hill operator; equality with the Section2 two-mode determinant zero orders is not yet asserted.",
+  "main_theorems_verified": false,
+  "domains": {
+    "potential": "Every complex original period-two FourierLebesgueSpace(2,-r,infinity) distribution,0<=r<1/2. In particular this includes the real mean-zero physically one-periodic source potentials.",
+    "base": "The entire original period-two H-minus-one distribution space.",
+    "operator_domain": "The unchanged original H1 domain at every application of the actual physical operator. Root chains are not defined using an arbitrary bounded substitute.",
+    "spectral_parameter": "Every complex lambda in the finiteness, stabilization, algebraic multiplicity support and endpoint regularity results.",
+    "resolvent_transport": "Any actual physical resolvent point a, with lambda!=a, at the transformed nonzero compact-resolvent eigenvalue1/(lambda-a). At lambda=a the full physical root space is proved zero.",
+    "generic_algebra": "The new resolvent root-space theorem is algebraic on complex modules. It requires an injective domain inclusion and an actual domain-to-base pencil isomorphism at the resolvent point; both are proved for the physical operator."
+  },
+  "actual_chain_definition": {
+    "zero": "RootSpace(0)=0",
+    "successor": "x belongs at level n+1 iff x=J*f for an original H1 vector f and (L(q)-lambda*J)f belongs at level n.",
+    "top": "The increasing union of all actual finite domain-preserving root chains.",
+    "native_partial_operator": "Finite levels and the full root space are proved equal to those of the actual standard LinearPMap partial operator with the native lambda*J-L pencil sign. Nonzero scalar normalization does not change root spaces.",
+    "multiplicity": "The natural dimension of the full physical root space, with finite dimensionality proved before defining or interpreting the multiplicity."
+  },
+  "declarations": {
+    "generic_exact_finite_chain_transport": "NLS.FunctionalAnalysis.pencilRootSpace_eq_resolvent_genEigenspace",
+    "generic_exact_full_root_space_transport": "NLS.FunctionalAnalysis.pencilRootSpaceTop_eq_resolvent_genEigenspace",
+    "nonzero_pencil_scaling": "NLS.FunctionalAnalysis.pencilRootSpace_smul",
+    "actual_original_finite_root_spaces": "NLS.KdV.singularHillRootSpace",
+    "actual_original_full_root_space": "NLS.KdV.singularHillRootSpaceTop",
+    "actual_partial_operator_equality": "NLS.KdV.singularHillRootSpace_eq_partial",
+    "full_actual_partial_operator_equality": "NLS.KdV.singularHillRootSpaceTop_eq_partial",
+    "all_root_vectors_stay_in_original_domain": "NLS.KdV.singularHillRootSpaceTop_le_domain",
+    "full_H1_chain_right_hand_side": "NLS.KdV.exists_H1_chain_rhs_of_mem_singularHillRootSpaceTop",
+    "actual_resolvent_pencil_isomorphism": "NLS.KdV.endpointHillPencilEquiv",
+    "same_actual_compact_base_resolvent": "NLS.KdV.pencilResolvent_endpointHillPencilEquiv",
+    "finite_physical_root_chain_transport": "NLS.KdV.endpointHillRootSpace_eq_resolvent",
+    "full_physical_algebraic_root_space_transport": "NLS.KdV.endpointHillRootSpaceTop_eq_resolvent",
+    "global_finite_algebraic_root_spaces": "NLS.KdV.finiteDimensional_endpointHillRootSpaceTop",
+    "eventual_stabilization": "NLS.KdV.endpointHillRootSpace_stabilizes",
+    "actual_physical_algebraic_multiplicity": "NLS.KdV.endpointHillAlgebraicMultiplicity",
+    "multiplicity_equals_compact_resolvent_multiplicity": "NLS.KdV.endpointHillAlgebraicMultiplicity_eq_resolvent",
+    "multiplicity_positive_exactly_on_spectrum": "NLS.KdV.endpointHillAlgebraicMultiplicity_pos_iff",
+    "all_physical_algebraic_root_vectors_gain_two_endpoint_orders": "NLS.KdV.endpointHillRootSpaceTop_regular",
+    "source_global_finiteness": "NLS.Articles.KdVPseudomeasures.finiteDimensional_sourceHillRootSpaceTop",
+    "source_actual_multiplicity": "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity",
+    "source_multiplicity_support": "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_pos_iff",
+    "source_all_finite_chain_transport": "NLS.Articles.KdVPseudomeasures.sourceHillRootSpace_eq_resolvent",
+    "source_compact_resolvent_multiplicity": "NLS.Articles.KdVPseudomeasures.sourceHillAlgebraicMultiplicity_eq_resolvent",
+    "source_all_generalized_eigenvectors_endpoint_regularity": "NLS.Articles.KdVPseudomeasures.sourceHillRootSpaceTop_regular"
+  },
+  "proof_details": [
+    "For an actual domain inclusion J and isomorphism e=L-a*J, the base resolvent is exactly J*e^-1. The identity R_a*(L-lambda*J)=-c*(R_a-c^-1)*J, c=lambda-a, intertwines actual root chains.",
+    "The injectivity of the original domain inclusion makes the actual base resolvent injective. Applying an injective operator preserves and reflects every generalized eigenspace. Nonzero generalized eigenvectors lie in the actual resolvent range, so the converse transport retains the full physical domain.",
+    "Induction gives equality of every finite physical root-chain level with the compact-resolvent generalized eigenspace, and taking increasing unions gives equality of the complete algebraic root spaces.",
+    "The verified shared compact generalized-eigenspace theorem proves global finite dimensionality and finite stabilization. The original physical multiplicity is defined from that actual finite root space and is proved positive exactly on the actual physical spectrum.",
+    "Every actual root vector has an H1 representative whose inhomogeneous right-hand side is also represented by an original H1 vector. The previously verified AppendixC.2 regularity theorem therefore gives order2-r infinity regularity for the entire algebraic root space, preserving the whole original distribution."
+  ],
+  "reuse": {
+    "verified_shared_imports": [
+      "NLS/FunctionalAnalysis/LinearPMapRootSpace.lean",
+      "NLS/FunctionalAnalysis/CompactGeneralized.lean"
+    ],
+    "new_modules": [
+      "NLS/FunctionalAnalysis/ResolventRootSpace.lean",
+      "NLS/KdV/SingularHillRootSpace.lean",
+      "NLS/KdV/PseudomeasureRootSpaces.lean",
+      "NLS/Articles/KdVPseudomeasures/SpectralMultiplicity.lean"
+    ],
+    "new_public_definitions_and_theorems": 46,
+    "new_theorems": 40,
+    "new_definitions": 6,
+    "shared_declarations_copied": 0,
+    "inspected_for_next_determinant_order_step": [
+      "NLS/ComplexAnalysis/MatrixTaylorJets.lean",
+      "NLS/ComplexAnalysis/MatrixTaylorNullity.lean",
+      "NLS/ComplexAnalysis/MatrixTaylorEquivalence.lean"
+    ]
+  },
+  "qualifications": [
+    "No equality between actual physical algebraic multiplicity and analytic order of the endpoint two-mode determinant has been proved in this continuation.",
+    "The high-strip geometric rank bound at most2 is not asserted to be an algebraic-multiplicity bound. No semisimplicity hypothesis is imposed or inferred for complex potentials.",
+    "Canonical periodic/antiperiodic labels, asymptotic enumeration and eventual corrected-strip assignment still need proof.",
+    "The full physical algebraic conclusions apply to the endpoint range needed by the main theorems; arbitrary H-minus-one potentials outside that range are not claimed.",
+    "All main Theorems1.1,1.3,1.4,5.1,5.9 remain incomplete. Physical gap/Dirichlet estimates, inverse spectral regularity, Birkhoff maps and actual KdV constructions are still required."
+  ]
+}

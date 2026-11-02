@@ -82,5 +82,6 @@
     "Finite-dimensional eigenspaces and finitely many spectral values on bounded regions do not identify determinant zero order with physical algebraic multiplicity.",
     "Canonical periodic/antiperiodic labels, asymptotic enumeration, eventual corrected-strip assignment and parity decomposition remain open.",
     "Physical gap/Dirichlet estimates, inverse spectral regularity, Birkhoff maps and actual KdV main theorem constructions remain open. Main Theorems1.1,1.3,1.4,5.1,5.9 are not marked complete."
-  ]
+  ],
+  "further_verified_dependencies": "Actual physical algebraic root spaces, global finite dimensionality, stabilization, actual algebraic multiplicities, exact compact-resolvent root-space/multiplicity transport and two-order endpoint regularity of every generalized eigenvector are now proved; see spectral-multiplicity-map.json. The determinant analytic-order comparison and canonical labels remain open."
 }

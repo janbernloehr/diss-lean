@@ -25,6 +25,7 @@ view = root / '.lake/article-check/lib/lean'
 logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
+    'NLS.FunctionalAnalysis.ResolventRootSpace',
     'NLS.FunctionalAnalysis.TwoDimensionalDeterminant',
     'NLS.SequenceSpaces.SobolevConvolutionBounds',
     'NLS.Fourier.PeriodicH1Multiplication',
@@ -42,6 +43,7 @@ modules = [
     'NLS.KdV.SingularHillPhysical',
     'NLS.KdV.SingularHillFreeIsomorphism',
     'NLS.KdV.SingularHillOperatorDomain',
+    'NLS.KdV.SingularHillRootSpace',
     'NLS.KdV.SingularHillBilinear',
     'NLS.KdV.PseudomeasureKernel',
     'NLS.KdV.PseudomeasurePerturbation',
@@ -63,6 +65,7 @@ modules = [
     'NLS.KdV.PseudomeasureZeroCount',
     'NLS.KdV.PseudomeasureResolvent',
     'NLS.KdV.PseudomeasureSpectrum',
+    'NLS.KdV.PseudomeasureRootSpaces',
     'NLS.KdV.PseudomeasureSpectralLipschitz',
     'NLS.KdV.PseudomeasureRootSeparation',
     'NLS.Fourier.PeriodicPseudomeasureWeakStar',
@@ -87,6 +90,7 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralAnalytic',
     'NLS.Articles.KdVPseudomeasures.SpectralCoefficients',
     'NLS.Articles.KdVPseudomeasures.SpectralResolvent',
+    'NLS.Articles.KdVPseudomeasures.SpectralMultiplicity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
