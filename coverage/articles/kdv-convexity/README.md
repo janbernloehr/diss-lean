@@ -3,9 +3,10 @@
 **Theorems 1.1–1.3 are not yet verified.** The analytic summation and
 Hilbert-to-weighted-action inclusion needed for the global extension are
 proved, with the physical contour moments and their spectral estimates
-retained as explicit missing inputs. The earlier local concavity/inverse
-preparation is preserved. This record does not reopen the completed
-dissertation verification.
+retained as explicit missing inputs. The physical smooth KdV energy
+coefficients, the actual scalar Hill solution bridge and its all-order real-axis trace estimates are also
+proved. The earlier local concavity/inverse preparation is preserved.
+This record does not reopen the completed dissertation verification.
 
 ## Source and conventions
 
@@ -160,6 +161,75 @@ on a shrinking circle also needs an admissible deformation and spectral
 bounds when applied to the actual primitive; a real cut estimate alone
 has not been substituted for a complex-neighborhood estimate.
 
+## Physical energy coefficients and the actual scalar trace
+
+[`NLS/KdV/RiccatiEnergy.lean`](../../../NLS/KdV/RiccatiEnergy.lean)
+reuses the existing NLS Riccati recurrence and the shared differential
+polynomial evaluation/integration-by-parts proofs. For the constant-upper
+specialization `(a,b)=(-1,-q)`, it calculates the first five physical
+Hamiltonians from actual integrals, for every smooth periodic mean-zero
+complex q:
+
+```text
+H_1 = 0, H_2 = 0, H_3 = 2*H_0(q), H_4 = 0, H_5 = 2*Hkdv(q),
+H_0(q) = (1/2)*integral q^2,
+Hkdv(q) = integral ((q')^2/2 + q^3).
+```
+
+The energy density is explicitly reduced by a total derivative:
+
+```text
+q'''' - 5*(q')^2 - 6*q*q'' + 2*q^3
+  = (q')^2 + 2*q^3 + D(q''' - 6*q*q').
+```
+
+`classicalNLSHamiltonian_const_upper_first_five` assembles the five
+identities. `classicalHamiltonian_ofReal` identifies the complexified
+energy with the real integral in the article. These are coefficient
+calculations on actual smooth potentials, not assumed spectral or
+Hamiltonian identities.
+
+[`NLS/KdV/ConstantUpperSpectralBridge.lean`](../../../NLS/KdV/ConstantUpperSpectralBridge.lean)
+uses the existing constructed classical ZS solutions for the literal
+potential `(-1,-q)`. The first component satisfies
+`-y''+q*y=z^2*y` at every interior point of the period. The state map
+`(v1,v2) -> (v1,-i*z*v1-i*v2)` has the explicit inverse
+`(w1,w2) -> (w1,i*w2-z*w1)` for **all** z, including zero. The code proves
+arbitrary prescribed scalar initial position/derivative, both directions
+of Floquet boundary transfer, and equality of the normalized scalar trace
+with the actual classical ZS discriminant. It adds no competing Fourier
+Hill operator, spectral labels or Birkhoff construction. The diagonal
+Miura transfer on the mKdV branch is a different specialization and was
+inspected before implementing this constant-upper bridge.
+
+[`NLS/KdV/ClassicalTraceAsymptotics.lean`](../../../NLS/KdV/ClassicalTraceAsymptotics.lean)
+then applies the already proved all-order NLS discriminant theorem to
+these actual scalar solutions. Its first five phase terms are exactly
+
+```text
+z - H_0(q)/(4*z^3) - Hkdv(q)/(16*z^5),    lambda = z^2.
+```
+
+`exists_constantUpperHillTrace_higher_error_bound` retains the higher
+physical Hamiltonians as an explicit finite tail. For each N, a positive
+constant is chosen before every real |r|>=1, and the trace error from
+twice the cosine of that phase plus its higher tail is at most
+`C/(2*|r|)^(N+5)`. Thus the energy coefficient is not extracted from an
+error term of the same order. Its N=0 specialization is also checked.
+These are real-spectral-axis estimates in the complex scalar norm; an
+all-complex exterior Laurent expansion is not claimed here.
+
+Next mathematical step for Lemma 4.4: construct the normalized analytic
+inversion remainder of the actual finite-gap Hill primitive and prove
+its hyperbolic-cosine trace identity. The existing generic theorem
+`ZakharovShabat.exists_nlsHamiltonian_laurent_of_discriminant` in
+`NLS/ZakharovShabat/NLSHamiltonianPrimitiveCoefficients.lean` then recovers
+the convergent physical coefficients from this classical trace without
+a real-type NLS restriction on the pair `(-1,-q)`. That lemma was inspected
+in this step. Existence and normalization of the Hill inversion remainder
+are still unproved here; no analogous dNLS primitive has been relabelled
+as the KdV primitive.
+
 ## Earlier checked local consequences
 
 [`LocalConsequences.lean`](../../../NLS/Articles/KdVConvexity/LocalConsequences.lean)
@@ -195,13 +265,15 @@ remains to be proved. No dNLS Hamiltonian has been relabelled as KdV.
    giving the full -6*Id derivative. Apply the checked local consequences
    after positive-index Hessian/real-cone transport.
 
-The `kdv-estimates` branch was read at commit `47ae6bb` during this step.
-It provides the free Hill resolvent and weighted complementary inversion;
-its own coverage explicitly leaves discriminant/actions/Birkhoff data
-unconstructed. No competing Hill foundation is added here and no source
-from that branch is imported prematurely. Generic action-descent, analytic
-identity and phase-flow machinery remains available from the existing NLS
-library when the physical inputs are established.
+The `kdv-estimates` branch was re-inspected through commit `99fa6ee`.
+Its shared work now includes the actual periodic H2 weak Hill operator,
+two-mode reduction, joint analytic determinant and high-strip two-zero
+localization. Its coverage still leaves global spectral labels,
+discriminant/actions/Birkhoff data unconstructed. The constant-upper
+bridge here reuses classical IVP solutions for the energy calculation;
+it does not replace that Fourier/Hill development. Its identification
+with the shared operator and rough-distribution domain is still required.
+No separate messages were sent to other article chats.
 
 ## Validation and worktree
 
@@ -212,10 +284,10 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-All eight modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
+All eleven modules pass focused Lean 4.33.1/mathlib v4.33.1 checks with
 `warningAsError=true`. The positive-index inverse example also passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
-94 constants in their two namespaces, including generated declarations,
+154 constants in their two namespaces, including generated declarations,
 transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 See `validation.json` for exact file hashes and scope.

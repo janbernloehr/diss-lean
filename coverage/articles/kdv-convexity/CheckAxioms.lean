@@ -1,3 +1,4 @@
+import NLS.KdV.ClassicalTraceAsymptotics
 import NLS.KdV.ActionHamiltonianFiniteGap
 import NLS.Articles.KdVConvexity.LocalConsequences
 import NLS.Articles.KdVConvexity.BaseContourSeries
