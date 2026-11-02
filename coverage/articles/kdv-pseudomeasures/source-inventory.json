@@ -381,6 +381,17 @@
         "NLS/Articles/KdVPseudomeasures/SpectralCentralProjection.lean"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-central-projection-map.json"
+    },
+    {
+      "label": "Actual real original singular central algebraic count",
+      "content": "The actual original central Riesz range equals the sum of actual enclosed physical root spaces; their independence identifies rank with the actual algebraic count. Actual rank homotopy and the free baseline give EXACT2n-1 below EVERY sufficiently high separator,with ONE cutoff chosen before original real q on each exact norm ball.",
+      "status": "Proved. Canonical global spectral enumeration/source parity and all main theorem constructions remain open.",
+      "modules": [
+        "NLS/FunctionalAnalysis/FiniteInvariantSpectrum.lean",
+        "NLS/KdV/PseudomeasureRieszRange.lean",
+        "NLS/Articles/KdVPseudomeasures/SpectralCentralCounting.lean"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-central-count-map.json"
     }
   ],
   "reuse_map": [

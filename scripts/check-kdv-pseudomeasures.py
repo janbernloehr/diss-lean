@@ -28,6 +28,7 @@ modules = [
     'NLS.ComplexAnalysis.CircleOpenCollar',
     'NLS.ComplexAnalysis.RealDiameterDisc',
     'NLS.FunctionalAnalysis.CircleResolventProjection',
+    'NLS.FunctionalAnalysis.FiniteInvariantSpectrum',
     'NLS.FunctionalAnalysis.PencilRootChains',
     'NLS.FunctionalAnalysis.PencilRootSemisimple',
     'NLS.FunctionalAnalysis.EquivalentNormNeumann',
@@ -97,6 +98,7 @@ modules = [
     'NLS.KdV.PseudomeasureTaylorKernel',
     'NLS.KdV.PseudomeasureMultiplicityOrder',
     'NLS.KdV.PseudomeasureRealSpectrum',
+    'NLS.KdV.PseudomeasureRieszRange',
     'NLS.KdV.PseudomeasureSpectralLipschitz',
     'NLS.KdV.PseudomeasureRootSeparation',
     'NLS.KdV.PseudomeasureRealPairs',
@@ -139,6 +141,7 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralCentralWindow',
     'NLS.Articles.KdVPseudomeasures.SpectralFreeCount',
     'NLS.Articles.KdVPseudomeasures.SpectralCentralProjection',
+    'NLS.Articles.KdVPseudomeasures.SpectralCentralCounting',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -1,6 +1,7 @@
 import NLS.ComplexAnalysis.CircleOpenCollar
 import NLS.ComplexAnalysis.RealDiameterDisc
 import NLS.FunctionalAnalysis.CircleResolventProjection
+import NLS.FunctionalAnalysis.FiniteInvariantSpectrum
 import NLS.FunctionalAnalysis.PencilRootChains
 import NLS.FunctionalAnalysis.PencilRootSemisimple
 import NLS.FunctionalAnalysis.EquivalentNormNeumann
@@ -70,6 +71,7 @@ import NLS.KdV.PseudomeasureChainJets
 import NLS.KdV.PseudomeasureTaylorKernel
 import NLS.KdV.PseudomeasureMultiplicityOrder
 import NLS.KdV.PseudomeasureRealSpectrum
+import NLS.KdV.PseudomeasureRieszRange
 import NLS.KdV.PseudomeasureSpectralLipschitz
 import NLS.KdV.PseudomeasureRootSeparation
 import NLS.KdV.PseudomeasureRealPairs
@@ -112,6 +114,7 @@ import NLS.Articles.KdVPseudomeasures.SpectralLowerBound
 import NLS.Articles.KdVPseudomeasures.SpectralCentralWindow
 import NLS.Articles.KdVPseudomeasures.SpectralFreeCount
 import NLS.Articles.KdVPseudomeasures.SpectralCentralProjection
+import NLS.Articles.KdVPseudomeasures.SpectralCentralCounting
 
 /-! Exact transitive axiom audit of all checked public declarations. -/
 
@@ -135,6 +138,10 @@ import NLS.Articles.KdVPseudomeasures.SpectralCentralProjection
 #print axioms NLS.CircleIntegral.isCompactOperator_integral
 #print axioms NLS.CircleIntegral.isCompactOperator_normalized
 #print axioms NLS.CircleIntegral.finiteDimensional_range_of_compact_idempotent
+#print axioms NLS.FunctionalAnalysis.eq_iSup_inf_genEigenspace_of_finite
+#print axioms NLS.FunctionalAnalysis.genEigenspace_zero_eq_bot_of_injective
+#print axioms NLS.FunctionalAnalysis.finrank_finset_sup_of_iSupIndep
+#print axioms NLS.FunctionalAnalysis.finrank_iSup_of_iSupIndep
 #print axioms NLS.FunctionalAnalysis.pencilChainEndpoint
 #print axioms NLS.FunctionalAnalysis.pencilChainEndpoint_zero
 #print axioms NLS.FunctionalAnalysis.pencilChainEndpoint_succ
@@ -883,6 +890,13 @@ import NLS.Articles.KdVPseudomeasures.SpectralCentralProjection
 #print axioms NLS.KdV.endpointReducedDeterminant_zero_im_eq_zero
 #print axioms NLS.KdV.endpointHillAlgebraicMultiplicity_le_two_of_real
 #print axioms NLS.KdV.endpointReducedDeterminant_order_le_two_of_real
+#print axioms NLS.KdV.endpointHillBaseResolvent_injective
+#print axioms NLS.KdV.commute_endpointHillBaseResolvent
+#print axioms NLS.KdV.commute_endpointHillRieszProjection_resolvent
+#print axioms NLS.KdV.endpointHillRieszProjection_range_invariant
+#print axioms NLS.KdV.endpointHillRootSpaceTop_eq_resolvent_all
+#print axioms NLS.KdV.independent_endpointHillRootSpaceTop
+#print axioms NLS.KdV.endpointHillRieszProjection_range_eq_roots
 #print axioms NLS.KdV.negativeShiftedNorm_weightedReducedHillResolvent_le
 #print axioms NLS.KdV.summable_unshiftedEndpointHill_terms
 #print axioms NLS.KdV.unshiftedEndpointHillPerturbation_sub
@@ -1255,3 +1269,10 @@ import NLS.Articles.KdVPseudomeasures.SpectralCentralProjection
 #print axioms NLS.Articles.KdVPseudomeasures.source_real_smul
 #print axioms NLS.Articles.KdVPseudomeasures.sourceCentralProjection_rank_eq_zero
 #print axioms NLS.Articles.KdVPseudomeasures.source_uniform_central_projection
+#print axioms NLS.Articles.KdVPseudomeasures.sourceHillRootSpaceTop_eq_bot_of_not_mem_spectrum
+#print axioms NLS.Articles.KdVPseudomeasures.independent_sourceHillRootSpaceTop
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCentralProjection_range_eq_roots
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCentralProjection_rank_eq_count
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCentralAlgebraicCount_eq
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_central_algebraic_count
+#print axioms NLS.Articles.KdVPseudomeasures.source_uniform_all_central_algebraic_counts

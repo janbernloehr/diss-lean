@@ -6,8 +6,9 @@ import NLS.Articles.KdVPseudomeasures.SpectralPairs
 The sequence contains the actual widths of the ordered physical high pairs,
 extended evenly to signed indices, with zero at all indices below the cutoff.
 Its norm is the genuine infinity-exponent Sobolev coefficient norm. This
-verifies the high-tail direct regularity estimate; the low-mode count needed
-to identify these mode-number slots with global canonical gaps is still open.
+verifies the high-tail direct regularity estimate. The actual central count
+is proved in SpectralCentralCounting; global slot enumeration and physical
+source parity require their own proofs.
 -/
 noncomputable section
 open scoped ENNReal

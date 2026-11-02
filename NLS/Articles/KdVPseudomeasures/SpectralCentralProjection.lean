@@ -8,7 +8,7 @@ import NLS.ComplexAnalysis.RealDiameterDisc
 One diameter circle works on an entire original real source norm ball. Its
 actual H-minus-one Riesz projection has finite rank, and that rank is unchanged
 along the original potential homotopy. Identification of this rank with the
-sum of physical algebraic multiplicities remains a separate obligation.
+sum of physical algebraic multiplicities is proved in SpectralCentralCounting.
 -/
 noncomputable section
 open Set Metric

@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
   "article_main_theorems_verified": false,
-  "phase": "Actual singular Riesz projections and homotopy-invariant central projection rank",
+  "phase": "Actual physical Riesz range/count equality and exact real original singular central counting",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "python3 scripts/check-kdv-pseudomeasures.py",
@@ -9,6 +9,7 @@
     "NLS/ComplexAnalysis/CircleOpenCollar.lean",
     "NLS/ComplexAnalysis/RealDiameterDisc.lean",
     "NLS/FunctionalAnalysis/CircleResolventProjection.lean",
+    "NLS/FunctionalAnalysis/FiniteInvariantSpectrum.lean",
     "NLS/FunctionalAnalysis/PencilRootChains.lean",
     "NLS/FunctionalAnalysis/PencilRootSemisimple.lean",
     "NLS/FunctionalAnalysis/EquivalentNormNeumann.lean",
@@ -78,6 +79,7 @@
     "NLS/KdV/PseudomeasureTaylorKernel.lean",
     "NLS/KdV/PseudomeasureMultiplicityOrder.lean",
     "NLS/KdV/PseudomeasureRealSpectrum.lean",
+    "NLS/KdV/PseudomeasureRieszRange.lean",
     "NLS/KdV/PseudomeasureSpectralLipschitz.lean",
     "NLS/KdV/PseudomeasureRootSeparation.lean",
     "NLS/KdV/PseudomeasureRealPairs.lean",
@@ -120,13 +122,14 @@
     "NLS/Articles/KdVPseudomeasures/SpectralCentralWindow.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralFreeCount.lean",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralProjection.lean",
+    "NLS/Articles/KdVPseudomeasures/SpectralCentralCounting.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 925,
+  "proved_theorems": 943,
   "definitions": 215,
   "axiom_audit": {
     "method": "Lean #print axioms on every source-inventoried public definition/theorem, with nested namespaces and qualified names supported. Exact inventory/audit/output set match, followed by allowlist check. Private imported proofs are covered transitively.",
-    "declarations": 1140,
+    "declarations": 1158,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -304,10 +307,17 @@
     "Actual singular Riesz projections depend continuously in operator norm along any continuous endpoint potential family with a common physical resolvent circle. Their actual finite rank is constant on every such preconnected family, using the shared verified ProjectionRank theorem.",
     "One central diameter circle, with left endpoint-B-1 and right endpoint pi^2*N^2-12N, lies in the full original physical resolvent for every native real source potential on the given original norm ball. Its interior cuts the actual real spectrum at exactly the existing central finite spectral set.",
     "sourceCentralProjection is the actual original H-minus-one circle integral. It is idempotent, has finite-dimensional range, is operator-norm continuous on the entire original real norm ball, and fixes every original central physical eigenvector. Its actual rank equals its zero-potential rank along the actual homotopy t*q,0<=t<=1.",
-    "source_uniform_central_projection chooses one cutoff N>=2 BEFORE every original real potential on the entire exact norm ball and provides the actual finite-rank idempotent and its rank invariance. Equality of that rank with the sum of ACTUAL enclosed physical algebraic multiplicities is still a separate unproved obligation."
+    "source_uniform_central_projection chooses one cutoff N>=2 BEFORE every original real potential on the entire exact norm ball and provides the actual finite-rank idempotent and its rank invariance. Equality of that rank with the sum of ACTUAL enclosed physical algebraic multiplicities is still a separate unproved obligation.",
+    "A shared algebraic theorem decomposes a finite-dimensional invariant subspace into its intersections with the full ambient generalized eigenspaces; the ambient space remains unrestricted. An injective operator has no generalized root vectors at zero. Independent finite spectral families have the literal sum of their dimensions.",
+    "Every actual original compact base resolvent is injective. Actual base resolvents commute by the full physical resolvent identity. The actual operator-valued Riesz projection commutes with every actual base resolvent, making its actual finite-dimensional range invariant.",
+    "The actual full physical root-space/compact-resolvent generalized-eigenspace equality now includes the base spectral parameter itself, where both spaces are zero. Since z->inverse(z-a) is injective even at a, the entire family of ACTUAL full original physical root spaces at distinct spectral parameters is independent.",
+    "For every native real original endpoint potential and every physical resolvent circle, the actual Riesz projection range is exactly the sum of ALL enclosed full physical algebraic root spaces. The proof uses the finite invariant range, original full root-space transport and native semisimplicity; outside eigenvectors are annihilated and boundary eigenvectors are excluded by full physical invertibility.",
+    "For the original central circle, the actual range is exactly the finite sum over sourceCentralSpectrum, with the original H1/H-minus-one domains unchanged. Its rank equals sourceCentralAlgebraicCount, the existing sum of ACTUAL physical algebraic multiplicities.",
+    "Combining this proved rank/count identity with actual rank invariance along the ORIGINAL real t*q homotopy and the proved free actual count gives sourceCentralAlgebraicCount_eq: the real original singular central count is EXACTLY2N-1 under the existing wide cutoff, for every original native real potential on the exact source norm ball.",
+    "source_uniform_all_central_algebraic_counts chooses ONE cutoff N>=2 BEFORE q on each original real source norm ball. For EVERY subsequent n>=N the ACTUAL algebraic count strictly below pi^2*n^2-12n is exactly2n-1. The high-tail low-mode offset is therefore fixed at every later separator; canonical slot enumeration and physical source parity still need separate proofs."
   ],
-  "source_correspondence": "The original singular central spectral circle now gives an actual compact idempotent on the original H-minus-one base space, finite-dimensional range and norm-continuous, homotopy-invariant actual rank on original real norm balls. The projection fixes enclosed actual physical eigenvectors and annihilates exterior ones. Its rank has NOT yet been proved equal to the sum of actual enclosed physical algebraic multiplicities. The free actual algebraic count2N-1 is proved. Canonical global labels/parity, inverse regularity, original Birkhoff maps and actual KdV main theorems remain open; all main theorem flags stay false.",
-  "build_isolation": "All115 modules rebuilt in a fresh empty private output view. Canonical/package imports remain read-only symlinks, all compiler destinations are private, and the exact1140-declaration transitive audit passed without warnings or tactic suggestions. Canonical tracked sources/build outputs were not written.",
+  "source_correspondence": "The actual central Riesz range is proved equal to the sum of the enclosed ACTUAL original physical root spaces. Their independence gives rank equal to the ACTUAL algebraic count. The already proved original real potential homotopy transports that count from the free operator, giving exactly2n-1 below every sufficiently high separator, uniformly on exact original real norm balls with one cutoff chosen before q. Canonical global enumeration/parity, inverse regularity, original Birkhoff maps and actual KdV main theorems remain open; all main theorem completion flags remain false.",
+  "build_isolation": "All118 modules rebuilt in a fresh empty private output view. Canonical/package imports remain read-only symlinks and all compiler destinations are private. Exact1158-declaration transitive audit passed without warnings or tactic suggestions. Canonical tracked sources and build outputs were not written.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated milestone on the existing private article branch, committed and pushed under the active goal authorization. No workspace attachment, canonical source integration or canonical build writes are performed.",
@@ -316,6 +326,7 @@
     "NLS/ComplexAnalysis/CircleOpenCollar.lean": "d888c02dc0baf41031e73b30e2ac5c53964dba6b4cb3caa7e829cbb60c64b79f",
     "NLS/ComplexAnalysis/RealDiameterDisc.lean": "4d978853f2d9ee33b92ab05cf8657bae51fd41176f0de4e91c0ca8a9143e9371",
     "NLS/FunctionalAnalysis/CircleResolventProjection.lean": "875fecafa6ac103cdc050e4178137f44b3e35090cbe14a5a123a9f2478fadc60",
+    "NLS/FunctionalAnalysis/FiniteInvariantSpectrum.lean": "d02fb09facb2db2a125d85c71448ae1596473a6f447d5b06327da0be0d791f7a",
     "NLS/FunctionalAnalysis/PencilRootChains.lean": "ca36c1bbe2d860e8dd0995634c109d7b9e71e44b9acf6c7221f6f57f38b6a5a0",
     "NLS/FunctionalAnalysis/PencilRootSemisimple.lean": "868a3d3bdc259c849a3e8849af636150ad5dea8cb4169121509a632507a0f5f6",
     "NLS/FunctionalAnalysis/EquivalentNormNeumann.lean": "64721e011a6a0125fb40d4cfe5c02eb545adc0e4046f3d549e86a82d27cb7bad",
@@ -385,6 +396,7 @@
     "NLS/KdV/PseudomeasureTaylorKernel.lean": "45d62fca96af6b942890c691c9c1108dc421d64e89b59a57a88f64395c9bc24b",
     "NLS/KdV/PseudomeasureMultiplicityOrder.lean": "b75f4d4e01a6ad2cf080da3fe4c4da28f56a87939e891ce4ad6194843699f3ed",
     "NLS/KdV/PseudomeasureRealSpectrum.lean": "892e69f480e43eae347bd0d43145dc7a233f68b7a232ad806e193e0c14c0e7ac",
+    "NLS/KdV/PseudomeasureRieszRange.lean": "a5be912ae1830da3af4b04077bb0f76b6e0a6e55ca09ca90a3984ef8e531f08f",
     "NLS/KdV/PseudomeasureSpectralLipschitz.lean": "56095be5961d84250521d0362911e603c09c3eba3e70708935f9c0fae050a55f",
     "NLS/KdV/PseudomeasureRootSeparation.lean": "ac7df1ef009060957d100aa5f140d4fe2dcddd5a3ca80c4787a25a5cd543aca3",
     "NLS/KdV/PseudomeasureRealPairs.lean": "f1a192e03de32c0af09d3e7a4546403d17b167cfdecc9063c48dceced47b2dac",
@@ -421,13 +433,14 @@
     "NLS/Articles/KdVPseudomeasures/SpectralMultiplicityOrder.lean": "75f077ae23bb8f7369bcb6ff58d2d358552b382c4182e82f7a84acce520b21f2",
     "NLS/Articles/KdVPseudomeasures/SpectralReality.lean": "90b78793b9bd6bd3155fcb0040beda3973c76433044ec49e026e11748e723d8c",
     "NLS/Articles/KdVPseudomeasures/SpectralPairs.lean": "1c16f58a30782be56be3bdb744a9814e4c4b29741de60ab44d33fc86bebea75c",
-    "NLS/Articles/KdVPseudomeasures/SpectralGapTail.lean": "198ffd712eb720434162ee210c62f71254d23fa7db21130112e17c7620fc011c",
-    "NLS/Articles/KdVPseudomeasures/SpectralWideLocalization.lean": "27469cac5deac75170eb8f867ff804ce909a84b293b24c0506f19e842c5a05d1",
+    "NLS/Articles/KdVPseudomeasures/SpectralGapTail.lean": "c11adebadf7441119600b930b6977f0673bc8f57b4753bee48b58e33b4a0d1b3",
+    "NLS/Articles/KdVPseudomeasures/SpectralWideLocalization.lean": "d2805f5a254d85d46e9d9a78fe10a0670547df644595a6f80d5c99028385df29",
     "NLS/Articles/KdVPseudomeasures/SpectralLowerBound.lean": "6970d2a80adbecff3ce7e0ac7e291ae279e2307349b42b519176f73340e6162d",
     "NLS/Articles/KdVPseudomeasures/SpectralCentralWindow.lean": "6ef29dc4418c2038f990f5967e7bcd96620088da524912139c4f502f3a0818d7",
     "NLS/Articles/KdVPseudomeasures/SpectralFreeCount.lean": "c230e5b67050a8f1e7d2bf2356cb23cdc05da63ff412688933530906f6ce2c15",
-    "NLS/Articles/KdVPseudomeasures/SpectralCentralProjection.lean": "cd164a8db6efe4513ee43a164ac83d828b374345f20a18cb338ffd747f1ba0dc",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "91c4a7bef4315336cb940a2c7cdd0e75ba0b793e1ebf287f1005a383918340d5"
+    "NLS/Articles/KdVPseudomeasures/SpectralCentralProjection.lean": "23bd781e26f30d812e4f5259fc81c837586a32248312240c825ab9d8311df133",
+    "NLS/Articles/KdVPseudomeasures/SpectralCentralCounting.lean": "1ae52bd7c03d1f7710fb75dfc76db7cb85c474fd3b4b94ea14f37088c6f2562f",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "b3d48a6d6972b9a73157b37ada65249dc8d1f5194085c9053e4421d4852914f6"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -435,24 +448,13 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 1089,
-    "newly_authored_declarations_this_continuation": 48,
-    "new_theorems": 45,
-    "new_definitions": 6,
-    "newly_authored_theorems": 42,
-    "shared_declarations_copied_this_continuation": 3,
-    "total_checked_declarations": 1140,
-    "shared_copy_provenance": {
-      "branch": "articles/kdv-estimates",
-      "commit": "80ac538a3bf105feb1bcc5133efe35e70b55f816",
-      "file": "NLS/ComplexAnalysis/RealDiameterDisc.lean",
-      "copied_theorems": [
-        "ofReal_mem_realDiameter_closedBall_iff",
-        "ofReal_mem_realDiameter_sphere_iff",
-        "ne_zero_on_realDiameter_sphere"
-      ],
-      "qualification": "Three potential-independent geometry theorems copied and independently checked. The open-ball interval theorem is newly authored. No regular L2-potential physical counting or spectral theorem is instantiated as singular."
-    }
+    "previous_checked_declarations": 1140,
+    "newly_authored_declarations_this_continuation": 18,
+    "new_theorems": 18,
+    "new_definitions": 0,
+    "shared_declarations_copied_this_continuation": 0,
+    "total_checked_declarations": 1158,
+    "previous_reuse": "Existing verified operator-norm Riesz construction, actual original compact-resolvent root-space transport, native real semisimplicity, actual projection rank homotopy, exact free physical count and mathlib finite-dimensional generalized-eigenspace decomposition. No regular-potential physical count is substituted."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -483,7 +485,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/article-check/logs/validation-riesz-projection.log",
+  "validation_log": ".lake/article-check/logs/validation-central-count.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",

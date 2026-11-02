@@ -58,11 +58,15 @@
       "sourceHillRootTaylorKernelEquiv",
       "sourceHillAlgebraicMultiplicity_eq_analyticOrderAt",
       "sourceHill_strip_algebraic_count_two",
-      "sourceLemma2_11_uniform_algebraic_count"
+      "sourceLemma2_11_uniform_algebraic_count",
+      "sourceCentralProjection_range_eq_roots",
+      "sourceCentralProjection_rank_eq_count",
+      "sourceCentralAlgebraicCount_eq",
+      "source_uniform_all_central_algebraic_counts"
     ]
   },
   "essential_open_obligations": [
-    "Prove that the actual central Riesz projection range is exactly the sum of the enclosed actual physical root spaces, and that its rank equals sourceCentralAlgebraicCount. The projection is constructed, compact, idempotent, finite rank, continuous and rank-invariant along t*q; it fixes enclosed physical eigenvectors and annihilates exterior ones. The free ACTUAL algebraic count2N-1 is proved. Combine the range/count identity with these results to obtain central algebraic count2N-1 for nonzero original real potentials.",
+    "Construct the canonical globally ordered original periodic/antiperiodic spectral enumeration, counted with actual physical algebraic multiplicity. Use the proved exact2n-1 count below EVERY high separator and actual exhaustive ordered high pairs to identify their global slots2n-1,2n. Prove actual source period-one parity/boundary-condition identification and any needed low ground-state/interlacing assertions; do not assume them from the count alone.",
     "Construct the Birkhoff map with its global bijectivity, analyticity and endpoint inverse regularity.",
     "Endpoint spectral estimates and inverse regularity needed by 1.4.",
     "Actual KdV H^-1 smooth-approximation solution extension, invariance and continuity.",
@@ -183,7 +187,14 @@
     "Actual singular Riesz projections depend continuously in operator norm along any continuous endpoint potential family with a common physical resolvent circle. Their actual finite rank is constant on every such preconnected family, using the shared verified ProjectionRank theorem.",
     "One central diameter circle, with left endpoint-B-1 and right endpoint pi^2*N^2-12N, lies in the full original physical resolvent for every native real source potential on the given original norm ball. Its interior cuts the actual real spectrum at exactly the existing central finite spectral set.",
     "sourceCentralProjection is the actual original H-minus-one circle integral. It is idempotent, has finite-dimensional range, is operator-norm continuous on the entire original real norm ball, and fixes every original central physical eigenvector. Its actual rank equals its zero-potential rank along the actual homotopy t*q,0<=t<=1.",
-    "source_uniform_central_projection chooses one cutoff N>=2 BEFORE every original real potential on the entire exact norm ball and provides the actual finite-rank idempotent and its rank invariance. Equality of that rank with the sum of ACTUAL enclosed physical algebraic multiplicities is still a separate unproved obligation."
+    "source_uniform_central_projection chooses one cutoff N>=2 BEFORE every original real potential on the entire exact norm ball and provides the actual finite-rank idempotent and its rank invariance. Equality of that rank with the sum of ACTUAL enclosed physical algebraic multiplicities is still a separate unproved obligation.",
+    "A shared algebraic theorem decomposes a finite-dimensional invariant subspace into its intersections with the full ambient generalized eigenspaces; the ambient space remains unrestricted. An injective operator has no generalized root vectors at zero. Independent finite spectral families have the literal sum of their dimensions.",
+    "Every actual original compact base resolvent is injective. Actual base resolvents commute by the full physical resolvent identity. The actual operator-valued Riesz projection commutes with every actual base resolvent, making its actual finite-dimensional range invariant.",
+    "The actual full physical root-space/compact-resolvent generalized-eigenspace equality now includes the base spectral parameter itself, where both spaces are zero. Since z->inverse(z-a) is injective even at a, the entire family of ACTUAL full original physical root spaces at distinct spectral parameters is independent.",
+    "For every native real original endpoint potential and every physical resolvent circle, the actual Riesz projection range is exactly the sum of ALL enclosed full physical algebraic root spaces. The proof uses the finite invariant range, original full root-space transport and native semisimplicity; outside eigenvectors are annihilated and boundary eigenvectors are excluded by full physical invertibility.",
+    "For the original central circle, the actual range is exactly the finite sum over sourceCentralSpectrum, with the original H1/H-minus-one domains unchanged. Its rank equals sourceCentralAlgebraicCount, the existing sum of ACTUAL physical algebraic multiplicities.",
+    "Combining this proved rank/count identity with actual rank invariance along the ORIGINAL real t*q homotopy and the proved free actual count gives sourceCentralAlgebraicCount_eq: the real original singular central count is EXACTLY2N-1 under the existing wide cutoff, for every original native real potential on the exact source norm ball.",
+    "source_uniform_all_central_algebraic_counts chooses ONE cutoff N>=2 BEFORE q on each original real source norm ball. For EVERY subsequent n>=N the ACTUAL algebraic count strictly below pi^2*n^2-12n is exactly2n-1. The high-tail low-mode offset is therefore fixed at every later separator; canonical slot enumeration and physical source parity still need separate proofs."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
