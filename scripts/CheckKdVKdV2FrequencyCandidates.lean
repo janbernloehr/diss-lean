@@ -1,5 +1,6 @@
 import NLS.Dynamics.ActionDependentWeightedPhaseFlow
 import NLS.Dynamics.FixedTimePhaseObstruction
+import NLS.KdV.ClassicalFiniteNormalizedDifferentials
 import NLS.KdV.FreeFrequencyPsi
 import NLS.KdV.FrequencyPrimitiveContinuation
 import NLS.KdV.FrequencySeries
@@ -21,7 +22,17 @@ This deliberately imports specific modules, not the aggregate NLS library.
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let modules := #[`NLS.KdV.ClassicalFreePrimitive,
+  let modules := #[`NLS.ComplexAnalysis.JointSpectralDerivative,
+    `NLS.ComplexAnalysis.ParametricDividedDifference,
+    `NLS.ComplexAnalysis.AnalyticFinitePeriodNormalization,
+    `NLS.KdV.ClassicalCriticalPointBranch,
+    `NLS.KdV.ClassicalCriticalNumerator,
+    `NLS.KdV.ClassicalCriticalPeriods,
+    `NLS.KdV.ClassicalFiniteNormalizedDifferentials,
+    `NLS.KdV.ClassicalHillFlow,
+    `NLS.KdV.ClassicalHillSpectrum,
+    `NLS.KdV.ClassicalSourcePrimitive,
+    `NLS.KdV.ClassicalFreePrimitive,
     `NLS.KdV.FreeFrequencyPsi,
     `NLS.KdV.ConstantUpperSpectralBridge,
     `NLS.KdV.ClassicalSpectralSymmetry,

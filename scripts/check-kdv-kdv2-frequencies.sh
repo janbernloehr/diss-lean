@@ -8,11 +8,17 @@ export PATH="$ELAN_HOME/bin:$PATH"
 export MATHLIB_CACHE_DIR="${MATHLIB_CACHE_DIR:-/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/cache/mathlib}"
 article_build="$article_root/.lake/build/lib/lean"
 article_imports="$article_root/.lake/article-imports"
-modules=(NLS/KdV/ConstantUpperSpectralBridge
+modules=(NLS/ComplexAnalysis/JointSpectralDerivative
+  NLS/ComplexAnalysis/ParametricDividedDifference
+  NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
+  NLS/KdV/ConstantUpperSpectralBridge
   NLS/KdV/ClassicalSpectralSymmetry
   NLS/KdV/ClassicalDiscriminant
   NLS/KdV/ClassicalLocalPrimitive
   NLS/KdV/ClassicalFreePrimitive
+  NLS/KdV/ClassicalHillFlow
+  NLS/KdV/ClassicalHillSpectrum
+  NLS/KdV/ClassicalSourcePrimitive
   NLS/KdV/ClassicalBranchPrimitive
   NLS/SequenceSpaces/LocallyBoundedAnalyticSummation
   NLS/KdV/FrequencySeriesBounds
@@ -23,6 +29,10 @@ modules=(NLS/KdV/ConstantUpperSpectralBridge
   NLS/Dynamics/FixedTimePhaseObstruction
   NLS/KdV/FrequencyMoments
   NLS/KdV/FreeFrequencyPsi
+  NLS/KdV/ClassicalCriticalPointBranch
+  NLS/KdV/ClassicalCriticalNumerator
+  NLS/KdV/ClassicalCriticalPeriods
+  NLS/KdV/ClassicalFiniteNormalizedDifferentials
   NLS/KdV/FrequencyPrimitiveContinuation
   NLS/KdV/FrequencyContourDecomposition
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow

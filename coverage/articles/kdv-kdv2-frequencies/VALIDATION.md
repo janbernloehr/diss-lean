@@ -21,12 +21,15 @@ its existing Hilbert specialization and a transitive audit.
 | The five imported classical Hill modules from `ConstantUpperSpectralBridge.lean` through `ClassicalBranchPrimitive.lean` | Actual IVP-to-Hill trace bridge, energy symmetry, entire joint discriminant and constructed local primitive/squared-primitive charts on continuous potentials. |
 | `NLS/KdV/ClassicalFreePrimitive.lean` and `NLS/KdV/FreeFrequencyPsi.lean` | Actual free scalar trace/root/primitive, entire normalized numerator basis, omitted-mode and critical-point formulas, constructed isolating circles, exact periods and every positive free moment. |
 | `NLS/KdV/FrequencyPrimitiveContinuation.lean` | Constructed analytic unit factorization at branch points, exact primitive/root endpoint limit, locally uniform quotient and positive-moment bounds, and local odd-moment cancellation. |
+| `NLS/ComplexAnalysis/JointSpectralDerivative.lean`, `ParametricDividedDifference.lean`, `AnalyticFinitePeriodNormalization.lean` | Full joint spectral-derivative analyticity; filled moving divided differences; constructed analytic finite period inversion. |
+| `NLS/KdV/ClassicalCriticalPointBranch.lean`, `ClassicalCriticalNumerator.lean`, `ClassicalCriticalPeriods.lean`, `ClassicalFiniteNormalizedDifferentials.lean` | Actual analytic critical branches and entire numerator bases near zero; actual analytic period entries; exact finite normalization on one selected-mode neighborhood. |
+| `NLS/KdV/ClassicalHillFlow.lean`, `ClassicalHillSpectrum.lean`, `ClassicalSourcePrimitive.lean` | Previously imported actual scalar IVP, Floquet characterization, free-normalized root and primitive continuation; now compiled directly by the frequency checker. |
 | `NLS/SequenceSpaces/LocallyBoundedAnalyticSummation.lean` | Analytic ℓ¹ realization from local norm bounds, absolute summability and locally uniform convergence. |
 | `NLS/KdV/FrequencySeriesBounds.lean` and `NLS/KdV/FrequencySeries.lean` | Exact quadratic-denominator kernel bounds; Hölder and bounded-kernel row estimates; analytic positive-index sums with locally uniform positive partial sums, given local spectral remainder bounds. |
 | `NLS/KdV/FrequencyMoments.lean` | Literal weighted moments, Banach analyticity, odd and analytic-removal cancellations, norm estimate and binomial period expansions. |
 | `NLS/KdV/FrequencyContourDecomposition.lean` | Exact cubic/fifth-power coefficients and finite-gap normalized exterior-period decompositions, using the proved finite-hole Cauchy theorem. |
 
-All twenty-three selected modules compile with pinned **Lean 4.33.1**, commit
+All thirty-three selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -36,11 +39,17 @@ No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 Final output of `bash scripts/check-kdv-kdv2-frequencies.sh`:
 
 ```text
+PASS NLS/ComplexAnalysis/JointSpectralDerivative
+PASS NLS/ComplexAnalysis/ParametricDividedDifference
+PASS NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
 PASS NLS/KdV/ConstantUpperSpectralBridge
 PASS NLS/KdV/ClassicalSpectralSymmetry
 PASS NLS/KdV/ClassicalDiscriminant
 PASS NLS/KdV/ClassicalLocalPrimitive
 PASS NLS/KdV/ClassicalFreePrimitive
+PASS NLS/KdV/ClassicalHillFlow
+PASS NLS/KdV/ClassicalHillSpectrum
+PASS NLS/KdV/ClassicalSourcePrimitive
 PASS NLS/KdV/ClassicalBranchPrimitive
 PASS NLS/SequenceSpaces/LocallyBoundedAnalyticSummation
 PASS NLS/KdV/FrequencySeriesBounds
@@ -51,6 +60,10 @@ PASS NLS/Dynamics/ActionDependentWeightedPhaseFlow
 PASS NLS/Dynamics/FixedTimePhaseObstruction
 PASS NLS/KdV/FrequencyMoments
 PASS NLS/KdV/FreeFrequencyPsi
+PASS NLS/KdV/ClassicalCriticalPointBranch
+PASS NLS/KdV/ClassicalCriticalNumerator
+PASS NLS/KdV/ClassicalCriticalPeriods
+PASS NLS/KdV/ClassicalFiniteNormalizedDifferentials
 PASS NLS/KdV/FrequencyPrimitiveContinuation
 PASS NLS/KdV/FrequencyContourDecomposition
 PASS NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
@@ -59,11 +72,11 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 404 candidate declarations; 2002 declarations total.
+Axiom audit passed: 497 candidate declarations; 2148 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the twenty-three selected modules (including generated and private declarations)
+the thirty-three selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -86,11 +99,17 @@ compiled imports, and writes these ordinary output files solely under this
 worktree's `.lake/build/lib/lean/`:
 
 ```text
+NLS/ComplexAnalysis/JointSpectralDerivative.olean
+NLS/ComplexAnalysis/ParametricDividedDifference.olean
+NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization.olean
 NLS/KdV/ConstantUpperSpectralBridge.olean
 NLS/KdV/ClassicalSpectralSymmetry.olean
 NLS/KdV/ClassicalDiscriminant.olean
 NLS/KdV/ClassicalLocalPrimitive.olean
 NLS/KdV/ClassicalFreePrimitive.olean
+NLS/KdV/ClassicalHillFlow.olean
+NLS/KdV/ClassicalHillSpectrum.olean
+NLS/KdV/ClassicalSourcePrimitive.olean
 NLS/KdV/ClassicalBranchPrimitive.olean
 NLS/SequenceSpaces/LocallyBoundedAnalyticSummation.olean
 NLS/KdV/FrequencySeriesBounds.olean
@@ -101,6 +120,10 @@ NLS/Dynamics/ActionDependentWeightedPhaseFlow.olean
 NLS/Dynamics/FixedTimePhaseObstruction.olean
 NLS/KdV/FrequencyMoments.olean
 NLS/KdV/FreeFrequencyPsi.olean
+NLS/KdV/ClassicalCriticalPointBranch.olean
+NLS/KdV/ClassicalCriticalNumerator.olean
+NLS/KdV/ClassicalCriticalPeriods.olean
+NLS/KdV/ClassicalFiniteNormalizedDifferentials.olean
 NLS/KdV/FrequencyPrimitiveContinuation.olean
 NLS/KdV/FrequencyContourDecomposition.olean
 NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow.olean
@@ -185,7 +208,7 @@ modules use a separate private output directory; none is built into the
 canonical checkout. Upstream shared coverage records are historical
 snapshots; current consumed-source hashes are in this article's source.json.
 
-The final frequency check compiles twenty-three selected modules with both
+The final frequency check compiles thirty-three selected modules with both
 strict options, and audits their private/generated declarations and all
 imported NLS dependencies. It does not claim the article's full main
 statements on rough potentials or a full dissertation-library build. Both
@@ -209,3 +232,21 @@ imported NLS dependencies. The updated shared checker passes all 20 shared
 modules, its positive-index example and the 269-declaration transitive
 shared-namespace audit. Both runs finish with exit code zero. The canonical
 checkout remains clean on main; no full repository validation is claimed.
+
+
+The actual critical-branch and finite-normalization milestone is detailed
+in `FINITE_NORMALIZATION.md`. It retains the exact source `1/(2*pi)` period
+factor and constructs analytic coefficients, rather than assuming a finite
+matrix inverse or normalized functions. It adds no axioms, disabled linters
+or raised heartbeat limits. No new shared branch merge is required: it
+consumes the already imported scalar/root continuation modules directly.
+The existing shared integration record remains historical for that merge;
+this milestone's 33-module check includes all newly consumed dependencies.
+
+Final finite-normalization validation: all 33 selected modules pass with
+both strict options and default heartbeats. The complete transitive audit
+passes for 497 selected-module declarations and 2148 declarations including
+imported NLS dependencies. The only permitted axioms are `propext`,
+`Classical.choice` and `Quot.sound`. Source hashes match the checked files.
+The canonical checkout remains clean on main. No full dissertation build
+or article main-theorem completion is claimed.

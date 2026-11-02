@@ -200,3 +200,11 @@ critical-point nondegeneracy, actual isolating circles, exact positive
 see [FREE_FREQUENCY_PSI.md](FREE_FREQUENCY_PSI.md). This is a base construction
 for equations (52)–(53) and Lemma 3.1, not a proof of the product identity or
 the normalized psi family at nonzero/rough potentials.
+
+
+The actual normalization problem is now constructed near the free potential:
+analytic simple critical branches, entire moving numerators, actual
+analytic period entries and simultaneous normalization on any finite set
+of distinct positive modes. See [FINITE_NORMALIZATION.md](FINITE_NORMALIZATION.md).
+The neighborhood depends on that finite set. The infinite family, global
+canonical product identification and all main-theorem rows remain open.

@@ -440,9 +440,143 @@
       "scope": "Entire free numerator basis with omitted-mode values, critical-point nondegeneracy, actual isolating contours and normalized/vanishing free moments; canonical product identity and nonzero-potential normalized family remain open",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "a34a5c7cdd917fbb9d75f15471a25ee73de44cfc92e05302573590b9be8365ef"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/JointSpectralDerivative.lean",
+      "source_labels": [
+        "Section 2.5 spectral analytic dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Joint Banach analyticity of the energy derivative; existing derivative and continuity statements unchanged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "615f051c204758d1ec0b4a9197560b0e779b6aed4d8926d6125f7a98cba6b541"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricDividedDifference.lean",
+      "source_labels": [
+        "Equation (52) numerator construction dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Joint analytic filled moving divided differences with actual diagonal values, proved by interval integration",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "15e3f4170d836c65b397b823a6b23a2d122f728e46ad246b788fc2ef6fe69895"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization.lean",
+      "source_labels": [
+        "Equation (53) finite normalization dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Constructed simultaneous finite analytic normalization via the Banach implicit function theorem",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c3a8f1dfc2e3edbd20467a632312afbbb8a7801ec514cc777a751e67cb4dbb84"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCriticalPointBranch.lean",
+      "source_labels": [
+        "Section 2.5 actual local critical branches"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Actual analytic simple critical branches near each positive free mode; no global or infinite uniform labeling asserted",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "75dedccd574c1dc84236fb1543868a9a42d304c2fc0b5833285e1fa81d1557dc"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCriticalNumerator.lean",
+      "source_labels": [
+        "Equations (52)-(53) numerator basis construction"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Actual entire moving numerator basis with nonzero filled center and exact free agreement; not the infinite normalized family",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "eae6c4c558b1616734256b38a8e8998f2e61bf42a56782fa7f775253de3d3b78"
+    },
+    {
+      "path": "NLS/KdV/ClassicalCriticalPeriods.lean",
+      "source_labels": [
+        "Equation (53) actual period entries"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Constructed analytic actual period entries near zero on proved contour neighborhoods; free matrix is the identity",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3b759a821a907d7841467585db362c0187875e974be8fe72ad60b9593c757dd0"
+    },
+    {
+      "path": "NLS/KdV/ClassicalFiniteNormalizedDifferentials.lean",
+      "source_labels": [
+        "Equation (53) actual finite period normalization"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "For every finite injection into positive modes, construct entire jointly analytic numerators with exact selected periods near zero; unselected infinite periods remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c84f9c7e0ecfb9e99e0896d9c5edbb56e13d4941d7a9d92d3ecf6316473f8467"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillFlow.lean",
+      "source_labels": [
+        "Shared actual scalar Hill flow foundation"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Previously imported actual scalar IVP and uniqueness, now compiled by the frequency checker",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0ed242a792e6b2f46c93ecb280f9c7fc25cf4a75669cff6248e11e925d56bd8e",
+      "upstream_commit": "ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillSpectrum.lean",
+      "source_labels": [
+        "Shared actual scalar Floquet foundation"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Previously imported periodic/antiperiodic actual scalar solution characterization, now directly compiled",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0a3737f2c419589beecafffa4c62b3e4020a9c25596755bc4acca6eb2882a9af",
+      "upstream_commit": "ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503"
+    },
+    {
+      "path": "NLS/KdV/ClassicalSourcePrimitive.lean",
+      "source_labels": [
+        "Lemma 2.5 constructed continuation dependency"
+      ],
+      "source_pages": [
+        14,
+        21
+      ],
+      "scope": "Previously imported actual free-normalized root and primitive on source-segment avoidance domain; canonical gap-complement coverage still required",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a64f5c9c03ebffd71ec4ed56dc21f5d544f58f4db9d14ad3e6f1366576abe093",
+      "upstream_commit": "ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503"
     }
   ],
   "dependencies_needed": [
+    "infinite normalized period family with uniform tail estimates; finite normalization near zero is now constructed",
     "shared rough Hill/KdV spectral and Birkhoff foundations; global gap and canonical sheet normalization",
     "shared KdV action Hamiltonians",
     "actual KdV and KdV2 frequency moment identities and uniform analytic bounds",
@@ -470,8 +604,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 404,
-    "total_declarations_audited": 2002,
+    "candidate_declarations_audited": 497,
+    "total_declarations_audited": 2148,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -536,5 +670,6 @@
     "canonical_checkout_modified": false
   },
   "goal_turn_classification": "progress",
-  "free_frequency_psi_record": "FREE_FREQUENCY_PSI.md"
+  "free_frequency_psi_record": "FREE_FREQUENCY_PSI.md",
+  "finite_normalization_record": "FINITE_NORMALIZATION.md"
 }

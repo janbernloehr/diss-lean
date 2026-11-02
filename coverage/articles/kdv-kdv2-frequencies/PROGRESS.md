@@ -227,3 +227,31 @@ declarations and 2002 declarations including imported NLS dependencies.
 The updated shared integration checker also passes its 20 modules, example
 and 269-declaration transitive audit. The canonical checkout remains clean.
 No main theorem is marked verified by the free-basis milestone.
+
+
+## Actual critical-branch and finite-normalization milestone
+
+Actual zeros of the continuous-potential discriminant derivative are now
+constructed analytically near each positive free mode, retaining nonzero
+second derivative. A reusable joint moving divided-difference construction
+fills the omitted point and produces entire actual numerator bases that
+agree with the normalized free basis on the whole free slice.
+
+The actual period entries, using the constructed continued root and proved
+free contours, are analytic near zero and equal the identity there. The
+new finite normalization theorem solves all coefficients simultaneously
+for any finite set of distinct positive modes, producing actual entire
+numerators with the exact `1/(2*pi)` normalization on one common complex
+neighborhood. See [FINITE_NORMALIZATION.md](FINITE_NORMALIZATION.md).
+
+This is progress beyond the free case. No infinite-mode uniformity, period
+normalization on unselected contours, global product identity or rough-space
+extension is inferred. The full main-theorem inventory remains open.
+The final 33-module strict build and transitive audit are recorded in
+`VALIDATION.md` and `source.json`.
+
+The final strict run passes all 33 selected modules. The transitive audit
+passes for 497 selected declarations and 2148 declarations including
+imported NLS dependencies, allowing only the three standard axioms.
+Canonical sources and build products were not modified. All main-theorem
+statuses remain open.

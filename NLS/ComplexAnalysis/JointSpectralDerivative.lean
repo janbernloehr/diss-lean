@@ -29,6 +29,20 @@ theorem deriv_spectral_section_eq_fderiv
     simpa using (hasDerivAt_id z).prodMk (hasDerivAt_const z a)
   exact (hF.hasFDerivAt.comp_hasDerivAt z hinc).deriv
 
+/-- Spectral differentiation preserves joint Banach analyticity on an
+open domain, not only joint continuity. -/
+theorem analyticOnNhd_spectral_deriv_of_analyticOnNhd
+    (F : ℂ × A → ℂ) (D : Set (ℂ × A))
+    (hD : IsOpen D) (hF : AnalyticOnNhd ℂ F D) :
+    AnalyticOnNhd ℂ (fun t : ℂ × A =>
+      deriv (fun w : ℂ => F (w,t.2)) t.1) D := by
+  let ev : ((ℂ × A) →L[ℂ] ℂ) →L[ℂ] ℂ := ContinuousLinearMap.apply ℂ ℂ (1,0)
+  have hder := ev.comp_analyticOnNhd hF.fderiv
+  intro t ht
+  apply (hder t ht).congr
+  filter_upwards [hD.mem_nhds ht] with u hu
+  exact (deriv_spectral_section_eq_fderiv F u.1 u.2 (hF u hu).differentiableAt).symm
+
 /-- The spectral derivative varies continuously in both spectral
 point and complex Banach parameter on an open analytic domain. -/
 theorem continuousOn_spectral_deriv_of_analyticOnNhd
