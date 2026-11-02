@@ -1100,3 +1100,56 @@ inventory has 1,452 entries (1,171 theorems and 281 definitions; aliases
 and structures excluded), with 218 SHA256 source/checker hashes. The
 checks use pinned cached imports; the entire dependency tree was not
 rebuilt from source.
+
+
+## 2026-11-02 — converse action factors and corrected mean-squared recovery
+
+**The converse action clause of Theorem 4(ii) is proved** by
+`theorem4_ii_mkdv_actions_of_nls_actions` on every original real H1 input.
+Each positive physical mKdV action J_n is a holomorphic, hence real
+analytic, function of the complete original signed NLS action sequence
+in complex ℓ¹. The action-space domain is open and contains the action
+image of the entire real L2 diagonal. Its neighborhood may depend on n.
+Zero mean and every collapsed gap are included. The stronger shared
+result gives such a factor for every integer physical action level
+J_(n,k), retaining the contour normalization 2*J_(n,k)=I_(n,2k-2).
+
+`theorem4_ii_mean_square_of_nls_actions` proves the sign-invariant
+correction of the printed converse mean claim: the literal mean squared
+is also analytic in the original NLS actions, including at zero mean.
+The actual central primitive square is continued through its central
+cut and evaluated at zero energy. A Cauchy formula in symmetric endpoint
+coordinates proves ambient source analyticity through endpoint collision.
+Its real arcosh formula and the independent trace identity
+Delta(0)=2*cosh(mean) identify its value with the zero Fourier mode
+squared. This does not recover the signed mean without a sign branch.
+
+The reusable descent theorem applies to a scalar analytic function on
+an arbitrary open source domain. It requires invariance only between
+real sources inside that domain. Actual inverse charts and real lifts
+stay inside it. Real action invariance supplies complex tail sign
+symmetries and rotation stationarity, and quadratic descent includes
+collapsed tail actions. Real representatives in each nonnegative action
+ball give compatibility on complex overlaps and uniqueness of the glued
+factor. No artificial extension or invariance outside the source domain
+is assumed. For Laurent actions, equal canonically labelled spectral
+data give literally equal real-gap integrands; the checked NLS inverse
+spectral theorem identifies action fibers with isospectral sets.
+
+The forward assertion that each restricted NLS action factors through
+physical mKdV actions and mean remains essential. Independent mKdV
+angles and the final angle-sum factorization, the full native-domain
+source spectral Hamiltonian identification in Theorem 1, and corrected
+frequency comparison in Theorem 3 remain open. Theorems 1, 3 and
+4(ii)-(iii) as whole statements are still incomplete.
+
+Validation covers 224 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 216 unchanged prefix module
+source hashes match the previous 055b907 milestone; their private outputs
+were reused. Eight added modules and the NLS aggregate compiled. The
+complete targeted and combined audits passed for 2,924 and 47,895
+declarations respectively. Only propext, Classical.choice and Quot.sound
+are allowed. The public inventory has 1,468 entries (1,187 theorems and
+281 definitions; aliases and structures excluded), with 226 SHA256
+source/checker hashes. The checks use pinned cached imports; the entire
+dependency tree was not rebuilt from source.

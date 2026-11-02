@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.ActionDescentIdentification
 import NLS.Articles.MKdVNLSHierarchies.GardnerBracketIdentification
 import NLS.Articles.MKdVNLSHierarchies.AnalyticActionExtension
 import NLS.Articles.MKdVNLSHierarchies.SpectralActionIdentification
@@ -39,6 +40,17 @@ run_cmd do
     `NLS.ComplexAnalysis.radius_lt_re_of_zero_excluded,
     `NLS.ComplexAnalysis.re_pos_on_closedBall_of_radius_lt_re,
     `NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily,
+    `NLS.ZakharovShabat.SourceBirkhoffInverseChart.lifted_real_action_invariance_on,
+    `NLS.ZakharovShabat.SourceBirkhoffInverseChart.recover_of_real_action_lift_on,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_local_scalar_action_factor_on,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_scalar_realActionBalls_on,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_scalar_action_extension_on,
+    `NLS.ZakharovShabat.sourceRealLaurentAction_eq_of_isospectral,
+    `NLS.ZakharovShabat.sourceRealLaurentAction_eq_of_actions,
+    `NLS.ZakharovShabat.sourceDiagonalLaurentAction_real_eq_of_actions,
+    `NLS.ZakharovShabat.sourceAbelianSquare_eq_of_isospectral,
+    `NLS.ZakharovShabat.sourceAbelianSquare_eq_of_actions,
+    `NLS.ZakharovShabat.exists_sourceDiagonalPrimitiveSquare,
     `NLS.Fourier.unitFourierCoefficient_of_hasDerivAt,
     `NLS.Poisson.l2GardnerBracket,
     `NLS.Poisson.l2GardnerDirection,
@@ -332,7 +344,14 @@ run_cmd do
     `NLS.LinearVolterra.solutionMap_intertwine,
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
-  let expected := #[``NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action,
+  let expected := #[``NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mkdv_actions_of_nls_actions,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mean_square_of_nls_actions,
+    ``NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_scalar_action_extension_on,
+    ``NLS.ZakharovShabat.exists_sourceDiagonalPrimitiveSquare,
+    ``NLS.MKdV.exists_miuraActionLevel_action_extensions,
+    ``NLS.MKdV.miuraPrimitiveSquare_eq_mean_sq,
+    ``NLS.MKdV.exists_miuraMeanSquare_action_extension,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action,
     ``NLS.Articles.MKdVNLSHierarchies.theorem4_iii_actual_Gardner_derivative,
     ``NLS.Articles.MKdVNLSHierarchies.theorem4_ii_restricted_action_invariance,
     ``NLS.Articles.MKdVNLSHierarchies.lemma7,

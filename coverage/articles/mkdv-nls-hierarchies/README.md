@@ -3,7 +3,8 @@
 Status: **Theorem 2 proved on its original complex Sobolev domains, with the
 matrix correction in part (ii); Theorem 4(i) proved on the full original
 real H1 domain; Theorem 4(iii)'s angle-action bracket clause proved on its
-original real H1 angle domain. Theorems 1, 3 and 4(ii)-(iii) as whole
+original real H1 angle domain. Theorem 4(ii)'s converse J_n clause and its
+sign-invariant mean-squared correction are proved. Theorems 1, 3 and 4(ii)-(iii) as whole
 statements remain incomplete**.
 Prepared 2026-11-02 against canonical commit
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
@@ -71,7 +72,7 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
 | Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Complete action factorization and independent mKdV angle/frequency identification with the recorded sign correction; the actual Gardner bracket transfer is proved. |
 | Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | **Proved** by `theorem4_i` on the full real H1 domain, including collapsed gaps and zero mean. The mKdV action is the literal inverse-energy-weighted integral of the independent physical Hill primitive on a proved isolating contour; its equality with a positive real-gap integral and contour independence are checked. | None for part (i). Parts (ii)-(iii) remain open; the common complex-source action extensions are now proved by Lemma 7. |
-| Theorem 4(ii), p. 4 | On real H^1, each I_n# is analytic in the mKdV actions and mean; conversely each J_n and the printed mean are analytic in NLS actions alone. | Actual restricted NLS actions commute with every physical mKdV action under the genuine Gardner bracket, including central and closed actions. No analytic factorization is inferred from this alone. | Prove action factorization and specify the signed-mean branch/correction discussed below. |
+| Theorem 4(ii), p. 4 | On real H^1, each I_n# is analytic in the mKdV actions and mean; conversely each J_n and the printed mean are analytic in NLS actions alone. | **The converse J_n clause is proved**, with holomorphic factors on open complex ℓ¹ action neighborhoods. The corrected mean squared has such a factor even at zero mean. Every integer physical mKdV action level also factors. Actual restricted NLS actions commute with every J_n under the Gardner bracket. | Prove the forward factorization of I_n# through J and mean. Signed mean needs a sign branch; the global correction proved here is mean squared. |
 | Theorem 4(iii), p. 4 | For all positive n,m, the angle-action Gardner bracket is delta_mn where the relevant angle is defined; angle sums then depend on actions and mean. | **The angle-action bracket clause is proved** by `theorem4_iii_angle_action` on every real H1 input where the angle is defined. The action index may have a closed gap. The actual Gardner distribution derivative and original NLS angle differential are identified. | Construct the independent mKdV angle and prove the final angle-sum factorization through J and mean. |
 
 The main dependencies singled out by the article are Theorem 5 (p. 9,
@@ -186,7 +187,9 @@ counterexample modules or refutations have been added.
    or an appropriate sign-invariant replacement. The p. 13 proof recovers it
    from an inverse cosh. NLS spectral actions are unchanged by the phase
    rotation sending diagonal u to -u, whereas the signed mean changes sign.
-   No global signed-mean analytic factorization is marked verified.
+   `theorem4_ii_mean_square_of_nls_actions` proves the global mean-squared
+   correction, including zero mean, using the continued central primitive
+   square at zero energy. No global signed-mean recovery is claimed.
 
 ## Existing proofs reused
 
@@ -600,7 +603,7 @@ checks use pinned cached imports; the entire dependency tree was not
 rebuilt from source.
 
 
-Latest milestone: **the angle-action bracket clause of Theorem 4(iii) is
+Previous milestone: **the angle-action bracket clause of Theorem 4(iii) is
 proved on its full original real H1 angle domain** by
 `theorem4_iii_angle_action`. For all positive m,n, whenever the angle's own
 physical mKdV action J_m is nonzero, the actual restricted NLS angle has
@@ -646,3 +649,54 @@ inventory has 1,452 entries (1,171 theorems and 281 definitions; aliases
 and structures excluded), with 218 SHA256 source/checker hashes. The
 checks use pinned cached imports; the entire dependency tree was not
 rebuilt from source.
+
+
+Latest milestone: **The converse action clause of Theorem 4(ii) is proved** by
+`theorem4_ii_mkdv_actions_of_nls_actions` on every original real H1 input.
+Each positive physical mKdV action J_n is a holomorphic, hence real
+analytic, function of the complete original signed NLS action sequence
+in complex ℓ¹. The action-space domain is open and contains the action
+image of the entire real L2 diagonal. Its neighborhood may depend on n.
+Zero mean and every collapsed gap are included. The stronger shared
+result gives such a factor for every integer physical action level
+J_(n,k), retaining the contour normalization 2*J_(n,k)=I_(n,2k-2).
+
+`theorem4_ii_mean_square_of_nls_actions` proves the sign-invariant
+correction of the printed converse mean claim: the literal mean squared
+is also analytic in the original NLS actions, including at zero mean.
+The actual central primitive square is continued through its central
+cut and evaluated at zero energy. A Cauchy formula in symmetric endpoint
+coordinates proves ambient source analyticity through endpoint collision.
+Its real arcosh formula and the independent trace identity
+Delta(0)=2*cosh(mean) identify its value with the zero Fourier mode
+squared. This does not recover the signed mean without a sign branch.
+
+The reusable descent theorem applies to a scalar analytic function on
+an arbitrary open source domain. It requires invariance only between
+real sources inside that domain. Actual inverse charts and real lifts
+stay inside it. Real action invariance supplies complex tail sign
+symmetries and rotation stationarity, and quadratic descent includes
+collapsed tail actions. Real representatives in each nonnegative action
+ball give compatibility on complex overlaps and uniqueness of the glued
+factor. No artificial extension or invariance outside the source domain
+is assumed. For Laurent actions, equal canonically labelled spectral
+data give literally equal real-gap integrands; the checked NLS inverse
+spectral theorem identifies action fibers with isospectral sets.
+
+The forward assertion that each restricted NLS action factors through
+physical mKdV actions and mean remains essential. Independent mKdV
+angles and the final angle-sum factorization, the full native-domain
+source spectral Hamiltonian identification in Theorem 1, and corrected
+frequency comparison in Theorem 3 remain open. Theorems 1, 3 and
+4(ii)-(iii) as whole statements are still incomplete.
+
+Validation covers 224 article/shared modules with Lean 4.33.1,
+autoImplicit=false and warnings as errors. All 216 unchanged prefix module
+source hashes match the previous 055b907 milestone; their private outputs
+were reused. Eight added modules and the NLS aggregate compiled. The
+complete targeted and combined audits passed for 2,924 and 47,895
+declarations respectively. Only propext, Classical.choice and Quot.sound
+are allowed. The public inventory has 1,468 entries (1,187 theorems and
+281 definitions; aliases and structures excluded), with 226 SHA256
+source/checker hashes. The checks use pinned cached imports; the entire
+dependency tree was not rebuilt from source.

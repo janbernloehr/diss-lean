@@ -250,6 +250,14 @@ modules = [
     "NLS/MKdV/MiuraAngleActionBracket.lean",
     "NLS/MKdV/MiuraRestrictedActionBrackets.lean",
     "NLS/Articles/MKdVNLSHierarchies/GardnerBracketIdentification.lean",
+    "NLS/ZakharovShabat/SourceOpenActionDescent.lean",
+    "NLS/ZakharovShabat/SourceOpenActionExtension.lean",
+    "NLS/ZakharovShabat/SourceLaurentActionIsospectral.lean",
+    "NLS/ZakharovShabat/SourceAbelianSquareIsospectral.lean",
+    "NLS/ZakharovShabat/SourceDiagonalPrimitiveSquare.lean",
+    "NLS/MKdV/MiuraActionDescent.lean",
+    "NLS/MKdV/MiuraMeanSquareDescent.lean",
+    "NLS/Articles/MKdVNLSHierarchies/ActionDescentIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

@@ -106,7 +106,7 @@
         "The physical mKdV action contour exists for every such input; it lies in the actual Hill gap complement, has winding one about its intrinsic selected Hill gap, winding zero at other positive gaps and at the origin.",
         "The action is independent of the checked contour family. Arbitrary close piecewise frequency circuits have the full integer-level winding formula after squaring; winding-one circuits give the same physical action.",
         "The actual real-gap representation gives J_n=I_n/(2*zeta_n) for some positive zeta_n in the original positive frequency gap. This never divides by an action or gap length.",
-        "Complex-source analytic action neighborhoods, action factorization, angles and frequency identities belong to Theorem 4(ii)-(iii) and Theorem 3 and remain open."
+        "Complex L2 action extensions, the converse J_n analytic action factorization and corrected mean-squared recovery are proved. Forward mKdV action factorization, independent angles and frequency identities remain separate."
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_i_central_action_zero",
@@ -127,16 +127,23 @@
     {
       "label": "Theorem 4(ii)",
       "page": 4,
-      "status": "partial_Gardner_invariance_proved_factorization_and_mean_correction_open",
+      "status": "partial_converse_J_and_corrected_mean_squared_analytic_factorizations_proved_forward_factorization_open",
       "target": "Real analytic factorization of I# through J and mean; converse factorization of J and printed signed mean through I.",
-      "source_issue": "Global signed mean recovery from NLS actions alone needs a branch restriction or sign-invariant correction.",
+      "source_issue": "The printed global signed mean cannot be recovered from NLS actions without a sign branch. The sign-invariant mean-squared replacement is now proved, including at zero mean.",
       "proved_dependencies": [
         "NLS.Articles.MKdVNLSHierarchies.lemma7",
         "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_restricted_action_invariance"
       ],
       "limits": [
-        "Every original restricted NLS action at every signed index, including zero, commutes with every positive actual mKdV action under the genuine Gardner bracket on real H1. The normal-form factorization is not inferred merely from this commutation; it remains to be proved. The signed-mean correction/branch remains necessary."
-      ]
+        "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
+        "The mean squared is the actual central continued primitive square at zero energy. Its analytic source extension survives a collapsed central gap, and its action factor is proved at zero mean as well as nonzero mean. The signed mean itself still requires a sign branch.",
+        "The forward normal-form factorization of each I_n# through the physical mKdV actions and mean remains essential. The actual Gardner commutation dependency is proved; that commutation alone is not claimed as an analytic factorization."
+      ],
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mkdv_actions_of_nls_actions",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mean_square_of_nls_actions"
+      ],
+      "quantifiers": "Every original real period-one H1 input, every positive mKdV index, zero mean and arbitrary collapsed gaps included. The entire original signed NLS action sequence is assembled in complex l1, analytic on an ambient L2 source neighborhood of all real-type sources. Each J_n and the mean squared have holomorphic, hence real analytic, factors on open complex l1 neighborhoods containing the action image of the entire real L2 diagonal."
     },
     {
       "label": "Theorem 4(iii)",
@@ -359,7 +366,7 @@
     "physical_operator_bridge": "NLS.MKdV.physicalMiuraDiscriminant_eq_classicalHill",
     "root_and_primitive_comparison": "NLS.MKdV.miuraHill_sheets_eq_NLS",
     "path": "s*u maps to s*u_prime+s_squared*u_squared, rather than s*(u_prime+u_squared)",
-    "remaining": "Spectral Hamiltonian calibration, complex source action neighborhoods and frequency/bracket identities; the full real-H1 inverse-energy-weighted action contours and Theorem 4(i) are now proved."
+    "remaining": "Full native spectral Hamiltonian identification, forward mKdV action factorization, independent angles and frequencies. The full real-H1 contours, complex L2 action extensions, Gardner bracket transfer and converse J_n/mean-squared action factors are proved."
   },
   "independent_H1_primitive": {
     "construction": "NLS.MKdV.quasiHillPrimitiveData",
@@ -372,7 +379,7 @@
     "physical_trace": "NLS.Articles.MKdVNLSHierarchies.hillPrimitive_physical_trace",
     "physical_energy_derivative": "NLS.Articles.MKdVNLSHierarchies.hillPrimitive_hasDerivAt",
     "scope": "full complex H1 physical trace and derivative wherever the source-continuation domain is admissible; full real H1 root/primitive comparison for Re z>0 and Im z!=0",
-    "remaining": "full spectral Hamiltonian identification, complex source action extensions, action factorization and frequency identities"
+    "remaining": "Full spectral Hamiltonian native-domain identification, forward mKdV action factorization, independent angles and frequencies."
   },
   "shared_hill_L2_labels_integration": {
     "branch": "articles/kdv-estimates",
@@ -382,7 +389,7 @@
     "actual_discriminant": "NLS.MKdV.hillL2Discriminant_miura",
     "actual_spectrum": "NLS.MKdV.miuraHill_eigenvector_iff_ZS",
     "actual_labels": "NLS.MKdV.miuraHillLabels",
-    "remaining": "geometric eigenspace multiplicity, complex-source action/factorization and frequency/bracket identities"
+    "remaining": "Geometric eigenspace multiplicity, forward mKdV action factorization, independent angles and frequencies."
   },
   "indexed_gap_identification": {
     "endpoint_reflection": "NLS.MKdV.miuraNLSEndpoints_reflection",
@@ -402,7 +409,7 @@
     "central_action": "NLS.MKdV.miuraNLSAction_zero_iff_mean_zero",
     "reflected_actions": "NLS.MKdV.miuraNLSAction_reflection",
     "scope": "mean/trace identity on all complex H1 profiles; actual action assertions on all real H1 profiles at all signed indices; no nonzero-mean or open-gap restriction",
-    "remaining": "Theorem 4(ii)-(iii), complex source action extensions and frequency identification"
+    "remaining": "Forward Theorem 4(ii) factorization, final Theorem 4(iii) angle-sum assertion and corrected frequency identification."
   },
   "full_real_H1_Hill_sheets": {
     "independent_construction": "NLS.ComplexAnalysis.nonrealBoundaryExtension of the original physical quasi-Hill root/primitive; no NLS function appears in the definitions",
@@ -510,5 +517,21 @@
       "NLS/ZakharovShabat/SourceComponentSwapPoisson.lean"
     ],
     "use": "actual source action differential reflection at every real source, including closed gaps, and the original anti-Poisson swap sign"
+  },
+  "analytic_NLS_action_descent": {
+    "generic_local_descent": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_local_scalar_action_factor_on",
+    "real_lifts_and_recovery": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_scalar_realActionBalls_on",
+    "analytic_extension_and_uniqueness": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_scalar_action_extension_on",
+    "source_domain_scope": "Only invariance between real sources in the actual open source domain is assumed. Inverse charts, real lifts and all recovery representatives stay inside that domain.",
+    "collapsed_actions": "Infinite-tail coordinate sign invariance and rotation stationarity give quadratic action descent without nonzero tail actions. Nonnegative points in local action balls have real source representatives; real-form analytic uniqueness gives complex overlap compatibility and uniqueness.",
+    "Laurent_isospectral_invariance": "NLS.ZakharovShabat.sourceRealLaurentAction_eq_of_isospectral",
+    "Laurent_action_invariance": "NLS.ZakharovShabat.sourceDiagonalLaurentAction_real_eq_of_actions",
+    "physical_integer_levels": "NLS.MKdV.exists_miuraActionLevel_action_extensions",
+    "physical_factor": "2*J_(n,k)=I_(n,2*k-2); the action factor retains 1/2 of the actual Laurent integral.",
+    "central_square_analyticity": "NLS.ZakharovShabat.exists_sourceDiagonalPrimitiveSquare",
+    "central_square_invariance": "NLS.ZakharovShabat.sourceAbelianSquare_eq_of_isospectral",
+    "literal_mean_squared": "NLS.MKdV.miuraPrimitiveSquare_eq_mean_sq",
+    "corrected_mean_action_factor": "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mean_square_of_nls_actions",
+    "remaining": "Forward mKdV normal-form factorization, independent mKdV angles and angle-sum factorization, source spectral Hamiltonian identification on full native domains, and corrected frequency comparison."
   }
 }
