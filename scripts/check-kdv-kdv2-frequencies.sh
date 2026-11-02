@@ -8,7 +8,12 @@ export PATH="$ELAN_HOME/bin:$PATH"
 export MATHLIB_CACHE_DIR="${MATHLIB_CACHE_DIR:-/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/cache/mathlib}"
 article_build="$article_root/.lake/build/lib/lean"
 article_imports="$article_root/.lake/article-imports"
-modules=(NLS/SequenceSpaces/LocallyBoundedAnalyticSummation
+modules=(NLS/KdV/ConstantUpperSpectralBridge
+  NLS/KdV/ClassicalSpectralSymmetry
+  NLS/KdV/ClassicalDiscriminant
+  NLS/KdV/ClassicalLocalPrimitive
+  NLS/KdV/ClassicalBranchPrimitive
+  NLS/SequenceSpaces/LocallyBoundedAnalyticSummation
   NLS/KdV/FrequencySeriesBounds
   NLS/KdV/FrequencySeries
   NLS/SequenceSpaces/NonnegativeEnergyDivergence
@@ -16,6 +21,7 @@ modules=(NLS/SequenceSpaces/LocallyBoundedAnalyticSummation
   NLS/Dynamics/ActionDependentWeightedPhaseFlow
   NLS/Dynamics/FixedTimePhaseObstruction
   NLS/KdV/FrequencyMoments
+  NLS/KdV/FrequencyPrimitiveContinuation
   NLS/KdV/FrequencyContourDecomposition
   NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
   NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction

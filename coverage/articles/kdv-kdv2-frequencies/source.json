@@ -333,10 +333,89 @@
       "scope": "Absolute and locally uniform positive sums with analytic limits given spectral remainder estimates; no physical frequency identification",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "5e00d2e28bd3789438cd71bc0fad33970e05ef8f2cfe50030f77714f7ceac320"
+    },
+    {
+      "path": "NLS/KdV/ConstantUpperSpectralBridge.lean",
+      "source_labels": [
+        "Shared continuous-potential Hill foundation"
+      ],
+      "source_pages": [
+        14
+      ],
+      "scope": "Actual scalar Hill equation and trace identified with constructed IVP solutions",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "111451b4d47126d2007fc00591b0f564ccfbb3f4a5bc272e3d823e7be57f0b37",
+      "upstream_commit": "2135a680ab46ba7c476060e9a66db7d5753f8b29"
+    },
+    {
+      "path": "NLS/KdV/ClassicalSpectralSymmetry.lean",
+      "source_labels": [
+        "Shared actual Hill energy symmetry"
+      ],
+      "source_pages": [
+        14
+      ],
+      "scope": "Actual solution and discriminant symmetry under square-root energy parameter",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2aa073ca860db8a7e59e2a91d79fafdd40eef5e5f4e324167c4a69f1b5cb0811",
+      "upstream_commit": "2135a680ab46ba7c476060e9a66db7d5753f8b29"
+    },
+    {
+      "path": "NLS/KdV/ClassicalDiscriminant.lean",
+      "source_labels": [
+        "Lemma 2.5 continuous-potential discriminant foundation"
+      ],
+      "source_pages": [
+        14
+      ],
+      "scope": "Jointly entire actual Hill discriminant on energy times continuous potentials; rough-potential identification remains open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a6f78abd90ddefc24cba3b6d958f4709364368cf00b1b84fdb830049a8361531",
+      "upstream_commit": "2135a680ab46ba7c476060e9a66db7d5753f8b29"
+    },
+    {
+      "path": "NLS/KdV/ClassicalLocalPrimitive.lean",
+      "source_labels": [
+        "Lemma 2.5 local continuous-potential primitive foundation"
+      ],
+      "source_pages": [
+        14
+      ],
+      "scope": "Constructed prescribed sheet and logarithmic primitive off actual branch locus",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ff6b1dc5e0df17454f06b155c604ab358d608df226d265952ae8d4256d2e37af",
+      "upstream_commit": "2135a680ab46ba7c476060e9a66db7d5753f8b29"
+    },
+    {
+      "path": "NLS/KdV/ClassicalBranchPrimitive.lean",
+      "source_labels": [
+        "Lemma 2.6 local squared-primitive dependency"
+      ],
+      "source_pages": [
+        15
+      ],
+      "scope": "Constructed analytic squared primitive at both branch signs, with public derivative identity extracted",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "901ca35bbfa1e5ac74f1a6aa25612548409f637a97dd90c9dc036058f8efdb5c",
+      "upstream_commit": "2135a680ab46ba7c476060e9a66db7d5753f8b29"
+    },
+    {
+      "path": "NLS/KdV/FrequencyPrimitiveContinuation.lean",
+      "source_labels": [
+        "Lemmas 2.6 and 3.1 local actual primitive/root continuation"
+      ],
+      "source_pages": [
+        15,
+        25,
+        26
+      ],
+      "scope": "Actual continuous-potential analytic quotient, exact endpoint limit and factorization, local bounds and odd moments; global and rough-potential normalization remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "799b3f6fc340c5ad1956d5e6ba60cdf1ea1fe730326a39e3869c427b40118c4a"
     }
   ],
   "dependencies_needed": [
-    "shared Hill/KdV spectral and Birkhoff foundations",
+    "shared rough Hill/KdV spectral and Birkhoff foundations; global gap and canonical sheet normalization",
     "shared KdV action Hamiltonians",
     "actual KdV and KdV2 frequency moment identities and uniform analytic bounds",
     "physical smooth solution identification and all-smooth-approximation property",
@@ -363,8 +442,8 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 244,
-    "total_declarations_audited": 1658,
+    "candidate_declarations_audited": 334,
+    "total_declarations_audited": 1918,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
@@ -409,10 +488,24 @@
   "progress_record": "PROGRESS.md",
   "endpoint_mass_record": "MASS_NONEXTENSION.md",
   "shared_developments_inspected": {
-    "articles/kdv-estimates": "1806362e18c4924a0e58e902455a42d8dc8c90d3",
+    "articles/kdv-estimates": "194ec4bd1254f88305d8743f13197fa775e97931",
     "articles/kdv-convexity": "2135a680ab46ba7c476060e9a66db7d5753f8b29"
   },
   "fixed_time_record": "FIXED_TIME_NONEXTENSION.md",
   "frequency_moment_record": "FREQUENCY_MOMENTS.md",
-  "frequency_series_record": "FREQUENCY_SERIES.md"
+  "frequency_series_record": "FREQUENCY_SERIES.md",
+  "primitive_continuation_record": "PRIMITIVE_CONTINUATION.md",
+  "shared_developments_imported": {
+    "articles/kdv-convexity": "2135a680ab46ba7c476060e9a66db7d5753f8b29"
+  },
+  "shared_integration_recheck": {
+    "command": "env ELAN_HOME=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/tooling/elan NLS_REFERENCE_CHECKOUT=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls bash scripts/check-kdv-convexity.sh",
+    "exit_code": 0,
+    "modules": 15,
+    "positive_index_example": "passed",
+    "transitive_audit_declarations": 199,
+    "scope": "shared KdV and KdVConvexity namespaces; separate from full frequency NLS dependency audit",
+    "canonical_checkout_modified": false
+  },
+  "goal_turn_classification": "progress"
 }

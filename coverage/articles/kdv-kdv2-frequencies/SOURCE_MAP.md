@@ -180,3 +180,14 @@ message was made. Once the pending workspace arrangement is resolved, use
 the intended branch `articles/kdv-kdv2-frequencies` and integrate generic
 dependencies once before the article adapters. Expensive combined validation
 must use `/tmp/diss-lean-article-build.lock` and a separate mutable build tree.
+
+
+The actual continuous-potential discriminant and local primitive charts
+have now been imported from `articles/kdv-convexity` through `2135a68`.
+The local continuation of the squared primitive and primitive/root quotient,
+its exact endpoint value, odd-moment cancellation, and local positive-moment
+bounds are proved in `FrequencyPrimitiveContinuation.lean`; see
+[PRIMITIVE_CONTINUATION.md](PRIMITIVE_CONTINUATION.md). This covers local
+continuous-potential dependencies of Lemmas 2.6 and 3.1, not their full rough
+potential and globally normalized gap statements. Main-theorem rows above
+remain open.

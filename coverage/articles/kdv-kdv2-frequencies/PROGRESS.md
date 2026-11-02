@@ -173,3 +173,33 @@ continuous-potential discriminant and local primitive charts; it provides
 a concrete dependency for the next construction step, while rough-potential
 identification, global gap normalization and psi functions remain open.
 These commits were not imported by this summation milestone.
+
+
+## Actual Hill primitive-continuation milestone
+
+The shared action/discriminant branch through `2135a68` is now merged with
+its ancestry preserved. The five classical Hill modules actually used by
+the frequency construction are compiled by this article's checker. A public
+derivative identity was extracted from the shared squared-cosh proof and
+reused to construct the analytic quotient at branch points.
+
+`FrequencyPrimitiveContinuation.lean` constructs jointly analytic K,H from
+the actual continuous-potential discriminant, with `K=H²(Delta²-4)`, H
+nonvanishing and endpoint H=sigma/2. It proves the relative endpoint limit,
+a locally uniform quotient bound, positive-moment estimates, and local
+odd-moment cancellation with analyticity derived from the actual charts.
+No assumption of a simple spectral zero or analytically chosen root is
+introduced. See [PRIMITIVE_CONTINUATION.md](PRIMITIVE_CONTINUATION.md).
+
+The imported shared checker was rerun after the public-lemma extraction:
+all fifteen shared modules, the positive-index example and the transitive
+audit of 199 shared declarations pass. The final 21-module frequency
+checker and its complete transitive NLS audit are recorded in `VALIDATION.md`.
+The source's global normalized primitive/root, psi functions, rough domains,
+sharp moment estimates and physical frequency identification remain open.
+Actual main-theorem completion remains unset.
+
+Final strict validation passes for all 21 selected frequency modules. The
+transitive audit passes for 334 selected-module declarations and 1918
+declarations including imported NLS dependencies, with only the three
+standard axioms allowed. The canonical checkout remains clean on main.

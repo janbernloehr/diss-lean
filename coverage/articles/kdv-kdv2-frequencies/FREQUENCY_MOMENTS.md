@@ -109,3 +109,11 @@ sums from explicit local remainder bounds. The actual spectral moment
 estimates and physical frequency identification remain open. The counts
 above are historical for the contour milestone; `VALIDATION.md` records
 the current complete focused run.
+
+
+The later [primitive-continuation milestone](PRIMITIVE_CONTINUATION.md)
+imports the actual continuous-potential Hill discriminant and constructs
+analytic squared-primitive and primitive/root quotients at both branch
+signs, including multiple zeros. The local odd-moment cancellation is now
+proved from those charts. Global normalization and the rough-potential
+spectral statements remain open.

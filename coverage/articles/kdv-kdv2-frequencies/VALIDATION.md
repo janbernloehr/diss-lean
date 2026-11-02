@@ -18,12 +18,14 @@ its existing Hilbert specialization and a transitive audit.
 | `NLS/Dynamics/FixedTimePhaseObstruction.lean` | A relative phase tending to pi rules out a common fixed-time output limit, independently of convergence of the individual frequencies. |
 | `NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion.lean` | Finite signed perturbations with an exact prescribed mass increment; endpoint regularity; norm convergence for every sigma<1/2. |
 | `NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension.lean` | Fixed-time coordinate nonextension via two constructed approximating families, given the actual correction and endpoint phase identity. |
+| The five imported classical Hill modules from `ConstantUpperSpectralBridge.lean` through `ClassicalBranchPrimitive.lean` | Actual IVP-to-Hill trace bridge, energy symmetry, entire joint discriminant and constructed local primitive/squared-primitive charts on continuous potentials. |
+| `NLS/KdV/FrequencyPrimitiveContinuation.lean` | Constructed analytic unit factorization at branch points, exact primitive/root endpoint limit, locally uniform quotient and positive-moment bounds, and local odd-moment cancellation. |
 | `NLS/SequenceSpaces/LocallyBoundedAnalyticSummation.lean` | Analytic ℓ¹ realization from local norm bounds, absolute summability and locally uniform convergence. |
 | `NLS/KdV/FrequencySeriesBounds.lean` and `NLS/KdV/FrequencySeries.lean` | Exact quadratic-denominator kernel bounds; Hölder and bounded-kernel row estimates; analytic positive-index sums with locally uniform positive partial sums, given local spectral remainder bounds. |
 | `NLS/KdV/FrequencyMoments.lean` | Literal weighted moments, Banach analyticity, odd and analytic-removal cancellations, norm estimate and binomial period expansions. |
 | `NLS/KdV/FrequencyContourDecomposition.lean` | Exact cubic/fifth-power coefficients and finite-gap normalized exterior-period decompositions, using the proved finite-hole Cauchy theorem. |
 
-All fifteen selected modules compile with pinned **Lean 4.33.1**, commit
+All twenty-one selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -33,6 +35,11 @@ No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 Final output of `bash scripts/check-kdv-kdv2-frequencies.sh`:
 
 ```text
+PASS NLS/KdV/ConstantUpperSpectralBridge
+PASS NLS/KdV/ClassicalSpectralSymmetry
+PASS NLS/KdV/ClassicalDiscriminant
+PASS NLS/KdV/ClassicalLocalPrimitive
+PASS NLS/KdV/ClassicalBranchPrimitive
 PASS NLS/SequenceSpaces/LocallyBoundedAnalyticSummation
 PASS NLS/KdV/FrequencySeriesBounds
 PASS NLS/KdV/FrequencySeries
@@ -41,6 +48,7 @@ PASS NLS/SequenceSpaces/HilbertEnergyDivergence
 PASS NLS/Dynamics/ActionDependentWeightedPhaseFlow
 PASS NLS/Dynamics/FixedTimePhaseObstruction
 PASS NLS/KdV/FrequencyMoments
+PASS NLS/KdV/FrequencyPrimitiveContinuation
 PASS NLS/KdV/FrequencyContourDecomposition
 PASS NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
 PASS NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction
@@ -48,11 +56,11 @@ PASS NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassDivergence
 PASS NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion
 PASS NLS/Articles/KdVKdV2Frequencies/FixedTimeNonextension
-Axiom audit passed: 244 candidate declarations; 1658 declarations total.
+Axiom audit passed: 334 candidate declarations; 1918 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the fifteen selected modules (including generated and private declarations)
+the twenty-one selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -75,6 +83,11 @@ compiled imports, and writes these ordinary output files solely under this
 worktree's `.lake/build/lib/lean/`:
 
 ```text
+NLS/KdV/ConstantUpperSpectralBridge.olean
+NLS/KdV/ClassicalSpectralSymmetry.olean
+NLS/KdV/ClassicalDiscriminant.olean
+NLS/KdV/ClassicalLocalPrimitive.olean
+NLS/KdV/ClassicalBranchPrimitive.olean
 NLS/SequenceSpaces/LocallyBoundedAnalyticSummation.olean
 NLS/KdV/FrequencySeriesBounds.olean
 NLS/KdV/FrequencySeries.olean
@@ -83,6 +96,7 @@ NLS/SequenceSpaces/HilbertEnergyDivergence.olean
 NLS/Dynamics/ActionDependentWeightedPhaseFlow.olean
 NLS/Dynamics/FixedTimePhaseObstruction.olean
 NLS/KdV/FrequencyMoments.olean
+NLS/KdV/FrequencyPrimitiveContinuation.olean
 NLS/KdV/FrequencyContourDecomposition.olean
 NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow.olean
 NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction.olean
@@ -108,8 +122,10 @@ checks are not tracked. The pinned PDF hash is in `source.json`.
 
 The generic flow results require a supplied action-frequency function;
 coordinatewise continuity is an explicit assumption where needed. Actual
-spectral functions and their continuity/analyticity estimates remain to be
-proved. The mass obstruction is now instantiated with signed finite truncations,
+globally normalized rough spectral functions and their sharp estimates
+remain to be proved. The actual continuous-potential discriminant and local
+primitive charts have now been imported and extended; see
+`PRIMITIVE_CONTINUATION.md`. The mass obstruction is now instantiated with signed finite truncations,
 and mass divergence is proved from the exact endpoint condition. These
 approximants have not yet been identified with physical smooth data through
 an actual KdV Birkhoff map. The original mass-divergence adapter proves a compact-time obstruction;
@@ -152,3 +168,22 @@ replace the sharp spectral bounds needed for Theorems 1.2 and 1.9.
 The subsequent summation milestone proves the infinite-series convergence
 and analyticity implication from local remainder bounds; the actual
 spectral estimates remain open. See `FREQUENCY_SERIES.md`.
+
+
+The actual primitive-continuation milestone is detailed in
+`PRIMITIVE_CONTINUATION.md`. It merges the shared action/discriminant branch
+through `2135a680ab46ba7c476060e9a66db7d5753f8b29`, with ancestry retained.
+All fifteen modules of that shared checker, the positive-index example,
+and its 199-declaration transitive audit were rerun successfully in this
+worktree after the public derivative-identity extraction. Those shared
+modules use a separate private output directory; none is built into the
+canonical checkout. Upstream shared coverage records are historical
+snapshots; current consumed-source hashes are in this article's source.json.
+
+The final frequency check compiles twenty-one selected modules with both
+strict options, and audits their private/generated declarations and all
+imported NLS dependencies. It does not claim the article's full main
+statements on rough potentials or a full dissertation-library build. Both
+integration checkers were serialized with the shared build lock. No new
+axioms, proof placeholders, disabled linters or increased heartbeats were
+introduced by this milestone.
