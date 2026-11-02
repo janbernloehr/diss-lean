@@ -77,5 +77,26 @@
       "Original complex source wrappers retain the full original H1/H-minus-one domains, exact original endpoint norms and distribution normalization. A single cutoff chosen before q,n,lambda on every exact original source norm ball gives both the multiplicity correspondence and physical algebraic two-count."
     ],
     "status": "Proved: exact finite physical root-chain/formal Taylor-kernel equivalence, physical algebraic multiplicity equals analytic determinant order on the full corrected closed strip, and uniform actual algebraic two-count."
-  }
+  },
+  "subsequent_progress": [
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-complex-labels-map.json",
+      "results": [
+        "Sided free-lattice separation places every tight complex high-mode disk wholly below or wholly above each sufficiently high separator. On every such disk,norm membership and real-part membership both mean n<N.",
+        "The actual original complex central disk is proved to select EXACTLY the source real-part central sublevel. Equality of the ACTUAL finite spectral sets and actual full algebraic counts gives source_uniform_all_complex_central_counts: ONE cutoff BEFORE q on each original complex norm ball gives the exact count2n-1 at EVERY subsequent separator,plus the uniform wide contraction.",
+        "Native EndpointHillComplexPair constructs an intrinsic source-lexicographic physical pair from the ACTUAL determinant zeros,retaining actual full physical algebraic repetitions,including nontrivial Jordan chains. Its entire corrected strip is exhausted;both endpoints are tightly localized;distinct modes are strictly separated in real part. Each pair is unique. Real pairs map literally to the same complex physical pairs.",
+        "The actual original complex central multiset repeats every value by its full physical algebraic multiplicity. Sorting in the explicit source lexicographic relation keeps every repetition. Appending actual ordered high pairs gives an enumeration of the ENTIRE original complex spectrum,with the high pair exactly in slots2n-1,2n.",
+        "Every occurrence fiber is finite and its occurrence count equals the ACTUAL full physical algebraic multiplicity. Intrinsic pair uniqueness and finite ordered-enumeration uniqueness prove equality of ENTIRE labelings across all admissible cutoffs and construction choices.",
+        "sourceHillComplexLabels is the intrinsic global complex labeling in the exact source order(real part first,imaginary part second). It exhausts the entire original spectrum,has exact full algebraic multiplicities,has a lexicographically least actual value at index0,and puts each high actual pair in its required slots. One cutoff is uniform BEFORE every potential in an original complex norm ball. No ground-state simplicity or physical boundary parity is inferred.",
+        "sourceHillComplexLabels_ofPotential proves literal pointwise equality with the existing real canonical labels on the original real mean-zero period-one source. This is the same physical spectral model,not a compatible alternative.",
+        "Actual complex high gaps obey the original full-strip coupling estimate and the exact endpoint Sobolev weighted bound6*sqrt(6)*norm(q). The complete sourceComplexCanonicalGaps,including its finite central prefix,belongs to the genuine infinity Sobolev space of order-r. The full gap map is bounded on EVERY exact original complex endpoint norm ball,with one constant chosen BEFORE q. Its coefficients agree literally with the existing original real gaps."
+      ]
+    }
+  ],
+  "remaining": [
+    "Prove physical original periodic/antiperiodic boundary-condition parity and any required low simplicity/interlacing;construct physical Dirichlet spectral comparisons. Original complex canonical ordering,actual multiplicities,global high slots and full complex unit-extra-weight direct gap regularity are now proved.",
+    "Complete the arbitrary-extra-weight direct estimates in source Theorem2.1 where required;unit extra weight w=1 is proved for all original COMPLEX endpoint potentials. Prove source Theorem2.2 endpoint inverse spectral regularity and original norm-bounded/weak-star-compact isospectral sets.",
+    "Construct and verify the original Birkhoff maps with global bijectivity,real analyticity and the stated weak-star homeomorphisms,and the actual H-minus-one smooth-approximation KdV flow with invariance and analytic/weak-star trajectory assertions.",
+    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses,quantifiers,normalizations and topology. All remain unproved."
+  ]
 }

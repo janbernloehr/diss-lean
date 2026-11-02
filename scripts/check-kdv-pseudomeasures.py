@@ -31,6 +31,7 @@ view = root / '.lake/article-check/lib/lean'
 logs = root / '.lake/article-check/logs'
 logs.mkdir(parents=True, exist_ok=True)
 modules = [
+    'NLS.ComplexAnalysis.LexicographicOrder',
     'NLS.SequenceSpaces.OrderedOneSidedEnumeration',
     'NLS.ComplexAnalysis.CircleOpenCollar',
     'NLS.ComplexAnalysis.RealDiameterDisc',
@@ -112,6 +113,7 @@ modules = [
     'NLS.KdV.PseudomeasureSpectralLipschitz',
     'NLS.KdV.PseudomeasureRootSeparation',
     'NLS.KdV.PseudomeasureRealPairs',
+    'NLS.KdV.PseudomeasureComplexPairs',
     'NLS.KdV.PseudomeasureWideLocalization',
     'NLS.KdV.PseudomeasureLowerSpectrum',
     'NLS.Fourier.PeriodicPseudomeasureWeakStar',
@@ -152,6 +154,11 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralCentralWindow',
     'NLS.Articles.KdVPseudomeasures.SpectralFreeCount',
     'NLS.Articles.KdVPseudomeasures.SpectralComplexCounting',
+    'NLS.Articles.KdVPseudomeasures.SpectralComplexCentral',
+    'NLS.Articles.KdVPseudomeasures.SpectralComplexPairs',
+    'NLS.Articles.KdVPseudomeasures.SpectralComplexRoots',
+    'NLS.Articles.KdVPseudomeasures.SpectralComplexGlobal',
+    'NLS.Articles.KdVPseudomeasures.SpectralComplexUniqueness',
     'NLS.Articles.KdVPseudomeasures.SpectralCentralProjection',
     'NLS.Articles.KdVPseudomeasures.SpectralCentralCounting',
     'NLS.Articles.KdVPseudomeasures.SpectralCentralRoots',
@@ -159,6 +166,8 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.SpectralLabelUniqueness',
     'NLS.Articles.KdVPseudomeasures.SpectralCanonicalLabels',
     'NLS.Articles.KdVPseudomeasures.SpectralCanonicalGaps',
+    'NLS.Articles.KdVPseudomeasures.SpectralComplexCanonical',
+    'NLS.Articles.KdVPseudomeasures.SpectralComplexGaps',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -124,6 +124,63 @@ theorem natCast_lt_freeHillCentralEdge (N : ℕ) (hN : 2 ≤ N) :
   push_cast
   nlinarith [sq_nonneg ((N:ℝ)-2)]
 
+/-- Every localized high-mode disk lies strictly on the appropriate side of
+the free central separator. The larger radius n/4 also suffices. -/
+theorem freeHillCentralEdge_separates_disks (N n : ℕ) (hN : 2 ≤ N) (hn : 2 ≤ n) :
+    (n < N → freeHillValue n+(n:ℝ)/4 < freeHillValue N-12*(N:ℝ)) ∧
+      (N ≤ n → freeHillValue N-12*(N:ℝ) < freeHillValue n-(n:ℝ)/4) := by
+  have hNR : (2:ℝ) ≤ N := by exact_mod_cast hN
+  have hnR : (2:ℝ) ≤ n := by exact_mod_cast hn
+  have hpi : 9 < Real.pi^2 := by nlinarith [Real.pi_gt_three]
+  constructor
+  · intro hnN
+    have hlt' : (n:ℝ)+1 ≤ (N:ℝ) := by exact_mod_cast (show n+1 ≤ N from hnN)
+    have hsq := mul_nonneg (show 0 ≤ (N:ℝ)-1-(n:ℝ) by linarith)
+      (show 0 ≤ (N:ℝ)-1+(n:ℝ) by linarith)
+    have hp := mul_nonneg (sq_nonneg Real.pi) hsq
+    have hp' := mul_pos (sub_pos.mpr hpi) (show 0 < 2*(N:ℝ)-1 by linarith)
+    dsimp [freeHillValue]
+    push_cast
+    nlinarith
+  · intro hnN
+    have hle : (N:ℝ) ≤ n := by exact_mod_cast hnN
+    have hsq := mul_nonneg (show 0 ≤ (n:ℝ)-(N:ℝ) by linarith)
+      (show 0 ≤ (n:ℝ)+(N:ℝ)-1 by linarith)
+    have hp := mul_nonneg (sq_nonneg Real.pi) hsq
+    have hp' := mul_nonneg (show 0 ≤ Real.pi^2-1 by linarith)
+      (show 0 ≤ (n:ℝ)-(N:ℝ) by linarith)
+    dsimp [freeHillValue]
+    push_cast
+    nlinarith
+
+/-- On a tight complex mode disk, norm and real-part central membership both
+mean that the unsigned mode is below the central cutoff. -/
+theorem localized_freeHillCentralEdge_iff (N n : ℕ) (hN : 2 ≤ N) (hn : 2 ≤ n)
+    (z : ℂ) (hz : ‖z-(freeHillValue n:ℂ)‖ ≤ Real.sqrt (n:ℝ)/4) :
+    (‖z‖ < freeHillValue N-12*(N:ℝ) ↔ n < N) ∧
+      (z.re < freeHillValue N-12*(N:ℝ) ↔ n < N) := by
+  have hnR : (2:ℝ) ≤ n := by exact_mod_cast hn
+  have hsqrt : Real.sqrt (n:ℝ) ≤ n := Real.sqrt_le_iff.mpr ⟨by positivity, by nlinarith⟩
+  have hnfree : 0 ≤ freeHillValue n := by unfold freeHillValue; positivity
+  have hnorm : ‖(freeHillValue n:ℂ)‖ = freeHillValue n := by
+    rw [Complex.norm_real, Real.norm_eq_abs, abs_of_nonneg hnfree]
+  have hu : ‖z‖ ≤ freeHillValue n+(n:ℝ)/4 := by
+    have h := norm_le_norm_sub_add z (freeHillValue n:ℂ)
+    rw [hnorm] at h
+    linarith
+  have hl : freeHillValue n-(n:ℝ)/4 ≤ z.re := by
+    have h := (Complex.abs_re_le_norm (z-(freeHillValue n:ℂ))).trans hz
+    simp only [Complex.sub_re, Complex.ofReal_re] at h
+    linarith [(abs_le.mp h).1]
+  have hrez : z.re ≤ ‖z‖ := Complex.re_le_norm z
+  obtain ⟨hbelow, habove⟩ := freeHillCentralEdge_separates_disks N n hN hn
+  by_cases hnN : n < N
+  · have hnormlt := hu.trans_lt (hbelow hnN)
+    exact ⟨iff_of_true hnormlt hnN, iff_of_true (hrez.trans_lt hnormlt) hnN⟩
+  · have hrelower := (habove (Nat.le_of_not_gt hnN)).trans_le hl
+    exact ⟨iff_of_false (not_lt.mpr (hrelower.le.trans hrez)) hnN,
+      iff_of_false (not_lt.mpr hrelower.le) hnN⟩
+
 /-- Tight complex high-mode disks avoid every high central separator circle. -/
 theorem norm_ne_freeHillCentralEdge_of_localized (N n : ℕ) (hN : 2 ≤ N) (hn : 2 ≤ n)
     (z : ℂ) (hz : ‖z-(freeHillValue n:ℂ)‖ ≤ Real.sqrt (n:ℝ)/4) :

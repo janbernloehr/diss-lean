@@ -53,7 +53,7 @@
     "uniformity": "For each real radius R,ONE N>=2 and the circle centered0 with radius pi^2*N^2-12N are chosen BEFORE every q with its original norm<=R.",
     "multiplicity": "ACTUAL full physical algebraic root-space dimension, including generalized eigenvectors for complex potentials.",
     "count_region": "The OPEN disk centered0 with radius pi^2*N^2-12N. Its full boundary is in the original physical resolvent.",
-    "source_ordering_still_to_prove": "Source Section2 equation(4), printed page5: eigenvalues counted with multiplicity and ordered lexicographically, first by real part, then imaginary part. Local private source text checked; no complex source enumeration is inferred from the disk count alone."
+    "source_ordering_subsequently_proved": "Source equation(4) lexicographic order(real part first,imaginary part second) and equality of the actual disk with the central real-part sublevel are now proved downstream in SpectralComplexCentral and SpectralComplexCanonical;see spectral-complex-labels-map.json."
   },
   "conclusions": {
     "shared": "NLS.FunctionalAnalysis.idempotent_eq_zero_on_genEigenspace_top",
@@ -67,16 +67,16 @@
   "qualifications": [
     "No real semisimplicity is used in the complex range/count theorem. Nontrivial Jordan chains are retained.",
     "The native count invariance theorem is conditional on a common physical resolvent circle; the source uniform theorem PROVES such a circle for the original complex norm ball.",
-    "The source complex disk count is proved, but no equivalence with the real-part central sublevel or canonical complex lexicographic global enumeration is claimed yet.",
-    "The original real left-half-plane central count and canonical real global labels were already proved. Complex global labels, physical boundary parity, full complex/arbitrary-weight gap estimates and inverse spectral regularity still need work.",
+    "The actual source complex disk is now PROVED equal to the real-part central sublevel,and canonical complex lexicographic global labels with actual multiplicities are proved downstream;see spectral-complex-labels-map.json.",
+    "Original real and complex canonical global labels and full unit-extra-weight direct gap regularity are now proved. Physical boundary parity,arbitrary-extra-weight/Dirichlet estimates and inverse spectral regularity remain open.",
     "All Appendix B.1(i)-(iv) and compact-set follow-on topology results remain complete; no main theorem is marked verified."
   ],
   "shared_declarations_copied": 0,
   "remaining": [
-    "Construct the source complex canonical spectral labeling and its exact slot/multiplicity correspondence using the proved actual uniform complex disk count and tight high localization. The real global canonical labels and full real unit-extra-weight direct gap estimates are already proved. Identify the complex disk central block with the required source ordering; do not silently equate it with a real-part sublevel.",
-    "Prove physical original periodic/antiperiodic boundary-condition parity and any required low ground-state simplicity/interlacing, physical Dirichlet comparisons, full complex/arbitrary-extra-weight estimates, endpoint inverse regularity and original norm-bounded isospectral sets.",
-    "Construct the original Birkhoff maps and actual H-minus-one smooth-approximation KdV flow with all stated analytic, invariance, weak-star and trajectory properties.",
-    "State and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with full original hypotheses and quantifiers. All remain unproved."
+    "Prove physical original periodic/antiperiodic boundary-condition parity and any required low simplicity/interlacing;construct physical Dirichlet spectral comparisons. Original complex canonical ordering,actual multiplicities,global high slots and full complex unit-extra-weight direct gap regularity are now proved.",
+    "Complete the arbitrary-extra-weight direct estimates in source Theorem2.1 where required;unit extra weight w=1 is proved for all original COMPLEX endpoint potentials. Prove source Theorem2.2 endpoint inverse spectral regularity and original norm-bounded/weak-star-compact isospectral sets.",
+    "Construct and verify the original Birkhoff maps with global bijectivity,real analyticity and the stated weak-star homeomorphisms,and the actual H-minus-one smooth-approximation KdV flow with invariance and analytic/weak-star trajectory assertions.",
+    "Precisely state and prove all main Theorems1.1,1.3,1.4,5.1,5.9 with their full original hypotheses,quantifiers,normalizations and topology. All remain unproved."
   ],
   "validation": {
     "fresh_build": true,
@@ -93,5 +93,20 @@
     ],
     "empty_axiom_sets_allowed": true,
     "log": ".lake/article-check/logs/validation-complex-count.log"
-  }
+  },
+  "subsequent_progress": [
+    {
+      "map": "coverage/articles/kdv-pseudomeasures/spectral-complex-labels-map.json",
+      "results": [
+        "Sided free-lattice separation places every tight complex high-mode disk wholly below or wholly above each sufficiently high separator. On every such disk,norm membership and real-part membership both mean n<N.",
+        "The actual original complex central disk is proved to select EXACTLY the source real-part central sublevel. Equality of the ACTUAL finite spectral sets and actual full algebraic counts gives source_uniform_all_complex_central_counts: ONE cutoff BEFORE q on each original complex norm ball gives the exact count2n-1 at EVERY subsequent separator,plus the uniform wide contraction.",
+        "Native EndpointHillComplexPair constructs an intrinsic source-lexicographic physical pair from the ACTUAL determinant zeros,retaining actual full physical algebraic repetitions,including nontrivial Jordan chains. Its entire corrected strip is exhausted;both endpoints are tightly localized;distinct modes are strictly separated in real part. Each pair is unique. Real pairs map literally to the same complex physical pairs.",
+        "The actual original complex central multiset repeats every value by its full physical algebraic multiplicity. Sorting in the explicit source lexicographic relation keeps every repetition. Appending actual ordered high pairs gives an enumeration of the ENTIRE original complex spectrum,with the high pair exactly in slots2n-1,2n.",
+        "Every occurrence fiber is finite and its occurrence count equals the ACTUAL full physical algebraic multiplicity. Intrinsic pair uniqueness and finite ordered-enumeration uniqueness prove equality of ENTIRE labelings across all admissible cutoffs and construction choices.",
+        "sourceHillComplexLabels is the intrinsic global complex labeling in the exact source order(real part first,imaginary part second). It exhausts the entire original spectrum,has exact full algebraic multiplicities,has a lexicographically least actual value at index0,and puts each high actual pair in its required slots. One cutoff is uniform BEFORE every potential in an original complex norm ball. No ground-state simplicity or physical boundary parity is inferred.",
+        "sourceHillComplexLabels_ofPotential proves literal pointwise equality with the existing real canonical labels on the original real mean-zero period-one source. This is the same physical spectral model,not a compatible alternative.",
+        "Actual complex high gaps obey the original full-strip coupling estimate and the exact endpoint Sobolev weighted bound6*sqrt(6)*norm(q). The complete sourceComplexCanonicalGaps,including its finite central prefix,belongs to the genuine infinity Sobolev space of order-r. The full gap map is bounded on EVERY exact original complex endpoint norm ball,with one constant chosen BEFORE q. Its coefficients agree literally with the existing original real gaps."
+      ]
+    }
+  ]
 }

@@ -6,8 +6,9 @@ import NLS.KdV.PseudomeasureLowerSpectrum
 
 The norm bound uses the actual original endpoint-to-H-minus-one inclusion.
 Every spectral point is for the full original H1/H-minus-one operator. Central
-algebraic counts are now defined from actual finite physical spectra; their
-required value2N-1 for general potentials remains a separate obligation.
+algebraic counts are defined from actual finite physical spectra. Their exact
+value2N-1 for complex source potentials is proved downstream in
+SpectralComplexCentral, followed by canonical lexicographic global labels.
 -/
 noncomputable section
 open Set
