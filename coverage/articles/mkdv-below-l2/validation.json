@@ -198,7 +198,13 @@
     "MKdV/JointlySmoothClassicalTrajectory",
     "Articles/MKdVBelowL2/FourthClassicalUniqueness",
     "Articles/MKdVBelowL2/ScalarClassicalFourthAdapter",
-    "Articles/MKdVBelowL2/MainTheorem11Wellposedness"
+    "Articles/MKdVBelowL2/MainTheorem11Wellposedness",
+    "Dynamics/FixedTimeMassPhaseTuning",
+    "ZakharovShabat/SourceHilbertMassDivergence",
+    "Articles/MKdVBelowL2/ScalarSmoothMassPhases",
+    "Articles/MKdVBelowL2/ScalarSmoothMassApproximants",
+    "Articles/MKdVBelowL2/FixedTimeScalarMassObstruction",
+    "Articles/MKdVBelowL2/FixedTimeFourthCoordinateObstruction"
   ],
   "strict_options": [
     "autoImplicit=false",
@@ -4780,6 +4786,161 @@
       "Classical.choice",
       "Quot.sound"
     ],
+    "NLS.Dynamics.roundedPhaseMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Dynamics.massPhaseScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Dynamics.roundedPhaseMass_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Dynamics.massPhaseScale_sq_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Dynamics.tendsto_massPhaseScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Dynamics.exp_roundedPhaseMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Dynamics.exists_mass_phase_scales": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Dynamics.exp_signed_mass_phase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sourceHilbertMass_real_eq_norm_fst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.sum_fst_sq_le_sourceHilbertMass_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.ZakharovShabat.tendsto_sourceHilbertMass_real_atTop": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthClassicalMass_eq_norm_fst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthClassicalMass_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_sequence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.not_mem_sourceHilbertLocus_of_no_physical_hilbert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.tendsto_fourthClassicalMass_atTop": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_sequence_mass_phase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthClassicalSourceAtExponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthClassicalScalarInput": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthClassicalScalarInput_pair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthClassicalScalarInput_coefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.isSmoothPhysicalScalarInput_fourthClassicalScalarInput": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.tendsto_fourthClassicalScalarInput": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_smooth_scalar_mass_phase_sequence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.not_continuousAt_fixed_scalar_mass_phase_extension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthScalarRenormalizedCoordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.continuous_fourthScalarRenormalizedCoordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthScalarRenormalizedCoordinate_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.fourthScalarOrdinaryCoordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.not_continuousAt_fourthScalarOrdinaryCoordinate_extension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLS.Articles.MKdVBelowL2.exists_obstructed_fourthScalarOrdinaryCoordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
     "NLS.ZakharovShabat.componentSwapBoundary": [],
     "NLS.ZakharovShabat.componentSwapBoundary_involutive": []
   },
@@ -4788,7 +4949,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Incremental focused validation: 9 new modules checked strictly; 189 unchanged modules reuse parent validation. Full transitive audit of 917 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "Incremental focused validation: 6 new modules checked strictly; 198 unchanged modules reuse parent validation. Full transitive audit of 948 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "not_verified",
     "1.2": "verified_under_accepted_reference",
@@ -4798,8 +4959,8 @@
     "9b664f9",
     "09fa657"
   ],
-  "validation_method": "Incremental strict checks of 9 final new modules and a full transitive audit; 189 parent modules reused after checking their sources are unchanged.",
-  "validation_basis_commit": "d2227b25f90ed23676b0f21cc4628190a623c086",
+  "validation_method": "Incremental strict checks of 6 final new modules and a full transitive audit; 198 parent modules reused after checking their sources are unchanged.",
+  "validation_basis_commit": "03e1d56b8d1810825c7c140bca6f84f0a2f2f070",
   "unchanged_modules_reused": [
     "ComplexAnalysis/RelativeProductComparison",
     "ComplexAnalysis/RootPeriodComparison",
@@ -4989,9 +5150,7 @@
     "Articles/MKdVBelowL2/SmoothPhysicalMKdV",
     "Articles/MKdVBelowL2/SmoothSpatialFourthTrajectory",
     "Articles/MKdVBelowL2/PhysicalScalarSmoothFourth",
-    "Articles/MKdVBelowL2/ScalarSmoothFourierApproximation"
-  ],
-  "modules_checked_this_checkpoint": [
+    "Articles/MKdVBelowL2/ScalarSmoothFourierApproximation",
     "FunctionalAnalysis/ContinuousMapTimeDerivative",
     "FunctionalAnalysis/PeriodicContinuousFamily",
     "MKdV/ClassicalDifferenceEnergy",
@@ -5001,6 +5160,14 @@
     "Articles/MKdVBelowL2/FourthClassicalUniqueness",
     "Articles/MKdVBelowL2/ScalarClassicalFourthAdapter",
     "Articles/MKdVBelowL2/MainTheorem11Wellposedness"
+  ],
+  "modules_checked_this_checkpoint": [
+    "Dynamics/FixedTimeMassPhaseTuning",
+    "ZakharovShabat/SourceHilbertMassDivergence",
+    "Articles/MKdVBelowL2/ScalarSmoothMassPhases",
+    "Articles/MKdVBelowL2/ScalarSmoothMassApproximants",
+    "Articles/MKdVBelowL2/FixedTimeScalarMassObstruction",
+    "Articles/MKdVBelowL2/FixedTimeFourthCoordinateObstruction"
   ],
   "checked_source_sha256": {
     "ComplexAnalysis/RelativeProductComparison": "9fde40048b371faeaaf6824bad52dc3777f14114339734bbaa9e83d5061ee22d",
@@ -5200,6 +5367,12 @@
     "MKdV/JointlySmoothClassicalTrajectory": "fd3520b1c0388397dbc0029667bb82807f5eb5f32c09568d15de2e1b6a1b2fe4",
     "Articles/MKdVBelowL2/FourthClassicalUniqueness": "5fb916a5792f0640c85376fbcb190f8a6b511d13af4f59fefe0ff58fd9d61c99",
     "Articles/MKdVBelowL2/ScalarClassicalFourthAdapter": "347e8c3eafb3a66b766aa9783435dd52a35e9fadb36e471d85afa0070bb0e6ca",
-    "Articles/MKdVBelowL2/MainTheorem11Wellposedness": "bfdc30e02b3ebb1ded60ef2f8b1fb443914de9dcb75009897cc1834b99ea6345"
+    "Articles/MKdVBelowL2/MainTheorem11Wellposedness": "bfdc30e02b3ebb1ded60ef2f8b1fb443914de9dcb75009897cc1834b99ea6345",
+    "Dynamics/FixedTimeMassPhaseTuning": "bbf78be78da755226098f12611ca754885b7086d9d3d3f066beb6304afb9e8cc",
+    "ZakharovShabat/SourceHilbertMassDivergence": "eaa4df634679ffbc3a38dcc4cea41b182cf063b840fcff6c8fc57923299ee82f",
+    "Articles/MKdVBelowL2/ScalarSmoothMassPhases": "f596f43afe99359dd1ad3d6d4ca1aaa5faf13f5dab6012af1b705eb2c99670ee",
+    "Articles/MKdVBelowL2/ScalarSmoothMassApproximants": "8a8f64b5aa7c5d6b387d36d83bbc1c2749b7293417fd4164dc552a48bc3ec62c",
+    "Articles/MKdVBelowL2/FixedTimeScalarMassObstruction": "de25f78b17845001b09414c9afca18edeb529568928465dd326d99468bfc35ed",
+    "Articles/MKdVBelowL2/FixedTimeFourthCoordinateObstruction": "98b93a82716bf38c4a9ef19e51a698e7321908b158383e7fddd060db6437944a"
   }
 }

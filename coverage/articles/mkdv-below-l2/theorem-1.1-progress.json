@@ -282,12 +282,47 @@
       "source": "Theorem 1.1 global small-data C0 wellposedness clause",
       "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation",
       "scope": "For every finite p>2 and any canonical classical smooth solution map, one invariant open neighborhood of zero is chosen before all T>0. On that same neighborhood every compact interval has the unique all-smooth-sequences solution, with continuous dependence in the full uniform trajectory norm. All compact paths are restrictions of the same actual scalar flow, which preserves the neighborhood at every real time."
+    },
+    {
+      "source": "Arbitrary Hilbert approximants have divergent original physical mass",
+      "declaration": "NLS.ZakharovShabat.tendsto_sourceHilbertMass_real_atTop",
+      "scope": "Every original real source outside the embedded Hilbert locus and every converging Hilbert-source family at an increasing exponent. Every finite Fourier energy sum is bounded by the actual Hilbert mass. Nonsummability of the limit coefficients forces mass to positive infinity. No finite-gap or smoothness hypothesis is required."
+    },
+    {
+      "source": "Exact prescribed mass phase with vanishing amplitude adjustment",
+      "declaration": "NLS.Dynamics.exists_mass_phase_scales",
+      "scope": "Any diverging positive mass family, positive fixed phase scale c and nonnegative offset delta. Target mass (ceil(cM)+delta)/c differs by a bounded amount. The square-root amplitude factor tends to one and its rescaled quadratic mass has exactly the phase exp(2*pi*i*delta). A sign-reversal lemma handles both one and minus one for signed mass coefficients."
+    },
+    {
+      "source": "Controlled native smooth real approximants",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_sequence_mass_phase",
+      "scope": "Every original real scalar input outside the physical Hilbert locus, at every finite p>=2. Native H4 representatives of actual smooth scalar cutoffs retain equal raw fields and genuinely smooth real periodic physical fields. After a tail shift and real amplitude adjustments tending to one, their included original sources converge in the original p-norm and every mass phase is exactly the prescribed offset. The original physical mass is its independently defined Hilbert mass and scales quadratically."
+    },
+    {
+      "source": "Prescribed-phase approximants in the actual physical scalar norm",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_smooth_scalar_mass_phase_sequence",
+      "scope": "Every non-Hilbert original real scalar datum, every finite p>=2, and every positive phase scale with nonnegative offset. The controlled native sources give genuine smooth original scalar distributions. All signed coefficients are retained, the physical scalar inputs converge in their original norm, and their actual physical masses have the exact prescribed phase. This is not a mere formal spectral approximation."
+    },
+    {
+      "source": "Fixed-time physical mass-phase extension obstruction",
+      "declaration": "NLS.Articles.MKdVBelowL2.not_continuousAt_fixed_scalar_mass_phase_extension",
+      "scope": "Every non-Hilbert original real scalar datum, any nonzero signed fixed mass frequency, and any scalar amplitude continuous and nonzero at the datum. Any function agreeing on the genuine smooth controlled native inputs with the actual physical mass exponential times that amplitude is discontinuous there. Two norm-convergent smooth sequences give the exact phases one and minus one at the same selected time. This does not merely exclude uniform convergence of whole trajectories."
+    },
+    {
+      "source": "Actual normalized fourth coordinate continuity without source inversion",
+      "declaration": "NLS.Articles.MKdVBelowL2.continuous_fourthScalarRenormalizedCoordinate",
+      "scope": "Every signed mode, every real time, and every finite source exponent greater than one. The coordinate phase of the fixed normalized H4 family is continuous at all original real scalar inputs before applying a source inverse. No admissibility of the rough source inverse at the selected time is assumed."
+    },
+    {
+      "source": "Fixed-time obstruction for the mass-restored fourth coordinate phase",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_obstructed_fourthScalarOrdinaryCoordinate",
+      "scope": "Every non-Hilbert real scalar datum at every finite p>=2 and every fixed t>0. Some actual signed nonzero Birkhoff mode has no continuous scalar extension agreeing on smooth controlled native inputs with the normalized coordinate phase times exp(-12*pi*i*n*t*M). The proof uses the exact physical mass and the independently fixed normalized coordinate family. Identification of this restored coordinate formula with arbitrary ordinary physical mKdV PDE solutions is still a separate remaining obligation; the full physical nonextension theorem is not claimed from this declaration alone."
     }
   ],
   "remaining": [
-    "Prove nonextension of the original unrenormalized mKdV solution map at every FLp datum outside L2, for each fixed t>0. Construct controlled smooth approximations with tunable divergent physical mass and use the verified nonzero signed Birkhoff mode. Renormalized wellposedness and a trajectory obstruction do not alone prove this fixed-time claim."
+    "Prove that arbitrary classical smooth original unrenormalized mKdV solutions have exactly the mass-restored fourth-coordinate evolution used by FixedTimeFourthCoordinateObstruction, and construct an ordinary smooth classical solution map so its agreement condition is nonvacuous. Compose any hypothetical continuous physical fixed-time extension with the fixed Birkhoff coordinate to conclude nonextension at every non-Hilbert datum and each t>0. The actual controlled smooth mass-phase approximants and fixed-time coordinate obstruction are now proved; those alone are not substituted for physical PDE calibration."
   ],
-  "validation": "Nine final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 189 unchanged parent modules reused from d2227b25f90ed23676b0f21cc4628190a623c086 after source comparison. Fresh full transitive audit of 917 declarations uses only propext, Classical.choice and Quot.sound.",
+  "validation": "Six final new modules checked with Lean 4.33.1, autoImplicit=false and warningAsError=true; 198 unchanged parent modules reused from 03e1d56b8d1810825c7c140bca6f84f0a2f2f070 after source comparison. Fresh full transitive audit of 948 declarations uses only propext, Classical.choice and Quot.sound.",
   "verified_clauses": {
     "local_C0_wellposedness": "NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation",
     "global_small_data_C0_wellposedness": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation"

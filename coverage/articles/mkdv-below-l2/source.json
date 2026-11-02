@@ -17,7 +17,7 @@
         "global_small_data_C0_wellposedness": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation"
       },
       "remaining": [
-        "Prove nonextension of the original unrenormalized mKdV solution map at every FLp datum outside L2, for each fixed t>0. Construct controlled smooth approximations with tunable divergent physical mass and use the verified nonzero signed Birkhoff mode. Renormalized wellposedness and a trajectory obstruction do not alone prove this fixed-time claim."
+        "Prove that arbitrary classical smooth original unrenormalized mKdV solutions have exactly the mass-restored fourth-coordinate evolution used by FixedTimeFourthCoordinateObstruction, and construct an ordinary smooth classical solution map so its agreement condition is nonvacuous. Compose any hypothetical continuous physical fixed-time extension with the fixed Birkhoff coordinate to conclude nonextension at every non-Hilbert datum and each t>0. The actual controlled smooth mass-phase approximants and fixed-time coordinate obstruction are now proved; those alone are not substituted for physical PDE calibration."
       ]
     },
     {
@@ -33,7 +33,7 @@
   ],
   "status": "theorems_1_2_and_1_3_verified_theorem_1_1_open",
   "branch": "articles/mkdv-below-l2",
-  "audited_declarations": 917,
+  "audited_declarations": 948,
   "verified_dependencies": [
     "NLS.ZakharovShabat.sourceProposition4_1",
     "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_sobolevFourth_action_factor_with_frequencies",
@@ -97,6 +97,13 @@
     "NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_eq_of_classical",
     "NLS.Articles.MKdVBelowL2.isMKdVSolutionBySmoothApproximation_iff",
     "NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation",
-    "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation"
+    "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation",
+    "NLS.ZakharovShabat.tendsto_sourceHilbertMass_real_atTop",
+    "NLS.Dynamics.exists_mass_phase_scales",
+    "NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_sequence_mass_phase",
+    "NLS.Articles.MKdVBelowL2.exists_smooth_scalar_mass_phase_sequence",
+    "NLS.Articles.MKdVBelowL2.not_continuousAt_fixed_scalar_mass_phase_extension",
+    "NLS.Articles.MKdVBelowL2.continuous_fourthScalarRenormalizedCoordinate",
+    "NLS.Articles.MKdVBelowL2.exists_obstructed_fourthScalarOrdinaryCoordinate"
   ]
 }

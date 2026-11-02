@@ -1,3 +1,9 @@
+import NLS.Dynamics.FixedTimeMassPhaseTuning
+import NLS.ZakharovShabat.SourceHilbertMassDivergence
+import NLS.Articles.MKdVBelowL2.ScalarSmoothMassPhases
+import NLS.Articles.MKdVBelowL2.ScalarSmoothMassApproximants
+import NLS.Articles.MKdVBelowL2.FixedTimeScalarMassObstruction
+import NLS.Articles.MKdVBelowL2.FixedTimeFourthCoordinateObstruction
 import NLS.FunctionalAnalysis.ContinuousMapTimeDerivative
 import NLS.FunctionalAnalysis.PeriodicContinuousFamily
 import NLS.MKdV.ClassicalDifferenceEnergy
@@ -1136,3 +1142,35 @@ import NLS.Articles.MKdVBelowL2.FourthMomentSummability
 #print axioms NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation
 #print axioms NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation
 #print axioms NLS.MKdV.IsClassicalMKdVTrajectory.mk
+
+#print axioms NLS.Dynamics.roundedPhaseMass
+#print axioms NLS.Dynamics.massPhaseScale
+#print axioms NLS.Dynamics.roundedPhaseMass_bounds
+#print axioms NLS.Dynamics.massPhaseScale_sq_mul
+#print axioms NLS.Dynamics.tendsto_massPhaseScale
+#print axioms NLS.Dynamics.exp_roundedPhaseMass
+#print axioms NLS.Dynamics.exists_mass_phase_scales
+#print axioms NLS.Dynamics.exp_signed_mass_phase
+#print axioms NLS.ZakharovShabat.sourceHilbertMass_real_eq_norm_fst
+#print axioms NLS.ZakharovShabat.sum_fst_sq_le_sourceHilbertMass_real
+#print axioms NLS.ZakharovShabat.tendsto_sourceHilbertMass_real_atTop
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalMass_eq_norm_fst
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalMass_smul
+#print axioms NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_sequence
+#print axioms NLS.Articles.MKdVBelowL2.not_mem_sourceHilbertLocus_of_no_physical_hilbert
+#print axioms NLS.Articles.MKdVBelowL2.tendsto_fourthClassicalMass_atTop
+#print axioms NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_sequence_mass_phase
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalSourceAtExponent
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalScalarInput
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalScalarInput_pair
+#print axioms NLS.Articles.MKdVBelowL2.fourthClassicalScalarInput_coefficients
+#print axioms NLS.Articles.MKdVBelowL2.isSmoothPhysicalScalarInput_fourthClassicalScalarInput
+#print axioms NLS.Articles.MKdVBelowL2.tendsto_fourthClassicalScalarInput
+#print axioms NLS.Articles.MKdVBelowL2.exists_smooth_scalar_mass_phase_sequence
+#print axioms NLS.Articles.MKdVBelowL2.not_continuousAt_fixed_scalar_mass_phase_extension
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarRenormalizedCoordinate
+#print axioms NLS.Articles.MKdVBelowL2.continuous_fourthScalarRenormalizedCoordinate
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarRenormalizedCoordinate_ne_zero
+#print axioms NLS.Articles.MKdVBelowL2.fourthScalarOrdinaryCoordinate
+#print axioms NLS.Articles.MKdVBelowL2.not_continuousAt_fourthScalarOrdinaryCoordinate_extension
+#print axioms NLS.Articles.MKdVBelowL2.exists_obstructed_fourthScalarOrdinaryCoordinate

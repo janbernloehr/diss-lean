@@ -238,6 +238,12 @@ modules=(
   Articles/MKdVBelowL2/FourthClassicalUniqueness
   Articles/MKdVBelowL2/ScalarClassicalFourthAdapter
   Articles/MKdVBelowL2/MainTheorem11Wellposedness
+  Dynamics/FixedTimeMassPhaseTuning
+  ZakharovShabat/SourceHilbertMassDivergence
+  Articles/MKdVBelowL2/ScalarSmoothMassPhases
+  Articles/MKdVBelowL2/ScalarSmoothMassApproximants
+  Articles/MKdVBelowL2/FixedTimeScalarMassObstruction
+  Articles/MKdVBelowL2/FixedTimeFourthCoordinateObstruction
 )
 for module in "${modules[@]}"; do
   mkdir -p "$build_root/NLS/$(dirname "$module")"

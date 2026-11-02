@@ -245,23 +245,48 @@ wellposedness on one invariant open zero neighborhood for every finite p>2.
 The existence theorem for a classical smooth map discharges its availability;
 classical uniqueness shows that the results apply to any canonical choice.
 
+Fixed-time mass control is now proved with actual smooth real scalar
+approximants. The Hilbert mass diverges along every Hilbert-source
+approximation of a non-Hilbert real source. At each positive phase scale c,
+rounding the mass to (ceil(cM)+delta)/c changes it by a bounded amount; the
+square-root amplitude adjustment tends to one. This retains the original
+finite-p limit while setting the mass phase exactly. The native sources
+remain diagonal and have actual smooth real physical fields. Their scalar
+distributions converge in the original scalar Fourier norm, retaining all
+original signed coefficients.
+
+The offsets delta=0 and delta=1/2 give phases +1 and -1 at the same selected
+time. For any continuous nonzero amplitude, a function agreeing with these
+mass-modulated smooth values cannot be continuous at the rough datum.
+This is a fixed-time obstruction, not only a trajectory-norm obstruction.
+The actual normalized fourth coordinate phase is continuous for every fixed
+real time before source inversion. Restoring its physical 12*pi*n*M term
+therefore has the fixed-time obstruction at every nonzero initial mode;
+every non-Hilbert scalar datum has at least one such signed n!=0 mode.
+No global rough-data inverse at that selected time is assumed.
+
 ## Remaining obligation for Theorem 1.1
 
-Prove nonextension of the original unrenormalized equation at every FL^p
-datum outside L², for each fixed t>0, using controlled smooth approximations,
-tunable divergent physical mass and a nonzero signed Birkhoff mode.
-The verified renormalized wellposedness clauses do not discharge this
-unrenormalized fixed-time claim. The full main theorem stays marked open.
+Complete the original unrenormalized physical PDE calibration: prove that
+an arbitrary classical smooth mKdV solution has exactly the restored fourth
+coordinate evolution used in `FixedTimeFourthCoordinateObstruction.lean`.
+Then compose a hypothetical continuous physical fixed-time extension with
+the fixed Birkhoff coordinate to obtain the contradiction. Constructing an
+ordinary smooth classical solution map also makes its smooth-agreement
+hypothesis nonvacuous. The actual phase-tuned smooth approximants and their
+fixed-time coordinate obstruction are now proved; they have not been
+substituted for this remaining physical PDE identification. The full main
+Theorem 1.1 stays marked open.
 
 ## Validation
 
-The focused checker `check.sh` lists 198 article/shared modules and the
+The focused checker `check.sh` lists 204 article/shared modules and the
 consumed hierarchy foundations. Lean 4.33.1 checks use `autoImplicit=false`
-and `warningAsError=true`. The twenty-fourth checkpoint strictly checks all 9
-final new modules and reuses 189 parent modules after verifying their sources
-are unchanged from `d2227b25f90ed23676b0f21cc4628190a623c086`.
+and `warningAsError=true`. The twenty-fifth checkpoint strictly checks all 6
+final new modules and reuses 198 parent modules after verifying their sources
+are unchanged from `03e1d56b8d1810825c7c140bca6f84f0a2f2f070`.
 
-The fresh full transitive audit checks all 917 named declarations, including
+The fresh full transitive audit checks all 948 named declarations, including
 the main Theorems 1.2 and 1.3. Only `propext`, `Classical.choice` and
 `Quot.sound` occur. No holes, new axioms, disabled linters or increased
 heartbeat limits were introduced. `validation.txt` captures the checks;

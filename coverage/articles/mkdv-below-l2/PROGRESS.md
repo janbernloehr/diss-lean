@@ -1133,3 +1133,54 @@ propext, Classical.choice and Quot.sound. The checker lists 198 focused
 modules. No holes, new axioms, disabled linters or increased heartbeat or
 recursion limits were introduced. Canonical dependencies remain read-only.
 Validation is incremental and focused, not a fresh whole-repository rebuild.
+
+
+## Twenty-fifth checkpoint: genuine smooth mass-phase approximants at fixed times
+
+The original real Hilbert mass equals the first Fourier component's squared
+Hilbert norm. Every finite coefficient energy sum is bounded by that mass.
+Consequently every convergent family of Hilbert representatives at a
+non-Hilbert real source has mass tending to positive infinity, without a
+finite-gap or smoothness restriction. For positive divergent masses M, the
+rounding target (ceil(cM)+delta)/c changes the mass by a bounded amount.
+The square-root amplitude factor tends to one, and its rescaled quadratic
+mass has exactly the prescribed fixed-time phase exp(2*pi*i*delta).
+
+Actual smooth real scalar Fourier cutoffs have diagonal native H⁴
+representatives with exactly the same original source coefficients. Their
+physical fields are genuinely smooth. A tail shift makes all masses positive;
+real amplitude adjustments preserve the raw diagonal, physical smoothness
+and original finite-p limit while setting every mass phase exactly. The
+included native sources represent actual smooth original scalar distributions,
+and the scalar distribution sequence converges in the original scalar norm.
+The mass is the independently defined original physical Hilbert mass; the
+existing square-integral identity applies to each diagonal native input.
+
+The two offsets zero and one half produce phases +1 and -1 at one and the
+same fixed nonzero mass frequency. If the remaining amplitude is continuous
+and nonzero at the original rough datum, no function agreeing with those
+mass-modulated smooth values can be continuous there. This establishes a
+fixed-time obstruction, stronger than the previously available trajectory
+obstructions. For the actual normalized fourth coordinate phase, continuity
+holds for every real selected time before source inversion. Thus adding
+back the 12*pi*n*M physical frequency shift gives the fixed-time obstruction
+at any nonzero initial mode. Every non-Hilbert real scalar datum has at
+least one such signed nonzero Birkhoff mode. No large-time rough inverse
+condition is assumed or silently discharged by a Hilbert approximation.
+
+Theorem 1.1 remains incomplete. The restored fourth-coordinate expression
+must still be identified with an arbitrary smooth classical solution of
+the original unrenormalized physical mKdV equation; an ordinary smooth
+classical map must be available as well. The physical fixed-time extension
+claim then follows by composing a hypothetical extension with that fixed
+Birkhoff coordinate. The coordinate obstruction is not substituted for
+this physical PDE calibration. Both renormalized wellposedness clauses
+remain proved, and Theorems 1.2 and 1.3 remain verified.
+
+Six final new modules pass strict Lean 4.33.1 checks; 198 unchanged parent
+focused modules reuse 03e1d56b8d1810825c7c140bca6f84f0a2f2f070 after source comparison.
+The fresh full transitive audit checks 948 named declarations with only
+propext, Classical.choice and Quot.sound. The checker lists 204 focused
+modules. No holes, new axioms, disabled linters or increased heartbeat or
+recursion limits were introduced. Canonical dependencies remain read-only.
+Validation is incremental and focused, not a fresh whole-repository rebuild.

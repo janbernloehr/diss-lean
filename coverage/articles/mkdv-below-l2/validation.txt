@@ -1,14 +1,11 @@
 Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
-Incremental validation: 189 unchanged modules reuse commit d2227b25f90ed23676b0f21cc4628190a623c086; 9 final new modules checked strictly below.
-FunctionalAnalysis/ContinuousMapTimeDerivative: checked
-FunctionalAnalysis/PeriodicContinuousFamily: checked
-MKdV/ClassicalDifferenceEnergy: checked
-MKdV/ClassicalDifferenceEstimate: checked
-MKdV/ClassicalUniqueness: checked
-MKdV/JointlySmoothClassicalTrajectory: checked
-Articles/MKdVBelowL2/FourthClassicalUniqueness: checked
-Articles/MKdVBelowL2/ScalarClassicalFourthAdapter: checked
-Articles/MKdVBelowL2/MainTheorem11Wellposedness: checked
+Incremental validation: 198 unchanged modules reuse commit 03e1d56b8d1810825c7c140bca6f84f0a2f2f070; 6 final new modules checked strictly below.
+Dynamics/FixedTimeMassPhaseTuning: checked
+ZakharovShabat/SourceHilbertMassDivergence: checked
+Articles/MKdVBelowL2/ScalarSmoothMassPhases: checked
+Articles/MKdVBelowL2/ScalarSmoothMassApproximants: checked
+Articles/MKdVBelowL2/FixedTimeScalarMassObstruction: checked
+Articles/MKdVBelowL2/FixedTimeFourthCoordinateObstruction: checked
 'NLS.FunctionalAnalysis.complexRealEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
 'NLS.FunctionalAnalysis.complexRealEquiv_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -1802,3 +1799,56 @@ Articles/MKdVBelowL2/MainTheorem11Wellposedness: checked
  Classical.choice,
  Quot.sound]
 'NLS.MKdV.IsClassicalMKdVTrajectory.mk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Dynamics.roundedPhaseMass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Dynamics.massPhaseScale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Dynamics.roundedPhaseMass_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Dynamics.massPhaseScale_sq_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Dynamics.tendsto_massPhaseScale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Dynamics.exp_roundedPhaseMass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Dynamics.exists_mass_phase_scales' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Dynamics.exp_signed_mass_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sourceHilbertMass_real_eq_norm_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.sum_fst_sq_le_sourceHilbertMass_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.ZakharovShabat.tendsto_sourceHilbertMass_real_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthClassicalMass_eq_norm_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthClassicalMass_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_sequence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.not_mem_sourceHilbertLocus_of_no_physical_hilbert' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.tendsto_fourthClassicalMass_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_sequence_mass_phase' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthClassicalSourceAtExponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthClassicalScalarInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthClassicalScalarInput_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthClassicalScalarInput_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.isSmoothPhysicalScalarInput_fourthClassicalScalarInput' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.tendsto_fourthClassicalScalarInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_smooth_scalar_mass_phase_sequence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.not_continuousAt_fixed_scalar_mass_phase_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarRenormalizedCoordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.continuous_fourthScalarRenormalizedCoordinate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarRenormalizedCoordinate_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.fourthScalarOrdinaryCoordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.not_continuousAt_fourthScalarOrdinaryCoordinate_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NLS.Articles.MKdVBelowL2.exists_obstructed_fourthScalarOrdinaryCoordinate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
