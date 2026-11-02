@@ -4903,3 +4903,5 @@ import NLS.ComplexAnalysis.AppendixGBornDerivative
 import NLS.ZakharovShabat.AppendixGBornOperatorDerivative
 import NLS.ZakharovShabat.AppendixGVolterraDerivative
 import NLS.ZakharovShabat.AppendixGWholeSequenceH1
+import NLS.Fourier.AppendixGFreeFourier
+import NLS.ZakharovShabat.AppendixGGradientAlgebra

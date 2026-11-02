@@ -1,6 +1,21 @@
 # Implementation plan
 
-## Current milestone: Appendix G whole-sequence remainder bounds
+## Current milestone: Appendix G free-mode and gradient formulas
+
+The [free-mode comparison](NLS/Fourier/AppendixGFreeFourier.lean) identifies the coefficient difference with the literal Fourier integral. Its Fourier-Lebesgue norm is uniformly bounded near every signed pi-lattice point for q>1, including infinity. Its L2 norm is bounded by twice the displacement from a real reference when that displacement is at most one.
+
+The [gradient identities](NLS/ZakharovShabat/AppendixGGradientAlgebra.lean) factor the actual i-multiplied gradient operator through the terminal fundamental matrix. The three exact quadratic column expansions retain their free modes, cross terms and actual remainders, with the source's coordinate order and signs.
+
+Seven positive theorems add no new definitions, examples or refutations. The gradient summability proof retains its independent time-bound and interpolation argument.
+
+The full check passed: 8,644 build jobs, 7,729 public examples and an axiom audit of 44,999 NLS declarations. The 21 inherited warnings match the preceding check; there are no new warnings.
+
+Publish the reviewed forty-one-group ordered Appendix G comparison, then continue with Appendix H and the broader outstanding source ledger.
+The [broader completion qualifications](coverage/COMPLETENESS.md) remain.
+
+Earlier entries retain their historical scope and validation.
+
+## Previous milestone: Appendix G whole-sequence remainder bounds
 
 The [whole-sequence estimates](NLS/ZakharovShabat/AppendixGWholeSequenceH1.lean) prove a coarse physical H1 bound at every complex frequency, including zero. Combining it with the existing common tail estimate gives one bound for every index of a fixed near-free spectral sequence and every potential in the exact original H1 source ball. The constant may depend on that sequence's finite initial frequencies.
 

@@ -5,7 +5,7 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: [Appendix G whole-sequence remainder bounds](coverage/APPENDIX_G.md). Physical H1 bound at all frequencies and every index of a fixed sequence; common-cutoff inverse-index operator remainder bound at every unit-interval time. Four positive proofs.
+Latest step: [Appendix G free-mode and gradient formulas](coverage/APPENDIX_G.md). Literal free-mode Fourier integrals and uniform bounds; actual terminal-matrix gradient factorization and three exact quadratic column expansions. Seven positive proofs.
 The [broader qualifications](coverage/COMPLETENESS.md) remain.
 
 The physical formula comparison is complete for the inspected 2013
