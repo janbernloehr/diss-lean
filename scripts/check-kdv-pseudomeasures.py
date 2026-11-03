@@ -416,6 +416,8 @@ modules = [
     'NLS.KdV.PeriodOneOriginalRegularity',
     'NLS.Articles.KdVPseudomeasures.OriginalFinitePInverse',
     'NLS.Articles.KdVPseudomeasures.OriginalEndpointMembership',
+    'NLS.FunctionalAnalysis.CompactCoordinateEquicontinuity',
+    'NLS.Articles.KdVPseudomeasures.SourceWeakStarAscoli',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
@@ -441,10 +443,45 @@ for module in modules:
     target = (view / rel).with_suffix('.olean')
     if target.is_symlink():
         target.unlink()
+# These pinned mathlib sources have no prebuilt reference olean. Compile them
+# into the same private overlay, keeping every reference build directory read-only.
+private_mathlib_modules = ['Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli']
+mathlib = repo / '.lake/packages/mathlib'
+local_directory(view / 'Mathlib')
+for child in (mathlib / '.lake/build/lib/lean/Mathlib').iterdir():
+    target = view / 'Mathlib' / child.name
+    if not target.exists():
+        target.symlink_to(child, target_is_directory=child.is_dir())
+for module in private_mathlib_modules:
+    rel = Path(*module.split('.'))
+    for parent in reversed(rel.parents):
+        local_directory(view / parent)
+        reference = mathlib / '.lake/build/lib/lean' / parent
+        if parent != Path('.') and reference.is_dir():
+            for child in reference.iterdir():
+                target = view / parent / child.name
+                if not target.exists() and not target.is_symlink():
+                    target.symlink_to(child, target_is_directory=child.is_dir())
+    target = (view / rel).with_suffix('.olean')
+    if target.is_symlink():
+        target.unlink()
 paths = [view] + list((repo / '.lake/packages').glob('*/.lake/build/lib/lean'))
 env = dict(os.environ, LEAN_PATH=':'.join(map(str, paths)), ELAN_HOME=str(elan),
            PATH=str(elan / 'bin') + os.pathsep + os.environ.get('PATH', ''),
            MATHLIB_CACHE_DIR=str(repo.parent.parent / 'work/cache/mathlib'))
+for module in private_mathlib_modules:
+    rel = Path(*module.split('.'))
+    output = (view / rel).with_suffix('.olean')
+    assert not output.is_symlink() and output.parent.resolve().is_relative_to(view), output
+    result = subprocess.run([str(lean), '-R', str(mathlib), '-o', str(output),
+                             str((mathlib / rel).with_suffix('.lean'))],
+                            env=env, capture_output=True, text=True)
+    (logs / ('check-' + module.split('.')[-1] + '.log')).write_text(result.stdout + result.stderr)
+    print(module, 'private dependency exit:', result.returncode)
+    if result.stdout or result.stderr:
+        print(result.stdout + result.stderr, end='')
+    if result.returncode:
+        sys.exit(result.returncode)
 requested = sys.argv[1:]
 selected = [m if m.startswith('NLS.') else 'NLS.Articles.KdVPseudomeasures.' + m for m in requested] if requested else modules
 for module in selected:

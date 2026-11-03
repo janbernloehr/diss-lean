@@ -382,8 +382,10 @@ import NLS.Articles.KdVPseudomeasures.OriginalMiuraGapComparison
 import NLS.KdV.PeriodOneOriginalRegularity
 import NLS.Articles.KdVPseudomeasures.OriginalFinitePInverse
 import NLS.Articles.KdVPseudomeasures.OriginalEndpointMembership
+import NLS.FunctionalAnalysis.CompactCoordinateEquicontinuity
+import NLS.Articles.KdVPseudomeasures.SourceWeakStarAscoli
 
-/-! Exact transitive axiom audit of every selected public definition and theorem. -/
+/-! Exact declaration and axiom audit for the private article dependency view. -/
 
 #print axioms NLS.WeightedCoeff.ofFinsupp
 #print axioms NLS.WeightedCoeff.ofFinsupp_apply
@@ -3435,3 +3437,13 @@ import NLS.Articles.KdVPseudomeasures.OriginalEndpointMembership
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_isospectral_finiteP_membership_of_endpoint_gaps
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_ii
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_i
+#print axioms NLS.equicontinuousAt_observable_of_coordinates
+#print axioms NLS.equicontinuous_observable_of_coordinates
+#print axioms NLS.exists_subseq_tendstoUniformly_of_equicontinuous_compact_range
+#print axioms NLS.Articles.KdVPseudomeasures.equicontinuous_sourceLowerDistribution_iff_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.equicontinuous_sourceLowerDistribution_iff_other_lower
+#print axioms NLS.Articles.KdVPseudomeasures.exists_sourceTrajectory_subseq_all_lower_of_equicontinuous_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.exists_sourceTrajectory_subseq_tendsto_of_equicontinuous_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.equicontinuous_originalHminusOne_iff_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_sourceTrajectory_of_isClosed_equicontinuous_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_closure_sourceTrajectory_of_equicontinuous_coefficients

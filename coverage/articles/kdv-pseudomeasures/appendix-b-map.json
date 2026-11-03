@@ -387,5 +387,12 @@
     "new_public_theorems": 10,
     "summary": "Finite original Fourier tests uniformly control every admissible lower norm on endpoint balls. Uniform coefficient convergence, including eventual common endpoint bounds, uniquely reconstructs physical limit families and is equivalent to uniform lower norm convergence; original H-minus-one specializations included.",
     "remaining_lemma_B1_obligations": []
+  },
+  "fourier_equicontinuity_and_trajectory_compactness": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-ascoli-map.json",
+    "status": "proved",
+    "new_public_theorems": 10,
+    "source_B1_obligations_remain": false,
+    "canonical_checkout_written": false
   }
 }
