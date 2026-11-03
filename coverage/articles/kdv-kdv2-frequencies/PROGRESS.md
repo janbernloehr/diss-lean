@@ -17,6 +17,23 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual rough normalized second moments
+
+The actual normalized family now has exact all-order Hilbert kernel formulas
+and absolutely convergent positive coefficient expansions. Actual cut roots,
+signed weighted contour deformation, critical-pole localization and analytic
+filled collapsed cancellation give sharp high second moments on one rough-open
+neighborhood: quadratic diagonal, quartic off-diagonal and twice-weighted
+additional k^-2 decay. Every positive normalized moment vanishes at a collapsed
+high pair. All earlier inverse/free/period/analytic/odd data remain retained.
+See `HMINUS_SECOND_MOMENTS.md` for precise scope and constants.
+
+Current strict validation: 364 selected modules, 4406 selected declarations
+and 25709 imported NLS declarations; permitted axioms only. All 353 previous
+Lean sources are unchanged; all seven provenance records remain valid.
+The actual rough summable gap majorant and rough moment-frequency series are
+next. Physical frequency identity (69), full W and every main theorem remain open.
+
 ## Latest rough weighted normalization and critical-gap localization
 
 The actual rough period operator now has a constructed twice-weighted

@@ -1,3 +1,14 @@
+import NLS.KdV.HillHminusOneTwoWeightedMomentBounds
+import NLS.KdV.HillHminusOneNormalizedGapMomentBounds
+import NLS.KdV.HillHminusOneCriticalPrimitivePeriods
+import NLS.KdV.HillHminusOneGapPairUniqueness
+import NLS.KdV.HillHminusOneWeightedCutPeriods
+import NLS.ComplexAnalysis.CollapsedPowerPeriods
+import NLS.KdV.HillHminusOneCriticalGapCutRoots
+import NLS.KdV.HillHminusOneNormalizedMomentKernel
+import NLS.KdV.HillHminusOneMomentKernel
+import NLS.SequenceSpaces.QuadraticPoleKernel
+import NLS.ComplexAnalysis.CriticalBasisPowerPeriods
 import NLS.KdV.HillHminusOneTwoWeightedNormalizedMoments
 import NLS.KdV.HillHminusOneCriticalGapLocalization
 import NLS.KdV.HillHminusOneGapQuotientAsymptotics
@@ -412,7 +423,18 @@ run_cmd do
     `NLS.SequenceSpaces.AnalyticTwoWeightedInverseColumns,
     `NLS.KdV.HillHminusOneSmallCriticalControl,
     `NLS.KdV.HillHminusOneCriticalGapLocalization,
-    `NLS.KdV.HillHminusOneTwoWeightedNormalizedMoments]
+    `NLS.KdV.HillHminusOneTwoWeightedNormalizedMoments,
+    `NLS.SequenceSpaces.QuadraticPoleKernel,
+    `NLS.ComplexAnalysis.CriticalBasisPowerPeriods,
+    `NLS.KdV.HillHminusOneMomentKernel,
+    `NLS.KdV.HillHminusOneNormalizedMomentKernel,
+    `NLS.ComplexAnalysis.CollapsedPowerPeriods,
+    `NLS.KdV.HillHminusOneCriticalGapCutRoots,
+    `NLS.KdV.HillHminusOneWeightedCutPeriods,
+    `NLS.KdV.HillHminusOneGapPairUniqueness,
+    `NLS.KdV.HillHminusOneCriticalPrimitivePeriods,
+    `NLS.KdV.HillHminusOneNormalizedGapMomentBounds,
+    `NLS.KdV.HillHminusOneTwoWeightedMomentBounds]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

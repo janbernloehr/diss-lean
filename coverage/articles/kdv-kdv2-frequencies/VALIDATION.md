@@ -1,4 +1,4 @@
-# Article-step validation — 2026-11-02
+# Article-step validation — 2026-11-03
 
 **Main-theorem status: not yet verified.** Actual KdV/KdV2 spectral frequencies
 and the physical Birkhoff flow identification remain open. The checked step
@@ -75,8 +75,9 @@ its existing Hilbert specialization and a transitive audit.
 | `HillHminusOneCriticalControl`, `HillHminusOneUniformPrimitiveBounds`, `HillHminusOnePeriodBounds`, `HillHminusOnePeriodInverse`, `HillHminusOneNumeratorHilbert`, `HillHminusOneHilbertPeriod`, `HillHminusOneNormalizedDifferentials`, `HillHminusOneNormalizedMoments` and shared elementary bounds | Actual rough uniform contour estimates; constructed bounded analytic period operator and two-sided inverse; normalized entire differentials and all-order moment analyticity with exact zeroth periods on one Hminus1-open neighborhood of zero. Full W and physical frequencies remain open. |
 | `ClassicalRoughEmbedding`, `ClassicalRoughCriticalCompatibility`, `ClassicalRoughNormalizationCompatibility`, `HillHminusOneNormalizedOddMoments` and three generic uniqueness/congruence modules | Exact continuous interval/rough trace and normalized-family agreement, including all indices, filled centers and actual inverses; analytic propagation and true Fourier density give all odd normalized cancellation on one Hminus1-open ball. Full W and physical frequencies remain open. |
 | `HillHminusOneTwoWeightedPeriodOperator`, `HillHminusOneTwoWeightedPeriodInverse`, `AnalyticTwoWeightedInverseColumns`, `HillHminusOneTwoWeightedNormalizedMoments`, `HillHminusOneSmallCriticalControl`, `HillHminusOneCriticalGapLocalization` and selected rough square/quotient sources | Actual weighted rough operator/inverse and analytic l2 errors, with all normalized/free/period/odd features retained on the same family; actual quadratic critical-gap localization, exact collapsed equality and any relative-gap coefficient locally in Hminus1. Sharp normalized moments, full W, lp remainders and physical frequencies remain open. |
+| Eleven actual rough kernel/cut/second-moment modules detailed in `HMINUS_SECOND_MOMENTS.md` | Genuine direct Hilbert pole kernel, exact all-order normalized moment pairing and absolute coefficient series; same-pair cut roots and signed weighted deformation; filled collapsed cancellation; constructed sharp quadratic/quartic/twice-weighted actual rough second-moment bounds. Rough summable gap majorant and physical frequencies remain open. |
 
-All 353 selected modules compile with pinned **Lean 4.33.1**, commit
+All 364 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -439,11 +440,22 @@ PASS NLS/SequenceSpaces/AnalyticTwoWeightedInverseColumns
 PASS NLS/KdV/HillHminusOneSmallCriticalControl
 PASS NLS/KdV/HillHminusOneCriticalGapLocalization
 PASS NLS/KdV/HillHminusOneTwoWeightedNormalizedMoments
-Axiom audit passed: 4235 candidate declarations; 25538 declarations total.
+PASS NLS/SequenceSpaces/QuadraticPoleKernel
+PASS NLS/ComplexAnalysis/CriticalBasisPowerPeriods
+PASS NLS/KdV/HillHminusOneMomentKernel
+PASS NLS/KdV/HillHminusOneNormalizedMomentKernel
+PASS NLS/ComplexAnalysis/CollapsedPowerPeriods
+PASS NLS/KdV/HillHminusOneCriticalGapCutRoots
+PASS NLS/KdV/HillHminusOneWeightedCutPeriods
+PASS NLS/KdV/HillHminusOneGapPairUniqueness
+PASS NLS/KdV/HillHminusOneCriticalPrimitivePeriods
+PASS NLS/KdV/HillHminusOneNormalizedGapMomentBounds
+PASS NLS/KdV/HillHminusOneTwoWeightedMomentBounds
+Axiom audit passed: 4406 candidate declarations; 25709 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 353 selected modules (including generated and private declarations)
+the 364 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1252,3 +1264,34 @@ Sharp rough normalized moment estimates and frequency summation, even collapsed
 cancellation in the full required scope, the exact canonical prefactor, full W
 and physical frequency/action/Birkhoff identities remain open. No main-theorem
 inventory row is verified.
+
+
+## Actual rough sharp normalized second moments
+
+The current milestone is detailed in `HMINUS_SECOND_MOMENTS.md`. Eleven
+new proved modules construct the actual direct Hilbert moment kernel and
+all-order normalized pairing/absolutely convergent coefficient expansion,
+without dividing by the discriminant derivative or assuming an exhaustive
+rough critical zero set. Same-pair actual cut roots, connected-circle sign,
+weighted contour deformation and analytic filled collapsed power periods
+give sharp actual rough high-gap second-moment bounds: quadratic diagonal,
+quartic off-diagonal and twice-weighted additional k^-2 decay. Every positive
+normalized moment vanishes at a collapsed high pair. The constructed family
+retains all earlier weighted inverse, entire numerator, moment analytic,
+exact zeroth-period and all odd-cancellation data.
+
+All 364 selected modules pass with default heartbeats and warnings as errors.
+The transitive permitted-axiom audit passes for 4406 selected declarations
+and 25709 declarations including imported NLS dependencies. Ordered
+checker/audit/PASS/coverage selections agree; all source hashes and seven
+provenance records match; selected outputs are private and fresh. All 353
+previously selected Lean sources remain byte-identical. Canonical main is
+unchanged and clean. No placeholder, new axiom, heartbeat increase, disabled
+linter or warning exception is introduced. No new shared branch import or
+full branch merge occurs.
+
+A genuine rough summable gap majorant, actual label/count matching through
+the fixed Miura energy shift, the rough frequency series, physical identity
+(69), full W, exact canonical product prefactor, action descent and actual
+Birkhoff/PDE flows remain open. The finite-head collapsed-even obligation
+in the full required scope is separate. All main inventory rows remain OPEN.

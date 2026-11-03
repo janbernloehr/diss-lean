@@ -360,7 +360,18 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/SequenceSpaces/AnalyticTwoWeightedInverseColumns
   NLS/KdV/HillHminusOneSmallCriticalControl
   NLS/KdV/HillHminusOneCriticalGapLocalization
-  NLS/KdV/HillHminusOneTwoWeightedNormalizedMoments)
+  NLS/KdV/HillHminusOneTwoWeightedNormalizedMoments
+  NLS/SequenceSpaces/QuadraticPoleKernel
+  NLS/ComplexAnalysis/CriticalBasisPowerPeriods
+  NLS/KdV/HillHminusOneMomentKernel
+  NLS/KdV/HillHminusOneNormalizedMomentKernel
+  NLS/ComplexAnalysis/CollapsedPowerPeriods
+  NLS/KdV/HillHminusOneCriticalGapCutRoots
+  NLS/KdV/HillHminusOneWeightedCutPeriods
+  NLS/KdV/HillHminusOneGapPairUniqueness
+  NLS/KdV/HillHminusOneCriticalPrimitivePeriods
+  NLS/KdV/HillHminusOneNormalizedGapMomentBounds
+  NLS/KdV/HillHminusOneTwoWeightedMomentBounds)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

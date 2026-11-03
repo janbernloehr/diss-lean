@@ -6041,6 +6041,160 @@
       "scope": "For arbitrary normed complex source parameters, exact diagonal inverse compatibility realizes weighted error coordinates as genuine analytic l2 vectors, proves free zero and norm <= n^2*norm(Q-Id), and constructs one epsilon-small neighborhood before all positive indices",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "ac8745918b8415f03a1d6cd4a62205c94d71d27272511409eaea8442dda913fe"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CollapsedPowerPeriods.lean",
+      "source_labels": [
+        "Filled collapsed power periods"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Continuity fixes the value of a punctured square root; analytic divided slopes fill the squared denominator and prove power>=2 circle periods zero, including the power-two total-division qualification",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "12d3b5adeeb41ea7ae992501763bbb25095d373162e261aa332052f24d139880"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CriticalBasisPowerPeriods.lean",
+      "source_labels": [
+        "All-power scalar critical numerator integration by parts"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Exact source 2*pi/(m+1) power period identity from the actual filled critical numerator factor and selected denominator nonvanishing only on the contour",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d72c0ff041912f6c00e0c024ab58824cb657b9761df150e4854bb296b49f1e37"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCriticalGapCutRoots.lean",
+      "source_labels": [
+        "Actual rough cut roots with the same critical gap pair"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Constructs a cut root for the same retained whole-disc square and actual endpoint pair; radius-independent bound 3*gap/(pi*k), exact collapsed zero and analytic extension, quadratic critical localization and quarter-gap pole separation retained together",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "737842b56bdb602f708e028027c93365758dc9955bf6f9e604efcaf422a6f9b0"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCriticalPrimitivePeriods.lean",
+      "source_labels": [
+        "Actual rough critical primitive cut data and sharp bounds"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Constructs one common rough source neighborhood and high cutoff before all critical indices and powers, retaining same actual pair/root/pole and exact signed periods; proves sharp diagonal/off-diagonal high-gap kernel bounds with filled collapsed cancellation",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e64f82f71e3d05b58715057c9fd10459523ef4f04ffeaae8317bc7736d431c02"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapPairUniqueness.lean",
+      "source_labels": [
+        "Actual unordered rough pair uniqueness"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Exact multiplicities identify any two actual pairs on the same disc as multisets, including double roots; ordering does not affect the gap norm",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "daea943e7fab74885fe34473e0818bf3dac9c793488f8bf8e9f6f0d1a10bace0"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMomentKernel.lean",
+      "source_labels": [
+        "Actual direct rough Hilbert moment kernel"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Quadratic actual critical energy growth constructs a genuine analytic Hilbert squared reciprocal kernel; actual all-index circle pole separation gives Bochner integrability and exact coordinates, with scalar power integration by parts",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "abc35fbf1d85f9a640275109a8ab15e51e9c3ce9d8f6fbd1569861c7ed9caa53"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneNormalizedGapMomentBounds.lean",
+      "source_labels": [
+        "Sharp actual rough normalized second moments"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Actual Hilbert remainder bounds and exact zeroth normalization yield diagonal O(gap^2/k^2), off-diagonal O((gap^2/k^2)^2); every positive actual normalized moment vanishes at collapsed high pairs",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f8f85c57078b49b566bdf450da30c961589f9cf0b80cf4e3e13bf78900310abf"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneNormalizedMomentKernel.lean",
+      "source_labels": [
+        "Actual rough normalized moment kernel identities"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "All actual normalized moments equal 2*pi/(m+1) times the genuine l2 kernel pairing, with absolutely convergent positive coefficient series. The same constructed weighted family retains all earlier exact analytic, inverse, free, period and odd features",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "74bc17705485d7d76655a193392a3a76fc6d4831325d2304c1bd9dbdadedf2c3"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTwoWeightedMomentBounds.lean",
+      "source_labels": [
+        "Constructed rough twice-weighted second-moment family"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Actual reciprocal diagonal yields 1376*pi^2*B^3*n^2*(gap^2/k^2)/k^2. Constructs one family retaining full weighted normalization on V and actual cut data/sharp diagonal/quartic off-diagonal/weighted bounds and positive collapsed cancellation on one rough-open U contained in V, before all indices and unordered actual pairs",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "541cc9755ecb658bc7efc9ae83b6bc2c668f9d28b31dcdb53c53a4a6b309343a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWeightedCutPeriods.lean",
+      "source_labels": [
+        "Actual rough signed weighted contour deformation"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Connected frequency circles fix one sign and exact squared contour homotopy retains every analytic energy weight, including interior critical poles, with original Jacobian 2*z",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7dc4bc89491a0007e3dc48983a612858b0328086c500813cf9f7018ae1f6560c"
+    },
+    {
+      "path": "NLS/SequenceSpaces/QuadraticPoleKernel.lean",
+      "source_labels": [
+        "Genuine analytic l2 kernels for quadratically growing selected poles"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Finite head and uniform tail prove the pole complement open and construct the literal squared reciprocal Hilbert kernel; no exhaustive spectral zero set is required",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cbcfcf348b294bd382728e7a2e7bdc1342b9f0bb22b3c6b1879591368d54281a"
     }
   ],
   "dependencies_needed": [
@@ -6072,15 +6226,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4235,
-    "total_declarations_audited": 25538,
+    "candidate_declarations_audited": 4406,
+    "total_declarations_audited": 25709,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 353
+    "selected_modules": 364
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -6213,5 +6367,6 @@
   "shared_hminus_primitive_import_record": "SHARED_HMINUS_PRIMITIVE_IMPORT.json",
   "hminus_normalized_odd_moments_record": "HMINUS_NORMALIZED_ODD_MOMENTS.md",
   "hminus_weighted_critical_gap_record": "HMINUS_WEIGHTED_CRITICAL_GAPS.md",
-  "shared_hminus_gap_quotient_import_record": "SHARED_HMINUS_GAP_QUOTIENT_IMPORT.json"
+  "shared_hminus_gap_quotient_import_record": "SHARED_HMINUS_GAP_QUOTIENT_IMPORT.json",
+  "hminus_second_moments_record": "HMINUS_SECOND_MOMENTS.md"
 }
