@@ -428,6 +428,16 @@ import NLS.KdV.HillL2SmallPotentialTrace
 import NLS.ComplexAnalysis.InverseSquareRootBounds
 import NLS.KdV.HillSmallPotentialRadicand
 import NLS.KdV.HillFreeGapContourGeometry
+import NLS.ComplexAnalysis.SineAnnulusLowerBound
+import NLS.KdV.HillFreeContourRadicandBound
+import NLS.KdV.HillCommonComplexContourDomain
+import NLS.KdV.HillComplexPeriodDomainAnalytic
+import NLS.KdV.HillCommonComplexPeriods
+import NLS.KdV.HillComplexContourInverseRoot
+import NLS.KdV.HillFreeContourSeparation
+import NLS.KdV.HillFreeContourWeights
+import NLS.KdV.HillScaledFreeContourQuotient
+import NLS.KdV.HillContourHilbertProductSeparation
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -789,7 +799,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.norm_cosine_duhamel_integral_le,
     ``NLS.ComplexAnalysis.integral_norm_sq_unit_le_energy,
     ``NLS.ComplexAnalysis.norm_inv_sqrt_sub_one_le,
-    ``NLS.ComplexAnalysis.mem_slitPlane_of_norm_sub_one_le_half]
+    ``NLS.ComplexAnalysis.mem_slitPlane_of_norm_sub_one_le_half,
+    ``NLS.ComplexAnalysis.exists_uniform_sine_lower_annulus]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

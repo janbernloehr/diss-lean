@@ -365,7 +365,7 @@
         "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
         "NLS.KdV.hillRealGapIntegral_le_chi_bound"
       ],
-      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Quantitative small-potential inverse-frequency trace and radicand estimates now hold for arbitrary complex l2 potentials, with zero-safe relative square-root control. The actual free isolating circles have a uniform positive frequency annulus. A common complex-potential neighborhood for all periods, the l2 period correction, parametric normalized roots, Abelian angles, and the physical KdV Birkhoff map/action identity remain essential.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual Hill Abelian period integrands now share one complex l2-potential neighborhood on every original free isolating circle, with inverse-root decay C*norm(p)/k, uniform contour numerator products and exact factorization. The potential-dependent l2 period sequence, parametric normalized roots, physical matching for nearby real potentials, gap containment, own-period normalization, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
       "checked_hill_uniform_critical_action_tail": [
         "NLS.SequenceSpaces.nonneg_series_cauchy_schwarz",
         "NLS.SequenceSpaces.square_sum_le_of_weight_lower_bound",
@@ -814,6 +814,29 @@
         "NLS.KdV.hillFreeGapHalfLength",
         "NLS.KdV.hillFreeGapCollar",
         "NLS.KdV.hillFreeGapContour_frequency_bounds"
+      ],
+      "checked_common_complex_contour_domain": [
+        "NLS.ComplexAnalysis.exists_uniform_sine_lower_annulus",
+        "NLS.KdV.exists_hillFreeGapContour_free_radicand_bound",
+        "NLS.KdV.hillFreeGapContour_radicand_relative_estimate",
+        "NLS.KdV.exists_hillFreeGapContour_common_complex_neighborhood",
+        "NLS.KdV.analyticOnNhd_hillAbelianComplexPeriod_of_domain",
+        "NLS.KdV.exists_hillAbelianComplexPeriods_common_free_neighborhood",
+        "NLS.KdV.norm_hillAbelianComplexRoot_base_div_sub_one_le",
+        "NLS.KdV.exists_hillFreeGapContour_inverse_root_bound",
+        "NLS.KdV.hillFreeGapContour_energy_separation",
+        "NLS.KdV.hillFreeGapContour_diagonal_weight_bound",
+        "NLS.KdV.hillFreeContourWeightSymbol",
+        "NLS.KdV.hillFreeContourWeightSymbol_off_diagonal_bound",
+        "NLS.KdV.hillFreeContourWeightSymbol_bound",
+        "NLS.KdV.hillFreeContourWeight",
+        "NLS.KdV.norm_hillFreeContourWeight_le",
+        "NLS.KdV.hillFreeContourWeight_apply",
+        "NLS.KdV.norm_hilbertWeightedProduct_hillFreeContour_le",
+        "NLS.KdV.hillFreeGapContour_scaled_resolvent_bound",
+        "NLS.KdV.norm_scaled_hillFreeAbelianQuotient_on_contour",
+        "NLS.KdV.hillFreeGapContour_free_energy_ne",
+        "NLS.KdV.hillAbelianHilbertProduct_contour_separation"
       ]
     },
     {
@@ -1242,7 +1265,7 @@
         "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Quantitative small-potential inverse-frequency trace and radicand estimates now hold for arbitrary complex l2 potentials, with zero-safe relative square-root control. The actual free isolating circles have a uniform positive frequency annulus. A common complex-potential neighborhood for all periods, the l2 period correction, parametric normalized roots, Abelian angles, and the physical KdV Birkhoff map/action identity remain essential.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual Hill Abelian period integrands now share one complex l2-potential neighborhood on every original free isolating circle, with inverse-root decay C*norm(p)/k, uniform contour numerator products and exact factorization. The potential-dependent l2 period sequence, parametric normalized roots, physical matching for nearby real potentials, gap containment, own-period normalization, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
       "status": "not_verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -2027,6 +2050,29 @@
         "NLS.KdV.hillFreeGapHalfLength",
         "NLS.KdV.hillFreeGapCollar",
         "NLS.KdV.hillFreeGapContour_frequency_bounds"
+      ],
+      "checked_common_complex_contour_domain": [
+        "NLS.ComplexAnalysis.exists_uniform_sine_lower_annulus",
+        "NLS.KdV.exists_hillFreeGapContour_free_radicand_bound",
+        "NLS.KdV.hillFreeGapContour_radicand_relative_estimate",
+        "NLS.KdV.exists_hillFreeGapContour_common_complex_neighborhood",
+        "NLS.KdV.analyticOnNhd_hillAbelianComplexPeriod_of_domain",
+        "NLS.KdV.exists_hillAbelianComplexPeriods_common_free_neighborhood",
+        "NLS.KdV.norm_hillAbelianComplexRoot_base_div_sub_one_le",
+        "NLS.KdV.exists_hillFreeGapContour_inverse_root_bound",
+        "NLS.KdV.hillFreeGapContour_energy_separation",
+        "NLS.KdV.hillFreeGapContour_diagonal_weight_bound",
+        "NLS.KdV.hillFreeContourWeightSymbol",
+        "NLS.KdV.hillFreeContourWeightSymbol_off_diagonal_bound",
+        "NLS.KdV.hillFreeContourWeightSymbol_bound",
+        "NLS.KdV.hillFreeContourWeight",
+        "NLS.KdV.norm_hillFreeContourWeight_le",
+        "NLS.KdV.hillFreeContourWeight_apply",
+        "NLS.KdV.norm_hilbertWeightedProduct_hillFreeContour_le",
+        "NLS.KdV.hillFreeGapContour_scaled_resolvent_bound",
+        "NLS.KdV.norm_scaled_hillFreeAbelianQuotient_on_contour",
+        "NLS.KdV.hillFreeGapContour_free_energy_ne",
+        "NLS.KdV.hillAbelianHilbertProduct_contour_separation"
       ]
     }
   ],
@@ -2630,7 +2676,7 @@
     }
   ],
   "next_shared_milestones": [
-    "Use the uniform free contour frequency annulus and inverse-frequency trace bounds to construct a single complex-potential neighborhood for all physical period contours. Bound the actual l2 period correction and apply the true Banach implicit theorem for normalized roots; then prove nearby-real physical root matching, gap containment, own-period normalization, global continuation and the actual KdV Birkhoff map/action identity.",
+    "Use the common inverse-root decay C*norm(p)/k, source-scaled free quotient bound 4/k, uniform Hilbert product bound exp((8/pi^2)*norm(a)) and radius O(k) to prove the actual scaled-period correction is O(norm(p)*exp(C*norm(a))/k). Construct the genuine l2 period map on the single complex neighborhood and prove joint Banach analyticity. Apply the parametric implicit theorem for normalized roots, then prove physical real matching, gap containment, own-period normalization, global continuation and the actual KdV Birkhoff map/action identity.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Prove explicit norm-dependent action-gap bounds with the source cutoff/weight evaluation, then Hamiltonian/higher-action trace identities and the tame action estimates for Theorem 2. The potential-dependent eventual bound n*I_n<=gamma_n^2, weighted action summability and the high Proposition 5 comparison at cutoff eight are now checked.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -5767,6 +5813,49 @@
     "hypotheses": "All complex l2 Fourier potentials, without reality or period-one support restrictions for the trace estimates. Nonzero complex frequency z with abs(Im z)<=H and 4*exp(H)*norm(q)<=abs(z). Relative estimates additionally require a positive lower bound d for the actual free radicand and explicit relative error<=1/2. The contour geometry holds for every source free isolating circle and every label n>=1.",
     "result": "Shared scalar sine and cosine Duhamel identities are proved from the exact second-order initial-value system and the fundamental theorem of calculus. They are applied to both actual Hill fundamental columns. Explicit complex trigonometric and integral majorants, a sup-norm absorption argument and the physical L1 potential mass give the genuine trace error at frequency z bounded by 4*exp(2H)*mass/abs(z) under exp(H)*mass/abs(z)<=1/2 and abs(Im z)<=H. A shared unit-interval variance inequality and normalized Parseval bound mass by twice the actual coefficient l2 norm. Contractive finite Fourier truncations and continuity transfer the trace bound to arbitrary complex l2 potentials: abs(Delta_q(z^2)-2*cos(z))<=8*exp(2H)*norm(q)/abs(z), assuming 4*exp(H)*norm(q)<=abs(z) and z!=0. The actual characteristic radicand differs from the free one by at most 48*exp(3H)*norm(q)/abs(z). Shared inverse principal square-root and slit-plane estimates give exact relative root bounds when the relative radicand error is <=1/2. The actual free gap collar is (2n-1)*pi^2/4; every original isolating energy circle maps under principal square root into the same annulus pi/10<=abs(sqrt(E)-n*pi)<=pi/2, with abs(Im sqrt(E))<=pi/2 and abs(sqrt(E))>=n*pi/2. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Quantitative small-potential inverse-frequency trace and radicand estimates now hold for arbitrary complex l2 potentials, with zero-safe relative square-root control. The actual free isolating circles have a uniform positive frequency annulus. A common complex-potential neighborhood for all periods, the l2 period correction, parametric normalized roots, Abelian angles, and the physical KdV Birkhoff map/action identity remain essential.",
     "qualification": "These are proved bounds for the actual physical Hill discriminant and radicand, not a new definition of the trace. They do not yet construct a common complex-potential period domain or a q-dependent l2 period map. Physical normalized roots, own-period normalization, global continuation, Abelian angles and the KdV Birkhoff map/action identity remain unproved. Theorems 1 and 3(i) remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
-    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Quantitative small-potential inverse-frequency trace and radicand estimates now hold for arbitrary complex l2 potentials, with zero-safe relative square-root control. The actual free isolating circles have a uniform positive frequency annulus. A common complex-potential neighborhood for all periods, the l2 period correction, parametric normalized roots, Abelian angles, and the physical KdV Birkhoff map/action identity remain essential."
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Quantitative small-potential inverse-frequency trace and radicand estimates now hold for arbitrary complex l2 potentials, with zero-safe relative square-root control. The actual free isolating circles have a uniform positive frequency annulus. A common complex-potential neighborhood for all periods, the l2 period correction, parametric normalized roots, Abelian angles, and the physical KdV Birkhoff map/action identity remain essential.",
+    "period_progress": "The common_complex_contour_domain section proves the common complex l2-potential contour domain, exact root-relative bounds, joint coordinate-period analyticity and uniform Hilbert numerator factorization. The actual potential-dependent l2 period sequence remains to be established."
+  },
+  "common_complex_contour_domain": {
+    "modules": [
+      "NLS/ComplexAnalysis/SineAnnulusLowerBound.lean",
+      "NLS/KdV/HillFreeContourRadicandBound.lean",
+      "NLS/KdV/HillCommonComplexContourDomain.lean",
+      "NLS/KdV/HillComplexPeriodDomainAnalytic.lean",
+      "NLS/KdV/HillCommonComplexPeriods.lean",
+      "NLS/KdV/HillComplexContourInverseRoot.lean",
+      "NLS/KdV/HillFreeContourSeparation.lean",
+      "NLS/KdV/HillFreeContourWeights.lean",
+      "NLS/KdV/HillScaledFreeContourQuotient.lean",
+      "NLS/KdV/HillContourHilbertProductSeparation.lean"
+    ],
+    "declarations": [
+      "NLS.ComplexAnalysis.exists_uniform_sine_lower_annulus",
+      "NLS.KdV.exists_hillFreeGapContour_free_radicand_bound",
+      "NLS.KdV.hillFreeGapContour_radicand_relative_estimate",
+      "NLS.KdV.exists_hillFreeGapContour_common_complex_neighborhood",
+      "NLS.KdV.analyticOnNhd_hillAbelianComplexPeriod_of_domain",
+      "NLS.KdV.exists_hillAbelianComplexPeriods_common_free_neighborhood",
+      "NLS.KdV.norm_hillAbelianComplexRoot_base_div_sub_one_le",
+      "NLS.KdV.exists_hillFreeGapContour_inverse_root_bound",
+      "NLS.KdV.hillFreeGapContour_energy_separation",
+      "NLS.KdV.hillFreeGapContour_diagonal_weight_bound",
+      "NLS.KdV.hillFreeContourWeightSymbol",
+      "NLS.KdV.hillFreeContourWeightSymbol_off_diagonal_bound",
+      "NLS.KdV.hillFreeContourWeightSymbol_bound",
+      "NLS.KdV.hillFreeContourWeight",
+      "NLS.KdV.norm_hillFreeContourWeight_le",
+      "NLS.KdV.hillFreeContourWeight_apply",
+      "NLS.KdV.norm_hilbertWeightedProduct_hillFreeContour_le",
+      "NLS.KdV.hillFreeGapContour_scaled_resolvent_bound",
+      "NLS.KdV.norm_scaled_hillFreeAbelianQuotient_on_contour",
+      "NLS.KdV.hillFreeGapContour_free_energy_ne",
+      "NLS.KdV.hillAbelianHilbertProduct_contour_separation"
+    ],
+    "source_correspondence": "The common complex Banach contour domain and quantitative numerator/root bounds needed for normalized source Hill Abelian differentials and the actual physical Birkhoff coordinates in Theorems 1 and 3(i). Exact source contours, prefactor and normalization are preserved; verified Theorem 2 and Theorem 3(ii) action estimates are preserved.",
+    "hypotheses": "Every positive free contour label k>=1 on the original midpoint/collar energy circles. The potential belongs to one genuine complex l2 ball about zero whose radius is independent of k and the numerator label. Hilbert numerator inputs are arbitrary complex l2 sequences. The scaled free quotient requires n>=1 and n!=k. The general period analyticity theorem also applies to any real base potential whenever its actual square-root chart contains the specified open potential domain along the chosen contour.",
+    "result": "A positive sine lower bound on the fixed complex annulus pi/10<=abs(w)<=pi/2 is proved by compactness and the exact sine zero set. The true free energy-circle frequency geometry yields a positive lower bound d for the actual free Hill radicand on every source isolating circle, uniformly in the gap label. The quantitative genuine trace/radicand bounds produce a single epsilon>0, independent of all contour labels, on which the exact radicand ratio stays in the principal slit and differs from one by C*norm(p)/k. Every original contour is therefore in the actual analytic square-root chart on the same complex l2-potential neighborhood. The actual free root divided by that chart differs from one by at most C*norm(p)/k. A general analytic-domain theorem and the single neighborhood give joint Banach analyticity of every actual root/potential contour period on the same univ times open potential ball. Exact free-energy separation gives contour l2 weights of norm <=8/pi^2 and Hilbert product bounds exp((8/pi^2)*norm(a)), uniformly in all labels and contour points. The source-scaled free Abelian quotient is bounded by 4/k off the deleted label. A zero-safe HasProd argument proves the exact actual Hilbert numerator product factorization into its free numerator times the contour Hilbert product. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual Hill Abelian period integrands now share one complex l2-potential neighborhood on every original free isolating circle, with inverse-root decay C*norm(p)/k, uniform contour numerator products and exact factorization. The potential-dependent l2 period sequence, parametric normalized roots, physical matching for nearby real potentials, gap containment, own-period normalization, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
+    "qualification": "The common domain and exact coordinate integrals are proved for every label, but this milestone alone does not prove that the potential-dependent scaled-period sequence is l2-valued or jointly analytic as a Banach sequence map. It does not yet solve the normalized-period problem at nonzero physical potentials. Matching with the real canonical root, real gap containment, own-period normalization, global continuation, Abelian angles and the physical Birkhoff action identity remain essential. Theorems 1 and 3(i) remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual Hill Abelian period integrands now share one complex l2-potential neighborhood on every original free isolating circle, with inverse-root decay C*norm(p)/k, uniform contour numerator products and exact factorization. The potential-dependent l2 period sequence, parametric normalized roots, physical matching for nearby real potentials, gap containment, own-period normalization, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain essential."
   }
 }

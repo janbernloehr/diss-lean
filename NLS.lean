@@ -5351,3 +5351,13 @@ import NLS.KdV.HillL2SmallPotentialTrace
 import NLS.ComplexAnalysis.InverseSquareRootBounds
 import NLS.KdV.HillSmallPotentialRadicand
 import NLS.KdV.HillFreeGapContourGeometry
+import NLS.ComplexAnalysis.SineAnnulusLowerBound
+import NLS.KdV.HillFreeContourRadicandBound
+import NLS.KdV.HillCommonComplexContourDomain
+import NLS.KdV.HillComplexPeriodDomainAnalytic
+import NLS.KdV.HillCommonComplexPeriods
+import NLS.KdV.HillComplexContourInverseRoot
+import NLS.KdV.HillFreeContourSeparation
+import NLS.KdV.HillFreeContourWeights
+import NLS.KdV.HillScaledFreeContourQuotient
+import NLS.KdV.HillContourHilbertProductSeparation
