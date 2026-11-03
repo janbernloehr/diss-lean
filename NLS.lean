@@ -5551,3 +5551,10 @@ import NLS.KdV.HillRegularCorrectionContourBound
 import NLS.KdV.HillHighNormalizedContourBound
 import NLS.KdV.HillHighRegularCorrectionDecay
 import NLS.KdV.HillSummedRegularCorrection
+import NLS.KdV.HillLocalHilbertRepresentation
+import NLS.KdV.HillUniformContourBound
+import NLS.KdV.HillUniformCorrectionDecay
+import NLS.KdV.HillRegularSumContinuity
+import NLS.KdV.HillDirichletCirclePhase
+import NLS.KdV.HillSpectralCartesian
+import NLS.KdV.HillSpectralCartesianTerminal
