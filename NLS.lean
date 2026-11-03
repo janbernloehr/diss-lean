@@ -5361,3 +5361,16 @@ import NLS.KdV.HillFreeContourSeparation
 import NLS.KdV.HillFreeContourWeights
 import NLS.KdV.HillScaledFreeContourQuotient
 import NLS.KdV.HillContourHilbertProductSeparation
+import NLS.ComplexAnalysis.NormalizedCircleIntegralBounds
+import NLS.KdV.HillContourHilbertPsiBounds
+import NLS.KdV.HillComplexPeriodIntegrandBounds
+import NLS.KdV.HillComplexPeriodErrorBounds
+import NLS.KdV.HillComplexPeriodControl
+import NLS.KdV.HillComplexPeriodCoordinates
+import NLS.KdV.HillComplexPeriodSequence
+import NLS.KdV.HillComplexPeriodAnalytic
+import NLS.KdV.HillComplexSupportedPeriodMap
+import NLS.KdV.HillComplexImplicitPeriodRoots
+import NLS.KdV.HillComplexPeriodLocalRootGerm
+import NLS.KdV.HillComplexNormalizedPeriodGerm
+import NLS.KdV.HillComplexNumeratorZeros
