@@ -1,5 +1,10 @@
 # Exact continuous/rough normalization and all rough odd moments
 
+The later [weighted inverse and critical-gap milestone](HMINUS_WEIGHTED_CRITICAL_GAPS.md)
+retains these features in a twice-weighted family and proves actual rough
+quadratic critical-gap localization. The sharp normalized rough moment
+and full-domain obligations below remain open.
+
 `exists_hillHminus_normalized_all_odd_moments` constructs one complex
 Hminus1-open neighborhood of zero before every positive numerator index,
 positive contour index and nonnegative moment order. The actual normalized

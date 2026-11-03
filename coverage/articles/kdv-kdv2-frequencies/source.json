@@ -5831,6 +5831,216 @@
       "scope": "Constructs a genuine Hminus1-open ball of zero before all positive numerator/contour indices and odd orders. Every odd normalized moment vanishes there, including low, diagonal and collapsed indices; joint entire numerator analyticity, exact free values, all moment analyticity and original zeroth normalization retained. Full W and physical frequencies remain open",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "89aa11b39243b8711771cded42e5097552dc06786ed3538275b70edb1c9cdfe8"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticClusterCount.lean",
+      "source_labels": [
+        "Selected actual rough whole-gap square and normalized quotient dependency"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Unchanged proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for actual Hminus1 whole-gap analytic squares, complete unordered root clusters or free-normalized filled endpoint quotients; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b945038db6b22d3dfe63ddf052c77fe34a32be81806bb56d29e3e8c9bd181c4c",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCriticalGapLocalization.lean",
+      "source_labels": [
+        "Actual rough quadratic critical-gap localization and source37 locally"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "A radius precedes epsilon and one cutoff/open rough neighborhood precedes all high indices. Actual whole-disc analytic squares, trace/primitive matching, unordered multiplicity-exact pairs and free-normalized filled quotients are retained together with quadratic critical displacement, quarter-gap localization, exact collapsed equality and gap-circle separation. Any relative-gap eta bound is proved near zero; full W and lp remainder remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e5172e700913ebc05301bd71a8351911f0aa4a4234ddd62469caf654a883abb2"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneFreeSquareComparison.lean",
+      "source_labels": [
+        "Selected actual rough whole-gap square and normalized quotient dependency"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Unchanged proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for actual Hminus1 whole-gap analytic squares, complete unordered root clusters or free-normalized filled endpoint quotients; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c962f371fd1a812574b89b8aeb24e7fa76433bceb5ad3138a1b9a1eb4c5fd472",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapQuotientAsymptotics.lean",
+      "source_labels": [
+        "Selected actual rough whole-gap square and normalized quotient dependency"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Unchanged proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for actual Hminus1 whole-gap analytic squares, complete unordered root clusters or free-normalized filled endpoint quotients; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1dbc1d8fd898ba4b245cd0127690bcf11ebcf96a0611378c4838ae000a770b66",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapQuotients.lean",
+      "source_labels": [
+        "Selected actual rough whole-gap square and normalized quotient dependency"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Unchanged proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for actual Hminus1 whole-gap analytic squares, complete unordered root clusters or free-normalized filled endpoint quotients; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5eef7c754ea1c200db5cb7a9f6f9fb24efcfb795412a885e1522fe9d37cb59df",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneHighGapPairs.lean",
+      "source_labels": [
+        "Selected actual rough whole-gap square and normalized quotient dependency"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Unchanged proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for actual Hminus1 whole-gap analytic squares, complete unordered root clusters or free-normalized filled endpoint quotients; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b7132f9598cc792bce41e10410aa089925a3d54071da9aadcaa3bface3f93187",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneSmallCriticalControl.lean",
+      "source_labels": [
+        "Actual arbitrarily small common rough critical confinement"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "One Hminus1-open neighborhood precedes all positive selected critical energies for any positive frequency tolerance <=pi/8; actual fixed Miura energy shift and finite head remain in the proof",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b71e948e9a3375a03efe5a3ca3e7e29e2da05b10171004a2261feb746accb625"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTwoWeightedNormalizedMoments.lean",
+      "source_labels": [
+        "Actual common rough weighted normalized moment family"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "One constructed rough-open neighborhood and one actual normalized family retain all four operator analyticities/free values, both inverse pairs/norm bounds, literal entries, exact weighted compatibility, analytic l2 errors, entire numerator/free slices, all moment analyticities, zeroth periods and every odd cancellation. Actual rough source data are retained",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "74117610e0b5ef252274c09333c1f08397c4d6a56a4eb6e9c02e3fb637d37050"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTwoWeightedPeriodInverse.lean",
+      "source_labels": [
+        "Actual rough compatible weighted inverses"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Constructs weighted and unweighted analytic two-sided inverses on one Hminus1-open neighborhood, free identities and norm bounds <=2; bounded reciprocal diagonal proves every exact two-weight coordinate compatibility",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "79d50d8c79f86233c8aed0e0d17418b4751e91c536b88de4da8c151861985b1c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTwoWeightedPeriodOperator.lean",
+      "source_labels": [
+        "Actual rough twice-weighted infinite period operator"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Actual raw off-diagonal bound (20/pi)*A*n*k/abs(k^2-n^2)^2 and the verified mixed convolution/Hilbert majorant construct an operator-norm analytic weighted period map, with exact entries, free identity and norm <=26*((80/pi)*A+1)",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "06877b1033d71bb9876194464765e3e4852ca73027e90ed5e66767d17173e982"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWholeGapSquares.lean",
+      "source_labels": [
+        "Selected actual rough whole-gap square and normalized quotient dependency"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "Unchanged proved source from convexity 08db7a5b181084e4436959d1e84b2596bd5d9338 for actual Hminus1 whole-gap analytic squares, complete unordered root clusters or free-normalized filled endpoint quotients; full branch not merged",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "30486a454a513f8f811f8f6266d635538bd7900fae9d9f79b586fe33926b2d7a",
+      "source_import_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticTwoWeightedInverseColumns.lean",
+      "source_labels": [
+        "Generic analytic twice-weighted inverse column errors"
+      ],
+      "source_pages": [
+        16,
+        18,
+        19,
+        26,
+        27,
+        31
+      ],
+      "scope": "For arbitrary normed complex source parameters, exact diagonal inverse compatibility realizes weighted error coordinates as genuine analytic l2 vectors, proves free zero and norm <= n^2*norm(Q-Id), and constructs one epsilon-small neighborhood before all positive indices",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ac8745918b8415f03a1d6cd4a62205c94d71d27272511409eaea8442dda913fe"
     }
   ],
   "dependencies_needed": [
@@ -5862,15 +6072,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4102,
-    "total_declarations_audited": 25405,
+    "candidate_declarations_audited": 4235,
+    "total_declarations_audited": 25538,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 341
+    "selected_modules": 353
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -5981,6 +6191,12 @@
       "commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
       "record": "SHARED_HMINUS_PRIMITIVE_IMPORT.json",
       "kind": "three unchanged proved actual rough trace/primitive strip dependencies; existing rough dependency closure retained; full branch not merged"
+    },
+    {
+      "branch": "articles/kdv-convexity",
+      "commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+      "record": "SHARED_HMINUS_GAP_QUOTIENT_IMPORT.json",
+      "kind": "six unchanged proved actual rough whole-gap square/root cluster/normalized quotient dependencies; compatible local whole-gap extension retained; two unused cut-root/scale sources omitted; full branch not merged"
     }
   ],
   "normalized_collapsed_moments_record": "NORMALIZED_COLLAPSED_MOMENTS.md",
@@ -5995,5 +6211,7 @@
   "shared_hminus_normalization_import_record": "SHARED_HMINUS_NORMALIZATION_IMPORT.json",
   "hminus_normalized_moments_record": "HMINUS_NORMALIZED_MOMENTS.md",
   "shared_hminus_primitive_import_record": "SHARED_HMINUS_PRIMITIVE_IMPORT.json",
-  "hminus_normalized_odd_moments_record": "HMINUS_NORMALIZED_ODD_MOMENTS.md"
+  "hminus_normalized_odd_moments_record": "HMINUS_NORMALIZED_ODD_MOMENTS.md",
+  "hminus_weighted_critical_gap_record": "HMINUS_WEIGHTED_CRITICAL_GAPS.md",
+  "shared_hminus_gap_quotient_import_record": "SHARED_HMINUS_GAP_QUOTIENT_IMPORT.json"
 }

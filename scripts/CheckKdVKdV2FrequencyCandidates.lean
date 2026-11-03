@@ -1,3 +1,8 @@
+import NLS.KdV.HillHminusOneTwoWeightedNormalizedMoments
+import NLS.KdV.HillHminusOneCriticalGapLocalization
+import NLS.KdV.HillHminusOneGapQuotientAsymptotics
+import NLS.SequenceSpaces.AnalyticTwoWeightedInverseColumns
+import NLS.KdV.HillHminusOneTwoWeightedPeriodInverse
 import NLS.KdV.HillHminusOneNormalizedOddMoments
 import NLS.KdV.HillHminusOneNormalizedMoments
 import NLS.KdV.HillHminusOnePeriodEntries
@@ -395,7 +400,19 @@ run_cmd do
     `NLS.ComplexAnalysis.ParametricDividedDifferenceCongruence,
     `NLS.KdV.ClassicalRoughNormalizationCompatibility,
     `NLS.ComplexAnalysis.DenseLinearAnalyticUniqueness,
-    `NLS.KdV.HillHminusOneNormalizedOddMoments]
+    `NLS.KdV.HillHminusOneNormalizedOddMoments,
+    `NLS.KdV.HillHminusOneTwoWeightedPeriodOperator,
+    `NLS.KdV.HillHminusOneTwoWeightedPeriodInverse,
+    `NLS.KdV.HillHminusOneWholeGapSquares,
+    `NLS.KdV.HillHminusOneFreeSquareComparison,
+    `NLS.ComplexAnalysis.QuadraticClusterCount,
+    `NLS.KdV.HillHminusOneHighGapPairs,
+    `NLS.KdV.HillHminusOneGapQuotients,
+    `NLS.KdV.HillHminusOneGapQuotientAsymptotics,
+    `NLS.SequenceSpaces.AnalyticTwoWeightedInverseColumns,
+    `NLS.KdV.HillHminusOneSmallCriticalControl,
+    `NLS.KdV.HillHminusOneCriticalGapLocalization,
+    `NLS.KdV.HillHminusOneTwoWeightedNormalizedMoments]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

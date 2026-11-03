@@ -74,8 +74,9 @@ its existing Hilbert specialization and a transitive audit.
 | Selected actual Hminus1 trace/Miura/source-sheet dependencies from convexity `08db7a5`, `AnalyticSimpleCriticalBranch.lean`, `HillHminusOneCriticalPoints.lean`, `HillHminusOneCriticalNumerators.lean`, and `HillHminusOnePeriodEntries.lean` | Actual simple high critical energies at arbitrary complex rough sources; exact free labels; a common entire critical basis and all original contour/analytic period entries on one Hminus1-open neighborhood, with the full free identity matrix. Rough operator inversion and normalized moments remain open. |
 | `HillHminusOneCriticalControl`, `HillHminusOneUniformPrimitiveBounds`, `HillHminusOnePeriodBounds`, `HillHminusOnePeriodInverse`, `HillHminusOneNumeratorHilbert`, `HillHminusOneHilbertPeriod`, `HillHminusOneNormalizedDifferentials`, `HillHminusOneNormalizedMoments` and shared elementary bounds | Actual rough uniform contour estimates; constructed bounded analytic period operator and two-sided inverse; normalized entire differentials and all-order moment analyticity with exact zeroth periods on one Hminus1-open neighborhood of zero. Full W and physical frequencies remain open. |
 | `ClassicalRoughEmbedding`, `ClassicalRoughCriticalCompatibility`, `ClassicalRoughNormalizationCompatibility`, `HillHminusOneNormalizedOddMoments` and three generic uniqueness/congruence modules | Exact continuous interval/rough trace and normalized-family agreement, including all indices, filled centers and actual inverses; analytic propagation and true Fourier density give all odd normalized cancellation on one Hminus1-open ball. Full W and physical frequencies remain open. |
+| `HillHminusOneTwoWeightedPeriodOperator`, `HillHminusOneTwoWeightedPeriodInverse`, `AnalyticTwoWeightedInverseColumns`, `HillHminusOneTwoWeightedNormalizedMoments`, `HillHminusOneSmallCriticalControl`, `HillHminusOneCriticalGapLocalization` and selected rough square/quotient sources | Actual weighted rough operator/inverse and analytic l2 errors, with all normalized/free/period/odd features retained on the same family; actual quadratic critical-gap localization, exact collapsed equality and any relative-gap coefficient locally in Hminus1. Sharp normalized moments, full W, lp remainders and physical frequencies remain open. |
 
-All 341 selected modules compile with pinned **Lean 4.33.1**, commit
+All 353 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -426,11 +427,23 @@ PASS NLS/ComplexAnalysis/ParametricDividedDifferenceCongruence
 PASS NLS/KdV/ClassicalRoughNormalizationCompatibility
 PASS NLS/ComplexAnalysis/DenseLinearAnalyticUniqueness
 PASS NLS/KdV/HillHminusOneNormalizedOddMoments
-Axiom audit passed: 4102 candidate declarations; 25405 declarations total.
+PASS NLS/KdV/HillHminusOneTwoWeightedPeriodOperator
+PASS NLS/KdV/HillHminusOneTwoWeightedPeriodInverse
+PASS NLS/KdV/HillHminusOneWholeGapSquares
+PASS NLS/KdV/HillHminusOneFreeSquareComparison
+PASS NLS/ComplexAnalysis/QuadraticClusterCount
+PASS NLS/KdV/HillHminusOneHighGapPairs
+PASS NLS/KdV/HillHminusOneGapQuotients
+PASS NLS/KdV/HillHminusOneGapQuotientAsymptotics
+PASS NLS/SequenceSpaces/AnalyticTwoWeightedInverseColumns
+PASS NLS/KdV/HillHminusOneSmallCriticalControl
+PASS NLS/KdV/HillHminusOneCriticalGapLocalization
+PASS NLS/KdV/HillHminusOneTwoWeightedNormalizedMoments
+Axiom audit passed: 4235 candidate declarations; 25538 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 341 selected modules (including generated and private declarations)
+the 353 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1200,3 +1213,42 @@ proved. Full W, even collapsed cancellation in the full required scope,
 sharp rough moment bounds/summation, the exact canonical prefactor and
 physical frequency/action/Birkhoff identifications remain open. No
 main-theorem inventory row is verified.
+
+
+## Actual rough weighted normalization and quadratic critical-gap localization
+
+The current milestone is detailed in `HMINUS_WEIGHTED_CRITICAL_GAPS.md`.
+The raw energy-kernel period bound and mixed majorant construct an actual
+rough twice-weighted period operator and analytic inverse. Exact weighted
+coordinate compatibility realizes genuine analytic l2 inverse column errors,
+uniformly epsilon-small after n^2 scaling on a common neighborhood. The same
+actual normalized family retains all operator/inverse/free/entry/period
+assertions, joint entire numerator analyticity, all moment analyticities,
+exact zeroth periods and every odd cancellation.
+
+Actual selected critical energies obey quadratic displacement from actual
+unordered gap midpoints, quarter-gap confinement, exact collapsed equality
+and gap-circle pole separation on one local rough neighborhood/tail. The
+radius precedes epsilon, and actual whole-gap analytic square, trace/primitive
+matching and free-normalized filled endpoint quotient data are retained.
+Any prescribed relative-gap coefficient gives the local Hminus1 form of
+source (37). Full W and the lp remainder of Lemma2.11(i) remain open.
+
+All 353 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The transitive axiom audit passes for 4235 selected
+declarations and 25538 declarations including imported NLS dependencies,
+using only propext, Classical.choice and Quot.sound. Ordered checker/audit/
+PASS/coverage selections agree, source/provenance hashes match, and selected
+outputs are private and fresh. Canonical main remains unchanged and clean.
+All 341 previously selected Lean sources remain byte-identical. All six
+earlier provenance records remain valid.
+
+There are six new own proved sources and six unchanged selected dependencies
+from convexity08db7a5, recorded in SHARED_HMINUS_GAP_QUOTIENT_IMPORT.json along
+with the retained compatible local whole-gap extension. Two inspected unused
+cut-root/scale sources were omitted. No full branch merge, placeholder, new
+axiom, heartbeat increase, disabled linter or warning exception is introduced.
+Sharp rough normalized moment estimates and frequency summation, even collapsed
+cancellation in the full required scope, the exact canonical prefactor, full W
+and physical frequency/action/Birkhoff identities remain open. No main-theorem
+inventory row is verified.

@@ -1,0 +1,48 @@
+{
+  "source_commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
+  "kind": "selected actual rough whole-gap square, unordered endpoint and normalized quotient dependencies; compatible local whole-gap extension retained; two inspected unused cut-root/scale sources omitted; full branch not merged",
+  "files": [
+    {
+      "path": "NLS/KdV/ClassicalHillWholeGapSquares.lean",
+      "action": "retained_compatible_local_extension",
+      "source_sha256": "054e7aefe03fbb3926743e7fdf76c43194a576670b2aeddab090635539f72350",
+      "local_sha256": "807f79c97cd5116cf11344cd0984f5b91db04768ea35f41ccf6518082d87bf43"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWholeGapSquares.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "30486a454a513f8f811f8f6266d635538bd7900fae9d9f79b586fe33926b2d7a",
+      "local_sha256": "30486a454a513f8f811f8f6266d635538bd7900fae9d9f79b586fe33926b2d7a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneFreeSquareComparison.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "c962f371fd1a812574b89b8aeb24e7fa76433bceb5ad3138a1b9a1eb4c5fd472",
+      "local_sha256": "c962f371fd1a812574b89b8aeb24e7fa76433bceb5ad3138a1b9a1eb4c5fd472"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticClusterCount.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "b945038db6b22d3dfe63ddf052c77fe34a32be81806bb56d29e3e8c9bd181c4c",
+      "local_sha256": "b945038db6b22d3dfe63ddf052c77fe34a32be81806bb56d29e3e8c9bd181c4c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneHighGapPairs.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "b7132f9598cc792bce41e10410aa089925a3d54071da9aadcaa3bface3f93187",
+      "local_sha256": "b7132f9598cc792bce41e10410aa089925a3d54071da9aadcaa3bface3f93187"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapQuotients.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "5eef7c754ea1c200db5cb7a9f6f9fb24efcfb795412a885e1522fe9d37cb59df",
+      "local_sha256": "5eef7c754ea1c200db5cb7a9f6f9fb24efcfb795412a885e1522fe9d37cb59df"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapQuotientAsymptotics.lean",
+      "action": "imported_new_proved_dependency",
+      "source_sha256": "1dbc1d8fd898ba4b245cd0127690bcf11ebcf96a0611378c4838ae000a770b66",
+      "local_sha256": "1dbc1d8fd898ba4b245cd0127690bcf11ebcf96a0611378c4838ae000a770b66"
+    }
+  ]
+}

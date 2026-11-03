@@ -17,7 +17,21 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest continuous/rough agreement and odd moments
+## Latest rough weighted normalization and critical-gap localization
+
+The actual rough period operator now has a constructed twice-weighted
+inverse with exact coordinate compatibility and genuine analytic l2
+column errors. One normalized family retains all operator/free/period
+data, entire numerator analyticity, moment analyticity and all odd
+cancellation. Actual critical energies also satisfy quadratic gap-scale
+localization, exact collapsed equality and any prescribed relative-gap
+coefficient on a common local rough neighborhood. The analytic whole-gap
+square and its normalized filled endpoint quotient are retained for the
+next cut-resolvent moment estimates. See `HMINUS_WEIGHTED_CRITICAL_GAPS.md`.
+Sharp rough moment bounds/summation, full W and physical frequencies
+remain open; no main theorem is marked verified.
+
+## Earlier continuous/rough agreement and odd moments
 
 The actual continuous interval Fourier realization is now a bounded linear,
 dense inclusion into Hminus1. Exact trace, continuation-domain, root and
@@ -758,3 +772,8 @@ Current strict validation: all 341 selected modules pass, with 4102
 selected declarations and 25405 imported NLS declarations in the
 transitive axiom audit. See `HMINUS_NORMALIZED_ODD_MOMENTS.md`, `VALIDATION.md`
 and `source.json`. Every main theorem remains open.
+
+Current strict validation: all 353 selected modules pass, with 4235
+selected declarations and 25538 imported NLS declarations in the transitive
+axiom audit. See `HMINUS_WEIGHTED_CRITICAL_GAPS.md`, `VALIDATION.md` and
+`source.json`. All main theorems remain open.
