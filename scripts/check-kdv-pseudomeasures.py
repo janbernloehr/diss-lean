@@ -941,6 +941,11 @@ modules = [
     'NLS.KdV.HillProductFixedPeriods',
     'NLS.KdV.HminusOneHillProductPeriodEquations',
     'NLS.Articles.KdVPseudomeasures.OriginalHillProductJacobian',
+    'NLS.KdV.HillFreeEnergyProduct',
+    'NLS.KdV.HillFreePeriodResidues',
+    'NLS.KdV.HillFreePeriodJacobian',
+    'NLS.KdV.HillFreePeriodOperator',
+    'NLS.Articles.KdVPseudomeasures.OriginalFreeHillPeriodJacobian',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

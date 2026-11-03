@@ -714,6 +714,12 @@
       "status": "Exact filled product Frechet coordinate derivatives and actual real zero-evaluation Jacobian structure PROVED. Actual normalized fixed-real-source period maps ENTIRE in full independent lp data, exact contour derivative columns and actual zero-sequence off-diagonal equations PROVED. Full lp period-map/Jacobian inverse, common complex source zero sequence/fine estimate, L2 normalization, angles and MAIN theorems OPEN.",
       "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_product_fixed_period_equations",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-product-period-jacobian-map.json"
+    },
+    {
+      "label": "Original free inverse-index weighted Hill PERIOD derivative operator",
+      "status": "Exact actual free product periods, full scalar row Frechet derivatives, genuine circles before ALL n and ONE bounded identity/inverse norm one PROVED. Nonlinear lp period-map assembly/analyticity, general-source inverse, common complex actual zero sequence/fine estimate, universal normalization and MAIN theorems OPEN.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.exists_original_free_Hill_period_Jacobian",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-free-period-jacobian-map.json"
     }
   ],
   "reuse_map": [
@@ -793,7 +799,7 @@
     }
   ],
   "remaining_obligations": [
-    "Prove a COMMON complex source neighborhood for ALL retained index pairs and Banach h-minus-one sequence analyticity, together with the finer locally uniform ALL-index squared-gap-over-index zero bound. ACTUAL indexed real coefficient continuity, local analytic extensions identifying the coefficients at EVERY nearby real source, global analytic scalar complexification for EACH pair on an open connected domain containing the ENTIRE real form, and whole-overlap noncollision are NOW PROVED. The pair-dependent domains cannot simply be intersected and declared open. The fixed-real ALL-n l2 majorant is also proved but does not supply complex local uniformity. NEW: The ENTIRE actual indexed real coefficient displacement sequence, including its omitted midpoint, is NOW continuous in the literal h-minus-one sequence norm. Both FULL original endpoint displacement sequences are continuous in that norm. This strengthens scalar continuity but still does not supply a COMMON complex all-pair domain, complex Banach sequence analyticity or the fine estimate. NEW: Exact filled PRODUCT coordinate Frechet derivatives, actual real-zero EVALUATION Jacobian diagonal nonvanishing/off-diagonal vanishing, and fixed-real-source ACTUAL product period functionals ENTIRE in independent full complex l2 data with exact contour column derivatives are NOW PROVED. Actual indexed zeros solve every off-diagonal period equation; diagonal period equals the actual scalar inverse. Assemble the weighted lp-valued PERIOD map and prove its actual period Jacobian bounds/invertibility; do NOT confuse the proved zero-evaluation Jacobian with that period Jacobian. Common complex source sequence analyticity/fine bounds remain OPEN.",
+    "Prove a COMMON complex source neighborhood for ALL retained index pairs and Banach h-minus-one sequence analyticity, together with the finer locally uniform ALL-index squared-gap-over-index zero bound. ACTUAL indexed real coefficient continuity, local analytic extensions identifying the coefficients at EVERY nearby real source, global analytic scalar complexification for EACH pair on an open connected domain containing the ENTIRE real form, and whole-overlap noncollision are NOW PROVED. The pair-dependent domains cannot simply be intersected and declared open. The fixed-real ALL-n l2 majorant is also proved but does not supply complex local uniformity. NEW: The ENTIRE actual indexed real coefficient displacement sequence, including its omitted midpoint, is NOW continuous in the literal h-minus-one sequence norm. Both FULL original endpoint displacement sequences are continuous in that norm. This strengthens scalar continuity but still does not supply a COMMON complex all-pair domain, complex Banach sequence analyticity or the fine estimate. NEW: Exact filled PRODUCT coordinate Frechet derivatives, actual real-zero EVALUATION Jacobian diagonal nonvanishing/off-diagonal vanishing, and fixed-real-source ACTUAL product period functionals ENTIRE in independent full complex l2 data with exact contour column derivatives are NOW PROVED. Actual indexed zeros solve every off-diagonal period equation; diagonal period equals the actual scalar inverse. Assemble the weighted lp-valued PERIOD map and prove its actual period Jacobian bounds/invertibility; do NOT confuse the proved zero-evaluation Jacobian with that period Jacobian. Common complex source sequence analyticity/fine bounds remain OPEN. NEW: At the FREE source, exact actual product periods pi*n/2 on the diagonal and zero off-diagonal, original inverse-index weighted scalar row Frechet derivatives equal to coordinate evaluation, and ONE bounded identity/inverse norm one BEFORE ALL n are NOW PROVED. Genuine positive period circles can be chosen BEFORE ALL n. This is NOT yet a derivative of an assembled nonlinear lp-valued period map. Prove its output bounds/assembly and general nonzero-source inverse; common complex actual zero sequence analyticity/fine bounds remain OPEN.",
     "Determine the universal 2/(pi*n) scalar in the ORIGINAL normalized Hill infinite product. The literal actual retained-zero product with a UNIQUE NONZERO scalar is NOW PROVED at EVERY original real H-minus-one source, with locally uniform convergence of products AND derivatives on the ENTIRE energy plane. Do NOT redo the product-up-to-scalar argument or infer the scalar from zeros/growth/analyticity plus its free value. A valid actual L2 normalization identity with a proved density transfer is one possible route. Complex-source product uniformity and exclusion of additional complex-source energy zeros are not proved. NEW: Jointly ENTIRE literal products in energy and independent inverse-index l2 data, locally UNIFORM joint cutoff convergence, actual real-source product/scalar continuity and a rigorous real L2-to-Hminus-one constant-normalization density transfer are NOW PROVED. The actual L2 identity itself remains OPEN. Do NOT redo these analytic-product/continuity/density dependencies, and do not assume the missing L2 normalization.",
     "Complete any required global complex energy-sheet/differential gluing, then construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Intrinsic numerator gluing, actual local roots/normalized periods and real-source root/differential overlap identities are proved. Formalize the literal KMT y-tilde integrating-factor gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint.",
     "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
@@ -2196,6 +2202,35 @@
     "ACTUAL_KdV_angles_constructed": false,
     "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
     "full_source3_2_coordinate_assertion_proved": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_free_Hill_period_Jacobian_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-free-period-jacobian-map.json",
+    "exact_literal_free_Hill_energy_product_Euler_sine_identity": true,
+    "actual_free_canonical_root_sign_minus_2_i_sin_retained": true,
+    "ANY_genuine_positive_free_period_circle_allowed": true,
+    "selected_pole_winding_one_and_all_other_signed_free_poles_excluded": true,
+    "free_product_period_EXACT_pi_n_over_2_diagonal_zero_off_diagonal": true,
+    "original_inverse_index_l2_period_equation_weight_EXACT": true,
+    "actual_FULL_scalar_row_Frechet_derivative_equals_coordinate_evaluation_at_zero": true,
+    "omitted_equation_coordinate_and_column_included": true,
+    "every_scalar_free_row_entire_in_FULL_independent_complex_l2_data": true,
+    "SAME_bounded_identity_and_inverse_norm_ONE_BEFORE_ALL_n": true,
+    "genuine_period_circle_family_chosen_BEFORE_ALL_n": true,
+    "nonlinear_lp_valued_period_map_assembled": false,
+    "nonlinear_lp_valued_period_map_Banach_analyticity_proved": false,
+    "nonlinear_lp_valued_period_map_HasFDerivAt_identity_proved": false,
+    "general_nonzero_source_PERIOD_Jacobian_inverse_proved": false,
+    "free_value_assumed_to_imply_universal_normalization": false,
+    "universal_pi_n_over_2_diagonal_product_period_proved": false,
+    "universal_2_over_pi_n_product_prefactor_proved": false,
+    "L2_nonzero_source_diagonal_product_period_normalization_identity_proved": false,
+    "COMMON_complex_source_neighborhood_BEFORE_ALL_actual_zero_pairs_proved": false,
+    "Banach_hminus_one_SEQUENCE_analyticity_of_actual_source_to_zero_family_proved": false,
+    "locally_uniform_COMPLEX_ALL_index_squared_gap_over_index_zero_bound_proved": false,
+    "ACTUAL_global_complex_energy_sheet_and_differential_gluing_proved": false,
+    "ACTUAL_KdV_angles_constructed": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
     "all_five_main_theorems_proved": false
   }
 }

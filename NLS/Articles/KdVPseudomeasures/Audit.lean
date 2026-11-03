@@ -907,6 +907,11 @@ import NLS.KdV.HminusOneHillProductZeroJacobian
 import NLS.KdV.HillProductFixedPeriods
 import NLS.KdV.HminusOneHillProductPeriodEquations
 import NLS.Articles.KdVPseudomeasures.OriginalHillProductJacobian
+import NLS.KdV.HillFreeEnergyProduct
+import NLS.KdV.HillFreePeriodResidues
+import NLS.KdV.HillFreePeriodJacobian
+import NLS.KdV.HillFreePeriodOperator
+import NLS.Articles.KdVPseudomeasures.OriginalFreeHillPeriodJacobian
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6245,3 +6250,33 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillProductJacobian
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_product_retained_zero_Jacobian
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_product_retained_root_coordinate_derivative
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_product_fixed_period_equations
+#print axioms NLS.KdV.singleSpectralPartialProduct_free_restore_Hill
+#print axioms NLS.KdV.hillEnergySequenceProduct_free_sine_identity
+#print axioms NLS.KdV.hillFree_energy_denominator_ne_zero
+#print axioms NLS.KdV.hillEnergyProductPeriodIntegrand_free
+#print axioms NLS.KdV.hillFree_periodCircle_point_ne
+#print axioms NLS.KdV.hillFree_periodCircle_pole_integral
+#print axioms NLS.KdV.hillFree_periodCircle_inverse_integrable
+#print axioms NLS.KdV.hillFree_quadratic_kernel_integral
+#print axioms NLS.KdV.hillEnergyProductFixedPeriod_free
+#print axioms NLS.KdV.hillPeriodEquationWeight
+#print axioms NLS.KdV.pnat_complex_squares_ne
+#print axioms NLS.KdV.hillFree_quadratic_kernel_integrable
+#print axioms NLS.KdV.hillFree_weighted_period_column
+#print axioms NLS.KdV.hillFreePeriodEquationRow
+#print axioms NLS.KdV.hillFreePeriodEquationRow_zero
+#print axioms NLS.KdV.analyticAt_hillFreePeriodEquationRow
+#print axioms NLS.KdV.hillFreePeriodEquationRow_fderiv_single
+#print axioms NLS.LpSequence.positiveL2_nontrivial
+#print axioms NLS.KdV.nonempty_hillFreePeriodCircle
+#print axioms NLS.KdV.hillFreePeriodCircle
+#print axioms NLS.KdV.hillFreePeriodEquationRow_fderiv_eq_eval
+#print axioms NLS.KdV.hillFreePeriodJacobianOperator
+#print axioms NLS.KdV.hillFreePeriodJacobianEquiv
+#print axioms NLS.KdV.hillFreePeriodJacobianOperator_rows
+#print axioms NLS.KdV.hillFreePeriodJacobianEquiv_apply
+#print axioms NLS.KdV.norm_hillFreePeriodJacobianOperator
+#print axioms NLS.KdV.norm_hillFreePeriodJacobianInverse
+#print axioms NLS.Articles.KdVPseudomeasures.original_free_Hill_product_period
+#print axioms NLS.Articles.KdVPseudomeasures.original_free_Hill_period_derivative
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_free_Hill_period_Jacobian
