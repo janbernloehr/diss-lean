@@ -455,6 +455,10 @@ import NLS.KdV.HminusOneDirichletLabelAsymptotics
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletLabels
 import NLS.SequenceSpaces.FiniteTailDomination
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletMidpoint
+import NLS.Fourier.UnitIntervalDirichlet
+import NLS.Fourier.UnitIntervalDirichletIdentification
+import NLS.KdV.SingularDirichletPencil
+import NLS.KdV.SingularDirichletOperatorDomain
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -3774,3 +3778,56 @@ import NLS.Articles.KdVPseudomeasures.OriginalDirichletMidpoint
 #print axioms NLS.Articles.KdVPseudomeasures.exists_originalDirichletMidpoint_half_gap_bound
 #print axioms NLS.Articles.KdVPseudomeasures.memlp_originalDirichletMidpoint_of_gap
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletMidpoint_real_weighted_membership
+#print axioms NLS.Fourier.unitDirichletTrace
+#print axioms NLS.Fourier.unitDirichletTrace_apply
+#print axioms NLS.Fourier.unitDirichletTrace_scalarMode
+#print axioms NLS.Fourier.unitDirichletSubspace
+#print axioms NLS.Fourier.isClosed_unitDirichletSubspace
+#print axioms NLS.Fourier.unitDirichletRepresentative
+#print axioms NLS.Fourier.unitDirichletRepresentative_zero
+#print axioms NLS.Fourier.unitDirichletRepresentative_one
+#print axioms NLS.Fourier.absolutelyContinuous_unitDirichletRepresentative
+#print axioms NLS.Fourier.memLp_deriv_unitDirichletRepresentative
+#print axioms NLS.Fourier.unitDirichletConjugate
+#print axioms NLS.Fourier.unitDirichletConjugate_coefficient
+#print axioms NLS.Fourier.unitDirichletDualRestriction
+#print axioms NLS.Fourier.unitDirichletDualRestriction_apply
+#print axioms NLS.Fourier.unitDirichletProjection
+#print axioms NLS.Fourier.unitDirichletProjection_val
+#print axioms NLS.Fourier.unitDirichletProjection_subtype
+#print axioms NLS.Fourier.unitDirichletDualRestriction_surjective
+#print axioms NLS.Fourier.unitDirichletDualRestriction_eq_zero_iff
+#print axioms NLS.Fourier.unitSobolevOriginalH1
+#print axioms NLS.Fourier.unitSobolevOriginalH1_coefficient
+#print axioms NLS.Fourier.unitDirichletOriginalH1
+#print axioms NLS.Fourier.unitDirichletOriginalH1_coefficient
+#print axioms NLS.Fourier.unitDirichletOriginalH1_injective
+#print axioms NLS.Fourier.unitDirichletRepresentative_injective_on_interval
+#print axioms NLS.Fourier.existsUnique_unitDirichletRepresentative
+#print axioms NLS.Fourier.unitDirichletRepresentative_mem_domain
+#print axioms NLS.KdV.singularDirichletRestriction
+#print axioms NLS.KdV.singularDirichletRestriction_apply
+#print axioms NLS.KdV.unitDirichletOriginalH1_conjugate
+#print axioms NLS.KdV.singularDirichletDomainInclusion
+#print axioms NLS.KdV.singularDirichletDomainInclusion_energy_pos
+#print axioms NLS.KdV.singularDirichletDomainInclusion_eq_zero_iff
+#print axioms NLS.KdV.singularDirichletDomainInclusion_injective
+#print axioms NLS.KdV.singularDirichletOperator
+#print axioms NLS.KdV.singularDirichletPencil
+#print axioms NLS.KdV.singularDirichletOperator_eigen_iff
+#print axioms NLS.KdV.singularDirichletPencil_eq_zero_iff
+#print axioms NLS.KdV.singularDirichletResidual
+#print axioms NLS.KdV.singularDirichletResidual_mode
+#print axioms NLS.KdV.singularDirichletResidual_restriction
+#print axioms NLS.KdV.singularDirichletOperator_eigen_iff_boundary_defect
+#print axioms NLS.KdV.singularDirichlet_eigen_residual_coefficients
+#print axioms NLS.KdV.singularDirichletDomainInclusion_energy_im
+#print axioms NLS.KdV.singularDirichlet_eigenvalue_im_eq_zero
+#print axioms NLS.KdV.singularDirichletDomainInclusion_bilinear
+#print axioms NLS.KdV.singularDirichletOperator_bilinear
+#print axioms NLS.KdV.singularDirichletDomainEquiv
+#print axioms NLS.KdV.singularDirichletDomainEquiv_val
+#print axioms NLS.KdV.singularDirichletPartialOperator
+#print axioms NLS.KdV.singularDirichletPartialOperator_apply
+#print axioms NLS.KdV.singularDirichletPartialOperator_graph
+#print axioms NLS.KdV.singularDirichletPartialOperator_eigen_iff

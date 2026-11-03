@@ -157,5 +157,14 @@
       "Verified full general-weight source Theorem 2.1(i)",
       "Finite modifications and generic sequence norm domination"
     ]
+  },
+  "native_domain_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-domain-map.json",
+    "full_classical_zero_trace_domain": true,
+    "full_dual_base": true,
+    "independent_native_pencil": true,
+    "partial_operator_constructed": true,
+    "characteristic_equivalence": false,
+    "native_algebraic_multiplicities_identified": false
   }
 }

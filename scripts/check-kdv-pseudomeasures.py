@@ -489,6 +489,10 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalDirichletLabels',
     'NLS.SequenceSpaces.FiniteTailDomination',
     'NLS.Articles.KdVPseudomeasures.OriginalDirichletMidpoint',
+    'NLS.Fourier.UnitIntervalDirichlet',
+    'NLS.Fourier.UnitIntervalDirichletIdentification',
+    'NLS.KdV.SingularDirichletPencil',
+    'NLS.KdV.SingularDirichletOperatorDomain',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

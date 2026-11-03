@@ -178,7 +178,7 @@
     ]
   },
   "essential_open_obligations": [
-    "The full real scalar Dirichlet CHARACTERISTIC labels, central indexing, complete analytic multiplicities, literal n-times-L2 asymptotic, free values and real general-weight midpoint membership are now proved. REMAINING: identify the native H_dir^1 to H_dir^(-1) scalar operator spectrum/multiplicities, construct full COMPLEX central scalar labeling and prove full complex weighted midpoint estimate/local boundedness in source 2.1(ii). Remaining low PERIODIC simplicity/interlacing and periodic/antiperiodic parity, general complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved.",
+    "The full native scalar zero-trace interval H1 domain is now independently constructed and exhausts every classical H1 function with zero endpoints. Its FULL dual H-minus-one base, injective domain inclusion, weak spectral pencil and actual partial operator graph are constructed. A native eigen-equation has the exact endpoint-evaluation defect; no quasi-derivative periodicity is imposed. REMAINING: prove equivalence with the independent AC quasi-derivative problem and characteristic, native closedness/resolvent, and native algebraic multiplicities. Full REAL characteristic labels, central indexing, analytic multiplicities, n-times-L2 asymptotic, free values and real weighted midpoint membership remain proved. Global COMPLEX central scalar labels, full complex source 2.1(ii) midpoint estimates/local boundedness, remaining low periodic interlacing/parity, general complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
@@ -461,7 +461,15 @@
     "The ENTIRE intrinsic scalar Dirichlet sequence has the exact free normalization mu_n=(pi*n)^2 at q=0, including its first positive index. For general real original potentials its sufficiently high labels lie in the SAME original Hill gaps, and their midpoint errors are bounded by half those original gaps, including collapsed pairs.",
     "The full real characteristic labels and characteristic are transported to the article ENTIRE original real mean-zero physically period-one H-minus-one distribution domain using the verified raw unit-period extraction. Strict order, complete zero set, global analytic multiplicity count, literal n-times-L2 asymptotic and same-index high-gap location are proved without endpoint membership premises or frequency rescaling.",
     "The EXACT complete original midpoint error tau_n-mu_n is evenly extended to signed indices with zero at zero. One cutoff controls BOTH tails by half the original periodic gap norm. A shared finite-tail domination theorem then transfers arbitrary complex scalar-weight gap membership at EVERY exponent, including infinity, to the COMPLETE actual characteristic-label midpoint sequence, retaining all finite central values.",
-    "For EVERY source SpectralWeight, every admissible endpoint order and every original weighted real mean-zero physically period-one distribution, the COMPLETE intrinsic characteristic-label midpoint error belongs to the corresponding original weighted infinity sequence space. This uses the verified full weighted canonical gap theorem and changes NONE of the original distribution smooth-test actions."
+    "For EVERY source SpectralWeight, every admissible endpoint order and every original weighted real mean-zero physically period-one distribution, the COMPLETE intrinsic characteristic-label midpoint error belongs to the corresponding original weighted infinity sequence space. This uses the verified full weighted canonical gap theorem and changes NONE of the original distribution smooth-test actions.",
+    "The unit-period H1 endpoint trace is a continuous linear functional. Its closed kernel is a complete zero-trace H1 domain; every represented function is absolutely continuous on [0,1], has square-integrable derivative and vanishes at BOTH endpoints.",
+    "Every classical interval H1 function with zero endpoint values has EXACTLY ONE zero-trace coefficient representative agreeing at EVERY point of the closed interval. The proof assumes no periodicity of the input or its derivative and uses the verified signed classical interval extension and even-frequency Sobolev sampling. Thus the native domain construction exhausts the full interval domain.",
+    "The Dirichlet base is the FULL complex continuous dual of this zero-trace H1 space. Restriction from the entire unit-period H1 dual is surjective, with an explicit bounded extension furnished by removing the endpoint trace. The kernel of restriction consists EXACTLY of multiples of endpoint evaluation.",
+    "The independent Dirichlet weak operator and spectral pencil are constructed from the unchanged original distributional Hill expression using all zero-trace H1 tests. The unit-period function insertion uses original even frequencies and preserves the original normalized action. Source interpretation on [0,1] uses physically period-one potentials; an arbitrary ambient period-two potential merely defines the induced form.",
+    "The native H1-to-H-minus-one domain inclusion is injective and has strictly positive L2 quadratic energy on every nonzero domain vector. Physical conjugation preserves the zero-trace domain and agrees with native distributional conjugation. Both inclusion and singular weak operator retain the original bilinear Green identities.",
+    "A native Dirichlet eigen-equation holds IFF the full unit-period residual is precisely a multiple of endpoint evaluation. At EVERY original even frequency its residual coefficient equals the CENTRAL residual coefficient. This retains the boundary defect and does NOT impose equal endpoint values on a quasi-derivative.",
+    "Every nontrivial native weak Dirichlet eigenvector for a real original singular potential has REAL eigenvalue, independently of the constructed characteristic or any supplied spectral labels.",
+    "The actual partial linear operator acts on the FULL Dirichlet H-minus-one base, with domain exactly the image of the complete zero-trace H1 space. Its entire graph is identified with the weak operator graph, and its nonzero eigenvectors are equivalent to nonzero kernels of the independently defined native pencil."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -800,6 +808,19 @@
     "native_source_operator_identified": false,
     "full_complex_central_labeling": false,
     "full_complex_midpoint_local_boundedness": false,
+    "source2_1_ii": false
+  },
+  "verified_native_dirichlet_domain": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-domain-map.json",
+    "classical_interval_H1_domain_exhaustion": true,
+    "full_Hminus_dual_base": true,
+    "injective_domain_inclusion": true,
+    "independent_native_pencil": true,
+    "partial_operator_and_exact_graph": true,
+    "endpoint_defect_retained": true,
+    "native_real_eigenvalues": true,
+    "characteristic_equivalence": false,
+    "native_resolvent_and_algebraic_multiplicities": false,
     "source2_1_ii": false
   }
 }

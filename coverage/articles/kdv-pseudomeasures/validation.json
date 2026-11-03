@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Full real Dirichlet characteristic labels and original weighted midpoint membership",
+  "phase": "Full native zero-trace Dirichlet domain, dual base and boundary-defect pencil",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -463,13 +463,17 @@
     "NLS/Articles/KdVPseudomeasures/OriginalDirichletLabels.lean",
     "NLS/SequenceSpaces/FiniteTailDomination.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalDirichletMidpoint.lean",
+    "NLS/Fourier/UnitIntervalDirichlet.lean",
+    "NLS/Fourier/UnitIntervalDirichletIdentification.lean",
+    "NLS/KdV/SingularDirichletPencil.lean",
+    "NLS/KdV/SingularDirichletOperatorDomain.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 2740,
-  "definitions": 576,
+  "proved_theorems": 2778,
+  "definitions": 591,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 3316,
+    "declarations": 3369,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -876,10 +880,18 @@
     "The ENTIRE intrinsic scalar Dirichlet sequence has the exact free normalization mu_n=(pi*n)^2 at q=0, including its first positive index. For general real original potentials its sufficiently high labels lie in the SAME original Hill gaps, and their midpoint errors are bounded by half those original gaps, including collapsed pairs.",
     "The full real characteristic labels and characteristic are transported to the article ENTIRE original real mean-zero physically period-one H-minus-one distribution domain using the verified raw unit-period extraction. Strict order, complete zero set, global analytic multiplicity count, literal n-times-L2 asymptotic and same-index high-gap location are proved without endpoint membership premises or frequency rescaling.",
     "The EXACT complete original midpoint error tau_n-mu_n is evenly extended to signed indices with zero at zero. One cutoff controls BOTH tails by half the original periodic gap norm. A shared finite-tail domination theorem then transfers arbitrary complex scalar-weight gap membership at EVERY exponent, including infinity, to the COMPLETE actual characteristic-label midpoint sequence, retaining all finite central values.",
-    "For EVERY source SpectralWeight, every admissible endpoint order and every original weighted real mean-zero physically period-one distribution, the COMPLETE intrinsic characteristic-label midpoint error belongs to the corresponding original weighted infinity sequence space. This uses the verified full weighted canonical gap theorem and changes NONE of the original distribution smooth-test actions."
+    "For EVERY source SpectralWeight, every admissible endpoint order and every original weighted real mean-zero physically period-one distribution, the COMPLETE intrinsic characteristic-label midpoint error belongs to the corresponding original weighted infinity sequence space. This uses the verified full weighted canonical gap theorem and changes NONE of the original distribution smooth-test actions.",
+    "The unit-period H1 endpoint trace is a continuous linear functional. Its closed kernel is a complete zero-trace H1 domain; every represented function is absolutely continuous on [0,1], has square-integrable derivative and vanishes at BOTH endpoints.",
+    "Every classical interval H1 function with zero endpoint values has EXACTLY ONE zero-trace coefficient representative agreeing at EVERY point of the closed interval. The proof assumes no periodicity of the input or its derivative and uses the verified signed classical interval extension and even-frequency Sobolev sampling. Thus the native domain construction exhausts the full interval domain.",
+    "The Dirichlet base is the FULL complex continuous dual of this zero-trace H1 space. Restriction from the entire unit-period H1 dual is surjective, with an explicit bounded extension furnished by removing the endpoint trace. The kernel of restriction consists EXACTLY of multiples of endpoint evaluation.",
+    "The independent Dirichlet weak operator and spectral pencil are constructed from the unchanged original distributional Hill expression using all zero-trace H1 tests. The unit-period function insertion uses original even frequencies and preserves the original normalized action. Source interpretation on [0,1] uses physically period-one potentials; an arbitrary ambient period-two potential merely defines the induced form.",
+    "The native H1-to-H-minus-one domain inclusion is injective and has strictly positive L2 quadratic energy on every nonzero domain vector. Physical conjugation preserves the zero-trace domain and agrees with native distributional conjugation. Both inclusion and singular weak operator retain the original bilinear Green identities.",
+    "A native Dirichlet eigen-equation holds IFF the full unit-period residual is precisely a multiple of endpoint evaluation. At EVERY original even frequency its residual coefficient equals the CENTRAL residual coefficient. This retains the boundary defect and does NOT impose equal endpoint values on a quasi-derivative.",
+    "Every nontrivial native weak Dirichlet eigenvector for a real original singular potential has REAL eigenvalue, independently of the constructed characteristic or any supplied spectral labels.",
+    "The actual partial linear operator acts on the FULL Dirichlet H-minus-one base, with domain exactly the image of the complete zero-trace H1 space. Its entire graph is identified with the weak operator graph, and its nonzero eigenvectors are equivalent to nonzero kernels of the independently defined native pencil."
   ],
-  "source_correspondence": "The full ordered real scalar Dirichlet characteristic sequence is constructed, including its central indexing, complete analytic multiplicities, arbitrary real-lift independence, exact free values and literal n-times-L2 asymptotic. It is realized on the entire original real distribution domain. Its complete midpoint errors have arbitrary weighted gap-regularity transfer, and hence general-source-weight infinity membership at real weighted potentials. Remaining exact source target is native H_dir^1 to H_dir^(-1) scalar operator matching, global complex central labels and full complex/local-bounded source 2.1(ii). All main theorems remain unproved.",
-  "build_isolation": "All 449 baseline selected modules retain byte-identical sources from private milestone e3c458b. Nine new modules compiled privately in dependency order; the exact expanded audit of 458 selected modules and 3316 public declarations passed with zero warnings or suggestions and only standard or empty axiom sets. Canonical source/build and shared Git metadata remain read-only; commit writes use separate private metadata.",
+  "source_correspondence": "The entire original scalar interval H1 domain with zero endpoint traces is exhausted by a unique Fourier representative. Its full continuous dual is the Dirichlet H-minus-one base. The independent weak pencil and partial operator have an injective domain inclusion and exact native graph. Native eigen-equations have precisely the retained endpoint-evaluation defect, with constant coefficients at all original even modes. The native characteristic equivalence and algebraic multiplicity identification are still open; all main theorems remain unproved.",
+  "build_isolation": "All 458 baseline selected Lean modules retain byte-identical sources from private milestone 9b11a2d. Four new modules compiled privately in dependency order; the exact expanded audit of 462 selected modules and 3369 public theorem/definition declarations passed without warnings or suggestions and only standard or empty axiom sets. Canonical sources, build outputs and shared Git metadata remain read-only; commits use separate private metadata.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -1281,7 +1293,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "5db3efa5dd3285275c7c54d61b5a134a43d6dbecfe752c7c52b41a8945cd8830",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "87b00827a63360c45b1c621ad85faf4aa6bd7dc1f486ab0584006d138cd1de4a",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -1342,7 +1354,11 @@
     "NLS/KdV/HminusOneDirichletLabelAsymptotics.lean": "c0fd1170fb0f52427255e141a534a5e4d5ec654b7f808eed4046c58468c74821",
     "NLS/Articles/KdVPseudomeasures/OriginalDirichletLabels.lean": "deacee919a6651d7d71dbdf7f4702070069d56b9070bf915d595c86bfe606248",
     "NLS/SequenceSpaces/FiniteTailDomination.lean": "4f38d3a8f6522705a8690e54f23b787ec42b862bd2b33d7556266093867d1363",
-    "NLS/Articles/KdVPseudomeasures/OriginalDirichletMidpoint.lean": "29efa552e1ce506fda00574bdcfcd20056f5fc690b57c5cf44d05352424ad53f"
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletMidpoint.lean": "29efa552e1ce506fda00574bdcfcd20056f5fc690b57c5cf44d05352424ad53f",
+    "NLS/Fourier/UnitIntervalDirichlet.lean": "266955c40fc53839ee44910dac4f8898d91f378874f7dbe5098766ed7e831309",
+    "NLS/Fourier/UnitIntervalDirichletIdentification.lean": "3bd0ec2e3ae5395268d86679d1488ee48b9b2206ee987c56146294ff52e5a625",
+    "NLS/KdV/SingularDirichletPencil.lean": "e0f5be3096fd423816c9601af313f09d6289a0eff11b4186b7360f887a3b8ba3",
+    "NLS/KdV/SingularDirichletOperatorDomain.lean": "de422f6fc3c009951d7c0a58ee090a241749c0493cb176d428428b1a753548c2"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1350,16 +1366,16 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 3277,
-    "newly_checked_declarations_this_continuation": 39,
-    "newly_authored_or_adapted_declarations_this_continuation": 39,
-    "new_theorems": 35,
-    "new_definitions": 4,
-    "authored_or_adapted_theorems": 35,
-    "authored_or_adapted_definitions": 4,
+    "previous_checked_declarations": 3316,
+    "newly_checked_declarations_this_continuation": 53,
+    "newly_authored_or_adapted_declarations_this_continuation": 53,
+    "new_theorems": 38,
+    "new_definitions": 15,
+    "authored_or_adapted_theorems": 38,
+    "authored_or_adapted_definitions": 15,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 3316,
-    "reuse": "The 449 baseline sources remain byte-identical. Shared signed-enumeration and finite-tail tools support full real characteristic-label enumeration and asymptotics; article modules retain original distributions and reuse the complete general-weight periodic gap membership theorem."
+    "total_checked_declarations": 3369,
+    "reuse": "All 458 baseline Lean sources remain unchanged. Four modules reuse the existing unit-period Sobolev, classical interval extension, full original Hill forms and partial-map API."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -1388,7 +1404,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-dirichlet-real-labels.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-native-dirichlet-domain.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -1589,13 +1605,14 @@
     "Two Appendix B follow-on modules compiled in dependency order. Exact 429-module/3209-declaration axiom audit passed without warnings or suggestions. All 427 baseline Lean sources are byte-identical to 34c933b. Unrelated Dirichlet weak-solution work is preserved outside the committed inventory.",
     "Ten shared modules compiled in dependency order; exact 439-module/3250-declaration axiom audit passed without warnings or suggestions. All 429 baseline Lean sources are byte-identical to private milestone f94e15e. Canonical checkout, builds and shared Git metadata stayed read-only.",
     "Ten shared modules compiled in dependency order; exact 449-module/3277-declaration axiom audit passed without warnings or suggestions. All 439 baseline Lean sources are byte-identical to private milestone 993e845. Canonical checkout, builds and shared Git metadata stayed read-only. Corrected the source Dirichlet base/domain description from the explicit text before equation (6).",
-    "Nine modules compiled in dependency order; exact 458-module/3316-declaration axiom audit passed without warnings or suggestions. All 449 baseline Lean sources are byte-identical to private milestone e3c458b. Canonical checkout, builds and shared Git metadata stayed read-only."
+    "Nine modules compiled in dependency order; exact 458-module/3316-declaration axiom audit passed without warnings or suggestions. All 449 baseline Lean sources are byte-identical to private milestone e3c458b. Canonical checkout, builds and shared Git metadata stayed read-only.",
+    "Four native Dirichlet domain/pencil modules compiled in dependency order; expanded exact 462-module/3369-declaration axiom audit passed without warnings or suggestions. All 458 baseline sources remain byte-identical to private milestone 9b11a2d. Canonical checkout and shared Git metadata stayed read-only."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-real-labels-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-domain-map.json",
   "baseline_validated_snapshot": {
-    "commit": "e3c458b11921c016c040ad1afa8544b7dd88503a",
-    "modules": 449,
-    "audited_declarations": 3277,
+    "commit": "9b11a2d90926392c1fa5c9d53404b04e26d40649",
+    "modules": 458,
+    "audited_declarations": 3316,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   }
