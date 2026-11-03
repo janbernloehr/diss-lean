@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.GlobalSobolevCartesianInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.GeneralCartesianLocalInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianPlaneCanonicalIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianFredholmReduction
@@ -55,6 +56,9 @@ open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
+    `NLS.RealCoeff.weighted_mem_of_positive_of_even_action,
+    `NLS.ComplexAnalysis.exists_preimage_of_closedRange_of_charts,
+    `NLS.ComplexAnalysis.existsUnique_preimage_of_proper_of_charts,
     `NLS.DifferentialPolynomial,
     `NLS.ComplexAnalysis.annihilator_rotation_of_stationary_equivariance,
     `NLS.WeightedCoeff.positiveCartesianInsert,
@@ -722,6 +726,13 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.MKdV.miuraPhysicalCartesian_preimage_Sobolev_range,
+    ``NLS.MKdV.existsUnique_miuraPhysicalCartesian_preimage_Sobolev,
+    ``NLS.MKdV.miuraPhysicalSobolevCartesianMap_bijective,
+    ``NLS.MKdV.miuraOriginalNLSActions_eq_of_Sobolev_actionMean_eq,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_global_bijection_nativeSobolev,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_determined_by_mKdV_actions_mean,
+
     ``NLS.MKdV.miuraCartesianJacobian_annihilator_eq_zero,
     ``NLS.MKdV.miuraCartesianJacobian_bijective_H1,
     ``NLS.MKdV.miuraPhysicalCartesianJacobian_bijective_H1,

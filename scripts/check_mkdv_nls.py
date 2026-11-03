@@ -483,6 +483,14 @@ modules = [
     "NLS/MKdV/MiuraCartesianJacobianInvertible.lean",
     "NLS/MKdV/MiuraRealCartesianGeneralLocalInverse.lean",
     "NLS/Articles/MKdVNLSHierarchies/GeneralCartesianLocalInverseIdentification.lean",
+    'NLS/SequenceSpaces/EvenActionPositiveRegularity.lean',
+    'NLS/MKdV/MiuraCartesianInverseSobolevRegularity.lean',
+    'NLS/ComplexAnalysis/ClosedRangeChartContinuation.lean',
+    'NLS/MKdV/MiuraCartesianSobolevRange.lean',
+    'NLS/ComplexAnalysis/ProperChartUniqueContinuation.lean',
+    'NLS/MKdV/MiuraCartesianSobolevInverse.lean',
+    'NLS/MKdV/MiuraSobolevActionFiberIdentification.lean',
+    'NLS/Articles/MKdVNLSHierarchies/GlobalSobolevCartesianInverseIdentification.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

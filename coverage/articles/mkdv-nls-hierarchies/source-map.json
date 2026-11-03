@@ -208,7 +208,11 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_Gardner_bracket_analytic_extension",
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_complex_Jacobian_bijective_general_H1",
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_equivalence_general_H1",
-        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_local_inverse_general_H1"
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_local_inverse_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_inverse_global_Sobolev_regularity",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_global_unique_preimage_nativeSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_global_bijection_nativeSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_determined_by_mKdV_actions_mean"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -256,7 +260,11 @@
         "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits",
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_complex_Jacobian_bijective_general_H1",
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_equivalence_general_H1",
-        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_local_inverse_general_H1"
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_local_inverse_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_inverse_global_Sobolev_regularity",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_global_unique_preimage_nativeSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_global_bijection_nativeSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_determined_by_mKdV_actions_mean"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -426,8 +434,8 @@
     "remaining": "The diagonal physical discriminant, original fixed-index endpoints, canonical sheets and actual weighted contour actions have now been identified. Remaining normal-form angle, frequency and Poisson-bracket conventions must be carried through their actual constructions."
   },
   "remaining_essential_dependencies": [
-    "Cross-mode Cartesian zero brackets and full Gardner canonicity; global inverse and comparison of distinct NLS action fibers at equal physical J/mean; arbitrary nonnegative action-data realization; native higher-Sobolev inverse charts at general profiles. The actual ambient complex L2 Jacobian and physical real L2 derivative are bijective at every original real H1 basepoint, and the physical map has analytic L2/half-order local inverse charts there. All same-plane Gardner brackets are canonical, including closed gaps. Rough L2-basepoint invertibility remains unproved.",
-    "global forward analytic factorization of restricted NLS actions through independent physical mKdV actions and signed mean at general profiles; the whole-sequence local forward factor near zero, converse physical J_n and corrected mean-squared factors are proved",
+    "Cross-mode Cartesian zero brackets/full Gardner canonicity; native higher-Sobolev inverse continuity and analyticity at general profiles; an explicit arbitrary nonnegative action-data realization corollary. Global native Cartesian bijectivity for every integer H^s, s>=1, global inverse Sobolev regularity and uniqueness of the entire L2 preimage of every such native datum are now proved. Distinct original NLS action fibers at the same physical J and signed mean are now identified on every H^s, s>=1. General rough L2-target inversion remains unproved.",
+    "Global forward analytic factorization of restricted NLS actions through physical mKdV actions and signed mean on open action-space neighborhoods. Global determination by these data is now proved on every original integer H^s, s>=1. Whole-sequence forward analyticity near zero and converse physical J_n/corrected mean-squared analytic factors were already proved.",
     "independent mKdV Birkhoff angle construction, the final angle-sum factorization and full frequency identification; Theorem 4(iii) angle-action bracket clause and actual Gardner transfer are proved",
     "corrected frequency-sign convention in Theorem 3; the global signed-mean claim in Theorem 4(ii) is replaced by the proved mean-squared statement, while signed recovery requires a branch restriction"
   ],
@@ -1121,9 +1129,34 @@
     ],
     "mechanism": "Full target action-field covariance and differentiation at closed stationary actions kill closed modal annihilator coefficients. At open actions the coefficients are radial. Mixed brackets and skew symmetry cancel off-mode contributions, and norm-convergent native weighted modal expansion kills all modal coefficients; the source zero Fourier variation kills the mean coefficient. Dense range plus compact free remainder yields complex bijectivity. Physical inclusion gives real injectivity, and the checked real Fredholm alternative and analytic inverse theorem give physical local charts.",
     "limits": [
-      "No global inverse or identification of distinct original NLS action fibers at equal physical J/mean is claimed.",
+      "The subsequent global native Sobolev inverse milestone proves global bijectivity in every integer H^s, s>=1, and uniqueness among all original-L2 preimages of native data. Arbitrary rough L2 target inversion remains unproved.",
       "Charts use L2 and native half-order topologies, not native H1 and three-half-order topologies. No invertibility theorem at every rough real L2 basepoint is claimed.",
-      "Cross-mode zero brackets, full canonicity, arbitrary action-data realization, global forward action factorization, independent angles and full corrected frequency comparison remain essential."
+      "Cross-mode zero brackets, full canonicity, explicit arbitrary action-data realization, global forward analytic factorization, independent angles and full corrected frequency comparison remain essential. Distinct NLS action fibers at equal physical J/mean are now identified on H^s, s>=1."
+    ]
+  },
+  "global_native_Sobolev_Cartesian_inverse": {
+    "status": "proved_global_native_integer_Hs_bijection_s_ge_1_and_entire_L2_fiber_uniqueness_global_inverse_Sobolev_regularity_and_NLS_action_fiber_identification",
+    "domains": "Every native integer s>=1, full physical real H^s source and entire positive real weighted Cartesian pair of order s+1/2 plus arbitrary signed mean. Each such datum has exactly one preimage in the full physical real original-L2 space. Global inverse Sobolev regularity holds for all integers s>=0.",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_inverse_global_Sobolev_regularity",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_global_unique_preimage_nativeSobolev",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_global_bijection_nativeSobolev",
+      "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_determined_by_mKdV_actions_mean"
+    ],
+    "core_declarations": [
+      "NLS.RealCoeff.weighted_mem_of_positive_of_even_action",
+      "NLS.MKdV.miuraPhysicalCartesian_preimage_Sobolev_range",
+      "NLS.ComplexAnalysis.exists_preimage_of_closedRange_of_charts",
+      "NLS.ComplexAnalysis.existsUnique_preimage_of_proper_of_charts",
+      "NLS.MKdV.existsUnique_miuraPhysicalCartesian_preimage_Sobolev",
+      "NLS.MKdV.miuraPhysicalSobolevCartesianMap_bijective",
+      "NLS.MKdV.miuraOriginalNLSActions_eq_of_Sobolev_actionMean_eq"
+    ],
+    "mechanism": "The bounded inverse scaled spectral root recovers weighted positive NLS coordinates. Even diagonal quadratic actions recover the negative-coordinate weight, and the checked NLS Sobolev characterization recovers the source weight. Proper closed range and H1-basepoint open charts make the attained native-data locus clopen. Properness makes singleton fibers stable, while distinct regular preimages have disjoint charts and persist locally. The connected native target and singleton zero fiber therefore give global uniqueness. Phase saturation followed by this injectivity identifies original NLS action fibers at equal physical action/mean data.",
+    "limits": [
+      "Global native bijectivity does not yet assert native inverse continuity or analyticity, full Gardner canonicity or cross-mode zero brackets.",
+      "Every native datum has unique preimage among all L2 sources, but no global existence or uniqueness theorem is asserted for arbitrary rough L2 Cartesian data.",
+      "Global determination of the NLS actions by physical J and signed mean is proved; analyticity of the forward action-space factor remains essential. Independent angles and corrected full frequency comparison remain essential."
     ]
   }
 }

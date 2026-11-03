@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 4744,
+  "audited_declarations_and_auxiliaries": 4771,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -12444,14 +12444,119 @@
       "kind": "theorem",
       "name": "physical_Cartesian_analytic_local_inverse_general_H1",
       "file": "NLS/Articles/MKdVNLSHierarchies/GeneralCartesianLocalInverseIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "weighted_mem_of_positive_of_even_action",
+      "file": "NLS/SequenceSpaces/EvenActionPositiveRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLS_positive_weighted_mem_of_Cartesian_data",
+      "file": "NLS/MKdV/MiuraCartesianInverseSobolevRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLS_real_weighted_mem_of_Cartesian_data",
+      "file": "NLS/MKdV/MiuraCartesianInverseSobolevRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolev_mem_of_Cartesian_data",
+      "file": "NLS/MKdV/MiuraCartesianInverseSobolevRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraSobolev_representative_of_Cartesian_data",
+      "file": "NLS/MKdV/MiuraCartesianInverseSobolevRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalCartesian_preimage_Sobolev_range",
+      "file": "NLS/MKdV/MiuraCartesianInverseSobolevRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_preimage_of_closedRange_of_charts",
+      "file": "NLS/ComplexAnalysis/ClosedRangeChartContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevL2CartesianInclusion_injective",
+      "file": "NLS/MKdV/MiuraCartesianSobolevRange.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPhysicalCartesian_chart_of_Sobolev_data",
+      "file": "NLS/MKdV/MiuraCartesianSobolevRange.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPhysicalCartesian_preimage_Sobolev",
+      "file": "NLS/MKdV/MiuraCartesianSobolevRange.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevCartesianMap_surjective",
+      "file": "NLS/MKdV/MiuraCartesianSobolevRange.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "existsUnique_preimage_of_proper_of_charts",
+      "file": "NLS/ComplexAnalysis/ProperChartUniqueContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "existsUnique_miuraPhysicalCartesian_preimage_Sobolev",
+      "file": "NLS/MKdV/MiuraCartesianSobolevInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevCartesianMap_injective",
+      "file": "NLS/MKdV/MiuraCartesianSobolevInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevCartesianMap_bijective",
+      "file": "NLS/MKdV/MiuraCartesianSobolevInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalCartesian_injective_on_Sobolev",
+      "file": "NLS/MKdV/MiuraCartesianSobolevInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalNLSActions_eq_of_Sobolev_actionMean_eq",
+      "file": "NLS/MKdV/MiuraSobolevActionFiberIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_inverse_global_Sobolev_regularity",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GlobalSobolevCartesianInverseIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_global_unique_preimage_nativeSobolev",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GlobalSobolevCartesianInverseIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_global_bijection_nativeSobolev",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GlobalSobolevCartesianInverseIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_NLS_actions_determined_by_mKdV_actions_mean",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GlobalSobolevCartesianInverseIdentification.lean"
     }
   ],
-  "public_declaration_count": 2485,
-  "theorem_count": 2019,
+  "public_declaration_count": 2506,
+  "theorem_count": 2040,
   "definition_count": 466,
-  "full_build": "449 article/shared modules have validated private outputs. All 438 unchanged prefix module source hashes match the prior a283014 milestone; their private outputs were reused. Eleven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "full_build": "457 article/shared modules have validated private outputs. All 449 unchanged prefix module source hashes match the prior 4f9bba0 milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/ClosedEquivarianceAnnihilator.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/EvenActionPositiveRegularity.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -12902,12 +13007,20 @@
     "NLS/MKdV/MiuraCartesianJacobianInvertible.lean": "25a6b6f6368eadbd491363d1cd0a3d8dd806ea2871e378e4f031993a32b388d8",
     "NLS/MKdV/MiuraRealCartesianGeneralLocalInverse.lean": "c997deb20db8ae70df3037361bcd7d0184ff5912507189f09fa88641c6b805ed",
     "NLS/Articles/MKdVNLSHierarchies/GeneralCartesianLocalInverseIdentification.lean": "eb1f9b441fc34058008c13457035a02273bf2f0d14c52a09f82fc34189eea6a0",
+    "NLS/SequenceSpaces/EvenActionPositiveRegularity.lean": "b0d040fc415f62478c9296ed236802fb653603686c1d0fdeabc806afdcc08505",
+    "NLS/MKdV/MiuraCartesianInverseSobolevRegularity.lean": "97b9b9510c270d39cf94fc9a34bdb5e3e67f0d92684ded75df23728d29746a8d",
+    "NLS/ComplexAnalysis/ClosedRangeChartContinuation.lean": "12e9f83e5199c87cc21be751926f603a6e0844ab9eb48a1a3ba6bb588f439c4f",
+    "NLS/MKdV/MiuraCartesianSobolevRange.lean": "b127bb225ecf821e5f092b0f95f33bf0a455f9400d30aa1e6ba9aeadda4382ae",
+    "NLS/ComplexAnalysis/ProperChartUniqueContinuation.lean": "341a604fda894e413f28c80062b7f70ff2d77a878c43e9c50f8dd67226c3d4e6",
+    "NLS/MKdV/MiuraCartesianSobolevInverse.lean": "542695c6c0f59f54f8c085f52a27999d799b09624e8c75eda7db130b32c11731",
+    "NLS/MKdV/MiuraSobolevActionFiberIdentification.lean": "b5615f5d675d34475a25518e73520bb9100420374a20d0fffc9d6aa9202b4446",
+    "NLS/Articles/MKdVNLSHierarchies/GlobalSobolevCartesianInverseIdentification.lean": "53348512fb8653f37d2c5d04b03d3c691a79746eb5bd6a309d6604b62a8f831f",
     "NLS.lean": "8b7ce4ad52dd4f8dbc054e0bd1b7e6adc03480720e8557f9a8f54e461da6e8c6",
-    "scripts/check_mkdv_nls.py": "132adc44aa08d8d204ec8cbef133f56a25188ee39394a79ce46d3cecf7643dee",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "dce61e5482d1636de79bdd4674fd64abd0a86b0ec63bfb1ccf0b5b60257ab782"
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "3643471426739e2f58aa05d83b8f69e09674aed3cfff9a6ef380602934912c2a",
+    "scripts/check_mkdv_nls.py": "d276f3f668381e2f52ead1a28de7524e5ff655e883afbb5675a1b81ede7757fb"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 449,
+  "focused_module_count": 457,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -13281,12 +13394,25 @@
       "public_declaration_count": 2485,
       "theorem_count": 2019,
       "definition_count": 466
+    },
+    {
+      "milestone": "Global native integer Hs Cartesian bijectivity for s>=1, unique entire-L2 preimages of native data, global inverse Sobolev regularity and original-NLS-action fiber identification",
+      "audit_count": 4771,
+      "combined_NLS_audit_count": 49706,
+      "aggregate_compiled": true,
+      "module_count": 457,
+      "reused_prefix_module_count": 449,
+      "reused_prefix_commit": "4f9bba0d77183132eb0174f1d438e2cc8f867d6a",
+      "frozen_source_checker_count": 460,
+      "public_declaration_count": 2506,
+      "theorem_count": 2040,
+      "definition_count": 466
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 49679,
+  "combined_audited_NLS_declarations": 49706,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -13294,7 +13420,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 438 unchanged prefix module source hashes match the prior a283014 milestone; their private outputs were reused. Eleven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4744 declarations/auxiliaries and combined audit for 49679 NLS declarations. All 452 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 449 unchanged prefix module source hashes match the prior 4f9bba0 milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4771 declarations/auxiliaries and combined audit for 49706 NLS declarations. All 460 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

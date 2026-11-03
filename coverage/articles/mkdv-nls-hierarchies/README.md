@@ -7,6 +7,13 @@ original real H1 angle domain. Theorem 4(ii)'s converse J_n clause, its
 sign-invariant mean-squared correction and its whole-sequence forward
 factorization near zero are proved. Theorems 3 and 4(ii)-(iii) as whole
 statements remain incomplete**.
+The actual Cartesian map is now globally bijective in every native integer
+real H^s class, s>=1. Every native datum has exactly one preimage in the
+entire physical L2 space, and physical actions plus signed mean determine
+the whole original NLS action sequence on these Sobolev domains. Native
+inverse analyticity, full canonicity and global analytic action factorization
+remain open. See the latest milestone below.
+
 Prepared 2026-11-02 against canonical commit
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
 
@@ -1592,3 +1599,57 @@ full corrected frequency comparison remain essential. The main-theorem
 goal stays active.
 
 Validation: all 449 article/shared modules have validated private outputs. The 438 unchanged prefix source hashes match a283014 and their outputs were reused; all eleven added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,744 declarations/auxiliaries and the combined audit for 49,679 NLS declarations, using only the standard allowed axioms. All 452 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,485 declarations (2,019 theorems and 466 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Global native Sobolev Cartesian bijection and original-action fiber identification
+
+The actual physical Cartesian map, including the literal signed mean, is
+now a global bijection from original real H^s onto the entire native
+positive real Cartesian pair of order s+1/2 plus arbitrary real mean, for
+every integer s>=1. Moreover, every such target datum has exactly one
+preimage in the entire physical real original-L2 space. Arbitrary closed
+gaps, infinite support and zero mean are included. No equality of the
+original NLS action sequences is assumed for injectivity.
+
+First, the bounded inverse spectral root symbol recovers the positive
+original NLS coordinates with weight s from the Cartesian data with weight
+s+1/2. The even diagonal NLS actions control both negative coordinates by
+the corresponding positive radius; the zero coordinate is finite. The
+checked original NLS Sobolev characterization then recovers the source
+weight. Consequently the exact inverse image of the native Sobolev target
+range is the native Sobolev source range, globally for every integer s>=0.
+This regularity statement does not assume small data or a fixed action fiber.
+
+For s>=1, all preimages of native data therefore lie at real H1 points
+with the previously checked open L2 inverse charts. Properness gives a
+closed range. Its pullback to the connected native target is also open by
+the local charts, so the entire target is attained. Uniqueness is continued
+from the checked singleton zero fiber: properness makes the singleton-fiber
+locus open; two distinct regular preimages have disjoint chart neighborhoods,
+so the multiple-fiber locus is open too. Connectedness rules out a change
+in multiplicity. This argument does not assume a native-topology inverse
+chart or an unproved covering theorem.
+
+The earlier phase-saturation theorem now identifies different original NLS
+action fibers: equal physical action sequences and signed mean on H^s,
+s>=1, force equality of the whole original signed NLS action sequence.
+Phase saturation supplies a point in the first NLS action fiber with the
+second profile's full Cartesian data; global Cartesian injectivity identifies
+that point with the second profile. This proves global determination by
+physical actions and signed mean, but does not yet prove the required
+analytic factorization on open action-space neighborhoods.
+
+Article-facing declarations are
+`physical_Cartesian_inverse_global_Sobolev_regularity`,
+`physical_Cartesian_global_unique_preimage_nativeSobolev`,
+`physical_Cartesian_global_bijection_nativeSobolev` and
+`physical_NLS_actions_determined_by_mKdV_actions_mean` in
+`NLS/Articles/MKdVNLSHierarchies/GlobalSobolevCartesianInverseIdentification.lean`.
+The global bijection is a set-theoretic assertion between the full native
+spaces. Native inverse continuity/analyticity, full Gardner canonicity and
+cross-mode zero brackets remain to be proved. Global surjectivity or
+injectivity for arbitrary rough L2 target data is not asserted here.
+Independent mKdV angles/final angle-sum factorization and the full corrected
+frequency comparison also remain essential. The main-theorem goal stays active.
+
+Validation: all 457 article/shared modules have validated private outputs. The 449 unchanged prefix source hashes match 4f9bba0 and their outputs were reused; all eight added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,771 declarations/auxiliaries and the combined audit for 49,706 NLS declarations, using only the standard allowed axioms. All 460 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,506 declarations (2,040 theorems and 466 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
