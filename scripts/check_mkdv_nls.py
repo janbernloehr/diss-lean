@@ -472,6 +472,17 @@ modules = [
     "NLS/MKdV/MiuraCartesianPlaneGardner.lean",
     "NLS/MKdV/MiuraCartesianPlaneCanonical.lean",
     "NLS/Articles/MKdVNLSHierarchies/CartesianPlaneCanonicalIdentification.lean",
+    "NLS/ComplexAnalysis/ClosedEquivarianceAnnihilator.lean",
+    "NLS/MKdV/MiuraCartesianJacobianCoordinates.lean",
+    "NLS/MKdV/MiuraAnalyticActionVector.lean",
+    "NLS/SequenceSpaces/PositiveCartesianCotangentModes.lean",
+    "NLS/MKdV/MiuraCartesianClosedAnnihilator.lean",
+    "NLS/MKdV/MiuraCartesianAnnihilatorModes.lean",
+    "NLS/MKdV/MiuraCartesianAnnihilatorOffMode.lean",
+    "NLS/MKdV/MiuraCartesianJacobianAnnihilator.lean",
+    "NLS/MKdV/MiuraCartesianJacobianInvertible.lean",
+    "NLS/MKdV/MiuraRealCartesianGeneralLocalInverse.lean",
+    "NLS/Articles/MKdVNLSHierarchies/GeneralCartesianLocalInverseIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 4677,
+  "audited_declarations_and_auxiliaries": 4744,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -12209,14 +12209,249 @@
       "kind": "theorem",
       "name": "physical_Cartesian_Gardner_bracket_analytic_extension",
       "file": "NLS/Articles/MKdVNLSHierarchies/CartesianPlaneCanonicalIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "annihilator_rotation_of_stationary_equivariance",
+      "file": "NLS/ComplexAnalysis/ClosedEquivarianceAnnihilator.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianJacobian_eval",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianJacobian_mean",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianJacobian_Gardner_action",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCoordinates.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraAnalyticActionVector",
+      "file": "NLS/MKdV/MiuraAnalyticActionVector.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraAnalyticActionVector",
+      "file": "NLS/MKdV/MiuraAnalyticActionVector.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraAnalyticActionVector_eq_Gardner",
+      "file": "NLS/MKdV/MiuraAnalyticActionVector.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesian_analytic_action_covariance",
+      "file": "NLS/MKdV/MiuraAnalyticActionVector.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraAnalyticActionVector_eq_zero_of_action_zero",
+      "file": "NLS/MKdV/MiuraAnalyticActionVector.lean"
+    },
+    {
+      "kind": "def",
+      "name": "positiveCartesianInsert",
+      "file": "NLS/SequenceSpaces/PositiveCartesianCotangentModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianInsert_eval",
+      "file": "NLS/SequenceSpaces/PositiveCartesianCotangentModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianInsert_mean",
+      "file": "NLS/SequenceSpaces/PositiveCartesianCotangentModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianInsert_decomposition",
+      "file": "NLS/SequenceSpaces/PositiveCartesianCotangentModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cotangent_positiveCartesianInsert",
+      "file": "NLS/SequenceSpaces/PositiveCartesianCotangentModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianActionVector_eq_insert",
+      "file": "NLS/SequenceSpaces/PositiveCartesianCotangentModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cotangent_eq_zero_of_modes_of_mean_zero",
+      "file": "NLS/SequenceSpaces/PositiveCartesianCotangentModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cotangent_value_of_modes_except",
+      "file": "NLS/SequenceSpaces/PositiveCartesianCotangentModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cotangent_eq_mean_of_modal_zero",
+      "file": "NLS/SequenceSpaces/PositiveCartesianCotangentModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesian_closed_annihilator_rotation",
+      "file": "NLS/MKdV/MiuraCartesianClosedAnnihilator.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianJacobian_own_Gardner_pairs",
+      "file": "NLS/MKdV/MiuraCartesianClosedAnnihilator.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianInsert",
+      "file": "NLS/MKdV/MiuraCartesianAnnihilatorModes.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianCotangentX",
+      "file": "NLS/MKdV/MiuraCartesianAnnihilatorModes.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianCotangentY",
+      "file": "NLS/MKdV/MiuraCartesianAnnihilatorModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianCotangent_insert",
+      "file": "NLS/MKdV/MiuraCartesianAnnihilatorModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianCotangent_actionVector",
+      "file": "NLS/MKdV/MiuraCartesianAnnihilatorModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesian_annihilator_radial",
+      "file": "NLS/MKdV/MiuraCartesianAnnihilatorModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesian_annihilator_closed_coefficients",
+      "file": "NLS/MKdV/MiuraCartesianAnnihilatorModes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianJacobian_Gardner_observable_eval",
+      "file": "NLS/MKdV/MiuraCartesianAnnihilatorOffMode.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianJacobian_Gardner_observable_mean",
+      "file": "NLS/MKdV/MiuraCartesianAnnihilatorOffMode.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraAction_CartesianObservable_bracket_of_ne",
+      "file": "NLS/MKdV/MiuraCartesianAnnihilatorOffMode.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesian_annihilator_off_mode",
+      "file": "NLS/MKdV/MiuraCartesianAnnihilatorOffMode.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesian_annihilator_own_value",
+      "file": "NLS/MKdV/MiuraCartesianJacobianAnnihilator.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesian_annihilator_all_modal_coefficients",
+      "file": "NLS/MKdV/MiuraCartesianJacobianAnnihilator.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianJacobian_annihilator_eq_zero",
+      "file": "NLS/MKdV/MiuraCartesianJacobianAnnihilator.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianNormalizedJacobian_denseRange_H1",
+      "file": "NLS/MKdV/MiuraCartesianJacobianInvertible.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianNormalizedJacobian_bijective_H1",
+      "file": "NLS/MKdV/MiuraCartesianJacobianInvertible.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianJacobian_bijective_H1",
+      "file": "NLS/MKdV/MiuraCartesianJacobianInvertible.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianJacobian_denseRange_H1",
+      "file": "NLS/MKdV/MiuraCartesianJacobianInvertible.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalCartesianJacobian_inclusion",
+      "file": "NLS/MKdV/MiuraRealCartesianGeneralLocalInverse.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPhysicalH1L2Point",
+      "file": "NLS/MKdV/MiuraRealCartesianGeneralLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalCartesianJacobian_injective_H1",
+      "file": "NLS/MKdV/MiuraRealCartesianGeneralLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalCartesianJacobian_bijective_H1",
+      "file": "NLS/MKdV/MiuraRealCartesianGeneralLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPhysicalCartesian_derivative_equiv_H1",
+      "file": "NLS/MKdV/MiuraRealCartesianGeneralLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPhysicalCartesian_analytic_chart_H1",
+      "file": "NLS/MKdV/MiuraRealCartesianGeneralLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_complex_Jacobian_bijective_general_H1",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GeneralCartesianLocalInverseIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_derivative_equivalence_general_H1",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GeneralCartesianLocalInverseIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_analytic_local_inverse_general_H1",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GeneralCartesianLocalInverseIdentification.lean"
     }
   ],
-  "public_declaration_count": 2438,
-  "theorem_count": 1978,
-  "definition_count": 460,
-  "full_build": "438 article/shared modules have validated private outputs. All 428 unchanged prefix module source hashes match the prior 9ef985e milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2485,
+  "theorem_count": 2019,
+  "definition_count": 466,
+  "full_build": "449 article/shared modules have validated private outputs. All 438 unchanged prefix module source hashes match the prior a283014 milestone; their private outputs were reused. Eleven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/TranslationCovariantCotangent.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/ClosedEquivarianceAnnihilator.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -12656,12 +12891,23 @@
     "NLS/MKdV/MiuraCartesianPlaneGardner.lean": "0f924102ac35d63f3e1955d63aebc296e77a6a00dab4910a6bdba1136e2b2fe9",
     "NLS/MKdV/MiuraCartesianPlaneCanonical.lean": "a25e37ae1dfa8ae13cb24f8f1e7852bc977c3e7c7b8bfed52f7861ae6a10e84d",
     "NLS/Articles/MKdVNLSHierarchies/CartesianPlaneCanonicalIdentification.lean": "270206ba2f9aaffdc5d8b1de9c8cefeaea514a00493b656902563d717fe022d8",
+    "NLS/ComplexAnalysis/ClosedEquivarianceAnnihilator.lean": "eee1190b73c7645e1e425ea66daf9e69978a75a09bf7268afa922eb5f6156154",
+    "NLS/MKdV/MiuraCartesianJacobianCoordinates.lean": "ada44acbd000633975f3654c1688a842997c1b61444efe535e631c606c697c68",
+    "NLS/MKdV/MiuraAnalyticActionVector.lean": "2f9c018c04fa6286c01db428653254bb89634e0d000073259fe9cc1e8309dde3",
+    "NLS/SequenceSpaces/PositiveCartesianCotangentModes.lean": "b5a702c2ce993b8a73b29b4ee7c9c02dac731ca405b9d8b3c233b5aa9b099260",
+    "NLS/MKdV/MiuraCartesianClosedAnnihilator.lean": "8ea5a687b7af1839001d7de887896aa73a82590da60693f5fdd7c05eb26d1e98",
+    "NLS/MKdV/MiuraCartesianAnnihilatorModes.lean": "87c3f2a7b9d0fc0706f0b8d2e4b09c08ba27a6cc7ee2615cc9ce53f28d296745",
+    "NLS/MKdV/MiuraCartesianAnnihilatorOffMode.lean": "3dda5d67816947dc2a4c7fa21f7cf309de477de5f73975c918874e176a2b8899",
+    "NLS/MKdV/MiuraCartesianJacobianAnnihilator.lean": "94ab4180c6674fd9bddf39ef96245254ddfd9fab208ca22bd6038ebc5eab74a5",
+    "NLS/MKdV/MiuraCartesianJacobianInvertible.lean": "25a6b6f6368eadbd491363d1cd0a3d8dd806ea2871e378e4f031993a32b388d8",
+    "NLS/MKdV/MiuraRealCartesianGeneralLocalInverse.lean": "c997deb20db8ae70df3037361bcd7d0184ff5912507189f09fa88641c6b805ed",
+    "NLS/Articles/MKdVNLSHierarchies/GeneralCartesianLocalInverseIdentification.lean": "eb1f9b441fc34058008c13457035a02273bf2f0d14c52a09f82fc34189eea6a0",
     "NLS.lean": "8b7ce4ad52dd4f8dbc054e0bd1b7e6adc03480720e8557f9a8f54e461da6e8c6",
-    "scripts/check_mkdv_nls.py": "a8075202746b6530bdb346f22901fb5810284988602c578e568b7f32f7cda77a",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "f42a5cf55d18e0095ae01991e41e2f4188b9db3609adee402f2e54ff39bf5296"
+    "scripts/check_mkdv_nls.py": "132adc44aa08d8d204ec8cbef133f56a25188ee39394a79ce46d3cecf7643dee",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "dce61e5482d1636de79bdd4674fd64abd0a86b0ec63bfb1ccf0b5b60257ab782"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 438,
+  "focused_module_count": 449,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -13022,12 +13268,25 @@
       "public_declaration_count": 2438,
       "theorem_count": 1978,
       "definition_count": 460
+    },
+    {
+      "milestone": "Actual Cartesian Jacobian bijectivity and physical real analytic original-L2 local inverse charts at every original real H1 profile",
+      "audit_count": 4744,
+      "combined_NLS_audit_count": 49679,
+      "aggregate_compiled": true,
+      "module_count": 449,
+      "reused_prefix_module_count": 438,
+      "reused_prefix_commit": "a283014c79e6b246e4d714cfaa4e5064b7cac090",
+      "frozen_source_checker_count": 452,
+      "public_declaration_count": 2485,
+      "theorem_count": 2019,
+      "definition_count": 466
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 49612,
+  "combined_audited_NLS_declarations": 49679,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -13035,7 +13294,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 428 unchanged prefix module source hashes match the prior 9ef985e milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4677 declarations/auxiliaries and combined audit for 49612 NLS declarations. All 441 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 438 unchanged prefix module source hashes match the prior a283014 milestone; their private outputs were reused. Eleven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4744 declarations/auxiliaries and combined audit for 49679 NLS declarations. All 452 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

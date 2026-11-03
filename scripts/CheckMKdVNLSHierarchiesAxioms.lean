@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.GeneralCartesianLocalInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianPlaneCanonicalIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianFredholmReduction
 import NLS.Articles.MKdVNLSHierarchies.SignedMeanActionFiberCoordinates
@@ -55,6 +56,16 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ComplexAnalysis.annihilator_rotation_of_stationary_equivariance,
+    `NLS.WeightedCoeff.positiveCartesianInsert,
+    `NLS.WeightedCoeff.positiveCartesianInsert_eval,
+    `NLS.WeightedCoeff.positiveCartesianInsert_mean,
+    `NLS.WeightedCoeff.positiveCartesianInsert_decomposition,
+    `NLS.WeightedCoeff.cotangent_positiveCartesianInsert,
+    `NLS.WeightedCoeff.positiveCartesianActionVector_eq_insert,
+    `NLS.WeightedCoeff.cotangent_eq_zero_of_modes_of_mean_zero,
+    `NLS.WeightedCoeff.cotangent_value_of_modes_except,
+    `NLS.WeightedCoeff.cotangent_eq_mean_of_modal_zero,
     `NLS.ComplexAnalysis.fderiv_comp_eq_zero_of_real_zero,
     `NLS.ComplexAnalysis.fderiv_generator_eq_of_real_covariance,
     `NLS.Poisson.periodOneDerivative_scalarMode,
@@ -711,6 +722,12 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.MKdV.miuraCartesianJacobian_annihilator_eq_zero,
+    ``NLS.MKdV.miuraCartesianJacobian_bijective_H1,
+    ``NLS.MKdV.miuraPhysicalCartesianJacobian_bijective_H1,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_complex_Jacobian_bijective_general_H1,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_equivalence_general_H1,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_local_inverse_general_H1,
     ``NLS.MKdV.miuraCartesianObservable_Gardner_memlp,
     ``NLS.MKdV.miuraCartesianObservable_Gardner_distribution,
     ``NLS.MKdV.miuraCartesianPlane_Gardner_canonical,

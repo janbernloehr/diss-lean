@@ -205,7 +205,10 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_bijective_iff_injective",
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_actual_Gardner_fields",
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_plane_Gardner_brackets",
-        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_Gardner_bracket_analytic_extension"
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_Gardner_bracket_analytic_extension",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_complex_Jacobian_bijective_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_equivalence_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_local_inverse_general_H1"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -250,7 +253,10 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_small_inverse_Sobolev_regularity",
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_complete_action_rotation",
         "NLS.Articles.MKdVNLSHierarchies.cartesian_action_Gardner_brackets_original_H1",
-        "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits"
+        "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_complex_Jacobian_bijective_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_equivalence_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_local_inverse_general_H1"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -420,7 +426,7 @@
     "remaining": "The diagonal physical discriminant, original fixed-index endpoints, canonical sheets and actual weighted contour actions have now been identified. Remaining normal-form angle, frequency and Poisson-bracket conventions must be carried through their actual constructions."
   },
   "remaining_essential_dependencies": [
-    "cross-mode Cartesian zero brackets and full Gardner canonicity; general-profile Cartesian derivative kernel triviality, global inverse and comparison of distinct NLS action fibers at equal physical J/mean; arbitrary nonnegative action-data realization. Actual Cartesian gradients now have L2 spatial derivatives and all same-plane Gardner brackets have canonical values at every original real H1 input, including closed gaps. The original-L2 Cartesian derivative has compact free remainder and its bijectivity reduces to injectivity.",
+    "Cross-mode Cartesian zero brackets and full Gardner canonicity; global inverse and comparison of distinct NLS action fibers at equal physical J/mean; arbitrary nonnegative action-data realization; native higher-Sobolev inverse charts at general profiles. The actual ambient complex L2 Jacobian and physical real L2 derivative are bijective at every original real H1 basepoint, and the physical map has analytic L2/half-order local inverse charts there. All same-plane Gardner brackets are canonical, including closed gaps. Rough L2-basepoint invertibility remains unproved.",
     "global forward analytic factorization of restricted NLS actions through independent physical mKdV actions and signed mean at general profiles; the whole-sequence local forward factor near zero, converse physical J_n and corrected mean-squared factors are proved",
     "independent mKdV Birkhoff angle construction, the final angle-sum factorization and full frequency identification; Theorem 4(iii) angle-action bracket clause and actual Gardner transfer are proved",
     "corrected frequency-sign convention in Theorem 3; the global signed-mean claim in Theorem 4(ii) is replaced by the proved mean-squared statement, while signed recovery requires a branch restriction"
@@ -1054,7 +1060,7 @@
     "limits": "Different original NLS action fibers at the same physical J and signed mean remain unclassified. General-profile Cartesian Jacobian/global inverse, Gardner canonicity, arbitrary nonnegative action realization, global forward I(J,mean) factorization, independent angles and corrected full frequency comparison remain essential."
   },
   "general_profile_Cartesian_Fredholm_reduction": {
-    "status": "proved_general_original_L2_compact_remainder_and_Fredholm_reduction_kernel_injectivity_open",
+    "status": "proved_general_original_L2_compact_remainder_and_Fredholm_reduction_injectivity_now_discharged_at_all_original_real_H1_basepoints",
     "domains": "Every physical real original L2 profile; full ambient complex derivative and genuine physical real derivative into the positive half-order Cartesian pair plus signed mean.",
     "unconditional_declarations": [
       "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_compact_remainder",
@@ -1063,7 +1069,7 @@
       "NLS.MKdV.isCompactOperator_miuraCartesianNormalizedJacobian_sub_id"
     ],
     "conditional_analytic_inverse_declaration": "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_chart_of_derivative_injective",
-    "explicit_remaining_premise": "Function.Injective (fderiv R miuraPhysicalCartesianMap a), required for the conditional chart; no global or general-profile kernel theorem is claimed.",
+    "explicit_remaining_premise": "The old conditional chart requires derivative injectivity at an arbitrary real L2 point. This is now proved at every original real H1 basepoint by the later general_H1_Cartesian_local_inverse milestone; arbitrary rough L2 points remain open.",
     "root_asymptotics": [
       "NLS.ZakharovShabat.tendsto_sourceDiagonalScaledActionRatio_positive",
       "NLS.ZakharovShabat.tendsto_sourceDiagonalActionRoot_scaled_positive",
@@ -1071,7 +1077,7 @@
     ],
     "mechanism": "Scaled roots are analytic as one bounded sequence; their real-profile free difference vanishes at infinity. The NLS Jacobian remainder is compact. The symbol-derivative term factors through compact multiplication of bounded symbols by the fixed l2 NLS coordinate sequence. Weight normalization has a bounded left inverse.",
     "limits": [
-      "No derivative-kernel injectivity, general-profile local inverse without a premise, global inverse, distinct NLS action-fiber identification, arbitrary action-data realization or Cartesian-Cartesian Gardner bracket follows yet.",
+      "This compactness reduction alone does not prove injectivity. The subsequent H1-basepoint milestone proves Jacobian bijectivity and unconditional local inverse charts there. Global inversion, distinct NLS action-fiber identification, arbitrary action-data realization and cross-mode Gardner canonicity remain open.",
       "The compactness theorem here is on original L2, not all native Sobolev orders."
     ]
   },
@@ -1093,8 +1099,31 @@
     "analyticity": "All selected Cartesian-Cartesian brackets admit complex analytic H1 extensions near every physical real H1 profile and agree there with the literal Gardner brackets.",
     "mechanism": "The convergent physical action-field trace yields the translation generator. Differentiating on the real H1 form and complexifying variations gives a bounded cotangent generator extension, whose Fourier coefficients prove actual gradient-domain membership. The physical action radius and mixed brackets force X_n times the plane-bracket error to vanish. A nonzero free Fourier differential and real analytic continuation prove the plane bracket equals one everywhere.",
     "limits": [
-      "Cross-mode zero brackets, full Gardner canonicity, general-profile derivative kernel triviality and global inversion are still unproved.",
+      "Cross-mode zero brackets, full Gardner canonicity and global inversion remain open. The subsequent general-H1 local inverse milestone proves derivative kernel triviality at every original real H1 basepoint.",
       "The gradient-domain and bracket statements here are on original real H1; no actual L2 Gardner representative is claimed at every rough L2 profile."
+    ]
+  },
+  "general_H1_Cartesian_local_inverse": {
+    "status": "proved_unconditional_complex_Jacobian_bijective_and_physical_real_L2_analytic_local_charts_at_every_original_real_H1_basepoint",
+    "domains": "All original physical real period-one H1 basepoints, including zero mean, arbitrary collapsed gaps and infinite support. Derivatives and open inverse charts are on the original L2 source and native positive half-order Cartesian pair plus signed mean target.",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_complex_Jacobian_bijective_general_H1",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_equivalence_general_H1",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_local_inverse_general_H1"
+    ],
+    "core_declarations": [
+      "NLS.ComplexAnalysis.annihilator_rotation_of_stationary_equivariance",
+      "NLS.MKdV.miuraCartesianJacobian_annihilator_eq_zero",
+      "NLS.MKdV.miuraCartesianNormalizedJacobian_denseRange_H1",
+      "NLS.MKdV.miuraCartesianJacobian_bijective_H1",
+      "NLS.MKdV.miuraPhysicalCartesianJacobian_inclusion",
+      "NLS.MKdV.exists_miuraPhysicalCartesian_analytic_chart_H1"
+    ],
+    "mechanism": "Full target action-field covariance and differentiation at closed stationary actions kill closed modal annihilator coefficients. At open actions the coefficients are radial. Mixed brackets and skew symmetry cancel off-mode contributions, and norm-convergent native weighted modal expansion kills all modal coefficients; the source zero Fourier variation kills the mean coefficient. Dense range plus compact free remainder yields complex bijectivity. Physical inclusion gives real injectivity, and the checked real Fredholm alternative and analytic inverse theorem give physical local charts.",
+    "limits": [
+      "No global inverse or identification of distinct original NLS action fibers at equal physical J/mean is claimed.",
+      "Charts use L2 and native half-order topologies, not native H1 and three-half-order topologies. No invertibility theorem at every rough real L2 basepoint is claimed.",
+      "Cross-mode zero brackets, full canonicity, arbitrary action-data realization, global forward action factorization, independent angles and full corrected frequency comparison remain essential."
     ]
   }
 }

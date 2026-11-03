@@ -1549,3 +1549,46 @@ independent mKdV angles/final angle-sum factorization and the full corrected
 frequency comparison remain essential. The main-theorem goal stays active.
 
 Validation: all 438 article/shared modules have validated private outputs. The 428 unchanged prefix source hashes match 9ef985e and their outputs were reused; all ten added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,677 declarations/auxiliaries and the combined audit for 49,612 NLS declarations, using only the standard allowed axioms. All 441 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,438 declarations (1,978 theorems and 460 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## General real H1 basepoints: actual Cartesian Jacobian and local inverse
+
+The actual ambient complex L2 Cartesian Jacobian into the complete native
+positive half-order pair plus signed mean is now bijective at every original
+physical real H1 profile. The genuine physical real derivative is a bounded
+linear equivalence and the actual physical Cartesian map has analytic open
+local inverse charts on these L2 spaces around each such basepoint. No
+smallness, finite-gap, nonzero-mean or open-gap premise is imposed. In
+particular, the earlier Fredholm reduction's injectivity premise is now
+discharged at every original real H1 basepoint.
+
+The proof uses the full target action-field covariance. At a closed action,
+differentiating its stationary analytic field forces any continuous
+annihilator of the Cartesian Jacobian to annihilate that modal rotation.
+The checked canonical bracket within that plane kills both closed-mode
+coefficients. At an open action, covariance forces the annihilator to be
+radial. Mixed action-Cartesian brackets and skew symmetry cancel the other
+modes. A norm-convergent expansion in the actual weighted half-order target
+then kills every modal coefficient, and the actual source zero Fourier
+variation kills the mean coefficient. Thus the normalized Jacobian has
+dense range. Its previously checked compact free remainder gives
+bijectivity by the Fredholm alternative. Differentiating the actual physical
+inclusion and applying the real inverse theorem supplies the physical chart.
+
+Article-facing declarations are
+`physical_Cartesian_complex_Jacobian_bijective_general_H1`,
+`physical_Cartesian_derivative_equivalence_general_H1` and
+`physical_Cartesian_analytic_local_inverse_general_H1` in
+`NLS/Articles/MKdVNLSHierarchies/GeneralCartesianLocalInverseIdentification.lean`.
+The charts have original L2 source and native half-order target topologies;
+this result does not yet give general-profile native higher-Sobolev charts
+or invertibility at every rough real L2 basepoint.
+
+Cross-mode Cartesian zero brackets/full Gardner canonicity, global inversion
+and comparison of distinct NLS action fibers at equal physical J and signed
+mean, arbitrary nonnegative action realization, global forward action
+factorization, independent mKdV angles/final angle-sum factorization and the
+full corrected frequency comparison remain essential. The main-theorem
+goal stays active.
+
+Validation: all 449 article/shared modules have validated private outputs. The 438 unchanged prefix source hashes match a283014 and their outputs were reused; all eleven added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,744 declarations/auxiliaries and the combined audit for 49,679 NLS declarations, using only the standard allowed axioms. All 452 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,485 declarations (2,019 theorems and 466 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
