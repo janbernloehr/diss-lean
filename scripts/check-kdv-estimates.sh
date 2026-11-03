@@ -123,6 +123,7 @@ modules+=(NLS/ComplexAnalysis/RealAffineComplexPrimitive NLS/KdV/HillAngularPeri
 modules+=(NLS/KdV/HillLocalHilbertRepresentation NLS/KdV/HillUniformContourBound NLS/KdV/HillUniformCorrectionDecay NLS/KdV/HillRegularSumContinuity NLS/KdV/HillDirichletCirclePhase NLS/KdV/HillSpectralCartesian NLS/KdV/HillSpectralCartesianTerminal)
 modules+=(NLS/ComplexAnalysis/ParametricSineSquareCosineMean NLS/ComplexAnalysis/ParametricSineSquareCosineMeanLocal NLS/ComplexAnalysis/SineSquareCosineMoments NLS/KdV/HillDeflatedTraceCharts NLS/ComplexAnalysis/QuadraticGapActionRatio NLS/ComplexAnalysis/QuadraticGapActionMoment NLS/KdV/HillActionGapFactor NLS/KdV/HillDeflatedTraceChi NLS/KdV/HillActionGapRatioAnalytic)
 modules+=(NLS/KdV/HillActionGapRatioAllBase NLS/KdV/HillOwnGapFactor NLS/KdV/HillOwnGapFactorAnalytic NLS/KdV/HillActionGapPrefactor NLS/KdV/HillOwnCartesianAmplitude NLS/KdV/HillOwnAmplitudeAnalytic)
+modules+=(NLS/KdV/HillAnalyticPeriodBranch NLS/KdV/HillBoundedComplexPeriodChart NLS/KdV/HillComplexHighPeriodZero NLS/KdV/HillCommonComplexHighChart NLS/KdV/HillUniformComplexGapPairs NLS/KdV/HillUniformComplexGapData NLS/KdV/HillUniformComplexGapUnit)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

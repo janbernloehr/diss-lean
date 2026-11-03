@@ -5573,3 +5573,10 @@ import NLS.KdV.HillOwnGapFactorAnalytic
 import NLS.KdV.HillActionGapPrefactor
 import NLS.KdV.HillOwnCartesianAmplitude
 import NLS.KdV.HillOwnAmplitudeAnalytic
+import NLS.KdV.HillAnalyticPeriodBranch
+import NLS.KdV.HillBoundedComplexPeriodChart
+import NLS.KdV.HillComplexHighPeriodZero
+import NLS.KdV.HillCommonComplexHighChart
+import NLS.KdV.HillUniformComplexGapPairs
+import NLS.KdV.HillUniformComplexGapData
+import NLS.KdV.HillUniformComplexGapUnit
