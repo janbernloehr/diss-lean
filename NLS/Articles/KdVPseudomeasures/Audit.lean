@@ -693,6 +693,13 @@ import NLS.ComplexAnalysis.StrictTraceSheet
 import NLS.KdV.HillHminusOnePrimitiveSheets
 import NLS.ComplexAnalysis.PrincipalSquareRootSheet
 import NLS.KdV.HillHminusOnePrimitiveSquareSheets
+import NLS.ComplexAnalysis.RealGapSquareRoot
+import NLS.ComplexAnalysis.SemicircleMean
+import NLS.KdV.HillHminusOneRealGapRoot
+import NLS.KdV.HillHminusOneGapBoundary
+import NLS.ComplexAnalysis.RealGapIntegralNormalization
+import NLS.KdV.HillHminusOneBoundaryAction
+import NLS.KdV.HillHminusOneUniformBoundaryActions
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5083,3 +5090,24 @@ import NLS.KdV.HillHminusOnePrimitiveSquareSheets
 #print axioms NLS.KdV.hillHminusShiftedPrimitive_eq_principalSqrt
 #print axioms NLS.KdV.hillHminusShiftedPrimitive_eq_neg_principalSqrt
 #print axioms NLS.KdV.hillHminus_whole_disc_square_physical_sheets
+#print axioms NLS.ComplexAnalysis.re_pos_of_norm_sub_one_lt_one
+#print axioms NLS.ComplexAnalysis.principalSqrt_nonneg_real_mul_sq
+#print axioms NLS.ComplexAnalysis.continuousAt_principalSqrt_of_re_pos_root
+#print axioms NLS.ComplexAnalysis.ofReal_mem_convex_of_mem_Icc
+#print axioms NLS.ComplexAnalysis.principalSqrt_real_gap_factor
+#print axioms NLS.ComplexAnalysis.continuousAt_principalSqrt_real_gap_factor
+#print axioms NLS.ComplexAnalysis.normalizedSemicircleMean
+#print axioms NLS.ComplexAnalysis.integral_sineSquare_complex
+#print axioms NLS.ComplexAnalysis.integral_semicircle_eq_sineSquare
+#print axioms NLS.ComplexAnalysis.norm_normalizedSemicircleMean_sub_one_le
+#print axioms NLS.KdV.HillHminusHighGapPair.exists_real_ordered
+#print axioms NLS.KdV.HillHminusHighGapPair.real_gap_mem_ball
+#print axioms NLS.KdV.hillHminus_real_gap_sqrt_value
+#print axioms NLS.KdV.hillHminus_real_gap_sqrt_continuousAt
+#print axioms NLS.KdV.tendsto_hillHminusShiftedPrimitive_sqrt_boundaries
+#print axioms NLS.KdV.tendsto_hillHminusShiftedPrimitive_real_gap_boundaries
+#print axioms NLS.ComplexAnalysis.integral_real_gap_sqrt_weight
+#print axioms NLS.ComplexAnalysis.norm_real_gap_sqrt_weight_error
+#print axioms NLS.KdV.hillHminusGapBoundaryAction
+#print axioms NLS.KdV.hillHminusGapBoundaryAction_properties
+#print axioms NLS.KdV.exists_hillHminus_uniform_gap_boundary_actions

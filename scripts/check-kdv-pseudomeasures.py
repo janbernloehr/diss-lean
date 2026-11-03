@@ -727,6 +727,13 @@ modules = [
     'NLS.KdV.HillHminusOnePrimitiveSheets',
     'NLS.ComplexAnalysis.PrincipalSquareRootSheet',
     'NLS.KdV.HillHminusOnePrimitiveSquareSheets',
+    'NLS.ComplexAnalysis.RealGapSquareRoot',
+    'NLS.ComplexAnalysis.SemicircleMean',
+    'NLS.KdV.HillHminusOneRealGapRoot',
+    'NLS.KdV.HillHminusOneGapBoundary',
+    'NLS.ComplexAnalysis.RealGapIntegralNormalization',
+    'NLS.KdV.HillHminusOneBoundaryAction',
+    'NLS.KdV.HillHminusOneUniformBoundaryActions',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
