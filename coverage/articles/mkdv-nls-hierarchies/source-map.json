@@ -100,7 +100,9 @@
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_inverse_allSobolev",
         "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_zero_inverse",
         "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_local_inverse",
-        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_global_unique_small_data"
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_global_unique_small_data",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_inverse_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_small_inverse_Sobolev_regularity"
       ]
     },
     {
@@ -169,7 +171,9 @@
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_inverse_allSobolev",
         "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_zero_inverse",
         "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_local_inverse",
-        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_global_unique_small_data"
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_global_unique_small_data",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_inverse_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_small_inverse_Sobolev_regularity"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -208,7 +212,9 @@
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_inverse_allSobolev",
         "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_zero_inverse",
         "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_local_inverse",
-        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_global_unique_small_data"
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_global_unique_small_data",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_inverse_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_small_inverse_Sobolev_regularity"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -378,7 +384,7 @@
     "remaining": "The diagonal physical discriminant, original fixed-index endpoints, canonical sheets and actual weighted contour actions have now been identified. Remaining normal-form angle, frequency and Poisson-bracket conventions must be carried through their actual constructions."
   },
   "remaining_essential_dependencies": [
-    "physical real higher-Sobolev inverse restrictions, general-profile Cartesian Jacobian/inverse and Gardner canonicity, and global nonzero-fiber geometry/surjectivity; the real L2 zero chart and global uniqueness for small data are proved",
+    "general-profile Cartesian Jacobian/inverse and Gardner canonicity, and global nonzero-fiber geometry/surjectivity; the physical real and complex native zero charts and the unique small L2 inverse regularity are proved at every integer Sobolev order",
     "forward analytic factorization of restricted NLS actions through independent physical mKdV actions and mean; converse physical J_n and corrected mean-squared factors in original NLS actions are proved",
     "independent mKdV Birkhoff angle construction, the final angle-sum factorization and full frequency identification; Theorem 4(iii) angle-action bracket clause and actual Gardner transfer are proved",
     "corrected frequency-sign convention in Theorem 3; the global signed-mean claim in Theorem 4(ii) is replaced by the proved mean-squared statement, while signed recovery requires a branch restriction"
@@ -832,7 +838,7 @@
     "global_physical_properness_in_natural_target": "NLS.Articles.MKdVNLSHierarchies.native_positive_cartesian_real_L2_map_proper",
     "scope": "Actual original complex L2 source and closed native positive-index half-order weighted Hilbert pair plus the literal complex mean. The free Jacobian and its explicit inverse are bounded operators, with both inverse identities on the whole spaces and no finite-mode or source-reality restriction. The original nonlinear Cartesian map is a bijection between full open source/target neighborhoods of zero with complex Banach analytic inverse and both exact inverse identities. On the entire original physical real L2 source its natural positive-target map is proper.",
     "normalization": "The free ratio is 1/(2*pi*n); the positive scaling is sqrt(1/(2*pi*n)). The second Cartesian coordinate has the checked negative sign. The inverse combines the two signed Fourier modes and reconstructs the zero mode from the signed mean.",
-    "limits": "Native complex inverse charts at zero are proved at every integer Sobolev order. Physical real L2 inverse restriction and global uniqueness for small real data are now proved. Physical real higher-Sobolev inverse restrictions, general-profile inverse and Gardner canonicity, global forward action factorization, final angle-sum factorization and full corrected frequency identification remain essential."
+    "limits": "Physical real and complex zero-profile inverse charts are proved at every native integer Sobolev order, including the literal original H1 domain. The unique small physical L2 inverse has the native Sobolev regularity. General-profile Cartesian Jacobian/inverse and Gardner canonicity, global nonzero-fiber geometry and surjectivity, forward restricted-NLS-action factorization, independent angles/final angle-sum factorization and full corrected frequency comparison remain essential. Global properness is still proved only in original physical real L2."
   },
   "native_zero_Sobolev_Cartesian_inverse": {
     "positive_native_weight_equivalences": "NLS.WeightedCoeff.positiveWeightEquiv",
@@ -849,7 +855,7 @@
     "original_H1_native_inverse_chart": "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_zero_inverse",
     "scope": "For every integer s>=0, the actual original complex H^s Cartesian/mean map has an explicit bounded free Jacobian equivalence and a genuine nonlinear analytic inverse between full open native H^s and positive-index h^(s+1/2) times complex-mean neighborhoods of zero. The raw Cartesian family and literal mean are unchanged. The literal original complex H1 ScalarDomain 2 source also has its actual order-three-halves inverse chart, with exact inverse identities, image equality, bijectivity and analyticity in both full native norms.",
     "kernel_validation": "No heartbeat, recursion, or kernel limits were increased. A generic mean-preserving transport lemma avoids expansion of concrete weighted-space instance data in the native operator equality.",
-    "limits": "These are complex native local inverse charts at the free profile. The physical real L2 restriction is now proved, including global uniqueness for small real data. Physical real higher-Sobolev restrictions, a global inverse and Gardner canonicity at general profiles, global forward restricted-NLS-action factorization, final angle-sum factorization and full corrected frequency identification remain essential. Global properness is currently proved only in original physical real L2."
+    "limits": "Physical real and complex zero-profile inverse charts are proved at every native integer Sobolev order, including the literal original H1 domain. The unique small physical L2 inverse has the native Sobolev regularity. General-profile Cartesian Jacobian/inverse and Gardner canonicity, global nonzero-fiber geometry and surjectivity, forward restricted-NLS-action factorization, independent angles/final angle-sum factorization and full corrected frequency comparison remain essential. Global properness is still proved only in original physical real L2."
   },
   "physical_real_zero_Cartesian_inverse": {
     "original_physical_real_projection": "NLS.Coeff.physicalRealPart",
@@ -866,6 +872,29 @@
     "generic_proper_local_chart_global_uniqueness": "NLS.FunctionalAnalysis.exists_open_global_unique_preimages_of_proper_local_chart",
     "global_unique_preimages_for_small_real_data": "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_global_unique_small_data",
     "scope": "Actual original physical real L2 source, positive half-order real Hilbert pair and literal real signed mean. The nonlinear map agrees exactly with the complex Cartesian family and is real Banach analytic on the whole physical source. Full open real source/target neighborhoods of zero admit an analytic inverse with exact left/right identities, image equality and bijectivity. Every complex left inverse germ preserves the physical source form on nearby real target data. The map is globally proper, its zero fiber is a singleton by the actual mass trace, and every sufficiently small real target point has a unique preimage in the entire physical real L2 space, including closed actions and zero mean.",
-    "limits": "Higher-Sobolev physical real inverse restrictions, general-profile Jacobian/inverse and Gardner canonicity, global nonzero-fiber geometry and surjectivity, forward action factorization, independent angles/final angle-sum factorization and the full corrected frequency comparison remain essential. This does not identify a global canonical mKdV Birkhoff map."
+    "limits": "Physical real and complex zero-profile inverse charts are proved at every native integer Sobolev order, including the literal original H1 domain. The unique small physical L2 inverse has the native Sobolev regularity. General-profile Cartesian Jacobian/inverse and Gardner canonicity, global nonzero-fiber geometry and surjectivity, forward restricted-NLS-action factorization, independent angles/final angle-sum factorization and full corrected frequency comparison remain essential. Global properness is still proved only in original physical real L2."
+  },
+  "physical_real_zero_Sobolev_Cartesian_inverse": {
+    "complex_equivalence_real_restriction": "NLS.FunctionalAnalysis.complexEquivReal",
+    "symmetric_source_weight_reality": "NLS.WeightedCoeff.physicalReal_iff_weight",
+    "bounded_physical_source_weight_equivalence": "NLS.WeightedCoeff.physicalRealWeightEquiv",
+    "positive_target_weight_reality": "NLS.WeightedCoeff.positiveWeightEquiv_im_zero_iff",
+    "closed_native_real_target": "NLS.MKdV.isClosed_miuraSobolevCartesianRealSubmodule",
+    "exact_raw_real_target_characterization": "NLS.MKdV.mem_miuraSobolevCartesianRealSubmodule_iff",
+    "native_actual_map_inclusion": "NLS.MKdV.miuraPhysicalSobolevCartesianMap_inclusion",
+    "native_real_Banach_analyticity": "NLS.MKdV.analyticAt_miuraPhysicalSobolevCartesianMap",
+    "actual_native_free_derivative": "NLS.MKdV.fderiv_miuraPhysicalSobolevCartesianMap_zero",
+    "all_orders_real_free_equivalence": "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_free_jacobian_allSobolev",
+    "all_orders_real_native_inverse_charts": "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_inverse_allSobolev",
+    "complex_inverse_germs_preserve_native_reality": "NLS.MKdV.miuraSobolevPositiveCartesian_complex_inverse_real_germ",
+    "literal_original_real_H1_inverse_chart": "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_original_H1_zero_inverse",
+    "coefficient_preserving_bounded_source_inclusion": "NLS.MKdV.miuraPhysicalSobolevL2SourceInclusion_apply",
+    "coefficient_preserving_bounded_target_inclusion": "NLS.MKdV.miuraPositiveSobolevL2CartesianInclusion_eval",
+    "exact_nonlinear_L2_compatibility": "NLS.MKdV.miuraPhysicalSobolevCartesianMap_L2",
+    "generic_inverse_regularity_transfer": "NLS.ComplexAnalysis.exists_analytic_inverse_regularity_neighborhood",
+    "unique_small_L2_inverse_has_native_regularity": "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_small_inverse_Sobolev_regularity",
+    "scope": "For every integer s>=0 the actual physical real H^s map admits a real analytic inverse between full open zero-profile source and positive-index native h^(s+1/2) times real-mean target neighborhoods. The inherited full native norms and every raw Cartesian coefficient are retained. The actual derivative is a bounded real Fourier equivalence. Both inverse identities, image equality and bijectivity hold. The literal original real H1 domain has the corresponding order-three-halves chart. Native complex left inverse germs preserve the physical real form. Bounded source and target inclusions commute with the nonlinear maps. For each s a full open native real target neighborhood has an analytic H^s inverse which is every possible physical L2 preimage of the included data; this proves native regularity and global L2 uniqueness for such small native data. Neighborhood size may depend on s. Closed actions and zero mean are included.",
+    "kernel_validation": "Heartbeat, recursion and kernel limits unchanged. Generic real-equivalence composition and analytic inverse-regularity lemmas keep concrete weighted-space instance data out of the central kernel reductions.",
+    "limits": "Physical real and complex zero-profile inverse charts are proved at every native integer Sobolev order, including the literal original H1 domain. The unique small physical L2 inverse has the native Sobolev regularity. General-profile Cartesian Jacobian/inverse and Gardner canonicity, global nonzero-fiber geometry and surjectivity, forward restricted-NLS-action factorization, independent angles/final angle-sum factorization and full corrected frequency comparison remain essential. Global properness is still proved only in original physical real L2."
   }
 }

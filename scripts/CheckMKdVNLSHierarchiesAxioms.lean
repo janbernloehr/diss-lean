@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.RealSobolevCartesianInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.RealCartesianLocalInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.SobolevCartesianLocalInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianLocalInverseIdentification
@@ -46,6 +47,23 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.FunctionalAnalysis.complexEquivReal,
+    `NLS.FunctionalAnalysis.complexEquivReal_apply,
+    `NLS.FunctionalAnalysis.complexEquivReal_symm_apply,
+    `NLS.FunctionalAnalysis.subspaceEquiv,
+    `NLS.FunctionalAnalysis.subspaceEquiv_apply,
+    `NLS.FunctionalAnalysis.subspaceEquiv_symm_apply,
+    `NLS.FunctionalAnalysis.prodCongr_refl_snd,
+    `NLS.FunctionalAnalysis.prodMap_id_snd,
+    `NLS.WeightedCoeff.physicalReal_iff_weight,
+    `NLS.WeightedCoeff.physicalRealWeightEquiv,
+    `NLS.WeightedCoeff.physicalRealWeightEquiv_apply,
+    `NLS.WeightedCoeff.physicalRealWeightEquiv_symm_apply,
+    `NLS.WeightedCoeff.positiveWeightEquiv_im,
+    `NLS.WeightedCoeff.positiveWeightEquiv_im_zero_iff,
+    `NLS.WeightedCoeff.positivePairMean_ext,
+    `NLS.ComplexAnalysis.fderiv_real_comp_equiv_zero,
+    `NLS.ComplexAnalysis.exists_analytic_inverse_regularity_neighborhood,
     `NLS.Coeff.conjugateReflectionRealCLM,
     `NLS.Coeff.conjugateReflectionRealCLM_apply,
     `NLS.Coeff.physicalRealPart,
@@ -571,6 +589,11 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_inverse_allSobolev,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_original_H1_zero_inverse,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_small_inverse_Sobolev_regularity,
+    ``NLS.MKdV.miuraSobolevPositiveCartesian_complex_inverse_real_germ,
+
     ``NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_local_inverse,
     ``NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_global_unique_small_data,
     ``NLS.MKdV.miuraPositiveCartesian_complex_inverse_real_germ,

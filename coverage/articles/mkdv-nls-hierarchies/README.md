@@ -1193,3 +1193,41 @@ angle-sum factorization and full corrected frequency comparison remain
 essential. The main-theorem goal stays active.
 
 Validation: all 344 article/shared modules have validated private outputs. The 335 unchanged prefix source hashes match ff343bc and their outputs were reused; all nine added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,024 declarations/auxiliaries and the combined audit for 48,958 NLS declarations, using only the standard allowed axioms. All 346 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,038 declarations (1,644 theorems and 394 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Physical real inverse charts and regularity on the entire integer Sobolev scale
+
+Positive symmetric weighting is now a bounded real equivalence of the
+original conjugate-reflection source forms. The positive target weight
+transport preserves and reflects coefficientwise Cartesian reality and
+the literal real mean. Its preimage of the checked L2 real form is proved
+to be exactly the closed native real Hilbert target, with the inherited
+h^(s+1/2) norm, for every integer s>=0.
+
+The actual nonlinear physical real map agrees after inclusion with the
+existing complex native map and is real Banach analytic throughout the
+physical source. Its actual free derivative is the transported bounded
+real Fourier equivalence. Full open real native source/target neighborhoods
+of zero admit an analytic inverse with both exact inverse identities,
+image equality and bijectivity. The literal original real H1 domain has
+its own full order-three-halves chart. Every native complex left inverse
+germ preserves physical reality on nearby real native data.
+
+Bounded source and Cartesian target inclusions preserve all raw Fourier
+coefficients and the signed mean, and the actual nonlinear maps commute
+with these inclusions. For each integer s>=0, a full open native real target
+neighborhood therefore has an analytic H^s inverse which is the only
+physical L2 preimage. This quantifies over every possible physical L2
+preimage: small native target data force that preimage to have the native
+Sobolev regularity. The proof uses the prior original L2 global uniqueness
+near zero, not a general-profile global inverse assumption. The size of
+the native neighborhood may depend on s.
+
+The physical real higher-Sobolev zero-chart restriction is now closed.
+General-profile Cartesian Jacobian/inverse and Gardner canonicity, global
+nonzero-fiber geometry and surjectivity, forward restricted-NLS-action
+factorization, independent angles/final angle-sum factorization and full
+corrected frequency comparison remain essential. Global properness is
+still an original physical real L2 result. The main-theorem goal stays active.
+
+Validation: all 356 article/shared modules have validated private outputs. The 344 unchanged prefix source hashes match 2bcaf01 and their outputs were reused; all twelve added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,129 declarations/auxiliaries and the combined audit for 49,063 NLS declarations, using only the standard allowed axioms. All 358 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,098 declarations (1,689 theorems and 409 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

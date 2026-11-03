@@ -378,6 +378,18 @@ modules = [
     "NLS/FunctionalAnalysis/ProperMapLocalUniqueness.lean",
     "NLS/MKdV/MiuraRealCartesianSmallData.lean",
     "NLS/Articles/MKdVNLSHierarchies/RealCartesianLocalInverseIdentification.lean",
+    "NLS/FunctionalAnalysis/SubspaceEquivalence.lean",
+    "NLS/SequenceSpaces/PhysicalRealWeightEquivalence.lean",
+    "NLS/SequenceSpaces/PositiveRealWeightTransport.lean",
+    "NLS/MKdV/MiuraSobolevCartesianRealForm.lean",
+    "NLS/MKdV/MiuraRealSobolevCartesianMap.lean",
+    "NLS/MKdV/MiuraRealSobolevCartesianLocalInverse.lean",
+    "NLS/ComplexAnalysis/RealAnalyticEquivalenceComposition.lean",
+    "NLS/MKdV/MiuraRealH1CartesianLocalInverse.lean",
+    "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean",
+    "NLS/ComplexAnalysis/AnalyticInverseRegularityTransfer.lean",
+    "NLS/MKdV/MiuraRealCartesianInverseRegularity.lean",
+    "NLS/Articles/MKdVNLSHierarchies/RealSobolevCartesianInverseIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

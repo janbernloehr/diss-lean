@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 4024,
+  "audited_declarations_and_auxiliaries": 4129,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -10209,14 +10209,314 @@
       "kind": "theorem",
       "name": "physical_real_cartesian_global_unique_small_data",
       "file": "NLS/Articles/MKdVNLSHierarchies/RealCartesianLocalInverseIdentification.lean"
+    },
+    {
+      "kind": "def",
+      "name": "complexEquivReal",
+      "file": "NLS/FunctionalAnalysis/SubspaceEquivalence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "complexEquivReal_apply",
+      "file": "NLS/FunctionalAnalysis/SubspaceEquivalence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "complexEquivReal_symm_apply",
+      "file": "NLS/FunctionalAnalysis/SubspaceEquivalence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "subspaceEquiv",
+      "file": "NLS/FunctionalAnalysis/SubspaceEquivalence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "subspaceEquiv_apply",
+      "file": "NLS/FunctionalAnalysis/SubspaceEquivalence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "subspaceEquiv_symm_apply",
+      "file": "NLS/FunctionalAnalysis/SubspaceEquivalence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "prodCongr_refl_snd",
+      "file": "NLS/FunctionalAnalysis/SubspaceEquivalence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "prodMap_id_snd",
+      "file": "NLS/FunctionalAnalysis/SubspaceEquivalence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalReal_iff_weight",
+      "file": "NLS/SequenceSpaces/PhysicalRealWeightEquivalence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "physicalRealWeightEquiv",
+      "file": "NLS/SequenceSpaces/PhysicalRealWeightEquivalence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalRealWeightEquiv_apply",
+      "file": "NLS/SequenceSpaces/PhysicalRealWeightEquivalence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalRealWeightEquiv_symm_apply",
+      "file": "NLS/SequenceSpaces/PhysicalRealWeightEquivalence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveWeightEquiv_im",
+      "file": "NLS/SequenceSpaces/PositiveRealWeightTransport.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveWeightEquiv_im_zero_iff",
+      "file": "NLS/SequenceSpaces/PositiveRealWeightTransport.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positivePairMean_ext",
+      "file": "NLS/SequenceSpaces/PositiveRealWeightTransport.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraSobolevCartesianRealSubmodule",
+      "file": "NLS/MKdV/MiuraSobolevCartesianRealForm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveSobolevWeightEquiv_mean",
+      "file": "NLS/MKdV/MiuraSobolevCartesianRealForm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_miuraSobolevCartesianRealSubmodule_iff",
+      "file": "NLS/MKdV/MiuraSobolevCartesianRealForm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isClosed_miuraSobolevCartesianRealSubmodule",
+      "file": "NLS/MKdV/MiuraSobolevCartesianRealForm.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraSobolevCartesianRealWeightEquiv",
+      "file": "NLS/MKdV/MiuraSobolevCartesianRealForm.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraSobolevCartesianRealProjection",
+      "file": "NLS/MKdV/MiuraSobolevCartesianRealForm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevCartesianRealProjection_real",
+      "file": "NLS/MKdV/MiuraSobolevCartesianRealForm.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraSobolevCartesianRealFreeEquiv",
+      "file": "NLS/MKdV/MiuraSobolevCartesianRealForm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevCartesianRealFreeEquiv_inclusion",
+      "file": "NLS/MKdV/MiuraSobolevCartesianRealForm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevPositiveCartesianMap_physicalReal",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianMap.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPhysicalSobolevCartesianMap",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevCartesianMap_inclusion",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraPhysicalSobolevCartesianMap",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraPhysicalSobolevCartesianMap_zero",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevCartesianMap_zero",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianMap.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPhysicalSobolevCartesian_localInverse_at_zero",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevPositiveCartesian_complex_inverse_real_germ",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_real_comp_equiv_zero",
+      "file": "NLS/ComplexAnalysis/RealAnalyticEquivalenceComposition.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraRealH1SobolevEquiv",
+      "file": "NLS/MKdV/MiuraRealH1CartesianLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealH1SobolevEquiv_inclusion",
+      "file": "NLS/MKdV/MiuraRealH1CartesianLocalInverse.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPhysicalH1CartesianMap",
+      "file": "NLS/MKdV/MiuraRealH1CartesianLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalH1CartesianMap_inclusion",
+      "file": "NLS/MKdV/MiuraRealH1CartesianLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraPhysicalH1CartesianMap",
+      "file": "NLS/MKdV/MiuraRealH1CartesianLocalInverse.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraH1CartesianRealFreeEquiv",
+      "file": "NLS/MKdV/MiuraRealH1CartesianLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraPhysicalH1CartesianMap_zero",
+      "file": "NLS/MKdV/MiuraRealH1CartesianLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalH1CartesianMap_zero",
+      "file": "NLS/MKdV/MiuraRealH1CartesianLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPhysicalH1Cartesian_localInverse_at_zero",
+      "file": "NLS/MKdV/MiuraRealH1CartesianLocalInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianWeight_ge_half",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPositiveSobolevL2HalfInclusion",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveSobolevL2HalfInclusion_apply",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPositiveSobolevL2CartesianInclusion",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveSobolevL2CartesianInclusion_eval",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPhysicalSobolevL2SourceInclusion",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevL2SourceInclusion_apply",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevL2SourceInclusion_injective",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveSobolevL2CartesianInclusion_mean",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveSobolevL2CartesianInclusion_real",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPhysicalSobolevL2CartesianInclusion",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevCartesianMap_L2",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_analytic_inverse_regularity_neighborhood",
+      "file": "NLS/ComplexAnalysis/AnalyticInverseRegularityTransfer.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPhysicalCartesian_small_inverse_Sobolev_regularity",
+      "file": "NLS/MKdV/MiuraRealCartesianInverseRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_real_cartesian_free_jacobian_allSobolev",
+      "file": "NLS/Articles/MKdVNLSHierarchies/RealSobolevCartesianInverseIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_real_cartesian_zero_inverse_allSobolev",
+      "file": "NLS/Articles/MKdVNLSHierarchies/RealSobolevCartesianInverseIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_real_cartesian_original_H1_zero_inverse",
+      "file": "NLS/Articles/MKdVNLSHierarchies/RealSobolevCartesianInverseIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_real_cartesian_small_inverse_Sobolev_regularity",
+      "file": "NLS/Articles/MKdVNLSHierarchies/RealSobolevCartesianInverseIdentification.lean"
     }
   ],
-  "public_declaration_count": 2038,
-  "theorem_count": 1644,
-  "definition_count": 394,
-  "full_build": "344 article/shared modules have validated private outputs. All 335 unchanged prefix module source hashes match the prior ff343bc milestone; their private outputs were reused. Nine added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2098,
+  "theorem_count": 1689,
+  "definition_count": 409,
+  "full_build": "356 article/shared modules have validated private outputs. All 344 unchanged prefix module source hashes match the prior 2bcaf01 milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/PhysicalRealUnweightedProjection.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/FunctionalAnalysis/SubspaceEquivalence.lean",
   "sha256": {
     "NLS/Articles/MKdVNLSHierarchies/ActionAngleFlowIdentification.lean": "b3f3e63f112a93654c970e5e4b79d592dc31973fe7ed5fcaf612c98da860fd39",
     "NLS/Articles/MKdVNLSHierarchies/ActionDescentIdentification.lean": "9d86c19bec1b44ee195c8695a749fdeecf6daf0ee895da7c592ad0782f9f3cc4",
@@ -10242,6 +10542,7 @@
     "NLS/Articles/MKdVNLSHierarchies/PrimitiveIdentification.lean": "15ea93920c81e58b86cc6f064412d79d8777827a22a979356bd84f45db08f994",
     "NLS/Articles/MKdVNLSHierarchies/RealCartesianLocalInverseIdentification.lean": "c4ea7e8d363fb494d628952e8ebb1d93d21466c8039260d97e9fe984aaceeb79",
     "NLS/Articles/MKdVNLSHierarchies/RealFiniteActionCoordinates.lean": "3b4df99feb318af8adb9b25de34201e641e0979e3feec5830461c437d98a0e27",
+    "NLS/Articles/MKdVNLSHierarchies/RealSobolevCartesianInverseIdentification.lean": "8c27539150f61327932388d0c1c86d7fe11e27618f67ace8cfe7d2f04c0f7e48",
     "NLS/Articles/MKdVNLSHierarchies/SharpEvenVanishing.lean": "a5676e1168d3d4df4864ec7c240c53a6eea2f0d8afb95e793a60c336879f7ab4",
     "NLS/Articles/MKdVNLSHierarchies/SharpMiuraFlow.lean": "d4825b5f8d009c32377b6c9f14ffb5276bf8844797488a7e03b83c6e42c7c665",
     "NLS/Articles/MKdVNLSHierarchies/SmoothFourthFlow.lean": "21399990f0be798e393caa0cf2905e8b18fea3e9cba135ee6386a68161ad44a9",
@@ -10253,6 +10554,7 @@
     "NLS/Articles/MKdVNLSHierarchies/SpectralHierarchyIdentification.lean": "62901edaee2d5445f3e2ac25bafb5c7f63563e9a86c8ef5025dc08279de4b0e2",
     "NLS/Articles/MKdVNLSHierarchies/SpectralIdentification.lean": "ddc6202e9be0a77b9235dbc7858edb4c4d0a1a8fc3da0d5aa4ebe7e36bb27271",
     "NLS/ComplexAnalysis/AnalyticEquivalentDerivativeInverse.lean": "19a280c0b7613a25121a941a6371c88d41d58b72e25851fedd409e2bdc53c66c",
+    "NLS/ComplexAnalysis/AnalyticInverseRegularityTransfer.lean": "144588c3cbea8c24e81d9f6195098cbdff63662e23f41cce78c5b1a65b71625b",
     "NLS/ComplexAnalysis/AnalyticNativeInverseNeighborhoods.lean": "e20827c542e5ddc4052f29cb49d9bb01791b1eb12317a2a3c16797ef6793e31b",
     "NLS/ComplexAnalysis/AnalyticSubmersionSection.lean": "8f4d9f9a7ecd7d789d3353ff17774cce89b394bee7cfd16501c87edc9ee47205",
     "NLS/ComplexAnalysis/CompactJointLimits.lean": "cb5cf5fe48c55d23df9da8ff7cfe2d85f91096435c024518f1005679c5f73c73",
@@ -10263,6 +10565,7 @@
     "NLS/ComplexAnalysis/NonrealBoundaryExtension.lean": "b7d741d3d033529c77560bba161467612fbab3732f96a8b7084143537b53e481",
     "NLS/ComplexAnalysis/PiecewiseSquareContour.lean": "ac4cffc1704db1d6588d592acc2a85c6837c9d0d5b63d0f6a67337e46832350a",
     "NLS/ComplexAnalysis/PiecewiseSquareWinding.lean": "ecf9d5b768108801081f9967480f71c0bdd5be99baa35828f6b9f6d4c4a46ea8",
+    "NLS/ComplexAnalysis/RealAnalyticEquivalenceComposition.lean": "7059abe4230bb1c4e6b5aeb7dc6a724d34290e74c9eff0e578bd90c5e58e12ad",
     "NLS/ComplexAnalysis/RealAnalyticEquivalentDerivativeInverse.lean": "97a1d35d27b9ac9e46b28cacbfa496b0fb34b3327a02b440f5524b171b80a9ac",
     "NLS/ComplexAnalysis/RealAnalyticNativeInverseNeighborhoods.lean": "37a1faa588ee325b5a6870289839a36c2f07e25664b550197993a795c8afd7a4",
     "NLS/ComplexAnalysis/RealCenteredPositiveDisc.lean": "e0778a2725397d163746471c31fcde54ed6c7214913bd695c933143ba3dc1c52",
@@ -10304,6 +10607,7 @@
     "NLS/FunctionalAnalysis/ProperMapLocalUniqueness.lean": "ab310c03ae296f4a75420b6ea0ea0aa922ae63fe3b4932925ae1e7ec01b413cb",
     "NLS/FunctionalAnalysis/RealAnalyticSubmersionSection.lean": "402802d2945afe058266ae87cce9e78246df54dad85b9c773a36a0dcac784867",
     "NLS/FunctionalAnalysis/ScalarLinearODE.lean": "bc75accf3edb4bf4109b2f81298d7e4cae99426325643097cdcfeaf6ecc94673",
+    "NLS/FunctionalAnalysis/SubspaceEquivalence.lean": "907787ac7b8afee2d10c13b1c33606f705e0eba34bc11c34b61139fc346d0c49",
     "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean": "e1242c43b5d115939c0335c4550df6159590b38352ad53810fd80c2a6256f56c",
     "NLS/FunctionalAnalysis/UnitIntervalMean.lean": "9f9ce41046eddb5971afc84f76bf379b9a5a06b5037fb4313c08276fdc7979c6",
     "NLS/KdV/ClassicalContourCoverage.lean": "3c3c840a66b0d32b15653d5957b80d5dfeb8f2e31a76de0b7e39f6c420e97a48",
@@ -10430,15 +10734,21 @@
     "NLS/MKdV/MiuraPositiveCartesianMap.lean": "4f851eaddfe0de579a98d4d5813461e6f7bce79c6437c03daf02f878081f42dd",
     "NLS/MKdV/MiuraPositiveCartesianProperness.lean": "c7979f38ae58ca2f87088a6fbe5ef10a97c9575a546bc71f2d416bcb4549ba39",
     "NLS/MKdV/MiuraPositiveMultiplicity.lean": "d3791e39dd0071917f0885d67a320228191d4c7cfccccd2a0c7f1484d1dd3194",
+    "NLS/MKdV/MiuraRealCartesianInverseRegularity.lean": "8401c792e02b0e75abe2dd4adc348c17f416e2e6b717f93ffb167c98e5b6ed39",
     "NLS/MKdV/MiuraRealCartesianLocalInverse.lean": "dcd04b2645df963b99ad09711fd420e37b5dd7bbd0fe011b21c8e42234e72581",
     "NLS/MKdV/MiuraRealCartesianMap.lean": "ea6b9d0931321f1615922a5e15be8ea82730cbfecbfefa04a3dc7f625a24572e",
     "NLS/MKdV/MiuraRealCartesianSmallData.lean": "7703a3dc02be7217ba5f0ab8721814480727869ca103b4a058a95370f00f3479",
+    "NLS/MKdV/MiuraRealH1CartesianLocalInverse.lean": "53e3f1a9d4f5e12e6ecd05f5e82db58174978e7e02166af89d4e02f501c99b4f",
     "NLS/MKdV/MiuraRealL2ActionMap.lean": "0778fcb8814df72a5acca3b64be20c3adce37e56bd84afdf208da8ebde5f585e",
+    "NLS/MKdV/MiuraRealSobolevCartesianCompatibility.lean": "7efb6798dfc91468a7163dfc7825d2d0fcf5627c5152db1a7fb77736c58315f9",
+    "NLS/MKdV/MiuraRealSobolevCartesianLocalInverse.lean": "aa5e88b72f04869870ad94437cee48a034f00847777f5dd047e891a0dff568fc",
+    "NLS/MKdV/MiuraRealSobolevCartesianMap.lean": "42cf8d32d7eb060e053d15cee58d8465d255432fdf0981002e718f896de1f48b",
     "NLS/MKdV/MiuraRestrictedActionBrackets.lean": "5c98d347643107fccf5930d8ddb8fa3ce57165ec302928ef492a7ee5810dc008",
     "NLS/MKdV/MiuraSobolevActionSequence.lean": "d93525a5049065e78da2b30ba2d50d17c7455312473b1e01ddb11178be508c0f",
     "NLS/MKdV/MiuraSobolevCartesianActions.lean": "fd7ababb6838254a16a9f3646d92452d16408707d0c18dff9eb29d1700445548",
     "NLS/MKdV/MiuraSobolevCartesianFreeEquivalence.lean": "df1f9eb9b79d66c8db462e80f20a7abaab93719c087277a92a2d7baec0e8fe81",
     "NLS/MKdV/MiuraSobolevCartesianLocalInverse.lean": "9f23c12db663cd62805f79a5c1765fb775730af9a6a57000036f2860252b6b66",
+    "NLS/MKdV/MiuraSobolevCartesianRealForm.lean": "67b777725ab98e518b733bf5fdf36a7ba8e3fada6791e908d6fbe556be38a32c",
     "NLS/MKdV/MiuraSobolevCartesianSequence.lean": "c3b584981d6440fb4f31d68a99213f60a5571df9d8408b98af37d6c8d8e28679",
     "NLS/MKdV/MiuraSobolevNLSCoordinates.lean": "4cb64e9b6b984847571a2f0e2e2a78b2a474975b7c1285f2eb5f7c961480baa0",
     "NLS/MKdV/MiuraSobolevPositiveCartesian.lean": "4f2afbbb619d4155f023bce39b621ee416531b25d2f151d0ad98d404035f96de",
@@ -10470,6 +10780,8 @@
     "NLS/SequenceSpaces/PhysicalRealCoefficients.lean": "8d1359e9a91af4d40e53bba54beaa89782306ed3fad24eaa53db7d0aa5dc3718",
     "NLS/SequenceSpaces/PhysicalRealUnweightedCoefficients.lean": "5372a3385990bbad152a696375711071c7b5b323fb1e0b360c88b880660ae5a6",
     "NLS/SequenceSpaces/PhysicalRealUnweightedProjection.lean": "06ee8a5bd6ac5377a8da57c7a3048eedb2a5221887cde41158f8366fded67d08",
+    "NLS/SequenceSpaces/PhysicalRealWeightEquivalence.lean": "dcda706d8573fb0793ec742806932557e37d2418fa9cf9ede4be1002aa3ca8db",
+    "NLS/SequenceSpaces/PositiveRealWeightTransport.lean": "bdbb70ab7e47f06b11e575132dc6173989e79ab0a46b287dba015e30a0655c6e",
     "NLS/SequenceSpaces/PositiveWeightEquivalence.lean": "344e7199a61e0f2257491f51486628c8cc3f1394a2a8b51d8abd77c00dfde858",
     "NLS/SequenceSpaces/PositiveWeightedCoefficients.lean": "a3aec04059afd4d53cfba8671bd00776eea9cb055c2a8d38545365dfa707ffdb",
     "NLS/SequenceSpaces/RealPairedActionRotation.lean": "c716205ab8374bb9984652c4826e431b73217573be245a65758daab20df4c181",
@@ -10562,11 +10874,11 @@
     "NLS/ZakharovShabat/SourceWeightedPrimitiveContour.lean": "26946412492d5f346f9155b8a37055e296e860d1d395cc00d37b7a5cd45e159f",
     "NLS/ZakharovShabat/SourceWeightedZeroLaurentAnalytic.lean": "7c328fc9fabdd864d7f1f8b850cae53f7178776b3d95a3a7c0930d980b2ed155",
     "NLS/ZakharovShabat/SourceWeightedZeroLaurentBound.lean": "26624c513ed96a9dde3f373a0d6d9049342bf2b46c074d2a60b893f841e3e24a",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "e2e665706aa1113b4fce88778aae1115aaf0c2959783c4121bf002b28476e51c",
-    "scripts/check_mkdv_nls.py": "0c1ae568dd167a904a79d5bbe46178a683a60b674ff07ef87be5be0c11b0e56d"
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "a349db3ece622cd55689197f89453e8515c2ea1675e7e9f1bc9e57141a56797b",
+    "scripts/check_mkdv_nls.py": "7979ebfc72e00f146d94b7ef657ca7b8d1c25ceccbb27cd088d5604383b31503"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 344,
+  "focused_module_count": 356,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -10810,12 +11122,25 @@
       "public_declaration_count": 2038,
       "theorem_count": 1644,
       "definition_count": 394
+    },
+    {
+      "milestone": "Physical real inverse charts at every integer Sobolev order and regularity of the unique small L2 inverse",
+      "audit_count": 4129,
+      "combined_NLS_audit_count": 49063,
+      "aggregate_compiled": true,
+      "module_count": 356,
+      "reused_prefix_module_count": 344,
+      "reused_prefix_commit": "2bcaf010604d4bfd7b9ff0f6f29fdb39f193c9cb",
+      "frozen_source_checker_count": 358,
+      "public_declaration_count": 2098,
+      "theorem_count": 1689,
+      "definition_count": 409
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 48958,
+  "combined_audited_NLS_declarations": 49063,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -10823,7 +11148,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 335 unchanged prefix module source hashes match the prior ff343bc milestone; their private outputs were reused. Nine added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4024 declarations/auxiliaries and combined audit for 48958 NLS declarations. All 346 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 344 unchanged prefix module source hashes match the prior 2bcaf01 milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4129 declarations/auxiliaries and combined audit for 49063 NLS declarations. All 358 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",
