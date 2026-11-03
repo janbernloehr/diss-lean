@@ -794,6 +794,15 @@ modules = [
     'NLS.KdV.HillHminusOneMiuraActionBalls',
     'NLS.KdV.HillHminusOneCanonicalActions',
     'NLS.Articles.KdVPseudomeasures.OriginalCanonicalActions',
+    'NLS.ComplexAnalysis.CoshRealBranch',
+    'NLS.ZakharovShabat.SourceArcoshClosedGap',
+    'NLS.KdV.HillHminusOneRealGapProfile',
+    'NLS.KdV.HillHminusOneValidGapBoundary',
+    'NLS.KdV.HillHminusOneCanonicalHighComparison',
+    'NLS.KdV.HillHminusOneUniformCanonicalPairs',
+    'NLS.KdV.HillHminusOneUniformCanonicalHighActions',
+    'NLS.KdV.HillHminusOneNormalizedCanonicalDomain',
+    'NLS.Articles.KdVPseudomeasures.OriginalCanonicalHighActions',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

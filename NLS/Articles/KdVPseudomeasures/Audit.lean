@@ -760,6 +760,15 @@ import NLS.SequenceSpaces.PeriodOneHminusOneRealForm
 import NLS.KdV.HillHminusOneMiuraActionBalls
 import NLS.KdV.HillHminusOneCanonicalActions
 import NLS.Articles.KdVPseudomeasures.OriginalCanonicalActions
+import NLS.ComplexAnalysis.CoshRealBranch
+import NLS.ZakharovShabat.SourceArcoshClosedGap
+import NLS.KdV.HillHminusOneRealGapProfile
+import NLS.KdV.HillHminusOneValidGapBoundary
+import NLS.KdV.HillHminusOneCanonicalHighComparison
+import NLS.KdV.HillHminusOneUniformCanonicalPairs
+import NLS.KdV.HillHminusOneUniformCanonicalHighActions
+import NLS.KdV.HillHminusOneNormalizedCanonicalDomain
+import NLS.Articles.KdVPseudomeasures.OriginalCanonicalHighActions
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5428,3 +5437,32 @@ import NLS.Articles.KdVPseudomeasures.OriginalCanonicalActions
 #print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_properties
 #print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_pos_iff_gap_ne_zero
 #print axioms NLS.Articles.KdVPseudomeasures.exists_common_complex_neighborhood_originalCanonicalHillActions
+#print axioms NLS.ComplexAnalysis.exp_eq_of_cosh_eq_real_nonneg
+#print axioms NLS.ComplexAnalysis.continuous_cosh_real_branch_eqOn
+#print axioms NLS.ZakharovShabat.sourceRealGapArcoshProfile_closed_properties
+#print axioms NLS.KdV.hillHminus_parity_signed_trace
+#print axioms NLS.KdV.hillHminusRealGapProfile_canonical_gap_spec
+#print axioms NLS.KdV.HillHminusActionChartValid.real_gap_factorization
+#print axioms NLS.KdV.HillHminusActionChartValid.real_gap_sqrt_value
+#print axioms NLS.KdV.HillHminusActionChartValid.real_gap_sqrt_continuousOn
+#print axioms NLS.KdV.HillHminusActionChartValid.boundary_action_eq_ratio
+#print axioms NLS.KdV.HillHminusActionChartValid.sqrt_eq_canonical_profile
+#print axioms NLS.KdV.HillHminusActionChartValid.boundary_action_eq_canonical
+#print axioms NLS.KdV.HillHminusActionChartValid.canonical_action_eq_gap_ratio
+#print axioms NLS.KdV.HillHminusActionNeighborhood.glued_action_eq_canonical_of_real_labels
+#print axioms NLS.KdV.exists_hillHminus_uniform_canonical_label_pairs
+#print axioms NLS.KdV.exists_hillHminus_uniform_canonical_high_comparison
+#print axioms NLS.KdV.exists_hillHminus_uniform_canonical_high_normalization
+#print axioms NLS.KdV.HillHminusCanonicalHighNeighborhood.canonical_gap_factorization
+#print axioms NLS.KdV.HillHminusCanonicalHighNeighborhood.canonical_normalized_quotient
+#print axioms NLS.KdV.exists_hillHminusCanonicalHighNeighborhood
+#print axioms NLS.KdV.hillHminusNormalizedCanonicalActionDomain
+#print axioms NLS.KdV.isOpen_hillHminusNormalizedCanonicalActionDomain
+#print axioms NLS.KdV.hillHminusNormalizedCanonicalActionDomain_subset
+#print axioms NLS.KdV.real_mem_hillHminusNormalizedCanonicalActionDomain
+#print axioms NLS.KdV.isConnected_hillHminusNormalizedCanonicalActionDomain
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalAction_on_normalizedDomain
+#print axioms NLS.KdV.exists_hillHminus_canonical_high_normalization_at_complex
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalCanonicalHillAction_high_comparison
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalCanonicalHillAction_high_normalization
+#print axioms NLS.Articles.KdVPseudomeasures.exists_common_normalized_complex_neighborhood_originalCanonicalHillActions

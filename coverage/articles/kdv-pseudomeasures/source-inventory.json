@@ -703,9 +703,9 @@
     }
   ],
   "remaining_obligations": [
-    "Identify the NOW CONSTRUCTED canonical action family with the EARLIER glued high native Hill actions. Prove that the existing high filled primitive square has the actual real arcosh gap profile (with its correct branch), so its boundary contour formula equals the new canonical two-over-pi gap integral, then continue the equality analytically on the needed common neighborhoods. Miura ACTION lift/shift independence, full original label/multiplicity assignment and ALL-index complex action gluing are NOW PROVED; do not redo them.",
-    "Complete COMPLEX all-index action/gap-square factorization, zero-action iff complex gap collapse and normalized analytic low ratios through ALL collapsed gaps, preserving the exact8*pi*n normalization and one common neighborhood. The canonical actions already share ONE connected open COMPLEX native H-minus-one domain containing EVERY real source, agree with all valid Miura balls on their WHOLE overlaps, and have exact ORIGINAL real gap zero detection/positivity. Full source3.2 remains OPEN until the remaining complex ratio and coordinate estimates are proved.",
-    "Complete the ORIGINAL KdV action-angle/Birkhoff construction and estimate (|gamma_n|+|mu_n-tau_n|)/sqrt(n), original differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Do not substitute the NLS Birkhoff map. Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, with original equation and Hamiltonian/frequency normalization, then derive main1.1/1.3/1.4 and Wiener5.1/5.9. ALL FIVE main theorems remain UNPROVED; goal ACTIVE. Remaining DirichletC4ii, parity/interlacing and complex ratio2.20 are open only where needed. Full complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB remain PROVED."
+    "Construct/glue COMPLEX ALL-index canonical gap squares and the finitely many LOW-index analytic normalized action/gap-square ratios through collapsed gaps, with nonvanishing near every real source and one common neighborhood. The canonical ACTION family and its Miura independence are proved. SAME-original-index comparison with the earlier high family, analytic HIGH ratios through collapse, exact8*pi*n factorization, complex HIGH zero equivalence and locally uniform normalization around EVERY COMPLEX point of a common connected neighborhood are NOW PROVED. Do not assume the ordinary NLS normalized action at natural k0 supplies the Miura higher-action k1 ratio without a separate weighted formula.",
+    "Complete the ORIGINAL KdV action-angle/Birkhoff construction and estimate (|gamma_n|+|mu_n-tau_n|)/sqrt(n), original differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. All source domains, quantifiers and original physical normalization must remain unchanged. Do not substitute the NLS Birkhoff map for KdV.",
+    "Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, with original equation and Hamiltonian/frequency normalization, then derive main1.1/1.3/1.4 and Wiener5.1/5.9. ALL FIVE main theorems remain UNPROVED; goal ACTIVE. Full source3.2 remains OPEN until the remaining all-index complex ratios and actual coordinate estimates are proved. Remaining DirichletC4ii, parity/interlacing and complex ratio2.20 are open only where required. Full complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB remain PROVED."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1650,6 +1650,32 @@
     "complex_domain_off_domain_zero_is_only_total_function_convention": true,
     "comparison_with_PREVIOUS_glued_high_Hill_action_family_proved": false,
     "complex_ALL_index_gap_square_factorization_zero_equivalence_and_low_ratios_proved": false,
+    "full_source_Theorem3_2_proved": false,
+    "actual_KdV_Birkhoff_map_constructed": false,
+    "actual_original_KdV_flow_constructed": false,
+    "main_theorems_verified": false
+  },
+  "actual_HminusOne_canonical_high_comparison_and_complex_normalization_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-canonical-high-comparison-map.json",
+    "exact_cosh_exponential_branch_and_continuous_log_period_selection_proved": true,
+    "canonical_arcosh_profile_closed_gap_continuity_endpoints_nonnegativity_cosh_identity_proved": true,
+    "valid_chart_principal_sqrt_matches_canonical_arcosh_on_WHOLE_closed_same_index_gap": true,
+    "boundary_ratio_formula_needs_only_actual_pointwise_strict_root_normalization": true,
+    "uniform_ORIGINAL_canonical_high_pair_assignment_before_ALL_real_inputs_and_high_indices": true,
+    "canonical_and_previous_high_actions_equal_on_WHOLE_certified_complex_neighborhoods": true,
+    "SAME_original_index_hypothesis_explicit_and_constructed": true,
+    "exact_eight_pi_n_canonical_high_factorization_and_error_proved": true,
+    "complex_HIGH_zero_action_iff_actual_gap_square_zero_proved": true,
+    "literal_high_normalized_quotient_equals_analytic_ratio_off_collapsed_gap": true,
+    "analytic_HIGH_ratio_extensions_through_collapsed_gaps_proved": true,
+    "ONE_OPEN_CONNECTED_normalized_complex_domain_contains_entire_real_HminusOne_form": true,
+    "ALL_canonical_actions_analytic_on_SAME_normalized_complex_domain": true,
+    "HIGH_normalization_locally_uniform_at_EVERY_COMPLEX_point_before_ALL_high_indices": true,
+    "original_physical_mean_zero_period_one_HminusOne_domain_preserved": true,
+    "original_canonical_high_actions_equal_previous_high_actions_on_correctly_indexed_neighborhoods": true,
+    "unproved_global_equality_on_arbitrary_OLD_high_domain_components_asserted": false,
+    "all_index_complex_canonical_gap_square_family_glued": false,
+    "LOW_index_complex_normalized_ratios_through_collapse_and_nonvanishing_proved": false,
     "full_source_Theorem3_2_proved": false,
     "actual_KdV_Birkhoff_map_constructed": false,
     "actual_original_KdV_flow_constructed": false,
