@@ -630,6 +630,12 @@
       "status": "Action quotient assertions3.2(i) and complex action-zero assertion3.2(iii) PROVED; actual coordinates3.2(ii), Phi(0)=0, full source3.1/3.2 and all MAIN theorems remain OPEN",
       "declaration": "NLS.Articles.KdVPseudomeasures.source_Theorem3_2_action_assertions",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-canonical-action-quotients-map.json"
+    },
+    {
+      "label": "Actual KdV Dirichlet divisor ENERGY input",
+      "status": "ALL-index original real gap inclusion and common analytic simple COMPLEX energies, full native spectral exhaustion, noncollision and exact physical counts PROVED. Actual norming sheet, normalized Hill differentials, source3.2(ii) coordinates and all MAIN theorems remain OPEN.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.exists_originalKdV_common_analytic_Dirichlet_data",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-canonical-dirichlet-data-map.json"
     }
   ],
   "reuse_map": [
@@ -709,9 +715,9 @@
     }
   ],
   "remaining_obligations": [
-    "Construct the ACTUAL ORIGINAL KdV Birkhoff coordinate functions and prove source3.2(ii): analyticity and the locally uniform bound (abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). The ACTUAL canonical actions, ALL-index complex squared gaps, ALL LOW/HIGH analytic nonzero quotients through collapse, their SAME-domain locally uniform8*pi*n normalization and complex ALL-index action-zero equivalence are NOW PROVED. Do not redo them and do not substitute the NLS Birkhoff map for KdV.",
-    "Complete the ORIGINAL KdV Birkhoff-map assertions of source3.1 and main1.4: canonical Poisson brackets with original Gardner structure, original differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 remains partially open because its actual coordinate assertion and Phi(0)=0 are not proved.",
-    "Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation with the original equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE remain UNPROVED; goal ACTIVE. Prove other spectral obligations only where needed for these main results. AppendixB B.1(i)-(iv), full source2.1(i)-(ii), source2.2 and corrected2.15 remain PROVED."
+    "Construct the ACTUAL ORIGINAL Dirichlet divisor NORMING SHEET above the now-proved analytic energies, independently of the Miura lift and shift; a principal square root of the radicand is not a substitute for the prescribed monodromy sheet. Then construct normalized ORIGINAL Hill holomorphic differentials, their local bounds, admissible-path Abelian phases, off-index phase sum and collapsed-gap coordinate extensions needed by source3.2(ii). The ALL-index Dirichlet energies, simplicity, full complex native spectrum exhaustion, noncollision and multiplicities are NOW PROVED; do not redo them.",
+    "Complete the ACTUAL ORIGINAL KdV Birkhoff coordinates and the locally uniform estimate(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n), and source3.1/main1.4: original Gardner Poisson brackets, original differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are PROVED; its coordinate assertion and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute the NLS Birkhoff map for KdV.",
+    "Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation with the original equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE remain UNPROVED; goal ACTIVE. Other spectral obligations remain only where needed. AppendixB, full source2.1(i)-(ii), source2.2, corrected2.15 and all-index action/gap/quotient constructions remain PROVED."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1733,6 +1739,38 @@
     "source_Theorem3_2_iii_ACTION_zero_locus_assertion_proved": true,
     "source_Theorem3_2_ii_ACTUAL_coordinate_assertions_proved": false,
     "actual_KdV_Birkhoff_map_Phi_zero_identity_proved": false,
+    "full_source_Theorem3_2_proved": false,
+    "actual_KdV_Birkhoff_map_constructed": false,
+    "actual_original_KdV_flow_constructed": false,
+    "main_theorems_verified": false
+  },
+  "actual_HminusOne_canonical_analytic_Dirichlet_data_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-canonical-dirichlet-data-map.json",
+    "ALL_original_REAL_Dirichlet_labels_in_SAME_original_periodic_gaps": true,
+    "exact_midpoint_deviation_half_original_gap_including_LOW_indices": true,
+    "REAL_collapsed_gap_Dirichlet_energy_equals_endpoint": true,
+    "ALL_index_Miura_Dirichlet_energy_analytic_on_ONE_complex_ball": true,
+    "native_high_cutoff_before_FINITE_low_simple_derivative_intersection": true,
+    "scalar_Dirichlet_shift_exclusion_constructed_on_WHOLE_complex_ball": true,
+    "actual_characteristic_zero_identity_on_WHOLE_complex_ball": true,
+    "full_complex_overlap_agreement_and_choice_independence": true,
+    "ONE_OPEN_CONNECTED_complex_Dirichlet_domain_contains_entire_native_real_form": true,
+    "ALL_energies_actions_squared_gaps_and_quotients_analytic_on_SAME_domain": true,
+    "ALL_index_complex_Dirichlet_energies_SIMPLE": true,
+    "ENTIRE_complex_native_Dirichlet_spectrum_exhaustion_including_central_block": true,
+    "ALL_index_complex_energy_INJECTIVITY_proved": true,
+    "full_actual_native_algebraic_multiplicities_counted_at_EVERY_complex_energy": true,
+    "original_free_values_pi_squared_n_squared_preserved": true,
+    "actual_auxiliary_displacement_BANACH_l2_analytic_on_each_ball": true,
+    "entire_inverse_positive_index_scalar_error_in_l2": true,
+    "uniform_o_n_displacement_at_EVERY_COMPLEX_point_before_ALL_high_indices": true,
+    "common_HIGH_tail_comparison_with_previous_intrinsic_complex_labels": true,
+    "unproved_global_ALL_index_equality_with_older_complex_lexicographic_list_asserted": false,
+    "original_mean_zero_reality_period_one_entire_distribution_preserved": true,
+    "complex_collapsed_gap_Dirichlet_energy_equals_endpoint_asserted": false,
+    "ACTUAL_Dirichlet_NORMING_sheet_constructed": false,
+    "ACTUAL_normalized_Hill_differentials_constructed": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
     "full_source_Theorem3_2_proved": false,
     "actual_KdV_Birkhoff_map_constructed": false,
     "actual_original_KdV_flow_constructed": false,

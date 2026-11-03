@@ -816,6 +816,14 @@ modules = [
     'NLS.KdV.HillHminusOneCanonicalNormalizedActions',
     'NLS.KdV.HillHminusOneCanonicalQuotients',
     'NLS.Articles.KdVPseudomeasures.OriginalCanonicalActionQuotients',
+    'NLS.KdV.HminusOneDirichletAllGaps',
+    'NLS.KdV.HminusOneDirichletAnalyticBalls',
+    'NLS.KdV.HminusOneCanonicalDirichlet',
+    'NLS.KdV.HminusOneCanonicalDirichletSpectrum',
+    'NLS.ComplexAnalysis.SimpleRootBranchUniqueness',
+    'NLS.KdV.HminusOneCanonicalDirichletMultiplicity',
+    'NLS.KdV.HminusOneCanonicalDirichletAsymptotics',
+    'NLS.Articles.KdVPseudomeasures.OriginalAnalyticDirichletCoordinates',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

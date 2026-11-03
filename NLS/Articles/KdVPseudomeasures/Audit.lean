@@ -782,6 +782,14 @@ import NLS.ComplexAnalysis.AnalyticScalarFactorUniqueness
 import NLS.KdV.HillHminusOneCanonicalNormalizedActions
 import NLS.KdV.HillHminusOneCanonicalQuotients
 import NLS.Articles.KdVPseudomeasures.OriginalCanonicalActionQuotients
+import NLS.KdV.HminusOneDirichletAllGaps
+import NLS.KdV.HminusOneDirichletAnalyticBalls
+import NLS.KdV.HminusOneCanonicalDirichlet
+import NLS.KdV.HminusOneCanonicalDirichletSpectrum
+import NLS.ComplexAnalysis.SimpleRootBranchUniqueness
+import NLS.KdV.HminusOneCanonicalDirichletMultiplicity
+import NLS.KdV.HminusOneCanonicalDirichletAsymptotics
+import NLS.Articles.KdVPseudomeasures.OriginalAnalyticDirichletCoordinates
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5560,3 +5568,47 @@ import NLS.Articles.KdVPseudomeasures.OriginalCanonicalActionQuotients
 #print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_eq_gapSquare_mul_quotient
 #print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillActionQuotient_eq_raw
 #print axioms NLS.Articles.KdVPseudomeasures.source_Theorem3_2_action_assertions
+#print axioms NLS.KdV.hillHminusDirichletLabels_mem_gap
+#print axioms NLS.KdV.norm_hillHminusDirichletLabels_sub_midpoint_le_half_gap
+#print axioms NLS.KdV.hillHminusDirichletLabels_eq_endpoint_of_gap_zero
+#print axioms NLS.KdV.HillHminusMiuraGapBall.dirichletEnergy
+#print axioms NLS.KdV.HillHminusMiuraGapBall.dirichletEnergy_eq_real
+#print axioms NLS.KdV.HillHminusDirichletBall.source
+#print axioms NLS.KdV.HillHminusDirichletBall.energy
+#print axioms NLS.KdV.HillHminusDirichletBall.source_open
+#print axioms NLS.KdV.HillHminusDirichletBall.analytic_energy
+#print axioms NLS.KdV.HillHminusDirichletBall.energy_eq_real
+#print axioms NLS.KdV.HillHminusDirichletBall.energy_is_root
+#print axioms NLS.KdV.HillHminusDirichletBall.energy_eq_high
+#print axioms NLS.KdV.HillHminusDirichletBall.energy_eq_on_overlap
+#print axioms NLS.KdV.exists_hillHminusDirichletBall
+#print axioms NLS.KdV.hillHminusCanonicalDirichletDomain
+#print axioms NLS.KdV.isOpen_hillHminusCanonicalDirichletDomain
+#print axioms NLS.KdV.hillHminusCanonicalDirichletDomain_subset
+#print axioms NLS.KdV.real_mem_hillHminusCanonicalDirichletDomain
+#print axioms NLS.KdV.isConnected_hillHminusCanonicalDirichletDomain
+#print axioms NLS.KdV.hillHminusCanonicalDirichlet
+#print axioms NLS.KdV.HillHminusDirichletBall.canonical_dirichlet_eq
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalDirichlet
+#print axioms NLS.KdV.hillHminusCanonicalDirichlet_eq_real
+#print axioms NLS.KdV.hillHminusCanonicalDirichlet_is_root
+#print axioms NLS.KdV.deriv_hillHminusCanonicalDirichlet_ne_zero
+#print axioms NLS.KdV.hillHminusCanonicalDirichlet_native_multiplicity
+#print axioms NLS.KdV.exists_hillHminusCanonicalDirichlet_uniform_high_comparison
+#print axioms NLS.KdV.HillHminusDirichletBall.auxiliary_neg
+#print axioms NLS.KdV.HillHminusDirichletBall.auxiliary_zero
+#print axioms NLS.KdV.HillHminusDirichletBall.energy_exhaustive
+#print axioms NLS.KdV.hillHminusCanonicalDirichlet_roots_iff
+#print axioms NLS.KdV.hillHminusCanonicalDirichlet_spectrum_iff
+#print axioms NLS.ComplexAnalysis.eventually_eq_of_continuous_simple_root_branches
+#print axioms NLS.KdV.hillHminusCanonicalDirichlet_zero
+#print axioms NLS.KdV.injective_hillHminusCanonicalDirichlet
+#print axioms NLS.KdV.hillHminusCanonicalDirichlet_global_multiplicity
+#print axioms NLS.KdV.HillHminusDirichletBall.analytic_auxiliaryDisplacement
+#print axioms NLS.KdV.memlp_hillHminusCanonicalDirichlet_inverseIndex_error
+#print axioms NLS.KdV.exists_uniform_small_hillHminusCanonicalDirichletDisplacement
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_mem_gap
+#print axioms NLS.Articles.KdVPseudomeasures.norm_originalDirichletLabels_sub_midpoint_le_half_gap
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_eq_endpoint_of_gap_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalDirichlet_eq
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalKdV_common_analytic_Dirichlet_data
