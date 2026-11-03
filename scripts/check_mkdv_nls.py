@@ -514,6 +514,16 @@ modules = [
     'NLS/MKdV/MiuraEncodedActionFactorBalls.lean',
     'NLS/MKdV/MiuraGlobalNLSActionFactor.lean',
     'NLS/Articles/MKdVNLSHierarchies/GlobalForwardActionIdentification.lean',
+    'NLS/MKdV/MiuraSobolevNLSJacobianCompact.lean',
+    'NLS/MKdV/MiuraSobolevCartesianJacobianCompact.lean',
+    'NLS/MKdV/MiuraSobolevCartesianComplexCompatibility.lean',
+    'NLS/MKdV/MiuraSobolevCartesianJacobianInvertible.lean',
+    'NLS/MKdV/MiuraRealSobolevCartesianJacobian.lean',
+    'NLS/ComplexAnalysis/AnalyticGlobalInverseCharts.lean',
+    'NLS/MKdV/MiuraSobolevCartesianAnalyticInverse.lean',
+    'NLS/ZakharovShabat/SourceHigherActionIsospectral.lean',
+    'NLS/MKdV/MiuraNativeHamiltonianActionFlow.lean',
+    'NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianCoordinates.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

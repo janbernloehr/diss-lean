@@ -117,7 +117,14 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_bijective_iff_injective",
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_actual_Gardner_fields",
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_plane_Gardner_brackets",
-        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_Gardner_bracket_analytic_extension"
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_Gardner_bracket_analytic_extension",
+        "NLS.Articles.MKdVNLSHierarchies.physical_native_Cartesian_analytic_homeomorph",
+        "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_Cartesian_representation",
+        "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_action_flow_conservation"
+      ],
+      "remaining_work": [
+        "Construct the independent physical Hamiltonian action normal forms and their frequencies in the exact native domains, including closed actions and the m=1 endpoint.",
+        "Compare those frequencies to the restricted original NLS frequencies using the actual Gardner normalization; record the corrected parity convention consistently with the source proof."
       ]
     },
     {
@@ -445,7 +452,7 @@
     "remaining": "The diagonal physical discriminant, original fixed-index endpoints, canonical sheets and actual weighted contour actions have now been identified. Remaining normal-form angle, frequency and Poisson-bracket conventions must be carried through their actual constructions."
   },
   "remaining_essential_dependencies": [
-    "Independent canonical mKdV Birkhoff angles/full Gardner canonicity and needed native higher-Sobolev inverse continuity/analyticity. Global native Cartesian bijectivity, arbitrary native nonnegative action realization and corrected Theorem 4(ii) global forward/converse action factors are proved. Arbitrary rough L2-target inversion remains unproved but is not asserted by these H1 theorems.",
+    "Independent canonical mKdV Birkhoff angles/full Gardner canonicity. Global native Cartesian bijectivity, arbitrary native nonnegative action realization and corrected Theorem 4(ii) global forward/converse action factors are proved. Arbitrary rough L2-target inversion remains unproved but is not asserted by these H1 theorems.",
     "Theorem 4(iii) final angle-sum factorization through physical mKdV actions and signed mean for the independent mKdV angle. Its printed angle-action bracket clause and actual Gardner transfer are already proved.",
     "Theorem 3 full frequency comparison on the exact original real H^(m-1) domains, including its L2 mass endpoint and collapsed actions, with the recorded correction of the printed (-1)^m sign convention. All corrected Theorem 4(ii) action-dependence clauses are proved."
   ],
@@ -1234,6 +1241,29 @@
     "limits": [
       "Independent canonical mKdV angles/full Gardner canonicity, final angle-sum factorization and full corrected Theorem 3 frequency comparison remain essential.",
       "No global inverse theorem for arbitrary rough L2 Cartesian target data is asserted."
+    ]
+  },
+  "native_global_Sobolev_Cartesian_analytic_inverse_and_Hamiltonian_conservation": {
+    "status": "proved_native_integer_s_ge_1_global_real_analytic_inverse_and_all_order_exact_domain_action_flow_conservation",
+    "scope": "For every integer s>=1 and every physical real H^s profile, the full complex Cartesian derivative is a compact perturbation of the explicit free equivalence and is bijective in H^s/native positive h^(s+1/2) plus literal mean norms. Genuine complex analytic local inverses exist at every such profile. The actual real Cartesian bijection is a global analytic homeomorphism, with a real analytic inverse on the entire native target. The independent physical Hill K_(s+1) is analytic in these coordinates. Every K_m is conserved along every complete physical action flow on the exact real H^(m-1) domain for all m>=1; the mass endpoint is proved separately using the original mass trace. Closed selected and unselected actions, arbitrary support and every signed mean are included.",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_native_Cartesian_analytic_homeomorph",
+      "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_Cartesian_representation",
+      "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_action_flow_conservation",
+      "NLS.MKdV.miuraSobolevCartesianJacobian_bijective",
+      "NLS.MKdV.exists_miuraSobolevPositiveCartesian_analytic_chart",
+      "NLS.MKdV.analyticOnNhd_miuraPhysicalSobolevCartesianInverse",
+      "NLS.MKdV.analyticOnNhd_miuraSpectralCartesianHamiltonian",
+      "NLS.MKdV.miuraSpectralHillHamiltonian_allOrders_miuraActionFlow",
+      "NLS.ZakharovShabat.sourceComplexHigherAction_eq_of_isospectral",
+      "NLS.ZakharovShabat.sobolevOddHamiltonian_eq_of_isospectral"
+    ],
+    "method": "The checked weighted NLS Jacobian compact remainder pulls back along the literal scalar Sobolev diagonal. Compact symbol multiplication controls the differentiated scaling root. Coefficient-preserving complex germ compatibility transports L2 derivative injectivity to the native spaces; the compact Fredholm alternative then gives complex and real native inverses. Global set bijectivity identifies each local inverse with the global inverse, yielding native inverse analyticity. The actual sharp higher-action traces, isospectral invariance of their real gap integrands and the independently proved factor-two restriction give Hamiltonian conservation, including the mass endpoint.",
+    "qualifications": [
+      "No global Gardner canonicity or cross-mode zero Cartesian brackets are inferred from inverse analyticity.",
+      "The Hamiltonian Cartesian representation is not yet an action normal form or an independent mKdV frequency definition.",
+      "Theorem 3 and the final angle-sum clause of Theorem 4(iii) remain incomplete.",
+      "No global rough L2 target inverse is asserted. Native complex charts are local at physical H^s profiles for s>=1."
     ]
   }
 }

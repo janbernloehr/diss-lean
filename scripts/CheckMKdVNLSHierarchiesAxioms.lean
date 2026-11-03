@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.NativeHamiltonianCoordinates
 import NLS.Articles.MKdVNLSHierarchies.GlobalForwardActionIdentification
 import NLS.Articles.MKdVNLSHierarchies.GeneralForwardActionFactorization
 import NLS.Articles.MKdVNLSHierarchies.ActionRealizationGeneralCharts
@@ -58,7 +59,14 @@ The traversal includes all imported dependencies of each checked declaration. -/
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
+  let prefixes := #[
+    `NLS.ComplexAnalysis.analyticOnNhd_inverse_of_local_charts,
+    `NLS.ZakharovShabat.sourceRealHigherAction_eq_of_isospectral,
+    `NLS.ZakharovShabat.sourceComplexHigherAction_eq_of_isospectral,
+    `NLS.ZakharovShabat.sourceComplexHigherAction_eq_of_actions,
+    `NLS.ZakharovShabat.sobolevNLSHamiltonian_eq_of_isospectral,
+    `NLS.ZakharovShabat.sobolevOddHamiltonian_eq_of_isospectral,
+`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.Coeff.exists_nonnegative_finite_approximation,
     `NLS.Coeff.eq_of_finite_nonnegative_agreement,
     `NLS.Coeff.truncatePair_activeHead_union,
@@ -758,6 +766,10 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.physical_native_Cartesian_analytic_homeomorph,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_Cartesian_representation,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_action_flow_conservation,
+
     ``NLS.MKdV.exists_miuraCartesian_real_action_lift_neighborhood,
     ``NLS.MKdV.MiuraGeneralCartesianNLSActionChart.exists_action_factor_global_H1_recovery,
     ``NLS.MKdV.exists_H1_profile_of_finite_encoded_actions,

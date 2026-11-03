@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 4935,
+  "audited_declarations_and_auxiliaries": 5011,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -13009,14 +13009,304 @@
       "kind": "theorem",
       "name": "theorem4_ii_nls_actions_of_mkdv_actions_mean",
       "file": "NLS/Articles/MKdVNLSHierarchies/GlobalForwardActionIdentification.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraSobolevNLSNormalizedInput",
+      "file": "NLS/MKdV/MiuraSobolevNLSJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_miuraSobolevNLSNormalizedCoordinates",
+      "file": "NLS/MKdV/MiuraSobolevNLSJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_fderiv_miuraSobolevNLSNormalizedCoordinates_sub_free",
+      "file": "NLS/MKdV/MiuraSobolevNLSJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevNLSNormalizedCoordinates_zero",
+      "file": "NLS/MKdV/MiuraSobolevNLSJacobianCompact.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraSobolevCartesianRootSequence",
+      "file": "NLS/MKdV/MiuraSobolevCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraSobolevCartesianRootSequence",
+      "file": "NLS/MKdV/MiuraSobolevCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_fderiv_miuraSobolevScaledNLSCoordinate_sub_free",
+      "file": "NLS/MKdV/MiuraSobolevCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraSobolevCartesianRetraction",
+      "file": "NLS/MKdV/MiuraSobolevCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraSobolevCartesianDenormalization",
+      "file": "NLS/MKdV/MiuraSobolevCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraSobolevScaledNLSCartesianMap",
+      "file": "NLS/MKdV/MiuraSobolevCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevCartesianDenormalization_map",
+      "file": "NLS/MKdV/MiuraSobolevCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_miuraSobolevScaledNLSCartesianMap",
+      "file": "NLS/MKdV/MiuraSobolevCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_miuraSobolevCartesianJacobian_sub_free",
+      "file": "NLS/MKdV/MiuraSobolevCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevPositiveCartesianMap_eval_sequence",
+      "file": "NLS/MKdV/MiuraSobolevCartesianComplexCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveCartesianMap_eval_sequence",
+      "file": "NLS/MKdV/MiuraSobolevCartesianComplexCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevCartesianMap_L2_of_sequence",
+      "file": "NLS/MKdV/MiuraSobolevCartesianComplexCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevCartesianSequence_coefficients_eventually",
+      "file": "NLS/MKdV/MiuraSobolevCartesianComplexCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2CartesianSequence_coefficients_eventually",
+      "file": "NLS/MKdV/MiuraSobolevCartesianComplexCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevL2Inclusion_real",
+      "file": "NLS/MKdV/MiuraSobolevCartesianComplexCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevCartesianMap_L2_eventually",
+      "file": "NLS/MKdV/MiuraSobolevCartesianComplexCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevCartesianJacobian_L2",
+      "file": "NLS/MKdV/MiuraSobolevCartesianComplexCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevCartesianJacobian_injective",
+      "file": "NLS/MKdV/MiuraSobolevCartesianJacobianInvertible.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevCartesianJacobian_bijective",
+      "file": "NLS/MKdV/MiuraSobolevCartesianJacobianInvertible.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraSobolevCartesian_derivative_equiv",
+      "file": "NLS/MKdV/MiuraSobolevCartesianJacobianInvertible.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraSobolevPositiveCartesian_analytic_chart",
+      "file": "NLS/MKdV/MiuraSobolevCartesianJacobianInvertible.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraPhysicalSobolevCartesianMap",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianJacobian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevCartesianRealFreeEquiv_projection",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianJacobian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_miuraPhysicalSobolevCartesianJacobian_sub_free",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianJacobian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevCartesianJacobian_inclusion",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianJacobian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevCartesianJacobian_injective",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianJacobian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevCartesianJacobian_bijective",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianJacobian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPhysicalSobolevCartesian_derivative_equiv",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianJacobian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPhysicalSobolevCartesian_analytic_chart",
+      "file": "NLS/MKdV/MiuraRealSobolevCartesianJacobian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_inverse_of_local_charts",
+      "file": "NLS/ComplexAnalysis/AnalyticGlobalInverseCharts.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPhysicalSobolevCartesianEquiv",
+      "file": "NLS/MKdV/MiuraSobolevCartesianAnalyticInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevCartesianEquiv_apply",
+      "file": "NLS/MKdV/MiuraSobolevCartesianAnalyticInverse.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPhysicalSobolevCartesianInverse",
+      "file": "NLS/MKdV/MiuraSobolevCartesianAnalyticInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevCartesianInverse_map",
+      "file": "NLS/MKdV/MiuraSobolevCartesianAnalyticInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevCartesianMap_inverse",
+      "file": "NLS/MKdV/MiuraSobolevCartesianAnalyticInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_miuraPhysicalSobolevCartesianInverse",
+      "file": "NLS/MKdV/MiuraSobolevCartesianAnalyticInverse.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPhysicalSobolevCartesianHomeomorph",
+      "file": "NLS/MKdV/MiuraSobolevCartesianAnalyticInverse.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraSpectralCartesianHamiltonian",
+      "file": "NLS/MKdV/MiuraSobolevCartesianAnalyticInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_miuraSpectralCartesianHamiltonian",
+      "file": "NLS/MKdV/MiuraSobolevCartesianAnalyticInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSpectralCartesianHamiltonian_map",
+      "file": "NLS/MKdV/MiuraSobolevCartesianAnalyticInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceRealHigherAction_eq_of_isospectral",
+      "file": "NLS/ZakharovShabat/SourceHigherActionIsospectral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceComplexHigherAction_eq_of_isospectral",
+      "file": "NLS/ZakharovShabat/SourceHigherActionIsospectral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceComplexHigherAction_eq_of_actions",
+      "file": "NLS/ZakharovShabat/SourceHigherActionIsospectral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevNLSHamiltonian_eq_of_isospectral",
+      "file": "NLS/ZakharovShabat/SourceHigherActionIsospectral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevOddHamiltonian_eq_of_isospectral",
+      "file": "NLS/ZakharovShabat/SourceHigherActionIsospectral.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraRealHigherSobolevDiagonal",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealHigherSobolevDiagonal_source",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealHigherSobolevDiagonal_actionFlow_isospectral",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSpectralHillHamiltonian_miuraActionFlow",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSpectralHillHamiltonian_mass_miuraActionFlow",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSpectralHillHamiltonian_allOrders_miuraActionFlow",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_native_Cartesian_analytic_homeomorph",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_native_Hill_hamiltonian_Cartesian_representation",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_native_Hill_hamiltonian_action_flow_conservation",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianCoordinates.lean"
     }
   ],
-  "public_declaration_count": 2598,
-  "theorem_count": 2118,
-  "definition_count": 480,
-  "full_build": "480 article/shared modules have validated private outputs. All 472 unchanged prefix module source hashes match the prior 7c174c0 milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2656,
+  "theorem_count": 2166,
+  "definition_count": 490,
+  "full_build": "490 article/shared modules have validated private outputs. All 480 unchanged prefix module source hashes match the prior 08cf309 milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/MKdV/MiuraCartesianRealActionLifts.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/MKdV/MiuraSobolevNLSJacobianCompact.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -13498,12 +13788,22 @@
     "NLS/MKdV/MiuraEncodedActionFactorBalls.lean": "5a7b85d3198e7dc59dec174e0215da71ab2366dd4b2611cb83c88369d2c9799d",
     "NLS/MKdV/MiuraGlobalNLSActionFactor.lean": "ca08d033955781c8f39475639015c6f584e11349c87b4f46e722dea36d4da83b",
     "NLS/Articles/MKdVNLSHierarchies/GlobalForwardActionIdentification.lean": "8f6a5aabed247ecb3731b919dfc00884370a357fbb227e7751031871acaa6397",
+    "NLS/MKdV/MiuraSobolevNLSJacobianCompact.lean": "31ad4f696dafda9e7780124214637e8001a4030fe62312b00036a94faeba642e",
+    "NLS/MKdV/MiuraSobolevCartesianJacobianCompact.lean": "ae9141ec36967a09d10b42700f8dd1522141b39ff0a78b957aedb53c5d72b528",
+    "NLS/MKdV/MiuraSobolevCartesianComplexCompatibility.lean": "ddd7ae121d3ceb2a54eb3912775d5adde006afab6b8a43b359fd3e8d470252d4",
+    "NLS/MKdV/MiuraSobolevCartesianJacobianInvertible.lean": "2d6db2e76a7c7f1aede27836b3fd5dafcb1e5c85809f17e51545d354f45a057a",
+    "NLS/MKdV/MiuraRealSobolevCartesianJacobian.lean": "7a11144b9081701fd67ccd9c8dda3d857d8b7e7ca30af9561c2b55fa3301e773",
+    "NLS/ComplexAnalysis/AnalyticGlobalInverseCharts.lean": "e4f4652899fd2fa07cdfa65909c889d527cabc3b771d7cd09a7aba1380e67fc9",
+    "NLS/MKdV/MiuraSobolevCartesianAnalyticInverse.lean": "20dba28fff29a337d752fc8089b3a76a81c35aa6204a497f3ef8ddda5e8c788e",
+    "NLS/ZakharovShabat/SourceHigherActionIsospectral.lean": "57784492091ae162ba2befc4395485602b2f501b9727b3b382de99e6ee19b921",
+    "NLS/MKdV/MiuraNativeHamiltonianActionFlow.lean": "56bba5588831355ddb01cd283aad516959b00289dcffceb3e57c681c8eeeb8d8",
+    "NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianCoordinates.lean": "0f9754081aea0af8d951fcfbaa0ef1c2babc67c2227bbdd45f9d2b0fffa234c5",
     "NLS.lean": "8b7ce4ad52dd4f8dbc054e0bd1b7e6adc03480720e8557f9a8f54e461da6e8c6",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "b0e4dcde124db8af35a2d61900cfb321dbc0df72b540a39b69931c75eb6236bc",
-    "scripts/check_mkdv_nls.py": "5ecbf5555f5db2606b0f7902131b19dcbd88a8de84ee3f98cc90ac063cbcc845"
+    "scripts/check_mkdv_nls.py": "a171f3ca69e02295abae86fcab5481643c5e0475222e07a37eb73479338926a0",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "0827d7ccbf4622e6ec6693bd2262f9aeb8dce25bce16f2cbde73bd0e6f3d9268"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 480,
+  "focused_module_count": 490,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -13929,12 +14229,25 @@
       "public_declaration_count": 2598,
       "theorem_count": 2118,
       "definition_count": 480
+    },
+    {
+      "milestone": "Global native Sobolev real analytic Cartesian inverse and complex local charts at every physical profile, plus exact-domain conservation of all independent physical Hill Hamiltonians including the L2 mass endpoint",
+      "audit_count": 5011,
+      "combined_NLS_audit_count": 49947,
+      "aggregate_compiled": true,
+      "module_count": 490,
+      "reused_prefix_module_count": 480,
+      "reused_prefix_commit": "08cf309ef7a53ae26a1564158269c312da5e95fe",
+      "frozen_source_checker_count": 493,
+      "public_declaration_count": 2656,
+      "theorem_count": 2166,
+      "definition_count": 490
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 49871,
+  "combined_audited_NLS_declarations": 49947,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -13942,7 +14255,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 472 unchanged prefix module source hashes match the prior 7c174c0 milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4935 declarations/auxiliaries and combined audit for 49871 NLS declarations. All 483 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 480 unchanged prefix module source hashes match the prior 08cf309 milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 5011 declarations/auxiliaries and combined audit for 49947 NLS declarations. All 493 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

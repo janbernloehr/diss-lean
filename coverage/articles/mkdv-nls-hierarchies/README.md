@@ -14,9 +14,13 @@ is false and is replaced by mean squared.
 The actual Cartesian map is globally bijective in every native integer
 real H^s class, s>=1; native action data have exactly one preimage among
 all physical L2 sources, and arbitrary native nonnegative action data
-with signed mean are realized. Native inverse analyticity, independent
-canonical angles/full Gardner canonicity and full frequency identification
-remain open. See the latest milestone below.
+with signed mean are realized. The global inverse is now real analytic
+in every integer native H^s norm, s>=1; complex analytic local inverse
+charts exist at every real profile. Every independent K_m is conserved
+by each complete physical action flow on the exact real H^(m-1) domain,
+including the L2 mass endpoint. Independent canonical angles/full Gardner
+canonicity and full frequency identification remain open. See the latest
+milestone below.
 
 Prepared 2026-11-02 against canonical commit
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
@@ -82,7 +86,7 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 | Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | **Proved** by `theorem1`, with the actual native Frechet gradient and Gardner distribution derivative. `smoothMiuraSpectralHamiltonian` extracts K_m from the independent physical Hill discriminant through recursive coefficient limits on all smooth complex profiles. Its unique continuous extension to the complete complex H^(m-1) domain exists and is entire analytic; `miuraSpectralHillHamiltonian_eq_native` identifies it with the independent scalar Riccati hierarchy. `proposition6` gives the full native factor-two identity, including the L2 mass endpoint. | None for Theorem 1. The source's actual finite-gap primitive Laurent series also has exactly these spectral Hamiltonians as its coefficients. |
 | Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None. |
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
-| Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Identify independent mKdV angles/frequencies with the recorded sign correction on the exact original Sobolev domains. Global forward and converse action factorization and actual Gardner transfer are proved. |
+| Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Native global analytic Cartesian inverses and conservation of the independent K_m along every complete action flow are proved on the exact real H^(m-1) domains, including m=1. Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Prove the action normal forms and identify independent mKdV angles/frequencies with the recorded sign correction on the exact original Sobolev domains. Global forward and converse action factorization and actual Gardner transfer are proved. |
 | Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | **Proved** by `theorem4_i` on the full real H1 domain, including collapsed gaps and zero mean. The mKdV action is the literal inverse-energy-weighted integral of the independent physical Hill primitive on a proved isolating contour; its equality with a positive real-gap integral and contour independence are checked. | None for part (i). Corrected part (ii) is proved; the final angle-sum clause of part (iii) remains open. |
 | Theorem 4(ii), p. 4 | On real H^1, each I_n# is analytic in the mKdV actions and mean; conversely each J_n and the printed mean are analytic in NLS actions alone. | **Proved with the converse mean corrected to mean squared.** `theorem4_ii_nls_actions_of_mkdv_actions_mean` supplies one common global holomorphic l1-valued forward factor on an open complex native action/mean domain containing every original real H1 profile. `theorem4_ii_mkdv_actions_of_nls_actions` and `theorem4_ii_mean_square_of_nls_actions` supply the global converse factors, including zero mean and closed gaps. | None for the corrected statement. The printed global signed-mean converse is false; its obstruction is checked. |
 | Theorem 4(iii), p. 4 | For all positive n,m, the angle-action Gardner bracket is delta_mn where the relevant angle is defined; angle sums then depend on actions and mean. | **The angle-action bracket clause is proved** by `theorem4_iii_angle_action` on every real H1 input where the angle is defined. The action index may have a closed gap. The actual Gardner distribution derivative and original NLS angle differential are identified. | Construct the independent mKdV angle and prove the final angle-sum factorization through J and mean. |
@@ -1808,3 +1812,53 @@ analyticity, and the full corrected frequency comparison on the original
 Sobolev domains remain essential. The main theorem goal stays active.
 
 Validation: all 480 article/shared modules have validated private outputs. The 472 unchanged prefix source hashes match 7c174c0 and their outputs were reused; all eight added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,935 declarations/auxiliaries and the combined audit for 49,871 NLS declarations, using only the standard allowed axioms. All 483 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,598 declarations (2,118 theorems and 480 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Global native analytic Cartesian inverses and exact-domain Hamiltonian conservation
+
+The actual Cartesian map is now a real analytic homeomorphism from every
+physical real integer H^s space, s>=1, onto its full positive native
+h^(s+1/2) pair with the literal signed mean. Its global inverse is real
+analytic everywhere in those native norms. At every physical real H^s
+profile, the full complex map also has a genuine complex analytic local
+inverse. These assertions include all closed gaps and every real mean.
+`physical_native_Cartesian_analytic_homeomorph` is the article adapter.
+
+The proof reuses the checked native weighted NLS compact Jacobian
+remainder. Normalized scalar diagonal pullback preserves compactness.
+For the scaled Cartesian map, derivatives of the bounded analytic root
+symbol are multiplied by the fixed native NLS sequence; that multiplication
+is compact. The remaining terms use the compact NLS remainder and the
+vanishing root-symbol tail. Complex native germs commute with the
+coefficient-preserving L2 inclusions, so the existing H1-basepoint L2
+injectivity gives native derivative injectivity. The compact Fredholm
+alternative supplies native complex and real bijectivity and local
+analytic charts. The already proved global set bijection forces the
+local real inverses to agree with the global inverse. The shared
+`analyticOnNhd_inverse_of_local_charts` records this general argument.
+One initial compatibility proof exceeded the unchanged kernel limit;
+splitting its uniform coefficient-germ lemmas resolved that check without
+increasing kernel, recursion or heartbeat limits.
+
+`physical_native_Hill_hamiltonian_Cartesian_representation` now expresses
+the independently defined physical spectral K_m, m>=2, as a real analytic
+functional of these actual native Cartesian coordinates on its exact
+H^(m-1) domain. This statement does not assume full Cartesian canonicity.
+
+`physical_native_Hill_hamiltonian_action_flow_conservation` proves that
+every K_m, m>=1, is constant along every complete physical action flow
+on the full real H^(m-1) domain. All higher actions have exactly the same
+real gap integrands on isospectral profiles, including collapsed gaps.
+The checked sharp higher-action trace gives conservation of the actual
+odd NLS Hamiltonian in the sharp H^s domain, and the independent factor-two
+restriction gives conservation of K_(s+1). The original H0 mass trace
+supplies m=1 separately, with no smoothness premise or extra regularity.
+
+Theorem 3 remains incomplete: the physical Hamiltonians still need action
+normal forms and independent frequency identification, including analytic
+continuation at closed actions. Independent canonical mKdV angles/full
+Gardner canonicity and the final angle-sum clause of Theorem 4(iii) remain
+open. Native higher-Sobolev inverse analyticity is no longer an outstanding
+dependency. The overall main-theorem goal stays active.
+
+Validation: all 490 article/shared modules have validated private outputs. The 480 unchanged prefix source hashes match 08cf309 and their outputs were reused; all ten added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 5,011 declarations/auxiliaries and the combined audit for 49,947 NLS declarations, using only the standard allowed axioms. All 493 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,656 declarations (2,166 theorems and 490 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

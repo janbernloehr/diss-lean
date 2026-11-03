@@ -2385,3 +2385,53 @@ analyticity, and the full corrected frequency comparison on the original
 Sobolev domains remain essential. The main theorem goal stays active.
 
 Validation: all 480 article/shared modules have validated private outputs. The 472 unchanged prefix source hashes match 7c174c0 and their outputs were reused; all eight added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,935 declarations/auxiliaries and the combined audit for 49,871 NLS declarations, using only the standard allowed axioms. All 483 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,598 declarations (2,118 theorems and 480 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Global native analytic Cartesian inverses and exact-domain Hamiltonian conservation
+
+The actual Cartesian map is now a real analytic homeomorphism from every
+physical real integer H^s space, s>=1, onto its full positive native
+h^(s+1/2) pair with the literal signed mean. Its global inverse is real
+analytic everywhere in those native norms. At every physical real H^s
+profile, the full complex map also has a genuine complex analytic local
+inverse. These assertions include all closed gaps and every real mean.
+`physical_native_Cartesian_analytic_homeomorph` is the article adapter.
+
+The proof reuses the checked native weighted NLS compact Jacobian
+remainder. Normalized scalar diagonal pullback preserves compactness.
+For the scaled Cartesian map, derivatives of the bounded analytic root
+symbol are multiplied by the fixed native NLS sequence; that multiplication
+is compact. The remaining terms use the compact NLS remainder and the
+vanishing root-symbol tail. Complex native germs commute with the
+coefficient-preserving L2 inclusions, so the existing H1-basepoint L2
+injectivity gives native derivative injectivity. The compact Fredholm
+alternative supplies native complex and real bijectivity and local
+analytic charts. The already proved global set bijection forces the
+local real inverses to agree with the global inverse. The shared
+`analyticOnNhd_inverse_of_local_charts` records this general argument.
+One initial compatibility proof exceeded the unchanged kernel limit;
+splitting its uniform coefficient-germ lemmas resolved that check without
+increasing kernel, recursion or heartbeat limits.
+
+`physical_native_Hill_hamiltonian_Cartesian_representation` now expresses
+the independently defined physical spectral K_m, m>=2, as a real analytic
+functional of these actual native Cartesian coordinates on its exact
+H^(m-1) domain. This statement does not assume full Cartesian canonicity.
+
+`physical_native_Hill_hamiltonian_action_flow_conservation` proves that
+every K_m, m>=1, is constant along every complete physical action flow
+on the full real H^(m-1) domain. All higher actions have exactly the same
+real gap integrands on isospectral profiles, including collapsed gaps.
+The checked sharp higher-action trace gives conservation of the actual
+odd NLS Hamiltonian in the sharp H^s domain, and the independent factor-two
+restriction gives conservation of K_(s+1). The original H0 mass trace
+supplies m=1 separately, with no smoothness premise or extra regularity.
+
+Theorem 3 remains incomplete: the physical Hamiltonians still need action
+normal forms and independent frequency identification, including analytic
+continuation at closed actions. Independent canonical mKdV angles/full
+Gardner canonicity and the final angle-sum clause of Theorem 4(iii) remain
+open. Native higher-Sobolev inverse analyticity is no longer an outstanding
+dependency. The overall main-theorem goal stays active.
+
+Validation: all 490 article/shared modules have validated private outputs. The 480 unchanged prefix source hashes match 08cf309 and their outputs were reused; all ten added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 5,011 declarations/auxiliaries and the combined audit for 49,947 NLS declarations, using only the standard allowed axioms. All 493 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,656 declarations (2,166 theorems and 490 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
