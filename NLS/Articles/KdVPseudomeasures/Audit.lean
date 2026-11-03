@@ -576,6 +576,17 @@ import NLS.KdV.SingularDirichletRieszLinf
 import NLS.KdV.HminusOneDirichletProjectionConvergence
 import NLS.KdV.DirichletFreeRieszKernel
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletProjectionConvergence
+import NLS.KdV.SingularHillComplexRiesz
+import NLS.KdV.SingularHillDomainResolvent
+import NLS.KdV.SingularHillRieszDomain
+import NLS.KdV.SingularHillPhysicalL2
+import NLS.KdV.SingularHillRieszL2
+import NLS.KdV.SingularHillRieszBilinear
+import NLS.Fourier.CircleContinuousLp
+import NLS.KdV.SingularHillRieszContinuous
+import NLS.KdV.SingularHillPhysicalPairing
+import NLS.KdV.SingularHillRieszPhysicalGreen
+import NLS.Articles.KdVPseudomeasures.OriginalPeriodicRiesz
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4506,3 +4517,64 @@ import NLS.Articles.KdVPseudomeasures.OriginalDirichletProjectionConvergence
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalDirichletProjection_sub_free_small
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalDirichletProjection_cutoff_on_compact
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_normalized_originalDirichletEigenfunction_bounds
+#print axioms NLS.KdV.singularHillRieszProjection_root_inside
+#print axioms NLS.KdV.singularHillRieszProjection_root_outside
+#print axioms NLS.KdV.singularHillRieszProjection_range_eq_roots_complex
+#print axioms NLS.KdV.analyticAt_singularHillResolventToH1
+#print axioms NLS.KdV.singularHillOperator_resolvent_intertwine
+#print axioms NLS.KdV.singularHillPairing_sub_left
+#print axioms NLS.KdV.singularHillResolventToH1_bilinear
+#print axioms NLS.KdV.singularHillRieszToH1
+#print axioms NLS.KdV.singularHillRieszToH1_apply
+#print axioms NLS.KdV.singularHillRieszToH1_inclusion
+#print axioms NLS.KdV.singularHillRieszProjection_mem_domain
+#print axioms NLS.KdV.singularHillOperator_riesz_intertwine
+#print axioms NLS.KdV.singularHillDomainRieszProjection
+#print axioms NLS.KdV.isIdempotentElem_singularHillDomainRieszProjection
+#print axioms NLS.KdV.singularHillL2BaseInclusion
+#print axioms NLS.KdV.singularHillL2BaseInclusion_coefficient
+#print axioms NLS.KdV.singularHillL2BaseInclusion_injective
+#print axioms NLS.KdV.singularHillL2DomainInclusion
+#print axioms NLS.KdV.singularHillL2DomainInclusion_coefficient
+#print axioms NLS.KdV.norm_singularHillL2DomainInclusion
+#print axioms NLS.KdV.singularHillL2DomainInclusion_injective
+#print axioms NLS.KdV.singularHillL2BaseInclusion_domain
+#print axioms NLS.KdV.singularHillL2RieszProjection
+#print axioms NLS.KdV.singularHillL2RieszProjection_base
+#print axioms NLS.KdV.singularHillL2RieszProjection_domain
+#print axioms NLS.KdV.isIdempotentElem_singularHillL2RieszProjection
+#print axioms NLS.KdV.singularHillL2RieszProjection_range_base
+#print axioms NLS.KdV.singularHillL2RieszRangeEquiv
+#print axioms NLS.KdV.finiteDimensional_singularHillL2RieszProjection_range
+#print axioms NLS.KdV.finrank_singularHillL2RieszProjection_range
+#print axioms NLS.KdV.singularHillL2RieszProjection_range_roots
+#print axioms NLS.KdV.singularHillRieszToH1_bilinear
+#print axioms NLS.KdV.singularHillRieszToH1_eigenvector_inside
+#print axioms NLS.Fourier.circleContinuousToLp
+#print axioms NLS.Fourier.circleContinuousToLp_representative
+#print axioms NLS.Fourier.norm_circleContinuousToLp_le
+#print axioms NLS.KdV.singularHillContinuousDomainInclusion
+#print axioms NLS.KdV.singularHillContinuousDomainInclusion_toLp
+#print axioms NLS.KdV.singularHillContinuousRieszProjection
+#print axioms NLS.KdV.singularHillContinuousRieszProjection_toLp
+#print axioms NLS.KdV.singularHillL2RieszProjection_representative
+#print axioms NLS.KdV.singularHillLinfRieszProjection
+#print axioms NLS.KdV.singularHillLinfRieszProjection_same_ae
+#print axioms NLS.KdV.norm_singularHillLinfRieszProjection_sub_le
+#print axioms NLS.KdV.norm_singularHillL2RieszProjection_sub_le
+#print axioms NLS.KdV.norm_sq_singularHillPhysicalL2
+#print axioms NLS.KdV.singularHillL2BaseInclusion_coefficientPairing
+#print axioms NLS.KdV.norm_singularHillL2BaseInclusion_pairing_le
+#print axioms NLS.KdV.singularHillL2BaseInclusion_physical_pairing
+#print axioms NLS.KdV.singularHillDomainInclusion_physical_pairing
+#print axioms NLS.KdV.singularHillL2RieszProjection_physical_bilinear
+#print axioms NLS.Articles.KdVPseudomeasures.originalPeriodicRieszProjection
+#print axioms NLS.Articles.KdVPseudomeasures.originalPeriodicContinuousRieszProjection
+#print axioms NLS.Articles.KdVPseudomeasures.originalPeriodicLinfRieszProjection
+#print axioms NLS.Articles.KdVPseudomeasures.isIdempotentElem_originalPeriodicRieszProjection
+#print axioms NLS.Articles.KdVPseudomeasures.finiteDimensional_originalPeriodicRieszProjection_range
+#print axioms NLS.Articles.KdVPseudomeasures.finrank_originalPeriodicRieszProjection_range
+#print axioms NLS.Articles.KdVPseudomeasures.originalPeriodicRieszProjection_range_roots
+#print axioms NLS.Articles.KdVPseudomeasures.originalPeriodicLinfRieszProjection_same_ae
+#print axioms NLS.Articles.KdVPseudomeasures.originalPeriodicContinuousRieszProjection_toLp
+#print axioms NLS.Articles.KdVPseudomeasures.originalPeriodicRieszProjection_physical_bilinear

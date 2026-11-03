@@ -610,6 +610,17 @@ modules = [
     'NLS.KdV.HminusOneDirichletProjectionConvergence',
     'NLS.KdV.DirichletFreeRieszKernel',
     'NLS.Articles.KdVPseudomeasures.OriginalDirichletProjectionConvergence',
+    'NLS.KdV.SingularHillComplexRiesz',
+    'NLS.KdV.SingularHillDomainResolvent',
+    'NLS.KdV.SingularHillRieszDomain',
+    'NLS.KdV.SingularHillPhysicalL2',
+    'NLS.KdV.SingularHillRieszL2',
+    'NLS.KdV.SingularHillRieszBilinear',
+    'NLS.Fourier.CircleContinuousLp',
+    'NLS.KdV.SingularHillRieszContinuous',
+    'NLS.KdV.SingularHillPhysicalPairing',
+    'NLS.KdV.SingularHillRieszPhysicalGreen',
+    'NLS.Articles.KdVPseudomeasures.OriginalPeriodicRiesz',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

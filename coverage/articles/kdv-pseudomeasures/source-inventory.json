@@ -698,7 +698,7 @@
     }
   ],
   "remaining_obligations": [
-    "NOW PROVED: ACTUAL original Dirichlet free-projection convergence in ordinary L2-to-Linfinity, L2-to-continuous-uniform and L2 operator norms, including UNIFORM convergence on EVERY FIXED original H-minus-one compact set; exact free sine projection kernel factor TWO; source unit physical L2 normalization with uniform sup-norm and COMPLEX bilinear mass lower bounds. This completes the DIRICHLET part of (33) and its L2 input to (34). For each prescribed tolerance the original open neighborhood/cutoff are common; the neighborhood may depend on tolerance. NEXT: PERIODIC projection convergence/actual two-dimensional basis-off-diagonal 2.13, full C.4 logarithmic rates, full eta/gamma residual (31), overlap (32)/2.15, FULL COMPLEX 2.1(ii) weighted midpoint/local boundedness. Low periodic parity/interlacing, complex ratio 2.20 where used, original Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE.",
+    "NOW PROVED: ACTUAL periodic projection on ALL source-normalized physical L2 inputs, continuous/L-infinity realizations of the SAME function, full complex algebraic root-space range including associated vectors, exact native-to-physical rank transport, H1 domain preservation, literal physical complex bilinear Green symmetry and exact ONE-HALF normalization on [0,2]. Article adapter uses the LITERAL source circles; validity remains explicit. NEXT: common high periodic source-circle validity/rank TWO, actual orthonormal basis/off-diagonal eta estimate 2.13, PERIODIC convergence in (33), precise C.4 logarithmic rates, full eta/gamma residual (31), overlap (32)/2.15 and full COMPLEX weighted midpoint 2.1(ii). Previously proved actual DIRICHLET convergence/normalization remain intact. Low periodic parity/interlacing, complex ratio 2.20 where used, original Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "workspace": {
@@ -1055,6 +1055,28 @@
     "source_equation33_periodic_part_proved": false,
     "source_AppendixC4_logarithmic_rate_proved": false,
     "source_Lemma2_13_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "actual_periodic_physical_Riesz_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-physical-riesz-map.json",
+    "actual_full_complex_periodic_riesz_range": true,
+    "actual_periodic_H1_contour_lift": true,
+    "actual_full_source_L2_projection": true,
+    "actual_continuous_and_Linf_outputs": true,
+    "all_associated_vectors_retained": true,
+    "rank_equal_native": true,
+    "source_half_integral_normalization": true,
+    "physical_complex_bilinear_Green": true,
+    "literal_original_source_circle_adapter": true,
+    "uniform_high_source_circle_validity_proved": false,
+    "uniform_high_rank_two_proved": false,
+    "source_Lemma2_13_proved": false,
+    "source33_periodic_convergence_proved": false,
+    "source_AppendixC4_logarithmic_rate_proved": false,
     "source_identity31_complete": false,
     "source_overlap_bound32_proved": false,
     "source_Lemma2_15_proved": false,

@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Actual original Dirichlet free-projection convergence and physical normalization/mass bounds",
+  "phase": "Actual periodic physical L2/continuous/L-infinity contour projections, full complex algebraic ranges, H1 domain lift and physical Green pairing with exact source half-integral normalization.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -584,13 +584,24 @@
     "NLS/KdV/HminusOneDirichletProjectionConvergence.lean",
     "NLS/KdV/DirichletFreeRieszKernel.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalDirichletProjectionConvergence.lean",
+    "NLS/KdV/SingularHillComplexRiesz.lean",
+    "NLS/KdV/SingularHillDomainResolvent.lean",
+    "NLS/KdV/SingularHillRieszDomain.lean",
+    "NLS/KdV/SingularHillPhysicalL2.lean",
+    "NLS/KdV/SingularHillRieszL2.lean",
+    "NLS/KdV/SingularHillRieszBilinear.lean",
+    "NLS/Fourier/CircleContinuousLp.lean",
+    "NLS/KdV/SingularHillRieszContinuous.lean",
+    "NLS/KdV/SingularHillPhysicalPairing.lean",
+    "NLS/KdV/SingularHillRieszPhysicalGreen.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalPeriodicRiesz.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 3259,
-  "definitions": 668,
+  "proved_theorems": 3307,
+  "definitions": 681,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 3927,
+    "declarations": 3988,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -1147,10 +1158,18 @@
     "For EVERY original complex H-minus-one source and prescribed epsilon>0, ONE original norm-open neighborhood and cutoff make ALL high ACTUAL Dirichlet source projections epsilon-close to the ACTUAL free contour projection in ALL THREE physical operator norms. All circle validity, same-index isolation, simplicity, actual nonzero eigenfunction comparison and denominator bounds are PROVED; none is supplied in this convergence theorem.",
     "On EVERY FIXED COMPACT set in the original H-minus-one norm, the ACTUAL Dirichlet source projections converge UNIFORMLY to the ACTUAL free projection in ALL THREE physical operator norms. The compact set is fixed BEFORE epsilon, and one threshold works before ALL sources and ALL later original positive indices. A verified finite-cover compact-threshold theorem upgrades the prescribed-tolerance neighborhood result.",
     "The ACTUAL zero-potential source contour operator is identified pointwise on the CLOSED original interval with the literal kernel 2*(integral F(y)*sin(pi*n*y)dy)*sin(pi*n*x), for ALL physical L2 data and ALL sufficiently high original indices. The factor TWO is proved from the actual physical sine square integral ONE HALF.",
-    "The original article adapters retain the ENTIRE original complex physically period-one H-minus-one distribution, arbitrary mean allowed, and an OPEN neighborhood in the ORIGINAL ambient norm. They prove the DIRICHLET part of source (33), including genuine ordinary L2-to-essential-supremum o(1) and the ordinary L2 o(1) needed in (34), and uniform convergence on every FIXED compact original H-minus-one set. The periodic part of (33) and the fractional-Sobolev logarithmic C.4 rate remain OPEN."
+    "The original article adapters retain the ENTIRE original complex physically period-one H-minus-one distribution, arbitrary mean allowed, and an OPEN neighborhood in the ORIGINAL ambient norm. They prove the DIRICHLET part of source (33), including genuine ordinary L2-to-essential-supremum o(1) and the ordinary L2 o(1) needed in (34), and uniform convergence on every FIXED compact original H-minus-one set. The periodic part of (33) and the fractional-Sobolev logarithmic C.4 rate remain OPEN.",
+    "For EVERY original COMPLEX H-minus-one potential, the ACTUAL periodic Riesz range equals the sum of ALL enclosed original algebraic root spaces, including associated vectors. Reality, endpoint bounds and semisimplicity are not assumed. The same projection fixes enclosed root vectors and kills the full root spaces outside its closed disk.",
+    "The ACTUAL full-base periodic contour lifts into the ENTIRE original periodic H1 domain, preserves the original partial-operator domain and intertwines the actual unbounded expression. Its H1 restriction is a genuine idempotent. Energy analyticity and complex bilinear Green symmetry are proved for the ACTUAL full H1 resolvent and contour lift.",
+    "ALL source-normalized period-two physical L2 data have a faithful inclusion in the FULL original H-minus-one base; ALL original H1 vectors have a faithful physical L2 realization. Every original raw coefficient is retained, and the physical-domain inclusion composes to EXACTLY the native original domain inclusion. No physical period-one or smaller operator-domain condition is imposed on L2 inputs.",
+    "The ACTUAL periodic projection is CONSTRUCTED on the ENTIRE source physical L2 space, from the SAME original contour lift. It intertwines the actual base/domain projections, is idempotent on valid circles, and has finite-dimensional range LINEARLY EQUIVALENT to the ENTIRE original native algebraic range. Algebraic rank and ALL complex associated vectors are preserved.",
+    "Continuous representatives and genuine essential-supremum outputs of the SAME ACTUAL periodic projection are CONSTRUCTED. Their L2 classes are exactly the original projection outputs; L-infinity and L2 outputs are the SAME functions almost everywhere. Continuous-to-Lp inclusions for EVERY 1<=p<=infinity have norm at most ONE under source probability normalization. Both L2 and L-infinity projection-difference norms are bounded by the continuous-output operator difference with constant ONE.",
+    "The physical periodic L2 norm squared is EXACTLY ONE HALF the integral of the norm squared over [0,2]. The full original dual evaluation on ALL physical L2 inputs and original H1 tests is EXACTLY ONE HALF the unconjugated physical product integral over [0,2], with Cauchy-Schwarz constant ONE. The same identity holds for original domain masses.",
+    "The ACTUAL periodic L2 projection preserves the literal physical complex BILINEAR integral pairing. The result holds for ALL original complex H-minus-one potentials and ALL physical L2 inputs on every valid circle. No Hermitian self-adjointness assertion for complex potentials is used.",
+    "The article periodic P_(n,q), continuous-output and L-infinity-output operators are defined on the LITERAL original source circle |z-(pi*n)^2|=n, from the ENTIRE original complex physically period-one H-minus-one distribution. On valid source circles the same actual idempotence, finite rank, algebraic-root-space correspondence, physical Green symmetry and a.e. agreement are proved. Source-circle validity and high-energy rank TWO are NOT supplied by these construction theorems."
   ],
-  "source_correspondence": "NOW PROVED: ACTUAL source Dirichlet projections converge to the ACTUAL free source contour projection in ordinary physical L2-to-essential-supremum, L2-to-continuous-uniform and L2 operator norms; for each tolerance a common original norm-open neighborhood/cutoff, and genuinely UNIFORM convergence on EVERY FIXED original H-minus-one norm-compact set. The neighborhood may depend on tolerance; no fixed-H-minus-one-neighborhood uniform limit is inferred. Exact free physical sine kernel factor TWO, raw sine square integral ONE HALF, source unit-L2 normalization, sup-norm <=4 and actual COMPLEX bilinear mass >=1/16 are proved. This completes the DIRICHLET part of source (33) and its L2 input to (34). REMAINING: periodic part (33)/actual periodic basis-off-diagonal 2.13, explicit C.4 fractional-Sobolev logarithmic rates, full eta/gamma (31), overlap (32)/2.15, full complex weighted midpoint 2.1(ii), low periodic parity/interlacing, complex ratio 2.20 where used, original Birkhoff maps and actual KdV approximation flow. All five main theorems remain unproved; Appendix B remains complete.",
-  "build_isolation": "Eight new modules prove exact unit-interval continuous-to-Lp contractions including infinity; actual native free sine realization with exact physical bilinear mass one half; uniform physical L2/sup/mass bounds and source unit-L2 normalization from the actual sine comparison; explicit 40*delta bound for the ACTUAL source projection minus the ACTUAL zero-potential contour operator; faithful ordinary essential-supremum and L2 realizations; actual source-projection convergence in all three physical operator norms, including genuine uniform convergence on every FIXED compact H-minus-one set; exact actual free factor-two sine kernel; original complex distribution adapters and uniform normalized eigenfunction/mass bounds. All eight freshly compiled in dependency order. Exact full audit of 579 selected modules and 3927 theorem/definition declarations passed without warnings or suggestions. All 570 baseline non-Audit Lean sources remain byte-identical to private commit 71e159a. Canonical sources, build outputs and shared Git metadata remain read-only; commits use separate private metadata.",
+  "source_correspondence": "NOW PROVED: ACTUAL periodic projection on ALL source-normalized physical L2 inputs, continuous/L-infinity realizations of the SAME function, full complex algebraic root-space range including associated vectors, exact native-to-physical rank transport, H1 domain preservation, literal physical complex bilinear Green symmetry and exact ONE-HALF normalization on [0,2]. Article adapter uses the LITERAL source circles; validity remains explicit. NEXT: common high periodic source-circle validity/rank TWO, actual orthonormal basis/off-diagonal eta estimate 2.13, PERIODIC convergence in (33), precise C.4 logarithmic rates, full eta/gamma residual (31), overlap (32)/2.15 and full COMPLEX weighted midpoint 2.1(ii). Previously proved actual DIRICHLET convergence/normalization remain intact. Low periodic parity/interlacing, complex ratio 2.20 where used, original Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
+  "build_isolation": "Actual periodic physical L2/continuous/L-infinity contour projections, full complex algebraic ranges, H1 domain lift and physical Green pairing with exact source half-integral normalization. All compiler/source/Git milestone writes are private; canonical sources/build/shared Git metadata are read-only.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -1552,7 +1571,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "e2652b4f8f5471723e6f283a509b7e1ec38e6d132294958f7f72ce08dfb3f594",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "07f2b30fc64e7208bac8c850d61278db73fc7e483a81323237f9106aa3df62c7",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -1734,7 +1753,18 @@
     "NLS/KdV/SingularDirichletRieszLinf.lean": "6d1f64391e333952a06e8095c0c14fe9f99e3bd5f5e8e14308883f7e82b258d0",
     "NLS/KdV/HminusOneDirichletProjectionConvergence.lean": "b46320782d68f1897c4b67f09a5b82ccaad0bf18521844f4508f95fa309e8450",
     "NLS/KdV/DirichletFreeRieszKernel.lean": "820d6e78ebe6d79e143a3534ef84dd287f99de57c1bdc68d5baf3abcb5f588f4",
-    "NLS/Articles/KdVPseudomeasures/OriginalDirichletProjectionConvergence.lean": "b8cfa37d002378c928c6b2c573460f05acc50d75a70f0d9e2c85cea63b0c674b"
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletProjectionConvergence.lean": "b8cfa37d002378c928c6b2c573460f05acc50d75a70f0d9e2c85cea63b0c674b",
+    "NLS/KdV/SingularHillComplexRiesz.lean": "7919760adc0b3b38e1b26a418cf7399504f8af9623aa55e705197945db181d87",
+    "NLS/KdV/SingularHillDomainResolvent.lean": "420585a1c32a7fd902841112cdee38328b962a5bbbfcd8f8337af3fec818c7ce",
+    "NLS/KdV/SingularHillRieszDomain.lean": "69a4faa5a899917d43d3f2dfc77b38e33b40ea35fa8de78e83e993a143409b5e",
+    "NLS/KdV/SingularHillPhysicalL2.lean": "7f82539058a5da49096403cc168d156661380a4f55a4a91235d6403aa68cd49a",
+    "NLS/KdV/SingularHillRieszL2.lean": "aa7d95f8423fcb3a49f078ffcfec0980b63acb65e7b65866f112ab35e418b9a9",
+    "NLS/KdV/SingularHillRieszBilinear.lean": "de0dadda414968f3e95c46aaf28b88e0b5b69323e0ca07e7c2a871aa55d2a89f",
+    "NLS/Fourier/CircleContinuousLp.lean": "63b2ec5573d1f9157f57d5a0c5177a5255e0cf4a9a14deb4c69af257a3995e36",
+    "NLS/KdV/SingularHillRieszContinuous.lean": "bc503cc0153ccface24e34eb2b0808075634c90967e07cca6d644323a9b66eb5",
+    "NLS/KdV/SingularHillPhysicalPairing.lean": "555dda6cef37ebcdd2305200504988ff09d2b91dd895ae39cea2cbb212a75ee2",
+    "NLS/KdV/SingularHillRieszPhysicalGreen.lean": "a42813f87d10c103f84701fa1a1ee8427d182d9a74d9d15ba92577137fcb88ce",
+    "NLS/Articles/KdVPseudomeasures/OriginalPeriodicRiesz.lean": "c1d713fbee5e60893b10d1de6ed9821f707cb6f3cbe399e5d2a2e0678902b684"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1742,17 +1772,12 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 3901,
-    "newly_checked_declarations_this_continuation": 26,
-    "newly_authored_or_adapted_declarations_this_continuation": 26,
-    "new_theorems": 23,
-    "new_definitions": 3,
-    "new_type_aliases": 1,
-    "authored_or_adapted_theorems": 23,
-    "authored_or_adapted_definitions": 3,
-    "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 3927,
-    "reuse": "Actual full-complex original native Dirichlet source circles, intrinsic labels, Riesz kernels and strong operator comparison; NEW preceding phase-fixed actual native sine comparison; original physical L2 equivalence, native bilinear pairing, compact threshold finite-cover theorem; ordinary Lp and interval sine integral library."
+    "previous_checked_declarations": 3927,
+    "newly_checked_declarations_this_continuation": 61,
+    "new_theorems": 48,
+    "new_definitions": 13,
+    "total_checked_declarations": 3988,
+    "reuse": "Original periodic native resolvent/Riesz framework, endpoint complex generalized-vector argument adapted to every original complex H-minus-one source, full Sobolev duality and synthesis, normalized physical arbitrary-period Parseval, continuous-to-Lp library. No supplied convergence property or assumed two-dimensional range."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -1781,7 +1806,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-dirichlet-projection-convergence.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-periodic-physical-riesz.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -2001,13 +2026,14 @@
     "Six new modules prove arbitrarily small full-complex canonical frequency disks, squared-energy isolation geometry, locally uniform original H-minus-one Dirichlet o(n) displacement, actual literal source-circle validity and same-index closed-disk isolation, original distribution adapters, and uniform actual physical L2 rank-one Riesz projections with normalized range and projected residual. All six freshly compiled in dependency order; exact full audit of 556 selected modules and 3853 theorem/definition declarations passed without warnings or suggestions. All 549 baseline non-Audit Lean sources remain byte-identical to private commit 2cb12d8.",
     "Eight new modules prove full native Green symmetry of the actual Dirichlet resolvent and contour lift, nonzero bilinear mass at actual simple isolated complex roots, exact full-dual rank-one coefficient, literal physical L2 pairings with exact Holder constant one, the identical continuous representative inclusion, actual L2-to-uniform contour projection/kernel/bound, quantitative comparison of actual projections from physical eigenfunction errors, and uniform original source-circle physical kernels. All eight freshly compiled in dependency order. Exact audit of 564 selected modules and 3880 theorem/definition declarations passed without warnings or suggestions. All 555 baseline non-Audit Lean sources remain byte-identical to private commit 5b3f45a.",
     "Seven new modules prove exact real-spectral-gauge preservation of physical L2 budgets/distances; classical and full physical-L2 solution stability controlled ONLY by imaginary height; exact physical H1 realization and density in ALL physical L2 data; locally uniform high-frequency full fundamental-solution comparison in the closed-interval uniform norm; a phase-fixed actual native nonzero Dirichlet eigenfunction from the physical Dirac column; and locally uniform convergence of ACTUAL original-index native Dirichlet eigenfunctions to the literal free sine on original complex H-minus-one neighborhoods. All seven freshly compiled in dependency order. Exact full audit of 571 selected modules and 3901 theorem/definition declarations passed without warnings or suggestions. All 563 baseline non-Audit Lean sources remain byte-identical to private commit 8bbab8e.",
-    "Eight new modules prove exact unit-interval continuous-to-Lp contractions including infinity; actual native free sine realization with exact physical bilinear mass one half; uniform physical L2/sup/mass bounds and source unit-L2 normalization from the actual sine comparison; explicit 40*delta bound for the ACTUAL source projection minus the ACTUAL zero-potential contour operator; faithful ordinary essential-supremum and L2 realizations; actual source-projection convergence in all three physical operator norms, including genuine uniform convergence on every FIXED compact H-minus-one set; exact actual free factor-two sine kernel; original complex distribution adapters and uniform normalized eigenfunction/mass bounds. All eight freshly compiled in dependency order. Exact full audit of 579 selected modules and 3927 theorem/definition declarations passed without warnings or suggestions. All 570 baseline non-Audit Lean sources remain byte-identical to private commit 71e159a."
+    "Eight new modules prove exact unit-interval continuous-to-Lp contractions including infinity; actual native free sine realization with exact physical bilinear mass one half; uniform physical L2/sup/mass bounds and source unit-L2 normalization from the actual sine comparison; explicit 40*delta bound for the ACTUAL source projection minus the ACTUAL zero-potential contour operator; faithful ordinary essential-supremum and L2 realizations; actual source-projection convergence in all three physical operator norms, including genuine uniform convergence on every FIXED compact H-minus-one set; exact actual free factor-two sine kernel; original complex distribution adapters and uniform normalized eigenfunction/mass bounds. All eight freshly compiled in dependency order. Exact full audit of 579 selected modules and 3927 theorem/definition declarations passed without warnings or suggestions. All 570 baseline non-Audit Lean sources remain byte-identical to private commit 71e159a.",
+    "Actual periodic physical L2/continuous/L-infinity contour projections, full complex algebraic ranges, H1 domain lift and physical Green pairing with exact source half-integral normalization."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-projection-convergence-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-physical-riesz-map.json",
   "baseline_validated_snapshot": {
-    "commit": "71e159a3d494a4da5153951aaea54d0b1735c257",
-    "modules": 571,
-    "audited_declarations": 3901,
+    "commit": "1d983af4111c0d1cc9a820d6f5d4a6267a11f983",
+    "modules": 579,
+    "audited_declarations": 3927,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   }
