@@ -1,0 +1,109 @@
+{
+  "source": "arXiv:1610.00278v1, original-domain compactness and isospectral dependencies for Lemma 2.21 and Theorem 2.2(iii)",
+  "date": "2026-11-03",
+  "status": "full original H-minus-one compactness proved; endpoint compactness remains open",
+  "modules": [
+    "NLS/KdV/HminusOneMiuraIsospectral.lean",
+    "NLS/KdV/HminusOneMiuraCompactness.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean",
+    "NLS/Fourier/PeriodicPhysicalSourceClosed.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean"
+  ],
+  "declarations": [
+    "NLS.KdV.hillMiuraRealSource",
+    "NLS.KdV.zero_not_mem_periodicSpectrum_of_shifted_miura",
+    "NLS.KdV.singularHillAlgebraicMultiplicity_shifted_miura_all",
+    "NLS.KdV.hillMiuraRealSource_mem_isospectral_of_shifted_images",
+    "NLS.KdV.isClosed_periodOneRealL2_locus",
+    "NLS.KdV.isClosedEmbedding_hillMiuraRealSource",
+    "NLS.KdV.isCompact_hillMiuraRealSource_isospectral_preimage",
+    "NLS.KdV.isCompact_shiftedMiura_image_of_dirac_isospectral",
+    "NLS.Articles.KdVPseudomeasures.exists_originalIsospectral_lifts_in_one_dirac_isospectral_set",
+    "NLS.Articles.KdVPseudomeasures.originalHillDiscriminant_eq_of_isospectral",
+    "NLS.Articles.KdVPseudomeasures.mem_originalIsospectralSet_iff_discriminant_eq",
+    "NLS.Fourier.PeriodicFourierLebesgue.continuous_originalSobolevCoefficient",
+    "NLS.Fourier.PeriodicFourierLebesgue.isClosed_realMeanZeroPeriodOneSource",
+    "NLS.Articles.KdVPseudomeasures.continuous_originalHillDiscriminant_potential",
+    "NLS.Articles.KdVPseudomeasures.isClosed_originalIsospectralSet",
+    "NLS.Articles.KdVPseudomeasures.isClosedEmbedding_originalHminusOnePotential",
+    "NLS.Articles.KdVPseudomeasures.isCompact_originalIsospectralSet"
+  ],
+  "results": [
+    "The exact shifted physical trace excludes zero Dirac frequency whenever its corresponding Hill energy lies outside the actual full original spectrum. This removes the zero-frequency exception from the actual Miura multiplicity identity.",
+    "At one common outside-spectrum shift, real Miura lifts of full original isospectral Hill potentials belong to one ACTUAL real Dirac sourceIsospectralSet, retaining both periodic spectra and every algebraic multiplicity, including frequency zero.",
+    "Every member of the ENTIRE original H-minus-one isospectral set has a bounded real L2 Miura lift at one common arbitrarily large shift, and all these lifts lie in one actual Dirac isospectral set.",
+    "Full original isospectrality is equivalent to equality of the actual normalized physical Hill discriminants as functions on ALL complex energies. Equality includes the normalization and sign, not just the characteristic zero set.",
+    "Real scalar diagonal source insertion is a closed embedding. Its preimage of an ACTUAL real Hilbert Dirac isospectral set is compact in the scalar L2 topology. The literal shifted rough Miura image is therefore compact in the entire unit-period H-minus-one norm.",
+    "Reality, mean zero and physical period one form a norm-closed locus in every original period-two Fourier-Lebesgue space at every real order and every Banach exponent, including infinity. The entire physical distribution and exact Fourier convention are retained.",
+    "The entire original potential domain explicitly carries the topology induced by the unchanged original H-minus-one norm. In this topology the full original isospectral set is closed, and the source-domain inclusion is a closed embedding.",
+    "The ENTIRE original real mean-zero physical period-one H-minus-one isospectral set is compact in the unchanged original H-minus-one norm, with NO endpoint regularity premise. The proof uses the actually constructed source Hilbert Birkhoff theorem through sourceHilbertIsospectralSet_compact_connected, not a freely supplied Birkhoff data structure."
+  ],
+  "topology_and_quantifier_review": [
+    "The actual original isospectral set is unchanged: all original real mean-zero physical period-one H-minus-one potentials whose full actual algebraic multiplicities agree at every complex energy.",
+    "The new TopologicalSpace instance on OriginalHminusOnePotential is exactly the subspace topology of the original period-two FourierLebesgueSpace(2,-1,2) norm. It is NOT the target endpoint weak-star topology of Theorem 2.2(iii).",
+    "One positive shift and one reference real diagonal Dirac source are chosen before all original isospectral members. The shift lies below the common lowest physical energy, which justifies the zero-frequency exclusion.",
+    "The compact covering Miura image may contain additional potentials. The actual original isospectral set is proved CLOSED in the original norm and then proved a closed subset of that compact image. No equality with an enlarged set is assumed.",
+    "The physical closed-locus theorem retains every real Sobolev order and every p>=1, including infinity, with the exact period-two modes and physical period-one constraint.",
+    "No compactness or boundedness in a stronger norm is inferred merely from original H-minus-one compactness or pointwise stronger membership."
+  ],
+  "verified_library_reuse": {
+    "module": "NLS.ZakharovShabat.SourceHilbertIsospectralConnected",
+    "declaration": "NLS.ZakharovShabat.sourceHilbertIsospectralSet_compact_connected",
+    "existence_input": "NLS.ZakharovShabat.exists_sourceBirkhoffMap_complex_analytic",
+    "use": "The verified theorem constructs actual source Birkhoff data and derives compactness; no Birkhoff-data parameter is added to the article statements.",
+    "read_only_reference_olean": true,
+    "transitive_axioms_checked": true
+  },
+  "source_Lemma2_21_proved": false,
+  "source_Theorem2_2_i_proved": true,
+  "source_Theorem2_2_ii_proved": true,
+  "source_Theorem2_2_iii_proved": false,
+  "full_original_HminusOne_norm_compactness_proved": true,
+  "uniform_original_endpoint_bound_proved": false,
+  "essential_remaining": [
+    "Lemma 2.21 requires the uniform ENDPOINT Fourier-Lebesgue norm bound under the endpoint gap hypothesis. Original H-minus-one compactness alone does not give that bound.",
+    "Prove compactness in a suitable stronger original finite-p space or prove a direct uniform weighted inverse estimate, then apply the existing uniform endpoint bootstrap and Appendix B transfer.",
+    "The inspected SourceSection14WeightedMembership explicitly does not establish weighted local/global inverse analyticity. SourceBirkhoffSobolevRegularity gives membership, which is not enough to infer stronger compactness.",
+    "Candidate next route: promote the verified forced weighted Fourier-tail recurrence to compact families using its existing local uniform center-forgetting, center-gap and remainder estimates. Apply a supremum tail envelope tending uniformly to zero, transfer gap-tail summability, then obtain uniform weighted norms and slightly weaker weighted compactness by compact inclusion. This route is not yet proved.",
+    "Main Theorems 1.1, 1.3, 1.4, 5.1 and 5.9 remain unproved, as do the remaining original Dirichlet comparison, actual original KdV Birkhoff construction and actual rough KdV flow."
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "cec2f2e729c09c0701b696c792cf3c0c533a44c3",
+    "baseline_modules": 392,
+    "baseline_declarations": 3083,
+    "baseline_sources_verified_unchanged": true,
+    "new_modules_compiled": 5,
+    "modules_in_exact_inventory": 397,
+    "audited_declarations": 3100,
+    "theorems": 2550,
+    "definitions": 550,
+    "new_theorems": 16,
+    "new_definitions": 1,
+    "new_explicit_topology_instances": 1,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-original-hminus-compactness.log"
+  },
+  "output_sha256": {
+    "NLS/KdV/HminusOneMiuraIsospectral.lean": "7b23fb87f366e0adc28ea39ebf0c8ecd2f004fd86d1f28a9fd73b7e999859e4c",
+    "NLS/KdV/HminusOneMiuraCompactness.lean": "ae6f2c5d01fc740c3f05fcd730bfcc609cb905cdf16e116751a8947d6411273f",
+    "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
+    "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
+    "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946"
+  },
+  "canonical_checkout_written": false,
+  "canonical_head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "main_theorems_verified": false,
+  "workspace_decision": "pending; all changes and compiler outputs remain private",
+  "push_attempted": false,
+  "push_status": "Earlier automatic approval review rejected export to git@github.com:janbernloehr/diss-lean.git without direct trusted destination authorization. The destination question remains pending; no retry or bypass attempted."
+}

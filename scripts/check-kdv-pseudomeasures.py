@@ -423,6 +423,11 @@ modules = [
     'NLS.KdV.SingularHillPotentialBound',
     'NLS.SequenceSpaces.PeriodOneMiuraUniformRealLift',
     'NLS.Articles.KdVPseudomeasures.OriginalHillRayleigh',
+    'NLS.KdV.HminusOneMiuraIsospectral',
+    'NLS.KdV.HminusOneMiuraCompactness',
+    'NLS.Articles.KdVPseudomeasures.OriginalIsospectralMiura',
+    'NLS.Fourier.PeriodicPhysicalSourceClosed',
+    'NLS.Articles.KdVPseudomeasures.OriginalHminusOneCompactness',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

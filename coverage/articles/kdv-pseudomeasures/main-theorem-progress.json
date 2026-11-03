@@ -149,11 +149,28 @@
       "NLS.Articles.KdVPseudomeasures.norm_originalPotential_le_lowest_label",
       "NLS.Articles.KdVPseudomeasures.norm_original_isospectral_le_lowest_label",
       "NLS.Articles.KdVPseudomeasures.originalIsospectralSet_hminusOne_norm_bounded",
-      "NLS.Articles.KdVPseudomeasures.exists_uniform_real_originalIsospectral_Miura_shift"
+      "NLS.Articles.KdVPseudomeasures.exists_uniform_real_originalIsospectral_Miura_shift",
+      "NLS.KdV.hillMiuraRealSource",
+      "NLS.KdV.zero_not_mem_periodicSpectrum_of_shifted_miura",
+      "NLS.KdV.singularHillAlgebraicMultiplicity_shifted_miura_all",
+      "NLS.KdV.hillMiuraRealSource_mem_isospectral_of_shifted_images",
+      "NLS.KdV.isClosed_periodOneRealL2_locus",
+      "NLS.KdV.isClosedEmbedding_hillMiuraRealSource",
+      "NLS.KdV.isCompact_hillMiuraRealSource_isospectral_preimage",
+      "NLS.KdV.isCompact_shiftedMiura_image_of_dirac_isospectral",
+      "NLS.Articles.KdVPseudomeasures.exists_originalIsospectral_lifts_in_one_dirac_isospectral_set",
+      "NLS.Articles.KdVPseudomeasures.originalHillDiscriminant_eq_of_isospectral",
+      "NLS.Articles.KdVPseudomeasures.mem_originalIsospectralSet_iff_discriminant_eq",
+      "NLS.Fourier.PeriodicFourierLebesgue.continuous_originalSobolevCoefficient",
+      "NLS.Fourier.PeriodicFourierLebesgue.isClosed_realMeanZeroPeriodOneSource",
+      "NLS.Articles.KdVPseudomeasures.continuous_originalHillDiscriminant_potential",
+      "NLS.Articles.KdVPseudomeasures.isClosed_originalIsospectralSet",
+      "NLS.Articles.KdVPseudomeasures.isClosedEmbedding_originalHminusOnePotential",
+      "NLS.Articles.KdVPseudomeasures.isCompact_originalIsospectralSet"
     ]
   },
   "essential_open_obligations": [
-    "Source Theorem 2.2(i)-(ii) is proved on the entire original H-minus-one domain. The new full-domain Rayleigh inequality, uniform H-minus-one bound on the ENTIRE original isospectral set and common real shifted Miura lifts are proved. REMAINING: the UNIFORM ENDPOINT norm bound of Lemma 2.21, the needed compact original finite-p realization or a direct replacement, and source Theorem 2.2(iii). Neither individual endpoint membership nor the new H-minus-one bound alone proves the endpoint bound.",
+    "Source Theorem 2.2(i)-(ii) is proved on the entire original H-minus-one domain. The full-domain Rayleigh inequality, uniform H-minus-one bound, common real shifted Miura lifts, complete Dirac isospectral transport including frequency zero, and COMPACTNESS of the ENTIRE original isospectral set in its original H-minus-one norm are now proved. REMAINING: stronger original finite-p compactness or a uniform weighted inverse estimate, the UNIFORM ENDPOINT norm bound of Lemma 2.21, and source Theorem 2.2(iii). H-minus-one compactness and pointwise stronger membership do not by themselves establish those stronger conclusions.",
     "Complete original periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source2.1(ii). General-weight direct2.1(i),endpoint2.18-2.19,REAL2.20,uniform bootstrap,cross-order labels/gaps,bounded weak-star label continuity/closed spectral fibers and all AppendixB clauses remain proved. General complex-ratio2.20 remains open.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
@@ -585,6 +602,16 @@
     "uniform_original_HminusOne_norm_bound": true,
     "one_common_real_Miura_shift_and_L2_bound": true,
     "uniform_original_endpoint_norm_bound": false,
+    "source2_2_iii": false
+  },
+  "verified_original_HminusOne_compactness": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-hminus-one-compactness-map.json",
+    "zero_frequency_Miura_transport": true,
+    "one_actual_Dirac_isospectral_set": true,
+    "normalized_full_discriminant_characterization": true,
+    "full_original_HminusOne_norm_compactness": true,
+    "stronger_finite_p_compactness": false,
+    "uniform_endpoint_norm_bound": false,
     "source2_2_iii": false
   }
 }

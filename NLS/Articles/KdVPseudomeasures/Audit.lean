@@ -389,6 +389,11 @@ import NLS.KdV.SingularHillRayleigh
 import NLS.KdV.SingularHillPotentialBound
 import NLS.SequenceSpaces.PeriodOneMiuraUniformRealLift
 import NLS.Articles.KdVPseudomeasures.OriginalHillRayleigh
+import NLS.KdV.HminusOneMiuraIsospectral
+import NLS.KdV.HminusOneMiuraCompactness
+import NLS.Articles.KdVPseudomeasures.OriginalIsospectralMiura
+import NLS.Fourier.PeriodicPhysicalSourceClosed
+import NLS.Articles.KdVPseudomeasures.OriginalHminusOneCompactness
 
 /-! Exact declaration and axiom audit for the private article dependency view. -/
 
@@ -3475,3 +3480,20 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillRayleigh
 #print axioms NLS.Articles.KdVPseudomeasures.norm_original_isospectral_le_lowest_label
 #print axioms NLS.Articles.KdVPseudomeasures.originalIsospectralSet_hminusOne_norm_bounded
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_real_originalIsospectral_Miura_shift
+#print axioms NLS.KdV.hillMiuraRealSource
+#print axioms NLS.KdV.zero_not_mem_periodicSpectrum_of_shifted_miura
+#print axioms NLS.KdV.singularHillAlgebraicMultiplicity_shifted_miura_all
+#print axioms NLS.KdV.hillMiuraRealSource_mem_isospectral_of_shifted_images
+#print axioms NLS.KdV.isClosed_periodOneRealL2_locus
+#print axioms NLS.KdV.isClosedEmbedding_hillMiuraRealSource
+#print axioms NLS.KdV.isCompact_hillMiuraRealSource_isospectral_preimage
+#print axioms NLS.KdV.isCompact_shiftedMiura_image_of_dirac_isospectral
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalIsospectral_lifts_in_one_dirac_isospectral_set
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillDiscriminant_eq_of_isospectral
+#print axioms NLS.Articles.KdVPseudomeasures.mem_originalIsospectralSet_iff_discriminant_eq
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.continuous_originalSobolevCoefficient
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.isClosed_realMeanZeroPeriodOneSource
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalHillDiscriminant_potential
+#print axioms NLS.Articles.KdVPseudomeasures.isClosed_originalIsospectralSet
+#print axioms NLS.Articles.KdVPseudomeasures.isClosedEmbedding_originalHminusOnePotential
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_originalIsospectralSet
