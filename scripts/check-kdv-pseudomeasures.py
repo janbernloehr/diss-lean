@@ -669,6 +669,11 @@ modules = [
     'NLS.KdV.HillStrongSobolevDomain',
     'NLS.KdV.SingularHillL2EigenProjection',
     'NLS.Articles.KdVPseudomeasures.PeriodicFreeModeLowerBound',
+    'NLS.KdV.HillEndpointResonantBounds',
+    'NLS.KdV.HillEndpointInverseResonance',
+    'NLS.KdV.HillReducedCouplingNorm',
+    'NLS.KdV.HillEndpointEtaBound',
+    'NLS.Articles.KdVPseudomeasures.PeriodicEtaBound',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

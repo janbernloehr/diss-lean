@@ -1,7 +1,7 @@
 {
   "source": "arXiv:1610.00278v1, periodic part of (33), Appendix C.4(i), literal free Fourier projector P_n; dependencies toward source 2.14, quantitative 2.13, overlap (32)/2.15 and complex Theorem 2.1(ii)",
   "date": "2026-11-03",
-  "status": "Periodic contour convergence/C.4(i), full native normalized factorization and source 2.14 are now proved. The source 2.14 followup retains the FULL printed radius-12n strip and all original Banach-exponent eigenfunction domains; see periodic-free-mode-lower-map.json. Quantitative eta 2.13, Dirichlet C.4(ii) rate and main theorems remain OPEN.",
+  "status": "FULL source Lemmas2.13 and2.14 are proved, including the actual canonical eta identity and constant16 quantitative bound. See periodic-eta-bound-map.json for its exact source correspondence and validation. Full(31),(32)/2.15, Dirichlet C.4(ii) rate and main theorems remain OPEN.",
   "modules": [
     "NLS/KdV/HillNormalizedFreeInverse.lean",
     "NLS/KdV/SingularHillContinuousResolvent.lean",
@@ -74,8 +74,8 @@
     "source_AppendixC4_logarithmic_rate_proved": false,
     "source33_periodic_convergence_proved": true,
     "source_Lemma2_14_proved": true,
-    "source_Lemma2_13_eta_bound_proved": false,
-    "source_Lemma2_13_complete": false,
+    "source_Lemma2_13_eta_bound_proved": true,
+    "source_Lemma2_13_complete": true,
     "source_identity31_complete": false,
     "source_overlap_bound32_proved": false,
     "source_Lemma2_15_proved": false,
@@ -83,8 +83,8 @@
     "main_theorems_verified": false
   },
   "essential_remaining": [
-    "Prove QUANTITATIVE source eta bound 2.13, retaining constant 16 and ACTUAL canonical labels/couplings/normalized orthonormal basis. Its exact eta/gamma IDENTITY and source 2.14 are now PROVED. A private next-proof plan uses the actual inverse-family resonant errors and max-pair norm, with all unproved steps explicitly marked as unproved.",
-    "Use the already PROVED periodic and Dirichlet parts of source (33), their actual free kernels and normalized original spectral bases for full residual (31), overlap (32) and source 2.15. The quantitative Dirichlet C.4(ii) RATE remains OPEN; periodic C.4(i) is complete.",
+    "Construct the ACTUAL high spectral-range boundary-zero vector and its faithful zero-trace interval H1 restriction, with original period-one/antiperiod-one source parity and exact physical L2 normalization. Then prove the full periodic-to-Dirichlet residual and actual Dirichlet projection identity (31). Verify the printed coefficients: for G=alpha*f+beta*phi, the proved eta equation algebraically gives beta*eta*f-beta*gamma*phi, so beta is required on BOTH terms of the restricted/projected residual.",
+    "Use the already PROVED actual periodic and Dirichlet source-projection convergence, their exact literal free kernels and normalized source eigenfunctions to prove overlap (32) and full source 2.15. The precise Dirichlet C.4(ii) RATE remains OPEN; periodic C.4(i) is complete.",
     "Complete the full COMPLEX weighted midpoint estimate 2.1(ii), remaining low periodic parity/interlacing and complex ratio 2.20 where used, original Birkhoff maps and actual KdV approximation-flow constructions. All five MAIN theorems 1.1, 1.3, 1.4, 5.1 and 5.9 remain UNPROVED; goal ACTIVE."
   ],
   "source_correspondence": {
@@ -96,7 +96,7 @@
     "cutoff": "One cutoff for EACH FIXED original Sobolev or endpoint norm ball is chosen BEFORE EVERY potential in that ball, ALL later ORIGINAL positive n and ALL contour parameters. In sourcePeriodicProjection_appendixC4 it is also chosen ABOVE ANY supplied earlier spectral cutoff Nmin, with C chosen before R and Nmin.",
     "source_cutoff_qualification": "C.4 introduces N-prime and then prints n>=N in its displayed prose. The formal quantitative statement uses the new cutoff, and explicitly permits it above ANY earlier cutoff. No bound below the newly proved cutoff is claimed.",
     "endpoint_transfer": "For original endpoint predual s in [0,1/2), rho=3/4+s/2 lies below one and has strict finite-p threshold 2*(rho-s)>1. A genuine bounded ORIGINAL distribution inclusion gives a fixed H^(-rho) norm-ball bound from each fixed ORIGINAL endpoint norm ball. Its native H-minus-one potential equals sourceComplexHminusOne as an ENTIRE original distribution.",
-    "not_claimed": "Quantitative eta 2.13, full (31), overlap (32)/2.15, precise Dirichlet C.4(ii) rate and all main theorems remain OPEN. Source 2.14 is now PROVED on the full printed radius-12n strip and all original Banach-exponent eigenfunction domains; see actual_free_mode_lower_followup."
+    "not_claimed": "Full(31), overlap(32)/2.15, quantitative Dirichlet C.4(ii) rate and all main theorems remain OPEN. Source2.13 eta identity AND constant16 bound are now PROVED; see actual_eta_bound_followup."
   },
   "validation": {
     "result": "passed",
@@ -170,5 +170,30 @@
     "source_Theorem2_1_ii_proved": false,
     "main_theorems_verified": false
   },
-  "validation_scope": "The validation object records this earlier milestone. actual_free_mode_lower_followup links the later 4207-declaration audited source 2.14 milestone."
+  "validation_scope": "The validation object records this earlier milestone. actual_eta_bound_followup links the later4218-declaration audited full source2.13 milestone.",
+  "actual_eta_bound_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-eta-bound-map.json",
+    "original_physical_L2_controls_all_shifted_endpoint_norms": true,
+    "actual_inverse_both_resonant_errors_proved": true,
+    "actual_common_diagonal_reduced_matrix_proved": true,
+    "actual_reduced_matrix_norm_at_determinant_zero_proved": true,
+    "native_eta_constant_sixteen_proved": true,
+    "any_normalized_original_pair_eta_bound": true,
+    "actual_canonical_labels_and_couplings_retained": true,
+    "actual_full_spectral_orthonormal_basis_retained": true,
+    "coincident_roots_and_complex_associated_vectors_included": true,
+    "both_basis_vectors_same_original_stronger_distribution": true,
+    "source_physical_L2_normalization_preserved": true,
+    "uniform_on_every_fixed_original_endpoint_norm_ball": true,
+    "cutoff_above_any_supplied_prior_cutoff": true,
+    "source_Lemma2_13_eta_identity_proved": true,
+    "source_Lemma2_13_eta_bound_proved": true,
+    "source_Lemma2_13_complete": true,
+    "source_Lemma2_14_proved": true,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
 }

@@ -635,6 +635,11 @@ import NLS.Fourier.PeriodicExponentInclusion
 import NLS.KdV.HillStrongSobolevDomain
 import NLS.KdV.SingularHillL2EigenProjection
 import NLS.Articles.KdVPseudomeasures.PeriodicFreeModeLowerBound
+import NLS.KdV.HillEndpointResonantBounds
+import NLS.KdV.HillEndpointInverseResonance
+import NLS.KdV.HillReducedCouplingNorm
+import NLS.KdV.HillEndpointEtaBound
+import NLS.Articles.KdVPseudomeasures.PeriodicEtaBound
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4845,3 +4850,14 @@ import NLS.Articles.KdVPseudomeasures.PeriodicFreeModeLowerBound
 #print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicEigenvector_mem_range
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicEigen_freeMode_lower
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_14
+#print axioms NLS.KdV.norm_hillH1_coefficient_le_L2
+#print axioms NLS.KdV.negativeShiftedNorm_H1EndpointInclusion_le_L2
+#print axioms NLS.KdV.norm_endpointHillH1Coordinates_le_L2
+#print axioms NLS.KdV.norm_hillFreeL2ModeProjection_le_two_coordinates
+#print axioms NLS.KdV.negativeShiftedNorm_endpointInverseFamily_sub_le
+#print axioms NLS.KdV.norm_endpointInverseFamily_coordinates_sub_le_L2
+#print axioms NLS.KdV.endpointReducedFamily_apply_common_diagonal
+#print axioms NLS.KdV.norm_endpointReducedFamily_apply_le_couplings
+#print axioms NLS.KdV.norm_endpointEta_le_sixteen
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicEta_bound
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_13

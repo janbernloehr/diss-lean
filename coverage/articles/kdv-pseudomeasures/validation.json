@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Source Lemma 2.14 on the full printed radius-12n strip and every original Banach exponent, with exact free Fourier projector and uniform original endpoint norm-ball cutoff.",
+  "phase": "Full source Lemma 2.13 quantitative eta bound with constant 16, actual canonical labels/couplings and normalized original spectral bases.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -643,13 +643,18 @@
     "NLS/KdV/HillStrongSobolevDomain.lean",
     "NLS/KdV/SingularHillL2EigenProjection.lean",
     "NLS/Articles/KdVPseudomeasures/PeriodicFreeModeLowerBound.lean",
+    "NLS/KdV/HillEndpointResonantBounds.lean",
+    "NLS/KdV/HillEndpointInverseResonance.lean",
+    "NLS/KdV/HillReducedCouplingNorm.lean",
+    "NLS/KdV/HillEndpointEtaBound.lean",
+    "NLS/Articles/KdVPseudomeasures/PeriodicEtaBound.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 3483,
+  "proved_theorems": 3494,
   "definitions": 724,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 4207,
+    "declarations": 4218,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -1272,10 +1277,18 @@
     "Every original native high eigenvector in a corrected narrow strip belongs to the SAME literal source-circle physical spectral range. The zero vector is included. For nonzero vectors the proof derives ACTUAL spectral membership, uses the actual high pair to locate the eigenvalue strictly inside the source circle, and applies the ACTUAL native contour action.",
     "The original PRINTED radius-12n source strip is retained in the final native and source Lemma 2.14 statements. The existing full complex wide-strip localization theorem proves that each ACTUAL nonzero eigenvalue in that full wide strip is in the narrow strip at the SAME original mode number. Its stronger 13*C_r cutoff is derived uniformly from the ORIGINAL endpoint norm ball. No radius-6n restriction is substituted for the source statement.",
     "Source Lemma 2.14 is PROVED on the ENTIRE ORIGINAL complex F-ell^(s,infinity) potential space and ENTIRE ORIGINAL F-ell^(s+2,p) eigenfunction space, for EVERY Banach p>=1 including infinity. Its literal full Fourier eigen-equation is PROVED equivalent to the native equation of the IDENTICAL H1 distribution. At EVERY original source eigenvalue in the PRINTED radius-12n strip, the LITERAL free Fourier projector has physical L2 norm at least ONE HALF the norm of the SAME original eigenfunction. ONE cutoff precedes the potential, index, eigenvalue, exponent and eigenfunction and may be chosen above ANY prior spectral cutoff.",
-    "Quantitative eta bound 2.13 remains OPEN, although its canonical eta/gamma identity and NOW the required source 2.14 lower bound are proved. Full (31), overlap (32)/2.15, precise Dirichlet C.4(ii) rate, full COMPLEX weighted midpoint 2.1(ii), actual Birkhoff/KdV constructions and ALL FIVE main theorems remain OPEN."
+    "Quantitative eta bound 2.13 remains OPEN, although its canonical eta/gamma identity and NOW the required source 2.14 lower bound are proved. Full (31), overlap (32)/2.15, precise Dirichlet C.4(ii) rate, full COMPLEX weighted midpoint 2.1(ii), actual Birkhoff/KdV constructions and ALL FIVE main theorems remain OPEN.",
+    "Every ORIGINAL raw H1 Fourier coefficient and every shifted ORIGINAL negative endpoint norm are controlled by the SAME actual physical periodic L2 norm with constant ONE. The actual pair of resonant amplitudes has max-norm at most that physical norm, and the LITERAL original free Fourier projection has norm at most TWICE the actual amplitude max-norm.",
+    "For the ACTUAL endpoint inverse family K, BOTH signed shifted norms of K*a-a are at most TWO times the genuine source perturbation majorant times the corresponding input norm. The proof uses actual inverse uniqueness/identification and the exact identity K*a-a=T(K*a), with both opposite norm bounds already proved for the SAME inverse. Both original resonant errors of K applied to an original H1 vector are consequently bounded by TWO times the perturbation majorant times its actual physical L2 norm.",
+    "The ACTUAL reduced family is proved equal to the literal source common-diagonal complex two-by-two matrix, with the ACTUAL diagonal and ACTUAL two couplings. At an ACTUAL determinant zero its full max-pair operator action is bounded by TWO times the sum of the actual coupling norms. The common diagonal equality is proved by the existing native bilinear Green symmetry; no real-potential or diagonalizability hypothesis is imposed.",
+    "The native quantitative eta bound with source constant SIXTEEN is PROVED from the actual native eta/gamma equation, actual normalized vectors, actual free-mode one-half lower bound, actual inverse responses and actual inhomogeneous reduced equation. Its determinant-zero condition is DERIVED from the actual nonzero native eigenfunction. No effective-matrix, inverse-response or coupling-norm estimate is supplied as a hypothesis.",
+    "An explicit norm-ball cutoff makes kappa=C_r*n^(r-1/2)*norm(q)<=1/16 uniformly. Source 2.14 gives original resonant-amplitude max-norm at least1/4 for the unit eigenvector. The actual inverse changes those amplitudes by at most1/8, giving norm at least1/8 for its response; the unit second vector has response norm at most9/8. The actual reduced residual then gives norm(eta)<=9*norm(gamma)+16*(norm(b_plus)+norm(b_minus)) <=16*(norm(gamma)+norm(b_plus)+norm(b_minus)).",
+    "The source article adapter proves the constant-SIXTEEN bound for EVERY normalized original native pair satisfying the ACTUAL canonical eta equation. It therefore applies to ANY actual source normalized orthonormal spectral basis starting with its canonical lambda_n^+ eigenfunction, including coincident roots and complex associated vectors. ONE cutoff is chosen BEFORE every potential in EACH FIXED ORIGINAL complex endpoint norm ball and ALL later ORIGINAL positive indices; it can be above ANY supplied earlier cutoff.",
+    "Full source Lemma 2.13 is PROVED: the actual canonical lambda_n^+ eigenfunction and second native H1 vector have actual physical L2 norm ONE and form an ACTUAL orthonormal basis of the FULL original source-circle spectral range. BOTH vectors have IDENTICAL ENTIRE original F-ell^(s+2,infinity) distributions. The canonical eta/gamma equation AND its exact source constant16 bound with ACTUAL original couplings at the ACTUAL lambda_n^+ are proved together, uniformly on each exact original complex endpoint norm ball.",
+    "Source Lemmas 2.13 and 2.14, periodic (33), exact free Fourier projector and periodic C.4(i) rate are now complete. Full periodic-to-Dirichlet residual (31), overlap (32)/2.15, precise Dirichlet C.4(ii) rate, full COMPLEX weighted midpoint 2.1(ii), actual Birkhoff/KdV constructions and ALL FIVE MAIN theorems remain OPEN."
   ],
-  "source_correspondence": "NOW PROVED: source Lemma 2.14 one-half free-mode L2 lower bound, with LITERAL original free Fourier projector, FULL PRINTED radius-12n strip and EVERY original F-ell^(s+2,p) Banach-exponent eigenfunction domain, including infinity. ONE original endpoint norm-ball cutoff precedes q,n,lambda,p,f and can be above ANY supplied earlier cutoff. A stronger one-half bound holds on the ENTIRE actual physical spectral range including ALL associated-vector directions. The original physical L2 function is retained by a PROVED faithful entire-distribution H1 inclusion. NEXT: QUANTITATIVE eta estimate 2.13 from its proved canonical eta/gamma identity and NEW 2.14 bound, then full periodic-to-Dirichlet residual (31), overlap (32)/2.15 and full COMPLEX weighted midpoint 2.1(ii). Periodic source (33), exact free two-mode kernel and C.4(i) rate remain proved; precise Dirichlet C.4(ii) rate remains OPEN, while actual Dirichlet o(1) and its local/compact uniformity remain proved. Low periodic parity/interlacing, complex ratio 2.20 where used, original Birkhoff maps and actual KdV approximation flow remain open. Appendix B remains COMPLETE. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
-  "build_isolation": "Source Lemma 2.14 on the full printed radius-12n strip and every original Banach exponent, with exact free Fourier projector and uniform original endpoint norm-ball cutoff. All compiler/source/Git milestone writes are private; canonical sources/build/shared Git metadata are read-only.",
+  "source_correspondence": "NOW PROVED: FULL source Lemma 2.13 including canonical eta/gamma identity AND quantitative norm(eta)<=16*(norm(gamma)+norm(actual b_plus(lambda_plus))+norm(actual b_minus(lambda_plus))). The proof retains actual canonical labels, actual original complex couplings, ANY normalized native pair satisfying the canonical equation, actual full spectral orthonormal bases, both identical original stronger F-ell^(s+2,infinity) representatives, all associated vectors/coincident roots, original physical L2 normalization and ONE fixed original endpoint norm-ball cutoff above ANY supplied previous cutoff. Source2.14, periodic (33), exact free two-mode projector and periodic C.4(i) remain proved. NEXT: actual high-range source parity, boundary-zero normalized vector, faithful original interval restriction and full periodic-to-Dirichlet residual (31), then overlap (32)/2.15 and full COMPLEX weighted midpoint 2.1(ii). Verify the residual coefficient correction: G=alpha*f+beta*phi implies beta*eta*f-beta*gamma*phi, so beta is required on BOTH terms. Precise Dirichlet C.4(ii) rate, remaining low periodic parity/interlacing, complex ratio2.20 where used, original Birkhoff maps and actual KdV approximation flow remain OPEN. Appendix B is COMPLETE. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
+  "build_isolation": "Full source Lemma 2.13 quantitative eta bound with constant 16, actual canonical labels/couplings and normalized original spectral bases. All compiler/source/Git milestone writes are private; canonical sources/build/shared Git metadata are read-only.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -1677,7 +1690,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "e980c74cbe61adfcafbcd5854544fadfa4d2d558bf072dc34633e6c3d4574e91",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "ca9c0831f9f1e6b75f4cc66b00e8367ea4798a7a597596f78bdcaa876190c3e3",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -1918,7 +1931,12 @@
     "NLS/Fourier/PeriodicExponentInclusion.lean": "2212b1724365e179152e2eddc7aef6b606638776d90a709b712c9b77bda937eb",
     "NLS/KdV/HillStrongSobolevDomain.lean": "4a6e33c8738f170f40752a162478c24c0b1a67810273183971fc5c2fe40433f6",
     "NLS/KdV/SingularHillL2EigenProjection.lean": "4c0ac8669e4d67bf3f9fc67377f15f0bdd437e5f59f280692dd3645ea1579c7c",
-    "NLS/Articles/KdVPseudomeasures/PeriodicFreeModeLowerBound.lean": "d5fa6eaef2138f236afada2a62a6dd7555e62d42305e02e74c3457ad1fe82846"
+    "NLS/Articles/KdVPseudomeasures/PeriodicFreeModeLowerBound.lean": "d5fa6eaef2138f236afada2a62a6dd7555e62d42305e02e74c3457ad1fe82846",
+    "NLS/KdV/HillEndpointResonantBounds.lean": "ac3cf20ef27f647f440d1c35a0b768bbdb12aefb0a41ecc43a5031e76f174be2",
+    "NLS/KdV/HillEndpointInverseResonance.lean": "31af0d79c8e4ec16463c26b0c624d1b203646b015b6330e02c15c5366238de38",
+    "NLS/KdV/HillReducedCouplingNorm.lean": "b55f030005f4f4a38c18c8b386e34860392694616deed5feb2ad2a72c08803b5",
+    "NLS/KdV/HillEndpointEtaBound.lean": "70c3d6ce1e84b25989046a47401b09f3f8d3f3e29e1320b96098c0c540f23f0c",
+    "NLS/Articles/KdVPseudomeasures/PeriodicEtaBound.lean": "6288d2143de8fa36e1a1525f7d9428792ec0567e4da58e951a89348e628df8fb"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1926,12 +1944,12 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 4188,
-    "newly_checked_declarations_this_continuation": 19,
-    "new_theorems": 15,
-    "new_definitions": 4,
-    "total_checked_declarations": 4207,
-    "reuse": "Previously validated actual endpoint periodic projection convergence, actual free Fourier kernel, full native/physical L2 contour eigenvector action, original complex canonical high pairs, actual complex wide-strip localization, original exponent embeddings and strict endpoint-to-lower inclusion. New whole-range and source 2.14 bounds use the actual full original spaces, not supplied finite-dimensional or eigenfunction-only estimates."
+    "previous_checked_declarations": 4207,
+    "newly_checked_declarations_this_continuation": 11,
+    "new_theorems": 11,
+    "new_definitions": 0,
+    "total_checked_declarations": 4218,
+    "reuse": "Previously validated full source2.14 bound, actual canonical eta identity and spectral bases, exact free Fourier projector, physical L2 isometry, BOTH actual shifted endpoint inverse bounds, actual native inhomogeneous reduced equation and common-diagonal bilinear symmetry/determinant formula. No matrix/inverse/coupling norm estimate is supplied as a source hypothesis."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -1960,7 +1978,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-periodic-free-mode-lower.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-periodic-eta-bound.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -2188,13 +2206,14 @@
     "Actual full normalized periodic rough-potential perturbation S_lambda, squared-entry/Hilbert-space norm bounds, exact original physical Fourier action and uniform original Sobolev norm-ball smallness.",
     "Actual full native half-denominator isomorphisms, normalized phase inverse, exact native pencil/resolvent factorization and uniform original rough-potential norm-ball inverse; Appendix B focused recheck.",
     "Actual physical periodic resolvent and contour bounds, exact two-mode free projector, original Appendix C.4(i) rate and uniform original endpoint periodic projection convergence.",
-    "Source Lemma 2.14 on the full printed radius-12n strip and every original Banach exponent, with exact free Fourier projector and uniform original endpoint norm-ball cutoff."
+    "Source Lemma 2.14 on the full printed radius-12n strip and every original Banach exponent, with exact free Fourier projector and uniform original endpoint norm-ball cutoff.",
+    "Full source Lemma 2.13 quantitative eta bound with constant 16, actual canonical labels/couplings and normalized original spectral bases."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-free-mode-lower-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-eta-bound-map.json",
   "baseline_validated_snapshot": {
-    "commit": "e63093eee4c968102b65714cdaa0e3d5faf477d7",
-    "modules": 632,
-    "audited_declarations": 4188,
+    "commit": "a921c26cd3e91dbaaf9cf89b005fc46b66608067",
+    "modules": 638,
+    "audited_declarations": 4207,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   }

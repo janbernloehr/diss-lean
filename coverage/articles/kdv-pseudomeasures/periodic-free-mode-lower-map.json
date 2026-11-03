@@ -1,7 +1,7 @@
 {
   "source": "arXiv:1610.00278v1, Lemma 2.14 and its dependencies toward quantitative Lemma 2.13, overlap (32)/2.15 and complex Theorem 2.1(ii)",
   "date": "2026-11-03",
-  "status": "COMPLETE source Lemma 2.14 on the FULL printed radius-12n strip and EVERY original Banach-exponent eigenfunction domain, with uniform original endpoint norm-ball cutoff and exact literal free projector. Quantitative eta 2.13 and all main theorems remain OPEN.",
+  "status": "FULL source Lemmas2.13 and2.14 are proved, including the actual canonical eta identity and constant16 quantitative bound. See periodic-eta-bound-map.json for its exact source correspondence and validation. Full(31),(32)/2.15, Dirichlet C.4(ii) rate and main theorems remain OPEN.",
   "modules": [
     "NLS/FunctionalAnalysis/NearProjectionLowerBound.lean",
     "NLS/KdV/HillFreeModeProjection.lean",
@@ -62,8 +62,8 @@
     "original_infinite_p_eigenfunction_domain_retained": true,
     "literal_original_full_Fourier_eigen_equation_retained": true,
     "source_Lemma2_14_proved": true,
-    "source_Lemma2_13_eta_bound_proved": false,
-    "source_Lemma2_13_complete": false,
+    "source_Lemma2_13_eta_bound_proved": true,
+    "source_Lemma2_13_complete": true,
     "source_identity31_complete": false,
     "source_overlap_bound32_proved": false,
     "source_Lemma2_15_proved": false,
@@ -71,8 +71,8 @@
     "main_theorems_verified": false
   },
   "essential_remaining": [
-    "Prove QUANTITATIVE source eta bound 2.13, retaining constant 16 and ACTUAL canonical labels/couplings/normalized orthonormal basis. Its exact eta/gamma IDENTITY and source 2.14 are now PROVED. A private next-proof plan uses the actual inverse-family resonant errors and max-pair norm, with all unproved steps explicitly marked as unproved.",
-    "Use the already PROVED periodic and Dirichlet parts of source (33), their actual free kernels and normalized original spectral bases for full residual (31), overlap (32) and source 2.15. The quantitative Dirichlet C.4(ii) RATE remains OPEN; periodic C.4(i) is complete.",
+    "Construct the ACTUAL high spectral-range boundary-zero vector and its faithful zero-trace interval H1 restriction, with original period-one/antiperiod-one source parity and exact physical L2 normalization. Then prove the full periodic-to-Dirichlet residual and actual Dirichlet projection identity (31). Verify the printed coefficients: for G=alpha*f+beta*phi, the proved eta equation algebraically gives beta*eta*f-beta*gamma*phi, so beta is required on BOTH terms of the restricted/projected residual.",
+    "Use the already PROVED actual periodic and Dirichlet source-projection convergence, their exact literal free kernels and normalized source eigenfunctions to prove overlap (32) and full source 2.15. The precise Dirichlet C.4(ii) RATE remains OPEN; periodic C.4(i) is complete.",
     "Complete the full COMPLEX weighted midpoint estimate 2.1(ii), remaining low periodic parity/interlacing and complex ratio 2.20 where used, original Birkhoff maps and actual KdV approximation-flow constructions. All five MAIN theorems 1.1, 1.3, 1.4, 5.1 and 5.9 remain UNPROVED; goal ACTIVE."
   ],
   "source_correspondence": {
@@ -83,7 +83,7 @@
     "norm": "Original source physical periodic L2 norm, EXACTLY one-half integral on [0,2]. Bound is (1/2)*norm(f)_L2 <=norm(P_n f)_L2; no potential norm or eigenfunction normalization is changed.",
     "uniformity": "For EACH fixed ORIGINAL endpoint norm ball R and ANY prior cutoff Nmin, ONE new N>=2 and N>=Nmin is chosen BEFORE every original complex potential q, all later original positive n, every complex lambda in the FULL printed strip, EVERY Banach p and EVERY original eigenfunction. This is stronger than the source locally uniform cutoff requirement.",
     "stronger_range_bound": "The SAME one-half bound holds on the ENTIRE actual high physical spectral range, including complex associated vectors and coincident spectral roots. It does not require a nonzero or normalized eigenfunction premise.",
-    "not_claimed": "No quantitative eta bound in source 2.13, full (31), overlap (32)/2.15, Dirichlet C.4(ii) rate, full COMPLEX midpoint 2.1(ii) or main-theorem completion is claimed."
+    "not_claimed": "Full(31), overlap(32)/2.15, quantitative Dirichlet C.4(ii) rate and all main theorems remain OPEN. Source2.13 eta identity AND constant16 bound are now PROVED; see actual_eta_bound_followup."
   },
   "validation": {
     "result": "passed",
@@ -127,5 +127,31 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "actual_eta_bound_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-eta-bound-map.json",
+    "original_physical_L2_controls_all_shifted_endpoint_norms": true,
+    "actual_inverse_both_resonant_errors_proved": true,
+    "actual_common_diagonal_reduced_matrix_proved": true,
+    "actual_reduced_matrix_norm_at_determinant_zero_proved": true,
+    "native_eta_constant_sixteen_proved": true,
+    "any_normalized_original_pair_eta_bound": true,
+    "actual_canonical_labels_and_couplings_retained": true,
+    "actual_full_spectral_orthonormal_basis_retained": true,
+    "coincident_roots_and_complex_associated_vectors_included": true,
+    "both_basis_vectors_same_original_stronger_distribution": true,
+    "source_physical_L2_normalization_preserved": true,
+    "uniform_on_every_fixed_original_endpoint_norm_ball": true,
+    "cutoff_above_any_supplied_prior_cutoff": true,
+    "source_Lemma2_13_eta_identity_proved": true,
+    "source_Lemma2_13_eta_bound_proved": true,
+    "source_Lemma2_13_complete": true,
+    "source_Lemma2_14_proved": true,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "validation_scope": "The validation object records this earlier milestone. actual_eta_bound_followup links the later4218-declaration audited full source2.13 milestone."
 }
