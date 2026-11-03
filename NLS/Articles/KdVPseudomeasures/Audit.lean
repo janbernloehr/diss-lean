@@ -809,6 +809,14 @@ import NLS.KdV.MiuraHillPsiNumerators
 import NLS.KdV.HminusOneLocalHillPsi
 import NLS.Articles.KdVPseudomeasures.OriginalLocalHillDifferentials
 import NLS.KdV.MiuraHillPsiFree
+import NLS.ComplexAnalysis.QuadraticEnergySheet
+import NLS.KdV.MiuraHillPsiEnergyRoot
+import NLS.KdV.MiuraHillEnergyRootIndependence
+import NLS.KdV.MiuraHillPsiEnergyCycles
+import NLS.KdV.HminusOneLocalHillDifferential
+import NLS.ComplexAnalysis.QuadraticEnergyCircleWinding
+import NLS.KdV.HminusOneLocalHillEnergyCycles
+import NLS.Articles.KdVPseudomeasures.OriginalHillEnergyDifferentials
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5754,3 +5762,40 @@ import NLS.KdV.MiuraHillPsiFree
 #print axioms NLS.KdV.MiuraHillPsiFamily.roots_zero
 #print axioms NLS.KdV.MiuraHillPsiFamily.selected_free
 #print axioms NLS.KdV.MiuraHillPsiFamily.numerator_free_zero
+#print axioms NLS.ComplexAnalysis.sq_mem_slitPlane_of_re_pos
+#print axioms NLS.ComplexAnalysis.sqrt_sq_of_re_pos
+#print axioms NLS.ComplexAnalysis.quadraticEnergyMap_injOn_right
+#print axioms NLS.ComplexAnalysis.dense_complex_nonreal
+#print axioms NLS.KdV.MiuraHillPsiFamily.energyRootDomain
+#print axioms NLS.KdV.MiuraHillPsiFamily.energyRootCoordinates
+#print axioms NLS.KdV.MiuraHillPsiFamily.analytic_energyRootCoordinates
+#print axioms NLS.KdV.MiuraHillPsiFamily.energyRootDomain_open
+#print axioms NLS.KdV.MiuraHillPsiFamily.analytic_energyRoot
+#print axioms NLS.KdV.MiuraHillPsiFamily.energyRoot_ne_zero
+#print axioms NLS.KdV.MiuraHillPsiFamily.differential
+#print axioms NLS.KdV.MiuraHillPsiFamily.analytic_differential
+#print axioms NLS.KdV.MiuraHillPsiFamily.energyRoot_sq
+#print axioms NLS.KdV.MiuraHillPsiFamily.squared_energy_mem_rootDomain
+#print axioms NLS.KdV.hillHminusMiuraRoot_eq_of_real_images
+#print axioms NLS.KdV.MiuraHillPsiFamily.energyCircle_inside
+#print axioms NLS.KdV.MiuraHillPsiFamily.differential_energyCircle_period
+#print axioms NLS.KdV.MiuraHillPsiFamily.exists_positive_energyCircle
+#print axioms NLS.KdV.HillHminusDirichletBall.energyCoordinates
+#print axioms NLS.KdV.HillHminusDirichletBall.energyDomain
+#print axioms NLS.KdV.HillHminusDirichletBall.energyRoot
+#print axioms NLS.KdV.HillHminusDirichletBall.energyDifferential
+#print axioms NLS.KdV.HillHminusDirichletBall.analytic_energyCoordinates
+#print axioms NLS.KdV.HillHminusDirichletBall.energyDomain_open
+#print axioms NLS.KdV.HillHminusDirichletBall.mapsTo_energyCoordinates
+#print axioms NLS.KdV.HillHminusDirichletBall.analytic_energyRoot
+#print axioms NLS.KdV.HillHminusDirichletBall.energyRoot_ne_zero
+#print axioms NLS.KdV.HillHminusDirichletBall.energyRoot_sq
+#print axioms NLS.KdV.HillHminusDirichletBall.analytic_energyDifferential
+#print axioms NLS.KdV.HillHminusDirichletBall.energyRoot_eq_physical_of_real
+#print axioms NLS.KdV.HillHminusDirichletBall.energyRoot_eq_of_real_overlap
+#print axioms NLS.KdV.HillHminusDirichletBall.energyCircle_inside
+#print axioms NLS.KdV.HillHminusDirichletBall.energyDifferential_circle_period
+#print axioms NLS.ComplexAnalysis.windingIntegral_quadraticEnergyCircle_one_of_positive
+#print axioms NLS.KdV.HillHminusDirichletBall.energyCircle_winding_original_endpoints
+#print axioms NLS.KdV.HillHminusDirichletBall.exists_normalized_energyCircle
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_local_Hill_energy_differentials

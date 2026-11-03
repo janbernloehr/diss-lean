@@ -843,6 +843,14 @@ modules = [
     'NLS.KdV.HminusOneLocalHillPsi',
     'NLS.Articles.KdVPseudomeasures.OriginalLocalHillDifferentials',
     'NLS.KdV.MiuraHillPsiFree',
+    'NLS.ComplexAnalysis.QuadraticEnergySheet',
+    'NLS.KdV.MiuraHillPsiEnergyRoot',
+    'NLS.KdV.MiuraHillEnergyRootIndependence',
+    'NLS.KdV.MiuraHillPsiEnergyCycles',
+    'NLS.KdV.HminusOneLocalHillDifferential',
+    'NLS.ComplexAnalysis.QuadraticEnergyCircleWinding',
+    'NLS.KdV.HminusOneLocalHillEnergyCycles',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillEnergyDifferentials',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Construct actual complex Miura canonical-root reflection and local original H-minus-one Hill numerator families with joint zero-energy analytic descent, nonvacuous exact ALL-positive-index quadratic pullback periods and free normalization.",
+  "phase": "Construct actual local original H-minus-one holomorphic energy differentials, physical-sheet identification, and genuine normalized quadratic energy cycles at every positive original periodic gap.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -817,13 +817,21 @@
     "NLS/KdV/HminusOneLocalHillPsi.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalLocalHillDifferentials.lean",
     "NLS/KdV/MiuraHillPsiFree.lean",
+    "NLS/ComplexAnalysis/QuadraticEnergySheet.lean",
+    "NLS/KdV/MiuraHillPsiEnergyRoot.lean",
+    "NLS/KdV/MiuraHillEnergyRootIndependence.lean",
+    "NLS/KdV/MiuraHillPsiEnergyCycles.lean",
+    "NLS/KdV/HminusOneLocalHillDifferential.lean",
+    "NLS/ComplexAnalysis/QuadraticEnergyCircleWinding.lean",
+    "NLS/KdV/HminusOneLocalHillEnergyCycles.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillEnergyDifferentials.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 4112,
-  "definitions": 830,
+  "proved_theorems": 4142,
+  "definitions": 837,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 4942,
+    "declarations": 4979,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -1641,10 +1649,18 @@
     "Every original real native H-minus-one source has a common open numerator patch obtained by pulling back that SAME verified family through its actual real-preserving analytic Miura lift. ALL positive indices coexist on this one patch, which lies inside the preceding common Dirichlet domain. The exact physical constant shift c is retained: P_H(E,q)=P_D_energy(E+c,lift(q)); the period integrand uses E=z^2-c and its EXACT Jacobian2*z. The original Dirichlet energies, nonzero terminal multipliers and prescribed divisor sheets remain analytic on this SAME local patch.",
     "The article-facing exists_original_local_Hill_psi_families quantifies ONE verified simultaneous psi family BEFORE EVERY original full real mean-zero physical period-one H-minus-one potential, then gives a common local patch for ALL positive indices. It supplies the ACTUAL shifted Miura image identity, NONEMPTY actual period circles, joint analytic numerator/divisor data and every literal positive-index pullback period. No finite-p endpoint assumption replaces the original H-minus-one source.",
     "At zero source, every verified family uses the actual free Dirac numerator. Its frequency derivative at zero is EXACTLY2/(pi*n), giving the same descended free Hill zero-energy normalization for EVERY positive index, with no excluded zero-energy point.",
-    "These are proved local analytic energy numerators and actual normalized QUADRATIC PULLBACK periods. Agreement between different Miura charts, identification with the ORIGINAL Hill canonical energy root/energy cycles, the full normalized Hill product and local growth/zero bounds are NOT yet proved. Therefore no intrinsic chart-independent global Hill differential, Abelian angle, collapsed-gap KdV coordinate, actual KdV Birkhoff map, full source3.2(ii), or MAIN theorem is claimed. The literal KMT y-tilde integrating-factor equation also remains a separate gauge bridge if used."
+    "These are proved local analytic energy numerators and actual normalized QUADRATIC PULLBACK periods. Agreement between different Miura charts, identification with the ORIGINAL Hill canonical energy root/energy cycles, the full normalized Hill product and local growth/zero bounds are NOT yet proved. Therefore no intrinsic chart-independent global Hill differential, Abelian angle, collapsed-gap KdV coordinate, actual KdV Birkhoff map, full source3.2(ii), or MAIN theorem is claimed. The literal KMT y-tilde integrating-factor equation also remains a separate gauge bridge if used.",
+    "The right frequency half-plane fixes the principal quadratic energy sheet. Its square lies in the principal slit, the principal square root recovers the original frequency, and the energy map is injective there. Nonreal energies are dense. A shared quadratic-circle winding lemma gives winding ONE at every squared interior frequency point of a positive real-centered disk, retaining the exact constant energy shift and the actual oriented image loop.",
+    "For each verified simultaneous Miura psi family and every complex constant shift, the actual moving energy-root domain is OPEN in energy and L2 source. The ACTUAL root, obtained by evaluating the already normalized Dirac root at sqrt(E+c), is jointly analytic and nonzero there. Every actual shifted Miura representation squares to the ORIGINAL native Hill radicand. The local differential coefficient P(E+c,u)/root is jointly analytic for ALL positive indices on that SAME domain. The odd Dirac root is NOT incorrectly subjected to even square descent; its root-square identity is used ONLY off all actual cuts.",
+    "For EVERY real L2 source and real constant shift representing the same physical potential, the existing normalized physical-sheet theorem fixes the root sign at every NONREAL energy. Continuity on the open common energy domains and density extend equality to ALL common energies, including REAL bands. This proves real-source denominator independence under BOTH Miura-lift and constant-shift changes; it is not complex-source numerator independence.",
+    "Actual normalized periods are now integrals on the GENUINE ORIENTED ENERGY IMAGE loops, not merely statements about a supplied pullback integrand. The proved change-of-variable theorem retains E=z^2-c, its EXACT Jacobian2*z, and the original literal factor1/(2*pi). All positive-index periods equal the Kronecker delta. EVERY positive index of EVERY real L2 Miura source has an actual positive isolating circle whose entire image loop lies in the joint energy-root domain; the image winds once about the squared midpoint.",
+    "Every original native H-minus-one local chart has an OPEN joint energy/source domain, an analytic NONZERO root squaring to its ACTUAL physical Hill radicand, and ALL jointly analytic differential coefficients on that SAME domain. Its root equals the actual normalized physical continuation at every NONREAL energy of every real source. On real-source overlaps it is independent of BOTH chart and shift at ALL available energies. All preceding original Dirichlet energies, terminal norming multipliers and monodromy divisor sheets retain analyticity on the common source patch.",
+    "At EVERY real native H-minus-one source in the patch and EVERY positive original index, an actual energy cycle exists BEFORE ALL differential indices. Its ENTIRE loop lies in the common joint energy/source domain and it winds EXACTLY ONCE at BOTH ORIGINAL periodic Hill endpoints, with the original natural indexing and ALL collapsed or repeated endpoint cases retained. Its periods normalize EVERY positive-index differential simultaneously. Full original label identification and the proved outside-spectrum shift condition fix the endpoint correspondence; there is no unspecified finite index offset.",
+    "Article exists_original_local_Hill_energy_differentials quantifies ONE verified simultaneous psi family BEFORE EVERY original full real mean-zero physical period-one H-minus-one potential, then provides the local open source and energy domains, the ACTUAL ORIGINAL discriminant square identity, all-index analytic differential/divisor data and actual cycles with original-endpoint winding and literal Kronecker normalization. This is a local differential construction covering the ENTIRE original real form, not a chart-independent global numerator family.",
+    "Global numerator independence under Miura lift AND energy shift changes, full complex overlap agreement, required product/growth/zero-placement bounds and global gluing remain OPEN. The actual KdV Abelian angles, Cartesian coordinate extensions, Gardner brackets, Birkhoff map and all five MAIN theorems remain UNPROVED. No completion of source3.2(ii), physical KdV flow or the main goal is claimed."
   ],
-  "source_correspondence": "Construct actual complex Miura canonical-root reflection and local original H-minus-one Hill numerator families with joint zero-energy analytic descent, nonvacuous exact ALL-positive-index quadratic pullback periods and free normalization. Complete the ACTUAL ORIGINAL normalized Hill holomorphic differentials: identify the actual canonical ENERGY root and energy cycles with the newly proved Miura pullback, prove required growth/product and zero-placement/local bounds, and then prove Miura-lift/shift independence and WHOLE complex overlap agreement. Glue on ONE complex neighborhood containing the ENTIRE original real H-minus-one form while retaining all previously proved divisor/action/gap data. Actual complex endpoint/root reflection, jointly analytic odd quadratic descent INCLUDING ZERO, nonempty original period circles, exact ALL-positive-index pullback Kronecker periods and free2/(pi*n) normalization are NOW PROVED; do not redo them. The current common patches are local; no unsupported global agreement or equality on the entire earlier Dirichlet domain is asserted. Construct admissible-path Abelian phases, their off-index sums and the actual collapsed-gap Cartesian coordinate extensions for source3.2(ii), with the original locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). If using the literal KMT y-tilde equation, formalize its integrating-factor gauge normalization. Do NOT infer a complex collapsed-gap Dirichlet point equals its endpoint or its Cartesian coordinates vanish; only the REAL endpoint result is established. Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates and map: original Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Reusing verified Dirac holomorphic differentials is not a substitution of the NLS Birkhoff map for KdV. Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and all previously verified spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-  "build_isolation": "Construct actual complex Miura canonical-root reflection and local original H-minus-one Hill numerator families with joint zero-energy analytic descent, nonvacuous exact ALL-positive-index quadratic pullback periods and free normalization. All source/compiler/Git milestone writes private; canonical checkout and shared Git metadata read-only. Four reused canonical shared sources freshly compiled privately and verified byte-identical.",
+  "source_correspondence": "Construct actual local original H-minus-one holomorphic energy differentials, physical-sheet identification, and genuine normalized quadratic energy cycles at every positive original periodic gap. Complete the ACTUAL ORIGINAL global normalized Hill holomorphic differentials: prove the required numerator product/growth and zero-placement/local bounds, prove Miura-lift AND physical energy-shift independence, and establish WHOLE COMPLEX overlap agreement. Glue on ONE complex neighborhood containing the ENTIRE original real H-minus-one form while retaining all preceding divisor/action/gap data. Local jointly analytic differentials with nonzero ACTUAL physical Hill roots, real-source root/shift independence, genuine normalized ENERGY cycles and winding at BOTH ORIGINAL endpoints are NOW PROVED; do not redo them. These local patches are not claimed to carry a globally glued numerator or to equal the entire older Dirichlet domain. Construct admissible-path Abelian phases, their off-index sums and the actual collapsed-gap Cartesian coordinate extensions for source3.2(ii), with the original locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). If using the literal KMT y-tilde equation, formalize its integrating-factor gauge normalization. Do NOT infer a complex collapsed-gap Dirichlet point equals its endpoint or its Cartesian coordinates vanish; only the REAL endpoint result is established. Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates and map: original Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Reusing verified Dirac holomorphic differentials is not a substitution of the NLS Birkhoff map for KdV. Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding verified spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+  "build_isolation": "Construct actual local original H-minus-one holomorphic energy differentials, physical-sheet identification, and genuine normalized quadratic energy cycles at every positive original periodic gap. All source/compiler/Git milestone writes private; canonical checkout and shared Git metadata read-only.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -2046,7 +2062,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "cabe13a12673021e47d5b0ccaff74724a47476bce928fe225c96058abcc88e51",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "2f28224663d1ed05a7ab213ebdcee1caf0afc22b588a5e7cac730186bbaae498",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -2461,7 +2477,15 @@
     "NLS/KdV/MiuraHillPsiNumerators.lean": "8b0d03db1abfbbc90c5a8a32598365bbf6c689cab794f4a2bc70f8b9b118009b",
     "NLS/KdV/HminusOneLocalHillPsi.lean": "caeca8d5bb913b0aa538a93ffbf1d6fcce45aa224a7c1ef08c1dba34b6f76ef3",
     "NLS/Articles/KdVPseudomeasures/OriginalLocalHillDifferentials.lean": "fce469cc5ed522f72e3b4ecb557f2ef5987ee7499f4eea0e7824041f75343fa7",
-    "NLS/KdV/MiuraHillPsiFree.lean": "c7c2693c0e765de32376759c9dc6390a1f8bc3e129a49beba3c10425e10cfabd"
+    "NLS/KdV/MiuraHillPsiFree.lean": "c7c2693c0e765de32376759c9dc6390a1f8bc3e129a49beba3c10425e10cfabd",
+    "NLS/ComplexAnalysis/QuadraticEnergySheet.lean": "bf931f26d914a672fb1ee2c22689defbaa053cf2150dd364344d8e5aa29de63a",
+    "NLS/KdV/MiuraHillPsiEnergyRoot.lean": "642df6f73c003f5673ba699069ae894bf0a4f9f01a51e27c678f1cb655babf93",
+    "NLS/KdV/MiuraHillEnergyRootIndependence.lean": "7143bb01e6a03e67fa9601c05334c78d831cc3509b614b5037e0e87be718e00e",
+    "NLS/KdV/MiuraHillPsiEnergyCycles.lean": "f649c91d89399c88768f1546fae6d0588cfb572d9cb90c66d83f3059be6a9856",
+    "NLS/KdV/HminusOneLocalHillDifferential.lean": "beb75af5d9e17cbf6fe3ddfcb44c75851e5632dd2702d2216f230d31af2c1e68",
+    "NLS/ComplexAnalysis/QuadraticEnergyCircleWinding.lean": "5a79aa0be094b98587679b25cc2a430c3e2fbed189380e6c088fc9bc906e5d79",
+    "NLS/KdV/HminusOneLocalHillEnergyCycles.lean": "100e9b615a8d88c7425294ccc0052d2fed5866ac83e600c5f06d92790d23449f",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillEnergyDifferentials.lean": "a91752ddacb5555a811c46598c5e473c824fe49df5d2c713432c8bfc5701547d"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -2469,12 +2493,12 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 4879,
-    "newly_checked_declarations_this_continuation": 63,
-    "new_theorems": 52,
-    "new_definitions": 11,
-    "total_checked_declarations": 4942,
-    "reuse": "Verified simultaneous original Dirac Theorem12.1, actual spectral multiplicities and ordered endpoint uniqueness, canonical root products, scalar Cauchy reconstruction, actual period circles, real-preserving native Miura/Dirichlet balls and the preceding original divisor construction. No NLS Birkhoff map is used."
+    "previous_checked_declarations": 4942,
+    "newly_checked_declarations_this_continuation": 37,
+    "new_theorems": 30,
+    "new_definitions": 7,
+    "total_checked_declarations": 4979,
+    "reuse": "Verified physical Hill/Miura normalized moving sheets, exact quadratic contour change of variables, original full periodic labels, positive-index gap circles, local joint numerator families and native real-preserving Miura/Dirichlet charts. No NLS Birkhoff map is used."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -2503,7 +2527,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-psi-quadratic-pullback.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-energy-differentials.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -2753,13 +2777,14 @@
     "Analytic NONZERO canonical action/squared-gap quotients through collapse at ALL positive indices on ONE common connected complex neighborhood, with exact8*pi*n normalization locally uniform at EVERY COMPLEX point and ALL-index complex zero-locus equivalence.",
     "Construct the ACTUAL ALL-index analytic SIMPLE Dirichlet energy coordinates on ONE common connected complex H-minus-one domain, with complete native spectrum exhaustion, no collisions, exact physical multiplicities, all-index real gap inclusion and original Hilbert asymptotics.",
     "Construct the actual analytic nonzero Dirichlet norming multipliers and prescribed diagonal monodromy sheets, independent of EVERY complex L2 Miura lift and energy shift, on the SAME common original complex Dirichlet domain.",
-    "Construct actual complex Miura canonical-root reflection and local original H-minus-one Hill numerator families with joint zero-energy analytic descent, nonvacuous exact ALL-positive-index quadratic pullback periods and free normalization."
+    "Construct actual complex Miura canonical-root reflection and local original H-minus-one Hill numerator families with joint zero-energy analytic descent, nonvacuous exact ALL-positive-index quadratic pullback periods and free normalization.",
+    "Construct actual local original H-minus-one holomorphic energy differentials, physical-sheet identification, and genuine normalized quadratic energy cycles at every positive original periodic gap."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-psi-quadratic-pullback-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-energy-differentials-map.json",
   "baseline_validated_snapshot": {
-    "commit": "4025f1d28d56c6dac9347ae7975facc0fd89528f",
-    "modules": 800,
-    "audited_declarations": 4879,
+    "commit": "6d08237ada9b71f8e22624523fe6536b57023b77",
+    "modules": 812,
+    "audited_declarations": 4942,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   },
@@ -3201,6 +3226,33 @@
     "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
     "literal_KMT_y_tilde_gauge_formalized": false,
     "complex_collapsed_Dirichlet_point_equals_endpoint_asserted": false,
+    "full_source3_2_coordinate_assertion_proved": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_local_Hill_energy_differentials_and_cycles": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-energy-differentials-map.json",
+    "actual_joint_energy_root_domain_open": true,
+    "actual_energy_root_jointly_analytic_and_nonzero": true,
+    "actual_native_Hill_radicand_square_identity": true,
+    "actual_physical_sheet_sign_identified_at_ALL_nonreal_energies_for_REAL_sources": true,
+    "real_source_root_independent_of_Miura_lift_AND_real_shift_on_ENTIRE_common_energy_domain": true,
+    "actual_quadratic_energy_loop_orientation_and_Jacobian_retained": true,
+    "ALL_positive_index_genuine_energy_cycle_periods_EXACT_Kronecker": true,
+    "literal_normalization_one_over_two_pi_retained": true,
+    "EVERY_real_source_EVERY_positive_original_index_has_actual_energy_cycle": true,
+    "original_periodic_left_AND_right_endpoint_winding_ONE_including_collapse": true,
+    "cycle_selected_BEFORE_ALL_differential_indices": true,
+    "joint_local_original_HminusOne_holomorphic_differentials_above_ENTIRE_original_real_form": true,
+    "all_indices_root_and_differentials_on_SAME_joint_energy_source_domain": true,
+    "preceding_Dirichlet_divisor_data_retained_on_SAME_source_patch": true,
+    "numerator_Miura_lift_AND_shift_independence_proved": false,
+    "WHOLE_complex_overlap_agreement_and_global_gluing_proved": false,
+    "full_original_Hill_Psi_product_growth_and_zero_bounds_proved": false,
+    "ACTUAL_global_normalized_Hill_differentials_constructed": false,
+    "ACTUAL_KdV_angles_constructed": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "literal_KMT_y_tilde_gauge_formalized": false,
+    "complex_collapsed_Dirichlet_endpoint_asserted": false,
     "full_source3_2_coordinate_assertion_proved": false,
     "all_five_main_theorems_proved": false
   }
