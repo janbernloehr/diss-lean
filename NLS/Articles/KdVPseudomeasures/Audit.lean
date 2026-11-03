@@ -323,6 +323,8 @@ import NLS.SequenceSpaces.WeakFirstOrderRegularity
 import NLS.SequenceSpaces.YoungConvolutionModule
 import NLS.KdV.SingularHillMiuraFactorization
 import NLS.KdV.SingularHillMiuraCompanion
+import NLS.FunctionalAnalysis.CompactCoordinateControl
+import NLS.Articles.KdVPseudomeasures.SourceWeakStarUniformControl
 
 /-! Exact transitive axiom audit of every selected public definition and theorem. -/
 
@@ -2971,3 +2973,13 @@ import NLS.KdV.SingularHillMiuraCompanion
 #print axioms NLS.KdV.singularHillMiuraEigenspaceEquiv
 #print axioms NLS.KdV.finrank_singularHillMiuraCompanionEigenspace
 #print axioms NLS.KdV.singularHillAlgebraicMultiplicity_miura_companion
+#print axioms NLS.exists_finite_coordinates_control_on_compact
+#print axioms NLS.tendstoUniformly_observable_of_coordinates
+#print axioms NLS.Articles.KdVPseudomeasures.sourceCoefficients_injective
+#print axioms NLS.Articles.KdVPseudomeasures.exists_finite_sourceCoefficient_control_lower_norm
+#print axioms NLS.Articles.KdVPseudomeasures.tendstoUniformly_sourceLowerDistribution_iff_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.tendstoUniformly_sourceLowerDistribution_iff_coefficients_of_eventually_normBound
+#print axioms NLS.Articles.KdVPseudomeasures.existsUnique_sourceFamily_of_uniform_coefficients_normBound
+#print axioms NLS.Articles.KdVPseudomeasures.tendstoUniformly_sourceLowerDistribution_iff_other_lower
+#print axioms NLS.Articles.KdVPseudomeasures.exists_finite_sourceCoefficient_control_originalHminusOne
+#print axioms NLS.Articles.KdVPseudomeasures.tendstoUniformly_originalHminusOne_iff_coefficients

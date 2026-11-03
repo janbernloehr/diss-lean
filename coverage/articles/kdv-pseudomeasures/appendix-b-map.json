@@ -377,5 +377,15 @@
     "scope": "Consequences of the previously verified Appendix B compactness and bounded-set topology results. These are additional tools, not newly uncovered clauses of Lemma B.1.",
     "remaining_lemma_B1_obligations": [],
     "main_theorems_verified": false
+  },
+  "uniform_fourier_control_and_limits": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-uniform-map.json",
+    "modules": [
+      "NLS/FunctionalAnalysis/CompactCoordinateControl.lean",
+      "NLS/Articles/KdVPseudomeasures/SourceWeakStarUniformControl.lean"
+    ],
+    "new_public_theorems": 10,
+    "summary": "Finite original Fourier tests uniformly control every admissible lower norm on endpoint balls. Uniform coefficient convergence, including eventual common endpoint bounds, uniquely reconstructs physical limit families and is equivalent to uniform lower norm convergence; original H-minus-one specializations included.",
+    "remaining_lemma_B1_obligations": []
   }
 }

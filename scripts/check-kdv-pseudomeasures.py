@@ -357,6 +357,8 @@ modules = [
     'NLS.SequenceSpaces.YoungConvolutionModule',
     'NLS.KdV.SingularHillMiuraFactorization',
     'NLS.KdV.SingularHillMiuraCompanion',
+    'NLS.FunctionalAnalysis.CompactCoordinateControl',
+    'NLS.Articles.KdVPseudomeasures.SourceWeakStarUniformControl',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
