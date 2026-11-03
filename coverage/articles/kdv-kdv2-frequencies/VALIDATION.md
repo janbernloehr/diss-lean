@@ -76,8 +76,9 @@ its existing Hilbert specialization and a transitive audit.
 | `ClassicalRoughEmbedding`, `ClassicalRoughCriticalCompatibility`, `ClassicalRoughNormalizationCompatibility`, `HillHminusOneNormalizedOddMoments` and three generic uniqueness/congruence modules | Exact continuous interval/rough trace and normalized-family agreement, including all indices, filled centers and actual inverses; analytic propagation and true Fourier density give all odd normalized cancellation on one Hminus1-open ball. Full W and physical frequencies remain open. |
 | `HillHminusOneTwoWeightedPeriodOperator`, `HillHminusOneTwoWeightedPeriodInverse`, `AnalyticTwoWeightedInverseColumns`, `HillHminusOneTwoWeightedNormalizedMoments`, `HillHminusOneSmallCriticalControl`, `HillHminusOneCriticalGapLocalization` and selected rough square/quotient sources | Actual weighted rough operator/inverse and analytic l2 errors, with all normalized/free/period/odd features retained on the same family; actual quadratic critical-gap localization, exact collapsed equality and any relative-gap coefficient locally in Hminus1. Sharp normalized moments, full W, lp remainders and physical frequencies remain open. |
 | Eleven actual rough kernel/cut/second-moment modules detailed in `HMINUS_SECOND_MOMENTS.md` | Genuine direct Hilbert pole kernel, exact all-order normalized moment pairing and absolute coefficient series; same-pair cut roots and signed weighted deformation; filled collapsed cancellation; constructed sharp quadratic/quartic/twice-weighted actual rough second-moment bounds. Rough summable gap majorant and physical frequencies remain open. |
+| `SquaredPairGapBound`, `HillHminusOneCanonicalFrequencyGaps`, `HillHminusOneFrequencyGapMajorant`, `HillHminusOneNormalizedFrequencySeries` and existing `UniformCanonicalPeriodicEndpoints` | Genuine rough locally bounded l1 gap majorant through the exact Miura energy shift; absolute/localuniform/analytic actual normalized second-moment series on one rough-open neighborhood before all output indices. Physical Hamiltonian identity (69), full W and all main theorems remain open. |
 
-All 364 selected modules compile with pinned **Lean 4.33.1**, commit
+All 369 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -451,11 +452,16 @@ PASS NLS/KdV/HillHminusOneGapPairUniqueness
 PASS NLS/KdV/HillHminusOneCriticalPrimitivePeriods
 PASS NLS/KdV/HillHminusOneNormalizedGapMomentBounds
 PASS NLS/KdV/HillHminusOneTwoWeightedMomentBounds
-Axiom audit passed: 4406 candidate declarations; 25709 declarations total.
+PASS NLS/ZakharovShabat/UniformCanonicalPeriodicEndpoints
+PASS NLS/ComplexAnalysis/SquaredPairGapBound
+PASS NLS/KdV/HillHminusOneCanonicalFrequencyGaps
+PASS NLS/KdV/HillHminusOneFrequencyGapMajorant
+PASS NLS/KdV/HillHminusOneNormalizedFrequencySeries
+Axiom audit passed: 4453 candidate declarations; 25753 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 364 selected modules (including generated and private declarations)
+the 369 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1295,3 +1301,35 @@ the fixed Miura energy shift, the rough frequency series, physical identity
 (69), full W, exact canonical product prefactor, action descent and actual
 Birkhoff/PDE flows remain open. The finite-head collapsed-even obligation
 in the full required scope is separate. All main inventory rows remain OPEN.
+
+
+## Actual rough normalized frequency-series construction
+
+The current milestone is detailed in `HMINUS_FREQUENCY_SERIES.md`. Four
+new proved modules construct a genuine rough canonical l1 frequency-gap
+majorant using the actual analytic Miura L2 source, the exact fixed energy
+translation and actual counted canonical endpoint membership. Same-disc
+unordered-pair uniqueness gives the estimate for every retained actual pair,
+including collapsed ones. The actual twice-weighted second moments and
+analytic finite head then give an absolutely convergent, locally uniformly
+convergent and analytic correction candidate -12*sum k*Omega_nk^2 on one
+Hminus1-open neighborhood before every output index. The same full weighted
+normalized family and actual cut data remain available.
+
+All 369 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The transitive permitted-axiom audit passes for
+4453 selected declarations and 25753 imported NLS declarations.
+Ordered checker/audit/PASS/coverage selections agree; all source hashes and
+seven provenance records match; selected outputs are private and fresh.
+All 364 previous selected Lean sources remain byte-identical. One existing
+canonical endpoint cutoff dependency is now directly recompiled. No new
+shared branch import/full merge, placeholder, axiom, heartbeat increase,
+disabled linter or warning exception is introduced. Canonical main remains
+unchanged and clean.
+
+This is a local rough version of the actual series in Theorem3.4 (73),
+PDF31. It is not the physical identity (69), Lemma3.2, PDF26-27. Full W,
+physical Hamiltonian/Poisson/angle and normalized-differential identities,
+action descent, sharp source weighted target spaces and asymptotics,
+compact derivatives and actual Birkhoff/PDE flows remain open. All main
+inventory rows remain OPEN.

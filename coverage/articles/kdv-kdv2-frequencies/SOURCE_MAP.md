@@ -476,3 +476,23 @@ the nonzero-potential infinite normalization equations have not yet been
 inverted in Hminus1. Full W continuation, rough normalized moments and
 physical frequency identities remain open. No main row is closed.
 See `HMINUS_PERIOD_DATA.md` and `SHARED_HMINUS_NORMALIZATION_IMPORT.json`.
+
+
+## Current actual rough second-moment series
+
+Theorem3.4's actual series (73), PDF31, is now constructed near zero on
+one Hminus1-open neighborhood before all output indices by
+`exists_hillHminus_analytic_normalized_frequency_series` in
+`NLS/KdV/HillHminusOneNormalizedFrequencySeries.lean`. It retains the same
+weighted normalized moment family, absolute convergence, locally uniform
+ordinary positive partial sums and scalar analyticity of the exact -12
+correction candidate. The actual Miura L2 source provides a genuine rough
+locally bounded l1 majorant; the fixed energy shift and actual canonical
+counted pair membership are proved in
+`HillHminusOneCanonicalFrequencyGaps.lean` and
+`HillHminusOneFrequencyGapMajorant.lean`. See `HMINUS_FREQUENCY_SERIES.md`.
+
+Physical identity(69), Lemma3.2, PDF26-27, full W, action descent, weighted
+target-space/asymptotic/compact-derivative assertions and actual physical
+Birkhoff/PDE flows remain separate open obligations. No main row above is
+closed by this local scalar series construction.

@@ -17,6 +17,24 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual rough analytic second-moment series
+
+The actual analytic Miura L2 lift now supplies a genuine locally bounded
+l1 canonical gap-square sequence in the rough topology. Exact shifted
+endpoint lifts and counted pair membership prove the majorant for every
+retained actual energy pair, including collapsed pairs. The existing actual
+twice-weighted moment estimate gives absolute and locally uniform convergence
+of the source positive second-moment series and an analytic -12 correction
+candidate on one rough-open neighborhood before all output indices. The same
+complete weighted normalized family and actual cut data are retained.
+See `HMINUS_FREQUENCY_SERIES.md` for exact statements and qualifications.
+
+Current strict validation: 369 selected modules, 4453 selected declarations
+and 25753 imported NLS declarations; permitted axioms only. All 364 earlier
+selected Lean sources remain unchanged and all seven provenance records
+remain valid. Physical frequency identity (69), full W, action descent and
+every main theorem remain open.
+
 ## Latest actual rough normalized second moments
 
 The actual normalized family now has exact all-order Hilbert kernel formulas

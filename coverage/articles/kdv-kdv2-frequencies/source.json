@@ -6195,6 +6195,76 @@
       "scope": "Finite head and uniform tail prove the pole complement open and construct the literal squared reciprocal Hilbert kernel; no exhaustive spectral zero set is required",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "cbcfcf348b294bd382728e7a2e7bdc1342b9f0bb22b3c6b1879591368d54281a"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SquaredPairGapBound.lean",
+      "source_labels": [
+        "Squared-coordinate gap bound for unordered pairs"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "The squared-coordinate gap of any two members of a norm-bounded pair is controlled by its gap; repetitions and a common cancelling energy translation are included",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2aee4c668dbba70164b38151d76f1eaf77d9be5233de32b03263e340619ddd22"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCanonicalFrequencyGaps.lean",
+      "source_labels": [
+        "Genuine rough canonical l1 gap-square sequence"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "The actual analytic Miura L2 lift supplies a genuine canonical l2 endpoint-displacement gap and its holder-square in l1, with a common rough-open locally bounded norm and actual canonical counted pairs before all high signed indices; no real-type assumption",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "123fd5505c7994e770bede3929f68695f7b568ef2a7fb55a600f51e621d9f7e8"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneFrequencyGapMajorant.lean",
+      "source_labels": [
+        "Actual rough frequency-scale energy-gap majorant"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Exact fixed-shift trace identity and principal frequency lifts put actual tight energy endpoints in the canonical counted pair. Proves gap^2/k^2 <=16*pi^2 times the genuine canonical l1 gap square, including collapsed pairs. Same-disc pair uniqueness yields one neighborhood/cutoff before every actual pair retained by cut data",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d8176c8052470f01e5c1ee54618a49009bff2b80ce7fb632ceb0d970734607ad"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneNormalizedFrequencySeries.lean",
+      "source_labels": [
+        "Constructed actual rough analytic normalized second-moment series"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "One rough-open U before all output indices gives absolute and locally uniform positive-index convergence of sum k*Omega_nk^2 and analyticity of the literal -12 correction candidate; same weighted normalized family retained on V with U subset V and actual cut data on U. Physical frequency identity69 and full W remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7f95856f5ba7bb7deb892043c6e23cf8ad8b334bb23260d03c019cdd7f4959ca"
+    },
+    {
+      "path": "NLS/ZakharovShabat/UniformCanonicalPeriodicEndpoints.lean",
+      "source_labels": [
+        "Existing common canonical endpoint cutoff theorem"
+      ],
+      "source_pages": [
+        26,
+        27,
+        31
+      ],
+      "scope": "Existing unchanged verified dependency is now directly selected and recompiled: on a common source neighborhood the same canonical endpoint labels are valid at every sufficiently large cutoff",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "28b9b78cd223a20b579c45bb8c5b5c4a8a87e74bf460872f5892b398e34564fa"
     }
   ],
   "dependencies_needed": [
@@ -6226,15 +6296,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4406,
-    "total_declarations_audited": 25709,
+    "candidate_declarations_audited": 4453,
+    "total_declarations_audited": 25753,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 364
+    "selected_modules": 369
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -6368,5 +6438,6 @@
   "hminus_normalized_odd_moments_record": "HMINUS_NORMALIZED_ODD_MOMENTS.md",
   "hminus_weighted_critical_gap_record": "HMINUS_WEIGHTED_CRITICAL_GAPS.md",
   "shared_hminus_gap_quotient_import_record": "SHARED_HMINUS_GAP_QUOTIENT_IMPORT.json",
-  "hminus_second_moments_record": "HMINUS_SECOND_MOMENTS.md"
+  "hminus_second_moments_record": "HMINUS_SECOND_MOMENTS.md",
+  "hminus_frequency_series_record": "HMINUS_FREQUENCY_SERIES.md"
 }

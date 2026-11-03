@@ -371,7 +371,12 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/HillHminusOneGapPairUniqueness
   NLS/KdV/HillHminusOneCriticalPrimitivePeriods
   NLS/KdV/HillHminusOneNormalizedGapMomentBounds
-  NLS/KdV/HillHminusOneTwoWeightedMomentBounds)
+  NLS/KdV/HillHminusOneTwoWeightedMomentBounds
+  NLS/ZakharovShabat/UniformCanonicalPeriodicEndpoints
+  NLS/ComplexAnalysis/SquaredPairGapBound
+  NLS/KdV/HillHminusOneCanonicalFrequencyGaps
+  NLS/KdV/HillHminusOneFrequencyGapMajorant
+  NLS/KdV/HillHminusOneNormalizedFrequencySeries)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

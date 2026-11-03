@@ -1,3 +1,7 @@
+import NLS.KdV.HillHminusOneNormalizedFrequencySeries
+import NLS.KdV.HillHminusOneFrequencyGapMajorant
+import NLS.KdV.HillHminusOneCanonicalFrequencyGaps
+import NLS.ComplexAnalysis.SquaredPairGapBound
 import NLS.KdV.HillHminusOneTwoWeightedMomentBounds
 import NLS.KdV.HillHminusOneNormalizedGapMomentBounds
 import NLS.KdV.HillHminusOneCriticalPrimitivePeriods
@@ -434,7 +438,12 @@ run_cmd do
     `NLS.KdV.HillHminusOneGapPairUniqueness,
     `NLS.KdV.HillHminusOneCriticalPrimitivePeriods,
     `NLS.KdV.HillHminusOneNormalizedGapMomentBounds,
-    `NLS.KdV.HillHminusOneTwoWeightedMomentBounds]
+    `NLS.KdV.HillHminusOneTwoWeightedMomentBounds,
+    `NLS.ZakharovShabat.UniformCanonicalPeriodicEndpoints,
+    `NLS.ComplexAnalysis.SquaredPairGapBound,
+    `NLS.KdV.HillHminusOneCanonicalFrequencyGaps,
+    `NLS.KdV.HillHminusOneFrequencyGapMajorant,
+    `NLS.KdV.HillHminusOneNormalizedFrequencySeries]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do
