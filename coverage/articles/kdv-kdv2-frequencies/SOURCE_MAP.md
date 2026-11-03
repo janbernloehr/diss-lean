@@ -515,3 +515,25 @@ Hill root sign/parity, mapped positive/negative energy contours, lowest-cut
 analysis, Hill energy normalization, overlap compatibility and agreement
 with the earlier local rough normalized family are separate open steps.
 Neither (52)-(54) in full W nor any main theorem is closed by this adapter.
+
+
+## Current actual root parity and energy-pullback normalization
+
+Toward (52)-(53), PDF21, `EvenDiscriminantPeriodicEndpoints.lean` and
+`EvenDiscriminantCanonicalRoot.lean` now prove complete actual endpoint
+reflection and oddness of the actual canonical root from the even trace,
+including central and collapsed pairs without a real-type restriction.
+`EvenPsiAntisymmetricPeriods.lean` uses the verified original-circle
+periods of the same NLS family and the literal negated-circle substitution
+to prove the signed difference of Kronecker periods.
+
+`exists_hillHminus_real_normalized_energy_pullbacks` constructs one
+complex Hminus1-open neighborhood at every real rough base potential,
+before all numerator and circle indices, retaining actual analytic
+energy candidates, actual isolating-circle families and exact positive
+2pi Kronecker periods under z->z^2-C.energyShift with the Jacobian 2z.
+The actual NLS root remains evaluated at the lifted frequency. A global
+Hill energy-root function, chart independence, lowest-cut continuation,
+overlap identification and agreement with the earlier local rough
+normalized family are not yet asserted. See `MIURA_ROOT_PULLBACK_PERIODS.md`.
+No main theorem row is closed by this normalization adapter.

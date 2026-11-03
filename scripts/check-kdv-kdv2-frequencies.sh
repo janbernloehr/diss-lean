@@ -385,7 +385,14 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/ZakharovShabat/SourcePsiLemma12_11
   NLS/KdV/HillHminusOneRealMiuraSourcePsi
   NLS/ComplexAnalysis/ParametricOddSquareDescent
-  NLS/KdV/HillHminusOneRealMiuraEnergyPsi)
+  NLS/KdV/HillHminusOneRealMiuraEnergyPsi
+  NLS/ZakharovShabat/EvenDiscriminantPeriodicEndpoints
+  NLS/ZakharovShabat/EvenDiscriminantCanonicalRoot
+  NLS/ComplexAnalysis/NegatedCircleIntegral
+  NLS/KdV/HillHminusOneMiuraRootSymmetry
+  NLS/ZakharovShabat/SourceTheorem12_1
+  NLS/ZakharovShabat/EvenPsiAntisymmetricPeriods
+  NLS/KdV/HillHminusOneMiuraEnergyPeriods)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

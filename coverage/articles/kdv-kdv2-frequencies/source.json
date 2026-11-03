@@ -6391,6 +6391,104 @@
       "scope": "Unchanged verified dependency now directly selected and recompiled; actual common all-index analytic root atlas with spectral isolation, real agreement and exact raw 2pi Kronecker frequency periods",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "d46b6456827374663e894fcfe4d1a9d8a26f5694ee84ebd00e7991352e6bebf8"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NegatedCircleIntegral.lean",
+      "source_labels": [
+        "Literal circle change of variable under negation"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Half-turn of the periodic circle parameter proves integral_C(c,R) f(-z) dz = -integral_C(-c,R) f(z) dz with exact orientation and differential, without integrability hypotheses",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c1ea7bdce0ff06245d5732c47ea03ae44820a7ba0d72b231ba66912833f0fa69"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMiuraEnergyPeriods.lean",
+      "source_labels": [
+        "Constructed actual normalized shifted-square rough energy pullbacks"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "At every real Hminus1 base potential, one complex rough-open neighborhood before all indices retains real-preserving actual Miura chart, positive fixed shift, verified full NLS psi data, jointly entire-energy candidates, actual all-index isolating circles and exact positive 2pi Kronecker pullback periods with Jacobian 2z. Global Hill energy-root/chart independence and physical frequency identification remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5b7c3a4d6de43051699f64a4116584ef605b958c0c3122a07c21fd10fff04d80"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMiuraRootSymmetry.lean",
+      "source_labels": [
+        "Actual root/domain symmetry at every complex rough chart input"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "The verified even diagonal L2 Miura trace supplies actual canonical endpoint reflection, root oddness and reflected actual root domain for every complex rough chart input; no real-type assumption",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7bba53b2f1f3efcc8af697fd58579392f4ae27e201219bfca2e7764298abf526"
+    },
+    {
+      "path": "NLS/ZakharovShabat/EvenDiscriminantCanonicalRoot.lean",
+      "source_labels": [
+        "Actual canonical root oddness with the central denominator retained"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Proved complete endpoint reflection gives odd midpoints, even oriented gaps, reflected segments/domain and literal standard-root reflection. Symmetric finite canonical-root products retain the exceptional zero denominator and converge to the actual odd canonical root; no arbitrary square root or assumed sign",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0cc08d03acbee4eb00ce7bdd918def6a0efd84ebdc438a0faa5e83695968d7e0"
+    },
+    {
+      "path": "NLS/ZakharovShabat/EvenDiscriminantPeriodicEndpoints.lean",
+      "source_labels": [
+        "Actual complete canonical endpoint reflection from an even trace"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "At finite p>1 on the period-one source subspace, actual even discriminant gives exact spectrum and algebraic-multiplicity reflection via canonical product analytic order. Reflects complete central/distant labelings and genuine lp displacements; ordered uniqueness gives left(-n)=-right(n), including central and collapsed pairs at arbitrary complex sources",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8f1907727c3450b43c6e56d36e8fe6b179ea7138eeae8a97715f6b235a653833"
+    },
+    {
+      "path": "NLS/ZakharovShabat/EvenPsiAntisymmetricPeriods.lean",
+      "source_labels": [
+        "Actual signed Kronecker periods of the antisymmetrized psi numerator"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Reflects actual original isolating circles and applies the same verified SourceTheorem12_1 family on every such circle. Proved integrability, actual canonical-root oddness and literal circle substitution give raw 2pi(delta_mn-delta_(-m),n). Actual spectral isolation constructs simultaneous nonempty all-index circles",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "73dba9396c8ebb49a7f7d881c0b1c6ef8cca152f6e9d0ab7c0cb0540c3e65b16"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceTheorem12_1.lean",
+      "source_labels": [
+        "Existing normalized NLS psi theorem on every original circle"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Unchanged existing verified dependency now directly selected and recompiled; simultaneous analytic roots, exact periods on every original isolating circle, actual uniform squared-gap root offsets and all preceding original source estimates",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c036faa392a52eb853aff8fac711d8a2c01eeae64505b4dcb16207decbc24a3f"
     }
   ],
   "dependencies_needed": [
@@ -6422,15 +6520,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4517,
-    "total_declarations_audited": 25796,
+    "candidate_declarations_audited": 4595,
+    "total_declarations_audited": 26767,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 378
+    "selected_modules": 385
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -6566,5 +6664,6 @@
   "shared_hminus_gap_quotient_import_record": "SHARED_HMINUS_GAP_QUOTIENT_IMPORT.json",
   "hminus_second_moments_record": "HMINUS_SECOND_MOMENTS.md",
   "hminus_frequency_series_record": "HMINUS_FREQUENCY_SERIES.md",
-  "real_miura_energy_psi_record": "REAL_MIURA_ENERGY_PSI.md"
+  "real_miura_energy_psi_record": "REAL_MIURA_ENERGY_PSI.md",
+  "miura_root_pullback_periods_record": "MIURA_ROOT_PULLBACK_PERIODS.md"
 }

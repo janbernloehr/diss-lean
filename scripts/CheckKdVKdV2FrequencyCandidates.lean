@@ -1,3 +1,7 @@
+import NLS.KdV.HillHminusOneMiuraEnergyPeriods
+import NLS.ZakharovShabat.EvenPsiAntisymmetricPeriods
+import NLS.KdV.HillHminusOneMiuraRootSymmetry
+import NLS.ZakharovShabat.EvenDiscriminantCanonicalRoot
 import NLS.KdV.HillHminusOneRealMiuraEnergyPsi
 import NLS.KdV.HillHminusOneRealMiuraCharts
 import NLS.ZakharovShabat.SourcePsiLemma12_11
@@ -458,7 +462,14 @@ run_cmd do
     `NLS.ZakharovShabat.SourcePsiLemma12_11,
     `NLS.KdV.HillHminusOneRealMiuraSourcePsi,
     `NLS.ComplexAnalysis.ParametricOddSquareDescent,
-    `NLS.KdV.HillHminusOneRealMiuraEnergyPsi]
+    `NLS.KdV.HillHminusOneRealMiuraEnergyPsi,
+    `NLS.ZakharovShabat.EvenDiscriminantPeriodicEndpoints,
+    `NLS.ZakharovShabat.EvenDiscriminantCanonicalRoot,
+    `NLS.ComplexAnalysis.NegatedCircleIntegral,
+    `NLS.KdV.HillHminusOneMiuraRootSymmetry,
+    `NLS.ZakharovShabat.SourceTheorem12_1,
+    `NLS.ZakharovShabat.EvenPsiAntisymmetricPeriods,
+    `NLS.KdV.HillHminusOneMiuraEnergyPeriods]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

@@ -17,6 +17,25 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual canonical-root parity and normalized energy pullbacks
+
+The even Miura trace now proves complete actual endpoint reflection,
+including all central and repeated multiplicities, and oddness of the
+actual canonical root via its literal finite products. Reflected actual
+isolating circles and the same verified NLS family give exact signed
+periods 2pi(delta_mn-delta_(-m),n). Near every real Hminus1 base potential,
+one common complex rough-open set supports all analytic energy candidates,
+actual all-index circles and exact positive Kronecker pullback periods
+with the fixed energy shift and Jacobian 2z retained. See
+`MIURA_ROOT_PULLBACK_PERIODS.md`.
+
+Current strict validation: 385 selected modules, 4595 selected declarations
+and 26767 imported NLS declarations; permitted axioms only. All 378 previous
+selected Lean sources and seven provenance records remain unchanged.
+Global Hill energy-root/chart independence, lowest-cut and overlap
+identification, physical frequency identity(69), action descent and all
+main theorems remain open.
+
 ## Latest real rough Miura charts and entire energy psi candidates
 
 At every physically real Hminus1 potential, actual complex analytic Miura

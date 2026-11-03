@@ -78,8 +78,9 @@ its existing Hilbert specialization and a transitive audit.
 | Eleven actual rough kernel/cut/second-moment modules detailed in `HMINUS_SECOND_MOMENTS.md` | Genuine direct Hilbert pole kernel, exact all-order normalized moment pairing and absolute coefficient series; same-pair cut roots and signed weighted deformation; filled collapsed cancellation; constructed sharp quadratic/quartic/twice-weighted actual rough second-moment bounds. Rough summable gap majorant and physical frequencies remain open. |
 | `SquaredPairGapBound`, `HillHminusOneCanonicalFrequencyGaps`, `HillHminusOneFrequencyGapMajorant`, `HillHminusOneNormalizedFrequencySeries` and existing `UniformCanonicalPeriodicEndpoints` | Genuine rough locally bounded l1 gap majorant through the exact Miura energy shift; absolute/localuniform/analytic actual normalized second-moment series on one rough-open neighborhood before all output indices. Physical Hamiltonian identity (69), full W and all main theorems remain open. |
 | Seven new real-preserving Miura/energy-descent modules and existing `ConjugateReflection`, `SourcePsiLemma12_11` | Actual physically real rough Miura charts at every real Hminus1 base potential; proved applicability of the common normalized NLS psi theorem; jointly analytic filled energy candidates with exact fixed-shift 2z factor identity. Hill energy normalization and all main theorems remain open. |
+| Six new even-trace/root/contour/pullback modules and existing `SourceTheorem12_1` | Complete actual endpoint/multiplicity reflection, odd actual canonical root, exact signed contour transformation and constructed all-index positive Kronecker energy pullbacks near every real Hminus1 base potential. Global Hill energy-root/chart independence and physical frequencies remain open. |
 
-All 378 selected modules compile with pinned **Lean 4.33.1**, commit
+All 385 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -467,11 +468,18 @@ PASS NLS/ZakharovShabat/SourcePsiLemma12_11
 PASS NLS/KdV/HillHminusOneRealMiuraSourcePsi
 PASS NLS/ComplexAnalysis/ParametricOddSquareDescent
 PASS NLS/KdV/HillHminusOneRealMiuraEnergyPsi
-Axiom audit passed: 4517 candidate declarations; 25796 declarations total.
+PASS NLS/ZakharovShabat/EvenDiscriminantPeriodicEndpoints
+PASS NLS/ZakharovShabat/EvenDiscriminantCanonicalRoot
+PASS NLS/ComplexAnalysis/NegatedCircleIntegral
+PASS NLS/KdV/HillHminusOneMiuraRootSymmetry
+PASS NLS/ZakharovShabat/SourceTheorem12_1
+PASS NLS/ZakharovShabat/EvenPsiAntisymmetricPeriods
+PASS NLS/KdV/HillHminusOneMiuraEnergyPeriods
+Axiom audit passed: 4595 candidate declarations; 26767 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 378 selected modules (including generated and private declarations)
+the 385 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1375,3 +1383,38 @@ coherent Hill normalized differentials, exact canonical leading scalar,
 source root estimate(54), physical identity(69), action descent, weighted
 target spaces/compact derivatives and actual Birkhoff/PDE identification
 remain open. Every main inventory row remains OPEN.
+
+
+## Actual root parity and normalized rough energy pullbacks
+
+See `MIURA_ROOT_PULLBACK_PERIODS.md` for exact declarations and scope.
+Six new proved modules derive complete actual spectrum/endpoint and
+multiplicity reflection from the even Miura trace. Literal symmetric
+standard-root products give oddness of the actual canonical root with
+the exceptional central denominator retained. Actual original isolating
+circles reflect to opposite indices; the same verified NLS psi family
+has exact periods on every such circle. The literal signed change of
+variable gives 2pi(delta_mn-delta_(-m),n). For positive indices it is
+exactly the source Kronecker normalization. At every real rough base
+potential one common complex rough-open set constructs actual analytic
+energy candidates, nonempty all-index circles and the normalized
+shifted-square pullback periods with the fixed shift and Jacobian 2z.
+
+All 385 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The permitted transitive axiom audit passes for
+4595 selected declarations and 26767 imported NLS declarations.
+Ordered checker/audit/PASS/coverage selections agree; all source hashes and
+seven provenance records match; selected outputs are private and fresh.
+All 378 previous selected Lean sources remain byte-identical. The existing
+`SourceTheorem12_1` is now directly recompiled. No new shared branch import,
+full merge, placeholder, axiom, heartbeat increase, disabled linter or
+warning exception is introduced. Canonical main remains unchanged and clean.
+
+The proved integrals retain the actual NLS canonical root at the lifted
+frequency. A global Hill energy-root function, chart/lift independence,
+lowest-cut analysis, overlap compatibility and agreement with the earlier
+local rough weighted normalized family remain separate obligations.
+Canonical product leading scalar one, source root estimate(54), physical
+identity(69), action descent, weighted target spaces/compact derivatives
+and actual Birkhoff/PDE identification remain open. All main inventory
+rows remain OPEN.
