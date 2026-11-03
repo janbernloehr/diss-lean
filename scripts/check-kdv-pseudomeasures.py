@@ -761,6 +761,16 @@ modules = [
     'NLS.KdV.HillHminusOneGluedActionLabels',
     'NLS.Articles.KdVPseudomeasures.OriginalHighHillActions',
     'NLS.KdV.HillHminusOneGluedActionNonvanishing',
+    'NLS.SequenceSpaces.PeriodOneMiuraRealCharts',
+    'NLS.SequenceSpaces.PeriodOneMiuraReality',
+    'NLS.KdV.HillHminusOneNLSMovingSheets',
+    'NLS.KdV.HillHminusOneMiuraSheets',
+    'NLS.ComplexAnalysis.PiecewiseLoopPullback',
+    'NLS.ComplexAnalysis.QuadraticEnergyLoop',
+    'NLS.KdV.HillHminusOneMiuraContour',
+    'NLS.ZakharovShabat.SourceCriticalRootPiecewiseZeroPeriod',
+    'NLS.KdV.HillHminusOneMiuraHigherAction',
+    'NLS.KdV.HillHminusOneMiuraActionFamilies',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

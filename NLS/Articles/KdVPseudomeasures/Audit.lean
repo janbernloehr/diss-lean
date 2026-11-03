@@ -727,6 +727,16 @@ import NLS.KdV.HillHminusOneUniformGluedActions
 import NLS.KdV.HillHminusOneGluedActionLabels
 import NLS.Articles.KdVPseudomeasures.OriginalHighHillActions
 import NLS.KdV.HillHminusOneGluedActionNonvanishing
+import NLS.SequenceSpaces.PeriodOneMiuraRealCharts
+import NLS.SequenceSpaces.PeriodOneMiuraReality
+import NLS.KdV.HillHminusOneNLSMovingSheets
+import NLS.KdV.HillHminusOneMiuraSheets
+import NLS.ComplexAnalysis.PiecewiseLoopPullback
+import NLS.ComplexAnalysis.QuadraticEnergyLoop
+import NLS.KdV.HillHminusOneMiuraContour
+import NLS.ZakharovShabat.SourceCriticalRootPiecewiseZeroPeriod
+import NLS.KdV.HillHminusOneMiuraHigherAction
+import NLS.KdV.HillHminusOneMiuraActionFamilies
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5244,3 +5254,33 @@ import NLS.KdV.HillHminusOneGluedActionNonvanishing
 #print axioms NLS.KdV.hillHminusGluedHighActionRatio_norm_sub_one_lt_one
 #print axioms NLS.KdV.hillHminusGluedHighActionRatio_ne_zero
 #print axioms NLS.KdV.hillHminusGluedHighAction_eq_zero_iff_on_domain
+#print axioms NLS.exists_real_periodOneMiura_energyChart
+#print axioms NLS.IsRealPeriodOneHminusOne.sub
+#print axioms NLS.periodOneL2Inclusion_single_zero_real
+#print axioms NLS.periodOneMiura_real
+#print axioms NLS.KdV.hillHminusContinuedRoot_eq_NLS_along_energy_path
+#print axioms NLS.KdV.hillHminusContinuedPrimitive_eq_NLS_along_energy_path
+#print axioms NLS.KdV.hillHminus_shifted_miura_sheets
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.map
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.inside_map_iff
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.integral_map_of_holomorphic_pullback
+#print axioms NLS.ComplexAnalysis.quadraticEnergyMap
+#print axioms NLS.ComplexAnalysis.quadraticEnergyLoop
+#print axioms NLS.ComplexAnalysis.integral_quadraticEnergyLoop
+#print axioms NLS.ComplexAnalysis.windingIntegral_quadraticEnergyLoop
+#print axioms NLS.ComplexAnalysis.windingIntegral_circle_eq_zero_of_not_mem_closedBall
+#print axioms NLS.ComplexAnalysis.windingIntegral_quadraticEnergyCircle_one
+#print axioms NLS.KdV.hillHminusMiuraRoot
+#print axioms NLS.KdV.hillHminusMiuraContourAction
+#print axioms NLS.KdV.hillHminusMiuraRoot_at_squared_energy
+#print axioms NLS.KdV.hillHminusMiuraRoot_sq
+#print axioms NLS.KdV.hillHminusMiuraRoot_eq_physical_of_real
+#print axioms NLS.KdV.hillHminus_shifted_miura_trace_derivative
+#print axioms NLS.KdV.hillHminusMiuraContourAction_quadratic_pullback
+#print axioms NLS.ZakharovShabat.SourceAbelianSpectralChart.continuousOn_criticalRatio
+#print axioms NLS.ZakharovShabat.SourceAbelianSpectralChart.criticalRatio_loop_integral_eq_zero
+#print axioms NLS.KdV.hillHminusMiuraIndexedAction
+#print axioms NLS.KdV.hillHminusMiuraContourAction_eq_twice_higherContour
+#print axioms NLS.KdV.hillHminusMiuraContourAction_eq_indexed
+#print axioms NLS.KdV.winding_one_miura_action_contour
+#print axioms NLS.KdV.exists_hillHminus_real_Miura_action_family
