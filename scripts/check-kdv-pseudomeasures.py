@@ -418,6 +418,11 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalEndpointMembership',
     'NLS.FunctionalAnalysis.CompactCoordinateEquicontinuity',
     'NLS.Articles.KdVPseudomeasures.SourceWeakStarAscoli',
+    'NLS.FunctionalAnalysis.HermitianDualPositivity',
+    'NLS.KdV.SingularHillRayleigh',
+    'NLS.KdV.SingularHillPotentialBound',
+    'NLS.SequenceSpaces.PeriodOneMiuraUniformRealLift',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillRayleigh',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

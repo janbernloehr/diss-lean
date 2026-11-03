@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Appendix B Fourier equicontinuity and compact physical trajectory families",
+  "phase": "Full original Rayleigh bound, uniform isospectral H-minus-one bound and common real Miura shift",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -392,13 +392,18 @@
     "NLS/Articles/KdVPseudomeasures/OriginalEndpointMembership.lean",
     "NLS/FunctionalAnalysis/CompactCoordinateEquicontinuity.lean",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarAscoli.lean",
+    "NLS/FunctionalAnalysis/HermitianDualPositivity.lean",
+    "NLS/KdV/SingularHillRayleigh.lean",
+    "NLS/KdV/SingularHillPotentialBound.lean",
+    "NLS/SequenceSpaces/PeriodOneMiuraUniformRealLift.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRayleigh.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 2513,
-  "definitions": 547,
+  "proved_theorems": 2534,
+  "definitions": 549,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 3060,
+    "declarations": 3083,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -728,13 +733,21 @@
     "On any compact topological time domain, a sequence of endpoint-bounded physical families with equicontinuous Fourier coefficients has one strictly increasing subsequence and one continuous physical weak-star limit trajectory in the same original endpoint norm ball. The subsequence is selected before every admissible lower norm exponent and converges uniformly in every such norm.",
     "For continuous trajectories in the original endpoint norm ball, that same subsequence converges in the compact-open physical weak-star topology, and the limit lies in the closure of the original sequence range.",
     "Every closed Fourier-equicontinuous family of continuous trajectories in a common original endpoint norm ball is compact in the compact-open weak-star topology. Every such equicontinuous family has compact closure.",
-    "In the article range, Fourier equicontinuity is equivalent to equicontinuity in the norm of the identical original physical H-minus-one distributions."
+    "In the article range, Fourier equicontinuity is equivalent to equicontinuity in the norm of the identical original physical H-minus-one distributions.",
+    "A nonnegative invertible Hermitian full-duality form on a complex Banach domain is coercive, with explicit coefficient 1/(norm(inverse)+1). Positivity is constant along a continuous connected family of invertible Hermitian full-duality operators.",
+    "For any nonnegative Hermitian full-duality operator P, norm(P v)^2 is bounded by the real quadratic energy at v times norm(P). Complex phases recover the entire dual norm, without assuming norm attainment.",
+    "For EVERY real original period-two H-minus-one potential q, EVERY lower bound a of its actual full original spectrum bounds the original quadratic form below by a times the original normalized L2 energy, on EVERY vector of the full original H1 domain.",
+    "The actual lowest original physical label supplies that quadratic-form lower bound and is nonpositive for mean-zero potentials.",
+    "For EVERY real mean-zero original H-minus-one potential whose spectrum is bounded below by a, its EXACT original norm is bounded by 4*(abs(a)+1)*C, where C is fixed independently of q and defined using original Laplacian, inclusion and singular multiplication operator norms.",
+    "The ENTIRE original isospectral set, with no endpoint membership premise, has the common original H-minus-one bound 4*(abs(lambda_0(q))+1)*C. This follows from equality of the actual original canonical labels.",
+    "A new reusable theorem selects one arbitrarily large positive shift and one L2 bound before EVERY real unit-period H-minus-one potential in a specified norm ball, and constructs real L2 Miura lifts at that same shift.",
+    "Combining the original isospectral H-minus-one bound with the exact period-one extraction norm bound gives one common arbitrarily large shifted real Miura representation and one common L2 bound for EVERY member of the entire original isospectral set."
   ],
-  "source_correspondence": "Lemma B.1(i)-(iv) remains complete. Ten new theorems prove Fourier equicontinuity criteria, simultaneous uniform lower-norm subsequence extraction and compactness of physical weak-star trajectory families under the explicit common original endpoint bound. Original source Theorem 2.2(i)-(ii) remains proved. The missing uniform isospectral bound, source 2.2(iii), and all remaining main theorems remain open.",
-  "build_isolation": "The baseline of 385 modules and 3050 declarations at 8fd085c was freshly checked in the current private build view. All baseline source files were verified byte-identical to that commit. This increment compiled two new modules and one pinned mathlib dependency into the private view, then passed the expanded exact audit of 387 modules and 3060 declarations with zero warnings or suggestions. Canonical source and build outputs remain read-only.",
+  "source_correspondence": "The full original Rayleigh lower bound, uniform original isospectral H-minus-one norm bound and common shifted real Miura lifts are proved. Source Theorem 2.2(i)-(ii) remains proved. The uniform ENDPOINT isospectral bound, source Theorem 2.2(iii), remaining original Dirichlet comparison and all main theorems remain unproved.",
+  "build_isolation": "The prior private view contains the validated baseline of 387 selected modules and 3060 declarations at 9784d7a. Every baseline Lean source was verified byte-identical to that commit. This increment compiled all five new modules in dependency order and passed the expanded exact audit of 392 selected modules and 3083 declarations, with no warnings, tactic suggestions or additional axioms. Canonical source and build outputs remain read-only.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
-  "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending; no push attempted. Canonical source, build and checkout remain read-only.",
+  "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
   "source_hash": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
   "output_sha256": {
     "NLS/SequenceSpaces/WeightedFiniteCoefficients.lean": "0e2f288406c36fe93b5882aa13a5cf081871bd8ecf75c1214e7586b4f2c244d9",
@@ -1123,7 +1136,12 @@
     "NLS/Articles/KdVPseudomeasures/OriginalEndpointMembership.lean": "e67f81d986f89e0e02325dba17f6758f1b9bce95d9ac98531f7bc7890711f64d",
     "NLS/FunctionalAnalysis/CompactCoordinateEquicontinuity.lean": "27dc98a7f7d63593cd1db3c64ed4442bcf759e78d5f5fec0af6eab1c55befb9e",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarAscoli.lean": "6390aa1577b92909e6e19e71d389dae70a359800020586f414361f2c8b8145ea",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "3849e66062e5b7d6bf5a9f9b376bd3ac6996e6b774cf00883f2d6815b904f5e6"
+    "NLS/FunctionalAnalysis/HermitianDualPositivity.lean": "9799246a32a7742a702e9760e4557b1551d3639f493dc28641e79218a331b5c8",
+    "NLS/KdV/SingularHillRayleigh.lean": "46bd7436d4f3c7b5f6ad7bd0f36f0362e305cc668ad5500bceba5f3b8df14fba",
+    "NLS/KdV/SingularHillPotentialBound.lean": "594233be5bc86326361f65411e4fbc68913636a3551d5e47be9a5c5714060b51",
+    "NLS/SequenceSpaces/PeriodOneMiuraUniformRealLift.lean": "dd342a520b9c845f29dced32ee7a58716f8e2cb17a69428a111b02e6bae424c3",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillRayleigh.lean": "c41de0d396ce1ec060816c4810e8d95bbb85076dddea53f319f60c7adb420bbb",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "28d9e8ed9b76c8722caf66b7c7231520f9687729dde13c8bf70d2a5e6361f504"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1131,17 +1149,17 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 3050,
-    "newly_checked_declarations_this_continuation": 10,
-    "newly_authored_or_adapted_declarations_this_continuation": 10,
-    "new_theorems": 10,
-    "new_definitions": 0,
-    "authored_or_adapted_theorems": 10,
-    "authored_or_adapted_definitions": 0,
+    "previous_checked_declarations": 3060,
+    "newly_checked_declarations_this_continuation": 23,
+    "newly_authored_or_adapted_declarations_this_continuation": 23,
+    "new_theorems": 21,
+    "new_definitions": 2,
+    "authored_or_adapted_theorems": 21,
+    "authored_or_adapted_definitions": 2,
     "already_present_shared_declarations_newly_audited": 0,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 3060,
-    "reuse": "All 385 baseline source modules are unchanged. Two new modules contain ten new positive theorems. One unchanged pinned mathlib source is compiled privately because its reference olean is absent."
+    "total_checked_declarations": 3083,
+    "reuse": "The 387 baseline modules are unchanged. Four new reusable shared modules and one article-specific wrapper module reuse verified original duality, spectra, intrinsic labels and real Miura charts."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -1170,7 +1188,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-appendix-b-ascoli.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-original-isospectral-norm.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -1361,7 +1379,15 @@
   "validation_phases": [
     "Fresh380module dependency-order build, including synchronized shared HillComplement and39copied shared modules, plus exact3026declaration audit PASSED zero warnings/suggestions.",
     "Five additional gap/inverse/membership modules and expanded exact385module/3050declaration audit PASSED zero warnings/suggestions in the same fresh private directory.",
-    "Two new Appendix B trajectory modules and one pinned mathlib dependency compiled privately; the expanded exact audit of 387 modules and 3060 declarations passed with zero warnings or suggestions. The prior 385 module baseline sources are byte-identical to 8fd085c."
+    "Two new Appendix B trajectory modules and one pinned mathlib dependency compiled privately; the expanded exact audit of 387 modules and 3060 declarations passed with zero warnings or suggestions. The prior 385 module baseline sources are byte-identical to 8fd085c.",
+    "Five new original Rayleigh, potential bound, uniform Miura lift and article wrapper modules compiled privately in dependency order. The expanded exact audit of 392 modules and 3083 declarations passed with zero warnings or suggestions. All baseline sources are unchanged from 9784d7a."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-ascoli-map.json"
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/original-isospectral-norm-map.json",
+  "baseline_validated_snapshot": {
+    "commit": "9784d7a5ae6ee53bad7352c65fdfa48c918f7162",
+    "modules": 387,
+    "audited_declarations": 3060,
+    "directory": ".lake/full-original-label-check-20261103",
+    "source_hashes_verified_unchanged": true
+  }
 }

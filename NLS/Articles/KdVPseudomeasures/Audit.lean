@@ -384,6 +384,11 @@ import NLS.Articles.KdVPseudomeasures.OriginalFinitePInverse
 import NLS.Articles.KdVPseudomeasures.OriginalEndpointMembership
 import NLS.FunctionalAnalysis.CompactCoordinateEquicontinuity
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarAscoli
+import NLS.FunctionalAnalysis.HermitianDualPositivity
+import NLS.KdV.SingularHillRayleigh
+import NLS.KdV.SingularHillPotentialBound
+import NLS.SequenceSpaces.PeriodOneMiuraUniformRealLift
+import NLS.Articles.KdVPseudomeasures.OriginalHillRayleigh
 
 /-! Exact declaration and axiom audit for the private article dependency view. -/
 
@@ -3447,3 +3452,26 @@ import NLS.Articles.KdVPseudomeasures.SourceWeakStarAscoli
 #print axioms NLS.Articles.KdVPseudomeasures.equicontinuous_originalHminusOne_iff_coefficients
 #print axioms NLS.Articles.KdVPseudomeasures.isCompact_sourceTrajectory_of_isClosed_equicontinuous_coefficients
 #print axioms NLS.Articles.KdVPseudomeasures.isCompact_closure_sourceTrajectory_of_equicontinuous_coefficients
+#print axioms NLS.realDualityForm
+#print axioms NLS.realDualityForm_apply
+#print axioms NLS.abs_realDualityForm_le
+#print axioms NLS.realDualityForm_coercive_of_nonneg
+#print axioms NLS.realDualityForm_sub
+#print axioms NLS.norm_apply_sq_le_realDualityForm_mul_norm
+#print axioms NLS.nonneg_realDualityForm_of_preconnected
+#print axioms NLS.KdV.realDualityForm_singularHillPencil
+#print axioms NLS.KdV.realDualityForm_singularHillPencil_isSymm
+#print axioms NLS.KdV.singularHill_form_lower_bound_of_spectral_lower_bound
+#print axioms NLS.KdV.singularHillOperator_freeMode_zero
+#print axioms NLS.KdV.singularHillSesquilinear_freeMode_zero
+#print axioms NLS.KdV.singularHillPotentialBoundConstant
+#print axioms NLS.KdV.singularHillPotentialBoundConstant_pos
+#print axioms NLS.KdV.norm_singularHillPotential_le_of_spectral_lower_bound
+#print axioms NLS.exists_uniform_real_periodOneMiura_shift
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillLabels_zero_form_lower_bound
+#print axioms NLS.Articles.KdVPseudomeasures.originalIsospectral_form_lower_bound
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillLabels_zero_nonpos
+#print axioms NLS.Articles.KdVPseudomeasures.norm_originalPotential_le_lowest_label
+#print axioms NLS.Articles.KdVPseudomeasures.norm_original_isospectral_le_lowest_label
+#print axioms NLS.Articles.KdVPseudomeasures.originalIsospectralSet_hminusOne_norm_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_real_originalIsospectral_Miura_shift
