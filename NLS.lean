@@ -5220,3 +5220,8 @@ import NLS.KdV.HillEnergyRadicandProduct
 import NLS.ComplexAnalysis.RealCutConnected
 import NLS.ComplexAnalysis.RealEndpointRootSigns
 import NLS.KdV.HillEnergyRootIdentification
+import NLS.ComplexAnalysis.DerivativeSquarePullbackOrder
+import NLS.KdV.HillEnergyPolynomialLimits
+import NLS.KdV.HillGapCriticalPoints
+import NLS.KdV.HillCriticalFrequencyBridge
+import NLS.Articles.KdVEstimates.ArnoldIntegerEstimates

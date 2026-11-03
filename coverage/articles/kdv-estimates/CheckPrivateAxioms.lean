@@ -1,3 +1,8 @@
+import NLS.ComplexAnalysis.DerivativeSquarePullbackOrder
+import NLS.KdV.HillEnergyPolynomialLimits
+import NLS.KdV.HillGapCriticalPoints
+import NLS.KdV.HillCriticalFrequencyBridge
+import NLS.Articles.KdVEstimates.ArnoldIntegerEstimates
 import NLS.ComplexAnalysis.RealCutConnected
 import NLS.ComplexAnalysis.RealEndpointRootSigns
 import NLS.KdV.HillEnergyRootIdentification
@@ -566,7 +571,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.square_root_real_coordinate_bounds,
     ``NLS.ZakharovShabat.PeriodicEndpointPair.of_candidates,
     ``NLS.ComplexAnalysis.isPreconnected_of_contains_nonreal_and_real_interval,
-    ``NLS.ComplexAnalysis.endpointRoot_real_left]
+    ``NLS.ComplexAnalysis.endpointRoot_real_left,
+    ``NLS.ComplexAnalysis.analyticOrderNatAt_linear_mul_comp_sq_zero]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
