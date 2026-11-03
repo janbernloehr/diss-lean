@@ -5211,3 +5211,6 @@ import NLS.ComplexAnalysis.ComplexSquareRootShift
 import NLS.KdV.HillEnergyFrequencyBounds
 import NLS.ComplexAnalysis.AnalyticSquarePullback
 import NLS.KdV.HillSignedEnergyLabels
+import NLS.SequenceSpaces.IntegerSymmetricSums
+import NLS.ComplexAnalysis.RealSquareRootCensus
+import NLS.KdV.HillCentralEnergyLabeling

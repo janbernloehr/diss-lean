@@ -1,3 +1,6 @@
+import NLS.SequenceSpaces.IntegerSymmetricSums
+import NLS.ComplexAnalysis.RealSquareRootCensus
+import NLS.KdV.HillCentralEnergyLabeling
 import NLS.ComplexAnalysis.AnalyticSquarePullback
 import NLS.KdV.HillSignedEnergyLabels
 import NLS.KdV.HillEnergyRootAnalytic
@@ -550,7 +553,11 @@ run_cmd do
     ``NLS.ComplexAnalysis.norm_normalizedStandardRoot_sub_center_le,
     ``NLS.ComplexAnalysis.norm_endpointRoot_div_sub_one_le,
     ``NLS.ComplexAnalysis.norm_complexSqrt_sub_positive_le,
-    ``NLS.ComplexAnalysis.analyticOrderNatAt_comp_sq_zero]
+    ``NLS.ComplexAnalysis.analyticOrderNatAt_comp_sq_zero,
+    ``NLS.SequenceSpaces.sum_symmetric_interval,
+    ``NLS.SequenceSpaces.sum_range_one_and_pairs,
+    ``NLS.ComplexAnalysis.count_opposite_square_root_pair,
+    ``NLS.ComplexAnalysis.square_root_real_coordinate_bounds]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

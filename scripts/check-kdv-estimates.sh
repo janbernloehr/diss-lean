@@ -82,6 +82,7 @@ modules+=(NLS/KdV/HillPhysicalIntegerActions NLS/Articles/KdVEstimates/PhysicalI
 modules+=(NLS/ComplexAnalysis/EndpointRootBounds NLS/KdV/HillCanonicalEnergyRootProduct)
 modules+=(NLS/KdV/HillEnergyRootAnalytic NLS/ComplexAnalysis/ComplexSquareRootShift NLS/KdV/HillEnergyFrequencyBounds)
 modules+=(NLS/ComplexAnalysis/AnalyticSquarePullback NLS/KdV/HillSignedEnergyLabels)
+modules+=(NLS/SequenceSpaces/IntegerSymmetricSums NLS/ComplexAnalysis/RealSquareRootCensus NLS/KdV/HillCentralEnergyLabeling)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
