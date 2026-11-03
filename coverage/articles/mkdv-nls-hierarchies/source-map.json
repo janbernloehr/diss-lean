@@ -110,7 +110,9 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_fiber_exact_image",
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_allSobolev",
         "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_Cartesian_homeomorphism",
-        "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_unique_phase_lift_allSobolev"
+        "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_unique_phase_lift_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_Cartesian_homeomorphism",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev"
       ]
     },
     {
@@ -191,7 +193,9 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_fiber_exact_image",
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_allSobolev",
         "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_Cartesian_homeomorphism",
-        "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_unique_phase_lift_allSobolev"
+        "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_unique_phase_lift_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_Cartesian_homeomorphism",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -202,7 +206,8 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mkdv_actions_of_nls_actions",
         "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mean_square_of_nls_actions"
       ],
-      "quantifiers": "Every original real period-one H1 input, every positive mKdV index, zero mean and arbitrary collapsed gaps included. The entire original signed NLS action sequence is assembled in complex l1, analytic on an ambient L2 source neighborhood of all real-type sources. Each J_n and the mean squared have holomorphic, hence real analytic, factors on open complex l1 neighborhoods containing the action image of the entire real L2 diagonal."
+      "quantifiers": "Every original real period-one H1 input, every positive mKdV index, zero mean and arbitrary collapsed gaps included. The entire original signed NLS action sequence is assembled in complex l1, analytic on an ambient L2 source neighborhood of all real-type sources. Each J_n and the mean squared have holomorphic, hence real analytic, factors on open complex l1 neighborhoods containing the action image of the entire real L2 diagonal.",
+      "signed_mean_nonrecoverability": "NLS.Articles.MKdVNLSHierarchies.no_global_signed_mean_NLS_action_factor"
     },
     {
       "label": "Theorem 4(iii)",
@@ -405,7 +410,7 @@
     "remaining": "The diagonal physical discriminant, original fixed-index endpoints, canonical sheets and actual weighted contour actions have now been identified. Remaining normal-form angle, frequency and Poisson-bracket conventions must be carried through their actual constructions."
   },
   "remaining_essential_dependencies": [
-    "general Cartesian-Cartesian brackets and Gardner canonicity; general-profile Cartesian Jacobian/global inverse, removal of nonzero-mean central ambiguity and comparison of distinct NLS action fibers at the same J/mean; arbitrary nonnegative action-data realization. Global homeomorphic phase coordinates and unique native lifts within each zero-mean original NLS action fiber are proved",
+    "general Cartesian-Cartesian brackets and Gardner canonicity; general-profile Cartesian Jacobian/global inverse and comparison of distinct NLS action fibers at the same physical J/mean; arbitrary nonnegative action-data realization. The central ambiguity is removed at every signed mean, with global homeomorphic phase coordinates and unique native lifts within each same-mean original NLS action fiber",
     "global forward analytic factorization of restricted NLS actions through independent physical mKdV actions and signed mean at general profiles; the whole-sequence local forward factor near zero, converse physical J_n and corrected mean-squared factors are proved",
     "independent mKdV Birkhoff angle construction, the final angle-sum factorization and full frequency identification; Theorem 4(iii) angle-action bracket clause and actual Gardner transfer are proved",
     "corrected frequency-sign convention in Theorem 3; the global signed-mean claim in Theorem 4(ii) is replaced by the proved mean-squared statement, while signed recovery requires a branch restriction"
@@ -1019,6 +1024,23 @@
     "article_homeomorphism": "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_Cartesian_homeomorphism",
     "article_unique_native_lift": "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_unique_phase_lift_allSobolev",
     "scope": "Global injectivity of the actual physical Cartesian map within each zero-mean original signed NLS action fiber on the entire original real L2 diagonal. This fiber is exactly the compact joint physical J/mean and NLS action fiber, and maps homeomorphically onto its full native Cartesian phase fiber. The phase preimage within that NLS action fiber is unique in every native integer H^s class, including zero mean, collapsed gaps and infinitely many open modes. For general mean, equal original NLS actions and equal Cartesian maps leave at most the actual central NLS half-turn.",
-    "limits": "Different original NLS action fibers having the same physical J and signed mean are not identified. Nonzero-mean central half-turn elimination, general-profile Cartesian Jacobians/global inverse, arbitrary nonnegative action realization, Gardner canonicity, global forward factorization, independent angles and full corrected frequency comparison remain essential."
+    "limits": "The subsequent signed-mean milestone removes the central half-turn ambiguity at every mean. Different NLS action fibers at the same physical J/mean, general-profile Cartesian Jacobians/global inverse, arbitrary nonnegative action realization, Gardner canonicity, global forward factorization, independent angles and corrected full frequency comparison remain essential."
+  },
+  "signed_mean_NLS_action_fiber_faithfulness": {
+    "actual_half_turn_diagonal_preservation": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertCentralHalfTurn_diagonal",
+    "complete_single_action_sequence_conservation": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_actionSequence_actionRotation",
+    "original_L2_zero_action_rigidity": "NLS.MKdV.eq_single_mean_of_miuraL2ActionSequence_zero",
+    "actual_continuous_physical_half_turn": "NLS.MKdV.miuraCentralHalfTurn",
+    "half_turn_constant_means": "NLS.MKdV.miuraCentralHalfTurn_constant_mean",
+    "global_literal_signed_mean_reversal": "NLS.MKdV.miuraCentralHalfTurn_mean",
+    "all_mean_original_NLS_fiber_Cartesian_injectivity": "NLS.MKdV.miuraCartesian_jointFiber_injective",
+    "global_compact_phase_fiber_homeomorphism": "NLS.MKdV.miuraJointFiberCartesianHomeomorph",
+    "exact_signed_mean_branch": "NLS.MKdV.miuraJointActionFiber_eq_signedMean_NLSActionFiber",
+    "all_native_integer_Sobolev_unique_phase_lifts": "NLS.MKdV.existsUnique_miuraSobolev_phase_preimage",
+    "article_homeomorphism": "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_Cartesian_homeomorphism",
+    "article_native_unique_lift": "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev",
+    "printed_global_signed_mean_obstruction": "NLS.Articles.MKdVNLSHierarchies.no_global_signed_mean_NLS_action_factor",
+    "scope": "At arbitrary signed mean, the actual original-L2 Cartesian map is injective within every original signed NLS action fiber. The compact joint physical J/mean and NLS action fiber is precisely the same-signed-mean branch of that full physical diagonal NLS action fiber, and maps homeomorphically onto its entire native Cartesian phase fiber. Every phase lift is unique in each actual native integer H^s source class. Zero mean, closed actions and infinite support are included. Actual central half-turn mean reversal is proved globally by a mean-leaf continuity argument. No arbitrary function of the entire NLS action sequence recovers signed mean globally.",
+    "limits": "Different original NLS action fibers at the same physical J and signed mean remain unclassified. General-profile Cartesian Jacobian/global inverse, Gardner canonicity, arbitrary nonnegative action realization, global forward I(J,mean) factorization, independent angles and corrected full frequency comparison remain essential."
   }
 }

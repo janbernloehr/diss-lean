@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 4467,
+  "audited_declarations_and_auxiliaries": 4524,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -11554,14 +11554,219 @@
       "kind": "theorem",
       "name": "physical_zero_mean_action_fiber_unique_phase_lift_allSobolev",
       "file": "NLS/Articles/MKdVNLSHierarchies/ZeroMeanActionFiberCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hilbertActionRotation_initial",
+      "file": "NLS/ZakharovShabat/SourceCentralHalfTurn.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertActionRotation_pi_eq_neg_pi",
+      "file": "NLS/ZakharovShabat/SourceCentralHalfTurn.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertCentralHalfTurn_diagonal",
+      "file": "NLS/ZakharovShabat/SourceCentralHalfTurn.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbert_actionSequence_actionRotation",
+      "file": "NLS/ZakharovShabat/SourceCentralHalfTurn.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hilbertActionRotation_pi_eq_self_iff_action_zero",
+      "file": "NLS/ZakharovShabat/SourceCentralHalfTurn.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "eq_single_mean_of_miuraL2ActionSequence_zero",
+      "file": "NLS/MKdV/MiuraL2ZeroActionRigidity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraRealDiagonalL2Source",
+      "file": "NLS/MKdV/MiuraCentralHalfTurn.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCentralHalfTurnSource",
+      "file": "NLS/MKdV/MiuraCentralHalfTurn.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCentralHalfTurnSource_diagonal",
+      "file": "NLS/MKdV/MiuraCentralHalfTurn.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCentralHalfTurn",
+      "file": "NLS/MKdV/MiuraCentralHalfTurn.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCentralHalfTurn_source",
+      "file": "NLS/MKdV/MiuraCentralHalfTurn.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraCentralHalfTurn",
+      "file": "NLS/MKdV/MiuraCentralHalfTurn.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCentralHalfTurn_NLS_actionSequence",
+      "file": "NLS/MKdV/MiuraCentralHalfTurn.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCentralHalfTurn_physical_actionSequence",
+      "file": "NLS/MKdV/MiuraCentralHalfTurn.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCentralHalfTurn_mean_square",
+      "file": "NLS/MKdV/MiuraCentralHalfTurn.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCentralHalfTurn_eq_self_iff_central_action_zero",
+      "file": "NLS/MKdV/MiuraCentralHalfTurn.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraRealConstant",
+      "file": "NLS/MKdV/MiuraCentralHalfTurnConstants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealConstant_apply",
+      "file": "NLS/MKdV/MiuraCentralHalfTurnConstants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealConstant_mean",
+      "file": "NLS/MKdV/MiuraCentralHalfTurnConstants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealConstant_H1",
+      "file": "NLS/MKdV/MiuraCentralHalfTurnConstants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarMode_zero_real",
+      "file": "NLS/MKdV/MiuraCentralHalfTurnConstants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealConstant_physical_actionSequence",
+      "file": "NLS/MKdV/MiuraCentralHalfTurnConstants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealConstant_central_action_ne_zero",
+      "file": "NLS/MKdV/MiuraCentralHalfTurnConstants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCentralHalfTurn_constant_mean",
+      "file": "NLS/MKdV/MiuraCentralHalfTurnConstants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealL2_mean_im_eq_zero",
+      "file": "NLS/MKdV/MiuraCentralHalfTurnMean.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCentralHalfTurn_mean",
+      "file": "NLS/MKdV/MiuraCentralHalfTurnMean.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealDiagonalL2Source_injective",
+      "file": "NLS/MKdV/MiuraJointFiberFaithfulness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesian_jointFiber_injective",
+      "file": "NLS/MKdV/MiuraJointFiberFaithfulness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraJointFiberCartesianMap_injective",
+      "file": "NLS/MKdV/MiuraJointFiberFaithfulness.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraJointFiberCartesianHomeomorph",
+      "file": "NLS/MKdV/MiuraJointFiberFaithfulness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraJointFiberCartesianHomeomorph_apply",
+      "file": "NLS/MKdV/MiuraJointFiberFaithfulness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraJointActionFiber_eq_signedMean_NLSActionFiber",
+      "file": "NLS/MKdV/MiuraJointFiberFaithfulness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevCartesian_jointFiber_injective",
+      "file": "NLS/MKdV/MiuraSobolevJointFiberFaithfulness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "existsUnique_miuraSobolev_phase_preimage",
+      "file": "NLS/MKdV/MiuraSobolevJointFiberFaithfulness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_central_halfTurn_reverses_signed_mean",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SignedMeanActionFiberCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_NLS_action_fiber_injective",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SignedMeanActionFiberCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_joint_fiber_signed_mean_branch",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SignedMeanActionFiberCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_action_fiber_Cartesian_homeomorphism",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SignedMeanActionFiberCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_action_fiber_unique_phase_lift",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SignedMeanActionFiberCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_action_fiber_unique_phase_lift_allSobolev",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SignedMeanActionFiberCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "no_global_signed_mean_NLS_action_factor",
+      "file": "NLS/Articles/MKdVNLSHierarchies/SignedMeanActionFiberCoordinates.lean"
     }
   ],
-  "public_declaration_count": 2307,
-  "theorem_count": 1868,
-  "definition_count": 439,
-  "full_build": "411 article/shared modules have validated private outputs. All 398 unchanged prefix module source hashes match the prior 4c6dd57 milestone; their private outputs were reused. Thirteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2348,
+  "theorem_count": 1905,
+  "definition_count": 443,
+  "full_build": "419 article/shared modules have validated private outputs. All 411 unchanged prefix module source hashes match the prior db425d9 milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/RealFixedSetRotationOrbit.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ZakharovShabat/SourceCentralHalfTurn.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -11974,11 +12179,19 @@
     "NLS/MKdV/MiuraNLSActionFiberMean.lean": "d8905291d9d3961da8341c9bc2da74e4b3893ed42b41868bf0fc6ee9c32dee92",
     "NLS/MKdV/MiuraZeroMeanSobolevFaithfulness.lean": "4d09df5ce765ac013890f83e0f929edfbbeaa41823aa3fb28964e6fa77daf72d",
     "NLS/Articles/MKdVNLSHierarchies/ZeroMeanActionFiberCoordinates.lean": "c5e1bb53c60efecac1016b779ae82e6a920817800c7535eaec1278b9e76fde8d",
-    "scripts/check_mkdv_nls.py": "ef13d778cba2e6dc88b83bf09686dfce12077a39669f5e1206b4c38b92bbdcce",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "a4a25be2b9d5b8e02ce5466811e47121f4cf77fdbb8f3004a4530a0819344d56"
+    "NLS/ZakharovShabat/SourceCentralHalfTurn.lean": "13c72f2924a3484624c226bc1068985376c37581816661749abe6d36d1177612",
+    "NLS/MKdV/MiuraL2ZeroActionRigidity.lean": "a1bb495944aaf64c9779cc0b77742c0dcd091b20e8ed65c6b219daad1014c736",
+    "NLS/MKdV/MiuraCentralHalfTurn.lean": "348d3fd65e4bbee417217a3d12897b7538b743da7eee7382c32af0786b9ae839",
+    "NLS/MKdV/MiuraCentralHalfTurnConstants.lean": "78bcff65495618b206f1117e8d7eb269bed3613b29e6e03935c2849b20669314",
+    "NLS/MKdV/MiuraCentralHalfTurnMean.lean": "9816c1896d3c4e06b432a6ee249933278abe5b25a7d7c7b0baf61ff7bd3a1967",
+    "NLS/MKdV/MiuraJointFiberFaithfulness.lean": "f7be05cca88f02fa3faa0c69dc8b5b0af84e196e5ceeff286d98e1204ddaf1d5",
+    "NLS/MKdV/MiuraSobolevJointFiberFaithfulness.lean": "cd4a7007911d23991bd32a46a55fe333168e89b1a32c65166c078c7b23f356ba",
+    "NLS/Articles/MKdVNLSHierarchies/SignedMeanActionFiberCoordinates.lean": "7a34472bfe9dc64895dcec51e0f871c4ca085c218196daac93e604d38d875b99",
+    "scripts/check_mkdv_nls.py": "d3f56bfedc8c78d0dc186f1dc483edaf3ee715e3a96f40e51d28d8465385b798",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "9c853c1d3a4c2c4386d04e80512f92829cc1774e53dc35f3b3ede50bf183c367"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 411,
+  "focused_module_count": 419,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -12300,12 +12513,25 @@
       "public_declaration_count": 2307,
       "theorem_count": 1868,
       "definition_count": 439
+    },
+    {
+      "milestone": "Global signed-mean reversal by the actual central NLS half turn, Cartesian homeomorphisms on every fixed NLS-action/signed-mean branch, and unique phase lifts at every native integer Sobolev order",
+      "audit_count": 4524,
+      "combined_NLS_audit_count": 49459,
+      "aggregate_compiled": true,
+      "module_count": 419,
+      "reused_prefix_module_count": 411,
+      "reused_prefix_commit": "db425d9c65c57d13bab364d0bef3b72c1c6cd75b",
+      "frozen_source_checker_count": 421,
+      "public_declaration_count": 2348,
+      "theorem_count": 1905,
+      "definition_count": 443
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 49402,
+  "combined_audited_NLS_declarations": 49459,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -12313,7 +12539,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 398 unchanged prefix module source hashes match the prior 4c6dd57 milestone; their private outputs were reused. Thirteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4467 declarations/auxiliaries and combined audit for 49402 NLS declarations. All 413 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 411 unchanged prefix module source hashes match the prior db425d9 milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4524 declarations/auxiliaries and combined audit for 49459 NLS declarations. All 421 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

@@ -445,6 +445,14 @@ modules = [
     "NLS/MKdV/MiuraNLSActionFiberMean.lean",
     "NLS/MKdV/MiuraZeroMeanSobolevFaithfulness.lean",
     "NLS/Articles/MKdVNLSHierarchies/ZeroMeanActionFiberCoordinates.lean",
+    "NLS/ZakharovShabat/SourceCentralHalfTurn.lean",
+    "NLS/MKdV/MiuraL2ZeroActionRigidity.lean",
+    "NLS/MKdV/MiuraCentralHalfTurn.lean",
+    "NLS/MKdV/MiuraCentralHalfTurnConstants.lean",
+    "NLS/MKdV/MiuraCentralHalfTurnMean.lean",
+    "NLS/MKdV/MiuraJointFiberFaithfulness.lean",
+    "NLS/MKdV/MiuraSobolevJointFiberFaithfulness.lean",
+    "NLS/Articles/MKdVNLSHierarchies/SignedMeanActionFiberCoordinates.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

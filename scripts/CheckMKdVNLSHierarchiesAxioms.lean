@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.SignedMeanActionFiberCoordinates
 import NLS.Articles.MKdVNLSHierarchies.ZeroMeanActionFiberCoordinates
 import NLS.Articles.MKdVNLSHierarchies.GlobalCartesianPhaseLifting
 import NLS.Articles.MKdVNLSHierarchies.LocalForwardActionFactorization
@@ -52,6 +53,11 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.continuous_hilbertActionRotation_initial,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionRotation_pi_eq_neg_pi,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertCentralHalfTurn_diagonal,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_actionSequence_actionRotation,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionRotation_pi_eq_self_iff_action_zero,
     `NLS.RealCoeff.exists_rotationSequence_eqOn_avoiding_set,
     `NLS.RealCoeff.mem_of_isClosed_rotation_invariant_avoiding_set,
     `NLS.RealCoeff.negative_coordinates_eq_of_reflection_fixed,
@@ -677,6 +683,10 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.MKdV.miuraCentralHalfTurn_mean,
+    ``NLS.MKdV.miuraJointFiberCartesianHomeomorph,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev,
+    ``NLS.Articles.MKdVNLSHierarchies.no_global_signed_mean_NLS_action_factor,
     ``NLS.MKdV.miuraZeroMeanJointFiberCartesianHomeomorph,
     ``NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_unique_phase_lift_allSobolev,
     ``NLS.MKdV.miuraCartesian_jointFiber_eq_or_central_halfTurn,

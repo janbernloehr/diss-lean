@@ -2013,3 +2013,46 @@ independent angles/final angle-sum factorization and the full corrected
 frequency comparison remain essential. The main-theorem goal stays active.
 
 Validation: all 411 article/shared modules have validated private outputs. The 398 unchanged prefix source hashes match 4c6dd57 and their outputs were reused; all thirteen added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,467 declarations/auxiliaries and the combined audit for 49,402 NLS declarations, using only the standard allowed axioms. All 413 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,307 declarations (1,868 theorems and 439 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Faithful phase coordinates at every signed mean
+
+The central NLS half-turn ambiguity is now removed at arbitrary signed
+mean. Its actual complete source flow preserves the physical diagonal
+and every original signed NLS action. On that diagonal it reverses the
+literal signed mean. Equality of the complete Cartesian/mean maps thus
+rules out the half turn at nonzero mean; the proved zero-mean uniqueness
+handles the remaining case.
+
+Every compact joint physical-action/mean and original-NLS-action fiber
+now maps homeomorphically onto its complete native Cartesian phase fiber.
+The joint fiber is exactly the full physical diagonal NLS action fiber
+restricted to its original signed mean. Phase lifts within this branch
+are unique in every actual native integer H^s source class, including
+zero mean, arbitrary closed gaps and infinitely many open modes. There
+is no smallness hypothesis.
+
+The sign reversal is proved rather than prescribed. Original-L2 zero-J
+rigidity forces a constant profile at its literal mean. The actual central
+half turn sends each real constant's mean to its negative: its actions
+are unchanged and a nonzero constant's central action is open. A straight
+physical-source path from any profile to its constant mean remains in the
+same mean leaf. The half-turn mean is continuous there and has the same
+square. Its verified value at the constant therefore determines the sign
+on the whole path. The zero-mean case follows directly from the square.
+
+Theorem 4(ii)'s printed global signed-mean recovery from NLS actions alone
+is now explicitly refuted in Lean even for an arbitrary, nonanalytic
+factor. A profile and its central half turn have identical entire signed
+NLS action sequences and opposite nonzero means. The previously proved
+analytic mean-squared replacement remains the global corrected clause.
+
+This removes the central ambiguity within fixed original NLS action
+fibers; it does not identify different NLS action fibers at the same
+physical J and signed mean. General Cartesian Jacobians/global inverse,
+Gardner canonicity, arbitrary nonnegative action realization, global
+forward action factorization, independent angles/final angle-sum
+factorization and the full corrected frequency comparison remain
+essential. The main-theorem goal stays active.
+
+Validation: all 419 article/shared modules have validated private outputs. The 411 unchanged prefix source hashes match db425d9 and their outputs were reused; all eight added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,524 declarations/auxiliaries and the combined audit for 49,459 NLS declarations, using only the standard allowed axioms. All 421 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,348 declarations (1,905 theorems and 443 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
