@@ -386,6 +386,13 @@ import NLS.KdV.HillLogNormingRegularity
 import NLS.KdV.HillMixedGardnerBrackets
 import NLS.KdV.ClassicalHillLogNormingBrackets
 import NLS.KdV.HillLogNormingGardnerBrackets
+import NLS.KdV.HillAbelianRootBox
+import NLS.KdV.HillAbelianNumeratorProduct
+import NLS.KdV.HillAbelianProductContinuity
+import NLS.KdV.HillAbelianProductZeros
+import NLS.ComplexAnalysis.ContinuousCircleIntegral
+import NLS.KdV.HillAbelianCandidatePeriods
+import NLS.KdV.HillAbelianNormalizationProblem
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -709,7 +716,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.scalarStateMixedPairing,
     ``NLS.ComplexAnalysis.scalarStateMixedPairing_eq_integral,
     ``NLS.ComplexAnalysis.continuous_scalarStateMixedPairing,
-    ``NLS.Fourier.continuousFourierCLM_const]
+    ``NLS.Fourier.continuousFourierCLM_const,
+    ``NLS.ComplexAnalysis.continuous_circleIntegral_of_continuous_joint_on_sphere]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -5309,3 +5309,10 @@ import NLS.KdV.HillLogNormingRegularity
 import NLS.KdV.HillMixedGardnerBrackets
 import NLS.KdV.ClassicalHillLogNormingBrackets
 import NLS.KdV.HillLogNormingGardnerBrackets
+import NLS.KdV.HillAbelianRootBox
+import NLS.KdV.HillAbelianNumeratorProduct
+import NLS.KdV.HillAbelianProductContinuity
+import NLS.KdV.HillAbelianProductZeros
+import NLS.ComplexAnalysis.ContinuousCircleIntegral
+import NLS.KdV.HillAbelianCandidatePeriods
+import NLS.KdV.HillAbelianNormalizationProblem
