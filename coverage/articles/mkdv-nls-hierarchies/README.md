@@ -1512,3 +1512,40 @@ the full corrected frequency comparison. This milestone proves original-L2
 compactness; it does not assert compact remainders at every Sobolev order.
 
 Validation: all 428 article/shared modules have validated private outputs. The 419 unchanged prefix source hashes match 6e8e2cf and their outputs were reused; all nine added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,606 declarations/auxiliaries and the combined audit for 49,541 NLS declarations, using only the standard allowed axioms. All 431 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,399 declarations (1,946 theorems and 453 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Actual Cartesian Gardner fields and the canonical bracket in each plane
+
+For every original real H1 profile, every positive selected index and
+every complex linear combination of its actual Cartesian pair, the
+literal Frechet gradient has a square-summable period-one spatial
+derivative. The actual Gardner direction is its genuine tempered
+distribution derivative with an L2 representative. Zero mean and arbitrary
+closed gaps are included; no smallness or finite-gap premise is used.
+
+The checked convergent action-field trace and mixed Cartesian-action
+brackets first give the exact spatial translation generator on each
+pair. Differentiating this identity on the physical real H1 form gives
+a bounded L2 extension of the cotangent applied to the spatial generator.
+The real form spans all complex variations, and Fourier-mode tests
+identify the differentiated gradient itself. This argument establishes
+the Gardner domain rather than using the fallback in its definition.
+
+All actual Cartesian-Cartesian Gardner brackets now have complex analytic
+H1 extensions near every physical real H1 input and are skew symmetric
+there. The literal brackets within each selected plane are
+{X_n,X_n}=0, {X_n,Y_n}=1, {Y_n,X_n}=-1 and {Y_n,Y_n}=0,
+including a closed selected gap. The exact physical action radius and
+mixed brackets give X_n*({X_n,Y_n}-1)=0. The actual free Fourier derivative
+proves X_n is not identically zero on the physical real H1 space.
+Real analytic continuation on that connected space cancels the factor
+and proves the value one everywhere, without dividing by an action.
+
+Cross-mode zero brackets are not proved by the plane result. General
+Cartesian derivative kernel triviality, the global inverse and comparison
+of distinct NLS action fibers at equal physical actions and signed mean,
+arbitrary action-data realization, global forward action factorization,
+independent mKdV angles/final angle-sum factorization and the full corrected
+frequency comparison remain essential. The main-theorem goal stays active.
+
+Validation: all 438 article/shared modules have validated private outputs. The 428 unchanged prefix source hashes match 9ef985e and their outputs were reused; all ten added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,677 declarations/auxiliaries and the combined audit for 49,612 NLS declarations, using only the standard allowed axioms. All 441 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,438 declarations (1,978 theorems and 460 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

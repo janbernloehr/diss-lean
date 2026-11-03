@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 4606,
+  "audited_declarations_and_auxiliaries": 4677,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -12014,14 +12014,209 @@
       "kind": "theorem",
       "name": "physical_Cartesian_analytic_chart_of_derivative_injective",
       "file": "NLS/Articles/MKdVNLSHierarchies/CartesianFredholmReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_comp_eq_zero_of_real_zero",
+      "file": "NLS/ComplexAnalysis/TranslationCovariantCotangent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_generator_eq_of_real_covariance",
+      "file": "NLS/ComplexAnalysis/TranslationCovariantCotangent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianSpatialGenerator",
+      "file": "NLS/MKdV/MiuraCartesianTranslationGenerator.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraCartesian_spatialDerivative",
+      "file": "NLS/MKdV/MiuraCartesianTranslationGenerator.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneDerivative_scalarMode",
+      "file": "NLS/Poisson/L2GardnerCotangentDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "spatialGradient_coefficient_of_cotangent_extension",
+      "file": "NLS/Poisson/L2GardnerCotangentDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "memlp_spatialGradient_of_cotangent_extension",
+      "file": "NLS/Poisson/L2GardnerCotangentDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2GardnerDirection_eq_of_cotangent_extension",
+      "file": "NLS/Poisson/L2GardnerCotangentDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2GardnerDirection_distribution_of_cotangent_extension",
+      "file": "NLS/Poisson/L2GardnerCotangentDomain.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianGeneratorCotangent",
+      "file": "NLS/MKdV/MiuraCartesianGardnerCotangent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesian_generator_cotangent_identity",
+      "file": "NLS/MKdV/MiuraCartesianGardnerCotangent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianObservable",
+      "file": "NLS/MKdV/MiuraCartesianGardnerCotangent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraCartesianObservable",
+      "file": "NLS/MKdV/MiuraCartesianGardnerCotangent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianObservable_generator_cotangent_identity",
+      "file": "NLS/MKdV/MiuraCartesianGardnerCotangent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianObservable_Gardner_memlp",
+      "file": "NLS/MKdV/MiuraCartesianGardnerCotangent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianObservable_GardnerDirection",
+      "file": "NLS/MKdV/MiuraCartesianGardnerCotangent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianObservable_Gardner_distribution",
+      "file": "NLS/MKdV/MiuraCartesianGardnerCotangent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "dualPairing_spatialDerivative_skew",
+      "file": "NLS/Poisson/L2GardnerSkew.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2GardnerBracket_antisymm_of_memlp",
+      "file": "NLS/Poisson/L2GardnerSkew.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2GardnerBracket_self_eq_zero_of_memlp",
+      "file": "NLS/Poisson/L2GardnerSkew.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "eq_zero_of_analytic_mul_eq_zero",
+      "file": "NLS/ComplexAnalysis/AnalyticProductCancellation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraCartesianGeneratorCotangent",
+      "file": "NLS/MKdV/MiuraCartesianGardnerBracket.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianGardnerBracketExtension",
+      "file": "NLS/MKdV/MiuraCartesianGardnerBracket.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraCartesianGardnerBracketExtension",
+      "file": "NLS/MKdV/MiuraCartesianGardnerBracket.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianGardnerBracketExtension_eq_actual",
+      "file": "NLS/MKdV/MiuraCartesianGardnerBracket.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianGardnerBracket_antisymm",
+      "file": "NLS/MKdV/MiuraCartesianGardnerBracket.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianGardnerBracket_self",
+      "file": "NLS/MKdV/MiuraCartesianGardnerBracket.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianX",
+      "file": "NLS/MKdV/MiuraCartesianPlaneGardner.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianY",
+      "file": "NLS/MKdV/MiuraCartesianPlaneGardner.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianPlaneBracket",
+      "file": "NLS/MKdV/MiuraCartesianPlaneGardner.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraL2Action_cartesian_radius",
+      "file": "NLS/MKdV/MiuraCartesianPlaneGardner.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianPlaneBracket_eq_actual",
+      "file": "NLS/MKdV/MiuraCartesianPlaneGardner.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianPlaneBracket_error_mul_X",
+      "file": "NLS/MKdV/MiuraCartesianPlaneGardner.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_physicalH1_miuraCartesianX_ne_zero",
+      "file": "NLS/MKdV/MiuraCartesianPlaneCanonical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianPlaneBracket_eq_one",
+      "file": "NLS/MKdV/MiuraCartesianPlaneCanonical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianPlane_Gardner_canonical",
+      "file": "NLS/MKdV/MiuraCartesianPlaneCanonical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_actual_Gardner_fields",
+      "file": "NLS/Articles/MKdVNLSHierarchies/CartesianPlaneCanonicalIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_plane_Gardner_brackets",
+      "file": "NLS/Articles/MKdVNLSHierarchies/CartesianPlaneCanonicalIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_Gardner_bracket_analytic_extension",
+      "file": "NLS/Articles/MKdVNLSHierarchies/CartesianPlaneCanonicalIdentification.lean"
     }
   ],
-  "public_declaration_count": 2399,
-  "theorem_count": 1946,
-  "definition_count": 453,
-  "full_build": "428 article/shared modules have validated private outputs. All 419 unchanged prefix module source hashes match the prior 6e8e2cf milestone; their private outputs were reused. Nine added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2438,
+  "theorem_count": 1978,
+  "definition_count": 460,
+  "full_build": "438 article/shared modules have validated private outputs. All 428 unchanged prefix module source hashes match the prior 9ef985e milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/CompactSymbolProduct.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/TranslationCovariantCotangent.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -12451,12 +12646,22 @@
     "NLS/FunctionalAnalysis/CompactPerturbationEquivalence.lean": "69c5c9598bf15b097e003616e55f317c725e0f31132daa6408edceb432b039ad",
     "NLS/MKdV/MiuraCartesianFredholm.lean": "476b0107adf21711cc2f893da5d860c2bb1e15c13862b3e375e6de7f7ce88e71",
     "NLS/Articles/MKdVNLSHierarchies/CartesianFredholmReduction.lean": "135e59ba1d78b0065ab26ff1b23175f602ca2818d3db2217fea35be36b769cd8",
+    "NLS/ComplexAnalysis/TranslationCovariantCotangent.lean": "7fe3aa6e1f953964ce755de904ecaa63f96988dc268d7c27853f561c660db080",
+    "NLS/MKdV/MiuraCartesianTranslationGenerator.lean": "6bbd4729893f355a9202069a00d87ffed27bd2f78c06b5d6de385b7a191cd9f5",
+    "NLS/Poisson/L2GardnerCotangentDomain.lean": "242821355080dc2a536aa10048b6c0a148a8efb6b1f6d9bbee63fc5f817f4819",
+    "NLS/MKdV/MiuraCartesianGardnerCotangent.lean": "80386e5ae6b39061bc75e2357e6f724364f6761127c1ece7ec856020252e6e19",
+    "NLS/Poisson/L2GardnerSkew.lean": "1bb7992ee44f0668d55a72db324b7b6de7c182512310c2b45c9e422c39dce1f0",
+    "NLS/ComplexAnalysis/AnalyticProductCancellation.lean": "9c3d64a29075210602fea046ecc5d11f43eeebab9b1d3c96b1031cce86228e06",
+    "NLS/MKdV/MiuraCartesianGardnerBracket.lean": "4fe07a97e5478ff2efb0f5ee869efa044c5797067d929e41fe9a43f5817426fc",
+    "NLS/MKdV/MiuraCartesianPlaneGardner.lean": "0f924102ac35d63f3e1955d63aebc296e77a6a00dab4910a6bdba1136e2b2fe9",
+    "NLS/MKdV/MiuraCartesianPlaneCanonical.lean": "a25e37ae1dfa8ae13cb24f8f1e7852bc977c3e7c7b8bfed52f7861ae6a10e84d",
+    "NLS/Articles/MKdVNLSHierarchies/CartesianPlaneCanonicalIdentification.lean": "270206ba2f9aaffdc5d8b1de9c8cefeaea514a00493b656902563d717fe022d8",
     "NLS.lean": "8b7ce4ad52dd4f8dbc054e0bd1b7e6adc03480720e8557f9a8f54e461da6e8c6",
-    "scripts/check_mkdv_nls.py": "956f3a10d118056a600ee67132c54e2b90938688b5c63a0a6dbf7eea224114fb",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "9346f2962579dc25abad978f0516a0309be3f54adc6c19bd7081268fae8363fe"
+    "scripts/check_mkdv_nls.py": "a8075202746b6530bdb346f22901fb5810284988602c578e568b7f32f7cda77a",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "f42a5cf55d18e0095ae01991e41e2f4188b9db3609adee402f2e54ff39bf5296"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 428,
+  "focused_module_count": 438,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -12804,12 +13009,25 @@
       "public_declaration_count": 2399,
       "theorem_count": 1946,
       "definition_count": 453
+    },
+    {
+      "milestone": "Actual original-H1 Cartesian Gardner fields, analytic Cartesian bracket extensions, and canonical brackets within every selected plane including closed gaps",
+      "audit_count": 4677,
+      "combined_NLS_audit_count": 49612,
+      "aggregate_compiled": true,
+      "module_count": 438,
+      "reused_prefix_module_count": 428,
+      "reused_prefix_commit": "9ef985eacb48b1fe51d387a065b88113847c84fb",
+      "frozen_source_checker_count": 441,
+      "public_declaration_count": 2438,
+      "theorem_count": 1978,
+      "definition_count": 460
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 49541,
+  "combined_audited_NLS_declarations": 49612,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -12817,7 +13035,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 419 unchanged prefix module source hashes match the prior 6e8e2cf milestone; their private outputs were reused. Nine added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4606 declarations/auxiliaries and combined audit for 49541 NLS declarations. All 431 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 428 unchanged prefix module source hashes match the prior 9ef985e milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4677 declarations/auxiliaries and combined audit for 49612 NLS declarations. All 441 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

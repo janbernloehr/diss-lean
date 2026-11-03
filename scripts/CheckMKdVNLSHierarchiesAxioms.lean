@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.CartesianPlaneCanonicalIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianFredholmReduction
 import NLS.Articles.MKdVNLSHierarchies.SignedMeanActionFiberCoordinates
 import NLS.Articles.MKdVNLSHierarchies.ZeroMeanActionFiberCoordinates
@@ -54,6 +55,17 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ComplexAnalysis.fderiv_comp_eq_zero_of_real_zero,
+    `NLS.ComplexAnalysis.fderiv_generator_eq_of_real_covariance,
+    `NLS.Poisson.periodOneDerivative_scalarMode,
+    `NLS.Poisson.spatialGradient_coefficient_of_cotangent_extension,
+    `NLS.Poisson.memlp_spatialGradient_of_cotangent_extension,
+    `NLS.Poisson.l2GardnerDirection_eq_of_cotangent_extension,
+    `NLS.Poisson.l2GardnerDirection_distribution_of_cotangent_extension,
+    `NLS.Poisson.dualPairing_spatialDerivative_skew,
+    `NLS.Poisson.l2GardnerBracket_antisymm_of_memlp,
+    `NLS.Poisson.l2GardnerBracket_self_eq_zero_of_memlp,
+    `NLS.ComplexAnalysis.eq_zero_of_analytic_mul_eq_zero,
     `NLS.Coeff.isCompactOperator_multiplierBilinear_flip,
     `NLS.Coeff.fderiv_multiplier_sequence,
     `NLS.Coeff.isCompactOperator_fderiv_multiplier_sub_free,
@@ -699,6 +711,12 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.MKdV.miuraCartesianObservable_Gardner_memlp,
+    ``NLS.MKdV.miuraCartesianObservable_Gardner_distribution,
+    ``NLS.MKdV.miuraCartesianPlane_Gardner_canonical,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_actual_Gardner_fields,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_plane_Gardner_brackets,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_Gardner_bracket_analytic_extension,
     ``NLS.ZakharovShabat.exists_local_sourceDiagonalActionRootSequence_analytic,
     ``NLS.ZakharovShabat.isCompactOperator_sourceDiagonalActionRootSequence_sub_free,
     ``NLS.MKdV.isCompactOperator_miuraCartesianJacobian_sub_free,

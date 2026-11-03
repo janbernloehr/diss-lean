@@ -114,7 +114,10 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_Cartesian_homeomorphism",
         "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev",
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_compact_remainder",
-        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_bijective_iff_injective"
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_bijective_iff_injective",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_actual_Gardner_fields",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_plane_Gardner_brackets",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_Gardner_bracket_analytic_extension"
       ]
     },
     {
@@ -199,7 +202,10 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_Cartesian_homeomorphism",
         "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev",
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_compact_remainder",
-        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_bijective_iff_injective"
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_bijective_iff_injective",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_actual_Gardner_fields",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_plane_Gardner_brackets",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_Gardner_bracket_analytic_extension"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -414,7 +420,7 @@
     "remaining": "The diagonal physical discriminant, original fixed-index endpoints, canonical sheets and actual weighted contour actions have now been identified. Remaining normal-form angle, frequency and Poisson-bracket conventions must be carried through their actual constructions."
   },
   "remaining_essential_dependencies": [
-    "general Cartesian-Cartesian brackets and Gardner canonicity; general-profile Cartesian derivative kernel triviality, global inverse and comparison of distinct NLS action fibers at the same physical J/mean; arbitrary nonnegative action-data realization. The actual original-L2 Cartesian derivative now has compact remainder from its free equivalence at every physical real profile, and the Fredholm alternative reduces bijectivity to injectivity. Central ambiguity is removed at every signed mean within each fixed original NLS action fiber.",
+    "cross-mode Cartesian zero brackets and full Gardner canonicity; general-profile Cartesian derivative kernel triviality, global inverse and comparison of distinct NLS action fibers at equal physical J/mean; arbitrary nonnegative action-data realization. Actual Cartesian gradients now have L2 spatial derivatives and all same-plane Gardner brackets have canonical values at every original real H1 input, including closed gaps. The original-L2 Cartesian derivative has compact free remainder and its bijectivity reduces to injectivity.",
     "global forward analytic factorization of restricted NLS actions through independent physical mKdV actions and signed mean at general profiles; the whole-sequence local forward factor near zero, converse physical J_n and corrected mean-squared factors are proved",
     "independent mKdV Birkhoff angle construction, the final angle-sum factorization and full frequency identification; Theorem 4(iii) angle-action bracket clause and actual Gardner transfer are proved",
     "corrected frequency-sign convention in Theorem 3; the global signed-mean claim in Theorem 4(ii) is replaced by the proved mean-squared statement, while signed recovery requires a branch restriction"
@@ -1067,6 +1073,28 @@
     "limits": [
       "No derivative-kernel injectivity, general-profile local inverse without a premise, global inverse, distinct NLS action-fiber identification, arbitrary action-data realization or Cartesian-Cartesian Gardner bracket follows yet.",
       "The compactness theorem here is on original L2, not all native Sobolev orders."
+    ]
+  },
+  "actual_Cartesian_Gardner_fields_and_plane_brackets": {
+    "status": "proved_actual_Gardner_gradient_domain_analytic_brackets_and_canonical_same_plane_values_original_real_H1_cross_mode_zero_open",
+    "domains": "Every original physical real period-one H1 profile, each positive Cartesian index, zero mean and arbitrary selected or other closed gaps included.",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_actual_Gardner_fields",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_plane_Gardner_brackets",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_Gardner_bracket_analytic_extension"
+    ],
+    "core_domain_declarations": [
+      "NLS.MKdV.miuraCartesianObservable_Gardner_memlp",
+      "NLS.MKdV.miuraCartesianObservable_GardnerDirection",
+      "NLS.MKdV.miuraCartesianObservable_Gardner_distribution"
+    ],
+    "canonical_plane_declaration": "NLS.MKdV.miuraCartesianPlane_Gardner_canonical",
+    "canonical_values": "{X_n,X_n}=0, {X_n,Y_n}=1, {Y_n,X_n}=-1, {Y_n,Y_n}=0, including at a closed n-th gap.",
+    "analyticity": "All selected Cartesian-Cartesian brackets admit complex analytic H1 extensions near every physical real H1 profile and agree there with the literal Gardner brackets.",
+    "mechanism": "The convergent physical action-field trace yields the translation generator. Differentiating on the real H1 form and complexifying variations gives a bounded cotangent generator extension, whose Fourier coefficients prove actual gradient-domain membership. The physical action radius and mixed brackets force X_n times the plane-bracket error to vanish. A nonzero free Fourier differential and real analytic continuation prove the plane bracket equals one everywhere.",
+    "limits": [
+      "Cross-mode zero brackets, full Gardner canonicity, general-profile derivative kernel triviality and global inversion are still unproved.",
+      "The gradient-domain and bracket statements here are on original real H1; no actual L2 Gardner representative is claimed at every rough L2 profile."
     ]
   }
 }

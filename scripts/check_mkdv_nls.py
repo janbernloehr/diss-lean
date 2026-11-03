@@ -462,6 +462,16 @@ modules = [
     "NLS/FunctionalAnalysis/CompactPerturbationEquivalence.lean",
     "NLS/MKdV/MiuraCartesianFredholm.lean",
     "NLS/Articles/MKdVNLSHierarchies/CartesianFredholmReduction.lean",
+    "NLS/ComplexAnalysis/TranslationCovariantCotangent.lean",
+    "NLS/MKdV/MiuraCartesianTranslationGenerator.lean",
+    "NLS/Poisson/L2GardnerCotangentDomain.lean",
+    "NLS/MKdV/MiuraCartesianGardnerCotangent.lean",
+    "NLS/Poisson/L2GardnerSkew.lean",
+    "NLS/ComplexAnalysis/AnalyticProductCancellation.lean",
+    "NLS/MKdV/MiuraCartesianGardnerBracket.lean",
+    "NLS/MKdV/MiuraCartesianPlaneGardner.lean",
+    "NLS/MKdV/MiuraCartesianPlaneCanonical.lean",
+    "NLS/Articles/MKdVNLSHierarchies/CartesianPlaneCanonicalIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")
