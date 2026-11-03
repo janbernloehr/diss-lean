@@ -5151,3 +5151,10 @@ import NLS.KdV.HillWeightedActionContinuity
 import NLS.KdV.HillFinitePhysicalPotential
 import NLS.KdV.HillRealWeightedTruncation
 import NLS.KdV.HillL2QuadraticTrace
+import NLS.ComplexAnalysis.WeightedSquareRemainder
+import NLS.ComplexAnalysis.EnergyContourCoefficient
+import NLS.KdV.HillL2UpperEnergySquareAsymptotics
+import NLS.KdV.HillL2EnergySquareCircleAsymptotics
+import NLS.KdV.HillSmoothEnergyTraceLimit
+import NLS.KdV.HillHighMomentSigns
+import NLS.KdV.HillSmoothEnergyTrace

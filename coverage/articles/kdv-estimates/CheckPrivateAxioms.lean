@@ -1,3 +1,10 @@
+import NLS.ComplexAnalysis.WeightedSquareRemainder
+import NLS.ComplexAnalysis.EnergyContourCoefficient
+import NLS.KdV.HillL2UpperEnergySquareAsymptotics
+import NLS.KdV.HillL2EnergySquareCircleAsymptotics
+import NLS.KdV.HillSmoothEnergyTraceLimit
+import NLS.KdV.HillHighMomentSigns
+import NLS.KdV.HillSmoothEnergyTrace
 import NLS.KdV.HillFinitePhysicalPotential
 import NLS.KdV.HillRealWeightedTruncation
 import NLS.KdV.HillL2QuadraticTrace
@@ -434,7 +441,12 @@ run_cmd do
     ``NLS.ComplexAnalysis.norm_quadratic_circle_coefficient_sub_le,
     ``NLS.ComplexAnalysis.hasSum_of_nonnegative_real_partial_limit,
     ``NLS.continuousAt_tsum_of_locally_small_nat_tails,
-    ``NLS.exists_local_nat_property_pullback]
+    ``NLS.exists_local_nat_property_pullback,
+    ``NLS.ComplexAnalysis.hasSum_of_eventually_nonnegative_real_partial_limit,
+    ``NLS.ComplexAnalysis.norm_square_error_of_phase_error_general,
+    ``NLS.ComplexAnalysis.norm_square_model_energy_error_le,
+    ``NLS.ComplexAnalysis.norm_square_energy_error_of_phase_error,
+    ``NLS.ComplexAnalysis.norm_energy_circle_coefficient_sub_le]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

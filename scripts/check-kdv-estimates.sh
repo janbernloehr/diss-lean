@@ -67,6 +67,7 @@ modules+=(NLS/ComplexAnalysis/LaurentSquareRemainder NLS/ComplexAnalysis/UpperCi
 modules+=(NLS/KdV/HillRealActionContinuity)
 modules+=(NLS/SequenceSpaces/LocalSeriesContinuity NLS/KdV/HillActionTailBudget NLS/KdV/HillLocallyUniformActionTails NLS/KdV/HillWeightedActionContinuity)
 modules+=(NLS/KdV/HillFinitePhysicalPotential NLS/KdV/HillRealWeightedTruncation NLS/KdV/HillL2QuadraticTrace)
+modules+=(NLS/ComplexAnalysis/WeightedSquareRemainder NLS/ComplexAnalysis/EnergyContourCoefficient NLS/KdV/HillL2UpperEnergySquareAsymptotics NLS/KdV/HillL2EnergySquareCircleAsymptotics NLS/KdV/HillSmoothEnergyTraceLimit NLS/KdV/HillHighMomentSigns NLS/KdV/HillSmoothEnergyTrace)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

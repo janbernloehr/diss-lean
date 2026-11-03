@@ -1,9 +1,10 @@
 import Mathlib.Analysis.Normed.Group.InfiniteSum
 import Mathlib.Analysis.Complex.Basic
 import Mathlib.Topology.Algebra.InfiniteSum.Real
+import Mathlib.Topology.Algebra.InfiniteSum.NatInt
 import Mathlib.Tactic.Linarith
 
-/-! # A complex series of nonnegative real terms from its partial-sum limit -/
+/-! # Complex series with eventually nonnegative real terms from partial-sum limits -/
 
 noncomputable section
 open Complex Filter Topology
@@ -32,5 +33,26 @@ theorem hasSum_of_nonnegative_real_partial_limit (f : ℕ → ℂ) (A : ℂ)
   have he : (∑' k, f k) = A := tendsto_nhds_unique hs.hasSum.tendsto_sum_nat hlim
   rw [← he]
   exact hs.hasSum
+
+theorem hasSum_of_eventually_nonnegative_real_partial_limit (f : ℕ → ℂ) (A : ℂ)
+    (hreal : ∀ᶠ k : ℕ in atTop, f k = (‖f k‖ : ℂ))
+    (hlim : Tendsto (fun N => ∑ k ∈ Finset.range N, f k) atTop (𝓝 A)) : HasSum f A := by
+  obtain ⟨N, hN⟩ := eventually_atTop.mp hreal
+  have ht := (hlim.comp (tendsto_add_atTop_nat N)).sub_const (∑ k ∈ Finset.range N, f k)
+  have he (K : ℕ) : (∑ k ∈ Finset.range (K+N), f k) - (∑ k ∈ Finset.range N, f k) =
+      ∑ k ∈ Finset.range K, f (k+N) := by
+    rw [Nat.add_comm K N, Finset.sum_range_add]
+    simp only [add_comm N]
+    abel
+  have htail : Tendsto (fun K => ∑ k ∈ Finset.range K, f (k+N)) atTop
+      (𝓝 (A - ∑ k ∈ Finset.range N, f k)) := by
+    simpa only [Function.comp_def, he] using ht
+  have hs : Summable (fun k => f (k+N)) :=
+    (hasSum_of_nonnegative_real_partial_limit (fun k => f (k+N)) _ (fun k => hN _ (by omega)) htail).summable
+  have hall : Summable f := (summable_nat_add_iff N).mp hs
+  have hv : (∑' k, f k) = A := tendsto_nhds_unique hall.hasSum.tendsto_sum_nat hlim
+  rw [← hv]
+  exact hall.hasSum
+
 
 end NLS.ComplexAnalysis
