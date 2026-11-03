@@ -17,6 +17,24 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest real rough Miura charts and entire energy psi candidates
+
+At every physically real Hminus1 potential, actual complex analytic Miura
+charts now preserve physical realness. This proves the real-type NLS
+source hypothesis and applies the verified all-index normalized psi
+extension on one common rough-open pullback. Actual spectral placement,
+analytic deleted-root branches and exact original frequency periods are
+retained. Joint filled odd square descent constructs entire-energy
+candidates with the exact fixed energy shift and 2z factor identity,
+including the branch point. See `REAL_MIURA_ENERGY_PSI.md`.
+
+Current strict validation: 378 selected modules, 4517 selected declarations
+and 25796 imported NLS declarations; permitted axioms only. All 369 previous
+selected Lean sources and seven provenance records remain unchanged.
+Root sign/contour matching, Hill energy normalization, overlap compatibility,
+physical frequency identity(69), action descent and all main theorems
+remain open.
+
 ## Latest actual rough analytic second-moment series
 
 The actual analytic Miura L2 lift now supplies a genuine locally bounded

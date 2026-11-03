@@ -4,7 +4,7 @@
   "status": "not_yet_verified",
   "stage": "dedicated_worktree_validated_progress",
   "canonical_base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
-  "checked_date": "2026-11-02",
+  "checked_date": "2026-11-03",
   "journal_title": "On the wellposedness of the KdV/KdV2 equations and their frequency maps",
   "preprint_title": "On the extension of the frequency maps of the KdV and the KdV2 equations",
   "authors": [
@@ -6265,6 +6265,132 @@
       "scope": "Existing unchanged verified dependency is now directly selected and recompiled: on a common source neighborhood the same canonical endpoint labels are valid at every sufficiently large cutoff",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "28b9b78cd223a20b579c45bb8c5b5c4a8a87e74bf460872f5892b398e34564fa"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EquivariantSmallQuadraticInverse.lean",
+      "source_labels": [
+        "Constructed real-preserving analytic quadratic inverse"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Uniqueness in the actual contraction ball, strict 3R/4 interior solution and an actual open inverse chart preserving the fixed locus of a compatible norm-preserving symmetry",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3e654f6c0205915165ba1ce96aa6adbe73019745c0ba345c0f575a1410338114"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricOddSquareDescent.lean",
+      "source_labels": [
+        "Joint analytic odd filled square descent on local parameter domains"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Fixed Cauchy circles and joint divided differences prove energy/parameter analyticity of the quotient by twice the frequency, including its filled ramification value, without assuming continuous or analytic root selection",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3fe770a70df1de247e33ce6edf07554224ff4fef9b1b7ddcbb28c94a84b9cb4a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealMiuraCharts.lean",
+      "source_labels": [
+        "Actual rough Hill Miura chart with proved real-type source"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "At every physically real Hminus1 potential constructs an actual complex analytic Hill Miura chart, fixed positive real shift and real-type diagonal NLS sources at every real chart input; no real-type assumption on arbitrary complex diagonal sources",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "52fb29455683b9163eafa29d2e7955b3f18cf9093002c58a1f89da17b5f18f34"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealMiuraEnergyPsi.lean",
+      "source_labels": [
+        "Constructed entire rough energy psi candidates with exact fixed shift"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "At every real Hminus1 potential constructs jointly entire-energy analytic candidates from the actual normalized NLS numerator antisymmetrization, with exact 2z factor identity at shifted squares including zero; retains original frequency periods. Hill energy normalization, root sign, contour matching and overlap identification remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "03eb7d3f97bbaeae40bd93c8cf3f060a09d6f51d4f96237b99a70f1a8e895e06"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealMiuraSourcePsi.lean",
+      "source_labels": [
+        "Verified normalized NLS psi applicability at every real rough potential"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Actual real-preserving Miura lifts prove membership in the verified common NLS psi domain. One complex rough-open pullback before every index retains actual spectral isolation, analytic deleted-root branches and exact raw 2pi Kronecker frequency periods",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6703074c512a7016a7d9d0df9ff359be7ff0dd770575b9fbcd21fca3f1ee2cc1"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ConjugateReflection.lean",
+      "source_labels": [
+        "Existing actual conjugate-reflection dependency"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Unchanged verified dependency now directly selected and recompiled; actual norm-preserving weighted conjugate reflection and conjugation of the absolutely convergent Fourier convolution",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "785b7915c423f963d41847357061e92b194d42a5a46bda4b07b92a2faa03c101"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneMiuraConjugation.lean",
+      "source_labels": [
+        "Actual physical Fourier conjugation and Miura equivariance"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Actual norm-preserving involutive L2/Hminus1 conjugate-reflection maps, exact physical real Fourier fixed loci, and equivariance of the actual mass resolvent, convergent Miura convolution and resolved quadratic equation",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9c82b9985b1ff9280d1bc0362d7f853e288233bc35cec99e93453f3d15d0194f"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneRealMiuraCharts.lean",
+      "source_labels": [
+        "Constructed real-preserving rough Miura charts"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "One mass cutoff before all masses and bounded real rough inputs constructs complex analytic lifts of the actual distributional Miura equation; all nearby real inputs have real lifts with one fixed real energy translation",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "17912b13446df29b763c0fab23c72c248fa026681e39087799358b06ef01b642"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiLemma12_11.lean",
+      "source_labels": [
+        "Existing common normalized complex NLS psi extension"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Unchanged verified dependency now directly selected and recompiled; actual common all-index analytic root atlas with spectral isolation, real agreement and exact raw 2pi Kronecker frequency periods",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d46b6456827374663e894fcfe4d1a9d8a26f5694ee84ebd00e7991352e6bebf8"
     }
   ],
   "dependencies_needed": [
@@ -6296,15 +6422,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4453,
-    "total_declarations_audited": 25753,
+    "candidate_declarations_audited": 4517,
+    "total_declarations_audited": 25796,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 369
+    "selected_modules": 378
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -6439,5 +6565,6 @@
   "hminus_weighted_critical_gap_record": "HMINUS_WEIGHTED_CRITICAL_GAPS.md",
   "shared_hminus_gap_quotient_import_record": "SHARED_HMINUS_GAP_QUOTIENT_IMPORT.json",
   "hminus_second_moments_record": "HMINUS_SECOND_MOMENTS.md",
-  "hminus_frequency_series_record": "HMINUS_FREQUENCY_SERIES.md"
+  "hminus_frequency_series_record": "HMINUS_FREQUENCY_SERIES.md",
+  "real_miura_energy_psi_record": "REAL_MIURA_ENERGY_PSI.md"
 }

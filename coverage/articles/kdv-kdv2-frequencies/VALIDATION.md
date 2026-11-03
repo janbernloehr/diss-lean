@@ -77,8 +77,9 @@ its existing Hilbert specialization and a transitive audit.
 | `HillHminusOneTwoWeightedPeriodOperator`, `HillHminusOneTwoWeightedPeriodInverse`, `AnalyticTwoWeightedInverseColumns`, `HillHminusOneTwoWeightedNormalizedMoments`, `HillHminusOneSmallCriticalControl`, `HillHminusOneCriticalGapLocalization` and selected rough square/quotient sources | Actual weighted rough operator/inverse and analytic l2 errors, with all normalized/free/period/odd features retained on the same family; actual quadratic critical-gap localization, exact collapsed equality and any relative-gap coefficient locally in Hminus1. Sharp normalized moments, full W, lp remainders and physical frequencies remain open. |
 | Eleven actual rough kernel/cut/second-moment modules detailed in `HMINUS_SECOND_MOMENTS.md` | Genuine direct Hilbert pole kernel, exact all-order normalized moment pairing and absolute coefficient series; same-pair cut roots and signed weighted deformation; filled collapsed cancellation; constructed sharp quadratic/quartic/twice-weighted actual rough second-moment bounds. Rough summable gap majorant and physical frequencies remain open. |
 | `SquaredPairGapBound`, `HillHminusOneCanonicalFrequencyGaps`, `HillHminusOneFrequencyGapMajorant`, `HillHminusOneNormalizedFrequencySeries` and existing `UniformCanonicalPeriodicEndpoints` | Genuine rough locally bounded l1 gap majorant through the exact Miura energy shift; absolute/localuniform/analytic actual normalized second-moment series on one rough-open neighborhood before all output indices. Physical Hamiltonian identity (69), full W and all main theorems remain open. |
+| Seven new real-preserving Miura/energy-descent modules and existing `ConjugateReflection`, `SourcePsiLemma12_11` | Actual physically real rough Miura charts at every real Hminus1 base potential; proved applicability of the common normalized NLS psi theorem; jointly analytic filled energy candidates with exact fixed-shift 2z factor identity. Hill energy normalization and all main theorems remain open. |
 
-All 369 selected modules compile with pinned **Lean 4.33.1**, commit
+All 378 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -457,11 +458,20 @@ PASS NLS/ComplexAnalysis/SquaredPairGapBound
 PASS NLS/KdV/HillHminusOneCanonicalFrequencyGaps
 PASS NLS/KdV/HillHminusOneFrequencyGapMajorant
 PASS NLS/KdV/HillHminusOneNormalizedFrequencySeries
-Axiom audit passed: 4453 candidate declarations; 25753 declarations total.
+PASS NLS/SequenceSpaces/ConjugateReflection
+PASS NLS/ComplexAnalysis/EquivariantSmallQuadraticInverse
+PASS NLS/SequenceSpaces/PeriodOneMiuraConjugation
+PASS NLS/SequenceSpaces/PeriodOneRealMiuraCharts
+PASS NLS/KdV/HillHminusOneRealMiuraCharts
+PASS NLS/ZakharovShabat/SourcePsiLemma12_11
+PASS NLS/KdV/HillHminusOneRealMiuraSourcePsi
+PASS NLS/ComplexAnalysis/ParametricOddSquareDescent
+PASS NLS/KdV/HillHminusOneRealMiuraEnergyPsi
+Axiom audit passed: 4517 candidate declarations; 25796 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 369 selected modules (including generated and private declarations)
+the 378 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1333,3 +1343,35 @@ physical Hamiltonian/Poisson/angle and normalized-differential identities,
 action descent, sharp source weighted target spaces and asymptotics,
 compact derivatives and actual Birkhoff/PDE flows remain open. All main
 inventory rows remain OPEN.
+
+
+## Real-preserving rough Miura charts and entire energy candidates
+
+See `REAL_MIURA_ENERGY_PSI.md` for exact declarations and scope. Seven new
+proved modules construct actual real-preserving complex Miura charts at
+every physically real Hminus1 base potential. Physical realness proves
+applicability of the existing verified common NLS normalized psi theorem.
+One rough-open pullback precedes every index and retains actual spectral
+isolation, analytic deleted-root branches and exact original raw frequency
+periods. Antisymmetrization and a joint filled odd square descent produce
+entire-energy candidates with the exact fixed-shift 2z factor identity,
+including at the branch point. Hill energy normalization is not asserted.
+
+All 378 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The permitted transitive axiom audit passes for
+4517 selected declarations and 25796 imported NLS declarations.
+Ordered checker/audit/PASS/coverage selections agree; all source hashes and
+seven provenance records match; selected outputs are private and fresh.
+All 369 previous selected Lean sources remain byte-identical. Two existing
+conjugate-reflection/common NLS psi dependencies are directly recompiled.
+No new shared branch import/full merge, placeholder, axiom, heartbeat
+increase, disabled linter or warning exception is introduced. Canonical
+main remains unchanged and clean.
+
+These candidates require actual root parity/sign and contour matching,
+Hill energy periods, lowest-cut analysis, overlap compatibility and
+identification with the previous local rough normalized family. Global
+coherent Hill normalized differentials, exact canonical leading scalar,
+source root estimate(54), physical identity(69), action descent, weighted
+target spaces/compact derivatives and actual Birkhoff/PDE identification
+remain open. Every main inventory row remains OPEN.

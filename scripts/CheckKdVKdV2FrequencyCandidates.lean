@@ -1,3 +1,9 @@
+import NLS.KdV.HillHminusOneRealMiuraEnergyPsi
+import NLS.KdV.HillHminusOneRealMiuraCharts
+import NLS.ZakharovShabat.SourcePsiLemma12_11
+import NLS.SequenceSpaces.PeriodOneRealMiuraCharts
+import NLS.SequenceSpaces.PeriodOneMiuraConjugation
+import NLS.ComplexAnalysis.EquivariantSmallQuadraticInverse
 import NLS.KdV.HillHminusOneNormalizedFrequencySeries
 import NLS.KdV.HillHminusOneFrequencyGapMajorant
 import NLS.KdV.HillHminusOneCanonicalFrequencyGaps
@@ -443,7 +449,16 @@ run_cmd do
     `NLS.ComplexAnalysis.SquaredPairGapBound,
     `NLS.KdV.HillHminusOneCanonicalFrequencyGaps,
     `NLS.KdV.HillHminusOneFrequencyGapMajorant,
-    `NLS.KdV.HillHminusOneNormalizedFrequencySeries]
+    `NLS.KdV.HillHminusOneNormalizedFrequencySeries,
+    `NLS.SequenceSpaces.ConjugateReflection,
+    `NLS.ComplexAnalysis.EquivariantSmallQuadraticInverse,
+    `NLS.SequenceSpaces.PeriodOneMiuraConjugation,
+    `NLS.SequenceSpaces.PeriodOneRealMiuraCharts,
+    `NLS.KdV.HillHminusOneRealMiuraCharts,
+    `NLS.ZakharovShabat.SourcePsiLemma12_11,
+    `NLS.KdV.HillHminusOneRealMiuraSourcePsi,
+    `NLS.ComplexAnalysis.ParametricOddSquareDescent,
+    `NLS.KdV.HillHminusOneRealMiuraEnergyPsi]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

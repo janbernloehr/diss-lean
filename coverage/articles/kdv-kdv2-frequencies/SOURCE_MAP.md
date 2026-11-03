@@ -496,3 +496,22 @@ Physical identity(69), Lemma3.2, PDF26-27, full W, action descent, weighted
 target-space/asymptotic/compact-derivative assertions and actual physical
 Birkhoff/PDE flows remain separate open obligations. No main row above is
 closed by this local scalar series construction.
+
+
+## Current real rough Miura and energy-psi adapter
+
+The psi family (52)-(53), PDF21, used by the frequency extensions in
+Theorems1.2 and1.9, PDF4/6, now has a proved real-preserving rough Miura
+adapter to the verified NLS normalized psi theorem. See
+`exists_hillHminus_real_sourcePsi_data` and
+`exists_hillHminus_real_entire_energyPsi`: at every physically real rough
+base potential they construct a common rough-open all-index neighborhood,
+actual normalized NLS roots/periods and jointly analytic entire-energy
+candidates with the exact shifted-square 2z factor identity. Definitions
+and qualifications are detailed in `REAL_MIURA_ENERGY_PSI.md`.
+
+The retained exact periods are still the original NLS frequency periods.
+Hill root sign/parity, mapped positive/negative energy contours, lowest-cut
+analysis, Hill energy normalization, overlap compatibility and agreement
+with the earlier local rough normalized family are separate open steps.
+Neither (52)-(54) in full W nor any main theorem is closed by this adapter.
