@@ -5528,3 +5528,15 @@ import NLS.KdV.HillDirichletAnalyticAngles
 import NLS.ComplexAnalysis.ParametricCosineRealAngleChart
 import NLS.KdV.HillAbelianOpenGapPrimitiveCharts
 import NLS.KdV.HillDirichletAbelianIntegralAnalytic
+import NLS.ComplexAnalysis.CosineGapNeighborhood
+import NLS.KdV.HillDeflatedCosineMean
+import NLS.ComplexAnalysis.ParametricQuadraticSolution
+import NLS.ComplexAnalysis.EndpointRootAllCosinePeriods
+import NLS.ComplexAnalysis.CenteredQuadraticRoot
+import NLS.ComplexAnalysis.CenteredMeanFree
+import NLS.ComplexAnalysis.CenteredMeanFreePeriod
+import NLS.ComplexAnalysis.AnalyticCollapsedQuadraticSolution
+import NLS.ComplexAnalysis.RegularQuadraticCosinePrimitive
+import NLS.KdV.HillClosedGapQuadraticChart
+import NLS.KdV.HillQuadraticCosineMatching
+import NLS.KdV.HillClosedGapAbelianCorrections

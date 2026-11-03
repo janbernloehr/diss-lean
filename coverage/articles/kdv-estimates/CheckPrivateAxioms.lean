@@ -605,6 +605,18 @@ import NLS.KdV.HillDirichletAnalyticAngles
 import NLS.ComplexAnalysis.ParametricCosineRealAngleChart
 import NLS.KdV.HillAbelianOpenGapPrimitiveCharts
 import NLS.KdV.HillDirichletAbelianIntegralAnalytic
+import NLS.ComplexAnalysis.CosineGapNeighborhood
+import NLS.KdV.HillDeflatedCosineMean
+import NLS.ComplexAnalysis.ParametricQuadraticSolution
+import NLS.ComplexAnalysis.EndpointRootAllCosinePeriods
+import NLS.ComplexAnalysis.CenteredQuadraticRoot
+import NLS.ComplexAnalysis.CenteredMeanFree
+import NLS.ComplexAnalysis.CenteredMeanFreePeriod
+import NLS.ComplexAnalysis.AnalyticCollapsedQuadraticSolution
+import NLS.ComplexAnalysis.RegularQuadraticCosinePrimitive
+import NLS.KdV.HillClosedGapQuadraticChart
+import NLS.KdV.HillQuadraticCosineMatching
+import NLS.KdV.HillClosedGapAbelianCorrections
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1009,7 +1021,24 @@ run_cmd do
     ``NLS.ComplexAnalysis.deriv_eq_zero_of_two_zero_order,
     ``NLS.ComplexAnalysis.circleCauchyTransform_two_zero_unit,
     ``NLS.ComplexAnalysis.continuousAt_endpointRoot_of_not_mem_segment,
-    ``NLS.ComplexAnalysis.exists_local_parametricCosine_chart_on_real_segment]
+    ``NLS.ComplexAnalysis.exists_local_parametricCosine_chart_on_real_segment,
+    ``NLS.ComplexAnalysis.exists_open_cosineGapPoint_real_neighborhood,
+    ``NLS.ComplexAnalysis.exists_analytic_parametric_quadratic_solution_of_zero_period,
+    ``NLS.ComplexAnalysis.circleIntegral_div_endpointRoot_eq_cosine_integral_all,
+    ``NLS.ComplexAnalysis.centeredQuadraticRoot,
+    ``NLS.ComplexAnalysis.centeredQuadraticRoot_sq,
+    ``NLS.ComplexAnalysis.centeredQuadraticRoot_eq_endpointRoot,
+    ``NLS.ComplexAnalysis.centeredQuadraticRoot_ne_zero,
+    ``NLS.ComplexAnalysis.analyticOnNhd_centeredQuadraticRoot,
+    ``NLS.ComplexAnalysis.centeredMeanFree,
+    ``NLS.ComplexAnalysis.analyticAt_centeredCosineMean_of_collapse,
+    ``NLS.ComplexAnalysis.analyticAt_centeredMeanFree_of_collapse,
+    ``NLS.ComplexAnalysis.integral_centeredMeanFree_cosine_eq_zero,
+    ``NLS.ComplexAnalysis.circleIntegral_centeredMeanFree_div_root_eq_zero,
+    ``NLS.ComplexAnalysis.exists_analytic_centered_mean_free_quadratic_solution,
+    ``NLS.ComplexAnalysis.regularQuadraticCosinePrimitive,
+    ``NLS.ComplexAnalysis.hasDerivAt_regularQuadraticCosinePrimitive,
+    ``NLS.ComplexAnalysis.regularQuadraticCosinePrimitive_pi]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
