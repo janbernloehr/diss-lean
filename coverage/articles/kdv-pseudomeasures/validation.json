@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Actual rough Miura action bridge: real-base analytic energy charts, exact physical Hill/Dirac sheets at all nonreal energies, quadratic contour/winding pullback, literal Hill action equals twice the Dirac level-two action, and common all-index analytic local Miura-indexed functions.",
+  "phase": "Real-preserving analytic Miura neighborhoods, all positive real Miura Dirac gaps and actions, and constructed winding-one Hill contours without a high-index cutoff.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -745,13 +745,20 @@
     "NLS/ZakharovShabat/SourceCriticalRootPiecewiseZeroPeriod.lean",
     "NLS/KdV/HillHminusOneMiuraHigherAction.lean",
     "NLS/KdV/HillHminusOneMiuraActionFamilies.lean",
+    "NLS/SequenceSpaces/PeriodOneMiuraRealNeighborhood.lean",
+    "NLS/KdV/HillHminusOneMiuraRealActionFamilies.lean",
+    "NLS/ZakharovShabat/SourcePositivePeriodCircle.lean",
+    "NLS/KdV/HillHminusOneMiuraPositiveActions.lean",
+    "NLS/SequenceSpaces/ContinuousOrderedRootIndex.lean",
+    "NLS/KdV/HillMiuraPositiveGaps.lean",
+    "NLS/KdV/HillHminusOneMiuraPositiveIndexedActions.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 3770,
+  "proved_theorems": 3790,
   "definitions": 774,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 4544,
+    "declarations": 4564,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -1497,10 +1504,17 @@
     "A verified full Dirac Abelian spectral chart proves that EVERY actual piecewise C1 loop in the original canonical-root domain has ZERO integral of DiracTracePrime/DiracCanonicalRoot. This zero period is derived from the actual full primitive, not supplied as a separate vanishing hypothesis.",
     "Consequently the energy-shift term cancels EXACTLY and the mapped actual Hill contour action is TWO times sourceHigherActionContour at NATURAL k=1, i.e. printed level TWO. For every actual original Dirac isolating circle contained in Re(z)>0, it equals hillHminusMiuraIndexedAction=2*sourceIndexedHigherAction(n,1), and its actual mapped winding about the squared gap midpoint is ONE. The positive-circle and full-primitive hypotheses remain explicit.",
     "For EVERY REAL H-minus-one q, ONE OPEN COMPLEX source neighborhood and ONE analytic real-base Miura lift support analytic Miura-indexed functions at ALL integer Dirac indices simultaneously, together with actual full Abelian spectral charts for every complex input in that neighborhood. This reuses verified original indexed higher actions and the common original Section11 contour domain. It constructs local analytic Miura-indexed functions, not yet the globally glued original KdV canonical action family.",
-    "Remaining low-gap work is positive isolating-circle geometry, identification of the actual positive Dirac index with EACH original low Hill index, and invariance under changing the Miura lift/energy shift. Agreement with the already glued high Hill actions and one common all-index ORIGINAL canonical neighborhood remain unproved. The actual KdV Birkhoff map is not replaced by the NLS map. Full source3.2 and ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE."
+    "Remaining low-gap work is positive isolating-circle geometry, identification of the actual positive Dirac index with EACH original low Hill index, and invariance under changing the Miura lift/energy shift. Agreement with the already glued high Hill actions and one common all-index ORIGINAL canonical neighborhood remain unproved. The actual KdV Birkhoff map is not replaced by the NLS map. Full source3.2 and ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE.",
+    "Actual analytic Miura energy charts now preserve Fourier reality at EVERY real input in one OPEN COMPLEX H-minus-one neighborhood. The chart exists at EVERY complex base q with an arbitrarily large positive energy shift c^2. A strict massive-kernel bound on twice the original solution radius, continuity of the actual analytic right inverse, conjugation equivariance of the shifted equation and small-ball uniqueness prove this; no real-preserving selection is assumed.",
+    "At EVERY REAL native H-minus-one base, one common OPEN COMPLEX neighborhood supports ALL signed-index analytic functions J_n(a)=2*sourceIndexedHigherAction(n,1,diagonal(u(a))), actual full Abelian charts for every complex input, and REAL lifts at EVERY real neighbor. For every real neighbor, the transferred root equals the ACTUAL native physical Hill root at EVERY nonreal energy. Each indexed Miura action is real on every real lift.",
+    "A reusable connectedness theorem fixes the integer index of a constant real root in any continuous strictly increasing exhaustive integer-indexed real family. Applied to the ACTUAL canonical critical coordinates along real Miura scaling from the free source, it proves that frequency ZERO has canonical critical index ZERO. The actual trace is even and hence critical at zero. The zero-index gap contains zero, so strict original gap ordering proves that EVERY n>0 has strictly positive left endpoint, and EVERY n<0 has strictly negative right endpoint. No high cutoff, open-gap premise or assumed reflection/index symmetry is used.",
+    "For any actual original circle enclosing a positive real selected gap, a shared refinement constructs a positive real-centered isolating circle whose CLOSED disc lies in the old OPEN disc, preserving separation from EVERY other source gap and including COLLAPSED gaps. Verified source isolating discs therefore construct such circles at EVERY positive real Miura Dirac index.",
+    "The actual mean-value comparison with the ordinary indexed Dirac action proves 2*left_n*Re(I_n) <= Re(J_n) <= 2*right_n*Re(I_n). At EVERY n>0 and EVERY real L2 Miura source, J_n is REAL and NONNEGATIVE, J_n=0 IFF the actual indexed Dirac gap closes, and J_n>0 IFF it opens. Natural higher-action k=1 remains printed level TWO; an even-natural-order positivity result is not substituted.",
+    "For EVERY actual REAL shifted Miura image q+constant(c) and EVERY positive integer Dirac index, the final existence theorem CONSTRUCTS a verified full Abelian chart and a positive source isolating circle. Its actual quadratic image E=z^2-c has winding ONE about the squared actual gap midpoint minus c, and the literal native Hill contour action equals J_n. Positive circle geometry and a full primitive are no longer independent hypotheses of this existence theorem.",
+    "These remain Dirac-indexed theorems. Original LOW Hill-slot correspondence with ALL multiplicities, fixed positive-contour persistence on COMPLEX neighborhoods, Miura lift/energy-shift independence, agreement with the ALREADY GLUED native high actions, and a common all-index original canonical Hill family remain open. Actual KdV Birkhoff map and smooth-approximation flow, full source3.2 and ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE."
   ],
-  "source_correspondence": "Actual rough Miura action bridge: real-base analytic energy charts, exact physical Hill/Dirac sheets at all nonreal energies, quadratic contour/winding pullback, literal Hill action equals twice the Dirac level-two action, and common all-index analytic local Miura-indexed functions. Complete the LOW-INDEX ORIGINAL canonical action assignment using the NOW PROVED actual Miura contour bridge. Prove positivity of every relevant positive Dirac gap, construct the required positive real-centered isolating circles locally in complex sources, identify ALL SAME original Hill/Dirac indices and algebraic repetitions, and prove independence of the Miura lift/energy shift and agreement with the ALREADY GLUED high Hill actions. The literal contour transfer has EXACT factor TWO times natural k=1 (printed level2), with the constant-shift term proved zero. Do not assume positive-circle geometry or low index correspondence. Establish ONE common complex neighborhood of the full real mean-zero H-minus-one source carrying ALL original canonical actions, analytic normalized ratios through all collapsed gaps, all-index nonvanishing/zero-action equivalence and real positivity. The high-index native family is already glued and normalized; local all-Dirac-index analytic Miura functions and actual all-nonreal-energy physical root matching are NOW PROVED, but they are not yet the global original canonical family. Complete the original action-angle/Birkhoff construction and actual coordinate estimate (|gamma_n|+|mu_n-tau_n|)/sqrt(n), original differential q_(2n)/sqrt(2*pi*abs(n)), exact target order s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Do not substitute arbitrary supplied conjugacy data or identify the NLS Birkhoff map with KdV without proof. Construct or identify the ACTUAL original H-minus-one KdV flow defined by convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization, and derive main1.1/1.3/1.4 plus Wiener5.1/5.9. All five main theorems remain UNPROVED; keep the goal ACTIVE. Quantitative DirichletC4ii, remaining low parity/interlacing and complex ratio2.20 remain open only where required. FULL complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB remain PROVED.",
-  "build_isolation": "Actual rough Miura action bridge: real-base analytic energy charts, exact physical Hill/Dirac sheets at all nonreal energies, quadratic contour/winding pullback, literal Hill action equals twice the Dirac level-two action, and common all-index analytic local Miura-indexed functions. All source/compiler/Git milestone writes private; canonical checkout and shared Git metadata read-only.",
+  "source_correspondence": "Real-preserving analytic Miura neighborhoods, all positive real Miura Dirac gaps and actions, and constructed winding-one Hill contours without a high-index cutoff. Identify EVERY original low Hill slot with the same positive Dirac slot under the actual quadratic Miura energy shift, including the bottom endpoint and ALL algebraic repetitions. Positive REAL Dirac gaps, positive circles, actual winding-one Hill contours, real positivity and exact Dirac-gap zero detection are NOW PROVED for EVERY n>0. Prove fixed positive-contour persistence on suitable COMPLEX source neighborhoods, Miura lift/energy-shift independence and agreement with the ALREADY GLUED high native Hill actions. The EXACT action transfer is factor TWO times natural k=1, printed level2. Construct ONE common complex neighborhood of the full real mean-zero H-minus-one source carrying ALL ORIGINAL canonical Hill actions and analytic normalized ratios through collapsed gaps, with all-index zero-action equivalence. One common complex neighborhood with ALL signed-index analytic local Miura functions, REAL lifts at EVERY real neighbor and actual physical root matching at EVERY nonreal energy is NOW PROVED; identification and gluing as the original Hill family remain open. Complete the ORIGINAL KdV action-angle/Birkhoff construction and estimate (|gamma_n|+|mu_n-tau_n|)/sqrt(n), original differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Do not substitute the NLS Birkhoff map. Construct the ACTUAL original H-minus-one KdV flow by convergence of EVERY original smooth approximation with original equation and Hamiltonian/frequency normalization, then derive main1.1/1.3/1.4 and Wiener5.1/5.9. ALL FIVE main theorems remain UNPROVED; goal ACTIVE. Remaining DirichletC4ii, low parity/interlacing and complex ratio2.20 are open only where needed. Full complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB remain PROVED.",
+  "build_isolation": "Real-preserving analytic Miura neighborhoods, all positive real Miura Dirac gaps and actions, and constructed winding-one Hill contours without a high-index cutoff. All source/compiler/Git milestone writes private; canonical checkout and shared Git metadata read-only.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -1902,7 +1916,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "766a81b4680b5f7c7d641f5e529bbe0c6458868d7d87bf61353c0cd85c6e8c2f",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "5d7937d0fdfcef8de6e1f2b9384d96ba83392ad2311fdd3f8108650fa8fb5b23",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -2245,7 +2259,14 @@
     "NLS/KdV/HillHminusOneMiuraContour.lean": "d61a83e2dbbf7b020f7a9bf443fa6181f97624c16f344a4cddc449e458023e19",
     "NLS/ZakharovShabat/SourceCriticalRootPiecewiseZeroPeriod.lean": "dbf6d3535bb8e926c0428df1cc2c177a51d75655781742a4a4babc2b8de7af9f",
     "NLS/KdV/HillHminusOneMiuraHigherAction.lean": "81afc2a1a81045f3447066b98ef4e593329d208be706bb9a6235cf5e05cceeef",
-    "NLS/KdV/HillHminusOneMiuraActionFamilies.lean": "11c9dedcb0239d1dcfe306950dd5ba1d2c388fd501a1b156d3df498b96dd0dc2"
+    "NLS/KdV/HillHminusOneMiuraActionFamilies.lean": "11c9dedcb0239d1dcfe306950dd5ba1d2c388fd501a1b156d3df498b96dd0dc2",
+    "NLS/SequenceSpaces/PeriodOneMiuraRealNeighborhood.lean": "ea62cd045e0818a35b7255aa39ad9e82d90f31079f73029cec0bb14fbc51cd7b",
+    "NLS/KdV/HillHminusOneMiuraRealActionFamilies.lean": "36cb8d291dc4060ea581101dfda4d662b2d20e855ddfaa5dad900bd27a8697e8",
+    "NLS/ZakharovShabat/SourcePositivePeriodCircle.lean": "08467d357aec79e44e00a61edae348e3590071dcbe1bfda60941c2e33dc233ba",
+    "NLS/KdV/HillHminusOneMiuraPositiveActions.lean": "e66b681fc79f9539c6a7c49f56533d2cf18a334832a1683e30ee5a9286888cdd",
+    "NLS/SequenceSpaces/ContinuousOrderedRootIndex.lean": "3ed65e2cb9e4ee9c5346027b2dccc02acbe377c9516fcf3d5ebec7712ba2a62b",
+    "NLS/KdV/HillMiuraPositiveGaps.lean": "a4cb6059c96c72718942fefc28766850504e8741b9da13e114fb2d73ea52130e",
+    "NLS/KdV/HillHminusOneMiuraPositiveIndexedActions.lean": "372727f0a4a32f7aacb68e27de06341cede689ec56b3bd2b0e4ead16fd46db54"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -2253,12 +2274,12 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 4514,
-    "newly_checked_declarations_this_continuation": 30,
-    "new_theorems": 24,
-    "new_definitions": 6,
-    "total_checked_declarations": 4544,
-    "reuse": "Verified massive analytic Miura charts and real small-ball uniqueness, rough shifted trace identity, actual H-minus-one root/primitive, original Dirac canonical roots/full primitives, original indexed higher actions and common Section11 analytic contour domain, and shared holomorphic path pullback. No assumed root sign, quotient zero period, action estimate or Hill/Dirac Birkhoff identification is used."
+    "previous_checked_declarations": 4544,
+    "newly_checked_declarations_this_continuation": 20,
+    "new_theorems": 20,
+    "new_definitions": 0,
+    "total_checked_declarations": 4564,
+    "reuse": "Actual massive analytic right inverses, small-ball uniqueness, original canonical critical analyticity/free labels/exhaustive strict ordering, actual isolating discs, indexed higher-action mean-value comparison and exact quadratic Hill contour bridge. No low Hill index or Miura-chart independence is assumed."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -2287,7 +2308,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hminus-miura-action-transfer.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hminus-miura-real-neighborhood.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -2528,13 +2549,14 @@
     "Actual local high Hill contour actions: physical-sheet identification, proved winding-one contours, exact real-gap boundary formula and locally uniform eight-pi-n normalization, including collapsed gaps.",
     "Actual high Hill actions on arbitrary contours and complex potentials: contour independence within a chart, intrinsic analytic normalized action ratio through collapsed gaps, complex locally uniform eight-pi-n limit and local zero-action equivalence.",
     "Chart-independent native high Hill action family: cross-square/radius uniqueness, analytic gluing on natural open domains, exact complex uniform normalization and nonvanishing, and identification with original same-index canonical high gap squares.",
-    "Actual rough Miura action bridge: real-base analytic energy charts, exact physical Hill/Dirac sheets at all nonreal energies, quadratic contour/winding pullback, literal Hill action equals twice the Dirac level-two action, and common all-index analytic local Miura-indexed functions."
+    "Actual rough Miura action bridge: real-base analytic energy charts, exact physical Hill/Dirac sheets at all nonreal energies, quadratic contour/winding pullback, literal Hill action equals twice the Dirac level-two action, and common all-index analytic local Miura-indexed functions.",
+    "Real-preserving analytic Miura neighborhoods, all positive real Miura Dirac gaps and actions, and constructed winding-one Hill contours without a high-index cutoff."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-miura-action-transfer-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-miura-real-neighborhood-map.json",
   "baseline_validated_snapshot": {
-    "commit": "ea161c381dd3042f3be78488427672dfe6b866df",
-    "modules": 730,
-    "audited_declarations": 4514,
+    "commit": "1886c3b5508c5fcff8d1c23bfecb3476976cabc8",
+    "modules": 740,
+    "audited_declarations": 4544,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   },
@@ -2735,6 +2757,32 @@
     "full_source_Theorem3_2_proved": false,
     "actual_original_KdV_Birkhoff_map_constructed": false,
     "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
+    "main_theorems_verified": false
+  },
+  "actual_HminusOne_real_preserving_Miura_positive_index_actions": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-miura-real-neighborhood-map.json",
+    "actual_analytic_Miura_charts_preserve_every_nearby_real_input": true,
+    "arbitrarily_large_positive_shift_and_full_complex_source_neighborhood": true,
+    "all_signed_index_local_Miura_action_functions_analytic_on_one_neighborhood": true,
+    "physical_Hill_root_match_at_all_nonreal_energies_for_every_real_neighbor": true,
+    "shared_fixed_root_integer_index_invariance_on_connected_parameter_spaces": true,
+    "actual_zero_Dirac_frequency_has_canonical_critical_index_zero": true,
+    "every_positive_index_real_Miura_Dirac_gap_has_strictly_positive_left_endpoint": true,
+    "every_negative_index_real_Miura_Dirac_gap_has_strictly_negative_right_endpoint": true,
+    "positive_circle_refinement_including_collapsed_real_gaps_proved": true,
+    "positive_real_Miura_Dirac_contours_constructed_for_every_positive_integer_index": true,
+    "positive_index_real_Miura_actions_nonnegative_and_zero_iff_actual_Dirac_gap_zero": true,
+    "bounds_by_twice_Dirac_endpoints_times_ordinary_indexed_action": true,
+    "actual_winding_one_Hill_contour_exists_and_computes_Miura_action_at_every_positive_Dirac_index": true,
+    "high_frequency_cutoff_or_open_gap_hypothesis_required": false,
+    "all_low_original_Hill_Dirac_indices_and_multiplicities_identified": false,
+    "positive_fixed_contour_persistence_on_complex_neighborhoods_proved": false,
+    "Miura_lift_energy_shift_independence_proved": false,
+    "agreement_with_glued_high_Hill_actions_proved": false,
+    "common_neighborhood_for_all_original_canonical_Hill_indices_constructed": false,
+    "actual_KdV_Birkhoff_map_constructed": false,
+    "actual_original_KdV_flow_constructed": false,
+    "full_source_Theorem3_2_proved": false,
     "main_theorems_verified": false
   }
 }

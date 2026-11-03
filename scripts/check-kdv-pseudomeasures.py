@@ -771,6 +771,13 @@ modules = [
     'NLS.ZakharovShabat.SourceCriticalRootPiecewiseZeroPeriod',
     'NLS.KdV.HillHminusOneMiuraHigherAction',
     'NLS.KdV.HillHminusOneMiuraActionFamilies',
+    'NLS.SequenceSpaces.PeriodOneMiuraRealNeighborhood',
+    'NLS.KdV.HillHminusOneMiuraRealActionFamilies',
+    'NLS.ZakharovShabat.SourcePositivePeriodCircle',
+    'NLS.KdV.HillHminusOneMiuraPositiveActions',
+    'NLS.SequenceSpaces.ContinuousOrderedRootIndex',
+    'NLS.KdV.HillMiuraPositiveGaps',
+    'NLS.KdV.HillHminusOneMiuraPositiveIndexedActions',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

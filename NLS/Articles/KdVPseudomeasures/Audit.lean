@@ -737,6 +737,13 @@ import NLS.KdV.HillHminusOneMiuraContour
 import NLS.ZakharovShabat.SourceCriticalRootPiecewiseZeroPeriod
 import NLS.KdV.HillHminusOneMiuraHigherAction
 import NLS.KdV.HillHminusOneMiuraActionFamilies
+import NLS.SequenceSpaces.PeriodOneMiuraRealNeighborhood
+import NLS.KdV.HillHminusOneMiuraRealActionFamilies
+import NLS.ZakharovShabat.SourcePositivePeriodCircle
+import NLS.KdV.HillHminusOneMiuraPositiveActions
+import NLS.SequenceSpaces.ContinuousOrderedRootIndex
+import NLS.KdV.HillMiuraPositiveGaps
+import NLS.KdV.HillHminusOneMiuraPositiveIndexedActions
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5284,3 +5291,23 @@ import NLS.KdV.HillHminusOneMiuraActionFamilies
 #print axioms NLS.KdV.hillHminusMiuraContourAction_eq_indexed
 #print axioms NLS.KdV.winding_one_miura_action_contour
 #print axioms NLS.KdV.exists_hillHminus_real_Miura_action_family
+#print axioms NLS.periodOneShiftedMiura_real_of_small_solution
+#print axioms NLS.exists_real_preserving_periodOneMiura_energyChart
+#print axioms NLS.KdV.exists_hillHminus_real_preserving_Miura_action_family
+#print axioms NLS.KdV.hillHminusMiuraIndexedAction_real
+#print axioms NLS.KdV.hillHminusMiuraRoot_eq_physical_on_real_neighborhood
+#print axioms NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.exists_positive_refinement
+#print axioms NLS.ZakharovShabat.exists_positive_sourceCriticalRootPeriodCircle
+#print axioms NLS.KdV.hillHminusMiuraIndexedAction_bounds
+#print axioms NLS.KdV.hillHminusMiuraIndexedAction_eq_zero_iff_of_positive_left
+#print axioms NLS.KdV.hillHminusMiuraIndexedAction_pos_of_positive_left
+#print axioms NLS.KdV.exists_positive_miura_action_contour
+#print axioms NLS.continuous_ordered_root_eq_on_connected
+#print axioms NLS.KdV.hillMiuraFrequencyTrace_deriv_zero
+#print axioms NLS.KdV.hillMiuraCanonicalCritical_zero
+#print axioms NLS.KdV.hillMiura_gap_zero_contains_zero
+#print axioms NLS.KdV.hillMiura_positive_gap_left_pos
+#print axioms NLS.KdV.hillMiura_negative_gap_right_neg
+#print axioms NLS.KdV.hillHminusMiuraIndexedAction_positive_index_spec
+#print axioms NLS.KdV.hillHminusMiuraIndexedAction_positive_index_pos_iff
+#print axioms NLS.KdV.exists_miura_action_contour_positive_index
