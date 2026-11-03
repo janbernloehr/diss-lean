@@ -581,6 +581,12 @@ modules = [
     'NLS.KdV.SingularDirichletL2Base',
     'NLS.KdV.SingularDirichletRieszL2',
     'NLS.Articles.KdVPseudomeasures.OriginalDirichletRiesz',
+    'NLS.ZakharovShabat.CanonicalBoundarySmallDisks',
+    'NLS.ComplexAnalysis.SquaredFrequencyDisks',
+    'NLS.KdV.HminusOneDirichletUniformDisplacement',
+    'NLS.KdV.HminusOneDirichletSourceCircles',
+    'NLS.Articles.KdVPseudomeasures.OriginalDirichletSourceCircles',
+    'NLS.Articles.KdVPseudomeasures.OriginalDirichletUniformRiesz',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

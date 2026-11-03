@@ -166,5 +166,28 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "uniform_source_circle_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-source-circles-map.json",
+    "uniform_full_complex_small_canonical_frequency_disks": true,
+    "uniform_original_HminusOne_scaled_Dirichlet_error_arbitrarily_small": true,
+    "literal_source_circle_resolvent_validity": true,
+    "uniform_same_original_index_closed_disk_isolation": true,
+    "all_central_labels_excluded": true,
+    "uniform_actual_algebraic_multiplicity_one": true,
+    "original_ambient_norm_open_neighborhood": true,
+    "entire_original_distribution_unchanged": true,
+    "uniform_actual_physical_L2_projection_idempotent": true,
+    "uniform_actual_projection_rank_one": true,
+    "uniform_actual_normalized_native_eigenfunction_range": true,
+    "uniform_actual_projected_residual_scalar_factor": true,
+    "supplied_source_circle_conditions": false,
+    "quantitative_AppendixC4_proved": false,
+    "source_Lemma2_13_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
 }

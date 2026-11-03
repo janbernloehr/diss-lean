@@ -547,6 +547,12 @@ import NLS.KdV.SingularDirichletRieszSimple
 import NLS.KdV.SingularDirichletL2Base
 import NLS.KdV.SingularDirichletRieszL2
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletRiesz
+import NLS.ZakharovShabat.CanonicalBoundarySmallDisks
+import NLS.ComplexAnalysis.SquaredFrequencyDisks
+import NLS.KdV.HminusOneDirichletUniformDisplacement
+import NLS.KdV.HminusOneDirichletSourceCircles
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletSourceCircles
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletUniformRiesz
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4393,3 +4399,13 @@ import NLS.Articles.KdVPseudomeasures.OriginalDirichletRiesz
 #print axioms NLS.Articles.KdVPseudomeasures.isIdempotentElem_originalDirichletRieszProjection
 #print axioms NLS.Articles.KdVPseudomeasures.exists_originalDirichletRiesz_normalized_generator
 #print axioms NLS.Articles.KdVPseudomeasures.exists_originalDirichletRiesz_projected_residual_amplitude
+#print axioms NLS.ZakharovShabat.exists_uniform_small_canonicalBoundaryDisks
+#print axioms NLS.ComplexAnalysis.norm_squared_shift_displacement_le
+#print axioms NLS.ComplexAnalysis.squaredFrequencyCircle_isolates_of_monotone
+#print axioms NLS.KdV.HillHminusMiuraChart.exists_uniform_small_dirichletDisplacement
+#print axioms NLS.KdV.exists_uniform_small_hillHminusDirichletDisplacement
+#print axioms NLS.KdV.hillHminusDirichlet_sourceCircle_of_displacement
+#print axioms NLS.KdV.exists_uniform_hillHminusDirichlet_sourceCircles
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_small_originalComplexDirichletDisplacement
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalComplexDirichlet_sourceCircles
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalDirichletRiesz_normalized_range_and_residual
