@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "article_id": "kdv-convexity",
-  "date": "2026-11-02",
-  "milestone": "Exhaustive actual H^-1 root confinement, exact central count and multiplicity-preserving global real characteristic labeling, with an intrinsic lowest root",
+  "date": "2026-11-03",
+  "milestone": "Intrinsic continuous H^-1 characteristic labels, exact trace parity and endpoint orders, and canonical isolating two-root circles for every real gap",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -345,11 +345,20 @@
     "NLS.KdV.HillHminusOneCentralCounting",
     "NLS.KdV.HillHminusOneCentralRoots",
     "NLS.KdV.HillHminusOneRealPairs",
-    "NLS.KdV.HillHminusOneGlobalRealLabels"
+    "NLS.KdV.HillHminusOneGlobalRealLabels",
+    "NLS.ComplexAnalysis.RealGapDiscIsolation",
+    "NLS.KdV.HillHminusOneLabelFamilies",
+    "NLS.KdV.HillHminusOneLabelUniqueness",
+    "NLS.KdV.HillHminusOneCanonicalRealLabels",
+    "NLS.KdV.HillHminusOneCumulativeCounts",
+    "NLS.KdV.HillHminusOneLabelContinuity",
+    "NLS.KdV.HillHminusOneCanonicalFreeLabels",
+    "NLS.KdV.HillHminusOneTraceParity",
+    "NLS.KdV.HillHminusOneRealGapContours"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 3614,
+    "declarations": 3760,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -390,6 +399,7 @@
       "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc"
     ],
     "additional_shared_modules": [
+      "NLS.ComplexAnalysis.RealGapDiscIsolation",
       "NLS.ComplexAnalysis.NearImaginarySquare",
       "NLS.ComplexAnalysis.PhysicalCutCubicGeometry",
       "NLS.ComplexAnalysis.RealDiameterDisc",
@@ -599,6 +609,7 @@
     "NLS/ComplexAnalysis/RealCutCircleIntegral.lean": "9cfaef9ee5c5adfa9cecd18e2b43a6578e12da64ff4d5e2c998e7f88bb76f196",
     "NLS/ComplexAnalysis/RealCutConjugation.lean": "33967652635990b516d85750c516522c08b20cf62bd2b95a1319e313a663132d",
     "NLS/ComplexAnalysis/RealDiameterDisc.lean": "9c1ee677380624e534b243b093793234d1e9fc9f3653a23356fe838c04869c6d",
+    "NLS/ComplexAnalysis/RealGapDiscIsolation.lean": "d3048b12cecb62308521385d36fef1d03ba6e1b86ea416db3c0c09f0b62230b2",
     "NLS/ComplexAnalysis/RealGapEllipse.lean": "b0391686c068cc73429e035038d196ff351ddd0f13df25184d65541ef7396640",
     "NLS/ComplexAnalysis/RealGapEllipseHomotopy.lean": "c8f638ceaa5242cb321229ed322b6da4997b93540223730497ca8f32a99e175e",
     "NLS/ComplexAnalysis/RealGapEllipseIntegral.lean": "441fe23a8cfe8494f04c9c74c7c05b76267a186692dad7f3bdd075400fa3a595",
@@ -715,10 +726,13 @@
     "NLS/KdV/HillGlobalRealLabels.lean": "35cee3753ff96bb5d4184f4025e2b97996d90d01ef8cbca42edb1584b7d2ec2d",
     "NLS/KdV/HillHminusOneAnnulusCoverage.lean": "916c9437bf30dfc5fee301e79168604c9cc83a6ccbb8518d0aac0d96ce6e7ffe",
     "NLS/KdV/HillHminusOneArnoldActionComparison.lean": "0b56591d7b68195d25c58d9976c9231554ccb68a160dfa2701e6b38e641bc660",
+    "NLS/KdV/HillHminusOneCanonicalFreeLabels.lean": "ebc9390ee490fc97a7fc9e19fc57c017ee625af8c1f87b0d853f168a38ebe3d6",
+    "NLS/KdV/HillHminusOneCanonicalRealLabels.lean": "ff8fc0039535d49dd696d444c92c75048b0b409df88a975fc1eca6441d9ed3d0",
     "NLS/KdV/HillHminusOneCentralCounting.lean": "f220fc6ffe30a29a8efb55cd1a1007199a31f44c82c004a15adebf701ab2c057",
     "NLS/KdV/HillHminusOneCentralRoots.lean": "f95f6b76e8177149a0848248fa0c4f9de41f609e09d1260e39dda307f41de572",
     "NLS/KdV/HillHminusOneCubicGapBounds.lean": "04d9ffd4a01047d88c32ca7cd234ddbfffc7b6dd9ee88a12d34254ae551f8905",
     "NLS/KdV/HillHminusOneCubicSign.lean": "124dfdd2a462b3a5f52943adba995f3efda13032c6da990a5581d0123f175fa2",
+    "NLS/KdV/HillHminusOneCumulativeCounts.lean": "f34c423e385fccd9b64f1921c89510cd68a5f2197a6619f9267d0e0903df3256",
     "NLS/KdV/HillHminusOneDiscAsymptotics.lean": "dd94b601b7f0a76227ace8f10fdd7356bb697aa05af802877546c66b7a6140b7",
     "NLS/KdV/HillHminusOneDiscriminant.lean": "99de415ddf7a75270281e46a1908745aba77fb24efc94d8ca497d60867533387",
     "NLS/KdV/HillHminusOneExteriorRoots.lean": "7177fa152885fb0bfadcdff4327311ff1ed753f6bb2a29f861c5ffa88c341273",
@@ -731,6 +745,9 @@
     "NLS/KdV/HillHminusOneHalfPlaneSheets.lean": "a5e7463edbb352f4320d7ad401e561cf260ebe5009da22072b8f02467279c22d",
     "NLS/KdV/HillHminusOneHighGapPairs.lean": "b7132f9598cc792bce41e10410aa089925a3d54071da9aadcaa3bface3f93187",
     "NLS/KdV/HillHminusOneHighMoments.lean": "2a576d776b19c41323a8accc77cdb4108c802cb306c3161a52ef05c6b99cadef",
+    "NLS/KdV/HillHminusOneLabelContinuity.lean": "faa6f16768b669c1d4b67921145f7a2f819894b26a90b414639a73a8c789eb75",
+    "NLS/KdV/HillHminusOneLabelFamilies.lean": "6e109bfc0880762920b7d6633d8b33ba858ae17146560a3ade84aef91f582536",
+    "NLS/KdV/HillHminusOneLabelUniqueness.lean": "316cd9f889a10dbca3d84b12063d4bcce5e2d471188b7b53130c5fea0a75304e",
     "NLS/KdV/HillHminusOneMomentCutRoot.lean": "811cd5a06c309f105f6d955dc605cedb34c9fcbf8267535f9e166c3f7fa81ac8",
     "NLS/KdV/HillHminusOneMomentRadius.lean": "9b8276a247239f9d2974cc0b3df7a41079209173646bd02c8432e78b6d68c87f",
     "NLS/KdV/HillHminusOneMomentReality.lean": "7787c86cc99d5c9242fc52d545f0a353743d46d7e14c564f498166299d4ac359",
@@ -738,6 +755,7 @@
     "NLS/KdV/HillHminusOnePhysicalCut.lean": "eb3fa7232841695ce7c83a6784307603ac6d53036125faa9215127ec1fa42079",
     "NLS/KdV/HillHminusOnePhysicalHighCuts.lean": "c2a105320092913861adfdecee1917452d1b304131e6213906155b776df7bd3d",
     "NLS/KdV/HillHminusOnePrimitiveStrip.lean": "9984157753ef5d600407bd4d78dfcd4dcdbce25c1d6cf9c4aab69e2f328da0ed",
+    "NLS/KdV/HillHminusOneRealGapContours.lean": "673cb28d4e344b283e41d1d5b2f53dec44c42fc2b27744dd11f7f8c845ba711a",
     "NLS/KdV/HillHminusOneRealGapSquares.lean": "fa5fb527da3c68fda9e03282fb848a08e45e27fe82baaeb02888c64bd75c324c",
     "NLS/KdV/HillHminusOneRealPairs.lean": "7f2a8ee2de7756fbf715de6a122918e32ce5872bd21bfae9389f936a5f290107",
     "NLS/KdV/HillHminusOneReality.lean": "10e72d25c3441afac7098a88b212137432c8a967f1404cc2279ae62b19afef98",
@@ -746,6 +764,7 @@
     "NLS/KdV/HillHminusOneSmallGapCoverage.lean": "5989c880c8684c721597d98cbd91194db8bc7cce9439f77344888bf737ca8181",
     "NLS/KdV/HillHminusOneSourcePrimitive.lean": "ac170dc3e2bbcf8e1a68ead90f4c2a04b4a5eea90d156154f5c61c69b718989c",
     "NLS/KdV/HillHminusOneTraceControl.lean": "43c6a4a4fd7d5b441d310361fe2ae00591ccbb13cf024507e310a83b609d091f",
+    "NLS/KdV/HillHminusOneTraceParity.lean": "2c30d53818db20dc7fc83b67c25f8f358765fa6139c1f5c5ad317258d0779296",
     "NLS/KdV/HillHminusOneWholeGapSquares.lean": "30486a454a513f8f811f8f6266d635538bd7900fae9d9f79b586fe33926b2d7a",
     "NLS/KdV/HillL2AnnulusCoverage.lean": "c5d61811c08bad785fe44193cf5beef4dd84427bea530bcedc7f403324836377",
     "NLS/KdV/HillL2ArnoldActionComparison.lean": "741dc762d7f1e9f25495006982ff778618a764b65a902e3a8e24e8f941f6b96d",
@@ -888,17 +907,18 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "2832bde06f610879ff6fc83360d2e76d21e24a5899fa07df712ba7c7be374c1f",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "ed1a10d303788a3471cf95034522b6cc2a935c4acba8e83e873523cc81524be2",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
+    "coverage/articles/kdv-convexity/canonical-gap-shared-imports.json": "d00ef2f2e5dfb8f8653278c9d60c66daa4f730be745c0e546de66245e61665fc",
     "coverage/articles/kdv-convexity/hminus-real-shared-imports.json": "7cf3589bedf25268fd1f886149cae0a2205ff5625619a33bfc7ba6b44c2a78f0",
     "coverage/articles/kdv-convexity/miura-shared-imports.json": "03ff17c03499d952d3bc9ad51743ae761db5416ca4f93426e2e731fac0a39b00",
     "coverage/articles/kdv-convexity/physical-cut-shared-imports.json": "c6adf4965416cc426fc385ce324b4afb1aae45fec50e499debfbd5c2a2c5997f",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
-    "scripts/check-kdv-convexity.sh": "92b02623d54334079d12182a2b6a3cbd7997b5cfa7c96ce5a961b267cecc21e1"
+    "scripts/check-kdv-convexity.sh": "701535c9afeae030c92567b44db0135428fc590ccca1803b967832f52a6eee5f"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/global-label-validation.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/canonical-gap-validation.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -915,15 +935,15 @@
   "limits": [
     "All main theorems remain unverified.",
     "The actual H^-1 spectral periods now satisfy uniform complex-neighborhood quartic-gap, gap/Arnold-period and quadratic weighted cubic-period estimates, including collapsed gaps. These are potential-space statements for the constructed source-normalized periods; global Birkhoff action identification and analytic action-space descent remain required.",
-    "High cut roots now match the actual source primitive on complete integration circles and throughout both half-discs. Central contours, full real-band continuation, finite-gap exterior matching and the normalized inversion remainder required for Lemma 4.4 remain open.",
-    "Prove cutoff-independent uniqueness, H^-1 continuity and central trace parity for the newly constructed exhaustive global real characteristic labeling, then construct finite central canonical gap contours and full real-band continuation. The intrinsic lowest root and exact 2*N-1 central count are proved. Singular-Hill operator identification, positive Arnold actions, finite central cubic signs, global Birkhoff-action identification and real isospectral invariance still remain.",
+    "Canonical real-gap circles and exact two-root counts, including all central and collapsed gaps, are now proved and locally stable in complex H^-1. The actual primitive across the complete real-band domain, finite central analytic periods, finite-gap exterior matching and the normalized inversion remainder required for Lemma 4.4 remain open.",
+    "Glue the actual H^-1 primitive across the canonical open real bands, identify indexed boundary values, fill the finite central shifted squares and construct their analytic Arnold/cubic periods. Intrinsic continuous H^-1 labels, all-index trace parity, exact endpoint orders and canonical zero-free two-root gap circles are now proved. Singular-Hill operator identification, all-period signs, global Birkhoff-action identification and real isospectral invariance remain.",
     "Actual high filled squares are nonnegative on the real gaps, and the actual high cubic periods are real and nonpositive, including collapsed gaps. Arnold positivity and the finite central cubic signs remain unproved.",
     "The energy-analytic endpoint unit root is controlled uniformly over nearby complex H^-1 inputs. Joint potential analyticity of that chosen deflated root and a single neighborhood for all error tolerances are not asserted.",
     "Physical energy and frequency identification, the KdV quadratic coefficients giving -6*Id, positive-index Hessian transport and main Theorems 1.2 and 1.3 remain unproved.",
     "No full repository build or replacement of the dissertation validation is claimed.",
     "The common-neighborhood descent, nonnegative overlap gluing, raw weighted-action bound transport and positive-ell2 analytic summation are now proved for analytic real-action-invariant coordinate families. The actual KdV Birkhoff map, its Arnold-period identity and real isospectral invariance of all actual moments, including the finite central ones, remain unproved inputs."
   ],
-  "previous_progress_commit": "f81287379dce33403dbdf4ddad6c232c8167b1d5",
+  "previous_progress_commit": "49a9b4a7fcfb71a073cb3719af912b1b48855f93",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -1412,7 +1432,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation: all source hashes of the validated 321-module baseline remain unchanged; seven authored or adapted modules pass warningAsError checks, followed by the positive-index example and combined transitive axiom audit. The full reproducible script lists 328 source modules.",
+  "focused_validation_scope": "Incremental validation: all source hashes of the validated 328-module baseline remain unchanged; one exact shared module and eight authored or adapted modules pass warningAsError checks, followed by the positive-index example and combined transitive axiom audit. The full reproducible script lists 337 source modules.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -1722,9 +1742,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 525,
-    "audit_modules_present": 165,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/GlobalLabelCoverageNames.log"
+    "declarations": 581,
+    "audit_modules_present": 166,
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/CanonicalGapCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -1812,12 +1832,12 @@
     ]
   },
   "incremental_validation": {
-    "baseline_commit": "f81287379dce33403dbdf4ddad6c232c8167b1d5",
-    "baseline_modules": 321,
+    "baseline_commit": "49a9b4a7fcfb71a073cb3719af912b1b48855f93",
+    "baseline_modules": 328,
     "baseline_source_hashes_unchanged": true,
-    "newly_checked_exact_shared_modules": 0,
-    "newly_checked_authored_or_adapted_modules": 7,
-    "authored_validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/global-label-validation.log"
+    "newly_checked_exact_shared_modules": 1,
+    "newly_checked_authored_or_adapted_modules": 8,
+    "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/canonical-gap-validation.log"
   },
   "Hminus1_real_spectral_progress": {
     "potential_space": "Every real unit-period H^-1 potential, specified by conjugate reflection of its raw Fourier coefficients.",
@@ -1976,10 +1996,10 @@
     "tail_slots": "lambda(2*n-1) and lambda(2*n) are the actual ordered high pair. Central and high analytic multiplicities are retained.",
     "one_complex_neighborhood_and_cutoff_precede_all_real_input_labelings": true,
     "intrinsic_lowest_characteristic_root_and_minimality_proved": true,
-    "full_labeling_cutoff_independent_uniqueness_proved": false,
-    "full_labeling_Hminus1_continuity_proved": false,
-    "lowest_root_simplicity_and_central_trace_parity_proved": false,
-    "finite_central_canonical_gap_contours_constructed": false,
+    "full_labeling_cutoff_independent_uniqueness_proved": true,
+    "full_labeling_Hminus1_continuity_proved": true,
+    "lowest_root_simplicity_and_central_trace_parity_proved": true,
+    "finite_central_canonical_gap_contours_constructed": true,
     "intrinsic_singular_Hill_operator_characteristic_identity_proved": false,
     "actual_global_KdV_Birkhoff_action_identity_proved": false,
     "actual_global_positive_ell2_Hamiltonian_extension_proved": false,
@@ -2000,6 +2020,61 @@
       "Analytic-zero multisets and finite ordered enumeration",
       "Paired one-sided ordered enumeration"
     ],
-    "central_root_multiset_proof_adapted_from_existing_module": "NLS/KdV/HillCentralRoots.lean"
+    "central_root_multiset_proof_adapted_from_existing_module": "NLS/KdV/HillCentralRoots.lean",
+    "finite_contour_current_scope": "Canonical geometric circles with exact actual zero count two and boundary nonvanishing, stable on a complex H^-1 neighborhood for each fixed gap. The primitive has not yet been glued on the full real-band domain."
+  },
+  "Hminus1_canonical_gap_progress": {
+    "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
+    "labeling_interface_retains_proved_source_path_control": true,
+    "arbitrary_prescribed_finite_head_on_one_complex_Hminus1_neighborhood": true,
+    "global_occurrence_sets_finite_and_exact_analytic_multiplicity_proved": true,
+    "entire_real_labeling_independent_of_cutoff_and_high_disc_radius": true,
+    "canonical_real_characteristic_labels_defined": true,
+    "every_canonical_label_continuous_in_Hminus1": true,
+    "continuity_includes_repeated_central_roots_and_collapsed_gaps": true,
+    "continuity_requires_bounded_L2_norm": false,
+    "intrinsic_lowest_root_continuous": true,
+    "exact_free_label_formula": "lambda_j(0)=pi^2*floor((j+1)/2)^2",
+    "all_index_trace_parity_proved": true,
+    "trace_parity_formula": "Delta(q,lambda_j(q))=2*(-1)^floor((j+1)/2)",
+    "trace_parity_uses_continuous_actual_real_source_path_not_an_assumed_spectral_label": true,
+    "all_neighboring_band_endpoints_strictly_separated": true,
+    "actual_lowest_characteristic_root_has_analytic_order_one": true,
+    "all_actual_open_gap_endpoints_simple_and_collapsed_gap_root_order_two": true,
+    "canonical_geometric_real_band_domain_open_and_actual_radicand_nonvanishing": true,
+    "canonical_real_gap_circles_constructed_at_every_positive_index": true,
+    "canonical_collar": "One quarter of the smaller adjacent strict band length; midpoint radius equals gap half-length plus this positive collar.",
+    "geometric_gap_disc_minus_selected_cut_in_real_band_domain": true,
+    "each_canonical_enclosing_disc_has_exact_actual_zero_count_two": true,
+    "central_and_collapsed_gaps_included": true,
+    "fixed_gap_circle_has_complex_Hminus1_neighborhood_with_stable_count_and_nonzero_boundary": true,
+    "complex_neighborhood_quantifier": "For each fixed real q and positive gap index n, one complex-open V contains q and precedes all nearby complex potentials and boundary points. A single V for every central/high canonical circle is not asserted here.",
+    "actual_primitive_glued_holomorphically_on_entire_real_band_domain": false,
+    "all_central_Arnold_and_cubic_periods_constructed_and_analytic": false,
+    "all_central_moment_signs_and_action_identities_proved": false,
+    "intrinsic_singular_Hill_operator_characteristic_identity_proved": false,
+    "actual_global_KdV_Birkhoff_map_or_action_identity_proved": false,
+    "actual_global_positive_ell2_Hamiltonian_extension_proved": false,
+    "new_authored_or_adapted_modules": [
+      "NLS.KdV.HillHminusOneLabelFamilies",
+      "NLS.KdV.HillHminusOneLabelUniqueness",
+      "NLS.KdV.HillHminusOneCanonicalRealLabels",
+      "NLS.KdV.HillHminusOneCumulativeCounts",
+      "NLS.KdV.HillHminusOneLabelContinuity",
+      "NLS.KdV.HillHminusOneCanonicalFreeLabels",
+      "NLS.KdV.HillHminusOneTraceParity",
+      "NLS.KdV.HillHminusOneRealGapContours"
+    ],
+    "exact_shared_modules_reused": [
+      "NLS.ComplexAnalysis.RealGapDiscIsolation"
+    ],
+    "shared_source_commit": "7c7ec17b47c9a520da518aaecaa907fce18ecb87",
+    "existing_library_proofs_adapted": [
+      "L2 intrinsic labeling and finite-exception uniqueness",
+      "Cumulative analytic-zero counts and finite ordered-count continuity",
+      "Free canonical L2 normalization",
+      "Indexed trace parity along the real source path",
+      "Real gap contour geometry"
+    ]
   }
 }

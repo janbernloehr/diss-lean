@@ -1,0 +1,18 @@
+{
+  "source_branch": "articles/kdv-estimates",
+  "source_commit": "7c7ec17b47c9a520da518aaecaa907fce18ecb87",
+  "source_files_unchanged": true,
+  "dependency_order": [
+    "NLS.ComplexAnalysis.RealGapDiscIsolation"
+  ],
+  "files": {
+    "NLS/ComplexAnalysis/RealGapDiscIsolation.lean": "d3048b12cecb62308521385d36fef1d03ba6e1b86ea416db3c0c09f0b62230b2"
+  },
+  "retained_existing_import_boundary": {
+    "NLS/ComplexAnalysis/RealGapEllipse.lean": {
+      "private_sha256": "b0391686c068cc73429e035038d196ff351ddd0f13df25184d65541ef7396640",
+      "shared_sha256": "b0391686c068cc73429e035038d196ff351ddd0f13df25184d65541ef7396640",
+      "byte_identical": true
+    }
+  }
+}

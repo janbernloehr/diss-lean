@@ -28,9 +28,12 @@ root. Source-path separators give the exact central count 2*N-1 with
 analytic multiplicities. The central roots are sorted and joined to the
 ordered high pairs in slots 2*n-1 and 2*n. This constructs an exhaustive
 nondecreasing real characteristic labeling on one common neighborhood,
-and an intrinsic lowest characteristic root. Cutoff-independent
-uniqueness and H^-1 continuity of the full labeling, central trace parity
-and finite central canonical gap contours remain unproved.
+and an intrinsic lowest characteristic root. The full labeling is now
+independent of cutoff and radius, continuous
+in H^-1, and normalized by exact indexed trace parity. Canonical gap
+circles with actual zero count two are now constructed at every index.
+The actual primitive on the full real-band domain and the analytic
+central periods remain unproved.
 
 Physical energy/frequency identification, the -6*Id quadratic coefficient
 and the Fourier-Lebesgue assertions in Theorems 1.2–1.3 also remain open.
@@ -1579,12 +1582,65 @@ for every real input there. No caller supplies the missing central roots.
 The same construction proves existence of the intrinsic lowest real
 characteristic root, its root identity and minimality among all actual
 complex characteristic zeros. Minimality determines its value uniquely.
-Cutoff-independent uniqueness and H^-1 continuity of the entire labeling,
-lowest-root simplicity, central trace parity and canonical finite gap
-contours remain unproved. This is a labeling of the constructed entire
+Cutoff-independent uniqueness, H^-1 continuity, lowest-root simplicity,
+central trace parity and canonical gap-circle geometry are now proved
+below. The actual primitive on the full real-band domain and the analytic
+central periods remain unproved. This is a labeling of the constructed entire
 H^-1 characteristic; its singular-operator identification and global
 KdV Birkhoff-action interpretation remain open. Theorem 1.1 and all other
 main theorem flags remain unverified.
+
+## Intrinsic continuous H^-1 labels and all-gap isolating circles
+
+`HillHminusOneLabelFamilies.lean` retains the proved source control and
+actual high pairs, with any prescribed finite minimum cutoff and a
+single complex H^-1 neighborhood. `HillHminusOneLabelUniqueness.lean`
+proves finite occurrence sets and their exact analytic multiplicities.
+Ordered high pairs agree at different radii. The shared finite-exception
+uniqueness theorem then identifies the entire enumeration, including
+repeated central values, independently of cutoff and radius.
+`HillHminusOneCanonicalRealLabels.lean` defines the intrinsic labels.
+
+`HillHminusOneCumulativeCounts.lean` identifies diameter-disc zero counts
+with finite ordered counts. `HillHminusOneLabelContinuity.lean` uses their
+local stability to prove H^-1 continuity of every canonical label and
+the lowest root, including closed gaps and repeated central roots.
+No simplicity or bounded L2-approximation norm is assumed.
+`HillHminusOneCanonicalFreeLabels.lean` identifies the actual free
+characteristic with the existing free L2 enumeration and obtains
+lambda_j(0)=pi^2*floor((j+1)/2)^2.
+
+`HillHminusOneTraceParity.lean` follows the actual characteristic trace
+along the real source path. Continuity and Delta^2=4 fix
+Delta(q,lambda_j(q))=2*(-1)^floor((j+1)/2) at every slot. Neighboring band
+endpoints are strictly separated. The intrinsic lowest root has analytic
+order one; open gap endpoints are simple and a collapsed gap root has
+order two, including every central gap.
+
+`HillHminusOneRealGapContours.lean` defines the geometric open real-band
+domain and proves nonvanishing of the actual characteristic there. For
+every positive gap index, its midpoint and one quarter of the smaller
+neighboring band length give a canonical enclosing circle, including at
+a collapsed gap. The outer disc with the selected gap removed lies in
+that zero-free domain. The enclosing disc contains exactly its two actual
+gap endpoints with total analytic zero count two. Each fixed circle
+retains count two and boundary nonvanishing on a complex H^-1-open
+neighborhood of the real input. This neighborhood may depend on the gap.
+
+This is a construction of canonical geometric contours and actual root
+counts. Holomorphic gluing of the source primitive across all real bands,
+indexed endpoint boundary values, filled central primitive squares and
+analytic central Arnold/cubic periods remain to be proved. Theorem 1.1
+and all main theorem flags remain unverified; the global Birkhoff-action
+identity and real isospectral invariance are still required for action
+descent and the global positive-ell2 Hamiltonian extension.
+
+The generic `RealGapDiscIsolation.lean` is reused byte-for-byte from
+`articles/kdv-estimates` at `7c7ec17`, with its unchanged import boundary
+pinned in `canonical-gap-shared-imports.json`. The existing L2 uniqueness,
+count continuity, trace parity and contour proofs are adapted to the
+actual H^-1 characteristic; no additional physical spectral theorem is
+assumed.
 
 ## Remaining essential KdV work
 
@@ -1658,15 +1714,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `f812873` contains 321 source modules. Every
-baseline source hash remains unchanged. Seven authored or adapted modules
-pass incremental Lean 4.33.1/mathlib v4.33.1 checks with
-`warningAsError=true`. The full reproducible script now lists 328 source
-modules. The positive-index example passes.
+The validated baseline at `49a9b4a` contains 328 source modules. Every
+baseline source hash remains unchanged. One exact shared module and eight
+authored or adapted modules pass incremental Lean 4.33.1/mathlib v4.33.1
+checks with `warningAsError=true`. The full reproducible script now lists
+337 source modules. The positive-index example passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 165 additional shared modules:
-3614 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 166 additional shared modules:
+3760 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
