@@ -80,15 +80,16 @@ its existing Hilbert specialization and a transitive audit.
 | Seven new real-preserving Miura/energy-descent modules and existing `ConjugateReflection`, `SourcePsiLemma12_11` | Actual physically real rough Miura charts at every real Hminus1 base potential; proved applicability of the common normalized NLS psi theorem; jointly analytic filled energy candidates with exact fixed-shift 2z factor identity. Hill energy normalization and all main theorems remain open. |
 | Six new even-trace/root/contour/pullback modules and existing `SourceTheorem12_1` | Complete actual endpoint/multiplicity reflection, odd actual canonical root, exact signed contour transformation and constructed all-index positive Kronecker energy pullbacks near every real Hminus1 base potential. Global Hill energy-root/chart independence and physical frequencies remain open. |
 | Seven actual energy-root/mapped-contour/chart-agreement modules and two existing real-band/domain dependencies | Actual jointly analytic Hill energy roots; positive mapped contours with winding one and exact normalization; root independence on the whole common energy domain at real inputs and equality of full joint complex germs. Entire-numerator identification and all main theorems remain open. |
+| Four actual real-scaling/spectral-exclusion/root-compatibility modules | Nonreal spectral exclusion at every real rough potential; old continuation-domain inclusion; actual free normalization; root equality on full common domains near zero and agreement of full complex energy/source germs. Entire-numerator identification and all main theorems remain open. |
 
-All 394 selected modules compile with pinned **Lean 4.33.1**, commit
+All 398 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Final output of `bash scripts/check-kdv-kdv2-frequencies.sh`:
+Strict validation output (398-module compilation, followed by the final two-module rebuild and combined audit):
 
 ```text
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
@@ -485,11 +486,18 @@ PASS NLS/KdV/HillHminusOneMappedEnergyPeriods
 PASS NLS/ComplexAnalysis/NonrealConnectedDomain
 PASS NLS/ZakharovShabat/SourceHighShiftedRealBand
 PASS NLS/KdV/HillHminusOneEnergyRootChartAgreement
-Axiom audit passed: 4659 candidate declarations; 26819 declarations total.
+PASS NLS/SequenceSpaces/PeriodOneRealScaling
+PASS NLS/KdV/HillHminusOneRealSpectralExclusion
+PASS NLS/KdV/HillHminusOneEnergyRootFreeAgreement
+PASS NLS/KdV/HillHminusOneEnergyRootContinuationAgreement
+# Final rebuild after renaming the new free-sine lemma:
+PASS NLS/KdV/HillHminusOneEnergyRootFreeAgreement
+PASS NLS/KdV/HillHminusOneEnergyRootContinuationAgreement
+Axiom audit passed: 4671 candidate declarations; 26831 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 394 selected modules (including generated and private declarations)
+the 398 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1468,3 +1476,38 @@ earlier rough weighted normalized family. Full coherent W, lowest-cut
 primitive/moment identification, sharp source root54, physical frequency69,
 action descent, weighted targets/asymptotics/compact derivatives and
 actual Birkhoff/PDE flows remain open. All main inventory rows remain OPEN.
+
+
+## Actual continued-root compatibility near zero
+
+See `CONTINUATION_ROOT_AGREEMENT.md`. Four new proved modules exclude
+nonreal periodic spectral zeros for every physically real Hminus1 input,
+place every nonreal energy in the original free-normalized continuation
+domain, fix the actual free root normalization from high-band signs, and
+prove compatibility of the chart energy root with the old continued root.
+One norm ball precedes all real inputs and all energies. Equality holds
+on each full common energy domain, including real energies and closed-gap
+inputs. The corresponding full complex energy/source germs also agree.
+
+All 398 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The first combined import exposed a duplicate name
+for the new free-root lemma. It was renamed to
+`hillHminusContinuedRoot_base_sine`; its module and sole selected consumer
+were rebuilt, then the final combined audit passed. The initial log
+`work/check/continuation-root-agreement-final.log` retains that diagnostic;
+`work/check/continuation-root-agreement-audit-final.log` records the final
+two successful rebuilds and audit. The proof bodies and the earlier
+394 selected sources are unchanged. The permitted transitive axiom audit passes for
+4671 selected declarations and 26831 imported NLS declarations.
+Exact ordered checker/audit/PASS/coverage selections, all source hashes,
+seven provenance records and private fresh outputs agree. All 394 earlier
+selected Lean sources remain byte-identical. No shared branch import,
+placeholder, new axiom, heartbeat increase, disabled linter or warning
+exception is introduced. Canonical main remains unchanged and clean.
+
+Pointwise complex germ agreement is not a single uniform complex rough
+neighborhood for all contours. Entire-numerator Hilbert realization and
+identification with the earlier weighted normalized family, full coherent
+W, physical frequency69, action descent, weighted target/asymptotic and
+compact derivative claims and actual Birkhoff/PDE identification remain
+open. All main inventory rows remain OPEN.

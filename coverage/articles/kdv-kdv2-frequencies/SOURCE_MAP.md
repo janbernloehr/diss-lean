@@ -558,3 +558,21 @@ complex energy/rough-input germs. Details are in
 canonical leading scalar one, the earlier local weighted-family
 identification and the full source main theorems are separate open steps.
 No main inventory row is closed.
+
+
+## Current actual continued-root compatibility
+
+Toward the actual normalized psi family (52)-(53), PDF21, and the moment
+identities leading to frequency(69), the new root comparison retains the
+old independent rough Hill trace and original source continuation root.
+`hillHminusRadicand_ne_zero_of_real_of_im_ne_zero` excludes nonreal zeros
+at every physically real Hminus1 input. `nonreal_mem_hillHminusContinuationDomain`
+places every nonreal energy in the original radial source domain.
+`HillHminusMiuraChart.energyRoot_eq_continuedRoot_at_zero` proves the free
+normalization from actual high-band signs. The theorem
+`exists_hillHminus_energyRoot_continuation_agreement` chooses one norm
+ball before all real inputs and all energies, proving equality on full
+common energy domains and equality of full complex energy/source germs.
+See `CONTINUATION_ROOT_AGREEMENT.md` for exact scope. A uniform complex
+rough neighborhood for all contours and actual entire-numerator
+identification are still separate open steps. No main inventory row closes.

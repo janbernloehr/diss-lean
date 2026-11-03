@@ -401,7 +401,11 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/HillHminusOneMappedEnergyPeriods
   NLS/ComplexAnalysis/NonrealConnectedDomain
   NLS/ZakharovShabat/SourceHighShiftedRealBand
-  NLS/KdV/HillHminusOneEnergyRootChartAgreement)
+  NLS/KdV/HillHminusOneEnergyRootChartAgreement
+  NLS/SequenceSpaces/PeriodOneRealScaling
+  NLS/KdV/HillHminusOneRealSpectralExclusion
+  NLS/KdV/HillHminusOneEnergyRootFreeAgreement
+  NLS/KdV/HillHminusOneEnergyRootContinuationAgreement)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

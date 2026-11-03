@@ -17,6 +17,22 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual continued-root compatibility near zero
+
+Every physically real Hminus1 potential now has no nonreal periodic
+spectral zero; every nonreal energy lies in the old source continuation
+domain. High-band normalization identifies the actual chart root with
+the free root at zero. Real radial paths then prove equality with the old
+continued root near zero, on the full common energy domain. One norm ball
+precedes all real inputs and all energies. Full complex energy/source
+germs agree at each such point. See `CONTINUATION_ROOT_AGREEMENT.md`.
+
+Current strict validation: 398 selected modules, 4671 selected declarations
+and 26831 imported NLS declarations; permitted axioms only. All 394 previous
+selected Lean sources and seven provenance records remain unchanged.
+A uniform complex neighborhood for all contours, entire-numerator
+identification, physical frequency69 and all main theorems remain open.
+
 ## Latest actual Hill energy roots and root chart agreement
 
 Actual NLS canonical products now construct nonvanishing jointly analytic

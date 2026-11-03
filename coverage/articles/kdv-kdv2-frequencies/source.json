@@ -6615,6 +6615,62 @@
       "scope": "Actual counted canonical high endpoint pairs and the quantitative fixed-shift principal square-root bound put sqrt((pi*n+pi/2)^2+c) in the real band following the actual nth pair for every sufficiently large n and fixed real shift, without a guessed sign or band index",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "6c4dbe6bdd38068da47de66ced1785d4e01ebc602214dea42fd3ff6f87e9483d"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneEnergyRootContinuationAgreement.lean",
+      "source_labels": [
+        "Actual chart root and old continued-root compatibility near zero"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "One common norm ball is chosen before all real rough inputs and all energies. Nonvanishing square-root uniqueness along actual real radial source paths gives root equality at every nonreal energy. Connectedness extends equality to the full common energy domain. Actual joint analytic domains prove equality of full complex energy/Hminus1 germs at each common-domain point of every real input in the ball. A uniform complex neighborhood for all contour points and entire-numerator identification remain separate open obligations",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0d105455d86664bfeec6e4cd52f24716d86ef76c6b3216cb3a590034f78e93e0"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneEnergyRootFreeAgreement.lean",
+      "source_labels": [
+        "Actual free normalization of the chart energy root"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "A common actual high real band fixes the sign against the literal zero-source NLS product, whose exact free sine formula is proved. The old continued root has the same free sine formula. Nonvanishing and connected-domain uniqueness give equality on the full common energy domain at zero; no constant Miura lift at zero is assumed",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "73bfc9714d67587fd2bd01d68e391024d31321d39cbea26fd83ecf7c95218daa"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealSpectralExclusion.lean",
+      "source_labels": [
+        "Nonreal periodic spectral exclusion for every real rough potential"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "A constructed real Miura chart supplies a nonzero actual energy root at every nonreal energy, proving the independent rough Hill radicand nonzero. Applying this to all real radial scalings proves every nonreal energy lies in the original free-normalized continuation domain at every physically real Hminus1 input",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4e1f998d4dd798d43e4bef0b3d06995f579186ff3dbb099e67deedab4c5e42f6"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneRealScaling.lean",
+      "source_labels": [
+        "Actual physical realness along real scalar paths"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Physical Hminus1 conjugate Fourier reflection commutes with real scalar multiplication. Its fixed locus contains zero and all real radial paths of its fixed inputs",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3c9e325fa58677ca42291233d5b8e25c3bb8181ccb41c3042c10b65577c6b982"
     }
   ],
   "dependencies_needed": [
@@ -6646,15 +6702,16 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4659,
-    "total_declarations_audited": 26819,
+    "candidate_declarations_audited": 4671,
+    "total_declarations_audited": 26831,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 394
+    "selected_modules": 398,
+    "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -6792,5 +6849,6 @@
   "hminus_frequency_series_record": "HMINUS_FREQUENCY_SERIES.md",
   "real_miura_energy_psi_record": "REAL_MIURA_ENERGY_PSI.md",
   "miura_root_pullback_periods_record": "MIURA_ROOT_PULLBACK_PERIODS.md",
-  "energy_root_chart_agreement_record": "ENERGY_ROOT_CHART_AGREEMENT.md"
+  "energy_root_chart_agreement_record": "ENERGY_ROOT_CHART_AGREEMENT.md",
+  "continuation_root_agreement_record": "CONTINUATION_ROOT_AGREEMENT.md"
 }

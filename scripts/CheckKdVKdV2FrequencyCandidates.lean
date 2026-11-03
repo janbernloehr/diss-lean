@@ -1,4 +1,4 @@
-import NLS.KdV.HillHminusOneEnergyRootChartAgreement
+import NLS.KdV.HillHminusOneEnergyRootContinuationAgreement
 import NLS.KdV.HillHminusOneMappedEnergyPeriods
 import NLS.KdV.HillHminusOneMiuraEnergyRoot
 import NLS.KdV.HillHminusOneMiuraEnergyPeriods
@@ -481,7 +481,11 @@ run_cmd do
     `NLS.KdV.HillHminusOneMappedEnergyPeriods,
     `NLS.ComplexAnalysis.NonrealConnectedDomain,
     `NLS.ZakharovShabat.SourceHighShiftedRealBand,
-    `NLS.KdV.HillHminusOneEnergyRootChartAgreement]
+    `NLS.KdV.HillHminusOneEnergyRootChartAgreement,
+    `NLS.SequenceSpaces.PeriodOneRealScaling,
+    `NLS.KdV.HillHminusOneRealSpectralExclusion,
+    `NLS.KdV.HillHminusOneEnergyRootFreeAgreement,
+    `NLS.KdV.HillHminusOneEnergyRootContinuationAgreement]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do
