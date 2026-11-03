@@ -539,6 +539,14 @@ import NLS.Fourier.UnitDirichletL2
 import NLS.KdV.SingularDirichletNormalizedEigenfunction
 import NLS.KdV.HminusOneDirichletUniformSimplicity
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletUniformSimplicity
+import NLS.KdV.SingularDirichletResolventIdentities
+import NLS.KdV.SingularDirichletRieszProjection
+import NLS.KdV.SingularDirichletRieszRange
+import NLS.KdV.SingularDirichletRieszDomain
+import NLS.KdV.SingularDirichletRieszSimple
+import NLS.KdV.SingularDirichletL2Base
+import NLS.KdV.SingularDirichletRieszL2
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletRiesz
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4340,3 +4348,48 @@ import NLS.Articles.KdVPseudomeasures.OriginalDirichletUniformSimplicity
 #print axioms NLS.KdV.exists_normalized_hillHminusDirichletComplexLabel_eigenfunction
 #print axioms NLS.Articles.KdVPseudomeasures.exists_normalized_originalComplexDirichlet_eigenfunction
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalComplexDirichlet_simple_analytic
+#print axioms NLS.KdV.analyticAt_singularDirichletResolventToH1
+#print axioms NLS.KdV.analyticAt_singularDirichletBaseResolvent
+#print axioms NLS.KdV.singularDirichletResolventToH1_sub_apply
+#print axioms NLS.KdV.singularDirichletBaseResolvent_sub
+#print axioms NLS.KdV.singularDirichlet_oriented_resolvent_identity
+#print axioms NLS.KdV.commute_singularDirichletBaseResolvent
+#print axioms NLS.KdV.singularDirichletOperator_resolvent_intertwine
+#print axioms NLS.KdV.singularDirichletRieszProjection
+#print axioms NLS.KdV.isIdempotentElem_singularDirichletRieszProjection
+#print axioms NLS.KdV.isCompactOperator_singularDirichletRieszProjection
+#print axioms NLS.KdV.finiteDimensional_singularDirichletRieszProjection_range
+#print axioms NLS.KdV.singularDirichletRieszProjection_eigenvector_inside
+#print axioms NLS.KdV.singularDirichletRieszProjection_eigenvector_outside
+#print axioms NLS.KdV.commute_singularDirichletRieszProjection_resolvent
+#print axioms NLS.KdV.singularDirichletBaseResolvent_injective
+#print axioms NLS.KdV.mem_singularDirichletRootSpace_one
+#print axioms NLS.KdV.singularDirichletRieszProjection_range_invariant
+#print axioms NLS.KdV.singularDirichletRieszProjection_root_inside
+#print axioms NLS.KdV.singularDirichletRieszProjection_root_outside
+#print axioms NLS.KdV.singularDirichletRieszProjection_range_eq_roots
+#print axioms NLS.KdV.singularDirichletRieszToH1
+#print axioms NLS.KdV.singularDirichletRieszToH1_apply
+#print axioms NLS.KdV.singularDirichletRieszToH1_inclusion
+#print axioms NLS.KdV.singularDirichletRieszProjection_mem_domain
+#print axioms NLS.KdV.singularDirichletOperator_riesz_intertwine
+#print axioms NLS.KdV.singularDirichletDomainRieszProjection
+#print axioms NLS.KdV.isIdempotentElem_singularDirichletDomainRieszProjection
+#print axioms NLS.KdV.singularDirichletRieszProjection_range_eq_single_root
+#print axioms NLS.KdV.exists_singularDirichletRiesz_normalized_generator
+#print axioms NLS.KdV.exists_singularDirichletDomainRiesz_amplitude
+#print axioms NLS.KdV.singularDirichletRiesz_projected_residual
+#print axioms NLS.KdV.singularDirichletL2BaseInclusion
+#print axioms NLS.KdV.singularDirichletL2BaseInclusion_domain
+#print axioms NLS.KdV.singularDirichletL2BaseInclusion_injective
+#print axioms NLS.KdV.singularDirichletL2RieszProjection
+#print axioms NLS.KdV.singularDirichletL2RieszProjection_base
+#print axioms NLS.KdV.singularDirichletL2RieszProjection_domain
+#print axioms NLS.KdV.isIdempotentElem_singularDirichletL2RieszProjection
+#print axioms NLS.KdV.singularDirichletL2RieszProjection_range_eq_span
+#print axioms NLS.KdV.exists_singularDirichletL2Riesz_amplitude_bound
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletRieszProjection
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletBaseRieszProjection
+#print axioms NLS.Articles.KdVPseudomeasures.isIdempotentElem_originalDirichletRieszProjection
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalDirichletRiesz_normalized_generator
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalDirichletRiesz_projected_residual_amplitude

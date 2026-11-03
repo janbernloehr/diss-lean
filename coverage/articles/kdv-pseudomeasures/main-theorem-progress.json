@@ -178,7 +178,7 @@
     ]
   },
   "essential_open_obligations": [
-    "Full original COMPLEX native Dirichlet labeling and source equation (6) are proved. NOW ALSO PROVED: ONE original H-minus-one norm neighborhood and cutoff give ALL high labels actual algebraic simplicity, nonzero characteristic derivative and analyticity; actual native zero-trace H1 eigenfunctions have the literal physical interval L2 norm/integral equal ONE, and the FULL simple algebraic root space is their base-inclusion span. NEXT ESSENTIAL OBLIGATIONS: quantitative Appendix C.4 actual Riesz projection L2-to-Linfinity convergence, source 2.13 actual two-dimensional basis/off-diagonal bound, source 2.15 identity (31)/overlap bound (32), and then FULL COMPLEX 2.1(ii) weighted midpoint membership/local boundedness. Low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. All five MAIN theorems remain UNPROVED; goal ACTIVE.",
+    "Full original COMPLEX native Dirichlet labels, uniform high algebraic simplicity/analyticity and exact physical L2 normalization are proved. NOW ALSO PROVED: ACTUAL Riesz projections on the FULL native dual, ENTIRE H1 domain and FULL ordinary L2 interval space; EXACT sum of all enclosed full complex algebraic root spaces; actual original-domain preservation and unbounded-operator commutation; faithful full L2-base inclusion; simple normalized line and native projected residual nu*(mu_n-lambda), with the ACTUAL physical L2 projection amplitude. Source literal circles are constructed under EXPLICIT actual validity/isolation/simplicity hypotheses. NEXT: prove those source-circle conditions uniformly, quantitative C.4 L2-to-Linfinity projection convergence, actual periodic basis/off-diagonal 2.13, full (31)/(32)/2.15, FULL COMPLEX 2.1(ii) weighted midpoint/local boundedness. Low periodic parity/interlacing, complex ratio 2.20, original Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. All five MAIN theorems remain UNPROVED; goal ACTIVE.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
@@ -563,7 +563,17 @@
     "EVERY actual native Dirichlet eigenvalue on the full original complex H-minus-one operator has an actual full-domain zero-trace H1 eigenfunction normalized to ONE in the physical interval L2 norm and in the literal [0,1] squared-norm integral. No smoothness, realness or spectral simplicity assumption is needed for this normalization.",
     "At ACTUAL algebraic multiplicity one, the ENTIRE native algebraic root space equals the complex span of ANY nonzero actual native eigenfunction included in the original full-dual base. In particular it has an actual generator with the source interval normalization. No associated-vector direction is omitted or silently excluded.",
     "For EVERY original unit-period complex H-minus-one source, ONE open original norm neighborhood and ONE cutoff make ALL high intrinsic labels algebraically simple and analytically dependent on the potential, with nonzero derivative of the independently normalized scalar characteristic. This proves the locally uniform simplicity and normalized-eigenfunction input at the opening of source Section 2.5.",
-    "On the ENTIRE ORIGINAL complex physically period-one distribution domain, all labels have native L2-normalized eigenfunctions with literal source normalization. One open ORIGINAL H-minus-one norm neighborhood and ONE cutoff give actual algebraic simplicity and nonzero original characteristic derivative for EVERY high label of EVERY neighboring physical distribution. Actual label functions have analytic extensions to that SAME ambient original norm neighborhood. The ENTIRE distribution and every physical constraint are retained."
+    "On the ENTIRE ORIGINAL complex physically period-one distribution domain, all labels have native L2-normalized eigenfunctions with literal source normalization. One open ORIGINAL H-minus-one norm neighborhood and ONE cutoff give actual algebraic simplicity and nonzero original characteristic derivative for EVERY high label of EVERY neighboring physical distribution. Actual label functions have analytic extensions to that SAME ambient original norm neighborhood. The ENTIRE distribution and every physical constraint are retained.",
+    "The ACTUAL native Dirichlet H1-valued inverse and full-dual base inverse have analytic energy dependence and exact full-domain resolvent identities. Both original (A-zJ)^(-1) and source (z-A)^(-1) orientations are reconciled. Resolvents commute, and the ACTUAL full native expression intertwines the H1 inverse with the base inverse on EVERY native domain vector.",
+    "The native Dirichlet Riesz projection is CONSTRUCTED as the ACTUAL source-oriented operator-norm contour integral on the FULL continuous Dirichlet dual. Every circle in the ACTUAL full native resolvent gives a compact idempotent with a genuinely finite-dimensional spectral range. Enclosed native eigenvectors are fixed, exterior eigenvectors are annihilated, and the projection commutes with every full-base resolvent.",
+    "The ACTUAL projection fixes ALL full native algebraic root vectors inside the circle and annihilates ALL full native algebraic root vectors outside the closed disk. The range is EXACTLY the sum of ALL enclosed FULL native algebraic root spaces. Complex associated vectors are retained; no realness, semisimplicity, simple-root, supplied root list or supplied rank hypothesis is used for this full range theorem.",
+    "The SAME contour integral has an actual bounded lift from the ENTIRE native dual to the ENTIRE zero-trace H1 domain. Its base inclusion is EXACTLY the full-base projection. Every projected datum lies in the ORIGINAL partial-operator domain. Its actual domain restriction is an idempotent, and the original unbounded native expression commutes with the spectral projection in the exact domain-to-base intertwining identity.",
+    "If a valid circle encloses exactly one actual native spectral value, the ACTUAL range is its ENTIRE algebraic root space even for a multiple root. At actual algebraic multiplicity ONE this is EXACTLY the normalized original eigenfunction line. Every projected native domain vector is an actual scalar multiple of that eigenfunction INSIDE H1, and the ACTUAL projected residual has factor nu*(mu-lambda).",
+    "ALL ordinary physical L2([0,1],C) data are included by a bounded COMPLEX LINEAR map into the FULL native dual. This agrees EXACTLY with the original domain inclusion on EVERY zero-trace H1 vector and is proved INJECTIVE: a dual annihilator would force all L2 Fourier coefficients to be the same constant, which finite-exponent decay excludes unless they vanish.",
+    "The actual Dirichlet projection on the FULL ordinary physical L2 interval space is constructed by the SAME H1-valued contour lift. It intertwines EXACTLY with the full-native-dual projection and with the H1 domain projection, and is a bounded L2 idempotent. At a simple isolated actual eigenvalue its FULL L2 range is precisely the normalized native eigenfunction line.",
+    "For EVERY physical L2 datum the ACTUAL scalar projection amplitude exists; its norm is bounded by the ACTUAL L2 projection operator norm times the datum norm. This is an exact operator bound, not an unproved o(1) comparison with the free projection.",
+    "The article adapter constructs the LITERAL original source circle |z-n^2*pi^2|=n with the ENTIRE original complex physically period-one H-minus-one distribution unchanged. It gives the ACTUAL ordinary L2 projection, its full-native-dual realization, bounded idempotence on a valid source circle, and its normalized simple spectral range under EXPLICIT actual spectral isolation and multiplicity conditions.",
+    "The source scalar nu is the ACTUAL physical L2 projection coefficient. Using the original operator commutation, the ACTUAL full native residual projects to nu*(mu_n-lambda) times the original eigenfunction base inclusion. The ACTUAL L2 operator bound controls its magnitude. This proves the native projected-residual factor used in source (31), without claiming the missing periodic eta/gamma residual representation or the overlap lower bound (32)."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -729,6 +739,32 @@
       "source_Lemma2_13_proved": false,
       "source_Lemma2_15_proved": false,
       "source_AppendixC4_proved": false,
+      "source_Theorem2_1_ii_proved": false,
+      "main_theorems_verified": false
+    },
+    "2.15-native-projection-operator-step": {
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-riesz-map.json",
+      "actual_source_oriented_full_dual_riesz_projection": true,
+      "compact_idempotent_finite_actual_range": true,
+      "entire_complex_algebraic_root_range_equality": true,
+      "all_associated_vectors_retained": true,
+      "actual_H1_contour_lift": true,
+      "original_partial_operator_domain_preserved": true,
+      "actual_domain_projection_idempotent": true,
+      "native_unbounded_operator_projection_commutation": true,
+      "actual_simple_normalized_range": true,
+      "faithful_full_physical_L2_to_native_base_inclusion": true,
+      "actual_full_physical_L2_projection": true,
+      "exact_L2_base_domain_intertwining": true,
+      "actual_L2_projection_amplitude_operator_bound": true,
+      "literal_original_source_circle_projection_constructed": true,
+      "native_projected_residual_scalar_factor": true,
+      "uniform_literal_source_circle_validity_and_isolation_proved": false,
+      "source_AppendixC4_proved": false,
+      "source_Lemma2_13_proved": false,
+      "source_identity31_complete": false,
+      "source_overlap_bound32_proved": false,
+      "source_Lemma2_15_proved": false,
       "source_Theorem2_1_ii_proved": false,
       "main_theorems_verified": false
     }
@@ -1118,6 +1154,32 @@
     "source_Lemma2_13_proved": false,
     "source_Lemma2_15_proved": false,
     "source_AppendixC4_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "verified_actual_native_dirichlet_riesz": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-riesz-map.json",
+    "actual_source_oriented_full_dual_riesz_projection": true,
+    "compact_idempotent_finite_actual_range": true,
+    "entire_complex_algebraic_root_range_equality": true,
+    "all_associated_vectors_retained": true,
+    "actual_H1_contour_lift": true,
+    "original_partial_operator_domain_preserved": true,
+    "actual_domain_projection_idempotent": true,
+    "native_unbounded_operator_projection_commutation": true,
+    "actual_simple_normalized_range": true,
+    "faithful_full_physical_L2_to_native_base_inclusion": true,
+    "actual_full_physical_L2_projection": true,
+    "exact_L2_base_domain_intertwining": true,
+    "actual_L2_projection_amplitude_operator_bound": true,
+    "literal_original_source_circle_projection_constructed": true,
+    "native_projected_residual_scalar_factor": true,
+    "uniform_literal_source_circle_validity_and_isolation_proved": false,
+    "source_AppendixC4_proved": false,
+    "source_Lemma2_13_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
     "source_Theorem2_1_ii_proved": false,
     "main_theorems_verified": false
   }

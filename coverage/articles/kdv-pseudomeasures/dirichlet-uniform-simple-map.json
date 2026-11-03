@@ -127,5 +127,31 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "actual_native_riesz_projection_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-riesz-map.json",
+    "actual_source_oriented_full_dual_riesz_projection": true,
+    "compact_idempotent_finite_actual_range": true,
+    "entire_complex_algebraic_root_range_equality": true,
+    "all_associated_vectors_retained": true,
+    "actual_H1_contour_lift": true,
+    "original_partial_operator_domain_preserved": true,
+    "actual_domain_projection_idempotent": true,
+    "native_unbounded_operator_projection_commutation": true,
+    "actual_simple_normalized_range": true,
+    "faithful_full_physical_L2_to_native_base_inclusion": true,
+    "actual_full_physical_L2_projection": true,
+    "exact_L2_base_domain_intertwining": true,
+    "actual_L2_projection_amplitude_operator_bound": true,
+    "literal_original_source_circle_projection_constructed": true,
+    "native_projected_residual_scalar_factor": true,
+    "uniform_literal_source_circle_validity_and_isolation_proved": false,
+    "source_AppendixC4_proved": false,
+    "source_Lemma2_13_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
 }

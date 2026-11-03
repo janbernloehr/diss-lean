@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Uniform original complex Dirichlet simplicity/analyticity and actual physical L2-normalized native eigenfunctions",
+  "phase": "Actual native Dirichlet Riesz projections, full complex algebraic ranges, H1/L2 realizations and projected residual factor",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -547,13 +547,21 @@
     "NLS/KdV/SingularDirichletNormalizedEigenfunction.lean",
     "NLS/KdV/HminusOneDirichletUniformSimplicity.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalDirichletUniformSimplicity.lean",
+    "NLS/KdV/SingularDirichletResolventIdentities.lean",
+    "NLS/KdV/SingularDirichletRieszProjection.lean",
+    "NLS/KdV/SingularDirichletRieszRange.lean",
+    "NLS/KdV/SingularDirichletRieszDomain.lean",
+    "NLS/KdV/SingularDirichletRieszSimple.lean",
+    "NLS/KdV/SingularDirichletL2Base.lean",
+    "NLS/KdV/SingularDirichletRieszL2.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletRiesz.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 3147,
-  "definitions": 651,
+  "proved_theorems": 3185,
+  "definitions": 658,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 3798,
+    "declarations": 3843,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -1067,10 +1075,20 @@
     "EVERY actual native Dirichlet eigenvalue on the full original complex H-minus-one operator has an actual full-domain zero-trace H1 eigenfunction normalized to ONE in the physical interval L2 norm and in the literal [0,1] squared-norm integral. No smoothness, realness or spectral simplicity assumption is needed for this normalization.",
     "At ACTUAL algebraic multiplicity one, the ENTIRE native algebraic root space equals the complex span of ANY nonzero actual native eigenfunction included in the original full-dual base. In particular it has an actual generator with the source interval normalization. No associated-vector direction is omitted or silently excluded.",
     "For EVERY original unit-period complex H-minus-one source, ONE open original norm neighborhood and ONE cutoff make ALL high intrinsic labels algebraically simple and analytically dependent on the potential, with nonzero derivative of the independently normalized scalar characteristic. This proves the locally uniform simplicity and normalized-eigenfunction input at the opening of source Section 2.5.",
-    "On the ENTIRE ORIGINAL complex physically period-one distribution domain, all labels have native L2-normalized eigenfunctions with literal source normalization. One open ORIGINAL H-minus-one norm neighborhood and ONE cutoff give actual algebraic simplicity and nonzero original characteristic derivative for EVERY high label of EVERY neighboring physical distribution. Actual label functions have analytic extensions to that SAME ambient original norm neighborhood. The ENTIRE distribution and every physical constraint are retained."
+    "On the ENTIRE ORIGINAL complex physically period-one distribution domain, all labels have native L2-normalized eigenfunctions with literal source normalization. One open ORIGINAL H-minus-one norm neighborhood and ONE cutoff give actual algebraic simplicity and nonzero original characteristic derivative for EVERY high label of EVERY neighboring physical distribution. Actual label functions have analytic extensions to that SAME ambient original norm neighborhood. The ENTIRE distribution and every physical constraint are retained.",
+    "The ACTUAL native Dirichlet H1-valued inverse and full-dual base inverse have analytic energy dependence and exact full-domain resolvent identities. Both original (A-zJ)^(-1) and source (z-A)^(-1) orientations are reconciled. Resolvents commute, and the ACTUAL full native expression intertwines the H1 inverse with the base inverse on EVERY native domain vector.",
+    "The native Dirichlet Riesz projection is CONSTRUCTED as the ACTUAL source-oriented operator-norm contour integral on the FULL continuous Dirichlet dual. Every circle in the ACTUAL full native resolvent gives a compact idempotent with a genuinely finite-dimensional spectral range. Enclosed native eigenvectors are fixed, exterior eigenvectors are annihilated, and the projection commutes with every full-base resolvent.",
+    "The ACTUAL projection fixes ALL full native algebraic root vectors inside the circle and annihilates ALL full native algebraic root vectors outside the closed disk. The range is EXACTLY the sum of ALL enclosed FULL native algebraic root spaces. Complex associated vectors are retained; no realness, semisimplicity, simple-root, supplied root list or supplied rank hypothesis is used for this full range theorem.",
+    "The SAME contour integral has an actual bounded lift from the ENTIRE native dual to the ENTIRE zero-trace H1 domain. Its base inclusion is EXACTLY the full-base projection. Every projected datum lies in the ORIGINAL partial-operator domain. Its actual domain restriction is an idempotent, and the original unbounded native expression commutes with the spectral projection in the exact domain-to-base intertwining identity.",
+    "If a valid circle encloses exactly one actual native spectral value, the ACTUAL range is its ENTIRE algebraic root space even for a multiple root. At actual algebraic multiplicity ONE this is EXACTLY the normalized original eigenfunction line. Every projected native domain vector is an actual scalar multiple of that eigenfunction INSIDE H1, and the ACTUAL projected residual has factor nu*(mu-lambda).",
+    "ALL ordinary physical L2([0,1],C) data are included by a bounded COMPLEX LINEAR map into the FULL native dual. This agrees EXACTLY with the original domain inclusion on EVERY zero-trace H1 vector and is proved INJECTIVE: a dual annihilator would force all L2 Fourier coefficients to be the same constant, which finite-exponent decay excludes unless they vanish.",
+    "The actual Dirichlet projection on the FULL ordinary physical L2 interval space is constructed by the SAME H1-valued contour lift. It intertwines EXACTLY with the full-native-dual projection and with the H1 domain projection, and is a bounded L2 idempotent. At a simple isolated actual eigenvalue its FULL L2 range is precisely the normalized native eigenfunction line.",
+    "For EVERY physical L2 datum the ACTUAL scalar projection amplitude exists; its norm is bounded by the ACTUAL L2 projection operator norm times the datum norm. This is an exact operator bound, not an unproved o(1) comparison with the free projection.",
+    "The article adapter constructs the LITERAL original source circle |z-n^2*pi^2|=n with the ENTIRE original complex physically period-one H-minus-one distribution unchanged. It gives the ACTUAL ordinary L2 projection, its full-native-dual realization, bounded idempotence on a valid source circle, and its normalized simple spectral range under EXPLICIT actual spectral isolation and multiplicity conditions.",
+    "The source scalar nu is the ACTUAL physical L2 projection coefficient. Using the original operator commutation, the ACTUAL full native residual projects to nu*(mu_n-lambda) times the original eigenfunction base inclusion. The ACTUAL L2 operator bound controls its magnitude. This proves the native projected-residual factor used in source (31), without claiming the missing periodic eta/gamma residual representation or the overlap lower bound (32)."
   ],
-  "source_correspondence": "Complete original complex Dirichlet labels and source equation (6) remain proved. NOW PROVED: ONE original H-minus-one norm neighborhood and cutoff give ALL actual high labels algebraic multiplicity one, nonzero original characteristic derivative and analytic potential dependence. Actual native eigenfunctions are normalized in the EXACT physical L2([0,1],C) norm and literal squared-norm integral; the ENTIRE simple algebraic root space is their base-inclusion span. The ENTIRE original physical complex smooth-test distribution is unchanged. REMAINING: actual quantitative source C.4 projection estimates, source 2.13/2.15, full complex 2.1(ii) weighted midpoint membership/local boundedness, low periodic parity/interlacing and complex ratio 2.20, original Birkhoff maps and actual KdV approximation flow. All five main theorems remain unproved; Appendix B remains complete.",
-  "build_isolation": "Six new generic canonical-cutoff, actual uniform complex Dirichlet control/analyticity, exact physical native L2 inclusion, normalized eigenfunction/full simple-root generator, original uniform simplicity and original-distribution adapter modules compiled in dependency order. Exact audit of 542 selected modules and 3798 public theorem/definition declarations passed without warnings or suggestions. All 535 baseline non-Audit Lean sources are byte-identical to private commit 145cd4e. Canonical sources, build outputs and shared Git metadata remain read-only; all milestone Git writes use separate private metadata.",
+  "source_correspondence": "Complete original complex Dirichlet labels, uniform high simplicity/analyticity and exact physical L2-normalized native eigenfunctions remain proved. NOW CONSTRUCTED: actual source-oriented Riesz projections on the FULL native dual, ENTIRE H1 domain and FULL ordinary physical interval L2 space; exact enclosed FULL complex algebraic root range with associated vectors; actual original domain preservation and operator commutation; simple normalized line; faithful L2-base inclusion; exact L2 amplitude norm bound and native projected residual nu*(mu_n-lambda) factor; literal original source-circle adapter under explicit actual validity/isolation/simple-root hypotheses. REMAINING: uniform literal-circle validity/isolation, quantitative C.4 projection comparison, periodic basis/off-diagonal 2.13, full (31)/(32)/2.15, full complex 2.1(ii) midpoint/local boundedness, low periodic parity/interlacing, complex ratio 2.20, original Birkhoff maps and actual KdV approximation flow. All five main theorems remain unproved; Appendix B remains complete.",
+  "build_isolation": "Eight new full-domain native resolvent identity, actual Dirichlet Riesz projection, full complex algebraic range, H1-domain lift/commutation, isolated simple range/residual, faithful full physical L2-base inclusion, actual L2 projection/amplitude, and original literal source-circle adapter modules compiled in dependency order. Exact audit of 550 selected modules and 3843 public theorem/definition declarations passed without warnings or suggestions. All 541 baseline non-Audit Lean sources are byte-identical to private commit 7bd3aae. Canonical sources, build outputs and shared Git metadata remain read-only. Milestone commits use separate private metadata.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -1472,7 +1490,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "7ed4f756294e04e39a1290ae0915cf85b38982f2272da24331dd2efb6372e1bd",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "2d122ab6856077892a23b0cbb04480d93a8bffa8b82accc30fc80bd727439194",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -1617,7 +1635,15 @@
     "NLS/Fourier/UnitDirichletL2.lean": "850b95d455a04123612721d8ed71d3f7c08f04746bee4cbe6c37dacb50922c71",
     "NLS/KdV/SingularDirichletNormalizedEigenfunction.lean": "1d1f21a28bc0faa9dea00cc3194ebacbf815a7fad4b67ab6dca2ab0ef867be6f",
     "NLS/KdV/HminusOneDirichletUniformSimplicity.lean": "3311c2f448157323e9efb72a9c2b7585c28e541517bf299c89aa583af322d98c",
-    "NLS/Articles/KdVPseudomeasures/OriginalDirichletUniformSimplicity.lean": "6250c40f64232ee674c9e0e17080db073bd0cc732f13db3a58c8a1b7b7e8a35d"
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletUniformSimplicity.lean": "6250c40f64232ee674c9e0e17080db073bd0cc732f13db3a58c8a1b7b7e8a35d",
+    "NLS/KdV/SingularDirichletResolventIdentities.lean": "872a6ab85bf7cc19a0c05650a0626d42c0b35ac523c7c4da29c56d4677a0b4e6",
+    "NLS/KdV/SingularDirichletRieszProjection.lean": "2ac3af910c3ae1bba30e409a62a1d56d224db4289c722f7640a1cd381d7c20ee",
+    "NLS/KdV/SingularDirichletRieszRange.lean": "6fb697ecbcae48000b7636311e2439386e4f1462b56aaa1787ba94261a5df0d1",
+    "NLS/KdV/SingularDirichletRieszDomain.lean": "602898a8bb9680a3565c2a3c9008a9e0643b89641e1cf9f162b8992d588cbaf7",
+    "NLS/KdV/SingularDirichletRieszSimple.lean": "3bb416a08c111e59a51c580928d9515aea8f856473eee91a8e9a78b0af20f405",
+    "NLS/KdV/SingularDirichletL2Base.lean": "ea438c5a1c2931e3d5ecc6323214f0305e787e30c7209a152f12fd9f4b6eb579",
+    "NLS/KdV/SingularDirichletRieszL2.lean": "1773d76c6d4dfc9b93c65107c65f8c970d58d73f510c9e11efd914b2e1c3414e",
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletRiesz.lean": "ed91e7f33f7ea1a1c776d1599528d194e1cc4a21fe6e277c9acc01d523583794"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1625,16 +1651,16 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 3778,
-    "newly_checked_declarations_this_continuation": 20,
-    "newly_authored_or_adapted_declarations_this_continuation": 20,
-    "new_theorems": 19,
-    "new_definitions": 1,
-    "authored_or_adapted_theorems": 19,
-    "authored_or_adapted_definitions": 1,
+    "previous_checked_declarations": 3798,
+    "newly_checked_declarations_this_continuation": 45,
+    "newly_authored_or_adapted_declarations_this_continuation": 45,
+    "new_theorems": 38,
+    "new_definitions": 7,
+    "authored_or_adapted_theorems": 38,
+    "authored_or_adapted_definitions": 7,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 3798,
-    "reuse": "Complete canonical boundary labels and uniform actual trace branches, original complex Dirichlet labeling and native algebraic-order matching, actual unit-interval L2 Fourier isometry, full native root spaces and eigenvalue criterion."
+    "total_checked_declarations": 3843,
+    "reuse": "Verified full native inverse/compact resolvent/algebraic root-space transport; shared operator circle integration and commuting-idempotent generalized eigenspaces; periodic full complex Riesz-range proof adapted to the exact native Dirichlet base; native normalized eigenfunctions and unit-interval L2 Fourier equivalence."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -1663,7 +1689,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-dirichlet-uniform-simple.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-native-dirichlet-riesz.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -1878,13 +1904,14 @@
     "Eight new generic predecessor/forced-state/representative-linearity, reverse-chain reconstruction, exact chain/Taylor-kernel equivalence, COMPLEX multiplicity/order and original complex-distribution adapter modules compiled in dependency order. Exact audit of 521 selected modules and 3705 public theorem/definition declarations passed without warnings or suggestions. All 513 baseline Lean sources are byte-identical to private commit db6084e.",
     "Six new finite square-fiber counting, all-complex auxiliary/native multiplicity, actual central count, neighborhood/energy bound, ordered central multiset and original complex-distribution adapter modules compiled in dependency order. Exact audit of 527 selected modules and 3733 public theorem/definition declarations passed without warnings or suggestions. All 520 baseline non-Audit Lean sources are byte-identical to private commit a466396.",
     "Nine new squared-frequency geometry, actual complex global spectral control/labeling, generic finite-change/ordered-complex uniqueness, same-index asymptotics, intrinsic positive labels, real/free compatibility and entire original complex-distribution adapter modules compiled in dependency order. Exact audit of 536 selected modules and 3778 public theorem/definition declarations passed without warnings or suggestions. All 526 baseline non-Audit Lean sources are byte-identical to private commit 849ab05.",
-    "Six new generic canonical-cutoff, actual uniform complex Dirichlet control/analyticity, exact physical native L2 inclusion, normalized eigenfunction/full simple-root generator, original uniform simplicity and original-distribution adapter modules compiled in dependency order. Exact audit of 542 selected modules and 3798 public theorem/definition declarations passed without warnings or suggestions. All 535 baseline non-Audit Lean sources are byte-identical to private commit 145cd4e."
+    "Six new generic canonical-cutoff, actual uniform complex Dirichlet control/analyticity, exact physical native L2 inclusion, normalized eigenfunction/full simple-root generator, original uniform simplicity and original-distribution adapter modules compiled in dependency order. Exact audit of 542 selected modules and 3798 public theorem/definition declarations passed without warnings or suggestions. All 535 baseline non-Audit Lean sources are byte-identical to private commit 145cd4e.",
+    "Eight new full-domain native resolvent identity, actual Dirichlet Riesz projection, full complex algebraic range, H1-domain lift/commutation, isolated simple range/residual, faithful full physical L2-base inclusion, actual L2 projection/amplitude, and original literal source-circle adapter modules compiled in dependency order. Exact audit of 550 selected modules and 3843 public theorem/definition declarations passed without warnings or suggestions. All 541 baseline non-Audit Lean sources are byte-identical to private commit 7bd3aae."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-uniform-simple-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-riesz-map.json",
   "baseline_validated_snapshot": {
-    "commit": "145cd4e9bf132163745aeb4b96719e368235f601",
-    "modules": 536,
-    "audited_declarations": 3778,
+    "commit": "7bd3aae953e63abb0742245783e9ad380fd87b5d",
+    "modules": 542,
+    "audited_declarations": 3798,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   }

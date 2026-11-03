@@ -573,6 +573,14 @@ modules = [
     'NLS.KdV.SingularDirichletNormalizedEigenfunction',
     'NLS.KdV.HminusOneDirichletUniformSimplicity',
     'NLS.Articles.KdVPseudomeasures.OriginalDirichletUniformSimplicity',
+    'NLS.KdV.SingularDirichletResolventIdentities',
+    'NLS.KdV.SingularDirichletRieszProjection',
+    'NLS.KdV.SingularDirichletRieszRange',
+    'NLS.KdV.SingularDirichletRieszDomain',
+    'NLS.KdV.SingularDirichletRieszSimple',
+    'NLS.KdV.SingularDirichletL2Base',
+    'NLS.KdV.SingularDirichletRieszL2',
+    'NLS.Articles.KdVPseudomeasures.OriginalDirichletRiesz',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
