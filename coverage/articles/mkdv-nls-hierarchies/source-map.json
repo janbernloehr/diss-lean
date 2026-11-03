@@ -145,7 +145,7 @@
     {
       "label": "Theorem 4(ii)",
       "page": 4,
-      "status": "partial_converse_J_and_corrected_mean_squared_analytic_factorizations_proved_forward_factorization_open",
+      "status": "partial_converse_and_local_near_zero_forward_factors_proved_global_forward_open",
       "target": "Real analytic factorization of I# through J and mean; converse factorization of J and printed signed mean through I.",
       "source_issue": "The printed global signed mean cannot be recovered from NLS actions without a sign branch. The sign-invariant mean-squared replacement is now proved, including at zero mean.",
       "proved_dependencies": [
@@ -181,12 +181,14 @@
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_complete_action_rotation",
         "NLS.Articles.MKdVNLSHierarchies.cartesian_action_Gardner_brackets_original_H1",
         "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits",
-        "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero"
+        "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero",
+        "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_local_analytic_physical_action_mean_factor",
+        "NLS.Articles.MKdVNLSHierarchies.original_H1_NLS_actions_local_physical_action_mean_factor"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
         "The mean squared is the actual central continued primitive square at zero energy. Its analytic source extension survives a collapsed central gap, and its action factor is proved at zero mean as well as nonzero mean. The signed mean itself still requires a sign branch.",
-        "The forward normal-form factorization of each I_n# through the physical mKdV actions and mean remains essential. The actual Gardner commutation dependency is proved; that commutation alone is not claimed as an analytic factorization."
+        "The whole original signed NLS action sequence has a common analytic forward factor through native physical mKdV actions and signed mean near zero, including zero mean and closed gaps. Global forward factorization at general profiles remains essential."
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mkdv_actions_of_nls_actions",
@@ -396,7 +398,7 @@
   },
   "remaining_essential_dependencies": [
     "general Cartesian-Cartesian brackets and Gardner canonicity, general-profile Cartesian Jacobian/global inverse, and global nonzero-fiber geometry/surjectivity; complete native Cartesian action rotations and original H1 mixed Cartesian-action Gardner brackets are proved, as are native zero charts and small inverse regularity",
-    "forward analytic factorization of restricted NLS actions through independent physical mKdV actions and signed mean, including analytic quotient descent from the proved common near-zero Cartesian action stationarity; converse physical J_n and corrected mean-squared factors in original NLS actions are proved",
+    "global forward analytic factorization of restricted NLS actions through independent physical mKdV actions and signed mean at general profiles; the whole-sequence local forward factor near zero, converse physical J_n and corrected mean-squared factors are proved",
     "independent mKdV Birkhoff angle construction, the final angle-sum factorization and full frequency identification; Theorem 4(iii) angle-action bracket clause and actual Gardner transfer are proved",
     "corrected frequency-sign convention in Theorem 3; the global signed-mean claim in Theorem 4(ii) is replaced by the proved mean-squared statement, while signed recovery requires a branch restriction"
   ],
@@ -948,6 +950,27 @@
     "holomorphic_whole_sequence_rotation_stationarity": "NLS.MKdV.MiuraCartesianNLSActionChart.observables_rotation_stationary",
     "article_common_analytic_stationary_recovery": "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero",
     "scope": "One full open complex original scalar L2 source neighborhood is mapped by the actual nonlinear Cartesian/mean map onto a full native positive half-order Hilbert-pair/complex-mean ball at zero. The genuine inverse is complex Banach analytic, has both inverse identities, preserves the physical real form, and maps that entire ball into a common analytic source domain for all signed original NLS actions. The whole original action sequence is l1-valued analytic in these actual inverse coordinates and recovers every original signed action. Its actual Frechet derivative annihilates each positive Cartesian rotation direction on the whole common complex target ball. The chart and radius precede both selected action and signed output indices. No open selected/unselected action, finite-gap, or real-input restriction occurs in the final complex stationarity statement.",
-    "limits": "Analytic quotient descent through quadratic Cartesian radii and the signed mean remains unproved, including its local zero-profile form. The signed mean must remain a linear spectator at zero. Global forward action factorization, general Cartesian-Cartesian brackets and Gardner canonicity, global inverse/Jacobian geometry at general profiles, independent angles/final angle-sum factorization and the full corrected frequency comparison remain essential. These analytic recovery and stationarity statements do not finish Theorem 4(ii)."
+    "limits": "The subsequent local forward action factorization through native physical actions and signed mean is proved near zero. Global forward factorization, general Cartesian-Cartesian Gardner brackets/canonicity, general-profile inverse geometry, independent angles/final angle-sum factorization and the full corrected frequency comparison remain essential."
+  },
+  "local_forward_NLS_action_factor": {
+    "uniform_real_action_torus_bound": "NLS.RealCoeff.norm_le_two_mul_of_pairAction_eq",
+    "head_avoiding_finite_rotations": "NLS.RealCoeff.exists_tailRotationSequence_eqOn",
+    "whole_real_tail_action_fiber_invariance": "NLS.Coeff.eq_of_real_tail_actions_of_rotation_stationary",
+    "arbitrary_complex_tail_signs": "NLS.Coeff.pairSignChange_invariant_of_tail_rotation_stationary",
+    "tail_splitting_without_head_stationarity": "NLS.Coeff.fderiv_actionSplit_eq_zero_of_tail_stationarity",
+    "generic_linear_head_analytic_tail_factor": "NLS.Coeff.exists_local_tail_action_factor",
+    "bounded_normalized_parameters": "NLS.WeightedCoeff.positiveCartesianParameterMap",
+    "exact_bounded_right_inverse": "NLS.WeightedCoeff.positiveCartesianParameterMap_section",
+    "whole_original_NLS_sequence_parameter_factor": "NLS.MKdV.MiuraCartesianNLSActionChart.exists_parameterObservables_tail_factor",
+    "exact_physical_normalization": "NLS.MKdV.miuraCartesian_tail_parameters",
+    "actual_native_action_factor": "NLS.MKdV.exists_local_miura_original_NLS_action_factor",
+    "original_L2_article_factor": "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_local_analytic_physical_action_mean_factor",
+    "independent_original_H1_action_inputs": "NLS.Articles.MKdVNLSHierarchies.local_factor_input_original_H1_action",
+    "original_H1_article_factor": "NLS.Articles.MKdVNLSHierarchies.original_H1_NLS_actions_local_physical_action_mean_factor",
+    "scope": "One analytic map on an open complex native weighted l1 order-one action/complex-mean neighborhood of zero recovers the entire original signed NLS action sequence on one original physical real L2 source neighborhood of zero. Its restriction to one literal original real H1 neighborhood uses the independent physical Hill-contour actions at every positive index and the literal signed mean. Neighborhoods precede all indices. The factor is analytic in the full l1 output norm. Zero mean and all closed actions are included; the mean is retained linearly, never squared.",
+    "limits": "Local near the free profile only. Global forward factorization, global Cartesian inverse/Gardner canonicity, independent angles and full corrected frequency comparison remain essential.",
+    "original_H1_open_pullback": "NLS.Articles.MKdVNLSHierarchies.isOpen_original_H1_pullback",
+    "original_H1_zero_pullback": "NLS.Articles.MKdVNLSHierarchies.zero_mem_original_H1_pullback",
+    "original_H1_neighborhood_description": "The original-H1 source neighborhood is the preimage of the common open original-L2 source neighborhood under the bounded original H1 inclusion. Its openness and zero base point are proved separately, avoiding any change of checking limits."
   }
 }

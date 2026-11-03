@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.LocalForwardActionFactorization
 import NLS.Articles.MKdVNLSHierarchies.CartesianNLSActionStationarity
 import NLS.Articles.MKdVNLSHierarchies.CartesianActionFlowIdentification
 import NLS.Articles.MKdVNLSHierarchies.RealSobolevCartesianInverseIdentification
@@ -49,6 +50,29 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.RealCoeff.norm_le_two_mul_of_pairAction_eq,
+    `NLS.RealCoeff.exists_tailRotationSequence_eqOn,
+    `NLS.Coeff.eq_of_real_tail_actions_of_rotation_stationary,
+    `NLS.Coeff.pairSignChange_invariant_of_tail_rotation_stationary,
+    `NLS.Coeff.fderiv_actionSplit_eq_zero_of_tail_stationarity,
+    `NLS.ComplexAnalysis.exists_local_factor_lift,
+    `NLS.ComplexAnalysis.zero_mem_preimage_clm,
+    `NLS.Coeff.exists_local_tail_sum_factor_of_chart,
+    `NLS.Coeff.exists_local_tail_sum_factor_of_recovery,
+    `NLS.Coeff.exists_local_tail_action_factor_of_sign_invariance,
+    `NLS.Coeff.exists_local_tail_action_factor,
+    `NLS.WeightedCoeff.positiveFromCoeff,
+    `NLS.WeightedCoeff.positiveFromCoeff_apply,
+    `NLS.WeightedCoeff.positiveCartesianParameterMap,
+    `NLS.WeightedCoeff.positiveCartesianParameterMap_eval,
+    `NLS.WeightedCoeff.positiveCartesianParameterMap_mean,
+    `NLS.WeightedCoeff.positiveToCoeff,
+    `NLS.WeightedCoeff.positiveToCoeff_apply,
+    `NLS.WeightedCoeff.positiveCartesianParameterSection,
+    `NLS.WeightedCoeff.positiveCartesianParameterSection_fst,
+    `NLS.WeightedCoeff.positiveCartesianParameterSection_snd,
+    `NLS.WeightedCoeff.positiveCartesianParameterMap_section,
+    `NLS.WeightedCoeff.positiveCartesianParameterMap_rotationVector,
     `NLS.Coeff.physicalRealPart_complex_decomp,
     `NLS.ComplexAnalysis.hasDerivAt_linear_rotation_zero,
     `NLS.WeightedCoeff.positiveModeCLM,
@@ -621,6 +645,8 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_local_analytic_physical_action_mean_factor,
+    ``NLS.Articles.MKdVNLSHierarchies.original_H1_NLS_actions_local_physical_action_mean_factor,
     ``NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero,
     ``NLS.MKdV.MiuraCartesianNLSActionChart.observables_rotation_stationary,
     ``NLS.MKdV.nonempty_miuraCartesianNLSActionChart,

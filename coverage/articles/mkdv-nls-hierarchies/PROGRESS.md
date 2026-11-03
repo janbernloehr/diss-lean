@@ -1903,3 +1903,34 @@ independent angles/final angle-sum factorization and the full corrected
 frequency comparison remain open. The main-theorem goal stays active.
 
 Validation: all 376 article/shared modules have validated private outputs. The 366 unchanged prefix source hashes match 9b30b88 and their outputs were reused; all ten added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,282 declarations/auxiliaries and the combined audit for 49,217 NLS declarations, using only the standard allowed axioms. All 378 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,187 declarations (1,764 theorems and 423 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Local forward action factorization with signed mean
+
+The full restricted original NLS action sequence now has one analytic
+factor near the free profile through the native physical mKdV action
+sequence and the signed mean. The factor takes values in the whole
+summable NLS action space; one pair of open complex neighborhoods works
+for every signed output index. Its input action space is weighted l1 of
+order one, paired with a complex mean. On the original real H1 domain,
+every positive input coordinate is the independent physical Hill-contour
+J_n and the mean is the literal zero Fourier coefficient. Zero mean and
+arbitrary collapsed actions are included.
+
+The shared descent keeps a finite head linear. Infinitesimal tail rotation
+stationarity gives invariance on complete real equal-action fibers:
+finite rotations avoid the head, all intermediate points obey one uniform
+full-norm bound, and finite replacements converge in norm. Holomorphic
+uniqueness then supplies independent tail signs of arbitrary support.
+Tail squaring and tail summation give an analytic sequence-valued quotient
+without squaring the head. Bounded linear normalized Cartesian parameters
+and a right inverse identify its positive sums with twice the weighted
+physical actions, retaining the signed mean linearly at zero.
+
+This proves the local zero-profile forward factorization prerequisite.
+Global forward factorization at general profiles, general Cartesian-
+Cartesian Gardner brackets/canonicity, general-profile inverse geometry,
+independent angles/final angle-sum factorization and the full corrected
+frequency comparison remain essential. The main-theorem goal stays active.
+
+Validation: all 387 article/shared modules have validated private outputs. The 376 unchanged prefix source hashes match 19abb67 and their outputs were reused; all eleven added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,346 declarations/auxiliaries and the combined audit for 49,281 NLS declarations, using only the standard allowed axioms. All 389 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,227 declarations (1,797 theorems and 430 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
