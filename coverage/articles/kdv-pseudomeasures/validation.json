@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Appendix B compactwise Cauchy limits of continuous physical trajectories",
+  "phase": "Actual rough scalar Dirichlet eigenstates and auxiliary Dirac operator transport",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -434,13 +434,23 @@
     "NLS/KdV/HminusOneMiuraDirichlet.lean",
     "NLS/FunctionalAnalysis/CompactwiseCauchyLimit.lean",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchyTrajectories.lean",
+    "NLS/MKdV/QuasiHillL2PhysicalSource.lean",
+    "NLS/ZakharovShabat/L2InitialValueACUniqueness.lean",
+    "NLS/MKdV/QuasiHillL2WeakSolution.lean",
+    "NLS/MKdV/QuasiHillL2InitialValue.lean",
+    "NLS/MKdV/QuasiHillL2DirichletCriterion.lean",
+    "NLS/MKdV/QuasiHillL2DirichletEigenstate.lean",
+    "NLS/KdV/HminusOneDirichletEigenstate.lean",
+    "NLS/MKdV/QuasiHillL2LagrangeIdentity.lean",
+    "NLS/KdV/MiuraL2DirichletAuxiliary.lean",
+    "NLS/KdV/HminusOneDirichletAuxiliary.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 2644,
-  "definitions": 565,
+  "proved_theorems": 2681,
+  "definitions": 569,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 3209,
+    "declarations": 3250,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -819,10 +829,19 @@
     "For physical source families with one eventual original endpoint norm bound, compactwise uniform Cauchy control of each original Fourier mode and eventual modewise continuity recover a UNIQUE continuous physical weak-star trajectory in the same endpoint ball. One limit works in EVERY admissible lower finite-p norm on EVERY compact time set.",
     "Continuous trajectories in a fixed original endpoint norm ball converge in the compact-open weak-star topology under compactwise uniform Cauchy Fourier tests. The result holds for arbitrary nontrivial index filters, and the lower exponent and compact time set are chosen after the unique limit.",
     "Uniform Cauchy control on any testing set in one admissible lower norm is equivalent to uniform Cauchy control of each original Fourier mode under an eventual endpoint bound on that testing set. No topology, compactness or nonemptiness of the testing set is required.",
-    "For continuous trajectories in a fixed original endpoint norm ball on a locally compact time domain, existence of a compact-open weak-star limit is EQUIVALENT to compactwise uniform Cauchy control in any one chosen admissible lower finite-p norm. In the article range this specializes to the norm of the IDENTICAL original H-minus-one distributions."
+    "For continuous trajectories in a fixed original endpoint norm ball on a locally compact time domain, existence of a compact-open weak-star limit is EQUIVALENT to compactwise uniform Cauchy control in any one chosen admissible lower finite-p norm. In the article range this specializes to the norm of the IDENTICAL original H-minus-one distributions.",
+    "The affine-energy source has its literal physical unit-period L2 representative for every complex L2 Miura lift. An absolutely continuous first-order solution of the actual physical weak ODE is uniquely the verified L2 Volterra solution with its own initial value.",
+    "The full rough quasi-Hill solution is absolutely continuous, satisfies the literal quasi-derivative ODE almost everywhere, and is the unique absolutely continuous weak solution with its full initial position and quasi-derivative. The actual IVP is bounded complex linear and injective in those initial data.",
+    "The rough scalar Dirichlet boundary problem is independently defined by absolute continuity, the literal physical L2 quasi-derivative equation and zero scalar position at BOTH endpoints. Every state is a scalar multiple of the normalized column, with boundary equation c*D(lambda)=0. A characteristic zero is exactly existence of a nonzero state.",
+    "A physical weak state with identically zero scalar position has identically zero quasi-derivative: the first weak ODE gives it zero almost everywhere, and continuity extends this through both endpoints. Thus a nonzero state has a NONTRIVIAL SCALAR eigenfunction. Every Dirichlet state has a UNIQUE scalar coefficient in the normalized column.",
+    "For EVERY literal complex shifted L2 Miura lift of EVERY complex original H-minus-one potential, the full characteristic vanishes exactly when the independent physical Dirichlet problem has a nontrivial scalar solution. Every potential is covered using a constructed chart; solvability is independent of the actual lift and energy translation.",
+    "The physical Lagrange identity for two arbitrary absolutely continuous weak states at complex energies lambda and mu is proved directly: the endpoint Wronskian difference is the integral of (lambda-mu)*y_lambda*y_mu. No derivative or endpoint value of the L2 lift is required. The actual fundamental determinant is exactly ONE, and the normalized Dirichlet eigenfunction has nonzero terminal quasi-derivative at each characteristic zero.",
+    "The actual physical L2 diagonal Dirac solution intertwines with the actual rough quasi-Hill solution through the original Miura state map, INCLUDING z=0. The EXACT original auxiliary Dirichlet characteristic equals z*D_Miura(z^2), with the endpoint-domain signs from the verified source auxiliary normalization. No division by z is used in this identity.",
+    "For ANY literal shifted Miura lift and nonzero square-root energy, zeros of the full H-minus-one Dirichlet characteristic are equivalent to membership in the ACTUAL auxiliary Dirac operator spectrum, defined by failure of bijectivity of its original pencil. The exact characteristic identity retains the physical constant energy translation.",
+    "For EVERY real original H-minus-one potential, ALL zeros of its full Dirichlet characteristic are REAL. A real shifted L2 Miura lift avoiding zero square-root energy is constructed for the given complex lambda, then actual auxiliary operator reality forces its square root, and hence lambda, real."
   ],
-  "source_correspondence": "Source Theorem 2.2(i)-(iii), Lemma 2.21 and all Appendix B.1 clauses remain proved. Compactwise Cauchy Fourier tests now reconstruct unique continuous physical weak-star trajectories, with the exact endpoint bound and simultaneous lower norm convergence on every compact time set. The full complex H-minus-one Dirichlet characteristic is constructed; its actual rough boundary-operator zero criterion, canonical Dirichlet labels, source 2.1(ii) estimates and all main theorems remain unproved.",
-  "build_isolation": "All 427 baseline selected modules retain byte-identical sources from 34c933b. Two new modules compiled privately in dependency order; the expanded exact audit of 429 selected modules and 3209 public declarations passed with zero warnings or suggestions and only standard or empty axiom sets. Canonical source and build outputs remained read-only.",
+  "source_correspondence": "Source Theorem 2.2(i)-(iii), Lemma 2.21 and all Appendix B clauses remain proved. Full complex H-minus-one Dirichlet zeros now characterize nontrivial scalar solutions of the independent physical quasi-derivative boundary problem. Exact normalization transports them to the actual auxiliary Dirac operator spectrum at nonzero square-root energy; constructed real lifts prove all Dirichlet zeros real for real potentials. Native scalar operator-domain matching, canonical Dirichlet labels, algebraic multiplicities, source 2.1(ii) estimates and all main theorems remain unproved.",
+  "build_isolation": "All 429 baseline selected modules retain byte-identical sources from private milestone f94e15e. Ten new shared modules compiled privately in dependency order; the expanded exact audit of 439 selected modules and 3250 public declarations passed with zero warnings or suggestions and only standard or empty axiom sets. Canonical source/build and shared Git metadata remain read-only; commit writes use separate private metadata.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -1224,7 +1243,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "eff471417a8c36eaacc3e52bdb156dc4720e50fbbf506258c662809f7800f908",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "150d74e5b2f4d1d78472e7999032f9400c542082e0c040596b61a37caaedecbe",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -1256,7 +1275,17 @@
     "NLS/KdV/HillHminusOneDirichlet.lean": "e3f7c0787cb4ea6a700800ce6984dfdaaaad297816455a357af456f73efeea9d",
     "NLS/KdV/HminusOneMiuraDirichlet.lean": "afff8bef42bde98d89641d64236253877bfef731137f1f6f6935d72fb8e040f3",
     "NLS/FunctionalAnalysis/CompactwiseCauchyLimit.lean": "a51f3c975f671b29719cabb72dd78a06777d67d1acf6f5441255fac221ad9b69",
-    "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchyTrajectories.lean": "7a7a4b11fcb134f9098a25a0988d99bef6105aedda6f87187379bf0c599ae5d6"
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchyTrajectories.lean": "7a7a4b11fcb134f9098a25a0988d99bef6105aedda6f87187379bf0c599ae5d6",
+    "NLS/MKdV/QuasiHillL2PhysicalSource.lean": "6e4a9c4b9b057fd75710366c2c89ae0771a99d889ed68f265f542db4b9bbca22",
+    "NLS/ZakharovShabat/L2InitialValueACUniqueness.lean": "f468e5e6163cc6eaa4eae30c437792242403bc15e9c03c657333ac5b63603c07",
+    "NLS/MKdV/QuasiHillL2WeakSolution.lean": "ba983edd991f63ca4f442aff41ef11f6b918abb76bf6a9d2867024995561e46d",
+    "NLS/MKdV/QuasiHillL2InitialValue.lean": "7c863303c4136e4bd7618e05f0e444b10a5b7f21fb00810bd00c58faa1b952f2",
+    "NLS/MKdV/QuasiHillL2DirichletCriterion.lean": "5ff285bf4fa70bba01425ced6c6e5d95f78c6c6d0adb8a60a45ced468a759590",
+    "NLS/MKdV/QuasiHillL2DirichletEigenstate.lean": "6ccc05a4771af871ce66c674e887027649880846b0eb44811b52fe7d9348749d",
+    "NLS/KdV/HminusOneDirichletEigenstate.lean": "aa17ca358c49ce2dde6312925abc486fdb825836308644af370146c61342f7f6",
+    "NLS/MKdV/QuasiHillL2LagrangeIdentity.lean": "2ccd8ec7e58b3b8629b90098c506acda07d29e1fffb0b210a162301bccbea7a8",
+    "NLS/KdV/MiuraL2DirichletAuxiliary.lean": "47c42aeb6f74d1285e09a981e9955eb2ae8e95511f5abdcfbe225391eaa476f4",
+    "NLS/KdV/HminusOneDirichletAuxiliary.lean": "9562c23e470c2e4293d60f8255c669609ea442ac656c8c022a41e9d109cbf165"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1264,17 +1293,17 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 3202,
-    "newly_checked_declarations_this_continuation": 7,
-    "newly_authored_or_adapted_declarations_this_continuation": 7,
-    "new_theorems": 7,
-    "new_definitions": 0,
-    "authored_or_adapted_theorems": 7,
-    "authored_or_adapted_definitions": 0,
-    "already_present_shared_declarations_newly_audited": 0,
+    "previous_checked_declarations": 3209,
+    "newly_checked_declarations_this_continuation": 41,
+    "newly_authored_or_adapted_declarations_this_continuation": 31,
+    "newly_audited_inherited_private_declarations": 10,
+    "newly_checked_theorems": 37,
+    "newly_checked_definitions": 4,
+    "authored_or_adapted_theorems": 28,
+    "authored_or_adapted_definitions": 3,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 3209,
-    "reuse": "The 427 baseline modules are unchanged. The new proofs reuse the verified arbitrary-filter source Cauchy and Fourier-limit recovery criteria, compact-open trajectory embeddings, and Mathlib locally uniform convergence. Unrelated Dirichlet weak-solution work remains outside this increment."
+    "total_checked_declarations": 3250,
+    "reuse": "The 429 baseline modules remain unchanged. Three preserved private weak-solution modules are integrated and revalidated; seven new shared modules prove exact initial-data linearity, independent physical Dirichlet state criterion, scalar nontriviality, full H-minus-one transport, Lagrange/determinant identities, actual Dirac auxiliary normalization and real-potential zero reality."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -1303,7 +1332,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-appendix-b-cauchy-trajectories.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-rough-dirichlet-eigenstate.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -1501,13 +1530,14 @@
     "Fourteen new compact-family Sobolev, even-sampling, actual Dirac-isospectral lift and original compact lift-cover modules compiled in dependency order. Exact 413-module/3127-declaration audit passed without warnings or suggestions. All 399 baseline Lean sources are byte-identical to 0229d87.",
     "Six new continuous finite-p Miura, original Sobolev insertion, compact potential cover, exact finite-p isospectral compactness, uniform endpoint bound and endpoint weak-star compactness modules compiled in dependency order. Exact 419-module/3145-declaration audit passed without warnings or suggestions. All 413 baseline Lean sources are byte-identical to acf6c6b.",
     "Eight new normalized scalar Dirichlet, fixed-state affine energy, actual L2 quasi-Hill, H1 physical compatibility, L2 Miura and full H-minus-one Dirichlet modules compiled in dependency order. Exact 427-module/3202-declaration audit passed without warnings or suggestions. All 419 baseline Lean sources are byte-identical to 478bb47.",
-    "Two Appendix B follow-on modules compiled in dependency order. Exact 429-module/3209-declaration axiom audit passed without warnings or suggestions. All 427 baseline Lean sources are byte-identical to 34c933b. Unrelated Dirichlet weak-solution work is preserved outside the committed inventory."
+    "Two Appendix B follow-on modules compiled in dependency order. Exact 429-module/3209-declaration axiom audit passed without warnings or suggestions. All 427 baseline Lean sources are byte-identical to 34c933b. Unrelated Dirichlet weak-solution work is preserved outside the committed inventory.",
+    "Ten shared modules compiled in dependency order; exact 439-module/3250-declaration axiom audit passed without warnings or suggestions. All 429 baseline Lean sources are byte-identical to private milestone f94e15e. Canonical checkout, builds and shared Git metadata stayed read-only."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-cauchy-trajectories-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-eigenstate-map.json",
   "baseline_validated_snapshot": {
-    "commit": "34c933bee3f6089d334eea0abb959364fb342b65",
-    "modules": 427,
-    "audited_declarations": 3202,
+    "commit": "f94e15e2f8e9672b6bd36b627011f00ed86446c3",
+    "modules": 429,
+    "audited_declarations": 3209,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   }

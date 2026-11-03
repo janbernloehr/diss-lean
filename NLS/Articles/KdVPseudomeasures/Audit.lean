@@ -426,6 +426,16 @@ import NLS.KdV.HillHminusOneDirichlet
 import NLS.KdV.HminusOneMiuraDirichlet
 import NLS.FunctionalAnalysis.CompactwiseCauchyLimit
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchyTrajectories
+import NLS.MKdV.QuasiHillL2PhysicalSource
+import NLS.ZakharovShabat.L2InitialValueACUniqueness
+import NLS.MKdV.QuasiHillL2WeakSolution
+import NLS.MKdV.QuasiHillL2InitialValue
+import NLS.MKdV.QuasiHillL2DirichletCriterion
+import NLS.MKdV.QuasiHillL2DirichletEigenstate
+import NLS.KdV.HminusOneDirichletEigenstate
+import NLS.MKdV.QuasiHillL2LagrangeIdentity
+import NLS.KdV.MiuraL2DirichletAuxiliary
+import NLS.KdV.HminusOneDirichletAuxiliary
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -3638,3 +3648,44 @@ import NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchyTrajectories
 #print axioms NLS.Articles.KdVPseudomeasures.uniformCauchyOn_sourceLowerDistribution_iff_coefficients
 #print axioms NLS.Articles.KdVPseudomeasures.exists_sourceTrajectory_tendsto_iff_compactwiseCauchy_lower
 #print axioms NLS.Articles.KdVPseudomeasures.exists_sourceTrajectory_tendsto_iff_compactwiseCauchy_originalHminusOne
+#print axioms NLS.MKdV.unitL2Synthesis_single_zero
+#print axioms NLS.MKdV.quasiHillEnergySource_representative
+#print axioms NLS.ZakharovShabat.l2SolutionCurve_unique_of_ac
+#print axioms NLS.MKdV.quasiHillEnergyInverseStateMap
+#print axioms NLS.MKdV.quasiHillEnergyInverseStateMap_apply
+#print axioms NLS.MKdV.quasiHillEnergyInitialVector_stateMap
+#print axioms NLS.MKdV.quasiHillEnergyInverseStateMap_ode
+#print axioms NLS.MKdV.absolutelyContinuousOnInterval_quasiHillL2SolutionCurve
+#print axioms NLS.MKdV.ae_hasDerivAt_quasiHillL2SolutionCurve
+#print axioms NLS.MKdV.quasiHillL2SolutionCurve_unique_of_ac
+#print axioms NLS.MKdV.quasiHillL2InitialMap
+#print axioms NLS.MKdV.quasiHillL2InitialMap_apply
+#print axioms NLS.MKdV.quasiHillL2SolutionCurve_smul
+#print axioms NLS.MKdV.quasiHillL2SolutionCurve_add
+#print axioms NLS.MKdV.quasiHillL2SolutionCurve_zero_initial
+#print axioms NLS.MKdV.quasiHillL2SolutionCurve_injective
+#print axioms NLS.MKdV.quasiHillL2Dirichlet_state_ne_zero
+#print axioms NLS.MKdV.IsQuasiHillL2Solution
+#print axioms NLS.MKdV.IsQuasiHillL2DirichletState
+#print axioms NLS.MKdV.isQuasiHillL2Solution_solutionCurve
+#print axioms NLS.MKdV.isQuasiHillL2Solution_iff_initial
+#print axioms NLS.MKdV.isQuasiHillL2DirichletState_iff_scalar
+#print axioms NLS.MKdV.quasiHillL2Dirichlet_eq_zero_iff_exists_state
+#print axioms NLS.MKdV.quasiHillL2Solution_eq_zero_of_fst_eq_zero
+#print axioms NLS.MKdV.quasiHillL2Solution_ne_zero_iff_fst
+#print axioms NLS.MKdV.existsUnique_quasiHillL2Dirichlet_scalar
+#print axioms NLS.MKdV.quasiHillL2Dirichlet_eq_zero_iff_exists_eigenstate
+#print axioms NLS.KdV.hillHminusDirichlet_eq_zero_iff_eigenstate_of_shifted_image
+#print axioms NLS.KdV.hillHminusDirichlet_eq_zero_iff_exists_eigenstate
+#print axioms NLS.KdV.exists_dirichlet_eigenstate_iff_other_shifted_image
+#print axioms NLS.MKdV.quasiHillL2_lagrange_identity
+#print axioms NLS.MKdV.quasiHillL2_fundamental_determinant
+#print axioms NLS.MKdV.quasiHillL2Dirichlet_terminal_snd_ne_zero
+#print axioms NLS.KdV.hillMiuraDiagonal_physical_representative
+#print axioms NLS.KdV.quasiHillL2SolutionCurve_eq_transformedDirac
+#print axioms NLS.KdV.auxiliaryDirichlet_eq_mul_quasiHillL2Dirichlet
+#print axioms NLS.KdV.auxiliaryDirichlet_eq_zero_iff_quasiHillL2Dirichlet
+#print axioms NLS.KdV.auxiliaryDirichlet_eq_mul_hillHminusDirichlet
+#print axioms NLS.KdV.hillHminusDirichlet_eq_zero_iff_auxiliarySpectrum
+#print axioms NLS.KdV.isRealType_hillMiuraDiagonal
+#print axioms NLS.KdV.hillHminusDirichlet_im_eq_zero_of_real

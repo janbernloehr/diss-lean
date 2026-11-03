@@ -152,5 +152,13 @@
       "NLS/KdV/HminusOneMiuraTrace.lean"
     ],
     "scope": "All reused baseline sources remain byte-identical. New adaptations are explicitly the Dirichlet scalar normalization; existing periodic trace identities are not substituted for the new characteristic."
+  },
+  "eigenstate_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-eigenstate-map.json",
+    "regularized_physical_Dirichlet_zero_criterion": true,
+    "actual_auxiliary_Dirac_operator_transport": true,
+    "all_Dirichlet_zeros_real_for_real_potential": true,
+    "native_scalar_Dirichlet_operator_domain_identified": false,
+    "source2_1_ii_proved": false
   }
 }

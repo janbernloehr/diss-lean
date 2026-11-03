@@ -433,7 +433,16 @@
     "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_iii",
     "NLS.Articles.KdVPseudomeasures.originalIsospectralRealizationSet",
     "NLS.Articles.KdVPseudomeasures.isClosed_originalIsospectralRealizationSet",
-    "NLS.Articles.KdVPseudomeasures.isCompact_originalIsospectralRealizationSet_of_gap"
+    "NLS.Articles.KdVPseudomeasures.isCompact_originalIsospectralRealizationSet_of_gap",
+    "The affine-energy source has its literal physical unit-period L2 representative for every complex L2 Miura lift. An absolutely continuous first-order solution of the actual physical weak ODE is uniquely the verified L2 Volterra solution with its own initial value.",
+    "The full rough quasi-Hill solution is absolutely continuous, satisfies the literal quasi-derivative ODE almost everywhere, and is the unique absolutely continuous weak solution with its full initial position and quasi-derivative. The actual IVP is bounded complex linear and injective in those initial data.",
+    "The rough scalar Dirichlet boundary problem is independently defined by absolute continuity, the literal physical L2 quasi-derivative equation and zero scalar position at BOTH endpoints. Every state is a scalar multiple of the normalized column, with boundary equation c*D(lambda)=0. A characteristic zero is exactly existence of a nonzero state.",
+    "A physical weak state with identically zero scalar position has identically zero quasi-derivative: the first weak ODE gives it zero almost everywhere, and continuity extends this through both endpoints. Thus a nonzero state has a NONTRIVIAL SCALAR eigenfunction. Every Dirichlet state has a UNIQUE scalar coefficient in the normalized column.",
+    "For EVERY literal complex shifted L2 Miura lift of EVERY complex original H-minus-one potential, the full characteristic vanishes exactly when the independent physical Dirichlet problem has a nontrivial scalar solution. Every potential is covered using a constructed chart; solvability is independent of the actual lift and energy translation.",
+    "The physical Lagrange identity for two arbitrary absolutely continuous weak states at complex energies lambda and mu is proved directly: the endpoint Wronskian difference is the integral of (lambda-mu)*y_lambda*y_mu. No derivative or endpoint value of the L2 lift is required. The actual fundamental determinant is exactly ONE, and the normalized Dirichlet eigenfunction has nonzero terminal quasi-derivative at each characteristic zero.",
+    "The actual physical L2 diagonal Dirac solution intertwines with the actual rough quasi-Hill solution through the original Miura state map, INCLUDING z=0. The EXACT original auxiliary Dirichlet characteristic equals z*D_Miura(z^2), with the endpoint-domain signs from the verified source auxiliary normalization. No division by z is used in this identity.",
+    "For ANY literal shifted Miura lift and nonzero square-root energy, zeros of the full H-minus-one Dirichlet characteristic are equivalent to membership in the ACTUAL auxiliary Dirac operator spectrum, defined by failure of bijectivity of its original pencil. The exact characteristic identity retains the physical constant energy translation.",
+    "For EVERY real original H-minus-one potential, ALL zeros of its full Dirichlet characteristic are REAL. A real shifted L2 Miura lift avoiding zero square-root energy is constructed for the given complex lambda, then actual auxiliary operator reality forces its square root, and hence lambda, real."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -723,5 +732,21 @@
     "compactwise_all_lower_norm_convergence": true,
     "compact_open_limit_iff_one_lower_cauchy": true,
     "main_theorems_verified": false
+  },
+  "verified_original_dirichlet_eigenstates": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-eigenstate-map.json",
+    "independent_physical_weak_equation": true,
+    "scalar_nontriviality": true,
+    "unique_normalized_geometric_eigenstate": true,
+    "full_complex_HminusOne_coverage": true,
+    "lagrange_identity": true,
+    "fundamental_determinant_one": true,
+    "terminal_quasiderivative_ne_zero_at_root": true,
+    "actual_auxiliary_Dirac_operator_bridge": true,
+    "exact_auxiliary_characteristic_includes_zero": true,
+    "all_zeros_real_for_real_potential": true,
+    "native_scalar_Dirichlet_operator_domain_identified": false,
+    "canonical_Dirichlet_labels": false,
+    "source2_1_ii": false
   }
 }

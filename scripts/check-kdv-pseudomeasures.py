@@ -460,6 +460,16 @@ modules = [
     'NLS.KdV.HminusOneMiuraDirichlet',
     'NLS.FunctionalAnalysis.CompactwiseCauchyLimit',
     'NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchyTrajectories',
+    'NLS.MKdV.QuasiHillL2PhysicalSource',
+    'NLS.ZakharovShabat.L2InitialValueACUniqueness',
+    'NLS.MKdV.QuasiHillL2WeakSolution',
+    'NLS.MKdV.QuasiHillL2InitialValue',
+    'NLS.MKdV.QuasiHillL2DirichletCriterion',
+    'NLS.MKdV.QuasiHillL2DirichletEigenstate',
+    'NLS.KdV.HminusOneDirichletEigenstate',
+    'NLS.MKdV.QuasiHillL2LagrangeIdentity',
+    'NLS.KdV.MiuraL2DirichletAuxiliary',
+    'NLS.KdV.HminusOneDirichletAuxiliary',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

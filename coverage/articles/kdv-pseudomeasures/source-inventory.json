@@ -724,5 +724,14 @@
     "compactwise_Cauchy_continuous_physical_reconstruction": true,
     "compact_open_limit_iff_one_lower_norm_Cauchy": true,
     "main_theorems_verified": false
+  },
+  "Dirichlet_eigenstate_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-eigenstate-map.json",
+    "regularized_physical_Dirichlet_zero_criterion": true,
+    "actual_auxiliary_Dirac_operator_transport": true,
+    "full_real_potential_zero_reality": true,
+    "native_scalar_operator_domain_identified": false,
+    "source2_1_ii_proved": false,
+    "main_theorems_verified": false
   }
 }
