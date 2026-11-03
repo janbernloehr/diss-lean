@@ -178,7 +178,7 @@
     ]
   },
   "essential_open_obligations": [
-    "The full complex H-minus-one Dirichlet characteristic, exact physical L2/H1 normalizations, chart independence and complete rough Miura/energy-shift identities are proved. REMAINING for source 2.1(ii): identify its zeros and multiplicities with the ACTUAL original rough Dirichlet boundary operator, construct the canonical Dirichlet labels and prove the weighted midpoint-comparison asymptotics/local boundedness. Complete the required low simplicity/interlacing and periodic/antiperiodic boundary parity. General complex-ratio 2.20 remains open. Source 2.2(i)-(iii), Lemma 2.21 and all Appendix B clauses remain proved.",
+    "The full real scalar Dirichlet CHARACTERISTIC labels, central indexing, complete analytic multiplicities, literal n-times-L2 asymptotic, free values and real general-weight midpoint membership are now proved. REMAINING: identify the native H_dir^1 to H_dir^(-1) scalar operator spectrum/multiplicities, construct full COMPLEX central scalar labeling and prove full complex weighted midpoint estimate/local boundedness in source 2.1(ii). Remaining low PERIODIC simplicity/interlacing and periodic/antiperiodic parity, general complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
@@ -451,7 +451,17 @@
     "A shared coefficient lemma proves that squaring any L2 displacement from a signed complex lattice loses exactly one bracket weight, including a constant energy translation and the central index. Applied to the actual canonical auxiliary branches, their scalar energies have inverse-bracket weighted L2 displacement from n^2*pi^2 at the SAME signed index, for EVERY complex lift.",
     "A shared original-source theorem transports ALL real ordinary boundary root algebraic multiplicities through the verified source phase. Every actual auxiliary root at real type has algebraic multiplicity one, including its finite central block and collapsed periodic gaps.",
     "For EVERY real original H-minus-one potential, EVERY zero of its full scalar Dirichlet characteristic has analytic order ONE and NONZERO spectral derivative. A constructed real Miura lift avoids zero square-root energy at the given root; the actual auxiliary multiplicity-one theorem then includes all low scalar energies without exception.",
-    "A shared analytic inverse-function argument CONSTRUCTS a local analytic scalar zero selection from a nonzero partial derivative on a complex Banach parameter space. Consequently every simple full H-minus-one Dirichlet zero, and hence EVERY zero at EVERY real original potential, extends to an actual local analytic Dirichlet-energy branch under arbitrary sufficiently small COMPLEX H-minus-one perturbations."
+    "A shared analytic inverse-function argument CONSTRUCTS a local analytic scalar zero selection from a nonzero partial derivative on a complex Banach parameter space. Consequently every simple full H-minus-one Dirichlet zero, and hence EVERY zero at EVERY real original potential, extends to an actual local analytic Dirichlet-energy branch under arbitrary sufficiently small COMPLEX H-minus-one perturbations.",
+    "A shared signed-enumeration theorem proves that strict real ordering, equality of the actual range and L2 displacement from pi*n fix the ENTIRE signed enumeration, including its finite central offset. It reuses the verified ordered-pair L2 uniqueness theorem, with actual singleton multiplicities.",
+    "For EVERY real unit-period L2 Miura profile, the complete canonical auxiliary Dirichlet sequence is strictly ordered and satisfies EXACT signed reflection zeta_(-n)=-zeta_n at EVERY index. In particular zeta_0=0 and zeta_n is strictly positive EXACTLY when n>0. Oddness of the independent characteristic and the original L2 normalization prove the central index, rather than assuming it.",
+    "For ANY real L2 Miura profile, the actual scalar Dirichlet characteristic is NONZERO at zero Miura energy. Differentiating the exact auxiliary identity chi(z)=z*D(z^2) at zero and using ACTUAL auxiliary simplicity proves that the factor z introduces precisely one extra auxiliary zero. Every scalar zero is strictly above minus the constant in ANY literal real shifted Miura representation.",
+    "The COMPLETE scalar Dirichlet characteristic zero set of every real original H-minus-one potential is exactly the squared POSITIVE canonical auxiliary sequence minus the literal real shift, including ALL central scalar energies. That sequence is strictly increasing on the original positive indices n>=1.",
+    "An intrinsic FULL positive-index ordered real Dirichlet characteristic sequence is constructed for EVERY real original H-minus-one potential. It exhausts every complex zero, starts at index ONE and counts EXACTLY every scalar analytic multiplicity. Strict-order range uniqueness proves independence of every real Miura lift, including the finite central block, without an assumed common high tail.",
+    "The full intrinsic scalar Dirichlet labels satisfy the source literal n-times-L2 asymptotic: (mu_n-(pi*n)^2)/n is in ell2 on positive indices. The inverse-bracket version is also proved. These are the ENTIRE ordered labels, not only a high auxiliary branch with an unspecified central offset.",
+    "The ENTIRE intrinsic scalar Dirichlet sequence has the exact free normalization mu_n=(pi*n)^2 at q=0, including its first positive index. For general real original potentials its sufficiently high labels lie in the SAME original Hill gaps, and their midpoint errors are bounded by half those original gaps, including collapsed pairs.",
+    "The full real characteristic labels and characteristic are transported to the article ENTIRE original real mean-zero physically period-one H-minus-one distribution domain using the verified raw unit-period extraction. Strict order, complete zero set, global analytic multiplicity count, literal n-times-L2 asymptotic and same-index high-gap location are proved without endpoint membership premises or frequency rescaling.",
+    "The EXACT complete original midpoint error tau_n-mu_n is evenly extended to signed indices with zero at zero. One cutoff controls BOTH tails by half the original periodic gap norm. A shared finite-tail domination theorem then transfers arbitrary complex scalar-weight gap membership at EVERY exponent, including infinity, to the COMPLETE actual characteristic-label midpoint sequence, retaining all finite central values.",
+    "For EVERY source SpectralWeight, every admissible endpoint order and every original weighted real mean-zero physically period-one distribution, the COMPLETE intrinsic characteristic-label midpoint error belongs to the corresponding original weighted infinity sequence space. This uses the verified full weighted canonical gap theorem and changes NONE of the original distribution smooth-test actions."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -725,7 +735,9 @@
     "free_zero_energy_value_one": true,
     "rough_operator_zero_criterion": false,
     "canonical_Dirichlet_labels": false,
-    "source2_1_ii": false
+    "source2_1_ii": false,
+    "full_real_characteristic_labels": true,
+    "real_labels_coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-real-labels-map.json"
   },
   "verified_appendix_b_cauchy_trajectories": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-cauchy-trajectories-map.json",
@@ -773,6 +785,21 @@
     "native_source_operator_identified": false,
     "global_scalar_central_labeling": false,
     "full_complex_general_weight_midpoint_bound": false,
+    "source2_1_ii": false
+  },
+  "verified_original_dirichlet_real_labels": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-real-labels-map.json",
+    "full_real_characteristic_labels": true,
+    "central_indexing_proved": true,
+    "all_real_Miura_lifts_same_indices": true,
+    "complete_analytic_multiplicity_count": true,
+    "literal_n_times_L2_asymptotic": true,
+    "exact_free_values": true,
+    "original_full_distribution_domain": true,
+    "full_real_weighted_midpoint_membership_all_source_weights": true,
+    "native_source_operator_identified": false,
+    "full_complex_central_labeling": false,
+    "full_complex_midpoint_local_boundedness": false,
     "source2_1_ii": false
   }
 }

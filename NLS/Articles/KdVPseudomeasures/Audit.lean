@@ -446,6 +446,15 @@ import NLS.ZakharovShabat.SourceAuxiliarySimpleRoots
 import NLS.KdV.HminusOneDirichletSimplicity
 import NLS.ComplexAnalysis.AnalyticImplicitScalarExistence
 import NLS.KdV.HminusOneDirichletAnalyticBranches
+import NLS.SequenceSpaces.OrderedSignedSimpleEnumeration
+import NLS.KdV.HminusOneDirichletSignedSymmetry
+import NLS.KdV.HminusOneDirichletZeroEnergy
+import NLS.KdV.HminusOneDirichletRealEnumeration
+import NLS.KdV.HminusOneDirichletRealLabels
+import NLS.KdV.HminusOneDirichletLabelAsymptotics
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletLabels
+import NLS.SequenceSpaces.FiniteTailDomination
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletMidpoint
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -3726,3 +3735,42 @@ import NLS.KdV.HminusOneDirichletAnalyticBranches
 #print axioms NLS.ComplexAnalysis.exists_analytic_implicitScalarRoot
 #print axioms NLS.KdV.exists_local_analytic_hillHminusDirichlet_root
 #print axioms NLS.KdV.exists_local_analytic_hillHminusDirichlet_root_of_real
+#print axioms NLS.finsum_double_singleton_count_of_injective
+#print axioms NLS.ordered_signed_simple_unique_of_l2
+#print axioms NLS.KdV.strictMono_hillMiuraDiracDirichlet_re
+#print axioms NLS.KdV.mem_range_hillMiuraDiracDirichlet_iff
+#print axioms NLS.KdV.hillMiuraDiracDirichlet_neg
+#print axioms NLS.KdV.hillMiuraDiracDirichlet_zero
+#print axioms NLS.KdV.hillMiuraDiracDirichlet_re_pos_iff
+#print axioms NLS.KdV.quasiHillL2Dirichlet_zero_ne_zero_of_real
+#print axioms NLS.KdV.hillHminusDirichlet_root_above_shift
+#print axioms NLS.KdV.hillMiuraDirichletEnergy_ofReal_re
+#print axioms NLS.KdV.hillHminusDirichlet_roots_iff_positive_miura
+#print axioms NLS.KdV.strictMono_hillMiuraDirichletEnergy_re_positive
+#print axioms NLS.KdV.exists_hillHminusDirichlet_real_labels
+#print axioms NLS.KdV.hillHminusDirichletLabels
+#print axioms NLS.KdV.strictMono_hillHminusDirichletLabels
+#print axioms NLS.KdV.hillHminusDirichletLabels_roots_iff
+#print axioms NLS.KdV.hillHminusDirichletLabels_is_root
+#print axioms NLS.KdV.hillHminusDirichletLabels_unique
+#print axioms NLS.KdV.hillHminusDirichletLabels_eq_miura
+#print axioms NLS.KdV.hillHminusDirichletLabels_global_multiplicity
+#print axioms NLS.KdV.memlp_hillHminusDirichletLabels_inverseBracket_error
+#print axioms NLS.KdV.memlp_hillHminusDirichletLabels_inverseIndex_error
+#print axioms NLS.KdV.exists_hillHminusDirichletLabels_in_high_gap
+#print axioms NLS.KdV.hillHminusDirichletLabels_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletCharacteristic
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels
+#print axioms NLS.Articles.KdVPseudomeasures.strictMono_originalDirichletLabels
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_roots_iff
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_is_root
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_global_multiplicity
+#print axioms NLS.Articles.KdVPseudomeasures.memlp_originalDirichletLabels_inverseIndex_error
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalDirichletLabels_in_high_gap
+#print axioms NLS.memlp_of_natAbs_tail_norm_le
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletMidpointValues
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletMidpointValues_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletMidpointValues_neg
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalDirichletMidpoint_half_gap_bound
+#print axioms NLS.Articles.KdVPseudomeasures.memlp_originalDirichletMidpoint_of_gap
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletMidpoint_real_weighted_membership

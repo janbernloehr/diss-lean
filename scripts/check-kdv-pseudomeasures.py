@@ -480,6 +480,15 @@ modules = [
     'NLS.KdV.HminusOneDirichletSimplicity',
     'NLS.ComplexAnalysis.AnalyticImplicitScalarExistence',
     'NLS.KdV.HminusOneDirichletAnalyticBranches',
+    'NLS.SequenceSpaces.OrderedSignedSimpleEnumeration',
+    'NLS.KdV.HminusOneDirichletSignedSymmetry',
+    'NLS.KdV.HminusOneDirichletZeroEnergy',
+    'NLS.KdV.HminusOneDirichletRealEnumeration',
+    'NLS.KdV.HminusOneDirichletRealLabels',
+    'NLS.KdV.HminusOneDirichletLabelAsymptotics',
+    'NLS.Articles.KdVPseudomeasures.OriginalDirichletLabels',
+    'NLS.SequenceSpaces.FiniteTailDomination',
+    'NLS.Articles.KdVPseudomeasures.OriginalDirichletMidpoint',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

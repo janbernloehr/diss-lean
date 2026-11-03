@@ -144,5 +144,15 @@
       "Analytic order under nonvanishing factors and locally invertible scalar coordinate changes",
       "Verified Banach analytic implicit existence theorem"
     ]
+  },
+  "full_real_label_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-real-labels-map.json",
+    "global_real_characteristic_Dirichlet_labels": true,
+    "full_real_central_index_offset": true,
+    "literal_full_n_times_L2_asymptotic": true,
+    "real_source_weighted_midpoint_membership": true,
+    "global_complex_scalar_labels": false,
+    "native_source_operator_identified": false,
+    "source2_1_ii_proved": false
   }
 }
