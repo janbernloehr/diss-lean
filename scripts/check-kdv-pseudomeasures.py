@@ -638,6 +638,14 @@ modules = [
     'NLS.KdV.HillSourceReciprocal',
     'NLS.KdV.HillHalfDenominator',
     'NLS.KdV.HillHalfDenominatorPhysical',
+    'NLS.KdV.HillWeightedReciprocal',
+    'NLS.KdV.HillSandwichRows',
+    'NLS.SequenceSpaces.SquareSummableMatrix',
+    'NLS.KdV.HillHalfSandwichMatrix',
+    'NLS.KdV.HillHalfSandwichSquareSum',
+    'NLS.KdV.HillHalfSandwich',
+    'NLS.KdV.HillHalfSandwichSmall',
+    'NLS.Articles.KdVPseudomeasures.PeriodicNormalizedPerturbation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

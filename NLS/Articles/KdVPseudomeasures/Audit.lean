@@ -604,6 +604,14 @@ import NLS.SequenceSpaces.HillLogKernel
 import NLS.KdV.HillSourceReciprocal
 import NLS.KdV.HillHalfDenominator
 import NLS.KdV.HillHalfDenominatorPhysical
+import NLS.KdV.HillWeightedReciprocal
+import NLS.KdV.HillSandwichRows
+import NLS.SequenceSpaces.SquareSummableMatrix
+import NLS.KdV.HillHalfSandwichMatrix
+import NLS.KdV.HillHalfSandwichSquareSum
+import NLS.KdV.HillHalfSandwich
+import NLS.KdV.HillHalfSandwichSmall
+import NLS.Articles.KdVPseudomeasures.PeriodicNormalizedPerturbation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4659,3 +4667,45 @@ import NLS.KdV.HillHalfDenominatorPhysical
 #print axioms NLS.KdV.hillHalfDenominatorL2_coefficient
 #print axioms NLS.KdV.norm_hillHalfDenominatorL2_le
 #print axioms NLS.KdV.hillHalfDenominatorToContinuous_toLp
+#print axioms NLS.KdV.hill_power_ratio_of_far_bound
+#print axioms NLS.KdV.freeHillSourceCircle_far_denominator
+#print axioms NLS.KdV.freeHillSourceCircle_weighted_reciprocal_le
+#print axioms NLS.KdV.sobolev_sub_sq_le_sum
+#print axioms NLS.KdV.hillSandwich_row_majorant
+#print axioms NLS.KdV.summable_hillSandwich_row
+#print axioms NLS.KdV.tsum_hillSandwich_row_le_log
+#print axioms NLS.Coeff.squareSummableMatrixRow
+#print axioms NLS.Coeff.squareSummableMatrixRow_apply
+#print axioms NLS.Coeff.norm_sq_squareSummableMatrixRow
+#print axioms NLS.Coeff.squareSummableMatrixRows
+#print axioms NLS.Coeff.squareSummableMatrixRows_apply
+#print axioms NLS.Coeff.norm_sq_squareSummableMatrixRows
+#print axioms NLS.Coeff.squareSummableMatrixApply
+#print axioms NLS.Coeff.squareSummableMatrixApply_apply
+#print axioms NLS.Coeff.norm_squareSummableMatrixApply_le
+#print axioms NLS.Coeff.squareSummableMatrixCLM
+#print axioms NLS.Coeff.squareSummableMatrixCLM_apply
+#print axioms NLS.Coeff.summable_norm_squareSummableMatrix_row
+#print axioms NLS.Coeff.norm_sq_squareSummableMatrixCLM_le
+#print axioms NLS.KdV.hillHalfSandwichMatrix
+#print axioms NLS.KdV.norm_sq_hillWeightedPotential_coefficient
+#print axioms NLS.KdV.norm_sq_hillHalfSandwichMatrix_shift
+#print axioms NLS.KdV.hillMatrixFrequencyShear
+#print axioms NLS.KdV.summable_hillHalfSandwichMatrix_shift
+#print axioms NLS.KdV.tsum_hillHalfSandwichMatrix_shift_le
+#print axioms NLS.KdV.summable_hillHalfSandwichMatrix_sq
+#print axioms NLS.KdV.tsum_hillHalfSandwichMatrix_sq_le
+#print axioms NLS.KdV.hillHalfSandwich
+#print axioms NLS.KdV.hillHalfSandwich_eq_matrix
+#print axioms NLS.KdV.hillHalfSandwich_apply
+#print axioms NLS.KdV.norm_sq_hillHalfSandwich_le
+#print axioms NLS.KdV.hillPhysicalHalfSandwich
+#print axioms NLS.KdV.norm_hillPhysicalHalfSandwich
+#print axioms NLS.KdV.hillPhysicalHalfSandwich_coefficient
+#print axioms NLS.KdV.norm_sq_hillPhysicalHalfSandwich_le
+#print axioms NLS.KdV.tendsto_hillHalfSandwich_majorant
+#print axioms NLS.KdV.exists_uniform_hillPhysicalHalfSandwich_small
+#print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicNormalizedPerturbation
+#print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicNormalizedPerturbation_coefficient
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sq_sourcePeriodicNormalizedPerturbation_le
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicNormalizedPerturbation_small

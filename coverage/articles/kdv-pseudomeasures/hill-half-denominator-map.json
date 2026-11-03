@@ -134,5 +134,33 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "actual_Slambda_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-half-sandwich-map.json",
+    "weighted_full_source_circle_reciprocal_bound": true,
+    "uniform_full_weighted_double_reciprocal_rows": true,
+    "generic_actual_square_summable_l2_matrix_operator": true,
+    "actual_Slambda_matrix_squared_entries_summable": true,
+    "actual_full_coefficient_Slambda_operator": true,
+    "actual_full_physical_L2_Slambda_operator": true,
+    "exact_original_physical_Fourier_row": true,
+    "weighted_Hilbert_perturbation_Slambda_bound_proved": true,
+    "uniform_original_Sobolev_norm_ball_Slambda_smallness": true,
+    "full_source_C4_regularity_range": true,
+    "all_original_modes_and_resonances_retained": true,
+    "original_distribution_and_norm_preserved": true,
+    "original_H1_half_denominator_lift_proved": false,
+    "actual_phase_normalized_inverse_proved": false,
+    "actual_normalized_perturbed_resolvent_factorization_proved": false,
+    "source_Lemma2_13_eta_bound_proved": false,
+    "source_Lemma2_13_complete": false,
+    "source_Lemma2_14_proved": false,
+    "source33_periodic_convergence_proved": false,
+    "source_AppendixC4_logarithmic_rate_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
 }
