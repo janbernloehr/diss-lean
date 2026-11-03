@@ -551,6 +551,27 @@ import NLS.KdV.HillMixedPhysicalPeriodCoordinates
 import NLS.KdV.HillMixedSupportedPeriodMap
 import NLS.KdV.HillMixedPeriodRootDerivativeInjectivity
 import NLS.KdV.HillMixedPeriodAnalyticInjectiveChart
+import NLS.ComplexAnalysis.HilbertWeakWeightLimits
+import NLS.KdV.HillFreePeriodDiagonalLimit
+import NLS.KdV.HillFreePeriodCompactDiagonal
+import NLS.KdV.HillFreePeriodDerivativeRows
+import NLS.KdV.HillFreePeriodCompactRemainder
+import NLS.SequenceSpaces.CompactGeneralTailRows
+import NLS.KdV.HillMixedPeriodErrorBound
+import NLS.SequenceSpaces.CompactTailCoordinateDerivative
+import NLS.KdV.HillMixedPeriodCompactError
+import NLS.KdV.HillSupportedPeriodFredholm
+import NLS.KdV.HillBijectivePeriodChart
+import NLS.KdV.HillBaseNormalizedComplexPsi
+import NLS.KdV.HillAnalyticNormalizedCandidateBranch
+import NLS.KdV.HillLocalNonrealRootMatching
+import NLS.KdV.HillLocalPhysicalRootMatching
+import NLS.KdV.HillBaseContourPeriodComparison
+import NLS.KdV.HillLocalContourGeometry
+import NLS.KdV.HillLocalPhysicalPeriodMatching
+import NLS.KdV.HillComplexHilbertNormalizedUniqueness
+import NLS.KdV.HillMixedNearbyPhysicalPeriods
+import NLS.KdV.HillGlobalDifferentialAnalyticExtension
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -939,7 +960,11 @@ run_cmd do
     ``NLS.FunctionalAnalysis.continuous_intervalBoxFiniteProjection,
     ``NLS.FunctionalAnalysis.intervalBox_projection_lift_fixed,
     ``NLS.FunctionalAnalysis.exists_finite_coordinate_fixed_point,
-    ``NLS.FunctionalAnalysis.exists_fixed_point_countableIntervalBox]
+    ``NLS.FunctionalAnalysis.exists_fixed_point_countableIntervalBox,
+    ``NLS.ComplexAnalysis.tendsto_holderProduct_of_bounded_weak_weights,
+    ``NLS.ComplexAnalysis.tendsto_hilbertWeightedProduct_of_bounded_weak_weights,
+    ``NLS.Coeff.isCompactOperator_of_tailRowMajorant,
+    ``NLS.Coeff.isCompactOperator_fderiv_of_tailCoordinateBound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

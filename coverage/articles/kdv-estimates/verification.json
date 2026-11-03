@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 4581,
+    "declarations": 4658,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -416,10 +416,14 @@
       "NLS.FunctionalAnalysis.continuous_intervalBoxFiniteProjection",
       "NLS.FunctionalAnalysis.intervalBox_projection_lift_fixed",
       "NLS.FunctionalAnalysis.exists_finite_coordinate_fixed_point",
-      "NLS.FunctionalAnalysis.exists_fixed_point_countableIntervalBox"
+      "NLS.FunctionalAnalysis.exists_fixed_point_countableIntervalBox",
+      "NLS.ComplexAnalysis.tendsto_holderProduct_of_bounded_weak_weights",
+      "NLS.ComplexAnalysis.tendsto_hilbertWeightedProduct_of_bounded_weak_weights",
+      "NLS.Coeff.isCompactOperator_of_tailRowMajorant",
+      "NLS.Coeff.isCompactOperator_fderiv_of_tailCoordinateBound"
     ]
   },
-  "full_repository_validation": "All 552 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4581-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 573 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4658-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -973,10 +977,31 @@
     "NLS/KdV/HillMixedPhysicalPeriodCoordinates.lean": "ae1606fe62fdeedac0a60b29d25697e281d69b4f0f9c0dad85f0b5086d277bd0",
     "NLS/KdV/HillMixedSupportedPeriodMap.lean": "3800e9ad9cf3b47c676a44704600ededeecd98979d48a340b64651c9b0d9c734",
     "NLS/KdV/HillMixedPeriodRootDerivativeInjectivity.lean": "10edbf3cb40984db7f16beeb03a7857ad9bf96360aad965abcf1d19aac533d3d",
-    "NLS/KdV/HillMixedPeriodAnalyticInjectiveChart.lean": "9f999eef66710287cd89052bd81059c4f499da7eca0ae80558138be9f304c8a1"
+    "NLS/KdV/HillMixedPeriodAnalyticInjectiveChart.lean": "9f999eef66710287cd89052bd81059c4f499da7eca0ae80558138be9f304c8a1",
+    "NLS/ComplexAnalysis/HilbertWeakWeightLimits.lean": "2c6d5bad120dfd7e4cb86c5752a1ace43a9d8432a4cd66a2320795e2b8e80a02",
+    "NLS/KdV/HillFreePeriodDiagonalLimit.lean": "aab66f1a0945f05b90b18b62f9b214dfac3d491f95d3eb39f43e783adf31be54",
+    "NLS/KdV/HillFreePeriodCompactDiagonal.lean": "040e054fb810523227b5c531328a038e7b5eeb517248b2d7a8b77012caa6134c",
+    "NLS/KdV/HillFreePeriodDerivativeRows.lean": "4507f82e73caab36cc3aeafd9b1f92724c29273771fd352bdc7743030078bcb3",
+    "NLS/KdV/HillFreePeriodCompactRemainder.lean": "9018dde6dee3c51c11e0fb50d7ca7ea7490a3597dad8849297e25ff3b419b7e0",
+    "NLS/SequenceSpaces/CompactGeneralTailRows.lean": "7214e2bcdcdae1815b433dd6a92f7b122637361461ea6d4fbe5794c5c0f7986b",
+    "NLS/KdV/HillMixedPeriodErrorBound.lean": "594e4455a582861625f8c3b3d4773f97e423e09e19633b0791540ecfee8d77d8",
+    "NLS/SequenceSpaces/CompactTailCoordinateDerivative.lean": "d40c1dfdf151523699e452c52eaf94d3a4a98b4fd4409a7311363d14142e7b6d",
+    "NLS/KdV/HillMixedPeriodCompactError.lean": "35728d44f48ffdd5a3442df5c591e45e743b69abbc1e96f4cd58d06e08636968",
+    "NLS/KdV/HillSupportedPeriodFredholm.lean": "1771fa504c84ceaf3cf08b571701652dfb8de7899e536415ddbfbdc8eeed44e4",
+    "NLS/KdV/HillBijectivePeriodChart.lean": "29cfbc93df9597aa5988dda32c8ab55679351378f7184a3ddc6e6770daf72cf5",
+    "NLS/KdV/HillBaseNormalizedComplexPsi.lean": "316f901eeba6fe86df1d26ef902009e5089034204ec17fce2a0ff11316941437",
+    "NLS/KdV/HillAnalyticNormalizedCandidateBranch.lean": "e7382afa687eb3090124997c6bb5c5fde92973808e35fd536f1ea3b6756061e7",
+    "NLS/KdV/HillLocalNonrealRootMatching.lean": "31eded0041ab934905742a273b86ede26e3778f8845661e67d3dfde2343376b8",
+    "NLS/KdV/HillLocalPhysicalRootMatching.lean": "09ed5b8ff83a92fdc46330d9617a363129ab0750b8e991b90fe0b2ef7940eadb",
+    "NLS/KdV/HillBaseContourPeriodComparison.lean": "893d8c92c309078cfbe5a0db80b9718d4f028a90f370f44bb9e10f42fa148080",
+    "NLS/KdV/HillLocalContourGeometry.lean": "e60dcc951a86893a42c2ebf522c556b2ce98f24bc93fa4894308d5af60f0020f",
+    "NLS/KdV/HillLocalPhysicalPeriodMatching.lean": "7005c3cbc96dd26f8e980a94e11c05370045d3edaf4f6cf78d90f92e4d5ce1f3",
+    "NLS/KdV/HillComplexHilbertNormalizedUniqueness.lean": "4c97593156eac7b9e3236743ed3dab4cd7e8c44ccff24ab7981551699ac3099d",
+    "NLS/KdV/HillMixedNearbyPhysicalPeriods.lean": "12a3b2a751f4d8d30ffd910fc0f4a8dd863f967713e1ced87581dc1f8efca209",
+    "NLS/KdV/HillGlobalDifferentialAnalyticExtension.lean": "dabec6a83048bfc3f06b876480cf07a41e0b3cc2708fdf0e7cc541c8d954e35b"
   },
-  "remaining": "A genuine jointly analytic Hilbert period map with the exact physical intrinsic base periods and injective bounded positive-deleted partial root derivative is now proved at every real period-one L2 base potential and every global root solution. Compact/Fredholm estimates and surjectivity remain unproved. Matching the finite low complex contours to nearby physical intrinsic contours, global analytic normalized differentials, actual Abelian angles and the physical KdV Birkhoff map/action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
-  "milestone": "Joint analytic physical Hill period charts with injective bounded Hilbert root derivatives at every real L2 base",
+  "remaining": "The selected physical normalized Hill differential now has a jointly analytic complex extension near every real period-one L2 base potential, for every spectral energy. Its construction uses an actual jointly analytic Hilbert period map, a compact root-derivative remainder, bijectivity by the Fredholm alternative, analytic implicit branches, local physical low-contour matching and complex entire period uniqueness for arbitrary Hilbert root coordinates. Physical Abelian angles and the KdV Birkhoff map/action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+  "milestone": "Fredholm bijectivity and global joint analytic physical normalized Hill differentials",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -1531,7 +1556,28 @@
     "NLS.KdV.HillMixedPhysicalPeriodCoordinates",
     "NLS.KdV.HillMixedSupportedPeriodMap",
     "NLS.KdV.HillMixedPeriodRootDerivativeInjectivity",
-    "NLS.KdV.HillMixedPeriodAnalyticInjectiveChart"
+    "NLS.KdV.HillMixedPeriodAnalyticInjectiveChart",
+    "NLS.ComplexAnalysis.HilbertWeakWeightLimits",
+    "NLS.KdV.HillFreePeriodDiagonalLimit",
+    "NLS.KdV.HillFreePeriodCompactDiagonal",
+    "NLS.KdV.HillFreePeriodDerivativeRows",
+    "NLS.KdV.HillFreePeriodCompactRemainder",
+    "NLS.SequenceSpaces.CompactGeneralTailRows",
+    "NLS.KdV.HillMixedPeriodErrorBound",
+    "NLS.SequenceSpaces.CompactTailCoordinateDerivative",
+    "NLS.KdV.HillMixedPeriodCompactError",
+    "NLS.KdV.HillSupportedPeriodFredholm",
+    "NLS.KdV.HillBijectivePeriodChart",
+    "NLS.KdV.HillBaseNormalizedComplexPsi",
+    "NLS.KdV.HillAnalyticNormalizedCandidateBranch",
+    "NLS.KdV.HillLocalNonrealRootMatching",
+    "NLS.KdV.HillLocalPhysicalRootMatching",
+    "NLS.KdV.HillBaseContourPeriodComparison",
+    "NLS.KdV.HillLocalContourGeometry",
+    "NLS.KdV.HillLocalPhysicalPeriodMatching",
+    "NLS.KdV.HillComplexHilbertNormalizedUniqueness",
+    "NLS.KdV.HillMixedNearbyPhysicalPeriods",
+    "NLS.KdV.HillGlobalDifferentialAnalyticExtension"
   ],
   "proof_commits": [
     {
@@ -1938,6 +1984,11 @@
       "commit": "fe667096d9f012ab5084adf6aa3cf85955fb48e5",
       "scope": "Global Hill scalar period derivative kernel injectivity and bounded complex high-period control; 539 strict modules, 4502-declaration axiom audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "cb4b606c466922f0aa69ffdc04a1de60b1e7ae03",
+      "scope": "Joint analytic physical Hill Hilbert period charts with injective bounded partial root derivatives at every real L2 base; 552 strict modules, 4581-declaration axiom audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -1954,20 +2005,27 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 552 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 573 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 4581 declarations. Includes global complex period summability, analytic Hilbert tails, high canonical root and physical contour matching for arbitrary bounded real potentials, finite physical contour heads, mixed Hilbert period maps, exact physical base coordinates, positive-deleted supported maps and injective bounded partial root derivatives at every real L2 base.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 4658 declarations. Includes weak weighted-product limits, compact free and mixed period root derivative remainders, arbitrary-input tail-row and holomorphic derivative compactness, supported Fredholm bijectivity and analytic implicit branches, joint physical cut openness, low canonical root and contour period matching near every real base, arbitrary-complex Hilbert normalized numerator uniqueness, and joint analytic extensions of the selected physical normalized Hill differentials.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 552 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4581-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 573 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4658-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "The bounded complex high-period estimates assemble into a genuine Hilbert-valued sequence for every complex potential coefficient sequence. Its sufficiently high tail is jointly Banach analytic on the full root Hilbert space times any prescribed bounded open complex-potential ball. Uniform localization along the real radial path proves that the high free-contour canonical root and periods agree with the physical continued root and intrinsic moving-contour periods at every bounded real potential. Finitely many actual intrinsic contours at an arbitrary real base admit a common open complex-potential neighborhood and define a finite-rank analytic head. Joining this physical head to the analytic high tail gives a jointly analytic Hilbert period map near every real period-one L2 base potential. At that base, all its positive off-diagonal coordinates are exactly the prescribed scaled genuine intrinsic periods for every complex root sequence. Restricting roots and projecting outputs to the positive deleted Hilbert space gives an actual zero at each physical global period solution. Its bounded partial root derivative has zero kernel, by the proved scalar-period derivative injectivity. An existence theorem packages the joint analytic chart, its actual zero and its injective bounded partial derivative at every physical solution. A genuine jointly analytic Hilbert period map with the exact physical intrinsic base periods and injective bounded positive-deleted partial root derivative is now proved at every real period-one L2 base potential and every global root solution. Compact/Fredholm estimates and surjectivity remain unproved. Matching the finite low complex contours to nearby physical intrinsic contours, global analytic normalized differentials, actual Abelian angles and the physical KdV Birkhoff map/action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
-    "scope": "All 552 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4581-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Uniformly bounded separated Hilbert weights vanish weakly as the output label tends to infinity. Their convergent weighted products therefore approach one for each fixed Hilbert root sequence, so the free period diagonal correction is compact. Exact free-period derivative rows and uniform Cauchy estimates bound the remaining rows by one Hilbert sequence. A reusable compact-tail row criterion and a Cauchy coordinate-bound criterion treat arbitrary normed input spaces and finite output heads. The uniformly O(1/k) mixed-minus-free period errors give a square-summable derivative row majorant. Thus the actual mixed root derivative is a compact perturbation of minus the positive-deleted projection. Restriction and projection to the positive deleted Hilbert space give a compact perturbation of minus the identity. Its proved injectivity and the verified Fredholm alternative imply bijectivity at every physical global period root solution. The analytic implicit function theorem constructs actual analytic local zero branches near every real L2 base. The physical canonical square root has an open joint real cut domain; square-root uniqueness first gives local nonreal matching with the source branch and then matching on whole intrinsic base contours for nearby real potentials. Spectral-label continuity preserves contour band bounds and enclosed gaps, and convex-cut contour deformation identifies fixed low complex periods with the nearby physical intrinsic periods. A common finite neighborhood joins this low matching to the existing arbitrary-bounded-potential high matching. A new complex entire uniqueness theorem identifies normalized Hilbert numerators from physical periods, with no reality or root-box assumption on their Hilbert coordinates. Applied to the implicit branches, it proves a jointly analytic complex extension of the actual selected physical normalized differential near every real period-one L2 potential and every spectral energy. The selected physical normalized Hill differential now has a jointly analytic complex extension near every real period-one L2 base potential, for every spectral energy. Its construction uses an actual jointly analytic Hilbert period map, a compact root-derivative remainder, bijectivity by the Fredholm alternative, analytic implicit branches, local physical low-contour matching and complex entire period uniqueness for arbitrary Hilbert root coordinates. Physical Abelian angles and the KdV Birkhoff map/action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+    "scope": "All 573 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4658-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "ee48ad44f6c672e0506592b6335c18f4795483ddd7addc633f5b5f8aa45c337d",
-      "scripts/check-kdv-estimates.sh": "a24c8d2f0e5fffbc244adc4ed61306166b22773875f52ed6b244f4ed6ecc03b7",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "cd1c1199b8d8cb6b784962527232d8cab828ce00758c837f3cef865d45bf7b40"
+      "NLS.lean": "cb5e7a08945551cea7d88955879b4bfef6b453bc4c994af3347300b1e1c6fba0",
+      "scripts/check-kdv-estimates.sh": "fcf0ac6396c023f3762074311dfe5b73e761f9dbd07798e6d1c15488b5d4d4f5",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "61508fc4642bca10165ef4ccf15ea60576283cdc4fd87ea7b7fa4c3c270b99a2"
+    },
+    "focused_build_execution": {
+      "exit_code": 0,
+      "focused_modules": 573,
+      "transitive_axiom_audit_declarations": 4658,
+      "execution_evidence": "The actual focused-check invocation returned terminal exit 0 after compiling all 573 listed modules and completing the axiom audit.",
+      "log_qualification": "The local raw log was shared with a previously interrupted invocation and includes its obsolete shell syntax diagnostic; current script syntax, the current full invocation, and the independent aggregate import check all passed. No clean raw-log claim is made."
     }
   },
   "warningAsError": true,
@@ -2074,9 +2132,9 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Joint analytic physical Hill period charts with injective bounded Hilbert root derivatives at every real L2 base",
-    "focused_modules": 552,
-    "scope": "All 552 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4581-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Fredholm bijectivity and global joint analytic physical normalized Hill differentials",
+    "focused_modules": 573,
+    "scope": "All 573 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4658-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",
