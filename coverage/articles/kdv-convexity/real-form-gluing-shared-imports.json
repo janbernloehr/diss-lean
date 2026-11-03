@@ -1,0 +1,39 @@
+{
+  "source_branch": "articles/kdv-estimates",
+  "source_commit": "fe667096d9f012ab5084adf6aa3cf85955fb48e5",
+  "source_files_unchanged": true,
+  "dependency_order": [
+    "NLS.SequenceSpaces.Reflection",
+    "NLS.SequenceSpaces.ConjugateReflection",
+    "NLS.ComplexAnalysis.RealFormIdentity",
+    "NLS.ComplexAnalysis.ContinuousRealFormIdentity"
+  ],
+  "files": {
+    "NLS/SequenceSpaces/Reflection.lean": "c26f7430ea57dd0fb147fe3f4c84c03ec0bea0d6bde3ec6a6030b547b06a57ef",
+    "NLS/SequenceSpaces/ConjugateReflection.lean": "785b7915c423f963d41847357061e92b194d42a5a46bda4b07b92a2faa03c101",
+    "NLS/ComplexAnalysis/RealFormIdentity.lean": "b097b7daa40dac7bc212d202bad93068edde795d516ffc6f9fce540787bcba48",
+    "NLS/ComplexAnalysis/ContinuousRealFormIdentity.lean": "2cfbde66aad3945a94a5bcdbbd6d9e5470ef67dba4d8dd8babcd4d6e310d2c60"
+  },
+  "retained_existing_import_boundary": {
+    "NLS/SequenceSpaces/Translation.lean": {
+      "private_sha256": "e1bee4ad497c331c7a722aac78c24f66001c1a1c16d662690204c56bb3b50904",
+      "shared_sha256": "e1bee4ad497c331c7a722aac78c24f66001c1a1c16d662690204c56bb3b50904",
+      "byte_identical": true
+    },
+    "NLS/SequenceSpaces/Weighted.lean": {
+      "private_sha256": "a8c59185e90c1b1b4346ff35ad8ee754ee084cc3a0894c664d01a02ef12732d9",
+      "shared_sha256": "a8c59185e90c1b1b4346ff35ad8ee754ee084cc3a0894c664d01a02ef12732d9",
+      "byte_identical": true
+    },
+    "NLS/SequenceSpaces/Convolution.lean": {
+      "private_sha256": "bfb72ea01d63f25aeee7e899a0674bf00cd909c779e7610d5627c38931746d9b",
+      "shared_sha256": "bfb72ea01d63f25aeee7e899a0674bf00cd909c779e7610d5627c38931746d9b",
+      "byte_identical": true
+    },
+    "NLS/ComplexAnalysis/RealLineIdentity.lean": {
+      "private_sha256": "f990506c93271aeea8152a06c3f40ca2629676bfef289e052012ec825dbebf0c",
+      "shared_sha256": "f990506c93271aeea8152a06c3f40ca2629676bfef289e052012ec825dbebf0c",
+      "byte_identical": true
+    }
+  }
+}

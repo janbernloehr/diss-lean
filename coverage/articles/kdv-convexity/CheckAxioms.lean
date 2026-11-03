@@ -1,3 +1,4 @@
+import NLS.Articles.KdVConvexity.GlobalCanonicalMomentFamily
 import NLS.Articles.KdVConvexity.CommonCanonicalMomentFamily
 import NLS.Articles.KdVConvexity.CanonicalMomentPreparation
 import NLS.KdV.HillHminusOneFinitePeriodExtensions
@@ -73,6 +74,14 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.SequenceSpaces.Reflection,
+    `NLS.SequenceSpaces.ConjugateReflection,
+    `NLS.ComplexAnalysis.RealFormIdentity,
+    `NLS.ComplexAnalysis.ContinuousRealFormIdentity,
+    `NLS.SequenceSpaces.PhysicalRealImag,
+    `NLS.ComplexAnalysis.RealFormBallGluing,
+    `NLS.SequenceSpaces.PeriodOneHminusOneRealForm,
+
     `NLS.ComplexAnalysis.RealGapCircleNesting,
     `NLS.ComplexAnalysis.RealCutWeightedPowerIntegral,
     `NLS.ComplexAnalysis.ScalarCoordinateUniqueness,

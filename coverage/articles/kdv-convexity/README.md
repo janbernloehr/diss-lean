@@ -1932,22 +1932,62 @@ All real Arnold nonnegativity, cubic nonpositivity/reality and the exact
 common zero criterion survive in this one family.
 
 Thus the finite head and infinite tail no longer require separate
-potential neighborhoods. This is a common local family at each real
-reference, not yet a single glued family on a complex neighborhood of
-the entire real potential space. Global Birkhoff coordinates, their
+potential neighborhoods. The next milestone glues these local families
+on one complex neighborhood of the entire real potential space. Global Birkhoff coordinates, their
 Arnold-action identity and real isospectral/action-fiber invariance
 remain required before the checked action-space descent and ell2
 summation apply. The physical Hamiltonian/frequency identities and all
 main theorem completion flags remain open.
 
+## Global potential-space canonical moment gluing
+
+`PhysicalRealImag.lean` constructs the physical real and imaginary
+Fourier parts on every symmetric weighted coefficient space. Physical
+conjugate reflection is an isometry; both parts are continuous norm
+contractions and give an exact complex decomposition.
+`PeriodOneHminusOneRealForm.lean` identifies raw H^-1 Fourier reality
+with the fixed locus, proves convexity and real-linear closure, and
+specializes analytic real-form gluing to the physical potential space.
+
+`RealFormBallGluing.lean` proves that intersecting balls with real centers
+contain a real point on the segment joining the centers. The continuous
+real-form identity theorem propagates real agreement across the entire
+complex overlap. Banach-valued analytic maps therefore glue uniquely
+on the union of the balls. That union depends only on the real centers
+and radii, so all indices and all moment orders use the same domain.
+
+The article-specific `GlobalCanonicalMomentFamily.lean` chooses one ball
+inside each common local chart and glues every polynomial and cubic
+family. It constructs one complex-open Omega containing the entire real
+unit-period H^-1 space. Every A_n,m and R_n is analytic on Omega and equals
+the actual canonical period at every real potential, including central
+and collapsed gaps. Arnold nonnegativity, cubic nonpositivity/reality
+and the exact common zero criterion hold on the full real locus.
+
+The glued functions agree with each local family on its entire complex
+ball. Consequently at every real reference there are C>0, N>=2 and one
+complex-open V inside Omega, before every high index and every complex
+input p in V, such that norm(8*n*pi*R_n(p))<=C*norm(A_n,0(p))^2.
+The whole complex tail also equals the literal high source family there.
+No global coefficient-space or action-space normalization is changed.
+
+This completes the potential-space gluing step. The actual global KdV
+Birkhoff map, its Arnold-action identity and real isospectral/action-fiber
+invariance remain required for the positive-ell2 action-space extension.
+The physical Hamiltonian/frequency identities and all main theorem
+completion flags remain open.
+
+Four reflection and real-form identity modules are reused byte-for-byte
+from `articles/kdv-estimates` at `fe66709`, with their retained import
+boundary hashes in `real-form-gluing-shared-imports.json`.
+
 ## Remaining essential KdV work
 
-1. Glue the common local analytic moment families over the entire real
-   H^-1 potential space and prove the remaining intrinsic operator and
-   isospectral identities. Canonical/high matching and one neighborhood
-   for all indices with the uniform complex-tail quadratic bound are now
-   proved at every real reference. All canonical signs and exact
-   Arnold/cubic zero criteria are proved as well.
+1. Prove the remaining intrinsic singular-Hill operator and real
+   isospectral/action-fiber identities. Global potential-space moment
+   gluing is now proved on one complex neighborhood of the entire real
+   H^-1 space, with every canonical period and the locally uniform
+   quadratic complex-tail bounds.
 2. The **high-index complex H^-1-neighborhood** bounds
    |R_n|=O(gamma_n^4/n^3), gamma_n^2/n<=16*pi*|A_n| and
    |8*n*pi*R_n|<=C*|A_n|^2 are now proved. Identify A_n with the
@@ -2000,15 +2040,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `f1397f8` contains 385 source modules. Every
-baseline source hash remains unchanged. Five authored modules pass
-incremental Lean 4.33.1/mathlib v4.33.1 checks with `warningAsError=true`.
-The full reproducible script now lists 390 source modules. The
-positive-index example passes.
+The validated baseline at `e139152` contains 390 source modules. Every
+baseline source hash remains unchanged. Four exact shared modules and
+four authored modules pass incremental Lean 4.33.1/mathlib v4.33.1 checks
+with `warningAsError=true`. The full reproducible script now lists
+398 source modules. The positive-index example passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 189 additional shared modules:
-4063 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 196 additional shared modules:
+4128 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
