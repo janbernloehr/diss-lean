@@ -733,5 +733,18 @@
     "native_scalar_operator_domain_identified": false,
     "source2_1_ii_proved": false,
     "main_theorems_verified": false
+  },
+  "Dirichlet_canonical_tail_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-canonical-tail-map.json",
+    "all_real_Dirichlet_zeros_simple": true,
+    "unique_intrinsic_high_real_gap_zero": true,
+    "complex_same_index_high_asymptotic": true,
+    "local_analytic_complex_HminusOne_root_branches": true,
+    "native_source_operator_base": "H_dir^(-1)",
+    "native_source_operator_domain": "H_dir^1",
+    "native_source_operator_identified": false,
+    "global_scalar_central_labeling": false,
+    "source2_1_ii_proved": false,
+    "main_theorems_verified": false
   }
 }

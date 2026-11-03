@@ -78,7 +78,7 @@
     "Source Theorem 2.2(i)-(iii), Lemma 2.21 and all Appendix B.1 clauses remain proved. The goal remains active."
   ],
   "essential_remaining": [
-    "Identify the regularized physical quasi-derivative boundary problem with the native original distributional scalar Dirichlet operator and its full H1-zero-trace/L2 domain. The present nontrivial-state criterion and actual auxiliary Dirac operator transport do not yet prove that native scalar-domain identification.",
+    "Identify the independently defined physical quasi-derivative Dirichlet boundary problem with the EXACT source scalar operator L_dir(q) on H_dir^(-1)([0,1],C), whose domain is H_dir^1([0,1],C), as explicitly stated immediately before equation (6). The remaining source identification targets this H1-zero-trace to H-minus-one pencil, rather than an L2-base realization.",
     "Construct the original canonical Dirichlet labels, prove the required algebraic multiplicities and interlacing, and establish the weighted midpoint-comparison asymptotics and local boundedness in source Theorem 2.1(ii). The exact auxiliary Dirac characteristic bridge now permits reuse of its verified spectral products, actual spectra and signed canonical roots.",
     "Complete the required original low simplicity and periodic/antiperiodic boundary parity identifications, general complex-ratio source Lemma 2.20, original KdV Birkhoff maps and actual H-minus-one approximation flow. All five MAIN article theorems remain unproved."
   ],
@@ -157,5 +157,14 @@
     ],
     "inherited_declarations": 10,
     "newly_authored_or_adapted_this_turn": 31
+  },
+  "canonical_tail_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-canonical-tail-map.json",
+    "all_real_Dirichlet_zeros_analytic_order_one": true,
+    "unique_intrinsic_high_real_gap_zero": true,
+    "complex_high_asymptotic": true,
+    "local_analytic_root_existence": true,
+    "native_source_operator_domain_correction": "The article defines L_dir on H_dir^(-1), with domain H_dir^1, before equation (6). Earlier H1-zero-trace/L2 wording was inaccurate; native matching remains open.",
+    "source2_1_ii_proved": false
   }
 }

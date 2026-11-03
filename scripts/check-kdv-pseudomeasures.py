@@ -470,6 +470,16 @@ modules = [
     'NLS.MKdV.QuasiHillL2LagrangeIdentity',
     'NLS.KdV.MiuraL2DirichletAuxiliary',
     'NLS.KdV.HminusOneDirichletAuxiliary',
+    'NLS.KdV.HminusOneDirichletOrder',
+    'NLS.KdV.HminusOneDirichletBranches',
+    'NLS.KdV.HminusOneDirichletHighGaps',
+    'NLS.KdV.HminusOneDirichletIsolation',
+    'NLS.SequenceSpaces.SquaredLatticeDisplacement',
+    'NLS.KdV.HminusOneDirichletAsymptotics',
+    'NLS.ZakharovShabat.SourceAuxiliarySimpleRoots',
+    'NLS.KdV.HminusOneDirichletSimplicity',
+    'NLS.ComplexAnalysis.AnalyticImplicitScalarExistence',
+    'NLS.KdV.HminusOneDirichletAnalyticBranches',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

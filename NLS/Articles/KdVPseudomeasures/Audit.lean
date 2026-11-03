@@ -436,6 +436,16 @@ import NLS.KdV.HminusOneDirichletEigenstate
 import NLS.MKdV.QuasiHillL2LagrangeIdentity
 import NLS.KdV.MiuraL2DirichletAuxiliary
 import NLS.KdV.HminusOneDirichletAuxiliary
+import NLS.KdV.HminusOneDirichletOrder
+import NLS.KdV.HminusOneDirichletBranches
+import NLS.KdV.HminusOneDirichletHighGaps
+import NLS.KdV.HminusOneDirichletIsolation
+import NLS.SequenceSpaces.SquaredLatticeDisplacement
+import NLS.KdV.HminusOneDirichletAsymptotics
+import NLS.ZakharovShabat.SourceAuxiliarySimpleRoots
+import NLS.KdV.HminusOneDirichletSimplicity
+import NLS.ComplexAnalysis.AnalyticImplicitScalarExistence
+import NLS.KdV.HminusOneDirichletAnalyticBranches
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -3689,3 +3699,30 @@ import NLS.KdV.HminusOneDirichletAuxiliary
 #print axioms NLS.KdV.hillHminusDirichlet_eq_zero_iff_auxiliarySpectrum
 #print axioms NLS.KdV.isRealType_hillMiuraDiagonal
 #print axioms NLS.KdV.hillHminusDirichlet_im_eq_zero_of_real
+#print axioms NLS.KdV.auxiliaryDirichlet_hillMiuraDiagonal_neg
+#print axioms NLS.KdV.analyticOrderAt_hillHminusDirichlet_shifted_miura
+#print axioms NLS.KdV.analyticOrderNatAt_hillHminusDirichlet_shifted_miura
+#print axioms NLS.KdV.hillMiuraDiracDirichlet
+#print axioms NLS.KdV.hillMiuraDirichletEnergy
+#print axioms NLS.KdV.hillMiuraDiracDirichlet_im_eq_zero
+#print axioms NLS.KdV.hillMiuraDiracDirichlet_mem_gap
+#print axioms NLS.KdV.hillHminusDirichlet_miuraDirichletEnergy_eq_zero
+#print axioms NLS.KdV.hillMiuraDirichletDisplacement
+#print axioms NLS.KdV.hillMiuraDirichletDisplacement_apply
+#print axioms NLS.KdV.exists_simple_hillMiuraDirichletEnergy_tail
+#print axioms NLS.KdV.exists_hillMiuraDirichletEnergy_in_high_gap
+#print axioms NLS.KdV.exists_hillMiuraDiracDirichlet_unique_tail
+#print axioms NLS.KdV.exists_hillMiuraDirac_interval_in_disc
+#print axioms NLS.KdV.exists_unique_hillHminusDirichlet_zero_in_high_gap
+#print axioms NLS.KdV.exists_unique_hillHminusDirichlet_zero_in_high_gap_of_real
+#print axioms NLS.norm_index_mul_inverseBracket_le_one
+#print axioms NLS.memlp_inverseBracket_squared_lattice_error
+#print axioms NLS.KdV.memlp_hillMiuraDirichletEnergy_inverseBracket_error
+#print axioms NLS.ZakharovShabat.canonicalAuxiliaryPeriodOneRoots_algebraicMultiplicity_eq_one_of_realType
+#print axioms NLS.ZakharovShabat.analyticOrderAt_auxiliaryPeriodOneCharacteristic_eq_one_of_realType
+#print axioms NLS.KdV.analyticOrderAt_hillHminusDirichlet_eq_one_of_real
+#print axioms NLS.KdV.analyticOrderNatAt_hillHminusDirichlet_eq_one_of_real
+#print axioms NLS.KdV.deriv_hillHminusDirichlet_ne_zero_of_real
+#print axioms NLS.ComplexAnalysis.exists_analytic_implicitScalarRoot
+#print axioms NLS.KdV.exists_local_analytic_hillHminusDirichlet_root
+#print axioms NLS.KdV.exists_local_analytic_hillHminusDirichlet_root_of_real

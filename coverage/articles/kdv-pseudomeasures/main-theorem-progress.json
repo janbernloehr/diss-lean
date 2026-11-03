@@ -442,7 +442,16 @@
     "The physical Lagrange identity for two arbitrary absolutely continuous weak states at complex energies lambda and mu is proved directly: the endpoint Wronskian difference is the integral of (lambda-mu)*y_lambda*y_mu. No derivative or endpoint value of the L2 lift is required. The actual fundamental determinant is exactly ONE, and the normalized Dirichlet eigenfunction has nonzero terminal quasi-derivative at each characteristic zero.",
     "The actual physical L2 diagonal Dirac solution intertwines with the actual rough quasi-Hill solution through the original Miura state map, INCLUDING z=0. The EXACT original auxiliary Dirichlet characteristic equals z*D_Miura(z^2), with the endpoint-domain signs from the verified source auxiliary normalization. No division by z is used in this identity.",
     "For ANY literal shifted Miura lift and nonzero square-root energy, zeros of the full H-minus-one Dirichlet characteristic are equivalent to membership in the ACTUAL auxiliary Dirac operator spectrum, defined by failure of bijectivity of its original pencil. The exact characteristic identity retains the physical constant energy translation.",
-    "For EVERY real original H-minus-one potential, ALL zeros of its full Dirichlet characteristic are REAL. A real shifted L2 Miura lift avoiding zero square-root energy is constructed for the given complex lambda, then actual auxiliary operator reality forces its square root, and hence lambda, real."
+    "For EVERY real original H-minus-one potential, ALL zeros of its full Dirichlet characteristic are REAL. A real shifted L2 Miura lift avoiding zero square-root energy is constructed for the given complex lambda, then actual auxiliary operator reality forces its square root, and hence lambda, real.",
+    "The exact auxiliary Dirichlet characteristic of a diagonal source is odd at EVERY complex L2 lift. At every nonzero frequency, the analytic order of the full H-minus-one scalar Dirichlet characteristic at z^2-c equals the ACTUAL auxiliary Dirac operator algebraic multiplicity. Both extended and natural analytic orders are proved; no simple-root hypothesis is used in this transport.",
+    "Canonical auxiliary Dirichlet branches retain the SAME original signed index, exact scalar energies zeta_n^2-c, actual physical boundary spectrum and the full L2 lattice-displacement sequence. For EVERY complex shifted L2 Miura lift, one cutoff gives actual SIMPLE scalar Dirichlet zeros on both signed tails.",
+    "For a real original H-minus-one potential and literal real shifted Miura lift, every sufficiently high positive scalar Dirichlet branch lies between the SAME intrinsic original periodic Hill endpoints, including collapsed pairs. Its complex norm deviation from the exact physical midpoint is at most one half the original gap norm.",
+    "Auxiliary operator counting isolates every sufficiently distant canonical auxiliary characteristic zero in its original free disc. The entire positive real interval between the corresponding periodic Dirac endpoints stays in that disc. Squaring the positive real root therefore proves EXACTLY ONE scalar Dirichlet zero in every sufficiently high intrinsic original Hill gap, including collapsed gaps.",
+    "The high-gap uniqueness theorem is proved for EVERY real original H-minus-one potential with NO caller-supplied lift: a real shifted L2 Miura lift is constructed inside the proof. The resulting unique-root assertion is stated entirely in the potential, full Dirichlet characteristic and intrinsic original periodic labels.",
+    "A shared coefficient lemma proves that squaring any L2 displacement from a signed complex lattice loses exactly one bracket weight, including a constant energy translation and the central index. Applied to the actual canonical auxiliary branches, their scalar energies have inverse-bracket weighted L2 displacement from n^2*pi^2 at the SAME signed index, for EVERY complex lift.",
+    "A shared original-source theorem transports ALL real ordinary boundary root algebraic multiplicities through the verified source phase. Every actual auxiliary root at real type has algebraic multiplicity one, including its finite central block and collapsed periodic gaps.",
+    "For EVERY real original H-minus-one potential, EVERY zero of its full scalar Dirichlet characteristic has analytic order ONE and NONZERO spectral derivative. A constructed real Miura lift avoids zero square-root energy at the given root; the actual auxiliary multiplicity-one theorem then includes all low scalar energies without exception.",
+    "A shared analytic inverse-function argument CONSTRUCTS a local analytic scalar zero selection from a nonzero partial derivative on a complex Banach parameter space. Consequently every simple full H-minus-one Dirichlet zero, and hence EVERY zero at EVERY real original potential, extends to an actual local analytic Dirichlet-energy branch under arbitrary sufficiently small COMPLEX H-minus-one perturbations."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -747,6 +756,23 @@
     "all_zeros_real_for_real_potential": true,
     "native_scalar_Dirichlet_operator_domain_identified": false,
     "canonical_Dirichlet_labels": false,
+    "source2_1_ii": false
+  },
+  "verified_original_dirichlet_canonical_tail": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-canonical-tail-map.json",
+    "full_complex_actual_auxiliary_multiplicity_transport": true,
+    "same_index_simple_complex_high_branches": true,
+    "inverse_bracket_L2_asymptotic": true,
+    "intrinsic_unique_high_real_gap_zero": true,
+    "high_real_midpoint_half_gap_bound": true,
+    "all_real_Dirichlet_zeros_analytic_order_one": true,
+    "all_real_Dirichlet_spectral_derivatives_nonzero": true,
+    "constructed_local_complex_HminusOne_analytic_root_branches": true,
+    "native_source_operator_base": "H_dir^(-1)",
+    "native_source_operator_domain": "H_dir^1",
+    "native_source_operator_identified": false,
+    "global_scalar_central_labeling": false,
+    "full_complex_general_weight_midpoint_bound": false,
     "source2_1_ii": false
   }
 }
