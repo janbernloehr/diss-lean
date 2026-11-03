@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneAllRealPeriods
 import NLS.KdV.HillHminusOneRealGapContours
 import NLS.KdV.HillHminusOneGlobalRealLabels
 import NLS.KdV.HillHminusOneCubicSign
@@ -65,6 +66,11 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.ComplexAnalysis.TraceRootPrimitive,
+    `NLS.ComplexAnalysis.UpperTracePrimitiveExtension,
+    `NLS.ComplexAnalysis.CoshSquareCoordinate,
+    `NLS.ComplexAnalysis.RealCoshTrace,
+
     `NLS.ComplexAnalysis.RealGapDiscIsolation,
     `NLS.ComplexAnalysis.NearImaginarySquare,
     `NLS.ComplexAnalysis.PhysicalCutCubicGeometry,

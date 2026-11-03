@@ -1,0 +1,44 @@
+{
+  "source_branch": "articles/kdv-estimates",
+  "source_commit": "253ce79061557967e4b8257256308cbe4c8d87ca",
+  "source_files_unchanged": true,
+  "dependency_order": [
+    "NLS.ComplexAnalysis.TraceRootPrimitive",
+    "NLS.ComplexAnalysis.UpperTracePrimitiveExtension",
+    "NLS.ComplexAnalysis.CoshSquareCoordinate",
+    "NLS.ComplexAnalysis.RealCoshTrace"
+  ],
+  "files": {
+    "NLS/ComplexAnalysis/TraceRootPrimitive.lean": "e0ff985d98cdd5e7a638b433eea946856064debbc9d42ea7e4c9cbe2d9b6eefc",
+    "NLS/ComplexAnalysis/UpperTracePrimitiveExtension.lean": "1899e1d60c2c17b7d9411c9badd85939323e3387bdd9118f1e896a2215ba716d",
+    "NLS/ComplexAnalysis/CoshSquareCoordinate.lean": "acbb58293a0ce8e938052be3f82c3e908d75356e289a7f73e050e13fcf3b8567",
+    "NLS/ComplexAnalysis/RealCoshTrace.lean": "c1fdefc714ecde9a5d6c1dc7585ab392a09cd6e985dad89dc6ef5bcf9f3ec89d"
+  },
+  "retained_existing_import_boundary": {
+    "NLS/ComplexAnalysis/AnalyticDiscSquareRoot.lean": {
+      "private_sha256": "6caedff129a0d76dcf71c274c904c32e86949ec6b623a5047d2a86bf5ff7a52b",
+      "shared_sha256": "6caedff129a0d76dcf71c274c904c32e86949ec6b623a5047d2a86bf5ff7a52b",
+      "byte_identical": true
+    },
+    "NLS/ComplexAnalysis/ConvexHolomorphicPrimitive.lean": {
+      "private_sha256": "0afdee724416d77dbb385bd402264967573f9bd17377d57780b5567f641a8c44",
+      "shared_sha256": "0afdee724416d77dbb385bd402264967573f9bd17377d57780b5567f641a8c44",
+      "byte_identical": true
+    },
+    "NLS/ComplexAnalysis/NormalizedLogarithmicPrimitive.lean": {
+      "private_sha256": "db187556da1062a2148909c38f73aeac4c32be8d5e4797e08b5efa8539cc7de4",
+      "shared_sha256": "db187556da1062a2148909c38f73aeac4c32be8d5e4797e08b5efa8539cc7de4",
+      "byte_identical": true
+    },
+    "NLS/ComplexAnalysis/ContinuousLogarithmUnique.lean": {
+      "private_sha256": "56594b28bc4cacd4b1ec6c4d8864816c67a1f6b8438e927cb1f063175fdd5341",
+      "shared_sha256": "56594b28bc4cacd4b1ec6c4d8864816c67a1f6b8438e927cb1f063175fdd5341",
+      "byte_identical": true
+    },
+    "NLS/ComplexAnalysis/EntireEvenSquareDescent.lean": {
+      "private_sha256": "e22eccc87b60618f7793db59cf0888949b690d1677752139a57db38372aac6c6",
+      "shared_sha256": "e22eccc87b60618f7793db59cf0888949b690d1677752139a57db38372aac6c6",
+      "byte_identical": true
+    }
+  }
+}

@@ -32,8 +32,10 @@ and an intrinsic lowest characteristic root. The full labeling is now
 independent of cutoff and radius, continuous
 in H^-1, and normalized by exact indexed trace parity. Canonical gap
 circles with actual zero count two are now constructed at every index.
-The actual primitive on the full real-band domain and the analytic
-central periods remain unproved.
+The actual primitive now glues holomorphically on the entire real-band
+domain, with exact source normalization. The all-index real periods are
+constructed and real; their complex-potential analytic extensions and
+indexed endpoint limits remain unproved.
 
 Physical energy/frequency identification, the -6*Id quadratic coefficient
 and the Fourier-Lebesgue assertions in Theorems 1.2–1.3 also remain open.
@@ -1584,8 +1586,10 @@ characteristic root, its root identity and minimality among all actual
 complex characteristic zeros. Minimality determines its value uniquely.
 Cutoff-independent uniqueness, H^-1 continuity, lowest-root simplicity,
 central trace parity and canonical gap-circle geometry are now proved
-below. The actual primitive on the full real-band domain and the analytic
-central periods remain unproved. This is a labeling of the constructed entire
+below. The actual primitive now glues holomorphically on the entire real-band
+domain, with exact source normalization. The all-index real periods are
+constructed and real; their complex-potential analytic extensions and
+indexed endpoint limits remain unproved. This is a labeling of the constructed entire
 H^-1 characteristic; its singular-operator identification and global
 KdV Birkhoff-action interpretation remain open. Theorem 1.1 and all other
 main theorem flags remain unverified.
@@ -1627,10 +1631,10 @@ gap endpoints with total analytic zero count two. Each fixed circle
 retains count two and boundary nonvanishing on a complex H^-1-open
 neighborhood of the real input. This neighborhood may depend on the gap.
 
-This is a construction of canonical geometric contours and actual root
-counts. Holomorphic gluing of the source primitive across all real bands,
-indexed endpoint boundary values, filled central primitive squares and
-analytic central Arnold/cubic periods remain to be proved. Theorem 1.1
+The actual primitive now glues holomorphically across all these real
+bands, as proved below. Indexed endpoint boundary values, filled central
+primitive squares and analytic complex-potential central Arnold/cubic
+periods remain to be proved. Theorem 1.1
 and all main theorem flags remain unverified; the global Birkhoff-action
 identity and real isospectral invariance are still required for action
 descent and the global positive-ell2 Hamiltonian extension.
@@ -1642,28 +1646,70 @@ count continuity, trace parity and contour proofs are adapted to the
 actual H^-1 characteristic; no additional physical spectral theorem is
 assumed.
 
+## Actual H^-1 band gluing and all-index real contour periods
+
+`HillHminusOneRegularBoundary.lean` extends the actual upper primitive
+and root holomorphically across every regular real energy. One upper
+anchor fixes the root sign and primitive value, retaining the exact
+logarithmic derivative and hyperbolic trace identities. The upper
+boundary functions are literal full half-plane limits and agree with
+these local analytic extensions. No high-index cutoff is required.
+
+`HillHminusOneRealBands.lean` uses the intrinsic endpoint trace parity,
+root-free open bands and the intermediate value theorem to put the
+actual trace strictly between -2 and 2 in every band. The actual upper
+boundary primitive is therefore purely imaginary there.
+`HillHminusOneBandContinuation.lean` applies exact minus-conjugate
+reflection to the regular extension. The same extension matches the
+original upper and lower source sheets. Filling real bands by their
+actual upper boundary values yields a single holomorphic primitive on
+the complete geometric real-band domain, and a holomorphic nonvanishing
+root on the same domain.
+
+The glued functions satisfy R^2=Delta^2-4, 2*cosh(F)=Delta,
+2*sinh(F)=R, exp(F)=(Delta+R)/2 and F'=Delta'/R. Both retain exact
+minus-conjugate reflection. They agree with the original source functions
+at every original source point, including admissible real points. This
+agreement holds for complex H^-1 potentials too, so joint analyticity is
+retained on the original source domain. Joint complex-potential extension
+at the additional band points is not yet proved.
+
+`HillHminusOneAllRealPeriods.lean` defines the literal polynomial moments
+and shifted cubic periods on every positive-index canonical gap circle,
+including central and collapsed gaps. Their integrands are circle
+integrable and their values are real. The level-zero Arnold period has
+the exact integration-by-parts identity
+A_n=-(1/pi)*integral F=(1/pi)*integral lambda*Delta'/R,
+with counterclockwise orientation and no extra factor i. The cubic
+period is (1/pi)*integral (F+i*n*pi)^3. These are actual real-potential
+contour integrals, not assumed coordinate-space factors.
+
+Indexed endpoint boundary values, filled central shifted squares,
+complex-potential analytic extensions of the central periods and matching
+to the common high family remain unproved. Central sign and action
+identities, the global KdV Birkhoff map and real isospectral invariance
+are still required for action descent and the global positive-ell2
+Hamiltonian extension. Theorem 1.1 and the other main theorem flags
+remain unverified.
+
+The four generic trace-root, upper-extension and real-cosh modules are
+reused byte-for-byte from `articles/kdv-estimates` at `253ce79`. Their
+five retained import boundaries are byte-identical and pinned in
+`band-primitive-shared-imports.json`. The regular-boundary, real-band and
+band-gluing proofs adapt the shared L2 arguments to the actual H^-1
+characteristic; no new spectral or Birkhoff theorem is assumed.
+
 ## Remaining essential KdV work
 
-1. Continue the constructed free-normalized primitive from its explicit
-   source-segment domain to the canonical gap complement, handle the
-   central contours and indexed endpoint values, and identify the constructed
-   contour integrals with the physical gap moments
-   R_n=(1/pi)*integral Gamma_n F_n^3, F_n=F+i*n*pi (4.8), using the shared
-   Hill discriminant and normalized primitive. The discriminant, local
-   squared primitive and free-normalized source continuation above are now
-   proved, including actual unordered high energy pairs, their analytic
-   symmetric data, real ordering, global off-real primitive coverage and common
-   high-contour coverage in the continuous potential norm; complete global
-   spectral matching, central endpoint normalization, the full canonical
-   unsquared primitive and rough-operator identification remain. The high
-   indexed endpoint limits, joint squared-primitive matching and bounded
-   analytic squares across entire high gaps are now proved. Endpoint
-   deflation and analytic roots on the local cut domain are also proved;
-   their physical sign on a connected small circle and the deformation
-   of the original high contours are now established for moment estimates.
-   Prove analytic descent to
-   the weighted actions on a common complex neighborhood (Lemma 4.6(ii)).
-2. The **complex H^-1-neighborhood** bounds
+1. Prove indexed endpoint boundary values for the newly glued H^-1
+   primitive, fill the finite central shifted squares, and construct joint
+   analytic extensions of the canonical real contour periods to complex
+   potential neighborhoods. The primitive and root already glue across
+   every open real band with their exact old-source normalization, trace
+   and derivative identities. All positive-index real contour periods are
+   now defined, integrable and real. Match them to the existing common
+   high source family and complete the remaining central estimates.
+2. The **high-index complex H^-1-neighborhood** bounds
    |R_n|=O(gamma_n^4/n^3), gamma_n^2/n<=16*pi*|A_n| and
    |8*n*pi*R_n|<=C*|A_n|^2 are now proved. Identify A_n with the
    global KdV Birkhoff actions I_n and descend the moments analytically
@@ -1714,15 +1760,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `49a9b4a` contains 328 source modules. Every
-baseline source hash remains unchanged. One exact shared module and eight
+The validated baseline at `c27d011` contains 337 source modules. Every
+baseline source hash remains unchanged. Four exact shared modules and four
 authored or adapted modules pass incremental Lean 4.33.1/mathlib v4.33.1
 checks with `warningAsError=true`. The full reproducible script now lists
-337 source modules. The positive-index example passes.
+345 source modules. The positive-index example passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 166 additional shared modules:
-3760 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 170 additional shared modules:
+3858 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
