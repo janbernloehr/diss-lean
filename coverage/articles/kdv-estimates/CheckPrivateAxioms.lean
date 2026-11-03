@@ -1,3 +1,11 @@
+import NLS.FunctionalAnalysis.UnitCurveIntegral
+import NLS.ComplexAnalysis.ScalarStateMass
+import NLS.ZakharovShabat.L2SolutionNonvanishing
+import NLS.KdV.HillL2StateCurve
+import NLS.KdV.HillL2GreenIdentity
+import NLS.KdV.HillDirichletReality
+import NLS.KdV.HillStateMonodromy
+import NLS.KdV.HillDirichletBands
 import NLS.SequenceSpaces.SpectralWeightProduct
 import NLS.SequenceSpaces.SpectralWeightCeilingCutoff
 import NLS.SequenceSpaces.QuadraticCutoffRounding
@@ -631,7 +639,14 @@ run_cmd do
     ``NLS.SpectralWeight.product_apply,
     ``NLS.SpectralWeight.sobolev_product_dominates,
     ``NLS.SpectralWeight.ceiling_cutoff_weight_le,
-    ``NLS.SequenceSpaces.ceiling_weighted_cutoff_le_quadratic]
+    ``NLS.SequenceSpaces.ceiling_weighted_cutoff_le_quadratic,
+    ``NLS.FunctionalAnalysis.unitCurveIntegral,
+    ``NLS.FunctionalAnalysis.unitCurveIntegral_apply,
+    ``NLS.ComplexAnalysis.scalarStateMass,
+    ``NLS.ComplexAnalysis.continuous_scalarStateMass,
+    ``NLS.ComplexAnalysis.scalarStateMass_eq_integral,
+    ``NLS.ComplexAnalysis.scalarStateMass_pos_of_first_derivative,
+    ``NLS.ZakharovShabat.l2SolutionCurve_ne_zero]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
