@@ -698,7 +698,7 @@
     }
   ],
   "remaining_obligations": [
-    "The actual native Dirichlet operator is closed, densely defined with compact resolvent; its ENTIRE complex unit-period spectrum equals normalized characteristic zeros. ACTUAL native algebraic root spaces are now FINITE DIMENSIONAL and stabilize for EVERY complex original potential. Actual full-domain finite chains have an exact native residual-jet criterion and exact inhomogeneous physical rows via original shifted Miura charts. REMAINING for COMPLEX algebraic order matching: identify these actual chain spaces with SCALAR characteristic Taylor kernels using the normalized L2 quasi-Hill IVP jets. Global COMPLEX central labels, full complex source 2.1(ii) midpoint estimates/local boundedness, low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved; all five main theorems remain open.",
+    "The actual native Dirichlet operator is closed, densely defined with compact resolvent; its ENTIRE complex unit-period spectrum equals normalized characteristic zeros. ACTUAL complex root spaces are finite dimensional and stabilize. The actual normalized rough IVP now has verified full uniform-curve Taylor states, AC/H1 coefficient regularity, affine forced recurrences and EXACT ORIGINAL scalar characteristic terminal jets. EVERY scalar characteristic Taylor-kernel vector reconstructs a UNIQUE actual full native chain. REMAINING for COMPLEX algebraic order matching: reconstruct every ARBITRARY native chain from its scalar initial quasi-derivative amplitude vector, prove the two-sided LINEAR kernel/chain equivalence, and compare eventual dimensions. Global COMPLEX central labels, full complex source 2.1(ii) midpoint estimates/local boundedness, low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved; all five main theorems remain open.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "workspace": {
@@ -838,6 +838,24 @@
     "inhomogeneous_full_weak_equation_and_physical_rows": true,
     "all_complex_source_shifted_Miura_forced_rows": true,
     "real_original_labels_count_actual_operator_algebraic_multiplicities": true,
+    "full_complex_scalar_characteristic_jet_kernel_equivalence": false,
+    "full_complex_native_algebraic_order_agreement": false,
+    "global_complex_central_labels": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "native_Dirichlet_ivp_jets_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-ivp-jets-map.json",
+    "actual_rough_scalar_Volterra_equation": true,
+    "literal_affine_energy_dependence": true,
+    "actual_forced_curve_absolute_continuity_and_H1": true,
+    "actual_forced_IVP_uniqueness": true,
+    "actual_uniform_curve_amplitude_Taylor_states": true,
+    "linear_injective_amplitude_to_state_jet_map": true,
+    "exact_original_scalar_characteristic_terminal_jet_map": true,
+    "scalar_Taylor_kernel_iff_actual_terminal_position_jets_zero": true,
+    "every_scalar_kernel_vector_reconstructs_unique_actual_native_chain": true,
+    "reverse_native_chain_to_scalar_kernel_reconstruction": false,
     "full_complex_scalar_characteristic_jet_kernel_equivalence": false,
     "full_complex_native_algebraic_order_agreement": false,
     "global_complex_central_labels": false,

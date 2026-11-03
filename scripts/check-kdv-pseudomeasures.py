@@ -535,6 +535,15 @@ modules = [
     'NLS.KdV.SingularDirichletForcedCharts',
     'NLS.KdV.SingularDirichletChains',
     'NLS.Articles.KdVPseudomeasures.OriginalDirichletAlgebraicMultiplicity',
+    'NLS.FunctionalAnalysis.CurveIntegralEquation',
+    'NLS.MKdV.QuasiHillL2Volterra',
+    'NLS.ComplexAnalysis.AffineVolterraJets',
+    'NLS.MKdV.QuasiHillL2ForcedCurve',
+    'NLS.MKdV.QuasiHillL2AmplitudeJets',
+    'NLS.MKdV.QuasiHillL2BoundaryJets',
+    'NLS.FunctionalAnalysis.PencilChainEquations',
+    'NLS.KdV.SingularDirichletForcedStateRealization',
+    'NLS.KdV.HminusOneDirichletStateJets',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Finite actual complex native Dirichlet root spaces and exact inhomogeneous chain jets",
+  "phase": "Actual rough scalar IVP boundary jets and unique scalar-kernel-to-native-chain reconstruction",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -509,13 +509,22 @@
     "NLS/KdV/SingularDirichletForcedCharts.lean",
     "NLS/KdV/SingularDirichletChains.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalDirichletAlgebraicMultiplicity.lean",
+    "NLS/FunctionalAnalysis/CurveIntegralEquation.lean",
+    "NLS/MKdV/QuasiHillL2Volterra.lean",
+    "NLS/ComplexAnalysis/AffineVolterraJets.lean",
+    "NLS/MKdV/QuasiHillL2ForcedCurve.lean",
+    "NLS/MKdV/QuasiHillL2AmplitudeJets.lean",
+    "NLS/MKdV/QuasiHillL2BoundaryJets.lean",
+    "NLS/FunctionalAnalysis/PencilChainEquations.lean",
+    "NLS/KdV/SingularDirichletForcedStateRealization.lean",
+    "NLS/KdV/HminusOneDirichletStateJets.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 2980,
-  "definitions": 626,
+  "proved_theorems": 3030,
+  "definitions": 636,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 3606,
+    "declarations": 3666,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -979,10 +988,22 @@
     "All finite native coefficient-chain spaces are constructed with the ENTIRE zero-trace H1 domain at every coefficient. Evaluation of the final included vector is a linear equivalence with the ACTUAL partial-operator root-space level. Every such chain space is finite dimensional at every complex potential, and its eventual dimension is EXACTLY the actual full native algebraic multiplicity.",
     "Appending a native chain coefficient is exactly the actual inhomogeneous equation with its preceding native coefficient. For EVERY complex source, this is also exactly the forced physical row criterion in the chosen actual Miura chart. The zero-length endpoint convention retains the eigenvector equation at the first coefficient.",
     "Every native chain polynomial is analytic in the full H1 norm and solves the actual affine spectral pencil up to EXACTLY its final Nth-power included domain vector. Every retained native residual derivative below N vanishes. Conversely, vanishing of ALL those retained derivatives for an arbitrary native polynomial implies its coefficients form the ACTUAL full-domain chain. This is an exact native residual jet criterion; scalar characteristic jets are not substituted for the residual.",
-    "The article REAL source adapters now express characteristic orders, multiplicity one of every full original label and the entire label-count identity using the ACTUAL finite operator algebraic multiplicity defined for all complex potentials. They retain the full original distribution and all central labels. Numerical COMPLEX algebraic-order matching is not inferred from the real identities."
+    "The article REAL source adapters now express characteristic orders, multiplicity one of every full original label and the entire label-count identity using the ACTUAL finite operator algebraic multiplicity defined for all complex potentials. They retain the full original distribution and all central labels. Numerical COMPLEX algebraic-order matching is not inferred from the real identities.",
+    "A reusable full-interval theorem converts an ACTUAL absolutely continuous Banach-valued curve and integrable weak derivative to its entire initial-value integral equation. Its converse supplies BOTH absolute continuity and the actual weak derivative from the full integral equation. Both physical endpoints are retained; absolute continuity is not inferred from the a.e. ODE alone.",
+    "The ACTUAL scalar rough quasi-Hill Volterra map is constructed from the original L2 scalar synthesis and bounded scalar Volterra pairing in the FULL uniform curve norm. Its physical coefficient integral is verified exactly. Energy dependence is LITERALLY affine. Its exact slope has zero first row and the negative preceding scalar position in the second row.",
+    "The independent normalized rough scalar IVP satisfies this ENTIRE scalar Volterra equation, with its actual scalar initial position and quasi-derivative unchanged. This is verified from the original rough AC state, rather than inferred from a characteristic zero or smooth approximation ansatz.",
+    "A reusable Banach analytic-coefficient recurrence is proved for every actual affine bounded-operator Volterra equation. Factorial-normalized coefficients are the existing full Banach finite jets. The fixed operator acts on the current coefficient and the affine energy slope acts on EXACTLY the preceding coefficient. No interchange of parameter derivatives with physical time derivatives is assumed.",
+    "The actual forced rough physical scalar state is defined with the exact preceding-position forcing. A full Volterra recurrence gives such an AC state. Both physical component rows are proved, both state components have FULL classical interval H1 regularity, and a preceding state plus the actual initial position/quasi-derivative determines the forced state uniquely.",
+    "An arbitrary finite scalar amplitude polynomial multiplies the ACTUAL normalized rough Dirichlet column, analytically in the FULL uniform state-curve norm. Its exact Volterra equation and all retained normalized Taylor-coefficient recurrences are proved. The first coefficient has zero forcing; every later coefficient is forced by its actual preceding coefficient. BOTH components of EVERY extracted coefficient have full interval H1 regularity.",
+    "The amplitude-to-state finite-jet map is proved COMPLEX LINEAR and INJECTIVE for every length, at every complex L2 profile and energy including zero. Its actual initial state coefficients are EXACTLY (0,a_k). The ENTIRE terminal scalar position jet is EXACTLY scalar formal Taylor multiplication by the independently normalized actual Dirichlet characteristic, not a supplied surrogate.",
+    "For every ACTUAL convergent Taylor series of the centered scalar Dirichlet characteristic, its formal finite Taylor kernel is EQUIVALENT to vanishing of ALL terminal position coefficients of the actual state jets. Such actual series exist by the already verified entire characteristic analyticity; no new spectral or reconstruction hypothesis is assumed.",
+    "A reusable coefficientwise chain criterion identifies every recursive full-domain chain with the first eigenvector equation and EVERY consecutive associated-vector equation, including the empty chain. Actual forced physical states with BOTH native scalar positions represented are transported to the ENTIRE native inhomogeneous equation, retaining every zero-trace H1 test.",
+    "The actual shifted Miura chart transports the normalized IVP state jets to EVERY original COMPLEX unit-period H-minus-one source and EVERY complex energy. The entire terminal state jet uses the ORIGINAL scalar characteristic after canceling the constant energy shift BEFORE Taylor expansion. Initial coefficients and full interval H1 regularity are retained. No global analyticity of the chosen chart as a function of q is asserted.",
+    "EVERY vector in an actual original scalar characteristic Taylor kernel has a UNIQUE native H1 representative for EACH coefficient, with the actual scalar positions agreeing at EVERY point of the full closed interval. Both zero endpoint traces follow from the actual initial jet and the actual terminal scalar kernel constraint.",
+    "EVERY scalar Taylor-kernel vector reconstructs to an ACTUAL full native Dirichlet chain, with all its original H1 domain coefficients and the actual preceding native forcing. The ENTIRE reconstructed native chain is UNIQUE when these original scalar positions are retained. This is the verified scalar-kernel-to-native-chain direction, not yet a two-sided linear equivalence."
   ],
-  "source_correspondence": "The actual native Dirichlet operator remains closed, densely defined, with nonempty compact resolvent and full complex spectrum equal to normalized characteristic zeros. Its ACTUAL complex algebraic root spaces are now proved FINITE DIMENSIONAL and stabilize at finite chain length. Actual finite H1 coefficient chains are equivalent to root levels, and native residual jets characterize them exactly. Full inhomogeneous weak equations correspond in both directions to actual physical quasi-Hill rows with forcing and endpoint jump retained, for every complex original unit-period source via actual shifted Miura charts. Real original labels count actual finite operator algebraic multiplicities. Numerical COMPLEX algebraic-order matching still requires the scalar characteristic Taylor-kernel correspondence. Global complex labels, full complex weighted midpoints, original Birkhoff maps and actual KdV approximation flow remain open. All five main theorems remain unproved; Appendix B remains complete.",
-  "build_isolation": "Six new native algebraic-multiplicity, inhomogeneous residual/physical-row/chart, finite-chain jet and original-source adapter modules compiled in dependency order. Exact audit of 504 selected modules and 3606 public theorem/definition declarations passed without warnings or suggestions. All 498 baseline Lean sources are byte-identical to private commit e5e338f. Canonical sources, build outputs and shared Git metadata remain read-only; commits use separate private Git metadata.",
+  "source_correspondence": "The actual original complex rough Dirichlet IVP now has a verified scalar Volterra equation, actual affine energy Taylor recurrence, full AC/H1 physical coefficient states, and EXACT original characteristic terminal Taylor multiplication. Every scalar characteristic Taylor-kernel vector reconstructs a UNIQUE full native Dirichlet chain, retaining all original scalar positions on the entire closed interval. The reverse map from arbitrary native chains and the two-sided linear equivalence remain open; no numerical COMPLEX algebraic-order matching is claimed. Native full complex spectrum, closedness, dense domain, compact resolvent and finite stabilized complex root spaces remain proved. Real original labels count actual algebraic multiplicities. Global complex labels, full complex weighted midpoints, original Birkhoff maps and actual KdV approximation flow remain open. All five main theorems remain unproved; Appendix B remains complete.",
+  "build_isolation": "Nine new generic AC integral/affine-jet/coefficientwise-chain and actual rough scalar Volterra/forced-state/amplitude-boundary/native-chain reconstruction modules compiled in dependency order. Exact audit of 513 selected modules and 3666 public theorem/definition declarations passed without warnings or suggestions. All 504 baseline Lean sources are byte-identical to private commit 5fbb054. Canonical sources, build outputs and shared Git metadata remain read-only; commits use separate private Git metadata.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -1384,7 +1405,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "d5120249b9132543ddbb645029d1a28ba201cb11d6469896eb71a9ee71e04a4a",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "d9d4866a69e8a881a98cc668228776e46265ad28fbfc8b0b51ad452a7debcc5f",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -1491,7 +1512,16 @@
     "NLS/KdV/SingularDirichletForcedRows.lean": "a5b435037d8ebfe3e5f2a7bbdfebaaf0fdfbd71b6500583fcba9dbc527105e2c",
     "NLS/KdV/SingularDirichletForcedCharts.lean": "5de2f8302edacee7276d59919f3911bad9c4986cd843d649eadc7bdcc7e3c549",
     "NLS/KdV/SingularDirichletChains.lean": "444acce29d03dc6c4cf0b4d218a100e25ceae0a4228f15e03b9fd5212bb754f4",
-    "NLS/Articles/KdVPseudomeasures/OriginalDirichletAlgebraicMultiplicity.lean": "2f8ab45fdc0508b2706cef4cccd7f25e83d60ea87c2500c50203c1e02f51fdfb"
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletAlgebraicMultiplicity.lean": "2f8ab45fdc0508b2706cef4cccd7f25e83d60ea87c2500c50203c1e02f51fdfb",
+    "NLS/FunctionalAnalysis/CurveIntegralEquation.lean": "26ae98699d9b1a9bf5f11c26bc369bccf8eb98c09a841e6c321c3adf1757c6c0",
+    "NLS/MKdV/QuasiHillL2Volterra.lean": "2e56bc3e1edde7c689eaaadd78f966b719fb07117c5fd23c770da5f80ad49cfc",
+    "NLS/ComplexAnalysis/AffineVolterraJets.lean": "513dcbf4decc7a9842d59b63de7248477335b28a5854f7621491f154522dc712",
+    "NLS/MKdV/QuasiHillL2ForcedCurve.lean": "47c023e444100dd735d59a4e575055aef8015a44a8c3bd88f4999eaf568dde89",
+    "NLS/MKdV/QuasiHillL2AmplitudeJets.lean": "673a40882ed8133e75f71b91bb15074f721dcfd18dc690763b727212348aa6d7",
+    "NLS/MKdV/QuasiHillL2BoundaryJets.lean": "552c420377fe1136aa66806e0cf5d17faf305a6ee8823ee2de8188aba28278e2",
+    "NLS/FunctionalAnalysis/PencilChainEquations.lean": "56651d5f5c0045e616a1bf7b951f9b645fa1f30a46f0e0abee902a2f198ddb89",
+    "NLS/KdV/SingularDirichletForcedStateRealization.lean": "708469995bde8a5ed6f4b9cebde28c02b9cd54e4caab940c4ddf157bd489e82f",
+    "NLS/KdV/HminusOneDirichletStateJets.lean": "def223315c2624b0a026bf416ca32590848017d1ac48b8ac1d39eb460c4b62bc"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1499,16 +1529,16 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 3560,
-    "newly_checked_declarations_this_continuation": 46,
-    "newly_authored_or_adapted_declarations_this_continuation": 46,
-    "new_theorems": 40,
-    "new_definitions": 6,
-    "authored_or_adapted_theorems": 40,
-    "authored_or_adapted_definitions": 6,
+    "previous_checked_declarations": 3606,
+    "newly_checked_declarations_this_continuation": 60,
+    "newly_authored_or_adapted_declarations_this_continuation": 60,
+    "new_theorems": 50,
+    "new_definitions": 10,
+    "authored_or_adapted_theorems": 50,
+    "authored_or_adapted_definitions": 10,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 3606,
-    "reuse": "Verified generic compact-resolvent root transport and generalized eigenspaces, native full resolvents and mass forms, full H1 dual annihilator, rough first-order interval regularity, Fourier integration by parts, actual shifted Miura charts and generic Banach finite jets."
+    "total_checked_declarations": 3666,
+    "reuse": "Verified actual L2 scalar Volterra primitives, actual rough IVP AC/analyticity/uniqueness, generic normalized Banach finite jets and scalar Taylor multiplication, full classical native interval-domain exhaustion, actual native forced physical-row equivalence and actual shifted Miura charts."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -1537,7 +1567,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-native-dirichlet-complex-chains.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-native-dirichlet-ivp-jets.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -1747,13 +1777,14 @@
     "Final exact audit of 484 selected modules and 3454 public theorem/definition declarations passed; baseline 471 Lean sources are byte-identical to private commit c1f179d.",
     "One new Appendix B inverse-continuity module and five existing Appendix B core modules compiled privately; exact audit of 485 modules and 3464 declarations passed without warnings or suggestions. All 484 baseline Lean sources are byte-identical to private commit 1e46291. Separate Dirichlet work remains excluded.",
     "Thirteen new native free-isomorphism, dense-domain, Fredholm, full-resolvent/spectrum and original-source modules compiled in dependency order. Exact audit of 498 selected modules and 3560 public theorem/definition declarations passed without warnings or suggestions. All 485 baseline Lean sources are byte-identical to private commit c1c5e4d.",
-    "Six new native algebraic-multiplicity, inhomogeneous residual/physical-row/chart, finite-chain jet and original-source adapter modules compiled in dependency order. Exact audit of 504 selected modules and 3606 public theorem/definition declarations passed without warnings or suggestions. All 498 baseline Lean sources are byte-identical to private commit e5e338f."
+    "Six new native algebraic-multiplicity, inhomogeneous residual/physical-row/chart, finite-chain jet and original-source adapter modules compiled in dependency order. Exact audit of 504 selected modules and 3606 public theorem/definition declarations passed without warnings or suggestions. All 498 baseline Lean sources are byte-identical to private commit e5e338f.",
+    "Nine new generic AC integral/affine-jet/coefficientwise-chain and actual rough scalar Volterra/forced-state/amplitude-boundary/native-chain reconstruction modules compiled in dependency order. Exact audit of 513 selected modules and 3666 public theorem/definition declarations passed without warnings or suggestions. All 504 baseline Lean sources are byte-identical to private commit 5fbb054."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-complex-chains-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-ivp-jets-map.json",
   "baseline_validated_snapshot": {
-    "commit": "e5e338f80b2ebf94b1f644cf1329c2252d9844eb",
-    "modules": 498,
-    "audited_declarations": 3560,
+    "commit": "5fbb054254e358d53b7dda3dac3849168201a963",
+    "modules": 504,
+    "audited_declarations": 3606,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   }

@@ -501,6 +501,15 @@ import NLS.KdV.SingularDirichletForcedRows
 import NLS.KdV.SingularDirichletForcedCharts
 import NLS.KdV.SingularDirichletChains
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletAlgebraicMultiplicity
+import NLS.FunctionalAnalysis.CurveIntegralEquation
+import NLS.MKdV.QuasiHillL2Volterra
+import NLS.ComplexAnalysis.AffineVolterraJets
+import NLS.MKdV.QuasiHillL2ForcedCurve
+import NLS.MKdV.QuasiHillL2AmplitudeJets
+import NLS.MKdV.QuasiHillL2BoundaryJets
+import NLS.FunctionalAnalysis.PencilChainEquations
+import NLS.KdV.SingularDirichletForcedStateRealization
+import NLS.KdV.HminusOneDirichletStateJets
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4110,3 +4119,63 @@ import NLS.Articles.KdVPseudomeasures.OriginalDirichletAlgebraicMultiplicity
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletAlgebraicMultiplicity_eq_analyticOrder
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_actual_algebraic_multiplicity_one
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_actual_global_algebraic_multiplicity
+#print axioms NLS.FunctionalAnalysis.curve_eq_initial_add_integral_of_ac
+#print axioms NLS.FunctionalAnalysis.curve_integral_regularity
+#print axioms NLS.MKdV.quasiHillL2ProfileVolterra
+#print axioms NLS.MKdV.quasiHillL2FreeVolterra
+#print axioms NLS.MKdV.quasiHillL2EnergyVolterra
+#print axioms NLS.MKdV.quasiHillL2Volterra
+#print axioms NLS.MKdV.quasiHillL2Volterra_add_energy
+#print axioms NLS.MKdV.quasiHillL2EnergyVolterra_components
+#print axioms NLS.MKdV.quasiHillL2EnergyVolterra_apply_integral
+#print axioms NLS.MKdV.quasiHillL2Volterra_components
+#print axioms NLS.MKdV.intervalIntegrable_quasiHillL2Coefficient
+#print axioms NLS.MKdV.quasiHillL2Volterra_apply_integral
+#print axioms NLS.MKdV.quasiHillL2SolutionCurve_eq_volterra
+#print axioms NLS.ComplexAnalysis.analyticTaylorCoefficient
+#print axioms NLS.ComplexAnalysis.analyticTaylorCoefficient_zero
+#print axioms NLS.ComplexAnalysis.analyticFiniteJet_eq_coefficient
+#print axioms NLS.ComplexAnalysis.analyticTaylorCoefficient_compCLM
+#print axioms NLS.ComplexAnalysis.analyticTaylorCoefficient_add
+#print axioms NLS.ComplexAnalysis.analyticTaylorCoefficient_const_smul
+#print axioms NLS.ComplexAnalysis.analyticTaylorCoefficient_t_smul_succ
+#print axioms NLS.ComplexAnalysis.analyticTaylorCoefficient_chainPolynomial
+#print axioms NLS.ComplexAnalysis.affineVolterra_coefficient_zero
+#print axioms NLS.ComplexAnalysis.affineVolterra_coefficient_succ
+#print axioms NLS.MKdV.IsQuasiHillL2ForcedSolution
+#print axioms NLS.MKdV.isQuasiHillL2ForcedSolution_of_volterra
+#print axioms NLS.MKdV.IsQuasiHillL2ForcedSolution.position_row
+#print axioms NLS.MKdV.IsQuasiHillL2ForcedSolution.quasiDerivative_row
+#print axioms NLS.MKdV.IsQuasiHillL2ForcedSolution.intervalH1
+#print axioms NLS.MKdV.IsQuasiHillL2ForcedSolution.eq_of_initial_eq
+#print axioms NLS.MKdV.quasiHillAmplitudeInitial
+#print axioms NLS.MKdV.quasiHillAmplitudeInitial_apply
+#print axioms NLS.MKdV.quasiHillDirichletAmplitudeCurve
+#print axioms NLS.MKdV.analyticAt_quasiHillDirichletAmplitudeCurve
+#print axioms NLS.MKdV.quasiHillDirichletAmplitudeCurve_eq_volterra
+#print axioms NLS.MKdV.quasiHillAmplitudeInitial_coefficient
+#print axioms NLS.MKdV.quasiHillDirichletAmplitudeCoefficient_zero
+#print axioms NLS.MKdV.quasiHillDirichletAmplitudeCoefficient_succ
+#print axioms NLS.MKdV.isQuasiHillL2ForcedSolution_amplitudeCoefficient_zero
+#print axioms NLS.MKdV.isQuasiHillL2ForcedSolution_amplitudeCoefficient_succ
+#print axioms NLS.MKdV.quasiHillDirichletAmplitudeJet_intervalH1
+#print axioms NLS.MKdV.quasiHillDirichletAmplitudeJet
+#print axioms NLS.MKdV.quasiHillDirichletAmplitudeCurve_initial
+#print axioms NLS.MKdV.quasiHillDirichletAmplitudeCurve_terminal
+#print axioms NLS.MKdV.quasiHillDirichletAmplitudeJet_initial
+#print axioms NLS.MKdV.quasiHillDirichletAmplitudeJet_injective
+#print axioms NLS.MKdV.quasiHillDirichletAmplitudeJet_terminal
+#print axioms NLS.MKdV.mem_scalarTaylorKernel_iff_quasiHillAmplitudeJet_terminal_zero
+#print axioms NLS.FunctionalAnalysis.mem_pencilChainSpace_iff_equations
+#print axioms NLS.KdV.singularDirichletMiura_forced_of_state
+#print axioms NLS.KdV.singularDirichlet_source_forced_of_state
+#print axioms NLS.KdV.hillHminusDirichletStateJet
+#print axioms NLS.KdV.hillHminusDirichletStateJet_initial
+#print axioms NLS.KdV.hillHminusDirichletStateJet_intervalH1
+#print axioms NLS.KdV.hillHminusDirichletStateJet_terminal
+#print axioms NLS.KdV.mem_scalarTaylorKernel_iff_hillHminusDirichletStateJet_terminal_zero
+#print axioms NLS.KdV.isQuasiHillL2ForcedSolution_hillHminusStateJet_zero
+#print axioms NLS.KdV.isQuasiHillL2ForcedSolution_hillHminusStateJet_succ
+#print axioms NLS.KdV.existsUnique_native_of_hillHminusDirichletStateJet
+#print axioms NLS.KdV.exists_native_chain_of_scalarTaylorKernel
+#print axioms NLS.KdV.existsUnique_native_chain_of_scalarTaylorKernel

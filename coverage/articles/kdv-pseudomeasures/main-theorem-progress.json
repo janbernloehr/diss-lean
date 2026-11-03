@@ -178,7 +178,7 @@
     ]
   },
   "essential_open_obligations": [
-    "The actual native Dirichlet operator is closed, densely defined with compact resolvent; its ENTIRE complex unit-period spectrum equals normalized characteristic zeros. ACTUAL native algebraic root spaces are now FINITE DIMENSIONAL and stabilize for EVERY complex original potential. Actual full-domain finite chains have an exact native residual-jet criterion and exact inhomogeneous physical rows via original shifted Miura charts. REMAINING for COMPLEX algebraic order matching: identify these actual chain spaces with SCALAR characteristic Taylor kernels using the normalized L2 quasi-Hill IVP jets. Global COMPLEX central labels, full complex source 2.1(ii) midpoint estimates/local boundedness, low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved; all five main theorems remain open.",
+    "The actual native Dirichlet operator is closed, densely defined with compact resolvent; its ENTIRE complex unit-period spectrum equals normalized characteristic zeros. ACTUAL complex root spaces are finite dimensional and stabilize. The actual normalized rough IVP now has verified full uniform-curve Taylor states, AC/H1 coefficient regularity, affine forced recurrences and EXACT ORIGINAL scalar characteristic terminal jets. EVERY scalar characteristic Taylor-kernel vector reconstructs a UNIQUE actual full native chain. REMAINING for COMPLEX algebraic order matching: reconstruct every ARBITRARY native chain from its scalar initial quasi-derivative amplitude vector, prove the two-sided LINEAR kernel/chain equivalence, and compare eventual dimensions. Global COMPLEX central labels, full complex source 2.1(ii) midpoint estimates/local boundedness, low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved; all five main theorems remain open.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
@@ -513,7 +513,19 @@
     "All finite native coefficient-chain spaces are constructed with the ENTIRE zero-trace H1 domain at every coefficient. Evaluation of the final included vector is a linear equivalence with the ACTUAL partial-operator root-space level. Every such chain space is finite dimensional at every complex potential, and its eventual dimension is EXACTLY the actual full native algebraic multiplicity.",
     "Appending a native chain coefficient is exactly the actual inhomogeneous equation with its preceding native coefficient. For EVERY complex source, this is also exactly the forced physical row criterion in the chosen actual Miura chart. The zero-length endpoint convention retains the eigenvector equation at the first coefficient.",
     "Every native chain polynomial is analytic in the full H1 norm and solves the actual affine spectral pencil up to EXACTLY its final Nth-power included domain vector. Every retained native residual derivative below N vanishes. Conversely, vanishing of ALL those retained derivatives for an arbitrary native polynomial implies its coefficients form the ACTUAL full-domain chain. This is an exact native residual jet criterion; scalar characteristic jets are not substituted for the residual.",
-    "The article REAL source adapters now express characteristic orders, multiplicity one of every full original label and the entire label-count identity using the ACTUAL finite operator algebraic multiplicity defined for all complex potentials. They retain the full original distribution and all central labels. Numerical COMPLEX algebraic-order matching is not inferred from the real identities."
+    "The article REAL source adapters now express characteristic orders, multiplicity one of every full original label and the entire label-count identity using the ACTUAL finite operator algebraic multiplicity defined for all complex potentials. They retain the full original distribution and all central labels. Numerical COMPLEX algebraic-order matching is not inferred from the real identities.",
+    "A reusable full-interval theorem converts an ACTUAL absolutely continuous Banach-valued curve and integrable weak derivative to its entire initial-value integral equation. Its converse supplies BOTH absolute continuity and the actual weak derivative from the full integral equation. Both physical endpoints are retained; absolute continuity is not inferred from the a.e. ODE alone.",
+    "The ACTUAL scalar rough quasi-Hill Volterra map is constructed from the original L2 scalar synthesis and bounded scalar Volterra pairing in the FULL uniform curve norm. Its physical coefficient integral is verified exactly. Energy dependence is LITERALLY affine. Its exact slope has zero first row and the negative preceding scalar position in the second row.",
+    "The independent normalized rough scalar IVP satisfies this ENTIRE scalar Volterra equation, with its actual scalar initial position and quasi-derivative unchanged. This is verified from the original rough AC state, rather than inferred from a characteristic zero or smooth approximation ansatz.",
+    "A reusable Banach analytic-coefficient recurrence is proved for every actual affine bounded-operator Volterra equation. Factorial-normalized coefficients are the existing full Banach finite jets. The fixed operator acts on the current coefficient and the affine energy slope acts on EXACTLY the preceding coefficient. No interchange of parameter derivatives with physical time derivatives is assumed.",
+    "The actual forced rough physical scalar state is defined with the exact preceding-position forcing. A full Volterra recurrence gives such an AC state. Both physical component rows are proved, both state components have FULL classical interval H1 regularity, and a preceding state plus the actual initial position/quasi-derivative determines the forced state uniquely.",
+    "An arbitrary finite scalar amplitude polynomial multiplies the ACTUAL normalized rough Dirichlet column, analytically in the FULL uniform state-curve norm. Its exact Volterra equation and all retained normalized Taylor-coefficient recurrences are proved. The first coefficient has zero forcing; every later coefficient is forced by its actual preceding coefficient. BOTH components of EVERY extracted coefficient have full interval H1 regularity.",
+    "The amplitude-to-state finite-jet map is proved COMPLEX LINEAR and INJECTIVE for every length, at every complex L2 profile and energy including zero. Its actual initial state coefficients are EXACTLY (0,a_k). The ENTIRE terminal scalar position jet is EXACTLY scalar formal Taylor multiplication by the independently normalized actual Dirichlet characteristic, not a supplied surrogate.",
+    "For every ACTUAL convergent Taylor series of the centered scalar Dirichlet characteristic, its formal finite Taylor kernel is EQUIVALENT to vanishing of ALL terminal position coefficients of the actual state jets. Such actual series exist by the already verified entire characteristic analyticity; no new spectral or reconstruction hypothesis is assumed.",
+    "A reusable coefficientwise chain criterion identifies every recursive full-domain chain with the first eigenvector equation and EVERY consecutive associated-vector equation, including the empty chain. Actual forced physical states with BOTH native scalar positions represented are transported to the ENTIRE native inhomogeneous equation, retaining every zero-trace H1 test.",
+    "The actual shifted Miura chart transports the normalized IVP state jets to EVERY original COMPLEX unit-period H-minus-one source and EVERY complex energy. The entire terminal state jet uses the ORIGINAL scalar characteristic after canceling the constant energy shift BEFORE Taylor expansion. Initial coefficients and full interval H1 regularity are retained. No global analyticity of the chosen chart as a function of q is asserted.",
+    "EVERY vector in an actual original scalar characteristic Taylor kernel has a UNIQUE native H1 representative for EACH coefficient, with the actual scalar positions agreeing at EVERY point of the full closed interval. Both zero endpoint traces follow from the actual initial jet and the actual terminal scalar kernel constraint.",
+    "EVERY scalar Taylor-kernel vector reconstructs to an ACTUAL full native Dirichlet chain, with all its original H1 domain coefficients and the actual preceding native forcing. The ENTIRE reconstructed native chain is UNIQUE when these original scalar positions are retained. This is the verified scalar-kernel-to-native-chain direction, not yet a two-sided linear equivalence."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -950,6 +962,27 @@
     "inhomogeneous_full_weak_equation_and_physical_rows": true,
     "all_complex_source_shifted_Miura_forced_rows": true,
     "real_original_labels_count_actual_operator_algebraic_multiplicities": true,
+    "full_complex_scalar_characteristic_jet_kernel_equivalence": false,
+    "full_complex_native_algebraic_order_agreement": false,
+    "global_complex_central_labels": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false,
+    "scalar_kernel_to_unique_native_chain_reconstruction": true,
+    "actual_original_characteristic_boundary_jets": true,
+    "ivp_jets_followup": "coverage/articles/kdv-pseudomeasures/native-dirichlet-ivp-jets-map.json"
+  },
+  "verified_native_dirichlet_ivp_jets": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-ivp-jets-map.json",
+    "actual_rough_scalar_Volterra_equation": true,
+    "literal_affine_energy_dependence": true,
+    "actual_forced_curve_absolute_continuity_and_H1": true,
+    "actual_forced_IVP_uniqueness": true,
+    "actual_uniform_curve_amplitude_Taylor_states": true,
+    "linear_injective_amplitude_to_state_jet_map": true,
+    "exact_original_scalar_characteristic_terminal_jet_map": true,
+    "scalar_Taylor_kernel_iff_actual_terminal_position_jets_zero": true,
+    "every_scalar_kernel_vector_reconstructs_unique_actual_native_chain": true,
+    "reverse_native_chain_to_scalar_kernel_reconstruction": false,
     "full_complex_scalar_characteristic_jet_kernel_equivalence": false,
     "full_complex_native_algebraic_order_agreement": false,
     "global_complex_central_labels": false,

@@ -235,5 +235,23 @@
     "global_complex_central_labels": false,
     "source_Theorem2_1_ii_proved": false,
     "main_theorems_verified": false
+  },
+  "actual_ivp_boundary_jets_and_unique_native_reconstruction_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-ivp-jets-map.json",
+    "actual_rough_scalar_Volterra_equation": true,
+    "literal_affine_energy_dependence": true,
+    "actual_forced_curve_absolute_continuity_and_H1": true,
+    "actual_forced_IVP_uniqueness": true,
+    "actual_uniform_curve_amplitude_Taylor_states": true,
+    "linear_injective_amplitude_to_state_jet_map": true,
+    "exact_original_scalar_characteristic_terminal_jet_map": true,
+    "scalar_Taylor_kernel_iff_actual_terminal_position_jets_zero": true,
+    "every_scalar_kernel_vector_reconstructs_unique_actual_native_chain": true,
+    "reverse_native_chain_to_scalar_kernel_reconstruction": false,
+    "full_complex_scalar_characteristic_jet_kernel_equivalence": false,
+    "full_complex_native_algebraic_order_agreement": false,
+    "global_complex_central_labels": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
   }
 }
