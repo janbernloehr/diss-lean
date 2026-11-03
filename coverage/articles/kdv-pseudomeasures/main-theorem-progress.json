@@ -178,7 +178,7 @@
     ]
   },
   "essential_open_obligations": [
-    "The ACTUAL native Dirichlet operator now has its ENTIRE zero-trace H1 domain DENSE in the FULL H-minus-one dual base, is CLOSED and has NONEMPTY COMPACT RESOLVENT. For EVERY complex unit-period original H-minus-one potential and EVERY energy, its ENTIRE spectrum is exactly the normalized characteristic zero set, with only finitely many values in bounded regions. Actual resolvents are jointly analytic in the original H-minus-one norm and energy. Full original REAL labels enumerate the ENTIRE native spectrum and count actual real algebraic root dimensions. REMAINING: COMPLEX algebraic order matching, global COMPLEX central labels, full complex source 2.1(ii) midpoint estimates/local boundedness, low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved; all five main theorems remain open.",
+    "The actual native Dirichlet operator is closed, densely defined with compact resolvent; its ENTIRE complex unit-period spectrum equals normalized characteristic zeros. ACTUAL native algebraic root spaces are now FINITE DIMENSIONAL and stabilize for EVERY complex original potential. Actual full-domain finite chains have an exact native residual-jet criterion and exact inhomogeneous physical rows via original shifted Miura charts. REMAINING for COMPLEX algebraic order matching: identify these actual chain spaces with SCALAR characteristic Taylor kernels using the normalized L2 quasi-Hill IVP jets. Global COMPLEX central labels, full complex source 2.1(ii) midpoint estimates/local boundedness, low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved; all five main theorems remain open.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
@@ -501,7 +501,19 @@
     "The actual inverse maps EVERY native H-minus-one datum into the FULL zero-trace H1 domain, with both inverse identities proved. Its full-base realization is bounded and COMPACT, always lies in the actual partial-operator domain, solves the actual partial operator, and recovers every actual domain vector. An exact closed resolvent equation identifies the actual partial-operator graph. Hence the actual native operator is CLOSED as well as densely defined.",
     "The normalized pencil, its H1-valued inverse and the actual compact full-base resolvent are jointly COMPLEX ANALYTIC in the full original H-minus-one potential norm and energy at every valid pair. The joint native resolvent locus is open; each full native spectrum is closed. Local submodule norm instances are explicitly anchored for nested operator spaces; no norm or topology is changed.",
     "The ENTIRE native spectrum equals the actual point spectrum, hence EXACTLY the independently normalized characteristic zero set for every complex unit-period source. Each genuine spectral point transports to the nonzero eigenvalue 1/(lambda-a) of the ACTUAL compact base resolvent. Compact spectral theory proves FINITELY MANY spectral values in EVERY bounded region. For real original potentials the ENTIRE native spectrum is real.",
-    "On the article ENTIRE original real mean-zero physically period-one H-minus-one distribution domain, the actual native operator is closed, densely defined and has compact resolvent. The FULL original Dirichlet labels, including the entire central block, now enumerate its ENTIRE spectrum, not merely its point eigenvalues. Previous full real algebraic root-dimension/analytic-order/label-count identities therefore apply to this entire spectrum. The entire original smooth-test distribution and original normalizations are retained."
+    "On the article ENTIRE original real mean-zero physically period-one H-minus-one distribution domain, the actual native operator is closed, densely defined and has compact resolvent. The FULL original Dirichlet labels, including the entire central block, now enumerate its ENTIRE spectrum, not merely its point eigenvalues. Previous full real algebraic root-dimension/analytic-order/label-count identities therefore apply to this entire spectrum. The entire original smooth-test distribution and original normalizations are retained.",
+    "At any actual native resolvent energy, the ENTIRE native H1-to-full-dual pencil is realized as a Banach isomorphism. Its inverse and base resolvent are identified EXACTLY with the previously constructed actual native inverses. Both the native positive pencil and the A-lambda*J normalization have the same root spaces; the nonzero sign is accounted for explicitly.",
+    "EVERY finite native root-chain level and the FULL algebraic root space are identified exactly with the corresponding nonzero generalized eigenspace of an ACTUAL compact base resolvent. For EVERY original complex ambient H-minus-one potential and EVERY complex energy, including zero, the full actual native algebraic root space is FINITE DIMENSIONAL and is attained at a finite chain length. The entire increasing sequence stabilizes.",
+    "Actual finite native algebraic multiplicity is now defined from that verified full root space for all original complex potentials. It is positive exactly on the FULL native spectrum and zero exactly on the FULL resolvent. For every original complex unit-period source it is positive exactly at the independently normalized characteristic zeros. This proves its support, not equality of its numerical value with analytic zero order.",
+    "The full unit-period forced residual is constructed BEFORE restricting tests, with forcing given by the ACTUAL preceding native H1 vector through its unchanged mass form. The full restriction equals the entire actual inhomogeneous native equation. Every signed original Fourier mode reads exactly the original residual minus the forcing coefficient.",
+    "An actual native inhomogeneous equation is equivalent to its FULL residual being one scalar multiple of the endpoint trace. For every complex L2 Miura profile, it implies the complete weak first-order coefficient equation with BOTH the forcing term and the central boundary defect. Conversely, that coefficient equation, at every mode with one defect scalar, implies the ENTIRE original zero-trace H1 weak equation.",
+    "Every native inhomogeneous Miura equation with preceding native H1 vector recovers a continuous, absolutely continuous, FULL interval H1 quasi-derivative. Its second physical row includes exactly the preceding scalar position. Its actual endpoint jump equals the computed central forced residual. No periodicity of the quasi-derivative or matching endpoint values is imposed.",
+    "Conversely, the actual forced physical first-order rows, with their original interval regularity, imply the FULL native inhomogeneous equation. Fourier integration by parts retains the endpoint jump. Thus these physical rows characterize every associated-vector equation in both directions, not only eigenvectors.",
+    "Simultaneous constant translation of original potential and energy cancels in every native inhomogeneous equation WITHOUT changing its forcing vector. The verified actual shifted Miura chart therefore gives the exact physical forced-row criterion for EVERY original COMPLEX unit-period H-minus-one potential and EVERY complex energy, including zero and the whole central region.",
+    "All finite native coefficient-chain spaces are constructed with the ENTIRE zero-trace H1 domain at every coefficient. Evaluation of the final included vector is a linear equivalence with the ACTUAL partial-operator root-space level. Every such chain space is finite dimensional at every complex potential, and its eventual dimension is EXACTLY the actual full native algebraic multiplicity.",
+    "Appending a native chain coefficient is exactly the actual inhomogeneous equation with its preceding native coefficient. For EVERY complex source, this is also exactly the forced physical row criterion in the chosen actual Miura chart. The zero-length endpoint convention retains the eigenvector equation at the first coefficient.",
+    "Every native chain polynomial is analytic in the full H1 norm and solves the actual affine spectral pencil up to EXACTLY its final Nth-power included domain vector. Every retained native residual derivative below N vanishes. Conversely, vanishing of ALL those retained derivatives for an arbitrary native polynomial implies its coefficients form the ACTUAL full-domain chain. This is an exact native residual jet criterion; scalar characteristic jets are not substituted for the residual.",
+    "The article REAL source adapters now express characteristic orders, multiplicity one of every full original label and the entire label-count identity using the ACTUAL finite operator algebraic multiplicity defined for all complex potentials. They retain the full original distribution and all central labels. Numerical COMPLEX algebraic-order matching is not inferred from the real identities."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -849,7 +861,8 @@
     "native_point_spectrum_identified": true,
     "real_native_algebraic_root_dimensions_identified": true,
     "native_entire_spectrum_identified": true,
-    "native_operator_closed_dense_compact_resolvent": true
+    "native_operator_closed_dense_compact_resolvent": true,
+    "actual_finite_operator_algebraic_multiplicity_count": true
   },
   "verified_native_dirichlet_domain": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-domain-map.json",
@@ -919,6 +932,25 @@
     "locally_finite_full_spectrum": true,
     "original_full_real_labels_enumerate_entire_native_spectrum": true,
     "real_native_algebraic_order_agreement": true,
+    "full_complex_native_algebraic_order_agreement": false,
+    "global_complex_central_labels": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false,
+    "complex_root_spaces_finite_dimensional_and_stabilize": true,
+    "complex_chains_followup": "coverage/articles/kdv-pseudomeasures/native-dirichlet-complex-chains-map.json"
+  },
+  "verified_native_dirichlet_complex_chains": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-complex-chains-map.json",
+    "all_complex_native_root_spaces_finite_dimensional": true,
+    "all_complex_native_root_spaces_stabilize": true,
+    "actual_algebraic_multiplicity_defined_from_full_root_space": true,
+    "actual_resolvent_generalized_eigenspaces_identified": true,
+    "all_complex_native_finite_chain_spaces": true,
+    "exact_native_residual_jet_criterion": true,
+    "inhomogeneous_full_weak_equation_and_physical_rows": true,
+    "all_complex_source_shifted_Miura_forced_rows": true,
+    "real_original_labels_count_actual_operator_algebraic_multiplicities": true,
+    "full_complex_scalar_characteristic_jet_kernel_equivalence": false,
     "full_complex_native_algebraic_order_agreement": false,
     "global_complex_central_labels": false,
     "source_Theorem2_1_ii_proved": false,

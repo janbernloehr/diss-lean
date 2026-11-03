@@ -495,6 +495,12 @@ import NLS.KdV.SingularDirichletResolvent
 import NLS.KdV.SingularDirichletResolventFamily
 import NLS.KdV.SingularDirichletSpectrum
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletSpectrum
+import NLS.KdV.SingularDirichletAlgebraicMultiplicity
+import NLS.KdV.SingularDirichletForcedResidual
+import NLS.KdV.SingularDirichletForcedRows
+import NLS.KdV.SingularDirichletForcedCharts
+import NLS.KdV.SingularDirichletChains
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletAlgebraicMultiplicity
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4058,3 +4064,49 @@ import NLS.Articles.KdVPseudomeasures.OriginalDirichletSpectrum
 #print axioms NLS.Articles.KdVPseudomeasures.mem_originalDirichletSpectrum_iff_mem_labels
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletSpectrum_eq_range_labels
 #print axioms NLS.Articles.KdVPseudomeasures.finite_originalDirichletSpectrum_norm_le
+#print axioms NLS.KdV.singularDirichletPencilEquiv
+#print axioms NLS.KdV.singularDirichletPencilEquiv_apply
+#print axioms NLS.KdV.singularDirichletPencilEquiv_symm
+#print axioms NLS.KdV.pencilResolvent_singularDirichletPencilEquiv
+#print axioms NLS.KdV.singularDirichletPencil_eq_resolvent_shift
+#print axioms NLS.KdV.singularDirichletRootSpace_eq_negative_pencil
+#print axioms NLS.KdV.singularDirichletRootSpaceTop_eq_negative_pencil
+#print axioms NLS.KdV.singularDirichletRootSpace_eq_resolvent
+#print axioms NLS.KdV.singularDirichletRootSpaceTop_eq_resolvent
+#print axioms NLS.KdV.singularDirichletRootSpaceTop_eq_bot_of_mem_resolvent
+#print axioms NLS.KdV.finiteDimensional_singularDirichletRootSpaceTop
+#print axioms NLS.KdV.exists_singularDirichletRootSpace_eq_top
+#print axioms NLS.KdV.singularDirichletAlgebraicMultiplicity
+#print axioms NLS.KdV.singularDirichletAlgebraicMultiplicity_eq_resolvent
+#print axioms NLS.KdV.singularDirichletRootSpace_stabilizes
+#print axioms NLS.KdV.singularDirichletAlgebraicMultiplicity_pos_iff
+#print axioms NLS.KdV.singularDirichletAlgebraicMultiplicity_pos_iff_characteristic
+#print axioms NLS.KdV.singularDirichletAlgebraicMultiplicity_eq_zero_iff_resolvent
+#print axioms NLS.KdV.unitHillMassDual_restriction
+#print axioms NLS.KdV.singularDirichletForcedResidual
+#print axioms NLS.KdV.singularDirichletForcedResidual_restriction
+#print axioms NLS.KdV.singularDirichletForcedResidual_mode
+#print axioms NLS.KdV.singularDirichlet_forced_iff_boundary_defect
+#print axioms NLS.KdV.unitDirichletMiuraForcedDefect
+#print axioms NLS.KdV.unitDirichletMiura_forced_weak_equation
+#print axioms NLS.KdV.singularDirichletMiura_forced_of_weak_equation
+#print axioms NLS.KdV.exists_intervalH1_quasiDerivative_of_native_forced
+#print axioms NLS.KdV.singularDirichletMiura_forced_of_physical_rows
+#print axioms NLS.KdV.singularDirichletMiura_forced_iff_physical_rows
+#print axioms NLS.KdV.singularDirichlet_source_forced_add_constant_iff
+#print axioms NLS.KdV.singularDirichlet_forced_iff_shiftedMiura
+#print axioms NLS.KdV.singularDirichlet_source_forced_iff_physical_rows
+#print axioms NLS.KdV.singularDirichletChainSpace
+#print axioms NLS.KdV.singularDirichletChainRootEquiv
+#print axioms NLS.KdV.finrank_singularDirichletChainSpace
+#print axioms NLS.KdV.finiteDimensional_singularDirichletChainSpace
+#print axioms NLS.KdV.eventually_finrank_singularDirichletChainSpace
+#print axioms NLS.KdV.mem_singularDirichletChainSpace_succ
+#print axioms NLS.KdV.mem_singularDirichletChainSpace_succ_iff_physical_rows
+#print axioms NLS.KdV.analyticAt_singularDirichletChainPolynomial
+#print axioms NLS.KdV.singularDirichletChainPolynomial_residual
+#print axioms NLS.KdV.singularDirichletChainPolynomial_residual_derivatives_zero
+#print axioms NLS.KdV.mem_singularDirichletChainSpace_iff_residual_derivatives_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletAlgebraicMultiplicity_eq_analyticOrder
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_actual_algebraic_multiplicity_one
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_actual_global_algebraic_multiplicity

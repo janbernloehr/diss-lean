@@ -529,6 +529,12 @@ modules = [
     'NLS.KdV.SingularDirichletResolventFamily',
     'NLS.KdV.SingularDirichletSpectrum',
     'NLS.Articles.KdVPseudomeasures.OriginalDirichletSpectrum',
+    'NLS.KdV.SingularDirichletAlgebraicMultiplicity',
+    'NLS.KdV.SingularDirichletForcedResidual',
+    'NLS.KdV.SingularDirichletForcedRows',
+    'NLS.KdV.SingularDirichletForcedCharts',
+    'NLS.KdV.SingularDirichletChains',
+    'NLS.Articles.KdVPseudomeasures.OriginalDirichletAlgebraicMultiplicity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

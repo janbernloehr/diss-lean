@@ -218,5 +218,22 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "native_complex_finite_root_spaces_and_forced_chains_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-complex-chains-map.json",
+    "all_complex_native_root_spaces_finite_dimensional": true,
+    "all_complex_native_root_spaces_stabilize": true,
+    "actual_algebraic_multiplicity_defined_from_full_root_space": true,
+    "actual_resolvent_generalized_eigenspaces_identified": true,
+    "all_complex_native_finite_chain_spaces": true,
+    "exact_native_residual_jet_criterion": true,
+    "inhomogeneous_full_weak_equation_and_physical_rows": true,
+    "all_complex_source_shifted_Miura_forced_rows": true,
+    "real_original_labels_count_actual_operator_algebraic_multiplicities": true,
+    "full_complex_scalar_characteristic_jet_kernel_equivalence": false,
+    "full_complex_native_algebraic_order_agreement": false,
+    "global_complex_central_labels": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
 }
