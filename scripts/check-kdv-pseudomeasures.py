@@ -692,6 +692,14 @@ modules = [
     'NLS.KdV.HminusOneDirichletCompactCircles',
     'NLS.Articles.KdVPseudomeasures.EndpointDirichletProjectionConvergence',
     'NLS.Articles.KdVPseudomeasures.PeriodicDirichletOverlap',
+    'NLS.FunctionalAnalysis.SignedPeriodicIntegral',
+    'NLS.KdV.HillH1PhysicalForms',
+    'NLS.Fourier.UnitDirichletSignedTests',
+    'NLS.KdV.HillDirichletSignedForms',
+    'NLS.KdV.HillDirichletSignedRestriction',
+    'NLS.FunctionalAnalysis.TwoDimensionalUnitCoordinates',
+    'NLS.KdV.SingularHillSpectralCoordinates',
+    'NLS.Articles.KdVPseudomeasures.PeriodicDirichletIdentity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

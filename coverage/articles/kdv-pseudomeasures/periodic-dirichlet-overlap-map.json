@@ -60,8 +60,8 @@
     "main_theorems_verified": false
   },
   "essential_remaining": [
-    "Prove ACTUAL native Hill-to-Dirichlet weak operator restriction compatibility using SAME-PARITY signed test extensions on the ENTIRE original native Dirichlet test domain; the naive unit-period singularDirichletRestriction cancels antiperiodic residuals and is NOT the physical restriction. Prove the ACTUAL spectral-basis coefficient decomposition with unit energy. Then combine the PROVED native combination residual, with beta on BOTH eta and gamma terms, and the NOW PROVED actual overlap(32) to obtain the corrected FULL projected identity(31) and complete source2.15.",
-    "Complete full COMPLEX weighted midpoint2.1(ii), precise quantitative Dirichlet C.4(ii) rate where needed, remaining low periodic parity/interlacing and complex ratio2.20 where used, original Birkhoff maps and actual KdV approximation-flow constructions. ALL FIVE MAIN theorems1.1,1.3,1.4,5.1,5.9 remain UNPROVED; goal ACTIVE."
+    "Use the NOW PROVED corrected FULL source2.15 identity(31), actual overlap(32), unit spectral coordinate bound, actual eta constant16 bound and original Dirichlet projection convergence to prove the full COMPLEX weighted midpoint2.1(ii), including original weight/exponent hypotheses and local boundedness. The physical interval norm of both normalized same-parity basis vectors must be retained exactly; do not replace it by a supplied norm bound or discard the original weighted source quantifiers.",
+    "Complete quantitative Dirichlet C.4(ii) rate where needed, remaining low periodic parity/interlacing and complex ratio2.20 where used, original Birkhoff maps and actual KdV approximation-flow constructions. ALL FIVE MAIN theorems1.1,1.3,1.4,5.1,5.9 remain UNPROVED; goal ACTIVE."
   ],
   "source_correspondence": {
     "potential": "ENTIRE original complex FourierLebesgueSpace(2,-r,infinity),0<=r<1/2, with physical period ONE. No reality or zero-mean premise is added.",
@@ -117,5 +117,28 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "full_corrected_source_Lemma2_15_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-dirichlet-identity-map.json",
+    "full_same_parity_native_Hill_Dirichlet_operator_compatibility": true,
+    "entire_original_Dirichlet_H1_test_domain": true,
+    "antiperiodic_case_proved": true,
+    "entire_original_H1_product_and_singular_potential_dual_action_preserved": true,
+    "exact_original_free_weak_derivative_form_and_normalization": true,
+    "actual_native_interval_L2_restriction_and_full_dual_residual": true,
+    "actual_full_projected_interval_L2_residual": true,
+    "actual_spectral_basis_H1_coordinates_and_exact_unit_energy": true,
+    "source_identity31_corrected_complete": true,
+    "printed_identity31_as_written_proved": false,
+    "beta_required_on_both_eta_and_gamma_terms": true,
+    "source_overlap32_proved": true,
+    "source_Lemma2_15_corrected_complete": true,
+    "original_endpoint_norm_ball_uniformity_above_any_prior_cutoff": true,
+    "any_normalized_actual_Dirichlet_eigenfunction": true,
+    "original_f_phi_stronger_entire_distributions_retained": true,
+    "source_Theorem2_1_ii_proved": false,
+    "quantitative_Dirichlet_C4ii_rate_proved": false,
+    "main_theorems_verified": false
+  },
+  "validation_scope": "Original validation object records the earlier milestone. full_corrected_source_Lemma2_15_followup links the later4293-declaration audited FULL corrected source31/2.15 milestone."
 }

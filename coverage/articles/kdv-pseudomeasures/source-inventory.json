@@ -698,7 +698,7 @@
     }
   ],
   "remaining_obligations": [
-    "NOW PROVED: actual source overlap(32) with EXACT1/2<=norm(nu)<=3/2 for EVERY unit zero-boundary periodic spectral vector and ANY normalized ACTUAL Dirichlet eigenfunction; actual such G/g exist with identical stronger entire distribution and BOTH physical norms ONE. Actual Dirichlet convergence(33) in ALL THREE physical operator norms, and literal source-circle isolation/simplicity, are now UNIFORM on EACH original endpoint norm ball by compactness of its original H-minus-one image. One cutoff precedes q,n,G,g,v and can exceed ANY prior cutoff. NEXT: actual SAME-PARITY full native weak operator restriction compatibility, spectral-basis unit-energy decomposition and corrected FULL identity(31) with beta on BOTH residual terms, completing full2.15; then full COMPLEX weighted midpoint2.1(ii), quantitative Dirichlet C.4(ii), remaining low periodic parity/interlacing, complex ratio2.20 where used and original Birkhoff/KdV constructions. Appendix B and full2.13/2.14 remain COMPLETE. ALL FIVE MAIN THEOREMS UNPROVED; goal ACTIVE.",
+    "NOW PROVED: FULL corrected sourceLemma2_15_corrected with ACTUAL physical projected identity(31), original overlap(32), unit-energy native H1 coordinates and norm(beta)<=1 in the actual canonical-label orthonormal spectral basis. The FULL same-parity native Hill-to-Dirichlet operator restriction is proved on EVERY original native Dirichlet H1 test, including ANTIPERIODIC vectors. The physical original H1 product and singular potential dual action, free derivative weak form, entire native dual residual, SAME actual contours and faithful ordinary interval L2 projection are retained. Source(31) MUST be corrected to beta*eta*Pi(f|I)-beta*gamma*Pi(phi|I); printed(31) omits the second beta, while its proof has both. ONE original endpoint norm-ball cutoff above ANY prior cutoff precedes q,n,basis,G,g and ANY actual normalized Dirichlet eigenfunction. NEXT: full COMPLEX WEIGHTED midpoint2.1(ii), exact interval norm preservation for both spectral basis vectors and local boundedness, then quantitative Dirichlet C.4(ii) where needed, remaining low periodic parity/interlacing, complex ratio2.20 where used and original Birkhoff/KdV constructions. AppendixB and full2.13/2.14 remain COMPLETE. ALL FIVE MAIN THEOREMS UNPROVED; goal ACTIVE.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "workspace": {
@@ -1336,6 +1336,28 @@
     "source_identity31_complete": false,
     "source_Lemma2_15_complete": false,
     "native_Hill_Dirichlet_operator_restriction_compatibility_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "quantitative_Dirichlet_C4ii_rate_proved": false,
+    "main_theorems_verified": false
+  },
+  "full_corrected_source_Lemma2_15_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-dirichlet-identity-map.json",
+    "full_same_parity_native_Hill_Dirichlet_operator_compatibility": true,
+    "entire_original_Dirichlet_H1_test_domain": true,
+    "antiperiodic_case_proved": true,
+    "entire_original_H1_product_and_singular_potential_dual_action_preserved": true,
+    "exact_original_free_weak_derivative_form_and_normalization": true,
+    "actual_native_interval_L2_restriction_and_full_dual_residual": true,
+    "actual_full_projected_interval_L2_residual": true,
+    "actual_spectral_basis_H1_coordinates_and_exact_unit_energy": true,
+    "source_identity31_corrected_complete": true,
+    "printed_identity31_as_written_proved": false,
+    "beta_required_on_both_eta_and_gamma_terms": true,
+    "source_overlap32_proved": true,
+    "source_Lemma2_15_corrected_complete": true,
+    "original_endpoint_norm_ball_uniformity_above_any_prior_cutoff": true,
+    "any_normalized_actual_Dirichlet_eigenfunction": true,
+    "original_f_phi_stronger_entire_distributions_retained": true,
     "source_Theorem2_1_ii_proved": false,
     "quantitative_Dirichlet_C4ii_rate_proved": false,
     "main_theorems_verified": false

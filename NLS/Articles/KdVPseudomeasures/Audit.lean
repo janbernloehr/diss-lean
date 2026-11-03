@@ -658,6 +658,14 @@ import NLS.Fourier.PeriodicEndpointCompactInclusion
 import NLS.KdV.HminusOneDirichletCompactCircles
 import NLS.Articles.KdVPseudomeasures.EndpointDirichletProjectionConvergence
 import NLS.Articles.KdVPseudomeasures.PeriodicDirichletOverlap
+import NLS.FunctionalAnalysis.SignedPeriodicIntegral
+import NLS.KdV.HillH1PhysicalForms
+import NLS.Fourier.UnitDirichletSignedTests
+import NLS.KdV.HillDirichletSignedForms
+import NLS.KdV.HillDirichletSignedRestriction
+import NLS.FunctionalAnalysis.TwoDimensionalUnitCoordinates
+import NLS.KdV.SingularHillSpectralCoordinates
+import NLS.Articles.KdVPseudomeasures.PeriodicDirichletIdentity
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4924,3 +4932,33 @@ import NLS.Articles.KdVPseudomeasures.PeriodicDirichletOverlap
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicDirichlet_projection_error
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicDirichlet_overlap
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_source_boundaryVector_with_Dirichlet_overlap
+#print axioms NLS.FunctionalAnalysis.ae_deriv_eq_of_eqOn_Icc
+#print axioms NLS.FunctionalAnalysis.deriv_translate_one_of_multiplier
+#print axioms NLS.FunctionalAnalysis.half_integral_mul_of_common_sign
+#print axioms NLS.KdV.singularHillContinuousDomainInclusion_eq_Wiener
+#print axioms NLS.KdV.singularHillContinuousDomainInclusion_injective
+#print axioms NLS.KdV.singularHillContinuousDomainInclusion_product
+#print axioms NLS.KdV.singularHillDomainInclusion_continuous_pairing
+#print axioms NLS.KdV.singularHillLaplacian_continuous_pairing
+#print axioms NLS.Fourier.unitDirichletOriginalH1_representative
+#print axioms NLS.Fourier.unitDirichletRepresentative_signed_endpoint
+#print axioms NLS.Fourier.unitDirichletSignedH1
+#print axioms NLS.Fourier.unitDirichletSignedH1_representative
+#print axioms NLS.Fourier.unitDirichletSignedH1_on_unit
+#print axioms NLS.Fourier.unitDirichletSignedH1_translate_one
+#print axioms NLS.KdV.hillH1_product_signed_test_eq
+#print axioms NLS.KdV.hillH1_mass_signed_test_integral
+#print axioms NLS.KdV.hillH1_laplacian_signed_integral
+#print axioms NLS.KdV.hillH1_laplacian_signed_test_eq
+#print axioms NLS.KdV.singularDirichletOperator_signed_test
+#print axioms NLS.KdV.hillH1IntervalL2
+#print axioms NLS.KdV.hillH1IntervalL2_representative
+#print axioms NLS.KdV.hillH1IntervalL2_pairing
+#print axioms NLS.KdV.hillH1_mass_signed_test_restriction
+#print axioms NLS.KdV.hillH1IntervalL2_eq_dirichlet
+#print axioms NLS.KdV.singularDirichletDomainInclusion_signed_test
+#print axioms NLS.KdV.singularDirichlet_residual_of_signed_periodic
+#print axioms NLS.KdV.singularDirichlet_projected_residual_of_signed_periodic
+#print axioms NLS.FunctionalAnalysis.exists_unit_coordinates_fin_two
+#print axioms NLS.KdV.exists_singularHill_unit_spectral_coordinates
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_15_corrected
