@@ -365,7 +365,7 @@
         "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
         "NLS.KdV.hillRealGapIntegral_le_chi_bound"
       ],
-      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. Every intrinsic closed gap now contains exactly one actual Dirichlet zero, with continuous strictly ordered canonical labels and continuous logarithmic norming data. Local analytic norming extensions, exact global Dirichlet census/product as needed, normalized Abelian differentials and angles, and the coordinate construction remain to be completed.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. The canonical Dirichlet energy and logarithmic multiplier now have local complex-analytic extensions agreeing with the actual selected real data, including at collapsed gaps. Their potential derivatives and the actual mass-normalized squared-eigenfunction Dirichlet gradient are proved. The classical squared-eigenfunction pairing vanishes; extension to rough potentials, actual Gardner brackets, normalized Abelian differentials/angles and the coordinate construction remain to be completed.",
       "checked_hill_uniform_critical_action_tail": [
         "NLS.SequenceSpaces.nonneg_series_cauchy_schwarz",
         "NLS.SequenceSpaces.square_sum_le_of_weight_lower_bound",
@@ -500,6 +500,28 @@
         "NLS.KdV.hillDirichletLogMultiplier_zero_potential",
         "NLS.KdV.hillDirichletLogMultiplier_eq_zero_iff_endpoint",
         "NLS.KdV.hillDirichletLogMultiplier_sinh_sq"
+      ],
+      "checked_dirichlet_analytic_gradients": [
+        "NLS.KdV.eventually_hillDirichletEnergy_eq_branch_family",
+        "NLS.KdV.exists_hillDirichletEnergy_analytic_extension",
+        "NLS.KdV.hillDirichletMultiplier_ofReal",
+        "NLS.KdV.exists_hillDirichlet_norming_analytic_extension",
+        "NLS.KdV.hillDirichlet_branch_fderiv_apply",
+        "NLS.KdV.hillDirichlet_log_branch_fderiv_apply",
+        "NLS.KdV.hillFirstOrderDirection",
+        "NLS.KdV.hillFirstOrderDirection_apply",
+        "NLS.KdV.hasFDerivAt_hillFirstOrderPotential",
+        "NLS.KdV.hillPhysicalDirection",
+        "NLS.KdV.hasFDerivAt_hillPhysicalPotential",
+        "NLS.KdV.hillL2DirichletDirectionKernel",
+        "NLS.KdV.fderiv_hillL2FrequencyDirichlet_potential",
+        "NLS.KdV.fderiv_hillL2DirichletCharacteristic_potential",
+        "NLS.KdV.hillL2DirichletDirectionKernel_normalization",
+        "NLS.KdV.hillDirichlet_branch_fderiv_kernel_mass",
+        "NLS.KdV.hillPhysicalDirection_upper_zero_ae",
+        "NLS.KdV.hillDirichlet_kernelPairing_eq_integral",
+        "NLS.KdV.hillDirichlet_branch_fderiv_integral",
+        "NLS.KdV.classicalHill_dirichlet_squared_pairing_zero"
       ]
     },
     {
@@ -928,7 +950,7 @@
         "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. Every intrinsic closed gap now contains exactly one actual Dirichlet zero, with continuous strictly ordered canonical labels and continuous logarithmic norming data. Local analytic norming extensions, exact global Dirichlet census/product as needed, normalized Abelian differentials and angles, and the coordinate construction remain to be completed.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. The canonical Dirichlet energy and logarithmic multiplier now have local complex-analytic extensions agreeing with the actual selected real data, including at collapsed gaps. Their potential derivatives and the actual mass-normalized squared-eigenfunction Dirichlet gradient are proved. The classical squared-eigenfunction pairing vanishes; extension to rough potentials, actual Gardner brackets, normalized Abelian differentials/angles and the coordinate construction remain to be completed.",
       "status": "not_verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -1399,6 +1421,28 @@
         "NLS.KdV.hillDirichletLogMultiplier_zero_potential",
         "NLS.KdV.hillDirichletLogMultiplier_eq_zero_iff_endpoint",
         "NLS.KdV.hillDirichletLogMultiplier_sinh_sq"
+      ],
+      "checked_dirichlet_analytic_gradients": [
+        "NLS.KdV.eventually_hillDirichletEnergy_eq_branch_family",
+        "NLS.KdV.exists_hillDirichletEnergy_analytic_extension",
+        "NLS.KdV.hillDirichletMultiplier_ofReal",
+        "NLS.KdV.exists_hillDirichlet_norming_analytic_extension",
+        "NLS.KdV.hillDirichlet_branch_fderiv_apply",
+        "NLS.KdV.hillDirichlet_log_branch_fderiv_apply",
+        "NLS.KdV.hillFirstOrderDirection",
+        "NLS.KdV.hillFirstOrderDirection_apply",
+        "NLS.KdV.hasFDerivAt_hillFirstOrderPotential",
+        "NLS.KdV.hillPhysicalDirection",
+        "NLS.KdV.hasFDerivAt_hillPhysicalPotential",
+        "NLS.KdV.hillL2DirichletDirectionKernel",
+        "NLS.KdV.fderiv_hillL2FrequencyDirichlet_potential",
+        "NLS.KdV.fderiv_hillL2DirichletCharacteristic_potential",
+        "NLS.KdV.hillL2DirichletDirectionKernel_normalization",
+        "NLS.KdV.hillDirichlet_branch_fderiv_kernel_mass",
+        "NLS.KdV.hillPhysicalDirection_upper_zero_ae",
+        "NLS.KdV.hillDirichlet_kernelPairing_eq_integral",
+        "NLS.KdV.hillDirichlet_branch_fderiv_integral",
+        "NLS.KdV.classicalHill_dirichlet_squared_pairing_zero"
       ]
     }
   ],
@@ -2002,7 +2046,7 @@
     }
   ],
   "next_shared_milestones": [
-    "Extend the actual selected Dirichlet energies and logarithmic multipliers locally analytically in complex L2 potential, including at collapsed gaps. Continue the spectral-curve divisor, actual normalized Abelian differentials/angles and the physical coordinate/action identity. Establish the full Dirichlet census and canonical product where required.",
+    "Prove uniform-curve joint continuity of the actual scalar state and real-energy square-root selection, pass the classical squared-eigenfunction pairing to rough real L2 potentials, and identify the actual Gardner cotangents and canonical brackets. Continue normalized Abelian differentials/angles and the physical KdV coordinate/action construction.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Prove explicit norm-dependent action-gap bounds with the source cutoff/weight evaluation, then Hamiltonian/higher-action trace identities and the tame action estimates for Theorem 2. The potential-dependent eventual bound n*I_n<=gamma_n^2, weighted action summability and the high Proposition 5 comparison at cutoff eight are now checked.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -4663,6 +4707,45 @@
     "hypotheses": "All real even-supported L2 Fourier coefficient potentials, equivalently the actual real period-one potential domain, with n>=1. No mean-zero, smoothness, gap-openness or nonzero-energy hypothesis is required. The endpoint-slope analytic construction applies to every complex L2 coefficient potential; real potential hypotheses enter its reality and Dirichlet nonvanishing results.",
     "result": "An open-and-closed continuation argument from the free potential proves existence of an actual Dirichlet zero in each intrinsic closed spectral gap, including collapsed gaps. Closedness uses compact interval projection; openness uses simple analytic root branches, real-zero reality, continuous periodic labels and neighboring-band exclusion. At every zero in gap n, (-1)^n times the real energy derivative is positive. A shared real fencing/crossing lemma proves uniqueness from positivity at the zeros alone. The unique selected canonical Dirichlet energy lies in the exact closed gap, is a zero of the actual characteristic, depends continuously on every real L2 potential family, is strictly below its successor and equals (n*pi)^2 at the free potential. The actual endpoint derivative s_prime(1,energy) is jointly entire in energy and complex L2 potential, real on real energies and nonzero at Dirichlet zeros. Its signed value at the selected root is positive and has a continuous real logarithm. The exact multiplier trace and logarithmic cosh identities recover the discriminant; the logarithm vanishes exactly at gap endpoints and therefore on collapsed gaps and at zero potential. Its sinh satisfies the exact real spectral-curve square identity. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. Every intrinsic closed gap now contains exactly one actual Dirichlet zero, with continuous strictly ordered canonical labels and continuous logarithmic norming data. Local analytic norming extensions, exact global Dirichlet census/product as needed, normalized Abelian differentials and angles, and the coordinate construction remain to be completed.",
     "qualification": "The exact unique root in each intrinsic closed gap does not yet exclude additional Dirichlet zeros below the lowest periodic energy or prove an entire canonical Dirichlet product. The logarithmic multiplier and spectral-curve identities are genuine actual monodromy data, but do not by themselves construct normalized Abelian angles or physical Birkhoff coordinates. Theorem 2 and Theorem 3(ii) remain verified; Theorems 1 and 3(i) remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
-    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. Every intrinsic closed gap now contains exactly one actual Dirichlet zero, with continuous strictly ordered canonical labels and continuous logarithmic norming data. Local analytic norming extensions, exact global Dirichlet census/product as needed, normalized Abelian differentials and angles, and the coordinate construction remain to be completed."
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. Every intrinsic closed gap now contains exactly one actual Dirichlet zero, with continuous strictly ordered canonical labels and continuous logarithmic norming data. Local analytic norming extensions, exact global Dirichlet census/product as needed, normalized Abelian differentials and angles, and the coordinate construction remain to be completed.",
+    "dirichlet_progress": "The dirichlet_analytic_gradients section adds actual local complex-analytic extensions, exact potential derivatives and the mass-normalized squared-eigenfunction gradient, and proves the classical distinct-Dirichlet squared pairing vanishes."
+  },
+  "dirichlet_analytic_gradients": {
+    "modules": [
+      "NLS/KdV/HillDirichletAnalyticLabels.lean",
+      "NLS/KdV/HillDirichletAnalyticNorming.lean",
+      "NLS/KdV/HillDirichletBranchDerivatives.lean",
+      "NLS/KdV/HillDirichletPotentialDerivative.lean",
+      "NLS/KdV/HillDirichletKernelNormalization.lean",
+      "NLS/KdV/HillDirichletGradients.lean",
+      "NLS/KdV/ClassicalHillDirichletBrackets.lean"
+    ],
+    "declarations": [
+      "NLS.KdV.eventually_hillDirichletEnergy_eq_branch_family",
+      "NLS.KdV.exists_hillDirichletEnergy_analytic_extension",
+      "NLS.KdV.hillDirichletMultiplier_ofReal",
+      "NLS.KdV.exists_hillDirichlet_norming_analytic_extension",
+      "NLS.KdV.hillDirichlet_branch_fderiv_apply",
+      "NLS.KdV.hillDirichlet_log_branch_fderiv_apply",
+      "NLS.KdV.hillFirstOrderDirection",
+      "NLS.KdV.hillFirstOrderDirection_apply",
+      "NLS.KdV.hasFDerivAt_hillFirstOrderPotential",
+      "NLS.KdV.hillPhysicalDirection",
+      "NLS.KdV.hasFDerivAt_hillPhysicalPotential",
+      "NLS.KdV.hillL2DirichletDirectionKernel",
+      "NLS.KdV.fderiv_hillL2FrequencyDirichlet_potential",
+      "NLS.KdV.fderiv_hillL2DirichletCharacteristic_potential",
+      "NLS.KdV.hillL2DirichletDirectionKernel_normalization",
+      "NLS.KdV.hillDirichlet_branch_fderiv_kernel_mass",
+      "NLS.KdV.hillPhysicalDirection_upper_zero_ae",
+      "NLS.KdV.hillDirichlet_kernelPairing_eq_integral",
+      "NLS.KdV.hillDirichlet_branch_fderiv_integral",
+      "NLS.KdV.classicalHill_dirichlet_squared_pairing_zero"
+    ],
+    "source_correspondence": "Necessary physical Hill Dirichlet spectral dependencies for the Birkhoff coordinate map in Theorems 1 and 3(i). The verified action estimates in Theorem 2 and Theorem 3(ii) are preserved.",
+    "hypotheses": "Selected analytic extensions apply at every real even-supported L2 potential and n>=1, without gap-openness, smoothness, mean-zero or nonzero-energy assumptions. The actual potential-direction kernel formulas apply to arbitrary complex L2 coefficients and directions. Positive scalar mass and the Dirichlet branch gradient use Fourier reality of the base potential. The classical squared pairing holds for arbitrary complex continuous Hill coefficients and distinct complex Dirichlet energies.",
+    "result": "Every local continuous Dirichlet root branch issuing from the selected gap root agrees nearby with the canonical Dirichlet energy. Thus the simple implicit-root branch gives a local complex-analytic extension of the actual selected energy. The signed endpoint slope has a local analytic logarithm that extends the actual real logarithmic multiplier and exponentiates to the actual signed slope, including at collapsed gaps. Moving spectral evaluation gives exact potential derivatives of the root branch and logarithmic slope branch. The affine constant-upper Hill first-order map has its actual bounded linear direction; composing it with the shared physical L2 solution derivative and adjugate kernel identifies the potential derivative of the entire Dirichlet characteristic. At a Dirichlet zero the determinant-one fundamental matrix gives the exact kernel times endpoint-slope normalization. Combined with the positive mass normalization, this proves the actual potential derivative is the physical L2 direction paired with the squared Dirichlet position, divided by positive mass. The upper physical direction is zero a.e., with the original lower sign explicitly identified. Finally the classical Wronskian-square identity and product-square integration by parts prove that distinct Dirichlet eigenfunctions have vanishing squared-eigenfunction Gardner pairing. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. The canonical Dirichlet energy and logarithmic multiplier now have local complex-analytic extensions agreeing with the actual selected real data, including at collapsed gaps. Their potential derivatives and the actual mass-normalized squared-eigenfunction Dirichlet gradient are proved. The classical squared-eigenfunction pairing vanishes; extension to rough potentials, actual Gardner brackets, normalized Abelian differentials/angles and the coordinate construction remain to be completed.",
+    "qualification": "The analytic extensions and gradients are for the actual canonical Dirichlet/norming data and actual physical L2 variation, not arbitrary phases. The classical pairing identity alone does not yet establish the rough Gardner Poisson brackets. The full low-energy Dirichlet exclusion and canonical entire product remain unproved where needed, as do normalized Abelian angles and physical Birkhoff coordinates/action identity. Theorem 2 and Theorem 3(ii) remain verified; Theorems 1 and 3(i) remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. The canonical Dirichlet energy and logarithmic multiplier now have local complex-analytic extensions agreeing with the actual selected real data, including at collapsed gaps. Their potential derivatives and the actual mass-normalized squared-eigenfunction Dirichlet gradient are proved. The classical squared-eigenfunction pairing vanishes; extension to rough potentials, actual Gardner brackets, normalized Abelian differentials/angles and the coordinate construction remain to be completed."
   }
 }

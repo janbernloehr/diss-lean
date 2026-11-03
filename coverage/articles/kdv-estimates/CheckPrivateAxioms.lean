@@ -356,6 +356,13 @@ import NLS.KdV.HillDirichletLabels
 import NLS.KdV.HillDirichletLabelContinuity
 import NLS.KdV.HillDirichletSlope
 import NLS.KdV.HillDirichletNormingData
+import NLS.KdV.HillDirichletAnalyticLabels
+import NLS.KdV.HillDirichletAnalyticNorming
+import NLS.KdV.HillDirichletBranchDerivatives
+import NLS.KdV.HillDirichletPotentialDerivative
+import NLS.KdV.HillDirichletKernelNormalization
+import NLS.KdV.HillDirichletGradients
+import NLS.KdV.ClassicalHillDirichletBrackets
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
