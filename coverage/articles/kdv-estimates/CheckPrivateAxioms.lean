@@ -527,6 +527,17 @@ import NLS.KdV.HillAnalyticCoordinatePeriodRoots
 import NLS.KdV.HillIntrinsicPeriodReflection
 import NLS.KdV.HillComplexEntirePeriodInterpolation
 import NLS.KdV.HillEntireNumeratorRootVariation
+import NLS.KdV.HillIntrinsicNumeratorVariationPeriod
+import NLS.KdV.HillExteriorEnergyWeights
+import NLS.KdV.HillExteriorNumeratorVariationBound
+import NLS.KdV.HillMixedGapProductDecay
+import NLS.KdV.HillEnergyCircleFrequencySeparation
+import NLS.KdV.HillEntireRootVariationDecay
+import NLS.KdV.HillNumeratorVariationRootValues
+import NLS.KdV.HillPeriodKernelNumeratorProportionality
+import NLS.KdV.HillGlobalPeriodDerivativeInjectivity
+import NLS.KdV.HillBoundedComplexTailDomain
+import NLS.KdV.HillBoundedComplexTailPeriodControl
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
