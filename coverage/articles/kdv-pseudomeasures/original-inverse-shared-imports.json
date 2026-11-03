@@ -1,0 +1,296 @@
+{
+  "branch": "articles/kdv-convexity",
+  "commit": "49a9b4a7fcfb71a073cb3719af912b1b48855f93",
+  "modules": [
+    {
+      "module": "NLS.KdV.HillHminusOneTraceControl",
+      "path": "NLS/KdV/HillHminusOneTraceControl.lean",
+      "original_sha256": "43c6a4a4fd7d5b441d310361fe2ae00591ccbb13cf024507e310a83b609d091f",
+      "private_sha256": "43c6a4a4fd7d5b441d310361fe2ae00591ccbb13cf024507e310a83b609d091f",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillWeightIndependence",
+      "path": "NLS/KdV/HillWeightIndependence.lean",
+      "original_sha256": "8bcd9989c07262ad851b668344673f7d13b5805a953ab08a86a5f4f54a0ba438",
+      "private_sha256": "8bcd9989c07262ad851b668344673f7d13b5805a953ab08a86a5f4f54a0ba438",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillLocalization",
+      "path": "NLS/KdV/HillLocalization.lean",
+      "original_sha256": "e474899bb3496f751cbfe51d28155d58137d5c67dea09b0290fe24fc5038d1e9",
+      "private_sha256": "e474899bb3496f751cbfe51d28155d58137d5c67dea09b0290fe24fc5038d1e9",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillZeroCount",
+      "path": "NLS/KdV/HillZeroCount.lean",
+      "original_sha256": "da4b4839b24a194cacfd83e8d9fc6b9aef14c690ddccad03f006ff4e61ff1929",
+      "private_sha256": "da4b4839b24a194cacfd83e8d9fc6b9aef14c690ddccad03f006ff4e61ff1929",
+      "adapted": false
+    },
+    {
+      "module": "NLS.ComplexAnalysis.TwoZeroOrderComparison",
+      "path": "NLS/ComplexAnalysis/TwoZeroOrderComparison.lean",
+      "original_sha256": "aa6c3045b534c3718d54ff0fc12873d9ee28fb4f4bda9fdac4ce1fefa3c0f306",
+      "private_sha256": "aa6c3045b534c3718d54ff0fc12873d9ee28fb4f4bda9fdac4ce1fefa3c0f306",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillCharacteristicZeros",
+      "path": "NLS/KdV/HillCharacteristicZeros.lean",
+      "original_sha256": "de0bfcdb98786591abb517c366b06ba069c9d7db2d1b234fe609ebb25b199498",
+      "private_sha256": "de0bfcdb98786591abb517c366b06ba069c9d7db2d1b234fe609ebb25b199498",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillRealSpectrum",
+      "path": "NLS/KdV/HillRealSpectrum.lean",
+      "original_sha256": "6e460523615ac54f3162f702c2495b85a002dcfdd0bc39f0ccd0bd49bc813476",
+      "private_sha256": "6e460523615ac54f3162f702c2495b85a002dcfdd0bc39f0ccd0bd49bc813476",
+      "adapted": false
+    },
+    {
+      "module": "NLS.ComplexAnalysis.TracePrimitiveContinuation",
+      "path": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean",
+      "original_sha256": "b72a10890423ba6070d235e90a5f745cfcb69fcba1f234933be9d2451c5c7ffb",
+      "private_sha256": "b72a10890423ba6070d235e90a5f745cfcb69fcba1f234933be9d2451c5c7ffb",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillL2SourcePrimitive",
+      "path": "NLS/KdV/HillL2SourcePrimitive.lean",
+      "original_sha256": "040ada5e2c26eddba04fd10cc011f38ae20a25d9ec8e3b7fd8d0056098bcf471",
+      "private_sha256": "040ada5e2c26eddba04fd10cc011f38ae20a25d9ec8e3b7fd8d0056098bcf471",
+      "adapted": false
+    },
+    {
+      "module": "NLS.ComplexAnalysis.TracePrimitiveFunctoriality",
+      "path": "NLS/ComplexAnalysis/TracePrimitiveFunctoriality.lean",
+      "original_sha256": "284f588bf695820c3c55fc45dbc15b9b3ded2ceee27301158f535eaa78640d91",
+      "private_sha256": "284f588bf695820c3c55fc45dbc15b9b3ded2ceee27301158f535eaa78640d91",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneSourcePrimitive",
+      "path": "NLS/KdV/HillHminusOneSourcePrimitive.lean",
+      "original_sha256": "ac170dc3e2bbcf8e1a68ead90f4c2a04b4a5eea90d156154f5c61c69b718989c",
+      "private_sha256": "ac170dc3e2bbcf8e1a68ead90f4c2a04b4a5eea90d156154f5c61c69b718989c",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.ClassicalHillHighPrimitiveStrip",
+      "path": "NLS/KdV/ClassicalHillHighPrimitiveStrip.lean",
+      "original_sha256": "6a00c0d729e1f5f4a9faea56371a4e5437a1e4718bb618709613311ae5722c40",
+      "private_sha256": "6a00c0d729e1f5f4a9faea56371a4e5437a1e4718bb618709613311ae5722c40",
+      "adapted": false
+    },
+    {
+      "module": "NLS.ComplexAnalysis.LogarithmStripNormalization",
+      "path": "NLS/ComplexAnalysis/LogarithmStripNormalization.lean",
+      "original_sha256": "bbc36395029fdd10fe849338e098af2ca10fbe7ec33ac0852f12676c2f08e622",
+      "private_sha256": "bbc36395029fdd10fe849338e098af2ca10fbe7ec33ac0852f12676c2f08e622",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillHminusOnePrimitiveStrip",
+      "path": "NLS/KdV/HillHminusOnePrimitiveStrip.lean",
+      "original_sha256": "9984157753ef5d600407bd4d78dfcd4dcdbce25c1d6cf9c4aab69e2f328da0ed",
+      "private_sha256": "9984157753ef5d600407bd4d78dfcd4dcdbce25c1d6cf9c4aab69e2f328da0ed",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.ClassicalBranchPrimitive",
+      "path": "NLS/KdV/ClassicalBranchPrimitive.lean",
+      "original_sha256": "9b23f82158ff2a6f4dc00d8fead2fa19601f40378c2de5bff6a7a7ec61f6759d",
+      "private_sha256": "9b23f82158ff2a6f4dc00d8fead2fa19601f40378c2de5bff6a7a7ec61f6759d",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.ClassicalCoshStripControl",
+      "path": "NLS/KdV/ClassicalCoshStripControl.lean",
+      "original_sha256": "91d1711d9d44ba3eaa547f2d9bd9aa138c8cbcea750799d64194358aa79ce9db",
+      "private_sha256": "91d1711d9d44ba3eaa547f2d9bd9aa138c8cbcea750799d64194358aa79ce9db",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.ClassicalHillSmallDiscTrace",
+      "path": "NLS/KdV/ClassicalHillSmallDiscTrace.lean",
+      "original_sha256": "0b3000b01b892f67fb1927c537e9d5563ff96704f6b075e0645472217524e57c",
+      "private_sha256": "0b3000b01b892f67fb1927c537e9d5563ff96704f6b075e0645472217524e57c",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.ClassicalHillSmallGapCoverage",
+      "path": "NLS/KdV/ClassicalHillSmallGapCoverage.lean",
+      "original_sha256": "dc905b799da8b91815ebf4a90a9ae1caac9078322b7c288eaf6aa07055dd310b",
+      "private_sha256": "dc905b799da8b91815ebf4a90a9ae1caac9078322b7c288eaf6aa07055dd310b",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.ClassicalHillHighEndpointNormalization",
+      "path": "NLS/KdV/ClassicalHillHighEndpointNormalization.lean",
+      "original_sha256": "49a842e6f9b4d235cdf9e76966b178c0c58c4187f18bb6d744055b921a91bf06",
+      "private_sha256": "49a842e6f9b4d235cdf9e76966b178c0c58c4187f18bb6d744055b921a91bf06",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.ClassicalHillSquaredPrimitiveMatching",
+      "path": "NLS/KdV/ClassicalHillSquaredPrimitiveMatching.lean",
+      "original_sha256": "2c081969580ba524e62c6cf2e51e3258323f9c269c33f28504e73ad22bffa52d",
+      "private_sha256": "2c081969580ba524e62c6cf2e51e3258323f9c269c33f28504e73ad22bffa52d",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.ClassicalHillWholeGapSquares",
+      "path": "NLS/KdV/ClassicalHillWholeGapSquares.lean",
+      "original_sha256": "054e7aefe03fbb3926743e7fdf76c43194a576670b2aeddab090635539f72350",
+      "private_sha256": "054e7aefe03fbb3926743e7fdf76c43194a576670b2aeddab090635539f72350",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneWholeGapSquares",
+      "path": "NLS/KdV/HillHminusOneWholeGapSquares.lean",
+      "original_sha256": "30486a454a513f8f811f8f6266d635538bd7900fae9d9f79b586fe33926b2d7a",
+      "private_sha256": "30486a454a513f8f811f8f6266d635538bd7900fae9d9f79b586fe33926b2d7a",
+      "adapted": false
+    },
+    {
+      "module": "NLS.ComplexAnalysis.AnalyticLocalLipschitz",
+      "path": "NLS/ComplexAnalysis/AnalyticLocalLipschitz.lean",
+      "original_sha256": "b53e1fb16dca07cfab90640da1907b3608e6db7e7102a8236edc8d1ce7f8e01a",
+      "private_sha256": "b53e1fb16dca07cfab90640da1907b3608e6db7e7102a8236edc8d1ce7f8e01a",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.ClassicalHillFreeSquareComparison",
+      "path": "NLS/KdV/ClassicalHillFreeSquareComparison.lean",
+      "original_sha256": "4d95c6d3f3cae31edd58b516662d974ddb1a46624dc90bc74fb16471f56432bb",
+      "private_sha256": "4d95c6d3f3cae31edd58b516662d974ddb1a46624dc90bc74fb16471f56432bb",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneFreeSquareComparison",
+      "path": "NLS/KdV/HillHminusOneFreeSquareComparison.lean",
+      "original_sha256": "c962f371fd1a812574b89b8aeb24e7fa76433bceb5ad3138a1b9a1eb4c5fd472",
+      "private_sha256": "c962f371fd1a812574b89b8aeb24e7fa76433bceb5ad3138a1b9a1eb4c5fd472",
+      "adapted": false
+    },
+    {
+      "module": "NLS.ComplexAnalysis.QuadraticClusterCount",
+      "path": "NLS/ComplexAnalysis/QuadraticClusterCount.lean",
+      "original_sha256": "b945038db6b22d3dfe63ddf052c77fe34a32be81806bb56d29e3e8c9bd181c4c",
+      "private_sha256": "b945038db6b22d3dfe63ddf052c77fe34a32be81806bb56d29e3e8c9bd181c4c",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneHighGapPairs",
+      "path": "NLS/KdV/HillHminusOneHighGapPairs.lean",
+      "original_sha256": "b7132f9598cc792bce41e10410aa089925a3d54071da9aadcaa3bface3f93187",
+      "private_sha256": "b7132f9598cc792bce41e10410aa089925a3d54071da9aadcaa3bface3f93187",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillHminusOnePairUniqueness",
+      "path": "NLS/KdV/HillHminusOnePairUniqueness.lean",
+      "original_sha256": "9978a3e9efdf97127c2e8748104417e45300c9dfa3f7618fe2af2599ec6ac7c3",
+      "private_sha256": "9978a3e9efdf97127c2e8748104417e45300c9dfa3f7618fe2af2599ec6ac7c3",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneReality",
+      "path": "NLS/KdV/HillHminusOneReality.lean",
+      "original_sha256": "10e72d25c3441afac7098a88b212137432c8a967f1404cc2279ae62b19afef98",
+      "private_sha256": "10e72d25c3441afac7098a88b212137432c8a967f1404cc2279ae62b19afef98",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillFreeSpectrum",
+      "path": "NLS/KdV/HillFreeSpectrum.lean",
+      "original_sha256": "2a6be7ef571cfb498f910ef641b614a21d432ed691e035fe14c8c8056147f6d3",
+      "private_sha256": "2a6be7ef571cfb498f910ef641b614a21d432ed691e035fe14c8c8056147f6d3",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneExteriorRoots",
+      "path": "NLS/KdV/HillHminusOneExteriorRoots.lean",
+      "original_sha256": "7177fa152885fb0bfadcdff4327311ff1ed753f6bb2a29f861c5ffa88c341273",
+      "private_sha256": "7177fa152885fb0bfadcdff4327311ff1ed753f6bb2a29f861c5ffa88c341273",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillWideLocalization",
+      "path": "NLS/KdV/HillWideLocalization.lean",
+      "original_sha256": "5c318e26a1ba5048003efedb77d11dab9dda0cab983f146c346527af0f2a2032",
+      "private_sha256": "9864d1597b49990e7f4c027d4911cf43500e4689d40dcf6eee730a4bc502e7b1",
+      "adapted": true
+    },
+    {
+      "module": "NLS.KdV.HillCentralCounting",
+      "path": "NLS/KdV/HillCentralCounting.lean",
+      "original_sha256": "5af6c7f9008cf7cfe969850c047915d3600632019b91c7daa0eb39cf14447831",
+      "private_sha256": "5af6c7f9008cf7cfe969850c047915d3600632019b91c7daa0eb39cf14447831",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillCentralRegionGeometry",
+      "path": "NLS/KdV/HillCentralRegionGeometry.lean",
+      "original_sha256": "ba0f80a4b3836661c82ce935aaef92b4cd3b58c3da4cea6b26e17ba6b6667a97",
+      "private_sha256": "ba0f80a4b3836661c82ce935aaef92b4cd3b58c3da4cea6b26e17ba6b6667a97",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneRootRegions",
+      "path": "NLS/KdV/HillHminusOneRootRegions.lean",
+      "original_sha256": "c58cdd4981f9ec4fa38188c073b8be01c537f4aed92dbba1a7778a426065c31f",
+      "private_sha256": "c58cdd4981f9ec4fa38188c073b8be01c537f4aed92dbba1a7778a426065c31f",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneCentralCounting",
+      "path": "NLS/KdV/HillHminusOneCentralCounting.lean",
+      "original_sha256": "f220fc6ffe30a29a8efb55cd1a1007199a31f44c82c004a15adebf701ab2c057",
+      "private_sha256": "f220fc6ffe30a29a8efb55cd1a1007199a31f44c82c004a15adebf701ab2c057",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneCentralRoots",
+      "path": "NLS/KdV/HillHminusOneCentralRoots.lean",
+      "original_sha256": "f95f6b76e8177149a0848248fa0c4f9de41f609e09d1260e39dda307f41de572",
+      "private_sha256": "f95f6b76e8177149a0848248fa0c4f9de41f609e09d1260e39dda307f41de572",
+      "adapted": false
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneRealPairs",
+      "path": "NLS/KdV/HillHminusOneRealPairs.lean",
+      "original_sha256": "7f2a8ee2de7756fbf715de6a122918e32ce5872bd21bfae9389f936a5f290107",
+      "private_sha256": "50ce4b6b440909c0e295139578ccf3febc95e103a4e28b673ceacafd961892c6",
+      "adapted": true
+    },
+    {
+      "module": "NLS.KdV.HillHminusOneGlobalRealLabels",
+      "path": "NLS/KdV/HillHminusOneGlobalRealLabels.lean",
+      "original_sha256": "65fc3ea70e319ab2ed0a23b9f6dc9b9cabb71ad754a2b37381aa5d7c26752a44",
+      "private_sha256": "65fc3ea70e319ab2ed0a23b9f6dc9b9cabb71ad754a2b37381aa5d7c26752a44",
+      "adapted": false
+    }
+  ],
+  "adaptation": "Two copied modules are adapted as recorded in adaptations: real-pair ordering uses verified complex-pair root reality, and HillWideLocalization imports the existing shared wide geometry instead of redeclaring its four public results. The other37 copied modules are byte-identical to the pinned branch. The existing shared HillComplement is separately synchronized byte-for-byte to that pin.",
+  "synchronized_existing_module": {
+    "module": "NLS.KdV.HillComplement",
+    "path": "NLS/KdV/HillComplement.lean",
+    "before_sha256": "abf8fbb912e4e629f97cc6b2b44a060382f5945fc8793fede162227bd49326fd",
+    "pinned_sha256": "977b565954ef98d7eff06760f6efdf7a70db3d5e615b97d9514172f99d998ff5",
+    "reason": "Reuse the generalized denominator-only reciprocal-symbol estimate needed by HillWideLocalization. Existing narrow-strip conventions and all previous public conclusions are retained. Full fresh rebuild required because this is an existing shared dependency."
+  },
+  "adaptations": {
+    "NLS.KdV.HillHminusOneRealPairs": "Order the already verified complex high pair using root reality; preserve the full original API, including collapsed pairs. This avoids the unrelated primitive moment/sign dependency hierarchy.",
+    "NLS.KdV.HillWideLocalization": "Import FreeHillWideGeometry and remove its four duplicated public declarations (wide strip, denominator lower bound and both geometric covering results). Retain every spectral statement. All uses now refer to the existing shared geometric declarations."
+  },
+  "canonical_checkout_written": false,
+  "validation": "All39copied modules, synchronized shared HillComplement, and final385module exact3050declaration inventory compile and pass the transitive axiom audit. Only standard axioms or empty sets.",
+  "copied_module_count": 39,
+  "byte_identical_copied_module_count": 37,
+  "adapted_copied_module_count": 2
+}

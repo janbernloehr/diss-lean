@@ -114,12 +114,23 @@
       "NLS.KdV.analyticOrderNatAt_hillHminusDiscriminant_eq_physicalMultiplicity",
       "NLS.Articles.KdVPseudomeasures.analyticOrderAt_originalHillDiscriminant",
       "NLS.Articles.KdVPseudomeasures.analyticOrderNatAt_originalHillDiscriminant",
-      "NLS.Articles.KdVPseudomeasures.mem_originalIsospectralSet_iff_discriminant_orders"
+      "NLS.Articles.KdVPseudomeasures.mem_originalIsospectralSet_iff_discriminant_orders",
+      "NLS.Articles.KdVPseudomeasures.originalHillLabels",
+      "NLS.Articles.KdVPseudomeasures.originalHillLabels_global_multiplicity",
+      "NLS.Articles.KdVPseudomeasures.mem_originalIsospectralSet_iff_originalHillLabels",
+      "NLS.Articles.KdVPseudomeasures.originalHillLabels_sourceOriginalPotential",
+      "NLS.KdV.exists_hillHminusLabels_squared_miuraDirac",
+      "NLS.Articles.KdVPseudomeasures.memlp_miuraDiracGap_of_original_gap",
+      "NLS.Articles.KdVPseudomeasures.exists_original_finiteP_realization_of_gap",
+      "NLS.Articles.KdVPseudomeasures.exists_original_isospectral_finiteP_membership_of_endpoint_gaps",
+      "NLS.KdV.exists_periodOneOriginal_regular_realization",
+      "NLS.ZakharovShabat.source_mem_sobolev_of_gap",
+      "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_i",
+      "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_ii"
     ]
   },
   "essential_open_obligations": [
-    "The full REAL original H-minus-one physical characteristic DIVISOR is now identified at EVERY complex energy, including zero and multiple roots. The exact finite-p Miura regularity equivalence is also proved. NEXT: compare the actual Hill and Dirac canonical high gap indices to transfer verified Dirac inverse regularity; individual membership still does not prove a UNIFORM full-isospectral bound.",
-    "Source Theorem2.2/full Lemma2.21 remain unproved:the entire original H-minus-one isospectral set still needs base endpoint/finite-p membership and a UNIFORM bound before the verified endpoint bootstrap applies. The ORIGINAL finite-p inverse spectral regularity/isospectral compactness input[7 Cor3-4] remains missing,or must be replaced directly. Full original operator spectrum/multiplicities and isospectral domain are already defined without assuming endpoint membership.",
+    "Source Theorem2.2(i)-(ii) are NOW PROVED on the entire original H-minus-one domain. Actual full original spectral labels/gaps, same-index BOTH-tail Hill/Dirac gap transfer, and sufficient original finite-p inverse membership are proved. REMAINING: a UNIFORM norm bound on the entire original isospectral set (Lemma2.21), original finite-p isospectral compactness or a direct replacement, and source2.2(iii). Individual membership does not imply this bound.",
     "Complete original periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source2.1(ii). General-weight direct2.1(i),endpoint2.18-2.19,REAL2.20,uniform bootstrap,cross-order labels/gaps,bounded weak-star label continuity/closed spectral fibers and all AppendixB clauses remain proved. General complex-ratio2.20 remains open.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
@@ -399,6 +410,26 @@
       "declaration": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_1_i",
       "local_boundedness": "NLS.Articles.KdVPseudomeasures.sourceWeightedCanonicalGaps_locallyBounded",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-weighted-gap-map.json"
+    },
+    "2.2(i)": {
+      "status": "proved",
+      "declaration": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_i",
+      "domain": "Every original real mean-zero physically period-one H-minus-one potential q; 0<=r<1/2 (s=-r).",
+      "hypothesis": "The ACTUAL complete original physical gap sequence belongs to ell^(-r,infinity).",
+      "conclusion": "There exists a:Potential r whose entire original smooth-test distribution equals q, with all physical conditions retained.",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-membership-map.json"
+    },
+    "2.2(ii)": {
+      "status": "proved",
+      "declaration": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_ii",
+      "domain": "The ENTIRE original H-minus-one isospectral set defined by all actual physical algebraic multiplicities.",
+      "hypothesis": "Only the same original gap hypothesis on q; no endpoint membership of q or of any isospectral member and no uniform norm-bound premise.",
+      "conclusion": "Every original isospectral v has a representative in Potential r with exactly the same entire distribution.",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-membership-map.json"
+    },
+    "2.2(iii)": {
+      "status": "unproved",
+      "uniform_original_isospectral_bound": false
     }
   },
   "verified_source_lemma_components": {
@@ -447,7 +478,13 @@
       "cross_order_coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-cross-order-map.json",
       "bounded_canonical_fiber_compactness_iff_bounded": true,
       "bounded_weak_star_canonical_label_continuity": true,
-      "label_topology_coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-label-continuity-map.json"
+      "label_topology_coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-label-continuity-map.json",
+      "original_finite_p_inverse_membership_input": true,
+      "entire_original_isospectral_membership_in_common_finite_p_space": true,
+      "original_finite_p_isospectral_compactness_input": false,
+      "uniform_original_isospectral_norm_bound": false,
+      "membership_coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-membership-map.json",
+      "inverse_input_qualification": "The finite-p inverse membership needed for source2.2 is now proved using a sufficiently large exponent. The older combined inverse/compactness input flag remains false because uniform isospectral compactness is still missing."
     }
   },
   "verified_nonmain_source_propositions": {
@@ -504,7 +541,17 @@
     "unchanged_full_original_H1_domain": true,
     "actual_algebraic_multiplicities": true,
     "finite_p_Miura_regularity_equivalence": true,
-    "original_Hill_inverse_spectral_regularity": false,
+    "original_Hill_inverse_spectral_regularity": true,
+    "uniform_original_isospectral_bound": false,
+    "inverse_regularity_scope": "The exact sufficient finite-p class and source2.2(i)-(ii), see original-endpoint-membership-map.json"
+  },
+  "verified_original_endpoint_membership": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-membership-map.json",
+    "source2_2_i": true,
+    "source2_2_ii": true,
+    "source2_2_iii": false,
+    "original_gap_condition_not_endpoint_premise": true,
+    "entire_distributions_unchanged": true,
     "uniform_original_isospectral_bound": false
   }
 }

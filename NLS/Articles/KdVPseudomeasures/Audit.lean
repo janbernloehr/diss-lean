@@ -336,6 +336,52 @@ import NLS.Articles.KdVPseudomeasures.SourceWeakStarUniformControl
 import NLS.KdV.HminusOneCharacteristicOrder
 import NLS.Articles.KdVPseudomeasures.OriginalHminusOneDivisor
 import NLS.SequenceSpaces.PeriodOneMiuraFiniteRegularity
+import NLS.KdV.HillHminusOneTraceControl
+import NLS.KdV.HillWeightIndependence
+import NLS.KdV.HillLocalization
+import NLS.KdV.HillZeroCount
+import NLS.ComplexAnalysis.TwoZeroOrderComparison
+import NLS.KdV.HillCharacteristicZeros
+import NLS.KdV.HillRealSpectrum
+import NLS.ComplexAnalysis.TracePrimitiveContinuation
+import NLS.KdV.HillL2SourcePrimitive
+import NLS.ComplexAnalysis.TracePrimitiveFunctoriality
+import NLS.KdV.HillHminusOneSourcePrimitive
+import NLS.KdV.ClassicalHillHighPrimitiveStrip
+import NLS.ComplexAnalysis.LogarithmStripNormalization
+import NLS.KdV.HillHminusOnePrimitiveStrip
+import NLS.KdV.ClassicalBranchPrimitive
+import NLS.KdV.ClassicalCoshStripControl
+import NLS.KdV.ClassicalHillSmallDiscTrace
+import NLS.KdV.ClassicalHillSmallGapCoverage
+import NLS.KdV.ClassicalHillHighEndpointNormalization
+import NLS.KdV.ClassicalHillSquaredPrimitiveMatching
+import NLS.KdV.ClassicalHillWholeGapSquares
+import NLS.KdV.HillHminusOneWholeGapSquares
+import NLS.ComplexAnalysis.AnalyticLocalLipschitz
+import NLS.KdV.ClassicalHillFreeSquareComparison
+import NLS.KdV.HillHminusOneFreeSquareComparison
+import NLS.ComplexAnalysis.QuadraticClusterCount
+import NLS.KdV.HillHminusOneHighGapPairs
+import NLS.KdV.HillHminusOnePairUniqueness
+import NLS.KdV.HillHminusOneReality
+import NLS.KdV.HillFreeSpectrum
+import NLS.KdV.HillHminusOneExteriorRoots
+import NLS.KdV.HillWideLocalization
+import NLS.KdV.HillCentralCounting
+import NLS.KdV.HillCentralRegionGeometry
+import NLS.KdV.HillHminusOneRootRegions
+import NLS.KdV.HillHminusOneCentralCounting
+import NLS.KdV.HillHminusOneCentralRoots
+import NLS.KdV.HillHminusOneRealPairs
+import NLS.KdV.HillHminusOneGlobalRealLabels
+import NLS.KdV.HillHminusOneCanonicalRealLabels
+import NLS.Articles.KdVPseudomeasures.OriginalHillLabels
+import NLS.KdV.HminusOneMiuraHighPairs
+import NLS.Articles.KdVPseudomeasures.OriginalMiuraGapComparison
+import NLS.KdV.PeriodOneOriginalRegularity
+import NLS.Articles.KdVPseudomeasures.OriginalFinitePInverse
+import NLS.Articles.KdVPseudomeasures.OriginalEndpointMembership
 
 /-! Exact transitive axiom audit of every selected public definition and theorem. -/
 
@@ -641,6 +687,9 @@ import NLS.SequenceSpaces.PeriodOneMiuraFiniteRegularity
 #print axioms NLS.KdV.freeHillCentralEdge_separates_disks
 #print axioms NLS.KdV.localized_freeHillCentralEdge_iff
 #print axioms NLS.KdV.norm_ne_freeHillCentralEdge_of_localized
+#print axioms NLS.KdV.hillReciprocalHilbertSymbolOfLower
+#print axioms NLS.KdV.hillReciprocalHilbertSymbolOfLower_apply
+#print axioms NLS.KdV.norm_hillReciprocalHilbertSymbolOfLower_le
 #print axioms NLS.KdV.reducedHillSymbol_memlp_two
 #print axioms NLS.KdV.reducedHillHilbertSymbol
 #print axioms NLS.KdV.reducedHillHilbertSymbol_apply
@@ -3052,3 +3101,337 @@ import NLS.SequenceSpaces.PeriodOneMiuraFiniteRegularity
 #print axioms NLS.memlp_negative_sobolev_l2_product
 #print axioms NLS.periodOneMiura_memlp_iff
 #print axioms NLS.periodOneMiura_shift_memlp_iff
+#print axioms NLS.KdV.hillHminusTrace_parity_re_pos_of_error
+#print axioms NLS.KdV.exists_hillHminus_source_high_trace_phase
+#print axioms NLS.KdV.norm_hillHminus_normalized_trace_sub_one_le
+#print axioms NLS.KdV.exists_hillHminus_small_disc_normalized_trace
+#print axioms NLS.KdV.hillForgetWeight
+#print axioms NLS.KdV.hillForgetWeight_apply
+#print axioms NLS.KdV.norm_hillForgetWeight_le
+#print axioms NLS.KdV.toCoeff_hillForgetWeight
+#print axioms NLS.KdV.hillForgetWeight_convolution
+#print axioms NLS.KdV.hillForgetWeight_complement
+#print axioms NLS.KdV.hillForgetWeight_tail
+#print axioms NLS.KdV.hillForgetWeight_tailInverse
+#print axioms NLS.KdV.hillForgetWeight_modes
+#print axioms NLS.KdV.hillForgetWeight_modePotential
+#print axioms NLS.KdV.hillForgetWeight_effectivePotential
+#print axioms NLS.KdV.hillReducedOperator_weight_independent
+#print axioms NLS.KdV.hillReducedDeterminant_weight_independent
+#print axioms NLS.KdV.hillReduced_weighted_zero_iff_l2Discriminant
+#print axioms NLS.KdV.analyticOnNhd_weighted_hillL2Discriminant_joint
+#print axioms NLS.KdV.norm_hillModes_one_le
+#print axioms NLS.KdV.norm_hillModeCoordinates_one_le
+#print axioms NLS.KdV.norm_hillEffectiveCorrection_one_le
+#print axioms NLS.KdV.hillReduced_kernel_localization
+#print axioms NLS.KdV.hillReducedDeterminant_zero_localization
+#print axioms NLS.KdV.physicalHillEigenvector_localization
+#print axioms NLS.KdV.analyticOnNhd_hillReducedDeterminant_spectral
+#print axioms NLS.KdV.hillReducedDeterminant_free_error_le
+#print axioms NLS.KdV.hillClosedBall_subset_openStrip
+#print axioms NLS.KdV.hillReducedDeterminant_two_zeros
+#print axioms NLS.KdV.hillReducedDeterminant_strip_two_zeros
+#print axioms NLS.ComplexAnalysis.analyticOrderNatAt_eq_of_two_zero_counts
+#print axioms NLS.KdV.hillL2Radicand
+#print axioms NLS.KdV.analyticOnNhd_hillL2Radicand_joint
+#print axioms NLS.KdV.analyticOnNhd_hillL2Radicand
+#print axioms NLS.KdV.hillL2Discriminant_zero
+#print axioms NLS.KdV.hillL2Radicand_zero
+#print axioms NLS.KdV.hillL2Radicand_free_order
+#print axioms NLS.KdV.hillL2Radicand_free_two_zeros
+#print axioms NLS.KdV.hillL2Radicand_zero_localization
+#print axioms NLS.KdV.hillL2Radicand_two_zeros
+#print axioms NLS.KdV.hillL2Radicand_ne_zero_on_sphere
+#print axioms NLS.KdV.hillL2Radicand_strip_two_zeros
+#print axioms NLS.KdV.hillReduced_order_eq_l2Radicand
+#print axioms NLS.KdV.IsRealHillPotential
+#print axioms NLS.KdV.IsRealHillPotential.smul_real
+#print axioms NLS.KdV.isRealHillPotential_of_physical
+#print axioms NLS.KdV.hillDomain_pairing_conj
+#print axioms NLS.KdV.hillDomain_pairing_self
+#print axioms NLS.KdV.hillDomain_pairing_self_re_pos
+#print axioms NLS.KdV.hillLaplacian_pairing_symmetric
+#print axioms NLS.KdV.hillOperator_pairing_symmetric
+#print axioms NLS.KdV.hillOperator_quadratic_im_zero
+#print axioms NLS.KdV.hillEigenvalue_im_zero
+#print axioms NLS.KdV.hillEigenvectors_orthogonal
+#print axioms NLS.KdV.hillEigenvector_no_associatedVector
+#print axioms NLS.KdV.hillL2Discriminant_root_im_zero
+#print axioms NLS.KdV.hillReduced_real_root_im_zero
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.radicand
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.analytic_radicand
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.freeRoot
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.analytic_freeRoot
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.freeRoot_sq
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.exp_freePrimitive
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.rootDomain
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.isOpen_rootDomain
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.continuationDomain
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.isOpen_continuationDomain
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.continuationDomain_subset
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.continuationDomain_segment
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.continuationDomain_idempotent
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.root
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.analytic_root
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.root_base
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.root_sq
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.root_ne_zero
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.multiplier
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.analytic_multiplier
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.multiplier_product
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.multiplier_ne_zero
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.primitive
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.analytic_primitive
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.primitive_base
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.exp_primitive
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.primitive_trace
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.hasFDerivAt_primitive
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.hasDerivAt_primitive
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.primitive_unique
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.exists_continuation_neighborhood
+#print axioms NLS.KdV.hillL2SourceFamily
+#print axioms NLS.KdV.hillL2ContinuationDomain
+#print axioms NLS.KdV.hillL2ContinuedRoot
+#print axioms NLS.KdV.hillL2ContinuedMultiplier
+#print axioms NLS.KdV.hillL2ContinuedPrimitive
+#print axioms NLS.KdV.isOpen_hillL2ContinuationDomain
+#print axioms NLS.KdV.mem_hillL2ContinuationDomain_iff
+#print axioms NLS.KdV.analyticOnNhd_hillL2ContinuedRoot
+#print axioms NLS.KdV.analyticOnNhd_hillL2ContinuedPrimitive
+#print axioms NLS.KdV.hillL2ContinuedRoot_base
+#print axioms NLS.KdV.hillL2ContinuedPrimitive_base
+#print axioms NLS.KdV.hillL2ContinuedRoot_sq
+#print axioms NLS.KdV.hillL2ContinuedRoot_ne_zero
+#print axioms NLS.KdV.exp_hillL2ContinuedPrimitive
+#print axioms NLS.KdV.hillL2ContinuedPrimitive_trace
+#print axioms NLS.KdV.hasFDerivAt_hillL2ContinuedPrimitive
+#print axioms NLS.KdV.hasDerivAt_hillL2ContinuedPrimitive
+#print axioms NLS.KdV.mem_hillL2ContinuationDomain_of_im_ne_zero
+#print axioms NLS.KdV.analyticOnNhd_hillL2ContinuedPrimitive_off_real
+#print axioms NLS.KdV.hillClosedBall_subset_slitPlane
+#print axioms NLS.KdV.mem_hillL2ContinuationDomain_of_high_distance
+#print axioms NLS.KdV.mem_hillL2ContinuationDomain_high_sphere
+#print axioms NLS.KdV.exists_hillL2Continuation_high_contour_neighborhood
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.pullback
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.radicand_comp
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.continuationDomain_comp_iff
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.root_comp
+#print axioms NLS.ComplexAnalysis.TracePrimitiveFamily.primitive_comp
+#print axioms NLS.KdV.hillHminusDiscriminant_zero
+#print axioms NLS.KdV.hillHminusRadicand
+#print axioms NLS.KdV.analyticOnNhd_hillHminusRadicand_joint
+#print axioms NLS.KdV.hillHminusRadicand_eq_hillL2
+#print axioms NLS.KdV.hillHminusSourceFamily
+#print axioms NLS.KdV.hillHminusContinuationDomain
+#print axioms NLS.KdV.hillHminusContinuedRoot
+#print axioms NLS.KdV.hillHminusContinuedPrimitive
+#print axioms NLS.KdV.isOpen_hillHminusContinuationDomain
+#print axioms NLS.KdV.mem_hillHminusContinuationDomain_iff
+#print axioms NLS.KdV.analyticOnNhd_hillHminusContinuedRoot
+#print axioms NLS.KdV.analyticOnNhd_hillHminusContinuedPrimitive
+#print axioms NLS.KdV.hillHminusContinuedPrimitive_base
+#print axioms NLS.KdV.hillHminusContinuedRoot_sq
+#print axioms NLS.KdV.hillHminusContinuedPrimitive_trace
+#print axioms NLS.KdV.hasDerivAt_hillHminusContinuedPrimitive
+#print axioms NLS.KdV.hillHminusContinuationDomain_L2_iff
+#print axioms NLS.KdV.hillHminusContinuedRoot_eq_hillL2
+#print axioms NLS.KdV.hillHminusContinuedPrimitive_eq_hillL2
+#print axioms NLS.KdV.cosh_add_hill_index
+#print axioms NLS.KdV.classicalHillShiftedPrimitive_im_strip_of_trace_phase
+#print axioms NLS.KdV.exists_classicalHill_high_primitive_strip
+#print axioms NLS.ComplexAnalysis.real_mem_Ioo_of_preconnected_avoids
+#print axioms NLS.ComplexAnalysis.sinh_eq_zero_of_re_zero_im_int_pi
+#print axioms NLS.ComplexAnalysis.exp_neg_I_nat_pi
+#print axioms NLS.ComplexAnalysis.eq_zero_of_exp_eq_one_of_abs_im_le_pi
+#print axioms NLS.ComplexAnalysis.eq_of_exp_eq_of_abs_im_sub_le_pi
+#print axioms NLS.KdV.hillHminusShiftedPrimitive_im_strip_of_trace_phase
+#print axioms NLS.KdV.exists_hillHminus_high_primitive_strip
+#print axioms NLS.KdV.squaredCosh
+#print axioms NLS.KdV.squaredCosh_sq
+#print axioms NLS.KdV.squaredCosh_zero
+#print axioms NLS.KdV.squaredCosh_neg_sq
+#print axioms NLS.KdV.analyticOnNhd_squaredCosh
+#print axioms NLS.KdV.hasDerivAt_squaredCosh_zero
+#print axioms NLS.KdV.exists_squaredCosh_inverse
+#print axioms NLS.KdV.eventuallyEq_of_squaredCosh_eq
+#print axioms NLS.KdV.exists_classicalHill_local_squared_primitive
+#print axioms NLS.KdV.tendsto_zero_of_cosh_tendsto_one_in_strip
+#print axioms NLS.KdV.exists_delta_cosh_strip_control
+#print axioms NLS.KdV.norm_hill_normalized_trace_sub_one_le
+#print axioms NLS.KdV.exists_classicalHill_small_disc_normalized_trace
+#print axioms NLS.KdV.exists_classicalHill_small_gap_coverage
+#print axioms NLS.KdV.exp_add_hill_index
+#print axioms NLS.KdV.classicalHillTrace_level_of_zero_and_phase
+#print axioms NLS.KdV.tendsto_classicalHillShiftedPrimitive_joint_at_branch
+#print axioms NLS.KdV.tendsto_classicalHillShiftedPrimitive_at_branch
+#print axioms NLS.KdV.exists_classicalHill_high_endpoint_normalization
+#print axioms NLS.KdV.exists_classicalHill_high_energy_endpoint_normalization
+#print axioms NLS.KdV.classicalHillHighPrimitiveRegion
+#print axioms NLS.KdV.classicalHill_squared_primitive_germ_unique
+#print axioms NLS.KdV.classicalHill_squared_primitive_fderiv
+#print axioms NLS.KdV.classicalHill_squared_primitive_energy_order
+#print axioms NLS.KdV.ClassicalHillHighGapPair.squared_primitive_multiplicity
+#print axioms NLS.KdV.exists_classicalHill_high_squared_primitive_matching
+#print axioms NLS.KdV.classicalHillGapSquareDisc
+#print axioms NLS.KdV.sqrt_mem_closedBall_of_energy_disc
+#print axioms NLS.KdV.sqrt_mem_ball_of_energy_disc
+#print axioms NLS.KdV.square_mem_energy_ball_of_small_frequency
+#print axioms NLS.KdV.exists_classicalHill_whole_disc_small_squares
+#print axioms NLS.KdV.exists_classicalHill_whole_disc_squares
+#print axioms NLS.KdV.exists_classicalHill_whole_gap_squares
+#print axioms NLS.KdV.exists_hillHminus_whole_disc_small_squares
+#print axioms NLS.KdV.exists_hillHminus_whole_disc_squares
+#print axioms NLS.KdV.hillHminus_squared_primitive_energy_order
+#print axioms NLS.KdV.tendsto_hillHminusShiftedPrimitive_of_filled_square
+#print axioms NLS.KdV.exists_hillHminus_high_joint_indexed_branch_limits
+#print axioms NLS.ComplexAnalysis.exists_local_lipschitz_bound_of_analyticAt
+#print axioms NLS.KdV.classicalHillFreeShiftedSquare
+#print axioms NLS.KdV.classicalHillFreeQuadraticModel
+#print axioms NLS.KdV.norm_free_square_sub_quadratic_le
+#print axioms NLS.KdV.squaredCosh_classicalHillFreeShiftedSquare
+#print axioms NLS.KdV.exists_classicalHill_free_square_comparison
+#print axioms NLS.KdV.exists_classicalHill_quadratic_square_comparison
+#print axioms NLS.KdV.exists_hillHminus_free_square_comparison
+#print axioms NLS.KdV.exists_hillHminus_quadratic_square_comparison
+#print axioms NLS.ComplexAnalysis.analyticZeroCount_nonzero_const_mul
+#print axioms NLS.ComplexAnalysis.analyticZeroCount_eq_two_of_quadratic_model
+#print axioms NLS.ComplexAnalysis.quadratic_model_boundary_ne_zero
+#print axioms NLS.ComplexAnalysis.exists_two_zeros_of_quadratic_model
+#print axioms NLS.KdV.HillHminusHighGapPair.swap
+#print axioms NLS.KdV.hillHminus_square_order_on_disc
+#print axioms NLS.KdV.exists_hillHminus_quadratic_square_pairs
+#print axioms NLS.KdV.exists_hillHminus_high_gap_pairs
+#print axioms NLS.KdV.HillHminusHighGapPair.multiset_eq_of_radius_le
+#print axioms NLS.KdV.HillHminusHighGapPair.multiset_eq
+#print axioms NLS.KdV.HillHminusHighGapPair.eq_or_swap
+#print axioms NLS.KdV.HillHminusHighGapPair.analyticZeroCount_eq_two
+#print axioms NLS.KdV.IsRealHillPotential.periodDouble
+#print axioms NLS.KdV.hillL2_periodDouble_root_im_zero
+#print axioms NLS.KdV.hillHminusRadicand_not_constant
+#print axioms NLS.KdV.exists_hillHminusRadicand_ne_zero
+#print axioms NLS.KdV.hillHminusDiscriminant_not_constant
+#print axioms NLS.KdV.analyticOrderAt_hillHminusRadicand_ne_top
+#print axioms NLS.KdV.hillHminusRadicand_root_im_zero
+#print axioms NLS.KdV.hillHminusDiscriminant_root_im_zero
+#print axioms NLS.KdV.HillHminusHighGapPair.im_eq_zero
+#print axioms NLS.KdV.mem_hillHminusContinuationDomain_of_im_ne_zero
+#print axioms NLS.KdV.analyticOnNhd_hillHminusContinuedRoot_off_real
+#print axioms NLS.KdV.analyticOnNhd_hillHminusContinuedPrimitive_off_real
+#print axioms NLS.KdV.freeHillValue_natAbs
+#print axioms NLS.KdV.strictMono_freeHillValue
+#print axioms NLS.KdV.hillL2Radicand_free_zero_iff
+#print axioms NLS.KdV.hillL2Radicand_free_order_zero
+#print axioms NLS.KdV.exists_hillHminus_chart_frequency_root_confinement
+#print axioms NLS.KdV.exists_hillHminus_energy_root_confinement
+#print axioms NLS.KdV.exists_hillHminus_energy_root_confinement_near_compact
+#print axioms NLS.KdV.exists_hillHminus_source_energy_root_confinement
+#print axioms NLS.KdV.hillEigenvector_localization_of_denominator_lower
+#print axioms NLS.KdV.hillEigenvector_localization_wide
+#print axioms NLS.KdV.hillEigenvalue_real_high_cover
+#print axioms NLS.KdV.hillL2Radicand_real_high_cover
+#print axioms NLS.KdV.hillEigenvalue_re_lower_bound
+#print axioms NLS.KdV.hillL2Radicand_re_lower_bound
+#print axioms NLS.KdV.hillL2Radicand_high_index_unique
+#print axioms NLS.KdV.hillL2Radicand_real_high_index
+#print axioms NLS.KdV.hillL2Radicand_ne_zero_on_central_separator
+#print axioms NLS.KdV.hillL2Radicand_real_central_or_high
+#print axioms NLS.KdV.hillCentralSeparator
+#print axioms NLS.KdV.hillCentralCenter
+#print axioms NLS.KdV.hillCentralRadius
+#print axioms NLS.KdV.hillCentralDisc
+#print axioms NLS.KdV.freeHillValue_lt_centralSeparator
+#print axioms NLS.KdV.hillCentralSeparator_pos
+#print axioms NLS.KdV.hillCentralRadius_pos
+#print axioms NLS.KdV.ofReal_mem_hillCentralDisc_iff
+#print axioms NLS.KdV.freeHillValue_mem_hillCentralDisc_iff
+#print axioms NLS.KdV.hillL2Radicand_free_central_count
+#print axioms NLS.KdV.hillL2Radicand_ne_zero_on_central_sphere
+#print axioms NLS.KdV.hillL2Radicand_central_count
+#print axioms NLS.KdV.hillL2Radicand_central_interval_count
+#print axioms NLS.KdV.freeHillValue_add_margin_lt_centralSeparator
+#print axioms NLS.KdV.centralSeparator_lt_freeHillValue_sub_margin
+#print axioms NLS.KdV.energy_root_central_or_high_of_affine_bound
+#print axioms NLS.KdV.exists_hillHminus_source_root_regions
+#print axioms NLS.KdV.exists_hillHminus_zero_free_source_separators
+#print axioms NLS.KdV.analyticOnNhd_hillHminusRadicand
+#print axioms NLS.KdV.HillHminusCentralControl.root_lower
+#print axioms NLS.KdV.HillHminusCentralControl.separator_ne_zero
+#print axioms NLS.KdV.exists_hillHminus_central_controls
+#print axioms NLS.KdV.hillHminusRadicand_free_central_count
+#print axioms NLS.KdV.HillHminusCentralControl.ne_zero_on_central_sphere
+#print axioms NLS.KdV.HillHminusCentralControl.central_count
+#print axioms NLS.KdV.HillHminusCentralControl.central_interval_count
+#print axioms NLS.KdV.hillHminusCentralRootSupport
+#print axioms NLS.KdV.hillHminusCentralRoots
+#print axioms NLS.KdV.hillHminusRealCentralRoots
+#print axioms NLS.KdV.count_hillHminusCentralRoots
+#print axioms NLS.KdV.mem_hillHminusCentralRoots_imp
+#print axioms NLS.KdV.card_hillHminusRealCentralRoots
+#print axioms NLS.KdV.map_ofReal_hillHminusRealCentralRoots
+#print axioms NLS.KdV.count_hillHminusRealCentralRoots
+#print axioms NLS.KdV.mem_hillHminusRealCentralRoots_iff
+#print axioms NLS.KdV.exists_ordered_hillHminusCentralRoots
+#print axioms NLS.KdV.exists_hillHminus_real_high_pairs
+#print axioms NLS.KdV.HillHminusRealHighPair.localization
+#print axioms NLS.KdV.centralSeparator_lt_freeHillValue_sub_four
+#print axioms NLS.KdV.HillHminusRealHighPair.above_central_separator
+#print axioms NLS.KdV.HillHminusRealHighPair.separated
+#print axioms NLS.KdV.exists_hillHminus_characteristic_labels_of_control
+#print axioms NLS.KdV.exists_hillHminus_global_real_characteristic_labels
+#print axioms NLS.KdV.exists_hillHminus_lowest_characteristic_root
+#print axioms NLS.KdV.hillHminusLowestRealRoot
+#print axioms NLS.KdV.hillHminusLowestRealRoot_spec
+#print axioms NLS.KdV.hillHminusLowestRealRoot_eq_of_minimal
+#print axioms NLS.KdV.exists_hillHminusRealCharacteristicLabeling
+#print axioms NLS.KdV.HillHminusRealCharacteristicLabeling.root
+#print axioms NLS.KdV.HillHminusRealCharacteristicLabeling.high_slot
+#print axioms NLS.KdV.HillHminusRealCharacteristicLabeling.tail_above_separator
+#print axioms NLS.KdV.HillHminusRealCharacteristicLabeling.occurrence_mem_pair
+#print axioms NLS.KdV.HillHminusRealCharacteristicLabeling.finite_support_and_multiplicity
+#print axioms NLS.KdV.HillHminusRealCharacteristicLabeling.finite_fiber
+#print axioms NLS.KdV.HillHminusRealCharacteristicLabeling.unique
+#print axioms NLS.KdV.hillHminusLabels
+#print axioms NLS.KdV.hillHminusLabels_spec
+#print axioms NLS.KdV.monotone_hillHminusLabels
+#print axioms NLS.KdV.hillHminusLabels_roots_iff
+#print axioms NLS.KdV.hillHminusLabels_finite_fiber
+#print axioms NLS.KdV.hillHminusLabels_global_multiplicity
+#print axioms NLS.KdV.hillHminusLabels_spec_at
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillLabels
+#print axioms NLS.Articles.KdVPseudomeasures.monotone_originalHillLabels
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillLabels_spectrum_iff
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillLabels_finite_fiber
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillLabels_global_multiplicity
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillLabels_zero_lowest
+#print axioms NLS.Articles.KdVPseudomeasures.mem_originalIsospectralSet_iff_originalHillLabels
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillLabels_sourceOriginalPotential
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalGapValues
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalGapValues_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalGapValues_neg
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalGapValues_im
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalGapValues_isospectral
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalGapValues_sourceOriginalPotential
+#print axioms NLS.KdV.HillHminusRealHighPair.eq_of_ordered_roots
+#print axioms NLS.KdV.singularHillAlgebraicMultiplicity_shifted_miura
+#print axioms NLS.KdV.hillMiuraDiracLeft
+#print axioms NLS.KdV.hillMiuraDiracRight
+#print axioms NLS.KdV.hillMiuraDiracPair_real
+#print axioms NLS.KdV.hillMiuraDiracPair_ordered
+#print axioms NLS.KdV.hillHminus_pair_eq_squared_miuraDirac
+#print axioms NLS.KdV.abs_miura_square_translation_lt
+#print axioms NLS.KdV.exists_miuraDirac_high_square_localization
+#print axioms NLS.KdV.exists_hillHminusLabels_squared_miuraDirac
+#print axioms NLS.KdV.hillHminus_pair_gap_norm_eq_miuraDirac
+#print axioms NLS.KdV.exists_miuraDirac_signed_square_localization
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalCanonicalGapValues_miura_factorization
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalCanonicalGapValues_miura_weighted_bound
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalCanonicalGapValues_miura_signed_norm
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalCanonicalGapValues_miura_signed_weighted_bound
+#print axioms NLS.Articles.KdVPseudomeasures.memlp_miuraDiracGap_of_original_gap
+#print axioms NLS.KdV.sobolev_even_weight_le_of_nonpos
+#print axioms NLS.KdV.exists_periodOneOriginal_regular_realization
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_finiteP_realization_of_gap
+#print axioms NLS.Articles.KdVPseudomeasures.originalIsospectralSet_finiteP_realization_of_gap
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_isospectral_finiteP_membership_of_endpoint_gaps
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_ii
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_i
