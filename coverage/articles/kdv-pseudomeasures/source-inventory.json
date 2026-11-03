@@ -703,10 +703,9 @@
     }
   ],
   "remaining_obligations": [
-    "Glue the NOW PROVED chartwise analytic normalized action ratios and contour-independent high actions across DIFFERENT local square/radius charts. Use actual pair uniqueness and uniqueness of the filled squared primitive from the shared squaredCosh inverse at an actual branch root, then identify the same intrinsic normalized root and ratio on overlaps. Within-chart arbitrary-contour independence, full COMPLEX local analytic ratio through collapse, locally uniform8*pi*n normalization and high local I=0 iff gap=0 are NOW PROVED.",
-    "Construct and identify ONE ORIGINAL canonical Hill action family at ALL required indices on a common complex neighborhood of the real mean-zero H-minus-one space. Establish the remaining low-index analytic action ratios, all-index vanishing equivalence, and real-valuedness/positivity where used. Full source3.2 also requires the actual Birkhoff-coordinate estimate; it remains OPEN.",
-    "Construct or identify the ACTUAL original KdV H-minus-one Birkhoff map, with verified action/angle coordinates, original differential q_(2n)/sqrt(2*pi*abs(n)), exact target order s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. FULL complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB are already PROVED; do not redo them or substitute arbitrary supplied conjugacy data.",
-    "Construct or identify the ACTUAL original H-minus-one KdV flow defined by convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization, and derive main1.1/1.3/1.4 plus Wiener5.1/5.9. All five main theorems remain UNPROVED; keep the goal ACTIVE. Quantitative DirichletC4ii, remaining low parity/interlacing and complex ratio2.20 remain open only where required."
+    "Construct the remaining LOW-INDEX ORIGINAL canonical Hill actions and their analytic normalized ratios on complex neighborhoods of every real mean-zero H-minus-one potential, and identify them with the NOW GLUED actual high action family. Establish one COMMON complex neighborhood supporting ALL original indices, with the exact physical root and original canonical labels. Cross-square/radius and arbitrary-contour independence of the high family, analytic extension through collapsed high gaps, uniform COMPLEX normalization and high-domain nonvanishing/zero-action equivalence are NOW PROVED.",
+    "Complete the original all-index action-angle/Birkhoff construction, including real-valuedness/positivity, the actual coordinate estimate (|gamma_n|+|mu_n-tau_n|)/sqrt(n), original differential q_(2n)/sqrt(2*pi*abs(n)), exact target order s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Consider reusing the verified Miura/Dirac discriminant and source higher-action contour developments, but prove the ACTUAL Hill/Dirac action identity and normalization before importing those actions. Do not substitute arbitrary supplied conjugacy data or identify the NLS Birkhoff map with KdV without proof.",
+    "Construct or identify the ACTUAL original H-minus-one KdV flow defined by convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization, and derive main1.1/1.3/1.4 plus Wiener5.1/5.9. All five main theorems remain UNPROVED; keep the goal ACTIVE. Quantitative DirichletC4ii, remaining low parity/interlacing and complex ratio2.20 remain open only where required. FULL complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB remain PROVED."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1518,6 +1517,34 @@
     "global_canonical_Hill_action_family_all_indices_constructed": false,
     "all_index_global_canonical_action_ratio_analytic_on_one_common_neighborhood": false,
     "action_real_valuedness_and_positivity_proved": false,
+    "full_source_Theorem3_2_proved": false,
+    "actual_original_KdV_Birkhoff_map_constructed": false,
+    "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
+    "main_theorems_verified": false
+  },
+  "actual_HminusOne_glued_high_actions_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-glued-high-actions-map.json",
+    "actual_pairs_and_intrinsic_gap_polynomial_agree_across_radii": true,
+    "actual_filled_square_unique_on_overlap_from_common_branch_root": true,
+    "normalized_root_unique_on_entire_overlap_including_cut_and_collapse": true,
+    "normalized_action_ratio_independent_of_square_and_radius": true,
+    "actual_contour_actions_agree_across_square_radius_and_contour_choices": true,
+    "actual_valid_action_neighborhoods_constructed_from_trace_square_factory": true,
+    "glued_native_high_ratio_gap_square_and_action_defined": true,
+    "per_index_natural_high_action_domain_open": true,
+    "glued_ratio_gap_square_and_action_analytic_on_natural_domain": true,
+    "every_glued_high_action_realized_by_actual_winding_one_contour": true,
+    "one_complex_neighborhood_contained_in_every_later_high_domain": true,
+    "same_glued_ratios_satisfy_complex_locally_uniform_eight_n_pi_normalization": true,
+    "ratio_nonzero_and_zero_action_equivalence_on_entire_natural_high_domain": true,
+    "literal_normalized_quotient_equals_glued_ratio_off_collapsed_gaps": true,
+    "original_canonical_label_slots_identified_at_same_high_index": true,
+    "original_entire_real_HminusOne_high_action_factorization_error_and_zero_criterion": true,
+    "common_complex_neighborhood_for_all_original_indices_constructed": false,
+    "low_index_original_canonical_action_family_constructed": false,
+    "all_index_global_canonical_actions_identified": false,
+    "canonical_action_claim_outside_explicit_natural_high_domain": false,
+    "original_action_real_valuedness_and_positivity_proved": false,
     "full_source_Theorem3_2_proved": false,
     "actual_original_KdV_Birkhoff_map_constructed": false,
     "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,

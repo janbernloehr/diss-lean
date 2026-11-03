@@ -753,6 +753,14 @@ modules = [
     'NLS.ComplexAnalysis.ParametricSemicircleMean',
     'NLS.KdV.HillHminusOneActionRatio',
     'NLS.KdV.HillHminusOneUniformActionRatios',
+    'NLS.KdV.HillHminusOneActionChart',
+    'NLS.KdV.HillHminusOneActionChartGluing',
+    'NLS.KdV.HillHminusOneActionNeighborhood',
+    'NLS.KdV.HillHminusOneGluedHighActions',
+    'NLS.KdV.HillHminusOneUniformGluedActions',
+    'NLS.KdV.HillHminusOneGluedActionLabels',
+    'NLS.Articles.KdVPseudomeasures.OriginalHighHillActions',
+    'NLS.KdV.HillHminusOneGluedActionNonvanishing',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

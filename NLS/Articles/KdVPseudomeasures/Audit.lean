@@ -719,6 +719,14 @@ import NLS.ComplexAnalysis.LocalEvenSquareFamily
 import NLS.ComplexAnalysis.ParametricSemicircleMean
 import NLS.KdV.HillHminusOneActionRatio
 import NLS.KdV.HillHminusOneUniformActionRatios
+import NLS.KdV.HillHminusOneActionChart
+import NLS.KdV.HillHminusOneActionChartGluing
+import NLS.KdV.HillHminusOneActionNeighborhood
+import NLS.KdV.HillHminusOneGluedHighActions
+import NLS.KdV.HillHminusOneUniformGluedActions
+import NLS.KdV.HillHminusOneGluedActionLabels
+import NLS.Articles.KdVPseudomeasures.OriginalHighHillActions
+import NLS.KdV.HillHminusOneGluedActionNonvanishing
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5190,3 +5198,49 @@ import NLS.KdV.HillHminusOneUniformActionRatios
 #print axioms NLS.KdV.norm_hillHminusNormalizedActionRatio_sub_one_le
 #print axioms NLS.KdV.hillHminusHighContourAction_eq_zero_iff_gap_collapsed
 #print axioms NLS.KdV.exists_hillHminus_uniform_analytic_action_ratios
+#print axioms NLS.KdV.HillHminusActionChartValid
+#print axioms NLS.KdV.HillHminusHighGapPair.align_other_radius
+#print axioms NLS.KdV.HillHminusHighGapPair.gapPolynomial_eq_other_radius
+#print axioms NLS.KdV.eqOn_of_squaredCosh_eq_at_common_zero
+#print axioms NLS.KdV.HillHminusActionChartValid.square_eq_on_overlap
+#print axioms NLS.KdV.HillHminusActionChartValid.root_eq_on_overlap
+#print axioms NLS.KdV.HillHminusActionChartValid.symmetric_data_eq
+#print axioms NLS.KdV.HillHminusActionChartValid.ratio_eq
+#print axioms NLS.KdV.HillHminusActionChartValid.action_eq_ratio
+#print axioms NLS.KdV.HillHminusActionChartValid.action_eq_other_chart
+#print axioms NLS.KdV.HillHminusActionNeighborhood
+#print axioms NLS.KdV.HillHminusActionNeighborhood.valid
+#print axioms NLS.KdV.HillHminusActionNeighborhood.analytic_ratio
+#print axioms NLS.KdV.HillHminusActionNeighborhood.analytic_squared_half_gap
+#print axioms NLS.KdV.exists_hillHminus_uniform_action_neighborhoods
+#print axioms NLS.KdV.hillHminusHighActionDomain
+#print axioms NLS.KdV.hillHminusHighActionWitness
+#print axioms NLS.KdV.hillHminusHighActionWitness_spec
+#print axioms NLS.KdV.HillHminusActionNeighborhood.mem_highActionDomain
+#print axioms NLS.KdV.isOpen_hillHminusHighActionDomain
+#print axioms NLS.KdV.hillHminusGluedHighActionRatio
+#print axioms NLS.KdV.hillHminusGluedHighGapSquare
+#print axioms NLS.KdV.hillHminusGluedHighAction
+#print axioms NLS.KdV.HillHminusActionNeighborhood.glued_ratio_eq
+#print axioms NLS.KdV.HillHminusActionNeighborhood.glued_gap_square_eq
+#print axioms NLS.KdV.HillHminusActionNeighborhood.glued_gap_square_eq_pair
+#print axioms NLS.KdV.HillHminusActionNeighborhood.glued_action_eq_contour
+#print axioms NLS.KdV.analyticOnNhd_hillHminusGluedHighActionRatio
+#print axioms NLS.KdV.analyticOnNhd_hillHminusGluedHighGapSquare
+#print axioms NLS.KdV.analyticOnNhd_hillHminusGluedHighAction
+#print axioms NLS.KdV.exists_hillHminusGluedHighAction_contour
+#print axioms NLS.KdV.hillHminusGluedHighAction_eq_zero_iff
+#print axioms NLS.KdV.hillHminusGluedHighAction_normalized_quotient
+#print axioms NLS.KdV.norm_hillHminusGluedHighAction_error_le
+#print axioms NLS.KdV.exists_hillHminus_uniform_glued_high_actions
+#print axioms NLS.KdV.exists_hillHminusGluedHighGapSquare_eq_labels
+#print axioms NLS.Articles.KdVPseudomeasures.originalHighHillAction
+#print axioms NLS.Articles.KdVPseudomeasures.originalHighHillActionRatio
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalHighHillGapSquare_eq_canonical
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalHighHillAction_factorization
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalHighHillAction_normalization
+#print axioms NLS.KdV.HillHminusActionChartValid.ratio_norm_sub_one_lt_one
+#print axioms NLS.KdV.HillHminusActionChartValid.ratio_ne_zero
+#print axioms NLS.KdV.hillHminusGluedHighActionRatio_norm_sub_one_lt_one
+#print axioms NLS.KdV.hillHminusGluedHighActionRatio_ne_zero
+#print axioms NLS.KdV.hillHminusGluedHighAction_eq_zero_iff_on_domain
