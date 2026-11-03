@@ -634,6 +634,10 @@ modules = [
     'NLS.KdV.SingularHillEigenResidual',
     'NLS.Articles.KdVPseudomeasures.PeriodicEigenResidual',
     'NLS.Articles.KdVPseudomeasures.PeriodicSpectralRegularity',
+    'NLS.SequenceSpaces.HillLogKernel',
+    'NLS.KdV.HillSourceReciprocal',
+    'NLS.KdV.HillHalfDenominator',
+    'NLS.KdV.HillHalfDenominatorPhysical',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

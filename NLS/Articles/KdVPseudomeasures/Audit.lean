@@ -600,6 +600,10 @@ import NLS.KdV.SingularHillSpectralEigenvalues
 import NLS.KdV.SingularHillEigenResidual
 import NLS.Articles.KdVPseudomeasures.PeriodicEigenResidual
 import NLS.Articles.KdVPseudomeasures.PeriodicSpectralRegularity
+import NLS.SequenceSpaces.HillLogKernel
+import NLS.KdV.HillSourceReciprocal
+import NLS.KdV.HillHalfDenominator
+import NLS.KdV.HillHalfDenominatorPhysical
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4628,3 +4632,30 @@ import NLS.Articles.KdVPseudomeasures.PeriodicSpectralRegularity
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicEigenResidual
 #print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicSpectralVector_regular
 #print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicH1Vector_regular
+#print axioms NLS.ReciprocalSeries.reciprocal_product_le_max_power
+#print axioms NLS.ReciprocalSeries.hillKernel_one_le_power
+#print axioms NLS.ReciprocalSeries.tsum_hillKernel_one_le_power
+#print axioms NLS.ReciprocalSeries.tsum_hillKernel_one_le_log
+#print axioms NLS.KdV.freeHillSourceCircle_denominator_ge
+#print axioms NLS.KdV.freeHillSourceCircle_reciprocal_le
+#print axioms NLS.KdV.summable_freeHillSourceCircle_reciprocal
+#print axioms NLS.KdV.tsum_freeHillSourceCircle_reciprocal_le_log
+#print axioms NLS.KdV.hillHalfDenominatorRaw
+#print axioms NLS.KdV.norm_sq_hillHalfDenominatorRaw
+#print axioms NLS.KdV.memlp_hillHalfDenominatorRaw
+#print axioms NLS.KdV.hillHalfDenominatorSymbol
+#print axioms NLS.KdV.hillHalfDenominatorSymbol_apply
+#print axioms NLS.KdV.norm_sq_hillHalfDenominatorSymbol
+#print axioms NLS.KdV.norm_sq_hillHalfDenominatorSymbol_le_log
+#print axioms NLS.KdV.norm_hillHalfDenominatorRaw_le
+#print axioms NLS.KdV.hillHalfDenominatorBoundedSymbol
+#print axioms NLS.KdV.hillHalfDenominatorBoundedSymbol_apply
+#print axioms NLS.KdV.norm_hillHalfDenominatorBoundedSymbol_le
+#print axioms NLS.KdV.hillHalfDenominatorToContinuous
+#print axioms NLS.KdV.hillHalfDenominatorToContinuous_coefficient
+#print axioms NLS.KdV.norm_hillHalfDenominatorToContinuous_le
+#print axioms NLS.KdV.norm_sq_hillHalfDenominatorToContinuous_le_log
+#print axioms NLS.KdV.hillHalfDenominatorL2
+#print axioms NLS.KdV.hillHalfDenominatorL2_coefficient
+#print axioms NLS.KdV.norm_hillHalfDenominatorL2_le
+#print axioms NLS.KdV.hillHalfDenominatorToContinuous_toLp
