@@ -1,0 +1,19 @@
+{
+  "source_branch": "articles/kdv-pseudomeasures",
+  "source_commit": "34c933bee3f6089d334eea0abb959364fb342b65",
+  "modules": {
+    "NLS.KdV.ClassicalHillDirichlet": "d76f479adcbb218250a72be50f88f0133610c92e1aa257416ecd651012e43741",
+    "NLS.KdV.HillL2Dirichlet": "9ee79e1c78f80a018e486c6101cf5807fcd40ee71e44631c0d10f373462439bb",
+    "NLS.MKdV.QuasiHillEnergyEmbedding": "753b0d8b1cee56d5df09ca94a6351397619c0699f900646ce6af947d8acba8e4",
+    "NLS.MKdV.QuasiHillL2Energy": "08e4f509bfda1952921d7e4575d3f2c43ce613eb2f042601a611cc25861a11a0",
+    "NLS.MKdV.QuasiHillL2Sobolev": "7c838b57e9f06bfb5d5b43d822811c406d6417928fbe91ce94144b7d96e304ac",
+    "NLS.MKdV.MiuraL2HillDirichlet": "0afef64d764e284dda446271e5d1eb081e52715fd33d088a23df3809eb7af8df",
+    "NLS.KdV.HillHminusOneDirichlet": "e3f7c0787cb4ea6a700800ce6984dfdaaaad297816455a357af456f73efeea9d"
+  },
+  "generic_main_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "generic_main_modules": {
+    "NLS.ComplexAnalysis.JointSpectralDerivative": "f988cb9c979c851d34ce56925c72b86e3a54ad88d2bd75f3bfdd856e1212147c",
+    "NLS.ComplexAnalysis.AnalyticImplicitRoot": "c2d1d9eae5186698af3c0066f7d509ffb1556efd72f4d4f8b6df76bbb7552aeb",
+    "NLS.ComplexAnalysis.AnalyticImplicitBanachRoot": "d8267efd906bdf007cc30a8a83318fc20dc8d6e0ec9d34480818ab8f32cdc7c7"
+  }
+}

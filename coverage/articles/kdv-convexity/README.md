@@ -2230,6 +2230,60 @@ the same complex domain. These statements use the analytic-moment and
 local-tail-bound interface; the actual KdV coordinate realization and
 physical Hamiltonian/frequency identification remain required.
 
+## Intrinsic Dirichlet spectrum and analytic H^-1 root branches
+
+Seven exact source modules are reused from `articles/kdv-pseudomeasures`
+at `34c933b`, with hashes in `dirichlet-shared-imports.json`. They construct
+the original normalized Dirichlet characteristic, jointly entire in
+energy and complex H^-1 potential, and retain its free zero-energy value
+one. Three existing generic implicit-function modules are reused from
+the pinned shared main baseline. All ten are checked in this worktree.
+
+`L2QuasiHillEnergyAgreement.lean` identifies the full actual solution
+curves of the two fixed energy-affine state realizations, by their common
+continuous-profile IVP and original L2 density. Initial data and zero
+energy are retained. `HillHminusOnePhysicalDirichlet.lean` identifies the
+entire characteristic with the actual terminal position of the normalized
+column `(0,1)`, in every shifted-Miura chart.
+
+`HillHminusOneIntrinsicDirichletSpectrum.lean` proves that its zeros are
+exactly the intrinsic nonzero H1 weak Dirichlet eigenfunctions. Every such
+function is a nonzero scalar multiple of that same normalized column in
+every chart, proving geometric simplicity without assuming a momentum
+representative or its regularity in the scalar weak predicate.
+
+`IntervalH1Conjugation.lean` proves conjugate H1 regularity and nonzero
+physical L2 mass of a nonzero continuous curve. `HillHminusOneWeakFormReality.lean`
+uses actual real L2 potentials and real Fourier density to prove reality
+and conjugation symmetry of the intrinsic form at every real H^-1 input.
+No real Riccati lift is assumed. `HillHminusOneWeakSpectrumReality.lean`
+then proves that all intrinsic Dirichlet energies and every unit-modulus
+Floquet energy are real. The actual Dirichlet characteristic has no
+nonreal roots at a real potential.
+
+`L2QuasiHillDirichletDerivative.lean` derives the two-energy Lagrange
+identity from symmetry of the factored form and the exact weak Green
+identities. Uniform-curve analyticity gives, at any complex root,
+
+```text
+momentum_lambda(1) * Dirichlet'(lambda) = integral position_lambda^2.
+```
+
+`HillHminusOneDirichletSimplicity.lean` transfers the formula to the
+original energy, with the chart shift retained. Conjugation symmetry,
+geometric simplicity and nonzero physical mass show that the scalar
+square integral cannot vanish at a real potential. Every root of the
+actual entire Dirichlet characteristic therefore has nonzero energy
+derivative and analytic order one, including a root at zero energy.
+
+`HillHminusOneDirichletRootBranches.lean` applies the shared analytic
+implicit-function theorem. Every root at every real potential has a local
+complex analytic root branch in the original H^-1 norm, real at nearby
+real inputs. A global label or continuously selected root is not an input.
+Global rough Dirichlet labels/interlacing and the actual global KdV
+coordinate realization remain to be constructed. All main theorem flags
+remain false.
+
 ## Remaining essential KdV work
 
 1. Construct the closed intrinsic singular Hill operator domain from the
@@ -2294,16 +2348,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `720dd0f` contains 427 source modules. Of these,
-426 source hashes remain unchanged. The weak-Floquet predicate module is
-corrected as documented above and rechecked; nine new authored modules
-also pass Lean 4.33.1/mathlib v4.33.1 with `warningAsError=true`.
-The full reproduction script lists 436 source modules. The positive-index
-example and all 936 coverage-name checks pass.
+The validated baseline at `011ccb1` contains 436 source modules, whose
+source hashes all remain unchanged. Ten exact shared modules and ten new
+authored modules pass Lean 4.33.1/mathlib v4.33.1 with
+`warningAsError=true`. The full reproduction script lists 456 source
+modules. The positive-index example and all 1033 coverage-name checks pass.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 218 additional shared modules:
-4438 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 229 additional shared modules:
+4563 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
