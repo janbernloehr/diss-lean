@@ -178,7 +178,7 @@
     ]
   },
   "essential_open_obligations": [
-    "The full native Dirichlet domain, full H-minus-one dual base and exact partial operator are constructed. Native weak eigenvectors now recover full interval H1 quasi-derivatives and ACTUAL AC Dirichlet states, retaining the endpoint defect. For EVERY complex original H-minus-one source potential and EVERY complex energy, a nonzero native eigenvector forces the normalized scalar characteristic to vanish; the same holds for the actual partial operator and entire original physical source adapter. REMAINING: prove characteristic-zero/AC-state SUFFICIENCY for native eigenvectors, native closedness/resolvent, entire native spectrum and algebraic multiplicities. Full real characteristic labels and real general-weight midpoint membership remain proved. Global COMPLEX central labels, full complex source 2.1(ii) midpoint estimates/local boundedness, low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved.",
+    "The full native Dirichlet zero-trace H1 domain and full dual H-minus-one base now have COMPLETE normalized-characteristic/point-eigenvalue equivalence for EVERY complex original H-minus-one source and EVERY energy including zero. Native point eigenspaces have complex geometric dimension one. Actual partial-operator root chains are identified; for REAL potentials all chains are semisimple, the full root spaces are finite dimensional, and their dimensions equal normalized characteristic orders. The original full real labels now enumerate native point eigenvalues and count actual native real algebraic root dimensions. REMAINING: native closedness/dense domain/resolvent and absence of other spectrum, COMPLEX algebraic order matching, global COMPLEX central labels, full complex source 2.1(ii) midpoint estimates/local boundedness, low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved; all five main theorems remain open.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
@@ -478,7 +478,18 @@
     "The native Miura weak eigen-equation recovers a full interval H1 quasi-derivative G. The pair consisting of the original H1 position and G satisfies BOTH literal physical quasi-Hill rows almost everywhere, and G(1)-G(0) is exactly the native central residual. No extra endpoint condition is imposed on G.",
     "The recovered native Miura pair is an ACTUAL independently defined absolutely continuous Dirichlet weak state agreeing with the native position at EVERY closed-interval point. A nonzero native vector gives a nonzero scalar state and forces the independently normalized rough Dirichlet characteristic to vanish.",
     "For EVERY complex original unit-period H-minus-one potential and EVERY complex energy, each nonzero native H1-to-H-minus-one Dirichlet eigenvector forces the entire normalized characteristic to vanish. The actual shifted Miura chart is selected by the proof, and the exact native constant-shift identity removes the shift. No realness, nonzero energy, high-frequency cutoff or supplied lift is assumed. The theorem also covers actual base-space eigenvectors of the Dirichlet partial operator.",
-    "On the article ENTIRE original real mean-zero physically period-one H-minus-one distribution domain, the same necessary characteristic condition is proved for the actual native weak and partial operators. Every native eigenvalue belongs to the complete original ordered characteristic-label sequence, including ALL central indices. The original distribution is retained unchanged on every smooth test."
+    "On the article ENTIRE original real mean-zero physically period-one H-minus-one distribution domain, the same necessary characteristic condition is proved for the actual native weak and partial operators. Every native eigenvalue belongs to the complete original ordered characteristic-label sequence, including ALL central indices. The original distribution is retained unchanged on every smooth test.",
+    "Full H1 Sobolev duality proves that every complex continuous H1 functional is determined by ALL signed raw scalar modes. Consequently constant original even-frequency residual coefficients imply the ENTIRE native zero-trace H1 weak eigen-equation, not only a dense informal family of tests.",
+    "Every independent AC quasi-Hill state has BOTH scalar position and quasi-derivative in the FULL classical interval H1 class for arbitrary L2 Miura profile. Products of the L2 profile with the bounded actual state are L2. Neither endpoint periodicity of the quasi-derivative nor smoothness of the profile is assumed.",
+    "The complete original Miura residual coefficient formula is proved BEFORE any eigen-equation. The actual physical first-order rows imply its constant residual coefficient at EVERY frequency, retaining exactly the quasi-derivative endpoint jump. Full Sobolev duality then gives the entire native weak equation.",
+    "EVERY independent AC quasi-Hill Dirichlet state reconstructs a native zero-trace H1 eigenvector whose scalar position agrees at EVERY point of the original closed interval. A nonzero scalar state yields a NONZERO native vector; no boundary trace is imposed on its quasi-derivative.",
+    "For EVERY complex original unit-period H-minus-one source potential and EVERY complex energy, including ZERO, the independently normalized scalar Dirichlet characteristic vanishes IFF there is a nonzero native H1-to-H-minus-one weak eigenvector. The proof selects an actual shifted Miura chart and removes its constant shift. The same exact equivalence holds for the actual partial operator on the FULL H-minus-one base.",
+    "On the article ENTIRE original real mean-zero physically period-one H-minus-one distribution domain, the full original Dirichlet labels enumerate EXACTLY the native point eigenvalues of the actual partial operator. Every label has an actual nonzero native H1 eigenvector, and every native eigenvalue has the original positive-index label, including the complete central block. The entire smooth-test distribution is retained unchanged.",
+    "At EVERY complex original H-minus-one source potential and energy, all native eigenvectors are scalar multiples of any fixed nonzero eigenvector, by the verified AC IVP state classification. Every actual native domain eigenspace is finite dimensional and has dimension EXACTLY one at each characteristic zero, zero elsewhere. This is GEOMETRIC multiplicity, independent of analytic order.",
+    "Actual native finite root-chain spaces and their full union are constructed with the complete H1 domain at EVERY step, and identified EXACTLY with the actual H-minus-one partial operator's own domain chains. Domain eigenspaces and base-space first root levels are linearly equivalent via the injective native inclusion.",
+    "For native real singular potentials the actual Dirichlet form is Hermitian. Strictly positive native L2 energy excludes EVERY nonzero associated eigenvector. ALL actual finite root-chain levels and the full algebraic root space therefore collapse to the actual eigenspace, without an assumed resolvent or supplied spectral labels.",
+    "For EVERY real original unit-period H-minus-one source potential and EVERY complex energy, the FULL actual native algebraic root space is finite dimensional. Its dimension is one at every normalized characteristic zero and zero elsewhere, and equals the ENTIRE normalized analytic order. This includes zero and all central energies.",
+    "The real algebraic root-space identification is transported to the article ENTIRE unchanged original physical distribution domain. Each complete original Dirichlet label has actual algebraic root-space dimension ONE; the full positive-index label sequence counts EXACTLY these actual native algebraic root dimensions at EVERY complex energy."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -817,7 +828,9 @@
     "native_source_operator_identified": false,
     "full_complex_central_labeling": false,
     "full_complex_midpoint_local_boundedness": false,
-    "source2_1_ii": false
+    "source2_1_ii": false,
+    "native_point_spectrum_identified": true,
+    "real_native_algebraic_root_dimensions_identified": true
   },
   "verified_native_dirichlet_domain": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-domain-map.json",
@@ -828,9 +841,10 @@
     "partial_operator_and_exact_graph": true,
     "endpoint_defect_retained": true,
     "native_real_eigenvalues": true,
-    "characteristic_equivalence": false,
+    "characteristic_equivalence": true,
     "native_resolvent_and_algebraic_multiplicities": false,
-    "source2_1_ii": false
+    "source2_1_ii": false,
+    "equivalence_scope": "Complete POINT eigenvalue equivalence, entire complex source; full operator resolvent/spectrum remains open."
   },
   "verified_native_dirichlet_necessity": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-necessity-map.json",
@@ -841,8 +855,24 @@
     "actual_partial_operator_necessity": true,
     "original_full_distribution_adapter": true,
     "native_eigenvalues_in_original_characteristic_labels": true,
-    "characteristic_zero_sufficiency": false,
+    "characteristic_zero_sufficiency": true,
     "full_native_spectrum_and_algebraic_multiplicities": false,
+    "source2_1_ii": false,
+    "equivalence_coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-point-spectrum-map.json"
+  },
+  "verified_native_dirichlet_point_spectrum": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-point-spectrum-map.json",
+    "all_complex_characteristic_iff_native_point_eigenvalue": true,
+    "all_complex_energies_including_zero": true,
+    "all_complex_geometric_dimension_one": true,
+    "actual_native_partial_chain_identification": true,
+    "real_native_semisimplicity": true,
+    "real_actual_algebraic_root_spaces_finite": true,
+    "real_actual_algebraic_root_dimensions_equal_characteristic_orders": true,
+    "original_real_labels_enumerate_native_point_spectrum": true,
+    "original_full_label_counts_actual_real_root_dimensions": true,
+    "native_closedness_and_full_resolvent_spectrum": false,
+    "full_complex_algebraic_order_matching": false,
     "source2_1_ii": false
   }
 }

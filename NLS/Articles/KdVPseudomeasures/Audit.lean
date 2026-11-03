@@ -468,6 +468,19 @@ import NLS.KdV.SingularDirichletMiuraRegularity
 import NLS.MKdV.QuasiHillL2IntervalState
 import NLS.KdV.SingularDirichletCharacteristicNecessity
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletNecessity
+import NLS.SequenceSpaces.SobolevModeDualExt
+import NLS.KdV.SingularDirichletResidualCriterion
+import NLS.MKdV.QuasiHillL2StateSobolev
+import NLS.KdV.SingularDirichletMiuraConverse
+import NLS.FunctionalAnalysis.ClosedIntervalDerivativeCongruence
+import NLS.Fourier.UnitIntervalFourierLinear
+import NLS.KdV.SingularDirichletPhysicalRows
+import NLS.KdV.SingularDirichletCharacteristicSufficiency
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletPointSpectrum
+import NLS.KdV.SingularDirichletRootSpace
+import NLS.KdV.SingularDirichletGeometricMultiplicity
+import NLS.KdV.SingularDirichletRealMultiplicity
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletMultiplicity
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -3877,3 +3890,51 @@ import NLS.Articles.KdVPseudomeasures.OriginalDirichletNecessity
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletCharacteristic_eq_zero_of_native_eigen
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichlet_native_eigen_mem_labels
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletCharacteristic_eq_zero_of_partial_eigen
+#print axioms NLS.ZakharovShabat.scalarMode_eq_ofFinsupp
+#print axioms NLS.ZakharovShabat.scalarMode_dual_ext
+#print axioms NLS.KdV.singularDirichlet_eigen_iff_residual_coefficients_constant
+#print axioms NLS.MKdV.IsQuasiHillL2Solution.position_row
+#print axioms NLS.MKdV.IsQuasiHillL2Solution.quasiDerivative_row
+#print axioms NLS.MKdV.IsQuasiHillL2Solution.intervalH1
+#print axioms NLS.KdV.unitDirichletMiura_residual_coefficient
+#print axioms NLS.KdV.singularDirichletMiura_eigen_of_weak_equation
+#print axioms NLS.FunctionalAnalysis.ae_hasDerivAt_Ioc_congr_of_eqOn_Icc
+#print axioms NLS.Fourier.unitFourierCoefficient_const_mul
+#print axioms NLS.Fourier.unitFourierCoefficient_sub
+#print axioms NLS.KdV.singularDirichletMiura_eigen_of_physical_rows
+#print axioms NLS.KdV.exists_native_Miura_eigen_of_quasiHill_state
+#print axioms NLS.KdV.exists_native_Miura_eigen_of_quasiHillL2Dirichlet_eq_zero
+#print axioms NLS.KdV.exists_native_eigen_of_hillHminusDirichlet_eq_zero
+#print axioms NLS.KdV.hillHminusDirichlet_eq_zero_iff_native_eigen
+#print axioms NLS.KdV.hillHminusDirichlet_eq_zero_iff_partial_eigen
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletCharacteristic_eq_zero_iff_native_eigen
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletCharacteristic_eq_zero_iff_partial_eigen
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_is_native_eigen
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichlet_native_eigen_iff_mem_labels
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichlet_partial_eigen_iff_mem_labels
+#print axioms NLS.KdV.singularDirichletEigenspace
+#print axioms NLS.KdV.singularDirichletRootSpace
+#print axioms NLS.KdV.singularDirichletRootSpaceTop
+#print axioms NLS.KdV.mem_singularDirichletRootSpace_succ
+#print axioms NLS.KdV.singularDirichletRootSpace_eq_partial
+#print axioms NLS.KdV.singularDirichletRootSpaceTop_eq_partial
+#print axioms NLS.KdV.singularDirichletEigenspaceRootEquiv
+#print axioms NLS.KdV.singularDirichlet_source_eigen_add_constant_iff
+#print axioms NLS.KdV.singularDirichlet_native_eigenvectors_proportional
+#print axioms NLS.KdV.singularDirichletPencil_ker_eq_span
+#print axioms NLS.KdV.singularDirichletEigenspace_eq_bot_iff
+#print axioms NLS.KdV.finiteDimensional_singularDirichletEigenspace
+#print axioms NLS.KdV.finrank_singularDirichletEigenspace
+#print axioms NLS.KdV.singularDirichletDomainInclusion_hermitian
+#print axioms NLS.KdV.singularDirichletOperator_hermitian
+#print axioms NLS.KdV.singularDirichletPencil_pair_eigenvector
+#print axioms NLS.KdV.singularDirichlet_no_associated_vector
+#print axioms NLS.KdV.singularDirichletRootSpace_le_one_of_real
+#print axioms NLS.KdV.singularDirichletRootSpaceTop_eq_one_of_real
+#print axioms NLS.KdV.finiteDimensional_singularDirichletRootSpaceTop_of_real
+#print axioms NLS.KdV.finrank_singularDirichletRootSpaceTop_of_real
+#print axioms NLS.KdV.finrank_singularDirichletRootSpaceTop_eq_analyticOrder_of_real
+#print axioms NLS.Articles.KdVPseudomeasures.finiteDimensional_originalDirichletRootSpace
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletRootSpace_finrank_eq_analyticOrder
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_algebraic_multiplicity_one
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_native_global_multiplicity

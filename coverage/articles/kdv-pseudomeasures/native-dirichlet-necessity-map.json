@@ -153,5 +153,20 @@
       "Constructed full complex shifted Miura charts and exact characteristic shift identity",
       "Complete original ordered real Dirichlet characteristic labels"
     ]
+  },
+  "native_point_spectrum_and_real_root_multiplicity_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-point-spectrum-map.json",
+    "all_complex_characteristic_iff_native_point_eigenvalue": true,
+    "all_complex_energies_including_zero": true,
+    "all_complex_geometric_dimension_one": true,
+    "actual_native_partial_chain_identification": true,
+    "real_native_semisimplicity": true,
+    "real_actual_algebraic_root_spaces_finite": true,
+    "real_actual_algebraic_root_dimensions_equal_characteristic_orders": true,
+    "original_real_labels_enumerate_native_point_spectrum": true,
+    "original_full_label_counts_actual_real_root_dimensions": true,
+    "native_closedness_and_full_resolvent_spectrum": false,
+    "full_complex_algebraic_order_matching": false,
+    "source2_1_ii": false
   }
 }
