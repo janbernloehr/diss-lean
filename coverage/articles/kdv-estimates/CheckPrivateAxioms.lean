@@ -1,3 +1,8 @@
+import NLS.KdV.HillNativeIntegerLower
+import NLS.KdV.HillHamiltonianNormBounds
+import NLS.KdV.HillHamiltonianConvolutionBounds
+import NLS.KdV.HillForwardSobolevBound
+import NLS.Articles.KdVEstimates.IntegerEstimates
 import NLS.KdV.HillLowerSobolevTrace
 import NLS.SequenceSpaces.TriangularHierarchyBounds
 import NLS.KdV.HillInverseSobolevBound
