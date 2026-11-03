@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
-  "baseline_commit": "4b7898dd9e3fc36da7db512be4270642e8b706f8",
-  "baseline_modules_verified_unchanged": 703,
+  "baseline_commit": "30977a44558c2a2389fc0ae6fbfb3e75ce3cd5f6",
+  "baseline_modules_verified_unchanged": 793,
   "freshly_compiled_modules": [
     "NLS.SequenceSpaces.WeightedWeakStarCompactness",
     "NLS.SequenceSpaces.WeightedWeakStarLowerTopology",
@@ -24,7 +24,7 @@
     "NLS.Articles.KdVPseudomeasures.SourceWeakStarInverse",
     "NLS.Articles.KdVPseudomeasures.Audit"
   ],
-  "axiom_audited_declarations": 4408,
+  "axiom_audited_declarations": 4819,
   "warnings": 0,
   "tactic_suggestions": 0,
   "allowed_axioms": [
@@ -40,7 +40,7 @@
     "status": ""
   },
   "source_text_sha256": "1e1a9238da5d4b0fbe16d6e7e8df1b8698ae35f0b81df612cc6af910c16e1b7e",
-  "validation_log_sha256": "956978052b2f61252c81d3805dfb841eaee3ea70ee046dc60e3ac0d69fd22ce8",
+  "validation_log_sha256": "5e0edf3aad53767fc7f991e6652b93d32f9de6a89916d1f23ad7961f48ec3dd2",
   "fresh_full_build_this_increment": false,
   "scope": "Focused fresh compilation of nineteen existing Appendix B weak-star compactness/topology modules and the current complete declaration audit. All source Lemma B.1(i)-(iv) clauses remain proved; no new Lean declaration or remaining Appendix B obligation was identified.",
   "source_clauses": {
@@ -71,18 +71,7 @@
   "parameters": "Every real s, r=-s; finite p>=1, sigma<s, strict threshold (s-sigma)*p>1. Existential clauses keep their quantifiers; forward witnesses sigma=s-2,p=1.",
   "topology": "Original endpoint norm bounds and full physical distributions retained. Lower norm topology identified on endpoint-bounded subsets. Arbitrary-filter extensions retain explicit eventual endpoint bounds.",
   "workspace_decision": "pending; all writes, compiler outputs and Git milestone metadata remain private",
-  "preserved_work_in_progress": [
-    " M scripts/check-kdv-pseudomeasures.py",
-    "?? NLS/ComplexAnalysis/CoshTraceDerivative.lean",
-    "?? NLS/ComplexAnalysis/EndpointPrimitivePeriod.lean",
-    "?? NLS/ComplexAnalysis/EndpointRootLoopNormalization.lean",
-    "?? NLS/ComplexAnalysis/TwoEndpointRoot.lean",
-    "?? NLS/KdV/HillHminusOneContourBoundaryAction.lean",
-    "?? NLS/KdV/HillHminusOneHighContourAction.lean",
-    "?? NLS/KdV/HillHminusOneOffGapDerivative.lean",
-    "?? NLS/KdV/HillHminusOneOffGapPrimitive.lean",
-    "?? NLS/KdV/HillHminusOneOffGapSheets.lean"
-  ],
+  "preserved_work_in_progress": [],
   "validation_log": ".lake/full-original-label-check-20261103/logs/validation-appendix-b-current-refresh.log",
   "baseline_audit_changed_only_to_expand_exact_inventory": false,
   "new_lean_declarations": 0,
