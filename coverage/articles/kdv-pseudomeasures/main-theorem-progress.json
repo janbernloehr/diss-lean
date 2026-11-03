@@ -168,11 +168,17 @@
       "NLS.Articles.KdVPseudomeasures.isClosedEmbedding_originalHminusOnePotential",
       "NLS.Articles.KdVPseudomeasures.isCompact_originalIsospectralSet",
       "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_iii",
-      "NLS.Articles.KdVPseudomeasures.sourceLemma2_21"
+      "NLS.Articles.KdVPseudomeasures.sourceLemma2_21",
+      "NLS.KdV.analyticOnNhd_hillHminusDirichlet_joint",
+      "NLS.KdV.hillHminusDirichlet_eq_miura_of_shifted_image"
+    ],
+    "5.1": [
+      "NLS.KdV.analyticOnNhd_hillHminusDirichlet_joint",
+      "NLS.KdV.hillHminusDirichlet_eq_miura_of_shifted_image"
     ]
   },
   "essential_open_obligations": [
-    "Complete original periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source2.1(ii). General-weight direct2.1(i),endpoint2.18-2.19,REAL2.20,uniform bootstrap,cross-order labels/gaps,bounded weak-star label continuity/closed spectral fibers and all AppendixB clauses remain proved. General complex-ratio2.20 remains open.",
+    "The full complex H-minus-one Dirichlet characteristic, exact physical L2/H1 normalizations, chart independence and complete rough Miura/energy-shift identities are proved. REMAINING for source 2.1(ii): identify its zeros and multiplicities with the ACTUAL original rough Dirichlet boundary operator, construct the canonical Dirichlet labels and prove the weighted midpoint-comparison asymptotics/local boundedness. Complete the required low simplicity/interlacing and periodic/antiperiodic boundary parity. General complex-ratio 2.20 remains open. Source 2.2(i)-(iii), Lemma 2.21 and all Appendix B clauses remain proved.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
@@ -557,6 +563,15 @@
       "inverse_input_qualification": "Both inverse membership and exact finite-p isospectral compactness are proved. The new uniform endpoint bound applies to EVERY member of the full original H-minus-one isospectral set.",
       "declaration": "NLS.Articles.KdVPseudomeasures.sourceLemma2_21",
       "completion_coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json"
+    },
+    "2.1(ii)": {
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/original-hminus-one-dirichlet-map.json",
+      "full_normalized_HminusOne_Dirichlet_characteristic": true,
+      "joint_energy_potential_analyticity": true,
+      "zero_energy_and_constant_shift_normalization": true,
+      "actual_rough_operator_comparison": false,
+      "canonical_label_asymptotics": false,
+      "full_source_theorem_verified": false
     }
   },
   "verified_nonmain_source_propositions": {
@@ -674,5 +689,19 @@
     "theorem2_2_ii": true,
     "theorem2_2_iii": true,
     "exact_spectral_fiber_identification": true
+  },
+  "verified_original_dirichlet_characteristic": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-hminus-one-dirichlet-map.json",
+    "physical_L2_normalization": true,
+    "fixed_state_affine_energy_realization": true,
+    "full_L2_curve_norm_analyticity": true,
+    "unconditional_H1_physical_agreement": true,
+    "full_complex_HminusOne_extension": true,
+    "chart_independence": true,
+    "complete_rough_Miura_and_shift_identities": true,
+    "free_zero_energy_value_one": true,
+    "rough_operator_zero_criterion": false,
+    "canonical_Dirichlet_labels": false,
+    "source2_1_ii": false
   }
 }

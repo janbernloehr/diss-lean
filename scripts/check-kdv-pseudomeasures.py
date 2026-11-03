@@ -450,6 +450,14 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalEndpointBound',
     'NLS.Articles.KdVPseudomeasures.OriginalEndpointCompactness',
     'NLS.Articles.KdVPseudomeasures.OriginalFinitePCompactness',
+    'NLS.KdV.ClassicalHillDirichlet',
+    'NLS.KdV.HillL2Dirichlet',
+    'NLS.MKdV.QuasiHillEnergyEmbedding',
+    'NLS.MKdV.QuasiHillL2Energy',
+    'NLS.MKdV.QuasiHillL2Sobolev',
+    'NLS.MKdV.MiuraL2HillDirichlet',
+    'NLS.KdV.HillHminusOneDirichlet',
+    'NLS.KdV.HminusOneMiuraDirichlet',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

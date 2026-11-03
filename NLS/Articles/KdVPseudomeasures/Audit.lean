@@ -416,6 +416,14 @@ import NLS.Articles.KdVPseudomeasures.OriginalFinitePCompactCover
 import NLS.Articles.KdVPseudomeasures.OriginalEndpointBound
 import NLS.Articles.KdVPseudomeasures.OriginalEndpointCompactness
 import NLS.Articles.KdVPseudomeasures.OriginalFinitePCompactness
+import NLS.KdV.ClassicalHillDirichlet
+import NLS.KdV.HillL2Dirichlet
+import NLS.MKdV.QuasiHillEnergyEmbedding
+import NLS.MKdV.QuasiHillL2Energy
+import NLS.MKdV.QuasiHillL2Sobolev
+import NLS.MKdV.MiuraL2HillDirichlet
+import NLS.KdV.HillHminusOneDirichlet
+import NLS.KdV.HminusOneMiuraDirichlet
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -3564,3 +3572,60 @@ import NLS.Articles.KdVPseudomeasures.OriginalFinitePCompactness
 #print axioms NLS.Articles.KdVPseudomeasures.originalIsospectralRealizationSet
 #print axioms NLS.Articles.KdVPseudomeasures.isClosed_originalIsospectralRealizationSet
 #print axioms NLS.Articles.KdVPseudomeasures.isCompact_originalIsospectralRealizationSet_of_gap
+#print axioms NLS.KdV.classicalHillDirichlet
+#print axioms NLS.KdV.classicalHillDirichlet_sq
+#print axioms NLS.KdV.classicalHillDirichlet_add_const
+#print axioms NLS.KdV.classicalHillDirichlet_free_zero
+#print axioms NLS.KdV.hillL2FrequencyDirichlet
+#print axioms NLS.KdV.analyticOnNhd_hillL2FrequencyDirichlet_joint
+#print axioms NLS.KdV.hillL2FrequencyDirichlet_eq_classical
+#print axioms NLS.KdV.hillL2FrequencyDirichlet_even
+#print axioms NLS.KdV.hillL2Dirichlet
+#print axioms NLS.KdV.hillL2Dirichlet_sq
+#print axioms NLS.KdV.analyticOnNhd_hillL2Dirichlet_joint
+#print axioms NLS.KdV.hillL2Dirichlet_eq_classical
+#print axioms NLS.KdV.hillL2Dirichlet_free_zero
+#print axioms NLS.KdV.hillL2Dirichlet_add_const
+#print axioms NLS.MKdV.quasiHillEnergyStateMap
+#print axioms NLS.MKdV.quasiHillEnergyStateMap_apply
+#print axioms NLS.MKdV.quasiHillEnergyInitialVector
+#print axioms NLS.MKdV.quasiHillEnergyStateMap_initialVector
+#print axioms NLS.MKdV.quasiHillEnergyStateMap_ode
+#print axioms NLS.MKdV.quasiHillEnergyCurve
+#print axioms NLS.MKdV.quasiHillSolution_eq_energyZS
+#print axioms NLS.MKdV.quasiHillDirichlet
+#print axioms NLS.MKdV.quasiHillDirichlet_eq_energyZS
+#print axioms NLS.MKdV.analyticOnNhd_quasiHillDirichlet_joint
+#print axioms NLS.MKdV.quasiHillDirichlet_eq_classical_of_ac
+#print axioms NLS.MKdV.quasiHillDirichlet_profile_eq_classicalHill
+#print axioms NLS.MKdV.quasiHillEnergySource
+#print axioms NLS.MKdV.analyticOnNhd_quasiHillEnergySource_joint
+#print axioms NLS.MKdV.quasiHillL2SolutionCurve
+#print axioms NLS.MKdV.quasiHillL2SolutionCurve_zero
+#print axioms NLS.MKdV.analyticOnNhd_quasiHillL2SolutionCurve_joint
+#print axioms NLS.MKdV.quasiHillL2SolutionCurve_eq_continuous
+#print axioms NLS.MKdV.quasiHillL2Dirichlet
+#print axioms NLS.MKdV.analyticOnNhd_quasiHillL2Dirichlet_joint
+#print axioms NLS.MKdV.quasiHillL2Dirichlet_eq_continuous
+#print axioms NLS.MKdV.sourcePhysicalL2_quasiHillEnergySource_scalarInclusion
+#print axioms NLS.MKdV.quasiHillL2SolutionCurve_scalarInclusion
+#print axioms NLS.MKdV.quasiHillL2Dirichlet_scalarInclusion
+#print axioms NLS.MKdV.hillL2Dirichlet_miura_smooth
+#print axioms NLS.MKdV.hillL2Dirichlet_miura
+#print axioms NLS.MKdV.quasiHillL2Dirichlet_eq_hillL2
+#print axioms NLS.MKdV.quasiHillL2Dirichlet_eq_hillL2_of_shifted_image
+#print axioms NLS.KdV.HillHminusMiuraChart.dirichlet
+#print axioms NLS.KdV.HillHminusMiuraChart.analyticOnNhd_dirichlet
+#print axioms NLS.KdV.HillHminusMiuraChart.analyticAt_dirichlet_potential
+#print axioms NLS.KdV.HillHminusMiuraChart.dirichlet_eq_hillL2
+#print axioms NLS.KdV.HillHminusMiuraChart.dirichlet_eqOn_overlap
+#print axioms NLS.KdV.hillHminusDirichlet
+#print axioms NLS.KdV.hillHminusDirichlet_eq_chart
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDirichlet_joint
+#print axioms NLS.KdV.hillHminusDirichlet_eq_hillL2
+#print axioms NLS.KdV.hillHminusDirichlet_free_zero
+#print axioms NLS.KdV.hillHminusDirichlet_unique
+#print axioms NLS.KdV.continuous_hillHminusDirichlet_potential
+#print axioms NLS.KdV.hillHminusDirichlet_miura
+#print axioms NLS.KdV.hillHminusDirichlet_add_const
+#print axioms NLS.KdV.hillHminusDirichlet_eq_miura_of_shifted_image
