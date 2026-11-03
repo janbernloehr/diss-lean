@@ -753,6 +753,13 @@ import NLS.KdV.HillHminusOneMiuraOutsideShift
 import NLS.KdV.HillHminusOneMiuraCanonicalGaps
 import NLS.Articles.KdVPseudomeasures.OriginalMiuraAllIndices
 import NLS.KdV.HillHminusOneMiuraCanonicalActionFamilies
+import NLS.RealAnalysis.QuadraticIntegralPullback
+import NLS.KdV.HillHminusOneCanonicalRealActions
+import NLS.ComplexAnalysis.ConjugationRealForm
+import NLS.SequenceSpaces.PeriodOneHminusOneRealForm
+import NLS.KdV.HillHminusOneMiuraActionBalls
+import NLS.KdV.HillHminusOneCanonicalActions
+import NLS.Articles.KdVPseudomeasures.OriginalCanonicalActions
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5369,3 +5376,55 @@ import NLS.KdV.HillHminusOneMiuraCanonicalActionFamilies
 #print axioms NLS.Articles.KdVPseudomeasures.exists_originalMiura_all_index_representation
 #print axioms NLS.KdV.exists_hillHminus_Miura_action_family_outside_spectrum
 #print axioms NLS.KdV.hillHminusMiura_action_family_original_real_slots
+#print axioms NLS.RealAnalysis.sqrt_add_mem_of_mem_squared_interval
+#print axioms NLS.RealAnalysis.continuousOn_of_quadratic_pullback
+#print axioms NLS.RealAnalysis.integral_quadratic_shift
+#print axioms NLS.KdV.hillHminusRealGapProfile
+#print axioms NLS.KdV.hillHminusCanonicalRealAction
+#print axioms NLS.KdV.hillHminusRealGapProfile_miura
+#print axioms NLS.KdV.hillHminusMiuraIndexedAction_eq_canonicalRealAction
+#print axioms NLS.KdV.hillHminusMiuraIndexedAction_independent
+#print axioms NLS.KdV.hillHminusCanonicalRealAction_properties
+#print axioms NLS.ComplexAnalysis.conjugationRealPart
+#print axioms NLS.ComplexAnalysis.conjugationImagPart
+#print axioms NLS.ComplexAnalysis.conjugationRealPart_fixed
+#print axioms NLS.ComplexAnalysis.conjugationRealPart_of_fixed
+#print axioms NLS.ComplexAnalysis.conjugationImagPart_fixed
+#print axioms NLS.ComplexAnalysis.conjugation_real_imag_decomp
+#print axioms NLS.ComplexAnalysis.continuous_conjugationRealPart
+#print axioms NLS.ComplexAnalysis.continuous_conjugationImagPart
+#print axioms NLS.ComplexAnalysis.isPreconnected_fixed_real_form
+#print axioms NLS.ComplexAnalysis.norm_conjugationRealPart_le
+#print axioms NLS.ComplexAnalysis.conjugationRealPart_sub_fixed
+#print axioms NLS.ComplexAnalysis.exists_fixed_mem_ball_inter
+#print axioms NLS.ComplexAnalysis.analytic_eqOn_of_fixed_real_form
+#print axioms NLS.periodOneHminusConjugation
+#print axioms NLS.periodOneHminusConjugation_involutive
+#print axioms NLS.isRealPeriodOneHminusOne_iff_conjugation_fixed
+#print axioms NLS.isPreconnected_real_periodOneHminus
+#print axioms NLS.exists_real_mem_periodOneHminus_ball_inter
+#print axioms NLS.analytic_eqOn_of_real_periodOneHminus
+#print axioms NLS.KdV.HillHminusMiuraActionBall.source
+#print axioms NLS.KdV.HillHminusMiuraActionBall.action
+#print axioms NLS.KdV.HillHminusMiuraActionBall.source_open
+#print axioms NLS.KdV.HillHminusMiuraActionBall.analytic_action
+#print axioms NLS.KdV.HillHminusMiuraActionBall.action_eq_canonical_real
+#print axioms NLS.KdV.HillHminusMiuraActionBall.action_eq_on_overlap
+#print axioms NLS.KdV.exists_hillHminusMiuraActionBall
+#print axioms NLS.KdV.hillHminusCanonicalActionDomain
+#print axioms NLS.KdV.isOpen_hillHminusCanonicalActionDomain
+#print axioms NLS.KdV.real_mem_hillHminusCanonicalActionDomain
+#print axioms NLS.KdV.isConnected_hillHminusCanonicalActionDomain
+#print axioms NLS.KdV.hillHminusCanonicalAction
+#print axioms NLS.KdV.HillHminusMiuraActionBall.canonical_action_eq
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalAction
+#print axioms NLS.KdV.hillHminusCanonicalAction_eq_real
+#print axioms NLS.KdV.hillHminusCanonicalAction_eq_Miura_of_real
+#print axioms NLS.KdV.hillHminusCanonicalAction_real_properties
+#print axioms NLS.KdV.exists_hillHminusCanonicalAction_Miura_contour
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_eq_real_gapIntegral
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_eq_Miura
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_properties
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_pos_iff_gap_ne_zero
+#print axioms NLS.Articles.KdVPseudomeasures.exists_common_complex_neighborhood_originalCanonicalHillActions

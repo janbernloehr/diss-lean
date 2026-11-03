@@ -787,6 +787,13 @@ modules = [
     'NLS.KdV.HillHminusOneMiuraCanonicalGaps',
     'NLS.Articles.KdVPseudomeasures.OriginalMiuraAllIndices',
     'NLS.KdV.HillHminusOneMiuraCanonicalActionFamilies',
+    'NLS.RealAnalysis.QuadraticIntegralPullback',
+    'NLS.KdV.HillHminusOneCanonicalRealActions',
+    'NLS.ComplexAnalysis.ConjugationRealForm',
+    'NLS.SequenceSpaces.PeriodOneHminusOneRealForm',
+    'NLS.KdV.HillHminusOneMiuraActionBalls',
+    'NLS.KdV.HillHminusOneCanonicalActions',
+    'NLS.Articles.KdVPseudomeasures.OriginalCanonicalActions',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
