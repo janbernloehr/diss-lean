@@ -178,7 +178,7 @@
     ]
   },
   "essential_open_obligations": [
-    "The full native Dirichlet zero-trace H1 domain and full dual H-minus-one base now have COMPLETE normalized-characteristic/point-eigenvalue equivalence for EVERY complex original H-minus-one source and EVERY energy including zero. Native point eigenspaces have complex geometric dimension one. Actual partial-operator root chains are identified; for REAL potentials all chains are semisimple, the full root spaces are finite dimensional, and their dimensions equal normalized characteristic orders. The original full real labels now enumerate native point eigenvalues and count actual native real algebraic root dimensions. REMAINING: native closedness/dense domain/resolvent and absence of other spectrum, COMPLEX algebraic order matching, global COMPLEX central labels, full complex source 2.1(ii) midpoint estimates/local boundedness, low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved; all five main theorems remain open.",
+    "The ACTUAL native Dirichlet operator now has its ENTIRE zero-trace H1 domain DENSE in the FULL H-minus-one dual base, is CLOSED and has NONEMPTY COMPACT RESOLVENT. For EVERY complex unit-period original H-minus-one potential and EVERY energy, its ENTIRE spectrum is exactly the normalized characteristic zero set, with only finitely many values in bounded regions. Actual resolvents are jointly analytic in the original H-minus-one norm and energy. Full original REAL labels enumerate the ENTIRE native spectrum and count actual real algebraic root dimensions. REMAINING: COMPLEX algebraic order matching, global COMPLEX central labels, full complex source 2.1(ii) midpoint estimates/local boundedness, low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved; all five main theorems remain open.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
@@ -489,7 +489,19 @@
     "Actual native finite root-chain spaces and their full union are constructed with the complete H1 domain at EVERY step, and identified EXACTLY with the actual H-minus-one partial operator's own domain chains. Domain eigenspaces and base-space first root levels are linearly equivalent via the injective native inclusion.",
     "For native real singular potentials the actual Dirichlet form is Hermitian. Strictly positive native L2 energy excludes EVERY nonzero associated eigenvector. ALL actual finite root-chain levels and the full algebraic root space therefore collapse to the actual eigenspace, without an assumed resolvent or supplied spectral labels.",
     "For EVERY real original unit-period H-minus-one source potential and EVERY complex energy, the FULL actual native algebraic root space is finite dimensional. Its dimension is one at every normalized characteristic zero and zero elsewhere, and equals the ENTIRE normalized analytic order. This includes zero and all central energies.",
-    "The real algebraic root-space identification is transported to the article ENTIRE unchanged original physical distribution domain. Each complete original Dirichlet label has actual algebraic root-space dimension ONE; the full positive-index label sequence counts EXACTLY these actual native algebraic root dimensions at EVERY complex energy."
+    "The real algebraic root-space identification is transported to the article ENTIRE unchanged original physical distribution domain. Each complete original Dirichlet label has actual algebraic root-space dimension ONE; the full positive-index label sequence counts EXACTLY these actual native algebraic root dimensions at EVERY complex energy.",
+    "The physical massive free unit-period operator, with exact symbol 1+(2*pi*n)^2, is a verified isomorphism between the ENTIRE unit-period H1 space and its full H-minus-one coefficient space. Full verified Sobolev duality gives the isomorphism onto the ENTIRE continuous H1 dual, not only a coefficient-test subspace.",
+    "A reusable hyperplane-dual isomorphism is proved from an actual full-space isomorphism, a bounded full-dual extension and the NONZERO scalar trace of the inverse trace functional. The inverse is an explicit bounded rank-one correction. For the actual free unit Hill operator, the Green coefficients are the physical inverse multipliers and their endpoint trace has STRICTLY POSITIVE real part, proved using the convergent full Fourier series.",
+    "The resulting native free Dirichlet isomorphism acts on the ENTIRE zero-trace H1 domain and maps ONTO its FULL continuous dual. Its forward map is EXACTLY the actual native free positive Laplacian PLUS the unchanged native inclusion. Both inverse identities are verified for every native vector and every full-dual datum.",
+    "A reusable dense-hyperplane-image lemma proves that removing a scalar trace preserves density when trace-one corrections have images tending to zero. Actual high unit-frequency modes have trace ONE while their unchanged H-minus-one mass images have norms (1+n)^(-1), hence tend to zero. The full unit mass dual image remains dense after imposing the zero trace.",
+    "The unit-period mass form is identified with the unchanged original period-two distributional inclusion BEFORE test restriction. Restriction of the full dual onto zero-trace tests is surjective. Its composition with the dense zero-trace mass image is EXACTLY the actual native inclusion. The actual native partial Dirichlet operator therefore has DENSE full H1 domain in the FULL H-minus-one base, for every original complex potential.",
+    "The native inclusion and singular multiplication by EVERY original complex H-minus-one potential are compact in the actual native full-base norm. The fixed massive free normalization makes the ENTIRE Dirichlet pencil identity plus compact. Every normalized pencil is Fredholm of index zero, with verified kernel/cokernel dimension equality. Failure of bijectivity is EQUIVALENT to a genuine nonzero native eigenvector.",
+    "For EVERY complex unit-period original H-minus-one source and EVERY complex energy, the FULL native resolvent set is EXACTLY the complement of the independently normalized scalar Dirichlet characteristic zeros. This includes zero and the full central region. No presumed characteristic zero list or simple-root condition enters the Fredholm alternative.",
+    "The original full physical energy estimate transfers to the native zero-trace form for every complex potential. The explicit half-plane Re(lambda)<-singularHillLowerBoundConstant(norm q) is in the native resolvent; the retained constant is 1+93312*(norm q)^4. Thus every such operator has a NONEMPTY actual resolvent, without an assumed spectral exclusion.",
+    "The actual inverse maps EVERY native H-minus-one datum into the FULL zero-trace H1 domain, with both inverse identities proved. Its full-base realization is bounded and COMPACT, always lies in the actual partial-operator domain, solves the actual partial operator, and recovers every actual domain vector. An exact closed resolvent equation identifies the actual partial-operator graph. Hence the actual native operator is CLOSED as well as densely defined.",
+    "The normalized pencil, its H1-valued inverse and the actual compact full-base resolvent are jointly COMPLEX ANALYTIC in the full original H-minus-one potential norm and energy at every valid pair. The joint native resolvent locus is open; each full native spectrum is closed. Local submodule norm instances are explicitly anchored for nested operator spaces; no norm or topology is changed.",
+    "The ENTIRE native spectrum equals the actual point spectrum, hence EXACTLY the independently normalized characteristic zero set for every complex unit-period source. Each genuine spectral point transports to the nonzero eigenvalue 1/(lambda-a) of the ACTUAL compact base resolvent. Compact spectral theory proves FINITELY MANY spectral values in EVERY bounded region. For real original potentials the ENTIRE native spectrum is real.",
+    "On the article ENTIRE original real mean-zero physically period-one H-minus-one distribution domain, the actual native operator is closed, densely defined and has compact resolvent. The FULL original Dirichlet labels, including the entire central block, now enumerate its ENTIRE spectrum, not merely its point eigenvalues. Previous full real algebraic root-dimension/analytic-order/label-count identities therefore apply to this entire spectrum. The entire original smooth-test distribution and original normalizations are retained."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -835,7 +847,9 @@
     "full_complex_midpoint_local_boundedness": false,
     "source2_1_ii": false,
     "native_point_spectrum_identified": true,
-    "real_native_algebraic_root_dimensions_identified": true
+    "real_native_algebraic_root_dimensions_identified": true,
+    "native_entire_spectrum_identified": true,
+    "native_operator_closed_dense_compact_resolvent": true
   },
   "verified_native_dirichlet_domain": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-domain-map.json",
@@ -849,7 +863,8 @@
     "characteristic_equivalence": true,
     "native_resolvent_and_algebraic_multiplicities": false,
     "source2_1_ii": false,
-    "equivalence_scope": "Complete POINT eigenvalue equivalence, entire complex source; full operator resolvent/spectrum remains open."
+    "equivalence_scope": "Complete ENTIRE native spectrum/characteristic zero equivalence for every complex unit-period original source. Actual native closedness, dense domain and compact resolvent are proved.",
+    "resolvent_followup": "coverage/articles/kdv-pseudomeasures/native-dirichlet-resolvent-map.json"
   },
   "verified_native_dirichlet_necessity": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-necessity-map.json",
@@ -876,9 +891,10 @@
     "real_actual_algebraic_root_dimensions_equal_characteristic_orders": true,
     "original_real_labels_enumerate_native_point_spectrum": true,
     "original_full_label_counts_actual_real_root_dimensions": true,
-    "native_closedness_and_full_resolvent_spectrum": false,
+    "native_closedness_and_full_resolvent_spectrum": true,
     "full_complex_algebraic_order_matching": false,
-    "source2_1_ii": false
+    "source2_1_ii": false,
+    "native_resolvent_followup": "coverage/articles/kdv-pseudomeasures/native-dirichlet-resolvent-map.json"
   },
   "verified_appendix_b_inverse_continuity": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-inverse-map.json",
@@ -889,6 +905,23 @@
     "independent_lower_norms": true,
     "original_HminusOne_distributions": true,
     "remaining_lemma_B1_obligations": [],
+    "main_theorems_verified": false
+  },
+  "verified_native_dirichlet_resolvent": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-resolvent-map.json",
+    "native_free_isomorphism_onto_full_dual": true,
+    "native_dense_domain": true,
+    "native_closed_partial_operator": true,
+    "native_nonempty_compact_resolvent": true,
+    "native_full_spectrum_equals_point_spectrum": true,
+    "all_complex_unit_sources_spectrum_equals_normalized_characteristic_zeros": true,
+    "full_complex_joint_resolvent_analyticity": true,
+    "locally_finite_full_spectrum": true,
+    "original_full_real_labels_enumerate_entire_native_spectrum": true,
+    "real_native_algebraic_order_agreement": true,
+    "full_complex_native_algebraic_order_agreement": false,
+    "global_complex_central_labels": false,
+    "source_Theorem2_1_ii_proved": false,
     "main_theorems_verified": false
   }
 }

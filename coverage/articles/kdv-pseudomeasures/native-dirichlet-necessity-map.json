@@ -168,5 +168,22 @@
     "native_closedness_and_full_resolvent_spectrum": false,
     "full_complex_algebraic_order_matching": false,
     "source2_1_ii": false
+  },
+  "native_closed_dense_compact_resolvent_full_spectrum_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-resolvent-map.json",
+    "native_free_isomorphism_onto_full_dual": true,
+    "native_dense_domain": true,
+    "native_closed_partial_operator": true,
+    "native_nonempty_compact_resolvent": true,
+    "native_full_spectrum_equals_point_spectrum": true,
+    "all_complex_unit_sources_spectrum_equals_normalized_characteristic_zeros": true,
+    "full_complex_joint_resolvent_analyticity": true,
+    "locally_finite_full_spectrum": true,
+    "original_full_real_labels_enumerate_entire_native_spectrum": true,
+    "real_native_algebraic_order_agreement": true,
+    "full_complex_native_algebraic_order_agreement": false,
+    "global_complex_central_labels": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
   }
 }

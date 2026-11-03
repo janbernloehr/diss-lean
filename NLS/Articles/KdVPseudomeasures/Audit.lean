@@ -482,6 +482,19 @@ import NLS.KdV.SingularDirichletGeometricMultiplicity
 import NLS.KdV.SingularDirichletRealMultiplicity
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletMultiplicity
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarInverse
+import NLS.FunctionalAnalysis.DenseHyperplaneImage
+import NLS.Fourier.UnitIntervalDirichletModes
+import NLS.KdV.UnitHillFreeIsomorphism
+import NLS.FunctionalAnalysis.HyperplaneDualIsomorphism
+import NLS.KdV.UnitHillFreeGreen
+import NLS.KdV.UnitHillMassDensity
+import NLS.KdV.SingularDirichletFreeIsomorphism
+import NLS.KdV.SingularDirichletDenseDomain
+import NLS.KdV.SingularDirichletFredholm
+import NLS.KdV.SingularDirichletResolvent
+import NLS.KdV.SingularDirichletResolventFamily
+import NLS.KdV.SingularDirichletSpectrum
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletSpectrum
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -3949,3 +3962,99 @@ import NLS.Articles.KdVPseudomeasures.SourceWeakStarInverse
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceMap_iff_of_closed_bounded
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceMap_lower_iff_lower_of_closed_bounded
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceMap_originalHminusOne_iff_of_closed_bounded
+#print axioms NLS.FunctionalAnalysis.denseRange_restrict_ker_of_vanishing_trace
+#print axioms NLS.Fourier.unitDirichletMode
+#print axioms NLS.Fourier.unitDirichletMode_coefficient
+#print axioms NLS.KdV.unitHillFreeShift
+#print axioms NLS.KdV.unitHillFreeShift_coefficient
+#print axioms NLS.KdV.unitHillFreeMass_ne_zero
+#print axioms NLS.KdV.unitHillFreeInverse_weight_bound
+#print axioms NLS.KdV.unitHillFreeInverse
+#print axioms NLS.KdV.unitHillFreeInverse_coefficient
+#print axioms NLS.KdV.unitHillFreeShift_inverse
+#print axioms NLS.KdV.unitHillFreeInverse_shift
+#print axioms NLS.KdV.unitHillFreeIsomorphism
+#print axioms NLS.KdV.unitHillFreeDualIsomorphism
+#print axioms NLS.KdV.unitHillFreeDualIsomorphism_mode
+#print axioms NLS.KdV.unitHillFreeDualIsomorphism_symm_coefficient
+#print axioms NLS.FunctionalAnalysis.hyperplaneDualRestriction
+#print axioms NLS.FunctionalAnalysis.hyperplaneDualOperator
+#print axioms NLS.FunctionalAnalysis.fullDual_eq_smul_of_ker_vanishes
+#print axioms NLS.FunctionalAnalysis.hyperplaneDualOperator_injective
+#print axioms NLS.FunctionalAnalysis.hyperplaneDualInverseLift
+#print axioms NLS.FunctionalAnalysis.hyperplaneDualInverseLift_trace
+#print axioms NLS.FunctionalAnalysis.hyperplaneDualInverse
+#print axioms NLS.FunctionalAnalysis.hyperplaneDualInverse_right
+#print axioms NLS.FunctionalAnalysis.hyperplaneDualIsomorphism
+#print axioms NLS.KdV.hasSum_unitDirichletTrace
+#print axioms NLS.KdV.unitHillFreeGreen
+#print axioms NLS.KdV.unitHillFreeGreen_coefficient
+#print axioms NLS.KdV.unitDirichletTrace_unitHillFreeGreen_re_pos
+#print axioms NLS.KdV.unitDirichletTrace_unitHillFreeGreen_ne_zero
+#print axioms NLS.KdV.unitHillMass
+#print axioms NLS.KdV.unitHillMass_coefficient
+#print axioms NLS.KdV.unitHillMassDual
+#print axioms NLS.KdV.denseRange_unitHillMass
+#print axioms NLS.KdV.denseRange_unitHillMassDual
+#print axioms NLS.KdV.tendsto_unitHillMass_scalarMode
+#print axioms NLS.KdV.denseRange_unitHillMassDual_on_Dirichlet
+#print axioms NLS.KdV.unitDirichletFullDualExtension
+#print axioms NLS.KdV.unitDirichletFullDualExtension_apply
+#print axioms NLS.KdV.singularDirichletFreeIsomorphism
+#print axioms NLS.KdV.singularHillOperator_zero
+#print axioms NLS.KdV.unitHillFreeDualIsomorphism_eq_DirichletResidual
+#print axioms NLS.KdV.singularDirichletFreeIsomorphism_apply
+#print axioms NLS.KdV.singularDirichletFreeIsomorphism_symm_left
+#print axioms NLS.KdV.singularDirichletFreeIsomorphism_symm_right
+#print axioms NLS.KdV.unitHillMassDual_eq_originalMass
+#print axioms NLS.KdV.singularDirichletDomainInclusion_eq_restricted_mass
+#print axioms NLS.KdV.denseRange_singularDirichletDomainInclusion
+#print axioms NLS.KdV.dense_domain_singularDirichletPartialOperator
+#print axioms NLS.KdV.singularDirichletMultiplication
+#print axioms NLS.KdV.isCompactOperator_singularDirichletDomainInclusion
+#print axioms NLS.KdV.isCompactOperator_singularDirichletMultiplication
+#print axioms NLS.KdV.singularDirichletOperator_eq_free_add
+#print axioms NLS.KdV.singularDirichletNormalizedPencil
+#print axioms NLS.KdV.singularDirichletResolventSet
+#print axioms NLS.KdV.mem_singularDirichletResolventSet_iff_isUnit
+#print axioms NLS.KdV.singularDirichletNormalizedPencil_sub_one
+#print axioms NLS.KdV.isCompactOperator_singularDirichletNormalizedPencil_sub_one
+#print axioms NLS.KdV.singularDirichletNormalizedPencil_fredholm_index_zero
+#print axioms NLS.KdV.singularDirichletNormalizedPencil_bijective_of_injective
+#print axioms NLS.KdV.singularDirichletNormalizedPencil_apply_eq_zero_iff
+#print axioms NLS.KdV.not_mem_singularDirichletResolventSet_iff
+#print axioms NLS.KdV.mem_singularDirichletResolventSet_source_iff
+#print axioms NLS.KdV.singularDirichlet_eigenvalue_re_lower_bound
+#print axioms NLS.KdV.mem_singularDirichletResolventSet_of_re_lt
+#print axioms NLS.KdV.singularDirichletResolventSet_nonempty
+#print axioms NLS.KdV.singularDirichletResolventToH1
+#print axioms NLS.KdV.singularDirichletBaseResolvent
+#print axioms NLS.KdV.singularDirichletResolventToH1_left
+#print axioms NLS.KdV.singularDirichletResolventToH1_right
+#print axioms NLS.KdV.isCompactOperator_singularDirichletBaseResolvent
+#print axioms NLS.KdV.singularDirichletBaseResolvent_left
+#print axioms NLS.KdV.singularDirichletBaseResolvent_mem_domain
+#print axioms NLS.KdV.singularDirichletBaseResolvent_partial_right
+#print axioms NLS.KdV.singularDirichletPartialOperator_graph_eq_resolvent
+#print axioms NLS.KdV.isClosed_singularDirichletPartialOperator
+#print axioms NLS.KdV.analyticAt_singularDirichletNormalizedPencil_joint
+#print axioms NLS.KdV.isOpen_singularDirichletJointResolvent
+#print axioms NLS.KdV.analyticAt_singularDirichletResolventToH1_joint
+#print axioms NLS.KdV.analyticAt_singularDirichletBaseResolvent_joint
+#print axioms NLS.KdV.singularDirichletSpectrum
+#print axioms NLS.KdV.mem_singularDirichletSpectrum_iff
+#print axioms NLS.KdV.mem_singularDirichletSpectrum_source_iff
+#print axioms NLS.KdV.isOpen_singularDirichletResolventSet
+#print axioms NLS.KdV.isClosed_singularDirichletSpectrum
+#print axioms NLS.KdV.singularDirichletBaseResolvent_eigenvector
+#print axioms NLS.KdV.singularDirichletSpectrum_compact_eigenvalue
+#print axioms NLS.KdV.finite_singularDirichletSpectrum_norm_le
+#print axioms NLS.KdV.singularDirichletSpectrum_im_zero_of_real
+#print axioms NLS.Articles.KdVPseudomeasures.isClosed_originalDirichletPartialOperator
+#print axioms NLS.Articles.KdVPseudomeasures.dense_domain_originalDirichletPartialOperator
+#print axioms NLS.Articles.KdVPseudomeasures.exists_compact_originalDirichletResolvent
+#print axioms NLS.Articles.KdVPseudomeasures.mem_originalDirichletSpectrum_iff_characteristic
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_mem_spectrum
+#print axioms NLS.Articles.KdVPseudomeasures.mem_originalDirichletSpectrum_iff_mem_labels
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletSpectrum_eq_range_labels
+#print axioms NLS.Articles.KdVPseudomeasures.finite_originalDirichletSpectrum_norm_le
