@@ -5286,3 +5286,11 @@ import NLS.KdV.HillDirichletPotentialDerivative
 import NLS.KdV.HillDirichletKernelNormalization
 import NLS.KdV.HillDirichletGradients
 import NLS.KdV.ClassicalHillDirichletBrackets
+import NLS.ComplexAnalysis.RealEnergySquareRoot
+import NLS.KdV.HillStateJointContinuity
+import NLS.KdV.HillRealPeriodOneTruncation
+import NLS.ComplexAnalysis.ScalarStateSquaredPairing
+import NLS.KdV.HillDirichletSquaredPairing
+import NLS.KdV.HillDirichletGradientCurves
+import NLS.KdV.HillDirichletGardnerBrackets
+import NLS.KdV.HillDirichletGradientH1

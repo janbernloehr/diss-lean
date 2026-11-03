@@ -363,6 +363,14 @@ import NLS.KdV.HillDirichletPotentialDerivative
 import NLS.KdV.HillDirichletKernelNormalization
 import NLS.KdV.HillDirichletGradients
 import NLS.KdV.ClassicalHillDirichletBrackets
+import NLS.ComplexAnalysis.RealEnergySquareRoot
+import NLS.KdV.HillStateJointContinuity
+import NLS.KdV.HillRealPeriodOneTruncation
+import NLS.ComplexAnalysis.ScalarStateSquaredPairing
+import NLS.KdV.HillDirichletSquaredPairing
+import NLS.KdV.HillDirichletGradientCurves
+import NLS.KdV.HillDirichletGardnerBrackets
+import NLS.KdV.HillDirichletGradientH1
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -677,7 +685,12 @@ run_cmd do
     ``NLS.ComplexAnalysis.scalarStateCrossMass_self_real,
     ``NLS.ComplexAnalysis.tendsto_sq_punctured,
     ``NLS.ComplexAnalysis.isClosed_exists_zero_in_variable_Icc,
-    ``NLS.ComplexAnalysis.eq_of_zero_of_pos_derivative_at_zeros]
+    ``NLS.ComplexAnalysis.eq_of_zero_of_pos_derivative_at_zeros,
+    ``NLS.ComplexAnalysis.complex_sqrt_real_formula,
+    ``NLS.ComplexAnalysis.continuous_complex_sqrt_real,
+    ``NLS.ComplexAnalysis.scalarStateSquaredPairing,
+    ``NLS.ComplexAnalysis.scalarStateSquaredPairing_eq_integral,
+    ``NLS.ComplexAnalysis.continuous_scalarStateSquaredPairing]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

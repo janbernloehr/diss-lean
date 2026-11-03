@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 3458,
+    "declarations": 3507,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -342,10 +342,15 @@
       "NLS.ComplexAnalysis.scalarStateCrossMass_self_real",
       "NLS.ComplexAnalysis.tendsto_sq_punctured",
       "NLS.ComplexAnalysis.isClosed_exists_zero_in_variable_Icc",
-      "NLS.ComplexAnalysis.eq_of_zero_of_pos_derivative_at_zeros"
+      "NLS.ComplexAnalysis.eq_of_zero_of_pos_derivative_at_zeros",
+      "NLS.ComplexAnalysis.complex_sqrt_real_formula",
+      "NLS.ComplexAnalysis.continuous_complex_sqrt_real",
+      "NLS.ComplexAnalysis.scalarStateSquaredPairing",
+      "NLS.ComplexAnalysis.scalarStateSquaredPairing_eq_integral",
+      "NLS.ComplexAnalysis.continuous_scalarStateSquaredPairing"
     ]
   },
-  "full_repository_validation": "All 364 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3458-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 372 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3507-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -711,10 +716,18 @@
     "NLS/KdV/HillDirichletPotentialDerivative.lean": "9bbb3c875b1e900efa6f4327ce5e775547af7214f5b4e4cbab43f55cdf3df9c4",
     "NLS/KdV/HillDirichletKernelNormalization.lean": "6a145272e6b0b1fb8ee01bfdfc4acf317ec29511ced7117d9cd29b9c2c931d37",
     "NLS/KdV/HillDirichletGradients.lean": "53af8d881ccb6d4a4951c61fd27b936472157df40d8f17d4ae9fe1c7bfae20b7",
-    "NLS/KdV/ClassicalHillDirichletBrackets.lean": "3e496e0259ad4e4d6dedbc44c538bf01fa3542f6c8089e2634914e4bba309bd7"
+    "NLS/KdV/ClassicalHillDirichletBrackets.lean": "3e496e0259ad4e4d6dedbc44c538bf01fa3542f6c8089e2634914e4bba309bd7",
+    "NLS/ComplexAnalysis/RealEnergySquareRoot.lean": "742026d723830ca1b4452e16dea2f26a6b9cb43670bd3f48498716219475ef65",
+    "NLS/KdV/HillStateJointContinuity.lean": "a6bcf2fed35da908f31ef6e222f27d7b3441b6846e9c6f436a3c3c8158a4a34d",
+    "NLS/KdV/HillRealPeriodOneTruncation.lean": "7b737504ca5b65e7535a0263f01449d59a11c418755eec57302d2ab665fa113d",
+    "NLS/ComplexAnalysis/ScalarStateSquaredPairing.lean": "c12e7f97d500ced8ad33bfbc5db48a8f29a527d8b4c87e1d442cff57e4f82da2",
+    "NLS/KdV/HillDirichletSquaredPairing.lean": "15a6657edb287069a7307d4ce6c4dd21016502452acc73a50a4fdd2ae7319324",
+    "NLS/KdV/HillDirichletGradientCurves.lean": "3368b97cbf137ad3e162120bb0809cb97022cdab86490c3c71df4bac2d6c04a5",
+    "NLS/KdV/HillDirichletGardnerBrackets.lean": "b5ae51d2f04adcb63642fa62c4ac38c9259c703220fbbc071d63811d2b160e2d",
+    "NLS/KdV/HillDirichletGradientH1.lean": "f8ac4dfe9b5dcbd0d431606bb23a02686120b936182bd3fde0ff9fb01371867d"
   },
-  "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. The canonical Dirichlet energy and logarithmic multiplier now have local complex-analytic extensions agreeing with the actual selected real data, including at collapsed gaps. Their potential derivatives and the actual mass-normalized squared-eigenfunction Dirichlet gradient are proved. The classical squared-eigenfunction pairing vanishes; extension to rough potentials, actual Gardner brackets, normalized Abelian differentials/angles and the coordinate construction remain to be completed.",
-  "milestone": "Analytic Hill Dirichlet norming extensions and actual potential gradients",
+  "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. The actual Dirichlet gradient is now a real H1 cotangent with its proved spatial derivative, and every pair of actual canonical Dirichlet energies has vanishing literal Gardner integral. The logarithmic norming gradient and mixed canonical brackets, normalized Abelian differentials/angles and coordinate construction remain essential.",
+  "milestone": "Rough Hill Dirichlet Gardner brackets and actual H1 cotangent regularity",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -1081,7 +1094,15 @@
     "NLS.KdV.HillDirichletPotentialDerivative",
     "NLS.KdV.HillDirichletKernelNormalization",
     "NLS.KdV.HillDirichletGradients",
-    "NLS.KdV.ClassicalHillDirichletBrackets"
+    "NLS.KdV.ClassicalHillDirichletBrackets",
+    "NLS.ComplexAnalysis.RealEnergySquareRoot",
+    "NLS.KdV.HillStateJointContinuity",
+    "NLS.KdV.HillRealPeriodOneTruncation",
+    "NLS.ComplexAnalysis.ScalarStateSquaredPairing",
+    "NLS.KdV.HillDirichletSquaredPairing",
+    "NLS.KdV.HillDirichletGradientCurves",
+    "NLS.KdV.HillDirichletGardnerBrackets",
+    "NLS.KdV.HillDirichletGradientH1"
   ],
   "proof_commits": [
     {
@@ -1398,6 +1419,11 @@
       "commit": "57e334a9d4888f543753334f919223a08d84eaa8",
       "scope": "Canonical Hill Dirichlet gap labels and logarithmic norming data; 357 strict modules, 3422-declaration transitive axiom audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "2da7b2dc8df4c166cb5c23040e1c62627a180523",
+      "scope": "Analytic Hill Dirichlet norming extensions and actual potential gradients; 364 strict modules, 3458-declaration transitive axiom audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -1414,20 +1440,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 364 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 372 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 3458 declarations. Includes local branch agreement, analytic selected Dirichlet energy/logarithmic norming extensions, exact root/log-slope derivative formulas, actual affine Hill coefficient and physical L2 directions, potential derivative via shared physical Volterra/adjugate kernels, endpoint kernel normalization, actual mass-normalized squared-eigenfunction gradient, vanishing upper direction a.e., and the classical distinct-Dirichlet squared-eigenfunction pairing identity.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 3507 declarations. Includes the real-energy square-root formula/continuity, actual joint state continuity, real finite Fourier approximations and exact physical realization, shared continuous squared-pairing functional, all classical and rough squared-pairing cases, actual gradient/spatial curves, original Volterra absolute continuity, actual potential-derivative representation, a.e. spatial derivative, H1 regularity, endpoints, reality, integral-one normalization, uniform curve continuity and the literal vanishing Gardner bracket.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 364 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3458-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 372 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3507-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "Every local continuous Dirichlet root branch issuing from the selected gap root agrees nearby with the canonical Dirichlet energy. Thus the simple implicit-root branch gives a local complex-analytic extension of the actual selected energy. The signed endpoint slope has a local analytic logarithm that extends the actual real logarithmic multiplier and exponentiates to the actual signed slope, including at collapsed gaps. Moving spectral evaluation gives exact potential derivatives of the root branch and logarithmic slope branch. The affine constant-upper Hill first-order map has its actual bounded linear direction; composing it with the shared physical L2 solution derivative and adjugate kernel identifies the potential derivative of the entire Dirichlet characteristic. At a Dirichlet zero the determinant-one fundamental matrix gives the exact kernel times endpoint-slope normalization. Combined with the positive mass normalization, this proves the actual potential derivative is the physical L2 direction paired with the squared Dirichlet position, divided by positive mass. The upper physical direction is zero a.e., with the original lower sign explicitly identified. Finally the classical Wronskian-square identity and product-square integration by parts prove that distinct Dirichlet eigenfunctions have vanishing squared-eigenfunction Gardner pairing. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. The canonical Dirichlet energy and logarithmic multiplier now have local complex-analytic extensions agreeing with the actual selected real data, including at collapsed gaps. Their potential derivatives and the actual mass-normalized squared-eigenfunction Dirichlet gradient are proved. The classical squared-eigenfunction pairing vanishes; extension to rough potentials, actual Gardner brackets, normalized Abelian differentials/angles and the coordinate construction remain to be completed.",
-    "scope": "All 364 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3458-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "An explicit formula gives continuity of the complex square-root selection along the whole real energy line, including zero. Joint uniform-curve continuity of the actual state in frequency and L2 potential then gives continuous canonical Dirichlet states. Symmetric finite Fourier truncation preserves reality and even support, converges in the actual real period-one potential domain and has an exact continuous physical realization. A shared bounded squared-pairing functional is continuous and equals its literal unit-interval integral. The classical pairing identity extends to coincident energies by differentiating the fourth power of the Dirichlet solution, and passage along real truncations proves its vanishing for all pairs of actual rough canonical Dirichlet states. The mass-normalized squared Dirichlet position defines the actual cotangent curve; its derivative represents the analytic root derivative in every physical L2 potential direction. Absolute continuity follows from the original Volterra representation, rather than from an a.e. derivative alone. The spatial derivative is explicitly proved a.e.; both the gradient and derivative are L2, the endpoint values are zero, the gradient is real-valued and has integral exactly one. The gradient and its spatial derivative depend continuously on the real L2 potential in uniform curve norm. The actual literal Gardner integral integral(gradient_n*deriv gradient_m) is zero for every n,m>=1. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. The actual Dirichlet gradient is now a real H1 cotangent with its proved spatial derivative, and every pair of actual canonical Dirichlet energies has vanishing literal Gardner integral. The logarithmic norming gradient and mixed canonical brackets, normalized Abelian differentials/angles and coordinate construction remain essential.",
+    "scope": "All 372 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3507-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "d7ccc93c7fb6ef7c802a2d1d506e44e4e029786a0f91dd744c0b718612da1d11",
-      "scripts/check-kdv-estimates.sh": "c042de038811a4f86a66ad32b1250b805e98efc7924d476bf873929577744ad5",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "e4b73bf7e41394088caa86cbca3786e35ae573618c962e5beee5955dc9d06767"
+      "NLS.lean": "2aeea107af34420b32fc839a0fd4e07e4294d1141c785554bf168f9317f13202",
+      "scripts/check-kdv-estimates.sh": "2b263e2a1531c35d7df17b56463f57a7244f48afcb4b6b486772f19ce5c1205f",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "2500be64e784e2b2574e8951d09f4e59bd8076781035d702c67111148ab0a2be"
     }
   },
   "warningAsError": true,
@@ -1534,9 +1560,9 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Analytic Hill Dirichlet norming extensions and actual potential gradients",
-    "focused_modules": 364,
-    "scope": "All 364 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3458-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Rough Hill Dirichlet Gardner brackets and actual H1 cotangent regularity",
+    "focused_modules": 372,
+    "scope": "All 372 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3507-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",
