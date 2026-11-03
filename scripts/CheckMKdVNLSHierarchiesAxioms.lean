@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.NativeHamiltonianActionNormalForms
 import NLS.Articles.MKdVNLSHierarchies.NativeHamiltonianCoordinates
 import NLS.Articles.MKdVNLSHierarchies.GlobalForwardActionIdentification
 import NLS.Articles.MKdVNLSHierarchies.GeneralForwardActionFactorization
@@ -60,6 +61,10 @@ open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[
+    `NLS.ComplexAnalysis.cartesianPlaneRotation_smul,
+    `NLS.ComplexAnalysis.exists_analytic_factor_pullback,
+    `NLS.ComplexAnalysis.fderiv_eq_of_nonnegative_ray_realization,
+
     `NLS.ComplexAnalysis.analyticOnNhd_inverse_of_local_charts,
     `NLS.ZakharovShabat.sourceRealHigherAction_eq_of_isospectral,
     `NLS.ZakharovShabat.sourceComplexHigherAction_eq_of_isospectral,
@@ -766,6 +771,11 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_global_action_normal_form,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_action_frequency_intrinsic,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_action_frequency_analytic,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_Hill_mass_action_frequency,
+
     ``NLS.Articles.MKdVNLSHierarchies.physical_native_Cartesian_analytic_homeomorph,
     ``NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_Cartesian_representation,
     ``NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_action_flow_conservation,

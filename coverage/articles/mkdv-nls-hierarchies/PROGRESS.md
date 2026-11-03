@@ -2435,3 +2435,70 @@ open. Native higher-Sobolev inverse analyticity is no longer an outstanding
 dependency. The overall main-theorem goal stays active.
 
 Validation: all 490 article/shared modules have validated private outputs. The 480 unchanged prefix source hashes match 08cf309 and their outputs were reused; all ten added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 5,011 declarations/auxiliaries and the combined audit for 49,947 NLS declarations, using only the standard allowed axioms. All 493 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,656 declarations (2,166 theorems and 490 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Global native action normal forms of the independent Hill hierarchy
+
+`physical_native_Hill_global_action_normal_form` now gives a single
+holomorphic normal form for every independent physical K_m, m>=1, on
+one open complex native weight-(2m-1) summable action/mean domain
+containing the data of EVERY original real H^(m-1) profile. The domain
+and factor precede the profile and all action indices. Its arguments
+are the actual independent Hill actions and the literal signed Fourier
+mean. Real analyticity follows by restricting scalars. Closed actions,
+infinite support, negative mean and zero mean are all included.
+
+Native Cartesian weight equivalences transport the checked H^s inverse
+charts into a fixed half-order target. Complex inverse germs preserve
+physical reality by comparison with the global native real analytic
+inverse. The exact complete action-flow covariance and conservation of
+the independent K_(s+1) give real rotation stationarity; the checked
+real-form identity principle extends it to full holomorphic stationarity.
+The reusable `exists_local_miuraCartesian_action_factor` descends any
+sequence-valued Cartesian invariant to actions and signed mean, using the
+entire isotropic mean section; a scalar counterpart supplies the Hill
+Hamiltonian factors. No square-root or sign branch of mean is chosen.
+
+Equality of native physical actions and mean implies equality of the
+original NLS action sequence, hence actual isospectrality. The sharp
+higher-action trace and the independently identified factor-two
+restriction then identify K_(s+1) on every native representative of the
+data. Nearby real Cartesian lifts remove the source-neighborhood
+restriction from each local factor. In the normalized native topology,
+every nonnegative encoded l1 datum, even one with infinite support, has
+a real H^s representative. Local factors therefore agree on all
+nonnegative overlaps directly. The verified holomorphic nonnegative-action
+gluing theorem supplies one factor; exponential mean decoding and the
+bounded native action equivalence give the final physical action domain.
+The shared `exists_analytic_factor_pullback` records the last argument.
+
+The m=1 endpoint uses the full original real L2 mass trace directly:
+K_1 = mean^2/2 + sum_n 2*pi*n*J_n. The action moment is a bounded linear
+functional in the exact weight-one action norm. Its entire mass normal
+form has derivative 2*pi*n in every raw selected action direction,
+including at a collapsed selected action. No rough-L2 Cartesian inverse
+is needed for this endpoint.
+
+`MiuraNativeHamiltonianActionData` packages global native normal forms
+without imposing any canonicity hypothesis. Its positive action
+frequencies are actual Frechet derivatives along raw unit physical-action
+directions; `frequency_analytic` proves they are holomorphic throughout
+the common complex domain. For every m>=2,
+`physical_native_Hill_action_frequency_intrinsic` proves that any two
+normal forms give identical positive action derivatives at every physical
+profile. Nonnegative one-sided increases of a selected action are
+realized on the full native H^s domain, with literal mean fixed. Both
+normal forms agree on these profiles; uniqueness of the derivative on
+the real half-line gives equality even when that action starts closed.
+The shared `fderiv_eq_of_nonnegative_ray_realization` is the general
+analytic argument.
+
+Theorem 3 still requires comparison of these independent Hill action
+derivatives with the actual original even-order NLS frequencies on the
+full real H^(m-1) domains, including the mass endpoint and closed-action
+continuation, with the recorded physical normalization correction.
+Independent canonical mKdV angles/full Gardner canonicity and the final
+angle-sum clause of Theorem 4(iii) remain open. The overall main-theorem
+goal stays active.
+
+Validation: all 510 article/shared modules have validated private outputs. The 490 unchanged prefix source hashes match fe2097b and their outputs were reused; all twenty added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 5,153 declarations/auxiliaries and the combined audit for 50,089 NLS declarations, using only the standard allowed axioms. All 513 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,727 declarations (2,228 theorems and 499 definitions); new structures and generated projections/auxiliaries are additionally audited. Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

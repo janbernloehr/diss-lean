@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 5011,
+  "audited_declarations_and_auxiliaries": 5153,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -13299,14 +13299,369 @@
       "kind": "theorem",
       "name": "physical_native_Hill_hamiltonian_action_flow_conservation",
       "file": "NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianCoordinates.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraSobolevNormalizedCartesianMap",
+      "file": "NLS/MKdV/MiuraSobolevNormalizedCartesian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraSobolevNormalizedCartesianMap",
+      "file": "NLS/MKdV/MiuraSobolevNormalizedCartesian.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraPhysicalSobolevNormalizedCartesianMap",
+      "file": "NLS/MKdV/MiuraSobolevNormalizedCartesian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevNormalizedCartesianMap_inclusion",
+      "file": "NLS/MKdV/MiuraSobolevNormalizedCartesian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevNormalizedCartesianMap_real",
+      "file": "NLS/MKdV/MiuraSobolevNormalizedCartesian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraSobolevNormalizedCartesian_analytic_chart",
+      "file": "NLS/MKdV/MiuraSobolevNormalizedCartesian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevNormalizedCartesian_inverse_real_germ",
+      "file": "NLS/MKdV/MiuraSobolevNormalizedCartesian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cartesianPlaneRotation_smul",
+      "file": "NLS/ComplexAnalysis/CartesianPlaneRotationScalar.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveSobolevWeightEquiv_eval",
+      "file": "NLS/MKdV/MiuraSobolevNormalizedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevNormalizedCartesianMap_eval",
+      "file": "NLS/MKdV/MiuraSobolevNormalizedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevNormalizedCartesianMap_mean",
+      "file": "NLS/MKdV/MiuraSobolevNormalizedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevNormalizedCartesianMap_actionFlow",
+      "file": "NLS/MKdV/MiuraSobolevNormalizedActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nonempty_miuraNativeCartesianChart",
+      "file": "NLS/MKdV/MiuraNativeCartesianCharts.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hamiltonian",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianStationarity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hamiltonian_analytic",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianStationarity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hamiltonian_recover",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianStationarity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hamiltonian_rotation_stationary_real",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianStationarity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hamiltonian_rotation_stationary",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianStationarity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_miuraCartesian_action_factor",
+      "file": "NLS/MKdV/MiuraCartesianInvariantActionDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_scalar_miuraCartesian_action_factor",
+      "file": "NLS/MKdV/MiuraCartesianInvariantActionDescent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNativeActionMeanEquiv",
+      "file": "NLS/MKdV/MiuraNativeActionMeanParameters.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNativeActionMeanMap",
+      "file": "NLS/MKdV/MiuraNativeActionMeanParameters.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNormalizedNativeActionMeanMap",
+      "file": "NLS/MKdV/MiuraNativeActionMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeActionMeanEquiv_fst",
+      "file": "NLS/MKdV/MiuraNativeActionMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeActionMeanEquiv_mean",
+      "file": "NLS/MKdV/MiuraNativeActionMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevActionWeight_normalization",
+      "file": "NLS/MKdV/MiuraNativeActionMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNormalizedCartesian_actionMean",
+      "file": "NLS/MKdV/MiuraNativeActionMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_action_factor",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianLocalActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeActionMean_eq_implies_L2_eq",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianActionFibers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealDiagonalL2Source_native",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianActionFibers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNative_sources_isospectral_of_actionMean",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianActionFibers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSpectralHillHamiltonian_eq_of_native_actionMean",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianActionFibers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hamiltonian_eq_of_normalized_actionMean",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianActionFibers.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianFromPairMean_action_of_quadratic_data",
+      "file": "NLS/MKdV/MiuraCartesianRealActionData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesian_actionMean_nonpositive",
+      "file": "NLS/MKdV/MiuraCartesianRealActionData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesian_normalized_actions_nonnegative",
+      "file": "NLS/MKdV/MiuraCartesianRealActionData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraCartesian_real_target_action_lift_neighborhood",
+      "file": "NLS/MKdV/MiuraCartesianRealActionData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_action_factor_global_recovery",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianFactorRecovery.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraLogActionParameters_exponential_cartesian",
+      "file": "NLS/MKdV/MiuraNativeEncodedActionRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraExponentialActionParameters_cartesian_slitPlane",
+      "file": "NLS/MKdV/MiuraNativeEncodedActionRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraExponentialActionParameters_cartesian_nonnegative",
+      "file": "NLS/MKdV/MiuraNativeEncodedActionRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_native_profile_of_normalized_Cartesian",
+      "file": "NLS/MKdV/MiuraNativeEncodedActionRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_real_Cartesian_of_nonnegative_encoded",
+      "file": "NLS/MKdV/MiuraNativeEncodedActionRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_native_profile_of_nonnegative_encoded",
+      "file": "NLS/MKdV/MiuraNativeEncodedActionRealization.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNativeEncodedActionParameters",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianEncodedFactors.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeEncodedActionParameters_nonnegative",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianEncodedFactors.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeEncodedActionParameters_slitPlane",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianEncodedFactors.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeEncodedActionParameters_decode",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianEncodedFactors.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_normalized_nativeHamiltonian_factor_global_recovery",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianEncodedFactors.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_nativeHamiltonian_encoded_action_factor_ball",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianEncodedFactors.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_analytic_factor_pullback",
+      "file": "NLS/ComplexAnalysis/AnalyticFactorPullback.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_global_normalized_native_miuraHamiltonian_action_factor",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianGlobalActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_global_native_miuraHamiltonian_action_factor",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianGlobalActionFactor.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraMassActionFactor",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianMassActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraMassActionFactor",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianMassActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNormalizedNativeActionMeanMap_zero_L2",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianMassActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraMassActionFactor_native_recovery",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianMassActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_global_native_miuraHamiltonian_action_factor_allOrders",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianMassActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2ActionMomentFunctional_single",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianMassActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraMassActionFactor_single",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianMassActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_eq_of_nonnegative_ray_realization",
+      "file": "NLS/ComplexAnalysis/AnalyticFactorDirectionUnique.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevActionSequence_nonnegative",
+      "file": "NLS/MKdV/MiuraNativePhysicalActionRays.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_native_profile_on_positive_action_ray",
+      "file": "NLS/MKdV/MiuraNativePhysicalActionRays.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nonempty_miuraNativeHamiltonianActionData",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianFrequencies.lean"
+    },
+    {
+      "kind": "def",
+      "name": "frequency",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianFrequencies.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "frequency_analytic",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianFrequencies.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "frequency_unique",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianFrequencies.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_native_Hill_global_action_normal_form",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianActionNormalForms.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_native_Hill_action_frequency_intrinsic",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianActionNormalForms.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_native_Hill_action_frequency_analytic",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianActionNormalForms.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Hill_mass_action_frequency",
+      "file": "NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianActionNormalForms.lean"
     }
   ],
-  "public_declaration_count": 2656,
-  "theorem_count": 2166,
-  "definition_count": 490,
-  "full_build": "490 article/shared modules have validated private outputs. All 480 unchanged prefix module source hashes match the prior 08cf309 milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2727,
+  "theorem_count": 2228,
+  "definition_count": 499,
+  "full_build": "510 article/shared modules have validated private outputs. All 490 unchanged prefix module source hashes match the prior fe2097b milestone; their private outputs were reused. Twenty added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/MKdV/MiuraSobolevNLSJacobianCompact.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/MKdV/MiuraSobolevNormalizedCartesian.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -13798,12 +14153,32 @@
     "NLS/ZakharovShabat/SourceHigherActionIsospectral.lean": "57784492091ae162ba2befc4395485602b2f501b9727b3b382de99e6ee19b921",
     "NLS/MKdV/MiuraNativeHamiltonianActionFlow.lean": "56bba5588831355ddb01cd283aad516959b00289dcffceb3e57c681c8eeeb8d8",
     "NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianCoordinates.lean": "0f9754081aea0af8d951fcfbaa0ef1c2babc67c2227bbdd45f9d2b0fffa234c5",
+    "NLS/MKdV/MiuraSobolevNormalizedCartesian.lean": "c7f05176b8166a8287808875c8ec99dbc996504395807ef14cde8eddf08bea64",
+    "NLS/ComplexAnalysis/CartesianPlaneRotationScalar.lean": "93e41e1f7a7c7fb41199c446cb8421c4d0448010cb6d7764d133c3ff4c89cd7a",
+    "NLS/MKdV/MiuraSobolevNormalizedActionFlow.lean": "d700a97da452090f5f9c077ba50bd4ef8a1a54349e4b85b39a85bfae529d947b",
+    "NLS/MKdV/MiuraNativeCartesianCharts.lean": "2cfe560eb1d48bd922ab0b6ec534ac1577f7aae8518de6614335ae62afae4957",
+    "NLS/MKdV/MiuraNativeHamiltonianStationarity.lean": "fbc49b81e681299b9f80a2a90d5942cfbe50c6e0fb378121e25a62361a6ee3ff",
+    "NLS/MKdV/MiuraCartesianInvariantActionDescent.lean": "4a84bc8d9d988cc4551b2ca71a3ff952282ae15dad68ec8da6592ab32854182f",
+    "NLS/MKdV/MiuraNativeActionMeanParameters.lean": "1135225fab84ef1f379f18ce51e5e5fe137f7e8ca6ce898845cf1547dada4387",
+    "NLS/MKdV/MiuraNativeHamiltonianLocalActionFactor.lean": "6ed7db981e09c2336a17cf534beab1c38738c03d34d4adfe2a3c6790c1108cf6",
+    "NLS/MKdV/MiuraNativeHamiltonianActionFibers.lean": "275fdee9c66dd6a9829dc1c9d74a550e211aafc9b59e7d2b84f8a04a41f9efb8",
+    "NLS/MKdV/MiuraCartesianRealActionData.lean": "ae7b323e403129c9c557181892b30726dd50cd20769f74d31fdd6c69ff8c19f4",
+    "NLS/MKdV/MiuraNativeHamiltonianFactorRecovery.lean": "8090ec87e4ba21a62b18345ac197139f4646ee2c907bb91701c7058659b6fad9",
+    "NLS/MKdV/MiuraNativeEncodedActionRealization.lean": "169fe277d2fe0f78c78bd146b774ede033950d62a97ab290607454470858a707",
+    "NLS/MKdV/MiuraNativeHamiltonianEncodedFactors.lean": "1beeaf25c49176c171fab9f541001f7306c2bf5782d3298a1ecc3fc7c06f8617",
+    "NLS/ComplexAnalysis/AnalyticFactorPullback.lean": "4dd14948c586b943661b71ad47e7102d00873cdf49cd12c6370cf52f685e1a41",
+    "NLS/MKdV/MiuraNativeHamiltonianGlobalActionFactor.lean": "b10217b7446e5af7c7ceeb292b14b2590e19a2c9423279320849c0efc2486285",
+    "NLS/MKdV/MiuraNativeHamiltonianMassActionFactor.lean": "a306fc564007772fd50a5a92bb128267b8543ebdb0fca6e0e189c5e21d8b9b21",
+    "NLS/ComplexAnalysis/AnalyticFactorDirectionUnique.lean": "29d577ceae03184078abe92abc7323e9b38c0918867e15c9e2dfd66ccf98f87b",
+    "NLS/MKdV/MiuraNativePhysicalActionRays.lean": "8254fa33d8665a2ac6104a9c2542fb764f9fdcf7aff0e7eaa2f6350f1ffd3bd8",
+    "NLS/MKdV/MiuraNativeHamiltonianFrequencies.lean": "ac33ec68f5ee19a72c4fdc0bd4204fc5fad4138a0a06c83849a3b8d378e47ba5",
+    "NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianActionNormalForms.lean": "f4ba4dd6b69e5fa65a79b3868d754047297051c89437ab0b0796ef3a48ee2171",
     "NLS.lean": "8b7ce4ad52dd4f8dbc054e0bd1b7e6adc03480720e8557f9a8f54e461da6e8c6",
-    "scripts/check_mkdv_nls.py": "a171f3ca69e02295abae86fcab5481643c5e0475222e07a37eb73479338926a0",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "0827d7ccbf4622e6ec6693bd2262f9aeb8dce25bce16f2cbde73bd0e6f3d9268"
+    "scripts/check_mkdv_nls.py": "b84b49e243f1be57b52dc60096e4a91c959f8980cb96e5ba5721d5a1722d243c",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "bb72c0fc1da6d5ee997ef4410469f49452d64be23c5c9f1a13216b1d06533987"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 490,
+  "focused_module_count": 510,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -14242,12 +14617,25 @@
       "public_declaration_count": 2656,
       "theorem_count": 2166,
       "definition_count": 490
+    },
+    {
+      "milestone": "Global native action normal forms for every independent physical Hill Hamiltonian K_m on the exact real H^(m-1) domain, intrinsic positive action derivatives at m>=2 including closed actions, and explicit L2 mass action derivative 2*pi*n",
+      "audit_count": 5153,
+      "combined_NLS_audit_count": 50089,
+      "aggregate_compiled": true,
+      "module_count": 510,
+      "reused_prefix_module_count": 490,
+      "reused_prefix_commit": "fe2097b21aacae61b4ebe1f753e81d4f4780c210",
+      "frozen_source_checker_count": 513,
+      "public_declaration_count": 2727,
+      "theorem_count": 2228,
+      "definition_count": 499
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 49947,
+  "combined_audited_NLS_declarations": 50089,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -14255,7 +14643,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 480 unchanged prefix module source hashes match the prior 08cf309 milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 5011 declarations/auxiliaries and combined audit for 49947 NLS declarations. All 493 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 490 unchanged prefix module source hashes match the prior fe2097b milestone; their private outputs were reused. Twenty added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 5153 declarations/auxiliaries and combined audit for 50089 NLS declarations. All 513 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

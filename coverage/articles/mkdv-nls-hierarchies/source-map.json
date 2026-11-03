@@ -91,7 +91,7 @@
     {
       "label": "Theorem 3",
       "page": 4,
-      "status": "unproved_normalization_open",
+      "status": "partial_independent_native_global_action_normal_forms_and_intrinsic_frequencies_proved_NLS_comparison_open",
       "quantifiers": "forall integers n>=1 and m>=1, on real H^(m-1)",
       "printed_target": "(-1)^m omega_(n,2m)# = eta_(n,m)",
       "source_issue": "The p.18 proof gives eta=omega without this parity factor; reconcile the physical conventions before formalizing.",
@@ -120,11 +120,15 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_Gardner_bracket_analytic_extension",
         "NLS.Articles.MKdVNLSHierarchies.physical_native_Cartesian_analytic_homeomorph",
         "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_Cartesian_representation",
-        "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_action_flow_conservation"
+        "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_action_flow_conservation",
+        "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_global_action_normal_form",
+        "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_action_frequency_intrinsic",
+        "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_action_frequency_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Hill_mass_action_frequency"
       ],
       "remaining_work": [
-        "Construct the independent physical Hamiltonian action normal forms and their frequencies in the exact native domains, including closed actions and the m=1 endpoint.",
-        "Compare those frequencies to the restricted original NLS frequencies using the actual Gardner normalization; record the corrected parity convention consistently with the source proof."
+        "Identify and compare the actual original even-order NLS frequencies with the intrinsic physical Hill action derivatives on the full real H^(m-1) domain, including m=1 and closed actions.",
+        "Reconcile the printed parity factor with the actual period-one Hamiltonian, Poisson and frequency conventions; the physical mass action derivative is proved to be +2*pi*n."
       ]
     },
     {
@@ -1264,6 +1268,31 @@
       "The Hamiltonian Cartesian representation is not yet an action normal form or an independent mKdV frequency definition.",
       "Theorem 3 and the final angle-sum clause of Theorem 4(iii) remain incomplete.",
       "No global rough L2 target inverse is asserted. Native complex charts are local at physical H^s profiles for s>=1."
+    ]
+  },
+  "independent_native_Hill_global_action_normal_forms_and_intrinsic_frequencies": {
+    "status": "proved_all_orders_global_native_holomorphic_action_normal_forms_intrinsic_positive_derivatives_m_ge_2_and_explicit_mass_derivative",
+    "scope": "For each integer m>=1, one open complex native weight-(2m-1) summable physical-action/literal-signed-mean domain contains the data of every original real H^(m-1) profile, and one holomorphic scalar normal form F recovers the independently defined physical Hill K_m on all those profiles. The domain and F precede the profile and every action index. Real analyticity follows by restriction of scalars. For m>=2, positive raw-action derivatives of any two such normal forms agree at every physical profile, including a collapsed selected action. These derivatives are holomorphic on each common native domain. The full complex L2-mass action normal form has raw J_n derivative exactly 2*pi*n everywhere.",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_global_action_normal_form",
+      "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_action_frequency_intrinsic",
+      "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_action_frequency_analytic",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Hill_mass_action_frequency",
+      "NLS.MKdV.exists_global_native_miuraHamiltonian_action_factor_allOrders",
+      "NLS.MKdV.MiuraNativeHamiltonianActionData.frequency_unique",
+      "NLS.MKdV.MiuraNativeHamiltonianActionData.frequency_analytic",
+      "NLS.MKdV.fderiv_miuraMassActionFactor_single",
+      "NLS.MKdV.exists_native_profile_on_positive_action_ray",
+      "NLS.MKdV.exists_native_profile_of_nonnegative_encoded",
+      "NLS.MKdV.miuraSpectralHillHamiltonian_eq_of_native_actionMean"
+    ],
+    "method": "Transport native Cartesian targets by their exact weight equivalences to a fixed half-order target. The genuine complex inverse germ preserves physical reality by the checked global native real inverse. Actual Gardner action-flow conservation gives rotation stationarity on the real slice; the physical real-form identity theorem gives full holomorphic stationarity. Entire isotropic mean parameters and the verified infinite-dimensional sequence action descent give local factors. Physical J and signed mean fix the original NLS action fiber, whose sharp higher-action traces fix the independent K_m; nearby real Cartesian action lifts yield recovery on every native representative. Every nonnegative encoded normalized datum has a native real profile, even with infinite support, so local factors agree on all nonnegative overlaps and glue holomorphically. Pullback through exponential mean encoding and native weight coordinates yields one physical action/mean domain. The full original L2 mass trace supplies m=1 directly. Nonnegative one-sided raw-action increments are realized in H^s for s>=1, so uniqueness of the derivative on the real half-line proves factor-independent positive action derivatives even at closed actions.",
+    "qualifications": [
+      "This proves the independent physical mKdV-side action normal forms and derivatives, not their comparison with the original restricted NLS hierarchy frequencies.",
+      "Normal-form derivative choice independence is proved for m>=2; the m=1 physical derivative is obtained explicitly from the mass normal form.",
+      "No global Gardner canonicity or cross-mode Cartesian zero brackets are assumed or inferred.",
+      "Theorem 3 and the final independent-angle/angle-sum clause of Theorem 4(iii) remain incomplete.",
+      "No global inverse on arbitrary rough original L2 Cartesian target data is used or asserted."
     ]
   }
 }
