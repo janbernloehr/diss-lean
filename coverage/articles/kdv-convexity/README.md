@@ -2121,20 +2121,72 @@ collapsed-gap labels, it constructs a nonzero H1 scalar position with
 endpoint sign (-1)^floor((j+1)/2) and proves its weak equation for every
 H1 test with that same endpoint sign.
 
-The weak form is still expressed through the chart's physical Miura
-profile. Chart independence of the intrinsic weak form/operator domain,
-the converse from arbitrary weak solutions, self-adjointness and spectral
-multiplicity identification remain unproved. The actual KdV coordinate
+The next milestone identifies these chart forms with one intrinsic form
+of the original potential. The converse from arbitrary weak solutions,
+closed/self-adjoint operator domain and spectral multiplicity
+identification remain unproved. The actual KdV coordinate
 realization and its Arnold-action/fiber identities are still required
 for the unconditional positive-ell2 extension in Theorem 1.1.
 
+## Intrinsic entire weak Hill form and potential functional
+
+`IntervalL2Products.lean` constructs the bounded unconjugated physical
+L2 pairing and identifies it with the actual unit-interval integral. A
+continuous interval curve acts by a bounded complex-linear L2 multiplier.
+`IntervalH1Product.lean` proves that products of H1 interval curves remain
+absolutely continuous with L2 derivatives, with the actual a.e. product
+rule. `WeakMiuraFormAnalytic.lean` expresses the factored weak form through
+these physical bounded maps and proves joint norm analyticity in the L2
+profile and constant shift for every fixed H1 curve pair.
+
+`SobolevMiuraPhysicalClass.lean` identifies the unit Fourier isometry of
+the original H1 profile and its Miura image with the actual functions u
+and u_prime+u^2. The original derivative symbol 2*pi*i*k and the constant
+energy translation are retained exactly. `SobolevMiuraWeakForm.lean`
+uses integration by parts to identify the factored form with the ordinary
+physical L2 Hill form whenever the two H1 curves have matching product
+endpoints. This includes periodic, antiperiodic, reciprocal Floquet and
+Dirichlet pairs.
+
+`HillHminusOneWeakFormCharts.lean` applies that physical comparison to
+every L2 input in every shifted-Miura chart. Norm continuity and H^-1
+density then prove equality on every complex chart overlap. The result
+has no reality or mean-zero restriction. `HillHminusOneIntrinsicWeakForm.lean`
+constructs one form of the original potential, independent of lift branch
+and mass shift on all admissible curve pairs. For every such fixed pair,
+the form is entire in the original complex H^-1 norm and recovers the
+physical L2 Hill form on L2 potentials.
+
+`HillHminusOneWeakPotentialFunctional.lean` subtracts only the kinetic
+integral y_prime*phi_prime. Physical L2 density proves exact additivity
+and complex homogeneity of the remainder in q. Together with the proved
+norm continuity, this constructs a bounded complex-linear functional on
+the original H^-1 space. The intrinsic form is therefore the original
+kinetic term plus the actual continuous potential pairing, without a
+Riccati branch in that conclusion.
+
+`HillHminusOneIntrinsicWeakSolutions.lean` defines the weak eigenfunction
+predicate using only q, the scalar H1 curve, endpoint multiplier and
+intrinsic weak form. Every complex characteristic multiplier gives an
+actual nonzero scalar H1 weak eigenfunction; nonzero multiplier is derived
+from the determinant-one quadratic. Every real canonical label, including
+the lowest, central and collapsed-gap labels, has one with the exact
+indexed sign (-1)^floor((j+1)/2). The test multiplier is the reciprocal
+state multiplier, so the complete statement has no chart parameter.
+
+This completes chart independence of the weak form and its bounded
+linear dependence on the original potential. The weak-solution converse,
+closed/self-adjoint intrinsic operator domain and spectral multiplicity
+identification remain open, as do the actual KdV coordinate realization
+and its Arnold-action/fiber identities required for Theorem 1.1.
+
 ## Remaining essential KdV work
 
-1. Construct the intrinsic chart-independent weak Hill form and operator
-   domain, prove the weak-solution converse and self-adjoint spectral/
-   multiplicity identification, and prove the actual action-fiber/
-   discriminant identity. Every canonical real label now has an actual
-   nonzero H1 scalar weak solution with its exact endpoint sign. Full-discriminant invariance of
+1. Construct the closed intrinsic singular Hill operator domain from the
+   now chart-independent weak form, prove the weak-solution converse and
+   self-adjoint spectral/multiplicity identification, and prove the actual
+   action-fiber/discriminant identity. Every canonical real label now has
+   an intrinsic nonzero H1 scalar weak eigenfunction with its exact sign. Full-discriminant invariance of
    all real canonical periods is now proved. Global potential-space moment
    gluing is now proved on one complex neighborhood of the entire real
    H^-1 space, with every canonical period and the locally uniform
@@ -2192,15 +2244,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `5e968d4` contains 411 source modules. Every
-baseline source hash remains unchanged. Seven authored modules pass
+The validated baseline at `6c87847` contains 418 source modules. Every
+baseline source hash remains unchanged. Nine authored modules pass
 incremental Lean 4.33.1/mathlib v4.33.1 checks with `warningAsError=true`.
-The full reproducible script now lists 418 source modules. The
-positive-index example and all 854 coverage-name checks pass.
+The full reproducible script now lists 427 source modules. The
+positive-index example and all 896 coverage-name checks pass.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 207 additional shared modules:
-4304 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 212 additional shared modules:
+4390 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

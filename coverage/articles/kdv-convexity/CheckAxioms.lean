@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneIntrinsicWeakSolutions
 import NLS.KdV.HillHminusOneWeakSpectrum
 import NLS.KdV.HillHminusOnePhysicalQuasi
 import NLS.Articles.KdVConvexity.SpectralCoordinateExtension
@@ -77,6 +78,12 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.Fourier.IntervalL2Products,
+    `NLS.FunctionalAnalysis.IntervalH1Product,
+    `NLS.MKdV.WeakMiuraFormAnalytic,
+    `NLS.MKdV.SobolevMiuraPhysicalClass,
+    `NLS.MKdV.SobolevMiuraWeakForm,
+
     `NLS.MKdV.L2QuasiHillRegularity,
     `NLS.MKdV.L2QuasiHillWeakEquation,
     `NLS.ZakharovShabat.L2BoundaryMultipliers,
