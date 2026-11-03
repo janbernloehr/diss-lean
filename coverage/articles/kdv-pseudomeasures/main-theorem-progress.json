@@ -437,7 +437,22 @@
       "NLS.KdV.exists_hillH1_DirichletRestriction_norm",
       "NLS.KdV.exists_singularHill_boundaryZero_spectralVector",
       "NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicDirichletBoundaryVector",
-      "NLS.KdV.singularHill_combination_residual"
+      "NLS.KdV.singularHill_combination_residual",
+      "NLS.Fourier.circleUnitContinuousRestriction",
+      "NLS.Fourier.circleUnitContinuousRestriction_apply",
+      "NLS.Fourier.norm_circleUnitContinuousRestriction_le",
+      "NLS.KdV.exists_dirichletFreeProjection_bounds_and_sine_fixed",
+      "NLS.KdV.singularHillContinuousRieszProjection_fixed_of_physical_range",
+      "NLS.KdV.exists_sine_approximation_of_zero_trace",
+      "NLS.KdV.exists_periodicDirichlet_projection_error_bound",
+      "NLS.Fourier.PeriodicFourierLebesgue.isCompact_endpointLowerInclusion_closedBall",
+      "NLS.KdV.exists_uniform_hillHminusDirichlet_sourceCircles_on_compact",
+      "NLS.Articles.KdVPseudomeasures.isCompact_sourceComplexHminusOne_normBall",
+      "NLS.Articles.KdVPseudomeasures.exists_uniform_sourceEndpointDirichletProjection_sub_free_small",
+      "NLS.Articles.KdVPseudomeasures.exists_uniform_sourceEndpointDirichlet_sourceCircles",
+      "NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicDirichlet_projection_error",
+      "NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicDirichlet_overlap",
+      "NLS.Articles.KdVPseudomeasures.exists_uniform_source_boundaryVector_with_Dirichlet_overlap"
     ],
     "5.1": [
       "NLS.KdV.analyticOnNhd_hillHminusDirichlet_joint",
@@ -445,7 +460,7 @@
     ]
   },
   "essential_open_obligations": [
-    "NOW PROVED: EXACT parity-n identity on the ENTIRE actual high physical spectral range for original complex period-one sources, including ALL associated vectors; exact physical period-one/antiperiod-one translation of every native H1 representative; equality of original normalized periodic L2 and UNNORMALIZED unit-interval L2 norms; actual normalized zero-boundary H1 spectral vector G and UNIQUE faithful native Dirichlet representative g with BOTH physical norms ONE, original stronger entire distribution and ONE original endpoint norm-ball cutoff above ANY supplied prior cutoff. Native residual for G=alpha*f+beta*phi is PROVED to be beta*eta*Jf-beta*gamma*Jphi, correcting the missing beta on the printed gamma term. NEXT: actual native operator restriction compatibility and spectral-basis coefficient decomposition, then corrected FULL projected(31), overlap(32)/2.15 and full COMPLEX weighted midpoint2.1(ii). Full source2.13/2.14, periodic(33), exact free two-mode kernel and periodic C.4(i) remain proved. Precise Dirichlet C.4(ii) rate, low periodic parity/interlacing, complex ratio2.20 where used, original Birkhoff maps and actual KdV approximation flow remain OPEN. Appendix B COMPLETE. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
+    "NOW PROVED: actual source overlap(32) with EXACT1/2<=norm(nu)<=3/2 for EVERY unit zero-boundary periodic spectral vector and ANY normalized ACTUAL Dirichlet eigenfunction; actual such G/g exist with identical stronger entire distribution and BOTH physical norms ONE. Actual Dirichlet convergence(33) in ALL THREE physical operator norms, and literal source-circle isolation/simplicity, are now UNIFORM on EACH original endpoint norm ball by compactness of its original H-minus-one image. One cutoff precedes q,n,G,g,v and can exceed ANY prior cutoff. NEXT: actual SAME-PARITY full native weak operator restriction compatibility, spectral-basis unit-energy decomposition and corrected FULL identity(31) with beta on BOTH residual terms, completing full2.15; then full COMPLEX weighted midpoint2.1(ii), quantitative Dirichlet C.4(ii), remaining low periodic parity/interlacing, complex ratio2.20 where used and original Birkhoff/KdV constructions. Appendix B and full2.13/2.14 remain COMPLETE. ALL FIVE MAIN THEOREMS UNPROVED; goal ACTIVE.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
@@ -957,7 +972,17 @@
     "EVERY original H1 vector with zero physical values at zero and one has a UNIQUE representative in the ENTIRE ORIGINAL native Dirichlet H1 domain, agreeing at EVERY point of the closed physical interval. If it has either original Fourier parity and trace zero at zero, trace zero at one follows and the Dirichlet restriction has EXACTLY the SAME physical L2 norm as its original periodic source vector.",
     "ONE original endpoint norm-ball cutoff above ANY supplied earlier cutoff now constructs the ACTUAL high periodic spectral boundary-zero H1 vector G and its faithful native interval vector g for EVERY original complex physically period-one source and ALL later ORIGINAL n. Both physical L2 norms are EXACTLY ONE; BOTH endpoint values vanish; the physical translation phase is EXACTLY wave(n,1); the interval representatives coincide on ALL of [0,1]; G has an IDENTICAL ENTIRE original F-ell^(s+2,infinity) distribution.",
     "The exact ORIGINAL native eta residual of EVERY linear combination G=alpha*f+beta*phi is PROVED to be (beta*eta)*Jf-(beta*gamma)*Jphi. Thus beta is required on BOTH residual terms. This formally verifies the native precursor of the coefficient correction needed in printed source (31); the full interval restriction/operator/projected identity is NOT yet proved.",
-    "The actual high spectral parity and required normalized boundary-vector/domain-restriction dependencies toward source 2.15 are complete. The operator restriction compatibility, full projected (31), overlap (32)/2.15, precise Dirichlet C.4(ii) rate, full COMPLEX weighted midpoint 2.1(ii), remaining low periodic parity/interlacing, actual Birkhoff/KdV constructions and ALL FIVE MAIN theorems remain OPEN."
+    "The actual high spectral parity and required normalized boundary-vector/domain-restriction dependencies toward source 2.15 are complete. The operator restriction compatibility, full projected (31), overlap (32)/2.15, precise Dirichlet C.4(ii) rate, full COMPLEX weighted midpoint 2.1(ii), remaining low periodic parity/interlacing, actual Birkhoff/KdV constructions and ALL FIVE MAIN theorems remain OPEN.",
+    "Physical continuous restriction to the CLOSED original unit interval is a bounded linear map of norm at most ONE and preserves EVERY original point, including both traces.",
+    "The ACTUAL zero-potential Dirichlet source contour projector is uniformly bounded by TWO in both physical L2-to-continuous and L2-to-L2 norms, and fixes the literal original free sine. This is derived from the PROVED exact physical sine kernel and its unnormalized bilinear mass ONE HALF; no orthogonality assumption is supplied.",
+    "For ANY complex continuous periodic F with F(0)=0 and ANY physical L2 Fourier data H, the original two-mode Fourier approximation produces a literal unit-interval sine vector within TWICE the original uniform error. Its coefficient is explicitly 2*i*FourierCoefficient(H,n); the correction is controlled by the ACTUAL zero trace, with no assumed cancellation or unit energy for approximate Fourier coefficients.",
+    "For the IDENTICAL physical interval restriction, the ACTUAL Dirichlet projection error is bounded by its ACTUAL free-projection operator error times the interval norm, plus SIX times the ACTUAL periodic two-mode uniform error. This follows from the literal sine fixed vector, not an abstract replacement for either contour projection.",
+    "The ENTIRE original endpoint norm ball has COMPACT image in EVERY admissible lower finite-p original distribution space. Applied to the SAME original H-minus-one distribution and compact native extraction image, this gives ONE cutoff BEFORE ALL complex period-one sources in EACH original endpoint norm ball for actual Dirichlet source-circle validity, same-index isolation and algebraic multiplicity ONE.",
+    "The ACTUAL Dirichlet source projections converge to the ACTUAL free projections UNIFORMLY on EACH fixed ORIGINAL endpoint norm ball, in ALL THREE original L2-to-continuous, L2-to-essential-supremum and L2-to-L2 operator norms. No supplied compactness, convergence or normalized eigenfunction hypothesis is used in this convergence theorem.",
+    "The ACTUAL continuous periodic Riesz projector fixes the SAME H1 representative of EVERY physical spectral-range vector. Combining actual periodic and Dirichlet convergence gives interval projection error STRICTLY LESS THAN ONE HALF for EVERY norm-one zero-boundary vector in the ENTIRE actual high periodic spectral range, including ALL complex associated directions.",
+    "Source (32) is PROVED with its EXACT final constants: for EVERY actual normalized Dirichlet eigenfunction v and EVERY norm-one zero-boundary actual periodic spectral vector G with its faithful unit-norm native interval representative g, the ACTUAL projection equals nu*v and ONE HALF <= norm(nu) <= THREE HALVES. ONE original endpoint norm-ball cutoff precedes q, n, G, g and v and may exceed ANY supplied prior cutoff.",
+    "Actual G and g satisfying the required boundary, full spectral-range, original stronger-entire-distribution and EXACT physical norm-one properties EXIST at the SAME uniform cutoff and satisfy the PROVED overlap. The paper-specific phase-fixed formula is not needed for this stronger all-vector overlap statement.",
+    "Full native weak operator restriction compatibility, actual spectral-basis coefficient decomposition, corrected FULL projected identity (31), full Lemma2.15, full COMPLEX weighted midpoint2.1(ii), quantitative Dirichlet C.4(ii), remaining low periodic parity/interlacing and actual Birkhoff/KdV constructions remain OPEN. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -1671,6 +1696,42 @@
       "source_Lemma2_13_complete": true,
       "source_Lemma2_14_proved": true,
       "source_Theorem2_1_ii_proved": false,
+      "main_theorems_verified": false
+    },
+    "32-actual-original-periodic-Dirichlet-overlap": {
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-dirichlet-overlap-map.json",
+      "source_overlap32_proved": true,
+      "exact_source_one_half_three_halves_constants": true,
+      "every_actual_normalized_Dirichlet_eigenfunction": true,
+      "every_actual_zero_boundary_unit_periodic_spectral_vector": true,
+      "all_complex_associated_vectors_included": true,
+      "actual_boundary_vector_with_overlap_exists": true,
+      "original_endpoint_ball_uniform_Dirichlet_convergence_three_physical_norms": true,
+      "original_endpoint_ball_uniform_Dirichlet_circles_and_simplicity": true,
+      "no_supplied_compactness_or_convergence_hypothesis": true,
+      "source_identity31_complete": false,
+      "source_Lemma2_15_complete": false,
+      "native_Hill_Dirichlet_operator_restriction_compatibility_proved": false,
+      "source_Theorem2_1_ii_proved": false,
+      "quantitative_Dirichlet_C4ii_rate_proved": false,
+      "main_theorems_verified": false
+    },
+    "33-Dirichlet-original-endpoint-ball-uniform-convergence": {
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-dirichlet-overlap-map.json",
+      "source_overlap32_proved": true,
+      "exact_source_one_half_three_halves_constants": true,
+      "every_actual_normalized_Dirichlet_eigenfunction": true,
+      "every_actual_zero_boundary_unit_periodic_spectral_vector": true,
+      "all_complex_associated_vectors_included": true,
+      "actual_boundary_vector_with_overlap_exists": true,
+      "original_endpoint_ball_uniform_Dirichlet_convergence_three_physical_norms": true,
+      "original_endpoint_ball_uniform_Dirichlet_circles_and_simplicity": true,
+      "no_supplied_compactness_or_convergence_hypothesis": true,
+      "source_identity31_complete": false,
+      "source_Lemma2_15_complete": false,
+      "native_Hill_Dirichlet_operator_restriction_compatibility_proved": false,
+      "source_Theorem2_1_ii_proved": false,
+      "quantitative_Dirichlet_C4ii_rate_proved": false,
       "main_theorems_verified": false
     }
   },
@@ -2863,6 +2924,24 @@
     "source_Lemma2_13_complete": true,
     "source_Lemma2_14_proved": true,
     "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "verified_actual_periodic_Dirichlet_overlap": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-dirichlet-overlap-map.json",
+    "source_overlap32_proved": true,
+    "exact_source_one_half_three_halves_constants": true,
+    "every_actual_normalized_Dirichlet_eigenfunction": true,
+    "every_actual_zero_boundary_unit_periodic_spectral_vector": true,
+    "all_complex_associated_vectors_included": true,
+    "actual_boundary_vector_with_overlap_exists": true,
+    "original_endpoint_ball_uniform_Dirichlet_convergence_three_physical_norms": true,
+    "original_endpoint_ball_uniform_Dirichlet_circles_and_simplicity": true,
+    "no_supplied_compactness_or_convergence_hypothesis": true,
+    "source_identity31_complete": false,
+    "source_Lemma2_15_complete": false,
+    "native_Hill_Dirichlet_operator_restriction_compatibility_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "quantitative_Dirichlet_C4ii_rate_proved": false,
     "main_theorems_verified": false
   }
 }

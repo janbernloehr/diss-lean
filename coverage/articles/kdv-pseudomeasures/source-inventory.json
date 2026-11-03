@@ -698,7 +698,7 @@
     }
   ],
   "remaining_obligations": [
-    "NOW PROVED: EXACT parity-n identity on the ENTIRE actual high physical spectral range for original complex period-one sources, including ALL associated vectors; exact physical period-one/antiperiod-one translation of every native H1 representative; equality of original normalized periodic L2 and UNNORMALIZED unit-interval L2 norms; actual normalized zero-boundary H1 spectral vector G and UNIQUE faithful native Dirichlet representative g with BOTH physical norms ONE, original stronger entire distribution and ONE original endpoint norm-ball cutoff above ANY supplied prior cutoff. Native residual for G=alpha*f+beta*phi is PROVED to be beta*eta*Jf-beta*gamma*Jphi, correcting the missing beta on the printed gamma term. NEXT: actual native operator restriction compatibility and spectral-basis coefficient decomposition, then corrected FULL projected(31), overlap(32)/2.15 and full COMPLEX weighted midpoint2.1(ii). Full source2.13/2.14, periodic(33), exact free two-mode kernel and periodic C.4(i) remain proved. Precise Dirichlet C.4(ii) rate, low periodic parity/interlacing, complex ratio2.20 where used, original Birkhoff maps and actual KdV approximation flow remain OPEN. Appendix B COMPLETE. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
+    "NOW PROVED: actual source overlap(32) with EXACT1/2<=norm(nu)<=3/2 for EVERY unit zero-boundary periodic spectral vector and ANY normalized ACTUAL Dirichlet eigenfunction; actual such G/g exist with identical stronger entire distribution and BOTH physical norms ONE. Actual Dirichlet convergence(33) in ALL THREE physical operator norms, and literal source-circle isolation/simplicity, are now UNIFORM on EACH original endpoint norm ball by compactness of its original H-minus-one image. One cutoff precedes q,n,G,g,v and can exceed ANY prior cutoff. NEXT: actual SAME-PARITY full native weak operator restriction compatibility, spectral-basis unit-energy decomposition and corrected FULL identity(31) with beta on BOTH residual terms, completing full2.15; then full COMPLEX weighted midpoint2.1(ii), quantitative Dirichlet C.4(ii), remaining low periodic parity/interlacing, complex ratio2.20 where used and original Birkhoff/KdV constructions. Appendix B and full2.13/2.14 remain COMPLETE. ALL FIVE MAIN THEOREMS UNPROVED; goal ACTIVE.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "workspace": {
@@ -1320,6 +1320,24 @@
     "source_Lemma2_13_complete": true,
     "source_Lemma2_14_proved": true,
     "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "actual_periodic_Dirichlet_overlap_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-dirichlet-overlap-map.json",
+    "source_overlap32_proved": true,
+    "exact_source_one_half_three_halves_constants": true,
+    "every_actual_normalized_Dirichlet_eigenfunction": true,
+    "every_actual_zero_boundary_unit_periodic_spectral_vector": true,
+    "all_complex_associated_vectors_included": true,
+    "actual_boundary_vector_with_overlap_exists": true,
+    "original_endpoint_ball_uniform_Dirichlet_convergence_three_physical_norms": true,
+    "original_endpoint_ball_uniform_Dirichlet_circles_and_simplicity": true,
+    "no_supplied_compactness_or_convergence_hypothesis": true,
+    "source_identity31_complete": false,
+    "source_Lemma2_15_complete": false,
+    "native_Hill_Dirichlet_operator_restriction_compatibility_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "quantitative_Dirichlet_C4ii_rate_proved": false,
     "main_theorems_verified": false
   }
 }

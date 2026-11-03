@@ -684,6 +684,14 @@ modules = [
     'NLS.KdV.SingularHillBoundaryVector',
     'NLS.Articles.KdVPseudomeasures.PeriodicDirichletBoundaryVector',
     'NLS.KdV.SingularHillCombinationResidual',
+    'NLS.Fourier.CircleUnitContinuous',
+    'NLS.KdV.DirichletFreeProjectionBounds',
+    'NLS.KdV.HillBoundarySineApproximation',
+    'NLS.KdV.PeriodicDirichletProjectionError',
+    'NLS.Fourier.PeriodicEndpointCompactInclusion',
+    'NLS.KdV.HminusOneDirichletCompactCircles',
+    'NLS.Articles.KdVPseudomeasures.EndpointDirichletProjectionConvergence',
+    'NLS.Articles.KdVPseudomeasures.PeriodicDirichletOverlap',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

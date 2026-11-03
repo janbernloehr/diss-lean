@@ -85,9 +85,8 @@
     "main_theorems_verified": false
   },
   "essential_remaining": [
-    "Prove actual native Hill-to-Dirichlet operator restriction compatibility for the newly constructed SAME physical interval representative, retaining the full original H1 and H-minus-one/Dirichlet-dual domains. Express the ACTUAL boundary-zero vector in the ACTUAL normalized spectral basis with unit coefficient energy. Then restrict/project the PROVED native residual with beta on BOTH eta and gamma terms to obtain the corrected FULL source identity (31).",
-    "Prove overlap (32), using actual periodic and Dirichlet source-projection convergence, the literal free kernels, the NEW exact zero boundary traces and physical L2 norm preservation. The actual rank-one Dirichlet projected amplitude exists already. Complete full source 2.15, including the norm-ball/local uniformity statement.",
-    "Complete the full COMPLEX weighted midpoint estimate 2.1(ii), quantitative Dirichlet C.4(ii) rate, remaining low periodic parity/interlacing and complex ratio 2.20 where used, original Birkhoff maps and actual KdV approximation-flow constructions. All five MAIN theorems 1.1, 1.3, 1.4, 5.1 and 5.9 remain UNPROVED; goal ACTIVE."
+    "Prove ACTUAL native Hill-to-Dirichlet weak operator restriction compatibility using SAME-PARITY signed test extensions on the ENTIRE original native Dirichlet test domain; the naive unit-period singularDirichletRestriction cancels antiperiodic residuals and is NOT the physical restriction. Prove the ACTUAL spectral-basis coefficient decomposition with unit energy. Then combine the PROVED native combination residual, with beta on BOTH eta and gamma terms, and the NOW PROVED actual overlap(32) to obtain the corrected FULL projected identity(31) and complete source2.15.",
+    "Complete full COMPLEX weighted midpoint2.1(ii), precise quantitative Dirichlet C.4(ii) rate where needed, remaining low periodic parity/interlacing and complex ratio2.20 where used, original Birkhoff maps and actual KdV approximation-flow constructions. ALL FIVE MAIN theorems1.1,1.3,1.4,5.1,5.9 remain UNPROVED; goal ACTIVE."
   ],
   "source_correspondence": {
     "potential": "ENTIRE ORIGINAL complex FourierLebesgueSpace(2,-r,infinity),0<=r<1/2, with the ACTUAL original physical period-one distribution condition. Mean-zero source potentials are included; no reality premise is added.",
@@ -147,5 +146,24 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "actual_periodic_Dirichlet_overlap_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-dirichlet-overlap-map.json",
+    "source_overlap32_proved": true,
+    "exact_source_one_half_three_halves_constants": true,
+    "every_actual_normalized_Dirichlet_eigenfunction": true,
+    "every_actual_zero_boundary_unit_periodic_spectral_vector": true,
+    "all_complex_associated_vectors_included": true,
+    "actual_boundary_vector_with_overlap_exists": true,
+    "original_endpoint_ball_uniform_Dirichlet_convergence_three_physical_norms": true,
+    "original_endpoint_ball_uniform_Dirichlet_circles_and_simplicity": true,
+    "no_supplied_compactness_or_convergence_hypothesis": true,
+    "source_identity31_complete": false,
+    "source_Lemma2_15_complete": false,
+    "native_Hill_Dirichlet_operator_restriction_compatibility_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "quantitative_Dirichlet_C4ii_rate_proved": false,
+    "main_theorems_verified": false
+  },
+  "validation_scope": "Original validation object records the earlier boundary/parity milestone; the follow-up links the later4263-declaration audited actual overlap(32) milestone."
 }

@@ -650,6 +650,14 @@ import NLS.KdV.HillH1ParityRepresentative
 import NLS.KdV.SingularHillBoundaryVector
 import NLS.Articles.KdVPseudomeasures.PeriodicDirichletBoundaryVector
 import NLS.KdV.SingularHillCombinationResidual
+import NLS.Fourier.CircleUnitContinuous
+import NLS.KdV.DirichletFreeProjectionBounds
+import NLS.KdV.HillBoundarySineApproximation
+import NLS.KdV.PeriodicDirichletProjectionError
+import NLS.Fourier.PeriodicEndpointCompactInclusion
+import NLS.KdV.HminusOneDirichletCompactCircles
+import NLS.Articles.KdVPseudomeasures.EndpointDirichletProjectionConvergence
+import NLS.Articles.KdVPseudomeasures.PeriodicDirichletOverlap
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4901,3 +4909,18 @@ import NLS.KdV.SingularHillCombinationResidual
 #print axioms NLS.KdV.exists_singularHill_boundaryZero_spectralVector
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicDirichletBoundaryVector
 #print axioms NLS.KdV.singularHill_combination_residual
+#print axioms NLS.Fourier.circleUnitContinuousRestriction
+#print axioms NLS.Fourier.circleUnitContinuousRestriction_apply
+#print axioms NLS.Fourier.norm_circleUnitContinuousRestriction_le
+#print axioms NLS.KdV.exists_dirichletFreeProjection_bounds_and_sine_fixed
+#print axioms NLS.KdV.singularHillContinuousRieszProjection_fixed_of_physical_range
+#print axioms NLS.KdV.exists_sine_approximation_of_zero_trace
+#print axioms NLS.KdV.exists_periodicDirichlet_projection_error_bound
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.isCompact_endpointLowerInclusion_closedBall
+#print axioms NLS.KdV.exists_uniform_hillHminusDirichlet_sourceCircles_on_compact
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_sourceComplexHminusOne_normBall
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourceEndpointDirichletProjection_sub_free_small
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourceEndpointDirichlet_sourceCircles
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicDirichlet_projection_error
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicDirichlet_overlap
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_source_boundaryVector_with_Dirichlet_overlap
