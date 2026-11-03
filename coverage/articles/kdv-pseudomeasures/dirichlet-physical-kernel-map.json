@@ -148,5 +148,30 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "uniform_actual_eigenfunction_comparison_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-eigenfunction-comparison-map.json",
+    "exact_real_spectral_gauge_L2_budget_and_distance_preservation": true,
+    "classical_L2_stability_uniform_in_real_frequency": true,
+    "full_physical_L2_solution_stability_uniform_in_real_frequency": true,
+    "exact_physical_H1_realization_and_full_L2_density": true,
+    "locally_uniform_actual_L2_fundamental_solution_free_comparison": true,
+    "phase_fixed_literal_sine_scalar_map": true,
+    "actual_nonzero_native_eigenfunction_from_Dirac_column": true,
+    "uniform_original_HminusOne_actual_Dirichlet_eigenfunction_sine_comparison": true,
+    "same_original_positive_index": true,
+    "full_complex_original_distribution_retained": true,
+    "closed_interval_uniform_norm": true,
+    "supplied_lift_eigenfunction_or_asymptotic": false,
+    "phase_fixed_comparison_eigenfunctions_asserted_L2_unit_normalized": false,
+    "uniform_bilinear_mass_lower_bound_derived": false,
+    "source_AppendixC4_rate_proved": false,
+    "source_AppendixC4_free_projection_convergence_proved": false,
+    "source_Lemma2_13_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
 }

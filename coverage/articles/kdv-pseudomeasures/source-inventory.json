@@ -698,7 +698,7 @@
     }
   ],
   "remaining_obligations": [
-    "Uniform LITERAL Dirichlet source circles and rank-one actual ranges remain proved. NOW ALSO PROVED: full native complex Green symmetry, nonzero simple-isolated bilinear mass, full-dual coefficient formula, literal physical rank-one kernels of the SAME source contour projection, exact L2 Holder bound, ACTUAL L2-to-uniform operators and their comparison from physical eigenfunction errors, uniformly specialized on original source circles. NEXT: high-frequency eigenfunction comparison and quantitative mass lower bounds or direct resolvent estimates, C.4 logarithmic periodic/Dirichlet projection convergence, actual periodic basis/off-diagonal 2.13, full eta/gamma residual (31), overlap (32)/2.15, FULL COMPLEX 2.1(ii) weighted midpoint/local boundedness. Low periodic parity/interlacing, complex ratio 2.20 where used, original Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE.",
+    "Uniform actual original source circles/rank-one Riesz ranges, literal physical kernels and L2-to-uniform operator comparison remain proved. NOW ALSO PROVED: locally uniform ACTUAL native nonzero Dirichlet eigenfunctions approaching LITERAL sin(pi*n*x) in closed-interval uniform norm on ONE ORIGINAL complex H-minus-one neighborhood and same positive-index cutoff, via actual full physical-L2 fundamental free comparison and real-frequency-uniform stability. Comparison eigenfunctions are phase-fixed to sin(n*pi*x), NOT asserted unit L2 normalized. NEXT: quantify physical normalization and bilinear mass lower bounds, identify literal free native kernel and deduce source (33) Dirichlet projection convergence; prove full C.4 logarithmic periodic/Dirichlet rates, actual periodic basis/off-diagonal 2.13, full eta/gamma residual (31), overlap (32)/2.15, FULL COMPLEX 2.1(ii) weighted midpoint/local boundedness. Low periodic parity/interlacing, complex ratio 2.20 where used, original Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "workspace": {
@@ -998,6 +998,31 @@
     "supplied_source_circle_or_bilinear_nonvanishing_conditions": false,
     "high_frequency_eigenfunction_comparison_proved": false,
     "uniform_bilinear_mass_lower_bound_proved": false,
+    "source_AppendixC4_rate_proved": false,
+    "source_AppendixC4_free_projection_convergence_proved": false,
+    "source_Lemma2_13_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "uniform_actual_Dirichlet_eigenfunction_comparison_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-eigenfunction-comparison-map.json",
+    "exact_real_spectral_gauge_L2_budget_and_distance_preservation": true,
+    "classical_L2_stability_uniform_in_real_frequency": true,
+    "full_physical_L2_solution_stability_uniform_in_real_frequency": true,
+    "exact_physical_H1_realization_and_full_L2_density": true,
+    "locally_uniform_actual_L2_fundamental_solution_free_comparison": true,
+    "phase_fixed_literal_sine_scalar_map": true,
+    "actual_nonzero_native_eigenfunction_from_Dirac_column": true,
+    "uniform_original_HminusOne_actual_Dirichlet_eigenfunction_sine_comparison": true,
+    "same_original_positive_index": true,
+    "full_complex_original_distribution_retained": true,
+    "closed_interval_uniform_norm": true,
+    "supplied_lift_eigenfunction_or_asymptotic": false,
+    "phase_fixed_comparison_eigenfunctions_asserted_L2_unit_normalized": false,
+    "uniform_bilinear_mass_lower_bound_derived": false,
     "source_AppendixC4_rate_proved": false,
     "source_AppendixC4_free_projection_convergence_proved": false,
     "source_Lemma2_13_proved": false,

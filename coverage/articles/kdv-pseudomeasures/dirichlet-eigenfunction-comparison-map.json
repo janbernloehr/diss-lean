@@ -1,0 +1,141 @@
+{
+  "source": "arXiv:1610.00278v1, Section 2.5 Dirichlet eigenfunctions and source (33), dependency toward Appendix C.4(ii), Lemma 2.15 and full complex Theorem 2.1(ii)",
+  "date": "2026-11-03",
+  "status": "COMPLETE locally uniform ACTUAL nonzero original Dirichlet eigenfunction convergence to the literal free sine in closed-interval uniform norm, on full original complex H-minus-one neighborhoods with the same positive index. Includes actual full physical-L2 fundamental-solution free approximation and real-frequency-uniform stability. Quantitative normalization/mass lower bounds, actual free-projection convergence, C.4 rate, full (31)/(32), weighted midpoint and ALL MAIN theorems remain OPEN.",
+  "modules": [
+    "NLS/ZakharovShabat/ClassicalL2StripStability.lean",
+    "NLS/ZakharovShabat/L2StripStability.lean",
+    "NLS/ZakharovShabat/PhysicalH1Density.lean",
+    "NLS/ZakharovShabat/L2UniformFreeComparison.lean",
+    "NLS/KdV/MiuraDirichletSineCurve.lean",
+    "NLS/KdV/HminusOneDirichletEigenfunctionComparison.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletEigenfunctionComparison.lean"
+  ],
+  "declarations": [
+    "NLS.ZakharovShabat.realSpectralGauge_sub",
+    "NLS.ZakharovShabat.classicalPotentialL2Norm_realSpectralGauge",
+    "NLS.ZakharovShabat.norm_classicalSolution_sub_real_shift",
+    "NLS.ZakharovShabat.norm_classicalSolution_le_exp_im_L2",
+    "NLS.ZakharovShabat.norm_classicalSolution_sub_le_im_L2",
+    "NLS.ZakharovShabat.norm_l2SolutionCurve_le_exp_im",
+    "NLS.ZakharovShabat.norm_l2SolutionCurve_sub_le_im",
+    "NLS.ZakharovShabat.norm_l2SolutionCurve_sub_le_of_strip_bounds",
+    "NLS.ZakharovShabat.sourcePeriodicH1L2Class_eq_sourcePhysical",
+    "NLS.ZakharovShabat.denseRange_sourcePeriodicH1L2Class",
+    "NLS.ZakharovShabat.exists_uniform_l2SolutionCurve_sub_free_small",
+    "NLS.KdV.miuraDirichletSinePosition",
+    "NLS.KdV.norm_miuraDirichletSinePosition_le",
+    "NLS.KdV.miuraDirichletSinePosition_free",
+    "NLS.KdV.hillMiuraDirichletSineCurve",
+    "NLS.KdV.hillMiuraDirichletSineCurve_eq_quasiHill",
+    "NLS.KdV.exists_native_Miura_eigen_with_sineCurve",
+    "NLS.KdV.dirichletFreeSineCurve",
+    "NLS.KdV.HillHminusMiuraChart.exists_uniform_dirichletEigenfunction_sine_comparison",
+    "NLS.KdV.exists_uniform_hillHminusDirichletEigenfunction_sine_comparison",
+    "NLS.Articles.KdVPseudomeasures.exists_uniform_originalDirichletEigenfunction_sine_comparison"
+  ],
+  "results": [
+    "The exact real spectral phase rotation preserves differences of the original continuous source curves and their EXACT physical Hilbert L2 potential budgets. It preserves the norm of solution differences while removing the real part of the frequency. Classical physical-L2 growth and stability constants consequently depend ONLY on imaginary height, not on arbitrarily large real frequency.",
+    "Physical density and continuity extend those SAME growth/stability bounds to EVERY ordinary physical complex L2 potential. The bound controls the ENTIRE actual initial-value solution curve in the CLOSED-unit-interval UNIFORM norm. On each physical L2 norm ball and horizontal frequency strip, ONE Lipschitz constant works for ALL real frequencies and all initial vectors.",
+    "The physical unit-period H1 source class is EXACTLY the original Fourier L2 synthesis, retaining the same physical potential and normalization. Those H1 source classes are dense in the ENTIRE ordinary interval L2 source space; no H1 regularity or periodic trace condition is imposed on the L2 target.",
+    "For EVERY physical L2 source, horizontal strip and positive epsilon, ONE open physical L2 neighborhood and ONE frequency threshold make the ACTUAL full fundamental solution within epsilon of the ACTUAL free evolution, in the closed-interval uniform curve norm, for ALL neighboring COMPLEX L2 sources, ALL frequencies above that threshold in the strip, and ALL unit initial vectors. The proof combines an actual H1 approximation, the proved inverse-frequency H1 error and the NEW real-frequency-uniform L2 stability.",
+    "The bounded scalar map (v1,v2) -> (i/2)*(v1+i*v2) is a contraction in the original product maximum norm and sends the ACTUAL free Dirac column with initial vector (1,i) to the LITERAL sine sin(z*x). Its actual physical rough Dirac column is exactly z times the independent scalar quasi-Hill Dirichlet IVP position, including at zero frequency.",
+    "Every nonzero ACTUAL auxiliary Dirichlet root constructs a NONZERO native zero-trace H1 eigenfunction whose IDENTICAL continuous position equals this phase-fixed physical Dirac sine column. Nonvanishing is proved using the independent IVP initial value and the actual scalar weak-state uniqueness; neither a native eigenfunction nor any pointwise approximation is supplied.",
+    "For EVERY fixed local original complex H-minus-one Miura chart and epsilon>0, ONE original norm-open neighborhood and ONE cutoff give NONZERO ACTUAL native Dirichlet eigenfunctions within epsilon of sin(pi*n*x) in the CLOSED-unit-interval UNIFORM norm for ALL nearby complex sources and ALL subsequent ORIGINAL positive indices. Uniform canonical frequency localization, the NEW actual full-L2 free comparison and the explicit nearby-frequency free comparison prove this statement. The fixed chart energy shift is transported back EXACTLY to the ORIGINAL intrinsic same-index eigenvalue.",
+    "The final theorem removes the chart/lift from the hypotheses and pulls the neighborhood back to an OPEN set in the ORIGINAL ambient period-two Fourier-Lebesgue H-minus-one norm. ALL physically period-one COMPLEX distributions in that neighborhood retain their ENTIRE original distribution. The actual native eigenfunctions are nonzero and phase-fixed to the literal free sine, without a reality assumption or a supplied circle, spectral label, eigenfunction, lift or asymptotic estimate."
+  ],
+  "verified": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-eigenfunction-comparison-map.json",
+    "exact_real_spectral_gauge_L2_budget_and_distance_preservation": true,
+    "classical_L2_stability_uniform_in_real_frequency": true,
+    "full_physical_L2_solution_stability_uniform_in_real_frequency": true,
+    "exact_physical_H1_realization_and_full_L2_density": true,
+    "locally_uniform_actual_L2_fundamental_solution_free_comparison": true,
+    "phase_fixed_literal_sine_scalar_map": true,
+    "actual_nonzero_native_eigenfunction_from_Dirac_column": true,
+    "uniform_original_HminusOne_actual_Dirichlet_eigenfunction_sine_comparison": true,
+    "same_original_positive_index": true,
+    "full_complex_original_distribution_retained": true,
+    "closed_interval_uniform_norm": true,
+    "supplied_lift_eigenfunction_or_asymptotic": false,
+    "phase_fixed_comparison_eigenfunctions_asserted_L2_unit_normalized": false,
+    "uniform_bilinear_mass_lower_bound_derived": false,
+    "source_AppendixC4_rate_proved": false,
+    "source_AppendixC4_free_projection_convergence_proved": false,
+    "source_Lemma2_13_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "essential_remaining": [
+    "Derive quantitative physical L2 normalization and a uniform positive bilinear-mass lower bound from the NEW locally uniform actual free-sine eigenfunction comparison; identify the literal free native projection kernel and combine with the verified actual L2-to-uniform operator comparison to prove qualitative Dirichlet free-projection convergence used in source (33). The NEW eigenfunctions are phase-fixed to sin(n*pi*x), and are NOT asserted to have unit L2 norm; source normalization and all factors must be retained explicitly.",
+    "Establish the precise Appendix C.4 periodic and Dirichlet logarithmic rate C_t*(log n)^2/n^(1-abs(t)) for -1<t<-1/2, locally uniformly in the original source topology. The NEW local uniform eigenfunction o(1) theorem does NOT supply this rate. Complete the periodic projection/basis/off-diagonal estimates of 2.13, full eta/gamma residual (31), overlap bound (32) and Lemma 2.15.",
+    "Prove FULL COMPLEX source Theorem 2.1(ii) general-weight midpoint membership/local boundedness; complete low periodic simplicity/interlacing/parity and complex ratio 2.20 where used; construct ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation flow. ALL FIVE MAIN THEOREMS 1.1,1.3,1.4,5.1,5.9 remain UNPROVED; goal ACTIVE. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved."
+  ],
+  "source_correspondence": {
+    "potential": "ENTIRE original complex physically period-one H-minus-one distribution, arbitrary mean allowed; source complex mean-zero domain is included. No real-potential hypothesis.",
+    "topology": "For EACH epsilon>0, ONE OPEN neighborhood in the ORIGINAL ambient H-minus-one norm and ONE cutoff, chosen BEFORE the nearby potential and ALL high labels.",
+    "native_domain": "ENTIRE original zero-trace H1([0,1],C) domain; nonzero eigenvectors for the ORIGINAL intrinsic same-index native eigenvalues, with the fixed Miura energy shift removed exactly.",
+    "physical_comparison": "IDENTICAL original continuous representatives on the CLOSED interval [0,1], with their actual supremum norm; error from LITERAL sin(pi*n*x), at original positive index n.",
+    "phase": "The ACTUAL Dirac initial column (1,i) and scalar map (i/2)*(v1+i*v2) fix the phase/scale BEFORE eigenfunction selection; there is no unspecified scalar multiple in the comparison.",
+    "normalization": "These comparison eigenfunctions approach sin(n*pi*x), not sqrt(2)*sin(n*pi*x). They are NOT asserted L2-unit-normalized. Exact physical L2 normalization was proved separately in earlier modules and must be quantitatively connected before source overlap estimates.",
+    "fundamental": "ALL physical L2 complex potentials, not an H1-only subclass, have locally uniform actual free approximation in the whole uniform curve norm, uniformly on every fixed horizontal frequency strip and over unit initial data.",
+    "remaining_rate": "The proof gives locally uniform o(1), with no explicit dependence on a fractional Sobolev norm. It does NOT claim the C.4 rate C_t*(log n)^2/n^(1-abs(t)), source projection convergence or overlap bound (32)."
+  },
+  "qualifications": [
+    "All compared eigenfunctions are ACTUAL independently realized native weak eigenvectors, proved NONZERO from the physical IVP.",
+    "The Miura chart and actual auxiliary roots are proof data, not hypotheses in the final original-source theorem.",
+    "Neighborhood and cutoff quantifiers are uniform in ALL nearby complex sources and ALL subsequent original labels.",
+    "The sine has its literal original index and phase; no index shift or normalization factor is hidden.",
+    "No real-potential restriction, supplied eigenfunction asymptotic, extra axiom, smaller native domain/base or canonical checkout mutation is used.",
+    "C.4 logarithmic rates, physical mass lower bounds, source (33) projection convergence, full (31)/(32) and all main theorems remain open."
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "8bbab8e4fdde40ff2bfaa8d47638184bf22f4177",
+    "baseline_modules": 564,
+    "baseline_non_audit_sources_verified_unchanged": 563,
+    "new_modules_compiled": 7,
+    "modules_in_exact_inventory": 571,
+    "audited_declarations": 3901,
+    "theorems": 3236,
+    "definitions": 665,
+    "new_theorems": 18,
+    "new_definitions": 3,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-dirichlet-eigenfunction-comparison.log",
+    "phases": [
+      "Seven new modules prove exact real-spectral-gauge preservation of physical L2 budgets/distances; classical and full physical-L2 solution stability controlled ONLY by imaginary height; exact physical H1 realization and density in ALL physical L2 data; locally uniform high-frequency full fundamental-solution comparison in the closed-interval uniform norm; a phase-fixed actual native nonzero Dirichlet eigenfunction from the physical Dirac column; and locally uniform convergence of ACTUAL original-index native Dirichlet eigenfunctions to the literal free sine on original complex H-minus-one neighborhoods. All seven freshly compiled in dependency order. Exact full audit of 571 selected modules and 3901 theorem/definition declarations passed without warnings or suggestions. All 563 baseline non-Audit Lean sources remain byte-identical to private commit 8bbab8e."
+    ]
+  },
+  "output_sha256": {
+    "NLS/ZakharovShabat/ClassicalL2StripStability.lean": "26d19f4ca588aa797a33e97bc4fa6611859c2563ab6ab812af27d0e0ffbaed0c",
+    "NLS/ZakharovShabat/L2StripStability.lean": "c2f4898c0b173deb30a16dcd709e77b6e978ea00c43f7a6917534b9776322851",
+    "NLS/ZakharovShabat/PhysicalH1Density.lean": "364291bec22cb313a1ba3987931f6f73eb014448978190bd11cd9b53503e0e39",
+    "NLS/ZakharovShabat/L2UniformFreeComparison.lean": "f9bece55ff87ab2aa55dc109959701791510173c87836adc17edb21e965beb04",
+    "NLS/KdV/MiuraDirichletSineCurve.lean": "0d5808a6f4c015bda743cd7074c9ec1f7c483474e4a21ac18c49344d70a53a63",
+    "NLS/KdV/HminusOneDirichletEigenfunctionComparison.lean": "64383a847f4d491a625d83022f47d8695d2dabfa1943f72c5ce14573af7c9779",
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletEigenfunctionComparison.lean": "19d589ccf18aaa5f8ddcd8949ceee3419835716f7523cd3c1c68b32f272bfb19"
+  },
+  "canonical_checkout_written": false,
+  "canonical_head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "workspace_decision": "pending; source/build/Git milestone writes remain private",
+  "git_isolation": {
+    "metadata": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/work/appendix-b-milestones.git",
+    "base_commit": "8bbab8e4fdde40ff2bfaa8d47638184bf22f4177",
+    "branch": "articles/kdv-pseudomeasures",
+    "shared_canonical_git_written": false
+  },
+  "main_theorems_verified": false
+}

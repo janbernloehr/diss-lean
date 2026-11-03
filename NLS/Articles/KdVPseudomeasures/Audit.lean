@@ -561,6 +561,13 @@ import NLS.KdV.SingularDirichletRieszKernel
 import NLS.FunctionalAnalysis.RankOneKernelComparison
 import NLS.KdV.SingularDirichletProjectionComparison
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletRieszKernel
+import NLS.ZakharovShabat.ClassicalL2StripStability
+import NLS.ZakharovShabat.L2StripStability
+import NLS.ZakharovShabat.PhysicalH1Density
+import NLS.ZakharovShabat.L2UniformFreeComparison
+import NLS.KdV.MiuraDirichletSineCurve
+import NLS.KdV.HminusOneDirichletEigenfunctionComparison
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletEigenfunctionComparison
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4444,3 +4451,24 @@ import NLS.Articles.KdVPseudomeasures.OriginalDirichletRieszKernel
 #print axioms NLS.KdV.norm_singularDirichletContinuousRieszProjection_sub_le
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletContinuousRieszProjection
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalDirichletRiesz_physical_kernel
+#print axioms NLS.ZakharovShabat.realSpectralGauge_sub
+#print axioms NLS.ZakharovShabat.classicalPotentialL2Norm_realSpectralGauge
+#print axioms NLS.ZakharovShabat.norm_classicalSolution_sub_real_shift
+#print axioms NLS.ZakharovShabat.norm_classicalSolution_le_exp_im_L2
+#print axioms NLS.ZakharovShabat.norm_classicalSolution_sub_le_im_L2
+#print axioms NLS.ZakharovShabat.norm_l2SolutionCurve_le_exp_im
+#print axioms NLS.ZakharovShabat.norm_l2SolutionCurve_sub_le_im
+#print axioms NLS.ZakharovShabat.norm_l2SolutionCurve_sub_le_of_strip_bounds
+#print axioms NLS.ZakharovShabat.sourcePeriodicH1L2Class_eq_sourcePhysical
+#print axioms NLS.ZakharovShabat.denseRange_sourcePeriodicH1L2Class
+#print axioms NLS.ZakharovShabat.exists_uniform_l2SolutionCurve_sub_free_small
+#print axioms NLS.KdV.miuraDirichletSinePosition
+#print axioms NLS.KdV.norm_miuraDirichletSinePosition_le
+#print axioms NLS.KdV.miuraDirichletSinePosition_free
+#print axioms NLS.KdV.hillMiuraDirichletSineCurve
+#print axioms NLS.KdV.hillMiuraDirichletSineCurve_eq_quasiHill
+#print axioms NLS.KdV.exists_native_Miura_eigen_with_sineCurve
+#print axioms NLS.KdV.dirichletFreeSineCurve
+#print axioms NLS.KdV.HillHminusMiuraChart.exists_uniform_dirichletEigenfunction_sine_comparison
+#print axioms NLS.KdV.exists_uniform_hillHminusDirichletEigenfunction_sine_comparison
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalDirichletEigenfunction_sine_comparison

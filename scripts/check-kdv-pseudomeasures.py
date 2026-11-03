@@ -595,6 +595,13 @@ modules = [
     'NLS.FunctionalAnalysis.RankOneKernelComparison',
     'NLS.KdV.SingularDirichletProjectionComparison',
     'NLS.Articles.KdVPseudomeasures.OriginalDirichletRieszKernel',
+    'NLS.ZakharovShabat.ClassicalL2StripStability',
+    'NLS.ZakharovShabat.L2StripStability',
+    'NLS.ZakharovShabat.PhysicalH1Density',
+    'NLS.ZakharovShabat.L2UniformFreeComparison',
+    'NLS.KdV.MiuraDirichletSineCurve',
+    'NLS.KdV.HminusOneDirichletEigenfunctionComparison',
+    'NLS.Articles.KdVPseudomeasures.OriginalDirichletEigenfunctionComparison',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
