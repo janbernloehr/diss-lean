@@ -311,7 +311,14 @@
         "NLS.KdV.hillWeakGradientMagri_antisymm",
         "NLS.ComplexAnalysis.integral_scalarHillProductMagri_eq",
         "NLS.KdV.memLp_hillDirichletGradientSecond",
-        "NLS.KdV.memLp_hillLogNormingGradientSecond"
+        "NLS.KdV.memLp_hillLogNormingGradientSecond",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_Dirichlet_energy_positive",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_spectral_Gardner_geometry",
+        "NLS.MKdV.hillSobolevMagriBivector_eq_curve_integral",
+        "NLS.KdV.hasFDerivAt_hillDirichlet_unit_branch",
+        "NLS.KdV.hasFDerivAt_hillLogNorming_unit_branch",
+        "NLS.MKdV.MiuraDirichletBranch.eventually_real_family_match",
+        "NLS.MKdV.MiuraDirichletBranch.logEnergyGradient_logNormingGradient_bracket"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -320,7 +327,7 @@
       "angle_definition": "The actual NLS theta phase is supplied by the checked original normalized psi/common-domain construction and pulled back along the literal L2 diagonal. Its logarithmic differential is proved equal to the pullback of the original local NLS angle differential.",
       "Gardner_definition": "The scalar gradient is constructed from the actual L2 Frechet derivative; its spatial Fourier multiplier is 2*pi*i*m. Square summability of that derivative and equality with the actual period-one tempered distribution derivative are proved at every original real H1 input.",
       "limits": [
-        "The printed angle-action bracket clause is proved with the original +delta_mn sign. The concluding assertion about the independently constructed mKdV angle vartheta_m plus theta_m# being an analytic function of mKdV actions and mean still requires mKdV angle construction and factorization. Theorem 4(iii) as a whole remains incomplete."
+        "The printed angle-action bracket clause is proved with the original +delta_mn sign. The concluding assertion about the independently constructed mKdV angle vartheta_m plus theta_m# being a function of mKdV actions and mean still requires mKdV angle construction and factorization. Theorem 4(iii) as a whole remains incomplete."
       ],
       "conditional_descent_proved": "Any independently supplied actual H1 unit phase on the selected physical open-action locus, with H1 physical gradients and the required negative unit Gardner generators, has a global full phase-product factor through the entire native action sequence and literal signed mean. This implication is proved, but no independent mKdV phase is constructed or assumed to have been identified."
     }
@@ -482,8 +489,8 @@
     "remaining": "Independent original mKdV angle identification and final Theorem 4(iii) angle-sum factorization. Corrected all-order frequency comparison is complete."
   },
   "remaining_essential_dependencies": [
-    "Construct and identify the original independent mKdV Abelian unit phase, using the now-checked independent Hill Dirichlet/log-norming Magri geometry. Lift the actual physical periodic H2 cotangents to the coefficient-space Miura–Magri transfer and prove the normalized phase negative unit action generators on the selected open-action domain.",
-    "Instantiate the checked full phase-sum descent implication with that original mKdV phase, preserving the full original angle normalization. The global action-fiber and open-domain generator integration arguments are already proved. Corrected all-order Theorem3 is complete."
+    "Construct and identify the original independent mKdV Abelian unit phase and prove its normalized negative Gardner generators for the original physical actions on the selected open-action domain. The physical-to-native H2 cotangent bridge, original branch Frechet derivatives, actual H1 Miura Gardner spectral matrix and unconditional Dirichlet positivity are now proved.",
+    "Instantiate the checked full phase-product descent implication with that original mKdV phase, retaining its original normalization. The printed final angle-sum claim is dependence as a function of actions and mean. The global action-fiber and open-domain generator integration arguments are already proved. Corrected all-order Theorem3 is complete."
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -1372,8 +1379,29 @@
     "regularity": "Both independent gradients and first derivatives are AC; second derivatives L2; periodic gradient endpoint values zero; energy first-derivative endpoints zero; log-norming first-derivative endpoints ONE. Exact weak Lenard boundary term and antisymmetry proved.",
     "limits": [
       "No derivative of a rough L2 potential is taken.",
-      "The full independent Abelian phase, its actual Gardner action generator and the physical-to-coefficient cotangent bridge remain to be proved.",
+      "The physical-to-coefficient bridge and actual H1 Miura pullback brackets are now proved below. The full independent Abelian phase and its original physical-action Gardner generators remain unproved.",
       "These separated-coordinate brackets do not alone complete Theorem4iii or establish full Cartesian canonicity."
+    ]
+  },
+  "native_independent_spectral_Gardner_geometry": {
+    "status": "proved_actual_original_branch_derivatives_and_full_Gardner_matrix_on_every_real_H1_profile",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_Dirichlet_energy_positive",
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_spectral_Gardner_geometry",
+      "NLS.MKdV.hillSobolevMagriBivector_eq_curve_integral",
+      "NLS.KdV.hasFDerivAt_hillDirichlet_unit_branch",
+      "NLS.KdV.hasFDerivAt_hillLogNorming_unit_branch",
+      "NLS.MKdV.MiuraDirichletBranch.eventually_real_family_match",
+      "NLS.MKdV.MiuraDirichletBranch.logEnergyGradient_logNormingGradient_bracket"
+    ],
+    "domain": "Every original real H1 profile, all positive indices, arbitrary signed mean and spectral support, all closed gaps.",
+    "coefficient_bridge": "Literal unit Fourier coefficients give native H2 cotangents, recover their profile and spatial derivative pointwise, and identify the native Magri bivector with the actual rough integral. Physical potential and variations retain exact halved even coefficients and the physical lower-component minus sign.",
+    "actual_functionals": "Original independent Hill Dirichlet analytic branches and complex logs of signed Dirichlet multipliers. Local branch existence and agreement along continuous real H1 families are proved; actual full complex Frechet derivatives give H1 Gardner gradients after Miura pullback.",
+    "positivity": "Every original Dirichlet energy is strictly positive on every real H1 Miura profile, including closed gaps. Half-log-energy gradients require no extra positivity hypothesis.",
+    "matrix": "{mu_n,mu_m}=0; {mu_n,kappa_m}=-2mu_n delta; {kappa_n,mu_m}=+2mu_n delta; {kappa_n,kappa_m}=0; {(1/2)log(mu_n),kappa_m}=-delta, reverse+delta, half-log/half-log=0.",
+    "limits": [
+      "The independent original global Abelian mKdV phase is not yet constructed, and its negative generators for the original physical actions have not been proved.",
+      "Final Theorem4iii remains incomplete; instantiate the existing full phase-product descent after identifying the original phase. The printed final angle-sum claim is dependence as a function of actions and mean, without an additional analyticity claim."
     ]
   }
 }

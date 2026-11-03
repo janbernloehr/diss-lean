@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 6286,
+  "audited_declarations_and_auxiliaries": 6448,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -16539,14 +16539,359 @@
       "kind": "theorem",
       "name": "independent_Hill_logEnergy_unit_Magri_bracket",
       "file": "NLS/Articles/MKdVNLSHierarchies/IndependentHillMagriGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "memlp_periodOneCoefficient",
+      "file": "NLS/Fourier/PeriodOneACCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneCoefficient_deriv_of_ac",
+      "file": "NLS/Fourier/PeriodOneACCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneCoefficient_of_ac_derivative",
+      "file": "NLS/Fourier/PeriodOneACCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneSobolevSynthesis_eq_curve",
+      "file": "NLS/Fourier/PeriodOneCurveSynthesis.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillIntervalPotential_eq_circlePullback_ae",
+      "file": "NLS/KdV/HillPhysicalFourierCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPhysicalDirection_eq_circlePullback_ae",
+      "file": "NLS/KdV/HillPhysicalFourierCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneCoefficient_circlePullback_periodDouble",
+      "file": "NLS/KdV/HillPhysicalFourierCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneCoefficient_hillIntervalPotential_periodDouble",
+      "file": "NLS/KdV/HillPhysicalFourierCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneCoefficient_hillIntervalPotential",
+      "file": "NLS/KdV/HillPhysicalFourierCoefficients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneCoefficient_hillPhysicalDirection_periodDouble",
+      "file": "NLS/KdV/HillPhysicalFourierCoefficients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "realSobolevMiuraHillPotential",
+      "file": "NLS/MKdV/MiuraHillDirichletPositivity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "realSobolevMiuraHillPotential_toCoeff",
+      "file": "NLS/MKdV/MiuraHillDirichletPositivity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "realSobolevMiuraHillPotential_periodHalve",
+      "file": "NLS/MKdV/MiuraHillDirichletPositivity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletEnergy_Miura_pos",
+      "file": "NLS/MKdV/MiuraHillDirichletPositivity.lean"
+    },
+    {
+      "kind": "def",
+      "name": "comp",
+      "file": "NLS/Poisson/SobolevGardnerGradientCalculus.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "comp_bracket",
+      "file": "NLS/Poisson/SobolevGardnerGradientCalculus.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "bracket_comp",
+      "file": "NLS/Poisson/SobolevGardnerGradientCalculus.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reflectedHilbertPairing_eq_unit_integral",
+      "file": "NLS/Poisson/UnitIntervalBilinearPairing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "memlp_periodOne_H1_of_curve_derivative",
+      "file": "NLS/Fourier/PeriodOneH2CurveLift.lean"
+    },
+    {
+      "kind": "def",
+      "name": "periodOneH1CurveCoefficients",
+      "file": "NLS/Fourier/PeriodOneH2CurveLift.lean"
+    },
+    {
+      "kind": "def",
+      "name": "periodOneH2CurveCoefficients",
+      "file": "NLS/Fourier/PeriodOneH2CurveLift.lean"
+    },
+    {
+      "kind": "def",
+      "name": "native",
+      "file": "NLS/Fourier/PeriodOneH2CurveData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "native_apply",
+      "file": "NLS/Fourier/PeriodOneH2CurveData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "profile_endpoints",
+      "file": "NLS/Fourier/PeriodOneH2CurveData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "spatial_endpoints",
+      "file": "NLS/Fourier/PeriodOneH2CurveData.lean"
+    },
+    {
+      "kind": "def",
+      "name": "inclusion",
+      "file": "NLS/Fourier/PeriodOneH2CurveData.lean"
+    },
+    {
+      "kind": "def",
+      "name": "derivative",
+      "file": "NLS/Fourier/PeriodOneH2CurveData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "inclusion_apply",
+      "file": "NLS/Fourier/PeriodOneH2CurveData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "derivative_apply",
+      "file": "NLS/Fourier/PeriodOneH2CurveData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "second_apply",
+      "file": "NLS/Fourier/PeriodOneH2CurveData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "profile_recovery",
+      "file": "NLS/Fourier/PeriodOneH2CurveData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "spatial_recovery",
+      "file": "NLS/Fourier/PeriodOneH2CurveData.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletH2Data",
+      "file": "NLS/KdV/HillNativeCotangents.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLogNormingH2Data",
+      "file": "NLS/KdV/HillNativeCotangents.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletNativeGradient",
+      "file": "NLS/KdV/HillNativeCotangents.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLogNormingNativeGradient",
+      "file": "NLS/KdV/HillNativeCotangents.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletNativeGradient_apply",
+      "file": "NLS/KdV/HillNativeCotangents.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogNormingNativeGradient_apply",
+      "file": "NLS/KdV/HillNativeCotangents.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneSobolevProduct_coefficients_of_curves",
+      "file": "NLS/MKdV/HillNativeMagriIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reflectedHilbertPairing_product_eq_curve_integral",
+      "file": "NLS/MKdV/HillNativeMagriIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillSobolevMagriBivector_eq_curve_integral",
+      "file": "NLS/MKdV/HillNativeMagriIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_hillUnit_pullback_of_curve",
+      "file": "NLS/KdV/HillNativeBranchGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_hillDirichlet_unit_branch",
+      "file": "NLS/KdV/HillNativeBranchGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_hillLogNorming_branch",
+      "file": "NLS/KdV/HillNativeBranchGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_hillLogNorming_unit_branch",
+      "file": "NLS/KdV/HillNativeBranchGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillSobolevMagriBivector_eq_weakGradientMagri",
+      "file": "NLS/MKdV/HillNativeSpectralBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillNativeDirichlet_Magri_bracket",
+      "file": "NLS/MKdV/HillNativeSpectralBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillNativeDirichlet_logNorming_Magri_bracket",
+      "file": "NLS/MKdV/HillNativeSpectralBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillNativeLogNorming_dirichlet_Magri_bracket",
+      "file": "NLS/MKdV/HillNativeSpectralBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillNativeLogNorming_Magri_bracket",
+      "file": "NLS/MKdV/HillNativeSpectralBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nonempty_miuraDirichletBranch",
+      "file": "NLS/MKdV/MiuraDirichletBranchGradients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "logNormingBranch",
+      "file": "NLS/MKdV/MiuraDirichletBranchGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "unit_energy_derivative",
+      "file": "NLS/MKdV/MiuraDirichletBranchGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "unit_logNorming_derivative",
+      "file": "NLS/MKdV/MiuraDirichletBranchGradients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "energyGradient",
+      "file": "NLS/MKdV/MiuraDirichletBranchGradients.lean"
+    },
+    {
+      "kind": "def",
+      "name": "logNormingGradient",
+      "file": "NLS/MKdV/MiuraDirichletBranchGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "energyGradient_bracket",
+      "file": "NLS/MKdV/MiuraDirichletBranchGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "energyGradient_logNormingGradient_bracket",
+      "file": "NLS/MKdV/MiuraDirichletBranchGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "logNormingGradient_energyGradient_bracket",
+      "file": "NLS/MKdV/MiuraDirichletBranchGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "logNormingGradient_bracket",
+      "file": "NLS/MKdV/MiuraDirichletBranchGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_realSobolevMiuraHillPotential_family",
+      "file": "NLS/MKdV/MiuraDirichletBranchCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "eventually_real_family_match",
+      "file": "NLS/MKdV/MiuraDirichletBranchCompatibility.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "energyBranch_mem_slitPlane",
+      "file": "NLS/MKdV/MiuraLogEnergyGardnerCoordinates.lean"
+    },
+    {
+      "kind": "def",
+      "name": "logEnergyGradient",
+      "file": "NLS/MKdV/MiuraLogEnergyGardnerCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "logEnergyGradient_logNormingGradient_bracket",
+      "file": "NLS/MKdV/MiuraLogEnergyGardnerCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "logEnergyGradient_bracket",
+      "file": "NLS/MKdV/MiuraLogEnergyGardnerCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "logNormingGradient_logEnergyGradient_bracket",
+      "file": "NLS/MKdV/MiuraLogEnergyGardnerCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "independent_mKdV_Dirichlet_energy_positive",
+      "file": "NLS/Articles/MKdVNLSHierarchies/IndependentSpectralGardnerGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "independent_mKdV_spectral_Gardner_geometry",
+      "file": "NLS/Articles/MKdVNLSHierarchies/IndependentSpectralGardnerGeometry.lean"
     }
   ],
-  "public_declaration_count": 3304,
-  "theorem_count": 2703,
-  "definition_count": 601,
-  "full_build": "646 article/shared modules have validated private outputs. All 560 unchanged prefix module source hashes match the prior 0c3df18 milestone; their private outputs were reused. Eighty-six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
-  "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/KdV/HillL2DirichletCharacteristic.lean",
+  "public_declaration_count": 3373,
+  "theorem_count": 2757,
+  "definition_count": 616,
+  "full_build": "662 article/shared modules have validated private outputs. All 646 unchanged prefix module source hashes match the prior 87afbd4 milestone; their private outputs were reused. Sixteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "aggregate_imports": "compiled_and_full_transitive_axiom_audits_passed",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/Fourier/PeriodOneACCoefficients.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -17194,12 +17539,28 @@
     "NLS/KdV/HillWeakMagriScalars.lean": "dc566bb2d925341e592990bf5a0f6d3cabf3094e14c7e8e590ba3a99dd1c5d25",
     "NLS/KdV/HillMagriLogEnergyCoordinates.lean": "5bc43178378e22b94a4f7d60c162d26819159304315aaffc18937b4a9a8ffe37",
     "NLS/Articles/MKdVNLSHierarchies/IndependentHillMagriGeometry.lean": "5aac37dacfec57b0451958983145b412cac3f2ea95d5b8857678207df3ecf6c5",
-    "NLS.lean": "c6f21903008d21a1118f4d59b484b2eb1f7bfd445788659d6b5434beddf6268f",
-    "scripts/check_mkdv_nls.py": "2a70a462b7012bbf9ae7ae122d05b463a50ae31400ce4d16f6f1411fb444c1be",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "7483c4a3bb306d5a908ea9ec3c2f4b4bb3c49bb637e645dbc9abef1b6488d1b1"
+    "NLS/Fourier/PeriodOneACCoefficients.lean": "0b946aba1d1afc138d395b6f0be5e1f9b44d2aef6ddf5a96d033ee40e13c2884",
+    "NLS/Fourier/PeriodOneCurveSynthesis.lean": "4698ee8bad5f8f6344a7a44a0c54b6b9b4157827bc4605840a9bdc268242ca99",
+    "NLS/KdV/HillPhysicalFourierCoefficients.lean": "69d3056fb22f21c3871305f3619423fc86d604b972a8da1727e6d90ee7a85458",
+    "NLS/MKdV/MiuraHillDirichletPositivity.lean": "ae130f28320b107ffd98f4d6a4de162125118a77c173bd6555c1bd1fcfa04654",
+    "NLS/Poisson/SobolevGardnerGradientCalculus.lean": "cefe81263311b01cd35daea0fec8a04bbae145924f2ba7fa6861e659fa8b9025",
+    "NLS/Poisson/UnitIntervalBilinearPairing.lean": "aa560230a21b2a14b29d5adeb7199f0dc5664b2af358e4fc6e28e98ba7adfde7",
+    "NLS/Fourier/PeriodOneH2CurveLift.lean": "2efa3a954ccea06f2e1021d654dc096eb2e439b3088bf0f4e46d4166bf9c557c",
+    "NLS/Fourier/PeriodOneH2CurveData.lean": "bede8a3091ae197fb35a9e530e93d8699556d98fc9837570bec0514fad18b91e",
+    "NLS/KdV/HillNativeCotangents.lean": "c20fead47c67aac79eb596c9e7ab403866356d6974f110395fe8f50558db854c",
+    "NLS/MKdV/HillNativeMagriIntegral.lean": "498bd1495846a13fe06d90896a760d5f9b268f0f4affdc13f6ab80a429795aad",
+    "NLS/KdV/HillNativeBranchGradients.lean": "efce5bcc94f7db6b8f56a9f6fbbf4b950605b6564dc16eb2b1c96c102147c2c6",
+    "NLS/MKdV/HillNativeSpectralBrackets.lean": "c7bf6f6842921bae4b86e14534fa57cd9cbe48a99bd0323b3e4ec6a2cd687fbb",
+    "NLS/MKdV/MiuraDirichletBranchGradients.lean": "0b49f1e1188f3af50a0b3f6bac4d35b2900a1ba78ab41c6ca8f7e4ed785d1dfc",
+    "NLS/MKdV/MiuraDirichletBranchCompatibility.lean": "d16e073a676f85e730a56cd31cd0533f46ebc95fbd2f5efe102036f11479a015",
+    "NLS/MKdV/MiuraLogEnergyGardnerCoordinates.lean": "c948d7fac6db89c0b540d2007a1e48cef3bec329ffc20e63f56a4bfe89799d13",
+    "NLS/Articles/MKdVNLSHierarchies/IndependentSpectralGardnerGeometry.lean": "90e2826a16ec105ad5c9afb8f024e9c9b68eaee419f7e33bf057a466ca6f07b8",
+    "NLS.lean": "8ed93a3275a9a77cf84160e81f819652547b4ada6aadb54061c61ce950c5b7b9",
+    "scripts/check_mkdv_nls.py": "dfd7765fb901549f0514e8f401186c781699025c5db5a6465c44fa552f7dc278",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "2eb5892e277da874b759359c2af726454c2a43d5376dc0b5d9c3e7556d840677"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 646,
+  "focused_module_count": 662,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -17716,12 +18077,25 @@
       "public_declaration_count": 3304,
       "theorem_count": 2703,
       "definition_count": 601
+    },
+    {
+      "milestone": "Complete physical-to-native cotangent Fourier bridge, native Magri/physical integral identification and actual original Hill branch Frechet gradients; actual independent spectral Gardner bracket matrices after Miura pullback on EVERY real H1 profile, unconditional Dirichlet positivity including closed gaps and actual half-log-energy mixed bracket -delta. Original independent global Abelian mKdV phase and its original-action generators remain required for final Theorem4iii.",
+      "audit_count": 6448,
+      "combined_NLS_audit_count": 51362,
+      "aggregate_compiled": true,
+      "module_count": 662,
+      "reused_prefix_module_count": 646,
+      "reused_prefix_commit": "87afbd4154618a92579bc5077421d6b5d86bc97d",
+      "frozen_source_checker_count": 665,
+      "public_declaration_count": 3373,
+      "theorem_count": 2757,
+      "definition_count": 616
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 51200,
+  "combined_audited_NLS_declarations": 51362,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -17729,7 +18103,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 560 unchanged prefix module source hashes match the prior 0c3df18 milestone; their private outputs were reused. Eighty-six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 6286 declarations/auxiliaries and combined audit for 51200 NLS declarations. All 649 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 646 unchanged prefix module source hashes match the prior 87afbd4 milestone; their private outputs were reused. Sixteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 6448 declarations/auxiliaries and combined audit for 51362 NLS declarations. All 665 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

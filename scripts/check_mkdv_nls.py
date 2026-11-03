@@ -680,6 +680,22 @@ modules = [
     'NLS/KdV/HillWeakMagriScalars.lean',
     'NLS/KdV/HillMagriLogEnergyCoordinates.lean',
     'NLS/Articles/MKdVNLSHierarchies/IndependentHillMagriGeometry.lean',
+    'NLS/Fourier/PeriodOneACCoefficients.lean',
+    'NLS/Fourier/PeriodOneCurveSynthesis.lean',
+    'NLS/KdV/HillPhysicalFourierCoefficients.lean',
+    'NLS/MKdV/MiuraHillDirichletPositivity.lean',
+    'NLS/Poisson/SobolevGardnerGradientCalculus.lean',
+    'NLS/Poisson/UnitIntervalBilinearPairing.lean',
+    'NLS/Fourier/PeriodOneH2CurveLift.lean',
+    'NLS/Fourier/PeriodOneH2CurveData.lean',
+    'NLS/KdV/HillNativeCotangents.lean',
+    'NLS/MKdV/HillNativeMagriIntegral.lean',
+    'NLS/KdV/HillNativeBranchGradients.lean',
+    'NLS/MKdV/HillNativeSpectralBrackets.lean',
+    'NLS/MKdV/MiuraDirichletBranchGradients.lean',
+    'NLS/MKdV/MiuraDirichletBranchCompatibility.lean',
+    'NLS/MKdV/MiuraLogEnergyGardnerCoordinates.lean',
+    'NLS/Articles/MKdVNLSHierarchies/IndependentSpectralGardnerGeometry.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

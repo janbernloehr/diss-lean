@@ -2234,3 +2234,57 @@ matrix alone does not identify the final angle or assert full Cartesian
 canonicity. Corrected Theorem 3 remains complete at every order.
 
 Validation: all 646 article/shared modules have validated private outputs. All 560 unchanged prefix source hashes match pushed 0c3df18 and their outputs were reused; all eighty-six added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 6,286 declarations/auxiliaries and the combined audit for 51,200 NLS declarations, using only standard allowed axioms. All 649 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 3,304 declarations (2,703 theorems and 601 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Native independent spectral Gardner geometry on all real H¹ profiles
+
+The physical-to-coefficient cotangent bridge is now proved. Actual
+unit-interval Fourier integrals lift every periodic AC curve with AC
+first derivative and L² second derivative into the native H² space.
+Both its profile and first derivative are recovered pointwise on the
+closed interval. The exact physical multiplier is 2*pi*i*n. This applies
+to the original Dirichlet-energy and log-norming gradients with their
+checked periodic traces, including the log-norming derivative trace one.
+
+Unconjugated unit-interval Parseval identifies the native reflected
+Hilbert pairing with the physical integral. Periodic integration by
+parts identifies the native weak Magri bivector with the original weak
+integral, for arbitrary L² potentials. The scalar potential and the
+actual lower-component variations of the first-order Hill realization
+have precisely the halved even Fourier coefficients. Neither a sign
+nor a period factor is inserted into the desired bracket matrix.
+
+The actual complex L² Fréchet derivatives of the independent original
+Dirichlet branches and logarithmic multipliers are represented by these
+native H² gradients. The existing full H¹ Miura transpose and bracket
+transfer therefore construct actual H¹ Gardner gradients of their
+mKdV pullbacks. The branches exist at every real H¹ profile, and their
+energy and log-norming values agree with the original independent
+spectral data along every nearby continuous real H¹ family.
+
+Every original Dirichlet energy on the real H¹ Miura image is strictly
+positive. The bottom periodic energy is nonnegative, and the first
+strict band inequality puts every Dirichlet energy strictly above it.
+This includes closed periodic gaps and zero-mean profiles. Consequently
+the actual half-logarithmic energy gradient is valid at every real H¹
+profile, with no additional positivity assumption.
+
+`independent_mKdV_spectral_Gardner_geometry` supplies original local
+spectral branches unconditionally, and proves their actual raw Gardner
+matrix: energy/energy=0, energy/log-norming=-2*mu_n*delta,
+log-norming/energy=+2*mu_n*delta and log-norming/log-norming=0.
+The half-log-energy/log-norming bracket is exactly -delta; its reverse
+is +delta and the half-log-energy/half-log-energy block vanishes.
+All positive indices, arbitrary spectral support, arbitrary signed mean
+and all closed gaps are included. These are actual differential and
+physical Gardner brackets, rather than prescribed algebraic values.
+
+Theorem 4(iii) remains INCOMPLETE. The original independent global
+Abelian mKdV phase and its negative Gardner generators for the original
+physical actions still need construction and normalization. The checked
+full phase-product descent implication must then be instantiated to
+obtain the source's action-and-mean dependence. The local
+separated-coordinate matrix by itself does not identify that phase.
+Corrected Theorem 3 remains complete on every original stated domain.
+
+Validation: all 662 article/shared modules have validated private outputs. All 646 unchanged prefix source hashes match pushed 87afbd4 and their outputs were reused; all sixteen added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 6,448 declarations/auxiliaries and the combined audit for 51,362 NLS declarations, using only standard allowed axioms. All 665 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 3,373 declarations (2,757 theorems and 616 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
