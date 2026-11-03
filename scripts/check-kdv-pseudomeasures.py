@@ -719,6 +719,14 @@ modules = [
     'NLS.KdV.HillHminusOneGapPolynomial',
     'NLS.KdV.HillHminusOneJointGapQuotient',
     'NLS.KdV.HillHminusOneJointGapRoots',
+    'NLS.KdV.ClassicalHillTraceFamily',
+    'NLS.KdV.HillContinuousPrimitiveComparison',
+    'NLS.Fourier.ContinuousSynthesisReality',
+    'NLS.SequenceSpaces.PeriodOneRealContinuousApprox',
+    'NLS.ComplexAnalysis.StrictTraceSheet',
+    'NLS.KdV.HillHminusOnePrimitiveSheets',
+    'NLS.ComplexAnalysis.PrincipalSquareRootSheet',
+    'NLS.KdV.HillHminusOnePrimitiveSquareSheets',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

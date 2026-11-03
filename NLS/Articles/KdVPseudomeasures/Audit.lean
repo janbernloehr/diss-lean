@@ -685,6 +685,14 @@ import NLS.ComplexAnalysis.JointCircleCauchyTransform
 import NLS.KdV.HillHminusOneGapPolynomial
 import NLS.KdV.HillHminusOneJointGapQuotient
 import NLS.KdV.HillHminusOneJointGapRoots
+import NLS.KdV.ClassicalHillTraceFamily
+import NLS.KdV.HillContinuousPrimitiveComparison
+import NLS.Fourier.ContinuousSynthesisReality
+import NLS.SequenceSpaces.PeriodOneRealContinuousApprox
+import NLS.ComplexAnalysis.StrictTraceSheet
+import NLS.KdV.HillHminusOnePrimitiveSheets
+import NLS.ComplexAnalysis.PrincipalSquareRootSheet
+import NLS.KdV.HillHminusOnePrimitiveSquareSheets
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5045,3 +5053,33 @@ import NLS.KdV.HillHminusOneJointGapRoots
 #print axioms NLS.KdV.hillHminusJointNormalizedGapSquare_eq
 #print axioms NLS.KdV.hillHminusJointNormalizedGapRoot_properties
 #print axioms NLS.KdV.exists_hillHminus_joint_normalized_gap_roots
+#print axioms NLS.KdV.classicalHillTraceFamily
+#print axioms NLS.KdV.classicalHillTraceFamily_continuationDomain
+#print axioms NLS.KdV.classicalHillTraceFamily_root
+#print axioms NLS.KdV.classicalHillTraceFamily_primitive
+#print axioms NLS.KdV.hillUnitPotentialCurveCLM
+#print axioms NLS.KdV.hillUnitPotentialCurveCLM_apply
+#print axioms NLS.KdV.continuousFourierCLM_eq_hillContinuousCoefficients
+#print axioms NLS.KdV.continuousHillTraceFamily
+#print axioms NLS.KdV.hillL2ContinuationDomain_continuous_iff
+#print axioms NLS.KdV.hillL2ContinuedPrimitive_eq_classical
+#print axioms NLS.KdV.hillL2ContinuedPrimitive_re_sign_continuous
+#print axioms NLS.Fourier.continuousSynthesis_conj_eq_of_reflection
+#print axioms NLS.Fourier.continuousSynthesis_im_eq_zero_of_reflection
+#print axioms NLS.periodOneFiniteL1Approx
+#print axioms NLS.periodOneFiniteL1Approx_apply
+#print axioms NLS.periodOneFiniteL1Approx_real
+#print axioms NLS.periodOneFiniteContinuousApprox
+#print axioms NLS.continuousFourierCLM_periodOneFiniteContinuousApprox
+#print axioms NLS.periodOneFiniteContinuousApprox_im_eq_zero
+#print axioms NLS.ComplexAnalysis.re_pos_of_nonneg_of_nonconstant_cosh_trace
+#print axioms NLS.KdV.hillHminusContinuedPrimitive_re_sign_finite
+#print axioms NLS.KdV.hillHminusContinuedPrimitive_re_sign_nonneg
+#print axioms NLS.KdV.hillHminusContinuedPrimitive_re_pos
+#print axioms NLS.KdV.hillHminusContinuedPrimitive_re_neg
+#print axioms NLS.KdV.hillHminusContinuedPrimitive_re_sign
+#print axioms NLS.ComplexAnalysis.eq_principalSqrt_of_sq_of_re_pos
+#print axioms NLS.ComplexAnalysis.eq_neg_principalSqrt_of_sq_of_re_neg
+#print axioms NLS.KdV.hillHminusShiftedPrimitive_eq_principalSqrt
+#print axioms NLS.KdV.hillHminusShiftedPrimitive_eq_neg_principalSqrt
+#print axioms NLS.KdV.hillHminus_whole_disc_square_physical_sheets

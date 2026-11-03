@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Intrinsic actual high Hill gap polynomial and filled quotient: JOINT energy/potential analytic normalized roots through collapsed gaps, with no selected endpoint labels.",
+  "phase": "ACTUAL original H-minus-one Hill primitive physical sheets on BOTH full nonreal half-planes, and exact principal-square-root signs for actual filled high-disc squares.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -693,13 +693,21 @@
     "NLS/KdV/HillHminusOneGapPolynomial.lean",
     "NLS/KdV/HillHminusOneJointGapQuotient.lean",
     "NLS/KdV/HillHminusOneJointGapRoots.lean",
+    "NLS/KdV/ClassicalHillTraceFamily.lean",
+    "NLS/KdV/HillContinuousPrimitiveComparison.lean",
+    "NLS/Fourier/ContinuousSynthesisReality.lean",
+    "NLS/SequenceSpaces/PeriodOneRealContinuousApprox.lean",
+    "NLS/ComplexAnalysis/StrictTraceSheet.lean",
+    "NLS/KdV/HillHminusOnePrimitiveSheets.lean",
+    "NLS/ComplexAnalysis/PrincipalSquareRootSheet.lean",
+    "NLS/KdV/HillHminusOnePrimitiveSquareSheets.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 3613,
-  "definitions": 744,
+  "proved_theorems": 3638,
+  "definitions": 749,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 4357,
+    "declarations": 4387,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -1385,10 +1393,18 @@
     "hillHminusJointGapQuotient reconstructs K/polynomial from that fixed actual contour. It is JOINTLY analytic on the OPEN energy disc times the original complex H-minus-one neighborhood, and equals EVERY valid analytic two-root deflation throughout that disc, including the filled values at both actual endpoints and at collapsed gaps.",
     "hillHminusJointNormalizedGapRoot has NO endpoint-label arguments. It is the principal root of -4*(pi*n)^2 times the intrinsic Cauchy quotient. ONE radius precedes EVERY accuracy; ONE cutoff and ONE OPEN original H-minus-one potential neighborhood precede ALL high indices, ALL nearby potentials and EVERY point of each open energy disc. The root is JOINTLY analytic, NONZERO and uniformly within epsilon of ONE.",
     "The exact actual identity is K(lambda,a)=-hillHminusGapPolynomial(lambda,a)*S(lambda,a)^2/(4*(pi*n)^2). The SAME K retains its actual trace identity, exact radicand-zero identity, and equality with the square of the ORIGINAL shifted continued primitive wherever that continuation is admissible. Closed gaps are included. Independence of chosen endpoint labels is PROVED for the same K and contour; no global gluing across different K/contour choices is claimed.",
-    "The previous gap-root milestone proved energy analyticity with a chosen unordered pair. This continuation proves the missing JOINT potential analyticity and removes the pair from the normalized-root definition. The original Hill contour action, sheet identification, action-to-gap-square ratio, KdV Birkhoff map and actual smooth-approximation KdV flow remain UNPROVED. ALL FIVE MAIN theorems remain OPEN; goal ACTIVE."
+    "The previous gap-root milestone proved energy analyticity with a chosen unordered pair. This continuation proves the missing JOINT potential analyticity and removes the pair from the normalized-root definition. The original Hill contour action, sheet identification, action-to-gap-square ratio, KdV Birkhoff map and actual smooth-approximation KdV flow remain UNPROVED. ALL FIVE MAIN theorems remain OPEN; goal ACTIVE.",
+    "The EXISTING classical Hill root, primitive and source-continuation domain are DEFINITIONALLY the shared TracePrimitiveFamily construction. Restriction of the actual continuous physical circle potential to the unit interval is a bounded complex linear map, retaining the original unit-interval normalization.",
+    "The ACTUAL continuous Fourier coefficient realization has EXACTLY the original physical L2 Hill trace. Shared trace-family functoriality identifies the ENTIRE source-continuation domain and ACTUAL continued primitive under this realization, with NO extra square-root sign or logarithm period. This transfers the verified classical physical sheet sign to the actual physical L2 primitive for continuous inputs.",
+    "Shared continuous Fourier synthesis is POINTWISE real whenever its ACTUAL raw coefficients obey conjugate reflection. The finite H-minus-one density approximants have continuous real physical representatives with EXACTLY the original doubled L2 coefficients. No potential, Fourier index, physical period, normalization, or H-minus-one norm is substituted.",
+    "The EXACT original finite Fourier truncations converge to EVERY real native unit-period H-minus-one potential in the H-minus-one norm. Their physical L2/continuous primitive signs pass by the ACTUAL joint analytic primitive continuity to a nonnegative half-plane sign. The approximants need NO uniform L2 norm bound or additional regularity.",
+    "Shared maximum modulus proves strictness: if an analytic primitive has nonnegative real part and2*cosh(primitive) is a nonconstant ENTIRE trace, its real part is STRICTLY positive. Applied to the ACTUAL Hill trace, its already proved nonconstancy excludes equality. No additional spectral sign, self-adjointness claim or zero-separation hypothesis is supplied.",
+    "For EVERY original native REAL unit-period H-minus-one potential q and EVERY energy with nonzero imaginary part, the ACTUAL free-normalized primitive satisfies Im(lambda)*Re(F(lambda,q))>0. In particular it has STRICTLY POSITIVE real part on the ENTIRE upper energy half-plane and STRICTLY NEGATIVE real part on the ENTIRE lower half-plane. There is NO high-energy, mean-zero, smallness or open-gap restriction.",
+    "For EVERY original positive n, the purely imaginary shift F+i*n*pi has the SAME strict real-part sign. Its exact square identity now determines the ACTUAL physical sheet: F+i*n*pi=+principalSqrt(K) above the real axis, and F+i*n*pi=-principalSqrt(K) below it. hillHminus_whole_disc_square_physical_sheets applies to EVERY actual filled square family used by the previous intrinsic joint normalization, and to EVERY real input in its original complex neighborhood.",
+    "The actual shifted-primitive sheet ambiguity on the nonreal high discs is NOW RESOLVED. The upper/lower real-gap boundary limits, original contour-action/gap-integral identification, normalized action-to-gap-square extension, actual KdV Birkhoff map and original smooth-approximation KdV flow remain UNPROVED. ALL FIVE MAIN theorems remain OPEN; goal ACTIVE."
   ],
-  "source_correspondence": "Intrinsic actual high Hill gap polynomial and filled quotient: JOINT energy/potential analytic normalized roots through collapsed gaps, with no selected endpoint labels. Identify the intrinsic jointly analytic normalized Hill gap root with the correct sheet of the ORIGINAL continued primitive on a contour, and construct the ORIGINAL Hill contour action. Prove its gap-square extension and locally uniform normalization8*n*pi*I_n/gamma_n^2->1, including closed gaps. Joint energy/potential analyticity and independence of endpoint ordering for a fixed actual square/contour are NOW PROVED; gluing across auxiliary square/contour choices still needs proof where used. Construct or identify the ACTUAL original KdV H-minus-one Birkhoff map, with verified action/angle coordinates, original differential q_(2n)/sqrt(2*pi*abs(n)), exact target order s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. FULL complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB are already PROVED; do not redo them or substitute arbitrary supplied conjugacy data. Construct or identify the ACTUAL original H-minus-one KdV flow defined by convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization, and derive main1.1/1.3/1.4 plus Wiener5.1/5.9. All five main theorems remain UNPROVED; keep the goal ACTIVE. Quantitative DirichletC4ii, remaining low parity/interlacing and complex ratio2.20 remain open only where required.",
-  "build_isolation": "Intrinsic actual high Hill gap polynomial and filled quotient: JOINT energy/potential analytic normalized roots through collapsed gaps, with no selected endpoint labels. All source/compiler/Git milestone writes private; canonical checkout and shared Git metadata read-only.",
+  "source_correspondence": "ACTUAL original H-minus-one Hill primitive physical sheets on BOTH full nonreal half-planes, and exact principal-square-root signs for actual filled high-disc squares. Use the NOW PROVED exact ACTUAL shifted-primitive sheets(+principalSqrt(K) on the entire upper high disc and-principalSqrt(K) on the lower) to establish the real-gap boundary limits and their normalized endpoint-factor representation. Construct the ORIGINAL Hill contour action and identify its gap integral with the correct contour convention. Prove the action-to-gap-square extension and locally uniform8*n*pi*I_n/gamma_n^2->1, including closed gaps. Joint energy/potential analyticity and endpoint-order independence for fixed square/contour are PROVED; global gluing across auxiliary square/contour choices remains open where used. Construct or identify the ACTUAL original KdV H-minus-one Birkhoff map, with verified action/angle coordinates, original differential q_(2n)/sqrt(2*pi*abs(n)), exact target order s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. FULL complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB are already PROVED; do not redo them or substitute arbitrary supplied conjugacy data. Construct or identify the ACTUAL original H-minus-one KdV flow defined by convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization, and derive main1.1/1.3/1.4 plus Wiener5.1/5.9. All five main theorems remain UNPROVED; keep the goal ACTIVE. Quantitative DirichletC4ii, remaining low parity/interlacing and complex ratio2.20 remain open only where required.",
+  "build_isolation": "ACTUAL original H-minus-one Hill primitive physical sheets on BOTH full nonreal half-planes, and exact principal-square-root signs for actual filled high-disc squares. All source/compiler/Git milestone writes private; canonical checkout and shared Git metadata read-only.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -1790,7 +1806,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "e6778c6b7a0840cd2bbcf2fe51b5ba2bf8175b512708088ac67b6dfc4e7f1658",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "ce46decba5b3f28ede7cd87ab2eba5e9d39b45c8cc6cc146c1a873dd1715a1c3",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -2081,7 +2097,15 @@
     "NLS/ComplexAnalysis/JointCircleCauchyTransform.lean": "d47b579ac3847ca5f4d189995b9836f6dc3ff5b06c789ee2798648cc2d55b80e",
     "NLS/KdV/HillHminusOneGapPolynomial.lean": "5dd5a1f6f6226832b333426b01519a4205936ba7569ff9c8ed29901937e512ce",
     "NLS/KdV/HillHminusOneJointGapQuotient.lean": "e5e9a3c8d9439016af15a8dad3494a586e239c4f5033aa1a6f5e83e4b86fe350",
-    "NLS/KdV/HillHminusOneJointGapRoots.lean": "fab173ea4e681d55924de8922a37218d88d363f9ebcc06eeef8e9fd7db0cdb02"
+    "NLS/KdV/HillHminusOneJointGapRoots.lean": "fab173ea4e681d55924de8922a37218d88d363f9ebcc06eeef8e9fd7db0cdb02",
+    "NLS/KdV/ClassicalHillTraceFamily.lean": "0d64424ff0fe7c7e5de3b519b518b8dc20e11fd55a48b68a29486002628dac6d",
+    "NLS/KdV/HillContinuousPrimitiveComparison.lean": "5a5cc683827134be0672265980eaa9f3bc6345bd61373681963408bec10c6c06",
+    "NLS/Fourier/ContinuousSynthesisReality.lean": "cef8a4e80f93dd2615f4194e975cc0d5e9887b886132a1387fe7236735115eda",
+    "NLS/SequenceSpaces/PeriodOneRealContinuousApprox.lean": "a9ebc08eb169e2eda9a65334166b3a39250f9d8c31e46e6f4a7b8f1a9c2d3229",
+    "NLS/ComplexAnalysis/StrictTraceSheet.lean": "cc5b370ba70ac8fea606a75af2ecba89e550f8aead54a5ac3bf7931c0b7ed5b8",
+    "NLS/KdV/HillHminusOnePrimitiveSheets.lean": "fdc92d17fed975df1dd2c88a6525af63d5ccc5b6f2d9c307c48610da2a880084",
+    "NLS/ComplexAnalysis/PrincipalSquareRootSheet.lean": "d39fe39d58552c61d290e6932581e5e144f202dc2ba98988df1030d5ff614cae",
+    "NLS/KdV/HillHminusOnePrimitiveSquareSheets.lean": "90d98f3c794238d28363e72ad178f1bacfd0cbbadd9866f407e3b58ff0fc8003"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -2089,12 +2113,12 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 4334,
-    "newly_checked_declarations_this_continuation": 23,
-    "new_theorems": 16,
-    "new_definitions": 7,
-    "total_checked_declarations": 4357,
-    "reuse": "Verified ACTUAL native H-minus-one high pairs and full multiplicity, whole-disc primitive square, previous normalized energy root, shared weighted argument principle and parametric Cauchy analyticity. No individual analytic root labels, action identities or Birkhoff data are assumed."
+    "previous_checked_declarations": 4357,
+    "newly_checked_declarations_this_continuation": 30,
+    "new_theorems": 25,
+    "new_definitions": 5,
+    "total_checked_declarations": 4387,
+    "reuse": "Verified CLASSICAL physical sheet sign, exact continuous/L2 trace equality, trace-family source functoriality, actual H-minus-one primitive analyticity, exact finite Fourier density, characteristic reality, actual trace nonconstancy and filled-square matching. No physical sheet sign is assumed for the H-minus-one primitive."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -2123,7 +2147,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-joint-hill-gap-roots.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hminus-primitive-sheets.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -2358,13 +2382,14 @@
     "Full corrected source Lemma2.15: SAME-PARITY native weak operator restriction, actual unit-energy spectral coordinates and full physical projected identity(31), with overlap(32).",
     "FULL source Theorem2.1(ii): actual complex weighted midpoint membership, entire central block, norm-ball bounds, original topology local boundedness and exact positive-index target norm.",
     "Actual H-minus-one high Hill gap squares: two-root deflation and normalized analytic nonvanishing roots, uniformly near one through collapsed gaps.",
-    "Intrinsic actual high Hill gap polynomial and filled quotient: JOINT energy/potential analytic normalized roots through collapsed gaps, with no selected endpoint labels."
+    "Intrinsic actual high Hill gap polynomial and filled quotient: JOINT energy/potential analytic normalized roots through collapsed gaps, with no selected endpoint labels.",
+    "ACTUAL original H-minus-one Hill primitive physical sheets on BOTH full nonreal half-planes, and exact principal-square-root signs for actual filled high-disc squares."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/joint-hill-gap-roots-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-primitive-sheets-map.json",
   "baseline_validated_snapshot": {
-    "commit": "a7c3018116caa688fcdd44ad52a73c9df424d8d7",
-    "modules": 683,
-    "audited_declarations": 4334,
+    "commit": "c084727439e3921c61180c3dcd90ab488ebba1e0",
+    "modules": 688,
+    "audited_declarations": 4357,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   },
@@ -2416,6 +2441,28 @@
     "global_gluing_across_square_and_contour_choices_proved": false,
     "original_Hill_contour_actions_constructed": false,
     "source_Theorem3_2_action_ratio_proved": false,
+    "actual_original_KdV_Birkhoff_map_constructed": false,
+    "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
+    "main_theorems_verified": false
+  },
+  "actual_HminusOne_primitive_physical_sheets": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-primitive-sheets-map.json",
+    "classical_trace_family_is_original_continuation_definitionally": true,
+    "exact_continuous_L2_continuation_domain_and_actual_primitive_comparison": true,
+    "no_added_root_sign_or_logarithm_period": true,
+    "real_continuous_Fourier_approximants_have_exact_original_coefficients": true,
+    "exact_original_HminusOne_norm_limit_used": true,
+    "no_uniform_L2_bound_on_approximants_assumed": true,
+    "actual_primitive_strict_sign_on_entire_upper_and_lower_half_planes": true,
+    "every_real_native_HminusOne_potential_no_mean_zero_or_cutoff": true,
+    "strictness_proved_from_actual_trace_nonconstancy_and_maximum_modulus": true,
+    "actual_shifted_primitive_principal_sqrt_sheet_proved": true,
+    "same_actual_filled_square_and_original_continued_primitive": true,
+    "both_nonreal_halves_of_every_actual_high_disc": true,
+    "real_gap_boundary_limits_identified": false,
+    "original_Hill_contour_actions_constructed": false,
+    "source_Theorem3_2_action_ratio_proved": false,
+    "global_gluing_across_square_and_contour_choices_proved": false,
     "actual_original_KdV_Birkhoff_map_constructed": false,
     "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
     "main_theorems_verified": false
