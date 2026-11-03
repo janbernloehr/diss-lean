@@ -1,3 +1,7 @@
+import NLS.KdV.HillCriticalCentralCensus
+import NLS.KdV.HillSignedCriticalFrequencies
+import NLS.KdV.HillEnergyCriticalProduct
+import NLS.KdV.HillCriticalEnergyZeros
 import NLS.ComplexAnalysis.DerivativeSquarePullbackOrder
 import NLS.KdV.HillEnergyPolynomialLimits
 import NLS.KdV.HillGapCriticalPoints
