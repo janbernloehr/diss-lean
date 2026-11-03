@@ -1,3 +1,10 @@
+import NLS.DifferentialPolynomial.JetMajorants
+import NLS.DifferentialPolynomial.ScalarInterpolationExponents
+import NLS.KdV.HillSobolevHierarchy
+import NLS.KdV.HillHamiltonianMonomials
+import NLS.KdV.HillMonomialInterpolation
+import NLS.KdV.HillHamiltonianAbsorption
+import NLS.KdV.HillHamiltonianCoercivity
 import NLS.DifferentialPolynomial.WeightedJetReduction
 import NLS.KdV.HillRiccatiRemainder
 import NLS.KdV.HillHamiltonianReduction
@@ -492,7 +499,10 @@ run_cmd do
     ``NLS.DifferentialPolynomial.HasWeightedJetReduction.sum,
     ``NLS.DifferentialPolynomial.HasWeightedJetReduction.add_spatialDerivative,
     ``NLS.DifferentialPolynomial.hasWeightedJetReduction_of_jetOrder,
-    ``NLS.DifferentialPolynomial.exists_weighted_jet_reduction]
+    ``NLS.DifferentialPolynomial.exists_weighted_jet_reduction,
+    ``NLS.DifferentialPolynomial.norm_eval_le_lower_jet_majorant,
+    ``NLS.DifferentialPolynomial.scalar_two_factor_interpolation_exponents,
+    ``NLS.DifferentialPolynomial.scalar_monomial_interpolation_power_range]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

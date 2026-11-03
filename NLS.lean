@@ -5173,3 +5173,10 @@ import NLS.KdV.HillHamiltonianReduction
 import NLS.KdV.HillHierarchyTraceCoefficient
 import NLS.KdV.HillHierarchyReality
 import NLS.KdV.HillSecondHamiltonian
+import NLS.DifferentialPolynomial.JetMajorants
+import NLS.DifferentialPolynomial.ScalarInterpolationExponents
+import NLS.KdV.HillSobolevHierarchy
+import NLS.KdV.HillHamiltonianMonomials
+import NLS.KdV.HillMonomialInterpolation
+import NLS.KdV.HillHamiltonianAbsorption
+import NLS.KdV.HillHamiltonianCoercivity
