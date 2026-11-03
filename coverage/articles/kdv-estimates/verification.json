@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 2894,
+    "declarations": 2936,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -294,10 +294,13 @@
       "NLS.SequenceSpaces.sum_symmetric_interval",
       "NLS.SequenceSpaces.sum_range_one_and_pairs",
       "NLS.ComplexAnalysis.count_opposite_square_root_pair",
-      "NLS.ComplexAnalysis.square_root_real_coordinate_bounds"
+      "NLS.ComplexAnalysis.square_root_real_coordinate_bounds",
+      "NLS.ZakharovShabat.PeriodicEndpointPair.of_candidates",
+      "NLS.ComplexAnalysis.isPreconnected_of_contains_nonreal_and_real_interval",
+      "NLS.ComplexAnalysis.endpointRoot_real_left"
     ]
   },
-  "full_repository_validation": "All 292 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2894-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 298 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2936-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -591,10 +594,16 @@
     "NLS/KdV/HillSignedEnergyLabels.lean": "52942a4be04827872ab5d9d5822cf6ce6487eccef80b5c7949e1137c8618f550",
     "NLS/SequenceSpaces/IntegerSymmetricSums.lean": "d8eed86dd70bcdf4230b6d42edc8c5a02d56c9559953a99fabe9b772b485fa16",
     "NLS/ComplexAnalysis/RealSquareRootCensus.lean": "f1988dd37434bb9a2683a5979a2bfc6812b144b0f0442d033fba69246d66d36f",
-    "NLS/KdV/HillCentralEnergyLabeling.lean": "19623b1b90716f90ee1bd6d202b0070b6af105af13dc790749be919c7582e7df"
+    "NLS/KdV/HillCentralEnergyLabeling.lean": "19623b1b90716f90ee1bd6d202b0070b6af105af13dc790749be919c7582e7df",
+    "NLS/ZakharovShabat/PeriodicEndpointCandidates.lean": "07364deb72a782eee64e761a10c1dc006d92247f020c681b95868eee2c9e87de",
+    "NLS/KdV/HillEnergyEndpointLabeling.lean": "a8045f7d9c0bd6c5ae45d01cda983a60cbd66906de1df02b0304cbd78e23d481",
+    "NLS/KdV/HillEnergyRadicandProduct.lean": "0971b932686770b53047a77c6bd732f3d39c5749f2a341e5fb2aa95bba6a82d2",
+    "NLS/ComplexAnalysis/RealCutConnected.lean": "4dfc0273d49a22770f9f67ffe3f853b65af3f24206722f1bf40a2684634f78a7",
+    "NLS/ComplexAnalysis/RealEndpointRootSigns.lean": "bd8a2dd7acc0a738615a7be8f2ffe0fbf8b8bdf28a1a2f28ddb6c41c43919a08",
+    "NLS/KdV/HillEnergyRootIdentification.lean": "df595fb43c3eabf5b2ba933e2c32b53ec459ef3ae82fd7889e66493cfcaa817f"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. The signed roots now have an exact central original periodic-root multiset, including all multiplicities, for every sufficiently large cutoff; the actual counting data and cutoff are proved to exist. The distant-pair field of the complete frequency endpoint labeling remains to be assembled from the checked disc localization, original root exhaustion and multiplicity census. Identifying the energy product with the actual Hill radicand/root, physical KdV Birkhoff construction and explicit arbitrary-weight action-gap/cutoff estimates remain essential.",
-  "milestone": "Exact original central frequency multiset for actual signed Hill energy labels",
+  "remaining": "Main Theorems 1-3 remain unverified. The actual real-potential energy product is now identified with the original Hill radicand, and its normalized root equals the actual globally normalized Hill root on the entire real cut domain. Essential remaining obligations include the physical KdV Birkhoff/action construction matching the article, precise article-level main statements and explicit arbitrary-weight action-gap/cutoff estimates. Complex-potential joint analyticity of the source product is not claimed.",
+  "milestone": "Complete signed Hill endpoint labeling, actual radicand product and normalized energy root identification",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -889,7 +898,13 @@
     "NLS.KdV.HillSignedEnergyLabels",
     "NLS.SequenceSpaces.IntegerSymmetricSums",
     "NLS.ComplexAnalysis.RealSquareRootCensus",
-    "NLS.KdV.HillCentralEnergyLabeling"
+    "NLS.KdV.HillCentralEnergyLabeling",
+    "NLS.ZakharovShabat.PeriodicEndpointCandidates",
+    "NLS.KdV.HillEnergyEndpointLabeling",
+    "NLS.KdV.HillEnergyRadicandProduct",
+    "NLS.ComplexAnalysis.RealCutConnected",
+    "NLS.ComplexAnalysis.RealEndpointRootSigns",
+    "NLS.KdV.HillEnergyRootIdentification"
   ],
   "proof_commits": [
     {
@@ -1151,6 +1166,11 @@
       "commit": "a464be2b041b2c27521b30befd7cef8d3f3b0cc7",
       "scope": "Actual signed frequency endpoint square roots with full signed l2 displacements, exact finite product pullback, original periodic spectrum exhaustion and original energy multiplicity census including zero-frequency order doubling; 289 strict modules, 2864-declaration transitive audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "b1f1efeb61e6fdbe010be8d1d246a41fa1ebd8cc",
+      "scope": "Exact central signed energy-root multiset equality with original central periodic roots, including all multiplicities and a proved all-large-cutoff labeling family; 292 strict modules, 2894-declaration transitive audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -1167,20 +1187,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 292 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 298 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 2894 declarations. Includes reusable symmetric sums and opposite-square-root counts/coordinate bounds, exact signed central multiset reindexing, original central spectral-box membership, finite-to-full multiplicity comparison, central multiset equality from original counts and a proved all-large-cutoff central-labeling family.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 2936 declarations. Includes reusable original endpoint candidate comparison, real-cut connectedness and endpoint-root signs; complete actual signed frequency labels, canonical-product identification, actual energy radicand convergence, finite root-square identities and global normalized root identification.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 292 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2894-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 298 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2936-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "Shared additive identities split a symmetric integer cutoff into its central index and opposite positive modes, and split a nonnegative energy cutoff into its ground slot and consecutive endpoint pairs. These reindex the finite signed-frequency multiset exactly as the opposite square-root pair for each actual energy label0 through2N. A shared root-pair counting lemma retains the double count at zero; a shared real-energy square-root coordinate lemma controls both real and imaginary coordinates from two-sided energy bounds. Actual energy localization and the lowest-energy bound put every selected signed root into the original central frequency spectral box whenever N>=2 and N>=8||q||. The signed multiset count at any frequency with real squared energy is the finite energy-label occurrence count multiplied by2 at zero and by1 elsewhere. The full energy-label fibers are finite, so finite occurrence sums are bounded by the full actual multiplicity census. Hence the selected signed multiset is bounded by the original central periodic-root multiset with its original algebraic multiplicities. The checked periodic counting theorem gives the same cardinality4N+2 to both multisets; they are therefore exactly equal. This constructs the CentralPeriodicLabeling field for the actual signed energy roots. The original uniform counting theorem supplies a proved sufficiently large cutoff valid for every larger central cutoff, so the final existence statement assumes no supplied counting or labeling data. Main Theorems 1-3 remain unverified. The signed roots now have an exact central original periodic-root multiset, including all multiplicities, for every sufficiently large cutoff; the actual counting data and cutoff are proved to exist. The distant-pair field of the complete frequency endpoint labeling remains to be assembled from the checked disc localization, original root exhaustion and multiplicity census. Identifying the energy product with the actual Hill radicand/root, physical KdV Birkhoff construction and explicit arbitrary-weight action-gap/cutoff estimates remain essential.",
-    "scope": "All 292 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2894-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "A reusable candidate-pair comparison preserves exact original spectral membership and algebraic multiplicity, including collisions of the two selected roots. Actual signed Hill energy roots lie in every sufficiently high refined frequency disc. If their two slots collapse, the actual energy-label census supplies at least two occurrences, so the original frequency multiplicity is at least two. These facts identify each distant pair with the original canonical pair. Combining the distant pairs with the checked central multiset, original counting data and signed l2 displacements constructs a complete PeriodicEndpointLabeling at a proved sufficiently large cutoff. The shared labeling-independence theorem identifies its entire frequency product with the original canonical periodic product. Exact finite opposite-frequency pairing and the frequency-to-energy discriminant comparison therefore prove that the actual energy periodic partial products converge to the actual Hill radicand at every complex energy. On the actual real cut domain, the finite normalized root products square to these periodic partial products, and uniqueness of limits identifies the square of the energy canonical root product with the original radicand. A reusable connectedness lemma handles a domain containing both nonreal half-planes and an open real interval. The actual real cut domain satisfies it because the first spectral band is strictly open. Every energy standard-root factor is strictly positive and real on that first band, so convergence and nonvanishing make the infinite product strictly positive there. The prefactor consequently has strictly negative imaginary part. The actual indexed band phase gives the same strict sign for the original normalized Hill root. Equal squares and these signs identify the two roots on the first band; connectedness, continuity and nonvanishing then identify them on the entire real cut domain, including every open real band and both half-planes. Main Theorems 1-3 remain unverified. The actual real-potential energy product is now identified with the original Hill radicand, and its normalized root equals the actual globally normalized Hill root on the entire real cut domain. Essential remaining obligations include the physical KdV Birkhoff/action construction matching the article, precise article-level main statements and explicit arbitrary-weight action-gap/cutoff estimates. Complex-potential joint analyticity of the source product is not claimed. The actual logarithmic derivative is therefore the discriminant derivative divided by this exact energy product. On the proved close isolating circle at every gap, including low or collapsed gaps, the existing Arnold contour formula is now explicitly written with the article energy canonical-root denominator at every hierarchy level, with coefficient1/((m+1)pi).",
+    "scope": "All 298 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2936-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "af37e9655c2a3de6d6025d4a097af582e0b989c9ee18509f92749bbe007662d9",
-      "scripts/check-kdv-estimates.sh": "392dac4624aab5f9806dd896240259377272df34d27fd8d087f35d8896fa268a",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "405a0e1385f4084e939595b00aef7a38acd1ebb93f6e81347a30b5901ddc5714"
+      "NLS.lean": "95557b6ed015bea5d5fdd1781a414d41625a1ffd1c84c9912ca0f1310f67ae3d",
+      "scripts/check-kdv-estimates.sh": "5f9d7443d1656ad1850f248f4afcb8a94f15e3758ff9ea3868201739644d2c40",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "3ae1505b637c4d31b01d1412225b9eed51cff029d84d5424c932951a3c6a3b38"
     }
   },
   "warningAsError": true,
@@ -1287,8 +1307,8 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Exact original central frequency multiset for actual signed Hill energy labels",
-    "focused_modules": 292,
-    "scope": "All 292 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2894-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Complete signed Hill endpoint labeling, actual radicand product and normalized energy root identification",
+    "focused_modules": 298,
+    "scope": "All 298 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2936-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   }
 }

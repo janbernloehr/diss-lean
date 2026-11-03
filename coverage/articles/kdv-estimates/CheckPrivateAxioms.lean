@@ -1,3 +1,9 @@
+import NLS.ComplexAnalysis.RealCutConnected
+import NLS.ComplexAnalysis.RealEndpointRootSigns
+import NLS.KdV.HillEnergyRootIdentification
+import NLS.ZakharovShabat.PeriodicEndpointCandidates
+import NLS.KdV.HillEnergyEndpointLabeling
+import NLS.KdV.HillEnergyRadicandProduct
 import NLS.SequenceSpaces.IntegerSymmetricSums
 import NLS.ComplexAnalysis.RealSquareRootCensus
 import NLS.KdV.HillCentralEnergyLabeling
@@ -557,7 +563,10 @@ run_cmd do
     ``NLS.SequenceSpaces.sum_symmetric_interval,
     ``NLS.SequenceSpaces.sum_range_one_and_pairs,
     ``NLS.ComplexAnalysis.count_opposite_square_root_pair,
-    ``NLS.ComplexAnalysis.square_root_real_coordinate_bounds]
+    ``NLS.ComplexAnalysis.square_root_real_coordinate_bounds,
+    ``NLS.ZakharovShabat.PeriodicEndpointPair.of_candidates,
+    ``NLS.ComplexAnalysis.isPreconnected_of_contains_nonreal_and_real_interval,
+    ``NLS.ComplexAnalysis.endpointRoot_real_left]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

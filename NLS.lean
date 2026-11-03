@@ -5214,3 +5214,9 @@ import NLS.KdV.HillSignedEnergyLabels
 import NLS.SequenceSpaces.IntegerSymmetricSums
 import NLS.ComplexAnalysis.RealSquareRootCensus
 import NLS.KdV.HillCentralEnergyLabeling
+import NLS.ZakharovShabat.PeriodicEndpointCandidates
+import NLS.KdV.HillEnergyEndpointLabeling
+import NLS.KdV.HillEnergyRadicandProduct
+import NLS.ComplexAnalysis.RealCutConnected
+import NLS.ComplexAnalysis.RealEndpointRootSigns
+import NLS.KdV.HillEnergyRootIdentification
