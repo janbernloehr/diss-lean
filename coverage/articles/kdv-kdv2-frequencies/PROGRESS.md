@@ -17,6 +17,24 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual Hill energy roots and root chart agreement
+
+Actual NLS canonical products now construct nonvanishing jointly analytic
+roots of the independent rough Hill radicand. Positive original discs lie
+in the right half-plane; their actual shifted-square energy contours stay
+in the root domain, have winding one and exact raw 2pi Kronecker periods.
+One common complex rough-open neighborhood at every real base potential
+precedes every index. Actual high-band placement and canonical-root band
+normalization prove root agreement on the full common energy domain for
+two charts at a real input, then equality of their full joint complex
+germs. See `ENERGY_ROOT_CHART_AGREEMENT.md`.
+
+Current strict validation: 394 selected modules, 4659 selected declarations
+and 26819 imported NLS declarations; permitted axioms only. All 385 previous
+selected Lean sources and seven provenance records remain unchanged.
+Entire-numerator chart/weighted-family identification, full coherent W,
+physical frequency69, action descent and all main theorems remain open.
+
 ## Latest actual canonical-root parity and normalized energy pullbacks
 
 The even Miura trace now proves complete actual endpoint reflection,

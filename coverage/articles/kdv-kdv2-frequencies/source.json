@@ -6489,6 +6489,132 @@
       "scope": "Unchanged existing verified dependency now directly selected and recompiled; simultaneous analytic roots, exact periods on every original isolating circle, actual uniform squared-gap root offsets and all preceding original source estimates",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "c036faa392a52eb853aff8fac711d8a2c01eeae64505b4dcb16207decbc24a3f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NonrealConnectedDomain.lean",
+      "source_labels": [
+        "Connectedness from the nonreal plane and a real point"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Any complex set containing every nonreal point and at least one real point is preconnected, by connected upper/lower half-planes and their real boundary subsets",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7cfc9bf5c4f76f6cfb4272cf06abd6624c1ccae694b1b57efb38bf29ef9fc60b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ShiftedSquaredCircle.lean",
+      "source_labels": [
+        "Actual smooth shifted-square contours and positive winding"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Constructs an actual smooth closed path under z->z^2-shift and proves its curve-integral substitution with Jacobian2z. On a right-half-plane disc, actual reciprocal-pole integrals give winding one at every mapped interior point",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "de4c48b60f463f7c854b3b719c117373340af0fce69e017f38335faae66a9d5a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneEnergyRootChartAgreement.lean",
+      "source_labels": [
+        "Actual energy-root chart independence and joint germ agreement"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "A proved common high real band and the actual canonical-root band sign fix the same branch for two real-shift charts at a real input. Common root domains contain the nonreal plane and a real band point, hence are connected. Actual radicand equality and analytic uniqueness give equality on the full common energy domain; actual joint domains give equality of full complex energy/rough-input germs. Numerator agreement and physical frequencies remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9a964b99844222b828dab061dc96da316215f7045853f355d1402677bb11649e"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMappedEnergyPeriods.lean",
+      "source_labels": [
+        "Constructed normalized actual rough energy contours"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "At every real Hminus1 base point one common complex rough-open set before all indices retains actual analytic root, entire numerators, actual mapped circles lying in its domain, winding one about mapped gaps/endpoints and exact raw 2pi Kronecker energy periods. Mapped endpoint energies are actual Hill characteristic zeros",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2fc9e927ee8e11e6f51a076395f057294be32dcfdc8e1f67d3bd9e504b5ccb04"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMiuraEnergyRoot.lean",
+      "source_labels": [
+        "Actual jointly analytic rough Hill energy root"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Defines the actual canonical NLS product at sqrt(lambda+fixedshift), with a proved open joint domain. Verified NLS data give joint energy/Hminus1 analyticity; exact shifted trace gives root^2=actual independent Hill Delta^2-4 and nonvanishing. Principal frequency recovery is proved on positive discs",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a8c88cf24759a85c3660f9aa3b6dc90ac19ae790f281802693438df38bc98153"
+    },
+    {
+      "path": "NLS/ZakharovShabat/EvenPositivePeriodCircle.lean",
+      "source_labels": [
+        "Actual positive isolating discs lie in the right half-plane"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Complete even-trace endpoint reflection puts zero in the actual central gap. Canonical order and actual original circle separation give center-radius>0 for every positive circle, even for complex sources. Principal sqrt(z^2)=z on its whole closed disc",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "45bc8455b05de346bb9fe02a01533e2f52258908777a8a6a40d4d75ed802f98d"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceCanonicalRootRealBand.lean",
+      "source_labels": [
+        "Existing actual canonical-root band normalization"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Unchanged verified dependency now directly selected and recompiled; actual canonical root is imaginary with exact strict parity sign on every real band, including bands next to collapsed gaps",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "830363bd509f45f35131558723b6ec7ed6df602a195736f63cf09790ae73f58b"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceCriticalRootRatioContourHomotopy.lean",
+      "source_labels": [
+        "Existing actual real-source root-domain openness"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Unchanged verified dependency now directly selected and recompiled; the actual canonical-root domain is open at every real-type source, with actual root-ratio analyticity and contour homotopy invariance",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a609bf3bdd9d555075faeaea66b48a4ffa7216887b0b11cf4393c7a258ef9c05"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHighShiftedRealBand.lean",
+      "source_labels": [
+        "Actual common high shifted energy-band index"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21
+      ],
+      "scope": "Actual counted canonical high endpoint pairs and the quantitative fixed-shift principal square-root bound put sqrt((pi*n+pi/2)^2+c) in the real band following the actual nth pair for every sufficiently large n and fixed real shift, without a guessed sign or band index",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6c4dbe6bdd38068da47de66ced1785d4e01ebc602214dea42fd3ff6f87e9483d"
     }
   ],
   "dependencies_needed": [
@@ -6520,15 +6646,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4595,
-    "total_declarations_audited": 26767,
+    "candidate_declarations_audited": 4659,
+    "total_declarations_audited": 26819,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 385
+    "selected_modules": 394
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -6665,5 +6791,6 @@
   "hminus_second_moments_record": "HMINUS_SECOND_MOMENTS.md",
   "hminus_frequency_series_record": "HMINUS_FREQUENCY_SERIES.md",
   "real_miura_energy_psi_record": "REAL_MIURA_ENERGY_PSI.md",
-  "miura_root_pullback_periods_record": "MIURA_ROOT_PULLBACK_PERIODS.md"
+  "miura_root_pullback_periods_record": "MIURA_ROOT_PULLBACK_PERIODS.md",
+  "energy_root_chart_agreement_record": "ENERGY_ROOT_CHART_AGREEMENT.md"
 }

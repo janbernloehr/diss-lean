@@ -537,3 +537,24 @@ Hill energy-root function, chart independence, lowest-cut continuation,
 overlap identification and agreement with the earlier local rough
 normalized family are not yet asserted. See `MIURA_ROOT_PULLBACK_PERIODS.md`.
 No main theorem row is closed by this normalization adapter.
+
+
+## Current actual energy roots and root chart agreement
+
+Toward the actual normalized psi family (52)-(53), PDF21, the theorem
+`exists_hillHminus_real_normalized_mapped_energy_periods` now constructs
+one common complex rough-open neighborhood at every real Hminus1 base
+potential, with actual jointly analytic Hill energy root, entire
+numerators and actual smooth shifted-square contours of winding one and
+exact raw 2pi Kronecker energy periods. Mapped endpoint energies satisfy
+the actual independent Hill characteristic equation.
+
+`HillHminusMiuraChart.energyRoot_eq_on_real_input` proves root agreement
+on the full common energy domain of two real-shift actual charts at a
+real input, using proved high-band placement and the actual canonical-root
+sign. `energyRoot_germ_eq_on_real_input` proves equality of the full
+complex energy/rough-input germs. Details are in
+`ENERGY_ROOT_CHART_AGREEMENT.md`. Entire-numerator chart agreement,
+canonical leading scalar one, the earlier local weighted-family
+identification and the full source main theorems are separate open steps.
+No main inventory row is closed.

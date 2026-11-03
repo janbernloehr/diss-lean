@@ -1,3 +1,6 @@
+import NLS.KdV.HillHminusOneEnergyRootChartAgreement
+import NLS.KdV.HillHminusOneMappedEnergyPeriods
+import NLS.KdV.HillHminusOneMiuraEnergyRoot
 import NLS.KdV.HillHminusOneMiuraEnergyPeriods
 import NLS.ZakharovShabat.EvenPsiAntisymmetricPeriods
 import NLS.KdV.HillHminusOneMiuraRootSymmetry
@@ -129,6 +132,9 @@ run_cmd do
     `NLS.ZakharovShabat.FreeDerivativeZeroCounts,
     `NLS.ZakharovShabat.CriticalPointLabeling,
     `NLS.ZakharovShabat.DiscriminantDerivativeProduct,
+    `NLS.ZakharovShabat.UniformSmallCriticalDisplacements,
+    `NLS.ZakharovShabat.UniformCanonicalPeriodicEndpoints,
+    `NLS.ZakharovShabat.SourceCriticalRootRatioContourHomotopy,
     `NLS.ZakharovShabat.SourceDistantCriticalPointsAnalyticNeighborhood,
     `NLS.ZakharovShabat.NearFreeCriticalRelabeling,
     `NLS.KdV.ConstantUpperSpectralBridge,
@@ -288,6 +294,7 @@ run_cmd do
     `NLS.KdV.ClassicalNormalizedFrequencySeries,
     `NLS.FunctionalAnalysis.PeriodicIntegrationByParts,
     `NLS.MKdV.MiuraClassicalSolution,
+    `NLS.SequenceSpaces.ConjugateReflection,
     `NLS.MKdV.SobolevMiuraPotential,
     `NLS.FunctionalAnalysis.LinearVolterraFlow,
     `NLS.MKdV.QuasiHillDiscriminant,
@@ -297,6 +304,7 @@ run_cmd do
     `NLS.MKdV.QuasiHillJointAnalytic,
     `NLS.ComplexAnalysis.SourceDiscriminantPrimitive,
     `NLS.ZakharovShabat.ContinuousPotentialSource,
+    `NLS.ZakharovShabat.SourceCanonicalRootRealBand,
     `NLS.MKdV.QuasiHillSourcePrimitive,
     `NLS.DifferentialPolynomial.UngradedIntegrationByParts,
     `NLS.DifferentialPolynomial.PowerSeriesDerivation,
@@ -307,6 +315,7 @@ run_cmd do
     `NLS.DifferentialPolynomial.ConstructedRiccatiResolvent,
     `NLS.DifferentialPolynomial.RiccatiResolventNaturality,
     `NLS.DifferentialPolynomial.MultiJet,
+    `NLS.ZakharovShabat.SourcePsiLemma12_11,
     `NLS.ZakharovShabat.SobolevHierarchySymmetries,
     `NLS.MKdV.HierarchyRestriction,
     `NLS.DifferentialPolynomial.RiccatiResolventParity,
@@ -403,7 +412,6 @@ run_cmd do
     `NLS.KdV.HillHminusOneCriticalPoints,
     `NLS.KdV.HillHminusOneCriticalNumerators,
     `NLS.KdV.HillHminusOnePeriodEntries,
-    `NLS.ZakharovShabat.UniformSmallCriticalDisplacements,
     `NLS.KdV.HillHminusOneCriticalControl,
     `NLS.KdV.HillHminusOneTraceControl,
     `NLS.ComplexAnalysis.LogarithmStripNormalization,
@@ -449,17 +457,14 @@ run_cmd do
     `NLS.KdV.HillHminusOneCriticalPrimitivePeriods,
     `NLS.KdV.HillHminusOneNormalizedGapMomentBounds,
     `NLS.KdV.HillHminusOneTwoWeightedMomentBounds,
-    `NLS.ZakharovShabat.UniformCanonicalPeriodicEndpoints,
     `NLS.ComplexAnalysis.SquaredPairGapBound,
     `NLS.KdV.HillHminusOneCanonicalFrequencyGaps,
     `NLS.KdV.HillHminusOneFrequencyGapMajorant,
     `NLS.KdV.HillHminusOneNormalizedFrequencySeries,
-    `NLS.SequenceSpaces.ConjugateReflection,
     `NLS.ComplexAnalysis.EquivariantSmallQuadraticInverse,
     `NLS.SequenceSpaces.PeriodOneMiuraConjugation,
     `NLS.SequenceSpaces.PeriodOneRealMiuraCharts,
     `NLS.KdV.HillHminusOneRealMiuraCharts,
-    `NLS.ZakharovShabat.SourcePsiLemma12_11,
     `NLS.KdV.HillHminusOneRealMiuraSourcePsi,
     `NLS.ComplexAnalysis.ParametricOddSquareDescent,
     `NLS.KdV.HillHminusOneRealMiuraEnergyPsi,
@@ -469,7 +474,14 @@ run_cmd do
     `NLS.KdV.HillHminusOneMiuraRootSymmetry,
     `NLS.ZakharovShabat.SourceTheorem12_1,
     `NLS.ZakharovShabat.EvenPsiAntisymmetricPeriods,
-    `NLS.KdV.HillHminusOneMiuraEnergyPeriods]
+    `NLS.KdV.HillHminusOneMiuraEnergyPeriods,
+    `NLS.ZakharovShabat.EvenPositivePeriodCircle,
+    `NLS.KdV.HillHminusOneMiuraEnergyRoot,
+    `NLS.ComplexAnalysis.ShiftedSquaredCircle,
+    `NLS.KdV.HillHminusOneMappedEnergyPeriods,
+    `NLS.ComplexAnalysis.NonrealConnectedDomain,
+    `NLS.ZakharovShabat.SourceHighShiftedRealBand,
+    `NLS.KdV.HillHminusOneEnergyRootChartAgreement]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

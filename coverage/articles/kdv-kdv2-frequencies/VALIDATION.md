@@ -79,8 +79,9 @@ its existing Hilbert specialization and a transitive audit.
 | `SquaredPairGapBound`, `HillHminusOneCanonicalFrequencyGaps`, `HillHminusOneFrequencyGapMajorant`, `HillHminusOneNormalizedFrequencySeries` and existing `UniformCanonicalPeriodicEndpoints` | Genuine rough locally bounded l1 gap majorant through the exact Miura energy shift; absolute/localuniform/analytic actual normalized second-moment series on one rough-open neighborhood before all output indices. Physical Hamiltonian identity (69), full W and all main theorems remain open. |
 | Seven new real-preserving Miura/energy-descent modules and existing `ConjugateReflection`, `SourcePsiLemma12_11` | Actual physically real rough Miura charts at every real Hminus1 base potential; proved applicability of the common normalized NLS psi theorem; jointly analytic filled energy candidates with exact fixed-shift 2z factor identity. Hill energy normalization and all main theorems remain open. |
 | Six new even-trace/root/contour/pullback modules and existing `SourceTheorem12_1` | Complete actual endpoint/multiplicity reflection, odd actual canonical root, exact signed contour transformation and constructed all-index positive Kronecker energy pullbacks near every real Hminus1 base potential. Global Hill energy-root/chart independence and physical frequencies remain open. |
+| Seven actual energy-root/mapped-contour/chart-agreement modules and two existing real-band/domain dependencies | Actual jointly analytic Hill energy roots; positive mapped contours with winding one and exact normalization; root independence on the whole common energy domain at real inputs and equality of full joint complex germs. Entire-numerator identification and all main theorems remain open. |
 
-All 385 selected modules compile with pinned **Lean 4.33.1**, commit
+All 394 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -134,6 +135,9 @@ PASS NLS/SequenceSpaces/FiniteModification
 PASS NLS/ZakharovShabat/FreeDerivativeZeroCounts
 PASS NLS/ZakharovShabat/CriticalPointLabeling
 PASS NLS/ZakharovShabat/DiscriminantDerivativeProduct
+PASS NLS/ZakharovShabat/UniformSmallCriticalDisplacements
+PASS NLS/ZakharovShabat/UniformCanonicalPeriodicEndpoints
+PASS NLS/ZakharovShabat/SourceCriticalRootRatioContourHomotopy
 PASS NLS/ZakharovShabat/SourceDistantCriticalPointsAnalyticNeighborhood
 PASS NLS/ZakharovShabat/NearFreeCriticalRelabeling
 PASS NLS/KdV/ConstantUpperSpectralBridge
@@ -293,6 +297,7 @@ PASS NLS/SequenceSpaces/AnalyticTailSummation
 PASS NLS/KdV/ClassicalNormalizedFrequencySeries
 PASS NLS/FunctionalAnalysis/PeriodicIntegrationByParts
 PASS NLS/MKdV/MiuraClassicalSolution
+PASS NLS/SequenceSpaces/ConjugateReflection
 PASS NLS/MKdV/SobolevMiuraPotential
 PASS NLS/FunctionalAnalysis/LinearVolterraFlow
 PASS NLS/MKdV/QuasiHillDiscriminant
@@ -302,6 +307,7 @@ PASS NLS/MKdV/QuasiHillZSComparison
 PASS NLS/MKdV/QuasiHillJointAnalytic
 PASS NLS/ComplexAnalysis/SourceDiscriminantPrimitive
 PASS NLS/ZakharovShabat/ContinuousPotentialSource
+PASS NLS/ZakharovShabat/SourceCanonicalRootRealBand
 PASS NLS/MKdV/QuasiHillSourcePrimitive
 PASS NLS/DifferentialPolynomial/UngradedIntegrationByParts
 PASS NLS/DifferentialPolynomial/PowerSeriesDerivation
@@ -312,6 +318,7 @@ PASS NLS/DifferentialPolynomial/MiuraRiccati
 PASS NLS/DifferentialPolynomial/ConstructedRiccatiResolvent
 PASS NLS/DifferentialPolynomial/RiccatiResolventNaturality
 PASS NLS/DifferentialPolynomial/MultiJet
+PASS NLS/ZakharovShabat/SourcePsiLemma12_11
 PASS NLS/ZakharovShabat/SobolevHierarchySymmetries
 PASS NLS/MKdV/HierarchyRestriction
 PASS NLS/DifferentialPolynomial/RiccatiResolventParity
@@ -408,7 +415,6 @@ PASS NLS/ComplexAnalysis/AnalyticSimpleCriticalBranch
 PASS NLS/KdV/HillHminusOneCriticalPoints
 PASS NLS/KdV/HillHminusOneCriticalNumerators
 PASS NLS/KdV/HillHminusOnePeriodEntries
-PASS NLS/ZakharovShabat/UniformSmallCriticalDisplacements
 PASS NLS/KdV/HillHminusOneCriticalControl
 PASS NLS/KdV/HillHminusOneTraceControl
 PASS NLS/ComplexAnalysis/LogarithmStripNormalization
@@ -454,17 +460,14 @@ PASS NLS/KdV/HillHminusOneGapPairUniqueness
 PASS NLS/KdV/HillHminusOneCriticalPrimitivePeriods
 PASS NLS/KdV/HillHminusOneNormalizedGapMomentBounds
 PASS NLS/KdV/HillHminusOneTwoWeightedMomentBounds
-PASS NLS/ZakharovShabat/UniformCanonicalPeriodicEndpoints
 PASS NLS/ComplexAnalysis/SquaredPairGapBound
 PASS NLS/KdV/HillHminusOneCanonicalFrequencyGaps
 PASS NLS/KdV/HillHminusOneFrequencyGapMajorant
 PASS NLS/KdV/HillHminusOneNormalizedFrequencySeries
-PASS NLS/SequenceSpaces/ConjugateReflection
 PASS NLS/ComplexAnalysis/EquivariantSmallQuadraticInverse
 PASS NLS/SequenceSpaces/PeriodOneMiuraConjugation
 PASS NLS/SequenceSpaces/PeriodOneRealMiuraCharts
 PASS NLS/KdV/HillHminusOneRealMiuraCharts
-PASS NLS/ZakharovShabat/SourcePsiLemma12_11
 PASS NLS/KdV/HillHminusOneRealMiuraSourcePsi
 PASS NLS/ComplexAnalysis/ParametricOddSquareDescent
 PASS NLS/KdV/HillHminusOneRealMiuraEnergyPsi
@@ -475,11 +478,18 @@ PASS NLS/KdV/HillHminusOneMiuraRootSymmetry
 PASS NLS/ZakharovShabat/SourceTheorem12_1
 PASS NLS/ZakharovShabat/EvenPsiAntisymmetricPeriods
 PASS NLS/KdV/HillHminusOneMiuraEnergyPeriods
-Axiom audit passed: 4595 candidate declarations; 26767 declarations total.
+PASS NLS/ZakharovShabat/EvenPositivePeriodCircle
+PASS NLS/KdV/HillHminusOneMiuraEnergyRoot
+PASS NLS/ComplexAnalysis/ShiftedSquaredCircle
+PASS NLS/KdV/HillHminusOneMappedEnergyPeriods
+PASS NLS/ComplexAnalysis/NonrealConnectedDomain
+PASS NLS/ZakharovShabat/SourceHighShiftedRealBand
+PASS NLS/KdV/HillHminusOneEnergyRootChartAgreement
+Axiom audit passed: 4659 candidate declarations; 26819 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 385 selected modules (including generated and private declarations)
+the 394 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1418,3 +1428,43 @@ Canonical product leading scalar one, source root estimate(54), physical
 identity(69), action descent, weighted target spaces/compact derivatives
 and actual Birkhoff/PDE identification remain open. All main inventory
 rows remain OPEN.
+
+
+## Actual energy roots, mapped periods and root chart agreement
+
+See `ENERGY_ROOT_CHART_AGREEMENT.md`. Seven new proved modules construct
+a nonvanishing jointly analytic square root of the independent rough
+Hill radicand from the actual canonical NLS product, with the exact fixed
+Miura shift and an open joint domain. Positive original discs lie in the
+right half-plane. Actual shifted-square smooth energy contours remain
+in the root domain, have winding one and give exact raw 2pi Kronecker
+periods of the constructed entire-energy candidates. Mapped endpoint
+energies are actual characteristic zeros. One common complex rough-open
+neighborhood at every real base potential precedes every index.
+
+Actual canonical high endpoint pairs and the fixed-shift estimate put a
+common high real energy in the same indexed band for two charts. The
+verified actual real-band sign fixes their branch. Nonreal-domain
+connectedness and analytic uniqueness prove root equality on the full
+common energy domain at real inputs. The proved joint analytic domains
+then give equality of full complex energy/rough-input germs. No root
+agreement or sign choice is assumed as a hypothesis.
+
+All 394 selected modules pass strict Lean with default heartbeats and
+warnings as errors. The permitted transitive axiom audit passes for
+4659 selected declarations and 26819 imported NLS declarations.
+Exact ordered checker/audit/PASS/coverage selections, source hashes,
+seven provenance records and private fresh outputs agree. All 385 earlier
+selected Lean sources remain byte-identical. Two existing actual band-sign
+and real-source domain dependencies are newly directly recompiled.
+Checker/audit orders follow actual transitive selected imports. No new
+shared branch import/full merge, placeholder, axiom, heartbeat increase,
+disabled linter or warning exception is introduced. Canonical main remains
+unchanged and clean.
+
+Root chart agreement does not prove agreement or uniqueness of the entire
+numerators, their canonical leading scalar, or identification with the
+earlier rough weighted normalized family. Full coherent W, lowest-cut
+primitive/moment identification, sharp source root54, physical frequency69,
+action descent, weighted targets/asymptotics/compact derivatives and
+actual Birkhoff/PDE flows remain open. All main inventory rows remain OPEN.
