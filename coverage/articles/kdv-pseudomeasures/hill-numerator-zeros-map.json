@@ -76,10 +76,10 @@
     "all_five_main_theorems_proved": false
   },
   "essential_remaining": [
-    "Complete the ACTUAL ORIGINAL global normalized Hill holomorphic differentials. Prove the original normalized Hill infinite-product representation and the required locally uniform ALL-index squared-gap-over-index zero bound; retained real zeros and pointwise sub-sine pullback growth are now PROVED, but neither unique zeros nor the final product has been established. Prove numerator independence under CHANGES of physical energy shift, then WHOLE COMPLEX overlap agreement and gluing on ONE neighborhood of the ENTIRE original real H-minus-one form. Same-shift arbitrary real lift/family independence and a simultaneous local complex agreement neighborhood at every real overlap are NOW PROVED. Actual local physical roots, real-source root/shift independence, genuine energy periods and original endpoint winding remain proved. Do not redo these steps or silently drop the remaining different-shift obligation.",
-    "Construct admissible-path Abelian phases, their off-index sums and actual collapsed-gap Cartesian coordinate extensions for source3.2(ii), with the original locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). If using the literal KMT y-tilde equation, formalize its integrating-factor gauge normalization. Do NOT infer a complex collapsed-gap Dirichlet point equals its endpoint or its Cartesian coordinates vanish; only the REAL endpoint result is established.",
-    "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates and map: original Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Reusing verified Dirac holomorphic differentials is not a substitution of the NLS Birkhoff map for KdV.",
-    "Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding verified spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
+    "Prove ACTUAL common-period transport for local Hill numerators represented with DIFFERENT physical energy shifts. Arbitrary-reference-shift entire analyticity and sub-sine growth, and the exact conditional common-period uniqueness theorem, are NOW PROVED; do not re-prove or assume these. Only ONE actual comparison contour per POSITIVE gap is needed: negative partners and the central period are now automatic by proved reflection and an actual zero-centered central-circle construction. Transport the actual positive quadratic energy loops through the appropriate local square-root map, retaining the physical root sign, gap enclosure and winding. The existing globally smooth PiecewiseC1Loop.map does NOT directly cover sqrt on an open cut domain; a local map/pullback construction may be needed. Then derive different-shift real numerator equality and WHOLE complex overlap agreement/gluing on ONE neighborhood of the ENTIRE original real H-minus-one form. The common-period hypothesis in HillPsiPeriodUniqueness remains UNSUPPLIED and cannot be treated as a proved normalization across charts.",
+    "Prove the ORIGINAL normalized Hill infinite-product representation, unique/analytic retained zeros, and required locally uniform ALL-index squared-gap-over-index zero bound. Retained real zeros and pointwise sub-sine growth at ANY fixed complex reference shift are PROVED. These do NOT by themselves identify a product, eliminate extra zeros, prove uniqueness of the selected zeros or give uniform-in-index local estimates. Construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), with the original locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Formalize the literal KMT y-tilde integrating-factor gauge if used; never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint.",
+    "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Verified Dirac differential input does not substitute an NLS Birkhoff map for KdV.",
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining the equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet/local-differential/same-shift dependencies remain proved."
   ],
   "validation": {
     "result": "passed",
@@ -150,5 +150,36 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "actual_Hill_numerator_arbitrary_shift_growth_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-shift-growth-map.json",
+    "actual_quadratic_frequency_shift_exact_square_for_ANY_complex_shift": true,
+    "quantitative_frequency_shift_norm_difference_le_norm_shift_over_norm_frequency": true,
+    "shifted_frequency_norm_escape_and_exact_norm_ratio_bound_proved": true,
+    "separated_exterior_sine_ratio_bound_under_bounded_frequency_perturbation": true,
+    "actual_deleted_AND_odd_numerator_sub_sine_on_ENTIRE_separated_exterior": true,
+    "ANY_complex_energy_shift_retains_sub_sine_growth_of_filled_energy_descent": true,
+    "exact_z_over_w_AND_sine_ratio_retained_in_shift_comparison": true,
+    "ALL_fixed_root_energy_numerators_and_translated_frequency_lifts_entire_INCLUDING_ZERO": true,
+    "ANY_TWO_native_local_charts_difference_sub_sine_at_ANY_complex_reference_shift": true,
+    "equal_chart_shifts_required_for_growth_estimate": false,
+    "quadratic_differential_pullback_injective_INCLUDING_zero_frequency_energy": true,
+    "full_energy_numerator_uniqueness_FROM_EXPLICIT_actual_common_period_hypothesis": true,
+    "actual_common_circle_family_NONEMPTY_with_ALL_signed_indices": true,
+    "actual_zero_centered_central_period_circle_constructed": true,
+    "odd_numerator_over_actual_odd_root_central_period_zero_AND_negative_reflection_proved": true,
+    "ONE_witnessed_comparison_contour_per_POSITIVE_gap_SUFFICES_for_uniqueness": true,
+    "extra_negative_or_central_period_hypotheses_required": false,
+    "transported_common_period_hypothesis_constructed_for_DIFFERENT_chart_shifts": false,
+    "unconditional_numerator_independence_under_DIFFERENT_physical_shifts_proved": false,
+    "uniform_in_index_or_locally_uniform_growth_cutoff_asserted": false,
+    "original_normalized_Hill_product_representation_proved": false,
+    "locally_uniform_ALL_index_squared_gap_over_index_zero_bound_proved": false,
+    "WHOLE_complex_overlap_agreement_and_global_gluing_proved": false,
+    "ACTUAL_global_normalized_Hill_differentials_constructed": false,
+    "ACTUAL_KdV_angles_constructed": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "full_source3_2_coordinate_assertion_proved": false,
+    "all_five_main_theorems_proved": false
+  }
 }

@@ -859,6 +859,17 @@ modules = [
     'NLS.KdV.MiuraHillPsiRealZeros',
     'NLS.KdV.HminusOneHillPsiRealZeros',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNumeratorZeros',
+    'NLS.ComplexAnalysis.QuadraticFrequencyShift',
+    'NLS.ZakharovShabat.FreeSineShiftBound',
+    'NLS.ZakharovShabat.SourcePsiExteriorGrowth',
+    'NLS.ZakharovShabat.SourcePsiShiftedEnergyGrowth',
+    'NLS.KdV.HillPsiArbitraryShiftGrowth',
+    'NLS.ComplexAnalysis.QuadraticLiftUniqueness',
+    'NLS.ComplexAnalysis.EvenCircleIntegral',
+    'NLS.ZakharovShabat.SourceSymmetricCentralCircle',
+    'NLS.KdV.MiuraOddPositivePeriods',
+    'NLS.KdV.HillPsiPeriodUniqueness',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillShiftGrowth',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

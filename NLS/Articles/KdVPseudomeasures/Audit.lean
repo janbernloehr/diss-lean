@@ -825,6 +825,17 @@ import NLS.KdV.HminusOneHillPsiFixedShift
 import NLS.KdV.MiuraHillPsiRealZeros
 import NLS.KdV.HminusOneHillPsiRealZeros
 import NLS.Articles.KdVPseudomeasures.OriginalHillNumeratorZeros
+import NLS.ComplexAnalysis.QuadraticFrequencyShift
+import NLS.ZakharovShabat.FreeSineShiftBound
+import NLS.ZakharovShabat.SourcePsiExteriorGrowth
+import NLS.ZakharovShabat.SourcePsiShiftedEnergyGrowth
+import NLS.KdV.HillPsiArbitraryShiftGrowth
+import NLS.ComplexAnalysis.QuadraticLiftUniqueness
+import NLS.ComplexAnalysis.EvenCircleIntegral
+import NLS.ZakharovShabat.SourceSymmetricCentralCircle
+import NLS.KdV.MiuraOddPositivePeriods
+import NLS.KdV.HillPsiPeriodUniqueness
+import NLS.Articles.KdVPseudomeasures.OriginalHillShiftGrowth
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5828,3 +5839,34 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNumeratorZeros
 #print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator_zero_at_real_collapsed_gap
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_local_Hill_numerator_gap_zeros
 #print axioms NLS.Articles.KdVPseudomeasures.original_local_Hill_numerators_agree_at_same_shift
+#print axioms NLS.ComplexAnalysis.shiftedFrequency
+#print axioms NLS.ComplexAnalysis.norm_sqrt_one_add_sub_one_le
+#print axioms NLS.ComplexAnalysis.shiftedFrequency_sq
+#print axioms NLS.ComplexAnalysis.norm_shiftedFrequency_sub_le
+#print axioms NLS.ComplexAnalysis.exists_threshold_shiftedFrequency_close
+#print axioms NLS.ComplexAnalysis.shiftedFrequency_norm_bounds
+#print axioms NLS.ZakharovShabat.norm_sin_le_exp_abs_im
+#print axioms NLS.ZakharovShabat.exists_bound_sin_ratio_of_separated_close
+#print axioms NLS.ZakharovShabat.exists_threshold_sourcePsiCandidate_sub_sine
+#print axioms NLS.ZakharovShabat.exists_threshold_sourceOddPsiCandidate_sub_sine
+#print axioms NLS.ZakharovShabat.analyticOnNhd_sourcePsiCandidateEnergy
+#print axioms NLS.ZakharovShabat.analyticOnNhd_shifted_sourcePsiEnergyLift
+#print axioms NLS.ZakharovShabat.shifted_energy_numerator_sub_sine_growth
+#print axioms NLS.KdV.MiuraHillPsiFamily.numerator_eq_fixed_root_descent
+#print axioms NLS.KdV.MiuraHillPsiFamily.numerator_energy_entire
+#print axioms NLS.KdV.MiuraHillPsiFamily.shifted_numerator_pullback_entire
+#print axioms NLS.KdV.MiuraHillPsiFamily.shifted_numerator_pullback_sub_sine
+#print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator_energy_entire
+#print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator_pullback_at_reference_shift
+#print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator_arbitrary_shift_pullback_entire
+#print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator_arbitrary_shift_pullback_sub_sine
+#print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator_difference_arbitrary_shift_sub_sine
+#print axioms NLS.ComplexAnalysis.eq_of_quadratic_differential_pullback_eq
+#print axioms NLS.ComplexAnalysis.circleIntegral_even_neg_center
+#print axioms NLS.ComplexAnalysis.circleIntegral_even_center_zero
+#print axioms NLS.ZakharovShabat.SourcePeriodicReflection.zeroCenteredPeriodCircle
+#print axioms NLS.KdV.exists_all_signed_zero_periods_of_positive
+#print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator_eq_of_common_periods
+#print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator_eq_of_positive_common_periods
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_numerator_difference_arbitrary_shift_growth
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_numerators_eq_of_common_periods
