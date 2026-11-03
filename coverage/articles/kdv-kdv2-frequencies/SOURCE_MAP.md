@@ -576,3 +576,26 @@ common energy domains and equality of full complex energy/source germs.
 See `CONTINUATION_ROOT_AGREEMENT.md` for exact scope. A uniform complex
 rough neighborhood for all contours and actual entire-numerator
 identification are still separate open steps. No main inventory row closes.
+
+
+## Current complete rough critical energies and genuine principal coefficients
+
+Toward the entire numerator in (52)-(53), PDF21, and the physical moment
+formula(69), PDF26, `hillHminus_critical_real_and_simple` proves reality and
+simplicity of every actual rough Hill critical point at every physically
+real Hminus1 input. `exists_hillHminus_complete_real_critical_energies`
+constructs one chart before every real input, energy and positive critical
+index, with a complete strictly increasing real energy sequence and full
+complex rough-input analytic germs. The shifted central energy is not a
+critical point.
+
+`hillHminusMiuraEnergyCriticalResidue_eq_signed` proves the exact transfer
+2 beta_j (r_j-r_-j) between the actual energy and canonical signed NLS
+principal coefficients. `_principal_limit` proves its punctured-limit
+meaning. `exists_hillHminus_real_energy_critical_residues` constructs one
+actual normalized NLS data set and one common complex rough-open
+neighborhood before all indices, retaining analytic coefficient germs,
+genuine principal limits and joint central filling. Details and precise
+qualifications are in `CRITICAL_ENERGY_RESIDUES.md`. A Hilbert coefficient
+sequence, exterior remainder estimate and numerator representation are
+still required. All source main-theorem inventory rows remain OPEN.

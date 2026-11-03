@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneMiuraCriticalResidues
 import NLS.KdV.HillHminusOneEnergyRootContinuationAgreement
 import NLS.KdV.HillHminusOneMappedEnergyPeriods
 import NLS.KdV.HillHminusOneMiuraEnergyRoot
@@ -485,7 +486,12 @@ run_cmd do
     `NLS.SequenceSpaces.PeriodOneRealScaling,
     `NLS.KdV.HillHminusOneRealSpectralExclusion,
     `NLS.KdV.HillHminusOneEnergyRootFreeAgreement,
-    `NLS.KdV.HillHminusOneEnergyRootContinuationAgreement]
+    `NLS.KdV.HillHminusOneEnergyRootContinuationAgreement,
+    `NLS.ComplexAnalysis.EvenSpectralDerivatives,
+    `NLS.ZakharovShabat.EvenRealCanonicalCriticalPoints,
+    `NLS.KdV.HillHminusOneRealCriticalEnergyGeometry,
+    `NLS.ComplexAnalysis.SimpleZeroPrincipalCoefficient,
+    `NLS.KdV.HillHminusOneMiuraCriticalResidues]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

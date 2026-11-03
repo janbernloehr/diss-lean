@@ -6671,6 +6671,81 @@
       "scope": "Physical Hminus1 conjugate Fourier reflection commutes with real scalar multiplication. Its fixed locus contains zero and all real radial paths of its fixed inputs",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "3c9e325fa58677ca42291233d5b8e25c3bb8181ccb41c3042c10b65577c6b982"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EvenSpectralDerivatives.lean",
+      "source_labels": [
+        "Exact total derivative parity under reflection"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "For an even scalar complex function, the first derivative is odd and vanishes at zero, and the second derivative is even. These are exact total-derivative identities",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f987730af946946c0366284e9411ede01f3298353027f349ece2bce59c611dde"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SimpleZeroPrincipalCoefficient.lean",
+      "source_labels": [
+        "Actual analytic principal coefficient at a simple denominator zero"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "The filled quotient P/dslope(f,a) is analytic near a simple zero of an entire denominator f. Away from a it equals (z-a)P(z)/f(z), with base value P(a)/f-prime(a) and the actual punctured principal-coefficient limit",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7cef2093213dc6dd65b20e63ba31867a725938d7e7de4da7b69bda3a004f6cfb"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMiuraCriticalResidues.lean",
+      "source_labels": [
+        "Actual all-index rough energy critical residues and central filling"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "The actual entire descended numerator has the exact derivative-resolvent pullback. At every real rough chart input its genuine energy principal coefficient is 2*beta_j*(r_j-r_-j) for the actual signed canonical NLS critical residues. A proved punctured limit identifies this coefficient; every fixed coefficient is analytic in the complex rough input at real points. The central candidate value is the source numerator derivative and the apparent central quotient is jointly analytic. Actual normalized NLS data are constructed on one common complex neighborhood before all indices; Hilbert sequence membership and a Mittag-Leffler representation remain open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f0e74e5a4ad61208faacf2f0f9184a3c7fd9af3037814199b29b48d7de3de370"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealCriticalEnergyGeometry.lean",
+      "source_labels": [
+        "Complete real simple critical energies for the independent rough Hill trace"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "For every actual real-type Miura chart input, the positive canonical NLS critical sequence descends to all and only rough Hill critical energies. The shifted central energy is not critical. Every descended critical energy is simple, the real energy coordinates are strictly increasing, and each has a full complex rough-input analytic germ. Constructed real charts give spectral reality and simplicity at every physically real Hminus1 potential without a cutoff or open-gap restriction",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "de1f504e2bb2e80ef23fc130192023c10ab246010f48e632f880fb1da9f4216a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/EvenRealCanonicalCriticalPoints.lean",
+      "source_labels": [
+        "Complete actual critical reflection at even real-type sources"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Actual canonical periodic endpoint reflection and the unique real critical point in every gap identify beta_-j=-beta_j at all indices, including central and collapsed gaps. The central critical point is zero and strict actual order gives beta_j.re>0 at every positive index",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7e4a8316fd6f1bd386470da3fa0fa4bd82728f03dc6260afce5f25f5c9c3bb23"
     }
   ],
   "dependencies_needed": [
@@ -6702,16 +6777,17 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4671,
-    "total_declarations_audited": 26831,
+    "candidate_declarations_audited": 4720,
+    "total_declarations_audited": 26880,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 398,
-    "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh."
+    "selected_modules": 403,
+    "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
+    "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -6850,5 +6926,6 @@
   "real_miura_energy_psi_record": "REAL_MIURA_ENERGY_PSI.md",
   "miura_root_pullback_periods_record": "MIURA_ROOT_PULLBACK_PERIODS.md",
   "energy_root_chart_agreement_record": "ENERGY_ROOT_CHART_AGREEMENT.md",
-  "continuation_root_agreement_record": "CONTINUATION_ROOT_AGREEMENT.md"
+  "continuation_root_agreement_record": "CONTINUATION_ROOT_AGREEMENT.md",
+  "critical_energy_residue_record": "CRITICAL_ENERGY_RESIDUES.md"
 }

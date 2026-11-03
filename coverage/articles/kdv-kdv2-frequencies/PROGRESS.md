@@ -17,6 +17,24 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest complete actual rough critical energies and residues
+
+Every critical energy of the independent rough Hill trace is now proved
+real and simple at every physically real Hminus1 input. The complete
+positive-index canonical frequency sequence gives all and only those
+energy critical points, with strict real order and complex analytic germs.
+The central frequency creates no extra energy critical point. Actual
+numerators have exact signed residue transfer, genuine principal limits,
+analytic coefficient germs and a jointly analytic central filling. Actual
+normalized NLS data are chosen on one common complex neighborhood before
+all indices. See `CRITICAL_ENERGY_RESIDUES.md`.
+
+Current strict validation: 403 modules, 4720 selected declarations and
+26880 imported NLS declarations; permitted axioms only. All 398 previous
+selected Lean sources and seven provenance records remain unchanged.
+Hilbert residue realization, the numerator representation/identification,
+physical frequency(69) and all main theorems remain open.
+
 ## Latest actual continued-root compatibility near zero
 
 Every physically real Hminus1 potential now has no nonreal periodic

@@ -81,15 +81,16 @@ its existing Hilbert specialization and a transitive audit.
 | Six new even-trace/root/contour/pullback modules and existing `SourceTheorem12_1` | Complete actual endpoint/multiplicity reflection, odd actual canonical root, exact signed contour transformation and constructed all-index positive Kronecker energy pullbacks near every real Hminus1 base potential. Global Hill energy-root/chart independence and physical frequencies remain open. |
 | Seven actual energy-root/mapped-contour/chart-agreement modules and two existing real-band/domain dependencies | Actual jointly analytic Hill energy roots; positive mapped contours with winding one and exact normalization; root independence on the whole common energy domain at real inputs and equality of full joint complex germs. Entire-numerator identification and all main theorems remain open. |
 | Four actual real-scaling/spectral-exclusion/root-compatibility modules | Nonreal spectral exclusion at every real rough potential; old continuation-domain inclusion; actual free normalization; root equality on full common domains near zero and agreement of full complex energy/source germs. Entire-numerator identification and all main theorems remain open. |
+| Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 
-All 398 selected modules compile with pinned **Lean 4.33.1**, commit
+All 403 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Strict validation output (398-module compilation, followed by the final two-module rebuild and combined audit):
+Final output of `bash scripts/check-kdv-kdv2-frequencies.sh`:
 
 ```text
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
@@ -490,14 +491,16 @@ PASS NLS/SequenceSpaces/PeriodOneRealScaling
 PASS NLS/KdV/HillHminusOneRealSpectralExclusion
 PASS NLS/KdV/HillHminusOneEnergyRootFreeAgreement
 PASS NLS/KdV/HillHminusOneEnergyRootContinuationAgreement
-# Final rebuild after renaming the new free-sine lemma:
-PASS NLS/KdV/HillHminusOneEnergyRootFreeAgreement
-PASS NLS/KdV/HillHminusOneEnergyRootContinuationAgreement
-Axiom audit passed: 4671 candidate declarations; 26831 declarations total.
+PASS NLS/ComplexAnalysis/EvenSpectralDerivatives
+PASS NLS/ZakharovShabat/EvenRealCanonicalCriticalPoints
+PASS NLS/KdV/HillHminusOneRealCriticalEnergyGeometry
+PASS NLS/ComplexAnalysis/SimpleZeroPrincipalCoefficient
+PASS NLS/KdV/HillHminusOneMiuraCriticalResidues
+Axiom audit passed: 4720 candidate declarations; 26880 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 398 selected modules (including generated and private declarations)
+the 403 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1511,3 +1514,40 @@ identification with the earlier weighted normalized family, full coherent
 W, physical frequency69, action descent, weighted target/asymptotic and
 compact derivative claims and actual Birkhoff/PDE identification remain
 open. All main inventory rows remain OPEN.
+
+
+## Complete actual rough critical energies and principal coefficients
+
+See `CRITICAL_ENERGY_RESIDUES.md`. Actual canonical critical reflection,
+central cancellation and the shifted-square derivative identities give a
+complete strictly ordered real sequence of simple critical energies at
+every real-type rough chart input. Constructed actual charts imply that
+every critical point of the independent Hill trace is real and simple at
+every physically real Hminus1 potential, with no cutoff or open-gap exception.
+
+The actual descended entire numerator has exact signed critical-residue
+transfer with factor 2 beta. An analytic filled simple-zero quotient proves
+the genuine punctured principal-coefficient limit. Fixed energy critical
+coordinates and residue coefficients have full complex rough-input analytic
+germs at real inputs. The central numerator is filled by its original
+source derivative, and the central energy resolvent is jointly analytic.
+One actual normalized NLS data set and one complex rough-open neighborhood
+at every real base point precede all numerator and critical indices.
+
+All 403 selected modules pass a full serialized strict rebuild and the
+final combined transitive audit: 4720 selected declarations and 26880
+imported NLS declarations. Only propext, Classical.choice and Quot.sound
+occur. Exact ordered checker/audit/PASS/coverage selections, source hashes,
+seven provenance records and private fresh outputs agree. All 398 earlier
+selected Lean sources remain byte-identical. The combined import preflight
+also passed. Canonical main remains unchanged and clean; no new shared
+branch import, placeholder, axiom, heartbeat increase, disabled linter or
+warning exception is introduced.
+
+The complete critical coordinates and individual analytic residue germs
+do not yet give a Hilbert residue sequence or a Mittag-Leffler numerator
+representation. Those bounds, exterior remainder control, identification
+with the earlier weighted normalized family, full coherent W, canonical
+leading scalar one, sharp source(54), physical frequency(69), action descent,
+weighted asymptotic/compact derivative claims and actual Birkhoff/PDE flows
+remain open. No main theorem inventory row is closed.
