@@ -396,6 +396,20 @@ import NLS.Fourier.PeriodicPhysicalSourceClosed
 import NLS.Articles.KdVPseudomeasures.OriginalHminusOneCompactness
 import NLS.FunctionalAnalysis.UniformCauchyLimit
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchy
+import NLS.FunctionalAnalysis.CompactThreshold
+import NLS.ZakharovShabat.SourceGapCompactRecurrence
+import NLS.FunctionalAnalysis.CompactTailEnvelope
+import NLS.ZakharovShabat.SourceGapCompactEnvelope
+import NLS.SequenceSpaces.GeometricTailMajorant
+import NLS.SequenceSpaces.SobolevFamilyBudget
+import NLS.ZakharovShabat.SourceGapCompactGain
+import NLS.SequenceSpaces.MultiplierCoordinateContinuity
+import NLS.SequenceSpaces.SobolevFamilyCompactness
+import NLS.SequenceSpaces.SobolevEvenSampling
+import NLS.ZakharovShabat.SourceSobolevCompactStep
+import NLS.ZakharovShabat.SourceSobolevCompactRegularity
+import NLS.KdV.HminusOneMiuraSobolevCompactness
+import NLS.Articles.KdVPseudomeasures.OriginalCompactSobolevLifts
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -3506,3 +3520,23 @@ import NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchy
 #print axioms NLS.Articles.KdVPseudomeasures.existsUnique_sourceFamily_of_uniformCauchy_coefficients_normBound
 #print axioms NLS.Articles.KdVPseudomeasures.existsUnique_sourceFamily_of_uniformCauchy_lower_normBound
 #print axioms NLS.Articles.KdVPseudomeasures.uniformCauchy_sourceLowerDistribution_iff_coefficients
+#print axioms NLS.exists_uniform_nat_threshold_on_compact
+#print axioms NLS.ZakharovShabat.exists_compact_weightedResonantCenter_gap_bound
+#print axioms NLS.ZakharovShabat.exists_compact_weightedResonantCenterRemainder_bound
+#print axioms NLS.ZakharovShabat.weightedResonantCenterClosingTail_le_of_gap_bound
+#print axioms NLS.ZakharovShabat.source_weighted_fourierTail_forced_recurrence_on_compact
+#print axioms NLS.exists_vanishing_max_envelope_on_compact
+#print axioms NLS.ZakharovShabat.exists_compact_source_fourierTail_envelope
+#print axioms NLS.ZakharovShabat.exists_compact_source_summable_fourierTail_envelope
+#print axioms NLS.summable_sobolev_tsum_le_of_geometric_tail_majorant
+#print axioms NLS.Coeff.exists_uniform_sobolev_family_of_geometric_tail_envelope
+#print axioms NLS.ZakharovShabat.exists_uniform_sobolev_gain_on_compact_source_family
+#print axioms NLS.Coeff.continuous_multiplier_of_bounded_coordinates
+#print axioms NLS.Coeff.inverse_sobolev_vanishing_tails
+#print axioms NLS.Coeff.exists_continuous_lower_sobolev_family
+#print axioms NLS.Coeff.exists_compact_lower_sobolev_family
+#print axioms NLS.Coeff.exists_sobolev_even_sample_le
+#print axioms NLS.ZakharovShabat.exists_compact_source_sobolev_step
+#print axioms NLS.ZakharovShabat.exists_compact_source_sobolev_family_of_gap_majorant
+#print axioms NLS.KdV.exists_compact_sobolev_miura_isospectral_lifts
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalIsospectral_compact_sobolev_lift_cover

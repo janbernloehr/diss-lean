@@ -105,5 +105,12 @@
   "main_theorems_verified": false,
   "workspace_decision": "pending; all changes and compiler outputs remain private",
   "push_attempted": false,
-  "push_status": "Earlier automatic approval review rejected export to git@github.com:janbernloehr/diss-lean.git without direct trusted destination authorization. The destination question remains pending; no retry or bypass attempted."
+  "push_status": "Earlier automatic approval review rejected export to git@github.com:janbernloehr/diss-lean.git without direct trusted destination authorization. The destination question remains pending; no retry or bypass attempted.",
+  "stronger_compact_lift_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/compact-sobolev-lifts-map.json",
+    "compact_stronger_Miura_lift_cover": true,
+    "finite_p_potential_image_compactness": false,
+    "uniform_endpoint_bound": false,
+    "next_bridge": "Construct the continuous negative finite-p rough Miura image from the compact stronger lift family, using the bounded derivative multiplier and the continuous L2 x L2 convolution into weighted negative finite-p coefficients; then transfer to the identical original period-two distributions."
+  }
 }

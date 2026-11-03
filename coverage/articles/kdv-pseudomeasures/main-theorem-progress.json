@@ -170,7 +170,7 @@
     ]
   },
   "essential_open_obligations": [
-    "Source Theorem 2.2(i)-(ii) is proved on the entire original H-minus-one domain. The full-domain Rayleigh inequality, uniform H-minus-one bound, common real shifted Miura lifts, complete Dirac isospectral transport including frequency zero, and COMPACTNESS of the ENTIRE original isospectral set in its original H-minus-one norm are now proved. REMAINING: stronger original finite-p compactness or a uniform weighted inverse estimate, the UNIFORM ENDPOINT norm bound of Lemma 2.21, and source Theorem 2.2(iii). H-minus-one compactness and pointwise stronger membership do not by themselves establish those stronger conclusions.",
+    "Source Theorem 2.2(i)-(ii), full original H-minus-one isospectral norm compactness, complete common-shift Miura spectral transport, uniform compact-family Sobolev gains, and a compact stronger Sobolev lift cover of the ENTIRE original isospectral set are proved. REMAINING: continuity/compactness of the negative finite-p Miura POTENTIAL IMAGE and transfer to the identical original distributions, then the UNIFORM ENDPOINT norm bound of Lemma 2.21 and source Theorem 2.2(iii). Compactness of the lift cover is not yet claimed to establish those image or endpoint conclusions.",
     "Complete original periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source2.1(ii). General-weight direct2.1(i),endpoint2.18-2.19,REAL2.20,uniform bootstrap,cross-order labels/gaps,bounded weak-star label continuity/closed spectral fibers and all AppendixB clauses remain proved. General complex-ratio2.20 remains open.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
@@ -625,5 +625,16 @@
     ],
     "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-cauchy-map.json",
     "new_theorems": 7
+  },
+  "verified_compact_sobolev_lift_cover": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/compact-sobolev-lifts-map.json",
+    "uniform_tail_recurrence": true,
+    "uniform_one_step_norm_gain": true,
+    "compact_gain_with_strict_loss": true,
+    "finite_iteration": true,
+    "actual_dirac_isospectral_lifts": true,
+    "full_original_isospectral_lift_cover": true,
+    "finite_p_potential_image_compactness": false,
+    "uniform_endpoint_bound": false
   }
 }
