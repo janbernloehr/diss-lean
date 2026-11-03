@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.CartesianFredholmReduction
 import NLS.Articles.MKdVNLSHierarchies.SignedMeanActionFiberCoordinates
 import NLS.Articles.MKdVNLSHierarchies.ZeroMeanActionFiberCoordinates
 import NLS.Articles.MKdVNLSHierarchies.GlobalCartesianPhaseLifting
@@ -53,6 +54,21 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.Coeff.isCompactOperator_multiplierBilinear_flip,
+    `NLS.Coeff.fderiv_multiplier_sequence,
+    `NLS.Coeff.isCompactOperator_fderiv_multiplier_sub_free,
+    `NLS.Coeff.isCompactOperator_fderiv_multiplier_sub_zero,
+    `NLS.Coeff.isCompactOperator_prodCLM,
+    `NLS.ZakharovShabat.sourceDiagonalActionRatio_frequency_displacement_bound,
+    `NLS.ZakharovShabat.tendsto_sourceDiagonalScaledActionRatio_positive,
+    `NLS.ZakharovShabat.sourceDiagonalActionRoot_scaled_eq_sqrt_ratio,
+    `NLS.ZakharovShabat.tendsto_sourceDiagonalActionRoot_scaled_positive,
+    `NLS.ZakharovShabat.sourceDiagonalActionRootSequence_apply,
+    `NLS.ZakharovShabat.tendsto_sourceDiagonalActionRootSequence_positive,
+    `NLS.ZakharovShabat.isCompactOperator_sourceDiagonalActionRootSequence_sub_free,
+    `NLS.FunctionalAnalysis.bijective_id_sub_compact_of_injective,
+    `NLS.FunctionalAnalysis.bijective_of_injective_of_compact_sub_equiv,
+    `NLS.FunctionalAnalysis.exists_equiv_of_injective_of_compact_sub_equiv,
     `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.continuous_hilbertActionRotation_initial,
     `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionRotation_pi_eq_neg_pi,
     `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertCentralHalfTurn_diagonal,
@@ -683,6 +699,12 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.ZakharovShabat.exists_local_sourceDiagonalActionRootSequence_analytic,
+    ``NLS.ZakharovShabat.isCompactOperator_sourceDiagonalActionRootSequence_sub_free,
+    ``NLS.MKdV.isCompactOperator_miuraCartesianJacobian_sub_free,
+    ``NLS.MKdV.isCompactOperator_miuraPhysicalCartesianJacobian_sub_free,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_compact_remainder,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_chart_of_derivative_injective,
     ``NLS.MKdV.miuraCentralHalfTurn_mean,
     ``NLS.MKdV.miuraJointFiberCartesianHomeomorph,
     ``NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev,

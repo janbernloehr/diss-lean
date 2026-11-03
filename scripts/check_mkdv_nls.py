@@ -453,6 +453,15 @@ modules = [
     "NLS/MKdV/MiuraJointFiberFaithfulness.lean",
     "NLS/MKdV/MiuraSobolevJointFiberFaithfulness.lean",
     "NLS/Articles/MKdVNLSHierarchies/SignedMeanActionFiberCoordinates.lean",
+    "NLS/SequenceSpaces/CompactSymbolProduct.lean",
+    "NLS/ZakharovShabat/SourceDiagonalActionRootAsymptotics.lean",
+    "NLS/ZakharovShabat/SourceDiagonalActionRootSequenceCompact.lean",
+    "NLS/MKdV/MiuraCartesianWeightedNormalization.lean",
+    "NLS/MKdV/MiuraCartesianJacobianCompact.lean",
+    "NLS/MKdV/MiuraRealCartesianJacobianCompact.lean",
+    "NLS/FunctionalAnalysis/CompactPerturbationEquivalence.lean",
+    "NLS/MKdV/MiuraCartesianFredholm.lean",
+    "NLS/Articles/MKdVNLSHierarchies/CartesianFredholmReduction.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

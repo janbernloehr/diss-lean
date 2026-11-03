@@ -2056,3 +2056,47 @@ factorization and the full corrected frequency comparison remain
 essential. The main-theorem goal stays active.
 
 Validation: all 419 article/shared modules have validated private outputs. The 411 unchanged prefix source hashes match db425d9 and their outputs were reused; all eight added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,524 declarations/auxiliaries and the combined audit for 49,459 NLS declarations, using only the standard allowed axioms. All 421 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,348 declarations (1,905 theorems and 443 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## General-profile Cartesian derivative: compact remainder and Fredholm reduction
+
+The actual Cartesian derivative now differs from its actual free bounded
+linear equivalence by a compact operator at every physical real original-L2
+profile. This is proved both for the ambient complex derivative into the
+complete positive weighted Cartesian/mean target and for the genuine
+physical real source and target. There is no smallness, finite-gap,
+nonzero-mean or open-action hypothesis.
+
+The regularized physical action ratio is the reciprocal of twice a point
+between the canonical spectral endpoints. Their bounded displacements
+prove that the scaled ratio tends to 1/(2*pi), and the scaled positive
+root tends to sqrt(1/(2*pi)), also when the selected gap is closed.
+The existing bounded-sequence analytic realization of all scaled roots
+is reused. Its difference from the free symbol has vanishing tails and
+therefore defines a compact diagonal multiplier.
+
+The derivative of the normalized full Cartesian map splits into the
+original NLS Jacobian times the bounded root symbol and the derivative
+of that symbol times the fixed original NLS coordinate sequence.
+The verified compact NLS Jacobian remainder handles the first part.
+Multiplication by a fixed finite-exponent sequence is compact from
+linfinity into that sequence space, so the second part is compact without
+any derivative-tail assumption. A bounded retraction transports the result
+back to the full native half-order target, including the signed mean.
+
+The actual normalized complex Jacobian is identity plus compact.
+The Fredholm alternative now proves that derivative bijectivity is
+equivalent to derivative injectivity, in both the ambient complex and
+physical real spaces. Under the explicitly stated injectivity premise,
+the physical map has an actual analytic local inverse chart. The
+injectivity premise is not proved by this reduction.
+
+Essential remaining work includes general-profile derivative kernel
+triviality, global inversion and comparison of distinct original NLS
+action fibers at the same physical actions and signed mean, Gardner
+canonicity, arbitrary action-data realization, global forward action
+factorization, independent angles/final angle-sum factorization, and
+the full corrected frequency comparison. This milestone proves original-L2
+compactness; it does not assert compact remainders at every Sobolev order.
+
+Validation: all 428 article/shared modules have validated private outputs. The 419 unchanged prefix source hashes match 6e8e2cf and their outputs were reused; all nine added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,606 declarations/auxiliaries and the combined audit for 49,541 NLS declarations, using only the standard allowed axioms. All 431 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,399 declarations (1,946 theorems and 453 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

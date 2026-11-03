@@ -112,7 +112,9 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_Cartesian_homeomorphism",
         "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_unique_phase_lift_allSobolev",
         "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_Cartesian_homeomorphism",
-        "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev"
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_compact_remainder",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_bijective_iff_injective"
       ]
     },
     {
@@ -195,7 +197,9 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_Cartesian_homeomorphism",
         "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_unique_phase_lift_allSobolev",
         "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_Cartesian_homeomorphism",
-        "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev"
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_compact_remainder",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_bijective_iff_injective"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -410,7 +414,7 @@
     "remaining": "The diagonal physical discriminant, original fixed-index endpoints, canonical sheets and actual weighted contour actions have now been identified. Remaining normal-form angle, frequency and Poisson-bracket conventions must be carried through their actual constructions."
   },
   "remaining_essential_dependencies": [
-    "general Cartesian-Cartesian brackets and Gardner canonicity; general-profile Cartesian Jacobian/global inverse and comparison of distinct NLS action fibers at the same physical J/mean; arbitrary nonnegative action-data realization. The central ambiguity is removed at every signed mean, with global homeomorphic phase coordinates and unique native lifts within each same-mean original NLS action fiber",
+    "general Cartesian-Cartesian brackets and Gardner canonicity; general-profile Cartesian derivative kernel triviality, global inverse and comparison of distinct NLS action fibers at the same physical J/mean; arbitrary nonnegative action-data realization. The actual original-L2 Cartesian derivative now has compact remainder from its free equivalence at every physical real profile, and the Fredholm alternative reduces bijectivity to injectivity. Central ambiguity is removed at every signed mean within each fixed original NLS action fiber.",
     "global forward analytic factorization of restricted NLS actions through independent physical mKdV actions and signed mean at general profiles; the whole-sequence local forward factor near zero, converse physical J_n and corrected mean-squared factors are proved",
     "independent mKdV Birkhoff angle construction, the final angle-sum factorization and full frequency identification; Theorem 4(iii) angle-action bracket clause and actual Gardner transfer are proved",
     "corrected frequency-sign convention in Theorem 3; the global signed-mean claim in Theorem 4(ii) is replaced by the proved mean-squared statement, while signed recovery requires a branch restriction"
@@ -1042,5 +1046,27 @@
     "printed_global_signed_mean_obstruction": "NLS.Articles.MKdVNLSHierarchies.no_global_signed_mean_NLS_action_factor",
     "scope": "At arbitrary signed mean, the actual original-L2 Cartesian map is injective within every original signed NLS action fiber. The compact joint physical J/mean and NLS action fiber is precisely the same-signed-mean branch of that full physical diagonal NLS action fiber, and maps homeomorphically onto its entire native Cartesian phase fiber. Every phase lift is unique in each actual native integer H^s source class. Zero mean, closed actions and infinite support are included. Actual central half-turn mean reversal is proved globally by a mean-leaf continuity argument. No arbitrary function of the entire NLS action sequence recovers signed mean globally.",
     "limits": "Different original NLS action fibers at the same physical J and signed mean remain unclassified. General-profile Cartesian Jacobian/global inverse, Gardner canonicity, arbitrary nonnegative action realization, global forward I(J,mean) factorization, independent angles and corrected full frequency comparison remain essential."
+  },
+  "general_profile_Cartesian_Fredholm_reduction": {
+    "status": "proved_general_original_L2_compact_remainder_and_Fredholm_reduction_kernel_injectivity_open",
+    "domains": "Every physical real original L2 profile; full ambient complex derivative and genuine physical real derivative into the positive half-order Cartesian pair plus signed mean.",
+    "unconditional_declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_compact_remainder",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_bijective_iff_injective",
+      "NLS.MKdV.isCompactOperator_miuraCartesianJacobian_sub_free",
+      "NLS.MKdV.isCompactOperator_miuraCartesianNormalizedJacobian_sub_id"
+    ],
+    "conditional_analytic_inverse_declaration": "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_chart_of_derivative_injective",
+    "explicit_remaining_premise": "Function.Injective (fderiv R miuraPhysicalCartesianMap a), required for the conditional chart; no global or general-profile kernel theorem is claimed.",
+    "root_asymptotics": [
+      "NLS.ZakharovShabat.tendsto_sourceDiagonalScaledActionRatio_positive",
+      "NLS.ZakharovShabat.tendsto_sourceDiagonalActionRoot_scaled_positive",
+      "NLS.ZakharovShabat.isCompactOperator_sourceDiagonalActionRootSequence_sub_free"
+    ],
+    "mechanism": "Scaled roots are analytic as one bounded sequence; their real-profile free difference vanishes at infinity. The NLS Jacobian remainder is compact. The symbol-derivative term factors through compact multiplication of bounded symbols by the fixed l2 NLS coordinate sequence. Weight normalization has a bounded left inverse.",
+    "limits": [
+      "No derivative-kernel injectivity, general-profile local inverse without a premise, global inverse, distinct NLS action-fiber identification, arbitrary action-data realization or Cartesian-Cartesian Gardner bracket follows yet.",
+      "The compactness theorem here is on original L2, not all native Sobolev orders."
+    ]
   }
 }

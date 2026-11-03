@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 4524,
+  "audited_declarations_and_auxiliaries": 4606,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -11759,14 +11759,269 @@
       "kind": "theorem",
       "name": "no_global_signed_mean_NLS_action_factor",
       "file": "NLS/Articles/MKdVNLSHierarchies/SignedMeanActionFiberCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_multiplierBilinear_flip",
+      "file": "NLS/SequenceSpaces/CompactSymbolProduct.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_multiplier_sequence",
+      "file": "NLS/SequenceSpaces/CompactSymbolProduct.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_fderiv_multiplier_sub_free",
+      "file": "NLS/SequenceSpaces/CompactSymbolProduct.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_fderiv_multiplier_sub_zero",
+      "file": "NLS/SequenceSpaces/CompactSymbolProduct.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_prodCLM",
+      "file": "NLS/SequenceSpaces/CompactSymbolProduct.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiagonalActionRatio_frequency_displacement_bound",
+      "file": "NLS/ZakharovShabat/SourceDiagonalActionRootAsymptotics.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_sourceDiagonalScaledActionRatio_positive",
+      "file": "NLS/ZakharovShabat/SourceDiagonalActionRootAsymptotics.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiagonalActionRoot_scaled_eq_sqrt_ratio",
+      "file": "NLS/ZakharovShabat/SourceDiagonalActionRootAsymptotics.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_sourceDiagonalActionRoot_scaled_positive",
+      "file": "NLS/ZakharovShabat/SourceDiagonalActionRootAsymptotics.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceDiagonalActionRootSequence_apply",
+      "file": "NLS/ZakharovShabat/SourceDiagonalActionRootSequenceCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_sourceDiagonalActionRootSequence_positive",
+      "file": "NLS/ZakharovShabat/SourceDiagonalActionRootSequenceCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_sourceDiagonalActionRootSequence_sub_free",
+      "file": "NLS/ZakharovShabat/SourceDiagonalActionRootSequenceCompact.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianWeightEmbedding",
+      "file": "NLS/MKdV/MiuraCartesianWeightedNormalization.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianWeightRetraction",
+      "file": "NLS/MKdV/MiuraCartesianWeightedNormalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianWeightRetraction_embedding",
+      "file": "NLS/MKdV/MiuraCartesianWeightedNormalization.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianNormalization",
+      "file": "NLS/MKdV/MiuraCartesianWeightedNormalization.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianDenormalization",
+      "file": "NLS/MKdV/MiuraCartesianWeightedNormalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianDenormalization_normalization",
+      "file": "NLS/MKdV/MiuraCartesianWeightedNormalization.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNLSCoordinateSequence",
+      "file": "NLS/MKdV/MiuraCartesianWeightedNormalization.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianRootSequence",
+      "file": "NLS/MKdV/MiuraCartesianWeightedNormalization.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraScaledNLSCartesianMap",
+      "file": "NLS/MKdV/MiuraCartesianWeightedNormalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianNormalization_map_eventually",
+      "file": "NLS/MKdV/MiuraCartesianWeightedNormalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraCartesianRootSequence",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_miuraNLSCoordinateSequence",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_fderiv_miuraNLSCoordinateSequence_sub_free",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_miuraCartesianRootSequence_sub_free",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_fderiv_miuraNLSCoordinate_component_sub_free",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNLSCoordinateSequence_zero",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_fderiv_miuraScaledNLSCoordinate_sub_free",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraScaledNLSCoordinateX",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraScaledNLSCoordinateY",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "differentiableAt_miuraScaledNLSCoordinate",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraScaledNLSCartesianMap",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_fderiv_miuraScaledNLSCartesianMap_sub_free",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianNormalization_fderiv",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_miuraCartesianJacobian_sub_free",
+      "file": "NLS/MKdV/MiuraCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraPhysicalCartesianMap",
+      "file": "NLS/MKdV/MiuraRealCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianRealFreeEquiv_projection",
+      "file": "NLS/MKdV/MiuraRealCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_miuraPhysicalCartesianJacobian_sub_free",
+      "file": "NLS/MKdV/MiuraRealCartesianJacobianCompact.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "bijective_id_sub_compact_of_injective",
+      "file": "NLS/FunctionalAnalysis/CompactPerturbationEquivalence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "bijective_of_injective_of_compact_sub_equiv",
+      "file": "NLS/FunctionalAnalysis/CompactPerturbationEquivalence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_equiv_of_injective_of_compact_sub_equiv",
+      "file": "NLS/FunctionalAnalysis/CompactPerturbationEquivalence.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianNormalizedJacobian",
+      "file": "NLS/MKdV/MiuraCartesianFredholm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompactOperator_miuraCartesianNormalizedJacobian_sub_id",
+      "file": "NLS/MKdV/MiuraCartesianFredholm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianJacobian_bijective_iff_injective",
+      "file": "NLS/MKdV/MiuraCartesianFredholm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalCartesianJacobian_bijective_iff_injective",
+      "file": "NLS/MKdV/MiuraCartesianFredholm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPhysicalCartesian_derivative_equiv_of_injective",
+      "file": "NLS/MKdV/MiuraCartesianFredholm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPhysicalCartesian_analytic_chart_of_derivative_injective",
+      "file": "NLS/MKdV/MiuraCartesianFredholm.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_derivative_compact_remainder",
+      "file": "NLS/Articles/MKdVNLSHierarchies/CartesianFredholmReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_derivative_bijective_iff_injective",
+      "file": "NLS/Articles/MKdVNLSHierarchies/CartesianFredholmReduction.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_analytic_chart_of_derivative_injective",
+      "file": "NLS/Articles/MKdVNLSHierarchies/CartesianFredholmReduction.lean"
     }
   ],
-  "public_declaration_count": 2348,
-  "theorem_count": 1905,
-  "definition_count": 443,
-  "full_build": "419 article/shared modules have validated private outputs. All 411 unchanged prefix module source hashes match the prior db425d9 milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2399,
+  "theorem_count": 1946,
+  "definition_count": 453,
+  "full_build": "428 article/shared modules have validated private outputs. All 419 unchanged prefix module source hashes match the prior 6e8e2cf milestone; their private outputs were reused. Nine added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ZakharovShabat/SourceCentralHalfTurn.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/CompactSymbolProduct.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -12187,11 +12442,21 @@
     "NLS/MKdV/MiuraJointFiberFaithfulness.lean": "f7be05cca88f02fa3faa0c69dc8b5b0af84e196e5ceeff286d98e1204ddaf1d5",
     "NLS/MKdV/MiuraSobolevJointFiberFaithfulness.lean": "cd4a7007911d23991bd32a46a55fe333168e89b1a32c65166c078c7b23f356ba",
     "NLS/Articles/MKdVNLSHierarchies/SignedMeanActionFiberCoordinates.lean": "7a34472bfe9dc64895dcec51e0f871c4ca085c218196daac93e604d38d875b99",
-    "scripts/check_mkdv_nls.py": "d3f56bfedc8c78d0dc186f1dc483edaf3ee715e3a96f40e51d28d8465385b798",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "9c853c1d3a4c2c4386d04e80512f92829cc1774e53dc35f3b3ede50bf183c367"
+    "NLS/SequenceSpaces/CompactSymbolProduct.lean": "d3e9d54748d8eaab189415fe43a37e37be97d499ca3551124376e2d2d9db0022",
+    "NLS/ZakharovShabat/SourceDiagonalActionRootAsymptotics.lean": "8930d861187a0d1eaf00eda7bbe81a41e407a19cf85be07d0dcb3de5d9895425",
+    "NLS/ZakharovShabat/SourceDiagonalActionRootSequenceCompact.lean": "24d356025e309267cd919a5a719683750d3af5ddf74740a95345d6a3bd84fedd",
+    "NLS/MKdV/MiuraCartesianWeightedNormalization.lean": "a93949d71827d44bacdeeac0719494135858db29ac7ad7a34b86cfc4e110c8a6",
+    "NLS/MKdV/MiuraCartesianJacobianCompact.lean": "728eb06a008e16ec559b9a9a4b12c3611e7d4d62aefbd113ad09657df9e37206",
+    "NLS/MKdV/MiuraRealCartesianJacobianCompact.lean": "78c2c1ac89e1323476d9c99a53e648ccbe0f63f8afa926dda548ed9a7e9970ef",
+    "NLS/FunctionalAnalysis/CompactPerturbationEquivalence.lean": "69c5c9598bf15b097e003616e55f317c725e0f31132daa6408edceb432b039ad",
+    "NLS/MKdV/MiuraCartesianFredholm.lean": "476b0107adf21711cc2f893da5d860c2bb1e15c13862b3e375e6de7f7ce88e71",
+    "NLS/Articles/MKdVNLSHierarchies/CartesianFredholmReduction.lean": "135e59ba1d78b0065ab26ff1b23175f602ca2818d3db2217fea35be36b769cd8",
+    "NLS.lean": "8b7ce4ad52dd4f8dbc054e0bd1b7e6adc03480720e8557f9a8f54e461da6e8c6",
+    "scripts/check_mkdv_nls.py": "956f3a10d118056a600ee67132c54e2b90938688b5c63a0a6dbf7eea224114fb",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "9346f2962579dc25abad978f0516a0309be3f54adc6c19bd7081268fae8363fe"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 419,
+  "focused_module_count": 428,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -12526,12 +12791,25 @@
       "public_declaration_count": 2348,
       "theorem_count": 1905,
       "definition_count": 443
+    },
+    {
+      "milestone": "General-profile original-L2 Cartesian Jacobian compact remainder on the full complex and physical real Banach spaces, with Fredholm reduction of invertibility to derivative injectivity",
+      "audit_count": 4606,
+      "combined_NLS_audit_count": 49541,
+      "aggregate_compiled": true,
+      "module_count": 428,
+      "reused_prefix_module_count": 419,
+      "reused_prefix_commit": "6e8e2cfccbc34e563292cae17d9f63f3b634a4e3",
+      "frozen_source_checker_count": 431,
+      "public_declaration_count": 2399,
+      "theorem_count": 1946,
+      "definition_count": 453
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 49459,
+  "combined_audited_NLS_declarations": 49541,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -12539,7 +12817,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 411 unchanged prefix module source hashes match the prior db425d9 milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4524 declarations/auxiliaries and combined audit for 49459 NLS declarations. All 421 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 419 unchanged prefix module source hashes match the prior 6e8e2cf milestone; their private outputs were reused. Nine added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4606 declarations/auxiliaries and combined audit for 49541 NLS declarations. All 431 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",
