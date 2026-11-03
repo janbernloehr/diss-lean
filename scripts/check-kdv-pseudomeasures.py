@@ -458,6 +458,8 @@ modules = [
     'NLS.MKdV.MiuraL2HillDirichlet',
     'NLS.KdV.HillHminusOneDirichlet',
     'NLS.KdV.HminusOneMiuraDirichlet',
+    'NLS.FunctionalAnalysis.CompactwiseCauchyLimit',
+    'NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchyTrajectories',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

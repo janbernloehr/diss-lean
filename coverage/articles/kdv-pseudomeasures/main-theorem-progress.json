@@ -469,7 +469,12 @@
     "Cauchy Fourier coefficients and an eventual specified original endpoint norm bound give a unique physical weak-star limit retaining that bound. The same limit converges in every admissible lower norm, with exponents selected after the limit.",
     "Under that eventual endpoint bound, being Cauchy in any one admissible lower finite-p norm is equivalent to being Cauchy in each Fourier coefficient and is independent of the admissible lower norm chosen.",
     "Uniformly Cauchy Fourier tests, with one eventual endpoint bound for all testing parameters, give a unique physical limit family, pointwise weak-star convergence, and uniform convergence in every admissible lower norm. No time continuity is assumed.",
-    "Uniform Cauchy control in one admissible lower norm is equivalent to uniform Cauchy control of each Fourier mode under the same eventual endpoint bound. It also produces the unique limit family and convergence in every admissible lower norm."
+    "Uniform Cauchy control in one admissible lower norm is equivalent to uniform Cauchy control of each Fourier mode under the same eventual endpoint bound. It also produces the unique limit family and convergence in every admissible lower norm.",
+    "Compactwise uniformly Cauchy families with an arbitrary nontrivial index filter have one continuous limit on a locally compact domain when the approximants are eventually continuous. Every compact testing set converges to that same limit. The shared set-to-subtype Cauchy equivalence includes empty testing sets.",
+    "For physical source families with one eventual original endpoint norm bound, compactwise uniform Cauchy control of each original Fourier mode and eventual modewise continuity recover a UNIQUE continuous physical weak-star trajectory in the same endpoint ball. One limit works in EVERY admissible lower finite-p norm on EVERY compact time set.",
+    "Continuous trajectories in a fixed original endpoint norm ball converge in the compact-open weak-star topology under compactwise uniform Cauchy Fourier tests. The result holds for arbitrary nontrivial index filters, and the lower exponent and compact time set are chosen after the unique limit.",
+    "Uniform Cauchy control on any testing set in one admissible lower norm is equivalent to uniform Cauchy control of each original Fourier mode under an eventual endpoint bound on that testing set. No topology, compactness or nonemptiness of the testing set is required.",
+    "For continuous trajectories in a fixed original endpoint norm ball on a locally compact time domain, existence of a compact-open weak-star limit is EQUIVALENT to compactwise uniform Cauchy control in any one chosen admissible lower finite-p norm. In the article range this specializes to the norm of the IDENTICAL original H-minus-one distributions."
   ],
   "workspace_status": "Private article worktree retained; current validated milestones are committed locally. GitHub push remains pending explicit destination approval after earlier automatic-review rejection. Canonical source/build/checkout stay read-only; workspace decision is pending.",
   "goal_turn_classification": "progress",
@@ -703,5 +708,20 @@
     "rough_operator_zero_criterion": false,
     "canonical_Dirichlet_labels": false,
     "source2_1_ii": false
+  },
+  "verified_appendix_b_cauchy_trajectories": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-cauchy-trajectories-map.json",
+    "modules": [
+      "NLS/FunctionalAnalysis/CompactwiseCauchyLimit.lean",
+      "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchyTrajectories.lean"
+    ],
+    "new_theorems": 7,
+    "arbitrary_nontrivial_index_filters": true,
+    "locally_compact_time_domain": true,
+    "exact_original_endpoint_bound": true,
+    "unique_continuous_physical_limit": true,
+    "compactwise_all_lower_norm_convergence": true,
+    "compact_open_limit_iff_one_lower_cauchy": true,
+    "main_theorems_verified": false
   }
 }

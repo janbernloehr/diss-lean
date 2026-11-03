@@ -717,5 +717,12 @@
     "full_complex_HminusOne_Dirichlet_characteristic": true,
     "source2_1_ii_proved": false,
     "main_theorems_verified": false
+  },
+  "Appendix_B_cauchy_trajectory_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-cauchy-trajectories-map.json",
+    "remaining_lemma_B1_obligations": [],
+    "compactwise_Cauchy_continuous_physical_reconstruction": true,
+    "compact_open_limit_iff_one_lower_norm_Cauchy": true,
+    "main_theorems_verified": false
   }
 }

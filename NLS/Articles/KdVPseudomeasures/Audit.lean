@@ -424,6 +424,8 @@ import NLS.MKdV.QuasiHillL2Sobolev
 import NLS.MKdV.MiuraL2HillDirichlet
 import NLS.KdV.HillHminusOneDirichlet
 import NLS.KdV.HminusOneMiuraDirichlet
+import NLS.FunctionalAnalysis.CompactwiseCauchyLimit
+import NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchyTrajectories
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -3629,3 +3631,10 @@ import NLS.KdV.HminusOneMiuraDirichlet
 #print axioms NLS.KdV.hillHminusDirichlet_miura
 #print axioms NLS.KdV.hillHminusDirichlet_add_const
 #print axioms NLS.KdV.hillHminusDirichlet_eq_miura_of_shifted_image
+#print axioms NLS.uniformCauchyOn_iff_subtype
+#print axioms NLS.exists_continuous_limit_of_compactwise_uniformCauchy
+#print axioms NLS.Articles.KdVPseudomeasures.existsUnique_sourceTrajectory_of_compactwiseCauchy_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.existsUnique_sourceTrajectory_tendsto_of_compactwiseCauchy_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.uniformCauchyOn_sourceLowerDistribution_iff_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.exists_sourceTrajectory_tendsto_iff_compactwiseCauchy_lower
+#print axioms NLS.Articles.KdVPseudomeasures.exists_sourceTrajectory_tendsto_iff_compactwiseCauchy_originalHminusOne
