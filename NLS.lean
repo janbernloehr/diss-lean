@@ -5415,3 +5415,14 @@ import NLS.ComplexAnalysis.CompactNonzeroNormLowerBound
 import NLS.KdV.HillGapBoxNumeratorReality
 import NLS.KdV.HillGlobalGapPeriodCriterion
 import NLS.KdV.HillGapBoxPeriodNonvanishing
+import NLS.KdV.HillCanonicalRootConjugation
+import NLS.KdV.HillIntrinsicPeriodReality
+import NLS.KdV.HillAbelianRootUpdate
+import NLS.KdV.HillAbelianRootSlope
+import NLS.KdV.HillRootSlopeNonvanishing
+import NLS.KdV.HillIntrinsicPeriodLinearity
+import NLS.KdV.HillRootPeriodAffineFormula
+import NLS.KdV.HillRootPeriodGapLocation
+import NLS.KdV.HillRootCandidateUpdate
+import NLS.KdV.HillRootPeriodContinuity
+import NLS.KdV.HillContinuousGapRootMap
