@@ -400,6 +400,14 @@ import NLS.KdV.HillFreeAbelianNormalization
 import NLS.KdV.HillAbelianCircleIntegrability
 import NLS.KdV.HillFreeAbelianRootVariation
 import NLS.KdV.HillFreeAbelianPeriodJacobian
+import NLS.ComplexAnalysis.HilbertWeightedProduct
+import NLS.SequenceSpaces.PositiveReciprocalLattice
+import NLS.KdV.HillAbelianHilbertInput
+import NLS.KdV.HillAbelianHilbertProduct
+import NLS.KdV.HillGapRootHilbertCoordinates
+import NLS.KdV.HillAbelianHilbertPeriods
+import NLS.KdV.HillAbelianComplexRoot
+import NLS.KdV.HillAbelianComplexPeriods
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -724,7 +732,22 @@ run_cmd do
     ``NLS.ComplexAnalysis.scalarStateMixedPairing_eq_integral,
     ``NLS.ComplexAnalysis.continuous_scalarStateMixedPairing,
     ``NLS.Fourier.continuousFourierCLM_const,
-    ``NLS.ComplexAnalysis.continuous_circleIntegral_of_continuous_joint_on_sphere]
+    ``NLS.ComplexAnalysis.continuous_circleIntegral_of_continuous_joint_on_sphere,
+    ``NLS.ComplexAnalysis.hilbertWeightedProduct,
+    ``NLS.ComplexAnalysis.hilbertWeightedPartialProduct,
+    ``NLS.ComplexAnalysis.summable_norm_hilbertProductInput,
+    ``NLS.ComplexAnalysis.multipliable_hilbertWeightedFactors,
+    ``NLS.ComplexAnalysis.tendsto_hilbertWeightedPartialProduct,
+    ``NLS.ComplexAnalysis.tendstoUniformlyOn_hilbertWeightedPartialProduct,
+    ``NLS.ComplexAnalysis.analyticOnNhd_hilbertWeightedPartialProduct,
+    ``NLS.ComplexAnalysis.analyticOnNhd_hilbertWeightedProduct,
+    ``NLS.ComplexAnalysis.hilbertWeightedProduct_ne_zero_iff,
+    ``NLS.ComplexAnalysis.norm_hilbertWeightedProduct_le,
+    ``NLS.ComplexAnalysis.norm_hilbertWeightedProduct_sub_one_le,
+    ``NLS.Coeff.positivePuncturedLattice,
+    ``NLS.Coeff.positivePuncturedLattice_apply,
+    ``NLS.Coeff.positivePuncturedLattice_natSucc,
+    ``NLS.Coeff.norm_positivePuncturedLattice_two_le]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
