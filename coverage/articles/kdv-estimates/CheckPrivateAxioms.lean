@@ -1,3 +1,9 @@
+import NLS.DifferentialPolynomial.WeightedJetReduction
+import NLS.KdV.HillRiccatiRemainder
+import NLS.KdV.HillHamiltonianReduction
+import NLS.KdV.HillHierarchyTraceCoefficient
+import NLS.KdV.HillHierarchyReality
+import NLS.KdV.HillSecondHamiltonian
 import NLS.DifferentialPolynomial.PowerSeriesDerivation
 import NLS.DifferentialPolynomial.DifferentialRiccati
 import NLS.DifferentialPolynomial.LogarithmicDerivative
@@ -478,7 +484,15 @@ run_cmd do
     ``NLS.DifferentialPolynomial.derivation_logarithmicPrimitiveCoefficient,
     ``NLS.DifferentialPolynomial.scalarRiccatiLogInput,
     ``NLS.DifferentialPolynomial.scalarRiccati_log_derivative_identity,
-    ``NLS.DifferentialPolynomial.derivation_scalarRiccati_log_odd]
+    ``NLS.DifferentialPolynomial.derivation_scalarRiccati_log_odd,
+    ``NLS.DifferentialPolynomial.HasWeightedJetReduction,
+    ``NLS.DifferentialPolynomial.HasWeightedJetReduction.of_order,
+    ``NLS.DifferentialPolynomial.HasWeightedJetReduction.zero,
+    ``NLS.DifferentialPolynomial.HasWeightedJetReduction.add,
+    ``NLS.DifferentialPolynomial.HasWeightedJetReduction.sum,
+    ``NLS.DifferentialPolynomial.HasWeightedJetReduction.add_spatialDerivative,
+    ``NLS.DifferentialPolynomial.hasWeightedJetReduction_of_jetOrder,
+    ``NLS.DifferentialPolynomial.exists_weighted_jet_reduction]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -5167,3 +5167,9 @@ import NLS.DifferentialPolynomial.LogarithmicDerivative
 import NLS.DifferentialPolynomial.ScalarRiccatiLogarithm
 import NLS.KdV.HillRiccatiHierarchy
 import NLS.KdV.HillHierarchyPhase
+import NLS.DifferentialPolynomial.WeightedJetReduction
+import NLS.KdV.HillRiccatiRemainder
+import NLS.KdV.HillHamiltonianReduction
+import NLS.KdV.HillHierarchyTraceCoefficient
+import NLS.KdV.HillHierarchyReality
+import NLS.KdV.HillSecondHamiltonian
