@@ -5249,3 +5249,10 @@ import NLS.SequenceSpaces.SpectralWeightFixedShift
 import NLS.KdV.HillCriticalProductBounds
 import NLS.KdV.HillWeightedCriticalTail
 import NLS.KdV.HillUniformActionGapBound
+import NLS.SequenceSpaces.SpectralWeightProduct
+import NLS.SequenceSpaces.SpectralWeightCeilingCutoff
+import NLS.SequenceSpaces.QuadraticCutoffRounding
+import NLS.KdV.HillWeightedActionHead
+import NLS.KdV.HillWeightedActionEstimate
+import NLS.Articles.KdVEstimates.WeightedActionEstimate
+import NLS.KdV.HillL2DirichletCharacteristic

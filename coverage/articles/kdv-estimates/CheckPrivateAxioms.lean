@@ -1,3 +1,10 @@
+import NLS.SequenceSpaces.SpectralWeightProduct
+import NLS.SequenceSpaces.SpectralWeightCeilingCutoff
+import NLS.SequenceSpaces.QuadraticCutoffRounding
+import NLS.KdV.HillWeightedActionHead
+import NLS.KdV.HillWeightedActionEstimate
+import NLS.Articles.KdVEstimates.WeightedActionEstimate
+import NLS.KdV.HillL2DirichletCharacteristic
 import NLS.KdV.HillUniformActionGapBound
 import NLS.SequenceSpaces.NonnegativeSeriesCauchySchwarz
 import NLS.SequenceSpaces.WeightedSquareSums
@@ -619,7 +626,12 @@ run_cmd do
     ``NLS.SequenceSpaces.weighted_cutoff_denominator_lower,
     ``NLS.SequenceSpaces.corrected_weighted_gap_tail_exponent_le_one,
     ``NLS.SpectralWeight.nat_weight_le_fixed_shift_realExtension,
-    ``NLS.SpectralWeight.ceil_eight_rpow_weight_bound]
+    ``NLS.SpectralWeight.ceil_eight_rpow_weight_bound,
+    ``NLS.SpectralWeight.product,
+    ``NLS.SpectralWeight.product_apply,
+    ``NLS.SpectralWeight.sobolev_product_dominates,
+    ``NLS.SpectralWeight.ceiling_cutoff_weight_le,
+    ``NLS.SequenceSpaces.ceiling_weighted_cutoff_le_quadratic]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

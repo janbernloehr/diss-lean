@@ -365,7 +365,7 @@
         "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
         "NLS.KdV.hillRealGapIntegral_le_chi_bound"
       ],
-      "remaining": "Theorem 2 is proved for the exact source Arnold actions and exact physical/Fourier Sobolev norms. Main Theorems 1 and 3 remain unverified. The uniform actual action-gap and weighted tail bounds are integrated; the full Theorem 3(ii) action bound has passed a strict scratch check and a standard-axiom audit but still requires integration and full milestone validation. The physical KdV Birkhoff map and its action identity remain essential for Theorems 1 and 3(i).",
+      "remaining": "Theorem 2 and the action inequality Theorem 3(ii) are proved for the exact source Arnold actions. Main Theorems 1 and 3 as a whole remain unverified: the physical KdV Birkhoff map and its action identity are still essential for their coordinate conclusions. The next spectral dependency is rough real Dirichlet zero reality and interlacing/norming data for the actual coordinate construction.",
       "checked_hill_uniform_critical_action_tail": [
         "NLS.SequenceSpaces.nonneg_series_cauchy_schwarz",
         "NLS.SequenceSpaces.square_sum_le_of_weight_lower_bound",
@@ -385,6 +385,29 @@
         "NLS.KdV.hillPeriodOne_critical_log_tail_le_one",
         "NLS.KdV.hillPeriodOneAction_uniform_gap_bound",
         "NLS.KdV.hillWeightedActionTail_uniform_bound"
+      ],
+      "checked_weighted_action_estimate": [
+        "NLS.SpectralWeight.product",
+        "NLS.SpectralWeight.product_apply",
+        "NLS.SpectralWeight.sobolev_product_dominates",
+        "NLS.SpectralWeight.ceiling_cutoff_weight_le",
+        "NLS.SequenceSpaces.ceiling_weighted_cutoff_le_quadratic",
+        "NLS.KdV.hillWeightedAction_head_bound",
+        "NLS.KdV.hillWeightedAction_total_cutoff_bound",
+        "NLS.KdV.hillWeightedAction_total_norm_bound",
+        "NLS.Articles.KdVEstimates.theorem3_actions",
+        "NLS.Articles.KdVEstimates.theorem3_arnold",
+        "NLS.KdV.hillL2FrequencyDirichlet",
+        "NLS.KdV.analyticOnNhd_hillL2FrequencyDirichlet_joint",
+        "NLS.KdV.hillL2FrequencyDirichlet_eq_classical",
+        "NLS.KdV.hillL2FrequencyDirichlet_even",
+        "NLS.KdV.hillL2DirichletCharacteristic",
+        "NLS.KdV.analyticOnNhd_hillL2DirichletCharacteristic_joint",
+        "NLS.KdV.hillL2DirichletCharacteristic_sq",
+        "NLS.KdV.analyticOnNhd_hillL2DirichletCharacteristic",
+        "NLS.KdV.hillL2DirichletCharacteristic_eq_classical",
+        "NLS.KdV.classicalHillFlow_energy_im_eq_zero_of_dirichlet",
+        "NLS.KdV.hillL2DirichletCharacteristic_zero_real_of_continuous"
       ]
     },
     {
@@ -403,7 +426,7 @@
         "NLS.Articles.KdVEstimates.theorem2_physical",
         "NLS.Articles.KdVEstimates.theorem2_continuous"
       ],
-      "remaining": "No proof obligations remain for Theorem 2 under the source\u2019s explicit Arnold contour definition of I_n. The construction of the Birkhoff map itself is a separate dependency of Theorems 1 and 3(i).",
+      "remaining": "No proof obligations remain for Theorem 2 under the source\u2019s defining Arnold contour action formula. The physical Birkhoff map is a separate dependency of the coordinate theorems.",
       "status": "verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -794,7 +817,10 @@
         "inequalities": "Both displayed inequalities, all exponents and the lower norm/order m-1 agree with the source. The forward and inverse results are proved from the physical hierarchy and global action-moment comparisons.",
         "axioms_and_validation": "The declarations and all their dependencies are covered by the current strict focused build and transitive axiom audit; source and validation-input hashes are recorded in verification.json. No coordinate-map existence or unproved action identity is assumed.",
         "scope": "This verification applies to Theorem 2 as the source action theorem defined by its contour formula. It does not assert that a physical Birkhoff coordinate map has been constructed."
-      }
+      },
+      "checked_dirichlet_progress": [
+        "NLS.KdV.hillL2DirichletCharacteristic"
+      ]
     },
     {
       "label": "Theorem 3",
@@ -810,7 +836,7 @@
         "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "Theorem 2 is proved for the exact source Arnold actions and exact physical/Fourier Sobolev norms. Main Theorems 1 and 3 remain unverified. The uniform actual action-gap and weighted tail bounds are integrated; the full Theorem 3(ii) action bound has passed a strict scratch check and a standard-axiom audit but still requires integration and full milestone validation. The physical KdV Birkhoff map and its action identity remain essential for Theorems 1 and 3(i).",
+      "remaining": "Part (ii) is proved, with exact source weights, domain, quantifier order and Arnold normalization. Part (i) still requires the actual physical Birkhoff coordinate map and its action identity.",
       "status": "not_verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -1149,7 +1175,47 @@
         "NLS.KdV.hillPeriodOne_critical_log_tail_le_one",
         "NLS.KdV.hillPeriodOneAction_uniform_gap_bound",
         "NLS.KdV.hillWeightedActionTail_uniform_bound"
-      ]
+      ],
+      "checked_weighted_action_estimate": [
+        "NLS.SpectralWeight.product",
+        "NLS.SpectralWeight.product_apply",
+        "NLS.SpectralWeight.sobolev_product_dominates",
+        "NLS.SpectralWeight.ceiling_cutoff_weight_le",
+        "NLS.SequenceSpaces.ceiling_weighted_cutoff_le_quadratic",
+        "NLS.KdV.hillWeightedAction_head_bound",
+        "NLS.KdV.hillWeightedAction_total_cutoff_bound",
+        "NLS.KdV.hillWeightedAction_total_norm_bound",
+        "NLS.Articles.KdVEstimates.theorem3_actions",
+        "NLS.Articles.KdVEstimates.theorem3_arnold",
+        "NLS.KdV.hillL2FrequencyDirichlet",
+        "NLS.KdV.analyticOnNhd_hillL2FrequencyDirichlet_joint",
+        "NLS.KdV.hillL2FrequencyDirichlet_eq_classical",
+        "NLS.KdV.hillL2FrequencyDirichlet_even",
+        "NLS.KdV.hillL2DirichletCharacteristic",
+        "NLS.KdV.analyticOnNhd_hillL2DirichletCharacteristic_joint",
+        "NLS.KdV.hillL2DirichletCharacteristic_sq",
+        "NLS.KdV.analyticOnNhd_hillL2DirichletCharacteristic",
+        "NLS.KdV.hillL2DirichletCharacteristic_eq_classical",
+        "NLS.KdV.classicalHillFlow_energy_im_eq_zero_of_dirichlet",
+        "NLS.KdV.hillL2DirichletCharacteristic_zero_real_of_continuous"
+      ],
+      "part_statuses": {
+        "(i)": "not_verified",
+        "(ii)": "verified"
+      },
+      "proved_matching_part_declarations": {
+        "(ii)": [
+          "NLS.Articles.KdVEstimates.theorem3_actions",
+          "NLS.Articles.KdVEstimates.theorem3_arnold"
+        ]
+      },
+      "action_part_completion_audit": {
+        "domain_and_weight": "The exact source class w(n)=(1+|n|)^r*v(n), 0<=r<=1/2, v in M is constructed as SpectralWeight.product (sobolev r) v. RealHillWeightedPotential w with coefficient 0 at index 0 is the real mean-zero Fourier H^w domain.",
+        "quantifier_order": "A positive constant c is chosen after r and v, before every potential; the final conclusion contains no supplied spectral family, cutoff parameter, additional regularity, or unproved coordinate/action hypothesis.",
+        "normalization_and_topology": "The norm is the weighted Fourier l2 norm with w(2k); the real piecewise-linear weight extension is evaluated at exactly 16*||q||_w^(3/2-r). The action is the verified actual source Arnold contour with the energy canonical-root product. The full positive-index action series is summable.",
+        "constant_correction": "The checked gap-tail remainder is 2304 rather than 576. This is absorbed in a valid larger c; the explicit weight argument and all powers remain unchanged.",
+        "scope": "This verifies Theorem 3(ii), which is an action statement. Theorem 3(i) and the main theorem as a whole remain unverified until the physical Birkhoff-coordinate map is constructed."
+      }
     }
   ],
   "associated_corollaries": [
@@ -1752,7 +1818,7 @@
     }
   ],
   "next_shared_milestones": [
-    "Assemble the finite-head weighted action bound from the exact quadratic L2 trace and the uniform weighted action tail. Set K=ceil(8*max(1,||q||_w)^(3/2-r)), absorb ceiling shifts using w(3), handle the small-norm case with a fixed weight constant, and preserve the explicit real weight argument 16*||q||_w^(3/2-r). Then continue the physical Birkhoff/action identification and precise final main statements.",
+    "Extend Dirichlet zero reality to real rough L2 potentials using the actual rough scalar Green identity or a verified nonzero analytic-limit argument. Establish ordered/interlacing gap labels and norming data needed for the physical KdV normalized Abelian angles and coordinate/action construction. Preserve the verified Theorem 2 and Theorem 3(ii) action conclusions; do not substitute arbitrary phases or conditional coordinate adapters.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Prove explicit norm-dependent action-gap bounds with the source cutoff/weight evaluation, then Hamiltonian/higher-action trace identities and the tame action estimates for Theorem 2. The potential-dependent eventual bound n*I_n<=gamma_n^2, weighted action summability and the high Proposition 5 comparison at cutoff eight are now checked.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -4228,6 +4294,46 @@
     "hypotheses": "Real even-supported Fourier L2 potentials for the raw product/action estimates; K >= 2, n > K and 8||q|| <= K. The uniform period-one weighted result uses Q >= 1, ||q||_w <= Q, 0 <= r <= 1/2, 8*Q^(3/2-r) <= K, and w(2*m) >= m^r for all m >= 1. No mean-zero assumption is needed for these tail results. Collapsed gaps are included. The weight-shift and ceiling lemmas apply to every SpectralWeight.",
     "result": "A shared reciprocal quadratic separation lemma proves that the tail sum of inverse squared separations is at most 1/N^2. Nonnegative-series Cauchy\u2013Schwarz and a lower weight bound give a square bound for the weighted critical logarithmic tail. The corrected gap-tail remainder is 2304. Shared real power inequalities show the logarithmic tail is at most 1 when Q >= max(1,||q||), N >= 8*Q^(3/2-r), and 0 <= r <= 1/2, provided the weight dominates N^r on the tail. A shared complex infinite-product bound controls the product by exp of that tail. Splitting the actual chi product into the finite head and infinite tail and combining the existing telescope with the actual spectral ground lower bound gives a ground-normalized head bound (K+1)/n for K >= 2 and 8||q|| <= K. Thus n*I_n <= (K+1)*exp(S)*gap_n^2. For the exact period-one embedding and a weight dominating m^r, the norm-dependent cutoff gives n*I_n <= (K+1)*exp(1)*gap_n^2 and an explicit tail bound with coefficient 2*pi*(K+1)*exp(1). Shared interpolation lemmas absorb shifts by at most 2 into w(3) and prove w(2*ceil(8*Q^a)) <= w(3)*w[16*Q^a], preserving the source weight argument. Theorem 2 is proved for the exact source Arnold actions and exact physical/Fourier Sobolev norms. Main Theorems 1 and 3 remain unverified. The uniform actual action-gap and weighted tail bounds are integrated; the full Theorem 3(ii) action bound has passed a strict scratch check and a standard-axiom audit but still requires integration and full milestone validation. The physical KdV Birkhoff map and its action identity remain essential for Theorems 1 and 3(i).",
     "qualification": "Theorem 2 is verified using the source\u2019s explicit contour definition of I_n; no Birkhoff-coordinate theorem is assumed for this action result. The uniform actual action-gap and weighted tail bounds in this milestone are proved. The full Theorem 3(ii) action inequality is checked only in scratch until its six-module integration is validated. The source gap remainder 576 is replaced by the checked 2304 and larger outer constants. The exact source weight argument 16*||q||_w^(3/2-r) is preserved. Main Theorems 1 and 3 remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
-    "remaining": "Theorem 2 is proved for the exact source Arnold actions and exact physical/Fourier Sobolev norms. Main Theorems 1 and 3 remain unverified. The uniform actual action-gap and weighted tail bounds are integrated; the full Theorem 3(ii) action bound has passed a strict scratch check and a standard-axiom audit but still requires integration and full milestone validation. The physical KdV Birkhoff map and its action identity remain essential for Theorems 1 and 3(i)."
+    "remaining": "Theorem 2 is proved for the exact source Arnold actions and exact physical/Fourier Sobolev norms. Main Theorems 1 and 3 remain unverified. The uniform actual action-gap and weighted tail bounds are integrated; the full Theorem 3(ii) action bound has passed a strict scratch check and a standard-axiom audit but still requires integration and full milestone validation. The physical KdV Birkhoff map and its action identity remain essential for Theorems 1 and 3(i).",
+    "weighted_total_progress": "The weighted_action_estimate section completes the source Theorem 3(ii) positive-index action inequality, including the finite head, exact real weight argument and quantifier order."
+  },
+  "weighted_action_estimate": {
+    "modules": [
+      "NLS/SequenceSpaces/SpectralWeightProduct.lean",
+      "NLS/SequenceSpaces/SpectralWeightCeilingCutoff.lean",
+      "NLS/SequenceSpaces/QuadraticCutoffRounding.lean",
+      "NLS/KdV/HillWeightedActionHead.lean",
+      "NLS/KdV/HillWeightedActionEstimate.lean",
+      "NLS/Articles/KdVEstimates/WeightedActionEstimate.lean",
+      "NLS/KdV/HillL2DirichletCharacteristic.lean"
+    ],
+    "declarations": [
+      "NLS.SpectralWeight.product",
+      "NLS.SpectralWeight.product_apply",
+      "NLS.SpectralWeight.sobolev_product_dominates",
+      "NLS.SpectralWeight.ceiling_cutoff_weight_le",
+      "NLS.SequenceSpaces.ceiling_weighted_cutoff_le_quadratic",
+      "NLS.KdV.hillWeightedAction_head_bound",
+      "NLS.KdV.hillWeightedAction_total_cutoff_bound",
+      "NLS.KdV.hillWeightedAction_total_norm_bound",
+      "NLS.Articles.KdVEstimates.theorem3_actions",
+      "NLS.Articles.KdVEstimates.theorem3_arnold",
+      "NLS.KdV.hillL2FrequencyDirichlet",
+      "NLS.KdV.analyticOnNhd_hillL2FrequencyDirichlet_joint",
+      "NLS.KdV.hillL2FrequencyDirichlet_eq_classical",
+      "NLS.KdV.hillL2FrequencyDirichlet_even",
+      "NLS.KdV.hillL2DirichletCharacteristic",
+      "NLS.KdV.analyticOnNhd_hillL2DirichletCharacteristic_joint",
+      "NLS.KdV.hillL2DirichletCharacteristic_sq",
+      "NLS.KdV.analyticOnNhd_hillL2DirichletCharacteristic",
+      "NLS.KdV.hillL2DirichletCharacteristic_eq_classical",
+      "NLS.KdV.classicalHillFlow_energy_im_eq_zero_of_dirichlet",
+      "NLS.KdV.hillL2DirichletCharacteristic_zero_real_of_continuous"
+    ],
+    "source_correspondence": "Theorem 3(ii), source printed page 4; Section 5 finite-head/tail proof, printed pages 24\u201325, with the exact piecewise-linear weight argument. The new Dirichlet characteristic begins the spectral dependency for the physical Birkhoff coordinates in Theorems 1 and 3(i).",
+    "hypotheses": "For Theorem 3(ii): r in [0,1/2], every v in the normalized symmetric monotone submultiplicative spectral-weight class, w=<n>^r*v, and every real mean-zero period-one potential in the exact Fourier H^w space. The constant c depends only on w and r and precedes every potential. The rough Dirichlet characteristic and its analyticity hold for every complex L2 coefficient potential; real-zero reality in this milestone is only asserted for real continuous potentials.",
+    "result": "The finite weighted action head is bounded by w(2K)^2*||q||_w^2/2 using the exact quadratic L2 trace and the coefficient-preserving weight inclusion. For K=ceil(8*max(1,||q||_w)^(3/2-r)), a shared rounding lemma gives K+1 <= 10*(1+||q||_w)^2. A shared spectral-weight product constructs precisely w=<n>^r*v; its values dominate the required tail powers. The uniform action tail and finite head combine into the full weighted action estimate with outer coefficient 5000*pi*exp(1)+(w(16)*w(3))^2. Ceiling shifts and the small-norm case are absorbed by fixed weight values, preserving the exact dynamic real weight argument 16*||q||_w^(3/2-r). The article declarations theorem3_actions and theorem3_arnold place a positive c before every real mean-zero potential, use the exact positive-index weight w(2n)^2*(2*pi*n), and give the source c^2 inequality. The latter is stated directly with the actual source Arnold contour formula. Separately, the actual rough L2 Dirichlet characteristic is constructed from the physical first-order solution with scalar initial position 0 and derivative 1. Joint frequency analyticity, exact classical agreement and finite Fourier density prove frequency evenness. Entire even descent then gives joint energy/potential analyticity, including energy 0, and exact squared-frequency/classical identities. The scalar Green identity proves reality of Dirichlet zeros for real continuous potentials. Theorem 2 and the action inequality Theorem 3(ii) are proved for the exact source Arnold actions. Main Theorems 1 and 3 as a whole remain unverified: the physical KdV Birkhoff map and its action identity are still essential for their coordinate conclusions. The next spectral dependency is rough real Dirichlet zero reality and interlacing/norming data for the actual coordinate construction.",
+    "qualification": "Theorem 2 and Theorem 3(ii) are verified as source action statements because the source explicitly defines I_n by the Arnold contour formula, which is exactly identified here. This does not construct the physical Birkhoff coordinate map or assume a coordinate/action identity. The source gap-tail remainder 576 is replaced by the checked 2304, increasing permitted outer constants. No change is made to the explicit weight argument 16*||q||_w^(3/2-r). Main Theorems 1 and 3 as a whole remain not_verified. The Dirichlet real-zero result is not yet extended to rough potentials. Full Lake rebuild and full repository examples were not rerun.",
+    "remaining": "Theorem 2 and the action inequality Theorem 3(ii) are proved for the exact source Arnold actions. Main Theorems 1 and 3 as a whole remain unverified: the physical KdV Birkhoff map and its action identity are still essential for their coordinate conclusions. The next spectral dependency is rough real Dirichlet zero reality and interlacing/norming data for the actual coordinate construction."
   }
 }

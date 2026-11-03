@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 3262,
+    "declarations": 3297,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -321,10 +321,15 @@
       "NLS.SequenceSpaces.weighted_cutoff_denominator_lower",
       "NLS.SequenceSpaces.corrected_weighted_gap_tail_exponent_le_one",
       "NLS.SpectralWeight.nat_weight_le_fixed_shift_realExtension",
-      "NLS.SpectralWeight.ceil_eight_rpow_weight_bound"
+      "NLS.SpectralWeight.ceil_eight_rpow_weight_bound",
+      "NLS.SpectralWeight.product",
+      "NLS.SpectralWeight.product_apply",
+      "NLS.SpectralWeight.sobolev_product_dominates",
+      "NLS.SpectralWeight.ceiling_cutoff_weight_le",
+      "NLS.SequenceSpaces.ceiling_weighted_cutoff_le_quadratic"
     ]
   },
-  "full_repository_validation": "All 327 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3262-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 334 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3297-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -653,10 +658,17 @@
     "NLS/SequenceSpaces/SpectralWeightFixedShift.lean": "0c992bff23d3c5825488acb0b330645c8e4e17e22b7380780f83c30065cd2787",
     "NLS/KdV/HillCriticalProductBounds.lean": "1740f2fdde3049348a293a3d0063e617286fe3e8001b3e27b0a342193de5ff3d",
     "NLS/KdV/HillWeightedCriticalTail.lean": "553ade100926434173ffabe36870bac2716cc97a21e8cfa318e163a6e1166d7f",
-    "NLS/KdV/HillUniformActionGapBound.lean": "ccb9b1ca3aafa691cfe7c21867f54eb57b102aebf76fe888017d6fa50988eb9c"
+    "NLS/KdV/HillUniformActionGapBound.lean": "ccb9b1ca3aafa691cfe7c21867f54eb57b102aebf76fe888017d6fa50988eb9c",
+    "NLS/SequenceSpaces/SpectralWeightProduct.lean": "96b1d409e322e96d39206ebecad961bc5acd59b3cc3be9adaa25f78bd8447893",
+    "NLS/SequenceSpaces/SpectralWeightCeilingCutoff.lean": "45f4691883a97845268575450357b0c375036bb48214a0f690d55402b28f20f8",
+    "NLS/SequenceSpaces/QuadraticCutoffRounding.lean": "d2ff1870c8a75acd086a2e8d747075c753e2283b5cde6cc14bd92f791f31cc0e",
+    "NLS/KdV/HillWeightedActionHead.lean": "2babce374a15ed59470d578eaa2c27dc14448f1f1fbe9b5df7f2b229509ca863",
+    "NLS/KdV/HillWeightedActionEstimate.lean": "9f0abde12f6470388fed4a84f9b5441e94639e0b8a5e62a30461104b641f16b3",
+    "NLS/Articles/KdVEstimates/WeightedActionEstimate.lean": "5087b936c1fe69cab53ccf20f0fef5b15aaf9075cc4774434d2c996b0bb1d787",
+    "NLS/KdV/HillL2DirichletCharacteristic.lean": "a8907e46c53674f5a8673ef1923626564e3c3da6e5adbe3faf0b12ad55a80f9b"
   },
-  "remaining": "Theorem 2 is proved for the exact source Arnold actions and exact physical/Fourier Sobolev norms. Main Theorems 1 and 3 remain unverified. The uniform actual action-gap and weighted tail bounds are integrated; the full Theorem 3(ii) action bound has passed a strict scratch check and a standard-axiom audit but still requires integration and full milestone validation. The physical KdV Birkhoff map and its action identity remain essential for Theorems 1 and 3(i).",
-  "milestone": "Uniform Hill critical-product and actual weighted action-tail estimates",
+  "remaining": "Theorem 2 and the action inequality Theorem 3(ii) are proved for the exact source Arnold actions. Main Theorems 1 and 3 as a whole remain unverified: the physical KdV Birkhoff map and its action identity are still essential for their coordinate conclusions. The next spectral dependency is rough real Dirichlet zero reality and interlacing/norming data for the actual coordinate construction.",
+  "milestone": "Theorem 3(ii) weighted source actions and entire rough Hill Dirichlet characteristic",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -986,7 +998,14 @@
     "NLS.SequenceSpaces.SpectralWeightFixedShift",
     "NLS.KdV.HillCriticalProductBounds",
     "NLS.KdV.HillWeightedCriticalTail",
-    "NLS.KdV.HillUniformActionGapBound"
+    "NLS.KdV.HillUniformActionGapBound",
+    "NLS.SequenceSpaces.SpectralWeightProduct",
+    "NLS.SequenceSpaces.SpectralWeightCeilingCutoff",
+    "NLS.SequenceSpaces.QuadraticCutoffRounding",
+    "NLS.KdV.HillWeightedActionHead",
+    "NLS.KdV.HillWeightedActionEstimate",
+    "NLS.Articles.KdVEstimates.WeightedActionEstimate",
+    "NLS.KdV.HillL2DirichletCharacteristic"
   ],
   "proof_commits": [
     {
@@ -1278,6 +1297,11 @@
       "commit": "2bf9a00275efd5d8ea4c06483cba999d88f591d2",
       "scope": "Strict real positivity of chi on closed gaps, low-product telescoping and exact real action formula with conditional quadratic bound; 318 strict modules, 3205-declaration audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "3e7586c985a401a641cf22032c92d1519fd070c6",
+      "scope": "Uniform Hill critical-product/action-tail estimates and completed source Theorem 2 correspondence; 327 strict modules, 3262-declaration transitive axiom audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -1294,20 +1318,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 327 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 334 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 3262 declarations. Includes shared nonnegative-series Cauchy\u2013Schwarz, weighted square sums, inverse quadratic separation and its tail, norm product exponential bound, real cutoff powers and fixed-shift weight interpolation; actual chi product split, ground-normalized low product, exponential-tail action estimate, corrected weighted critical logarithmic tail, uniform logarithmic tail <=1, actual period-one uniform action-gap bound and weighted action-tail bound.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 3297 declarations. Includes spectral-weight products, Sobolev domination, fixed-shift ceiling weight bounds, quadratic cutoff rounding, finite weighted head via the actual quadratic trace, complete weighted action bound, exact source Theorem 3(ii) statements in gap-integral and Arnold-contour form, and the actual rough Dirichlet characteristic with energy analyticity and classical real-zero result.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 327 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3262-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 334 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3297-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "A shared reciprocal quadratic separation lemma proves that the tail sum of inverse squared separations is at most 1/N^2. Nonnegative-series Cauchy\u2013Schwarz and a lower weight bound give a square bound for the weighted critical logarithmic tail. The corrected gap-tail remainder is 2304. Shared real power inequalities show the logarithmic tail is at most 1 when Q >= max(1,||q||), N >= 8*Q^(3/2-r), and 0 <= r <= 1/2, provided the weight dominates N^r on the tail. A shared complex infinite-product bound controls the product by exp of that tail. Splitting the actual chi product into the finite head and infinite tail and combining the existing telescope with the actual spectral ground lower bound gives a ground-normalized head bound (K+1)/n for K >= 2 and 8||q|| <= K. Thus n*I_n <= (K+1)*exp(S)*gap_n^2. For the exact period-one embedding and a weight dominating m^r, the norm-dependent cutoff gives n*I_n <= (K+1)*exp(1)*gap_n^2 and an explicit tail bound with coefficient 2*pi*(K+1)*exp(1). Shared interpolation lemmas absorb shifts by at most 2 into w(3) and prove w(2*ceil(8*Q^a)) <= w(3)*w[16*Q^a], preserving the source weight argument. Theorem 2 is proved for the exact source Arnold actions and exact physical/Fourier Sobolev norms. Main Theorems 1 and 3 remain unverified. The uniform actual action-gap and weighted tail bounds are integrated; the full Theorem 3(ii) action bound has passed a strict scratch check and a standard-axiom audit but still requires integration and full milestone validation. The physical KdV Birkhoff map and its action identity remain essential for Theorems 1 and 3(i).",
-    "scope": "All 327 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3262-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "The finite weighted action head is bounded by w(2K)^2*||q||_w^2/2 using the exact quadratic L2 trace and the coefficient-preserving weight inclusion. For K=ceil(8*max(1,||q||_w)^(3/2-r)), a shared rounding lemma gives K+1 <= 10*(1+||q||_w)^2. A shared spectral-weight product constructs precisely w=<n>^r*v; its values dominate the required tail powers. The uniform action tail and finite head combine into the full weighted action estimate with outer coefficient 5000*pi*exp(1)+(w(16)*w(3))^2. Ceiling shifts and the small-norm case are absorbed by fixed weight values, preserving the exact dynamic real weight argument 16*||q||_w^(3/2-r). The article declarations theorem3_actions and theorem3_arnold place a positive c before every real mean-zero potential, use the exact positive-index weight w(2n)^2*(2*pi*n), and give the source c^2 inequality. The latter is stated directly with the actual source Arnold contour formula. Separately, the actual rough L2 Dirichlet characteristic is constructed from the physical first-order solution with scalar initial position 0 and derivative 1. Joint frequency analyticity, exact classical agreement and finite Fourier density prove frequency evenness. Entire even descent then gives joint energy/potential analyticity, including energy 0, and exact squared-frequency/classical identities. The scalar Green identity proves reality of Dirichlet zeros for real continuous potentials. Theorem 2 and the action inequality Theorem 3(ii) are proved for the exact source Arnold actions. Main Theorems 1 and 3 as a whole remain unverified: the physical KdV Birkhoff map and its action identity are still essential for their coordinate conclusions. The next spectral dependency is rough real Dirichlet zero reality and interlacing/norming data for the actual coordinate construction.",
+    "scope": "All 334 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3297-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "2321b11e4b2284ef078f547a8b248b7c85e7764c25a3b6f4298a5cab5bdcdf85",
-      "scripts/check-kdv-estimates.sh": "2372dea1238bc96be0c0b1dffc113cc430eead3a93b2ac8a37eeddeb650ab509",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "68b68a2eec0ba4be1993ebdf729be96e29c95724b55d697fdb9c875a4f45e1f4"
+      "NLS.lean": "9b46841c6405023561cf712b6fb0e10ed009fb785858542b0d1d5265c421d141",
+      "scripts/check-kdv-estimates.sh": "0198402e7d5ee7b24758cf58c1383e6cc9d79fa5957f16bf567fdeeacba0c627",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "682eb339196813c5a9c68696ad2ed93411a31edea4fa2d4e0b77754b24f83a42"
     }
   },
   "warningAsError": true,
@@ -1414,9 +1438,9 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Uniform Hill critical-product and actual weighted action-tail estimates",
-    "focused_modules": 327,
-    "scope": "All 327 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3262-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Theorem 3(ii) weighted source actions and entire rough Hill Dirichlet characteristic",
+    "focused_modules": 334,
+    "scope": "All 334 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3297-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",
