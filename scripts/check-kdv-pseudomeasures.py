@@ -655,6 +655,14 @@ modules = [
     'NLS.KdV.HillNormalizedResolvent',
     'NLS.Articles.KdVPseudomeasures.PeriodicNormalizedResolvent',
     'NLS.KdV.HillHalfPhysicalMaps',
+    'NLS.KdV.HillNormalizedFreeInverse',
+    'NLS.KdV.SingularHillContinuousResolvent',
+    'NLS.KdV.HillPhysicalResolventFactorization',
+    'NLS.KdV.HillPeriodicProjectionBound',
+    'NLS.KdV.HillPeriodicProjectionConvergence',
+    'NLS.KdV.HillFreeRieszFourier',
+    'NLS.Articles.KdVPseudomeasures.PeriodicProjectionConvergence',
+    'NLS.Articles.KdVPseudomeasures.PeriodicEndpointProjectionConvergence',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

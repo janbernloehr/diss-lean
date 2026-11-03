@@ -1,7 +1,7 @@
 {
   "source": "arXiv:1610.00278v1, normalized S_lambda perturbation step of Appendix C.4 (cited [7, Lemma 25]); dependencies toward periodic (33), 2.14, quantitative 2.13 and complex Theorem 2.1(ii)",
   "date": "2026-11-03",
-  "status": "The original half-denominator/S_lambda estimates are proved. The subsequent actual full native half-map, phase inverse and native pencil/resolvent factorization are now proved in hill-normalized-resolvent-map.json. Periodic contour convergence and full C.4 remain OPEN.",
+  "status": "The half-denominator/S_lambda/native-factorization milestones are proved. Subsequent actual physical periodic contour convergence, exact free two-mode projector, source C.4(i) rate and original endpoint periodic (33) are now proved in periodic-projection-convergence-map.json. Dirichlet C.4(ii) rate, source 2.14 and main theorems remain OPEN.",
   "modules": [
     "NLS/KdV/HillWeightedReciprocal.lean",
     "NLS/KdV/HillSandwichRows.lean",
@@ -86,18 +86,20 @@
     "source_Lemma2_13_eta_bound_proved": false,
     "source_Lemma2_13_complete": false,
     "source_Lemma2_14_proved": false,
-    "source33_periodic_convergence_proved": false,
+    "source33_periodic_convergence_proved": true,
     "source_AppendixC4_logarithmic_rate_proved": false,
     "source_identity31_complete": false,
     "source_overlap_bound32_proved": false,
     "source_Lemma2_15_proved": false,
     "source_Theorem2_1_ii_proved": false,
-    "main_theorems_verified": false
+    "main_theorems_verified": false,
+    "source_AppendixC4_i_logarithmic_rate_proved": true,
+    "source_AppendixC4_ii_logarithmic_rate_proved": false
   },
   "essential_remaining": [
-    "Compose the newly PROVED actual native resolvent factorization with the newly identified physical half-maps. Prove the physical L2-to-continuous resolvent DIFFERENCE estimate using the exact normalized inverse difference and its at-most-two-times-S bound.",
-    "Integrate the ACTUAL analytic original H1 resolvent difference on the ENTIRE LITERAL original source contour. Prove periodic projection convergence and the C.4 quantitative rate in continuous-output, L-infinity and L2 operator norms. The newly PROVED native factorization does NOT itself complete the contour estimate.",
-    "Use periodic projection control for source 2.14, quantitative eta estimate 2.13 and overlap (32)/2.15. Complete full periodic-to-Dirichlet residual (31), precise C.4 Dirichlet rate, full COMPLEX weighted midpoint 2.1(ii), and remaining original Birkhoff/KdV approximation-flow constructions. All five MAIN theorems 1.1, 1.3, 1.4, 5.1 and 5.9 remain UNPROVED; goal ACTIVE."
+    "Apply the NEW actual periodic projection convergence and exact free Fourier projector to prove the source 2.14 one-half free-mode lower bound on ALL original high eigenspaces, retaining the original finite-p eigenfunction domain and locally uniform original endpoint cutoff. Combine it with the already proved canonical eta/gamma IDENTITY and actual reduction estimates to prove the QUANTITATIVE eta bound in source 2.13.",
+    "Use the now PROVED periodic part of source (33) together with the already PROVED actual Dirichlet o(1) projection convergence and literal free kernels to prove the full periodic-to-Dirichlet residual (31), overlap (32) and source 2.15. The quantitative Dirichlet C.4(ii) RATE remains OPEN; only the periodic C.4(i) rate is complete.",
+    "Complete the full COMPLEX weighted midpoint estimate 2.1(ii), remaining low periodic parity/interlacing and complex ratio 2.20 where used, original Birkhoff maps and actual KdV approximation-flow constructions. All five MAIN theorems 1.1, 1.3, 1.4, 5.1 and 5.9 remain UNPROVED; goal ACTIVE."
   ],
   "source_correspondence": {
     "potential": "ENTIRE ORIGINAL complex FourierLebesgueSpace(2,-r,2) distribution, 0<=r<=1 for the squared norm estimate and 0<=r<1 for uniform smallness. The full source range -1<t<-1/2 is included by r=-t.",
@@ -107,7 +109,7 @@
     "physical_norm": "Actual source periodic CircleL2 probability norm, EXACTLY the original half-integral normalization on [0,2]. Coefficient and physical operator norms are EQUAL. Potential norm is the EXACT original Sobolev norm, with no rescaling.",
     "bound": "norm(S_lambda)^2 <=128*(8*exp(1)+2)*log(n)*n^(2*r-2)*norm(q)_H^-r^2, for n>=1 and log(n)>1, uniformly for EVERY source-circle point. This gives the required decay for every r<1.",
     "uniformity": "For EACH original Sobolev norm bound R and EACH 0<=r<1, ONE cutoff N is chosen BEFORE EVERY original q in that norm ball, ALL later ORIGINAL positive n>=N and ALL source-circle points, giving actual physical norm(S_lambda)<=1/2.",
-    "not_claimed": "Periodic contour projection difference estimates, periodic (33), full C.4 rate, quantitative eta bound and main theorems remain OPEN. The former native half-map/phase/resolvent-factorization obligations are now PROVED; see actual_native_resolvent_followup for its exact source correspondence and validation."
+    "not_claimed": "Quantitative Dirichlet C.4(ii) rate, source 2.14, quantitative eta bound, full (31), overlap (32)/2.15 and main theorems remain OPEN. Periodic contour convergence and the periodic C.4(i) rate are now PROVED; see actual_periodic_projection_followup for its exact correspondence and validation."
   },
   "validation": {
     "result": "passed",
@@ -184,5 +186,34 @@
     "source_Theorem2_1_ii_proved": false,
     "main_theorems_verified": false
   },
-  "validation_scope": "The validation object records the original estimate milestone. The actual_native_resolvent_followup links the later 4161-declaration audited factorization milestone."
+  "validation_scope": "The validation object records this earlier milestone. actual_periodic_projection_followup links the later 4188-declaration audited actual contour convergence milestone.",
+  "actual_periodic_projection_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-projection-convergence-map.json",
+    "actual_physical_continuous_resolvent_constructed": true,
+    "actual_physical_resolvent_operator_analyticity": true,
+    "actual_native_contour_projection_integral_identified": true,
+    "actual_physical_normalized_resolvent_factorization": true,
+    "actual_physical_resolvent_difference_bound": true,
+    "actual_periodic_projection_one_logarithm_bound": true,
+    "actual_periodic_L2_Linf_and_continuous_projection_bounds": true,
+    "exact_actual_free_two_mode_contour_kernel": true,
+    "all_original_modes_retained": true,
+    "source_physical_L2_normalization_preserved": true,
+    "uniform_on_each_fixed_original_Sobolev_norm_ball": true,
+    "uniform_on_each_fixed_original_endpoint_norm_ball": true,
+    "original_HminusOne_distribution_identical": true,
+    "full_source_C4_regularity_range": true,
+    "source_AppendixC4_i_logarithmic_rate_proved": true,
+    "source_AppendixC4_ii_logarithmic_rate_proved": false,
+    "source_AppendixC4_logarithmic_rate_proved": false,
+    "source33_periodic_convergence_proved": true,
+    "source_Lemma2_14_proved": false,
+    "source_Lemma2_13_eta_bound_proved": false,
+    "source_Lemma2_13_complete": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
 }

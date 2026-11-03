@@ -621,6 +621,14 @@ import NLS.KdV.HillNormalizedPencil
 import NLS.KdV.HillNormalizedResolvent
 import NLS.Articles.KdVPseudomeasures.PeriodicNormalizedResolvent
 import NLS.KdV.HillHalfPhysicalMaps
+import NLS.KdV.HillNormalizedFreeInverse
+import NLS.KdV.SingularHillContinuousResolvent
+import NLS.KdV.HillPhysicalResolventFactorization
+import NLS.KdV.HillPeriodicProjectionBound
+import NLS.KdV.HillPeriodicProjectionConvergence
+import NLS.KdV.HillFreeRieszFourier
+import NLS.Articles.KdVPseudomeasures.PeriodicProjectionConvergence
+import NLS.Articles.KdVPseudomeasures.PeriodicEndpointProjectionConvergence
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4785,3 +4793,30 @@ import NLS.KdV.HillHalfPhysicalMaps
 #print axioms NLS.KdV.hillHalfToH1_physicalL2
 #print axioms NLS.KdV.hillHalfToH1_physicalContinuous
 #print axioms NLS.KdV.hillHalfFromBase_physicalL2
+#print axioms NLS.KdV.hillHalfSandwich_zero
+#print axioms NLS.KdV.hillNormalizedInverse_zero
+#print axioms NLS.KdV.singularHillContinuousResolvent
+#print axioms NLS.KdV.analyticAt_singularHillContinuousResolvent
+#print axioms NLS.KdV.singularHillContinuousRieszProjection_integral
+#print axioms NLS.KdV.norm_singularHillContinuousRieszProjection_sub_le_of_resolvent_bound
+#print axioms NLS.KdV.hillPhysicalHalfResolvent
+#print axioms NLS.KdV.singularHillContinuousResolvent_eq_half
+#print axioms NLS.KdV.singularHillContinuousResolvent_zero_eq_half
+#print axioms NLS.KdV.hillPhysicalHalfResolvent_sub
+#print axioms NLS.KdV.singularHillContinuousResolvent_sub_zero_eq_half
+#print axioms NLS.KdV.norm_hillPhysicalHalfResolvent_le
+#print axioms NLS.KdV.norm_singularHillContinuousResolvent_sub_zero_le_half
+#print axioms NLS.KdV.hillPeriodicProjectionConstant
+#print axioms NLS.KdV.hillPeriodicProjectionConstant_pos
+#print axioms NLS.KdV.norm_hillContinuousResolvent_sub_zero_mul_index_le
+#print axioms NLS.KdV.norm_hillContinuousRieszProjection_sub_zero_le_log
+#print axioms NLS.KdV.tendsto_hillPeriodicProjection_majorant
+#print axioms NLS.KdV.exists_uniform_hillPeriodicProjection_log_bound
+#print axioms NLS.KdV.exists_uniform_hillPeriodicProjection_sub_free_small
+#print axioms NLS.KdV.hillContinuousResolvent_zero_coefficient
+#print axioms NLS.KdV.hillContinuousRieszProjection_zero_coefficient
+#print axioms NLS.KdV.hillContinuousRieszProjection_zero_fourier_kernel
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicProjection_log_bound
+#print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicProjection_appendixC4
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicProjection_sub_free_small
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourceEndpointPeriodicProjection_sub_free_small
