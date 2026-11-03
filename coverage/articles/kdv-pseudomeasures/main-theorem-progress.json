@@ -178,7 +178,7 @@
     ]
   },
   "essential_open_obligations": [
-    "The full native scalar zero-trace interval H1 domain is now independently constructed and exhausts every classical H1 function with zero endpoints. Its FULL dual H-minus-one base, injective domain inclusion, weak spectral pencil and actual partial operator graph are constructed. A native eigen-equation has the exact endpoint-evaluation defect; no quasi-derivative periodicity is imposed. REMAINING: prove equivalence with the independent AC quasi-derivative problem and characteristic, native closedness/resolvent, and native algebraic multiplicities. Full REAL characteristic labels, central indexing, analytic multiplicities, n-times-L2 asymptotic, free values and real weighted midpoint membership remain proved. Global COMPLEX central scalar labels, full complex source 2.1(ii) midpoint estimates/local boundedness, remaining low periodic interlacing/parity, general complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved.",
+    "The full native Dirichlet domain, full H-minus-one dual base and exact partial operator are constructed. Native weak eigenvectors now recover full interval H1 quasi-derivatives and ACTUAL AC Dirichlet states, retaining the endpoint defect. For EVERY complex original H-minus-one source potential and EVERY complex energy, a nonzero native eigenvector forces the normalized scalar characteristic to vanish; the same holds for the actual partial operator and entire original physical source adapter. REMAINING: prove characteristic-zero/AC-state SUFFICIENCY for native eigenvectors, native closedness/resolvent, entire native spectrum and algebraic multiplicities. Full real characteristic labels and real general-weight midpoint membership remain proved. Global COMPLEX central labels, full complex source 2.1(ii) midpoint estimates/local boundedness, low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
@@ -469,7 +469,16 @@
     "The native H1-to-H-minus-one domain inclusion is injective and has strictly positive L2 quadratic energy on every nonzero domain vector. Physical conjugation preserves the zero-trace domain and agrees with native distributional conjugation. Both inclusion and singular weak operator retain the original bilinear Green identities.",
     "A native Dirichlet eigen-equation holds IFF the full unit-period residual is precisely a multiple of endpoint evaluation. At EVERY original even frequency its residual coefficient equals the CENTRAL residual coefficient. This retains the boundary defect and does NOT impose equal endpoint values on a quasi-derivative.",
     "Every nontrivial native weak Dirichlet eigenvector for a real original singular potential has REAL eigenvalue, independently of the constructed characteristic or any supplied spectral labels.",
-    "The actual partial linear operator acts on the FULL Dirichlet H-minus-one base, with domain exactly the image of the complete zero-trace H1 space. Its entire graph is identified with the weak operator graph, and its nonzero eigenvectors are equivalent to nonzero kernels of the independently defined native pencil."
+    "The actual partial linear operator acts on the FULL Dirichlet H-minus-one base, with domain exactly the image of the complete zero-trace H1 space. Its entire graph is identified with the weak operator graph, and its nonzero eigenvectors are equivalent to nonzero kernels of the independently defined native pencil.",
+    "At every actual unit Fourier frequency the derivative of an absolutely continuous function includes its EXACT endpoint jump. L2 data and an L1 forcing satisfying a Fourier derivative equation with a constant defect recover an absolutely continuous representative on the ENTIRE closed interval; its endpoint jump is minus the defect. Periodicity of the representative or derivative is not assumed.",
+    "The physical product of ANY two interval L2 functions has actual Fourier coefficients given by the FULL unconditionally convergent convolution of their unit coefficients. There is no extra Wiener or H1 hypothesis on either factor.",
+    "An interval L2 weak solution of v'=u*v+b, with arbitrary L2 coefficient and L2 forcing and an arbitrary constant boundary defect, has a full interval H1 representative. The recovered function has the prescribed almost-everywhere first-order ODE and EXACT endpoint jump. Its continuous representative makes u*v L2 and yields actual L2 derivative regularity.",
+    "The native H1 inclusion, unit-period derivative and multiplication by every L2 potential are identified with their literal physical unit-interval L2 functions. Their normalization is the original multiplier 2*pi*i*n; physical and Fourier representatives agree almost everywhere without smoothness assumptions.",
+    "For a native Dirichlet Miura eigenvector, the original coefficient quasi-derivative starts in L2. Exact period doubling transports the full distributional factorization. The resulting first-order coefficient equation contains the CENTRAL native residual as its boundary defect; that defect is not set to zero.",
+    "The native Miura weak eigen-equation recovers a full interval H1 quasi-derivative G. The pair consisting of the original H1 position and G satisfies BOTH literal physical quasi-Hill rows almost everywhere, and G(1)-G(0) is exactly the native central residual. No extra endpoint condition is imposed on G.",
+    "The recovered native Miura pair is an ACTUAL independently defined absolutely continuous Dirichlet weak state agreeing with the native position at EVERY closed-interval point. A nonzero native vector gives a nonzero scalar state and forces the independently normalized rough Dirichlet characteristic to vanish.",
+    "For EVERY complex original unit-period H-minus-one potential and EVERY complex energy, each nonzero native H1-to-H-minus-one Dirichlet eigenvector forces the entire normalized characteristic to vanish. The actual shifted Miura chart is selected by the proof, and the exact native constant-shift identity removes the shift. No realness, nonzero energy, high-frequency cutoff or supplied lift is assumed. The theorem also covers actual base-space eigenvectors of the Dirichlet partial operator.",
+    "On the article ENTIRE original real mean-zero physically period-one H-minus-one distribution domain, the same necessary characteristic condition is proved for the actual native weak and partial operators. Every native eigenvalue belongs to the complete original ordered characteristic-label sequence, including ALL central indices. The original distribution is retained unchanged on every smooth test."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -821,6 +830,19 @@
     "native_real_eigenvalues": true,
     "characteristic_equivalence": false,
     "native_resolvent_and_algebraic_multiplicities": false,
+    "source2_1_ii": false
+  },
+  "verified_native_dirichlet_necessity": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-necessity-map.json",
+    "weak_eigenvector_recovers_interval_H1_quasi_derivative": true,
+    "actual_AC_quasi_Hill_state": true,
+    "all_complex_original_Hminus_necessity": true,
+    "all_complex_energies_including_zero": true,
+    "actual_partial_operator_necessity": true,
+    "original_full_distribution_adapter": true,
+    "native_eigenvalues_in_original_characteristic_labels": true,
+    "characteristic_zero_sufficiency": false,
+    "full_native_spectrum_and_algebraic_multiplicities": false,
     "source2_1_ii": false
   }
 }

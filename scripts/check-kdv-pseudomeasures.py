@@ -493,6 +493,15 @@ modules = [
     'NLS.Fourier.UnitIntervalDirichletIdentification',
     'NLS.KdV.SingularDirichletPencil',
     'NLS.KdV.SingularDirichletOperatorDomain',
+    'NLS.Fourier.UnitIntervalWeakDerivative',
+    'NLS.Fourier.UnitIntervalL2Product',
+    'NLS.KdV.SingularDirichletMiuraEquation',
+    'NLS.Fourier.UnitIntervalFirstOrderRegularity',
+    'NLS.Fourier.UnitIntervalSobolevRealization',
+    'NLS.KdV.SingularDirichletMiuraRegularity',
+    'NLS.MKdV.QuasiHillL2IntervalState',
+    'NLS.KdV.SingularDirichletCharacteristicNecessity',
+    'NLS.Articles.KdVPseudomeasures.OriginalDirichletNecessity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

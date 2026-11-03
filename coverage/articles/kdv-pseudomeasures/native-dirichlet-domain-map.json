@@ -152,5 +152,13 @@
       "Contractive even Sobolev sampling",
       "Standard partial linear map graph API"
     ]
+  },
+  "weak_regularity_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-necessity-map.json",
+    "native_eigenvector_recovers_actual_AC_state": true,
+    "all_complex_original_characteristic_necessity": true,
+    "original_full_distribution_adapter": true,
+    "characteristic_zero_sufficiency": false,
+    "full_native_spectrum_and_algebraic_multiplicities": false
   }
 }

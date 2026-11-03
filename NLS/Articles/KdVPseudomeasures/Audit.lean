@@ -459,6 +459,15 @@ import NLS.Fourier.UnitIntervalDirichlet
 import NLS.Fourier.UnitIntervalDirichletIdentification
 import NLS.KdV.SingularDirichletPencil
 import NLS.KdV.SingularDirichletOperatorDomain
+import NLS.Fourier.UnitIntervalWeakDerivative
+import NLS.Fourier.UnitIntervalL2Product
+import NLS.KdV.SingularDirichletMiuraEquation
+import NLS.Fourier.UnitIntervalFirstOrderRegularity
+import NLS.Fourier.UnitIntervalSobolevRealization
+import NLS.KdV.SingularDirichletMiuraRegularity
+import NLS.MKdV.QuasiHillL2IntervalState
+import NLS.KdV.SingularDirichletCharacteristicNecessity
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletNecessity
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -3831,3 +3840,40 @@ import NLS.KdV.SingularDirichletOperatorDomain
 #print axioms NLS.KdV.singularDirichletPartialOperator_apply
 #print axioms NLS.KdV.singularDirichletPartialOperator_graph
 #print axioms NLS.KdV.singularDirichletPartialOperator_eigen_iff
+#print axioms NLS.Fourier.unitFourierCoefficient_deriv_of_ac
+#print axioms NLS.Fourier.unitFourierCoefficient_eq_intervalFourierCoefficient
+#print axioms NLS.Fourier.unitFourierCoefficient_congr_ae
+#print axioms NLS.Fourier.unitFourierCoefficient_const
+#print axioms NLS.Fourier.unitFourierCoefficient_add
+#print axioms NLS.Fourier.unitFourierCoefficient_add_const
+#print axioms NLS.Fourier.exists_ac_unitInterval_representative_of_fourier_equation
+#print axioms NLS.Fourier.memLp_unitInterval_mul_wave
+#print axioms NLS.Fourier.unitFourierCoefficient_mul_even_wave
+#print axioms NLS.Fourier.hasSum_unitFourierCoefficient_L2_product
+#print axioms NLS.Fourier.unitFourierCoefficient_L2_product
+#print axioms NLS.KdV.unitDirichletQuasiDerivative
+#print axioms NLS.KdV.potentialMul_periodDoubleSobolev
+#print axioms NLS.KdV.periodDouble_unitDirichletQuasiDerivative
+#print axioms NLS.KdV.unitDirichletMiuraDefect
+#print axioms NLS.KdV.unitDirichletMiura_eigen_weak_equation
+#print axioms NLS.Fourier.unitFourierCoefficient_unitL2Synthesis
+#print axioms NLS.Fourier.exists_intervalH1_of_weak_firstOrder
+#print axioms NLS.Fourier.unitL2Synthesis_eq_of_unitCoefficients
+#print axioms NLS.Fourier.unitL2Synthesis_scalarInclusion
+#print axioms NLS.Fourier.unitL2Synthesis_unitDerivative
+#print axioms NLS.Fourier.unitL2Synthesis_potentialMul
+#print axioms NLS.KdV.unitDirichletQuasiDerivative_representative
+#print axioms NLS.KdV.exists_intervalH1_quasiDerivative_of_native_eigen
+#print axioms NLS.KdV.native_Miura_first_row
+#print axioms NLS.MKdV.quasiHillIntervalState
+#print axioms NLS.MKdV.quasiHillIntervalState_apply
+#print axioms NLS.MKdV.extend_quasiHillIntervalState
+#print axioms NLS.MKdV.isQuasiHillL2Solution_intervalState
+#print axioms NLS.KdV.exists_quasiHill_state_of_native_Miura_eigen
+#print axioms NLS.KdV.quasiHillL2Dirichlet_eq_zero_of_native_eigen
+#print axioms NLS.KdV.singularDirichletOperator_source_add_constant
+#print axioms NLS.KdV.hillHminusDirichlet_eq_zero_of_native_eigen
+#print axioms NLS.KdV.hillHminusDirichlet_eq_zero_of_partial_eigen
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletCharacteristic_eq_zero_of_native_eigen
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichlet_native_eigen_mem_labels
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletCharacteristic_eq_zero_of_partial_eigen
