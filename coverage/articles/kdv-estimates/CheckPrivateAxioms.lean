@@ -349,6 +349,13 @@ import NLS.KdV.HillDirichletSimplicity
 import NLS.KdV.HillDirichletRootBranches
 import NLS.KdV.HillFreeDirichlet
 import NLS.ComplexAnalysis.ClosedIntervalRoots
+import NLS.ComplexAnalysis.PositiveZeroUniqueness
+import NLS.KdV.HillDirichletGapExistence
+import NLS.KdV.HillDirichletGapUniqueness
+import NLS.KdV.HillDirichletLabels
+import NLS.KdV.HillDirichletLabelContinuity
+import NLS.KdV.HillDirichletSlope
+import NLS.KdV.HillDirichletNormingData
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -662,7 +669,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.continuous_scalarStateCrossMass,
     ``NLS.ComplexAnalysis.scalarStateCrossMass_self_real,
     ``NLS.ComplexAnalysis.tendsto_sq_punctured,
-    ``NLS.ComplexAnalysis.isClosed_exists_zero_in_variable_Icc]
+    ``NLS.ComplexAnalysis.isClosed_exists_zero_in_variable_Icc,
+    ``NLS.ComplexAnalysis.eq_of_zero_of_pos_derivative_at_zeros]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

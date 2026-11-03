@@ -5272,3 +5272,10 @@ import NLS.KdV.HillDirichletSimplicity
 import NLS.KdV.HillDirichletRootBranches
 import NLS.KdV.HillFreeDirichlet
 import NLS.ComplexAnalysis.ClosedIntervalRoots
+import NLS.ComplexAnalysis.PositiveZeroUniqueness
+import NLS.KdV.HillDirichletGapExistence
+import NLS.KdV.HillDirichletGapUniqueness
+import NLS.KdV.HillDirichletLabels
+import NLS.KdV.HillDirichletLabelContinuity
+import NLS.KdV.HillDirichletSlope
+import NLS.KdV.HillDirichletNormingData

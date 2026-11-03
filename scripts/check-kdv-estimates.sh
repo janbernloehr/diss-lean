@@ -94,6 +94,7 @@ modules+=(NLS/KdV/HillUniformActionGapBound)
 modules+=(NLS/SequenceSpaces/SpectralWeightProduct NLS/SequenceSpaces/SpectralWeightCeilingCutoff NLS/SequenceSpaces/QuadraticCutoffRounding NLS/KdV/HillWeightedActionHead NLS/KdV/HillWeightedActionEstimate NLS/Articles/KdVEstimates/WeightedActionEstimate NLS/KdV/HillL2DirichletCharacteristic)
 modules+=(NLS/FunctionalAnalysis/UnitCurveIntegral NLS/ComplexAnalysis/ScalarStateMass NLS/ZakharovShabat/L2SolutionNonvanishing NLS/KdV/HillL2StateCurve NLS/KdV/HillL2GreenIdentity NLS/KdV/HillDirichletReality NLS/KdV/HillStateMonodromy NLS/KdV/HillDirichletBands)
 modules+=(NLS/FunctionalAnalysis/UnitComplexCurveIntegral NLS/ComplexAnalysis/ScalarStateCrossMass NLS/ComplexAnalysis/QuadraticPuncturedLimit NLS/KdV/HillDirichletLagrange NLS/KdV/HillDirichletSimplicity NLS/KdV/HillDirichletRootBranches NLS/KdV/HillFreeDirichlet NLS/ComplexAnalysis/ClosedIntervalRoots)
+modules+=(NLS/ComplexAnalysis/PositiveZeroUniqueness NLS/KdV/HillDirichletGapExistence NLS/KdV/HillDirichletGapUniqueness NLS/KdV/HillDirichletLabels NLS/KdV/HillDirichletLabelContinuity NLS/KdV/HillDirichletSlope NLS/KdV/HillDirichletNormingData)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
