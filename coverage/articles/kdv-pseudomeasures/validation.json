@@ -2765,9 +2765,9 @@
   },
   "appendix_b_current_private_recheck": {
     "report": "coverage/articles/kdv-pseudomeasures/appendix-b-current-recheck.json",
-    "baseline_commit": "30977a44558c2a2389fc0ae6fbfb3e75ce3cd5f6",
+    "baseline_commit": "e48efd39dddfe2ec9bfd9ea8573296fe93987111",
     "freshly_compiled_appendix_b_modules": 19,
-    "current_transitive_axiom_audit_declarations": 4819,
+    "current_transitive_axiom_audit_declarations": 4942,
     "remaining_lemma_B1_obligations": [],
     "new_lean_declarations": 0,
     "canonical_checkout_written": false,
