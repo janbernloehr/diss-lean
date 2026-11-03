@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Prove the literal real-source Hill numerator product with a unique nonzero scalar, including whole-energy locally uniform convergence of products and derivatives.",
+  "phase": "Prove continuity of actual original real Hill endpoint and indexed zero sequences in the full literal inverse-index l2 norm.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -896,13 +896,18 @@
     "NLS/KdV/HillRealEnergyProduct.lean",
     "NLS/KdV/HminusOneCanonicalHillPsiProduct.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillNumeratorProduct.lean",
+    "NLS/SequenceSpaces/LpCoordinateContinuity.lean",
+    "NLS/SequenceSpaces/PositiveSquaredLatticeMap.lean",
+    "NLS/KdV/HillPositiveEndpointSequenceContinuity.lean",
+    "NLS/KdV/HminusOneHillPsiZeroSequenceContinuity.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillZeroSequenceTopology.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 4357,
-  "definitions": 865,
+  "proved_theorems": 4376,
+  "definitions": 877,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 5222,
+    "declarations": 5253,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -1800,13 +1805,21 @@
     "At EVERY real native H-minus-one source and EVERY positive numerator index, a NONZERO scalar times the literal deleted positive-index Hill product converges locally uniformly to the actual intrinsic hillHminusCanonicalPsi on the ENTIRE complex energy plane. The deleted factor is EXACTLY index n, and all other factors are (sigma_m-E)/(pi*m)^2. This includes the omitted-zero energy and the quadratic ramification energy E=-c.",
     "The scalar multiplier is UNIQUE because the actual numerator is not identically zero. The scalar is defined intrinsically by this property. Derivatives of the scaled finite products also converge locally uniformly on the ENTIRE energy plane to the actual scalar energy derivative.",
     "Article OriginalHillNumeratorProduct exposes the unique nonzero scalar, the literal product convergence and derivative convergence above EVERY original physical real mean-zero H-minus-one potential. No extra smoothness, high-index cutoff, reindexing or source-chart choice appears in this interface.",
-    "The universal 2/(pi*n) scalar normalization remains UNPROVED. Zero-set rigidity, entire growth and source analyticity do not by themselves prove that constant. A COMMON complex all-index coefficient neighborhood, Banach sequence analyticity, the finer locally uniform ALL-index gamma_m^2/m zero estimate, global complex energy sheets, angles, Birkhoff map and ALL FIVE MAIN theorems also remain UNPROVED."
+    "The universal 2/(pi*n) scalar normalization remains UNPROVED. Zero-set rigidity, entire growth and source analyticity do not by themselves prove that constant. A COMMON complex all-index coefficient neighborhood, Banach sequence analyticity, the finer locally uniform ALL-index gamma_m^2/m zero estimate, global complex energy sheets, angles, Birkhoff map and ALL FIVE MAIN theorems also remain UNPROVED.",
+    "A reusable continuity criterion for finite-exponent lp spaces over ANY index type upgrades coordinatewise continuity to sequence-norm continuity under a locally valid CONTINUOUS lp majorant. Magnitude is continuous in sequence norm; the proof uses genuine finite tails and does not confuse product topology with Banach topology.",
+    "The inverse-bracket weighted error obtained by squaring a displaced signed lattice is a complex analytic Coeff2-valued map. A bounded positive-index restriction retains the literal inverse-index weight 1/m, including m=1. Thus the ENTIRE positive weighted energy-error sequence depends analytically on the Dirac l2 displacement, with the fixed actual source shift retained.",
+    "Both FULL ORIGINAL real positive Hill endpoint sequences have continuous inverse-index l2 displacement on the ENTIRE native real H-minus-one form. A fixed local real-preserving Miura lift with one outside-spectrum constant identifies EVERY original endpoint with the corresponding squared Dirac endpoint. The proof composes verified Dirac endpoint SEQUENCE-norm continuity with the analytic square map. No high cutoff, missing low index or simplicity hypothesis occurs.",
+    "ANY coordinate-continuous selection in the full original real positive Hill gaps is continuous as an ENTIRE inverse-index l2 error sequence. The two continuous endpoint sequences supply a continuous lp majorant. This applies even when gaps collapse, and keeps the exact original label m and free energy (pi*m)^2.",
+    "For EVERY positive numerator index n, the ACTUAL indexed zero coefficients hillHminusCanonicalPsiRealZero n m, including the omitted midpoint coefficient m=n, now form a continuous map from the ENTIRE native real H-minus-one form into the literal h-minus-one sequence space, represented by ((sigma_nm-(pi*m)^2)/m) in l2 over positive indices. This is full Banach sequence-norm continuity, beyond coordinatewise continuity.",
+    "Article OriginalHillZeroSequenceTopology exposes the actual weighted zero sequence and its continuity in the UNCHANGED original physical H-minus-one norm topology. All positive coefficient labels, low gaps, collapsed gaps and the omitted coefficient are included.",
+    "The ORIGINAL universal 2/(pi*n) Hill product normalization remains UNPROVED. The inspected KMT proof uses an L2 diagonal product-period identity followed by density, and that L2 identity is not yet a verified library result. The new real sequence-norm continuity is a prerequisite for such a transfer; it is not the normalization proof itself.",
+    "A COMMON complex all-index zero-coefficient domain, complex Banach sequence ANALYTICITY, the finer locally uniform ALL-index gamma_m^2/m estimate, global complex energy-sheet gluing, angles, actual KdV Birkhoff coordinates/flow and ALL FIVE MAIN theorems remain UNPROVED. Real Banach sequence continuity does not imply these complex or normalization assertions."
   ],
-  "source_correspondence": "Prove the literal real-source Hill numerator product with a unique nonzero scalar, including whole-energy locally uniform convergence of products and derivatives. Prove a COMMON complex source neighborhood for ALL retained index pairs and Banach h-minus-one sequence analyticity, together with the finer locally uniform ALL-index squared-gap-over-index zero bound. ACTUAL indexed real coefficient continuity, local analytic extensions identifying the coefficients at EVERY nearby real source, global analytic scalar complexification for EACH pair on an open connected domain containing the ENTIRE real form, and whole-overlap noncollision are NOW PROVED. The pair-dependent domains cannot simply be intersected and declared open. The fixed-real ALL-n l2 majorant is also proved but does not supply complex local uniformity. Determine the universal 2/(pi*n) scalar in the ORIGINAL normalized Hill infinite product. The literal actual retained-zero product with a UNIQUE NONZERO scalar is NOW PROVED at EVERY original real H-minus-one source, with locally uniform convergence of products AND derivatives on the ENTIRE energy plane. Do NOT redo the product-up-to-scalar argument or infer the scalar from zeros/growth/analyticity plus its free value. A valid actual L2 normalization identity with a proved density transfer is one possible route. Complex-source product uniformity and exclusion of additional complex-source energy zeros are not proved. Complete any required global complex energy-sheet/differential gluing, then construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Intrinsic numerator gluing, actual local roots/normalized periods and real-source root/differential overlap identities are proved. Formalize the literal KMT y-tilde integrating-factor gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint. Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-  "build_isolation": "Prove the literal real-source Hill numerator product with a unique nonzero scalar, including whole-energy locally uniform convergence of products and derivatives. All source/compiler/Git milestone writes private; canonical checkout and shared Git metadata read-only. All 877 baseline non-audit Lean sources verified unchanged. Two reused entire spectral product/exterior-circle modules freshly compiled privately and byte-identical to canonical sources.",
+  "source_correspondence": "Prove continuity of actual original real Hill endpoint and indexed zero sequences in the full literal inverse-index l2 norm. Prove a COMMON complex source neighborhood for ALL retained index pairs and Banach h-minus-one sequence analyticity, together with the finer locally uniform ALL-index squared-gap-over-index zero bound. ACTUAL indexed real coefficient continuity, local analytic extensions identifying the coefficients at EVERY nearby real source, global analytic scalar complexification for EACH pair on an open connected domain containing the ENTIRE real form, and whole-overlap noncollision are NOW PROVED. The pair-dependent domains cannot simply be intersected and declared open. The fixed-real ALL-n l2 majorant is also proved but does not supply complex local uniformity. NEW: The ENTIRE actual indexed real coefficient displacement sequence, including its omitted midpoint, is NOW continuous in the literal h-minus-one sequence norm. Both FULL original endpoint displacement sequences are continuous in that norm. This strengthens scalar continuity but still does not supply a COMMON complex all-pair domain, complex Banach sequence analyticity or the fine estimate. Determine the universal 2/(pi*n) scalar in the ORIGINAL normalized Hill infinite product. The literal actual retained-zero product with a UNIQUE NONZERO scalar is NOW PROVED at EVERY original real H-minus-one source, with locally uniform convergence of products AND derivatives on the ENTIRE energy plane. Do NOT redo the product-up-to-scalar argument or infer the scalar from zeros/growth/analyticity plus its free value. A valid actual L2 normalization identity with a proved density transfer is one possible route. Complex-source product uniformity and exclusion of additional complex-source energy zeros are not proved. Complete any required global complex energy-sheet/differential gluing, then construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Intrinsic numerator gluing, actual local roots/normalized periods and real-source root/differential overlap identities are proved. Formalize the literal KMT y-tilde integrating-factor gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint. Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+  "build_isolation": "Prove continuity of actual original real Hill endpoint and indexed zero sequences in the full literal inverse-index l2 norm. All source/compiler/Git milestone writes private; canonical checkout and shared Git metadata read-only. All 890 baseline non-audit Lean sources verified unchanged. Two reused truncation and Dirac endpoint sequence-continuity modules freshly compiled privately and byte-identical to canonical sources.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
-  "publication_status": "Previously validated HEAD d79618a is published to approved janbernloehr/diss-lean branch articles/kdv-pseudomeasures. This increment passes 13 fresh module checks and the exact 5222-declaration audit; publication receipts record the resulting milestone commit and verified remote head. Canonical checkout remains read-only pending workspace decision.",
+  "publication_status": "Previously validated HEAD 3283f6b is published to approved janbernloehr/diss-lean branch articles/kdv-pseudomeasures. This increment passes 5 fresh module checks and the exact 5253-declaration audit; publication receipts record the resulting milestone commit and verified remote head. Canonical checkout remains read-only pending workspace decision.",
   "source_hash": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
   "output_sha256": {
     "NLS/SequenceSpaces/WeightedFiniteCoefficients.lean": "0e2f288406c36fe93b5882aa13a5cf081871bd8ecf75c1214e7586b4f2c244d9",
@@ -2205,7 +2218,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "30ce9d7ca1da414382894f6930b9a4a2e73cdfda0f4d29954d44fd47fe6fdb1d",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "f13c142c4fd950c50c08ad6ddcd28ca018b594db2a536007196a73ec7b7bec36",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -2699,7 +2712,12 @@
     "NLS/ComplexAnalysis/QuadraticConvergenceDescent.lean": "1a9dc8310950a27b82780d0f5a65d43873dad075630972406ae2afe2041a0b20",
     "NLS/KdV/HillRealEnergyProduct.lean": "e697db51fdf027753879fcde7b4bfe1b3da7d981e48f31df886ecd68158272fa",
     "NLS/KdV/HminusOneCanonicalHillPsiProduct.lean": "63e7efa34b8b329bb185543cfbddaccb6629877d746d72ff690f916fd1d76370",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillNumeratorProduct.lean": "531d410fe0e19fe9515a31a53599bd6536207ddf5cba5a30e484346e927314f2"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillNumeratorProduct.lean": "531d410fe0e19fe9515a31a53599bd6536207ddf5cba5a30e484346e927314f2",
+    "NLS/SequenceSpaces/LpCoordinateContinuity.lean": "a3b4fdb3e09667dd88e66d96b152dd4e610488397e334b99e58d5be9b5deac6e",
+    "NLS/SequenceSpaces/PositiveSquaredLatticeMap.lean": "af714e02f7b5d97798a04a2b23e70391a14866ad8f385f7397440fd863224c97",
+    "NLS/KdV/HillPositiveEndpointSequenceContinuity.lean": "55f3bc0ab5ac1fa0657365468fac86ca3bd4296a1bda2f0c6b0ad8437d92fd31",
+    "NLS/KdV/HminusOneHillPsiZeroSequenceContinuity.lean": "60b53ca25fc785f8426aff430838dac3757a32ccadece500fb5e2203f6327d4e",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillZeroSequenceTopology.lean": "a8c66f11fbfcbbaa0547d20f34583a44a79c1f664a7e294b1ed482b826473fa9"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -2707,12 +2725,12 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 5176,
-    "newly_checked_declarations_this_continuation": 46,
-    "new_theorems": 39,
-    "new_definitions": 7,
-    "total_checked_declarations": 5222,
-    "reuse": "Verified full original Hill/Miura gap labels, actual retained simple real zeros and arbitrary-shift numerator growth, signed gap sample lp estimates, entire simple spectral products and exterior-circle normalization, filled simple-zero quotients, Cauchy/entire circle decay and entire locally uniform limits. No NLS Birkhoff map is used."
+    "previous_checked_declarations": 5222,
+    "newly_checked_declarations_this_continuation": 31,
+    "new_theorems": 19,
+    "new_definitions": 12,
+    "total_checked_declarations": 5253,
+    "reuse": "Verified full original squared-Miura labels and real-preserving local lifts, Dirac endpoint displacement sequence-norm continuity, original real gap sample h-minus-one summability, actual indexed real zero coordinate continuity, bounded lp multipliers and finite truncation convergence. No NLS Birkhoff map is used."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -2741,7 +2759,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-real-product-scalar.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-zero-sequence-topology.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -2999,13 +3017,14 @@
     "Prove actual different-shift common-contour periods and glue intrinsic original Hill energy numerators on one common complex H-minus-one domain.",
     "Prove the exact simple real zero set of intrinsic Hill numerators, original h-minus-one zero coefficients, one real l2 majorant before all numerator indices, and local complex simple-zero branches.",
     "Prove continuity of indexed original real Hill zero coefficients, global analytic complexification for each retained index pair, and noncollision on entire common complex domains.",
-    "Prove the literal real-source Hill numerator product with a unique nonzero scalar, including whole-energy locally uniform convergence of products and derivatives."
+    "Prove the literal real-source Hill numerator product with a unique nonzero scalar, including whole-energy locally uniform convergence of products and derivatives.",
+    "Prove continuity of actual original real Hill endpoint and indexed zero sequences in the full literal inverse-index l2 norm."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-real-product-scalar-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-zero-sequence-topology-map.json",
   "baseline_validated_snapshot": {
-    "commit": "d79618a338552dc877e03b0f4985d016e4627ab8",
-    "modules": 878,
-    "audited_declarations": 5176,
+    "commit": "3283f6be105de1c39050982130da5112ad55752b",
+    "modules": 891,
+    "audited_declarations": 5222,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   },
@@ -3673,6 +3692,30 @@
     "intersection_of_pair_dependent_domains_assumed_open": false,
     "Banach_hminus_one_SEQUENCE_analyticity_of_zero_family_proved": false,
     "locally_uniform_COMPLEX_ALL_index_squared_gap_over_index_zero_bound_proved": false,
+    "ACTUAL_global_complex_energy_sheet_and_differential_gluing_proved": false,
+    "ACTUAL_KdV_angles_constructed": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "full_source3_2_coordinate_assertion_proved": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_real_zero_SEQUENCE_norm_continuity": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-zero-sequence-topology-map.json",
+    "coordinate_continuity_plus_CONTINUOUS_lp_majorant_implies_SEQUENCE_norm_continuity": true,
+    "arbitrary_index_type_and_ALL_finite_Banach_sequence_exponents_supported": true,
+    "displaced_signed_lattice_square_map_analytic_into_literal_positive_inverse_index_l2": true,
+    "FULL_ORIGINAL_positive_Hill_endpoint_SEQUENCES_continuous_in_inverse_index_l2": true,
+    "ANY_coordinate_continuous_original_real_gap_selection_has_SEQUENCE_norm_continuity": true,
+    "ACTUAL_indexed_real_zero_SEQUENCES_continuous_in_literal_Hminus_one_sequence_norm": true,
+    "omitted_midpoint_and_low_AND_collapsed_gaps_included": true,
+    "original_physical_Hminus_one_NORM_topology_preserved": true,
+    "universal_2_over_pi_n_product_prefactor_proved": false,
+    "L2_diagonal_product_period_normalization_identity_proved": false,
+    "real_sequence_norm_continuity_alone_used_to_claim_normalization": false,
+    "COMMON_complex_source_neighborhood_BEFORE_ALL_index_pairs_proved": false,
+    "intersection_of_pair_dependent_domains_assumed_open": false,
+    "Banach_hminus_one_SEQUENCE_analyticity_of_zero_family_proved": false,
+    "locally_uniform_COMPLEX_ALL_index_squared_gap_over_index_zero_bound_proved": false,
+    "additional_complex_source_energy_zeros_excluded": false,
     "ACTUAL_global_complex_energy_sheet_and_differential_gluing_proved": false,
     "ACTUAL_KdV_angles_constructed": false,
     "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,

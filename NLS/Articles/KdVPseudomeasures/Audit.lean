@@ -888,6 +888,11 @@ import NLS.ComplexAnalysis.QuadraticConvergenceDescent
 import NLS.KdV.HillRealEnergyProduct
 import NLS.KdV.HminusOneCanonicalHillPsiProduct
 import NLS.Articles.KdVPseudomeasures.OriginalHillNumeratorProduct
+import NLS.SequenceSpaces.LpCoordinateContinuity
+import NLS.SequenceSpaces.PositiveSquaredLatticeMap
+import NLS.KdV.HillPositiveEndpointSequenceContinuity
+import NLS.KdV.HminusOneHillPsiZeroSequenceContinuity
+import NLS.Articles.KdVPseudomeasures.OriginalHillZeroSequenceTopology
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6113,3 +6118,34 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNumeratorProduct
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_numerator_product_convergence
 #print axioms NLS.Articles.KdVPseudomeasures.originalHillPsiProductScalar_unique
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_numerator_product_deriv_convergence
+#print axioms NLS.LpSequence.truncate
+#print axioms NLS.LpSequence.truncate_apply
+#print axioms NLS.LpSequence.norm_sub_truncate_le
+#print axioms NLS.LpSequence.continuous_truncate
+#print axioms NLS.LpSequence.magnitude
+#print axioms NLS.LpSequence.continuous_magnitude
+#print axioms NLS.LpSequence.continuousAt_of_coordinates_of_continuous_majorant
+#print axioms NLS.inverseBracketSquaredLatticeError
+#print axioms NLS.analyticAt_inverseBracketSquaredLatticeError
+#print axioms NLS.LpSequence.positiveRestriction
+#print axioms NLS.LpSequence.norm_positiveRestriction_le
+#print axioms NLS.LpSequence.positiveRestrictionCLM
+#print axioms NLS.LpSequence.norm_positiveBracketRatio_le_two
+#print axioms NLS.LpSequence.positiveBracketToIndex
+#print axioms NLS.LpSequence.norm_positiveBracketToIndex_le
+#print axioms NLS.LpSequence.positiveBracketToIndexCLM
+#print axioms NLS.LpSequence.positiveBracketToIndexCLM_apply
+#print axioms NLS.positiveSquaredLatticeError
+#print axioms NLS.positiveSquaredLatticeError_apply
+#print axioms NLS.analyticAt_positiveSquaredLatticeError
+#print axioms NLS.KdV.hillHminusPositiveEndpointDisplacement
+#print axioms NLS.KdV.continuousAt_hillHminusPositiveEndpointDisplacement
+#print axioms NLS.KdV.continuous_hillHminusPositiveEndpointDisplacement
+#print axioms NLS.KdV.hillHminusGapSampleDisplacement
+#print axioms NLS.KdV.continuous_hillHminusGapSampleDisplacement
+#print axioms NLS.KdV.hillHminusPsiZeroDisplacement
+#print axioms NLS.KdV.hillHminusPsiZeroDisplacement_apply
+#print axioms NLS.KdV.continuous_hillHminusPsiZeroDisplacement
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillPsiZeroDisplacement
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillPsiZeroDisplacement_apply
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalHillPsiZeroDisplacement
