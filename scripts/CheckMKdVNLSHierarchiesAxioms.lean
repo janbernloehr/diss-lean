@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.ZeroMeanActionFiberCoordinates
 import NLS.Articles.MKdVNLSHierarchies.GlobalCartesianPhaseLifting
 import NLS.Articles.MKdVNLSHierarchies.LocalForwardActionFactorization
 import NLS.Articles.MKdVNLSHierarchies.CartesianNLSActionStationarity
@@ -51,6 +52,22 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.RealCoeff.exists_rotationSequence_eqOn_avoiding_set,
+    `NLS.RealCoeff.mem_of_isClosed_rotation_invariant_avoiding_set,
+    `NLS.RealCoeff.negative_coordinates_eq_of_reflection_fixed,
+    `NLS.RealCoeff.actionRotation_pi_apply,
+    `NLS.RealCoeff.actionRotation_pi_eq_neg_pi,
+    `NLS.RealCoeff.actionRotation_pi_eq_self_iff,
+    `NLS.RealCoeff.eq_or_central_halfTurn_of_reflection_fixed,
+    `NLS.ZakharovShabat.analyticAt_sourceActionHamiltonianVector,
+    `NLS.ZakharovShabat.continuous_realSourceComponentSwap,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionRotation_unique,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionRotation_componentSwap,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.coordinateComponentSwap,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.continuous_coordinateComponentSwap,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.coordinateComponentSwap_rotation,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.diagonal_eq_or_central_halfTurn,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.diagonal_eq_of_positive_coordinates_of_central_action_zero,
     `NLS.WeightedCoeff.exists_physicalReal_weighted_coefficients,
     `NLS.RealCoeff.mem_of_isClosed_tail_rotation_invariant,
     `NLS.WeightedCoeff.positiveCartesianRealParameters,
@@ -660,6 +677,9 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.MKdV.miuraZeroMeanJointFiberCartesianHomeomorph,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_unique_phase_lift_allSobolev,
+    ``NLS.MKdV.miuraCartesian_jointFiber_eq_or_central_halfTurn,
     ``NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_original_L2,
     ``NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_allSobolev,
     ``NLS.MKdV.miuraJointActionFiber_Cartesian_image,

@@ -432,6 +432,19 @@ modules = [
     "NLS/MKdV/MiuraJointFiberSobolevRegularity.lean",
     "NLS/MKdV/MiuraSobolevPhaseSaturation.lean",
     "NLS/Articles/MKdVNLSHierarchies/GlobalCartesianPhaseLifting.lean",
+    "NLS/SequenceSpaces/RealFixedSetRotationOrbit.lean",
+    "NLS/SequenceSpaces/ClosedFixedSetRotationSaturation.lean",
+    "NLS/SequenceSpaces/ReflectionFixedActionCoordinates.lean",
+    "NLS/SequenceSpaces/RealActionHalfTurn.lean",
+    "NLS/SequenceSpaces/ReflectionFixedCentralAmbiguity.lean",
+    "NLS/ZakharovShabat/SourceActionFlowComponentSwap.lean",
+    "NLS/ZakharovShabat/SourceDiagonalCoordinateAmbiguity.lean",
+    "NLS/MKdV/MiuraL2CentralActionZero.lean",
+    "NLS/MKdV/MiuraJointFiberNLSCoordinates.lean",
+    "NLS/MKdV/MiuraZeroMeanJointFiberHomeomorph.lean",
+    "NLS/MKdV/MiuraNLSActionFiberMean.lean",
+    "NLS/MKdV/MiuraZeroMeanSobolevFaithfulness.lean",
+    "NLS/Articles/MKdVNLSHierarchies/ZeroMeanActionFiberCoordinates.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")

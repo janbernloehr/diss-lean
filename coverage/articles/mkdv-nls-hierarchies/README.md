@@ -1386,3 +1386,42 @@ and the full corrected frequency comparison remain essential. The
 main-theorem goal stays active.
 
 Validation: all 398 article/shared modules have validated private outputs. The 387 unchanged prefix source hashes match 0806a62 and their outputs were reused; all eleven added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,404 declarations/auxiliaries and the combined audit for 49,339 NLS declarations, using only the standard allowed axioms. All 400 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,266 declarations (1,831 theorems and 435 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Faithful global phase coordinates on zero-mean NLS action fibers
+
+On every physical original L2 diagonal fiber of the full signed NLS
+action sequence at zero mean, the actual Cartesian map is now globally
+injective. Its previously proved phase-saturated compact image therefore
+gives a genuine homeomorphism onto the complete native Cartesian phase
+fiber, in the original source and target norm topologies. Every attained
+zero-mean phase configuration has a unique preimage within that original
+NLS action fiber. The unique phase lift lies in each native integer H^s
+class of the initial profile, with no smallness or open-gap restriction.
+
+The essential symmetry is proved dynamically: actual component exchange
+conjugates each complete original NLS action flow to the reflected-index
+flow at opposite time. ODE uniqueness proves this on the entire real L2
+source, including collapsed actions. A shared closure argument for
+rotations avoiding an arbitrary retained index set shows that fixed
+points with the same actions and positive coordinate pairs have the same
+negative pairs. Only the central plane remains. Its two possible fixed
+configurations differ by exactly the actual central NLS half-turn.
+
+On the physical scalar diagonal, equal original NLS actions fix the whole
+native physical J sequence and the literal mean squared. Zero mean closes
+the central NLS action on all original L2 profiles by mean-preserving
+finite Fourier approximation. It therefore removes the central half-turn
+ambiguity. The zero-mean joint physical/NLS action fiber is proved to be
+the entire physical diagonal NLS action fiber, not merely a subset.
+
+The restriction to a fixed original NLS action fiber is essential here.
+The result does not identify different NLS action fibers at the same J
+and mean, establish the general-profile Cartesian Jacobian, or prove
+Gardner canonicity. At nonzero mean the remaining possible central
+half-turn has not yet been excluded using the signed mean. Arbitrary
+nonnegative action realization, global forward action factorization,
+independent angles/final angle-sum factorization and the full corrected
+frequency comparison remain essential. The main-theorem goal stays active.
+
+Validation: all 411 article/shared modules have validated private outputs. The 398 unchanged prefix source hashes match 4c6dd57 and their outputs were reused; all thirteen added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,467 declarations/auxiliaries and the combined audit for 49,402 NLS declarations, using only the standard allowed axioms. All 413 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,307 declarations (1,868 theorems and 439 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
