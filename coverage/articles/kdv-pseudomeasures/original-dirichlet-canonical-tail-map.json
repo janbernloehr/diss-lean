@@ -154,5 +154,22 @@
     "global_complex_scalar_labels": false,
     "native_source_operator_identified": false,
     "source2_1_ii_proved": false
+  },
+  "complex_actual_central_count_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-complex-central-count-map.json",
+    "zero_auxiliary_multiplicity_one_plus_twice_native": true,
+    "nonzero_auxiliary_native_multiplicity_agreement": true,
+    "complex_reflection_multiplicity": true,
+    "actual_central_native_spectrum_constructed": true,
+    "central_multiplicity_count_N": true,
+    "ordered_central_block_positive_indices_1_through_N": true,
+    "all_complex_algebraic_repetitions_retained": true,
+    "uniform_original_norm_neighborhood_counts": true,
+    "uniform_central_energy_bounds": true,
+    "entire_original_complex_distribution_adapter": true,
+    "global_ordered_complex_label_sequence": false,
+    "complex_central_block_joined_to_high_tail": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
   }
 }

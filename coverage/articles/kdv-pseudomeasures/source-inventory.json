@@ -698,7 +698,7 @@
     }
   ],
   "remaining_obligations": [
-    "The ENTIRE complex native Dirichlet spectral and algebraic multiplicity dependency is COMPLETE: closed dense actual full H1 operator with compact full-dual resolvent, spectrum=original characteristic zeros, finite stabilized actual root spaces, exact finite-chain/scalar-Taylor-kernel LINEAR EQUIVALENCE, and ACTUAL algebraic multiplicity=both natural and extended normalized characteristic order at EVERY complex energy including zero and the entire central region. Finite root dimensions are min(length, multiplicity). The ENTIRE ORIGINAL complex physically period-one H-minus-one distribution domain is preserved unchanged, with no realness or mean-zero restriction. REMAINING: global COMPLEX Dirichlet central labels with exact actual algebraic repetitions, full complex source 2.1(ii) midpoint estimates/local boundedness, low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved; all five main theorems remain open.",
+    "The full complex native Dirichlet operator, spectrum/characteristic and algebraic multiplicity/order matching are proved. NOW ALSO PROVED: the ramified auxiliary zero contributes 1+2*actual native scalar multiplicity; the ACTUAL complex central spectrum has exactly N full algebraic repetitions and a lexicographically ordered block at positive indices 1,...,N; one original H-minus-one norm neighborhood/fixed chart supports the count at every larger cutoff with explicit uniform central energy bounds, unchanged on the ENTIRE original complex physical distribution domain. REMAINING: join the finite central block to the high tail and prove global ordered complex labels with exact repetitions and same-index n-times-L2 asymptotics; full complex source 2.1(ii) weighted midpoint estimates/local boundedness; low periodic interlacing/parity; complex-ratio 2.20; original KdV Birkhoff maps and actual approximation flow. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. All five main theorems remain UNPROVED; goal ACTIVE.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "workspace": {
@@ -875,6 +875,23 @@
     "entire_original_complex_distribution_adapter": true,
     "real_original_source_preserved": true,
     "global_complex_central_labels": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "complex_Dirichlet_central_count_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-complex-central-count-map.json",
+    "zero_auxiliary_multiplicity_one_plus_twice_native": true,
+    "nonzero_auxiliary_native_multiplicity_agreement": true,
+    "complex_reflection_multiplicity": true,
+    "actual_central_native_spectrum_constructed": true,
+    "central_multiplicity_count_N": true,
+    "ordered_central_block_positive_indices_1_through_N": true,
+    "all_complex_algebraic_repetitions_retained": true,
+    "uniform_original_norm_neighborhood_counts": true,
+    "uniform_central_energy_bounds": true,
+    "entire_original_complex_distribution_adapter": true,
+    "global_ordered_complex_label_sequence": false,
+    "complex_central_block_joined_to_high_tail": false,
     "source_Theorem2_1_ii_proved": false,
     "main_theorems_verified": false
   }

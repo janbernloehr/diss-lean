@@ -518,6 +518,12 @@ import NLS.Fourier.UnitDirichletRepresentativeLinear
 import NLS.KdV.SingularDirichletChainTaylorEquivalence
 import NLS.KdV.SingularDirichletMultiplicityOrder
 import NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletMultiplicity
+import NLS.ComplexAnalysis.SymmetricSquareCount
+import NLS.KdV.HminusOneDirichletAuxiliaryMultiplicity
+import NLS.KdV.HminusOneDirichletCentralCounting
+import NLS.KdV.HminusOneDirichletCentralBounds
+import NLS.KdV.HminusOneDirichletCentralRoots
+import NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletCentralCount
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4226,3 +4232,31 @@ import NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletMultiplicity
 #print axioms NLS.Articles.KdVPseudomeasures.finrank_originalComplexDirichletRootSpace_eq_min_multiplicity
 #print axioms NLS.Articles.KdVPseudomeasures.originalHminusOnePotentialToComplex
 #print axioms NLS.Articles.KdVPseudomeasures.originalComplexDirichletCharacteristic_of_real
+#print axioms NLS.ComplexAnalysis.filter_square_sub_eq_pair
+#print axioms NLS.ComplexAnalysis.filter_square_sub_eq_neg
+#print axioms NLS.ComplexAnalysis.sum_symmetric_square_multiplicity
+#print axioms NLS.KdV.auxiliaryDirichletMultiplicity_zero_eq_one_add_twice
+#print axioms NLS.KdV.auxiliaryDirichletMultiplicity_eq_native_of_ne_zero
+#print axioms NLS.KdV.auxiliaryDirichletMultiplicity_eq_native
+#print axioms NLS.KdV.auxiliaryDirichletMultiplicity_neg
+#print axioms NLS.KdV.hillMiuraDirichletCentralFrequencies
+#print axioms NLS.KdV.mem_hillMiuraDirichletCentralFrequencies
+#print axioms NLS.KdV.zero_mem_hillMiuraDirichletCentralFrequencies
+#print axioms NLS.KdV.neg_mem_hillMiuraDirichletCentralFrequencies
+#print axioms NLS.KdV.hillHminusDirichletCentralSpectrum
+#print axioms NLS.KdV.mem_hillHminusDirichletCentralSpectrum
+#print axioms NLS.KdV.sum_hillHminusDirichletCentralSpectrum_multiplicity
+#print axioms NLS.KdV.exists_hillHminusDirichletCentralSpectrum_count
+#print axioms NLS.KdV.norm_square_sub_le_of_mem_centralSpectralBox
+#print axioms NLS.KdV.norm_le_of_mem_hillHminusDirichletCentralSpectrum
+#print axioms NLS.KdV.HillHminusMiuraChart.exists_uniform_dirichletCentralCount
+#print axioms NLS.KdV.exists_uniform_hillHminusDirichletCentralSpectrum_bound
+#print axioms NLS.KdV.hillHminusDirichletCentralRoots
+#print axioms NLS.KdV.count_hillHminusDirichletCentralRoots
+#print axioms NLS.KdV.mem_hillHminusDirichletCentralRoots
+#print axioms NLS.KdV.card_hillHminusDirichletCentralRoots
+#print axioms NLS.KdV.exists_ordered_hillHminusDirichletCentralRoots
+#print axioms NLS.Articles.KdVPseudomeasures.originalComplexDirichletCentralSpectrum
+#print axioms NLS.Articles.KdVPseudomeasures.mem_originalComplexDirichletCentralSpectrum
+#print axioms NLS.Articles.KdVPseudomeasures.norm_le_of_mem_originalComplexDirichletCentralSpectrum
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalComplexDirichletCentralCount

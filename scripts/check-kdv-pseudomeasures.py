@@ -552,6 +552,12 @@ modules = [
     'NLS.KdV.SingularDirichletChainTaylorEquivalence',
     'NLS.KdV.SingularDirichletMultiplicityOrder',
     'NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletMultiplicity',
+    'NLS.ComplexAnalysis.SymmetricSquareCount',
+    'NLS.KdV.HminusOneDirichletAuxiliaryMultiplicity',
+    'NLS.KdV.HminusOneDirichletCentralCounting',
+    'NLS.KdV.HminusOneDirichletCentralBounds',
+    'NLS.KdV.HminusOneDirichletCentralRoots',
+    'NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletCentralCount',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
