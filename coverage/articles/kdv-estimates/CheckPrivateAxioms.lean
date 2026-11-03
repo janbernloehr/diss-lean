@@ -617,6 +617,17 @@ import NLS.ComplexAnalysis.RegularQuadraticCosinePrimitive
 import NLS.KdV.HillClosedGapQuadraticChart
 import NLS.KdV.HillQuadraticCosineMatching
 import NLS.KdV.HillClosedGapAbelianCorrections
+import NLS.ComplexAnalysis.RealAffineComplexPrimitive
+import NLS.KdV.HillAngularPeriods
+import NLS.KdV.HillRegularAngleCompatibility
+import NLS.KdV.HillGlobalRegularCorrection
+import NLS.KdV.HillGlobalRegularAnalytic
+import NLS.KdV.HillGlobalRegularBound
+import NLS.KdV.HillGlobalRegularContinuity
+import NLS.KdV.HillRegularCorrectionContourBound
+import NLS.KdV.HillHighNormalizedContourBound
+import NLS.KdV.HillHighRegularCorrectionDecay
+import NLS.KdV.HillSummedRegularCorrection
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1038,7 +1049,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.exists_analytic_centered_mean_free_quadratic_solution,
     ``NLS.ComplexAnalysis.regularQuadraticCosinePrimitive,
     ``NLS.ComplexAnalysis.hasDerivAt_regularQuadraticCosinePrimitive,
-    ``NLS.ComplexAnalysis.regularQuadraticCosinePrimitive_pi]
+    ``NLS.ComplexAnalysis.regularQuadraticCosinePrimitive_pi,
+    ``NLS.ComplexAnalysis.real_affine_complex_integral_eq_intervalIntegral]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

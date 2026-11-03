@@ -5540,3 +5540,14 @@ import NLS.ComplexAnalysis.RegularQuadraticCosinePrimitive
 import NLS.KdV.HillClosedGapQuadraticChart
 import NLS.KdV.HillQuadraticCosineMatching
 import NLS.KdV.HillClosedGapAbelianCorrections
+import NLS.ComplexAnalysis.RealAffineComplexPrimitive
+import NLS.KdV.HillAngularPeriods
+import NLS.KdV.HillRegularAngleCompatibility
+import NLS.KdV.HillGlobalRegularCorrection
+import NLS.KdV.HillGlobalRegularAnalytic
+import NLS.KdV.HillGlobalRegularBound
+import NLS.KdV.HillGlobalRegularContinuity
+import NLS.KdV.HillRegularCorrectionContourBound
+import NLS.KdV.HillHighNormalizedContourBound
+import NLS.KdV.HillHighRegularCorrectionDecay
+import NLS.KdV.HillSummedRegularCorrection
