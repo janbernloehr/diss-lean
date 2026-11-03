@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.FullIndependentAbelianPhase
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhaseConstruction
 import NLS.Articles.MKdVNLSHierarchies.IndependentSpectralGardnerGeometry
 import NLS.Articles.MKdVNLSHierarchies.IndependentHillMagriGeometry
@@ -3220,11 +3221,80 @@ private def mkdvNLSAuditPrefixes47 : Array Lean.Name := #[
   `NLS.LinearVolterra.trace_pairCLM,
 ]
 
+private def mkdvNLSAuditPrefixes48 : Array Lean.Name := #[
+  `NLS.ComplexAnalysis.norm_endpointRoot_le_twice_radius,
+  `NLS.ComplexAnalysis.norm_le_of_analytic_closedDisc_sphere_bound,
+  `_private.NLS.ComplexAnalysis.EndpointRootDiscBounds,
+  `NLS.KdV.norm_regularTerm_le_of_differential_bound,
+  `NLS.KdV.summable_regularTerms_of_summable_differential_tail,
+  `_private.NLS.KdV.HillAbelianTerminalBounds,
+  `NLS.KdV.sq_le_freeHillValue_sub_of_two_mul_le,
+  `NLS.KdV.norm_freeHill_Abelian_scale,
+  `_private.NLS.KdV.HillAbelianSpectralScale,
+  `NLS.KdV.hillHighFreeContour_closedBall_subset_filledDomain,
+  `NLS.KdV.norm_hillHighFreeContour_endpointRoot_le,
+  `_private.NLS.KdV.HillHighAbelianDiscGeometry,
+  `NLS.KdV.norm_scaled_hillHighContour_deflatedHilbertPsi_le,
+  `_private.NLS.KdV.HillHighAbelianContourBounds,
+  `NLS.KdV.exists_hillHighContour_deflatedHilbertPsi_sq_decay,
+  `_private.NLS.KdV.HillHighAbelianContourDecay,
+  `NLS.KdV.exists_hillAbelianSelectedGlobalPsi_local_Hilbert_parameters,
+  `_private.NLS.KdV.HillLocalNormalizedHilbertParameters,
+  `NLS.KdV.exists_hillHighGap_deflatedHilbertPsi_sq_decay,
+  `_private.NLS.KdV.HillHighDeflatedDiscBounds,
+  `NLS.KdV.exists_local_hillAbelianCosineDifferential_sq_decay,
+  `_private.NLS.KdV.HillLocalAbelianDifferentialDecay,
+  `NLS.KdV.exists_local_hillDirichletRegularAbelianTerm_sq_decay,
+  `NLS.KdV.summable_hillDirichletRegularAbelianTerm,
+  `_private.NLS.KdV.HillLocalAbelianTermDecay,
+  `NLS.KdV.norm_hillDirichletRegularAbelianTerm_tsum_tail_le,
+  `NLS.KdV.locally_small_hillDirichletRegularAbelianTerm_tails,
+  `_private.NLS.KdV.HillAbelianCorrectionTails,
+  `NLS.KdV.hillFullRegularAbelianSum,
+  `NLS.KdV.continuous_hillDirichletRegularAbelianTerm,
+  `NLS.KdV.continuous_hillFullRegularAbelianSum,
+  `NLS.KdV.hillFullRegularAbelianSum_im_eq_zero,
+  `NLS.KdV.hillFullAbelianPhase,
+  `NLS.KdV.norm_hillFullAbelianPhase,
+  `NLS.KdV.hillFullAbelianPhase_closed,
+  `NLS.KdV.norm_hillFullAbelianPhase_le_one,
+  `NLS.KdV.continuousAt_hillFullAbelianPhase,
+  `NLS.KdV.continuousOn_hillFullAbelianPhase,
+  `NLS.KdV.hillFullAbelianPhase_eq_finite_of_closed_complement,
+  `NLS.KdV.tendsto_hillFiniteAbelianPhase,
+  `_private.NLS.KdV.HillFullAbelianPhase,
+  `NLS.MKdV.miuraFullAbelianPhase,
+  `NLS.MKdV.miuraFullAbelian_corrections_summable,
+  `NLS.MKdV.norm_miuraFullAbelianPhase,
+  `NLS.MKdV.miuraFullAbelianPhase_closed,
+  `NLS.MKdV.norm_miuraFullAbelianPhase_le_one,
+  `NLS.MKdV.continuousAt_miuraFullAbelianPhase_along_real_family,
+  `NLS.MKdV.continuousOn_miuraFullAbelianPhase_original_H1,
+  `NLS.MKdV.miuraFullAbelianPhase_eq_finiteGap,
+  `_private.NLS.MKdV.MiuraFullAbelianPhase,
+  `NLS.MKdV.miuraNativeH1Profile_real,
+  `NLS.MKdV.miuraNativeFullAbelianPhase,
+  `NLS.MKdV.miuraNativeH1_action_zero_iff_angular_zero,
+  `NLS.MKdV.norm_miuraNativeFullAbelianPhase,
+  `NLS.MKdV.miuraNativeFullAbelianPhase_closed,
+  `NLS.MKdV.norm_miuraNativeFullAbelianPhase_le_one,
+  `NLS.MKdV.continuousOn_miuraNativeFullAbelianPhase,
+  `_private.NLS.MKdV.MiuraNativeAbelianPhase,
+  `NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_original_H1,
+  `NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_continuous_original_H1,
+  `NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_native,
+  `_private.NLS.Articles.MKdVNLSHierarchies.FullIndependentAbelianPhase,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_original_H1,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_continuous_original_H1,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_native,
+
     ``NLS.Articles.MKdVNLSHierarchies.independent_mKdV_partial_Abelian_phase_original_H1,
     ``NLS.Articles.MKdVNLSHierarchies.independent_mKdV_finiteGap_Abelian_phase,
     ``NLS.Articles.MKdVNLSHierarchies.independent_mKdV_Dirichlet_energy_positive,

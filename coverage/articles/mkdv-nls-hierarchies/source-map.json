@@ -326,7 +326,10 @@
         "NLS.KdV.hillAbelianSelectedGlobalPsi_intrinsic_periods",
         "NLS.KdV.exists_hillDirichlet_analytic_sheeted_angle",
         "NLS.MKdV.miuraFiniteGapAbelianPhase_eq_full_series",
-        "NLS.MKdV.miuraFiniteGapAbelianPhase_independent_support"
+        "NLS.MKdV.miuraFiniteGapAbelianPhase_independent_support",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_original_H1",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_continuous_original_H1",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_native"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -335,9 +338,9 @@
       "angle_definition": "The actual NLS theta phase is supplied by the checked original normalized psi/common-domain construction and pulled back along the literal L2 diagonal. Its logarithmic differential is proved equal to the pullback of the original local NLS angle differential.",
       "Gardner_definition": "The scalar gradient is constructed from the actual L2 Frechet derivative; its spatial Fourier multiplier is 2*pi*i*m. Square summability of that derivative and equality with the actual period-one tempered distribution derivative are proved at every original real H1 input.",
       "limits": [
-        "The printed angle-action bracket clause is proved with the original +delta_mn sign. The concluding assertion about the independently constructed mKdV angle vartheta_m plus theta_m# being a function of mKdV actions and mean still requires mKdV angle construction and factorization. Theorem 4(iii) as a whole remains incomplete."
+        "The printed angle-action bracket clause is proved with the original +delta_mn sign. The independent original Hill Abelian phase now exists for every real H1 profile, with locally uniform correction convergence and continuity on exactly its own open physical action. Its actual negative physical-action rotation law remains unproved. The final angle-sum factorization and Theorem4iii as a whole remain incomplete."
       ],
-      "conditional_descent_proved": "Any independently supplied actual H1 unit phase on the selected physical open-action locus, with H1 physical gradients and the required negative unit Gardner generators, has a global full phase-product factor through the entire native action sequence and literal signed mean. This implication is proved, but no independent mKdV phase is constructed or assumed to have been identified."
+      "conditional_descent_proved": "Any independently specified bounded phase continuous on its selected physical open-action locus and rotating oppositely under every complete original physical action flow has a global full phase-product factor through the entire native action sequence and literal signed mean. The actual full independent Hill phase now satisfies the continuity and boundedness inputs. Its opposite rotation law is the remaining mathematical input; no law is assumed."
     }
   ],
   "dependency_labels": [
@@ -497,8 +500,8 @@
     "remaining": "Independent original mKdV angle identification and final Theorem 4(iii) angle-sum factorization. Corrected all-order frequency comparison is complete."
   },
   "remaining_essential_dependencies": [
-    "Prove locally uniform convergence of the actual independent regular Abelian correction series for every original real H1 profile and construct the full original phase on its exact own-open-action locus. All regular terms, local complex analytic finite partial phases, and the full convergent finite-gap series are now constructed from the original Hill divisor.",
-    "Prove the independent original Abelian phase negative Gardner generators for the original physical mKdV actions, then instantiate the checked full phase-product descent. The printed final angle-sum claim is dependence as a function of actions and mean. Corrected all-order Theorem3 is complete."
+    "Prove the actual full independent Abelian phase opposite rotation law under every complete original physical mKdV action flow, or derive it from its negative physical Gardner generators. This is still unproved even on finite-gap profiles. The actual full phase is now constructed, bounded and continuous on the exact own-open-action locus of every original real H1 profile, including arbitrary infinite-gap support.",
+    "Instantiate exists_opposite_unit_phase_action_factor with the now constructed miuraNativeFullAbelianPhase after proving its opposite action-flow rotation. The printed final Theorem4iii claim is dependence as a function of all original physical actions and literal signed mean. Corrected all-order Theorem3 and all other previously completed clauses remain complete."
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -1362,7 +1365,7 @@
     "domain": "Every integer s>=1, original real Hs profiles; the selected physical J_m alone must be nonzero for the unit phase. Every other action may be zero; infinite support, zero mean and arbitrary signed mean are included.",
     "method": "Real normalized parameter decoding; full native Cartesian homeomorphism; density of finite coordinate rotations on the complete sequence action torus; actual native derivatives at every time and physical Gardner H1 chain rules; scalar exponential ODE uniqueness; bounded phase times vanishing amplitude extends continuously; invariant amplitude division recovers full unit phases.",
     "qualifications": [
-      "The independent original mKdV phase and its negative physical Gardner generator identity are explicit remaining mathematical inputs; the original main theorem is not claimed complete.",
+      "The full original independent Hill Abelian phase is now constructed below and satisfies the boundedness and exact own-open-domain continuity inputs. Its actual opposite physical-action rotation law remains unproved; the original main theorem is not claimed complete.",
       "The general continuous factor is only a function; no extra analyticity is asserted.",
       "The source angle sum is represented by full unit-phase multiplication, with no squaring or loss modulo pi.",
       "No independent angle is defined as the negative NLS angle."
@@ -1387,7 +1390,7 @@
     "regularity": "Both independent gradients and first derivatives are AC; second derivatives L2; periodic gradient endpoint values zero; energy first-derivative endpoints zero; log-norming first-derivative endpoints ONE. Exact weak Lenard boundary term and antisymmetry proved.",
     "limits": [
       "No derivative of a rough L2 potential is taken.",
-      "The physical-to-coefficient bridge and actual H1 Miura pullback brackets are now proved below. The full independent Abelian phase and its original physical-action Gardner generators remain unproved.",
+      "The physical-to-coefficient bridge, actual H1 Miura pullback brackets and the full continuous independent Abelian phase are now proved below. The negative original physical-action generators remain unproved.",
       "These separated-coordinate brackets do not alone complete Theorem4iii or establish full Cartesian canonicity."
     ]
   },
@@ -1408,12 +1411,12 @@
     "positivity": "Every original Dirichlet energy is strictly positive on every real H1 Miura profile, including closed gaps. Half-log-energy gradients require no extra positivity hypothesis.",
     "matrix": "{mu_n,mu_m}=0; {mu_n,kappa_m}=-2mu_n delta; {kappa_n,mu_m}=+2mu_n delta; {kappa_n,kappa_m}=0; {(1/2)log(mu_n),kappa_m}=-delta, reverse+delta, half-log/half-log=0.",
     "limits": [
-      "The independent regular Abelian terms, all finite partial phases and the full finite-gap series are now constructed below. General infinite-gap convergence, full original H1 phase extension and its negative generators for the original physical actions remain unproved.",
+      "The independent regular correction series now converges locally uniformly at every original real L2 Hill potential. Its full unit phase is continuous on the exact original real H1 own-open-action domain. Negative generators for the original physical actions remain unproved.",
       "Final Theorem4iii remains incomplete; instantiate the existing full phase-product descent after identifying the original phase. The printed final angle-sum claim is dependence as a function of actions and mean, without an additional analyticity claim."
     ]
   },
   "independent_Abelian_divisor_phase_construction": {
-    "status": "proved_all_regular_terms_and_finite_partial_phases_analytic_on_original_domains_full_finiteGap_series_constructed_general_convergence_and_action_generators_open",
+    "status": "proved_actual_full_phase_and_locally_uniform_correction_convergence_all_original_H1_profiles_negative_physical_action_rotation_open",
     "declarations": [
       "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_partial_Abelian_phase_original_H1",
       "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_finiteGap_Abelian_phase",
@@ -1435,9 +1438,37 @@
     "partial_phase_domain": "EVERY original real H1 Miura profile with its own actual original physical mKdV action nonzero. Arbitrary signed mean and arbitrary spectral support; other gaps may all be closed. Each finite partial phase has normone and a local fullcomplexH1 analytic representative agreeing on the entire realH1 neighborhood.",
     "finiteGap_full_phase": "On EVERY original finite-gap Miura profile, support of all open gaps is selected from original physical contour actions. The full correction series converges because all terms off that support vanish exactly. Its phase is unit on its own open-action locus and independent of any finite support set containing the open gaps.",
     "limits": [
-      "General infinite-gap locally uniform convergence and the full H1 phase extension remain unproved.",
-      "Negative Gardner generators for the original physical mKdV actions remain unproved, including for the constructed finite-gap phase.",
-      "Final Theorem4iii remains incomplete until the original full phase and these generators are identified and the checked full phase-product descent is instantiated. No negative NLS phase is assigned as the definition."
+      "Full correction convergence and real continuity are proved below. No additional full complex analytic phase extension is asserted or needed for the printed final angle-sum claim.",
+      "Negative Gardner generators and opposite action-flow rotation for the original physical mKdV actions remain unproved, including for the constructed finite-gap phase.",
+      "Final Theorem4iii remains incomplete until the actual opposite rotation law is proved and the checked full phase-product descent is instantiated. No negative NLS phase is assigned as the definition."
+    ]
+  },
+  "full_independent_Abelian_phase_locally_uniform_convergence": {
+    "status": "proved_all_real_L2_Hill_potentials_and_original_real_H1_Miura_profiles_including_infinite_gap_support",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_original_H1",
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_continuous_original_H1",
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_native",
+      "NLS.KdV.exists_hillHighContour_deflatedHilbertPsi_sq_decay",
+      "NLS.KdV.exists_hillHighGap_deflatedHilbertPsi_sq_decay",
+      "NLS.KdV.exists_hillAbelianSelectedGlobalPsi_local_Hilbert_parameters",
+      "NLS.KdV.exists_local_hillDirichletRegularAbelianTerm_sq_decay",
+      "NLS.KdV.summable_hillDirichletRegularAbelianTerm",
+      "NLS.KdV.norm_hillDirichletRegularAbelianTerm_tsum_tail_le",
+      "NLS.KdV.continuous_hillFullRegularAbelianSum",
+      "NLS.KdV.continuousOn_hillFullAbelianPhase",
+      "NLS.KdV.tendsto_hillFiniteAbelianPhase",
+      "NLS.MKdV.miuraFullAbelianPhase_eq_finiteGap",
+      "NLS.MKdV.continuousOn_miuraNativeFullAbelianPhase"
+    ],
+    "domain": "Every original real period-one L2 Hill potential and every original real H1 Miura profile, with arbitrary signed mean, infinite spectral support and closed contributing gaps. The full unit phase is continuous exactly where its own original physical action is nonzero. Native continuity and boundedness hold for every integer s>=1.",
+    "construction": "Literal sum of all independent sheeted Dirichlet regular Abelian corrections, multiplied by the original Dirichlet terminal unit phase. The sum has real values. Natural finite partial phases converge to the full phase, and finite-gap profiles agree with the earlier finite support construction.",
+    "local_uniform_estimate": "For every fixed normalized mode n and real Hill base potential q there exist N>=1,C>0 and a real L2 neighborhood on which the original kth regular correction has norm <=C/(k+1)^2 for all k>=N. The summed tail from M>=N is bounded by2*C/(M+1).",
+    "proof": "Combine the free-contour Hilbert numerator bound, bounded complex inverse-root comparison, actual physical root matching, endpoint-root norm <=k*pi^2 and quadratic free spectral separation. The maximum modulus principle extends the deflated quotient estimate to the physical gap. Local analytic Hilbert parameters and a nonzero analytic normalization make the constants uniform near the real base potential. Integration over the actual chosen terminal in[-pi,pi] gives the correction bound; reciprocal-square tail summation and individual term continuity give full sum continuity.",
+    "limits": [
+      "No opposite action-flow rotation or negative physical-action Gardner generator has yet been proved.",
+      "No full complex analytic extension of the infinite phase is claimed.",
+      "The final printed angle-sum conclusion remains incomplete until opposite rotation and the already checked descent are combined."
     ]
   }
 }

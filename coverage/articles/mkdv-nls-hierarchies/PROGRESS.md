@@ -2903,3 +2903,51 @@ Corrected Theorem 3 and the other previously completed main clauses are
 unchanged.
 
 Validation: all 1,012 article/shared modules have validated private outputs. All 662 old prefix sources match pushed 0352e43. The 342 added shared modules passed focused compilation; their compiled outputs were hash-frozen and reused. All eight original construction modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 8,984 declarations/auxiliaries and the combined audit for 53,872 NLS declarations, allowing only standard axioms. All 1,015 source/checker/aggregate hashes and all 342 frozen compiled output hashes match. The public inventory is 4,622 declarations (3,853 theorems and 769 definitions, including three abbreviations). The audit declaration literals were split into 48 blocks while preserving all 3,012 prefixes and their order. No kernel, recursion or heartbeat limit was raised. Pinned cached dependencies were used; the full dependency tree was not rebuilt.
+
+## 2026-11-04 — full independent Abelian phase for infinite-gap profiles
+
+The full independent phase is now constructed on EVERY original real H1
+Miura profile. No finite-gap, mean or other open-action restriction is
+imposed. Its own original physical action alone must be nonzero for a
+unit phase. On that exact domain the phase is continuous; it is bounded
+by one everywhere after the existing zero convention at its own closed
+action. This removes the general convergence obligation left by the
+preceding finite-gap milestone.
+
+- `independent_mKdV_full_Abelian_phase_original_H1` proves actual correction
+  summability, unit norm and convergence of the natural finite partial phases.
+- `independent_mKdV_full_Abelian_phase_continuous_original_H1` proves
+  continuity on precisely the original own-open-action H1 locus.
+- `independent_mKdV_full_Abelian_phase_native` supplies continuity and the
+  global unit bound in every native integer Hs source, s>=1, on exactly
+  the domain used by the full phase-product descent.
+- `miuraFullAbelianPhase_eq_finiteGap` identifies the full phase with the
+  previously constructed independent finite-gap phase.
+
+The reusable proof actually works at every original real period-one L2
+Hill potential. On bounded potential sets, the free-contour numerator
+bound and the inverse canonical-root estimate control the deflated
+numerator by an inverse square in the gap index. The endpoint root grows
+at most linearly, while the free spectral separation is quadratic. The
+maximum modulus principle transfers this bound to the whole spectral
+gap. An explicit local analytic Hilbert parameter and nonvanishing
+normalization yield locally uniform bounds for the original normalized
+differential. Each actual terminal path has length at most 2*pi. Thus the
+actual regular corrections have locally uniform bounds C/(k+1)^2, even
+through closed contributing gaps, and the tail from M>=N is at most
+2*C/(M+1). Individual term continuity and these tails give continuity of
+the full sum. The phase remains the literal independent Hill divisor
+construction; no NLS phase is used to prescribe its values.
+
+The negative physical-action generators or opposite complete-action-flow
+rotation law remain unproved, even in the finite-gap case. The final
+angle-sum clause of Theorem 4(iii) is therefore still incomplete. Once the
+actual opposite rotation is proved, the existing full phase-product
+descent applies directly to `miuraNativeFullAbelianPhase`. The printed
+conclusion is a function of actions and literal signed mean; no extra
+complex analytic extension of the infinite phase is claimed here.
+
+Fifteen new modules add 47 public declarations (43 theorems and four
+definitions). All 1,012 previous mathematical source files are unchanged.
+
+Validation: all 1,027 article/shared modules have validated private outputs. The fifteen new modules and aggregate compiled under strict default limits with warnings as errors. All 1,012 old mathematical prefix sources and private compiled-output hashes match the frozen pushed 8af7d58 baseline. The full targeted transitive audit passed for 9,072 declarations/auxiliaries and the combined audit for 53,960 NLS declarations, with only propext, Classical.choice and Quot.sound allowed. All 1,030 frozen mathematical source/checker/aggregate hashes match. Public inventory: 4,669 declarations (3,896 theorems and 773 definitions). The audit preserves every old scope and adds 62 scopes in a 49th array block of at most 64; no limits or linters were weakened. Canonical HEAD remains c5bcf63; cached dependencies were read only. The entire dependency tree was not rebuilt from source.

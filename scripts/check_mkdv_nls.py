@@ -1046,6 +1046,21 @@ modules = [
     'NLS/MKdV/MiuraFiniteAbelianPhases.lean',
     'NLS/MKdV/MiuraFiniteGapAbelianPhase.lean',
     'NLS/Articles/MKdVNLSHierarchies/IndependentAbelianPhaseConstruction.lean',
+    'NLS/ComplexAnalysis/EndpointRootDiscBounds.lean',
+    'NLS/KdV/HillAbelianTerminalBounds.lean',
+    'NLS/KdV/HillAbelianSpectralScale.lean',
+    'NLS/KdV/HillHighAbelianDiscGeometry.lean',
+    'NLS/KdV/HillHighAbelianContourBounds.lean',
+    'NLS/KdV/HillHighAbelianContourDecay.lean',
+    'NLS/KdV/HillLocalNormalizedHilbertParameters.lean',
+    'NLS/KdV/HillHighDeflatedDiscBounds.lean',
+    'NLS/KdV/HillLocalAbelianDifferentialDecay.lean',
+    'NLS/KdV/HillLocalAbelianTermDecay.lean',
+    'NLS/KdV/HillAbelianCorrectionTails.lean',
+    'NLS/KdV/HillFullAbelianPhase.lean',
+    'NLS/MKdV/MiuraFullAbelianPhase.lean',
+    'NLS/MKdV/MiuraNativeAbelianPhase.lean',
+    'NLS/Articles/MKdVNLSHierarchies/FullIndependentAbelianPhase.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")
