@@ -927,6 +927,12 @@ modules = [
     'NLS.KdV.HillPositiveEndpointSequenceContinuity',
     'NLS.KdV.HminusOneHillPsiZeroSequenceContinuity',
     'NLS.Articles.KdVPseudomeasures.OriginalHillZeroSequenceTopology',
+    'NLS.SequenceSpaces.PositiveInsertion',
+    'NLS.KdV.HillEnergyProductEmbedding',
+    'NLS.KdV.HillEnergySequenceProduct',
+    'NLS.KdV.HminusOneHillPsiProductContinuity',
+    'NLS.KdV.HminusOneHillPsiProductDensity',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillProductTopology',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

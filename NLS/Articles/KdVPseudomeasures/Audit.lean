@@ -893,6 +893,12 @@ import NLS.SequenceSpaces.PositiveSquaredLatticeMap
 import NLS.KdV.HillPositiveEndpointSequenceContinuity
 import NLS.KdV.HminusOneHillPsiZeroSequenceContinuity
 import NLS.Articles.KdVPseudomeasures.OriginalHillZeroSequenceTopology
+import NLS.SequenceSpaces.PositiveInsertion
+import NLS.KdV.HillEnergyProductEmbedding
+import NLS.KdV.HillEnergySequenceProduct
+import NLS.KdV.HminusOneHillPsiProductContinuity
+import NLS.KdV.HminusOneHillPsiProductDensity
+import NLS.Articles.KdVPseudomeasures.OriginalHillProductTopology
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6149,3 +6155,39 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillZeroSequenceTopology
 #print axioms NLS.Articles.KdVPseudomeasures.originalHillPsiZeroDisplacement
 #print axioms NLS.Articles.KdVPseudomeasures.originalHillPsiZeroDisplacement_apply
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_originalHillPsiZeroDisplacement
+#print axioms NLS.LpSequence.positiveEmbedding
+#print axioms NLS.LpSequence.positiveInsert
+#print axioms NLS.LpSequence.positiveInsert_apply
+#print axioms NLS.LpSequence.positiveInsert_apply_nonpos
+#print axioms NLS.LpSequence.norm_positiveInsert
+#print axioms NLS.LpSequence.positiveInsertIsometry
+#print axioms NLS.KdV.positiveReciprocalCoefficients
+#print axioms NLS.KdV.positiveReciprocalCoefficients_apply
+#print axioms NLS.KdV.hillEnergyRawProductEmbedding
+#print axioms NLS.KdV.hillEnergyRawProductEmbedding_positive
+#print axioms NLS.KdV.hillEnergyRawProductEmbedding_nonpos
+#print axioms NLS.KdV.analyticAt_hillEnergyRawProductEmbedding
+#print axioms NLS.KdV.hillEnergyProductEmbedding
+#print axioms NLS.KdV.hillEnergyProductEmbedding_positive
+#print axioms NLS.KdV.hillEnergyProductEmbedding_nonpos
+#print axioms NLS.KdV.analyticAt_hillEnergyProductEmbedding
+#print axioms NLS.KdV.hillEnergySequenceFactor
+#print axioms NLS.KdV.hillEnergySequencePartialProduct
+#print axioms NLS.KdV.hillEnergySequenceProduct
+#print axioms NLS.KdV.analyticAt_hillEnergySequenceProduct
+#print axioms NLS.KdV.centered_deleted_single_partialProduct
+#print axioms NLS.KdV.hillEnergySequencePartialProduct_eq_embedding
+#print axioms NLS.KdV.tendsto_hillEnergySequencePartialProduct
+#print axioms NLS.KdV.exists_uniform_hillEnergySequenceProduct_neighborhood
+#print axioms NLS.KdV.hillEnergySequencePartialProduct_realZero
+#print axioms NLS.KdV.hillHminusPsiLiteralProduct
+#print axioms NLS.KdV.continuous_hillHminusPsiLiteralProduct
+#print axioms NLS.KdV.hillHminusCanonicalPsi_eq_scalar_mul_literalProduct
+#print axioms NLS.KdV.continuousAt_hillHminusPsiProductScalar
+#print axioms NLS.KdV.continuous_hillHminusPsiProductScalar
+#print axioms NLS.KdV.hillHminusPsiProductScalar_eq_const_of_real_L2
+#print axioms NLS.KdV.hillHminusPsiProductScalar_normalization_iff_real_L2
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillPsiLiteralProduct
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalHillPsiLiteralProduct
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_numerator_eq_scalar_mul_literalProduct
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalHillPsiProductScalar
