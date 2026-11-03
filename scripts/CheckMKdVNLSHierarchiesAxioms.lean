@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.GlobalCartesianPhaseLifting
 import NLS.Articles.MKdVNLSHierarchies.LocalForwardActionFactorization
 import NLS.Articles.MKdVNLSHierarchies.CartesianNLSActionStationarity
 import NLS.Articles.MKdVNLSHierarchies.CartesianActionFlowIdentification
@@ -50,6 +51,20 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.WeightedCoeff.exists_physicalReal_weighted_coefficients,
+    `NLS.RealCoeff.mem_of_isClosed_tail_rotation_invariant,
+    `NLS.WeightedCoeff.positiveCartesianRealParameters,
+    `NLS.WeightedCoeff.positiveCartesianRealParameters_fst,
+    `NLS.WeightedCoeff.positiveCartesianRealParameters_snd,
+    `NLS.WeightedCoeff.complex_positiveCartesianRealParameters,
+    `NLS.WeightedCoeff.positiveCartesianRealParameters_injective_on_real,
+    `NLS.WeightedCoeff.positiveCartesianRealParameters_negative,
+    `NLS.WeightedCoeff.positiveCartesianRealParameters_zero,
+    `NLS.WeightedCoeff.positiveCartesianRealParameters_rotation,
+    `NLS.WeightedCoeff.actionRotation_positiveCartesianRealParameters_negative,
+    `NLS.WeightedCoeff.pairAction_realParameters_eq_of_radii,
+    `NLS.RealCoeff.weighted_mem_of_pairAction_eq,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.source_sobolev_mem_iff_of_actions_eq,
     `NLS.RealCoeff.norm_le_two_mul_of_pairAction_eq,
     `NLS.RealCoeff.exists_tailRotationSequence_eqOn,
     `NLS.Coeff.eq_of_real_tail_actions_of_rotation_stationary,
@@ -645,6 +660,9 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_original_L2,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_allSobolev,
+    ``NLS.MKdV.miuraJointActionFiber_Cartesian_image,
     ``NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_local_analytic_physical_action_mean_factor,
     ``NLS.Articles.MKdVNLSHierarchies.original_H1_NLS_actions_local_physical_action_mean_factor,
     ``NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero,

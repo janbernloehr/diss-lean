@@ -106,7 +106,9 @@
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_complete_action_rotation",
         "NLS.Articles.MKdVNLSHierarchies.cartesian_action_Gardner_brackets_original_H1",
         "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits",
-        "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero"
+        "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_fiber_exact_image",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_allSobolev"
       ]
     },
     {
@@ -183,7 +185,9 @@
         "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits",
         "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero",
         "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_local_analytic_physical_action_mean_factor",
-        "NLS.Articles.MKdVNLSHierarchies.original_H1_NLS_actions_local_physical_action_mean_factor"
+        "NLS.Articles.MKdVNLSHierarchies.original_H1_NLS_actions_local_physical_action_mean_factor",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_fiber_exact_image",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_allSobolev"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -397,7 +401,7 @@
     "remaining": "The diagonal physical discriminant, original fixed-index endpoints, canonical sheets and actual weighted contour actions have now been identified. Remaining normal-form angle, frequency and Poisson-bracket conventions must be carried through their actual constructions."
   },
   "remaining_essential_dependencies": [
-    "general Cartesian-Cartesian brackets and Gardner canonicity, general-profile Cartesian Jacobian/global inverse, and global nonzero-fiber geometry/surjectivity; complete native Cartesian action rotations and original H1 mixed Cartesian-action Gardner brackets are proved, as are native zero charts and small inverse regularity",
+    "general Cartesian-Cartesian brackets and Gardner canonicity, general-profile Cartesian Jacobian/global inverse, uniqueness and arbitrary nonnegative action-data realization; complete native phase lifting at every attained action/mean sequence and all integer Sobolev orders is proved, as are native zero charts and small inverse regularity",
     "global forward analytic factorization of restricted NLS actions through independent physical mKdV actions and signed mean at general profiles; the whole-sequence local forward factor near zero, converse physical J_n and corrected mean-squared factors are proved",
     "independent mKdV Birkhoff angle construction, the final angle-sum factorization and full frequency identification; Theorem 4(iii) angle-action bracket clause and actual Gardner transfer are proved",
     "corrected frequency-sign convention in Theorem 3; the global signed-mean claim in Theorem 4(ii) is replaced by the proved mean-squared statement, while signed recovery requires a branch restriction"
@@ -972,5 +976,25 @@
     "original_H1_open_pullback": "NLS.Articles.MKdVNLSHierarchies.isOpen_original_H1_pullback",
     "original_H1_zero_pullback": "NLS.Articles.MKdVNLSHierarchies.zero_mem_original_H1_pullback",
     "original_H1_neighborhood_description": "The original-H1 source neighborhood is the preimage of the common open original-L2 source neighborhood under the bounded original H1 inclusion. Its openness and zero base point are proved separately, avoiding any change of checking limits."
+  },
+  "global_Cartesian_phase_lifting": {
+    "closed_tail_rotation_saturation": "NLS.RealCoeff.mem_of_isClosed_tail_rotation_invariant",
+    "real_normalized_parameters": "NLS.WeightedCoeff.positiveCartesianRealParameters",
+    "faithful_on_genuine_real_target": "NLS.WeightedCoeff.positiveCartesianRealParameters_injective_on_real",
+    "exact_rotation_orientation": "NLS.WeightedCoeff.positiveCartesianRealParameters_rotation",
+    "compact_joint_physical_NLS_action_fiber": "NLS.MKdV.isCompact_miuraJointActionFiber",
+    "global_original_L2_phase_lift": "NLS.MKdV.exists_miura_jointFiber_preimage_of_Cartesian_radii",
+    "exact_full_native_phase_fiber_image": "NLS.MKdV.miuraJointActionFiber_Cartesian_image",
+    "compact_native_phase_fiber": "NLS.MKdV.isCompact_miuraCartesianPhaseFiber",
+    "weighted_membership_constant_on_tori": "NLS.RealCoeff.weighted_mem_of_pairAction_eq",
+    "all_p_shared_source_Sobolev_regularities": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.source_sobolev_mem_iff_of_actions_eq",
+    "physical_scalar_all_real_Sobolev_orders": "NLS.MKdV.miuraSobolev_mem_iff_of_NLS_actions_eq",
+    "coefficient_preserving_native_joint_fiber_representative": "NLS.MKdV.exists_miuraJointFiber_Sobolev_representative",
+    "global_all_native_integer_Sobolev_phase_lift": "NLS.MKdV.exists_miuraSobolev_Cartesian_phase_preimage",
+    "article_original_L2_lift": "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_original_L2",
+    "article_exact_compact_fiber_image": "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_fiber_exact_image",
+    "article_all_native_orders": "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_allSobolev",
+    "scope": "For every physical original L2 profile, every real native Cartesian target with the same actual physical radii and signed mean has an actual original L2 preimage retaining all original signed NLS actions. The image of the compact joint physical-action/mean and NLS-action fiber is exactly this complete native phase fiber. Equal original NLS actions preserve all nonnegative real Sobolev regularities; global phase lifting therefore holds in every actual native integer H^s space. Zero mean, closed gaps and infinitely many open modes are included, with no smallness hypothesis.",
+    "limits": "Action data must already be attained by a physical profile. No uniqueness of Cartesian preimages, arbitrary nonnegative action realization, or identification of an entire physical action fiber with a single joint NLS action fiber is asserted. General Cartesian Jacobians/global inverse/Gardner canonicity, global forward action factorization, independent angles and full corrected frequency comparison remain essential."
   }
 }

@@ -1346,3 +1346,43 @@ independent angles/final angle-sum factorization and the full corrected
 frequency comparison remain essential. The main-theorem goal stays active.
 
 Validation: all 387 article/shared modules have validated private outputs. The 376 unchanged prefix source hashes match 19abb67 and their outputs were reused; all eleven added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,346 declarations/auxiliaries and the combined audit for 49,281 NLS declarations, using only the standard allowed axioms. All 389 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,227 declarations (1,797 theorems and 430 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Global Cartesian phase lifting at attained actions
+
+At every physical original L2 profile, all simultaneous real native
+Cartesian phase configurations having its physical actions and signed
+mean now have actual original L2 preimages. The preimage can be chosen
+to retain every original signed NLS action of the initial profile.
+Precisely, the compact fiber fixing the whole physical action/mean map
+and the whole original NLS action sequence maps onto the entire native
+Cartesian phase fiber. Its image is proved exactly, and is compact.
+This includes infinitely many open modes, arbitrary closed actions, and
+zero mean, without a smallness hypothesis.
+
+The shared proof uses norm density of finite rotations avoiding a fixed
+head. A closed set invariant under these rotations contains every real
+equal-action point with the same head. Real normalized Cartesian
+parameters retain all positive native coefficients and the signed mean;
+clockwise native rotations become standard rotations at the opposite
+time. Compact original physical action fibers therefore supply all
+infinite phase configurations by closure.
+
+Equal original NLS actions also preserve every nonnegative real Sobolev
+regularity. This is proved in the shared NLS library for every finite
+Banach exponent p>1 using the exact source/Birkhoff Sobolev equivalence
+and an action-torus weighted majorant. On the physical scalar diagonal,
+it supplies coefficient-preserving native representatives of every joint
+fiber point. Consequently the global Cartesian phase lift exists in each
+actual native integer H^s space, preserving all original NLS actions.
+
+The assertions concern action sequences already attained by a physical
+profile. They do not prove realization of arbitrary nonnegative action
+data, uniqueness of Cartesian preimages, or equality of the entire
+physical action fiber with one joint NLS action fiber. General-profile
+Cartesian Jacobians and global inverse/Gardner canonicity, global forward
+action factorization, independent angles/final angle-sum factorization,
+and the full corrected frequency comparison remain essential. The
+main-theorem goal stays active.
+
+Validation: all 398 article/shared modules have validated private outputs. The 387 unchanged prefix source hashes match 0806a62 and their outputs were reused; all eleven added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,404 declarations/auxiliaries and the combined audit for 49,339 NLS declarations, using only the standard allowed axioms. All 400 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,266 declarations (1,831 theorems and 435 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

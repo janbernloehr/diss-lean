@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 4346,
+  "audited_declarations_and_auxiliaries": 4404,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -11154,14 +11154,209 @@
       "kind": "theorem",
       "name": "original_H1_NLS_actions_local_physical_action_mean_factor",
       "file": "NLS/Articles/MKdVNLSHierarchies/LocalForwardActionFactorization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_of_isClosed_tail_rotation_invariant",
+      "file": "NLS/SequenceSpaces/ClosedTailRotationSaturation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "positiveCartesianRealParameters",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRealParameters_fst",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRealParameters_snd",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "complex_positiveCartesianRealParameters",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRealParameters_injective_on_real",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRealParameters_negative",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRealParameters_zero",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRealParameters_rotation",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "actionRotation_positiveCartesianRealParameters_negative",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "pairAction_realParameters_eq_of_radii",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealRotations.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraRealL2ActionRotation",
+      "file": "NLS/MKdV/MiuraCartesianFiberRotations.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraRealCartesianParameters",
+      "file": "NLS/MKdV/MiuraCartesianFiberRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraRealCartesianParameters",
+      "file": "NLS/MKdV/MiuraCartesianFiberRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraRealOriginalNLSActionSequence",
+      "file": "NLS/MKdV/MiuraCartesianFiberRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveCartesianActionMean_rotation",
+      "file": "NLS/MKdV/MiuraCartesianFiberRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealL2ActionRotation_actionMean",
+      "file": "NLS/MKdV/MiuraCartesianFiberRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealCartesianParameters_actionRotation",
+      "file": "NLS/MKdV/MiuraCartesianFiberRotations.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraJointActionFiber",
+      "file": "NLS/MKdV/MiuraCartesianFiberRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompact_miuraJointActionFiber",
+      "file": "NLS/MKdV/MiuraCartesianFiberRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealL2ActionRotation_mem_jointFiber",
+      "file": "NLS/MKdV/MiuraCartesianFiberRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "real_tail_torus_mem_jointFiber_image",
+      "file": "NLS/MKdV/MiuraCartesianPhaseSaturation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miura_jointFiber_preimage_of_Cartesian_radii",
+      "file": "NLS/MKdV/MiuraCartesianPhaseSaturation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianPhaseFiber",
+      "file": "NLS/MKdV/MiuraCartesianPhaseSaturation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraJointActionFiber_Cartesian_image",
+      "file": "NLS/MKdV/MiuraCartesianPhaseSaturation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isCompact_miuraCartesianPhaseFiber",
+      "file": "NLS/MKdV/MiuraCartesianPhaseSaturation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "weighted_mem_of_pairAction_eq",
+      "file": "NLS/SequenceSpaces/RealActionWeightedMembership.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "source_sobolev_mem_iff_of_actions_eq",
+      "file": "NLS/ZakharovShabat/SourceActionSobolevEquivalence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_physicalReal_weighted_coefficients",
+      "file": "NLS/SequenceSpaces/PhysicalRealWeightedLift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolev_mem_iff_of_NLS_actions_eq",
+      "file": "NLS/MKdV/MiuraJointFiberSobolevRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevL2SourceInclusion_eq_of_coefficients",
+      "file": "NLS/MKdV/MiuraJointFiberSobolevRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraSobolev_representative_of_mem",
+      "file": "NLS/MKdV/MiuraJointFiberSobolevRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraJointFiber_Sobolev_representative",
+      "file": "NLS/MKdV/MiuraJointFiberSobolevRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveSobolevL2CartesianInclusion_injective",
+      "file": "NLS/MKdV/MiuraSobolevPhaseSaturation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraSobolev_Cartesian_phase_preimage",
+      "file": "NLS/MKdV/MiuraSobolevPhaseSaturation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_phase_lifting_original_L2",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GlobalCartesianPhaseLifting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_phase_fiber_exact_image",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GlobalCartesianPhaseLifting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_NLS_action_fiber_Sobolev_regularity",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GlobalCartesianPhaseLifting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Cartesian_phase_lifting_allSobolev",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GlobalCartesianPhaseLifting.lean"
     }
   ],
-  "public_declaration_count": 2227,
-  "theorem_count": 1797,
-  "definition_count": 430,
-  "full_build": "387 article/shared modules have validated private outputs. All 376 unchanged prefix module source hashes match the prior 19abb67 milestone; their private outputs were reused. Eleven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2266,
+  "theorem_count": 1831,
+  "definition_count": 435,
+  "full_build": "398 article/shared modules have validated private outputs. All 387 unchanged prefix module source hashes match the prior 0806a62 milestone; their private outputs were reused. Eleven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/RealActionTorusNorm.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/ClosedTailRotationSaturation.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -11550,11 +11745,22 @@
     "NLS/MKdV/MiuraCartesianActionParameters.lean": "b8170502d00a4e5a32ce5fec9e2d6e178b0c56aa8c67ea5516f8f62f1de7d9c9",
     "NLS/MKdV/MiuraLocalNLSActionFactor.lean": "4a770dfde46b6142e0b0ea210150895de6b6363763295c371b972b5090509858",
     "NLS/Articles/MKdVNLSHierarchies/LocalForwardActionFactorization.lean": "fc91be35cf1926225b3648a88217728cd58a3415c4836679832410bf76a386e4",
-    "scripts/check_mkdv_nls.py": "a77336424513958edaf45d12b622455fac8aa8adafb9649015b3ebd8d71e753e",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "ae40dcaf9ddf81ff5562e10f24349518be532c9fb3c9986796cde581a51d3232"
+    "NLS/SequenceSpaces/ClosedTailRotationSaturation.lean": "33f051b10c73af815f06d2e18b3d1c63b1a5a285bc95043dd6100dadc6de3d18",
+    "NLS/SequenceSpaces/PositiveCartesianRealParameters.lean": "c3ab11925076f018dbdbbc5a42694911e3cb1ec83abe7f6a7acdc8ea121a7a09",
+    "NLS/SequenceSpaces/PositiveCartesianRealRotations.lean": "6928b7ad69a32e822968ae2d5cf457d411bd38cf3bc52796589085806b4f9ec2",
+    "NLS/MKdV/MiuraCartesianFiberRotations.lean": "a0619096dcac8848270a47d443a7190ddb492f18b03b4269c2da36e99076eb0d",
+    "NLS/MKdV/MiuraCartesianPhaseSaturation.lean": "7a59bef664e301292699aabc96cfbf685827c5237e6fa9f5daf589db5084dad9",
+    "NLS/SequenceSpaces/RealActionWeightedMembership.lean": "c238bdba990ba4c931a0e3be835cd07135b6a292d73cd135715ffa6112dd047c",
+    "NLS/ZakharovShabat/SourceActionSobolevEquivalence.lean": "bc60bd804d0f4fe47f5e9e754373941856d32858ce93f955b3aef6ec2c88d184",
+    "NLS/SequenceSpaces/PhysicalRealWeightedLift.lean": "9f535cc518c1a69c491564f079d89478ccf02b79e587db1a80c5cca8f01acb84",
+    "NLS/MKdV/MiuraJointFiberSobolevRegularity.lean": "793565446b3ea591e2f09f3a7c7aa332dbdf31d4eb73e18136ae309bfa78f693",
+    "NLS/MKdV/MiuraSobolevPhaseSaturation.lean": "607d506abe6298c4e58c9cf9c80c77632b734b092146932cf055d86d89cbd8ac",
+    "NLS/Articles/MKdVNLSHierarchies/GlobalCartesianPhaseLifting.lean": "bafb4b42482f0073bfa7f012031ede48daf3cbde2eee1506a4ebf94ba6fc7bb7",
+    "scripts/check_mkdv_nls.py": "6c735ca36a11455045892185b386b3bb1b4344a9b3610a606e4536c02fdf32a3",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "6745df472a9f70756fb255da32a252428676258e5b016fb054643d58ac82a8f0"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 387,
+  "focused_module_count": 398,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -11850,12 +12056,25 @@
       "public_declaration_count": 2227,
       "theorem_count": 1797,
       "definition_count": 430
+    },
+    {
+      "milestone": "Global full Cartesian phase lifting at attained physical actions and signed mean, exact compact joint-fiber image, and preservation of all original NLS actions at every native integer Sobolev order",
+      "audit_count": 4404,
+      "combined_NLS_audit_count": 49339,
+      "aggregate_compiled": true,
+      "module_count": 398,
+      "reused_prefix_module_count": 387,
+      "reused_prefix_commit": "0806a62fd9b6520296b7de6d92941f94475cf2f7",
+      "frozen_source_checker_count": 400,
+      "public_declaration_count": 2266,
+      "theorem_count": 1831,
+      "definition_count": 435
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 49281,
+  "combined_audited_NLS_declarations": 49339,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -11863,7 +12082,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 376 unchanged prefix module source hashes match the prior 19abb67 milestone; their private outputs were reused. Eleven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4346 declarations/auxiliaries and combined audit for 49281 NLS declarations. All 389 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 387 unchanged prefix module source hashes match the prior 0806a62 milestone; their private outputs were reused. Eleven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4404 declarations/auxiliaries and combined audit for 49339 NLS declarations. All 400 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",
