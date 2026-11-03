@@ -304,7 +304,14 @@
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_phase_sum_descent_of_independent_Gardner_phase",
         "NLS.MKdV.hasDerivAt_miuraActionFlow_native",
         "NLS.MKdV.exists_independent_open_Gardner_phase_action_factor",
-        "NLS.MKdV.miuraNativeNLSAngularCoordinate_zero_iff_physical_action_zero"
+        "NLS.MKdV.miuraNativeNLSAngularCoordinate_zero_iff_physical_action_zero",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Hill_weak_Magri_spectral_brackets",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Hill_logEnergy_unit_Magri_bracket",
+        "NLS.KdV.hillLogEnergy_branch_fderiv",
+        "NLS.KdV.hillWeakGradientMagri_antisymm",
+        "NLS.ComplexAnalysis.integral_scalarHillProductMagri_eq",
+        "NLS.KdV.memLp_hillDirichletGradientSecond",
+        "NLS.KdV.memLp_hillLogNormingGradientSecond"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -475,8 +482,8 @@
     "remaining": "Independent original mKdV angle identification and final Theorem 4(iii) angle-sum factorization. Corrected all-order frequency comparison is complete."
   },
   "remaining_essential_dependencies": [
-    "Independently construct and identify the original mKdV unit phase and its actual negative Gardner action generators on the original selected open-action domain. The current scaled-NLS Cartesian map still has only same-plane and mixed action canonicity; full cross-mode canonicity is a possible route, not an extra source conclusion.",
-    "Instantiate the checked full phase-sum descent implication with that independently identified original mKdV phase, preserving the original full angle normalization. The complete infinite-fiber descent and open-domain negative-generator-to-flow integration are now proved; the final original-angle theorem remains incomplete."
+    "Construct and identify the original independent mKdV Abelian unit phase, using the now-checked independent Hill Dirichlet/log-norming Magri geometry. Lift the actual physical periodic H2 cotangents to the coefficient-space Miura–Magri transfer and prove the normalized phase negative unit action generators on the selected open-action domain.",
+    "Instantiate the checked full phase-sum descent implication with that original mKdV phase, preserving the full original angle normalization. The global action-fiber and open-domain generator integration arguments are already proved. Corrected all-order Theorem3 is complete."
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -1344,6 +1351,29 @@
       "The general continuous factor is only a function; no extra analyticity is asserted.",
       "The source angle sum is represented by full unit-phase multiplication, with no squaring or loss modulo pi.",
       "No independent angle is defined as the negative NLS angle."
+    ]
+  },
+  "independent_Hill_separated_coordinate_Magri_geometry": {
+    "status": "proved_actual_physical_weak_Magri_matrix_and_periodic_second_cotangent_regularity_independent_Abelian_phase_still_required",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_Hill_weak_Magri_spectral_brackets",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Hill_logEnergy_unit_Magri_bracket",
+      "NLS.KdV.hillLogEnergy_branch_fderiv",
+      "NLS.KdV.hillWeakGradientMagri_antisymm",
+      "NLS.ComplexAnalysis.integral_scalarHillProductMagri_eq",
+      "NLS.KdV.memLp_hillDirichletGradientSecond",
+      "NLS.KdV.memLp_hillLogNormingGradientSecond"
+    ],
+    "source_branch": "articles/kdv-estimates",
+    "source_commit": "62da59c8f580fac3a84b5fbee140a857c240df87",
+    "integration": "71 shared checked modules plus one extracted zero-count helper; four imported continuation/count proofs adapted to retained16*norm cutoff; original prefix unchanged.",
+    "domain": "Every original real period-one L2 Hill potential, all n,m>=1, closed periodic gaps and arbitrary support. Mixed logarithmic-energy normalization requires nonzero selected Dirichlet energy; actual half-log branch derivative proved for positive energy.",
+    "matrix": "{mu_n,mu_m}=0; {mu_n,kappa_m}=-2 mu_n delta_nm; {kappa_n,mu_m}=+2 mu_n delta_nm; {kappa_n,kappa_m}=0. Actual gradient integrals and actual second derivatives, not prescribed bracket values.",
+    "regularity": "Both independent gradients and first derivatives are AC; second derivatives L2; periodic gradient endpoint values zero; energy first-derivative endpoints zero; log-norming first-derivative endpoints ONE. Exact weak Lenard boundary term and antisymmetry proved.",
+    "limits": [
+      "No derivative of a rough L2 potential is taken.",
+      "The full independent Abelian phase, its actual Gardner action generator and the physical-to-coefficient cotangent bridge remain to be proved.",
+      "These separated-coordinate brackets do not alone complete Theorem4iii or establish full Cartesian canonicity."
     ]
   }
 }

@@ -2728,3 +2728,65 @@ NLS angle, and no full cross-mode canonicity is inferred. Corrected
 Theorem 3 remains complete at every order and its exact original domain.
 
 Validation: all 560 article/shared modules have validated private outputs. All 548 unchanged prefix source hashes match pushed 04c3df4 and their outputs were reused; all twelve added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 5,604 declarations/auxiliaries and the combined audit for 50,521 NLS declarations, using only standard allowed axioms. All 563 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,913 declarations (2,378 theorems and 535 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Independent Hill separated-coordinate Magri geometry
+
+Integrated the checked Dirichlet-energy and logarithmic Dirichlet-slope
+proof closure from `articles/kdv-estimates` at immutable commit
+`62da59c8f580fac3a84b5fbee140a857c240df87`: 71 shared modules, plus one
+extracted continuous-family zero-count helper. The four imported
+continuation/count modules were adapted to this branch's established
+`16*norm(q)` cutoff instead of the source branch's improved `8*norm(q)`
+cutoff. No existing mathematical prefix source was changed. The original
+and integrated hashes are recorded in the validation provenance.
+
+The imported results construct the actual independent Dirichlet energy
+mu_n, its normalized squared-eigenfunction gradient, and the logarithmic
+Dirichlet-slope cotangent. Their first Gardner brackets are already
+proved: energy-energy and log-norming/log-norming vanish; the mixed
+energy/log-norming bracket is -1/2 delta. These results concern the
+original Hill IVP and are independent of the NLS angular coordinates.
+
+New proofs give the actual rough scalar second equation
+`y''=(q-mu)y` almost everywhere with q in L². Both actual independent
+cotangents have absolutely continuous first derivatives and actual L²
+second derivatives. Their endpoint values vanish. The energy cotangent's
+first derivative vanishes at both ends; the log-norming cotangent's first
+derivative equals ONE at both ends, by the actual Wronskian. Its trace
+must not be set to zero.
+
+`integral_scalarHillProductMagri_eq` proves the weak Lenard identity for
+products of actual rough Hill solutions, retaining the full endpoint
+term. The physical weak Magri formula is
+
+`integral (-f'' g' + 2 q (f g' - f' g))`.
+
+No spatial derivative of the rough potential is introduced. Vanishing
+test endpoint values remove the retained endpoint term and give exactly
+FOUR times the first energy times the first Gardner pairing. The actual
+periodic first-derivative traces prove antisymmetry of this weak pairing.
+The bracket definitions use the actual gradients and their independently
+proved second derivatives; no desired bracket matrix is prescribed.
+
+`independent_Hill_weak_Magri_spectral_brackets` packages the complete raw
+separated-coordinate matrix on EVERY original real period-one L² Hill
+potential: energy-energy=0, energy/log-norming=-2*mu_n*delta,
+log-norming/energy=+2*mu_n*delta, and log-norming/log-norming=0.
+Closed periodic gaps and arbitrary spectral support are included.
+`hillLogEnergy_branch_fderiv` identifies the ACTUAL derivative of
+(1/2) log(mu_n) on a positive-energy analytic branch. Its rescaled
+cotangent has mixed Magri bracket -delta whenever mu_n is nonzero;
+the logarithmic-energy/logarithmic-energy block vanishes. These are
+independently specified spectral coordinates with the required sign.
+
+Theorem 4(iii) remains INCOMPLETE. The independent global Abelian mKdV
+phase is not yet constructed. The physical periodic cotangent regularity
+must be connected to the coefficient-space Miura–Magri transfer, and the
+normalized Abelian phase must be proved to have the negative Gardner
+unit action generators. Then the previously checked full phase-product
+descent implication can be instantiated. The separated-coordinate
+matrix alone does not identify the final angle or assert full Cartesian
+canonicity. Corrected Theorem 3 remains complete at every order.
+
+Validation: all 646 article/shared modules have validated private outputs. All 560 unchanged prefix source hashes match pushed 0c3df18 and their outputs were reused; all eighty-six added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 6,286 declarations/auxiliaries and the combined audit for 51,200 NLS declarations, using only standard allowed axioms. All 649 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 3,304 declarations (2,703 theorems and 601 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

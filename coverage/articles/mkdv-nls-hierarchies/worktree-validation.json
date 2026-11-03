@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 5604,
+  "audited_declarations_and_auxiliaries": 6286,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -14584,14 +14584,1969 @@
       "kind": "theorem",
       "name": "theorem4_iii_phase_sum_descent_of_independent_Gardner_phase",
       "file": "NLS/Articles/MKdVNLSHierarchies/AngleSumDescent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2FrequencyDirichlet",
+      "file": "NLS/KdV/HillL2DirichletCharacteristic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2FrequencyDirichlet_joint",
+      "file": "NLS/KdV/HillL2DirichletCharacteristic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyDirichlet_eq_classical",
+      "file": "NLS/KdV/HillL2DirichletCharacteristic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyDirichlet_even",
+      "file": "NLS/KdV/HillL2DirichletCharacteristic.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2DirichletCharacteristic",
+      "file": "NLS/KdV/HillL2DirichletCharacteristic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2DirichletCharacteristic_joint",
+      "file": "NLS/KdV/HillL2DirichletCharacteristic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletCharacteristic_sq",
+      "file": "NLS/KdV/HillL2DirichletCharacteristic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2DirichletCharacteristic",
+      "file": "NLS/KdV/HillL2DirichletCharacteristic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletCharacteristic_eq_classical",
+      "file": "NLS/KdV/HillL2DirichletCharacteristic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_energy_im_eq_zero_of_dirichlet",
+      "file": "NLS/KdV/HillL2DirichletCharacteristic.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletCharacteristic_zero_real_of_continuous",
+      "file": "NLS/KdV/HillL2DirichletCharacteristic.lean"
+    },
+    {
+      "kind": "def",
+      "name": "unitCurveIntegral",
+      "file": "NLS/FunctionalAnalysis/UnitCurveIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "unitCurveIntegral_apply",
+      "file": "NLS/FunctionalAnalysis/UnitCurveIntegral.lean"
+    },
+    {
+      "kind": "def",
+      "name": "scalarStateMass",
+      "file": "NLS/ComplexAnalysis/ScalarStateMass.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_scalarStateMass",
+      "file": "NLS/ComplexAnalysis/ScalarStateMass.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarStateMass_eq_integral",
+      "file": "NLS/ComplexAnalysis/ScalarStateMass.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarStateMass_pos_of_first_derivative",
+      "file": "NLS/ComplexAnalysis/ScalarStateMass.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2FrequencyStateCurve",
+      "file": "NLS/KdV/HillL2StateCurve.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyStateCurve_apply",
+      "file": "NLS/KdV/HillL2StateCurve.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyStateCurve_zero",
+      "file": "NLS/KdV/HillL2StateCurve.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillL2FrequencyStateCurve",
+      "file": "NLS/KdV/HillL2StateCurve.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyStateCurve_eq_classical",
+      "file": "NLS/KdV/HillL2StateCurve.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuousFourierCLM_star",
+      "file": "NLS/Fourier/ContinuousConjugation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_conj",
+      "file": "NLS/KdV/HillL2Conjugation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_real",
+      "file": "NLS/KdV/HillL2Conjugation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_conj",
+      "file": "NLS/KdV/HillL2Conjugation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarStateMass_eq_classical",
+      "file": "NLS/KdV/HillL2GreenIdentity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyStateCurve_green_im",
+      "file": "NLS/KdV/HillL2GreenIdentity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2SolutionCurve_ne_zero",
+      "file": "NLS/ZakharovShabat/L2SolutionNonvanishing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyStateCurve_ne_zero",
+      "file": "NLS/KdV/HillDirichletReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFirstOrder_upper_eq_neg_one_ae",
+      "file": "NLS/KdV/HillDirichletReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ae_hasDerivAt_hillL2FrequencyStateCurve_fst",
+      "file": "NLS/KdV/HillDirichletReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyStateCurve_mass_pos",
+      "file": "NLS/KdV/HillDirichletReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletCharacteristic_zero_real",
+      "file": "NLS/KdV/HillDirichletReality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyStateCurve_wronskian",
+      "file": "NLS/KdV/HillStateMonodromy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyStateCurve_real",
+      "file": "NLS/KdV/HillStateMonodromy.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyStateCurve_trace",
+      "file": "NLS/KdV/HillStateMonodromy.lean"
+    },
+    {
+      "kind": "def",
+      "name": "finiteLowerCount",
+      "file": "NLS/SequenceSpaces/OrderedFiniteContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "finiteLowerCount_le_iff",
+      "file": "NLS/SequenceSpaces/OrderedFiniteContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "index_lt_finiteLowerCount_iff",
+      "file": "NLS/SequenceSpaces/OrderedFiniteContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_ordered_finite_of_counts",
+      "file": "NLS/SequenceSpaces/OrderedFiniteContinuity.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLeftDisc",
+      "file": "NLS/KdV/HillCumulativeCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ofReal_mem_hillLeftDisc_iff",
+      "file": "NLS/KdV/HillCumulativeCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "HillRealCharacteristicLabeling.central_complex_multiset",
+      "file": "NLS/KdV/HillCumulativeCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "HillRealCharacteristicLabeling.cumulative_count",
+      "file": "NLS/KdV/HillCumulativeCounts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "eventually_analyticZeroCount_eq_of_continuous_family",
+      "file": "NLS/ComplexAnalysis/ZeroCountContinuousFamily.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "HillRealCharacteristicLabeling.ne_zero_of_not_central_value",
+      "file": "NLS/KdV/HillLabelContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuousAt_hillRealLabels_family",
+      "file": "NLS/KdV/HillLabelContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillRealLabels_family",
+      "file": "NLS/KdV/HillLabelContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillRealLabels",
+      "file": "NLS/KdV/HillLabelContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_zero_ground",
+      "file": "NLS/KdV/HillCanonicalFreeLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_zero",
+      "file": "NLS/KdV/HillCanonicalFreeLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_zero_trace",
+      "file": "NLS/KdV/HillCanonicalFreeLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_trace_parity",
+      "file": "NLS/KdV/HillRealTraceParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_pair_trace",
+      "file": "NLS/KdV/HillRealTraceParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_band_strict",
+      "file": "NLS/KdV/HillRealTraceParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLowestEnergy_order_one",
+      "file": "NLS/KdV/HillRealTraceParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_pair_order",
+      "file": "NLS/KdV/HillRealTraceParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_open_gap_orders",
+      "file": "NLS/KdV/HillRealTraceParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_closed_gap_order",
+      "file": "NLS/KdV/HillRealTraceParity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_ne_zero_between_labels",
+      "file": "NLS/KdV/HillRealBands.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hillL2Discriminant_zero_in_band",
+      "file": "NLS/KdV/HillRealBands.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_open_band_bounds",
+      "file": "NLS/KdV/HillRealBands.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletCharacteristic_zero_discriminant_sq_ge_four",
+      "file": "NLS/KdV/HillDirichletBands.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletCharacteristic_ne_zero_on_open_band",
+      "file": "NLS/KdV/HillDirichletBands.lean"
+    },
+    {
+      "kind": "def",
+      "name": "unitComplexCurveIntegral",
+      "file": "NLS/FunctionalAnalysis/UnitComplexCurveIntegral.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "unitComplexCurveIntegral_apply",
+      "file": "NLS/FunctionalAnalysis/UnitComplexCurveIntegral.lean"
+    },
+    {
+      "kind": "def",
+      "name": "scalarStateCrossMass",
+      "file": "NLS/ComplexAnalysis/ScalarStateCrossMass.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarStateCrossMass_eq_integral",
+      "file": "NLS/ComplexAnalysis/ScalarStateCrossMass.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_scalarStateCrossMass",
+      "file": "NLS/ComplexAnalysis/ScalarStateCrossMass.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarStateCrossMass_self_real",
+      "file": "NLS/ComplexAnalysis/ScalarStateCrossMass.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_lagrange_identity",
+      "file": "NLS/KdV/HillDirichletLagrange.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillL2FrequencyStateCurve_frequency",
+      "file": "NLS/KdV/HillDirichletLagrange.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarStateCrossMass_hill_eq_classical",
+      "file": "NLS/KdV/HillDirichletLagrange.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyStateCurve_lagrange_identity",
+      "file": "NLS/KdV/HillDirichletLagrange.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_sq_punctured",
+      "file": "NLS/ComplexAnalysis/QuadraticPuncturedLimit.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Dirichlet_derivative_normalization",
+      "file": "NLS/KdV/HillDirichletSimplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletCharacteristic_deriv_ne_zero",
+      "file": "NLS/KdV/HillDirichletSimplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOrderAt_hillL2Dirichlet_zero",
+      "file": "NLS/KdV/HillDirichletSimplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOrderNatAt_hillL2Dirichlet_zero",
+      "file": "NLS/KdV/HillDirichletSimplicity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hillL2Dirichlet_analytic_root_branch",
+      "file": "NLS/KdV/HillDirichletRootBranches.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hillL2Dirichlet_analytic_real_root_branch",
+      "file": "NLS/KdV/HillDirichletRootBranches.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichlet_zero_mem_gap_of_between_neighbor_bands",
+      "file": "NLS/KdV/HillDirichletRootBranches.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_free_sine",
+      "file": "NLS/KdV/HillFreeDirichlet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_free_zero",
+      "file": "NLS/KdV/HillFreeDirichlet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletCharacteristic_free_sq",
+      "file": "NLS/KdV/HillFreeDirichlet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletCharacteristic_free_zero",
+      "file": "NLS/KdV/HillFreeDirichlet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletCharacteristic_free_nat_root",
+      "file": "NLS/KdV/HillFreeDirichlet.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isClosed_exists_zero_in_variable_Icc",
+      "file": "NLS/ComplexAnalysis/ClosedIntervalRoots.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isClopen_hillDirichlet_gap_root_family",
+      "file": "NLS/KdV/HillDirichletGapExistence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hillL2Dirichlet_zero_in_gap",
+      "file": "NLS/KdV/HillDirichletGapExistence.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "deriv_ne_zero_of_analyticOrderNatAt_eq_one",
+      "file": "NLS/ComplexAnalysis/RealSimpleZeroSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "not_isLocalExtr_of_simple_real_zero",
+      "file": "NLS/ComplexAnalysis/RealSimpleZeroSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "negative_on_preconnected_of_nonzero",
+      "file": "NLS/ComplexAnalysis/RealSimpleZeroSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positive_right_of_negative_left",
+      "file": "NLS/ComplexAnalysis/RealSimpleZeroSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positive_left_of_negative_right",
+      "file": "NLS/ComplexAnalysis/RealSimpleZeroSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "above_pos_level_of_square_gt",
+      "file": "NLS/ComplexAnalysis/RealSimpleZeroSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "above_pos_level_of_square_gt_left",
+      "file": "NLS/ComplexAnalysis/RealSimpleZeroSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_real",
+      "file": "NLS/KdV/HillRealGapSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_re",
+      "file": "NLS/KdV/HillRealGapSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillRealLabels_signed_pair_trace",
+      "file": "NLS/KdV/HillRealGapSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_neg_band",
+      "file": "NLS/KdV/HillRealGapSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_pos_gap",
+      "file": "NLS/KdV/HillRealGapSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Radicand_pos_below",
+      "file": "NLS/KdV/HillRealGapSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_signed_gap_gt_two",
+      "file": "NLS/KdV/HillRealGapSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_gt_two_below",
+      "file": "NLS/KdV/HillRealGapSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Discriminant_signed_gap_ge_two",
+      "file": "NLS/KdV/HillRealGapSigns.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "eq_of_zero_of_pos_derivative_at_zeros",
+      "file": "NLS/ComplexAnalysis/PositiveZeroUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletCharacteristic_real",
+      "file": "NLS/KdV/HillDirichletGapUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletCharacteristic_signed_deriv_pos",
+      "file": "NLS/KdV/HillDirichletGapUniqueness.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2Dirichlet_zero_unique_in_gap",
+      "file": "NLS/KdV/HillDirichletGapUniqueness.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletEnergy",
+      "file": "NLS/KdV/HillDirichletLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletEnergy_mem_gap",
+      "file": "NLS/KdV/HillDirichletLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletEnergy_zero",
+      "file": "NLS/KdV/HillDirichletLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletEnergy_eq_of_zero_in_gap",
+      "file": "NLS/KdV/HillDirichletLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillDirichletEnergy_family",
+      "file": "NLS/KdV/HillDirichletLabelContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillDirichletEnergy",
+      "file": "NLS/KdV/HillDirichletLabelContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletEnergy_lt_succ",
+      "file": "NLS/KdV/HillDirichletLabelContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletEnergy_zero_potential",
+      "file": "NLS/KdV/HillDirichletLabelContinuity.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2FrequencyDirichletSlope",
+      "file": "NLS/KdV/HillDirichletSlope.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2FrequencyDirichletSlope_joint",
+      "file": "NLS/KdV/HillDirichletSlope.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyDirichletSlope_eq_classical",
+      "file": "NLS/KdV/HillDirichletSlope.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2FrequencyDirichletSlope_even",
+      "file": "NLS/KdV/HillDirichletSlope.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2DirichletSlope",
+      "file": "NLS/KdV/HillDirichletSlope.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2DirichletSlope_joint",
+      "file": "NLS/KdV/HillDirichletSlope.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletSlope_sq",
+      "file": "NLS/KdV/HillDirichletSlope.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2DirichletSlope",
+      "file": "NLS/KdV/HillDirichletSlope.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletSlope_eq_classical",
+      "file": "NLS/KdV/HillDirichletSlope.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletSlope_real",
+      "file": "NLS/KdV/HillDirichletSlope.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletSlope_ne_zero_at_dirichlet_zero",
+      "file": "NLS/KdV/HillDirichletSlope.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletSlope_signed_pos",
+      "file": "NLS/KdV/HillDirichletNormingData.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletMultiplier",
+      "file": "NLS/KdV/HillDirichletNormingData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletMultiplier_pos",
+      "file": "NLS/KdV/HillDirichletNormingData.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletLogMultiplier",
+      "file": "NLS/KdV/HillDirichletNormingData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillDirichletMultiplier",
+      "file": "NLS/KdV/HillDirichletNormingData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillDirichletLogMultiplier",
+      "file": "NLS/KdV/HillDirichletNormingData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletMultiplier_trace",
+      "file": "NLS/KdV/HillDirichletNormingData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletLogMultiplier_cosh",
+      "file": "NLS/KdV/HillDirichletNormingData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletLogMultiplier_eq_zero_iff",
+      "file": "NLS/KdV/HillDirichletNormingData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletLogMultiplier_eq_zero_of_closed_gap",
+      "file": "NLS/KdV/HillDirichletNormingData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletLogMultiplier_zero_potential",
+      "file": "NLS/KdV/HillDirichletNormingData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletLogMultiplier_eq_zero_iff_endpoint",
+      "file": "NLS/KdV/HillDirichletNormingData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletLogMultiplier_sinh_sq",
+      "file": "NLS/KdV/HillDirichletNormingData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "complex_sqrt_real_formula",
+      "file": "NLS/ComplexAnalysis/RealEnergySquareRoot.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_complex_sqrt_real",
+      "file": "NLS/ComplexAnalysis/RealEnergySquareRoot.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillL2FrequencyStateCurve_joint",
+      "file": "NLS/KdV/HillStateJointContinuity.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletStateCurve",
+      "file": "NLS/KdV/HillStateJointContinuity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillDirichletStateCurve",
+      "file": "NLS/KdV/HillStateJointContinuity.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillPeriodOneTruncateValue",
+      "file": "NLS/KdV/HillRealPeriodOneTruncation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPeriodOneTruncateValue_apply",
+      "file": "NLS/KdV/HillRealPeriodOneTruncation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillRealPeriodOneTruncate",
+      "file": "NLS/KdV/HillRealPeriodOneTruncation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "tendsto_hillRealPeriodOneTruncate",
+      "file": "NLS/KdV/HillRealPeriodOneTruncation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillRealPeriodOneTruncationFinsupp",
+      "file": "NLS/KdV/HillRealPeriodOneTruncation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillContinuousCoefficients_realPeriodOneTruncation",
+      "file": "NLS/KdV/HillRealPeriodOneTruncation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "scalarStateSquaredPairing",
+      "file": "NLS/ComplexAnalysis/ScalarStateSquaredPairing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarStateSquaredPairing_eq_integral",
+      "file": "NLS/ComplexAnalysis/ScalarStateSquaredPairing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_scalarStateSquaredPairing",
+      "file": "NLS/ComplexAnalysis/ScalarStateSquaredPairing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHill_dirichlet_squared_pairing_zero",
+      "file": "NLS/KdV/ClassicalHillDirichletBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarStateSquaredPairing_hill_eq_classical",
+      "file": "NLS/KdV/HillDirichletSquaredPairing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHill_dirichlet_diagonal_squared_pairing_zero",
+      "file": "NLS/KdV/HillDirichletSquaredPairing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHill_dirichlet_squared_pairing_zero_all",
+      "file": "NLS/KdV/HillDirichletSquaredPairing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarStateSquaredPairing_hillDirichletState_zero",
+      "file": "NLS/KdV/HillDirichletSquaredPairing.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletGradientCurve",
+      "file": "NLS/KdV/HillDirichletGradientCurves.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletGradientSpatialCurve",
+      "file": "NLS/KdV/HillDirichletGradientCurves.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "absolutelyContinuousOnInterval_hillStateCurve",
+      "file": "NLS/KdV/HillDirichletGradientCurves.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "absolutelyContinuousOnInterval_hillDirichletGradientCurve",
+      "file": "NLS/KdV/HillDirichletGradientCurves.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ae_hasDerivAt_hillDirichletGradientCurve",
+      "file": "NLS/KdV/HillDirichletGradientCurves.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "eventually_hillDirichletEnergy_eq_branch_family",
+      "file": "NLS/KdV/HillDirichletAnalyticLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hillDirichletEnergy_analytic_extension",
+      "file": "NLS/KdV/HillDirichletAnalyticLabels.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletMultiplier_ofReal",
+      "file": "NLS/KdV/HillDirichletAnalyticNorming.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hillDirichlet_norming_analytic_extension",
+      "file": "NLS/KdV/HillDirichletAnalyticNorming.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichlet_branch_fderiv_apply",
+      "file": "NLS/KdV/HillDirichletBranchDerivatives.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichlet_log_branch_fderiv_apply",
+      "file": "NLS/KdV/HillDirichletBranchDerivatives.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillFirstOrderDirection",
+      "file": "NLS/KdV/HillDirichletPotentialDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillFirstOrderDirection_apply",
+      "file": "NLS/KdV/HillDirichletPotentialDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_hillFirstOrderPotential",
+      "file": "NLS/KdV/HillDirichletPotentialDerivative.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillPhysicalDirection",
+      "file": "NLS/KdV/HillDirichletPotentialDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_hillPhysicalPotential",
+      "file": "NLS/KdV/HillDirichletPotentialDerivative.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2DirichletDirectionKernel",
+      "file": "NLS/KdV/HillDirichletPotentialDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_hillL2FrequencyDirichlet_potential",
+      "file": "NLS/KdV/HillDirichletPotentialDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_hillL2DirichletCharacteristic_potential",
+      "file": "NLS/KdV/HillDirichletPotentialDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletDirectionKernel_normalization",
+      "file": "NLS/KdV/HillDirichletKernelNormalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichlet_branch_fderiv_kernel_mass",
+      "file": "NLS/KdV/HillDirichletGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPhysicalDirection_upper_zero_ae",
+      "file": "NLS/KdV/HillDirichletGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichlet_kernelPairing_eq_integral",
+      "file": "NLS/KdV/HillDirichletGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichlet_branch_fderiv_integral",
+      "file": "NLS/KdV/HillDirichletGradients.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletGradientCurve_endpoints",
+      "file": "NLS/KdV/HillDirichletGardnerBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletGradient_represents_branch",
+      "file": "NLS/KdV/HillDirichletGardnerBrackets.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletGardnerBracket",
+      "file": "NLS/KdV/HillDirichletGardnerBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletGardnerBracket_eq_zero",
+      "file": "NLS/KdV/HillDirichletGardnerBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletGradient_H1",
+      "file": "NLS/KdV/HillDirichletGradientH1.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletGradient_integral_eq_one",
+      "file": "NLS/KdV/HillDirichletGradientH1.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletState_mass_pos",
+      "file": "NLS/KdV/HillDirichletGradientH1.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillDirichletGradientCurve",
+      "file": "NLS/KdV/HillDirichletGradientH1.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillDirichletGradientSpatialCurve",
+      "file": "NLS/KdV/HillDirichletGradientH1.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletGradientCurve_real",
+      "file": "NLS/KdV/HillDirichletGradientH1.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2DirichletSlopeDirectionKernel",
+      "file": "NLS/KdV/HillDirichletSlopePotentialDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_hillL2FrequencyDirichletSlope_potential",
+      "file": "NLS/KdV/HillDirichletSlopePotentialDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_hillL2DirichletSlope_potential",
+      "file": "NLS/KdV/HillDirichletSlopePotentialDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillScalarPotentialKernel_basis",
+      "file": "NLS/KdV/HillDirichletSlopeVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillScalarPotentialPairing_eq_integral",
+      "file": "NLS/KdV/HillDirichletSlopeVariation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletSlope_potential_integral",
+      "file": "NLS/KdV/HillDirichletSlopeVariation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "radicand",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analytic_radicand",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "freeRoot",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analytic_freeRoot",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "freeRoot_sq",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exp_freePrimitive",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "rootDomain",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isOpen_rootDomain",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "continuationDomain",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isOpen_continuationDomain",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuationDomain_subset",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuationDomain_segment",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuationDomain_idempotent",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "root",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analytic_root",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "root_base",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "root_sq",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "root_ne_zero",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "multiplier",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analytic_multiplier",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "multiplier_product",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "multiplier_ne_zero",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "primitive",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analytic_primitive",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitive_base",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exp_primitive",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitive_trace",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_primitive",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_primitive",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitive_unique",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_continuation_neighborhood",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2SourceFamily",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2ContinuationDomain",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2ContinuedRoot",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2ContinuedMultiplier",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2ContinuedPrimitive",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isOpen_hillL2ContinuationDomain",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_hillL2ContinuationDomain_iff",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2ContinuedRoot",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2ContinuedPrimitive",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2ContinuedRoot_base",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2ContinuedPrimitive_base",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2ContinuedRoot_sq",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2ContinuedRoot_ne_zero",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exp_hillL2ContinuedPrimitive",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2ContinuedPrimitive_trace",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_hillL2ContinuedPrimitive",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_hillL2ContinuedPrimitive",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_hillL2ContinuationDomain_of_im_ne_zero",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_hillL2ContinuedPrimitive_off_real",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillClosedBall_subset_slitPlane",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_hillL2ContinuationDomain_of_high_distance",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mem_hillL2ContinuationDomain_high_sphere",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hillL2Continuation_high_contour_neighborhood",
+      "file": "NLS/KdV/HillL2SourcePrimitive.lean"
+    },
+    {
+      "kind": "def",
+      "name": "contourMoment",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "period_eq_zero",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "contourMoment_arnold",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_analytic_contourMoment",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "contourMoment_base",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "contourMoment_eq_of_annulus",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveMoments.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillL2HighContourMoment",
+      "file": "NLS/KdV/HillL2HighContourMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_hillL2HighContourMoment",
+      "file": "NLS/KdV/HillL2HighContourMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2HighContourMoment_zero",
+      "file": "NLS/KdV/HillL2HighContourMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2HighContourMoment_arnold_level",
+      "file": "NLS/KdV/HillL2HighContourMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2HighContourMoment_arnold",
+      "file": "NLS/KdV/HillL2HighContourMoments.lean"
+    },
+    {
+      "kind": "def",
+      "name": "primitiveAction",
+      "file": "NLS/KdV/ActionHamiltonianMoments.lean"
+    },
+    {
+      "kind": "def",
+      "name": "cubicMoment",
+      "file": "NLS/KdV/ActionHamiltonianMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_primitiveAction_le",
+      "file": "NLS/KdV/ActionHamiltonianMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitiveAction_sub",
+      "file": "NLS/KdV/ActionHamiltonianMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitiveAction_eq_zero_of_analyticOnNhd",
+      "file": "NLS/KdV/ActionHamiltonianMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitiveAction_eq_derivative_period",
+      "file": "NLS/KdV/ActionHamiltonianMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitiveAction_add_const_of_analyticOnNhd",
+      "file": "NLS/KdV/ActionHamiltonianMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "cubicMoment_eq_zero_of_analyticOnNhd",
+      "file": "NLS/KdV/ActionHamiltonianMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_cubicMoment_le",
+      "file": "NLS/KdV/ActionHamiltonianMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_weighted_cubicMoment_le_action_sq",
+      "file": "NLS/KdV/ActionHamiltonianMoments.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_cubicMoment",
+      "file": "NLS/KdV/ActionHamiltonianMoments.lean"
+    },
+    {
+      "kind": "def",
+      "name": "pullback",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveFunctoriality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "radicand_comp",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveFunctoriality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuationDomain_comp_iff",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveFunctoriality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "root_comp",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveFunctoriality.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "primitive_comp",
+      "file": "NLS/ComplexAnalysis/TracePrimitiveFunctoriality.lean"
+    },
+    {
+      "kind": "def",
+      "name": "classicalHillTraceFamily",
+      "file": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillTraceFamily_domain",
+      "file": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillTraceFamily_root",
+      "file": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillTraceFamily_primitive",
+      "file": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillUnitPotentialCLM",
+      "file": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillUnitPotentialCLM_apply",
+      "file": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "toCoeff_hillContinuousCoefficients",
+      "file": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2ContinuationDomain_iff_classical",
+      "file": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2ContinuedRoot_eq_classical",
+      "file": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2ContinuedPrimitive_eq_classical",
+      "file": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2HighContourMoment_zero_eq_classicalPrimitiveAction",
+      "file": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2HighContourMoment_zero_eq_shifted_classicalPrimitiveAction",
+      "file": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuousFourierCLM_const",
+      "file": "NLS/Fourier/ContinuousConstants.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_constant_shift",
+      "file": "NLS/KdV/HillDirichletSlopeShift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletSlope_constant_shift",
+      "file": "NLS/KdV/HillDirichletSlopeShift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletSlope_energy_deriv_eq_constant_direction",
+      "file": "NLS/KdV/HillDirichletSlopeShift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPhysicalDirection_one_lower_ae",
+      "file": "NLS/KdV/HillDirichletSlopeShift.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillL2DirichletSlope_energy_integral",
+      "file": "NLS/KdV/HillLogNormingGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichlet_log_branch_fderiv_integral",
+      "file": "NLS/KdV/HillLogNormingGradient.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillPhysicalDirectionPairing",
+      "file": "NLS/KdV/HillPhysicalDirectionPairing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillPhysicalDirectionPairing_apply",
+      "file": "NLS/KdV/HillPhysicalDirectionPairing.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletCosineCurve",
+      "file": "NLS/KdV/HillDirichletCosineData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillDirichletCosineCurve",
+      "file": "NLS/KdV/HillDirichletCosineData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletEnergy_lt_of_lt",
+      "file": "NLS/KdV/HillDirichletCosineData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletEnergy_ne_of_ne",
+      "file": "NLS/KdV/HillDirichletCosineData.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHill_dirichlet_mixed_pairing_zero_of_ne",
+      "file": "NLS/KdV/ClassicalHillMixedPairings.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_wronskian",
+      "file": "NLS/KdV/ClassicalHillMixedPairings.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHill_dirichlet_mixed_pairing_diagonal",
+      "file": "NLS/KdV/ClassicalHillMixedPairings.lean"
+    },
+    {
+      "kind": "def",
+      "name": "scalarStateMixedPairing",
+      "file": "NLS/ComplexAnalysis/ScalarStateMixedPairing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarStateMixedPairing_eq_integral",
+      "file": "NLS/ComplexAnalysis/ScalarStateMixedPairing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_scalarStateMixedPairing",
+      "file": "NLS/ComplexAnalysis/ScalarStateMixedPairing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarStateMixedPairing_hill_eq_classical",
+      "file": "NLS/KdV/HillDirichletMixedPairings.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarStateMixedPairing_hillDirichlet_ne",
+      "file": "NLS/KdV/HillDirichletMixedPairings.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarStateMixedPairing_hillDirichlet_diagonal",
+      "file": "NLS/KdV/HillDirichletMixedPairings.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLogNormingProjection",
+      "file": "NLS/KdV/HillLogNormingCotangent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLogNormingGradientCurve",
+      "file": "NLS/KdV/HillLogNormingCotangent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLogNormingGradientSpatialCurve",
+      "file": "NLS/KdV/HillLogNormingCotangent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogNormingGradient_represents_branch",
+      "file": "NLS/KdV/HillLogNormingCotangent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "absolutelyContinuousOnInterval_hillLogNormingGradientCurve",
+      "file": "NLS/KdV/HillLogNormingCotangent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ae_hasDerivAt_hillLogNormingGradientCurve",
+      "file": "NLS/KdV/HillLogNormingCotangent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletState_real",
+      "file": "NLS/KdV/HillLogNormingRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletCosine_real",
+      "file": "NLS/KdV/HillLogNormingRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletState_crossMass_self",
+      "file": "NLS/KdV/HillLogNormingRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogNormingGradientCurve_endpoints",
+      "file": "NLS/KdV/HillLogNormingRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogNormingGradient_H1",
+      "file": "NLS/KdV/HillLogNormingRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillLogNormingProjection",
+      "file": "NLS/KdV/HillLogNormingRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillLogNormingGradientCurve",
+      "file": "NLS/KdV/HillLogNormingRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_hillLogNormingGradientSpatialCurve",
+      "file": "NLS/KdV/HillLogNormingRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogNormingGradient_integral_eq_zero",
+      "file": "NLS/KdV/HillLogNormingRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogNormingProjection_real",
+      "file": "NLS/KdV/HillLogNormingRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogNormingGradientCurve_real",
+      "file": "NLS/KdV/HillLogNormingRegularity.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletLogGardnerBracket",
+      "file": "NLS/KdV/HillMixedGardnerBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletLogGardnerBracket_eq",
+      "file": "NLS/KdV/HillMixedGardnerBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHill_dirichlet_product_pairing_zero_of_ne",
+      "file": "NLS/KdV/ClassicalHillLogNormingBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHillFlow_sub_smul_initial",
+      "file": "NLS/KdV/ClassicalHillLogNormingBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "classicalHill_log_cotangent_pairing_zero_of_ne",
+      "file": "NLS/KdV/ClassicalHillLogNormingBrackets.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLogNormingGardnerBracket",
+      "file": "NLS/KdV/HillLogNormingGardnerBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogNormingGardnerBracket_diagonal",
+      "file": "NLS/KdV/HillLogNormingGardnerBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogNormingGardnerBracket_zero_of_ne",
+      "file": "NLS/KdV/HillLogNormingGardnerBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogNormingGardnerBracket_eq_zero",
+      "file": "NLS/KdV/HillLogNormingGardnerBrackets.lean"
+    },
+    {
+      "kind": "def",
+      "name": "scalarHillProductMagriIntegrand",
+      "file": "NLS/ComplexAnalysis/ScalarHillProductMagri.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "intervalIntegrable_scalarHillProductMagriIntegrand",
+      "file": "NLS/ComplexAnalysis/ScalarHillProductMagri.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "integral_scalarHillProductMagri_eq",
+      "file": "NLS/ComplexAnalysis/ScalarHillProductMagri.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillIntervalPotential",
+      "file": "NLS/KdV/HillStateSecondDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ae_hasDerivAt_hillL2FrequencyStateCurve_snd",
+      "file": "NLS/KdV/HillStateSecondDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "memLp_hillIntervalPotential",
+      "file": "NLS/KdV/HillStateSecondDerivative.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillSolutionProductMagri",
+      "file": "NLS/KdV/HillSolutionProductMagri.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillSolutionProductMagri_eq_first",
+      "file": "NLS/KdV/HillSolutionProductMagri.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletGradientSecond",
+      "file": "NLS/KdV/HillGradientSecondDerivatives.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLogNormingGradientSecond",
+      "file": "NLS/KdV/HillGradientSecondDerivatives.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ae_hasDerivAt_hillDirichletGradientSpatialCurve",
+      "file": "NLS/KdV/HillGradientSecondDerivatives.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "ae_hasDerivAt_hillLogNormingGradientSpatialCurve",
+      "file": "NLS/KdV/HillGradientSecondDerivatives.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillWeakGradientMagri",
+      "file": "NLS/KdV/HillWeakGradientMagri.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillWeakGradientMagri_Dirichlet_eq_product",
+      "file": "NLS/KdV/HillWeakGradientMagri.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillWeakGradientMagri_Dirichlet_eq_first",
+      "file": "NLS/KdV/HillWeakGradientMagri.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillWeakGradientMagri_logNorming_eq_first",
+      "file": "NLS/KdV/HillWeakGradientMagri.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "integral_curve_mul_spatial_eq_deriv",
+      "file": "NLS/KdV/HillDirichletMagriBrackets.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletMagriBracket",
+      "file": "NLS/KdV/HillDirichletMagriBrackets.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillDirichletLogMagriBracket",
+      "file": "NLS/KdV/HillDirichletMagriBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletMagriBracket_eq_first",
+      "file": "NLS/KdV/HillDirichletMagriBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletMagriBracket_eq_zero",
+      "file": "NLS/KdV/HillDirichletMagriBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletLogMagriBracket_eq_first",
+      "file": "NLS/KdV/HillDirichletMagriBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletLogMagriBracket_eq",
+      "file": "NLS/KdV/HillDirichletMagriBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillDirichletGradientSpatialCurve_endpoints",
+      "file": "NLS/KdV/HillGradientPeriodicTraces.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogNormingGradientSpatialCurve_endpoints",
+      "file": "NLS/KdV/HillGradientPeriodicTraces.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "memLp_unitCurve_extend",
+      "file": "NLS/FunctionalAnalysis/UnitCurveLpBounds.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "memLp_hillProductSecond",
+      "file": "NLS/KdV/HillGradientSecondRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "memLp_hillDirichletGradientSecond",
+      "file": "NLS/KdV/HillGradientSecondRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "memLp_hillLogNormingGradientSecond",
+      "file": "NLS/KdV/HillGradientSecondRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "absolutelyContinuousOnInterval_hillDirichletGradientSpatialCurve",
+      "file": "NLS/KdV/HillGradientSecondRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "absolutelyContinuousOnInterval_hillLogNormingGradientSpatialCurve",
+      "file": "NLS/KdV/HillGradientSecondRegularity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "intervalIntegrable_weakGradientMagri_integrand",
+      "file": "NLS/KdV/HillWeakMagriAntisymmetry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillWeakGradientMagri_antisymm",
+      "file": "NLS/KdV/HillWeakMagriAntisymmetry.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLogNormingMagriBracket",
+      "file": "NLS/KdV/HillLogNormingMagriBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogNormingMagriBracket_eq_first",
+      "file": "NLS/KdV/HillLogNormingMagriBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogNormingMagriBracket_eq_zero",
+      "file": "NLS/KdV/HillLogNormingMagriBrackets.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLogDirichletMagriBracket",
+      "file": "NLS/KdV/HillLogNormingMagriBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogDirichletMagriBracket_eq",
+      "file": "NLS/KdV/HillLogNormingMagriBrackets.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillWeakGradientMagri_smul_left",
+      "file": "NLS/KdV/HillWeakMagriScalars.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillWeakGradientMagri_smul_right",
+      "file": "NLS/KdV/HillWeakMagriScalars.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLogEnergyGradientCurve",
+      "file": "NLS/KdV/HillMagriLogEnergyCoordinates.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLogEnergyGradientSpatialCurve",
+      "file": "NLS/KdV/HillMagriLogEnergyCoordinates.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillLogEnergyGradientSecond",
+      "file": "NLS/KdV/HillMagriLogEnergyCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogEnergy_branch_fderiv",
+      "file": "NLS/KdV/HillMagriLogEnergyCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogEnergyLogNormingMagriBracket_eq",
+      "file": "NLS/KdV/HillMagriLogEnergyCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillLogEnergyMagriBracket_eq_zero",
+      "file": "NLS/KdV/HillMagriLogEnergyCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "independent_Hill_weak_Magri_spectral_brackets",
+      "file": "NLS/Articles/MKdVNLSHierarchies/IndependentHillMagriGeometry.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "independent_Hill_logEnergy_unit_Magri_bracket",
+      "file": "NLS/Articles/MKdVNLSHierarchies/IndependentHillMagriGeometry.lean"
     }
   ],
-  "public_declaration_count": 2913,
-  "theorem_count": 2378,
-  "definition_count": 535,
-  "full_build": "560 article/shared modules have validated private outputs. All 548 unchanged prefix module source hashes match the prior 04c3df4 milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 3304,
+  "theorem_count": 2703,
+  "definition_count": 601,
+  "full_build": "646 article/shared modules have validated private outputs. All 560 unchanged prefix module source hashes match the prior 0c3df18 milestone; their private outputs were reused. Eighty-six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/ContinuousTailRotationInvariants.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/KdV/HillL2DirichletCharacteristic.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -15153,12 +17108,98 @@
     "NLS/MKdV/MiuraNativeNLSAngularDomain.lean": "80a1dc210ceb97838139bf65cd275ce5768f22e89b95b6630d9159bddedfe5ea",
     "NLS/MKdV/MiuraOpenGardnerPhaseFactor.lean": "34433f8ab45a99bd21b1e9993dcbca2f7a7c7d096e5f951d1093f029f8c4fca2",
     "NLS/Articles/MKdVNLSHierarchies/AngleSumDescent.lean": "d57a5dbd9bf99cbd1dab8553d1a8f1f24a73b0d1182d03abb6d5a35b4f7acfeb",
-    "NLS.lean": "a9f6478792bf4fb9a03319aa445c60c282e815764093652d783f4f94691b14a0",
-    "scripts/check_mkdv_nls.py": "846fa855762fbd5fc7d6a5e0892bb13e216709ab233bff5897b98177162ff279",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "a1ff30b65bb8cb19e90592244d220cceeec577471c77f7f46115271afff76a1c"
+    "NLS/KdV/HillL2DirichletCharacteristic.lean": "a8907e46c53674f5a8673ef1923626564e3c3da6e5adbe3faf0b12ad55a80f9b",
+    "NLS/FunctionalAnalysis/UnitCurveIntegral.lean": "41211aa0bfaac36b349a9bed78e761ff975e1ffc2eb70fa4fb647fce5524c513",
+    "NLS/ComplexAnalysis/ScalarStateMass.lean": "a4bf6bf494919a24bfb2e6236a5e3a71df299a408a1d3e61d1474388c450fb6c",
+    "NLS/KdV/HillL2StateCurve.lean": "454ae2a28cd61dc83bd5c0306abf8418f98055c4e6e59c4bf307d4afb5762a35",
+    "NLS/Fourier/ContinuousConjugation.lean": "5e4f809136c6c885be366072a09d40618856a5f9096589a04c2b1c9601509f9b",
+    "NLS/KdV/HillL2Conjugation.lean": "9f60336f9dd4e6394501ed3bd9529be74b7194e2b46925272dd8f3b07376adb2",
+    "NLS/KdV/HillL2GreenIdentity.lean": "e66233bab908abe570fc00f8b4873219be19e0684a243ae61b2386c656c1410f",
+    "NLS/ZakharovShabat/L2SolutionNonvanishing.lean": "a2a7e3982e17dba92cf32daaf533735001e8fdcb3837cce7c8aaf8bbd88b283c",
+    "NLS/KdV/HillDirichletReality.lean": "3d650863cb1393dec99725c13840d8c9b4f91645fda2c0b1dc02eb96ef2c5316",
+    "NLS/KdV/HillStateMonodromy.lean": "7ec6517ad007eb0c831267d0717387afb21bced911752d502a5570e669e1b731",
+    "NLS/SequenceSpaces/OrderedFiniteContinuity.lean": "845306a62ca86b944046d35727a675c24419dee39a0436e4b234dd317d9ebe6b",
+    "NLS/KdV/HillCumulativeCounts.lean": "9b37dc9bb7f4daab48b42187b5c193cdf0ec8e7eed70597383d808fe5f2dbe61",
+    "NLS/ComplexAnalysis/ZeroCountContinuousFamily.lean": "0067b324abdf235516664fb2fc2440f1550aded11bdcc4e1f1079f9eaf347324",
+    "NLS/KdV/HillLabelContinuity.lean": "96c0a64cf85122628167538a3da265c7e1914ed1978202918fa29c32bbadc155",
+    "NLS/KdV/HillCanonicalFreeLabels.lean": "034965a15a5980b5fd1740e3e8dcecc83ee407e3ab876132d834148dc8b125ac",
+    "NLS/KdV/HillRealTraceParity.lean": "c7652fa3faa8246f3ce8b968199101f9cc586215ce687aa9927a7f546f2dae82",
+    "NLS/KdV/HillRealBands.lean": "583ca2dd1a3b461f8ddcb3521e74a53ba9e72baf100066216be0edfc05f0b326",
+    "NLS/KdV/HillDirichletBands.lean": "9f60d02a61ec5a00e8a766789ec1ddd6c674574d8b81935afce6376b4c557e20",
+    "NLS/FunctionalAnalysis/UnitComplexCurveIntegral.lean": "ed8cdcef3dec539c5f60871c6c8ffbc05f7ce464dcfb334f66eb91e0527a7f30",
+    "NLS/ComplexAnalysis/ScalarStateCrossMass.lean": "0014103bc3084b7447050cd58a0ae6e6deb011fb27460980fed8a4209641128e",
+    "NLS/KdV/HillDirichletLagrange.lean": "803d52411ed49ab6d9a3c6f432c9612d0753bc34badcffd3e9e9c895f6d37e3c",
+    "NLS/ComplexAnalysis/QuadraticPuncturedLimit.lean": "39894438de36641ec17fe8346b32ba756782fd8d7269277d7d63f900afe9fdbb",
+    "NLS/KdV/HillDirichletSimplicity.lean": "a49a408424f1eca609131808b7cf50dd900c74bfce83092b4f636de387dc5f48",
+    "NLS/KdV/HillDirichletRootBranches.lean": "0762efeb2621a3309c09a7880aa386c6794b0b1e3f6cb3df58f2dc2fe7ee2faa",
+    "NLS/KdV/HillFreeDirichlet.lean": "9051fb4061736982a304e7767c58f90f1a60f77f92ece8ed750e862f4b4d1ef7",
+    "NLS/ComplexAnalysis/ClosedIntervalRoots.lean": "7093d3831577947ff947ea4742e5d0b9dc8051efb8e9cd516896b4ea62b7b557",
+    "NLS/KdV/HillDirichletGapExistence.lean": "b582a2e34aa6f2d3eb659f83b0ca952a055022e65f29372cd6347d67d5b767f5",
+    "NLS/ComplexAnalysis/RealSimpleZeroSigns.lean": "361f20f8dd30a62fc010f661e37ee24a1a31f8e06933c2bedb1ba4ab1905ad1b",
+    "NLS/KdV/HillRealGapSigns.lean": "3d780ed7d305c355e3f54fcbd47bca4d75c7c1c902ca876f2b10bf77bbc068e2",
+    "NLS/ComplexAnalysis/PositiveZeroUniqueness.lean": "669be0342571d7d0c6289e9e2c96ff07003be84a3d6cf844eea3c7038e95df18",
+    "NLS/KdV/HillDirichletGapUniqueness.lean": "4b2e2303a739a519942b3c5780caa1f24ec92a397843b744a8551fef7da40a01",
+    "NLS/KdV/HillDirichletLabels.lean": "746cde4ef20a9770c36c77d103578981212c300fc6bff319f61a694f809ddd0d",
+    "NLS/KdV/HillDirichletLabelContinuity.lean": "478c7e4403862be57abb5941180b3b6975b1177fc93206399ec925e54a097843",
+    "NLS/KdV/HillDirichletSlope.lean": "d539eef43e3997a75d8021bf919d9ad25b0fa05debc3fc81933473ded48e5aa8",
+    "NLS/KdV/HillDirichletNormingData.lean": "3a6976e111ede766127496977a5ab94f4b1245aafae1da0d0140b035584cbaec",
+    "NLS/ComplexAnalysis/RealEnergySquareRoot.lean": "742026d723830ca1b4452e16dea2f26a6b9cb43670bd3f48498716219475ef65",
+    "NLS/KdV/HillStateJointContinuity.lean": "a6bcf2fed35da908f31ef6e222f27d7b3441b6846e9c6f436a3c3c8158a4a34d",
+    "NLS/KdV/HillRealPeriodOneTruncation.lean": "7b737504ca5b65e7535a0263f01449d59a11c418755eec57302d2ab665fa113d",
+    "NLS/ComplexAnalysis/ScalarStateSquaredPairing.lean": "c12e7f97d500ced8ad33bfbc5db48a8f29a527d8b4c87e1d442cff57e4f82da2",
+    "NLS/KdV/ClassicalHillDirichletBrackets.lean": "3e496e0259ad4e4d6dedbc44c538bf01fa3542f6c8089e2634914e4bba309bd7",
+    "NLS/KdV/HillDirichletSquaredPairing.lean": "15a6657edb287069a7307d4ce6c4dd21016502452acc73a50a4fdd2ae7319324",
+    "NLS/KdV/HillDirichletGradientCurves.lean": "3368b97cbf137ad3e162120bb0809cb97022cdab86490c3c71df4bac2d6c04a5",
+    "NLS/KdV/HillDirichletAnalyticLabels.lean": "6180dffbcfaeee404799c6916a13d58f968a86197eb7a8f833664c489e46f285",
+    "NLS/KdV/HillDirichletAnalyticNorming.lean": "ad357e3373ebb76fd6c5be35591499d34a51f5c9792cf34b41d7a1d6ef9451e7",
+    "NLS/KdV/HillDirichletBranchDerivatives.lean": "db2d8be3e20600a65c45163ff5e8df95619b1be40a1de011e132a90bd4c94bff",
+    "NLS/KdV/HillDirichletPotentialDerivative.lean": "9bbb3c875b1e900efa6f4327ce5e775547af7214f5b4e4cbab43f55cdf3df9c4",
+    "NLS/KdV/HillDirichletKernelNormalization.lean": "6a145272e6b0b1fb8ee01bfdfc4acf317ec29511ced7117d9cd29b9c2c931d37",
+    "NLS/KdV/HillDirichletGradients.lean": "53af8d881ccb6d4a4951c61fd27b936472157df40d8f17d4ae9fe1c7bfae20b7",
+    "NLS/KdV/HillDirichletGardnerBrackets.lean": "b5ae51d2f04adcb63642fa62c4ac38c9259c703220fbbc071d63811d2b160e2d",
+    "NLS/KdV/HillDirichletGradientH1.lean": "f8ac4dfe9b5dcbd0d431606bb23a02686120b936182bd3fde0ff9fb01371867d",
+    "NLS/KdV/HillDirichletSlopePotentialDerivative.lean": "af0d7b6d845a9fc790d13c5f651e918ca8268cff639909a6e43ac46cd224e93c",
+    "NLS/KdV/HillDirichletSlopeVariation.lean": "63cf7e0aca561fa78b40ee3c0a546472306a295d0fffa35a426b9968373898b6",
+    "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean": "b72a10890423ba6070d235e90a5f745cfcb69fcba1f234933be9d2451c5c7ffb",
+    "NLS/KdV/HillL2SourcePrimitive.lean": "a5f0ae929854f46f848e0eb0f17a0e70d5bc897ee2b8c8a877f555dde7715782",
+    "NLS/ComplexAnalysis/TracePrimitiveMoments.lean": "214de92b4daf02a9ce95ead6111039d2ab69fcab3f416a4e59cd6386230e9acb",
+    "NLS/KdV/HillL2HighContourMoments.lean": "18cbaab19f8b74fc0439ec8738797f2076a3fb5efa13538e24f077831997ca66",
+    "NLS/KdV/ActionHamiltonianMoments.lean": "3706e6c81dae7c2076ad6f9ad605b7a056671f2de2ce150c7e6a2764cff462e8",
+    "NLS/ComplexAnalysis/TracePrimitiveFunctoriality.lean": "284f588bf695820c3c55fc45dbc15b9b3ded2ceee27301158f535eaa78640d91",
+    "NLS/KdV/ClassicalL2PrimitiveAgreement.lean": "e5c357751446a311be64c16936afffda580b1b556b4d3ea460e6be2cc06e5360",
+    "NLS/Fourier/ContinuousConstants.lean": "da8abd487291c7c4f5e9e6aad7022f25a6e7126bf25dc3a6338f9e123d9d5eae",
+    "NLS/KdV/HillDirichletSlopeShift.lean": "6ea95781b74e77043a23e00ffd1ea51467f7ea9643ca76995100a1bf4a253d1f",
+    "NLS/KdV/HillLogNormingGradient.lean": "3218f5d731f207eadb56759f0ecca757d99b970e6b3f2efee0c9b70c6b1739ad",
+    "NLS/KdV/HillPhysicalDirectionPairing.lean": "f84ecaee365f5d406fb050bf407f366a1424040c2c45aabd1782c14b4a2c2d0f",
+    "NLS/KdV/HillDirichletCosineData.lean": "6b6dd55b97dec4702d203dd57a97e2223875e2176b937d333ac8ffdcfd591fe3",
+    "NLS/KdV/ClassicalHillMixedPairings.lean": "039b699340ef441731317583f8e629b61008d311f94fe76642ac7093e8382203",
+    "NLS/ComplexAnalysis/ScalarStateMixedPairing.lean": "9e7c1f639016bc60c996e71b3a0b30b43fe48bc7bdb19152ea4c5e0edd6e34e3",
+    "NLS/KdV/HillDirichletMixedPairings.lean": "6746da95f3dfcdb422f792c4dd5f4761feb05f5399656009a44237b5cc831d88",
+    "NLS/KdV/HillLogNormingCotangent.lean": "ac5df5be41d9edc60de4aff98e6c8083f5d04c27260af34a92fbce1042eacebe",
+    "NLS/KdV/HillLogNormingRegularity.lean": "45c1c9acb7b331c39c1769a85be922d24ea3fe3b51933d098c31e2f585659eb1",
+    "NLS/KdV/HillMixedGardnerBrackets.lean": "311b2fb16240e2da832e407aeab1c8da57ce84f2c551e87bfaaf203d82796c6f",
+    "NLS/KdV/ClassicalHillLogNormingBrackets.lean": "7c3c4080e3b3da07d07bc22d3531524af4d23f6e37a1c016980d4fae8793af7a",
+    "NLS/KdV/HillLogNormingGardnerBrackets.lean": "2dcbc6621d5c9e0426a99b76559aa8753cc6c7e5aa2bc0de5a914812bb1243e1",
+    "NLS/ComplexAnalysis/ScalarHillProductMagri.lean": "ae15cdb8b6767ccc5e17845424fc4b08f849a40f90760f07ef74e37d17883602",
+    "NLS/KdV/HillStateSecondDerivative.lean": "6b8178b66c038205643461f553edc4a4ec6f9fdaebf5f35d031525e8a6d6e8ce",
+    "NLS/KdV/HillSolutionProductMagri.lean": "91905a6b0cbd027734937b107acf433c10e74ce5578e88cd785849e5db5c9389",
+    "NLS/KdV/HillGradientSecondDerivatives.lean": "827ce75fafb72a585125e25fb2e99d103dd2c6a22f1bab6e5c69a5ad7e1b0a6e",
+    "NLS/KdV/HillWeakGradientMagri.lean": "43c507d71629fc62622d63ee3c2137f2346d669a0d5ece29f6714a09cedd84af",
+    "NLS/KdV/HillDirichletMagriBrackets.lean": "af8e5c1b749c3a8d29c43aab72490572e6f3b522601a4e9654fa63bf44f5ea2c",
+    "NLS/KdV/HillGradientPeriodicTraces.lean": "e3c8abb3952af5523b452c5ca54ad50e65cd516c521e8c4b5a64d0d231d869c9",
+    "NLS/FunctionalAnalysis/UnitCurveLpBounds.lean": "688bd0e489d49ee17cffb02d19adc24d46f389b3ca7b12cdd3efc188bafeb3fa",
+    "NLS/KdV/HillGradientSecondRegularity.lean": "4d699bcd251707b88014f4311773746262015ade951235943f4d999d8af3eef7",
+    "NLS/KdV/HillWeakMagriAntisymmetry.lean": "2b2d4fef0b15e6897badeee08a58fce26303c7a5ec645930e47310eb35f987c5",
+    "NLS/KdV/HillLogNormingMagriBrackets.lean": "a4ee5e65c0216a893b7773add06f12dea4a9f3c5c39453cf00116d9247fd058e",
+    "NLS/KdV/HillWeakMagriScalars.lean": "dc566bb2d925341e592990bf5a0f6d3cabf3094e14c7e8e590ba3a99dd1c5d25",
+    "NLS/KdV/HillMagriLogEnergyCoordinates.lean": "5bc43178378e22b94a4f7d60c162d26819159304315aaffc18937b4a9a8ffe37",
+    "NLS/Articles/MKdVNLSHierarchies/IndependentHillMagriGeometry.lean": "5aac37dacfec57b0451958983145b412cac3f2ea95d5b8857678207df3ecf6c5",
+    "NLS.lean": "c6f21903008d21a1118f4d59b484b2eb1f7bfd445788659d6b5434beddf6268f",
+    "scripts/check_mkdv_nls.py": "2a70a462b7012bbf9ae7ae122d05b463a50ae31400ce4d16f6f1411fb444c1be",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "7483c4a3bb306d5a908ea9ec3c2f4b4bb3c49bb637e645dbc9abef1b6488d1b1"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 560,
+  "focused_module_count": 646,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -15662,12 +17703,25 @@
       "public_declaration_count": 2913,
       "theorem_count": 2378,
       "definition_count": 535
+    },
+    {
+      "milestone": "Independent Hill Dirichlet/log-norming physical weak Magri matrix at every real period-one L2 potential; actual rough second derivative, periodic first-derivative traces, H2 regularity certificates and weak antisymmetry; actual positive half-log-energy differential and negative unit mixed Magri normalization. Reused71 checked shared modules and extracted one helper. Independent original Abelian mKdV phase and coefficient-space cotangent transfer remain required for final Theorem4iii.",
+      "audit_count": 6286,
+      "combined_NLS_audit_count": 51200,
+      "aggregate_compiled": true,
+      "module_count": 646,
+      "reused_prefix_module_count": 560,
+      "reused_prefix_commit": "0c3df181a2d9eb916341d9589fd8c4472f154580",
+      "frozen_source_checker_count": 649,
+      "public_declaration_count": 3304,
+      "theorem_count": 2703,
+      "definition_count": 601
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 50521,
+  "combined_audited_NLS_declarations": 51200,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -15675,7 +17729,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 548 unchanged prefix module source hashes match the prior 04c3df4 milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 5604 declarations/auxiliaries and combined audit for 50521 NLS declarations. All 563 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 560 unchanged prefix module source hashes match the prior 0c3df18 milestone; their private outputs were reused. Eighty-six added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 6286 declarations/auxiliaries and combined audit for 51200 NLS declarations. All 649 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",
@@ -15693,5 +17747,439 @@
     "commit": "9a2d23c9f2cf513921eb89cdb69b9a57eed3a3fc",
     "module_count": 4,
     "all_copied_sources_identical": true
+  },
+  "shared_Hill_Dirichlet_Magri_source": {
+    "branch": "articles/kdv-estimates",
+    "commit": "62da59c8f580fac3a84b5fbee140a857c240df87",
+    "files": [
+      {
+        "file": "NLS/KdV/HillL2DirichletCharacteristic.lean",
+        "source_sha256": "a8907e46c53674f5a8673ef1923626564e3c3da6e5adbe3faf0b12ad55a80f9b",
+        "integrated_sha256": "a8907e46c53674f5a8673ef1923626564e3c3da6e5adbe3faf0b12ad55a80f9b",
+        "adapted": false
+      },
+      {
+        "file": "NLS/FunctionalAnalysis/UnitCurveIntegral.lean",
+        "source_sha256": "41211aa0bfaac36b349a9bed78e761ff975e1ffc2eb70fa4fb647fce5524c513",
+        "integrated_sha256": "41211aa0bfaac36b349a9bed78e761ff975e1ffc2eb70fa4fb647fce5524c513",
+        "adapted": false
+      },
+      {
+        "file": "NLS/ComplexAnalysis/ScalarStateMass.lean",
+        "source_sha256": "a4bf6bf494919a24bfb2e6236a5e3a71df299a408a1d3e61d1474388c450fb6c",
+        "integrated_sha256": "a4bf6bf494919a24bfb2e6236a5e3a71df299a408a1d3e61d1474388c450fb6c",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillL2StateCurve.lean",
+        "source_sha256": "454ae2a28cd61dc83bd5c0306abf8418f98055c4e6e59c4bf307d4afb5762a35",
+        "integrated_sha256": "454ae2a28cd61dc83bd5c0306abf8418f98055c4e6e59c4bf307d4afb5762a35",
+        "adapted": false
+      },
+      {
+        "file": "NLS/Fourier/ContinuousConjugation.lean",
+        "source_sha256": "5e4f809136c6c885be366072a09d40618856a5f9096589a04c2b1c9601509f9b",
+        "integrated_sha256": "5e4f809136c6c885be366072a09d40618856a5f9096589a04c2b1c9601509f9b",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillL2Conjugation.lean",
+        "source_sha256": "9f60336f9dd4e6394501ed3bd9529be74b7194e2b46925272dd8f3b07376adb2",
+        "integrated_sha256": "9f60336f9dd4e6394501ed3bd9529be74b7194e2b46925272dd8f3b07376adb2",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillL2GreenIdentity.lean",
+        "source_sha256": "e66233bab908abe570fc00f8b4873219be19e0684a243ae61b2386c656c1410f",
+        "integrated_sha256": "e66233bab908abe570fc00f8b4873219be19e0684a243ae61b2386c656c1410f",
+        "adapted": false
+      },
+      {
+        "file": "NLS/ZakharovShabat/L2SolutionNonvanishing.lean",
+        "source_sha256": "a2a7e3982e17dba92cf32daaf533735001e8fdcb3837cce7c8aaf8bbd88b283c",
+        "integrated_sha256": "a2a7e3982e17dba92cf32daaf533735001e8fdcb3837cce7c8aaf8bbd88b283c",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletReality.lean",
+        "source_sha256": "3d650863cb1393dec99725c13840d8c9b4f91645fda2c0b1dc02eb96ef2c5316",
+        "integrated_sha256": "3d650863cb1393dec99725c13840d8c9b4f91645fda2c0b1dc02eb96ef2c5316",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillStateMonodromy.lean",
+        "source_sha256": "7ec6517ad007eb0c831267d0717387afb21bced911752d502a5570e669e1b731",
+        "integrated_sha256": "7ec6517ad007eb0c831267d0717387afb21bced911752d502a5570e669e1b731",
+        "adapted": false
+      },
+      {
+        "file": "NLS/SequenceSpaces/OrderedFiniteContinuity.lean",
+        "source_sha256": "845306a62ca86b944046d35727a675c24419dee39a0436e4b234dd317d9ebe6b",
+        "integrated_sha256": "845306a62ca86b944046d35727a675c24419dee39a0436e4b234dd317d9ebe6b",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillCumulativeCounts.lean",
+        "source_sha256": "9b37dc9bb7f4daab48b42187b5c193cdf0ec8e7eed70597383d808fe5f2dbe61",
+        "integrated_sha256": "9b37dc9bb7f4daab48b42187b5c193cdf0ec8e7eed70597383d808fe5f2dbe61",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillLabelContinuity.lean",
+        "source_sha256": "0a44f93d606d839f8c512024e2c1bfa1a743b2c4b74a5b6bc8a866c0b7ca1167",
+        "integrated_sha256": "96c0a64cf85122628167538a3da265c7e1914ed1978202918fa29c32bbadc155",
+        "adapted": true
+      },
+      {
+        "file": "NLS/KdV/HillCanonicalFreeLabels.lean",
+        "source_sha256": "034965a15a5980b5fd1740e3e8dcecc83ee407e3ab876132d834148dc8b125ac",
+        "integrated_sha256": "034965a15a5980b5fd1740e3e8dcecc83ee407e3ab876132d834148dc8b125ac",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillRealTraceParity.lean",
+        "source_sha256": "c7652fa3faa8246f3ce8b968199101f9cc586215ce687aa9927a7f546f2dae82",
+        "integrated_sha256": "c7652fa3faa8246f3ce8b968199101f9cc586215ce687aa9927a7f546f2dae82",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillRealBands.lean",
+        "source_sha256": "583ca2dd1a3b461f8ddcb3521e74a53ba9e72baf100066216be0edfc05f0b326",
+        "integrated_sha256": "583ca2dd1a3b461f8ddcb3521e74a53ba9e72baf100066216be0edfc05f0b326",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletBands.lean",
+        "source_sha256": "9f60d02a61ec5a00e8a766789ec1ddd6c674574d8b81935afce6376b4c557e20",
+        "integrated_sha256": "9f60d02a61ec5a00e8a766789ec1ddd6c674574d8b81935afce6376b4c557e20",
+        "adapted": false
+      },
+      {
+        "file": "NLS/FunctionalAnalysis/UnitComplexCurveIntegral.lean",
+        "source_sha256": "ed8cdcef3dec539c5f60871c6c8ffbc05f7ce464dcfb334f66eb91e0527a7f30",
+        "integrated_sha256": "ed8cdcef3dec539c5f60871c6c8ffbc05f7ce464dcfb334f66eb91e0527a7f30",
+        "adapted": false
+      },
+      {
+        "file": "NLS/ComplexAnalysis/ScalarStateCrossMass.lean",
+        "source_sha256": "0014103bc3084b7447050cd58a0ae6e6deb011fb27460980fed8a4209641128e",
+        "integrated_sha256": "0014103bc3084b7447050cd58a0ae6e6deb011fb27460980fed8a4209641128e",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletLagrange.lean",
+        "source_sha256": "803d52411ed49ab6d9a3c6f432c9612d0753bc34badcffd3e9e9c895f6d37e3c",
+        "integrated_sha256": "803d52411ed49ab6d9a3c6f432c9612d0753bc34badcffd3e9e9c895f6d37e3c",
+        "adapted": false
+      },
+      {
+        "file": "NLS/ComplexAnalysis/QuadraticPuncturedLimit.lean",
+        "source_sha256": "39894438de36641ec17fe8346b32ba756782fd8d7269277d7d63f900afe9fdbb",
+        "integrated_sha256": "39894438de36641ec17fe8346b32ba756782fd8d7269277d7d63f900afe9fdbb",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletSimplicity.lean",
+        "source_sha256": "a49a408424f1eca609131808b7cf50dd900c74bfce83092b4f636de387dc5f48",
+        "integrated_sha256": "a49a408424f1eca609131808b7cf50dd900c74bfce83092b4f636de387dc5f48",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletRootBranches.lean",
+        "source_sha256": "0762efeb2621a3309c09a7880aa386c6794b0b1e3f6cb3df58f2dc2fe7ee2faa",
+        "integrated_sha256": "0762efeb2621a3309c09a7880aa386c6794b0b1e3f6cb3df58f2dc2fe7ee2faa",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillFreeDirichlet.lean",
+        "source_sha256": "9051fb4061736982a304e7767c58f90f1a60f77f92ece8ed750e862f4b4d1ef7",
+        "integrated_sha256": "9051fb4061736982a304e7767c58f90f1a60f77f92ece8ed750e862f4b4d1ef7",
+        "adapted": false
+      },
+      {
+        "file": "NLS/ComplexAnalysis/ClosedIntervalRoots.lean",
+        "source_sha256": "7093d3831577947ff947ea4742e5d0b9dc8051efb8e9cd516896b4ea62b7b557",
+        "integrated_sha256": "7093d3831577947ff947ea4742e5d0b9dc8051efb8e9cd516896b4ea62b7b557",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletGapExistence.lean",
+        "source_sha256": "b582a2e34aa6f2d3eb659f83b0ca952a055022e65f29372cd6347d67d5b767f5",
+        "integrated_sha256": "b582a2e34aa6f2d3eb659f83b0ca952a055022e65f29372cd6347d67d5b767f5",
+        "adapted": false
+      },
+      {
+        "file": "NLS/ComplexAnalysis/RealSimpleZeroSigns.lean",
+        "source_sha256": "361f20f8dd30a62fc010f661e37ee24a1a31f8e06933c2bedb1ba4ab1905ad1b",
+        "integrated_sha256": "361f20f8dd30a62fc010f661e37ee24a1a31f8e06933c2bedb1ba4ab1905ad1b",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillRealGapSigns.lean",
+        "source_sha256": "3d780ed7d305c355e3f54fcbd47bca4d75c7c1c902ca876f2b10bf77bbc068e2",
+        "integrated_sha256": "3d780ed7d305c355e3f54fcbd47bca4d75c7c1c902ca876f2b10bf77bbc068e2",
+        "adapted": false
+      },
+      {
+        "file": "NLS/ComplexAnalysis/PositiveZeroUniqueness.lean",
+        "source_sha256": "669be0342571d7d0c6289e9e2c96ff07003be84a3d6cf844eea3c7038e95df18",
+        "integrated_sha256": "669be0342571d7d0c6289e9e2c96ff07003be84a3d6cf844eea3c7038e95df18",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletGapUniqueness.lean",
+        "source_sha256": "4b2e2303a739a519942b3c5780caa1f24ec92a397843b744a8551fef7da40a01",
+        "integrated_sha256": "4b2e2303a739a519942b3c5780caa1f24ec92a397843b744a8551fef7da40a01",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletLabels.lean",
+        "source_sha256": "746cde4ef20a9770c36c77d103578981212c300fc6bff319f61a694f809ddd0d",
+        "integrated_sha256": "746cde4ef20a9770c36c77d103578981212c300fc6bff319f61a694f809ddd0d",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletLabelContinuity.lean",
+        "source_sha256": "478c7e4403862be57abb5941180b3b6975b1177fc93206399ec925e54a097843",
+        "integrated_sha256": "478c7e4403862be57abb5941180b3b6975b1177fc93206399ec925e54a097843",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletSlope.lean",
+        "source_sha256": "d539eef43e3997a75d8021bf919d9ad25b0fa05debc3fc81933473ded48e5aa8",
+        "integrated_sha256": "d539eef43e3997a75d8021bf919d9ad25b0fa05debc3fc81933473ded48e5aa8",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletNormingData.lean",
+        "source_sha256": "3a6976e111ede766127496977a5ab94f4b1245aafae1da0d0140b035584cbaec",
+        "integrated_sha256": "3a6976e111ede766127496977a5ab94f4b1245aafae1da0d0140b035584cbaec",
+        "adapted": false
+      },
+      {
+        "file": "NLS/ComplexAnalysis/RealEnergySquareRoot.lean",
+        "source_sha256": "742026d723830ca1b4452e16dea2f26a6b9cb43670bd3f48498716219475ef65",
+        "integrated_sha256": "742026d723830ca1b4452e16dea2f26a6b9cb43670bd3f48498716219475ef65",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillStateJointContinuity.lean",
+        "source_sha256": "a6bcf2fed35da908f31ef6e222f27d7b3441b6846e9c6f436a3c3c8158a4a34d",
+        "integrated_sha256": "a6bcf2fed35da908f31ef6e222f27d7b3441b6846e9c6f436a3c3c8158a4a34d",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillRealPeriodOneTruncation.lean",
+        "source_sha256": "7b737504ca5b65e7535a0263f01449d59a11c418755eec57302d2ab665fa113d",
+        "integrated_sha256": "7b737504ca5b65e7535a0263f01449d59a11c418755eec57302d2ab665fa113d",
+        "adapted": false
+      },
+      {
+        "file": "NLS/ComplexAnalysis/ScalarStateSquaredPairing.lean",
+        "source_sha256": "c12e7f97d500ced8ad33bfbc5db48a8f29a527d8b4c87e1d442cff57e4f82da2",
+        "integrated_sha256": "c12e7f97d500ced8ad33bfbc5db48a8f29a527d8b4c87e1d442cff57e4f82da2",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/ClassicalHillDirichletBrackets.lean",
+        "source_sha256": "3e496e0259ad4e4d6dedbc44c538bf01fa3542f6c8089e2634914e4bba309bd7",
+        "integrated_sha256": "3e496e0259ad4e4d6dedbc44c538bf01fa3542f6c8089e2634914e4bba309bd7",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletSquaredPairing.lean",
+        "source_sha256": "15a6657edb287069a7307d4ce6c4dd21016502452acc73a50a4fdd2ae7319324",
+        "integrated_sha256": "15a6657edb287069a7307d4ce6c4dd21016502452acc73a50a4fdd2ae7319324",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletGradientCurves.lean",
+        "source_sha256": "3368b97cbf137ad3e162120bb0809cb97022cdab86490c3c71df4bac2d6c04a5",
+        "integrated_sha256": "3368b97cbf137ad3e162120bb0809cb97022cdab86490c3c71df4bac2d6c04a5",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletAnalyticLabels.lean",
+        "source_sha256": "6180dffbcfaeee404799c6916a13d58f968a86197eb7a8f833664c489e46f285",
+        "integrated_sha256": "6180dffbcfaeee404799c6916a13d58f968a86197eb7a8f833664c489e46f285",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletAnalyticNorming.lean",
+        "source_sha256": "ad357e3373ebb76fd6c5be35591499d34a51f5c9792cf34b41d7a1d6ef9451e7",
+        "integrated_sha256": "ad357e3373ebb76fd6c5be35591499d34a51f5c9792cf34b41d7a1d6ef9451e7",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletBranchDerivatives.lean",
+        "source_sha256": "db2d8be3e20600a65c45163ff5e8df95619b1be40a1de011e132a90bd4c94bff",
+        "integrated_sha256": "db2d8be3e20600a65c45163ff5e8df95619b1be40a1de011e132a90bd4c94bff",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletPotentialDerivative.lean",
+        "source_sha256": "9bbb3c875b1e900efa6f4327ce5e775547af7214f5b4e4cbab43f55cdf3df9c4",
+        "integrated_sha256": "9bbb3c875b1e900efa6f4327ce5e775547af7214f5b4e4cbab43f55cdf3df9c4",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletKernelNormalization.lean",
+        "source_sha256": "6a145272e6b0b1fb8ee01bfdfc4acf317ec29511ced7117d9cd29b9c2c931d37",
+        "integrated_sha256": "6a145272e6b0b1fb8ee01bfdfc4acf317ec29511ced7117d9cd29b9c2c931d37",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletGradients.lean",
+        "source_sha256": "53af8d881ccb6d4a4951c61fd27b936472157df40d8f17d4ae9fe1c7bfae20b7",
+        "integrated_sha256": "53af8d881ccb6d4a4951c61fd27b936472157df40d8f17d4ae9fe1c7bfae20b7",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletGardnerBrackets.lean",
+        "source_sha256": "b5ae51d2f04adcb63642fa62c4ac38c9259c703220fbbc071d63811d2b160e2d",
+        "integrated_sha256": "b5ae51d2f04adcb63642fa62c4ac38c9259c703220fbbc071d63811d2b160e2d",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletGradientH1.lean",
+        "source_sha256": "f8ac4dfe9b5dcbd0d431606bb23a02686120b936182bd3fde0ff9fb01371867d",
+        "integrated_sha256": "f8ac4dfe9b5dcbd0d431606bb23a02686120b936182bd3fde0ff9fb01371867d",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletSlopePotentialDerivative.lean",
+        "source_sha256": "af0d7b6d845a9fc790d13c5f651e918ca8268cff639909a6e43ac46cd224e93c",
+        "integrated_sha256": "af0d7b6d845a9fc790d13c5f651e918ca8268cff639909a6e43ac46cd224e93c",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletSlopeVariation.lean",
+        "source_sha256": "63cf7e0aca561fa78b40ee3c0a546472306a295d0fffa35a426b9968373898b6",
+        "integrated_sha256": "63cf7e0aca561fa78b40ee3c0a546472306a295d0fffa35a426b9968373898b6",
+        "adapted": false
+      },
+      {
+        "file": "NLS/ComplexAnalysis/TracePrimitiveContinuation.lean",
+        "source_sha256": "b72a10890423ba6070d235e90a5f745cfcb69fcba1f234933be9d2451c5c7ffb",
+        "integrated_sha256": "b72a10890423ba6070d235e90a5f745cfcb69fcba1f234933be9d2451c5c7ffb",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillL2SourcePrimitive.lean",
+        "source_sha256": "040ada5e2c26eddba04fd10cc011f38ae20a25d9ec8e3b7fd8d0056098bcf471",
+        "integrated_sha256": "a5f0ae929854f46f848e0eb0f17a0e70d5bc897ee2b8c8a877f555dde7715782",
+        "adapted": true
+      },
+      {
+        "file": "NLS/ComplexAnalysis/TracePrimitiveMoments.lean",
+        "source_sha256": "214de92b4daf02a9ce95ead6111039d2ab69fcab3f416a4e59cd6386230e9acb",
+        "integrated_sha256": "214de92b4daf02a9ce95ead6111039d2ab69fcab3f416a4e59cd6386230e9acb",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillL2HighContourMoments.lean",
+        "source_sha256": "72dea2e27d21264cb4902896ebd4fb36a8694e7c37d02b3331fb9c9100835a28",
+        "integrated_sha256": "18cbaab19f8b74fc0439ec8738797f2076a3fb5efa13538e24f077831997ca66",
+        "adapted": true
+      },
+      {
+        "file": "NLS/KdV/ActionHamiltonianMoments.lean",
+        "source_sha256": "3706e6c81dae7c2076ad6f9ad605b7a056671f2de2ce150c7e6a2764cff462e8",
+        "integrated_sha256": "3706e6c81dae7c2076ad6f9ad605b7a056671f2de2ce150c7e6a2764cff462e8",
+        "adapted": false
+      },
+      {
+        "file": "NLS/ComplexAnalysis/TracePrimitiveFunctoriality.lean",
+        "source_sha256": "284f588bf695820c3c55fc45dbc15b9b3ded2ceee27301158f535eaa78640d91",
+        "integrated_sha256": "284f588bf695820c3c55fc45dbc15b9b3ded2ceee27301158f535eaa78640d91",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean",
+        "source_sha256": "e7a68da9bccb85a5555f97f41c187de235f966cbcfa86c6fda5bec9d6eea9416",
+        "integrated_sha256": "e5c357751446a311be64c16936afffda580b1b556b4d3ea460e6be2cc06e5360",
+        "adapted": true
+      },
+      {
+        "file": "NLS/Fourier/ContinuousConstants.lean",
+        "source_sha256": "da8abd487291c7c4f5e9e6aad7022f25a6e7126bf25dc3a6338f9e123d9d5eae",
+        "integrated_sha256": "da8abd487291c7c4f5e9e6aad7022f25a6e7126bf25dc3a6338f9e123d9d5eae",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletSlopeShift.lean",
+        "source_sha256": "6ea95781b74e77043a23e00ffd1ea51467f7ea9643ca76995100a1bf4a253d1f",
+        "integrated_sha256": "6ea95781b74e77043a23e00ffd1ea51467f7ea9643ca76995100a1bf4a253d1f",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillLogNormingGradient.lean",
+        "source_sha256": "3218f5d731f207eadb56759f0ecca757d99b970e6b3f2efee0c9b70c6b1739ad",
+        "integrated_sha256": "3218f5d731f207eadb56759f0ecca757d99b970e6b3f2efee0c9b70c6b1739ad",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillPhysicalDirectionPairing.lean",
+        "source_sha256": "f84ecaee365f5d406fb050bf407f366a1424040c2c45aabd1782c14b4a2c2d0f",
+        "integrated_sha256": "f84ecaee365f5d406fb050bf407f366a1424040c2c45aabd1782c14b4a2c2d0f",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletCosineData.lean",
+        "source_sha256": "6b6dd55b97dec4702d203dd57a97e2223875e2176b937d333ac8ffdcfd591fe3",
+        "integrated_sha256": "6b6dd55b97dec4702d203dd57a97e2223875e2176b937d333ac8ffdcfd591fe3",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/ClassicalHillMixedPairings.lean",
+        "source_sha256": "039b699340ef441731317583f8e629b61008d311f94fe76642ac7093e8382203",
+        "integrated_sha256": "039b699340ef441731317583f8e629b61008d311f94fe76642ac7093e8382203",
+        "adapted": false
+      },
+      {
+        "file": "NLS/ComplexAnalysis/ScalarStateMixedPairing.lean",
+        "source_sha256": "9e7c1f639016bc60c996e71b3a0b30b43fe48bc7bdb19152ea4c5e0edd6e34e3",
+        "integrated_sha256": "9e7c1f639016bc60c996e71b3a0b30b43fe48bc7bdb19152ea4c5e0edd6e34e3",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillDirichletMixedPairings.lean",
+        "source_sha256": "6746da95f3dfcdb422f792c4dd5f4761feb05f5399656009a44237b5cc831d88",
+        "integrated_sha256": "6746da95f3dfcdb422f792c4dd5f4761feb05f5399656009a44237b5cc831d88",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillLogNormingCotangent.lean",
+        "source_sha256": "ac5df5be41d9edc60de4aff98e6c8083f5d04c27260af34a92fbce1042eacebe",
+        "integrated_sha256": "ac5df5be41d9edc60de4aff98e6c8083f5d04c27260af34a92fbce1042eacebe",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillLogNormingRegularity.lean",
+        "source_sha256": "45c1c9acb7b331c39c1769a85be922d24ea3fe3b51933d098c31e2f585659eb1",
+        "integrated_sha256": "45c1c9acb7b331c39c1769a85be922d24ea3fe3b51933d098c31e2f585659eb1",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillMixedGardnerBrackets.lean",
+        "source_sha256": "311b2fb16240e2da832e407aeab1c8da57ce84f2c551e87bfaaf203d82796c6f",
+        "integrated_sha256": "311b2fb16240e2da832e407aeab1c8da57ce84f2c551e87bfaaf203d82796c6f",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/ClassicalHillLogNormingBrackets.lean",
+        "source_sha256": "7c3c4080e3b3da07d07bc22d3531524af4d23f6e37a1c016980d4fae8793af7a",
+        "integrated_sha256": "7c3c4080e3b3da07d07bc22d3531524af4d23f6e37a1c016980d4fae8793af7a",
+        "adapted": false
+      },
+      {
+        "file": "NLS/KdV/HillLogNormingGardnerBrackets.lean",
+        "source_sha256": "2dcbc6621d5c9e0426a99b76559aa8753cc6c7e5aa2bc0de5a914812bb1243e1",
+        "integrated_sha256": "2dcbc6621d5c9e0426a99b76559aa8753cc6c7e5aa2bc0de5a914812bb1243e1",
+        "adapted": false
+      }
+    ],
+    "extracted_helper": "NLS/ComplexAnalysis/ZeroCountContinuousFamily.lean extracts the checked eventual-count theorem from that branch ZeroCountHomotopy without changing the existing prefix module.",
+    "compatibility_note": "New imported continuation/count proofs use this branch established 16*norm(q) cutoff, rather than the source branch improved8 cutoff. Existing prefix source statements are unchanged."
   }
 }
