@@ -602,6 +602,14 @@ modules = [
     'NLS.KdV.MiuraDirichletSineCurve',
     'NLS.KdV.HminusOneDirichletEigenfunctionComparison',
     'NLS.Articles.KdVPseudomeasures.OriginalDirichletEigenfunctionComparison',
+    'NLS.Fourier.UnitIntervalContinuousLp',
+    'NLS.KdV.DirichletFreeSine',
+    'NLS.KdV.DirichletSineMassBounds',
+    'NLS.KdV.DirichletProjectionFreeComparison',
+    'NLS.KdV.SingularDirichletRieszLinf',
+    'NLS.KdV.HminusOneDirichletProjectionConvergence',
+    'NLS.KdV.DirichletFreeRieszKernel',
+    'NLS.Articles.KdVPseudomeasures.OriginalDirichletProjectionConvergence',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -568,6 +568,14 @@ import NLS.ZakharovShabat.L2UniformFreeComparison
 import NLS.KdV.MiuraDirichletSineCurve
 import NLS.KdV.HminusOneDirichletEigenfunctionComparison
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletEigenfunctionComparison
+import NLS.Fourier.UnitIntervalContinuousLp
+import NLS.KdV.DirichletFreeSine
+import NLS.KdV.DirichletSineMassBounds
+import NLS.KdV.DirichletProjectionFreeComparison
+import NLS.KdV.SingularDirichletRieszLinf
+import NLS.KdV.HminusOneDirichletProjectionConvergence
+import NLS.KdV.DirichletFreeRieszKernel
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletProjectionConvergence
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4472,3 +4480,29 @@ import NLS.Articles.KdVPseudomeasures.OriginalDirichletEigenfunctionComparison
 #print axioms NLS.KdV.HillHminusMiuraChart.exists_uniform_dirichletEigenfunction_sine_comparison
 #print axioms NLS.KdV.exists_uniform_hillHminusDirichletEigenfunction_sine_comparison
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalDirichletEigenfunction_sine_comparison
+#print axioms NLS.Fourier.unitIntervalContinuousToLp
+#print axioms NLS.Fourier.unitIntervalContinuousToLp_representative
+#print axioms NLS.Fourier.norm_unitIntervalContinuousToLp_le
+#print axioms NLS.Fourier.unitIntervalContinuousToLp_two_dirichlet
+#print axioms NLS.Fourier.norm_unitDirichletL2Inclusion_le_uniform
+#print axioms NLS.KdV.norm_dirichletFreeSineCurve_le_one
+#print axioms NLS.KdV.integral_dirichletFreeSine_squared
+#print axioms NLS.KdV.exists_native_freeDirichlet_sine
+#print axioms NLS.KdV.singularDirichlet_mass_of_freeSine
+#print axioms NLS.KdV.dirichletSineComparison_norm_and_mass_bounds
+#print axioms NLS.KdV.exists_normalized_dirichletSineComparison_bounds
+#print axioms NLS.KdV.norm_singularDirichletProjection_sub_free_le_of_sine_error
+#print axioms NLS.KdV.singularDirichletLinfRieszProjection
+#print axioms NLS.KdV.singularDirichletLinfRieszProjection_eq_L2_ae
+#print axioms NLS.KdV.norm_singularDirichletLinfRieszProjection_sub_le_uniform
+#print axioms NLS.KdV.singularDirichletL2RieszProjection_eq_continuousToLp
+#print axioms NLS.KdV.norm_singularDirichletL2RieszProjection_sub_le_uniform
+#print axioms NLS.KdV.exists_uniform_hillHminusDirichletProjection_sub_free_small
+#print axioms NLS.KdV.exists_uniform_hillHminusDirichletProjection_cutoff_on_compact
+#print axioms NLS.KdV.exists_uniform_normalized_hillHminusDirichletEigenfunction_bounds
+#print axioms NLS.KdV.exists_dirichletFreeRieszProjection_sine_kernel
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLinfRieszProjection
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLinfRieszProjection_eq_L2_ae
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalDirichletProjection_sub_free_small
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalDirichletProjection_cutoff_on_compact
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_normalized_originalDirichletEigenfunction_bounds

@@ -90,7 +90,8 @@
     "Neighborhood and cutoff quantifiers are uniform in ALL nearby complex sources and ALL subsequent original labels.",
     "The sine has its literal original index and phase; no index shift or normalization factor is hidden.",
     "No real-potential restriction, supplied eigenfunction asymptotic, extra axiom, smaller native domain/base or canonical checkout mutation is used.",
-    "C.4 logarithmic rates, physical mass lower bounds, source (33) projection convergence, full (31)/(32) and all main theorems remain open."
+    "C.4 logarithmic rates, physical mass lower bounds, source (33) projection convergence, full (31)/(32) and all main theorems remain open.",
+    "Quantifier clarification: the prescribed-tolerance original open neighborhood may depend on epsilon. Genuine uniform projection convergence on EVERY FIXED norm-compact set is proved in the linked follow-up; no fixed infinite-dimensional H-minus-one neighborhood uniform limit is claimed."
   ],
   "validation": {
     "result": "passed",
@@ -137,5 +138,34 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "actual_projection_convergence_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-projection-convergence-map.json",
+    "exact_physical_continuous_to_Lp_inclusions_through_infinity": true,
+    "actual_free_native_sine_and_bilinear_mass_one_half": true,
+    "uniform_sine_close_physical_norm_and_mass_bounds": true,
+    "actual_source_L2_unit_normalization_and_sup_bound": true,
+    "actual_normalized_bilinear_mass_lower_bound": true,
+    "actual_projection_error_transfer_40_delta": true,
+    "actual_ordinary_essential_supremum_projection_constructed": true,
+    "identical_actual_Linf_and_L2_physical_outputs": true,
+    "actual_L2_to_Linf_and_L2_error_comparisons": true,
+    "actual_Dirichlet_source_projection_o_one": true,
+    "uniform_projection_convergence_on_each_fixed_HminusOne_compact_set": true,
+    "exact_actual_free_factor_two_sine_kernel": true,
+    "source_equation33_Dirichlet_part_proved": true,
+    "source_equation34_Dirichlet_L2_projection_input_proved": true,
+    "prescribed_tolerance_original_open_neighborhood": true,
+    "neighborhood_may_depend_on_tolerance": true,
+    "fixed_HminusOne_norm_neighborhood_uniform_limit_claimed": false,
+    "entire_original_complex_distribution_retained": true,
+    "source_equation33_periodic_part_proved": false,
+    "source_AppendixC4_logarithmic_rate_proved": false,
+    "source_Lemma2_13_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
 }
