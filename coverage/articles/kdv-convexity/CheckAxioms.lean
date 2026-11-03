@@ -1,3 +1,5 @@
+import NLS.KdV.HillHminusOneIntrinsicWeakConverse
+import NLS.Articles.KdVConvexity.GlobalContourDifferentiation
 import NLS.KdV.HillHminusOneIntrinsicWeakSolutions
 import NLS.KdV.HillHminusOneWeakSpectrum
 import NLS.KdV.HillHminusOnePhysicalQuasi
@@ -78,6 +80,13 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.FunctionalAnalysis.UnitIntervalPrimitive,
+    `NLS.FunctionalAnalysis.UnitIntervalWeakDerivativeConstant,
+    `NLS.FunctionalAnalysis.UnitIntervalWeakDerivativeAC,
+    `NLS.MKdV.L2QuasiHillWeakMomentum,
+    `NLS.MKdV.L2QuasiHillWeakReconstruction,
+    `NLS.MKdV.L2QuasiHillWeakFloquetConverse,
+
     `NLS.Fourier.IntervalL2Products,
     `NLS.FunctionalAnalysis.IntervalH1Product,
     `NLS.MKdV.WeakMiuraFormAnalytic,

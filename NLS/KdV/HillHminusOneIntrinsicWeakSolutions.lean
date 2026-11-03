@@ -17,7 +17,7 @@ namespace NLS.KdV
 /-- Nonzero H1 weak Floquet eigenfunctions of the original rough Hill
 form. The test multiplier is the reciprocal state multiplier. -/
 def IsIntrinsicHillWeakEigenfunction (q : PeriodOneHminusOne) (lambda σ : ℂ) (y : Curve ℂ) : Prop :=
-  y ≠ 0 ∧ AbsolutelyContinuousOnInterval (extend y) 0 1 ∧
+  σ ≠ 0 ∧ y ≠ 0 ∧ AbsolutelyContinuousOnInterval (extend y) 0 1 ∧
     MemLp (deriv (extend y)) 2 (volume.restrict (Ioc (0 : ℝ) 1)) ∧
     extend y 1 = σ*extend y 0 ∧
     ∀ φ : Curve ℂ, AbsolutelyContinuousOnInterval (extend φ) 0 1 →
@@ -71,7 +71,7 @@ theorem exists_intrinsic_weak_eigenfunction_of_multiplier (q : PeriodOneHminusOn
   have hq : q ∈ C.domain := mem_hillHminusMiuraChartAt q
   obtain ⟨v,hv,he⟩ := (C.hillHminusDiscriminant_multiplier_iff q hq lambda σ).mp hroot
   have hH := C.physicalSolution_scalar_H1 q lambda v
-  refine ⟨C.physicalPosition q lambda v,C.physicalPosition_ne_zero q lambda v hv,hH.1,hH.2.1,
+  refine ⟨C.physicalPosition q lambda v,hσ,C.physicalPosition_ne_zero q lambda v hv,hH.1,hH.2.1,
     C.physicalPosition_endpoint_multiplier q lambda σ v he,?_⟩
   intro φ hφ hφ₂ hφend
   exact C.intrinsic_weak_equation_floquet q hq lambda σ σ⁻¹ (mul_inv_cancel₀ hσ) v he φ hφ hφ₂ hφend

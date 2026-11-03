@@ -2175,16 +2175,66 @@ indexed sign (-1)^floor((j+1)/2). The test multiplier is the reciprocal
 state multiplier, so the complete statement has no chart parameter.
 
 This completes chart independence of the weak form and its bounded
-linear dependence on the original potential. The weak-solution converse,
-closed/self-adjoint intrinsic operator domain and spectral multiplicity
-identification remain open, as do the actual KdV coordinate realization
-and its Arnold-action/fiber identities required for Theorem 1.1.
+linear dependence on the original potential. The following milestone
+proves the weak-solution converse. Closed/self-adjoint intrinsic operator
+domains and spectral multiplicity identification remain open, as do the
+actual KdV coordinate realization and its Arnold-action/fiber identities.
+
+## Exact weak Floquet spectrum and analytic contour differentiation
+
+`UnitIntervalPrimitive.lean`, `UnitIntervalWeakDerivativeConstant.lean`
+and `UnitIntervalWeakDerivativeAC.lean` recover an actual absolutely
+continuous representative from an L2 function with an L1 weak derivative.
+The zero-derivative argument uses the H1 primitive of the conjugated
+zero-mean residual as a Dirichlet test. It assumes no extension of the
+weak equation beyond the unit interval.
+
+`L2QuasiHillWeakMomentum.lean` recovers the quasi-derivative from an
+arbitrary H1 scalar weak solution. `L2QuasiHillWeakReconstruction.lean`
+integrates the resulting AC state and applies actual Volterra uniqueness.
+`L2QuasiHillWeakFloquetConverse.lean` uses an H1 test with endpoints one
+and reciprocal multiplier to recover the missing momentum endpoint
+condition. No momentum regularity or state endpoint equation is an input
+to this scalar converse.
+
+`HillHminusOneIntrinsicWeakConverse.lean` therefore proves, in every
+Miura chart and at every complex energy,
+
+```text
+exists nonzero intrinsic H1 weak Floquet eigenfunction with multiplier sigma
+  iff sigma^2 - hillHminusDiscriminant(q,lambda)*sigma + 1 = 0.
+```
+
+The intrinsic predicate now explicitly requires `sigma != 0`; the old
+zero-multiplier case encoded unrelated mixed endpoint conditions because
+inverse zero is zero. The existing forward existence theorem already
+derived nonzero multiplier and retains that witness. Periodic and
+antiperiodic intrinsic weak energies are exactly the actual radicand
+zeros. At every real potential they are exactly the canonical labels,
+including the lowest, central and collapsed-gap labels. This proves the
+weak-solution converse; closed/self-adjoint operator domains and spectral
+multiplicity identification remain open.
+
+`TailSeriesRealization.lean` strengthens the analytic ell2 summation step:
+the entire weighted sequence, including every unestimated finite head
+term, is an analytic ell1-valued map on the same domain. Its derivative
+coordinates are the actual term derivatives, which are absolutely
+summable in every ell2 direction. The scalar Frechet derivative equals
+their literal sum.
+
+`GlobalContourDifferentiation.lean` transports this result to the exact
+base-action preimage containing the entire nonnegative ell2 quadrant.
+The normalization is `8*n*pi*R_n`. Local cutoffs may vary between patches.
+The complete partial sums converge uniformly on every compact subset of
+the same complex domain. These statements use the analytic-moment and
+local-tail-bound interface; the actual KdV coordinate realization and
+physical Hamiltonian/frequency identification remain required.
 
 ## Remaining essential KdV work
 
 1. Construct the closed intrinsic singular Hill operator domain from the
-   now chart-independent weak form, prove the weak-solution converse and
-   self-adjoint spectral/multiplicity identification, and prove the actual
+   now chart-independent weak form, prove self-adjoint spectral/
+   multiplicity identification, and prove the actual
    action-fiber/discriminant identity. Every canonical real label now has
    an intrinsic nonzero H1 scalar weak eigenfunction with its exact sign. Full-discriminant invariance of
    all real canonical periods is now proved. Global potential-space moment
@@ -2244,15 +2294,16 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `6c87847` contains 418 source modules. Every
-baseline source hash remains unchanged. Nine authored modules pass
-incremental Lean 4.33.1/mathlib v4.33.1 checks with `warningAsError=true`.
-The full reproducible script now lists 427 source modules. The
-positive-index example and all 896 coverage-name checks pass.
+The validated baseline at `720dd0f` contains 427 source modules. Of these,
+426 source hashes remain unchanged. The weak-Floquet predicate module is
+corrected as documented above and rechecked; nine new authored modules
+also pass Lean 4.33.1/mathlib v4.33.1 with `warningAsError=true`.
+The full reproduction script lists 436 source modules. The positive-index
+example and all 936 coverage-name checks pass.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 212 additional shared modules:
-4390 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 218 additional shared modules:
+4438 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
