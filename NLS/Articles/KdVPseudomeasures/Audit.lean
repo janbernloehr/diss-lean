@@ -912,6 +912,15 @@ import NLS.KdV.HillFreePeriodResidues
 import NLS.KdV.HillFreePeriodJacobian
 import NLS.KdV.HillFreePeriodOperator
 import NLS.Articles.KdVPseudomeasures.OriginalFreeHillPeriodJacobian
+import NLS.ZakharovShabat.SourceFreeCanonicalResidue
+import NLS.KdV.HillFreePeriodEvaluation
+import NLS.KdV.HillFreeInteractionKernel
+import NLS.KdV.HillFreeMultiplierCutoffs
+import NLS.KdV.HillFreeMultiplierBounds
+import NLS.SequenceSpaces.PositiveCoordinateAnalytic
+import NLS.KdV.HillFreePeriodSequence
+import NLS.KdV.HillFreePeriodSequenceDerivative
+import NLS.Articles.KdVPseudomeasures.OriginalFreeHillPeriodEquation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6280,3 +6289,47 @@ import NLS.Articles.KdVPseudomeasures.OriginalFreeHillPeriodJacobian
 #print axioms NLS.Articles.KdVPseudomeasures.original_free_Hill_product_period
 #print axioms NLS.Articles.KdVPseudomeasures.original_free_Hill_period_derivative
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_free_Hill_period_Jacobian
+#print axioms NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.freeSineQuotient_ne_zero
+#print axioms NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.freeCanonicalRoot_residue
+#print axioms NLS.KdV.hillEnergyProductFixedPeriod_free_evaluation
+#print axioms NLS.KdV.hillEnergySequenceProduct_freeEnergy_factor
+#print axioms NLS.KdV.hillFreePeriodMultiplier
+#print axioms NLS.KdV.hillFreePeriodEquationRow_factor
+#print axioms NLS.KdV.analyticAt_hillFreePeriodMultiplier
+#print axioms NLS.KdV.hillFreePeriodMultiplier_zero
+#print axioms NLS.KdV.hillFreeInteractionConstant
+#print axioms NLS.KdV.hillFreeInteractionConstant_nonneg
+#print axioms NLS.KdV.hillFreeInteractionKernel
+#print axioms NLS.KdV.norm_hillFreeInteractionKernel_le
+#print axioms NLS.KdV.hillFreeInteractionKernel_positive
+#print axioms NLS.KdV.hillFreeInteractionPerturbation
+#print axioms NLS.KdV.sum_norm_hillFreeInteractionPerturbation_le
+#print axioms NLS.KdV.hillEnergySequencePartialProduct_coordinate_difference
+#print axioms NLS.KdV.hillEnergySequenceFactor_freeEnergy_interaction
+#print axioms NLS.KdV.hillFreePeriodMultiplierApprox
+#print axioms NLS.KdV.tendsto_hillFreePeriodMultiplierApprox
+#print axioms NLS.KdV.hillFreePeriodMultiplierApprox_factor
+#print axioms NLS.KdV.norm_hillFreePeriodMultiplierApprox_sub_le
+#print axioms NLS.KdV.norm_hillFreePeriodMultiplier_sub_one_le
+#print axioms NLS.KdV.norm_hillFreePeriodMultiplier_le
+#print axioms NLS.KdV.norm_hillFreePeriodEquationRow_le
+#print axioms NLS.KdV.norm_hillFreePeriodEquationRow_sub_coordinate_le
+#print axioms NLS.LpSequence.analyticOnNhd_positiveL2_of_bounded_coordinatewise
+#print axioms NLS.KdV.memlp_hillFreePeriodEquation
+#print axioms NLS.KdV.hillFreePeriodEquation
+#print axioms NLS.KdV.hillFreePeriodEquation_apply
+#print axioms NLS.KdV.hillFreePeriodEquation_apply_any_circle
+#print axioms NLS.KdV.norm_hillFreePeriodEquation_le
+#print axioms NLS.KdV.norm_hillFreePeriodEquation_sub_id_le
+#print axioms NLS.KdV.hillFreePeriodEquation_zero
+#print axioms NLS.KdV.analyticAt_hillFreePeriodEquation
+#print axioms NLS.KdV.fderiv_hillFreePeriodEquation_zero
+#print axioms NLS.KdV.hasFDerivAt_hillFreePeriodEquation_zero
+#print axioms NLS.KdV.hasStrictFDerivAt_hillFreePeriodEquation_zero
+#print axioms NLS.KdV.norm_fderiv_hillFreePeriodEquation_zero
+#print axioms NLS.KdV.isUnit_fderiv_hillFreePeriodEquation_zero
+#print axioms NLS.KdV.exists_hillFreePeriodEquation_localInverse
+#print axioms NLS.Articles.KdVPseudomeasures.original_free_Hill_nonlinear_period_equation
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_free_Hill_uniform_period_bounds
+#print axioms NLS.Articles.KdVPseudomeasures.original_free_Hill_nonlinear_period_Jacobian_inverse
+#print axioms NLS.Articles.KdVPseudomeasures.original_free_Hill_period_equation_local_inverse

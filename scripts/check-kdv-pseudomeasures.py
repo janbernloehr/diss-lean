@@ -946,6 +946,15 @@ modules = [
     'NLS.KdV.HillFreePeriodJacobian',
     'NLS.KdV.HillFreePeriodOperator',
     'NLS.Articles.KdVPseudomeasures.OriginalFreeHillPeriodJacobian',
+    'NLS.ZakharovShabat.SourceFreeCanonicalResidue',
+    'NLS.KdV.HillFreePeriodEvaluation',
+    'NLS.KdV.HillFreeInteractionKernel',
+    'NLS.KdV.HillFreeMultiplierCutoffs',
+    'NLS.KdV.HillFreeMultiplierBounds',
+    'NLS.SequenceSpaces.PositiveCoordinateAnalytic',
+    'NLS.KdV.HillFreePeriodSequence',
+    'NLS.KdV.HillFreePeriodSequenceDerivative',
+    'NLS.Articles.KdVPseudomeasures.OriginalFreeHillPeriodEquation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
