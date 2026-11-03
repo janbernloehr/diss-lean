@@ -524,6 +524,15 @@ import NLS.KdV.HminusOneDirichletCentralCounting
 import NLS.KdV.HminusOneDirichletCentralBounds
 import NLS.KdV.HminusOneDirichletCentralRoots
 import NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletCentralCount
+import NLS.ZakharovShabat.SquaredFrequencyOrder
+import NLS.KdV.HminusOneDirichletComplexControl
+import NLS.KdV.HminusOneDirichletComplexLabeling
+import NLS.SequenceSpaces.FiniteModificationGeneral
+import NLS.SequenceSpaces.OrderedComplexNatEnumeration
+import NLS.KdV.HminusOneDirichletComplexAsymptotics
+import NLS.KdV.HminusOneDirichletComplexLabels
+import NLS.KdV.HminusOneDirichletComplexRealLabels
+import NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletLabels
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4260,3 +4269,48 @@ import NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletCentralCount
 #print axioms NLS.Articles.KdVPseudomeasures.mem_originalComplexDirichletCentralSpectrum
 #print axioms NLS.Articles.KdVPseudomeasures.norm_le_of_mem_originalComplexDirichletCentralSpectrum
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalComplexDirichletCentralCount
+#print axioms NLS.ZakharovShabat.exists_square_root_re_nonneg
+#print axioms NLS.ZakharovShabat.frequencyDisk_coordinate_bounds
+#print axioms NLS.ZakharovShabat.re_pos_of_mem_positive_frequencyDisk
+#print axioms NLS.ZakharovShabat.re_sq_lt_re_sq_of_coordinate_separation
+#print axioms NLS.ZakharovShabat.re_sq_central_lt_positive_frequencyDisk
+#print axioms NLS.ZakharovShabat.re_sq_lt_of_positive_frequencyDisks
+#print axioms NLS.KdV.exists_hillHminusDirichletComplexControl
+#print axioms NLS.KdV.HillHminusDirichletComplexControl.frequency_eq_canonical
+#print axioms NLS.KdV.HillHminusDirichletComplexControl.spectrum_iff
+#print axioms NLS.KdV.HillHminusDirichletComplexControl.central_re_lt_tail
+#print axioms NLS.KdV.HillHminusDirichletComplexControl.tail_re_lt
+#print axioms NLS.KdV.HillHminusDirichletComplexControl.tail_not_mem_central
+#print axioms NLS.KdV.exists_hillHminusDirichletComplexLabeling_of_control
+#print axioms NLS.KdV.exists_hillHminusDirichletComplexLabeling
+#print axioms NLS.KdV.HillHminusDirichletComplexLabeling.central_iff
+#print axioms NLS.KdV.HillHminusDirichletComplexLabeling.exhaustive
+#print axioms NLS.KdV.HillHminusDirichletComplexLabeling.eq_index_of_distant
+#print axioms NLS.KdV.HillHminusDirichletComplexLabeling.finite_fiber
+#print axioms NLS.KdV.HillHminusDirichletComplexLabeling.multiplicity
+#print axioms NLS.memℓp_of_eq_outside_finset_on
+#print axioms NLS.ordered_complex_nat_enumeration_unique
+#print axioms NLS.KdV.HillHminusDirichletComplexLabeling.inverseBracket_error
+#print axioms NLS.KdV.HillHminusDirichletComplexLabeling.inverseIndex_error
+#print axioms NLS.KdV.HillHminusDirichletComplexLabeling.unique
+#print axioms NLS.KdV.exists_hillHminusDirichletComplexSequence
+#print axioms NLS.KdV.hillHminusDirichletComplexSequence
+#print axioms NLS.KdV.hillHminusDirichletComplexSequence_spec
+#print axioms NLS.KdV.hillHminusDirichletComplexLabels
+#print axioms NLS.KdV.monotone_hillHminusDirichletComplexLabels
+#print axioms NLS.KdV.hillHminusDirichletComplexLabels_spectrum_iff
+#print axioms NLS.KdV.finite_fiber_hillHminusDirichletComplexLabels
+#print axioms NLS.KdV.hillHminusDirichletComplexLabels_multiplicity
+#print axioms NLS.KdV.memlp_hillHminusDirichletComplexLabels_inverseIndex_error
+#print axioms NLS.KdV.hillHminusDirichletComplexLabels_eq_labeling
+#print axioms NLS.KdV.hillHminusDirichletComplexLabels_eq_real
+#print axioms NLS.KdV.hillHminusDirichletComplexLabels_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalComplexDirichletLabels
+#print axioms NLS.Articles.KdVPseudomeasures.originalComplexDirichletLabels_spectrum_iff
+#print axioms NLS.Articles.KdVPseudomeasures.monotone_originalComplexDirichletLabels
+#print axioms NLS.Articles.KdVPseudomeasures.originalComplexDirichletLabels_multiplicity
+#print axioms NLS.Articles.KdVPseudomeasures.originalComplexDirichletLabels_analytic_multiplicity
+#print axioms NLS.Articles.KdVPseudomeasures.memlp_originalComplexDirichletLabels_inverseIndex_error
+#print axioms NLS.Articles.KdVPseudomeasures.finite_fiber_originalComplexDirichletLabels
+#print axioms NLS.Articles.KdVPseudomeasures.exists_l2_originalComplexDirichletLabels_error
+#print axioms NLS.Articles.KdVPseudomeasures.originalComplexDirichletLabels_of_real

@@ -178,7 +178,7 @@
     ]
   },
   "essential_open_obligations": [
-    "The full complex native Dirichlet operator, spectrum/characteristic and algebraic multiplicity/order matching are proved. NOW ALSO PROVED: the ramified auxiliary zero contributes 1+2*actual native scalar multiplicity; the ACTUAL complex central spectrum has exactly N full algebraic repetitions and a lexicographically ordered block at positive indices 1,...,N; one original H-minus-one norm neighborhood/fixed chart supports the count at every larger cutoff with explicit uniform central energy bounds, unchanged on the ENTIRE original complex physical distribution domain. REMAINING: join the finite central block to the high tail and prove global ordered complex labels with exact repetitions and same-index n-times-L2 asymptotics; full complex source 2.1(ii) weighted midpoint estimates/local boundedness; low periodic interlacing/parity; complex-ratio 2.20; original KdV Birkhoff maps and actual approximation flow. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. All five main theorems remain UNPROVED; goal ACTIVE.",
+    "The ENTIRE original COMPLEX native Dirichlet spectral/labeling dependency and source equation (6) are COMPLETE: actual full H1 operator on full dual, compact resolvent, full spectrum/characteristic equality, exact native algebraic-order matching, entire global lexicographic positive labels with ALL actual algebraic repetitions, exactly N central slots joined to the high tail at n=N+1, literal SAME-INDEX n-times-l2 asymptotic, lift/shift/cutoff independence, exact full REAL restriction and free normalization. Uniform original norm-neighborhood central counts/energy bounds remain proved. REMAINING: FULL COMPLEX source 2.1(ii) general-weight midpoint membership/local boundedness; low periodic interlacing/parity; complex-ratio 2.20; original KdV Birkhoff maps and actual smooth-approximation flow. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. All five MAIN theorems remain UNPROVED; goal ACTIVE.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
@@ -544,7 +544,18 @@
     "The actual complex native central root multiset repeats each spectral value by precisely its native algebraic multiplicity. Its cardinality is N. Sorting gives a lexicographically nondecreasing enumeration on the EXACT positive central indices 1,...,N, including ALL repetitions. The central positive-index offset is proved; the central block has not yet been joined to the high tail.",
     "ONE fixed local Miura chart and ONE OPEN ORIGINAL H-minus-one norm neighborhood, chosen before the varying source and cutoff, give the exact N central multiplicity count at EVERY larger cutoff. Every actual central scalar energy has the explicit common bound ((N*pi+pi/2+N)^2 + norm(shift)). A fixed cutoff therefore gives a uniformly bounded finite central block on that neighborhood.",
     "The ENTIRE ORIGINAL complex physically period-one H-minus-one distribution subtype has its original norm subspace topology. Extraction/insertion leaves the entire original smooth-test distribution unchanged. Its actual central native spectral set is EXACTLY the original operator spectrum in the same squared central region, and it inherits the explicit energy bound.",
-    "For EVERY original complex physically period-one H-minus-one source, ONE original norm neighborhood and ONE fixed chart/cutoff support the exact central ACTUAL algebraic count and energy bounds, simultaneously for EVERY larger cutoff and EVERY neighboring original distribution. Arbitrary mean and the article mean-zero subdomain are included. No finite-p surrogate or reality restriction is used."
+    "For EVERY original complex physically period-one H-minus-one source, ONE original norm neighborhood and ONE fixed chart/cutoff support the exact central ACTUAL algebraic count and energy bounds, simultaneously for EVERY larger cutoff and EVERY neighboring original distribution. Arbitrary mean and the article mean-zero subdomain are included. No finite-p surrogate or reality restriction is used.",
+    "A reusable right-half-plane square-root choice and exact quarter-pi coordinate estimates show: squaring ANY two distinct positive frequency disks preserves STRICT REAL order; EVERY squared central frequency strictly precedes EVERY positive high frequency beyond the same cutoff. These are full-complex geometric results; realness of the frequencies is not assumed.",
+    "For EVERY literal COMPLEX shifted Miura lift of an original unit-period H-minus-one source, actual auxiliary counting plus fixed canonical high branches construct full native spectral control at a sufficiently large cutoff. Its positive high energies have actual native algebraic multiplicity ONE. No central labels or scalar central count are supplied.",
+    "The ENTIRE native complex Dirichlet spectrum is EXACTLY the previously constructed finite actual central spectral set UNION the positive high branches at the SAME original index. A square root in the right half-plane excludes negative high disks; no real-potential symmetry or simplicity argument replaces the complex exhaustion.",
+    "The exact N central native algebraic repetitions are joined to the positive high branch at original positive index N+1. The COMPLETE sequence is lexicographically ordered. All central values precede every high value; the high real parts are strictly increasing. Every native spectral value is listed, including central multiple roots and associated vectors.",
+    "Every value has a FINITE occurrence set in the full complex list. Each high value occurs ONLY at its own original index. The central multiset and high simplicity prove that the exact full occurrence count of EVERY complex energy equals its ACTUAL full native operator algebraic root-space dimension. No root or algebraic repetition is omitted.",
+    "Generic finite modifications on arbitrary index types preserve lp membership. Generic lexicographically ordered complex natural enumerations with finite fibers are determined by ALL their multiplicities, with no common-tail hypothesis. Consequently complete complex Dirichlet sequences are independent of EVERY Miura lift, shift and central cutoff.",
+    "The joined ENTIRE complex sequence has inverse-bracket weighted l2 displacement at the SAME original positive index. The literal error divided by index n is in l2. No eventual index shift remains: the ACTUAL central count N fixes the tail junction before finite-change transfer.",
+    "Intrinsic positive-index complex Dirichlet labels are constructed for EVERY unit-period original complex H-minus-one source. They have full lexicographic order, exhaust the ENTIRE native spectrum, count EVERY actual algebraic multiplicity, and satisfy the literal n-times-l2 source asymptotic. Their labels agree at each original positive index with ANY constructed complete labeling.",
+    "The entire intrinsic COMPLEX sequence restricts to the previously proved full REAL Dirichlet sequence at the EXACT same positive index. At zero potential the COMPLETE complex free sequence is exactly n^2*pi^2 starting at one, including every central value. This verifies the source normalization rather than only a high-energy approximation.",
+    "The ENTIRE ORIGINAL physically period-one complex H-minus-one smooth-test distribution domain inherits these complete labels unchanged. Its FULL actual native spectrum is exhausted with ACTUAL algebraic repetitions. Occurrence counts also equal the independently normalized original characteristic zero orders at EVERY complex energy.",
+    "Source equation (6) is proved literally on the ENTIRE original complex domain: there EXISTS ONE l2 error sequence a_n with mu_n = (pi*n)^2 + n*a_n for EVERY positive index, including central energies. The original real article domain embeds without changing its distribution or its complete positive label sequence. Arbitrary mean is allowed; the article complex mean-zero subdomain is included."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -1041,8 +1052,26 @@
     "uniform_original_norm_neighborhood_counts": true,
     "uniform_central_energy_bounds": true,
     "entire_original_complex_distribution_adapter": true,
-    "global_ordered_complex_label_sequence": false,
-    "complex_central_block_joined_to_high_tail": false,
+    "global_ordered_complex_label_sequence": true,
+    "complex_central_block_joined_to_high_tail": true,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false,
+    "global_label_followup": "coverage/articles/kdv-pseudomeasures/original-dirichlet-complex-labels-map.json"
+  },
+  "verified_original_complex_dirichlet_global_labels": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-complex-labels-map.json",
+    "complex_central_block_joined_to_high_tail": true,
+    "global_ordered_complex_label_sequence": true,
+    "entire_native_complex_spectrum_exhausted": true,
+    "all_actual_native_algebraic_repetitions_retained": true,
+    "finite_label_fibers": true,
+    "original_positive_index_offset_proved": true,
+    "same_index_n_times_l2_asymptotic": true,
+    "literal_source_equation_6": true,
+    "independent_of_lift_shift_cutoff": true,
+    "real_full_sequence_preserved": true,
+    "exact_free_normalization": true,
+    "entire_original_complex_distribution_adapter": true,
     "source_Theorem2_1_ii_proved": false,
     "main_theorems_verified": false
   }

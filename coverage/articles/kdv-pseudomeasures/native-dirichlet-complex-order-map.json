@@ -167,5 +167,22 @@
     "complex_central_block_joined_to_high_tail": false,
     "source_Theorem2_1_ii_proved": false,
     "main_theorems_verified": false
+  },
+  "complete_original_complex_global_label_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-complex-labels-map.json",
+    "complex_central_block_joined_to_high_tail": true,
+    "global_ordered_complex_label_sequence": true,
+    "entire_native_complex_spectrum_exhausted": true,
+    "all_actual_native_algebraic_repetitions_retained": true,
+    "finite_label_fibers": true,
+    "original_positive_index_offset_proved": true,
+    "same_index_n_times_l2_asymptotic": true,
+    "literal_source_equation_6": true,
+    "independent_of_lift_shift_cutoff": true,
+    "real_full_sequence_preserved": true,
+    "exact_free_normalization": true,
+    "entire_original_complex_distribution_adapter": true,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
   }
 }

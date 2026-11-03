@@ -558,6 +558,15 @@ modules = [
     'NLS.KdV.HminusOneDirichletCentralBounds',
     'NLS.KdV.HminusOneDirichletCentralRoots',
     'NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletCentralCount',
+    'NLS.ZakharovShabat.SquaredFrequencyOrder',
+    'NLS.KdV.HminusOneDirichletComplexControl',
+    'NLS.KdV.HminusOneDirichletComplexLabeling',
+    'NLS.SequenceSpaces.FiniteModificationGeneral',
+    'NLS.SequenceSpaces.OrderedComplexNatEnumeration',
+    'NLS.KdV.HminusOneDirichletComplexAsymptotics',
+    'NLS.KdV.HminusOneDirichletComplexLabels',
+    'NLS.KdV.HminusOneDirichletComplexRealLabels',
+    'NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletLabels',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
