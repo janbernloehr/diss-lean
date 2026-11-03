@@ -710,10 +710,24 @@
         "NLS.KdV.hillHminusRealGapPrimitiveSquare_on_gap",
         "NLS.KdV.continuousAt_hillHminusRealGapPrimitiveSquare_on_gap",
         "NLS.KdV.analyticAt_hillHminusRealGapPrimitiveSquare_on_gap",
-        "NLS.KdV.analyticOnNhd_hillHminusRealGapPrimitiveSquare"
+        "NLS.KdV.analyticOnNhd_hillHminusRealGapPrimitiveSquare",
+        "NLS.ComplexAnalysis.isInvertible_fderiv_of_deriv_ne_zero",
+        "NLS.ComplexAnalysis.exists_analytic_compact_coordinate_family",
+        "NLS.ComplexAnalysis.analyticAt_of_continuousAt_scalar_coordinate",
+        "NLS.ComplexAnalysis.compactFamilyExtension",
+        "NLS.ComplexAnalysis.analyticOnNhd_compactFamilyExtension",
+        "NLS.ComplexAnalysis.exists_joint_compact_coordinate_continuation",
+        "NLS.ComplexAnalysis.coshSquareCoordinate_sq_eq_one_of_deriv_eq_zero",
+        "NLS.ComplexAnalysis.deriv_coshSquareCoordinate_ne_zero_of_value_sq_ne_one",
+        "NLS.ComplexAnalysis.eventually_eq_compact_coordinate_lifts",
+        "NLS.KdV.deriv_coshSquareCoordinate_hillHminusRealGapPrimitiveSquare_ne_zero",
+        "NLS.KdV.exists_hillHminus_joint_gap_square_on_disc",
+        "NLS.KdV.exists_hillHminus_joint_filled_gap_square",
+        "NLS.KdV.exists_hillHminus_joint_contour_primitive",
+        "NLS.KdV.exists_hillHminus_analytic_gap_period_germs"
       ],
       "remaining": [
-        "Extend the filled actual central shifted squares and canonical contour periods jointly analytically in nearby complex H^-1 potentials. Match the all-index real periods with the existing common high family. All actual indexed endpoint limits, real gap profiles, full upper/lower jumps and energy-analytic filled squares on every canonical gap disc are now proved, including low and collapsed gaps. Singular-Hill operator identification, all-period signs, global Birkhoff-action identification and real isospectral invariance remain.",
+        "Identify the joint square and primitive-collar extensions with the canonical functions at nearby real H^-1 potentials; glue the local period germs and match them with the existing common high family. At every real reference potential and every positive index, joint analytic filled-square and primitive-collar extensions now retain the full actual reference branch, and all polynomial/cubic contour integrals are analytic on one neighborhood. Singular-Hill operator identification, all-period signs, global Birkhoff-action identification and real isospectral invariance remain.",
         "Identify the actual Arnold periods with the action coordinates of the same global H^-1 KdV Birkhoff map used in the article. The proved estimates concern the constructed spectral periods, not an arbitrary coordinate map.",
         "Apply the proved simultaneous descent/gluing and exact weighted-action summation mechanism to the actual KdV Birkhoff-coordinate cubic periods. This still requires the actual global H^-1 Birkhoff map and Arnold-period action identity, real isospectral invariance on its action fibers, and analytic finite central periods. No common action domain is now required as a separate abstract hypothesis.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
@@ -1971,6 +1985,52 @@
       "Exact free-to-real endpoint normalization",
       "Intrinsic real gap signs and arcosh boundary profile",
       "Two-sided gap limits and squared-cosh inverse-coordinate filling"
-    ]
+    ],
+    "joint_complex_potential_filled_square_reference_extensions_constructed": true,
+    "joint_extension_scope": "Joint analytic extensions of the entire reference filled square on each compact isolating disc; identification with the canonical family at nearby real potentials remains open."
+  },
+  "Hminus1_joint_gap_germ_progress": {
+    "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
+    "squared_cosh_derivative_nonzero_on_each_entire_actual_gap_disc": true,
+    "one_complex_potential_neighborhood_before_all_reference_disc_energies": true,
+    "joint_analytic_filled_square_extension_constructed_at_every_positive_index": true,
+    "joint_square_disc_strictly_contains_reference_canonical_circle": true,
+    "joint_square_matches_actual_filled_square_on_entire_reference_closed_disc": true,
+    "joint_square_coordinate_identity": "coshSquareCoordinate(K(z,p))=(-1)^n*Delta(p,z)/2, with nonzero coordinate derivative throughout the joint chart.",
+    "uniform_norm_inverse_controls_whole_compact_family_not_independent_pointwise_choices": true,
+    "compact_coordinate_continuation_germs_unique_for_continuous_lifts_with_same_reference_family": true,
+    "one_joint_analytic_primitive_collar_at_every_reference_canonical_gap_circle": true,
+    "primitive_collar_matches_actual_full_reference_primitive_including_real_band_points": true,
+    "primitive_collar_trace_identity_and_nonzero_sinh_proved_for_nearby_complex_potentials": true,
+    "all_polynomial_and_shifted_cubic_contour_integrals_analytic_on_same_potential_neighborhood": true,
+    "period_germ_theorem_retains_actual_trace_normalized_primitive_and_literal_integral_formulas": true,
+    "period_germs_at_reference_equal_actual_canonical_real_periods": true,
+    "normalizations": "A_n,m=-(1/pi)*integral lambda^m*F; R_n=(1/pi)*integral (F+i*n*pi)^3, counterclockwise and no extra factor i.",
+    "central_and_collapsed_gaps_included": true,
+    "neighborhood_scope": "For each fixed real reference q and positive index n, one complex-open V and one fixed energy disc/collar. A common V for every n is not asserted by this milestone.",
+    "joint_extensions_identified_with_canonical_families_at_nearby_real_potentials": false,
+    "local_period_germs_glued_into_one_actual_potential_space_family": false,
+    "new_all_index_real_periods_identified_with_existing_common_high_family": false,
+    "all_central_period_signs_and_Birkhoff_action_identity_proved": false,
+    "intrinsic_singular_Hill_operator_characteristic_identity_proved": false,
+    "actual_global_positive_ell2_Hamiltonian_extension_proved": false,
+    "new_authored_modules": [
+      "NLS.ComplexAnalysis.CompactCoordinateExtension",
+      "NLS.ComplexAnalysis.CompactCoordinateJointExtension",
+      "NLS.ComplexAnalysis.CompactCoordinateContinuation",
+      "NLS.ComplexAnalysis.CoshSquareRegularity",
+      "NLS.ComplexAnalysis.CompactCoordinateUniqueness",
+      "NLS.KdV.HillHminusOneGapCoordinateRegularity",
+      "NLS.KdV.HillHminusOneJointGapSquares",
+      "NLS.KdV.HillHminusOneJointContourPrimitive",
+      "NLS.KdV.HillHminusOneJointGapPeriodGerms"
+    ],
+    "exact_shared_modules_reused": [
+      "NLS.ComplexAnalysis.ContinuousMapAnalytic",
+      "NLS.ComplexAnalysis.ContinuousMapSuperposition",
+      "NLS.ComplexAnalysis.ContinuousMapAnalyticInverse",
+      "NLS.ComplexAnalysis.ParametricCircleIntegralHigher"
+    ],
+    "shared_source_commit": "174af0e4674c0dcfb8ff3e64edf149d705b65022"
   }
 }

@@ -34,8 +34,10 @@ in H^-1, and normalized by exact indexed trace parity. Canonical gap
 circles with actual zero count two are now constructed at every index.
 The actual primitive now glues holomorphically on the entire real-band
 domain, with exact source normalization. The all-index real periods are
-constructed and real; their complex-potential analytic extensions remain unproved. Indexed
-endpoint limits and energy-analytic filled squares are proved below.
+constructed and real. Joint complex-potential reference extensions and
+analytic contour-period germs are now proved below; matching them to the
+nearby canonical real families remains open. Indexed endpoint limits and
+energy-analytic filled squares are proved below.
 
 Physical energy/frequency identification, the -6*Id quadratic coefficient
 and the Fourier-Lebesgue assertions in Theorems 1.2–1.3 also remain open.
@@ -1588,8 +1590,10 @@ Cutoff-independent uniqueness, H^-1 continuity, lowest-root simplicity,
 central trace parity and canonical gap-circle geometry are now proved
 below. The actual primitive now glues holomorphically on the entire real-band
 domain, with exact source normalization. The all-index real periods are
-constructed and real; their complex-potential analytic extensions remain unproved. Indexed
-endpoint limits and energy-analytic filled squares are proved below. This is a labeling of the constructed entire
+constructed and real. Joint complex-potential reference extensions and
+analytic contour-period germs are now proved below; matching them to the
+nearby canonical real families remains open. Indexed endpoint limits and
+energy-analytic filled squares are proved below. This is a labeling of the constructed entire
 H^-1 characteristic; its singular-operator identification and global
 KdV Birkhoff-action interpretation remain open. Theorem 1.1 and all other
 main theorem flags remain unverified.
@@ -1750,15 +1754,72 @@ modules are reused byte-for-byte from `articles/kdv-estimates` at
 The eight H^-1 modules adapt the verified L2 arguments to the actual
 unit-period distributional characteristic and the intrinsic H^-1 labels.
 
+## Joint H^-1 filled-square and primitive-collar continuations
+
+`CompactCoordinateExtension.lean` applies the analytic inverse theorem to
+continuous functions on a compact set in the uniform norm. A regular
+scalar coordinate gives one analytic parameter neighborhood for the
+entire reference family. The exact coordinate equation and every
+reference value are preserved. `CompactCoordinateJointExtension.lean`
+uses continuous evaluation and scalar inversion to recover joint energy
+and parameter analyticity on the compact set's interior.
+`CompactCoordinateContinuation.lean` assembles the full construction.
+`CompactCoordinateUniqueness.lean` proves uniqueness of continuation
+germs for continuous compact lifts with the same reference family and
+coordinate image.
+
+`CoshSquareRegularity.lean` proves that a critical value of the entire
+squared-cosh coordinate has square one.
+`HillHminusOneGapCoordinateRegularity.lean` consequently proves its
+nonzero derivative on every actual filled gap disc: the real cut has
+nonnegative profile square, while any other critical point would force
+an actual characteristic zero in the root-free band domain.
+
+`HillHminusOneJointGapSquares.lean` constructs one jointly analytic filled
+square on a fixed disc strictly enclosing the canonical circle, for
+one complex-open H^-1 neighborhood of each real reference potential.
+It agrees with the actual filled square on the entire reference closed
+disc and satisfies coshSquareCoordinate(K)=(-1)^n*Delta/2 throughout the
+joint chart, with nonzero coordinate derivative. All positive indices,
+central gaps and collisions are included.
+
+`HillHminusOneJointContourPrimitive.lean` applies the compact inverse to
+cosh on a compact collar of the canonical circle. It gives one joint
+analytic primitive on an open energy collar and one complex potential
+neighborhood. On the entire reference collar it equals the actual
+source-normalized primitive, including the real band points. Throughout
+the complex chart it satisfies 2*cosh(F)=Delta and sinh(F) is nonzero.
+Thus the full logarithm period is retained at once around the contour.
+
+`HillHminusOneJointGapPeriodGerms.lean` integrates this same primitive
+to construct all polynomial moments and the shifted cubic moment on one
+analytic potential neighborhood. Its statement retains the primitive
+collar, actual trace identity, exact reference branch and literal integral
+formulas. At the reference potential the integrals equal the canonical
+real periods, with counterclockwise A_n,m=-(1/pi)*integral lambda^m*F and
+R_n=(1/pi)*integral (F+i*n*pi)^3, without an additional factor i.
+
+These are local analytic continuations of the full actual reference
+functions. Identification with the canonical functions at nearby real
+potentials, gluing the period germs into one actual family, and matching
+to the existing common high family remain open. The global Birkhoff map,
+action identity and real isospectral invariance remain required before
+the verified action-space descent can yield Theorem 1.1. All main theorem
+flags remain unverified.
+
+Four compact-function and analytic-circle-integration modules are
+reused byte-for-byte from `articles/kdv-estimates` at `174af0e`. Their
+retained import boundaries are pinned in `joint-square-shared-imports.json`.
+
 ## Remaining essential KdV work
 
-1. Extend the filled actual central shifted squares and canonical contour
-   periods jointly analytically in nearby complex H^-1 potentials. The
-   actual indexed endpoint limits, full two-sided gap profiles and
-   energy-analytic filled squares on all canonical gap discs are now
-   proved, including central and collapsed gaps. Match the all-index real
-   periods to the existing common high source family and complete the
-   remaining central estimates.
+1. Identify the joint filled-square and primitive-collar continuations
+   with the canonical functions at nearby real H^-1 potentials. Glue the
+   local analytic period germs and match them to the existing common
+   high family. The reference continuations, literal analytic contour
+   integrals, indexed endpoints and all energy-analytic gap squares are
+   now proved, including central and collapsed gaps. Complete the
+   remaining central signs and estimates.
 2. The **high-index complex H^-1-neighborhood** bounds
    |R_n|=O(gamma_n^4/n^3), gamma_n^2/n<=16*pi*|A_n| and
    |8*n*pi*R_n|<=C*|A_n|^2 are now proved. Identify A_n with the
@@ -1811,15 +1872,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `404dd2c` contains 345 source modules. Every
-baseline source hash remains unchanged. Six exact shared modules and eight
-authored or adapted modules pass incremental Lean 4.33.1/mathlib v4.33.1
-checks with `warningAsError=true`. The full reproducible script now lists
-359 source modules. The positive-index example passes.
+The validated baseline at `f2e213d` contains 359 source modules. Every
+baseline source hash remains unchanged. Four exact shared modules and nine
+authored modules pass incremental Lean 4.33.1/mathlib v4.33.1 checks with
+`warningAsError=true`. The full reproducible script now lists 372 source
+modules. The positive-index example passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 176 additional shared modules:
-3955 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 185 additional shared modules:
+3986 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

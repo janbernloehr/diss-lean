@@ -1,0 +1,39 @@
+{
+  "source_branch": "articles/kdv-estimates",
+  "source_commit": "174af0e4674c0dcfb8ff3e64edf149d705b65022",
+  "source_files_unchanged": true,
+  "dependency_order": [
+    "NLS.ComplexAnalysis.ContinuousMapAnalytic",
+    "NLS.ComplexAnalysis.ContinuousMapSuperposition",
+    "NLS.ComplexAnalysis.ContinuousMapAnalyticInverse",
+    "NLS.ComplexAnalysis.ParametricCircleIntegralHigher"
+  ],
+  "files": {
+    "NLS/ComplexAnalysis/ContinuousMapAnalytic.lean": "723485d2c382bbe0c3fd8b3e904ee9168c58aa52233c36970772aef35dfcd76f",
+    "NLS/ComplexAnalysis/ContinuousMapSuperposition.lean": "8f38c6d264d917dea2429403a070aaa86d03d3bace998b3b5d187ceacaaf2af8",
+    "NLS/ComplexAnalysis/ContinuousMapAnalyticInverse.lean": "d130092234c2b04dcae7adc7ede8c1427dc1a087a972940c1b8c22ebc5de262f",
+    "NLS/ComplexAnalysis/ParametricCircleIntegralHigher.lean": "507648a6dc1423d8cc4d64be50cec61ff26822bcc6af7866030279bb9ca9d91b"
+  },
+  "retained_existing_import_boundary": {
+    "NLS/ComplexAnalysis/BanachHolomorphicAnalytic.lean": {
+      "private_sha256": "f69c5918e49f27083517670ae6300b2809716d7bac5932790dbec44d937d73f4",
+      "shared_sha256": "f69c5918e49f27083517670ae6300b2809716d7bac5932790dbec44d937d73f4",
+      "byte_identical": true
+    },
+    "NLS/ComplexAnalysis/BilinearCircleIntegral.lean": {
+      "private_sha256": "ec97ea1b6afee053adb4b46206b1de87dceca1f332c50a193a13c57afd83c905",
+      "shared_sha256": "ec97ea1b6afee053adb4b46206b1de87dceca1f332c50a193a13c57afd83c905",
+      "byte_identical": true
+    },
+    "NLS/ComplexAnalysis/ParametricCircleIntegral.lean": {
+      "private_sha256": "649f3ce837ea47a6443bddaf97058e1337106b1fee5117645542574dd5fd0180",
+      "shared_sha256": "649f3ce837ea47a6443bddaf97058e1337106b1fee5117645542574dd5fd0180",
+      "byte_identical": true
+    },
+    "NLS/ComplexAnalysis/BanachSmoothAnalyticOn.lean": {
+      "private_sha256": "941e4df7dab89354a3c04993e820f47bcc99a932f3e42d9f9ac713a5c4e63c30",
+      "shared_sha256": "941e4df7dab89354a3c04993e820f47bcc99a932f3e42d9f9ac713a5c4e63c30",
+      "byte_identical": true
+    }
+  }
+}

@@ -1,3 +1,6 @@
+import NLS.KdV.HillHminusOneJointGapSquares
+import NLS.KdV.HillHminusOneJointGapPeriodGerms
+import NLS.ComplexAnalysis.CompactCoordinateUniqueness
 import NLS.KdV.HillHminusOneAllGapSquares
 import NLS.KdV.HillHminusOneAllRealPeriods
 import NLS.KdV.HillHminusOneRealGapContours
@@ -67,6 +70,16 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.ComplexAnalysis.ContinuousMapAnalytic,
+    `NLS.ComplexAnalysis.ContinuousMapSuperposition,
+    `NLS.ComplexAnalysis.ContinuousMapAnalyticInverse,
+    `NLS.ComplexAnalysis.ParametricCircleIntegralHigher,
+    `NLS.ComplexAnalysis.CompactCoordinateExtension,
+    `NLS.ComplexAnalysis.CompactCoordinateJointExtension,
+    `NLS.ComplexAnalysis.CompactCoordinateContinuation,
+    `NLS.ComplexAnalysis.CoshSquareRegularity,
+    `NLS.ComplexAnalysis.CompactCoordinateUniqueness,
+
     `NLS.ComplexAnalysis.UpperLogarithmBoundary,
     `NLS.ComplexAnalysis.ParametricUpperLogarithmBoundary,
     `NLS.ComplexAnalysis.RealSimpleZeroSigns,
