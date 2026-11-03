@@ -1,0 +1,114 @@
+{
+  "source": "arXiv:1610.00278v1, necessary Hill action normalization dependency for Theorem3.2 and actual KdV Birkhoff map; this does not assert Theorem3.2 is complete",
+  "date": "2026-11-03",
+  "status": "PROVED actual native high energy-disc analytic root normalization. Original actions, joint potential analyticity, Birkhoff map and all five MAIN theorems remain OPEN.",
+  "modules": [
+    "NLS/ComplexAnalysis/LocalTwoRootQuotient.lean",
+    "NLS/ComplexAnalysis/QuadraticModelDeflation.lean",
+    "NLS/KdV/HillHminusOneNormalizedGapSquares.lean",
+    "NLS/ComplexAnalysis/NormalizedAnalyticSquareRoot.lean",
+    "NLS/KdV/HillHminusOneNormalizedGapRoots.lean"
+  ],
+  "declarations": [
+    "NLS.ComplexAnalysis.twoRootDeflation",
+    "NLS.ComplexAnalysis.analyticOnNhd_twoRootDeflation",
+    "NLS.ComplexAnalysis.twoRootDeflation_factor",
+    "NLS.ComplexAnalysis.norm_le_of_sphere_bound_of_analyticOnNhd",
+    "NLS.ComplexAnalysis.norm_twoRootQuotient_sub_le_of_analyticOnNhd",
+    "NLS.ComplexAnalysis.normalizedQuadraticDeflation",
+    "NLS.ComplexAnalysis.norm_root_sub_center_le_of_quadratic_error",
+    "NLS.ComplexAnalysis.norm_normalizedQuadraticDeflation_sub_one_le",
+    "NLS.KdV.hillHminusNormalizedGapSquare",
+    "NLS.KdV.hillHminus_normalized_gap_square_bound",
+    "NLS.KdV.exists_hillHminus_normalized_gap_squares",
+    "NLS.ComplexAnalysis.norm_principalSqrt_sub_one_le",
+    "NLS.ComplexAnalysis.analyticOnNhd_principalSqrt_of_norm_sub_one_lt_one",
+    "NLS.KdV.hillHminusNormalizedGapRoot",
+    "NLS.KdV.hillHminusNormalizedGapRoot_sq",
+    "NLS.KdV.hillHminusNormalizedGapRoot_factor",
+    "NLS.KdV.hillHminusNormalizedGapRoot_analytic_bound",
+    "NLS.KdV.exists_hillHminus_normalized_gap_roots"
+  ],
+  "results": [
+    "Shared LOCAL complex-analysis deflation removes two actual roots, with a derivative condition only when the roots coincide. Exact factorization holds even at both removed roots. Analyticity is required only near the closed disc, not on the entire plane; the local maximum-modulus bound does not assume an unavailable entire extension.",
+    "A uniform error delta^2*r^2 against the free square -(lambda-c^2)^2/(4*c^2) places each actual root within2*c*r*delta of c^2. For0<=delta<=1/4 the exact normalized filled quotient -4*c^2*Q is within24*delta of ONE throughout the full closed disc, including a repeated root. No division by the gap length is used.",
+    "For the ACTUAL H-minus-one Hill filled primitive square K, the exact ACTUAL two-root algebraic multiplicity proves the missing derivative condition at a collapsed gap. The whole-disc native trace, radicand-zero and free-normalized continued-primitive identities are preserved in the same family.",
+    "ONE positive radius precedes EVERY requested accuracy; ONE cutoff and ONE OPEN complex H-minus-one potential neighborhood precede ALL later original positive indices and EVERY potential in that neighborhood. The ACTUAL normalized filled square is analytic in the energy and uniformly near ONE on each ENTIRE original energy disc.",
+    "The principal root S of that actual normalized quotient is ANALYTIC and NONZERO on the whole energy disc, including both endpoints and collapsed gaps. Its EXACT identity is K(lambda,a)=-(lambda-l)*(lambda-u)*S(lambda)^2/(4*(pi*n)^2), with the original positive physical index. The SAME common neighborhood/cutoff gives norm(S-1)<=epsilon on EVERY later full disc.",
+    "This is a necessary analytic normalization step toward source Theorem3.2 and the ACTUAL KdV Birkhoff map. It does NOT yet define or identify the Hill contour actions, prove their gap-square ratio or joint potential analyticity, identify global real spectral action coordinates, construct the KdV Birkhoff map, or construct the actual smooth-approximation KdV flow. ALL FIVE MAIN source theorems remain UNPROVED; goal ACTIVE."
+  ],
+  "verified": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/normalized-hill-gap-roots-map.json",
+    "actual_HminusOne_two_root_deflation": true,
+    "closed_gap_derivative_condition_from_exact_actual_multiplicity": true,
+    "local_analytic_disc_no_entire_extension_assumption": true,
+    "exact_free_normalization_minus_four_pi_n_squared": true,
+    "normalized_gap_root_analytic_in_energy": true,
+    "normalized_gap_root_nonvanishing_on_entire_closed_disc": true,
+    "normalized_gap_root_locally_uniform_near_one": true,
+    "radius_before_accuracy_neighborhood_and_cutoff_before_index_and_potential": true,
+    "original_actual_trace_radicand_and_continued_primitive_identities_preserved": true,
+    "no_open_gap_or_root_separation_hypothesis": true,
+    "joint_potential_analyticity_of_normalized_root_proved": false,
+    "original_Hill_contour_actions_constructed": false,
+    "source_Theorem3_2_action_ratio_proved": false,
+    "actual_original_KdV_Birkhoff_map_constructed": false,
+    "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
+    "main_theorems_verified": false
+  },
+  "source_correspondence": {
+    "potential": "The native complex PeriodOneHminusOne space and its ORIGINAL H-minus-one norm topology. The existing verified periodOneOriginal realization preserves the entire original physical distribution. No real-type or noncollapsed-gap hypothesis is imposed.",
+    "square": "ACTUAL filled shifted primitive square K on the ORIGINAL full closed energy disc, with squaredCosh(K)=(-1)^n*Delta/2, zeros exactly the actual radicand zeros, and K=(F+i*n*pi)^2 on its intersection with the ACTUAL free-normalized continuation domain.",
+    "roots": "ACTUAL unordered pair l,u of the original H-minus-one Hill radicand, counted with their full analytic multiplicities. Coincident roots are allowed. No analytically ordered potential-dependent pair or identification with globally canonical real labels is claimed here.",
+    "normalization": "EXACT -4*(pi*n)^2 times the filled quotient K/((lambda-l)*(lambda-u)); principal square root S satisfies K=-(lambda-l)*(lambda-u)*S^2/(4*(pi*n)^2). Native positive index and physical period ONE retained.",
+    "quantifiers": "For every native complex potential q there exists ONE r>0,r<=pi/4; for every epsilon>0 there exist ONE cutoff N>0 and ONE H-minus-one-open V containing q; for all n>=N one ACTUAL K works for every a in V and the entire closed energy disc.",
+    "regularity": "Normalized square and normalized root are analytic in ENERGY on a neighborhood of the full closed disc, uniformly controlled for a in V. JOINT potential analyticity and sheet identification with the original action contour remain unproved."
+  },
+  "essential_remaining": [
+    "Identify the normalized actual Hill gap root with the correct sheet of the original continued primitive and construct the original Hill contour action. Prove the actual action-to-gap-square extension and locally uniform normalization8*n*pi*I_n/gamma_n^2->1, with the correct contour convention and all closed gaps. Current normalized roots are analytic in ENERGY and uniformly controlled on a complex potential neighborhood; JOINT analytic dependence in the potential and any gap-root ordering independence still need proof where used.",
+    "Construct or identify the ACTUAL original KdV H-minus-one Birkhoff map, with verified action/angle coordinates, original differential q_(2n)/sqrt(2*pi*abs(n)), exact target order s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. FULL complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB are already PROVED; do not redo them or substitute arbitrary supplied conjugacy data.",
+    "Construct or identify the ACTUAL original H-minus-one KdV flow defined by convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization, and derive main1.1/1.3/1.4 plus Wiener5.1/5.9. All five main theorems remain UNPROVED; keep the goal ACTIVE. Quantitative DirichletC4ii, remaining low parity/interlacing and complex ratio2.20 remain open only where required."
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "d90f7507797b05e1110cec0ae2e2ff8c03e41fc2",
+    "baseline_modules": 678,
+    "baseline_non_audit_sources_verified_unchanged": 677,
+    "new_modules_compiled": 5,
+    "modules_in_exact_inventory": 683,
+    "audited_declarations": 4334,
+    "theorems": 3597,
+    "definitions": 737,
+    "new_theorems": 14,
+    "new_definitions": 4,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-normalized-hill-gap-roots.log",
+    "log_sha256": "7975a123c4715d87a1b99d98578a72f04989d0ecb0a7aae38c2aa70903d8f554"
+  },
+  "output_sha256": {
+    "NLS/ComplexAnalysis/LocalTwoRootQuotient.lean": "15dadcbf641651ced16d89b003b118d10b2f29713cc0a301b2180268b54a6fcf",
+    "NLS/ComplexAnalysis/QuadraticModelDeflation.lean": "0fc6953736aab205e2e897ab83b0e64996d714703c3b964dd4cbced298a33286",
+    "NLS/KdV/HillHminusOneNormalizedGapSquares.lean": "49f0db9fb4d07fcd92f6b53aab791dfc6f547459f4d396f41362440b6174dfed",
+    "NLS/ComplexAnalysis/NormalizedAnalyticSquareRoot.lean": "8297f7a46046bab902dc9a1b98eb4b81a95cf0465e94c18a2155642702f8c37c",
+    "NLS/KdV/HillHminusOneNormalizedGapRoots.lean": "62f4698a0fefb5ff14a2486f89d56a7f6f7c00da7e81f92cfe401e7ed692b895"
+  },
+  "canonical_checkout_written": false,
+  "canonical_head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "workspace_decision": "pending; all source/compiler/Git milestone writes private",
+  "git_isolation": {
+    "metadata": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/work/appendix-b-milestones.git",
+    "base_commit": "d90f7507797b05e1110cec0ae2e2ff8c03e41fc2",
+    "branch": "articles/kdv-pseudomeasures",
+    "shared_canonical_git_written": false
+  },
+  "main_theorems_verified": false
+}

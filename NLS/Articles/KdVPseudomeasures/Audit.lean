@@ -675,6 +675,11 @@ import NLS.Articles.KdVPseudomeasures.ComplexDirichletLabelBounds
 import NLS.Articles.KdVPseudomeasures.WeightedComplexMidpointTail
 import NLS.Articles.KdVPseudomeasures.WeightedComplexMidpoints
 import NLS.Articles.KdVPseudomeasures.WeightedComplexMidpointPositive
+import NLS.ComplexAnalysis.LocalTwoRootQuotient
+import NLS.ComplexAnalysis.QuadraticModelDeflation
+import NLS.KdV.HillHminusOneNormalizedGapSquares
+import NLS.ComplexAnalysis.NormalizedAnalyticSquareRoot
+import NLS.KdV.HillHminusOneNormalizedGapRoots
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4994,3 +4999,21 @@ import NLS.Articles.KdVPseudomeasures.WeightedComplexMidpointPositive
 #print axioms NLS.Articles.KdVPseudomeasures.norm_sourceWeightedDirichletMidpointPositive
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem2_1_ii_positive
 #print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpointPositive_locallyBounded
+#print axioms NLS.ComplexAnalysis.twoRootDeflation
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_twoRootDeflation
+#print axioms NLS.ComplexAnalysis.twoRootDeflation_factor
+#print axioms NLS.ComplexAnalysis.norm_le_of_sphere_bound_of_analyticOnNhd
+#print axioms NLS.ComplexAnalysis.norm_twoRootQuotient_sub_le_of_analyticOnNhd
+#print axioms NLS.ComplexAnalysis.normalizedQuadraticDeflation
+#print axioms NLS.ComplexAnalysis.norm_root_sub_center_le_of_quadratic_error
+#print axioms NLS.ComplexAnalysis.norm_normalizedQuadraticDeflation_sub_one_le
+#print axioms NLS.KdV.hillHminusNormalizedGapSquare
+#print axioms NLS.KdV.hillHminus_normalized_gap_square_bound
+#print axioms NLS.KdV.exists_hillHminus_normalized_gap_squares
+#print axioms NLS.ComplexAnalysis.norm_principalSqrt_sub_one_le
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_principalSqrt_of_norm_sub_one_lt_one
+#print axioms NLS.KdV.hillHminusNormalizedGapRoot
+#print axioms NLS.KdV.hillHminusNormalizedGapRoot_sq
+#print axioms NLS.KdV.hillHminusNormalizedGapRoot_factor
+#print axioms NLS.KdV.hillHminusNormalizedGapRoot_analytic_bound
+#print axioms NLS.KdV.exists_hillHminus_normalized_gap_roots

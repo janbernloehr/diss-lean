@@ -709,6 +709,11 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.WeightedComplexMidpointTail',
     'NLS.Articles.KdVPseudomeasures.WeightedComplexMidpoints',
     'NLS.Articles.KdVPseudomeasures.WeightedComplexMidpointPositive',
+    'NLS.ComplexAnalysis.LocalTwoRootQuotient',
+    'NLS.ComplexAnalysis.QuadraticModelDeflation',
+    'NLS.KdV.HillHminusOneNormalizedGapSquares',
+    'NLS.ComplexAnalysis.NormalizedAnalyticSquareRoot',
+    'NLS.KdV.HillHminusOneNormalizedGapRoots',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

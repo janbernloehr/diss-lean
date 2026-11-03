@@ -703,8 +703,9 @@
     }
   ],
   "remaining_obligations": [
-    "Construct or identify the ACTUAL original KdV H-minus-one Birkhoff map using verified shared spectral/Birkhoff developments, then prove the original endpoint restriction has the exact target order s+1/2, real analyticity, boundedness, bijectivity, local inverse near zero and weak-star homeomorphism on EVERY original bounded set. FULL complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB are now PROVED; do not redo these dependencies or replace the actual Birkhoff map by arbitrary supplied conjugacy data.",
-    "Construct or identify the ACTUAL original H-minus-one KdV flow defined by convergence of EVERY original smooth approximation, retaining original Hamiltonian/frequency normalizations and physical domains. Transfer the verified spectral, Birkhoff and AppendixB topology facts to precise main1.1/1.3/1.4 and original Wiener5.1/5.9 statements. Quantitative Dirichlet C.4(ii), remaining low parity/interlacing and complex ratio2.20 remain open ONLY where required by these actual constructions. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE."
+    "Identify the normalized actual Hill gap root with the correct sheet of the original continued primitive and construct the original Hill contour action. Prove the actual action-to-gap-square extension and locally uniform normalization8*n*pi*I_n/gamma_n^2->1, with the correct contour convention and all closed gaps. Current normalized roots are analytic in ENERGY and uniformly controlled on a complex potential neighborhood; JOINT analytic dependence in the potential and any gap-root ordering independence still need proof where used.",
+    "Construct or identify the ACTUAL original KdV H-minus-one Birkhoff map, with verified action/angle coordinates, original differential q_(2n)/sqrt(2*pi*abs(n)), exact target order s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. FULL complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB are already PROVED; do not redo them or substitute arbitrary supplied conjugacy data.",
+    "Construct or identify the ACTUAL original H-minus-one KdV flow defined by convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization, and derive main1.1/1.3/1.4 plus Wiener5.1/5.9. All five main theorems remain UNPROVED; keep the goal ACTIVE. Quantitative DirichletC4ii, remaining low parity/interlacing and complex ratio2.20 remain open only where required."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1385,6 +1386,25 @@
     "source_Lemma2_15_corrected_complete": true,
     "full_source_Theorem2_1_i_proved": true,
     "quantitative_Dirichlet_C4ii_rate_proved": false,
+    "actual_original_KdV_Birkhoff_map_constructed": false,
+    "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
+    "main_theorems_verified": false
+  },
+  "actual_normalized_Hill_gap_roots_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/normalized-hill-gap-roots-map.json",
+    "actual_HminusOne_two_root_deflation": true,
+    "closed_gap_derivative_condition_from_exact_actual_multiplicity": true,
+    "local_analytic_disc_no_entire_extension_assumption": true,
+    "exact_free_normalization_minus_four_pi_n_squared": true,
+    "normalized_gap_root_analytic_in_energy": true,
+    "normalized_gap_root_nonvanishing_on_entire_closed_disc": true,
+    "normalized_gap_root_locally_uniform_near_one": true,
+    "radius_before_accuracy_neighborhood_and_cutoff_before_index_and_potential": true,
+    "original_actual_trace_radicand_and_continued_primitive_identities_preserved": true,
+    "no_open_gap_or_root_separation_hypothesis": true,
+    "joint_potential_analyticity_of_normalized_root_proved": false,
+    "original_Hill_contour_actions_constructed": false,
+    "source_Theorem3_2_action_ratio_proved": false,
     "actual_original_KdV_Birkhoff_map_constructed": false,
     "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
     "main_theorems_verified": false
