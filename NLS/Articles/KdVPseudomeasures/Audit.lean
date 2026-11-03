@@ -533,6 +533,12 @@ import NLS.KdV.HminusOneDirichletComplexAsymptotics
 import NLS.KdV.HminusOneDirichletComplexLabels
 import NLS.KdV.HminusOneDirichletComplexRealLabels
 import NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletLabels
+import NLS.ZakharovShabat.CanonicalBoundaryUniformCutoff
+import NLS.KdV.HminusOneDirichletUniformControl
+import NLS.Fourier.UnitDirichletL2
+import NLS.KdV.SingularDirichletNormalizedEigenfunction
+import NLS.KdV.HminusOneDirichletUniformSimplicity
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletUniformSimplicity
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4314,3 +4320,23 @@ import NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletLabels
 #print axioms NLS.Articles.KdVPseudomeasures.finite_fiber_originalComplexDirichletLabels
 #print axioms NLS.Articles.KdVPseudomeasures.exists_l2_originalComplexDirichletLabels_error
 #print axioms NLS.Articles.KdVPseudomeasures.originalComplexDirichletLabels_of_real
+#print axioms NLS.ZakharovShabat.BoundaryRootLabeling.canonical_at_cutoff
+#print axioms NLS.ZakharovShabat.exists_uniform_canonical_boundaryRootLabeling
+#print axioms NLS.ZakharovShabat.exists_uniform_analytic_canonical_boundaryRoots
+#print axioms NLS.KdV.hillHminusDirichletComplexControl_of_boundaryLabeling
+#print axioms NLS.KdV.hillHminusDirichletComplexLabels_eq_tail_of_control
+#print axioms NLS.KdV.hillHminusDirichletComplexLabels_multiplicity_one_of_control
+#print axioms NLS.KdV.HillHminusMiuraChart.exists_uniform_analytic_dirichletControl
+#print axioms NLS.Fourier.unitDirichletL2Inclusion
+#print axioms NLS.Fourier.unitDirichletL2Inclusion_representative
+#print axioms NLS.Fourier.norm_unitDirichletL2Inclusion
+#print axioms NLS.Fourier.unitDirichletL2Inclusion_injective
+#print axioms NLS.Fourier.norm_sq_unitDirichletL2Inclusion
+#print axioms NLS.KdV.exists_singularDirichlet_normalized_eigenfunction
+#print axioms NLS.KdV.singularDirichletRootSpaceTop_eq_span_of_multiplicity_one
+#print axioms NLS.KdV.exists_singularDirichlet_simple_normalized_generator
+#print axioms NLS.KdV.deriv_hillHminusDirichlet_ne_zero_of_multiplicity_one
+#print axioms NLS.KdV.exists_uniform_simple_analytic_hillHminusDirichletComplexLabels
+#print axioms NLS.KdV.exists_normalized_hillHminusDirichletComplexLabel_eigenfunction
+#print axioms NLS.Articles.KdVPseudomeasures.exists_normalized_originalComplexDirichlet_eigenfunction
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalComplexDirichlet_simple_analytic

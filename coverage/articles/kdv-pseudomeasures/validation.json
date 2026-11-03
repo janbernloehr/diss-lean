@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Complete original complex Dirichlet global labels and literal source equation (6)",
+  "phase": "Uniform original complex Dirichlet simplicity/analyticity and actual physical L2-normalized native eigenfunctions",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -541,13 +541,19 @@
     "NLS/KdV/HminusOneDirichletComplexLabels.lean",
     "NLS/KdV/HminusOneDirichletComplexRealLabels.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalComplexDirichletLabels.lean",
+    "NLS/ZakharovShabat/CanonicalBoundaryUniformCutoff.lean",
+    "NLS/KdV/HminusOneDirichletUniformControl.lean",
+    "NLS/Fourier/UnitDirichletL2.lean",
+    "NLS/KdV/SingularDirichletNormalizedEigenfunction.lean",
+    "NLS/KdV/HminusOneDirichletUniformSimplicity.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletUniformSimplicity.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 3128,
-  "definitions": 650,
+  "proved_theorems": 3147,
+  "definitions": 651,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 3778,
+    "declarations": 3798,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -1053,10 +1059,18 @@
     "Intrinsic positive-index complex Dirichlet labels are constructed for EVERY unit-period original complex H-minus-one source. They have full lexicographic order, exhaust the ENTIRE native spectrum, count EVERY actual algebraic multiplicity, and satisfy the literal n-times-l2 source asymptotic. Their labels agree at each original positive index with ANY constructed complete labeling.",
     "The entire intrinsic COMPLEX sequence restricts to the previously proved full REAL Dirichlet sequence at the EXACT same positive index. At zero potential the COMPLETE complex free sequence is exactly n^2*pi^2 starting at one, including every central value. This verifies the source normalization rather than only a high-energy approximation.",
     "The ENTIRE ORIGINAL physically period-one complex H-minus-one smooth-test distribution domain inherits these complete labels unchanged. Its FULL actual native spectrum is exhausted with ACTUAL algebraic repetitions. Occurrence counts also equal the independently normalized original characteristic zero orders at EVERY complex energy.",
-    "Source equation (6) is proved literally on the ENTIRE original complex domain: there EXISTS ONE l2 error sequence a_n with mu_n = (pi*n)^2 + n*a_n for EVERY positive index, including central energies. The original real article domain embeds without changing its distribution or its complete positive label sequence. Arbitrary mean is allowed; the article complex mean-zero subdomain is included."
+    "Source equation (6) is proved literally on the ENTIRE original complex domain: there EXISTS ONE l2 error sequence a_n with mu_n = (pi*n)^2 + n*a_n for EVERY positive index, including central energies. The original real article domain embeds without changing its distribution or its complete positive label sequence. Arbitrary mean is allowed; the article complex mean-zero subdomain is included.",
+    "ANY complete actual complex auxiliary boundary labeling identifies its CANONICAL sequence at that SAME cutoff after sorting the actual central multiset. No comparison with the pointwise canonically chosen cutoff is required. One common complex reflected-potential neighborhood supports both complete canonical boundary sequences, one fixed cutoff, and analyticity of EVERY high canonical coordinate.",
+    "Actual complex scalar Dirichlet control is reconstructed from a complete canonical auxiliary labeling at its OWN common cutoff. The intrinsic positive scalar label equals the squared-and-shifted actual auxiliary coordinate at the SAME original positive index, even when this common cutoff is smaller than the pointwise canonical choice. Its actual native ALGEBRAIC multiplicity is ONE.",
+    "For EVERY local Miura chart and EVERY complex source in its original H-minus-one domain, ONE OPEN original norm neighborhood and ONE cutoff support the actual full complex central/high control simultaneously for ALL neighboring sources. EVERY intrinsic high scalar label is genuinely analytic on that SAME complex neighborhood. No reality or individual-source cutoff assumption remains.",
+    "The native full zero-trace H1 domain now has an actual bounded COMPLEX LINEAR inclusion into ordinary physical L2([0,1],C), with exactly the SAME original interval representative almost everywhere. The coefficient and unnormalized unit-interval L2 norms agree EXACTLY, and the squared norm equals the literal integral from 0 to 1 of the original representative norm squared. The physical L2 inclusion is injective.",
+    "EVERY actual native Dirichlet eigenvalue on the full original complex H-minus-one operator has an actual full-domain zero-trace H1 eigenfunction normalized to ONE in the physical interval L2 norm and in the literal [0,1] squared-norm integral. No smoothness, realness or spectral simplicity assumption is needed for this normalization.",
+    "At ACTUAL algebraic multiplicity one, the ENTIRE native algebraic root space equals the complex span of ANY nonzero actual native eigenfunction included in the original full-dual base. In particular it has an actual generator with the source interval normalization. No associated-vector direction is omitted or silently excluded.",
+    "For EVERY original unit-period complex H-minus-one source, ONE open original norm neighborhood and ONE cutoff make ALL high intrinsic labels algebraically simple and analytically dependent on the potential, with nonzero derivative of the independently normalized scalar characteristic. This proves the locally uniform simplicity and normalized-eigenfunction input at the opening of source Section 2.5.",
+    "On the ENTIRE ORIGINAL complex physically period-one distribution domain, all labels have native L2-normalized eigenfunctions with literal source normalization. One open ORIGINAL H-minus-one norm neighborhood and ONE cutoff give actual algebraic simplicity and nonzero original characteristic derivative for EVERY high label of EVERY neighboring physical distribution. Actual label functions have analytic extensions to that SAME ambient original norm neighborhood. The ENTIRE distribution and every physical constraint are retained."
   ],
-  "source_correspondence": "COMPLETE original complex native Dirichlet global spectral labeling and source equation (6): actual closed dense full H1 operator with compact full-dual resolvent; spectrum=original characteristic zeros; full actual algebraic multiplicity=characteristic order; complete lexicographic positive labels exhaust the ENTIRE native spectrum with ALL actual algebraic repetitions; exact N central slots join the positive high tail at n=N+1; literal n-times-l2 error at the SAME original index; independence of lift/shift/cutoff; exact entire real restriction and free n^2*pi^2 normalization. The ENTIRE original complex smooth-test distribution domain is included unchanged. REMAINING: full complex source 2.1(ii) weighted midpoint estimates/local boundedness, low periodic parity/interlacing, complex ratio 2.20, original Birkhoff maps and actual KdV approximation flow. All five main theorems remain unproved; Appendix B remains complete.",
-  "build_isolation": "Nine new squared-frequency geometry, actual complex global spectral control/labeling, generic finite-change/ordered-complex uniqueness, same-index asymptotics, intrinsic positive labels, real/free compatibility and entire original complex-distribution adapter modules compiled in dependency order. Exact audit of 536 selected modules and 3778 public theorem/definition declarations passed without warnings or suggestions. All 526 baseline non-Audit Lean sources are byte-identical to private commit 849ab05. Canonical sources, build outputs and shared Git metadata remain read-only. Milestone commits use separate private metadata.",
+  "source_correspondence": "Complete original complex Dirichlet labels and source equation (6) remain proved. NOW PROVED: ONE original H-minus-one norm neighborhood and cutoff give ALL actual high labels algebraic multiplicity one, nonzero original characteristic derivative and analytic potential dependence. Actual native eigenfunctions are normalized in the EXACT physical L2([0,1],C) norm and literal squared-norm integral; the ENTIRE simple algebraic root space is their base-inclusion span. The ENTIRE original physical complex smooth-test distribution is unchanged. REMAINING: actual quantitative source C.4 projection estimates, source 2.13/2.15, full complex 2.1(ii) weighted midpoint membership/local boundedness, low periodic parity/interlacing and complex ratio 2.20, original Birkhoff maps and actual KdV approximation flow. All five main theorems remain unproved; Appendix B remains complete.",
+  "build_isolation": "Six new generic canonical-cutoff, actual uniform complex Dirichlet control/analyticity, exact physical native L2 inclusion, normalized eigenfunction/full simple-root generator, original uniform simplicity and original-distribution adapter modules compiled in dependency order. Exact audit of 542 selected modules and 3798 public theorem/definition declarations passed without warnings or suggestions. All 535 baseline non-Audit Lean sources are byte-identical to private commit 145cd4e. Canonical sources, build outputs and shared Git metadata remain read-only; all milestone Git writes use separate private metadata.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -1458,7 +1472,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "04a536366417b22ee58946afe3da8b3fd9279ac45fa14e84504556394c189f88",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "7ed4f756294e04e39a1290ae0915cf85b38982f2272da24331dd2efb6372e1bd",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -1597,7 +1611,13 @@
     "NLS/KdV/HminusOneDirichletComplexAsymptotics.lean": "a7f370eb267dc51ec7191b7e4b5b27964ea28c0734b3869684cd51607c092c1f",
     "NLS/KdV/HminusOneDirichletComplexLabels.lean": "37ab6d0ffcec68a560be4425f4401983a7bcbe8a5bee0770a507c277822df3a6",
     "NLS/KdV/HminusOneDirichletComplexRealLabels.lean": "2ce639cf99d61e4054e77e821f6990731ab900c2e531f32bf094c6fc8ab74d07",
-    "NLS/Articles/KdVPseudomeasures/OriginalComplexDirichletLabels.lean": "77b587b5b168778c52688a74a715cb168fddbe4de402b40dbc2e09f3340ff775"
+    "NLS/Articles/KdVPseudomeasures/OriginalComplexDirichletLabels.lean": "77b587b5b168778c52688a74a715cb168fddbe4de402b40dbc2e09f3340ff775",
+    "NLS/ZakharovShabat/CanonicalBoundaryUniformCutoff.lean": "77469bb339e1d547de3d055578277ec97abf3c05113e6e09f5eddddd1824e742",
+    "NLS/KdV/HminusOneDirichletUniformControl.lean": "2877e9a6e786c03bad55e9a49de2722ed2a1d597cbccbcf1d59b9ed633e5e0f9",
+    "NLS/Fourier/UnitDirichletL2.lean": "850b95d455a04123612721d8ed71d3f7c08f04746bee4cbe6c37dacb50922c71",
+    "NLS/KdV/SingularDirichletNormalizedEigenfunction.lean": "1d1f21a28bc0faa9dea00cc3194ebacbf815a7fad4b67ab6dca2ab0ef867be6f",
+    "NLS/KdV/HminusOneDirichletUniformSimplicity.lean": "3311c2f448157323e9efb72a9c2b7585c28e541517bf299c89aa583af322d98c",
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletUniformSimplicity.lean": "6250c40f64232ee674c9e0e17080db073bd0cc732f13db3a58c8a1b7b7e8a35d"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1605,16 +1625,16 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 3733,
-    "newly_checked_declarations_this_continuation": 45,
-    "newly_authored_or_adapted_declarations_this_continuation": 45,
-    "new_theorems": 42,
-    "new_definitions": 3,
-    "authored_or_adapted_theorems": 42,
-    "authored_or_adapted_definitions": 3,
+    "previous_checked_declarations": 3778,
+    "newly_checked_declarations_this_continuation": 20,
+    "newly_authored_or_adapted_declarations_this_continuation": 20,
+    "new_theorems": 19,
+    "new_definitions": 1,
+    "authored_or_adapted_theorems": 19,
+    "authored_or_adapted_definitions": 1,
     "shared_declarations_copied_this_continuation": 0,
-    "total_checked_declarations": 3778,
-    "reuse": "Actual complex native central spectral count/multiset, canonical auxiliary high branches and l2 displacement, native algebraic-order matching, generic ordered finite and natural enumerations, original smooth-test distribution adapter, previously verified entire real labels/free values."
+    "total_checked_declarations": 3798,
+    "reuse": "Complete canonical boundary labels and uniform actual trace branches, original complex Dirichlet labeling and native algebraic-order matching, actual unit-interval L2 Fourier isometry, full native root spaces and eigenvalue criterion."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -1643,7 +1663,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-dirichlet-global-complex-labels.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-dirichlet-uniform-simple.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -1857,13 +1877,14 @@
     "Nine new generic AC integral/affine-jet/coefficientwise-chain and actual rough scalar Volterra/forced-state/amplitude-boundary/native-chain reconstruction modules compiled in dependency order. Exact audit of 513 selected modules and 3666 public theorem/definition declarations passed without warnings or suggestions. All 504 baseline Lean sources are byte-identical to private commit 5fbb054.",
     "Eight new generic predecessor/forced-state/representative-linearity, reverse-chain reconstruction, exact chain/Taylor-kernel equivalence, COMPLEX multiplicity/order and original complex-distribution adapter modules compiled in dependency order. Exact audit of 521 selected modules and 3705 public theorem/definition declarations passed without warnings or suggestions. All 513 baseline Lean sources are byte-identical to private commit db6084e.",
     "Six new finite square-fiber counting, all-complex auxiliary/native multiplicity, actual central count, neighborhood/energy bound, ordered central multiset and original complex-distribution adapter modules compiled in dependency order. Exact audit of 527 selected modules and 3733 public theorem/definition declarations passed without warnings or suggestions. All 520 baseline non-Audit Lean sources are byte-identical to private commit a466396.",
-    "Nine new squared-frequency geometry, actual complex global spectral control/labeling, generic finite-change/ordered-complex uniqueness, same-index asymptotics, intrinsic positive labels, real/free compatibility and entire original complex-distribution adapter modules compiled in dependency order. Exact audit of 536 selected modules and 3778 public theorem/definition declarations passed without warnings or suggestions. All 526 baseline non-Audit Lean sources are byte-identical to private commit 849ab05."
+    "Nine new squared-frequency geometry, actual complex global spectral control/labeling, generic finite-change/ordered-complex uniqueness, same-index asymptotics, intrinsic positive labels, real/free compatibility and entire original complex-distribution adapter modules compiled in dependency order. Exact audit of 536 selected modules and 3778 public theorem/definition declarations passed without warnings or suggestions. All 526 baseline non-Audit Lean sources are byte-identical to private commit 849ab05.",
+    "Six new generic canonical-cutoff, actual uniform complex Dirichlet control/analyticity, exact physical native L2 inclusion, normalized eigenfunction/full simple-root generator, original uniform simplicity and original-distribution adapter modules compiled in dependency order. Exact audit of 542 selected modules and 3798 public theorem/definition declarations passed without warnings or suggestions. All 535 baseline non-Audit Lean sources are byte-identical to private commit 145cd4e."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/original-dirichlet-complex-labels-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-uniform-simple-map.json",
   "baseline_validated_snapshot": {
-    "commit": "849ab05a8bd0403466e32eeae7d0012f56cfa01c",
-    "modules": 527,
-    "audited_declarations": 3733,
+    "commit": "145cd4e9bf132163745aeb4b96719e368235f601",
+    "modules": 536,
+    "audited_declarations": 3778,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   }

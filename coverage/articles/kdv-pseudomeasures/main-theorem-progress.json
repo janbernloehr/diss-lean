@@ -178,7 +178,7 @@
     ]
   },
   "essential_open_obligations": [
-    "The ENTIRE original COMPLEX native Dirichlet spectral/labeling dependency and source equation (6) are COMPLETE: actual full H1 operator on full dual, compact resolvent, full spectrum/characteristic equality, exact native algebraic-order matching, entire global lexicographic positive labels with ALL actual algebraic repetitions, exactly N central slots joined to the high tail at n=N+1, literal SAME-INDEX n-times-l2 asymptotic, lift/shift/cutoff independence, exact full REAL restriction and free normalization. Uniform original norm-neighborhood central counts/energy bounds remain proved. REMAINING: FULL COMPLEX source 2.1(ii) general-weight midpoint membership/local boundedness; low periodic interlacing/parity; complex-ratio 2.20; original KdV Birkhoff maps and actual smooth-approximation flow. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. All five MAIN theorems remain UNPROVED; goal ACTIVE.",
+    "Full original COMPLEX native Dirichlet labeling and source equation (6) are proved. NOW ALSO PROVED: ONE original H-minus-one norm neighborhood and cutoff give ALL high labels actual algebraic simplicity, nonzero characteristic derivative and analyticity; actual native zero-trace H1 eigenfunctions have the literal physical interval L2 norm/integral equal ONE, and the FULL simple algebraic root space is their base-inclusion span. NEXT ESSENTIAL OBLIGATIONS: quantitative Appendix C.4 actual Riesz projection L2-to-Linfinity convergence, source 2.13 actual two-dimensional basis/off-diagonal bound, source 2.15 identity (31)/overlap bound (32), and then FULL COMPLEX 2.1(ii) weighted midpoint membership/local boundedness. Low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. All five MAIN theorems remain UNPROVED; goal ACTIVE.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
@@ -555,7 +555,15 @@
     "Intrinsic positive-index complex Dirichlet labels are constructed for EVERY unit-period original complex H-minus-one source. They have full lexicographic order, exhaust the ENTIRE native spectrum, count EVERY actual algebraic multiplicity, and satisfy the literal n-times-l2 source asymptotic. Their labels agree at each original positive index with ANY constructed complete labeling.",
     "The entire intrinsic COMPLEX sequence restricts to the previously proved full REAL Dirichlet sequence at the EXACT same positive index. At zero potential the COMPLETE complex free sequence is exactly n^2*pi^2 starting at one, including every central value. This verifies the source normalization rather than only a high-energy approximation.",
     "The ENTIRE ORIGINAL physically period-one complex H-minus-one smooth-test distribution domain inherits these complete labels unchanged. Its FULL actual native spectrum is exhausted with ACTUAL algebraic repetitions. Occurrence counts also equal the independently normalized original characteristic zero orders at EVERY complex energy.",
-    "Source equation (6) is proved literally on the ENTIRE original complex domain: there EXISTS ONE l2 error sequence a_n with mu_n = (pi*n)^2 + n*a_n for EVERY positive index, including central energies. The original real article domain embeds without changing its distribution or its complete positive label sequence. Arbitrary mean is allowed; the article complex mean-zero subdomain is included."
+    "Source equation (6) is proved literally on the ENTIRE original complex domain: there EXISTS ONE l2 error sequence a_n with mu_n = (pi*n)^2 + n*a_n for EVERY positive index, including central energies. The original real article domain embeds without changing its distribution or its complete positive label sequence. Arbitrary mean is allowed; the article complex mean-zero subdomain is included.",
+    "ANY complete actual complex auxiliary boundary labeling identifies its CANONICAL sequence at that SAME cutoff after sorting the actual central multiset. No comparison with the pointwise canonically chosen cutoff is required. One common complex reflected-potential neighborhood supports both complete canonical boundary sequences, one fixed cutoff, and analyticity of EVERY high canonical coordinate.",
+    "Actual complex scalar Dirichlet control is reconstructed from a complete canonical auxiliary labeling at its OWN common cutoff. The intrinsic positive scalar label equals the squared-and-shifted actual auxiliary coordinate at the SAME original positive index, even when this common cutoff is smaller than the pointwise canonical choice. Its actual native ALGEBRAIC multiplicity is ONE.",
+    "For EVERY local Miura chart and EVERY complex source in its original H-minus-one domain, ONE OPEN original norm neighborhood and ONE cutoff support the actual full complex central/high control simultaneously for ALL neighboring sources. EVERY intrinsic high scalar label is genuinely analytic on that SAME complex neighborhood. No reality or individual-source cutoff assumption remains.",
+    "The native full zero-trace H1 domain now has an actual bounded COMPLEX LINEAR inclusion into ordinary physical L2([0,1],C), with exactly the SAME original interval representative almost everywhere. The coefficient and unnormalized unit-interval L2 norms agree EXACTLY, and the squared norm equals the literal integral from 0 to 1 of the original representative norm squared. The physical L2 inclusion is injective.",
+    "EVERY actual native Dirichlet eigenvalue on the full original complex H-minus-one operator has an actual full-domain zero-trace H1 eigenfunction normalized to ONE in the physical interval L2 norm and in the literal [0,1] squared-norm integral. No smoothness, realness or spectral simplicity assumption is needed for this normalization.",
+    "At ACTUAL algebraic multiplicity one, the ENTIRE native algebraic root space equals the complex span of ANY nonzero actual native eigenfunction included in the original full-dual base. In particular it has an actual generator with the source interval normalization. No associated-vector direction is omitted or silently excluded.",
+    "For EVERY original unit-period complex H-minus-one source, ONE open original norm neighborhood and ONE cutoff make ALL high intrinsic labels algebraically simple and analytically dependent on the potential, with nonzero derivative of the independently normalized scalar characteristic. This proves the locally uniform simplicity and normalized-eigenfunction input at the opening of source Section 2.5.",
+    "On the ENTIRE ORIGINAL complex physically period-one distribution domain, all labels have native L2-normalized eigenfunctions with literal source normalization. One open ORIGINAL H-minus-one norm neighborhood and ONE cutoff give actual algebraic simplicity and nonzero original characteristic derivative for EVERY high label of EVERY neighboring physical distribution. Actual label functions have analytic extensions to that SAME ambient original norm neighborhood. The ENTIRE distribution and every physical constraint are retained."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -704,6 +712,25 @@
       "actual_rough_operator_comparison": false,
       "canonical_label_asymptotics": false,
       "full_source_theorem_verified": false
+    },
+    "2.15-prerequisites": {
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-uniform-simple-map.json",
+      "common_canonical_cutoff_independent_of_pointwise_choice": true,
+      "uniform_actual_native_high_algebraic_simplicity": true,
+      "uniform_original_norm_neighborhood": true,
+      "all_high_intrinsic_labels_analytic_on_same_neighborhood": true,
+      "nonzero_original_characteristic_derivative": true,
+      "actual_physical_L2_inclusion": true,
+      "exact_unit_interval_integral_norm": true,
+      "actual_native_L2_normalized_eigenfunctions": true,
+      "full_simple_algebraic_root_space_equals_normalized_generator_span": true,
+      "entire_original_complex_distribution_adapter": true,
+      "source_Section2_5_opening_prerequisites_proved": true,
+      "source_Lemma2_13_proved": false,
+      "source_Lemma2_15_proved": false,
+      "source_AppendixC4_proved": false,
+      "source_Theorem2_1_ii_proved": false,
+      "main_theorems_verified": false
     }
   },
   "verified_nonmain_source_propositions": {
@@ -1072,6 +1099,25 @@
     "real_full_sequence_preserved": true,
     "exact_free_normalization": true,
     "entire_original_complex_distribution_adapter": true,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "verified_uniform_complex_dirichlet_simple_input": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-uniform-simple-map.json",
+    "common_canonical_cutoff_independent_of_pointwise_choice": true,
+    "uniform_actual_native_high_algebraic_simplicity": true,
+    "uniform_original_norm_neighborhood": true,
+    "all_high_intrinsic_labels_analytic_on_same_neighborhood": true,
+    "nonzero_original_characteristic_derivative": true,
+    "actual_physical_L2_inclusion": true,
+    "exact_unit_interval_integral_norm": true,
+    "actual_native_L2_normalized_eigenfunctions": true,
+    "full_simple_algebraic_root_space_equals_normalized_generator_span": true,
+    "entire_original_complex_distribution_adapter": true,
+    "source_Section2_5_opening_prerequisites_proved": true,
+    "source_Lemma2_13_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_AppendixC4_proved": false,
     "source_Theorem2_1_ii_proved": false,
     "main_theorems_verified": false
   }

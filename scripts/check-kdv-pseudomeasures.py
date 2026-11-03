@@ -567,6 +567,12 @@ modules = [
     'NLS.KdV.HminusOneDirichletComplexLabels',
     'NLS.KdV.HminusOneDirichletComplexRealLabels',
     'NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletLabels',
+    'NLS.ZakharovShabat.CanonicalBoundaryUniformCutoff',
+    'NLS.KdV.HminusOneDirichletUniformControl',
+    'NLS.Fourier.UnitDirichletL2',
+    'NLS.KdV.SingularDirichletNormalizedEigenfunction',
+    'NLS.KdV.HminusOneDirichletUniformSimplicity',
+    'NLS.Articles.KdVPseudomeasures.OriginalDirichletUniformSimplicity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

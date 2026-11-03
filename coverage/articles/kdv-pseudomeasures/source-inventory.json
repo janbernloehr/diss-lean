@@ -698,7 +698,7 @@
     }
   ],
   "remaining_obligations": [
-    "The ENTIRE original COMPLEX native Dirichlet spectral/labeling dependency and source equation (6) are COMPLETE: actual full H1 operator on full dual, compact resolvent, full spectrum/characteristic equality, exact native algebraic-order matching, entire global lexicographic positive labels with ALL actual algebraic repetitions, exactly N central slots joined to the high tail at n=N+1, literal SAME-INDEX n-times-l2 asymptotic, lift/shift/cutoff independence, exact full REAL restriction and free normalization. Uniform original norm-neighborhood central counts/energy bounds remain proved. REMAINING: FULL COMPLEX source 2.1(ii) general-weight midpoint membership/local boundedness; low periodic interlacing/parity; complex-ratio 2.20; original KdV Birkhoff maps and actual smooth-approximation flow. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. All five MAIN theorems remain UNPROVED; goal ACTIVE.",
+    "Full original COMPLEX native Dirichlet labeling and source equation (6) are proved. NOW ALSO PROVED: ONE original H-minus-one norm neighborhood and cutoff give ALL high labels actual algebraic simplicity, nonzero characteristic derivative and analyticity; actual native zero-trace H1 eigenfunctions have the literal physical interval L2 norm/integral equal ONE, and the FULL simple algebraic root space is their base-inclusion span. NEXT ESSENTIAL OBLIGATIONS: quantitative Appendix C.4 actual Riesz projection L2-to-Linfinity convergence, source 2.13 actual two-dimensional basis/off-diagonal bound, source 2.15 identity (31)/overlap bound (32), and then FULL COMPLEX 2.1(ii) weighted midpoint membership/local boundedness. Low periodic interlacing/parity, complex-ratio 2.20, original KdV Birkhoff maps and actual approximation flow remain open. Source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. All five MAIN theorems remain UNPROVED; goal ACTIVE.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "workspace": {
@@ -909,6 +909,25 @@
     "real_full_sequence_preserved": true,
     "exact_free_normalization": true,
     "entire_original_complex_distribution_adapter": true,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "uniform_complex_Dirichlet_simple_input_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-uniform-simple-map.json",
+    "common_canonical_cutoff_independent_of_pointwise_choice": true,
+    "uniform_actual_native_high_algebraic_simplicity": true,
+    "uniform_original_norm_neighborhood": true,
+    "all_high_intrinsic_labels_analytic_on_same_neighborhood": true,
+    "nonzero_original_characteristic_derivative": true,
+    "actual_physical_L2_inclusion": true,
+    "exact_unit_interval_integral_norm": true,
+    "actual_native_L2_normalized_eigenfunctions": true,
+    "full_simple_algebraic_root_space_equals_normalized_generator_span": true,
+    "entire_original_complex_distribution_adapter": true,
+    "source_Section2_5_opening_prerequisites_proved": true,
+    "source_Lemma2_13_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_AppendixC4_proved": false,
     "source_Theorem2_1_ii_proved": false,
     "main_theorems_verified": false
   }

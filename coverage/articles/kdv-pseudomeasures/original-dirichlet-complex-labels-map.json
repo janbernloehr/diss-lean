@@ -160,5 +160,24 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "uniform_simple_analytic_normalized_input_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-uniform-simple-map.json",
+    "common_canonical_cutoff_independent_of_pointwise_choice": true,
+    "uniform_actual_native_high_algebraic_simplicity": true,
+    "uniform_original_norm_neighborhood": true,
+    "all_high_intrinsic_labels_analytic_on_same_neighborhood": true,
+    "nonzero_original_characteristic_derivative": true,
+    "actual_physical_L2_inclusion": true,
+    "exact_unit_interval_integral_norm": true,
+    "actual_native_L2_normalized_eigenfunctions": true,
+    "full_simple_algebraic_root_space_equals_normalized_generator_span": true,
+    "entire_original_complex_distribution_adapter": true,
+    "source_Section2_5_opening_prerequisites_proved": true,
+    "source_Lemma2_13_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_AppendixC4_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
 }
