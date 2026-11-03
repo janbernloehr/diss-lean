@@ -418,6 +418,16 @@ import NLS.KdV.HillFreeScaledPeriodIdentity
 import NLS.KdV.HillFreePeriodSequence
 import NLS.KdV.HillFreePeriodDerivative
 import NLS.KdV.HillFreeSupportedPeriodMap
+import NLS.ComplexAnalysis.ScalarSineDuhamel
+import NLS.ComplexAnalysis.DuhamelIntegralBounds
+import NLS.ComplexAnalysis.UnitIntervalNormEnergy
+import NLS.KdV.ClassicalHillDuhamel
+import NLS.KdV.ClassicalHillSmallPotential
+import NLS.KdV.HillContinuousPotentialMass
+import NLS.KdV.HillL2SmallPotentialTrace
+import NLS.ComplexAnalysis.InverseSquareRootBounds
+import NLS.KdV.HillSmallPotentialRadicand
+import NLS.KdV.HillFreeGapContourGeometry
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -769,7 +779,17 @@ run_cmd do
     ``NLS.PositiveDeletedCoeff,
     ``NLS.Coeff.positiveDeleted_fixed,
     ``NLS.Coeff.positiveDeletedProjectionTo,
-    ``NLS.Coeff.positiveDeletedProjectionTo_coe]
+    ``NLS.Coeff.positiveDeletedProjectionTo_coe,
+    ``NLS.ComplexAnalysis.scalar_sine_duhamel,
+    ``NLS.ComplexAnalysis.scalar_cosine_duhamel,
+    ``NLS.ComplexAnalysis.norm_complex_cos_le_exp_im,
+    ``NLS.ComplexAnalysis.norm_complex_sin_le_exp_im,
+    ``NLS.ComplexAnalysis.norm_trig_mul_real_le,
+    ``NLS.ComplexAnalysis.norm_sine_duhamel_integral_le,
+    ``NLS.ComplexAnalysis.norm_cosine_duhamel_integral_le,
+    ``NLS.ComplexAnalysis.integral_norm_sq_unit_le_energy,
+    ``NLS.ComplexAnalysis.norm_inv_sqrt_sub_one_le,
+    ``NLS.ComplexAnalysis.mem_slitPlane_of_norm_sub_one_le_half]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

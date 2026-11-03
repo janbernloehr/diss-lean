@@ -365,7 +365,7 @@
         "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
         "NLS.KdV.hillRealGapIntegral_le_chi_bound"
       ],
-      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual FREE scaled contour-period sequence is now an entire l2-valued map, with a full minus-identity derivative and a two-sided analytic local inverse on its closed positive/deleted root space. Extending the sequence map to a common complex-potential neighborhood, exact normalized-period solvability away from zero, actual Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Quantitative small-potential inverse-frequency trace and radicand estimates now hold for arbitrary complex l2 potentials, with zero-safe relative square-root control. The actual free isolating circles have a uniform positive frequency annulus. A common complex-potential neighborhood for all periods, the l2 period correction, parametric normalized roots, Abelian angles, and the physical KdV Birkhoff map/action identity remain essential.",
       "checked_hill_uniform_critical_action_tail": [
         "NLS.SequenceSpaces.nonneg_series_cauchy_schwarz",
         "NLS.SequenceSpaces.square_sum_le_of_weight_lower_bound",
@@ -786,6 +786,34 @@
         "NLS.KdV.hasFDerivAt_hillFreeSupportedPeriodMap_zero",
         "NLS.KdV.hillFreeSupportedPeriodMap_zero",
         "NLS.KdV.exists_hillFreeSupportedPeriodMap_localInverse"
+      ],
+      "checked_small_potential_trace": [
+        "NLS.ComplexAnalysis.scalar_sine_duhamel",
+        "NLS.ComplexAnalysis.scalar_cosine_duhamel",
+        "NLS.ComplexAnalysis.norm_complex_cos_le_exp_im",
+        "NLS.ComplexAnalysis.norm_complex_sin_le_exp_im",
+        "NLS.ComplexAnalysis.norm_trig_mul_real_le",
+        "NLS.ComplexAnalysis.norm_sine_duhamel_integral_le",
+        "NLS.ComplexAnalysis.norm_cosine_duhamel_integral_le",
+        "NLS.ComplexAnalysis.integral_norm_sq_unit_le_energy",
+        "NLS.ComplexAnalysis.norm_inv_sqrt_sub_one_le",
+        "NLS.ComplexAnalysis.mem_slitPlane_of_norm_sub_one_le_half",
+        "NLS.KdV.classicalHillFlow_sine_duhamel",
+        "NLS.KdV.classicalHillFlow_cosine_duhamel",
+        "NLS.KdV.classicalHillPotentialMass",
+        "NLS.KdV.classicalHillPotentialMass_nonneg",
+        "NLS.KdV.classicalHillPotentialMass_partial_le",
+        "NLS.KdV.classicalHillFlow_position_bound_small",
+        "NLS.KdV.classicalHillDiscriminant_free_error_small",
+        "NLS.KdV.classicalHillPotentialMass_continuous_bound",
+        "NLS.KdV.hillL2Discriminant_free_error_small",
+        "NLS.KdV.hillL2Radicand_free_error_small",
+        "NLS.KdV.hillL2Radicand_ratio_free_bound",
+        "NLS.KdV.hillL2Radicand_ratio_free_slitPlane",
+        "NLS.KdV.norm_inv_sqrt_hillL2Radicand_ratio_free_sub_one_le",
+        "NLS.KdV.hillFreeGapHalfLength",
+        "NLS.KdV.hillFreeGapCollar",
+        "NLS.KdV.hillFreeGapContour_frequency_bounds"
       ]
     },
     {
@@ -1214,7 +1242,7 @@
         "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual FREE scaled contour-period sequence is now an entire l2-valued map, with a full minus-identity derivative and a two-sided analytic local inverse on its closed positive/deleted root space. Extending the sequence map to a common complex-potential neighborhood, exact normalized-period solvability away from zero, actual Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Quantitative small-potential inverse-frequency trace and radicand estimates now hold for arbitrary complex l2 potentials, with zero-safe relative square-root control. The actual free isolating circles have a uniform positive frequency annulus. A common complex-potential neighborhood for all periods, the l2 period correction, parametric normalized roots, Abelian angles, and the physical KdV Birkhoff map/action identity remain essential.",
       "status": "not_verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -1971,6 +1999,34 @@
         "NLS.KdV.hasFDerivAt_hillFreeSupportedPeriodMap_zero",
         "NLS.KdV.hillFreeSupportedPeriodMap_zero",
         "NLS.KdV.exists_hillFreeSupportedPeriodMap_localInverse"
+      ],
+      "checked_small_potential_trace": [
+        "NLS.ComplexAnalysis.scalar_sine_duhamel",
+        "NLS.ComplexAnalysis.scalar_cosine_duhamel",
+        "NLS.ComplexAnalysis.norm_complex_cos_le_exp_im",
+        "NLS.ComplexAnalysis.norm_complex_sin_le_exp_im",
+        "NLS.ComplexAnalysis.norm_trig_mul_real_le",
+        "NLS.ComplexAnalysis.norm_sine_duhamel_integral_le",
+        "NLS.ComplexAnalysis.norm_cosine_duhamel_integral_le",
+        "NLS.ComplexAnalysis.integral_norm_sq_unit_le_energy",
+        "NLS.ComplexAnalysis.norm_inv_sqrt_sub_one_le",
+        "NLS.ComplexAnalysis.mem_slitPlane_of_norm_sub_one_le_half",
+        "NLS.KdV.classicalHillFlow_sine_duhamel",
+        "NLS.KdV.classicalHillFlow_cosine_duhamel",
+        "NLS.KdV.classicalHillPotentialMass",
+        "NLS.KdV.classicalHillPotentialMass_nonneg",
+        "NLS.KdV.classicalHillPotentialMass_partial_le",
+        "NLS.KdV.classicalHillFlow_position_bound_small",
+        "NLS.KdV.classicalHillDiscriminant_free_error_small",
+        "NLS.KdV.classicalHillPotentialMass_continuous_bound",
+        "NLS.KdV.hillL2Discriminant_free_error_small",
+        "NLS.KdV.hillL2Radicand_free_error_small",
+        "NLS.KdV.hillL2Radicand_ratio_free_bound",
+        "NLS.KdV.hillL2Radicand_ratio_free_slitPlane",
+        "NLS.KdV.norm_inv_sqrt_hillL2Radicand_ratio_free_sub_one_le",
+        "NLS.KdV.hillFreeGapHalfLength",
+        "NLS.KdV.hillFreeGapCollar",
+        "NLS.KdV.hillFreeGapContour_frequency_bounds"
       ]
     }
   ],
@@ -2574,7 +2630,7 @@
     }
   ],
   "next_shared_milestones": [
-    "Prove quantitative small-potential high-frequency bounds for the actual Hill trace/root, control the l2 complex-potential period correction on a common domain, establish genuine parametric implicit normalized roots and their physical reality/normalization, then continue global solvability, Abelian angles and KdV Birkhoff coordinates/action identity.",
+    "Use the uniform free contour frequency annulus and inverse-frequency trace bounds to construct a single complex-potential neighborhood for all physical period contours. Bound the actual l2 period correction and apply the true Banach implicit theorem for normalized roots; then prove nearby-real physical root matching, gap containment, own-period normalization, global continuation and the actual KdV Birkhoff map/action identity.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Prove explicit norm-dependent action-gap bounds with the source cutoff/weight evaluation, then Hamiltonian/higher-action trace identities and the tame action estimates for Theorem 2. The potential-dependent eventual bound n*I_n<=gamma_n^2, weighted action summability and the high Proposition 5 comparison at cutoff eight are now checked.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -5663,6 +5719,54 @@
     "hypotheses": "Every complex l2 root input at the zero physical Hill potential. The selected label n>=1; every undeleted output label k>=1 with k!=n has its exact scaled physical contour period. The Banach domain/codomain is the closed space supported on positive integers with the nth coordinate zero. No finite support, small root input, nonvanishing product or open-gap assumption is needed for the full sequence formula and analyticity; inverse identities hold on actual neighborhoods of zero.",
     "result": "The free reference psi_k is nonzero on its complete isolating disc. Cauchy integration evaluates every actual Hilbert free contour period as psi_n(E_k,a)/psi_k(E_k,0), for every complex Hilbert root input. The genuine separated reciprocal weights omit both selected indices, belong to l2, and have norm at most 2/pi^2 uniformly in the labels. A termwise HasProd identity proves the exact infinite-product separation, yielding the literal scaled period formula -a_k times product_{m!=n,k}(1+m*a_m/(E_m-E_k)). Shared positive-index product reindexing and multipliability allow zero factors. Consequently the ACTUAL free scaled contour-period sequence lies in l2 with norm bounded by exp((2/pi^2)*norm(a))*norm(a), and is entire by the bounded-coordinate analytic theorem. Shared positive/deleted projections, their closed kernel space and a continuous projection into that space are constructed. The full ambient Frechet derivative at zero is minus the positive/deleted projection; on supported directions it is exactly minus identity. The actual period map on this closed positive/deleted Hilbert space is entire, vanishes at zero, has full Frechet derivative -Id and a two-sided analytic local inverse with exact eventual inverse identities. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual FREE scaled contour-period sequence is now an entire l2-valued map, with a full minus-identity derivative and a two-sided analytic local inverse on its closed positive/deleted root space. Extending the sequence map to a common complex-potential neighborhood, exact normalized-period solvability away from zero, actual Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
     "qualification": "This is the actual FREE contour-period sequence, with its true full Banach derivative and local inverse. It is not a general complex-potential period sequence, and the local inverse alone does not solve the q-dependent normalized-period problem. A common complex-potential neighborhood, summable period-tail estimates, physical root matching for nearby real potentials, gap containment, own-period normalization away from zero, global continuation and actual Birkhoff coordinates/action identity remain unproved. Theorems 1 and 3(i) remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
-    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual FREE scaled contour-period sequence is now an entire l2-valued map, with a full minus-identity derivative and a two-sided analytic local inverse on its closed positive/deleted root space. Extending the sequence map to a common complex-potential neighborhood, exact normalized-period solvability away from zero, actual Abelian angles and the physical KdV Birkhoff map/action identity remain essential."
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual FREE scaled contour-period sequence is now an entire l2-valued map, with a full minus-identity derivative and a two-sided analytic local inverse on its closed positive/deleted root space. Extending the sequence map to a common complex-potential neighborhood, exact normalized-period solvability away from zero, actual Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
+    "potential_progress": "The small_potential_trace section proves quantitative genuine complex l2 trace/radicand and inverse root bounds, plus uniform free energy-circle frequency geometry. The common-domain potential-dependent period sequence remains open."
+  },
+  "small_potential_trace": {
+    "modules": [
+      "NLS/ComplexAnalysis/ScalarSineDuhamel.lean",
+      "NLS/ComplexAnalysis/DuhamelIntegralBounds.lean",
+      "NLS/ComplexAnalysis/UnitIntervalNormEnergy.lean",
+      "NLS/KdV/ClassicalHillDuhamel.lean",
+      "NLS/KdV/ClassicalHillSmallPotential.lean",
+      "NLS/KdV/HillContinuousPotentialMass.lean",
+      "NLS/KdV/HillL2SmallPotentialTrace.lean",
+      "NLS/ComplexAnalysis/InverseSquareRootBounds.lean",
+      "NLS/KdV/HillSmallPotentialRadicand.lean",
+      "NLS/KdV/HillFreeGapContourGeometry.lean"
+    ],
+    "declarations": [
+      "NLS.ComplexAnalysis.scalar_sine_duhamel",
+      "NLS.ComplexAnalysis.scalar_cosine_duhamel",
+      "NLS.ComplexAnalysis.norm_complex_cos_le_exp_im",
+      "NLS.ComplexAnalysis.norm_complex_sin_le_exp_im",
+      "NLS.ComplexAnalysis.norm_trig_mul_real_le",
+      "NLS.ComplexAnalysis.norm_sine_duhamel_integral_le",
+      "NLS.ComplexAnalysis.norm_cosine_duhamel_integral_le",
+      "NLS.ComplexAnalysis.integral_norm_sq_unit_le_energy",
+      "NLS.ComplexAnalysis.norm_inv_sqrt_sub_one_le",
+      "NLS.ComplexAnalysis.mem_slitPlane_of_norm_sub_one_le_half",
+      "NLS.KdV.classicalHillFlow_sine_duhamel",
+      "NLS.KdV.classicalHillFlow_cosine_duhamel",
+      "NLS.KdV.classicalHillPotentialMass",
+      "NLS.KdV.classicalHillPotentialMass_nonneg",
+      "NLS.KdV.classicalHillPotentialMass_partial_le",
+      "NLS.KdV.classicalHillFlow_position_bound_small",
+      "NLS.KdV.classicalHillDiscriminant_free_error_small",
+      "NLS.KdV.classicalHillPotentialMass_continuous_bound",
+      "NLS.KdV.hillL2Discriminant_free_error_small",
+      "NLS.KdV.hillL2Radicand_free_error_small",
+      "NLS.KdV.hillL2Radicand_ratio_free_bound",
+      "NLS.KdV.hillL2Radicand_ratio_free_slitPlane",
+      "NLS.KdV.norm_inv_sqrt_hillL2Radicand_ratio_free_sub_one_le",
+      "NLS.KdV.hillFreeGapHalfLength",
+      "NLS.KdV.hillFreeGapCollar",
+      "NLS.KdV.hillFreeGapContour_frequency_bounds"
+    ],
+    "source_correspondence": "Quantitative complex Hill spectral estimates needed to put the source-normalized Abelian contour periods in a common Banach neighborhood, an essential dependency of the physical Birkhoff coordinates in Theorems 1 and 3(i). Verified Theorem 2 and Theorem 3(ii) action estimates are preserved.",
+    "hypotheses": "All complex l2 Fourier potentials, without reality or period-one support restrictions for the trace estimates. Nonzero complex frequency z with abs(Im z)<=H and 4*exp(H)*norm(q)<=abs(z). Relative estimates additionally require a positive lower bound d for the actual free radicand and explicit relative error<=1/2. The contour geometry holds for every source free isolating circle and every label n>=1.",
+    "result": "Shared scalar sine and cosine Duhamel identities are proved from the exact second-order initial-value system and the fundamental theorem of calculus. They are applied to both actual Hill fundamental columns. Explicit complex trigonometric and integral majorants, a sup-norm absorption argument and the physical L1 potential mass give the genuine trace error at frequency z bounded by 4*exp(2H)*mass/abs(z) under exp(H)*mass/abs(z)<=1/2 and abs(Im z)<=H. A shared unit-interval variance inequality and normalized Parseval bound mass by twice the actual coefficient l2 norm. Contractive finite Fourier truncations and continuity transfer the trace bound to arbitrary complex l2 potentials: abs(Delta_q(z^2)-2*cos(z))<=8*exp(2H)*norm(q)/abs(z), assuming 4*exp(H)*norm(q)<=abs(z) and z!=0. The actual characteristic radicand differs from the free one by at most 48*exp(3H)*norm(q)/abs(z). Shared inverse principal square-root and slit-plane estimates give exact relative root bounds when the relative radicand error is <=1/2. The actual free gap collar is (2n-1)*pi^2/4; every original isolating energy circle maps under principal square root into the same annulus pi/10<=abs(sqrt(E)-n*pi)<=pi/2, with abs(Im sqrt(E))<=pi/2 and abs(sqrt(E))>=n*pi/2. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Quantitative small-potential inverse-frequency trace and radicand estimates now hold for arbitrary complex l2 potentials, with zero-safe relative square-root control. The actual free isolating circles have a uniform positive frequency annulus. A common complex-potential neighborhood for all periods, the l2 period correction, parametric normalized roots, Abelian angles, and the physical KdV Birkhoff map/action identity remain essential.",
+    "qualification": "These are proved bounds for the actual physical Hill discriminant and radicand, not a new definition of the trace. They do not yet construct a common complex-potential period domain or a q-dependent l2 period map. Physical normalized roots, own-period normalization, global continuation, Abelian angles and the KdV Birkhoff map/action identity remain unproved. Theorems 1 and 3(i) remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Quantitative small-potential inverse-frequency trace and radicand estimates now hold for arbitrary complex l2 potentials, with zero-safe relative square-root control. The actual free isolating circles have a uniform positive frequency annulus. A common complex-potential neighborhood for all periods, the l2 period correction, parametric normalized roots, Abelian angles, and the physical KdV Birkhoff map/action identity remain essential."
   }
 }

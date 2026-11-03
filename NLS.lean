@@ -5341,3 +5341,13 @@ import NLS.KdV.HillFreeScaledPeriodIdentity
 import NLS.KdV.HillFreePeriodSequence
 import NLS.KdV.HillFreePeriodDerivative
 import NLS.KdV.HillFreeSupportedPeriodMap
+import NLS.ComplexAnalysis.ScalarSineDuhamel
+import NLS.ComplexAnalysis.DuhamelIntegralBounds
+import NLS.ComplexAnalysis.UnitIntervalNormEnergy
+import NLS.KdV.ClassicalHillDuhamel
+import NLS.KdV.ClassicalHillSmallPotential
+import NLS.KdV.HillContinuousPotentialMass
+import NLS.KdV.HillL2SmallPotentialTrace
+import NLS.ComplexAnalysis.InverseSquareRootBounds
+import NLS.KdV.HillSmallPotentialRadicand
+import NLS.KdV.HillFreeGapContourGeometry

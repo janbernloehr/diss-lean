@@ -103,6 +103,7 @@ modules+=(NLS/KdV/HillAbelianRootBox NLS/KdV/HillAbelianNumeratorProduct NLS/KdV
 modules+=(NLS/KdV/HillFreeAbelianRoots NLS/KdV/HillFreeAbelianQuotient NLS/KdV/HillRealGapContourDiscs NLS/KdV/HillFreeAbelianNormalization NLS/KdV/HillAbelianCircleIntegrability NLS/KdV/HillFreeAbelianRootVariation NLS/KdV/HillFreeAbelianPeriodJacobian)
 modules+=(NLS/ComplexAnalysis/HilbertWeightedProduct NLS/SequenceSpaces/PositiveReciprocalLattice NLS/KdV/HillAbelianHilbertInput NLS/KdV/HillAbelianHilbertProduct NLS/KdV/HillGapRootHilbertCoordinates NLS/KdV/HillAbelianHilbertPeriods NLS/KdV/HillAbelianComplexRoot NLS/KdV/HillAbelianComplexPeriods)
 modules+=(NLS/ComplexAnalysis/HilbertPositiveProducts NLS/SequenceSpaces/PositiveDeletedProjection NLS/SequenceSpaces/PositiveDeletedSpace NLS/KdV/HillFreeAbelianResidue NLS/KdV/HillFreeSeparatedWeights NLS/KdV/HillFreeAbelianProductSeparation NLS/KdV/HillFreeScaledPeriodIdentity NLS/KdV/HillFreePeriodSequence NLS/KdV/HillFreePeriodDerivative NLS/KdV/HillFreeSupportedPeriodMap)
+modules+=(NLS/ComplexAnalysis/ScalarSineDuhamel NLS/ComplexAnalysis/DuhamelIntegralBounds NLS/ComplexAnalysis/UnitIntervalNormEnergy NLS/KdV/ClassicalHillDuhamel NLS/KdV/ClassicalHillSmallPotential NLS/KdV/HillContinuousPotentialMass NLS/KdV/HillL2SmallPotentialTrace NLS/ComplexAnalysis/InverseSquareRootBounds NLS/KdV/HillSmallPotentialRadicand NLS/KdV/HillFreeGapContourGeometry)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
