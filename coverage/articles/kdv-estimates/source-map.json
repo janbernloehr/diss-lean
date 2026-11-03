@@ -365,7 +365,7 @@
         "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
         "NLS.KdV.hillRealGapIntegral_le_chi_bound"
       ],
-      "remaining": "Match the analytic deflated complex roots with nearby physical branches, construct the joint analytic Abelian integrals at the actual sheeted Dirichlet divisor, sum the infinite off-gap angle correction, and construct the physical Cartesian Birkhoff coordinates with the exact action identity. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+      "remaining": "Actual physical deflated roots and normalized gap differentials now have matched joint analytic charts around every real gap, including closed gaps. On open gaps, actual monodromy-sheet Dirichlet circle data, real analytic terminal angles through endpoint divisors, normalized joint analytic cosine primitives and their analytic actual sheeted Dirichlet Abelian terminal values are proved. Analytic regular angle corrections through collapsed gaps, the infinite off-gap correction and physical Cartesian Birkhoff coordinates with the exact action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
       "checked_hill_uniform_critical_action_tail": [
         "NLS.SequenceSpaces.nonneg_series_cauchy_schwarz",
         "NLS.SequenceSpaces.square_sum_le_of_weight_lower_bound",
@@ -1292,6 +1292,24 @@
         "NLS.KdV.hillLocalDeflatedComplexRoot_sq",
         "NLS.KdV.hillLocalDeflatedComplexRoot_ne_zero",
         "NLS.KdV.exists_hillLocalDeflatedRoot_gap_neighborhood"
+      ],
+      "checked_physical_deflated_root_matching_and_dirichlet_abelian_charts": [
+        "NLS.ComplexAnalysis.continuousAt_endpointRoot_of_not_mem_segment",
+        "NLS.KdV.continuous_hillDeflatedEnergyCanonicalRoot_nonreal",
+        "NLS.KdV.hillGapFilledFamilyDomain",
+        "NLS.KdV.isOpen_hillGapFilledFamilyDomain",
+        "NLS.KdV.exists_hillLocalDeflatedComplexRoot_local_physical_matching",
+        "NLS.KdV.exists_hillLocalDeflatedComplexRoot_gap_physical_matching",
+        "NLS.KdV.exists_hillDeflatedNormalizedDifferential_analytic_gap_chart",
+        "NLS.KdV.continuous_hillRealGapHalfLength",
+        "NLS.KdV.continuous_hillRealGapCenter",
+        "NLS.KdV.exists_hillGapHalfLength_analytic_extension",
+        "NLS.KdV.exists_hillDirichlet_analytic_circle_data",
+        "NLS.KdV.hillDirichlet_angle_im_eq_zero",
+        "NLS.KdV.exists_hillDirichlet_analytic_sheeted_angle",
+        "NLS.ComplexAnalysis.exists_local_parametricCosine_chart_on_real_segment",
+        "NLS.KdV.exists_hillAbelianCosinePrimitive_joint_analytic_open_gap_chart",
+        "NLS.KdV.exists_hillDirichletAbelianIntegral_analytic_open_gap_extension"
       ]
     },
     {
@@ -1720,7 +1738,7 @@
         "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "Match the analytic deflated complex roots with nearby physical branches, construct the joint analytic Abelian integrals at the actual sheeted Dirichlet divisor, sum the infinite off-gap angle correction, and construct the physical Cartesian Birkhoff coordinates with the exact action identity. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+      "remaining": "Actual physical deflated roots and normalized gap differentials now have matched joint analytic charts around every real gap, including closed gaps. On open gaps, actual monodromy-sheet Dirichlet circle data, real analytic terminal angles through endpoint divisors, normalized joint analytic cosine primitives and their analytic actual sheeted Dirichlet Abelian terminal values are proved. Analytic regular angle corrections through collapsed gaps, the infinite off-gap correction and physical Cartesian Birkhoff coordinates with the exact action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
       "status": "not_verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -2983,6 +3001,24 @@
         "NLS.KdV.hillLocalDeflatedComplexRoot_sq",
         "NLS.KdV.hillLocalDeflatedComplexRoot_ne_zero",
         "NLS.KdV.exists_hillLocalDeflatedRoot_gap_neighborhood"
+      ],
+      "checked_physical_deflated_root_matching_and_dirichlet_abelian_charts": [
+        "NLS.ComplexAnalysis.continuousAt_endpointRoot_of_not_mem_segment",
+        "NLS.KdV.continuous_hillDeflatedEnergyCanonicalRoot_nonreal",
+        "NLS.KdV.hillGapFilledFamilyDomain",
+        "NLS.KdV.isOpen_hillGapFilledFamilyDomain",
+        "NLS.KdV.exists_hillLocalDeflatedComplexRoot_local_physical_matching",
+        "NLS.KdV.exists_hillLocalDeflatedComplexRoot_gap_physical_matching",
+        "NLS.KdV.exists_hillDeflatedNormalizedDifferential_analytic_gap_chart",
+        "NLS.KdV.continuous_hillRealGapHalfLength",
+        "NLS.KdV.continuous_hillRealGapCenter",
+        "NLS.KdV.exists_hillGapHalfLength_analytic_extension",
+        "NLS.KdV.exists_hillDirichlet_analytic_circle_data",
+        "NLS.KdV.hillDirichlet_angle_im_eq_zero",
+        "NLS.KdV.exists_hillDirichlet_analytic_sheeted_angle",
+        "NLS.ComplexAnalysis.exists_local_parametricCosine_chart_on_real_segment",
+        "NLS.KdV.exists_hillAbelianCosinePrimitive_joint_analytic_open_gap_chart",
+        "NLS.KdV.exists_hillDirichletAbelianIntegral_analytic_open_gap_extension"
       ]
     }
   ],
@@ -3586,7 +3622,7 @@
     }
   ],
   "next_shared_milestones": [
-    "Match the analytic deflated complex root with the nearby actual physical branch on a common gap neighborhood. Use the jointly analytic normalized numerators and moving symmetric gap charts to construct joint analytic cosine/Dirichlet Abelian primitives with the actual monodromy sheet. Sum the off-gap correction and prove the Cartesian Birkhoff coordinate/action identity, then apply the checked estimates to main Theorems 1 and 3(i).",
+    "Extend the regular Abelian angle corrections analytically through collapsed gaps, using the matched analytic deflated differential and analytic squared-gap data. Subtract the analytic cosine mean, which equals the exact Kronecker normalization on physical sources, and solve the resulting zero-mean quadratic root equation. Evaluate the regular primitive with the actual analytic Dirichlet root and monodromy sheet. Control and sum the infinite off-gap correction, construct the physical Cartesian Birkhoff coordinates with their exact action identity, and apply the verified action estimates to Theorems 1 and 3(i).",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Prove explicit norm-dependent action-gap bounds with the source cutoff/weight evaluation, then Hamiltonian/higher-action trace identities and the tame action estimates for Theorem 2. The potential-dependent eventual bound n*I_n<=gamma_n^2, weighted action summability and the high Proposition 5 comparison at cutoff eight are now checked.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -7501,6 +7537,53 @@
     "hypotheses": "Arbitrary real period-one L2 Hill base potentials and all positive gap indices, including low and closed gaps. The terminal angle requires a nonzero gap half-length and uses the actual monodromy sheet. Analytic symmetric functions and local deflated roots vary in the complex L2 coefficient topology; exact physical matching of the unit and symmetric functions holds on real neighborhoods. The complex square-root branch is proved to match the existing physical root at the base; nearby physical root matching is pending.",
     "result": "The actual monodromy Dirichlet sheet determines a normalized real sine and cosine with exact sum of squares one on every open physical gap. A terminal angle in the real interval from minus pi to pi matches both the actual Dirichlet eigenvalue and that sheet sine, including endpoint divisors. Filled-gap radicand deflation gives exact analytic multiplicities and a count of two in every intrinsic gap disc, with no high-index restriction and allowing collapsed endpoints. Rouche stability yields actual unordered complex root pairs nearby with exact multiplicities. Shared logarithmic contour moments are jointly analytic and equal root power sums. They define analytic midpoint and full squared-gap functions at every real base, including closed gaps, and agree with nearby actual physical labels. A fixed-circle Cauchy transform constructs an actual jointly analytic gap unit, squares and quadratic factors included. Exact multiplicities prove the unit is nonzero throughout the isolating disc; it equals the square of the physical deflated canonical root for nearby real potentials. Anchoring its slit-plane square-root ratio at the existing physical root yields a nonvanishing joint analytic complex root with the exact base normalization and a product neighborhood of the complete physical gap. Match the analytic deflated complex roots with nearby physical branches, construct the joint analytic Abelian integrals at the actual sheeted Dirichlet divisor, sum the infinite off-gap angle correction, and construct the physical Cartesian Birkhoff coordinates with the exact action identity. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
     "qualification": "These are actual Hill monodromy and spectral data. No individual analytic endpoint labeling is assumed at a double zero. Root branches are normalized at the physical base; nearby physical root matching, joint actual Dirichlet Abelian integrals, the infinite angle correction and the Birkhoff map/action identity remain unproved. Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
-    "remaining": "Match the analytic deflated complex roots with nearby physical branches, construct the joint analytic Abelian integrals at the actual sheeted Dirichlet divisor, sum the infinite off-gap angle correction, and construct the physical Cartesian Birkhoff coordinates with the exact action identity. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified."
+    "remaining": "Actual physical deflated roots and normalized gap differentials now have matched joint analytic charts around every real gap, including closed gaps. On open gaps, actual monodromy-sheet Dirichlet circle data, real analytic terminal angles through endpoint divisors, normalized joint analytic cosine primitives and their analytic actual sheeted Dirichlet Abelian terminal values are proved. Analytic regular angle corrections through collapsed gaps, the infinite off-gap correction and physical Cartesian Birkhoff coordinates with the exact action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+    "physical_root_and_terminal_progress": "The physical_deflated_root_matching_and_dirichlet_abelian_charts section proves nearby physical root matching, analytic normalized gap differentials through closed gaps, and analytic actual sheeted Dirichlet Abelian terminal values on all open gaps including endpoint divisors."
+  },
+  "physical_deflated_root_matching_and_dirichlet_abelian_charts": {
+    "modules": [
+      "NLS/ComplexAnalysis/EndpointRootContinuity.lean",
+      "NLS/KdV/HillDeflatedRootNonrealContinuity.lean",
+      "NLS/KdV/HillDeflatedLocalPhysicalMatching.lean",
+      "NLS/KdV/HillDeflatedGapPhysicalMatching.lean",
+      "NLS/KdV/HillDeflatedDifferentialAnalyticCharts.lean",
+      "NLS/KdV/HillOpenGapHalfLength.lean",
+      "NLS/KdV/HillDirichletAnalyticCircleData.lean",
+      "NLS/KdV/HillDirichletAnalyticAngles.lean",
+      "NLS/ComplexAnalysis/ParametricCosineRealAngleChart.lean",
+      "NLS/KdV/HillAbelianOpenGapPrimitiveCharts.lean",
+      "NLS/KdV/HillDirichletAbelianIntegralAnalytic.lean"
+    ],
+    "declarations": [
+      "NLS.ComplexAnalysis.continuousAt_endpointRoot_of_not_mem_segment",
+      "NLS.ComplexAnalysis.exists_local_parametricCosine_chart_on_real_segment",
+      "NLS.KdV.continuous_hillDeflatedEnergyCanonicalRoot_nonreal",
+      "NLS.KdV.hillGapFilledFamilyDomain",
+      "NLS.KdV.isOpen_hillGapFilledFamilyDomain",
+      "NLS.KdV.exists_hillLocalDeflatedComplexRoot_local_physical_matching",
+      "NLS.KdV.exists_hillLocalDeflatedComplexRoot_gap_physical_matching",
+      "NLS.KdV.exists_hillDeflatedNormalizedDifferential_analytic_gap_chart",
+      "NLS.KdV.continuous_hillRealGapHalfLength",
+      "NLS.KdV.continuous_hillRealGapCenter",
+      "NLS.KdV.exists_hillGapHalfLength_analytic_extension",
+      "NLS.KdV.exists_hillDirichlet_analytic_circle_data",
+      "NLS.KdV.hillDirichlet_angle_im_eq_zero",
+      "NLS.KdV.exists_hillDirichlet_analytic_sheeted_angle",
+      "NLS.KdV.exists_hillAbelianCosinePrimitive_joint_analytic_open_gap_chart",
+      "NLS.KdV.exists_hillDirichletAbelianIntegral_analytic_open_gap_extension"
+    ],
+    "source_correspondence": "Physical Hill spectral and Abelian-coordinate dependencies needed for main Theorems 1 and 3(i), with the actual monodromy Dirichlet sheet and exact endpoint normalization retained. The verified action estimates for Theorem 2 and Theorem 3(ii) are unchanged.",
+    "hypotheses": "Arbitrary real period-one L2 base potentials; positive numerator and gap indices. Root and differential charts allow low, open and closed gaps. Analytic half-length, terminal-angle, cosine-primitive and Dirichlet Abelian-value conclusions require the selected gap to be open, and include endpoint Dirichlet divisors. The normalized numerator and primitive extensions retain the existing proof certificates for the zero physical base.",
+    "result": "A reusable endpoint-root continuity theorem permits the endpoints to move and coincide. The actual physical deflated Hill root is continuous in the real L2 source at every fixed nonreal energy. Its equality with the constructed analytic root near a common nonzero base value fixes the sign; connectedness in energy extends it over local filled-gap discs, and compactness produces a product neighborhood of the complete physical gap. The actual selected normalized numerator divided by that matched root, with the exact minus-i factor, therefore has a joint complex analytic gap chart for every positive numerator and gap index, including closed gaps. On each open gap the positive real physical half-length has a complex analytic local branch. The actual analytic Dirichlet root, actual monodromy sheet and matched deflated root give analytic normalized sine and cosine data satisfying the exact circle identity for nearby complex sources. The existing two-coordinate analytic implicit theorem constructs a terminal angle through every real base divisor, including both endpoints. Matching both coordinates fixes the physical monodromy sheet, and nearby real sources have real terminal angles. A reusable cosine chart on an arbitrary real angle segment gives a common convex chart containing the whole interval from minus pi to pi. The explicit cosine primitive remains normalized to zero at pi and agrees with the actual physical primitive there. Composing with the actual sheeted Dirichlet terminal yields a complex analytic Abelian terminal value, real for nearby real potentials. Actual physical deflated roots and normalized gap differentials now have matched joint analytic charts around every real gap, including closed gaps. On open gaps, actual monodromy-sheet Dirichlet circle data, real analytic terminal angles through endpoint divisors, normalized joint analytic cosine primitives and their analytic actual sheeted Dirichlet Abelian terminal values are proved. Analytic regular angle corrections through collapsed gaps, the infinite off-gap correction and physical Cartesian Birkhoff coordinates with the exact action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+    "qualification": "The root sign is proved to agree with the actual nearby physical deflated root. Terminal sine data come from the actual Dirichlet monodromy sheet, and additive normalization is fixed at angle pi. The open-gap terminal extension includes endpoint divisors. No analytic individual endpoint or angle is asserted at a collapsed gap. Closed-gap regular corrections, infinite summation, and the Cartesian Birkhoff map/action identity remain unproved; main Theorems 1 and 3(i) remain unverified.",
+    "remaining": "Actual physical deflated roots and normalized gap differentials now have matched joint analytic charts around every real gap, including closed gaps. On open gaps, actual monodromy-sheet Dirichlet circle data, real analytic terminal angles through endpoint divisors, normalized joint analytic cosine primitives and their analytic actual sheeted Dirichlet Abelian terminal values are proved. Analytic regular angle corrections through collapsed gaps, the infinite off-gap correction and physical Cartesian Birkhoff coordinates with the exact action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+    "reused_shared_source_sha256": {
+      "NLS/ComplexAnalysis/ParametricTrigonometricTerminal.lean": "2eb8f8cdce72807e8eb22970796bf1a0971cee0dccf872023579c6d1bf780e36",
+      "NLS/ComplexAnalysis/ParametricSineTerminal.lean": "a1826ffa9f576b81afec660dc8358e25128fff838d98afa54fbf27c58461fb4f",
+      "NLS/ComplexAnalysis/ParametricCosineTerminal.lean": "6fc06679f10fde5d946969d608ac65070dcff51fdb3c19d15e67eb9056c0b7e8",
+      "NLS/ComplexAnalysis/ParametricCosineChart.lean": "6177f76368b319c47b503bd649fb3504d884e808314730ba24c09797d3c3bed9",
+      "NLS/ComplexAnalysis/ParametricCosinePrimitive.lean": "b22a61f915b1341f3a913d7f41a35a0b46af0d08ba867ac308a3d355cab7dcb1",
+      "NLS/ComplexAnalysis/LocalAnalyticSquareRoot.lean": "18aa042a371dafdb55bd13c5eea593f914a2c527c0e69befdeeef42bd8861511"
+    }
   }
 }

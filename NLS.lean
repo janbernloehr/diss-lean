@@ -5517,3 +5517,14 @@ import NLS.KdV.HillLocalGapPhysicalMatching
 import NLS.KdV.HillLocalGapUnit
 import NLS.KdV.HillLocalGapUnitPhysical
 import NLS.KdV.HillLocalDeflatedComplexRoot
+import NLS.ComplexAnalysis.EndpointRootContinuity
+import NLS.KdV.HillDeflatedRootNonrealContinuity
+import NLS.KdV.HillDeflatedLocalPhysicalMatching
+import NLS.KdV.HillDeflatedGapPhysicalMatching
+import NLS.KdV.HillDeflatedDifferentialAnalyticCharts
+import NLS.KdV.HillOpenGapHalfLength
+import NLS.KdV.HillDirichletAnalyticCircleData
+import NLS.KdV.HillDirichletAnalyticAngles
+import NLS.ComplexAnalysis.ParametricCosineRealAngleChart
+import NLS.KdV.HillAbelianOpenGapPrimitiveCharts
+import NLS.KdV.HillDirichletAbelianIntegralAnalytic

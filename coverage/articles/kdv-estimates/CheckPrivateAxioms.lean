@@ -594,6 +594,17 @@ import NLS.KdV.HillLocalGapPhysicalMatching
 import NLS.KdV.HillLocalGapUnit
 import NLS.KdV.HillLocalGapUnitPhysical
 import NLS.KdV.HillLocalDeflatedComplexRoot
+import NLS.ComplexAnalysis.EndpointRootContinuity
+import NLS.KdV.HillDeflatedRootNonrealContinuity
+import NLS.KdV.HillDeflatedLocalPhysicalMatching
+import NLS.KdV.HillDeflatedGapPhysicalMatching
+import NLS.KdV.HillDeflatedDifferentialAnalyticCharts
+import NLS.KdV.HillOpenGapHalfLength
+import NLS.KdV.HillDirichletAnalyticCircleData
+import NLS.KdV.HillDirichletAnalyticAngles
+import NLS.ComplexAnalysis.ParametricCosineRealAngleChart
+import NLS.KdV.HillAbelianOpenGapPrimitiveCharts
+import NLS.KdV.HillDirichletAbelianIntegralAnalytic
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -996,7 +1007,9 @@ run_cmd do
     ``NLS.ComplexAnalysis.logarithmicCircleMoment_eq_two_root_powers,
     ``NLS.ComplexAnalysis.circleCauchyTransform_div_two_zero_factor,
     ``NLS.ComplexAnalysis.deriv_eq_zero_of_two_zero_order,
-    ``NLS.ComplexAnalysis.circleCauchyTransform_two_zero_unit]
+    ``NLS.ComplexAnalysis.circleCauchyTransform_two_zero_unit,
+    ``NLS.ComplexAnalysis.continuousAt_endpointRoot_of_not_mem_segment,
+    ``NLS.ComplexAnalysis.exists_local_parametricCosine_chart_on_real_segment]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
