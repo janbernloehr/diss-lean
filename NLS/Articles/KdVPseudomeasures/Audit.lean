@@ -854,6 +854,18 @@ import NLS.KdV.HminusOneCanonicalHillPsi
 import NLS.KdV.HminusOneCanonicalHillPsiPeriods
 import NLS.KdV.HminusOneCanonicalHillPsiProperties
 import NLS.Articles.KdVPseudomeasures.OriginalCanonicalHillNumerators
+import NLS.ComplexAnalysis.EntireRootReplacement
+import NLS.ComplexAnalysis.QuadraticRootReplacementGrowth
+import NLS.KdV.HillEnergyGapZeroUniqueness
+import NLS.KdV.HillRetainedGapZeroRigidity
+import NLS.KdV.HminusOneCanonicalHillPsiSimpleZeros
+import NLS.KdV.HillOriginalPositiveGapSeparation
+import NLS.KdV.HminusOneCanonicalHillPsiRealZero
+import NLS.KdV.HminusOneHillPsiZeroBranches
+import NLS.SequenceSpaces.PositiveBracketComparison
+import NLS.KdV.HillRealGapSampleAsymptotics
+import NLS.KdV.HminusOneHillPsiZeroAsymptotics
+import NLS.Articles.KdVPseudomeasures.OriginalHillNumeratorSimpleZeros
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5965,3 +5977,42 @@ import NLS.Articles.KdVPseudomeasures.OriginalCanonicalHillNumerators
 #print axioms NLS.Articles.KdVPseudomeasures.original_common_analytic_Hill_numerators
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_numerators_eq_on_real_overlap
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_intrinsic_Hill_energy_periods
+#print axioms NLS.ComplexAnalysis.rootReplacement
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_rootReplacement
+#print axioms NLS.ComplexAnalysis.rootReplacement_mul
+#print axioms NLS.ComplexAnalysis.rootReplacement_eq_ratio
+#print axioms NLS.ComplexAnalysis.rootReplacement_zero_new
+#print axioms NLS.ComplexAnalysis.rootReplacement_zero_of_ne
+#print axioms NLS.ComplexAnalysis.rootReplacement_zero_of_deriv_zero
+#print axioms NLS.ComplexAnalysis.rootReplacement_eq_zero_implies
+#print axioms NLS.ComplexAnalysis.quadratic_rootReplacement_ratio_bound
+#print axioms NLS.ComplexAnalysis.rootReplacement_quadratic_weight_decay
+#print axioms NLS.KdV.hillMiura_energy_eq_zero_of_all_original_gap_zeros
+#print axioms NLS.KdV.hillMiura_energy_zero_iff_retained_sample
+#print axioms NLS.KdV.hillMiura_energy_deriv_ne_zero_at_zero
+#print axioms NLS.KdV.hillHminusCanonicalPsi_energy_ne_zero
+#print axioms NLS.KdV.exists_hillHminusCanonicalPsi_real_gap_samples
+#print axioms NLS.KdV.exists_hillHminusCanonicalPsi_exact_real_zeros
+#print axioms NLS.KdV.hillHminusCanonicalPsi_deriv_ne_zero_of_real_source
+#print axioms NLS.KdV.hillHminusCanonicalPsi_zero_real_and_in_retained_gap
+#print axioms NLS.KdV.hillMiura_original_positive_gaps_disjoint
+#print axioms NLS.KdV.hillHminusOriginal_positive_gaps_disjoint
+#print axioms NLS.KdV.existsUnique_hillHminusCanonicalPsi_zero_in_original_gap
+#print axioms NLS.KdV.hillHminusCanonicalPsiRealZero
+#print axioms NLS.KdV.hillHminusCanonicalPsiRealZero_mem_gap
+#print axioms NLS.KdV.hillHminusCanonicalPsiRealZero_is_zero
+#print axioms NLS.KdV.hillHminusCanonicalPsiRealZero_unique
+#print axioms NLS.KdV.hillHminusCanonicalPsi_zero_iff_realZero
+#print axioms NLS.KdV.hillHminusCanonicalPsiRealZero_at_real_collapse
+#print axioms NLS.KdV.exists_local_analytic_hillHminusPsi_simple_zero
+#print axioms NLS.KdV.exists_local_analytic_hillHminusCanonicalPsi_retained_zero
+#print axioms NLS.memlp_div_pnat_of_memlp_inverseBracket
+#print axioms NLS.KdV.hillMiura_real_gap_samples_inverseIndex_error
+#print axioms NLS.KdV.hillHminusOriginal_real_gap_samples_inverseIndex_error
+#print axioms NLS.KdV.memlp_hillHminusCanonicalPsiRealZero_inverseIndex_error
+#print axioms NLS.KdV.exists_l2_majorant_ALL_hillHminusCanonicalPsiRealZero
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillPsiRealZero
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_numerator_exact_simple_zeros
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_zero_gap_location
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_zero_coefficients_hminus_one
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_local_analytic_retained_Hill_zero

@@ -888,6 +888,18 @@ modules = [
     'NLS.KdV.HminusOneCanonicalHillPsiPeriods',
     'NLS.KdV.HminusOneCanonicalHillPsiProperties',
     'NLS.Articles.KdVPseudomeasures.OriginalCanonicalHillNumerators',
+    'NLS.ComplexAnalysis.EntireRootReplacement',
+    'NLS.ComplexAnalysis.QuadraticRootReplacementGrowth',
+    'NLS.KdV.HillEnergyGapZeroUniqueness',
+    'NLS.KdV.HillRetainedGapZeroRigidity',
+    'NLS.KdV.HminusOneCanonicalHillPsiSimpleZeros',
+    'NLS.KdV.HillOriginalPositiveGapSeparation',
+    'NLS.KdV.HminusOneCanonicalHillPsiRealZero',
+    'NLS.KdV.HminusOneHillPsiZeroBranches',
+    'NLS.SequenceSpaces.PositiveBracketComparison',
+    'NLS.KdV.HillRealGapSampleAsymptotics',
+    'NLS.KdV.HminusOneHillPsiZeroAsymptotics',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNumeratorSimpleZeros',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
