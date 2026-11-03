@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 2833,
+    "declarations": 2864,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -289,10 +289,11 @@
       "NLS.SequenceSpaces.exists_hierarchy_action_majorant_lower",
       "NLS.ComplexAnalysis.norm_normalizedStandardRoot_sub_center_le",
       "NLS.ComplexAnalysis.norm_endpointRoot_div_sub_one_le",
-      "NLS.ComplexAnalysis.norm_complexSqrt_sub_positive_le"
+      "NLS.ComplexAnalysis.norm_complexSqrt_sub_positive_le",
+      "NLS.ComplexAnalysis.analyticOrderNatAt_comp_sq_zero"
     ]
   },
-  "full_repository_validation": "All 287 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2833-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 289 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2864-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -581,10 +582,12 @@
     "NLS/KdV/HillCanonicalEnergyRootProduct.lean": "2e8839209c227b2fceca5f227032e5af26e6db6cdbdda775173678e3be0b69d9",
     "NLS/KdV/HillEnergyRootAnalytic.lean": "0d43e93fd3747e9288507ddfb57e6686eb223a3f5e9a4a6335b0232b2217b9f0",
     "NLS/ComplexAnalysis/ComplexSquareRootShift.lean": "882b604539cbaac84a321b19e95deffb5746a8deb47ea23e5ced4de1febd2d51",
-    "NLS/KdV/HillEnergyFrequencyBounds.lean": "1a64d4b3a38187f1e16596991bfeac43aa0ee7ecd1c603d07487adf7f7daa699"
+    "NLS/KdV/HillEnergyFrequencyBounds.lean": "1a64d4b3a38187f1e16596991bfeac43aa0ee7ecd1c603d07487adf7f7daa699",
+    "NLS/ComplexAnalysis/AnalyticSquarePullback.lean": "a1f77f382502536bfc197f3c67dd201dff5ac8b268c0fa4ab43d77ba503eeff6",
+    "NLS/KdV/HillSignedEnergyLabels.lean": "52942a4be04827872ab5d9d5822cf6ce6487eccef80b5c7949e1137c8618f550"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. The literal energy-indexed standard-root product is now analytic and nonzero on the actual open real-cut domain, with locally uniform product convergence. Both actual energy endpoint square-root sequences have inverse-index frequency errors and square-summable positive-frequency displacements. Completing the signed frequency spectral census and matching the energy product to the actual radicand/root remains essential. The physical integer inequalities are proved for the constructed Arnold actions; physical KdV Birkhoff construction and the explicit arbitrary-weight uniform action-gap/cutoff estimates remain open.",
-  "milestone": "Analytic actual energy root product and square-summable frequency endpoint displacements",
+  "remaining": "Main Theorems 1-3 remain unverified. Signed frequency roots are now constructed from the actual Hill energy labels with the separate ground-state pair, l2 displacements at all signed indices, exact finite energy/frequency product pairing, full original periodic-spectrum exhaustion and a physical energy-label multiplicity census including doubling at zero frequency. The central finite-multiset/distant-pair assembly into a complete shared frequency endpoint labeling remains open, as do actual root-product identification, physical KdV Birkhoff construction and the explicit arbitrary-weight action-gap/cutoff estimates.",
+  "milestone": "Actual signed frequency energy labels, exact finite products and original spectral multiplicity comparison",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -874,7 +877,9 @@
     "NLS.KdV.HillCanonicalEnergyRootProduct",
     "NLS.KdV.HillEnergyRootAnalytic",
     "NLS.ComplexAnalysis.ComplexSquareRootShift",
-    "NLS.KdV.HillEnergyFrequencyBounds"
+    "NLS.KdV.HillEnergyFrequencyBounds",
+    "NLS.ComplexAnalysis.AnalyticSquarePullback",
+    "NLS.KdV.HillSignedEnergyLabels"
   ],
   "proof_commits": [
     {
@@ -1126,6 +1131,11 @@
       "commit": "a373134f6042d800fd7cdcdb7ed12c822f4e6183",
       "scope": "Absolutely convergent literal actual energy-indexed standard-root product, squared product, off-gap nonvanishing, exact free normalization and finite-cutoff convergence; 284 strict modules, 2809-declaration transitive audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "393dc36560066f8939c866d87db975615ecf3fe8",
+      "scope": "Local uniform convergence and analytic nonvanishing of the literal energy root product on the actual real-cut domain, with shared principal-square-root displacement and actual positive-frequency l2 endpoint bounds; 287 strict modules, 2833-declaration transitive audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -1142,20 +1152,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 287 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 289 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 2833 declarations. Includes bounded-energy summable product majorants, compatibility of actual real-cut and segment domains, compact/local uniform convergence, analytic/nonzero full energy product, a shared positive-center principal square-root displacement estimate and actual positive-frequency l2 endpoint errors.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 2864 declarations. Includes the full signed l2 root sequences and ground pair, finite central/paired factor algebra, exact frequency/energy polynomial cutoffs, full actual periodic-spectrum exhaustion, shared order doubling at zero and original periodic multiplicities in terms of actual energy-label occurrences.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 287 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2833-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 289 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2864-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "The actual endpoint localization gives one common reciprocal-square factor majorant on every bounded energy set. Each standard-root factor is analytic off its real gap segment, and every point of the actual open real-cut domain avoids every positive-index gap segment by the strict band ordering. The compact-uniform product theorem therefore proves HasProdUniformlyOn on every compact subset of that domain and HasProdLocallyUniformlyOn on the full open domain. Holomorphic finite products yield an analytic infinite positive-gap product. The ground energy shift lies in the principal slit plane on the actual real-cut domain, so the full source-prefactored energy root product is analytic and nonzero there. Separately, a shared principal-complex-square-root estimate converts an energy displacement from c^2 into a frequency displacement at most D/c for every positive real center c. For the actual high Hill labels this gives ||sqrt(lambda_n^+/-)-n*pi||<=4||q||/(n*pi), and hence both positive-frequency endpoint displacement sequences belong to l2. These are the constructed actual endpoint square roots, not supplied spectral labels. Main Theorems 1-3 remain unverified. The literal energy-indexed standard-root product is now analytic and nonzero on the actual open real-cut domain, with locally uniform product convergence. Both actual energy endpoint square-root sequences have inverse-index frequency errors and square-summable positive-frequency displacements. Completing the signed frequency spectral census and matching the energy product to the actual radicand/root remains essential. The physical integer inequalities are proved for the constructed Arnold actions; physical KdV Birkhoff construction and the explicit arbitrary-weight uniform action-gap/cutoff estimates remain open.",
-    "scope": "All 287 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2833-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "The signed frequency labels are the positive and negative principal square roots of the actual energy endpoints; the exceptional index zero is the separate pair +sqrt(lambda0),-sqrt(lambda0). Positive-frequency l2 bounds extend to all signed indices by the checked reflection identities and a finite central change. Every signed square is the corresponding actual energy label. The central periodic factor is exactly z^2-lambda0; pairing the positive and negative factors at each nonzero index gives the original energy quadratic factor at lambda=z^2 with denominator (n^2*pi^2)^2. Consequently every finite signed-frequency periodic product is exactly the finite energy product pulled back by z^2. The actual characteristic zero set and the square-root factorization prove that these signed labels exhaust the original ZS periodic spectrum of the checked Hill realization. A shared analytic-composition lemma proves exact order doubling for f(z^2) at z0. Applied to the actual Hill radicand and combined with the existing nonzero-frequency comparison and full actual energy-label multiplicities, the original periodic algebraic multiplicity at any z with z^2=x real equals the actual occurrence count of x among the energy labels, multiplied by2 at z0 and by1 otherwise. No complete central labeling or actual root-product identity is assumed or claimed. Main Theorems 1-3 remain unverified. Signed frequency roots are now constructed from the actual Hill energy labels with the separate ground-state pair, l2 displacements at all signed indices, exact finite energy/frequency product pairing, full original periodic-spectrum exhaustion and a physical energy-label multiplicity census including doubling at zero frequency. The central finite-multiset/distant-pair assembly into a complete shared frequency endpoint labeling remains open, as do actual root-product identification, physical KdV Birkhoff construction and the explicit arbitrary-weight action-gap/cutoff estimates.",
+    "scope": "All 289 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2864-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "dd330f6eec61ffd9d31caa3c5df2c9884886c2d4952fd8eab68687a3e2af074c",
-      "scripts/check-kdv-estimates.sh": "d8db672ba2c863a1a16a7ea17c6c5f098392f933184b24f1ec12844ab92e47be",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "bcfb692cea7b9f3b80e74a07f6ab62b623a4577521cb4e14ff4974ecd862ad4b"
+      "NLS.lean": "f895369e3dc039700ddd7f900b93fcfea16f0b25d2adade3fadf1e5af0d2164b",
+      "scripts/check-kdv-estimates.sh": "d3914ceff85ee32eb2d3234828253e95bfad0042cc152876a8c524f9974ec7f2",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "8fc94b35f85b8572f55a4f29742669005ccfe6abb94eab565535263be309644a"
     }
   },
   "warningAsError": true,
@@ -1262,8 +1272,8 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Analytic actual energy root product and square-summable frequency endpoint displacements",
-    "focused_modules": 287,
-    "scope": "All 287 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2833-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Actual signed frequency energy labels, exact finite products and original spectral multiplicity comparison",
+    "focused_modules": 289,
+    "scope": "All 289 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2864-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   }
 }

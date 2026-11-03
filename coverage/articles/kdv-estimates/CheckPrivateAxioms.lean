@@ -1,3 +1,5 @@
+import NLS.ComplexAnalysis.AnalyticSquarePullback
+import NLS.KdV.HillSignedEnergyLabels
 import NLS.KdV.HillEnergyRootAnalytic
 import NLS.ComplexAnalysis.ComplexSquareRootShift
 import NLS.KdV.HillEnergyFrequencyBounds
@@ -547,7 +549,8 @@ run_cmd do
     ``NLS.SequenceSpaces.exists_hierarchy_action_majorant_lower,
     ``NLS.ComplexAnalysis.norm_normalizedStandardRoot_sub_center_le,
     ``NLS.ComplexAnalysis.norm_endpointRoot_div_sub_one_le,
-    ``NLS.ComplexAnalysis.norm_complexSqrt_sub_positive_le]
+    ``NLS.ComplexAnalysis.norm_complexSqrt_sub_positive_le,
+    ``NLS.ComplexAnalysis.analyticOrderNatAt_comp_sq_zero]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

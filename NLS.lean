@@ -5209,3 +5209,5 @@ import NLS.KdV.HillCanonicalEnergyRootProduct
 import NLS.KdV.HillEnergyRootAnalytic
 import NLS.ComplexAnalysis.ComplexSquareRootShift
 import NLS.KdV.HillEnergyFrequencyBounds
+import NLS.ComplexAnalysis.AnalyticSquarePullback
+import NLS.KdV.HillSignedEnergyLabels
