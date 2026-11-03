@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 3324,
+    "declarations": 3360,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -333,10 +333,18 @@
       "NLS.ComplexAnalysis.continuous_scalarStateMass",
       "NLS.ComplexAnalysis.scalarStateMass_eq_integral",
       "NLS.ComplexAnalysis.scalarStateMass_pos_of_first_derivative",
-      "NLS.ZakharovShabat.l2SolutionCurve_ne_zero"
+      "NLS.ZakharovShabat.l2SolutionCurve_ne_zero",
+      "NLS.FunctionalAnalysis.unitComplexCurveIntegral",
+      "NLS.FunctionalAnalysis.unitComplexCurveIntegral_apply",
+      "NLS.ComplexAnalysis.scalarStateCrossMass",
+      "NLS.ComplexAnalysis.scalarStateCrossMass_eq_integral",
+      "NLS.ComplexAnalysis.continuous_scalarStateCrossMass",
+      "NLS.ComplexAnalysis.scalarStateCrossMass_self_real",
+      "NLS.ComplexAnalysis.tendsto_sq_punctured",
+      "NLS.ComplexAnalysis.isClosed_exists_zero_in_variable_Icc"
     ]
   },
-  "full_repository_validation": "All 342 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3324-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 350 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3360-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -680,10 +688,18 @@
     "NLS/KdV/HillL2GreenIdentity.lean": "e66233bab908abe570fc00f8b4873219be19e0684a243ae61b2386c656c1410f",
     "NLS/KdV/HillDirichletReality.lean": "3d650863cb1393dec99725c13840d8c9b4f91645fda2c0b1dc02eb96ef2c5316",
     "NLS/KdV/HillStateMonodromy.lean": "7ec6517ad007eb0c831267d0717387afb21bced911752d502a5570e669e1b731",
-    "NLS/KdV/HillDirichletBands.lean": "9f60d02a61ec5a00e8a766789ec1ddd6c674574d8b81935afce6376b4c557e20"
+    "NLS/KdV/HillDirichletBands.lean": "9f60d02a61ec5a00e8a766789ec1ddd6c674574d8b81935afce6376b4c557e20",
+    "NLS/FunctionalAnalysis/UnitComplexCurveIntegral.lean": "ed8cdcef3dec539c5f60871c6c8ffbc05f7ce464dcfb334f66eb91e0527a7f30",
+    "NLS/ComplexAnalysis/ScalarStateCrossMass.lean": "0014103bc3084b7447050cd58a0ae6e6deb011fb27460980fed8a4209641128e",
+    "NLS/ComplexAnalysis/QuadraticPuncturedLimit.lean": "39894438de36641ec17fe8346b32ba756782fd8d7269277d7d63f900afe9fdbb",
+    "NLS/KdV/HillDirichletLagrange.lean": "803d52411ed49ab6d9a3c6f432c9612d0753bc34badcffd3e9e9c895f6d37e3c",
+    "NLS/KdV/HillDirichletSimplicity.lean": "a49a408424f1eca609131808b7cf50dd900c74bfce83092b4f636de387dc5f48",
+    "NLS/KdV/HillDirichletRootBranches.lean": "0762efeb2621a3309c09a7880aa386c6794b0b1e3f6cb3df58f2dc2fe7ee2faa",
+    "NLS/KdV/HillFreeDirichlet.lean": "9051fb4061736982a304e7767c58f90f1a60f77f92ece8ed750e862f4b4d1ef7",
+    "NLS/ComplexAnalysis/ClosedIntervalRoots.lean": "7093d3831577947ff947ea4742e5d0b9dc8051efb8e9cd516896b4ea62b7b557"
   },
-  "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Main Theorems 1 and 3(i) remain unverified: their physical Birkhoff map and coordinate/action identity are still required. The actual rough Dirichlet characteristic now has only real zeros, its state has Wronskian one and real values at real energy, and every open periodic spectral band excludes Dirichlet zeros. Simplicity, exact interlacing/gap labels, norming data and the coordinate construction remain essential.",
-  "milestone": "Rough Hill Green identity, Dirichlet zero reality and open-band exclusion",
+  "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: their physical Birkhoff map and coordinate/action identity are still required. Every real rough Dirichlet zero is now simple, with exact order one and a local analytic potential branch. Exact gap labeling, norming data and the coordinate construction remain essential.",
+  "milestone": "Rough Hill Dirichlet Lagrange identity, simplicity and analytic root branches",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -1028,7 +1044,15 @@
     "NLS.KdV.HillL2GreenIdentity",
     "NLS.KdV.HillDirichletReality",
     "NLS.KdV.HillStateMonodromy",
-    "NLS.KdV.HillDirichletBands"
+    "NLS.KdV.HillDirichletBands",
+    "NLS.FunctionalAnalysis.UnitComplexCurveIntegral",
+    "NLS.ComplexAnalysis.ScalarStateCrossMass",
+    "NLS.ComplexAnalysis.QuadraticPuncturedLimit",
+    "NLS.KdV.HillDirichletLagrange",
+    "NLS.KdV.HillDirichletSimplicity",
+    "NLS.KdV.HillDirichletRootBranches",
+    "NLS.KdV.HillFreeDirichlet",
+    "NLS.ComplexAnalysis.ClosedIntervalRoots"
   ],
   "proof_commits": [
     {
@@ -1330,6 +1354,11 @@
       "commit": "ab5ad5f5a5d77a73d08bbaa3e9c32d53f75c502c",
       "scope": "Verified source Theorem 3(ii) weighted actions and entire rough Hill Dirichlet characteristic; 334 strict modules, 3297-declaration transitive axiom audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "274e8e16cbb850f67b16f023a6fd672b13fe9675",
+      "scope": "Rough Hill Green identity, Dirichlet zero reality and open-band exclusion; 342 strict modules, 3324-declaration transitive axiom audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -1346,20 +1375,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 342 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 350 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 3324 declarations. Includes shared bounded unit-curve integration, scalar mass continuity and positive-mass lemma, generic physical L2 solution nonvanishing, actual rough scalar state curve and Green identity, a.e. derivative normalization, rough Dirichlet zero reality, Wronskian/trace/state-reality identities, discriminant-square bound at Dirichlet zeros, and nonvanishing on every open periodic band.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 3360 declarations. Includes bounded complex curve integration, continuous cross-mass, classical and rough two-energy Lagrange identities, uniform frequency continuity, the punctured square-map limit at zero, exact Dirichlet derivative/mass normalization, nonzero derivative and order one, local analytic and real root branches, the gap collar criterion, the exact free Dirichlet formula and generic closedness of interval-root existence.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 342 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3324-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 350 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3360-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "A shared bounded real linear unit-interval integral makes the scalar-state position mass a continuous functional in the uniform curve norm. A generic mass lemma proves strict positivity when a nonvanishing state obeys the actual a.e. first-derivative relation. The physical L2 solution is nonvanishing for nonzero initial data by the determinant-one fundamental matrix. The exact scalar state transform gives the actual rough Hill state curve, initial value, uniform-norm continuous dependence and classical agreement. Real finite Fourier approximation and continuity of the scalar mass functional extend the scalar Green identity to every real rough L2 potential. The physical constant-upper coefficient equals -1 a.e., so the scalar position has precisely the state derivative a.e.; its position mass is strictly positive. At a Dirichlet zero the Green boundary pairing vanishes, proving real energy. The scalar Wronskian equals one, the scalar trace is the actual L2 discriminant, and real-energy states are real by density and classical conjugation. At a Dirichlet zero these identities give c*d=1 and Delta=c+d with c,d real, hence Delta.re^2>=4. The already proved strict open-band trace bounds then exclude Dirichlet zeros from every intrinsic open periodic spectral band. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Main Theorems 1 and 3(i) remain unverified: their physical Birkhoff map and coordinate/action identity are still required. The actual rough Dirichlet characteristic now has only real zeros, its state has Wronskian one and real values at real energy, and every open periodic spectral band excludes Dirichlet zeros. Simplicity, exact interlacing/gap labels, norming data and the coordinate construction remain essential.",
-    "scope": "All 342 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3324-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "A bounded complex unit-curve integral defines the continuous scalar-state cross-mass. The classical two-energy Lagrange identity extends by finite Fourier density to actual rough states for arbitrary complex L2 potentials. Continuous frequency dependence holds in the uniform curve norm. The punctured quadratic map limit, including frequency zero, combines with the Lagrange identity to prove the exact normalization D_prime(energy)*s_prime(1)=positive position mass at every real rough Dirichlet zero. Thus the derivative is nonzero and the analytic order is exactly one. The Banach implicit-function theorem supplies local analytic potential branches, real on nearby real potentials. Open-band exclusion gives the neighboring-band collar criterion for membership in a selected closed gap. The free characteristic is exactly sin(z)/z for nonzero z, equals one at energy zero, and vanishes at every positive free energy (n*pi)^2. A generic compact-interval projection proves closedness of zero existence in continuously varying real closed intervals. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: their physical Birkhoff map and coordinate/action identity are still required. Every real rough Dirichlet zero is now simple, with exact order one and a local analytic potential branch. Exact gap labeling, norming data and the coordinate construction remain essential.",
+    "scope": "All 350 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3360-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "59ecc3e061555b449f3a30d9cb2fcd044ecbfc25815ae93875c3bc1e46f875b9",
-      "scripts/check-kdv-estimates.sh": "75bc55488cb2cd0e837c1a20ab15de4e99b197ca560f433d0b21b82f26d6d0e1",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "610c4dde1eb8b0f07297892b7ce8f4b6a07cfb75a0449355f0697b6d51a80ef1"
+      "NLS.lean": "d1c6810299477a3061ef6e26ddf8f2df18b3531d21218babd719fdddef7a7d35",
+      "scripts/check-kdv-estimates.sh": "0d865d7c2b27aea719ab3794862f653644e914422e981322c236f407cd2a5fa5",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "0d645aae31022770a4c55443014cb14474be3ce890978b39a8ac8b9c54c14beb"
     }
   },
   "warningAsError": true,
@@ -1466,9 +1495,9 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Rough Hill Green identity, Dirichlet zero reality and open-band exclusion",
-    "focused_modules": 342,
-    "scope": "All 342 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3324-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Rough Hill Dirichlet Lagrange identity, simplicity and analytic root branches",
+    "focused_modules": 350,
+    "scope": "All 350 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3360-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",

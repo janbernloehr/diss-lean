@@ -341,6 +341,14 @@ import NLS.KdV.HillL2SquareGapPeriods
 import NLS.KdV.HillHierarchyMomentSummability
 import NLS.KdV.HillL2EndpointContinuity
 import NLS.KdV.HillL2GroundSquare
+import NLS.FunctionalAnalysis.UnitComplexCurveIntegral
+import NLS.ComplexAnalysis.ScalarStateCrossMass
+import NLS.ComplexAnalysis.QuadraticPuncturedLimit
+import NLS.KdV.HillDirichletLagrange
+import NLS.KdV.HillDirichletSimplicity
+import NLS.KdV.HillDirichletRootBranches
+import NLS.KdV.HillFreeDirichlet
+import NLS.ComplexAnalysis.ClosedIntervalRoots
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -646,7 +654,15 @@ run_cmd do
     ``NLS.ComplexAnalysis.continuous_scalarStateMass,
     ``NLS.ComplexAnalysis.scalarStateMass_eq_integral,
     ``NLS.ComplexAnalysis.scalarStateMass_pos_of_first_derivative,
-    ``NLS.ZakharovShabat.l2SolutionCurve_ne_zero]
+    ``NLS.ZakharovShabat.l2SolutionCurve_ne_zero,
+    ``NLS.FunctionalAnalysis.unitComplexCurveIntegral,
+    ``NLS.FunctionalAnalysis.unitComplexCurveIntegral_apply,
+    ``NLS.ComplexAnalysis.scalarStateCrossMass,
+    ``NLS.ComplexAnalysis.scalarStateCrossMass_eq_integral,
+    ``NLS.ComplexAnalysis.continuous_scalarStateCrossMass,
+    ``NLS.ComplexAnalysis.scalarStateCrossMass_self_real,
+    ``NLS.ComplexAnalysis.tendsto_sq_punctured,
+    ``NLS.ComplexAnalysis.isClosed_exists_zero_in_variable_Icc]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

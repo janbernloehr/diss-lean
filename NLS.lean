@@ -5264,3 +5264,11 @@ import NLS.KdV.HillL2GreenIdentity
 import NLS.KdV.HillDirichletReality
 import NLS.KdV.HillStateMonodromy
 import NLS.KdV.HillDirichletBands
+import NLS.FunctionalAnalysis.UnitComplexCurveIntegral
+import NLS.ComplexAnalysis.ScalarStateCrossMass
+import NLS.ComplexAnalysis.QuadraticPuncturedLimit
+import NLS.KdV.HillDirichletLagrange
+import NLS.KdV.HillDirichletSimplicity
+import NLS.KdV.HillDirichletRootBranches
+import NLS.KdV.HillFreeDirichlet
+import NLS.ComplexAnalysis.ClosedIntervalRoots

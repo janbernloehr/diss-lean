@@ -365,7 +365,7 @@
         "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
         "NLS.KdV.hillRealGapIntegral_le_chi_bound"
       ],
-      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Main Theorems 1 and 3(i) remain unverified: their physical Birkhoff map and coordinate/action identity are still required. The actual rough Dirichlet characteristic now has only real zeros, its state has Wronskian one and real values at real energy, and every open periodic spectral band excludes Dirichlet zeros. Simplicity, exact interlacing/gap labels, norming data and the coordinate construction remain essential.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: their physical Birkhoff map and coordinate/action identity are still required. Every real rough Dirichlet zero is now simple, with exact order one and a local analytic potential branch. Exact gap labeling, norming data and the coordinate construction remain essential.",
       "checked_hill_uniform_critical_action_tail": [
         "NLS.SequenceSpaces.nonneg_series_cauchy_schwarz",
         "NLS.SequenceSpaces.square_sum_le_of_weight_lower_bound",
@@ -434,6 +434,32 @@
         "NLS.KdV.hillL2FrequencyStateCurve_trace",
         "NLS.KdV.hillL2DirichletCharacteristic_zero_discriminant_sq_ge_four",
         "NLS.KdV.hillL2DirichletCharacteristic_ne_zero_on_open_band"
+      ],
+      "checked_rough_dirichlet_simplicity": [
+        "NLS.FunctionalAnalysis.unitComplexCurveIntegral",
+        "NLS.FunctionalAnalysis.unitComplexCurveIntegral_apply",
+        "NLS.ComplexAnalysis.scalarStateCrossMass",
+        "NLS.ComplexAnalysis.scalarStateCrossMass_eq_integral",
+        "NLS.ComplexAnalysis.continuous_scalarStateCrossMass",
+        "NLS.ComplexAnalysis.scalarStateCrossMass_self_real",
+        "NLS.ComplexAnalysis.tendsto_sq_punctured",
+        "NLS.ComplexAnalysis.isClosed_exists_zero_in_variable_Icc",
+        "NLS.KdV.classicalHillFlow_lagrange_identity",
+        "NLS.KdV.continuous_hillL2FrequencyStateCurve_frequency",
+        "NLS.KdV.scalarStateCrossMass_hill_eq_classical",
+        "NLS.KdV.hillL2FrequencyStateCurve_lagrange_identity",
+        "NLS.KdV.hillL2Dirichlet_derivative_normalization",
+        "NLS.KdV.hillL2DirichletCharacteristic_deriv_ne_zero",
+        "NLS.KdV.analyticOrderAt_hillL2Dirichlet_zero",
+        "NLS.KdV.analyticOrderNatAt_hillL2Dirichlet_zero",
+        "NLS.KdV.exists_hillL2Dirichlet_analytic_root_branch",
+        "NLS.KdV.exists_hillL2Dirichlet_analytic_real_root_branch",
+        "NLS.KdV.hillDirichlet_zero_mem_gap_of_between_neighbor_bands",
+        "NLS.KdV.classicalHillFlow_free_sine",
+        "NLS.KdV.classicalHillFlow_free_zero",
+        "NLS.KdV.hillL2DirichletCharacteristic_free_sq",
+        "NLS.KdV.hillL2DirichletCharacteristic_free_zero",
+        "NLS.KdV.hillL2DirichletCharacteristic_free_nat_root"
       ]
     },
     {
@@ -862,7 +888,7 @@
         "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "Part (ii) remains verified. Part (i) requires the physical Birkhoff coordinates and action identity; rough Dirichlet zero reality and open-band exclusion are now proved, while simplicity, exact gap labels and angle data remain open.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: their physical Birkhoff map and coordinate/action identity are still required. Every real rough Dirichlet zero is now simple, with exact order one and a local analytic potential branch. Exact gap labeling, norming data and the coordinate construction remain essential.",
       "status": "not_verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -1267,6 +1293,32 @@
         "NLS.KdV.hillL2FrequencyStateCurve_trace",
         "NLS.KdV.hillL2DirichletCharacteristic_zero_discriminant_sq_ge_four",
         "NLS.KdV.hillL2DirichletCharacteristic_ne_zero_on_open_band"
+      ],
+      "checked_rough_dirichlet_simplicity": [
+        "NLS.FunctionalAnalysis.unitComplexCurveIntegral",
+        "NLS.FunctionalAnalysis.unitComplexCurveIntegral_apply",
+        "NLS.ComplexAnalysis.scalarStateCrossMass",
+        "NLS.ComplexAnalysis.scalarStateCrossMass_eq_integral",
+        "NLS.ComplexAnalysis.continuous_scalarStateCrossMass",
+        "NLS.ComplexAnalysis.scalarStateCrossMass_self_real",
+        "NLS.ComplexAnalysis.tendsto_sq_punctured",
+        "NLS.ComplexAnalysis.isClosed_exists_zero_in_variable_Icc",
+        "NLS.KdV.classicalHillFlow_lagrange_identity",
+        "NLS.KdV.continuous_hillL2FrequencyStateCurve_frequency",
+        "NLS.KdV.scalarStateCrossMass_hill_eq_classical",
+        "NLS.KdV.hillL2FrequencyStateCurve_lagrange_identity",
+        "NLS.KdV.hillL2Dirichlet_derivative_normalization",
+        "NLS.KdV.hillL2DirichletCharacteristic_deriv_ne_zero",
+        "NLS.KdV.analyticOrderAt_hillL2Dirichlet_zero",
+        "NLS.KdV.analyticOrderNatAt_hillL2Dirichlet_zero",
+        "NLS.KdV.exists_hillL2Dirichlet_analytic_root_branch",
+        "NLS.KdV.exists_hillL2Dirichlet_analytic_real_root_branch",
+        "NLS.KdV.hillDirichlet_zero_mem_gap_of_between_neighbor_bands",
+        "NLS.KdV.classicalHillFlow_free_sine",
+        "NLS.KdV.classicalHillFlow_free_zero",
+        "NLS.KdV.hillL2DirichletCharacteristic_free_sq",
+        "NLS.KdV.hillL2DirichletCharacteristic_free_zero",
+        "NLS.KdV.hillL2DirichletCharacteristic_free_nat_root"
       ]
     }
   ],
@@ -1870,7 +1922,7 @@
     }
   ],
   "next_shared_milestones": [
-    "Prove the two-energy Lagrange identity for the actual rough scalar flows, use positive mass to prove every Dirichlet zero simple, and establish parameter continuity and exact interlacing/gap labels including the low-energy exclusion. Continue norming data and actual KdV normalized Abelian angles and the coordinate/action construction for Theorems 1 and 3(i).",
+    "Prove existence in each intrinsic closed gap by open-and-closed continuation from the free potential, using continuous labels, analytic root branches and the neighboring-band collar; prove uniqueness from the signed derivative at roots and a real crossing lemma. Continue exact Dirichlet labeling, low-energy exclusion, norming data, normalized Abelian angles and the physical KdV coordinate/action construction.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Prove explicit norm-dependent action-gap bounds with the source cutoff/weight evaluation, then Hamiltonian/higher-action trace identities and the tame action estimates for Theorem 2. The potential-dependent eventual bound n*I_n<=gamma_n^2, weighted action summability and the high Proposition 5 comparison at cutoff eight are now checked.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -4430,6 +4482,50 @@
     "hypotheses": "Every complex L2 Fourier coefficient potential for the state curve, initial-value normalization, nonvanishing and Wronskian/trace identities. Fourier reality is required for the Green identity, real-energy state reality and Dirichlet zero reality; no mean-zero, smoothness or gap-openness assumption is needed. The open-band result uses the actual even-supported real potential and intrinsic ordered periodic labels.",
     "result": "A shared bounded real linear unit-interval integral makes the scalar-state position mass a continuous functional in the uniform curve norm. A generic mass lemma proves strict positivity when a nonvanishing state obeys the actual a.e. first-derivative relation. The physical L2 solution is nonvanishing for nonzero initial data by the determinant-one fundamental matrix. The exact scalar state transform gives the actual rough Hill state curve, initial value, uniform-norm continuous dependence and classical agreement. Real finite Fourier approximation and continuity of the scalar mass functional extend the scalar Green identity to every real rough L2 potential. The physical constant-upper coefficient equals -1 a.e., so the scalar position has precisely the state derivative a.e.; its position mass is strictly positive. At a Dirichlet zero the Green boundary pairing vanishes, proving real energy. The scalar Wronskian equals one, the scalar trace is the actual L2 discriminant, and real-energy states are real by density and classical conjugation. At a Dirichlet zero these identities give c*d=1 and Delta=c+d with c,d real, hence Delta.re^2>=4. The already proved strict open-band trace bounds then exclude Dirichlet zeros from every intrinsic open periodic spectral band. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Main Theorems 1 and 3(i) remain unverified: their physical Birkhoff map and coordinate/action identity are still required. The actual rough Dirichlet characteristic now has only real zeros, its state has Wronskian one and real values at real energy, and every open periodic spectral band excludes Dirichlet zeros. Simplicity, exact interlacing/gap labels, norming data and the coordinate construction remain essential.",
     "qualification": "The rough reality and open-band exclusion results do not yet supply one simple Dirichlet zero in each closed gap, an exact ordered Dirichlet enumeration, or exclusion below the lowest periodic energy. No physical Birkhoff coordinates or conditional coordinate/action identity are asserted. Theorem 2 and Theorem 3(ii) remain verified; main Theorems 1 and 3(i) remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
-    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Main Theorems 1 and 3(i) remain unverified: their physical Birkhoff map and coordinate/action identity are still required. The actual rough Dirichlet characteristic now has only real zeros, its state has Wronskian one and real values at real energy, and every open periodic spectral band excludes Dirichlet zeros. Simplicity, exact interlacing/gap labels, norming data and the coordinate construction remain essential."
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Main Theorems 1 and 3(i) remain unverified: their physical Birkhoff map and coordinate/action identity are still required. The actual rough Dirichlet characteristic now has only real zeros, its state has Wronskian one and real values at real energy, and every open periodic spectral band excludes Dirichlet zeros. Simplicity, exact interlacing/gap labels, norming data and the coordinate construction remain essential.",
+    "dirichlet_progress": "The rough_dirichlet_simplicity section proves the two-energy Lagrange identity, nonzero Dirichlet derivative and exact order one at every zero, including energy zero, and local analytic real root branches."
+  },
+  "rough_dirichlet_simplicity": {
+    "modules": [
+      "NLS/FunctionalAnalysis/UnitComplexCurveIntegral.lean",
+      "NLS/ComplexAnalysis/ScalarStateCrossMass.lean",
+      "NLS/ComplexAnalysis/QuadraticPuncturedLimit.lean",
+      "NLS/KdV/HillDirichletLagrange.lean",
+      "NLS/KdV/HillDirichletSimplicity.lean",
+      "NLS/KdV/HillDirichletRootBranches.lean",
+      "NLS/KdV/HillFreeDirichlet.lean",
+      "NLS/ComplexAnalysis/ClosedIntervalRoots.lean"
+    ],
+    "declarations": [
+      "NLS.FunctionalAnalysis.unitComplexCurveIntegral",
+      "NLS.FunctionalAnalysis.unitComplexCurveIntegral_apply",
+      "NLS.ComplexAnalysis.scalarStateCrossMass",
+      "NLS.ComplexAnalysis.scalarStateCrossMass_eq_integral",
+      "NLS.ComplexAnalysis.continuous_scalarStateCrossMass",
+      "NLS.ComplexAnalysis.scalarStateCrossMass_self_real",
+      "NLS.ComplexAnalysis.tendsto_sq_punctured",
+      "NLS.ComplexAnalysis.isClosed_exists_zero_in_variable_Icc",
+      "NLS.KdV.classicalHillFlow_lagrange_identity",
+      "NLS.KdV.continuous_hillL2FrequencyStateCurve_frequency",
+      "NLS.KdV.scalarStateCrossMass_hill_eq_classical",
+      "NLS.KdV.hillL2FrequencyStateCurve_lagrange_identity",
+      "NLS.KdV.hillL2Dirichlet_derivative_normalization",
+      "NLS.KdV.hillL2DirichletCharacteristic_deriv_ne_zero",
+      "NLS.KdV.analyticOrderAt_hillL2Dirichlet_zero",
+      "NLS.KdV.analyticOrderNatAt_hillL2Dirichlet_zero",
+      "NLS.KdV.exists_hillL2Dirichlet_analytic_root_branch",
+      "NLS.KdV.exists_hillL2Dirichlet_analytic_real_root_branch",
+      "NLS.KdV.hillDirichlet_zero_mem_gap_of_between_neighbor_bands",
+      "NLS.KdV.classicalHillFlow_free_sine",
+      "NLS.KdV.classicalHillFlow_free_zero",
+      "NLS.KdV.hillL2DirichletCharacteristic_free_sq",
+      "NLS.KdV.hillL2DirichletCharacteristic_free_zero",
+      "NLS.KdV.hillL2DirichletCharacteristic_free_nat_root"
+    ],
+    "source_correspondence": "Necessary physical Hill Dirichlet spectral dependencies for the Birkhoff coordinate map in Theorems 1 and 3(i). The verified action estimates in Theorem 2 and Theorem 3(ii) are preserved.",
+    "hypotheses": "The Lagrange and frequency-continuity results apply to every complex L2 Fourier coefficient potential. Fourier reality is needed for positive derivative/mass normalization, simplicity and real root branches; no mean-zero, smoothness, nonzero-energy or gap-openness hypothesis is assumed. The gap collar uses the actual even-supported real potential and intrinsic periodic labels.",
+    "result": "A bounded complex unit-curve integral defines the continuous scalar-state cross-mass. The classical two-energy Lagrange identity extends by finite Fourier density to actual rough states for arbitrary complex L2 potentials. Continuous frequency dependence holds in the uniform curve norm. The punctured quadratic map limit, including frequency zero, combines with the Lagrange identity to prove the exact normalization D_prime(energy)*s_prime(1)=positive position mass at every real rough Dirichlet zero. Thus the derivative is nonzero and the analytic order is exactly one. The Banach implicit-function theorem supplies local analytic potential branches, real on nearby real potentials. Open-band exclusion gives the neighboring-band collar criterion for membership in a selected closed gap. The free characteristic is exactly sin(z)/z for nonzero z, equals one at energy zero, and vanishes at every positive free energy (n*pi)^2. A generic compact-interval projection proves closedness of zero existence in continuously varying real closed intervals. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: their physical Birkhoff map and coordinate/action identity are still required. Every real rough Dirichlet zero is now simple, with exact order one and a local analytic potential branch. Exact gap labeling, norming data and the coordinate construction remain essential.",
+    "qualification": "Simplicity and local analytic branches do not yet constitute an exact global Dirichlet enumeration, uniqueness in every closed gap or exclusion below the lowest periodic energy. No physical Birkhoff coordinates or conditional coordinate/action identity are asserted. Theorem 2 and Theorem 3(ii) remain verified; Theorems 1 and 3(i) remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: their physical Birkhoff map and coordinate/action identity are still required. Every real rough Dirichlet zero is now simple, with exact order one and a local analytic potential branch. Exact gap labeling, norming data and the coordinate construction remain essential."
   }
 }
