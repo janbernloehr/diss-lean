@@ -824,6 +824,13 @@ modules = [
     'NLS.KdV.HminusOneCanonicalDirichletMultiplicity',
     'NLS.KdV.HminusOneCanonicalDirichletAsymptotics',
     'NLS.Articles.KdVPseudomeasures.OriginalAnalyticDirichletCoordinates',
+    'NLS.KdV.HillL2DirichletTerminal',
+    'NLS.MKdV.MiuraL2DirichletTerminal',
+    'NLS.MKdV.QuasiHillL2NormingTrace',
+    'NLS.KdV.HminusOneDirichletNorming',
+    'NLS.ZakharovShabat.SobolevScalarOpenEquality',
+    'NLS.KdV.HminusOneDirichletSheet',
+    'NLS.Articles.KdVPseudomeasures.OriginalDirichletDivisor',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

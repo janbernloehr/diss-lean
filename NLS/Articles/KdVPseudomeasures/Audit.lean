@@ -790,6 +790,13 @@ import NLS.ComplexAnalysis.SimpleRootBranchUniqueness
 import NLS.KdV.HminusOneCanonicalDirichletMultiplicity
 import NLS.KdV.HminusOneCanonicalDirichletAsymptotics
 import NLS.Articles.KdVPseudomeasures.OriginalAnalyticDirichletCoordinates
+import NLS.KdV.HillL2DirichletTerminal
+import NLS.MKdV.MiuraL2DirichletTerminal
+import NLS.MKdV.QuasiHillL2NormingTrace
+import NLS.KdV.HminusOneDirichletNorming
+import NLS.ZakharovShabat.SobolevScalarOpenEquality
+import NLS.KdV.HminusOneDirichletSheet
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletDivisor
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5612,3 +5619,63 @@ import NLS.Articles.KdVPseudomeasures.OriginalAnalyticDirichletCoordinates
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_eq_endpoint_of_gap_zero
 #print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalDirichlet_eq
 #print axioms NLS.Articles.KdVPseudomeasures.exists_originalKdV_common_analytic_Dirichlet_data
+#print axioms NLS.KdV.classicalHillDirichletTerminal
+#print axioms NLS.KdV.classicalHillDirichletTerminal_sq
+#print axioms NLS.KdV.classicalHillDirichletTerminal_add_const
+#print axioms NLS.KdV.hillL2FrequencyDirichletTerminal
+#print axioms NLS.KdV.analyticOnNhd_hillL2FrequencyDirichletTerminal_joint
+#print axioms NLS.KdV.hillL2FrequencyDirichletTerminal_eq_classical
+#print axioms NLS.KdV.hillL2FrequencyDirichletTerminal_even
+#print axioms NLS.KdV.hillL2DirichletTerminal
+#print axioms NLS.KdV.hillL2DirichletTerminal_sq
+#print axioms NLS.KdV.analyticOnNhd_hillL2DirichletTerminal_joint
+#print axioms NLS.KdV.hillL2DirichletTerminal_eq_classical
+#print axioms NLS.KdV.hillL2DirichletTerminal_add_const
+#print axioms NLS.MKdV.quasiHillL2DirichletTerminal
+#print axioms NLS.MKdV.analyticOnNhd_quasiHillL2DirichletTerminal_joint
+#print axioms NLS.MKdV.quasiHillL2DirichletTerminal_ne_zero
+#print axioms NLS.MKdV.hillL2DirichletTerminal_miura_smooth
+#print axioms NLS.MKdV.hillL2DirichletTerminal_miura
+#print axioms NLS.MKdV.quasiHillL2DirichletTerminal_eq_hillL2_of_root
+#print axioms NLS.MKdV.quasiHillL2DirichletTerminal_eq_hillL2_of_shifted_root
+#print axioms NLS.MKdV.hillMiuraL2Discriminant_eq_quasiHillL2_trace
+#print axioms NLS.MKdV.quasiHillL2DirichletSheet
+#print axioms NLS.MKdV.quasiHillL2Dirichlet_first_diagonal_of_root
+#print axioms NLS.MKdV.quasiHillL2DirichletSheet_of_root
+#print axioms NLS.MKdV.hillMiuraL2Discriminant_of_dirichlet_root
+#print axioms NLS.MKdV.quasiHillL2DirichletSheet_sq
+#print axioms NLS.KdV.HillHminusDirichletBall.norming
+#print axioms NLS.KdV.HillHminusDirichletBall.analytic_norming
+#print axioms NLS.KdV.HillHminusDirichletBall.quasi_root
+#print axioms NLS.KdV.HillHminusDirichletBall.norming_ne_zero
+#print axioms NLS.KdV.HillHminusDirichletBall.norming_eq_hillL2
+#print axioms NLS.KdV.HillHminusDirichletBall.norming_eq_on_overlap
+#print axioms NLS.KdV.hillHminusDirichletNorming
+#print axioms NLS.KdV.HillHminusDirichletBall.canonical_norming_eq
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDirichletNorming
+#print axioms NLS.KdV.hillHminusDirichletNorming_ne_zero
+#print axioms NLS.KdV.hillHminusDirichletNorming_eq_hillL2
+#print axioms NLS.KdV.hillHminusDirichletNorming_eq_shifted_sobolev
+#print axioms NLS.ZakharovShabat.eqOn_of_eqOn_scalarInclusion
+#print axioms NLS.KdV.shiftedMiuraSource
+#print axioms NLS.KdV.continuous_shiftedMiuraSource
+#print axioms NLS.KdV.shiftedMiuraDirichletDomain
+#print axioms NLS.KdV.isOpen_shiftedMiuraDirichletDomain
+#print axioms NLS.KdV.shiftedMiuraSource_mapsTo_DirichletDomain
+#print axioms NLS.KdV.mem_shiftedMiuraDirichletDomain
+#print axioms NLS.KdV.continuousOn_DirichletNorming_shiftedMiura
+#print axioms NLS.KdV.continuousOn_DirichletTerminal_shiftedMiura
+#print axioms NLS.KdV.hillHminusDirichletNorming_shiftedMiura_eqOn
+#print axioms NLS.KdV.hillHminusDirichletNorming_eq_shifted_miura
+#print axioms NLS.KdV.hillHminusDirichletSheet
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDirichletSheet
+#print axioms NLS.KdV.hillHminusDirichletSheet_eq_shifted_miura
+#print axioms NLS.KdV.hillHminusDiscriminant_at_canonicalDirichlet
+#print axioms NLS.KdV.hillHminusDirichletSheet_sq
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletNorming
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletDivisor
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletNorming_ne_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletDivisor_spectral_curve
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletNorming_eq_shifted_miura
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletDivisor_eq_shifted_miura
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalKdV_common_analytic_Dirichlet_divisors

@@ -128,9 +128,10 @@
     "limits": "The norming-sheet component of the Dirichlet divisor, normalized Hill holomorphic differentials, Abelian angles, collapsed-gap Cartesian coordinates, actual KdV Birkhoff map and flows remain unconstructed. The real collapsed-gap endpoint result is NOT extended to arbitrary complex sources; in the actual coordinate construction complex collapsed gaps can have the Dirichlet point outside the gap. No full source3.2 or MAIN theorem is claimed."
   },
   "essential_remaining": [
-    "Construct the ACTUAL ORIGINAL Dirichlet divisor NORMING SHEET above the now-proved analytic energies, independently of the Miura lift and shift; a principal square root of the radicand is not a substitute for the prescribed monodromy sheet. Then construct normalized ORIGINAL Hill holomorphic differentials, their local bounds, admissible-path Abelian phases, off-index phase sum and collapsed-gap coordinate extensions needed by source3.2(ii). The ALL-index Dirichlet energies, simplicity, full complex native spectrum exhaustion, noncollision and multiplicities are NOW PROVED; do not redo them.",
-    "Complete the ACTUAL ORIGINAL KdV Birkhoff coordinates and the locally uniform estimate(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n), and source3.1/main1.4: original Gardner Poisson brackets, original differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are PROVED; its coordinate assertion and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute the NLS Birkhoff map for KdV.",
-    "Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation with the original equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE remain UNPROVED; goal ACTIVE. Other spectral obligations remain only where needed. AppendixB, full source2.1(i)-(ii), source2.2, corrected2.15 and all-index action/gap/quotient constructions remain PROVED."
+    "Construct the ACTUAL normalized ORIGINAL Hill holomorphic differentials with the exact canonical spectral root, all periods and normalizations, joint entire energy/source analyticity and local bounds. The proposed odd-Dirac-differential quadratic descent needs proof of actual canonical-root reflection, contour-period matching, zero filling and Miura independence. The actual ALL-index simple Dirichlet energies AND nonzero analytic terminal norming multipliers/monodromy sheets are NOW PROVED; do not redo them. If using the literal KMT y-tilde equation, also formalize its integrating-factor gauge normalization; it is not supplied as an assumed identification.",
+    "Construct admissible-path Abelian phases, their off-index sums, and the actual collapsed-gap Cartesian coordinate extensions for source3.2(ii). Retain the original local uniform estimate(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Do NOT infer a complex collapsed-gap Dirichlet point equals its endpoint or its Cartesian coordinates vanish; only the REAL endpoint statement is established.",
+    "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates and map: original Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; its coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute the NLS Birkhoff map for KdV.",
+    "Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and the preceding verified spectral/action/gap/quotient/Dirichlet-energy dependencies remain proved."
   ],
   "validation": {
     "result": "passed",
@@ -176,5 +177,31 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "norming_and_monodromy_sheet_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-dirichlet-norming-map.json",
+    "physical_L2_terminal_derivative_jointly_entire_including_zero": true,
+    "physical_terminal_derivative_exact_constant_shift": true,
+    "H1_Miura_endpoint_gauge_correction_proved": true,
+    "L2_image_terminal_comparison_at_Dirichlet_root_proved": true,
+    "actual_two_diagonal_L2_Miura_trace_identity": true,
+    "actual_terminal_multiplier_nonzero_at_every_Dirichlet_root": true,
+    "ALL_index_local_norming_multipliers_analytic_nonzero": true,
+    "WHOLE_COMPLEX_overlap_independence_via_physical_L2_density": true,
+    "SAME_existing_common_complex_Dirichlet_domain_used": true,
+    "ANY_complex_L2_Miura_lift_and_ANY_complex_energy_shift_independence": true,
+    "reusable_open_equality_from_dense_one_derivative_domain_all_finite_p": true,
+    "ACTUAL_Dirichlet_NORMING_sheet_constructed": true,
+    "actual_diagonal_difference_sign_retained": true,
+    "actual_sheet_square_equals_original_discriminant_at_original_mu_squared_minus_four": true,
+    "original_full_real_mean_zero_period_one_distribution_and_index_preserved": true,
+    "literal_KMT_y_tilde_integrating_factor_equation_formalized": false,
+    "ACTUAL_normalized_Hill_differentials_constructed": false,
+    "ACTUAL_KdV_angles_constructed": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "complex_collapsed_Dirichlet_point_equals_endpoint_asserted": false,
+    "full_source3_2_coordinate_assertion_proved": false,
+    "all_five_main_theorems_proved": false
+  },
+  "validation_scope": "Original validation records the preceding4819-declaration energy-coordinate milestone. norming_and_monodromy_sheet_followup records the actual later terminal multiplier and signed monodromy sheet construction, on the SAME common domain; normalized differentials, angles and all main theorems remain OPEN."
 }

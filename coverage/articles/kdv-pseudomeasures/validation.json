@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Construct the ACTUAL ALL-index analytic SIMPLE Dirichlet energy coordinates on ONE common connected complex H-minus-one domain, with complete native spectrum exhaustion, no collisions, exact physical multiplicities, all-index real gap inclusion and original Hilbert asymptotics.",
+  "phase": "Construct the actual analytic nonzero Dirichlet norming multipliers and prescribed diagonal monodromy sheets, independent of EVERY complex L2 Miura lift and energy shift, on the SAME common original complex Dirichlet domain.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -798,13 +798,20 @@
     "NLS/KdV/HminusOneCanonicalDirichletMultiplicity.lean",
     "NLS/KdV/HminusOneCanonicalDirichletAsymptotics.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalAnalyticDirichletCoordinates.lean",
+    "NLS/KdV/HillL2DirichletTerminal.lean",
+    "NLS/MKdV/MiuraL2DirichletTerminal.lean",
+    "NLS/MKdV/QuasiHillL2NormingTrace.lean",
+    "NLS/KdV/HminusOneDirichletNorming.lean",
+    "NLS/ZakharovShabat/SobolevScalarOpenEquality.lean",
+    "NLS/KdV/HminusOneDirichletSheet.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletDivisor.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 4012,
-  "definitions": 807,
+  "proved_theorems": 4060,
+  "definitions": 819,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 4819,
+    "declarations": 4879,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -1606,10 +1613,17 @@
     "A shared analytic implicit-function theorem proves local uniqueness of two continuous scalar zero branches at a common simple zero using the actual triangular map(z,q)->(F(z,q),q). If two canonical Dirichlet energies collided at a complex source, this local uniqueness and analytic continuation on the common connected domain would identify their DISTINCT original free values(pi*n)^2. Consequently the entire analytic sequence is INJECTIVE at EVERY complex source. Together with full spectral exhaustion and the already proved native characteristic-order identity, its full count equals the actual native algebraic multiplicity at EVERY complex energy.",
     "The auxiliary displacement along EVERY actual Dirichlet ball is analytic in its FULL original l2 norm, not only coordinatewise: the canonical boundary labeling provides a common local norm bound and scalar coordinate analyticity. The entire scalar energy error divided by its ORIGINAL positive index belongs to l2, retaining every low coordinate by finite modification of the certified native high sequence. Uniform o(n) displacement estimates transfer at EVERY COMPLEX point, with one open neighborhood and cutoff BEFORE ALL high indices and all complex sources.",
     "Article-facing statements retain the ENTIRE original real mean-zero physical period-one H-minus-one domain and identify every analytic real Dirichlet coordinate with the original label. One common complex neighborhood carries all actions, squared gaps, quotients and analytic simple energy coordinates together with full native spectrum exhaustion, injectivity and exact algebraic counts. Equality with the older intrinsic COMPLEX lexicographic list is proved on a common HIGH tail; no all-index equality on arbitrary old complex-label domains is asserted.",
-    "The cited PRIMARY Kappeler-Moehr-Topalov extended preprint was obtained from the authors Zurich archive and its relevant printed pages28-29 were rendered and visually checked. It confirms that the next angle-construction inputs are the ACTUAL norming sheet of the Dirichlet divisor and normalized Hill differentials. The current milestone constructs the divisor ENERGY coordinate, not that norming sheet, the differentials, angles, Birkhoff coordinates or map. Full source3.2(ii), source3.1 and ALL FIVE MAIN theorems remain OPEN."
+    "The cited PRIMARY Kappeler-Moehr-Topalov extended preprint was obtained from the authors Zurich archive and its relevant printed pages28-29 were rendered and visually checked. It confirms that the next angle-construction inputs are the ACTUAL norming sheet of the Dirichlet divisor and normalized Hill differentials. The current milestone constructs the divisor ENERGY coordinate, not that norming sheet, the differentials, angles, Birkhoff coordinates or map. Full source3.2(ii), source3.1 and ALL FIVE MAIN theorems remain OPEN.",
+    "The physical scalar Dirichlet terminal derivative, with initial position zero and derivative one, is jointly entire in complex energy and physical L2 potential. The fixed first-order vector is(0,i); the reconstructed derivative is(-i*z)*v1+(-i)*v2. Actual classical IVP agreement, frequency evenness, entire square descent INCLUDING ZERO energy and exact physical constant-shift law are proved.",
+    "The actual L2 terminal quasi-derivative is jointly entire and NONZERO at every scalar Dirichlet root by the physical determinant-one identity. On H1 Miura inputs, the actual physical terminal derivative equals U(1)*D plus this terminal quasi-derivative. This is proved using actual scalar IVP uniqueness on smooth profiles and H1 norm density. At a root the gauge correction vanishes, giving exact equality with the independently normalized physical L2 terminal derivative, including every complex constant energy shift.",
+    "The actual L2 Miura discriminant equals the sum of the actual two fundamental diagonal entries, by the verified H1 trace identity and L2 density. At a Dirichlet root, determinant one gives first diagonal entry=terminal inverse. Thus the prescribed diagonal DIFFERENCE is terminal inverse minus terminal, and its square is EXACTLY discriminant squared minus four. Its sign comes from actual fundamental solutions, not a selected square root.",
+    "Every existing real-centered Dirichlet ball supports ALL positive-index analytic NONZERO terminal multipliers. At physical L2 points these equal the SAME original scalar terminal derivative. The already verified common energy labels and original physical L2 density prove equality on ENTIRE COMPLEX overlaps. Gluing therefore gives one analytic nonzero multiplier for EVERY positive index on the EXISTING hillHminusCanonicalDirichletDomain, with no new shrinking or replacement domain.",
+    "Independence holds for EVERY valid complex L2 Miura lift u and EVERY complex constant c satisfying Miura(u)=q+inclusion(c), not only the selected balls. A reusable open-set equality lemma for every finite Banach exponent checks continuous equality on the dense one-derivative scalar domain. Apply it on the open inverse image of the common Dirichlet domain under u->Miura(u)-inclusion(c). The H1 comparison and physical L2 terminal identity give equality there, then continuity proves arbitrary-lift equality.",
+    "The intrinsic sheet w_n=d_n inverse minus d_n is analytic on the SAME common connected complex domain as ALL energies, actions, squared gaps and action quotients. It agrees with the ACTUAL diagonal fundamental difference for EVERY shifted Miura representation and satisfies w_n squared=Delta(mu_n) squared minus four. The original full real mean-zero physical period-one H-minus-one potentials retain their original ALL-index Dirichlet energy labels, exact derivative normalization and original discriminant in the resulting divisor pairs.",
+    "This constructs the actual normalized physical/quasi-Hill monodromy Dirichlet sheet. The further KMT integrating-factor representation by the separately gauged y-tilde equation is not defined or asserted here. Normalized Hill differentials, angles, complex collapsed-gap coordinate extensions, the actual KdV Birkhoff map and flows remain open; no full source3.2(ii) or MAIN theorem is claimed."
   ],
-  "source_correspondence": "Construct the ACTUAL ALL-index analytic SIMPLE Dirichlet energy coordinates on ONE common connected complex H-minus-one domain, with complete native spectrum exhaustion, no collisions, exact physical multiplicities, all-index real gap inclusion and original Hilbert asymptotics. Construct the ACTUAL ORIGINAL Dirichlet divisor NORMING SHEET above the now-proved analytic energies, independently of the Miura lift and shift; a principal square root of the radicand is not a substitute for the prescribed monodromy sheet. Then construct normalized ORIGINAL Hill holomorphic differentials, their local bounds, admissible-path Abelian phases, off-index phase sum and collapsed-gap coordinate extensions needed by source3.2(ii). The ALL-index Dirichlet energies, simplicity, full complex native spectrum exhaustion, noncollision and multiplicities are NOW PROVED; do not redo them. Complete the ACTUAL ORIGINAL KdV Birkhoff coordinates and the locally uniform estimate(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n), and source3.1/main1.4: original Gardner Poisson brackets, original differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are PROVED; its coordinate assertion and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute the NLS Birkhoff map for KdV. Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation with the original equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE remain UNPROVED; goal ACTIVE. Other spectral obligations remain only where needed. AppendixB, full source2.1(i)-(ii), source2.2, corrected2.15 and all-index action/gap/quotient constructions remain PROVED.",
-  "build_isolation": "Construct the ACTUAL ALL-index analytic SIMPLE Dirichlet energy coordinates on ONE common connected complex H-minus-one domain, with complete native spectrum exhaustion, no collisions, exact physical multiplicities, all-index real gap inclusion and original Hilbert asymptotics. All source/compiler/Git milestone writes private; canonical checkout and shared Git metadata read-only.",
+  "source_correspondence": "Construct the actual analytic nonzero Dirichlet norming multipliers and prescribed diagonal monodromy sheets, independent of EVERY complex L2 Miura lift and energy shift, on the SAME common original complex Dirichlet domain. Construct the ACTUAL normalized ORIGINAL Hill holomorphic differentials with the exact canonical spectral root, all periods and normalizations, joint entire energy/source analyticity and local bounds. The proposed odd-Dirac-differential quadratic descent needs proof of actual canonical-root reflection, contour-period matching, zero filling and Miura independence. The actual ALL-index simple Dirichlet energies AND nonzero analytic terminal norming multipliers/monodromy sheets are NOW PROVED; do not redo them. If using the literal KMT y-tilde equation, also formalize its integrating-factor gauge normalization; it is not supplied as an assumed identification. Construct admissible-path Abelian phases, their off-index sums, and the actual collapsed-gap Cartesian coordinate extensions for source3.2(ii). Retain the original local uniform estimate(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Do NOT infer a complex collapsed-gap Dirichlet point equals its endpoint or its Cartesian coordinates vanish; only the REAL endpoint statement is established. Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates and map: original Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; its coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute the NLS Birkhoff map for KdV. Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and the preceding verified spectral/action/gap/quotient/Dirichlet-energy dependencies remain proved.",
+  "build_isolation": "Construct the actual analytic nonzero Dirichlet norming multipliers and prescribed diagonal monodromy sheets, independent of EVERY complex L2 Miura lift and energy shift, on the SAME common original complex Dirichlet domain. All source/compiler/Git milestone writes private; canonical checkout and shared Git metadata read-only.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -2011,7 +2025,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "5cd08099b8648722a95d84db39dd9d7ed9263d5503f65b657d8ddf9306ade9f5",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "e1ccd8751ce0939f8b9bac8c43c65b777dac96199fa4e67bfb15fcb9e56816fa",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -2407,7 +2421,14 @@
     "NLS/ComplexAnalysis/SimpleRootBranchUniqueness.lean": "ec0868a02afaca77a6b78687386b0ddd458121c300124e54a684c5c6a1d4782d",
     "NLS/KdV/HminusOneCanonicalDirichletMultiplicity.lean": "fe2affb96d63449469792943256464d6f8bd1048185309b4a241af59d05fe875",
     "NLS/KdV/HminusOneCanonicalDirichletAsymptotics.lean": "d6fc2a7d4b6694542501ee4540289d59168f458623cda761f726b25219cb26e1",
-    "NLS/Articles/KdVPseudomeasures/OriginalAnalyticDirichletCoordinates.lean": "1f91d5ffb6c7fe0f9b460c37f20a90d0e0d7dc53a1ef34c204dc444ac412838b"
+    "NLS/Articles/KdVPseudomeasures/OriginalAnalyticDirichletCoordinates.lean": "1f91d5ffb6c7fe0f9b460c37f20a90d0e0d7dc53a1ef34c204dc444ac412838b",
+    "NLS/KdV/HillL2DirichletTerminal.lean": "4130b77ab5dbdd6d884dc136191bd8df9023cf7d7400e25f5758cb15dbdd194e",
+    "NLS/MKdV/MiuraL2DirichletTerminal.lean": "6cec277260dd1c73c9c4a7d7155d3bb424f8582162d70e5953127e25f95f42fa",
+    "NLS/MKdV/QuasiHillL2NormingTrace.lean": "eddcfeb666ff60ba139705ebe7bd689d0a897ff3eb80375e38ff5a9571f8664f",
+    "NLS/KdV/HminusOneDirichletNorming.lean": "118f922a4d01968ae56e3933247e1cf791d9d35d2e7f0ab5d2c46121ce38f42c",
+    "NLS/ZakharovShabat/SobolevScalarOpenEquality.lean": "d9d4972415a9d59b53c3e84e9ea5d715b1c6dc8c139a3abce16ca4ae9d15257a",
+    "NLS/KdV/HminusOneDirichletSheet.lean": "46ca129bfb5f3802878d41ee3748531cff1b5a2663ee7d72efbe7c04fd0bce3a",
+    "NLS/Articles/KdVPseudomeasures/OriginalDirichletDivisor.lean": "3e982f35de38bb0739842f453b11c32266a64b14f645fe25f7800f10a3ecc867"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -2415,12 +2436,12 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 4775,
-    "newly_checked_declarations_this_continuation": 44,
-    "new_theorems": 39,
-    "new_definitions": 5,
-    "total_checked_declarations": 4819,
-    "reuse": "Full original Hill/Dirichlet label and native multiplicity library, real-preserving Miura action/gap balls, canonical boundary roots on a common complex source neighborhood, actual auxiliary phase rotation, uniform native high Dirichlet control, real-form identity and analytic implicit inverse theorem. Common analytic simple energy sequence, full complex exhaustion/noncollision/counts and all-index gap matching are proved here."
+    "previous_checked_declarations": 4819,
+    "newly_checked_declarations_this_continuation": 60,
+    "new_theorems": 48,
+    "new_definitions": 12,
+    "total_checked_declarations": 4879,
+    "reuse": "Original physical scalar IVP, L2 Volterra curves, entire even square descent, H1 physical Miura regularity and smooth Fourier density, actual determinant-one identity, original physical L2 density, common analytic simple Dirichlet energy balls and their unchanged common domain."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -2449,7 +2470,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hminus-canonical-dirichlet-data.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hminus-dirichlet-norming.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -2697,13 +2718,14 @@
     "Canonical/high Hill action comparison at the SAME original indices, exact8*pi*n factorization, and locally uniform analytic high normalization around EVERY COMPLEX point of one common connected neighborhood of the entire real form.",
     "Glue analytic squared Hill gaps at ALL original positive indices on ONE open connected complex neighborhood, including collapsed gaps, and transfer locally uniform high normalization to this SAME canonical gap family at EVERY COMPLEX point.",
     "Analytic NONZERO canonical action/squared-gap quotients through collapse at ALL positive indices on ONE common connected complex neighborhood, with exact8*pi*n normalization locally uniform at EVERY COMPLEX point and ALL-index complex zero-locus equivalence.",
-    "Construct the ACTUAL ALL-index analytic SIMPLE Dirichlet energy coordinates on ONE common connected complex H-minus-one domain, with complete native spectrum exhaustion, no collisions, exact physical multiplicities, all-index real gap inclusion and original Hilbert asymptotics."
+    "Construct the ACTUAL ALL-index analytic SIMPLE Dirichlet energy coordinates on ONE common connected complex H-minus-one domain, with complete native spectrum exhaustion, no collisions, exact physical multiplicities, all-index real gap inclusion and original Hilbert asymptotics.",
+    "Construct the actual analytic nonzero Dirichlet norming multipliers and prescribed diagonal monodromy sheets, independent of EVERY complex L2 Miura lift and energy shift, on the SAME common original complex Dirichlet domain."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-canonical-dirichlet-data-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-dirichlet-norming-map.json",
   "baseline_validated_snapshot": {
-    "commit": "591fc2af4e14734d769fceb871177d020b13d81e",
-    "modules": 785,
-    "audited_declarations": 4775,
+    "commit": "b2ab71ca33a9156eead8d3b2d352b1ef5597aca3",
+    "modules": 793,
+    "audited_declarations": 4819,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   },
@@ -3090,5 +3112,30 @@
     "actual_KdV_Birkhoff_map_constructed": false,
     "actual_original_KdV_flow_constructed": false,
     "main_theorems_verified": false
+  },
+  "actual_HminusOne_Dirichlet_norming_and_monodromy_sheet": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-dirichlet-norming-map.json",
+    "physical_L2_terminal_derivative_jointly_entire_including_zero": true,
+    "physical_terminal_derivative_exact_constant_shift": true,
+    "H1_Miura_endpoint_gauge_correction_proved": true,
+    "L2_image_terminal_comparison_at_Dirichlet_root_proved": true,
+    "actual_two_diagonal_L2_Miura_trace_identity": true,
+    "actual_terminal_multiplier_nonzero_at_every_Dirichlet_root": true,
+    "ALL_index_local_norming_multipliers_analytic_nonzero": true,
+    "WHOLE_COMPLEX_overlap_independence_via_physical_L2_density": true,
+    "SAME_existing_common_complex_Dirichlet_domain_used": true,
+    "ANY_complex_L2_Miura_lift_and_ANY_complex_energy_shift_independence": true,
+    "reusable_open_equality_from_dense_one_derivative_domain_all_finite_p": true,
+    "ACTUAL_Dirichlet_NORMING_sheet_constructed": true,
+    "actual_diagonal_difference_sign_retained": true,
+    "actual_sheet_square_equals_original_discriminant_at_original_mu_squared_minus_four": true,
+    "original_full_real_mean_zero_period_one_distribution_and_index_preserved": true,
+    "literal_KMT_y_tilde_integrating_factor_equation_formalized": false,
+    "ACTUAL_normalized_Hill_differentials_constructed": false,
+    "ACTUAL_KdV_angles_constructed": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "complex_collapsed_Dirichlet_point_equals_endpoint_asserted": false,
+    "full_source3_2_coordinate_assertion_proved": false,
+    "all_five_main_theorems_proved": false
   }
 }
