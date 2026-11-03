@@ -130,5 +130,29 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "eta_identity_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-eigen-residual-map.json",
+    "actual_physical_spectral_operator": true,
+    "faithful_original_H1_lift": true,
+    "exact_original_unbounded_base_action": true,
+    "restriction_eigenvalues_exactly_enclosed_original": true,
+    "coincident_nonsemisimple_roots_included": true,
+    "any_actual_orthonormal_basis_identity": true,
+    "canonical_source_eta_gamma_identity": true,
+    "uniform_original_endpoint_norm_ball_cutoff": true,
+    "source_Lemma2_13_eta_identity_proved": true,
+    "source_C3_entire_physical_spectral_range_regular": true,
+    "original_distribution_preserved": true,
+    "source_Lemma2_13_eta_bound_proved": false,
+    "source_Lemma2_13_complete": false,
+    "source_Lemma2_14_proved": false,
+    "source33_periodic_convergence_proved": false,
+    "source_AppendixC4_logarithmic_rate_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
 }

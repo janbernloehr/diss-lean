@@ -628,6 +628,12 @@ modules = [
     'NLS.KdV.SingularHillSpectralBasis',
     'NLS.Articles.KdVPseudomeasures.PeriodicSpectralBasis',
     'NLS.KdV.SingularHillSpectralAction',
+    'NLS.FunctionalAnalysis.TwoDimensionalEigenResidual',
+    'NLS.KdV.SingularHillSpectralOperator',
+    'NLS.KdV.SingularHillSpectralEigenvalues',
+    'NLS.KdV.SingularHillEigenResidual',
+    'NLS.Articles.KdVPseudomeasures.PeriodicEigenResidual',
+    'NLS.Articles.KdVPseudomeasures.PeriodicSpectralRegularity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

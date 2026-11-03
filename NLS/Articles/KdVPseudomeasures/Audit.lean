@@ -594,6 +594,12 @@ import NLS.KdV.SingularHillNormalizedEigenfunction
 import NLS.KdV.SingularHillSpectralBasis
 import NLS.Articles.KdVPseudomeasures.PeriodicSpectralBasis
 import NLS.KdV.SingularHillSpectralAction
+import NLS.FunctionalAnalysis.TwoDimensionalEigenResidual
+import NLS.KdV.SingularHillSpectralOperator
+import NLS.KdV.SingularHillSpectralEigenvalues
+import NLS.KdV.SingularHillEigenResidual
+import NLS.Articles.KdVPseudomeasures.PeriodicEigenResidual
+import NLS.Articles.KdVPseudomeasures.PeriodicSpectralRegularity
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4607,3 +4613,18 @@ import NLS.KdV.SingularHillSpectralAction
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicSpectralBasis
 #print axioms NLS.KdV.singularHillDomainRieszProjection_fixed_of_physical_range
 #print axioms NLS.KdV.exists_singularHillOperator_spectral_L2_action
+#print axioms NLS.FunctionalAnalysis.exists_twoDimensional_eigen_residual
+#print axioms NLS.KdV.singularHillSpectralDomainLift
+#print axioms NLS.KdV.singularHillSpectralDomainLift_L2
+#print axioms NLS.KdV.singularHillRieszToH1_L2_mem_range
+#print axioms NLS.KdV.singularHillSpectralOperator
+#print axioms NLS.KdV.singularHillSpectralOperator_base
+#print axioms NLS.KdV.singularHillSpectralOperator_eigen_iff
+#print axioms NLS.KdV.singularHillSpectralDomainLift_ne_zero
+#print axioms NLS.KdV.singularHillSpectralOperator_eigenvalue_enclosed
+#print axioms NLS.KdV.exists_singularHillSpectralOperator_eigenvector
+#print axioms NLS.KdV.exists_singularHill_eigen_residual
+#print axioms NLS.Articles.KdVPseudomeasures.exists_sourcePeriodicEigenResidual
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicEigenResidual
+#print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicSpectralVector_regular
+#print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicH1Vector_regular
