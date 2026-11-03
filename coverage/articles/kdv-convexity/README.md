@@ -1901,16 +1901,53 @@ Lemma 4.6(ii), the common infinite-tail matching, action-fiber invariance
 and the actual global positive-ell2 Hamiltonian extension remain open.
 All main theorem flags remain unverified.
 
+## Canonical/high matching and a common all-index analytic family
+
+`HillHminusOneCanonicalTailLocalization.lean` identifies the intrinsic
+labels with sharply confined ordered high pairs, independently of disc
+radius. On one common H^-1 neighborhood both canonical endpoints lie
+within n/8 of the free energy at every high index and real input.
+`RealGapCircleNesting.lean` and
+`HillHminusOneTailContourGeometry.lean` combine this with the quadratic
+free lattice spacing. The adjacent actual bands are at least 8*n long;
+the free-centered radius-n disc lies inside the canonical midpoint disc,
+and both circles enclose the same gap cut, including a collapsed gap.
+
+`HillHminusOneCanonicalHighPeriods.lean` deforms the two circles through
+the actual band-filled primitive's analytic cut domain. Exact source
+agreement on the original circle retains both the logarithm period and
+the original constants. One complex-open neighborhood and cutoff precede
+every high positive index and every polynomial order. At all real inputs
+there, the actual canonical Arnold and cubic periods equal the literal
+uniform high source periods.
+
+The article-specific `CommonCanonicalMomentFamily.lean` combines that
+tail with the simultaneously analytic finite head. At every real H^-1
+reference it constructs C>0, N>=2 and one complex-open W, then analytic
+A_n,m and R_n on W for every positive n and every polynomial order m.
+Every real input in W gives the actual canonical periods. Throughout the
+complex tail the functions are exactly the old literal source periods
+and satisfy norm(8*n*pi*R_n)<=C*norm(A_n,0)^2 with the same constant C.
+All real Arnold nonnegativity, cubic nonpositivity/reality and the exact
+common zero criterion survive in this one family.
+
+Thus the finite head and infinite tail no longer require separate
+potential neighborhoods. This is a common local family at each real
+reference, not yet a single glued family on a complex neighborhood of
+the entire real potential space. Global Birkhoff coordinates, their
+Arnold-action identity and real isospectral/action-fiber invariance
+remain required before the checked action-space descent and ell2
+summation apply. The physical Hamiltonian/frequency identities and all
+main theorem completion flags remain open.
+
 ## Remaining essential KdV work
 
-1. Match the actual canonical periods to the existing common high source
-   family and combine that tail with the simultaneous finite-head
-   analytic extensions on one complex H^-1 neighborhood. Local analytic
-   extensions now agree with every nearby real canonical period, at all
-   positive indices and simultaneously on any prescribed finite set.
-   Glue the global potential family and prove the remaining physical
-   trace/action identities. All canonical central signs and exact
-   Arnold/cubic zero criteria are now proved.
+1. Glue the common local analytic moment families over the entire real
+   H^-1 potential space and prove the remaining intrinsic operator and
+   isospectral identities. Canonical/high matching and one neighborhood
+   for all indices with the uniform complex-tail quadratic bound are now
+   proved at every real reference. All canonical signs and exact
+   Arnold/cubic zero criteria are proved as well.
 2. The **high-index complex H^-1-neighborhood** bounds
    |R_n|=O(gamma_n^4/n^3), gamma_n^2/n<=16*pi*|A_n| and
    |8*n*pi*R_n|<=C*|A_n|^2 are now proved. Identify A_n with the
@@ -1963,15 +2000,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `c3c374f` contains 380 source modules. Every
+The validated baseline at `f1397f8` contains 385 source modules. Every
 baseline source hash remains unchanged. Five authored modules pass
 incremental Lean 4.33.1/mathlib v4.33.1 checks with `warningAsError=true`.
-The full reproducible script now lists 385 source modules. The
+The full reproducible script now lists 390 source modules. The
 positive-index example passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 188 additional shared modules:
-4028 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 189 additional shared modules:
+4063 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

@@ -757,10 +757,20 @@
         "NLS.KdV.hillHminusRealGapCubicContourMoment_neg_iff_open",
         "NLS.KdV.hillHminusRealGapCubicContourMoment_eq_zero_iff_closed",
         "NLS.KdV.hillHminusRealGapCubicContourMoment_eq_zero_iff_Arnold_zero",
-        "NLS.Articles.KdVConvexity.exists_finite_analytic_canonical_periods_with_signs"
+        "NLS.Articles.KdVConvexity.exists_finite_analytic_canonical_periods_with_signs",
+        "NLS.ComplexAnalysis.real_gap_comparison_circle_nesting",
+        "NLS.KdV.exists_hillHminus_canonical_tail_small_localization",
+        "NLS.KdV.freeHillValue_prev_spacing_ge_ten",
+        "NLS.KdV.freeHillValue_next_spacing_ge_ten",
+        "NLS.KdV.hillHminus_tail_circle_nesting_of_localization",
+        "NLS.KdV.hillHminusRealGap_cut_subset_inner_ball",
+        "NLS.KdV.hillHminus_gap_circleIntegral_eq_freeCircle_of_nesting",
+        "NLS.KdV.hillHminus_high_periods_eq_canonical_of_nesting",
+        "NLS.KdV.exists_hillHminus_canonical_high_period_agreement",
+        "NLS.Articles.KdVConvexity.exists_common_analytic_canonical_moment_family"
       ],
       "remaining": [
-        "Match the actual canonical periods to the existing common high source family and combine the simultaneous finite-head extensions with that tail on one complex H^-1 neighborhood. All canonical cubic signs, literal real profile formulas, Arnold positivity and exact closed-gap/Arnold-zero/cubic-zero equivalences are now proved at every positive index. Global potential-family gluing, intrinsic singular-Hill operator identification, Birkhoff-action identification, real isospectral invariance and physical energy/frequency identities remain.",
+        "Glue the common local analytic moment families over the entire real H^-1 potential space, and prove intrinsic singular-Hill operator identification, the global KdV Birkhoff map, its canonical Arnold-action identity and real isospectral/action-fiber invariance. The canonical/high-period matching and one complex neighborhood for the entire moment sequence with the uniform quadratic complex-tail bound are now proved at every real reference. Physical energy/frequency identities, the -6*Id Taylor coefficient and main Theorems 1.2 and 1.3 remain.",
         "Identify the actual Arnold periods with the action coordinates of the same global H^-1 KdV Birkhoff map used in the article. The proved estimates concern the constructed spectral periods, not an arbitrary coordinate map.",
         "Apply the proved simultaneous descent/gluing and exact weighted-action summation mechanism to the actual KdV Birkhoff-coordinate cubic periods. This still requires the actual global H^-1 Birkhoff map and Arnold-period action identity, real isospectral invariance on its action fibers, and analytic finite central periods. No common action domain is now required as a separate abstract hypothesis.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
@@ -1940,7 +1950,7 @@
     "level_zero_Arnold_derivative_integral_identity_proved": true,
     "Arnold_normalization": "A_n=-(1/pi)*integral F=(1/pi)*integral lambda*Delta_prime/R; counterclockwise orientation and no extra factor i.",
     "cubic_normalization": "R_n=(1/pi)*integral (F+i*n*pi)^3, on the canonical circle at every n:PNat.",
-    "new_all_index_real_periods_identified_with_existing_common_high_family": false,
+    "new_all_index_real_periods_identified_with_existing_common_high_family": true,
     "all_central_complex_potential_analytic_periods_constructed": true,
     "indexed_primitive_limits_at_all_real_endpoints_proved": true,
     "filled_central_shifted_squares_proved": true,
@@ -1968,7 +1978,8 @@
     "new_all_real_periods_module": "NLS.KdV.HillHminusOneAllRealPeriods",
     "central_period_analyticity_scope": "Local complex-analytic extensions of actual canonical periods at every real reference and every positive index, agreeing at all nearby real inputs; simultaneous on any prescribed finite index set. Common infinite-tail matching and global family gluing remain open.",
     "all_canonical_cubic_signs_and_Arnold_zero_criteria_proved": true,
-    "Birkhoff_action_identity_remains_separate": true
+    "Birkhoff_action_identity_remains_separate": true,
+    "canonical_high_matching_scope": "One complex-open neighborhood and cutoff precede all high indices and polynomial orders; identities with actual canonical periods hold at every real input there. The resulting common family equals the literal source tail at all complex inputs."
   },
   "Hminus1_all_gap_square_progress": {
     "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
@@ -1995,7 +2006,7 @@
     "positive_gap_length_or_simple_endpoints_assumed": false,
     "bounded_L2_norm_or_L2_approximation_assumed": false,
     "joint_complex_potential_analyticity_of_new_filled_squares_proved": false,
-    "new_all_index_real_periods_identified_with_existing_common_high_family": false,
+    "new_all_index_real_periods_identified_with_existing_common_high_family": true,
     "all_central_complex_potential_analytic_periods_constructed": true,
     "all_central_period_signs_and_Birkhoff_action_identity_proved": false,
     "intrinsic_singular_Hill_operator_characteristic_identity_proved": false,
@@ -2029,7 +2040,8 @@
     "joint_extension_scope": "Joint analytic extensions of the entire reference filled square on each compact isolating disc; identification with the canonical family at nearby real potentials remains open.",
     "central_period_analyticity_scope": "Local complex-analytic extensions of actual canonical periods at every real reference and every positive index, agreeing at all nearby real inputs; simultaneous on any prescribed finite index set. Common infinite-tail matching and global family gluing remain open.",
     "all_canonical_cubic_signs_and_Arnold_zero_criteria_proved": true,
-    "Birkhoff_action_identity_remains_separate": true
+    "Birkhoff_action_identity_remains_separate": true,
+    "canonical_high_matching_scope": "One complex-open neighborhood and cutoff precede all high indices and polynomial orders; identities with actual canonical periods hold at every real input there. The resulting common family equals the literal source tail at all complex inputs."
   },
   "Hminus1_joint_gap_germ_progress": {
     "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
@@ -2052,7 +2064,7 @@
     "neighborhood_scope": "For each fixed real reference q and positive index n, one complex-open V and one fixed energy disc/collar. A common V for every n is not asserted by this milestone.",
     "joint_extensions_identified_with_canonical_families_at_nearby_real_potentials": false,
     "local_period_germs_glued_into_one_actual_potential_space_family": false,
-    "new_all_index_real_periods_identified_with_existing_common_high_family": false,
+    "new_all_index_real_periods_identified_with_existing_common_high_family": true,
     "all_central_period_signs_and_Birkhoff_action_identity_proved": false,
     "intrinsic_singular_Hill_operator_characteristic_identity_proved": false,
     "actual_global_positive_ell2_Hamiltonian_extension_proved": false,
@@ -2078,7 +2090,8 @@
     "remaining_joint_extension_identification_scope": "The primitive collars and canonical periods are now matched at all nearby real inputs. Identification of the full filled-square charts with the varying canonical filled squares remains separate.",
     "one_common_complex_neighborhood_for_any_prescribed_finite_period_head": true,
     "all_canonical_cubic_signs_and_Arnold_zero_criteria_proved": true,
-    "Birkhoff_action_identity_remains_separate": true
+    "Birkhoff_action_identity_remains_separate": true,
+    "canonical_high_matching_scope": "One complex-open neighborhood and cutoff precede all high indices and polynomial orders; identities with actual canonical periods hold at every real input there. The resulting common family equals the literal source tail at all complex inputs."
   },
   "Hminus1_actual_canonical_period_progress": {
     "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
@@ -2100,8 +2113,8 @@
     "finite_head_quantifier": "For every real q and finite S of positive indices, there is one complex-open W containing q, then analytic families A[n,m], R[n] on W for every n in S and every m, agreeing with the literal actual canonical periods at every real p in W.",
     "normalization": "A_n,m=-(1/pi)*integral lambda^m*F; R_n=(1/pi)*integral (F+i*n*pi)^3, counterclockwise and without an extra factor i.",
     "central_and_collapsed_gaps_included": true,
-    "common_neighborhood_for_all_positive_indices_with_existing_high_family_proved": false,
-    "canonical_real_periods_matched_to_existing_common_high_source_family": false,
+    "common_neighborhood_for_all_positive_indices_with_existing_high_family_proved": true,
+    "canonical_real_periods_matched_to_existing_common_high_source_family": true,
     "global_potential_space_analytic_period_family_gluing_proved": false,
     "all_central_cubic_signs_and_Birkhoff_action_identity_proved": false,
     "intrinsic_singular_Hill_operator_characteristic_identity_proved": false,
@@ -2125,7 +2138,8 @@
       "Jointly analytic reference gap-period germs"
     ],
     "all_canonical_cubic_signs_and_Arnold_zero_criteria_proved": true,
-    "Birkhoff_action_identity_remains_separate": true
+    "Birkhoff_action_identity_remains_separate": true,
+    "canonical_high_matching_scope": "One complex-open neighborhood and cutoff precede all high indices and polynomial orders; identities with actual canonical periods hold at every real input there. The resulting common family equals the literal source tail at all complex inputs."
   },
   "Hminus1_all_period_sign_zero_progress": {
     "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
@@ -2149,8 +2163,8 @@
     "one_analytic_neighborhood_for_every_prescribed_finite_head_retains_all_signs_and_zero_relations": true,
     "article_preparation_declaration": "NLS.Articles.KdVConvexity.exists_finite_analytic_canonical_periods_with_signs",
     "global_Birkhoff_actions_identified_with_these_Arnold_periods": false,
-    "canonical_real_periods_matched_to_existing_common_high_source_family": false,
-    "common_neighborhood_for_all_positive_indices_with_existing_high_family_proved": false,
+    "canonical_real_periods_matched_to_existing_common_high_source_family": true,
+    "common_neighborhood_for_all_positive_indices_with_existing_high_family_proved": true,
     "real_isospectral_invariance_and_action_fiber_invariance_proved": false,
     "actual_global_positive_ell2_Hamiltonian_extension_proved": false,
     "new_authored_modules": [
@@ -2160,6 +2174,40 @@
       "NLS.KdV.HillHminusOneAllPeriodZeros",
       "NLS.Articles.KdVConvexity.CanonicalMomentPreparation"
     ],
-    "source_preparation_scope": "The actual finite-head spectral analyticity, real signs and zero criteria needed for Lemma 4.6(i); no claim of Birkhoff-action identification or Lemma 4.6(ii)."
+    "source_preparation_scope": "The actual finite-head spectral analyticity, real signs and zero criteria needed for Lemma 4.6(i); no claim of Birkhoff-action identification or Lemma 4.6(ii).",
+    "canonical_high_matching_scope": "One complex-open neighborhood and cutoff precede all high indices and polynomial orders; identities with actual canonical periods hold at every real input there. The resulting common family equals the literal source tail at all complex inputs."
+  },
+  "Hminus1_common_canonical_family_progress": {
+    "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
+    "canonical_tail_endpoints_uniformly_within_n_over_eight_of_free_energy": true,
+    "small_endpoint_bound_uses_actual_ordered_pair_uniqueness_across_radii": true,
+    "adjacent_actual_tail_bands_uniformly_at_least_eight_n": true,
+    "source_free_centered_radius_n_disc_nested_in_canonical_gap_disc": true,
+    "source_and_canonical_circles_enclose_the_same_actual_cut_including_collisions": true,
+    "actual_glued_primitive_is_exact_original_source_primitive_on_source_circle": true,
+    "nested_circle_deformation_retains_normalization_and_orientation": true,
+    "canonical_high_periods_equal_literal_common_source_periods_at_all_nearby_real_inputs": true,
+    "tail_matching_neighborhood_precedes_every_high_index_and_every_polynomial_moment": true,
+    "finite_head_and_uniform_tail_combined_on_one_complex_potential_neighborhood": true,
+    "common_family_quantifier": "For every real reference q, there exist C>0, N>=2 and one complex-open W containing q, then families A[n,m] and R[n] analytic on W for every positive n and every m>=0.",
+    "all_real_inputs_in_common_W_match_actual_canonical_periods": true,
+    "tail_families_are_exact_literal_high_source_periods_even_at_complex_inputs": true,
+    "uniform_complex_tail_quadratic_estimate": "For all n>=N and all complex p in W, norm(8*n*pi*R_n(p))<=C*norm(A_n,0(p))^2.",
+    "all_real_Arnold_nonnegativity_and_cubic_nonpositivity_reality_retained": true,
+    "all_real_Arnold_zero_iff_cubic_zero_retained": true,
+    "central_and_collapsed_gaps_included": true,
+    "common_family_declaration": "NLS.Articles.KdVConvexity.exists_common_analytic_canonical_moment_family",
+    "one_global_complex_neighborhood_of_entire_real_potential_space_with_glued_functions_proved": false,
+    "actual_global_KdV_Birkhoff_map_or_Arnold_action_identity_proved": false,
+    "real_isospectral_and_action_fiber_invariance_proved": false,
+    "actual_global_positive_ell2_Hamiltonian_extension_proved": false,
+    "new_authored_modules": [
+      "NLS.ComplexAnalysis.RealGapCircleNesting",
+      "NLS.KdV.HillHminusOneCanonicalTailLocalization",
+      "NLS.KdV.HillHminusOneTailContourGeometry",
+      "NLS.KdV.HillHminusOneCanonicalHighPeriods",
+      "NLS.Articles.KdVConvexity.CommonCanonicalMomentFamily"
+    ],
+    "normalization": "A_n,m=-(1/pi)*integral lambda^m*F; R_n=(1/pi)*integral (F+i*n*pi)^3; same source branches, counterclockwise orientation and no extra factor i."
   }
 }
