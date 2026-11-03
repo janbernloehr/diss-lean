@@ -5161,3 +5161,9 @@ import NLS.KdV.HillSmoothEnergyTrace
 import NLS.KdV.HillHierarchyMomentContinuity
 import NLS.KdV.HillSobolevEnergy
 import NLS.KdV.HillH1EnergyTrace
+import NLS.DifferentialPolynomial.PowerSeriesDerivation
+import NLS.DifferentialPolynomial.DifferentialRiccati
+import NLS.DifferentialPolynomial.LogarithmicDerivative
+import NLS.DifferentialPolynomial.ScalarRiccatiLogarithm
+import NLS.KdV.HillRiccatiHierarchy
+import NLS.KdV.HillHierarchyPhase

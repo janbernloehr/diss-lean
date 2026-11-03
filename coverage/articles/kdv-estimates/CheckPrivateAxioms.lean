@@ -1,3 +1,9 @@
+import NLS.DifferentialPolynomial.PowerSeriesDerivation
+import NLS.DifferentialPolynomial.DifferentialRiccati
+import NLS.DifferentialPolynomial.LogarithmicDerivative
+import NLS.DifferentialPolynomial.ScalarRiccatiLogarithm
+import NLS.KdV.HillRiccatiHierarchy
+import NLS.KdV.HillHierarchyPhase
 import NLS.KdV.HillHierarchyMomentContinuity
 import NLS.KdV.HillSobolevEnergy
 import NLS.KdV.HillH1EnergyTrace
@@ -450,7 +456,29 @@ run_cmd do
     ``NLS.ComplexAnalysis.norm_square_model_energy_error_le,
     ``NLS.ComplexAnalysis.norm_square_energy_error_of_phase_error,
     ``NLS.ComplexAnalysis.norm_energy_circle_coefficient_sub_le,
-    ``NLS.nat_tsum_tail_antitone_of_nonneg]
+    ``NLS.nat_tsum_tail_antitone_of_nonneg,
+    ``NLS.DifferentialPolynomial.powerSeriesDerivation,
+    ``NLS.DifferentialPolynomial.coeff_powerSeriesDerivation,
+    ``NLS.DifferentialPolynomial.powerSeriesDerivation_C,
+    ``NLS.DifferentialPolynomial.powerSeriesDerivation_X,
+    ``NLS.DifferentialPolynomial.powerSeriesDerivation_commute,
+    ``NLS.DifferentialPolynomial.differentialRiccatiSequence,
+    ``NLS.DifferentialPolynomial.differentialRiccatiSequence_zero,
+    ``NLS.DifferentialPolynomial.differentialRiccatiSequence_one,
+    ``NLS.DifferentialPolynomial.differentialRiccatiSequence_recurrence,
+    ``NLS.DifferentialPolynomial.differentialRiccatiSequence_unique,
+    ``NLS.DifferentialPolynomial.differentialRiccatiSeries,
+    ``NLS.DifferentialPolynomial.coeff_differentialRiccatiSeries,
+    ``NLS.DifferentialPolynomial.differentialRiccatiSeries_equation,
+    ``NLS.DifferentialPolynomial.differentialRiccatiSeries_unique,
+    ``NLS.DifferentialPolynomial.differentialRiccatiSequence_neg_derivation,
+    ``NLS.DifferentialPolynomial.differentialRiccatiSeries_neg_derivation,
+    ``NLS.DifferentialPolynomial.powerSeriesDerivation_neg,
+    ``NLS.DifferentialPolynomial.logarithmicPrimitiveCoefficient,
+    ``NLS.DifferentialPolynomial.derivation_logarithmicPrimitiveCoefficient,
+    ``NLS.DifferentialPolynomial.scalarRiccatiLogInput,
+    ``NLS.DifferentialPolynomial.scalarRiccati_log_derivative_identity,
+    ``NLS.DifferentialPolynomial.derivation_scalarRiccati_log_odd]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

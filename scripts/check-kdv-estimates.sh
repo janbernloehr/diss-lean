@@ -28,6 +28,7 @@ ensure_private_dir NLS/SequenceSpaces
 ensure_private_dir NLS/ComplexAnalysis
 ensure_private_dir NLS/Fourier
 ensure_private_dir NLS/ZakharovShabat
+ensure_private_dir NLS/DifferentialPolynomial
 for imported_entry in "$reference"/.lake/build/lib/lean/NLS/*; do
   target="$build_root/NLS/${imported_entry##*/}"
   if [[ ! -e "$target" && ! -L "$target" ]]; then
@@ -69,6 +70,7 @@ modules+=(NLS/SequenceSpaces/LocalSeriesContinuity NLS/KdV/HillActionTailBudget 
 modules+=(NLS/KdV/HillFinitePhysicalPotential NLS/KdV/HillRealWeightedTruncation NLS/KdV/HillL2QuadraticTrace)
 modules+=(NLS/ComplexAnalysis/WeightedSquareRemainder NLS/ComplexAnalysis/EnergyContourCoefficient NLS/KdV/HillL2UpperEnergySquareAsymptotics NLS/KdV/HillL2EnergySquareCircleAsymptotics NLS/KdV/HillSmoothEnergyTraceLimit NLS/KdV/HillHighMomentSigns NLS/KdV/HillSmoothEnergyTrace)
 modules+=(NLS/KdV/HillHierarchyMomentContinuity NLS/KdV/HillSobolevEnergy NLS/KdV/HillH1EnergyTrace)
+modules+=(NLS/DifferentialPolynomial/PowerSeriesDerivation NLS/DifferentialPolynomial/DifferentialRiccati NLS/DifferentialPolynomial/LogarithmicDerivative NLS/DifferentialPolynomial/ScalarRiccatiLogarithm NLS/KdV/HillRiccatiHierarchy NLS/KdV/HillHierarchyPhase)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
