@@ -34,8 +34,8 @@ in H^-1, and normalized by exact indexed trace parity. Canonical gap
 circles with actual zero count two are now constructed at every index.
 The actual primitive now glues holomorphically on the entire real-band
 domain, with exact source normalization. The all-index real periods are
-constructed and real; their complex-potential analytic extensions and
-indexed endpoint limits remain unproved.
+constructed and real; their complex-potential analytic extensions remain unproved. Indexed
+endpoint limits and energy-analytic filled squares are proved below.
 
 Physical energy/frequency identification, the -6*Id quadratic coefficient
 and the Fourier-Lebesgue assertions in Theorems 1.2–1.3 also remain open.
@@ -1588,8 +1588,8 @@ Cutoff-independent uniqueness, H^-1 continuity, lowest-root simplicity,
 central trace parity and canonical gap-circle geometry are now proved
 below. The actual primitive now glues holomorphically on the entire real-band
 domain, with exact source normalization. The all-index real periods are
-constructed and real; their complex-potential analytic extensions and
-indexed endpoint limits remain unproved. This is a labeling of the constructed entire
+constructed and real; their complex-potential analytic extensions remain unproved. Indexed
+endpoint limits and energy-analytic filled squares are proved below. This is a labeling of the constructed entire
 H^-1 characteristic; its singular-operator identification and global
 KdV Birkhoff-action interpretation remain open. Theorem 1.1 and all other
 main theorem flags remain unverified.
@@ -1632,9 +1632,9 @@ retains count two and boundary nonvanishing on a complex H^-1-open
 neighborhood of the real input. This neighborhood may depend on the gap.
 
 The actual primitive now glues holomorphically across all these real
-bands, as proved below. Indexed endpoint boundary values, filled central
-primitive squares and analytic complex-potential central Arnold/cubic
-periods remain to be proved. Theorem 1.1
+bands, as proved below. Indexed endpoint boundary values and energy-analytic
+filled central squares are also proved below. Analytic complex-potential
+central Arnold/cubic periods remain to be proved. Theorem 1.1
 and all main theorem flags remain unverified; the global Birkhoff-action
 identity and real isospectral invariance are still required for action
 descent and the global positive-ell2 Hamiltonian extension.
@@ -1684,9 +1684,10 @@ with counterclockwise orientation and no extra factor i. The cubic
 period is (1/pi)*integral (F+i*n*pi)^3. These are actual real-potential
 contour integrals, not assumed coordinate-space factors.
 
-Indexed endpoint boundary values, filled central shifted squares,
-complex-potential analytic extensions of the central periods and matching
-to the common high family remain unproved. Central sign and action
+Indexed endpoint boundary values and filled central shifted squares
+are proved in the next milestone. Complex-potential analytic extensions
+of the central periods and matching to the common high family remain
+unproved. Central sign and action
 identities, the global KdV Birkhoff map and real isospectral invariance
 are still required for action descent and the global positive-ell2
 Hamiltonian extension. Theorem 1.1 and the other main theorem flags
@@ -1699,16 +1700,65 @@ five retained import boundaries are byte-identical and pinned in
 band-gluing proofs adapt the shared L2 arguments to the actual H^-1
 characteristic; no new spectral or Birkhoff theorem is assumed.
 
+## Actual indexed endpoints and filled H^-1 squares at every gap
+
+`HillHminusOneAllBoundaryLimits.lean` proves full upper half-plane limits
+of the actual primitive and root at every real energy. At a characteristic
+zero the root tends to zero. Its multiplier tends to the nonzero
+half-trace, so a local logarithm preserves the actual integer period.
+Both real boundary functions are continuous, including branch endpoints
+and collisions, and retain their hyperbolic trace identities.
+
+`HillHminusOneBoundaryLabelContinuity.lean` proves continuity of the actual
+primitive boundary value at every moving intrinsic label in any
+continuous real H^-1 potential family. The joint multiplier limit and a
+fixed positive-height anchor control the logarithm period.
+`HillHminusOneAllEndpointNormalization.lean` follows the real scaling path
+from zero and proves F_upper(lambda_j)=-i*pi*floor((j+1)/2). Both endpoints
+of the nth gap therefore have value -i*n*pi. There is no high-energy
+cutoff, positive-gap assumption or bounded L2 norm assumption.
+
+`HillHminusOneRealGapSigns.lean` propagates actual characteristic signs
+across simple open-gap endpoints. The actual signed trace exceeds two
+throughout each open gap. `HillHminusOneRealGapProfile.lean` defines its
+literal arcosh profile v_n. It is continuous and nonnegative on each
+closed gap, positive in the interior and zero at the endpoints.
+`HillHminusOneBoundaryGapProfile.lean` and
+`HillHminusOneGlobalGapBoundaryValues.lean` identify the actual full upper
+and lower primitive limits with v_n-i*n*pi and -v_n-i*n*pi. Their vertical
+jump is exactly 2*v_n, including at central endpoints and collapsed gaps.
+
+`HillHminusOneAllGapSquares.lean` fills K_n=(F+i*n*pi)^2 through every
+closed gap. The two boundary signs give the same square, hence a
+continuous full-plane extension. The entire squared-cosh coordinate has
+nonzero derivative on v_n^2, so its local analytic inverse proves energy
+analyticity across the gap and its endpoints. The resulting actual K_n
+is analytic on the entire canonical midpoint disc of radius half-gap
+length plus twice its positive collar, at every n>=1. On the real gap
+K_n=v_n^2 is nonnegative. The exact identity
+coshSquareCoordinate(K_n)=(-1)^n*Delta/2 retains source normalization.
+
+This is energy analyticity for each fixed real H^-1 potential. Joint
+analyticity in nearby complex potentials, analytic central periods,
+matching to the existing common high family, central period signs and
+Birkhoff-action identification remain open. The global positive-ell2
+Hamiltonian extension and all main theorems remain unverified.
+
+Six generic boundary-limit, sign, continuous-extension and inverse-coordinate
+modules are reused byte-for-byte from `articles/kdv-estimates` at
+`1184615`, with retained import hashes in `endpoint-shared-imports.json`.
+The eight H^-1 modules adapt the verified L2 arguments to the actual
+unit-period distributional characteristic and the intrinsic H^-1 labels.
+
 ## Remaining essential KdV work
 
-1. Prove indexed endpoint boundary values for the newly glued H^-1
-   primitive, fill the finite central shifted squares, and construct joint
-   analytic extensions of the canonical real contour periods to complex
-   potential neighborhoods. The primitive and root already glue across
-   every open real band with their exact old-source normalization, trace
-   and derivative identities. All positive-index real contour periods are
-   now defined, integrable and real. Match them to the existing common
-   high source family and complete the remaining central estimates.
+1. Extend the filled actual central shifted squares and canonical contour
+   periods jointly analytically in nearby complex H^-1 potentials. The
+   actual indexed endpoint limits, full two-sided gap profiles and
+   energy-analytic filled squares on all canonical gap discs are now
+   proved, including central and collapsed gaps. Match the all-index real
+   periods to the existing common high source family and complete the
+   remaining central estimates.
 2. The **high-index complex H^-1-neighborhood** bounds
    |R_n|=O(gamma_n^4/n^3), gamma_n^2/n<=16*pi*|A_n| and
    |8*n*pi*R_n|<=C*|A_n|^2 are now proved. Identify A_n with the
@@ -1746,9 +1796,10 @@ the generic logarithm-strip normalization module is newly imported.
 The intrinsic real L2 labels, their continuity and trace parity are now
 included as prerequisites of the physical L2 half-plane sign theorem in
 the 24-module import slice above. Canonical gap-tail modules remain
-available on that branch. Identification and continuity of global labels
-in the required H^-1 topology, finite central contour construction, and
-the Birkhoff construction remain open.
+available on that branch. The intrinsic H^-1 labels and their continuity, finite real contour
+construction and all-index energy-analytic filled squares are now proved
+in this branch. Joint complex-potential central periods and the global
+Birkhoff construction remain open.
 No separate messages were sent to other article chats.
 
 ## Validation and worktree
@@ -1760,15 +1811,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `c27d011` contains 337 source modules. Every
-baseline source hash remains unchanged. Four exact shared modules and four
+The validated baseline at `404dd2c` contains 345 source modules. Every
+baseline source hash remains unchanged. Six exact shared modules and eight
 authored or adapted modules pass incremental Lean 4.33.1/mathlib v4.33.1
 checks with `warningAsError=true`. The full reproducible script now lists
-345 source modules. The positive-index example passes.
+359 source modules. The positive-index example passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 170 additional shared modules:
-3858 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 176 additional shared modules:
+3955 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

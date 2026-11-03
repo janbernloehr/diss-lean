@@ -1,0 +1,38 @@
+{
+  "source_branch": "articles/kdv-estimates",
+  "source_commit": "11846155e5f134607440d60591cb1d1fe6cfb6e0",
+  "source_files_unchanged": true,
+  "dependency_order": [
+    "NLS.ComplexAnalysis.UpperLogarithmBoundary",
+    "NLS.ComplexAnalysis.ParametricUpperLogarithmBoundary",
+    "NLS.ComplexAnalysis.RealSimpleZeroSigns",
+    "NLS.ComplexAnalysis.ClosedUpperExtension",
+    "NLS.ComplexAnalysis.BoundaryAnalyticCoordinate",
+    "NLS.ComplexAnalysis.CoshSquareLocalCoordinate"
+  ],
+  "files": {
+    "NLS/ComplexAnalysis/UpperLogarithmBoundary.lean": "fb33728b53d4c38522f8f890fcccd0636f0856df739d14fc4d912aacca94f67f",
+    "NLS/ComplexAnalysis/ParametricUpperLogarithmBoundary.lean": "8e3e3a0980a9c9a86ffb72da0061345ae02fbaf47745dead0728dd83309a042d",
+    "NLS/ComplexAnalysis/RealSimpleZeroSigns.lean": "361f20f8dd30a62fc010f661e37ee24a1a31f8e06933c2bedb1ba4ab1905ad1b",
+    "NLS/ComplexAnalysis/ClosedUpperExtension.lean": "6fdd26aba946e7a6b8be44d54a6d4523864230102772f6a60537ba7e5594b1bf",
+    "NLS/ComplexAnalysis/BoundaryAnalyticCoordinate.lean": "b41dc971223cc6ec6b57dc79806f244b35adbf4f2a0c3d35dcf0570f5962df12",
+    "NLS/ComplexAnalysis/CoshSquareLocalCoordinate.lean": "4bd06c278aaf50c57ad517383a8ab9e2d694157b02fd10a9c060045ea5dd6fb8"
+  },
+  "retained_existing_import_boundary": {
+    "NLS/ComplexAnalysis/UpperTracePrimitiveExtension.lean": {
+      "private_sha256": "1899e1d60c2c17b7d9411c9badd85939323e3387bdd9118f1e896a2215ba716d",
+      "shared_sha256": "1899e1d60c2c17b7d9411c9badd85939323e3387bdd9118f1e896a2215ba716d",
+      "byte_identical": true
+    },
+    "NLS/ComplexAnalysis/NormalizedLogChart.lean": {
+      "private_sha256": "4607f64793d1d9d68ead59ac5d2bfa004e0f5176d0cee5901f47b4657a770997",
+      "shared_sha256": "4607f64793d1d9d68ead59ac5d2bfa004e0f5176d0cee5901f47b4657a770997",
+      "byte_identical": true
+    },
+    "NLS/ComplexAnalysis/CoshSquareCoordinate.lean": {
+      "private_sha256": "acbb58293a0ce8e938052be3f82c3e908d75356e289a7f73e050e13fcf3b8567",
+      "shared_sha256": "acbb58293a0ce8e938052be3f82c3e908d75356e289a7f73e050e13fcf3b8567",
+      "byte_identical": true
+    }
+  }
+}
