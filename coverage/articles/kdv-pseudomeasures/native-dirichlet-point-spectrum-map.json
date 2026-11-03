@@ -214,5 +214,21 @@
     "global_complex_central_labels": false,
     "source_Theorem2_1_ii_proved": false,
     "main_theorems_verified": false
+  },
+  "complete_complex_native_multiplicity_order_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-dirichlet-complex-order-map.json",
+    "reverse_native_chain_to_scalar_kernel_reconstruction": true,
+    "unique_actual_amplitude_vector_of_every_native_chain": true,
+    "full_complex_scalar_characteristic_jet_kernel_equivalence": true,
+    "complex_linear_bijective_kernel_to_native_chain_map": true,
+    "full_complex_native_algebraic_order_agreement": true,
+    "natural_and_extended_characteristic_orders_match": true,
+    "all_complex_energies_including_zero": true,
+    "finite_root_level_dimension_min_length_multiplicity": true,
+    "entire_original_complex_distribution_adapter": true,
+    "real_original_source_preserved": true,
+    "global_complex_central_labels": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
   }
 }

@@ -510,6 +510,14 @@ import NLS.MKdV.QuasiHillL2BoundaryJets
 import NLS.FunctionalAnalysis.PencilChainEquations
 import NLS.KdV.SingularDirichletForcedStateRealization
 import NLS.KdV.HminusOneDirichletStateJets
+import NLS.FunctionalAnalysis.PencilChainPrevious
+import NLS.MKdV.QuasiHillL2ForcedStateUniqueness
+import NLS.KdV.SingularDirichletChainStates
+import NLS.KdV.HminusOneDirichletChainAmplitudes
+import NLS.Fourier.UnitDirichletRepresentativeLinear
+import NLS.KdV.SingularDirichletChainTaylorEquivalence
+import NLS.KdV.SingularDirichletMultiplicityOrder
+import NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletMultiplicity
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4179,3 +4187,42 @@ import NLS.KdV.HminusOneDirichletStateJets
 #print axioms NLS.KdV.existsUnique_native_of_hillHminusDirichletStateJet
 #print axioms NLS.KdV.exists_native_chain_of_scalarTaylorKernel
 #print axioms NLS.KdV.existsUnique_native_chain_of_scalarTaylorKernel
+#print axioms NLS.FunctionalAnalysis.pencilChainPrevious
+#print axioms NLS.FunctionalAnalysis.pencilChainPrevious_zero
+#print axioms NLS.FunctionalAnalysis.pencilChainPrevious_succ
+#print axioms NLS.FunctionalAnalysis.mem_pencilChainSpace_iff_previous
+#print axioms NLS.MKdV.isQuasiHillL2ForcedSolution_intervalState
+#print axioms NLS.MKdV.IsQuasiHillL2ForcedSolution.eq_of_position_eq
+#print axioms NLS.KdV.exists_physical_state_of_native_forced
+#print axioms NLS.KdV.exists_physical_states_of_native_chain
+#print axioms NLS.KdV.hillHminusDirichletStateJet_injective
+#print axioms NLS.KdV.exists_preceding_hillHminusDirichletStateJet
+#print axioms NLS.KdV.hillHminusDirichletStateJet_positions_injective
+#print axioms NLS.KdV.exists_scalarTaylorKernel_of_native_chain
+#print axioms NLS.KdV.existsUnique_scalarTaylorKernel_of_native_chain
+#print axioms NLS.Fourier.unitDirichletRepresentative_add
+#print axioms NLS.Fourier.unitDirichletRepresentative_smul
+#print axioms NLS.Fourier.unitDirichletRepresentative_zero_vector
+#print axioms NLS.KdV.singularDirichletTaylorKernelLift
+#print axioms NLS.KdV.singularDirichletTaylorKernelLift_position
+#print axioms NLS.KdV.singularDirichletTaylorKernelToChain
+#print axioms NLS.KdV.singularDirichletTaylorKernelToChain_injective
+#print axioms NLS.KdV.singularDirichletTaylorKernelToChain_surjective
+#print axioms NLS.KdV.singularDirichletChainTaylorKernelEquiv
+#print axioms NLS.KdV.finrank_singularDirichletChain_eq_scalarTaylorKernel
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDirichlet_energy
+#print axioms NLS.KdV.analyticOrderAt_hillHminusDirichlet_ne_top
+#print axioms NLS.KdV.singularDirichletAlgebraicMultiplicity_eq_analyticOrderNatAt
+#print axioms NLS.KdV.singularDirichletAlgebraicMultiplicity_eq_analyticOrderAt
+#print axioms NLS.KdV.finrank_singularDirichletRootSpaceTop_eq_analyticOrder
+#print axioms NLS.KdV.finrank_singularDirichletChainSpace_eq_min_order
+#print axioms NLS.KdV.finrank_singularDirichletRootSpace_eq_min_multiplicity
+#print axioms NLS.Articles.KdVPseudomeasures.OriginalComplexHminusOnePotential
+#print axioms NLS.Articles.KdVPseudomeasures.originalComplexDirichletCharacteristic
+#print axioms NLS.Articles.KdVPseudomeasures.originalComplexDirichlet_distribution
+#print axioms NLS.Articles.KdVPseudomeasures.mem_originalComplexDirichletSpectrum_iff_characteristic
+#print axioms NLS.Articles.KdVPseudomeasures.originalComplexDirichletAlgebraicMultiplicity_eq_analyticOrderNatAt
+#print axioms NLS.Articles.KdVPseudomeasures.originalComplexDirichletAlgebraicMultiplicity_eq_analyticOrderAt
+#print axioms NLS.Articles.KdVPseudomeasures.finrank_originalComplexDirichletRootSpace_eq_min_multiplicity
+#print axioms NLS.Articles.KdVPseudomeasures.originalHminusOnePotentialToComplex
+#print axioms NLS.Articles.KdVPseudomeasures.originalComplexDirichletCharacteristic_of_real

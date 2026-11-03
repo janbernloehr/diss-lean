@@ -544,6 +544,14 @@ modules = [
     'NLS.FunctionalAnalysis.PencilChainEquations',
     'NLS.KdV.SingularDirichletForcedStateRealization',
     'NLS.KdV.HminusOneDirichletStateJets',
+    'NLS.FunctionalAnalysis.PencilChainPrevious',
+    'NLS.MKdV.QuasiHillL2ForcedStateUniqueness',
+    'NLS.KdV.SingularDirichletChainStates',
+    'NLS.KdV.HminusOneDirichletChainAmplitudes',
+    'NLS.Fourier.UnitDirichletRepresentativeLinear',
+    'NLS.KdV.SingularDirichletChainTaylorEquivalence',
+    'NLS.KdV.SingularDirichletMultiplicityOrder',
+    'NLS.Articles.KdVPseudomeasures.OriginalComplexDirichletMultiplicity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
