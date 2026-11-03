@@ -463,6 +463,18 @@ import NLS.ComplexAnalysis.ImplicitLocalUniqueness
 import NLS.SequenceSpaces.PositiveDeletedConjugation
 import NLS.KdV.HillAbelianImplicitRootReality
 import NLS.KdV.HillPhysicalNormalizedPeriodGerm
+import NLS.ComplexAnalysis.RealIntegralZero
+import NLS.ComplexAnalysis.CosineZeroPeriod
+import NLS.ComplexAnalysis.RealGapZeroPeriod
+import NLS.KdV.HillHilbertRootCoordinates
+import NLS.KdV.HillHilbertNumeratorReality
+import NLS.KdV.HillFreeEnergySeparation
+import NLS.KdV.HillHilbertRootIsolation
+import NLS.KdV.HillHilbertRootGermIsolation
+import NLS.KdV.HillOmittedEnergyRootProduct
+import NLS.KdV.HillOmittedEnergyRootNonvanishing
+import NLS.KdV.HillDeflatedCanonicalRoot
+import NLS.KdV.HillDeflatedCanonicalRootPhase
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -833,7 +845,14 @@ run_cmd do
     ``NLS.Coeff.positiveDeletedConjugate,
     ``NLS.Coeff.positiveDeletedConjugate_coe,
     ``NLS.Coeff.positiveDeletedConjugate_zero,
-    ``NLS.Coeff.continuous_positiveDeletedConjugate]
+    ``NLS.Coeff.continuous_positiveDeletedConjugate,
+    ``NLS.ComplexAnalysis.exists_zero_of_continuousOn_integral_eq_zero,
+    ``NLS.ComplexAnalysis.integral_cosineGapPoint_eq_zero_of_zero_period,
+    ``NLS.ComplexAnalysis.exists_gap_zero_of_real_zero_period,
+    ``NLS.ComplexAnalysis.exists_gap_zero_of_rotated_zero_period,
+    ``NLS.ComplexAnalysis.eq_zero_of_collapsed_endpointRoot_period,
+    ``NLS.ComplexAnalysis.exists_segment_zero_of_endpointRoot_zero_period,
+    ``NLS.ComplexAnalysis.exists_segment_zero_of_deflated_root_period]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

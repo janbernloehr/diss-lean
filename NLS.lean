@@ -5386,3 +5386,15 @@ import NLS.ComplexAnalysis.ImplicitLocalUniqueness
 import NLS.SequenceSpaces.PositiveDeletedConjugation
 import NLS.KdV.HillAbelianImplicitRootReality
 import NLS.KdV.HillPhysicalNormalizedPeriodGerm
+import NLS.ComplexAnalysis.RealIntegralZero
+import NLS.ComplexAnalysis.CosineZeroPeriod
+import NLS.ComplexAnalysis.RealGapZeroPeriod
+import NLS.KdV.HillHilbertRootCoordinates
+import NLS.KdV.HillHilbertNumeratorReality
+import NLS.KdV.HillFreeEnergySeparation
+import NLS.KdV.HillHilbertRootIsolation
+import NLS.KdV.HillHilbertRootGermIsolation
+import NLS.KdV.HillOmittedEnergyRootProduct
+import NLS.KdV.HillOmittedEnergyRootNonvanishing
+import NLS.KdV.HillDeflatedCanonicalRoot
+import NLS.KdV.HillDeflatedCanonicalRootPhase
