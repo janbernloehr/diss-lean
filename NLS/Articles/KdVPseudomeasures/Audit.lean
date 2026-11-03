@@ -836,6 +836,24 @@ import NLS.ZakharovShabat.SourceSymmetricCentralCircle
 import NLS.KdV.MiuraOddPositivePeriods
 import NLS.KdV.HillPsiPeriodUniqueness
 import NLS.Articles.KdVPseudomeasures.OriginalHillShiftGrowth
+import NLS.ComplexAnalysis.LocalHolomorphicPathPullback
+import NLS.ComplexAnalysis.PiecewiseLoopLocalMap
+import NLS.ZakharovShabat.SourceEntireNumeratorCircuit
+import NLS.KdV.MiuraHillPsiLoopPeriods
+import NLS.ComplexAnalysis.VerticalEllipseLoop
+import NLS.ComplexAnalysis.ThinIntervalContour
+import NLS.ComplexAnalysis.EnergySqrtCoordinates
+import NLS.KdV.HillMiuraEnergyGapCoordinates
+import NLS.KdV.HillMiuraCommonGapContour
+import NLS.ComplexAnalysis.EnergySqrtLoop
+import NLS.KdV.HillMiuraTransportedLoop
+import NLS.KdV.HillMiuraComparisonPeriods
+import NLS.KdV.HminusOneHillPsiIndependence
+import NLS.KdV.HminusOneHillPsiBalls
+import NLS.KdV.HminusOneCanonicalHillPsi
+import NLS.KdV.HminusOneCanonicalHillPsiPeriods
+import NLS.KdV.HminusOneCanonicalHillPsiProperties
+import NLS.Articles.KdVPseudomeasures.OriginalCanonicalHillNumerators
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5870,3 +5888,80 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillShiftGrowth
 #print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator_eq_of_positive_common_periods
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_numerator_difference_arbitrary_shift_growth
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_numerators_eq_of_common_periods
+#print axioms NLS.ComplexAnalysis.holomorphicPathPullback_of_extend_eq
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.mapOn
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.mapOn_edge_extend
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.inside_mapOn_iff
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.integral_mapOn_of_holomorphic_pullback
+#print axioms NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.cutDisk_subset_rootDomain
+#print axioms NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.entireNumerator_loop_integral
+#print axioms NLS.KdV.MiuraHillPsiFamily.frequency_loop_period
+#print axioms NLS.KdV.MiuraHillPsiFamily.energy_loop_period
+#print axioms NLS.ComplexAnalysis.verticalScale
+#print axioms NLS.ComplexAnalysis.contDiff_verticalScale
+#print axioms NLS.ComplexAnalysis.ellipsePath
+#print axioms NLS.ComplexAnalysis.ellipsePath_contDiffOn
+#print axioms NLS.ComplexAnalysis.ellipseLoop
+#print axioms NLS.ComplexAnalysis.affine_verticalScale_ne_real
+#print axioms NLS.ComplexAnalysis.ellipseLoop_winding_one
+#print axioms NLS.ComplexAnalysis.ellipseLoop_bounds
+#print axioms NLS.ComplexAnalysis.ellipseLoop_avoids_real_point
+#print axioms NLS.ComplexAnalysis.exists_close_real_interval_point
+#print axioms NLS.ComplexAnalysis.exists_thin_interval_contour
+#print axioms NLS.ComplexAnalysis.energyFrequency
+#print axioms NLS.ComplexAnalysis.energyFrequencyDomain
+#print axioms NLS.ComplexAnalysis.energyFrequencyDomain_open
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_energyFrequency
+#print axioms NLS.ComplexAnalysis.contDiffOn_energyFrequency
+#print axioms NLS.ComplexAnalysis.energyFrequency_sq
+#print axioms NLS.ComplexAnalysis.energyFrequency_ne_zero
+#print axioms NLS.ComplexAnalysis.hasDerivAt_energyFrequency
+#print axioms NLS.ComplexAnalysis.energyFrequencyDisk
+#print axioms NLS.ComplexAnalysis.energyFrequencyDisk_open
+#print axioms NLS.KdV.hillMiura_frequency_of_original_gap
+#print axioms NLS.KdV.hillMiura_gap_energy_mem_original
+#print axioms NLS.KdV.exists_common_hillMiura_gap_contour
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.frequencyLoop
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.integral_frequencyLoop
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.integral_energy_frequencyLoop
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.windingIntegral_frequencyLoop_quadratic
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.windingIntegral_zero_of_inside_ball
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.frequencyLoop_winding_one_of_positive_disk
+#print axioms NLS.KdV.hillMiura_frequencyLoop_inside_cutDisk
+#print axioms NLS.KdV.hillMiura_frequencyLoop_winding_one
+#print axioms NLS.KdV.hillMiura_common_energy_period
+#print axioms NLS.KdV.hillMiura_energyRootDomain_of_mem_energyCutDisk
+#print axioms NLS.KdV.hillMiura_common_energy_difference_zero
+#print axioms NLS.KdV.hillMiura_circle_zero_of_energy_difference_zero
+#print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator_eq_of_real_overlap
+#print axioms NLS.KdV.HillHminusDirichletBall.energyDifferential_eq_of_real_overlap
+#print axioms NLS.KdV.HillHminusDirichletBall.exists_complex_numerator_agreement
+#print axioms NLS.KdV.HillHminusPsiBall.source
+#print axioms NLS.KdV.HillHminusPsiBall.numerator
+#print axioms NLS.KdV.HillHminusPsiBall.source_open
+#print axioms NLS.KdV.HillHminusPsiBall.source_subset_dirichletDomain
+#print axioms NLS.KdV.HillHminusPsiBall.analytic_numerator
+#print axioms NLS.KdV.HillHminusPsiBall.numerator_eq_on_overlap
+#print axioms NLS.KdV.exists_hillHminusPsiBall_of_mem
+#print axioms NLS.KdV.exists_hillHminusPsiBall
+#print axioms NLS.KdV.hillHminusCanonicalPsiDomain
+#print axioms NLS.KdV.isOpen_hillHminusCanonicalPsiDomain
+#print axioms NLS.KdV.hillHminusCanonicalPsiDomain_subset_dirichletDomain
+#print axioms NLS.KdV.real_mem_hillHminusCanonicalPsiDomain
+#print axioms NLS.KdV.isConnected_hillHminusCanonicalPsiDomain
+#print axioms NLS.KdV.hillHminusCanonicalPsi
+#print axioms NLS.KdV.HillHminusPsiBall.canonical_numerator_eq
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalPsi
+#print axioms NLS.KdV.hillHminusCanonicalPsi_energy_entire
+#print axioms NLS.KdV.hillHminusCanonicalPsi_eq_local_of_real
+#print axioms NLS.KdV.exists_hillHminusCanonicalPsi_local_presentation
+#print axioms NLS.KdV.HillHminusPsiBall.canonical_differential_eq
+#print axioms NLS.KdV.HillHminusPsiBall.nonempty_canonicalPeriodCircle
+#print axioms NLS.KdV.HillHminusPsiBall.canonical_pullback_period
+#print axioms NLS.KdV.HillHminusPsiBall.exists_canonical_normalized_energyCircle
+#print axioms NLS.KdV.hillHminusCanonicalPsi_arbitrary_shift_sub_sine
+#print axioms NLS.KdV.exists_hillHminusCanonicalPsi_zero_in_original_gap
+#print axioms NLS.KdV.hillHminusCanonicalPsi_zero_at_real_collapsed_gap
+#print axioms NLS.Articles.KdVPseudomeasures.original_common_analytic_Hill_numerators
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_numerators_eq_on_real_overlap
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_intrinsic_Hill_energy_periods

@@ -672,6 +672,12 @@
       "status": "Sub-sine growth of actual local numerator differences at ANY common complex reference shift and exact conditional full-period uniqueness PROVED. Transported common periods for DIFFERENT chart shifts, global gluing, product/finer-zero bounds, angles and all MAIN theorems remain OPEN.",
       "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_numerator_difference_arbitrary_shift_growth",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-shift-growth-map.json"
+    },
+    {
+      "label": "Actual different-shift common periods and intrinsic normalized Hill energy numerators",
+      "status": "Different-shift real agreement, whole complex psi-ball overlap agreement and joint analytic intrinsic numerator gluing on one open connected domain containing the entire original real form PROVED. Product, unique/finer-zero bounds, global complex energy-sheet gluing, angles and MAIN theorems remain OPEN.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.original_common_analytic_Hill_numerators",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-common-contours-map.json"
     }
   ],
   "reuse_map": [
@@ -751,10 +757,10 @@
     }
   ],
   "remaining_obligations": [
-    "Prove ACTUAL common-period transport for local Hill numerators represented with DIFFERENT physical energy shifts. Arbitrary-reference-shift entire analyticity and sub-sine growth, and the exact conditional common-period uniqueness theorem, are NOW PROVED; do not re-prove or assume these. Only ONE actual comparison contour per POSITIVE gap is needed: negative partners and the central period are now automatic by proved reflection and an actual zero-centered central-circle construction. Transport the actual positive quadratic energy loops through the appropriate local square-root map, retaining the physical root sign, gap enclosure and winding. The existing globally smooth PiecewiseC1Loop.map does NOT directly cover sqrt on an open cut domain; a local map/pullback construction may be needed. Then derive different-shift real numerator equality and WHOLE complex overlap agreement/gluing on ONE neighborhood of the ENTIRE original real H-minus-one form. The common-period hypothesis in HillPsiPeriodUniqueness remains UNSUPPLIED and cannot be treated as a proved normalization across charts.",
-    "Prove the ORIGINAL normalized Hill infinite-product representation, unique/analytic retained zeros, and required locally uniform ALL-index squared-gap-over-index zero bound. Retained real zeros and pointwise sub-sine growth at ANY fixed complex reference shift are PROVED. These do NOT by themselves identify a product, eliminate extra zeros, prove uniqueness of the selected zeros or give uniform-in-index local estimates. Construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), with the original locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Formalize the literal KMT y-tilde integrating-factor gauge if used; never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint.",
+    "Prove the ORIGINAL normalized Hill infinite-product representation and unique/analytic retained zeros of the intrinsic hillHminusCanonicalPsi, then the required locally uniform ALL-index squared-gap-over-index zero bound. Different-shift positive common-period transport, unconditional real numerator independence, WHOLE complex overlap agreement for real-centered psi balls, one common connected analytic numerator domain, retained REAL gap zeros and pointwise arbitrary-shift sub-sine growth are NOW PROVED; do NOT redo or assume these. Pointwise growth and existence of retained zeros do NOT eliminate extra zeros, prove unique zeros or imply locally uniform ALL-index estimates.",
+    "Complete any required global energy-sheet/differential identification and construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Local denominators, actual normalized periods and real-source root/differential overlap identities are proved; global complex energy-sheet agreement is not claimed by source numerator gluing. Formalize the literal KMT y-tilde integrating-factor gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint.",
     "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Verified Dirac differential input does not substitute an NLS Birkhoff map for KdV.",
-    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining the equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet/local-differential/same-shift dependencies remain proved."
+    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1950,6 +1956,36 @@
     "locally_uniform_ALL_index_squared_gap_over_index_zero_bound_proved": false,
     "WHOLE_complex_overlap_agreement_and_global_gluing_proved": false,
     "ACTUAL_global_normalized_Hill_differentials_constructed": false,
+    "ACTUAL_KdV_angles_constructed": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "full_source3_2_coordinate_assertion_proved": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_common_contours_and_intrinsic_numerators_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-common-contours-map.json",
+    "local_open_domain_path_integral_transport_proved": true,
+    "thin_interval_ellipse_inside_ANY_open_neighborhood_with_ALL_point_winding_one": true,
+    "shrinking_enclosing_circle_in_arbitrary_thin_neighborhood_assumed": false,
+    "actual_common_energy_contour_for_ANY_TWO_real_Miura_lifts_and_DIFFERENT_shifts": true,
+    "ALL_original_positive_indices_AND_collapsed_gaps_retained": true,
+    "common_geometry_selected_BEFORE_ALL_numerator_indices": true,
+    "transported_common_period_hypothesis_constructed_for_DIFFERENT_chart_shifts": true,
+    "literal_one_over_two_pi_normalization_AND_exact_Jacobian_retained": true,
+    "actual_root_sign_fixed_ON_ENTIRE_common_real_source_energy_domains": true,
+    "unconditional_numerator_independence_under_DIFFERENT_physical_shifts_proved": true,
+    "extra_equal_shift_OR_unproved_common_period_hypothesis_required": false,
+    "WHOLE_complex_overlap_agreement_for_real_centered_psi_balls_proved": true,
+    "WHOLE_overlap_agreement_for_arbitrary_unshrunk_nonconvex_patches_asserted": false,
+    "global_intrinsic_numerator_gluing_on_ONE_open_connected_domain_proved": true,
+    "common_domain_contains_ENTIRE_original_real_Hminus_one_form": true,
+    "ALL_positive_indices_AND_ALL_complex_energies_share_domain": true,
+    "intrinsic_numerators_JOINTLY_analytic_energy_AND_native_source": true,
+    "canonical_frequency_AND_genuine_original_energy_periods_proved": true,
+    "ANY_complex_reference_shift_sub_sine_growth_at_EVERY_complex_source_in_domain": true,
+    "unique_retained_zeros_OR_original_normalized_Hill_product_representation_proved": false,
+    "locally_uniform_ALL_index_squared_gap_over_index_zero_bound_proved": false,
+    "growth_cutoffs_uniform_in_index_or_locally_uniform_asserted": false,
+    "ACTUAL_global_complex_energy_sheet_and_differential_gluing_proved": false,
     "ACTUAL_KdV_angles_constructed": false,
     "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
     "full_source3_2_coordinate_assertion_proved": false,
