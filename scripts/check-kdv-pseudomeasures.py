@@ -621,6 +621,13 @@ modules = [
     'NLS.KdV.SingularHillPhysicalPairing',
     'NLS.KdV.SingularHillRieszPhysicalGreen',
     'NLS.Articles.KdVPseudomeasures.OriginalPeriodicRiesz',
+    'NLS.KdV.PseudomeasureSourceCircles',
+    'NLS.Articles.KdVPseudomeasures.PeriodicSourceCircles',
+    'NLS.FunctionalAnalysis.OrthonormalBasisFirst',
+    'NLS.KdV.SingularHillNormalizedEigenfunction',
+    'NLS.KdV.SingularHillSpectralBasis',
+    'NLS.Articles.KdVPseudomeasures.PeriodicSpectralBasis',
+    'NLS.KdV.SingularHillSpectralAction',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

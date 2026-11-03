@@ -587,6 +587,13 @@ import NLS.KdV.SingularHillRieszContinuous
 import NLS.KdV.SingularHillPhysicalPairing
 import NLS.KdV.SingularHillRieszPhysicalGreen
 import NLS.Articles.KdVPseudomeasures.OriginalPeriodicRiesz
+import NLS.KdV.PseudomeasureSourceCircles
+import NLS.Articles.KdVPseudomeasures.PeriodicSourceCircles
+import NLS.FunctionalAnalysis.OrthonormalBasisFirst
+import NLS.KdV.SingularHillNormalizedEigenfunction
+import NLS.KdV.SingularHillSpectralBasis
+import NLS.Articles.KdVPseudomeasures.PeriodicSpectralBasis
+import NLS.KdV.SingularHillSpectralAction
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4578,3 +4585,25 @@ import NLS.Articles.KdVPseudomeasures.OriginalPeriodicRiesz
 #print axioms NLS.Articles.KdVPseudomeasures.originalPeriodicLinfRieszProjection_same_ae
 #print axioms NLS.Articles.KdVPseudomeasures.originalPeriodicContinuousRieszProjection_toLp
 #print axioms NLS.Articles.KdVPseudomeasures.originalPeriodicRieszProjection_physical_bilinear
+#print axioms NLS.KdV.freeHillSourceDisk_subset_strip
+#print axioms NLS.KdV.sqrt_quarter_lt_natCast
+#print axioms NLS.KdV.freeHillValue_natCast_complex
+#print axioms NLS.KdV.EndpointHillComplexPair.left_mem_sourceBall
+#print axioms NLS.KdV.EndpointHillComplexPair.right_mem_sourceBall
+#print axioms NLS.KdV.EndpointHillComplexPair.sourceCircle_resolvent
+#print axioms NLS.KdV.EndpointHillComplexPair.sourceCircle_spectrum
+#print axioms NLS.KdV.EndpointHillComplexPair.sourceCircle_algebraicCount
+#print axioms NLS.KdV.EndpointHillComplexPair.sourceCircle_rank
+#print axioms NLS.KdV.EndpointHillComplexPair.sourceCircle_physical_rank
+#print axioms NLS.Articles.KdVPseudomeasures.sourceOriginalComplexPotential
+#print axioms NLS.Articles.KdVPseudomeasures.sourceOriginalComplexPotential_distribution
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillComplexPair.sourceCircle_rank_two
+#print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicCircle_rank_two
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicCircle_rank_two
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalPeriodicCircle_rank_two
+#print axioms NLS.FunctionalAnalysis.exists_orthonormalBasis_fin_two_first
+#print axioms NLS.KdV.exists_singularHill_normalized_eigenfunction
+#print axioms NLS.KdV.exists_singularHill_spectral_orthonormalBasis
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicSpectralBasis
+#print axioms NLS.KdV.singularHillDomainRieszProjection_fixed_of_physical_range
+#print axioms NLS.KdV.exists_singularHillOperator_spectral_L2_action

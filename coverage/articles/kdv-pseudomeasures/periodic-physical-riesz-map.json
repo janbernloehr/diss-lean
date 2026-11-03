@@ -173,5 +173,30 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "uniform_source_circle_and_basis_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-source-basis-map.json",
+    "uniform_literal_source_circle_validity": true,
+    "uniform_actual_physical_rank_two": true,
+    "actual_enclosed_spectrum_exact_pair": true,
+    "all_complex_algebraic_multiplicities_retained": true,
+    "source_normalized_native_eigenfunctions": true,
+    "canonical_lambda_plus_orthonormal_spectral_basis": true,
+    "both_basis_vectors_original_H1": true,
+    "actual_unbounded_expression_L2_spectral_action": true,
+    "original_endpoint_norm_ball_cutoff": true,
+    "source_half_integral_normalization": true,
+    "source_Lemma2_13_setup_proved": true,
+    "source_Lemma2_13_eta_identity_proved": false,
+    "source_Lemma2_13_eta_bound_proved": false,
+    "source_Lemma2_13_complete": false,
+    "source_Lemma2_14_proved": false,
+    "source33_periodic_convergence_proved": false,
+    "source_AppendixC4_logarithmic_rate_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
 }
