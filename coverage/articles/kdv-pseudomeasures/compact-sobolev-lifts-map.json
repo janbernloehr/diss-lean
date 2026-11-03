@@ -101,8 +101,37 @@
   "canonical_checkout_written": false,
   "canonical_head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
   "main_theorems_verified": false,
-  "source_Lemma2_21_proved": false,
-  "source_Theorem2_2_iii_proved": false,
+  "source_Lemma2_21_proved": true,
+  "source_Theorem2_2_iii_proved": true,
   "workspace_decision": "pending; all edits and compiler outputs remain private",
-  "next_required_bridge": "Construct the continuous negative finite-p rough Miura image from the compact stronger lift family, using the bounded derivative multiplier and the continuous L2 x L2 convolution into weighted negative finite-p coefficients; then transfer to the identical original period-two distributions."
+  "next_required_bridge": "The finite-p Miura image continuity and uniform endpoint bound bridge is now complete; see the completion map.",
+  "completion_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json",
+    "source_Lemma2_21_proved": true,
+    "full_source_Theorem2_2_proved": true,
+    "validation": {
+      "result": "passed",
+      "fresh_full_build_this_increment": false,
+      "baseline_commit": "acf6c6b21c22769fd1cc1d40152f72ab8343472f",
+      "baseline_modules": 413,
+      "baseline_sources_verified_unchanged": true,
+      "new_modules_compiled": 6,
+      "modules_in_exact_inventory": 419,
+      "audited_declarations": 3145,
+      "theorems": 2592,
+      "definitions": 553,
+      "new_theorems": 15,
+      "new_definitions": 3,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "empty_axiom_sets_allowed": true,
+      "directory": ".lake/full-original-label-check-20261103",
+      "log": ".lake/full-original-label-check-20261103/logs/validation-original-endpoint-compactness.log"
+    }
+  }
 }

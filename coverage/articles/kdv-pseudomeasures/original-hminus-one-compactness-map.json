@@ -1,7 +1,7 @@
 {
   "source": "arXiv:1610.00278v1, original-domain compactness and isospectral dependencies for Lemma 2.21 and Theorem 2.2(iii)",
   "date": "2026-11-03",
-  "status": "full original H-minus-one compactness proved; endpoint compactness remains open",
+  "status": "Full original H-minus-one, finite-p and endpoint weak-star isospectral compactness are now proved; see completion map",
   "modules": [
     "NLS/KdV/HminusOneMiuraIsospectral.lean",
     "NLS/KdV/HminusOneMiuraCompactness.lean",
@@ -54,18 +54,15 @@
     "read_only_reference_olean": true,
     "transitive_axioms_checked": true
   },
-  "source_Lemma2_21_proved": false,
+  "source_Lemma2_21_proved": true,
   "source_Theorem2_2_i_proved": true,
   "source_Theorem2_2_ii_proved": true,
-  "source_Theorem2_2_iii_proved": false,
+  "source_Theorem2_2_iii_proved": true,
   "full_original_HminusOne_norm_compactness_proved": true,
-  "uniform_original_endpoint_bound_proved": false,
+  "uniform_original_endpoint_bound_proved": true,
   "essential_remaining": [
-    "Lemma 2.21 requires the uniform ENDPOINT Fourier-Lebesgue norm bound under the endpoint gap hypothesis. Original H-minus-one compactness alone does not give that bound.",
-    "Prove compactness in a suitable stronger original finite-p space or prove a direct uniform weighted inverse estimate, then apply the existing uniform endpoint bootstrap and Appendix B transfer.",
-    "The inspected SourceSection14WeightedMembership explicitly does not establish weighted local/global inverse analyticity. SourceBirkhoffSobolevRegularity gives membership, which is not enough to infer stronger compactness.",
-    "Candidate next route: promote the verified forced weighted Fourier-tail recurrence to compact families using its existing local uniform center-forgetting, center-gap and remainder estimates. Apply a supremum tail envelope tending uniformly to zero, transfer gap-tail summability, then obtain uniform weighted norms and slightly weaker weighted compactness by compact inclusion. This route is not yet proved.",
-    "Main Theorems 1.1, 1.3, 1.4, 5.1 and 5.9 remain unproved, as do the remaining original Dirichlet comparison, actual original KdV Birkhoff construction and actual rough KdV flow."
+    "Complete original periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source2.1(ii). General-weight direct2.1(i),endpoint2.18-2.19,REAL2.20,uniform bootstrap,cross-order labels/gaps,bounded weak-star label continuity/closed spectral fibers and all AppendixB clauses remain proved. General complex-ratio2.20 remains open.",
+    "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "validation": {
     "result": "passed",
@@ -112,5 +109,34 @@
     "finite_p_potential_image_compactness": false,
     "uniform_endpoint_bound": false,
     "next_bridge": "Construct the continuous negative finite-p rough Miura image from the compact stronger lift family, using the bounded derivative multiplier and the continuous L2 x L2 convolution into weighted negative finite-p coefficients; then transfer to the identical original period-two distributions."
+  },
+  "completion_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json",
+    "source_Lemma2_21_proved": true,
+    "full_source_Theorem2_2_proved": true,
+    "validation": {
+      "result": "passed",
+      "fresh_full_build_this_increment": false,
+      "baseline_commit": "acf6c6b21c22769fd1cc1d40152f72ab8343472f",
+      "baseline_modules": 413,
+      "baseline_sources_verified_unchanged": true,
+      "new_modules_compiled": 6,
+      "modules_in_exact_inventory": 419,
+      "audited_declarations": 3145,
+      "theorems": 2592,
+      "definitions": 553,
+      "new_theorems": 15,
+      "new_definitions": 3,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "empty_axiom_sets_allowed": true,
+      "directory": ".lake/full-original-label-check-20261103",
+      "log": ".lake/full-original-label-check-20261103/logs/validation-original-endpoint-compactness.log"
+    }
   }
 }

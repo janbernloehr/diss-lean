@@ -139,7 +139,14 @@
         7
       ],
       "content": "Real mean-zero q in H^-1 and gaps gamma(q) in ell_R^(s,infinity), -1/2<s<=0 imply q and all Iso(q) lie in FL_0^(s,infinity), and Iso(q) is weak-star compact.",
-      "status": "unproved"
+      "status": "proved in full on the original H-minus-one domain",
+      "declarations": {
+        "2.2(i)": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_i",
+        "2.2(ii)": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_ii",
+        "2.2(iii)": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_iii",
+        "2.21": "NLS.Articles.KdVPseudomeasures.sourceLemma2_21"
+      },
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json"
     },
     {
       "label": "B.1",
@@ -690,8 +697,6 @@
     }
   ],
   "remaining_obligations": [
-    "Extend the now-proved L2 original-operator/physical-characteristic ZERO-SET identification to ALL original real H-minus-one potentials. Construct the period-one coefficient to original period-two even-index realization with exact distribution/frequency normalization and explicit equivalent Sobolev norm bounds. Then use real L2 density,actual full H-minus-one resolvent/Riesz rank stability and characteristic zero stability. Physical algebraic multiplicity versus analytic characteristic order still requires a VERIFIED match;the L2 zero-set criterion does not claim that equality.",
-    "Source Theorem2.2/full Lemma2.21 remain unproved:the entire original H-minus-one isospectral set still needs base endpoint/finite-p membership and a UNIFORM bound before the verified endpoint bootstrap applies. The ORIGINAL finite-p inverse spectral regularity/isospectral compactness input[7 Cor3-4] remains missing,or must be replaced directly. Full original operator spectrum/multiplicities and isospectral domain are already defined without assuming endpoint membership.",
     "Complete original periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source2.1(ii). General-weight direct2.1(i),endpoint2.18-2.19,REAL2.20,uniform bootstrap,cross-order labels/gaps,bounded weak-star label continuity/closed spectral fibers and all AppendixB clauses remain proved. General complex-ratio2.20 remains open.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
@@ -700,5 +705,10 @@
     "branch": "articles/kdv-pseudomeasures",
     "canonical_checkout_read_only": true,
     "approval": "Separate ordinary Git worktree authorized through coordinating chat; canonical tracked source and build outputs unchanged."
+  },
+  "completion_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json",
+    "full_source_Theorem2_2_proved": true,
+    "main_theorems_verified": false
   }
 }

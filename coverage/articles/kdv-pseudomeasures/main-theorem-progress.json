@@ -166,11 +166,12 @@
       "NLS.Articles.KdVPseudomeasures.continuous_originalHillDiscriminant_potential",
       "NLS.Articles.KdVPseudomeasures.isClosed_originalIsospectralSet",
       "NLS.Articles.KdVPseudomeasures.isClosedEmbedding_originalHminusOnePotential",
-      "NLS.Articles.KdVPseudomeasures.isCompact_originalIsospectralSet"
+      "NLS.Articles.KdVPseudomeasures.isCompact_originalIsospectralSet",
+      "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_iii",
+      "NLS.Articles.KdVPseudomeasures.sourceLemma2_21"
     ]
   },
   "essential_open_obligations": [
-    "Source Theorem 2.2(i)-(ii), full original H-minus-one isospectral norm compactness, complete common-shift Miura spectral transport, uniform compact-family Sobolev gains, and a compact stronger Sobolev lift cover of the ENTIRE original isospectral set are proved. REMAINING: continuity/compactness of the negative finite-p Miura POTENTIAL IMAGE and transfer to the identical original distributions, then the UNIFORM ENDPOINT norm bound of Lemma 2.21 and source Theorem 2.2(iii). Compactness of the lift cover is not yet claimed to establish those image or endpoint conclusions.",
     "Complete original periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source2.1(ii). General-weight direct2.1(i),endpoint2.18-2.19,REAL2.20,uniform bootstrap,cross-order labels/gaps,bounded weak-star label continuity/closed spectral fibers and all AppendixB clauses remain proved. General complex-ratio2.20 remains open.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
@@ -408,7 +409,25 @@
     "NLS.KdV.singularHillOperator_miura_factorization",
     "NLS.KdV.singularHillQuasiDerivative_memlp_sobolev_one",
     "NLS.KdV.singularHillMiuraEigenspaceEquiv",
-    "NLS.KdV.singularHillAlgebraicMultiplicity_miura_companion"
+    "NLS.KdV.singularHillAlgebraicMultiplicity_miura_companion",
+    "NLS.exists_continuous_periodOneMiura_finiteP_family",
+    "NLS.KdV.periodOneOriginalSobolev",
+    "NLS.KdV.periodOneOriginalSobolev_even",
+    "NLS.KdV.periodOneOriginalSobolev_odd",
+    "NLS.KdV.periodOneOriginalSobolev_val",
+    "NLS.Articles.KdVPseudomeasures.exists_originalIsospectral_compact_finiteP_cover",
+    "NLS.Articles.KdVPseudomeasures.exists_uniform_originalIsospectral_finiteP_bound",
+    "NLS.Articles.KdVPseudomeasures.exists_uniform_originalIsospectral_lower_finiteP_bound_of_endpoint_gaps",
+    "NLS.Articles.KdVPseudomeasures.sourceLemma2_21",
+    "NLS.Articles.KdVPseudomeasures.originalIsospectralEndpointSet",
+    "NLS.Articles.KdVPseudomeasures.mem_originalIsospectralEndpointSet_iff",
+    "NLS.Articles.KdVPseudomeasures.originalIsospectralEndpointSet_eq_spectralFiber",
+    "NLS.Articles.KdVPseudomeasures.potentialNormBounded_originalIsospectralEndpointSet",
+    "NLS.Articles.KdVPseudomeasures.sourceLowerDistribution_originalIsospectralEndpointSet",
+    "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_iii",
+    "NLS.Articles.KdVPseudomeasures.originalIsospectralRealizationSet",
+    "NLS.Articles.KdVPseudomeasures.isClosed_originalIsospectralRealizationSet",
+    "NLS.Articles.KdVPseudomeasures.isCompact_originalIsospectralRealizationSet_of_gap"
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -461,7 +480,8 @@
       "domain": "Every original real mean-zero physically period-one H-minus-one potential q; 0<=r<1/2 (s=-r).",
       "hypothesis": "The ACTUAL complete original physical gap sequence belongs to ell^(-r,infinity).",
       "conclusion": "There exists a:Potential r whose entire original smooth-test distribution equals q, with all physical conditions retained.",
-      "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-membership-map.json"
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-membership-map.json",
+      "completion_coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json"
     },
     "2.2(ii)": {
       "status": "proved",
@@ -469,11 +489,17 @@
       "domain": "The ENTIRE original H-minus-one isospectral set defined by all actual physical algebraic multiplicities.",
       "hypothesis": "Only the same original gap hypothesis on q; no endpoint membership of q or of any isospectral member and no uniform norm-bound premise.",
       "conclusion": "Every original isospectral v has a representative in Potential r with exactly the same entire distribution.",
-      "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-membership-map.json"
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-membership-map.json",
+      "completion_coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json"
     },
     "2.2(iii)": {
-      "status": "unproved",
-      "uniform_original_isospectral_bound": false
+      "status": "proved",
+      "declaration": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_iii",
+      "domain": "The entire original real mean-zero physical period-one H-minus-one isospectral set, reinterpreted by exact entire-distribution equality in the explicit original endpoint weak-star space.",
+      "hypothesis": "Only actual original endpoint gap membership with 0<=r<1/2; no endpoint membership, uniform bound or compactness input.",
+      "conclusion": "The exact full endpoint representative set is weak-star compact and equals the full actual intrinsic canonical spectral fiber.",
+      "uniform_original_isospectral_bound": true,
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json"
     }
   },
   "verified_source_lemma_components": {
@@ -515,8 +541,8 @@
     "2.21": {
       "uniform_endpoint_bootstrap": true,
       "compact_lower_realization_implies_target_weak_star_compactness": true,
-      "original_finite_p_inverse_spectral_input": false,
-      "full_source_lemma_verified": false,
+      "original_finite_p_inverse_spectral_input": true,
+      "full_source_lemma_verified": true,
       "coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-endpoint-bootstrap-map.json",
       "cross_order_canonical_spectral_invariance": true,
       "cross_order_coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-cross-order-map.json",
@@ -525,10 +551,12 @@
       "label_topology_coverage_map": "coverage/articles/kdv-pseudomeasures/spectral-label-continuity-map.json",
       "original_finite_p_inverse_membership_input": true,
       "entire_original_isospectral_membership_in_common_finite_p_space": true,
-      "original_finite_p_isospectral_compactness_input": false,
-      "uniform_original_isospectral_norm_bound": false,
+      "original_finite_p_isospectral_compactness_input": true,
+      "uniform_original_isospectral_norm_bound": true,
       "membership_coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-membership-map.json",
-      "inverse_input_qualification": "The finite-p inverse membership needed for source2.2 is now proved using a sufficiently large exponent. The older combined inverse/compactness input flag remains false because uniform isospectral compactness is still missing."
+      "inverse_input_qualification": "Both inverse membership and exact finite-p isospectral compactness are proved. The new uniform endpoint bound applies to EVERY member of the full original H-minus-one isospectral set.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.sourceLemma2_21",
+      "completion_coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json"
     }
   },
   "verified_nonmain_source_propositions": {
@@ -614,9 +642,10 @@
     "one_actual_Dirac_isospectral_set": true,
     "normalized_full_discriminant_characterization": true,
     "full_original_HminusOne_norm_compactness": true,
-    "stronger_finite_p_compactness": false,
-    "uniform_endpoint_norm_bound": false,
-    "source2_2_iii": false
+    "stronger_finite_p_compactness": true,
+    "uniform_endpoint_norm_bound": true,
+    "source2_2_iii": true,
+    "completion_coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json"
   },
   "verified_appendix_b_cauchy_limits": {
     "modules": [
@@ -634,7 +663,16 @@
     "finite_iteration": true,
     "actual_dirac_isospectral_lifts": true,
     "full_original_isospectral_lift_cover": true,
-    "finite_p_potential_image_compactness": false,
-    "uniform_endpoint_bound": false
+    "finite_p_potential_image_compactness": true,
+    "uniform_endpoint_bound": true,
+    "completion_coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json"
+  },
+  "verified_full_original_endpoint_compactness": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json",
+    "lemma2_21": true,
+    "theorem2_2_i": true,
+    "theorem2_2_ii": true,
+    "theorem2_2_iii": true,
+    "exact_spectral_fiber_identification": true
   }
 }

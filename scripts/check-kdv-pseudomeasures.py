@@ -444,6 +444,12 @@ modules = [
     'NLS.ZakharovShabat.SourceSobolevCompactRegularity',
     'NLS.KdV.HminusOneMiuraSobolevCompactness',
     'NLS.Articles.KdVPseudomeasures.OriginalCompactSobolevLifts',
+    'NLS.SequenceSpaces.PeriodOneMiuraFamilyRegularity',
+    'NLS.KdV.PeriodOneOriginalSobolev',
+    'NLS.Articles.KdVPseudomeasures.OriginalFinitePCompactCover',
+    'NLS.Articles.KdVPseudomeasures.OriginalEndpointBound',
+    'NLS.Articles.KdVPseudomeasures.OriginalEndpointCompactness',
+    'NLS.Articles.KdVPseudomeasures.OriginalFinitePCompactness',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

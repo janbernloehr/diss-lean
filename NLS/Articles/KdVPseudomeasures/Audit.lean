@@ -410,6 +410,12 @@ import NLS.ZakharovShabat.SourceSobolevCompactStep
 import NLS.ZakharovShabat.SourceSobolevCompactRegularity
 import NLS.KdV.HminusOneMiuraSobolevCompactness
 import NLS.Articles.KdVPseudomeasures.OriginalCompactSobolevLifts
+import NLS.SequenceSpaces.PeriodOneMiuraFamilyRegularity
+import NLS.KdV.PeriodOneOriginalSobolev
+import NLS.Articles.KdVPseudomeasures.OriginalFinitePCompactCover
+import NLS.Articles.KdVPseudomeasures.OriginalEndpointBound
+import NLS.Articles.KdVPseudomeasures.OriginalEndpointCompactness
+import NLS.Articles.KdVPseudomeasures.OriginalFinitePCompactness
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -3540,3 +3546,21 @@ import NLS.Articles.KdVPseudomeasures.OriginalCompactSobolevLifts
 #print axioms NLS.ZakharovShabat.exists_compact_source_sobolev_family_of_gap_majorant
 #print axioms NLS.KdV.exists_compact_sobolev_miura_isospectral_lifts
 #print axioms NLS.Articles.KdVPseudomeasures.exists_originalIsospectral_compact_sobolev_lift_cover
+#print axioms NLS.exists_continuous_periodOneMiura_finiteP_family
+#print axioms NLS.KdV.periodOneOriginalSobolev
+#print axioms NLS.KdV.periodOneOriginalSobolev_even
+#print axioms NLS.KdV.periodOneOriginalSobolev_odd
+#print axioms NLS.KdV.periodOneOriginalSobolev_val
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalIsospectral_compact_finiteP_cover
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalIsospectral_finiteP_bound
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalIsospectral_lower_finiteP_bound_of_endpoint_gaps
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_21
+#print axioms NLS.Articles.KdVPseudomeasures.originalIsospectralEndpointSet
+#print axioms NLS.Articles.KdVPseudomeasures.mem_originalIsospectralEndpointSet_iff
+#print axioms NLS.Articles.KdVPseudomeasures.originalIsospectralEndpointSet_eq_spectralFiber
+#print axioms NLS.Articles.KdVPseudomeasures.potentialNormBounded_originalIsospectralEndpointSet
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLowerDistribution_originalIsospectralEndpointSet
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem2_2_iii
+#print axioms NLS.Articles.KdVPseudomeasures.originalIsospectralRealizationSet
+#print axioms NLS.Articles.KdVPseudomeasures.isClosed_originalIsospectralRealizationSet
+#print axioms NLS.Articles.KdVPseudomeasures.isCompact_originalIsospectralRealizationSet_of_gap
