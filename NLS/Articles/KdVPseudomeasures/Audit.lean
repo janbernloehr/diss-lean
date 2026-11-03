@@ -866,6 +866,15 @@ import NLS.SequenceSpaces.PositiveBracketComparison
 import NLS.KdV.HillRealGapSampleAsymptotics
 import NLS.KdV.HminusOneHillPsiZeroAsymptotics
 import NLS.Articles.KdVPseudomeasures.OriginalHillNumeratorSimpleZeros
+import NLS.RealAnalysis.ContinuousIntervalZero
+import NLS.KdV.HillOriginalPositiveEndpointContinuity
+import NLS.KdV.HminusOneHillPsiRealZeroContinuity
+import NLS.ComplexAnalysis.SimpleRootSelectionUniqueness
+import NLS.KdV.HminusOneHillPsiIndexedZeroExtension
+import NLS.KdV.HminusOneHillPsiZeroBalls
+import NLS.KdV.HminusOneCanonicalHillPsiZeros
+import NLS.KdV.HminusOneHillPsiZeroNoncollision
+import NLS.Articles.KdVPseudomeasures.OriginalAnalyticHillZeroCoefficients
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6016,3 +6025,32 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNumeratorSimpleZeros
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_zero_gap_location
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_zero_coefficients_hminus_one
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_local_analytic_retained_Hill_zero
+#print axioms NLS.RealAnalysis.continuousAt_unique_zero_in_interval
+#print axioms NLS.KdV.continuousAt_hillHminusPositiveGapEndpoints
+#print axioms NLS.KdV.continuous_hillHminusPositiveGapEndpoints
+#print axioms NLS.KdV.continuousAt_hillHminusCanonicalPsiRealZero
+#print axioms NLS.KdV.continuous_hillHminusCanonicalPsiRealZero
+#print axioms NLS.ComplexAnalysis.scalar_partial_bijective_of_nonzero
+#print axioms NLS.ComplexAnalysis.eventually_eq_of_continuous_simple_root_selections
+#print axioms NLS.KdV.exists_local_analytic_indexed_hillHminusPsi_zero
+#print axioms NLS.KdV.HillHminusPsiZeroBall.source
+#print axioms NLS.KdV.HillHminusPsiZeroBall.source_open
+#print axioms NLS.KdV.HillHminusPsiZeroBall.value_eq_on_overlap
+#print axioms NLS.KdV.exists_hillHminusPsiZeroBall
+#print axioms NLS.KdV.hillHminusPsiZeroDomain
+#print axioms NLS.KdV.isOpen_hillHminusPsiZeroDomain
+#print axioms NLS.KdV.hillHminusPsiZeroDomain_subset
+#print axioms NLS.KdV.real_mem_hillHminusPsiZeroDomain
+#print axioms NLS.KdV.isConnected_hillHminusPsiZeroDomain
+#print axioms NLS.KdV.hillHminusCanonicalRetainedPsiZero
+#print axioms NLS.KdV.HillHminusPsiZeroBall.canonical_zero_eq
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalRetainedPsiZero
+#print axioms NLS.KdV.hillHminusCanonicalRetainedPsiZero_eq_real
+#print axioms NLS.KdV.hillHminusCanonicalRetainedPsiZero_is_simple_root
+#print axioms NLS.KdV.hillHminusCanonicalPsiRealZero_injective
+#print axioms NLS.KdV.HillHminusPsiZeroBall.values_ne_on_overlap
+#print axioms NLS.KdV.hillHminusCanonicalRetainedPsiZero_ne
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalHillPsiRealZero
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalHillPositiveGapEndpoints
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_indexed_zero_coefficient_complexification
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_indexed_zero_coefficients_ne_on_complex_overlap

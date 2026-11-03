@@ -900,6 +900,15 @@ modules = [
     'NLS.KdV.HillRealGapSampleAsymptotics',
     'NLS.KdV.HminusOneHillPsiZeroAsymptotics',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNumeratorSimpleZeros',
+    'NLS.RealAnalysis.ContinuousIntervalZero',
+    'NLS.KdV.HillOriginalPositiveEndpointContinuity',
+    'NLS.KdV.HminusOneHillPsiRealZeroContinuity',
+    'NLS.ComplexAnalysis.SimpleRootSelectionUniqueness',
+    'NLS.KdV.HminusOneHillPsiIndexedZeroExtension',
+    'NLS.KdV.HminusOneHillPsiZeroBalls',
+    'NLS.KdV.HminusOneCanonicalHillPsiZeros',
+    'NLS.KdV.HminusOneHillPsiZeroNoncollision',
+    'NLS.Articles.KdVPseudomeasures.OriginalAnalyticHillZeroCoefficients',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
