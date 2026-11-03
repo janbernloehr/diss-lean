@@ -875,6 +875,19 @@ import NLS.KdV.HminusOneHillPsiZeroBalls
 import NLS.KdV.HminusOneCanonicalHillPsiZeros
 import NLS.KdV.HminusOneHillPsiZeroNoncollision
 import NLS.Articles.KdVPseudomeasures.OriginalAnalyticHillZeroCoefficients
+import NLS.ComplexAnalysis.EvenEntireCircleGrowth
+import NLS.ComplexAnalysis.OddEntireProductFactor
+import NLS.KdV.HillBalancedGapFrequencies
+import NLS.ZakharovShabat.BalancedSingleSpectralProducts
+import NLS.ComplexAnalysis.EntireConvergenceCancellation
+import NLS.ZakharovShabat.RestoredQuadraticProductGrowth
+import NLS.ComplexAnalysis.QuadraticRestoration
+import NLS.KdV.HillRealRestoredProduct
+import NLS.KdV.HillEnergyProductCutoffs
+import NLS.ComplexAnalysis.QuadraticConvergenceDescent
+import NLS.KdV.HillRealEnergyProduct
+import NLS.KdV.HminusOneCanonicalHillPsiProduct
+import NLS.Articles.KdVPseudomeasures.OriginalHillNumeratorProduct
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6054,3 +6067,49 @@ import NLS.Articles.KdVPseudomeasures.OriginalAnalyticHillZeroCoefficients
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_originalHillPositiveGapEndpoints
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_indexed_zero_coefficient_complexification
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_indexed_zero_coefficients_ne_on_complex_overlap
+#print axioms NLS.ComplexAnalysis.deriv_zero_at_zero_of_even
+#print axioms NLS.ComplexAnalysis.entire_even_eq_const_of_subquadratic_circles
+#print axioms NLS.ComplexAnalysis.entire_factor_even_of_odd
+#print axioms NLS.ComplexAnalysis.exists_nonzero_const_factor_of_odd_simple_interpolation
+#print axioms NLS.KdV.hillBalancedGapFrequency
+#print axioms NLS.KdV.hillBalancedGapFrequency_zero
+#print axioms NLS.KdV.hillBalancedGapFrequency_neg
+#print axioms NLS.KdV.hillBalancedGapFrequency_pos
+#print axioms NLS.KdV.hillBalancedGapFrequency_pos_sq
+#print axioms NLS.KdV.hillBalancedGapFrequency_mem_segment
+#print axioms NLS.KdV.memlp_hillBalancedGapFrequency_displacement
+#print axioms NLS.KdV.hillBalancedGapFrequency_injective
+#print axioms NLS.ZakharovShabat.singleSpectralPartialProduct_eq_of_balanced
+#print axioms NLS.ZakharovShabat.singleSpectralPartialProduct_neg_of_balanced
+#print axioms NLS.ZakharovShabat.entireSingleSpectralProduct_neg_of_balanced
+#print axioms NLS.ComplexAnalysis.const_product_scalar_unique
+#print axioms NLS.ComplexAnalysis.tendstoLocallyUniformlyOn_const_family
+#print axioms NLS.ComplexAnalysis.tendstoLocallyUniformlyOn_univ_of_countable_exceptional
+#print axioms NLS.ComplexAnalysis.tendstoLocallyUniformlyOn_cancel_entire_factor
+#print axioms NLS.ZakharovShabat.restored_quadratic_product_quotient_subquadratic
+#print axioms NLS.ComplexAnalysis.quadratic_restoration_ne_zero
+#print axioms NLS.KdV.exists_real_hill_restored_product_factor
+#print axioms NLS.KdV.hillEnergyProductFactor
+#print axioms NLS.KdV.hillEnergyPartialProduct
+#print axioms NLS.KdV.hillEnergyDeletedPartialProduct
+#print axioms NLS.KdV.hillEnergyProduct_denominator_ne_zero
+#print axioms NLS.KdV.analyticOnNhd_hillEnergyDeletedPartialProduct
+#print axioms NLS.KdV.hillEnergyProductFactor_deleted_index
+#print axioms NLS.KdV.hillEnergyPartialProduct_restore
+#print axioms NLS.KdV.singleSpectralPartialProduct_balanced_energy
+#print axioms NLS.KdV.hillEnergyRestoringPolynomial
+#print axioms NLS.KdV.singleSpectralPartialProduct_balanced_deleted
+#print axioms NLS.KdV.hillEnergyRestoringPolynomial_ne_zero_off_finite
+#print axioms NLS.ComplexAnalysis.tendstoLocallyUniformlyOn_of_quadratic_pullback
+#print axioms NLS.KdV.exists_real_hill_energy_product_scalar
+#print axioms NLS.KdV.exists_hillHminusCanonicalPsi_product_scalar
+#print axioms NLS.KdV.hillHminusPsiProductScalar
+#print axioms NLS.KdV.hillHminusPsiProductScalar_ne_zero
+#print axioms NLS.KdV.hillHminusCanonicalPsi_product_convergence
+#print axioms NLS.KdV.hillHminusPsiProductScalar_unique
+#print axioms NLS.KdV.hillHminusCanonicalPsi_product_deriv_convergence
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillPsiProductScalar
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillPsiProductScalar_ne_zero
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_numerator_product_convergence
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillPsiProductScalar_unique
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_numerator_product_deriv_convergence
