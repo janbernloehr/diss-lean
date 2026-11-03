@@ -35,6 +35,6 @@
     "The ell^(p/3) component retains its quasi-norm when 2<p<3; no Banach assumption is inserted.",
     "The physical lower Hamiltonians are independently defined mass and momentum on the original full fractional source and calibrated against the Riccati hierarchy; they are not defined by rearranging the desired frequency identity."
   ],
-  "validation": "Final incremental strict Lean 4.33.1 validation: 15 new modules checked with autoImplicit=false and warningAsError=true; 204 unchanged modules reused from ef4b1eb1c007ed660156037a999289daa3ae7948 after byte comparison. Fresh full transitive audit of 1007 named declarations, including every main theorem, uses only propext, Classical.choice and Quot.sound.",
+  "validation": "PR #1 statement-fix incremental validation: 2 changed modules compiled strictly with Lean 4.33.1, autoImplicit=false and warningAsError=true; 217 unchanged focused modules reused after byte comparison with 36684a081de4d6c069d34f30ddd33c1d7704d064. Fresh full transitive audit of 1007 named declarations and direct main-theorem import/type checks passed with only propext, Classical.choice and Quot.sound. Canonical compiled dependencies imported read-only; not a fresh whole-repository rebuild.",
   "remaining": []
 }

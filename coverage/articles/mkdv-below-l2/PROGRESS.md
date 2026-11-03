@@ -1234,3 +1234,24 @@ theorem and uses only propext, Classical.choice and Quot.sound. There are
 219 focused modules. No holes, new axioms, disabled linters or increased
 heartbeat/recursion limits were introduced. Canonical compiled dependencies
 remain read-only; validation is incremental, not a whole-repository rebuild.
+
+
+## PR #1 review follow-up — explicit solution-map statement (2026-11-03)
+
+The local and small-data global Theorem 1.1 conclusions previously stated
+continuity of fourthScalarTrajectoryOn separately from unique existence of
+smooth-approximation solutions. They now explicitly assert that the named
+path satisfies IsMKdVSolutionBySmoothApproximation at every datum in the
+same neighborhood. Existing uniqueness then identifies every solution with
+that path. The local helper, compact global helper, global-curve theorem
+and bundled theorem all expose this strengthened conclusion. The proof
+uses the already proved approximation equivalence and adds no premise.
+
+Both changed modules compile strictly with Lean 4.33.1. The other 217
+focused modules are byte-identical to 36684a081de4d6c069d34f30ddd33c1d7704d064
+and retain their previous validation. Fresh direct main-theorem import/type
+checks and the full transitive audit of 1007 named declarations pass without
+warnings or errors; only propext, Classical.choice and Quot.sound occur.
+This remains incremental focused validation using read-only canonical
+compiled dependencies. The accepted manuscript-reference qualification,
+nonzero-index asymptotic and exact zero-mode singleton are retained.

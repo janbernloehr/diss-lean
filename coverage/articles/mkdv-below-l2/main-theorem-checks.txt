@@ -10,13 +10,19 @@ NLS.Articles.MKdVBelowL2.theorem1_1 {p : ENNReal} [Fact (1 ≤ p)] (hp : p ≠ �
                   IsOpen U ∧
                     u ∈ U ∧
                       ContinuousOn (NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryOn hp hp1 T) U ∧
-                        ∀ v ∈ U, ∃! γ, NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation Sren T ⋯ v γ) ∧
+                        ∀ v ∈ U,
+                          NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation Sren T ⋯ v
+                              (NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryOn hp hp1 T v) ∧
+                            ∃! γ, NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation Sren T ⋯ v γ) ∧
           (∃ U,
               IsOpen U ∧
                 0 ∈ U ∧
                   (∀ (T : ℝ) (hT : 0 < T),
                       ContinuousOn (NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryOn hp hp1 T) U ∧
-                        ∀ v ∈ U, ∃! γ, NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation Sren T ⋯ v γ) ∧
+                        ∀ v ∈ U,
+                          NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation Sren T ⋯ v
+                              (NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryOn hp hp1 T v) ∧
+                            ∃! γ, NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation Sren T ⋯ v γ) ∧
                     (∀ v ∈ U,
                         (Continuous fun time => NLS.Articles.MKdVBelowL2.fourthScalarImageFlow hp hp1 v time) ∧
                           ∀ (w : ℕ → NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput p),

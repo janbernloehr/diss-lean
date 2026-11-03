@@ -87,23 +87,29 @@ theorem isMKdVSolutionBySmoothApproximation_iff
       exact (tendstoUniformly_classicalScalarSolutionMap hp hp1 h2p S hS T v u hs hu hv).tendsto_at time
 
 /-- The local C⁰-wellposedness clause of source Theorem 1.1, in the
-original real scalar Fourier norm and the full uniform trajectory norm. -/
+original real scalar Fourier norm and the full uniform trajectory norm.
+The named continuous path map supplies the unique approximation solution. -/
 theorem theorem1_1_local_classical_approximation
     (hp : p ≠ ⊤) (h2p : 2 < p)
     (S : PhysicalScalarRealInput p → ℝ → PhysicalScalarRealInput p)
     (hS : IsClassicalScalarSolutionMap S) (u : PhysicalScalarRealInput p) :
     ∃ (T : ℝ) (hT : 0 < T), ∃ U : Set (PhysicalScalarRealInput p), IsOpen U ∧ u ∈ U ∧
       ContinuousOn (fourthScalarTrajectoryOn hp (lt_trans (by norm_num) h2p) T) U ∧
-      ∀ v ∈ U, ∃! γ : C(Icc (-T) T,PhysicalScalarRealInput p),
-        IsMKdVSolutionBySmoothApproximation S T hT.le v γ := by
+      ∀ v ∈ U,
+        IsMKdVSolutionBySmoothApproximation S T hT.le v
+          (fourthScalarTrajectoryOn hp (lt_trans (by norm_num) h2p) T v) ∧
+        ∃! γ : C(Icc (-T) T,PhysicalScalarRealInput p),
+          IsMKdVSolutionBySmoothApproximation S T hT.le v γ := by
   let hp1 : 1 < p := lt_trans (by norm_num) h2p
   obtain ⟨T,hT,U,hU,hu,hdom,hcont⟩ := exists_local_fourthScalarTrajectory hp hp1 u
   refine ⟨T,hT,U,hU,hu,hcont,fun v hv => ?_⟩
   have hi := isMKdVSolutionBySmoothApproximation_iff hp hp1 h2p.le S hS T hT.le v (hdom hv)
-  exact ⟨fourthScalarTrajectoryOn hp hp1 T v,(hi _).mpr rfl,fun γ hγ => (hi γ).mp hγ⟩
+  exact ⟨(hi _).mpr rfl,
+    fourthScalarTrajectoryOn hp hp1 T v,(hi _).mpr rfl,fun γ hγ => (hi γ).mp hγ⟩
 
 /-- A single invariant open neighborhood of zero works for every compact
-time interval, with classical smooth approximation and uniform path continuity. -/
+time interval. Its named continuous path map supplies the unique
+classical smooth-approximation solution at every datum. -/
 theorem theorem1_1_small_global_classical_approximation
     (hp : p ≠ ⊤) (h2p : 2 < p)
     (S : PhysicalScalarRealInput p → ℝ → PhysicalScalarRealInput p)
@@ -111,13 +117,17 @@ theorem theorem1_1_small_global_classical_approximation
     ∃ U : Set (PhysicalScalarRealInput p), IsOpen U ∧ (0 : PhysicalScalarRealInput p) ∈ U ∧
       (∀ T : ℝ, ∀ hT : 0 < T,
         ContinuousOn (fourthScalarTrajectoryOn hp (lt_trans (by norm_num) h2p) T) U ∧
-        ∀ v ∈ U, ∃! γ : C(Icc (-T) T,PhysicalScalarRealInput p),
-          IsMKdVSolutionBySmoothApproximation S T hT.le v γ) ∧
+        ∀ v ∈ U,
+          IsMKdVSolutionBySmoothApproximation S T hT.le v
+            (fourthScalarTrajectoryOn hp (lt_trans (by norm_num) h2p) T v) ∧
+          ∃! γ : C(Icc (-T) T,PhysicalScalarRealInput p),
+            IsMKdVSolutionBySmoothApproximation S T hT.le v γ) ∧
       ∀ v ∈ U, ∀ t : ℝ, fourthScalarImageFlow hp (lt_trans (by norm_num) h2p) v t ∈ U := by
   let hp1 : 1 < p := lt_trans (by norm_num) h2p
   obtain ⟨U,hU,hzero,hdom,hinv⟩ := exists_global_small_fourthScalarTrajectory hp hp1
   refine ⟨U,hU,hzero,fun T hT => ⟨(hdom T).2,fun v hv => ?_⟩,hinv⟩
   have hi := isMKdVSolutionBySmoothApproximation_iff hp hp1 h2p.le S hS T hT.le v ((hdom T).1 hv)
-  exact ⟨fourthScalarTrajectoryOn hp hp1 T v,(hi _).mpr rfl,fun γ hγ => (hi γ).mp hγ⟩
+  exact ⟨(hi _).mpr rfl,
+    fourthScalarTrajectoryOn hp hp1 T v,(hi _).mpr rfl,fun γ hγ => (hi γ).mp hγ⟩
 
 end NLS.Articles.MKdVBelowL2

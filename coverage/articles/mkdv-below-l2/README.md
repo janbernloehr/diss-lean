@@ -29,7 +29,9 @@ All declarations are in namespace `NLS.Articles.MKdVBelowL2`.
 For every finite p>2, renormalized physical mKdV is locally C⁰-wellposed at
 every original real scalar Fourier–Lebesgue datum and globally C⁰-wellposed
 on one invariant open neighborhood of zero chosen before all T>0. Dependence
-on initial data is continuous in the full uniform trajectory norm.
+on initial data is continuous in the full uniform trajectory norm. The local
+and compact global statements explicitly assert that the named continuous
+`fourthScalarTrajectoryOn` path is the unique smooth-approximation solution.
 The solution definition quantifies over every smooth real initial-data
 sequence converging in the original physical Fourier norm. Genuine smooth
 sequences exist at every datum, and all such approximants converge uniformly
@@ -82,10 +84,11 @@ zero-frequency vanishing or Banach assumption at p/3<1 is inserted.
 
 ## Validation and scope
 
-The focused checker lists 219 shared/article modules. The final checkpoint
-strictly checks 15 new modules with Lean 4.33.1, `autoImplicit=false` and
-`warningAsError=true`, and reuses 204 unchanged modules after byte comparison
-with `ef4b1eb1c007ed660156037a999289daa3ae7948`.
+The focused checker lists 219 shared/article modules. The PR #1 statement-fix
+checkpoint strictly checks the 2 changed modules with Lean 4.33.1,
+`autoImplicit=false` and `warningAsError=true`, and reuses 217 unchanged
+modules after byte comparison with
+`36684a081de4d6c069d34f30ddd33c1d7704d064`.
 A fresh full transitive audit checks 1007 named declarations, including all
 main theorems. Only `propext`, `Classical.choice` and `Quot.sound` occur.
 No holes, new axioms, disabled linters or increased heartbeat/recursion limits

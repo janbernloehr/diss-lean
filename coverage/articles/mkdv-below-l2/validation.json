@@ -5259,7 +5259,7 @@
     "Classical.choice",
     "Quot.sound"
   ],
-  "scope": "Incremental focused validation: 15 new modules checked strictly; 204 unchanged modules reuse parent validation. Full transitive audit of 1007 declarations. Canonical dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "scope": "PR #1 statement-fix incremental validation: 2 changed modules compiled strictly with Lean 4.33.1, autoImplicit=false and warningAsError=true; 217 unchanged focused modules reused after byte comparison with 36684a081de4d6c069d34f30ddd33c1d7704d064. Fresh full transitive audit of 1007 named declarations and direct main-theorem import/type checks passed with only propext, Classical.choice and Quot.sound. Canonical compiled dependencies imported read-only; not a fresh whole-repository rebuild.",
   "main_theorems": {
     "1.1": "verified_under_accepted_reference",
     "1.2": "verified_under_accepted_reference",
@@ -5269,8 +5269,8 @@
     "9b664f9",
     "09fa657"
   ],
-  "validation_method": "Incremental strict checks of 15 final new modules and a full transitive audit; 204 parent modules reused after checking their sources are unchanged.",
-  "validation_basis_commit": "ef4b1eb1c007ed660156037a999289daa3ae7948",
+  "validation_method": "PR #1 statement-fix incremental validation: 2 changed modules compiled strictly with Lean 4.33.1, autoImplicit=false and warningAsError=true; 217 unchanged focused modules reused after byte comparison with 36684a081de4d6c069d34f30ddd33c1d7704d064. Fresh full transitive audit of 1007 named declarations and direct main-theorem import/type checks passed with only propext, Classical.choice and Quot.sound. Canonical compiled dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "validation_basis_commit": "36684a081de4d6c069d34f30ddd33c1d7704d064",
   "unchanged_modules_reused": [
     "ComplexAnalysis/RelativeProductComparison",
     "ComplexAnalysis/RootPeriodComparison",
@@ -5469,15 +5469,12 @@
     "MKdV/JointlySmoothClassicalTrajectory",
     "Articles/MKdVBelowL2/FourthClassicalUniqueness",
     "Articles/MKdVBelowL2/ScalarClassicalFourthAdapter",
-    "Articles/MKdVBelowL2/MainTheorem11Wellposedness",
     "Dynamics/FixedTimeMassPhaseTuning",
     "ZakharovShabat/SourceHilbertMassDivergence",
     "Articles/MKdVBelowL2/ScalarSmoothMassPhases",
     "Articles/MKdVBelowL2/ScalarSmoothMassApproximants",
     "Articles/MKdVBelowL2/FixedTimeScalarMassObstruction",
-    "Articles/MKdVBelowL2/FixedTimeFourthCoordinateObstruction"
-  ],
-  "modules_checked_this_checkpoint": [
+    "Articles/MKdVBelowL2/FixedTimeFourthCoordinateObstruction",
     "ZakharovShabat/SourceHilbertMassActionInvariance",
     "Articles/MKdVBelowL2/OrdinaryFourthHamiltonianPhaseFamily",
     "Articles/MKdVBelowL2/OrdinaryFourthFiniteGapPhysicalODE",
@@ -5491,7 +5488,10 @@
     "Articles/MKdVBelowL2/OrdinaryScalarClassicalAdapter",
     "Articles/MKdVBelowL2/PhysicalScalarL2Locus",
     "Articles/MKdVBelowL2/FixedTimeScalarLocalMassObstruction",
-    "Articles/MKdVBelowL2/OrdinaryMKdVFixedTimeNonextension",
+    "Articles/MKdVBelowL2/OrdinaryMKdVFixedTimeNonextension"
+  ],
+  "modules_checked_this_checkpoint": [
+    "Articles/MKdVBelowL2/MainTheorem11Wellposedness",
     "Articles/MKdVBelowL2/Theorem11"
   ],
   "checked_source_sha256": {
@@ -5692,7 +5692,7 @@
     "MKdV/JointlySmoothClassicalTrajectory": "fd3520b1c0388397dbc0029667bb82807f5eb5f32c09568d15de2e1b6a1b2fe4",
     "Articles/MKdVBelowL2/FourthClassicalUniqueness": "5fb916a5792f0640c85376fbcb190f8a6b511d13af4f59fefe0ff58fd9d61c99",
     "Articles/MKdVBelowL2/ScalarClassicalFourthAdapter": "347e8c3eafb3a66b766aa9783435dd52a35e9fadb36e471d85afa0070bb0e6ca",
-    "Articles/MKdVBelowL2/MainTheorem11Wellposedness": "bfdc30e02b3ebb1ded60ef2f8b1fb443914de9dcb75009897cc1834b99ea6345",
+    "Articles/MKdVBelowL2/MainTheorem11Wellposedness": "446520536ff911748eacff8f3dd65db0067ed8eacf080a35c159ebc08cadc611",
     "Dynamics/FixedTimeMassPhaseTuning": "bbf78be78da755226098f12611ca754885b7086d9d3d3f066beb6304afb9e8cc",
     "ZakharovShabat/SourceHilbertMassDivergence": "eaa4df634679ffbc3a38dcc4cea41b182cf063b840fcff6c8fc57923299ee82f",
     "Articles/MKdVBelowL2/ScalarSmoothMassPhases": "f596f43afe99359dd1ad3d6d4ca1aaa5faf13f5dab6012af1b705eb2c99670ee",
@@ -5713,6 +5713,6 @@
     "Articles/MKdVBelowL2/PhysicalScalarL2Locus": "985df8bb02f2988868613418d6b4f63fc2c5aa860c95879171eb6b02a65cad3f",
     "Articles/MKdVBelowL2/FixedTimeScalarLocalMassObstruction": "114b27ba4c98691d2fcfa44f031776effda6e6ecc87d76b135a2c55aa2890b59",
     "Articles/MKdVBelowL2/OrdinaryMKdVFixedTimeNonextension": "28a42feac40ca2371f4563c883308b38b91441bcf7602b3a638fb18559c01571",
-    "Articles/MKdVBelowL2/Theorem11": "47ff4f8869d0430a9e2cbd720fb1b0872e1a48c5a6b5fcf115277fffd5547305"
+    "Articles/MKdVBelowL2/Theorem11": "ce974bc2972b7e778ed24e5a2e1ddf1816eab98b92966388ae0686932e171160"
   }
 }

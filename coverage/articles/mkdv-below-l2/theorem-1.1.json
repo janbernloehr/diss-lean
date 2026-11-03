@@ -14,14 +14,14 @@
     {
       "source": "Local C0 wellposedness of renormalized mKdV",
       "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation",
-      "quantifiers": "Every finite p>2 and every original real scalar input u: one positive T and one open neighborhood U of u, with a unique solution at every v in U.",
+      "quantifiers": "Every finite p>2 and every original real scalar input u: one positive T and one open neighborhood U of u, with a unique solution at every v in U. The statement explicitly asserts that fourthScalarTrajectoryOn returns this solution for every v in U.",
       "topology": "Full uniform norm on C([-T,T],PhysicalScalarRealInput p).",
       "solution_meaning": "The continuous path starts at v and is the pointwise-in-time limit for every smooth real initial-data sequence converging in the original Fourier norm. All such sequences in fact converge uniformly on the common interval. The smooth classical map exists and is identified uniquely by the actual physical PDE."
     },
     {
       "source": "Global C0 wellposedness on a neighborhood of zero",
       "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_curves",
-      "quantifiers": "One invariant open U containing zero precedes every T>0. At all data in U the same actual globally defined scalar flow has a unique smooth-approximation solution on every compact interval.",
+      "quantifiers": "One invariant open U containing zero precedes every T>0. At all data in U the same actual globally defined scalar flow has a unique smooth-approximation solution on every compact interval. On every compact interval the statement explicitly asserts that fourthScalarTrajectoryOn returns this solution.",
       "topology": "For every T>0 the map into full uniform-norm continuous trajectories is continuous on that same U. Compact paths are restrictions of the one fixed actual scalar source flow."
     },
     {
@@ -39,5 +39,16 @@
     "The source prose about converting ordinary and renormalized solutions has an apparent spatial translation sign inconsistency with the displayed PDEs. The formal result uses the independently calibrated Hamiltonian and physical Fourier convention and proves both displayed PDEs directly, avoiding that prose sign."
   ],
   "validation": "validation.json and validation.txt",
-  "remaining": []
+  "remaining": [],
+  "statement_review_fix": {
+    "review": "Draft PR #1",
+    "issue": "Continuity of the named path map and unique solution existence were previously asserted separately.",
+    "resolution": "The local and small-data global conclusions now additionally assert IsMKdVSolutionBySmoothApproximation for the named fourthScalarTrajectoryOn path. Its continuity is therefore explicitly continuity of the solution map; uniqueness identifies every other solution with that path.",
+    "affected_declarations": [
+      "theorem1_1_local_classical_approximation",
+      "theorem1_1_small_global_classical_approximation",
+      "theorem1_1_small_global_curves",
+      "theorem1_1"
+    ]
+  }
 }

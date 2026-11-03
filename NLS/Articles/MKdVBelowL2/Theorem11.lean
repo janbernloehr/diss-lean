@@ -18,7 +18,8 @@ namespace NLS.Articles.MKdVBelowL2
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
 /-- One invariant zero neighborhood carries actual global continuous
-solution curves with the all-smooth-sequences property at every real time. -/
+solution curves with the all-smooth-sequences property at every real time.
+The named continuous compact-path map supplies each unique solution. -/
 theorem theorem1_1_small_global_curves (hp : p ≠ ⊤) (h2p : 2 < p)
     (S : PhysicalScalarRealInput p → ℝ → PhysicalScalarRealInput p)
     (hS : IsClassicalScalarSolutionMap S) :
@@ -26,8 +27,10 @@ theorem theorem1_1_small_global_curves (hp : p ≠ ⊤) (h2p : 2 < p)
     ∃ U : Set (PhysicalScalarRealInput p), IsOpen U ∧ (0 : PhysicalScalarRealInput p) ∈ U ∧
       (∀ T : ℝ, ∀ hT : 0 < T,
         ContinuousOn (fourthScalarTrajectoryOn hp hp1 T) U ∧
-        ∀ v ∈ U, ∃! γ : C(Icc (-T) T,PhysicalScalarRealInput p),
-          IsMKdVSolutionBySmoothApproximation S T hT.le v γ) ∧
+        ∀ v ∈ U,
+          IsMKdVSolutionBySmoothApproximation S T hT.le v (fourthScalarTrajectoryOn hp hp1 T v) ∧
+          ∃! γ : C(Icc (-T) T,PhysicalScalarRealInput p),
+            IsMKdVSolutionBySmoothApproximation S T hT.le v γ) ∧
       (∀ v ∈ U, Continuous (fun time : ℝ => fourthScalarImageFlow hp hp1 v time) ∧
         ∀ w : ℕ → PhysicalScalarRealInput p, (∀ N, IsSmoothPhysicalScalarInput (w N)) →
           Tendsto w atTop (𝓝 v) → ∀ time : ℝ,
@@ -40,7 +43,8 @@ theorem theorem1_1_small_global_curves (hp : p ≠ ⊤) (h2p : 2 < p)
   · intro T hT
     refine ⟨(hdom T).2,fun v hv => ?_⟩
     have hi := isMKdVSolutionBySmoothApproximation_iff hp hp1 h2p.le S hS T hT.le v ((hdom T).1 hv)
-    exact ⟨fourthScalarTrajectoryOn hp hp1 T v,(hi _).mpr rfl,fun γ hγ => (hi γ).mp hγ⟩
+    exact ⟨(hi _).mpr rfl,
+      fourthScalarTrajectoryOn hp hp1 T v,(hi _).mpr rfl,fun γ hγ => (hi γ).mp hγ⟩
   · intro v hv
     have htime (r : ℝ) : (r,v) ∈ fourthScalarImageDomain hp hp1 :=
       (hdom |r|).1 hv ⟨r,neg_abs_le r,le_abs_self r⟩
@@ -51,8 +55,10 @@ theorem theorem1_1_small_global_curves (hp : p ≠ ⊤) (h2p : 2 < p)
       ((hdom |time|).1 hv) hw).tendsto_at ⟨time,neg_abs_le time,le_abs_self time⟩
 
 /-- Theorem 1.1, including the fixed-time nonextension consequence for the
-original equation. Both smooth maps exist as actual classical physical PDE
-maps, and classical uniqueness removes any dependence on those choices. -/
+original equation. The named continuous local and compact global path maps
+are explicitly the unique smooth-approximation solutions. Both smooth maps
+exist as actual classical physical PDE maps, and classical uniqueness
+removes any dependence on those choices. -/
 theorem theorem1_1 (hp : p ≠ ⊤) (h2p : 2 < p) :
     let hp1 : 1 < p := lt_trans (by norm_num) h2p
     ∃ Sren Sord : PhysicalScalarRealInput p → ℝ → PhysicalScalarRealInput p,
@@ -60,13 +66,17 @@ theorem theorem1_1 (hp : p ≠ ⊤) (h2p : 2 < p) :
       (∀ u : PhysicalScalarRealInput p,
         ∃ (T : ℝ) (hT : 0 < T), ∃ U : Set (PhysicalScalarRealInput p), IsOpen U ∧ u ∈ U ∧
           ContinuousOn (fourthScalarTrajectoryOn hp hp1 T) U ∧
-          ∀ v ∈ U, ∃! γ : C(Icc (-T) T,PhysicalScalarRealInput p),
-            IsMKdVSolutionBySmoothApproximation Sren T hT.le v γ) ∧
+          ∀ v ∈ U,
+            IsMKdVSolutionBySmoothApproximation Sren T hT.le v (fourthScalarTrajectoryOn hp hp1 T v) ∧
+            ∃! γ : C(Icc (-T) T,PhysicalScalarRealInput p),
+              IsMKdVSolutionBySmoothApproximation Sren T hT.le v γ) ∧
       (∃ U : Set (PhysicalScalarRealInput p), IsOpen U ∧ (0 : PhysicalScalarRealInput p) ∈ U ∧
         (∀ T : ℝ, ∀ hT : 0 < T,
           ContinuousOn (fourthScalarTrajectoryOn hp hp1 T) U ∧
-          ∀ v ∈ U, ∃! γ : C(Icc (-T) T,PhysicalScalarRealInput p),
-            IsMKdVSolutionBySmoothApproximation Sren T hT.le v γ) ∧
+          ∀ v ∈ U,
+            IsMKdVSolutionBySmoothApproximation Sren T hT.le v (fourthScalarTrajectoryOn hp hp1 T v) ∧
+            ∃! γ : C(Icc (-T) T,PhysicalScalarRealInput p),
+              IsMKdVSolutionBySmoothApproximation Sren T hT.le v γ) ∧
         (∀ v ∈ U, Continuous (fun time : ℝ => fourthScalarImageFlow hp hp1 v time) ∧
           ∀ w : ℕ → PhysicalScalarRealInput p, (∀ N, IsSmoothPhysicalScalarInput (w N)) →
             Tendsto w atTop (𝓝 v) → ∀ time : ℝ,
