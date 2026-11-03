@@ -587,6 +587,14 @@ modules = [
     'NLS.KdV.HminusOneDirichletSourceCircles',
     'NLS.Articles.KdVPseudomeasures.OriginalDirichletSourceCircles',
     'NLS.Articles.KdVPseudomeasures.OriginalDirichletUniformRiesz',
+    'NLS.KdV.SingularDirichletRieszBilinear',
+    'NLS.KdV.SingularDirichletRieszCoefficient',
+    'NLS.KdV.SingularDirichletPhysicalPairing',
+    'NLS.Fourier.UnitDirichletContinuous',
+    'NLS.KdV.SingularDirichletRieszKernel',
+    'NLS.FunctionalAnalysis.RankOneKernelComparison',
+    'NLS.KdV.SingularDirichletProjectionComparison',
+    'NLS.Articles.KdVPseudomeasures.OriginalDirichletRieszKernel',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

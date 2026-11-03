@@ -553,6 +553,14 @@ import NLS.KdV.HminusOneDirichletUniformDisplacement
 import NLS.KdV.HminusOneDirichletSourceCircles
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletSourceCircles
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletUniformRiesz
+import NLS.KdV.SingularDirichletRieszBilinear
+import NLS.KdV.SingularDirichletRieszCoefficient
+import NLS.KdV.SingularDirichletPhysicalPairing
+import NLS.Fourier.UnitDirichletContinuous
+import NLS.KdV.SingularDirichletRieszKernel
+import NLS.FunctionalAnalysis.RankOneKernelComparison
+import NLS.KdV.SingularDirichletProjectionComparison
+import NLS.Articles.KdVPseudomeasures.OriginalDirichletRieszKernel
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4409,3 +4417,30 @@ import NLS.Articles.KdVPseudomeasures.OriginalDirichletUniformRiesz
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_small_originalComplexDirichletDisplacement
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalComplexDirichlet_sourceCircles
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalDirichletRiesz_normalized_range_and_residual
+#print axioms NLS.KdV.singularDirichletResolventToH1_bilinear
+#print axioms NLS.KdV.singularDirichletRieszToH1_bilinear
+#print axioms NLS.KdV.singularDirichletRieszToH1_eigenvector_inside
+#print axioms NLS.KdV.exists_singularDirichletRieszToH1_amplitude
+#print axioms NLS.KdV.singularDirichletRieszToH1_amplitude_pairing
+#print axioms NLS.KdV.singularDirichlet_bilinear_mass_ne_zero_of_simple_isolated
+#print axioms NLS.KdV.singularDirichletRieszToH1_eq_pairing_smul
+#print axioms NLS.KdV.singularDirichletL2BaseInclusion_pairing
+#print axioms NLS.KdV.norm_singularDirichletL2BaseInclusion_pairing_le
+#print axioms NLS.KdV.singularDirichletDomainInclusion_physical_pairing
+#print axioms NLS.KdV.singularDirichletL2BaseInclusion_representative_pairing
+#print axioms NLS.KdV.singularDirichletDomainInclusion_representative_pairing
+#print axioms NLS.Fourier.unitDirichletContinuousInclusion
+#print axioms NLS.Fourier.unitDirichletContinuousInclusion_apply
+#print axioms NLS.KdV.singularDirichletL2Eigenfunctional
+#print axioms NLS.KdV.norm_singularDirichletL2Eigenfunctional_le
+#print axioms NLS.KdV.norm_singularDirichlet_bilinear_mass_sub_le
+#print axioms NLS.KdV.singularDirichletContinuousRieszProjection
+#print axioms NLS.KdV.singularDirichletContinuousRieszProjection_representative
+#print axioms NLS.KdV.singularDirichletContinuousRieszProjection_eq_rankOne
+#print axioms NLS.KdV.singularDirichletContinuousRieszProjection_apply_integral
+#print axioms NLS.KdV.norm_singularDirichletContinuousRieszProjection_le
+#print axioms NLS.FunctionalAnalysis.norm_rankOneKernel_sub_le
+#print axioms NLS.KdV.norm_singularDirichletL2Eigenfunctional_sub_le
+#print axioms NLS.KdV.norm_singularDirichletContinuousRieszProjection_sub_le
+#print axioms NLS.Articles.KdVPseudomeasures.originalDirichletContinuousRieszProjection
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_originalDirichletRiesz_physical_kernel

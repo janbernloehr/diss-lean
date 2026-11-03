@@ -121,5 +121,32 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "actual_physical_kernel_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-physical-kernel-map.json",
+    "actual_full_native_resolvent_bilinear_Green_symmetry": true,
+    "actual_H1_contour_lift_bilinear_Green_symmetry": true,
+    "actual_simple_isolated_bilinear_mass_proved_nonzero": true,
+    "actual_full_dual_projection_coefficient_formula": true,
+    "literal_unnormalized_physical_L2_pairing": true,
+    "physical_Holder_constant_one": true,
+    "entire_native_domain_continuous_representative_inclusion": true,
+    "actual_L2_to_uniform_contour_operator_constructed": true,
+    "identical_original_L2_projection_representative": true,
+    "exact_physical_pointwise_kernel_on_closed_interval": true,
+    "actual_strong_operator_norm_bound": true,
+    "actual_projection_comparison_from_physical_eigenfunction_errors": true,
+    "uniform_original_source_circle_physical_kernels": true,
+    "supplied_source_circle_or_bilinear_nonvanishing_conditions": false,
+    "high_frequency_eigenfunction_comparison_proved": false,
+    "uniform_bilinear_mass_lower_bound_proved": false,
+    "source_AppendixC4_rate_proved": false,
+    "source_AppendixC4_free_projection_convergence_proved": false,
+    "source_Lemma2_13_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
 }
