@@ -5,7 +5,7 @@ with the matrix correction in Theorem 2(ii); Theorem 4(i) proved on the full ori
 real H1 domain; Theorem 4(iii)'s angle-action bracket clause proved on its
 original real H1 angle domain. Theorem 4(ii)'s converse J_n clause, its
 sign-invariant mean-squared correction and its whole-sequence forward
-factorization near zero are proved. Theorems 3 and 4(ii)-(iii) as whole
+factorization locally at every original real H1 profile are proved. Theorems 3 and 4(ii)-(iii) as whole
 statements remain incomplete**.
 The actual Cartesian map is now globally bijective in every native integer
 real H^s class, s>=1. Every native datum has exactly one preimage in the
@@ -83,7 +83,7 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
 | Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension. | Existing NLS normal-form/frequency machinery can be reused after the mKdV side is identified. | Complete action factorization and independent mKdV angle/frequency identification with the recorded sign correction; the actual Gardner bracket transfer is proved. |
 | Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | **Proved** by `theorem4_i` on the full real H1 domain, including collapsed gaps and zero mean. The mKdV action is the literal inverse-energy-weighted integral of the independent physical Hill primitive on a proved isolating contour; its equality with a positive real-gap integral and contour independence are checked. | None for part (i). Parts (ii)-(iii) remain open; the common complex-source action extensions are now proved by Lemma 7. |
-| Theorem 4(ii), p. 4 | On real H^1, each I_n# is analytic in the mKdV actions and mean; conversely each J_n and the printed mean are analytic in NLS actions alone. | **The converse J_n clause is proved**, with holomorphic factors on open complex ℓ¹ action neighborhoods. The corrected mean squared has such a factor even at zero mean. Every integer physical mKdV action level also factors. Actual restricted NLS actions commute with every J_n under the Gardner bracket. | The whole-sequence forward factor is proved near zero, including on the literal original H1 domain; prove global forward factorization at general profiles. Signed mean needs a sign branch; the global correction proved here is mean squared. |
+| Theorem 4(ii), p. 4 | On real H^1, each I_n# is analytic in the mKdV actions and mean; conversely each J_n and the printed mean are analytic in NLS actions alone. | **The converse J_n clause is proved**, with holomorphic factors on open complex ℓ¹ action neighborhoods. The corrected mean squared has such a factor even at zero mean. Every integer physical mKdV action level also factors. Actual restricted NLS actions commute with every J_n under the Gardner bracket. | The whole-sequence forward factor is proved locally at every original real H1 profile, including zero mean and closed gaps; glue these factors to one common open complex action domain with global recovery. Signed mean needs a sign branch; the global correction proved here is mean squared. |
 | Theorem 4(iii), p. 4 | For all positive n,m, the angle-action Gardner bracket is delta_mn where the relevant angle is defined; angle sums then depend on actions and mean. | **The angle-action bracket clause is proved** by `theorem4_iii_angle_action` on every real H1 input where the angle is defined. The action index may have a closed gap. The actual Gardner distribution derivative and original NLS angle differential are identified. | Construct the independent mKdV angle and prove the final angle-sum factorization through J and mean. |
 
 The main dependencies singled out by the article are Theorem 5 (p. 9,
@@ -1705,3 +1705,52 @@ and the full corrected frequency comparison remain essential. The main
 theorem goal stays active.
 
 Validation: all 465 article/shared modules have validated private outputs. The 457 unchanged prefix source hashes match 1f4185e and their outputs were reused; all eight added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,828 declarations/auxiliaries and the combined audit for 49,764 NLS declarations, using only the standard allowed axioms. All 468 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,525 declarations (2,058 theorems and 467 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Forward analytic action dependence at every original real H1 profile
+
+The whole original signed NLS action sequence now has a common holomorphic
+factor through native physical mKdV actions and literal signed mean locally
+at every original physical real H1 profile. The source neighborhood is open
+in the original complex L2 space and contains the chosen literal H1 profile.
+The action neighborhood is open in weight-one complex l1 physical actions
+plus complex signed mean. Both neighborhoods and the l1-valued factor are
+chosen before all action indices. Recovery holds for every physical real
+L2 input in that source neighborhood. On original H1 inputs, each positive
+input entry is explicitly the independent Hill action and the mean is the
+literal zero Fourier coefficient. Zero mean, closed selected or other gaps,
+and infinitely many open actions are all included.
+
+The proof extends full sequence-valued quadratic-action descent to arbitrary
+complex basepoints. A nearby finite truncation retains all necessary head
+coordinates; translating by this head leaves tail rotation vectors unchanged.
+The checked zero-centered tail-sign argument gives all tail sign symmetries
+on a smaller ball around the finite center, with the original basepoint still
+inside. Analytic descent handles the tail, while the checked finite head
+section and action-preserving paths remove the retained nonzero pairs.
+
+To retain signed mean without a branch restriction, a separate auxiliary
+zero pair is (m+1/2,i*(m-1/2)). Its quadratic action is exactly m. This is an
+entire affine section at every complex mean, including zero; it neither
+recovers mean from NLS actions nor replaces it by mean squared. The positive
+auxiliary entries remain the native weighted Cartesian variables. Their
+full quadratic action sequence is exactly the weight-normalized physical
+mKdV actions with the literal mean at zero and unused negative slots zero.
+Every auxiliary rotation is stationary, including rotation of the auxiliary
+zero pair. The complete holomorphic action descent therefore gives the
+required factor, and the entire section pulls recovery back to the actual
+Cartesian chart and original source.
+
+Article-facing declarations are
+`original_NLS_actions_local_action_mean_factor_general_H1` and
+`original_H1_NLS_actions_local_physical_factor_general_H1` in
+`NLS/Articles/MKdVNLSHierarchies/GeneralForwardActionFactorization.lean`.
+Global determination by physical action/mean data was already proved, but
+these local factors have not yet been glued to one common open complex
+action domain with recovery for all original real H1 profiles. That common
+extension remains the forward obligation of Theorem 4(ii). Native inverse
+analyticity, independent canonical mKdV angles/full Gardner canonicity,
+final angle-sum factorization and the corrected full frequency comparison
+also remain essential. The main theorem goal stays active.
+
+Validation: all 472 article/shared modules have validated private outputs. The 465 unchanged prefix source hashes match 47697d7 and their outputs were reused; all seven added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,886 declarations/auxiliaries and the combined audit for 49,822 NLS declarations, using only the standard allowed axioms. All 475 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,560 declarations (2,085 theorems and 475 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

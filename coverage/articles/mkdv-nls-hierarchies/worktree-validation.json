@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 4828,
+  "audited_declarations_and_auxiliaries": 4886,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -12644,14 +12644,189 @@
       "kind": "theorem",
       "name": "physical_NLS_actions_general_H1_Cartesian_chart",
       "file": "NLS/Articles/MKdVNLSHierarchies/ActionRealizationGeneralCharts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "truncatePair_activeHead_union",
+      "file": "NLS/SequenceSpaces/FiniteHeadCenteredNeighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_finiteHead_centered_ball",
+      "file": "NLS/SequenceSpaces/FiniteHeadCenteredNeighborhood.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "actionRotationVectorCLM_head_eq_zero",
+      "file": "NLS/SequenceSpaces/FiniteHeadRotationInvariance.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "pairSignChange_head",
+      "file": "NLS/SequenceSpaces/FiniteHeadRotationInvariance.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "pairSignChange_invariant_of_tail_stationarity_at_head",
+      "file": "NLS/SequenceSpaces/FiniteHeadRotationInvariance.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_sequence_action_factor",
+      "file": "NLS/SequenceSpaces/LocalSequenceActionDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_sequence_action_factor_of_stationarity",
+      "file": "NLS/SequenceSpaces/LocalSequenceActionDescent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "zeroPairRadius",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "def",
+      "name": "zeroPairRadiusDerivative",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_zeroPairRadius",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_zeroPairRadius",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "zeroPairRadiusDerivative_rotation",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "def",
+      "name": "positiveCartesianQuadraticMeanMap",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianQuadraticMeanMap_eval",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_positiveCartesianQuadraticMeanMap",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "def",
+      "name": "positiveCartesianQuadraticMeanDerivative",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_positiveCartesianQuadraticMeanMap",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianQuadraticMeanDerivative_rotation",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "def",
+      "name": "positiveCartesianIsotropicSection",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianIsotropicSection_fst",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianIsotropicSection_snd",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_positiveCartesianIsotropicSection",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianQuadraticMeanMap_isotropicSection",
+      "file": "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraActionQuadraticParameters",
+      "file": "NLS/MKdV/MiuraQuadraticActionParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraActionQuadraticParameters_apply",
+      "file": "NLS/MKdV/MiuraQuadraticActionParameters.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesian_quadratic_parameters",
+      "file": "NLS/MKdV/MiuraQuadraticActionParameters.lean"
+    },
+    {
+      "kind": "def",
+      "name": "quadraticParameterObservables",
+      "file": "NLS/MKdV/MiuraGeneralLocalNLSActionFactor.lean"
+    },
+    {
+      "kind": "def",
+      "name": "quadraticParameterDomain",
+      "file": "NLS/MKdV/MiuraGeneralLocalNLSActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quadraticParameterDomain_open",
+      "file": "NLS/MKdV/MiuraGeneralLocalNLSActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quadraticParameterObservables_analytic",
+      "file": "NLS/MKdV/MiuraGeneralLocalNLSActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "quadraticParameterObservables_stationary",
+      "file": "NLS/MKdV/MiuraGeneralLocalNLSActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_native_action_factor",
+      "file": "NLS/MKdV/MiuraGeneralLocalNLSActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_miura_original_NLS_action_factor_at_H1",
+      "file": "NLS/MKdV/MiuraGeneralLocalNLSActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "original_NLS_actions_local_action_mean_factor_general_H1",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GeneralForwardActionFactorization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "original_H1_NLS_actions_local_physical_factor_general_H1",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GeneralForwardActionFactorization.lean"
     }
   ],
-  "public_declaration_count": 2525,
-  "theorem_count": 2058,
-  "definition_count": 467,
-  "full_build": "465 article/shared modules have validated private outputs. All 457 unchanged prefix module source hashes match the prior 1f4185e milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2560,
+  "theorem_count": 2085,
+  "definition_count": 475,
+  "full_build": "472 article/shared modules have validated private outputs. All 465 unchanged prefix module source hashes match the prior 47697d7 milestone; their private outputs were reused. Seven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/WeightedNonnegativeActionLifting.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/FiniteHeadCenteredNeighborhood.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -13118,12 +13293,19 @@
     "NLS/MKdV/MiuraGeneralNLSActionsCartesianStationarity.lean": "26184b9533665720c66626b7701ff8b43c3ede3681efc3d1d22045a731734484",
     "NLS/SequenceSpaces/LocalTailActionFactorAt.lean": "d71681e2ce36d0306a08f87ebd4207f90884a7b52e6018bd75de44a574d26231",
     "NLS/Articles/MKdVNLSHierarchies/ActionRealizationGeneralCharts.lean": "5bfe42cf22701c1b639ac202fa7b127d4ebe1b23a7d0e21b3787b92d9864c701",
+    "NLS/SequenceSpaces/FiniteHeadCenteredNeighborhood.lean": "7aff13491d373aae28196f2bed979b35aa667b70c0bc83d93e8a8e955d4d55c3",
+    "NLS/SequenceSpaces/FiniteHeadRotationInvariance.lean": "e4672eca7b94beda09b70d44867fa60fe39b70f2840b99e538d3f9a9b3023cb5",
+    "NLS/SequenceSpaces/LocalSequenceActionDescent.lean": "748f42f37449599af7cb4c03d464c995505606b1bdcfeb3f666ddc7ee5680c89",
+    "NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean": "81442d7fa6220f9f968b470b9918864bc59dd51ba3857ed4a36e41216c056867",
+    "NLS/MKdV/MiuraQuadraticActionParameters.lean": "905f03a7dd7848c7a8f8e3fad961acd99a5daac3487e8539f2d2269fdabea727",
+    "NLS/MKdV/MiuraGeneralLocalNLSActionFactor.lean": "55d9cc3502a451cc6cf8605a04f6ed925df10ccff60ed936185eff4d786fade3",
+    "NLS/Articles/MKdVNLSHierarchies/GeneralForwardActionFactorization.lean": "d8359bfba4196bb3bcd61ec73a8e00b55b89eef73ed7f504ac50fc1bfc683e6e",
     "NLS.lean": "8b7ce4ad52dd4f8dbc054e0bd1b7e6adc03480720e8557f9a8f54e461da6e8c6",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "e2a074a5925794fac8f24b1418ec80ab01ced1379c2e1265d88169c799b2ff74",
-    "scripts/check_mkdv_nls.py": "a96c61ea3e9baeecf6e0d7011661e53254bb996a60821e6059b788c36acce0e5"
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "362ae8cb748d3ca65b1e5cde0960def8ab1c42b27c44887b5bca8851d58262e0",
+    "scripts/check_mkdv_nls.py": "1da07c332dc8d56c57155ff7de7bff044ac6e32cd435dc32beee4247d1cad023"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 465,
+  "focused_module_count": 472,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -13523,12 +13705,25 @@
       "public_declaration_count": 2525,
       "theorem_count": 2058,
       "definition_count": 467
+    },
+    {
+      "milestone": "Whole-sequence forward local holomorphic physical-action/signed-mean factors at every original real H1 profile, with arbitrary-center sequence action descent and entire isotropic signed-mean section",
+      "audit_count": 4886,
+      "combined_NLS_audit_count": 49822,
+      "aggregate_compiled": true,
+      "module_count": 472,
+      "reused_prefix_module_count": 465,
+      "reused_prefix_commit": "47697d78cf26690358755a6e485f5903fe27df8d",
+      "frozen_source_checker_count": 475,
+      "public_declaration_count": 2560,
+      "theorem_count": 2085,
+      "definition_count": 475
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 49764,
+  "combined_audited_NLS_declarations": 49822,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -13536,7 +13731,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 457 unchanged prefix module source hashes match the prior 1f4185e milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4828 declarations/auxiliaries and combined audit for 49764 NLS declarations. All 468 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 465 unchanged prefix module source hashes match the prior 47697d7 milestone; their private outputs were reused. Seven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4886 declarations/auxiliaries and combined audit for 49822 NLS declarations. All 475 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

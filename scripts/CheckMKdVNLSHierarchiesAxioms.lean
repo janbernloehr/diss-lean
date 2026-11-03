@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.GeneralForwardActionFactorization
 import NLS.Articles.MKdVNLSHierarchies.ActionRealizationGeneralCharts
 import NLS.Articles.MKdVNLSHierarchies.GlobalSobolevCartesianInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.GeneralCartesianLocalInverseIdentification
@@ -57,6 +58,29 @@ open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
+    `NLS.Coeff.truncatePair_activeHead_union,
+    `NLS.Coeff.exists_finiteHead_centered_ball,
+    `NLS.Coeff.actionRotationVectorCLM_head_eq_zero,
+    `NLS.Coeff.pairSignChange_head,
+    `NLS.Coeff.pairSignChange_invariant_of_tail_stationarity_at_head,
+    `NLS.Coeff.exists_local_sequence_action_factor,
+    `NLS.Coeff.exists_local_sequence_action_factor_of_stationarity,
+    `NLS.Coeff.zeroPairRadius,
+    `NLS.Coeff.zeroPairRadiusDerivative,
+    `NLS.Coeff.hasFDerivAt_zeroPairRadius,
+    `NLS.Coeff.analyticAt_zeroPairRadius,
+    `NLS.Coeff.zeroPairRadiusDerivative_rotation,
+    `NLS.WeightedCoeff.positiveCartesianQuadraticMeanMap,
+    `NLS.WeightedCoeff.positiveCartesianQuadraticMeanMap_eval,
+    `NLS.WeightedCoeff.analyticAt_positiveCartesianQuadraticMeanMap,
+    `NLS.WeightedCoeff.positiveCartesianQuadraticMeanDerivative,
+    `NLS.WeightedCoeff.hasFDerivAt_positiveCartesianQuadraticMeanMap,
+    `NLS.WeightedCoeff.positiveCartesianQuadraticMeanDerivative_rotation,
+    `NLS.WeightedCoeff.positiveCartesianIsotropicSection,
+    `NLS.WeightedCoeff.positiveCartesianIsotropicSection_fst,
+    `NLS.WeightedCoeff.positiveCartesianIsotropicSection_snd,
+    `NLS.WeightedCoeff.analyticAt_positiveCartesianIsotropicSection,
+    `NLS.WeightedCoeff.positiveCartesianQuadraticMeanMap_isotropicSection,
     `NLS.WeightedCoeff.exists_real_quadratic_lift,
     `NLS.Coeff.exists_local_tail_sum_factor_of_chart_at,
     `NLS.Coeff.exists_local_tail_sum_factor_of_recovery_at,
@@ -731,6 +755,13 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.Coeff.exists_local_sequence_action_factor_of_stationarity,
+    ``NLS.WeightedCoeff.positiveCartesianQuadraticMeanMap_isotropicSection,
+    ``NLS.MKdV.miuraCartesian_quadratic_parameters,
+    ``NLS.MKdV.exists_local_miura_original_NLS_action_factor_at_H1,
+    ``NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_local_action_mean_factor_general_H1,
+    ``NLS.Articles.MKdVNLSHierarchies.original_H1_NLS_actions_local_physical_factor_general_H1,
+
     ``NLS.MKdV.exists_miuraSobolev_profile_of_nonnegative_actions,
     ``NLS.MKdV.exists_miuraPositiveCartesian_analytic_chart_H1,
     ``NLS.MKdV.nonempty_miuraGeneralCartesianNLSActionChart,

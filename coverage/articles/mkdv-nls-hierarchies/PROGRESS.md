@@ -2283,3 +2283,52 @@ and the full corrected frequency comparison remain essential. The main
 theorem goal stays active.
 
 Validation: all 465 article/shared modules have validated private outputs. The 457 unchanged prefix source hashes match 1f4185e and their outputs were reused; all eight added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,828 declarations/auxiliaries and the combined audit for 49,764 NLS declarations, using only the standard allowed axioms. All 468 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,525 declarations (2,058 theorems and 467 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Forward analytic action dependence at every original real H1 profile
+
+The whole original signed NLS action sequence now has a common holomorphic
+factor through native physical mKdV actions and literal signed mean locally
+at every original physical real H1 profile. The source neighborhood is open
+in the original complex L2 space and contains the chosen literal H1 profile.
+The action neighborhood is open in weight-one complex l1 physical actions
+plus complex signed mean. Both neighborhoods and the l1-valued factor are
+chosen before all action indices. Recovery holds for every physical real
+L2 input in that source neighborhood. On original H1 inputs, each positive
+input entry is explicitly the independent Hill action and the mean is the
+literal zero Fourier coefficient. Zero mean, closed selected or other gaps,
+and infinitely many open actions are all included.
+
+The proof extends full sequence-valued quadratic-action descent to arbitrary
+complex basepoints. A nearby finite truncation retains all necessary head
+coordinates; translating by this head leaves tail rotation vectors unchanged.
+The checked zero-centered tail-sign argument gives all tail sign symmetries
+on a smaller ball around the finite center, with the original basepoint still
+inside. Analytic descent handles the tail, while the checked finite head
+section and action-preserving paths remove the retained nonzero pairs.
+
+To retain signed mean without a branch restriction, a separate auxiliary
+zero pair is (m+1/2,i*(m-1/2)). Its quadratic action is exactly m. This is an
+entire affine section at every complex mean, including zero; it neither
+recovers mean from NLS actions nor replaces it by mean squared. The positive
+auxiliary entries remain the native weighted Cartesian variables. Their
+full quadratic action sequence is exactly the weight-normalized physical
+mKdV actions with the literal mean at zero and unused negative slots zero.
+Every auxiliary rotation is stationary, including rotation of the auxiliary
+zero pair. The complete holomorphic action descent therefore gives the
+required factor, and the entire section pulls recovery back to the actual
+Cartesian chart and original source.
+
+Article-facing declarations are
+`original_NLS_actions_local_action_mean_factor_general_H1` and
+`original_H1_NLS_actions_local_physical_factor_general_H1` in
+`NLS/Articles/MKdVNLSHierarchies/GeneralForwardActionFactorization.lean`.
+Global determination by physical action/mean data was already proved, but
+these local factors have not yet been glued to one common open complex
+action domain with recovery for all original real H1 profiles. That common
+extension remains the forward obligation of Theorem 4(ii). Native inverse
+analyticity, independent canonical mKdV angles/full Gardner canonicity,
+final angle-sum factorization and the corrected full frequency comparison
+also remain essential. The main theorem goal stays active.
+
+Validation: all 472 article/shared modules have validated private outputs. The 465 unchanged prefix source hashes match 47697d7 and their outputs were reused; all seven added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,886 declarations/auxiliaries and the combined audit for 49,822 NLS declarations, using only the standard allowed axioms. All 475 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,560 declarations (2,085 theorems and 475 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

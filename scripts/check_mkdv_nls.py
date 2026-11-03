@@ -499,6 +499,13 @@ modules = [
     'NLS/MKdV/MiuraGeneralNLSActionsCartesianStationarity.lean',
     'NLS/SequenceSpaces/LocalTailActionFactorAt.lean',
     'NLS/Articles/MKdVNLSHierarchies/ActionRealizationGeneralCharts.lean',
+    'NLS/SequenceSpaces/FiniteHeadCenteredNeighborhood.lean',
+    'NLS/SequenceSpaces/FiniteHeadRotationInvariance.lean',
+    'NLS/SequenceSpaces/LocalSequenceActionDescent.lean',
+    'NLS/SequenceSpaces/PositiveQuadraticMeanParameters.lean',
+    'NLS/MKdV/MiuraQuadraticActionParameters.lean',
+    'NLS/MKdV/MiuraGeneralLocalNLSActionFactor.lean',
+    'NLS/Articles/MKdVNLSHierarchies/GeneralForwardActionFactorization.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")
