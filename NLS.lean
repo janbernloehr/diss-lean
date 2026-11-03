@@ -5558,3 +5558,12 @@ import NLS.KdV.HillRegularSumContinuity
 import NLS.KdV.HillDirichletCirclePhase
 import NLS.KdV.HillSpectralCartesian
 import NLS.KdV.HillSpectralCartesianTerminal
+import NLS.ComplexAnalysis.ParametricSineSquareCosineMean
+import NLS.ComplexAnalysis.ParametricSineSquareCosineMeanLocal
+import NLS.ComplexAnalysis.SineSquareCosineMoments
+import NLS.KdV.HillDeflatedTraceCharts
+import NLS.ComplexAnalysis.QuadraticGapActionRatio
+import NLS.ComplexAnalysis.QuadraticGapActionMoment
+import NLS.KdV.HillActionGapFactor
+import NLS.KdV.HillDeflatedTraceChi
+import NLS.KdV.HillActionGapRatioAnalytic

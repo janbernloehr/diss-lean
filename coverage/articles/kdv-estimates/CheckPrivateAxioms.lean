@@ -635,6 +635,15 @@ import NLS.KdV.HillRegularSumContinuity
 import NLS.KdV.HillDirichletCirclePhase
 import NLS.KdV.HillSpectralCartesian
 import NLS.KdV.HillSpectralCartesianTerminal
+import NLS.ComplexAnalysis.ParametricSineSquareCosineMean
+import NLS.ComplexAnalysis.ParametricSineSquareCosineMeanLocal
+import NLS.ComplexAnalysis.SineSquareCosineMoments
+import NLS.KdV.HillDeflatedTraceCharts
+import NLS.ComplexAnalysis.QuadraticGapActionRatio
+import NLS.ComplexAnalysis.QuadraticGapActionMoment
+import NLS.KdV.HillActionGapFactor
+import NLS.KdV.HillDeflatedTraceChi
+import NLS.KdV.HillActionGapRatioAnalytic
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1057,7 +1066,18 @@ run_cmd do
     ``NLS.ComplexAnalysis.regularQuadraticCosinePrimitive,
     ``NLS.ComplexAnalysis.hasDerivAt_regularQuadraticCosinePrimitive,
     ``NLS.ComplexAnalysis.regularQuadraticCosinePrimitive_pi,
-    ``NLS.ComplexAnalysis.real_affine_complex_integral_eq_intervalIntegral]
+    ``NLS.ComplexAnalysis.real_affine_complex_integral_eq_intervalIntegral,
+    ``NLS.ComplexAnalysis.parametricSineSquareCosineMean,
+    ``NLS.ComplexAnalysis.parametricSineSquareCosineMean_neg,
+    ``NLS.ComplexAnalysis.analyticOnNhd_parametricSineSquareCosineMean,
+    ``NLS.ComplexAnalysis.analyticOnNhd_parametricSineSquareCosineMean_of_analytic_square,
+    ``NLS.ComplexAnalysis.analyticAt_parametricSineSquareCosineMean_of_analytic_square,
+    ``NLS.ComplexAnalysis.cosine_first_moment_eq_sine_square_deriv,
+    ``NLS.ComplexAnalysis.parametricSineSquareCosineMean_zero,
+    ``NLS.ComplexAnalysis.quadraticGapActionRatio,
+    ``NLS.ComplexAnalysis.analyticAt_quadraticGapActionRatio_of_collapse,
+    ``NLS.ComplexAnalysis.quadraticGapActionRatio_at_collapse,
+    ``NLS.ComplexAnalysis.circleIntegral_mul_div_endpointRoot_eq_squared_gap]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
