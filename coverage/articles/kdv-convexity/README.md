@@ -1857,6 +1857,50 @@ coordinates and real isospectral invariance are still required for the
 positive-ell2 action-space extension. All main theorem flags remain
 unverified.
 
+## All-index canonical signs, real formulas and exact zero criteria
+
+`HillHminusOneAllCubicSigns.lean` applies the physical real-cut theorem
+to the actual filled square on every canonical gap disc. Global upper
+and lower sheet signs fix the counterclockwise jump. Consequently every
+actual canonical cubic period is real and nonpositive, including low
+and collapsed gaps. Its finite-head analytic extensions retain these
+signs at every nearby real input.
+
+`RealCutWeightedPowerIntegral.lean` proves the literal weighted odd-power
+cut formula. A filled analytic square bounds the weighted integrands
+near both endpoints, and bounded removability handles a collapsed cut.
+For every polynomial order m and odd power 2*k+1, the contour integral
+of lambda^m*(F+i*n*pi)^(2*k+1) is minus twice the real integral of
+x^m*v_n(x)^(2*k+1).
+
+`HillHminusOneRealPeriodFormulas.lean` identifies the original canonical
+periods with their real profile integrals:
+A_n,m=(2/pi)*integral x^m*v_n(x) and
+R_n=-(2/pi)*integral v_n(x)^3,
+with bounds lambda_(2*n-1) to lambda_(2*n). Here v_n is the actual signed
+arcosh profile, not an assumed comparison profile. The analytic polynomial
+shift contributes zero to the Arnold contour. All signs and factors
+retain the original counterclockwise normalization, without an extra i.
+
+`HillHminusOneAllPeriodZeros.lean` proves nonnegativity of every even
+polynomial Arnold period. The level-zero Arnold period is positive
+exactly when the actual gap is open. The cubic period is strictly
+negative exactly in that case. Both vanish exactly on a closed gap,
+and every polynomial Arnold period vanishes there. Thus R_n=0 if and
+only if A_n,0=0, at every positive index, including central endpoints
+and collisions.
+
+The article-specific `CanonicalMomentPreparation.lean` packages one
+complex-open neighborhood for any prescribed finite positive-index
+head. All polynomial and cubic families are analytic there and match
+the actual nearby-real canonical periods, with Arnold nonnegativity,
+cubic nonpositivity/reality and the exact common zero criterion. This
+supplies the finite-head spectral sign and zero inputs for Lemma 4.6(i).
+Global Birkhoff actions are not yet identified with these Arnold periods;
+Lemma 4.6(ii), the common infinite-tail matching, action-fiber invariance
+and the actual global positive-ell2 Hamiltonian extension remain open.
+All main theorem flags remain unverified.
+
 ## Remaining essential KdV work
 
 1. Match the actual canonical periods to the existing common high source
@@ -1864,8 +1908,9 @@ unverified.
    analytic extensions on one complex H^-1 neighborhood. Local analytic
    extensions now agree with every nearby real canonical period, at all
    positive indices and simultaneously on any prescribed finite set.
-   Glue the global potential family and prove the remaining central
-   signs and estimates.
+   Glue the global potential family and prove the remaining physical
+   trace/action identities. All canonical central signs and exact
+   Arnold/cubic zero criteria are now proved.
 2. The **high-index complex H^-1-neighborhood** bounds
    |R_n|=O(gamma_n^4/n^3), gamma_n^2/n<=16*pi*|A_n| and
    |8*n*pi*R_n|<=C*|A_n|^2 are now proved. Identify A_n with the
@@ -1918,15 +1963,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `9156281` contains 372 source modules. Every
-baseline source hash remains unchanged. Eight authored modules pass
+The validated baseline at `c3c374f` contains 380 source modules. Every
+baseline source hash remains unchanged. Five authored modules pass
 incremental Lean 4.33.1/mathlib v4.33.1 checks with `warningAsError=true`.
-The full reproducible script now lists 380 source modules. The
+The full reproducible script now lists 385 source modules. The
 positive-index example passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 187 additional shared modules:
-4004 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 188 additional shared modules:
+4028 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

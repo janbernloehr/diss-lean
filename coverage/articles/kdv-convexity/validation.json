@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-03",
-  "milestone": "Actual canonical H^-1 polynomial and cubic gap periods identified with local complex-analytic extensions at every index, simultaneously on any finite index set",
+  "milestone": "Actual all-index H^-1 period profile formulas, canonical Arnold positivity, cubic nonpositivity and exact common zero-gap criteria, with finite-head analytic article preparation",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -397,11 +397,16 @@
     "NLS.ComplexAnalysis.NearbyCircleHomotopy",
     "NLS.KdV.HillHminusOneGapContourContinuity",
     "NLS.KdV.HillHminusOneAnalyticCanonicalPeriods",
-    "NLS.KdV.HillHminusOneFinitePeriodExtensions"
+    "NLS.KdV.HillHminusOneFinitePeriodExtensions",
+    "NLS.ComplexAnalysis.RealCutWeightedPowerIntegral",
+    "NLS.KdV.HillHminusOneAllCubicSigns",
+    "NLS.KdV.HillHminusOneRealPeriodFormulas",
+    "NLS.KdV.HillHminusOneAllPeriodZeros",
+    "NLS.Articles.KdVConvexity.CanonicalMomentPreparation"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 4004,
+    "declarations": 4028,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -442,6 +447,7 @@
       "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc"
     ],
     "additional_shared_modules": [
+      "NLS.ComplexAnalysis.RealCutWeightedPowerIntegral",
       "NLS.ComplexAnalysis.ScalarCoordinateUniqueness",
       "NLS.ComplexAnalysis.NearbyCircleHomotopy",
       "NLS.ComplexAnalysis.ContinuousMapAnalytic",
@@ -637,6 +643,7 @@
     "NLS/Articles/KdVConvexity/ActionEmbedding.lean": "76a71b6f518b8c5ef03af0b5681ad21d838a85a261f92d5c996f761e01585037",
     "NLS/Articles/KdVConvexity/AnalyticSeries.lean": "6ebd3fd34d32ce236ae7b60756cf1542c36a3e6d76cb671eb756e52c390db15b",
     "NLS/Articles/KdVConvexity/BaseContourSeries.lean": "27c6244f1fa47880719e51cbae8a62203b5d4ac5561a4cd518940cbb6ad71f4f",
+    "NLS/Articles/KdVConvexity/CanonicalMomentPreparation.lean": "a4e67c69a5fb52d284f2e95c4edfda4f18e94fc0f9cd4e4751330a4590877939",
     "NLS/Articles/KdVConvexity/CoordinateActionExtension.lean": "731561a0e5afb2460ac2b5f17dc2d7cd70cd97c5491af0fa1b9ced0de5c0bf23",
     "NLS/Articles/KdVConvexity/GlobalExtension.lean": "a78d76d0fa33b892f8b981d49a64f59f7fd0eee4c04eb34c73817cd86359c11d",
     "NLS/Articles/KdVConvexity/LocalConsequences.lean": "35ba924320178bea8c6b3b35ef136d313a562a649b6b8c89646b886dbab8553d",
@@ -688,6 +695,7 @@
     "NLS/ComplexAnalysis/RealCoshTrace.lean": "c1fdefc714ecde9a5d6c1dc7585ab392a09cd6e985dad89dc6ef5bcf9f3ec89d",
     "NLS/ComplexAnalysis/RealCutCircleIntegral.lean": "9cfaef9ee5c5adfa9cecd18e2b43a6578e12da64ff4d5e2c998e7f88bb76f196",
     "NLS/ComplexAnalysis/RealCutConjugation.lean": "33967652635990b516d85750c516522c08b20cf62bd2b95a1319e313a663132d",
+    "NLS/ComplexAnalysis/RealCutWeightedPowerIntegral.lean": "901923a011de43f0b8dbc0f585bfb2db611085b870a12bcf59789c11c4c64782",
     "NLS/ComplexAnalysis/RealDiameterDisc.lean": "9c1ee677380624e534b243b093793234d1e9fc9f3653a23356fe838c04869c6d",
     "NLS/ComplexAnalysis/RealGapDiscIsolation.lean": "d3048b12cecb62308521385d36fef1d03ba6e1b86ea416db3c0c09f0b62230b2",
     "NLS/ComplexAnalysis/RealGapEllipse.lean": "b0391686c068cc73429e035038d196ff351ddd0f13df25184d65541ef7396640",
@@ -810,8 +818,10 @@
     "NLS/KdV/HillFullPeriod.lean": "651d93e8060125c8b02f685cd61738e74f4f29263b150c9a69d77d9d531cfc11",
     "NLS/KdV/HillGlobalRealLabels.lean": "35cee3753ff96bb5d4184f4025e2b97996d90d01ef8cbca42edb1584b7d2ec2d",
     "NLS/KdV/HillHminusOneAllBoundaryLimits.lean": "0bc9037a6b2fee99a089f7cb1b4e7ca2205eaa97451f4d4f558caf45314f99bd",
+    "NLS/KdV/HillHminusOneAllCubicSigns.lean": "61ae4e774afee8e0db4249adfdd398eb2f2a3f07328fdaf828b7fbced7ded1e9",
     "NLS/KdV/HillHminusOneAllEndpointNormalization.lean": "9b738bcd3a62b84b17be95ed0c15d9310129b77839298447634fd8186e3eda2d",
     "NLS/KdV/HillHminusOneAllGapSquares.lean": "53f29fdd3b0e854439c35c57f47986cd85ab3a2d04a753f1b710dd6a3ac15b71",
+    "NLS/KdV/HillHminusOneAllPeriodZeros.lean": "b719f5f1f4e17e871bb1901ba8526875acd871e4c7f66a4f0d4e835c80e6f300",
     "NLS/KdV/HillHminusOneAllRealPeriods.lean": "29ca2ce19b67fc08903ae93209e20401c078f0b6d1d74c4a58cc60c0c52f1ff0",
     "NLS/KdV/HillHminusOneAnalyticCanonicalPeriods.lean": "aadf87cb25bb3047f0e7ad38bcd10132bc4f71db1b8343dc1842b3f3bd8690a3",
     "NLS/KdV/HillHminusOneAnnulusCoverage.lean": "916c9437bf30dfc5fee301e79168604c9cc83a6ccbb8518d0aac0d96ce6e7ffe",
@@ -861,6 +871,7 @@
     "NLS/KdV/HillHminusOneRealGapSigns.lean": "b2857c56a2eb2fdde607314ed13be57089611c2e903dcd23de42d15677a17c60",
     "NLS/KdV/HillHminusOneRealGapSquares.lean": "fa5fb527da3c68fda9e03282fb848a08e45e27fe82baaeb02888c64bd75c324c",
     "NLS/KdV/HillHminusOneRealPairs.lean": "7f2a8ee2de7756fbf715de6a122918e32ce5872bd21bfae9389f936a5f290107",
+    "NLS/KdV/HillHminusOneRealPeriodFormulas.lean": "153a1e0a4df8c35bdca107fab3d411f3e85b9d7a564a4751e4f829cbb3b5830a",
     "NLS/KdV/HillHminusOneReality.lean": "10e72d25c3441afac7098a88b212137432c8a967f1404cc2279ae62b19afef98",
     "NLS/KdV/HillHminusOneReflection.lean": "8005980b4e7fa831018704438f26b6b9c85c54a499f357d247c331a2b9415f4a",
     "NLS/KdV/HillHminusOneRegularBoundary.lean": "5bc7513b64540b11c3a8e6542155484ba634d85609d0e2677df618ebe4b1bf28",
@@ -1014,7 +1025,7 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "284f7f64de2e09192fb92aa20c911a24a86ceec4604772cce4b93be72f9754f4",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "b6f84740a22b1e3cde95ca7e1f4149343c661d23088f9f7a986cc5c7284bb0cb",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/band-primitive-shared-imports.json": "ee14ececa4bebbb805a8d49836d86e72ab62e34a26910f7886d91d931b485ef1",
@@ -1025,10 +1036,10 @@
     "coverage/articles/kdv-convexity/miura-shared-imports.json": "03ff17c03499d952d3bc9ad51743ae761db5416ca4f93426e2e731fac0a39b00",
     "coverage/articles/kdv-convexity/physical-cut-shared-imports.json": "c6adf4965416cc426fc385ce324b4afb1aae45fec50e499debfbd5c2a2c5997f",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
-    "scripts/check-kdv-convexity.sh": "ab8d74b5e0036bdecd7b67e6ca1701087c9d9b727d98b59913d6fa531e05daf6"
+    "scripts/check-kdv-convexity.sh": "40db3f54a515d994a163da98666c3108c4f64d3b3d1338532cfbf040e6302c58"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/canonical-period-audit-validation.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/all-period-sign-audit-validation.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -1046,14 +1057,14 @@
     "All main theorems remain unverified.",
     "The actual H^-1 spectral periods now satisfy uniform complex-neighborhood quartic-gap, gap/Arnold-period and quadratic weighted cubic-period estimates, including collapsed gaps. These are potential-space statements for the constructed source-normalized periods; global Birkhoff action identification and analytic action-space descent remain required.",
     "The local analytic contour germs are now identified with the actual moving-circle canonical periods at every nearby real H^-1 input, including central and collapsed gaps. Every polynomial moment and cubic period shares one neighborhood at a fixed index; any finite index set shares one neighborhood. Matching the infinite high family, global potential-family gluing, finite-gap exterior matching and the normalized inversion remainder of Lemma 4.4 remain open.",
-    "Match the actual canonical periods with the existing common high source family and combine the new simultaneous finite-head extensions with that tail on one complex H^-1 neighborhood. Every positive-index canonical polynomial/cubic period now has local complex-analytic extensions agreeing with the actual period at every nearby real input, and any prescribed finite set of indices shares one neighborhood. Global potential-family gluing, central period signs, intrinsic singular-Hill operator identification, Birkhoff-action identification and real isospectral invariance remain.",
-    "Actual high filled squares are nonnegative on the real gaps, and the actual high cubic periods are real and nonpositive, including collapsed gaps. Arnold positivity and the finite central cubic signs remain unproved.",
+    "Match the actual canonical periods to the existing common high source family and combine the simultaneous finite-head extensions with that tail on one complex H^-1 neighborhood. All canonical cubic signs, literal real profile formulas, Arnold positivity and exact closed-gap/Arnold-zero/cubic-zero equivalences are now proved at every positive index. Global potential-family gluing, intrinsic singular-Hill operator identification, Birkhoff-action identification, real isospectral invariance and physical energy/frequency identities remain.",
+    "Every actual canonical cubic period is real and nonpositive, strictly negative exactly on an open gap. All canonical even polynomial Arnold periods are nonnegative; the level-zero Arnold period is positive exactly on an open gap. Its zero set equals the cubic zero set, including central and collapsed gaps. The common high source family has not yet been matched to these canonical periods, and global Birkhoff actions have not yet been identified with the Arnold periods.",
     "The energy-analytic endpoint unit root is controlled uniformly over nearby complex H^-1 inputs. Joint potential analyticity of that chosen deflated root and a single neighborhood for all error tolerances are not asserted.",
     "Physical energy and frequency identification, the KdV quadratic coefficients giving -6*Id, positive-index Hessian transport and main Theorems 1.2 and 1.3 remain unproved.",
     "No full repository build or replacement of the dissertation validation is claimed.",
     "The common-neighborhood descent, nonnegative overlap gluing, raw weighted-action bound transport and positive-ell2 analytic summation are now proved for analytic real-action-invariant coordinate families. The actual KdV Birkhoff map, its Arnold-period identity and real isospectral invariance of all actual moments, including the finite central ones, remain unproved inputs."
   ],
-  "previous_progress_commit": "9156281059a388a910f81f33b38ac8118e58182a",
+  "previous_progress_commit": "c3c374fe07295982b4dabe841db9b4ee0b4e3206",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -1542,7 +1553,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation: all source hashes of the validated 372-module baseline remain unchanged; eight authored modules pass warningAsError checks, followed by the positive-index example, combined transitive axiom audit and coverage-name check. The full reproducible script lists 380 source modules.",
+  "focused_validation_scope": "Incremental validation: all source hashes of the validated 380-module baseline remain unchanged; five authored modules pass warningAsError checks, followed by the positive-index example, combined transitive axiom audit and coverage-name check. The full reproducible script lists 385 source modules.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -1852,9 +1863,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 692,
-    "audit_modules_present": 187,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/CanonicalPeriodCoverageNames.log"
+    "declarations": 708,
+    "audit_modules_present": 188,
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/AllPeriodSignCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -1942,77 +1953,53 @@
     ]
   },
   "incremental_validation": {
-    "baseline_commit": "9156281059a388a910f81f33b38ac8118e58182a",
-    "baseline_modules": 372,
+    "baseline_commit": "c3c374fe07295982b4dabe841db9b4ee0b4e3206",
+    "baseline_modules": 380,
     "baseline_source_hashes_unchanged": true,
-    "newly_checked_authored_modules": 8,
+    "newly_checked_authored_modules": 5,
     "completed_module_checks": [
       {
-        "module": "NLS.ComplexAnalysis.ScalarCoordinateUniqueness",
-        "source_sha256": "4619f5710120f1b85ee1935048ab268cbe45acb717fb5846b47cd44f2f393584",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/collar-source-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.ScalarCoordinateUniqueness.lean.log",
+        "module": "NLS.ComplexAnalysis.RealCutWeightedPowerIntegral",
+        "source_sha256": "901923a011de43f0b8dbc0f585bfb2db611085b870a12bcf59789c11c4c64782",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/all-period-integral-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.RealCutWeightedPowerIntegral.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.KdV.HillHminusOneTraceChartSource",
-        "source_sha256": "18e716bab8099e3ae2eca54e76bc9f980df87a46e760073ae1fc40dd5ba84a4a",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/collar-boundary-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneTraceChartSource.lean.log",
+        "module": "NLS.KdV.HillHminusOneAllCubicSigns",
+        "source_sha256": "61ae4e774afee8e0db4249adfdd398eb2f2a3f07328fdaf828b7fbced7ded1e9",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/all-period-sign-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneAllCubicSigns.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.KdV.HillHminusOneTraceChartBoundary",
-        "source_sha256": "7255410db568142888bc53814e9a80882ce8795494bde9cd5b0ccba1257f754d",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/collar-boundary-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneTraceChartBoundary.lean.log",
+        "module": "NLS.KdV.HillHminusOneRealPeriodFormulas",
+        "source_sha256": "153a1e0a4df8c35bdca107fab3d411f3e85b9d7a564a4751e4f829cbb3b5830a",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/all-period-formula-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneRealPeriodFormulas.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.KdV.HillHminusOneTraceChartRealAgreement",
-        "source_sha256": "58445fb433f254785158a3050b930d55e8d6026e42e772b1275891a0a8086969",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/collar-real-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneTraceChartRealAgreement.lean.log",
+        "module": "NLS.KdV.HillHminusOneAllPeriodZeros",
+        "source_sha256": "b719f5f1f4e17e871bb1901ba8526875acd871e4c7f66a4f0d4e835c80e6f300",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/all-period-zero-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneAllPeriodZeros.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.ComplexAnalysis.NearbyCircleHomotopy",
-        "source_sha256": "b210b415b05cb7477074cc8c00cb12d1697aca9eae3c7659c7ed6a0258bd4f9b",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/collar-circle-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.NearbyCircleHomotopy.lean.log",
-        "warningAsError": true,
-        "result": "passed"
-      },
-      {
-        "module": "NLS.KdV.HillHminusOneGapContourContinuity",
-        "source_sha256": "d37ba9261fcfaa7df8cf3535d22f8798679468ed908da92c7b8e41922b467e64",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/collar-canonical-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneGapContourContinuity.lean.log",
-        "warningAsError": true,
-        "result": "passed"
-      },
-      {
-        "module": "NLS.KdV.HillHminusOneAnalyticCanonicalPeriods",
-        "source_sha256": "aadf87cb25bb3047f0e7ad38bcd10132bc4f71db1b8343dc1842b3f3bd8690a3",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/collar-canonical-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneAnalyticCanonicalPeriods.lean.log",
-        "warningAsError": true,
-        "result": "passed"
-      },
-      {
-        "module": "NLS.KdV.HillHminusOneFinitePeriodExtensions",
-        "source_sha256": "a1ae2660520d65d75e3a6d01a03e8c8a3d7336bab41a0ac991c749ec27a143fa",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/collar-canonical-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneFinitePeriodExtensions.lean.log",
+        "module": "NLS.Articles.KdVConvexity.CanonicalMomentPreparation",
+        "source_sha256": "a4e67c69a5fb52d284f2e95c4edfda4f18e94fc0f9cd4e4751330a4590877939",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/all-period-article-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.Articles.KdVConvexity.CanonicalMomentPreparation.lean.log",
         "warningAsError": true,
         "result": "passed"
       }
     ],
-    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/canonical-period-audit-validation.log"
+    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/all-period-sign-audit-validation.log"
   },
   "Hminus1_real_spectral_progress": {
     "potential_space": "Every real unit-period H^-1 potential, specified by conjugate reflection of its raw Fourier coefficients.",
@@ -2252,7 +2239,9 @@
       "Real gap contour geometry"
     ],
     "all_index_real_periods_constructed_and_integrable": true,
-    "canonical_period_analyticity_scope": "Local complex-analytic extensions of actual canonical periods at every real reference and every positive index, agreeing at all nearby real inputs; simultaneous on any prescribed finite index set. Common infinite-tail matching and global family gluing remain open."
+    "canonical_period_analyticity_scope": "Local complex-analytic extensions of actual canonical periods at every real reference and every positive index, agreeing at all nearby real inputs; simultaneous on any prescribed finite index set. Common infinite-tail matching and global family gluing remain open.",
+    "all_canonical_cubic_signs_and_Arnold_zero_criteria_proved": true,
+    "Birkhoff_action_identity_remains_separate": true
   },
   "Hminus1_band_primitive_progress": {
     "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
@@ -2305,7 +2294,9 @@
       "Two-sided L2 primitive gluing through real bands"
     ],
     "new_all_real_periods_module": "NLS.KdV.HillHminusOneAllRealPeriods",
-    "central_period_analyticity_scope": "Local complex-analytic extensions of actual canonical periods at every real reference and every positive index, agreeing at all nearby real inputs; simultaneous on any prescribed finite index set. Common infinite-tail matching and global family gluing remain open."
+    "central_period_analyticity_scope": "Local complex-analytic extensions of actual canonical periods at every real reference and every positive index, agreeing at all nearby real inputs; simultaneous on any prescribed finite index set. Common infinite-tail matching and global family gluing remain open.",
+    "all_canonical_cubic_signs_and_Arnold_zero_criteria_proved": true,
+    "Birkhoff_action_identity_remains_separate": true
   },
   "Hminus1_all_gap_square_progress": {
     "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
@@ -2364,7 +2355,9 @@
     ],
     "joint_complex_potential_filled_square_reference_extensions_constructed": true,
     "joint_extension_scope": "Joint analytic extensions of the entire reference filled square on each compact isolating disc; identification with the canonical family at nearby real potentials remains open.",
-    "central_period_analyticity_scope": "Local complex-analytic extensions of actual canonical periods at every real reference and every positive index, agreeing at all nearby real inputs; simultaneous on any prescribed finite index set. Common infinite-tail matching and global family gluing remain open."
+    "central_period_analyticity_scope": "Local complex-analytic extensions of actual canonical periods at every real reference and every positive index, agreeing at all nearby real inputs; simultaneous on any prescribed finite index set. Common infinite-tail matching and global family gluing remain open.",
+    "all_canonical_cubic_signs_and_Arnold_zero_criteria_proved": true,
+    "Birkhoff_action_identity_remains_separate": true
   },
   "Hminus1_joint_gap_germ_progress": {
     "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
@@ -2411,7 +2404,9 @@
     "shared_source_commit": "174af0e4674c0dcfb8ff3e64edf149d705b65022",
     "primitive_collars_and_periods_identified_with_nearby_real_canonical_families": true,
     "remaining_joint_extension_identification_scope": "The primitive collars and canonical periods are now matched at all nearby real inputs. Identification of the full filled-square charts with the varying canonical filled squares remains separate.",
-    "one_common_complex_neighborhood_for_any_prescribed_finite_period_head": true
+    "one_common_complex_neighborhood_for_any_prescribed_finite_period_head": true,
+    "all_canonical_cubic_signs_and_Arnold_zero_criteria_proved": true,
+    "Birkhoff_action_identity_remains_separate": true
   },
   "Hminus1_actual_canonical_period_progress": {
     "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
@@ -2456,6 +2451,43 @@
       "Compact uniform neighborhood selection",
       "Smooth affine circle homotopy and canonical label continuity",
       "Jointly analytic reference gap-period germs"
-    ]
+    ],
+    "all_canonical_cubic_signs_and_Arnold_zero_criteria_proved": true,
+    "Birkhoff_action_identity_remains_separate": true
+  },
+  "Hminus1_all_period_sign_zero_progress": {
+    "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
+    "actual_canonical_cubic_period_nonpositive_and_real_at_every_positive_index": true,
+    "cubic_sign_includes_central_and_collapsed_gaps": true,
+    "counterclockwise_real_cut_jump_preserves_original_sign_and_no_extra_factor_i": true,
+    "weighted_odd_shifted_primitive_integral_formula_proved": true,
+    "weighted_odd_formula": "integral lambda^m*(F+i*n*pi)^(2*k+1)=-2*integral_real x^m*v_n(x)^(2*k+1), for all m,k>=0.",
+    "literal_Arnold_polynomial_period_real_integral_formula_proved": true,
+    "Arnold_formula": "A_n,m=(2/pi)*integral_[lambda_2n-1,lambda_2n] x^m*v_n(x), with the literal arcosh profile v_n.",
+    "literal_cubic_period_real_integral_formula_proved": true,
+    "cubic_formula": "R_n=-(2/pi)*integral_[lambda_2n-1,lambda_2n] v_n(x)^3.",
+    "collapsed_cut_control": "A filled analytic square bounds all weighted odd powers near the puncture; bounded removability proves the same formulas at a collapsed gap.",
+    "every_even_polynomial_Arnold_period_nonnegative": true,
+    "level_zero_Arnold_period_strictly_positive_iff_actual_gap_open": true,
+    "every_polynomial_Arnold_period_zero_on_actual_closed_gap": true,
+    "cubic_period_strictly_negative_iff_actual_gap_open": true,
+    "cubic_period_zero_iff_actual_gap_closed": true,
+    "level_zero_Arnold_period_zero_iff_actual_gap_closed": true,
+    "cubic_period_zero_iff_level_zero_Arnold_period_zero": true,
+    "one_analytic_neighborhood_for_every_prescribed_finite_head_retains_all_signs_and_zero_relations": true,
+    "article_preparation_declaration": "NLS.Articles.KdVConvexity.exists_finite_analytic_canonical_periods_with_signs",
+    "global_Birkhoff_actions_identified_with_these_Arnold_periods": false,
+    "canonical_real_periods_matched_to_existing_common_high_source_family": false,
+    "common_neighborhood_for_all_positive_indices_with_existing_high_family_proved": false,
+    "real_isospectral_invariance_and_action_fiber_invariance_proved": false,
+    "actual_global_positive_ell2_Hamiltonian_extension_proved": false,
+    "new_authored_modules": [
+      "NLS.ComplexAnalysis.RealCutWeightedPowerIntegral",
+      "NLS.KdV.HillHminusOneAllCubicSigns",
+      "NLS.KdV.HillHminusOneRealPeriodFormulas",
+      "NLS.KdV.HillHminusOneAllPeriodZeros",
+      "NLS.Articles.KdVConvexity.CanonicalMomentPreparation"
+    ],
+    "source_preparation_scope": "The actual finite-head spectral analyticity, real signs and zero criteria needed for Lemma 4.6(i); no claim of Birkhoff-action identification or Lemma 4.6(ii)."
   }
 }
