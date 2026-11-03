@@ -646,6 +646,15 @@ modules = [
     'NLS.KdV.HillHalfSandwich',
     'NLS.KdV.HillHalfSandwichSmall',
     'NLS.Articles.KdVPseudomeasures.PeriodicNormalizedPerturbation',
+    'NLS.KdV.HillHalfDomainSymbol',
+    'NLS.KdV.HillHalfNativeMaps',
+    'NLS.KdV.HillNormalizedPhase',
+    'NLS.KdV.HillNormalizedInverse',
+    'NLS.KdV.HillHalfPotentialBase',
+    'NLS.KdV.HillNormalizedPencil',
+    'NLS.KdV.HillNormalizedResolvent',
+    'NLS.Articles.KdVPseudomeasures.PeriodicNormalizedResolvent',
+    'NLS.KdV.HillHalfPhysicalMaps',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

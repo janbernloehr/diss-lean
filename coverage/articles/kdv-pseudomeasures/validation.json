@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Actual full normalized periodic rough-potential perturbation S_lambda, squared-entry/Hilbert-space norm bounds, exact original physical Fourier action and uniform original Sobolev norm-ball smallness.",
+  "phase": "Actual full native half-denominator isomorphisms, normalized phase inverse, exact native pencil/resolvent factorization and uniform original rough-potential norm-ball inverse; Appendix B focused recheck.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -620,13 +620,22 @@
     "NLS/KdV/HillHalfSandwich.lean",
     "NLS/KdV/HillHalfSandwichSmall.lean",
     "NLS/Articles/KdVPseudomeasures/PeriodicNormalizedPerturbation.lean",
+    "NLS/KdV/HillHalfDomainSymbol.lean",
+    "NLS/KdV/HillHalfNativeMaps.lean",
+    "NLS/KdV/HillNormalizedPhase.lean",
+    "NLS/KdV/HillNormalizedInverse.lean",
+    "NLS/KdV/HillHalfPotentialBase.lean",
+    "NLS/KdV/HillNormalizedPencil.lean",
+    "NLS/KdV/HillNormalizedResolvent.lean",
+    "NLS/Articles/KdVPseudomeasures/PeriodicNormalizedResolvent.lean",
+    "NLS/KdV/HillHalfPhysicalMaps.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 3396,
-  "definitions": 698,
+  "proved_theorems": 3444,
+  "definitions": 717,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 4094,
+    "declarations": 4161,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -1219,10 +1228,20 @@
     "The ACTUAL normalized perturbation is a GENUINE bounded operator on the ENTIRE l2 space, with a proof-independent total parameter family recovering every original matrix entry on the source circles. Its norm squared is at most 128*(8*exp(1)+2)*log(n)*n^(2*r-2)*norm(q)_H^-r^2. No matrix-summability or bounded-operator property is supplied as a hypothesis of this source estimate.",
     "The SAME ACTUAL matrix is realized on ALL source-normalized physical periodic L2 inputs, with EXACTLY the SAME coefficient operator norm. Its physical Fourier output is the literal full original source row sum. Both original half-denominator factors and every original raw potential/input frequency are retained.",
     "For EVERY 0<=r<1 and EVERY specified original H^(-r) norm bound R, ONE cutoff BEFORE EVERY original complex potential in that ball, ALL later ORIGINAL positive indices and ALL points on each literal source circle makes the ACTUAL physical L2 norm of S_lambda at most ONE HALF. This includes the entire original Appendix C.4 range -1<t<-1/2, with r=-t.",
-    "The article adapter uses the ENTIRE ORIGINAL FourierLebesgueSpace(2,-r,2) distribution and EXACT ORIGINAL Sobolev norm. No coefficient-only replacement, physical period rescaling, source-index shift, reality premise or mean-zero restriction is added. The original physically period-one complex mean-zero source is included. The actual normalized-potential operator and its smallness are PROVED; identification of the perturbed inverse with the native resolvent remains OPEN."
+    "The article adapter uses the ENTIRE ORIGINAL FourierLebesgueSpace(2,-r,2) distribution and EXACT ORIGINAL Sobolev norm. No coefficient-only replacement, physical period rescaling, source-index shift, reality premise or mean-zero restriction is added. The original physically period-one complex mean-zero source is included. The actual normalized-potential operator and its smallness are PROVED; identification of the perturbed inverse with the native resolvent remains OPEN.",
+    "The actual inverse-square-root source denominator, normalized by the ORIGINAL H1 weight, is a bounded symbol on the ENTIRE literal source circle, with norm at most 4*sqrt(n). Its inverse square-root-denominator symbol, divided by the same H1 weight, is globally bounded. Every signed source mode and both resonances are retained.",
+    "Actual bounded half-denominator maps are CONSTRUCTED from the ENTIRE l2 space onto the ENTIRE ORIGINAL H1 domain and from the FULL ORIGINAL H-minus-one base onto l2. Actual bounded inverse maps are CONSTRUCTED in both directions. All FOUR inverse identities and all raw original distribution coefficients are proved; the native half-map operator norms are at most 4*sqrt(n). No smooth core or finite-mode replacement is used.",
+    "The actual source normalized free phase I_lambda(k)=(lambda-pi^2*k^2)/|lambda-pi^2*k^2| and its inverse are bounded complex l2 operators of norm at most ONE. Their LEFT and RIGHT inverse identities are proved on the ENTIRE Hilbert space on each original source circle.",
+    "The ACTUAL total normalized inverse (I_lambda-S_lambda)^(-1) is identified as a genuine two-sided inverse with operator norm at most TWO whenever the ACTUAL previously constructed perturbation norm is at most ONE HALF. Its exact ordered difference from I_lambda^(-1) is inverse*(S_lambda*I_lambda^(-1)), with norm at most TWO times norm(S_lambda).",
+    "A contractive inclusion from EVERY original H^(-r) space with r<=1 to the original H-minus-one base preserves the IDENTICAL ENTIRE original distribution. Exact original raw coefficients and Sobolev norms are retained; no reality, zero mean or physical period-one premise is needed.",
+    "The exact source identity B_lambda*(lambda*J-A_q)*D_lambda=I_lambda-S_lambda is PROVED on EVERY l2 vector with the ACTUAL entire original H1/H-minus-one pencil and the ACTUAL full source perturbation matrix. The proof retains the entire absolutely convergent source convolution and the original potential coefficient at EVERY frequency difference. No factorization is supplied as a hypothesis.",
+    "The normalized formula D_lambda*(I_lambda-S_lambda)^(-1)*B_lambda solves EVERY original H-minus-one forcing and is LEFT-inverse on EVERY original H1 vector. It proves actual original native resolvent-set membership. The EXISTING actual native resolvent is proved EXACTLY equal to the NEGATIVE of this formula, with its original A_q-lambda*J orientation accounted for.",
+    "ONE cutoff BEFORE EVERY complex original H^(-r) potential in EACH specified original Sobolev norm ball, ALL later ORIGINAL positive indices and EVERY point of EACH ENTIRE LITERAL source circle gives native resolvent validity, norm at most TWO for the actual normalized inverse and the exact actual native resolvent formula. This holds for EVERY 0<=r<1, including the ENTIRE source Appendix C.4 range -1<t<-1/2, with r=-t.",
+    "The original native half-domain map has EXACTLY the already constructed source-periodic physical L2 image and the SAME continuous physical representative on ALL l2 inputs. The full native base half-map agrees EXACTLY with the original physical L2 half-denominator on EVERY periodic Hilbert input. The source probability Haar normalization, exactly one-half integral on [0,2], is retained.",
+    "Nineteen EXISTING Appendix B weak-star compactness, topology and follow-on modules were freshly recompiled alongside the nine new modules and the exact full 4161-declaration transitive axiom audit. Appendix B.1(i)-(iv) has NO remaining clauses. This recheck introduces NO new Appendix B declaration. The periodic contour estimate, full C.4 rate and ALL FIVE main article theorems remain OPEN."
   ],
-  "source_correspondence": "NOW PROVED: ACTUAL full normalized perturbation S_lambda on ALL original periodic physical L2 inputs, exact original raw matrix/Fourier action, FULL squared-entry summability and sharp rough-potential norm bound norm(S)^2<=128*(8*exp(1)+2)*log(n)*n^(2*r-2)*norm(q)_H^-r^2. ONE original H^(-r) norm-ball cutoff makes norm(S)<=1/2 before EVERY q in that ball, ALL later ORIGINAL indices and ALL source-circle points, for EVERY 0<=r<1 including FULL C.4 range. NEXT: faithful original H1/base half-denominator lifts, actual phase-normalized inverse and native perturbed resolvent factorization, then PERIODIC convergence/C.4 rate, 2.14, quantitative eta estimate 2.13, full residual (31), overlap (32)/2.15 and full COMPLEX weighted midpoint 2.1(ii). Canonical periodic eta IDENTITY, whole-range source endpoint regularity, original circles/rank TWO/basis, actual DIRICHLET o(1)/normalization, source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. Low periodic parity/interlacing, complex ratio 2.20 where used, original Birkhoff maps and actual approximation flow remain open. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
-  "build_isolation": "Actual full normalized periodic rough-potential perturbation S_lambda, squared-entry/Hilbert-space norm bounds, exact original physical Fourier action and uniform original Sobolev norm-ball smallness. All compiler/source/Git milestone writes are private; canonical sources/build/shared Git metadata are read-only.",
+  "source_correspondence": "NOW PROVED: ACTUAL entire original H1/base half-denominator ISOMORPHISMS with faithful coefficients and exact inverses; actual normalized phase and inverse; actual (I-S)^(-1) with norm<=2 and exact ordered difference bound<=2*norm(S); EXACT original native pencil B*(lambda*J-A_q)*D=I-S and EXISTING native resolvent=-D*(I-S)^(-1)*B. ONE original Sobolev norm-ball cutoff gives actual circle validity, normalized inverse bound and exact resolvent formula for EVERY 0<=r<1, including FULL C.4 range. Native half-maps equal the existing actual periodic physical L2/continuous half-maps. NEXT: compose the ACTUAL physical resolvent difference and integrate the actual analytic native resolvent on the entire literal contour to prove PERIODIC convergence/C.4 rate, then 2.14, quantitative eta estimate 2.13, full residual (31), overlap (32)/2.15 and full COMPLEX weighted midpoint 2.1(ii). Canonical periodic eta IDENTITY, whole-range source endpoint regularity, original circles/rank TWO/basis, actual DIRICHLET o(1)/normalization, source 2.2(i)-(iii), Lemma 2.21 and Appendix B remain proved. Low periodic parity/interlacing, complex ratio 2.20 where used, original Birkhoff maps and actual approximation flow remain open. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
+  "build_isolation": "Actual full native half-denominator isomorphisms, normalized phase inverse, exact native pencil/resolvent factorization and uniform original rough-potential norm-ball inverse; Appendix B focused recheck. All compiler/source/Git milestone writes are private; canonical sources/build/shared Git metadata are read-only.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -1624,7 +1643,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "991393e301a5af7e8b0267d59d3cd41f71dc99c7c8e0e67c28057285b8e74840",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "597954d7a837f1bce9621f2bbb80fe3506e2d1814a43cfe20fc3a444bc86aa3e",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -1842,7 +1861,16 @@
     "NLS/KdV/HillHalfSandwichSquareSum.lean": "f53ea7dd212d80eec7454c6e1f27aa64ee3fa8404a21734ce8481ad9b7996bb4",
     "NLS/KdV/HillHalfSandwich.lean": "f6e7b54cb749bca1dc3d338288ee916a2bc208b8684a7fc697054b1d8c10e3b9",
     "NLS/KdV/HillHalfSandwichSmall.lean": "be82cd2eac7ca5339520293dc9bb1f2ea63de26f7dbe6bf34bf84acbedf176c2",
-    "NLS/Articles/KdVPseudomeasures/PeriodicNormalizedPerturbation.lean": "8d51154831ae628fb630925aba85e99e864dac5639652b8146298d09c49a8efd"
+    "NLS/Articles/KdVPseudomeasures/PeriodicNormalizedPerturbation.lean": "8d51154831ae628fb630925aba85e99e864dac5639652b8146298d09c49a8efd",
+    "NLS/KdV/HillHalfDomainSymbol.lean": "7ab205b5db2133100f05443f4084ff5be21f17f3af461b9e81cacadb30938914",
+    "NLS/KdV/HillHalfNativeMaps.lean": "5eb1e091dda5671d4bb8089744eeb6f9548c4c94c1e591fdf9f3574e9df2a606",
+    "NLS/KdV/HillNormalizedPhase.lean": "0cb3f9718ef46a26842fe729e310f3de13a16613222997699f163a077d1510be",
+    "NLS/KdV/HillNormalizedInverse.lean": "83cc84508dc860f7dc9ddddcdebce5266991435d0578e2364481516619c05872",
+    "NLS/KdV/HillHalfPotentialBase.lean": "0e5a1fc6d0aaa034aad48eb2246b08a9985f8a6fe23dff4f8cb399e95f3a4ff1",
+    "NLS/KdV/HillNormalizedPencil.lean": "45b530b151496270b0fc9c58385f4fbaae421382dab37dd3df3393e247e392ab",
+    "NLS/KdV/HillNormalizedResolvent.lean": "b3573eb130f52f35b1fc870fe16ce1dc094567fcaa0106b8743c5a56630b070b",
+    "NLS/Articles/KdVPseudomeasures/PeriodicNormalizedResolvent.lean": "43f4efc2ed143470c873ea62f1c4639e3d8544272b937605e827a95397c0b7c9",
+    "NLS/KdV/HillHalfPhysicalMaps.lean": "2e639744450e92924a12cc0d9b93b9e5e28cef8fd8c74622ebcb693b03779c34"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1850,12 +1878,12 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 4052,
-    "newly_checked_declarations_this_continuation": 42,
-    "new_theorems": 33,
-    "new_definitions": 9,
-    "total_checked_declarations": 4094,
-    "reuse": "NEW validated full source-circle half-denominators and sharp logarithmic reciprocal sum; actual full source physical L2 Fourier isometry; generic complex bilinear coefficient Holder pairing and l2 sum identities; original exact Sobolev coefficient isometry and logarithm-versus-power asymptotics. New actual matrix construction assumes no pre-existing bounded operator; actual source squared-entry summability and uniform norm-ball smallness are proved."
+    "previous_checked_declarations": 4094,
+    "newly_checked_declarations_this_continuation": 67,
+    "new_theorems": 48,
+    "new_definitions": 19,
+    "total_checked_declarations": 4161,
+    "reuse": "Previously validated original source-circle weighted half-denominators and ACTUAL S_lambda, exact original full Sobolev coefficient isometries, shared Neumann perturbation criterion, original native pencil/resolvent and faithful physical L2/continuous inclusions. New full-space isomorphisms and native factorization are proved rather than supplied as hypotheses."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -1884,7 +1912,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-half-sandwich.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-normalized-resolvent.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -2109,13 +2137,14 @@
     "Uniform literal periodic source resolvent circles, actual physical algebraic rank TWO, canonical-lambda-plus normalized orthonormal spectral bases and actual original unbounded-operator L2 spectral action.",
     "Actual periodic spectral restriction, exact enclosed-eigenvalue correspondence, uniform canonical source eta/gamma identity including coincident complex roots, and source endpoint regularity of the entire physical spectral range.",
     "Sharp logarithmic full Hill reciprocal lattice bound and actual source half-denominator multipliers on all physical periodic L2 inputs, with exact L2 and continuous-output bounds.",
-    "Actual full normalized periodic rough-potential perturbation S_lambda, squared-entry/Hilbert-space norm bounds, exact original physical Fourier action and uniform original Sobolev norm-ball smallness."
+    "Actual full normalized periodic rough-potential perturbation S_lambda, squared-entry/Hilbert-space norm bounds, exact original physical Fourier action and uniform original Sobolev norm-ball smallness.",
+    "Actual full native half-denominator isomorphisms, normalized phase inverse, exact native pencil/resolvent factorization and uniform original rough-potential norm-ball inverse; Appendix B focused recheck."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-half-sandwich-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-normalized-resolvent-map.json",
   "baseline_validated_snapshot": {
-    "commit": "002bccc62641aba3d7d573286456fc31b757c4e3",
-    "modules": 607,
-    "audited_declarations": 4052,
+    "commit": "b6aeb5ca204eee40e0ed6bf4573a185901ac735f",
+    "modules": 615,
+    "audited_declarations": 4094,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   }

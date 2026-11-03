@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
-  "baseline_commit": "80d69d71adefad3652023e8a18fff84bbe727d02",
-  "baseline_modules_verified_unchanged": 579,
+  "baseline_commit": "b6aeb5ca204eee40e0ed6bf4573a185901ac735f",
+  "baseline_modules_verified_unchanged": 614,
   "freshly_compiled_modules": [
     "NLS.SequenceSpaces.WeightedWeakStarCompactness",
     "NLS.SequenceSpaces.WeightedWeakStarLowerTopology",
@@ -24,7 +24,7 @@
     "NLS.Articles.KdVPseudomeasures.SourceWeakStarInverse",
     "NLS.Articles.KdVPseudomeasures.Audit"
   ],
-  "axiom_audited_declarations": 3927,
+  "axiom_audited_declarations": 4161,
   "warnings": 0,
   "tactic_suggestions": 0,
   "allowed_axioms": [
@@ -40,9 +40,9 @@
     "status": ""
   },
   "source_text_sha256": "1e1a9238da5d4b0fbe16d6e7e8df1b8698ae35f0b81df612cc6af910c16e1b7e",
-  "validation_log_sha256": "d58d0ca056fd4ef1385394ad5a196b8f67569964fca7aa00bb5fd56683ee07d2",
+  "validation_log_sha256": "0fd13b5750fabb316449829ce07858270b0b59dfe4ec0358a5647b0dc4147a46",
   "fresh_full_build_this_increment": false,
-  "scope": "Source-clause review and focused recompilation of already proved Appendix B.1(i)-(iv), including existing compactness, topology and trajectory consequences. No new Lean declarations were required.",
+  "scope": "Focused recompilation of the nineteen already proved Appendix B weak-star compactness/topology modules alongside nine new native periodic resolvent factorization modules. Source Lemma B.1(i)-(iv) remains COMPLETE. This recheck adds NO Appendix B declarations.",
   "source_clauses": {
     "B.1(i)": [
       "isCompact_sourceNormBall",
@@ -70,15 +70,8 @@
   },
   "parameters": "Every real s, r=-s; finite p>=1, sigma<s, strict threshold (s-sigma)*p>1. Existential clauses keep their quantifiers; forward witnesses sigma=s-2,p=1.",
   "topology": "Original endpoint norm bounds and full physical distributions retained. Lower norm topology identified on endpoint-bounded subsets. Arbitrary-filter extensions retain explicit eventual endpoint bounds.",
-  "workspace_decision": "pending; all writes, compiler outputs and commit metadata remain private",
-  "preserved_work_in_progress": [
-    "scripts/check-kdv-pseudomeasures.py",
-    "NLS/KdV/SingularHillComplexRiesz.lean",
-    "NLS/KdV/SingularHillDomainResolvent.lean",
-    "NLS/KdV/SingularHillPhysicalL2.lean",
-    "NLS/KdV/SingularHillRieszBilinear.lean",
-    "NLS/KdV/SingularHillRieszDomain.lean",
-    "NLS/KdV/SingularHillRieszL2.lean"
-  ],
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-appendix-b-current.log"
+  "workspace_decision": "pending; all writes, compiler outputs and Git milestone metadata remain private",
+  "preserved_work_in_progress": [],
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-normalized-resolvent.log",
+  "baseline_audit_changed_only_to_expand_exact_inventory": true
 }

@@ -1,7 +1,7 @@
 {
   "source": "arXiv:1610.00278v1, normalized S_lambda perturbation step of Appendix C.4 (cited [7, Lemma 25]); dependencies toward periodic (33), 2.14, quantitative 2.13 and complex Theorem 2.1(ii)",
   "date": "2026-11-03",
-  "status": "COMPLETE actual full S_lambda coefficient/physical operators, genuine squared-entry summability, rough-potential Hilbert-space norm estimate and ONE original Sobolev norm-ball high-energy cutoff for norm(S_lambda)<=1/2. Native half-domain/phase factorization and periodic projection estimates remain OPEN.",
+  "status": "The original half-denominator/S_lambda estimates are proved. The subsequent actual full native half-map, phase inverse and native pencil/resolvent factorization are now proved in hill-normalized-resolvent-map.json. Periodic contour convergence and full C.4 remain OPEN.",
   "modules": [
     "NLS/KdV/HillWeightedReciprocal.lean",
     "NLS/KdV/HillSandwichRows.lean",
@@ -80,9 +80,9 @@
     "full_source_C4_regularity_range": true,
     "all_original_modes_and_resonances_retained": true,
     "original_distribution_and_norm_preserved": true,
-    "original_H1_half_denominator_lift_proved": false,
-    "actual_phase_normalized_inverse_proved": false,
-    "actual_normalized_perturbed_resolvent_factorization_proved": false,
+    "original_H1_half_denominator_lift_proved": true,
+    "actual_phase_normalized_inverse_proved": true,
+    "actual_normalized_perturbed_resolvent_factorization_proved": true,
     "source_Lemma2_13_eta_bound_proved": false,
     "source_Lemma2_13_complete": false,
     "source_Lemma2_14_proved": false,
@@ -95,9 +95,8 @@
     "main_theorems_verified": false
   },
   "essential_remaining": [
-    "Construct the actual half-denominator l2-to-original-H1 lift and original-Hminus-one-to-l2 map, using the NEW weighted reciprocal bound at r=1. Retain the full raw source coefficients and prove faithful original-domain/base identities, including the inverse sqrt-denominator multipliers.",
-    "Construct the actual normalized phase diagonal I_lambda=(lambda-pi^2*k^2)/|lambda-pi^2*k^2| and its norm-one inverse on the full physical L2 space. Use the NEW uniform actual S_lambda smallness to construct the actual inverse (I_lambda-S_lambda)^(-1), with a uniform norm bound.",
-    "Prove the actual normalized native-pencil and native-resolvent factorization through these half-denominator and phase operators and the NEW actual full S_lambda. Then integrate the genuine native resolvent difference on the literal source contour to prove PERIODIC convergence and the source C.4 rate. The NEW S_lambda norm estimate alone does NOT prove projection convergence.",
+    "Compose the newly PROVED actual native resolvent factorization with the newly identified physical half-maps. Prove the physical L2-to-continuous resolvent DIFFERENCE estimate using the exact normalized inverse difference and its at-most-two-times-S bound.",
+    "Integrate the ACTUAL analytic original H1 resolvent difference on the ENTIRE LITERAL original source contour. Prove periodic projection convergence and the C.4 quantitative rate in continuous-output, L-infinity and L2 operator norms. The newly PROVED native factorization does NOT itself complete the contour estimate.",
     "Use periodic projection control for source 2.14, quantitative eta estimate 2.13 and overlap (32)/2.15. Complete full periodic-to-Dirichlet residual (31), precise C.4 Dirichlet rate, full COMPLEX weighted midpoint 2.1(ii), and remaining original Birkhoff/KdV approximation-flow constructions. All five MAIN theorems 1.1, 1.3, 1.4, 5.1 and 5.9 remain UNPROVED; goal ACTIVE."
   ],
   "source_correspondence": {
@@ -108,7 +107,7 @@
     "physical_norm": "Actual source periodic CircleL2 probability norm, EXACTLY the original half-integral normalization on [0,2]. Coefficient and physical operator norms are EQUAL. Potential norm is the EXACT original Sobolev norm, with no rescaling.",
     "bound": "norm(S_lambda)^2 <=128*(8*exp(1)+2)*log(n)*n^(2*r-2)*norm(q)_H^-r^2, for n>=1 and log(n)>1, uniformly for EVERY source-circle point. This gives the required decay for every r<1.",
     "uniformity": "For EACH original Sobolev norm bound R and EACH 0<=r<1, ONE cutoff N is chosen BEFORE EVERY original q in that norm ball, ALL later ORIGINAL positive n>=N and ALL source-circle points, giving actual physical norm(S_lambda)<=1/2.",
-    "not_claimed": "No native normalized-pencil/resolvent factorization, phase-normalized inverse, periodic projection convergence, full C.4 rate, quantitative eta bound or main-theorem completion is claimed. Those remain explicit obligations."
+    "not_claimed": "Periodic contour projection difference estimates, periodic (33), full C.4 rate, quantitative eta bound and main theorems remain OPEN. The former native half-map/phase/resolvent-factorization obligations are now PROVED; see actual_native_resolvent_followup for its exact source correspondence and validation."
   },
   "validation": {
     "result": "passed",
@@ -154,5 +153,36 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "actual_native_resolvent_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-normalized-resolvent-map.json",
+    "original_H1_half_denominator_lift_proved": true,
+    "full_original_HminusOne_half_denominator_map_proved": true,
+    "full_native_domain_and_base_inverse_maps": true,
+    "all_original_Fourier_coefficients_retained": true,
+    "actual_normalized_phase_and_inverse_proved": true,
+    "actual_phase_normalized_inverse_proved": true,
+    "normalized_inverse_norm_at_most_two": true,
+    "actual_ordered_normalized_inverse_difference_identity": true,
+    "original_Sobolev_base_inclusion_same_entire_distribution": true,
+    "actual_normalized_native_pencil_factorization_proved": true,
+    "actual_normalized_perturbed_resolvent_factorization_proved": true,
+    "actual_native_resolvent_set_membership_proved": true,
+    "actual_native_resolvent_sign_identified": true,
+    "uniform_original_Sobolev_norm_ball_normalized_resolvent": true,
+    "full_source_C4_regularity_range": true,
+    "native_and_physical_half_maps_identified": true,
+    "source_periodic_L2_normalization_retained": true,
+    "source33_periodic_convergence_proved": false,
+    "source_AppendixC4_logarithmic_rate_proved": false,
+    "source_Lemma2_13_eta_bound_proved": false,
+    "source_Lemma2_13_complete": false,
+    "source_Lemma2_14_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "validation_scope": "The validation object records the original estimate milestone. The actual_native_resolvent_followup links the later 4161-declaration audited factorization milestone."
 }

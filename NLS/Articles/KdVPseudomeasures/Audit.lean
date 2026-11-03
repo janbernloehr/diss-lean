@@ -612,6 +612,15 @@ import NLS.KdV.HillHalfSandwichSquareSum
 import NLS.KdV.HillHalfSandwich
 import NLS.KdV.HillHalfSandwichSmall
 import NLS.Articles.KdVPseudomeasures.PeriodicNormalizedPerturbation
+import NLS.KdV.HillHalfDomainSymbol
+import NLS.KdV.HillHalfNativeMaps
+import NLS.KdV.HillNormalizedPhase
+import NLS.KdV.HillNormalizedInverse
+import NLS.KdV.HillHalfPotentialBase
+import NLS.KdV.HillNormalizedPencil
+import NLS.KdV.HillNormalizedResolvent
+import NLS.Articles.KdVPseudomeasures.PeriodicNormalizedResolvent
+import NLS.KdV.HillHalfPhysicalMaps
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4709,3 +4718,70 @@ import NLS.Articles.KdVPseudomeasures.PeriodicNormalizedPerturbation
 #print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicNormalizedPerturbation_coefficient
 #print axioms NLS.Articles.KdVPseudomeasures.norm_sq_sourcePeriodicNormalizedPerturbation_le
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicNormalizedPerturbation_small
+#print axioms NLS.KdV.hillHalfDomainRaw
+#print axioms NLS.KdV.norm_hillHalfDomainRaw_le
+#print axioms NLS.KdV.hillHalfDomainSymbol
+#print axioms NLS.KdV.hillHalfDomainSymbol_apply
+#print axioms NLS.KdV.norm_hillHalfDomainSymbol_le
+#print axioms NLS.KdV.hillRootDenominatorRaw
+#print axioms NLS.KdV.hillRootDenominatorRaw_mul_half
+#print axioms NLS.KdV.hillRootDenominatorRaw_le_weight
+#print axioms NLS.KdV.hillRootDomainRaw
+#print axioms NLS.KdV.norm_hillRootDomainRaw_le
+#print axioms NLS.KdV.hillRootDomainSymbol
+#print axioms NLS.KdV.hillRootDomainSymbol_apply
+#print axioms NLS.KdV.hillHalfDomainSymbol_mul_root
+#print axioms NLS.KdV.hillHalfToH1
+#print axioms NLS.KdV.hillHalfFromBase
+#print axioms NLS.KdV.hillRootFromH1
+#print axioms NLS.KdV.hillRootToBase
+#print axioms NLS.KdV.hillHalfToH1_coefficient
+#print axioms NLS.KdV.hillDomain_sobolev_neg_one
+#print axioms NLS.KdV.hillHalfFromBase_coefficient
+#print axioms NLS.KdV.hillRootFromH1_coefficient
+#print axioms NLS.KdV.hillRootToBase_coefficient
+#print axioms NLS.KdV.hillRootFromH1_halfToH1
+#print axioms NLS.KdV.hillHalfToH1_rootFromH1
+#print axioms NLS.KdV.hillHalfFromBase_rootToBase
+#print axioms NLS.KdV.hillRootToBase_halfFromBase
+#print axioms NLS.KdV.norm_hillHalfToH1_le
+#print axioms NLS.KdV.norm_hillHalfFromBase_le
+#print axioms NLS.KdV.hillPhaseRaw
+#print axioms NLS.KdV.hillPhaseInverseRaw
+#print axioms NLS.KdV.norm_hillPhaseRaw_le
+#print axioms NLS.KdV.norm_hillPhaseInverseRaw_le
+#print axioms NLS.KdV.hillPhaseSymbol
+#print axioms NLS.KdV.hillPhaseInverseSymbol
+#print axioms NLS.KdV.hillPhaseSymbol_apply
+#print axioms NLS.KdV.hillPhaseInverseSymbol_apply
+#print axioms NLS.KdV.hillNormalizedPhase
+#print axioms NLS.KdV.hillNormalizedPhaseInverse
+#print axioms NLS.KdV.norm_hillNormalizedPhase_le
+#print axioms NLS.KdV.norm_hillNormalizedPhaseInverse_le
+#print axioms NLS.KdV.hillPhaseRaw_mul_inverse
+#print axioms NLS.KdV.hillNormalizedPhase_inverse_spec
+#print axioms NLS.KdV.hillNormalizedInverse
+#print axioms NLS.KdV.hillNormalizedInverse_spec
+#print axioms NLS.KdV.hillNormalizedInverse_sub_phaseInverse
+#print axioms NLS.KdV.norm_hillNormalizedInverse_sub_phaseInverse_le
+#print axioms NLS.KdV.hillHalfPotentialBase
+#print axioms NLS.KdV.hillHalfPotentialBase_coefficient
+#print axioms NLS.KdV.norm_hillHalfPotentialBase_le
+#print axioms NLS.KdV.hillSobolevBaseInclusion
+#print axioms NLS.KdV.hillSobolevBaseInclusion_val
+#print axioms NLS.KdV.norm_hillSobolevBaseInclusion_le
+#print axioms NLS.KdV.hillHalfDenominatorRaw_mul_self
+#print axioms NLS.KdV.hillHalfDenominatorRaw_free_phase
+#print axioms NLS.KdV.hillNormalizedPencil_apply
+#print axioms NLS.KdV.hillNormalizedPencil_eq
+#print axioms NLS.KdV.hillNormalizedResolventToH1
+#print axioms NLS.KdV.hillNormalizedResolventToH1_right
+#print axioms NLS.KdV.hillNormalizedResolventToH1_left
+#print axioms NLS.KdV.mem_singularHillResolventSet_of_halfSandwich_small
+#print axioms NLS.KdV.singularHillResolventToH1_eq_normalized
+#print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicNormalizedPencil_eq
+#print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicResolventToH1_eq_normalized
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicNormalizedResolvent
+#print axioms NLS.KdV.hillHalfToH1_physicalL2
+#print axioms NLS.KdV.hillHalfToH1_physicalContinuous
+#print axioms NLS.KdV.hillHalfFromBase_physicalL2
