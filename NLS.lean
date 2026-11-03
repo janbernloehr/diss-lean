@@ -5294,3 +5294,12 @@ import NLS.KdV.HillDirichletSquaredPairing
 import NLS.KdV.HillDirichletGradientCurves
 import NLS.KdV.HillDirichletGardnerBrackets
 import NLS.KdV.HillDirichletGradientH1
+import NLS.KdV.ClassicalHillMixedPairings
+import NLS.ComplexAnalysis.ScalarStateMixedPairing
+import NLS.KdV.HillDirichletCosineData
+import NLS.KdV.HillDirichletMixedPairings
+import NLS.KdV.HillDirichletSlopePotentialDerivative
+import NLS.KdV.HillDirichletSlopeVariation
+import NLS.Fourier.ContinuousConstants
+import NLS.KdV.HillDirichletSlopeShift
+import NLS.KdV.HillLogNormingGradient

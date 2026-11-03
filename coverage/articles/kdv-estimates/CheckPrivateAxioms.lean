@@ -371,6 +371,15 @@ import NLS.KdV.HillDirichletSquaredPairing
 import NLS.KdV.HillDirichletGradientCurves
 import NLS.KdV.HillDirichletGardnerBrackets
 import NLS.KdV.HillDirichletGradientH1
+import NLS.KdV.ClassicalHillMixedPairings
+import NLS.ComplexAnalysis.ScalarStateMixedPairing
+import NLS.KdV.HillDirichletCosineData
+import NLS.KdV.HillDirichletMixedPairings
+import NLS.KdV.HillDirichletSlopePotentialDerivative
+import NLS.KdV.HillDirichletSlopeVariation
+import NLS.Fourier.ContinuousConstants
+import NLS.KdV.HillDirichletSlopeShift
+import NLS.KdV.HillLogNormingGradient
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -690,7 +699,11 @@ run_cmd do
     ``NLS.ComplexAnalysis.continuous_complex_sqrt_real,
     ``NLS.ComplexAnalysis.scalarStateSquaredPairing,
     ``NLS.ComplexAnalysis.scalarStateSquaredPairing_eq_integral,
-    ``NLS.ComplexAnalysis.continuous_scalarStateSquaredPairing]
+    ``NLS.ComplexAnalysis.continuous_scalarStateSquaredPairing,
+    ``NLS.ComplexAnalysis.scalarStateMixedPairing,
+    ``NLS.ComplexAnalysis.scalarStateMixedPairing_eq_integral,
+    ``NLS.ComplexAnalysis.continuous_scalarStateMixedPairing,
+    ``NLS.Fourier.continuousFourierCLM_const]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

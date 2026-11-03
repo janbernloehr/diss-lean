@@ -97,6 +97,7 @@ modules+=(NLS/FunctionalAnalysis/UnitComplexCurveIntegral NLS/ComplexAnalysis/Sc
 modules+=(NLS/ComplexAnalysis/PositiveZeroUniqueness NLS/KdV/HillDirichletGapExistence NLS/KdV/HillDirichletGapUniqueness NLS/KdV/HillDirichletLabels NLS/KdV/HillDirichletLabelContinuity NLS/KdV/HillDirichletSlope NLS/KdV/HillDirichletNormingData)
 modules+=(NLS/KdV/HillDirichletAnalyticLabels NLS/KdV/HillDirichletAnalyticNorming NLS/KdV/HillDirichletBranchDerivatives NLS/KdV/HillDirichletPotentialDerivative NLS/KdV/HillDirichletKernelNormalization NLS/KdV/HillDirichletGradients NLS/KdV/ClassicalHillDirichletBrackets)
 modules+=(NLS/ComplexAnalysis/RealEnergySquareRoot NLS/KdV/HillStateJointContinuity NLS/KdV/HillRealPeriodOneTruncation NLS/ComplexAnalysis/ScalarStateSquaredPairing NLS/KdV/HillDirichletSquaredPairing NLS/KdV/HillDirichletGradientCurves NLS/KdV/HillDirichletGardnerBrackets NLS/KdV/HillDirichletGradientH1)
+modules+=(NLS/KdV/ClassicalHillMixedPairings NLS/ComplexAnalysis/ScalarStateMixedPairing NLS/KdV/HillDirichletCosineData NLS/KdV/HillDirichletMixedPairings NLS/KdV/HillDirichletSlopePotentialDerivative NLS/KdV/HillDirichletSlopeVariation NLS/Fourier/ContinuousConstants NLS/KdV/HillDirichletSlopeShift NLS/KdV/HillLogNormingGradient)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
