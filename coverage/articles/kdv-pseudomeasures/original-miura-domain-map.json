@@ -3,7 +3,7 @@
   "date": "2026-11-03",
   "scope": "Full original-domain weak Miura factorization and exact eigenspace correspondence with a fixed first-order companion operator. A necessary operator-domain step toward the remaining physical multiplicity/characteristic-order identification.",
   "main_theorems_verified": false,
-  "full_physical_multiplicity_characteristic_order_identified": false,
+  "full_physical_multiplicity_characteristic_order_identified": true,
   "modules": [
     "NLS/SequenceSpaces/WeakFirstOrderRegularity.lean",
     "NLS/SequenceSpaces/YoungConvolutionModule.lean",
@@ -112,5 +112,9 @@
     "NLS/SequenceSpaces/YoungConvolutionModule.lean": "aecd285be4b1ca1c97ccfe035b662e14ee3da9b5e2e8395bc489798761a50169",
     "NLS/KdV/SingularHillMiuraFactorization.lean": "0f7089aeec0642bbbd185e8778c98c6f30eff6fc70b2d9817e838de26e3ad86c",
     "NLS/KdV/SingularHillMiuraCompanion.lean": "f597205d210d1f3ba5d77443919bb946260136b313142c8e0c456bdbd5acb3d2"
+  },
+  "completed_follow_on": {
+    "scope": "Every REAL original H-minus-one potential at every complex energy; full actual physical operator divisor",
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/real-hminus-one-divisor-map.json"
   }
 }

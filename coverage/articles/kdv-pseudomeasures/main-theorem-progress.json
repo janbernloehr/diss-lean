@@ -109,11 +109,16 @@
       "NLS.Articles.KdVPseudomeasures.originalIsospectralSet",
       "NLS.Articles.KdVPseudomeasures.sourceOriginalPotential_mem_isospectral_iff",
       "NLS.KdV.singularHillSpectrum_L2_iff_discriminant",
-      "NLS.Articles.KdVPseudomeasures.original_spectrum_iff_L2_discriminant"
+      "NLS.Articles.KdVPseudomeasures.original_spectrum_iff_L2_discriminant",
+      "NLS.KdV.analyticOrderAt_hillHminusDiscriminant_eq_physicalMultiplicity",
+      "NLS.KdV.analyticOrderNatAt_hillHminusDiscriminant_eq_physicalMultiplicity",
+      "NLS.Articles.KdVPseudomeasures.analyticOrderAt_originalHillDiscriminant",
+      "NLS.Articles.KdVPseudomeasures.analyticOrderNatAt_originalHillDiscriminant",
+      "NLS.Articles.KdVPseudomeasures.mem_originalIsospectralSet_iff_discriminant_orders"
     ]
   },
   "essential_open_obligations": [
-    "The full original physical spectrum/discriminant ZERO SET is identified for every original H-minus-one potential. Original-domain Miura factorization, H1 quasi-derivative recovery for L2-forced equations, and the exact fixed-companion eigenspace correspondence at nonzero frequency are now proved. REMAINING for the all-real physical divisor identity: suitable real shifted Miura lifts for every original potential, constant companion-to-Dirac operator rotation and characteristic-order transport; account explicitly for the spectral translation avoiding zero square-root energy. Zero-set equality alone is still insufficient.",
+    "The full REAL original H-minus-one physical characteristic DIVISOR is now identified at EVERY complex energy, including zero and multiple roots. The exact finite-p Miura regularity equivalence is also proved. NEXT: compare the actual Hill and Dirac canonical high gap indices to transfer verified Dirac inverse regularity; individual membership still does not prove a UNIFORM full-isospectral bound.",
     "Source Theorem2.2/full Lemma2.21 remain unproved:the entire original H-minus-one isospectral set still needs base endpoint/finite-p membership and a UNIFORM bound before the verified endpoint bootstrap applies. The ORIGINAL finite-p inverse spectral regularity/isospectral compactness input[7 Cor3-4] remains missing,or must be replaced directly. Full original operator spectrum/multiplicities and isospectral domain are already defined without assuming endpoint membership.",
     "Complete original periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source2.1(ii). General-weight direct2.1(i),endpoint2.18-2.19,REAL2.20,uniform bootstrap,cross-order labels/gaps,bounded weak-star label continuity/closed spectral fibers and all AppendixB clauses remain proved. General complex-ratio2.20 remains open.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
@@ -386,7 +391,7 @@
     "sourceCanonicalSpectralFiber prescribes the ENTIRE actual canonical spectrum with ALL algebraic repetitions. Such a fiber is relatively weak-star closed on EVERY bounded original physical set,and its intersection with each specified original endpoint norm ball is weak-star compact.",
     "An ENTIRE original endpoint canonical spectral fiber is weak-star compact IFF it is bounded in the EXACT original endpoint norm. A globally bounded fiber is closed in the ENTIRE physical weak-star space. Actual spectrum exhaustion and all physical algebraic multiplicities are explicitly identified from the prescribed labels. Fiber membership is invariant under endpoint-order reinterpretation of the SAME entire original distribution."
   ],
-  "workspace_status": "Existing private article worktree retained; validated milestones are committed and pushed on its article branch under the active goal. The pending workspace decision does not change canonical source/build read-only isolation. No workspace attachment or canonical integration is performed.",
+  "workspace_status": "Private article worktree retained; current validated milestones are committed locally. GitHub push remains pending explicit destination approval after earlier automatic-review rejection. Canonical source/build/checkout stay read-only; workspace decision is pending.",
   "goal_turn_classification": "progress",
   "verified_nonmain_source_theorems": {
     "2.1(i)": {
@@ -471,7 +476,9 @@
     "coverage_map": "coverage/articles/kdv-pseudomeasures/original-hminus-one-characteristic-map.json",
     "full_original_HminusOne_zero_set_identified": true,
     "all_complex_period_one_potentials": true,
-    "physical_algebraic_multiplicity_equals_analytic_order": false
+    "physical_algebraic_multiplicity_equals_analytic_order": true,
+    "physical_order_scope": "All REAL original H-minus-one potentials, every complex energy including zero",
+    "physical_order_coverage_map": "coverage/articles/kdv-pseudomeasures/real-hminus-one-divisor-map.json"
   },
   "verified_original_miura_domain_transport": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/original-miura-domain-map.json",
@@ -479,7 +486,25 @@
     "original_H1_domain_unchanged": true,
     "inhomogeneous_quasiderivative_H1_gain": true,
     "exact_companion_eigenspace_equiv_at_nonzero_frequency": true,
-    "all_original_real_potentials_have_suitable_real_shifted_Miura_lift": false,
-    "full_physical_multiplicity_characteristic_order_identified": false
+    "all_original_real_potentials_have_suitable_real_shifted_Miura_lift": true,
+    "full_physical_multiplicity_characteristic_order_identified": true,
+    "completed_follow_on_coverage_map": "coverage/articles/kdv-pseudomeasures/real-hminus-one-divisor-map.json"
+  },
+  "verified_real_hminus_one_physical_divisor": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/real-hminus-one-divisor-map.json",
+    "principal_declarations": {
+      "shared_order": "NLS.KdV.analyticOrderAt_hillHminusDiscriminant_eq_physicalMultiplicity",
+      "shared_nat_order": "NLS.KdV.analyticOrderNatAt_hillHminusDiscriminant_eq_physicalMultiplicity",
+      "article_order": "NLS.Articles.KdVPseudomeasures.analyticOrderAt_originalHillDiscriminant",
+      "article_nat_order": "NLS.Articles.KdVPseudomeasures.analyticOrderNatAt_originalHillDiscriminant",
+      "original_isospectral_divisor_criterion": "NLS.Articles.KdVPseudomeasures.mem_originalIsospectralSet_iff_discriminant_orders"
+    },
+    "all_original_real_potentials": true,
+    "all_complex_energies_including_zero": true,
+    "unchanged_full_original_H1_domain": true,
+    "actual_algebraic_multiplicities": true,
+    "finite_p_Miura_regularity_equivalence": true,
+    "original_Hill_inverse_spectral_regularity": false,
+    "uniform_original_isospectral_bound": false
   }
 }

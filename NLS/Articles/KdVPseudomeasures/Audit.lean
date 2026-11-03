@@ -323,8 +323,19 @@ import NLS.SequenceSpaces.WeakFirstOrderRegularity
 import NLS.SequenceSpaces.YoungConvolutionModule
 import NLS.KdV.SingularHillMiuraFactorization
 import NLS.KdV.SingularHillMiuraCompanion
+import NLS.FunctionalAnalysis.ComplexPairRotation
+import NLS.ZakharovShabat.RealTypeSemisimple
+import NLS.KdV.SingularHillMiuraDirac
+import NLS.SequenceSpaces.PeriodOneMiuraRealLift
+import NLS.KdV.HminusOneMiuraTrace
+import NLS.SequenceSpaces.PeriodDoublingYoung
+import NLS.KdV.SingularHillConstantShift
+import NLS.KdV.SingularHillMiuraPeriodOne
 import NLS.FunctionalAnalysis.CompactCoordinateControl
 import NLS.Articles.KdVPseudomeasures.SourceWeakStarUniformControl
+import NLS.KdV.HminusOneCharacteristicOrder
+import NLS.Articles.KdVPseudomeasures.OriginalHminusOneDivisor
+import NLS.SequenceSpaces.PeriodOneMiuraFiniteRegularity
 
 /-! Exact transitive axiom audit of every selected public definition and theorem. -/
 
@@ -2973,6 +2984,54 @@ import NLS.Articles.KdVPseudomeasures.SourceWeakStarUniformControl
 #print axioms NLS.KdV.singularHillMiuraEigenspaceEquiv
 #print axioms NLS.KdV.finrank_singularHillMiuraCompanionEigenspace
 #print axioms NLS.KdV.singularHillAlgebraicMultiplicity_miura_companion
+#print axioms NLS.complexPairRotationCLM
+#print axioms NLS.complexPairRotationInverseCLM
+#print axioms NLS.complexPairRotation_leftInverse
+#print axioms NLS.complexPairRotation_rightInverse
+#print axioms NLS.complexPairRotation
+#print axioms NLS.complexPairRotation_apply
+#print axioms NLS.complexPairRotation_symm_apply
+#print axioms NLS.ZakharovShabat.domainPairing_spectralPencil_eigenvector
+#print axioms NLS.ZakharovShabat.periodic_no_associated_vector_of_realType
+#print axioms NLS.ZakharovShabat.periodicRootSpaceTop_eq_one_of_realType
+#print axioms NLS.ZakharovShabat.periodicEigenspaceRootEquiv
+#print axioms NLS.ZakharovShabat.periodicAlgebraicMultiplicity_eq_geometric_of_realType
+#print axioms NLS.KdV.miuraDiracRotation_domainInclusion
+#print axioms NLS.KdV.miuraDiracRotation_operator
+#print axioms NLS.KdV.diracMiuraEigenspaceToCompanion
+#print axioms NLS.KdV.diracMiuraEigenspaceToCompanion_bijective
+#print axioms NLS.KdV.diracMiuraCompanionEigenspaceEquiv
+#print axioms NLS.KdV.diracMiuraHillEigenspaceEquiv
+#print axioms NLS.KdV.singularHillMiuraPotential_coefficient
+#print axioms NLS.KdV.singularHillMiuraPotential_real
+#print axioms NLS.KdV.singularHillAlgebraicMultiplicity_miura_dirac
+#print axioms NLS.coeffRealConjugation
+#print axioms NLS.coeffRealConjugation_apply
+#print axioms NLS.norm_coeffRealConjugation
+#print axioms NLS.periodOneMassSymbol_conjugate
+#print axioms NLS.periodOneShiftedMiura_realConjugation
+#print axioms NLS.periodOne_realConjugation_eq_self
+#print axioms NLS.periodOneShiftedMiura_injective_on_ball
+#print axioms NLS.exists_real_periodOneShiftedMiura_on_bounded_ball
+#print axioms NLS.exists_real_periodOneMiura_shift
+#print axioms NLS.exists_real_periodOneMiura_shift_avoiding
+#print axioms NLS.KdV.continuous_periodOneMiura
+#print axioms NLS.KdV.continuous_hillHminusDiscriminant_potential
+#print axioms NLS.KdV.periodOneMiura_scalarInclusion
+#print axioms NLS.KdV.hillHminusDiscriminant_miura
+#print axioms NLS.KdV.hillHminusDiscriminant_add_const
+#print axioms NLS.KdV.hillHminusDiscriminant_eq_miura_of_shifted_image
+#print axioms NLS.Coeff.periodDouble_youngConvolution
+#print axioms NLS.KdV.hminusOneProduct_constant
+#print axioms NLS.KdV.singularHillOperator_add_constant
+#print axioms NLS.KdV.singularHillPencil_add_constant
+#print axioms NLS.KdV.singularHillRootSpace_add_constant
+#print axioms NLS.KdV.singularHillRootSpaceTop_add_constant
+#print axioms NLS.KdV.singularHillAlgebraicMultiplicity_add_constant
+#print axioms NLS.KdV.singularHillMiuraPotential_periodDouble
+#print axioms NLS.KdV.periodDouble_realType_diagonal
+#print axioms NLS.KdV.periodOneOriginal_L2_native
+#print axioms NLS.KdV.periodOneOriginal_add_constant
 #print axioms NLS.exists_finite_coordinates_control_on_compact
 #print axioms NLS.tendstoUniformly_observable_of_coordinates
 #print axioms NLS.Articles.KdVPseudomeasures.sourceCoefficients_injective
@@ -2983,3 +3042,13 @@ import NLS.Articles.KdVPseudomeasures.SourceWeakStarUniformControl
 #print axioms NLS.Articles.KdVPseudomeasures.tendstoUniformly_sourceLowerDistribution_iff_other_lower
 #print axioms NLS.Articles.KdVPseudomeasures.exists_finite_sourceCoefficient_control_originalHminusOne
 #print axioms NLS.Articles.KdVPseudomeasures.tendstoUniformly_originalHminusOne_iff_coefficients
+#print axioms NLS.KdV.hillMiuraL2Discriminant_sq
+#print axioms NLS.KdV.hillHminusDiscriminant_shifted_miura_square
+#print axioms NLS.KdV.analyticOrderAt_hillHminusDiscriminant_eq_physicalMultiplicity
+#print axioms NLS.KdV.analyticOrderNatAt_hillHminusDiscriminant_eq_physicalMultiplicity
+#print axioms NLS.Articles.KdVPseudomeasures.analyticOrderAt_originalHillDiscriminant
+#print axioms NLS.Articles.KdVPseudomeasures.analyticOrderNatAt_originalHillDiscriminant
+#print axioms NLS.Articles.KdVPseudomeasures.mem_originalIsospectralSet_iff_discriminant_orders
+#print axioms NLS.memlp_negative_sobolev_l2_product
+#print axioms NLS.periodOneMiura_memlp_iff
+#print axioms NLS.periodOneMiura_shift_memlp_iff

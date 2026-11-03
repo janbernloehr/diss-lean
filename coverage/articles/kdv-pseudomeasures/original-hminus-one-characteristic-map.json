@@ -4,7 +4,7 @@
   "scope": "Identify the ENTIRE original full H1/H-minus-one Hill spectrum with the physical energy-discriminant zero set, for all complex physically period-one H-minus-one potentials and hence the complete original real mean-zero domain.",
   "proved": true,
   "main_theorems_verified": false,
-  "physical_multiplicity_equals_characteristic_order_proved": false,
+  "physical_multiplicity_equals_characteristic_order_proved": true,
   "modules": [
     "NLS/SequenceSpaces/WeightedRestrictionTwo.lean",
     "NLS/KdV/PeriodOneHminusOneOriginal.lean",
@@ -720,5 +720,7 @@
     "NLS/ComplexAnalysis/ClosedZeroGraph.lean": "1953675522ca01ef77c9ea27ead83e8ea686909f131ad86193e2d692691b2472",
     "NLS/KdV/HminusOnePhysicalCharacteristic.lean": "6090ee9f214c2f981e0ac0d11bfdd69953b835347a6cfc502a8ad28ab113b772",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCharacteristic.lean": "804eebd86f0a3676888102582ef5a6a2d69aab2e49634387330848c249a4fffd"
-  }
+  },
+  "physical_multiplicity_order_scope": "Completed follow-on: all REAL original H-minus-one potentials at ALL complex energies, including zero. The original zero-set theorem remains valid for all complex potentials; no all-complex-potential divisor theorem is claimed.",
+  "completed_follow_on_coverage_map": "coverage/articles/kdv-pseudomeasures/real-hminus-one-divisor-map.json"
 }

@@ -1,10 +1,10 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Native rough Miura domain factorization and full companion eigenspace transport",
+  "phase": "Full original real H-minus-one physical characteristic divisor and exact finite-p Miura regularity",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
-  "reproduce": "DISS_LEAN_CHECK_DIR=.lake/hminus-one-characteristic-check-20261103 python3 scripts/check-kdv-pseudomeasures.py NLS.SequenceSpaces.WeakFirstOrderRegularity NLS.SequenceSpaces.YoungConvolutionModule NLS.KdV.SingularHillMiuraFactorization NLS.KdV.SingularHillMiuraCompanion Audit",
+  "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
   "modules_checked": [
     "NLS/SequenceSpaces/WeightedFiniteCoefficients.lean",
     "NLS/Fourier/PeriodicEndpointBounds.lean",
@@ -333,8 +333,8 @@
     "NLS/KdV/SingularHillMiuraCompanion.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 2145,
-  "definitions": 500,
+  "proved_theorems": 2205,
+  "definitions": 508,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
     "declarations": 2645,
@@ -663,8 +663,8 @@
     "At z!=0 every original Hill eigenvector has a constructed full H1 companion lift. Projection is a complex-linear bijection of the full eigenspaces; actual geometric multiplicities agree.",
     "If the native Miura potential is real on all smooth tests, previously proved original semisimplicity identifies its actual physical algebraic multiplicity with the fixed companion eigenspace dimension at z!=0."
   ],
-  "source_correspondence": "Full original-domain weak Miura factorization and exact eigenspace correspondence with a fixed first-order companion operator. A necessary operator-domain step toward the remaining physical multiplicity/characteristic-order identification. All original H1 domain vectors and arbitrary complex L2 Miura inputs are retained. The geometric correspondence requires nonzero frequency; the physical algebraic corollary assumes native potential reality. The full original H-minus-one characteristic zero-set result remains proved. Every main theorem remains open.",
-  "build_isolation": "Incremental validation over the unchanged fresh322-module baseline c5c5203:all baseline Lean source hashes checked unchanged except the expanded Audit. The4 new modules compile in dependency order;the exact2645-declaration transitive audit covers the complete326-module source inventory. No whole-library fresh rebuild is claimed for this turn. Compiler outputs stay private;canonical source and build remain read-only. All4 focused compilations and the expanded transitive audit passed with zero warnings/suggestions and only standard axioms or empty sets.",
+  "source_correspondence": "Full physical characteristic divisor identification on every original real H-minus-one potential, with actual algebraic multiplicities of the unchanged original H1/H-minus-one operator. All main theorems remain open.",
+  "build_isolation": "Fresh338-module dependency-order build and exact2710-declaration audit, followed by one additional finite-p Miura regularity module in the SAME fresh private directory and expanded exact339-module/2713-declaration audit. All passed with zero warnings/suggestions and only standard axioms or empty sets. Every selected module was compiled from source in this fresh directory. Canonical sources and build outputs remain read-only.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated and committed locally on the existing private article branch. GitHub export remains pending explicit destination approval after automatic approval review rejected the preceding push; no new push attempt. Canonical source/build/checkout remain read-only.",
@@ -1042,7 +1042,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/hminus-one-characteristic-check-20261103/logs/validation-native-miura.log",
+  "validation_log": ".lake/real-hminus-one-divisor-check-20261103/logs/validation-real-hminus-one-divisor-final.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -1059,7 +1059,7 @@
       "checked_declarations": 29
     }
   ],
-  "fresh_build": false,
+  "fresh_build": true,
   "local_module_import_order_checked": true,
   "shared_determinant_reuse": {
     "file": "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean",
@@ -1229,5 +1229,10 @@
     "directory": ".lake/hminus-one-characteristic-check-20261103",
     "source_hashes_verified_unchanged": true
   },
-  "full_reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py"
+  "full_reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
+  "validation_phases": [
+    "Fresh338module build with exact2710declaration audit PASSED zero warnings/suggestions.",
+    "Additional finite-p regularity module and expanded exact339module/2713declaration audit PASSED zero warnings/suggestions in the same fresh private build directory."
+  ],
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/real-hminus-one-divisor-map.json"
 }
