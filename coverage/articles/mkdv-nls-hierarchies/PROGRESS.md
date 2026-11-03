@@ -1862,3 +1862,44 @@ independent angles/final angle-sum factorization and the full corrected
 frequency comparison remain essential. The main-theorem goal stays active.
 
 Validation: all 366 article/shared modules have validated private outputs. The 356 unchanged prefix source hashes match 16879b3 and their outputs were reused; all ten added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,171 declarations/auxiliaries and the combined audit for 49,105 NLS declarations, using only the standard allowed axioms. All 368 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,131 declarations (1,720 theorems and 411 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Whole original NLS action sequence in a common Cartesian inverse chart
+
+The genuine physical real L2 form now has an exact complex decomposition
+by its bounded real-part projection. Transport by the actual free Fourier
+equivalence gives an exact decomposition of the natural Cartesian/mean
+target into its genuine real form and i times that form. A Banach-valued
+holomorphic identity on this physical real slice therefore extends over
+a connected open complex target domain.
+
+Bounded one-mode Cartesian rotations and their actual velocity operators
+are constructed in arbitrary positive weighted sequence targets. Their
+raw-coordinate formulas retain the signed mean and have the checked
+clockwise orientation. On the literal original physical real L2 space,
+the complete action flow is continuous, preserves the entire original
+NLS action sequence in l1, and is conjugated by the actual Cartesian map
+to those bounded target rotations as a full native Banach-space equality.
+
+A genuine nonlinear inverse chart over one full complex native target
+ball is now chosen with both inverse identities, exact image equality,
+physical real inverse preservation and a common analytic source domain
+for the entire original signed NLS action sequence. In these inverse
+coordinates the action sequence is l1-valued Banach analytic and recovers
+every original signed action exactly. Conservation on each complete real
+orbit proves that its derivative annihilates every positive Cartesian
+rotation direction on the genuine real target slice. Holomorphic
+uniqueness extends that identity to the whole common complex ball. The
+radius precedes the action index and the output index; no selected or
+unselected action is required to be nonzero.
+
+The quotient-descent step through quadratic Cartesian radii and the
+signed mean remains essential. The mean must be retained linearly at
+zero, rather than squared. A route through the checked finite-head tail
+square and tail sum descent keeps its zero Fourier head as a spectator.
+Global forward factorization, general Cartesian-Cartesian brackets and
+Gardner canonicity, global inverse/Jacobian geometry at general profiles,
+independent angles/final angle-sum factorization and the full corrected
+frequency comparison remain open. The main-theorem goal stays active.
+
+Validation: all 376 article/shared modules have validated private outputs. The 366 unchanged prefix source hashes match 9b30b88 and their outputs were reused; all ten added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,282 declarations/auxiliaries and the combined audit for 49,217 NLS declarations, using only the standard allowed axioms. All 378 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,187 declarations (1,764 theorems and 423 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

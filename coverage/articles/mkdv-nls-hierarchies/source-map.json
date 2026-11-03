@@ -105,7 +105,8 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_small_inverse_Sobolev_regularity",
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_complete_action_rotation",
         "NLS.Articles.MKdVNLSHierarchies.cartesian_action_Gardner_brackets_original_H1",
-        "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits"
+        "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits",
+        "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero"
       ]
     },
     {
@@ -179,7 +180,8 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_small_inverse_Sobolev_regularity",
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_complete_action_rotation",
         "NLS.Articles.MKdVNLSHierarchies.cartesian_action_Gardner_brackets_original_H1",
-        "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits"
+        "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits",
+        "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
@@ -394,7 +396,7 @@
   },
   "remaining_essential_dependencies": [
     "general Cartesian-Cartesian brackets and Gardner canonicity, general-profile Cartesian Jacobian/global inverse, and global nonzero-fiber geometry/surjectivity; complete native Cartesian action rotations and original H1 mixed Cartesian-action Gardner brackets are proved, as are native zero charts and small inverse regularity",
-    "forward analytic factorization of restricted NLS actions through independent physical mKdV actions and mean; converse physical J_n and corrected mean-squared factors in original NLS actions are proved",
+    "forward analytic factorization of restricted NLS actions through independent physical mKdV actions and signed mean, including analytic quotient descent from the proved common near-zero Cartesian action stationarity; converse physical J_n and corrected mean-squared factors in original NLS actions are proved",
     "independent mKdV Birkhoff angle construction, the final angle-sum factorization and full frequency identification; Theorem 4(iii) angle-action bracket clause and actual Gardner transfer are proved",
     "corrected frequency-sign convention in Theorem 3; the global signed-mean claim in Theorem 4(ii) is replaced by the proved mean-squared statement, while signed recovery requires a branch restriction"
   ],
@@ -925,5 +927,27 @@
     "scope": "Every integer Sobolev order s>=0 and every real time. All actual positive Cartesian pairs rotate at unit speed in the selected plane and stay fixed in every other positive plane, with the literal signed mean and whole native weighted l1 action sequence fixed. Every original signed NLS action is invariant on the same complete physical orbit. Closed selected and unselected actions are included without extra hypotheses. The actual ratio and chosen principal root are spectral for every signed index n!=0 on real diagonal isospectral sets at every finite exponent p>1; positivity of that root is used only at positive physical indices. On original real H1 the actual scalar Gardner brackets are {X_m,J_n}=delta_mn Y_m and {Y_m,J_n}=-delta_mn X_m, for all positive m,n without any open-action assumption. The whole complex original L2 space has the exact zero-energy discriminant formula Delta(0)=2*cosh(original_mean).",
     "normalization": "The physical rotation is (X,Y) -> (cos(t)*X+sin(t)*Y,-sin(t)*X+cos(t)*Y). Its velocity is (Y,-X), matching the checked second-coordinate sign and positive Gardner action convention. The source phase convention exp(2*i*theta) is unchanged.",
     "limits": "General Cartesian-Cartesian brackets and Gardner canonicity, the general-profile Cartesian Jacobian/global inverse, global nonzero-fiber geometry and surjectivity, forward restricted-NLS-action factorization, independent angles/final angle-sum factorization and full corrected frequency comparison remain essential. Orbit invariance and mixed brackets do not by themselves supply these remaining claims."
+  },
+  "native_Cartesian_NLS_action_stationarity": {
+    "physical_L2_complex_decomposition": "NLS.Coeff.physicalRealPart_complex_decomp",
+    "genuine_real_target_complex_decomposition": "NLS.MKdV.miuraCartesianRealProjection_complex_decomp",
+    "target_real_form_identity_principle": "NLS.MKdV.analytic_cartesian_eq_zero_of_physical_real",
+    "bounded_native_mode_rotations": "NLS.WeightedCoeff.positiveCartesianRotation",
+    "actual_target_rotation_velocity": "NLS.MKdV.hasDerivAt_miuraCartesianRotation_zero",
+    "literal_original_L2_action_flow": "NLS.MKdV.miuraOriginalL2ActionFlow",
+    "original_L2_flow_continuity": "NLS.MKdV.continuous_miuraOriginalL2ActionFlow",
+    "entire_original_NLS_action_sequence_conserved": "NLS.MKdV.miuraOriginalL2ActionFlow_NLS_actionSequence",
+    "full_native_target_flow_conjugacy": "NLS.MKdV.miuraPositiveCartesianMap_originalActionFlow",
+    "generic_actual_inverse_coordinate_stationarity": "NLS.ComplexAnalysis.fderiv_inverse_coordinates_eq_zero_of_orbit",
+    "actual_original_l1_action_observable": "NLS.MKdV.miuraOriginalNLSActionSequence",
+    "literal_all_signed_action_coordinates": "NLS.MKdV.miuraOriginalNLSActionSequence_apply",
+    "common_actual_inverse_chart": "NLS.MKdV.nonempty_miuraCartesianNLSActionChart",
+    "inverse_action_sequence_analytic": "NLS.MKdV.MiuraCartesianNLSActionChart.observables_analytic",
+    "exact_recovery_of_entire_original_sequence": "NLS.MKdV.MiuraCartesianNLSActionChart.observables_recover",
+    "physical_real_rotation_stationarity": "NLS.MKdV.MiuraCartesianNLSActionChart.observables_rotation_stationary_real",
+    "holomorphic_whole_sequence_rotation_stationarity": "NLS.MKdV.MiuraCartesianNLSActionChart.observables_rotation_stationary",
+    "article_common_analytic_stationary_recovery": "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero",
+    "scope": "One full open complex original scalar L2 source neighborhood is mapped by the actual nonlinear Cartesian/mean map onto a full native positive half-order Hilbert-pair/complex-mean ball at zero. The genuine inverse is complex Banach analytic, has both inverse identities, preserves the physical real form, and maps that entire ball into a common analytic source domain for all signed original NLS actions. The whole original action sequence is l1-valued analytic in these actual inverse coordinates and recovers every original signed action. Its actual Frechet derivative annihilates each positive Cartesian rotation direction on the whole common complex target ball. The chart and radius precede both selected action and signed output indices. No open selected/unselected action, finite-gap, or real-input restriction occurs in the final complex stationarity statement.",
+    "limits": "Analytic quotient descent through quadratic Cartesian radii and the signed mean remains unproved, including its local zero-profile form. The signed mean must remain a linear spectator at zero. Global forward action factorization, general Cartesian-Cartesian brackets and Gardner canonicity, global inverse/Jacobian geometry at general profiles, independent angles/final angle-sum factorization and the full corrected frequency comparison remain essential. These analytic recovery and stationarity statements do not finish Theorem 4(ii)."
   }
 }

@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.CartesianNLSActionStationarity
 import NLS.Articles.MKdVNLSHierarchies.CartesianActionFlowIdentification
 import NLS.Articles.MKdVNLSHierarchies.RealSobolevCartesianInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.RealCartesianLocalInverseIdentification
@@ -48,6 +49,24 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.Coeff.physicalRealPart_complex_decomp,
+    `NLS.ComplexAnalysis.hasDerivAt_linear_rotation_zero,
+    `NLS.WeightedCoeff.positiveModeCLM,
+    `NLS.WeightedCoeff.positiveModeCLM_apply,
+    `NLS.WeightedCoeff.positiveCartesianEval,
+    `NLS.WeightedCoeff.positiveCartesianEval_apply,
+    `NLS.WeightedCoeff.positiveCartesianMode,
+    `NLS.WeightedCoeff.positiveCartesianActionVector,
+    `NLS.WeightedCoeff.positiveCartesianMode_eval,
+    `NLS.WeightedCoeff.positiveCartesianActionVector_eval,
+    `NLS.WeightedCoeff.positiveCartesianRotation,
+    `NLS.WeightedCoeff.positiveCartesianRotation_apply,
+    `NLS.WeightedCoeff.positiveCartesianRotation_eval,
+    `NLS.WeightedCoeff.positiveCartesianRotation_mean,
+    `NLS.WeightedCoeff.positiveCartesianRotation_zero,
+    `NLS.WeightedCoeff.hasDerivAt_positiveCartesianRotation_zero,
+    `NLS.ComplexAnalysis.fderiv_inverse_coordinates_eq_zero_of_orbit,
+    `NLS.ComplexAnalysis.analyticAt_fderiv_apply_clm,
     `NLS.ComplexAnalysis.cartesianPlaneRotation,
     `NLS.ComplexAnalysis.cartesianPlaneRotation_zero,
     `NLS.ComplexAnalysis.cartesianPlaneRotation_scaled_reflection,
@@ -602,6 +621,11 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero,
+    ``NLS.MKdV.MiuraCartesianNLSActionChart.observables_rotation_stationary,
+    ``NLS.MKdV.nonempty_miuraCartesianNLSActionChart,
+    ``NLS.MKdV.miuraPositiveCartesianMap_originalActionFlow,
+
     ``NLS.Articles.MKdVNLSHierarchies.native_cartesian_complete_action_rotation,
     ``NLS.Articles.MKdVNLSHierarchies.cartesian_action_Gardner_brackets_original_H1,
     ``NLS.Articles.MKdVNLSHierarchies.original_L2_zero_energy_trace,

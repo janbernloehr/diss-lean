@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 4171,
+  "audited_declarations_and_auxiliaries": 4282,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -10674,14 +10674,294 @@
       "kind": "theorem",
       "name": "native_original_NLS_actions_constant_on_Gardner_orbits",
       "file": "NLS/Articles/MKdVNLSHierarchies/CartesianActionFlowIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalRealPart_complex_decomp",
+      "file": "NLS/SequenceSpaces/PhysicalRealUnweightedDecomposition.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianRealProjection_inclusion",
+      "file": "NLS/MKdV/MiuraCartesianRealIdentity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianRealProjection_complex_decomp",
+      "file": "NLS/MKdV/MiuraCartesianRealIdentity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analytic_cartesian_eq_zero_of_physical_real",
+      "file": "NLS/MKdV/MiuraCartesianRealIdentity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_linear_rotation_zero",
+      "file": "NLS/ComplexAnalysis/LinearRotationDerivative.lean"
+    },
+    {
+      "kind": "def",
+      "name": "positiveModeCLM",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveModeCLM_apply",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "def",
+      "name": "positiveCartesianEval",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianEval_apply",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "def",
+      "name": "positiveCartesianMode",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "def",
+      "name": "positiveCartesianActionVector",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianMode_eval",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianActionVector_eval",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "def",
+      "name": "positiveCartesianRotation",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRotation_apply",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRotation_eval",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRotation_mean",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRotation_zero",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_positiveCartesianRotation_zero",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRotations.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraL2SobolevZeroLift",
+      "file": "NLS/MKdV/MiuraOriginalL2ActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2SobolevZeroLift_apply",
+      "file": "NLS/MKdV/MiuraOriginalL2ActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2SobolevZeroLift_real",
+      "file": "NLS/MKdV/MiuraOriginalL2ActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraL2SobolevZeroLift_L2",
+      "file": "NLS/MKdV/MiuraOriginalL2ActionFlow.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraOriginalL2ActionFlow",
+      "file": "NLS/MKdV/MiuraOriginalL2ActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalL2ActionFlow_real",
+      "file": "NLS/MKdV/MiuraOriginalL2ActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalL2ActionFlow_zero",
+      "file": "NLS/MKdV/MiuraOriginalL2ActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraOriginalL2ActionFlow",
+      "file": "NLS/MKdV/MiuraOriginalL2ActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalL2ActionFlow_mean",
+      "file": "NLS/MKdV/MiuraOriginalL2ActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalL2ActionFlow_Cartesian",
+      "file": "NLS/MKdV/MiuraOriginalL2ActionFlow.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalL2ActionFlow_NLS_actionSequence",
+      "file": "NLS/MKdV/MiuraOriginalL2ActionFlow.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianActionVector",
+      "file": "NLS/MKdV/MiuraCartesianRotations.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianRotation",
+      "file": "NLS/MKdV/MiuraCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianRotation_eval",
+      "file": "NLS/MKdV/MiuraCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianActionVector_eval",
+      "file": "NLS/MKdV/MiuraCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianRotation_mean",
+      "file": "NLS/MKdV/MiuraCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianRotation_zero",
+      "file": "NLS/MKdV/MiuraCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_miuraCartesianRotation_zero",
+      "file": "NLS/MKdV/MiuraCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveCartesianMap_positive",
+      "file": "NLS/MKdV/MiuraCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveCartesianMap_originalActionFlow",
+      "file": "NLS/MKdV/MiuraCartesianRotations.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_inverse_coordinates_eq_zero_of_orbit",
+      "file": "NLS/ComplexAnalysis/InverseCoordinateStationarity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_fderiv_apply_clm",
+      "file": "NLS/ComplexAnalysis/InverseCoordinateStationarity.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraOriginalNLSActionSequence",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraOriginalNLSActionDomain",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "isOpen_miuraOriginalNLSActionDomain",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "real_mem_miuraOriginalNLSActionDomain",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticOnNhd_miuraOriginalNLSActionSequence",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalNLSActionSequence_apply",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalNLSActionSequence_actionFlow",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nonempty_miuraCartesianNLSActionChart",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "def",
+      "name": "observables",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "observables_analytic",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "observables_recover",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "observables_apply",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "observables_rotation_stationary_real",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianStationarity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "observables_rotation_stationary",
+      "file": "NLS/MKdV/MiuraNLSActionsCartesianStationarity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "original_NLS_actions_cartesian_analytic_stationary_near_zero",
+      "file": "NLS/Articles/MKdVNLSHierarchies/CartesianNLSActionStationarity.lean"
     }
   ],
-  "public_declaration_count": 2131,
-  "theorem_count": 1720,
-  "definition_count": 411,
-  "full_build": "366 article/shared modules have validated private outputs. All 356 unchanged prefix module source hashes match the prior 16879b3 milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2187,
+  "theorem_count": 1764,
+  "definition_count": 423,
+  "full_build": "376 article/shared modules have validated private outputs. All 366 unchanged prefix module source hashes match the prior 9b30b88 milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/CartesianPlaneRotation.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/PhysicalRealUnweightedDecomposition.lean",
   "sha256": {
     "NLS/Articles/MKdVNLSHierarchies/ActionAngleFlowIdentification.lean": "b3f3e63f112a93654c970e5e4b79d592dc31973fe7ed5fcaf612c98da860fd39",
     "NLS/Articles/MKdVNLSHierarchies/ActionDescentIdentification.lean": "9d86c19bec1b44ee195c8695a749fdeecf6daf0ee895da7c592ad0782f9f3cc4",
@@ -10693,6 +10973,7 @@
     "NLS/Articles/MKdVNLSHierarchies/CartesianActionFlowIdentification.lean": "e5eb479e53feeb1e59fbb921ba068ae18b2ba2bffe01c4eaafd2c83fe11df990",
     "NLS/Articles/MKdVNLSHierarchies/CartesianActionIdentification.lean": "65f13530cecabe58a90b386aac4bba093bd3ecc44b795cdc642fc623cdb745a0",
     "NLS/Articles/MKdVNLSHierarchies/CartesianLocalInverseIdentification.lean": "b3c72b5d66c2628b447b832e2dc46a1c98bb9c25fd6fd8d037859d2256a2fc2e",
+    "NLS/Articles/MKdVNLSHierarchies/CartesianNLSActionStationarity.lean": "de18cf96397d8be892a84e3a0dca14b35add10e8778d34b8bee63364cb4aee0b",
     "NLS/Articles/MKdVNLSHierarchies/CartesianSequenceIdentification.lean": "e4212e37f62efd857f7e5da17c11d0e2d840610b6ae873b32c3463d5f8ea3f3c",
     "NLS/Articles/MKdVNLSHierarchies/DiscriminantIdentity.lean": "8bf5e0047975fd90b4be0abe45df9f833f2166e2943d8a5bf027caea35654ae9",
     "NLS/Articles/MKdVNLSHierarchies/FiniteActionCoordinates.lean": "f5782dcf6123f3d1c947bac6eb9192f4b7f18f0a95897085e710070a54e3f458",
@@ -10727,8 +11008,10 @@
     "NLS/ComplexAnalysis/CompactJointLimits.lean": "cb5cf5fe48c55d23df9da8ff7cfe2d85f91096435c024518f1005679c5f73c73",
     "NLS/ComplexAnalysis/DiscriminantSamples.lean": "29e55109f4d17a53c68c5a612540652e5a0e0257fc2020055d2bb68dac145e80",
     "NLS/ComplexAnalysis/EntireEvenSquareDescent.lean": "e22eccc87b60618f7793db59cf0888949b690d1677752139a57db38372aac6c6",
+    "NLS/ComplexAnalysis/InverseCoordinateStationarity.lean": "8992e282c99951db0b06c108668162ce641fe26cd0c3506f0a7ebcbfe48128dd",
     "NLS/ComplexAnalysis/LatticeDiscInverseBound.lean": "5f8df9184ecb05c64dbb124f994a162561460a2fd18d313b12878da1e0ce102b",
     "NLS/ComplexAnalysis/LinearEquivMeanTransport.lean": "7c5000a0ba90e5368cf14617aad6cef2053026b5f8c7f0980556417c42d8629f",
+    "NLS/ComplexAnalysis/LinearRotationDerivative.lean": "6f618b876d224903b7da947ca896597ff0c591f4f4e890d584bb80a6b6cf846c",
     "NLS/ComplexAnalysis/NonrealBoundaryExtension.lean": "b7d741d3d033529c77560bba161467612fbab3732f96a8b7084143537b53e481",
     "NLS/ComplexAnalysis/PiecewiseSquareContour.lean": "ac4cffc1704db1d6588d592acc2a85c6837c9d0d5b63d0f6a67337e46832350a",
     "NLS/ComplexAnalysis/PiecewiseSquareWinding.lean": "ecf9d5b768108801081f9967480f71c0bdd5be99baa35828f6b9f6d4c4a46ea8",
@@ -10860,6 +11143,8 @@
     "NLS/MKdV/MiuraCartesianGardnerAction.lean": "ae47473347375a15ac330c4b891c4bf1b54d212c837a315047e1fd99939cb68a",
     "NLS/MKdV/MiuraCartesianLocalInverse.lean": "08e1ee3e8ecf282f388e7607bd2e65fa39a237d638592ef638819de9f20758ce",
     "NLS/MKdV/MiuraCartesianRealForm.lean": "348bf32860ab6d2a53cd2f6cc2b450f7925e55f5fa00a3e89bbcf6595b278fa2",
+    "NLS/MKdV/MiuraCartesianRealIdentity.lean": "c0a8caa4c0f5e5d9e983710dc4bfa89c001b7331b7ebffff0144fcbe99003b99",
+    "NLS/MKdV/MiuraCartesianRotations.lean": "091c50583ec9f21e7ce828880057e43624f0941e94ba15a6168cbed5b73c93cd",
     "NLS/MKdV/MiuraClassicalSolution.lean": "8ff694a65deec068d661b9132c593c09042c97e622c6e147aa5346fa85ddd42f",
     "NLS/MKdV/MiuraConstantActions.lean": "db163d1a6d4d963a002d61624906cec48b75b315a9b66cdc67942d4012aa45a3",
     "NLS/MKdV/MiuraDiscriminantCotangent.lean": "1e866dff43c3574cbe81c6210095486a65a494e45bed1369b133881ff32eb4e2",
@@ -10900,7 +11185,10 @@
     "NLS/MKdV/MiuraLaurentContourComparison.lean": "9f6e637af949fad22328f07d2ea1fb1d488446c6a8f27840d99cacbc4b5db086",
     "NLS/MKdV/MiuraMassActionTrace.lean": "35856ae928fc98210d8f86306f740d23eda61cdd7fbe8eca4bdab5fa4da99f3a",
     "NLS/MKdV/MiuraMeanSquareDescent.lean": "eb61bc154bf0f3bd12e881491d89ec5c705b7112a34825e7475cf32250a8797d",
+    "NLS/MKdV/MiuraNLSActionsCartesianChart.lean": "920c22c71c8495e805c919e44071e6f6ea6958d2ce62b02adf3e39ec068a6ffd",
+    "NLS/MKdV/MiuraNLSActionsCartesianStationarity.lean": "a4afb38d3a5b204011991d8010f8e56669fdbc33df7354cad4e6fa0018b48a11",
     "NLS/MKdV/MiuraNLSPositiveEndpoints.lean": "3f5c49a6dc937669104d321db0d076ed7e58d317c45984ad041e9ea4eda9781d",
+    "NLS/MKdV/MiuraOriginalL2ActionFlow.lean": "09e148f6ab95c90e7d457c55041f150a850e7ace83e614fe47e9dd2045b8175d",
     "NLS/MKdV/MiuraPositiveCartesianMap.lean": "4f851eaddfe0de579a98d4d5813461e6f7bce79c6437c03daf02f878081f42dd",
     "NLS/MKdV/MiuraPositiveCartesianProperness.lean": "c7979f38ae58ca2f87088a6fbe5ef10a97c9575a546bc71f2d416bcb4549ba39",
     "NLS/MKdV/MiuraPositiveMultiplicity.lean": "d3791e39dd0071917f0885d67a320228191d4c7cfccccd2a0c7f1484d1dd3194",
@@ -10951,8 +11239,10 @@
     "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean": "3e4071aef6c8357dc5249cd8c807847792cce838965828a4e392c3e342592c26",
     "NLS/SequenceSpaces/PhysicalRealCoefficients.lean": "8d1359e9a91af4d40e53bba54beaa89782306ed3fad24eaa53db7d0aa5dc3718",
     "NLS/SequenceSpaces/PhysicalRealUnweightedCoefficients.lean": "5372a3385990bbad152a696375711071c7b5b323fb1e0b360c88b880660ae5a6",
+    "NLS/SequenceSpaces/PhysicalRealUnweightedDecomposition.lean": "48cd106bfe5464ed880612cea3536af93c6d477d0933edd85098c4663a7103b4",
     "NLS/SequenceSpaces/PhysicalRealUnweightedProjection.lean": "06ee8a5bd6ac5377a8da57c7a3048eedb2a5221887cde41158f8366fded67d08",
     "NLS/SequenceSpaces/PhysicalRealWeightEquivalence.lean": "dcda706d8573fb0793ec742806932557e37d2418fa9cf9ede4be1002aa3ca8db",
+    "NLS/SequenceSpaces/PositiveCartesianRotations.lean": "deaca1b44c221a4fe3ebb5c075c8d84ebbdab775d04e4b1eb4fffb736567eeea",
     "NLS/SequenceSpaces/PositiveRealWeightTransport.lean": "bdbb70ab7e47f06b11e575132dc6173989e79ab0a46b287dba015e30a0655c6e",
     "NLS/SequenceSpaces/PositiveWeightEquivalence.lean": "344e7199a61e0f2257491f51486628c8cc3f1394a2a8b51d8abd77c00dfde858",
     "NLS/SequenceSpaces/PositiveWeightedCoefficients.lean": "a3aec04059afd4d53cfba8671bd00776eea9cb055c2a8d38545365dfa707ffdb",
@@ -11049,11 +11339,11 @@
     "NLS/ZakharovShabat/SourceWeightedPrimitiveContour.lean": "26946412492d5f346f9155b8a37055e296e860d1d395cc00d37b7a5cd45e159f",
     "NLS/ZakharovShabat/SourceWeightedZeroLaurentAnalytic.lean": "7c328fc9fabdd864d7f1f8b850cae53f7178776b3d95a3a7c0930d980b2ed155",
     "NLS/ZakharovShabat/SourceWeightedZeroLaurentBound.lean": "26624c513ed96a9dde3f373a0d6d9049342bf2b46c074d2a60b893f841e3e24a",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "46c167945fdba1651eebc724ca20bfa42dc395352544d7ec31ec81d742fed93e",
-    "scripts/check_mkdv_nls.py": "63c36415b1a86a83bb2a8345d8a6d177be10390136de07e8ef2e6359c3bfbc58"
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "3385aee87bf35be2bb599982695273277a2da00285d58e54f89abb4f7d450864",
+    "scripts/check_mkdv_nls.py": "9b81f4befb78959c043f792d462ad52adfb26661a8c55a7e135579defc1c0d9d"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 366,
+  "focused_module_count": 376,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -11323,12 +11613,25 @@
       "public_declaration_count": 2131,
       "theorem_count": 1720,
       "definition_count": 411
+    },
+    {
+      "milestone": "Whole original NLS action sequence in a common native Cartesian inverse chart with holomorphic rotation stationarity",
+      "audit_count": 4282,
+      "combined_NLS_audit_count": 49217,
+      "aggregate_compiled": true,
+      "module_count": 376,
+      "reused_prefix_module_count": 366,
+      "reused_prefix_commit": "9b30b88c1337ead926c064b73b6619ba230a34bf",
+      "frozen_source_checker_count": 378,
+      "public_declaration_count": 2187,
+      "theorem_count": 1764,
+      "definition_count": 423
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 49105,
+  "combined_audited_NLS_declarations": 49217,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -11336,7 +11639,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 356 unchanged prefix module source hashes match the prior 16879b3 milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4171 declarations/auxiliaries and combined audit for 49105 NLS declarations. All 368 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 366 unchanged prefix module source hashes match the prior 9b30b88 milestone; their private outputs were reused. Ten added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4282 declarations/auxiliaries and combined audit for 49217 NLS declarations. All 378 mathematical source/checker inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

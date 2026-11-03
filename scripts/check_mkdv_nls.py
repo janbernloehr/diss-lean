@@ -400,6 +400,16 @@ modules = [
     "NLS/MKdV/MiuraL2ZeroEnergyFlowMean.lean",
     "NLS/MKdV/MiuraSobolevCartesianActionFlow.lean",
     "NLS/Articles/MKdVNLSHierarchies/CartesianActionFlowIdentification.lean",
+    "NLS/SequenceSpaces/PhysicalRealUnweightedDecomposition.lean",
+    "NLS/MKdV/MiuraCartesianRealIdentity.lean",
+    "NLS/ComplexAnalysis/LinearRotationDerivative.lean",
+    "NLS/SequenceSpaces/PositiveCartesianRotations.lean",
+    "NLS/MKdV/MiuraOriginalL2ActionFlow.lean",
+    "NLS/MKdV/MiuraCartesianRotations.lean",
+    "NLS/ComplexAnalysis/InverseCoordinateStationarity.lean",
+    "NLS/MKdV/MiuraNLSActionsCartesianChart.lean",
+    "NLS/MKdV/MiuraNLSActionsCartesianStationarity.lean",
+    "NLS/Articles/MKdVNLSHierarchies/CartesianNLSActionStationarity.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")
