@@ -1231,3 +1231,46 @@ corrected frequency comparison remain essential. Global properness is
 still an original physical real L2 result. The main-theorem goal stays active.
 
 Validation: all 356 article/shared modules have validated private outputs. The 344 unchanged prefix source hashes match 2bcaf01 and their outputs were reused; all twelve added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,129 declarations/auxiliaries and the combined audit for 49,063 NLS declarations, using only the standard allowed axioms. All 358 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,098 declarations (1,689 theorems and 409 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Complete Cartesian action rotations and original mixed Gardner brackets
+
+The actual diagonal Laurent actions, the regularized physical action ratio,
+and its chosen principal square root are now proved invariant on every
+actual real diagonal isospectral set at every finite exponent p>1. The
+closed-gap branch uses the reciprocal of twice the actual spectral midpoint;
+the open-gap branch uses the checked normalized action factorizations.
+The result retains every signed index n!=0 and does not divide by a zero
+action.
+
+The original complex rectangular NLS map has an exact paired-action
+transport identity. With the checked negative sign in the second physical
+Cartesian coordinate, every positive physical pair rotates clockwise at
+unit speed along its selected complete Gardner action orbit and stays
+fixed along every other action orbit. This literal identity holds for all
+real times and every integer Sobolev order s>=0, including all closed
+actions. It is also proved for the actual full native positive target,
+with the signed mean and the entire native weighted action sequence fixed.
+Every original signed NLS action is invariant on these same complete
+physical native orbits.
+
+The zero-energy trace Delta(0)=2*cosh(mean) is extended from the original
+complex H1 formula to all original complex L2 profiles by finite Fourier
+density. Actual isospectrality fixes the physical real mean squared, and
+continuity on each complete orbit fixes the signed mean, including zero
+mean, at every native integer Sobolev order.
+
+Differentiating the literal rotation on the original real H1 domain and
+using the already identified actual Gardner trajectory proves
+{X_m,J_n}=delta_mn Y_m and {Y_m,J_n}=-delta_mn X_m. Both sides use the actual
+original L2 Frechet derivatives and actual scalar-gradient Gardner field.
+These mixed Cartesian-action bracket identities require no open-action
+hypothesis, in either selected index.
+
+General Cartesian-Cartesian brackets and Gardner canonicity, the global
+Cartesian inverse/Jacobian at general profiles, global nonzero-fiber
+geometry and surjectivity, forward restricted-NLS-action factorization,
+independent angles/final angle-sum factorization and the full corrected
+frequency comparison remain essential. The main-theorem goal stays active.
+
+Validation: all 366 article/shared modules have validated private outputs. The 356 unchanged prefix source hashes match 16879b3 and their outputs were reused; all ten added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,171 declarations/auxiliaries and the combined audit for 49,105 NLS declarations, using only the standard allowed axioms. All 368 mathematical source/checker hashes match the frozen inputs. The public inventory is 2,131 declarations (1,720 theorems and 411 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

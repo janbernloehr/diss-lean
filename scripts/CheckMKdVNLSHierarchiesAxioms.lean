@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.CartesianActionFlowIdentification
 import NLS.Articles.MKdVNLSHierarchies.RealSobolevCartesianInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.RealCartesianLocalInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.SobolevCartesianLocalInverseIdentification
@@ -47,6 +48,18 @@ run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
     `NLS.DifferentialPolynomial,
+    `NLS.ComplexAnalysis.cartesianPlaneRotation,
+    `NLS.ComplexAnalysis.cartesianPlaneRotation_zero,
+    `NLS.ComplexAnalysis.cartesianPlaneRotation_scaled_reflection,
+    `NLS.ComplexAnalysis.cartesianPlaneRotation_radius,
+    `NLS.ComplexAnalysis.hasDerivAt_cartesianPlaneRotation,
+    `NLS.RealCoeff.pairedActionRotation_coordinates_of_ne_second,
+    `NLS.ZakharovShabat.sourceDiagonalLaurentAction_eq_of_isospectral,
+    `NLS.ZakharovShabat.sourceDiagonalActionRatio_eq_of_isospectral,
+    `NLS.ZakharovShabat.sourceDiagonalActionRoot_eq_of_isospectral,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertRealHomeomorph_complex_coordinates,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.birkhoff_pairedActionFlow_coordinates_of_ne_second,
+    `NLS.Poisson.l2GardnerBracket_pair,
     `NLS.FunctionalAnalysis.complexEquivReal,
     `NLS.FunctionalAnalysis.complexEquivReal_apply,
     `NLS.FunctionalAnalysis.complexEquivReal_symm_apply,
@@ -589,6 +602,12 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.native_cartesian_complete_action_rotation,
+    ``NLS.Articles.MKdVNLSHierarchies.cartesian_action_Gardner_brackets_original_H1,
+    ``NLS.Articles.MKdVNLSHierarchies.original_L2_zero_energy_trace,
+    ``NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits,
+    ``NLS.ZakharovShabat.sourceDiagonalActionRoot_eq_of_isospectral,
+
     ``NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_inverse_allSobolev,
     ``NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_original_H1_zero_inverse,
     ``NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_small_inverse_Sobolev_regularity,

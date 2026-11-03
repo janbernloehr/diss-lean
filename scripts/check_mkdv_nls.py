@@ -390,6 +390,16 @@ modules = [
     "NLS/ComplexAnalysis/AnalyticInverseRegularityTransfer.lean",
     "NLS/MKdV/MiuraRealCartesianInverseRegularity.lean",
     "NLS/Articles/MKdVNLSHierarchies/RealSobolevCartesianInverseIdentification.lean",
+    "NLS/ComplexAnalysis/CartesianPlaneRotation.lean",
+    "NLS/SequenceSpaces/RealPairedActionCoordinates.lean",
+    "NLS/ZakharovShabat/SourceDiagonalActionIsospectral.lean",
+    "NLS/ZakharovShabat/SourcePairedCartesianTransport.lean",
+    "NLS/MKdV/MiuraCartesianActionFlow.lean",
+    "NLS/Poisson/L2CartesianGardner.lean",
+    "NLS/MKdV/MiuraCartesianGardnerAction.lean",
+    "NLS/MKdV/MiuraL2ZeroEnergyFlowMean.lean",
+    "NLS/MKdV/MiuraSobolevCartesianActionFlow.lean",
+    "NLS/Articles/MKdVNLSHierarchies/CartesianActionFlowIdentification.lean",
 ]
 if args.full_audit:
     modules.append("NLS.lean")
