@@ -794,10 +794,27 @@
         "NLS.isReal_periodOneHminusImagPart",
         "NLS.convex_realPeriodOneHminusOne",
         "NLS.exists_analyticOnNhd_gluing_realHminus",
-        "NLS.Articles.KdVConvexity.exists_global_analytic_canonical_moment_family"
+        "NLS.Articles.KdVConvexity.exists_global_analytic_canonical_moment_family",
+        "NLS.ComplexAnalysis.exp_eq_of_cosh_eq_of_re_pos",
+        "NLS.ComplexAnalysis.continuousLogarithms_eqOn_of_common_boundary_limit",
+        "NLS.KdV.hillHminusRadicand_eq_of_discriminant_eq",
+        "NLS.KdV.HillHminusHighGapPair.of_discriminant_eq",
+        "NLS.KdV.hillHminusRealLabels_eq_of_discriminant_eq",
+        "NLS.KdV.hillHminusLowestRealRoot_eq_of_discriminant_eq",
+        "NLS.KdV.hillHminusContinuedPrimitive_eq_of_discriminant_eq_upper",
+        "NLS.KdV.hillHminusContinuedPrimitive_eq_of_discriminant_eq_off_real",
+        "NLS.KdV.hillHminusUpperBoundaryPrimitive_eq_of_discriminant_eq",
+        "NLS.KdV.hillHminusRealCutPrimitive_eq_of_discriminant_eq",
+        "NLS.KdV.hillHminusRealCutRoot_eq_of_discriminant_eq",
+        "NLS.KdV.hillHminusRealGapPrimitiveSquare_eq_of_discriminant_eq",
+        "NLS.KdV.hillHminusRealGapContourMoments_eq_of_discriminant_eq",
+        "NLS.Articles.KdVConvexity.exists_global_isospectral_canonical_moment_family",
+        "NLS.Articles.KdVConvexity.SpectralCoordinateRealization",
+        "NLS.Articles.KdVConvexity.analyticAt_normalizedCoordinateAction",
+        "NLS.Articles.KdVConvexity.global_contour_extension_of_spectral_coordinate_realization"
       ],
       "remaining": [
-        "Prove the intrinsic singular-Hill operator identification, construct the global KdV Birkhoff map and identify its actions with the canonical Arnold periods, then prove real isospectral/action-fiber invariance and apply the verified action-space descent/summation. One complex neighborhood of the entire real H^-1 space now carries every canonical polynomial and cubic moment with exact real values, signs/zero criteria and locally uniform quadratic complex-tail bounds. Physical energy/frequency identities, the -6*Id Taylor coefficient and main Theorems 1.2 and 1.3 remain.",
+        "Construct the actual analytic global KdV coordinate realization, prove its real canonical Arnold-action identity and real action-fiber discriminant identity, and identify the physical renormalized energy/frequencies. The actual canonical periods are now proved invariant under equality of the full real discriminant, and the conditional theorem derives the common-neighborhood positive-ell2 extension directly from those precise coordinate inputs. The intrinsic singular-Hill operator identification, -6*Id Taylor coefficient, and main Theorems 1.2 and 1.3 remain.",
         "Identify the actual Arnold periods with the action coordinates of the same global H^-1 KdV Birkhoff map used in the article. The proved estimates concern the constructed spectral periods, not an arbitrary coordinate map.",
         "Apply the proved simultaneous descent/gluing and exact weighted-action summation mechanism to the actual KdV Birkhoff-coordinate cubic periods. This still requires the actual global H^-1 Birkhoff map and Arnold-period action identity, real isospectral invariance on its action fibers, and analytic finite central periods. No common action domain is now required as a separate abstract hypothesis.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
@@ -1645,7 +1662,7 @@
     "analyticity_and_absolute_convergence_of_literal_contour_series_from_coordinate_inputs_proved": true,
     "physical_KdV_Birkhoff_map_constructed": false,
     "actual_Arnold_period_Birkhoff_action_identity_proved": false,
-    "actual_KdV_period_real_isospectral_invariance_proved": false,
+    "actual_KdV_period_real_isospectral_invariance_proved": true,
     "all_central_actual_periods_available": false,
     "actual_KdV_global_positive_ell2_Hamiltonian_extension_proved": false,
     "new_authored_modules": [
@@ -1708,7 +1725,8 @@
       "NLS.SequenceSpaces.NonnegativeActionGluing",
       "NLS.SequenceSpaces.RealActionPairLifting",
       "NLS.SequenceSpaces.RealActionLifting"
-    ]
+    ],
+    "real_isospectral_invariance_hypothesis": "Equality of the full actual entire discriminant at two real H^-1 potentials; action-fiber/discriminant identification is still unproved."
   },
   "Hminus1_real_spectral_progress": {
     "potential_space": "Every real unit-period H^-1 potential, specified by conjugate reflection of its raw Fourier coefficients.",
@@ -2276,6 +2294,53 @@
       "NLS.ComplexAnalysis.ContinuousRealFormIdentity"
     ],
     "shared_source_commit": "fe667096d9f012ab5084adf6aa3cf85955fb48e5",
-    "normalization": "A_n,m=-(1/pi)*integral lambda^m*F; R_n=(1/pi)*integral (F+i*n*pi)^3; exact actual source normalization and no extra factor i."
+    "normalization": "A_n,m=-(1/pi)*integral lambda^m*F; R_n=(1/pi)*integral (F+i*n*pi)^3; exact actual source normalization and no extra factor i.",
+    "real_full_discriminant_invariance_proved": true
+  },
+  "Hminus1_real_isospectral_and_coordinate_extension_progress": {
+    "potential_space": "The full unit-period complex H^-1 space and its physical real Fourier form; no mean-zero hypothesis on the spectral invariance theorems.",
+    "invariance_hypothesis": "Both potentials are real and their actual entire discriminant functions are equal. Equality of actions, gap lengths, or an unlabelled spectrum is not substituted for this hypothesis.",
+    "radicand_and_analytic_root_multiplicities_equal": true,
+    "canonical_characteristic_labels_and_intrinsic_lowest_root_equal": true,
+    "upper_physical_cosh_sheet_selects_same_exponential": true,
+    "full_logarithm_period_fixed_by_common_zero_boundary_value_at_lowest_root": true,
+    "actual_source_primitive_equal_on_both_nonreal_half_planes": true,
+    "full_upper_boundary_primitive_equal_at_every_real_energy": true,
+    "real_cut_primitive_and_root_equal_as_functions_on_all_complex_energies": true,
+    "all_index_filled_gap_primitive_squares_equal": true,
+    "all_canonical_polynomial_and_cubic_periods_equal": true,
+    "central_and_collapsed_gaps_included": true,
+    "one_global_analytic_potential_family_with_real_full_discriminant_invariance_proved": true,
+    "all_previous_uniform_complex_tail_estimates_retained": true,
+    "actual_period_invariance_declaration": "NLS.KdV.hillHminusRealGapContourMoments_eq_of_discriminant_eq",
+    "global_family_declaration": "NLS.Articles.KdVConvexity.exists_global_isospectral_canonical_moment_family",
+    "spectral_coordinate_realization_structure": "NLS.Articles.KdVConvexity.SpectralCoordinateRealization",
+    "coordinate_input_scope": [
+      "An analytic potential map on a complex-open neighborhood of all real normalized Hilbert pairs.",
+      "Reality of its values at real pairs.",
+      "The real canonical Arnold-period identity with the raw weighted quadratic actions, at every index.",
+      "Equality of actual discriminants along its real quadratic-action fibers."
+    ],
+    "coordinate_realization_exists_proved": false,
+    "actual_global_KdV_Birkhoff_map_and_Arnold_action_identity_proved": false,
+    "actual_real_action_fiber_discriminant_identity_proved": false,
+    "real_Arnold_identity_continued_on_one_complex_ball_before_every_index": true,
+    "no_complex_action_identity_or_additional_tail_estimate_is_a_coordinate_input": true,
+    "actual_global_period_family_composed_with_coordinate_realization_and_descended": true,
+    "conditional_global_positive_ell2_analytic_contour_extension_proved": true,
+    "conditional_real_nonpositivity_and_zero_at_origin_proved": true,
+    "conditional_base_cone_cubic_zero_iff_its_raw_action_coordinate_zero_proved": true,
+    "conditional_extension_declaration": "NLS.Articles.KdVConvexity.global_contour_extension_of_spectral_coordinate_realization",
+    "actual_unconditional_global_positive_ell2_Hamiltonian_extension_proved": false,
+    "physical_Hamiltonian_and_frequency_identification_proved": false,
+    "new_authored_modules": [
+      "NLS.ComplexAnalysis.CoshLogBoundaryUniqueness",
+      "NLS.KdV.HillHminusOneIsospectralLabels",
+      "NLS.KdV.HillHminusOneIsospectralPrimitive",
+      "NLS.KdV.HillHminusOneIsospectralPeriods",
+      "NLS.Articles.KdVConvexity.IsospectralCanonicalMoments",
+      "NLS.Articles.KdVConvexity.SpectralCoordinateExtension"
+    ],
+    "exact_shared_modules_reused_this_milestone": 0
   }
 }

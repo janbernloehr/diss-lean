@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-03",
-  "milestone": "Global analytic canonical moment families on one complex neighborhood of the entire real H^-1 potential space, with exact actual periods and locally uniform quadratic tails",
+  "milestone": "Actual real discriminant invariance of all canonical periods and a direct conditional global positive-ell2 extension from precise spectral coordinate inputs",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -415,11 +415,17 @@
     "NLS.SequenceSpaces.PhysicalRealImag",
     "NLS.ComplexAnalysis.RealFormBallGluing",
     "NLS.SequenceSpaces.PeriodOneHminusOneRealForm",
-    "NLS.Articles.KdVConvexity.GlobalCanonicalMomentFamily"
+    "NLS.Articles.KdVConvexity.GlobalCanonicalMomentFamily",
+    "NLS.ComplexAnalysis.CoshLogBoundaryUniqueness",
+    "NLS.KdV.HillHminusOneIsospectralLabels",
+    "NLS.KdV.HillHminusOneIsospectralPrimitive",
+    "NLS.KdV.HillHminusOneIsospectralPeriods",
+    "NLS.Articles.KdVConvexity.IsospectralCanonicalMoments",
+    "NLS.Articles.KdVConvexity.SpectralCoordinateExtension"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 4128,
+    "declarations": 4178,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -460,6 +466,7 @@
       "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc"
     ],
     "additional_shared_modules": [
+      "NLS.ComplexAnalysis.CoshLogBoundaryUniqueness",
       "NLS.SequenceSpaces.Reflection",
       "NLS.SequenceSpaces.ConjugateReflection",
       "NLS.ComplexAnalysis.RealFormIdentity",
@@ -669,7 +676,9 @@
     "NLS/Articles/KdVConvexity/CoordinateActionExtension.lean": "731561a0e5afb2460ac2b5f17dc2d7cd70cd97c5491af0fa1b9ced0de5c0bf23",
     "NLS/Articles/KdVConvexity/GlobalCanonicalMomentFamily.lean": "b2f16836ea9a4eb51388a74334f59e1859c5f691b3cc255ed9c585223f10fd06",
     "NLS/Articles/KdVConvexity/GlobalExtension.lean": "a78d76d0fa33b892f8b981d49a64f59f7fd0eee4c04eb34c73817cd86359c11d",
+    "NLS/Articles/KdVConvexity/IsospectralCanonicalMoments.lean": "c08e7638701cb06a2eecbbed9d572be6ba59dadd88a9e11aa2e8d2a147ba6065",
     "NLS/Articles/KdVConvexity/LocalConsequences.lean": "35ba924320178bea8c6b3b35ef136d313a562a649b6b8c89646b886dbab8553d",
+    "NLS/Articles/KdVConvexity/SpectralCoordinateExtension.lean": "ae97a5fbe4b100c5471732e4b7cb00fe02ba2a27f16d9ae652589396f14c4ad1",
     "NLS/Articles/KdVConvexity/TailExtension.lean": "a5de2c7ed440338bc5a96c29fc70ae3de7c2c06001d13c292db236b7062e0eef",
     "NLS/ComplexAnalysis/AnalyticCutContour.lean": "715b508e233c4c76c1e59deacc13f6e256c2e18a4558f469236f6df29848f0ae",
     "NLS/ComplexAnalysis/AnalyticDiscSquareRoot.lean": "6caedff129a0d76dcf71c274c904c32e86949ec6b623a5047d2a86bf5ff7a52b",
@@ -696,6 +705,7 @@
     "NLS/ComplexAnalysis/ContinuousMapAnalyticInverse.lean": "d130092234c2b04dcae7adc7ede8c1427dc1a087a972940c1b8c22ebc5de262f",
     "NLS/ComplexAnalysis/ContinuousMapSuperposition.lean": "8f38c6d264d917dea2429403a070aaa86d03d3bace998b3b5d187ceacaaf2af8",
     "NLS/ComplexAnalysis/ContinuousRealFormIdentity.lean": "2cfbde66aad3945a94a5bcdbbd6d9e5470ef67dba4d8dd8babcd4d6e310d2c60",
+    "NLS/ComplexAnalysis/CoshLogBoundaryUniqueness.lean": "165facd262875d95ee154735600341e67492b55e5e30319925fe9921ec3b773b",
     "NLS/ComplexAnalysis/CoshSquareCoordinate.lean": "acbb58293a0ce8e938052be3f82c3e908d75356e289a7f73e050e13fcf3b8567",
     "NLS/ComplexAnalysis/CoshSquareLocalCoordinate.lean": "4bd06c278aaf50c57ad517383a8ab9e2d694157b02fd10a9c060045ea5dd6fb8",
     "NLS/ComplexAnalysis/CoshSquareRegularity.lean": "4b86410074d2921879cfb70e095b5eaf6f81bc2bb918a3333afe4b272cd80131",
@@ -881,6 +891,9 @@
     "NLS/KdV/HillHminusOneHalfPlaneSheets.lean": "a5e7463edbb352f4320d7ad401e561cf260ebe5009da22072b8f02467279c22d",
     "NLS/KdV/HillHminusOneHighGapPairs.lean": "b7132f9598cc792bce41e10410aa089925a3d54071da9aadcaa3bface3f93187",
     "NLS/KdV/HillHminusOneHighMoments.lean": "2a576d776b19c41323a8accc77cdb4108c802cb306c3161a52ef05c6b99cadef",
+    "NLS/KdV/HillHminusOneIsospectralLabels.lean": "72bf659376cf1f8938aa6e3bf831e3204a30d7adcdd4237ccbbe85465feb80f9",
+    "NLS/KdV/HillHminusOneIsospectralPeriods.lean": "cfa0923c09b8a8e744bb9747ba5b30847b9457f01535b52b48ed41c35081b906",
+    "NLS/KdV/HillHminusOneIsospectralPrimitive.lean": "8515147db74e95b8c5481725e260ac161cff750ea08e773a2a11de577bbded7f",
     "NLS/KdV/HillHminusOneJointContourPrimitive.lean": "ed50b1df21705db9ebdd55767a1b5a47ed7292d87c2dbc4e84f4a294f49b3ac7",
     "NLS/KdV/HillHminusOneJointGapPeriodGerms.lean": "7e403def1ebcb5af71801546cccd3238a285f95edfc818df5144a3c87cae93dc",
     "NLS/KdV/HillHminusOneJointGapSquares.lean": "209df435035a5d67cb68fabf6ecf73f1f2804701fc0f0ded088841c50a2633e7",
@@ -1059,7 +1072,7 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "365e27d69dfc51df0fde09a52ee3baeee0388377de7852f80820a19360da2ed7",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "989850119e8f78584c3b1d0e86a24108ea50543c46e80ea4c5c8381c6b3bdd2c",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/band-primitive-shared-imports.json": "ee14ececa4bebbb805a8d49836d86e72ab62e34a26910f7886d91d931b485ef1",
@@ -1071,10 +1084,10 @@
     "coverage/articles/kdv-convexity/physical-cut-shared-imports.json": "c6adf4965416cc426fc385ce324b4afb1aae45fec50e499debfbd5c2a2c5997f",
     "coverage/articles/kdv-convexity/real-form-gluing-shared-imports.json": "0a2dbea14cdc33d2913f49cf38008186f01fbdf913ab40fc72b843326bdf196b",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
-    "scripts/check-kdv-convexity.sh": "a8853525bc1c744e8423848e82feb7bc439dfe04eee1c68245e237cc9fbd1cf6"
+    "scripts/check-kdv-convexity.sh": "bb6ece8a3230c887c7430e137d66b35d1e3f64d80b105794c960c8e158895d38"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/global-moment-audit-validation.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/isospectral-audit-validation.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -1092,14 +1105,14 @@
     "All main theorems remain unverified.",
     "The actual H^-1 spectral periods now satisfy uniform complex-neighborhood quartic-gap, gap/Arnold-period and quadratic weighted cubic-period estimates, including collapsed gaps. These are potential-space statements for the constructed source-normalized periods; global Birkhoff action identification and analytic action-space descent remain required.",
     "Global potential-space gluing is now proved: one complex-open neighborhood of the entire real H^-1 space carries all canonical polynomial and cubic moments, agrees with every actual real period, and retains locally uniform complex-tail quadratic bounds. Finite-gap exterior matching, the normalized inversion remainder of Lemma 4.4 and the physical energy/frequency identities remain open.",
-    "Prove the intrinsic singular-Hill operator identification, construct the global KdV Birkhoff map and identify its actions with the canonical Arnold periods, then prove real isospectral/action-fiber invariance and apply the verified action-space descent/summation. One complex neighborhood of the entire real H^-1 space now carries every canonical polynomial and cubic moment with exact real values, signs/zero criteria and locally uniform quadratic complex-tail bounds. Physical energy/frequency identities, the -6*Id Taylor coefficient and main Theorems 1.2 and 1.3 remain.",
+    "Construct the actual analytic global KdV coordinate realization, prove its real canonical Arnold-action identity and real action-fiber discriminant identity, and identify the physical renormalized energy/frequencies. The actual canonical periods are now proved invariant under equality of the full real discriminant, and the conditional theorem derives the common-neighborhood positive-ell2 extension directly from those precise coordinate inputs. The intrinsic singular-Hill operator identification, -6*Id Taylor coefficient, and main Theorems 1.2 and 1.3 remain.",
     "Every actual canonical cubic period is real and nonpositive, strictly negative exactly on an open gap. Even polynomial Arnold periods are nonnegative; the level-zero Arnold and cubic zero sets equal the closed-gap set. These signs and zero criteria hold for the common all-index family and its matched source tail at every real input. Global Birkhoff actions have not yet been identified with the Arnold periods.",
     "The energy-analytic endpoint unit root is controlled uniformly over nearby complex H^-1 inputs. Joint potential analyticity of that chosen deflated root and a single neighborhood for all error tolerances are not asserted.",
     "Physical energy and frequency identification, the KdV quadratic coefficients giving -6*Id, positive-index Hessian transport and main Theorems 1.2 and 1.3 remain unproved.",
     "No full repository build or replacement of the dissertation validation is claimed.",
-    "The common-neighborhood descent, nonnegative overlap gluing, raw weighted-action bound transport and positive-ell2 analytic summation are now proved for analytic real-action-invariant coordinate families. The actual KdV Birkhoff map, its Arnold-period identity and real isospectral invariance of all actual moments, including the finite central ones, remain unproved inputs."
+    "The actual global canonical periods are proved invariant under equality of the entire real discriminant, including central and closed gaps. The coordinate-extension theorem now composes these actual functions with any spectral coordinate realization and derives common-neighborhood weighted action descent, absolute positive-ell2 summation, nonpositivity and zero at zero. Construction of that coordinate realization and the physical energy/frequency identity remain essential unproved inputs."
   ],
-  "previous_progress_commit": "e1391522135f2780059cd4b60274f8eb747a4532",
+  "previous_progress_commit": "14f7d2c21219a59a886345c9388d5668648111c5",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -1588,7 +1601,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation: all source hashes of the validated 390-module baseline remain unchanged; four exact shared modules and four authored modules pass warningAsError checks, followed by the positive-index example, combined transitive axiom audit and coverage-name check. The full reproducible script lists 398 source modules.",
+  "focused_validation_scope": "Incremental validation: all source hashes of the validated 398-module baseline remain unchanged; six authored modules pass warningAsError checks, followed by the positive-index example, combined transitive axiom audit and coverage-name check. The full reproducible script lists 404 source modules.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -1898,9 +1911,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 745,
-    "audit_modules_present": 196,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/GlobalMomentCoverageNames.log"
+    "declarations": 762,
+    "audit_modules_present": 197,
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/IsospectralCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -1922,7 +1935,7 @@
     "analyticity_and_absolute_convergence_of_literal_contour_series_from_coordinate_inputs_proved": true,
     "physical_KdV_Birkhoff_map_constructed": false,
     "actual_Arnold_period_Birkhoff_action_identity_proved": false,
-    "actual_KdV_period_real_isospectral_invariance_proved": false,
+    "actual_KdV_period_real_isospectral_invariance_proved": true,
     "all_central_actual_periods_available": false,
     "actual_KdV_global_positive_ell2_Hamiltonian_extension_proved": false,
     "new_authored_modules": [
@@ -1985,81 +1998,66 @@
       "NLS.SequenceSpaces.NonnegativeActionGluing",
       "NLS.SequenceSpaces.RealActionPairLifting",
       "NLS.SequenceSpaces.RealActionLifting"
-    ]
+    ],
+    "real_isospectral_invariance_hypothesis": "Equality of the full actual entire discriminant at two real H^-1 potentials; action-fiber/discriminant identification is still unproved."
   },
   "incremental_validation": {
-    "baseline_commit": "e1391522135f2780059cd4b60274f8eb747a4532",
-    "baseline_modules": 390,
+    "baseline_commit": "14f7d2c21219a59a886345c9388d5668648111c5",
+    "baseline_modules": 398,
     "baseline_source_hashes_unchanged": true,
-    "newly_checked_exact_shared_modules": 4,
-    "newly_checked_authored_modules": 4,
+    "newly_checked_exact_shared_modules": 0,
+    "newly_checked_authored_modules": 6,
     "completed_module_checks": [
       {
-        "module": "NLS.SequenceSpaces.Reflection",
-        "source_sha256": "c26f7430ea57dd0fb147fe3f4c84c03ec0bea0d6bde3ec6a6030b547b06a57ef",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/real-form-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.Reflection.lean.log",
+        "module": "NLS.ComplexAnalysis.CoshLogBoundaryUniqueness",
+        "source_sha256": "165facd262875d95ee154735600341e67492b55e5e30319925fe9921ec3b773b",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/isospectral-label-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.CoshLogBoundaryUniqueness.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.SequenceSpaces.ConjugateReflection",
-        "source_sha256": "785b7915c423f963d41847357061e92b194d42a5a46bda4b07b92a2faa03c101",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/real-form-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.ConjugateReflection.lean.log",
+        "module": "NLS.KdV.HillHminusOneIsospectralLabels",
+        "source_sha256": "72bf659376cf1f8938aa6e3bf831e3204a30d7adcdd4237ccbbe85465feb80f9",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/isospectral-label-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneIsospectralLabels.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.ComplexAnalysis.RealFormIdentity",
-        "source_sha256": "b097b7daa40dac7bc212d202bad93068edde795d516ffc6f9fce540787bcba48",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/real-form-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.RealFormIdentity.lean.log",
+        "module": "NLS.KdV.HillHminusOneIsospectralPrimitive",
+        "source_sha256": "8515147db74e95b8c5481725e260ac161cff750ea08e773a2a11de577bbded7f",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/isospectral-primitive-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneIsospectralPrimitive.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.ComplexAnalysis.ContinuousRealFormIdentity",
-        "source_sha256": "2cfbde66aad3945a94a5bcdbbd6d9e5470ef67dba4d8dd8babcd4d6e310d2c60",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/real-form-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.ContinuousRealFormIdentity.lean.log",
+        "module": "NLS.KdV.HillHminusOneIsospectralPeriods",
+        "source_sha256": "cfa0923c09b8a8e744bb9747ba5b30847b9457f01535b52b48ed41c35081b906",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/isospectral-primitive-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneIsospectralPeriods.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.SequenceSpaces.PhysicalRealImag",
-        "source_sha256": "5445748fc87a95eaaeb8b7883b42e5760f11fc60f46ded06646d2e6f59fa83db",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-real-imag-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.PhysicalRealImag.lean.log",
+        "module": "NLS.Articles.KdVConvexity.IsospectralCanonicalMoments",
+        "source_sha256": "c08e7638701cb06a2eecbbed9d572be6ba59dadd88a9e11aa2e8d2a147ba6065",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/isospectral-family-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.Articles.KdVConvexity.IsospectralCanonicalMoments.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.ComplexAnalysis.RealFormBallGluing",
-        "source_sha256": "3213aa924bb244ecb36ce04a8cfe0d536943513c30a1a6fe2eebbb0726ccb71d",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/real-form-ball-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.RealFormBallGluing.lean.log",
-        "warningAsError": true,
-        "result": "passed"
-      },
-      {
-        "module": "NLS.SequenceSpaces.PeriodOneHminusOneRealForm",
-        "source_sha256": "3112fd59d270f7427cad06f52ae75c71fecf911e5680e4331d9483808cf21a85",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/hminus-real-form-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.SequenceSpaces.PeriodOneHminusOneRealForm.lean.log",
-        "warningAsError": true,
-        "result": "passed"
-      },
-      {
-        "module": "NLS.Articles.KdVConvexity.GlobalCanonicalMomentFamily",
-        "source_sha256": "b2f16836ea9a4eb51388a74334f59e1859c5f691b3cc255ed9c585223f10fd06",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/global-canonical-moment-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.Articles.KdVConvexity.GlobalCanonicalMomentFamily.lean.log",
+        "module": "NLS.Articles.KdVConvexity.SpectralCoordinateExtension",
+        "source_sha256": "ae97a5fbe4b100c5471732e4b7cb00fe02ba2a27f16d9ae652589396f14c4ad1",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/spectral-coordinate-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.Articles.KdVConvexity.SpectralCoordinateExtension.lean.log",
         "warningAsError": true,
         "result": "passed"
       }
     ],
-    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/global-moment-audit-validation.log"
+    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/isospectral-audit-validation.log"
   },
   "Hminus1_real_spectral_progress": {
     "potential_space": "Every real unit-period H^-1 potential, specified by conjugate reflection of its raw Fourier coefficients.",
@@ -2627,6 +2625,53 @@
       "NLS.ComplexAnalysis.ContinuousRealFormIdentity"
     ],
     "shared_source_commit": "fe667096d9f012ab5084adf6aa3cf85955fb48e5",
-    "normalization": "A_n,m=-(1/pi)*integral lambda^m*F; R_n=(1/pi)*integral (F+i*n*pi)^3; exact actual source normalization and no extra factor i."
+    "normalization": "A_n,m=-(1/pi)*integral lambda^m*F; R_n=(1/pi)*integral (F+i*n*pi)^3; exact actual source normalization and no extra factor i.",
+    "real_full_discriminant_invariance_proved": true
+  },
+  "Hminus1_real_isospectral_and_coordinate_extension_progress": {
+    "potential_space": "The full unit-period complex H^-1 space and its physical real Fourier form; no mean-zero hypothesis on the spectral invariance theorems.",
+    "invariance_hypothesis": "Both potentials are real and their actual entire discriminant functions are equal. Equality of actions, gap lengths, or an unlabelled spectrum is not substituted for this hypothesis.",
+    "radicand_and_analytic_root_multiplicities_equal": true,
+    "canonical_characteristic_labels_and_intrinsic_lowest_root_equal": true,
+    "upper_physical_cosh_sheet_selects_same_exponential": true,
+    "full_logarithm_period_fixed_by_common_zero_boundary_value_at_lowest_root": true,
+    "actual_source_primitive_equal_on_both_nonreal_half_planes": true,
+    "full_upper_boundary_primitive_equal_at_every_real_energy": true,
+    "real_cut_primitive_and_root_equal_as_functions_on_all_complex_energies": true,
+    "all_index_filled_gap_primitive_squares_equal": true,
+    "all_canonical_polynomial_and_cubic_periods_equal": true,
+    "central_and_collapsed_gaps_included": true,
+    "one_global_analytic_potential_family_with_real_full_discriminant_invariance_proved": true,
+    "all_previous_uniform_complex_tail_estimates_retained": true,
+    "actual_period_invariance_declaration": "NLS.KdV.hillHminusRealGapContourMoments_eq_of_discriminant_eq",
+    "global_family_declaration": "NLS.Articles.KdVConvexity.exists_global_isospectral_canonical_moment_family",
+    "spectral_coordinate_realization_structure": "NLS.Articles.KdVConvexity.SpectralCoordinateRealization",
+    "coordinate_input_scope": [
+      "An analytic potential map on a complex-open neighborhood of all real normalized Hilbert pairs.",
+      "Reality of its values at real pairs.",
+      "The real canonical Arnold-period identity with the raw weighted quadratic actions, at every index.",
+      "Equality of actual discriminants along its real quadratic-action fibers."
+    ],
+    "coordinate_realization_exists_proved": false,
+    "actual_global_KdV_Birkhoff_map_and_Arnold_action_identity_proved": false,
+    "actual_real_action_fiber_discriminant_identity_proved": false,
+    "real_Arnold_identity_continued_on_one_complex_ball_before_every_index": true,
+    "no_complex_action_identity_or_additional_tail_estimate_is_a_coordinate_input": true,
+    "actual_global_period_family_composed_with_coordinate_realization_and_descended": true,
+    "conditional_global_positive_ell2_analytic_contour_extension_proved": true,
+    "conditional_real_nonpositivity_and_zero_at_origin_proved": true,
+    "conditional_base_cone_cubic_zero_iff_its_raw_action_coordinate_zero_proved": true,
+    "conditional_extension_declaration": "NLS.Articles.KdVConvexity.global_contour_extension_of_spectral_coordinate_realization",
+    "actual_unconditional_global_positive_ell2_Hamiltonian_extension_proved": false,
+    "physical_Hamiltonian_and_frequency_identification_proved": false,
+    "new_authored_modules": [
+      "NLS.ComplexAnalysis.CoshLogBoundaryUniqueness",
+      "NLS.KdV.HillHminusOneIsospectralLabels",
+      "NLS.KdV.HillHminusOneIsospectralPrimitive",
+      "NLS.KdV.HillHminusOneIsospectralPeriods",
+      "NLS.Articles.KdVConvexity.IsospectralCanonicalMoments",
+      "NLS.Articles.KdVConvexity.SpectralCoordinateExtension"
+    ],
+    "exact_shared_modules_reused_this_milestone": 0
   }
 }

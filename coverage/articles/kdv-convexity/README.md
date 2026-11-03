@@ -4,8 +4,10 @@
 constructs one complex neighborhood of the entire nonnegative weighted
 action cone, descends real-action-invariant analytic coordinate families
 there, and sums their quadratic tails analytically on the positive-ell2
-preimage. The actual KdV Birkhoff map, action identity and real isospectral
-invariance needed to apply this reduction remain open.
+preimage. All actual canonical periods are now invariant under equality
+of the full real discriminant. The direct coordinate-extension theorem
+derives the positive-ell2 analytic sum from precise spectral coordinate
+inputs; construction of that coordinate realization remains open.
 
 On potential space, the actual unit-period Hill discriminant is jointly
 entire in energy and complex H^-1 potentials. Local analytic shifted-Miura
@@ -1972,8 +1974,9 @@ The whole complex tail also equals the literal high source family there.
 No global coefficient-space or action-space normalization is changed.
 
 This completes the potential-space gluing step. The actual global KdV
-Birkhoff map, its Arnold-action identity and real isospectral/action-fiber
-invariance remain required for the positive-ell2 action-space extension.
+Birkhoff map, its Arnold-action identity and identification of its action
+fibers with discriminant fibers remain required. Full-discriminant
+invariance of the actual real periods is now proved below.
 The physical Hamiltonian/frequency identities and all main theorem
 completion flags remain open.
 
@@ -1981,10 +1984,59 @@ Four reflection and real-form identity modules are reused byte-for-byte
 from `articles/kdv-estimates` at `fe66709`, with their retained import
 boundary hashes in `real-form-gluing-shared-imports.json`.
 
+## Actual real isospectral invariance and the ell2 extension connection
+
+`CoshLogBoundaryUniqueness.lean` proves that positive real parts select
+the same exponential above a common cosh value, and that a common finite
+boundary limit fixes the full logarithm period on a connected domain.
+`HillHminusOneIsospectralLabels.lean` transports actual high gap pairs
+under equality of the entire discriminants. Their exact tail slots and
+ordered multiplicity uniqueness fix all canonical characteristic labels,
+including the lowest root and every central collision.
+
+`HillHminusOneIsospectralPrimitive.lean` uses the upper physical sheet
+sign and the exact zero boundary value at that common lowest root to
+identify the source primitive, without an undetermined logarithm period.
+Reflection identifies the lower branch; full upper limits identify all
+real boundary values. The complete real-cut primitive, root and filled
+squares therefore agree. `HillHminusOneIsospectralPeriods.lean` identifies
+the canonical contour geometry and all polynomial and cubic periods,
+including central and collapsed gaps. The hypothesis throughout is
+**equality of the actual entire discriminant at two real potentials**.
+Action equality or equality of gap lengths is not used in its place.
+
+`IsospectralCanonicalMoments.lean` retains one global complex-open
+potential neighborhood with all actual real values, signs, zero criteria
+and locally uniform complex-tail bounds, and adds this exact real
+full-discriminant invariance.
+
+`SpectralCoordinateExtension.lean` defines the precise remaining input:
+an analytic potential map near every real normalized Hilbert pair,
+preserving reality, whose real Arnold periods are its raw quadratic
+actions and whose real action fibers have equal discriminants. No
+existence or symplecticity of this coordinate realization is asserted.
+The theorem `global_contour_extension_of_spectral_coordinate_realization`
+composes the proved actual global periods with any such realization.
+Real-form uniqueness continues its real Arnold identity throughout each
+complex ball, before every index. The existing uniform spectral estimate
+therefore becomes the required complex quadratic action bound without
+assuming a complex Arnold identity or additional period estimates.
+
+The proved descent/gluing/summation mechanism then constructs one base
+action neighborhood independent of index and an analytic, absolutely
+convergent contour sum on its positive-ell2 preimage. It recovers every
+actual real cubic period; on the nonnegative base cone each period is
+real and nonpositive and vanishes exactly when its own raw action does.
+The sum is real and nonpositive on the full positive-ell2 quadrant and
+vanishes at zero. This is a **conditional extension theorem**. Constructing
+the spectral coordinate realization and identifying the sum with the
+physical renormalized Hamiltonian remain required for Theorem 1.1.
+
 ## Remaining essential KdV work
 
-1. Prove the remaining intrinsic singular-Hill operator and real
-   isospectral/action-fiber identities. Global potential-space moment
+1. Prove the remaining intrinsic singular-Hill operator and actual
+   action-fiber/discriminant identities. Full-discriminant invariance of
+   all real canonical periods is now proved. Global potential-space moment
    gluing is now proved on one complex neighborhood of the entire real
    H^-1 space, with every canonical period and the locally uniform
    quadratic complex-tail bounds.
@@ -1993,7 +2045,8 @@ boundary hashes in `real-form-gluing-shared-imports.json`.
    |8*n*pi*R_n|<=C*|A_n|^2 are now proved. Identify A_n with the
    global KdV Birkhoff actions I_n and descend the moments analytically
    to the common weighted action neighborhood.
-3. Apply the checked analytic reduction to those actual moments. Then prove
+3. Instantiate the proved spectral-coordinate extension theorem with the
+   actual global KdV coordinate realization. Then prove
    the identification of the exterior quartic coefficient with the physical
    energy from (4.7). The contour decomposition and calculation in
    (4.11)–(4.12) are now proved in the shared KdV library; the physical
@@ -2040,15 +2093,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `e139152` contains 390 source modules. Every
-baseline source hash remains unchanged. Four exact shared modules and
-four authored modules pass incremental Lean 4.33.1/mathlib v4.33.1 checks
-with `warningAsError=true`. The full reproducible script now lists
-398 source modules. The positive-index example passes.
+The validated baseline at `14f7d2c` contains 398 source modules. Every
+baseline source hash remains unchanged. Six authored modules pass
+incremental Lean 4.33.1/mathlib v4.33.1 checks with `warningAsError=true`.
+The full reproducible script now lists 404 source modules. The
+positive-index example and all 762 coverage-name checks pass.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 196 additional shared modules:
-4128 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 197 additional shared modules:
+4178 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
