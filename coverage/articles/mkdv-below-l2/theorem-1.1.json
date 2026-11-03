@@ -1,0 +1,54 @@
+{
+  "article": "arXiv:1606.07052v1",
+  "main_theorem": "1.1",
+  "source_page": 3,
+  "verified": true,
+  "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1",
+  "source_space": "PhysicalScalarRealInput p: original period-one real distributions with their actual unweighted Fourier coefficient ell^p norm; every finite exponent 2<p<infinity.",
+  "solution_definition": "NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation",
+  "smooth_maps": {
+    "renormalized": "NLS.Articles.MKdVBelowL2.isClassicalScalarSolutionMap_fourthScalarImageFlow",
+    "ordinary": "NLS.Articles.MKdVBelowL2.exists_classicalOrdinaryScalarSolutionMap"
+  },
+  "clauses": [
+    {
+      "source": "Local C0 wellposedness of renormalized mKdV",
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation",
+      "quantifiers": "Every finite p>2 and every original real scalar input u: one positive T and one open neighborhood U of u, with a unique solution at every v in U. The statement explicitly asserts that fourthScalarTrajectoryOn returns this solution for every v in U.",
+      "topology": "Full uniform norm on C([-T,T],PhysicalScalarRealInput p).",
+      "solution_meaning": "The continuous path starts at v and is the pointwise-in-time limit for every smooth real initial-data sequence converging in the original Fourier norm. All such sequences in fact converge uniformly on the common interval. The smooth classical map exists and is identified uniquely by the actual physical PDE."
+    },
+    {
+      "source": "Global C0 wellposedness on a neighborhood of zero",
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_curves",
+      "quantifiers": "One invariant open U containing zero precedes every T>0. At all data in U the same actual globally defined scalar flow has a unique smooth-approximation solution on every compact interval. On every compact interval the statement explicitly asserts that fourthScalarTrajectoryOn returns this solution.",
+      "topology": "For every T>0 the map into full uniform-norm continuous trajectories is continuous on that same U. Compact paths are restrictions of the one fixed actual scalar source flow."
+    },
+    {
+      "source": "Original mKdV fixed-time nonextension outside L2, equivalently Corollary 7.2(iii)",
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_no_smooth_extension",
+      "quantifiers": "Every finite p>2, every original real u outside physicalScalarL2Locus p and every selected t>0.",
+      "topology": "No extension of the canonical smooth physical fixed-time map is continuous even relative to the union of smooth data and the single rough datum. The stronger local-agreement result theorem1_1_fixed_time_nonextension_within permits agreement only near u.",
+      "literal_L2_identification": "NLS.Articles.MKdVBelowL2.mem_physicalScalarL2Locus_iff_l2_function"
+    }
+  ],
+  "normalization": "u_t=-u_xxx+6*(u^2-M)*u_x for the renormalized equation, with M equal to the original initial integral over [0,1] of u0^2. Ordinary mKdV has M=0 in the vector field. First Birkhoff phase has negative Hamiltonian orientation. Restoring the ordinary frequency adds 12*pi*n times actual physical mass.",
+  "qualifications": [
+    "The fixed Hilbert Birkhoff family uses the same accepted intrinsic manuscript reference as Theorem 1.2; no new axiom is introduced.",
+    "The printed proof of Corollary 7.2(iii) cites a nonexistent item (iv) of Theorem 7.1. The Lean proof supplies the actual fixed-time mass-phase obstruction and its physical PDE calibration.",
+    "The source prose about converting ordinary and renormalized solutions has an apparent spatial translation sign inconsistency with the displayed PDEs. The formal result uses the independently calibrated Hamiltonian and physical Fourier convention and proves both displayed PDEs directly, avoiding that prose sign."
+  ],
+  "validation": "validation.json and validation.txt",
+  "remaining": [],
+  "statement_review_fix": {
+    "review": "Draft PR #1",
+    "issue": "Continuity of the named path map and unique solution existence were previously asserted separately.",
+    "resolution": "The local and small-data global conclusions now additionally assert IsMKdVSolutionBySmoothApproximation for the named fourthScalarTrajectoryOn path. Its continuity is therefore explicitly continuity of the solution map; uniqueness identifies every other solution with that path.",
+    "affected_declarations": [
+      "theorem1_1_local_classical_approximation",
+      "theorem1_1_small_global_classical_approximation",
+      "theorem1_1_small_global_curves",
+      "theorem1_1"
+    ]
+  }
+}

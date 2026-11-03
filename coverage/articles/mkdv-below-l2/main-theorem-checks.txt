@@ -1,0 +1,164 @@
+NLS.Articles.MKdVBelowL2.theorem1_1 {p : ENNReal} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (h2p : 2 < p) :
+  have hp1 := ⋯;
+  ∃ Sren Sord,
+    NLS.Articles.MKdVBelowL2.IsClassicalScalarSolutionMap Sren ∧
+      NLS.Articles.MKdVBelowL2.IsClassicalOrdinaryScalarSolutionMap Sord ∧
+        (∀ (u : NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput p),
+            ∃ T,
+              ∃ (hT : 0 < T),
+                ∃ U,
+                  IsOpen U ∧
+                    u ∈ U ∧
+                      ContinuousOn (NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryOn hp hp1 T) U ∧
+                        ∀ v ∈ U,
+                          NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation Sren T ⋯ v
+                              (NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryOn hp hp1 T v) ∧
+                            ∃! γ, NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation Sren T ⋯ v γ) ∧
+          (∃ U,
+              IsOpen U ∧
+                0 ∈ U ∧
+                  (∀ (T : ℝ) (hT : 0 < T),
+                      ContinuousOn (NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryOn hp hp1 T) U ∧
+                        ∀ v ∈ U,
+                          NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation Sren T ⋯ v
+                              (NLS.Articles.MKdVBelowL2.fourthScalarTrajectoryOn hp hp1 T v) ∧
+                            ∃! γ, NLS.Articles.MKdVBelowL2.IsMKdVSolutionBySmoothApproximation Sren T ⋯ v γ) ∧
+                    (∀ v ∈ U,
+                        (Continuous fun time => NLS.Articles.MKdVBelowL2.fourthScalarImageFlow hp hp1 v time) ∧
+                          ∀ (w : ℕ → NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput p),
+                            (∀ (N : ℕ), NLS.Articles.MKdVBelowL2.IsSmoothPhysicalScalarInput (w N)) →
+                              Filter.Tendsto w Filter.atTop (nhds v) →
+                                ∀ (time : ℝ),
+                                  Filter.Tendsto (fun N => Sren (w N) time) Filter.atTop
+                                    (nhds (NLS.Articles.MKdVBelowL2.fourthScalarImageFlow hp hp1 v time))) ∧
+                      ∀ v ∈ U, ∀ (t : ℝ), NLS.Articles.MKdVBelowL2.fourthScalarImageFlow hp hp1 v t ∈ U) ∧
+            ∀ u ∉ NLS.Articles.MKdVBelowL2.physicalScalarL2Locus p,
+              ∀ (time : ℝ),
+                0 < time →
+                  ∀
+                    (E :
+                      NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput p →
+                        NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput p),
+                    (∀ (v : NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput p),
+                        NLS.Articles.MKdVBelowL2.IsSmoothPhysicalScalarInput v → E v = Sord v time) →
+                      ¬ContinuousWithinAt E ({v | NLS.Articles.MKdVBelowL2.IsSmoothPhysicalScalarInput v} ∪ {u}) u
+NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_nonextension_within {p : ENNReal} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+  (h2p : 2 < p)
+  (S : NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput p → ℝ → NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput p)
+  (hS : NLS.Articles.MKdVBelowL2.IsClassicalOrdinaryScalarSolutionMap S)
+  (u : NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput p) (hu : u ∉ NLS.Articles.MKdVBelowL2.physicalScalarL2Locus p)
+  (time : ℝ) (ht : 0 < time)
+  (E : NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput p → NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput p)
+  (U : Set (NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput p)) (hU : U ∈ nhds u)
+  (V : Set (NLS.Articles.MKdVBelowL2.PhysicalScalarRealInput p))
+  (hV : ∀ v ∈ U, NLS.Articles.MKdVBelowL2.IsSmoothPhysicalScalarInput v → v ∈ V)
+  (hE : ∀ v ∈ U, NLS.Articles.MKdVBelowL2.IsSmoothPhysicalScalarInput v → E v = S v time) : ¬ContinuousWithinAt E V u
+NLS.Articles.MKdVBelowL2.theorem1_2_at_exponent {p : ENNReal} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp2 : 2 ≤ p) :
+  have hp1 := ⋯;
+  IsOpen (NLS.Articles.MKdVBelowL2.compatibleBirkhoffDomain hp hp1) ∧
+    (∀ (u : NLS.Articles.MKdVBelowL2.PhysicalRealInput p),
+        ↑u ∈ NLS.Articles.MKdVBelowL2.compatibleBirkhoffDomain hp hp1) ∧
+      NLS.Articles.MKdVBelowL2.compatibleBirkhoff hp hp1 0 = 0 ∧
+        AnalyticOnNhd ℂ (NLS.Articles.MKdVBelowL2.compatibleBirkhoff hp hp1)
+            (NLS.Articles.MKdVBelowL2.compatibleBirkhoffDomain hp hp1) ∧
+          AnalyticOnNhd ℝ (NLS.Articles.MKdVBelowL2.realBirkhoffFamily hp hp1) Set.univ ∧
+            Topology.IsOpenEmbedding (NLS.Articles.MKdVBelowL2.realBirkhoffFamily hp hp1) ∧
+              DenseRange (NLS.Articles.MKdVBelowL2.realBirkhoffFamily hp hp1) ∧
+                (∀ (u : NLS.Articles.MKdVBelowL2.PhysicalRealInput p),
+                    ↑(NLS.Articles.MKdVBelowL2.realBirkhoffFamily hp hp1 u) =
+                      NLS.Articles.MKdVBelowL2.compatibleBirkhoff hp hp1 ↑u) ∧
+                  (∀ u ∈ NLS.Articles.MKdVBelowL2.compatibleBirkhoffDomain hp hp1,
+                      ∀ (n m : ℤ),
+                        NLS.Articles.MKdVBelowL2.physicalFLBracket hp2
+                              (fun v => ↑(NLS.Articles.MKdVBelowL2.compatibleBirkhoff hp hp1 v).1 n)
+                              (fun v => ↑(NLS.Articles.MKdVBelowL2.compatibleBirkhoff hp hp1 v).1 m) u =
+                            0 ∧
+                          (NLS.Articles.MKdVBelowL2.physicalFLBracket hp2
+                                (fun v => ↑(NLS.Articles.MKdVBelowL2.compatibleBirkhoff hp hp1 v).1 n)
+                                (fun v => ↑(NLS.Articles.MKdVBelowL2.compatibleBirkhoff hp hp1 v).2 m) u =
+                              -Complex.I * if n = m then 1 else 0) ∧
+                            NLS.Articles.MKdVBelowL2.physicalFLBracket hp2
+                                (fun v => ↑(NLS.Articles.MKdVBelowL2.compatibleBirkhoff hp hp1 v).2 n)
+                                (fun v => ↑(NLS.Articles.MKdVBelowL2.compatibleBirkhoff hp hp1 v).2 m) u =
+                              0) ∧
+                    ∀ (u : NLS.Articles.MKdVBelowL2.PhysicalRealInput p),
+                      ∃ g,
+                        AnalyticAt ℝ g (NLS.Articles.MKdVBelowL2.realBirkhoffFamily hp hp1 u) ∧
+                          g (NLS.Articles.MKdVBelowL2.realBirkhoffFamily hp hp1 u) = u ∧
+                            (∀ᶠ (v : NLS.Articles.MKdVBelowL2.PhysicalRealInput p) in nhds u,
+                                g (NLS.Articles.MKdVBelowL2.realBirkhoffFamily hp hp1 v) = v) ∧
+                              ∀ᶠ (z : ↥(NLS.Birkhoff.conjugatePairSubmodule p)) in
+                                nhds (NLS.Articles.MKdVBelowL2.realBirkhoffFamily hp hp1 u),
+                                NLS.Articles.MKdVBelowL2.realBirkhoffFamily hp hp1 (g z) = z
+NLS.Articles.MKdVBelowL2.theorem1_2_compatible {p q : ENNReal} [Fact (1 ≤ p)] [Fact (1 ≤ q)] (hp : p ≠ ⊤) (hp2 : 2 ≤ p)
+  (hq : q ≠ ⊤) (hq2 : 2 ≤ q) (u : NLS.Articles.MKdVBelowL2.PhysicalFL p × NLS.Articles.MKdVBelowL2.PhysicalFL p)
+  (v : NLS.Articles.MKdVBelowL2.PhysicalFL q × NLS.Articles.MKdVBelowL2.PhysicalFL q)
+  (hu : u ∈ NLS.Articles.MKdVBelowL2.compatibleBirkhoffDomain hp ⋯)
+  (hv : v ∈ NLS.Articles.MKdVBelowL2.compatibleBirkhoffDomain hq ⋯) (huv : ↑u.1 = ↑v.1 ∧ ↑u.2 = ↑v.2) (n : ℤ) :
+  ↑(NLS.Articles.MKdVBelowL2.compatibleBirkhoff hp ⋯ u).1 n =
+      ↑(NLS.Articles.MKdVBelowL2.compatibleBirkhoff hq ⋯ v).1 n ∧
+    ↑(NLS.Articles.MKdVBelowL2.compatibleBirkhoff hp ⋯ u).2 n =
+      ↑(NLS.Articles.MKdVBelowL2.compatibleBirkhoff hq ⋯ v).2 n
+NLS.Articles.MKdVBelowL2.theorem1_2_hilbert :
+  Function.Surjective (NLS.Articles.MKdVBelowL2.realBirkhoffFamily ⋯ ⋯) ∧
+    ∀ (u : NLS.Articles.MKdVBelowL2.PhysicalRealInput 2),
+      NLS.Articles.MKdVBelowL2.compatibleBirkhoff ⋯ ⋯ ↑u =
+        NLS.Birkhoff.rectangularToComplex
+          ((NLS.CoeffPair.toMax 2)
+            (NLS.ZakharovShabat.physicalRealTargetComplex
+              (NLS.ZakharovShabat.intrinsicPhysicalBirkhoffMap
+                (NLS.Articles.MKdVBelowL2.physicalHilbertRealization u))))
+NLS.Articles.MKdVBelowL2.theorem1_2_hilbert_globalInverse :
+  ∃ e,
+    (∀ (u : NLS.Articles.MKdVBelowL2.PhysicalRealInput 2), e u = NLS.Articles.MKdVBelowL2.realBirkhoffFamily ⋯ ⋯ u) ∧
+      AnalyticOnNhd ℝ (fun u => e u) Set.univ ∧ AnalyticOnNhd ℝ (fun z => e.symm z) Set.univ
+NLS.Articles.MKdVBelowL2.theorem1_3_hilbert (r : ENNReal) [Fact (1 ≤ r)] (hr1 : 1 < r) :
+  ∃ F,
+    AnalyticOnNhd ℝ F Set.univ ∧
+      (∀ (u : NLS.Articles.MKdVBelowL2.PhysicalRealInput 2) (n : ℤ),
+          ↑↑(F u) n = NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate ⋯ ⋯ n ↑u) ∧
+        ∀ (a : ↥NLS.ZakharovShabat.NativeFourthSobolevSource) (n : ℤ),
+          ↑↑(F (NLS.Articles.MKdVBelowL2.fourthSobolevPhysicalInput a)) n =
+            NLS.Articles.MKdVBelowL2.physicalSobolevFourthFrequency a n
+NLS.Articles.MKdVBelowL2.theorem1_3_extension {p : ENNReal} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp2 : 2 < p) :
+  have x := ⋯;
+  have hp1 := ⋯;
+  ∃ F,
+    AnalyticOnNhd ℝ F Set.univ ∧
+      (∀ (u : NLS.Articles.MKdVBelowL2.PhysicalRealInput p) (n : ℤ),
+          ↑(F u) n = NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate hp hp1 n ↑u) ∧
+        (∀ (u : NLS.Articles.MKdVBelowL2.PhysicalRealInput p) (v : NLS.Articles.MKdVBelowL2.PhysicalRealInput 2),
+            ↑(↑u).1 = ↑(↑v).1 →
+              ↑(↑u).2 = ↑(↑v).2 →
+                ∀ (n : ℤ), ↑(F u) n = NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate ⋯ ⋯ n ↑v) ∧
+          ∀ (u : NLS.Articles.MKdVBelowL2.PhysicalRealInput p) (a : ↥NLS.ZakharovShabat.NativeFourthSobolevSource),
+            ↑(↑u).1 = ↑(↑(NLS.Articles.MKdVBelowL2.fourthSobolevPhysicalInput a)).1 →
+              ↑(↑u).2 = ↑(↑(NLS.Articles.MKdVBelowL2.fourthSobolevPhysicalInput a)).2 →
+                ∀ (n : ℤ), ↑(F u) n = NLS.Articles.MKdVBelowL2.physicalSobolevFourthFrequency a n
+NLS.Articles.MKdVBelowL2.theorem1_3_asymptotic {p : ENNReal} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp2 : 2 < p)
+  (u : NLS.Articles.MKdVBelowL2.PhysicalRealInput p) :
+  have hp1 := ⋯;
+  ∃ T,
+    IsOpen T ∧
+      ↑u ∈ T ∧
+        T ⊆ NLS.Articles.MKdVBelowL2.physicalFourthCandidateDomain hp hp1 ∧
+          ∃ a b,
+            (∀ v ∈ T,
+                ∀ (n : ℤ),
+                  n ≠ 0 →
+                    NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate hp hp1 n v +
+                        12 * ↑Real.pi * ↑n *
+                          (↑(NLS.Articles.MKdVBelowL2.compatibleBirkhoff hp hp1 v).1 n *
+                            ↑(NLS.Articles.MKdVBelowL2.compatibleBirkhoff hp hp1 v).2 n) =
+                      ↑n * (↑(a v) n + ↑(b v) n)) ∧
+              (∃ C, 0 ≤ C ∧ ∀ v ∈ T, ‖a v‖ ≤ C) ∧
+                ∀ (q : ENNReal) (hq1 : 1 < q) (hq : q ≠ ⊤),
+                  ∃ C, 0 ≤ C ∧ ∀ v ∈ T, ‖NLS.CoeffOnePlus.toCoeff q hq1 hq (b v)‖ ≤ C
+'NLS.Articles.MKdVBelowL2.theorem1_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_2_at_exponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_2_compatible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_2_hilbert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_2_hilbert_globalInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_3_hilbert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_3_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLS.Articles.MKdVBelowL2.theorem1_3_asymptotic' depends on axioms: [propext, Classical.choice, Quot.sound]
