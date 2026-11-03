@@ -5439,3 +5439,14 @@ import NLS.KdV.HillGapEnergyProductSimpleZeros
 import NLS.KdV.HillGapNumeratorDecay
 import NLS.KdV.HillEntirePeriodInterpolation
 import NLS.KdV.HillGlobalDifferentialUniqueness
+import NLS.KdV.HillGlobalRootUniqueness
+import NLS.KdV.HillGlobalDifferentialLocalIdentification
+import NLS.KdV.HillGlobalDifferentialFreeAnalyticGerm
+import NLS.KdV.HillGapRootHilbertCompactness
+import NLS.KdV.HillRootCoordinateAffineVariation
+import NLS.KdV.HillIntrinsicPeriodRootJacobian
+import NLS.KdV.HillComplexRootCoordinatePeriods
+import NLS.KdV.HillAnalyticCoordinatePeriodRoots
+import NLS.KdV.HillIntrinsicPeriodReflection
+import NLS.KdV.HillComplexEntirePeriodInterpolation
+import NLS.KdV.HillEntireNumeratorRootVariation
