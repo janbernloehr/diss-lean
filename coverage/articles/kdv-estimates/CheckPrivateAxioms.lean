@@ -1,3 +1,5 @@
+import NLS.ComplexAnalysis.EndpointRootBounds
+import NLS.KdV.HillCanonicalEnergyRootProduct
 import NLS.KdV.HillPhysicalIntegerActions
 import NLS.Articles.KdVEstimates.PhysicalIntegerEstimates
 import NLS.KdV.HillActionSquareBound
@@ -539,7 +541,9 @@ run_cmd do
     ``NLS.SequenceSpaces.hierarchy_mass_product_le,
     ``NLS.SequenceSpaces.exists_hierarchy_action_majorant,
     ``NLS.SequenceSpaces.hierarchy_mass_mono,
-    ``NLS.SequenceSpaces.exists_hierarchy_action_majorant_lower]
+    ``NLS.SequenceSpaces.exists_hierarchy_action_majorant_lower,
+    ``NLS.ComplexAnalysis.norm_normalizedStandardRoot_sub_center_le,
+    ``NLS.ComplexAnalysis.norm_endpointRoot_div_sub_one_le]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

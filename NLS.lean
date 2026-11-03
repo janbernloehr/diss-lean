@@ -5204,3 +5204,5 @@ import NLS.Articles.KdVEstimates.IntegerEstimates
 import NLS.KdV.HillPhysicalIntegerActions
 import NLS.Articles.KdVEstimates.PhysicalIntegerEstimates
 import NLS.KdV.HillActionSquareBound
+import NLS.ComplexAnalysis.EndpointRootBounds
+import NLS.KdV.HillCanonicalEnergyRootProduct

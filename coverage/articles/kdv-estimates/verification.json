@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 2780,
+    "declarations": 2809,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -286,10 +286,12 @@
       "NLS.SequenceSpaces.hierarchy_mass_product_le",
       "NLS.SequenceSpaces.exists_hierarchy_action_majorant",
       "NLS.SequenceSpaces.hierarchy_mass_mono",
-      "NLS.SequenceSpaces.exists_hierarchy_action_majorant_lower"
+      "NLS.SequenceSpaces.exists_hierarchy_action_majorant_lower",
+      "NLS.ComplexAnalysis.norm_normalizedStandardRoot_sub_center_le",
+      "NLS.ComplexAnalysis.norm_endpointRoot_div_sub_one_le"
     ]
   },
-  "full_repository_validation": "All 282 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2780-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 284 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2809-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -573,10 +575,12 @@
     "NLS/Articles/KdVEstimates/IntegerEstimates.lean": "0fd58e252133dba30e388433761ac17148212e97787bd3c24f9a04b8598ce7ff",
     "NLS/KdV/HillPhysicalIntegerActions.lean": "9febcb49f650d26598666581c78ef34f2c3cb8867ff234cbdbb40164d7c362b2",
     "NLS/Articles/KdVEstimates/PhysicalIntegerEstimates.lean": "781cd7ab8758d2244b5a9047fad864f6d6136d08cdb55bd35201799056a815d7",
-    "NLS/KdV/HillActionSquareBound.lean": "375cb9adce7980ce9ffb7e3af0b479bfdf1afdf3e38f1214411264c29f2484a5"
+    "NLS/KdV/HillActionSquareBound.lean": "375cb9adce7980ce9ffb7e3af0b479bfdf1afdf3e38f1214411264c29f2484a5",
+    "NLS/ComplexAnalysis/EndpointRootBounds.lean": "ab758fd22954d165197ec8a20c4f293f33aa38c27909ff5e9d23e32f5d99d4cc",
+    "NLS/KdV/HillCanonicalEnergyRootProduct.lean": "2e8839209c227b2fceca5f227032e5af26e6db6cdbdda775173678e3be0b69d9"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. Both integer inequalities now hold on actual real mean-zero physical periodic Sobolev representatives and on arbitrary continuous realizations with their actual H^m Fourier coefficients. Literal positive-index actual action sums, exact source Fourier norms and Arnold contour normalization are proved. Matching the constructed global real-cut root to the source canonical infinite product, complex potential-analytic low charts, the physical KdV Birkhoff map and the explicit arbitrary-weight action-gap/cutoff estimates remain essential.",
-  "milestone": "Physical integer estimates with exact Arnold action normalization and actual square-to-gap bound",
+  "remaining": "Main Theorems 1-3 remain unverified. The literal energy-indexed standard-root product for every real L2 Hill potential is now absolutely convergent, with a nonzero positive-gap product off the real gap segments, the exact squared product, explicit source finite-cutoff convergence and exact free normalization -2i*sin(sqrt(lambda)). Identifying this product with the actual globally normalized radicand root remains essential. Both physical integer norm inequalities are proved for the constructed actual Arnold actions. Complex potential-analytic low charts, the physical KdV Birkhoff map and the explicit arbitrary-weight uniform action-gap/cutoff estimates remain open.",
+  "milestone": "Absolutely convergent actual energy-indexed Hill root product with exact free normalization",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -861,7 +865,9 @@
     "NLS.Articles.KdVEstimates.IntegerEstimates",
     "NLS.KdV.HillPhysicalIntegerActions",
     "NLS.Articles.KdVEstimates.PhysicalIntegerEstimates",
-    "NLS.KdV.HillActionSquareBound"
+    "NLS.KdV.HillActionSquareBound",
+    "NLS.ComplexAnalysis.EndpointRootBounds",
+    "NLS.KdV.HillCanonicalEnergyRootProduct"
   ],
   "proof_commits": [
     {
@@ -1103,6 +1109,11 @@
       "commit": "dd88a190119d32cee87836736523f72fcc0d4105",
       "scope": "Both actual native integer spectral action and Sobolev inequalities, exact lower Fourier norm normalization and positive-index action HasSum; 279 strict modules, 2747-declaration transitive audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "d070672841adf9286634214d772a936137927068",
+      "scope": "Both physical integer spectral action/norm inequalities on actual Sobolev representatives and arbitrary continuous realizations with exact Fourier norm/Arnold normalization, plus all-gap action-square bound; 282 strict modules, 2780-declaration transitive audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -1119,20 +1130,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 282 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 284 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 2780 declarations. Includes physical source norm HasSum, actual positive-index action HasSum and native identification, physical mean/reality transfer, paired physical and arbitrary-continuous article estimates, Fourier representative uniqueness, exact Arnold contour formula and all-gap bounded-square action estimate.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 2809 declarations. Includes shared normalized standard-root majorants, actual endpoint localization to absolute product convergence, literal energy root and ground prefactor, squared product, off-gap nonvanishing, exact zero-potential branch and literal source partial-product convergence.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 282 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2780-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 284 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2809-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "The physical source Sobolev norm has the exact weighted Fourier HasSum, with factors (1+|2*pi*k|)^(2*j). Every physical action mass is a positive-index sum of actual gap integrals of the actual continuous representative Fourier coefficients, and has a proved HasSum agreeing with the native mass. Pointwise physical reality implies the required Fourier conjugation symmetry; literal zero unit-period mean implies the raw zero coefficient. Consequently the paired native estimates transfer with positive squared constants to physical representatives with only those physical reality/mean hypotheses. The actual Fourier coefficient identity and continuous Fourier uniqueness identify any continuous period-one function with those H^m coefficients with that representative; a second public article theorem therefore covers arbitrary continuous realizations of the full positive-integer source Sobolev domain. Every actual action has the original 1/pi Arnold contour formula for the constructed globally normalized real-cut root. Separately, a bounded analytic filled primitive square on any isolating disc, with both endpoints inside the half-radius disc, gives I_n<=(2B/R)*gap_n^2 when the boundary square norm is at most B^2. This actual bound holds at every real gap and uses no supplied local root/unit or high-index asymptotic; its boundary bound is an explicit hypothesis and the uniform source cutoff is not yet proved. Main Theorems 1-3 remain unverified. Both integer inequalities now hold on actual real mean-zero physical periodic Sobolev representatives and on arbitrary continuous realizations with their actual H^m Fourier coefficients. Literal positive-index actual action sums, exact source Fourier norms and Arnold contour normalization are proved. Matching the constructed global real-cut root to the source canonical infinite product, complex potential-analytic low charts, the physical KdV Birkhoff map and the explicit arbitrary-weight action-gap/cutoff estimates remain essential.",
-    "scope": "All 282 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2780-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Shared quantitative root estimates bound the deviation of a normalized standard root from its affine midpoint term, and bound an endpoint-root factor divided by its free center by (D+||lambda||+2D^2)/center whenever both endpoint displacements are at most D and the center is sufficiently large. For actual real Hill labels, the proved high root localization supplies D=4||q||. At free energy pi^2*n^2 this gives a summable C(q,lambda)/n^2 majorant. Consequently the literal source positive-index standard-root factors are absolutely summable perturbations of one and have an unconditional product for every complex energy. The product is nonzero off all closed positive-index real gap segments. Including the actual ground-state prefactor -2i*sqrt(lambda-lambda0) gives the literal energy canonical-root product; its square is exactly -4(lambda-lambda0) times the positive-index quadratic periodic factor product. The original finite positive-index cutoffs converge to this value. Actual zero-potential labels and Euler sine products fix the exact free value -2i*sin(sqrt(lambda)), including the sign and constant. No equality of this product with the actual nonzero-potential discriminant radicand/root is assumed or asserted. Main Theorems 1-3 remain unverified. The literal energy-indexed standard-root product for every real L2 Hill potential is now absolutely convergent, with a nonzero positive-gap product off the real gap segments, the exact squared product, explicit source finite-cutoff convergence and exact free normalization -2i*sin(sqrt(lambda)). Identifying this product with the actual globally normalized radicand root remains essential. Both physical integer norm inequalities are proved for the constructed actual Arnold actions. Complex potential-analytic low charts, the physical KdV Birkhoff map and the explicit arbitrary-weight uniform action-gap/cutoff estimates remain open.",
+    "scope": "All 284 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2809-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "b53eb48b47938a7554607b63e1dd69f9a8f86f84dca0bab181e43e5a0f756474",
-      "scripts/check-kdv-estimates.sh": "cb6c9c97679bbb3d18e357351463c25abf18f4e94001ca6be65809c4eebe6f51",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "6f1b5423d0a25071e42dc2a4137d57158328fbf9718c067b954092f405813db1"
+      "NLS.lean": "ca9a78ab2d0049d11eff941194334f9b2b8dc2daee2610236aa08bfa7f864552",
+      "scripts/check-kdv-estimates.sh": "7debbfd76053db525c5d5e4052c6c3ead5b55feb1f2ba9d8f61cb07f2de43c23",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "a5a496b869da1774a0b8028376d8eac7afc5722b648412f3adf99fb38083b73f"
     }
   },
   "warningAsError": true,
@@ -1239,8 +1250,8 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Physical integer estimates with exact Arnold action normalization and actual square-to-gap bound",
-    "focused_modules": 282,
-    "scope": "All 282 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2780-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Absolutely convergent actual energy-indexed Hill root product with exact free normalization",
+    "focused_modules": 284,
+    "scope": "All 284 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2809-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   }
 }
