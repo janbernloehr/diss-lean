@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOnePhysicalQuasi
 import NLS.Articles.KdVConvexity.SpectralCoordinateExtension
 import NLS.Articles.KdVConvexity.GlobalCanonicalMomentFamily
 import NLS.Articles.KdVConvexity.CommonCanonicalMomentFamily
@@ -75,6 +76,12 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.MKdV.QuasiHillAffineCoordinates,
+    `NLS.MKdV.L2QuasiHillPotential,
+    `NLS.MKdV.L2QuasiHillSolution,
+    `NLS.MKdV.L2QuasiHillDiscriminant,
+    `NLS.MKdV.L2QuasiHillUniqueness,
+
     `NLS.ComplexAnalysis.CoshLogBoundaryUniqueness,
     `NLS.SequenceSpaces.Reflection,
     `NLS.SequenceSpaces.ConjugateReflection,

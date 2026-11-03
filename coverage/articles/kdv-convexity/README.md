@@ -2032,10 +2032,58 @@ vanishes at zero. This is a **conditional extension theorem**. Constructing
 the spectral coordinate realization and identifying the sum with the
 physical renormalized Hamiltonian remain required for Theorem 1.1.
 
+## Actual rough quasi-Hill initial-value and monodromy identification
+
+`QuasiHillAffineCoordinates.lean` constructs a fixed state map T, with
+T^2=2*Id and inverse T/2. It intertwines the quasi-derivative Hill system
+with the physical AKNS system at frequency (mu+1)/2 and potential
+(u-i*(mu-1)/2,u+i*(mu-1)/2). The change of coordinates is independent of
+energy and stays invertible at zero. No derivative of u is involved.
+
+`L2QuasiHillPotential.lean` constructs this affine potential as an actual
+physical Lebesgue L2 class and proves its representative identity almost
+everywhere. `L2QuasiHillSolution.lean` transports the verified physical
+Volterra solver. It proves exact initial data, the ordinary Bochner
+integral equation, absolute continuity, and the differential equation
+almost everywhere. The solution is jointly analytic in energy and the
+L2 profile in the uniform curve norm. `L2QuasiHillUniqueness.lean` takes
+any continuous quasi-derivative integral solution back to the physical
+AKNS problem, proving uniqueness for every complex energy.
+
+`L2QuasiHillDiscriminant.lean` defines the trace from the two actual
+prescribed-data solution columns. It proves joint entire dependence,
+exact recovery of the independently constructed continuous-profile
+quasi-Hill solution and trace, and equality at energy z^2 with the
+original physical diagonal AKNS trace. The density proof uses actual
+physical L2 classes and includes z=0.
+
+`HillMiuraL2PhysicalQuasi.lean` applies the unit-interval Fourier isometry
+to the original scalar coefficients. Their diagonal physical class is
+exactly the original source-to-physical map, so the previously defined
+Miura energy discriminant equals the actual rough quasi-Hill trace at
+every complex energy.
+
+`HillHminusOnePhysicalQuasi.lean` gives each shifted-Miura chart its actual
+physical L2 profile and unique absolutely continuous solution, with
+joint energy/potential analyticity. The checked Fourier formula gives
+q_k=2*pi*i*k*u_k+sum_j u_(k-j)*u_j-delta_(k,0)*energyShift,
+without changing normalization. The intrinsic H^-1 discriminant is exactly
+the sum of the two physical diagonal endpoint entries at shifted energy
+lambda+energyShift. These actual traces agree for different lift branches
+and different mass shifts on every chart overlap.
+
+This proves the rough initial-value and monodromy-trace comparison. A
+chart-independent singular Hill operator domain, its self-adjoint
+spectral realization, the actual global KdV coordinate map and its
+Arnold-action/fiber identities remain essential work. No main theorem
+completion flag changes.
+
 ## Remaining essential KdV work
 
-1. Prove the remaining intrinsic singular-Hill operator and actual
-   action-fiber/discriminant identities. Full-discriminant invariance of
+1. Construct the remaining intrinsic singular-Hill operator domain and
+   spectral identification, and prove the actual action-fiber/discriminant
+   identity. The unique rough quasi-derivative IVP and its exact intrinsic
+   discriminant trace are now proved in every shifted-Miura chart. Full-discriminant invariance of
    all real canonical periods is now proved. Global potential-space moment
    gluing is now proved on one complex neighborhood of the entire real
    H^-1 space, with every canonical period and the locally uniform
@@ -2093,15 +2141,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `14f7d2c` contains 398 source modules. Every
-baseline source hash remains unchanged. Six authored modules pass
+The validated baseline at `9f1ebf0` contains 404 source modules. Every
+baseline source hash remains unchanged. Seven authored modules pass
 incremental Lean 4.33.1/mathlib v4.33.1 checks with `warningAsError=true`.
-The full reproducible script now lists 404 source modules. The
-positive-index example and all 762 coverage-name checks pass.
+The full reproducible script now lists 411 source modules. The
+positive-index example and all 814 coverage-name checks pass.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 197 additional shared modules:
-4178 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 202 additional shared modules:
+4258 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
