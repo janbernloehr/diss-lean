@@ -2078,12 +2078,63 @@ spectral realization, the actual global KdV coordinate map and its
 Arnold-action/fiber identities remain essential work. No main theorem
 completion flag changes.
 
+## Actual scalar weak equations and canonical endpoint multipliers
+
+`L2QuasiHillRegularity.lean` defines the actual scalar position and
+quasi-derivative curves. Both are absolutely continuous with L2 first
+derivatives; their derivative identities hold almost everywhere for the
+original L2 profile. Multiplication by a continuous interval curve
+preserves L2, so no pointwise regularity of the profile is required.
+
+`L2QuasiHillWeakEquation.lean` constructs the factored shifted Miura
+bilinear form integral (y_prime-u*y)*(phi_prime-u*phi)-c*integral y*phi.
+The integrand is proved integrable for every pair of continuous curves
+with L2 derivatives. The actual solution satisfies Green's identity
+against every absolutely continuous test with L2 derivative, retaining
+w(1)*phi(1)-w(0)*phi(0)+(mu-c)*integral y*phi. The boundary term uses the
+continuous quasi-derivative; it does not evaluate the rough profile at
+an endpoint. Zero endpoint tests give the scalar weak eigen-equation.
+
+`L2BoundaryMultipliers.lean` proves that the actual physical L2 monodromy
+propagates arbitrary initial coordinates, identifies its matrix kernel
+with the endpoint multiplier condition, and derives the full determinant
+one quadratic criterion. `L2QuasiHillMultipliers.lean` transports every
+complex multiplier through the fixed invertible state map. In particular,
+trace +2 is exactly the periodic nonzero-state condition and trace -2 is
+exactly the antiperiodic condition, including zero energy.
+
+`L2QuasiHillScalarNontrivial.lean` proves that zero scalar position forces
+zero initial data. The first derivative identity forces the continuous
+quasi-derivative to vanish almost everywhere; equality on the full closed
+interval follows from continuity. Thus a nonzero state gives an actual
+nonzero scalar position.
+
+`HillHminusOneWeakEquation.lean` transfers H1 scalar regularity and the
+Green identity to every shifted-Miura chart, with the constant shift
+cancelled to the literal energy lambda. A state multiplier sigma and
+reciprocal test multiplier rho, with sigma*rho=1, cancel the boundary
+term. `HillHminusOneWeakSpectrum.lean` identifies all complex endpoint
+multipliers directly from the intrinsic H^-1 discriminant. Its radicand
+vanishes exactly when a nonzero actual state is periodic or antiperiodic.
+For every real canonical label j, including the lowest, central and
+collapsed-gap labels, it constructs a nonzero H1 scalar position with
+endpoint sign (-1)^floor((j+1)/2) and proves its weak equation for every
+H1 test with that same endpoint sign.
+
+The weak form is still expressed through the chart's physical Miura
+profile. Chart independence of the intrinsic weak form/operator domain,
+the converse from arbitrary weak solutions, self-adjointness and spectral
+multiplicity identification remain unproved. The actual KdV coordinate
+realization and its Arnold-action/fiber identities are still required
+for the unconditional positive-ell2 extension in Theorem 1.1.
+
 ## Remaining essential KdV work
 
-1. Construct the remaining intrinsic singular-Hill operator domain and
-   spectral identification, and prove the actual action-fiber/discriminant
-   identity. The unique rough quasi-derivative IVP and its exact intrinsic
-   discriminant trace are now proved in every shifted-Miura chart. Full-discriminant invariance of
+1. Construct the intrinsic chart-independent weak Hill form and operator
+   domain, prove the weak-solution converse and self-adjoint spectral/
+   multiplicity identification, and prove the actual action-fiber/
+   discriminant identity. Every canonical real label now has an actual
+   nonzero H1 scalar weak solution with its exact endpoint sign. Full-discriminant invariance of
    all real canonical periods is now proved. Global potential-space moment
    gluing is now proved on one complex neighborhood of the entire real
    H^-1 space, with every canonical period and the locally uniform
@@ -2141,15 +2192,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `9f1ebf0` contains 404 source modules. Every
+The validated baseline at `5e968d4` contains 411 source modules. Every
 baseline source hash remains unchanged. Seven authored modules pass
 incremental Lean 4.33.1/mathlib v4.33.1 checks with `warningAsError=true`.
-The full reproducible script now lists 411 source modules. The
-positive-index example and all 814 coverage-name checks pass.
+The full reproducible script now lists 418 source modules. The
+positive-index example and all 854 coverage-name checks pass.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 202 additional shared modules:
-4258 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 207 additional shared modules:
+4304 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

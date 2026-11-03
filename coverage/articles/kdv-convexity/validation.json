@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-03",
-  "milestone": "Actual unique rough quasi-derivative Hill initial-value solutions and exact physical monodromy trace identification of the H^-1 discriminant at all energies",
+  "milestone": "Actual H1 scalar weak Hill solutions at every canonical real root, with exact endpoint signs, full Green identity and all complex monodromy multiplier criteria",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -428,11 +428,18 @@
     "NLS.MKdV.L2QuasiHillDiscriminant",
     "NLS.MKdV.L2QuasiHillUniqueness",
     "NLS.KdV.HillMiuraL2PhysicalQuasi",
-    "NLS.KdV.HillHminusOnePhysicalQuasi"
+    "NLS.KdV.HillHminusOnePhysicalQuasi",
+    "NLS.MKdV.L2QuasiHillRegularity",
+    "NLS.MKdV.L2QuasiHillWeakEquation",
+    "NLS.ZakharovShabat.L2BoundaryMultipliers",
+    "NLS.MKdV.L2QuasiHillScalarNontrivial",
+    "NLS.MKdV.L2QuasiHillMultipliers",
+    "NLS.KdV.HillHminusOneWeakEquation",
+    "NLS.KdV.HillHminusOneWeakSpectrum"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 4258,
+    "declarations": 4304,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -473,6 +480,11 @@
       "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc"
     ],
     "additional_shared_modules": [
+      "NLS.MKdV.L2QuasiHillRegularity",
+      "NLS.MKdV.L2QuasiHillWeakEquation",
+      "NLS.ZakharovShabat.L2BoundaryMultipliers",
+      "NLS.MKdV.L2QuasiHillScalarNontrivial",
+      "NLS.MKdV.L2QuasiHillMultipliers",
       "NLS.MKdV.QuasiHillAffineCoordinates",
       "NLS.MKdV.L2QuasiHillPotential",
       "NLS.MKdV.L2QuasiHillSolution",
@@ -939,6 +951,8 @@
     "NLS/KdV/HillHminusOneTraceChartSource.lean": "18e716bab8099e3ae2eca54e76bc9f980df87a46e760073ae1fc40dd5ba84a4a",
     "NLS/KdV/HillHminusOneTraceControl.lean": "43c6a4a4fd7d5b441d310361fe2ae00591ccbb13cf024507e310a83b609d091f",
     "NLS/KdV/HillHminusOneTraceParity.lean": "2c30d53818db20dc7fc83b67c25f8f358765fa6139c1f5c5ad317258d0779296",
+    "NLS/KdV/HillHminusOneWeakEquation.lean": "1010de8f92e608c3c8f7bef92e7dbf7963c4688240cdf7a638159c38c14d3ee8",
+    "NLS/KdV/HillHminusOneWeakSpectrum.lean": "ecc7907c683c16c9717cbf14c38f65b55239559fe370a044b575ddfd6cc46c3d",
     "NLS/KdV/HillHminusOneWholeGapSquares.lean": "30486a454a513f8f811f8f6266d635538bd7900fae9d9f79b586fe33926b2d7a",
     "NLS/KdV/HillL2AnnulusCoverage.lean": "c5d61811c08bad785fe44193cf5beef4dd84427bea530bcedc7f403324836377",
     "NLS/KdV/HillL2ArnoldActionComparison.lean": "741dc762d7f1e9f25495006982ff778618a764b65a902e3a8e24e8f941f6b96d",
@@ -991,9 +1005,13 @@
     "NLS/MKdV/HierarchyGradientRecurrence.lean": "db7650bc43134e51662a8f9a7614f84adbece2b243fe2736ba730b01d9c29f80",
     "NLS/MKdV/HierarchyRestriction.lean": "6ffee4097f33659f6e95bf440cb02e30074dfa0b9e364467ea947fe6f9a07853",
     "NLS/MKdV/L2QuasiHillDiscriminant.lean": "1d17038d6acd858004c8b0b6316374a000d333b646760579fd6d9be3632934aa",
+    "NLS/MKdV/L2QuasiHillMultipliers.lean": "7c7cb3d094753a080e95e96114d093ce2701263d54c1d3e7c9e8d68fc8078955",
     "NLS/MKdV/L2QuasiHillPotential.lean": "e99b31eb4893c518498bb3c5e6a566d787456f768806b295bbad32401e14d21e",
+    "NLS/MKdV/L2QuasiHillRegularity.lean": "d67414af7f9191f3a83a32bc9f1d5742bedbf3f6384be34da5cfd224090c2695",
+    "NLS/MKdV/L2QuasiHillScalarNontrivial.lean": "18960a6081ffb38d4bf6b89b8eb4c7f6900f5efe771293fdb6355818b7194569",
     "NLS/MKdV/L2QuasiHillSolution.lean": "4630ee9885b95c343cad0bde61adcd633e72ae5a1eb5d2fb0dbd52004451a604",
     "NLS/MKdV/L2QuasiHillUniqueness.lean": "daa1e6d895aa4e9e038cc983dd4b740582f001797935dd9471e502b6ea919c99",
+    "NLS/MKdV/L2QuasiHillWeakEquation.lean": "88d6c121717afd561e38d200b4d0fbed881302bd082cb1e4b788c071399fbeaa",
     "NLS/MKdV/MiuraBoundaryTransfer.lean": "d8747dde2efaa7415650cc8f00b1f3a15c8345f34ed1b3812ed4ba7f6fd5fc2d",
     "NLS/MKdV/MiuraClassicalSolution.lean": "8ff694a65deec068d661b9132c593c09042c97e622c6e147aa5346fa85ddd42f",
     "NLS/MKdV/MiuraHierarchyFlowRestriction.lean": "4c423d37c81527b0380aaf2abd8fa975469cb42a97e94cc248662d34a5f76409",
@@ -1081,6 +1099,7 @@
     "NLS/ZakharovShabat/ClassicalVolterraTrace.lean": "af489d580fb8de14051b7abf002235b0507570e6fab8b2b9aafd7a4fc82be41f",
     "NLS/ZakharovShabat/ContinuousPotentialL2Bound.lean": "6036371a2cadb92169894a505e58daefeb9d493fbe81d1e10a2387c9a65459a5",
     "NLS/ZakharovShabat/ContinuousPotentialSource.lean": "e2a52ba52fceb22cc075719d475a237d1eb6bd0dcfecec9691f7ef44d89f03e6",
+    "NLS/ZakharovShabat/L2BoundaryMultipliers.lean": "3be41a68482d61a868a6169bc6e0fa56a94ef8cb1273bb507322a9e6d9e5e06b",
     "NLS/ZakharovShabat/NLSRiccatiResolvent.lean": "b738cf2502d7bb1912309606d96096c78a390ec284edf3fc01962061a9b0320c",
     "NLS/ZakharovShabat/NLSRiccatiResolventGradient.lean": "32a77884a27801aca020a735f7222d8e7d2675044dbcaefca5dd9ef4aba97d6b",
     "NLS/ZakharovShabat/NLSRiccatiResolventVariation.lean": "9ca27b6be4097a6cbcd8d421aea360180978b75f961e3d97809c6a9ba449a576",
@@ -1091,7 +1110,7 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "9dcac670d43f677ee7069ad3990163ec913e34d82d17f4998252c05550f21911",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "d7a9c31d0bb11fb33e2049a120966ec9c4a81db3bff974586780b27186009e72",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/band-primitive-shared-imports.json": "ee14ececa4bebbb805a8d49836d86e72ab62e34a26910f7886d91d931b485ef1",
@@ -1103,10 +1122,10 @@
     "coverage/articles/kdv-convexity/physical-cut-shared-imports.json": "c6adf4965416cc426fc385ce324b4afb1aae45fec50e499debfbd5c2a2c5997f",
     "coverage/articles/kdv-convexity/real-form-gluing-shared-imports.json": "0a2dbea14cdc33d2913f49cf38008186f01fbdf913ab40fc72b843326bdf196b",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
-    "scripts/check-kdv-convexity.sh": "095df3ca639450332d0323eafa2e1b58f1d2ecad8170492b4c4db37195f163e8"
+    "scripts/check-kdv-convexity.sh": "3a40f3ecca9c671257053e3e469e1c8b0e653f98eabcd5578b34d1324405ce1a"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-quasi-audit-validation.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-weak-audit-validation.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -1124,15 +1143,16 @@
     "All main theorems remain unverified.",
     "The actual H^-1 spectral periods now satisfy uniform complex-neighborhood quartic-gap, gap/Arnold-period and quadratic weighted cubic-period estimates, including collapsed gaps. These are potential-space statements for the constructed source-normalized periods; global Birkhoff action identification and analytic action-space descent remain required.",
     "Global potential-space gluing is now proved: one complex-open neighborhood of the entire real H^-1 space carries all canonical polynomial and cubic moments, agrees with every actual real period, and retains locally uniform complex-tail quadratic bounds. Finite-gap exterior matching, the normalized inversion remainder of Lemma 4.4 and the physical energy/frequency identities remain open.",
-    "Construct the actual analytic global KdV coordinate realization and prove its real Arnold-action and action-fiber/discriminant identities; then instantiate the proved global positive-ell2 extension theorem and identify the physical renormalized energy/frequencies. The H^-1 discriminant is now the trace of the actual unique absolutely continuous rough quasi-derivative initial-value solution in every shifted-Miura chart, with exact original Fourier coefficients and branch/mass-independent trace. A chart-independent singular Hill operator domain and its spectral identification, the -6*Id coefficient, and main Theorems 1.2 and 1.3 remain.",
+    "Construct the intrinsic chart-independent weak Hill form and operator domain, prove the converse from arbitrary weak solutions and the self-adjoint spectral/multiplicity identification. Every canonical real root now has an actual nonzero H1 scalar weak solution with its exact indexed periodic/antiperiodic sign, and the intrinsic discriminant characterizes all complex endpoint multipliers. Construct the actual global KdV coordinate realization and prove its real Arnold-action and action-fiber/discriminant identities, then instantiate the proved positive-ell2 analytic extension and identify physical energy/frequencies. The -6*Id coefficient and main Theorems 1.2 and 1.3 remain.",
     "Every actual canonical cubic period is real and nonpositive, strictly negative exactly on an open gap. Even polynomial Arnold periods are nonnegative; the level-zero Arnold and cubic zero sets equal the closed-gap set. These signs and zero criteria hold for the common all-index family and its matched source tail at every real input. Global Birkhoff actions have not yet been identified with the Arnold periods.",
     "The energy-analytic endpoint unit root is controlled uniformly over nearby complex H^-1 inputs. Joint potential analyticity of that chosen deflated root and a single neighborhood for all error tolerances are not asserted.",
     "Physical energy and frequency identification, the KdV quadratic coefficients giving -6*Id, positive-index Hessian transport and main Theorems 1.2 and 1.3 remain unproved.",
     "No full repository build or replacement of the dissertation validation is claimed.",
     "The actual global canonical periods are proved invariant under equality of the entire real discriminant, including central and closed gaps. The coordinate-extension theorem now composes these actual functions with any spectral coordinate realization and derives common-neighborhood weighted action descent, absolute positive-ell2 summation, nonpositivity and zero at zero. Construction of that coordinate realization and the physical energy/frequency identity remain essential unproved inputs.",
-    "The actual H^-1 discriminant is now identified with the trace of unique absolutely continuous representative-based rough quasi-derivative IVPs in every analytic shifted-Miura chart, at all complex energies including zero. The physical profile has the literal unit-period Fourier coefficients and the exact constant energy shift. This does not yet construct a chart-independent singular Hill operator domain or prove its self-adjoint spectral realization."
+    "The actual H^-1 discriminant is now identified with the trace of unique absolutely continuous representative-based rough quasi-derivative IVPs in every analytic shifted-Miura chart, at all complex energies including zero. The physical profile has the literal unit-period Fourier coefficients and the exact constant energy shift. This does not yet construct a chart-independent singular Hill operator domain or prove its self-adjoint spectral realization.",
+    "Every actual canonical real characteristic label now has a nonzero scalar H1 weak solution of the chart Miura form with exact indexed periodic/antiperiodic endpoint sign. Full weak Green identities and all complex multiplier criteria are proved. This does not yet prove chart independence of the intrinsic weak form/operator domain, the weak-solution converse, self-adjointness or spectral multiplicity identification."
   ],
-  "previous_progress_commit": "9f1ebf0a0bef252b388eaa89ceda52b14982427b",
+  "previous_progress_commit": "5e968d4d780766615f0ddae00a0f587d3dca2898",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -1621,7 +1641,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation: all source hashes of the validated 404-module baseline remain unchanged; seven authored modules pass warningAsError checks, followed by the positive-index example, combined transitive axiom audit and coverage-name check. The full reproducible script lists 411 source modules.",
+  "focused_validation_scope": "Incremental validation: all source hashes of the validated 411-module baseline remain unchanged; seven authored modules pass warningAsError checks, followed by the positive-index example, combined transitive axiom audit and coverage-name check. The full reproducible script lists 418 source modules.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -1931,9 +1951,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 814,
-    "audit_modules_present": 202,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/RoughQuasiCoverageNames.log"
+    "declarations": 854,
+    "audit_modules_present": 207,
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/RoughWeakCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -2022,70 +2042,70 @@
     "real_isospectral_invariance_hypothesis": "Equality of the full actual entire discriminant at two real H^-1 potentials; action-fiber/discriminant identification is still unproved."
   },
   "incremental_validation": {
-    "baseline_commit": "9f1ebf0a0bef252b388eaa89ceda52b14982427b",
-    "baseline_modules": 404,
+    "baseline_commit": "5e968d4d780766615f0ddae00a0f587d3dca2898",
+    "baseline_modules": 411,
     "baseline_source_hashes_unchanged": true,
     "newly_checked_exact_shared_modules": 0,
     "newly_checked_authored_modules": 7,
     "completed_module_checks": [
       {
-        "module": "NLS.MKdV.QuasiHillAffineCoordinates",
-        "source_sha256": "c62356890ad31263c9fad05276dad7b625a226a1d097688b28f7dbfb40646816",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-quasi-algebra-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.QuasiHillAffineCoordinates.lean.log",
+        "module": "NLS.MKdV.L2QuasiHillRegularity",
+        "source_sha256": "d67414af7f9191f3a83a32bc9f1d5742bedbf3f6384be34da5cfd224090c2695",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-weak-regularity-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.L2QuasiHillRegularity.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.MKdV.L2QuasiHillPotential",
-        "source_sha256": "e99b31eb4893c518498bb3c5e6a566d787456f768806b295bbad32401e14d21e",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-quasi-potential-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.L2QuasiHillPotential.lean.log",
+        "module": "NLS.MKdV.L2QuasiHillWeakEquation",
+        "source_sha256": "88d6c121717afd561e38d200b4d0fbed881302bd082cb1e4b788c071399fbeaa",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-weak-equation-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.L2QuasiHillWeakEquation.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.MKdV.L2QuasiHillSolution",
-        "source_sha256": "4630ee9885b95c343cad0bde61adcd633e72ae5a1eb5d2fb0dbd52004451a604",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-quasi-solution-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.L2QuasiHillSolution.lean.log",
+        "module": "NLS.ZakharovShabat.L2BoundaryMultipliers",
+        "source_sha256": "3be41a68482d61a868a6169bc6e0fa56a94ef8cb1273bb507322a9e6d9e5e06b",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-weak-zs-multiplier-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ZakharovShabat.L2BoundaryMultipliers.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.MKdV.L2QuasiHillDiscriminant",
-        "source_sha256": "1d17038d6acd858004c8b0b6316374a000d333b646760579fd6d9be3632934aa",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-quasi-trace-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.L2QuasiHillDiscriminant.lean.log",
+        "module": "NLS.MKdV.L2QuasiHillScalarNontrivial",
+        "source_sha256": "18960a6081ffb38d4bf6b89b8eb4c7f6900f5efe771293fdb6355818b7194569",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-weak-nontrivial-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.L2QuasiHillScalarNontrivial.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.MKdV.L2QuasiHillUniqueness",
-        "source_sha256": "daa1e6d895aa4e9e038cc983dd4b740582f001797935dd9471e502b6ea919c99",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-quasi-unique-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.L2QuasiHillUniqueness.lean.log",
+        "module": "NLS.MKdV.L2QuasiHillMultipliers",
+        "source_sha256": "7c7cb3d094753a080e95e96114d093ce2701263d54c1d3e7c9e8d68fc8078955",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-weak-multiplier-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.L2QuasiHillMultipliers.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.KdV.HillMiuraL2PhysicalQuasi",
-        "source_sha256": "185f0498e8480aaa9e662879c5561e15bc35f7ee1bee46982605b649b4b0ff7a",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-quasi-physical-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillMiuraL2PhysicalQuasi.lean.log",
+        "module": "NLS.KdV.HillHminusOneWeakEquation",
+        "source_sha256": "1010de8f92e608c3c8f7bef92e7dbf7963c4688240cdf7a638159c38c14d3ee8",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-weak-hminus-equation-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneWeakEquation.lean.log",
         "warningAsError": true,
         "result": "passed"
       },
       {
-        "module": "NLS.KdV.HillHminusOnePhysicalQuasi",
-        "source_sha256": "10050b4fc0301037b50ad97b9749d51aefa97cd498d2c88e9cf89dba1b05a4d7",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-quasi-hminus-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOnePhysicalQuasi.lean.log",
+        "module": "NLS.KdV.HillHminusOneWeakSpectrum",
+        "source_sha256": "ecc7907c683c16c9717cbf14c38f65b55239559fe370a044b575ddfd6cc46c3d",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-weak-spectrum-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneWeakSpectrum.lean.log",
         "warningAsError": true,
         "result": "passed"
       }
     ],
-    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-quasi-audit-validation.log"
+    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/rough-weak-audit-validation.log"
   },
   "Hminus1_real_spectral_progress": {
     "potential_space": "Every real unit-period H^-1 potential, specified by conjugate reflection of its raw Fourier coefficients.",
@@ -2746,6 +2766,52 @@
       "NLS.MKdV.L2QuasiHillUniqueness",
       "NLS.KdV.HillMiuraL2PhysicalQuasi",
       "NLS.KdV.HillHminusOnePhysicalQuasi"
+    ],
+    "exact_shared_modules_reused_this_milestone": 0
+  },
+  "Hminus1_actual_weak_scalar_and_multiplier_progress": {
+    "scope": "Actual rough quasi-Hill solutions at every complex energy and physical scalar Lebesgue L2 profile; specialization to every shifted-Miura H^-1 chart and every real canonical label.",
+    "position_and_quasi_derivative_are_continuous_interval_curves": true,
+    "both_components_absolutely_continuous_with_L2_first_derivatives": true,
+    "first_derivative_identities_use_actual_almost_everywhere_derivatives": true,
+    "shifted_Miura_bilinear_weak_form_constructed": true,
+    "weak_form": "integral (y_prime-u*y)*(phi_prime-u*phi)-c*integral y*phi, on [0,1] with ordinary Lebesgue measure.",
+    "weak_form_integrand_integrable_for_every_pair_of_curves_with_L2_derivatives": true,
+    "actual_solution_weak_Green_identity_with_full_boundary_term_proved": true,
+    "weak_test_scope": "Every absolutely continuous scalar interval test with square-integrable first derivative; no smoothness or point values of the L2 profile are assumed.",
+    "Green_identity": "shiftedMiuraWeakForm(u,c,y,phi)=w(1)*phi(1)-w(0)*phi(0)+(mu-c)*integral y*phi.",
+    "zero_endpoint_test_weak_equation_proved": true,
+    "physical_chart_energy_shift_cancels_to_literal_lambda": true,
+    "reciprocal_Floquet_state_and_test_endpoints_cancel_boundary_term": true,
+    "nonzero_initial_state_has_nonzero_scalar_position_proved": true,
+    "scalar_nontriviality_uses_ae_derivative_and_continuity_on_closed_interval": true,
+    "physical_L2_monodromy_propagates_every_initial_vector_proved": true,
+    "full_unimodular_quadratic_iff_nonzero_actual_endpoint_multiplier_proved": true,
+    "fixed_invertible_state_change_preserves_every_complex_multiplier": true,
+    "actual_rough_Hill_discriminant_plus_two_iff_periodic_nonzero_state_proved": true,
+    "actual_rough_Hill_discriminant_minus_two_iff_antiperiodic_nonzero_state_proved": true,
+    "Hminus1_discriminant_multiplier_criterion_holds_in_every_chart": true,
+    "Hminus1_radicand_zero_iff_periodic_or_antiperiodic_nonzero_actual_state": true,
+    "every_real_canonical_label_has_a_nonzero_H1_scalar_weak_solution": true,
+    "exact_indexed_endpoint_multiplier": "(-1)^floor((j+1)/2)",
+    "weak_equation_at_label_holds_for_all_matching_periodic_or_antiperiodic_H1_tests": true,
+    "central_lowest_and_closed_gap_labels_included": true,
+    "label_solution_declaration": "NLS.KdV.HillHminusMiuraChart.exists_nonzero_weak_solution_at_label",
+    "Green_identity_declaration": "NLS.MKdV.l2QuasiHill_weak_green_identity",
+    "all_complex_multiplier_declaration": "NLS.KdV.HillHminusMiuraChart.hillHminusDiscriminant_multiplier_iff",
+    "converse_from_arbitrary_weak_solutions_to_quasi_derivative_initial_value_solutions_proved": false,
+    "chart_independence_of_intrinsic_weak_Hill_form_and_operator_domain_proved": false,
+    "full_self_adjoint_singular_Hill_spectral_realization_and_multiplicity_identification_proved": false,
+    "actual_global_KdV_coordinate_realization_and_Arnold_action_identity_proved": false,
+    "main_Theorem_1_1_unconditional_positive_ell2_extension_proved": false,
+    "new_authored_modules": [
+      "NLS.MKdV.L2QuasiHillRegularity",
+      "NLS.MKdV.L2QuasiHillWeakEquation",
+      "NLS.ZakharovShabat.L2BoundaryMultipliers",
+      "NLS.MKdV.L2QuasiHillScalarNontrivial",
+      "NLS.MKdV.L2QuasiHillMultipliers",
+      "NLS.KdV.HillHminusOneWeakEquation",
+      "NLS.KdV.HillHminusOneWeakSpectrum"
     ],
     "exact_shared_modules_reused_this_milestone": 0
   }
