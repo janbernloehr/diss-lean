@@ -703,7 +703,7 @@
     }
   ],
   "remaining_obligations": [
-    "Identify the normalized actual Hill gap root with the correct sheet of the original continued primitive and construct the original Hill contour action. Prove the actual action-to-gap-square extension and locally uniform normalization8*n*pi*I_n/gamma_n^2->1, with the correct contour convention and all closed gaps. Current normalized roots are analytic in ENERGY and uniformly controlled on a complex potential neighborhood; JOINT analytic dependence in the potential and any gap-root ordering independence still need proof where used.",
+    "Identify the intrinsic jointly analytic normalized Hill gap root with the correct sheet of the ORIGINAL continued primitive on a contour, and construct the ORIGINAL Hill contour action. Prove its gap-square extension and locally uniform normalization8*n*pi*I_n/gamma_n^2->1, including closed gaps. Joint energy/potential analyticity and independence of endpoint ordering for a fixed actual square/contour are NOW PROVED; gluing across auxiliary square/contour choices still needs proof where used.",
     "Construct or identify the ACTUAL original KdV H-minus-one Birkhoff map, with verified action/angle coordinates, original differential q_(2n)/sqrt(2*pi*abs(n)), exact target order s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. FULL complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB are already PROVED; do not redo them or substitute arbitrary supplied conjugacy data.",
     "Construct or identify the ACTUAL original H-minus-one KdV flow defined by convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization, and derive main1.1/1.3/1.4 plus Wiener5.1/5.9. All five main theorems remain UNPROVED; keep the goal ACTIVE. Quantitative DirichletC4ii, remaining low parity/interlacing and complex ratio2.20 remain open only where required."
   ],
@@ -1403,6 +1403,29 @@
     "original_actual_trace_radicand_and_continued_primitive_identities_preserved": true,
     "no_open_gap_or_root_separation_hypothesis": true,
     "joint_potential_analyticity_of_normalized_root_proved": false,
+    "original_Hill_contour_actions_constructed": false,
+    "source_Theorem3_2_action_ratio_proved": false,
+    "actual_original_KdV_Birkhoff_map_constructed": false,
+    "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
+    "main_theorems_verified": false
+  },
+  "actual_joint_normalized_Hill_gap_roots_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/joint-hill-gap-roots-map.json",
+    "actual_Hill_logarithmic_contour_moments_with_exact_multiplicity": true,
+    "intrinsic_actual_gap_polynomial_without_ordered_roots": true,
+    "gap_polynomial_jointly_analytic_in_energy_and_potential": true,
+    "intrinsic_filled_quotient_equals_every_valid_two_root_deflation": true,
+    "no_entire_extension_of_quotient_assumed": true,
+    "normalized_root_has_no_selected_endpoint_arguments": true,
+    "joint_potential_analyticity_of_normalized_root_proved": true,
+    "analytic_domain": "OPEN full energy disc times OPEN original complex H-minus-one potential neighborhood; includes BOTH ACTUAL endpoints and collapsed gaps",
+    "exact_free_normalization_minus_four_pi_n_squared": true,
+    "normalized_root_nonvanishing_and_locally_uniform_near_one": true,
+    "radius_before_accuracy_neighborhood_and_cutoff_before_index_and_potential": true,
+    "original_actual_trace_radicand_and_continued_primitive_identities_preserved": true,
+    "no_open_gap_or_root_separation_hypothesis": true,
+    "endpoint_order_independence_for_same_actual_square_and_contour": true,
+    "global_gluing_across_square_and_contour_choices_proved": false,
     "original_Hill_contour_actions_constructed": false,
     "source_Theorem3_2_action_ratio_proved": false,
     "actual_original_KdV_Birkhoff_map_constructed": false,

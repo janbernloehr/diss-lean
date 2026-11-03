@@ -680,6 +680,11 @@ import NLS.ComplexAnalysis.QuadraticModelDeflation
 import NLS.KdV.HillHminusOneNormalizedGapSquares
 import NLS.ComplexAnalysis.NormalizedAnalyticSquareRoot
 import NLS.KdV.HillHminusOneNormalizedGapRoots
+import NLS.ComplexAnalysis.TwoRootCircleMoments
+import NLS.ComplexAnalysis.JointCircleCauchyTransform
+import NLS.KdV.HillHminusOneGapPolynomial
+import NLS.KdV.HillHminusOneJointGapQuotient
+import NLS.KdV.HillHminusOneJointGapRoots
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5017,3 +5022,26 @@ import NLS.KdV.HillHminusOneNormalizedGapRoots
 #print axioms NLS.KdV.hillHminusNormalizedGapRoot_factor
 #print axioms NLS.KdV.hillHminusNormalizedGapRoot_analytic_bound
 #print axioms NLS.KdV.exists_hillHminus_normalized_gap_roots
+#print axioms NLS.ComplexAnalysis.logarithmicCircleMoment
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_logarithmicCircleMoment
+#print axioms NLS.ComplexAnalysis.logarithmicCircleMoment_eq_pair
+#print axioms NLS.ComplexAnalysis.momentPairPolynomial
+#print axioms NLS.ComplexAnalysis.momentPairPolynomial_eq
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_momentPairPolynomial
+#print axioms NLS.ComplexAnalysis.jointCircleCauchyTransform
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_jointCircleCauchyTransform
+#print axioms NLS.ComplexAnalysis.jointCircleCauchyTransform_eq_filling
+#print axioms NLS.KdV.hillHminusGapPolynomial
+#print axioms NLS.KdV.HillHminusHighGapPair.radicand_ne_zero_on_sphere
+#print axioms NLS.KdV.HillHminusHighGapPair.logarithmicCircleMoment_eq
+#print axioms NLS.KdV.HillHminusHighGapPair.gapPolynomial_eq
+#print axioms NLS.KdV.HillHminusHighGapPair.gapPolynomial_ne_zero_on_sphere
+#print axioms NLS.KdV.analyticOnNhd_hillHminusGapPolynomial
+#print axioms NLS.KdV.hillHminusJointGapQuotient
+#print axioms NLS.KdV.hillHminusJointNormalizedGapSquare
+#print axioms NLS.KdV.hillHminusJointNormalizedGapRoot
+#print axioms NLS.KdV.analyticOnNhd_hillHminusJointGapQuotient
+#print axioms NLS.KdV.hillHminusJointGapQuotient_eq_deflation
+#print axioms NLS.KdV.hillHminusJointNormalizedGapSquare_eq
+#print axioms NLS.KdV.hillHminusJointNormalizedGapRoot_properties
+#print axioms NLS.KdV.exists_hillHminus_joint_normalized_gap_roots

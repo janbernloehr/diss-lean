@@ -714,6 +714,11 @@ modules = [
     'NLS.KdV.HillHminusOneNormalizedGapSquares',
     'NLS.ComplexAnalysis.NormalizedAnalyticSquareRoot',
     'NLS.KdV.HillHminusOneNormalizedGapRoots',
+    'NLS.ComplexAnalysis.TwoRootCircleMoments',
+    'NLS.ComplexAnalysis.JointCircleCauchyTransform',
+    'NLS.KdV.HillHminusOneGapPolynomial',
+    'NLS.KdV.HillHminusOneJointGapQuotient',
+    'NLS.KdV.HillHminusOneJointGapRoots',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
