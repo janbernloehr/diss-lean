@@ -5158,3 +5158,6 @@ import NLS.KdV.HillL2EnergySquareCircleAsymptotics
 import NLS.KdV.HillSmoothEnergyTraceLimit
 import NLS.KdV.HillHighMomentSigns
 import NLS.KdV.HillSmoothEnergyTrace
+import NLS.KdV.HillHierarchyMomentContinuity
+import NLS.KdV.HillSobolevEnergy
+import NLS.KdV.HillH1EnergyTrace

@@ -62,4 +62,18 @@ theorem exists_local_nat_property_pullback
   rw [he]
   exact hbound (f y) hy n hn
 
+theorem nat_tsum_tail_antitone_of_nonneg (f : ℕ → ℝ)
+    (hs : Summable f) (hpos : ∀ k, 0 ≤ f k) :
+    Antitone (fun N : ℕ => ∑' k : ℕ, f (k+N)) := by
+  intro M N hMN
+  have hsM : Summable (fun k => f (k+M)) := (summable_nat_add_iff M).mpr hs
+  have he := hsM.sum_add_tsum_nat_add (N-M)
+  have hind (k : ℕ) : (k+(N-M))+M = k+N := by omega
+  simp only [hind] at he
+  have hfinite : 0 ≤ ∑ k ∈ Finset.range (N-M), f (k+M) :=
+    Finset.sum_nonneg (fun k _ => hpos (k+M))
+  linarith
+
+
+
 end NLS

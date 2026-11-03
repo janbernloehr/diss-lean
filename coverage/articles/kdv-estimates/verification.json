@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 2227,
+    "declarations": 2297,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -239,10 +239,11 @@
       "NLS.ComplexAnalysis.norm_square_error_of_phase_error_general",
       "NLS.ComplexAnalysis.norm_square_model_energy_error_le",
       "NLS.ComplexAnalysis.norm_square_energy_error_of_phase_error",
-      "NLS.ComplexAnalysis.norm_energy_circle_coefficient_sub_le"
+      "NLS.ComplexAnalysis.norm_energy_circle_coefficient_sub_le",
+      "NLS.nat_tsum_tail_antitone_of_nonneg"
     ]
   },
-  "full_repository_validation": "All 236 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2227-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 239 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2297-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -459,7 +460,7 @@
     "NLS/ComplexAnalysis/UpperCircleReflection.lean": "2eaf24258d99416418fbc825900be0a11a07baee2b4ee64547fd05f2c682c6fc",
     "NLS/ComplexAnalysis/QuadraticContourCoefficient.lean": "176671588b7bc83adab5532d384e6eff02c8f4df2bfd4c78b06f099724868461",
     "NLS/ComplexAnalysis/NonnegativeComplexSeries.lean": "34a10f2850633130287bacfd057ef1c0e691dcbb1da8b0cc9703f35d34d8dbd3",
-    "NLS/KdV/HillContinuousReality.lean": "964cd1b977e3681b2c5cad51e6f51492d9c65e0226a36e5f4cab108834e2abcf",
+    "NLS/KdV/HillContinuousReality.lean": "08b1b0d82b08663b8f15fb59a9bdef40da86bf15f56f1a4fdec780a371bf6c26",
     "NLS/KdV/HillFreeCircleGeometry.lean": "c2b743f128fca282c613aa6dbb74238fb8dafa39b32ba347949216c184cffb3e",
     "NLS/KdV/HillFreeTraceContour.lean": "2582f5e3a36e307f1b67ad05b70b570406d3c0b61c3d72b8848de541763b86a0",
     "NLS/KdV/HillL2UpperSquareAsymptotics.lean": "28405ff20e43f5d92d2f2d15287d2b681577d9746a2dbc2c6b18909266ea209a",
@@ -467,7 +468,7 @@
     "NLS/KdV/HillSmoothQuadraticTraceLimit.lean": "56c6a5dbf4b10fc3909ebe3fde6c256c84c39816c782c98d4f97f089a43d8893",
     "NLS/KdV/HillSmoothQuadraticTrace.lean": "63dd6ab9603422e6bea5bde9fbad382b6eca0f8fd297b6c5bac6c1c639d5f179",
     "NLS/KdV/HillRealActionContinuity.lean": "e081523494b958c159e5c87c086d2c22286dbcc1e5994c2949e0a68eca7bbcec",
-    "NLS/SequenceSpaces/LocalSeriesContinuity.lean": "0847132b6e75ab1c417844ce8cff3698e8c4fd29f7459ff994c9a0f3acee2808",
+    "NLS/SequenceSpaces/LocalSeriesContinuity.lean": "0284d419caac0e17019232424e43ed2d0d8049815609a576151ff1194c48603d",
     "NLS/KdV/HillActionTailBudget.lean": "84340b8836335984c07216023a2b4d4069c49a4d6fbde6e8f441f229fb028292",
     "NLS/KdV/HillLocallyUniformActionTails.lean": "87d170317728fd5cb0626a65cc4013b412161e6bbc0bebc99d4e98693a01f9e2",
     "NLS/KdV/HillWeightedActionContinuity.lean": "bdd586ba414887d1a3f4878d18f5bd2f9ad5f38fb0522022889cecd428b7283c",
@@ -480,10 +481,13 @@
     "NLS/KdV/HillL2EnergySquareCircleAsymptotics.lean": "f0fceb40aab375c96f24a4a53300b6fa658f6b95991c513f860f6b9a1eb41a2e",
     "NLS/KdV/HillSmoothEnergyTraceLimit.lean": "42d64ce4ac719d5b0ba41d5a0d4df3b88a4f80843668eca332c1a61f29455564",
     "NLS/KdV/HillHighMomentSigns.lean": "b31b0e01ce38d055c435d79eec8f528f3729ca887c32866756c9e59abdc18e5d",
-    "NLS/KdV/HillSmoothEnergyTrace.lean": "63504efc8722ff6e2bf7025b812659cd8cacdf6885ba0ce126f67143bd7eaa99"
+    "NLS/KdV/HillSmoothEnergyTrace.lean": "63504efc8722ff6e2bf7025b812659cd8cacdf6885ba0ce126f67143bd7eaa99",
+    "NLS/KdV/HillHierarchyMomentContinuity.lean": "3f1f857a851811067a722c7acc57605cbc7a9cadac9acb4f6fc9b3e8634d3f27",
+    "NLS/KdV/HillSobolevEnergy.lean": "6bc661533e16373586427ef7236b21a4944d0484cb199f6d921842e015b0e4c3",
+    "NLS/KdV/HillH1EnergyTrace.lean": "7037de97309d8dfae990e24144510d2fd8062018a1c36027fbea1a7dcc2341ad"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. The full real mean-zero native L2 quadratic trace and the actual smooth physical energy trace are checked. The smooth first-moment series sums to H1/4 with the exact source normalization, including possible signed low moments, actual full-circle contour coefficients and derived physical Fourier assumptions. Extension of the energy trace to H1, higher physical Hamiltonian traces and their Sobolev extension, canonical infinite-product root identification, complex potential-analytic low charts, explicit source-uniform action-gap/interpolation estimates, the physical KdV Birkhoff map and the main norm inequalities remain essential.",
-  "milestone": "Actual smooth physical energy trace with a fully justified signed moment series",
+  "remaining": "Main Theorems 1-3 remain unverified. The actual real mean-zero quadratic trace on L2 and physical energy trace on H1 are checked with exact source factors. At every level m, the entire actual hierarchy moment sum is summable and continuous in any real native weighted L2 topology whose weight dominates n^m. The H1 energy is independently defined, continuous, and equals the literal physical integral of q_x^2/2+q^3 on the actual Sobolev representative; coefficient-preserving bounded maps in both directions and physical reality/mean/coefficient identities remove extra Fourier or smoothness assumptions. Higher physical Hamiltonian traces for m>=2, canonical infinite-product root identification, complex potential-analytic low charts, explicit source-uniform action-gap/interpolation estimates, the physical KdV Birkhoff map and the main global norm inequalities remain essential.",
+  "milestone": "Physical H1 energy trace and Sobolev continuity of every actual hierarchy moment sum",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -722,7 +726,10 @@
     "NLS.KdV.HillL2EnergySquareCircleAsymptotics",
     "NLS.KdV.HillSmoothEnergyTraceLimit",
     "NLS.KdV.HillHighMomentSigns",
-    "NLS.KdV.HillSmoothEnergyTrace"
+    "NLS.KdV.HillSmoothEnergyTrace",
+    "NLS.KdV.HillHierarchyMomentContinuity",
+    "NLS.KdV.HillSobolevEnergy",
+    "NLS.KdV.HillH1EnergyTrace"
   ],
   "proof_commits": [
     {
@@ -914,6 +921,11 @@
       "commit": "71c998361c1b4bf7788a03aa69c88fb9a997d391",
       "scope": "Proved the actual quadratic Hill action trace for every real mean-zero native period-one L2 potential, with physical finite-realization normalization; 229 strict modules, 2195-declaration transitive audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "b5a90950d00b4cc7934730ce7b11c9074389db77",
+      "scope": "Proved the actual smooth physical H1/4 energy trace, including the infinite signed moment series; 236 strict modules, 2227-declaration transitive axiom audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -930,20 +942,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 236 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 239 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 2227 declarations. Includes generic weighted phase squaring, exact energy contour coefficient normalization, physical energy reality, actual upper and full-circle energy-square bounds, positive high real spectral labels and all high moment signs, convergence of actual finite energy moment sums, eventual-positive complex series and literal smooth physical energy HasSum statements.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 2297 declarations. Includes nonnegative-tail cutoff monotonicity, actual high label/moment polynomial bounds, summability and continuity of all hierarchy moment sums under polynomial weight growth, the independently defined continuous physical H1 energy, two-way native/shared H1 coefficient maps, actual physical coefficient/reality/mean identities, finite Fourier approximation and full native and physical H1 energy trace HasSum statements.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 236 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2227-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 239 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2297-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "A generic estimate propagates an order-(m+1) phase error to an order-m squared-phase error. Retaining both independently calculated physical H0 and H1 coefficients gives a fifth-order frequency remainder for the square from the actual sixth-order primitive estimate; the next explicit formal Hamiltonian term is absorbed in the remainder without assuming that it vanishes. Physical reality implies reality of the derivative and conjugate invariance of the independently defined energy. Reflection gives the energy-square estimate on the complete free energy circles. A normalized coefficient lemma integrates lambda times the square and yields H1/4 with an explicit 2*C/r error. Exact all-gap finite free-circle decomposition makes the actual finite first-moment sums converge to H1/4. High real gap labels are strictly positive at n>=2 and 8*norm(q)<=n, so every sufficiently high actual real moment is nonnegative at every level. A generic eventual-nonnegative partial-limit theorem then proves summability of the full first-moment series, allowing finitely many signed low terms. Public smooth physical HasSum statements derive native Fourier support and reality from physical period one and real values. Main Theorems 1-3 remain unverified. The full real mean-zero native L2 quadratic trace and the actual smooth physical energy trace are checked. The smooth first-moment series sums to H1/4 with the exact source normalization, including possible signed low moments, actual full-circle contour coefficients and derived physical Fourier assumptions. Extension of the energy trace to H1, higher physical Hamiltonian traces and their Sobolev extension, canonical infinite-product root identification, complex potential-analytic low charts, explicit source-uniform action-gap/interpolation estimates, the physical KdV Birkhoff map and the main norm inequalities remain essential.",
-    "scope": "All 236 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2227-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "High actual right gap labels are bounded by (pi^2+1)*n^2 at the elementary checked cutoff. The real mean-value relation bounds the m-th hierarchy moment by (pi^2+1)^m*n^(2*m)*I_n. If n^m<=w(2*n), this is bounded by (pi^2+1)^m times the actual weighted action term. A reusable antitonicity theorem permits enlarging the cutoff of any nonnegative summable tail. The established locally small weighted action tails therefore prove summability, locally small tails and continuity of the complete hierarchy moment sum at every level, with signed low moments and collisions allowed. An independent H1 energy functional combines the physical derivative pairing and cubic mean; it is continuous and equals the literal classical energy integral on the absolutely continuous Sobolev representative. Native unit-period pi-Sobolev coefficients and the shared H1 coefficient domain admit coefficient-preserving bounded maps inverse to one another. Finite physical realization, the checked smooth energy trace and real mean-zero Fourier truncation yield the full H1 trace by continuity of both sides. Public native, shared-Sobolev and physical-hypothesis HasSum statements give the actual positive-index first moment series value H1/4, with no smoothness assumption. Continuous physical reality is equivalent to conjugate Fourier symmetry; the actual physical representative has the correct Hill coefficients and literal unit-period mean. Main Theorems 1-3 remain unverified. The actual real mean-zero quadratic trace on L2 and physical energy trace on H1 are checked with exact source factors. At every level m, the entire actual hierarchy moment sum is summable and continuous in any real native weighted L2 topology whose weight dominates n^m. The H1 energy is independently defined, continuous, and equals the literal physical integral of q_x^2/2+q^3 on the actual Sobolev representative; coefficient-preserving bounded maps in both directions and physical reality/mean/coefficient identities remove extra Fourier or smoothness assumptions. Higher physical Hamiltonian traces for m>=2, canonical infinite-product root identification, complex potential-analytic low charts, explicit source-uniform action-gap/interpolation estimates, the physical KdV Birkhoff map and the main global norm inequalities remain essential.",
+    "scope": "All 239 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2297-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "3037a6a187f33b96ece425a23a05ee16d81e289c6611de7856fa6a3d111893ba",
-      "scripts/check-kdv-estimates.sh": "ddf6e2f635ba2751319031bb6588f306efb0e6e49c3d9392d512d78a2e511c38",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "9d8ea0730b215c082ee5fd0389eb9bba890bae9db0d57ac0fe54344c11cfa624"
+      "NLS.lean": "d8742fc628e14c7f3926360409264b57b68cd7c08c72bcbb32cb3ad3875c556c",
+      "scripts/check-kdv-estimates.sh": "fd44be9907604d1ab4e2476e2150a02f1eaa80d404bab17ca5b466a1c13fd3ff",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "4b17bdbefbd7157d47b791ad5264f5e455bf899e3c597c7b9bc9c0afe1a28e37"
     }
   },
   "warningAsError": true,
@@ -1050,8 +1062,8 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Actual smooth physical energy trace with a fully justified signed moment series",
-    "focused_modules": 236,
-    "scope": "All 236 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2227-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Physical H1 energy trace and Sobolev continuity of every actual hierarchy moment sum",
+    "focused_modules": 239,
+    "scope": "All 239 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2297-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   }
 }

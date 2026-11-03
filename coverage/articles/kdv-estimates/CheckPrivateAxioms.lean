@@ -1,3 +1,6 @@
+import NLS.KdV.HillHierarchyMomentContinuity
+import NLS.KdV.HillSobolevEnergy
+import NLS.KdV.HillH1EnergyTrace
 import NLS.ComplexAnalysis.WeightedSquareRemainder
 import NLS.ComplexAnalysis.EnergyContourCoefficient
 import NLS.KdV.HillL2UpperEnergySquareAsymptotics
@@ -446,7 +449,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.norm_square_error_of_phase_error_general,
     ``NLS.ComplexAnalysis.norm_square_model_energy_error_le,
     ``NLS.ComplexAnalysis.norm_square_energy_error_of_phase_error,
-    ``NLS.ComplexAnalysis.norm_energy_circle_coefficient_sub_le]
+    ``NLS.ComplexAnalysis.norm_energy_circle_coefficient_sub_le,
+    ``NLS.nat_tsum_tail_antitone_of_nonneg]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
