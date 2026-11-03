@@ -18,8 +18,10 @@ of every statement in the PDF is outside this completion criterion.
 
 Verification of the seven related articles is tracked separately in the
 [article plan and shared-proof map](coverage/articles/README.md). These tasks
-reuse this library and add KdV and mKdV developments in the same repository;
-their main theorems are not yet marked verified.
+reuse this library and add KdV and mKdV developments in the same repository.
+The [dNLS Fourier-estimate article](coverage/articles/dnls-estimates/README.md)
+has verified main theorems; the other article tasks retain their separate
+coverage status.
 
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 [the introduction main-results audit](coverage/INTRODUCTION.md),
