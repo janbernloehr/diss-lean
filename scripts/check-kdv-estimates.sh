@@ -100,6 +100,7 @@ modules+=(NLS/ComplexAnalysis/RealEnergySquareRoot NLS/KdV/HillStateJointContinu
 modules+=(NLS/KdV/ClassicalHillMixedPairings NLS/ComplexAnalysis/ScalarStateMixedPairing NLS/KdV/HillDirichletCosineData NLS/KdV/HillDirichletMixedPairings NLS/KdV/HillDirichletSlopePotentialDerivative NLS/KdV/HillDirichletSlopeVariation NLS/Fourier/ContinuousConstants NLS/KdV/HillDirichletSlopeShift NLS/KdV/HillLogNormingGradient)
 modules+=(NLS/KdV/HillPhysicalDirectionPairing NLS/KdV/HillLogNormingCotangent NLS/KdV/HillLogNormingRegularity NLS/KdV/HillMixedGardnerBrackets NLS/KdV/ClassicalHillLogNormingBrackets NLS/KdV/HillLogNormingGardnerBrackets)
 modules+=(NLS/KdV/HillAbelianRootBox NLS/KdV/HillAbelianNumeratorProduct NLS/KdV/HillAbelianProductContinuity NLS/KdV/HillAbelianProductZeros NLS/ComplexAnalysis/ContinuousCircleIntegral NLS/KdV/HillAbelianCandidatePeriods NLS/KdV/HillAbelianNormalizationProblem)
+modules+=(NLS/KdV/HillFreeAbelianRoots NLS/KdV/HillFreeAbelianQuotient NLS/KdV/HillRealGapContourDiscs NLS/KdV/HillFreeAbelianNormalization NLS/KdV/HillAbelianCircleIntegrability NLS/KdV/HillFreeAbelianRootVariation NLS/KdV/HillFreeAbelianPeriodJacobian)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

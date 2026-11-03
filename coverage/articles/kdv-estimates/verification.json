@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 3647,
+    "declarations": 3723,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -355,7 +355,7 @@
       "NLS.ComplexAnalysis.continuous_circleIntegral_of_continuous_joint_on_sphere"
     ]
   },
-  "full_repository_validation": "All 394 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3647-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 401 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3723-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -751,10 +751,17 @@
     "NLS/KdV/HillAbelianProductZeros.lean": "861d4704d3f2bb80b861b04c3b62da38594d6e4821576fef1cb97e094350c949",
     "NLS/ComplexAnalysis/ContinuousCircleIntegral.lean": "7c1c2320b45ff8009f922a9352fad6a6ef75b03661b30d6db13b7dbe863e327b",
     "NLS/KdV/HillAbelianCandidatePeriods.lean": "bfb428d1135e025c055655be2a50076f5d58cb9acb786161f6373f9797e40498",
-    "NLS/KdV/HillAbelianNormalizationProblem.lean": "5b81592d244e8c756e6118c29d4b53bc0c4cc11be62bfef2a81850eec83ddbf8"
+    "NLS/KdV/HillAbelianNormalizationProblem.lean": "5b81592d244e8c756e6118c29d4b53bc0c4cc11be62bfef2a81850eec83ddbf8",
+    "NLS/KdV/HillFreeAbelianRoots.lean": "c8aceb4b7edf98b009566aa2b7a17e586791daa72b73e4f7d5c3820521d53850",
+    "NLS/KdV/HillFreeAbelianQuotient.lean": "ff5bcaa42b39ff87966433c05d9b58f61c0928f18eb1b4c138ade5fe06066718",
+    "NLS/KdV/HillRealGapContourDiscs.lean": "43036d483517b5916879f91171d5401499b9a04f157e146e0e176927d395e865",
+    "NLS/KdV/HillFreeAbelianNormalization.lean": "45289aa536d7d49fce3bc915450e3feb2ac795cd60fa986e09a55a9c1a201a4f",
+    "NLS/KdV/HillAbelianCircleIntegrability.lean": "5969a7928d27f4733ca470390b8cf99d09dfed91b65568cd9f35982bc51ea5ca",
+    "NLS/KdV/HillFreeAbelianRootVariation.lean": "26000de1c9a69140e27e0ff3893618a4dd916c51658a1466fea13a6a8c6c4ed6",
+    "NLS/KdV/HillFreeAbelianPeriodJacobian.lean": "58f600e809e204321d439545c51c5aa6127e7a0e18e018905a98c52faf30ab56"
   },
-  "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual Hill Abelian numerator candidates, their continuity, zeros and physical contour periods are now constructed. Nonemptiness of the exact simultaneous normalized-period root set is still unproved; normalized differentials/angles, the physical KdV Birkhoff map and coordinate/action identity remain essential.",
-  "milestone": "Entire Hill Abelian candidates and the exact physical period problem",
+  "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Exact normalized-period solvability is now proved at the free potential, and all initial coordinate derivatives and the scaled deleted Jacobian are identified. The full Banach sequence period map, its Frechet derivative and local/global solvability at general actual potentials remain unproved. Normalized Abelian angles, the physical KdV Birkhoff map and coordinate/action identity remain essential.",
+  "milestone": "Exact free Hill Abelian normalization and initial period Jacobian",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -1151,7 +1158,14 @@
     "NLS.KdV.HillAbelianProductZeros",
     "NLS.ComplexAnalysis.ContinuousCircleIntegral",
     "NLS.KdV.HillAbelianCandidatePeriods",
-    "NLS.KdV.HillAbelianNormalizationProblem"
+    "NLS.KdV.HillAbelianNormalizationProblem",
+    "NLS.KdV.HillFreeAbelianRoots",
+    "NLS.KdV.HillFreeAbelianQuotient",
+    "NLS.KdV.HillRealGapContourDiscs",
+    "NLS.KdV.HillFreeAbelianNormalization",
+    "NLS.KdV.HillAbelianCircleIntegrability",
+    "NLS.KdV.HillFreeAbelianRootVariation",
+    "NLS.KdV.HillFreeAbelianPeriodJacobian"
   ],
   "proof_commits": [
     {
@@ -1488,6 +1502,11 @@
       "commit": "73f0b02208a27410bd7440ea290462957f9bcf49",
       "scope": "Actual Hill norming cotangents and canonical Gardner relations; 387 strict modules, 3592-declaration transitive axiom audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "ddbcf5744b0845ee0ed6d2c76ae13f7f90966505",
+      "scope": "Entire Hill Abelian candidates and physical period equations; 394 strict modules, 3647-declaration transitive axiom audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -1504,20 +1523,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 394 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 401 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 3647 declarations. Includes compactness and nonemptiness of the genuine gap-root box, root localization and uniform product majorants, entire omitted numerator products, joint root/energy continuity, exact candidate zero characterization, shared continuous fixed-circle integration, actual physical candidate periods and their continuity, deleted-root independence and compactness of the exact normalized-period equation set.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 3723 declarations. Includes singleton free root box, actual root-product factorization and free differential, all-potential closed-disc geometry, exact free endpoints and square roots, free Cauchy period normalization and true nonempty normalized-root set at zero potential, actual circle integrability, exact finite-root product/differential/period variation, literal coordinate derivatives and the nonzero diagonal and scaled minus-delta initial Jacobian.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 394 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3647-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 401 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3723-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "The product-topology box of roots in the actual closed Hill gaps is nonempty and compact. Every root family in this box obeys the same high-energy localization bound, yielding a summable energy-factor majorant uniform over all root families and bounded energies. The source omitted products converge locally uniformly in complex energy, are entire and depend jointly continuously on the root family and energy. The candidate psi_n has exactly the source prefactor 2/(n*pi), and for n>=1 its zeros are exactly the selected roots of the nondeleted gaps. A reusable theorem proves continuity of fixed-circle integrals from joint continuity on the sphere for first-countable locally compact parameters and complex normed targets. The literal 1/(2*pi) candidate periods along intrinsic isolating circles are continuous in every gap root and equal the integrals with the actual physical Hill cut root. All candidates and periods are independent of the deleted root. The exact simultaneous delta-normalization equations define a closed compact subset of the root box, with nonemptiness still open. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual Hill Abelian numerator candidates, their continuity, zeros and physical contour periods are now constructed. Nonemptiness of the exact simultaneous normalized-period root set is still unproved; normalized differentials/angles, the physical KdV Birkhoff map and coordinate/action identity remain essential.",
-    "scope": "All 394 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3647-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "The zero-potential root box is exactly the singleton of positive free energies. The actual free root product splits into the selected factor and source omitted numerator, giving the genuine differential i*n*pi/(sqrt(energy)*((n*pi)^2-energy)). For every real period-one L2 potential, the intrinsic isolating closed gap disc lies strictly between its neighboring band endpoints, inside the gap-filled domain, and its ground shift lies in the principal slit plane. Free endpoints, centers, square roots and excluded other-gap poles have their exact normalizations; reciprocal square roots are analytic on the closed free discs. Cauchy integration gives every genuine free candidate period exactly delta_nk, proving nonemptiness of the FULL exact normalized-period root set at zero potential. Actual candidates are circle integrable on intrinsic contours for every genuine root family. Finite single-root changes give exact product and physical differential identities, and contour linearity gives an exact affine period response. Its coordinate derivatives are proved at every real parameter. The deleted initial Jacobian is diagonal with nonzero entries. Scaling the mth root displacement by m and the kth period by (((k*pi)^2-(n*pi)^2)/n) gives the literal coordinate derivative -delta_km. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Exact normalized-period solvability is now proved at the free potential, and all initial coordinate derivatives and the scaled deleted Jacobian are identified. The full Banach sequence period map, its Frechet derivative and local/global solvability at general actual potentials remain unproved. Normalized Abelian angles, the physical KdV Birkhoff map and coordinate/action identity remain essential.",
+    "scope": "All 401 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3723-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "5341e6a359834efc8e20fbdbef7520d60e9e84029eaf30a15c51df2d24dc52f2",
-      "scripts/check-kdv-estimates.sh": "1fb2c275dda0d4d1771aebd299d966ee769ec28af4424d69955e77d45da6e097",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "44228bcfbf86df79afae22846d411298bb59522a913b9ddcc8b2fca98bd1be4c"
+      "NLS.lean": "841f6be74a8c546e3fda13adc0aacf6d8998713e84e4bdb7fbba65c70b840bb9",
+      "scripts/check-kdv-estimates.sh": "7aaa377608024eaa445fcf6da55a37c8e52acae4eba8d865abb4e53a67d4d086",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "7ba442b067391d978ded6324ad4b420ff2ec05350eb51d87708706477b24cea5"
     }
   },
   "warningAsError": true,
@@ -1624,9 +1643,9 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Entire Hill Abelian candidates and the exact physical period problem",
-    "focused_modules": 394,
-    "scope": "All 394 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3647-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Exact free Hill Abelian normalization and initial period Jacobian",
+    "focused_modules": 401,
+    "scope": "All 401 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3723-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",

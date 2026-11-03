@@ -393,6 +393,13 @@ import NLS.KdV.HillAbelianProductZeros
 import NLS.ComplexAnalysis.ContinuousCircleIntegral
 import NLS.KdV.HillAbelianCandidatePeriods
 import NLS.KdV.HillAbelianNormalizationProblem
+import NLS.KdV.HillFreeAbelianRoots
+import NLS.KdV.HillFreeAbelianQuotient
+import NLS.KdV.HillRealGapContourDiscs
+import NLS.KdV.HillFreeAbelianNormalization
+import NLS.KdV.HillAbelianCircleIntegrability
+import NLS.KdV.HillFreeAbelianRootVariation
+import NLS.KdV.HillFreeAbelianPeriodJacobian
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
