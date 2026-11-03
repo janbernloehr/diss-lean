@@ -481,6 +481,7 @@ import NLS.KdV.SingularDirichletRootSpace
 import NLS.KdV.SingularDirichletGeometricMultiplicity
 import NLS.KdV.SingularDirichletRealMultiplicity
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletMultiplicity
+import NLS.Articles.KdVPseudomeasures.SourceWeakStarInverse
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -3938,3 +3939,13 @@ import NLS.Articles.KdVPseudomeasures.OriginalDirichletMultiplicity
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletRootSpace_finrank_eq_analyticOrder
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_algebraic_multiplicity_one
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletLabels_native_global_multiplicity
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_sourceMap_iff_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.isClosedEmbedding_sourceMap_of_closed_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.isClosedEmbedding_sourceMap_of_bounded_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.sourceMapHomeomorphRange
+#print axioms NLS.Articles.KdVPseudomeasures.sourceMapHomeomorphRange_apply
+#print axioms NLS.Articles.KdVPseudomeasures.sourceMapHomeomorphRange_symm_apply
+#print axioms NLS.Articles.KdVPseudomeasures.isClosed_sourceMap_image_iff
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceMap_iff_of_closed_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceMap_lower_iff_lower_of_closed_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_sourceMap_originalHminusOne_iff_of_closed_bounded

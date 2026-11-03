@@ -515,6 +515,7 @@ modules = [
     'NLS.KdV.SingularDirichletGeometricMultiplicity',
     'NLS.KdV.SingularDirichletRealMultiplicity',
     'NLS.Articles.KdVPseudomeasures.OriginalDirichletMultiplicity',
+    'NLS.Articles.KdVPseudomeasures.SourceWeakStarInverse',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

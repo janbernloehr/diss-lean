@@ -520,5 +520,16 @@
       "directory": ".lake/full-original-label-check-20261103",
       "log": ".lake/full-original-label-check-20261103/logs/validation-appendix-b-cauchy.log"
     }
+  },
+  "compact_set_inverse_continuity_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-inverse-map.json",
+    "closed_bounded_domain_inverse_continuity": true,
+    "homeomorphism_onto_exact_image": true,
+    "coefficient_continuity_criterion_with_bounded_image": true,
+    "arbitrary_filter_inverse_convergence": true,
+    "independent_lower_norms": true,
+    "original_HminusOne_distributions": true,
+    "remaining_lemma_B1_obligations": [],
+    "main_theorems_verified": false
   }
 }

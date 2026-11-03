@@ -64,5 +64,16 @@
     "NLS/FunctionalAnalysis/CompactClosedGraph.lean": "1a0ec9f8c20af06ad3d4a84d4ada6a33bad67b99e0ecd98559314c6819bc03df",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarClosedGraph.lean": "7996907b2129995f64549fba8c3c99b31edc416d91124c2a00ffc81486566f3d",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarIntersections.lean": "3355e519a468040f76f6c1549c4d33281cd20d2018e58eab803aa63073ca37f6"
+  },
+  "compact_set_inverse_continuity_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-inverse-map.json",
+    "closed_bounded_domain_inverse_continuity": true,
+    "homeomorphism_onto_exact_image": true,
+    "coefficient_continuity_criterion_with_bounded_image": true,
+    "arbitrary_filter_inverse_convergence": true,
+    "independent_lower_norms": true,
+    "original_HminusOne_distributions": true,
+    "remaining_lemma_B1_obligations": [],
+    "main_theorems_verified": false
   }
 }

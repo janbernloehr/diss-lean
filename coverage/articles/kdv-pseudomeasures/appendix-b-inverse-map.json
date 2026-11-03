@@ -1,0 +1,82 @@
+{
+  "source": "arXiv:1610.00278v1, Appendix B, Lemma B.1(i)-(iv): compactness and bounded-set topology consequences",
+  "date": "2026-11-03",
+  "scope": "Compact-set inverse weak-star continuity; additional consequences of already completed source clauses",
+  "remaining_lemma_B1_obligations": [],
+  "module": "NLS/Articles/KdVPseudomeasures/SourceWeakStarInverse.lean",
+  "declarations": [
+    "NLS.Articles.KdVPseudomeasures.continuous_sourceMap_iff_coefficients",
+    "NLS.Articles.KdVPseudomeasures.isClosedEmbedding_sourceMap_of_closed_bounded",
+    "NLS.Articles.KdVPseudomeasures.isClosedEmbedding_sourceMap_of_bounded_coefficients",
+    "NLS.Articles.KdVPseudomeasures.sourceMapHomeomorphRange",
+    "NLS.Articles.KdVPseudomeasures.sourceMapHomeomorphRange_apply",
+    "NLS.Articles.KdVPseudomeasures.sourceMapHomeomorphRange_symm_apply",
+    "NLS.Articles.KdVPseudomeasures.isClosed_sourceMap_image_iff",
+    "NLS.Articles.KdVPseudomeasures.tendsto_sourceMap_iff_of_closed_bounded",
+    "NLS.Articles.KdVPseudomeasures.tendsto_sourceMap_lower_iff_lower_of_closed_bounded",
+    "NLS.Articles.KdVPseudomeasures.tendsto_sourceMap_originalHminusOne_iff_of_closed_bounded"
+  ],
+  "results": [
+    "An ambient map into original physical weak-star potentials with endpoint norm-bounded image is continuous iff EVERY original Fourier coefficient of the map is continuous.",
+    "Every continuous injective map from a weak-star CLOSED endpoint norm-BOUNDED physical subset into any original physical weak-star space is a CLOSED EMBEDDING. Its inverse on its exact image is continuous. Once forward continuity is known, no separate image bound is required for this conclusion.",
+    "For an injective map with endpoint norm-bounded image, continuity of all original Fourier coefficients gives a closed embedding on a closed bounded physical domain. The homeomorphism onto the EXACT physical image is explicitly constructed, with forward and inverse evaluation identities.",
+    "For every such continuous injective map, a domain constraint is closed iff its image is AMBIENT weak-star closed. Arbitrary-filter convergence of images to the image of a domain point is equivalent to convergence to that same original point.",
+    "When the image is also endpoint norm bounded, inverse convergence can independently use ANY admissible original lower finite-p norms on the two sides. The exact strict thresholds and both endpoint bounds are retained. In the article range this uses the IDENTICAL original H-minus-one distributions on both sides."
+  ],
+  "qualifications": [
+    "All original Lemma B.1(i)-(iv) clauses were already proved; this milestone adds compact-set inverse-continuity consequences and does not claim an additional source clause.",
+    "The physical domain must be weak-star closed AND endpoint norm bounded. This does not assert inverse continuity on the entire unbounded physical space.",
+    "A bounded image is required for the coefficient continuity criterion and for the lower-norm image convergence criterion. It is not inferred from injectivity.",
+    "No actual KdV or Birkhoff map is constructed by these criteria. All five main theorems remain unproved.",
+    "Six unrelated uncommitted free Dirichlet/Fredholm/resolvent modules are preserved outside this milestone and excluded from its committed checker and exact declaration audit."
+  ],
+  "norm": "Exact original FourierLebesgueSpace(2,-r,infinity) endpoint norm; full original real mean-zero physically period-one distributions retained.",
+  "parameters": "All real domain and codomain orders. Independent finite Banach exponents p,q >=1 with (-s-t)*p.toReal>1 and (-r-u)*q.toReal>1. No nontrivial-filter assumption is needed for convergence equivalences.",
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "1e462910a5dc1478150dd6a2ef364e78160d1aae",
+    "baseline_modules": 484,
+    "baseline_sources_verified_unchanged": true,
+    "new_modules_compiled": 1,
+    "existing_core_modules_recompiled": 5,
+    "modules_in_exact_inventory": 485,
+    "audited_declarations": 3464,
+    "theorems": 2865,
+    "definitions": 599,
+    "new_theorems": 9,
+    "new_definitions": 1,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-appendix-b-inverse.log",
+    "compiled_targets": [
+      "NLS.SequenceSpaces.WeightedWeakStarCompactness",
+      "NLS.SequenceSpaces.WeightedWeakStarLowerTopology",
+      "NLS.Fourier.PeriodicWeakStarLowerTopology",
+      "NLS.Articles.KdVPseudomeasures.SourceWeakStarTopology",
+      "NLS.Articles.KdVPseudomeasures.SourceWeakStarCompactSets",
+      "NLS.Articles.KdVPseudomeasures.SourceWeakStarInverse",
+      "NLS.Articles.KdVPseudomeasures.Audit"
+    ]
+  },
+  "output_sha256": {
+    "NLS/Articles/KdVPseudomeasures/SourceWeakStarInverse.lean": "c3e90cbcd71db9b949153262acc9d2f267eb02a6cdb1dc6b6501e96198b7bf83"
+  },
+  "canonical_checkout_written": false,
+  "canonical_head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "git_isolation": {
+    "metadata": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/work/appendix-b-milestones.git",
+    "base_commit": "1e462910a5dc1478150dd6a2ef364e78160d1aae",
+    "branch": "articles/kdv-pseudomeasures",
+    "shared_canonical_git_written": false
+  },
+  "workspace_decision": "pending; all source/build/milestone Git writes remain private",
+  "main_theorems_verified": false
+}

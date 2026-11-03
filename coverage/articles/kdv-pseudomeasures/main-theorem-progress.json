@@ -530,7 +530,12 @@
     "For physical source families with one eventual original endpoint norm bound, compactwise uniform Cauchy control of each original Fourier mode and eventual modewise continuity recover a UNIQUE continuous physical weak-star trajectory in the same endpoint ball. One limit works in EVERY admissible lower finite-p norm on EVERY compact time set.",
     "Continuous trajectories in a fixed original endpoint norm ball converge in the compact-open weak-star topology under compactwise uniform Cauchy Fourier tests. The result holds for arbitrary nontrivial index filters, and the lower exponent and compact time set are chosen after the unique limit.",
     "Uniform Cauchy control on any testing set in one admissible lower norm is equivalent to uniform Cauchy control of each original Fourier mode under an eventual endpoint bound on that testing set. No topology, compactness or nonemptiness of the testing set is required.",
-    "For continuous trajectories in a fixed original endpoint norm ball on a locally compact time domain, existence of a compact-open weak-star limit is EQUIVALENT to compactwise uniform Cauchy control in any one chosen admissible lower finite-p norm. In the article range this specializes to the norm of the IDENTICAL original H-minus-one distributions."
+    "For continuous trajectories in a fixed original endpoint norm ball on a locally compact time domain, existence of a compact-open weak-star limit is EQUIVALENT to compactwise uniform Cauchy control in any one chosen admissible lower finite-p norm. In the article range this specializes to the norm of the IDENTICAL original H-minus-one distributions.",
+    "An ambient map into original physical weak-star potentials with endpoint norm-bounded image is continuous iff EVERY original Fourier coefficient of the map is continuous.",
+    "Every continuous injective map from a weak-star CLOSED endpoint norm-BOUNDED physical subset into any original physical weak-star space is a CLOSED EMBEDDING. Its inverse on its exact image is continuous. Once forward continuity is known, no separate image bound is required for this conclusion.",
+    "For an injective map with endpoint norm-bounded image, continuity of all original Fourier coefficients gives a closed embedding on a closed bounded physical domain. The homeomorphism onto the EXACT physical image is explicitly constructed, with forward and inverse evaluation identities.",
+    "For every such continuous injective map, a domain constraint is closed iff its image is AMBIENT weak-star closed. Arbitrary-filter convergence of images to the image of a domain point is equivalent to convergence to that same original point.",
+    "When the image is also endpoint norm bounded, inverse convergence can independently use ANY admissible original lower finite-p norms on the two sides. The exact strict thresholds and both endpoint bounds are retained. In the article range this uses the IDENTICAL original H-minus-one distributions on both sides."
   ],
   "workspace_status": "Private article worktree retained; current validated milestones are committed locally. GitHub push remains pending explicit destination approval after earlier automatic-review rejection. Canonical source/build/checkout stay read-only; workspace decision is pending.",
   "goal_turn_classification": "progress",
@@ -874,5 +879,16 @@
     "native_closedness_and_full_resolvent_spectrum": false,
     "full_complex_algebraic_order_matching": false,
     "source2_1_ii": false
+  },
+  "verified_appendix_b_inverse_continuity": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-inverse-map.json",
+    "closed_bounded_domain_inverse_continuity": true,
+    "homeomorphism_onto_exact_image": true,
+    "coefficient_continuity_criterion_with_bounded_image": true,
+    "arbitrary_filter_inverse_convergence": true,
+    "independent_lower_norms": true,
+    "original_HminusOne_distributions": true,
+    "remaining_lemma_B1_obligations": [],
+    "main_theorems_verified": false
   }
 }
