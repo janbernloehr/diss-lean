@@ -238,6 +238,77 @@
       "new_lean_declarations_needed": false,
       "canonical_checkout_written": false,
       "workspace_decision": "pending; continue using only the private checkout"
+    },
+    "private_recheck_2026_11_03": {
+      "private_baseline_commit": "378014bfcecd07212b39c7e3bcdc51c4e8306291",
+      "registered_modules_verified_unchanged": 458,
+      "source_text_sha256": "1e1a9238da5d4b0fbe16d6e7e8df1b8698ae35f0b81df612cc6af910c16e1b7e",
+      "date": "2026-11-03",
+      "source_pages": "Appendix B, printed pages 37-38",
+      "source_clauses_rechecked": {
+        "B.1(i)": [
+          "isCompact_sourceNormBall",
+          "metrizable_sourceNormBall",
+          "isSeqCompact_sourceNormBall"
+        ],
+        "B.1(ii)(a)-(b)": [
+          "tendsto_source_seq_iff_bounded_coefficients"
+        ],
+        "B.1(ii)(a)-(c)": [
+          "tendsto_source_seq_iff_bounded_some_lower"
+        ],
+        "B.1(iii)(a)-(b)": [
+          "isCompact_source_iff_isSeqCompact"
+        ],
+        "B.1(iii)(a)-(c)": [
+          "isCompact_source_iff_bounded_closed"
+        ],
+        "B.1(iii)(a)-(d)": [
+          "isCompact_source_iff_bounded_some_lower_compact"
+        ],
+        "B.1(iv)": [
+          "isEmbedding_sourceLowerDistribution_on_bounded"
+        ]
+      },
+      "remaining_appendix_b_obligations": [],
+      "result": "All Lemma B.1(i)-(iv) clauses were already proved; source statements and quantifiers rechecked. No additional Lean declarations needed.",
+      "freshly_compiled_modules": [
+        "NLS.SequenceSpaces.WeightedWeakStarCompactness",
+        "NLS.SequenceSpaces.WeightedWeakStarLowerTopology",
+        "NLS.Fourier.PeriodicWeightedWeakStar",
+        "NLS.Fourier.PeriodicWeakStarLowerTopology",
+        "NLS.Articles.KdVPseudomeasures.AppendixBWeakStar",
+        "NLS.Articles.KdVPseudomeasures.AppendixBLowerTopology",
+        "NLS.Articles.KdVPseudomeasures.RealPredualTopology",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarTopology",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarLimits",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarNets",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarCompactSets",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarTrajectories",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarIntersections",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarClosedGraph",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarAscoli",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarUniformControl",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchy",
+        "NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchyTrajectories",
+        "NLS.Articles.KdVPseudomeasures.Audit"
+      ],
+      "freshly_compiled_module_count": 19,
+      "axiom_audited_public_declarations": 3316,
+      "warnings": 0,
+      "tactic_suggestions": 0,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "log": ".lake/full-original-label-check-20261103/logs/validation-appendix-b-recheck-20261103.log",
+      "log_sha256": "b253d86fa3cee155b807a3efd4ed7dd1de7774bced5f35a1222a4d65273b706e",
+      "canonical_checkout_written": false,
+      "canonical_head_before_and_after": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+      "canonical_status_after": "clean",
+      "workspace_decision": "pending; private checkout and private Git metadata only",
+      "main_theorems_verified": false
     }
   },
   "compact_sets_and_closed_fourier_constraints": {
