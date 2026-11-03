@@ -1,3 +1,8 @@
+import NLS.ComplexAnalysis.EndpointCriticalRatioBounds
+import NLS.SequenceSpaces.NaturalSquareSeparation
+import NLS.KdV.HillEnergyLogarithmicProduct
+import NLS.KdV.HillOmittedEnergyCriticalProduct
+import NLS.KdV.HillHighCriticalFactorBounds
 import NLS.KdV.HillCriticalCentralCensus
 import NLS.KdV.HillSignedCriticalFrequencies
 import NLS.KdV.HillEnergyCriticalProduct
@@ -576,7 +581,11 @@ run_cmd do
     ``NLS.ZakharovShabat.PeriodicEndpointPair.of_candidates,
     ``NLS.ComplexAnalysis.isPreconnected_of_contains_nonreal_and_real_interval,
     ``NLS.ComplexAnalysis.endpointRoot_real_left,
-    ``NLS.ComplexAnalysis.analyticOrderNatAt_linear_mul_comp_sq_zero]
+    ``NLS.ComplexAnalysis.analyticOrderNatAt_linear_mul_comp_sq_zero,
+    ``NLS.ComplexAnalysis.endpointRoot_ne_zero_of_not_mem_segment,
+    ``NLS.ComplexAnalysis.norm_div_sub_one_le_of_half_error,
+    ``NLS.ComplexAnalysis.norm_critical_endpoint_ratio_le,
+    ``NLS.SequenceSpaces.nat_square_separation_ge_sum]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

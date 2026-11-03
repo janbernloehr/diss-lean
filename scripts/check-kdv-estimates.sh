@@ -87,6 +87,7 @@ modules+=(NLS/ZakharovShabat/PeriodicEndpointCandidates NLS/KdV/HillEnergyEndpoi
 modules+=(NLS/ComplexAnalysis/RealCutConnected NLS/ComplexAnalysis/RealEndpointRootSigns NLS/KdV/HillEnergyRootIdentification)
 modules+=(NLS/ComplexAnalysis/DerivativeSquarePullbackOrder NLS/KdV/HillEnergyPolynomialLimits NLS/KdV/HillGapCriticalPoints NLS/KdV/HillCriticalFrequencyBridge NLS/Articles/KdVEstimates/ArnoldIntegerEstimates)
 modules+=(NLS/KdV/HillCriticalCentralCensus NLS/KdV/HillSignedCriticalFrequencies NLS/KdV/HillEnergyCriticalProduct NLS/KdV/HillCriticalEnergyZeros)
+modules+=(NLS/ComplexAnalysis/EndpointCriticalRatioBounds NLS/SequenceSpaces/NaturalSquareSeparation NLS/KdV/HillEnergyLogarithmicProduct NLS/KdV/HillOmittedEnergyCriticalProduct NLS/KdV/HillHighCriticalFactorBounds)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

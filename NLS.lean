@@ -5229,3 +5229,8 @@ import NLS.KdV.HillCriticalCentralCensus
 import NLS.KdV.HillSignedCriticalFrequencies
 import NLS.KdV.HillEnergyCriticalProduct
 import NLS.KdV.HillCriticalEnergyZeros
+import NLS.ComplexAnalysis.EndpointCriticalRatioBounds
+import NLS.SequenceSpaces.NaturalSquareSeparation
+import NLS.KdV.HillEnergyLogarithmicProduct
+import NLS.KdV.HillOmittedEnergyCriticalProduct
+import NLS.KdV.HillHighCriticalFactorBounds
