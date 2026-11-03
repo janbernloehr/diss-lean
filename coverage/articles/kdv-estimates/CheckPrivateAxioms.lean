@@ -1,3 +1,6 @@
+import NLS.KdV.HillPhysicalIntegerActions
+import NLS.Articles.KdVEstimates.PhysicalIntegerEstimates
+import NLS.KdV.HillActionSquareBound
 import NLS.KdV.HillNativeIntegerLower
 import NLS.KdV.HillHamiltonianNormBounds
 import NLS.KdV.HillHamiltonianConvolutionBounds

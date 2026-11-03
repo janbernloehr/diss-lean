@@ -5201,3 +5201,6 @@ import NLS.KdV.HillHamiltonianNormBounds
 import NLS.KdV.HillHamiltonianConvolutionBounds
 import NLS.KdV.HillForwardSobolevBound
 import NLS.Articles.KdVEstimates.IntegerEstimates
+import NLS.KdV.HillPhysicalIntegerActions
+import NLS.Articles.KdVEstimates.PhysicalIntegerEstimates
+import NLS.KdV.HillActionSquareBound
