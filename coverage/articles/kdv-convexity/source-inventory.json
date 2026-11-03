@@ -724,10 +724,27 @@
         "NLS.KdV.exists_hillHminus_joint_gap_square_on_disc",
         "NLS.KdV.exists_hillHminus_joint_filled_gap_square",
         "NLS.KdV.exists_hillHminus_joint_contour_primitive",
-        "NLS.KdV.exists_hillHminus_analytic_gap_period_germs"
+        "NLS.KdV.exists_hillHminus_analytic_gap_period_germs",
+        "NLS.ComplexAnalysis.eventuallyEq_of_regular_scalar_coordinate",
+        "NLS.KdV.hillHminus_trace_chart_source_germ",
+        "NLS.KdV.exists_hillHminus_trace_chart_source_eqOn",
+        "NLS.KdV.hillHminus_trace_chart_eq_realCut_on_ball",
+        "NLS.KdV.exists_hillHminus_trace_chart_real_ball_agreement",
+        "NLS.KdV.exists_hillHminus_trace_chart_local_real_agreement",
+        "NLS.KdV.exists_hillHminus_trace_chart_compact_real_agreement",
+        "NLS.ComplexAnalysis.dist_circleMap_le_center_radius",
+        "NLS.ComplexAnalysis.circleMap_mem_collar_of_close_centers_radii",
+        "NLS.ComplexAnalysis.circleIntegral_eq_of_close_circle_collar",
+        "NLS.ComplexAnalysis.circleIntegral_eq_of_circleMap_eq",
+        "NLS.KdV.continuous_hillHminusRealGapCenter",
+        "NLS.KdV.continuous_hillHminusRealGapHalfLength",
+        "NLS.KdV.continuous_hillHminusRealGapCollar",
+        "NLS.KdV.exists_hillHminus_gap_circle_close_neighborhood",
+        "NLS.KdV.exists_hillHminus_analytic_canonical_gap_periods",
+        "NLS.KdV.exists_hillHminus_finite_canonical_period_extensions"
       ],
       "remaining": [
-        "Identify the joint square and primitive-collar extensions with the canonical functions at nearby real H^-1 potentials; glue the local period germs and match them with the existing common high family. At every real reference potential and every positive index, joint analytic filled-square and primitive-collar extensions now retain the full actual reference branch, and all polynomial/cubic contour integrals are analytic on one neighborhood. Singular-Hill operator identification, all-period signs, global Birkhoff-action identification and real isospectral invariance remain.",
+        "Match the actual canonical periods with the existing common high source family and combine the new simultaneous finite-head extensions with that tail on one complex H^-1 neighborhood. Every positive-index canonical polynomial/cubic period now has local complex-analytic extensions agreeing with the actual period at every nearby real input, and any prescribed finite set of indices shares one neighborhood. Global potential-family gluing, central period signs, intrinsic singular-Hill operator identification, Birkhoff-action identification and real isospectral invariance remain.",
         "Identify the actual Arnold periods with the action coordinates of the same global H^-1 KdV Birkhoff map used in the article. The proved estimates concern the constructed spectral periods, not an arbitrary coordinate map.",
         "Apply the proved simultaneous descent/gluing and exact weighted-action summation mechanism to the actual KdV Birkhoff-coordinate cubic periods. This still requires the actual global H^-1 Birkhoff map and Arnold-period action identity, real isospectral invariance on its action fibers, and analytic finite central periods. No common action domain is now required as a separate abstract hypothesis.",
         "Identify the analytically summed contour series with physical renormalized energy using the finite-gap trace formula and density.",
@@ -1851,7 +1868,7 @@
     "fixed_gap_circle_has_complex_Hminus1_neighborhood_with_stable_count_and_nonzero_boundary": true,
     "complex_neighborhood_quantifier": "For each fixed real q and positive gap index n, one complex-open V contains q and precedes all nearby complex potentials and boundary points. A single V for every central/high canonical circle is not asserted here.",
     "actual_primitive_glued_holomorphically_on_entire_real_band_domain": true,
-    "all_central_Arnold_and_cubic_periods_constructed_and_analytic": false,
+    "all_central_Arnold_and_cubic_periods_constructed_and_analytic": true,
     "all_central_moment_signs_and_action_identities_proved": false,
     "intrinsic_singular_Hill_operator_characteristic_identity_proved": false,
     "actual_global_KdV_Birkhoff_map_or_action_identity_proved": false,
@@ -1877,7 +1894,8 @@
       "Indexed trace parity along the real source path",
       "Real gap contour geometry"
     ],
-    "all_index_real_periods_constructed_and_integrable": true
+    "all_index_real_periods_constructed_and_integrable": true,
+    "canonical_period_analyticity_scope": "Local complex-analytic extensions of actual canonical periods at every real reference and every positive index, agreeing at all nearby real inputs; simultaneous on any prescribed finite index set. Common infinite-tail matching and global family gluing remain open."
   },
   "Hminus1_band_primitive_progress": {
     "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
@@ -1905,7 +1923,7 @@
     "Arnold_normalization": "A_n=-(1/pi)*integral F=(1/pi)*integral lambda*Delta_prime/R; counterclockwise orientation and no extra factor i.",
     "cubic_normalization": "R_n=(1/pi)*integral (F+i*n*pi)^3, on the canonical circle at every n:PNat.",
     "new_all_index_real_periods_identified_with_existing_common_high_family": false,
-    "all_central_complex_potential_analytic_periods_constructed": false,
+    "all_central_complex_potential_analytic_periods_constructed": true,
     "indexed_primitive_limits_at_all_real_endpoints_proved": true,
     "filled_central_shifted_squares_proved": true,
     "all_central_period_signs_and_Birkhoff_action_identity_proved": false,
@@ -1929,7 +1947,8 @@
       "Real band trace bounds",
       "Two-sided L2 primitive gluing through real bands"
     ],
-    "new_all_real_periods_module": "NLS.KdV.HillHminusOneAllRealPeriods"
+    "new_all_real_periods_module": "NLS.KdV.HillHminusOneAllRealPeriods",
+    "central_period_analyticity_scope": "Local complex-analytic extensions of actual canonical periods at every real reference and every positive index, agreeing at all nearby real inputs; simultaneous on any prescribed finite index set. Common infinite-tail matching and global family gluing remain open."
   },
   "Hminus1_all_gap_square_progress": {
     "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
@@ -1957,7 +1976,7 @@
     "bounded_L2_norm_or_L2_approximation_assumed": false,
     "joint_complex_potential_analyticity_of_new_filled_squares_proved": false,
     "new_all_index_real_periods_identified_with_existing_common_high_family": false,
-    "all_central_complex_potential_analytic_periods_constructed": false,
+    "all_central_complex_potential_analytic_periods_constructed": true,
     "all_central_period_signs_and_Birkhoff_action_identity_proved": false,
     "intrinsic_singular_Hill_operator_characteristic_identity_proved": false,
     "actual_global_positive_ell2_Hamiltonian_extension_proved": false,
@@ -1987,7 +2006,8 @@
       "Two-sided gap limits and squared-cosh inverse-coordinate filling"
     ],
     "joint_complex_potential_filled_square_reference_extensions_constructed": true,
-    "joint_extension_scope": "Joint analytic extensions of the entire reference filled square on each compact isolating disc; identification with the canonical family at nearby real potentials remains open."
+    "joint_extension_scope": "Joint analytic extensions of the entire reference filled square on each compact isolating disc; identification with the canonical family at nearby real potentials remains open.",
+    "central_period_analyticity_scope": "Local complex-analytic extensions of actual canonical periods at every real reference and every positive index, agreeing at all nearby real inputs; simultaneous on any prescribed finite index set. Common infinite-tail matching and global family gluing remain open."
   },
   "Hminus1_joint_gap_germ_progress": {
     "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
@@ -2031,6 +2051,54 @@
       "NLS.ComplexAnalysis.ContinuousMapAnalyticInverse",
       "NLS.ComplexAnalysis.ParametricCircleIntegralHigher"
     ],
-    "shared_source_commit": "174af0e4674c0dcfb8ff3e64edf149d705b65022"
+    "shared_source_commit": "174af0e4674c0dcfb8ff3e64edf149d705b65022",
+    "primitive_collars_and_periods_identified_with_nearby_real_canonical_families": true,
+    "remaining_joint_extension_identification_scope": "The primitive collars and canonical periods are now matched at all nearby real inputs. Identification of the full filled-square charts with the varying canonical filled squares remains separate.",
+    "one_common_complex_neighborhood_for_any_prescribed_finite_period_head": true
+  },
+  "Hminus1_actual_canonical_period_progress": {
+    "potential_space": "Every real unit-period H^-1 distribution with raw Fourier conjugate symmetry; no mean-zero hypothesis.",
+    "regular_scalar_coordinate_germs_unique_for_continuous_lifts": true,
+    "joint_trace_chart_matches_original_source_germ_at_every_nonreal_reference_point": true,
+    "source_agreement_propagates_on_connected_nonreal_energy_charts_for_nearby_real_inputs": true,
+    "both_halfdisc_source_sheets_fixed_before_taking_real_boundary_limit": true,
+    "full_upper_boundary_limit_identifies_actual_primitive_on_real_diameter": true,
+    "joint_trace_chart_matches_actual_real_cut_primitive_in_product_neighborhood_at_each_reference_energy": true,
+    "one_complex_potential_neighborhood_controls_actual_agreement_on_entire_compact_collar": true,
+    "canonical_gap_center_halflength_collar_and_radius_continuous_in_real_Hminus1_topology": true,
+    "continuity_includes_collapsed_gaps_and_needs_no_bounded_L2_norm": true,
+    "moving_canonical_circles_admit_uniform_affine_homotopy_in_fixed_compact_collar": true,
+    "same_geometric_perturbation_bound_preserves_every_holomorphic_integrand": true,
+    "all_actual_polynomial_and_cubic_canonical_periods_locally_extend_complex_analytically_at_every_positive_index": true,
+    "analytic_extensions_equal_actual_canonical_periods_at_every_nearby_real_input_not_only_reference": true,
+    "one_neighborhood_before_all_polynomial_moments_and_cubic_period_at_fixed_index": true,
+    "one_common_neighborhood_for_any_prescribed_finite_set_of_positive_indices": true,
+    "finite_head_quantifier": "For every real q and finite S of positive indices, there is one complex-open W containing q, then analytic families A[n,m], R[n] on W for every n in S and every m, agreeing with the literal actual canonical periods at every real p in W.",
+    "normalization": "A_n,m=-(1/pi)*integral lambda^m*F; R_n=(1/pi)*integral (F+i*n*pi)^3, counterclockwise and without an extra factor i.",
+    "central_and_collapsed_gaps_included": true,
+    "common_neighborhood_for_all_positive_indices_with_existing_high_family_proved": false,
+    "canonical_real_periods_matched_to_existing_common_high_source_family": false,
+    "global_potential_space_analytic_period_family_gluing_proved": false,
+    "all_central_cubic_signs_and_Birkhoff_action_identity_proved": false,
+    "intrinsic_singular_Hill_operator_characteristic_identity_proved": false,
+    "actual_global_positive_ell2_Hamiltonian_extension_proved": false,
+    "new_authored_modules": [
+      "NLS.ComplexAnalysis.ScalarCoordinateUniqueness",
+      "NLS.KdV.HillHminusOneTraceChartSource",
+      "NLS.KdV.HillHminusOneTraceChartBoundary",
+      "NLS.KdV.HillHminusOneTraceChartRealAgreement",
+      "NLS.ComplexAnalysis.NearbyCircleHomotopy",
+      "NLS.KdV.HillHminusOneGapContourContinuity",
+      "NLS.KdV.HillHminusOneAnalyticCanonicalPeriods",
+      "NLS.KdV.HillHminusOneFinitePeriodExtensions"
+    ],
+    "reused_verified_results": [
+      "Local analytic scalar inverse",
+      "Analytic identity on connected energy domains",
+      "Actual full upper H^-1 primitive limits",
+      "Compact uniform neighborhood selection",
+      "Smooth affine circle homotopy and canonical label continuity",
+      "Jointly analytic reference gap-period germs"
+    ]
   }
 }

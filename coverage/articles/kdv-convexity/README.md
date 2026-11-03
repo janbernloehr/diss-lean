@@ -35,8 +35,8 @@ circles with actual zero count two are now constructed at every index.
 The actual primitive now glues holomorphically on the entire real-band
 domain, with exact source normalization. The all-index real periods are
 constructed and real. Joint complex-potential reference extensions and
-analytic contour-period germs are now proved below; matching them to the
-nearby canonical real families remains open. Indexed endpoint limits and
+analytic contour-period germs are now proved below. Their identification
+with the nearby canonical real families is proved in the latest milestone. Indexed endpoint limits and
 energy-analytic filled squares are proved below.
 
 Physical energy/frequency identification, the -6*Id quadratic coefficient
@@ -1591,8 +1591,8 @@ central trace parity and canonical gap-circle geometry are now proved
 below. The actual primitive now glues holomorphically on the entire real-band
 domain, with exact source normalization. The all-index real periods are
 constructed and real. Joint complex-potential reference extensions and
-analytic contour-period germs are now proved below; matching them to the
-nearby canonical real families remains open. Indexed endpoint limits and
+analytic contour-period germs are now proved below. Their identification
+with the nearby canonical real families is proved in the latest milestone. Indexed endpoint limits and
 energy-analytic filled squares are proved below. This is a labeling of the constructed entire
 H^-1 characteristic; its singular-operator identification and global
 KdV Birkhoff-action interpretation remain open. Theorem 1.1 and all other
@@ -1800,9 +1800,10 @@ real periods, with counterclockwise A_n,m=-(1/pi)*integral lambda^m*F and
 R_n=(1/pi)*integral (F+i*n*pi)^3, without an additional factor i.
 
 These are local analytic continuations of the full actual reference
-functions. Identification with the canonical functions at nearby real
-potentials, gluing the period germs into one actual family, and matching
-to the existing common high family remain open. The global Birkhoff map,
+functions. The next milestone identifies their contour integrals with
+the actual canonical periods at every nearby real input, simultaneously
+on any prescribed finite index set. Gluing a global potential-space
+family and matching to the existing common high family remain open. The global Birkhoff map,
 action identity and real isospectral invariance remain required before
 the verified action-space descent can yield Theorem 1.1. All main theorem
 flags remain unverified.
@@ -1811,15 +1812,60 @@ Four compact-function and analytic-circle-integration modules are
 reused byte-for-byte from `articles/kdv-estimates` at `174af0e`. Their
 retained import boundaries are pinned in `joint-square-shared-imports.json`.
 
+## Actual canonical periods and simultaneous finite-head analyticity
+
+`ScalarCoordinateUniqueness.lean` proves uniqueness of continuous germs
+through a regular analytic scalar coordinate.
+`HillHminusOneTraceChartSource.lean` applies this to the actual hyperbolic
+trace at nonreal anchors. The analytic identity theorem propagates exact
+source agreement over connected energy charts for every nearby real
+H^-1 input. `HillHminusOneTraceChartBoundary.lean` handles both half-discs
+and uses the full upper boundary limits to identify the real diameter.
+`HillHminusOneTraceChartRealAgreement.lean` turns these local product
+neighborhoods into one potential neighborhood for an entire compact
+contour collar. Both source sheets and the original logarithm period
+are retained; no nearby-real identification is assumed.
+
+`HillHminusOneGapContourContinuity.lean` proves continuity of canonical
+gap centers, half-lengths, collars and radii from the intrinsic labels,
+including collisions. It provides a complex-open neighborhood controlling
+the center-plus-radius perturbation at every nearby real potential.
+`NearbyCircleHomotopy.lean` bounds corresponding circle points and keeps
+the affine circle homotopy in one fixed closed collar. The same geometric
+bound preserves every holomorphic integrand, so it is independent of the
+polynomial moment order.
+
+`HillHminusOneAnalyticCanonicalPeriods.lean` combines the actual collar
+agreement with this deformation. For every real H^-1 potential and every
+positive gap index it constructs complex-analytic extensions of all
+literal canonical polynomial moments and the shifted cubic period on
+one neighborhood. They equal the actual moving-circle periods at every
+nearby real input, including central and collapsed gaps. This strengthens
+the preceding reference-germ result to local analyticity of the actual
+canonical periods. The exact counterclockwise factors remain
+A_n,m=-(1/pi)*integral lambda^m*F and
+R_n=(1/pi)*integral (F+i*n*pi)^3, without an extra factor i.
+
+`HillHminusOneFinitePeriodExtensions.lean` gives one neighborhood before
+every index in any prescribed finite set and every polynomial order,
+with analytic Arnold/cubic families and exact nearby-real canonical
+identities. This supplies the finite central head needed for Lemma 4.6.
+Matching the actual canonical periods to the previously constructed
+common high family, obtaining one neighborhood for the entire sequence,
+central cubic signs and action identities remain open. Global Birkhoff
+coordinates and real isospectral invariance are still required for the
+positive-ell2 action-space extension. All main theorem flags remain
+unverified.
+
 ## Remaining essential KdV work
 
-1. Identify the joint filled-square and primitive-collar continuations
-   with the canonical functions at nearby real H^-1 potentials. Glue the
-   local analytic period germs and match them to the existing common
-   high family. The reference continuations, literal analytic contour
-   integrals, indexed endpoints and all energy-analytic gap squares are
-   now proved, including central and collapsed gaps. Complete the
-   remaining central signs and estimates.
+1. Match the actual canonical periods to the existing common high source
+   family and combine that tail with the simultaneous finite-head
+   analytic extensions on one complex H^-1 neighborhood. Local analytic
+   extensions now agree with every nearby real canonical period, at all
+   positive indices and simultaneously on any prescribed finite set.
+   Glue the global potential family and prove the remaining central
+   signs and estimates.
 2. The **high-index complex H^-1-neighborhood** bounds
    |R_n|=O(gamma_n^4/n^3), gamma_n^2/n<=16*pi*|A_n| and
    |8*n*pi*R_n|<=C*|A_n|^2 are now proved. Identify A_n with the
@@ -1872,15 +1918,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `f2e213d` contains 359 source modules. Every
-baseline source hash remains unchanged. Four exact shared modules and nine
-authored modules pass incremental Lean 4.33.1/mathlib v4.33.1 checks with
-`warningAsError=true`. The full reproducible script now lists 372 source
-modules. The positive-index example passes.
+The validated baseline at `9156281` contains 372 source modules. Every
+baseline source hash remains unchanged. Eight authored modules pass
+incremental Lean 4.33.1/mathlib v4.33.1 checks with `warningAsError=true`.
+The full reproducible script now lists 380 source modules. The
+positive-index example passes.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 185 additional shared modules:
-3986 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 187 additional shared modules:
+4004 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
