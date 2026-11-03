@@ -96,8 +96,8 @@
     "qualifications": "The action definition retains local auxiliary K, endpoints and contour arguments. A single GLOBAL original canonical action family, arbitrary-contour independence, all-index gluing, full complex analytic I_n/gamma_n^2 extension, real-valuedness/positivity and source3.2 are not yet proved. No main theorem is claimed."
   },
   "essential_remaining": [
-    "Prove auxiliary-choice independence and global gluing of the NOW CONSTRUCTED actual local high Hill contour actions, preserving the ACTUAL physical root. Identify them with a single original canonical action family at ALL required indices and potentials. Local real-gap contour-to-boundary equality, winding normalization and collapsed-gap zero action are NOW PROVED.",
-    "Prove the COMPLEX-potential analytic action-to-gap-square extension through collapsed gaps and locally uniform 8*n*pi*I_n/gamma_n^2->1 as in source3.2. The current locally uniform estimate is for REAL potentials in one OPEN complex H-minus-one neighborhood. Action real-valuedness/positivity and all-index vanishing equivalence remain open where used.",
+    "Glue the NOW PROVED chartwise analytic normalized action ratios and contour-independent high actions across DIFFERENT local square/radius charts. Use actual pair uniqueness and uniqueness of the filled squared primitive from the shared squaredCosh inverse at an actual branch root, then identify the same intrinsic normalized root and ratio on overlaps. Within-chart arbitrary-contour independence, full COMPLEX local analytic ratio through collapse, locally uniform8*pi*n normalization and high local I=0 iff gap=0 are NOW PROVED.",
+    "Construct and identify ONE ORIGINAL canonical Hill action family at ALL required indices on a common complex neighborhood of the real mean-zero H-minus-one space. Establish the remaining low-index analytic action ratios, all-index vanishing equivalence, and real-valuedness/positivity where used. Full source3.2 also requires the actual Birkhoff-coordinate estimate; it remains OPEN.",
     "Construct or identify the ACTUAL original KdV H-minus-one Birkhoff map, with verified action/angle coordinates, original differential q_(2n)/sqrt(2*pi*abs(n)), exact target order s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. FULL complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB are already PROVED; do not redo them or substitute arbitrary supplied conjugacy data.",
     "Construct or identify the ACTUAL original H-minus-one KdV flow defined by convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization, and derive main1.1/1.3/1.4 plus Wiener5.1/5.9. All five main theorems remain UNPROVED; keep the goal ACTIVE. Quantitative DirichletC4ii, remaining low parity/interlacing and complex ratio2.20 remain open only where required."
   ],
@@ -148,5 +148,28 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "actual_complex_analytic_action_ratios_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-analytic-action-ratios-map.json",
+    "arbitrary_piecewise_C1_contour_formula_for_complex_and_collapsed_gaps": true,
+    "arbitrary_contour_independence_within_same_square_chart": true,
+    "actual_positive_circle_exists_for_every_complex_or_collapsed_high_pair": true,
+    "exact_eight_n_pi_error_for_all_complex_inputs_and_winding_one_contours": true,
+    "intrinsic_analytic_midpoint_and_squared_half_gap_from_actual_contour_polynomial": true,
+    "local_even_family_square_descent_including_discontinuous_root_selection": true,
+    "analytic_normalized_semicircle_mean_from_actual_segment_only": true,
+    "intrinsic_normalized_action_ratio_analytic_through_all_high_collapsed_gaps": true,
+    "actual_local_contour_action_equals_gap_square_times_analytic_ratio_over_eight_n_pi": true,
+    "ratio_uniformly_close_to_one_on_one_complex_neighborhood_before_all_high_indices": true,
+    "local_high_action_zero_iff_actual_gap_collapsed_for_all_complex_inputs": true,
+    "independence_across_different_square_and_radius_charts_proved": false,
+    "global_canonical_Hill_action_family_all_indices_constructed": false,
+    "all_index_global_canonical_action_ratio_analytic_on_one_common_neighborhood": false,
+    "action_real_valuedness_and_positivity_proved": false,
+    "full_source_Theorem3_2_proved": false,
+    "actual_original_KdV_Birkhoff_map_constructed": false,
+    "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
+    "main_theorems_verified": false
+  },
+  "validation_scope": "Original validation and verified fields record the preceding local real high contour-action milestone. actual_complex_analytic_action_ratios_followup links the later4468-declaration audit: arbitrary-contour independence WITHIN a chart, full COMPLEX locally uniform action estimates, analytic normalized ratios THROUGH collapse and high local zero-action equivalence. Cross-chart/all-index global gluing remains open."
 }

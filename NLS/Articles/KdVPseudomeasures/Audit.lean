@@ -711,6 +711,14 @@ import NLS.KdV.HillHminusOneHighContourAction
 import NLS.KdV.HillHminusOneContourBoundaryAction
 import NLS.KdV.HillHminusOneContourActionExistence
 import NLS.KdV.HillHminusOneUniformContourActions
+import NLS.ComplexAnalysis.PiecewiseOpenDiscPeriod
+import NLS.ComplexAnalysis.EndpointPrimitiveCircuitPeriod
+import NLS.KdV.HillHminusOneContourActionPeriod
+import NLS.KdV.HillHminusOneComplexContourActions
+import NLS.ComplexAnalysis.LocalEvenSquareFamily
+import NLS.ComplexAnalysis.ParametricSemicircleMean
+import NLS.KdV.HillHminusOneActionRatio
+import NLS.KdV.HillHminusOneUniformActionRatios
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5153,3 +5161,32 @@ import NLS.KdV.HillHminusOneUniformContourActions
 #print axioms NLS.KdV.hillHminusHighContourAction_collapsed_eq_zero
 #print axioms NLS.KdV.exists_hillHminus_high_contour_action
 #print axioms NLS.KdV.exists_hillHminus_uniform_high_contour_actions
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.trace
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.isCompact_trace
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.inside_iff_trace_subset
+#print axioms NLS.ComplexAnalysis.PiecewiseC1Loop.integral_eq_reference_mul_winding_of_open_disc_cut
+#print axioms NLS.ComplexAnalysis.endpointPrimitive_circuit_period
+#print axioms NLS.ComplexAnalysis.exists_endpointGap_winding_one_contour
+#print axioms NLS.KdV.hillHminusHighContourAction_circuit_formula
+#print axioms NLS.KdV.norm_hillHminusHighContourAction_error_le
+#print axioms NLS.KdV.hillHminusHighContourAction_eq_of_winding_eq
+#print axioms NLS.KdV.HillHminusHighGapPair.exists_winding_one_contour
+#print axioms NLS.KdV.exists_hillHminus_uniform_complex_contour_actions
+#print axioms NLS.ComplexAnalysis.analyticAt_evenFamily_of_analytic_square
+#print axioms NLS.ComplexAnalysis.parametricSemicircleMean
+#print axioms NLS.ComplexAnalysis.parametricSemicircleMean_neg
+#print axioms NLS.ComplexAnalysis.parametricSemicircleMean_eq_of_sq_eq
+#print axioms NLS.ComplexAnalysis.analyticAt_parametricSemicircleMean
+#print axioms NLS.ComplexAnalysis.analyticAt_parametricSemicircleMean_of_analytic_square
+#print axioms NLS.KdV.hillHminusGapMidpoint
+#print axioms NLS.KdV.hillHminusSquaredHalfGap
+#print axioms NLS.KdV.hillHminusNormalizedActionRatio
+#print axioms NLS.KdV.HillHminusHighGapPair.symmetric_gap_data
+#print axioms NLS.KdV.analyticOnNhd_hillHminus_symmetric_gap_data
+#print axioms NLS.KdV.HillHminusHighGapPair.affine_gap_mem_ball
+#print axioms NLS.KdV.hillHminusNormalizedActionRatio_eq_mean
+#print axioms NLS.KdV.analyticOnNhd_hillHminusNormalizedActionRatio
+#print axioms NLS.KdV.hillHminusHighContourAction_eq_gap_square_mul_ratio
+#print axioms NLS.KdV.norm_hillHminusNormalizedActionRatio_sub_one_le
+#print axioms NLS.KdV.hillHminusHighContourAction_eq_zero_iff_gap_collapsed
+#print axioms NLS.KdV.exists_hillHminus_uniform_analytic_action_ratios

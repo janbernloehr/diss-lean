@@ -745,6 +745,14 @@ modules = [
     'NLS.KdV.HillHminusOneContourBoundaryAction',
     'NLS.KdV.HillHminusOneContourActionExistence',
     'NLS.KdV.HillHminusOneUniformContourActions',
+    'NLS.ComplexAnalysis.PiecewiseOpenDiscPeriod',
+    'NLS.ComplexAnalysis.EndpointPrimitiveCircuitPeriod',
+    'NLS.KdV.HillHminusOneContourActionPeriod',
+    'NLS.KdV.HillHminusOneComplexContourActions',
+    'NLS.ComplexAnalysis.LocalEvenSquareFamily',
+    'NLS.ComplexAnalysis.ParametricSemicircleMean',
+    'NLS.KdV.HillHminusOneActionRatio',
+    'NLS.KdV.HillHminusOneUniformActionRatios',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
