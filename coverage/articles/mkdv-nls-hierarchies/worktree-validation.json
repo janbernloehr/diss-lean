@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 4771,
+  "audited_declarations_and_auxiliaries": 4828,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -12549,14 +12549,109 @@
       "kind": "theorem",
       "name": "physical_NLS_actions_determined_by_mKdV_actions_mean",
       "file": "NLS/Articles/MKdVNLSHierarchies/GlobalSobolevCartesianInverseIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_real_quadratic_lift",
+      "file": "NLS/SequenceSpaces/WeightedNonnegativeActionLifting.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraSobolevCartesian_action_data",
+      "file": "NLS/MKdV/MiuraSobolevActionRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraSobolev_profile_of_nonnegative_actions",
+      "file": "NLS/MKdV/MiuraSobolevActionRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevActionSequence_one_eq_physical",
+      "file": "NLS/MKdV/MiuraSobolevActionRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraPositiveCartesian_analytic_chart_H1",
+      "file": "NLS/MKdV/MiuraGeneralCartesianComplexInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPositiveCartesian_complex_inverse_real_germ_H1",
+      "file": "NLS/MKdV/MiuraGeneralCartesianComplexInverse.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nonempty_miuraGeneralCartesianNLSActionChart",
+      "file": "NLS/MKdV/MiuraGeneralNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "def",
+      "name": "observables",
+      "file": "NLS/MKdV/MiuraGeneralNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "observables_analytic",
+      "file": "NLS/MKdV/MiuraGeneralNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "observables_recover",
+      "file": "NLS/MKdV/MiuraGeneralNLSActionsCartesianChart.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analytic_cartesian_eq_zero_of_physical_real_at",
+      "file": "NLS/MKdV/MiuraCartesianRealIdentityAt.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "observables_rotation_stationary_real",
+      "file": "NLS/MKdV/MiuraGeneralNLSActionsCartesianStationarity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "observables_rotation_stationary",
+      "file": "NLS/MKdV/MiuraGeneralNLSActionsCartesianStationarity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_tail_sum_factor_of_chart_at",
+      "file": "NLS/SequenceSpaces/LocalTailActionFactorAt.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_tail_sum_factor_of_recovery_at",
+      "file": "NLS/SequenceSpaces/LocalTailActionFactorAt.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_local_tail_action_factor_of_sign_invariance_at",
+      "file": "NLS/SequenceSpaces/LocalTailActionFactorAt.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_mKdV_native_action_data_realization",
+      "file": "NLS/Articles/MKdVNLSHierarchies/ActionRealizationGeneralCharts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_H1_Hill_action_data_realization",
+      "file": "NLS/Articles/MKdVNLSHierarchies/ActionRealizationGeneralCharts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_NLS_actions_general_H1_Cartesian_chart",
+      "file": "NLS/Articles/MKdVNLSHierarchies/ActionRealizationGeneralCharts.lean"
     }
   ],
-  "public_declaration_count": 2506,
-  "theorem_count": 2040,
-  "definition_count": 466,
-  "full_build": "457 article/shared modules have validated private outputs. All 449 unchanged prefix module source hashes match the prior 4f9bba0 milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2525,
+  "theorem_count": 2058,
+  "definition_count": 467,
+  "full_build": "465 article/shared modules have validated private outputs. All 457 unchanged prefix module source hashes match the prior 1f4185e milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/EvenActionPositiveRegularity.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/WeightedNonnegativeActionLifting.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -13015,12 +13110,20 @@
     "NLS/MKdV/MiuraCartesianSobolevInverse.lean": "542695c6c0f59f54f8c085f52a27999d799b09624e8c75eda7db130b32c11731",
     "NLS/MKdV/MiuraSobolevActionFiberIdentification.lean": "b5615f5d675d34475a25518e73520bb9100420374a20d0fffc9d6aa9202b4446",
     "NLS/Articles/MKdVNLSHierarchies/GlobalSobolevCartesianInverseIdentification.lean": "53348512fb8653f37d2c5d04b03d3c691a79746eb5bd6a309d6604b62a8f831f",
+    "NLS/SequenceSpaces/WeightedNonnegativeActionLifting.lean": "2f2b4dfd2a940aee269a09b0957c91d5462d4843b31b08f16f5cf53b2ae2b5da",
+    "NLS/MKdV/MiuraSobolevActionRealization.lean": "66b3505cd578191c5c7d5b26c72083ec71b07ee6b9b22b541364c44faa96db1c",
+    "NLS/MKdV/MiuraGeneralCartesianComplexInverse.lean": "e45945448f089dff6edf3a1e29e22218b63b9b63d5991260ac2a442e08c438e5",
+    "NLS/MKdV/MiuraGeneralNLSActionsCartesianChart.lean": "bb51b196e2b821bcb6acf2ce3216a7551aded6cc542f8c8dd65dc5a420d8aacf",
+    "NLS/MKdV/MiuraCartesianRealIdentityAt.lean": "e149be0ffd4304e60da4ff6335b88095491903c444ba1a10170743f5601303e4",
+    "NLS/MKdV/MiuraGeneralNLSActionsCartesianStationarity.lean": "26184b9533665720c66626b7701ff8b43c3ede3681efc3d1d22045a731734484",
+    "NLS/SequenceSpaces/LocalTailActionFactorAt.lean": "d71681e2ce36d0306a08f87ebd4207f90884a7b52e6018bd75de44a574d26231",
+    "NLS/Articles/MKdVNLSHierarchies/ActionRealizationGeneralCharts.lean": "5bfe42cf22701c1b639ac202fa7b127d4ebe1b23a7d0e21b3787b92d9864c701",
     "NLS.lean": "8b7ce4ad52dd4f8dbc054e0bd1b7e6adc03480720e8557f9a8f54e461da6e8c6",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "3643471426739e2f58aa05d83b8f69e09674aed3cfff9a6ef380602934912c2a",
-    "scripts/check_mkdv_nls.py": "d276f3f668381e2f52ead1a28de7524e5ff655e883afbb5675a1b81ede7757fb"
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "e2a074a5925794fac8f24b1418ec80ab01ced1379c2e1265d88169c799b2ff74",
+    "scripts/check_mkdv_nls.py": "a96c61ea3e9baeecf6e0d7011661e53254bb996a60821e6059b788c36acce0e5"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 457,
+  "focused_module_count": 465,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -13407,12 +13510,25 @@
       "public_declaration_count": 2506,
       "theorem_count": 2040,
       "definition_count": 466
+    },
+    {
+      "milestone": "Arbitrary native nonnegative physical action realization, general-H1 holomorphic Cartesian inverse action charts and whole-sequence rotation stationarity, plus arbitrary-basepoint tail descent",
+      "audit_count": 4828,
+      "combined_NLS_audit_count": 49764,
+      "aggregate_compiled": true,
+      "module_count": 465,
+      "reused_prefix_module_count": 457,
+      "reused_prefix_commit": "1f4185eb683ebea9f2f97a2a7db75441995c12b1",
+      "frozen_source_checker_count": 468,
+      "public_declaration_count": 2525,
+      "theorem_count": 2058,
+      "definition_count": 467
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 49706,
+  "combined_audited_NLS_declarations": 49764,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -13420,7 +13536,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 449 unchanged prefix module source hashes match the prior 4f9bba0 milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4771 declarations/auxiliaries and combined audit for 49706 NLS declarations. All 460 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 457 unchanged prefix module source hashes match the prior 1f4185e milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4828 declarations/auxiliaries and combined audit for 49764 NLS declarations. All 468 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

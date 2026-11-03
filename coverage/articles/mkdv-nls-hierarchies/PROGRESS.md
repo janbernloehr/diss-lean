@@ -2234,3 +2234,52 @@ Independent mKdV angles/final angle-sum factorization and the full corrected
 frequency comparison also remain essential. The main-theorem goal stays active.
 
 Validation: all 457 article/shared modules have validated private outputs. The 449 unchanged prefix source hashes match 4f9bba0 and their outputs were reused; all eight added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,771 declarations/auxiliaries and the combined audit for 49,706 NLS declarations, using only the standard allowed axioms. All 460 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,506 declarations (2,040 theorems and 466 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Arbitrary native action realization and general holomorphic Cartesian action charts
+
+Every nonnegative positive-index action sequence with weight 2s+1 and an
+arbitrary real signed mean is now realized by an actual real original H^s
+profile, for every integer s>=1. The coordinate sequence can have infinite
+support and any set of collapsed actions. The shared quadratic lifting
+lemma preserves the exact squared native weight: weighting the actions,
+lifting in l2, and undoing the coordinate weight gives a real pair of order
+s+1/2. Positive projection and the literal mean give native target data;
+the checked global native Cartesian bijection supplies the profile.
+For s=1, `physical_H1_Hill_action_data_realization` explicitly identifies
+every positive entry with the independently defined original physical Hill
+action on the coefficient-preserving original H1 profile. The action cone
+is the weight-three l1 cone at this endpoint, not an unweighted substitute.
+
+At every original physical real H1 profile, the full complex L2 Cartesian
+map now has an actual holomorphic open inverse chart. Every complex left
+inverse germ there preserves the physical real form on nearby real target
+data, by agreement with the checked genuine physical real chart. One common
+complex target ball carries the entire original signed NLS action sequence
+as an l1-valued holomorphic function of the inverse Cartesian coordinates.
+The radius is independent of the selected action index. Conservation on
+the original complete physical action orbits proves rotation stationarity
+on the real target slice; holomorphic uniqueness at the arbitrary real
+basepoint proves it throughout that full complex ball. Closed actions,
+zero mean and general nonzero profiles are included.
+
+Shared sequence-space descent now also works at an arbitrary prescribed
+basepoint of an open sign-invariant domain, retaining the finite head
+linearly and quotienting the tail by its quadratic action radii. This
+removes the zero-basepoint restriction from the previously checked local
+tail-action factorization mechanism. Applying this general descent to the
+arbitrary-center Cartesian chart, removing the finite open head variables,
+and gluing the resulting action factors are still required before claiming
+global forward analytic I(J,mean) factorization. Rotation stationarity
+alone is not being reported as that factorization.
+
+Article-facing declarations are `physical_mKdV_native_action_data_realization`,
+`physical_H1_Hill_action_data_realization` and
+`physical_NLS_actions_general_H1_Cartesian_chart` in
+`NLS/Articles/MKdVNLSHierarchies/ActionRealizationGeneralCharts.lean`.
+Native inverse continuity/analyticity, full Gardner canonicity, independent
+mKdV angles/final angle-sum factorization, the forward analytic action factor
+and the full corrected frequency comparison remain essential. The main
+theorem goal stays active.
+
+Validation: all 465 article/shared modules have validated private outputs. The 457 unchanged prefix source hashes match 1f4185e and their outputs were reused; all eight added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,828 declarations/auxiliaries and the combined audit for 49,764 NLS declarations, using only the standard allowed axioms. All 468 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,525 declarations (2,058 theorems and 467 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.ActionRealizationGeneralCharts
 import NLS.Articles.MKdVNLSHierarchies.GlobalSobolevCartesianInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.GeneralCartesianLocalInverseIdentification
 import NLS.Articles.MKdVNLSHierarchies.CartesianPlaneCanonicalIdentification
@@ -56,6 +57,10 @@ open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
+    `NLS.WeightedCoeff.exists_real_quadratic_lift,
+    `NLS.Coeff.exists_local_tail_sum_factor_of_chart_at,
+    `NLS.Coeff.exists_local_tail_sum_factor_of_recovery_at,
+    `NLS.Coeff.exists_local_tail_action_factor_of_sign_invariance_at,
     `NLS.RealCoeff.weighted_mem_of_positive_of_even_action,
     `NLS.ComplexAnalysis.exists_preimage_of_closedRange_of_charts,
     `NLS.ComplexAnalysis.existsUnique_preimage_of_proper_of_charts,
@@ -726,6 +731,13 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.MKdV.exists_miuraSobolev_profile_of_nonnegative_actions,
+    ``NLS.MKdV.exists_miuraPositiveCartesian_analytic_chart_H1,
+    ``NLS.MKdV.nonempty_miuraGeneralCartesianNLSActionChart,
+    ``NLS.MKdV.MiuraGeneralCartesianNLSActionChart.observables_rotation_stationary,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_H1_Hill_action_data_realization,
+    ``NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_general_H1_Cartesian_chart,
+
     ``NLS.MKdV.miuraPhysicalCartesian_preimage_Sobolev_range,
     ``NLS.MKdV.existsUnique_miuraPhysicalCartesian_preimage_Sobolev,
     ``NLS.MKdV.miuraPhysicalSobolevCartesianMap_bijective,
