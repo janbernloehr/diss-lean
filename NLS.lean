@@ -5505,3 +5505,15 @@ import NLS.KdV.HillAbelianCosinePeriods
 import NLS.KdV.HillAbelianCosinePrimitivePeriods
 import NLS.KdV.HillDeflatedRadicandFactorization
 import NLS.KdV.HillDirichletSheetRoot
+import NLS.ComplexAnalysis.JointSpectralDerivativeAnalytic
+import NLS.ComplexAnalysis.AnalyticLogarithmicMoments
+import NLS.ComplexAnalysis.TwoZeroCauchyDeflation
+import NLS.KdV.HillDirichletGapTrigonometry
+import NLS.KdV.HillDirichletTerminalAngle
+import NLS.KdV.HillAllGapMultiplicities
+import NLS.KdV.HillComplexLowGapPairs
+import NLS.KdV.HillAllGapSymmetricData
+import NLS.KdV.HillLocalGapPhysicalMatching
+import NLS.KdV.HillLocalGapUnit
+import NLS.KdV.HillLocalGapUnitPhysical
+import NLS.KdV.HillLocalDeflatedComplexRoot

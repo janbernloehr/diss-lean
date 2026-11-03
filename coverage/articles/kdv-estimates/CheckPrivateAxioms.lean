@@ -582,6 +582,18 @@ import NLS.KdV.HillAbelianCosinePeriods
 import NLS.KdV.HillAbelianCosinePrimitivePeriods
 import NLS.KdV.HillDeflatedRadicandFactorization
 import NLS.KdV.HillDirichletSheetRoot
+import NLS.ComplexAnalysis.JointSpectralDerivativeAnalytic
+import NLS.ComplexAnalysis.AnalyticLogarithmicMoments
+import NLS.ComplexAnalysis.TwoZeroCauchyDeflation
+import NLS.KdV.HillDirichletGapTrigonometry
+import NLS.KdV.HillDirichletTerminalAngle
+import NLS.KdV.HillAllGapMultiplicities
+import NLS.KdV.HillComplexLowGapPairs
+import NLS.KdV.HillAllGapSymmetricData
+import NLS.KdV.HillLocalGapPhysicalMatching
+import NLS.KdV.HillLocalGapUnit
+import NLS.KdV.HillLocalGapUnitPhysical
+import NLS.KdV.HillLocalDeflatedComplexRoot
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -977,7 +989,14 @@ run_cmd do
     ``NLS.Coeff.isCompactOperator_fderiv_of_tailCoordinateBound,
     ``NLS.ComplexAnalysis.mem_slitPlane_one_sub_of_norm_lt_one,
     ``NLS.ComplexAnalysis.circleIntegral_inv_endpointRoot_midpoint,
-    ``NLS.ComplexAnalysis.circleIntegral_div_endpointRoot_eq_cosine_integral]
+    ``NLS.ComplexAnalysis.circleIntegral_div_endpointRoot_eq_cosine_integral,
+    ``NLS.ComplexAnalysis.analyticOnNhd_spectral_deriv_of_analyticOnNhd,
+    ``NLS.ComplexAnalysis.logarithmicCircleMoment,
+    ``NLS.ComplexAnalysis.analyticOnNhd_logarithmicCircleMoment,
+    ``NLS.ComplexAnalysis.logarithmicCircleMoment_eq_two_root_powers,
+    ``NLS.ComplexAnalysis.circleCauchyTransform_div_two_zero_factor,
+    ``NLS.ComplexAnalysis.deriv_eq_zero_of_two_zero_order,
+    ``NLS.ComplexAnalysis.circleCauchyTransform_two_zero_unit]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
