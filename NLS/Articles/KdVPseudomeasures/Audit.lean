@@ -394,8 +394,10 @@ import NLS.KdV.HminusOneMiuraCompactness
 import NLS.Articles.KdVPseudomeasures.OriginalIsospectralMiura
 import NLS.Fourier.PeriodicPhysicalSourceClosed
 import NLS.Articles.KdVPseudomeasures.OriginalHminusOneCompactness
+import NLS.FunctionalAnalysis.UniformCauchyLimit
+import NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchy
 
-/-! Exact declaration and axiom audit for the private article dependency view. -/
+/-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
 #print axioms NLS.WeightedCoeff.ofFinsupp
 #print axioms NLS.WeightedCoeff.ofFinsupp_apply
@@ -3497,3 +3499,10 @@ import NLS.Articles.KdVPseudomeasures.OriginalHminusOneCompactness
 #print axioms NLS.Articles.KdVPseudomeasures.isClosed_originalIsospectralSet
 #print axioms NLS.Articles.KdVPseudomeasures.isClosedEmbedding_originalHminusOnePotential
 #print axioms NLS.Articles.KdVPseudomeasures.isCompact_originalIsospectralSet
+#print axioms NLS.exists_limit_of_uniformCauchyOn
+#print axioms NLS.Articles.KdVPseudomeasures.existsUnique_source_of_cauchy_coefficients_normBound
+#print axioms NLS.Articles.KdVPseudomeasures.cauchy_sourceLowerDistribution_iff_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.cauchy_sourceLowerDistribution_iff_other_lower
+#print axioms NLS.Articles.KdVPseudomeasures.existsUnique_sourceFamily_of_uniformCauchy_coefficients_normBound
+#print axioms NLS.Articles.KdVPseudomeasures.existsUnique_sourceFamily_of_uniformCauchy_lower_normBound
+#print axioms NLS.Articles.KdVPseudomeasures.uniformCauchy_sourceLowerDistribution_iff_coefficients

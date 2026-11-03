@@ -174,7 +174,7 @@
     "Complete original periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source2.1(ii). General-weight direct2.1(i),endpoint2.18-2.19,REAL2.20,uniform bootstrap,cross-order labels/gaps,bounded weak-star label continuity/closed spectral fibers and all AppendixB clauses remain proved. General complex-ratio2.20 remains open.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
-  "no_completion_claim": "The generic frequency functional \u03a9 is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
+  "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
   "shared_module_moves": {
     "WeakStarEndpoint": "NLS/SequenceSpaces/WienerWeakStar.lean",
     "WeightedWeakStarEndpoint": "NLS/SequenceSpaces/WeightedWienerWeakStar.lean",
@@ -440,7 +440,11 @@
     "Every ACTUAL intrinsic canonical real label is now weak-star continuous on EVERY original endpoint norm-bounded physical set. The proof chooses one uniform norm-ball cutoff before the family,uses actual original spectral lower bounds,and applies the proved physical disk-count stability to the exact canonical cumulative counts. All repeated entries and closed gaps are included.",
     "Every ACTUAL signed canonical gap is weak-star continuous on every bounded original physical set. The entire canonical label sequence and entire signed gap sequence are continuous in their product topologies. No continuity in the weighted infinity norm is asserted.",
     "sourceCanonicalSpectralFiber prescribes the ENTIRE actual canonical spectrum with ALL algebraic repetitions. Such a fiber is relatively weak-star closed on EVERY bounded original physical set,and its intersection with each specified original endpoint norm ball is weak-star compact.",
-    "An ENTIRE original endpoint canonical spectral fiber is weak-star compact IFF it is bounded in the EXACT original endpoint norm. A globally bounded fiber is closed in the ENTIRE physical weak-star space. Actual spectrum exhaustion and all physical algebraic multiplicities are explicitly identified from the prescribed labels. Fiber membership is invariant under endpoint-order reinterpretation of the SAME entire original distribution."
+    "An ENTIRE original endpoint canonical spectral fiber is weak-star compact IFF it is bounded in the EXACT original endpoint norm. A globally bounded fiber is closed in the ENTIRE physical weak-star space. Actual spectrum exhaustion and all physical algebraic multiplicities are explicitly identified from the prescribed labels. Fiber membership is invariant under endpoint-order reinterpretation of the SAME entire original distribution.",
+    "Cauchy Fourier coefficients and an eventual specified original endpoint norm bound give a unique physical weak-star limit retaining that bound. The same limit converges in every admissible lower norm, with exponents selected after the limit.",
+    "Under that eventual endpoint bound, being Cauchy in any one admissible lower finite-p norm is equivalent to being Cauchy in each Fourier coefficient and is independent of the admissible lower norm chosen.",
+    "Uniformly Cauchy Fourier tests, with one eventual endpoint bound for all testing parameters, give a unique physical limit family, pointwise weak-star convergence, and uniform convergence in every admissible lower norm. No time continuity is assumed.",
+    "Uniform Cauchy control in one admissible lower norm is equivalent to uniform Cauchy control of each Fourier mode under the same eventual endpoint bound. It also produces the unique limit family and convergence in every admissible lower norm."
   ],
   "workspace_status": "Private article worktree retained; current validated milestones are committed locally. GitHub push remains pending explicit destination approval after earlier automatic-review rejection. Canonical source/build/checkout stay read-only; workspace decision is pending.",
   "goal_turn_classification": "progress",
@@ -613,5 +617,13 @@
     "stronger_finite_p_compactness": false,
     "uniform_endpoint_norm_bound": false,
     "source2_2_iii": false
+  },
+  "verified_appendix_b_cauchy_limits": {
+    "modules": [
+      "NLS/FunctionalAnalysis/UniformCauchyLimit.lean",
+      "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean"
+    ],
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/appendix-b-cauchy-map.json",
+    "new_theorems": 7
   }
 }

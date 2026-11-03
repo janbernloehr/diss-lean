@@ -428,6 +428,8 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalIsospectralMiura',
     'NLS.Fourier.PeriodicPhysicalSourceClosed',
     'NLS.Articles.KdVPseudomeasures.OriginalHminusOneCompactness',
+    'NLS.FunctionalAnalysis.UniformCauchyLimit',
+    'NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchy',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
