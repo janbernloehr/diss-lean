@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-03",
+  "baseline_commit": "80d69d71adefad3652023e8a18fff84bbe727d02",
+  "baseline_modules_verified_unchanged": 579,
+  "freshly_compiled_modules": [
+    "NLS.SequenceSpaces.WeightedWeakStarCompactness",
+    "NLS.SequenceSpaces.WeightedWeakStarLowerTopology",
+    "NLS.Fourier.PeriodicWeightedWeakStar",
+    "NLS.Fourier.PeriodicWeakStarLowerTopology",
+    "NLS.Articles.KdVPseudomeasures.AppendixBWeakStar",
+    "NLS.Articles.KdVPseudomeasures.AppendixBLowerTopology",
+    "NLS.Articles.KdVPseudomeasures.RealPredualTopology",
+    "NLS.Articles.KdVPseudomeasures.SourceWeakStarTopology",
+    "NLS.Articles.KdVPseudomeasures.SourceWeakStarLimits",
+    "NLS.Articles.KdVPseudomeasures.SourceWeakStarNets",
+    "NLS.Articles.KdVPseudomeasures.SourceWeakStarCompactSets",
+    "NLS.Articles.KdVPseudomeasures.SourceWeakStarTrajectories",
+    "NLS.Articles.KdVPseudomeasures.SourceWeakStarIntersections",
+    "NLS.Articles.KdVPseudomeasures.SourceWeakStarClosedGraph",
+    "NLS.Articles.KdVPseudomeasures.SourceWeakStarAscoli",
+    "NLS.Articles.KdVPseudomeasures.SourceWeakStarUniformControl",
+    "NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchy",
+    "NLS.Articles.KdVPseudomeasures.SourceWeakStarCauchyTrajectories",
+    "NLS.Articles.KdVPseudomeasures.SourceWeakStarInverse",
+    "NLS.Articles.KdVPseudomeasures.Audit"
+  ],
+  "axiom_audited_declarations": 3927,
+  "warnings": 0,
+  "tactic_suggestions": 0,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "remaining_lemma_B1_obligations": [],
+  "main_theorems_verified": false,
+  "canonical_checkout_written": false,
+  "canonical_state": {
+    "head": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+    "status": ""
+  },
+  "source_text_sha256": "1e1a9238da5d4b0fbe16d6e7e8df1b8698ae35f0b81df612cc6af910c16e1b7e",
+  "validation_log_sha256": "d58d0ca056fd4ef1385394ad5a196b8f67569964fca7aa00bb5fd56683ee07d2",
+  "fresh_full_build_this_increment": false,
+  "scope": "Source-clause review and focused recompilation of already proved Appendix B.1(i)-(iv), including existing compactness, topology and trajectory consequences. No new Lean declarations were required.",
+  "source_clauses": {
+    "B.1(i)": [
+      "isCompact_sourceNormBall",
+      "metrizable_sourceNormBall",
+      "isSeqCompact_sourceNormBall"
+    ],
+    "B.1(ii)(a)-(b)": [
+      "tendsto_source_seq_iff_bounded_coefficients"
+    ],
+    "B.1(ii)(a)-(c)": [
+      "tendsto_source_seq_iff_bounded_some_lower"
+    ],
+    "B.1(iii)(a)-(b)": [
+      "isCompact_source_iff_isSeqCompact"
+    ],
+    "B.1(iii)(a)-(c)": [
+      "isCompact_source_iff_bounded_closed"
+    ],
+    "B.1(iii)(a)-(d)": [
+      "isCompact_source_iff_bounded_some_lower_compact"
+    ],
+    "B.1(iv)": [
+      "isEmbedding_sourceLowerDistribution_on_bounded"
+    ]
+  },
+  "parameters": "Every real s, r=-s; finite p>=1, sigma<s, strict threshold (s-sigma)*p>1. Existential clauses keep their quantifiers; forward witnesses sigma=s-2,p=1.",
+  "topology": "Original endpoint norm bounds and full physical distributions retained. Lower norm topology identified on endpoint-bounded subsets. Arbitrary-filter extensions retain explicit eventual endpoint bounds.",
+  "workspace_decision": "pending; all writes, compiler outputs and commit metadata remain private",
+  "preserved_work_in_progress": [
+    "scripts/check-kdv-pseudomeasures.py",
+    "NLS/KdV/SingularHillComplexRiesz.lean",
+    "NLS/KdV/SingularHillDomainResolvent.lean",
+    "NLS/KdV/SingularHillPhysicalL2.lean",
+    "NLS/KdV/SingularHillRieszBilinear.lean",
+    "NLS/KdV/SingularHillRieszDomain.lean",
+    "NLS/KdV/SingularHillRieszL2.lean"
+  ],
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-appendix-b-current.log"
+}
