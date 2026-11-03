@@ -5234,3 +5234,9 @@ import NLS.SequenceSpaces.NaturalSquareSeparation
 import NLS.KdV.HillEnergyLogarithmicProduct
 import NLS.KdV.HillOmittedEnergyCriticalProduct
 import NLS.KdV.HillHighCriticalFactorBounds
+import NLS.ComplexAnalysis.RealCriticalProducts
+import NLS.SequenceSpaces.PositiveQuotientProducts
+import NLS.ComplexAnalysis.RealGapArcsineIntegral
+import NLS.KdV.HillEnergyChiPositivity
+import NLS.KdV.HillLowCriticalProductBound
+import NLS.KdV.HillChiActionFormula

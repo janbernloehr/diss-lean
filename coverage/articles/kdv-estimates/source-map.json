@@ -343,7 +343,29 @@
         "NLS.KdV.hillEnergyGapMidpoint_mem_gap",
         "NLS.KdV.hillHighGap_midpoint_distance_lower",
         "NLS.KdV.hillHighGap_critical_root_ratio_le"
-      ]
+      ],
+      "checked_hill_chi_action_formula": [
+        "NLS.ComplexAnalysis.endpointRoot_real_right",
+        "NLS.ComplexAnalysis.critical_endpoint_ratio_real_positive",
+        "NLS.ComplexAnalysis.HasProd.positive_real_of_each",
+        "NLS.ComplexAnalysis.norm_endpointRoot_ge_right_distance",
+        "NLS.SequenceSpaces.prod_range_div_telescope_le",
+        "NLS.ComplexAnalysis.hasDerivAt_gap_arcsin",
+        "NLS.ComplexAnalysis.intervalIntegrable_gap_arcsine_kernel",
+        "NLS.ComplexAnalysis.integral_gap_arcsine_kernel",
+        "NLS.ComplexAnalysis.integral_eq_weighted_deriv_of_zero_endpoints",
+        "NLS.KdV.hillRealGap_exterior_to_other_gap",
+        "NLS.KdV.hillOmittedEnergyCriticalRootFactor_real_positive",
+        "NLS.KdV.summable_norm_hillOmittedEnergyCriticalRootFactor_sub_one",
+        "NLS.KdV.hillOmittedEnergyCriticalRootProduct_real_positive",
+        "NLS.KdV.hillEnergyChi_real_positive",
+        "NLS.KdV.hillLowCriticalRootProduct_bound",
+        "NLS.KdV.tendsto_hillL2LogDifferential_upper_gap",
+        "NLS.KdV.hasDerivAt_hillRealGapProfile_chi",
+        "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
+        "NLS.KdV.hillRealGapIntegral_le_chi_bound"
+      ],
+      "remaining": "Main Theorems 1\u20133 remain unverified. The real omitted product and chi_n are now strictly positive on every selected closed gap, the low finite product has a telescoping bound, and the actual real action equals the chi-weighted inverse-square-root integral. A uniform chi_n bound implies an explicit quadratic action-gap bound. The norm-dependent uniform chi_n bound and physical KdV Birkhoff/action construction remain essential, along with final precise main statements."
     },
     {
       "label": "Theorem 2",
@@ -357,7 +379,7 @@
         "A_m^2 <= d_m^2*(Q_(2*m+1)+(1+Q_(2*m-1))^m*Q_(2*m-1))"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "Main Theorems1-3 remain unverified. The actual logarithmic differential now equals the literal energy critical/root ratio product. Its omitted product and chi_n are analytic through the selected gap, and every high off-diagonal factor has the explicit source bound1+gap_m/(4*|m^2-n^2|). The quantitative full omitted-product/action estimate and the physical KdV Birkhoff/action construction remain essential, as do final precise main statements.",
+      "remaining": "Main Theorems 1\u20133 remain unverified. The real omitted product and chi_n are now strictly positive on every selected closed gap, the low finite product has a telescoping bound, and the actual real action equals the chi-weighted inverse-square-root integral. A uniform chi_n bound implies an explicit quadratic action-gap bound. The norm-dependent uniform chi_n bound and physical KdV Birkhoff/action construction remain essential, along with final precise main statements.",
       "status": "not_verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -698,6 +720,27 @@
         "NLS.KdV.hillEnergyGapMidpoint_mem_gap",
         "NLS.KdV.hillHighGap_midpoint_distance_lower",
         "NLS.KdV.hillHighGap_critical_root_ratio_le"
+      ],
+      "checked_hill_chi_action_formula": [
+        "NLS.ComplexAnalysis.endpointRoot_real_right",
+        "NLS.ComplexAnalysis.critical_endpoint_ratio_real_positive",
+        "NLS.ComplexAnalysis.HasProd.positive_real_of_each",
+        "NLS.ComplexAnalysis.norm_endpointRoot_ge_right_distance",
+        "NLS.SequenceSpaces.prod_range_div_telescope_le",
+        "NLS.ComplexAnalysis.hasDerivAt_gap_arcsin",
+        "NLS.ComplexAnalysis.intervalIntegrable_gap_arcsine_kernel",
+        "NLS.ComplexAnalysis.integral_gap_arcsine_kernel",
+        "NLS.ComplexAnalysis.integral_eq_weighted_deriv_of_zero_endpoints",
+        "NLS.KdV.hillRealGap_exterior_to_other_gap",
+        "NLS.KdV.hillOmittedEnergyCriticalRootFactor_real_positive",
+        "NLS.KdV.summable_norm_hillOmittedEnergyCriticalRootFactor_sub_one",
+        "NLS.KdV.hillOmittedEnergyCriticalRootProduct_real_positive",
+        "NLS.KdV.hillEnergyChi_real_positive",
+        "NLS.KdV.hillLowCriticalRootProduct_bound",
+        "NLS.KdV.tendsto_hillL2LogDifferential_upper_gap",
+        "NLS.KdV.hasDerivAt_hillRealGapProfile_chi",
+        "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
+        "NLS.KdV.hillRealGapIntegral_le_chi_bound"
       ]
     },
     {
@@ -714,7 +757,7 @@
         "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "The weight-independent real action sequence now equals the actual normalized intrinsic contour action at every positive index and has finite weighted l1 norm with the exact w(2*n)^2*(2*pi*n) factor. The available quadratic action-gap tail cutoff depends on the potential. Explicit uniform source norm-dependent action-gap estimates, piecewise-linear weight evaluation at 16*A^(3/2-r), physical Birkhoff identification and both stated main inequalities remain unproved.",
+      "remaining": "Main Theorems 1\u20133 remain unverified. The real omitted product and chi_n are now strictly positive on every selected closed gap, the low finite product has a telescoping bound, and the actual real action equals the chi-weighted inverse-square-root integral. A uniform chi_n bound implies an explicit quadratic action-gap bound. The norm-dependent uniform chi_n bound and physical KdV Birkhoff/action construction remain essential, along with final precise main statements.",
       "status": "not_verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -1012,6 +1055,27 @@
         "NLS.KdV.hillEnergyGapMidpoint_mem_gap",
         "NLS.KdV.hillHighGap_midpoint_distance_lower",
         "NLS.KdV.hillHighGap_critical_root_ratio_le"
+      ],
+      "checked_hill_chi_action_formula": [
+        "NLS.ComplexAnalysis.endpointRoot_real_right",
+        "NLS.ComplexAnalysis.critical_endpoint_ratio_real_positive",
+        "NLS.ComplexAnalysis.HasProd.positive_real_of_each",
+        "NLS.ComplexAnalysis.norm_endpointRoot_ge_right_distance",
+        "NLS.SequenceSpaces.prod_range_div_telescope_le",
+        "NLS.ComplexAnalysis.hasDerivAt_gap_arcsin",
+        "NLS.ComplexAnalysis.intervalIntegrable_gap_arcsine_kernel",
+        "NLS.ComplexAnalysis.integral_gap_arcsine_kernel",
+        "NLS.ComplexAnalysis.integral_eq_weighted_deriv_of_zero_endpoints",
+        "NLS.KdV.hillRealGap_exterior_to_other_gap",
+        "NLS.KdV.hillOmittedEnergyCriticalRootFactor_real_positive",
+        "NLS.KdV.summable_norm_hillOmittedEnergyCriticalRootFactor_sub_one",
+        "NLS.KdV.hillOmittedEnergyCriticalRootProduct_real_positive",
+        "NLS.KdV.hillEnergyChi_real_positive",
+        "NLS.KdV.hillLowCriticalRootProduct_bound",
+        "NLS.KdV.tendsto_hillL2LogDifferential_upper_gap",
+        "NLS.KdV.hasDerivAt_hillRealGapProfile_chi",
+        "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
+        "NLS.KdV.hillRealGapIntegral_le_chi_bound"
       ]
     }
   ],
@@ -1615,7 +1679,7 @@
     }
   ],
   "next_shared_milestones": [
-    "Prove real positivity/nonvanishing of chi_n across every selected gap, the finite low-factor telescoping estimate and the exact real action formula from the selected-factor differential. Combine the high-factor bound with Cauchy-Schwarz and the corrected weighted gap-tail constant2304 to bound the entire omitted product, retaining the explicit source weight argument16||q||_w^(3/2-r). Continue physical Birkhoff/action identification and precise final main statements.",
+    "Bound the high omitted product by Cauchy\u2013Schwarz and quadratic spectral separation, using the corrected weighted gap-tail constant 2304. Combine with the explicit low-product bound and ground-root normalization to obtain the uniform chi_n and action-gap estimates at a cutoff that preserves 16*||q||_w^(3/2-r). Continue physical Birkhoff/action identification and precise final main statements.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Prove explicit norm-dependent action-gap bounds with the source cutoff/weight evaluation, then Hamiltonian/higher-action trace identities and the tame action estimates for Theorem 2. The potential-dependent eventual bound n*I_n<=gamma_n^2, weighted action summability and the high Proposition 5 comparison at cutoff eight are now checked.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -4015,6 +4079,43 @@
     "hypotheses": "Every real even-supported Fourier L2 Hill potential, without mean-zero. Product/differential identities hold on the actual real cut domain, with the selected-factor identity on its intersection with the filled domain. The selected positive gap lies entirely in the filled domain. The high-factor estimate assumes distinct indicesm,n>=2 with8||q||<=m,n and a real energy in the closed nth gap; collapsed gaps are included.",
     "result": "A shared standard-root nonvanishing lemma and normalized quotient perturbation bound support the actual energy critical/root ratio factors. Dividing the checked critical product by the nonzero root product identifies their convergent infinite quotient and the actual logarithmic differential with the source normalization1/(2*i*sqrt(energy-lowest_energy)). A filled open domain contains both nonreal half-planes and the real interval between the neighboring spectral bands; it contains the entire selected gap and avoids every other closed gap. The selected factor is replaced by1. Combining summable uniform bounds for the critical and standard-root factors with an eventual half-error bound gives a summable uniform majorant for the omitted ratios. Compact uniform and local uniform products therefore give analytic continuation of the omitted product across the selected gap. The principal ground square-root factor is analytic and nonzero there, so chi_n is analytic on that filled domain. Extracting the selected factor from the infinite product proves the exact local logarithmic-differential identity. A shared endpoint/critical ratio lemma bounds a factor by1+gap/(distance_from_midpoint-half_gap). A shared natural square separation lemma and actual high endpoint localization yield midpoint distance at least8*|m^2-n^2| when both distinct positive indices are>=2 and>=8||q||. These bounds imply the source factor estimate1+gap_m/(4*|m^2-n^2|) throughout the selected real gap, retaining collapsed gaps. Main Theorems1-3 remain unverified. The actual logarithmic differential now equals the literal energy critical/root ratio product. Its omitted product and chi_n are analytic through the selected gap, and every high off-diagonal factor has the explicit source bound1+gap_m/(4*|m^2-n^2|). The quantitative full omitted-product/action estimate and the physical KdV Birkhoff/action construction remain essential, as do final precise main statements.",
     "qualification": "This proves the actual analytic omitted product and the explicit individual high-factor bound. The full uniform chi_n bound, quantitative action-gap bound at the explicit cutoff and physical Birkhoff/action identification are not claimed. The existing checked weighted gap-tail remainder constant is2304 rather than the paper576; the forthcoming summed estimate must use that corrected bound while preserving the weight argument16||q||_w^(3/2-r). Main statuses remain not_verified. No full Lake rebuild/full repository examples or joint complex-potential product analyticity are claimed.",
-    "remaining": "Main Theorems1-3 remain unverified. The actual logarithmic differential now equals the literal energy critical/root ratio product. Its omitted product and chi_n are analytic through the selected gap, and every high off-diagonal factor has the explicit source bound1+gap_m/(4*|m^2-n^2|). The quantitative full omitted-product/action estimate and the physical KdV Birkhoff/action construction remain essential, as do final precise main statements."
+    "remaining": "Main Theorems1-3 remain unverified. The actual logarithmic differential now equals the literal energy critical/root ratio product. Its omitted product and chi_n are analytic through the selected gap, and every high off-diagonal factor has the explicit source bound1+gap_m/(4*|m^2-n^2|). The quantitative full omitted-product/action estimate and the physical KdV Birkhoff/action construction remain essential, as do final precise main statements.",
+    "chi_action_progress": "The hill_chi_action_formula section proves strict real positivity, finite low-product telescoping, the exact real action formula and its conditional quadratic gap bound."
+  },
+  "hill_chi_action_formula": {
+    "modules": [
+      "NLS/ComplexAnalysis/RealCriticalProducts.lean",
+      "NLS/SequenceSpaces/PositiveQuotientProducts.lean",
+      "NLS/ComplexAnalysis/RealGapArcsineIntegral.lean",
+      "NLS/KdV/HillEnergyChiPositivity.lean",
+      "NLS/KdV/HillLowCriticalProductBound.lean",
+      "NLS/KdV/HillChiActionFormula.lean"
+    ],
+    "declarations": [
+      "NLS.ComplexAnalysis.endpointRoot_real_right",
+      "NLS.ComplexAnalysis.critical_endpoint_ratio_real_positive",
+      "NLS.ComplexAnalysis.HasProd.positive_real_of_each",
+      "NLS.ComplexAnalysis.norm_endpointRoot_ge_right_distance",
+      "NLS.SequenceSpaces.prod_range_div_telescope_le",
+      "NLS.ComplexAnalysis.hasDerivAt_gap_arcsin",
+      "NLS.ComplexAnalysis.intervalIntegrable_gap_arcsine_kernel",
+      "NLS.ComplexAnalysis.integral_gap_arcsine_kernel",
+      "NLS.ComplexAnalysis.integral_eq_weighted_deriv_of_zero_endpoints",
+      "NLS.KdV.hillRealGap_exterior_to_other_gap",
+      "NLS.KdV.hillOmittedEnergyCriticalRootFactor_real_positive",
+      "NLS.KdV.summable_norm_hillOmittedEnergyCriticalRootFactor_sub_one",
+      "NLS.KdV.hillOmittedEnergyCriticalRootProduct_real_positive",
+      "NLS.KdV.hillEnergyChi_real_positive",
+      "NLS.KdV.hillLowCriticalRootProduct_bound",
+      "NLS.KdV.tendsto_hillL2LogDifferential_upper_gap",
+      "NLS.KdV.hasDerivAt_hillRealGapProfile_chi",
+      "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
+      "NLS.KdV.hillRealGapIntegral_le_chi_bound"
+    ],
+    "source_correspondence": "Section 5 action integral representation and low-factor telescoping in Lemma 9, supporting Theorem 3; actual real action normalization agrees with the source Arnold action already identified in the source-map.",
+    "hypotheses": "Every real even-supported Fourier L2 Hill potential, without mean-zero. Gap index n >= 1. Positivity and the action formula include collapsed gaps; derivative and boundary-limit statements use the open gap. The low finite product uses 1 <= K < n. The action-gap estimate assumes a nonnegative uniform upper bound C for Re(chi_n) on the closed gap.",
+    "result": "Shared real-root sign lemmas show that every omitted critical/root ratio is strictly positive and real on the selected closed gap. Absolute summability of its deviations from 1 gives a nonzero infinite product; a shared finite-product limit argument then proves strict positivity of the product and chi_n, including collapsed gaps. A shared positive quotient product lemma telescopes the low finite product to the first critical-point distance divided by the last standard-root norm. Boundary limits of the actual logarithmic differential identify the real gap-profile derivative with (critical_n-x)*Re(chi_n)/(2*sqrt((x-a)*(b-x))). The shared arcsine kernel is interval integrable and has exact mass pi. Integration by parts with the actual zero endpoint profile therefore gives I_n = (1/pi)*integral_a^b (critical_n-x)^2*Re(chi_n)/sqrt((x-a)*(b-x)). If Re(chi_n) <= C on the closed gap and C >= 0, then I_n <= C*(b-a)^2. Closed gaps are handled directly. Main Theorems 1\u20133 remain unverified. The real omitted product and chi_n are now strictly positive on every selected closed gap, the low finite product has a telescoping bound, and the actual real action equals the chi-weighted inverse-square-root integral. A uniform chi_n bound implies an explicit quadratic action-gap bound. The norm-dependent uniform chi_n bound and physical KdV Birkhoff/action construction remain essential, along with final precise main statements.",
+    "qualification": "This milestone proves the exact real action formula and a reduction to a uniform chi_n bound. It does not assert the norm-dependent uniform chi_n estimate or the physical Birkhoff/action identification. The subsequent high-tail estimate must use the checked corrected gap-tail remainder constant 2304 rather than the paper\u2019s 576, while preserving the explicit weight argument 16*||q||_w^(3/2-r). Main statuses remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
+    "remaining": "Main Theorems 1\u20133 remain unverified. The real omitted product and chi_n are now strictly positive on every selected closed gap, the low finite product has a telescoping bound, and the actual real action equals the chi-weighted inverse-square-root integral. A uniform chi_n bound implies an explicit quadratic action-gap bound. The norm-dependent uniform chi_n bound and physical KdV Birkhoff/action construction remain essential, along with final precise main statements."
   }
 }

@@ -1,3 +1,9 @@
+import NLS.ComplexAnalysis.RealCriticalProducts
+import NLS.SequenceSpaces.PositiveQuotientProducts
+import NLS.ComplexAnalysis.RealGapArcsineIntegral
+import NLS.KdV.HillEnergyChiPositivity
+import NLS.KdV.HillLowCriticalProductBound
+import NLS.KdV.HillChiActionFormula
 import NLS.ComplexAnalysis.EndpointCriticalRatioBounds
 import NLS.SequenceSpaces.NaturalSquareSeparation
 import NLS.KdV.HillEnergyLogarithmicProduct
@@ -585,7 +591,16 @@ run_cmd do
     ``NLS.ComplexAnalysis.endpointRoot_ne_zero_of_not_mem_segment,
     ``NLS.ComplexAnalysis.norm_div_sub_one_le_of_half_error,
     ``NLS.ComplexAnalysis.norm_critical_endpoint_ratio_le,
-    ``NLS.SequenceSpaces.nat_square_separation_ge_sum]
+    ``NLS.SequenceSpaces.nat_square_separation_ge_sum,
+    ``NLS.ComplexAnalysis.endpointRoot_real_right,
+    ``NLS.ComplexAnalysis.critical_endpoint_ratio_real_positive,
+    ``NLS.ComplexAnalysis.HasProd.positive_real_of_each,
+    ``NLS.ComplexAnalysis.norm_endpointRoot_ge_right_distance,
+    ``NLS.SequenceSpaces.prod_range_div_telescope_le,
+    ``NLS.ComplexAnalysis.hasDerivAt_gap_arcsin,
+    ``NLS.ComplexAnalysis.intervalIntegrable_gap_arcsine_kernel,
+    ``NLS.ComplexAnalysis.integral_gap_arcsine_kernel,
+    ``NLS.ComplexAnalysis.integral_eq_weighted_deriv_of_zero_endpoints]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

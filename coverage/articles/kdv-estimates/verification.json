@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 3149,
+    "declarations": 3205,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -302,10 +302,19 @@
       "NLS.ComplexAnalysis.endpointRoot_ne_zero_of_not_mem_segment",
       "NLS.ComplexAnalysis.norm_div_sub_one_le_of_half_error",
       "NLS.ComplexAnalysis.norm_critical_endpoint_ratio_le",
-      "NLS.SequenceSpaces.nat_square_separation_ge_sum"
+      "NLS.SequenceSpaces.nat_square_separation_ge_sum",
+      "NLS.ComplexAnalysis.endpointRoot_real_right",
+      "NLS.ComplexAnalysis.critical_endpoint_ratio_real_positive",
+      "NLS.ComplexAnalysis.HasProd.positive_real_of_each",
+      "NLS.ComplexAnalysis.norm_endpointRoot_ge_right_distance",
+      "NLS.SequenceSpaces.prod_range_div_telescope_le",
+      "NLS.ComplexAnalysis.hasDerivAt_gap_arcsin",
+      "NLS.ComplexAnalysis.intervalIntegrable_gap_arcsine_kernel",
+      "NLS.ComplexAnalysis.integral_gap_arcsine_kernel",
+      "NLS.ComplexAnalysis.integral_eq_weighted_deriv_of_zero_endpoints"
     ]
   },
-  "full_repository_validation": "All 312 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3149-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 318 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3205-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -619,10 +628,16 @@
     "NLS/SequenceSpaces/NaturalSquareSeparation.lean": "3d548e16f2b40448150f2983a50ab9157f88f97271669ebb9cae5c3aaa78b356",
     "NLS/KdV/HillEnergyLogarithmicProduct.lean": "5ab31b3559a62532c35da12a196d66911fd6b3694293ba948cd7c59534cfed5b",
     "NLS/KdV/HillOmittedEnergyCriticalProduct.lean": "358ce2517acc0087eae0dce418500a405bb1274afa7885dbc585283385401660",
-    "NLS/KdV/HillHighCriticalFactorBounds.lean": "e7634eb529e9c10ac8f29c3ace55788481b3bb20aae95b4d9d069029e1023ca8"
+    "NLS/KdV/HillHighCriticalFactorBounds.lean": "e7634eb529e9c10ac8f29c3ace55788481b3bb20aae95b4d9d069029e1023ca8",
+    "NLS/ComplexAnalysis/RealCriticalProducts.lean": "ca5e6aaee38366981e65894085a64765b7f4dddb84e1d0beba4e69a461fcf1aa",
+    "NLS/SequenceSpaces/PositiveQuotientProducts.lean": "ff87c12491de5be75550efb733f8f4dca863456d46407bfc81a817395e645cc1",
+    "NLS/ComplexAnalysis/RealGapArcsineIntegral.lean": "0b701820941aed29b898bed477a46ff240e1fdf015eef50de54e49ded881ce53",
+    "NLS/KdV/HillEnergyChiPositivity.lean": "f27e548fa2cf16a821d7c460718bd9513d618cfbcfe5d9dcc48fd57f9cc36373",
+    "NLS/KdV/HillLowCriticalProductBound.lean": "8fba50723e42833e0fdbec43ff54dc025309c129858b6388102f686567cc9c22",
+    "NLS/KdV/HillChiActionFormula.lean": "103508678f56d443f3dbcbb85406a8d03189342258747a41931b756ea20e959c"
   },
-  "remaining": "Main Theorems1-3 remain unverified. The actual logarithmic differential now equals the literal energy critical/root ratio product. Its omitted product and chi_n are analytic through the selected gap, and every high off-diagonal factor has the explicit source bound1+gap_m/(4*|m^2-n^2|). The quantitative full omitted-product/action estimate and the physical KdV Birkhoff/action construction remain essential, as do final precise main statements.",
-  "milestone": "Actual logarithmic differential, analytic omitted critical product through each gap and explicit high-factor estimates",
+  "remaining": "Main Theorems 1\u20133 remain unverified. The real omitted product and chi_n are now strictly positive on every selected closed gap, the low finite product has a telescoping bound, and the actual real action equals the chi-weighted inverse-square-root integral. A uniform chi_n bound implies an explicit quadratic action-gap bound. The norm-dependent uniform chi_n bound and physical KdV Birkhoff/action construction remain essential, along with final precise main statements.",
+  "milestone": "Real chi positivity, low-product telescoping and exact Hill action formula",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -937,7 +952,13 @@
     "NLS.SequenceSpaces.NaturalSquareSeparation",
     "NLS.KdV.HillEnergyLogarithmicProduct",
     "NLS.KdV.HillOmittedEnergyCriticalProduct",
-    "NLS.KdV.HillHighCriticalFactorBounds"
+    "NLS.KdV.HillHighCriticalFactorBounds",
+    "NLS.ComplexAnalysis.RealCriticalProducts",
+    "NLS.SequenceSpaces.PositiveQuotientProducts",
+    "NLS.ComplexAnalysis.RealGapArcsineIntegral",
+    "NLS.KdV.HillEnergyChiPositivity",
+    "NLS.KdV.HillLowCriticalProductBound",
+    "NLS.KdV.HillChiActionFormula"
   ],
   "proof_commits": [
     {
@@ -1219,6 +1240,11 @@
       "commit": "0c31f83ef90904e5ef3a23794ab00ded821bb97c",
       "scope": "Complete original critical census and signed l2 labeling, actual entire energy derivative product at all complex energies including0, full critical zero-set exhaustion and unique critical point in every open or closed gap;307 strict modules,3086-declaration transitive audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "51fb2f07431972f54e081740393128f35fc63cd1",
+      "scope": "Actual logarithmic differential, analytic omitted critical product and chi_n through each selected gap, explicit high critical-factor estimates; 312 strict modules, 3149-declaration transitive audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -1235,20 +1261,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 312 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 318 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 3149 declarations. Includes shared standard-root nonvanishing, quotient half-error and midpoint-distance ratio bounds, natural-square separation, actual logarithmic differential product, analytic omitted factors/products and chi_n through selected gaps, exact selected-factor identity and explicit high-gap ratio estimates.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 3205 declarations. Includes shared real standard-root signs, positivity of nonzero complex infinite products with positive factors, root-distance lower bound, positive quotient telescoping, arcsine kernel integrability and exact integral, zero-endpoint integration by parts, real Hill chi positivity, low-product bound, boundary derivative identification, exact action formula and conditional quadratic action-gap bound.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 312 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3149-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 318 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3205-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "A shared standard-root nonvanishing lemma and normalized quotient perturbation bound support the actual energy critical/root ratio factors. Dividing the checked critical product by the nonzero root product identifies their convergent infinite quotient and the actual logarithmic differential with the source normalization1/(2*i*sqrt(energy-lowest_energy)). A filled open domain contains both nonreal half-planes and the real interval between the neighboring spectral bands; it contains the entire selected gap and avoids every other closed gap. The selected factor is replaced by1. Combining summable uniform bounds for the critical and standard-root factors with an eventual half-error bound gives a summable uniform majorant for the omitted ratios. Compact uniform and local uniform products therefore give analytic continuation of the omitted product across the selected gap. The principal ground square-root factor is analytic and nonzero there, so chi_n is analytic on that filled domain. Extracting the selected factor from the infinite product proves the exact local logarithmic-differential identity. A shared endpoint/critical ratio lemma bounds a factor by1+gap/(distance_from_midpoint-half_gap). A shared natural square separation lemma and actual high endpoint localization yield midpoint distance at least8*|m^2-n^2| when both distinct positive indices are>=2 and>=8||q||. These bounds imply the source factor estimate1+gap_m/(4*|m^2-n^2|) throughout the selected real gap, retaining collapsed gaps. Main Theorems1-3 remain unverified. The actual logarithmic differential now equals the literal energy critical/root ratio product. Its omitted product and chi_n are analytic through the selected gap, and every high off-diagonal factor has the explicit source bound1+gap_m/(4*|m^2-n^2|). The quantitative full omitted-product/action estimate and the physical KdV Birkhoff/action construction remain essential, as do final precise main statements.",
-    "scope": "All 312 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3149-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Shared real-root sign lemmas show that every omitted critical/root ratio is strictly positive and real on the selected closed gap. Absolute summability of its deviations from 1 gives a nonzero infinite product; a shared finite-product limit argument then proves strict positivity of the product and chi_n, including collapsed gaps. A shared positive quotient product lemma telescopes the low finite product to the first critical-point distance divided by the last standard-root norm. Boundary limits of the actual logarithmic differential identify the real gap-profile derivative with (critical_n-x)*Re(chi_n)/(2*sqrt((x-a)*(b-x))). The shared arcsine kernel is interval integrable and has exact mass pi. Integration by parts with the actual zero endpoint profile therefore gives I_n = (1/pi)*integral_a^b (critical_n-x)^2*Re(chi_n)/sqrt((x-a)*(b-x)). If Re(chi_n) <= C on the closed gap and C >= 0, then I_n <= C*(b-a)^2. Closed gaps are handled directly. Main Theorems 1\u20133 remain unverified. The real omitted product and chi_n are now strictly positive on every selected closed gap, the low finite product has a telescoping bound, and the actual real action equals the chi-weighted inverse-square-root integral. A uniform chi_n bound implies an explicit quadratic action-gap bound. The norm-dependent uniform chi_n bound and physical KdV Birkhoff/action construction remain essential, along with final precise main statements.",
+    "scope": "All 318 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3205-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "6d942c55711b0fe06aa0e5d670539193446de3163f100d3de0f0ef9aba55de42",
-      "scripts/check-kdv-estimates.sh": "e1dd13de39a5e3bae999ad69b107cd749bc52bd46d94e843c22cee1d742a6697",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "26b1d217c7ffceebe2162a4c3c921b5ae246a7dff5a8a1452ada59f6909bf676"
+      "NLS.lean": "bd8c8e01233f72bdb80d438d595f5016bcd3a672d01c34224ece6fa196451679",
+      "scripts/check-kdv-estimates.sh": "5bebefeae7b6d28950b669909ec5757383554f7efa2d56b2435a445ce1df7c91",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "6c1d16023ddf7560640f3a5b3ee9fac954d923c11808c728e484639c521068f6"
     }
   },
   "warningAsError": true,
@@ -1355,8 +1381,8 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Actual logarithmic differential, analytic omitted critical product through each gap and explicit high-factor estimates",
-    "focused_modules": 312,
-    "scope": "All 312 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3149-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Real chi positivity, low-product telescoping and exact Hill action formula",
+    "focused_modules": 318,
+    "scope": "All 318 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 3205-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   }
 }
