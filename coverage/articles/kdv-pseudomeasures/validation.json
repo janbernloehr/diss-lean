@@ -2247,5 +2247,15 @@
     "audited_declarations": 4218,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
+  },
+  "appendix_b_current_private_recheck": {
+    "report": "coverage/articles/kdv-pseudomeasures/appendix-b-current-recheck.json",
+    "baseline_commit": "fbdb6ec3ca31d78299fbb37ecae9a3d9276ed48d",
+    "freshly_compiled_appendix_b_modules": 19,
+    "current_transitive_axiom_audit_declarations": 4248,
+    "remaining_lemma_B1_obligations": [],
+    "new_lean_declarations": 0,
+    "canonical_checkout_written": false,
+    "main_theorems_verified": false
   }
 }
