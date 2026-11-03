@@ -91,9 +91,9 @@
     "limitations": "Comparison is proved on correctly indexed certified neighborhoods and their union, not on arbitrary unrelated old high-domain components. LOW normalized complex ratios and a globally glued ALL-index complex gap-square family remain unproved. Full source3.2, the actual KdV Birkhoff map/flow and all five main theorems remain unproved."
   },
   "essential_remaining": [
-    "Construct/glue COMPLEX ALL-index canonical gap squares and the finitely many LOW-index analytic normalized action/gap-square ratios through collapsed gaps, with nonvanishing near every real source and one common neighborhood. The canonical ACTION family and its Miura independence are proved. SAME-original-index comparison with the earlier high family, analytic HIGH ratios through collapse, exact8*pi*n factorization, complex HIGH zero equivalence and locally uniform normalization around EVERY COMPLEX point of a common connected neighborhood are NOW PROVED. Do not assume the ordinary NLS normalized action at natural k0 supplies the Miura higher-action k1 ratio without a separate weighted formula.",
-    "Complete the ORIGINAL KdV action-angle/Birkhoff construction and estimate (|gamma_n|+|mu_n-tau_n|)/sqrt(n), original differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. All source domains, quantifiers and original physical normalization must remain unchanged. Do not substitute the NLS Birkhoff map for KdV.",
-    "Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, with original equation and Hamiltonian/frequency normalization, then derive main1.1/1.3/1.4 and Wiener5.1/5.9. ALL FIVE main theorems remain UNPROVED; goal ACTIVE. Full source3.2 remains OPEN until the remaining all-index complex ratios and actual coordinate estimates are proved. Remaining DirichletC4ii, parity/interlacing and complex ratio2.20 are open only where required. Full complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB remain PROVED."
+    "Construct LOW-index analytic normalized KdV action/gap-square ratios through collapsed gaps and prove nonvanishing near EVERY real source. The required Miura action is TWO times the indexed higher Dirac action at NATURAL k=1 (printed level2), so the ordinary NLS k0 normalized action does not suffice without a proved weighted formula. Combine finitely many low neighborhoods with the PROVED locally uniform high estimates on ONE common complex domain. ALL-index complex canonical gap-square gluing is NOW PROVED; do not redo it.",
+    "Complete the ACTUAL ORIGINAL KdV Birkhoff coordinates and the locally uniform estimate (abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n), original differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Do not substitute the NLS Birkhoff map for KdV. Source Theorem3.2 remains OPEN until LOW complex ratios/nonvanishing and the coordinate assertions are proved.",
+    "Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation with the original equation and Hamiltonian/frequency normalization; then prove main1.1,1.3,1.4,5.1,5.9. ALL FIVE remain UNPROVED; goal ACTIVE. Other spectral obligations remain only where necessary for these main theorems. AppendixB B.1(i)-(iv), source2.1(i)-(ii), source2.2 and corrected2.15 remain PROVED."
   ],
   "validation": {
     "result": "passed",
@@ -140,5 +140,29 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "ALL_index_canonical_gap_square_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-canonical-gap-squares-map.json",
+    "all_index_complex_canonical_gap_square_family_glued": true,
+    "actual_Miura_and_full_Cauchy_source_ball_constructed_near_EVERY_real_source": true,
+    "ONE_source_ball_before_ALL_symmetric_Dirac_indices": true,
+    "individual_endpoint_analyticity_assumed": false,
+    "same_ORIGINAL_Hill_indices_and_exact_difference_of_squares_proved": true,
+    "full_complex_overlap_agreement_and_choice_independence_proved": true,
+    "ONE_OPEN_CONNECTED_complex_gap_domain_contains_entire_native_real_form": true,
+    "ALL_actions_and_ALL_squared_gaps_analytic_on_SAME_domain": true,
+    "ANY_valid_real_Miura_lift_and_shift_gives_canonical_squared_gap": true,
+    "real_ALL_index_action_zero_iff_gap_square_zero": true,
+    "complex_HIGH_gap_square_comparison_and_zero_equivalence_proved": true,
+    "HIGH_normalization_locally_uniform_at_EVERY_COMPLEX_point_on_SAME_gap_domain": true,
+    "literal_HIGH_normalized_quotient_equals_analytic_extension_off_gap_zero": true,
+    "original_mean_zero_period_one_HminusOne_domain_preserved": true,
+    "LOW_index_complex_normalized_ratios_through_collapse_and_nonvanishing_proved": false,
+    "complex_ALL_index_action_zero_iff_gap_square_zero_proved": false,
+    "full_source_Theorem3_2_proved": false,
+    "actual_KdV_Birkhoff_map_constructed": false,
+    "actual_original_KdV_flow_constructed": false,
+    "main_theorems_verified": false
+  },
+  "validation_scope": "Original validation records the preceding4694-declaration canonical/high comparison milestone. ALL_index_canonical_gap_square_followup links the later4723-declaration audit: ALL-index canonical complex gap-square gluing and the SAME-domain high normalization are now proved. LOW complex ratios and full source3.2 remain OPEN."
 }

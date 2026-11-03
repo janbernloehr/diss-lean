@@ -803,6 +803,10 @@ modules = [
     'NLS.KdV.HillHminusOneUniformCanonicalHighActions',
     'NLS.KdV.HillHminusOneNormalizedCanonicalDomain',
     'NLS.Articles.KdVPseudomeasures.OriginalCanonicalHighActions',
+    'NLS.KdV.HillHminusOneMiuraGapBalls',
+    'NLS.KdV.HillHminusOneCanonicalGapSquares',
+    'NLS.KdV.HillHminusOneCanonicalGapHighNormalization',
+    'NLS.Articles.KdVPseudomeasures.OriginalCanonicalGapSquares',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

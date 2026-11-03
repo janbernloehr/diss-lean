@@ -769,6 +769,10 @@ import NLS.KdV.HillHminusOneUniformCanonicalPairs
 import NLS.KdV.HillHminusOneUniformCanonicalHighActions
 import NLS.KdV.HillHminusOneNormalizedCanonicalDomain
 import NLS.Articles.KdVPseudomeasures.OriginalCanonicalHighActions
+import NLS.KdV.HillHminusOneMiuraGapBalls
+import NLS.KdV.HillHminusOneCanonicalGapSquares
+import NLS.KdV.HillHminusOneCanonicalGapHighNormalization
+import NLS.Articles.KdVPseudomeasures.OriginalCanonicalGapSquares
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5466,3 +5470,32 @@ import NLS.Articles.KdVPseudomeasures.OriginalCanonicalHighActions
 #print axioms NLS.Articles.KdVPseudomeasures.exists_originalCanonicalHillAction_high_comparison
 #print axioms NLS.Articles.KdVPseudomeasures.exists_originalCanonicalHillAction_high_normalization
 #print axioms NLS.Articles.KdVPseudomeasures.exists_common_normalized_complex_neighborhood_originalCanonicalHillActions
+#print axioms NLS.KdV.HillHminusMiuraGapBall.source
+#print axioms NLS.KdV.HillHminusMiuraGapBall.diracSum
+#print axioms NLS.KdV.HillHminusMiuraGapBall.gapSquare
+#print axioms NLS.KdV.HillHminusMiuraGapBall.source_open
+#print axioms NLS.KdV.HillHminusMiuraGapBall.analytic_diracSum
+#print axioms NLS.KdV.HillHminusMiuraGapBall.analytic_gapSquare
+#print axioms NLS.KdV.HillHminusMiuraGapBall.diracSum_eq_endpoints
+#print axioms NLS.KdV.HillHminusMiuraGapBall.diracSum_re_pos_of_real
+#print axioms NLS.KdV.HillHminusMiuraGapBall.gapSquare_eq_real
+#print axioms NLS.KdV.HillHminusMiuraGapBall.gapSquare_eq_on_overlap
+#print axioms NLS.KdV.exists_hillHminusMiuraGapBall
+#print axioms NLS.KdV.hillHminusCanonicalGapDomain
+#print axioms NLS.KdV.isOpen_hillHminusCanonicalGapDomain
+#print axioms NLS.KdV.hillHminusCanonicalGapDomain_subset
+#print axioms NLS.KdV.real_mem_hillHminusCanonicalGapDomain
+#print axioms NLS.KdV.isConnected_hillHminusCanonicalGapDomain
+#print axioms NLS.KdV.hillHminusCanonicalGapSquare
+#print axioms NLS.KdV.HillHminusMiuraGapBall.canonical_gapSquare_eq
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalGapSquare
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalAction_on_gapDomain
+#print axioms NLS.KdV.hillHminusCanonicalGapSquare_eq_real
+#print axioms NLS.KdV.hillHminusCanonicalGapSquare_eq_Miura_of_real
+#print axioms NLS.KdV.hillHminusCanonicalAction_eq_zero_iff_gapSquare_of_real
+#print axioms NLS.KdV.HillHminusMiuraGapBall.canonical_gapSquare_eq_high
+#print axioms NLS.KdV.exists_hillHminus_canonical_gap_high_normalization_at_complex
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalGapSquare_eq
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_eq_zero_iff_gapSquare
+#print axioms NLS.Articles.KdVPseudomeasures.exists_common_complex_neighborhood_originalCanonicalGapSquares
+#print axioms NLS.Articles.KdVPseudomeasures.exists_common_complex_neighborhood_originalCanonicalGap_high_normalization
