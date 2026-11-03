@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 4886,
+  "audited_declarations_and_auxiliaries": 4935,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -12819,14 +12819,204 @@
       "kind": "theorem",
       "name": "original_H1_NLS_actions_local_physical_factor_general_H1",
       "file": "NLS/Articles/MKdVNLSHierarchies/GeneralForwardActionFactorization.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianPairParameters",
+      "file": "NLS/MKdV/MiuraCartesianRealActionLifts.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraCartesianFromPairMean",
+      "file": "NLS/MKdV/MiuraCartesianRealActionLifts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianFromPairMean_parameters",
+      "file": "NLS/MKdV/MiuraCartesianRealActionLifts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianPairParameters_fromPairMean",
+      "file": "NLS/MKdV/MiuraCartesianRealActionLifts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianPairParameters_real",
+      "file": "NLS/MKdV/MiuraCartesianRealActionLifts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianFromPairMean_real",
+      "file": "NLS/MKdV/MiuraCartesianRealActionLifts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianPairParameters_actions",
+      "file": "NLS/MKdV/MiuraCartesianRealActionLifts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNormalizedActions_nonnegative",
+      "file": "NLS/MKdV/MiuraCartesianRealActionLifts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraCartesianFromPairMean_action_of_quadratic",
+      "file": "NLS/MKdV/MiuraCartesianRealActionLifts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraCartesian_real_action_lift_neighborhood",
+      "file": "NLS/MKdV/MiuraCartesianRealActionLifts.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalCartesian_fiber_unique_of_Sobolev",
+      "file": "NLS/MKdV/MiuraActionFactorGlobalRecovery.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "observables_eq_of_H1_actionMean",
+      "file": "NLS/MKdV/MiuraActionFactorGlobalRecovery.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_action_factor_global_H1_recovery",
+      "file": "NLS/MKdV/MiuraActionFactorGlobalRecovery.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miura_action_factor_global_H1_recovery_at_H1",
+      "file": "NLS/MKdV/MiuraActionFactorGlobalRecovery.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraExponentialActionParameters",
+      "file": "NLS/MKdV/MiuraExponentialActionEncoding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraExponentialActionParameters_apply",
+      "file": "NLS/MKdV/MiuraExponentialActionEncoding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraExponentialActionParameters_zero",
+      "file": "NLS/MKdV/MiuraExponentialActionEncoding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraExponentialActionParameters",
+      "file": "NLS/MKdV/MiuraExponentialActionEncoding.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraLogActionParameters",
+      "file": "NLS/MKdV/MiuraExponentialActionEncoding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraLogActionParameters_apply",
+      "file": "NLS/MKdV/MiuraExponentialActionEncoding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraLogActionParameters",
+      "file": "NLS/MKdV/MiuraExponentialActionEncoding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraLogActionParameters_exponential",
+      "file": "NLS/MKdV/MiuraExponentialActionEncoding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealActionMean_mean_im",
+      "file": "NLS/MKdV/MiuraExponentialActionEncoding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraLogActionParameters_exponential_physical",
+      "file": "NLS/MKdV/MiuraExponentialActionEncoding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraExponentialActionParameters_physical_slitPlane",
+      "file": "NLS/MKdV/MiuraExponentialActionEncoding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraExponentialActionParameters_physical_nonnegative",
+      "file": "NLS/MKdV/MiuraExponentialActionEncoding.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevActionSequence_L2_coefficients",
+      "file": "NLS/MKdV/MiuraFiniteEncodedActionRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_H1_profile_of_finite_encoded_actions",
+      "file": "NLS/MKdV/MiuraFiniteEncodedActionRealization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_nonnegative_finite_approximation",
+      "file": "NLS/SequenceSpaces/FiniteNonnegativeActionAgreement.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "eq_of_finite_nonnegative_agreement",
+      "file": "NLS/SequenceSpaces/FiniteNonnegativeActionAgreement.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraH1EncodedActionParameters",
+      "file": "NLS/MKdV/MiuraEncodedActionFactorBalls.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miura_action_factor_global_H1_recovery",
+      "file": "NLS/MKdV/MiuraEncodedActionFactorBalls.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miura_encoded_action_factor_ball",
+      "file": "NLS/MKdV/MiuraEncodedActionFactorBalls.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_global_miura_original_NLS_action_factor",
+      "file": "NLS/MKdV/MiuraGlobalNLSActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevL2SourceInclusion_H1",
+      "file": "NLS/MKdV/MiuraGlobalNLSActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_global_miura_original_H1_NLS_action_factor",
+      "file": "NLS/MKdV/MiuraGlobalNLSActionFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalNLSActionSequence_original_H1",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GlobalForwardActionIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_ii_nls_actions_of_mkdv_actions_mean",
+      "file": "NLS/Articles/MKdVNLSHierarchies/GlobalForwardActionIdentification.lean"
     }
   ],
-  "public_declaration_count": 2560,
-  "theorem_count": 2085,
-  "definition_count": 475,
-  "full_build": "472 article/shared modules have validated private outputs. All 465 unchanged prefix module source hashes match the prior 47697d7 milestone; their private outputs were reused. Seven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2598,
+  "theorem_count": 2118,
+  "definition_count": 480,
+  "full_build": "480 article/shared modules have validated private outputs. All 472 unchanged prefix module source hashes match the prior 7c174c0 milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/FiniteHeadCenteredNeighborhood.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/MKdV/MiuraCartesianRealActionLifts.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -13300,12 +13490,20 @@
     "NLS/MKdV/MiuraQuadraticActionParameters.lean": "905f03a7dd7848c7a8f8e3fad961acd99a5daac3487e8539f2d2269fdabea727",
     "NLS/MKdV/MiuraGeneralLocalNLSActionFactor.lean": "55d9cc3502a451cc6cf8605a04f6ed925df10ccff60ed936185eff4d786fade3",
     "NLS/Articles/MKdVNLSHierarchies/GeneralForwardActionFactorization.lean": "d8359bfba4196bb3bcd61ec73a8e00b55b89eef73ed7f504ac50fc1bfc683e6e",
+    "NLS/MKdV/MiuraCartesianRealActionLifts.lean": "b321d54ef1f29db74d44fd989b2dbe189d7ed96b67ddd930aa3dfda6c5083050",
+    "NLS/MKdV/MiuraActionFactorGlobalRecovery.lean": "13426e297da44b8323c34c5fa001d820fb9881c6556927ac0207603a3c357f32",
+    "NLS/MKdV/MiuraExponentialActionEncoding.lean": "c658e7facc1bb8d942dee651e2358053469de37b6fc4ac6f0f519ca7064abba1",
+    "NLS/MKdV/MiuraFiniteEncodedActionRealization.lean": "56d910d73d26fb43881a52768f18d527788e953483d14b2a9ff31c53c6dd02d0",
+    "NLS/SequenceSpaces/FiniteNonnegativeActionAgreement.lean": "c810c2d1ba9ae8c804e014ec2c5faff1e30310ae64d0cb7e44243705112f1742",
+    "NLS/MKdV/MiuraEncodedActionFactorBalls.lean": "5a7b85d3198e7dc59dec174e0215da71ab2366dd4b2611cb83c88369d2c9799d",
+    "NLS/MKdV/MiuraGlobalNLSActionFactor.lean": "ca08d033955781c8f39475639015c6f584e11349c87b4f46e722dea36d4da83b",
+    "NLS/Articles/MKdVNLSHierarchies/GlobalForwardActionIdentification.lean": "8f6a5aabed247ecb3731b919dfc00884370a357fbb227e7751031871acaa6397",
     "NLS.lean": "8b7ce4ad52dd4f8dbc054e0bd1b7e6adc03480720e8557f9a8f54e461da6e8c6",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "362ae8cb748d3ca65b1e5cde0960def8ab1c42b27c44887b5bca8851d58262e0",
-    "scripts/check_mkdv_nls.py": "1da07c332dc8d56c57155ff7de7bff044ac6e32cd435dc32beee4247d1cad023"
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "b0e4dcde124db8af35a2d61900cfb321dbc0df72b540a39b69931c75eb6236bc",
+    "scripts/check_mkdv_nls.py": "5ecbf5555f5db2606b0f7902131b19dcbd88a8de84ee3f98cc90ac063cbcc845"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 472,
+  "focused_module_count": 480,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -13718,12 +13916,25 @@
       "public_declaration_count": 2560,
       "theorem_count": 2085,
       "definition_count": 475
+    },
+    {
+      "milestone": "Corrected Theorem 4(ii) complete: one global whole-sequence holomorphic forward physical-action/signed-mean factor on a common open complex native action domain containing all original real H1 profiles",
+      "audit_count": 4935,
+      "combined_NLS_audit_count": 49871,
+      "aggregate_compiled": true,
+      "module_count": 480,
+      "reused_prefix_module_count": 472,
+      "reused_prefix_commit": "7c174c022fad5127362413868d25b2e74cca355e",
+      "frozen_source_checker_count": 483,
+      "public_declaration_count": 2598,
+      "theorem_count": 2118,
+      "definition_count": 480
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 49822,
+  "combined_audited_NLS_declarations": 49871,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -13731,7 +13942,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 465 unchanged prefix module source hashes match the prior 47697d7 milestone; their private outputs were reused. Seven added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4886 declarations/auxiliaries and combined audit for 49822 NLS declarations. All 475 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 472 unchanged prefix module source hashes match the prior 7c174c0 milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 4935 declarations/auxiliaries and combined audit for 49871 NLS declarations. All 483 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

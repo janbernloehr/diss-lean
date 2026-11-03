@@ -506,6 +506,14 @@ modules = [
     'NLS/MKdV/MiuraQuadraticActionParameters.lean',
     'NLS/MKdV/MiuraGeneralLocalNLSActionFactor.lean',
     'NLS/Articles/MKdVNLSHierarchies/GeneralForwardActionFactorization.lean',
+    'NLS/MKdV/MiuraCartesianRealActionLifts.lean',
+    'NLS/MKdV/MiuraActionFactorGlobalRecovery.lean',
+    'NLS/MKdV/MiuraExponentialActionEncoding.lean',
+    'NLS/MKdV/MiuraFiniteEncodedActionRealization.lean',
+    'NLS/SequenceSpaces/FiniteNonnegativeActionAgreement.lean',
+    'NLS/MKdV/MiuraEncodedActionFactorBalls.lean',
+    'NLS/MKdV/MiuraGlobalNLSActionFactor.lean',
+    'NLS/Articles/MKdVNLSHierarchies/GlobalForwardActionIdentification.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

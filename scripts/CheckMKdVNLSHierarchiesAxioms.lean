@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.GlobalForwardActionIdentification
 import NLS.Articles.MKdVNLSHierarchies.GeneralForwardActionFactorization
 import NLS.Articles.MKdVNLSHierarchies.ActionRealizationGeneralCharts
 import NLS.Articles.MKdVNLSHierarchies.GlobalSobolevCartesianInverseIdentification
@@ -58,6 +59,8 @@ open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[`NLS.KdV, `NLS.MKdV, `NLS.Articles.MKdVNLSHierarchies,
+    `NLS.Coeff.exists_nonnegative_finite_approximation,
+    `NLS.Coeff.eq_of_finite_nonnegative_agreement,
     `NLS.Coeff.truncatePair_activeHead_union,
     `NLS.Coeff.exists_finiteHead_centered_ball,
     `NLS.Coeff.actionRotationVectorCLM_head_eq_zero,
@@ -755,6 +758,13 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.MKdV.exists_miuraCartesian_real_action_lift_neighborhood,
+    ``NLS.MKdV.MiuraGeneralCartesianNLSActionChart.exists_action_factor_global_H1_recovery,
+    ``NLS.MKdV.exists_H1_profile_of_finite_encoded_actions,
+    ``NLS.MKdV.exists_global_miura_original_NLS_action_factor,
+    ``NLS.MKdV.exists_global_miura_original_H1_NLS_action_factor,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem4_ii_nls_actions_of_mkdv_actions_mean,
+
     ``NLS.Coeff.exists_local_sequence_action_factor_of_stationarity,
     ``NLS.WeightedCoeff.positiveCartesianQuadraticMeanMap_isotropicSection,
     ``NLS.MKdV.miuraCartesian_quadratic_parameters,

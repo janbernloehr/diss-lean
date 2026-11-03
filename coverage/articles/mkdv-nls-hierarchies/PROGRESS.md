@@ -2332,3 +2332,56 @@ final angle-sum factorization and the corrected full frequency comparison
 also remain essential. The main theorem goal stays active.
 
 Validation: all 472 article/shared modules have validated private outputs. The 465 unchanged prefix source hashes match 47697d7 and their outputs were reused; all seven added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,886 declarations/auxiliaries and the combined audit for 49,822 NLS declarations, using only the standard allowed axioms. All 475 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,560 declarations (2,085 theorems and 475 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Corrected Theorem 4(ii): one global forward action/mean factor
+
+The global forward clause is now proved by
+`theorem4_ii_nls_actions_of_mkdv_actions_mean` in
+`NLS/Articles/MKdVNLSHierarchies/GlobalForwardActionIdentification.lean`.
+One open complex native action/mean domain contains the data of every
+original physical real H1 profile. One holomorphic, hence real analytic,
+l1-valued factor recovers every original signed NLS spectral action on
+all of those profiles. The domain and factor precede the profile and
+both action indices. Each positive input entry is explicitly identified
+with the independent physical Hill action, and the mean with the literal
+zero Fourier coefficient. Zero mean, arbitrary closed gaps and infinite
+support are included.
+
+This closes the forward obligation of Theorem 4(ii). Together with the
+already proved converse `theorem4_ii_mkdv_actions_of_nls_actions` and the
+sign-invariant correction `theorem4_ii_mean_square_of_nls_actions`, all
+clauses of corrected Theorem 4(ii) are proved. The printed global recovery
+of signed mean from NLS actions remains false, with the checked half-turn
+obstruction already recorded; it is not claimed here.
+
+The global step first strengthens each local factor: on a small open
+action neighborhood it recovers the NLS actions of EVERY original H1
+representative of those data, regardless of distance from the chart's
+basepoint. Quantitative real quadratic-action lifts give nearby real
+Cartesian values. Phase saturation puts such a value in the prescribed
+original NLS action fiber. All its phase lifts retain H1 regularity, and
+uniqueness among all L2 preimages of native Cartesian data identifies the
+local inverse with that phase lift.
+
+For gluing only, the signed mean c is encoded as the strictly positive
+central auxiliary entry exp(c); positive auxiliary entries are the native
+weight-normalized physical mKdV actions. The principal logarithm decodes
+every real signed mean, including negative and zero means, on local
+complex neighborhoods of these positive central values. The local
+encoded factors agree on finite nonnegative data because those data have
+actual original H1 representatives with the prescribed physical actions
+and decoded mean. Finite nonnegative truncations retaining the central
+entry converge in l1, so continuity gives agreement on all nonnegative
+overlaps. The checked holomorphic nonnegative-action gluing theorem
+produces one factor on the union of the encoded balls. Pullback by the
+entire exponential encoding gives the common open physical action/mean
+domain. The exponential is an auxiliary coordinate for gluing; the final
+factor's argument is the original literal signed mean.
+
+Theorems 3 and 4(iii)'s final angle-sum clause remain incomplete. Independent
+canonical mKdV angles/full Gardner canonicity, needed native inverse
+analyticity, and the full corrected frequency comparison on the original
+Sobolev domains remain essential. The main theorem goal stays active.
+
+Validation: all 480 article/shared modules have validated private outputs. The 472 unchanged prefix source hashes match 7c174c0 and their outputs were reused; all eight added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 4,935 declarations/auxiliaries and the combined audit for 49,871 NLS declarations, using only the standard allowed axioms. All 483 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,598 declarations (2,118 theorems and 480 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

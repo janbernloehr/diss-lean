@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "article_id": "mkdv-nls-hierarchies",
-  "status": "partial_main_theorems_3_4_incomplete",
+  "status": "partial_theorems_1_2_4i_and_corrected_4ii_proved_theorem3_and_4iii_angle_sum_incomplete",
   "source": {
     "abstract_url": "https://arxiv.org/abs/1601.07580v1",
     "pdf_url": "https://arxiv.org/pdf/1601.07580v1",
@@ -156,7 +156,7 @@
     {
       "label": "Theorem 4(ii)",
       "page": 4,
-      "status": "partial_converse_mean_square_and_forward_local_every_original_real_H1_proved_common_global_action_extension_open",
+      "status": "proved_original_real_H1_global_forward_and_converse_action_factors_with_mean_squared_correction",
       "target": "Real analytic factorization of I# through J and mean; converse factorization of J and printed signed mean through I.",
       "source_issue": "The printed global signed mean cannot be recovered from NLS actions without a sign branch. The sign-invariant mean-squared replacement is now proved, including at zero mean.",
       "proved_dependencies": [
@@ -217,19 +217,22 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_H1_Hill_action_data_realization",
         "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_general_H1_Cartesian_chart",
         "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_local_action_mean_factor_general_H1",
-        "NLS.Articles.MKdVNLSHierarchies.original_H1_NLS_actions_local_physical_factor_general_H1"
+        "NLS.Articles.MKdVNLSHierarchies.original_H1_NLS_actions_local_physical_factor_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_nls_actions_of_mkdv_actions_mean"
       ],
       "limits": [
         "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
         "The mean squared is the actual central continued primitive square at zero energy. Its analytic source extension survives a collapsed central gap, and its action factor is proved at zero mean as well as nonzero mean. The signed mean itself still requires a sign branch.",
-        "The entire original signed NLS action sequence has a common local holomorphic forward factor near EVERY original real H1 profile, including zero mean and arbitrary collapsed gaps. A single common open complex action domain with global recovery for all original real H1 profiles remains to be constructed."
+        "The whole original signed NLS action sequence now has ONE common global holomorphic forward factor on an open complex native physical-action/signed-mean domain containing every original real H1 profile. The domain and factor precede every source and every signed NLS/positive mKdV index. All clauses of the mean-squared-corrected Theorem 4(ii) are proved."
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mkdv_actions_of_nls_actions",
-        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mean_square_of_nls_actions"
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mean_square_of_nls_actions",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_nls_actions_of_mkdv_actions_mean"
       ],
-      "quantifiers": "Every original real period-one H1 input, every positive mKdV index, zero mean and arbitrary collapsed gaps included. The entire original signed NLS action sequence is assembled in complex l1, analytic on an ambient L2 source neighborhood of all real-type sources. Each J_n and the mean squared have holomorphic, hence real analytic, factors on open complex l1 neighborhoods containing the action image of the entire real L2 diagonal. The forward local factor exists at every original real H1 basepoint: open original-complex-L2 source and native weight-one complex-l1 action/complex-mean neighborhoods precede the l1-valued factor and all signed action indices. Recovery holds on every physical real L2 source in that source neighborhood.",
-      "signed_mean_nonrecoverability": "NLS.Articles.MKdVNLSHierarchies.no_global_signed_mean_NLS_action_factor"
+      "quantifiers": "Every original real period-one H1 input, every positive mKdV index, zero mean and arbitrary collapsed gaps included. The entire original signed NLS action sequence is assembled in complex l1, analytic on an ambient L2 source neighborhood of all real-type sources. Each J_n and the mean squared have holomorphic, hence real analytic, factors on open complex l1 neighborhoods containing the action image of the entire real L2 diagonal. The forward local factor exists at every original real H1 basepoint: open original-complex-L2 source and native weight-one complex-l1 action/complex-mean neighborhoods precede the l1-valued factor and all signed action indices. Recovery holds on every physical real L2 source in that source neighborhood. Globally, one open native complex physical-action/complex-mean domain V and one holomorphic l1-valued factor F work simultaneously for every original physical real H1 source and every original signed NLS action. Positive input entries are the independent physical Hill actions and the mean is literal signed Fourier mean.",
+      "signed_mean_nonrecoverability": "NLS.Articles.MKdVNLSHierarchies.no_global_signed_mean_NLS_action_factor",
+      "remaining_work": []
     },
     {
       "label": "Theorem 4(iii)",
@@ -442,10 +445,9 @@
     "remaining": "The diagonal physical discriminant, original fixed-index endpoints, canonical sheets and actual weighted contour actions have now been identified. Remaining normal-form angle, frequency and Poisson-bracket conventions must be carried through their actual constructions."
   },
   "remaining_essential_dependencies": [
-    "Full Gardner canonicity and independent canonical mKdV angles; native higher-Sobolev inverse continuity and analyticity at general profiles. Arbitrary nonnegative native weighted action data with arbitrary signed mean are now realized globally for every integer H^s, s>=1, including independent physical Hill actions on literal original H1. Global native Cartesian bijectivity, unique entire-L2 preimages of native data and inverse Sobolev regularity are proved. General rough L2-target inversion remains unproved.",
-    "Glue the proved whole-sequence local forward holomorphic action factors at every original real H1 profile to one common open complex native action/mean domain with recovery for all original real H1 sources. Local neighborhoods are in original L2 and weight-one l1 actions plus literal signed mean, with both neighborhoods and the factor preceding all action indices. Global determination by physical action/mean data is already proved on H^s, s>=1; the common ambient holomorphic extension remains essential.",
-    "independent mKdV Birkhoff angle construction, the final angle-sum factorization and full frequency identification; Theorem 4(iii) angle-action bracket clause and actual Gardner transfer are proved",
-    "corrected frequency-sign convention in Theorem 3; the global signed-mean claim in Theorem 4(ii) is replaced by the proved mean-squared statement, while signed recovery requires a branch restriction"
+    "Independent canonical mKdV Birkhoff angles/full Gardner canonicity and needed native higher-Sobolev inverse continuity/analyticity. Global native Cartesian bijectivity, arbitrary native nonnegative action realization and corrected Theorem 4(ii) global forward/converse action factors are proved. Arbitrary rough L2-target inversion remains unproved but is not asserted by these H1 theorems.",
+    "Theorem 4(iii) final angle-sum factorization through physical mKdV actions and signed mean for the independent mKdV angle. Its printed angle-action bracket clause and actual Gardner transfer are already proved.",
+    "Theorem 3 full frequency comparison on the exact original real H^(m-1) domains, including its L2 mass endpoint and collapsed actions, with the recorded correction of the printed (-1)^m sign convention. All corrected Theorem 4(ii) action-dependence clauses are proved."
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -1187,7 +1189,7 @@
       "NLS.Coeff.exists_local_tail_action_factor_of_sign_invariance_at"
     ],
     "limits": [
-      "The subsequent general forward factor milestone applies arbitrary-basepoint tail and finite-head action descent. Whole-sequence forward holomorphic action factors now exist locally at every original real H1 profile, including signed mean zero. Gluing them into one common action domain remains essential.",
+      "The subsequent general and global forward action milestones complete arbitrary-basepoint descent and gluing. A common open complex native action/signed-mean domain and a global l1-valued factor are now proved for all original real H1 profiles.",
       "Complex inverse charts here use original L2/native half-order topologies. Native higher-Sobolev inverse analyticity and full canonicity are not asserted.",
       "Independent canonical mKdV angles, final angle-sum factorization and corrected full frequency comparison remain essential."
     ]
@@ -1209,8 +1211,29 @@
     ],
     "signed_mean_mechanism": "The entire affine isotropic auxiliary pair (m+1/2,i*(m-1/2)) has quadratic action exactly m. Thus zero auxiliary action is the literal signed mean, with no branch choice or division by mean. Positive auxiliary actions are exactly the native normalized physical mKdV actions; unused negative entries vanish.",
     "limits": [
-      "Global physical action-fiber determination is proved, and all local holomorphic factors are proved. They have not yet been glued to one common open complex action domain with recovery for all original real H1 profiles.",
+      "The subsequent global forward action factor milestone glues these local factors to one common open complex native action/signed-mean domain and proves global recovery for all original real H1 profiles.",
       "Native higher-Sobolev inverse analyticity, independent canonical mKdV angles/full canonicity, final angle sums and corrected full frequency comparison remain essential."
+    ]
+  },
+  "global_forward_action_factor": {
+    "status": "proved_global_whole_original_NLS_action_sequence_factor_on_one_common_open_complex_native_physical_action_signed_mean_domain_original_real_H1",
+    "declaration": "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_nls_actions_of_mkdv_actions_mean",
+    "domains": "The one common domain V is open in native weight-one complex l1 physical mKdV actions plus complex literal signed mean and contains the data of EVERY original physical real H1 profile. F is holomorphic and real analytic into the entire original signed NLS action l1 space. Every positive input is explicitly the independent Hill action; the mean is the literal zero Fourier coefficient. Zero mean, arbitrary closed actions and infinite support are included.",
+    "quantifier_order": "There exist one V and one F, before every original H1 profile, every signed NLS index and every positive mKdV index. Recovery is global on all those profiles, not restricted to a source chart.",
+    "core_declarations": [
+      "NLS.MKdV.exists_miuraCartesian_real_action_lift_neighborhood",
+      "NLS.MKdV.MiuraGeneralCartesianNLSActionChart.exists_action_factor_global_H1_recovery",
+      "NLS.MKdV.miuraLogActionParameters_exponential_physical",
+      "NLS.MKdV.exists_H1_profile_of_finite_encoded_actions",
+      "NLS.Coeff.eq_of_finite_nonnegative_agreement",
+      "NLS.MKdV.exists_global_miura_original_NLS_action_factor",
+      "NLS.MKdV.exists_global_miura_original_H1_NLS_action_factor"
+    ],
+    "mechanism": "Nearby real Cartesian lifts, phase saturation and entire-L2 uniqueness of native fibers give local factors global H1 representative recovery. Encoding signed mean by exp(c) gives nonnegative central action centers and principal-log local decoding for every real mean. Finite nonnegative encoded data have actual H1 representatives; finite truncation with the central entry retained gives agreement on full nonnegative overlaps. The checked nonnegative-action holomorphic gluing theorem supplies a factor on the union of balls; entire exponential pullback gives one global physical action/mean domain.",
+    "corrected_theorem4ii": "Together with the previously proved converse J_n and mean-squared factors, every clause of corrected Theorem 4(ii) is proved. The printed global signed-mean recovery from NLS actions is false and is not asserted.",
+    "limits": [
+      "Independent canonical mKdV angles/full Gardner canonicity, final angle-sum factorization and full corrected Theorem 3 frequency comparison remain essential.",
+      "No global inverse theorem for arbitrary rough L2 Cartesian target data is asserted."
     ]
   }
 }
