@@ -410,7 +410,16 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/ZakharovShabat/EvenRealCanonicalCriticalPoints
   NLS/KdV/HillHminusOneRealCriticalEnergyGeometry
   NLS/ComplexAnalysis/SimpleZeroPrincipalCoefficient
-  NLS/KdV/HillHminusOneMiuraCriticalResidues)
+  NLS/KdV/HillHminusOneMiuraCriticalResidues
+  NLS/ZakharovShabat/SourcePsiCriticalQuotientExterior
+  NLS/ZakharovShabat/SourcePsiCriticalInterpolation
+  NLS/ComplexAnalysis/SimplePoleCircleResidue
+  NLS/ZakharovShabat/SourcePsiCriticalResidueBounds
+  NLS/KdV/HillHminusOneMiuraResidueHilbert
+  NLS/ZakharovShabat/SourcePsiCriticalAbsoluteInterpolation
+  NLS/KdV/HillHminusOneMiuraEnergyPrincipalSeries
+  NLS/ComplexAnalysis/EntireCriticalHilbertBasis
+  NLS/KdV/CanonicalMiuraNumeratorRepresentation)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

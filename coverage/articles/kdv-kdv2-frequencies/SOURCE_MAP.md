@@ -599,3 +599,26 @@ genuine principal limits and joint central filling. Details and precise
 qualifications are in `CRITICAL_ENERGY_RESIDUES.md`. A Hilbert coefficient
 sequence, exterior remainder estimate and numerator representation are
 still required. All source main-theorem inventory rows remain OPEN.
+
+
+## Current full entire canonical Hilbert realization
+
+Toward (52)-(53), PDF21, and the moment/frequency formula(69), PDF26,
+`sourcePsiCriticalInterpolation_tsum_eq_quotient` identifies the actual
+ordinary absolute critical interpolation with the NLS numerator divided
+by its actual discriminant derivative. `memℓp_sourcePsiCriticalResidue_two`
+is derived from proved 4/|j| small-circle residue bounds. The actual energy
+coefficient vector has exact normalization A_j/(2pi*j).
+
+`hillHminusMiura_energy_principal_series` proves the absolute positive
+energy principal series off its poles and central ramification point.
+`hillHminusMiuraEnergyPsi_eq_canonicalHilbert` fills the canonical critical
+basis and proves the entire numerator identity at every energy, including
+critical and central points. The theorem
+`exists_hillHminus_real_canonical_numerator_representation` constructs
+actual normalized NLS data and one complex rough-open neighborhood before
+all real inputs, numerator indices and energies. The basis and coefficient
+vector have proved genuine Hilbert membership; source joint Banach
+analyticity of these vectors and identification with the older weighted
+normalized family are separate steps. Details and remaining obligations
+are in `CANONICAL_NUMERATOR_REPRESENTATION.md`. All main rows remain OPEN.

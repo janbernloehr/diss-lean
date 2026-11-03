@@ -17,6 +17,24 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest full entire actual numerator Hilbert representation
+
+Derived critical quotient decay and actual Cauchy interpolation now give
+absolute principal-part sums. Actual residue bounds prove signed l2
+membership, and a bounded canonical critical multiplier constructs the
+exact energy-basis coefficients a_j=A_j/(2pi*j). Quadratic critical growth
+gives an entire filled l2-valued basis. The actual descended numerator
+equals its Hilbert pairing at every energy, including all critical and
+central values, at every real-type rough chart input. Actual normalized
+NLS data/common complex rough-open sets are constructed before all indices.
+See `CANONICAL_NUMERATOR_REPRESENTATION.md`.
+
+Current strict validation: 412 modules, 4837 selected declarations and
+26997 imported NLS declarations; permitted axioms only. All 403 previous
+selected Lean sources and seven provenance records remain unchanged.
+Old critical-label/contour compatibility, weighted-family identification,
+physical frequency(69) and all main theorems remain open.
+
 ## Latest complete actual rough critical energies and residues
 
 Every critical energy of the independent rough Hill trace is now proved

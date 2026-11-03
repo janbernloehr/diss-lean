@@ -82,8 +82,9 @@ its existing Hilbert specialization and a transitive audit.
 | Seven actual energy-root/mapped-contour/chart-agreement modules and two existing real-band/domain dependencies | Actual jointly analytic Hill energy roots; positive mapped contours with winding one and exact normalization; root independence on the whole common energy domain at real inputs and equality of full joint complex germs. Entire-numerator identification and all main theorems remain open. |
 | Four actual real-scaling/spectral-exclusion/root-compatibility modules | Nonreal spectral exclusion at every real rough potential; old continuation-domain inclusion; actual free normalization; root equality on full common domains near zero and agreement of full complex energy/source germs. Entire-numerator identification and all main theorems remain open. |
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
+| Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 403 selected modules compile with pinned **Lean 4.33.1**, commit
+All 412 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -496,11 +497,20 @@ PASS NLS/ZakharovShabat/EvenRealCanonicalCriticalPoints
 PASS NLS/KdV/HillHminusOneRealCriticalEnergyGeometry
 PASS NLS/ComplexAnalysis/SimpleZeroPrincipalCoefficient
 PASS NLS/KdV/HillHminusOneMiuraCriticalResidues
-Axiom audit passed: 4720 candidate declarations; 26880 declarations total.
+PASS NLS/ZakharovShabat/SourcePsiCriticalQuotientExterior
+PASS NLS/ZakharovShabat/SourcePsiCriticalInterpolation
+PASS NLS/ComplexAnalysis/SimplePoleCircleResidue
+PASS NLS/ZakharovShabat/SourcePsiCriticalResidueBounds
+PASS NLS/KdV/HillHminusOneMiuraResidueHilbert
+PASS NLS/ZakharovShabat/SourcePsiCriticalAbsoluteInterpolation
+PASS NLS/KdV/HillHminusOneMiuraEnergyPrincipalSeries
+PASS NLS/ComplexAnalysis/EntireCriticalHilbertBasis
+PASS NLS/KdV/CanonicalMiuraNumeratorRepresentation
+Axiom audit passed: 4837 candidate declarations; 26997 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 403 selected modules (including generated and private declarations)
+the 412 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1551,3 +1561,42 @@ with the earlier weighted normalized family, full coherent W, canonical
 leading scalar one, sharp source(54), physical frequency(69), action descent,
 weighted asymptotic/compact derivative claims and actual Birkhoff/PDE flows
 remain open. No main theorem inventory row is closed.
+
+
+## Full actual canonical numerator Hilbert representation
+
+See `CANONICAL_NUMERATOR_REPRESENTATION.md`. Actual free-normalized product
+ratios prove the critical quotient bound 8/|z| and vanishing Cauchy error.
+Complete actual simple critical labels give exact Cauchy interpolation,
+uniform symmetric limits and ordinary absolute sums. Actual small-circle
+residue estimates yield 4/|j| tails and genuine signed l2 residues. The
+bounded actual beta_j/(pi*j) multiplier gives the exact positive energy
+coefficient vector a_j=A_j/(2pi*j), with no sequence membership assumed.
+
+The shifted-square pullback and actual signed reflection give absolute
+positive energy principal series. Actual quadratic critical energy growth
+supplies an entire filled l2-valued critical basis. Its pairing with the
+constructed coefficients equals the actual descended numerator at every
+energy by analytic uniqueness, including all critical and central values.
+One actual normalized NLS data set/common complex rough-open neighborhood
+at every real base point precedes all indices and real inputs. The Hilbert
+basis is spectrally entire for each fixed real-type input; joint Banach
+analyticity of that basis or coefficient vector in the rough source is
+not asserted.
+
+All 412 selected modules pass the full serialized strict rebuild and final
+combined transitive audit: 4837 selected declarations, 26997 imported
+NLS declarations, only propext/Classical.choice/Quot.sound. Exact ordered
+checker/audit/PASS/coverage selections, all source hashes, seven provenance
+records and private fresh outputs agree. All 403 previous selected Lean
+sources remain byte-identical. Combined import preflight passed. Canonical
+main remains unchanged and clean. No new shared branch import, placeholder,
+axiom, heartbeat increase, disabled linter or warning exception is introduced.
+
+The canonical critical coordinates still need identification with the
+earlier local rough critical labels, and actual contour normalization must
+be transferred before applying the earlier period inverse. Agreement with
+the weighted normalized family, full coherent W, canonical leading scalar
+one, sharp source(54), physical frequency(69), action descent, weighted
+asymptotic/compact derivative claims and actual Birkhoff/PDE flows remain
+open. No main inventory row is closed.

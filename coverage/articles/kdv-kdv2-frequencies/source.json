@@ -6746,6 +6746,141 @@
       "scope": "Actual canonical periodic endpoint reflection and the unique real critical point in every gap identify beta_-j=-beta_j at all indices, including central and collapsed gaps. The central critical point is zero and strict actual order gives beta_j.re>0 at every positive index",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "7e4a8316fd6f1bd386470da3fa0fa4bd82728f03dc6260afce5f25f5c9c3bb23"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EntireCriticalHilbertBasis.lean",
+      "source_labels": [
+        "Filled entire Hilbert basis from quadratic critical growth"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "For an entire scalar denominator and a quadratically growing zero sequence, the filled coordinates (2pi*j)*dslope at each zero form a genuine entire l2-valued basis. Locally uniform reciprocal tails and the exact filled factor identity are proved",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ecd0cb6d8503ed41ba60184d164c4faaaaa033e20cd4032ebb186d4ba7b52178"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SimplePoleCircleResidue.lean",
+      "source_labels": [
+        "Actual one-pole circle integral and residue norm bound"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "A proved analytic principal remainder gives the literal quotient circle integral 2pii times numerator/denominator derivative at the enclosed simple zero. A circle supremum bound gives residue norm<=radius times bound",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "87da32beb123ffb612ce675916869081c1e32df576d2f25ed5907266e1479007"
+    },
+    {
+      "path": "NLS/KdV/CanonicalMiuraNumeratorRepresentation.lean",
+      "source_labels": [
+        "Full entire actual Miura numerator Hilbert representation"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Canonical critical displacements prove actual quadratic energy growth. The filled basis is entire with values in l2. Absolute positive principal series and an actual noncritical seed prove by entire analytic uniqueness that the actual descended numerator equals the pairing of its genuine a_j=A_j/(2pi*j) vector with the canonical basis at every energy, including critical centers and the central point. Actual normalized NLS data/common complex neighborhood are constructed before all indices and real inputs; old weighted-family identification remains open",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "aac3a71cd5470aecca7023549dadb5d6cd838dd6034d7478d13c8fb41051fa69"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMiuraEnergyPrincipalSeries.lean",
+      "source_labels": [
+        "Actual absolutely convergent signed and positive energy principal series"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Two actual absolute canonical critical interpolations combine under the shifted-square derivative pullback. Signed reflection pairs them into the actual positive energy principal coefficients. Both series converge absolutely and represent Psi_H/Delta_H-prime away from critical poles and the central ramification energy",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8e13d0b0ea5d66b32d9d1d9ae440c24f34f358158c0eec100e487d0ab853d0f3"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMiuraResidueHilbert.lean",
+      "source_labels": [
+        "Genuine normalized energy critical-basis Hilbert coefficients"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "The actual beta_j/(pi*j) positive multiplier is bounded by the canonical critical displacement norm. It transfers the signed l2 residue sequence to a genuine positive coefficient vector with exact a_j=A_j/(2pi*j), zero nonpositive coordinates, a proved norm bound and actual normalized-data existence on one common complex rough-open set",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c58742d8210b27db9ec057222dd992117b9417785b016dad25fd8988f7532c41"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiCriticalAbsoluteInterpolation.lean",
+      "source_labels": [
+        "Actual absolute critical interpolation and ordinary sum identity"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "The actual reciprocal critical kernel belongs to l2 at every fixed spectral point. Holder pairing with the proved l2 critical residues gives absolute interpolation summability. The proved symmetric Cauchy limits identify the ordinary sum with the actual numerator/derivative quotient",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e21ff2906cf5abd78f0d6d4aea26216ea15659f187d3f5fd7071a58d287e93b9"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiCriticalInterpolation.lean",
+      "source_labels": [
+        "Actual canonical critical Cauchy interpolation"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Canonical lp critical displacements give exact symmetric root selection. Complete simple real-type critical roots supply the actual residues in a proved finite Cauchy error formula. Derived exterior decay gives uniform symmetric interpolation limits on every bounded zero-free evaluation set",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5230285637103cda1c5dff8e714352e6a071205653bf1185dd5d8e202c66aa34"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiCriticalQuotientExterior.lean",
+      "source_labels": [
+        "Derived actual critical quotient exterior decay"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "The exact complete critical derivative product and two free-normalized products give a nonzero derivative and the bound |phi_n/Delta-prime|<=8/|z| outside separated free-lattice discs, plus actual uniform large-circle bounds and vanishing outer Cauchy error",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c13d12286d062c04c8d8af5716fa208c3a29bc42f67750369f42f593dbdd4718"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiCriticalResidueBounds.lean",
+      "source_labels": [
+        "Actual reciprocal-index critical residue tails and Hilbert membership"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Actual isolated high critical circles and derived exterior estimates prove |r_j|<=4/|j| at all sufficiently distant signed labels. A finite head and the verified punctured reciprocal sequence give genuine l2 membership without postulated residue bounds",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "65b1129fcc70c4ee594909d02e865e661cace4f6acfaa579751f5bfe1e28c7bd"
     }
   ],
   "dependencies_needed": [
@@ -6777,17 +6912,18 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4720,
-    "total_declarations_audited": 26880,
+    "candidate_declarations_audited": 4837,
+    "total_declarations_audited": 26997,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 403,
+    "selected_modules": 412,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
-    "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh."
+    "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
+    "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -6927,5 +7063,6 @@
   "miura_root_pullback_periods_record": "MIURA_ROOT_PULLBACK_PERIODS.md",
   "energy_root_chart_agreement_record": "ENERGY_ROOT_CHART_AGREEMENT.md",
   "continuation_root_agreement_record": "CONTINUATION_ROOT_AGREEMENT.md",
-  "critical_energy_residue_record": "CRITICAL_ENERGY_RESIDUES.md"
+  "critical_energy_residue_record": "CRITICAL_ENERGY_RESIDUES.md",
+  "canonical_numerator_representation_record": "CANONICAL_NUMERATOR_REPRESENTATION.md"
 }

@@ -1,3 +1,8 @@
+import NLS.KdV.CanonicalMiuraNumeratorRepresentation
+import NLS.ComplexAnalysis.EntireCriticalHilbertBasis
+import NLS.KdV.HillHminusOneMiuraEnergyPrincipalSeries
+import NLS.ZakharovShabat.SourcePsiCriticalAbsoluteInterpolation
+import NLS.KdV.HillHminusOneMiuraResidueHilbert
 import NLS.KdV.HillHminusOneMiuraCriticalResidues
 import NLS.KdV.HillHminusOneEnergyRootContinuationAgreement
 import NLS.KdV.HillHminusOneMappedEnergyPeriods
@@ -491,7 +496,16 @@ run_cmd do
     `NLS.ZakharovShabat.EvenRealCanonicalCriticalPoints,
     `NLS.KdV.HillHminusOneRealCriticalEnergyGeometry,
     `NLS.ComplexAnalysis.SimpleZeroPrincipalCoefficient,
-    `NLS.KdV.HillHminusOneMiuraCriticalResidues]
+    `NLS.KdV.HillHminusOneMiuraCriticalResidues,
+    `NLS.ZakharovShabat.SourcePsiCriticalQuotientExterior,
+    `NLS.ZakharovShabat.SourcePsiCriticalInterpolation,
+    `NLS.ComplexAnalysis.SimplePoleCircleResidue,
+    `NLS.ZakharovShabat.SourcePsiCriticalResidueBounds,
+    `NLS.KdV.HillHminusOneMiuraResidueHilbert,
+    `NLS.ZakharovShabat.SourcePsiCriticalAbsoluteInterpolation,
+    `NLS.KdV.HillHminusOneMiuraEnergyPrincipalSeries,
+    `NLS.ComplexAnalysis.EntireCriticalHilbertBasis,
+    `NLS.KdV.CanonicalMiuraNumeratorRepresentation]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do
