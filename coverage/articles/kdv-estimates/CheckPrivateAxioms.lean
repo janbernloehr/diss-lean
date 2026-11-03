@@ -1,3 +1,12 @@
+import NLS.KdV.HillUniformActionGapBound
+import NLS.SequenceSpaces.NonnegativeSeriesCauchySchwarz
+import NLS.SequenceSpaces.WeightedSquareSums
+import NLS.SequenceSpaces.QuadraticSeparationTail
+import NLS.ComplexAnalysis.ProductExponentialBound
+import NLS.SequenceSpaces.WeightedCutoffPowers
+import NLS.SequenceSpaces.SpectralWeightFixedShift
+import NLS.KdV.HillCriticalProductBounds
+import NLS.KdV.HillWeightedCriticalTail
 import NLS.ComplexAnalysis.RealCriticalProducts
 import NLS.SequenceSpaces.PositiveQuotientProducts
 import NLS.ComplexAnalysis.RealGapArcsineIntegral
@@ -600,7 +609,17 @@ run_cmd do
     ``NLS.ComplexAnalysis.hasDerivAt_gap_arcsin,
     ``NLS.ComplexAnalysis.intervalIntegrable_gap_arcsine_kernel,
     ``NLS.ComplexAnalysis.integral_gap_arcsine_kernel,
-    ``NLS.ComplexAnalysis.integral_eq_weighted_deriv_of_zero_endpoints]
+    ``NLS.ComplexAnalysis.integral_eq_weighted_deriv_of_zero_endpoints,
+    ``NLS.SequenceSpaces.nonneg_series_cauchy_schwarz,
+    ``NLS.SequenceSpaces.square_sum_le_of_weight_lower_bound,
+    ``NLS.SequenceSpaces.reciprocal_square_separation_bound,
+    ``NLS.SequenceSpaces.summable_quadratic_separation_tail,
+    ``NLS.SequenceSpaces.quadratic_separation_cauchy_schwarz,
+    ``NLS.ComplexAnalysis.norm_hasProd_le_exp_sum,
+    ``NLS.SequenceSpaces.weighted_cutoff_denominator_lower,
+    ``NLS.SequenceSpaces.corrected_weighted_gap_tail_exponent_le_one,
+    ``NLS.SpectralWeight.nat_weight_le_fixed_shift_realExtension,
+    ``NLS.SpectralWeight.ceil_eight_rpow_weight_bound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

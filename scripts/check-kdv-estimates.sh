@@ -89,6 +89,8 @@ modules+=(NLS/ComplexAnalysis/DerivativeSquarePullbackOrder NLS/KdV/HillEnergyPo
 modules+=(NLS/KdV/HillCriticalCentralCensus NLS/KdV/HillSignedCriticalFrequencies NLS/KdV/HillEnergyCriticalProduct NLS/KdV/HillCriticalEnergyZeros)
 modules+=(NLS/ComplexAnalysis/EndpointCriticalRatioBounds NLS/SequenceSpaces/NaturalSquareSeparation NLS/KdV/HillEnergyLogarithmicProduct NLS/KdV/HillOmittedEnergyCriticalProduct NLS/KdV/HillHighCriticalFactorBounds)
 modules+=(NLS/ComplexAnalysis/RealCriticalProducts NLS/SequenceSpaces/PositiveQuotientProducts NLS/ComplexAnalysis/RealGapArcsineIntegral NLS/KdV/HillEnergyChiPositivity NLS/KdV/HillLowCriticalProductBound NLS/KdV/HillChiActionFormula)
+modules+=(NLS/SequenceSpaces/NonnegativeSeriesCauchySchwarz NLS/SequenceSpaces/WeightedSquareSums NLS/SequenceSpaces/QuadraticSeparationTail NLS/ComplexAnalysis/ProductExponentialBound NLS/SequenceSpaces/WeightedCutoffPowers NLS/SequenceSpaces/SpectralWeightFixedShift NLS/KdV/HillCriticalProductBounds NLS/KdV/HillWeightedCriticalTail)
+modules+=(NLS/KdV/HillUniformActionGapBound)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

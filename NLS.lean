@@ -5240,3 +5240,12 @@ import NLS.ComplexAnalysis.RealGapArcsineIntegral
 import NLS.KdV.HillEnergyChiPositivity
 import NLS.KdV.HillLowCriticalProductBound
 import NLS.KdV.HillChiActionFormula
+import NLS.SequenceSpaces.NonnegativeSeriesCauchySchwarz
+import NLS.SequenceSpaces.WeightedSquareSums
+import NLS.SequenceSpaces.QuadraticSeparationTail
+import NLS.ComplexAnalysis.ProductExponentialBound
+import NLS.SequenceSpaces.WeightedCutoffPowers
+import NLS.SequenceSpaces.SpectralWeightFixedShift
+import NLS.KdV.HillCriticalProductBounds
+import NLS.KdV.HillWeightedCriticalTail
+import NLS.KdV.HillUniformActionGapBound
