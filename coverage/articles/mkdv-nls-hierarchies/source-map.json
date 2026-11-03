@@ -318,7 +318,15 @@
         "NLS.KdV.hasFDerivAt_hillDirichlet_unit_branch",
         "NLS.KdV.hasFDerivAt_hillLogNorming_unit_branch",
         "NLS.MKdV.MiuraDirichletBranch.eventually_real_family_match",
-        "NLS.MKdV.MiuraDirichletBranch.logEnergyGradient_logNormingGradient_bracket"
+        "NLS.MKdV.MiuraDirichletBranch.logEnergyGradient_logNormingGradient_bracket",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_partial_Abelian_phase_original_H1",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_finiteGap_Abelian_phase",
+        "NLS.KdV.exists_hillDirichletRegularAbelianTerm_analytic_extension",
+        "NLS.KdV.hillDirichletRegularAbelianTerm_eq_terminal",
+        "NLS.KdV.hillAbelianSelectedGlobalPsi_intrinsic_periods",
+        "NLS.KdV.exists_hillDirichlet_analytic_sheeted_angle",
+        "NLS.MKdV.miuraFiniteGapAbelianPhase_eq_full_series",
+        "NLS.MKdV.miuraFiniteGapAbelianPhase_independent_support"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -489,8 +497,8 @@
     "remaining": "Independent original mKdV angle identification and final Theorem 4(iii) angle-sum factorization. Corrected all-order frequency comparison is complete."
   },
   "remaining_essential_dependencies": [
-    "Construct and identify the original independent mKdV Abelian unit phase and prove its normalized negative Gardner generators for the original physical actions on the selected open-action domain. The physical-to-native H2 cotangent bridge, original branch Frechet derivatives, actual H1 Miura Gardner spectral matrix and unconditional Dirichlet positivity are now proved.",
-    "Instantiate the checked full phase-product descent implication with that original mKdV phase, retaining its original normalization. The printed final angle-sum claim is dependence as a function of actions and mean. The global action-fiber and open-domain generator integration arguments are already proved. Corrected all-order Theorem3 is complete."
+    "Prove locally uniform convergence of the actual independent regular Abelian correction series for every original real H1 profile and construct the full original phase on its exact own-open-action locus. All regular terms, local complex analytic finite partial phases, and the full convergent finite-gap series are now constructed from the original Hill divisor.",
+    "Prove the independent original Abelian phase negative Gardner generators for the original physical mKdV actions, then instantiate the checked full phase-product descent. The printed final angle-sum claim is dependence as a function of actions and mean. Corrected all-order Theorem3 is complete."
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -1400,8 +1408,36 @@
     "positivity": "Every original Dirichlet energy is strictly positive on every real H1 Miura profile, including closed gaps. Half-log-energy gradients require no extra positivity hypothesis.",
     "matrix": "{mu_n,mu_m}=0; {mu_n,kappa_m}=-2mu_n delta; {kappa_n,mu_m}=+2mu_n delta; {kappa_n,kappa_m}=0; {(1/2)log(mu_n),kappa_m}=-delta, reverse+delta, half-log/half-log=0.",
     "limits": [
-      "The independent original global Abelian mKdV phase is not yet constructed, and its negative generators for the original physical actions have not been proved.",
+      "The independent regular Abelian terms, all finite partial phases and the full finite-gap series are now constructed below. General infinite-gap convergence, full original H1 phase extension and its negative generators for the original physical actions remain unproved.",
       "Final Theorem4iii remains incomplete; instantiate the existing full phase-product descent after identifying the original phase. The printed final angle-sum claim is dependence as a function of actions and mean, without an additional analyticity claim."
+    ]
+  },
+  "independent_Abelian_divisor_phase_construction": {
+    "status": "proved_all_regular_terms_and_finite_partial_phases_analytic_on_original_domains_full_finiteGap_series_constructed_general_convergence_and_action_generators_open",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_partial_Abelian_phase_original_H1",
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_finiteGap_Abelian_phase",
+      "NLS.KdV.exists_hillDirichletRegularAbelianTerm_analytic_extension",
+      "NLS.KdV.hillDirichletRegularAbelianTerm_eq_terminal",
+      "NLS.KdV.hillAbelianSelectedGlobalPsi_intrinsic_periods",
+      "NLS.KdV.exists_hillDirichlet_analytic_sheeted_angle",
+      "NLS.MKdV.miuraFiniteGapAbelianPhase_eq_full_series",
+      "NLS.MKdV.miuraFiniteGapAbelianPhase_independent_support"
+    ],
+    "shared_source": {
+      "branch": "articles/kdv-estimates",
+      "commit": "62da59c8f580fac3a84b5fbee140a857c240df87",
+      "module_count": 342,
+      "byte_identical_count": 298,
+      "adapted_high_energy_cutoff_count": 44
+    },
+    "regular_terms": "Actual normalized Hill Abelian integrals at the independent sheeted Dirichlet terminal minus their normalized linear angular part. Chosen-real-lift independence, exact zero at a closed contributing gap, and local full complex L2 analytic representatives through every closed gap are proved.",
+    "partial_phase_domain": "EVERY original real H1 Miura profile with its own actual original physical mKdV action nonzero. Arbitrary signed mean and arbitrary spectral support; other gaps may all be closed. Each finite partial phase has normone and a local fullcomplexH1 analytic representative agreeing on the entire realH1 neighborhood.",
+    "finiteGap_full_phase": "On EVERY original finite-gap Miura profile, support of all open gaps is selected from original physical contour actions. The full correction series converges because all terms off that support vanish exactly. Its phase is unit on its own open-action locus and independent of any finite support set containing the open gaps.",
+    "limits": [
+      "General infinite-gap locally uniform convergence and the full H1 phase extension remain unproved.",
+      "Negative Gardner generators for the original physical mKdV actions remain unproved, including for the constructed finite-gap phase.",
+      "Final Theorem4iii remains incomplete until the original full phase and these generators are identified and the checked full phase-product descent is instantiated. No negative NLS phase is assigned as the definition."
     ]
   }
 }

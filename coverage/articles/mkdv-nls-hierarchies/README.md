@@ -30,6 +30,11 @@ holomorphically extends each frequency through all closed actions. At m=1
 both frequencies equal +2*pi*n, and a checked zero-profile counterexample
 refutes the printed (-1)^m factor. Independent canonical angles/final angle
 sums remain open.
+Current independent-phase progress: the actual regular Abelian terms and
+all finite partial phases have local analytic representatives through
+closed contributing gaps. The full Abelian series is constructed on every
+finite-gap Miura profile. General infinite-gap convergence and the negative
+original physical-action generators remain unproved.
 See the latest milestone below.
 
 Prepared 2026-11-02 against canonical commit
@@ -2288,3 +2293,62 @@ separated-coordinate matrix by itself does not identify that phase.
 Corrected Theorem 3 remains complete on every original stated domain.
 
 Validation: all 662 article/shared modules have validated private outputs. All 646 unchanged prefix source hashes match pushed 87afbd4 and their outputs were reused; all sixteen added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 6,448 declarations/auxiliaries and the combined audit for 51,362 NLS declarations, using only standard allowed axioms. All 665 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 3,373 declarations (2,757 theorems and 616 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## 2026-11-04 — independent Abelian divisor phase construction
+
+Integrated 342 checked shared modules from `articles/kdv-estimates` at
+immutable commit `62da59c8f580fac3a84b5fbee140a857c240df87`. They give the
+actual globally normalized Hill Abelian differentials, their intrinsic
+periods and complex L² analytic dependence, canonical deflated root
+charts, sheeted Dirichlet terminals, and quadratic Abelian corrections
+through closed gaps. Of these sources, 298 are byte identical and 44
+retain this article branch's established `16*norm` high-energy cutoff.
+The original elementary `8*norm` estimates are used by weakening the
+stronger bound where appropriate. All 662 old mathematical prefix
+sources remain unchanged. Original and integrated hashes are recorded.
+
+Eight new construction modules specify the actual sheeted terminal from
+the independent Hill Dirichlet energy, signed logarithmic multiplier and
+canonical root. The regular Abelian term subtracts its normalized linear
+angular part. Its value is independent of the chosen real angular lift,
+and is exactly zero on a closed contributing gap. Every regular term
+has a local complex L² analytic representative at every original real
+Hill potential, including when its contributing gap is closed.
+
+The terminal unit phase is locally complex analytic on its own open gap,
+including when the Dirichlet point is a band endpoint. Each finite partial
+Abelian phase is the actual terminal phase times the exponential of the
+finite sum of those regular Abelian integrals. It has norm one on its own
+open gap and a local complex analytic extension even when any or all of
+the other gaps are closed. A value zero at the selected closed gap is
+only a convention; no angular continuity across that selected gap is
+claimed.
+
+Pullback by the literal H¹ Miura map gives these independent partial
+phases on every original real H¹ profile, with arbitrary signed mean
+and arbitrary spectral support. Their own domain is proved to be exactly
+the nonzero ORIGINAL physical mKdV contour-action locus. The local
+representative is analytic in the full complex H¹ norm and agrees on a
+neighborhood in the entire original real H¹ subspace, not only along a
+selected curve.
+
+On every finite-gap Miura profile, the support selected from the original
+physical actions contains all open Hill gaps. All remaining regular
+corrections vanish exactly. The series therefore converges and equals
+any finite sum containing that support. The resulting unit phase is
+independent of the chosen finite support set and equals the literal full
+Abelian series. These definitions use the independent Hill divisor and
+normalized integrals; they do not assign a negative NLS phase as its value.
+
+Theorem 4(iii) remains INCOMPLETE. The full infinite-gap correction series
+still requires locally uniform convergence and its corresponding original
+H¹ extension. The independent Abelian phase must then be proved to have
+the negative Gardner generators for the original physical actions. The
+already checked full phase-product descent can then be instantiated to
+prove the printed action-and-mean dependence. No canonical generator
+identity is claimed from finite truncation, convergence or unit norm alone.
+Corrected Theorem 3 and the other previously completed main clauses are
+unchanged.
+
+Validation: all 1,012 article/shared modules have validated private outputs. All 662 old prefix sources match pushed 0352e43. The 342 added shared modules passed focused compilation; their compiled outputs were hash-frozen and reused. All eight original construction modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 8,984 declarations/auxiliaries and the combined audit for 53,872 NLS declarations, allowing only standard axioms. All 1,015 source/checker/aggregate hashes and all 342 frozen compiled output hashes match. The public inventory is 4,622 declarations (3,853 theorems and 769 definitions, including three abbreviations). The audit declaration literals were split into 48 blocks while preserving all 3,012 prefixes and their order. No kernel, recursion or heartbeat limit was raised. Pinned cached dependencies were used; the full dependency tree was not rebuilt.
