@@ -5185,3 +5185,6 @@ import NLS.KdV.HillHierarchyPhaseModel
 import NLS.KdV.HillL2HierarchySquareAsymptotics
 import NLS.KdV.HillSmoothHierarchyTraceLimit
 import NLS.KdV.HillSmoothHierarchyTrace
+import NLS.KdV.HillIntegerSobolev
+import NLS.KdV.HillSobolevTraceFamily
+import NLS.KdV.HillSobolevHierarchyTrace

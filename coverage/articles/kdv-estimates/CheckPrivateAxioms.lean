@@ -1,3 +1,6 @@
+import NLS.KdV.HillIntegerSobolev
+import NLS.KdV.HillSobolevTraceFamily
+import NLS.KdV.HillSobolevHierarchyTrace
 import NLS.ComplexAnalysis.LaurentContourCoefficient
 import NLS.KdV.HillHierarchyPhaseModel
 import NLS.KdV.HillL2HierarchySquareAsymptotics
