@@ -2502,3 +2502,52 @@ angle-sum clause of Theorem 4(iii) remain open. The overall main-theorem
 goal stays active.
 
 Validation: all 510 article/shared modules have validated private outputs. The 490 unchanged prefix source hashes match fe2097b and their outputs were reused; all twenty added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 5,153 declarations/auxiliaries and the combined audit for 50,089 NLS declarations, using only the standard allowed axioms. All 513 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,727 declarations (2,228 theorems and 499 definitions); new structures and generated projections/auxiliaries are additionally audited. Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Full L2 mass-frequency comparison and a checked parity counterexample
+
+`theorem3_m1_corrected` proves the corrected first
+case of Theorem 3 on EVERY original real L2 profile, including collapsed
+actions. The original NLS S2 frequency equals the independent physical
+K1 raw positive-action derivative, with positive period-one value 2*pi*n.
+This holds for every global physical mass normal form, rather than just
+the explicit mass formula. `theorem3_m1_corrected_native` states the same
+comparison in the uniform native H^(m-1) normal-form framework.
+
+The NLS frequency is identified independently. The checked original S2
+Hamiltonian has exactly the physical momentum differential
+(`fderiv_originalS2_eq_sourceMomentumCotangent`). One actually constructed
+original NLS angle family has angle-momentum bracket +2*pi*n on its own
+open-angle real H1 domain. Open-gap density first determines any continuous
+extension throughout real H1. Original real-L2 finite-gap density and the
+unchanged H1 reconstruction then determine it on ALL real L2 sources.
+`theorem3_m1_original_NLS_frequency_certificate` packages the constructed
+angle family and unique extension simultaneously for all signed indices.
+The constant complex frequency candidate is entire. No mKdV action factor
+is used to define or normalize this NLS frequency.
+
+For the independent mass frequency, real H1 profiles realize every
+one-sided raw positive-action ray in the L2 action topology, with mean
+fixed. All global mass normal forms recover the same physical mass on
+these rays. Uniqueness of the real one-sided derivative fixes their
+selected action derivative. Analytic dependence on the original L2 source
+and real H1 density extend the result to ALL original real L2 profiles,
+including every closed action. Linear H0/L2 coefficient identification
+transports any native mass normal form to this setting. Consequently
+`native_Hill_frequency_unique_allOrders` proves positive-action frequency
+choice independence at every m>=1. No nonlinear rough-L2 inverse or full
+Gardner canonicity is assumed.
+
+`theorem3_printed_parity_counterexample` gives a concrete refutation of
+the printed (-1)^m factor: at the literal zero profile, m=1 and n=1, it
+would equate -2*pi with +2*pi. Both selected actions are closed, and the
+source explicitly includes their analytic frequency extensions. The
+underlying original momentum normalization and independent mass action
+normalization are both checked.
+
+The m>=2 comparison with the original NLS S_(2m) frequencies remains
+open. Independent canonical mKdV angles/full Gardner canonicity and the
+final angle-sum clause of Theorem 4(iii) also remain open. The overall
+main-theorem goal stays active.
+
+Validation: all 518 article/shared modules have validated private outputs. The 510 unchanged prefix source hashes match 898aecf and their outputs were reused; all eight added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 5,257 declarations/auxiliaries and the combined audit for 50,193 NLS declarations, using only the standard allowed axioms. All 521 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,766 declarations (2,260 theorems and 506 definitions); new structures and generated projections/auxiliaries are additionally audited. Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. A concrete analytic pullback initially hit the default kernel limit; factoring the composition into an abstract bounded-linear constructor resolved it. Kernel, recursion and heartbeat limits were not increased.

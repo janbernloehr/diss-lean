@@ -544,6 +544,14 @@ modules = [
     'NLS/MKdV/MiuraNativePhysicalActionRays.lean',
     'NLS/MKdV/MiuraNativeHamiltonianFrequencies.lean',
     'NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianActionNormalForms.lean',
+    'NLS/ZakharovShabat/SourceMomentumFrequencyNormalization.lean',
+    'NLS/ZakharovShabat/SourceMomentumFrequencyL2Extension.lean',
+    'NLS/MKdV/MiuraH1ActionRaysInL2.lean',
+    'NLS/MKdV/MiuraL2MassActionFrequency.lean',
+    'NLS/MKdV/MiuraZeroSobolevActionCoordinates.lean',
+    'NLS/MKdV/MiuraNativeMassFrequency.lean',
+    'NLS/MKdV/MiuraMassFrequencyComparison.lean',
+    'NLS/Articles/MKdVNLSHierarchies/FrequencyMassEndpoint.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

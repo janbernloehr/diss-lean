@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.FrequencyMassEndpoint
 import NLS.Articles.MKdVNLSHierarchies.NativeHamiltonianActionNormalForms
 import NLS.Articles.MKdVNLSHierarchies.NativeHamiltonianCoordinates
 import NLS.Articles.MKdVNLSHierarchies.GlobalForwardActionIdentification
@@ -61,6 +62,20 @@ open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[
+    `NLS.ZakharovShabat.SourceMomentumFrequencyFamily,
+    `NLS.ZakharovShabat.fderiv_originalS2_eq_sourceMomentumCotangent,
+    `NLS.ZakharovShabat.nonempty_sourceMomentumFrequencyFamily,
+    `NLS.ZakharovShabat.sourceMomentumFrequency,
+    `NLS.ZakharovShabat.analyticAt_sourceMomentumFrequency,
+    `NLS.ZakharovShabat.SourceMomentumFrequencyFamily.frequency_eq_original_bracket,
+    `NLS.ZakharovShabat.sourceRealH1Inclusion,
+    `NLS.ZakharovShabat.continuous_sourceRealH1Inclusion,
+    `NLS.ZakharovShabat.IsSourceMomentumFrequencyExtension,
+    `NLS.ZakharovShabat.sourceMomentumFrequency_extension,
+    `NLS.ZakharovShabat.sourceMomentumFrequency_extension_H1_unique,
+    `NLS.ZakharovShabat.sourceMomentumFrequency_extension_unique,
+    `NLS.ZakharovShabat.existsUnique_sourceMomentumFrequencyExtension,
+
     `NLS.ComplexAnalysis.cartesianPlaneRotation_smul,
     `NLS.ComplexAnalysis.exists_analytic_factor_pullback,
     `NLS.ComplexAnalysis.fderiv_eq_of_nonnegative_ray_realization,
@@ -771,6 +786,15 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.theorem3_m1_original_NLS_frequency_certificate,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem3_m1_corrected,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem3_m1_corrected_native,
+    ``NLS.Articles.MKdVNLSHierarchies.native_Hill_frequency_unique_allOrders,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem3_printed_parity_counterexample,
+    ``NLS.ZakharovShabat.fderiv_originalS2_eq_sourceMomentumCotangent,
+    ``NLS.MKdV.MiuraNativeHamiltonianActionData.frequency_unique_allOrders,
+    ``NLS.ZakharovShabat.existsUnique_sourceMomentumFrequencyExtension,
+
     ``NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_global_action_normal_form,
     ``NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_action_frequency_intrinsic,
     ``NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_action_frequency_analytic,

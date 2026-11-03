@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 5153,
+  "audited_declarations_and_auxiliaries": 5257,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -13654,14 +13654,209 @@
       "kind": "theorem",
       "name": "physical_Hill_mass_action_frequency",
       "file": "NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianActionNormalForms.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_originalS2_eq_sourceMomentumCotangent",
+      "file": "NLS/ZakharovShabat/SourceMomentumFrequencyNormalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "nonempty_sourceMomentumFrequencyFamily",
+      "file": "NLS/ZakharovShabat/SourceMomentumFrequencyNormalization.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceMomentumFrequency",
+      "file": "NLS/ZakharovShabat/SourceMomentumFrequencyNormalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_sourceMomentumFrequency",
+      "file": "NLS/ZakharovShabat/SourceMomentumFrequencyNormalization.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "SourceMomentumFrequencyFamily.frequency_eq_original_bracket",
+      "file": "NLS/ZakharovShabat/SourceMomentumFrequencyNormalization.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceRealH1Inclusion",
+      "file": "NLS/ZakharovShabat/SourceMomentumFrequencyL2Extension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_sourceRealH1Inclusion",
+      "file": "NLS/ZakharovShabat/SourceMomentumFrequencyL2Extension.lean"
+    },
+    {
+      "kind": "def",
+      "name": "IsSourceMomentumFrequencyExtension",
+      "file": "NLS/ZakharovShabat/SourceMomentumFrequencyL2Extension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceMomentumFrequency_extension",
+      "file": "NLS/ZakharovShabat/SourceMomentumFrequencyL2Extension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceMomentumFrequency_extension_H1_unique",
+      "file": "NLS/ZakharovShabat/SourceMomentumFrequencyL2Extension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceMomentumFrequency_extension_unique",
+      "file": "NLS/ZakharovShabat/SourceMomentumFrequencyL2Extension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "existsUnique_sourceMomentumFrequencyExtension",
+      "file": "NLS/ZakharovShabat/SourceMomentumFrequencyL2Extension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_H1_profile_on_L2_positive_action_ray",
+      "file": "NLS/MKdV/MiuraH1ActionRaysInL2.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraL2MassActionData",
+      "file": "NLS/MKdV/MiuraL2MassActionFrequency.lean"
+    },
+    {
+      "kind": "def",
+      "name": "ofLinearPullback",
+      "file": "NLS/MKdV/MiuraL2MassActionFrequency.lean"
+    },
+    {
+      "kind": "def",
+      "name": "frequency",
+      "file": "NLS/MKdV/MiuraL2MassActionFrequency.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "frequency_analytic",
+      "file": "NLS/MKdV/MiuraL2MassActionFrequency.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "source_frequency_analyticAt",
+      "file": "NLS/MKdV/MiuraL2MassActionFrequency.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "frequency_H1",
+      "file": "NLS/MKdV/MiuraL2MassActionFrequency.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "frequency_eq",
+      "file": "NLS/MKdV/MiuraL2MassActionFrequency.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraPhysicalSobolevL2SourceInclusion_zero_surjective",
+      "file": "NLS/MKdV/MiuraZeroSobolevActionCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeActionMeanEquiv_zero_single",
+      "file": "NLS/MKdV/MiuraZeroSobolevActionCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeActionMeanEquiv_zero_symm_single",
+      "file": "NLS/MKdV/MiuraZeroSobolevActionCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeActionMean_zero_of_L2_representative",
+      "file": "NLS/MKdV/MiuraZeroSobolevActionCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSpectralHillHamiltonian_zero_of_L2_representative",
+      "file": "NLS/MKdV/MiuraZeroSobolevActionCoordinates.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mass_pullback_contains",
+      "file": "NLS/MKdV/MiuraNativeMassFrequency.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "mass_pullback_recovery",
+      "file": "NLS/MKdV/MiuraNativeMassFrequency.lean"
+    },
+    {
+      "kind": "def",
+      "name": "toL2MassData",
+      "file": "NLS/MKdV/MiuraNativeMassFrequency.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "toL2MassData_frequency",
+      "file": "NLS/MKdV/MiuraNativeMassFrequency.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "frequency_mass_eq",
+      "file": "NLS/MKdV/MiuraNativeMassFrequency.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "frequency_unique_allOrders",
+      "file": "NLS/MKdV/MiuraNativeMassFrequency.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miura_mass_frequency_eq_NLS_momentum",
+      "file": "NLS/MKdV/MiuraMassFrequencyComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miura_mass_frequency_printed_parity_ne",
+      "file": "NLS/MKdV/MiuraMassFrequencyComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miura_mass_frequency_printed_parity_zero_counterexample",
+      "file": "NLS/MKdV/MiuraMassFrequencyComparison.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem3_m1_original_NLS_frequency_certificate",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FrequencyMassEndpoint.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem3_m1_corrected",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FrequencyMassEndpoint.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem3_m1_corrected_native",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FrequencyMassEndpoint.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "native_Hill_frequency_unique_allOrders",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FrequencyMassEndpoint.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem3_printed_parity_counterexample",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FrequencyMassEndpoint.lean"
     }
   ],
-  "public_declaration_count": 2727,
-  "theorem_count": 2228,
-  "definition_count": 499,
-  "full_build": "510 article/shared modules have validated private outputs. All 490 unchanged prefix module source hashes match the prior fe2097b milestone; their private outputs were reused. Twenty added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2766,
+  "theorem_count": 2260,
+  "definition_count": 506,
+  "full_build": "518 article/shared modules have validated private outputs. All 510 unchanged prefix module source hashes match the prior 898aecf milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/MKdV/MiuraSobolevNormalizedCartesian.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ZakharovShabat/SourceMomentumFrequencyNormalization.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -14173,12 +14368,20 @@
     "NLS/MKdV/MiuraNativePhysicalActionRays.lean": "8254fa33d8665a2ac6104a9c2542fb764f9fdcf7aff0e7eaa2f6350f1ffd3bd8",
     "NLS/MKdV/MiuraNativeHamiltonianFrequencies.lean": "ac33ec68f5ee19a72c4fdc0bd4204fc5fad4138a0a06c83849a3b8d378e47ba5",
     "NLS/Articles/MKdVNLSHierarchies/NativeHamiltonianActionNormalForms.lean": "f4ba4dd6b69e5fa65a79b3868d754047297051c89437ab0b0796ef3a48ee2171",
+    "NLS/ZakharovShabat/SourceMomentumFrequencyNormalization.lean": "363dd258a8ea8aa271b3513bdd793ac2441779dfe64eaf0563ed3d71861cfdda",
+    "NLS/ZakharovShabat/SourceMomentumFrequencyL2Extension.lean": "23a7138a2dc70f819a909ed29f7652a40997c677bd05b04c7b501ea1b1ec37e3",
+    "NLS/MKdV/MiuraH1ActionRaysInL2.lean": "92b8d701e749349793586bf6e3834ffe47f112d2efcab6a65a4a02e412dcb270",
+    "NLS/MKdV/MiuraL2MassActionFrequency.lean": "5bd2dff51c505e15bf760eff91a11fcc3d37962ac5b8b2184ec249ed6b2ef26c",
+    "NLS/MKdV/MiuraZeroSobolevActionCoordinates.lean": "97734bd8de6f388d771c134ec22821fa04d8c6fbb988fd22cab9802a8da91e80",
+    "NLS/MKdV/MiuraNativeMassFrequency.lean": "70fc138d7fc25314cfde5ca0e20771ae7de9289dc47b13c59dc871d72a29744e",
+    "NLS/MKdV/MiuraMassFrequencyComparison.lean": "9466d4c4c4dbb85bac1c79ced73cdf619009306a994b8da131a16142227a4c0a",
+    "NLS/Articles/MKdVNLSHierarchies/FrequencyMassEndpoint.lean": "d7b89ad86397b7f5f3cf704408d467e22594057e914d3178e30d483a3a6cff63",
     "NLS.lean": "8b7ce4ad52dd4f8dbc054e0bd1b7e6adc03480720e8557f9a8f54e461da6e8c6",
-    "scripts/check_mkdv_nls.py": "b84b49e243f1be57b52dc60096e4a91c959f8980cb96e5ba5721d5a1722d243c",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "bb72c0fc1da6d5ee997ef4410469f49452d64be23c5c9f1a13216b1d06533987"
+    "scripts/check_mkdv_nls.py": "2e2ed8c6ec03c460f35412c7e520d1c13263dc571a5ce2a7ce06be1bc8503b55",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "c1282564fa3e8794e06ccbcb6030adb0ed6601c0cc95db5f728f9fdcf1f432e0"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 510,
+  "focused_module_count": 518,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -14630,12 +14833,25 @@
       "public_declaration_count": 2727,
       "theorem_count": 2228,
       "definition_count": 499
+    },
+    {
+      "milestone": "Corrected Theorem3 m1 on ALL original real L2 profiles, independently normalized original NLS S2 frequency, arbitrary independent physical mass normal-form derivative, printed parity zero-profile counterexample, and intrinsic raw positive Hill action frequencies at every m>=1",
+      "audit_count": 5257,
+      "combined_NLS_audit_count": 50193,
+      "aggregate_compiled": true,
+      "module_count": 518,
+      "reused_prefix_module_count": 510,
+      "reused_prefix_commit": "898aecf0f6fc7891b31376b9d50a3ff43d81ad03",
+      "frozen_source_checker_count": 521,
+      "public_declaration_count": 2766,
+      "theorem_count": 2260,
+      "definition_count": 506
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 50089,
+  "combined_audited_NLS_declarations": 50193,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -14643,7 +14859,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 490 unchanged prefix module source hashes match the prior fe2097b milestone; their private outputs were reused. Twenty added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 5153 declarations/auxiliaries and combined audit for 50089 NLS declarations. All 513 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 510 unchanged prefix module source hashes match the prior 898aecf milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 5257 declarations/auxiliaries and combined audit for 50193 NLS declarations. All 521 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",
