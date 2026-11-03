@@ -1,3 +1,7 @@
+import NLS.KdV.HillLowerSobolevTrace
+import NLS.SequenceSpaces.TriangularHierarchyBounds
+import NLS.KdV.HillInverseSobolevBound
+import NLS.Articles.KdVEstimates.InverseIntegerEstimate
 import NLS.KdV.HillGlobalMomentBounds
 import NLS.KdV.HillIntegerActionMoments
 import NLS.KdV.HillSummedMomentComparison
@@ -523,7 +527,11 @@ run_cmd do
     ``NLS.ComplexAnalysis.normalized_circleIntegral_weighted_finsum,
     ``NLS.ComplexAnalysis.sum_rectangle_ite_eq_antidiagonal,
     ``NLS.ComplexAnalysis.norm_weighted_circle_integral_sub_model_le,
-    ``NLS.ComplexAnalysis.circleIntegrable_weighted_finsum]
+    ``NLS.ComplexAnalysis.circleIntegrable_weighted_finsum,
+    ``NLS.SequenceSpaces.hierarchy_mass_product_le,
+    ``NLS.SequenceSpaces.exists_hierarchy_action_majorant,
+    ``NLS.SequenceSpaces.hierarchy_mass_mono,
+    ``NLS.SequenceSpaces.exists_hierarchy_action_majorant_lower]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

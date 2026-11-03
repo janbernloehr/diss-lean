@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 2678,
+    "declarations": 2705,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -282,10 +282,14 @@
       "NLS.ComplexAnalysis.normalized_circleIntegral_weighted_finsum",
       "NLS.ComplexAnalysis.sum_rectangle_ite_eq_antidiagonal",
       "NLS.ComplexAnalysis.norm_weighted_circle_integral_sub_model_le",
-      "NLS.ComplexAnalysis.circleIntegrable_weighted_finsum"
+      "NLS.ComplexAnalysis.circleIntegrable_weighted_finsum",
+      "NLS.SequenceSpaces.hierarchy_mass_product_le",
+      "NLS.SequenceSpaces.exists_hierarchy_action_majorant",
+      "NLS.SequenceSpaces.hierarchy_mass_mono",
+      "NLS.SequenceSpaces.exists_hierarchy_action_majorant_lower"
     ]
   },
-  "full_repository_validation": "All 270 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2678-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 274 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2705-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -557,10 +561,14 @@
     "NLS/KdV/HillGlobalMomentBounds.lean": "4623dd7be111964d9ebece1bd276aba6af8d9619445f5b3e76c326d94f0279b4",
     "NLS/KdV/HillIntegerActionMoments.lean": "10303fff8ceade852066e3f6d48b084fe7c602cdaef11038327a9702c2281a61",
     "NLS/KdV/HillSummedMomentComparison.lean": "b5cf206c3f35bbf2777b22951a35008796816875d744883a2ce74318dedfc696",
-    "NLS/KdV/HillUniformMomentComparison.lean": "f258737c33424ab33851742f619468082a65b9b8d0443fec181b0a37c227ab36"
+    "NLS/KdV/HillUniformMomentComparison.lean": "f258737c33424ab33851742f619468082a65b9b8d0443fec181b0a37c227ab36",
+    "NLS/KdV/HillLowerSobolevTrace.lean": "486b0e2289214af71ce9a78e3f5ef8804687ff97f5f96428587abb174122d7a0",
+    "NLS/SequenceSpaces/TriangularHierarchyBounds.lean": "166c760e73f304d391fa60acf187dd70953d75eecab2095870706328be1781eb",
+    "NLS/KdV/HillInverseSobolevBound.lean": "bfc5a56e9094295984547e8d7c6f645eaeef6350d9e280887b5a6f39046d5420",
+    "NLS/Articles/KdVEstimates/InverseIntegerEstimate.lean": "e9054431dad11e75b9efe1a1aae42cb27ceeef18ba9544a4d903113a7bad1eac"
   },
-  "remaining": "Main Theorems 1-3 remain unverified. Actual global integer moment/action comparisons now hold uniformly on every real mean-zero native H^M domain at each order m<=M, with all series hypotheses discharged and the exact quadratic action mass identity. Combining these with the full Sobolev hierarchy trace, Hamiltonian norm/coercivity bounds and finite triangular induction to obtain the main global norm inequalities remains essential. Canonical infinite-product root identification, complex potential-analytic low charts, the physical KdV Birkhoff map and arbitrary-weight source-uniform action-gap bounds remain open.",
-  "milestone": "Uniform actual global integer moment/action comparisons with quadratic trace mass control",
+  "remaining": "Main Theorems 1-3 remain unverified. The inverse integer Sobolev inequality of Theorem2(ii) is now proved for the actual spectral action series on every real mean-zero native sharp H^m domain, m>=1, with a positive squared constant depending only on m. Its full focused validation and transitive audit are recorded here. The forward integer inequality, physical KdV Birkhoff identification, canonical infinite-product root identification, complex potential-analytic low charts and arbitrary-weight source-uniform estimates remain essential. The final main theorems are not claimed.",
+  "milestone": "Actual inverse integer Sobolev inequality from spectral actions on full native domains",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -833,7 +841,11 @@
     "NLS.KdV.HillGlobalMomentBounds",
     "NLS.KdV.HillIntegerActionMoments",
     "NLS.KdV.HillSummedMomentComparison",
-    "NLS.KdV.HillUniformMomentComparison"
+    "NLS.KdV.HillUniformMomentComparison",
+    "NLS.KdV.HillLowerSobolevTrace",
+    "NLS.SequenceSpaces.TriangularHierarchyBounds",
+    "NLS.KdV.HillInverseSobolevBound",
+    "NLS.Articles.KdVEstimates.InverseIntegerEstimate"
   ],
   "proof_commits": [
     {
@@ -1060,6 +1072,11 @@
       "commit": "59193521cfe7817bb97581540cf85ca18d136c43",
       "scope": "Complete actual physical Hill hierarchy trace on the full sharp integer Sobolev domains; 266 strict modules, 2629-declaration transitive audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "0adf60a875199a65a1349ea612706bee8dd64322",
+      "scope": "Uniform actual global integer moment/action comparisons with exact quadratic action mass normalization; 270 strict modules, 2678-declaration transitive audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -1076,20 +1093,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 270 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 274 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 2678 declarations. Includes actual high lower/central label bounds, signed central moments, corrected pointwise/summed comparisons, all native integer action/moment summability, exact native/shared L2 isometry, actual base-action mass identity and uniform action-controlled cutoff errors.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 2705 declarations. Includes every lower actual Sobolev trace on higher domains, action monotonicity, reusable finite triangular induction, actual Hamiltonian action bounds, exact coercive mass normalization, native inverse Sobolev inequality and article positive-squared-constant statement.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 270 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2678-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 274 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2705-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "Actual high periodic labels satisfy the quadratic lower bound (pi^2-1)n^2 once n>=2 and n>=8||q||; all central labels have absolute value at most (pi^2+1)N^2 at a cutoff N>=2,8||q||. The real weighted mean-value relation gives high and central moment/action comparisons, retaining possible signed low moments. The canonical cutoff is at most 8(1+||q||). Corrected pointwise inequalities sum on every native H^M input at each m<=M, because actual action/moment summability follows from native weight growth. The native unit-potential L2 norm equals the shared scalar L2 norm exactly. The complete actual zeroth trace identifies the base action mass A0 with half the squared potential L2 norm, so N^2<=256(1+A0). Consequently there is an explicit nonnegative constant C_m independent of M and the potential such that A_m<=(2*pi)^(2*m)T_m+C_m(1+A0)^m*A0 and sum_n|T_mn|<=(pi^2+1)^m*A_m+C_m(1+A0)^m*A0. These auxiliary constants are nonsharp; no sharp source Lemma6/8 coefficients or arbitrary-weight Theorem3 constants are asserted. Main Theorems 1-3 remain unverified. Actual global integer moment/action comparisons now hold uniformly on every real mean-zero native H^M domain at each order m<=M, with all series hypotheses discharged and the exact quadratic action mass identity. Combining these with the full Sobolev hierarchy trace, Hamiltonian norm/coercivity bounds and finite triangular induction to obtain the main global norm inequalities remains essential. Canonical infinite-product root identification, complex potential-analytic low charts, the physical KdV Birkhoff map and arbitrary-weight source-uniform action-gap bounds remain open.",
-    "scope": "All 270 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2678-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Every actual lower moment trace is identified with the same independent Hamiltonian family on a fixed higher native H^M domain. Actual homogeneous action masses are nonnegative and monotone in the order. Solving the exact source trace isolates H_m and bounds its norm by the absolute moment sum plus the nonlinear lower Hamiltonian convolution. A reusable strong-induction theorem for nonnegative triangular recurrences bounds every level by its same-order mass and refines the top bound to the previous-order mass in the polynomial error. Applied to the actual uniform moment comparisons, this proves ||H_m||<=C_m[A_m+(1+A_(m-1))^m A_(m-1)] on every higher domain M>=m. The exact base-action identity converts the Hamiltonian coercivity error to the same lower-action polynomial. The shared highest-derivative bound and coefficient-preserving native/shared inverse maps give ||p||_native,m^2<=C_m[A_m+(1+A_(m-1))^m A_(m-1)]. The article theorem theorem2_inverse_native chooses a strictly positive d_m and the squared coefficient d_m^2. All literal spectral action and moment sums are actual and proved summable; all weights retain period-one2*pi normalization. Main Theorems 1-3 remain unverified. The inverse integer Sobolev inequality of Theorem2(ii) is now proved for the actual spectral action series on every real mean-zero native sharp H^m domain, m>=1, with a positive squared constant depending only on m. Its full focused validation and transitive audit are recorded here. The forward integer inequality, physical KdV Birkhoff identification, canonical infinite-product root identification, complex potential-analytic low charts and arbitrary-weight source-uniform estimates remain essential. The final main theorems are not claimed.",
+    "scope": "All 274 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2705-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "b47ee56265ec5e9dc7f350ab306c9edec7b737d052703250af96903665128c07",
-      "scripts/check-kdv-estimates.sh": "3dd4366a851ccc3782dac5ee3f1ad2c86c10c83b26a5882fc67a98a5add3f8aa",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "5f0ade284eb1121491c0a6dc6f59095c126cfbc343e00f2f31e066e0ab4e5ac7"
+      "NLS.lean": "e953d79bbf24a1943861a5894fe76acf4dbc6212e7c89dd5cf7c4037a31bab3e",
+      "scripts/check-kdv-estimates.sh": "3af9e5cfbfddc70f4cc06f308d0b3426a9f2aff155de44ddb5edd785bf1de66b",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "8b4e731c18c8055e6f55f96fa74865f86c1582e353328ac7be6e5e2953dc2a6e"
     }
   },
   "warningAsError": true,
@@ -1196,8 +1213,8 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Uniform actual global integer moment/action comparisons with quadratic trace mass control",
-    "focused_modules": 270,
-    "scope": "All 270 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2678-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Actual inverse integer Sobolev inequality from spectral actions on full native domains",
+    "focused_modules": 274,
+    "scope": "All 274 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 2705-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   }
 }

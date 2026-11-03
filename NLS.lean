@@ -5192,3 +5192,7 @@ import NLS.KdV.HillGlobalMomentBounds
 import NLS.KdV.HillIntegerActionMoments
 import NLS.KdV.HillSummedMomentComparison
 import NLS.KdV.HillUniformMomentComparison
+import NLS.KdV.HillLowerSobolevTrace
+import NLS.SequenceSpaces.TriangularHierarchyBounds
+import NLS.KdV.HillInverseSobolevBound
+import NLS.Articles.KdVEstimates.InverseIntegerEstimate
