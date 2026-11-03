@@ -1,10 +1,10 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Full original H-minus-one physical characteristic zero-set identification",
+  "phase": "Native rough Miura domain factorization and full companion eigenspace transport",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
-  "reproduce": "DISS_LEAN_CHECK_DIR=.lake/hminus-one-characteristic-check-20261103 python3 scripts/check-kdv-pseudomeasures.py",
+  "reproduce": "DISS_LEAN_CHECK_DIR=.lake/hminus-one-characteristic-check-20261103 python3 scripts/check-kdv-pseudomeasures.py NLS.SequenceSpaces.WeakFirstOrderRegularity NLS.SequenceSpaces.YoungConvolutionModule NLS.KdV.SingularHillMiuraFactorization NLS.KdV.SingularHillMiuraCompanion Audit",
   "modules_checked": [
     "NLS/SequenceSpaces/WeightedFiniteCoefficients.lean",
     "NLS/Fourier/PeriodicEndpointBounds.lean",
@@ -327,13 +327,17 @@
     "NLS/ComplexAnalysis/ClosedZeroGraph.lean",
     "NLS/KdV/HminusOnePhysicalCharacteristic.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCharacteristic.lean",
+    "NLS/SequenceSpaces/WeakFirstOrderRegularity.lean",
+    "NLS/SequenceSpaces/YoungConvolutionModule.lean",
+    "NLS/KdV/SingularHillMiuraFactorization.lean",
+    "NLS/KdV/SingularHillMiuraCompanion.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 2114,
-  "definitions": 487,
+  "proved_theorems": 2145,
+  "definitions": 500,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 2601,
+    "declarations": 2645,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -649,13 +653,21 @@
     "The generic zero_graph_mem_closed_of_closure_parameters proves that a jointly closed, parameter-dependent constraint on analytic zeros extends from dense parameters at a nontrivial entire slice. Local zero-count persistence includes multiple roots.",
     "Characteristic zero implies physical spectrum by applying that theorem to the actual closed joint spectral graph and dense L2 parameters.",
     "Physical spectrum implies characteristic zero: a hypothetical characteristic-free disk persists for nearby parameters; the nonzero physical projection persists too, while the L2 criterion and Cauchy theorem force the nearby projection to be zero.",
-    "The resulting equivalence holds for ALL complex unit-period H-minus-one potentials, all complex energies, including zero and repeated roots. The article wrapper applies to every original real, mean-zero, physically period-one H-minus-one potential without an endpoint or finite-p membership assumption."
+    "The resulting equivalence holds for ALL complex unit-period H-minus-one potentials, all complex energies, including zero and repeated roots. The article wrapper applies to every original real, mean-zero, physically period-one H-minus-one potential without an endpoint or finite-p membership assumption.",
+    "Every original period-two L2 weak solution of v'=u*v+b with u,b in L2 has the full original H1 regularity. The proof derives ell^(4/3), then ell1, then the L2 derivative. The recovered H1 representative has exactly the original raw coefficients and satisfies the actual first-order differential operator equation.",
+    "Young convolution commutes with translation and with the actual Wiener right convolution action for every admissible Young triple, including the L2,L2-to-infinity endpoint. This proves the needed associativity without replacing an infinite convolution by a formal sum.",
+    "Native period-two L2, derivative and quadratic-product realizations in the original H-minus-one space retain all raw coefficients, the frequency pi*n, and every smooth-test action. Distributional Leibniz and weak-product associativity hold for arbitrary complex L2 Miura input and full original H1 factors.",
+    "The literal original potential u'+u^2 satisfies L(q)f=-(f'-u*f)'-u*(f'-u*f) on EVERY original H1 domain vector, with no derivative, boundedness, reality, endpoint or finite-Fourier-support assumption on u.",
+    "For EVERY original inhomogeneous Hill equation with L2 forcing, the actual L2 quasi-derivative belongs to H1 and solves the exact L2 first-order equation. This applies to eigenvectors and to original finite root chains with H1 right-hand sides.",
+    "The fixed full-domain companion operator is (f,h) mapped to (i*(h'+u*h),i*(f'-u*f)). Every companion eigenvector at frequency z projects to the original Hill equation at energy z^2, even when z=0.",
+    "At z!=0 every original Hill eigenvector has a constructed full H1 companion lift. Projection is a complex-linear bijection of the full eigenspaces; actual geometric multiplicities agree.",
+    "If the native Miura potential is real on all smooth tests, previously proved original semisimplicity identifies its actual physical algebraic multiplicity with the fixed companion eigenspace dimension at z!=0."
   ],
-  "source_correspondence": "Identify the ENTIRE original full H1/H-minus-one Hill spectrum with the physical energy-discriminant zero set, for all complex physically period-one H-minus-one potentials and hence the complete original real mean-zero domain. The full complex equivalence and the entire original real mean-zero-domain wrapper are proved without endpoint membership, finite-p regularity, simple-root or nonzero-energy assumptions. Physical algebraic multiplicity versus analytic characteristic order remains unproved. Fullsource2.2/Lemma2.21,original finite-p inverse input,Dirichlet/Birkhoff/KdV and every main theorem remain open.",
-  "build_isolation": "All322 selected modules rebuilt in the fresh private .lake/hminus-one-characteristic-check-20261103 view. Canonical/package imports remained read-only;all compiler destinations stayed private. The exact2601-declaration audit passed with zero warnings/suggestions,no holes/custom axioms,and only standard allowed axioms or empty sets. Shared source provenance and local import order passed.",
+  "source_correspondence": "Full original-domain weak Miura factorization and exact eigenspace correspondence with a fixed first-order companion operator. A necessary operator-domain step toward the remaining physical multiplicity/characteristic-order identification. All original H1 domain vectors and arbitrary complex L2 Miura inputs are retained. The geometric correspondence requires nonzero frequency; the physical algebraic corollary assumes native potential reality. The full original H-minus-one characteristic zero-set result remains proved. Every main theorem remains open.",
+  "build_isolation": "Incremental validation over the unchanged fresh322-module baseline c5c5203:all baseline Lean source hashes checked unchanged except the expanded Audit. The4 new modules compile in dependency order;the exact2645-declaration transitive audit covers the complete326-module source inventory. No whole-library fresh rebuild is claimed for this turn. Compiler outputs stay private;canonical source and build remain read-only. All4 focused compilations and the expanded transitive audit passed with zero warnings/suggestions and only standard axioms or empty sets.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
-  "publication_status": "Fresh-build validated milestone committed locally on the existing private article branch. Push remains pending explicit approval for the existing GitHub destination after automatic approval review rejected the preceding export. No canonical integration, canonical writes or workspace attachment.",
+  "publication_status": "Validated and committed locally on the existing private article branch. GitHub export remains pending explicit destination approval after automatic approval review rejected the preceding push; no new push attempt. Canonical source/build/checkout remain read-only.",
   "source_hash": "bd9391c476e69c26e73d843a2b98265524e50424073c941db638d656ce570eea",
   "output_sha256": {
     "NLS/SequenceSpaces/WeightedFiniteCoefficients.lean": "0e2f288406c36fe93b5882aa13a5cf081871bd8ecf75c1214e7586b4f2c244d9",
@@ -979,7 +991,11 @@
     "NLS/ComplexAnalysis/ClosedZeroGraph.lean": "1953675522ca01ef77c9ea27ead83e8ea686909f131ad86193e2d692691b2472",
     "NLS/KdV/HminusOnePhysicalCharacteristic.lean": "6090ee9f214c2f981e0ac0d11bfdd69953b835347a6cfc502a8ad28ab113b772",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCharacteristic.lean": "804eebd86f0a3676888102582ef5a6a2d69aab2e49634387330848c249a4fffd",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "c92215dfc62cfee68803497fa306832af0a1ba67781922e935b1aab374f913f5"
+    "NLS/SequenceSpaces/WeakFirstOrderRegularity.lean": "0803d24d6bbdd72deea0b070d41c13eb3579d2cca81c1680b9b6e9b7b6e72db0",
+    "NLS/SequenceSpaces/YoungConvolutionModule.lean": "aecd285be4b1ca1c97ccfe035b662e14ee3da9b5e2e8395bc489798761a50169",
+    "NLS/KdV/SingularHillMiuraFactorization.lean": "0f7089aeec0642bbbd185e8778c98c6f30eff6fc70b2d9817e838de26e3ad86c",
+    "NLS/KdV/SingularHillMiuraCompanion.lean": "f597205d210d1f3ba5d77443919bb946260136b313142c8e0c456bdbd5acb3d2",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "f792649ee023f44a7f73ffa8901284062f1f87ed0b7bc2e1f5d7d25980236da5"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -987,17 +1003,17 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 1916,
-    "newly_checked_declarations_this_continuation": 685,
-    "newly_authored_or_adapted_declarations_this_continuation": 51,
-    "new_theorems": 537,
-    "new_definitions": 148,
-    "authored_or_adapted_theorems": 41,
-    "authored_or_adapted_definitions": 10,
-    "already_present_shared_declarations_newly_audited": 634,
-    "shared_declarations_copied_this_continuation": 634,
-    "total_checked_declarations": 2601,
-    "reuse": "96 modules reused from pinned convexity branch49a9b4a:95 byte-identical,one EulerLagrange copy with only an explicit PeriodicIntegrationByParts import added. Reused496theorems+138defs. Six authored modules supply41theorems+10defs."
+    "previous_checked_declarations": 2601,
+    "newly_checked_declarations_this_continuation": 44,
+    "newly_authored_or_adapted_declarations_this_continuation": 44,
+    "new_theorems": 31,
+    "new_definitions": 13,
+    "authored_or_adapted_theorems": 31,
+    "authored_or_adapted_definitions": 13,
+    "already_present_shared_declarations_newly_audited": 0,
+    "shared_declarations_copied_this_continuation": 0,
+    "total_checked_declarations": 2645,
+    "reuse": "No shared source files copied this turn. The unchanged322-module baseline was freshly verified at c5c5203. Four new shared modules use those proofs, with44 authored declarations."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -1026,7 +1042,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/hminus-one-characteristic-check-20261103/logs/validation-hminus-one-characteristic.log",
+  "validation_log": ".lake/hminus-one-characteristic-check-20261103/logs/validation-native-miura.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -1043,7 +1059,7 @@
       "checked_declarations": 29
     }
   ],
-  "fresh_build": true,
+  "fresh_build": false,
   "local_module_import_order_checked": true,
   "shared_determinant_reuse": {
     "file": "NLS/FunctionalAnalysis/TwoDimensionalDeterminant.lean",
@@ -1205,5 +1221,13 @@
     "theorems": 496,
     "definitions": 138,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/original-hminus-one-characteristic-map.json"
-  }
+  },
+  "baseline_fresh_build": {
+    "commit": "c5c5203e34b2d920bfdcb9e5abe759ac6d7966d6",
+    "modules": 322,
+    "audited_declarations": 2601,
+    "directory": ".lake/hminus-one-characteristic-check-20261103",
+    "source_hashes_verified_unchanged": true
+  },
+  "full_reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py"
 }

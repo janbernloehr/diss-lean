@@ -113,7 +113,7 @@
     ]
   },
   "essential_open_obligations": [
-    "The full original H1/H-minus-one operator spectrum is now identified EXACTLY with the physical discriminant zero set for ALL complex physically period-one H-minus-one potentials, hence all original real mean-zero potentials. REMAINING: identify actual physical algebraic multiplicities with analytic characteristic orders; zero-set equality alone does not establish this divisor identity.",
+    "The full original physical spectrum/discriminant ZERO SET is identified for every original H-minus-one potential. Original-domain Miura factorization, H1 quasi-derivative recovery for L2-forced equations, and the exact fixed-companion eigenspace correspondence at nonzero frequency are now proved. REMAINING for the all-real physical divisor identity: suitable real shifted Miura lifts for every original potential, constant companion-to-Dirac operator rotation and characteristic-order transport; account explicitly for the spectral translation avoiding zero square-root energy. Zero-set equality alone is still insufficient.",
     "Source Theorem2.2/full Lemma2.21 remain unproved:the entire original H-minus-one isospectral set still needs base endpoint/finite-p membership and a UNIFORM bound before the verified endpoint bootstrap applies. The ORIGINAL finite-p inverse spectral regularity/isospectral compactness input[7 Cor3-4] remains missing,or must be replaced directly. Full original operator spectrum/multiplicities and isospectral domain are already defined without assuming endpoint membership.",
     "Complete original periodic/antiperiodic boundary parity,required low simplicity/interlacing and actual Dirichlet comparison source2.1(ii). General-weight direct2.1(i),endpoint2.18-2.19,REAL2.20,uniform bootstrap,cross-order labels/gaps,bounded weak-star label continuity/closed spectral fibers and all AppendixB clauses remain proved. General complex-ratio2.20 remains open.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
@@ -347,7 +347,12 @@
     "NLS.KdV.singularHillSpectrum_periodOne_iff_discriminant",
     "NLS.Articles.KdVPseudomeasures.original_spectrum_iff_HminusOne_discriminant",
     "NLS.Articles.KdVPseudomeasures.originalHillDiscriminant",
-    "NLS.Articles.KdVPseudomeasures.periodOneOriginal_originalPeriodOneCoefficients"
+    "NLS.Articles.KdVPseudomeasures.periodOneOriginal_originalPeriodOneCoefficients",
+    "NLS.weakFirstOrder_memlp_sobolev_one",
+    "NLS.KdV.singularHillOperator_miura_factorization",
+    "NLS.KdV.singularHillQuasiDerivative_memlp_sobolev_one",
+    "NLS.KdV.singularHillMiuraEigenspaceEquiv",
+    "NLS.KdV.singularHillAlgebraicMultiplicity_miura_companion"
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -467,5 +472,14 @@
     "full_original_HminusOne_zero_set_identified": true,
     "all_complex_period_one_potentials": true,
     "physical_algebraic_multiplicity_equals_analytic_order": false
+  },
+  "verified_original_miura_domain_transport": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/original-miura-domain-map.json",
+    "full_complex_L2_Miura_inputs": true,
+    "original_H1_domain_unchanged": true,
+    "inhomogeneous_quasiderivative_H1_gain": true,
+    "exact_companion_eigenspace_equiv_at_nonzero_frequency": true,
+    "all_original_real_potentials_have_suitable_real_shifted_Miura_lift": false,
+    "full_physical_multiplicity_characteristic_order_identified": false
   }
 }

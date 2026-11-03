@@ -319,8 +319,12 @@ import NLS.KdV.SingularHillSpectralPersistence
 import NLS.ComplexAnalysis.ClosedZeroGraph
 import NLS.KdV.HminusOnePhysicalCharacteristic
 import NLS.Articles.KdVPseudomeasures.OriginalHminusOneCharacteristic
+import NLS.SequenceSpaces.WeakFirstOrderRegularity
+import NLS.SequenceSpaces.YoungConvolutionModule
+import NLS.KdV.SingularHillMiuraFactorization
+import NLS.KdV.SingularHillMiuraCompanion
 
-/-! Transitive axiom audit of every selected public definition and theorem. -/
+/-! Exact transitive axiom audit of every selected public definition and theorem. -/
 
 #print axioms NLS.WeightedCoeff.ofFinsupp
 #print axioms NLS.WeightedCoeff.ofFinsupp_apply
@@ -2923,3 +2927,47 @@ import NLS.Articles.KdVPseudomeasures.OriginalHminusOneCharacteristic
 #print axioms NLS.Articles.KdVPseudomeasures.originalPeriodOneCoefficients_real
 #print axioms NLS.Articles.KdVPseudomeasures.originalHillDiscriminant
 #print axioms NLS.Articles.KdVPseudomeasures.original_spectrum_iff_HminusOne_discriminant
+#print axioms NLS.weakFirstOrder_memlp_fourThirds
+#print axioms NLS.weakFirstOrder_memlp_one
+#print axioms NLS.weakFirstOrder_memlp_sobolev_one
+#print axioms NLS.weakFirstOrderLift
+#print axioms NLS.scalarInclusion_weakFirstOrderLift
+#print axioms NLS.derivative_weakFirstOrderLift
+#print axioms NLS.Coeff.youngConvolution_shift_right
+#print axioms NLS.Coeff.youngConvolution_convolution_right
+#print axioms NLS.KdV.l2OriginalHminus
+#print axioms NLS.KdV.l2OriginalHminus_coefficient
+#print axioms NLS.KdV.l2DerivativeOriginalHminus
+#print axioms NLS.KdV.l2DerivativeOriginalHminus_coefficient
+#print axioms NLS.KdV.l2ProductOriginalHminus
+#print axioms NLS.KdV.l2ProductOriginalHminus_coefficient
+#print axioms NLS.KdV.scalarDomainOriginalH1
+#print axioms NLS.KdV.scalarDomainOriginalH1_coefficient
+#print axioms NLS.KdV.l2DerivativeOriginalHminus_product
+#print axioms NLS.KdV.l2ProductOriginalHminus_product
+#print axioms NLS.KdV.singularHillLaplacian_eq_derivative
+#print axioms NLS.KdV.singularHillMiuraPotential
+#print axioms NLS.KdV.singularHillQuasiDerivative
+#print axioms NLS.KdV.singularHillOperator_miura_factorization
+#print axioms NLS.KdV.scalarDomainOriginalH1_sobolevCoefficients
+#print axioms NLS.KdV.l2OriginalHminus_scalarInclusion
+#print axioms NLS.KdV.singularHillQuasiDerivative_weak_equation
+#print axioms NLS.KdV.singularHillQuasiDerivative_memlp_sobolev_one
+#print axioms NLS.KdV.singularHillQuasiDerivativeLift
+#print axioms NLS.KdV.scalarInclusion_singularHillQuasiDerivativeLift
+#print axioms NLS.KdV.derivative_singularHillQuasiDerivativeLift
+#print axioms NLS.KdV.singularHillMiuraCompanion
+#print axioms NLS.KdV.singularHillMiuraCompanionEigenspace
+#print axioms NLS.KdV.singularHillMiuraCompanion_eigen_iff
+#print axioms NLS.KdV.l2DerivativeOriginalHminus_scalarInclusion
+#print axioms NLS.KdV.l2ProductOriginalHminus_scalarInclusion
+#print axioms NLS.KdV.singularHillMiuraCompanion_eigen_to_hill
+#print axioms NLS.KdV.singularHillMiura_eigen_forcing
+#print axioms NLS.KdV.singularHillMiuraEigenLift
+#print axioms NLS.KdV.singularHillMiuraEigenLift_eigen
+#print axioms NLS.KdV.singularHillMiuraCompanionEigenToHill
+#print axioms NLS.KdV.singularHillMiuraCompanionEigenToHill_injective
+#print axioms NLS.KdV.singularHillMiuraCompanionEigenToHill_surjective
+#print axioms NLS.KdV.singularHillMiuraEigenspaceEquiv
+#print axioms NLS.KdV.finrank_singularHillMiuraCompanionEigenspace
+#print axioms NLS.KdV.singularHillAlgebraicMultiplicity_miura_companion

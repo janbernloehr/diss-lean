@@ -353,6 +353,10 @@ modules = [
     'NLS.ComplexAnalysis.ClosedZeroGraph',
     'NLS.KdV.HminusOnePhysicalCharacteristic',
     'NLS.Articles.KdVPseudomeasures.OriginalHminusOneCharacteristic',
+    'NLS.SequenceSpaces.WeakFirstOrderRegularity',
+    'NLS.SequenceSpaces.YoungConvolutionModule',
+    'NLS.KdV.SingularHillMiuraFactorization',
+    'NLS.KdV.SingularHillMiuraCompanion',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
