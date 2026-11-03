@@ -5188,3 +5188,7 @@ import NLS.KdV.HillSmoothHierarchyTrace
 import NLS.KdV.HillIntegerSobolev
 import NLS.KdV.HillSobolevTraceFamily
 import NLS.KdV.HillSobolevHierarchyTrace
+import NLS.KdV.HillGlobalMomentBounds
+import NLS.KdV.HillIntegerActionMoments
+import NLS.KdV.HillSummedMomentComparison
+import NLS.KdV.HillUniformMomentComparison

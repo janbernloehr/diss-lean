@@ -75,6 +75,7 @@ modules+=(NLS/DifferentialPolynomial/WeightedJetReduction NLS/KdV/HillRiccatiRem
 modules+=(NLS/DifferentialPolynomial/JetMajorants NLS/DifferentialPolynomial/ScalarInterpolationExponents NLS/KdV/HillSobolevHierarchy NLS/KdV/HillHamiltonianMonomials NLS/KdV/HillMonomialInterpolation NLS/KdV/HillHamiltonianAbsorption NLS/KdV/HillHamiltonianCoercivity)
 modules+=(NLS/ComplexAnalysis/LaurentContourCoefficient NLS/KdV/HillHierarchyPhaseModel NLS/KdV/HillL2HierarchySquareAsymptotics NLS/KdV/HillSmoothHierarchyTraceLimit NLS/KdV/HillSmoothHierarchyTrace)
 modules+=(NLS/KdV/HillIntegerSobolev NLS/KdV/HillSobolevTraceFamily NLS/KdV/HillSobolevHierarchyTrace)
+modules+=(NLS/KdV/HillGlobalMomentBounds NLS/KdV/HillIntegerActionMoments NLS/KdV/HillSummedMomentComparison NLS/KdV/HillUniformMomentComparison)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
