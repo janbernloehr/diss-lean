@@ -572,6 +572,16 @@ import NLS.KdV.HillLocalPhysicalPeriodMatching
 import NLS.KdV.HillComplexHilbertNormalizedUniqueness
 import NLS.KdV.HillMixedNearbyPhysicalPeriods
 import NLS.KdV.HillGlobalDifferentialAnalyticExtension
+import NLS.KdV.HillGlobalDifferentialContinuity
+import NLS.KdV.HillAbelianCosineDifferential
+import NLS.KdV.HillCollapsedAngularDifferential
+import NLS.KdV.HillAbelianCosinePrimitive
+import NLS.ComplexAnalysis.EndpointRootCirclePeriod
+import NLS.ComplexAnalysis.EndpointRootCosinePeriod
+import NLS.KdV.HillAbelianCosinePeriods
+import NLS.KdV.HillAbelianCosinePrimitivePeriods
+import NLS.KdV.HillDeflatedRadicandFactorization
+import NLS.KdV.HillDirichletSheetRoot
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -964,7 +974,10 @@ run_cmd do
     ``NLS.ComplexAnalysis.tendsto_holderProduct_of_bounded_weak_weights,
     ``NLS.ComplexAnalysis.tendsto_hilbertWeightedProduct_of_bounded_weak_weights,
     ``NLS.Coeff.isCompactOperator_of_tailRowMajorant,
-    ``NLS.Coeff.isCompactOperator_fderiv_of_tailCoordinateBound]
+    ``NLS.Coeff.isCompactOperator_fderiv_of_tailCoordinateBound,
+    ``NLS.ComplexAnalysis.mem_slitPlane_one_sub_of_norm_lt_one,
+    ``NLS.ComplexAnalysis.circleIntegral_inv_endpointRoot_midpoint,
+    ``NLS.ComplexAnalysis.circleIntegral_div_endpointRoot_eq_cosine_integral]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

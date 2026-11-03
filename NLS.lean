@@ -5495,3 +5495,13 @@ import NLS.KdV.HillLocalPhysicalPeriodMatching
 import NLS.KdV.HillComplexHilbertNormalizedUniqueness
 import NLS.KdV.HillMixedNearbyPhysicalPeriods
 import NLS.KdV.HillGlobalDifferentialAnalyticExtension
+import NLS.KdV.HillGlobalDifferentialContinuity
+import NLS.KdV.HillAbelianCosineDifferential
+import NLS.KdV.HillCollapsedAngularDifferential
+import NLS.KdV.HillAbelianCosinePrimitive
+import NLS.ComplexAnalysis.EndpointRootCirclePeriod
+import NLS.ComplexAnalysis.EndpointRootCosinePeriod
+import NLS.KdV.HillAbelianCosinePeriods
+import NLS.KdV.HillAbelianCosinePrimitivePeriods
+import NLS.KdV.HillDeflatedRadicandFactorization
+import NLS.KdV.HillDirichletSheetRoot

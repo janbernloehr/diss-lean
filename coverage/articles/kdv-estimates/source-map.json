@@ -365,7 +365,7 @@
         "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
         "NLS.KdV.hillRealGapIntegral_le_chi_bound"
       ],
-      "remaining": "The selected physical normalized Hill differential now has a jointly analytic complex extension near every real period-one L2 base potential, for every spectral energy. Its construction uses an actual jointly analytic Hilbert period map, a compact root-derivative remainder, bijectivity by the Fredholm alternative, analytic implicit branches, local physical low-contour matching and complex entire period uniqueness for arbitrary Hilbert root coordinates. Physical Abelian angles and the KdV Birkhoff map/action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+      "remaining": "Joint continuity of the physical normalized differential, regular endpoint cosine differentials and normalized analytic cosine primitives are now proved at every real base. Their full cosine periods are exactly pi times the Kronecker delta on all open and closed gaps; the primitives vanish at angle pi and have the exact negative-pi Kronecker value at angle zero. Filled-gap radicand deflation and the actual entire Dirichlet sheet root, its characteristic-zero square identity and its signed log-norming formula are proved. Joint analytic moving-gap charts, matching these primitives to the actual sheeted Dirichlet divisor Abelian integrals, summation of the off-gap angle correction and physical Cartesian Birkhoff coordinates/action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
       "checked_hill_uniform_critical_action_tail": [
         "NLS.SequenceSpaces.nonneg_series_cauchy_schwarz",
         "NLS.SequenceSpaces.square_sum_le_of_weight_lower_bound",
@@ -1220,6 +1220,31 @@
         "NLS.KdV.hillMixedComplexPeriodSequence_nearby_physical_coordinate",
         "NLS.KdV.exists_hillMixedComplexPeriodSequence_physical_zero_neighborhood",
         "NLS.KdV.exists_hillAbelianSelectedGlobalPsi_joint_analytic_extension"
+      ],
+      "checked_physical_hill_abelian_endpoint_primitives": [
+        "NLS.ComplexAnalysis.mem_slitPlane_one_sub_of_norm_lt_one",
+        "NLS.ComplexAnalysis.circleIntegral_inv_endpointRoot_midpoint",
+        "NLS.ComplexAnalysis.circleIntegral_div_endpointRoot_eq_cosine_integral",
+        "NLS.KdV.continuous_hillAbelianSelectedGlobalPsi_joint",
+        "NLS.KdV.continuousOn_hillEnergyCanonicalRootProduct_joint",
+        "NLS.KdV.continuousOn_hillNormalizedAbelianDifferential_joint",
+        "NLS.KdV.hillAbelianCosineDifferential",
+        "NLS.KdV.hillCosineGapPoint_mem_real_gap",
+        "NLS.KdV.hillCosineGapPoint_mem_filledDomain",
+        "NLS.KdV.analyticAt_hillAbelianCosineDifferential_real",
+        "NLS.KdV.hillAbelianCosineDifferential_im_eq_zero",
+        "NLS.KdV.hillAbelianCosineDifferential_of_closed_gap",
+        "NLS.KdV.hillAbelianCosinePrimitive",
+        "NLS.KdV.hillAbelianCosinePrimitive_pi",
+        "NLS.KdV.hillAbelianCosinePrimitive_im_eq_zero",
+        "NLS.KdV.exists_hillAbelianCosinePrimitive_analytic_chart",
+        "NLS.KdV.integral_hillAbelianCosineDifferential",
+        "NLS.KdV.hillAbelianCosinePrimitive_zero",
+        "NLS.KdV.hillL2Radicand_eq_gap_polynomial_mul_deflated_sq",
+        "NLS.KdV.hillDirichletSheetRoot",
+        "NLS.KdV.analyticOnNhd_hillDirichletSheetRoot_joint",
+        "NLS.KdV.hillDirichletSheetRoot_sq_of_characteristic_zero",
+        "NLS.KdV.hillDirichletSheetRoot_at_dirichlet_eq_norming"
       ]
     },
     {
@@ -1648,7 +1673,7 @@
         "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "The selected physical normalized Hill differential now has a jointly analytic complex extension near every real period-one L2 base potential, for every spectral energy. Its construction uses an actual jointly analytic Hilbert period map, a compact root-derivative remainder, bijectivity by the Fredholm alternative, analytic implicit branches, local physical low-contour matching and complex entire period uniqueness for arbitrary Hilbert root coordinates. Physical Abelian angles and the KdV Birkhoff map/action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+      "remaining": "Joint continuity of the physical normalized differential, regular endpoint cosine differentials and normalized analytic cosine primitives are now proved at every real base. Their full cosine periods are exactly pi times the Kronecker delta on all open and closed gaps; the primitives vanish at angle pi and have the exact negative-pi Kronecker value at angle zero. Filled-gap radicand deflation and the actual entire Dirichlet sheet root, its characteristic-zero square identity and its signed log-norming formula are proved. Joint analytic moving-gap charts, matching these primitives to the actual sheeted Dirichlet divisor Abelian integrals, summation of the off-gap angle correction and physical Cartesian Birkhoff coordinates/action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
       "status": "not_verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -2839,6 +2864,31 @@
         "NLS.KdV.hillMixedComplexPeriodSequence_nearby_physical_coordinate",
         "NLS.KdV.exists_hillMixedComplexPeriodSequence_physical_zero_neighborhood",
         "NLS.KdV.exists_hillAbelianSelectedGlobalPsi_joint_analytic_extension"
+      ],
+      "checked_physical_hill_abelian_endpoint_primitives": [
+        "NLS.ComplexAnalysis.mem_slitPlane_one_sub_of_norm_lt_one",
+        "NLS.ComplexAnalysis.circleIntegral_inv_endpointRoot_midpoint",
+        "NLS.ComplexAnalysis.circleIntegral_div_endpointRoot_eq_cosine_integral",
+        "NLS.KdV.continuous_hillAbelianSelectedGlobalPsi_joint",
+        "NLS.KdV.continuousOn_hillEnergyCanonicalRootProduct_joint",
+        "NLS.KdV.continuousOn_hillNormalizedAbelianDifferential_joint",
+        "NLS.KdV.hillAbelianCosineDifferential",
+        "NLS.KdV.hillCosineGapPoint_mem_real_gap",
+        "NLS.KdV.hillCosineGapPoint_mem_filledDomain",
+        "NLS.KdV.analyticAt_hillAbelianCosineDifferential_real",
+        "NLS.KdV.hillAbelianCosineDifferential_im_eq_zero",
+        "NLS.KdV.hillAbelianCosineDifferential_of_closed_gap",
+        "NLS.KdV.hillAbelianCosinePrimitive",
+        "NLS.KdV.hillAbelianCosinePrimitive_pi",
+        "NLS.KdV.hillAbelianCosinePrimitive_im_eq_zero",
+        "NLS.KdV.exists_hillAbelianCosinePrimitive_analytic_chart",
+        "NLS.KdV.integral_hillAbelianCosineDifferential",
+        "NLS.KdV.hillAbelianCosinePrimitive_zero",
+        "NLS.KdV.hillL2Radicand_eq_gap_polynomial_mul_deflated_sq",
+        "NLS.KdV.hillDirichletSheetRoot",
+        "NLS.KdV.analyticOnNhd_hillDirichletSheetRoot_joint",
+        "NLS.KdV.hillDirichletSheetRoot_sq_of_characteristic_zero",
+        "NLS.KdV.hillDirichletSheetRoot_at_dirichlet_eq_norming"
       ]
     }
   ],
@@ -3442,7 +3492,7 @@
     }
   ],
   "next_shared_milestones": [
-    "Construct the actual Abelian angle coordinates from the verified global normalized Hill differentials and the actual Dirichlet spectral divisor/sheet data. Reuse the shared parametric cosine primitive and endpoint regularization library. Establish joint continuity and local analytic differential charts, regularize own-gap endpoint integrals with the deflated canonical root, control the infinite off-gap angle correction, and prove the Cartesian physical coordinate extensions through closed gaps with the exact Arnold action identity. Then apply the already verified action estimates to main Theorems 1 and 3(i).",
+    "Use the actual Dirichlet sheet root to fix the normalized sine coordinate of the spectral divisor on each open gap and prove its exact sine/cosine identity from filled-gap radicand deflation. Construct jointly analytic midpoint/squared-gap and deflated-root charts for every physical gap, including low and closed gaps. Apply the shared parametric cosine primitive and actual Dirichlet root/norming analytic families to match the physical Abelian integrals. Control the infinite off-gap angle correction and construct the Cartesian physical Birkhoff coordinates through closed gaps, with the exact Arnold action identity. Then apply the verified action estimates to main Theorems 1 and 3(i).",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Prove explicit norm-dependent action-gap bounds with the source cutoff/weight evaluation, then Hamiltonian/higher-action trace identities and the tame action estimates for Theorem 2. The potential-dependent eventual bound n*I_n<=gamma_n^2, weighted action summability and the high Proposition 5 comparison at cutoff eight are now checked.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -7243,6 +7293,51 @@
     "hypotheses": "Every real period-one L2 Hill potential and every positive selected label. The actual joint analytic Hilbert period map and its bounded root derivative are used. The Fredholm step is proved, not assumed. Physical low-contour matching holds on a neighborhood of each real base; physical high matching holds for arbitrary prescribed bounded real potentials beyond a finite cutoff. Complex entire interpolation applies to arbitrary complex Hilbert root coordinates. The normalized differential extension matches the actual selected physical normalized entire numerator at all energies on one real-potential neighborhood of the base.",
     "result": "Uniformly bounded separated Hilbert weights vanish weakly as the output label tends to infinity. Their convergent weighted products therefore approach one for each fixed Hilbert root sequence, so the free period diagonal correction is compact. Exact free-period derivative rows and uniform Cauchy estimates bound the remaining rows by one Hilbert sequence. A reusable compact-tail row criterion and a Cauchy coordinate-bound criterion treat arbitrary normed input spaces and finite output heads. The uniformly O(1/k) mixed-minus-free period errors give a square-summable derivative row majorant. Thus the actual mixed root derivative is a compact perturbation of minus the positive-deleted projection. Restriction and projection to the positive deleted Hilbert space give a compact perturbation of minus the identity. Its proved injectivity and the verified Fredholm alternative imply bijectivity at every physical global period root solution. The analytic implicit function theorem constructs actual analytic local zero branches near every real L2 base. The physical canonical square root has an open joint real cut domain; square-root uniqueness first gives local nonreal matching with the source branch and then matching on whole intrinsic base contours for nearby real potentials. Spectral-label continuity preserves contour band bounds and enclosed gaps, and convex-cut contour deformation identifies fixed low complex periods with the nearby physical intrinsic periods. A common finite neighborhood joins this low matching to the existing arbitrary-bounded-potential high matching. A new complex entire uniqueness theorem identifies normalized Hilbert numerators from physical periods, with no reality or root-box assumption on their Hilbert coordinates. Applied to the implicit branches, it proves a jointly analytic complex extension of the actual selected physical normalized differential near every real period-one L2 potential and every spectral energy. The selected physical normalized Hill differential now has a jointly analytic complex extension near every real period-one L2 base potential, for every spectral energy. Its construction uses an actual jointly analytic Hilbert period map, a compact root-derivative remainder, bijectivity by the Fredholm alternative, analytic implicit branches, local physical low-contour matching and complex entire period uniqueness for arbitrary Hilbert root coordinates. Physical Abelian angles and the KdV Birkhoff map/action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
     "qualification": "Joint analytic dependence of the selected physical normalized Hill differential is proved near every real L2 base, using actual physical periods and exact canonical square-root branches. This does not yet construct the physical Abelian angles or the KdV Birkhoff map, prove its action identity or establish the remaining main coordinate theorems. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified. Full Lake rebuild and full repository examples were not rerun.",
-    "remaining": "The selected physical normalized Hill differential now has a jointly analytic complex extension near every real period-one L2 base potential, for every spectral energy. Its construction uses an actual jointly analytic Hilbert period map, a compact root-derivative remainder, bijectivity by the Fredholm alternative, analytic implicit branches, local physical low-contour matching and complex entire period uniqueness for arbitrary Hilbert root coordinates. Physical Abelian angles and the KdV Birkhoff map/action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified."
+    "remaining": "Joint continuity of the physical normalized differential, regular endpoint cosine differentials and normalized analytic cosine primitives are now proved at every real base. Their full cosine periods are exactly pi times the Kronecker delta on all open and closed gaps; the primitives vanish at angle pi and have the exact negative-pi Kronecker value at angle zero. Filled-gap radicand deflation and the actual entire Dirichlet sheet root, its characteristic-zero square identity and its signed log-norming formula are proved. Joint analytic moving-gap charts, matching these primitives to the actual sheeted Dirichlet divisor Abelian integrals, summation of the off-gap angle correction and physical Cartesian Birkhoff coordinates/action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+    "abelian_endpoint_progress": "The physical_hill_abelian_endpoint_primitives section adds joint differential continuity, endpoint-regularized analytic cosine primitives with exact Kronecker periods on open and closed gaps, and actual Dirichlet sheet algebra. Global Abelian angles and the Birkhoff map/action identity remain pending."
+  },
+  "physical_hill_abelian_endpoint_primitives": {
+    "modules": [
+      "NLS/KdV/HillGlobalDifferentialContinuity.lean",
+      "NLS/KdV/HillAbelianCosineDifferential.lean",
+      "NLS/KdV/HillCollapsedAngularDifferential.lean",
+      "NLS/KdV/HillAbelianCosinePrimitive.lean",
+      "NLS/ComplexAnalysis/EndpointRootCirclePeriod.lean",
+      "NLS/ComplexAnalysis/EndpointRootCosinePeriod.lean",
+      "NLS/KdV/HillAbelianCosinePeriods.lean",
+      "NLS/KdV/HillAbelianCosinePrimitivePeriods.lean",
+      "NLS/KdV/HillDeflatedRadicandFactorization.lean",
+      "NLS/KdV/HillDirichletSheetRoot.lean"
+    ],
+    "declarations": [
+      "NLS.ComplexAnalysis.mem_slitPlane_one_sub_of_norm_lt_one",
+      "NLS.ComplexAnalysis.circleIntegral_inv_endpointRoot_midpoint",
+      "NLS.ComplexAnalysis.circleIntegral_div_endpointRoot_eq_cosine_integral",
+      "NLS.KdV.continuous_hillAbelianSelectedGlobalPsi_joint",
+      "NLS.KdV.continuousOn_hillEnergyCanonicalRootProduct_joint",
+      "NLS.KdV.continuousOn_hillNormalizedAbelianDifferential_joint",
+      "NLS.KdV.hillAbelianCosineDifferential",
+      "NLS.KdV.hillCosineGapPoint_mem_real_gap",
+      "NLS.KdV.hillCosineGapPoint_mem_filledDomain",
+      "NLS.KdV.analyticAt_hillAbelianCosineDifferential_real",
+      "NLS.KdV.hillAbelianCosineDifferential_im_eq_zero",
+      "NLS.KdV.hillAbelianCosineDifferential_of_closed_gap",
+      "NLS.KdV.hillAbelianCosinePrimitive",
+      "NLS.KdV.hillAbelianCosinePrimitive_pi",
+      "NLS.KdV.hillAbelianCosinePrimitive_im_eq_zero",
+      "NLS.KdV.exists_hillAbelianCosinePrimitive_analytic_chart",
+      "NLS.KdV.integral_hillAbelianCosineDifferential",
+      "NLS.KdV.hillAbelianCosinePrimitive_zero",
+      "NLS.KdV.hillL2Radicand_eq_gap_polynomial_mul_deflated_sq",
+      "NLS.KdV.hillDirichletSheetRoot",
+      "NLS.KdV.analyticOnNhd_hillDirichletSheetRoot_joint",
+      "NLS.KdV.hillDirichletSheetRoot_sq_of_characteristic_zero",
+      "NLS.KdV.hillDirichletSheetRoot_at_dirichlet_eq_norming"
+    ],
+    "source_correspondence": "The physical Abelian-angle construction underlying the coordinate Birkhoff map needed in main Theorems 1 and 3(i). Exact source periods and actual Dirichlet monodromy sheet data are retained. Theorem 2 and Theorem 3(ii) exact action estimates are preserved.",
+    "hypotheses": "Arbitrary real period-one L2 Hill potentials and positive numerator and gap indices, including closed gaps and endpoint Dirichlet divisors. Cosine primitive charts are analytic in the angle at each fixed physical base potential; joint moving-gap source charts are not yet asserted. The Dirichlet sheet-root characteristic-zero square identity holds for arbitrary complex L2 coefficients and complex energies.",
+    "result": "The physical selected normalized numerator is jointly continuous in spectral energy and the real period-one L2 potential. Local physical square-root matching also gives joint continuity of the canonical root and of the actual normalized Abelian differential on its open joint cut domain. Cosine substitution yields an explicit endpoint-regularized differential -i times the normalized numerator divided by the nonvanishing deflated canonical root. It is analytic near every real angle, real on the real angle axis, and remains defined at both endpoints and at closed gaps. Its affine-segment primitive is normalized to zero at angle pi, is real at every real angle, and has an analytic primitive chart containing the complete real interval from zero to pi. The physical circle normalization forces exact Kronecker differential values on every collapsed gap. Reusable endpoint-root theorems prove the exact oriented standard-root circle period and identify an arbitrary analytic weighted root circle integral with minus twice i times its cosine integral, using the verified inversion-Cauchy coefficient theorem and zero-period criterion. Hence every physical full-gap cosine period equals pi times its Kronecker delta, and every primitive has the exact negative-pi Kronecker value at angle zero. Canonical gap deflation squares to the actual radicand throughout the filled gap domain, including both endpoints. The actual Dirichlet sheet root is defined by twice the actual Dirichlet monodromy slope minus the discriminant. It is jointly entire, squares to the actual Hill radicand at every complex Dirichlet characteristic zero, and at physical Dirichlet eigenvalues equals the parity sign times twice the sinh of the actual real log-norming multiplier. Joint continuity of the physical normalized differential, regular endpoint cosine differentials and normalized analytic cosine primitives are now proved at every real base. Their full cosine periods are exactly pi times the Kronecker delta on all open and closed gaps; the primitives vanish at angle pi and have the exact negative-pi Kronecker value at angle zero. Filled-gap radicand deflation and the actual entire Dirichlet sheet root, its characteristic-zero square identity and its signed log-norming formula are proved. Joint analytic moving-gap charts, matching these primitives to the actual sheeted Dirichlet divisor Abelian integrals, summation of the off-gap angle correction and physical Cartesian Birkhoff coordinates/action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+    "qualification": "Endpoint-regularized differentials, analytic normalized cosine primitives and their exact source periods are proved, including closed gaps. The Dirichlet sheet is the actual monodromy difference, not an arbitrary phase. Joint moving-gap analytic charts, the actual global Abelian angle, the infinite off-gap angle correction and physical Birkhoff coordinate/action identity remain unproved. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified. Full Lake rebuild and full repository examples were not rerun.",
+    "remaining": "Joint continuity of the physical normalized differential, regular endpoint cosine differentials and normalized analytic cosine primitives are now proved at every real base. Their full cosine periods are exactly pi times the Kronecker delta on all open and closed gaps; the primitives vanish at angle pi and have the exact negative-pi Kronecker value at angle zero. Filled-gap radicand deflation and the actual entire Dirichlet sheet root, its characteristic-zero square identity and its signed log-norming formula are proved. Joint analytic moving-gap charts, matching these primitives to the actual sheeted Dirichlet divisor Abelian integrals, summation of the off-gap angle correction and physical Cartesian Birkhoff coordinates/action identity remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified."
   }
 }
