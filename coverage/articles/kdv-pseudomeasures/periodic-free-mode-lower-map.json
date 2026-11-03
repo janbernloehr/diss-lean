@@ -71,9 +71,9 @@
     "main_theorems_verified": false
   },
   "essential_remaining": [
-    "Construct the ACTUAL high spectral-range boundary-zero vector and its faithful zero-trace interval H1 restriction, with original period-one/antiperiod-one source parity and exact physical L2 normalization. Then prove the full periodic-to-Dirichlet residual and actual Dirichlet projection identity (31). Verify the printed coefficients: for G=alpha*f+beta*phi, the proved eta equation algebraically gives beta*eta*f-beta*gamma*phi, so beta is required on BOTH terms of the restricted/projected residual.",
-    "Use the already PROVED actual periodic and Dirichlet source-projection convergence, their exact literal free kernels and normalized source eigenfunctions to prove overlap (32) and full source 2.15. The precise Dirichlet C.4(ii) RATE remains OPEN; periodic C.4(i) is complete.",
-    "Complete the full COMPLEX weighted midpoint estimate 2.1(ii), remaining low periodic parity/interlacing and complex ratio 2.20 where used, original Birkhoff maps and actual KdV approximation-flow constructions. All five MAIN theorems 1.1, 1.3, 1.4, 5.1 and 5.9 remain UNPROVED; goal ACTIVE."
+    "Prove actual native Hill-to-Dirichlet operator restriction compatibility for the newly constructed SAME physical interval representative, retaining the full original H1 and H-minus-one/Dirichlet-dual domains. Express the ACTUAL boundary-zero vector in the ACTUAL normalized spectral basis with unit coefficient energy. Then restrict/project the PROVED native residual with beta on BOTH eta and gamma terms to obtain the corrected FULL source identity (31).",
+    "Prove overlap (32), using actual periodic and Dirichlet source-projection convergence, the literal free kernels, the NEW exact zero boundary traces and physical L2 norm preservation. The actual rank-one Dirichlet projected amplitude exists already. Complete full source 2.15, including the norm-ball/local uniformity statement.",
+    "Complete the full COMPLEX weighted midpoint estimate 2.1(ii), quantitative Dirichlet C.4(ii) rate, remaining low periodic parity/interlacing and complex ratio 2.20 where used, original Birkhoff maps and actual KdV approximation-flow constructions. All five MAIN theorems 1.1, 1.3, 1.4, 5.1 and 5.9 remain UNPROVED; goal ACTIVE."
   ],
   "source_correspondence": {
     "potential": "ENTIRE ORIGINAL complex FourierLebesgueSpace(2,-r,infinity), 0<=r<1/2, equivalent to article -1/2<s<=0 by s=-r. The physically period-one complex mean-zero source is included; no reality condition is imposed.",
@@ -153,5 +153,31 @@
     "source_Theorem2_1_ii_proved": false,
     "main_theorems_verified": false
   },
-  "validation_scope": "The validation object records this earlier milestone. actual_eta_bound_followup links the later4218-declaration audited full source2.13 milestone."
+  "validation_scope": "The validation object records this earlier milestone. actual_boundary_parity_and_interval_domain_followup links the later4248-declaration audited parity/boundary-vector/interval-domain milestone.",
+  "actual_boundary_parity_and_interval_domain_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-boundary-parity-map.json",
+    "original_distribution_and_physical_parity_masks_proved": true,
+    "actual_native_operator_pencil_resolvent_and_contour_parity_commutation": true,
+    "actual_physical_Riesz_projection_parity_commutation": true,
+    "uniform_entire_actual_high_spectral_range_mode_parity": true,
+    "source26_high_spectral_range_parity_component_proved": true,
+    "all_complex_associated_vectors_included": true,
+    "exact_physical_periodic_antiperiodic_H1_translation": true,
+    "exact_normalized_periodic_unnormalized_interval_L2_identity": true,
+    "actual_normalized_zero_trace_spectral_vector_constructed": true,
+    "unique_faithful_full_native_Dirichlet_domain_restriction": true,
+    "interval_restriction_exact_L2_norm_preservation": true,
+    "uniform_original_source_boundary_vector_and_interval_representative": true,
+    "original_stronger_entire_distribution_retained": true,
+    "corrected_native_combination_residual_beta_on_both_terms": true,
+    "source_specific_phase_fixed_Gtilde_formula_proved": false,
+    "native_Hill_Dirichlet_operator_restriction_compatibility_proved": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Lemma2_13_complete": true,
+    "source_Lemma2_14_proved": true,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  }
 }

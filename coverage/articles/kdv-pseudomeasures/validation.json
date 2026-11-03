@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Full source Lemma 2.13 quantitative eta bound with constant 16, actual canonical labels/couplings and normalized original spectral bases.",
+  "phase": "Actual high spectral-range parity, normalized zero-boundary native H1 vector, faithful native Dirichlet restriction and exact physical norm preservation.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -648,13 +648,23 @@
     "NLS/KdV/HillReducedCouplingNorm.lean",
     "NLS/KdV/HillEndpointEtaBound.lean",
     "NLS/Articles/KdVPseudomeasures/PeriodicEtaBound.lean",
+    "NLS/Fourier/PeriodicParityProjection.lean",
+    "NLS/KdV/SingularHillParity.lean",
+    "NLS/KdV/SingularHillPhysicalParity.lean",
+    "NLS/Articles/KdVPseudomeasures/PeriodicSpectralParity.lean",
+    "NLS/Fourier/SobolevParitySynthesis.lean",
+    "NLS/FunctionalAnalysis/UnitFunctionalKernel.lean",
+    "NLS/KdV/HillH1ParityRepresentative.lean",
+    "NLS/KdV/SingularHillBoundaryVector.lean",
+    "NLS/Articles/KdVPseudomeasures/PeriodicDirichletBoundaryVector.lean",
+    "NLS/KdV/SingularHillCombinationResidual.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 3494,
-  "definitions": 724,
+  "proved_theorems": 3522,
+  "definitions": 726,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 4218,
+    "declarations": 4248,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -1285,10 +1295,20 @@
     "An explicit norm-ball cutoff makes kappa=C_r*n^(r-1/2)*norm(q)<=1/16 uniformly. Source 2.14 gives original resonant-amplitude max-norm at least1/4 for the unit eigenvector. The actual inverse changes those amplitudes by at most1/8, giving norm at least1/8 for its response; the unit second vector has response norm at most9/8. The actual reduced residual then gives norm(eta)<=9*norm(gamma)+16*(norm(b_plus)+norm(b_minus)) <=16*(norm(gamma)+norm(b_plus)+norm(b_minus)).",
     "The source article adapter proves the constant-SIXTEEN bound for EVERY normalized original native pair satisfying the ACTUAL canonical eta equation. It therefore applies to ANY actual source normalized orthonormal spectral basis starting with its canonical lambda_n^+ eigenfunction, including coincident roots and complex associated vectors. ONE cutoff is chosen BEFORE every potential in EACH FIXED ORIGINAL complex endpoint norm ball and ALL later ORIGINAL positive indices; it can be above ANY supplied earlier cutoff.",
     "Full source Lemma 2.13 is PROVED: the actual canonical lambda_n^+ eigenfunction and second native H1 vector have actual physical L2 norm ONE and form an ACTUAL orthonormal basis of the FULL original source-circle spectral range. BOTH vectors have IDENTICAL ENTIRE original F-ell^(s+2,infinity) distributions. The canonical eta/gamma equation AND its exact source constant16 bound with ACTUAL original couplings at the ACTUAL lambda_n^+ are proved together, uniformly on each exact original complex endpoint norm ball.",
-    "Source Lemmas 2.13 and 2.14, periodic (33), exact free Fourier projector and periodic C.4(i) rate are now complete. Full periodic-to-Dirichlet residual (31), overlap (32)/2.15, precise Dirichlet C.4(ii) rate, full COMPLEX weighted midpoint 2.1(ii), actual Birkhoff/KdV constructions and ALL FIVE MAIN theorems remain OPEN."
+    "Source Lemmas 2.13 and 2.14, periodic (33), exact free Fourier projector and periodic C.4(i) rate are now complete. Full periodic-to-Dirichlet residual (31), overlap (32)/2.15, precise Dirichlet C.4(ii) rate, full COMPLEX weighted midpoint 2.1(ii), actual Birkhoff/KdV constructions and ALL FIVE MAIN theorems remain OPEN.",
+    "The SAME bounded parity masks are constructed on EVERY original Fourier-Lebesgue distribution space and on the ENTIRE actual physical periodic L2 space. Exact raw original Fourier coefficients, idempotence on the entire original distribution space and physical L2 contractivity are proved.",
+    "For complex potentials with vanishing original odd Fourier coefficients, the ACTUAL full native H1/H-minus-one Hill operator, domain inclusion, pencil, actual H1-valued resolvent and actual H1 contour lift all commute with BOTH parity masks. The full original convolution is retained, and commutation is PROVED coefficientwise and through the actual analytic native integral; no operator commutation premise is supplied.",
+    "The native base/domain parity masks are PROVED identical to the actual physical L2 masks. Consequently the EXISTING actual physical Riesz projection commutes with both physical parities. The literal free two-mode projector only sees the parity of its ORIGINAL mode n.",
+    "The original physical period-one condition is PROVED to imply vanishing odd original native potential coefficients. For EVERY original complex physically period-one endpoint potential in EACH FIXED original norm ball, ONE cutoff before every potential and later ORIGINAL index gives the EXACT parity-n identity on the ENTIRE actual high physical spectral range. The proof applies the proved one-half free-mode lower bound to the opposite-parity component in that SAME actual range. ALL complex associated vectors and coincident roots are included.",
+    "Original Fourier parity is transferred to the ACTUAL continuous H1 representative at EVERY real point: f(x+1)=wave(n,1)*f(x), with phase of norm EXACTLY ONE. Therefore the original normalized periodic physical L2 norm squared is EXACTLY the UNNORMALIZED unit-interval integral of norm(f)^2. No factor two, changed physical period or replacement norm is introduced.",
+    "Every finite-dimensional complex space of dimension above ONE has an ACTUAL norm-one vector in the kernel of EVERY bounded scalar functional. Applying this to the ORIGINAL actual rank-two spectral range and its ACTUAL native continuous evaluation at zero produces a full original H1 spectral vector of actual physical L2 norm ONE with trace ZERO, without a supplied trace-zero witness or basis.",
+    "EVERY original H1 vector with zero physical values at zero and one has a UNIQUE representative in the ENTIRE ORIGINAL native Dirichlet H1 domain, agreeing at EVERY point of the closed physical interval. If it has either original Fourier parity and trace zero at zero, trace zero at one follows and the Dirichlet restriction has EXACTLY the SAME physical L2 norm as its original periodic source vector.",
+    "ONE original endpoint norm-ball cutoff above ANY supplied earlier cutoff now constructs the ACTUAL high periodic spectral boundary-zero H1 vector G and its faithful native interval vector g for EVERY original complex physically period-one source and ALL later ORIGINAL n. Both physical L2 norms are EXACTLY ONE; BOTH endpoint values vanish; the physical translation phase is EXACTLY wave(n,1); the interval representatives coincide on ALL of [0,1]; G has an IDENTICAL ENTIRE original F-ell^(s+2,infinity) distribution.",
+    "The exact ORIGINAL native eta residual of EVERY linear combination G=alpha*f+beta*phi is PROVED to be (beta*eta)*Jf-(beta*gamma)*Jphi. Thus beta is required on BOTH residual terms. This formally verifies the native precursor of the coefficient correction needed in printed source (31); the full interval restriction/operator/projected identity is NOT yet proved.",
+    "The actual high spectral parity and required normalized boundary-vector/domain-restriction dependencies toward source 2.15 are complete. The operator restriction compatibility, full projected (31), overlap (32)/2.15, precise Dirichlet C.4(ii) rate, full COMPLEX weighted midpoint 2.1(ii), remaining low periodic parity/interlacing, actual Birkhoff/KdV constructions and ALL FIVE MAIN theorems remain OPEN."
   ],
-  "source_correspondence": "NOW PROVED: FULL source Lemma 2.13 including canonical eta/gamma identity AND quantitative norm(eta)<=16*(norm(gamma)+norm(actual b_plus(lambda_plus))+norm(actual b_minus(lambda_plus))). The proof retains actual canonical labels, actual original complex couplings, ANY normalized native pair satisfying the canonical equation, actual full spectral orthonormal bases, both identical original stronger F-ell^(s+2,infinity) representatives, all associated vectors/coincident roots, original physical L2 normalization and ONE fixed original endpoint norm-ball cutoff above ANY supplied previous cutoff. Source2.14, periodic (33), exact free two-mode projector and periodic C.4(i) remain proved. NEXT: actual high-range source parity, boundary-zero normalized vector, faithful original interval restriction and full periodic-to-Dirichlet residual (31), then overlap (32)/2.15 and full COMPLEX weighted midpoint 2.1(ii). Verify the residual coefficient correction: G=alpha*f+beta*phi implies beta*eta*f-beta*gamma*phi, so beta is required on BOTH terms. Precise Dirichlet C.4(ii) rate, remaining low periodic parity/interlacing, complex ratio2.20 where used, original Birkhoff maps and actual KdV approximation flow remain OPEN. Appendix B is COMPLETE. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
-  "build_isolation": "Full source Lemma 2.13 quantitative eta bound with constant 16, actual canonical labels/couplings and normalized original spectral bases. All compiler/source/Git milestone writes are private; canonical sources/build/shared Git metadata are read-only.",
+  "source_correspondence": "NOW PROVED: EXACT parity-n identity on the ENTIRE actual high physical spectral range for original complex period-one sources, including ALL associated vectors; exact physical period-one/antiperiod-one translation of every native H1 representative; equality of original normalized periodic L2 and UNNORMALIZED unit-interval L2 norms; actual normalized zero-boundary H1 spectral vector G and UNIQUE faithful native Dirichlet representative g with BOTH physical norms ONE, original stronger entire distribution and ONE original endpoint norm-ball cutoff above ANY supplied prior cutoff. Native residual for G=alpha*f+beta*phi is PROVED to be beta*eta*Jf-beta*gamma*Jphi, correcting the missing beta on the printed gamma term. NEXT: actual native operator restriction compatibility and spectral-basis coefficient decomposition, then corrected FULL projected(31), overlap(32)/2.15 and full COMPLEX weighted midpoint2.1(ii). Full source2.13/2.14, periodic(33), exact free two-mode kernel and periodic C.4(i) remain proved. Precise Dirichlet C.4(ii) rate, low periodic parity/interlacing, complex ratio2.20 where used, original Birkhoff maps and actual KdV approximation flow remain OPEN. Appendix B COMPLETE. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
+  "build_isolation": "Actual high spectral-range parity, normalized zero-boundary native H1 vector, faithful native Dirichlet restriction and exact physical norm preservation. All compiler/source/Git milestone writes are private; canonical sources/build/shared Git metadata are read-only.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -1690,7 +1710,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "ca9c0831f9f1e6b75f4cc66b00e8367ea4798a7a597596f78bdcaa876190c3e3",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "e1d7e7ef325b02f60b3767c47544c22a1fe83d6cdf8fe4f7c274004f51cfda6b",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -1936,7 +1956,17 @@
     "NLS/KdV/HillEndpointInverseResonance.lean": "31af0d79c8e4ec16463c26b0c624d1b203646b015b6330e02c15c5366238de38",
     "NLS/KdV/HillReducedCouplingNorm.lean": "b55f030005f4f4a38c18c8b386e34860392694616deed5feb2ad2a72c08803b5",
     "NLS/KdV/HillEndpointEtaBound.lean": "70c3d6ce1e84b25989046a47401b09f3f8d3f3e29e1320b96098c0c540f23f0c",
-    "NLS/Articles/KdVPseudomeasures/PeriodicEtaBound.lean": "6288d2143de8fa36e1a1525f7d9428792ec0567e4da58e951a89348e628df8fb"
+    "NLS/Articles/KdVPseudomeasures/PeriodicEtaBound.lean": "6288d2143de8fa36e1a1525f7d9428792ec0567e4da58e951a89348e628df8fb",
+    "NLS/Fourier/PeriodicParityProjection.lean": "d09f0dd2b7f9d93859c5d2fefe595170d448154eda11a4f322bd2ba2efb6ddcd",
+    "NLS/KdV/SingularHillParity.lean": "e5d33a87a9cfebcf6a38292d30360734852323bc65585810b41a0a42de99992b",
+    "NLS/KdV/SingularHillPhysicalParity.lean": "0929e11e0697b22192c418510b78aca3ca633ad22ae50344644de7fc04891284",
+    "NLS/Articles/KdVPseudomeasures/PeriodicSpectralParity.lean": "76fe0524fc3d040aa55aab532ec4e066b98c40d265163d4e6767f47673e9ed67",
+    "NLS/Fourier/SobolevParitySynthesis.lean": "10e62f50c3bc0957de54f3de278965ef11ce9bceb1eb8980e8d45ac87a66eabd",
+    "NLS/FunctionalAnalysis/UnitFunctionalKernel.lean": "0a708013a06fba78234d55705fb9b89aba5c49bef5a2f85d8bd690436b7f26e3",
+    "NLS/KdV/HillH1ParityRepresentative.lean": "a1542db4b9ed1e6ec3622529006f450d8afcf585b319038b7eca207a7b078b00",
+    "NLS/KdV/SingularHillBoundaryVector.lean": "c1fc275402ca55fad3aac9b7f6e9bbf8b00ac7e51af55394f4db722fc4d9fe32",
+    "NLS/Articles/KdVPseudomeasures/PeriodicDirichletBoundaryVector.lean": "41c6215ab230e6a7a484389415a88c2d2ddcfe72668beb8c83217ba5be3d5313",
+    "NLS/KdV/SingularHillCombinationResidual.lean": "d47bd77eccd969d2cee6cff1bb5355140477cd88804a7a15f4e20a6e4c2a5382"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1944,12 +1974,12 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 4207,
-    "newly_checked_declarations_this_continuation": 11,
-    "new_theorems": 11,
-    "new_definitions": 0,
-    "total_checked_declarations": 4218,
-    "reuse": "Previously validated full source2.14 bound, actual canonical eta identity and spectral bases, exact free Fourier projector, physical L2 isometry, BOTH actual shifted endpoint inverse bounds, actual native inhomogeneous reduced equation and common-diagonal bilinear symmetry/determinant formula. No matrix/inverse/coupling norm estimate is supplied as a source hypothesis."
+    "previous_checked_declarations": 4218,
+    "newly_checked_declarations_this_continuation": 30,
+    "new_theorems": 28,
+    "new_definitions": 2,
+    "total_checked_declarations": 4248,
+    "reuse": "Previously validated actual native operator/Fourier convolution, native/physical contour lifts and spectral rank two, FULL source2.13/2.14, original parity coefficient masks, actual original Sobolev synthesis/Dirichlet domain identification and physical L2 inclusions. New whole-range parity and boundary vector are proved from these actual operators; no parity, trace-zero witness, unit-interval norm identification or operator commutation is supplied as a source hypothesis."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -1978,7 +2008,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-periodic-eta-bound.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-periodic-boundary-parity.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -2207,13 +2237,14 @@
     "Actual full native half-denominator isomorphisms, normalized phase inverse, exact native pencil/resolvent factorization and uniform original rough-potential norm-ball inverse; Appendix B focused recheck.",
     "Actual physical periodic resolvent and contour bounds, exact two-mode free projector, original Appendix C.4(i) rate and uniform original endpoint periodic projection convergence.",
     "Source Lemma 2.14 on the full printed radius-12n strip and every original Banach exponent, with exact free Fourier projector and uniform original endpoint norm-ball cutoff.",
-    "Full source Lemma 2.13 quantitative eta bound with constant 16, actual canonical labels/couplings and normalized original spectral bases."
+    "Full source Lemma 2.13 quantitative eta bound with constant 16, actual canonical labels/couplings and normalized original spectral bases.",
+    "Actual high spectral-range parity, normalized zero-boundary native H1 vector, faithful native Dirichlet restriction and exact physical norm preservation."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-eta-bound-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-boundary-parity-map.json",
   "baseline_validated_snapshot": {
-    "commit": "a921c26cd3e91dbaaf9cf89b005fc46b66608067",
-    "modules": 638,
-    "audited_declarations": 4207,
+    "commit": "da7cacc3cd0fce130c6f75ba44ba9292d3c06e47",
+    "modules": 643,
+    "audited_declarations": 4218,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   }

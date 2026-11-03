@@ -674,6 +674,16 @@ modules = [
     'NLS.KdV.HillReducedCouplingNorm',
     'NLS.KdV.HillEndpointEtaBound',
     'NLS.Articles.KdVPseudomeasures.PeriodicEtaBound',
+    'NLS.Fourier.PeriodicParityProjection',
+    'NLS.KdV.SingularHillParity',
+    'NLS.KdV.SingularHillPhysicalParity',
+    'NLS.Articles.KdVPseudomeasures.PeriodicSpectralParity',
+    'NLS.Fourier.SobolevParitySynthesis',
+    'NLS.FunctionalAnalysis.UnitFunctionalKernel',
+    'NLS.KdV.HillH1ParityRepresentative',
+    'NLS.KdV.SingularHillBoundaryVector',
+    'NLS.Articles.KdVPseudomeasures.PeriodicDirichletBoundaryVector',
+    'NLS.KdV.SingularHillCombinationResidual',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

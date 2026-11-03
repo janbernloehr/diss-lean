@@ -640,6 +640,16 @@ import NLS.KdV.HillEndpointInverseResonance
 import NLS.KdV.HillReducedCouplingNorm
 import NLS.KdV.HillEndpointEtaBound
 import NLS.Articles.KdVPseudomeasures.PeriodicEtaBound
+import NLS.Fourier.PeriodicParityProjection
+import NLS.KdV.SingularHillParity
+import NLS.KdV.SingularHillPhysicalParity
+import NLS.Articles.KdVPseudomeasures.PeriodicSpectralParity
+import NLS.Fourier.SobolevParitySynthesis
+import NLS.FunctionalAnalysis.UnitFunctionalKernel
+import NLS.KdV.HillH1ParityRepresentative
+import NLS.KdV.SingularHillBoundaryVector
+import NLS.Articles.KdVPseudomeasures.PeriodicDirichletBoundaryVector
+import NLS.KdV.SingularHillCombinationResidual
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4861,3 +4871,33 @@ import NLS.Articles.KdVPseudomeasures.PeriodicEtaBound
 #print axioms NLS.KdV.norm_endpointEta_le_sixteen
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicEta_bound
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_13
+#print axioms NLS.Fourier.periodicParityProjection
+#print axioms NLS.Fourier.periodicParityProjection_coefficient
+#print axioms NLS.Fourier.periodicParityProjection_idempotent
+#print axioms NLS.Fourier.circleL2ParityProjection
+#print axioms NLS.Fourier.circleL2ParityProjection_coefficient
+#print axioms NLS.Fourier.norm_circleL2ParityProjection_le
+#print axioms NLS.KdV.singularHillDomainInclusion_parity
+#print axioms NLS.KdV.singularHillOperator_parity
+#print axioms NLS.KdV.singularHillPencil_parity
+#print axioms NLS.KdV.singularHillResolventToH1_parity
+#print axioms NLS.KdV.singularHillRieszToH1_parity
+#print axioms NLS.KdV.singularHillL2BaseInclusion_parity
+#print axioms NLS.KdV.singularHillL2DomainInclusion_parity
+#print axioms NLS.KdV.singularHillL2RieszProjection_parity
+#print axioms NLS.KdV.hillFreeL2ModeProjection_parity
+#print axioms NLS.Articles.KdVPseudomeasures.sourceComplexHminusOne_odd_vanish
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicRange_parity
+#print axioms NLS.Fourier.wave_one_eq_of_parity
+#print axioms NLS.Fourier.norm_wave_one
+#print axioms NLS.Fourier.sobolevSynthesis_translate_one_of_parity
+#print axioms NLS.Fourier.integral_sq_sobolevSynthesis_unit_of_parity
+#print axioms NLS.FunctionalAnalysis.exists_unit_mem_functional_kernel
+#print axioms NLS.KdV.hillH1_coefficients_of_physical_parity
+#print axioms NLS.KdV.hillH1Continuous_translate_one_of_parity
+#print axioms NLS.KdV.integral_sq_hillH1Continuous_unit_of_parity
+#print axioms NLS.KdV.existsUnique_hillH1_DirichletRestriction
+#print axioms NLS.KdV.exists_hillH1_DirichletRestriction_norm
+#print axioms NLS.KdV.exists_singularHill_boundaryZero_spectralVector
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicDirichletBoundaryVector
+#print axioms NLS.KdV.singularHill_combination_residual
