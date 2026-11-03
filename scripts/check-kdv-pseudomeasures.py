@@ -734,6 +734,17 @@ modules = [
     'NLS.ComplexAnalysis.RealGapIntegralNormalization',
     'NLS.KdV.HillHminusOneBoundaryAction',
     'NLS.KdV.HillHminusOneUniformBoundaryActions',
+    'NLS.ComplexAnalysis.TwoEndpointRoot',
+    'NLS.KdV.HillHminusOneOffGapPrimitive',
+    'NLS.KdV.HillHminusOneOffGapSheets',
+    'NLS.ComplexAnalysis.CoshTraceDerivative',
+    'NLS.KdV.HillHminusOneOffGapDerivative',
+    'NLS.ComplexAnalysis.EndpointRootLoopNormalization',
+    'NLS.ComplexAnalysis.EndpointPrimitivePeriod',
+    'NLS.KdV.HillHminusOneHighContourAction',
+    'NLS.KdV.HillHminusOneContourBoundaryAction',
+    'NLS.KdV.HillHminusOneContourActionExistence',
+    'NLS.KdV.HillHminusOneUniformContourActions',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

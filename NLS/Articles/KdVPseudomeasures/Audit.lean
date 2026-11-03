@@ -700,6 +700,17 @@ import NLS.KdV.HillHminusOneGapBoundary
 import NLS.ComplexAnalysis.RealGapIntegralNormalization
 import NLS.KdV.HillHminusOneBoundaryAction
 import NLS.KdV.HillHminusOneUniformBoundaryActions
+import NLS.ComplexAnalysis.TwoEndpointRoot
+import NLS.KdV.HillHminusOneOffGapPrimitive
+import NLS.KdV.HillHminusOneOffGapSheets
+import NLS.ComplexAnalysis.CoshTraceDerivative
+import NLS.KdV.HillHminusOneOffGapDerivative
+import NLS.ComplexAnalysis.EndpointRootLoopNormalization
+import NLS.ComplexAnalysis.EndpointPrimitivePeriod
+import NLS.KdV.HillHminusOneHighContourAction
+import NLS.KdV.HillHminusOneContourBoundaryAction
+import NLS.KdV.HillHminusOneContourActionExistence
+import NLS.KdV.HillHminusOneUniformContourActions
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5111,3 +5122,34 @@ import NLS.KdV.HillHminusOneUniformBoundaryActions
 #print axioms NLS.KdV.hillHminusGapBoundaryAction
 #print axioms NLS.KdV.hillHminusGapBoundaryAction_properties
 #print axioms NLS.KdV.exists_hillHminus_uniform_gap_boundary_actions
+#print axioms NLS.ComplexAnalysis.pair_midpoint_mem_segment
+#print axioms NLS.ComplexAnalysis.normalizedStandardRoot_sq_off_segment
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_standardRoot_off_segment
+#print axioms NLS.ComplexAnalysis.exists_standardRoot_vertical_midpoint_value
+#print axioms NLS.ComplexAnalysis.not_mem_real_segment_of_im_ne_zero
+#print axioms NLS.KdV.hillHminusOffGapPrimitive
+#print axioms NLS.KdV.hillHminusOffGapRoot
+#print axioms NLS.KdV.analyticOnNhd_hillHminusOffGapPrimitive
+#print axioms NLS.KdV.hillHminusOffGapPrimitive_sq
+#print axioms NLS.KdV.hillHminusOffGapPrimitive_trace
+#print axioms NLS.KdV.hillHminusOffGapRoot_sq
+#print axioms NLS.KdV.hillHminusOffGapPrimitive_midpoint_sign
+#print axioms NLS.KdV.hillHminusOffGapPrimitive_eq_shifted_half_disc
+#print axioms NLS.ComplexAnalysis.hasDerivAt_of_cosh_trace
+#print axioms NLS.KdV.hillHminusOffGapRoot_ne_zero
+#print axioms NLS.KdV.hasDerivAt_hillHminusOffGapPrimitive
+#print axioms NLS.KdV.sinh_add_hill_index
+#print axioms NLS.KdV.hillHminusOffGapRoot_eq_continued
+#print axioms NLS.ComplexAnalysis.standardRootGapSegment_eq_segment
+#print axioms NLS.ComplexAnalysis.standardRoot_ne_zero_off_gap
+#print axioms NLS.ComplexAnalysis.standardRoot_inv_loop_integral_eq_neg_pole
+#print axioms NLS.ComplexAnalysis.standardRootEllipseLoop_winding_one
+#print axioms NLS.ComplexAnalysis.cosine_unitAverage_eq_halfPeriod
+#print axioms NLS.ComplexAnalysis.quadratic_cosine_unitAverage_eq_sineSquare
+#print axioms NLS.ComplexAnalysis.exists_endpointPrimitive_ellipse_period
+#print axioms NLS.KdV.hillHminusHighContourAction
+#print axioms NLS.KdV.hillHminusHighContourAction_eq_neg_primitive_period
+#print axioms NLS.KdV.exists_hillHminus_contour_eq_gap_boundary_action
+#print axioms NLS.KdV.hillHminusHighContourAction_collapsed_eq_zero
+#print axioms NLS.KdV.exists_hillHminus_high_contour_action
+#print axioms NLS.KdV.exists_hillHminus_uniform_high_contour_actions
