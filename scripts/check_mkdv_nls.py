@@ -582,6 +582,18 @@ modules = [
     'NLS/MKdV/MiuraNativeActionVelocityGardner.lean',
     'NLS/MKdV/MiuraNativeActionFlowChainRule.lean',
     'NLS/Articles/MKdVNLSHierarchies/MiuraMagriIdentification.lean',
+    'NLS/SequenceSpaces/ContinuousTailRotationInvariants.lean',
+    'NLS/SequenceSpaces/PositiveCartesianRealDecoder.lean',
+    'NLS/MKdV/MiuraNormalizedCartesianHomeomorph.lean',
+    'NLS/MKdV/MiuraContinuousActionDescent.lean',
+    'NLS/MKdV/MiuraOppositeAngularCoordinateDescent.lean',
+    'NLS/MKdV/MiuraNativeActionFlowAllTimes.lean',
+    'NLS/MKdV/MiuraGardnerGeneratorAngularDescent.lean',
+    'NLS/ComplexAnalysis/ContinuousBoundedAngularProduct.lean',
+    'NLS/MKdV/MiuraOpenAngularPhaseDescent.lean',
+    'NLS/MKdV/MiuraNativeNLSAngularDomain.lean',
+    'NLS/MKdV/MiuraOpenGardnerPhaseFactor.lean',
+    'NLS/Articles/MKdVNLSHierarchies/AngleSumDescent.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

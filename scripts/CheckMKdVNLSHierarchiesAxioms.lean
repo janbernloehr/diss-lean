@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.AngleSumDescent
 import NLS.Articles.MKdVNLSHierarchies.MiuraMagriIdentification
 import NLS.Articles.MKdVNLSHierarchies.FrequencyIdentification
 import NLS.Articles.MKdVNLSHierarchies.FrequencyMassEndpoint
@@ -64,6 +65,53 @@ open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[
+    `NLS.RealCoeff.eq_of_continuous_tail_rotation_invariant,
+    `_private.NLS.SequenceSpaces.ContinuousTailRotationInvariants,
+    `NLS.WeightedCoeff.positiveCartesianRealDecoder,
+    `NLS.WeightedCoeff.positiveCartesianRealDecoder_eval,
+    `NLS.WeightedCoeff.positiveCartesianRealDecoder_real,
+    `NLS.WeightedCoeff.positiveCartesianRealDecoder_parameters,
+    `NLS.WeightedCoeff.positiveCartesianRealDecoder_rotation,
+    `NLS.WeightedCoeff.positiveCartesianRealDecoder_negative_rotation,
+    `_private.NLS.SequenceSpaces.PositiveCartesianRealDecoder,
+    `NLS.MKdV.miuraNativeNormalizedHomeomorph,
+    `NLS.MKdV.miuraNativeNormalizedHomeomorph_apply,
+    `NLS.MKdV.miuraRealCartesianDecoder,
+    `NLS.MKdV.miuraRealCartesianDecoder_parameters,
+    `NLS.MKdV.miuraNativeRealActionFlow,
+    `NLS.MKdV.miuraNativeNormalizedHomeomorph_actionFlow,
+    `NLS.MKdV.miuraNative_decoded_rotation,
+    `_private.NLS.MKdV.MiuraNormalizedCartesianHomeomorph,
+    `NLS.MKdV.miuraContinuousObservable_eq_of_actionMean_eq,
+    `NLS.MKdV.exists_miuraContinuousObservable_action_factor,
+    `_private.NLS.MKdV.MiuraContinuousActionDescent,
+    `NLS.MKdV.miuraNativeNLSAngularCoordinate,
+    `NLS.MKdV.continuous_miuraNativeNLSAngularCoordinate,
+    `NLS.MKdV.miuraNativeNLSAngularCoordinate_actionFlow,
+    `NLS.MKdV.exists_opposite_angular_product_action_factor,
+    `_private.NLS.MKdV.MiuraOppositeAngularCoordinateDescent,
+    `NLS.MKdV.hasDerivAt_miuraActionFlow_native,
+    `NLS.MKdV.hasDerivAt_independent_functional_miuraActionFlow_allTimes,
+    `_private.NLS.MKdV.MiuraNativeActionFlowAllTimes,
+    `NLS.MKdV.independent_functional_action_rotation_of_Gardner_generator,
+    `NLS.MKdV.exists_independent_Gardner_angular_product_action_factor,
+    `_private.NLS.MKdV.MiuraGardnerGeneratorAngularDescent,
+    `NLS.ComplexAnalysis.continuous_mul_bounded_phase,
+    `_private.NLS.ComplexAnalysis.ContinuousBoundedAngularProduct,
+    `NLS.MKdV.miuraNativeNLSUnitPhase,
+    `NLS.MKdV.norm_miuraNativeNLSAngularCoordinate_actionFlow,
+    `NLS.MKdV.exists_opposite_unit_phase_action_factor,
+    `_private.NLS.MKdV.MiuraOpenAngularPhaseDescent,
+    `NLS.MKdV.miuraNativeNLSAngularCoordinate_eq_scaled_original,
+    `NLS.MKdV.miuraNativeNLSAngularCoordinate_zero_iff_physical_action_zero,
+    `NLS.MKdV.norm_miuraNativeNLSUnitPhase,
+    `_private.NLS.MKdV.MiuraNativeNLSAngularDomain,
+    `NLS.MKdV.exists_independent_open_Gardner_phase_action_factor,
+    `_private.NLS.MKdV.MiuraOpenGardnerPhaseFactor,
+    `NLS.Articles.MKdVNLSHierarchies.physical_complete_action_flow_invariant_factor,
+    `NLS.Articles.MKdVNLSHierarchies.theorem4_iii_phase_sum_descent_of_independent_Gardner_phase,
+    `_private.NLS.Articles.MKdVNLSHierarchies.AngleSumDescent,
+
     `NLS.ComplexAnalysis.hasFDerivAt_commutative_bilinear_square,
     `_private.NLS.ComplexAnalysis.CommutativeBilinearSquare,
     `NLS.ZakharovShabat.periodOneSobolevProduct,
@@ -867,6 +915,8 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.physical_complete_action_flow_invariant_factor,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem4_iii_phase_sum_descent_of_independent_Gardner_phase,
     ``NLS.Articles.MKdVNLSHierarchies.physical_Miura_Gardner_Magri_transfer,
     ``NLS.Articles.MKdVNLSHierarchies.physical_action_flow_native_Gardner_tangent,
     ``NLS.Articles.MKdVNLSHierarchies.theorem3_original_frequency_extension_certificate,

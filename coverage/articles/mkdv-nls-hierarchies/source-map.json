@@ -299,7 +299,12 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_general_H1_Cartesian_chart",
         "NLS.Articles.MKdVNLSHierarchies.physical_Miura_Gardner_Magri_transfer",
         "NLS.Articles.MKdVNLSHierarchies.physical_action_flow_native_Gardner_tangent",
-        "NLS.MKdV.hasDerivAt_independent_functional_miuraActionFlow"
+        "NLS.MKdV.hasDerivAt_independent_functional_miuraActionFlow",
+        "NLS.Articles.MKdVNLSHierarchies.physical_complete_action_flow_invariant_factor",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_phase_sum_descent_of_independent_Gardner_phase",
+        "NLS.MKdV.hasDerivAt_miuraActionFlow_native",
+        "NLS.MKdV.exists_independent_open_Gardner_phase_action_factor",
+        "NLS.MKdV.miuraNativeNLSAngularCoordinate_zero_iff_physical_action_zero"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -309,7 +314,8 @@
       "Gardner_definition": "The scalar gradient is constructed from the actual L2 Frechet derivative; its spatial Fourier multiplier is 2*pi*i*m. Square summability of that derivative and equality with the actual period-one tempered distribution derivative are proved at every original real H1 input.",
       "limits": [
         "The printed angle-action bracket clause is proved with the original +delta_mn sign. The concluding assertion about the independently constructed mKdV angle vartheta_m plus theta_m# being an analytic function of mKdV actions and mean still requires mKdV angle construction and factorization. Theorem 4(iii) as a whole remains incomplete."
-      ]
+      ],
+      "conditional_descent_proved": "Any independently supplied actual H1 unit phase on the selected physical open-action locus, with H1 physical gradients and the required negative unit Gardner generators, has a global full phase-product factor through the entire native action sequence and literal signed mean. This implication is proved, but no independent mKdV phase is constructed or assumed to have been identified."
     }
   ],
   "dependency_labels": [
@@ -469,8 +475,8 @@
     "remaining": "Independent original mKdV angle identification and final Theorem 4(iii) angle-sum factorization. Corrected all-order frequency comparison is complete."
   },
   "remaining_essential_dependencies": [
-    "Independently identify the original mKdV angle family with its negative Gardner action brackets; the current scaled-NLS Cartesian map only has same-plane and mixed action canonicity proved. Full cross-mode canonicity is one possible route, not an extra source conclusion.",
-    "Prove Theorem 4(iii) final theta_NLS# + vartheta factorization through physical mKdV actions and literal signed mean. Its original NLS angle-action bracket clause is already proved."
+    "Independently construct and identify the original mKdV unit phase and its actual negative Gardner action generators on the original selected open-action domain. The current scaled-NLS Cartesian map still has only same-plane and mixed action canonicity; full cross-mode canonicity is a possible route, not an extra source conclusion.",
+    "Instantiate the checked full phase-sum descent implication with that independently identified original mKdV phase, preserving the original full angle normalization. The complete infinite-fiber descent and open-domain negative-generator-to-flow integration are now proved; the final original-angle theorem remains incomplete."
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -1320,6 +1326,24 @@
     "limits": [
       "Independent original mKdV angles and final angle-sum factorization remain open.",
       "No arbitrary-potential weak-Magri Jacobi identity or cross-mode Cartesian canonicity is inferred."
+    ]
+  },
+  "global_full_phase_sum_descent_implication": {
+    "status": "proved_global_continuous_action_descent_and_full_open_domain_phase_sum_implication_independent_mKdV_phase_still_required",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_complete_action_flow_invariant_factor",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_phase_sum_descent_of_independent_Gardner_phase",
+      "NLS.MKdV.exists_independent_open_Gardner_phase_action_factor",
+      "NLS.MKdV.miuraNativeNLSAngularCoordinate_zero_iff_physical_action_zero",
+      "NLS.MKdV.hasDerivAt_independent_functional_miuraActionFlow_allTimes"
+    ],
+    "domain": "Every integer s>=1, original real Hs profiles; the selected physical J_m alone must be nonzero for the unit phase. Every other action may be zero; infinite support, zero mean and arbitrary signed mean are included.",
+    "method": "Real normalized parameter decoding; full native Cartesian homeomorphism; density of finite coordinate rotations on the complete sequence action torus; actual native derivatives at every time and physical Gardner H1 chain rules; scalar exponential ODE uniqueness; bounded phase times vanishing amplitude extends continuously; invariant amplitude division recovers full unit phases.",
+    "qualifications": [
+      "The independent original mKdV phase and its negative physical Gardner generator identity are explicit remaining mathematical inputs; the original main theorem is not claimed complete.",
+      "The general continuous factor is only a function; no extra analyticity is asserted.",
+      "The source angle sum is represented by full unit-phase multiplication, with no squaring or loss modulo pi.",
+      "No independent angle is defined as the negative NLS angle."
     ]
   }
 }

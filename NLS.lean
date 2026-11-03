@@ -4937,3 +4937,15 @@ import NLS.MKdV.MiuraNativeActionFlowDerivative
 import NLS.MKdV.MiuraNativeActionVelocityGardner
 import NLS.MKdV.MiuraNativeActionFlowChainRule
 import NLS.Articles.MKdVNLSHierarchies.MiuraMagriIdentification
+import NLS.SequenceSpaces.ContinuousTailRotationInvariants
+import NLS.SequenceSpaces.PositiveCartesianRealDecoder
+import NLS.MKdV.MiuraNormalizedCartesianHomeomorph
+import NLS.MKdV.MiuraContinuousActionDescent
+import NLS.MKdV.MiuraOppositeAngularCoordinateDescent
+import NLS.MKdV.MiuraNativeActionFlowAllTimes
+import NLS.MKdV.MiuraGardnerGeneratorAngularDescent
+import NLS.ComplexAnalysis.ContinuousBoundedAngularProduct
+import NLS.MKdV.MiuraOpenAngularPhaseDescent
+import NLS.MKdV.MiuraNativeNLSAngularDomain
+import NLS.MKdV.MiuraOpenGardnerPhaseFactor
+import NLS.Articles.MKdVNLSHierarchies.AngleSumDescent

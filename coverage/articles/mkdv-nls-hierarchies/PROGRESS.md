@@ -2671,3 +2671,60 @@ angle-sum factorization remain OPEN. Theorem 3 remains COMPLETE at every
 order on its corrected exact domain, as recorded in the preceding milestone.
 
 Validation: all 548 article/shared modules have validated private outputs. All 534 unchanged prefix source hashes match pushed e655360 and their outputs were reused; all fourteen added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 5,544 declarations/auxiliaries and the combined audit for 50,463 NLS declarations, using only standard allowed axioms. All 551 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,879 declarations (2,350 theorems and 529 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Global full-phase descent from independent negative Gardner generators
+
+`physical_complete_action_flow_invariant_factor` proves that EVERY
+continuous scalar observable fixed by every actual positive-index
+Gardner action flow factors through the complete native physical action
+sequence and literal signed mean, for every integer Sobolev order s>=1.
+The proof uses the genuine global normalized native Cartesian
+homeomorphism. Continuous real parameter decoding intertwines positive
+coordinate rotations with the opposite physical clockwise rotations;
+negative encoding slots are ignored. Finite tail rotations are dense in
+the full infinite action torus in its sequence norm, and a closed level
+set of a continuous observable contains the whole fiber. The mean head
+is fixed literally. Infinite support, arbitrary signed mean and closed
+actions are included; finite-gap approximation is not an assumption.
+
+`hasDerivAt_miuraActionFlow_native` translates the actual H^s derivative
+at zero to EVERY real time by the physical group law. The corresponding
+H¹ functional chain rule evaluates the actual physical Gardner field
+at each orbit point. `independent_functional_action_rotation_of_Gardner_generator`
+integrates an actual negative unit differential identity for an
+independently specified H¹ functional, rather than assuming its flow law.
+
+`miuraNativeNLSAngularCoordinate` is the first normalized Cartesian
+coordinate minus i times the second. It is a positive real multiple of
+the actual original scaled NLS Cartesian complex coordinate, rotates
+at exp(i*t) under its selected action, and remains fixed under every
+other action. Its zero set is proved EXACTLY the zero set of the
+independent physical J_m. Its normalized unit phase has norm one on
+that selected open-action domain. This uses full complex phases, not
+their squares or an angle modulo pi.
+
+`theorem4_iii_phase_sum_descent_of_independent_Gardner_phase` proves the
+remaining global descent IMPLICATION on the exact selected open-action
+domain: ANY independently supplied actual H¹ unit phase, with physical
+H¹ gradient there and negative Gardner generators -i*delta_mn times
+that phase, has a full phase-product factor with the actual restricted
+NLS Cartesian phase. Its hypotheses prescribe neither phase values nor
+action dependence. Actual chain rules integrate the generator along the
+complete physical orbit. Only a bounded auxiliary is set to zero at
+closed selected actions; multiplying it by the vanishing NLS amplitude
+is continuous. Global action descent applies to that product and to
+its invariant amplitude. Division recovers the full unit-phase product
+on the original open-angle locus. Other actions may all be closed.
+No continuous angular extension through the selected closed action is
+assumed. The resulting factor is a function; no additional analyticity
+claim for this general continuous factor is made.
+
+Theorem 4(iii) is still INCOMPLETE. The original independent mKdV phase
+must be constructed and proved to satisfy the actual negative Gardner
+generator hypotheses, then the checked descent implication must be
+instantiated with it. No arbitrary phase is defined as the negative
+NLS angle, and no full cross-mode canonicity is inferred. Corrected
+Theorem 3 remains complete at every order and its exact original domain.
+
+Validation: all 560 article/shared modules have validated private outputs. All 548 unchanged prefix source hashes match pushed 04c3df4 and their outputs were reused; all twelve added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 5,604 declarations/auxiliaries and the combined audit for 50,521 NLS declarations, using only standard allowed axioms. All 563 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,913 declarations (2,378 theorems and 535 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

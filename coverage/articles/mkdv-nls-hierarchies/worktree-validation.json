@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 5544,
+  "audited_declarations_and_auxiliaries": 5604,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -14414,14 +14414,184 @@
       "kind": "theorem",
       "name": "physical_action_flow_native_Gardner_tangent",
       "file": "NLS/Articles/MKdVNLSHierarchies/MiuraMagriIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "eq_of_continuous_tail_rotation_invariant",
+      "file": "NLS/SequenceSpaces/ContinuousTailRotationInvariants.lean"
+    },
+    {
+      "kind": "def",
+      "name": "positiveCartesianRealDecoder",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealDecoder.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRealDecoder_eval",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealDecoder.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRealDecoder_real",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealDecoder.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRealDecoder_parameters",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealDecoder.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRealDecoder_rotation",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealDecoder.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "positiveCartesianRealDecoder_negative_rotation",
+      "file": "NLS/SequenceSpaces/PositiveCartesianRealDecoder.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNativeNormalizedHomeomorph",
+      "file": "NLS/MKdV/MiuraNormalizedCartesianHomeomorph.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeNormalizedHomeomorph_apply",
+      "file": "NLS/MKdV/MiuraNormalizedCartesianHomeomorph.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraRealCartesianDecoder",
+      "file": "NLS/MKdV/MiuraNormalizedCartesianHomeomorph.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealCartesianDecoder_parameters",
+      "file": "NLS/MKdV/MiuraNormalizedCartesianHomeomorph.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNativeRealActionFlow",
+      "file": "NLS/MKdV/MiuraNormalizedCartesianHomeomorph.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeNormalizedHomeomorph_actionFlow",
+      "file": "NLS/MKdV/MiuraNormalizedCartesianHomeomorph.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNative_decoded_rotation",
+      "file": "NLS/MKdV/MiuraNormalizedCartesianHomeomorph.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraContinuousObservable_eq_of_actionMean_eq",
+      "file": "NLS/MKdV/MiuraContinuousActionDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_miuraContinuousObservable_action_factor",
+      "file": "NLS/MKdV/MiuraContinuousActionDescent.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNativeNLSAngularCoordinate",
+      "file": "NLS/MKdV/MiuraOppositeAngularCoordinateDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraNativeNLSAngularCoordinate",
+      "file": "NLS/MKdV/MiuraOppositeAngularCoordinateDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeNLSAngularCoordinate_actionFlow",
+      "file": "NLS/MKdV/MiuraOppositeAngularCoordinateDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_opposite_angular_product_action_factor",
+      "file": "NLS/MKdV/MiuraOppositeAngularCoordinateDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_miuraActionFlow_native",
+      "file": "NLS/MKdV/MiuraNativeActionFlowAllTimes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_independent_functional_miuraActionFlow_allTimes",
+      "file": "NLS/MKdV/MiuraNativeActionFlowAllTimes.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "independent_functional_action_rotation_of_Gardner_generator",
+      "file": "NLS/MKdV/MiuraGardnerGeneratorAngularDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_independent_Gardner_angular_product_action_factor",
+      "file": "NLS/MKdV/MiuraGardnerGeneratorAngularDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_mul_bounded_phase",
+      "file": "NLS/ComplexAnalysis/ContinuousBoundedAngularProduct.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNativeNLSUnitPhase",
+      "file": "NLS/MKdV/MiuraOpenAngularPhaseDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_miuraNativeNLSAngularCoordinate_actionFlow",
+      "file": "NLS/MKdV/MiuraOpenAngularPhaseDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_opposite_unit_phase_action_factor",
+      "file": "NLS/MKdV/MiuraOpenAngularPhaseDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeNLSAngularCoordinate_eq_scaled_original",
+      "file": "NLS/MKdV/MiuraNativeNLSAngularDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeNLSAngularCoordinate_zero_iff_physical_action_zero",
+      "file": "NLS/MKdV/MiuraNativeNLSAngularDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "norm_miuraNativeNLSUnitPhase",
+      "file": "NLS/MKdV/MiuraNativeNLSAngularDomain.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_independent_open_Gardner_phase_action_factor",
+      "file": "NLS/MKdV/MiuraOpenGardnerPhaseFactor.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_complete_action_flow_invariant_factor",
+      "file": "NLS/Articles/MKdVNLSHierarchies/AngleSumDescent.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem4_iii_phase_sum_descent_of_independent_Gardner_phase",
+      "file": "NLS/Articles/MKdVNLSHierarchies/AngleSumDescent.lean"
     }
   ],
-  "public_declaration_count": 2879,
-  "theorem_count": 2350,
-  "definition_count": 529,
-  "full_build": "548 article/shared modules have validated private outputs. All 534 unchanged prefix module source hashes match the prior e655360 milestone; their private outputs were reused. Fourteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2913,
+  "theorem_count": 2378,
+  "definition_count": 535,
+  "full_build": "560 article/shared modules have validated private outputs. All 548 unchanged prefix module source hashes match the prior 04c3df4 milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/CommutativeBilinearSquare.lean; after removing one trailing space, repeated --full-audit --resume-from NLS/MKdV/MiuraWeakMagriTransfer.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/SequenceSpaces/ContinuousTailRotationInvariants.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -14971,12 +15141,24 @@
     "NLS/MKdV/MiuraNativeActionVelocityGardner.lean": "48b09ceda573bd0e3b29db8aaa10067c35fa164d91cfcfcf16a6bf2f8d55b12b",
     "NLS/MKdV/MiuraNativeActionFlowChainRule.lean": "b5552dc86e9f3459036a035479290ff2d0f7e0251595230efbfcb92e8d06cddf",
     "NLS/Articles/MKdVNLSHierarchies/MiuraMagriIdentification.lean": "e2088035c909286ea247d24ada8dabb9da13a18d75fbcacae1c8edf6f528b636",
-    "NLS.lean": "554b0577114bbbb6d0eae7c4d485a3c0c140fb7c7aa498cb0213d25381834888",
-    "scripts/check_mkdv_nls.py": "318dd404b1c5a03543c2ed5da650151013d1c746dc758826ee2fbaa5bdc62334",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "03ef6679ce0836425089fd8569320122aa89710be9a674b5a0460dbe385b1dad"
+    "NLS/SequenceSpaces/ContinuousTailRotationInvariants.lean": "f161c577133acda2770e0b50a352c502c4a6fee1c7f0cc3c1b2edf684861a59f",
+    "NLS/SequenceSpaces/PositiveCartesianRealDecoder.lean": "748575c51076a04302ad6c47468cd387ab1a862cd453b1206927544bf1976266",
+    "NLS/MKdV/MiuraNormalizedCartesianHomeomorph.lean": "17d679ff6234f53603ffcb409807ce62bec15ad6cbd9860f9f7e1a791e24861a",
+    "NLS/MKdV/MiuraContinuousActionDescent.lean": "6365185e9f8c5f432b576620981ec785351cde514b45865d6c846f579d1fcd2b",
+    "NLS/MKdV/MiuraOppositeAngularCoordinateDescent.lean": "763530d9bb697396b6eead16e13d822278bd2b8a30e785cd558ad76e631c6751",
+    "NLS/MKdV/MiuraNativeActionFlowAllTimes.lean": "b3d7f2986fd72c62cd5c65c1b31bc172cdf76c3b72e76b868d61f97b91abb5bd",
+    "NLS/MKdV/MiuraGardnerGeneratorAngularDescent.lean": "171c76a2318ab52d7370a67d0bb9f902a8d79c516f5f1cd5b9ae53d49316464f",
+    "NLS/ComplexAnalysis/ContinuousBoundedAngularProduct.lean": "f7cd7ca8e0c1c718eed718a7bd51e68c09da31b785df6a0cc55c9148b7ec78a1",
+    "NLS/MKdV/MiuraOpenAngularPhaseDescent.lean": "28fbcec9e9caaf8e53d120120712390a44c329f5fef2ffd97aa64894453e566d",
+    "NLS/MKdV/MiuraNativeNLSAngularDomain.lean": "80a1dc210ceb97838139bf65cd275ce5768f22e89b95b6630d9159bddedfe5ea",
+    "NLS/MKdV/MiuraOpenGardnerPhaseFactor.lean": "34433f8ab45a99bd21b1e9993dcbca2f7a7c7d096e5f951d1093f029f8c4fca2",
+    "NLS/Articles/MKdVNLSHierarchies/AngleSumDescent.lean": "d57a5dbd9bf99cbd1dab8553d1a8f1f24a73b0d1182d03abb6d5a35b4f7acfeb",
+    "NLS.lean": "a9f6478792bf4fb9a03319aa445c60c282e815764093652d783f4f94691b14a0",
+    "scripts/check_mkdv_nls.py": "846fa855762fbd5fc7d6a5e0892bb13e216709ab233bff5897b98177162ff279",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "a1ff30b65bb8cb19e90592244d220cceeec577471c77f7f46115271afff76a1c"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 548,
+  "focused_module_count": 560,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -15467,12 +15649,25 @@
       "public_declaration_count": 2879,
       "theorem_count": 2350,
       "definition_count": 529
+    },
+    {
+      "milestone": "Complete infinite action-fiber descent for every continuous actual action-flow invariant at all native s>=1; actual native derivatives and H1 chain rules at every real time; full open-domain unit-phase product factorization implication from independently supplied actual negative Gardner generators. Independent original mKdV phase identification remains required for final Theorem4iii.",
+      "audit_count": 5604,
+      "combined_NLS_audit_count": 50521,
+      "aggregate_compiled": true,
+      "module_count": 560,
+      "reused_prefix_module_count": 548,
+      "reused_prefix_commit": "04c3df44e2abcde347e3fdfc54f1a739a4c19ad9",
+      "frozen_source_checker_count": 563,
+      "public_declaration_count": 2913,
+      "theorem_count": 2378,
+      "definition_count": 535
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 50463,
+  "combined_audited_NLS_declarations": 50521,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -15480,7 +15675,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 534 unchanged prefix module source hashes match the prior e655360 milestone; their private outputs were reused. Fourteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 5544 declarations/auxiliaries and combined audit for 50463 NLS declarations. All 551 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased. Final trailing-whitespace cleanup was followed by recompilation from MiuraWeakMagriTransfer through the aggregate and both complete axiom audits, with the same counts. All final 551 frozen inputs match.",
+  "last_run_notes": "All 548 unchanged prefix module source hashes match the prior 04c3df4 milestone; their private outputs were reused. Twelve added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 5604 declarations/auxiliaries and combined audit for 50521 NLS declarations. All 563 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",
