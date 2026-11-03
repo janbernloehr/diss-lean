@@ -5461,3 +5461,16 @@ import NLS.KdV.HillPeriodKernelNumeratorProportionality
 import NLS.KdV.HillGlobalPeriodDerivativeInjectivity
 import NLS.KdV.HillBoundedComplexTailDomain
 import NLS.KdV.HillBoundedComplexTailPeriodControl
+import NLS.KdV.HillGlobalComplexPeriodSummability
+import NLS.KdV.HillComplexTailPeriodSequence
+import NLS.KdV.HillComplexTailPeriodAnalytic
+import NLS.KdV.HillHighCanonicalRootMatching
+import NLS.KdV.HillHighFreeContourGapContainment
+import NLS.KdV.HillHighFreeContourBandBounds
+import NLS.KdV.HillHighIntrinsicPeriodComparison
+import NLS.KdV.HillFiniteIntrinsicPeriodMap
+import NLS.KdV.HillMixedHilbertPeriodMap
+import NLS.KdV.HillMixedPhysicalPeriodCoordinates
+import NLS.KdV.HillMixedSupportedPeriodMap
+import NLS.KdV.HillMixedPeriodRootDerivativeInjectivity
+import NLS.KdV.HillMixedPeriodAnalyticInjectiveChart
