@@ -552,6 +552,22 @@ modules = [
     'NLS/MKdV/MiuraNativeMassFrequency.lean',
     'NLS/MKdV/MiuraMassFrequencyComparison.lean',
     'NLS/Articles/MKdVNLSHierarchies/FrequencyMassEndpoint.lean',
+    'NLS/ComplexAnalysis/FDerivRealFormUnique.lean',
+    'NLS/Poisson/L2CotangentGardner.lean',
+    'NLS/ZakharovShabat/SourceWeightedAngleHamiltonian.lean',
+    'NLS/ZakharovShabat/SourceHigherSobolevAngleHamiltonian.lean',
+    'NLS/MKdV/MiuraEvenHamiltonianCotangentTransfer.lean',
+    'NLS/MKdV/MiuraHigherSobolevThetaVector.lean',
+    'NLS/MKdV/MiuraThetaNativeGardnerDirection.lean',
+    'NLS/MKdV/MiuraThetaActionDirection.lean',
+    'NLS/MKdV/MiuraNativeActionMeanDifferential.lean',
+    'NLS/MKdV/MiuraThetaNativeActionDifferential.lean',
+    'NLS/MKdV/MiuraNativeHamiltonianFactorDifferential.lean',
+    'NLS/MKdV/MiuraEvenFrequencyOnOpenAngles.lean',
+    'NLS/SequenceSpaces/PhysicalSobolevDenseInclusion.lean',
+    'NLS/MKdV/MiuraHigherSobolevOpenAngleDensity.lean',
+    'NLS/MKdV/MiuraEvenFrequencySharpExtension.lean',
+    'NLS/Articles/MKdVNLSHierarchies/FrequencyIdentification.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

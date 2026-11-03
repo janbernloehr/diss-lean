@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.FrequencyIdentification
 import NLS.Articles.MKdVNLSHierarchies.FrequencyMassEndpoint
 import NLS.Articles.MKdVNLSHierarchies.NativeHamiltonianActionNormalForms
 import NLS.Articles.MKdVNLSHierarchies.NativeHamiltonianCoordinates
@@ -62,6 +63,20 @@ open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let prefixes := #[
+    `NLS.ComplexAnalysis.fderiv_eq_of_real_form_agreement,
+    `NLS.Poisson.l2CotangentGradient,
+    `NLS.Poisson.l2CotangentGradient_apply,
+    `NLS.Poisson.l2CotangentGradient_represents,
+    `NLS.Poisson.l2CotangentGardner_skew,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.weightedThetaRadialTarget,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_thetaHamiltonian_eq_weighted_radial,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.existsUnique_thetaHamiltonian_weighted,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.thetaHamiltonian_sobolev_mem,
+    `NLS.ZakharovShabat.SourceBirkhoffMapComplexData.existsUnique_thetaHamiltonian_higherSobolev,
+    `NLS.WeightedCoeff.physicalSobolevInclusion,
+    `NLS.WeightedCoeff.physicalSobolevInclusion_apply,
+    `NLS.WeightedCoeff.physicalSobolevInclusion_denseRange,
+
     `NLS.ZakharovShabat.SourceMomentumFrequencyFamily,
     `NLS.ZakharovShabat.fderiv_originalS2_eq_sourceMomentumCotangent,
     `NLS.ZakharovShabat.nonempty_sourceMomentumFrequencyFamily,
@@ -786,6 +801,17 @@ run_cmd do
     `NLS.LinearVolterra.trace_solutionMap_intertwine,
     `NLS.LinearVolterra.trace_pairCLM]
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.theorem3_original_frequency_extension_certificate,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem3_original_bracket_agreement,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem3_corrected,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem3_corrected_for_any_original_frequency_extension,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem3_frequency_holomorphic_extension,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem3_m1_frequency_normalization,
+    ``NLS.ZakharovShabat.SourceBirkhoffMapComplexData.existsUnique_thetaHamiltonian_weighted,
+    ``NLS.MKdV.miuraThetaNativeActionMean_differential,
+    ``NLS.MKdV.fderiv_even_diagonal_eq_nativeHill_cotangent,
+    ``NLS.MKdV.miuraOriginalEvenNLSFrequency_eq_Hill_frequency,
+
     ``NLS.Articles.MKdVNLSHierarchies.theorem3_m1_original_NLS_frequency_certificate,
     ``NLS.Articles.MKdVNLSHierarchies.theorem3_m1_corrected,
     ``NLS.Articles.MKdVNLSHierarchies.theorem3_m1_corrected_native,

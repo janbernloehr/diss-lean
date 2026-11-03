@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 5257,
+  "audited_declarations_and_auxiliaries": 5392,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -13849,14 +13849,334 @@
       "kind": "theorem",
       "name": "theorem3_printed_parity_counterexample",
       "file": "NLS/Articles/MKdVNLSHierarchies/FrequencyMassEndpoint.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_eq_of_real_form_agreement",
+      "file": "NLS/ComplexAnalysis/FDerivRealFormUnique.lean"
+    },
+    {
+      "kind": "def",
+      "name": "l2CotangentGradient",
+      "file": "NLS/Poisson/L2CotangentGardner.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2CotangentGradient_apply",
+      "file": "NLS/Poisson/L2CotangentGardner.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2CotangentGradient_represents",
+      "file": "NLS/Poisson/L2CotangentGardner.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2CotangentGardner_skew",
+      "file": "NLS/Poisson/L2CotangentGardner.lean"
+    },
+    {
+      "kind": "def",
+      "name": "weightedThetaRadialTarget",
+      "file": "NLS/ZakharovShabat/SourceWeightedAngleHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "jacobian_thetaHamiltonian_eq_weighted_radial",
+      "file": "NLS/ZakharovShabat/SourceWeightedAngleHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "existsUnique_thetaHamiltonian_weighted",
+      "file": "NLS/ZakharovShabat/SourceWeightedAngleHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "thetaHamiltonian_sobolev_mem",
+      "file": "NLS/ZakharovShabat/SourceHigherSobolevAngleHamiltonian.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "existsUnique_thetaHamiltonian_higherSobolev",
+      "file": "NLS/ZakharovShabat/SourceHigherSobolevAngleHamiltonian.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraEvenCotangentDirection",
+      "file": "NLS/MKdV/MiuraEvenHamiltonianCotangentTransfer.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraEvenCotangentDirection_apply",
+      "file": "NLS/MKdV/MiuraEvenHamiltonianCotangentTransfer.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_even_diagonal_eq_nativeHill_cotangent",
+      "file": "NLS/MKdV/MiuraEvenHamiltonianCotangentTransfer.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "existsUnique_miuraHigherSobolevThetaVector",
+      "file": "NLS/MKdV/MiuraHigherSobolevThetaVector.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraHigherSobolevThetaVector",
+      "file": "NLS/MKdV/MiuraHigherSobolevThetaVector.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHigherSobolevThetaVector_inclusion",
+      "file": "NLS/MKdV/MiuraHigherSobolevThetaVector.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraOriginalEvenNLSAngleFrequency",
+      "file": "NLS/MKdV/MiuraHigherSobolevThetaVector.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalEvenNLSAngleFrequency_eq_native_cotangent",
+      "file": "NLS/MKdV/MiuraHigherSobolevThetaVector.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "l2DiagonalCotangentGradient_sourceHamiltonian",
+      "file": "NLS/MKdV/MiuraThetaNativeGardnerDirection.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNativeThetaCotangent",
+      "file": "NLS/MKdV/MiuraThetaNativeGardnerDirection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraHigherSobolevThetaVector_gradient",
+      "file": "NLS/MKdV/MiuraThetaNativeGardnerDirection.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraThetaNativeGardnerDirection",
+      "file": "NLS/MKdV/MiuraThetaNativeGardnerDirection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraThetaNativeGardnerDirection_coefficients",
+      "file": "NLS/MKdV/MiuraThetaNativeGardnerDirection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraThetaNativeGardnerDirection_mean_zero",
+      "file": "NLS/MKdV/MiuraThetaNativeGardnerDirection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraThetaNativeGardnerDirection_memlp",
+      "file": "NLS/MKdV/MiuraThetaNativeGardnerDirection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraThetaNativeGardnerDirection_L2",
+      "file": "NLS/MKdV/MiuraThetaNativeGardnerDirection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarInclusion_hierarchySobolevToScalarDomain",
+      "file": "NLS/MKdV/MiuraThetaActionDirection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeThetaCotangent_eq_original",
+      "file": "NLS/MKdV/MiuraThetaActionDirection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraThetaNativeGardnerDirection_L2_action",
+      "file": "NLS/MKdV/MiuraThetaActionDirection.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraSobolevActionSequence",
+      "file": "NLS/MKdV/MiuraNativeActionMeanDifferential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "analyticAt_miuraNativeActionMeanMap",
+      "file": "NLS/MKdV/MiuraNativeActionMeanDifferential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraSobolevActionSequence_eval_positive",
+      "file": "NLS/MKdV/MiuraNativeActionMeanDifferential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_miuraSobolevActionSequence_eval_nonpositive",
+      "file": "NLS/MKdV/MiuraNativeActionMeanDifferential.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraRealSobolevLower",
+      "file": "NLS/MKdV/MiuraThetaNativeActionDifferential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraThetaNativeActionMean_differential",
+      "file": "NLS/MKdV/MiuraThetaNativeActionDifferential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_recovery",
+      "file": "NLS/MKdV/MiuraNativeHamiltonianFactorDifferential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalEvenNLSAngleFrequency_eq_Hill_frequency",
+      "file": "NLS/MKdV/MiuraEvenFrequencyOnOpenAngles.lean"
+    },
+    {
+      "kind": "def",
+      "name": "physicalSobolevInclusion",
+      "file": "NLS/SequenceSpaces/PhysicalSobolevDenseInclusion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalSobolevInclusion_apply",
+      "file": "NLS/SequenceSpaces/PhysicalSobolevDenseInclusion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physicalSobolevInclusion_denseRange",
+      "file": "NLS/SequenceSpaces/PhysicalSobolevDenseInclusion.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevActionSequence_eq_physical",
+      "file": "NLS/MKdV/MiuraHigherSobolevOpenAngleDensity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraSobolevActionSequence_ne_zero_implies_gap_ne_zero",
+      "file": "NLS/MKdV/MiuraHigherSobolevOpenAngleDensity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "dense_miuraHigherSobolev_open_angle",
+      "file": "NLS/MKdV/MiuraHigherSobolevOpenAngleDensity.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraRealSobolevLower_eq_physicalInclusion",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "continuous_miuraRealSobolevLower",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "denseRange_miuraRealSobolevLower",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "def",
+      "name": "IsMiuraOriginalEvenFrequencyExtension",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalEvenFrequencyExtension_unique",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sourceFrequency",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceFrequency_analyticAt",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceFrequency_continuous",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sourceFrequency_original_extension",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "existsUnique_miuraOriginalEvenFrequencyExtension",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraOriginalEvenNLSFrequency",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalEvenNLSFrequency_spec",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraOriginalEvenNLSFrequency_eq_Hill_frequency",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_analytic_miuraOriginalEvenNLSFrequency",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_common_open_analytic_miuraOriginalEvenNLSFrequency",
+      "file": "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem3_original_frequency_extension_certificate",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FrequencyIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem3_original_bracket_agreement",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FrequencyIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem3_corrected",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FrequencyIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem3_corrected_for_any_original_frequency_extension",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FrequencyIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem3_frequency_holomorphic_extension",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FrequencyIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "theorem3_m1_frequency_normalization",
+      "file": "NLS/Articles/MKdVNLSHierarchies/FrequencyIdentification.lean"
     }
   ],
-  "public_declaration_count": 2766,
-  "theorem_count": 2260,
-  "definition_count": 506,
-  "full_build": "518 article/shared modules have validated private outputs. All 510 unchanged prefix module source hashes match the prior 898aecf milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2830,
+  "theorem_count": 2312,
+  "definition_count": 518,
+  "full_build": "534 article/shared modules have validated private outputs. All 518 unchanged prefix module source hashes match the prior 8e99597 milestone; their private outputs were reused. Sixteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ZakharovShabat/SourceMomentumFrequencyNormalization.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/FDerivRealFormUnique.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -14376,12 +14696,28 @@
     "NLS/MKdV/MiuraNativeMassFrequency.lean": "70fc138d7fc25314cfde5ca0e20771ae7de9289dc47b13c59dc871d72a29744e",
     "NLS/MKdV/MiuraMassFrequencyComparison.lean": "9466d4c4c4dbb85bac1c79ced73cdf619009306a994b8da131a16142227a4c0a",
     "NLS/Articles/MKdVNLSHierarchies/FrequencyMassEndpoint.lean": "d7b89ad86397b7f5f3cf704408d467e22594057e914d3178e30d483a3a6cff63",
+    "NLS/ComplexAnalysis/FDerivRealFormUnique.lean": "e58dd99e1c91386f3f1813cbc01cda86bb380b9f3abff8a939d549952bab079e",
+    "NLS/Poisson/L2CotangentGardner.lean": "65b8d1966b87e9bf9c466d5010eddda75f547251e7ad0466ce15147528315e20",
+    "NLS/ZakharovShabat/SourceWeightedAngleHamiltonian.lean": "bd344a23692c99b06a0c8f9e6c0f17c4099e5b56d7d1a20cc6dc5100c1b7e5c2",
+    "NLS/ZakharovShabat/SourceHigherSobolevAngleHamiltonian.lean": "893b043a9b2134295b3a055d263c720932a6ce2a7559ded00b699328df259a22",
+    "NLS/MKdV/MiuraEvenHamiltonianCotangentTransfer.lean": "4005194216d1608dc8f84c5972475c5eff8d53225913ab9ab9427c222901b82c",
+    "NLS/MKdV/MiuraHigherSobolevThetaVector.lean": "87717c8b2d3eb5afaf4ebc922002369086b4c555b4786d2c894d153c121f7d4a",
+    "NLS/MKdV/MiuraThetaNativeGardnerDirection.lean": "b8250039498561f8d0676372d25611b4e778f3e2f3e3c5b038db8f4101497c9e",
+    "NLS/MKdV/MiuraThetaActionDirection.lean": "5c15116a340bef8cbdb8b3a6d230f8d43dbef230788b140c7b8828f012bb9eae",
+    "NLS/MKdV/MiuraNativeActionMeanDifferential.lean": "79bf261eca984cf1b9322e86dfc2af45e5cca5d6616042f571b2bd1a8ad3ec3a",
+    "NLS/MKdV/MiuraThetaNativeActionDifferential.lean": "a11309275700ea3e08d9c36f4da5f6998fb27e579b23366ad684767331452487",
+    "NLS/MKdV/MiuraNativeHamiltonianFactorDifferential.lean": "39696242db95e1eff1b7dc106e3e712396330e7d34b2610f2105833d3e392931",
+    "NLS/MKdV/MiuraEvenFrequencyOnOpenAngles.lean": "6cd20b1e8338162c30d10d9b589e6d62da00844267b3d6ab2764c9c8549ac8e2",
+    "NLS/SequenceSpaces/PhysicalSobolevDenseInclusion.lean": "1dbe48e1dbd0b1564e5b8093712fb1f9b087334a9b7646431871bb8e9d38aeac",
+    "NLS/MKdV/MiuraHigherSobolevOpenAngleDensity.lean": "a7a65f923621830272c02335515a613b3d1ca0081c437fb0d194ebb0ab24d550",
+    "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean": "2e04d354d90718381ff546f79a7fd844d8643c515168e807802e2c13cbfc0d02",
+    "NLS/Articles/MKdVNLSHierarchies/FrequencyIdentification.lean": "5c0b1a0e6bf4fb523b31f9814643cf1ac80dac0bc5920a6d9c7b3d85213d08ab",
     "NLS.lean": "8b7ce4ad52dd4f8dbc054e0bd1b7e6adc03480720e8557f9a8f54e461da6e8c6",
-    "scripts/check_mkdv_nls.py": "2e2ed8c6ec03c460f35412c7e520d1c13263dc571a5ce2a7ce06be1bc8503b55",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "c1282564fa3e8794e06ccbcb6030adb0ed6601c0cc95db5f728f9fdcf1f432e0"
+    "scripts/check_mkdv_nls.py": "01e09e7841e57dbe6ec8a95b3e1d154ab1c85d5850ad1974cdd8debbb4a0e02f",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "71619e9c23f4df191bd217fdaad1b9b67ee9298592528909f0093c415272f655"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 518,
+  "focused_module_count": 534,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -14846,12 +15182,25 @@
       "public_declaration_count": 2766,
       "theorem_count": 2260,
       "definition_count": 506
+    },
+    {
+      "milestone": "COMPLETE corrected Theorem3 at EVERY m>=1 on ALL original real H^(m-1) profiles including closed actions: actual original S_(2m) angle bracket, unique continuous sharp-domain extension, common open complex holomorphic neighborhood, and equality with every independent K_m raw positive-action derivative",
+      "audit_count": 5392,
+      "combined_NLS_audit_count": 50328,
+      "aggregate_compiled": true,
+      "module_count": 534,
+      "reused_prefix_module_count": 518,
+      "reused_prefix_commit": "8e995977d4eaea9c7716d565dc4c574775e4b6c4",
+      "frozen_source_checker_count": 537,
+      "public_declaration_count": 2830,
+      "theorem_count": 2312,
+      "definition_count": 518
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 50193,
+  "combined_audited_NLS_declarations": 50328,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -14859,7 +15208,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 510 unchanged prefix module source hashes match the prior 898aecf milestone; their private outputs were reused. Eight added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 5257 declarations/auxiliaries and combined audit for 50193 NLS declarations. All 521 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 518 unchanged prefix module source hashes match the prior 8e99597 milestone; their private outputs were reused. Sixteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 5392 declarations/auxiliaries and combined audit for 50328 NLS declarations. All 537 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

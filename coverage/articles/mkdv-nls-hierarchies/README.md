@@ -4,7 +4,7 @@ Status: **Theorems 1 and 2 proved on their original complex Sobolev domains
 (with the matrix correction in Theorem 2(ii)); Theorem 4(i) and corrected
 Theorem 4(ii) proved on the full original real H1 domain. Theorem 4(iii)'s
 angle-action bracket clause is proved on its original angle domain.
-Theorem 3 is proved at m=1 with the corrected positive sign, on the full real L2 domain. Its m>=2 comparison and Theorem 4(iii)'s final angle-sum clause remain incomplete**.
+Theorem 3 is proved at every order with the corrected positive sign on the full real H^(m-1) domain, including closed actions. Theorem 4(iii)'s independent canonical angles and final angle-sum clause remain incomplete**.
 
 One common open complex native physical-action/signed-mean domain and one
 holomorphic l1-valued factor recover all original signed NLS actions for
@@ -22,10 +22,14 @@ including the L2 mass endpoint. Every K_m now has one global holomorphic
 normal form on a common open complex native physical-action/signed-mean
 domain containing all real H^(m-1) data. Its positive action derivatives
 are independent of the chosen normal form for every m>=1, even at closed
-actions. At m=1 the independent mass frequency and the original NLS S2
-frequency both equal +2*pi*n on all real L2 profiles. A checked zero-profile,
-first-index counterexample refutes the printed (-1)^m factor. The m>=2
-comparison and independent canonical angles/final angle sums remain open.
+actions. The original NLS S_(2m) frequency now equals the independent K_m action
+derivative on ALL real H^(m-1) profiles, for every m>=1. The NLS frequency
+is uniquely specified by its actual original angle bracket and continuous
+sharp-domain continuation. A common open complex H^(m-1) neighborhood
+holomorphically extends each frequency through all closed actions. At m=1
+both frequencies equal +2*pi*n, and a checked zero-profile counterexample
+refutes the printed (-1)^m factor. Independent canonical angles/final angle
+sums remain open.
 See the latest milestone below.
 
 Prepared 2026-11-02 against canonical commit
@@ -92,7 +96,7 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 | Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | **Proved** by `theorem1`, with the actual native Frechet gradient and Gardner distribution derivative. `smoothMiuraSpectralHamiltonian` extracts K_m from the independent physical Hill discriminant through recursive coefficient limits on all smooth complex profiles. Its unique continuous extension to the complete complex H^(m-1) domain exists and is entire analytic; `miuraSpectralHillHamiltonian_eq_native` identifies it with the independent scalar Riccati hierarchy. `proposition6` gives the full native factor-two identity, including the L2 mass endpoint. | None for Theorem 1. The source's actual finite-gap primitive Laurent series also has exactly these spectral Hamiltonians as its coefficients. |
 | Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None. |
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
-| Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted NLS frequency and mKdV frequency on real H^(m-1), including collapsed actions by analytic extension; the printed parity factor is false. | `theorem3_m1_corrected` and `_native` prove m=1 on ALL original real L2 profiles for any independent mass normal form. `theorem3_m1_original_NLS_frequency_certificate` certifies the unique continuous original S2 frequency extension. `theorem3_printed_parity_counterexample` refutes the printed sign at zero and n=1. Global independent K_m normal forms and intrinsic positive derivatives are proved for every m>=1. | Compare the actual original NLS S_(2m) frequencies with the independent Hill action derivatives for m>=2 on the exact real H^(m-1) domains, including closed actions. |
+| Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted original NLS frequency and independent mKdV frequency on ALL real H^(m-1), including collapsed actions by analytic extension; the printed parity factor is false. | **COMPLETE with corrected positive sign.** `FrequencyIdentification.lean`: `theorem3_corrected` and `theorem3_corrected_for_any_original_frequency_extension`; `theorem3_original_bracket_agreement` identifies the actual original S_(2m) angle bracket before sharp continuation. `theorem3_original_frequency_extension_certificate` proves unique continuous extension; `theorem3_frequency_holomorphic_extension` supplies one common open complex neighborhood containing all real profiles. The mass benchmark and printed-parity counterexample are checked separately. | No remaining obligation for corrected Theorem 3. Independent canonical angles and the final angle-sum statement belong to Theorem 4(iii). |
 | Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | **Proved** by `theorem4_i` on the full real H1 domain, including collapsed gaps and zero mean. The mKdV action is the literal inverse-energy-weighted integral of the independent physical Hill primitive on a proved isolating contour; its equality with a positive real-gap integral and contour independence are checked. | None for part (i). Corrected part (ii) is proved; the final angle-sum clause of part (iii) remains open. |
 | Theorem 4(ii), p. 4 | On real H^1, each I_n# is analytic in the mKdV actions and mean; conversely each J_n and the printed mean are analytic in NLS actions alone. | **Proved with the converse mean corrected to mean squared.** `theorem4_ii_nls_actions_of_mkdv_actions_mean` supplies one common global holomorphic l1-valued forward factor on an open complex native action/mean domain containing every original real H1 profile. `theorem4_ii_mkdv_actions_of_nls_actions` and `theorem4_ii_mean_square_of_nls_actions` supply the global converse factors, including zero mean and closed gaps. | None for the corrected statement. The printed global signed-mean converse is false; its obstruction is checked. |
 | Theorem 4(iii), p. 4 | For all positive n,m, the angle-action Gardner bracket is delta_mn where the relevant angle is defined; angle sums then depend on actions and mean. | **The angle-action bracket clause is proved** by `theorem4_iii_angle_action` on every real H1 input where the angle is defined. The action index may have a closed gap. The actual Gardner distribution derivative and original NLS angle differential are identified. | Construct the independent mKdV angle and prove the final angle-sum factorization through J and mean. |
@@ -209,7 +213,9 @@ parity now has an explicit checked Lean counterexample.
    Every global independent K1 normal form has the same +2*pi*n raw action
    derivative, including at closed actions. `theorem3_printed_parity_counterexample`
    refutes the printed factor already at the zero profile, m=1 and n=1.
-   The corrected comparison at m>=2 remains open.
+   The corrected comparison is now proved for EVERY m>=1 on the exact
+   original real H^(m-1) domain, with unique continuation of the actual
+   original NLS angle bracket through all closed actions.
 3. The signed mean in the converse of Theorem 4(ii) needs a branch restriction
    or an appropriate sign-invariant replacement. The p. 13 proof recovers it
    from an inverse cosh. NLS spectral actions are unchanged by the phase
@@ -1989,3 +1995,87 @@ final angle-sum clause of Theorem 4(iii) also remain open. The overall
 main-theorem goal stays active.
 
 Validation: all 518 article/shared modules have validated private outputs. The 510 unchanged prefix source hashes match 898aecf and their outputs were reused; all eight added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 5,257 declarations/auxiliaries and the combined audit for 50,193 NLS declarations, using only the standard allowed axioms. All 521 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,766 declarations (2,260 theorems and 506 definitions); new structures and generated projections/auxiliaries are additionally audited. Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. A concrete analytic pullback initially hit the default kernel limit; factoring the composition into an abstract bounded-linear constructor resolved it. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Corrected Theorem 3 at every order on the full original domain
+
+`FrequencyIdentification.lean` completes corrected Theorem 3.
+`theorem3_corrected` proves, for EVERY m>=1 and n>=1 and EVERY original
+real H^(m-1) profile, that the restricted original NLS S_(2m) frequency
+is the raw physical-action derivative of ANY independent K_m global
+normal form. The mean direction is literally zero. Selected and unselected
+actions may be closed; infinite support and arbitrary signed mean are
+included. The sign is positive, consistent with the paper's concluding
+proof and the separately checked mass counterexample to the printed sign.
+
+The NLS frequency is specified by its own original Hamiltonian bracket.
+`miuraOriginalEvenNLSAngleFrequency` is minus the actual S_(2m) differential
+applied to the actual original NLS angle Hamiltonian vector on the real
+H^m open-angle domain. The original physical S_(2m) is the already checked
+sharp reduced-density Hamiltonian, identified with the original smooth
+hierarchy and its higher-regularity representatives. The angle vector's
+inclusion has precisely the original L2 Hamiltonian Fourier coefficients.
+No Hill normal form occurs in this bracket's definition.
+
+The actual original Birkhoff Jacobian sends that angle vector to one
+finite-mode radial target. Its already verified weighted inverse therefore
+lifts the original angle vector uniquely to EVERY native spectral weight,
+without a finite-gap assumption. Exact half-scale weights give the original
+integer H^m norms, retaining every raw coefficient. This removes the
+previously missing regularity premise from the bracket comparison.
+
+`fderiv_even_diagonal_eq_nativeHill_cotangent` proves the all-order
+complex cotangent transfer: the original S_(2s+2) differential at an
+H^(s+1) diagonal profile equals the independent native K_(s+1)
+differential applied to i times the spatial difference of the variation's
+two components. The actual period-one Fourier symbol and the checked
+sharp gradient recurrence prove this identity. It precedes every angular
+or frequency definition.
+
+The transferred angle direction belongs to the required H^s space and
+has the actual Gardner gradient-derivative coefficients. Gardner skew
+symmetry and the original mixed angle-action bracket show that each
+physical J_k has derivative -delta_nk in that direction; J_k may be
+closed. `miuraThetaNativeActionMean_differential` identifies the FULL
+weighted-summable action/mean differential with the negative raw selected
+unit and zero mean. The proof identifies bounded coefficient projections,
+so no infinite derivative sum or its exchange is assumed. Agreement of
+independent Hill normal forms on the spanning physical real form identifies
+their full complex differential, giving the genuine normal-form chain rule.
+The actual open-angle NLS bracket consequently equals every Hill frequency.
+
+The sharp continuation is specified without a Hill-side value in its
+definition: `IsMiuraOriginalEvenFrequencyExtension` requires continuity
+on ALL real H^s profiles and agreement with that original S_(2s+2) bracket
+on real H^(s+1) open-angle profiles. The physical open-angle locus is dense
+at every positive native order: the action coordinate is globally real
+analytic, a realized positive action ray supplies a nonzero value, and
+closed selected gaps force its action to vanish. Coefficient-preserving
+physical real Sobolev inclusions have dense range, proved by finite Fourier
+density and commuting real projections. These two density steps prove
+uniqueness on the exact real H^s domain, including every closed action.
+The checked open-angle comparison supplies existence.
+
+`theorem3_original_frequency_extension_certificate` packages that unique
+extension. `theorem3_corrected_for_any_original_frequency_extension` compares
+ANY continuous realization of the original bracket, so the result does
+not depend on our chosen representative. `theorem3_original_bracket_agreement`
+exposes both the actual S_(2m) differential and original angle-vector
+coefficients. The frequency certificate concerns the diagonal restriction
+requested by Theorem 3. `theorem3_frequency_holomorphic_extension` supplies
+one open complex H^(m-1) neighborhood containing EVERY real profile,
+including closed-gap profiles, and one holomorphic function recovering
+the original restricted frequency everywhere on that real domain.
+`theorem3_m1_frequency_normalization` agrees with the separately normalized
++2*pi*n momentum/mass benchmark on the entire real L2 endpoint.
+
+Corrected Theorem 3 is now COMPLETE. The remaining main-theorem obligation
+is Theorem 4(iii)'s independent original mKdV angles and final angle-sum
+factorization. Their required negative Gardner action brackets must be
+identified independently. The current Cartesian map's same-plane and mixed
+action relations do not identify a fully canonical angle family; its
+cross-mode brackets remain unproved. Full cross-mode Cartesian canonicity
+is a possible route to this dependency, rather than an extra source
+conclusion. The overall main-theorem goal remains active.
+
+Validation: all 534 article/shared modules have validated private outputs. All 518 unchanged prefix source hashes match pushed 8e99597 and their outputs were reused; all sixteen added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 5,392 declarations/auxiliaries and the combined audit for 50,328 NLS declarations, using only the standard allowed axioms. All 537 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,830 declarations (2,312 theorems and 518 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
