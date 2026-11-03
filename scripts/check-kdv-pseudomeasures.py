@@ -807,6 +807,15 @@ modules = [
     'NLS.KdV.HillHminusOneCanonicalGapSquares',
     'NLS.KdV.HillHminusOneCanonicalGapHighNormalization',
     'NLS.Articles.KdVPseudomeasures.OriginalCanonicalGapSquares',
+    'NLS.ZakharovShabat.SourceHigherActionOneKernel',
+    'NLS.ZakharovShabat.SourceHigherActionOneCircleQuotient',
+    'NLS.ZakharovShabat.SourceHigherActionOneNormalized',
+    'NLS.KdV.HillHminusOneLowNormalizedActions',
+    'NLS.KdV.HillHminusOneNormalizedActionBalls',
+    'NLS.ComplexAnalysis.AnalyticScalarFactorUniqueness',
+    'NLS.KdV.HillHminusOneCanonicalNormalizedActions',
+    'NLS.KdV.HillHminusOneCanonicalQuotients',
+    'NLS.Articles.KdVPseudomeasures.OriginalCanonicalActionQuotients',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

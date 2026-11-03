@@ -624,6 +624,12 @@
         "NLS/KdV/HillL2EnergyDiscriminant.lean"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/original-l2-characteristic-map.json"
+    },
+    {
+      "label": "Source Theorem3.2 ACTION assertions at ALL indices",
+      "status": "Action quotient assertions3.2(i) and complex action-zero assertion3.2(iii) PROVED; actual coordinates3.2(ii), Phi(0)=0, full source3.1/3.2 and all MAIN theorems remain OPEN",
+      "declaration": "NLS.Articles.KdVPseudomeasures.source_Theorem3_2_action_assertions",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-canonical-action-quotients-map.json"
     }
   ],
   "reuse_map": [
@@ -703,9 +709,9 @@
     }
   ],
   "remaining_obligations": [
-    "Construct LOW-index analytic normalized KdV action/gap-square ratios through collapsed gaps and prove nonvanishing near EVERY real source. The required Miura action is TWO times the indexed higher Dirac action at NATURAL k=1 (printed level2), so the ordinary NLS k0 normalized action does not suffice without a proved weighted formula. Combine finitely many low neighborhoods with the PROVED locally uniform high estimates on ONE common complex domain. ALL-index complex canonical gap-square gluing is NOW PROVED; do not redo it.",
-    "Complete the ACTUAL ORIGINAL KdV Birkhoff coordinates and the locally uniform estimate (abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n), original differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Do not substitute the NLS Birkhoff map for KdV. Source Theorem3.2 remains OPEN until LOW complex ratios/nonvanishing and the coordinate assertions are proved.",
-    "Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation with the original equation and Hamiltonian/frequency normalization; then prove main1.1,1.3,1.4,5.1,5.9. ALL FIVE remain UNPROVED; goal ACTIVE. Other spectral obligations remain only where necessary for these main theorems. AppendixB B.1(i)-(iv), source2.1(i)-(ii), source2.2 and corrected2.15 remain PROVED."
+    "Construct the ACTUAL ORIGINAL KdV Birkhoff coordinate functions and prove source3.2(ii): analyticity and the locally uniform bound (abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). The ACTUAL canonical actions, ALL-index complex squared gaps, ALL LOW/HIGH analytic nonzero quotients through collapse, their SAME-domain locally uniform8*pi*n normalization and complex ALL-index action-zero equivalence are NOW PROVED. Do not redo them and do not substitute the NLS Birkhoff map for KdV.",
+    "Complete the ORIGINAL KdV Birkhoff-map assertions of source3.1 and main1.4: canonical Poisson brackets with original Gardner structure, original differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 remains partially open because its actual coordinate assertion and Phi(0)=0 are not proved.",
+    "Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation with the original equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE remain UNPROVED; goal ACTIVE. Prove other spectral obligations only where needed for these main results. AppendixB B.1(i)-(iv), full source2.1(i)-(ii), source2.2 and corrected2.15 remain PROVED."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1699,6 +1705,34 @@
     "original_mean_zero_period_one_HminusOne_domain_preserved": true,
     "LOW_index_complex_normalized_ratios_through_collapse_and_nonvanishing_proved": false,
     "complex_ALL_index_action_zero_iff_gap_square_zero_proved": false,
+    "full_source_Theorem3_2_proved": false,
+    "actual_KdV_Birkhoff_map_constructed": false,
+    "actual_original_KdV_flow_constructed": false,
+    "main_theorems_verified": false
+  },
+  "actual_HminusOne_ALL_index_canonical_action_quotients_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-canonical-action-quotients-map.json",
+    "weighted_NATURAL_k1_PRINTED_level2_contour_kernel_constructed": true,
+    "ordinary_NLS_k0_action_substituted": false,
+    "collapsed_weighted_quotient_equals_midpoint_times_ordinary_normalized_action": true,
+    "actual_weighted_quotient_analytic_near_EVERY_real_Dirac_source": true,
+    "weighted_quotient_positive_on_REAL_positive_gap_intervals": true,
+    "fictitious_analytic_mean_value_point_assumed": false,
+    "LOW_index_complex_normalized_ratios_through_collapse_and_nonvanishing_proved": true,
+    "cutoff_chosen_before_FINITE_low_neighborhood_intersection": true,
+    "ONE_OPEN_CONNECTED_complex_ratio_domain_contains_entire_native_real_form": true,
+    "ALL_actions_squared_gaps_and_NONZERO_quotients_analytic_on_SAME_domain": true,
+    "full_complex_overlap_agreement_proved_by_analytic_scalar_cancellation": true,
+    "generic_open_gap_density_assumed": false,
+    "identically_zero_scalar_factor_case_explicitly_handled": true,
+    "exact_original_eight_pi_n_factorization_and_literal_quotients_proved": true,
+    "complex_ALL_index_action_zero_iff_gap_square_zero_proved": true,
+    "ALL_quotient_normalization_locally_uniform_at_EVERY_COMPLEX_point": true,
+    "entire_original_real_mean_zero_period_one_HminusOne_domain_preserved": true,
+    "source_Theorem3_2_i_ACTION_quotient_assertions_proved": true,
+    "source_Theorem3_2_iii_ACTION_zero_locus_assertion_proved": true,
+    "source_Theorem3_2_ii_ACTUAL_coordinate_assertions_proved": false,
+    "actual_KdV_Birkhoff_map_Phi_zero_identity_proved": false,
     "full_source_Theorem3_2_proved": false,
     "actual_KdV_Birkhoff_map_constructed": false,
     "actual_original_KdV_flow_constructed": false,

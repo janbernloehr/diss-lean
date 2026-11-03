@@ -773,6 +773,15 @@ import NLS.KdV.HillHminusOneMiuraGapBalls
 import NLS.KdV.HillHminusOneCanonicalGapSquares
 import NLS.KdV.HillHminusOneCanonicalGapHighNormalization
 import NLS.Articles.KdVPseudomeasures.OriginalCanonicalGapSquares
+import NLS.ZakharovShabat.SourceHigherActionOneKernel
+import NLS.ZakharovShabat.SourceHigherActionOneCircleQuotient
+import NLS.ZakharovShabat.SourceHigherActionOneNormalized
+import NLS.KdV.HillHminusOneLowNormalizedActions
+import NLS.KdV.HillHminusOneNormalizedActionBalls
+import NLS.ComplexAnalysis.AnalyticScalarFactorUniqueness
+import NLS.KdV.HillHminusOneCanonicalNormalizedActions
+import NLS.KdV.HillHminusOneCanonicalQuotients
+import NLS.Articles.KdVPseudomeasures.OriginalCanonicalActionQuotients
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5499,3 +5508,55 @@ import NLS.Articles.KdVPseudomeasures.OriginalCanonicalGapSquares
 #print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_eq_zero_iff_gapSquare
 #print axioms NLS.Articles.KdVPseudomeasures.exists_common_complex_neighborhood_originalCanonicalGapSquares
 #print axioms NLS.Articles.KdVPseudomeasures.exists_common_complex_neighborhood_originalCanonicalGap_high_normalization
+#print axioms NLS.ZakharovShabat.sourceHigherActionOneKernelJoint
+#print axioms NLS.ZakharovShabat.sourceHigherActionOneCircleQuotient
+#print axioms NLS.ZakharovShabat.analyticAt_sourceHigherActionOneKernelJoint_of_realType
+#print axioms NLS.ZakharovShabat.sourceHigherActionCircle_one_eq_recentered
+#print axioms NLS.ZakharovShabat.sourceHigherActionCircle_one_eq_squaredGap_mul_kernel
+#print axioms NLS.ZakharovShabat.sourceHigherActionOneCircleQuotient_eq_kernel
+#print axioms NLS.ZakharovShabat.sourceHigherActionOneCircleQuotient_collapsed
+#print axioms NLS.ZakharovShabat.exists_local_sourceHigherActionOneCircleQuotient
+#print axioms NLS.ZakharovShabat.sourceHigherActionOneNormalized
+#print axioms NLS.ZakharovShabat.sourceHigherActionOneNormalized_eq_quotient_of_gap_ne_zero
+#print axioms NLS.ZakharovShabat.sourceHigherActionOneNormalized_eq_midpoint_mul_of_gap_zero
+#print axioms NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized
+#print axioms NLS.ZakharovShabat.analyticAt_sourceHigherActionOneNormalized_of_realType
+#print axioms NLS.ZakharovShabat.sourceHigherActionOneNormalized_re_pos_of_left_pos
+#print axioms NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized_nonzero_of_left_pos
+#print axioms NLS.KdV.HillHminusMiuraGapBall.normalizedRatio
+#print axioms NLS.KdV.exists_local_hillHminus_canonical_normalized_ratio
+#print axioms NLS.KdV.HillHminusNormalizedActionBall.source
+#print axioms NLS.KdV.HillHminusNormalizedActionBall.source_open
+#print axioms NLS.KdV.HillHminusNormalizedActionBall.action_eq_zero_iff_gapSquare
+#print axioms NLS.KdV.exists_hillHminusNormalizedActionBall
+#print axioms NLS.KdV.hillHminusCanonicalRatioDomain
+#print axioms NLS.KdV.isOpen_hillHminusCanonicalRatioDomain
+#print axioms NLS.KdV.hillHminusCanonicalRatioDomain_subset
+#print axioms NLS.KdV.real_mem_hillHminusCanonicalRatioDomain
+#print axioms NLS.KdV.isConnected_hillHminusCanonicalRatioDomain
+#print axioms NLS.KdV.hillHminusCanonicalAction_eq_zero_iff_gapSquare
+#print axioms NLS.ComplexAnalysis.analytic_eqOn_of_mul_eq_mul_on_open
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalGapSquare_on_ratioDomain
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalAction_on_ratioDomain
+#print axioms NLS.KdV.HillHminusNormalizedActionBall.ratio_eq_on_overlap
+#print axioms NLS.KdV.hillHminusCanonicalActionRatio
+#print axioms NLS.KdV.HillHminusNormalizedActionBall.canonical_ratio_eq
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalActionRatio
+#print axioms NLS.KdV.hillHminusCanonicalActionRatio_ne_zero
+#print axioms NLS.KdV.hillHminusCanonicalAction_gap_factorization
+#print axioms NLS.KdV.hillHminusCanonicalActionRatio_eq_quotient
+#print axioms NLS.KdV.hillHminusCanonicalActionRatio_unique_on_open
+#print axioms NLS.KdV.hillHminusCanonicalActionQuotient
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalActionQuotient
+#print axioms NLS.KdV.hillHminusCanonicalActionQuotient_ne_zero
+#print axioms NLS.KdV.hillHminusCanonicalAction_eq_gapSquare_mul_quotient
+#print axioms NLS.KdV.hillHminusCanonicalActionQuotient_eq_raw
+#print axioms NLS.KdV.hillHminusCanonicalActionRatio_eq_normalized_quotient
+#print axioms NLS.KdV.exists_hillHminusCanonicalActionRatio_uniform_high
+#print axioms NLS.KdV.exists_hillHminusCanonicalActionQuotient_uniform_high
+#print axioms NLS.KdV.norm_hillHminusCanonicalAction_error_le
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillActionQuotient
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillActionQuotient_ne_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_eq_gapSquare_mul_quotient
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillActionQuotient_eq_raw
+#print axioms NLS.Articles.KdVPseudomeasures.source_Theorem3_2_action_assertions
