@@ -666,6 +666,15 @@ import NLS.KdV.HillDirichletSignedRestriction
 import NLS.FunctionalAnalysis.TwoDimensionalUnitCoordinates
 import NLS.KdV.SingularHillSpectralCoordinates
 import NLS.Articles.KdVPseudomeasures.PeriodicDirichletIdentity
+import NLS.KdV.HillH1IntervalNorm
+import NLS.FunctionalAnalysis.ProjectedResidualBound
+import NLS.KdV.SingularDirichletSector
+import NLS.Articles.KdVPseudomeasures.DirichletProjectionNorm
+import NLS.Articles.KdVPseudomeasures.ComplexMidpointEstimate
+import NLS.Articles.KdVPseudomeasures.ComplexDirichletLabelBounds
+import NLS.Articles.KdVPseudomeasures.WeightedComplexMidpointTail
+import NLS.Articles.KdVPseudomeasures.WeightedComplexMidpoints
+import NLS.Articles.KdVPseudomeasures.WeightedComplexMidpointPositive
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4962,3 +4971,26 @@ import NLS.Articles.KdVPseudomeasures.PeriodicDirichletIdentity
 #print axioms NLS.FunctionalAnalysis.exists_unit_coordinates_fin_two
 #print axioms NLS.KdV.exists_singularHill_unit_spectral_coordinates
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_15_corrected
+#print axioms NLS.KdV.norm_sq_hillH1IntervalL2
+#print axioms NLS.KdV.norm_hillH1IntervalL2_of_parity
+#print axioms NLS.FunctionalAnalysis.norm_separation_of_projected_residual
+#print axioms NLS.KdV.singularHill_weak_energy_eigenvalue_norm_le
+#print axioms NLS.KdV.singularDirichlet_eigenvalue_norm_le
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourceDirichletProjection_norm_le_three
+#print axioms NLS.Articles.KdVPseudomeasures.sourceComplexDirichletMidpoint
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourceComplexMidpoint_coupling_bound
+#print axioms NLS.Articles.KdVPseudomeasures.sourceComplexDirichletLabel_norm_le_on_ball
+#print axioms NLS.Articles.KdVPseudomeasures.sourceComplexDirichletLabel_low_norm_le
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourceWeightedComplexMidpoint_high_bound
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpointValues
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourceWeightedDirichletMidpointValues_bound
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpointValues_mem
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpoints
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpoints_nat_apply
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem2_1_ii
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpoints_locallyBounded
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpointPositive_mem
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpointPositive
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sourceWeightedDirichletMidpointPositive
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem2_1_ii_positive
+#print axioms NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpointPositive_locallyBounded

@@ -131,8 +131,13 @@
         6
       ],
       "content": "Every normalized symmetric monotone submultiplicative weight w, -1/2<s<=0, complex q in FL_0^(w,s,infinity): gap lengths gamma_n and tau_n-mu_n are in ell^(w,s,infinity)(N), with locally bounded maps.",
-      "status": "Part (i) is proved with arbitrary source spectral weights. For part (ii), the full complex H-minus-one Dirichlet characteristic and physical L2/H1 normalizations are now proved. Actual rough Dirichlet operator zero/multiplicity identification, canonical Dirichlet labels and the weighted asymptotic comparison remain open.",
-      "Dirichlet_progress_map": "coverage/articles/kdv-pseudomeasures/original-hminus-one-dirichlet-map.json"
+      "status": "BOTH parts(i) and(ii) PROVED with arbitrary original source spectral weights. Full complex midpoint membership, entire actual central/high labels, exact positive-index weighted infinity norm and original topology local boundedness are proved. All five MAIN theorems remain UNPROVED.",
+      "Dirichlet_progress_map": "coverage/articles/kdv-pseudomeasures/original-hminus-one-dirichlet-map.json",
+      "declarations": {
+        "2.1(i)": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_1_i",
+        "2.1(ii)": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_1_ii_positive"
+      },
+      "midpoint_coverage_map": "coverage/articles/kdv-pseudomeasures/complex-weighted-midpoint-map.json"
     },
     {
       "label": "2.2",
@@ -698,8 +703,8 @@
     }
   ],
   "remaining_obligations": [
-    "NOW PROVED: FULL corrected sourceLemma2_15_corrected with ACTUAL physical projected identity(31), original overlap(32), unit-energy native H1 coordinates and norm(beta)<=1 in the actual canonical-label orthonormal spectral basis. The FULL same-parity native Hill-to-Dirichlet operator restriction is proved on EVERY original native Dirichlet H1 test, including ANTIPERIODIC vectors. The physical original H1 product and singular potential dual action, free derivative weak form, entire native dual residual, SAME actual contours and faithful ordinary interval L2 projection are retained. Source(31) MUST be corrected to beta*eta*Pi(f|I)-beta*gamma*Pi(phi|I); printed(31) omits the second beta, while its proof has both. ONE original endpoint norm-ball cutoff above ANY prior cutoff precedes q,n,basis,G,g and ANY actual normalized Dirichlet eigenfunction. NEXT: full COMPLEX WEIGHTED midpoint2.1(ii), exact interval norm preservation for both spectral basis vectors and local boundedness, then quantitative Dirichlet C.4(ii) where needed, remaining low periodic parity/interlacing, complex ratio2.20 where used and original Birkhoff/KdV constructions. AppendixB and full2.13/2.14 remain COMPLETE. ALL FIVE MAIN THEOREMS UNPROVED; goal ACTIVE.",
-    "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
+    "Construct or identify the ACTUAL original KdV H-minus-one Birkhoff map using verified shared spectral/Birkhoff developments, then prove the original endpoint restriction has the exact target order s+1/2, real analyticity, boundedness, bijectivity, local inverse near zero and weak-star homeomorphism on EVERY original bounded set. FULL complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB are now PROVED; do not redo these dependencies or replace the actual Birkhoff map by arbitrary supplied conjugacy data.",
+    "Construct or identify the ACTUAL original H-minus-one KdV flow defined by convergence of EVERY original smooth approximation, retaining original Hamiltonian/frequency normalizations and physical domains. Transfer the verified spectral, Birkhoff and AppendixB topology facts to precise main1.1/1.3/1.4 and original Wiener5.1/5.9 statements. Quantitative Dirichlet C.4(ii), remaining low parity/interlacing and complex ratio2.20 remain open ONLY where required by these actual constructions. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1360,6 +1365,28 @@
     "original_f_phi_stronger_entire_distributions_retained": true,
     "source_Theorem2_1_ii_proved": false,
     "quantitative_Dirichlet_C4ii_rate_proved": false,
+    "main_theorems_verified": false
+  },
+  "full_complex_weighted_source_Theorem2_1_ii_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/complex-weighted-midpoint-map.json",
+    "full_source_Theorem2_1_ii_proved": true,
+    "entire_original_complex_source_and_general_spectral_weight": true,
+    "no_reality_or_open_gap_hypothesis": true,
+    "entire_actual_central_block_retained": true,
+    "exact_interval_norm_of_both_forcing_basis_vectors": true,
+    "original_weighted_infinity_membership": true,
+    "bounded_on_every_original_weighted_norm_ball": true,
+    "literal_original_norm_topology_local_boundedness": true,
+    "original_positive_index_membership": true,
+    "exact_original_positive_index_weighted_infinity_norm": true,
+    "cutoff_before_both_weight_and_potential": true,
+    "all_original_distributions_and_canonical_labels_retained": true,
+    "corrected_source31_beta_on_both_terms": true,
+    "source_Lemma2_15_corrected_complete": true,
+    "full_source_Theorem2_1_i_proved": true,
+    "quantitative_Dirichlet_C4ii_rate_proved": false,
+    "actual_original_KdV_Birkhoff_map_constructed": false,
+    "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
     "main_theorems_verified": false
   }
 }

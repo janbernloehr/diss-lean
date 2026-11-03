@@ -482,7 +482,30 @@
       "NLS.KdV.singularDirichlet_projected_residual_of_signed_periodic",
       "NLS.FunctionalAnalysis.exists_unit_coordinates_fin_two",
       "NLS.KdV.exists_singularHill_unit_spectral_coordinates",
-      "NLS.Articles.KdVPseudomeasures.sourceLemma2_15_corrected"
+      "NLS.Articles.KdVPseudomeasures.sourceLemma2_15_corrected",
+      "NLS.KdV.norm_sq_hillH1IntervalL2",
+      "NLS.KdV.norm_hillH1IntervalL2_of_parity",
+      "NLS.FunctionalAnalysis.norm_separation_of_projected_residual",
+      "NLS.KdV.singularHill_weak_energy_eigenvalue_norm_le",
+      "NLS.KdV.singularDirichlet_eigenvalue_norm_le",
+      "NLS.Articles.KdVPseudomeasures.exists_uniform_sourceDirichletProjection_norm_le_three",
+      "NLS.Articles.KdVPseudomeasures.sourceComplexDirichletMidpoint",
+      "NLS.Articles.KdVPseudomeasures.exists_uniform_sourceComplexMidpoint_coupling_bound",
+      "NLS.Articles.KdVPseudomeasures.sourceComplexDirichletLabel_norm_le_on_ball",
+      "NLS.Articles.KdVPseudomeasures.sourceComplexDirichletLabel_low_norm_le",
+      "NLS.Articles.KdVPseudomeasures.exists_uniform_sourceWeightedComplexMidpoint_high_bound",
+      "NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpointValues",
+      "NLS.Articles.KdVPseudomeasures.exists_uniform_sourceWeightedDirichletMidpointValues_bound",
+      "NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpointValues_mem",
+      "NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpoints",
+      "NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpoints_nat_apply",
+      "NLS.Articles.KdVPseudomeasures.sourceTheorem2_1_ii",
+      "NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpoints_locallyBounded",
+      "NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpointPositive_mem",
+      "NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpointPositive",
+      "NLS.Articles.KdVPseudomeasures.norm_sourceWeightedDirichletMidpointPositive",
+      "NLS.Articles.KdVPseudomeasures.sourceTheorem2_1_ii_positive",
+      "NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpointPositive_locallyBounded"
     ],
     "5.1": [
       "NLS.KdV.analyticOnNhd_hillHminusDirichlet_joint",
@@ -490,8 +513,8 @@
     ]
   },
   "essential_open_obligations": [
-    "NOW PROVED: FULL corrected sourceLemma2_15_corrected with ACTUAL physical projected identity(31), original overlap(32), unit-energy native H1 coordinates and norm(beta)<=1 in the actual canonical-label orthonormal spectral basis. The FULL same-parity native Hill-to-Dirichlet operator restriction is proved on EVERY original native Dirichlet H1 test, including ANTIPERIODIC vectors. The physical original H1 product and singular potential dual action, free derivative weak form, entire native dual residual, SAME actual contours and faithful ordinary interval L2 projection are retained. Source(31) MUST be corrected to beta*eta*Pi(f|I)-beta*gamma*Pi(phi|I); printed(31) omits the second beta, while its proof has both. ONE original endpoint norm-ball cutoff above ANY prior cutoff precedes q,n,basis,G,g and ANY actual normalized Dirichlet eigenfunction. NEXT: full COMPLEX WEIGHTED midpoint2.1(ii), exact interval norm preservation for both spectral basis vectors and local boundedness, then quantitative Dirichlet C.4(ii) where needed, remaining low periodic parity/interlacing, complex ratio2.20 where used and original Birkhoff/KdV constructions. AppendixB and full2.13/2.14 remain COMPLETE. ALL FIVE MAIN THEOREMS UNPROVED; goal ACTIVE.",
-    "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
+    "Construct or identify the ACTUAL original KdV H-minus-one Birkhoff map using verified shared spectral/Birkhoff developments, then prove the original endpoint restriction has the exact target order s+1/2, real analyticity, boundedness, bijectivity, local inverse near zero and weak-star homeomorphism on EVERY original bounded set. FULL complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB are now PROVED; do not redo these dependencies or replace the actual Birkhoff map by arbitrary supplied conjugacy data.",
+    "Construct or identify the ACTUAL original H-minus-one KdV flow defined by convergence of EVERY original smooth approximation, retaining original Hamiltonian/frequency normalizations and physical domains. Transfer the verified spectral, Birkhoff and AppendixB topology facts to precise main1.1/1.3/1.4 and original Wiener5.1/5.9 statements. Quantitative Dirichlet C.4(ii), remaining low parity/interlacing and complex ratio2.20 remain open ONLY where required by these actual constructions. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
   "shared_module_moves": {
@@ -1023,7 +1046,17 @@
     "EVERY unit vector in a two-dimensional actual orthonormal basis has an exact Euclidean coefficient decomposition with norm(alpha)^2+norm(beta)^2=ONE and BOTH coefficients at most ONE. Applied to the actual full periodic spectral range, this is an EXACT equality of original native H1 distributions, not only physical L2 classes.",
     "sourceLemma2_15_corrected constructs the ACTUAL canonical-label spectral basis f,phi, actual eta equation, identical stronger original endpoint distributions, actual unit zero-boundary G and faithful interval g, actual alpha,beta with unit energy and norm(beta)<=ONE. For ANY normalized ACTUAL Dirichlet eigenfunction v at the same original n, its ACTUAL projection coefficient nu satisfies ONE HALF<=norm(nu)<=THREE HALVES AND the FULL exact physical identity: nu*(mu_n-lambda_plus)*v = beta*eta*Pi(f|I)-beta*gamma*Pi(phi|I). ONE original endpoint norm-ball cutoff precedes q,n,all vectors and v and can exceed ANY supplied prior cutoff.",
     "The full proved identity CORRECTS printed source(31): beta MUST multiply BOTH eta and gamma terms. This agrees with beta*(eta*f-gamma*phi) in the paper proof immediately below(31). The literal displayed identity without beta on gamma is NOT claimed as proved. Corrected full Lemma2.15 and source overlap(32) are COMPLETE.",
-    "Full COMPLEX weighted midpoint2.1(ii), quantitative Dirichlet C.4(ii) rate where needed, remaining low periodic parity/interlacing and complex ratio2.20 where used, and original Birkhoff/KdV approximation-flow constructions remain OPEN. ALL FIVE MAIN THEOREMS1.1,1.3,1.4,5.1,5.9 remain UNPROVED; goal ACTIVE."
+    "Full COMPLEX weighted midpoint2.1(ii), quantitative Dirichlet C.4(ii) rate where needed, remaining low periodic parity/interlacing and complex ratio2.20 where used, and original Birkhoff/KdV approximation-flow constructions remain OPEN. ALL FIVE MAIN THEOREMS1.1,1.3,1.4,5.1,5.9 remain UNPROVED; goal ACTIVE.",
+    "For EVERY original native H1 vector, the actual ordinary unit-interval L2 restriction has its literal unnormalized square-integral norm. For EITHER physical parity its norm is EXACTLY the original normalized periodic L2 norm, with NO zero-trace hypothesis on the two forcing basis vectors.",
+    "An actual projected residual, physical unit forcing vectors, unit spectral coordinate bound and original overlap one half give the quantitative energy separation bound. The ACTUAL original Dirichlet source projections have physical L2 operator norm at most THREE at ONE cutoff uniform on EACH original endpoint norm ball.",
+    "The ACTUAL complex midpoint error is bounded by128*(norm(actual canonical gap)+norm(actual upper coupling)+norm(actual lower coupling)), uniformly on EACH original endpoint norm ball above ANY prior cutoff. The proof uses the PROVED corrected FULL source2.15 identity with beta on BOTH residual terms, actual eta constant16 and EXACT forcing interval norms. No reality, noncollapsed gap, assumed spectral comparison or supplied normalization bound is used.",
+    "The original singular weak energy identity gives a complex Dirichlet eigenvalue sector bound on the FULL native zero-trace H1 domain and full original dual, including ALL central multiple eigenvalues. Actual intrinsic complex label ordering and an actual valid high source circle then bound EVERY preceding Dirichlet label uniformly in the exact original norm ball.",
+    "The ENTIRE arbitrary original spectral weight is retained in the high midpoint estimate: w_n*<n>^(-r)*norm(tau_n-mu_n)<=128*(6*sqrt6+12)*R. ONE cutoff is selected BEFORE BOTH the spectral weight w and EVERY complex physical period-one source q in its ORIGINAL weighted endpoint norm ball. There is no weight, exponent, original mode or original distribution substitution.",
+    "The complete actual midpoint sequence, including EVERY finite central index and BOTH original tails, has a bound in the GENUINE original weighted infinity norm on EVERY fixed original weighted norm ball. The actual periodic and Dirichlet labels and all their central algebraic repetitions are retained; the central block is bounded quantitatively, not truncated or assumed locally bounded.",
+    "sourceTheorem2_1_ii PROVES full complex source midpoint membership and boundedness on EVERY original weighted norm ball. sourceWeightedDirichletMidpoints_locallyBounded PROVES literal local boundedness in the ORIGINAL weighted norm topology on the physical period-one source. The result holds on this LARGER complex period-one space, hence on the original complex mean-zero source as required.",
+    "The LITERAL original positive-index target is implemented by sourceWeightedDirichletMidpointPositive. Its weighted infinity norm is PROVED EXACTLY EQUAL to the internal even extension with zero at index zero. sourceTheorem2_1_ii_positive and sourceWeightedDirichletMidpointPositive_locallyBounded PROVE the original positive-index membership and actual locally bounded map with the EXACT original source and target norms.",
+    "Both source Theorem2.1(i) and FULL complex weighted Theorem2.1(ii) are now PROVED. Full source2.2, corrected source2.15, source2.13/2.14 and AppendixB remain PROVED. The necessary source31 correction is retained: beta multiplies BOTH eta and gamma terms.",
+    "The ORIGINAL KdV Birkhoff map and actual original H-minus-one smooth-approximation KdV solution flow, with their source normalization, analytic/bijective/topological properties, remain to be constructed or identified from verified shared developments. Quantitative Dirichlet C.4(ii), remaining low parity/interlacing and complex ratio2.20 remain open where used, but are NOT premises of the NOW PROVED full complex2.1(ii). ALL FIVE MAIN theorems1.1,1.3,1.4,5.1,5.9 remain UNPROVED; goal ACTIVE."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -1106,6 +1139,17 @@
       "conclusion": "The exact full endpoint representative set is weak-star compact and equals the full actual intrinsic canonical spectral fiber.",
       "uniform_original_isospectral_bound": true,
       "coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json"
+    },
+    "2.1(ii)": {
+      "status": "proved",
+      "declaration": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_1_ii",
+      "positive_index_declaration": "NLS.Articles.KdVPseudomeasures.sourceTheorem2_1_ii_positive",
+      "local_boundedness": "NLS.Articles.KdVPseudomeasures.sourceWeightedDirichletMidpointPositive_locallyBounded",
+      "domain": "Every original complex physically period-one source in every original weighted endpoint space,0<=r<1/2(s=-r); includes the original complex mean-zero source.",
+      "target": "LITERAL original positive-index tau_n-minus-mu_n, weighted by the EXACT original w_n*<n>^(-r), in lp(infinity).",
+      "central_block": "ENTIRE actual complex sequence and all algebraic repetitions; no finite block omitted.",
+      "norm": "EXACT original positive-index weighted infinity norm, proved equal to the internal even zero-central extension.",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/complex-weighted-midpoint-map.json"
     }
   },
   "verified_source_lemma_components": {
@@ -1165,13 +1209,26 @@
       "completion_coverage_map": "coverage/articles/kdv-pseudomeasures/original-endpoint-compactness-map.json"
     },
     "2.1(ii)": {
-      "coverage_map": "coverage/articles/kdv-pseudomeasures/original-hminus-one-dirichlet-map.json",
-      "full_normalized_HminusOne_Dirichlet_characteristic": true,
-      "joint_energy_potential_analyticity": true,
-      "zero_energy_and_constant_shift_normalization": true,
-      "actual_rough_operator_comparison": false,
-      "canonical_label_asymptotics": false,
-      "full_source_theorem_verified": false
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/complex-weighted-midpoint-map.json",
+      "full_source_Theorem2_1_ii_proved": true,
+      "entire_original_complex_source_and_general_spectral_weight": true,
+      "no_reality_or_open_gap_hypothesis": true,
+      "entire_actual_central_block_retained": true,
+      "exact_interval_norm_of_both_forcing_basis_vectors": true,
+      "original_weighted_infinity_membership": true,
+      "bounded_on_every_original_weighted_norm_ball": true,
+      "literal_original_norm_topology_local_boundedness": true,
+      "original_positive_index_membership": true,
+      "exact_original_positive_index_weighted_infinity_norm": true,
+      "cutoff_before_both_weight_and_potential": true,
+      "all_original_distributions_and_canonical_labels_retained": true,
+      "corrected_source31_beta_on_both_terms": true,
+      "source_Lemma2_15_corrected_complete": true,
+      "full_source_Theorem2_1_i_proved": true,
+      "quantitative_Dirichlet_C4ii_rate_proved": false,
+      "actual_original_KdV_Birkhoff_map_constructed": false,
+      "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
+      "main_theorems_verified": false
     },
     "2.15-prerequisites": {
       "coverage_map": "coverage/articles/kdv-pseudomeasures/dirichlet-uniform-simple-map.json",
@@ -3027,6 +3084,28 @@
     "original_f_phi_stronger_entire_distributions_retained": true,
     "source_Theorem2_1_ii_proved": false,
     "quantitative_Dirichlet_C4ii_rate_proved": false,
+    "main_theorems_verified": false
+  },
+  "verified_full_complex_weighted_source_Theorem2_1_ii": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/complex-weighted-midpoint-map.json",
+    "full_source_Theorem2_1_ii_proved": true,
+    "entire_original_complex_source_and_general_spectral_weight": true,
+    "no_reality_or_open_gap_hypothesis": true,
+    "entire_actual_central_block_retained": true,
+    "exact_interval_norm_of_both_forcing_basis_vectors": true,
+    "original_weighted_infinity_membership": true,
+    "bounded_on_every_original_weighted_norm_ball": true,
+    "literal_original_norm_topology_local_boundedness": true,
+    "original_positive_index_membership": true,
+    "exact_original_positive_index_weighted_infinity_norm": true,
+    "cutoff_before_both_weight_and_potential": true,
+    "all_original_distributions_and_canonical_labels_retained": true,
+    "corrected_source31_beta_on_both_terms": true,
+    "source_Lemma2_15_corrected_complete": true,
+    "full_source_Theorem2_1_i_proved": true,
+    "quantitative_Dirichlet_C4ii_rate_proved": false,
+    "actual_original_KdV_Birkhoff_map_constructed": false,
+    "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
     "main_theorems_verified": false
   }
 }

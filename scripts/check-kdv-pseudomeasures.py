@@ -700,6 +700,15 @@ modules = [
     'NLS.FunctionalAnalysis.TwoDimensionalUnitCoordinates',
     'NLS.KdV.SingularHillSpectralCoordinates',
     'NLS.Articles.KdVPseudomeasures.PeriodicDirichletIdentity',
+    'NLS.KdV.HillH1IntervalNorm',
+    'NLS.FunctionalAnalysis.ProjectedResidualBound',
+    'NLS.KdV.SingularDirichletSector',
+    'NLS.Articles.KdVPseudomeasures.DirichletProjectionNorm',
+    'NLS.Articles.KdVPseudomeasures.ComplexMidpointEstimate',
+    'NLS.Articles.KdVPseudomeasures.ComplexDirichletLabelBounds',
+    'NLS.Articles.KdVPseudomeasures.WeightedComplexMidpointTail',
+    'NLS.Articles.KdVPseudomeasures.WeightedComplexMidpoints',
+    'NLS.Articles.KdVPseudomeasures.WeightedComplexMidpointPositive',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

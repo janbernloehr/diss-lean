@@ -80,8 +80,8 @@
     "main_theorems_verified": false
   },
   "essential_remaining": [
-    "Use the NOW PROVED corrected FULL source2.15 identity(31), actual overlap(32), unit spectral coordinate bound, actual eta constant16 bound and original Dirichlet projection convergence to prove the full COMPLEX weighted midpoint2.1(ii), including original weight/exponent hypotheses and local boundedness. The physical interval norm of both normalized same-parity basis vectors must be retained exactly; do not replace it by a supplied norm bound or discard the original weighted source quantifiers.",
-    "Complete quantitative Dirichlet C.4(ii) rate where needed, remaining low periodic parity/interlacing and complex ratio2.20 where used, original Birkhoff maps and actual KdV approximation-flow constructions. ALL FIVE MAIN theorems1.1,1.3,1.4,5.1,5.9 remain UNPROVED; goal ACTIVE."
+    "Construct or identify the ACTUAL original KdV H-minus-one Birkhoff map using verified shared spectral/Birkhoff developments, then prove the original endpoint restriction has the exact target order s+1/2, real analyticity, boundedness, bijectivity, local inverse near zero and weak-star homeomorphism on EVERY original bounded set. FULL complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB are now PROVED; do not redo these dependencies or replace the actual Birkhoff map by arbitrary supplied conjugacy data.",
+    "Construct or identify the ACTUAL original H-minus-one KdV flow defined by convergence of EVERY original smooth approximation, retaining original Hamiltonian/frequency normalizations and physical domains. Transfer the verified spectral, Birkhoff and AppendixB topology facts to precise main1.1/1.3/1.4 and original Wiener5.1/5.9 statements. Quantitative Dirichlet C.4(ii), remaining low parity/interlacing and complex ratio2.20 remain open ONLY where required by these actual constructions. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE."
   ],
   "source_correspondence": {
     "potential": "ENTIRE ORIGINAL complex FourierLebesgueSpace(2,-r,infinity),0<=r<1/2,with actual physical period ONE. Real mean-zero sources are included; no reality or mean-zero premise is added. The native signed operator compatibility itself accepts ANY original complex H-minus-one potential.",
@@ -139,5 +139,28 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "full_complex_weighted_source_Theorem2_1_ii_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/complex-weighted-midpoint-map.json",
+    "full_source_Theorem2_1_ii_proved": true,
+    "entire_original_complex_source_and_general_spectral_weight": true,
+    "no_reality_or_open_gap_hypothesis": true,
+    "entire_actual_central_block_retained": true,
+    "exact_interval_norm_of_both_forcing_basis_vectors": true,
+    "original_weighted_infinity_membership": true,
+    "bounded_on_every_original_weighted_norm_ball": true,
+    "literal_original_norm_topology_local_boundedness": true,
+    "original_positive_index_membership": true,
+    "exact_original_positive_index_weighted_infinity_norm": true,
+    "cutoff_before_both_weight_and_potential": true,
+    "all_original_distributions_and_canonical_labels_retained": true,
+    "corrected_source31_beta_on_both_terms": true,
+    "source_Lemma2_15_corrected_complete": true,
+    "full_source_Theorem2_1_i_proved": true,
+    "quantitative_Dirichlet_C4ii_rate_proved": false,
+    "actual_original_KdV_Birkhoff_map_constructed": false,
+    "actual_original_HminusOne_KdV_smooth_approximation_flow_constructed": false,
+    "main_theorems_verified": false
+  },
+  "validation_scope": "Original validation object records the earlier milestone. full_complex_weighted_source_Theorem2_1_ii_followup links the later4316-declaration audited FULL complex weighted midpoint2.1(ii) milestone."
 }
