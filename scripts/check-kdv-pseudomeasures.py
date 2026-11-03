@@ -831,6 +831,18 @@ modules = [
     'NLS.ZakharovShabat.SobolevScalarOpenEquality',
     'NLS.KdV.HminusOneDirichletSheet',
     'NLS.Articles.KdVPseudomeasures.OriginalDirichletDivisor',
+    'NLS.SequenceSpaces.OrderedPairedReflection',
+    'NLS.KdV.MiuraPeriodicReflection',
+    'NLS.ZakharovShabat.SourceCanonicalRootReflection',
+    'NLS.KdV.MiuraCanonicalRootReflection',
+    'NLS.ComplexAnalysis.ParametricDSlope',
+    'NLS.ComplexAnalysis.OddSquareDescent',
+    'NLS.ComplexAnalysis.CircleIntegralReflection',
+    'NLS.ZakharovShabat.SourcePsiReflectionPeriods',
+    'NLS.KdV.MiuraHillPsiNumerators',
+    'NLS.KdV.HminusOneLocalHillPsi',
+    'NLS.Articles.KdVPseudomeasures.OriginalLocalHillDifferentials',
+    'NLS.KdV.MiuraHillPsiFree',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

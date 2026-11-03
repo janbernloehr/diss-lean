@@ -797,6 +797,18 @@ import NLS.KdV.HminusOneDirichletNorming
 import NLS.ZakharovShabat.SobolevScalarOpenEquality
 import NLS.KdV.HminusOneDirichletSheet
 import NLS.Articles.KdVPseudomeasures.OriginalDirichletDivisor
+import NLS.SequenceSpaces.OrderedPairedReflection
+import NLS.KdV.MiuraPeriodicReflection
+import NLS.ZakharovShabat.SourceCanonicalRootReflection
+import NLS.KdV.MiuraCanonicalRootReflection
+import NLS.ComplexAnalysis.ParametricDSlope
+import NLS.ComplexAnalysis.OddSquareDescent
+import NLS.ComplexAnalysis.CircleIntegralReflection
+import NLS.ZakharovShabat.SourcePsiReflectionPeriods
+import NLS.KdV.MiuraHillPsiNumerators
+import NLS.KdV.HminusOneLocalHillPsi
+import NLS.Articles.KdVPseudomeasures.OriginalLocalHillDifferentials
+import NLS.KdV.MiuraHillPsiFree
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5679,3 +5691,66 @@ import NLS.Articles.KdVPseudomeasures.OriginalDirichletDivisor
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletNorming_eq_shifted_miura
 #print axioms NLS.Articles.KdVPseudomeasures.originalDirichletDivisor_eq_shifted_miura
 #print axioms NLS.Articles.KdVPseudomeasures.exists_originalKdV_common_analytic_Dirichlet_divisors
+#print axioms NLS.ComplexAnalysis.complexLexLE_neg_neg
+#print axioms NLS.paired_count_neg_reflection
+#print axioms NLS.ordered_paired_reflection_of_l2
+#print axioms NLS.KdV.periodicAlgebraicMultiplicity_hillMiuraDiagonal_neg
+#print axioms NLS.KdV.hillMiuraDiracPair_neg
+#print axioms NLS.ZakharovShabat.SourcePeriodicReflection
+#print axioms NLS.ZakharovShabat.SourcePeriodicReflection.midpoint_neg
+#print axioms NLS.ZakharovShabat.SourcePeriodicReflection.gap_neg
+#print axioms NLS.ZakharovShabat.normalizedStandardRoot_neg_center
+#print axioms NLS.ZakharovShabat.SourcePeriodicReflection.standardRoot_neg
+#print axioms NLS.ZakharovShabat.SourcePeriodicReflection.canonicalRootPartial_neg
+#print axioms NLS.ZakharovShabat.SourcePeriodicReflection.canonicalRoot_neg
+#print axioms NLS.ZakharovShabat.SourcePeriodicReflection.neg_mem_segment_iff
+#print axioms NLS.ZakharovShabat.SourcePeriodicReflection.neg_mem_rootDomain_iff
+#print axioms NLS.KdV.sourcePeriodicReflection_hillMiuraDiagonal
+#print axioms NLS.KdV.sourceCanonicalRoot_hillMiuraDiagonal_neg
+#print axioms NLS.ComplexAnalysis.jointDSlopeZero
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_jointDSlopeZero
+#print axioms NLS.ComplexAnalysis.oddPartQuotient
+#print axioms NLS.ComplexAnalysis.oddPartQuotient_eq_div
+#print axioms NLS.ComplexAnalysis.oddPartQuotient_even
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_oddPartQuotient
+#print axioms NLS.ComplexAnalysis.oddSquareDescent
+#print axioms NLS.ComplexAnalysis.oddSquareDescent_sq
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_oddSquareDescent
+#print axioms NLS.ComplexAnalysis.oddSquareDescent_frequency_formula
+#print axioms NLS.ComplexAnalysis.two_mul_frequency_oddSquareDescent
+#print axioms NLS.ComplexAnalysis.oddSquareDescent_zero
+#print axioms NLS.ComplexAnalysis.circleIntegral_neg_radius
+#print axioms NLS.ComplexAnalysis.circleIntegral_neg_pullback
+#print axioms NLS.ZakharovShabat.SourcePeriodicReflection.periodCircleNeg
+#print axioms NLS.ZakharovShabat.SourceCriticalRootPeriodCircle.psi_div_root_circleIntegrable
+#print axioms NLS.ZakharovShabat.SourceTheorem12_1Data.odd_numerator_period
+#print axioms NLS.ZakharovShabat.SourceTheorem12_1Data.nonempty_periodCircle
+#print axioms NLS.ZakharovShabat.sourceSelectedPsiNumerator
+#print axioms NLS.ZakharovShabat.sourcePsiEnergyNumerator
+#print axioms NLS.ZakharovShabat.SourceTheorem12_1Data.analytic_selectedPsiNumerator
+#print axioms NLS.ZakharovShabat.SourceTheorem12_1Data.analytic_energyNumerator
+#print axioms NLS.ZakharovShabat.SourceTheorem12_1Data.energyNumerator_pullback_period
+#print axioms NLS.KdV.nonempty_miuraHillPsiFamily
+#print axioms NLS.KdV.MiuraHillPsiFamily.source
+#print axioms NLS.KdV.MiuraHillPsiFamily.source_open
+#print axioms NLS.KdV.MiuraHillPsiFamily.real_mem_source
+#print axioms NLS.KdV.MiuraHillPsiFamily.numerator
+#print axioms NLS.KdV.MiuraHillPsiFamily.analytic_numerator
+#print axioms NLS.KdV.MiuraHillPsiFamily.numerator_frequency_identity
+#print axioms NLS.KdV.MiuraHillPsiFamily.numerator_pullback_period
+#print axioms NLS.KdV.MiuraHillPsiFamily.nonempty_periodCircle
+#print axioms NLS.KdV.MiuraHillPsiFamily.analytic_shifted_numerator
+#print axioms NLS.KdV.HillHminusDirichletBall.psiSource
+#print axioms NLS.KdV.HillHminusDirichletBall.psiSource_open
+#print axioms NLS.KdV.HillHminusDirichletBall.psiSource_subset_dirichletDomain
+#print axioms NLS.KdV.HillHminusDirichletBall.real_mem_psiSource
+#print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator
+#print axioms NLS.KdV.HillHminusDirichletBall.analytic_psiNumerator
+#print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator_pullback_period
+#print axioms NLS.KdV.HillHminusDirichletBall.nonempty_psiPeriodCircle
+#print axioms NLS.KdV.exists_local_hminusHillPsiFamily
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_local_Hill_psi_families
+#print axioms NLS.KdV.deriv_sourcePsiFree_zero_of_ne
+#print axioms NLS.KdV.MiuraHillPsiFamily.roots_zero
+#print axioms NLS.KdV.MiuraHillPsiFamily.selected_free
+#print axioms NLS.KdV.MiuraHillPsiFamily.numerator_free_zero

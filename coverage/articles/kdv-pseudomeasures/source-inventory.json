@@ -642,6 +642,12 @@
       "status": "ALL-index nonzero analytic terminal multipliers and actual signed diagonal monodromy sheets on the SAME common complex domain PROVED, independent of every valid complex L2 Miura lift/shift. Normalized differentials, angles, source3.2(ii), actual Birkhoff map and all MAIN theorems remain OPEN.",
       "declaration": "NLS.Articles.KdVPseudomeasures.exists_originalKdV_common_analytic_Dirichlet_divisors",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-dirichlet-norming-map.json"
+    },
+    {
+      "label": "Actual local original Hill numerator and normalized quadratic pullback input",
+      "status": "Complex Miura endpoint/root reflection, joint odd energy descent including zero, nonempty period circles, exact all-positive Kronecker pullback periods, local original H-minus-one families and free2/(pi*n) normalization PROVED. Canonical Hill energy-root identification, chart independence, global normalized differentials, angles and all MAIN theorems remain OPEN.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.exists_original_local_Hill_psi_families",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-psi-quadratic-pullback-map.json"
     }
   ],
   "reuse_map": [
@@ -721,10 +727,10 @@
     }
   ],
   "remaining_obligations": [
-    "Construct the ACTUAL normalized ORIGINAL Hill holomorphic differentials with the exact canonical spectral root, all periods and normalizations, joint entire energy/source analyticity and local bounds. The proposed odd-Dirac-differential quadratic descent needs proof of actual canonical-root reflection, contour-period matching, zero filling and Miura independence. The actual ALL-index simple Dirichlet energies AND nonzero analytic terminal norming multipliers/monodromy sheets are NOW PROVED; do not redo them. If using the literal KMT y-tilde equation, also formalize its integrating-factor gauge normalization; it is not supplied as an assumed identification.",
-    "Construct admissible-path Abelian phases, their off-index sums, and the actual collapsed-gap Cartesian coordinate extensions for source3.2(ii). Retain the original local uniform estimate(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Do NOT infer a complex collapsed-gap Dirichlet point equals its endpoint or its Cartesian coordinates vanish; only the REAL endpoint statement is established.",
-    "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates and map: original Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; its coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute the NLS Birkhoff map for KdV.",
-    "Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and the preceding verified spectral/action/gap/quotient/Dirichlet-energy dependencies remain proved."
+    "Complete the ACTUAL ORIGINAL normalized Hill holomorphic differentials: identify the actual canonical ENERGY root and energy cycles with the newly proved Miura pullback, prove required growth/product and zero-placement/local bounds, and then prove Miura-lift/shift independence and WHOLE complex overlap agreement. Glue on ONE complex neighborhood containing the ENTIRE original real H-minus-one form while retaining all previously proved divisor/action/gap data. Actual complex endpoint/root reflection, jointly analytic odd quadratic descent INCLUDING ZERO, nonempty original period circles, exact ALL-positive-index pullback Kronecker periods and free2/(pi*n) normalization are NOW PROVED; do not redo them. The current common patches are local; no unsupported global agreement or equality on the entire earlier Dirichlet domain is asserted.",
+    "Construct admissible-path Abelian phases, their off-index sums and the actual collapsed-gap Cartesian coordinate extensions for source3.2(ii), with the original locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). If using the literal KMT y-tilde equation, formalize its integrating-factor gauge normalization. Do NOT infer a complex collapsed-gap Dirichlet point equals its endpoint or its Cartesian coordinates vanish; only the REAL endpoint result is established.",
+    "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates and map: original Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Reusing verified Dirac holomorphic differentials is not a substitution of the NLS Birkhoff map for KdV.",
+    "Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and all previously verified spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1804,6 +1810,38 @@
     "ACTUAL_normalized_Hill_differentials_constructed": false,
     "ACTUAL_KdV_angles_constructed": false,
     "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "complex_collapsed_Dirichlet_point_equals_endpoint_asserted": false,
+    "full_source3_2_coordinate_assertion_proved": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_psi_reflection_and_local_quadratic_pullback_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-psi-quadratic-pullback-map.json",
+    "ALL_complex_L2_Miura_periodic_multiplicities_reflect": true,
+    "ALL_signed_canonical_endpoint_slots_reflect_including_central_and_repeated": true,
+    "generic_ordered_paired_L2_reflection_from_actual_global_counts": true,
+    "actual_canonical_root_product_ODD_with_exact_sign": true,
+    "canonical_root_cut_complement_reflects": true,
+    "canonical_root_square_identity_asserted_on_cut_points": false,
+    "odd_root_even_square_descent_asserted": false,
+    "actual_reflected_circle_geometry_and_orientation_proved": true,
+    "filled_odd_quotient_joint_Banach_analytic_INCLUDING_ZERO": true,
+    "exact_2z_quadratic_differential_pullback": true,
+    "actual_Dirac_Theorem12_1_family_constructed": true,
+    "ONE_common_Miura_source_neighborhood_before_ALL_positive_indices": true,
+    "actual_period_circles_NONEMPTY_at_every_source_and_index": true,
+    "ALL_positive_index_normalized_pullback_periods_EXACT_Kronecker": true,
+    "original_literal_period_factor_one_over_two_pi_retained": true,
+    "local_original_HminusOne_numerator_families_above_ENTIRE_original_real_form": true,
+    "actual_shift_E_equals_z_squared_minus_c_and_original_image_retained": true,
+    "ALL_indices_numerators_and_preceding_divisor_data_on_SAME_local_patch": true,
+    "exact_free_zero_energy_value_two_over_pi_n": true,
+    "common_global_chart_independent_Hill_Psi_family_constructed": false,
+    "actual_Hill_energy_root_and_energy_cycle_identification_proved": false,
+    "full_original_Hill_Psi_product_and_growth_bounds_proved": false,
+    "ACTUAL_normalized_Hill_differentials_constructed": false,
+    "ACTUAL_KdV_angles_constructed": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "literal_KMT_y_tilde_gauge_formalized": false,
     "complex_collapsed_Dirichlet_point_equals_endpoint_asserted": false,
     "full_source3_2_coordinate_assertion_proved": false,
     "all_five_main_theorems_proved": false
