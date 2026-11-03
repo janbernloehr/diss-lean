@@ -817,6 +817,14 @@ import NLS.KdV.HminusOneLocalHillDifferential
 import NLS.ComplexAnalysis.QuadraticEnergyCircleWinding
 import NLS.KdV.HminusOneLocalHillEnergyCycles
 import NLS.Articles.KdVPseudomeasures.OriginalHillEnergyDifferentials
+import NLS.ComplexAnalysis.OddSquareDescentCongruence
+import NLS.ZakharovShabat.SourcePsiEnergyIsospectral
+import NLS.KdV.MiuraHillPsiFixedShift
+import NLS.ZakharovShabat.SourcePsiOddGrowth
+import NLS.KdV.HminusOneHillPsiFixedShift
+import NLS.KdV.MiuraHillPsiRealZeros
+import NLS.KdV.HminusOneHillPsiRealZeros
+import NLS.Articles.KdVPseudomeasures.OriginalHillNumeratorZeros
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5799,3 +5807,24 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillEnergyDifferentials
 #print axioms NLS.KdV.HillHminusDirichletBall.energyCircle_winding_original_endpoints
 #print axioms NLS.KdV.HillHminusDirichletBall.exists_normalized_energyCircle
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_local_Hill_energy_differentials
+#print axioms NLS.ComplexAnalysis.oddSquareDescent_congr_slice
+#print axioms NLS.ZakharovShabat.SourceTheorem12_1Data.displacedRoots_im_eq_zero_of_real
+#print axioms NLS.ZakharovShabat.SourceTheorem12_1Data.roots_eq_of_real_isospectral
+#print axioms NLS.ZakharovShabat.SourceTheorem12_1Data.selectedNumerator_eq_of_real_isospectral
+#print axioms NLS.ZakharovShabat.SourceTheorem12_1Data.energyNumerator_eq_of_real_isospectral
+#print axioms NLS.KdV.hillMiuraRealSource_isospectral_of_same_shift
+#print axioms NLS.KdV.MiuraHillPsiFamily.numerator_eq_of_real_same_shift
+#print axioms NLS.ZakharovShabat.sourceOddPsiCandidate
+#print axioms NLS.ZakharovShabat.analyticOnNhd_sourceOddPsiCandidate
+#print axioms NLS.ZakharovShabat.sourceOddPsiCandidate_real
+#print axioms NLS.ZakharovShabat.sourceOddPsiCandidate_sub_sine_growth
+#print axioms NLS.ZakharovShabat.exists_sourceOddPsiCandidate_zero_in_gap
+#print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator_eq_of_real_same_shift
+#print axioms NLS.KdV.HillHminusDirichletBall.energyDifferential_eq_of_real_same_shift
+#print axioms NLS.KdV.HillHminusDirichletBall.exists_complex_same_shift_numerator_agreement
+#print axioms NLS.KdV.MiuraHillPsiFamily.numerator_pullback_sub_sine_growth
+#print axioms NLS.KdV.MiuraHillPsiFamily.exists_retained_energy_zero
+#print axioms NLS.KdV.HillHminusDirichletBall.exists_psiNumerator_zero_in_original_gap
+#print axioms NLS.KdV.HillHminusDirichletBall.psiNumerator_zero_at_real_collapsed_gap
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_local_Hill_numerator_gap_zeros
+#print axioms NLS.Articles.KdVPseudomeasures.original_local_Hill_numerators_agree_at_same_shift

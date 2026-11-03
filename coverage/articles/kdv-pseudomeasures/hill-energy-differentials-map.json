@@ -90,8 +90,8 @@
     "all_five_main_theorems_proved": false
   },
   "essential_remaining": [
-    "Complete the ACTUAL ORIGINAL global normalized Hill holomorphic differentials: prove the required numerator product/growth and zero-placement/local bounds, prove Miura-lift AND physical energy-shift independence, and establish WHOLE COMPLEX overlap agreement. Glue on ONE complex neighborhood containing the ENTIRE original real H-minus-one form while retaining all preceding divisor/action/gap data. Local jointly analytic differentials with nonzero ACTUAL physical Hill roots, real-source root/shift independence, genuine normalized ENERGY cycles and winding at BOTH ORIGINAL endpoints are NOW PROVED; do not redo them. These local patches are not claimed to carry a globally glued numerator or to equal the entire older Dirichlet domain.",
-    "Construct admissible-path Abelian phases, their off-index sums and the actual collapsed-gap Cartesian coordinate extensions for source3.2(ii), with the original locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). If using the literal KMT y-tilde equation, formalize its integrating-factor gauge normalization. Do NOT infer a complex collapsed-gap Dirichlet point equals its endpoint or its Cartesian coordinates vanish; only the REAL endpoint result is established.",
+    "Complete the ACTUAL ORIGINAL global normalized Hill holomorphic differentials. Prove the original normalized Hill infinite-product representation and the required locally uniform ALL-index squared-gap-over-index zero bound; retained real zeros and pointwise sub-sine pullback growth are now PROVED, but neither unique zeros nor the final product has been established. Prove numerator independence under CHANGES of physical energy shift, then WHOLE COMPLEX overlap agreement and gluing on ONE neighborhood of the ENTIRE original real H-minus-one form. Same-shift arbitrary real lift/family independence and a simultaneous local complex agreement neighborhood at every real overlap are NOW PROVED. Actual local physical roots, real-source root/shift independence, genuine energy periods and original endpoint winding remain proved. Do not redo these steps or silently drop the remaining different-shift obligation.",
+    "Construct admissible-path Abelian phases, their off-index sums and actual collapsed-gap Cartesian coordinate extensions for source3.2(ii), with the original locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). If using the literal KMT y-tilde equation, formalize its integrating-factor gauge normalization. Do NOT infer a complex collapsed-gap Dirichlet point equals its endpoint or its Cartesian coordinates vanish; only the REAL endpoint result is established.",
     "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates and map: original Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Reusing verified Dirac holomorphic differentials is not a substitution of the NLS Birkhoff map for KdV.",
     "Construct the ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, with the original equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding verified spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
@@ -139,5 +139,32 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "actual_Hill_numerator_same_shift_and_real_zeros_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-numerator-zeros-map.json",
+    "actual_real_Dirac_root_isospectrality_reused_with_full_algebraic_counts": true,
+    "ANY_TWO_simultaneous_families_real_isospectral_frequency_and_energy_numerators_equal": true,
+    "energy_descent_agreement_INCLUDES_ZERO": true,
+    "SAME_shift_arbitrary_REAL_Miura_lift_and_family_independence_proved": true,
+    "SAME_shift_REAL_source_local_differentials_agree_on_common_energy_domain": true,
+    "SAME_shift_complex_agreement_neighborhood_at_every_real_overlap_point": true,
+    "common_complex_agreement_neighborhood_chosen_BEFORE_ALL_indices_AND_energies": true,
+    "actual_odd_frequency_numerator_entire_and_real_on_real_data": true,
+    "sub_sine_pullback_growth_for_EVERY_complex_source_at_each_FIXED_index": true,
+    "uniform_in_index_or_locally_uniform_growth_cutoff_asserted": false,
+    "EVERY_retained_positive_REAL_gap_has_actual_energy_numerator_zero": true,
+    "ORIGINAL_Hill_endpoint_labels_preserved_at_ALL_low_and_repeated_indices": true,
+    "retained_REAL_collapsed_gap_numerator_zero_at_actual_endpoint": true,
+    "actual_energy_cycle_periods_and_exact_2z_Jacobian_retained": true,
+    "unique_retained_Hill_numerator_zeros_proved": false,
+    "original_normalized_Hill_product_representation_proved": false,
+    "locally_uniform_ALL_index_squared_gap_over_index_zero_bound_proved": false,
+    "numerator_independence_under_CHANGES_of_physical_shift_proved": false,
+    "WHOLE_complex_overlap_agreement_and_global_gluing_proved": false,
+    "ACTUAL_global_normalized_Hill_differentials_constructed": false,
+    "ACTUAL_KdV_angles_constructed": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "full_source3_2_coordinate_assertion_proved": false,
+    "all_five_main_theorems_proved": false
+  }
 }
