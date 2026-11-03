@@ -218,5 +218,21 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "publication": {
+    "destination": "https://github.com/janbernloehr/diss-lean.git",
+    "branch": "articles/kdv-pseudomeasures",
+    "previous_remote_head": "ecbdc5aabb3882b1adf20d7df64b4602115b6aa1",
+    "verified_published_proof_head": "e601782d11a0f12a4fba6ac4a2c53139f36dcf75",
+    "proof_milestone_commit": "6f4708a9d037725af8b432f9c4fab830be606d5e",
+    "push_result": "success; normal fast-forward; approved Appendix B commit preserved",
+    "audited_declarations": 5108,
+    "fresh_new_modules": 18,
+    "new_theorems": 65,
+    "new_definitions": 12,
+    "canonical_checkout_written": false,
+    "shared_canonical_git_written": false,
+    "history_merge_changes_validated_tree": false,
+    "all_five_main_theorems_proved": false
+  }
 }
