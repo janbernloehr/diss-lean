@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 4094,
+    "declarations": 4126,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -391,10 +391,17 @@
       "NLS.ComplexAnalysis.norm_inv_sqrt_sub_one_le",
       "NLS.ComplexAnalysis.mem_slitPlane_of_norm_sub_one_le_half",
       "NLS.ComplexAnalysis.exists_uniform_sine_lower_annulus",
-      "NLS.ComplexAnalysis.norm_normalized_circleIntegral_difference_le"
+      "NLS.ComplexAnalysis.norm_normalized_circleIntegral_difference_le",
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.root_eq_continuous_radial_branch",
+      "NLS.ComplexAnalysis.dense_complex_nonreal",
+      "NLS.ComplexAnalysis.exists_injective_augmented_implicit_neighborhood",
+      "NLS.Coeff.positiveDeletedConjugate",
+      "NLS.Coeff.positiveDeletedConjugate_coe",
+      "NLS.Coeff.positiveDeletedConjugate_zero",
+      "NLS.Coeff.continuous_positiveDeletedConjugate"
     ]
   },
-  "full_repository_validation": "All 452 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4094-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 464 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4126-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -848,10 +855,22 @@
     "NLS/KdV/HillComplexImplicitPeriodRoots.lean": "69c0a0389e4be47222d1394a052920f4add03b64c25a5e93bb642af9fbb27767",
     "NLS/KdV/HillComplexPeriodLocalRootGerm.lean": "69a6eab2f5f6cac1ea6ad481bfba330d9fa6c2eeec8876250e77b6b78c014f47",
     "NLS/KdV/HillComplexNormalizedPeriodGerm.lean": "7c3c13a2d948ba71a2a49358de5dfe1a6f3bda514c3669b95217d458de027419",
-    "NLS/KdV/HillComplexNumeratorZeros.lean": "3b3e5370e1782037c19202f3f2eacaa617d6a76ebad336888b898d2a9cce3c17"
+    "NLS/KdV/HillComplexNumeratorZeros.lean": "3b3e5370e1782037c19202f3f2eacaa617d6a76ebad336888b898d2a9cce3c17",
+    "NLS/ComplexAnalysis/TraceRootBranchUniqueness.lean": "5fd1bad8279f5a18af18c95406463ff70b3ed19b70efe901a2c0feb1d9717356",
+    "NLS/ComplexAnalysis/DenseNonreal.lean": "13642e2941d7b7b2bbc083728143abed87c81ffbbcea3bf6266f0c3148d2efc7",
+    "NLS/KdV/HillComplexRootSourceMatching.lean": "2dcb1da6a7349ce6306e5d5f5f89813da6b89e6fce5bfbfdc3a0885755847730",
+    "NLS/KdV/HillPhysicalRootSourceIdentification.lean": "4b428e412116cd80e1651b329b9aa56325133768a9a2b131923446b434941fda",
+    "NLS/KdV/HillSourceRealBandPreservation.lean": "15c6866d4ac1c321d02285d4850fc0829c9a8a34b665ff1c613e42f403aefd23",
+    "NLS/KdV/HillFreeContourPhysicalRoot.lean": "bc49f0faad0763eaa49213fe194d93fbdb86d51a7edeb3d8e950da2ffe5258ba",
+    "NLS/KdV/HillAbelianPeriodConjugation.lean": "c061addd76ef77fa8adca100fd2173c1c7ae17d6b08619f75a76ccef5a179c96",
+    "NLS/KdV/HillFreeContourSpectralGapIsolation.lean": "f4056fb73f76653a665e3584276403bc5954c6dc88828a497746359d0e33bf32",
+    "NLS/ComplexAnalysis/ImplicitLocalUniqueness.lean": "f0c07bb667972ba123a6a19c30b796e9d3ab59485b056ff78afa8064181b1ce5",
+    "NLS/SequenceSpaces/PositiveDeletedConjugation.lean": "8fcbe0d01144eb58511b05bc76562cea6320c5ff0a4c3952fd737bc6f7a9224d",
+    "NLS/KdV/HillAbelianImplicitRootReality.lean": "d5d59f685455c083e5f4b5a8ea252c5c1d558d755f41fa92dac3dddceef8effd",
+    "NLS/KdV/HillPhysicalNormalizedPeriodGerm.lean": "96d40f31ed0f54a76af8473e244c3515a3b15c919425869a611876f1ee81ea79"
   },
-  "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual common-domain Hill period sequence is now l2-valued and jointly Banach-analytic; its supported-map unknown derivative is -Id. Genuine analytic implicit root germs solve all off-diagonal contour equations. The selected diagonal period is nonzero locally, and direct division produces an analytic entire numerator with exact delta contour periods and a complete explicit zero set. Matching the chart with the physical canonical root for real potentials, reality and real gap containment of the root germs, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
-  "milestone": "The actual joint L2 Hill period map and analytic normalized root germs",
+  "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual complex root is now identified with the physical canonical energy root on all original free contours in one real potential ball. The constructed analytic root germs have real coordinates for real potentials, and their normalized entire numerators satisfy exact physical Kronecker-delta contour periods. Each complete physical spectral gap remains inside its original free circle. Containment of the numerator zeros inside those physical gaps, intrinsic moving-contour identification, uniform/global normalized differentials, global Abelian angles and the actual KdV Birkhoff map/action identity remain essential.",
+  "milestone": "Physical Hill canonical-root matching and real normalized period germs",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -1306,7 +1325,19 @@
     "NLS.KdV.HillComplexImplicitPeriodRoots",
     "NLS.KdV.HillComplexPeriodLocalRootGerm",
     "NLS.KdV.HillComplexNormalizedPeriodGerm",
-    "NLS.KdV.HillComplexNumeratorZeros"
+    "NLS.KdV.HillComplexNumeratorZeros",
+    "NLS.ComplexAnalysis.TraceRootBranchUniqueness",
+    "NLS.ComplexAnalysis.DenseNonreal",
+    "NLS.KdV.HillComplexRootSourceMatching",
+    "NLS.KdV.HillPhysicalRootSourceIdentification",
+    "NLS.KdV.HillSourceRealBandPreservation",
+    "NLS.KdV.HillFreeContourPhysicalRoot",
+    "NLS.KdV.HillAbelianPeriodConjugation",
+    "NLS.KdV.HillFreeContourSpectralGapIsolation",
+    "NLS.ComplexAnalysis.ImplicitLocalUniqueness",
+    "NLS.SequenceSpaces.PositiveDeletedConjugation",
+    "NLS.KdV.HillAbelianImplicitRootReality",
+    "NLS.KdV.HillPhysicalNormalizedPeriodGerm"
   ],
   "proof_commits": [
     {
@@ -1673,6 +1704,11 @@
       "commit": "3d3150088c1b06fb8fb2b406594ea30151b363a1",
       "scope": "A common complex Hill contour domain, inverse-root decay, contour l2 weights and exact numerator product factorization; 439 strict modules, 3995-declaration transitive axiom audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "0dd3a0ac1497ee833412180fb04ded943c47e9e2",
+      "scope": "The actual joint L2 Hill period map and analytic normalized root germs; 452 strict modules, 4094-declaration transitive axiom audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -1689,20 +1725,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 452 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 464 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 4094 declarations. Includes the shared normalized-circle difference inequality, exact scaled scalar period correction, actual l2 membership and norm bounds, literal coordinate agreement on the common domain, genuine joint Banach analyticity, supported-map derivative -Id, true parametric analytic implicit root selection, all off-diagonal actual contour zeros, nonzero diagonal normalization, exact normalized contour periods and the complete entire numerator zero set.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 4126 declarations. Includes radial square-root uniqueness, density of nonreal energies, physical canonical-root identification, real band preservation, uniform physical root matching on every free contour, physical gap isolation, exact numerator and period conjugation, analytic implicit local uniqueness, supported-space conjugation, real root-germ selection and exact physical normalized contour periods.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 452 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4094-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 464 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4126-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "Exact contour Hilbert numerator factorization, the source-scaled free quotient, inverse-root decay and a shared normalized circle-integral bound give the actual scaled-period correction at most 2*pi^2*C*exp((8/pi^2)*norm(a))*norm(p)/k. The entire sequence of actual scaled complex contour periods belongs to l2 on the single complex potential neighborhood, with its actual coordinate formula proved there. Its difference from the free period sequence has norm at most 2*D*exp((8/pi^2)*norm(a))*norm(p). Bounded analytic coordinates and this local Banach bound prove genuine joint Banach analyticity. The output is supported on positive indices with the selected coordinate deleted. Restricting to the closed supported Hilbert space gives an actual joint period map whose unknown partial Frechet derivative at zero is -Id. The verified analytic Banach implicit theorem constructs, for each selected label, a genuine analytic root-coordinate germ vanishing at zero and solving every actual off-diagonal contour equation. Its diagonal period equals one at zero and remains nonzero locally. Dividing the actual entire numerator by this period gives exact source-contour Kronecker-delta periods and joint analyticity at every energy over zero potential. Summable infinite-product errors prove that both the original and normalized numerator have exactly the explicit energy roots E_m+m*a_m, without additional product zeros. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual common-domain Hill period sequence is now l2-valued and jointly Banach-analytic; its supported-map unknown derivative is -Id. Genuine analytic implicit root germs solve all off-diagonal contour equations. The selected diagonal period is nonzero locally, and direct division produces an analytic entire numerator with exact delta contour periods and a complete explicit zero set. Matching the chart with the physical canonical root for real potentials, reality and real gap containment of the root germs, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
-    "scope": "All 452 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4094-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Uniqueness of a continuous square root on the radial potential interval identifies the complex root chart with source continuation. Density of nonreal points extends canonical product/source equality to real band points. Spectral-label continuity and the intermediate value theorem prevent a real source-continuation point from crossing any spectral band edge. Thus all original free contours remain in the actual real cut and carry the physical canonical root on one potential ball, uniformly in their labels. The same avoidance argument places both endpoints and the entire physical gap strictly inside its assigned free circle. Exact conjugation of the genuine Hilbert numerator products and contour periods is proved. A shared analytic implicit-map local injectivity theorem and conjugation on the supported Hilbert root space prove reality of the selected root germs for real potentials. Direct comparison of integrands then gives exact normalized contour periods with the physical canonical root. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual complex root is now identified with the physical canonical energy root on all original free contours in one real potential ball. The constructed analytic root germs have real coordinates for real potentials, and their normalized entire numerators satisfy exact physical Kronecker-delta contour periods. Each complete physical spectral gap remains inside its original free circle. Containment of the numerator zeros inside those physical gaps, intrinsic moving-contour identification, uniform/global normalized differentials, global Abelian angles and the actual KdV Birkhoff map/action identity remain essential.",
+    "scope": "All 464 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4126-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "3e826a92c5aa51fb4a61675d2555b284eaaea166c7f8cba93e29a496ba3589f2",
-      "scripts/check-kdv-estimates.sh": "0b0e620f431c3e052c944d867ac7d96ec25f9dc57b99f69ff12376b2964a39ae",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "fdcce9809ac63fe23afe19c072418f51a93b61e909a146ca6cc394fa73c47f7b"
+      "NLS.lean": "0196b42c3a9e99bbc47cc892cda235ec467004cd502ed28a0a45e854f0466bbc",
+      "scripts/check-kdv-estimates.sh": "71862e5730376e425500b3778d619d60d43ecff055a48eed81d107323573e50c",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "2994a5b8252eaf9073a935e69cbf7643f8a20ec84c280976dc822c14652c4f93"
     }
   },
   "warningAsError": true,
@@ -1809,9 +1845,9 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "The actual joint L2 Hill period map and analytic normalized root germs",
-    "focused_modules": 452,
-    "scope": "All 452 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4094-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Physical Hill canonical-root matching and real normalized period germs",
+    "focused_modules": 464,
+    "scope": "All 464 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4126-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",

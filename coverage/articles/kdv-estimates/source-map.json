@@ -365,7 +365,7 @@
         "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
         "NLS.KdV.hillRealGapIntegral_le_chi_bound"
       ],
-      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual common-domain Hill period sequence is now l2-valued and jointly Banach-analytic; its supported-map unknown derivative is -Id. Genuine analytic implicit root germs solve all off-diagonal contour equations. The selected diagonal period is nonzero locally, and direct division produces an analytic entire numerator with exact delta contour periods and a complete explicit zero set. Matching the chart with the physical canonical root for real potentials, reality and real gap containment of the root germs, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual complex root is now identified with the physical canonical energy root on all original free contours in one real potential ball. The constructed analytic root germs have real coordinates for real potentials, and their normalized entire numerators satisfy exact physical Kronecker-delta contour periods. Each complete physical spectral gap remains inside its original free circle. Containment of the numerator zeros inside those physical gaps, intrinsic moving-contour identification, uniform/global normalized differentials, global Abelian angles and the actual KdV Birkhoff map/action identity remain essential.",
       "checked_hill_uniform_critical_action_tail": [
         "NLS.SequenceSpaces.nonneg_series_cauchy_schwarz",
         "NLS.SequenceSpaces.square_sum_le_of_weight_lower_bound",
@@ -884,6 +884,32 @@
         "NLS.KdV.hillAbelianHilbertProduct_zero_iff",
         "NLS.KdV.hillAbelianHilbertPsi_zero_iff",
         "NLS.KdV.hillAbelianNormalizedComplexPsi_zero_iff"
+      ],
+      "checked_physical_root_matching": [
+        "NLS.ComplexAnalysis.TracePrimitiveFamily.root_eq_continuous_radial_branch",
+        "NLS.ComplexAnalysis.dense_complex_nonreal",
+        "NLS.ComplexAnalysis.exists_injective_augmented_implicit_neighborhood",
+        "NLS.Coeff.positiveDeletedConjugate",
+        "NLS.Coeff.positiveDeletedConjugate_coe",
+        "NLS.Coeff.positiveDeletedConjugate_zero",
+        "NLS.Coeff.continuous_positiveDeletedConjugate",
+        "NLS.KdV.hillEnergyCanonicalRootProduct_zero_eq_freeRoot",
+        "NLS.KdV.hillAbelianComplexRoot_eq_continued_of_radial_domain",
+        "NLS.KdV.hillEnergyCanonicalRootProduct_eq_continued_of_mem",
+        "NLS.KdV.mem_hillL2RealCutDomain_of_free_and_source",
+        "NLS.KdV.hillFreeGapContour_source_compatibility",
+        "NLS.KdV.hillFreeGapContour_physical_root_matching",
+        "NLS.KdV.exists_hillFreeGapContour_physical_root_neighborhood",
+        "NLS.KdV.hillAbelianComplexNumeratorFactor_conj",
+        "NLS.KdV.hillAbelianHilbertProduct_conj",
+        "NLS.KdV.hillAbelianHilbertPsi_conj",
+        "NLS.KdV.hillAbelianComplexRoot_conj_on_free_contour",
+        "NLS.KdV.hillAbelianComplexPeriod_conj_roots",
+        "NLS.KdV.hillRealLabel_mem_free_contour_ball_of_control",
+        "NLS.KdV.hillRealGap_mem_free_contour_ball_of_control",
+        "NLS.KdV.hillComplexSupportedPeriodMap_eq_zero_of_periods",
+        "NLS.KdV.exists_hillAbelianComplexPeriod_real_root_germ",
+        "NLS.KdV.exists_hillAbelianPhysicalNormalizedPeriod_germ"
       ]
     },
     {
@@ -1312,7 +1338,7 @@
         "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual common-domain Hill period sequence is now l2-valued and jointly Banach-analytic; its supported-map unknown derivative is -Id. Genuine analytic implicit root germs solve all off-diagonal contour equations. The selected diagonal period is nonzero locally, and direct division produces an analytic entire numerator with exact delta contour periods and a complete explicit zero set. Matching the chart with the physical canonical root for real potentials, reality and real gap containment of the root germs, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual complex root is now identified with the physical canonical energy root on all original free contours in one real potential ball. The constructed analytic root germs have real coordinates for real potentials, and their normalized entire numerators satisfy exact physical Kronecker-delta contour periods. Each complete physical spectral gap remains inside its original free circle. Containment of the numerator zeros inside those physical gaps, intrinsic moving-contour identification, uniform/global normalized differentials, global Abelian angles and the actual KdV Birkhoff map/action identity remain essential.",
       "status": "not_verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -2167,6 +2193,32 @@
         "NLS.KdV.hillAbelianHilbertProduct_zero_iff",
         "NLS.KdV.hillAbelianHilbertPsi_zero_iff",
         "NLS.KdV.hillAbelianNormalizedComplexPsi_zero_iff"
+      ],
+      "checked_physical_root_matching": [
+        "NLS.ComplexAnalysis.TracePrimitiveFamily.root_eq_continuous_radial_branch",
+        "NLS.ComplexAnalysis.dense_complex_nonreal",
+        "NLS.ComplexAnalysis.exists_injective_augmented_implicit_neighborhood",
+        "NLS.Coeff.positiveDeletedConjugate",
+        "NLS.Coeff.positiveDeletedConjugate_coe",
+        "NLS.Coeff.positiveDeletedConjugate_zero",
+        "NLS.Coeff.continuous_positiveDeletedConjugate",
+        "NLS.KdV.hillEnergyCanonicalRootProduct_zero_eq_freeRoot",
+        "NLS.KdV.hillAbelianComplexRoot_eq_continued_of_radial_domain",
+        "NLS.KdV.hillEnergyCanonicalRootProduct_eq_continued_of_mem",
+        "NLS.KdV.mem_hillL2RealCutDomain_of_free_and_source",
+        "NLS.KdV.hillFreeGapContour_source_compatibility",
+        "NLS.KdV.hillFreeGapContour_physical_root_matching",
+        "NLS.KdV.exists_hillFreeGapContour_physical_root_neighborhood",
+        "NLS.KdV.hillAbelianComplexNumeratorFactor_conj",
+        "NLS.KdV.hillAbelianHilbertProduct_conj",
+        "NLS.KdV.hillAbelianHilbertPsi_conj",
+        "NLS.KdV.hillAbelianComplexRoot_conj_on_free_contour",
+        "NLS.KdV.hillAbelianComplexPeriod_conj_roots",
+        "NLS.KdV.hillRealLabel_mem_free_contour_ball_of_control",
+        "NLS.KdV.hillRealGap_mem_free_contour_ball_of_control",
+        "NLS.KdV.hillComplexSupportedPeriodMap_eq_zero_of_periods",
+        "NLS.KdV.exists_hillAbelianComplexPeriod_real_root_germ",
+        "NLS.KdV.exists_hillAbelianPhysicalNormalizedPeriod_germ"
       ]
     }
   ],
@@ -2770,7 +2822,7 @@
     }
   ],
   "next_shared_milestones": [
-    "Identify the complex square-root chart with the actual radially continued root on the common contours, then with the physical energy canonical root for nearby real period-one l2 potentials. Prove the constructed root germs are real and lie in the physical gaps using uniqueness and source contour positivity. Establish global normalized differentials and Abelian angles, then the actual KdV Birkhoff map and its Arnold-action identity required by Theorems 1 and 3(i).",
+    "Prove that every real constructed numerator zero lies in its corresponding physical spectral gap, using actual contour deformation and positivity. Establish intrinsic moving-contour compatibility and uniform/global normalized differentials, then global Abelian angles and the physical KdV Birkhoff map with its Arnold-action identity.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Prove explicit norm-dependent action-gap bounds with the source cutoff/weight evaluation, then Hamiltonian/higher-action trace identities and the tame action estimates for Theorem 2. The potential-dependent eventual bound n*I_n<=gamma_n^2, weighted action summability and the high Proposition 5 comparison at cutoff eight are now checked.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -5951,7 +6003,8 @@
     "result": "A positive sine lower bound on the fixed complex annulus pi/10<=abs(w)<=pi/2 is proved by compactness and the exact sine zero set. The true free energy-circle frequency geometry yields a positive lower bound d for the actual free Hill radicand on every source isolating circle, uniformly in the gap label. The quantitative genuine trace/radicand bounds produce a single epsilon>0, independent of all contour labels, on which the exact radicand ratio stays in the principal slit and differs from one by C*norm(p)/k. Every original contour is therefore in the actual analytic square-root chart on the same complex l2-potential neighborhood. The actual free root divided by that chart differs from one by at most C*norm(p)/k. A general analytic-domain theorem and the single neighborhood give joint Banach analyticity of every actual root/potential contour period on the same univ times open potential ball. Exact free-energy separation gives contour l2 weights of norm <=8/pi^2 and Hilbert product bounds exp((8/pi^2)*norm(a)), uniformly in all labels and contour points. The source-scaled free Abelian quotient is bounded by 4/k off the deleted label. A zero-safe HasProd argument proves the exact actual Hilbert numerator product factorization into its free numerator times the contour Hilbert product. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual Hill Abelian period integrands now share one complex l2-potential neighborhood on every original free isolating circle, with inverse-root decay C*norm(p)/k, uniform contour numerator products and exact factorization. The potential-dependent l2 period sequence, parametric normalized roots, physical matching for nearby real potentials, gap containment, own-period normalization, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
     "qualification": "The common domain and exact coordinate integrals are proved for every label, but this milestone alone does not prove that the potential-dependent scaled-period sequence is l2-valued or jointly analytic as a Banach sequence map. It does not yet solve the normalized-period problem at nonzero physical potentials. Matching with the real canonical root, real gap containment, own-period normalization, global continuation, Abelian angles and the physical Birkhoff action identity remain essential. Theorems 1 and 3(i) remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
     "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual Hill Abelian period integrands now share one complex l2-potential neighborhood on every original free isolating circle, with inverse-root decay C*norm(p)/k, uniform contour numerator products and exact factorization. The potential-dependent l2 period sequence, parametric normalized roots, physical matching for nearby real potentials, gap containment, own-period normalization, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
-    "sequence_progress": "The complex_l2_period_map section proves the actual jointly analytic l2 period map and genuine analytic local root selection. It also constructs the nonzero diagonal normalization and exact normalized periods. Physical real matching and global continuation remain open in the committed library."
+    "sequence_progress": "The complex_l2_period_map section proves the actual jointly analytic l2 period map and genuine analytic local root selection. It also constructs the nonzero diagonal normalization and exact normalized periods. Physical real matching and global continuation remain open in the committed library.",
+    "physical_progress": "Physical canonical-root matching and physical spectral-gap isolation are proved on one real potential ball, uniform in contour label."
   },
   "complex_l2_period_map": {
     "modules": [
@@ -6020,6 +6073,54 @@
     "hypotheses": "The period-map l2 and joint analyticity statements hold for arbitrary complex l2 numerator coordinates and potentials in one actual common ball about zero. The selected index n>=1. The closed unknown space has positive support and deleted nth coordinate. For each n the implicit theorem yields an analytic germ at zero; its root-selection neighborhood may depend on n. All off-diagonal label conditions hold simultaneously on that germ neighborhood. Normalization divides by the genuine nonzero nth contour period. Complete zero-set statements hold for arbitrary complex l2 input whenever the normalization denominator is nonzero.",
     "result": "Exact contour Hilbert numerator factorization, the source-scaled free quotient, inverse-root decay and a shared normalized circle-integral bound give the actual scaled-period correction at most 2*pi^2*C*exp((8/pi^2)*norm(a))*norm(p)/k. The entire sequence of actual scaled complex contour periods belongs to l2 on the single complex potential neighborhood, with its actual coordinate formula proved there. Its difference from the free period sequence has norm at most 2*D*exp((8/pi^2)*norm(a))*norm(p). Bounded analytic coordinates and this local Banach bound prove genuine joint Banach analyticity. The output is supported on positive indices with the selected coordinate deleted. Restricting to the closed supported Hilbert space gives an actual joint period map whose unknown partial Frechet derivative at zero is -Id. The verified analytic Banach implicit theorem constructs, for each selected label, a genuine analytic root-coordinate germ vanishing at zero and solving every actual off-diagonal contour equation. Its diagonal period equals one at zero and remains nonzero locally. Dividing the actual entire numerator by this period gives exact source-contour Kronecker-delta periods and joint analyticity at every energy over zero potential. Summable infinite-product errors prove that both the original and normalized numerator have exactly the explicit energy roots E_m+m*a_m, without additional product zeros. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual common-domain Hill period sequence is now l2-valued and jointly Banach-analytic; its supported-map unknown derivative is -Id. Genuine analytic implicit root germs solve all off-diagonal contour equations. The selected diagonal period is nonzero locally, and direct division produces an analytic entire numerator with exact delta contour periods and a complete explicit zero set. Matching the chart with the physical canonical root for real potentials, reality and real gap containment of the root germs, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
     "qualification": "The literal complex-potential scaled contour sequence is represented by a total extension that uses zero only outside its l2 domain; on the single actual potential neighborhood every coordinate is proved equal to its literal contour integral and the sequence is jointly Banach-analytic. The analytic implicit germ lies in the closed positive/deleted Hilbert root space, solves all actual off-diagonal contour equations, has a nonzero actual diagonal period and gives exact Kronecker-delta periods after dividing the numerator by that diagonal period. This normalization is proved directly and is not a claim that the unscaled fixed-prefactor product already has diagonal period one. The normalized entire numerator has exactly the explicit energy roots E_m+m*a_m. These are local complex-potential results about the genuine square-root chart; matching it with the physical canonical root for nearby real potentials, real gap containment, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain unproved. Main Theorems 1 and 3(i) remain not_verified; Theorem 2 and Theorem 3(ii) remain verified. The single period-map neighborhood is uniform in the contour labels; uniformity in n of the implicit root-germ neighborhood is not claimed. Full Lake rebuild and full repository examples were not rerun.",
-    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual common-domain Hill period sequence is now l2-valued and jointly Banach-analytic; its supported-map unknown derivative is -Id. Genuine analytic implicit root germs solve all off-diagonal contour equations. The selected diagonal period is nonzero locally, and direct division produces an analytic entire numerator with exact delta contour periods and a complete explicit zero set. Matching the chart with the physical canonical root for real potentials, reality and real gap containment of the root germs, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain essential."
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual common-domain Hill period sequence is now l2-valued and jointly Banach-analytic; its supported-map unknown derivative is -Id. Genuine analytic implicit root germs solve all off-diagonal contour equations. The selected diagonal period is nonzero locally, and direct division produces an analytic entire numerator with exact delta contour periods and a complete explicit zero set. Matching the chart with the physical canonical root for real potentials, reality and real gap containment of the root germs, global continuation, Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
+    "physical_progress": "The physical_root_matching section now identifies the complex chart with the actual canonical root on every free contour and proves real root germs and exact physical normalized periods. Real gap containment of numerator zeros and global continuation remain open."
+  },
+  "physical_root_matching": {
+    "modules": [
+      "NLS/ComplexAnalysis/TraceRootBranchUniqueness.lean",
+      "NLS/ComplexAnalysis/DenseNonreal.lean",
+      "NLS/KdV/HillComplexRootSourceMatching.lean",
+      "NLS/KdV/HillPhysicalRootSourceIdentification.lean",
+      "NLS/KdV/HillSourceRealBandPreservation.lean",
+      "NLS/KdV/HillFreeContourPhysicalRoot.lean",
+      "NLS/KdV/HillAbelianPeriodConjugation.lean",
+      "NLS/KdV/HillFreeContourSpectralGapIsolation.lean",
+      "NLS/ComplexAnalysis/ImplicitLocalUniqueness.lean",
+      "NLS/SequenceSpaces/PositiveDeletedConjugation.lean",
+      "NLS/KdV/HillAbelianImplicitRootReality.lean",
+      "NLS/KdV/HillPhysicalNormalizedPeriodGerm.lean"
+    ],
+    "declarations": [
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.root_eq_continuous_radial_branch",
+      "NLS.ComplexAnalysis.dense_complex_nonreal",
+      "NLS.ComplexAnalysis.exists_injective_augmented_implicit_neighborhood",
+      "NLS.Coeff.positiveDeletedConjugate",
+      "NLS.Coeff.positiveDeletedConjugate_coe",
+      "NLS.Coeff.positiveDeletedConjugate_zero",
+      "NLS.Coeff.continuous_positiveDeletedConjugate",
+      "NLS.KdV.hillEnergyCanonicalRootProduct_zero_eq_freeRoot",
+      "NLS.KdV.hillAbelianComplexRoot_eq_continued_of_radial_domain",
+      "NLS.KdV.hillEnergyCanonicalRootProduct_eq_continued_of_mem",
+      "NLS.KdV.mem_hillL2RealCutDomain_of_free_and_source",
+      "NLS.KdV.hillFreeGapContour_source_compatibility",
+      "NLS.KdV.hillFreeGapContour_physical_root_matching",
+      "NLS.KdV.exists_hillFreeGapContour_physical_root_neighborhood",
+      "NLS.KdV.hillAbelianComplexNumeratorFactor_conj",
+      "NLS.KdV.hillAbelianHilbertProduct_conj",
+      "NLS.KdV.hillAbelianHilbertPsi_conj",
+      "NLS.KdV.hillAbelianComplexRoot_conj_on_free_contour",
+      "NLS.KdV.hillAbelianComplexPeriod_conj_roots",
+      "NLS.KdV.hillRealLabel_mem_free_contour_ball_of_control",
+      "NLS.KdV.hillRealGap_mem_free_contour_ball_of_control",
+      "NLS.KdV.hillComplexSupportedPeriodMap_eq_zero_of_periods",
+      "NLS.KdV.exists_hillAbelianComplexPeriod_real_root_germ",
+      "NLS.KdV.exists_hillAbelianPhysicalNormalizedPeriod_germ"
+    ],
+    "source_correspondence": "Actual local physical Hill normalized differentials needed for the Birkhoff coordinates in Theorems 1 and 3(i), with the original free contours and source normalization. Verified Theorem 2 and Theorem 3(ii) action estimates are preserved.",
+    "hypotheses": "Real period-one L2 Hill potentials near zero. One actual common potential radius works for all free contour labels. For each selected n>=1 there is a genuine analytic supported root germ, vanishing at zero, with real coordinates on real potentials. The root-germ neighborhood may depend on n. Exact Kronecker-delta periods use division by the actual nonzero selected period and the actual canonical energy product root.",
+    "result": "Uniqueness of a continuous square root on the radial potential interval identifies the complex root chart with source continuation. Density of nonreal points extends canonical product/source equality to real band points. Spectral-label continuity and the intermediate value theorem prevent a real source-continuation point from crossing any spectral band edge. Thus all original free contours remain in the actual real cut and carry the physical canonical root on one potential ball, uniformly in their labels. The same avoidance argument places both endpoints and the entire physical gap strictly inside its assigned free circle. Exact conjugation of the genuine Hilbert numerator products and contour periods is proved. A shared analytic implicit-map local injectivity theorem and conjugation on the supported Hilbert root space prove reality of the selected root germs for real potentials. Direct comparison of integrands then gives exact normalized contour periods with the physical canonical root. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual complex root is now identified with the physical canonical energy root on all original free contours in one real potential ball. The constructed analytic root germs have real coordinates for real potentials, and their normalized entire numerators satisfy exact physical Kronecker-delta contour periods. Each complete physical spectral gap remains inside its original free circle. Containment of the numerator zeros inside those physical gaps, intrinsic moving-contour identification, uniform/global normalized differentials, global Abelian angles and the actual KdV Birkhoff map/action identity remain essential.",
+    "qualification": "The actual complex square-root chart is identified with the radial source continuation, then with the actual canonical energy product root for all original free contour labels on one real period-one l2-potential ball. Spectral-label continuity proves that these contours stay in the actual real cut domain and that each corresponding complete physical gap stays strictly inside its free isolating circle. This is isolation of the physical spectral gap; it does not yet place the constructed numerator zeros inside that gap. Exact conjugation of the actual entire Hilbert numerators and contour periods, plus a proved local uniqueness neighborhood for the augmented implicit map, makes the constructed root germ real on real potentials. For each selected label an actual local analytic normalized entire differential has real root coordinates and Kronecker-delta periods using the physical canonical root on the original free energy circles. Root-germ neighborhoods may depend on the selected label. Intrinsic moving-contour identification, real gap containment of numerator zeros, uniform/global normalized root construction, global angles and the actual KdV Birkhoff map/action identity remain unproved. Theorem 2 and Theorem 3(ii) remain verified; Theorems 1 and 3(i) remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual complex root is now identified with the physical canonical energy root on all original free contours in one real potential ball. The constructed analytic root germs have real coordinates for real potentials, and their normalized entire numerators satisfy exact physical Kronecker-delta contour periods. Each complete physical spectral gap remains inside its original free circle. Containment of the numerator zeros inside those physical gaps, intrinsic moving-contour identification, uniform/global normalized differentials, global Abelian angles and the actual KdV Birkhoff map/action identity remain essential."
   }
 }

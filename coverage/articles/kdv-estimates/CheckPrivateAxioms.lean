@@ -451,6 +451,18 @@ import NLS.KdV.HillComplexImplicitPeriodRoots
 import NLS.KdV.HillComplexPeriodLocalRootGerm
 import NLS.KdV.HillComplexNormalizedPeriodGerm
 import NLS.KdV.HillComplexNumeratorZeros
+import NLS.ComplexAnalysis.TraceRootBranchUniqueness
+import NLS.ComplexAnalysis.DenseNonreal
+import NLS.KdV.HillComplexRootSourceMatching
+import NLS.KdV.HillPhysicalRootSourceIdentification
+import NLS.KdV.HillSourceRealBandPreservation
+import NLS.KdV.HillFreeContourPhysicalRoot
+import NLS.KdV.HillAbelianPeriodConjugation
+import NLS.KdV.HillFreeContourSpectralGapIsolation
+import NLS.ComplexAnalysis.ImplicitLocalUniqueness
+import NLS.SequenceSpaces.PositiveDeletedConjugation
+import NLS.KdV.HillAbelianImplicitRootReality
+import NLS.KdV.HillPhysicalNormalizedPeriodGerm
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -814,7 +826,14 @@ run_cmd do
     ``NLS.ComplexAnalysis.norm_inv_sqrt_sub_one_le,
     ``NLS.ComplexAnalysis.mem_slitPlane_of_norm_sub_one_le_half,
     ``NLS.ComplexAnalysis.exists_uniform_sine_lower_annulus,
-    ``NLS.ComplexAnalysis.norm_normalized_circleIntegral_difference_le]
+    ``NLS.ComplexAnalysis.norm_normalized_circleIntegral_difference_le,
+    ``NLS.ComplexAnalysis.TracePrimitiveFamily.root_eq_continuous_radial_branch,
+    ``NLS.ComplexAnalysis.dense_complex_nonreal,
+    ``NLS.ComplexAnalysis.exists_injective_augmented_implicit_neighborhood,
+    ``NLS.Coeff.positiveDeletedConjugate,
+    ``NLS.Coeff.positiveDeletedConjugate_coe,
+    ``NLS.Coeff.positiveDeletedConjugate_zero,
+    ``NLS.Coeff.continuous_positiveDeletedConjugate]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
