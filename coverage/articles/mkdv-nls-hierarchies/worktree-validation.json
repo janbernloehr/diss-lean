@@ -7,7 +7,7 @@
   "status": "partial_main_theorems_incomplete",
   "focused_check_passed": true,
   "transitive_axiom_audit_passed": true,
-  "audited_declarations_and_auxiliaries": 5392,
+  "audited_declarations_and_auxiliaries": 5544,
   "allowed_axioms": [
     "propext",
     "Classical.choice",
@@ -14169,14 +14169,259 @@
       "kind": "theorem",
       "name": "theorem3_m1_frequency_normalization",
       "file": "NLS/Articles/MKdVNLSHierarchies/FrequencyIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_commutative_bilinear_square",
+      "file": "NLS/ComplexAnalysis/CommutativeBilinearSquare.lean"
+    },
+    {
+      "kind": "def",
+      "name": "periodOneSobolevProduct",
+      "file": "NLS/ZakharovShabat/PeriodOneSobolevProduct.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneSobolevProduct_eq_convolution",
+      "file": "NLS/ZakharovShabat/PeriodOneSobolevProduct.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneSobolevProduct_apply",
+      "file": "NLS/ZakharovShabat/PeriodOneSobolevProduct.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarInclusion_periodOneSobolevProduct",
+      "file": "NLS/ZakharovShabat/PeriodOneSobolevProduct.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneSobolevProduct_comm",
+      "file": "NLS/ZakharovShabat/PeriodOneSobolevProduct.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneDerivative_periodOneSobolevProduct",
+      "file": "NLS/ZakharovShabat/PeriodOneSobolevProduct.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneSobolevProduct_toL1",
+      "file": "NLS/ZakharovShabat/PeriodOneSobolevProductPairing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneSobolevSynthesis_product",
+      "file": "NLS/ZakharovShabat/PeriodOneSobolevProductPairing.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reflectedHilbertPairing_sobolevProduct",
+      "file": "NLS/ZakharovShabat/PeriodOneSobolevProductPairing.lean"
+    },
+    {
+      "kind": "def",
+      "name": "periodOneL2Multiplication",
+      "file": "NLS/ZakharovShabat/PeriodOneL2Multiplication.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneL2Multiplication_inclusion",
+      "file": "NLS/ZakharovShabat/PeriodOneL2Multiplication.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneSobolevProduct_assoc",
+      "file": "NLS/ZakharovShabat/PeriodOneL2Multiplication.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reflectedHilbertPairing_L2Multiplication",
+      "file": "NLS/ZakharovShabat/PeriodOneL2Multiplication.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneL2Multiplication_assoc",
+      "file": "NLS/ZakharovShabat/PeriodOneL2Multiplication.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "periodOneDerivative_product_L2",
+      "file": "NLS/ZakharovShabat/PeriodOneL2Multiplication.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reflectedHilbertPairing_product_cross",
+      "file": "NLS/ZakharovShabat/PeriodOneSobolevProductIntegration.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reflectedHilbertPairing_product_derivative",
+      "file": "NLS/ZakharovShabat/PeriodOneSobolevProductIntegration.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "reflectedHilbertPairing_square_product_derivative",
+      "file": "NLS/ZakharovShabat/PeriodOneSobolevProductIntegration.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillWeakMagriBivector",
+      "file": "NLS/Poisson/HillWeakMagri.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hillWeakMagriBivector_antisymm",
+      "file": "NLS/Poisson/HillWeakMagri.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMiuraUnitPotential_eq_product",
+      "file": "NLS/MKdV/SobolevMiuraDifferential.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevMiuraDifferential",
+      "file": "NLS/MKdV/SobolevMiuraDifferential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_sobolevMiuraUnitPotential",
+      "file": "NLS/MKdV/SobolevMiuraDifferential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "fderiv_sobolevMiuraUnitPotential",
+      "file": "NLS/MKdV/SobolevMiuraDifferential.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevHillTestInclusion",
+      "file": "NLS/MKdV/SobolevMiuraDifferential.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevHillTestDerivative",
+      "file": "NLS/MKdV/SobolevMiuraDifferential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "scalarInclusion_sobolevHillTestDerivative",
+      "file": "NLS/MKdV/SobolevMiuraDifferential.lean"
+    },
+    {
+      "kind": "def",
+      "name": "sobolevMiuraAdjoint",
+      "file": "NLS/MKdV/SobolevMiuraDifferential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMiuraDifferential_pairing",
+      "file": "NLS/MKdV/SobolevMiuraDifferential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasFDerivAt_sobolevMiura_pullback",
+      "file": "NLS/MKdV/SobolevMiuraDifferential.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraWeakMagriTransfer",
+      "file": "NLS/MKdV/MiuraWeakMagriTransfer.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "gradient_unique",
+      "file": "NLS/Poisson/SobolevGardnerGradient.lean"
+    },
+    {
+      "kind": "def",
+      "name": "bracket",
+      "file": "NLS/Poisson/SobolevGardnerGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "bracket_antisymm",
+      "file": "NLS/Poisson/SobolevGardnerGradient.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "bracket_choice_independent",
+      "file": "NLS/Poisson/SobolevGardnerGradient.lean"
+    },
+    {
+      "kind": "def",
+      "name": "hillSobolevMagriBivector",
+      "file": "NLS/MKdV/SobolevMiuraMagriCanonical.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraSobolevPullbackGradient",
+      "file": "NLS/MKdV/SobolevMiuraMagriCanonical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMiuraPullbackGradient_bracket_eq_Magri",
+      "file": "NLS/MKdV/SobolevMiuraMagriCanonical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMiura_bracket_eq_Magri_of_gradients",
+      "file": "NLS/MKdV/SobolevMiuraMagriCanonical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "sobolevMiura_Magri_independent_of_representative",
+      "file": "NLS/MKdV/SobolevMiuraMagriCanonical.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "exists_hasDerivAt_miuraActionFlow_zero",
+      "file": "NLS/MKdV/MiuraNativeActionFlowDerivative.lean"
+    },
+    {
+      "kind": "def",
+      "name": "miuraNativeActionVelocity",
+      "file": "NLS/MKdV/MiuraNativeActionFlowDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_miuraActionFlow_native_zero",
+      "file": "NLS/MKdV/MiuraNativeActionFlowDerivative.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeActionVelocity_L2_source",
+      "file": "NLS/MKdV/MiuraNativeActionVelocityGardner.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "miuraNativeActionVelocity_L2_Gardner",
+      "file": "NLS/MKdV/MiuraNativeActionVelocityGardner.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "hasDerivAt_independent_functional_miuraActionFlow",
+      "file": "NLS/MKdV/MiuraNativeActionFlowChainRule.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_Miura_Gardner_Magri_transfer",
+      "file": "NLS/Articles/MKdVNLSHierarchies/MiuraMagriIdentification.lean"
+    },
+    {
+      "kind": "theorem",
+      "name": "physical_action_flow_native_Gardner_tangent",
+      "file": "NLS/Articles/MKdVNLSHierarchies/MiuraMagriIdentification.lean"
     }
   ],
-  "public_declaration_count": 2830,
-  "theorem_count": 2312,
-  "definition_count": 518,
-  "full_build": "534 article/shared modules have validated private outputs. All 518 unchanged prefix module source hashes match the prior 8e99597 milestone; their private outputs were reused. Sixteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
+  "public_declaration_count": 2879,
+  "theorem_count": 2350,
+  "definition_count": 529,
+  "full_build": "548 article/shared modules have validated private outputs. All 534 unchanged prefix module source hashes match the prior e655360 milestone; their private outputs were reused. Fourteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source.",
   "aggregate_imports": "deferred to sequential main integration",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/FDerivRealFormUnique.lean",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/ComplexAnalysis/CommutativeBilinearSquare.lean; after removing one trailing space, repeated --full-audit --resume-from NLS/MKdV/MiuraWeakMagriTransfer.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -14712,12 +14957,26 @@
     "NLS/MKdV/MiuraHigherSobolevOpenAngleDensity.lean": "a7a65f923621830272c02335515a613b3d1ca0081c437fb0d194ebb0ab24d550",
     "NLS/MKdV/MiuraEvenFrequencySharpExtension.lean": "2e04d354d90718381ff546f79a7fd844d8643c515168e807802e2c13cbfc0d02",
     "NLS/Articles/MKdVNLSHierarchies/FrequencyIdentification.lean": "5c0b1a0e6bf4fb523b31f9814643cf1ac80dac0bc5920a6d9c7b3d85213d08ab",
-    "NLS.lean": "8b7ce4ad52dd4f8dbc054e0bd1b7e6adc03480720e8557f9a8f54e461da6e8c6",
-    "scripts/check_mkdv_nls.py": "01e09e7841e57dbe6ec8a95b3e1d154ab1c85d5850ad1974cdd8debbb4a0e02f",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "71619e9c23f4df191bd217fdaad1b9b67ee9298592528909f0093c415272f655"
+    "NLS/ComplexAnalysis/CommutativeBilinearSquare.lean": "32d465faad6c2dad93008c89b5908acda9682e9925c7a23e66591613ecf141aa",
+    "NLS/ZakharovShabat/PeriodOneSobolevProduct.lean": "8a5ef5574eba44b51e653818265bc9decb4f3751137d55883de250d27ec7e236",
+    "NLS/ZakharovShabat/PeriodOneSobolevProductPairing.lean": "095700e59e5e3561c5fcf1c448525f76c933266d09e5b9983664e46e59aec7fa",
+    "NLS/ZakharovShabat/PeriodOneL2Multiplication.lean": "0c77f641239d36598ef607203f24c5477d2b739be17820f62f15aff824242a84",
+    "NLS/ZakharovShabat/PeriodOneSobolevProductIntegration.lean": "394431687905f40fce8c6ecb3e5a8b0da5bec70b66309a628acf49cbecff8620",
+    "NLS/Poisson/HillWeakMagri.lean": "02e81d96cdde67c77455fcc73475b18b417f9f69d264c88805007e386e6b57c2",
+    "NLS/MKdV/SobolevMiuraDifferential.lean": "f2496902d5d2b94de99803ffd6092b1e4f3013809e7674553e0d9acb6258964b",
+    "NLS/MKdV/MiuraWeakMagriTransfer.lean": "589327c257bc6a0adf163c21aec34682dd01f3b111162e27c8347baec3b8811e",
+    "NLS/Poisson/SobolevGardnerGradient.lean": "f5a8fa4c3067b3c7865db578abc8ff0341198b275e129a62a31892641fb56818",
+    "NLS/MKdV/SobolevMiuraMagriCanonical.lean": "b5b4919fe304bcc70aea0bf4053ff4c3c145bfa65480c1d19da310b586165407",
+    "NLS/MKdV/MiuraNativeActionFlowDerivative.lean": "5dbd292bec00468755a507a8867307fa97981b67746a7c6539ccc8f45fa9fd19",
+    "NLS/MKdV/MiuraNativeActionVelocityGardner.lean": "48b09ceda573bd0e3b29db8aaa10067c35fa164d91cfcfcf16a6bf2f8d55b12b",
+    "NLS/MKdV/MiuraNativeActionFlowChainRule.lean": "b5552dc86e9f3459036a035479290ff2d0f7e0251595230efbfcb92e8d06cddf",
+    "NLS/Articles/MKdVNLSHierarchies/MiuraMagriIdentification.lean": "e2088035c909286ea247d24ada8dabb9da13a18d75fbcacae1c8edf6f528b636",
+    "NLS.lean": "554b0577114bbbb6d0eae7c4d485a3c0c140fb7c7aa498cb0213d25381834888",
+    "scripts/check_mkdv_nls.py": "318dd404b1c5a03543c2ed5da650151013d1c746dc758826ee2fbaa5bdc62334",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "03ef6679ce0836425089fd8569320122aa89710be9a674b5a0460dbe385b1dad"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 534,
+  "focused_module_count": 548,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -15195,12 +15454,25 @@
       "public_declaration_count": 2830,
       "theorem_count": 2312,
       "definition_count": 518
+    },
+    {
+      "milestone": "Actual full complex H1 Miura-Gardner-to-weak-Magri functional bracket transfer, gradient uniqueness and representative independence; native Hs action-flow differentiability and actual physical Gardner tangents for all s>=1; actual H1 functional chain rules without L2 extension. Independent original mKdV angles and final Theorem4iii angle-sum remain open.",
+      "audit_count": 5544,
+      "combined_NLS_audit_count": 50463,
+      "aggregate_compiled": true,
+      "module_count": 548,
+      "reused_prefix_module_count": 534,
+      "reused_prefix_commit": "e6553602c53e963f7afcfd61753dc9a8c4de0229",
+      "frozen_source_checker_count": 551,
+      "public_declaration_count": 2879,
+      "theorem_count": 2350,
+      "definition_count": 529
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 50328,
+  "combined_audited_NLS_declarations": 50463,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -15208,7 +15480,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 518 unchanged prefix module source hashes match the prior 8e99597 milestone; their private outputs were reused. Sixteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 5392 declarations/auxiliaries and combined audit for 50328 NLS declarations. All 537 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased.",
+  "last_run_notes": "All 534 unchanged prefix module source hashes match the prior e655360 milestone; their private outputs were reused. Fourteen added modules and the NLS aggregate compiled with warnings as errors. Complete targeted and combined audits rerun under the shared lock using pinned cached imports. Entire dependency tree not rebuilt from source. Targeted audit passed for 5544 declarations/auxiliaries and combined audit for 50463 NLS declarations. All 551 mathematical source/checker/aggregate inputs still match their frozen hashes; no mathematical source changed after validation. Kernel, recursion and heartbeat limits were not increased. Final trailing-whitespace cleanup was followed by recompilation from MiuraWeakMagriTransfer through the aggregate and both complete axiom audits, with the same counts. All final 551 frozen inputs match.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",

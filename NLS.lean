@@ -4923,3 +4923,17 @@ import NLS.ZakharovShabat.SourceAuxiliaryExplicitHeight
 import NLS.ZakharovShabat.PeriodTwoExplicitHeight
 import NLS.ZakharovShabat.SourceCorrectedHeightContours
 import NLS.ZakharovShabat.SourceLemma34CorrectedSubsums
+import NLS.ComplexAnalysis.CommutativeBilinearSquare
+import NLS.ZakharovShabat.PeriodOneSobolevProduct
+import NLS.ZakharovShabat.PeriodOneSobolevProductPairing
+import NLS.ZakharovShabat.PeriodOneL2Multiplication
+import NLS.ZakharovShabat.PeriodOneSobolevProductIntegration
+import NLS.Poisson.HillWeakMagri
+import NLS.MKdV.SobolevMiuraDifferential
+import NLS.MKdV.MiuraWeakMagriTransfer
+import NLS.Poisson.SobolevGardnerGradient
+import NLS.MKdV.SobolevMiuraMagriCanonical
+import NLS.MKdV.MiuraNativeActionFlowDerivative
+import NLS.MKdV.MiuraNativeActionVelocityGardner
+import NLS.MKdV.MiuraNativeActionFlowChainRule
+import NLS.Articles.MKdVNLSHierarchies.MiuraMagriIdentification

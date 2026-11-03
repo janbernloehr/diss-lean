@@ -2635,3 +2635,39 @@ is a possible route to this dependency, rather than an extra source
 conclusion. The overall main-theorem goal remains active.
 
 Validation: all 534 article/shared modules have validated private outputs. All 518 unchanged prefix source hashes match pushed 8e99597 and their outputs were reused; all sixteen added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 5,392 declarations/auxiliaries and the combined audit for 50,328 NLS declarations, using only the standard allowed axioms. All 537 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,830 declarations (2,312 theorems and 518 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.
+
+
+## Actual H¹ Miura–Magri transfer and native action-flow tangents
+
+The new shared Poisson adapter proves the actual complex H¹ Miura map
+B(u)=u_x+u² is differentiable and pulls back physical Hill functionals
+with H² gradients to actual H¹ Gardner gradients. Its transpose is
+T_u* f=-f_x+2uf. For all complex H¹ u and H² test gradients f,g,
+the pulled-back bracket is the independently defined weak Magri bivector
+
+`<f_x,g_xx> + 2 <B(u), f g_x - f_x g>`.
+
+The pairing is the complex bilinear physical Fourier pairing. Products,
+L² multiplication, their transposes, the Leibniz rule and integration by
+parts are proved at the stated rough regularity. No derivative of the L²
+potential is assumed. `physical_Miura_Gardner_Magri_transfer` applies to
+ANY actual H¹ gradient representatives, whose uniqueness is proved by
+finite physical Fourier variations. The transfer is independent of the
+Miura representative, including at zero mean. No Jacobi theorem for an
+arbitrary weak bivector is asserted.
+
+`physical_action_flow_native_Gardner_tangent` proves that every original
+positive-index action flow has a derivative in each native H^s norm,
+s>=1, at every real profile, including closed selected actions. The actual
+Cartesian inverse chart lifts the finite-plane rotation derivative; its
+L² inclusion is proved equal to the original physical Gardner action
+field. `hasDerivAt_independent_functional_miuraActionFlow` then supplies
+the actual chain rule for independent H¹ functionals with H¹ physical
+gradients, without assuming they extend to L².
+
+These are necessary analytic adapters for the remaining independent
+mKdV angles. Theorem 4(iii)'s independent angle identification and final
+angle-sum factorization remain OPEN. Theorem 3 remains COMPLETE at every
+order on its corrected exact domain, as recorded in the preceding milestone.
+
+Validation: all 548 article/shared modules have validated private outputs. All 534 unchanged prefix source hashes match pushed e655360 and their outputs were reused; all fourteen added modules and the aggregate compiled with warnings as errors. The full targeted audit passed for 5,544 declarations/auxiliaries and the combined audit for 50,463 NLS declarations, using only standard allowed axioms. All 551 mathematical source/checker/aggregate hashes match the frozen inputs. The public inventory is 2,879 declarations (2,350 theorems and 529 definitions). Pinned cached dependencies were used; the entire dependency tree was not rebuilt from source. Kernel, recursion and heartbeat limits were not increased.

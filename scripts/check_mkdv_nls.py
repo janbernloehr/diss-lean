@@ -568,6 +568,20 @@ modules = [
     'NLS/MKdV/MiuraHigherSobolevOpenAngleDensity.lean',
     'NLS/MKdV/MiuraEvenFrequencySharpExtension.lean',
     'NLS/Articles/MKdVNLSHierarchies/FrequencyIdentification.lean',
+    'NLS/ComplexAnalysis/CommutativeBilinearSquare.lean',
+    'NLS/ZakharovShabat/PeriodOneSobolevProduct.lean',
+    'NLS/ZakharovShabat/PeriodOneSobolevProductPairing.lean',
+    'NLS/ZakharovShabat/PeriodOneL2Multiplication.lean',
+    'NLS/ZakharovShabat/PeriodOneSobolevProductIntegration.lean',
+    'NLS/Poisson/HillWeakMagri.lean',
+    'NLS/MKdV/SobolevMiuraDifferential.lean',
+    'NLS/MKdV/MiuraWeakMagriTransfer.lean',
+    'NLS/Poisson/SobolevGardnerGradient.lean',
+    'NLS/MKdV/SobolevMiuraMagriCanonical.lean',
+    'NLS/MKdV/MiuraNativeActionFlowDerivative.lean',
+    'NLS/MKdV/MiuraNativeActionVelocityGardner.lean',
+    'NLS/MKdV/MiuraNativeActionFlowChainRule.lean',
+    'NLS/Articles/MKdVNLSHierarchies/MiuraMagriIdentification.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

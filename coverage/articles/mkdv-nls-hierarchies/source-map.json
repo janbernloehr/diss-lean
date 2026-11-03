@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "article_id": "mkdv-nls-hierarchies",
-  "status": "partial_theorems_1_2_4i_and_corrected_4ii_proved_theorem3_and_4iii_angle_sum_incomplete",
+  "status": "partial_theorems_1_2_3_4i_and_corrected_4ii_proved_4iii_independent_angles_and_angle_sum_incomplete",
   "source": {
     "abstract_url": "https://arxiv.org/abs/1601.07580v1",
     "pdf_url": "https://arxiv.org/pdf/1601.07580v1",
@@ -91,10 +91,10 @@
     {
       "label": "Theorem 3",
       "page": 4,
-      "status": "partial_independent_native_global_action_normal_forms_and_intrinsic_frequencies_proved_NLS_comparison_open",
+      "status": "proved_all_orders_corrected_positive_sign_full_original_real_Hm_minus_1_including_closed_actions",
       "quantifiers": "forall integers n>=1 and m>=1, on real H^(m-1)",
       "printed_target": "(-1)^m omega_(n,2m)# = eta_(n,m)",
-      "source_issue": "The p.18 proof gives eta=omega without this parity factor; reconcile the physical conventions before formalizing.",
+      "source_issue": "Printed parity factor is false: checked m=1, zero-profile, n=1 counterexample; both original frequencies equal +2*pi*n at m=1.",
       "proved_dependencies": [
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_free_jacobian_allSobolev",
         "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_inverse_allSobolev",
@@ -126,9 +126,19 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_action_frequency_analytic",
         "NLS.Articles.MKdVNLSHierarchies.physical_Hill_mass_action_frequency"
       ],
-      "remaining_work": [
-        "Identify and compare the actual original even-order NLS frequencies with the intrinsic physical Hill action derivatives on the full real H^(m-1) domain, including m=1 and closed actions.",
-        "Reconcile the printed parity factor with the actual period-one Hamiltonian, Poisson and frequency conventions; the physical mass action derivative is proved to be +2*pi*n."
+      "remaining_work": [],
+      "corrected_target": "omega_(n,2m)# = eta_(n,m)",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_corrected",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_corrected_for_any_original_frequency_extension",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_original_bracket_agreement",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_original_frequency_extension_certificate",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_frequency_holomorphic_extension",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_m1_frequency_normalization",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_printed_parity_counterexample"
+      ],
+      "limits": [
+        "Restricted original NLS frequency is specified by its actual S_(2m) angle bracket on real H^m with the selected gap open and its proved unique continuous extension to all real H^(m-1), including every closed action. A single open complex H^(m-1) neighborhood containing every real profile supplies a holomorphic extension. Equality holds with the raw J_n derivative of any independent physical Hill normal form."
       ]
     },
     {
@@ -286,7 +296,10 @@
         "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_determined_by_mKdV_actions_mean",
         "NLS.Articles.MKdVNLSHierarchies.physical_mKdV_native_action_data_realization",
         "NLS.Articles.MKdVNLSHierarchies.physical_H1_Hill_action_data_realization",
-        "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_general_H1_Cartesian_chart"
+        "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_general_H1_Cartesian_chart",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Miura_Gardner_Magri_transfer",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_flow_native_Gardner_tangent",
+        "NLS.MKdV.hasDerivAt_independent_functional_miuraActionFlow"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -453,12 +466,11 @@
   "spectral_adapter_pending": {
     "article_upper_right_potential": "phi2",
     "library_classicalODECoefficient_upper_right": "i*phi.1",
-    "remaining": "The diagonal physical discriminant, original fixed-index endpoints, canonical sheets and actual weighted contour actions have now been identified. Remaining normal-form angle, frequency and Poisson-bracket conventions must be carried through their actual constructions."
+    "remaining": "Independent original mKdV angle identification and final Theorem 4(iii) angle-sum factorization. Corrected all-order frequency comparison is complete."
   },
   "remaining_essential_dependencies": [
-    "Independent canonical mKdV Birkhoff angles/full Gardner canonicity. Global native Cartesian bijectivity, arbitrary native nonnegative action realization and corrected Theorem 4(ii) global forward/converse action factors are proved. Arbitrary rough L2-target inversion remains unproved but is not asserted by these H1 theorems.",
-    "Theorem 4(iii) final angle-sum factorization through physical mKdV actions and signed mean for the independent mKdV angle. Its printed angle-action bracket clause and actual Gardner transfer are already proved.",
-    "Theorem 3 full frequency comparison on the exact original real H^(m-1) domains, including its L2 mass endpoint and collapsed actions, with the recorded correction of the printed (-1)^m sign convention. All corrected Theorem 4(ii) action-dependence clauses are proved."
+    "Independently identify the original mKdV angle family with its negative Gardner action brackets; the current scaled-NLS Cartesian map only has same-plane and mixed action canonicity proved. Full cross-mode canonicity is one possible route, not an extra source conclusion.",
+    "Prove Theorem 4(iii) final theta_NLS# + vartheta factorization through physical mKdV actions and literal signed mean. Its original NLS angle-action bracket clause is already proved."
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -1293,6 +1305,21 @@
       "No global Gardner canonicity or cross-mode Cartesian zero brackets are assumed or inferred.",
       "Theorem 3 and the final independent-angle/angle-sum clause of Theorem 4(iii) remain incomplete.",
       "No global inverse on arbitrary rough original L2 Cartesian target data is used or asserted."
+    ]
+  },
+  "milestone_history_note": "Older dependency milestone sections retain their original scope; the main_statements and remaining_essential_dependencies fields describe the current status.",
+  "actual_H1_Miura_Magri_transfer_and_native_action_flow_tangents": {
+    "status": "proved_full_complex_H1_transfer_and_all_native_positive_Sobolev_real_action_tangents",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_Miura_Gardner_Magri_transfer",
+      "NLS.Articles.MKdVNLSHierarchies.physical_action_flow_native_Gardner_tangent",
+      "NLS.MKdV.hasDerivAt_independent_functional_miuraActionFlow",
+      "NLS.MKdV.sobolevMiura_Magri_independent_of_representative"
+    ],
+    "scope": "For every complex H1 source and actual Hill functionals with H2 gradients, actual pullback Gardner brackets equal the independently defined weak Hill Magri bivector. Any actual gradient representatives agree. Native positive-index action flows have Hs derivatives for all integer s>=1 at every real profile, retaining the original L2 Gardner coefficients; H1 functional chain rules follow without L2 extension.",
+    "limits": [
+      "Independent original mKdV angles and final angle-sum factorization remain open.",
+      "No arbitrary-potential weak-Magri Jacobi identity or cross-mode Cartesian canonicity is inferred."
     ]
   }
 }
