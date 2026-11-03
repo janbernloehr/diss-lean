@@ -5331,3 +5331,13 @@ import NLS.KdV.HillGapRootHilbertCoordinates
 import NLS.KdV.HillAbelianHilbertPeriods
 import NLS.KdV.HillAbelianComplexRoot
 import NLS.KdV.HillAbelianComplexPeriods
+import NLS.ComplexAnalysis.HilbertPositiveProducts
+import NLS.SequenceSpaces.PositiveDeletedProjection
+import NLS.SequenceSpaces.PositiveDeletedSpace
+import NLS.KdV.HillFreeAbelianResidue
+import NLS.KdV.HillFreeSeparatedWeights
+import NLS.KdV.HillFreeAbelianProductSeparation
+import NLS.KdV.HillFreeScaledPeriodIdentity
+import NLS.KdV.HillFreePeriodSequence
+import NLS.KdV.HillFreePeriodDerivative
+import NLS.KdV.HillFreeSupportedPeriodMap

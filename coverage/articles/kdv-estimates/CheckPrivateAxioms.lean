@@ -408,6 +408,16 @@ import NLS.KdV.HillGapRootHilbertCoordinates
 import NLS.KdV.HillAbelianHilbertPeriods
 import NLS.KdV.HillAbelianComplexRoot
 import NLS.KdV.HillAbelianComplexPeriods
+import NLS.ComplexAnalysis.HilbertPositiveProducts
+import NLS.SequenceSpaces.PositiveDeletedProjection
+import NLS.SequenceSpaces.PositiveDeletedSpace
+import NLS.KdV.HillFreeAbelianResidue
+import NLS.KdV.HillFreeSeparatedWeights
+import NLS.KdV.HillFreeAbelianProductSeparation
+import NLS.KdV.HillFreeScaledPeriodIdentity
+import NLS.KdV.HillFreePeriodSequence
+import NLS.KdV.HillFreePeriodDerivative
+import NLS.KdV.HillFreeSupportedPeriodMap
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -747,7 +757,19 @@ run_cmd do
     ``NLS.Coeff.positivePuncturedLattice,
     ``NLS.Coeff.positivePuncturedLattice_apply,
     ``NLS.Coeff.positivePuncturedLattice_natSucc,
-    ``NLS.Coeff.norm_positivePuncturedLattice_two_le]
+    ``NLS.Coeff.norm_positivePuncturedLattice_two_le,
+    ``NLS.ComplexAnalysis.hilbertWeightedProduct_eq_positive_tprod,
+    ``NLS.ComplexAnalysis.multipliable_positive_hilbertWeightedFactors,
+    ``NLS.ComplexAnalysis.hilbertWeightedProduct_zero,
+    ``NLS.Coeff.positiveDeletedSymbol,
+    ``NLS.Coeff.positiveDeletedProjection,
+    ``NLS.Coeff.positiveDeletedProjection_apply,
+    ``NLS.Coeff.positiveDeletedProjection_eq_self_iff,
+    ``NLS.Coeff.positiveDeletedProjection_idempotent,
+    ``NLS.PositiveDeletedCoeff,
+    ``NLS.Coeff.positiveDeleted_fixed,
+    ``NLS.Coeff.positiveDeletedProjectionTo,
+    ``NLS.Coeff.positiveDeletedProjectionTo_coe]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
