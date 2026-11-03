@@ -5567,3 +5567,9 @@ import NLS.ComplexAnalysis.QuadraticGapActionMoment
 import NLS.KdV.HillActionGapFactor
 import NLS.KdV.HillDeflatedTraceChi
 import NLS.KdV.HillActionGapRatioAnalytic
+import NLS.KdV.HillActionGapRatioAllBase
+import NLS.KdV.HillOwnGapFactor
+import NLS.KdV.HillOwnGapFactorAnalytic
+import NLS.KdV.HillActionGapPrefactor
+import NLS.KdV.HillOwnCartesianAmplitude
+import NLS.KdV.HillOwnAmplitudeAnalytic

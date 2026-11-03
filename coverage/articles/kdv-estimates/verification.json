@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 5045,
+    "declarations": 5083,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -464,7 +464,7 @@
       "NLS.ComplexAnalysis.circleIntegral_mul_div_endpointRoot_eq_squared_gap"
     ]
   },
-  "full_repository_validation": "All 645 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 636-module base has strict validation recorded at commit 2105edee5f7c542d6fb043892926c46b61690a3d (complete 583-module strict focused run plus 53 isolated additions, with all 636 base source hashes unchanged; the last successful aggregate covered 606 modules and subsequent aggregate attempts were deferred by the shared lock), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5045-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 645-module focused script, full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 651 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 645-module base has strict validation recorded at commit 3daee72021b3946b062739521789d43193e4cf19 (complete 583-module strict focused run plus 62 isolated additions, with all 645 base source hashes unchanged; the full 645-module NLS aggregate import check passed under the shared lock), and all 6 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5083-declaration transitive axiom audit passed. The current aggregate import check was deferred because the shared build lock remained occupied (actual exit 75). The last successful aggregate check covered 645 focused modules; no current 651-module aggregate success is claimed. The full 651-module focused script, full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -1111,10 +1111,16 @@
     "NLS/ComplexAnalysis/QuadraticGapActionMoment.lean": "78bb98fe2091bedb91f0600dc41dcd0135f16a5d5af2b2fee29c302fc5d43e89",
     "NLS/KdV/HillActionGapFactor.lean": "2b5529c1a73f642022b8367a37d23c05d4a600eae6444ebcd18ad89a840c9f75",
     "NLS/KdV/HillDeflatedTraceChi.lean": "c552d667d6296e02a3a08a1f72acf12a1617a5a9c0c0f5448a8120081993f4fc",
-    "NLS/KdV/HillActionGapRatioAnalytic.lean": "2291a4efa0c8ea4a61637e3f2a34cf122f88b716a6cd5d0072109109ed8204a2"
+    "NLS/KdV/HillActionGapRatioAnalytic.lean": "2291a4efa0c8ea4a61637e3f2a34cf122f88b716a6cd5d0072109109ed8204a2",
+    "NLS/KdV/HillActionGapRatioAllBase.lean": "2675baeef34528d83aae75f88f51c17e34c60346882b835e84a5b9ccd738dba7",
+    "NLS/KdV/HillOwnGapFactor.lean": "87fb00667b518936dc7bafb556a3588ff70580ab55f69c9a8486468fb269c6c2",
+    "NLS/KdV/HillOwnGapFactorAnalytic.lean": "e388e2ed7bea5c47d862054bddba33f9b95a94142ac4688d17771423185db69a",
+    "NLS/KdV/HillActionGapPrefactor.lean": "ed69b46903b44d5dfa17e11e26c14288b77c7dc8916836e6918f3081c61bde73",
+    "NLS/KdV/HillOwnCartesianAmplitude.lean": "b106bbbaaa161a922d3906e70a49680d893e2c41543a744491edf09688ebad60",
+    "NLS/KdV/HillOwnAmplitudeAnalytic.lean": "47e70b35899aad11908949ffd2b8781c4ef55e089d4ca87e714ff2b3dfb943d8"
   },
-  "remaining": "Actual continuous spectral Cartesian coordinates retain their exact pointwise action identity. The actual Hill action now factors as the squared half-gap times a regular positive real ratio. That ratio has an analytic scalar extension at each collapsed real base, agrees with the physical ratio at nearby real potentials, and has exact positive collapsed value chi_n/2. Its analytic nonvanishing square root still needs to be combined with the actual Dirichlet and monodromy data to regularize the own-gap Cartesian amplitude analytically. The infinite physical correction still requires complex locally uniform estimates and analytic dependence. Canonical brackets, global inverse and identification with the same physical KdV Birkhoff map used in the source remain unproved. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
-  "milestone": "Analytic squared-gap action factorization for physical Hill coordinates",
+  "remaining": "The actual action/gap ratio now has scalar complex analytic germs at every real base, and its positive square-root prefactor is fixed by the actual real action. The own-gap Cartesian amplitude is constructed without division by the half-gap, has an analytic scalar extension at every real base including collapse, agrees with the original physical radius/phase formula, and retains the exact action identity. Its zero set and that of the full spectral coordinate are exactly the collapsed own gaps. The full coordinate factors as this analytic own-gap amplitude times the exponential of the continuous infinite physical correction. Complex locally uniform high-gap correction estimates and analyticity of that infinite correction remain unproved, as do canonical brackets, global inverse and identification with the same physical KdV Birkhoff map used in the source. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+  "milestone": "Analytic actual Hill own-gap Cartesian amplitudes at every real base",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -1762,7 +1768,13 @@
     "NLS.ComplexAnalysis.QuadraticGapActionMoment",
     "NLS.KdV.HillActionGapFactor",
     "NLS.KdV.HillDeflatedTraceChi",
-    "NLS.KdV.HillActionGapRatioAnalytic"
+    "NLS.KdV.HillActionGapRatioAnalytic",
+    "NLS.KdV.HillActionGapRatioAllBase",
+    "NLS.KdV.HillOwnGapFactor",
+    "NLS.KdV.HillOwnGapFactorAnalytic",
+    "NLS.KdV.HillActionGapPrefactor",
+    "NLS.KdV.HillOwnCartesianAmplitude",
+    "NLS.KdV.HillOwnAmplitudeAnalytic"
   ],
   "proof_commits": [
     {
@@ -2209,13 +2221,18 @@
       "commit": "2105edee5f7c542d6fb043892926c46b61690a3d",
       "scope": "Locally uniform quadratic correction tails and continuity of the infinite physical regular correction. Actual Dirichlet circle phases and continuous actual spectral Cartesian coordinates satisfy the pointwise action identity and all-terminal Abelian exponential formula. Seven isolated strict additions and the 4982-declaration audit passed, extending the unchanged 629-module base to 636; the aggregate attempt was deferred by the shared lock.",
       "pushed": true
+    },
+    {
+      "commit": "3daee72021b3946b062739521789d43193e4cf19",
+      "scope": "Exact physical action factorization by the squared half-gap and a positive real regular ratio. Weighted analytic means construct scalar ratio germs through collapsed gaps, with exact physical matching and collapsed value chi_n/2. Nine isolated strict additions and the 5045-declaration audit passed; the complete 645-module NLS aggregate check also passed under the shared lock.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
-    "status": "passed",
-    "exit_code": 0,
+    "status": "deferred_shared_lock_busy",
+    "exit_code": 75,
     "command": "flock -w 45 -E 75 /tmp/diss-lean-article-build.lock bash work/lean-worktree.sh -DwarningAsError=true -o .lake/build/lib/lean/NLS.olean NLS.lean",
-    "scope": "The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock.",
+    "scope": "The current aggregate import check was deferred because the shared build lock remained occupied (actual exit 75). The last successful aggregate check covered 645 focused modules; no current 651-module aggregate success is claimed.",
     "full_lake_build_or_full_examples_claimed": false
   },
   "worktree_attachment": {
@@ -2225,54 +2242,48 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "645 focused modules covered by the unchanged 636-module strictly validated base plus 9 isolated strict module checks; no fresh complete focused-script run is claimed.",
+    "focused_modules": "651 focused modules covered by the unchanged 645-module strictly validated base plus 6 isolated strict module checks; no fresh complete focused-script run is claimed.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 5045 declarations. Includes weighted even cosine means and analytic square descent, exact first cosine moment integration by parts, zero-period squared-gap contour factorization, local and physical deflated trace numerators, critical-product identification through the real gap, exact physical action factorization, local analytic ratio germs at collapse, their physical matching, and positivity with the exact chi_n/2 collapsed value.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 5083 declarations. Includes all-base analytic actual action/gap ratio germs and continuity, positive physical square-root prefactors, exact action-radius factorization, intrinsic actual Dirichlet/monodromy own-gap factors and their analytic extensions, actual own-gap Cartesian amplitudes, exact phase and action identities, all-base analytic amplitude extensions and exact collapsed-gap zero loci.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 645 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 636-module base has strict validation recorded at commit 2105edee5f7c542d6fb043892926c46b61690a3d (complete 583-module strict focused run plus 53 isolated additions, with all 636 base source hashes unchanged; the last successful aggregate covered 606 modules and subsequent aggregate attempts were deferred by the shared lock), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5045-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 645-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 651 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 645-module base has strict validation recorded at commit 3daee72021b3946b062739521789d43193e4cf19 (complete 583-module strict focused run plus 62 isolated additions, with all 645 base source hashes unchanged; the full 645-module NLS aggregate import check passed under the shared lock), and all 6 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5083-declaration transitive axiom audit passed. The current aggregate import check was deferred because the shared build lock remained occupied (actual exit 75). The last successful aggregate check covered 645 focused modules; no current 651-module aggregate success is claimed. The full 651-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified. The existing ParametricTrigonometricTerminal, ParametricSineTerminal, ParametricCosineTerminal, ParametricCosineChart, ParametricCosinePrimitive and LocalAnalyticSquareRoot sources were read and reused with bytes equal to the pinned prebuilt reference; their actual uses are covered transitively by the new Hill declaration audit. The endpoint-root continuity and arbitrary real-angle cosine-chart results are new shared proofs with explicit audit seeds. Generic parametric annular primitives, quadratic Cauchy projection and root primitives, quadratic cosine primitives and the segment-only analytic cosine mean were read and reused unchanged from the pinned prebuilt reference. Their SHA256 values are recorded in the analytic_regular_hill_abelian_corrections_through_closed_gaps source-map section. The actual uses are covered transitively by the expanded audit.",
-    "mathematical_scope": "A shared sine-squared weighted cosine mean is jointly analytic in an independent half-gap and descends analytically through its square, including arbitrary root choices at collapse. An exact integration-by-parts formula replaces the first cosine moment by the half-gap times a sine-squared mean of the spectral derivative. The zero endpoint-root period then factors the first contour moment by the squared half-gap. The deflated physical trace numerator Delta_prime/U_n and its local complex realization are analytic in the filled gap and have exact physical matching. Its critical-product identity extends across the real gap, and its derivative at a collapsed gap is computed exactly from chi_n. Applying the zero-period first-moment formula to the actual source-normalized contour action proves I_n=delta_n^2*R_n at every real gap, including collapse. R_n is defined by the weighted derivative mean without division by the half-gap. A constructive local analytic ratio germ uses analytic midpoint and squared-gap data and matches R_n for every nearby real potential. At collapse its exact value is chi_n/2; this and the open-gap action positivity prove R_n is positive real for every real potential and positive index. Actual continuous spectral Cartesian coordinates retain their exact pointwise action identity. The actual Hill action now factors as the squared half-gap times a regular positive real ratio. That ratio has an analytic scalar extension at each collapsed real base, agrees with the physical ratio at nearby real potentials, and has exact positive collapsed value chi_n/2. Its analytic nonvanishing square root still needs to be combined with the actual Dirichlet and monodromy data to regularize the own-gap Cartesian amplitude analytically. The infinite physical correction still requires complex locally uniform estimates and analytic dependence. Canonical brackets, global inverse and identification with the same physical KdV Birkhoff map used in the source remain unproved. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
-    "scope": "All 645 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 636-module base has strict validation recorded at commit 2105edee5f7c542d6fb043892926c46b61690a3d (complete 583-module strict focused run plus 53 isolated additions, with all 636 base source hashes unchanged; the last successful aggregate covered 606 modules and subsequent aggregate attempts were deferred by the shared lock), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5045-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 645-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "The sine-squared derivative mean regularizing the action/gap ratio is analytic at every real base, by its checked analytic squared-gap descent and a physical intrinsic-disc chart; its actual restriction is continuous. The positive physical action/gap ratio determines a local analytic square-root prefactor with exact matching to the real positive square root. The actual square root of twice the action factors as the half-gap times this prefactor. The intrinsic own-gap factor is midpoint minus Dirichlet energy plus the actual monodromy sheet root divided by the nonzero deflated canonical root; it equals the half-gap times the checked Dirichlet circle phase on open gaps and vanishes on closed gaps. Actual analytic Dirichlet roots, symmetric midpoint data and local deflated-root physical matching construct an analytic germ of this factor at every real base. Multiplying the prefactor and factor defines the own-gap Cartesian amplitude with exact agreement with the original action radius and circle phase, exact modulus and pointwise action identity. Its scalar analytic extension and continuity hold at every real base including collapsed gaps. The full spectral Cartesian coordinate equals this analytic own-gap amplitude times the exponential of the actual summed regular correction. Both amplitudes and full coordinates vanish exactly when their own gap is collapsed. The actual action/gap ratio now has scalar complex analytic germs at every real base, and its positive square-root prefactor is fixed by the actual real action. The own-gap Cartesian amplitude is constructed without division by the half-gap, has an analytic scalar extension at every real base including collapse, agrees with the original physical radius/phase formula, and retains the exact action identity. Its zero set and that of the full spectral coordinate are exactly the collapsed own gaps. The full coordinate factors as this analytic own-gap amplitude times the exponential of the continuous infinite physical correction. Complex locally uniform high-gap correction estimates and analyticity of that infinite correction remain unproved, as do canonical brackets, global inverse and identification with the same physical KdV Birkhoff map used in the source. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+    "scope": "All 651 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 645-module base has strict validation recorded at commit 3daee72021b3946b062739521789d43193e4cf19 (complete 583-module strict focused run plus 62 isolated additions, with all 645 base source hashes unchanged; the full 645-module NLS aggregate import check passed under the shared lock), and all 6 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5083-declaration transitive axiom audit passed. The current aggregate import check was deferred because the shared build lock remained occupied (actual exit 75). The last successful aggregate check covered 645 focused modules; no current 651-module aggregate success is claimed. The full 651-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "16f23eba1194b93d633e726dc1c05881427d0525ba2f6f30761c12296b653569",
-      "scripts/check-kdv-estimates.sh": "fa4db1a9a67bc1e579d4c34efaa5fa2af3c1de851bd2d47ddc3ce08bba2ee7f9",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "68febe427d43932a200a0ed4cf6647685c04e4d0de8aaae11d9ca76fb4fc28fa"
+      "NLS.lean": "c1aefd58492a2a8aa7b13b12830118a9067a039ab3c54599ad24324ba6436eb4",
+      "scripts/check-kdv-estimates.sh": "99f757499394e774246cd472eb56143ac965d7713e9ff75bab134c6d4bc037b0",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "ea0540db099a264d9e8e3c27112359928da84a300a5f0c585f0185cec43dc4b3"
     },
     "focused_build_execution": {
       "mode": "strict_delta",
-      "base_commit": "2105edee5f7c542d6fb043892926c46b61690a3d",
-      "base_focused_modules": 636,
-      "base_verification_sha256": "03266b880ce14c825c970aee8a37c0453c650be6380def280653afd516c47123",
+      "base_commit": "3daee72021b3946b062739521789d43193e4cf19",
+      "base_focused_modules": 645,
+      "base_verification_sha256": "0efb28a6afd7cbbb78c9567d49028bd1863e46078932c475cac9859ad0da5f19",
       "base_sources_unchanged": true,
-      "base_validation_description": "complete 583-module strict focused run plus 53 isolated additions, with all 636 base source hashes unchanged; the last successful aggregate covered 606 modules and subsequent aggregate attempts were deferred by the shared lock",
+      "base_validation_description": "complete 583-module strict focused run plus 62 isolated additions, with all 645 base source hashes unchanged; the full 645-module NLS aggregate import check passed under the shared lock",
       "new_modules": [
-        "NLS/ComplexAnalysis/ParametricSineSquareCosineMean.lean",
-        "NLS/ComplexAnalysis/ParametricSineSquareCosineMeanLocal.lean",
-        "NLS/ComplexAnalysis/SineSquareCosineMoments.lean",
-        "NLS/KdV/HillDeflatedTraceCharts.lean",
-        "NLS/ComplexAnalysis/QuadraticGapActionRatio.lean",
-        "NLS/ComplexAnalysis/QuadraticGapActionMoment.lean",
-        "NLS/KdV/HillActionGapFactor.lean",
-        "NLS/KdV/HillDeflatedTraceChi.lean",
-        "NLS/KdV/HillActionGapRatioAnalytic.lean"
+        "NLS/KdV/HillActionGapRatioAllBase.lean",
+        "NLS/KdV/HillOwnGapFactor.lean",
+        "NLS/KdV/HillOwnGapFactorAnalytic.lean",
+        "NLS/KdV/HillActionGapPrefactor.lean",
+        "NLS/KdV/HillOwnCartesianAmplitude.lean",
+        "NLS/KdV/HillOwnAmplitudeAnalytic.lean"
       ],
       "new_source_sha256": {
-        "NLS/ComplexAnalysis/ParametricSineSquareCosineMean.lean": "ceb76807ac73612713f04c9d84a46b01b14b77c454fda8926ddcad7a0225b974",
-        "NLS/ComplexAnalysis/ParametricSineSquareCosineMeanLocal.lean": "4dea39a2edddf808a3f255bc297d478a6f05a14ccb38fade40eb6f4469485a76",
-        "NLS/ComplexAnalysis/SineSquareCosineMoments.lean": "e5dd21b2a6d05b9fd111a1c6e94fa4dcc625d2de0c3e7d4561e08677d209ee54",
-        "NLS/KdV/HillDeflatedTraceCharts.lean": "ab0224c77e1e5bcba4e8d6dcb6ea02ec7bab745774a51c9c17ce640c1edc321d",
-        "NLS/ComplexAnalysis/QuadraticGapActionRatio.lean": "b4d15ec36adf96179290dec1a216a2bbdf2274236e35598205f0c3d68a827738",
-        "NLS/ComplexAnalysis/QuadraticGapActionMoment.lean": "78bb98fe2091bedb91f0600dc41dcd0135f16a5d5af2b2fee29c302fc5d43e89",
-        "NLS/KdV/HillActionGapFactor.lean": "2b5529c1a73f642022b8367a37d23c05d4a600eae6444ebcd18ad89a840c9f75",
-        "NLS/KdV/HillDeflatedTraceChi.lean": "c552d667d6296e02a3a08a1f72acf12a1617a5a9c0c0f5448a8120081993f4fc",
-        "NLS/KdV/HillActionGapRatioAnalytic.lean": "2291a4efa0c8ea4a61637e3f2a34cf122f88b716a6cd5d0072109109ed8204a2"
+        "NLS/KdV/HillActionGapRatioAllBase.lean": "2675baeef34528d83aae75f88f51c17e34c60346882b835e84a5b9ccd738dba7",
+        "NLS/KdV/HillOwnGapFactor.lean": "87fb00667b518936dc7bafb556a3588ff70580ab55f69c9a8486468fb269c6c2",
+        "NLS/KdV/HillOwnGapFactorAnalytic.lean": "e388e2ed7bea5c47d862054bddba33f9b95a94142ac4688d17771423185db69a",
+        "NLS/KdV/HillActionGapPrefactor.lean": "ed69b46903b44d5dfa17e11e26c14288b77c7dc8916836e6918f3081c61bde73",
+        "NLS/KdV/HillOwnCartesianAmplitude.lean": "b106bbbaaa161a922d3906e70a49680d893e2c41543a744491edf09688ebad60",
+        "NLS/KdV/HillOwnAmplitudeAnalytic.lean": "47e70b35899aad11908949ffd2b8781c4ef55e089d4ca87e714ff2b3dfb943d8"
       },
       "isolated_stage_exit_code": 0,
       "isolated_stage_source_matches_integrated": true,
       "expanded_axiom_audit_exit_code": 0,
-      "transitive_axiom_audit_declarations": 5045,
+      "transitive_axiom_audit_declarations": 5083,
       "complete_current_focused_script_rerun": false
     }
   },
@@ -2414,6 +2425,11 @@
     },
     {
       "milestone": "Locally uniform Hill angle tails and continuous actual spectral Cartesian coordinates",
+      "exit_code": 75,
+      "reason": "Actual shared lock contention; no compiler failure or current aggregate success is claimed."
+    },
+    {
+      "milestone": "Analytic actual Hill own-gap Cartesian amplitudes at every real base",
       "exit_code": 75,
       "reason": "Actual shared lock contention; no compiler failure or current aggregate success is claimed."
     }
