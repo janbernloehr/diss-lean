@@ -5180,3 +5180,8 @@ import NLS.KdV.HillHamiltonianMonomials
 import NLS.KdV.HillMonomialInterpolation
 import NLS.KdV.HillHamiltonianAbsorption
 import NLS.KdV.HillHamiltonianCoercivity
+import NLS.ComplexAnalysis.LaurentContourCoefficient
+import NLS.KdV.HillHierarchyPhaseModel
+import NLS.KdV.HillL2HierarchySquareAsymptotics
+import NLS.KdV.HillSmoothHierarchyTraceLimit
+import NLS.KdV.HillSmoothHierarchyTrace

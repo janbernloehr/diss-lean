@@ -1,3 +1,8 @@
+import NLS.ComplexAnalysis.LaurentContourCoefficient
+import NLS.KdV.HillHierarchyPhaseModel
+import NLS.KdV.HillL2HierarchySquareAsymptotics
+import NLS.KdV.HillSmoothHierarchyTraceLimit
+import NLS.KdV.HillSmoothHierarchyTrace
 import NLS.DifferentialPolynomial.JetMajorants
 import NLS.DifferentialPolynomial.ScalarInterpolationExponents
 import NLS.KdV.HillSobolevHierarchy
@@ -502,7 +507,16 @@ run_cmd do
     ``NLS.DifferentialPolynomial.exists_weighted_jet_reduction,
     ``NLS.DifferentialPolynomial.norm_eval_le_lower_jet_majorant,
     ``NLS.DifferentialPolynomial.scalar_two_factor_interpolation_exponents,
-    ``NLS.DifferentialPolynomial.scalar_monomial_interpolation_power_range]
+    ``NLS.DifferentialPolynomial.scalar_monomial_interpolation_power_range,
+    ``NLS.ComplexAnalysis.circleIntegrable_zero_zpow,
+    ``NLS.ComplexAnalysis.circleIntegral_zero_zpow,
+    ``NLS.ComplexAnalysis.normalized_circleIntegral_const_mul_zpow,
+    ``NLS.ComplexAnalysis.normalized_circleIntegral_weighted_zpow,
+    ``NLS.ComplexAnalysis.circleIntegrable_weighted_zpow,
+    ``NLS.ComplexAnalysis.normalized_circleIntegral_weighted_finsum,
+    ``NLS.ComplexAnalysis.sum_rectangle_ite_eq_antidiagonal,
+    ``NLS.ComplexAnalysis.norm_weighted_circle_integral_sub_model_le,
+    ``NLS.ComplexAnalysis.circleIntegrable_weighted_finsum]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
