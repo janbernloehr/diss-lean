@@ -899,6 +899,14 @@ import NLS.KdV.HillEnergySequenceProduct
 import NLS.KdV.HminusOneHillPsiProductContinuity
 import NLS.KdV.HminusOneHillPsiProductDensity
 import NLS.Articles.KdVPseudomeasures.OriginalHillProductTopology
+import NLS.ComplexAnalysis.SingleFactorVariation
+import NLS.KdV.HillProductCoordinateCutoffs
+import NLS.KdV.HillProductCoordinateVariation
+import NLS.KdV.HillProductDirectionalDerivative
+import NLS.KdV.HminusOneHillProductZeroJacobian
+import NLS.KdV.HillProductFixedPeriods
+import NLS.KdV.HminusOneHillProductPeriodEquations
+import NLS.Articles.KdVPseudomeasures.OriginalHillProductJacobian
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6191,3 +6199,49 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillProductTopology
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_originalHillPsiLiteralProduct
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_numerator_eq_scalar_mul_literalProduct
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_originalHillPsiProductScalar
+#print axioms NLS.ComplexAnalysis.finite_product_single_factor_affine
+#print axioms NLS.ComplexAnalysis.finite_product_single_factor_restore
+#print axioms NLS.KdV.hillZeroCoordinateShift
+#print axioms NLS.KdV.positive_cutoff_index_eq
+#print axioms NLS.KdV.hillZeroCoordinateShift_apply
+#print axioms NLS.KdV.hillEnergySequenceFactor_shift_other
+#print axioms NLS.KdV.hillEnergySequenceFactor_shift_selected
+#print axioms NLS.KdV.hillEnergySequencePartialProduct_coordinate_affine
+#print axioms NLS.KdV.hillEnergySequenceZero
+#print axioms NLS.KdV.hillEnergySequenceFactor_selected_eq
+#print axioms NLS.KdV.hillEnergySequencePartialProduct_coordinate_restore
+#print axioms NLS.KdV.hillEnergySequencePartialProduct_omitted_shift
+#print axioms NLS.KdV.hillEnergyProductCoordinateDerivative
+#print axioms NLS.KdV.hillEnergySequenceProduct_coordinate_affine
+#print axioms NLS.KdV.hillEnergySequenceProduct_omitted_shift
+#print axioms NLS.KdV.hillEnergyProductCoordinateDerivative_omitted
+#print axioms NLS.KdV.analyticAt_hillEnergyProductCoordinateDerivative
+#print axioms NLS.KdV.hasDerivAt_hillEnergySequenceProduct_coordinate
+#print axioms NLS.KdV.hillEnergyProductCoordinateDerivative_restore
+#print axioms NLS.KdV.hillEnergySequenceProduct_retained_root
+#print axioms NLS.KdV.fderiv_hillEnergySequenceProduct_coordinate
+#print axioms NLS.KdV.fderiv_hillEnergySequenceProduct_energy
+#print axioms NLS.KdV.hillEnergySequenceZero_shift_selected
+#print axioms NLS.KdV.hillEnergyProductCoordinateDerivative_at_retained_root
+#print axioms NLS.KdV.hillEnergySequenceZero_real
+#print axioms NLS.KdV.hillEnergySequenceProduct_energy_deriv_ne_zero_at_real_root
+#print axioms NLS.KdV.hillEnergyProductCoordinateDerivative_real_diagonal_ne_zero
+#print axioms NLS.KdV.hillEnergyProductCoordinateDerivative_real_off_diagonal
+#print axioms NLS.KdV.hillHminusProduct_zero_evaluation_Jacobian
+#print axioms NLS.KdV.hillEnergyProductPeriodIntegrand
+#print axioms NLS.KdV.analyticOnNhd_hillEnergyProductPeriodIntegrand
+#print axioms NLS.KdV.hillEnergyProductFixedPeriod
+#print axioms NLS.KdV.analyticOnNhd_hillEnergyProductFixedPeriod
+#print axioms NLS.KdV.circleIntegrable_hillEnergyProductPeriodIntegrand
+#print axioms NLS.KdV.hillEnergyProductFixedPeriod_coordinate_affine
+#print axioms NLS.KdV.hillEnergyProductPeriodColumn
+#print axioms NLS.KdV.hillEnergyProductPeriodColumn_eq_difference
+#print axioms NLS.KdV.hasDerivAt_hillEnergyProductFixedPeriod_coordinate
+#print axioms NLS.KdV.fderiv_hillEnergyProductFixedPeriod_coordinate
+#print axioms NLS.KdV.HillHminusPsiBall.product_period_entire
+#print axioms NLS.KdV.HillHminusPsiBall.product_period_scalar
+#print axioms NLS.KdV.HillHminusPsiBall.product_off_diagonal_period_zero
+#print axioms NLS.KdV.HillHminusPsiBall.product_diagonal_period
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_product_retained_zero_Jacobian
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_product_retained_root_coordinate_derivative
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_product_fixed_period_equations

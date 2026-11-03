@@ -933,6 +933,14 @@ modules = [
     'NLS.KdV.HminusOneHillPsiProductContinuity',
     'NLS.KdV.HminusOneHillPsiProductDensity',
     'NLS.Articles.KdVPseudomeasures.OriginalHillProductTopology',
+    'NLS.ComplexAnalysis.SingleFactorVariation',
+    'NLS.KdV.HillProductCoordinateCutoffs',
+    'NLS.KdV.HillProductCoordinateVariation',
+    'NLS.KdV.HillProductDirectionalDerivative',
+    'NLS.KdV.HminusOneHillProductZeroJacobian',
+    'NLS.KdV.HillProductFixedPeriods',
+    'NLS.KdV.HminusOneHillProductPeriodEquations',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillProductJacobian',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
