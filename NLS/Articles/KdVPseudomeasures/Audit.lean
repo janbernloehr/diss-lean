@@ -629,6 +629,12 @@ import NLS.KdV.HillPeriodicProjectionConvergence
 import NLS.KdV.HillFreeRieszFourier
 import NLS.Articles.KdVPseudomeasures.PeriodicProjectionConvergence
 import NLS.Articles.KdVPseudomeasures.PeriodicEndpointProjectionConvergence
+import NLS.FunctionalAnalysis.NearProjectionLowerBound
+import NLS.KdV.HillFreeModeProjection
+import NLS.Fourier.PeriodicExponentInclusion
+import NLS.KdV.HillStrongSobolevDomain
+import NLS.KdV.SingularHillL2EigenProjection
+import NLS.Articles.KdVPseudomeasures.PeriodicFreeModeLowerBound
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -4820,3 +4826,22 @@ import NLS.Articles.KdVPseudomeasures.PeriodicEndpointProjectionConvergence
 #print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicProjection_appendixC4
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicProjection_sub_free_small
 #print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourceEndpointPeriodicProjection_sub_free_small
+#print axioms NLS.FunctionalAnalysis.norm_image_ge_of_near_fixed
+#print axioms NLS.KdV.hillFreeContinuousModeProjection
+#print axioms NLS.KdV.hillFreeContinuousModeProjection_apply
+#print axioms NLS.KdV.hillFreeL2ModeProjection
+#print axioms NLS.KdV.hillContinuousRieszProjection_zero_eq_modes
+#print axioms NLS.KdV.hillL2RieszProjection_zero_eq_modes
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.exponentInclusion
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.exponentInclusion_coefficient
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.exponentInclusion_val
+#print axioms NLS.Fourier.PeriodicFourierLebesgue.norm_exponentInclusion_le
+#print axioms NLS.KdV.hillStrongSobolevToH1
+#print axioms NLS.KdV.hillStrongSobolevToH1_val
+#print axioms NLS.KdV.hillStrongSobolevToH1_injective
+#print axioms NLS.KdV.singularHillL2RieszProjection_eigenvector_inside
+#print axioms NLS.Articles.KdVPseudomeasures.sourceStrongHillEquation_iff_native
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicRange_freeMode_lower
+#print axioms NLS.Articles.KdVPseudomeasures.sourcePeriodicEigenvector_mem_range
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_sourcePeriodicEigen_freeMode_lower
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma2_14

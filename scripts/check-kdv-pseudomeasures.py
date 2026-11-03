@@ -663,6 +663,12 @@ modules = [
     'NLS.KdV.HillFreeRieszFourier',
     'NLS.Articles.KdVPseudomeasures.PeriodicProjectionConvergence',
     'NLS.Articles.KdVPseudomeasures.PeriodicEndpointProjectionConvergence',
+    'NLS.FunctionalAnalysis.NearProjectionLowerBound',
+    'NLS.KdV.HillFreeModeProjection',
+    'NLS.Fourier.PeriodicExponentInclusion',
+    'NLS.KdV.HillStrongSobolevDomain',
+    'NLS.KdV.SingularHillL2EigenProjection',
+    'NLS.Articles.KdVPseudomeasures.PeriodicFreeModeLowerBound',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

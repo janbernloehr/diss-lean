@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "article_main_theorems_verified": false,
-  "phase": "Actual physical periodic resolvent and contour bounds, exact two-mode free projector, original Appendix C.4(i) rate and uniform original endpoint periodic projection convergence.",
+  "phase": "Source Lemma 2.14 on the full printed radius-12n strip and every original Banach exponent, with exact free Fourier projector and uniform original endpoint norm-ball cutoff.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -637,13 +637,19 @@
     "NLS/KdV/HillFreeRieszFourier.lean",
     "NLS/Articles/KdVPseudomeasures/PeriodicProjectionConvergence.lean",
     "NLS/Articles/KdVPseudomeasures/PeriodicEndpointProjectionConvergence.lean",
+    "NLS/FunctionalAnalysis/NearProjectionLowerBound.lean",
+    "NLS/KdV/HillFreeModeProjection.lean",
+    "NLS/Fourier/PeriodicExponentInclusion.lean",
+    "NLS/KdV/HillStrongSobolevDomain.lean",
+    "NLS/KdV/SingularHillL2EigenProjection.lean",
+    "NLS/Articles/KdVPseudomeasures/PeriodicFreeModeLowerBound.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 3468,
-  "definitions": 720,
+  "proved_theorems": 3483,
+  "definitions": 724,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 4188,
+    "declarations": 4207,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -1256,10 +1262,20 @@
     "The ACTUAL original zero-potential physical resolvent has the exact Fourier coefficient (lambda-pi^2*k^2)^(-1)*F_k at EVERY signed mode. Commuting each bounded Fourier coefficient with its ACTUAL analytic native contour integral proves that the ACTUAL free projection retains EXACTLY k=+n and k=-n. The ACTUAL free contour output is PROVED to be F_n*exp(i*pi*n*x)+F_(-n)*exp(-i*pi*n*x) on EVERY physical L2 input, with no mode truncation assumption or supplied free-kernel identity.",
     "The article adapter proves the EXACT periodic Appendix C.4(i) rate C_t*(log(n))^2/n^(1-|t|)*norm(q)_H^t throughout the ENTIRE original -1<t<-1/2 range, parameterized by t=-r and 1/2<r<1. A positive constant is chosen BEFORE EVERY original potential norm ball and BEFORE ANY supplied earlier spectral cutoff. ONE new cutoff is chosen ABOVE that supplied cutoff and before ALL original complex potentials in the ball and ALL later original positive indices. The proved stronger one-logarithm bound implies the source squared-logarithm bound.",
     "The periodic part of source (33) is PROVED on the ENTIRE original complex endpoint space for EVERY article order -1/2<s<=0, with genuine UNIFORM convergence on EACH FIXED ORIGINAL ENDPOINT NORM BALL. A bounded original distribution inclusion into H^(-rho), rho=3/4+r_endpoint/2, transfers the quantitative periodic estimate. Equality with the IDENTICAL original H-minus-one source potential is PROVED from equality of the ENTIRE original distributions; no potential, index, physical period or norm normalization is changed.",
-    "The Dirichlet part of source (33) was already proved with its stated local/compact uniformity qualifications. The precise Dirichlet C.4(ii) RATE remains OPEN. Source 2.14, quantitative eta bound 2.13, full periodic-to-Dirichlet residual (31), overlap (32)/2.15, full COMPLEX weighted midpoint 2.1(ii) and ALL FIVE main article theorems remain OPEN."
+    "The Dirichlet part of source (33) was already proved with its stated local/compact uniformity qualifications. The precise Dirichlet C.4(ii) RATE remains OPEN. Source 2.14, quantitative eta bound 2.13, full periodic-to-Dirichlet residual (31), overlap (32)/2.15, full COMPLEX weighted midpoint 2.1(ii) and ALL FIVE main article theorems remain OPEN.",
+    "A reusable bound is proved over EVERY nontrivially normed scalar field: if norm(P-Q)<=delta and Px=x, then (1-delta)*norm(x)<=norm(Qx). It requires no orthogonality, finite dimension or supplied lower bound.",
+    "The LITERAL free projector is CONSTRUCTED independently as a bounded physical operator by the two original Fourier coefficients and exp(+i*pi*n*x), exp(-i*pi*n*x). Its continuous and physical L2 realizations are proved EXACTLY equal to the EXISTING ACTUAL zero-potential source-circle contour projections. This retains the original probability Haar norm, exactly one-half integral on [0,2].",
+    "A shared contractive exponent inclusion is constructed on the ENTIRE ORIGINAL Fourier-Lebesgue spaces for EVERY Banach exponent p<=q. Every raw Fourier coefficient and the IDENTICAL ENTIRE original smooth-test distribution are retained. This allows the source eigenfunction domain to be preserved rather than replaced with a supplied native H1 representative.",
+    "For EVERY original Fourier-Lebesgue regularity a>3/2 and EVERY Banach exponent p>=1, including p=infinity, a genuine bounded injective inclusion into the ENTIRE ORIGINAL H1 domain is constructed. Its output is the IDENTICAL ENTIRE original distribution. The full source F-ell^(s+2,p) domain with -1/2<s<=0 lies in this range.",
+    "Every original native enclosed eigenvector is proved fixed by the ACTUAL physical periodic L2 contour projection. This is derived from the existing native H1/H-minus-one contour theorem and faithful physical inclusions, with no physical spectral range hypothesis supplied.",
+    "ONE original endpoint norm-ball cutoff, above ANY supplied previous cutoff and BEFORE EVERY complex potential and ALL later original positive indices, gives the one-half free-mode norm bound on the ENTIRE actual high physical spectral range. Every complex associated-vector direction is included; simple eigenvalues, open gaps and semisimplicity are not assumed.",
+    "Every original native high eigenvector in a corrected narrow strip belongs to the SAME literal source-circle physical spectral range. The zero vector is included. For nonzero vectors the proof derives ACTUAL spectral membership, uses the actual high pair to locate the eigenvalue strictly inside the source circle, and applies the ACTUAL native contour action.",
+    "The original PRINTED radius-12n source strip is retained in the final native and source Lemma 2.14 statements. The existing full complex wide-strip localization theorem proves that each ACTUAL nonzero eigenvalue in that full wide strip is in the narrow strip at the SAME original mode number. Its stronger 13*C_r cutoff is derived uniformly from the ORIGINAL endpoint norm ball. No radius-6n restriction is substituted for the source statement.",
+    "Source Lemma 2.14 is PROVED on the ENTIRE ORIGINAL complex F-ell^(s,infinity) potential space and ENTIRE ORIGINAL F-ell^(s+2,p) eigenfunction space, for EVERY Banach p>=1 including infinity. Its literal full Fourier eigen-equation is PROVED equivalent to the native equation of the IDENTICAL H1 distribution. At EVERY original source eigenvalue in the PRINTED radius-12n strip, the LITERAL free Fourier projector has physical L2 norm at least ONE HALF the norm of the SAME original eigenfunction. ONE cutoff precedes the potential, index, eigenvalue, exponent and eigenfunction and may be chosen above ANY prior spectral cutoff.",
+    "Quantitative eta bound 2.13 remains OPEN, although its canonical eta/gamma identity and NOW the required source 2.14 lower bound are proved. Full (31), overlap (32)/2.15, precise Dirichlet C.4(ii) rate, full COMPLEX weighted midpoint 2.1(ii), actual Birkhoff/KdV constructions and ALL FIVE main theorems remain OPEN."
   ],
-  "source_correspondence": "NOW PROVED: ACTUAL original periodic projection difference bound C*log(n)*n^(r-1)*norm(q)_H^-r, with C=32*(8*exp(1)+2), in ALL THREE source physical operator norms; EXACT ACTUAL free two-mode contour kernel; FULL periodic Appendix C.4(i) source squared-logarithm rate with Ct before norm ball and new cutoff above any supplied earlier cutoff; periodic source (33) with genuine uniform convergence on EVERY FIXED ORIGINAL ENDPOINT NORM BALL, using the IDENTICAL entire original H-minus-one potential. NEXT: source 2.14 one-half free-mode lower bound, QUANTITATIVE eta estimate 2.13 from the proved eta/gamma identity, full periodic-to-Dirichlet residual (31), overlap (32)/2.15 and full COMPLEX weighted midpoint 2.1(ii). The precise Dirichlet C.4(ii) rate remains OPEN; actual Dirichlet o(1) convergence and its local/compact uniformity remain proved. Low periodic parity/interlacing, complex ratio 2.20 where used, original Birkhoff maps and actual KdV approximation flow remain open. Appendix B remains COMPLETE. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
-  "build_isolation": "Actual physical periodic resolvent and contour bounds, exact two-mode free projector, original Appendix C.4(i) rate and uniform original endpoint periodic projection convergence. All compiler/source/Git milestone writes are private; canonical sources/build/shared Git metadata are read-only.",
+  "source_correspondence": "NOW PROVED: source Lemma 2.14 one-half free-mode L2 lower bound, with LITERAL original free Fourier projector, FULL PRINTED radius-12n strip and EVERY original F-ell^(s+2,p) Banach-exponent eigenfunction domain, including infinity. ONE original endpoint norm-ball cutoff precedes q,n,lambda,p,f and can be above ANY supplied earlier cutoff. A stronger one-half bound holds on the ENTIRE actual physical spectral range including ALL associated-vector directions. The original physical L2 function is retained by a PROVED faithful entire-distribution H1 inclusion. NEXT: QUANTITATIVE eta estimate 2.13 from its proved canonical eta/gamma identity and NEW 2.14 bound, then full periodic-to-Dirichlet residual (31), overlap (32)/2.15 and full COMPLEX weighted midpoint 2.1(ii). Periodic source (33), exact free two-mode kernel and C.4(i) rate remain proved; precise Dirichlet C.4(ii) rate remains OPEN, while actual Dirichlet o(1) and its local/compact uniformity remain proved. Low periodic parity/interlacing, complex ratio 2.20 where used, original Birkhoff maps and actual KdV approximation flow remain open. Appendix B remains COMPLETE. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
+  "build_isolation": "Source Lemma 2.14 on the full printed radius-12n strip and every original Banach exponent, with exact free Fourier projector and uniform original endpoint norm-ball cutoff. All compiler/source/Git milestone writes are private; canonical sources/build/shared Git metadata are read-only.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "Validated locally on the existing private article branch. Workspace decision remains pending. Earlier automatic approval review requires direct authorization for the GitHub export destination; no new push attempted. Canonical source, build and checkout remain read-only.",
@@ -1661,7 +1677,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "d0bcb6084394529997ca79e7413d4ae5b2e35b3bf67ed8f36f28adc9b7e35088",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "e980c74cbe61adfcafbcd5854544fadfa4d2d558bf072dc34633e6c3d4574e91",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -1896,7 +1912,13 @@
     "NLS/KdV/HillPeriodicProjectionConvergence.lean": "872be0dfd9157cad04030c33d4b1472811ae6bdcdf127d80b43deee3006b7cd5",
     "NLS/KdV/HillFreeRieszFourier.lean": "eba49d298bb2e94caf10dc68c13f16df6b96a83e5b0fb87c40ac996b0bb941ef",
     "NLS/Articles/KdVPseudomeasures/PeriodicProjectionConvergence.lean": "f774cea248279388120d573a3bdf6cf67a85922a0f694a68d8bd79d4aec57403",
-    "NLS/Articles/KdVPseudomeasures/PeriodicEndpointProjectionConvergence.lean": "12a2263285a1dbc1149c4c339759b284e1ca81e0cee9f52f002e5d626cf7e318"
+    "NLS/Articles/KdVPseudomeasures/PeriodicEndpointProjectionConvergence.lean": "12a2263285a1dbc1149c4c339759b284e1ca81e0cee9f52f002e5d626cf7e318",
+    "NLS/FunctionalAnalysis/NearProjectionLowerBound.lean": "430b2a1a8343667fc57ed5766b35772b535d88e2ab3b638e1135311e3a4a1352",
+    "NLS/KdV/HillFreeModeProjection.lean": "09757d016a1971e1ad851b2c1668a686276fd27e5024ceb8c3ca8c91bcbb4f83",
+    "NLS/Fourier/PeriodicExponentInclusion.lean": "2212b1724365e179152e2eddc7aef6b606638776d90a709b712c9b77bda937eb",
+    "NLS/KdV/HillStrongSobolevDomain.lean": "4a6e33c8738f170f40752a162478c24c0b1a67810273183971fc5c2fe40433f6",
+    "NLS/KdV/SingularHillL2EigenProjection.lean": "4c0ac8669e4d67bf3f9fc67377f15f0bdd437e5f59f280692dd3645ea1579c7c",
+    "NLS/Articles/KdVPseudomeasures/PeriodicFreeModeLowerBound.lean": "d5fa6eaef2138f236afada2a62a6dd7555e62d42305e02e74c3457ad1fe82846"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -1904,12 +1926,12 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 4161,
-    "newly_checked_declarations_this_continuation": 27,
-    "new_theorems": 24,
-    "new_definitions": 3,
-    "total_checked_declarations": 4188,
-    "reuse": "Previously validated actual full native normalized resolvent, source half-denominator norms and S_lambda squared norm bound; faithful physical continuous/L2 inclusions; shared bounded circle-integral maps and exact full-source Fourier isometries; strict original endpoint-to-lower distribution inclusion. New actual contour bounds, exact two-mode free kernel, source C.4(i) rate and uniform endpoint convergence are proved rather than supplied as hypotheses."
+    "previous_checked_declarations": 4188,
+    "newly_checked_declarations_this_continuation": 19,
+    "new_theorems": 15,
+    "new_definitions": 4,
+    "total_checked_declarations": 4207,
+    "reuse": "Previously validated actual endpoint periodic projection convergence, actual free Fourier kernel, full native/physical L2 contour eigenvector action, original complex canonical high pairs, actual complex wide-strip localization, original exponent embeddings and strict endpoint-to-lower inclusion. New whole-range and source 2.14 bounds use the actual full original spaces, not supplied finite-dimensional or eigenfunction-only estimates."
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -1938,7 +1960,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-periodic-projection-convergence.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-periodic-free-mode-lower.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -2165,13 +2187,14 @@
     "Sharp logarithmic full Hill reciprocal lattice bound and actual source half-denominator multipliers on all physical periodic L2 inputs, with exact L2 and continuous-output bounds.",
     "Actual full normalized periodic rough-potential perturbation S_lambda, squared-entry/Hilbert-space norm bounds, exact original physical Fourier action and uniform original Sobolev norm-ball smallness.",
     "Actual full native half-denominator isomorphisms, normalized phase inverse, exact native pencil/resolvent factorization and uniform original rough-potential norm-ball inverse; Appendix B focused recheck.",
-    "Actual physical periodic resolvent and contour bounds, exact two-mode free projector, original Appendix C.4(i) rate and uniform original endpoint periodic projection convergence."
+    "Actual physical periodic resolvent and contour bounds, exact two-mode free projector, original Appendix C.4(i) rate and uniform original endpoint periodic projection convergence.",
+    "Source Lemma 2.14 on the full printed radius-12n strip and every original Banach exponent, with exact free Fourier projector and uniform original endpoint norm-ball cutoff."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-projection-convergence-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-free-mode-lower-map.json",
   "baseline_validated_snapshot": {
-    "commit": "450894420544d788f9c6d73a62978aab3daf6092",
-    "modules": 624,
-    "audited_declarations": 4161,
+    "commit": "e63093eee4c968102b65714cdaa0e3d5faf477d7",
+    "modules": 632,
+    "audited_declarations": 4188,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   }

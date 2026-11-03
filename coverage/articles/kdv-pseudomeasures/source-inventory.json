@@ -698,7 +698,7 @@
     }
   ],
   "remaining_obligations": [
-    "NOW PROVED: ACTUAL original periodic projection difference bound C*log(n)*n^(r-1)*norm(q)_H^-r, with C=32*(8*exp(1)+2), in ALL THREE source physical operator norms; EXACT ACTUAL free two-mode contour kernel; FULL periodic Appendix C.4(i) source squared-logarithm rate with Ct before norm ball and new cutoff above any supplied earlier cutoff; periodic source (33) with genuine uniform convergence on EVERY FIXED ORIGINAL ENDPOINT NORM BALL, using the IDENTICAL entire original H-minus-one potential. NEXT: source 2.14 one-half free-mode lower bound, QUANTITATIVE eta estimate 2.13 from the proved eta/gamma identity, full periodic-to-Dirichlet residual (31), overlap (32)/2.15 and full COMPLEX weighted midpoint 2.1(ii). The precise Dirichlet C.4(ii) rate remains OPEN; actual Dirichlet o(1) convergence and its local/compact uniformity remain proved. Low periodic parity/interlacing, complex ratio 2.20 where used, original Birkhoff maps and actual KdV approximation flow remain open. Appendix B remains COMPLETE. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
+    "NOW PROVED: source Lemma 2.14 one-half free-mode L2 lower bound, with LITERAL original free Fourier projector, FULL PRINTED radius-12n strip and EVERY original F-ell^(s+2,p) Banach-exponent eigenfunction domain, including infinity. ONE original endpoint norm-ball cutoff precedes q,n,lambda,p,f and can be above ANY supplied earlier cutoff. A stronger one-half bound holds on the ENTIRE actual physical spectral range including ALL associated-vector directions. The original physical L2 function is retained by a PROVED faithful entire-distribution H1 inclusion. NEXT: QUANTITATIVE eta estimate 2.13 from its proved canonical eta/gamma identity and NEW 2.14 bound, then full periodic-to-Dirichlet residual (31), overlap (32)/2.15 and full COMPLEX weighted midpoint 2.1(ii). Periodic source (33), exact free two-mode kernel and C.4(i) rate remain proved; precise Dirichlet C.4(ii) rate remains OPEN, while actual Dirichlet o(1) and its local/compact uniformity remain proved. Low periodic parity/interlacing, complex ratio 2.20 where used, original Birkhoff maps and actual KdV approximation flow remain open. Appendix B remains COMPLETE. ALL FIVE MAIN theorems UNPROVED; goal ACTIVE.",
     "Construct/verify ORIGINAL KdV Birkhoff maps and actual H-minus-one smooth-approximation KdV flow;precisely state/prove main Theorems1.1,1.3,1.4,5.1,5.9 with original domains,normalizations,quantifiers and topology. Every MAIN theorem remains unproved;goal active."
   ],
   "workspace": {
@@ -1236,6 +1236,33 @@
     "source_AppendixC4_logarithmic_rate_proved": false,
     "source33_periodic_convergence_proved": true,
     "source_Lemma2_14_proved": false,
+    "source_Lemma2_13_eta_bound_proved": false,
+    "source_Lemma2_13_complete": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "source_Lemma2_14_free_mode_lower_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-free-mode-lower-map.json",
+    "shared_near_fixed_vector_lower_bound": true,
+    "literal_free_Fourier_projection_constructed": true,
+    "exact_actual_free_contour_projection_identified": true,
+    "original_physical_L2_normalization_preserved": true,
+    "original_FourierLebesgue_exponent_inclusion_same_entire_distribution": true,
+    "all_original_strong_FourierLebesgue_exponents_in_native_H1": true,
+    "actual_physical_contour_fixes_all_enclosed_native_eigenvectors": true,
+    "whole_actual_spectral_range_free_mode_lower_bound": true,
+    "complex_associated_vectors_included": true,
+    "uniform_original_endpoint_norm_ball_cutoff": true,
+    "cutoff_above_any_supplied_prior_cutoff": true,
+    "original_printed_radius_12n_strip_retained": true,
+    "wide_to_narrow_localization_proved_for_actual_eigenvalues": true,
+    "all_original_finite_p_eigenfunction_domains_retained": true,
+    "original_infinite_p_eigenfunction_domain_retained": true,
+    "literal_original_full_Fourier_eigen_equation_retained": true,
+    "source_Lemma2_14_proved": true,
     "source_Lemma2_13_eta_bound_proved": false,
     "source_Lemma2_13_complete": false,
     "source_identity31_complete": false,

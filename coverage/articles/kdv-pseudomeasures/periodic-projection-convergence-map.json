@@ -1,7 +1,7 @@
 {
   "source": "arXiv:1610.00278v1, periodic part of (33), Appendix C.4(i), literal free Fourier projector P_n; dependencies toward source 2.14, quantitative 2.13, overlap (32)/2.15 and complex Theorem 2.1(ii)",
   "date": "2026-11-03",
-  "status": "COMPLETE actual physical periodic resolvent/contour projection bound, exact actual free two-mode projector, source Appendix C.4(i) quantitative rate and periodic source (33) on the ORIGINAL endpoint space. Dirichlet C.4(ii) rate, source 2.14 and main theorems remain OPEN.",
+  "status": "Periodic contour convergence/C.4(i), full native normalized factorization and source 2.14 are now proved. The source 2.14 followup retains the FULL printed radius-12n strip and all original Banach-exponent eigenfunction domains; see periodic-free-mode-lower-map.json. Quantitative eta 2.13, Dirichlet C.4(ii) rate and main theorems remain OPEN.",
   "modules": [
     "NLS/KdV/HillNormalizedFreeInverse.lean",
     "NLS/KdV/SingularHillContinuousResolvent.lean",
@@ -73,7 +73,7 @@
     "source_AppendixC4_ii_logarithmic_rate_proved": false,
     "source_AppendixC4_logarithmic_rate_proved": false,
     "source33_periodic_convergence_proved": true,
-    "source_Lemma2_14_proved": false,
+    "source_Lemma2_14_proved": true,
     "source_Lemma2_13_eta_bound_proved": false,
     "source_Lemma2_13_complete": false,
     "source_identity31_complete": false,
@@ -83,8 +83,8 @@
     "main_theorems_verified": false
   },
   "essential_remaining": [
-    "Apply the NEW actual periodic projection convergence and exact free Fourier projector to prove the source 2.14 one-half free-mode lower bound on ALL original high eigenspaces, retaining the original finite-p eigenfunction domain and locally uniform original endpoint cutoff. Combine it with the already proved canonical eta/gamma IDENTITY and actual reduction estimates to prove the QUANTITATIVE eta bound in source 2.13.",
-    "Use the now PROVED periodic part of source (33) together with the already PROVED actual Dirichlet o(1) projection convergence and literal free kernels to prove the full periodic-to-Dirichlet residual (31), overlap (32) and source 2.15. The quantitative Dirichlet C.4(ii) RATE remains OPEN; only the periodic C.4(i) rate is complete.",
+    "Prove QUANTITATIVE source eta bound 2.13, retaining constant 16 and ACTUAL canonical labels/couplings/normalized orthonormal basis. Its exact eta/gamma IDENTITY and source 2.14 are now PROVED. A private next-proof plan uses the actual inverse-family resonant errors and max-pair norm, with all unproved steps explicitly marked as unproved.",
+    "Use the already PROVED periodic and Dirichlet parts of source (33), their actual free kernels and normalized original spectral bases for full residual (31), overlap (32) and source 2.15. The quantitative Dirichlet C.4(ii) RATE remains OPEN; periodic C.4(i) is complete.",
     "Complete the full COMPLEX weighted midpoint estimate 2.1(ii), remaining low periodic parity/interlacing and complex ratio 2.20 where used, original Birkhoff maps and actual KdV approximation-flow constructions. All five MAIN theorems 1.1, 1.3, 1.4, 5.1 and 5.9 remain UNPROVED; goal ACTIVE."
   ],
   "source_correspondence": {
@@ -96,7 +96,7 @@
     "cutoff": "One cutoff for EACH FIXED original Sobolev or endpoint norm ball is chosen BEFORE EVERY potential in that ball, ALL later ORIGINAL positive n and ALL contour parameters. In sourcePeriodicProjection_appendixC4 it is also chosen ABOVE ANY supplied earlier spectral cutoff Nmin, with C chosen before R and Nmin.",
     "source_cutoff_qualification": "C.4 introduces N-prime and then prints n>=N in its displayed prose. The formal quantitative statement uses the new cutoff, and explicitly permits it above ANY earlier cutoff. No bound below the newly proved cutoff is claimed.",
     "endpoint_transfer": "For original endpoint predual s in [0,1/2), rho=3/4+s/2 lies below one and has strict finite-p threshold 2*(rho-s)>1. A genuine bounded ORIGINAL distribution inclusion gives a fixed H^(-rho) norm-ball bound from each fixed ORIGINAL endpoint norm ball. Its native H-minus-one potential equals sourceComplexHminusOne as an ENTIRE original distribution.",
-    "not_claimed": "No quantitative Dirichlet C.4(ii) rate, source 2.14 lower bound, quantitative eta estimate, full (31), overlap (32)/2.15, full COMPLEX midpoint 2.1(ii) or main-theorem completion is claimed. These remain explicit obligations."
+    "not_claimed": "Quantitative eta 2.13, full (31), overlap (32)/2.15, precise Dirichlet C.4(ii) rate and all main theorems remain OPEN. Source 2.14 is now PROVED on the full printed radius-12n strip and all original Banach-exponent eigenfunction domains; see actual_free_mode_lower_followup."
   },
   "validation": {
     "result": "passed",
@@ -142,5 +142,33 @@
     "branch": "articles/kdv-pseudomeasures",
     "shared_canonical_git_written": false
   },
-  "main_theorems_verified": false
+  "main_theorems_verified": false,
+  "actual_free_mode_lower_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/periodic-free-mode-lower-map.json",
+    "shared_near_fixed_vector_lower_bound": true,
+    "literal_free_Fourier_projection_constructed": true,
+    "exact_actual_free_contour_projection_identified": true,
+    "original_physical_L2_normalization_preserved": true,
+    "original_FourierLebesgue_exponent_inclusion_same_entire_distribution": true,
+    "all_original_strong_FourierLebesgue_exponents_in_native_H1": true,
+    "actual_physical_contour_fixes_all_enclosed_native_eigenvectors": true,
+    "whole_actual_spectral_range_free_mode_lower_bound": true,
+    "complex_associated_vectors_included": true,
+    "uniform_original_endpoint_norm_ball_cutoff": true,
+    "cutoff_above_any_supplied_prior_cutoff": true,
+    "original_printed_radius_12n_strip_retained": true,
+    "wide_to_narrow_localization_proved_for_actual_eigenvalues": true,
+    "all_original_finite_p_eigenfunction_domains_retained": true,
+    "original_infinite_p_eigenfunction_domain_retained": true,
+    "literal_original_full_Fourier_eigen_equation_retained": true,
+    "source_Lemma2_14_proved": true,
+    "source_Lemma2_13_eta_bound_proved": false,
+    "source_Lemma2_13_complete": false,
+    "source_identity31_complete": false,
+    "source_overlap_bound32_proved": false,
+    "source_Lemma2_15_proved": false,
+    "source_Theorem2_1_ii_proved": false,
+    "main_theorems_verified": false
+  },
+  "validation_scope": "The validation object records this earlier milestone. actual_free_mode_lower_followup links the later 4207-declaration audited source 2.14 milestone."
 }
