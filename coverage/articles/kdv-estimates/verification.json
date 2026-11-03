@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 4182,
+    "declarations": 4237,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -405,10 +405,12 @@
       "NLS.ComplexAnalysis.exists_gap_zero_of_rotated_zero_period",
       "NLS.ComplexAnalysis.eq_zero_of_collapsed_endpointRoot_period",
       "NLS.ComplexAnalysis.exists_segment_zero_of_endpointRoot_zero_period",
-      "NLS.ComplexAnalysis.exists_segment_zero_of_deflated_root_period"
+      "NLS.ComplexAnalysis.exists_segment_zero_of_deflated_root_period",
+      "NLS.ComplexAnalysis.circleIntegral_eq_of_convex_cut_domain",
+      "NLS.ComplexAnalysis.exists_pos_norm_lower_bound_of_compactSpace"
     ]
   },
-  "full_repository_validation": "All 476 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4182-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 493 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4237-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -886,10 +888,27 @@
     "NLS/KdV/HillOmittedEnergyRootProduct.lean": "e7fe0a93f90cd6baa4226b59cb4525a26ebdeb00b326275590020ba0e34d8161",
     "NLS/KdV/HillOmittedEnergyRootNonvanishing.lean": "6f97f06828d4122fe07cbe1aa8a62927334a545f45657ed3125d0e591ab91f3a",
     "NLS/KdV/HillDeflatedCanonicalRoot.lean": "bb7ac2524494bd324aac4499d83ded0110ab30463f75245afd3be2f920c29da4",
-    "NLS/KdV/HillDeflatedCanonicalRootPhase.lean": "75a81a82df67dcf26ca24de05f42e2bd320774f708748e9691f233f76f65d7d7"
+    "NLS/KdV/HillDeflatedCanonicalRootPhase.lean": "75a81a82df67dcf26ca24de05f42e2bd320774f708748e9691f233f76f65d7d7",
+    "NLS/ComplexAnalysis/ConvexCutCirclePeriod.lean": "57a6ba1586015429e07d8bd590cfc5a02f15f2e4f76bf9385b482d0fb3972819",
+    "NLS/KdV/HillSourceBandLabelPreservation.lean": "a6ffdd0e25b2f78218e87c3fdec25220f61f6bbe5638b7ef5446cf2965a25c0c",
+    "NLS/KdV/HillFreeContourPhysicalBandBounds.lean": "ec84c23b5c15b398c33e7802998edb081bbd9d2d4ad240926d280d43284ad1db",
+    "NLS/KdV/HillPhysicalNumeratorGapZero.lean": "70e4a855ce4048e6f09a201a772181fec2b69e43c47163947c81d5e9abbb6980",
+    "NLS/KdV/HillPhysicalNumeratorGapContainment.lean": "b5896dffb7e0e1623a4e76339fd1052cc26f58f6214f97a88bb2a195f4dddfb3",
+    "NLS/KdV/HillPhysicalGapRootGerm.lean": "7fa12b77315b69d501f5dfb3221f407a9a99549111b7e49337a909e07ce7520d",
+    "NLS/KdV/HillPhysicalNormalizedGapPeriodGerm.lean": "0737ca9dc93dc892eefe4c0b635527767bafc82976dec58ed6f9571cefe21479",
+    "NLS/KdV/HillFilledGapCutDomain.lean": "de888bea3f7c3481005c36c21573142917b2531c5440272d04d399cf8b35209e",
+    "NLS/KdV/HillPhysicalContourPeriods.lean": "6f070ea6426fa2f7de4877ba7012fad2990043204899ea17bdbee0e9370ed9d5",
+    "NLS/KdV/HillIntrinsicComplexPeriods.lean": "634716a6da53267691877f8d06eedb23bc5b7f22b133fae98fd292dd5cfc403d",
+    "NLS/KdV/HillIntrinsicNormalizedGapPeriodGerm.lean": "149e0bd0bb0e16cedda9b289aba771ce82fd79cd5c87c0c0e17f85ce8387a0ff",
+    "NLS/KdV/HillAbelianPhysicalRootSequence.lean": "855bda494283b503149188f4cfbfae1f12d5f34c8a538e3188136545617651eb",
+    "NLS/KdV/HillPhysicalGapBoxNormalization.lean": "a521559fa67304dac3d9d791b5c52ca192672f3210a6a00190206c54c0fcfc17",
+    "NLS/ComplexAnalysis/CompactNonzeroNormLowerBound.lean": "3e9537bd2a02be9ade7433547359682110997d5492e82a1c433c48f25ffdaea8",
+    "NLS/KdV/HillGapBoxNumeratorReality.lean": "4863af16ffb7601ee684eb0d94632c7badcc8612bd6322c53431da6dd209e6e5",
+    "NLS/KdV/HillGlobalGapPeriodCriterion.lean": "50fc23d9e8eec0ee83a98ffd99a4e4da53fd7b6ca30c5de9d66138abf8823133",
+    "NLS/KdV/HillGapBoxPeriodNonvanishing.lean": "c729a9c87346b1d49c73e36f4520459d6b65a952f1edd11015a9c2cd3f1d729f"
   },
-  "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual physical canonical root now has an explicit deflated factor analytic and nonzero across each selected real gap, with its required constant phase proved. A shared vanishing contour-period criterion forces a real numerator zero on the enclosed gap, including the collapsed case. The local analytic Hilbert root germs have a unique numerator zero in every off-diagonal free contour disc and no boundary zeros. Applying the shared criterion to the actual germ still requires an enclosing disc inside the physical gap-filled domain and transfer of the genuine off-diagonal zero period. Actual numerator-gap containment, uniform/global normalized differentials, intrinsic moving-contour compatibility, global Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
-  "milestone": "Hilbert numerator root isolation and the physical deflated-root gap criterion",
+  "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Actual local analytic root germs now lie in their corresponding physical gaps and produce normalized entire differentials with exact intrinsic moving-contour periods. Their numerators agree with genuine spectral-gap-box products after filling the irrelevant omitted coordinate. For every real period-one L2 potential and every root sequence in its physical gap box, the selected intrinsic period is nonzero and its norm has a positive lower bound uniform over that fixed box. Global simultaneous normalized-root existence and analyticity, global Abelian angles and the actual physical KdV Birkhoff map/action identity remain essential.",
+  "milestone": "Physical Hill gap roots, intrinsic normalized germs and global nonvanishing periods",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -1368,7 +1387,24 @@
     "NLS.KdV.HillOmittedEnergyRootProduct",
     "NLS.KdV.HillOmittedEnergyRootNonvanishing",
     "NLS.KdV.HillDeflatedCanonicalRoot",
-    "NLS.KdV.HillDeflatedCanonicalRootPhase"
+    "NLS.KdV.HillDeflatedCanonicalRootPhase",
+    "NLS.ComplexAnalysis.ConvexCutCirclePeriod",
+    "NLS.KdV.HillSourceBandLabelPreservation",
+    "NLS.KdV.HillFreeContourPhysicalBandBounds",
+    "NLS.KdV.HillPhysicalNumeratorGapZero",
+    "NLS.KdV.HillPhysicalNumeratorGapContainment",
+    "NLS.KdV.HillPhysicalGapRootGerm",
+    "NLS.KdV.HillPhysicalNormalizedGapPeriodGerm",
+    "NLS.KdV.HillFilledGapCutDomain",
+    "NLS.KdV.HillPhysicalContourPeriods",
+    "NLS.KdV.HillIntrinsicComplexPeriods",
+    "NLS.KdV.HillIntrinsicNormalizedGapPeriodGerm",
+    "NLS.KdV.HillAbelianPhysicalRootSequence",
+    "NLS.KdV.HillPhysicalGapBoxNormalization",
+    "NLS.ComplexAnalysis.CompactNonzeroNormLowerBound",
+    "NLS.KdV.HillGapBoxNumeratorReality",
+    "NLS.KdV.HillGlobalGapPeriodCriterion",
+    "NLS.KdV.HillGapBoxPeriodNonvanishing"
   ],
   "proof_commits": [
     {
@@ -1745,6 +1781,11 @@
       "commit": "c7685f8642bf26b6c13dd0fa344b2533c8dbfca5",
       "scope": "Physical Hill canonical-root matching and real normalized period germs; 464 strict modules, 4126-declaration transitive axiom audit and aggregate import check passed.",
       "pushed": true
+    },
+    {
+      "commit": "c94e9ee1eac8ae977f0f9291f79fee9abce0467a",
+      "scope": "Hilbert numerator root isolation and the physical deflated-root gap criterion; 476 strict modules, 4182-declaration transitive axiom audit and aggregate import check passed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -1761,20 +1802,20 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "All 476 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
+    "focused_modules": "All 493 focused modules checked with pinned Lean 4.33.1, autoImplicit=false and warningAsError=true by scripts/check-kdv-estimates.sh.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 4182 declarations. Includes the real Rolle zero-mean criterion, zero-period cosine identity with derived endpoint limits, real and rotated gap zero criteria including collisions, explicit Hilbert root coordinates and their uniform free-disc isolation, exact local zero identification and contour nonvanishing, the actual omitted energy-root product, its analyticity and nonvanishing, global canonical-root deflation and its physical real-gap phase.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 4237 declarations. Includes compact nonzero norm bounds, shared convex-cut circle homotopy, labelled physical band preservation, enlarged free and intrinsic discs, actual numerator-gap containment and physical root-germ selection, exact intrinsic contour compatibility, normalized intrinsic differential germs and actual root-box numerator identification. Also includes global real intrinsic zero-period criteria, own-gap numerator nonvanishing, selected intrinsic period nonvanishing for every actual gap-box sequence and a positive lower norm bound uniform over each fixed physical root box.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 476 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4182-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 493 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4237-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified.",
-    "mathematical_scope": "The actual Hilbert numerator root energies have displacement at most m*norm(a) from E_m. For norm(a)<pi^2/4, each lies strictly inside its assigned original free contour and no other coordinate root enters that closed disc. The complete entire-product zero set proves unique off-diagonal zero identification, nonvanishing in the selected disc and on every free contour. Continuous zero-based germs satisfy simultaneous root isolation on one parameter neighborhood. The numerator is real on real energies when its coordinates are real. A shared proof derives a single-valued primitive and its finite slit-endpoint limit from a genuine zero circle period and an inverse-square-root bound. The regular cosine pullback has zero integral; Rolle then forces a segment zero for a numerator made real by one nonzero constant phase. Cauchy handles collapsed endpoint pairs. The actual physical canonical root factors at every energy as its selected physical endpoint root times an explicit omitted energy-root product factor. That factor is analytic and nonzero on the full actual gap-filled domain for every real period-one L2 potential. The omitted product is real on the selected closed gap; hence the deflated factor is purely imaginary, and multiplication by I makes a real numerator divided by it real. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual physical canonical root now has an explicit deflated factor analytic and nonzero across each selected real gap, with its required constant phase proved. A shared vanishing contour-period criterion forces a real numerator zero on the enclosed gap, including the collapsed case. The local analytic Hilbert root germs have a unique numerator zero in every off-diagonal free contour disc and no boundary zeros. Applying the shared criterion to the actual germ still requires an enclosing disc inside the physical gap-filled domain and transfer of the genuine off-diagonal zero period. Actual numerator-gap containment, uniform/global normalized differentials, intrinsic moving-contour compatibility, global Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
-    "scope": "All 476 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4182-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Labelled radial band preservation keeps the two real free-circle intersections in their original adjacent bands. This supplies a larger closed disc in the actual gap-filled domain for every free contour on the common potential ball. The physical canonical root factors there into the selected endpoint root and its proved analytic nonzero unit with real-gap phase. A genuine zero off-diagonal period therefore forces a numerator zero in the physical gap, and free-disc zero uniqueness identifies the constructed coordinate. The genuine analytic root germ has all off-diagonal coordinates in their physical closed gaps simultaneously, including collisions. An affine-circle homotopy in a convex cut domain proves exact free/intrinsic contour equality. Actual local normalized entire differentials consequently have Kronecker-delta periods on intrinsic moving gap circles. Filling the irrelevant selected coordinate by its actual gap critical point produces a sequence in the physical spectral-gap box; its omitted-factor product is exactly the Hilbert numerator. Its own intrinsic candidate period is nonzero, and division by that actual period gives the exact normalized candidate and period ratios. For arbitrary real period-one L2 potentials, the intrinsic zero-period criterion applies to every entire numerator real on the selected gap. Any actual gap-box candidate is nonzero on its own gap by strict band separation and the complete infinite-product zero set; hence its selected intrinsic period cannot vanish, without requiring any off-diagonal equations. Compactness and period continuity give a strictly positive lower bound on its norm over the entire fixed root box. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Actual local analytic root germs now lie in their corresponding physical gaps and produce normalized entire differentials with exact intrinsic moving-contour periods. Their numerators agree with genuine spectral-gap-box products after filling the irrelevant omitted coordinate. For every real period-one L2 potential and every root sequence in its physical gap box, the selected intrinsic period is nonzero and its norm has a positive lower bound uniform over that fixed box. Global simultaneous normalized-root existence and analyticity, global Abelian angles and the actual physical KdV Birkhoff map/action identity remain essential.",
+    "scope": "All 493 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4237-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "911a9944a02a3084eabf249df407c06831bc41c33f6bb9b34219659a4d629dd1",
-      "scripts/check-kdv-estimates.sh": "c16aeb4bc35cc3ef75321eec6fb917eea9108740d9cf1b80b5eeb846f607fbbd",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "45dcf53bb592277f59c4d51270d4741db70159f169293e4b96359a3c2c952d53"
+      "NLS.lean": "77096263a017da923fde08773c11dc3a30775100994d77b3ad4df985fad68ae5",
+      "scripts/check-kdv-estimates.sh": "2bebb62376ad813a395ec00ada869f1ac0e03b542d221ff29c9cce895f77442c",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "14dc80501b5e0c1bb34691b46c36abac19c431f7ce27ab2e66857c7e03cbb242"
     }
   },
   "warningAsError": true,
@@ -1881,9 +1922,9 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Hilbert numerator root isolation and the physical deflated-root gap criterion",
-    "focused_modules": 476,
-    "scope": "All 476 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4182-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Physical Hill gap roots, intrinsic normalized germs and global nonvanishing periods",
+    "focused_modules": 493,
+    "scope": "All 493 focused modules passed with autoImplicit=false and warningAsError=true, as did the expanded 4237-declaration transitive axiom audit. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. Full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",

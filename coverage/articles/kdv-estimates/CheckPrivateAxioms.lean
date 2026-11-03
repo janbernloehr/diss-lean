@@ -475,6 +475,23 @@ import NLS.KdV.HillOmittedEnergyRootProduct
 import NLS.KdV.HillOmittedEnergyRootNonvanishing
 import NLS.KdV.HillDeflatedCanonicalRoot
 import NLS.KdV.HillDeflatedCanonicalRootPhase
+import NLS.ComplexAnalysis.ConvexCutCirclePeriod
+import NLS.KdV.HillSourceBandLabelPreservation
+import NLS.KdV.HillFreeContourPhysicalBandBounds
+import NLS.KdV.HillPhysicalNumeratorGapZero
+import NLS.KdV.HillPhysicalNumeratorGapContainment
+import NLS.KdV.HillPhysicalGapRootGerm
+import NLS.KdV.HillPhysicalNormalizedGapPeriodGerm
+import NLS.KdV.HillFilledGapCutDomain
+import NLS.KdV.HillPhysicalContourPeriods
+import NLS.KdV.HillIntrinsicComplexPeriods
+import NLS.KdV.HillIntrinsicNormalizedGapPeriodGerm
+import NLS.KdV.HillAbelianPhysicalRootSequence
+import NLS.KdV.HillPhysicalGapBoxNormalization
+import NLS.ComplexAnalysis.CompactNonzeroNormLowerBound
+import NLS.KdV.HillGapBoxNumeratorReality
+import NLS.KdV.HillGlobalGapPeriodCriterion
+import NLS.KdV.HillGapBoxPeriodNonvanishing
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -852,7 +869,9 @@ run_cmd do
     ``NLS.ComplexAnalysis.exists_gap_zero_of_rotated_zero_period,
     ``NLS.ComplexAnalysis.eq_zero_of_collapsed_endpointRoot_period,
     ``NLS.ComplexAnalysis.exists_segment_zero_of_endpointRoot_zero_period,
-    ``NLS.ComplexAnalysis.exists_segment_zero_of_deflated_root_period]
+    ``NLS.ComplexAnalysis.exists_segment_zero_of_deflated_root_period,
+    ``NLS.ComplexAnalysis.circleIntegral_eq_of_convex_cut_domain,
+    ``NLS.ComplexAnalysis.exists_pos_norm_lower_bound_of_compactSpace]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

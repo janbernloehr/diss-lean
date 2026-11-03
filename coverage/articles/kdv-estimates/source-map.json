@@ -365,7 +365,7 @@
         "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
         "NLS.KdV.hillRealGapIntegral_le_chi_bound"
       ],
-      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual physical canonical root now has an explicit deflated factor analytic and nonzero across each selected real gap, with its required constant phase proved. A shared vanishing contour-period criterion forces a real numerator zero on the enclosed gap, including the collapsed case. The local analytic Hilbert root germs have a unique numerator zero in every off-diagonal free contour disc and no boundary zeros. Applying the shared criterion to the actual germ still requires an enclosing disc inside the physical gap-filled domain and transfer of the genuine off-diagonal zero period. Actual numerator-gap containment, uniform/global normalized differentials, intrinsic moving-contour compatibility, global Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Actual local analytic root germs now lie in their corresponding physical gaps and produce normalized entire differentials with exact intrinsic moving-contour periods. Their numerators agree with genuine spectral-gap-box products after filling the irrelevant omitted coordinate. For every real period-one L2 potential and every root sequence in its physical gap box, the selected intrinsic period is nonzero and its norm has a positive lower bound uniform over that fixed box. Global simultaneous normalized-root existence and analyticity, global Abelian angles and the actual physical KdV Birkhoff map/action identity remain essential.",
       "checked_hill_uniform_critical_action_tail": [
         "NLS.SequenceSpaces.nonneg_series_cauchy_schwarz",
         "NLS.SequenceSpaces.square_sum_le_of_weight_lower_bound",
@@ -949,6 +949,37 @@
         "NLS.KdV.hillOmittedEnergyRootProduct_im_eq_zero_on_gap",
         "NLS.KdV.hillDeflatedEnergyCanonicalRoot_re_eq_zero_on_gap",
         "NLS.KdV.im_I_mul_div_hillDeflatedEnergyCanonicalRoot_eq_zero_on_gap"
+      ],
+      "checked_physical_gap_containment_and_intrinsic_periods": [
+        "NLS.ComplexAnalysis.circleIntegral_eq_of_convex_cut_domain",
+        "NLS.ComplexAnalysis.exists_pos_norm_lower_bound_of_compactSpace",
+        "NLS.KdV.mem_same_hillRealBand_of_free_and_source",
+        "NLS.KdV.hillFreeContour_physical_band_bounds_of_control",
+        "NLS.KdV.exists_hillFreeContour_enlarged_disc_in_filledDomain",
+        "NLS.KdV.exists_hillAbelianHilbertPsi_zero_on_physical_gap_of_period_zero",
+        "NLS.KdV.hillAbelianHilbertRootEnergy_mem_physical_gap_of_period_zero",
+        "NLS.KdV.exists_hillAbelianPhysicalGapRoot_germ",
+        "NLS.KdV.exists_hillAbelianPhysicalNormalizedGapPeriod_germ",
+        "NLS.KdV.mem_hillL2RealCutDomain_of_filled_not_gap",
+        "NLS.KdV.hillRealGapSegment_subset_intrinsic_contour_ball",
+        "NLS.KdV.hillPhysicalContour_period_eq_free_contour",
+        "NLS.KdV.hillAbelianComplexPeriod_eq_intrinsic_physical",
+        "NLS.KdV.analyticOnNhd_hillAbelianNormalizedComplexPsi_energy",
+        "NLS.KdV.exists_hillAbelianIntrinsicNormalizedGapPeriod_germ",
+        "NLS.KdV.hillAbelianPhysicalRootSequence",
+        "NLS.KdV.hillAbelianPhysicalRootSequence_mem_gapRootBox",
+        "NLS.KdV.hillAbelianPhysicalRootSequence_factor_eq",
+        "NLS.KdV.hillAbelianPsiCandidate_physicalRootSequence_eq",
+        "NLS.KdV.hillAbelianCandidatePeriod_physicalRootSequence_eq",
+        "NLS.KdV.hillAbelianNormalizedComplexPsi_eq_gapbox_candidate",
+        "NLS.KdV.exists_hillAbelian_gapbox_normalized_germ",
+        "NLS.KdV.hillAbelianPsiCandidate_im_eq_zero",
+        "NLS.KdV.hillAbelianPsiCandidate_ne_zero_on_own_gap",
+        "NLS.KdV.exists_hillIntrinsicContour_enlarged_disc_in_filledDomain",
+        "NLS.KdV.exists_zero_on_hillRealGap_of_intrinsic_period_zero",
+        "NLS.KdV.exists_hillAbelianPsiCandidate_zero_of_intrinsic_period_zero",
+        "NLS.KdV.hillAbelianCandidatePeriod_own_ne_zero",
+        "NLS.KdV.exists_hillAbelianCandidatePeriod_own_norm_lower_bound"
       ]
     },
     {
@@ -1377,7 +1408,7 @@
         "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual physical canonical root now has an explicit deflated factor analytic and nonzero across each selected real gap, with its required constant phase proved. A shared vanishing contour-period criterion forces a real numerator zero on the enclosed gap, including the collapsed case. The local analytic Hilbert root germs have a unique numerator zero in every off-diagonal free contour disc and no boundary zeros. Applying the shared criterion to the actual germ still requires an enclosing disc inside the physical gap-filled domain and transfer of the genuine off-diagonal zero period. Actual numerator-gap containment, uniform/global normalized differentials, intrinsic moving-contour compatibility, global Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Actual local analytic root germs now lie in their corresponding physical gaps and produce normalized entire differentials with exact intrinsic moving-contour periods. Their numerators agree with genuine spectral-gap-box products after filling the irrelevant omitted coordinate. For every real period-one L2 potential and every root sequence in its physical gap box, the selected intrinsic period is nonzero and its norm has a positive lower bound uniform over that fixed box. Global simultaneous normalized-root existence and analyticity, global Abelian angles and the actual physical KdV Birkhoff map/action identity remain essential.",
       "status": "not_verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -2297,6 +2328,37 @@
         "NLS.KdV.hillOmittedEnergyRootProduct_im_eq_zero_on_gap",
         "NLS.KdV.hillDeflatedEnergyCanonicalRoot_re_eq_zero_on_gap",
         "NLS.KdV.im_I_mul_div_hillDeflatedEnergyCanonicalRoot_eq_zero_on_gap"
+      ],
+      "checked_physical_gap_containment_and_intrinsic_periods": [
+        "NLS.ComplexAnalysis.circleIntegral_eq_of_convex_cut_domain",
+        "NLS.ComplexAnalysis.exists_pos_norm_lower_bound_of_compactSpace",
+        "NLS.KdV.mem_same_hillRealBand_of_free_and_source",
+        "NLS.KdV.hillFreeContour_physical_band_bounds_of_control",
+        "NLS.KdV.exists_hillFreeContour_enlarged_disc_in_filledDomain",
+        "NLS.KdV.exists_hillAbelianHilbertPsi_zero_on_physical_gap_of_period_zero",
+        "NLS.KdV.hillAbelianHilbertRootEnergy_mem_physical_gap_of_period_zero",
+        "NLS.KdV.exists_hillAbelianPhysicalGapRoot_germ",
+        "NLS.KdV.exists_hillAbelianPhysicalNormalizedGapPeriod_germ",
+        "NLS.KdV.mem_hillL2RealCutDomain_of_filled_not_gap",
+        "NLS.KdV.hillRealGapSegment_subset_intrinsic_contour_ball",
+        "NLS.KdV.hillPhysicalContour_period_eq_free_contour",
+        "NLS.KdV.hillAbelianComplexPeriod_eq_intrinsic_physical",
+        "NLS.KdV.analyticOnNhd_hillAbelianNormalizedComplexPsi_energy",
+        "NLS.KdV.exists_hillAbelianIntrinsicNormalizedGapPeriod_germ",
+        "NLS.KdV.hillAbelianPhysicalRootSequence",
+        "NLS.KdV.hillAbelianPhysicalRootSequence_mem_gapRootBox",
+        "NLS.KdV.hillAbelianPhysicalRootSequence_factor_eq",
+        "NLS.KdV.hillAbelianPsiCandidate_physicalRootSequence_eq",
+        "NLS.KdV.hillAbelianCandidatePeriod_physicalRootSequence_eq",
+        "NLS.KdV.hillAbelianNormalizedComplexPsi_eq_gapbox_candidate",
+        "NLS.KdV.exists_hillAbelian_gapbox_normalized_germ",
+        "NLS.KdV.hillAbelianPsiCandidate_im_eq_zero",
+        "NLS.KdV.hillAbelianPsiCandidate_ne_zero_on_own_gap",
+        "NLS.KdV.exists_hillIntrinsicContour_enlarged_disc_in_filledDomain",
+        "NLS.KdV.exists_zero_on_hillRealGap_of_intrinsic_period_zero",
+        "NLS.KdV.exists_hillAbelianPsiCandidate_zero_of_intrinsic_period_zero",
+        "NLS.KdV.hillAbelianCandidatePeriod_own_ne_zero",
+        "NLS.KdV.exists_hillAbelianCandidatePeriod_own_norm_lower_bound"
       ]
     }
   ],
@@ -2900,7 +2962,7 @@
     }
   ],
   "next_shared_milestones": [
-    "Integrate the checked real zero-period criterion, uniform Hilbert numerator-root isolation and the actual globally defined deflated canonical-root unit with its proved real-gap phase. Then use spectral-label continuity and radial noncrossing to show that each original free contour has a slightly larger closed disc inside its corresponding actual gap-filled domain for small real potentials. Combine actual zero periods, the deflated canonical-root identity and its phase with the shared criterion; unique zero identification then gives actual numerator-gap containment, including collapsed gaps. Continue to intrinsic contour compatibility, uniform/global normalized differentials, global angles and the physical KdV Birkhoff map/action identity.",
+    "Integrate the checked physical gap containment, exact intrinsic contour compatibility and gap-box normalized analytic germs, together with the global gap zero-period criterion and globally nonvanishing selected period with a uniform lower norm bound over each fixed physical gap box. Run the enlarged strict modules, aggregate check and axiom audit and preserve main statuses. Continue toward global normalized root existence: use the actual root-box compactness, the proved denominator lower bound and an invertible actual period derivative or a proved global real-root existence argument. Establish global Abelian angles and the physical KdV Birkhoff map/action identity; do not replace these by arbitrary phases or conditional substitutes.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Prove explicit norm-dependent action-gap bounds with the source cutoff/weight evaluation, then Hamiltonian/higher-action trace identities and the tame action estimates for Theorem 2. The potential-dependent eventual bound n*I_n<=gamma_n^2, weighted action summability and the high Proposition 5 comparison at cutoff eight are now checked.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -6200,7 +6262,7 @@
     "result": "Uniqueness of a continuous square root on the radial potential interval identifies the complex root chart with source continuation. Density of nonreal points extends canonical product/source equality to real band points. Spectral-label continuity and the intermediate value theorem prevent a real source-continuation point from crossing any spectral band edge. Thus all original free contours remain in the actual real cut and carry the physical canonical root on one potential ball, uniformly in their labels. The same avoidance argument places both endpoints and the entire physical gap strictly inside its assigned free circle. Exact conjugation of the genuine Hilbert numerator products and contour periods is proved. A shared analytic implicit-map local injectivity theorem and conjugation on the supported Hilbert root space prove reality of the selected root germs for real potentials. Direct comparison of integrands then gives exact normalized contour periods with the physical canonical root. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual complex root is now identified with the physical canonical energy root on all original free contours in one real potential ball. The constructed analytic root germs have real coordinates for real potentials, and their normalized entire numerators satisfy exact physical Kronecker-delta contour periods. Each complete physical spectral gap remains inside its original free circle. Containment of the numerator zeros inside those physical gaps, intrinsic moving-contour identification, uniform/global normalized differentials, global Abelian angles and the actual KdV Birkhoff map/action identity remain essential.",
     "qualification": "The actual complex square-root chart is identified with the radial source continuation, then with the actual canonical energy product root for all original free contour labels on one real period-one l2-potential ball. Spectral-label continuity proves that these contours stay in the actual real cut domain and that each corresponding complete physical gap stays strictly inside its free isolating circle. This is isolation of the physical spectral gap; it does not yet place the constructed numerator zeros inside that gap. Exact conjugation of the actual entire Hilbert numerators and contour periods, plus a proved local uniqueness neighborhood for the augmented implicit map, makes the constructed root germ real on real potentials. For each selected label an actual local analytic normalized entire differential has real root coordinates and Kronecker-delta periods using the physical canonical root on the original free energy circles. Root-germ neighborhoods may depend on the selected label. Intrinsic moving-contour identification, real gap containment of numerator zeros, uniform/global normalized root construction, global angles and the actual KdV Birkhoff map/action identity remain unproved. Theorem 2 and Theorem 3(ii) remain verified; Theorems 1 and 3(i) remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
     "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual complex root is now identified with the physical canonical energy root on all original free contours in one real potential ball. The constructed analytic root germs have real coordinates for real potentials, and their normalized entire numerators satisfy exact physical Kronecker-delta contour periods. Each complete physical spectral gap remains inside its original free circle. Containment of the numerator zeros inside those physical gaps, intrinsic moving-contour identification, uniform/global normalized differentials, global Abelian angles and the actual KdV Birkhoff map/action identity remain essential.",
-    "gap_containment_progress": "The hilbert_root_isolation_and_deflation section now proves uniform numerator-root isolation and global canonical-root deflation with the real-gap phase. Applying the shared zero-period criterion still requires the enlarged free-disc inclusion in the physical gap-filled domain."
+    "gap_containment_progress": "Actual constructed numerator roots are now proved to lie in their physical closed gaps on the selected analytic germ neighborhood; the original free and intrinsic contour periods agree exactly."
   },
   "hilbert_root_isolation_and_deflation": {
     "modules": [
@@ -6260,6 +6322,64 @@
     "hypotheses": "The root isolation statements require arbitrary complex Hilbert coordinates with norm below pi^2/4 and positive contour/root labels. The simultaneous germ statement requires a continuous germ vanishing at zero. Deflated canonical-root analyticity, nonvanishing, factorization and real-gap phase hold for arbitrary real period-one L2 Hill potentials and every positive selected label. The shared contour criterion requires an analytic numerator and a nonzero analytic unit on an enclosing closed disc, one constant phase making their quotient real on the segment, and an actual vanishing circle period; it includes coinciding endpoints.",
     "result": "The actual Hilbert numerator root energies have displacement at most m*norm(a) from E_m. For norm(a)<pi^2/4, each lies strictly inside its assigned original free contour and no other coordinate root enters that closed disc. The complete entire-product zero set proves unique off-diagonal zero identification, nonvanishing in the selected disc and on every free contour. Continuous zero-based germs satisfy simultaneous root isolation on one parameter neighborhood. The numerator is real on real energies when its coordinates are real. A shared proof derives a single-valued primitive and its finite slit-endpoint limit from a genuine zero circle period and an inverse-square-root bound. The regular cosine pullback has zero integral; Rolle then forces a segment zero for a numerator made real by one nonzero constant phase. Cauchy handles collapsed endpoint pairs. The actual physical canonical root factors at every energy as its selected physical endpoint root times an explicit omitted energy-root product factor. That factor is analytic and nonzero on the full actual gap-filled domain for every real period-one L2 potential. The omitted product is real on the selected closed gap; hence the deflated factor is purely imaginary, and multiplication by I makes a real numerator divided by it real. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual physical canonical root now has an explicit deflated factor analytic and nonzero across each selected real gap, with its required constant phase proved. A shared vanishing contour-period criterion forces a real numerator zero on the enclosed gap, including the collapsed case. The local analytic Hilbert root germs have a unique numerator zero in every off-diagonal free contour disc and no boundary zeros. Applying the shared criterion to the actual germ still requires an enclosing disc inside the physical gap-filled domain and transfer of the genuine off-diagonal zero period. Actual numerator-gap containment, uniform/global normalized differentials, intrinsic moving-contour compatibility, global Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
     "qualification": "A zero contour period of an analytic numerator divided by a two-endpoint root and a nonvanishing analytic unit forces a numerator zero on the enclosed segment when one constant nonzero phase makes the divided numerator real there. Both open and collapsed endpoint pairs are covered. The endpoint boundary limit is derived from square-root growth, rather than assumed. Hill Hilbert root coordinates with norm less than pi^2/4 lie strictly in their corresponding original free contour balls, and no other coordinate root enters those closed balls. The exact entire numerator zero set gives unique zero identification in each off-diagonal disc, no zeros in the selected disc and no numerator zeros on any free contour. A continuous zero-based germ satisfies simultaneous root isolation on one neighborhood uniform over all labels. For arbitrary real period-one L2 potentials, the actual physical energy canonical root is factored at every energy as the selected physical endpoint root times an explicit omitted-product factor. This deflated factor is analytic and nonzero throughout the actual gap-filled domain. It is purely imaginary on the closed real gap, and multiplying a real numerator divided by it by I produces a real value. Applying the shared contour criterion to the actual physical root germ still requires a slightly larger closed disc around the free contour inside that gap-filled domain and transfer of the actual off-diagonal zero period. Physical numerator-gap containment is not yet claimed. Global normalized differentials, global Abelian angles and the actual KdV Birkhoff map/action identity remain essential. Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified. Full Lake rebuild and full repository examples were not rerun.",
-    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual physical canonical root now has an explicit deflated factor analytic and nonzero across each selected real gap, with its required constant phase proved. A shared vanishing contour-period criterion forces a real numerator zero on the enclosed gap, including the collapsed case. The local analytic Hilbert root germs have a unique numerator zero in every off-diagonal free contour disc and no boundary zeros. Applying the shared criterion to the actual germ still requires an enclosing disc inside the physical gap-filled domain and transfer of the genuine off-diagonal zero period. Actual numerator-gap containment, uniform/global normalized differentials, intrinsic moving-contour compatibility, global Abelian angles and the physical KdV Birkhoff map/action identity remain essential."
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. The actual physical canonical root now has an explicit deflated factor analytic and nonzero across each selected real gap, with its required constant phase proved. A shared vanishing contour-period criterion forces a real numerator zero on the enclosed gap, including the collapsed case. The local analytic Hilbert root germs have a unique numerator zero in every off-diagonal free contour disc and no boundary zeros. Applying the shared criterion to the actual germ still requires an enclosing disc inside the physical gap-filled domain and transfer of the genuine off-diagonal zero period. Actual numerator-gap containment, uniform/global normalized differentials, intrinsic moving-contour compatibility, global Abelian angles and the physical KdV Birkhoff map/action identity remain essential.",
+    "physical_progress": "The physical_gap_containment_and_intrinsic_periods section now proves actual physical numerator-gap containment, intrinsic contour compatibility and a genuine local normalized gap-box differential. Global own-period nonvanishing and fixed-gap-box lower bounds are proved without assuming the off-diagonal equations."
+  },
+  "physical_gap_containment_and_intrinsic_periods": {
+    "modules": [
+      "NLS/ComplexAnalysis/ConvexCutCirclePeriod.lean",
+      "NLS/KdV/HillSourceBandLabelPreservation.lean",
+      "NLS/KdV/HillFreeContourPhysicalBandBounds.lean",
+      "NLS/KdV/HillPhysicalNumeratorGapZero.lean",
+      "NLS/KdV/HillPhysicalNumeratorGapContainment.lean",
+      "NLS/KdV/HillPhysicalGapRootGerm.lean",
+      "NLS/KdV/HillPhysicalNormalizedGapPeriodGerm.lean",
+      "NLS/KdV/HillFilledGapCutDomain.lean",
+      "NLS/KdV/HillPhysicalContourPeriods.lean",
+      "NLS/KdV/HillIntrinsicComplexPeriods.lean",
+      "NLS/KdV/HillIntrinsicNormalizedGapPeriodGerm.lean",
+      "NLS/KdV/HillAbelianPhysicalRootSequence.lean",
+      "NLS/KdV/HillPhysicalGapBoxNormalization.lean",
+      "NLS/ComplexAnalysis/CompactNonzeroNormLowerBound.lean",
+      "NLS/KdV/HillGapBoxNumeratorReality.lean",
+      "NLS/KdV/HillGlobalGapPeriodCriterion.lean",
+      "NLS/KdV/HillGapBoxPeriodNonvanishing.lean"
+    ],
+    "declarations": [
+      "NLS.ComplexAnalysis.circleIntegral_eq_of_convex_cut_domain",
+      "NLS.ComplexAnalysis.exists_pos_norm_lower_bound_of_compactSpace",
+      "NLS.KdV.mem_same_hillRealBand_of_free_and_source",
+      "NLS.KdV.hillFreeContour_physical_band_bounds_of_control",
+      "NLS.KdV.exists_hillFreeContour_enlarged_disc_in_filledDomain",
+      "NLS.KdV.exists_hillAbelianHilbertPsi_zero_on_physical_gap_of_period_zero",
+      "NLS.KdV.hillAbelianHilbertRootEnergy_mem_physical_gap_of_period_zero",
+      "NLS.KdV.exists_hillAbelianPhysicalGapRoot_germ",
+      "NLS.KdV.exists_hillAbelianPhysicalNormalizedGapPeriod_germ",
+      "NLS.KdV.mem_hillL2RealCutDomain_of_filled_not_gap",
+      "NLS.KdV.hillRealGapSegment_subset_intrinsic_contour_ball",
+      "NLS.KdV.hillPhysicalContour_period_eq_free_contour",
+      "NLS.KdV.hillAbelianComplexPeriod_eq_intrinsic_physical",
+      "NLS.KdV.analyticOnNhd_hillAbelianNormalizedComplexPsi_energy",
+      "NLS.KdV.exists_hillAbelianIntrinsicNormalizedGapPeriod_germ",
+      "NLS.KdV.hillAbelianPhysicalRootSequence",
+      "NLS.KdV.hillAbelianPhysicalRootSequence_mem_gapRootBox",
+      "NLS.KdV.hillAbelianPhysicalRootSequence_factor_eq",
+      "NLS.KdV.hillAbelianPsiCandidate_physicalRootSequence_eq",
+      "NLS.KdV.hillAbelianCandidatePeriod_physicalRootSequence_eq",
+      "NLS.KdV.hillAbelianNormalizedComplexPsi_eq_gapbox_candidate",
+      "NLS.KdV.exists_hillAbelian_gapbox_normalized_germ",
+      "NLS.KdV.hillAbelianPsiCandidate_im_eq_zero",
+      "NLS.KdV.hillAbelianPsiCandidate_ne_zero_on_own_gap",
+      "NLS.KdV.exists_hillIntrinsicContour_enlarged_disc_in_filledDomain",
+      "NLS.KdV.exists_zero_on_hillRealGap_of_intrinsic_period_zero",
+      "NLS.KdV.exists_hillAbelianPsiCandidate_zero_of_intrinsic_period_zero",
+      "NLS.KdV.hillAbelianCandidatePeriod_own_ne_zero",
+      "NLS.KdV.exists_hillAbelianCandidatePeriod_own_norm_lower_bound"
+    ],
+    "source_correspondence": "Physical normalized Hill differentials needed for Abelian angles and the actual KdV Birkhoff map in Theorems 1 and 3(i). The original free contours and intrinsic moving circles are identified with exactly the same actual canonical root and 1/(2*pi) normalization. The verified source Arnold-action estimates of Theorem 2 and Theorem 3(ii) are preserved.",
+    "hypotheses": "The physical gap-root and normalized-differential germs are local near the zero real period-one L2 potential; n>=1, and the selected germ neighborhood may depend on n. The contour control radius is common to all labels. Actual own-period nonvanishing and its lower norm bound over the root box hold for arbitrary real period-one L2 Hill potentials and each positive selected label. The positive lower bound may depend on the potential and selected label. Exact normalized periods divide the genuine numerator by its actual selected intrinsic period.",
+    "result": "Labelled radial band preservation keeps the two real free-circle intersections in their original adjacent bands. This supplies a larger closed disc in the actual gap-filled domain for every free contour on the common potential ball. The physical canonical root factors there into the selected endpoint root and its proved analytic nonzero unit with real-gap phase. A genuine zero off-diagonal period therefore forces a numerator zero in the physical gap, and free-disc zero uniqueness identifies the constructed coordinate. The genuine analytic root germ has all off-diagonal coordinates in their physical closed gaps simultaneously, including collisions. An affine-circle homotopy in a convex cut domain proves exact free/intrinsic contour equality. Actual local normalized entire differentials consequently have Kronecker-delta periods on intrinsic moving gap circles. Filling the irrelevant selected coordinate by its actual gap critical point produces a sequence in the physical spectral-gap box; its omitted-factor product is exactly the Hilbert numerator. Its own intrinsic candidate period is nonzero, and division by that actual period gives the exact normalized candidate and period ratios. For arbitrary real period-one L2 potentials, the intrinsic zero-period criterion applies to every entire numerator real on the selected gap. Any actual gap-box candidate is nonzero on its own gap by strict band separation and the complete infinite-product zero set; hence its selected intrinsic period cannot vanish, without requiring any off-diagonal equations. Compactness and period continuity give a strictly positive lower bound on its norm over the entire fixed root box. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Actual local analytic root germs now lie in their corresponding physical gaps and produce normalized entire differentials with exact intrinsic moving-contour periods. Their numerators agree with genuine spectral-gap-box products after filling the irrelevant omitted coordinate. For every real period-one L2 potential and every root sequence in its physical gap box, the selected intrinsic period is nonzero and its norm has a positive lower bound uniform over that fixed box. Global simultaneous normalized-root existence and analyticity, global Abelian angles and the actual physical KdV Birkhoff map/action identity remain essential.",
+    "qualification": "For each selected n>=1 a genuine analytic supported Hilbert root germ is constructed near zero. For nearby actual real period-one L2 Hill potentials every off-diagonal root lies in its corresponding closed physical spectral gap, including collapsed gaps. This containment is deduced from the actual off-diagonal zero period: labelled band noncrossing supplies an enlarged free disc in the actual gap-filled domain, the actual deflated canonical root supplies its analytic nonzero unit and real-gap phase, and the proved shared zero-period criterion gives the actual gap zero. Free-disc zero uniqueness identifies it with the constructed coordinate. One actual potential radius for the contour/control argument works for all labels; the selected root-germ neighborhood may depend on n. A shared affine-circle homotopy compares circle periods in a convex cut domain. It proves exact compatibility of the original free contours with the intrinsic physical gap contours, with the same physical canonical root and 1/(2*pi) normalization. The local normalized differential has real roots in the physical gaps and exact Kronecker-delta periods on the intrinsic moving circles. Filling the irrelevant selected coordinate with the actual gap critical point gives a sequence in the actual spectral-gap box; its omitted-factor product is exactly the constructed Hilbert numerator. Its own actual intrinsic candidate period is nonzero and direct division yields the normalized candidate and exact period ratios. The unscaled fixed-prefactor product is not claimed to have own period one. Uniform/global normalized root construction, global Abelian angles and the actual physical KdV Birkhoff map/action identity remain unproved. Theorem 2 and Theorem 3(ii) remain verified; Theorems 1 and 3(i) remain unverified. For arbitrary real period-one L2 potentials, any root sequence in the actual physical gap box has a nonzero selected intrinsic candidate period. No off-diagonal period equations are required for this nonvanishing theorem. A zero intrinsic period would force a numerator zero in the selected gap, whereas strict band separation and the complete product zero set rule out such a zero. Compactness of the actual gap box and continuity of its period give a positive lower bound for the own-period norm, uniform over every root sequence in the box for each fixed potential and selected label. The lower bound is not claimed uniform over potentials or labels. Global normalized root existence itself remains open. The global intrinsic zero-period criterion is also proved for any entire analytic numerator real on the selected gap, without assuming that numerator comes from a root box. Full Lake rebuild and full repository examples were not rerun.",
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified. Actual local analytic root germs now lie in their corresponding physical gaps and produce normalized entire differentials with exact intrinsic moving-contour periods. Their numerators agree with genuine spectral-gap-box products after filling the irrelevant omitted coordinate. For every real period-one L2 potential and every root sequence in its physical gap box, the selected intrinsic period is nonzero and its norm has a positive lower bound uniform over that fixed box. Global simultaneous normalized-root existence and analyticity, global Abelian angles and the actual physical KdV Birkhoff map/action identity remain essential."
   }
 }
