@@ -778,6 +778,15 @@ modules = [
     'NLS.SequenceSpaces.ContinuousOrderedRootIndex',
     'NLS.KdV.HillMiuraPositiveGaps',
     'NLS.KdV.HillHminusOneMiuraPositiveIndexedActions',
+    'NLS.SequenceSpaces.SingletonPairedEnumeration',
+    'NLS.ZakharovShabat.RealGapEndpointMultiplicity',
+    'NLS.KdV.HillMiuraPositiveEnumeration',
+    'NLS.KdV.HillMiuraSquaredEnumeration',
+    'NLS.KdV.HillHminusOneMiuraAllLabels',
+    'NLS.KdV.HillHminusOneMiuraOutsideShift',
+    'NLS.KdV.HillHminusOneMiuraCanonicalGaps',
+    'NLS.Articles.KdVPseudomeasures.OriginalMiuraAllIndices',
+    'NLS.KdV.HillHminusOneMiuraCanonicalActionFamilies',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

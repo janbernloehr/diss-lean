@@ -744,6 +744,15 @@ import NLS.KdV.HillHminusOneMiuraPositiveActions
 import NLS.SequenceSpaces.ContinuousOrderedRootIndex
 import NLS.KdV.HillMiuraPositiveGaps
 import NLS.KdV.HillHminusOneMiuraPositiveIndexedActions
+import NLS.SequenceSpaces.SingletonPairedEnumeration
+import NLS.ZakharovShabat.RealGapEndpointMultiplicity
+import NLS.KdV.HillMiuraPositiveEnumeration
+import NLS.KdV.HillMiuraSquaredEnumeration
+import NLS.KdV.HillHminusOneMiuraAllLabels
+import NLS.KdV.HillHminusOneMiuraOutsideShift
+import NLS.KdV.HillHminusOneMiuraCanonicalGaps
+import NLS.Articles.KdVPseudomeasures.OriginalMiuraAllIndices
+import NLS.KdV.HillHminusOneMiuraCanonicalActionFamilies
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -5311,3 +5320,52 @@ import NLS.KdV.HillHminusOneMiuraPositiveIndexedActions
 #print axioms NLS.KdV.hillHminusMiuraIndexedAction_positive_index_spec
 #print axioms NLS.KdV.hillHminusMiuraIndexedAction_positive_index_pos_iff
 #print axioms NLS.KdV.exists_miura_action_contour_positive_index
+#print axioms NLS.singletonPairedEnumeration
+#print axioms NLS.singletonPairedEnumeration_zero
+#print axioms NLS.singletonPairedEnumeration_left
+#print axioms NLS.singletonPairedEnumeration_right
+#print axioms NLS.singletonPairedEnumeration_slot
+#print axioms NLS.singletonPairedEnumeration_mem_pair
+#print axioms NLS.monotone_singletonPairedEnumeration
+#print axioms NLS.singletonPairedEnumeration_fiber_at_pair
+#print axioms NLS.singletonPairedEnumeration_finite_fiber
+#print axioms NLS.singletonPairedEnumeration_count_pair
+#print axioms NLS.singletonPairedEnumeration_count_initial
+#print axioms NLS.ZakharovShabat.periodicAlgebraicMultiplicity_eq_real_gap_endpoints
+#print axioms NLS.KdV.hillMiuraPositiveFrequencies
+#print axioms NLS.KdV.hillMiuraDirac_re_separated
+#print axioms NLS.KdV.hillMiuraPositiveFrequencies_initial
+#print axioms NLS.KdV.hillMiuraPositiveFrequencies_left
+#print axioms NLS.KdV.hillMiuraPositiveFrequencies_right
+#print axioms NLS.KdV.monotone_hillMiuraPositiveFrequencies
+#print axioms NLS.KdV.hillMiuraPositiveFrequencies_finite_fiber
+#print axioms NLS.KdV.hillMiuraPositiveFrequencies_nonneg
+#print axioms NLS.KdV.hillMiuraPositiveFrequencies_mem_spectrum
+#print axioms NLS.KdV.hillMiuraPositiveFrequencies_pos_of_zero_not_mem
+#print axioms NLS.KdV.hillMiuraPositiveFrequencies_exhaustive
+#print axioms NLS.KdV.hillMiuraPositiveFrequencies_multiplicity
+#print axioms NLS.KdV.hillMiuraSquaredLabels
+#print axioms NLS.KdV.monotone_hillMiuraSquaredLabels
+#print axioms NLS.KdV.hillMiuraSquaredLabels_finite_fiber
+#print axioms NLS.KdV.hillMiuraSquaredLabels_roots_iff
+#print axioms NLS.KdV.hillMiuraSquaredLabels_global_multiplicity
+#print axioms NLS.KdV.hillHminusLabels_eq_squared_miuraDirac
+#print axioms NLS.KdV.hillHminusLabels_bottom_eq_squared_miuraDirac
+#print axioms NLS.KdV.hillHminusLabels_pair_eq_squared_miuraDirac
+#print axioms NLS.KdV.hillHminusLabels_bottom_lt_first
+#print axioms NLS.KdV.hillHminusLabels_bottom_multiplicity_one
+#print axioms NLS.KdV.neg_shift_not_mem_singularHillSpectrum_of_norm_bound
+#print axioms NLS.KdV.exists_periodOneMiura_energyChart_outside_spectrum
+#print axioms NLS.KdV.exists_real_periodOneMiura_shift_outside_spectrum
+#print axioms NLS.KdV.hillHminus_gap_eq_miuraDirac_product
+#print axioms NLS.KdV.hillHminus_gap_eq_zero_iff_miuraDirac_gap
+#print axioms NLS.KdV.hillHminusMiuraIndexedAction_eq_zero_iff_Hill_gap
+#print axioms NLS.KdV.hillHminusMiuraIndexedAction_pos_iff_Hill_gap
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillLabels_eq_squared_miuraDirac
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalGapValues_eq_miuraDirac_product
+#print axioms NLS.Articles.KdVPseudomeasures.originalMiuraAction_eq_zero_iff_canonicalGap
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillLabels_bottom_lt_first
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillLabels_bottom_multiplicity_one
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalMiura_all_index_representation
+#print axioms NLS.KdV.exists_hillHminus_Miura_action_family_outside_spectrum
+#print axioms NLS.KdV.hillHminusMiura_action_family_original_real_slots

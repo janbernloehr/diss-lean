@@ -703,8 +703,8 @@
     }
   ],
   "remaining_obligations": [
-    "Identify EVERY original low Hill slot with the same positive Dirac slot under the actual quadratic Miura energy shift, including the bottom endpoint and ALL algebraic repetitions. Positive REAL Dirac gaps, positive circles, actual winding-one Hill contours, real positivity and exact Dirac-gap zero detection are NOW PROVED for EVERY n>0. Prove fixed positive-contour persistence on suitable COMPLEX source neighborhoods, Miura lift/energy-shift independence and agreement with the ALREADY GLUED high native Hill actions. The EXACT action transfer is factor TWO times natural k=1, printed level2.",
-    "Construct ONE common complex neighborhood of the full real mean-zero H-minus-one source carrying ALL ORIGINAL canonical Hill actions and analytic normalized ratios through collapsed gaps, with all-index zero-action equivalence. One common complex neighborhood with ALL signed-index analytic local Miura functions, REAL lifts at EVERY real neighbor and actual physical root matching at EVERY nonreal energy is NOW PROVED; identification and gluing as the original Hill family remain open.",
+    "Prove that the actual Miura ACTION values are independent of the real L2 lift and energy shift, and agree with the ALREADY GLUED native high Hill actions. ALL ORIGINAL Hill/positive Dirac indices and FULL multiplicities, including the simple bottom endpoint, are NOW PROVED for constructed outside-spectrum shifts on the entire original H-minus-one domain. Do not redo low-slot identification. Prove the required fixed-contour persistence/comparison on COMPLEX neighborhoods or a canonical real boundary-integral identity, then glue the correctly indexed local analytic action families.",
+    "Construct ONE common complex neighborhood of the full real mean-zero H-minus-one source carrying the GLOBAL original canonical Hill actions and analytic normalized ratios through ALL collapsed gaps, with complex all-index zero-action equivalence and real positivity. A COMMON COMPLEX neighborhood already supports all signed-index analytic Miura functions, actual full primitive charts, real lifts at EVERY real neighbor and a shift outside EVERY nearby complex spectrum. On EVERY real input these have ALL ORIGINAL slots and exact original-gap zero detection. Independence/gluing of the ACTION VALUES is still open.",
     "Complete the ORIGINAL KdV action-angle/Birkhoff construction and estimate (|gamma_n|+|mu_n-tau_n|)/sqrt(n), original differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, analyticity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Do not substitute the NLS Birkhoff map. Construct the ACTUAL original H-minus-one KdV flow by convergence of EVERY original smooth approximation with original equation and Hamiltonian/frequency normalization, then derive main1.1/1.3/1.4 and Wiener5.1/5.9. ALL FIVE main theorems remain UNPROVED; goal ACTIVE. Remaining DirichletC4ii, low parity/interlacing and complex ratio2.20 are open only where needed. Full complex weighted source2.1(i)-(ii), original2.2, corrected2.15 and AppendixB remain PROVED."
   ],
   "workspace": {
@@ -1600,6 +1600,31 @@
     "Miura_lift_energy_shift_independence_proved": false,
     "agreement_with_glued_high_Hill_actions_proved": false,
     "common_neighborhood_for_all_original_canonical_Hill_indices_constructed": false,
+    "actual_KdV_Birkhoff_map_constructed": false,
+    "actual_original_KdV_flow_constructed": false,
+    "full_source_Theorem3_2_proved": false,
+    "main_theorems_verified": false
+  },
+  "actual_HminusOne_Miura_ALL_original_labels_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hminus-miura-all-labels-map.json",
+    "shared_singleton_plus_pairs_enumeration_preserves_exact_occurrences": true,
+    "full_Dirac_multiplicity_equals_two_actual_endpoint_indicators_in_every_real_gap": true,
+    "actual_positive_Miura_frequency_enumeration_exhaustive_and_exact_multiplicity": true,
+    "actual_squared_enumeration_exhausts_ALL_Hill_zeros_with_full_physical_multiplicities": true,
+    "ALL_original_Hill_Dirac_label_slots_identified_including_low_repetitions_and_bottom": true,
+    "no_high_frequency_cutoff_or_open_gap_hypothesis_for_label_correspondence": true,
+    "original_bottom_label_strictly_below_first_pair_and_multiplicity_one": true,
+    "outside_spectrum_shift_constructed_uniformly_for_ALL_complex_inputs_in_one_neighborhood": true,
+    "entire_original_real_mean_zero_HminusOne_domain_preserved_without_endpoint_hypotheses": true,
+    "every_original_canonical_gap_has_exact_Dirac_difference_times_sum_factor": true,
+    "Miura_action_zero_iff_ORIGINAL_Hill_gap_zero_at_EVERY_positive_real_index": true,
+    "Miura_action_strictly_positive_iff_ORIGINAL_Hill_gap_open_at_EVERY_positive_real_index": true,
+    "all_index_analytic_local_Miura_families_with_actual_original_slots_on_every_real_neighbor": true,
+    "Miura_ACTION_lift_energy_shift_independence_proved": false,
+    "fixed_complex_contour_persistence_and_comparison_proved": false,
+    "agreement_of_Miura_actions_with_glued_high_Hill_actions_proved": false,
+    "global_common_original_canonical_all_index_Hill_ACTION_family_glued": false,
+    "complex_all_index_action_zero_equivalence_and_normalized_ratios_proved": false,
     "actual_KdV_Birkhoff_map_constructed": false,
     "actual_original_KdV_flow_constructed": false,
     "full_source_Theorem3_2_proved": false,
