@@ -5303,3 +5303,9 @@ import NLS.KdV.HillDirichletSlopeVariation
 import NLS.Fourier.ContinuousConstants
 import NLS.KdV.HillDirichletSlopeShift
 import NLS.KdV.HillLogNormingGradient
+import NLS.KdV.HillPhysicalDirectionPairing
+import NLS.KdV.HillLogNormingCotangent
+import NLS.KdV.HillLogNormingRegularity
+import NLS.KdV.HillMixedGardnerBrackets
+import NLS.KdV.ClassicalHillLogNormingBrackets
+import NLS.KdV.HillLogNormingGardnerBrackets

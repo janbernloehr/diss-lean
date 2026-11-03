@@ -380,6 +380,12 @@ import NLS.KdV.HillDirichletSlopeVariation
 import NLS.Fourier.ContinuousConstants
 import NLS.KdV.HillDirichletSlopeShift
 import NLS.KdV.HillLogNormingGradient
+import NLS.KdV.HillPhysicalDirectionPairing
+import NLS.KdV.HillLogNormingCotangent
+import NLS.KdV.HillLogNormingRegularity
+import NLS.KdV.HillMixedGardnerBrackets
+import NLS.KdV.ClassicalHillLogNormingBrackets
+import NLS.KdV.HillLogNormingGardnerBrackets
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/

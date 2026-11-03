@@ -365,7 +365,7 @@
         "NLS.KdV.hillRealGapIntegral_eq_chi_integral",
         "NLS.KdV.hillRealGapIntegral_le_chi_bound"
       ],
-      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. The actual logarithmic norming branch derivative is now identified by scalar integrals, and all rough mixed pairings have the exact minus-one-half diagonal normalization. The norming cotangent regularity and mixed/norming Gardner brackets, normalized Abelian differentials/angles and coordinate construction remain essential.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: normalized Abelian differentials and angles, the physical KdV Birkhoff map and its coordinate/action identity remain essential. The actual Dirichlet/logarithmic norming gradients and all three families of literal Gardner brackets are now proved; these do not establish global Birkhoff coordinates or inverse spectral bijectivity.",
       "checked_hill_uniform_critical_action_tail": [
         "NLS.SequenceSpaces.nonneg_series_cauchy_schwarz",
         "NLS.SequenceSpaces.square_sum_le_of_weight_lower_bound",
@@ -585,6 +585,36 @@
         "NLS.KdV.hillPhysicalDirection_one_lower_ae",
         "NLS.KdV.hillL2DirichletSlope_energy_integral",
         "NLS.KdV.hillDirichlet_log_branch_fderiv_integral"
+      ],
+      "checked_canonical_gardner_relations": [
+        "NLS.KdV.hillPhysicalDirectionPairing",
+        "NLS.KdV.hillPhysicalDirectionPairing_apply",
+        "NLS.KdV.hillLogNormingProjection",
+        "NLS.KdV.hillLogNormingGradientCurve",
+        "NLS.KdV.hillLogNormingGradientSpatialCurve",
+        "NLS.KdV.hillLogNormingGradient_represents_branch",
+        "NLS.KdV.absolutelyContinuousOnInterval_hillLogNormingGradientCurve",
+        "NLS.KdV.ae_hasDerivAt_hillLogNormingGradientCurve",
+        "NLS.KdV.hillDirichletState_real",
+        "NLS.KdV.hillDirichletCosine_real",
+        "NLS.KdV.hillDirichletState_crossMass_self",
+        "NLS.KdV.hillLogNormingGradientCurve_endpoints",
+        "NLS.KdV.hillLogNormingGradient_H1",
+        "NLS.KdV.continuous_hillLogNormingProjection",
+        "NLS.KdV.continuous_hillLogNormingGradientCurve",
+        "NLS.KdV.continuous_hillLogNormingGradientSpatialCurve",
+        "NLS.KdV.hillLogNormingGradient_integral_eq_zero",
+        "NLS.KdV.hillLogNormingProjection_real",
+        "NLS.KdV.hillLogNormingGradientCurve_real",
+        "NLS.KdV.hillDirichletLogGardnerBracket",
+        "NLS.KdV.hillDirichletLogGardnerBracket_eq",
+        "NLS.KdV.classicalHill_dirichlet_product_pairing_zero_of_ne",
+        "NLS.KdV.classicalHillFlow_sub_smul_initial",
+        "NLS.KdV.classicalHill_log_cotangent_pairing_zero_of_ne",
+        "NLS.KdV.hillLogNormingGardnerBracket",
+        "NLS.KdV.hillLogNormingGardnerBracket_diagonal",
+        "NLS.KdV.hillLogNormingGardnerBracket_zero_of_ne",
+        "NLS.KdV.hillLogNormingGardnerBracket_eq_zero"
       ]
     },
     {
@@ -1013,7 +1043,7 @@
         "Q <= c_(w,r)^2*((1+A)^2+B^2)*A^2"
       ],
       "proved_matching_main_declarations": [],
-      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. The actual logarithmic norming branch derivative is now identified by scalar integrals, and all rough mixed pairings have the exact minus-one-half diagonal normalization. The norming cotangent regularity and mixed/norming Gardner brackets, normalized Abelian differentials/angles and coordinate construction remain essential.",
+      "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: normalized Abelian differentials and angles, the physical KdV Birkhoff map and its coordinate/action identity remain essential. The actual Dirichlet/logarithmic norming gradients and all three families of literal Gardner brackets are now proved; these do not establish global Birkhoff coordinates or inverse spectral bijectivity.",
       "status": "not_verified",
       "checked_high_action_foundation": [
         "NLS.KdV.hillL2HighContourMoment_eq_gapIntegral",
@@ -1569,6 +1599,36 @@
         "NLS.KdV.hillPhysicalDirection_one_lower_ae",
         "NLS.KdV.hillL2DirichletSlope_energy_integral",
         "NLS.KdV.hillDirichlet_log_branch_fderiv_integral"
+      ],
+      "checked_canonical_gardner_relations": [
+        "NLS.KdV.hillPhysicalDirectionPairing",
+        "NLS.KdV.hillPhysicalDirectionPairing_apply",
+        "NLS.KdV.hillLogNormingProjection",
+        "NLS.KdV.hillLogNormingGradientCurve",
+        "NLS.KdV.hillLogNormingGradientSpatialCurve",
+        "NLS.KdV.hillLogNormingGradient_represents_branch",
+        "NLS.KdV.absolutelyContinuousOnInterval_hillLogNormingGradientCurve",
+        "NLS.KdV.ae_hasDerivAt_hillLogNormingGradientCurve",
+        "NLS.KdV.hillDirichletState_real",
+        "NLS.KdV.hillDirichletCosine_real",
+        "NLS.KdV.hillDirichletState_crossMass_self",
+        "NLS.KdV.hillLogNormingGradientCurve_endpoints",
+        "NLS.KdV.hillLogNormingGradient_H1",
+        "NLS.KdV.continuous_hillLogNormingProjection",
+        "NLS.KdV.continuous_hillLogNormingGradientCurve",
+        "NLS.KdV.continuous_hillLogNormingGradientSpatialCurve",
+        "NLS.KdV.hillLogNormingGradient_integral_eq_zero",
+        "NLS.KdV.hillLogNormingProjection_real",
+        "NLS.KdV.hillLogNormingGradientCurve_real",
+        "NLS.KdV.hillDirichletLogGardnerBracket",
+        "NLS.KdV.hillDirichletLogGardnerBracket_eq",
+        "NLS.KdV.classicalHill_dirichlet_product_pairing_zero_of_ne",
+        "NLS.KdV.classicalHillFlow_sub_smul_initial",
+        "NLS.KdV.classicalHill_log_cotangent_pairing_zero_of_ne",
+        "NLS.KdV.hillLogNormingGardnerBracket",
+        "NLS.KdV.hillLogNormingGardnerBracket_diagonal",
+        "NLS.KdV.hillLogNormingGardnerBracket_zero_of_ne",
+        "NLS.KdV.hillLogNormingGardnerBracket_eq_zero"
       ]
     }
   ],
@@ -2172,7 +2232,7 @@
     }
   ],
   "next_shared_milestones": [
-    "Construct the actual logarithmic norming cotangent and its AC/H1/endpoint/reality/mean-zero regularity, derive the literal mixed Gardner bracket with the checked sign/factor and the norming-norming bracket, then continue normalized Abelian differentials/angles and the physical KdV coordinate/action construction.",
+    "Construct the actual normalized Hill Abelian differentials and angles using genuine period equations and the verified canonical spectral data; then prove the physical KdV Birkhoff map and coordinate/action identity.",
     "Prove the normalized entire characteristic product and identify the selected canonical root with the source product, using the now-checked continuous real labels, trace parity and simple lowest root.",
     "Prove explicit norm-dependent action-gap bounds with the source cutoff/weight evaluation, then Hamiltonian/higher-action trace identities and the tame action estimates for Theorem 2. The potential-dependent eventual bound n*I_n<=gamma_n^2, weighted action summability and the high Proposition 5 comparison at cutoff eight are now checked.",
     "Identify characteristic analytic orders with operator algebraic multiplicities where required, and prove sharper mean-zero low-energy bounds needed by the main quantitative estimates.",
@@ -4972,6 +5032,52 @@
     "hypotheses": "Classical Wronskian/mixed identities apply to arbitrary complex continuous potentials and actual Dirichlet energies. Rough mixed identities apply to every real period-one L2 potential and labels n,m>=1, without open-gap, positive-energy, smoothness or mean-zero assumptions. The slope variation and constant-shift identities apply to arbitrary complex L2 potentials and complex energies/directions. The actual logarithmic branch derivative uses the local analytic selected Dirichlet branch at every real period-one L2 base potential, including collapsed gaps.",
     "result": "The classical scalar Wronskian is exactly one. A product of the two mixed Wronskians proves zero mixed squared-eigenfunction pairing for distinct Dirichlet energies; the derivative of c*s^3 gives the exact minus-one-half mass on the diagonal. A shared bounded continuous mixed-pairing functional, continuous canonical cosine data, strict ordered Dirichlet energies and real finite Fourier approximation pass both identities to the actual rough canonical states. The potential derivative of the entire actual endpoint slope is its original physical L2 variation kernel. Changing from the fundamental basis to the scalar cosine/Dirichlet basis and using the zero upper potential direction identifies this derivative with exact scalar perturbation integrals. Constants have exactly their zero Fourier coefficient. Simultaneously shifting a complex L2 potential by a constant and energy by the same constant preserves the actual slope; differentiation and the actual constant physical direction give its energy derivative by scalar integrals. Combining these identities with the proved Dirichlet energy derivative identifies the actual logarithmic norming branch derivative as integral(h*c*s) minus integral(c*s)/mass times integral(h*s^2), with the endpoint cosine-derivative terms canceling by proof. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. The actual logarithmic norming branch derivative is now identified by scalar integrals, and all rough mixed pairings have the exact minus-one-half diagonal normalization. The norming cotangent regularity and mixed/norming Gardner brackets, normalized Abelian differentials/angles and coordinate construction remain essential.",
     "qualification": "The scalar derivative formula represents the actual local logarithm of the signed endpoint slope, not an arbitrary phase. The minus-one-half mixed-pairing normalization is derived under the literal Gardner integral convention; no canonical-bracket normalization from another convention is imported. The integrated results do not yet construct the full norming cotangent curves and canonical brackets, normalized Abelian angles or physical Birkhoff coordinates/action identity. The full low-energy Dirichlet exclusion and canonical entire product remain unproved where required. Theorem 2 and Theorem 3(ii) remain verified; Theorems 1 and 3(i) remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
-    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. The actual logarithmic norming branch derivative is now identified by scalar integrals, and all rough mixed pairings have the exact minus-one-half diagonal normalization. The norming cotangent regularity and mixed/norming Gardner brackets, normalized Abelian differentials/angles and coordinate construction remain essential."
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: the physical KdV Birkhoff map and coordinate/action identity remain essential. The actual logarithmic norming branch derivative is now identified by scalar integrals, and all rough mixed pairings have the exact minus-one-half diagonal normalization. The norming cotangent regularity and mixed/norming Gardner brackets, normalized Abelian differentials/angles and coordinate construction remain essential.",
+    "norming_progress": "The canonical_gardner_relations section constructs the actual H1 norming cotangents and proves all actual separated spectral-data Gardner relations with the exact minus-one-half mixed normalization."
+  },
+  "canonical_gardner_relations": {
+    "modules": [
+      "NLS/KdV/HillPhysicalDirectionPairing.lean",
+      "NLS/KdV/HillLogNormingCotangent.lean",
+      "NLS/KdV/HillLogNormingRegularity.lean",
+      "NLS/KdV/HillMixedGardnerBrackets.lean",
+      "NLS/KdV/ClassicalHillLogNormingBrackets.lean",
+      "NLS/KdV/HillLogNormingGardnerBrackets.lean"
+    ],
+    "declarations": [
+      "NLS.KdV.hillPhysicalDirectionPairing",
+      "NLS.KdV.hillPhysicalDirectionPairing_apply",
+      "NLS.KdV.hillLogNormingProjection",
+      "NLS.KdV.hillLogNormingGradientCurve",
+      "NLS.KdV.hillLogNormingGradientSpatialCurve",
+      "NLS.KdV.hillLogNormingGradient_represents_branch",
+      "NLS.KdV.absolutelyContinuousOnInterval_hillLogNormingGradientCurve",
+      "NLS.KdV.ae_hasDerivAt_hillLogNormingGradientCurve",
+      "NLS.KdV.hillDirichletState_real",
+      "NLS.KdV.hillDirichletCosine_real",
+      "NLS.KdV.hillDirichletState_crossMass_self",
+      "NLS.KdV.hillLogNormingGradientCurve_endpoints",
+      "NLS.KdV.hillLogNormingGradient_H1",
+      "NLS.KdV.continuous_hillLogNormingProjection",
+      "NLS.KdV.continuous_hillLogNormingGradientCurve",
+      "NLS.KdV.continuous_hillLogNormingGradientSpatialCurve",
+      "NLS.KdV.hillLogNormingGradient_integral_eq_zero",
+      "NLS.KdV.hillLogNormingProjection_real",
+      "NLS.KdV.hillLogNormingGradientCurve_real",
+      "NLS.KdV.hillDirichletLogGardnerBracket",
+      "NLS.KdV.hillDirichletLogGardnerBracket_eq",
+      "NLS.KdV.classicalHill_dirichlet_product_pairing_zero_of_ne",
+      "NLS.KdV.classicalHillFlow_sub_smul_initial",
+      "NLS.KdV.classicalHill_log_cotangent_pairing_zero_of_ne",
+      "NLS.KdV.hillLogNormingGardnerBracket",
+      "NLS.KdV.hillLogNormingGardnerBracket_diagonal",
+      "NLS.KdV.hillLogNormingGardnerBracket_zero_of_ne",
+      "NLS.KdV.hillLogNormingGardnerBracket_eq_zero"
+    ],
+    "source_correspondence": "Necessary canonical physical Hill spectral data for the Birkhoff coordinate map in Theorems 1 and 3(i). The verified action estimates in Theorem 2 and Theorem 3(ii) are preserved.",
+    "hypotheses": "The rough cotangent regularity and brackets hold for every real period-one L2 potential and all n,m>=1, including collapsed gaps, without positive-energy or mean-zero assumptions. The classical four-solution identity holds for arbitrary complex continuous potentials at distinct actual Dirichlet energies. The derivative representation uses the actual local analytic selected Dirichlet branch and actual signed endpoint-slope logarithm.",
+    "result": "The bounded complex physical-direction pairing equals the literal integral of the original L2 perturbation. The actual logarithmic norming cotangent is K_n=c_n*s_n-alpha_n*s_n^2, with alpha_n=integral(c_n*s_n)/integral(s_n^2). It represents the previously identified actual local logarithmic norming derivative. It is absolutely continuous with the proved spatial derivative, both curves are L2, its endpoints and mean vanish, and it is real at real potentials. The projection, gradient and spatial derivative vary continuously in the uniform curve norm. The literal mixed bracket integral(grad(mu_n)*partial_x K_m) equals -(1/2)*delta_nm with kappa_m=log((-1)^m*s_prime(1,mu_m)). A classical four-solution Wronskian identity and linearity in the initial vector prove all off-diagonal norming pairings; finite real Fourier approximation passes them to the rough actual states. Complex AC integration by parts gives the diagonal, hence every literal norming-norming Gardner bracket vanishes. Together with the committed mu-mu brackets this proves all actual separated spectral-data Gardner relations. Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: normalized Abelian differentials and angles, the physical KdV Birkhoff map and its coordinate/action identity remain essential. The actual Dirichlet/logarithmic norming gradients and all three families of literal Gardner brackets are now proved; these do not establish global Birkhoff coordinates or inverse spectral bijectivity.",
+    "qualification": "The mixed normalization is derived under the literal Gardner integral convention: {mu_n,kappa_m}=-(1/2)*delta_nm; scaling eta=-2*kappa gives the mixed delta convention. No arbitrary phase replaces the actual norming derivative. These results do not yet construct normalized Abelian differentials, angles, the physical Birkhoff map/action identity or inverse spectral bijection. The full low-energy Dirichlet census and canonical entire product remain unproved where required. Theorems 1 and 3(i) remain not_verified. Full Lake rebuild and full repository examples were not rerun.",
+    "remaining": "Theorem 2 and Theorem 3(ii) remain verified for the exact source Arnold actions. Theorems 1 and 3(i) remain unverified: normalized Abelian differentials and angles, the physical KdV Birkhoff map and its coordinate/action identity remain essential. The actual Dirichlet/logarithmic norming gradients and all three families of literal Gardner brackets are now proved; these do not establish global Birkhoff coordinates or inverse spectral bijectivity."
   }
 }
