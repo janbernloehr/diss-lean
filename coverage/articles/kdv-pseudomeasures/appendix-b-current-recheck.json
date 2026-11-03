@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
-  "baseline_commit": "fbdb6ec3ca31d78299fbb37ecae9a3d9276ed48d",
-  "baseline_modules_verified_unchanged": 653,
+  "baseline_commit": "f847a2e9978de32a1e958f45b28c0fcedbf0fb10",
+  "baseline_modules_verified_unchanged": 678,
   "freshly_compiled_modules": [
     "NLS.SequenceSpaces.WeightedWeakStarCompactness",
     "NLS.SequenceSpaces.WeightedWeakStarLowerTopology",
@@ -24,7 +24,7 @@
     "NLS.Articles.KdVPseudomeasures.SourceWeakStarInverse",
     "NLS.Articles.KdVPseudomeasures.Audit"
   ],
-  "axiom_audited_declarations": 4248,
+  "axiom_audited_declarations": 4316,
   "warnings": 0,
   "tactic_suggestions": 0,
   "allowed_axioms": [
@@ -40,7 +40,7 @@
     "status": ""
   },
   "source_text_sha256": "1e1a9238da5d4b0fbe16d6e7e8df1b8698ae35f0b81df612cc6af910c16e1b7e",
-  "validation_log_sha256": "7955ae1e01338942422009fa9d78d23c9959b46ca635acca6939c75c6c0600fd",
+  "validation_log_sha256": "9a5616ecea7adb7f2e35740760c76a7e42fd3c6af2a2cbd86024f7f2446ed7c4",
   "fresh_full_build_this_increment": false,
   "scope": "Focused fresh compilation of nineteen existing Appendix B weak-star compactness/topology modules and the current complete declaration audit. All source Lemma B.1(i)-(iv) clauses remain proved; no new Lean declaration or remaining Appendix B obligation was identified.",
   "source_clauses": {
