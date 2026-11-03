@@ -2,7 +2,7 @@
   "schema_version": 1,
   "article_id": "kdv-convexity",
   "date": "2026-11-03",
-  "milestone": "Actual intrinsic H^-1 weak Dirichlet spectrum, real unitary Floquet energies, simple Dirichlet roots and analytic H^-1 root branches",
+  "milestone": "One intrinsic simple Dirichlet zero in every canonical H^-1 gap, with strictly increasing continuous labels and local analytic extensions",
   "main_theorems_verified": false,
   "theorem_1_1_global_physical_extension_verified": false,
   "base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
@@ -473,11 +473,23 @@
     "NLS.ComplexAnalysis.JointSpectralDerivative",
     "NLS.ComplexAnalysis.AnalyticImplicitRoot",
     "NLS.ComplexAnalysis.AnalyticImplicitBanachRoot",
-    "NLS.KdV.HillHminusOneDirichletRootBranches"
+    "NLS.KdV.HillHminusOneDirichletRootBranches",
+    "NLS.ComplexAnalysis.ClosedIntervalRoots",
+    "NLS.ComplexAnalysis.PositiveZeroUniqueness",
+    "NLS.FunctionalAnalysis.IntervalEndpointTests",
+    "NLS.KdV.HillHminusOneIntrinsicGreen",
+    "NLS.KdV.HillHminusOneDirichletRealColumn",
+    "NLS.KdV.ClassicalHillFreeDirichlet",
+    "NLS.KdV.HillHminusOneFreeDirichlet",
+    "NLS.KdV.HillHminusOneDirichletBands",
+    "NLS.FunctionalAnalysis.IntervalCurveMass",
+    "NLS.KdV.HillHminusOneDirichletGapExistence",
+    "NLS.KdV.HillHminusOneDirichletGapUniqueness",
+    "NLS.KdV.HillHminusOneDirichletGapLabels"
   ],
   "positive_index_inverse_example": "passed",
   "axiom_audit": {
-    "declarations": 4563,
+    "declarations": 4623,
     "includes_generated_declarations": true,
     "transitive": true,
     "allowed": [
@@ -518,6 +530,10 @@
       "NLS.ComplexAnalysis.norm_two_root_quotient_sub_le_on_disc"
     ],
     "additional_shared_modules": [
+      "NLS.ComplexAnalysis.ClosedIntervalRoots",
+      "NLS.ComplexAnalysis.PositiveZeroUniqueness",
+      "NLS.FunctionalAnalysis.IntervalEndpointTests",
+      "NLS.FunctionalAnalysis.IntervalCurveMass",
       "NLS.MKdV.QuasiHillEnergyEmbedding",
       "NLS.MKdV.QuasiHillL2Energy",
       "NLS.MKdV.QuasiHillL2Sobolev",
@@ -783,6 +799,7 @@
     "NLS/ComplexAnalysis/BanachHolomorphicAnalytic.lean": "f69c5918e49f27083517670ae6300b2809716d7bac5932790dbec44d937d73f4",
     "NLS/ComplexAnalysis/BoundaryAnalyticCoordinate.lean": "b41dc971223cc6ec6b57dc79806f244b35adbf4f2a0c3d35dcf0570f5962df12",
     "NLS/ComplexAnalysis/BoundedPuncturedCircleIntegral.lean": "9e08017bc26d748134c766ece6e52b96af74c31bc5d92f354a19b6edf1541746",
+    "NLS/ComplexAnalysis/ClosedIntervalRoots.lean": "7093d3831577947ff947ea4742e5d0b9dc8051efb8e9cd516896b4ea62b7b557",
     "NLS/ComplexAnalysis/ClosedUpperExtension.lean": "6fdd26aba946e7a6b8be44d54a6d4523864230102772f6a60537ba7e5594b1bf",
     "NLS/ComplexAnalysis/ClosedZeroPersistence.lean": "a72baf8fa21e8eda949b0891275af6cb423afcf09c5c8d2f1ecbec036def0562",
     "NLS/ComplexAnalysis/CompactCoordinateContinuation.lean": "7b6d6f0b6034979de71f59c1c45bd32a15dbce5e3e00fc5e4b5d7ec5a60c239d",
@@ -812,6 +829,7 @@
     "NLS/ComplexAnalysis/PhysicalCutCubicGeometry.lean": "bda75f843d49b9dc40e56ae3e4727b12fc6769354f06426b99b88a1b0a357fcf",
     "NLS/ComplexAnalysis/PhysicalCutCubicSign.lean": "a8e0bf2fe39923e7b915cb97f07e443fe9dd08b983ab1bf4418851de1d28c1b6",
     "NLS/ComplexAnalysis/PositiveRealPart.lean": "ea765bc189af3af91a9da85e528be14c2577d39ccac0fac5098e5fc2af5c7d45",
+    "NLS/ComplexAnalysis/PositiveZeroUniqueness.lean": "669be0342571d7d0c6289e9e2c96ff07003be84a3d6cf844eea3c7038e95df18",
     "NLS/ComplexAnalysis/QuadraticClusterCount.lean": "b945038db6b22d3dfe63ddf052c77fe34a32be81806bb56d29e3e8c9bd181c4c",
     "NLS/ComplexAnalysis/QuadraticLineRoot.lean": "6bd103888683391fbdb4cecb1b5de5b8133eb4dc2c9c3e154fa32a15806e1a39",
     "NLS/ComplexAnalysis/QuadraticRootContourPeriod.lean": "897fcfbc64f02b6232e117913bb775ca6024cb4737ae5ba034bebb5787daa75d",
@@ -870,6 +888,8 @@
     "NLS/Fourier/IntervalL2Products.lean": "58ee1c2f5419311b8c3e88057a7031d990ed095bb23009bf889ac4ded0b321ca",
     "NLS/Fourier/PeriodicVariationalUniqueness.lean": "8063b7505c39b97f8f7eef90e6fb32d7e1469831b024ce7e26bca27cb3ffc60d",
     "NLS/FunctionalAnalysis/AbsoluteContinuityTranslation.lean": "32da22d51d4c04fe33e03bb9b892d5c2ab800bcc5dead91ab0917763f419fe67",
+    "NLS/FunctionalAnalysis/IntervalCurveMass.lean": "47dbd88081ce890858465b7d831f590ef85eecf99021a9663c1851927625fbd0",
+    "NLS/FunctionalAnalysis/IntervalEndpointTests.lean": "9010b3a17d0316d684a075c6ca604be2997de7d15e13c6452934794b203cab31",
     "NLS/FunctionalAnalysis/IntervalH1Conjugation.lean": "cb15536b6bd5a7d13dbbbdc0cdef75186cca1fbea867f4899a91dadd2d2091ae",
     "NLS/FunctionalAnalysis/IntervalH1Product.lean": "55450931749ac4a0908ad724a2e4c559c2eff175c0725d73d7dd59e74f4a29c3",
     "NLS/FunctionalAnalysis/LinearVolterraFlow.lean": "cd27c0c270665ea606ace800acbb8580e75d3211f424bdd79eb694cda4fe0a9f",
@@ -901,6 +921,7 @@
     "NLS/KdV/ClassicalHillDirichlet.lean": "d76f479adcbb218250a72be50f88f0133610c92e1aa257416ecd651012e43741",
     "NLS/KdV/ClassicalHillDiscAsymptotics.lean": "115a47f8fb4d6e73b316d814c590cabd9e26d9152f9c51bc62f89471a61604c4",
     "NLS/KdV/ClassicalHillFlow.lean": "0ed242a792e6b2f46c93ecb280f9c7fc25cf4a75669cff6248e11e925d56bd8e",
+    "NLS/KdV/ClassicalHillFreeDirichlet.lean": "9567e10f21873672522d567120968a37d5617c2420db1f3fc9fc32f0314ca452",
     "NLS/KdV/ClassicalHillFreeSquareComparison.lean": "4d95c6d3f3cae31edd58b516662d974ddb1a46624dc90bc74fb16471f56432bb",
     "NLS/KdV/ClassicalHillGapCutRoots.lean": "8ae434046744a72a93fc4db630119388b26ee1e03628f3e0f93686a6cc4421b7",
     "NLS/KdV/ClassicalHillGapQuotientAsymptotics.lean": "7f8b25cac64cfe996c7df6a751cfc430d2601898d35efb124957b8cc8e5018d1",
@@ -972,12 +993,18 @@
     "NLS/KdV/HillHminusOneCubicSign.lean": "124dfdd2a462b3a5f52943adba995f3efda13032c6da990a5581d0123f175fa2",
     "NLS/KdV/HillHminusOneCumulativeCounts.lean": "f34c423e385fccd9b64f1921c89510cd68a5f2197a6619f9267d0e0903df3256",
     "NLS/KdV/HillHminusOneDirichlet.lean": "e3f7c0787cb4ea6a700800ce6984dfdaaaad297816455a357af456f73efeea9d",
+    "NLS/KdV/HillHminusOneDirichletBands.lean": "a7d8c95f265371459e401a3be34aaeb26774c710a0f76698d388ae7436a40a8f",
+    "NLS/KdV/HillHminusOneDirichletGapExistence.lean": "0e9507624b4ef1a58f0d7d1e0f1cb16e1e1bc42a6feb7fb07e9c6f23ac9512d6",
+    "NLS/KdV/HillHminusOneDirichletGapLabels.lean": "4a0536bc04ed48ab27daefdc5bce2b1601de4b255cd4c6f62a54abbb8dbc929b",
+    "NLS/KdV/HillHminusOneDirichletGapUniqueness.lean": "93e8438adf19d69e3fc8d51ed1a7fa7aa84e7581e37ba0a6f4a012c4a2eb543c",
+    "NLS/KdV/HillHminusOneDirichletRealColumn.lean": "9790ea91b13e536cc48df7fa837003e694de72cf0e1de942ba27cdea0edeb44e",
     "NLS/KdV/HillHminusOneDirichletRootBranches.lean": "efe15cb3e7bd873f89a7811f2dc589f10119e2178219c28c12d3afb5ed2842ec",
     "NLS/KdV/HillHminusOneDirichletSimplicity.lean": "b89e4f06d585831150fb5e04485045f2e15c35899517e67c0c705bd7e1d6422a",
     "NLS/KdV/HillHminusOneDiscAsymptotics.lean": "dd94b601b7f0a76227ace8f10fdd7356bb697aa05af802877546c66b7a6140b7",
     "NLS/KdV/HillHminusOneDiscriminant.lean": "99de415ddf7a75270281e46a1908745aba77fb24efc94d8ca497d60867533387",
     "NLS/KdV/HillHminusOneExteriorRoots.lean": "7177fa152885fb0bfadcdff4327311ff1ed753f6bb2a29f861c5ffa88c341273",
     "NLS/KdV/HillHminusOneFinitePeriodExtensions.lean": "a1ae2660520d65d75e3a6d01a03e8c8a3d7336bab41a0ac991c749ec27a143fa",
+    "NLS/KdV/HillHminusOneFreeDirichlet.lean": "26437f12e0af0fbb221e6447c63f0298c2fc6757c12f1f441ddc2906eafe74fd",
     "NLS/KdV/HillHminusOneFreeSquareComparison.lean": "c962f371fd1a812574b89b8aeb24e7fa76433bceb5ad3138a1b9a1eb4c5fd472",
     "NLS/KdV/HillHminusOneGapContourContinuity.lean": "d37ba9261fcfaa7df8cf3535d22f8798679468ed908da92c7b8e41922b467e64",
     "NLS/KdV/HillHminusOneGapCoordinateRegularity.lean": "c744e1b7e69ac55f9360721aae84d08ebc74ccaeec6a1f4832b0711dd4f744c8",
@@ -991,6 +1018,7 @@
     "NLS/KdV/HillHminusOneHighGapPairs.lean": "b7132f9598cc792bce41e10410aa089925a3d54071da9aadcaa3bface3f93187",
     "NLS/KdV/HillHminusOneHighMoments.lean": "2a576d776b19c41323a8accc77cdb4108c802cb306c3161a52ef05c6b99cadef",
     "NLS/KdV/HillHminusOneIntrinsicDirichletSpectrum.lean": "72dff4cf72881343f3a1ac6f94dbf3846991a816c1cac38aab44387a97cc001a",
+    "NLS/KdV/HillHminusOneIntrinsicGreen.lean": "e526dcd8bc636aca293ed3dce62a08757649fd82db17e0a63e7d50a0d70a6ccd",
     "NLS/KdV/HillHminusOneIntrinsicWeakConverse.lean": "d95296f2b6ae6471dd87a5db0da2609502188ca2407bbe31e180cd8bda49fa0e",
     "NLS/KdV/HillHminusOneIntrinsicWeakForm.lean": "fe371a3ad54acff6e55594bbb12007c9d3439a91a8988ba31af7a4cc236fd851",
     "NLS/KdV/HillHminusOneIntrinsicWeakSolutions.lean": "d1b4a0be2c36a5c9e55ceee55d14dcd87c9087962214f2fdd7dbfa1be7cb100f",
@@ -1208,11 +1236,12 @@
     "NLS/ZakharovShabat/SobolevScalarSmoothDensity.lean": "47a10a82a98147447c2cb5f18b399900d170f1a9d61b927a94aab76171d3ba02",
     "NLS/ZakharovShabat/SobolevSmoothFirstVariation.lean": "93521c1558d4adb2a941f443c4cc8cab5c1f6dbca2b48397738b8147fc967327",
     "NLS/ZakharovShabat/SobolevSourceCotangent.lean": "a595710eb92810313eb3accb67ea0216257ef12c4b4c977e23954f478ac167b4",
-    "coverage/articles/kdv-convexity/CheckAxioms.lean": "b0a29099d077ad35ee5e88e65233b6b60ddaa16d3773d95f3be729bfc75ca94f",
+    "coverage/articles/kdv-convexity/CheckAxioms.lean": "7b80f6cd62e2750f5275b50177a2fa6eb40c9bfe036938dd1b8235502b2448df",
     "coverage/articles/kdv-convexity/PositiveIndexExample.lean": "af3328fd48ff024985a50a654ecfdcb00d64d8ea7c8f5f7f7dd3755b127de7f2",
     "coverage/articles/kdv-convexity/action-descent-shared-imports.json": "fe39fa4ce34f1da3920a22a8a0feb8967c2470611f14401a9a3ecd64522c4ac6",
     "coverage/articles/kdv-convexity/band-primitive-shared-imports.json": "ee14ececa4bebbb805a8d49836d86e72ab62e34a26910f7886d91d931b485ef1",
     "coverage/articles/kdv-convexity/canonical-gap-shared-imports.json": "d00ef2f2e5dfb8f8653278c9d60c66daa4f730be745c0e546de66245e61665fc",
+    "coverage/articles/kdv-convexity/dirichlet-gap-shared-imports.json": "4f4ba5814d179bdaf348876d27a0c7ff530ccf62df6e0a944a5fa755deb05a0e",
     "coverage/articles/kdv-convexity/dirichlet-shared-imports.json": "69e1c7df945527a159731d5cd8e520d8f6487c0311b60a6f765dbb3de1277613",
     "coverage/articles/kdv-convexity/endpoint-shared-imports.json": "778c8d2856fdae5d4d08b2ac267d2c4abb029cc4fc246cb0f88824d73be3e8d8",
     "coverage/articles/kdv-convexity/hminus-real-shared-imports.json": "7cf3589bedf25268fd1f886149cae0a2205ff5625619a33bfc7ba6b44c2a78f0",
@@ -1221,10 +1250,10 @@
     "coverage/articles/kdv-convexity/physical-cut-shared-imports.json": "c6adf4965416cc426fc385ce324b4afb1aae45fec50e499debfbd5c2a2c5997f",
     "coverage/articles/kdv-convexity/real-form-gluing-shared-imports.json": "0a2dbea14cdc33d2913f49cf38008186f01fbdf913ab40fc72b843326bdf196b",
     "coverage/articles/kdv-convexity/shared-imports.json": "6938169a6ec0d33d069e7aaa81ffce9f7e11403443b1a468d849e9c9daa78da8",
-    "scripts/check-kdv-convexity.sh": "a1d7e9a235a84628e3ac716f7cc6948319806b50a2941fe3f0c311cef3300cd8"
+    "scripts/check-kdv-convexity.sh": "15e2cdd303016562d2cdb7f0d80e1ddcc832250a43b709578dba66452a4e4ce3"
   },
   "build_directory": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checkouts/diss-lean/.lake/article-checks/kdv-convexity",
-  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-weak-audit-validation.log",
+  "validation_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-gap-label-audit-validation.log",
   "canonical_checkout_branch_or_tracked_files_changed": false,
   "canonical_build_products_changed": false,
   "full_repository_build_run": false,
@@ -1242,7 +1271,7 @@
     "All main theorems remain unverified.",
     "The actual H^-1 spectral periods now satisfy uniform complex-neighborhood quartic-gap, gap/Arnold-period and quadratic weighted cubic-period estimates, including collapsed gaps. These are potential-space statements for the constructed source-normalized periods; global Birkhoff action identification and analytic action-space descent remain required.",
     "Global potential-space gluing is now proved: one complex-open neighborhood of the entire real H^-1 space carries all canonical polynomial and cubic moments, agrees with every actual real period, and retains locally uniform complex-tail quadratic bounds. Finite-gap exterior matching, the normalized inversion remainder of Lemma 4.4 and the physical energy/frequency identities remain open.",
-    "Construct the actual global KdV coordinate realization and prove its real Arnold-action and real action-fiber/discriminant identities; instantiate the verified positive-ell2 analytic contour extension. The actual H^-1 Dirichlet characteristic is now identified with the intrinsic weak Dirichlet problem; every real-input root has geometric and analytic multiplicity one and a local complex-analytic branch in the original H^-1 norm. Global H^-1 Dirichlet labels/interlacing, the full closed/self-adjoint Hill operator domain and periodic spectral multiplicities remain. Identify the physical renormalized Hamiltonian/frequencies and prove the -6*Id coefficient; main Theorems 1.1-1.3 remain unverified.",
+    "Construct the actual global KdV coordinate realization and prove its real Arnold-action and real action-fiber/discriminant identities; instantiate the verified positive-ell2 analytic contour extension. There is now exactly one intrinsic simple Dirichlet root in every positive canonical H^-1 gap, including collapsed gaps. The gap labels strictly increase, are continuous and each has a local analytic H^-1 extension, with exact free normalization. Exhaustion of all Dirichlet zeros, exclusion below the lowest periodic energy, sequence-valued analytic spectral/norming coordinates and the global inverse remain. The full closed/self-adjoint Hill operator domain and periodic spectral multiplicities are also open. Identify the physical renormalized Hamiltonian/frequencies and prove the -6*Id coefficient; main Theorems 1.1-1.3 remain unverified.",
     "Every actual canonical cubic period is real and nonpositive, strictly negative exactly on an open gap. Even polynomial Arnold periods are nonnegative; the level-zero Arnold and cubic zero sets equal the closed-gap set. These signs and zero criteria hold for the common all-index family and its matched source tail at every real input. Global Birkhoff actions have not yet been identified with the Arnold periods.",
     "The energy-analytic endpoint unit root is controlled uniformly over nearby complex H^-1 inputs. Joint potential analyticity of that chosen deflated root and a single neighborhood for all error tolerances are not asserted.",
     "Physical energy and frequency identification, the KdV quadratic coefficients giving -6*Id, positive-index Hessian transport and main Theorems 1.2 and 1.3 remain unproved.",
@@ -1252,9 +1281,10 @@
     "Every actual canonical real characteristic label now has a nonzero scalar H1 weak solution of the chart Miura form with exact indexed periodic/antiperiodic endpoint sign. Full weak Green identities and all complex multiplier criteria are proved. The intrinsic weak form is now chart independent below. The intrinsic weak-solution converse is now proved. The closed operator domain, self-adjointness and spectral multiplicity identification remain unproved.",
     "The intrinsic weak Hill form is now independent of Miura chart for every AC/L2-derivative curve pair with periodic product endpoints. It is entire in complex H^-1 and its potential term is bounded complex linear in q. The intrinsic weak eigenfunction predicate has no chart in its statement, and actual characteristic multipliers and canonical real labels give such nonzero H1 scalar functions. The weak-solution converse is now proved. The closed/self-adjoint operator domain and multiplicity identification remain separate.",
     "The full contour family and termwise derivative theorem use the proved analytic-base-moment/tail-bound interface. They do not construct the actual KdV Birkhoff realization or identify the physical Hamiltonian and frequencies; all main theorem flags remain false.",
-    "Dirichlet geometric and analytic simplicity and local H^-1 analytic root branches are proved for the actual characteristic. This does not yet construct the global Dirichlet labels, the full closed/self-adjoint operator domain, periodic multiplicity identification, or the actual global KdV Birkhoff realization. Theorem 1.1 remains incomplete."
+    "Dirichlet geometric and analytic simplicity and local H^-1 analytic root branches are proved for the actual characteristic. Positive-gap Dirichlet labels are now constructed below. Exhaustion of every Dirichlet zero, the full closed/self-adjoint operator domain, periodic multiplicity identification and the actual global KdV Birkhoff realization remain open. Theorem 1.1 remains incomplete.",
+    "The new global Dirichlet labeling is one root per positive canonical gap, with exact free normalization, continuity and local analytic branches. It does not yet exhaust possible lower-exterior Dirichlet zeros, supply a common complex sequence-valued analytic neighborhood, or construct global KdV coordinates. All main theorem flags remain false."
   ],
-  "previous_progress_commit": "011ccb1463e31cbdcdbb6f4430f64e2ba4b7d726",
+  "previous_progress_commit": "8b8ff8920a29b36f4eea2c0dee5a808f6fcafc96",
   "goal_turn_classification": "progress",
   "reused_physical_results": [
     "NLS.ZakharovShabat.evaluate_nlsRiccatiPolynomial",
@@ -1746,7 +1776,7 @@
     "analytic_weighted_action_descent_proved": false,
     "uniform_L2_whole_disc_squares_proved": true
   },
-  "focused_validation_scope": "Incremental validation against 011ccb1: all 436 baseline source hashes unchanged; ten exact shared modules and ten authored modules checked with warningAsError, followed by the positive-index example, cumulative transitive axiom audit and 1033 coverage-name checks. Full reproduction script lists 456 modules.",
+  "focused_validation_scope": "Incremental validation against 8b8ff89: all 456 baseline source hashes unchanged; two exact shared modules, one adapted shared module with verbatim scalar free-flow proofs, and nine authored modules pass warningAsError checks. The positive-index example, cumulative transitive axiom audit and 1069 coverage-name checks pass. Full reproduction script lists 468 modules.",
   "L2_whole_gap_square_progress": {
     "potential_space": "Full complex Coeff 2, the actual L2 Fourier coefficient Banach space",
     "Fourier_realization": "Period-two coefficient model; physical period-one potentials are the even-supported subspace. The whole ambient space parametrizes the actual unit-interval trace by restriction.",
@@ -2056,9 +2086,9 @@
   },
   "coverage_declaration_name_check": {
     "result": "passed",
-    "declarations": 1033,
-    "audit_modules_present": 229,
-    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/DirichletWeakCoverageNames.log"
+    "declarations": 1069,
+    "audit_modules_present": 233,
+    "log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/DirichletGapLabelCoverageNames.log"
   },
   "common_action_family_descent_progress": {
     "scope": "General analytic descent and the exact KdV-weighted positive-ell2 extension mechanism; physical KdV coordinate/invariance inputs remain explicit and unproved.",
@@ -2147,194 +2177,123 @@
     "real_isospectral_invariance_hypothesis": "Equality of the full actual entire discriminant at two real H^-1 potentials; action-fiber/discriminant identification is still unproved."
   },
   "incremental_validation": {
-    "baseline_commit": "011ccb1463e31cbdcdbb6f4430f64e2ba4b7d726",
-    "baseline_modules": 436,
+    "baseline_commit": "8b8ff8920a29b36f4eea2c0dee5a808f6fcafc96",
+    "baseline_modules": 456,
     "baseline_source_hashes_unchanged": true,
-    "newly_checked_exact_shared_modules": 10,
-    "newly_checked_authored_modules": 10,
+    "newly_checked_exact_shared_modules": 2,
+    "newly_checked_adapted_shared_modules": 1,
+    "newly_checked_authored_modules": 9,
     "completed_module_checks": [
       {
-        "module": "NLS.KdV.ClassicalHillDirichlet",
-        "source_sha256": "d76f479adcbb218250a72be50f88f0133610c92e1aa257416ecd651012e43741",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-weak-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.ClassicalHillDirichlet.lean.log",
+        "module": "NLS.ComplexAnalysis.ClosedIntervalRoots",
+        "source_sha256": "7093d3831577947ff947ea4742e5d0b9dc8051efb8e9cd516896b4ea62b7b557",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-gap-shared-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.ClosedIntervalRoots.lean.log",
         "warningAsError": true,
         "result": "passed",
-        "exact_shared_source": true
+        "reuse": "exact shared"
       },
       {
-        "module": "NLS.KdV.HillL2Dirichlet",
-        "source_sha256": "9ee79e1c78f80a018e486c6101cf5807fcd40ee71e44631c0d10f373462439bb",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-weak-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillL2Dirichlet.lean.log",
+        "module": "NLS.ComplexAnalysis.PositiveZeroUniqueness",
+        "source_sha256": "669be0342571d7d0c6289e9e2c96ff07003be84a3d6cf844eea3c7038e95df18",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-gap-shared-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.PositiveZeroUniqueness.lean.log",
         "warningAsError": true,
         "result": "passed",
-        "exact_shared_source": true
+        "reuse": "exact shared"
       },
       {
-        "module": "NLS.MKdV.QuasiHillEnergyEmbedding",
-        "source_sha256": "753b0d8b1cee56d5df09ca94a6351397619c0699f900646ce6af947d8acba8e4",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-weak-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.QuasiHillEnergyEmbedding.lean.log",
+        "module": "NLS.FunctionalAnalysis.IntervalEndpointTests",
+        "source_sha256": "9010b3a17d0316d684a075c6ca604be2997de7d15e13c6452934794b203cab31",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-tests-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.FunctionalAnalysis.IntervalEndpointTests.lean.log",
         "warningAsError": true,
         "result": "passed",
-        "exact_shared_source": true
+        "reuse": "authored"
       },
       {
-        "module": "NLS.MKdV.QuasiHillL2Energy",
-        "source_sha256": "08e4f509bfda1952921d7e4575d3f2c43ce613eb2f042601a611cc25861a11a0",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-weak-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.QuasiHillL2Energy.lean.log",
+        "module": "NLS.KdV.HillHminusOneIntrinsicGreen",
+        "source_sha256": "e526dcd8bc636aca293ed3dce62a08757649fd82db17e0a63e7d50a0d70a6ccd",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/intrinsic-green-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneIntrinsicGreen.lean.log",
         "warningAsError": true,
         "result": "passed",
-        "exact_shared_source": true
+        "reuse": "authored"
       },
       {
-        "module": "NLS.MKdV.QuasiHillL2Sobolev",
-        "source_sha256": "7c838b57e9f06bfb5d5b43d822811c406d6417928fbe91ce94144b7d96e304ac",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-weak-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.QuasiHillL2Sobolev.lean.log",
+        "module": "NLS.KdV.HillHminusOneDirichletRealColumn",
+        "source_sha256": "9790ea91b13e536cc48df7fa837003e694de72cf0e1de942ba27cdea0edeb44e",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-real-column-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneDirichletRealColumn.lean.log",
         "warningAsError": true,
         "result": "passed",
-        "exact_shared_source": true
+        "reuse": "authored"
       },
       {
-        "module": "NLS.MKdV.MiuraL2HillDirichlet",
-        "source_sha256": "0afef64d764e284dda446271e5d1eb081e52715fd33d088a23df3809eb7af8df",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-weak-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.MiuraL2HillDirichlet.lean.log",
+        "module": "NLS.KdV.ClassicalHillFreeDirichlet",
+        "source_sha256": "9567e10f21873672522d567120968a37d5617c2420db1f3fc9fc32f0314ca452",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/classical-free-dirichlet-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.ClassicalHillFreeDirichlet.lean.log",
         "warningAsError": true,
         "result": "passed",
-        "exact_shared_source": true
+        "reuse": "adapted shared imports, verbatim proof bodies"
       },
       {
-        "module": "NLS.KdV.HillHminusOneDirichlet",
-        "source_sha256": "e3f7c0787cb4ea6a700800ce6984dfdaaaad297816455a357af456f73efeea9d",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-weak-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneDirichlet.lean.log",
+        "module": "NLS.KdV.HillHminusOneFreeDirichlet",
+        "source_sha256": "26437f12e0af0fbb221e6447c63f0298c2fc6757c12f1f441ddc2906eafe74fd",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/free-hminus-dirichlet-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneFreeDirichlet.lean.log",
         "warningAsError": true,
         "result": "passed",
-        "exact_shared_source": true
+        "reuse": "authored"
       },
       {
-        "module": "NLS.FunctionalAnalysis.IntervalH1Conjugation",
-        "source_sha256": "cb15536b6bd5a7d13dbbbdc0cdef75186cca1fbea867f4899a91dadd2d2091ae",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/h1-conjugation-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.FunctionalAnalysis.IntervalH1Conjugation.lean.log",
+        "module": "NLS.KdV.HillHminusOneDirichletBands",
+        "source_sha256": "a7d8c95f265371459e401a3be34aaeb26774c710a0f76698d388ae7436a40a8f",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/hminus-dirichlet-bands-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneDirichletBands.lean.log",
         "warningAsError": true,
         "result": "passed",
-        "exact_shared_source": false
+        "reuse": "authored"
       },
       {
-        "module": "NLS.MKdV.L2QuasiHillEnergyAgreement",
-        "source_sha256": "b5b72b6d772ced081a2cd717310051637c3243eab2271832b72ecccff27a7903",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-energy-agreement-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.L2QuasiHillEnergyAgreement.lean.log",
+        "module": "NLS.FunctionalAnalysis.IntervalCurveMass",
+        "source_sha256": "47dbd88081ce890858465b7d831f590ef85eecf99021a9663c1851927625fbd0",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/interval-curve-mass-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.FunctionalAnalysis.IntervalCurveMass.lean.log",
         "warningAsError": true,
         "result": "passed",
-        "exact_shared_source": false
+        "reuse": "authored"
       },
       {
-        "module": "NLS.KdV.HillHminusOneWeakFormReality",
-        "source_sha256": "f36b87fef0de711da37103e9dc7c621e5efec98008a46ddd0735287e99ca0e38",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/weak-form-reality-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneWeakFormReality.lean.log",
+        "module": "NLS.KdV.HillHminusOneDirichletGapExistence",
+        "source_sha256": "0e9507624b4ef1a58f0d7d1e0f1cb16e1e1bc42a6feb7fb07e9c6f23ac9512d6",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/hminus-dirichlet-gap-existence-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneDirichletGapExistence.lean.log",
         "warningAsError": true,
         "result": "passed",
-        "exact_shared_source": false
+        "reuse": "authored"
       },
       {
-        "module": "NLS.MKdV.L2QuasiHillInitialLinearity",
-        "source_sha256": "ff3b2eb8231daa5cdecf620371d1d84df0b89b0c359f3b9ee63d1c12f6cf370e",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/initial-linearity-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.L2QuasiHillInitialLinearity.lean.log",
+        "module": "NLS.KdV.HillHminusOneDirichletGapUniqueness",
+        "source_sha256": "93e8438adf19d69e3fc8d51ed1a7fa7aa84e7581e37ba0a6f4a012c4a2eb543c",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/hminus-dirichlet-gap-uniqueness-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneDirichletGapUniqueness.lean.log",
         "warningAsError": true,
         "result": "passed",
-        "exact_shared_source": false
+        "reuse": "authored"
       },
       {
-        "module": "NLS.KdV.HillHminusOnePhysicalDirichlet",
-        "source_sha256": "399b8de979781d5908910bd10b81a645bb84ca7cb31d550b1d529eda655f27c0",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/physical-dirichlet-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOnePhysicalDirichlet.lean.log",
+        "module": "NLS.KdV.HillHminusOneDirichletGapLabels",
+        "source_sha256": "4a0536bc04ed48ab27daefdc5bce2b1601de4b255cd4c6f62a54abbb8dbc929b",
+        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/hminus-dirichlet-gap-labels-validation.log",
+        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneDirichletGapLabels.lean.log",
         "warningAsError": true,
         "result": "passed",
-        "exact_shared_source": false
-      },
-      {
-        "module": "NLS.KdV.HillHminusOneIntrinsicDirichletSpectrum",
-        "source_sha256": "72dff4cf72881343f3a1ac6f94dbf3846991a816c1cac38aab44387a97cc001a",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/intrinsic-dirichlet-spectrum-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneIntrinsicDirichletSpectrum.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "exact_shared_source": false
-      },
-      {
-        "module": "NLS.KdV.HillHminusOneWeakSpectrumReality",
-        "source_sha256": "61929f836e793f1bf3f5427e9ac9b78177352dd6fc0ef5f2f66f62fcd476827d",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/weak-spectrum-reality-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneWeakSpectrumReality.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "exact_shared_source": false
-      },
-      {
-        "module": "NLS.MKdV.L2QuasiHillDirichletDerivative",
-        "source_sha256": "540cc1dd37bbd7bee369fc938a0e7752e213a257fdd99457e568b844aab14a1e",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-derivative-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.MKdV.L2QuasiHillDirichletDerivative.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "exact_shared_source": false
-      },
-      {
-        "module": "NLS.KdV.HillHminusOneDirichletSimplicity",
-        "source_sha256": "b89e4f06d585831150fb5e04485045f2e15c35899517e67c0c705bd7e1d6422a",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/hminus-dirichlet-simplicity-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneDirichletSimplicity.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "exact_shared_source": false
-      },
-      {
-        "module": "NLS.ComplexAnalysis.JointSpectralDerivative",
-        "source_sha256": "f988cb9c979c851d34ce56925c72b86e3a54ad88d2bd75f3bfdd856e1212147c",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-implicit-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.JointSpectralDerivative.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "exact_shared_source": true
-      },
-      {
-        "module": "NLS.ComplexAnalysis.AnalyticImplicitRoot",
-        "source_sha256": "c2d1d9eae5186698af3c0066f7d509ffb1556efd72f4d4f8b6df76bbb7552aeb",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-implicit-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.AnalyticImplicitRoot.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "exact_shared_source": true
-      },
-      {
-        "module": "NLS.ComplexAnalysis.AnalyticImplicitBanachRoot",
-        "source_sha256": "d8267efd906bdf007cc30a8a83318fc20dc8d6e0ec9d34480818ab8f32cdc7c7",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-implicit-shared-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.ComplexAnalysis.AnalyticImplicitBanachRoot.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "exact_shared_source": true
-      },
-      {
-        "module": "NLS.KdV.HillHminusOneDirichletRootBranches",
-        "source_sha256": "efe15cb3e7bd873f89a7811f2dc589f10119e2178219c28c12d3afb5ed2842ec",
-        "completed_check_driver_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/hminus-dirichlet-branches-validation.log",
-        "latest_module_compiler_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/endpoint-NLS.KdV.HillHminusOneDirichletRootBranches.lean.log",
-        "warningAsError": true,
-        "result": "passed",
-        "exact_shared_source": false
+        "reuse": "authored"
       }
     ],
-    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-weak-audit-validation.log"
+    "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-convexity/work/checks/dirichlet-gap-label-audit-validation.log"
   },
   "Hminus1_real_spectral_progress": {
     "potential_space": "Every real unit-period H^-1 potential, specified by conjugate reflection of its raw Fourier coefficients.",
@@ -3191,7 +3150,7 @@
     "Dirichlet_analytic_simplicity_declaration": "NLS.KdV.hillHminusDirichlet_analyticOrderAt_eq_one",
     "analytic_root_branch_declaration": "NLS.KdV.exists_hillHminusDirichlet_analytic_real_root_branch",
     "full_closed_self_adjoint_operator_domain_and_periodic_multiplicity_identification_proved": false,
-    "global_Dirichlet_labels_and_gap_interlacing_on_all_Hminus1_proved": false,
+    "global_Dirichlet_labels_and_gap_interlacing_on_all_Hminus1_proved": true,
     "actual_global_KdV_Birkhoff_realization_and_Arnold_action_identity_proved": false,
     "main_Theorem_1_1_unconditional_positive_ell2_extension_proved": false,
     "new_authored_modules": [
@@ -3206,6 +3165,61 @@
       "NLS.KdV.HillHminusOneDirichletSimplicity",
       "NLS.KdV.HillHminusOneDirichletRootBranches"
     ],
-    "exact_shared_modules_reused_this_milestone": 10
+    "exact_shared_modules_reused_this_milestone": 10,
+    "gap_label_scope": "Exactly one root in every positive canonical gap; continuity, strict increase and local analytic branches are proved. Exhaustion of all Dirichlet zeros, particularly the lower exterior, remains unproved."
+  },
+  "Hminus1_intrinsic_Dirichlet_gap_labels_progress": {
+    "potential_space": "All original real unit-period H^-1 potentials, without a zero-mean restriction; complex analytic germs use the original complex H^-1 norm.",
+    "intrinsic_Green_identity_for_all_H1_pairs_with_matching_product_endpoints": true,
+    "real_affine_H1_endpoint_tests_constructed_with_exact_endpoints": true,
+    "full_normalized_Dirichlet_position_is_real_on_the_entire_interval_at_every_real_energy": true,
+    "position_reality_does_not_require_real_Miura_lift_or_shift": true,
+    "normalization_fixed_by_real_endpoint_test_and_actual_weak_initial_state_reconstruction": true,
+    "terminal_quasi_derivative_real_at_every_real_Dirichlet_root_in_every_chart": true,
+    "actual_terminal_quasi_derivative_is_a_Floquet_multiplier_at_a_Dirichlet_root": true,
+    "Dirichlet_zero_forces_actual_discriminant_real_part_squared_at_least_four": true,
+    "every_open_canonical_band_including_lowest_band_contains_no_Dirichlet_root": true,
+    "free_normalization": "Dirichlet(0,z^2)=sin(z)/z for z != 0; Dirichlet(0,0)=1; mu_n(0)=pi^2*n^2 for n>=1.",
+    "real_family_set_of_potentials_with_a_root_in_fixed_indexed_closed_gap_is_clopen": true,
+    "existence_in_every_positive_canonical_closed_gap_by_real_scalar_homotopy_from_zero": true,
+    "ordinary_physical_L2_scalar_mass_strictly_positive_for_nonzero_curve": true,
+    "signed_derivative_positive_at_every_root_in_closed_gap": true,
+    "signed_derivative": "0 < (-1)^n * Re(Dirichlet_energy_derivative(q,x)) for any root x in [lambda_(2n-1),lambda_(2n)].",
+    "uniqueness_in_every_positive_canonical_closed_gap": true,
+    "globally_defined_intrinsic_positive_index_Dirichlet_gap_labels": true,
+    "labels_strictly_increase": true,
+    "labels_lie_between_exact_canonical_gap_endpoints": true,
+    "collapsed_gap_label_equals_its_common_endpoint": true,
+    "labels_continuous_in_original_real_Hminus1_norm": true,
+    "each_fixed_label_agrees_locally_with_complex_analytic_Hminus1_root_branch": true,
+    "analytic_branch_matches_global_gap_label_without_assuming_continuity_of_label": true,
+    "label_declaration": "NLS.KdV.hillHminusDirichletEnergy",
+    "uniqueness_declaration": "NLS.KdV.hillHminusDirichlet_zero_unique_in_gap",
+    "analytic_extension_declaration": "NLS.KdV.exists_hillHminusDirichletEnergy_analytic_extension",
+    "one_common_complex_neighborhood_for_all_Dirichlet_label_branches_proved": false,
+    "all_Dirichlet_zeros_exhausted_by_the_positive_gap_labels_proved": false,
+    "lower_exterior_Dirichlet_zero_exclusion_proved": false,
+    "global_KdV_coordinate_realization_and_Arnold_action_identity_proved": false,
+    "main_Theorem_1_1_unconditional_positive_ell2_extension_proved": false,
+    "exact_shared_modules_reused": [
+      "NLS.ComplexAnalysis.ClosedIntervalRoots",
+      "NLS.ComplexAnalysis.PositiveZeroUniqueness"
+    ],
+    "adapted_shared_modules_reused": [
+      "NLS.KdV.ClassicalHillFreeDirichlet"
+    ],
+    "shared_source_commit": "788d051a8d867843389d78e6aaddb4a4ff01cf0e",
+    "adaptation_reason": "Reuse the two scalar free-flow theorem bodies verbatim with the existing ClassicalHillDirichlet import; omit the conflicting L2 frequency-characteristic construction.",
+    "new_authored_modules": [
+      "NLS.FunctionalAnalysis.IntervalEndpointTests",
+      "NLS.KdV.HillHminusOneIntrinsicGreen",
+      "NLS.KdV.HillHminusOneDirichletRealColumn",
+      "NLS.KdV.HillHminusOneFreeDirichlet",
+      "NLS.KdV.HillHminusOneDirichletBands",
+      "NLS.FunctionalAnalysis.IntervalCurveMass",
+      "NLS.KdV.HillHminusOneDirichletGapExistence",
+      "NLS.KdV.HillHminusOneDirichletGapUniqueness",
+      "NLS.KdV.HillHminusOneDirichletGapLabels"
+    ]
   }
 }

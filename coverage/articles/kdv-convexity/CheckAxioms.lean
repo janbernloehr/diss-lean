@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneDirichletGapLabels
 import NLS.KdV.HillHminusOneDirichletRootBranches
 import NLS.KdV.HillHminusOneIntrinsicWeakConverse
 import NLS.Articles.KdVConvexity.GlobalContourDifferentiation
@@ -81,6 +82,11 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.ComplexAnalysis.ClosedIntervalRoots,
+    `NLS.ComplexAnalysis.PositiveZeroUniqueness,
+    `NLS.FunctionalAnalysis.IntervalEndpointTests,
+    `NLS.FunctionalAnalysis.IntervalCurveMass,
+
     `NLS.MKdV.QuasiHillEnergyEmbedding,
     `NLS.MKdV.QuasiHillL2Energy,
     `NLS.MKdV.QuasiHillL2Sobolev,

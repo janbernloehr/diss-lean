@@ -2284,6 +2284,58 @@ Global rough Dirichlet labels/interlacing and the actual global KdV
 coordinate realization remain to be constructed. All main theorem flags
 remain false.
 
+## One actual Dirichlet label in every canonical H^-1 gap
+
+`IntervalEndpointTests.lean` supplies actual real H1 tests with prescribed
+endpoints. `HillHminusOneIntrinsicGreen.lean` exposes the chart-free weak
+Green identity on all admissible H1 pairs. Weak conjugation and initial
+state reconstruction then prove that the normalized Dirichlet position
+is real throughout the unit interval at every real energy and real
+H^-1 potential, even for a complex chosen Miura lift and shift. A test
+with endpoints one and zero fixes the initial normalization exactly.
+
+`HillHminusOneDirichletBands.lean` proves that the terminal
+quasi-derivative at a Dirichlet zero is real and is an actual Floquet
+multiplier. Its determinant-one quadratic forces the real discriminant
+square to be at least four. Thus every open canonical band, including
+the lowest band, contains no Dirichlet root.
+
+The scalar free-flow proofs are reused verbatim from the shared KdV
+estimates branch in `ClassicalHillFreeDirichlet.lean`, with an adapted
+import to avoid duplicate characteristic declarations. The exact generic
+closed-interval-root and positive-zero-uniqueness modules are reused
+unchanged. Their source commit and hashes are recorded in
+`dirichlet-gap-shared-imports.json`. `HillHminusOneFreeDirichlet.lean`
+recovers the original formula `Dirichlet(0,z^2)=sin(z)/z` for nonzero z,
+the free zero-energy value one, and the roots `pi^2*n^2`.
+
+`HillHminusOneDirichletGapExistence.lean` proves that the real-family set
+of inputs with a Dirichlet root in a fixed indexed closed gap is clopen.
+Compact variable-interval projection gives closedness; the actual simple
+analytic root branch and neighboring open-band exclusion give openness.
+The real scalar path from zero to an arbitrary real H^-1 potential proves
+existence in every positive gap, including every collapsed gap.
+
+`IntervalCurveMass.lean` proves strict positivity of the physical scalar
+L2 mass. The original energy derivative identity, the real normalized
+column and canonical signed trace bound give
+`(-1)^n*Re(Dirichlet'(q,x))>0` at every root in the nth closed gap.
+`HillHminusOneDirichletGapUniqueness.lean` applies the shared real zero
+uniqueness lemma, proving exactly one root per positive canonical gap.
+
+`HillHminusOneDirichletGapLabels.lean` defines these intrinsic labels.
+They strictly increase, lie between the exact gap endpoints, equal the
+common endpoint in a collapsed gap, and equal `pi^2*n^2` at zero. Each
+label agrees locally with a complex analytic branch in the original
+H^-1 norm; this agreement also proves global real H^-1 norm continuity.
+No continuity of the label was assumed to obtain that agreement.
+
+This constructs the positive-gap labels. Exhaustion of every Dirichlet
+zero, especially below the lowest periodic energy, remains unproved.
+A common complex domain for sequence-valued Dirichlet/norming data and
+the actual global KdV coordinate realization are still required. The
+physical Hamiltonian/frequency bridge and all main theorems remain open.
+
 ## Remaining essential KdV work
 
 1. Construct the closed intrinsic singular Hill operator domain from the
@@ -2348,15 +2400,16 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `011ccb1` contains 436 source modules, whose
-source hashes all remain unchanged. Ten exact shared modules and ten new
-authored modules pass Lean 4.33.1/mathlib v4.33.1 with
-`warningAsError=true`. The full reproduction script lists 456 source
-modules. The positive-index example and all 1033 coverage-name checks pass.
+The validated baseline at `8b8ff89` contains 456 source modules, whose
+source hashes all remain unchanged. Two exact shared modules, one shared
+module with adapted imports and verbatim proof bodies, and nine authored
+modules pass Lean 4.33.1/mathlib v4.33.1 with `warningAsError=true`.
+The full reproduction script lists 468 source modules. The positive-index
+example and all 1069 coverage-name checks pass.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 229 additional shared modules:
-4563 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 233 additional shared modules:
+4623 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

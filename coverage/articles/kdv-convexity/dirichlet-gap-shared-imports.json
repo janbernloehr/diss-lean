@@ -1,0 +1,16 @@
+{
+  "source_branch": "articles/kdv-estimates",
+  "source_commit": "788d051a8d867843389d78e6aaddb4a4ff01cf0e",
+  "exact_modules": {
+    "NLS.ComplexAnalysis.ClosedIntervalRoots": "7093d3831577947ff947ea4742e5d0b9dc8051efb8e9cd516896b4ea62b7b557",
+    "NLS.ComplexAnalysis.PositiveZeroUniqueness": "669be0342571d7d0c6289e9e2c96ff07003be84a3d6cf844eea3c7038e95df18"
+  },
+  "adapted_shared_modules": {
+    "NLS.KdV.ClassicalHillFreeDirichlet": {
+      "source_path": "NLS/KdV/HillFreeDirichlet.lean",
+      "source_sha256": "9051fb4061736982a304e7767c58f90f1a60f77f92ece8ed750e862f4b4d1ef7",
+      "sha256": "9567e10f21873672522d567120968a37d5617c2420db1f3fc9fc32f0314ca452",
+      "adaptation": "Reuse the two scalar free-flow theorem bodies verbatim with the existing ClassicalHillDirichlet import; omit the conflicting L2 frequency-characteristic construction."
+    }
+  }
+}
