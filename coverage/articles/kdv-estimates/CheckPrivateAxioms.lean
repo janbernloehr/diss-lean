@@ -503,6 +503,19 @@ import NLS.KdV.HillRootPeriodGapLocation
 import NLS.KdV.HillRootCandidateUpdate
 import NLS.KdV.HillRootPeriodContinuity
 import NLS.KdV.HillContinuousGapRootMap
+import NLS.FunctionalAnalysis.CountableIntervalBox
+import NLS.FunctionalAnalysis.FiniteIntervalBoxFixedPoint
+import NLS.FunctionalAnalysis.CountableIntervalBoxFixedPoint
+import NLS.KdV.HillGlobalPeriodRoots
+import NLS.KdV.HillGlobalNormalizedDifferentials
+import NLS.KdV.HillGlobalDifferentialReality
+import NLS.KdV.HillGapSignedRootFrequencies
+import NLS.KdV.HillGapRootEnergyProduct
+import NLS.KdV.HillGapProductExteriorBounds
+import NLS.KdV.HillGapEnergyProductSimpleZeros
+import NLS.KdV.HillGapNumeratorDecay
+import NLS.KdV.HillEntirePeriodInterpolation
+import NLS.KdV.HillGlobalDifferentialUniqueness
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -882,7 +895,16 @@ run_cmd do
     ``NLS.ComplexAnalysis.exists_segment_zero_of_endpointRoot_zero_period,
     ``NLS.ComplexAnalysis.exists_segment_zero_of_deflated_root_period,
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_convex_cut_domain,
-    ``NLS.ComplexAnalysis.exists_pos_norm_lower_bound_of_compactSpace]
+    ``NLS.ComplexAnalysis.exists_pos_norm_lower_bound_of_compactSpace,
+    ``NLS.FunctionalAnalysis.countableIntervalBox,
+    ``NLS.FunctionalAnalysis.isCompact_countableIntervalBox,
+    ``NLS.FunctionalAnalysis.intervalBoxFiniteLift,
+    ``NLS.FunctionalAnalysis.continuous_intervalBoxFiniteLift,
+    ``NLS.FunctionalAnalysis.intervalBoxFiniteProjection,
+    ``NLS.FunctionalAnalysis.continuous_intervalBoxFiniteProjection,
+    ``NLS.FunctionalAnalysis.intervalBox_projection_lift_fixed,
+    ``NLS.FunctionalAnalysis.exists_finite_coordinate_fixed_point,
+    ``NLS.FunctionalAnalysis.exists_fixed_point_countableIntervalBox]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
