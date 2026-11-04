@@ -1497,6 +1497,12 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralTerminalCurve
 import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralEndpointHitting
 import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCompactTransport
 import NLS.Articles.KdVPseudomeasures.OriginalHillAnglePairCommutation
+import NLS.ComplexAnalysis.ProductPhaseCotangents
+import NLS.KdV.HillNativeProductPhase
+import NLS.KdV.HillNativeZeroGardner
+import NLS.Articles.KdVPseudomeasures.OriginalHillNativeOpenGardner
+import NLS.Articles.KdVPseudomeasures.OriginalHillNativeGardnerCanonicality
+import NLS.Articles.KdVPseudomeasures.OriginalHillNativeSignedGardner
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9185,3 +9191,19 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillAnglePairCommutation
 #print axioms NLS.Articles.KdVPseudomeasures.continuousOn_originalHillCompletePhasePair
 #print axioms NLS.Articles.KdVPseudomeasures.exists_originalHill_finite_endpoints_same_pair
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complete_angle_pair_Gardner_commute
+#print axioms NLS.ComplexAnalysis.fderiv_from_product_phase_ratio
+#print axioms NLS.KdV.hillHminusNativeCoordinates_ne_zero_of_real_open_gap
+#print axioms NLS.KdV.eventually_hillHminusNativeCoordinate_product_action
+#print axioms NLS.KdV.eventually_hillHminusNativeCoordinate_ratio_phaseSquare
+#print axioms NLS.KdV.fderiv_hillHminusNativeCoordinates_from_action_phase
+#print axioms NLS.KdV.hillHminusNativeCoordinate_zero_mode
+#print axioms NLS.KdV.hillHminusNativeGardnerBracket_zero_left
+#print axioms NLS.KdV.hillHminusNativeGardnerBracket_zero_right
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Gardner_own_positive_negative
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Gardner_distinct_open
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Gardner_open_matrix
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillRealNativeGardnerBracket
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeGardner_canonical_matrix
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Gardner_canonical_matrix
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeGardner_signed_canonical
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Gardner_signed_canonical

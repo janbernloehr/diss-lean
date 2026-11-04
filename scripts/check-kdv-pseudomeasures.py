@@ -1531,6 +1531,12 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralEndpointHitting',
     'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCompactTransport',
     'NLS.Articles.KdVPseudomeasures.OriginalHillAnglePairCommutation',
+    'NLS.ComplexAnalysis.ProductPhaseCotangents',
+    'NLS.KdV.HillNativeProductPhase',
+    'NLS.KdV.HillNativeZeroGardner',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeOpenGardner',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeGardnerCanonicality',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeSignedGardner',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
