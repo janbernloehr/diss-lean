@@ -647,3 +647,8 @@ are in `CANONICAL_NUMERATOR_REPRESENTATION.md`. All main rows remain OPEN.
 ## Actual normalized periods on the original contours
 
 `ShiftedSquaredCircleBandHomotopy.lean` proves actual integral equality through a domain-preserving homotopy. `HillHminusOneEnergyBands.lean` proves its real energy-band hypotheses inside the actual canonical root domain. `HillHminusOneOriginalNormalizedPeriods.lean` transfers the actual mapped NLS normalization to the literal original contour Kronecker periods, with one data set and ball before all real rough inputs and positive mode pairs. This proves the necessary original period normalization; weighted inverse-column identification and all main theorem conclusions remain open. See `ORIGINAL_NORMALIZED_PERIODS.md`.
+
+
+## Actual candidate and weighted normalized-family identification
+
+`HillHminusOneMiuraNormalizedIdentification.lean` uses the actual Kronecker periods and genuine Hilbert coefficients to determine the inverse column and identify the entire Miura numerator with the earlier weighted normalized family on one physical-real ball. Its existence theorem supplies the analytic two-weighted inverse families, their free values, norm bounds and exact compatibility from the verified construction. Global and complex-source extensions and every main theorem conclusion remain open. See `MIURA_NORMALIZED_IDENTIFICATION.md`.

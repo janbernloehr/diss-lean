@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneMiuraNormalizedIdentification
 import NLS.KdV.HillHminusOneOriginalNormalizedPeriods
 import NLS.KdV.HillHminusOneOriginalContourBands
 import NLS.KdV.HillHminusOneOriginalContourRoots
@@ -522,7 +523,8 @@ run_cmd do
     `NLS.KdV.HillHminusOneOriginalContourBands,
     `NLS.ComplexAnalysis.ShiftedSquaredCircleBandHomotopy,
     `NLS.KdV.HillHminusOneEnergyBands,
-    `NLS.KdV.HillHminusOneOriginalNormalizedPeriods]
+    `NLS.KdV.HillHminusOneOriginalNormalizedPeriods,
+    `NLS.KdV.HillHminusOneMiuraNormalizedIdentification]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

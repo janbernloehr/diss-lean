@@ -17,6 +17,12 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual weighted normalized-family identification
+
+Actual original periods and the genuine old-basis Hilbert representation identify the actual residue coefficient vector with the constructed inverse column. One common ball precedes all real rough inputs, positive indices and energies in entire Miura/weighted normalized-family equality. The actual two-weighted inverse construction supplies analytic R/Q, their free values, uniform norm bounds and exact weighted compatibility. See `MIURA_NORMALIZED_IDENTIFICATION.md`.
+
+Current validation: 425 selected modules, 424 unchanged previously checked plus one strict incremental compilation; fresh combined transitive audit of 4912 selected and 27068 imported NLS declarations, permitted axioms only. The equality is on the physical real slice near zero; source-domain/global extensions and all main theorem rows remain open.
+
 ## Latest actual original normalized contour periods
 
 The actual Miura numerator now has the literal Kronecker periods on the original frequency circles. A proved homotopy inside the canonical root domain transfers the actual mapped NLS periods, with the correct shifted-square Jacobian and boundary root branch. One constructed normalized data set and norm ball precede all real rough inputs and positive mode pairs. See `ORIGINAL_NORMALIZED_PERIODS.md`.

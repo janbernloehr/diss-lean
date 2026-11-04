@@ -84,19 +84,19 @@ its existing Hilbert specialization and a transitive audit.
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 424 selected modules compile with pinned **Lean 4.33.1**, commit
+All 425 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: 421 unchanged previously checked modules, three new
-strict incremental compilations, and a fresh combined transitive axiom
-audit of all 424 selected modules:
+Validation output: 424 unchanged previously checked modules, one new
+strict incremental compilation, and a fresh combined transitive axiom
+audit of all 425 selected modules:
 
 ```text
-# Prior strict checks: 421 modules (415 full baseline plus six incremental)
+# Prior strict checks: 424 modules (415 full baseline plus nine incremental)
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -518,16 +518,17 @@ PASS NLS/KdV/HillHminusOneRealContinuationBands
 PASS NLS/KdV/HillHminusOneOriginalContourRoots
 PASS NLS/ZakharovShabat/SourceContourAdjacentBands
 PASS NLS/KdV/HillHminusOneOriginalContourBands
-# Three new strict incremental compilations
 PASS NLS/ComplexAnalysis/ShiftedSquaredCircleBandHomotopy
 PASS NLS/KdV/HillHminusOneEnergyBands
 PASS NLS/KdV/HillHminusOneOriginalNormalizedPeriods
-# Fresh combined transitive audit of all 424 selected modules
-Axiom audit passed: 4907 candidate declarations; 27063 declarations total.
+# One new strict incremental compilation
+PASS NLS/KdV/HillHminusOneMiuraNormalizedIdentification
+# Fresh combined transitive audit of all 425 selected modules
+Axiom audit passed: 4912 candidate declarations; 27068 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 424 selected modules (including generated and private declarations)
+the 425 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1650,3 +1651,10 @@ Audit: 4886 selected declarations; 27042 declarations including imported NLS dep
 See `ORIGINAL_NORMALIZED_PERIODS.md`. Prior strict validation of 421 unchanged modules (415-module full baseline and six incremental compilations), three new strict incremental compilations in dependency order, then a fresh full combined transitive axiom audit of all 424 selected modules. No repeated full 424-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified.
 
 Audit: 4907 selected declarations; 27063 imported NLS declarations, permitted standard axioms only. The domain-preserving homotopy, actual energy-band geometry and actual mapped NLS normalization prove the literal original Kronecker periods. One constructed data set and norm ball precede every real rough input and positive mode pair; joint complex numerator analyticity is retained. Weighted inverse-column identification, physical frequency(69) and all main theorem rows remain open.
+
+
+## Actual Miura and weighted normalized-family identification
+
+See `MIURA_NORMALIZED_IDENTIFICATION.md`. Prior strict validation of 424 unchanged modules (415-module full baseline and nine incremental compilations), one new strict incremental compilation, then a fresh full combined transitive axiom audit of all 425 selected modules. No repeated full 425-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified.
+
+Audit: 4912 selected declarations; 27068 imported NLS declarations, permitted standard axioms only. The proved actual original periods and genuine Hilbert representation determine the actual inverse column and identify the entire Miura numerator with the constructed weighted normalized family at all real inputs on one ball. An actual existence theorem retains analytic R/Q, free values, uniform inverse bounds and weighted compatibility. Complex-source/global extensions, physical frequency(69) and all main theorem rows remain open.

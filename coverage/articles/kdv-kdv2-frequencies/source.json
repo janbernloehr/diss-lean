@@ -7061,6 +7061,21 @@
       "scope": "Actual original and mapped energy loops have equal analytic integrals. The actual normalized mapped NLS periods and boundary root agreement give literal original Kronecker periods. One constructed normalized data set and norm ball precede all physically real rough inputs and positive mode pairs, with actual source membership and joint complex numerator analyticity retained. Weighted inverse-column identification and main theorems remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "576ee4029fd7f5f9b85cfa17f72df5534c1954d3b577329aebc5ae973f22a2d5"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMiuraNormalizedIdentification.lean",
+      "source_labels": [
+        "Actual Miura and weighted normalized-family identification; necessary spectral construction"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Actual original Kronecker periods and genuine old-basis Hilbert representation identify the residue coefficient vector with the constructed inverse column. One normalized data set and ball precede all physical real rough inputs, positive indices and energies in actual Miura/weighted normalized-family equality. An existence theorem supplies both weighted analytic inverse families, their free values, uniform bounds and exact weighted compatibility from the verified construction. Global/complex-source and main physical-frequency conclusions remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a6e9f4edc4303b379a0862ea5fe1a585979ce66956acef1cfa9d3a09f7819d20"
     }
   ],
   "dependencies_needed": [
@@ -7092,15 +7107,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4907,
-    "total_declarations_audited": 27063,
+    "candidate_declarations_audited": 4912,
+    "total_declarations_audited": 27068,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 424,
+    "selected_modules": 425,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -7108,7 +7123,8 @@
     "canonical_critical_compatibility_validation_sequence": "Prior full strict rebuild of the unchanged 415 modules, strict incremental compilation of the two new modules in dependency order, then a fresh full combined transitive axiom audit of all 417 selected modules. Source bytes, exact selections, private fresh outputs and seven provenance records verified. No claim of a repeated full 417-module rebuild.",
     "original_contour_roots_validation_sequence": "Prior strict validation of the unchanged 417 modules (415-module full baseline and two incremental compilations), two new strict incremental compilations, then a fresh full combined transitive axiom audit of all 419 selected modules. Source bytes, exact selections, private fresh outputs and seven provenance records verified. No claim of a repeated full 419-module rebuild.",
     "original_contour_bands_validation_sequence": "Prior strict validation of the unchanged 419 modules (415-module full baseline and four incremental compilations), two new strict incremental compilations, then a fresh full combined transitive axiom audit of all 421 selected modules. Source bytes, exact selections, private fresh outputs and seven provenance records verified. No claim of a repeated full 421-module rebuild.",
-    "original_normalized_periods_validation_sequence": "Prior strict validation of 421 unchanged modules (415-module full baseline and six incremental compilations), three new strict incremental compilations in dependency order, then a fresh full combined transitive axiom audit of all 424 selected modules. No repeated full 424-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified."
+    "original_normalized_periods_validation_sequence": "Prior strict validation of 421 unchanged modules (415-module full baseline and six incremental compilations), three new strict incremental compilations in dependency order, then a fresh full combined transitive axiom audit of all 424 selected modules. No repeated full 424-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified.",
+    "miura_normalized_identification_validation_sequence": "Prior strict validation of 424 unchanged modules (415-module full baseline and nine incremental compilations), one new strict incremental compilation, then a fresh full combined transitive axiom audit of all 425 selected modules. No repeated full 425-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -7254,5 +7270,6 @@
   "canonical_critical_compatibility_record": "CANONICAL_CRITICAL_COMPATIBILITY.md",
   "original_contour_roots_record": "ORIGINAL_CONTOUR_ROOTS.md",
   "original_contour_bands_record": "ORIGINAL_CONTOUR_BANDS.md",
-  "original_normalized_periods_record": "ORIGINAL_NORMALIZED_PERIODS.md"
+  "original_normalized_periods_record": "ORIGINAL_NORMALIZED_PERIODS.md",
+  "miura_normalized_identification_record": "MIURA_NORMALIZED_IDENTIFICATION.md"
 }
