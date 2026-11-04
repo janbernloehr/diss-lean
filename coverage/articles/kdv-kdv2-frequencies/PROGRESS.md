@@ -17,6 +17,12 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest canonical and earlier period-data Hilbert compatibility
+
+The complete actual free critical set fixes every canonical free label. Complex analytic uniqueness along real radial path images identifies the earlier branches and their full complex germs. Their filled scalar and Hilbert bases agree at every energy. On one ball chosen before all real inputs and indices, the actual descended Miura numerator is represented by genuine residue coefficients in the earlier period-data Hilbert basis. See `CANONICAL_CRITICAL_COMPATIBILITY.md`.
+
+Current validation: 417 selected modules (415 unchanged modules from the previous full strict rebuild plus two strict incremental compilations); fresh combined transitive audit of 4854 selected and 27013 imported NLS declarations, permitted axioms only. Original contour periods and normalized-family identification remain open; no main theorem is closed.
+
 ## Latest intrinsic critical labels and complex chart germs
 
 Actual real chart overlaps have identical complete positive critical labels. Each label also agrees on a full complex neighborhood: the actual frequency chain proves nearby criticality, and a reusable moving divided difference argument proves simple-root germ uniqueness. No real-type hypothesis is imposed on nearby complex inputs. Neighborhoods may depend on the index. See `CRITICAL_CHART_GERMS.md`.

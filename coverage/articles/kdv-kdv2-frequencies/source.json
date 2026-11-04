@@ -6926,6 +6926,36 @@
       "scope": "Canonical energy branches remain actual critical points on a full complex neighborhood of every real-type input. Actual simple-root uniqueness identifies every continuous critical germ through the same value, and hence canonical chart germs at every real overlap. Neighborhoods may depend on index.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "e48b3b6bc33d6b868f15ed9dfdfe6821f1b730bf4fb893ae01d681d39104af55"
+    },
+    {
+      "path": "NLS/KdV/FreeHillCriticalEnergies.lean",
+      "source_labels": [
+        "Canonical and earlier critical bases; coherent spectral neighborhood dependencies"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Exact actual free derivative at energy zero (-1), global squared-frequency derivative identity and complete positive free critical energy set, with no slit restriction or assumed Miura lift.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7e55a4ab859b22c3aca673e60c9725138a40b8e04c1e6bb1ad84d41715b02369"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCanonicalCriticalCompatibility.lean",
+      "source_labels": [
+        "Canonical and earlier critical bases; coherent spectral neighborhood dependencies"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Exact canonical free labels; analytic uniqueness on real radial path images proves earlier branch values and full complex germs agree. Filled scalar and Hilbert bases agree at every energy. Any verified earlier all-contour period data and a real canonical chart admit one ball before all real inputs, indices and energies with the actual Miura numerator represented in the earlier Hilbert basis by genuine residue coefficients. Original contour normalization and weighted normalized-family identification remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7be4a1c48ba1269b2d853629b14783132b5876f64fc171f00b2f0b66086355d2"
     }
   ],
   "dependencies_needed": [
@@ -6957,19 +6987,20 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4842,
-    "total_declarations_audited": 27002,
+    "candidate_declarations_audited": 4854,
+    "total_declarations_audited": 27013,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 415,
+    "selected_modules": 417,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
-    "critical_chart_germs_validation_sequence": "All 415 selected modules strictly rebuilt, followed by the combined transitive axiom audit. All 412 previous selected Lean sources unchanged; private fresh outputs. Full complex critical germ compatibility, not normalized-family identification."
+    "critical_chart_germs_validation_sequence": "All 415 selected modules strictly rebuilt, followed by the combined transitive axiom audit. All 412 previous selected Lean sources unchanged; private fresh outputs. Full complex critical germ compatibility, not normalized-family identification.",
+    "canonical_critical_compatibility_validation_sequence": "Prior full strict rebuild of the unchanged 415 modules, strict incremental compilation of the two new modules in dependency order, then a fresh full combined transitive axiom audit of all 417 selected modules. Source bytes, exact selections, private fresh outputs and seven provenance records verified. No claim of a repeated full 417-module rebuild."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -7111,5 +7142,6 @@
   "continuation_root_agreement_record": "CONTINUATION_ROOT_AGREEMENT.md",
   "critical_energy_residue_record": "CRITICAL_ENERGY_RESIDUES.md",
   "canonical_numerator_representation_record": "CANONICAL_NUMERATOR_REPRESENTATION.md",
-  "critical_chart_germs_record": "CRITICAL_CHART_GERMS.md"
+  "critical_chart_germs_record": "CRITICAL_CHART_GERMS.md",
+  "canonical_critical_compatibility_record": "CANONICAL_CRITICAL_COMPATIBILITY.md"
 }

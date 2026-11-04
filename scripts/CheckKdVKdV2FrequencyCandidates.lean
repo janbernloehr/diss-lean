@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneCanonicalCriticalCompatibility
 import NLS.KdV.HillHminusOneCriticalChartGerms
 import NLS.KdV.CanonicalMiuraNumeratorRepresentation
 import NLS.ComplexAnalysis.EntireCriticalHilbertBasis
@@ -509,7 +510,9 @@ run_cmd do
     `NLS.KdV.CanonicalMiuraNumeratorRepresentation,
     `NLS.ComplexAnalysis.SimpleRootGermUniqueness,
     `NLS.KdV.HillHminusOneCriticalChartIndependence,
-    `NLS.KdV.HillHminusOneCriticalChartGerms]
+    `NLS.KdV.HillHminusOneCriticalChartGerms,
+    `NLS.KdV.FreeHillCriticalEnergies,
+    `NLS.KdV.HillHminusOneCanonicalCriticalCompatibility]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

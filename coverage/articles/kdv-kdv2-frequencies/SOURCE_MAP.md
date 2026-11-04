@@ -627,3 +627,8 @@ are in `CANONICAL_NUMERATOR_REPRESENTATION.md`. All main rows remain OPEN.
 ## Intrinsic critical labels and compatible complex germs
 
 `HillHminusOneCriticalChartIndependence.lean` identifies actual complete strictly ordered energy labels on every real chart overlap. `SimpleRootGermUniqueness.lean` proves continuous simple-root germ uniqueness from an actual moving divided difference. `HillHminusOneCriticalChartGerms.lean` proves nearby complex criticality and equality of the actual canonical chart germs. These support coherent spectral charts but do not identify the old weighted normalized family or verify any main theorem. See `CRITICAL_CHART_GERMS.md`.
+
+
+## Canonical and earlier critical-basis identification
+
+`FreeHillCriticalEnergies.lean` proves the exact complete actual free critical energy set. `HillHminusOneCanonicalCriticalCompatibility.lean` fixes canonical free labels, propagates actual branch/germ agreement along real radial paths, identifies all filled scalar/Hilbert bases and represents the actual Miura numerator in the earlier verified period-data Hilbert class on a single common ball. This supplies a necessary dependency for coherent spectral charts and normalized-family identification; actual original contour normalization and all main theorem conclusions remain open. See `CANONICAL_CRITICAL_COMPATIBILITY.md`.
