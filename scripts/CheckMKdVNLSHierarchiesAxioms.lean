@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianInterpolation
 import NLS.Articles.MKdVNLSHierarchies.OriginalDirichletCharacteristic
 import NLS.Articles.MKdVNLSHierarchies.OriginalDivisorActionMotion
 import NLS.Articles.MKdVNLSHierarchies.FullIndependentAbelianPhase
@@ -3409,11 +3410,64 @@ private def mkdvNLSAuditPrefixes51 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.OriginalDirichletCharacteristic,
 ]
 
+private def mkdvNLSAuditPrefixes52 : Array Lean.Name := #[
+  `NLS.ComplexAnalysis.prod_range_cross_eq_of_tail_eq,
+  `NLS.ComplexAnalysis.product_limits_cross_eq_of_tail_eq,
+  `NLS.ComplexAnalysis.normalize_characteristic_cross_identity,
+  `NLS.ComplexAnalysis.sheet_weighted_resolvent_cancel,
+  `NLS.ComplexAnalysis.characteristic_residue_eq_nodal_weight,
+  `NLS.ComplexAnalysis.finite_characteristic_weighted_interpolation,
+  `NLS.ComplexAnalysis.finite_characteristic_dslope_interpolation,
+  `_private.NLS.ComplexAnalysis.FiniteSpectralInterpolation,
+  `NLS.KdV.hillDirichletEnergies,
+  `NLS.KdV.hillDirichletEnergies_mem_box,
+  `NLS.KdV.injective_hillDirichletEnergies,
+  `NLS.KdV.hillAbelianFiniteNumeratorPolynomial,
+  `NLS.KdV.eval_hillAbelianFiniteNumeratorPolynomial,
+  `NLS.KdV.degree_hillAbelianFiniteNumeratorPolynomial,
+  `NLS.KdV.degree_const_mul_hillAbelianFiniteNumeratorPolynomial,
+  `NLS.KdV.hillGapRoot_eq_Dirichlet_of_closed,
+  `_private.NLS.KdV.HillFiniteAbelianPolynomials,
+  `NLS.MKdV.freeHillValue_succ_complex,
+  `NLS.MKdV.hillDirichletPrefixScale,
+  `NLS.MKdV.hillDirichletPrefixScale_ne_zero,
+  `NLS.MKdV.miuraHillDirichletPartialProduct_eq_gapRootFactors,
+  `NLS.MKdV.miuraHillDirichletPartialProduct_eq_nodal,
+  `NLS.MKdV.miuraAbelianNumerator_cross_dirichletPrefix,
+  `_private.NLS.MKdV.MiuraFiniteGapAbelianProducts,
+  `NLS.MKdV.miuraFiniteAbelianInterpolationPolynomial,
+  `NLS.MKdV.degree_miuraFiniteAbelianInterpolationPolynomial,
+  `NLS.MKdV.miuraSelectedAbelianPsi_cross_nodal,
+  `NLS.MKdV.miuraSelectedAbelianPsi_Dirichlet_interpolation,
+  `NLS.MKdV.miuraSelectedAbelianPsi_Dirichlet_filled_interpolation,
+  `_private.NLS.MKdV.MiuraFiniteGapAbelianInterpolation,
+  `NLS.MKdV.miuraHillRealCutDomain_subset_gapComplement,
+  `NLS.MKdV.hillEnergyCanonicalRootProduct_eq_canonicalMiuraHillRoot,
+  `_private.NLS.MKdV.MiuraIndependentCanonicalRoot,
+  `NLS.KdV.hillDirichletSlope_mul_sheetRoot,
+  `NLS.KdV.hillDirichlet_sheet_mass_ratio,
+  `NLS.KdV.integral_hillDirichletGradient_discriminantSpatial_sheet_energy,
+  `NLS.KdV.integral_hillDirichletGradient_discriminantSpatial_sheet_resolvent,
+  `_private.NLS.KdV.HillDirichletSheetNormalization,
+  `NLS.MKdV.miuraSelectedAbelianPsi_trace_contraction,
+  `_private.NLS.MKdV.MiuraFiniteAbelianTraceContraction,
+  `NLS.Articles.MKdVNLSHierarchies.independent_Abelian_finite_gap_Dirichlet_interpolation,
+  `NLS.Articles.MKdVNLSHierarchies.independent_Abelian_physical_root_normalization,
+  `NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_sheet_mass_normalization,
+  `NLS.Articles.MKdVNLSHierarchies.independent_Abelian_interior_trace_contraction,
+  `_private.NLS.Articles.MKdVNLSHierarchies.IndependentAbelianInterpolation,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.independent_Abelian_finite_gap_Dirichlet_interpolation,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_Abelian_physical_root_normalization,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_sheet_mass_normalization,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_Abelian_interior_trace_contraction,
+
     ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_original_complex_domain,
     ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_divisor_original_indices,
     ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_entire_product,

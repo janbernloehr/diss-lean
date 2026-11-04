@@ -2,12 +2,14 @@
 """Compile article changes using read-only cached imports and private outputs.
 
 Pass --imports-from the pinned canonical checkout. This never invokes lake or
-writes a dependency artifact. It is a focused check, not a fresh full build.
+writes to cached imports. Pinned uncached mathlib modules build privately.
+This is a focused check, not a fresh full dependency build.
 """
 from pathlib import Path
 import argparse
 from contextlib import nullcontext
 import fcntl
+import hashlib
 import os
 import shutil
 import subprocess
@@ -1087,6 +1089,14 @@ modules = [
     'NLS/MKdV/MiuraDirichletEntireProduct.lean',
     'NLS/MKdV/MiuraDirichletCharacteristicNormalization.lean',
     'NLS/Articles/MKdVNLSHierarchies/OriginalDirichletCharacteristic.lean',
+    'NLS/ComplexAnalysis/FiniteSpectralInterpolation.lean',
+    'NLS/KdV/HillFiniteAbelianPolynomials.lean',
+    'NLS/MKdV/MiuraFiniteGapAbelianProducts.lean',
+    'NLS/MKdV/MiuraFiniteGapAbelianInterpolation.lean',
+    'NLS/MKdV/MiuraIndependentCanonicalRoot.lean',
+    'NLS/KdV/HillDirichletSheetNormalization.lean',
+    'NLS/MKdV/MiuraFiniteAbelianTraceContraction.lean',
+    'NLS/Articles/MKdVNLSHierarchies/IndependentAbelianInterpolation.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")
@@ -1106,7 +1116,15 @@ if args.resume_from:
         if not cached.exists() or cached.is_symlink():
             parser.error(f"Missing prior private validated output: {cached}")
     check_modules = modules[index:]
+# This pinned upstream source is absent from the read-only artifact cache.
+mathlib_root = canonical / ".lake/packages/mathlib"
+pinned_mathlib_imports = [('Mathlib/LinearAlgebra/Lagrange.lean', 'd499c3a0f94632d32003acec6dd5f40c4bffaf6985374dfa20c3c5addced3259')]
+for module, expected_sha in pinned_mathlib_imports:
+    actual_sha = hashlib.sha256((mathlib_root / module).read_bytes()).hexdigest()
+    if actual_sha != expected_sha:
+        parser.error(f"Pinned mathlib source hash changed: {module}")
 targets = {Path(module).with_suffix(".olean") for module in modules}
+targets.update(Path(module).with_suffix(".olean") for module, _ in pinned_mathlib_imports)
 
 def overlay(source, target, prefix=Path()):
     if target.is_symlink():
@@ -1125,18 +1143,22 @@ def overlay(source, target, prefix=Path()):
             destination.symlink_to(item, target_is_directory=item.is_dir())
 
 overlay(canonical / ".lake/build/lib/lean", lib)
+overlay(mathlib_root / ".lake/build/lib/lean", lib)
 paths = [lib]
 paths.extend(sorted((canonical / ".lake/packages").glob("*/.lake/build/lib/lean")))
 env = dict(os.environ, LEAN_PATH=":".join(map(str, paths)))
 
-def run(source, output=None):
-    command = [args.lean, "-DautoImplicit=false", "-DwarningAsError=true", "--root", str(root)]
+def run(source, output=None, *, source_root=root, article_options=True):
+    command = [args.lean]
+    if article_options:
+        command.append("-DautoImplicit=false")
+    command.extend(["-DwarningAsError=true", "--root", str(source_root)])
     if output:
         if output.is_symlink() or not output.resolve().is_relative_to(build.resolve()):
             raise RuntimeError(f"Refusing to write through cached dependency link: {output}")
         output.parent.mkdir(parents=True, exist_ok=True)
         command.extend(["-o", str(output)])
-    command.append(str(root / source))
+    command.append(str(source_root / source))
     print(f"Checking {source}", flush=True)
     result = subprocess.run(command, cwd=root, env=env, text=True,
                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -1151,6 +1173,9 @@ with (open("/tmp/diss-lean-article-build.lock", "a") if args.full_audit else
     if lock is not None:
         print("Waiting for shared article build lock", flush=True)
         fcntl.flock(lock, fcntl.LOCK_EX)
+    for module, _ in pinned_mathlib_imports:
+        run(module, lib / Path(module).with_suffix(".olean"),
+            source_root=mathlib_root, article_options=False)
     for module in check_modules:
         run(module, lib / Path(module).with_suffix(".olean"))
     if not args.module_only:

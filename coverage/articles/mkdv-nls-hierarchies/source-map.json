@@ -336,7 +336,11 @@
         "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_original_complex_domain",
         "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_divisor_original_indices",
         "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_entire_product",
-        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_derivative_normalization"
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_derivative_normalization",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_finite_gap_Dirichlet_interpolation",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_physical_root_normalization",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_sheet_mass_normalization",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_interior_trace_contraction"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -507,9 +511,9 @@
     "remaining": "Independent original mKdV angle identification and final Theorem 4(iii) angle-sum factorization. Corrected all-order frequency comparison is complete."
   },
   "remaining_essential_dependencies": [
-    "Prove the canonical orientation and actual opposite physical-action rotation of the full independently constructed Hill Abelian phase. The actual original divisor motion, its entire Dirichlet product and its exact source derivative normalization are now proved. Finite-gap scalar Lagrange interpolation and the independent sheet/normalized-period reduction remain to be implemented, followed by continuity to arbitrary support.",
-    "The current exp(+i*sum) independent phase has not been identified with the source canonical orientation. Verify the sign from the actual contour generator; if required, conjugate the independently constructed spectral phase and prove its negative rotation. Do not assume the current convention has negative generators.",
-    "Apply exists_opposite_unit_phase_action_factor to the correctly oriented independent phase after its actual opposite rotation is proved. The full phase already has the required continuity and unit bound; conjugation preserves both. Corrected Theorem3 and all previously completed main clauses remain complete. Final Theorem4iii remains incomplete."
+    "Prove the actual action-flow derivative of the independently constructed finite-gap Abelian phase, using invariance of its spectral data along the physical flow. Finite scalar Dirichlet interpolation, the physical root comparison, and the original sheet/mass reduction are now proved. The interior trace contraction is exactly minus one half the normalized numerator. Evaluate the resulting actual frequency-circle period with all constants and orientations checked.",
+    "Complete the phase calculation through terminal divisors and closed contributing gaps, then pass finite-gap rotation to arbitrary support using the already checked full-phase continuity and native finite-support approximation. The new interpolation itself already includes every Dirichlet node and closed contributing gap; the trace-contraction statement still assumes a nonzero sheet at every retained node and evaluates away from those nodes.",
+    "The exp(+i*sum) independent phase is still not proved to have the source canonical orientation. The new contraction and root comparison fix intermediate signs, but do not yet constitute a canonical phase rotation law. Verify the final sign and conjugate the independently constructed phase if needed. Apply exists_opposite_unit_phase_action_factor only after the actual opposite flow law is proved. Final Theorem4iii remains incomplete; corrected Theorem3 and all earlier completed clauses stay complete."
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -1538,6 +1542,36 @@
     "limits": [
       "These are actual characteristic, divisor and product identities. No Abelian phase is defined using a negative NLS phase.",
       "The finite-gap Lagrange interpolation and the canonical angle orientation/actual rotation are not yet proved. Final Theorem4iii remains incomplete."
+    ]
+  },
+  "independent_Abelian_finite_gap_interpolation": {
+    "status": "proved_actual_all_energy_finite_gap_interpolation_physical_root_agreement_and_sheet_normalization_interior_trace_contraction",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_finite_gap_Dirichlet_interpolation",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_physical_root_normalization",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_sheet_mass_normalization",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_interior_trace_contraction",
+      "NLS.ComplexAnalysis.finite_characteristic_dslope_interpolation",
+      "NLS.ComplexAnalysis.characteristic_residue_eq_nodal_weight",
+      "NLS.KdV.hillGapRoot_eq_Dirichlet_of_closed",
+      "NLS.MKdV.miuraAbelianNumerator_cross_dirichletPrefix",
+      "NLS.MKdV.miuraSelectedAbelianPsi_cross_nodal",
+      "NLS.MKdV.miuraSelectedAbelianPsi_Dirichlet_filled_interpolation",
+      "NLS.MKdV.hillEnergyCanonicalRootProduct_eq_canonicalMiuraHillRoot",
+      "NLS.KdV.hillDirichletSlope_mul_sheetRoot",
+      "NLS.KdV.integral_hillDirichletGradient_discriminantSpatial_sheet_energy",
+      "NLS.KdV.integral_hillDirichletGradient_discriminantSpatial_sheet_resolvent"
+    ],
+    "domain": "Actual scalar Dirichlet interpolation for every original real H1 Miura profile with a finite closed-gap tail, every positive normalized differential index n, and every complex energy E. A cutoff K>=n contains all possibly open gaps. Closed retained gaps, every Dirichlet node, zero energy and arbitrary signed mean are included. Physical canonical-root agreement holds on the complete independent Hill real-cut domain for every original real H1 profile, with arbitrary support. Sheet/mass normalization holds at every original positive-index Dirichlet energy of every real period-one L2 Hill potential, including closed gaps.",
+    "construction": "The actual entire scalar Dirichlet product and selected Abelian numerator have identical factors in the closed tail. Cross multiplication of their finite prefixes and the checked product limits cancels this tail even at its zeros. The omitted own numerator index gives a polynomial of degree less than the number of original Dirichlet nodes. Checked finite Lagrange interpolation applies to this polynomial.",
+    "interpolation": "Writing s for the actual scalar characteristic, mu_k for its original Dirichlet energies and psi for the independently normalized Hill numerator, sum_(k<K) psi(mu_(k+1))*dslope(s,mu_(k+1),E)/s_prime(mu_(k+1))=psi(E). At distinct evaluation energies this is sum psi(mu)*s(E)/(s_prime(mu)*(E-mu))=psi(E). The residues follow by differentiating the actual polynomial cross identity and using actual characteristic simplicity; they are not assumed.",
+    "root_normalization": "The independent energy canonical root product equals canonicalMiuraHillRoot on the original Hill real-cut domain. Its first-band negative imaginary sign and the physical Miura first-band sign choose the same root; connectedness propagates equality over both half-planes and every real open band.",
+    "sheet_normalization": "The determinant-one scalar monodromy gives d*sheetRoot=d^2-1 at every complex characteristic zero. At real Dirichlet energies M=s_prime(mu)*d, so(d^2-1)/M=sheetRoot/s_prime(mu). Thus2*(mu-E)*integral(f_mu*G_E_prime)=sheetRoot(mu)*s(E)/s_prime(mu), including coincident energies and closed gaps.",
+    "interior_contraction": "If all K retained original sheet roots are nonzero and E differs from the retained Dirichlet energies, sum_(k<K) psi(mu_(k+1))*integral(f_(k+1)*G_E_prime)/sheetRoot(mu_(k+1))=-psi(E)/2. The minus one half is proved with actual gradients, actual sheets and actual characteristic derivatives.",
+    "limits": [
+      "The trace contraction has explicit interior-sheet and noncoincident-energy hypotheses. It is not asserted as the full phase derivative at terminal divisors.",
+      "Differentiation of the actual independent phase along the actual isospectral physical action flows and evaluation of the resulting action contour periods remain to be proved. The current phase canonical sign and its opposite rotation are still unproved.",
+      "Theorem4iii final angle-sum factorization is incomplete. No spectral phase is defined from a negative NLS phase."
     ]
   }
 }

@@ -46,6 +46,10 @@ The actual scalar Dirichlet characteristic now has its exact indexed entire
 product, with locally uniform convergence of the product and its energy
 derivative even at zero. Its positive and negative source roots and residue
 normalizations are identified on the full original real H1 domain.
+Finite-gap interpolation of the independently normalized Hill numerator is
+now proved at every complex energy, including divisor nodes and closed gaps.
+The independent canonical root agrees with the physical Miura root, and the
+original sheet/mass normalization gives an exact interior trace contraction.
 See the latest milestone below.
 
 Prepared 2026-11-02 against canonical commit
@@ -2521,3 +2525,63 @@ vartheta; its sign must be determined from the actual contours. Final
 Theorem 4(iii) remains incomplete.
 
 Validation: all 1,053 article/shared modules have validated private outputs. Nine new modules and the aggregate compiled with warnings as errors under default limits. All 1,044 earlier mathematical source hashes and private compiled-output hashes match the frozen pushed ae76b2f baseline. The complete targeted audit passed for 9,250 declarations/auxiliaries and the combined audit for 54,135 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All 1,056 frozen source/checker/aggregate hashes match. Public inventory: 4,755 declarations (3,967 theorems and 788 definitions). All 3,142 old audit scopes are preserved and 44 new scopes added in one array of at most 64, for 52 blocks total. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source.
+
+## 2026-11-04 — actual finite-gap Abelian interpolation and physical sheet normalization
+
+The independently normalized Hill Abelian numerator now satisfies its
+actual finite Dirichlet interpolation on every original real H1 Miura
+profile with a closed spectral tail. A cutoff K>=n contains all possibly
+open gaps. The filled formula holds at EVERY complex energy, including
+zero and every retained Dirichlet node, and includes closed contributing
+gaps and arbitrary signed mean:
+
+`sum_(k<K) psi(mu_(k+1))*dslope(s,mu_(k+1),E)/s_prime(mu_(k+1))=psi(E)`.
+
+Here s is the actual original scalar characteristic and psi is the
+independently normalized Abelian differential. Closed gaps identify the
+actual selected numerator and Dirichlet roots. The numerator and scalar
+characteristic products consequently share the whole closed tail.
+Cross multiplication of finite products, followed by their checked limits,
+removes that tail even at its zeros. The remaining numerator polynomial
+has degree below K because its own index is omitted. Finite Lagrange
+interpolation then applies. Differentiating the actual polynomial cross
+identity derives its residue coefficients from the actual scalar
+characteristic derivatives; no residue is prescribed.
+
+The independent Hill canonical energy root product now equals the physical
+Miura root on the COMPLETE original Hill real-cut domain, for arbitrary
+support. Both first-band signs agree, and connectedness fixes the sign
+over both nonreal half-planes and every real open band.
+
+The actual sheet and mass normalizations also agree. If d is the original
+terminal slope, R its original sheet root and M its squared-state mass,
+then `d*R=d^2-1` and `M=s_prime(mu)*d`. Hence
+`(d^2-1)/M=R/s_prime(mu)`, including closed gaps. The exact trace-gradient
+pairing becomes
+
+`2*(mu-E)*integral(f_mu*G_E_prime)=R(mu)*s(E)/s_prime(mu)`.
+
+This branch-free energy identity includes coincident energies. On an
+interior retained divisor, and away from the retained energies, finite
+interpolation gives the actual contraction
+
+`sum_(k<K) psi(mu_(k+1))*integral(f_(k+1)*G_E_prime)/R(mu_(k+1))=-psi(E)/2`.
+
+The minus one half is checked. This contraction assumes every retained
+sheet root is nonzero. It does not yet prove a phase derivative through
+terminal divisors, nor the full physical action-flow rotation law. The
+next step is the actual isospectral phase differentiation and action-circle
+period evaluation, followed by terminal/closed-gap continuation and
+approximation to arbitrary support. The phase's final canonical orientation
+remains unproved. Final Theorem 4(iii) remains incomplete.
+
+The article interface is `IndependentAbelianInterpolation.lean`. Eight new
+modules add 37 public declarations: 33 theorems and four definitions.
+All 1,053 earlier mathematical sources are unchanged. One existing pinned
+mathlib source, `Mathlib.LinearAlgebra.Lagrange`, was absent from the artifact
+cache; the checker verifies its source SHA-256 and compiles it only into
+private outputs, using its upstream implicit-variable conventions and
+warnings as errors. All new NLS proofs retain autoImplicit=false and
+warnings as errors. No cached source or artifact is modified.
+
+Validation: all 1,061 article/shared NLS modules have validated private outputs. Eight new NLS modules and the aggregate compiled with autoImplicit=false and warnings as errors under default limits. One existing SHA-pinned mathlib Lagrange module compiled privately with its upstream implicit-variable conventions and warnings as errors. All 1,053 earlier mathematical source hashes and private compiled-output hashes match the frozen pushed 0a5080d baseline. The complete targeted audit passed for 9,327 declarations/auxiliaries and the combined audit for 54,212 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All 1,064 frozen source/checker/aggregate hashes and the additional pinned mathlib source hash match. Public inventory: 4,792 declarations (4,000 theorems and 792 definitions). All 3,186 old audit scopes are preserved and 45 new scopes added in one array of at most 64, for 53 blocks total. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source.
