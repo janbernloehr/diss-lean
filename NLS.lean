@@ -5684,3 +5684,5 @@ import NLS.KdV.HillDirichletScalarBalance
 import NLS.KdV.HillBoundaryDenominator
 import NLS.KdV.HillWeightedDirichletDiagonal
 import NLS.KdV.HillNativeDirichletDefect
+import NLS.KdV.HillDirichletPeriodicDistance
+import NLS.KdV.HillNativeDirichletMidpoint

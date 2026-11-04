@@ -761,6 +761,8 @@ import NLS.KdV.HillDirichletScalarBalance
 import NLS.KdV.HillBoundaryDenominator
 import NLS.KdV.HillWeightedDirichletDiagonal
 import NLS.KdV.HillNativeDirichletDefect
+import NLS.KdV.HillDirichletPeriodicDistance
+import NLS.KdV.HillNativeDirichletMidpoint
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
