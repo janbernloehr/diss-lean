@@ -1240,6 +1240,15 @@ import NLS.KdV.ClassicalHillFourierVariation
 import NLS.KdV.ClassicalHillFreeEnergyDerivative
 import NLS.KdV.ClassicalHillFreeTraceVariation
 import NLS.Articles.KdVPseudomeasures.OriginalHillFreeFirstVariation
+import NLS.SequenceSpaces.PeriodOneL1Inclusion
+import NLS.Fourier.PeriodOneTrigPairing
+import NLS.FunctionalAnalysis.LinearSourceRestrictionDerivative
+import NLS.ComplexAnalysis.ImplicitScalarRootDerivative
+import NLS.KdV.HillPeriodOneL1Comparison
+import NLS.KdV.HillNativeDirichletFirstVariation
+import NLS.KdV.HillNativeNormingFirstVariation
+import NLS.KdV.HillNativeDirichletSheetFirstVariation
+import NLS.Articles.KdVPseudomeasures.OriginalHillNativeSpectralFirstVariation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7876,3 +7885,58 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillFreeFirstVariation
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_physical_Dirichlet_first_variation
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_physical_norming_first_variation
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_physical_trace_first_variation
+#print axioms NLS.periodOneL1Inclusion
+#print axioms NLS.periodOneL1Inclusion_apply
+#print axioms NLS.periodOneL1Inclusion_ofFinsupp
+#print axioms NLS.denseRange_periodOneL1Inclusion
+#print axioms NLS.Fourier.periodOneCoefficient_eq_wave_integral
+#print axioms NLS.Fourier.integral_periodOneSynthesis_wave
+#print axioms NLS.Fourier.integral_periodOneSynthesis
+#print axioms NLS.Fourier.cos_unit_wave
+#print axioms NLS.Fourier.sin_unit_wave
+#print axioms NLS.Fourier.integral_periodOneSynthesis_cos
+#print axioms NLS.Fourier.integral_periodOneSynthesis_sin
+#print axioms NLS.Fourier.integral_periodOneSynthesis_sin_sq
+#print axioms NLS.FunctionalAnalysis.fderiv_comp_linear_zero
+#print axioms NLS.FunctionalAnalysis.eventually_comp_linear_zero
+#print axioms NLS.ComplexAnalysis.implicitScalarRoot_fderiv_apply
+#print axioms NLS.KdV.periodOneL1PhysicalCoefficients
+#print axioms NLS.KdV.periodOneL1PotentialCurve
+#print axioms NLS.KdV.periodOneL1PotentialCurve_apply
+#print axioms NLS.KdV.hillContinuousCoefficients_periodOneSynthesis
+#print axioms NLS.KdV.hillL2DirichletTerminal_periodOneL1_eq_classical
+#print axioms NLS.KdV.hillHminusDirichlet_eq_classical_L1
+#print axioms NLS.KdV.hillHminusDirichletNorming_eq_classical_L1
+#print axioms NLS.KdV.hillFreeDirichletGradient
+#print axioms NLS.KdV.hillFreeDirichletGradient_apply
+#print axioms NLS.KdV.hillHminusCanonicalDirichlet_zero_eq_sq
+#print axioms NLS.KdV.hillHminusDirichlet_zero_eq_classical
+#print axioms NLS.KdV.hasDerivAt_hillHminusDirichlet_free_eigenvalue
+#print axioms NLS.KdV.fderiv_hillHminusDirichlet_L1
+#print axioms NLS.KdV.fderiv_hillHminusDirichlet_free_L1
+#print axioms NLS.KdV.fderiv_hillHminusDirichlet_free
+#print axioms NLS.KdV.fderiv_hillHminusCanonicalDirichlet_zero
+#print axioms NLS.KdV.hillFreeNormingGradient
+#print axioms NLS.KdV.hillFreeNormingGradient_apply
+#print axioms NLS.KdV.hillL1TerminalFamily
+#print axioms NLS.KdV.hillL1CanonicalDirichlet
+#print axioms NLS.KdV.analyticOnNhd_hillL1TerminalFamily
+#print axioms NLS.KdV.hillL1TerminalFamily_eq_classical
+#print axioms NLS.KdV.hillL1TerminalFamily_zero_eq_classical
+#print axioms NLS.KdV.hillL1CanonicalDirichlet_zero
+#print axioms NLS.KdV.fderiv_hillL1MovingTerminal_zero
+#print axioms NLS.KdV.fderiv_hillL1TerminalFamily_source_zero
+#print axioms NLS.KdV.hillHminusDirichletNorming_L1_eq
+#print axioms NLS.KdV.hillHminusDirichletNorming_L1_eventually_eq
+#print axioms NLS.KdV.fderiv_hillHminusDirichletNorming_L1
+#print axioms NLS.KdV.fderiv_hillHminusDirichletNorming_free_L1
+#print axioms NLS.KdV.fderiv_hillHminusDirichletNorming_zero
+#print axioms NLS.KdV.hillHminusDirichletNorming_zero_sq
+#print axioms NLS.KdV.fderiv_hillHminusDirichletSheet_zero
+#print axioms NLS.KdV.fderiv_hillHminusDirichletSheet_zero_apply
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Dirichlet_differential
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_norming_differential
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_sheet_differential
+#print axioms NLS.Articles.KdVPseudomeasures.originalPeriodOneCoefficients_mean_zero
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Dirichlet_differential_even_modes
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_norming_differential_even_modes

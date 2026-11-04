@@ -1274,6 +1274,15 @@ modules = [
     'NLS.KdV.ClassicalHillFreeEnergyDerivative',
     'NLS.KdV.ClassicalHillFreeTraceVariation',
     'NLS.Articles.KdVPseudomeasures.OriginalHillFreeFirstVariation',
+    'NLS.SequenceSpaces.PeriodOneL1Inclusion',
+    'NLS.Fourier.PeriodOneTrigPairing',
+    'NLS.FunctionalAnalysis.LinearSourceRestrictionDerivative',
+    'NLS.ComplexAnalysis.ImplicitScalarRootDerivative',
+    'NLS.KdV.HillPeriodOneL1Comparison',
+    'NLS.KdV.HillNativeDirichletFirstVariation',
+    'NLS.KdV.HillNativeNormingFirstVariation',
+    'NLS.KdV.HillNativeDirichletSheetFirstVariation',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeSpectralFirstVariation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
