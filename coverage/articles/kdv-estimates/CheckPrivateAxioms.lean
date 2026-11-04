@@ -838,6 +838,8 @@ import NLS.KdV.HillFullMixedPeriodMap
 import NLS.KdV.HillFullMixedPeriodPhysical
 import NLS.KdV.HillFullMixedPeriodCompact
 import NLS.KdV.HillFullMixedSupportedFredholm
+import NLS.ComplexAnalysis.HilbertWeakMovingInput
+import NLS.KdV.HillFreeUniformDiagonalTail
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1335,7 +1337,9 @@ run_cmd do
     ``NLS.ComplexAnalysis.hilbertWeightedProduct_add_single,
     ``NLS.ComplexAnalysis.fderiv_hilbertWeightedProduct_single,
     ``NLS.ComplexAnalysis.norm_fderiv_hilbertWeightedProduct_le,
-    ``NLS.ComplexAnalysis.tendsto_fderiv_hilbertWeightedProduct_of_bounded_weak_weights]
+    ``NLS.ComplexAnalysis.tendsto_fderiv_hilbertWeightedProduct_of_bounded_weak_weights,
+    ``NLS.ComplexAnalysis.tendsto_holderProduct_of_bounded_weak_weights_of_tendsto,
+    ``NLS.ComplexAnalysis.tendsto_hilbertWeightedProduct_of_bounded_weak_weights_of_tendsto]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -5761,3 +5761,5 @@ import NLS.KdV.HillFullMixedPeriodMap
 import NLS.KdV.HillFullMixedPeriodPhysical
 import NLS.KdV.HillFullMixedPeriodCompact
 import NLS.KdV.HillFullMixedSupportedFredholm
+import NLS.ComplexAnalysis.HilbertWeakMovingInput
+import NLS.KdV.HillFreeUniformDiagonalTail
