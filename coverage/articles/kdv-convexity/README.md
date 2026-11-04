@@ -2383,6 +2383,61 @@ These are actual intrinsic spectral quantities. A common sequence-valued
 analytic norming map, tail estimates, global inverse and the KdV
 symplectic/action identities remain to be proved, as do all main theorems.
 
+## Exhaustive Dirichlet spectrum and two-sided Arnold bounds
+
+`HillHminusOneRealMiuraCharts.lean` uses the exact shared equivariant
+quadratic inverse to construct a chart preserving physical realness near
+every real H^-1 potential, with one positive real square energy shift.
+`L2QuasiHillDirichletPositive.lean` proves strict positivity of every
+Dirichlet energy of the actual real L2 Miura factorization, using its
+nonzero normalized position and momentum and their positive L2 masses.
+`HillHminusOneDirichletLowerBound.lean` obtains a local uniform lower
+bound for all actual Dirichlet roots at nearby real inputs.
+
+`HillHminusOneDirichletLowerExterior.lean` proves that existence of a
+root at or below the periodic ground state is clopen in any continuous
+real family. The local lower bound supplies compactness; the actual
+simple analytic root branch and open-band exclusion supply openness.
+The scalar homotopy to the free characteristic excludes that entire
+lower exterior, including equality at the ground state.
+
+`HillHminusOneLabelCofinality.lean` proves that actual even canonical
+labels exceed any prescribed real energy. Together with the lower
+exclusion, open-band exclusion and positive-gap uniqueness,
+`HillHminusOneDirichletSpectrumExhaustion.lean` proves:
+
+```text
+S(q,lambda)=0 iff lambda=mu_n(q) for a unique positive index n
+lambda is an intrinsic weak Dirichlet energy iff lambda=mu_n(q).
+```
+
+These statements hold at every real H^-1 input and for every complex
+energy. Thus all characteristic zeros are exhausted; the previously
+proved analytic order one and weak scalar-column uniqueness apply to
+each of them. No closed-operator domain or operator algebraic
+multiplicity is substituted for this characteristic/weak statement.
+
+`ClassicalHillActionUpperBound.lean` deforms an Arnold cut period to
+the gap circle. The primitive contributes one gap factor and the circle
+radius contributes a second. The collapsed case extends analytically
+through the repeated root and has zero period.
+`HillHminusOneArnoldGapUpperBound.lean` applies this to the actual
+source-normalized H^-1 periods and combines it with the reverse bound:
+
+```text
+gap_n^2/n <= 16*pi*abs(A_n)
+abs(A_n) <= C*gap_n^2/n
+A_n=0 iff the actual high gap pair coincides.
+```
+
+One complex H^-1-open neighborhood, cutoff and constant precede all
+high indices and nearby complex potentials. Intrinsic unordered-pair
+uniqueness puts both estimates on the same pair even if their original
+energy radii differ. This is preparation for the sequence-valued
+spectral coordinates needed by the global positive-ell2 extension.
+Constructing those coordinates, their inverse and Arnold-action identity
+remains required; no unconditional Theorem 1.1 extension is claimed.
+
 ## Remaining essential KdV work
 
 1. Construct the closed intrinsic singular Hill operator domain from the
@@ -2395,7 +2450,8 @@ symplectic/action identities remain to be proved, as do all main theorems.
    H^-1 space, with every canonical period and the locally uniform
    quadratic complex-tail bounds.
 2. The **high-index complex H^-1-neighborhood** bounds
-   |R_n|=O(gamma_n^4/n^3), gamma_n^2/n<=16*pi*|A_n| and
+   |R_n|=O(gamma_n^4/n^3), gamma_n^2/n<=16*pi*|A_n|,
+   |A_n|<=C*gamma_n^2/n and
    |8*n*pi*R_n|<=C*|A_n|^2 are now proved. Identify A_n with the
    global KdV Birkhoff actions I_n and descend the moments analytically
    to the common weighted action neighborhood.
@@ -2447,15 +2503,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `23fb8b7` contains 468 source modules, whose
-source hashes all remain unchanged. Five authored modules pass Lean
-4.33.1/mathlib v4.33.1 with `warningAsError=true`. The full reproduction
-script lists 473 source modules. The positive-index example and all
-1103 coverage-name checks pass.
+The validated baseline at `f86473d` contains 473 source modules, whose
+source hashes all remain unchanged. Three exact shared imports and nine
+authored modules pass Lean 4.33.1/mathlib v4.33.1 with
+`warningAsError=true`. The full reproduction script lists 485 source
+modules. The positive-index example and all 1142 coverage-name checks pass.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 233 additional shared modules:
-4662 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 237 additional shared modules:
+4716 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

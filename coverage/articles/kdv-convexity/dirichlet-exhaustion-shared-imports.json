@@ -1,0 +1,9 @@
+{
+  "source_branch": "articles/kdv-kdv2-frequencies",
+  "source_commit": "d89a49b39200bc82880ed9b647234285f81026bf",
+  "exact_modules": {
+    "NLS.SequenceSpaces.PeriodOneMiuraConjugation": "9c82b9985b1ff9280d1bc0362d7f853e288233bc35cec99e93453f3d15d0194f",
+    "NLS.ComplexAnalysis.EquivariantSmallQuadraticInverse": "3e654f6c0205915165ba1ce96aa6adbe73019745c0ba345c0f575a1410338114",
+    "NLS.SequenceSpaces.PeriodOneRealMiuraCharts": "17912b13446df29b763c0fab23c72c248fa026681e39087799358b06ef01b642"
+  }
+}

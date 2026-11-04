@@ -1,3 +1,5 @@
+import NLS.KdV.HillHminusOneDirichletSpectrumExhaustion
+import NLS.KdV.HillHminusOneArnoldGapUpperBound
 import NLS.KdV.HillHminusOneDirichletNormingTrace
 import NLS.KdV.HillHminusOneDirichletGapLabels
 import NLS.KdV.HillHminusOneDirichletRootBranches
@@ -83,6 +85,10 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.SequenceSpaces.PeriodOneMiuraConjugation,
+    `NLS.ComplexAnalysis.EquivariantSmallQuadraticInverse,
+    `NLS.SequenceSpaces.PeriodOneRealMiuraCharts,
+    `NLS.MKdV.L2QuasiHillDirichletPositive,
     `NLS.ComplexAnalysis.ClosedIntervalRoots,
     `NLS.ComplexAnalysis.PositiveZeroUniqueness,
     `NLS.FunctionalAnalysis.IntervalEndpointTests,
