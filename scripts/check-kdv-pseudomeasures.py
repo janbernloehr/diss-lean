@@ -1438,6 +1438,12 @@ modules = [
     'NLS.KdV.HillNormingGardnerCommutation',
     'NLS.KdV.HillLocalSpectralDarboux',
     'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralDarboux',
+    'NLS.ZakharovShabat.SourcePsiAnalyticIsospectral',
+    'NLS.KdV.HillMiuraIsospectralDirection',
+    'NLS.KdV.HillCanonicalPsiIsospectral',
+    'NLS.KdV.HillCanonicalEnergyRootIsospectral',
+    'NLS.KdV.HillCanonicalDifferentialIsospectral',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillDifferentialActionInvariance',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
