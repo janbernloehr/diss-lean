@@ -811,6 +811,8 @@ import NLS.KdV.HillUniformOwnRegularPhase
 import NLS.KdV.HillFixedGapNumeratorBounds
 import NLS.KdV.HillFixedGapFilledRootChart
 import NLS.KdV.HillFixedGapCenteredDirichletData
+import NLS.KdV.HillFixedGapUniformRegularCorrection
+import NLS.KdV.HillFiniteGapUniformRegularCorrections
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
