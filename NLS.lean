@@ -5766,3 +5766,7 @@ import NLS.KdV.HillFreeUniformDiagonalTail
 import NLS.SequenceSpaces.UniformOperatorOutputTails
 import NLS.KdV.HillFreeUniformDerivativeTail
 import NLS.KdV.HillMixedUniformDerivativeTail
+import NLS.KdV.HillProductPeriodMovingDerivativeLimit
+import NLS.SequenceSpaces.FiniteRowOperatorConvergence
+import NLS.KdV.HillMixedPeriodRowLimit
+import NLS.KdV.HillExtendedMixedJacobianLimit

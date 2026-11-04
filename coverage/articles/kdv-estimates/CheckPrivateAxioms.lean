@@ -843,6 +843,10 @@ import NLS.KdV.HillFreeUniformDiagonalTail
 import NLS.SequenceSpaces.UniformOperatorOutputTails
 import NLS.KdV.HillFreeUniformDerivativeTail
 import NLS.KdV.HillMixedUniformDerivativeTail
+import NLS.KdV.HillProductPeriodMovingDerivativeLimit
+import NLS.SequenceSpaces.FiniteRowOperatorConvergence
+import NLS.KdV.HillMixedPeriodRowLimit
+import NLS.KdV.HillExtendedMixedJacobianLimit
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1345,7 +1349,11 @@ run_cmd do
     ``NLS.ComplexAnalysis.tendsto_hilbertWeightedProduct_of_bounded_weak_weights_of_tendsto,
     ``NLS.Coeff.norm_outputTail_operator_mono,
     ``NLS.Coeff.norm_outputTail_operator_le_of_tailRowMajorant,
-    ``NLS.Coeff.exists_uniform_outputTail_operator_of_compact_rowMajorants]
+    ``NLS.Coeff.exists_uniform_outputTail_operator_of_compact_rowMajorants,
+    ``NLS.Coeff.truncateCLM_comp_eq_sum_rows,
+    ``NLS.Coeff.tendsto_truncate_operator_of_rowFunctionals,
+    ``NLS.Coeff.tendsto_operator_of_rows_and_uniform_outputTails,
+    ``NLS.Coeff.tendsto_operator_of_rows_and_uniform_remainder_outputTails]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
