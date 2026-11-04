@@ -54,6 +54,8 @@ modules=(
   NLS/ZakharovShabat/ContinuousPotentialL2Bound
   NLS/SequenceSpaces/FiniteModification
   NLS/ZakharovShabat/FreeSineExteriorBounds
+  NLS/ComplexAnalysis/LogDerivativeLocal
+  NLS/ComplexAnalysis/FinitePoleRemoval
   NLS/ZakharovShabat/FreeDerivativeZeroCounts
   NLS/ZakharovShabat/CriticalPointLabeling
   NLS/ZakharovShabat/DiscriminantDerivativeProduct
@@ -244,6 +246,8 @@ modules=(
   NLS/DifferentialPolynomial/MultiJet
   NLS/ZakharovShabat/SourcePsiLemma12_11
   NLS/ComplexAnalysis/QuadraticSheetTerminalVariation
+  NLS/ComplexAnalysis/SimplePoleQuotient
+  NLS/ComplexAnalysis/SimplePoleCauchyInterpolation
   NLS/ZakharovShabat/SourceIsospectralSet
   NLS/ZakharovShabat/SobolevHierarchySymmetries
   NLS/MKdV/HierarchyRestriction
@@ -884,7 +888,11 @@ modules=(
   NLS/KdV/ClassicalHillWeightedDirichletError
   NLS/KdV/HillWeightedDirichletExterior
   NLS/KdV/HillAnalyticDirichletGardnerKernel
-  NLS/KdV/HillDirichletInterpolationExterior)
+  NLS/KdV/HillDirichletInterpolationExterior
+  NLS/KdV/HillDirichletLowerExterior
+  NLS/KdV/HillDirichletSpectrumExhaustion
+  NLS/KdV/HillDirichletCircleSelection
+  NLS/KdV/HillDirichletInterpolation)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

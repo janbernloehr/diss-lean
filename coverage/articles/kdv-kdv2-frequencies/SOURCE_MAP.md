@@ -751,3 +751,12 @@ The actual filled Dirichlet kernel is entire and has a jointly analytic physical
 Prior strict validation of all 870 unchanged selected sources; strict dependency-order compilation of one byte-identical canonical sine-exterior helper and five new proof modules; then a fresh combined transitive axiom audit of all 876 selected modules. The reused helper precedes every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 876-module rebuild is claimed.
 
 Fresh audit: 8376 selected and 30953 imported NLS declarations, permitted axioms only. The residue expansion and gap-label interpolation, infinite/closed-gap angle summation, canonical orientation and physical frequency/main theorem conclusions remain open. All main inventory rows remain OPEN.
+
+
+## Latest actual Dirichlet spectral exhaustion and interpolation
+
+The actual Dirichlet characteristic has no root at or below the periodic ground, and all its complex zeros are exactly the positive closed-gap Dirichlet labels. High energy circles select exactly the first N roots. The genuine filled positive-index interpolation sums now converge to -psi_n(w)/2 uniformly on every bounded complex energy disc, including all Dirichlet diagonals and collapsed physical gaps. See `DIRICHLET_INTERPOLATION.md`.
+
+Prior strict validation of all 876 unchanged selected sources; strict dependency-order compilation of four byte-identical canonical pole/Cauchy helpers and four new proof modules; then a fresh combined transitive axiom audit of all 884 selected modules. The reused helpers precede every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 884-module rebuild is claimed.
+
+Fresh audit: 8483 selected and 31027 imported NLS declarations, permitted axioms only. Absolute summability and the actual infinite Abelian source/angle sum, canonical orientation and physical frequency/main theorem conclusions remain open. All main inventory rows remain OPEN.

@@ -1,3 +1,8 @@
+import NLS.KdV.HillDirichletInterpolation
+import NLS.ComplexAnalysis.SimplePoleCauchyInterpolation
+import NLS.KdV.HillDirichletCircleSelection
+import NLS.KdV.HillDirichletSpectrumExhaustion
+import NLS.KdV.HillDirichletLowerExterior
 import NLS.KdV.HillDirichletInterpolationExterior
 import NLS.KdV.HillAnalyticDirichletGardnerKernel
 import NLS.KdV.HillWeightedDirichletExterior
@@ -193,6 +198,8 @@ run_cmd do
     `NLS.ZakharovShabat.ContinuousPotentialL2Bound,
     `NLS.SequenceSpaces.FiniteModification,
     `NLS.ZakharovShabat.FreeSineExteriorBounds,
+    `NLS.ComplexAnalysis.LogDerivativeLocal,
+    `NLS.ComplexAnalysis.FinitePoleRemoval,
     `NLS.ZakharovShabat.FreeDerivativeZeroCounts,
     `NLS.ZakharovShabat.CriticalPointLabeling,
     `NLS.ZakharovShabat.DiscriminantDerivativeProduct,
@@ -383,6 +390,8 @@ run_cmd do
     `NLS.DifferentialPolynomial.MultiJet,
     `NLS.ZakharovShabat.SourcePsiLemma12_11,
     `NLS.ComplexAnalysis.QuadraticSheetTerminalVariation,
+    `NLS.ComplexAnalysis.SimplePoleQuotient,
+    `NLS.ComplexAnalysis.SimplePoleCauchyInterpolation,
     `NLS.ZakharovShabat.SourceIsospectralSet,
     `NLS.ZakharovShabat.SobolevHierarchySymmetries,
     `NLS.MKdV.HierarchyRestriction,
@@ -1023,7 +1032,11 @@ run_cmd do
     `NLS.KdV.ClassicalHillWeightedDirichletError,
     `NLS.KdV.HillWeightedDirichletExterior,
     `NLS.KdV.HillAnalyticDirichletGardnerKernel,
-    `NLS.KdV.HillDirichletInterpolationExterior]
+    `NLS.KdV.HillDirichletInterpolationExterior,
+    `NLS.KdV.HillDirichletLowerExterior,
+    `NLS.KdV.HillDirichletSpectrumExhaustion,
+    `NLS.KdV.HillDirichletCircleSelection,
+    `NLS.KdV.HillDirichletInterpolation]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

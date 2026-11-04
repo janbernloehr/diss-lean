@@ -17,7 +17,15 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual Dirichlet interpolation exterior
+## Latest actual Dirichlet spectral exhaustion and interpolation
+
+The actual Dirichlet characteristic has no root at or below the periodic ground, and all its complex zeros are exactly the positive closed-gap Dirichlet labels. High energy circles select exactly the first N roots. The genuine filled positive-index interpolation sums now converge to -psi_n(w)/2 uniformly on every bounded complex energy disc, including all Dirichlet diagonals and collapsed physical gaps. See `DIRICHLET_INTERPOLATION.md`.
+
+Prior strict validation of all 876 unchanged selected sources; strict dependency-order compilation of four byte-identical canonical pole/Cauchy helpers and four new proof modules; then a fresh combined transitive axiom audit of all 884 selected modules. The reused helpers precede every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 884-module rebuild is claimed.
+
+Fresh audit: 8483 selected and 31027 imported NLS declarations, permitted axioms only. Absolute summability and the actual infinite Abelian source/angle sum, canonical orientation and physical frequency/main theorem conclusions remain open. All main inventory rows remain OPEN.
+
+## Earlier actual Dirichlet interpolation exterior
 
 The actual filled Dirichlet kernel is entire and has a jointly analytic physical source chart. A weighted scalar IVP argument gives the actual full-plane rough Dirichlet free-error estimate and a zero-free exterior lower bound, uniformly on bounded complex L2 potential families. The actual normalized numerator/characteristic quotient now has inverse-energy decay; its literal outer Cauchy errors vanish uniformly for bounded evaluations. See `DIRICHLET_INTERPOLATION_EXTERIOR.md`.
 

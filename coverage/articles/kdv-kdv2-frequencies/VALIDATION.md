@@ -5,7 +5,15 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual Dirichlet interpolation exterior
+## Latest actual Dirichlet spectral exhaustion and interpolation
+
+The actual Dirichlet characteristic has no root at or below the periodic ground, and all its complex zeros are exactly the positive closed-gap Dirichlet labels. High energy circles select exactly the first N roots. The genuine filled positive-index interpolation sums now converge to -psi_n(w)/2 uniformly on every bounded complex energy disc, including all Dirichlet diagonals and collapsed physical gaps. See `DIRICHLET_INTERPOLATION.md`.
+
+Prior strict validation of all 876 unchanged selected sources; strict dependency-order compilation of four byte-identical canonical pole/Cauchy helpers and four new proof modules; then a fresh combined transitive axiom audit of all 884 selected modules. The reused helpers precede every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 884-module rebuild is claimed.
+
+Fresh audit: 8483 selected and 31027 imported NLS declarations, permitted axioms only. Absolute summability and the actual infinite Abelian source/angle sum, canonical orientation and physical frequency/main theorem conclusions remain open. All main inventory rows remain OPEN.
+
+## Earlier actual Dirichlet interpolation exterior
 
 The actual filled Dirichlet kernel is entire and has a jointly analytic physical source chart. A weighted scalar IVP argument gives the actual full-plane rough Dirichlet free-error estimate and a zero-free exterior lower bound, uniformly on bounded complex L2 potential families. The actual normalized numerator/characteristic quotient now has inverse-energy decay; its literal outer Cauchy errors vanish uniformly for bounded evaluations. See `DIRICHLET_INTERPOLATION_EXTERIOR.md`.
 
@@ -130,19 +138,19 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 876 selected modules compile with pinned **Lean 4.33.1**, commit
+All 884 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: 870 unchanged prior selected sources, one unchanged
-canonical sine helper and five new proof modules strictly checked, then a
-fresh combined transitive axiom audit of all 876 selected modules:
+Validation output: 876 unchanged prior selected sources, four unchanged
+canonical pole/Cauchy helpers and four new proof modules strictly checked,
+then a fresh combined transitive axiom audit of all 884 selected modules:
 
 ```text
-# Prior strict evidence: 870 baseline sources, including one historical recompilation
+# Prior strict evidence: 876 baseline sources, including one historical recompilation
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -1014,19 +1022,27 @@ PASS NLS/ComplexAnalysis/QuadraticSheetTerminalVariation
 PASS NLS/KdV/HillDeflatedRootEnergyDerivative
 PASS NLS/KdV/HillDirichletTerminalVariation
 PASS NLS/KdV/HillGardnerAbelianIntegralVariation
-# Final strict checks: one canonical sine helper and five new proof modules
 PASS NLS/ZakharovShabat/FreeSineExteriorBounds
 PASS NLS/ComplexAnalysis/WeightedDuhamelIntegralBounds
 PASS NLS/KdV/ClassicalHillWeightedDirichletError
 PASS NLS/KdV/HillWeightedDirichletExterior
 PASS NLS/KdV/HillAnalyticDirichletGardnerKernel
 PASS NLS/KdV/HillDirichletInterpolationExterior
-# Fresh combined transitive audit of all 876 selected modules
-Axiom audit passed: 8376 candidate declarations; 30953 declarations total.
+# Final strict checks: four canonical helpers and four new proof modules
+PASS NLS/ComplexAnalysis/LogDerivativeLocal
+PASS NLS/ComplexAnalysis/FinitePoleRemoval
+PASS NLS/ComplexAnalysis/SimplePoleQuotient
+PASS NLS/ComplexAnalysis/SimplePoleCauchyInterpolation
+PASS NLS/KdV/HillDirichletLowerExterior
+PASS NLS/KdV/HillDirichletSpectrumExhaustion
+PASS NLS/KdV/HillDirichletCircleSelection
+PASS NLS/KdV/HillDirichletInterpolation
+# Fresh combined transitive audit of all 884 selected modules
+Axiom audit passed: 8483 candidate declarations; 31027 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 876 selected modules (including generated and private declarations)
+the 884 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the

@@ -1,0 +1,30 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/LogDerivativeLocal.lean",
+      "source_sha256": "4b35a5d9d7d67f2dc88081c91ac2ee47c7afd80e24820eda9534474f6328c474",
+      "local_sha256": "4b35a5d9d7d67f2dc88081c91ac2ee47c7afd80e24820eda9534474f6328c474",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/FinitePoleRemoval.lean",
+      "source_sha256": "a808320a4aa770759d484db7915941863057860a57ceefc893d6a558cb238762",
+      "local_sha256": "a808320a4aa770759d484db7915941863057860a57ceefc893d6a558cb238762",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SimplePoleQuotient.lean",
+      "source_sha256": "8f500ebe481c10ce81c2b4ffbffdc41d8dd409a4764d3daa566ea79ee1597766",
+      "local_sha256": "8f500ebe481c10ce81c2b4ffbffdc41d8dd409a4764d3daa566ea79ee1597766",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SimplePoleCauchyInterpolation.lean",
+      "source_sha256": "32ceb4980c43e2b7259e48c5e8119687c9103f839c2e43a1a1d30f856295d2c5",
+      "local_sha256": "32ceb4980c43e2b7259e48c5e8119687c9103f839c2e43a1a1d30f856295d2c5",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "scope": "Four unchanged generic canonical logarithmic-derivative, finite-pole removal and simple-pole Cauchy interpolation helpers, selected and strictly recompiled at the default heartbeat limit. Used with actual Hill characteristic zeros and actual normalized numerators; no assumed interpolation identity or ZS RealType constructor."
+}

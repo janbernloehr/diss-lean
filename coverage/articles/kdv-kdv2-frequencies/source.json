@@ -12850,6 +12850,102 @@
       "scope": "Proves the exact free entire numerator frequency identity, then uniform actual Hilbert-numerator/Dirichlet-characteristic inverse-energy quotient decay on the full separated exterior. Instantiates it with the actual globally normalized physical numerator. Proves actual zero-free expanding energy circles, inverse-radius circle quotient bounds and uniform decay of the literal outer Cauchy error for all bounded evaluation energies. No Dirichlet product formula or infinite interpolation identity is assumed. The actual residue expansion and identification with the gap-label series remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "ac410a5db7e66439ee18f7a3132da07e7fa9e97faefdb1a5da9d05c542f813c9"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LogDerivativeLocal.lean",
+      "source_labels": [
+        "Actual positive Dirichlet interpolation identity used in the angle variation before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Canonical local logarithmic-derivative/analytic zero-order helper, reused byte-identically from main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec and strictly recompiled at the default heartbeat limit. Provenance in CANONICAL_DIRICHLET_INTERPOLATION_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4b35a5d9d7d67f2dc88081c91ac2ee47c7afd80e24820eda9534474f6328c474"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/FinitePoleRemoval.lean",
+      "source_labels": [
+        "Actual positive Dirichlet interpolation identity used in the angle variation before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Canonical verified finite-pole removal and analytic normal-form helper, reused byte-identically from main and strictly recompiled at the default heartbeat limit; no new axiom or analytic extension is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a808320a4aa770759d484db7915941863057860a57ceefc893d6a558cb238762"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SimplePoleQuotient.lean",
+      "source_labels": [
+        "Actual positive Dirichlet interpolation identity used in the angle variation before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Canonical actual simple-quotient residue, principal-part and removable-remainder helper, reused byte-identically from main and strictly recompiled at the default heartbeat limit.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8f500ebe481c10ce81c2b4ffbffdc41d8dd409a4764d3daa566ea79ee1597766"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SimplePoleCauchyInterpolation.lean",
+      "source_labels": [
+        "Actual positive Dirichlet interpolation identity used in the angle variation before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Canonical finite simple-pole Cauchy error formula, reused byte-identically from main and strictly recompiled at the default heartbeat limit. Instantiated with the actual Hill Dirichlet characteristic, its complete simple gap-label spectrum and actual normalized numerator; no ZS RealType constructor or assumed interpolation identity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "32ceb4980c43e2b7259e48c5e8119687c9103f839c2e43a1a1d30f856295d2c5"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletLowerExterior.lean",
+      "source_labels": [
+        "Actual positive Dirichlet interpolation identity used in the angle variation before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Actual uniform negative-energy zero exclusion on bounded complex L2 potential families and locally uniform lower bounds for real roots. Actual free nonpositive exclusion and a clopen real scalar homotopy prove that the Dirichlet characteristic is nonzero at or below the lowest periodic energy, including ground equality.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "21c54015070ec9d158c2648e67a2f78988cb103493671cc6b2b980d2287eb2fc"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletSpectrumExhaustion.lean",
+      "source_labels": [
+        "Actual positive Dirichlet interpolation identity used in the angle variation before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Proves unboundedness of actual periodic labels and places every actual Dirichlet zero in a positive closed gap, including endpoints and collapsed gaps. The full complex zero set equals the positive Dirichlet label sequence, which is strictly increasing and tends to infinity. No unproved spectral exhaustion assumption remains in this actual L2 result.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c81c00d67b2074bf6a03086b7618ced72b5f280dd1fe9d76cbec57c686f69bd5"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletCircleSelection.lean",
+      "source_labels": [
+        "Actual positive Dirichlet interpolation identity used in the angle variation before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Proves actual high Dirichlet localization from periodic endpoint localization, separates consecutive actual Dirichlet energies by each high free half-integer energy circle, and proves that its disc contains exactly the first N positive Dirichlet roots, all strictly inside. Includes the complete finite low spectrum.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2bdfae4d27f9424e56495c8e3738e59489c8e84465b4b66bf46b3d590ba66a24"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletInterpolation.lean",
+      "source_labels": [
+        "Actual positive Dirichlet interpolation identity used in the angle variation before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Instantiates the actual finite simple-pole Cauchy formula with precisely the first N positive Dirichlet energies and their actual characteristic-derivative residues. The filled kernel sum has its exact cardinal values at every Dirichlet energy. Proves the actual characteristic-weighted Cauchy error identity through all filled diagonals and convergence of the positive-index partial sums to minus one-half of the genuine normalized numerator, uniformly on every bounded complex energy disc. Does not yet assert absolute summability/HasSum or convergence and source differentiation of the Abelian angle sum.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6e2960bf2739184cedbd00f9a0521c9fffd56ebf0a88332c6410746c0533165a"
     }
   ],
   "dependencies_needed": [
@@ -12881,15 +12977,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 8376,
-    "total_declarations_audited": 30953,
+    "candidate_declarations_audited": 8483,
+    "total_declarations_audited": 31027,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 876,
+    "selected_modules": 884,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -12913,7 +13009,8 @@
     "abelian_source_stationarity_validation_sequence": "Prior strict validation of all 828 unchanged selected sources; strict dependency-order validation of 27 shared sources (26 byte-identical imports and one compatibility import reusing an already proved local spectral-derivative theorem); strict final compilation of seven new proof modules; then a fresh combined transitive axiom audit of all 862 selected modules. Twelve compatible local variants retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 862-module rebuild is claimed.",
     "dirichlet_slope_validation_sequence": "Prior strict validation of all 862 unchanged selected sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 866 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 866-module rebuild is claimed.",
     "terminal_angle_validation_sequence": "Prior strict validation of all 866 unchanged selected sources; strict dependency-order compilation of one byte-identical canonical algebra helper and three new proof modules; then a fresh combined transitive axiom audit of all 870 selected modules. The reused helper precedes every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 870-module rebuild is claimed.",
-    "dirichlet_exterior_validation_sequence": "Prior strict validation of all 870 unchanged selected sources; strict dependency-order compilation of one byte-identical canonical sine-exterior helper and five new proof modules; then a fresh combined transitive axiom audit of all 876 selected modules. The reused helper precedes every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 876-module rebuild is claimed."
+    "dirichlet_exterior_validation_sequence": "Prior strict validation of all 870 unchanged selected sources; strict dependency-order compilation of one byte-identical canonical sine-exterior helper and five new proof modules; then a fresh combined transitive axiom audit of all 876 selected modules. The reused helper precedes every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 876-module rebuild is claimed.",
+    "dirichlet_interpolation_validation_sequence": "Prior strict validation of all 876 unchanged selected sources; strict dependency-order compilation of four byte-identical canonical pole/Cauchy helpers and four new proof modules; then a fresh combined transitive axiom audit of all 884 selected modules. The reused helpers precede every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 884-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -13121,5 +13218,7 @@
   "terminal_angle_variation_record": "TERMINAL_ANGLE_VARIATION.md",
   "canonical_quadratic_sheet_reuse_record": "CANONICAL_QUADRATIC_SHEET_REUSE.json",
   "dirichlet_interpolation_exterior_record": "DIRICHLET_INTERPOLATION_EXTERIOR.md",
-  "canonical_sine_exterior_reuse_record": "CANONICAL_SINE_EXTERIOR_REUSE.json"
+  "canonical_sine_exterior_reuse_record": "CANONICAL_SINE_EXTERIOR_REUSE.json",
+  "dirichlet_interpolation_record": "DIRICHLET_INTERPOLATION.md",
+  "canonical_dirichlet_interpolation_reuse_record": "CANONICAL_DIRICHLET_INTERPOLATION_REUSE.json"
 }
