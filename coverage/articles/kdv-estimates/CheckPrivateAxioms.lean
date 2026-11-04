@@ -706,6 +706,8 @@ import NLS.KdV.HillWeightedSpectralContinuity
 import NLS.Articles.KdVEstimates.WeightedSpectralEstimate
 import NLS.KdV.HillHomogeneousSpectralSequence
 import NLS.Articles.KdVEstimates.IntegerSpectralEstimates
+import NLS.KdV.HillCommonComplexOwnFactors
+import NLS.KdV.HillCommonOwnFactorsPhysical
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/

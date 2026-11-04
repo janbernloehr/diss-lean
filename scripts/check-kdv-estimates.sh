@@ -130,6 +130,7 @@ modules+=(NLS/KdV/HillFilledFreeGapUnit NLS/KdV/HillFilledFreeGapAnalytic NLS/Kd
 modules+=(NLS/KdV/HillComplexGapQuadraticRoot NLS/KdV/HillQuadraticRootFreeNormalization NLS/KdV/HillComplexRootProductMatching NLS/KdV/HillComplexRegularDensity NLS/KdV/HillComplexRegularDensityBounds NLS/KdV/HillCommonRegularAnnulusChart NLS/ComplexAnalysis/BoundedParametricQuadraticSolution NLS/KdV/HillBoundedAnalyticQuadraticSolutions)
 modules+=(NLS/KdV/HillComplexDirichletTerminal NLS/KdV/HillUniformRealGapLocalization NLS/KdV/HillAnalyticQuadraticDirichletValue NLS/KdV/HillPhysicalQuadraticTerminal NLS/KdV/HillQuadraticDirichletPhysicalMatching NLS/KdV/HillCommonAnalyticCorrectionTail NLS/ComplexAnalysis/NormalAnalyticSeries NLS/KdV/HillSummedRegularCorrectionAnalytic NLS/KdV/HillSpectralCartesianAnalytic)
 modules+=(NLS/SequenceSpaces/HilbertCoordinateNormContinuity NLS/KdV/HillWeightedSpectralSequence NLS/KdV/HillWeightedSpectralContinuity NLS/Articles/KdVEstimates/WeightedSpectralEstimate NLS/KdV/HillHomogeneousSpectralSequence NLS/Articles/KdVEstimates/IntegerSpectralEstimates)
+modules+=(NLS/KdV/HillCommonComplexOwnFactors NLS/KdV/HillCommonOwnFactorsPhysical)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
