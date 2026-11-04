@@ -772,6 +772,11 @@ import NLS.KdV.HillDirichletSheetJump
 import NLS.KdV.HillFilledRootIndexInverseBound
 import NLS.KdV.HillNativeWeightedNormingSheet
 import NLS.KdV.HillNativeWeightedOwnFactors
+import NLS.KdV.HillCriticalComplexOwnAmplitude
+import NLS.SequenceSpaces.NatL2AnalyticRealization
+import NLS.KdV.HillCriticalComplexOwnAmplitudeTails
+import NLS.KdV.HillCriticalOwnAmplitudeTerms
+import NLS.KdV.HillCriticalOwnAmplitudeHilbert
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1239,7 +1244,11 @@ run_cmd do
     ``NLS.ComplexAnalysis.augmented_boundary_diagonal_balance,
     ``NLS.ComplexAnalysis.weighted_diagonal_le_of_augmented_boundary_balance,
     ``NLS.ComplexAnalysis.norm_augmented_boundary_denominator_ge_one,
-    ``NLS.Fourier.norm_halfCoefficient_le_of_bound]
+    ``NLS.Fourier.norm_halfCoefficient_le_of_bound,
+    ``NLS.Coeff.natL2OfFunction,
+    ``NLS.Coeff.natL2OfFunction_apply_of_summable_sq,
+    ``NLS.Coeff.norm_natL2OfFunction_sq_eq_tsum,
+    ``NLS.Coeff.analyticOnNhd_natL2OfFunction_of_summable_sq_bound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

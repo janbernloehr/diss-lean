@@ -139,6 +139,7 @@ modules+=(NLS/SequenceSpaces/TwoPoleReciprocalEnvelope NLS/KdV/HillFreeBoundaryG
 modules+=(NLS/SequenceSpaces/TwoPoleReciprocalDecay NLS/ComplexAnalysis/LocalSineInverse NLS/ComplexAnalysis/AugmentedBoundaryBalance NLS/KdV/HillDirichletEnergyDisplacement NLS/KdV/HillBoundaryGreenDecay NLS/KdV/HillDirichletScalarBalance NLS/KdV/HillBoundaryDenominator NLS/KdV/HillWeightedDirichletDiagonal NLS/KdV/HillNativeDirichletDefect)
 modules+=(NLS/KdV/HillDirichletPeriodicDistance NLS/KdV/HillNativeDirichletMidpoint)
 modules+=(NLS/Fourier/HalfCoefficientBounds NLS/KdV/HillRoughSmallPotentialPosition NLS/KdV/HillDirichletCoefficientBounds NLS/KdV/HillWeightedDirichletJump NLS/KdV/HillNativeDirichletJump NLS/KdV/HillDirichletSheetJump NLS/KdV/HillFilledRootIndexInverseBound NLS/KdV/HillNativeWeightedNormingSheet NLS/KdV/HillNativeWeightedOwnFactors)
+modules+=(NLS/KdV/HillCriticalComplexOwnAmplitude NLS/SequenceSpaces/NatL2AnalyticRealization NLS/KdV/HillCriticalComplexOwnAmplitudeTails NLS/KdV/HillCriticalOwnAmplitudeTerms NLS/KdV/HillCriticalOwnAmplitudeHilbert)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
