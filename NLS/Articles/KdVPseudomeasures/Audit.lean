@@ -1280,6 +1280,21 @@ import NLS.KdV.HillActionAngleFirstVariation
 import NLS.FunctionalAnalysis.LinearTargetDerivative
 import NLS.KdV.HillNativeCartesianFirstVariation
 import NLS.Articles.KdVPseudomeasures.OriginalHillCartesianFirstVariation
+import NLS.SequenceSpaces.SignedSobolevWeight
+import NLS.SequenceSpaces.SymmetricWeightedReflection
+import NLS.SequenceSpaces.PositiveCartesianComplexification
+import NLS.KdV.HillNativeComplexCoordinates
+import NLS.RealAnalysis.FourierSquareRootNormalization
+import NLS.KdV.HillNativeComplexFirstVariation
+import NLS.SequenceSpaces.WeightedMultiplierEquiv
+import NLS.RealAnalysis.HalfFourierWeightBounds
+import NLS.SequenceSpaces.HalfFourierEquiv
+import NLS.SequenceSpaces.WeightedZeroMode
+import NLS.SequenceSpaces.MeanZeroHalfFourierEquiv
+import NLS.KdV.HillNativeMeanZeroComplexMap
+import NLS.ComplexAnalysis.AnalyticEquivDerivativeInverse
+import NLS.KdV.HillNativeComplexLocalInverse
+import NLS.Articles.KdVPseudomeasures.OriginalHillSignedComplexCoordinates
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -8075,3 +8090,77 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillCartesianFirstVariation
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_differential
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_differential_even_modes
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_differential_nonpositive
+#print axioms NLS.Weight.signedSobolev
+#print axioms NLS.Weight.signedSobolev_neg
+#print axioms NLS.Weight.signedSobolev_zero
+#print axioms NLS.Weight.signedSobolev_positive
+#print axioms NLS.WeightedCoeff.positiveToSignedCLM
+#print axioms NLS.WeightedCoeff.positiveToSignedCLM_apply
+#print axioms NLS.WeightedCoeff.symmetricReflection
+#print axioms NLS.WeightedCoeff.symmetricReflection_apply
+#print axioms NLS.WeightedCoeffPair.signedCartesianCLM
+#print axioms NLS.WeightedCoeffPair.signedCartesianCLM_apply
+#print axioms NLS.WeightedCoeffPair.signedCartesianCLM_positive
+#print axioms NLS.WeightedCoeffPair.signedCartesianCLM_negative
+#print axioms NLS.WeightedCoeffPair.signedCartesianCLM_zero
+#print axioms NLS.KdV.hillHminusNativeComplexMap
+#print axioms NLS.KdV.analyticOnNhd_hillHminusNativeComplexMap
+#print axioms NLS.KdV.hillHminusNativeComplexMap_positive
+#print axioms NLS.KdV.hillHminusNativeComplexMap_negative
+#print axioms NLS.KdV.hillHminusNativeComplexMap_zero_mode
+#print axioms NLS.KdV.hillHminusNativeComplexMap_action_identity
+#print axioms NLS.KdV.hillHminusNativeComplexMap_conjugate_pair
+#print axioms NLS.KdV.hillHminusNativeComplexMap_real
+#print axioms NLS.KdV.hillHminusNativeComplexMap_zero
+#print axioms NLS.RealAnalysis.complex_sqrt_two_pi_mul_nat
+#print axioms NLS.RealAnalysis.complex_sqrt_two_pi_mul_pnat_ne_zero
+#print axioms NLS.KdV.fderiv_hillHminusNativeComplexMap_zero
+#print axioms NLS.KdV.fderiv_hillHminusNativeComplexMap_positive_mean_zero
+#print axioms NLS.KdV.fderiv_hillHminusNativeComplexMap_negative_mean_zero
+#print axioms NLS.KdV.fderiv_hillHminusNativeComplexMap_zero_mode
+#print axioms NLS.WeightedCoeff.weightedMultiplierEquiv
+#print axioms NLS.WeightedCoeff.weightedMultiplierEquiv_apply
+#print axioms NLS.WeightedCoeff.weightedMultiplierEquiv_symm_apply
+#print axioms NLS.RealAnalysis.halfFourier_forward_bound
+#print axioms NLS.RealAnalysis.halfFourier_inverse_bound
+#print axioms NLS.Weight.signedSobolev_neg_half
+#print axioms NLS.WeightedCoeff.halfFourierSymbol
+#print axioms NLS.WeightedCoeff.halfFourierInverseSymbol
+#print axioms NLS.WeightedCoeff.halfFourierSymbol_neg
+#print axioms NLS.WeightedCoeff.halfFourierSymbol_positive
+#print axioms NLS.WeightedCoeff.halfFourierSymbol_mul_inverse
+#print axioms NLS.WeightedCoeff.halfFourierSymbol_bound
+#print axioms NLS.WeightedCoeff.halfFourierInverseSymbol_bound
+#print axioms NLS.WeightedCoeff.halfFourierEquiv
+#print axioms NLS.WeightedCoeff.halfFourierEquiv_apply
+#print axioms NLS.WeightedCoeff.halfFourierEquiv_symm_apply
+#print axioms NLS.WeightedCoeff.zeroModeSubmodule
+#print axioms NLS.WeightedCoeff.mem_zeroModeSubmodule
+#print axioms NLS.WeightedCoeff.eraseZeroModeCLM
+#print axioms NLS.WeightedCoeff.eraseZeroModeCLM_apply
+#print axioms NLS.WeightedCoeff.zeroModeProjection
+#print axioms NLS.WeightedCoeff.zeroModeProjection_coe
+#print axioms NLS.WeightedCoeff.halfFourierEquiv_map_zeroMode
+#print axioms NLS.WeightedCoeff.meanZeroHalfFourierEquiv
+#print axioms NLS.WeightedCoeff.meanZeroHalfFourierEquiv_apply
+#print axioms NLS.WeightedCoeff.meanZeroHalfFourierEquiv_symm_apply
+#print axioms NLS.KdV.hillMeanZeroComplexDomain
+#print axioms NLS.KdV.hillMeanZeroComplexMap
+#print axioms NLS.KdV.hillMeanZeroComplexMap_coe
+#print axioms NLS.KdV.isOpen_hillMeanZeroComplexDomain
+#print axioms NLS.KdV.real_mem_hillMeanZeroComplexDomain
+#print axioms NLS.KdV.zero_mem_hillMeanZeroComplexDomain
+#print axioms NLS.KdV.analyticOnNhd_hillMeanZeroComplexMap
+#print axioms NLS.KdV.hillMeanZeroComplexMap_zero
+#print axioms NLS.KdV.fderiv_hillHminusNativeComplexMap_eq_halfFourier
+#print axioms NLS.KdV.fderiv_hillMeanZeroComplexMap_zero
+#print axioms NLS.ComplexAnalysis.exists_localInverse_of_equiv_fderiv
+#print axioms NLS.KdV.exists_hillMeanZeroComplexMap_localInverse
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillSignedComplexCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_signed_complex_domain_contains_real_source
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_signed_complex_coordinates
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_signed_complex_action
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_signed_real_form
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_signed_Fourier_differential_even_modes
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_signed_mean_zero_derivative_equiv
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_signed_analytic_localInverse
