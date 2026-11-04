@@ -5709,3 +5709,5 @@ import NLS.KdV.HillUniformComplexPeriodRoot
 import NLS.ComplexAnalysis.BanachAnalyticZeroBound
 import NLS.KdV.HillUniformComplexPeriodRootBounds
 import NLS.KdV.HillSmallRealRootBox
+import NLS.KdV.HillDeletedPeriodIdentification
+import NLS.KdV.HillNearFreePhysicalPeriodRoots
