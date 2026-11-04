@@ -735,6 +735,14 @@ import NLS.KdV.HillFullWeightedActionAnalytic
 import NLS.KdV.HillReconstructionBounds
 import NLS.KdV.HillReconstructionBoundary
 import NLS.KdV.HillBoundaryCoordinates
+import NLS.Fourier.UnitIntervalHillBoundaryForcing
+import NLS.KdV.HillRoughScalarEquation
+import NLS.Fourier.ZeroBoundarySummableCoefficients
+import NLS.KdV.HillDirichletForcedFourier
+import NLS.KdV.HillDirichletFourierSequence
+import NLS.Fourier.ZeroExtensionConvolution
+import NLS.KdV.HillDirichletConvolutionEquation
+import NLS.KdV.HillDirichletParityForcing
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1183,7 +1191,14 @@ run_cmd do
     ``NLS.Coeff.natL1OfFunction,
     ``NLS.Coeff.natL1OfFunction_apply_of_summable,
     ``NLS.Coeff.norm_natL1OfFunction_eq_tsum,
-    ``NLS.Coeff.analyticOnNhd_natL1OfFunction_of_summable_bound]
+    ``NLS.Coeff.analyticOnNhd_natL1OfFunction_of_summable_bound,
+    ``NLS.Fourier.halfCoefficient_of_ac_hasDerivAt,
+    ``NLS.Fourier.halfCoefficient_hill_equation_with_boundary,
+    ``NLS.Fourier.halfCoefficient_hill_dirichlet_boundary_forcing,
+    ``NLS.Fourier.memlp_sobolev_halfCoefficient_of_ac_zero_boundary,
+    ``NLS.Fourier.exists_halfCoefficient_l1_of_ac_zero_boundary,
+    ``NLS.Fourier.continuousSynthesis_halfCoefficients_eq_zeroExtension_ae,
+    ``NLS.Fourier.convolution_halfCoefficients_eq_physical_product]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 5594,
+    "declarations": 5650,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -476,10 +476,17 @@
       "NLS.Coeff.natL1OfFunction",
       "NLS.Coeff.natL1OfFunction_apply_of_summable",
       "NLS.Coeff.norm_natL1OfFunction_eq_tsum",
-      "NLS.Coeff.analyticOnNhd_natL1OfFunction_of_summable_bound"
+      "NLS.Coeff.analyticOnNhd_natL1OfFunction_of_summable_bound",
+      "NLS.Fourier.halfCoefficient_of_ac_hasDerivAt",
+      "NLS.Fourier.halfCoefficient_hill_equation_with_boundary",
+      "NLS.Fourier.halfCoefficient_hill_dirichlet_boundary_forcing",
+      "NLS.Fourier.memlp_sobolev_halfCoefficient_of_ac_zero_boundary",
+      "NLS.Fourier.exists_halfCoefficient_l1_of_ac_zero_boundary",
+      "NLS.Fourier.continuousSynthesis_halfCoefficients_eq_zeroExtension_ae",
+      "NLS.Fourier.convolution_halfCoefficients_eq_physical_product"
     ]
   },
-  "full_repository_validation": "All 736 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 733-module base has strict validation recorded at commit f94837dd3e9e29df6f9fb31eff9e5ed4115f8082 (complete 583-module strict focused run plus 150 isolated additions, all 733 base source hashes unchanged, 5548-declaration audit and successful current 733-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5594-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 736-module focused script, full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 744 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 736-module base has strict validation recorded at commit 07d27aaa9471905c4e832ba2229bb75ac79a8c5f (complete 583-module strict focused run plus 153 isolated additions, all 736 source hashes unchanged, 5594-declaration audit and successful 736-module aggregate), and all 8 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5650-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 744-module focused script, full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -1217,10 +1224,18 @@
     "NLS/KdV/HillFullWeightedActionAnalytic.lean": "4135ee5efa99c07959bff2571ab27214a2888db51389e335fdd659cfc9f9ebae",
     "NLS/KdV/HillReconstructionBounds.lean": "5881f7d6dfb1ca94c9a265fbcffb1be5ce8718feef3196121139bcc64ea32446",
     "NLS/KdV/HillReconstructionBoundary.lean": "8904b6a4cad953b708f2ba6c0893c42051a4b96b2f8194e74df67765b6b650a4",
-    "NLS/KdV/HillBoundaryCoordinates.lean": "54dbae95ac1d420ba8f0c45577da2bcce231d928215ef53a636df40af31f5118"
+    "NLS/KdV/HillBoundaryCoordinates.lean": "54dbae95ac1d420ba8f0c45577da2bcce231d928215ef53a636df40af31f5118",
+    "NLS/Fourier/UnitIntervalHillBoundaryForcing.lean": "4d0149c1c39584802b39d3a830e3e19e958152d8668ccac3cea754b8a7f09567",
+    "NLS/KdV/HillRoughScalarEquation.lean": "b1c50d59b6c9a67e16bc491f2adf53757565d82544931f420654792e13d35ab2",
+    "NLS/Fourier/ZeroBoundarySummableCoefficients.lean": "4832cb4848547521db7336c8ac7ad59c660ceb66aa6d435d360e4f7e4b70a69a",
+    "NLS/KdV/HillDirichletForcedFourier.lean": "787534c222c3351cd2c38d21f65ec51fe5ded0f6446b42dc16b94bfeee7811f4",
+    "NLS/KdV/HillDirichletFourierSequence.lean": "fc6db763ef8737bdf9cbe727023dc49dc5d473b28091db99bb7445059adf09ef",
+    "NLS/Fourier/ZeroExtensionConvolution.lean": "39411e67b74079499e9db8c744c73464c80b43bb4120ea365c0343c88e387838",
+    "NLS/KdV/HillDirichletConvolutionEquation.lean": "c41bd41ed779050634b2f7898594dc651030efb0800fb87c027d6c518ddc1774",
+    "NLS/KdV/HillDirichletParityForcing.lean": "7f2bd55bcbeaf66e8c3e310ce2700f3d2945e5c6f7d3f899b6ef59f2733a60db"
   },
-  "remaining": "The reconstructed weighted Hill modes now have a shifted weighted l1 error at most 8*norm(q)/n, actual continuous Fourier synthesis with the same boundary trace budget, and a jointly analytic nondegenerate boundary normalization on every bounded complex weighted source ball for all sufficiently high modes. The boundary ratio differs from one by at most 32*norm(q)/n. An exact normalized two-mode criterion detects periodic Fourier eigenfunctions vanishing at the boundary. This does not yet compare generic Dirichlet eigenvalues or their norming data with the weighted effective couplings. The original full weighted action sequence now has a local complex Frechet analytic extension into its actual weighted l1 target at every real weighted base potential, with exact sequence equality near the base. Its norm is the original weighted action mass, and both the sequence map and total weighted action mass have checked analytic extensions through collapsed gaps. The high complex squared-gap tail has the exact weighted Fourier budget with quartic constant 2304; the actual complex high action tail is analytic in weighted l1 with uniform bounds on each prescribed complex weighted source ball. All earlier common action prefactors, paired own amplitudes, scalar spectral-coordinate analyticity, actual real weighted Hilbert sequences and numerical coordinate bounds remain checked. Complex weighted l2 bounds for the individual Cartesian amplitudes, phase control uniform in the spectral-coordinate index and Banach-valued spectral-map analyticity remain open. Source-normalized canonical Gardner brackets, global inverse and identification with the fixed physical KdV Birkhoff map also remain unproved. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
-  "milestone": "Joint analytic Hill reconstruction and nondegenerate boundary coordinates",
+  "remaining": "The actual rough Dirichlet solution now has a summable sequence of its literal half-interval Fourier coefficients, with one full Hilbert derivative, its original potential product identified with the checked discrete convolution, and a forced Fourier equation retaining both endpoint derivative sources. For even period-two potentials, its doubled parity projection satisfies the exact constant-source equation in each periodic/antiperiodic block; the common resonant forcing cancels on subtraction. This supplies genuine generic Dirichlet boundary data rather than a periodic zero-trace substitute. The boundary forcing is a bounded constant sequence in its block and is not an l2 input to the existing tail inverse. Construct the free boundary Green complement in l1 and its corrected reconstruction, then compare the individual complex own factors with the weighted effective couplings. The reconstructed weighted Hill modes now have a shifted weighted l1 error at most 8*norm(q)/n, actual continuous Fourier synthesis with the same boundary trace budget, and a jointly analytic nondegenerate boundary normalization on every bounded complex weighted source ball for all sufficiently high modes. The boundary ratio differs from one by at most 32*norm(q)/n. An exact normalized two-mode criterion detects periodic Fourier eigenfunctions vanishing at the boundary. This does not yet compare generic Dirichlet eigenvalues or their norming data with the weighted effective couplings. The original full weighted action sequence now has a local complex Frechet analytic extension into its actual weighted l1 target at every real weighted base potential, with exact sequence equality near the base. Its norm is the original weighted action mass, and both the sequence map and total weighted action mass have checked analytic extensions through collapsed gaps. The high complex squared-gap tail has the exact weighted Fourier budget with quartic constant 2304; the actual complex high action tail is analytic in weighted l1 with uniform bounds on each prescribed complex weighted source ball. All earlier common action prefactors, paired own amplitudes, scalar spectral-coordinate analyticity, actual real weighted Hilbert sequences and numerical coordinate bounds remain checked. Complex weighted l2 bounds for the individual Cartesian amplitudes, phase control uniform in the spectral-coordinate index and Banach-valued spectral-map analyticity remain open. Source-normalized canonical Gardner brackets, global inverse and identification with the fixed physical KdV Birkhoff map also remain unproved. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+  "milestone": "Actual rough Dirichlet Fourier sequences and exact boundary forcing",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -1959,7 +1974,15 @@
     "NLS.KdV.HillFullWeightedActionAnalytic",
     "NLS.KdV.HillReconstructionBounds",
     "NLS.KdV.HillReconstructionBoundary",
-    "NLS.KdV.HillBoundaryCoordinates"
+    "NLS.KdV.HillBoundaryCoordinates",
+    "NLS.Fourier.UnitIntervalHillBoundaryForcing",
+    "NLS.KdV.HillRoughScalarEquation",
+    "NLS.Fourier.ZeroBoundarySummableCoefficients",
+    "NLS.KdV.HillDirichletForcedFourier",
+    "NLS.KdV.HillDirichletFourierSequence",
+    "NLS.Fourier.ZeroExtensionConvolution",
+    "NLS.KdV.HillDirichletConvolutionEquation",
+    "NLS.KdV.HillDirichletParityForcing"
   ],
   "proof_commits": [
     {
@@ -2466,6 +2489,11 @@
       "commit": "f94837dd3e9e29df6f9fb31eff9e5ed4115f8082",
       "scope": "Genuine local Banach analytic extensions of the actual full weighted Hill action sequence and action mass, with nine isolated strict additions, 5548-declaration audit, and successful 733-module aggregate.",
       "pushed": true
+    },
+    {
+      "commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f",
+      "scope": "Strictly checked analytic weighted Hill reconstruction and nondegenerate continuous boundary coordinates: 3 isolated additions, 5594-declaration audit and successful 736-module aggregate; committed and pushed.",
+      "pushed": true
     }
   ],
   "aggregate_check": {
@@ -2482,42 +2510,52 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "736 focused modules covered by the unchanged 733-module strictly validated base plus 3 isolated strict module checks; no fresh complete focused-script run is claimed.",
+    "focused_modules": "744 focused modules covered by the unchanged 736-module strictly validated base plus 8 isolated strict module checks; no fresh complete focused-script run is claimed.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 5594 declarations. Includes all corrected Fourier wave, summable shifted reconstruction, continuous physical synthesis, analytic boundary normalization and exact periodic boundary-eigenvector criterion declarations.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 5650 declarations. Includes all seven shared Fourier coefficient, zero-boundary summability and zero-extension convolution seeds, and every new actual rough scalar, Dirichlet, convolution and parity-source declaration.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 736 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 733-module base has strict validation recorded at commit f94837dd3e9e29df6f9fb31eff9e5ed4115f8082 (complete 583-module strict focused run plus 150 isolated additions, all 733 base source hashes unchanged, 5548-declaration audit and successful current 733-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5594-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 736-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 744 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 736-module base has strict validation recorded at commit 07d27aaa9471905c4e832ba2229bb75ac79a8c5f (complete 583-module strict focused run plus 153 isolated additions, all 736 source hashes unchanged, 5594-declaration audit and successful 736-module aggregate), and all 8 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5650-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 744-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified. The existing ParametricTrigonometricTerminal, ParametricSineTerminal, ParametricCosineTerminal, ParametricCosineChart, ParametricCosinePrimitive and LocalAnalyticSquareRoot sources were read and reused with bytes equal to the pinned prebuilt reference; their actual uses are covered transitively by the new Hill declaration audit. The endpoint-root continuity and arbitrary real-angle cosine-chart results are new shared proofs with explicit audit seeds. Generic parametric annular primitives, quadratic Cauchy projection and root primitives, quadratic cosine primitives and the segment-only analytic cosine mean were read and reused unchanged from the pinned prebuilt reference. Their SHA256 values are recorded in the analytic_regular_hill_abelian_corrections_through_closed_gaps source-map section. The actual uses are covered transitively by the expanded audit.",
-    "mathematical_scope": "Construct the actual corrected Fourier waves from the checked complementary inverse and corrected potential, with summable shifted weighted remainder bounded by 8*norm(q)/n. Prove the same unweighted l1 error for arbitrary resonant amplitudes, multiplied by the sum of their moduli, without losing a spectral weight. Construct a proof-independent jointly analytic reconstruction operator and its actual continuous period-two Fourier sum. Boundary evaluation has the identical error budget relative to the free row u1+u2. Under 16*norm(q)<=n each basis boundary factor has modulus at least 1/2. Their analytic ratio differs from one by at most 32*norm(q)/n; its normalized vector spans precisely the kernel of the boundary row and reconstructs to a nonzero continuous function. Prove an exact equivalence between a nonzero periodic Fourier eigenfunction vanishing at the boundary and the reduced operator killing this normalized boundary vector. One cutoff yields these nondegenerate analytic boundary charts for every high mode on each bounded complex weighted source ball.",
-    "scope": "All 736 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 733-module base has strict validation recorded at commit f94837dd3e9e29df6f9fb31eff9e5ed4115f8082 (complete 583-module strict focused run plus 150 isolated additions, all 733 base source hashes unchanged, 5548-declaration audit and successful current 733-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5594-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 736-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Prove half-interval integration by parts for an absolutely continuous function with a specified integrable almost-everywhere derivative, retaining its frequency-dependent endpoint jump, and the full scalar Hill coefficient equation with both position and derivative jumps. Derive the actual complete scalar differential system for the original rough L2 Hill state from the existing first-order system, prove integrability of the original scalar potential times its continuous position, and identify the representative with the original source for continuous potentials. Define the normalized Dirichlet position, derivative and actual half coefficients with initial data (0,1), recover the characteristic and slope at the endpoint, and specialize the coefficient equation at every complex Dirichlet zero. A zero-boundary H1 function has its literal half coefficients in weighted H1 l2 and hence l1, giving an exact actual Dirichlet coefficient sequence. Prove that a summable sequence of half coefficients synthesizes the zero extension almost everywhere and that multiplication by any rough Fourier potential is exactly the existing convolution. Thus the actual Dirichlet sequence satisfies (E-free_k)*a_k=(q*a)_k-(slope*wave(-k,1)-1)/2 at all integer k, including zero and the resonant modes. The resonant difference cancels this source exactly. For an even potential, the doubled parity projection A_r=2*P_r*a is summable and supported in that block, and satisfies (E-free_k)*A_r,k=(q*A_r)_k-1_[k mod 2=r mod 2]*(slope*wave(-r,1)-1). Prove both resonant rows with this same literal scalar source and a contractive parity norm bound.",
+    "scope": "All 744 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 736-module base has strict validation recorded at commit 07d27aaa9471905c4e832ba2229bb75ac79a8c5f (complete 583-module strict focused run plus 153 isolated additions, all 736 source hashes unchanged, 5594-declaration audit and successful 736-module aggregate), and all 8 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5650-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 744-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "1b48421ce3e9306484aaadfe05d1fb8319f3a4ebe19acd5c0bcfcc47af29c5fa",
-      "scripts/check-kdv-estimates.sh": "7edb1e83a9ab71f0b48b5c58724621a470d4014ad3d0b7d31a4d5c91b2f18c65",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "cc663930889c82f1e3769737bd6f7aa6bd406cefd3e6b98c3753b486f9519283"
+      "NLS.lean": "c381c95b6df8a0a21b075583b69cd8883cfc660990a86575ce55b99b4beaafad",
+      "scripts/check-kdv-estimates.sh": "5e3be9f9bfbc9bb1d03faed6523a56303bdb26c456e8f69a9ce9550dd003dfdf",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "38168ac9b219fe44a3d00c1a2be427fa96ea38ce63b8787797ad9aded7039d5a"
     },
     "focused_build_execution": {
       "mode": "strict_delta",
-      "base_commit": "f94837dd3e9e29df6f9fb31eff9e5ed4115f8082",
-      "base_focused_modules": 733,
-      "base_verification_sha256": "cd772799f5f34afd822fe9a3bffce92f79a52e0850a194eccdc310dabf747544",
+      "base_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f",
+      "base_focused_modules": 736,
+      "base_verification_sha256": "c996dadb057e2632a3c3832ccab3bf5a730393006c0ea0563ec681a9842e1571",
       "base_sources_unchanged": true,
-      "base_validation_description": "complete 583-module strict focused run plus 150 isolated additions, all 733 base source hashes unchanged, 5548-declaration audit and successful current 733-module aggregate",
+      "base_validation_description": "complete 583-module strict focused run plus 153 isolated additions, all 736 source hashes unchanged, 5594-declaration audit and successful 736-module aggregate",
       "new_modules": [
-        "NLS/KdV/HillReconstructionBounds.lean",
-        "NLS/KdV/HillReconstructionBoundary.lean",
-        "NLS/KdV/HillBoundaryCoordinates.lean"
+        "NLS/Fourier/UnitIntervalHillBoundaryForcing.lean",
+        "NLS/KdV/HillRoughScalarEquation.lean",
+        "NLS/Fourier/ZeroBoundarySummableCoefficients.lean",
+        "NLS/KdV/HillDirichletForcedFourier.lean",
+        "NLS/KdV/HillDirichletFourierSequence.lean",
+        "NLS/Fourier/ZeroExtensionConvolution.lean",
+        "NLS/KdV/HillDirichletConvolutionEquation.lean",
+        "NLS/KdV/HillDirichletParityForcing.lean"
       ],
       "new_source_sha256": {
-        "NLS/KdV/HillReconstructionBounds.lean": "5881f7d6dfb1ca94c9a265fbcffb1be5ce8718feef3196121139bcc64ea32446",
-        "NLS/KdV/HillReconstructionBoundary.lean": "8904b6a4cad953b708f2ba6c0893c42051a4b96b2f8194e74df67765b6b650a4",
-        "NLS/KdV/HillBoundaryCoordinates.lean": "54dbae95ac1d420ba8f0c45577da2bcce231d928215ef53a636df40af31f5118"
+        "NLS/Fourier/UnitIntervalHillBoundaryForcing.lean": "4d0149c1c39584802b39d3a830e3e19e958152d8668ccac3cea754b8a7f09567",
+        "NLS/KdV/HillRoughScalarEquation.lean": "b1c50d59b6c9a67e16bc491f2adf53757565d82544931f420654792e13d35ab2",
+        "NLS/Fourier/ZeroBoundarySummableCoefficients.lean": "4832cb4848547521db7336c8ac7ad59c660ceb66aa6d435d360e4f7e4b70a69a",
+        "NLS/KdV/HillDirichletForcedFourier.lean": "787534c222c3351cd2c38d21f65ec51fe5ded0f6446b42dc16b94bfeee7811f4",
+        "NLS/KdV/HillDirichletFourierSequence.lean": "fc6db763ef8737bdf9cbe727023dc49dc5d473b28091db99bb7445059adf09ef",
+        "NLS/Fourier/ZeroExtensionConvolution.lean": "39411e67b74079499e9db8c744c73464c80b43bb4120ea365c0343c88e387838",
+        "NLS/KdV/HillDirichletConvolutionEquation.lean": "c41bd41ed779050634b2f7898594dc651030efb0800fb87c027d6c518ddc1774",
+        "NLS/KdV/HillDirichletParityForcing.lean": "7f2bd55bcbeaf66e8c3e310ce2700f3d2945e5c6f7d3f899b6ef59f2733a60db"
       },
       "isolated_stage_exit_code": 0,
       "isolated_stage_source_matches_integrated": true,
       "expanded_axiom_audit_exit_code": 0,
-      "transitive_axiom_audit_declarations": 5594,
+      "transitive_axiom_audit_declarations": 5650,
       "complete_current_focused_script_rerun": false
     }
   },
@@ -2700,9 +2738,9 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Joint analytic Hill reconstruction and nondegenerate boundary coordinates",
-    "focused_modules": 736,
-    "scope": "All 736 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 733-module base has strict validation recorded at commit f94837dd3e9e29df6f9fb31eff9e5ed4115f8082 (complete 583-module strict focused run plus 150 isolated additions, all 733 base source hashes unchanged, 5548-declaration audit and successful current 733-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5594-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 736-module focused script, full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Actual rough Dirichlet Fourier sequences and exact boundary forcing",
+    "focused_modules": 744,
+    "scope": "All 744 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 736-module base has strict validation recorded at commit 07d27aaa9471905c4e832ba2229bb75ac79a8c5f (complete 583-module strict focused run plus 153 isolated additions, all 736 source hashes unchanged, 5594-declaration audit and successful 736-module aggregate), and all 8 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5650-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 744-module focused script, full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",
@@ -2780,6 +2818,14 @@
       "milestone": "Complex Banach analyticity of the original full weighted Hill action sequence",
       "focused_modules": 733,
       "scope": "All 733 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 724-module base has strict validation recorded at commit 01a4a998dc3a5cf25ec70f852cfdae8aac36c44f (complete 583-module strict focused run plus 141 isolated additions, all 724 base source hashes unchanged, and 5454-declaration audit passed; the 724-module aggregate was freshly checked at the start of this milestone with actual exit 0 under the shared lock), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5548-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 733-module focused script, full Lake rebuild and full repository examples were not rerun."
+    },
+    {
+      "date": "2026-11-04",
+      "commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f",
+      "status": "passed",
+      "milestone": "Joint analytic Hill reconstruction and nondegenerate boundary coordinates",
+      "focused_modules": 736,
+      "scope": "All 736 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 733-module base has strict validation recorded at commit f94837dd3e9e29df6f9fb31eff9e5ed4115f8082 (complete 583-module strict focused run plus 150 isolated additions, all 733 base source hashes unchanged, 5548-declaration audit and successful current 733-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5594-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 736-module focused script, full Lake rebuild and full repository examples were not rerun."
     }
   ]
 }

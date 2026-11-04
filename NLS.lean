@@ -5658,3 +5658,11 @@ import NLS.KdV.HillFullWeightedActionAnalytic
 import NLS.KdV.HillReconstructionBounds
 import NLS.KdV.HillReconstructionBoundary
 import NLS.KdV.HillBoundaryCoordinates
+import NLS.Fourier.UnitIntervalHillBoundaryForcing
+import NLS.KdV.HillRoughScalarEquation
+import NLS.Fourier.ZeroBoundarySummableCoefficients
+import NLS.KdV.HillDirichletForcedFourier
+import NLS.KdV.HillDirichletFourierSequence
+import NLS.Fourier.ZeroExtensionConvolution
+import NLS.KdV.HillDirichletConvolutionEquation
+import NLS.KdV.HillDirichletParityForcing
