@@ -1178,6 +1178,13 @@ modules = [
     'NLS.KdV.HillOnIndexSourceBallCompatibility',
     'NLS.KdV.HillCanonicalDiagonalCartesian',
     'NLS.Articles.KdVPseudomeasures.OriginalHillGlobalDiagonalCartesian',
+    'NLS.ComplexAnalysis.RealCosineRootTerminal',
+    'NLS.KdV.HillAbelianRealNumerator',
+    'NLS.KdV.HillOnIndexRealCosinePhase',
+    'NLS.KdV.HillOnIndexRealPhysicalTerminal',
+    'NLS.KdV.HillRealDiagonalCartesian',
+    'NLS.KdV.HillOffIndexRealAbelianValue',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillRealAbelianPhases',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

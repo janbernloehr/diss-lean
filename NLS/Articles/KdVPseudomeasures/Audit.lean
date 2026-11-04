@@ -1144,6 +1144,13 @@ import NLS.KdV.HillOnIndexRealPatchCompatibility
 import NLS.KdV.HillOnIndexSourceBallCompatibility
 import NLS.KdV.HillCanonicalDiagonalCartesian
 import NLS.Articles.KdVPseudomeasures.OriginalHillGlobalDiagonalCartesian
+import NLS.ComplexAnalysis.RealCosineRootTerminal
+import NLS.KdV.HillAbelianRealNumerator
+import NLS.KdV.HillOnIndexRealCosinePhase
+import NLS.KdV.HillOnIndexRealPhysicalTerminal
+import NLS.KdV.HillRealDiagonalCartesian
+import NLS.KdV.HillOffIndexRealAbelianValue
+import NLS.Articles.KdVPseudomeasures.OriginalHillRealAbelianPhases
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7435,3 +7442,25 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillGlobalDiagonalCartesian
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_global_onIndex_phase_mod_pi
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_global_diagonal_matches_EVERY_real_patch
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_diagonal_WHOLE_complex_source_ball_overlap
+#print axioms NLS.ComplexAnalysis.exists_real_cosine_terminal_with_root
+#print axioms NLS.ComplexAnalysis.cosine_phase_terminal_mod_two_pi
+#print axioms NLS.KdV.MiuraHillPsiFamily.frequency_numerator_im_eq_zero_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.abelianFrequencyNumerator_im_eq_zero_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.abelianGapNumerator_rotated_im_eq_zero_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexCosinePoint_mem_actual_gap
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexAbelianCosinePhase_im_eq_zero_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.exists_real_physical_cosine_terminal
+#print axioms NLS.KdV.HillProductEquationPatch.exists_real_original_diagonal_phase
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexAbelianCosinePhase_mod_two_pi_of_physical_terminals
+#print axioms NLS.KdV.hillHminusDiagonalCartesian_real_phase
+#print axioms NLS.KdV.hillHminusDiagonalCartesian_conjugate_of_real
+#print axioms NLS.KdV.norm_hillHminusDiagonalCartesian_of_real_open_gap
+#print axioms NLS.KdV.norm_hillHminusDiagonalCartesian_of_real
+#print axioms NLS.KdV.norm_hillHminusDiagonalPhaseSquare_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianCosinePrimitive_im_eq_zero_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianValue_im_eq_zero_of_real
+#print axioms NLS.KdV.hillHminusPhysicalOffIndexAbelianValue_im_eq_zero_of_real
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_offIndex_Abelian_values_real
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_diagonal_factors_conjugate
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_diagonal_factor_moduli
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_doubled_phase_unit_modulus
