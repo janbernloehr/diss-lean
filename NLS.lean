@@ -5614,3 +5614,12 @@ import NLS.KdV.HillComplexRegularDensityBounds
 import NLS.KdV.HillCommonRegularAnnulusChart
 import NLS.ComplexAnalysis.BoundedParametricQuadraticSolution
 import NLS.KdV.HillBoundedAnalyticQuadraticSolutions
+import NLS.KdV.HillComplexDirichletTerminal
+import NLS.KdV.HillUniformRealGapLocalization
+import NLS.KdV.HillAnalyticQuadraticDirichletValue
+import NLS.KdV.HillPhysicalQuadraticTerminal
+import NLS.KdV.HillQuadraticDirichletPhysicalMatching
+import NLS.KdV.HillCommonAnalyticCorrectionTail
+import NLS.ComplexAnalysis.NormalAnalyticSeries
+import NLS.KdV.HillSummedRegularCorrectionAnalytic
+import NLS.KdV.HillSpectralCartesianAnalytic

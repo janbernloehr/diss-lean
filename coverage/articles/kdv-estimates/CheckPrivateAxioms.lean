@@ -691,6 +691,15 @@ import NLS.KdV.HillComplexRegularDensityBounds
 import NLS.KdV.HillCommonRegularAnnulusChart
 import NLS.ComplexAnalysis.BoundedParametricQuadraticSolution
 import NLS.KdV.HillBoundedAnalyticQuadraticSolutions
+import NLS.KdV.HillComplexDirichletTerminal
+import NLS.KdV.HillUniformRealGapLocalization
+import NLS.KdV.HillAnalyticQuadraticDirichletValue
+import NLS.KdV.HillPhysicalQuadraticTerminal
+import NLS.KdV.HillQuadraticDirichletPhysicalMatching
+import NLS.KdV.HillCommonAnalyticCorrectionTail
+import NLS.ComplexAnalysis.NormalAnalyticSeries
+import NLS.KdV.HillSummedRegularCorrectionAnalytic
+import NLS.KdV.HillSpectralCartesianAnalytic
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1130,7 +1139,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.norm_analytic_unit_ratio_sub_one_le_on_disc,
     ``NLS.ComplexAnalysis.analyticOrder_indicator_eq_of_subset_equal_count,
     ``NLS.ComplexAnalysis.norm_two_root_factor_div_center_sq_sub_one_le,
-    ``NLS.ComplexAnalysis.exists_bounded_analytic_parametric_quadratic_solution_of_zero_period]
+    ``NLS.ComplexAnalysis.exists_bounded_analytic_parametric_quadratic_solution_of_zero_period,
+    ``NLS.ComplexAnalysis.analyticOnNhd_tsum_of_summable_uniform_bound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
