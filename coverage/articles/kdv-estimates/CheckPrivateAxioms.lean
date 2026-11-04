@@ -657,6 +657,17 @@ import NLS.KdV.HillCommonComplexHighChart
 import NLS.KdV.HillUniformComplexGapPairs
 import NLS.KdV.HillUniformComplexGapData
 import NLS.KdV.HillUniformComplexGapUnit
+import NLS.ComplexAnalysis.SineAnnulusInner
+import NLS.KdV.HillScaledFreeContourGeometry
+import NLS.KdV.ClassicalHillDirichletError
+import NLS.KdV.HillL2DirichletError
+import NLS.KdV.HillScaledFreeContourBounds
+import NLS.KdV.HillScaledFreeZeroCounts
+import NLS.KdV.HillScaledComplexRelativeBounds
+import NLS.ComplexAnalysis.LogarithmicSingleRootMoment
+import NLS.KdV.HillScaledComplexZeroCounts
+import NLS.KdV.HillUniformComplexDirichlet
+import NLS.KdV.HillUniformDirichletPhysical
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1090,7 +1101,9 @@ run_cmd do
     ``NLS.ComplexAnalysis.quadraticGapActionRatio,
     ``NLS.ComplexAnalysis.analyticAt_quadraticGapActionRatio_of_collapse,
     ``NLS.ComplexAnalysis.quadraticGapActionRatio_at_collapse,
-    ``NLS.ComplexAnalysis.circleIntegral_mul_div_endpointRoot_eq_squared_gap]
+    ``NLS.ComplexAnalysis.circleIntegral_mul_div_endpointRoot_eq_squared_gap,
+    ``NLS.ComplexAnalysis.exists_uniform_sine_lower_annulus_of_inner,
+    ``NLS.ComplexAnalysis.logarithmicCircleMoment_eq_single_root_power]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -5580,3 +5580,14 @@ import NLS.KdV.HillCommonComplexHighChart
 import NLS.KdV.HillUniformComplexGapPairs
 import NLS.KdV.HillUniformComplexGapData
 import NLS.KdV.HillUniformComplexGapUnit
+import NLS.ComplexAnalysis.SineAnnulusInner
+import NLS.KdV.HillScaledFreeContourGeometry
+import NLS.KdV.ClassicalHillDirichletError
+import NLS.KdV.HillL2DirichletError
+import NLS.KdV.HillScaledFreeContourBounds
+import NLS.KdV.HillScaledFreeZeroCounts
+import NLS.KdV.HillScaledComplexRelativeBounds
+import NLS.ComplexAnalysis.LogarithmicSingleRootMoment
+import NLS.KdV.HillScaledComplexZeroCounts
+import NLS.KdV.HillUniformComplexDirichlet
+import NLS.KdV.HillUniformDirichletPhysical
