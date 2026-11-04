@@ -17,7 +17,15 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual moving Dirichlet sheet variation
+## Latest actual terminal and Abelian integral variation
+
+The actual sheeted Dirichlet terminal phase now has Gardner derivative I*U(mu)*K_k(b), and genuine analytic single-gap Abelian integrals have derivative psi_n(mu)*K_k(b), with filled diagonal K_k(mu)=-1/2. Both formulas retain terminal bandedges and zero energy at open selected gaps. Nearby-real agreement determines the required complex source jets; no division by sine or cosine is used. See `TERMINAL_ANGLE_VARIATION.md`.
+
+Prior strict validation of all 866 unchanged selected sources; strict dependency-order compilation of one byte-identical canonical algebra helper and three new proof modules; then a fresh combined transitive axiom audit of all 870 selected modules. The reused helper precedes every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 870-module rebuild is claimed.
+
+Fresh audit: 8332 selected and 30916 imported NLS declarations, permitted axioms only. Infinite/closed-gap summation, canonical angle orientation and the physical frequency/main theorem conclusions remain open. All main inventory rows remain OPEN.
+
+## Earlier actual moving Dirichlet sheet variation
 
 Actual Dirichlet slope and moving sheet-root Gardner derivatives are proved, including filled spectral-diagonal values, zero energy and terminal bandedges. The moving-sheet formula uses the genuine source chain rule and actual differentiated monodromy determinant; it does not divide by the sheet value. See `DIRICHLET_SHEET_VARIATION.md`. Terminal-phase evaluation and the final angle/frequency identities remain open.
 

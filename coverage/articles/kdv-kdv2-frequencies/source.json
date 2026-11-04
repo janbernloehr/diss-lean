@@ -12730,6 +12730,54 @@
       "scope": "Differentiates the actual monodromy determinant at every Dirichlet zero, using frequency continuity and a punctured quadratic limit that includes zero energy. Combines the actual slope and Dirichlet-branch source derivatives with the moving-spectral chain rule to prove actual moving sheet-root Gardner cross, off-diagonal quotient and filled diagonal formulas. Retains terminal bandedges without dividing by the sheet value. Does not yet evaluate the terminal phase or prove the final angle/frequency identity.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "7cd6ef0b296d93a1644603a2c9ef4fd629042f8d46906e2051ce65ce43a2b6bf"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticSheetTerminalVariation.lean",
+      "source_labels": [
+        "Necessary actual Abelian integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Existing canonical quadratic-sheet algebra reused byte-identically from main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec. Both differentiated sine and cosine equations determine the angle velocity at terminal bandedges without dividing by either trigonometric coordinate. Strict default-limit recompile; source/local provenance in CANONICAL_QUADRATIC_SHEET_REUSE.json. Selected before its older transitive consumers.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5049659d2f34d9d976f5dd00f0f4409059cd17146405991b25ee760c7e03c283"
+    },
+    {
+      "path": "NLS/KdV/HillDeflatedRootEnergyDerivative.lean",
+      "source_labels": [
+        "Necessary actual Abelian integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Differentiates the actual filled radicand factorization to prove the exact energy relation for the physical nonvanishing deflated root, including original endpoints and collapsed gaps. Proves equality of the actual local complex-root and canonical-root energy derivatives on the intrinsic ball.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c9c3dd0b6a6a2a7609dffc75bf820c76a5462d64b981529b87da3bc4c0ea4160"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletTerminalVariation.lean",
+      "source_labels": [
+        "Necessary actual Abelian integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Defines the actual Dirichlet divided-difference kernel with filled diagonal -1/2; identifies actual Dirichlet-branch and moving-sheet Gardner variations with that kernel. Both actual sheeted terminal equations, stationary midpoint/half-gap/fixed-energy root, genuine moving-root chain rule and nearby-real source jet uniqueness yield the universal terminal-angle derivative I*U(mu)*kernel. Every differentiable extension with actual nearby-real physical agreement is covered, including terminal bandedges and zero energy. Assumes the selected gap is open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "badb8f82acedb016aa1bdd5d2a0eddf4b9373e29b938a3d067d51e6a788c7d6c"
+    },
+    {
+      "path": "NLS/KdV/HillGardnerAbelianIntegralVariation.lean",
+      "source_labels": [
+        "Necessary actual Abelian integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Constructs genuine analytic actual sheeted Dirichlet Abelian integral branches and proves their complete Gardner source derivative equals the actual normalized numerator at the Dirichlet energy times the actual filled Dirichlet kernel. Retains nearby-real integral, sheet and angle agreement, including terminal bandedges and filled energy diagonal. Uses the already proved stationary actual source contribution and newly evaluated terminal contribution. Infinite/closed-gap summation, canonical angle orientation and physical Hamiltonian frequency identities remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d45cf3f397f244ebe4d0ef9eaa38f27c4a5cb35ea6bce66355c0713f3d26b5a5"
     }
   ],
   "dependencies_needed": [
@@ -12761,15 +12809,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 8299,
-    "total_declarations_audited": 30885,
+    "candidate_declarations_audited": 8332,
+    "total_declarations_audited": 30916,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 866,
+    "selected_modules": 870,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -12791,7 +12839,8 @@
     "normalized_gardner_stationarity_validation_sequence": "Prior strict validation of 572 unchanged selected sources; strict default-limit dependency-order compilation of 239 byte-identical shared normalization dependencies; strict compilation of six new stationarity modules; then a fresh combined transitive axiom audit of all 817 selected modules. Twelve compatible local shared variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 817-module rebuild is claimed.",
     "canonical_normalized_stationarity_validation_sequence": "Prior strict validation of 817 selected sources, of which 816 are unchanged; strict dependency-order compilation of eight byte-identical shared nearby-matching sources; strict final compilation of the extended stationary-branch module and three new proof modules; then a fresh combined transitive axiom audit of all 828 selected modules. Twelve compatible local variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 828-module rebuild is claimed.",
     "abelian_source_stationarity_validation_sequence": "Prior strict validation of all 828 unchanged selected sources; strict dependency-order validation of 27 shared sources (26 byte-identical imports and one compatibility import reusing an already proved local spectral-derivative theorem); strict final compilation of seven new proof modules; then a fresh combined transitive axiom audit of all 862 selected modules. Twelve compatible local variants retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 862-module rebuild is claimed.",
-    "dirichlet_slope_validation_sequence": "Prior strict validation of all 862 unchanged selected sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 866 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 866-module rebuild is claimed."
+    "dirichlet_slope_validation_sequence": "Prior strict validation of all 862 unchanged selected sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 866 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 866-module rebuild is claimed.",
+    "terminal_angle_validation_sequence": "Prior strict validation of all 866 unchanged selected sources; strict dependency-order compilation of one byte-identical canonical algebra helper and three new proof modules; then a fresh combined transitive axiom audit of all 870 selected modules. The reused helper precedes every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 870-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -12995,5 +13044,7 @@
   "shared_nearby_normalization_import_record": "SHARED_NEARBY_NORMALIZATION_IMPORT.json",
   "abelian_source_stationarity_record": "ABELIAN_SOURCE_STATIONARITY.md",
   "shared_dirichlet_angle_chart_import_record": "SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json",
-  "dirichlet_sheet_variation_record": "DIRICHLET_SHEET_VARIATION.md"
+  "dirichlet_sheet_variation_record": "DIRICHLET_SHEET_VARIATION.md",
+  "terminal_angle_variation_record": "TERMINAL_ANGLE_VARIATION.md",
+  "canonical_quadratic_sheet_reuse_record": "CANONICAL_QUADRATIC_SHEET_REUSE.json"
 }

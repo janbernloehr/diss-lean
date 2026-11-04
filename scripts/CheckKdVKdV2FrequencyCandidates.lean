@@ -1,3 +1,7 @@
+import NLS.KdV.HillGardnerAbelianIntegralVariation
+import NLS.KdV.HillDirichletTerminalVariation
+import NLS.KdV.HillDeflatedRootEnergyDerivative
+import NLS.ComplexAnalysis.QuadraticSheetTerminalVariation
 import NLS.KdV.HillDirichletSheetVariation
 import NLS.KdV.HillDirichletGardnerSlope
 import NLS.KdV.HillGardnerAbelianPrimitive
@@ -138,7 +142,8 @@ This deliberately imports specific modules, not the aggregate NLS library.
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let modules := #[`NLS.ComplexAnalysis.RealLineIdentity,
+  let modules := #[
+    `NLS.ComplexAnalysis.RealLineIdentity,
     `NLS.ComplexAnalysis.RealFormIdentity,
     `NLS.ComplexAnalysis.ContinuousRealFormIdentity,
     `NLS.ComplexAnalysis.BanachTaylorBounds,
@@ -371,6 +376,7 @@ run_cmd do
     `NLS.DifferentialPolynomial.RiccatiResolventNaturality,
     `NLS.DifferentialPolynomial.MultiJet,
     `NLS.ZakharovShabat.SourcePsiLemma12_11,
+    `NLS.ComplexAnalysis.QuadraticSheetTerminalVariation,
     `NLS.ZakharovShabat.SourceIsospectralSet,
     `NLS.ZakharovShabat.SobolevHierarchySymmetries,
     `NLS.MKdV.HierarchyRestriction,
@@ -1003,7 +1009,10 @@ run_cmd do
     `NLS.KdV.ClassicalHillDirichletSlopePairing,
     `NLS.KdV.HillDirichletSlopeVariation,
     `NLS.KdV.HillDirichletGardnerSlope,
-    `NLS.KdV.HillDirichletSheetVariation]
+    `NLS.KdV.HillDirichletSheetVariation,
+    `NLS.KdV.HillDeflatedRootEnergyDerivative,
+    `NLS.KdV.HillDirichletTerminalVariation,
+    `NLS.KdV.HillGardnerAbelianIntegralVariation]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do
