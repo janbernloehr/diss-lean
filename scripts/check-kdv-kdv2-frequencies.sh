@@ -1063,6 +1063,12 @@ modules=(
   NLS/KdV/HillDirichletVelocitySummedCorrection
   NLS/KdV/HillDirichletVelocityAbelianAngle
   NLS/Articles/KdVKdV2Frequencies/SmoothAbelianAngleMotion
+  NLS/KdV/HillDirichletVelocityTerminalFactor
+  NLS/KdV/HillDirichletVelocityClosedCoordinate
+  NLS/KdV/HillDirichletVelocityPhase
+  NLS/KdV/HillDirichletVelocityCoordinate
+  NLS/KdV/HillDirichletVelocityFiniteGap
+  NLS/Articles/KdVKdV2Frequencies/SmoothAbelianCoordinateMotion
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

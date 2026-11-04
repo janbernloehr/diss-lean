@@ -883,3 +883,14 @@ Normal analytic convergence justifies differentiation of the infinite physical c
 Prior strict evidence for all 1043 unchanged selected baseline sources; strict dependency-order compilation of eleven new modules; then a fresh combined transitive axiom audit of all 1054 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1081 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1054-module rebuild is claimed.
 
 Fresh audit: 9590 selected and 32035 imported NLS declarations, permitted axioms only. The actual spectral sums still need evaluation as the Hamiltonian frequencies (69)/(84). All eleven main theorem rows remain OPEN.
+
+
+## Latest actual PDE coordinate derivatives at every gap
+
+Both literal physical PDE fields now have proved scalar coordinate derivatives at EVERY own and other gap. Closed own-gap velocities are zero by actual terminal-factor first variations. Open own-gap velocities combine the genuine physical phase derivative with stationarity of the actual action amplitude. The result applies to every differentiable nearby-real physical matching coordinate extension.
+
+ONE actual complex-L2-analytic scalar coordinate germ has BOTH physical PDE derivative limits and one physical matching neighborhood. Every closed-gap term in the coordinate series vanishes. At a finite-gap source with all gaps above N closed, both actual derivatives equal the finite spectral sum through N multiplied by i*z_n. No mean-zero or own-gap opening hypothesis in the all-gap coordinate statements. See `ACTUAL_ALL_GAP_PDE_COORDINATES.md`.
+
+Prior strict evidence for all 1054 unchanged selected baseline sources; strict dependency-order compilation of six new modules; then a fresh combined transitive axiom audit of all 1060 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1087 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1060-module rebuild is claimed.
+
+Fresh audit: 9613 selected and 32058 imported NLS declarations, permitted axioms only. The finite spectral sums still need evaluation as the Hamiltonian frequencies (69)/(84). All eleven main theorem rows remain OPEN.

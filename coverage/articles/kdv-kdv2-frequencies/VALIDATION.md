@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual PDE derivatives of the physical Abelian angle
+## Latest actual PDE coordinate derivatives at every gap
+
+Both literal physical PDE fields now have proved scalar coordinate derivatives at EVERY own and other gap. Closed own-gap velocities are zero by actual terminal-factor first variations. Open own-gap velocities combine the genuine physical phase derivative with stationarity of the actual action amplitude. The result applies to every differentiable nearby-real physical matching coordinate extension.
+
+ONE actual complex-L2-analytic scalar coordinate germ has BOTH physical PDE derivative limits and one physical matching neighborhood. Every closed-gap term in the coordinate series vanishes. At a finite-gap source with all gaps above N closed, both actual derivatives equal the finite spectral sum through N multiplied by i*z_n. No mean-zero or own-gap opening hypothesis in the all-gap coordinate statements. See `ACTUAL_ALL_GAP_PDE_COORDINATES.md`.
+
+Prior strict evidence for all 1054 unchanged selected baseline sources; strict dependency-order compilation of six new modules; then a fresh combined transitive axiom audit of all 1060 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1087 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1060-module rebuild is claimed.
+
+Fresh audit: 9613 selected and 32058 imported NLS declarations, permitted axioms only. The finite spectral sums still need evaluation as the Hamiltonian frequencies (69)/(84). All eleven main theorem rows remain OPEN.
+
+## Earlier actual PDE derivatives of the physical Abelian angle
 
 The checked terminal-angle patch is promoted. Both actual physical PDE fields now have proved terminal-angle velocities, including terminal bandedges. The same actual first-variation data compute genuine Abelian integral derivatives and every matching regular correction derivative at both open and closed terminal gaps.
 
@@ -246,7 +256,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1054 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1060 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1315,7 +1325,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1054 selected modules (including generated and private declarations)
+the 1060 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -2524,4 +2534,16 @@ PASS NLS/KdV/HillDirichletVelocitySummedCorrection
 PASS NLS/KdV/HillDirichletVelocityAbelianAngle
 PASS NLS/Articles/KdVKdV2Frequencies/SmoothAbelianAngleMotion
 Axiom audit passed: 9590 candidate declarations; 32035 declarations total.
+```
+
+Latest all-gap coordinate strict additions and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillDirichletVelocityTerminalFactor
+PASS NLS/KdV/HillDirichletVelocityClosedCoordinate
+PASS NLS/KdV/HillDirichletVelocityPhase
+PASS NLS/KdV/HillDirichletVelocityCoordinate
+PASS NLS/KdV/HillDirichletVelocityFiniteGap
+PASS NLS/Articles/KdVKdV2Frequencies/SmoothAbelianCoordinateMotion
+Axiom audit passed: 9613 candidate declarations; 32058 declarations total.
 ```

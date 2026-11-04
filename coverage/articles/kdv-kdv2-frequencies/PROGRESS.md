@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual PDE derivatives of the physical Abelian angle
+## Latest actual PDE coordinate derivatives at every gap
+
+Both literal physical PDE fields now have proved scalar coordinate derivatives at EVERY own and other gap. Closed own-gap velocities are zero by actual terminal-factor first variations. Open own-gap velocities combine the genuine physical phase derivative with stationarity of the actual action amplitude. The result applies to every differentiable nearby-real physical matching coordinate extension.
+
+ONE actual complex-L2-analytic scalar coordinate germ has BOTH physical PDE derivative limits and one physical matching neighborhood. Every closed-gap term in the coordinate series vanishes. At a finite-gap source with all gaps above N closed, both actual derivatives equal the finite spectral sum through N multiplied by i*z_n. No mean-zero or own-gap opening hypothesis in the all-gap coordinate statements. See `ACTUAL_ALL_GAP_PDE_COORDINATES.md`.
+
+Prior strict evidence for all 1054 unchanged selected baseline sources; strict dependency-order compilation of six new modules; then a fresh combined transitive axiom audit of all 1060 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1087 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1060-module rebuild is claimed.
+
+Fresh audit: 9613 selected and 32058 imported NLS declarations, permitted axioms only. The finite spectral sums still need evaluation as the Hamiltonian frequencies (69)/(84). All eleven main theorem rows remain OPEN.
+
+## Earlier actual PDE derivatives of the physical Abelian angle
 
 The checked terminal-angle patch is promoted. Both actual physical PDE fields now have proved terminal-angle velocities, including terminal bandedges. The same actual first-variation data compute genuine Abelian integral derivatives and every matching regular correction derivative at both open and closed terminal gaps.
 
