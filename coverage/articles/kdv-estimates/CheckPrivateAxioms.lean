@@ -815,6 +815,8 @@ import NLS.KdV.HillFixedGapUniformRegularCorrection
 import NLS.KdV.HillFiniteGapUniformRegularCorrections
 import NLS.SequenceSpaces.FiniteHeadOwnTail
 import NLS.KdV.HillUniformFullRegularPhase
+import NLS.SequenceSpaces.NatL2BoundedMultipliers
+import NLS.KdV.HillUniformCriticalCartesianTails
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1301,7 +1303,9 @@ run_cmd do
     ``NLS.ComplexAnalysis.analyticOnNhd_centeredMeanFree_of_disc,
     ``NLS.ComplexAnalysis.norm_centeredMeanFree_le_of_disc_bound,
     ``NLS.ComplexAnalysis.exists_bounded_analytic_centered_mean_free_quadratic_solution,
-    ``NLS.sum_head_add_own_add_tsum_tail]
+    ``NLS.sum_head_add_own_add_tsum_tail,
+    ``NLS.Coeff.summable_sq_mul_of_bounded,
+    ``NLS.Coeff.analyticOnNhd_natL2OfFunction_mul_of_uniform_bound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -5738,3 +5738,5 @@ import NLS.KdV.HillFixedGapUniformRegularCorrection
 import NLS.KdV.HillFiniteGapUniformRegularCorrections
 import NLS.SequenceSpaces.FiniteHeadOwnTail
 import NLS.KdV.HillUniformFullRegularPhase
+import NLS.SequenceSpaces.NatL2BoundedMultipliers
+import NLS.KdV.HillUniformCriticalCartesianTails
