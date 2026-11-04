@@ -147,6 +147,7 @@ modules+=(NLS/KdV/HillDeletedPeriodIdentification NLS/KdV/HillNearFreePhysicalPe
 modules+=(NLS/KdV/HillUniformComplexOwnPeriods NLS/KdV/HillUniformPeriodNormalization)
 modules+=(NLS/SequenceSpaces/SeparatedReciprocalEnvelope NLS/KdV/HillSeparatedPeriodKernel NLS/KdV/HillUniformNormalizedPeriodContours)
 modules+=(NLS/KdV/HillActiveRegularAnnulus NLS/KdV/HillUniformPointwiseQuadraticSolution NLS/KdV/HillUniformSeparatedQuadraticPrimitives)
+modules+=(NLS/KdV/HillUniformNativeDirichletTerminal NLS/KdV/HillUniformPointwiseDirichletValue NLS/KdV/HillUniformKernelCorrectionTerms NLS/KdV/HillUniformOffDiagonalPhases)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

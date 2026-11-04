@@ -796,6 +796,10 @@ import NLS.KdV.HillUniformNormalizedPeriodContours
 import NLS.KdV.HillActiveRegularAnnulus
 import NLS.KdV.HillUniformPointwiseQuadraticSolution
 import NLS.KdV.HillUniformSeparatedQuadraticPrimitives
+import NLS.KdV.HillUniformNativeDirichletTerminal
+import NLS.KdV.HillUniformPointwiseDirichletValue
+import NLS.KdV.HillUniformKernelCorrectionTerms
+import NLS.KdV.HillUniformOffDiagonalPhases
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/

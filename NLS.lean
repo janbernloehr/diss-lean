@@ -5719,3 +5719,7 @@ import NLS.KdV.HillUniformNormalizedPeriodContours
 import NLS.KdV.HillActiveRegularAnnulus
 import NLS.KdV.HillUniformPointwiseQuadraticSolution
 import NLS.KdV.HillUniformSeparatedQuadraticPrimitives
+import NLS.KdV.HillUniformNativeDirichletTerminal
+import NLS.KdV.HillUniformPointwiseDirichletValue
+import NLS.KdV.HillUniformKernelCorrectionTerms
+import NLS.KdV.HillUniformOffDiagonalPhases
