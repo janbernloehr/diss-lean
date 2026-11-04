@@ -1225,6 +1225,12 @@ import NLS.KdV.HillActionAngleNativeDomain
 import NLS.KdV.HillActionAngleNativeAnalytic
 import NLS.KdV.HillActionAngleNativeNorm
 import NLS.Articles.KdVPseudomeasures.OriginalHillNativeCartesianMap
+import NLS.KdV.HillHminusFreeLabels
+import NLS.KdV.HillNativeCartesianOrigin
+import NLS.KdV.ClassicalHillFreeFlow
+import NLS.KdV.HillNativeFreeSpectralData
+import NLS.KdV.HillAbelianFreeCorrections
+import NLS.Articles.KdVPseudomeasures.OriginalHillCartesianOrigin
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7781,3 +7787,37 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNativeCartesianMap
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_map_action_identity
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_map_locally_bounded
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_map_exact_norm
+#print axioms NLS.KdV.hillHminusRadicand_zero_eq_free
+#print axioms NLS.KdV.hillHminusFreeLabels
+#print axioms NLS.KdV.monotone_hillHminusFreeLabels
+#print axioms NLS.KdV.hillHminusFreeLabels_finite_fiber
+#print axioms NLS.KdV.hillHminusFreeLabels_roots_iff
+#print axioms NLS.KdV.hillHminusFreeLabels_global_multiplicity
+#print axioms NLS.KdV.hillHminusLabels_eq_free
+#print axioms NLS.KdV.hillHminusLabels_free_pair
+#print axioms NLS.KdV.hillHminusCanonicalGapSquare_zero
+#print axioms NLS.KdV.hillHminusCanonicalAction_zero
+#print axioms NLS.KdV.hillHminusActionAngle_zero
+#print axioms NLS.KdV.hillHminusNativeCartesianMap_zero
+#print axioms NLS.KdV.classicalHillFlow_free_sq
+#print axioms NLS.KdV.classicalHillDirichlet_free_sq
+#print axioms NLS.KdV.classicalHillDirichletTerminal_free_sq
+#print axioms NLS.KdV.hillL2DirichletTerminal_free_sq
+#print axioms NLS.KdV.hillHminusCanonicalEnergyMidpoint_zero
+#print axioms NLS.KdV.hillHminusCanonicalDirichlet_zero_eq_free
+#print axioms NLS.KdV.hillHminusCanonicalDirichlet_eq_midpoint_zero
+#print axioms NLS.KdV.hillHminusCanonicalCartesianWeight_zero
+#print axioms NLS.KdV.hillHminusDirichletNorming_zero
+#print axioms NLS.KdV.hillHminusDirichletSheet_zero
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletRootCoefficient_zero
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOnIndexAbelianCorrection_zero
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianValue_zero
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianTerm_zero
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianCorrection_zero
+#print axioms NLS.KdV.hillHminusOffIndexAbelianCorrection_zero
+#print axioms NLS.KdV.hillHminusOffIndex_phase_exponentials_zero
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_periodic_pair
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_gap_and_action_zero
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_map_zero
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_map_of_zero
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_norming_sheet_and_infinite_correction

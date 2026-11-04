@@ -1259,6 +1259,12 @@ modules = [
     'NLS.KdV.HillActionAngleNativeAnalytic',
     'NLS.KdV.HillActionAngleNativeNorm',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNativeCartesianMap',
+    'NLS.KdV.HillHminusFreeLabels',
+    'NLS.KdV.HillNativeCartesianOrigin',
+    'NLS.KdV.ClassicalHillFreeFlow',
+    'NLS.KdV.HillNativeFreeSpectralData',
+    'NLS.KdV.HillAbelianFreeCorrections',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillCartesianOrigin',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
