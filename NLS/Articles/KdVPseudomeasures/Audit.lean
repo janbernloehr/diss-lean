@@ -1418,6 +1418,14 @@ import NLS.KdV.HillPhysicalAbelianIsospectralVariation
 import NLS.KdV.HillCanonicalAbelianActionVariation
 import NLS.KdV.HillOffIndexCorrectionGardnerLimit
 import NLS.Articles.KdVPseudomeasures.OriginalHillAbelianActionVariation
+import NLS.ZakharovShabat.SourceIndexedHigherActionFixedCircle
+import NLS.KdV.HillMiuraJointContourIntegrands
+import NLS.KdV.HillFixedActionGradientContour
+import NLS.KdV.HillDirichletSheetLocalCancellation
+import NLS.KdV.HillFixedActionDirichletContour
+import NLS.KdV.HillLocalActionDirichletVelocity
+import NLS.KdV.HillOffIndexActionVelocity
+import NLS.Articles.KdVPseudomeasures.OriginalHillActionDivisorVelocities
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -8822,3 +8830,23 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillAbelianActionVariation
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_offIndex_Abelian_action_intrinsic_Gardner_cleared
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_offIndex_Abelian_action_Gardner_of_sheet_ne_zero
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_infinite_Abelian_correction_Gardner_limit
+#print axioms NLS.ZakharovShabat.exists_sourceIndexedHigherAction_fixed_gradient_circle
+#print axioms NLS.KdV.HillHminusMiuraActionBall.rootJointDomain
+#print axioms NLS.KdV.HillHminusMiuraActionBall.isOpen_rootJointDomain
+#print axioms NLS.KdV.HillHminusMiuraActionBall.analytic_rootJoint
+#print axioms NLS.KdV.HillHminusMiuraActionBall.analytic_actionCotangentIntegrand_joint
+#print axioms NLS.KdV.HillHminusMiuraActionBall.analytic_actionDirichletIntegrand_joint
+#print axioms NLS.KdV.HillHminusMiuraActionBall.fderiv_action_fixed_circle_of_source_gradient
+#print axioms NLS.KdV.HillHminusMiuraActionBall.exists_fixed_action_gradient_contour
+#print axioms NLS.KdV.exists_hillHminusDirichletSheet_ne_zero_in_open
+#print axioms NLS.KdV.hillHminusDirichletSheet_cancel_analytic
+#print axioms NLS.KdV.HillHminusMiuraActionBall.action_Dirichlet_bracket_of_cotangent_contour
+#print axioms NLS.KdV.HillHminusMiuraActionBall.dirichletContourVelocity
+#print axioms NLS.KdV.HillHminusMiuraActionBall.analytic_dirichletContourVelocity
+#print axioms NLS.KdV.HillHminusMiuraActionBall.Dirichlet_action_velocity_of_cotangent_contour
+#print axioms NLS.KdV.HillHminusMiuraActionBall.exists_local_action_Dirichlet_velocity
+#print axioms NLS.KdV.hillHminus_offIndex_action_of_analytic_Dirichlet_velocity
+#print axioms NLS.KdV.HillHminusMiuraActionBall.exists_local_offIndex_action_velocity
+#print axioms NLS.KdV.exists_hillHminus_offIndex_Abelian_action_bracket_contour
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_local_analytic_action_divisor_velocities
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_offIndex_Abelian_action_bracket_contour

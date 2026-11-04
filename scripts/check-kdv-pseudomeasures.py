@@ -1452,6 +1452,14 @@ modules = [
     'NLS.KdV.HillCanonicalAbelianActionVariation',
     'NLS.KdV.HillOffIndexCorrectionGardnerLimit',
     'NLS.Articles.KdVPseudomeasures.OriginalHillAbelianActionVariation',
+    'NLS.ZakharovShabat.SourceIndexedHigherActionFixedCircle',
+    'NLS.KdV.HillMiuraJointContourIntegrands',
+    'NLS.KdV.HillFixedActionGradientContour',
+    'NLS.KdV.HillDirichletSheetLocalCancellation',
+    'NLS.KdV.HillFixedActionDirichletContour',
+    'NLS.KdV.HillLocalActionDirichletVelocity',
+    'NLS.KdV.HillOffIndexActionVelocity',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillActionDivisorVelocities',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
