@@ -5733,3 +5733,4 @@ import NLS.KdV.HillCenteredQuadraticDirichletValue
 import NLS.KdV.HillUniformOwnRegularPhase
 import NLS.KdV.HillFixedGapNumeratorBounds
 import NLS.KdV.HillFixedGapFilledRootChart
+import NLS.KdV.HillFixedGapCenteredDirichletData
