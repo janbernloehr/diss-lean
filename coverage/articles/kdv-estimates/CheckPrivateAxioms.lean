@@ -847,6 +847,12 @@ import NLS.KdV.HillProductPeriodMovingDerivativeLimit
 import NLS.SequenceSpaces.FiniteRowOperatorConvergence
 import NLS.KdV.HillMixedPeriodRowLimit
 import NLS.KdV.HillExtendedMixedJacobianLimit
+import NLS.FunctionalAnalysis.CompactFamilyLowerBound
+import NLS.KdV.HillExtendedPositiveJacobian
+import NLS.KdV.HillPositiveUniformLowerBound
+import NLS.SequenceSpaces.PositiveDeletedInclusion
+import NLS.KdV.HillDeletedJacobianTransfer
+import NLS.KdV.HillSelectedJacobianUniformInverse
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1353,7 +1359,14 @@ run_cmd do
     ``NLS.Coeff.truncateCLM_comp_eq_sum_rows,
     ``NLS.Coeff.tendsto_truncate_operator_of_rowFunctionals,
     ``NLS.Coeff.tendsto_operator_of_rows_and_uniform_outputTails,
-    ``NLS.Coeff.tendsto_operator_of_rows_and_uniform_remainder_outputTails]
+    ``NLS.Coeff.tendsto_operator_of_rows_and_uniform_remainder_outputTails,
+    ``NLS.eventually_exists_inverse_bound_of_tendsto_bijective,
+    ``NLS.eventually_lower_bound_of_tendsto_bijective,
+    ``NLS.exists_uniform_eventual_lower_bound_of_compact_norm_limits,
+    ``NLS.Coeff.positiveProjection_fixed_of_positiveDeleted,
+    ``NLS.Coeff.positiveDeletedToPositive,
+    ``NLS.Coeff.positiveDeletedToPositive_coe,
+    ``NLS.Coeff.norm_positiveDeletedToPositive]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

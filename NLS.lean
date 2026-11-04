@@ -5770,3 +5770,9 @@ import NLS.KdV.HillProductPeriodMovingDerivativeLimit
 import NLS.SequenceSpaces.FiniteRowOperatorConvergence
 import NLS.KdV.HillMixedPeriodRowLimit
 import NLS.KdV.HillExtendedMixedJacobianLimit
+import NLS.FunctionalAnalysis.CompactFamilyLowerBound
+import NLS.KdV.HillExtendedPositiveJacobian
+import NLS.KdV.HillPositiveUniformLowerBound
+import NLS.SequenceSpaces.PositiveDeletedInclusion
+import NLS.KdV.HillDeletedJacobianTransfer
+import NLS.KdV.HillSelectedJacobianUniformInverse
