@@ -877,6 +877,13 @@ import NLS.KdV.HillClosedGapCenteredData
 import NLS.KdV.HillCenteredDeflatedMeanPhysical
 import NLS.KdV.HillUniformClosedGapCorrections
 import NLS.KdV.HillUniformFiniteGapCorrections
+import NLS.KdV.HillBoundedNormalizedContourBounds
+import NLS.KdV.HillGeneralHighContourCharts
+import NLS.KdV.HillGeneralDeflatedDiscCharts
+import NLS.KdV.HillGeneralSeparatedPrimitives
+import NLS.KdV.HillGeneralCenteredPrimitives
+import NLS.KdV.HillGeneralKernelCorrections
+import NLS.KdV.HillGeneralOwnCorrections
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/

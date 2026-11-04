@@ -5800,3 +5800,10 @@ import NLS.KdV.HillClosedGapCenteredData
 import NLS.KdV.HillCenteredDeflatedMeanPhysical
 import NLS.KdV.HillUniformClosedGapCorrections
 import NLS.KdV.HillUniformFiniteGapCorrections
+import NLS.KdV.HillBoundedNormalizedContourBounds
+import NLS.KdV.HillGeneralHighContourCharts
+import NLS.KdV.HillGeneralDeflatedDiscCharts
+import NLS.KdV.HillGeneralSeparatedPrimitives
+import NLS.KdV.HillGeneralCenteredPrimitives
+import NLS.KdV.HillGeneralKernelCorrections
+import NLS.KdV.HillGeneralOwnCorrections
