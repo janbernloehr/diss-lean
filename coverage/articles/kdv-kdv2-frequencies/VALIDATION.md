@@ -1,11 +1,21 @@
-# Article-step validation — 2026-11-04
+# Article-step validation — 2026-11-05
 
 **Main-theorem status: not yet verified.** Actual KdV/KdV2 spectral frequencies
 and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual finite-gap KdV2 moment identity
+## Latest actual scalar Fourier differentials at zero
+
+The actual free critical/root products, action-gap ratio, positive amplitude and regular phase now fix the coordinate normalization. The deflated canonical root at the selected free energy is i*(-1)^n/(n*pi). Actual free state/trace calculations and Dirichlet first variations give the terminal derivative h(2*n); multiplication by the actual amplitude gives h(2*n)/sqrt(2*n*pi). Conjugating source and target gives the negative component on every complex tangent as well.
+
+After explicit period-one transport, EVERY signed scalar coefficient of the existing actual physical Abelian map has a complex L2 analytic matching germ at zero with value zero and derivative h_k/sqrt(2*abs(k)*pi) on every mean-zero complex L2 tangent. The zero component is included. See `FREE_FOURIER_DIFFERENTIAL.md`. This proves the scalar L2 normalization toward Theorem1.1; native sequence-valued Frechet differentiability/analyticity and the full s>=-1 theorem remain separate obligations.
+
+Prior strict evidence for all 1102 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1108 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1137 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1108-module rebuild is claimed.
+
+Fresh audit: 10067 selected and 32498 imported NLS declarations, permitted axioms only. Full Hamiltonian/action-frequency identification, canonicality, native Banach map and global inverse, rough-space compatibility and sharp estimates remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier actual finite-gap KdV2 moment identity
 
 The actual sixth-order Riccati calculation gives D/R=i/(2z)+i*Q(0)/(4z^3)+i*(3Q(0)^2-Qsecond(0))/(16z^5)+O(r^-6). Combining it with the actual primitive yields the whole-circle quintic kernel polynomial with constant mass term -5H0/8 and an O(r^-1) remainder. Genuine contour comparison, the proved actual S0=-2*n*pi and exterior radius independence identify the source-factor fifth contour exactly with V2_n-20*(2*n*pi)*H0.
 
@@ -326,7 +336,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1102 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1108 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1395,7 +1405,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1102 selected modules (including generated and private declarations)
+the 1108 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -2700,4 +2710,16 @@ PASS NLS/KdV/HillQuinticFrequencyContourComparison
 PASS NLS/Articles/KdVKdV2Frequencies/FiniteGapQuinticVelocityContours
 PASS NLS/Articles/KdVKdV2Frequencies/FiniteGapKdV2MomentIdentity
 Axiom audit passed: 9981 candidate declarations; 32412 declarations total.
+```
+
+Latest actual free Fourier strict additions and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillFreeCoordinateNormalization
+PASS NLS/KdV/HillFreeSpectralVariations
+PASS NLS/KdV/HillFreeDirichletDifferential
+PASS NLS/KdV/HillFreeTerminalDifferential
+PASS NLS/KdV/HillFreeAbelianDifferential
+PASS NLS/Articles/KdVKdV2Frequencies/FreeFourierDifferential
+Axiom audit passed: 10067 candidate declarations; 32498 declarations total.
 ```

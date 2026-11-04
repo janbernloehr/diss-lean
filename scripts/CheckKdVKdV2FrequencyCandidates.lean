@@ -244,6 +244,12 @@ import NLS.KdV.HillQuinticFrequencyKernel
 import NLS.KdV.HillQuinticFrequencyContourComparison
 import NLS.Articles.KdVKdV2Frequencies.FiniteGapQuinticVelocityContours
 import NLS.Articles.KdVKdV2Frequencies.FiniteGapKdV2MomentIdentity
+import NLS.KdV.HillFreeCoordinateNormalization
+import NLS.KdV.HillFreeSpectralVariations
+import NLS.KdV.HillFreeDirichletDifferential
+import NLS.KdV.HillFreeTerminalDifferential
+import NLS.KdV.HillFreeAbelianDifferential
+import NLS.Articles.KdVKdV2Frequencies.FreeFourierDifferential
 
 /-! Transitive axiom audit of the candidate and its imported NLS dependencies.
 This deliberately imports specific modules, not the aggregate NLS library.
@@ -1358,7 +1364,13 @@ run_cmd do
     `NLS.KdV.HillQuinticFrequencyKernel,
     `NLS.KdV.HillQuinticFrequencyContourComparison,
     `NLS.Articles.KdVKdV2Frequencies.FiniteGapQuinticVelocityContours,
-    `NLS.Articles.KdVKdV2Frequencies.FiniteGapKdV2MomentIdentity
+    `NLS.Articles.KdVKdV2Frequencies.FiniteGapKdV2MomentIdentity,
+    `NLS.KdV.HillFreeCoordinateNormalization,
+    `NLS.KdV.HillFreeSpectralVariations,
+    `NLS.KdV.HillFreeDirichletDifferential,
+    `NLS.KdV.HillFreeTerminalDifferential,
+    `NLS.KdV.HillFreeAbelianDifferential,
+    `NLS.Articles.KdVKdV2Frequencies.FreeFourierDifferential
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

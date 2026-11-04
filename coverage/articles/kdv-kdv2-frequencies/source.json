@@ -4,7 +4,7 @@
   "status": "not_yet_verified",
   "stage": "dedicated_worktree_validated_progress",
   "canonical_base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
-  "checked_date": "2026-11-04",
+  "checked_date": "2026-11-05",
   "journal_title": "On the wellposedness of the KdV/KdV2 equations and their frequency maps",
   "preprint_title": "On the extension of the frequency maps of the KdV and the KdV2 equations",
   "authors": [
@@ -31,7 +31,14 @@
         3
       ],
       "status": "open",
-      "role": "cited shared KdV background"
+      "role": "cited shared KdV background",
+      "verified_supporting_clauses": [
+        {
+          "source_clause": "Fourier normalization at zero, actual scalar L2 realization",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillPhysicalAbelianMap_scalar_fourier_differential",
+          "qualification": "All signed scalar complex L2 germs and mean-zero tangent derivatives match the actual physical map. A common sequence-valued analytic extension, native Frechet differentiability and the full s>=-1 Birkhoff theorem are not asserted."
+        }
+      ]
     },
     {
       "label": "Theorem 1.2",
@@ -16081,12 +16088,84 @@
       "scope": "For real smooth period-one mean-zero physical Q with every gap above a finite cutoff closed and the selected index included, proves the ACTUAL KdV2 velocity identity V2_n-20*(2*n*pi)*H0-(2*n*pi)^5=-160*pi^2*sum(k^3*Omega_nk^2)+80*sum(k*Omega_nk^4), both as finite sums and genuine countable sums. The literal physical KdV2 scalar coordinate derivative has the resulting exact coefficient times i*z_n for every differentiable nearby-real matching germ, including a closed own gap. This proves the physical spectral-velocity/coefficient version of source(84). Full Hamiltonian/action-frequency identification, required regularity extensions, rough complex-W scope and main-theorem conclusions remain separate.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "f04a5692f56fc53bf044aa8c5e1b97667117a00fc90719786c43a61d8e4dc5a4"
+    },
+    {
+      "path": "NLS/KdV/HillFreeCoordinateNormalization.lean",
+      "source_labels": [
+        "Theorem1.1 Fourier normalization at zero: actual scalar L2 germs and all signed component derivatives"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For the actual free source, proves the critical points equal the exact free energies, omitted critical/root factors cancel on the actual filled domain, chi_n(E)=1/sqrt(E), the actual collapsed action-gap ratio equals1/(2*n*pi), the actual source amplitude equals1/sqrt(2*n*pi), the deflated canonical root at the free selected energy equals i*(-1)^n/(n*pi), and the actual summed regular correction is zero. The root sign is obtained from the actual trace derivative/chi identity and verified free trace second derivative, not guessed from a square root.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "97f6d929a6b6b12ed0bc36ac0593e459a7f43ecebea1d468a6dc72844c0aa32e"
+    },
+    {
+      "path": "NLS/KdV/HillFreeSpectralVariations.lean",
+      "source_labels": [
+        "Theorem1.1 Fourier normalization at zero: actual scalar L2 germs and all signed component derivatives"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Proves actual free cosine and sine scalar states, including zero frequency, and the constant free trace gradient. Every actual physical mean-zero complex L2 tangent annihilates every free trace to first order. The actual free Dirichlet slope is cos(sqrt(E)) and the signed sheet root vanishes identically. For actual even period-two tangents, zero native coefficient implies the required physical integral mean zero via the proved unit-wave pairing.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cfc0fc062a193f3875d0634fbc90dec1d24cdf85366781b54680c1264f9a7947"
+    },
+    {
+      "path": "NLS/KdV/HillFreeDirichletDifferential.lean",
+      "source_labels": [
+        "Theorem1.1 Fourier normalization at zero: actual scalar L2 germs and all signed component derivatives"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Proves the actual free Dirichlet energy derivative (-1)^n/(2*(n*pi)^2), actual scalar-state mass1/(2*(n*pi)^2), and source eigenvalue/slope first variations as sine-square and sine-cosine physical pairings. Genuine L2-times-continuous interval integrability justifies combining the pairings. Their exact Euler combination is the actual period-one Fourier coefficient h(2*n) for every complex even mean-zero L2 tangent.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f2dad8008338555118401f087142388ca3dfcd8578c4b0389d684f7561d6cf05"
+    },
+    {
+      "path": "NLS/KdV/HillFreeTerminalDifferential.lean",
+      "source_labels": [
+        "Theorem1.1 Fourier normalization at zero: actual scalar L2 germs and all signed component derivatives"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Constructs a genuine complex L2 analytic germ matching the actual gap-division-free terminal coordinate near the free real source. Its value is zero and its derivative on every complex even mean-zero L2 tangent is exactly h(2*n). Uses actual trace stationarity for the midpoint, actual moving-sheet differentiation, actual Dirichlet variations and the independently proved positive-i deflated-root normalization. No nonzero selected gap or artificial phase law is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fbb639bc372f17ff7358d7671f8734af256282db1196ad326a4330f5e0df572e"
+    },
+    {
+      "path": "NLS/KdV/HillFreeAbelianDifferential.lean",
+      "source_labels": [
+        "Theorem1.1 Fourier normalization at zero: actual scalar L2 germs and all signed component derivatives"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Constructs actual positive and negative scalar coordinate germs at the free source, analytic in complex L2 and matching every nearby physical real period-one source. Their derivative on all complex even mean-zero L2 tangents equals h(2*n)/sqrt(2*n*pi) and h(-2*n)/sqrt(2*n*pi). Conjugating both source and target proves the negative formula on complex tangents. Any differentiable positive germ with the same physical matching has the same derivative on these tangents.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dade3fe0d89f9e7e0591d7cc04132b1069b16efe1b38180e685c6a0054d85166"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/FreeFourierDifferential.lean",
+      "source_labels": [
+        "Theorem1.1 Fourier normalization at zero: actual scalar L2 germs and all signed component derivatives"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For EVERY signed integer k, including zero, constructs a genuine complex scalar germ on the native period-one Coeff2 source, matching the literal k-th coefficient of the existing actual hillPhysicalAbelianMap one on a real L2 neighborhood of zero. Its value at zero is zero and its derivative on every complex mean-zero tangent h is h(k)/sqrt(2*abs(k)*pi), with zero inverse at k=0. Period doubling is explicitly removed. This proves the actual scalar L2 Fourier normalization toward Theorem1.1, not existence of a native sequence-valued Frechet derivative/analytic extension or the full Sobolev-scale Birkhoff theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "07b18937db337cb1d458aecd53afa22b6a665d0072b2cb04f1e165827dc411d3"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "Complete canonical coordinate/angle brackets beyond the proved action involution and mixed action-coordinate laws, the exact Fourier differential at zero, full native complex Banach-valued coordinate analyticity, and the global inverse/bijective Birkhoff realization in the required weighted topologies.",
+    "The actual scalar L2 Fourier normalization at zero is NOW proved at every signed output index, with genuine complex scalar germs matching the existing actual physical Abelian map and exact derivative h_k/sqrt(2*abs(k)*pi) on every complex mean-zero period-one L2 tangent. Complete canonical coordinate/angle brackets beyond action involution and mixed action-coordinate laws, prove native sequence-valued Frechet differentiability and full complex Banach analyticity, extend to the full required Sobolev scale s>=-1, and prove the global inverse/bijective Birkhoff realization in the stated weighted topologies.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
@@ -16112,15 +16191,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 9981,
-    "total_declarations_audited": 32412,
+    "candidate_declarations_audited": 10067,
+    "total_declarations_audited": 32498,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1102,
+    "selected_modules": 1108,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -16164,7 +16243,8 @@
     "cubic_exterior_validation_sequence": "Prior strict evidence for all 1079 unchanged selected baseline sources; strict dependency-order compilation of six additions (one unchanged canonical dense-extension helper and five new proof modules); then a fresh combined transitive axiom audit of all 1085 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1114 frozen source/checker/provenance hashes, all 26 unchanged provenance records plus one new verified canonical dense-extension record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1085-module rebuild is claimed.",
     "intrinsic_kdv_moments_validation_sequence": "Prior strict evidence for all 1085 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1091 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1120 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1091-module rebuild is claimed.",
     "odd_period_normalization_validation_sequence": "Prior strict evidence for all 1091 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1097 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1126 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1097-module rebuild is claimed.",
-    "physical_quintic_moments_validation_sequence": "Prior strict evidence for all 1097 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1102 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1131 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1102-module rebuild is claimed."
+    "physical_quintic_moments_validation_sequence": "Prior strict evidence for all 1097 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1102 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1131 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1102-module rebuild is claimed.",
+    "free_fourier_differential_validation_sequence": "Prior strict evidence for all 1102 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1108 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1137 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1108-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -16482,9 +16562,22 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "deecdaf2bdbfe7d3a3ef33b9954911cbe8fd284d",
+      "description": "Prior dependencies, superseded in part by the actual free coordinate normalization and all signed scalar L2 Fourier differential germs.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "Complete canonical coordinate/angle brackets beyond the proved action involution and mixed action-coordinate laws, the exact Fourier differential at zero, full native complex Banach-valued coordinate analyticity, and the global inverse/bijective Birkhoff realization in the required weighted topologies.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
   "odd_period_dirichlet_normalization_record": "ODD_PERIOD_DIRICHLET_NORMALIZATION.md",
-  "physical_quintic_moment_record": "FINITE_GAP_KDV2_MOMENT_IDENTITY.md"
+  "physical_quintic_moment_record": "FINITE_GAP_KDV2_MOMENT_IDENTITY.md",
+  "free_fourier_differential_record": "FREE_FOURIER_DIFFERENTIAL.md"
 }

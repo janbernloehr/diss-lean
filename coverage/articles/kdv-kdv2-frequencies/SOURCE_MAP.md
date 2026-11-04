@@ -971,3 +971,14 @@ Consequently, at real smooth period-one mean-zero actual finite-gap physical sou
 Prior strict evidence for all 1097 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1102 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1131 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1102-module rebuild is claimed.
 
 Fresh audit: 9981 selected and 32412 imported NLS declarations, permitted axioms only. Full Hamiltonian/action-frequency identification, rough-space compatibility and sharp bounds, native Banach Birkhoff realization and complete main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+
+## Latest actual scalar Fourier differentials at zero
+
+The actual free critical/root products, action-gap ratio, positive amplitude and regular phase now fix the coordinate normalization. The deflated canonical root at the selected free energy is i*(-1)^n/(n*pi). Actual free state/trace calculations and Dirichlet first variations give the terminal derivative h(2*n); multiplication by the actual amplitude gives h(2*n)/sqrt(2*n*pi). Conjugating source and target gives the negative component on every complex tangent as well.
+
+After explicit period-one transport, EVERY signed scalar coefficient of the existing actual physical Abelian map has a complex L2 analytic matching germ at zero with value zero and derivative h_k/sqrt(2*abs(k)*pi) on every mean-zero complex L2 tangent. The zero component is included. See `FREE_FOURIER_DIFFERENTIAL.md`. This proves the scalar L2 normalization toward Theorem1.1; native sequence-valued Frechet differentiability/analyticity and the full s>=-1 theorem remain separate obligations.
+
+Prior strict evidence for all 1102 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1108 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1137 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1108-module rebuild is claimed.
+
+Fresh audit: 10067 selected and 32498 imported NLS declarations, permitted axioms only. Full Hamiltonian/action-frequency identification, canonicality, native Banach map and global inverse, rough-space compatibility and sharp estimates remain open. All eleven main theorem rows remain OPEN.

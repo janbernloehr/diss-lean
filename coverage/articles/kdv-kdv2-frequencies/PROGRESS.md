@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual finite-gap KdV2 moment identity
+## Latest actual scalar Fourier differentials at zero
+
+The actual free critical/root products, action-gap ratio, positive amplitude and regular phase now fix the coordinate normalization. The deflated canonical root at the selected free energy is i*(-1)^n/(n*pi). Actual free state/trace calculations and Dirichlet first variations give the terminal derivative h(2*n); multiplication by the actual amplitude gives h(2*n)/sqrt(2*n*pi). Conjugating source and target gives the negative component on every complex tangent as well.
+
+After explicit period-one transport, EVERY signed scalar coefficient of the existing actual physical Abelian map has a complex L2 analytic matching germ at zero with value zero and derivative h_k/sqrt(2*abs(k)*pi) on every mean-zero complex L2 tangent. The zero component is included. See `FREE_FOURIER_DIFFERENTIAL.md`. This proves the scalar L2 normalization toward Theorem1.1; native sequence-valued Frechet differentiability/analyticity and the full s>=-1 theorem remain separate obligations.
+
+Prior strict evidence for all 1102 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1108 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1137 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1108-module rebuild is claimed.
+
+Fresh audit: 10067 selected and 32498 imported NLS declarations, permitted axioms only. Full Hamiltonian/action-frequency identification, canonicality, native Banach map and global inverse, rough-space compatibility and sharp estimates remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier actual finite-gap KdV2 moment identity
 
 The actual sixth-order Riccati calculation gives D/R=i/(2z)+i*Q(0)/(4z^3)+i*(3Q(0)^2-Qsecond(0))/(16z^5)+O(r^-6). Combining it with the actual primitive yields the whole-circle quintic kernel polynomial with constant mass term -5H0/8 and an O(r^-1) remainder. Genuine contour comparison, the proved actual S0=-2*n*pi and exterior radius independence identify the source-factor fifth contour exactly with V2_n-20*(2*n*pi)*H0.
 

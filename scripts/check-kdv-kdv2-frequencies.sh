@@ -1111,6 +1111,12 @@ modules=(
   NLS/KdV/HillQuinticFrequencyContourComparison
   NLS/Articles/KdVKdV2Frequencies/FiniteGapQuinticVelocityContours
   NLS/Articles/KdVKdV2Frequencies/FiniteGapKdV2MomentIdentity
+  NLS/KdV/HillFreeCoordinateNormalization
+  NLS/KdV/HillFreeSpectralVariations
+  NLS/KdV/HillFreeDirichletDifferential
+  NLS/KdV/HillFreeTerminalDifferential
+  NLS/KdV/HillFreeAbelianDifferential
+  NLS/Articles/KdVKdV2Frequencies/FreeFourierDifferential
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
