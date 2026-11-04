@@ -1,0 +1,13 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "source_branch": "main",
+  "purpose": "Already transitively audited dense-limit gluing of local analytic charts, now explicitly selected and strictly compiled for the actual cubic Hill kernel through the ground cut and closed nonselected gaps.",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/DenseAnalyticExtension.lean",
+      "source_sha256": "fc2928e5213796e422f407bc47e11dc2b72cd6b5b58115d4d6e18a8ea8f48ad1",
+      "local_sha256": "fc2928e5213796e422f407bc47e11dc2b72cd6b5b58115d4d6e18a8ea8f48ad1",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}

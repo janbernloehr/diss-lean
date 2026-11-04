@@ -1,3 +1,9 @@
+import NLS.Articles.KdVKdV2Frequencies.FiniteGapCubicVelocityContours
+import NLS.KdV.HillCubicKernelExterior
+import NLS.ComplexAnalysis.NonrealCircleCongruence
+import NLS.KdV.HillCubicKernelLocalContinuation
+import NLS.KdV.HillCubicKernelFilledDomain
+import NLS.ComplexAnalysis.DenseAnalyticExtension
 import NLS.Articles.KdVKdV2Frequencies.FiniteGapCubicVelocityLimit
 import NLS.KdV.HillCubicFrequencyContourComparison
 import NLS.ComplexAnalysis.UpperArcReflectionIntegrability
@@ -489,6 +495,7 @@ run_cmd do
     `NLS.ComplexAnalysis.CirclePolynomialIntegrationByParts,
     `NLS.ZakharovShabat.ClassicalSwapSymmetry,
     `NLS.ZakharovShabat.NLSHamiltonianPhaseReflection,
+    `NLS.ComplexAnalysis.DenseAnalyticExtension,
     `NLS.ZakharovShabat.SobolevHierarchySymmetries,
     `NLS.MKdV.HierarchyRestriction,
     `NLS.DifferentialPolynomial.RiccatiResolventParity,
@@ -1312,7 +1319,12 @@ run_cmd do
     `NLS.KdV.HillL2RealCutReflection,
     `NLS.KdV.HillCubicFrequencyCircle,
     `NLS.KdV.HillCubicFrequencyContourComparison,
-    `NLS.Articles.KdVKdV2Frequencies.FiniteGapCubicVelocityLimit
+    `NLS.Articles.KdVKdV2Frequencies.FiniteGapCubicVelocityLimit,
+    `NLS.ComplexAnalysis.NonrealCircleCongruence,
+    `NLS.KdV.HillCubicKernelLocalContinuation,
+    `NLS.KdV.HillCubicKernelFilledDomain,
+    `NLS.KdV.HillCubicKernelExterior,
+    `NLS.Articles.KdVKdV2Frequencies.FiniteGapCubicVelocityContours
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

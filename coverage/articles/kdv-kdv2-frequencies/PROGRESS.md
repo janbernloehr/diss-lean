@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual cubic velocity contour limit
+## Latest exact actual cubic frequency contours
+
+The actual cubic kernel now has genuine local analytic charts through the ground cut and every nonselected closed gap. A byte-identical canonical dense-limit helper joins those charts into ONE analytic filled kernel. The selected own gap remains a hole even if closed. Codiscrete circle congruence proves that filling the real cuts changes neither the genuine circle integral nor integrability.
+
+Every actual finite-gap real period-one L2 source supplies an analytic exterior for this kernel, genuine cubic integrability at EVERY sufficiently large radius, and exact contour independence. For real smooth mean-zero physical sources, the independently proved contour limit therefore gives the actual KdV velocity coefficient as the exact cubic contour with factor 4/(i*pi). The literal physical scalar coordinate derivative has this contour coefficient at every gap, including a closed own gap, for any nearby-real matching germ. The radius precedes the choice of germ. See `ACTUAL_CUBIC_FREQUENCY_CONTOURS.md`.
+
+Prior strict evidence for all 1079 unchanged selected baseline sources; strict dependency-order compilation of six additions (one unchanged canonical dense-extension helper and five new proof modules); then a fresh combined transitive axiom audit of all 1085 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1114 frozen source/checker/provenance hashes, all 26 unchanged provenance records plus one new verified canonical dense-extension record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1085-module rebuild is claimed.
+
+Fresh audit: 9798 selected and 32228 imported NLS declarations, permitted axioms only. The source record now separates current dependencies from historical snapshots, so fulfilled contour obligations are no longer listed as current blockers. Actual finite-hole gap-moment deformation, Hamiltonian frequency identity (69), quintic route (84) and all other complete main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier actual cubic velocity contour limit
 
 The actual primitive, root and scalar Dirichlet characteristic now have the proved conjugation identities needed for full-circle estimates. Upper-arc continuity and off-real reflection give genuine circle integrability without assuming continuity through spectral cuts or matching values at the two real crossings. The actual root is nonzero on every sufficiently large selected energy circle.
 

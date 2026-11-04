@@ -15651,29 +15651,111 @@
       "scope": "At every real smooth period-one mean-zero potential with all gaps above a finite cutoff closed, the actual cubic spectral outer contour, with exact source factor 4/(i*pi), converges to the actual finite-gap KdV Dirichlet velocity sum. The selected index is included in the cutoff, even when its own gap is closed. This bridges the actual physical scalar coordinate jet coefficient to the cubic contour LIMIT. Exact contour independence, finite-hole gap-moment deformation and actual Hamiltonian frequency identity (69) remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "94bd07cfa051b68dd016940fdf0cdf7264ea9e3cb88e71e1da7265ae6cb600a8"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/DenseAnalyticExtension.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; actual finite-gap cubic contour input toward frequency identity (69)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        26,
+        27
+      ],
+      "scope": "Byte-identical canonical main helper, already transitively imported and audited at the baseline, now explicitly selected and strictly compiled. Relative limits from a fixed dense set glue locally analytic matching charts into one genuine analytic extension. Canonical source/local hashes are recorded in CANONICAL_CUBIC_DENSE_EXTENSION_REUSE.json. No new dependency closure is imported.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fc2928e5213796e422f407bc47e11dc2b72cd6b5b58115d4d6e18a8ea8f48ad1"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NonrealCircleCongruence.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; actual finite-gap cubic contour input toward frequency identity (69)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        26,
+        27
+      ],
+      "scope": "Functions agreeing at every nonreal energy agree off at most the two real crossings of any positive-radius centered circle. Proves eventual equality in the circle codiscrete filter, allowing genuine circle integral and integrability congruence without assuming equality at the two crossings.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "966879978e8da2cf817683669aebf5ef8548660e3d3890c297dae511589258e5"
+    },
+    {
+      "path": "NLS/KdV/HillCubicKernelLocalContinuation.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; actual finite-gap cubic contour input toward frequency identity (69)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        26,
+        27
+      ],
+      "scope": "Defines the actual unshifted cubic Hill kernel F^3*P/R. For any entire numerator it constructs a genuine analytic local chart through every point of the ground cut, using the already proved actual filled F^2 and the exact primitive/root ratio in its squared-cosh coordinate. Every normalized numerator except the selected own one vanishes at an actual collapsed label. The actual analytic primitive and deflated unit root then give a genuine local analytic cubic chart at every nonselected collapsed gap, via a filled divided difference. Applies to every real period-one L2 spectral source; no finite-gap, smoothness or mean-zero assumption is used.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "87432755904c43a8f8fbbb1f96822edb9712d29188d0c4c912a0aa60a6a77c95"
+    },
+    {
+      "path": "NLS/KdV/HillCubicKernelFilledDomain.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; actual finite-gap cubic contour input toward frequency identity (69)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        26,
+        27
+      ],
+      "scope": "Constructs ONE actual cubic kernel extension as the dense limit of its actual nonreal spectral data. It is analytic on the actual filled-square domain with the SELECTED own gap removed, even if that gap is closed. The ground cut and all other closed gaps are genuinely filled; actual total-division values at collapsed points are not asserted analytic. The filled kernel equals the actual kernel on the real cut domain; on every positive-radius centered circle it has the same integral and integrability, by the proved codiscrete congruence.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1ee2cab90672943fe3ef71d6f4eeeb68e395631ef3032870fa482a1bdacabb6a"
+    },
+    {
+      "path": "NLS/KdV/HillCubicKernelExterior.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; actual finite-gap cubic contour input toward frequency identity (69)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        26,
+        27
+      ],
+      "scope": "Every actual finite-gap real period-one L2 source supplies a common exterior inside the cubic filled domain. The actual cubic normalized-numerator kernel is genuinely circle integrable at EVERY sufficiently large radius, and its outer contour integrals are exactly independent of the radius. Uses actual analytic filling and Cauchy on closed annuli. No physical Hamiltonian value identity, supplied contour independence or assumed frequency is used.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2390c58ba4ab2382066be63e43db462c2896b3447aaae862d159c5b73483b34c"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/FiniteGapCubicVelocityContours.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; actual finite-gap cubic contour input toward frequency identity (69)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        26,
+        27
+      ],
+      "scope": "For every real smooth period-one mean-zero physical source and every finite closed tail cutoff containing the selected index, the actual KdV Dirichlet velocity sum equals the genuine cubic spectral contour with exact source factor4/(i*pi), at EVERY sufficiently large radius. This follows from actual exterior contour independence plus the independently proved actual velocity contour limit. The literal physical KdV scalar coordinate derivative has this exact cubic contour coefficient for every differentiable nearby-real matching coordinate germ, including a closed selected gap; the radius is chosen before the matching germ. No finite-gap-only Hamiltonian VALUE identity is differentiated. Finite-hole gap-moment deformation and actual Hamiltonian frequency identity (69) remain separate obligations.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "070c0f85eb99b4af936db0b2a24a2ab6a0870bdded09472220f3e45e55b5c517"
     }
   ],
   "dependencies_needed": [
-    "The actual full-circle cubic contour comparison is NOW proved: genuine integrability, actual root nonvanishing at both real crossings and an O(1/r) contour difference give the actual finite-gap KdV Dirichlet velocity sum as the LIMIT of the actual cubic outer contour with exact factor4/(i*pi), including closed own gaps. Remaining for69: exterior/finite-hole contour filling and gap-moment decomposition, plus actual Hamiltonian frequency identification. Quintic coefficient/mass renormalization for84 and all main canonical/map/rough W/estimate/action/PDE flow obligations remain. All eleven main rows OPEN.",
-    "The actual local diagonal Hill resolvent expansion and actual cubic frequency-kernel estimate are NOW proved. Both full-plane actual WKB columns, exact scalar Dirichlet normalization, actual root separation/comparison and genuine local Riccati jet give D/R=i/(2z)+iQ(0)/(4z^3)+O(r^-4); mean-zero actual F then gives F^3*D/R=-z^2/2-Q(0)/4+O(r^-1). Remaining: full-circle integrability/reflection and exterior/finite-hole contour comparison to identify actual Hamiltonian frequency (69); quintic local coefficient and translation/mass renormalization for (84); closed-frequency identification and all other main canonical/map/rough W/estimate/action/PDE flow obligations. All eleven main rows remain OPEN.",
-    "Actual finite-gap Dirichlet partial fractions, analytic-test contour coefficients, cutoff-independent residue moments and three-term uniform quotient Laurent estimates are NOW proved, including closed own gaps. Both actual PDE velocity sums equal genuine Dirichlet polynomial contours and give both physical coordinate derivatives. Remaining: local diagonal-resolvent D/R high-energy expansion and comparison with actual F^3/F^5 contours, actual Hamiltonian frequency identities (69)/(84), closed-frequency identification, full canonicality/Fourier zero jet/native Banach map and inverse/rough W/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
-    "Actual all-gap coordinate first variations in BOTH physical PDE fields are NOW proved for every physical matching extension, including zero velocity at closed own gaps. ONE genuine analytic scalar coordinate germ has both actual PDE derivative limits. For finite-gap sources both actual derivatives equal the proved finite Dirichlet sums. Remaining: evaluate those sums and identify actual Hamiltonian frequencies (69)/(84); full canonicality/Fourier zero jet/native Banach map and inverse/rough W compatibility/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
-    "Actual terminal-angle velocities, open/closed regular correction variations and differentiated infinite physical Abelian angle sums are NOW proved. ONE physical analytic angle germ has both actual PDE derivatives given by the convergent Dirichlet spectral sums. Remaining: evaluate these sums and identify actual Hamiltonian frequencies (69)/(84); full canonicality/Fourier zero jet/native Banach map and inverse/rough W realization/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
-    "All TWELVE former private TraceStationaryRootTest proofs are NOW promoted, audited and published. Arbitrary fixed tangents annihilating all actual traces have proved primitive/root/gap/deflation/period/implicit-normalization/canonical numerator/filled differential/Abelian primitive source stationarity. ONE genuine canonical numerator germ is proved stationary in BOTH actual physical PDE fields. Remaining: actual terminal-angle velocities from the proved endpoint pair, summed actual Abelian phase velocities/frequency69/84, full canonicality/Fourier zero jet/native Banach coordinate analyticity/inverse/rough W realization/PDE flow existence. All eleven main rows remain OPEN.",
-    "Actual Dirichlet branch and moving signed-sheet velocities of BOTH printed PDE fields are NOW proved, with exact physical normalization and terminal band edges/closed gaps included. All five former private DirichletLenardTest results are promoted or subsumed. Remaining: generalize trace-stationary local/root/normalized/angle derivatives to actual PDE directions, sum actual Abelian phase velocities and identify actual frequencies69/84; full canonicality/Fourier zero jet/Banach coordinate analyticity/inverse/rough W compatibility and PDE flow existence remain open. All eleven main theorem rows remain OPEN.",
-    "The literal smooth KdV and KdV2 Fourier vector fields are NOW proved real, mean-zero, physically reconstructed and stationary for every actual Hill discriminant and actual action, including arbitrary closed selected gaps. The source need not have zero mean. Remaining: actual coordinate phase velocities/frequency69/84 and Hamiltonian identification, full canonicality, Fourier differential at zero, full Banach coordinate analyticity/inverse and rough W/PDE flow realization. All eleven main theorem rows remain OPEN.",
-    "Negative scalar coordinate power-series analyticity is NOW proved through every closed selected gap. Actual action product differentials are proved on the entire physical complexified tangent. The actual action critical locus and actual action Hamiltonian-vector zero locus are exactly the closed-gap locus. Remaining: full Banach-valued coordinate analyticity, canonical coordinate/angle brackets, Fourier differential at zero, global inverse/rough W compatibility and actual Hamiltonian frequencies69/84/PDE identification. All eleven main theorem rows remain OPEN.",
-    "Actual action Hamiltonian vectors are NOW proved real in the physical conjugate-Fourier sense at every real source, including closed gaps. Actual real action differentials commute with conjugate reflection. Genuine complex differentiable negative-coordinate physical matching germs and universal opposite signed infinitesimal action laws are proved. Remaining: full negative-germ power-series analyticity, canonical coordinate/angle brackets, Fourier differential at zero, full Banach analytic map/inverse/rough W compatibility and actual Hamiltonian frequency69/84/PDE identities. All main theorem conclusions remain open.",
-    "The actual contour tangent Y_m is NOW proved to be the unique period-one mean-zero physical weak Gardner Hamiltonian vector of the actual action I_m, through actual Fourier/L2 test pairings, integration by parts and separating wave tests. Actual actions commute, and all-gap mixed D z_n[X_(I_m)]=i*delta_mn*z_n is proved. Local actual phase has action-conjugate theta=-rawA with exp(-i theta) and derivative -delta_mn. Next: explicit reality and further canonical coordinate/angle brackets, exact Fourier differential at zero, full Banach analytic map/inverse/rough compatibility and actual Hamiltonian frequency/PDE identities. All main conclusions remain open.",
-    "Actual physical actions now have genuine locally complex analytic fixed-contour extensions at every real source including closed selected gaps, with universal derivative -1/pi integral(DDelta[h]/R) on period-one directions. Every actual coordinate now obeys the all-gap trace and normalized-contour infinitesimal rotation identities. Next identify the contour tangent Y_m as the physical action Gardner Hamiltonian vector via actual gradient/Fourier/spatial derivative pairings; then canonical source orientation, Fourier differential at zero, full Banach analyticity/inverse/rough extension and physical frequency identities69/84 remain required.",
-    "Actual scalar Abelian coordinates now extend analytically through closed own gaps, and their literal signed sequence is constructed and continuous in the native weighted half-shift norm with z_n*z_-n=I_n. Next: identify actual action Hamiltonian directions, establish canonical Birkhoff orientation, full Banach analyticity and exact Fourier differential at zero, inverse and negative-regularity rough extension, then physical frequency identities (69)/(84), action descent and PDE realization. Scalar analyticity and real norm continuity alone do not prove full complex Banach analyticity.",
-    "Identify the actual normalized coefficient contour tangents with the physical action Hamiltonian directions, orient the constructed physical Abelian phase relative to the canonical Birkhoff angle, construct the amplitude-weighted coordinates through collapsed own gaps, and prove the global action/Birkhoff/PDE realization. The raw infinite angle derivative and branch-independent open-gap phase are proved. Physical time orientation is corrected to the positive Fourier exponent.",
-    "canonical zero/product identification, globally prescribed spectral-cycle compatibility and rough-space normalization; the local actual infinite entire family, convergent positive-index sums and every fixed frequency/energy contour period are constructed",
-    "shared rough Hill/KdV spectral and Birkhoff foundations; global gap and canonical sheet normalization",
-    "shared KdV action Hamiltonians",
-    "actual KdV and KdV2 frequency moment identities and uniform analytic bounds",
-    "physical smooth solution identification and all-smooth-approximation property",
-    "fixed-mass analytic estimates and physical separating-sequence constructions"
+    "For (69), perform the actual finite-hole deformation of the now proved exact cubic velocity contour to actual normalized gap moments, with genuine local odd-period cancellation and closed-gap even-moment vanishing. Retain the selected index as a hole even if closed. Actual Hamiltonian frequency identification/action descent, especially at closed selected gaps, remains distinct from a scalar coordinate jet coefficient.",
+    "For (84), prove the actual quintic local diagonal-resolvent coefficient and actual translation residue coefficient S0=-2*n*pi, then the mass renormalization and KdV2 outer/gap-moment contour identity. Identify the resulting actual Hamiltonian frequencies with the source normalization.",
+    "Complete canonical coordinate/angle brackets beyond the proved action involution and mixed action-coordinate laws, the exact Fourier differential at zero, full native complex Banach-valued coordinate analyticity, and the global inverse/bijective Birkhoff realization in the required weighted topologies.",
+    "Complete one compatible complex rough W realization across the article admissible spaces, including actual normalized differentials/primitives/sheets and source product normalization where still unsettled. Prove the sharp lp spectral remainders and normalized moment/root bounds with every source endpoint, uniformity and quantifier.",
+    "Prove the required summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+    "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
   ],
   "workspace": {
     "canonical_checkout_files_modified": false,
@@ -15696,15 +15778,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 9760,
-    "total_declarations_audited": 32197,
+    "candidate_declarations_audited": 9798,
+    "total_declarations_audited": 32228,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1079,
+    "selected_modules": 1085,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -15744,7 +15826,8 @@
     "coordinate_pde_motion_validation_sequence": "Prior strict evidence for all 1054 unchanged selected baseline sources; strict dependency-order compilation of six new modules; then a fresh combined transitive axiom audit of all 1060 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1087 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1060-module rebuild is claimed.",
     "dirichlet_frequency_contours_validation_sequence": "Prior strict evidence for all 1060 unchanged selected baseline sources; strict dependency-order compilation of four new modules; then a fresh combined transitive axiom audit of all 1064 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1091 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1064-module rebuild is claimed.",
     "local_diagonal_resolvent_validation_sequence": "Prior strict evidence for all 1064 unchanged selected baseline sources; strict dependency-order compilation of ten additions (two unchanged canonical symmetry/phase helpers and eight new proof modules); then a fresh combined transitive axiom audit of all 1074 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1102 frozen source/checker/provenance hashes, all 25 unchanged provenance records plus one new verified two-file canonical WKB reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1074-module rebuild is claimed.",
-    "cubic_contour_validation_sequence": "Prior strict evidence for all 1074 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1079 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1107 frozen source/checker/provenance hashes, all 26 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1079-module rebuild is claimed."
+    "cubic_contour_validation_sequence": "Prior strict evidence for all 1074 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1079 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1107 frozen source/checker/provenance hashes, all 26 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1079-module rebuild is claimed.",
+    "cubic_exterior_validation_sequence": "Prior strict evidence for all 1079 unchanged selected baseline sources; strict dependency-order compilation of six additions (one unchanged canonical dense-extension helper and five new proof modules); then a fresh combined transitive axiom audit of all 1085 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1114 frozen source/checker/provenance hashes, all 26 unchanged provenance records plus one new verified canonical dense-extension record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1085-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -15997,5 +16080,35 @@
   "dirichlet_frequency_contours_record": "FINITE_GAP_DIRICHLET_FREQUENCY_CONTOURS.md",
   "local_diagonal_resolvent_record": "LOCAL_DIAGONAL_RESOLVENT.md",
   "canonical_wkb_swap_phase_record": "CANONICAL_WKB_SWAP_PHASE_REUSE.json",
-  "cubic_contour_record": "CUBIC_VELOCITY_CONTOUR_LIMIT.md"
+  "cubic_contour_record": "CUBIC_VELOCITY_CONTOUR_LIMIT.md",
+  "actual_cubic_contour_record": "ACTUAL_CUBIC_FREQUENCY_CONTOURS.md",
+  "canonical_cubic_dense_extension_record": "CANONICAL_CUBIC_DENSE_EXTENSION_REUSE.json",
+  "dependency_milestone_history": [
+    {
+      "snapshot_commit": "cf3b46a16ebb1abca41fedcd10dda94397dacf5e",
+      "description": "Historical dependency snapshots, retained as evidence; their fulfilled obligations are superseded by the current dependencies_needed list and latest coverage record.",
+      "entries": [
+        "The actual full-circle cubic contour comparison is NOW proved: genuine integrability, actual root nonvanishing at both real crossings and an O(1/r) contour difference give the actual finite-gap KdV Dirichlet velocity sum as the LIMIT of the actual cubic outer contour with exact factor4/(i*pi), including closed own gaps. Remaining for69: exterior/finite-hole contour filling and gap-moment decomposition, plus actual Hamiltonian frequency identification. Quintic coefficient/mass renormalization for84 and all main canonical/map/rough W/estimate/action/PDE flow obligations remain. All eleven main rows OPEN.",
+        "The actual local diagonal Hill resolvent expansion and actual cubic frequency-kernel estimate are NOW proved. Both full-plane actual WKB columns, exact scalar Dirichlet normalization, actual root separation/comparison and genuine local Riccati jet give D/R=i/(2z)+iQ(0)/(4z^3)+O(r^-4); mean-zero actual F then gives F^3*D/R=-z^2/2-Q(0)/4+O(r^-1). Remaining: full-circle integrability/reflection and exterior/finite-hole contour comparison to identify actual Hamiltonian frequency (69); quintic local coefficient and translation/mass renormalization for (84); closed-frequency identification and all other main canonical/map/rough W/estimate/action/PDE flow obligations. All eleven main rows remain OPEN.",
+        "Actual finite-gap Dirichlet partial fractions, analytic-test contour coefficients, cutoff-independent residue moments and three-term uniform quotient Laurent estimates are NOW proved, including closed own gaps. Both actual PDE velocity sums equal genuine Dirichlet polynomial contours and give both physical coordinate derivatives. Remaining: local diagonal-resolvent D/R high-energy expansion and comparison with actual F^3/F^5 contours, actual Hamiltonian frequency identities (69)/(84), closed-frequency identification, full canonicality/Fourier zero jet/native Banach map and inverse/rough W/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
+        "Actual all-gap coordinate first variations in BOTH physical PDE fields are NOW proved for every physical matching extension, including zero velocity at closed own gaps. ONE genuine analytic scalar coordinate germ has both actual PDE derivative limits. For finite-gap sources both actual derivatives equal the proved finite Dirichlet sums. Remaining: evaluate those sums and identify actual Hamiltonian frequencies (69)/(84); full canonicality/Fourier zero jet/native Banach map and inverse/rough W compatibility/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
+        "Actual terminal-angle velocities, open/closed regular correction variations and differentiated infinite physical Abelian angle sums are NOW proved. ONE physical analytic angle germ has both actual PDE derivatives given by the convergent Dirichlet spectral sums. Remaining: evaluate these sums and identify actual Hamiltonian frequencies (69)/(84); full canonicality/Fourier zero jet/native Banach map and inverse/rough W realization/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
+        "All TWELVE former private TraceStationaryRootTest proofs are NOW promoted, audited and published. Arbitrary fixed tangents annihilating all actual traces have proved primitive/root/gap/deflation/period/implicit-normalization/canonical numerator/filled differential/Abelian primitive source stationarity. ONE genuine canonical numerator germ is proved stationary in BOTH actual physical PDE fields. Remaining: actual terminal-angle velocities from the proved endpoint pair, summed actual Abelian phase velocities/frequency69/84, full canonicality/Fourier zero jet/native Banach coordinate analyticity/inverse/rough W realization/PDE flow existence. All eleven main rows remain OPEN.",
+        "Actual Dirichlet branch and moving signed-sheet velocities of BOTH printed PDE fields are NOW proved, with exact physical normalization and terminal band edges/closed gaps included. All five former private DirichletLenardTest results are promoted or subsumed. Remaining: generalize trace-stationary local/root/normalized/angle derivatives to actual PDE directions, sum actual Abelian phase velocities and identify actual frequencies69/84; full canonicality/Fourier zero jet/Banach coordinate analyticity/inverse/rough W compatibility and PDE flow existence remain open. All eleven main theorem rows remain OPEN.",
+        "The literal smooth KdV and KdV2 Fourier vector fields are NOW proved real, mean-zero, physically reconstructed and stationary for every actual Hill discriminant and actual action, including arbitrary closed selected gaps. The source need not have zero mean. Remaining: actual coordinate phase velocities/frequency69/84 and Hamiltonian identification, full canonicality, Fourier differential at zero, full Banach coordinate analyticity/inverse and rough W/PDE flow realization. All eleven main theorem rows remain OPEN.",
+        "Negative scalar coordinate power-series analyticity is NOW proved through every closed selected gap. Actual action product differentials are proved on the entire physical complexified tangent. The actual action critical locus and actual action Hamiltonian-vector zero locus are exactly the closed-gap locus. Remaining: full Banach-valued coordinate analyticity, canonical coordinate/angle brackets, Fourier differential at zero, global inverse/rough W compatibility and actual Hamiltonian frequencies69/84/PDE identification. All eleven main theorem rows remain OPEN.",
+        "Actual action Hamiltonian vectors are NOW proved real in the physical conjugate-Fourier sense at every real source, including closed gaps. Actual real action differentials commute with conjugate reflection. Genuine complex differentiable negative-coordinate physical matching germs and universal opposite signed infinitesimal action laws are proved. Remaining: full negative-germ power-series analyticity, canonical coordinate/angle brackets, Fourier differential at zero, full Banach analytic map/inverse/rough W compatibility and actual Hamiltonian frequency69/84/PDE identities. All main theorem conclusions remain open.",
+        "The actual contour tangent Y_m is NOW proved to be the unique period-one mean-zero physical weak Gardner Hamiltonian vector of the actual action I_m, through actual Fourier/L2 test pairings, integration by parts and separating wave tests. Actual actions commute, and all-gap mixed D z_n[X_(I_m)]=i*delta_mn*z_n is proved. Local actual phase has action-conjugate theta=-rawA with exp(-i theta) and derivative -delta_mn. Next: explicit reality and further canonical coordinate/angle brackets, exact Fourier differential at zero, full Banach analytic map/inverse/rough compatibility and actual Hamiltonian frequency/PDE identities. All main conclusions remain open.",
+        "Actual physical actions now have genuine locally complex analytic fixed-contour extensions at every real source including closed selected gaps, with universal derivative -1/pi integral(DDelta[h]/R) on period-one directions. Every actual coordinate now obeys the all-gap trace and normalized-contour infinitesimal rotation identities. Next identify the contour tangent Y_m as the physical action Gardner Hamiltonian vector via actual gradient/Fourier/spatial derivative pairings; then canonical source orientation, Fourier differential at zero, full Banach analyticity/inverse/rough extension and physical frequency identities69/84 remain required.",
+        "Actual scalar Abelian coordinates now extend analytically through closed own gaps, and their literal signed sequence is constructed and continuous in the native weighted half-shift norm with z_n*z_-n=I_n. Next: identify actual action Hamiltonian directions, establish canonical Birkhoff orientation, full Banach analyticity and exact Fourier differential at zero, inverse and negative-regularity rough extension, then physical frequency identities (69)/(84), action descent and PDE realization. Scalar analyticity and real norm continuity alone do not prove full complex Banach analyticity.",
+        "Identify the actual normalized coefficient contour tangents with the physical action Hamiltonian directions, orient the constructed physical Abelian phase relative to the canonical Birkhoff angle, construct the amplitude-weighted coordinates through collapsed own gaps, and prove the global action/Birkhoff/PDE realization. The raw infinite angle derivative and branch-independent open-gap phase are proved. Physical time orientation is corrected to the positive Fourier exponent.",
+        "canonical zero/product identification, globally prescribed spectral-cycle compatibility and rough-space normalization; the local actual infinite entire family, convergent positive-index sums and every fixed frequency/energy contour period are constructed",
+        "shared rough Hill/KdV spectral and Birkhoff foundations; global gap and canonical sheet normalization",
+        "shared KdV action Hamiltonians",
+        "actual KdV and KdV2 frequency moment identities and uniform analytic bounds",
+        "physical smooth solution identification and all-smooth-approximation property",
+        "fixed-mass analytic estimates and physical separating-sequence constructions"
+      ]
+    }
+  ]
 }
