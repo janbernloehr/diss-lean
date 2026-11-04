@@ -1395,6 +1395,15 @@ import NLS.KdV.HillDirichletNormingGardner
 import NLS.KdV.HillLocalLogNormingGardner
 import NLS.KdV.HillActionDirichletContour
 import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCrossBrackets
+import NLS.KdV.ClassicalHillNormingGradient
+import NLS.FunctionalAnalysis.LinearMovingSpectralDerivative
+import NLS.KdV.HillNormingLocalComparison
+import NLS.KdV.HillNormingSourceDerivative
+import NLS.KdV.HillNormingGardnerGradient
+import NLS.KdV.ClassicalHillNormingCommutation
+import NLS.KdV.HillNormingGardnerCommutation
+import NLS.KdV.HillLocalSpectralDarboux
+import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralDarboux
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -8711,3 +8720,41 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCrossBrackets
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Dirichlet_localLogNorming_Gardner_matrix
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_resonant_discriminant_Dirichlet_Gardner
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_Hill_action_Dirichlet_bracket_contour
+#print axioms NLS.KdV.classicalHillTerminalGradient
+#print axioms NLS.KdV.continuous_classicalHillTerminalGradient
+#print axioms NLS.KdV.fderiv_classicalHillTerminal_eq_integral_gradient
+#print axioms NLS.KdV.classicalHillNormingGradient
+#print axioms NLS.KdV.classicalHillNormingGradientPrime
+#print axioms NLS.KdV.continuous_classicalHillNormingGradient
+#print axioms NLS.KdV.continuous_classicalHillNormingGradientPrime
+#print axioms NLS.KdV.hasDerivAt_classicalHillNormingGradient
+#print axioms NLS.KdV.classicalHillNormingGradient_eq_terminal_sub
+#print axioms NLS.KdV.classicalHillTerminal_sub_characteristic_derivative
+#print axioms NLS.KdV.classicalHillNormingGradient_boundary_at_root
+#print axioms NLS.FunctionalAnalysis.fderiv_linear_pullback_moving_spectral
+#print axioms NLS.KdV.hillHminusDirichletNorming_L1_eventually_eq_at
+#print axioms NLS.KdV.fderiv_hillHminusDirichletNorming_L1_family
+#print axioms NLS.KdV.fderiv_hillL1TerminalFamily_source
+#print axioms NLS.KdV.fderiv_hillHminusDirichletNorming_potential_L1
+#print axioms NLS.KdV.fderiv_hillHminusDirichletNorming_L1_integral
+#print axioms NLS.KdV.hillHminusNormingGradient
+#print axioms NLS.KdV.analyticOnNhd_hillHminusNormingGradient
+#print axioms NLS.KdV.hillWienerNormingRatio
+#print axioms NLS.KdV.hillWienerNormingKernel
+#print axioms NLS.KdV.hillWienerNormingKernelPrime
+#print axioms NLS.KdV.continuous_hillWienerNormingKernel
+#print axioms NLS.KdV.continuous_hillWienerNormingKernelPrime
+#print axioms NLS.KdV.hasDerivAt_hillWienerNormingKernel
+#print axioms NLS.KdV.hillWienerNormingKernel_actual_root
+#print axioms NLS.KdV.hillWienerNormingKernel_boundary
+#print axioms NLS.KdV.hillHminusNormingGradient_L1_coefficients
+#print axioms NLS.KdV.integral_classicalHillNormingGradients_eq_zero
+#print axioms NLS.KdV.hillHminusNormingGardnerBracket_L1_eq_integral
+#print axioms NLS.KdV.hillHminusNormings_Gardner_commute_L1
+#print axioms NLS.KdV.hillHminusNormings_Gardner_commute
+#print axioms NLS.KdV.hillHminus_localLogNormings_Gardner_commute
+#print axioms NLS.KdV.hillHminus_local_spectral_Gardner_matrix
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_normings_Gardner_commute
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_normings_physical_Gardner_integral_zero
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_normings_intrinsic_Gardner_commute
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_local_spectral_Gardner_matrix

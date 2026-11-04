@@ -1429,6 +1429,15 @@ modules = [
     'NLS.KdV.HillLocalLogNormingGardner',
     'NLS.KdV.HillActionDirichletContour',
     'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCrossBrackets',
+    'NLS.KdV.ClassicalHillNormingGradient',
+    'NLS.FunctionalAnalysis.LinearMovingSpectralDerivative',
+    'NLS.KdV.HillNormingLocalComparison',
+    'NLS.KdV.HillNormingSourceDerivative',
+    'NLS.KdV.HillNormingGardnerGradient',
+    'NLS.KdV.ClassicalHillNormingCommutation',
+    'NLS.KdV.HillNormingGardnerCommutation',
+    'NLS.KdV.HillLocalSpectralDarboux',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralDarboux',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
