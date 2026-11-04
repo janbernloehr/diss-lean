@@ -1124,6 +1124,15 @@ modules = [
     'NLS.ComplexAnalysis.ParametricPolygonalIntegral',
     'NLS.KdV.HillAbelianPathContinuation',
     'NLS.Articles.KdVPseudomeasures.OriginalHillLocalAbelianIntegrals',
+    'NLS.KdV.HillAbelianFrequencyDifferentials',
+    'NLS.ComplexAnalysis.QuadraticRootPrimitiveEndpointLimits',
+    'NLS.KdV.HillOffIndexAbelianPrimitives',
+    'NLS.KdV.HillAbelianGapEndpointLimits',
+    'NLS.ComplexAnalysis.PrimitiveDiscCutExtension',
+    'NLS.KdV.HillAbelianCollapsedGapExtension',
+    'NLS.KdV.HillAbelianPhysicalEnergyPullback',
+    'NLS.KdV.HillOffIndexAbelianEndpointIntegrals',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillOffIndexAbelianEndpoints',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
