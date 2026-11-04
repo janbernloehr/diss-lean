@@ -1131,6 +1131,19 @@ import NLS.KdV.HillOnIndexPhysicalPhaseCharts
 import NLS.KdV.HillOnIndexPhysicalPhaseExponential
 import NLS.KdV.HillOnIndexPhysicalPhaseSquare
 import NLS.Articles.KdVPseudomeasures.OriginalHillOnIndexAbelianPhase
+import NLS.KdV.HillOnIndexRealClosedGap
+import NLS.ComplexAnalysis.AnalyticBranchSystemUniqueness
+import NLS.ComplexAnalysis.QuadraticPhaseEvenOdd
+import NLS.KdV.HillOnIndexBranchCoefficients
+import NLS.KdV.HillOnIndexEnergyCoefficients
+import NLS.ComplexAnalysis.QuadraticPhaseDerivative
+import NLS.KdV.HillOnIndexRegularBranchSystem
+import NLS.KdV.HillOnIndexNativeBranchSystem
+import NLS.KdV.HillOnIndexSimpleEndpoint
+import NLS.KdV.HillOnIndexRealPatchCompatibility
+import NLS.KdV.HillOnIndexSourceBallCompatibility
+import NLS.KdV.HillCanonicalDiagonalCartesian
+import NLS.Articles.KdVPseudomeasures.OriginalHillGlobalDiagonalCartesian
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7350,3 +7363,75 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillOnIndexAbelianPhase
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_local_onIndex_Cartesian_extension
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_local_onIndex_phase_mod_pi_analytic
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_actual_physical_onIndex_phase_chart
+#print axioms NLS.KdV.HillProductEquationPatch.frequency_gap_zero_of_real_original_gap_zero
+#print axioms NLS.KdV.HillProductEquationPatch.actual_frequency_eq_midpoint_of_real_closed_gap
+#print axioms NLS.KdV.HillProductEquationPatch.physical_root_coefficient_zero_of_real_closed_gap
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOnIndexCartesian_zero_of_real_closed_gap
+#print axioms NLS.ComplexAnalysis.analytic_branch_system_zero
+#print axioms NLS.ComplexAnalysis.analytic_branch_system_unique
+#print axioms NLS.ComplexAnalysis.continuousAt_zero_of_off_analytic_zeros
+#print axioms NLS.ComplexAnalysis.rootPhaseExponential
+#print axioms NLS.ComplexAnalysis.rootPhaseEven
+#print axioms NLS.ComplexAnalysis.rootPhaseOdd
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_rootPhaseExponential
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_rootPhaseEven
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_rootPhaseOdd
+#print axioms NLS.ComplexAnalysis.rootPhaseEven_sq
+#print axioms NLS.ComplexAnalysis.mul_rootPhaseOdd_sq
+#print axioms NLS.ComplexAnalysis.rootPhase_even_add_odd
+#print axioms NLS.ComplexAnalysis.rootPhase_even_sub_odd
+#print axioms NLS.ComplexAnalysis.rootPhaseEven_zero
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexBranchCoordinates
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexFrequencyEven
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexFrequencyOdd
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_onIndexBranchCoordinates
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_onIndexFrequencyEven
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_onIndexFrequencyOdd
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexFrequencyEven_add_root_mul_odd
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexFrequencyEven_sub_root_mul_odd
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOnIndexCartesian_eq_frequency_coefficients
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexEnergyEven
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexEnergyOdd
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_onIndexEnergyEven
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_onIndexEnergyOdd
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexEnergyCoefficients_at_positive_frequency
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOnIndexCartesian_eq_original_energy_coefficients_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexEnergyEven_at_original_left_endpoint
+#print axioms NLS.ComplexAnalysis.hasDerivAt_quadratic_phase_plus
+#print axioms NLS.ComplexAnalysis.hasDerivAt_quadratic_phase_minus
+#print axioms NLS.ComplexAnalysis.branch_system_of_two_sheet_derivatives
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexFrequency_branch_system_of_quadratic_ne_zero
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexEnergy_branch_system_of_radicand_ne_zero
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexEnergy_branch_system
+#print axioms NLS.KdV.HillProductEquationPatch.native_radicand_deriv_at_real_open_gap_left_ne_zero
+#print axioms NLS.KdV.HillProductEquationPatch.onIndexEnergy_coefficients_eq_on_real_open_gap_neighborhood
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOnIndexCartesian_eq_of_real_overlap
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.diagonalPlus
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.diagonalMinus
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.analytic_diagonalPlus
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.analytic_diagonalMinus
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.diagonalPlus_eq_on_overlap
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.diagonalMinus_eq_on_overlap
+#print axioms NLS.KdV.hillHminusDiagonalCartesianPlus
+#print axioms NLS.KdV.hillHminusDiagonalCartesianMinus
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.canonical_diagonalPlus_eq
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.canonical_diagonalMinus_eq
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDiagonalCartesianPlus
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDiagonalCartesianMinus
+#print axioms NLS.KdV.hillHminusDiagonalCartesian_product
+#print axioms NLS.KdV.hillHminusDiagonalCartesian_eq_patch_of_real
+#print axioms NLS.KdV.hillHminusDiagonalCartesian_zero_of_real_closed_gap
+#print axioms NLS.KdV.exists_common_intrinsic_diagonal_Cartesian_patch_ball
+#print axioms NLS.KdV.hillHminusDiagonalPhaseSquare
+#print axioms NLS.KdV.hillHminusDiagonalCartesian_ne_zero_of_gap
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDiagonalPhaseSquare
+#print axioms NLS.KdV.hillHminusPhysicalAbelianDomain_subset_gapDomain
+#print axioms NLS.KdV.isOpen_hillHminusDiagonalPhaseDomain
+#print axioms NLS.KdV.hillHminusDiagonalPhaseSquare_eq_local
+#print axioms NLS.KdV.hillHminusDiagonalPhaseSquare_ne_zero
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_common_global_diagonal_and_offIndex_domain
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_global_diagonal_factor_product
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_global_diagonal_zero_at_REAL_closed_gaps
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_global_onIndex_phase_mod_pi
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_global_diagonal_matches_EVERY_real_patch
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_diagonal_WHOLE_complex_source_ball_overlap
