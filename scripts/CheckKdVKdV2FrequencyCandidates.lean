@@ -1,3 +1,8 @@
+import NLS.KdV.HillDirichletInterpolationExterior
+import NLS.KdV.HillAnalyticDirichletGardnerKernel
+import NLS.KdV.HillWeightedDirichletExterior
+import NLS.KdV.ClassicalHillWeightedDirichletError
+import NLS.ComplexAnalysis.WeightedDuhamelIntegralBounds
 import NLS.KdV.HillGardnerAbelianIntegralVariation
 import NLS.KdV.HillDirichletTerminalVariation
 import NLS.KdV.HillDeflatedRootEnergyDerivative
@@ -187,6 +192,7 @@ run_cmd do
     `NLS.ComplexAnalysis.RationalCircleIntegrationByParts,
     `NLS.ZakharovShabat.ContinuousPotentialL2Bound,
     `NLS.SequenceSpaces.FiniteModification,
+    `NLS.ZakharovShabat.FreeSineExteriorBounds,
     `NLS.ZakharovShabat.FreeDerivativeZeroCounts,
     `NLS.ZakharovShabat.CriticalPointLabeling,
     `NLS.ZakharovShabat.DiscriminantDerivativeProduct,
@@ -1012,7 +1018,12 @@ run_cmd do
     `NLS.KdV.HillDirichletSheetVariation,
     `NLS.KdV.HillDeflatedRootEnergyDerivative,
     `NLS.KdV.HillDirichletTerminalVariation,
-    `NLS.KdV.HillGardnerAbelianIntegralVariation]
+    `NLS.KdV.HillGardnerAbelianIntegralVariation,
+    `NLS.ComplexAnalysis.WeightedDuhamelIntegralBounds,
+    `NLS.KdV.ClassicalHillWeightedDirichletError,
+    `NLS.KdV.HillWeightedDirichletExterior,
+    `NLS.KdV.HillAnalyticDirichletGardnerKernel,
+    `NLS.KdV.HillDirichletInterpolationExterior]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

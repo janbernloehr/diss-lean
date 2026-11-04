@@ -53,6 +53,7 @@ modules=(
   NLS/ComplexAnalysis/RationalCircleIntegrationByParts
   NLS/ZakharovShabat/ContinuousPotentialL2Bound
   NLS/SequenceSpaces/FiniteModification
+  NLS/ZakharovShabat/FreeSineExteriorBounds
   NLS/ZakharovShabat/FreeDerivativeZeroCounts
   NLS/ZakharovShabat/CriticalPointLabeling
   NLS/ZakharovShabat/DiscriminantDerivativeProduct
@@ -878,7 +879,12 @@ modules=(
   NLS/KdV/HillDirichletSheetVariation
   NLS/KdV/HillDeflatedRootEnergyDerivative
   NLS/KdV/HillDirichletTerminalVariation
-  NLS/KdV/HillGardnerAbelianIntegralVariation)
+  NLS/KdV/HillGardnerAbelianIntegralVariation
+  NLS/ComplexAnalysis/WeightedDuhamelIntegralBounds
+  NLS/KdV/ClassicalHillWeightedDirichletError
+  NLS/KdV/HillWeightedDirichletExterior
+  NLS/KdV/HillAnalyticDirichletGardnerKernel
+  NLS/KdV/HillDirichletInterpolationExterior)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

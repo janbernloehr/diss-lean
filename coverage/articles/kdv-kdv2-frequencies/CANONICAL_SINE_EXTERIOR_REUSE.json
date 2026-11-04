@@ -1,0 +1,12 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "files": [
+    {
+      "path": "NLS/ZakharovShabat/FreeSineExteriorBounds.lean",
+      "source_sha256": "919c6f8488d71aa1a6e13ef7c927988c42411b42884c7f2c28809c267a181a5e",
+      "local_sha256": "919c6f8488d71aa1a6e13ef7c927988c42411b42884c7f2c28809c267a181a5e",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "scope": "Existing canonical lower bound for exp(abs(Im z))/sin(z) on the full separated free exterior, reused without source edits or heartbeat overrides; selected for strict default-limit compilation and the combined transitive axiom audit."
+}

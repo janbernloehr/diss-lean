@@ -742,3 +742,12 @@ The actual sheeted Dirichlet terminal phase now has Gardner derivative I*U(mu)*K
 Prior strict validation of all 866 unchanged selected sources; strict dependency-order compilation of one byte-identical canonical algebra helper and three new proof modules; then a fresh combined transitive axiom audit of all 870 selected modules. The reused helper precedes every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 870-module rebuild is claimed.
 
 Fresh audit: 8332 selected and 30916 imported NLS declarations, permitted axioms only. Infinite/closed-gap summation, canonical angle orientation and the physical frequency/main theorem conclusions remain open. All main inventory rows remain OPEN.
+
+
+## Latest actual Dirichlet interpolation exterior
+
+The actual filled Dirichlet kernel is entire and has a jointly analytic physical source chart. A weighted scalar IVP argument gives the actual full-plane rough Dirichlet free-error estimate and a zero-free exterior lower bound, uniformly on bounded complex L2 potential families. The actual normalized numerator/characteristic quotient now has inverse-energy decay; its literal outer Cauchy errors vanish uniformly for bounded evaluations. See `DIRICHLET_INTERPOLATION_EXTERIOR.md`.
+
+Prior strict validation of all 870 unchanged selected sources; strict dependency-order compilation of one byte-identical canonical sine-exterior helper and five new proof modules; then a fresh combined transitive axiom audit of all 876 selected modules. The reused helper precedes every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 876-module rebuild is claimed.
+
+Fresh audit: 8376 selected and 30953 imported NLS declarations, permitted axioms only. The residue expansion and gap-label interpolation, infinite/closed-gap angle summation, canonical orientation and physical frequency/main theorem conclusions remain open. All main inventory rows remain OPEN.
