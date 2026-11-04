@@ -5433,3 +5433,12 @@ import NLS.MKdV.MiuraDirichletDiscriminantDirection
 import NLS.MKdV.MiuraDirichletActionContour
 import NLS.MKdV.MiuraDirichletActionMotion
 import NLS.Articles.MKdVNLSHierarchies.OriginalDivisorActionMotion
+import NLS.MKdV.QuasiHillDirichletCharacteristic
+import NLS.MKdV.MiuraHillDirichletComparison
+import NLS.MKdV.MiuraRotatedDirichletCharacteristic
+import NLS.MKdV.MiuraDirichletRootIdentification
+import NLS.MKdV.MiuraDirichletCharacteristicProduct
+import NLS.ComplexAnalysis.SquaredCharacteristicLimit
+import NLS.MKdV.MiuraDirichletEntireProduct
+import NLS.MKdV.MiuraDirichletCharacteristicNormalization
+import NLS.Articles.MKdVNLSHierarchies.OriginalDirichletCharacteristic

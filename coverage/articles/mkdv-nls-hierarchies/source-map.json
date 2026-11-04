@@ -332,7 +332,11 @@
         "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_native",
         "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_discriminant_physical_Gardner",
         "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_action_contour",
-        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_energy_complete_action_motion"
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_energy_complete_action_motion",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_original_complex_domain",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_divisor_original_indices",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_entire_product",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_derivative_normalization"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -503,8 +507,9 @@
     "remaining": "Independent original mKdV angle identification and final Theorem 4(iii) angle-sum factorization. Corrected all-order frequency comparison is complete."
   },
   "remaining_essential_dependencies": [
-    "Prove the actual full independent Abelian phase opposite rotation law under every complete original physical mKdV action flow. The original Dirichlet energies now have actual contour generators and all-time physical-action derivatives. Use this divisor motion, its original sheet and normalized Abelian periods to obtain the full phase law. This law is still unproved even on finite-gap profiles. Verify the phase orientation relative to the source canonical vartheta; the current exp(+i*sum) construction has not yet been proved to carry the required negative generator.",
-    "Instantiate exists_opposite_unit_phase_action_factor with miuraNativeFullAbelianPhase after proving its opposite action-flow rotation. The phase already has the required unit bound and continuity on every original real H1 own-open-action locus, including arbitrary infinite-gap support and signed mean. No extra complex analytic infinite-phase extension is required by the source conclusion. Corrected Theorem3 and all previously completed main clauses remain complete."
+    "Prove the canonical orientation and actual opposite physical-action rotation of the full independently constructed Hill Abelian phase. The actual original divisor motion, its entire Dirichlet product and its exact source derivative normalization are now proved. Finite-gap scalar Lagrange interpolation and the independent sheet/normalized-period reduction remain to be implemented, followed by continuity to arbitrary support.",
+    "The current exp(+i*sum) independent phase has not been identified with the source canonical orientation. Verify the sign from the actual contour generator; if required, conjugate the independently constructed spectral phase and prove its negative rotation. Do not assume the current convention has negative generators.",
+    "Apply exists_opposite_unit_phase_action_factor to the correctly oriented independent phase after its actual opposite rotation is proved. The full phase already has the required continuity and unit bound; conjugation preserves both. Corrected Theorem3 and all previously completed main clauses remain complete. Final Theorem4iii remains incomplete."
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -1505,6 +1510,34 @@
       "The independent sheet and normalized Abelian period/interpolation reduction are still needed. General infinite-gap phase continuity is already proved.",
       "Final Theorem4iii remains incomplete. No angle is defined as a negative NLS angle, and no divisor velocity or bracket is prescribed as an axiom.",
       "The current independent phase uses the explicit exp(+i*sum) convention. Its orientation relative to the source canonical vartheta has not yet been identified. The new actual generator formula must fix that sign; conjugating the independently constructed spectral phase may be necessary. No negative NLS phase may be assigned as its definition."
+    ]
+  },
+  "original_Dirichlet_characteristic_product": {
+    "status": "proved_original_complex_H1_characteristic_comparison_real_H1_indexed_divisor_and_entire_energy_product",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_original_complex_domain",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_divisor_original_indices",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_entire_product",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_derivative_normalization",
+      "NLS.MKdV.quasiHillDirichletCharacteristic_eq_rotatedZS",
+      "NLS.MKdV.hillL2DirichletCharacteristic_miura",
+      "NLS.MKdV.miuraRotatedDirichletRoots_mem_gap",
+      "NLS.MKdV.miuraRotatedDirichletRoots_sq",
+      "NLS.MKdV.miuraRotatedDirichletRoots_neg_nat",
+      "NLS.MKdV.miuraRotatedDirichletRoots_zero",
+      "NLS.ComplexAnalysis.tendstoLocallyUniformlyOn_of_squared_characteristic",
+      "NLS.MKdV.tendstoLocallyUniformlyOn_miuraHillDirichletPartialProduct",
+      "NLS.MKdV.tendstoLocallyUniformlyOn_deriv_miuraHillDirichletPartialProduct",
+      "NLS.MKdV.hillL2DirichletCharacteristic_miura_zero_ne_zero"
+    ],
+    "domain": "The exact IVP characteristic comparison holds on every original complex H1 input and at every complex frequency, including zero. Indexed positive/negative/central root identification and the scalar entire product hold on every original real H1 input, with arbitrary signed mean, infinite support and closed periodic gaps. Product and first energy derivative converge locally uniformly on the whole complex energy plane.",
+    "characteristic_identity": "chi_(sourcePhase(u,u))(z)=z*s_Hill(z^2), with independently constructed actual physical IVPs on both sides. The sourcePhase rotates the original first component by i and the second by -i; it does not define the scalar characteristic.",
+    "indexed_divisor": "The positive rotated source root r_n lies in the original positive NLS gap and r_n^2=mu_n for the independently labeled Hill Dirichlet energy. The negative root r_-n=-r_n, and r_0=0. All statements include closed periodic gaps.",
+    "entire_product": "The literal products prod_(j=0)^(N-1) ((mu_(j+1)-E)/(pi*(j+1))^2) converge locally uniformly to the actual scalar Dirichlet characteristic at every complex energy. Their energy derivatives also converge locally uniformly. A general shared maximum-principle lemma transfers convergence from odd frequency characteristics z*H_N(z^2) to the energy functions H_N, filling E=0 without a continuous global square-root choice.",
+    "derivative_normalization": "At every positive divisor frequency r_n, chi_prime(r_n)=2*mu_n*s_Hill_prime(mu_n). At zero, chi_prime(0)=s_Hill(0), and the latter is nonzero for every original real H1 input.",
+    "limits": [
+      "These are actual characteristic, divisor and product identities. No Abelian phase is defined using a negative NLS phase.",
+      "The finite-gap Lagrange interpolation and the canonical angle orientation/actual rotation are not yet proved. Final Theorem4iii remains incomplete."
     ]
   }
 }

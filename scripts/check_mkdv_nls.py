@@ -1078,6 +1078,15 @@ modules = [
     'NLS/MKdV/MiuraDirichletActionContour.lean',
     'NLS/MKdV/MiuraDirichletActionMotion.lean',
     'NLS/Articles/MKdVNLSHierarchies/OriginalDivisorActionMotion.lean',
+    'NLS/MKdV/QuasiHillDirichletCharacteristic.lean',
+    'NLS/MKdV/MiuraHillDirichletComparison.lean',
+    'NLS/MKdV/MiuraRotatedDirichletCharacteristic.lean',
+    'NLS/MKdV/MiuraDirichletRootIdentification.lean',
+    'NLS/MKdV/MiuraDirichletCharacteristicProduct.lean',
+    'NLS/ComplexAnalysis/SquaredCharacteristicLimit.lean',
+    'NLS/MKdV/MiuraDirichletEntireProduct.lean',
+    'NLS/MKdV/MiuraDirichletCharacteristicNormalization.lean',
+    'NLS/Articles/MKdVNLSHierarchies/OriginalDirichletCharacteristic.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

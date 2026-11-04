@@ -3017,3 +3017,47 @@ must fix that sign; conjugating the independently constructed Hill phase
 may be necessary. No negative NLS phase is used to prescribe an angle.
 
 Validation: all 1,044 article/shared modules have validated private outputs. Seventeen new modules and the aggregate compiled with warnings as errors under default limits. All 1,027 earlier mathematical source hashes and private compiled-output hashes match the frozen pushed 3496ba0 baseline. The complete targeted audit passed for 9,183 declarations/auxiliaries and the combined audit for 54,068 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All 1,047 frozen source/checker/aggregate hashes match. Public inventory: 4,720 declarations (3,935 theorems and 785 definitions). All 3,074 old audit scopes are preserved and 68 new scopes added in two arrays of at most 64, for 51 blocks total. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source.
+
+## 2026-11-04 — original Dirichlet characteristic, indexed divisor and entire product
+
+The actual scalar Dirichlet characteristic now has its exact original
+product on every real H1 Miura profile. Both the product and its first
+energy derivative converge locally uniformly on the whole complex energy
+plane, including zero and all divisor roots. Infinite action support,
+closed periodic gaps and arbitrary signed mean are included.
+
+The underlying IVP identity holds on the entire original complex H1 domain:
+`chi_(sourcePhase(u,u))(z) = z*s_Hill(z^2)` for every complex z, including zero.
+The scalar characteristic remains the independently constructed position
+at time one of the physical scalar Dirichlet IVP. Smooth physical uniqueness,
+continuity and H1 density prove its rough scalar/quasi-Hill agreement. The
+fixed source phase and transformed ZS initial state then give the exact
+factor z, with no division at zero.
+
+Real source interlacing and scalar gap-root uniqueness preserve every original
+index: `r_n^2 = mu_n`, `r_-n = -r_n` and `r_0 = 0`, for n>=1. The checked
+source entire characteristic products can therefore be paired into the literal
+scalar factors `(mu_n-E)/(pi*n)^2`. A shared maximum-principle argument transfers
+locally uniform frequency convergence to locally uniform energy convergence,
+including E=0. No global continuous square root is assumed. At a positive
+Dirichlet frequency the original derivatives satisfy
+`chi_prime(r_n)=2*mu_n*s_Hill_prime(mu_n)`. The scalar characteristic at zero is
+nonzero, as follows from the actual simple central source root.
+
+The article interface is `OriginalDirichletCharacteristic.lean`, with:
+
+- `independent_Dirichlet_characteristic_original_complex_domain`;
+- `independent_Dirichlet_divisor_original_indices`;
+- `independent_Dirichlet_characteristic_entire_product`;
+- `independent_Dirichlet_original_derivative_normalization`.
+
+Nine new modules add 35 public declarations: 32 theorems and three definitions.
+All 1,044 earlier mathematical sources are unchanged. This provides the actual
+characteristic and residue normalization for the remaining finite-gap Abelian
+interpolation. The independent phase's canonical orientation and actual
+opposite physical-action rotation still require proof. In particular, the
+current exp(+i*sum) convention has not been identified with the source's
+vartheta; its sign must be determined from the actual contours. Final
+Theorem 4(iii) remains incomplete.
+
+Validation: all 1,053 article/shared modules have validated private outputs. Nine new modules and the aggregate compiled with warnings as errors under default limits. All 1,044 earlier mathematical source hashes and private compiled-output hashes match the frozen pushed ae76b2f baseline. The complete targeted audit passed for 9,250 declarations/auxiliaries and the combined audit for 54,135 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All 1,056 frozen source/checker/aggregate hashes match. Public inventory: 4,755 declarations (3,967 theorems and 788 definitions). All 3,142 old audit scopes are preserved and 44 new scopes added in one array of at most 64, for 52 blocks total. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source.

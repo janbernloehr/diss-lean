@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.OriginalDirichletCharacteristic
 import NLS.Articles.MKdVNLSHierarchies.OriginalDivisorActionMotion
 import NLS.Articles.MKdVNLSHierarchies.FullIndependentAbelianPhase
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhaseConstruction
@@ -3361,11 +3362,63 @@ private def mkdvNLSAuditPrefixes50 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.OriginalDivisorActionMotion,
 ]
 
+private def mkdvNLSAuditPrefixes51 : Array Lean.Name := #[
+  `NLS.MKdV.quasiHillDirichletCharacteristic,
+  `NLS.MKdV.analyticOnNhd_quasiHillDirichletCharacteristic_joint,
+  `NLS.MKdV.quasiHillDirichletCharacteristic_eq_rotatedZS,
+  `_private.NLS.MKdV.QuasiHillDirichletCharacteristic,
+  `NLS.MKdV.hillL2DirichletCharacteristic_miura_smooth,
+  `NLS.MKdV.hillL2DirichletCharacteristic_miura,
+  `_private.NLS.MKdV.MiuraHillDirichletComparison,
+  `NLS.MKdV.miura_rotated_Dirichlet_characteristic,
+  `NLS.MKdV.miura_rotated_Dirichlet_characteristic_odd,
+  `NLS.MKdV.miura_rotated_Dirichlet_characteristic_zero,
+  `NLS.MKdV.miura_rotated_Dirichlet_zero_iff,
+  `_private.NLS.MKdV.MiuraRotatedDirichletCharacteristic,
+  `NLS.MKdV.miuraRotatedDirichletRoots,
+  `NLS.MKdV.miuraRotatedDirichletRoots_real,
+  `NLS.MKdV.miuraRotatedDirichletRoots_mem_gap,
+  `NLS.MKdV.miuraRotatedDirichletRoots_pos,
+  `NLS.MKdV.miuraRotatedDirichletRoots_neg,
+  `NLS.MKdV.miuraDirichletEnergy_eq_frequency_sq,
+  `NLS.MKdV.miuraRotatedDirichletRoots_sq,
+  `NLS.MKdV.miuraRotatedDirichletRoots_neg_nat,
+  `NLS.MKdV.miuraRotatedDirichletRoots_zero,
+  `_private.NLS.MKdV.MiuraDirichletRootIdentification,
+  `NLS.MKdV.miuraHillDirichletPartialProduct,
+  `NLS.MKdV.analyticOnNhd_miuraHillDirichletPartialProduct,
+  `NLS.MKdV.boundaryCharacteristicPartialProduct_miura_eq,
+  `NLS.MKdV.tendstoLocallyUniformlyOn_rotatedDirichletProduct,
+  `NLS.MKdV.tendsto_miuraHillDirichletPartialProduct_of_ne_zero,
+  `_private.NLS.MKdV.MiuraDirichletCharacteristicProduct,
+  `NLS.ComplexAnalysis.tendstoLocallyUniformlyOn_of_squared_characteristic,
+  `NLS.ComplexAnalysis.deriv_of_squared_characteristic,
+  `_private.NLS.ComplexAnalysis.SquaredCharacteristicLimit,
+  `NLS.MKdV.tendstoLocallyUniformlyOn_miuraHillDirichletPartialProduct,
+  `NLS.MKdV.tendsto_miuraHillDirichletPartialProduct,
+  `NLS.MKdV.tendstoLocallyUniformlyOn_deriv_miuraHillDirichletPartialProduct,
+  `_private.NLS.MKdV.MiuraDirichletEntireProduct,
+  `NLS.MKdV.deriv_miura_rotated_Dirichlet_characteristic,
+  `NLS.MKdV.deriv_miura_rotated_Dirichlet_characteristic_at_root,
+  `NLS.MKdV.hillL2DirichletCharacteristic_miura_zero_ne_zero,
+  `_private.NLS.MKdV.MiuraDirichletCharacteristicNormalization,
+  `NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_original_complex_domain,
+  `NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_divisor_original_indices,
+  `NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_entire_product,
+  `NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_derivative_normalization,
+  `_private.NLS.Articles.MKdVNLSHierarchies.OriginalDirichletCharacteristic,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_original_complex_domain,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_divisor_original_indices,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_entire_product,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_derivative_normalization,
+
     ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_discriminant_physical_Gardner,
     ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_action_contour,
     ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_energy_complete_action_motion,
