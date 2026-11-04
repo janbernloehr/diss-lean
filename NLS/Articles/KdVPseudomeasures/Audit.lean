@@ -921,6 +921,13 @@ import NLS.SequenceSpaces.PositiveCoordinateAnalytic
 import NLS.KdV.HillFreePeriodSequence
 import NLS.KdV.HillFreePeriodSequenceDerivative
 import NLS.Articles.KdVPseudomeasures.OriginalFreeHillPeriodEquation
+import NLS.KdV.HillProductJointPeriods
+import NLS.KdV.HillProductCommonPeriodCircles
+import NLS.KdV.HillMiuraGapMidpoints
+import NLS.KdV.HminusOneJointHillProductPeriods
+import NLS.KdV.HminusOneHillProductEquationRows
+import NLS.KdV.HminusOneHillProductJointColumns
+import NLS.Articles.KdVPseudomeasures.OriginalJointHillPeriodEquations
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6333,3 +6340,28 @@ import NLS.Articles.KdVPseudomeasures.OriginalFreeHillPeriodEquation
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_free_Hill_uniform_period_bounds
 #print axioms NLS.Articles.KdVPseudomeasures.original_free_Hill_nonlinear_period_Jacobian_inverse
 #print axioms NLS.Articles.KdVPseudomeasures.original_free_Hill_period_equation_local_inverse
+#print axioms NLS.KdV.hillEnergyProductJointIntegrand
+#print axioms NLS.KdV.hillEnergyProductJointDomain
+#print axioms NLS.KdV.isOpen_hillEnergyProductJointDomain
+#print axioms NLS.KdV.analyticOnNhd_hillEnergyProductJointIntegrand
+#print axioms NLS.KdV.hillEnergyProductJointPeriod
+#print axioms NLS.KdV.hillEnergyProductJointPeriod_eq_fixed
+#print axioms NLS.KdV.analyticOnNhd_hillEnergyProductJointPeriod
+#print axioms NLS.KdV.exists_hillEnergyProduct_common_period_neighborhood
+#print axioms NLS.KdV.HillHminusMiuraGapBall.energyMidpoint
+#print axioms NLS.KdV.HillHminusMiuraGapBall.analytic_energyMidpoint
+#print axioms NLS.KdV.HillHminusMiuraGapBall.energyMidpoint_eq_real
+#print axioms NLS.KdV.HillHminusMiuraGapBall.energyMidpoint_eq_on_overlap
+#print axioms NLS.KdV.HillHminusPsiBall.productPeriod
+#print axioms NLS.KdV.HillHminusPsiBall.productPeriod_eq_fixed
+#print axioms NLS.KdV.HillHminusPsiBall.analytic_productPeriod
+#print axioms NLS.KdV.exists_hminus_hill_product_joint_period_chart
+#print axioms NLS.KdV.HillHminusPsiBall.productEquationRow
+#print axioms NLS.KdV.HillHminusPsiBall.analytic_productEquationRow
+#print axioms NLS.KdV.HillHminusPsiBall.productEquationRow_actual_real_zeros
+#print axioms NLS.KdV.exists_hminus_hill_product_equation_chart
+#print axioms NLS.KdV.hasDerivAt_hillZeroCoordinateShift
+#print axioms NLS.KdV.HillHminusPsiBall.fderiv_productPeriod_coordinate
+#print axioms NLS.KdV.HillHminusPsiBall.fderiv_productEquationRow_coordinate
+#print axioms NLS.KdV.HillHminusPsiBall.analytic_productEquationRow_column
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_joint_Hill_period_equations

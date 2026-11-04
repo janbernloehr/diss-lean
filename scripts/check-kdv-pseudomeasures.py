@@ -955,6 +955,13 @@ modules = [
     'NLS.KdV.HillFreePeriodSequence',
     'NLS.KdV.HillFreePeriodSequenceDerivative',
     'NLS.Articles.KdVPseudomeasures.OriginalFreeHillPeriodEquation',
+    'NLS.KdV.HillProductJointPeriods',
+    'NLS.KdV.HillProductCommonPeriodCircles',
+    'NLS.KdV.HillMiuraGapMidpoints',
+    'NLS.KdV.HminusOneJointHillProductPeriods',
+    'NLS.KdV.HminusOneHillProductEquationRows',
+    'NLS.KdV.HminusOneHillProductJointColumns',
+    'NLS.Articles.KdVPseudomeasures.OriginalJointHillPeriodEquations',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
