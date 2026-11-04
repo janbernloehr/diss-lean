@@ -5646,3 +5646,12 @@ import NLS.KdV.HillComplexActionRatioNearFree
 import NLS.KdV.HillCommonComplexActionPrefactor
 import NLS.KdV.HillCommonActionPrefactorPhysical
 import NLS.KdV.HillCommonComplexOwnAmplitudes
+import NLS.KdV.HillComplexWeightedEmbedding
+import NLS.SequenceSpaces.NatL1AnalyticRealization
+import NLS.KdV.HillComplexWeightedGapSquares
+import NLS.KdV.HillComplexWeightedGapTails
+import NLS.KdV.HillComplexGapActions
+import NLS.KdV.HillComplexWeightedActionTails
+import NLS.KdV.HillComplexWeightedActionSequence
+import NLS.KdV.HillRealActionAnalytic
+import NLS.KdV.HillFullWeightedActionAnalytic

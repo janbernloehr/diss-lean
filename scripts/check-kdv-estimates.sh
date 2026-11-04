@@ -132,6 +132,7 @@ modules+=(NLS/KdV/HillComplexDirichletTerminal NLS/KdV/HillUniformRealGapLocaliz
 modules+=(NLS/SequenceSpaces/HilbertCoordinateNormContinuity NLS/KdV/HillWeightedSpectralSequence NLS/KdV/HillWeightedSpectralContinuity NLS/Articles/KdVEstimates/WeightedSpectralEstimate NLS/KdV/HillHomogeneousSpectralSequence NLS/Articles/KdVEstimates/IntegerSpectralEstimates)
 modules+=(NLS/KdV/HillCommonComplexOwnFactors NLS/KdV/HillCommonOwnFactorsPhysical)
 modules+=(NLS/ComplexAnalysis/QuadraticGapActionRatioDisc NLS/KdV/HillUniformComplexGapLocalization NLS/KdV/HillCommonComplexDeflatedTrace NLS/KdV/HillCommonComplexActionGapRatio NLS/KdV/HillCommonActionGapRatioPhysical NLS/KdV/HillFreeActionGapRatio NLS/KdV/HillUniformDeflatedInverseBounds NLS/KdV/HillUniformComplexTraceBounds NLS/ComplexAnalysis/QuadraticGapActionRatioBounds NLS/KdV/HillUniformComplexDeflatedTraceBounds NLS/KdV/HillUniformComplexActionRatioBounds NLS/KdV/HillComplexActionRatioNearFree NLS/KdV/HillCommonComplexActionPrefactor NLS/KdV/HillCommonActionPrefactorPhysical NLS/KdV/HillCommonComplexOwnAmplitudes)
+modules+=(NLS/KdV/HillComplexWeightedEmbedding NLS/SequenceSpaces/NatL1AnalyticRealization NLS/KdV/HillComplexWeightedGapSquares NLS/KdV/HillComplexWeightedGapTails NLS/KdV/HillComplexGapActions NLS/KdV/HillComplexWeightedActionTails NLS/KdV/HillComplexWeightedActionSequence NLS/KdV/HillRealActionAnalytic NLS/KdV/HillFullWeightedActionAnalytic)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

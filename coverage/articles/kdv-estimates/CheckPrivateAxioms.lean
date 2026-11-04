@@ -723,6 +723,15 @@ import NLS.KdV.HillComplexActionRatioNearFree
 import NLS.KdV.HillCommonComplexActionPrefactor
 import NLS.KdV.HillCommonActionPrefactorPhysical
 import NLS.KdV.HillCommonComplexOwnAmplitudes
+import NLS.KdV.HillComplexWeightedEmbedding
+import NLS.SequenceSpaces.NatL1AnalyticRealization
+import NLS.KdV.HillComplexWeightedGapSquares
+import NLS.KdV.HillComplexWeightedGapTails
+import NLS.KdV.HillComplexGapActions
+import NLS.KdV.HillComplexWeightedActionTails
+import NLS.KdV.HillComplexWeightedActionSequence
+import NLS.KdV.HillRealActionAnalytic
+import NLS.KdV.HillFullWeightedActionAnalytic
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1167,7 +1176,11 @@ run_cmd do
     ``NLS.SequenceSpaces.continuousAt_lp_two_of_coordinatewise_of_norm,
     ``NLS.ComplexAnalysis.analyticAt_quadraticGapActionRatio_of_disc,
     ``NLS.ComplexAnalysis.norm_deriv_le_of_analytic_closedDisc_bound,
-    ``NLS.ComplexAnalysis.norm_quadraticGapActionRatio_le_of_disc_bound]
+    ``NLS.ComplexAnalysis.norm_quadraticGapActionRatio_le_of_disc_bound,
+    ``NLS.Coeff.natL1OfFunction,
+    ``NLS.Coeff.natL1OfFunction_apply_of_summable,
+    ``NLS.Coeff.norm_natL1OfFunction_eq_tsum,
+    ``NLS.Coeff.analyticOnNhd_natL1OfFunction_of_summable_bound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
