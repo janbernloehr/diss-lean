@@ -790,6 +790,9 @@ import NLS.KdV.HillDeletedPeriodIdentification
 import NLS.KdV.HillNearFreePhysicalPeriodRoots
 import NLS.KdV.HillUniformComplexOwnPeriods
 import NLS.KdV.HillUniformPeriodNormalization
+import NLS.SequenceSpaces.SeparatedReciprocalEnvelope
+import NLS.KdV.HillSeparatedPeriodKernel
+import NLS.KdV.HillUniformNormalizedPeriodContours
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1267,7 +1270,12 @@ run_cmd do
     ``NLS.ComplexAnalysis.quantitativeNeumannRadius,
     ``NLS.ComplexAnalysis.quantitativeNeumannRadius_pos,
     ``NLS.ComplexAnalysis.exists_analytic_inverse_on_neumann_ball,
-    ``NLS.ComplexAnalysis.norm_le_mul_norm_of_analytic_zero_ball_bound]
+    ``NLS.ComplexAnalysis.norm_le_mul_norm_of_analytic_zero_ball_bound,
+    ``NLS.Coeff.separatedReciprocalEnvelope,
+    ``NLS.Coeff.separatedReciprocalEnvelope_apply,
+    ``NLS.Coeff.norm_separatedReciprocalEnvelope_le,
+    ``NLS.Coeff.norm_separatedReciprocalEnvelope_eq_pairing,
+    ``NLS.Coeff.tendsto_norm_separatedReciprocalEnvelope_zero]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

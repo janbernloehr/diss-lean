@@ -5713,3 +5713,6 @@ import NLS.KdV.HillDeletedPeriodIdentification
 import NLS.KdV.HillNearFreePhysicalPeriodRoots
 import NLS.KdV.HillUniformComplexOwnPeriods
 import NLS.KdV.HillUniformPeriodNormalization
+import NLS.SequenceSpaces.SeparatedReciprocalEnvelope
+import NLS.KdV.HillSeparatedPeriodKernel
+import NLS.KdV.HillUniformNormalizedPeriodContours
