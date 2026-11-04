@@ -1111,6 +1111,14 @@ modules = [
     'NLS.KdV.HillCommonSimpleComplexZeroDomain',
     'NLS.KdV.HillCanonicalSequencePairRootCompatibility',
     'NLS.Articles.KdVPseudomeasures.OriginalHillComplexProducts',
+    'NLS.KdV.HillEnergyRootBoxes',
+    'NLS.KdV.HillCanonicalEnergyRoot',
+    'NLS.KdV.HillCanonicalEnergyDifferentials',
+    'NLS.ComplexAnalysis.CompactSliceLocalProperties',
+    'NLS.KdV.HillEnergyDifferentialCompactTransport',
+    'NLS.KdV.HillPositivePatchCircles',
+    'NLS.KdV.HillCanonicalEnergyLoopPeriods',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalEnergySheets',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

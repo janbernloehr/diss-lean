@@ -1077,6 +1077,14 @@ import NLS.KdV.HillPlacedEnergySequenceInjective
 import NLS.KdV.HillCommonSimpleComplexZeroDomain
 import NLS.KdV.HillCanonicalSequencePairRootCompatibility
 import NLS.Articles.KdVPseudomeasures.OriginalHillComplexProducts
+import NLS.KdV.HillEnergyRootBoxes
+import NLS.KdV.HillCanonicalEnergyRoot
+import NLS.KdV.HillCanonicalEnergyDifferentials
+import NLS.ComplexAnalysis.CompactSliceLocalProperties
+import NLS.KdV.HillEnergyDifferentialCompactTransport
+import NLS.KdV.HillPositivePatchCircles
+import NLS.KdV.HillCanonicalEnergyLoopPeriods
+import NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalEnergySheets
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7012,3 +7020,53 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillComplexProducts
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complex_literal_product_deriv_convergence
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complex_scalar_at_omitted_energy_midpoint
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complex_simple_domain_fine_zero_offset
+#print axioms NLS.KdV.HillHminusEnergyRootBox.source
+#print axioms NLS.KdV.HillHminusEnergyRootBox.domain
+#print axioms NLS.KdV.HillHminusEnergyRootBox.root
+#print axioms NLS.KdV.HillHminusEnergyRootBox.domain_open
+#print axioms NLS.KdV.HillHminusEnergyRootBox.analytic_root
+#print axioms NLS.KdV.HillHminusEnergyRootBox.root_ne_zero
+#print axioms NLS.KdV.HillHminusEnergyRootBox.root_sq
+#print axioms NLS.KdV.HillHminusEnergyRootBox.root_eq_on_overlap
+#print axioms NLS.KdV.exists_hillHminusEnergyRootBox_of_real_mem
+#print axioms NLS.KdV.HillHminusDirichletBall.nonreal_energy_mem_domain
+#print axioms NLS.KdV.hillHminusCanonicalEnergyRootDomain
+#print axioms NLS.KdV.isOpen_hillHminusCanonicalEnergyRootDomain
+#print axioms NLS.KdV.hillHminusCanonicalEnergyRootDomain_subset_simpleSource
+#print axioms NLS.KdV.hillHminusCanonicalEnergyRoot
+#print axioms NLS.KdV.HillHminusEnergyRootBox.canonical_root_eq
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalEnergyRoot
+#print axioms NLS.KdV.hillHminusCanonicalEnergyRoot_ne_zero
+#print axioms NLS.KdV.hillHminusCanonicalEnergyRoot_sq
+#print axioms NLS.KdV.real_mem_hillHminusCanonicalEnergyRootDomain_of_local
+#print axioms NLS.KdV.hillHminusCanonicalEnergyRoot_eq_local_of_real
+#print axioms NLS.KdV.nonreal_mem_hillHminusCanonicalEnergyRootDomain
+#print axioms NLS.KdV.hillHminusCanonicalEnergyRoot_eq_physical_of_real
+#print axioms NLS.KdV.hillHminusEnergySheetSource
+#print axioms NLS.KdV.isOpen_hillHminusEnergySheetSource
+#print axioms NLS.KdV.hillHminusEnergySheetSource_subset_simpleDomain
+#print axioms NLS.KdV.real_mem_hillHminusEnergySheetSource
+#print axioms NLS.KdV.isConnected_hillHminusEnergySheetSource
+#print axioms NLS.KdV.hillHminusCanonicalEnergyRootDomain_subset_sheetSource
+#print axioms NLS.KdV.hillHminusCanonicalEnergyDifferential
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalEnergyDifferential
+#print axioms NLS.KdV.HillHminusEnergyRootBox.canonical_numerator_eq
+#print axioms NLS.KdV.HillHminusEnergyRootBox.canonical_differential_eq
+#print axioms NLS.KdV.hillHminusCanonicalEnergyDifferential_eq_local_of_real
+#print axioms NLS.KdV.hillHminusCanonicalEnergyDifferential_eq_physical_of_real
+#print axioms NLS.KdV.HillHminusDirichletBall.canonical_energyCircle_inside
+#print axioms NLS.KdV.HillHminusDirichletBall.canonical_energyDifferential_circle_period
+#print axioms NLS.ComplexAnalysis.exists_uniform_local_property_near_compact_slice
+#print axioms NLS.KdV.exists_uniform_canonical_energy_compact_transport
+#print axioms NLS.KdV.exists_uniform_canonical_energy_loop_transport
+#print axioms NLS.KdV.HillProductEquationPatch.zero_mem_central_disc_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.positive_circle_left_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.energyLoop
+#print axioms NLS.KdV.HillProductEquationPatch.energyLoop_inside_local
+#print axioms NLS.KdV.HillProductEquationPatch.energyLoop_local_period
+#print axioms NLS.KdV.HillProductEquationPatch.energyLoop_winding_one_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.exists_canonical_energyLoop_complex_period_ball
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_common_canonical_energy_sheet_and_differentials
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_canonical_energy_sheet_physical_sign
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_canonical_energy_compact_complex_transport
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_canonical_energy_cycle_complex_periods

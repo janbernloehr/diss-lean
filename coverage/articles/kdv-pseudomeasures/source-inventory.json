@@ -816,6 +816,12 @@
       "status": "UNIQUE NONZERO ANALYTIC actual scalar, joint SAME cutoffs, whole-plane energy derivatives, exhaustive complex zeros, common OPEN CONNECTED simple-root domain and fine ORIGINAL energy estimates PROVED. Universal scalar VALUE, physical coordinates/flow and ALL FIVE MAIN remain OPEN.",
       "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_common_complex_product_and_simple_zero_domain",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-complex-product-normalization-map.json"
+    },
+    {
+      "label": "Canonical actual complex energy sheets and normalized differentials",
+      "status": "One open joint domain before ALL n, open connected source projection of entire real form, physical sign, whole complex box overlaps, compact contour transport and exact fixed-cycle complex periods PROVED. Abelian phases/coordinates/flow and ALL FIVE MAIN remain OPEN.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_common_canonical_energy_sheet_and_differentials",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-canonical-energy-sheets-map.json"
     }
   ],
   "reuse_map": [
@@ -897,7 +903,7 @@
   "remaining_obligations": [
     "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete physical Abelian phases and Cartesian coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
     "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "Complete any required global complex energy-sheet/differential gluing, then construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Intrinsic numerator gluing, actual local roots/normalized periods and real-source root/differential overlap identities are proved. Formalize the literal KMT y-tilde integrating-factor gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint.",
+    "Construct actual admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Complex ENERGY-SHEET AND DIFFERENTIAL GLUING IS NOW PROVED: one OPEN joint energy/source domain BEFORE ALL n; OPEN CONNECTED source projection of ENTIRE real form; analytic nonzero root with ACTUAL physical square and fixed real-source sign; ALL normalized differentials jointly analytic; EVERY available REAL local sheet value covered; compact-set and genuine contour transport on ONE complex source neighborhood BEFORE ALL n; each fixed positive original energy cycle has exact 1/(2*pi) Kronecker periods on a complex source ball BEFORE ALL n. The radius may depend on the cycle. Do NOT redo root/differential gluing. Next local Abelian primitives can use the actual canonical differential on energy/source boxes and parametric interval integration; global phases still require path choices/periods and off-index estimates. Formalize literal KMT y-tilde gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint.",
     "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
@@ -2715,6 +2721,25 @@
     "common_FULL_l2_roots_agree_with_PAIR_roots_on_WHOLE_overlaps_PROVED": true,
     "fine_squared_energy_gap_over_index_bound_preserved_on_SIMPLE_domain_PROVED": true,
     "universal_2_over_pi_n_ACTUAL_numerator_product_prefactor_proved": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_canonical_energy_sheets_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-canonical-energy-sheets-map.json",
+    "WHOLE_complex_energy_source_box_root_agreement_PROVED": true,
+    "ONE_OPEN_joint_energy_source_canonical_root_domain_BEFORE_ALL_n_PROVED": true,
+    "canonical_root_analytic_NONZERO_square_ACTUAL_physical_radicand_PROVED": true,
+    "OPEN_CONNECTED_source_projection_ENTIRE_real_form_PROVED": true,
+    "EVERY_available_REAL_source_local_energy_sheet_covered_PROVED": true,
+    "EVERY_nonreal_energy_at_EVERY_real_source_covered_with_physical_sign_PROVED": true,
+    "ALL_canonical_energy_differentials_joint_analytic_on_SAME_domain_PROVED": true,
+    "compact_energy_and_fixed_contour_transport_ONE_source_radius_BEFORE_ALL_n_PROVED": true,
+    "ALL_positive_patch_circles_strictly_right_of_zero_at_real_sources_PROVED": true,
+    "genuine_quadratic_energy_cycle_winding_one_at_real_source_PROVED": true,
+    "fixed_cycle_complex_source_ball_EXACT_one_over_two_pi_periods_BEFORE_ALL_n_PROVED": true,
+    "common_source_radius_before_ALL_cycle_indices_claimed": false,
+    "universal_2_over_pi_n_ACTUAL_product_prefactor_proved": false,
+    "physical_Abelian_phases_constructed": false,
     "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
     "all_five_main_theorems_proved": false
   }

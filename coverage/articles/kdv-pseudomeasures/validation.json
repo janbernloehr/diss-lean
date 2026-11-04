@@ -1,7 +1,7 @@
 {
   "date": "2026-11-04",
   "article_main_theorems_verified": false,
-  "phase": "Prove actual complex Hill products with unique nonzero analytic scalar, joint convergence and exhaustive simple zeros on a common complex native domain.",
+  "phase": "Glue intrinsic physical Hill energy roots and all normalized differentials on one open joint energy/source domain, with compact contour transport and exact complex cycle periods.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1085,13 +1085,21 @@
     "NLS/KdV/HillCommonSimpleComplexZeroDomain.lean",
     "NLS/KdV/HillCanonicalSequencePairRootCompatibility.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillComplexProducts.lean",
+    "NLS/KdV/HillEnergyRootBoxes.lean",
+    "NLS/KdV/HillCanonicalEnergyRoot.lean",
+    "NLS/KdV/HillCanonicalEnergyDifferentials.lean",
+    "NLS/ComplexAnalysis/CompactSliceLocalProperties.lean",
+    "NLS/KdV/HillEnergyDifferentialCompactTransport.lean",
+    "NLS/KdV/HillPositivePatchCircles.lean",
+    "NLS/KdV/HillCanonicalEnergyLoopPeriods.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillCanonicalEnergySheets.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 4956,
-  "definitions": 976,
+  "proved_theorems": 4998,
+  "definitions": 984,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 5932,
+    "declarations": 5982,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -2181,10 +2189,20 @@
     "ONE smaller OPEN CONNECTED complex native domain contains the ENTIRE real Hminus-one form and works BEFORE ALL n,m. All numerator zeros there are SIMPLE and have UNIQUE retained labels; the omitted energy midpoint is nonzero. The fine ORIGINAL squared-energy-gap-over-index estimate remains locally uniform on that same domain.",
     "The common FULL-l2 energy roots agree with earlier individual retained simple-root complexifications on their ENTIRE complex overlaps. The article exposes the common product/simple-zero domain, joint cutoffs, whole-plane energy derivatives and a concrete scalar ratio at the actual omitted midpoint.",
     "Ten new modules, two byte-identical canonical deleted-product dependencies and the exact 5932-declaration transitive axiom audit compiled privately without warnings, tactic suggestions or added axioms. All 1069 baseline non-audit sources are unchanged. Explicit derivative types resolved a deterministic elaboration timeout without raising heartbeats. Prior private CompactInverseBound lint fix unchanged; canonical checkout and shared Git metadata read-only.",
-    "Complex product proportionality, analytic nonzero scalar, convergence, exhaustive complex zeros and common-domain simplicity are NOW PROVED. Universal ACTUAL scalar VALUE, physical Abelian phases, actual KdV coordinates/flow and ALL FIVE MAIN remain OPEN; goal ACTIVE."
+    "Complex product proportionality, analytic nonzero scalar, convergence, exhaustive complex zeros and common-domain simplicity are NOW PROVED. Universal ACTUAL scalar VALUE, physical Abelian phases, actual KdV coordinates/flow and ALL FIVE MAIN remain OPEN; goal ACTIVE.",
+    "Joint energy/source product boxes have REAL source centers and arbitrary complex energy centers. Actual physical roots agree on WHOLE complex overlaps by the native real-form identity principle; no unsupported choice of signs on complex components is used.",
+    "The canonical energy root is jointly analytic, NEVER zero, and its square is the ACTUAL original physical Hill radicand on ONE OPEN joint energy/native-source domain selected BEFORE ALL numerator indices. Its source projection is OPEN CONNECTED, contains the ENTIRE real Hminus-one form, and lies in the prior common simple-zero/fine-estimate domain.",
+    "EVERY available local energy-sheet value at EVERY real source belongs to the canonical domain and agrees with its actual local physical root, including real band energies when available. EVERY nonreal energy is included at EVERY real source, and the canonical root equals the physical continued root there with its fixed sign.",
+    "ALL intrinsic normalized energy differentials equal the intrinsic numerator divided by that SAME canonical root. They are jointly analytic on the SAME joint domain and agree with actual local Miura differentials on WHOLE energy/source boxes and at every available local value of a REAL source.",
+    "A reusable compact-slice local-property lemma gives ONE complex source radius for an ENTIRE compact energy set or fixed genuine piecewise contour. The radius is chosen BEFORE ALL numerator indices and contour points, and preserves the actual root and differential identities simultaneously.",
+    "Every positive original frequency circle in a real-centered product patch lies STRICTLY to the right of zero, including low/collapsed gaps. The proof uses the actual central zero placement and original signed-disc separation; no unproved positivity hypothesis is silently imposed.",
+    "The genuine quadratic energy image of each fixed positive frequency circle has winding one at the real reference source. On ONE complex source ball for that fixed cycle, BEFORE ALL numerator indices, its actual canonical differential periods are EXACTLY (1/(2*pi))*integral = Kronecker delta. The source radius may depend on the selected cycle; no common radius before ALL cycle indices is asserted.",
+    "The article records the common open joint sheet domain, open connected source projection, actual physical sign, compact-set complex transport and exact fixed-cycle complex periods for ORIGINAL Hminus-one potentials.",
+    "Eight new modules (42 theorems and 8 definitions), three byte-identical canonical dependencies and the exact 5982-declaration transitive axiom audit compiled privately without warnings, tactic suggestions or added axioms. All 1079 baseline non-audit sources remain unchanged. No heartbeat increase; canonical checkout and shared Git metadata remain read-only.",
+    "Complex energy-sheet/differential gluing, physical sign and compact contour/period transport are NOW PROVED. Universal ACTUAL product scalar, physical Abelian phases/off-index sums/collapsed Cartesian extensions, actual KdV coordinates/flow and ALL FIVE MAIN theorems remain OPEN; goal ACTIVE."
   ],
-  "source_correspondence": "Prove actual complex Hill products with unique nonzero analytic scalar, joint convergence and exhaustive simple zeros on a common complex native domain. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete physical Abelian phases and Cartesian coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. Complete any required global complex energy-sheet/differential gluing, then construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Intrinsic numerator gluing, actual local roots/normalized periods and real-source root/differential overlap identities are proved. Formalize the literal KMT y-tilde integrating-factor gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint. Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. All 1069 baseline non-audit Lean sources byte-identical to 0f9f006. Ten new modules, two byte-identical canonical dependencies and exact 5932-declaration audit freshly compiled privately. Prior unregistered CompactInverseBound lint fix unchanged. No heartbeat increase.",
+  "source_correspondence": "Glue intrinsic physical Hill energy roots and all normalized differentials on one open joint energy/source domain, with compact contour transport and exact complex cycle periods. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete physical Abelian phases and Cartesian coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. Construct actual admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Complex ENERGY-SHEET AND DIFFERENTIAL GLUING IS NOW PROVED: one OPEN joint energy/source domain BEFORE ALL n; OPEN CONNECTED source projection of ENTIRE real form; analytic nonzero root with ACTUAL physical square and fixed real-source sign; ALL normalized differentials jointly analytic; EVERY available REAL local sheet value covered; compact-set and genuine contour transport on ONE complex source neighborhood BEFORE ALL n; each fixed positive original energy cycle has exact 1/(2*pi) Kronecker periods on a complex source ball BEFORE ALL n. The radius may depend on the cycle. Do NOT redo root/differential gluing. Next local Abelian primitives can use the actual canonical differential on energy/source boxes and parametric interval integration; global phases still require path choices/periods and off-index estimates. Formalize literal KMT y-tilde gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint. Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. All 1079 baseline non-audit Lean sources byte-identical to 53f2215. Eight new modules, three byte-identical canonical dependencies and exact 5982-declaration audit freshly compiled privately. Prior unregistered CompactInverseBound lint fix unchanged. No heartbeat increase.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -2586,7 +2604,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "a84289a8098d985f816d40b5ee0514c5faafb013f32dd78ed06086301ba96dc8",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "5a44a4bef54d1a4a95c660ff95e9e21476c90c7acdf6f33b29cef1720b743776",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -3270,7 +3288,15 @@
     "NLS/KdV/HillPlacedEnergySequenceInjective.lean": "96fc37923092f8e044cfc587d5957899cd6ee320d5a54a8dba2c6d43d0f44d46",
     "NLS/KdV/HillCommonSimpleComplexZeroDomain.lean": "4d083c2a2fcaad28b45321d9b4fbef193f756772da53fa5642fa1fb7282f66ef",
     "NLS/KdV/HillCanonicalSequencePairRootCompatibility.lean": "56652028269d24c3edb8faedd2645fb2945b2495a5eb248911cfeb2c1c80440f",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillComplexProducts.lean": "069cc761322be3b3abaa09b5855b074864cdc76ed1f17296c9d24a4e4e5e1592"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillComplexProducts.lean": "069cc761322be3b3abaa09b5855b074864cdc76ed1f17296c9d24a4e4e5e1592",
+    "NLS/KdV/HillEnergyRootBoxes.lean": "db9af6e8cbcbc66e7d145c13f88f741e0a75b34c13360afdaa92931be488acba",
+    "NLS/KdV/HillCanonicalEnergyRoot.lean": "9585edafaa28dd86689b09fe9a6269eab1b104e7e13f5a2af6676354336f9b39",
+    "NLS/KdV/HillCanonicalEnergyDifferentials.lean": "b71cdb1b9222233c7917b5bbad28314ac77de064047b9977c6ed41cb0ea278bf",
+    "NLS/ComplexAnalysis/CompactSliceLocalProperties.lean": "7a622114a701ad2d39900f731cf3f029a5f4f1c335e0cdee69471142c6d95cbd",
+    "NLS/KdV/HillEnergyDifferentialCompactTransport.lean": "0ffc494c33e01e85deac5395527d7da2bf45009a793c840cb11cedd42a44ab8a",
+    "NLS/KdV/HillPositivePatchCircles.lean": "c40646f096769174a4388fab13339d78996a4e38c3831e949832dc3067fd3f2a",
+    "NLS/KdV/HillCanonicalEnergyLoopPeriods.lean": "3e0eb52477a72b520bb3648dc200516b2ef1f3ae85e966fdf159f525d6d1888d",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillCanonicalEnergySheets.lean": "9f084f6a2147ca635fa4293f2625f3a3b91ed97c570fbd91d2de384c43b73cd4"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -3278,11 +3304,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 5882,
+    "previous_checked_declarations": 5932,
     "newly_checked_declarations_this_continuation": 50,
-    "new_theorems": 46,
-    "new_definitions": 4,
-    "total_checked_declarations": 5932
+    "new_theorems": 42,
+    "new_definitions": 8,
+    "total_checked_declarations": 5982
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -3311,7 +3337,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-complex-product-normalization.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-canonical-energy-sheets.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -3589,13 +3615,14 @@
     "Prove common all-index analytic full-l2 actual Hill zero sequences on one open connected complex neighborhood of the entire real native Hminus-one form.",
     "Prove locally uniform full-l2 actual Hill zero sequence and derivative bounds, common complex full Jacobian inverses and all-index physical regular quotient controls.",
     "Prove the actual original Hill zero-minus-midpoint O(squared energy gap/index) estimate locally uniformly on one common open connected complex native domain before ALL numerator and gap indices.",
-    "Prove actual complex Hill products with unique nonzero analytic scalar, joint convergence and exhaustive simple zeros on a common complex native domain."
+    "Prove actual complex Hill products with unique nonzero analytic scalar, joint convergence and exhaustive simple zeros on a common complex native domain.",
+    "Glue intrinsic physical Hill energy roots and all normalized differentials on one open joint energy/source domain, with compact contour transport and exact complex cycle periods."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-complex-product-normalization-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-canonical-energy-sheets-map.json",
   "baseline_validated_snapshot": {
-    "commit": "0f9f006a9db84c984fa9e29d76af31611d9a5a73",
-    "modules": 1070,
-    "audited_declarations": 5882,
+    "commit": "53f22157470d0626d503c87a752e5932e97bead2",
+    "modules": 1080,
+    "audited_declarations": 5932,
     "directory": ".lake/full-original-label-check-20261103",
     "source_hashes_verified_unchanged": true
   },
@@ -4767,6 +4794,25 @@
     "common_FULL_l2_roots_agree_with_PAIR_roots_on_WHOLE_overlaps_PROVED": true,
     "fine_squared_energy_gap_over_index_bound_preserved_on_SIMPLE_domain_PROVED": true,
     "universal_2_over_pi_n_ACTUAL_numerator_product_prefactor_proved": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_canonical_energy_sheets": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-canonical-energy-sheets-map.json",
+    "WHOLE_complex_energy_source_box_root_agreement_PROVED": true,
+    "ONE_OPEN_joint_energy_source_canonical_root_domain_BEFORE_ALL_n_PROVED": true,
+    "canonical_root_analytic_NONZERO_square_ACTUAL_physical_radicand_PROVED": true,
+    "OPEN_CONNECTED_source_projection_ENTIRE_real_form_PROVED": true,
+    "EVERY_available_REAL_source_local_energy_sheet_covered_PROVED": true,
+    "EVERY_nonreal_energy_at_EVERY_real_source_covered_with_physical_sign_PROVED": true,
+    "ALL_canonical_energy_differentials_joint_analytic_on_SAME_domain_PROVED": true,
+    "compact_energy_and_fixed_contour_transport_ONE_source_radius_BEFORE_ALL_n_PROVED": true,
+    "ALL_positive_patch_circles_strictly_right_of_zero_at_real_sources_PROVED": true,
+    "genuine_quadratic_energy_cycle_winding_one_at_real_source_PROVED": true,
+    "fixed_cycle_complex_source_ball_EXACT_one_over_two_pi_periods_BEFORE_ALL_n_PROVED": true,
+    "common_source_radius_before_ALL_cycle_indices_claimed": false,
+    "universal_2_over_pi_n_ACTUAL_product_prefactor_proved": false,
+    "physical_Abelian_phases_constructed": false,
     "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
     "all_five_main_theorems_proved": false
   }
