@@ -1400,6 +1400,14 @@ modules = [
     'NLS.KdV.HillDiscriminantJointCotangent',
     'NLS.KdV.HillDiscriminantContourInvolution',
     'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralInvolution',
+    'NLS.KdV.HillMiuraDiscriminantSourceDerivative',
+    'NLS.KdV.HillMiuraActionCotangentIntegrand',
+    'NLS.ZakharovShabat.SourceHigherActionCircleGradient',
+    'NLS.ZakharovShabat.SourceIndexedHigherActionGradient',
+    'NLS.KdV.HillCanonicalActionGradient',
+    'NLS.KdV.HillCanonicalActionInvolution',
+    'NLS.KdV.HillCanonicalActionIsospectral',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillActionInvolution',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

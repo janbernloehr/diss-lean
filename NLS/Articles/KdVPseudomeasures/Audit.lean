@@ -1366,6 +1366,14 @@ import NLS.KdV.HillDiscriminantGardnerCommutation
 import NLS.KdV.HillDiscriminantJointCotangent
 import NLS.KdV.HillDiscriminantContourInvolution
 import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralInvolution
+import NLS.KdV.HillMiuraDiscriminantSourceDerivative
+import NLS.KdV.HillMiuraActionCotangentIntegrand
+import NLS.ZakharovShabat.SourceHigherActionCircleGradient
+import NLS.ZakharovShabat.SourceIndexedHigherActionGradient
+import NLS.KdV.HillCanonicalActionGradient
+import NLS.KdV.HillCanonicalActionInvolution
+import NLS.KdV.HillCanonicalActionIsospectral
+import NLS.Articles.KdVPseudomeasures.OriginalHillActionInvolution
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -8579,3 +8587,24 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralInvolution
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_discriminants_Gardner_commute
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_discriminants_intrinsic_Gardner_commute
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_discriminant_contour_direction_isospectral
+#print axioms NLS.KdV.fderiv_liftedMiuraDiscriminant_eq_native
+#print axioms NLS.KdV.hillMiuraActionCotangentIntegrand
+#print axioms NLS.KdV.analyticOnNhd_hillMiuraActionCotangentIntegrand
+#print axioms NLS.KdV.circleIntegrable_hillMiuraActionCotangentIntegrand
+#print axioms NLS.KdV.hillMiuraActionCotangentIntegrands_Gardner_commute
+#print axioms NLS.KdV.hillMiuraActionCotangentContours_Gardner_commute
+#print axioms NLS.ZakharovShabat.fderiv_sourceHigherActionCircle_eq_gradient_integral
+#print axioms NLS.ZakharovShabat.exists_sourceIndexedHigherAction_gradient_circle
+#print axioms NLS.KdV.HillHminusMiuraActionBall.exists_action_gradient_circle
+#print axioms NLS.KdV.exists_hillHminusCanonicalAction_cotangent_contour
+#print axioms NLS.KdV.hillHminusCanonicalActions_Gardner_commute_of_real
+#print axioms NLS.KdV.hillHminusCanonicalActions_Gardner_commute
+#print axioms NLS.KdV.hillHminusDiscriminant_action_Gardner_commute_of_real
+#print axioms NLS.KdV.hillHminusDiscriminant_action_Gardner_commute
+#print axioms NLS.KdV.hillHminusDiscriminant_action_Hamiltonian_direction
+#print axioms NLS.KdV.hillHminusCanonicalAction_action_Hamiltonian_direction
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_actions_Gardner_commute
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_actions_intrinsic_Gardner_commute
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_actions_physical_Gardner_integral_zero
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_action_discriminant_Gardner_commute
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_action_Hamiltonian_direction_isospectral
