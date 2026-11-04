@@ -777,6 +777,7 @@ import NLS.SequenceSpaces.NatL2AnalyticRealization
 import NLS.KdV.HillCriticalComplexOwnAmplitudeTails
 import NLS.KdV.HillCriticalOwnAmplitudeTerms
 import NLS.KdV.HillCriticalOwnAmplitudeHilbert
+import NLS.KdV.HillFreeUniformPeriodJacobian
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/

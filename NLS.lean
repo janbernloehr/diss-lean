@@ -5700,3 +5700,4 @@ import NLS.SequenceSpaces.NatL2AnalyticRealization
 import NLS.KdV.HillCriticalComplexOwnAmplitudeTails
 import NLS.KdV.HillCriticalOwnAmplitudeTerms
 import NLS.KdV.HillCriticalOwnAmplitudeHilbert
+import NLS.KdV.HillFreeUniformPeriodJacobian
