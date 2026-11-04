@@ -3636,7 +3636,30 @@
       "NLS.KdV.HillHminusMiuraActionBall.exists_local_offIndex_action_velocity",
       "NLS.KdV.exists_hillHminus_offIndex_Abelian_action_bracket_contour",
       "NLS.Articles.KdVPseudomeasures.original_Hill_local_analytic_action_divisor_velocities",
-      "NLS.Articles.KdVPseudomeasures.original_Hill_offIndex_Abelian_action_bracket_contour"
+      "NLS.Articles.KdVPseudomeasures.original_Hill_offIndex_Abelian_action_bracket_contour",
+      "NLS.ComplexAnalysis.fderiv_square_root_stationary",
+      "NLS.ComplexAnalysis.fderiv_cosine_terminal_cleared",
+      "NLS.KdV.HillProductEquationPatch.fderiv_onIndexAbelianFilledRemainder_isospectral_eq_zero",
+      "NLS.KdV.HillProductEquationPatch.fderiv_physicalOnIndexAbelianCorrection_isospectral_frequency_cleared",
+      "NLS.KdV.HillProductEquationPatch.fderiv_onIndex_phase_isospectral_cleared",
+      "NLS.KdV.HillPhysicalOnIndexPhaseChart.source",
+      "NLS.KdV.HillPhysicalOnIndexPhaseChart.source_open",
+      "NLS.KdV.HillPhysicalOnIndexPhaseChart.source_subset_dirichlet",
+      "NLS.KdV.HillPhysicalOnIndexPhaseChart.source_subset_psi",
+      "NLS.KdV.HillPhysicalOnIndexPhaseChart.fderiv_phase_isospectral_cleared_of_real",
+      "NLS.KdV.HillPhysicalOnIndexPhaseChart.phase_action_Gardner_cleared",
+      "NLS.KdV.exists_hillPhysicalOnIndexPhaseChart",
+      "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase",
+      "NLS.KdV.HillPhysicalOnIndexPhaseChart.analytic_completePhase",
+      "NLS.KdV.HillPhysicalOnIndexPhaseChart.phase_action_of_analytic_Dirichlet_velocity",
+      "NLS.KdV.HillPhysicalOnIndexPhaseChart.exists_local_action_velocity",
+      "NLS.KdV.HillPhysicalOnIndexPhaseChart.exists_phase_action_bracket_contour",
+      "NLS.KdV.hillHminusOffIndexVelocityTerm",
+      "NLS.KdV.tendsto_hillHminusOffIndex_velocity_sums",
+      "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_Gardner_eq_add",
+      "NLS.KdV.HillPhysicalOnIndexPhaseChart.tendsto_completePhase_action_series",
+      "NLS.Articles.KdVPseudomeasures.original_Hill_onIndex_phase_action_bracket_contour",
+      "NLS.Articles.KdVPseudomeasures.original_Hill_complete_local_phase_action_velocity_series"
     ],
     "5.1": [
       "NLS.KdV.analyticOnNhd_hillHminusDirichlet_joint",
@@ -3646,7 +3669,7 @@
   "essential_open_obligations": [
     "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
     "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "NEXT prove the ACTUAL on-index Abelian-angle/action variation and evaluate the complete infinite correction variation to obtain the angle/action Kronecker matrix and signed Birkhoff canonicality away fromzero. Actual local analytic action/divisor velocities through ZERO sheets, one fixed complex-ball action cotangent contour before ALL divisor indices, off-index action velocities through branch terminals and off-index contour formulas at EVERY REAL source are NOW PROVED. The prior nonzero-sheet restriction is REMOVED. The complete infinite correction cotangent/Gardner cutoff limits are already proved; their normalized sum still needs evaluation.",
+    "NEXT evaluate the actual complete normalized spectral velocity sum as the signed Kronecker value to obtain the actual angle/action matrix, then prove angle/angle commutation and signed Birkhoff canonicality away fromzero. Actual ON-INDEX phase/action variation is NOW PROVED on actual local OPEN ORIGINAL selected-gap charts, INCLUDING zero-sheet endpoints; all other gaps may be closed. Actual off-index variations, analytic action/divisor velocities through zero sheets and COMPLETE local phase/action spectral velocity-series limits are proved. Do not assume the unevaluated sum equals a Kronecker value.",
     "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates: prove signed-coordinate Gardner canonicality away fromzero, derivative invertibility at every source, remaining nonlinear source/target scales, global bijectivity and boundedness, and bounded-set weak-star homeomorphism. The exact Fourier differential atzero, native Hminus-one sequence analyticity and native/endpoint real-complex local inverses atzero are COMPLETE, as are the nonlinear infinity endpoint analytic maps and original endpoint norm-topology adapters. Actual action-gradient contours and action involution on the common complex action domain are NOWPROVED. The remaining coordinate brackets and global conclusions are OPEN. Do not substitute ordinary NLS coordinates or componentwise-real sequences for the actual signed-conjugate KdV target.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
@@ -4922,7 +4945,15 @@
     "HillLocalActionDirichletVelocity defines the ACTUAL fixed-contour velocity V_m=-1/(pi*d_m)*integral((z/actualDiracRoot(z))*filledDirichletQuotient_m(z^2-c)). The only source denominator is the PROVED NONZERO simple Dirichlet energy derivative d_m. ONE action circle and ONE complex source ball precede ALL divisor indices m; EVERY V_m is FULL Banach analytic there and {lambda_m,I_k}=delta_m*V_m, including zero sheets and closed gaps.",
     "HillDirichletSheetLocalCancellation proves that the ACTUAL physical sheet delta_m is nontrivial in EVERY nonempty OPEN subset of the connected complex Dirichlet domain, using its previously proved free derivative and analytic continuation. This supplies actual local analytic cancellation through the zero set; no pointwise division at zero is used.",
     "HillOffIndexActionVelocity combines the actual entire-complex-domain CLEARED beta/action identity with the actual analytic velocity factor. Analytic cancellation proves {beta_nm,I_k}=canonicalPsi_n(lambda_m)*V_m on ONE native COMPLEX source ball at EVERY REAL base, before ALL positive numerator and divisor indices n,m with m!=n. Branch terminals and collapsed gaps are included. The actual original-energy off-index action bracket contour formula now holds at EVERY REAL source WITHOUT ANY NONZERO-SHEET hypothesis; its exact Miura image and genuine circle integrability are retained.",
-    "OriginalHillActionDivisorVelocities exports the original physical potential results: ONE open complex neighborhood and actual analytic velocities for ALL divisor indices, both the actual eigenvalue and off-index Abelian action laws, and the ACTUAL Miura off-index bracket contour at EVERY source, including zero physical sheets and closed gaps. The on-index phase, complete infinite normalized sum evaluation, complete angle/action Kronecker matrix and signed Birkhoff canonicality away fromzero remain OPEN."
+    "OriginalHillActionDivisorVelocities exports the original physical potential results: ONE open complex neighborhood and actual analytic velocities for ALL divisor indices, both the actual eigenvalue and off-index Abelian action laws, and the ACTUAL Miura off-index bracket contour at EVERY source, including zero physical sheets and closed gaps. The on-index phase, complete infinite normalized sum evaluation, complete angle/action Kronecker matrix and signed Birkhoff canonicality away fromzero remain OPEN.",
+    "StationaryCosineTerminal proves the full Banach source cleared cosine-terminal variation, including a zero terminal sine. The actual NONZERO half-gap has zero derivative when its squared-gap datum is stationary. Neither the terminal physical sheet nor the sine is divided out.",
+    "HillOnIndexRemainderIsospectral proves stationarity of the ACTUAL diagonal filled remainder on the ENTIRE assigned disc in every native isospectral direction at every REAL source. Its actual equation retains the DIAGONAL i term. HillOnIndexCorrectionIsospectral derives the corresponding actual moving physical correction variation, with the full moving omitted-product multiplier retained and canceled. These remainder/correction results include collapsed gaps and zero physical sheets.",
+    "HillOnIndexPhaseClearedVariation combines that actual correction law with the actual cosine terminal and prescribed norming-sheet sign. The diagonal i contribution cancels exactly. It proves delta_n*DF(alpha_n)[h]=actualCanonicalPsi_n(actualLambda_n)*DF(actualLambda_n)[h] in EVERY native isospectral h at every REAL source carrying an actual OPEN selected-gap phase chart. The physical sheet delta_n may vanish; other gaps may be closed.",
+    "HillOnIndexActionPhaseCharts constructs an ACTUAL real-centered complex-ball phase chart at EVERY real source with NONZERO ORIGINAL canonical selected gap square. It retains analytic half-gap, cosine terminal and phase, actual root SIGN, exact alpha=onIndexAbelianCosinePhase and alpha=epsilon-pi+actualPhysicalOnIndexCorrection on the WHOLE ball. Full-source real-form uniqueness proves its CLEARED action bracket law on that entire complex ball.",
+    "HillOnIndexActionVelocity uses the actual fixed action circle and analytic Dirichlet velocity V_m to cancel the physical sheet analytically. On ONE COMPLEX source ball it proves {actualAlpha_n,I_k}=actualPsi_n(lambda_n)*V_n INCLUDING zero-sheet endpoints of the OPEN selected gap. The SAME circle and source ball also support ALL divisor/numerator off-index laws and the complete infinite correction analytic domain. The selected phase index n is fixed before its local chart; no claim of one phase chart before all selected open-gap indices is made.",
+    "HillOnIndexActionContour proves d_n*{actualAlpha_n,I_k}=-actualPsi_n(lambda_n)/pi*integral((z/actualDiracRoot(z))*filledDirichletQuotient_n(z^2-c)) with a genuine actual Miura u,c,image and circle at every REAL source in an actual selected open-gap phase chart. No nonzero physical-sheet hypothesis is imposed. The original selected gap hypothesis is the natural domain of this phase; closed selected gaps remain covered by the separate analytic Cartesian coordinates.",
+    "HillCompletePhaseActionSeries defines the ACTUAL COMPLETE LOCAL phase as the actual on-index phase plus the complete intrinsic infinite off-index correction. It is FULL native Banach analytic on the intersection of their existing domains. Its actual Gardner/action bracket is the limit of the diagonal term Psi_n(lambda_n)*V_n plus the LITERAL finite signed cutoffs of the positive off-index terms Psi_n(lambda_m)*V_m, with diagonal omitted. The proof uses the already proved correction cotangent/Gardner limits and exact term identification, not an unproved derivative/sum interchange. The NORMALIZED SUM EVALUATION as a signed Kronecker value remains OPEN.",
+    "OriginalHillCompletePhaseActionVariation exports the original physical-potential on-index contour and one local complex neighborhood with ALL-index analytic actual velocities and the full complete-phase velocity-series limit, under precisely the OPEN ORIGINAL selected-gap hypothesis. This is actual local Abelian phase variation, not an auxiliary norming logarithm or an ordinary NLS coordinate substitution. Full angle/action Kronecker matrix, angle/angle commutation and signed-coordinate canonicality away fromzero remain OPEN."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -8858,12 +8889,13 @@
     "actual_intrinsic_offIndex_action_cleared_variation_entire_complex_domain_PROVED": true,
     "actual_offIndex_action_contour_under_nonzero_sheet_hypothesis_PROVED": true,
     "actual_complete_infinite_correction_cotangent_and_Gardner_cutoff_limits_PROVED": true,
-    "actual_onIndex_Abelian_angle_action_variation_PROVED": false,
+    "actual_onIndex_Abelian_angle_action_variation_PROVED": true,
     "actual_Abelian_angle_action_Gardner_matrix_PROVED": false,
     "signed_coordinate_canonicality_away_from_zero_PROVED": false,
     "global_Birkhoff_theorem_PROVED": false,
     "zero_sheet_extension_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-zero-sheet-action-velocity-map.json",
-    "actual_offIndex_action_contour_without_nonzero_sheet_hypothesis_PROVED": true
+    "actual_offIndex_action_contour_without_nonzero_sheet_hypothesis_PROVED": true,
+    "onIndex_variation_extension_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-complete-phase-action-variation-map.json"
   },
   "verified_actual_Hill_zero_sheet_action_velocity": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-zero-sheet-action-velocity-map.json",
@@ -8873,9 +8905,26 @@
     "actual_physical_sheet_nontrivial_in_every_nonempty_open_subset_PROVED": true,
     "actual_offIndex_action_velocity_without_sheet_division_PROVED": true,
     "actual_offIndex_action_contour_without_nonzero_sheet_hypothesis_PROVED": true,
-    "actual_onIndex_Abelian_angle_action_variation_PROVED": false,
+    "actual_onIndex_Abelian_angle_action_variation_PROVED": true,
     "actual_Abelian_angle_action_Gardner_matrix_PROVED": false,
     "signed_coordinate_canonicality_away_from_zero_PROVED": false,
-    "global_Birkhoff_theorem_PROVED": false
+    "global_Birkhoff_theorem_PROVED": false,
+    "onIndex_variation_extension_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-complete-phase-action-variation-map.json"
+  },
+  "verified_actual_Hill_complete_phase_action_variation": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-complete-phase-action-variation-map.json",
+    "actual_onIndex_filled_remainder_and_correction_isospectral_variation_PROVED": true,
+    "actual_onIndex_Abelian_angle_action_variation_PROVED": true,
+    "actual_onIndex_action_contour_at_zero_physical_sheet_PROVED": true,
+    "onIndex_original_selected_gap_required": true,
+    "other_gaps_may_be_closed": true,
+    "actual_complete_local_phase_FULL_Banach_analytic_PROVED": true,
+    "actual_complete_phase_action_spectral_velocity_series_limit_PROVED": true,
+    "normalized_velocity_sum_Kronecker_evaluation_PROVED": false,
+    "actual_Abelian_angle_action_Gardner_matrix_PROVED": false,
+    "actual_angle_angle_Gardner_commutation_PROVED": false,
+    "signed_coordinate_canonicality_away_from_zero_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false,
+    "onIndex_variation_extension_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-complete-phase-action-variation-map.json"
   }
 }

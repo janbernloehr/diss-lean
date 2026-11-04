@@ -1426,6 +1426,15 @@ import NLS.KdV.HillFixedActionDirichletContour
 import NLS.KdV.HillLocalActionDirichletVelocity
 import NLS.KdV.HillOffIndexActionVelocity
 import NLS.Articles.KdVPseudomeasures.OriginalHillActionDivisorVelocities
+import NLS.ComplexAnalysis.StationaryCosineTerminal
+import NLS.KdV.HillOnIndexRemainderIsospectral
+import NLS.KdV.HillOnIndexCorrectionIsospectral
+import NLS.KdV.HillOnIndexPhaseClearedVariation
+import NLS.KdV.HillOnIndexActionPhaseCharts
+import NLS.KdV.HillOnIndexActionVelocity
+import NLS.KdV.HillOnIndexActionContour
+import NLS.KdV.HillCompletePhaseActionSeries
+import NLS.Articles.KdVPseudomeasures.OriginalHillCompletePhaseActionVariation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -8850,3 +8859,26 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillActionDivisorVelocities
 #print axioms NLS.KdV.exists_hillHminus_offIndex_Abelian_action_bracket_contour
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_local_analytic_action_divisor_velocities
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_offIndex_Abelian_action_bracket_contour
+#print axioms NLS.ComplexAnalysis.fderiv_square_root_stationary
+#print axioms NLS.ComplexAnalysis.fderiv_cosine_terminal_cleared
+#print axioms NLS.KdV.HillProductEquationPatch.fderiv_onIndexAbelianFilledRemainder_isospectral_eq_zero
+#print axioms NLS.KdV.HillProductEquationPatch.fderiv_physicalOnIndexAbelianCorrection_isospectral_frequency_cleared
+#print axioms NLS.KdV.HillProductEquationPatch.fderiv_onIndex_phase_isospectral_cleared
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.source
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.source_open
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.source_subset_dirichlet
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.source_subset_psi
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.fderiv_phase_isospectral_cleared_of_real
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.phase_action_Gardner_cleared
+#print axioms NLS.KdV.exists_hillPhysicalOnIndexPhaseChart
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.analytic_completePhase
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.phase_action_of_analytic_Dirichlet_velocity
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.exists_local_action_velocity
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.exists_phase_action_bracket_contour
+#print axioms NLS.KdV.hillHminusOffIndexVelocityTerm
+#print axioms NLS.KdV.tendsto_hillHminusOffIndex_velocity_sums
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_Gardner_eq_add
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.tendsto_completePhase_action_series
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_onIndex_phase_action_bracket_contour
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complete_local_phase_action_velocity_series

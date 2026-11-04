@@ -1460,6 +1460,15 @@ modules = [
     'NLS.KdV.HillLocalActionDirichletVelocity',
     'NLS.KdV.HillOffIndexActionVelocity',
     'NLS.Articles.KdVPseudomeasures.OriginalHillActionDivisorVelocities',
+    'NLS.ComplexAnalysis.StationaryCosineTerminal',
+    'NLS.KdV.HillOnIndexRemainderIsospectral',
+    'NLS.KdV.HillOnIndexCorrectionIsospectral',
+    'NLS.KdV.HillOnIndexPhaseClearedVariation',
+    'NLS.KdV.HillOnIndexActionPhaseCharts',
+    'NLS.KdV.HillOnIndexActionVelocity',
+    'NLS.KdV.HillOnIndexActionContour',
+    'NLS.KdV.HillCompletePhaseActionSeries',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillCompletePhaseActionVariation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
