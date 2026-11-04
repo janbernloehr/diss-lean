@@ -1554,6 +1554,14 @@ modules = [
     'NLS.KdV.HillIntrinsicDiagonalSequence',
     'NLS.KdV.HillMeanZeroIntrinsicCompact',
     'NLS.Articles.KdVPseudomeasures.OriginalHillIntrinsicJacobianCompact',
+    'NLS.SequenceSpaces.OddBoundedAnalyticRealization',
+    'NLS.SequenceSpaces.CompactZeroTailGauge',
+    'NLS.KdV.HillOnIndexCorrectionZeroTail',
+    'NLS.KdV.HillOnIndexBoundedExponent',
+    'NLS.KdV.HillSpectralCoreSequence',
+    'NLS.KdV.HillMeanZeroSpectralCore',
+    'NLS.KdV.HillSpectralCoreNeighborhood',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCoreReduction',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

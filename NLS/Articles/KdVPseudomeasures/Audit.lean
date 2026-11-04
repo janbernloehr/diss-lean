@@ -1520,6 +1520,14 @@ import NLS.KdV.HillNormalizedAmplitudeSymbols
 import NLS.KdV.HillIntrinsicDiagonalSequence
 import NLS.KdV.HillMeanZeroIntrinsicCompact
 import NLS.Articles.KdVPseudomeasures.OriginalHillIntrinsicJacobianCompact
+import NLS.SequenceSpaces.OddBoundedAnalyticRealization
+import NLS.SequenceSpaces.CompactZeroTailGauge
+import NLS.KdV.HillOnIndexCorrectionZeroTail
+import NLS.KdV.HillOnIndexBoundedExponent
+import NLS.KdV.HillSpectralCoreSequence
+import NLS.KdV.HillMeanZeroSpectralCore
+import NLS.KdV.HillSpectralCoreNeighborhood
+import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCoreReduction
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9320,3 +9328,35 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillIntrinsicJacobianCompact
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_normalized_amplitude_Jacobian_compact
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_intrinsic_Jacobian_remainder_compact
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_intrinsic_diagonal_coordinates
+#print axioms NLS.Coeff.norm_oddPositiveScalarExtension_le
+#print axioms NLS.Coeff.analyticOnNhd_positiveScalarExtension
+#print axioms NLS.Coeff.analyticOnNhd_oddPositiveScalarExtension
+#print axioms NLS.Coeff.analytic_odd_realization_of_local_bounds
+#print axioms NLS.Coeff.infty_exp_unit_tail
+#print axioms NLS.WeightedCoeff.isCompactOperator_removeZeroTailExponentialSymbol_difference
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_uniform_physicalOnIndexCorrection_weighted_tail_bound
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOnIndexAbelianCorrection_zero_tail
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOnIndexSignedExponent
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOnIndexOddSequence_data
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_physicalOnIndexSignedExponent
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOnIndexSignedExponent_positive
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOnIndexSignedExponent_negative
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOnIndexSignedExponent_zero_mode
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOnIndexSignedExponent_zero_tail
+#print axioms NLS.KdV.HillProductEquationPatch.physicalSpectralFactorPlus
+#print axioms NLS.KdV.HillProductEquationPatch.physicalSpectralFactorMinus
+#print axioms NLS.KdV.HillProductEquationPatch.physicalSpectralCoreMap
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_physicalSpectralCoreMap
+#print axioms NLS.KdV.HillProductEquationPatch.physicalSpectralCoreMap_zero_mode
+#print axioms NLS.KdV.HillProductEquationPatch.physicalSpectralCoreMap_positive
+#print axioms NLS.KdV.HillProductEquationPatch.physicalSpectralCoreMap_negative
+#print axioms NLS.KdV.HillProductEquationPatch.isCompactOperator_physicalOnIndexJacobianDifference
+#print axioms NLS.KdV.HillProductEquationPatch.physicalMeanZeroSpectralCoreMap
+#print axioms NLS.KdV.HillProductEquationPatch.physicalMeanZeroSpectralCoreMap_coe
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_physicalMeanZeroSpectralCoreMap
+#print axioms NLS.KdV.HillProductEquationPatch.fderiv_physicalMeanZeroSpectralCoreMap_eq_comp
+#print axioms NLS.KdV.HillProductEquationPatch.isCompactOperator_physicalMeanZeroOnIndexJacobianDifference
+#print axioms NLS.KdV.HillProductEquationPatch.physicalMeanZeroSpectralCoreRemainder
+#print axioms NLS.KdV.HillProductEquationPatch.isCompactOperator_physicalMeanZeroSpectralCoreRemainder
+#print axioms NLS.KdV.exists_hillSpectralCoreNeighborhood
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_spectral_core_reduction
