@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhaseMotion
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianInterpolation
 import NLS.Articles.MKdVNLSHierarchies.OriginalDirichletCharacteristic
 import NLS.Articles.MKdVNLSHierarchies.OriginalDivisorActionMotion
@@ -3458,11 +3459,75 @@ private def mkdvNLSAuditPrefixes52 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.IndependentAbelianInterpolation,
 ]
 
+private def mkdvNLSAuditPrefixes53 : Array Lean.Name := #[
+  `NLS.KdV.hillGapRootBox_eq_of_labels,
+  `NLS.KdV.hillRealGapCenter_eq_of_labels,
+  `NLS.KdV.hillRealGapHalfLength_eq_of_labels,
+  `NLS.KdV.hillRealGapCollar_eq_of_labels,
+  `NLS.KdV.hillEnergyCanonicalRootProduct_eq_of_labels,
+  `NLS.KdV.hillDeflatedEnergyCanonicalRoot_eq_of_labels,
+  `NLS.KdV.hillAbelianCandidatePeriod_eq_of_labels,
+  `NLS.KdV.hillAbelianSelectedGlobalPsi_eq_of_labels,
+  `NLS.KdV.hillAbelianCosineDifferential_eq_of_labels,
+  `NLS.KdV.hillAbelianCosinePrimitive_eq_of_labels,
+  `NLS.KdV.hillRegularAbelianPrimitive_eq_of_labels,
+  `_private.NLS.KdV.HillIsospectralAbelianData,
+  `NLS.MKdV.miuraHillLabels_eq_of_isospectral,
+  `NLS.MKdV.miuraNativeH1Source_eq_originalSource,
+  `NLS.MKdV.miuraNativeH1Source_actionFlow_isospectral,
+  `NLS.MKdV.miuraNativeHillLabels_actionFlow,
+  `NLS.MKdV.miuraNativeAbelianPsi_actionFlow,
+  `NLS.MKdV.miuraNativeAbelianPrimitive_actionFlow,
+  `_private.NLS.MKdV.MiuraActionFlowAbelianData,
+  `NLS.KdV.hasDerivAt_hillAbelianCosinePrimitive_real,
+  `_private.NLS.KdV.HillAbelianRealPrimitiveDerivative,
+  `NLS.KdV.hillFiniteAbelianPhase_eq_exp_terminal_primitives,
+  `_private.NLS.KdV.HillFiniteAbelianTerminalRepresentation,
+  `NLS.KdV.exists_differentiable_hillDirichlet_family_angle,
+  `_private.NLS.KdV.HillDirichletFamilyAngle,
+  `NLS.ComplexAnalysis.abelian_terminal_chain,
+  `_private.NLS.ComplexAnalysis.AbelianTerminalChainRule,
+  `NLS.KdV.hasDerivAt_hillAbelianPrimitive_isospectral_terminal,
+  `_private.NLS.KdV.HillIsospectralPrimitiveDerivative,
+  `NLS.KdV.hasDerivAt_hillFiniteAbelianPhase_isospectral_family,
+  `_private.NLS.KdV.HillIsospectralFinitePhaseDerivative,
+  `NLS.MKdV.miuraNativeHillActionCurve,
+  `NLS.MKdV.continuous_miuraNativeHillActionCurve,
+  `NLS.MKdV.differentiableAt_miuraNativeHillActionCoefficients,
+  `NLS.MKdV.miuraNativeHillActionCurve_labels,
+  `_private.NLS.MKdV.MiuraActionFlowHillCurve,
+  `NLS.MKdV.hasDerivAt_miuraFiniteAbelianPhase_actionFlow_interior,
+  `NLS.MKdV.hasDerivAt_miuraNativeFullAbelianPhase_actionFlow_finiteGap_interior,
+  `_private.NLS.MKdV.MiuraIndependentPhaseDerivative,
+  `NLS.KdV.hillAbelianSelectedGlobalPsi_closed_Dirichlet_eq_zero,
+  `_private.NLS.KdV.HillClosedDirichletAbelianValues,
+  `NLS.MKdV.miuraRotatedDirichletRoots_mem_periodicSegment,
+  `NLS.MKdV.miuraDirichletEnergy_ne_sq_on_rootDomain,
+  `_private.NLS.MKdV.MiuraDirichletContourExclusion,
+  `NLS.MKdV.miuraSelectedAbelianPsi_supported_filled_interpolation,
+  `NLS.MKdV.miuraSelectedAbelianPsi_supported_trace_contraction,
+  `_private.NLS.MKdV.MiuraSupportedAbelianTraceContraction,
+  `NLS.MKdV.miuraDirichletTraceKernel,
+  `NLS.MKdV.analyticAt_miuraDirichletTraceKernel,
+  `NLS.MKdV.miuraSupportedAbelian_original_action_circle_contraction,
+  `_private.NLS.MKdV.MiuraAbelianActionCircleContraction,
+  `NLS.MKdV.hasDerivAt_miuraNativeFullAbelianPhase_actionFlow_circle,
+  `_private.NLS.MKdV.MiuraIndependentPhaseActionCircle,
+  `NLS.Articles.MKdVNLSHierarchies.independent_Abelian_differential_complete_action_invariance,
+  `NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_finite_gap_derivative,
+  `NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_original_action_circle,
+  `_private.NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhaseMotion,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.independent_Abelian_differential_complete_action_invariance,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_finite_gap_derivative,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_original_action_circle,
+
     ``NLS.Articles.MKdVNLSHierarchies.independent_Abelian_finite_gap_Dirichlet_interpolation,
     ``NLS.Articles.MKdVNLSHierarchies.independent_Abelian_physical_root_normalization,
     ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_sheet_mass_normalization,

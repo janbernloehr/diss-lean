@@ -340,7 +340,10 @@
         "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_finite_gap_Dirichlet_interpolation",
         "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_physical_root_normalization",
         "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_sheet_mass_normalization",
-        "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_interior_trace_contraction"
+        "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_interior_trace_contraction",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_differential_complete_action_invariance",
+        "NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_finite_gap_derivative",
+        "NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_original_action_circle"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -511,9 +514,9 @@
     "remaining": "Independent original mKdV angle identification and final Theorem 4(iii) angle-sum factorization. Corrected all-order frequency comparison is complete."
   },
   "remaining_essential_dependencies": [
-    "Prove the actual action-flow derivative of the independently constructed finite-gap Abelian phase, using invariance of its spectral data along the physical flow. Finite scalar Dirichlet interpolation, the physical root comparison, and the original sheet/mass reduction are now proved. The interior trace contraction is exactly minus one half the normalized numerator. Evaluate the resulting actual frequency-circle period with all constants and orientations checked.",
-    "Complete the phase calculation through terminal divisors and closed contributing gaps, then pass finite-gap rotation to arbitrary support using the already checked full-phase continuity and native finite-support approximation. The new interpolation itself already includes every Dirichlet node and closed contributing gap; the trace-contraction statement still assumes a nonzero sheet at every retained node and evaluates away from those nodes.",
-    "The exp(+i*sum) independent phase is still not proved to have the source canonical orientation. The new contraction and root comparison fix intermediate signs, but do not yet constitute a canonical phase rotation law. Verify the final sign and conjugate the independently constructed phase if needed. Apply exists_opposite_unit_phase_action_factor only after the actual opposite flow law is proved. Final Theorem4iii remains incomplete; corrected Theorem3 and all earlier completed clauses stay complete."
+    "Evaluate the actual physical frequency-circle period integral z*psi(z^2)/R_ZS(z) as pi times the Kronecker delta, comparing the squared physical frequency contour with the independently normalized Hill energy contour. The actual full finite-gap phase derivative at interior contributing divisors is now proved with coefficient positive i/pi times this original contour period.",
+    "Extend the actual finite-gap phase calculation through terminal divisors and closed contributing gaps, then pass rotation to arbitrary support using the already checked full-phase continuity and native finite-support approximation. The new finite-gap derivative allows arbitrary finite gap support with holes, but requires nonzero sheet roots at every contributing index in that finite support.",
+    "Fix the source-canonical orientation of the independently constructed phase after evaluating its period. The checked exp(+i*sum) convention has positive i/pi in its generator; if the normalized period has its expected positive value, conjugate this independently spectral phase to obtain the opposite-flow phase. Instantiate exists_opposite_unit_phase_action_factor only after proving the actual opposite rotation on the full own-open domain. Final Theorem4iii remains incomplete; corrected Theorem3 and earlier completed clauses stay complete."
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -1572,6 +1575,23 @@
       "The trace contraction has explicit interior-sheet and noncoincident-energy hypotheses. It is not asserted as the full phase derivative at terminal divisors.",
       "Differentiation of the actual independent phase along the actual isospectral physical action flows and evaluation of the resulting action contour periods remain to be proved. The current phase canonical sign and its opposite rotation are still unproved.",
       "Theorem4iii final angle-sum factorization is incomplete. No spectral phase is defined from a negative NLS phase."
+    ]
+  },
+  "independent_Abelian_physical_phase_motion": {
+    "status": "proved_actual_isospectral_data_invariance_and_full_finite_gap_interior_action_circle_generator",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_differential_complete_action_invariance",
+      "NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_finite_gap_derivative",
+      "NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_original_action_circle"
+    ],
+    "domain": "For every integer s>=1, every original real Hs source, every positive physical action index j, every positive independent differential index n, and every real time. Spectral data invariance has arbitrary support. The derivative statements assume a finite set F of possibly open gaps, containing n-1, all gaps outside F closed, and nonzero original Dirichlet sheet roots at indices in F at the evaluated time. F need not be an initial segment; other gaps may be closed.",
+    "invariance": "Actual original source isospectrality fixes every original Hill periodic label. Uniqueness of the independent normalized entire differential then fixes the selected numerator; the cosine differential and regular primitive are invariant as well. No arbitrary-choice invariance is assumed.",
+    "chain_rule": "Compatible local real Dirichlet angle lifts represent the actual finite phase as exp(i*sum_F fullCosinePrimitive). Differentiation uses the actual Hill coefficient curve induced by the complete physical action flow, the checked scalar primitive FTC and the original Dirichlet energy velocities.",
+    "generator": "The actual full phase derivative at interior finite-gap divisors is (i/pi)*phase*integral_(original certified physical frequency circle) z*psi(z^2)/R_ZS(z). The positive sign is proved. The finite interpolation omits closed holes using actual vanishing numerator values. Every contour point avoids every actual Dirichlet energy, and analytic trace kernels justify exchanging the finite sum with the integral.",
+    "limits": [
+      "The contour period has not yet been evaluated as a Kronecker delta. This is an actual derivative identity, not yet a canonical rotation law.",
+      "Terminal-divisor continuation and passage of rotation to arbitrary support remain open. The full arbitrary-support phase itself and its continuity are already proved.",
+      "No final canonical orientation or Theorem4iii angle-sum factorization is claimed. The phase is independently spectral, never defined from a negative NLS phase."
     ]
   }
 }

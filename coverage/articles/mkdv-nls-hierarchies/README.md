@@ -39,9 +39,9 @@ physical-action rotation law and the resulting final factorization remain
 unproved. No full complex analytic phase extension is asserted.
 The original globally labeled Dirichlet energies now have their actual
 contour generator under every physical action, and their derivatives along
-complete native Hs action flows are proved at every time. The missing
-phase rotation still requires the independent sheet and normalized Abelian
-period calculation.
+complete native Hs action flows are proved at every time. The original independent sheet normalization is now proved. The missing
+phase rotation still requires the normalized Abelian action-circle period
+evaluation and terminal continuation.
 The actual scalar Dirichlet characteristic now has its exact indexed entire
 product, with locally uniform convergence of the product and its energy
 derivative even at zero. Its positive and negative source roots and residue
@@ -50,6 +50,9 @@ Finite-gap interpolation of the independently normalized Hill numerator is
 now proved at every complex energy, including divisor nodes and closed gaps.
 The independent canonical root agrees with the physical Miura root, and the
 original sheet/mass normalization gives an exact interior trace contraction.
+The independent full finite-gap phase now has its actual derivative on the
+physical action circle at interior contributing divisors, with coefficient
+positive i/pi. Its contour period evaluation and terminal continuation remain open.
 See the latest milestone below.
 
 Prepared 2026-11-02 against canonical commit
@@ -2585,3 +2588,48 @@ warnings as errors. All new NLS proofs retain autoImplicit=false and
 warnings as errors. No cached source or artifact is modified.
 
 Validation: all 1,061 article/shared NLS modules have validated private outputs. Eight new NLS modules and the aggregate compiled with autoImplicit=false and warnings as errors under default limits. One existing SHA-pinned mathlib Lagrange module compiled privately with its upstream implicit-variable conventions and warnings as errors. All 1,053 earlier mathematical source hashes and private compiled-output hashes match the frozen pushed 0a5080d baseline. The complete targeted audit passed for 9,327 declarations/auxiliaries and the combined audit for 54,212 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All 1,064 frozen source/checker/aggregate hashes and the additional pinned mathlib source hash match. Public inventory: 4,792 declarations (4,000 theorems and 792 definitions). All 3,186 old audit scopes are preserved and 45 new scopes added in one array of at most 64, for 53 blocks total. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source.
+
+## 2026-11-04 — actual independent full-phase generator under physical actions
+
+The independent Hill spectral data are now invariant along the original
+complete NLS action flows on every native real Hs class, s>=1, at every
+time and with arbitrary support. Actual source isospectrality fixes all
+Hill periodic labels. The independent normalized-differential uniqueness
+result then fixes the selected entire numerator, cosine differential and
+regular primitive; no invariance of an arbitrary choice is assumed.
+
+The full independent phase on an actual finite-gap orbit has its derivative
+at each time with interior contributing divisors. Any finite set F containing
+n-1 may contain the possibly open gaps; gaps outside F are closed. Holes and
+other closed gaps between contributing indices are allowed. Local real
+Dirichlet angle lifts, the actual cosine primitive FTC and the actual
+isospectral Hill coefficient curve give the chain rule
+
+`P' = i*P*sum_F psi(mu_k)*mu_k'/R_sheet(mu_k)`.
+
+Here the velocities are those of the globally labeled original Dirichlet
+energies along the physical action flow. Closed holes have zero normalized
+numerator values. Finite interpolation therefore gives the trace contraction
+on F without assuming all gaps below a cutoff are open. The actual physical
+frequency contour avoids every Dirichlet energy, including closed gaps;
+analytic trace kernels justify the finite sum/integral exchange. Substituting
+the checked actual energy velocities proves
+
+`P' = (i/pi)*P*integral_Cj z*psi(z^2)/R_ZS(z)`.
+
+Cj is the original certified Laurent action circle, not a prescribed divisor
+motion or an assumed Abelian normalization contour. The positive i/pi is
+proved for the current exp(+i*sum) convention. Its period still needs to be
+compared with the independent normalized Hill energy period. Once the sign
+is fixed, the independently constructed spectral phase may need conjugation
+to match the source's opposite-flow orientation.
+
+This milestone does not assert a Kronecker rotation law. Extending the
+calculation through terminal divisors and closed contributing gaps, passing
+rotation to arbitrary support, and applying the checked full-phase descent
+remain essential. Theorem 4(iii)'s final angle-sum factorization stays open.
+The article interface is IndependentAbelianPhaseMotion.lean. Sixteen new
+modules add 41 public declarations: 39 theorems and two definitions. All
+1,061 earlier mathematical sources are unchanged.
+
+Validation: all 1,077 article/shared NLS modules have validated private outputs. Sixteen new NLS modules and the aggregate compiled with autoImplicit=false and warnings as errors under default limits. The full audit was rerun after restoring one omitted old block reference; all 54 audit blocks are referenced exactly once. All 1,061 earlier mathematical source hashes and private compiled-output hashes match the frozen pushed d25fdb5 baseline. The complete targeted audit passed for 9,400 declarations/auxiliaries and the combined audit for 54,285 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All 1,080 frozen source/checker/aggregate hashes and the additional pinned mathlib source hash match. Public inventory: 4,833 declarations (4,039 theorems and 794 definitions). All 3,231 old audit scopes are preserved and 57 new scopes added in one array of at most 64, for 54 blocks total. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source.

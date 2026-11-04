@@ -1097,6 +1097,22 @@ modules = [
     'NLS/KdV/HillDirichletSheetNormalization.lean',
     'NLS/MKdV/MiuraFiniteAbelianTraceContraction.lean',
     'NLS/Articles/MKdVNLSHierarchies/IndependentAbelianInterpolation.lean',
+    'NLS/KdV/HillIsospectralAbelianData.lean',
+    'NLS/MKdV/MiuraActionFlowAbelianData.lean',
+    'NLS/KdV/HillAbelianRealPrimitiveDerivative.lean',
+    'NLS/KdV/HillFiniteAbelianTerminalRepresentation.lean',
+    'NLS/KdV/HillDirichletFamilyAngle.lean',
+    'NLS/ComplexAnalysis/AbelianTerminalChainRule.lean',
+    'NLS/KdV/HillIsospectralPrimitiveDerivative.lean',
+    'NLS/KdV/HillIsospectralFinitePhaseDerivative.lean',
+    'NLS/MKdV/MiuraActionFlowHillCurve.lean',
+    'NLS/MKdV/MiuraIndependentPhaseDerivative.lean',
+    'NLS/KdV/HillClosedDirichletAbelianValues.lean',
+    'NLS/MKdV/MiuraDirichletContourExclusion.lean',
+    'NLS/MKdV/MiuraSupportedAbelianTraceContraction.lean',
+    'NLS/MKdV/MiuraAbelianActionCircleContraction.lean',
+    'NLS/MKdV/MiuraIndependentPhaseActionCircle.lean',
+    'NLS/Articles/MKdVNLSHierarchies/IndependentAbelianPhaseMotion.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")
