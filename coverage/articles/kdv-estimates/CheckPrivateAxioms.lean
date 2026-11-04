@@ -933,6 +933,16 @@ import NLS.KdV.HillLabelledAbelianInterpolation
 import NLS.KdV.HillDirichletFlowResidues
 import NLS.KdV.HillAbelianInterpolationContours
 import NLS.KdV.HillAbelianActionResiduePeriods
+import NLS.FunctionalAnalysis.ClosedUnitCurvePeriodic
+import NLS.KdV.HillIsospectralGradientContours
+import NLS.ComplexAnalysis.TraceRootIsospectralDerivative
+import NLS.KdV.HillClosedCurveDirections
+import NLS.ComplexAnalysis.ImplicitRootIsospectralDerivative
+import NLS.KdV.HillContourHamiltonianSources
+import NLS.KdV.HillIsospectralAbelianPeriods
+import NLS.KdV.HillIsospectralMixedPeriods
+import NLS.KdV.HillIsospectralImplicitRoots
+import NLS.KdV.HillIsospectralNormalizedDifferentials
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1477,7 +1487,18 @@ run_cmd do
     ``NLS.ComplexAnalysis.exists_finite_zero_circle_sets,
     ``NLS.ComplexAnalysis.tendsto_simpleQuotientPrincipalParts_of_circle_decay,
     ``NLS.ComplexAnalysis.eventually_simpleQuotientPrincipalParts_error_on_ball,
-    ``NLS.ComplexAnalysis.zero_iff_mem_of_simple_zero_count]
+    ``NLS.ComplexAnalysis.zero_iff_mem_of_simple_zero_count,
+    ``NLS.FunctionalAnalysis.closedUnitCurveCircle,
+    ``NLS.FunctionalAnalysis.closedUnitCurvePeriodic,
+    ``NLS.FunctionalAnalysis.continuous_closedUnitCurvePeriodic,
+    ``NLS.FunctionalAnalysis.periodic_closedUnitCurvePeriodic,
+    ``NLS.FunctionalAnalysis.closedUnitCurvePeriodic_eq,
+    ``NLS.FunctionalAnalysis.closedUnitCurvePeriodTwo,
+    ``NLS.FunctionalAnalysis.closedUnitCurvePeriodTwo_coe,
+    ``NLS.FunctionalAnalysis.periodic_closedUnitCurvePeriodTwo,
+    ``NLS.ComplexAnalysis.traceRoot_fderiv_eq_zero_of_trace_kernel,
+    ``NLS.ComplexAnalysis.implicitRoot_fderiv_eq_zero_of_parameter_kernel,
+    ``NLS.ComplexAnalysis.joint_fderiv_eq_parameter_of_state_kernel]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

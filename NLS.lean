@@ -5856,3 +5856,13 @@ import NLS.KdV.HillLabelledAbelianInterpolation
 import NLS.KdV.HillDirichletFlowResidues
 import NLS.KdV.HillAbelianInterpolationContours
 import NLS.KdV.HillAbelianActionResiduePeriods
+import NLS.FunctionalAnalysis.ClosedUnitCurvePeriodic
+import NLS.KdV.HillIsospectralGradientContours
+import NLS.ComplexAnalysis.TraceRootIsospectralDerivative
+import NLS.KdV.HillClosedCurveDirections
+import NLS.ComplexAnalysis.ImplicitRootIsospectralDerivative
+import NLS.KdV.HillContourHamiltonianSources
+import NLS.KdV.HillIsospectralAbelianPeriods
+import NLS.KdV.HillIsospectralMixedPeriods
+import NLS.KdV.HillIsospectralImplicitRoots
+import NLS.KdV.HillIsospectralNormalizedDifferentials
