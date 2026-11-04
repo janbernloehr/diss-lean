@@ -732,6 +732,9 @@ import NLS.KdV.HillComplexWeightedActionTails
 import NLS.KdV.HillComplexWeightedActionSequence
 import NLS.KdV.HillRealActionAnalytic
 import NLS.KdV.HillFullWeightedActionAnalytic
+import NLS.KdV.HillReconstructionBounds
+import NLS.KdV.HillReconstructionBoundary
+import NLS.KdV.HillBoundaryCoordinates
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/

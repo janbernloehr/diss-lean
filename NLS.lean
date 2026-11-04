@@ -5655,3 +5655,6 @@ import NLS.KdV.HillComplexWeightedActionTails
 import NLS.KdV.HillComplexWeightedActionSequence
 import NLS.KdV.HillRealActionAnalytic
 import NLS.KdV.HillFullWeightedActionAnalytic
+import NLS.KdV.HillReconstructionBounds
+import NLS.KdV.HillReconstructionBoundary
+import NLS.KdV.HillBoundaryCoordinates
