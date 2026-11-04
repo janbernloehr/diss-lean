@@ -14003,9 +14003,262 @@
       "scope": "Defines the actual branch-independent physical Abelian phase from the Dirichlet gap cosine/sine and the actual infinite regular correction sum. Every sheeted terminal angle gives the same exponential. Proves unit norm on real open-selected-gap data, genuine locally analytic complex extensions with simultaneous trace- and normalized-contour-direction derivatives, universal trace derivative for every differentiable matching extension, and continuity throughout the real open-gap locus across terminal angle cuts. Other gaps may be closed; global Birkhoff/action identification remains open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "022362d6e01b09d5f9587d03a17df171969764e65affbc97d9b1555da1cfece0"
+    },
+    {
+      "path": "NLS/SequenceSpaces/UniformTailContinuity.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Unchanged canonical criterion that coordinatewise continuity plus locally uniform finite tails yields native lp norm continuity; strictly recompiled at default heartbeats.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "377bf1c7b5fab8fbbc134ed8deece65394b36a9020853fa7012a5ff3b8e97cb7"
+    },
+    {
+      "path": "NLS/KdV/HillDeflatedTraceCharts.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Byte-identical shared action-gap normalization dependency from articles/kdv-estimates at ba58180a96d3fa19baf3f732e7116dbbede8e81a; supplies the actual positive analytic action-gap ratio and its square-root prefactor at both open and closed real gaps. See SHARED_ACTION_PREFACTOR_IMPORT.json. ",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ab0224c77e1e5bcba4e8d6dcb6ea02ec7bab745774a51c9c17ce640c1edc321d"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricSineSquareCosineMean.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Byte-identical shared action-gap normalization dependency from articles/kdv-estimates at ba58180a96d3fa19baf3f732e7116dbbede8e81a; supplies the actual positive analytic action-gap ratio and its square-root prefactor at both open and closed real gaps. See SHARED_ACTION_PREFACTOR_IMPORT.json. ",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ceb76807ac73612713f04c9d84a46b01b14b77c454fda8926ddcad7a0225b974"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SineSquareCosineMoments.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Byte-identical shared action-gap normalization dependency from articles/kdv-estimates at ba58180a96d3fa19baf3f732e7116dbbede8e81a; supplies the actual positive analytic action-gap ratio and its square-root prefactor at both open and closed real gaps. See SHARED_ACTION_PREFACTOR_IMPORT.json. ",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e5dd21b2a6d05b9fd111a1c6e94fa4dcc625d2de0c3e7d4561e08677d209ee54"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticGapActionMoment.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Byte-identical shared action-gap normalization dependency from articles/kdv-estimates at ba58180a96d3fa19baf3f732e7116dbbede8e81a; supplies the actual positive analytic action-gap ratio and its square-root prefactor at both open and closed real gaps. See SHARED_ACTION_PREFACTOR_IMPORT.json. ",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "78bb98fe2091bedb91f0600dc41dcd0135f16a5d5af2b2fee29c302fc5d43e89"
+    },
+    {
+      "path": "NLS/KdV/HillActionGapFactor.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Byte-identical shared action-gap normalization dependency from articles/kdv-estimates at ba58180a96d3fa19baf3f732e7116dbbede8e81a; supplies the actual positive analytic action-gap ratio and its square-root prefactor at both open and closed real gaps. See SHARED_ACTION_PREFACTOR_IMPORT.json. ",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2b5529c1a73f642022b8367a37d23c05d4a600eae6444ebcd18ad89a840c9f75"
+    },
+    {
+      "path": "NLS/KdV/HillDeflatedTraceChi.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Byte-identical shared action-gap normalization dependency from articles/kdv-estimates at ba58180a96d3fa19baf3f732e7116dbbede8e81a; supplies the actual positive analytic action-gap ratio and its square-root prefactor at both open and closed real gaps. See SHARED_ACTION_PREFACTOR_IMPORT.json. ",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c552d667d6296e02a3a08a1f72acf12a1617a5a9c0c0f5448a8120081993f4fc"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricSineSquareCosineMeanLocal.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Byte-identical shared action-gap normalization dependency from articles/kdv-estimates at ba58180a96d3fa19baf3f732e7116dbbede8e81a; supplies the actual positive analytic action-gap ratio and its square-root prefactor at both open and closed real gaps. See SHARED_ACTION_PREFACTOR_IMPORT.json. ",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4dea39a2edddf808a3f255bc297d478a6f05a14ccb38fade40eb6f4469485a76"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticGapActionRatio.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Byte-identical shared action-gap normalization dependency from articles/kdv-estimates at ba58180a96d3fa19baf3f732e7116dbbede8e81a; supplies the actual positive analytic action-gap ratio and its square-root prefactor at both open and closed real gaps. See SHARED_ACTION_PREFACTOR_IMPORT.json. ",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b4d15ec36adf96179290dec1a216a2bbdf2274236e35598205f0c3d68a827738"
+    },
+    {
+      "path": "NLS/KdV/HillActionGapRatioAnalytic.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Byte-identical shared action-gap normalization dependency from articles/kdv-estimates at ba58180a96d3fa19baf3f732e7116dbbede8e81a; supplies the actual positive analytic action-gap ratio and its square-root prefactor at both open and closed real gaps. See SHARED_ACTION_PREFACTOR_IMPORT.json. ",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2291a4efa0c8ea4a61637e3f2a34cf122f88b716a6cd5d0072109109ed8204a2"
+    },
+    {
+      "path": "NLS/KdV/HillActionGapRatioAllBase.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Byte-identical shared action-gap normalization dependency from articles/kdv-estimates at ba58180a96d3fa19baf3f732e7116dbbede8e81a; supplies the actual positive analytic action-gap ratio and its square-root prefactor at both open and closed real gaps. See SHARED_ACTION_PREFACTOR_IMPORT.json. Actual local action-gap ratio has simultaneous nearby-real agreement at every real base, including a closed selected gap.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2675baeef34528d83aae75f88f51c17e34c60346882b835e84a5b9ccd738dba7"
+    },
+    {
+      "path": "NLS/KdV/HillActionGapPrefactor.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Byte-identical shared action-gap normalization dependency from articles/kdv-estimates at ba58180a96d3fa19baf3f732e7116dbbede8e81a; supplies the actual positive analytic action-gap ratio and its square-root prefactor at both open and closed real gaps. See SHARED_ACTION_PREFACTOR_IMPORT.json. The shared prefactor normalizes sqrt(2*I); the new complex Abelian coordinate prefactor divides it by sqrt(2).",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ed69b46903b44d5dfa17e11e26c14288b77c7dc8916836e6918f3081c61bde73"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianCoordinateFactor.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Defines actual scalar z_n=sqrt(I_n)P_n with the source complex normalization. Dividing the shared Cartesian action prefactor by sqrt(2) gives an exact gap-division-free factorization through every closed gap: z_n=K_n*(r_D(mu_n)/U_n(mu_n)-(mu_n-tau_n))*exp(i*S_n). Proves norm squared equals actual I_n and vanishing exactly at closed gaps.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "52463731e1443cd3e31b4c730bccd74357d56506a0dacc131a13ca53164a99a2"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianTerminalFactorAnalytic.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Constructs a genuine complex L2 analytic local extension of the actual terminal factor r_D/U-(mu-tau), with simultaneous nearby-real physical matching even through own-gap collapse. At a closed own gap its actual Gardner trace-direction derivative is zero at every complex energy, without dividing by a gap or sheet value.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7cec03d2b085eb0ab5d05b1ed001c9492a5af4d162551620b113d6e3bb38d74a"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianCoordinateAnalytic.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Proves genuine complex L2 analytic scalar coordinate extensions at every real source, including closed own gaps, by multiplying the actual analytic terminal, action-amplitude prefactor and infinite regular correction extensions. Proves scalar continuity on the entire real period-one L2 space and universal zero closed-gap Gardner derivative for every differentiable nearby-real matching extension. No full Banach-valued analyticity is asserted.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e9b2ae72511e4b445a579a416bbe52503fe0599b50cdb6c0861c456a876a2ee9"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianCoordinateSequence.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Constructs the literal signed actual Abelian sequence in the target weight w(2n)*(1+abs(n))^(1/2), proves weighted membership using actual action summability, zero mode, signed conjugation, and z_n*z_-n=I_n with the source normalization. Applies to actual real weighted L2 sources; canonicality and global inverse are not assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0855a5d5fddbc38158e35c1e5277b9ce3c801c6b9960f01047fda65a60137d0c"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertCoordinateContinuity.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Proves exact finite Fourier squared-norm splitting, Hilbert norm continuity from continuous scalar coordinates and continuous total squared norm, and the exact doubled positive squared-amplitude Parseval formula for signed symmetric sequences with zero mode.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6384ec156dd29e14e1b9fd83c2a9ada82438058332c9ee1cd3de1b9c73cf782d"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianCoordinateContinuity.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary physical coordinate construction and weighted norm continuity; actual action normalization (19)"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Uses locally uniform tails of the actual physical weighted actions to prove continuity of the summed squared coordinate amplitudes. Exact signed Parseval and the Hilbert criterion prove full native weighted norm continuity of the actual Abelian coordinate map at every real source, including arbitrary closed gaps. Exposes hillPhysicalAbelianMap with no supplied hypotheses and proves its continuity, signed reality and actual action identity. Full norm analyticity, canonicality, Fourier differential at zero, inverse and rough negative-regularity extension remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e83a5a6e3ed8d537d6e97654495d2728e625480e7519d3d9ea69f5fc59b3caa5"
     }
   ],
   "dependencies_needed": [
+    "Actual scalar Abelian coordinates now extend analytically through closed own gaps, and their literal signed sequence is constructed and continuous in the native weighted half-shift norm with z_n*z_-n=I_n. Next: identify actual action Hamiltonian directions, establish canonical Birkhoff orientation, full Banach analyticity and exact Fourier differential at zero, inverse and negative-regularity rough extension, then physical frequency identities (69)/(84), action descent and PDE realization. Scalar analyticity and real norm continuity alone do not prove full complex Banach analyticity.",
     "Identify the actual normalized coefficient contour tangents with the physical action Hamiltonian directions, orient the constructed physical Abelian phase relative to the canonical Birkhoff angle, construct the amplitude-weighted coordinates through collapsed own gaps, and prove the global action/Birkhoff/PDE realization. The raw infinite angle derivative and branch-independent open-gap phase are proved. Physical time orientation is corrected to the positive Fourier exponent.",
     "canonical zero/product identification, globally prescribed spectral-cycle compatibility and rough-space normalization; the local actual infinite entire family, convergent positive-index sums and every fixed frequency/energy contour period are constructed",
     "shared rough Hill/KdV spectral and Birkhoff foundations; global gap and canonical sheet normalization",
@@ -14035,15 +14288,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 8988,
-    "total_declarations_audited": 31527,
+    "candidate_declarations_audited": 9180,
+    "total_declarations_audited": 31737,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 970,
+    "selected_modules": 988,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -14070,7 +14323,8 @@
     "dirichlet_exterior_validation_sequence": "Prior strict validation of all 870 unchanged selected sources; strict dependency-order compilation of one byte-identical canonical sine-exterior helper and five new proof modules; then a fresh combined transitive axiom audit of all 876 selected modules. The reused helper precedes every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 876-module rebuild is claimed.",
     "dirichlet_interpolation_validation_sequence": "Prior strict validation of all 876 unchanged selected sources; strict dependency-order compilation of four byte-identical canonical pole/Cauchy helpers and four new proof modules; then a fresh combined transitive axiom audit of all 884 selected modules. The reused helpers precede every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 884-module rebuild is claimed.",
     "summed_abelian_angle_validation_sequence": "Prior strict validation of all 884 unchanged selected sources; strict dependency-order compilation of 75 byte-identical shared analytic correction dependencies; strict compilation of one byte-identical canonical holomorphic-limit helper and five new proof modules; then a fresh combined transitive axiom audit of all 965 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, all source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 965-module rebuild is claimed.",
-    "period_phase_validation_sequence": "Prior strict evidence for the 965-module baseline; all 960 unaffected source files and nineteen provenance records remain unchanged. Strict dependency-order rebuild of all six affected prior selected modules, including five changed source files, and all five new modules; then a fresh combined transitive axiom audit of all 970 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, frozen source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No full 970-module rebuild is claimed."
+    "period_phase_validation_sequence": "Prior strict evidence for the 965-module baseline; all 960 unaffected source files and nineteen provenance records remain unchanged. Strict dependency-order rebuild of all six affected prior selected modules, including five changed source files, and all five new modules; then a fresh combined transitive axiom audit of all 970 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, frozen source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No full 970-module rebuild is claimed.",
+    "abelian_coordinate_validation_sequence": "Prior strict evidence for all 970 unchanged selected baseline sources; strict dependency-order compilation of eleven byte-identical shared action-prefactor sources, one byte-identical canonical continuity criterion and six new proof modules; then a fresh combined transitive axiom audit of all 988 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1011 frozen source/checker/provenance hashes, 21 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 988-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -14309,5 +14563,6 @@
       "NLS.Articles.KdVKdV2Frequencies.hasDerivAt_coordinateFlow_positive_component"
     ],
     "physical_identification_status": "open; the generic coordinate-flow interface is corrected, but the actual spectral frequencies and physical Birkhoff evolution are not yet identified"
-  }
+  },
+  "abelian_coordinate_record": "ABELIAN_COORDINATES.md"
 }

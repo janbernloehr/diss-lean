@@ -1,3 +1,9 @@
+import NLS.KdV.HillAbelianCoordinateContinuity
+import NLS.KdV.HillAbelianCoordinateSequence
+import NLS.KdV.HillAbelianCoordinateAnalytic
+import NLS.KdV.HillAbelianTerminalFactorAnalytic
+import NLS.KdV.HillAbelianCoordinateFactor
+import NLS.KdV.HillActionGapPrefactor
 import NLS.KdV.HillAbelianPhase
 import NLS.Articles.KdVKdV2Frequencies.TimeOrientation
 import NLS.KdV.HillGardnerPeriodDirections
@@ -162,7 +168,9 @@ This deliberately imports specific modules, not the aggregate NLS library.
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let modules := #[`NLS.ComplexAnalysis.BanachHolomorphicLimit,
+  let modules := #[
+    `NLS.SequenceSpaces.UniformTailContinuity,
+    `NLS.ComplexAnalysis.BanachHolomorphicLimit,
     `NLS.ComplexAnalysis.RealLineIdentity,
     `NLS.ComplexAnalysis.RealFormIdentity,
     `NLS.ComplexAnalysis.ContinuousRealFormIdentity,
@@ -1122,7 +1130,33 @@ run_cmd do
     `NLS.KdV.HillSummedRegularCorrection,
     `NLS.ComplexAnalysis.NormalAnalyticSeries,
     `NLS.KdV.HillSummedRegularCorrectionAnalytic,
-    `NLS.KdV.HillGardnerClosedCorrection, `NLS.KdV.HillGardnerOpenCorrection, `NLS.ComplexAnalysis.NormalAnalyticSeriesDerivative, `NLS.KdV.HillGardnerSummedCorrection, `NLS.KdV.HillGardnerAbelianAngle, `NLS.Fourier.UnitCurveCoefficients, `NLS.KdV.HillGardnerEnergyContinuity, `NLS.KdV.HillGardnerPeriodDirections, `NLS.Articles.KdVKdV2Frequencies.TimeOrientation, `NLS.KdV.HillAbelianPhase]
+    `NLS.KdV.HillGardnerClosedCorrection,
+    `NLS.KdV.HillGardnerOpenCorrection,
+    `NLS.ComplexAnalysis.NormalAnalyticSeriesDerivative,
+    `NLS.KdV.HillGardnerSummedCorrection,
+    `NLS.KdV.HillGardnerAbelianAngle,
+    `NLS.Fourier.UnitCurveCoefficients,
+    `NLS.KdV.HillGardnerEnergyContinuity,
+    `NLS.KdV.HillGardnerPeriodDirections,
+    `NLS.Articles.KdVKdV2Frequencies.TimeOrientation,
+    `NLS.KdV.HillAbelianPhase,
+    `NLS.KdV.HillDeflatedTraceCharts,
+    `NLS.ComplexAnalysis.ParametricSineSquareCosineMean,
+    `NLS.ComplexAnalysis.SineSquareCosineMoments,
+    `NLS.ComplexAnalysis.QuadraticGapActionMoment,
+    `NLS.KdV.HillActionGapFactor,
+    `NLS.KdV.HillDeflatedTraceChi,
+    `NLS.ComplexAnalysis.ParametricSineSquareCosineMeanLocal,
+    `NLS.ComplexAnalysis.QuadraticGapActionRatio,
+    `NLS.KdV.HillActionGapRatioAnalytic,
+    `NLS.KdV.HillActionGapRatioAllBase,
+    `NLS.KdV.HillActionGapPrefactor,
+    `NLS.KdV.HillAbelianCoordinateFactor,
+    `NLS.KdV.HillAbelianTerminalFactorAnalytic,
+    `NLS.KdV.HillAbelianCoordinateAnalytic,
+    `NLS.KdV.HillAbelianCoordinateSequence,
+    `NLS.SequenceSpaces.HilbertCoordinateContinuity,
+    `NLS.KdV.HillAbelianCoordinateContinuity]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

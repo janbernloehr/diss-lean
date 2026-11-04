@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest physical Abelian phase, period duality and corrected time sign
+## Latest actual Abelian coordinates through closed gaps and weighted continuity
+
+The literal physical coordinates `z_n = sqrt(I_n) P_n` now have genuine complex L2 analytic scalar extensions at every real source, including where their own gap is closed. Their exact normalization is `abs(z_n)^2 = I_n`; they vanish precisely at closed gaps. The signed sequence lies in the actual weighted target `w(2n)*(1+abs(n))^(1/2)`, has zero mode and signed conjugation, and satisfies `z_n*z_-n=I_n`.
+
+`hillPhysicalAbelianMap` is constructed on the entire real weighted L2 source and is continuous in the full native weighted norm. The proof uses actual locally uniform action tails, continuous summed squared amplitudes and exact signed Parseval. See `ABELIAN_COORDINATES.md`. Full Banach analyticity, canonicality, the exact Fourier differential at zero, global inverse and rough negative-regularity realization remain open.
+
+Prior strict evidence for all 970 unchanged selected baseline sources; strict dependency-order compilation of eleven byte-identical shared action-prefactor sources, one byte-identical canonical continuity criterion and six new proof modules; then a fresh combined transitive axiom audit of all 988 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1011 frozen source/checker/provenance hashes, 21 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 988-module rebuild is claimed.
+
+Fresh audit: 9180 selected and 31737 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier physical Abelian phase, period duality and corrected time sign
 
 A branch-independent actual Abelian phase is constructed on every open selected gap, with unit norm on real data, local complex L2 analyticity, continuity across terminal angle cuts and exact trace/normalized-contour derivative formulas. The actual Fourier contour tangents have proved L2 norm integrability and exact period duality. See `ABELIAN_PHASE_PERIODS.md`.
 

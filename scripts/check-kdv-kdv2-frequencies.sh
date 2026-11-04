@@ -9,6 +9,7 @@ export MATHLIB_CACHE_DIR="${MATHLIB_CACHE_DIR:-/home/janbernloehr/Documents/Code
 article_build="$article_root/.lake/build/lib/lean"
 article_imports="$article_root/.lake/article-imports"
 modules=(
+  NLS/SequenceSpaces/UniformTailContinuity
   NLS/ComplexAnalysis/BanachHolomorphicLimit
   NLS/ComplexAnalysis/RealLineIdentity
   NLS/ComplexAnalysis/RealFormIdentity
@@ -978,7 +979,25 @@ modules=(
   NLS/KdV/HillGardnerEnergyContinuity
   NLS/KdV/HillGardnerPeriodDirections
   NLS/Articles/KdVKdV2Frequencies/TimeOrientation
-  NLS/KdV/HillAbelianPhase)
+  NLS/KdV/HillAbelianPhase
+  NLS/KdV/HillDeflatedTraceCharts
+  NLS/ComplexAnalysis/ParametricSineSquareCosineMean
+  NLS/ComplexAnalysis/SineSquareCosineMoments
+  NLS/ComplexAnalysis/QuadraticGapActionMoment
+  NLS/KdV/HillActionGapFactor
+  NLS/KdV/HillDeflatedTraceChi
+  NLS/ComplexAnalysis/ParametricSineSquareCosineMeanLocal
+  NLS/ComplexAnalysis/QuadraticGapActionRatio
+  NLS/KdV/HillActionGapRatioAnalytic
+  NLS/KdV/HillActionGapRatioAllBase
+  NLS/KdV/HillActionGapPrefactor
+  NLS/KdV/HillAbelianCoordinateFactor
+  NLS/KdV/HillAbelianTerminalFactorAnalytic
+  NLS/KdV/HillAbelianCoordinateAnalytic
+  NLS/KdV/HillAbelianCoordinateSequence
+  NLS/SequenceSpaces/HilbertCoordinateContinuity
+  NLS/KdV/HillAbelianCoordinateContinuity
+)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

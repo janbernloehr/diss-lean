@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest physical Abelian phase, period duality and corrected time sign
+## Latest actual Abelian coordinates through closed gaps and weighted continuity
+
+The literal physical coordinates `z_n = sqrt(I_n) P_n` now have genuine complex L2 analytic scalar extensions at every real source, including where their own gap is closed. Their exact normalization is `abs(z_n)^2 = I_n`; they vanish precisely at closed gaps. The signed sequence lies in the actual weighted target `w(2n)*(1+abs(n))^(1/2)`, has zero mode and signed conjugation, and satisfies `z_n*z_-n=I_n`.
+
+`hillPhysicalAbelianMap` is constructed on the entire real weighted L2 source and is continuous in the full native weighted norm. The proof uses actual locally uniform action tails, continuous summed squared amplitudes and exact signed Parseval. See `ABELIAN_COORDINATES.md`. Full Banach analyticity, canonicality, the exact Fourier differential at zero, global inverse and rough negative-regularity realization remain open.
+
+Prior strict evidence for all 970 unchanged selected baseline sources; strict dependency-order compilation of eleven byte-identical shared action-prefactor sources, one byte-identical canonical continuity criterion and six new proof modules; then a fresh combined transitive axiom audit of all 988 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1011 frozen source/checker/provenance hashes, 21 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 988-module rebuild is claimed.
+
+Fresh audit: 9180 selected and 31737 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier physical Abelian phase, period duality and corrected time sign
 
 A branch-independent actual Abelian phase is constructed on every open selected gap, with unit norm on real data, local complex L2 analyticity, continuity across terminal angle cuts and exact trace/normalized-contour derivative formulas. The actual Fourier contour tangents have proved L2 norm integrability and exact period duality. See `ABELIAN_PHASE_PERIODS.md`.
 
@@ -156,19 +166,19 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 970 selected modules compile with pinned **Lean 4.33.1**, commit
+All 988 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: prior 965-module strict evidence; all six affected
-prior selected modules and all five new modules strictly rebuilt in dependency
-order; then a fresh combined transitive axiom audit of all 970 selected modules:
+Validation output: prior 970-module strict evidence; all eighteen additions
+strictly compiled in dependency order; then a fresh combined transitive axiom
+audit of all 988 selected modules:
 
 ```text
-# Prior strict evidence: 965 baseline sources, including one historical recompilation
+# Prior strict evidence for 970 unchanged baseline sources
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -1135,7 +1145,6 @@ PASS NLS/KdV/HillGardnerOpenCorrection
 PASS NLS/ComplexAnalysis/NormalAnalyticSeriesDerivative
 PASS NLS/KdV/HillGardnerSummedCorrection
 PASS NLS/KdV/HillGardnerAbelianAngle
-# Final strict checks: six affected prior sources and five new proof modules
 PASS NLS/Dynamics/FixedTimePhaseObstruction
 PASS NLS/Articles/KdVKdV2Frequencies/SignedPhaseFlow
 PASS NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction
@@ -1147,12 +1156,31 @@ PASS NLS/KdV/HillGardnerEnergyContinuity
 PASS NLS/KdV/HillGardnerPeriodDirections
 PASS NLS/Articles/KdVKdV2Frequencies/TimeOrientation
 PASS NLS/KdV/HillAbelianPhase
-# Fresh combined transitive audit of all 970 selected modules
-Axiom audit passed: 8988 candidate declarations; 31527 declarations total.
+# Final strict checks: eleven shared imports, one canonical criterion and six new modules
+PASS NLS/SequenceSpaces/UniformTailContinuity
+PASS NLS/KdV/HillDeflatedTraceCharts
+PASS NLS/ComplexAnalysis/ParametricSineSquareCosineMean
+PASS NLS/ComplexAnalysis/SineSquareCosineMoments
+PASS NLS/ComplexAnalysis/QuadraticGapActionMoment
+PASS NLS/KdV/HillActionGapFactor
+PASS NLS/KdV/HillDeflatedTraceChi
+PASS NLS/ComplexAnalysis/ParametricSineSquareCosineMeanLocal
+PASS NLS/ComplexAnalysis/QuadraticGapActionRatio
+PASS NLS/KdV/HillActionGapRatioAnalytic
+PASS NLS/KdV/HillActionGapRatioAllBase
+PASS NLS/KdV/HillActionGapPrefactor
+PASS NLS/KdV/HillAbelianCoordinateFactor
+PASS NLS/KdV/HillAbelianTerminalFactorAnalytic
+PASS NLS/KdV/HillAbelianCoordinateAnalytic
+PASS NLS/KdV/HillAbelianCoordinateSequence
+PASS NLS/SequenceSpaces/HilbertCoordinateContinuity
+PASS NLS/KdV/HillAbelianCoordinateContinuity
+# Fresh combined transitive audit of all 988 selected modules
+Axiom audit passed: 9180 candidate declarations; 31737 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 970 selected modules (including generated and private declarations)
+the 988 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the

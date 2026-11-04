@@ -784,3 +784,14 @@ The physical PDE linearizations prove positive imaginary cubic/fifth-order Fouri
 Prior strict evidence for the 965-module baseline; all 960 unaffected source files and nineteen provenance records remain unchanged. Strict dependency-order rebuild of all six affected prior selected modules, including five changed source files, and all five new modules; then a fresh combined transitive axiom audit of all 970 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, frozen source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No full 970-module rebuild is claimed.
 
 Fresh audit: 8988 selected and 31527 imported NLS declarations, permitted axioms only. Physical action-gradient/canonical angle/Birkhoff identification and all eleven main theorem rows remain OPEN.
+
+
+## Latest actual Abelian coordinates through closed gaps and weighted continuity
+
+The literal physical coordinates `z_n = sqrt(I_n) P_n` now have genuine complex L2 analytic scalar extensions at every real source, including where their own gap is closed. Their exact normalization is `abs(z_n)^2 = I_n`; they vanish precisely at closed gaps. The signed sequence lies in the actual weighted target `w(2n)*(1+abs(n))^(1/2)`, has zero mode and signed conjugation, and satisfies `z_n*z_-n=I_n`.
+
+`hillPhysicalAbelianMap` is constructed on the entire real weighted L2 source and is continuous in the full native weighted norm. The proof uses actual locally uniform action tails, continuous summed squared amplitudes and exact signed Parseval. See `ABELIAN_COORDINATES.md`. Full Banach analyticity, canonicality, the exact Fourier differential at zero, global inverse and rough negative-regularity realization remain open.
+
+Prior strict evidence for all 970 unchanged selected baseline sources; strict dependency-order compilation of eleven byte-identical shared action-prefactor sources, one byte-identical canonical continuity criterion and six new proof modules; then a fresh combined transitive axiom audit of all 988 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1011 frozen source/checker/provenance hashes, 21 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 988-module rebuild is claimed.
+
+Fresh audit: 9180 selected and 31737 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.

@@ -1,0 +1,12 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "files": [
+    {
+      "path": "NLS/SequenceSpaces/UniformTailContinuity.lean",
+      "source_sha256": "377bf1c7b5fab8fbbc134ed8deece65394b36a9020853fa7012a5ff3b8e97cb7",
+      "local_sha256": "377bf1c7b5fab8fbbc134ed8deece65394b36a9020853fa7012a5ff3b8e97cb7",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "scope": "Unchanged canonical coordinatewise continuity plus locally uniform finite tails criterion, strictly recompiled with default heartbeats. Used with exact Hilbert norm splitting to prove native weighted norm continuity of the actual Abelian coordinate map."
+}
