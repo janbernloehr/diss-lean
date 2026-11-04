@@ -5623,3 +5623,9 @@ import NLS.KdV.HillCommonAnalyticCorrectionTail
 import NLS.ComplexAnalysis.NormalAnalyticSeries
 import NLS.KdV.HillSummedRegularCorrectionAnalytic
 import NLS.KdV.HillSpectralCartesianAnalytic
+import NLS.SequenceSpaces.HilbertCoordinateNormContinuity
+import NLS.KdV.HillWeightedSpectralSequence
+import NLS.KdV.HillWeightedSpectralContinuity
+import NLS.Articles.KdVEstimates.WeightedSpectralEstimate
+import NLS.KdV.HillHomogeneousSpectralSequence
+import NLS.Articles.KdVEstimates.IntegerSpectralEstimates

@@ -700,6 +700,12 @@ import NLS.KdV.HillCommonAnalyticCorrectionTail
 import NLS.ComplexAnalysis.NormalAnalyticSeries
 import NLS.KdV.HillSummedRegularCorrectionAnalytic
 import NLS.KdV.HillSpectralCartesianAnalytic
+import NLS.SequenceSpaces.HilbertCoordinateNormContinuity
+import NLS.KdV.HillWeightedSpectralSequence
+import NLS.KdV.HillWeightedSpectralContinuity
+import NLS.Articles.KdVEstimates.WeightedSpectralEstimate
+import NLS.KdV.HillHomogeneousSpectralSequence
+import NLS.Articles.KdVEstimates.IntegerSpectralEstimates
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1140,7 +1146,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.analyticOrder_indicator_eq_of_subset_equal_count,
     ``NLS.ComplexAnalysis.norm_two_root_factor_div_center_sq_sub_one_le,
     ``NLS.ComplexAnalysis.exists_bounded_analytic_parametric_quadratic_solution_of_zero_period,
-    ``NLS.ComplexAnalysis.analyticOnNhd_tsum_of_summable_uniform_bound]
+    ``NLS.ComplexAnalysis.analyticOnNhd_tsum_of_summable_uniform_bound,
+    ``NLS.SequenceSpaces.continuousAt_lp_two_of_coordinatewise_of_norm]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
