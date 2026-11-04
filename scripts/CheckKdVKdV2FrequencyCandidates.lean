@@ -1,3 +1,8 @@
+import NLS.KdV.HillSignedAbelianHamiltonianVariation
+import NLS.ComplexAnalysis.RealLineConjugateDerivative
+import NLS.KdV.HillRealActionHamiltonians
+import NLS.Fourier.UnitCurveConjugation
+import NLS.KdV.HillRealActionDifferential
 import NLS.KdV.HillActionCoordinateBrackets
 import NLS.KdV.HillWeakHamiltonianUniqueness
 import NLS.Fourier.UnitWaveCurves
@@ -407,6 +412,7 @@ run_cmd do
     `NLS.MKdV.QuasiHillZSComparison,
     `NLS.MKdV.QuasiHillJointAnalytic,
     `NLS.ComplexAnalysis.SourceDiscriminantPrimitive,
+    `NLS.ComplexAnalysis.LocalRealAxisDerivative,
     `NLS.ZakharovShabat.ContinuousPotentialSource,
     `NLS.ZakharovShabat.SourceCanonicalRootRealBand,
     `NLS.MKdV.QuasiHillSourcePrimitive,
@@ -1180,7 +1186,12 @@ run_cmd do
     `NLS.KdV.HillActionHamiltonianDirections,
     `NLS.Fourier.UnitWaveCurves,
     `NLS.KdV.HillWeakHamiltonianUniqueness,
-    `NLS.KdV.HillActionCoordinateBrackets]
+    `NLS.KdV.HillActionCoordinateBrackets,
+    `NLS.KdV.HillRealActionDifferential,
+    `NLS.Fourier.UnitCurveConjugation,
+    `NLS.KdV.HillRealActionHamiltonians,
+    `NLS.ComplexAnalysis.RealLineConjugateDerivative,
+    `NLS.KdV.HillSignedAbelianHamiltonianVariation]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

@@ -14457,9 +14457,100 @@
       "scope": "Uses the unique actual physical Hamiltonian direction to prove physical action involution and the universal mixed coordinate/action identity D z_n[X_(I_m)]=i*delta_mn*z_n at all real sources, including closed selected gaps. Constructs an actual analytic local real angle theta=-rawA on open selected gaps, proves its physical phase exp(-i theta), and proves D theta_n[X_(I_m)]=-delta_mn. Full angle-angle/coordinate-coordinate canonical brackets, real-field declaration and Birkhoff-map identification remain separate obligations.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "f89fd0d20f1c014047955f5018d9e54652e13bd62c907d5250358f0bb03aa841"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LocalRealAxisDerivative.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary real signed Birkhoff-coordinate Hamiltonian identities, bracket convention (3), action normalization (19)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Unchanged canonical derivative reality from local real-axis values, strictly compiled at default heartbeats. Applied to genuine physical real affine source curves to determine the actual action differential on real directions.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0f4d4a83d20f64cf0030259dd2daf745d06b2e342cec458c2f0427d5ba6c1985"
+    },
+    {
+      "path": "NLS/KdV/HillRealActionDifferential.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary real signed Birkhoff-coordinate Hamiltonian identities, bracket convention (3), action normalization (19)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Promotes both formerly private real-action differential proofs. The actual action differential takes every real period-one direction to a real scalar; its complexification commutes with conjugate Fourier reflection on the entire period-one tangent space. Uses actual nearby-real physical action matching and actual real affine source curves, not coefficientwise reality or an abstract real action model.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5d2bbfe71a1adc27be0389167e820bb6e690a1f53bc2c3ceccbd68169b140489"
+    },
+    {
+      "path": "NLS/Fourier/UnitCurveConjugation.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary real signed Birkhoff-coordinate Hamiltonian identities, bracket convention (3), action normalization (19)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Proves actual bounded unit-interval Fourier curve analysis intertwines physical conjugation with conjugate reflection, and that this involution commutes with the canonical even insertion. Proves conjugation reverses the actual unit-wave curve and its normalized real derivative. These are exact physical Fourier identities, including zero and negative modes.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3cf06e5f4fdfa0ee019c76070325284657f5737bfc174eae43e8ca9e3b36e492"
+    },
+    {
+      "path": "NLS/KdV/HillRealActionHamiltonians.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary real signed Birkhoff-coordinate Hamiltonian identities, bracket convention (3), action normalization (19)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Uses the actual action differential conjugacy and the proved weak Hamiltonian wave tests to prove every actual action Hamiltonian vector is a real physical direction. In particular every literal normalized contour tangent Y_m has conjugate Fourier symmetry, even support and zero mean, at all real sources including arbitrary closed selected gaps. No reality of the vector is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b42da09d04c19d31ac862714d63ee9f68d1cb7b153b6beeee89d640f512b1aec"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealLineConjugateDerivative.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary real signed Birkhoff-coordinate Hamiltonian identities, bracket convention (3), action normalization (19)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Proves that conjugate values near the base along a real line determine conjugate complex source derivatives in that direction. Only differentiability at the base and actual nearby line agreement are required; no off-line reflection identity is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8ff0b7e3af7f2765e4e74564f1c4468a49b8ffb24e9602413320e104c117f641"
+    },
+    {
+      "path": "NLS/KdV/HillSignedAbelianHamiltonianVariation.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary real signed Birkhoff-coordinate Hamiltonian identities, bracket convention (3), action normalization (19)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Pulls nearby-real conjugate physical matching through genuine real affine source curves to prove the universal conjugate derivative identity on every real period-one direction. Constructs actual complex differentiable negative-coordinate matching germs through closed gaps by conjugating the positive extension and physical source involution. Proves universal negative-mode derivative -i*delta_mn*conj(z_n) along the actual real action Hamiltonian vector, complementing the positive-mode +i law. No negative-germ power-series analyticity or full Banach-valued analyticity is claimed here.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "05a1ac9201f3f9368388648dd61017a85934e95a3819ae2ef8aa830adc47d362"
     }
   ],
   "dependencies_needed": [
+    "Actual action Hamiltonian vectors are NOW proved real in the physical conjugate-Fourier sense at every real source, including closed gaps. Actual real action differentials commute with conjugate reflection. Genuine complex differentiable negative-coordinate physical matching germs and universal opposite signed infinitesimal action laws are proved. Remaining: full negative-germ power-series analyticity, canonical coordinate/angle brackets, Fourier differential at zero, full Banach analytic map/inverse/rough W compatibility and actual Hamiltonian frequency69/84/PDE identities. All main theorem conclusions remain open.",
     "The actual contour tangent Y_m is NOW proved to be the unique period-one mean-zero physical weak Gardner Hamiltonian vector of the actual action I_m, through actual Fourier/L2 test pairings, integration by parts and separating wave tests. Actual actions commute, and all-gap mixed D z_n[X_(I_m)]=i*delta_mn*z_n is proved. Local actual phase has action-conjugate theta=-rawA with exp(-i theta) and derivative -delta_mn. Next: explicit reality and further canonical coordinate/angle brackets, exact Fourier differential at zero, full Banach analytic map/inverse/rough compatibility and actual Hamiltonian frequency/PDE identities. All main conclusions remain open.",
     "Actual physical actions now have genuine locally complex analytic fixed-contour extensions at every real source including closed selected gaps, with universal derivative -1/pi integral(DDelta[h]/R) on period-one directions. Every actual coordinate now obeys the all-gap trace and normalized-contour infinitesimal rotation identities. Next identify the contour tangent Y_m as the physical action Gardner Hamiltonian vector via actual gradient/Fourier/spatial derivative pairings; then canonical source orientation, Fourier differential at zero, full Banach analyticity/inverse/rough extension and physical frequency identities69/84 remain required.",
     "Actual scalar Abelian coordinates now extend analytically through closed own gaps, and their literal signed sequence is constructed and continuous in the native weighted half-shift norm with z_n*z_-n=I_n. Next: identify actual action Hamiltonian directions, establish canonical Birkhoff orientation, full Banach analyticity and exact Fourier differential at zero, inverse and negative-regularity rough extension, then physical frequency identities (69)/(84), action descent and PDE realization. Scalar analyticity and real norm continuity alone do not prove full complex Banach analyticity.",
@@ -14492,15 +14583,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 9274,
-    "total_declarations_audited": 31820,
+    "candidate_declarations_audited": 9295,
+    "total_declarations_audited": 31840,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1002,
+    "selected_modules": 1008,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -14530,7 +14621,8 @@
     "period_phase_validation_sequence": "Prior strict evidence for the 965-module baseline; all 960 unaffected source files and nineteen provenance records remain unchanged. Strict dependency-order rebuild of all six affected prior selected modules, including five changed source files, and all five new modules; then a fresh combined transitive axiom audit of all 970 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, frozen source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No full 970-module rebuild is claimed.",
     "abelian_coordinate_validation_sequence": "Prior strict evidence for all 970 unchanged selected baseline sources; strict dependency-order compilation of eleven byte-identical shared action-prefactor sources, one byte-identical canonical continuity criterion and six new proof modules; then a fresh combined transitive axiom audit of all 988 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1011 frozen source/checker/provenance hashes, 21 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 988-module rebuild is claimed.",
     "action_variation_validation_sequence": "Prior strict evidence for all 988 unchanged selected baseline sources; strict dependency-order compilation of three byte-identical canonical calculus helpers and five new proof modules; then a fresh combined transitive axiom audit of all 996 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1020 frozen source/checker/provenance hashes, 22 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 996-module rebuild is claimed.",
-    "hamiltonian_identification_validation_sequence": "Prior strict evidence for all 996 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical wave calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1002 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1027 frozen source/checker/provenance hashes, 23 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1002-module rebuild is claimed."
+    "hamiltonian_identification_validation_sequence": "Prior strict evidence for all 996 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical wave calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1002 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1027 frozen source/checker/provenance hashes, 23 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1002-module rebuild is claimed.",
+    "real_signed_hamiltonian_validation_sequence": "Prior strict evidence for all 1002 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical real-axis calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1008 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1034 frozen source/checker/provenance hashes, 24 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1008-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -14772,5 +14864,6 @@
   },
   "abelian_coordinate_record": "ABELIAN_COORDINATES.md",
   "action_variation_record": "ACTION_COORDINATE_VARIATION.md",
-  "hamiltonian_identification_record": "PHYSICAL_ACTION_HAMILTONIANS.md"
+  "hamiltonian_identification_record": "PHYSICAL_ACTION_HAMILTONIANS.md",
+  "real_signed_hamiltonian_record": "REAL_SIGNED_ACTION_FIELDS.md"
 }

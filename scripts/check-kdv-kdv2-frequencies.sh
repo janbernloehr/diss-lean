@@ -237,6 +237,7 @@ modules=(
   NLS/MKdV/QuasiHillZSComparison
   NLS/MKdV/QuasiHillJointAnalytic
   NLS/ComplexAnalysis/SourceDiscriminantPrimitive
+  NLS/ComplexAnalysis/LocalRealAxisDerivative
   NLS/ZakharovShabat/ContinuousPotentialSource
   NLS/ZakharovShabat/SourceCanonicalRootRealBand
   NLS/MKdV/QuasiHillSourcePrimitive
@@ -1011,6 +1012,11 @@ modules=(
   NLS/Fourier/UnitWaveCurves
   NLS/KdV/HillWeakHamiltonianUniqueness
   NLS/KdV/HillActionCoordinateBrackets
+  NLS/KdV/HillRealActionDifferential
+  NLS/Fourier/UnitCurveConjugation
+  NLS/KdV/HillRealActionHamiltonians
+  NLS/ComplexAnalysis/RealLineConjugateDerivative
+  NLS/KdV/HillSignedAbelianHamiltonianVariation
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

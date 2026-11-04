@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest unique physical action Hamiltonians and mixed coordinate identities
+## Latest real action fields and negative-mode physical variation
+
+The actual physical action Hamiltonian vector is now proved real in the conjugate Fourier sense, with no gap-opening assumption. The proof uses actual real-source action differentials, physical Fourier conjugation, verified wave tests and the physical weak Hamiltonian identity. Every weak Hamiltonian vector matching the actual action has that real symmetry; no vector reality is supplied as a hypothesis.
+
+The negative physical coordinates have genuine complex differentiable matching germs through every closed selected gap, and every differentiable matching extension obeys `D z_-n[X_(I_m)] = -i delta_mn z_-n`. Together with the proved positive-mode law, the actual infinitesimal action dynamics has the full signed physical orientation. No full power-series analyticity of the negative germs or Banach-valued map is asserted by this step. See `REAL_SIGNED_ACTION_FIELDS.md`.
+
+Prior strict evidence for all 1002 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical real-axis calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1008 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1034 frozen source/checker/provenance hashes, 24 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1008-module rebuild is claimed.
+
+Fresh audit: 9295 selected and 31840 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier unique physical action Hamiltonians and mixed coordinate identities
 
 The actual normalized contour tangent `Y_m` now satisfies the physical Gardner weak identity against every periodic AC test with continuous periodic derivative. Its bounded test pairing uses the actual source-to-physical L2 map. Verified unit Fourier waves and their actual derivatives separate the physical tangent space, so `Y_m` is the unique period-one mean-zero weak Hamiltonian vector of the actual action, including at a closed selected gap.
 

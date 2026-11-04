@@ -1,0 +1,12 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/LocalRealAxisDerivative.lean",
+      "source_sha256": "0f4d4a83d20f64cf0030259dd2daf745d06b2e342cec458c2f0427d5ba6c1985",
+      "local_sha256": "0f4d4a83d20f64cf0030259dd2daf745d06b2e342cec458c2f0427d5ba6c1985",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "scope": "Unchanged canonical reality of a complex derivative from locally real real-axis values. Strictly compiled at default heartbeats; actual physical real affine curves use it to prove real action differentials and conjugate-reflection compatibility."
+}

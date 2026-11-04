@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest unique physical action Hamiltonians and mixed coordinate identities
+## Latest real action fields and negative-mode physical variation
+
+The actual physical action Hamiltonian vector is now proved real in the conjugate Fourier sense, with no gap-opening assumption. The proof uses actual real-source action differentials, physical Fourier conjugation, verified wave tests and the physical weak Hamiltonian identity. Every weak Hamiltonian vector matching the actual action has that real symmetry; no vector reality is supplied as a hypothesis.
+
+The negative physical coordinates have genuine complex differentiable matching germs through every closed selected gap, and every differentiable matching extension obeys `D z_-n[X_(I_m)] = -i delta_mn z_-n`. Together with the proved positive-mode law, the actual infinitesimal action dynamics has the full signed physical orientation. No full power-series analyticity of the negative germs or Banach-valued map is asserted by this step. See `REAL_SIGNED_ACTION_FIELDS.md`.
+
+Prior strict evidence for all 1002 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical real-axis calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1008 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1034 frozen source/checker/provenance hashes, 24 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1008-module rebuild is claimed.
+
+Fresh audit: 9295 selected and 31840 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier unique physical action Hamiltonians and mixed coordinate identities
 
 The actual normalized contour tangent `Y_m` now satisfies the physical Gardner weak identity against every periodic AC test with continuous periodic derivative. Its bounded test pairing uses the actual source-to-physical L2 map. Verified unit Fourier waves and their actual derivatives separate the physical tangent space, so `Y_m` is the unique period-one mean-zero weak Hamiltonian vector of the actual action, including at a closed selected gap.
 
@@ -186,19 +196,19 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1002 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1008 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: prior 996-module strict evidence; all six additions
+Validation output: prior 1002-module strict evidence; all six additions
 strictly compiled in dependency order; then a fresh combined transitive axiom
-audit of all 1002 selected modules:
+audit of all 1008 selected modules:
 
 ```text
-# Prior strict evidence for 996 unchanged baseline sources
+# Prior strict evidence for 1002 unchanged baseline sources
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -1202,19 +1212,25 @@ PASS NLS/ComplexAnalysis/TraceActionVariation
 PASS NLS/KdV/HillLocalContourAction
 PASS NLS/KdV/HillActionSourceVariation
 PASS NLS/KdV/HillAbelianCoordinateVariation
-# Final strict checks: one unchanged canonical helper and five new modules
 PASS NLS/Fourier/AbsoluteContinuousCoefficients
 PASS NLS/KdV/HillPhysicalGradientPairing
 PASS NLS/KdV/HillActionHamiltonianDirections
 PASS NLS/Fourier/UnitWaveCurves
 PASS NLS/KdV/HillWeakHamiltonianUniqueness
 PASS NLS/KdV/HillActionCoordinateBrackets
-# Fresh combined transitive audit of all 1002 selected modules
-Axiom audit passed: 9274 candidate declarations; 31820 declarations total.
+# Final strict checks: one unchanged canonical helper and five new modules
+PASS NLS/ComplexAnalysis/LocalRealAxisDerivative
+PASS NLS/KdV/HillRealActionDifferential
+PASS NLS/Fourier/UnitCurveConjugation
+PASS NLS/KdV/HillRealActionHamiltonians
+PASS NLS/ComplexAnalysis/RealLineConjugateDerivative
+PASS NLS/KdV/HillSignedAbelianHamiltonianVariation
+# Fresh combined transitive audit of all 1008 selected modules
+Axiom audit passed: 9295 candidate declarations; 31840 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1002 selected modules (including generated and private declarations)
+the 1008 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
