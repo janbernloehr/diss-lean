@@ -1077,6 +1077,14 @@ modules = [
     'NLS.KdV.HillCommonZeroSequenceBalls',
     'NLS.KdV.HminusOneCanonicalHillZeroSequences',
     'NLS.Articles.KdVPseudomeasures.OriginalHillCommonAnalyticZeroSequences',
+    'NLS.KdV.HillCommonZeroSequenceStability',
+    'NLS.KdV.HillPeriodJacobianUniformJointLipschitz',
+    'NLS.KdV.HillPeriodJacobianUniformComplexInverse',
+    'NLS.KdV.HillUniformlyBoundedZeroSequenceDomain',
+    'NLS.KdV.HillCommonZeroQuotientLowerBound',
+    'NLS.KdV.HillCommonZeroQuotientUpperBound',
+    'NLS.KdV.HillCanonicalZeroSequencePeriods',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillUniformZeroSequenceBounds',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
