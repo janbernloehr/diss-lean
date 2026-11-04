@@ -1067,6 +1067,16 @@ import NLS.KdV.HillCanonicalEnergyMidpoints
 import NLS.KdV.HillActualZeroUniformEnergyGapOffset
 import NLS.KdV.HillUniformEnergyGapOffsetDomain
 import NLS.Articles.KdVPseudomeasures.OriginalHillFineEnergyZeroOffsets
+import NLS.KdV.HillEnergyProductComplexZeros
+import NLS.KdV.HillCanonicalZeroProducts
+import NLS.KdV.HillComplexProductCrossIdentity
+import NLS.KdV.HillCanonicalComplexProductScalar
+import NLS.KdV.HillComplexProductConvergence
+import NLS.KdV.HillEnergyProductSimpleComplexZeros
+import NLS.KdV.HillPlacedEnergySequenceInjective
+import NLS.KdV.HillCommonSimpleComplexZeroDomain
+import NLS.KdV.HillCanonicalSequencePairRootCompatibility
+import NLS.Articles.KdVPseudomeasures.OriginalHillComplexProducts
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6952,3 +6962,53 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillFineEnergyZeroOffsets
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_common_complex_fine_zero_offset_domain
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_fine_zero_offset_bound
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_filled_energy_midpoint_analytic
+#print axioms NLS.KdV.displacedRoots_hillEnergyProductEmbedding_positive
+#print axioms NLS.KdV.hillEnergySequenceProduct_ne_zero_of_off_roots
+#print axioms NLS.KdV.hillEnergySequenceProduct_eq_zero_iff
+#print axioms NLS.KdV.exists_hillEnergySequenceProduct_ne_zero
+#print axioms NLS.KdV.hillEnergySequenceProduct_energy_ne_zero
+#print axioms NLS.KdV.hillHminusCanonicalZeroProduct
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalZeroProduct
+#print axioms NLS.KdV.hillHminusCanonicalZeroProduct_real
+#print axioms NLS.KdV.tendstoLocallyUniformlyOn_hillEnergySequencePartialProduct
+#print axioms NLS.KdV.tendstoLocallyUniformlyOn_hillHminusCanonicalZeroProduct
+#print axioms NLS.KdV.hillHminusCanonicalPsi_product_cross_identity
+#print axioms NLS.KdV.exists_unique_hillHminusCanonicalPsi_complex_product_scalar
+#print axioms NLS.KdV.hillHminusCanonicalPsiProductScalar
+#print axioms NLS.KdV.hillHminusCanonicalPsi_eq_complex_scalar_mul_product
+#print axioms NLS.KdV.hillHminusCanonicalPsiProductScalar_ne_zero
+#print axioms NLS.KdV.hillHminusCanonicalPsiProductScalar_unique
+#print axioms NLS.KdV.hillHminusCanonicalPsiProductScalar_eq_ratio
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalPsiProductScalar
+#print axioms NLS.KdV.hillHminusCanonicalPsiProductScalar_real
+#print axioms NLS.KdV.hillHminusCanonicalPsi_complex_zero_iff
+#print axioms NLS.KdV.hillHminusCanonicalPsi_complex_product_convergence
+#print axioms NLS.KdV.hillHminusCanonicalPsi_complex_product_energy_convergence
+#print axioms NLS.KdV.analyticAt_hillEnergySequencePartialProduct
+#print axioms NLS.KdV.hillHminusCanonicalPsi_complex_product_deriv_convergence
+#print axioms NLS.KdV.hillHminusCanonicalPsi_energy_deriv_eq_scalar_mul_product
+#print axioms NLS.KdV.hillEnergyProductCoordinateDerivative_ne_zero_of_injective
+#print axioms NLS.KdV.hillEnergySequenceProduct_energy_deriv_ne_zero_of_injective
+#print axioms NLS.KdV.HillProductEquationPatch.placed_energySequence_injective
+#print axioms NLS.KdV.HillProductEquationPatch.actual_complex_zero_energySequence_injective
+#print axioms NLS.KdV.HillHminusSimpleZeroSequenceBall.source
+#print axioms NLS.KdV.HillHminusSimpleZeroSequenceBall.source_open
+#print axioms NLS.KdV.exists_hillHminusSimpleZeroSequenceBall
+#print axioms NLS.KdV.hillHminusSimpleZeroSequenceDomain
+#print axioms NLS.KdV.isOpen_hillHminusSimpleZeroSequenceDomain
+#print axioms NLS.KdV.hillHminusSimpleZeroSequenceDomain_subset_fineDomain
+#print axioms NLS.KdV.hillHminusSimpleZeroSequenceDomain_subset_zeroDomain
+#print axioms NLS.KdV.real_mem_hillHminusSimpleZeroSequenceDomain
+#print axioms NLS.KdV.isConnected_hillHminusSimpleZeroSequenceDomain
+#print axioms NLS.KdV.hillHminusCanonicalEnergyZeros_injective_of_simpleDomain
+#print axioms NLS.KdV.hillHminusCanonicalPsi_complex_simple_zeros
+#print axioms NLS.KdV.hillHminusCanonicalPsi_complex_zero_iff_unique_index
+#print axioms NLS.KdV.hillHminusCanonicalPsi_omitted_midpoint_ne_zero
+#print axioms NLS.KdV.exists_locally_uniform_simpleDomain_squared_energy_gap_offset
+#print axioms NLS.KdV.HillHminusPsiZeroBall.canonical_sequence_energy_eq
+#print axioms NLS.KdV.hillHminusCanonicalZeroSequence_eq_retained_pair_root
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_common_complex_product_and_simple_zero_domain
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complex_literal_product_joint_convergence
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complex_literal_product_deriv_convergence
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complex_scalar_at_omitted_energy_midpoint
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complex_simple_domain_fine_zero_offset

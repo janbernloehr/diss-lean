@@ -1101,6 +1101,16 @@ modules = [
     'NLS.KdV.HillActualZeroUniformEnergyGapOffset',
     'NLS.KdV.HillUniformEnergyGapOffsetDomain',
     'NLS.Articles.KdVPseudomeasures.OriginalHillFineEnergyZeroOffsets',
+    'NLS.KdV.HillEnergyProductComplexZeros',
+    'NLS.KdV.HillCanonicalZeroProducts',
+    'NLS.KdV.HillComplexProductCrossIdentity',
+    'NLS.KdV.HillCanonicalComplexProductScalar',
+    'NLS.KdV.HillComplexProductConvergence',
+    'NLS.KdV.HillEnergyProductSimpleComplexZeros',
+    'NLS.KdV.HillPlacedEnergySequenceInjective',
+    'NLS.KdV.HillCommonSimpleComplexZeroDomain',
+    'NLS.KdV.HillCanonicalSequencePairRootCompatibility',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillComplexProducts',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
