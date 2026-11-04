@@ -5755,3 +5755,9 @@ import NLS.KdV.HillFreeFullPeriodSequence
 import NLS.KdV.HillProductPeriodParameterLimit
 import NLS.KdV.HillFreeFullPeriodMatching
 import NLS.KdV.HillFullComplexPeriodError
+import NLS.KdV.HillFullLowPeriodMap
+import NLS.KdV.HillHighProductPeriodMatching
+import NLS.KdV.HillFullMixedPeriodMap
+import NLS.KdV.HillFullMixedPeriodPhysical
+import NLS.KdV.HillFullMixedPeriodCompact
+import NLS.KdV.HillFullMixedSupportedFredholm
