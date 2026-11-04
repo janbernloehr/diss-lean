@@ -1189,6 +1189,17 @@ import NLS.SequenceSpaces.PositiveScalarInfinity
 import NLS.KdV.HillOffIndexBoundedSequence
 import NLS.KdV.HillAbelianUniformExponentialBound
 import NLS.Articles.KdVPseudomeasures.OriginalHillUniformAbelianCorrection
+import NLS.ZakharovShabat.SourceHigherActionOneNormalizedReal
+import NLS.KdV.HillMiuraNormalizedRatioReal
+import NLS.KdV.HillMiuraNormalizedRatioLocalData
+import NLS.KdV.HillCanonicalActionRatioReal
+import NLS.KdV.HillActionAmplitudeDomain
+import NLS.KdV.HillCanonicalActionAmplitude
+import NLS.KdV.HillActionAmplitudeUniformBound
+import NLS.KdV.HillActionAngleFactors
+import NLS.KdV.HillActionAngleCartesian
+import NLS.KdV.HillActionAngleUniformBound
+import NLS.Articles.KdVPseudomeasures.OriginalHillActionAngleAmplitude
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7619,3 +7630,52 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillUniformAbelianCorrection
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_infinite_correction_UNIFORM_ALL_n_bound
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_infinite_phase_multiplier_UNIFORM_ALL_n_bound
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complete_Abelian_UNIFORM_diagonal_multiplier_bound
+#print axioms NLS.ZakharovShabat.sourceHigherActionOneNormalized_im_eq_zero_of_realType
+#print axioms NLS.KdV.HillHminusMiuraGapBall.diracSum_im_eq_zero_of_real
+#print axioms NLS.KdV.HillHminusMiuraGapBall.normalizedRatio_real_positive
+#print axioms NLS.KdV.HillHminusMiuraGapBall.exists_local_normalizedRatio_data
+#print axioms NLS.KdV.hillHminusCanonicalActionRatio_real_positive
+#print axioms NLS.KdV.HillActionAmplitudeBall.source
+#print axioms NLS.KdV.HillActionAmplitudeBall.source_open
+#print axioms NLS.KdV.exists_hillActionAmplitudeBall
+#print axioms NLS.KdV.hillHminusActionAmplitudeDomain
+#print axioms NLS.KdV.isOpen_hillHminusActionAmplitudeDomain
+#print axioms NLS.KdV.real_mem_hillHminusActionAmplitudeDomain
+#print axioms NLS.KdV.hillHminusActionAmplitudeDomain_subset_ratio
+#print axioms NLS.KdV.hillHminusActionAmplitudeDomain_subset_bounded
+#print axioms NLS.KdV.hillHminusActionRatio_re_pos_on_amplitude_domain
+#print axioms NLS.KdV.isConnected_hillHminusActionAmplitudeDomain
+#print axioms NLS.KdV.hillHminusActionRatioSqrt
+#print axioms NLS.KdV.hillHminusCanonicalActionAmplitude
+#print axioms NLS.KdV.analyticOnNhd_hillHminusActionRatioSqrt
+#print axioms NLS.KdV.hillHminusActionRatioSqrt_sq
+#print axioms NLS.KdV.hillHminusActionRatioSqrt_real_positive
+#print axioms NLS.KdV.hillActionAmplitude_denominator_pos
+#print axioms NLS.KdV.hillActionAmplitude_denominator_sq
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalActionAmplitude
+#print axioms NLS.KdV.hillHminusCanonicalActionAmplitude_sq
+#print axioms NLS.KdV.hillHminusCanonicalActionAmplitude_real_positive
+#print axioms NLS.KdV.hillHminusCanonicalActionAmplitude_ne_zero
+#print axioms NLS.KdV.exists_local_uniform_hillHminusCanonicalActionAmplitude_bound
+#print axioms NLS.KdV.hillHminusActionAngleFactorPlus
+#print axioms NLS.KdV.hillHminusActionAngleFactorMinus
+#print axioms NLS.KdV.analyticOnNhd_hillHminusActionAngleFactorPlus
+#print axioms NLS.KdV.analyticOnNhd_hillHminusActionAngleFactorMinus
+#print axioms NLS.KdV.hillHminusActionAngleFactor_product
+#print axioms NLS.KdV.hillHminusActionAngleFactor_conjugate_of_real
+#print axioms NLS.KdV.norm_hillHminusActionAngleFactor_of_real
+#print axioms NLS.KdV.hillHminusActionAngleX
+#print axioms NLS.KdV.hillHminusActionAngleY
+#print axioms NLS.KdV.analyticOnNhd_hillHminusActionAngleX
+#print axioms NLS.KdV.analyticOnNhd_hillHminusActionAngleY
+#print axioms NLS.KdV.hillHminusActionAngle_factor_reconstruction
+#print axioms NLS.KdV.hillHminusActionAngle_sum_squares
+#print axioms NLS.KdV.hillHminusActionAngle_real
+#print axioms NLS.KdV.hillHminusActionAngle_zero_of_real_closed_gap
+#print axioms NLS.KdV.exists_local_uniform_actionAngle_diagonal_bound
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_action_amplitude_common_domain
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_action_amplitude_positive_real
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_scalar_action_angle_identity
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_scalar_action_angle_real_closed_gap
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_action_amplitude_UNIFORM_ALL_n_bound
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_action_angle_UNIFORM_diagonal_bound

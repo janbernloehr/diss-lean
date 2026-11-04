@@ -1223,6 +1223,17 @@ modules = [
     'NLS.KdV.HillOffIndexBoundedSequence',
     'NLS.KdV.HillAbelianUniformExponentialBound',
     'NLS.Articles.KdVPseudomeasures.OriginalHillUniformAbelianCorrection',
+    'NLS.ZakharovShabat.SourceHigherActionOneNormalizedReal',
+    'NLS.KdV.HillMiuraNormalizedRatioReal',
+    'NLS.KdV.HillMiuraNormalizedRatioLocalData',
+    'NLS.KdV.HillCanonicalActionRatioReal',
+    'NLS.KdV.HillActionAmplitudeDomain',
+    'NLS.KdV.HillCanonicalActionAmplitude',
+    'NLS.KdV.HillActionAmplitudeUniformBound',
+    'NLS.KdV.HillActionAngleFactors',
+    'NLS.KdV.HillActionAngleCartesian',
+    'NLS.KdV.HillActionAngleUniformBound',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillActionAngleAmplitude',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
