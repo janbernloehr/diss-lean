@@ -1258,6 +1258,15 @@ import NLS.KdV.HillNativeMidpointStationarity
 import NLS.KdV.HillNativeMidpointFirstVariation
 import NLS.KdV.HillNativeDirichletDisplacementFirstVariation
 import NLS.Articles.KdVPseudomeasures.OriginalHillNativeMidpointFirstVariation
+import NLS.ComplexAnalysis.NonrealContinuousIdentity
+import NLS.ComplexAnalysis.QuadraticEnergyDerivative
+import NLS.KdV.HillFreeShiftedMiuraSheets
+import NLS.KdV.HillFreeTraceEnergyDerivative
+import NLS.KdV.HillFreeMiuraGapData
+import NLS.KdV.HillFreeMiuraCriticalRatio
+import NLS.KdV.HillFreeFilledCriticalRatio
+import NLS.KdV.HillFreeCanonicalActionAmplitude
+import NLS.Articles.KdVPseudomeasures.OriginalHillFreeAmplitudeNormalization
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7984,3 +7993,30 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNativeMidpointFirstVariation
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_centered_Dirichlet_differential
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_centered_Dirichlet_differential_even_modes
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_mean_zero_trace_stationarity
+#print axioms NLS.ComplexAnalysis.ContinuousOn.eqOn_of_nonreal
+#print axioms NLS.ComplexAnalysis.deriv_comp_quadratic_shift
+#print axioms NLS.KdV.classicalHillFreeRoot_eq_sine
+#print axioms NLS.KdV.hillHminusContinuedRoot_zero_eq_freeRoot
+#print axioms NLS.KdV.sourceCanonicalRoot_shifted_free_miura
+#print axioms NLS.KdV.hillHminusDiscriminant_free_sq
+#print axioms NLS.KdV.deriv_hillHminusDiscriminant_free_sq
+#print axioms NLS.KdV.deriv_hillHminusDiscriminant_free_energy
+#print axioms NLS.KdV.HillHminusMiuraGapBall.freeFrequencyMidpoint
+#print axioms NLS.KdV.HillHminusMiuraGapBall.freeFrequencyMidpoint_pos
+#print axioms NLS.KdV.HillHminusMiuraGapBall.freeFrequencyMidpoint_real
+#print axioms NLS.KdV.HillHminusMiuraGapBall.freeDiracGap_zero
+#print axioms NLS.KdV.HillHminusMiuraGapBall.freeSourceGap_zero
+#print axioms NLS.KdV.HillHminusMiuraGapBall.freeFrequencyMidpoint_energy
+#print axioms NLS.KdV.shifted_square_im_ne_zero
+#print axioms NLS.KdV.deriv_discriminant_shifted_free_miura
+#print axioms NLS.KdV.sourceCriticalRootRatioExtension_shifted_free_nonreal
+#print axioms NLS.KdV.HillHminusMiuraGapBall.freeCriticalRootRatio_value
+#print axioms NLS.KdV.HillHminusMiuraGapBall.freeNormalizedSourceAction_value
+#print axioms NLS.KdV.HillHminusMiuraGapBall.freeHigherNormalizedSourceAction_value
+#print axioms NLS.KdV.HillHminusMiuraGapBall.normalizedRatio_zero
+#print axioms NLS.KdV.hillHminusCanonicalActionRatio_zero
+#print axioms NLS.KdV.hillHminusActionRatioSqrt_zero
+#print axioms NLS.KdV.hillHminusCanonicalActionAmplitude_zero
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_action_ratio
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_action_amplitude
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_normalized_Miura_ratio

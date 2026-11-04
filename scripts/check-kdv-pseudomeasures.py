@@ -1292,6 +1292,15 @@ modules = [
     'NLS.KdV.HillNativeMidpointFirstVariation',
     'NLS.KdV.HillNativeDirichletDisplacementFirstVariation',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNativeMidpointFirstVariation',
+    'NLS.ComplexAnalysis.NonrealContinuousIdentity',
+    'NLS.ComplexAnalysis.QuadraticEnergyDerivative',
+    'NLS.KdV.HillFreeShiftedMiuraSheets',
+    'NLS.KdV.HillFreeTraceEnergyDerivative',
+    'NLS.KdV.HillFreeMiuraGapData',
+    'NLS.KdV.HillFreeMiuraCriticalRatio',
+    'NLS.KdV.HillFreeFilledCriticalRatio',
+    'NLS.KdV.HillFreeCanonicalActionAmplitude',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFreeAmplitudeNormalization',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
