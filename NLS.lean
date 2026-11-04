@@ -5736,3 +5736,5 @@ import NLS.KdV.HillFixedGapFilledRootChart
 import NLS.KdV.HillFixedGapCenteredDirichletData
 import NLS.KdV.HillFixedGapUniformRegularCorrection
 import NLS.KdV.HillFiniteGapUniformRegularCorrections
+import NLS.SequenceSpaces.FiniteHeadOwnTail
+import NLS.KdV.HillUniformFullRegularPhase

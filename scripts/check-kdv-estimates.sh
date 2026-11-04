@@ -154,6 +154,7 @@ modules+=(NLS/KdV/HillCenteredQuadraticDirichletValue NLS/KdV/HillUniformOwnRegu
 modules+=(NLS/KdV/HillFixedGapNumeratorBounds NLS/KdV/HillFixedGapFilledRootChart)
 modules+=(NLS/KdV/HillFixedGapCenteredDirichletData)
 modules+=(NLS/KdV/HillFixedGapUniformRegularCorrection NLS/KdV/HillFiniteGapUniformRegularCorrections)
+modules+=(NLS/SequenceSpaces/FiniteHeadOwnTail NLS/KdV/HillUniformFullRegularPhase)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
