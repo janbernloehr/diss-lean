@@ -622,3 +622,8 @@ vector have proved genuine Hilbert membership; source joint Banach
 analyticity of these vectors and identification with the older weighted
 normalized family are separate steps. Details and remaining obligations
 are in `CANONICAL_NUMERATOR_REPRESENTATION.md`. All main rows remain OPEN.
+
+
+## Intrinsic critical labels and compatible complex germs
+
+`HillHminusOneCriticalChartIndependence.lean` identifies actual complete strictly ordered energy labels on every real chart overlap. `SimpleRootGermUniqueness.lean` proves continuous simple-root germ uniqueness from an actual moving divided difference. `HillHminusOneCriticalChartGerms.lean` proves nearby complex criticality and equality of the actual canonical chart germs. These support coherent spectral charts but do not identify the old weighted normalized family or verify any main theorem. See `CRITICAL_CHART_GERMS.md`.

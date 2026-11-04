@@ -17,6 +17,12 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest intrinsic critical labels and complex chart germs
+
+Actual real chart overlaps have identical complete positive critical labels. Each label also agrees on a full complex neighborhood: the actual frequency chain proves nearby criticality, and a reusable moving divided difference argument proves simple-root germ uniqueness. No real-type hypothesis is imposed on nearby complex inputs. Neighborhoods may depend on the index. See `CRITICAL_CHART_GERMS.md`.
+
+Current strict validation: 415 modules, 4842 selected declarations, 27002 imported NLS declarations; permitted axioms only. All 412 earlier selected Lean sources remain unchanged. Old-family and contour compatibility and every main theorem remain open.
+
 ## Latest full entire actual numerator Hilbert representation
 
 Derived critical quotient decay and actual Cauchy interpolation now give

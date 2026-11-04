@@ -1,4 +1,4 @@
-# Article-step validation — 2026-11-03
+# Article-step validation — 2026-11-04
 
 **Main-theorem status: not yet verified.** Actual KdV/KdV2 spectral frequencies
 and the physical Birkhoff flow identification remain open. The checked step
@@ -84,7 +84,7 @@ its existing Hilbert specialization and a transitive audit.
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 412 selected modules compile with pinned **Lean 4.33.1**, commit
+All 415 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -506,11 +506,14 @@ PASS NLS/ZakharovShabat/SourcePsiCriticalAbsoluteInterpolation
 PASS NLS/KdV/HillHminusOneMiuraEnergyPrincipalSeries
 PASS NLS/ComplexAnalysis/EntireCriticalHilbertBasis
 PASS NLS/KdV/CanonicalMiuraNumeratorRepresentation
-Axiom audit passed: 4837 candidate declarations; 26997 declarations total.
+PASS NLS/ComplexAnalysis/SimpleRootGermUniqueness
+PASS NLS/KdV/HillHminusOneCriticalChartIndependence
+PASS NLS/KdV/HillHminusOneCriticalChartGerms
+Axiom audit passed: 4842 candidate declarations; 27002 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 412 selected modules (including generated and private declarations)
+the 415 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1600,3 +1603,8 @@ the weighted normalized family, full coherent W, canonical leading scalar
 one, sharp source(54), physical frequency(69), action descent, weighted
 asymptotic/compact derivative claims and actual Birkhoff/PDE flows remain
 open. No main inventory row is closed.
+
+
+## Intrinsic critical labels and compatible complex germs
+
+See `CRITICAL_CHART_GERMS.md`. All 415 selected modules pass the serialized strict rebuild and combined transitive axiom audit: 4842 selected declarations, 27002 imported NLS declarations; permitted standard axioms only. All 412 previous selected Lean sources and seven provenance records remain unchanged. Actual critical labels agree at every real chart overlap; each positive label also has the same full complex germ. Neighborhoods may depend on the label. Old-family identification, contour normalization, physical frequency(69) and all main theorem rows remain open.

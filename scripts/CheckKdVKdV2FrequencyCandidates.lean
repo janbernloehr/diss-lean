@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneCriticalChartGerms
 import NLS.KdV.CanonicalMiuraNumeratorRepresentation
 import NLS.ComplexAnalysis.EntireCriticalHilbertBasis
 import NLS.KdV.HillHminusOneMiuraEnergyPrincipalSeries
@@ -505,7 +506,10 @@ run_cmd do
     `NLS.ZakharovShabat.SourcePsiCriticalAbsoluteInterpolation,
     `NLS.KdV.HillHminusOneMiuraEnergyPrincipalSeries,
     `NLS.ComplexAnalysis.EntireCriticalHilbertBasis,
-    `NLS.KdV.CanonicalMiuraNumeratorRepresentation]
+    `NLS.KdV.CanonicalMiuraNumeratorRepresentation,
+    `NLS.ComplexAnalysis.SimpleRootGermUniqueness,
+    `NLS.KdV.HillHminusOneCriticalChartIndependence,
+    `NLS.KdV.HillHminusOneCriticalChartGerms]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

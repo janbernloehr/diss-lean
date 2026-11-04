@@ -4,7 +4,7 @@
   "status": "not_yet_verified",
   "stage": "dedicated_worktree_validated_progress",
   "canonical_base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
-  "checked_date": "2026-11-03",
+  "checked_date": "2026-11-04",
   "journal_title": "On the wellposedness of the KdV/KdV2 equations and their frequency maps",
   "preprint_title": "On the extension of the frequency maps of the KdV and the KdV2 equations",
   "authors": [
@@ -6881,6 +6881,51 @@
       "scope": "Actual isolated high critical circles and derived exterior estimates prove |r_j|<=4/|j| at all sufficiently distant signed labels. A finite head and the verified punctured reciprocal sequence give genuine l2 membership without postulated residue bounds",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "65b1129fcc70c4ee594909d02e865e661cace4f6acfaa579751f5bfe1e28c7bd"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SimpleRootGermUniqueness.lean",
+      "source_labels": [
+        "Coherent critical charts: intrinsic labels and complex germs"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "A proved moving divided difference factorization identifies any continuous root germ through an analytic simple root with the reference analytic branch, on a full complex neighborhood.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "805ed647b21077b39d900cb59bd1a23f45f43a225f6030838acc5fd978fa95ff"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCriticalChartIndependence.lean",
+      "source_labels": [
+        "Coherent critical charts: intrinsic labels and complex germs"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Complete strictly increasing real critical energy enumerations give identical positive labels on every real overlap of actual Miura charts with real shifts and real-type sources. No cutoff or gap restriction.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "28044a472509d0665c47d13525601f7190dbedaea92bc710fa0da0b33c7eef12"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCriticalChartGerms.lean",
+      "source_labels": [
+        "Coherent critical charts: intrinsic labels and complex germs"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Canonical energy branches remain actual critical points on a full complex neighborhood of every real-type input. Actual simple-root uniqueness identifies every continuous critical germ through the same value, and hence canonical chart germs at every real overlap. Neighborhoods may depend on index.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e48b3b6bc33d6b868f15ed9dfdfe6821f1b730bf4fb893ae01d681d39104af55"
     }
   ],
   "dependencies_needed": [
@@ -6912,18 +6957,19 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4837,
-    "total_declarations_audited": 26997,
+    "candidate_declarations_audited": 4842,
+    "total_declarations_audited": 27002,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 412,
+    "selected_modules": 415,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
-    "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh."
+    "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
+    "critical_chart_germs_validation_sequence": "All 415 selected modules strictly rebuilt, followed by the combined transitive axiom audit. All 412 previous selected Lean sources unchanged; private fresh outputs. Full complex critical germ compatibility, not normalized-family identification."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -7064,5 +7110,6 @@
   "energy_root_chart_agreement_record": "ENERGY_ROOT_CHART_AGREEMENT.md",
   "continuation_root_agreement_record": "CONTINUATION_ROOT_AGREEMENT.md",
   "critical_energy_residue_record": "CRITICAL_ENERGY_RESIDUES.md",
-  "canonical_numerator_representation_record": "CANONICAL_NUMERATOR_REPRESENTATION.md"
+  "canonical_numerator_representation_record": "CANONICAL_NUMERATOR_REPRESENTATION.md",
+  "critical_chart_germs_record": "CRITICAL_CHART_GERMS.md"
 }
