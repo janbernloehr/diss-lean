@@ -5591,3 +5591,11 @@ import NLS.ComplexAnalysis.LogarithmicSingleRootMoment
 import NLS.KdV.HillScaledComplexZeroCounts
 import NLS.KdV.HillUniformComplexDirichlet
 import NLS.KdV.HillUniformDirichletPhysical
+import NLS.ComplexAnalysis.RelativeAnalyticUnitBound
+import NLS.ComplexAnalysis.EqualZeroCountRestriction
+import NLS.ComplexAnalysis.RelativeQuadraticFactorBound
+import NLS.KdV.HillLocalizedComplexGapPairs
+import NLS.KdV.HillFreeGapQuotient
+import NLS.KdV.HillUniformComplexUnitRatio
+import NLS.KdV.HillCommonComplexDeflatedRoot
+import NLS.KdV.HillCommonDeflatedRootPhysical

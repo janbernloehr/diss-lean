@@ -668,6 +668,14 @@ import NLS.ComplexAnalysis.LogarithmicSingleRootMoment
 import NLS.KdV.HillScaledComplexZeroCounts
 import NLS.KdV.HillUniformComplexDirichlet
 import NLS.KdV.HillUniformDirichletPhysical
+import NLS.ComplexAnalysis.RelativeAnalyticUnitBound
+import NLS.ComplexAnalysis.EqualZeroCountRestriction
+import NLS.ComplexAnalysis.RelativeQuadraticFactorBound
+import NLS.KdV.HillLocalizedComplexGapPairs
+import NLS.KdV.HillFreeGapQuotient
+import NLS.KdV.HillUniformComplexUnitRatio
+import NLS.KdV.HillCommonComplexDeflatedRoot
+import NLS.KdV.HillCommonDeflatedRootPhysical
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1103,7 +1111,10 @@ run_cmd do
     ``NLS.ComplexAnalysis.quadraticGapActionRatio_at_collapse,
     ``NLS.ComplexAnalysis.circleIntegral_mul_div_endpointRoot_eq_squared_gap,
     ``NLS.ComplexAnalysis.exists_uniform_sine_lower_annulus_of_inner,
-    ``NLS.ComplexAnalysis.logarithmicCircleMoment_eq_single_root_power]
+    ``NLS.ComplexAnalysis.logarithmicCircleMoment_eq_single_root_power,
+    ``NLS.ComplexAnalysis.norm_analytic_unit_ratio_sub_one_le_on_disc,
+    ``NLS.ComplexAnalysis.analyticOrder_indicator_eq_of_subset_equal_count,
+    ``NLS.ComplexAnalysis.norm_two_root_factor_div_center_sq_sub_one_le]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
