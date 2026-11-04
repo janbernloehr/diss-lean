@@ -778,6 +778,13 @@ import NLS.KdV.HillCriticalComplexOwnAmplitudeTails
 import NLS.KdV.HillCriticalOwnAmplitudeTerms
 import NLS.KdV.HillCriticalOwnAmplitudeHilbert
 import NLS.KdV.HillFreeUniformPeriodJacobian
+import NLS.KdV.HillFreeUniformInverseChart
+import NLS.SequenceSpaces.PositiveDeletedContraction
+import NLS.ComplexAnalysis.QuantitativeNeumannAnalyticInverse
+import NLS.KdV.HillComplexFreeSupportedPeriodMap
+import NLS.KdV.HillUniformComplexPeriodRoot
+import NLS.ComplexAnalysis.BanachAnalyticZeroBound
+import NLS.KdV.HillUniformComplexPeriodRootBounds
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1249,7 +1256,13 @@ run_cmd do
     ``NLS.Coeff.natL2OfFunction,
     ``NLS.Coeff.natL2OfFunction_apply_of_summable_sq,
     ``NLS.Coeff.norm_natL2OfFunction_sq_eq_tsum,
-    ``NLS.Coeff.analyticOnNhd_natL2OfFunction_of_summable_sq_bound]
+    ``NLS.Coeff.analyticOnNhd_natL2OfFunction_of_summable_sq_bound,
+    ``NLS.Coeff.norm_positiveDeletedProjectionTo_le,
+    ``NLS.Coeff.norm_positiveDeletedProjectionTo_le_one,
+    ``NLS.ComplexAnalysis.quantitativeNeumannRadius,
+    ``NLS.ComplexAnalysis.quantitativeNeumannRadius_pos,
+    ``NLS.ComplexAnalysis.exists_analytic_inverse_on_neumann_ball,
+    ``NLS.ComplexAnalysis.norm_le_mul_norm_of_analytic_zero_ball_bound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

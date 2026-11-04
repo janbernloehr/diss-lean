@@ -141,6 +141,7 @@ modules+=(NLS/KdV/HillDirichletPeriodicDistance NLS/KdV/HillNativeDirichletMidpo
 modules+=(NLS/Fourier/HalfCoefficientBounds NLS/KdV/HillRoughSmallPotentialPosition NLS/KdV/HillDirichletCoefficientBounds NLS/KdV/HillWeightedDirichletJump NLS/KdV/HillNativeDirichletJump NLS/KdV/HillDirichletSheetJump NLS/KdV/HillFilledRootIndexInverseBound NLS/KdV/HillNativeWeightedNormingSheet NLS/KdV/HillNativeWeightedOwnFactors)
 modules+=(NLS/KdV/HillCriticalComplexOwnAmplitude NLS/SequenceSpaces/NatL2AnalyticRealization NLS/KdV/HillCriticalComplexOwnAmplitudeTails NLS/KdV/HillCriticalOwnAmplitudeTerms NLS/KdV/HillCriticalOwnAmplitudeHilbert)
 modules+=(NLS/KdV/HillFreeUniformPeriodJacobian)
+modules+=(NLS/KdV/HillFreeUniformInverseChart NLS/SequenceSpaces/PositiveDeletedContraction NLS/ComplexAnalysis/QuantitativeNeumannAnalyticInverse NLS/KdV/HillComplexFreeSupportedPeriodMap NLS/KdV/HillUniformComplexPeriodRoot NLS/ComplexAnalysis/BanachAnalyticZeroBound NLS/KdV/HillUniformComplexPeriodRootBounds)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

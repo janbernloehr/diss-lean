@@ -5701,3 +5701,10 @@ import NLS.KdV.HillCriticalComplexOwnAmplitudeTails
 import NLS.KdV.HillCriticalOwnAmplitudeTerms
 import NLS.KdV.HillCriticalOwnAmplitudeHilbert
 import NLS.KdV.HillFreeUniformPeriodJacobian
+import NLS.KdV.HillFreeUniformInverseChart
+import NLS.SequenceSpaces.PositiveDeletedContraction
+import NLS.ComplexAnalysis.QuantitativeNeumannAnalyticInverse
+import NLS.KdV.HillComplexFreeSupportedPeriodMap
+import NLS.KdV.HillUniformComplexPeriodRoot
+import NLS.ComplexAnalysis.BanachAnalyticZeroBound
+import NLS.KdV.HillUniformComplexPeriodRootBounds
