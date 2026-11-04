@@ -760,3 +760,12 @@ The actual Dirichlet characteristic has no root at or below the periodic ground,
 Prior strict validation of all 876 unchanged selected sources; strict dependency-order compilation of four byte-identical canonical pole/Cauchy helpers and four new proof modules; then a fresh combined transitive axiom audit of all 884 selected modules. The reused helpers precede every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 884-module rebuild is claimed.
 
 Fresh audit: 8483 selected and 31027 imported NLS declarations, permitted axioms only. Absolute summability and the actual infinite Abelian source/angle sum, canonical orientation and physical frequency/main theorem conclusions remain open. All main inventory rows remain OPEN.
+
+
+## Latest actual infinite Abelian angle variation
+
+The actual regular correction sum is absolutely convergent and locally complex analytic, with its Gardner derivative now evaluated using a justified common-neighborhood derivative limit. Open and closed other gaps are included. Adding the actual own-gap terminal angle gives a local real physical Abelian angle A with D A[X_b] = -psi_n(b)/2 at every complex b, including filled spectral diagonals and terminal bandedges. See `SUMMED_ABELIAN_ANGLE.md`.
+
+Prior strict validation of all 884 unchanged selected sources; strict dependency-order compilation of 75 byte-identical shared analytic correction dependencies; strict compilation of one byte-identical canonical holomorphic-limit helper and five new proof modules; then a fresh combined transitive axiom audit of all 965 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, all source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 965-module rebuild is claimed.
+
+Fresh audit: 8939 selected and 31478 imported NLS declarations, permitted axioms only. Canonical Birkhoff angle orientation/identification, physical Hamiltonian frequency identities and the main theorem conclusions remain open. All eleven main inventory rows remain OPEN.

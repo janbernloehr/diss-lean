@@ -12946,6 +12946,978 @@
       "scope": "Instantiates the actual finite simple-pole Cauchy formula with precisely the first N positive Dirichlet energies and their actual characteristic-derivative residues. The filled kernel sum has its exact cardinal values at every Dirichlet energy. Proves the actual characteristic-weighted Cauchy error identity through all filled diagonals and convergence of the positive-index partial sums to minus one-half of the genuine normalized numerator, uniformly on every bounded complex energy disc. Does not yet assert absolute summability/HasSum or convergence and source differentiation of the Abelian angle sum.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "6e2960bf2739184cedbd00f9a0521c9fffd56ebf0a88332c6410746c0533165a"
+    },
+    {
+      "path": "NLS/KdV/HillScaledFreeContourGeometry.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillScaledFreeContourGeometry), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "99f43c305d48e7589786462ee84c36c736aecc918e53b994f035495de0bc7293"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SineAnnulusInner.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (SineAnnulusInner), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cc9d204be167472457899ef083d7dc21d3f86f5543758089eea8b590155b7f45"
+    },
+    {
+      "path": "NLS/KdV/HillScaledFreeContourBounds.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillScaledFreeContourBounds), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cc384a13642af1d00ba67d42b625bb938de622336706bfb50ccabd0f26110c6c"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillDirichletError.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (ClassicalHillDirichletError), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "828e2ad0164293f4f36c33b1ebbe0a0be5623f29e64a98ed4d04dc3684efb83e"
+    },
+    {
+      "path": "NLS/KdV/HillL2DirichletError.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillL2DirichletError), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "53d1472d6776efd0e3265e8727c02ba77fe25a8d93bb0f636f24e1b3d4213081"
+    },
+    {
+      "path": "NLS/KdV/HillScaledComplexRelativeBounds.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillScaledComplexRelativeBounds), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b1b17251135efeb7ffc51004eff952726b1cf0b4d8945d2131d870fda8b86d7b"
+    },
+    {
+      "path": "NLS/KdV/HillScaledFreeZeroCounts.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillScaledFreeZeroCounts), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "566cd157dfadc29ccd42349f8d85cf26aea667c82ff2f82b743c78f6dc8250e6"
+    },
+    {
+      "path": "NLS/KdV/HillScaledComplexZeroCounts.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillScaledComplexZeroCounts), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8074d64e9f28d60db0146b4e5b6ee344dbce6d6764d63086ac0fbffb80be32bb"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LogarithmicSingleRootMoment.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (LogarithmicSingleRootMoment), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "01c05197d7258190c54cff0a97d1847e95ff70b15cf1ae38943220896d207875"
+    },
+    {
+      "path": "NLS/KdV/HillUniformComplexDirichlet.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillUniformComplexDirichlet), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c8393261784a3ca553c8e904341042da55d3f73c313e45cdb1e322c2a26090f0"
+    },
+    {
+      "path": "NLS/KdV/HillUniformComplexGapPairs.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillUniformComplexGapPairs), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2c7dbac68ee3372bf06c25328e3a14d465bc01045edd70c89592523465384066"
+    },
+    {
+      "path": "NLS/KdV/HillUniformComplexGapData.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillUniformComplexGapData), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a1b7f46c1f3185c6b5f9f9e55431d60c23bcec8d8a582216731f07d44399f390"
+    },
+    {
+      "path": "NLS/KdV/HillUniformComplexGapUnit.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillUniformComplexGapUnit), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8ec8553c2ee6831e7108e35eeb89601b9093ffd241c5ed8fd9ae174fc222e7eb"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EqualZeroCountRestriction.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (EqualZeroCountRestriction), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "10bb96223bc29dc30ae120b5bb10de91ff7c2cb280523c4a01515087c0fa8b9a"
+    },
+    {
+      "path": "NLS/KdV/HillLocalizedComplexGapPairs.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillLocalizedComplexGapPairs), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d3a766aef78c5dd4e967f56bf644bbb7ea8737fa06fc834fba4fe88c49543e30"
+    },
+    {
+      "path": "NLS/KdV/HillFilledFreeGapUnit.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillFilledFreeGapUnit), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b97e92c89bc2d82d31cfedc909e9c13eaa6b3d1af83bb13574cc152f3752d864"
+    },
+    {
+      "path": "NLS/KdV/HillFilledFreeGapAnalytic.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillFilledFreeGapAnalytic), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "412dd60d707f3516212bb62783b68172d868c375dff1d97399d823e729238a3f"
+    },
+    {
+      "path": "NLS/KdV/HillFreeGapQuotient.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillFreeGapQuotient), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "60d5e08c0fec0d77b850b8ffc19b4212116db20e87e764c595074631c851f780"
+    },
+    {
+      "path": "NLS/KdV/HillFilledFreeGapBase.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillFilledFreeGapBase), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1f5ebcd4ccaa4a78f11de79c66fffc12e570506f235622e61b37284019d21b81"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RelativeAnalyticUnitBound.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (RelativeAnalyticUnitBound), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "30f80aa83d88d11dd6e996d53c9e9569733c819dc5cb8b0daf02ef3d2d2dfddd"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RelativeQuadraticFactorBound.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (RelativeQuadraticFactorBound), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f4d43408889ae31183c88744444397948a0c8cb20f661fcfca8d62b227da57e1"
+    },
+    {
+      "path": "NLS/KdV/HillUniformComplexUnitRatio.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillUniformComplexUnitRatio), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cabc2afc4b0e453fb2b5c3d2ffad3eea14e0de87fe8b53310eaf10d32fbe3240"
+    },
+    {
+      "path": "NLS/KdV/HillFilledFreeGapRatio.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillFilledFreeGapRatio), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c785d3ebebb492216d5d8d0549cc43f2775c57d06f190db336d600111a06f841"
+    },
+    {
+      "path": "NLS/KdV/HillFilledFreeGapRoot.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillFilledFreeGapRoot), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "12c7be3fc9e2d8be30a757a4ade8e2595a34a7b5de7890556967ef979113617a"
+    },
+    {
+      "path": "NLS/KdV/HillFilledFreeGapFactorization.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillFilledFreeGapFactorization), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3449f9f8b8ad21dd69feacc039bdc9c4cc38e58a7817eb868a64c6b1c369a35b"
+    },
+    {
+      "path": "NLS/KdV/HillComplexDirichletTerminal.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillComplexDirichletTerminal), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "df2836ded0e0523f71b4d217d0e484e32acf5f496e65094ab7c565de36e9c618"
+    },
+    {
+      "path": "NLS/KdV/HillComplexGapQuadraticRoot.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillComplexGapQuadraticRoot), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d9e82dc4d5237e6121bb26003de676f13bb93131193a9d11bcf34f785cc92fd7"
+    },
+    {
+      "path": "NLS/KdV/HillQuadraticRootFreeNormalization.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillQuadraticRootFreeNormalization), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0144582dd3fb1bc32051c9979ca20e479ebc1a53896b2c8cbf757538ba0325fc"
+    },
+    {
+      "path": "NLS/KdV/HillComplexRootProductMatching.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillComplexRootProductMatching), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c30b9ac4527783d518dfb35e2f9d35fa8d300e7d3bb4eba6d65f34a5c9de27b7"
+    },
+    {
+      "path": "NLS/KdV/HillComplexRegularDensity.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillComplexRegularDensity), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fcc29226dd5bd9433cb9cd3f88b4f49165c2a37718791010bde2409733ae44d2"
+    },
+    {
+      "path": "NLS/KdV/HillComplexRegularDensityBounds.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillComplexRegularDensityBounds), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "053e975927a979255ed92fa8a423cb04f4c33052cab17679af0df698b85ecb90"
+    },
+    {
+      "path": "NLS/KdV/HillAnalyticPeriodBranch.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillAnalyticPeriodBranch), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0f23554b6bc0154d61039575bb5792cc1029af56f452bbfd5c1c33d34f31cc78"
+    },
+    {
+      "path": "NLS/KdV/HillBoundedComplexPeriodChart.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillBoundedComplexPeriodChart), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "631c3353da1c07dcf5a04b1a280ee1cdefdb7cdf8eeb5a662a6a0d141dab727d"
+    },
+    {
+      "path": "NLS/KdV/HillComplexHighPeriodZero.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillComplexHighPeriodZero), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "17b05250673de8d44010ab4e5b3261c55ca1da2399393df9a39d38b0dea6cfdf"
+    },
+    {
+      "path": "NLS/KdV/HillHighNormalizedContourBound.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillHighNormalizedContourBound), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8da698642b025fa11327ea5a924b4dffdc9c036661fa0055f0cf13ef1923932c"
+    },
+    {
+      "path": "NLS/KdV/HillCollapsedAngularDifferential.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillCollapsedAngularDifferential), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d48bece94f369fd7b2ecc69f9726f70c1aa5543faf7b06c1deadb85db2888d4f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EndpointRootCirclePeriod.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (EndpointRootCirclePeriod), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c038b52b07782922c34ed9925964ca5451cbb81f726694b98353aaca9a8184a0"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EndpointRootCosinePeriod.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (EndpointRootCosinePeriod), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7e72ffd3053bf84182ba0bcc6165ee43c329dadbb4532f02b6df74a78924b30d"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianCosinePeriods.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillAbelianCosinePeriods), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "80fff49bc7177a59b54b8979d7158027a692dabb2914f85b95ec4dd302d42822"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealAffineComplexPrimitive.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (RealAffineComplexPrimitive), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "86ed059b17afd1129e1ded1961b22b1a3ccf6c18ef2ee9c1b430682a48c88225"
+    },
+    {
+      "path": "NLS/KdV/HillAngularPeriods.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillAngularPeriods), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "47044454f88c48993672ae895e822eecbcb13c3352c3d6a8f18353e818c9e1de"
+    },
+    {
+      "path": "NLS/KdV/HillRegularAngleCompatibility.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillRegularAngleCompatibility), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fdb780a4f6330a61352c57b86cf3e1954c622d53cb0380566c16c7ec6ed6a820"
+    },
+    {
+      "path": "NLS/KdV/HillGlobalRegularCorrection.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillGlobalRegularCorrection), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f1b518aafef9d730a033bf14bffb953ff10b5d7e196e0a4946e5e9b45f72de2f"
+    },
+    {
+      "path": "NLS/KdV/HillGlobalRegularBound.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillGlobalRegularBound), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4f1de881a30d26ee2e0635e15f45b38a97cc6cc2c083f23f2e0843b7d50ab5f3"
+    },
+    {
+      "path": "NLS/KdV/HillRegularCorrectionContourBound.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillRegularCorrectionContourBound), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ac589cadaf10f0d9931769fa1b742ea27634cda87287f5c6f87e44bca0ca56dc"
+    },
+    {
+      "path": "NLS/KdV/HillHighRegularCorrectionDecay.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillHighRegularCorrectionDecay), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cfea00240cb0f6c08b32f4110ca2e3a1f784b1107c609a2f2888fcd93b788d96"
+    },
+    {
+      "path": "NLS/KdV/HillCommonComplexHighChart.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillCommonComplexHighChart), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0e4f134ae508eacc757e38d99699138222c3cd9063638a0d51354e08a9bcea44"
+    },
+    {
+      "path": "NLS/KdV/HillCommonRegularAnnulusChart.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillCommonRegularAnnulusChart), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0ee904143d3aff5fec422af6064d7435c380b008239f346e2bd394434da3e40b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/BoundedParametricQuadraticSolution.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (BoundedParametricQuadraticSolution), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b08caeefa64facc2609ebdb7d7f9df8f491380f7e3ffb7954e2e988fe8e08f79"
+    },
+    {
+      "path": "NLS/KdV/HillBoundedAnalyticQuadraticSolutions.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillBoundedAnalyticQuadraticSolutions), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8da6a4c5efadbafb267f5709b5eab9b686781369d78810071a315c66536804c3"
+    },
+    {
+      "path": "NLS/KdV/HillAnalyticQuadraticDirichletValue.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillAnalyticQuadraticDirichletValue), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "889bd6db6af03a6862d272d449af05287bf2ae538cf099a2007b889aa83f199c"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RegularQuadraticCosinePrimitive.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (RegularQuadraticCosinePrimitive), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d909e49552406a8de47b136eda08761a9b9acdc7aa08226521e8174ce8a5963e"
+    },
+    {
+      "path": "NLS/KdV/HillQuadraticCosineMatching.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillQuadraticCosineMatching), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "86021f5baa4cd3ae52e5bd1c8a24ecea9f2be0626363589a9ae5f1a8b56ef453"
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalQuadraticTerminal.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillPhysicalQuadraticTerminal), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "747761274437f92eb69dc07baad9f06bb88ee877f6ed68fc401311a8bf8dc2a5"
+    },
+    {
+      "path": "NLS/KdV/HillQuadraticDirichletPhysicalMatching.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillQuadraticDirichletPhysicalMatching), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d509ad8ee0b2ed7a52862981778dc88ce2abe22a5811e37a243477ac98e8cb0e"
+    },
+    {
+      "path": "NLS/KdV/HillUniformRealGapLocalization.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillUniformRealGapLocalization), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ba68777ef6355231462008f997396e780f4723ec99b09a3746f8aa4873e35b3b"
+    },
+    {
+      "path": "NLS/KdV/HillUniformDirichletPhysical.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillUniformDirichletPhysical), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d4f9bd6b1eb4852386d554a7f59cf4f528a2ac095f7962764604f3e0ce68ce06"
+    },
+    {
+      "path": "NLS/KdV/HillCommonComplexDeflatedRoot.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillCommonComplexDeflatedRoot), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "34c98a4ba85f5b791a03a91bca7e00add3f5dc754ad7d7ed1649dbb38ab30c68"
+    },
+    {
+      "path": "NLS/KdV/HillCommonDeflatedRootPhysical.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillCommonDeflatedRootPhysical), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4324864804f89cdb2072f0b63150149fff40081f3677e698042967efff18afe0"
+    },
+    {
+      "path": "NLS/KdV/HillFilledFreeGapPhysical.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillFilledFreeGapPhysical), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f796550008657f1ff9db8872cab1e26f8983c2158d884c103c5a408778c07dcf"
+    },
+    {
+      "path": "NLS/KdV/HillCommonAnalyticCorrectionTail.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Constructs actual regular-correction analytic extensions with one common complex source neighborhood, uniform C/k^2 bound and simultaneous nearby-real matching for the entire high tail. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "30fe6f76f017b9957fcbec60bb337817d6edea6b97fbc45a2806399f9b9bc0d8"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CosineGapNeighborhood.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (CosineGapNeighborhood), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a22b3fdef6eeb8d06613c7687eabd11085ed5e3ce632b32da66cb90d18450804"
+    },
+    {
+      "path": "NLS/KdV/HillDeflatedCosineMean.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (HillDeflatedCosineMean), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0342dae59784f59ceabf60fc490453cfb60f60c3dae0629e87bc190baa6711d5"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CenteredMeanFree.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (CenteredMeanFree), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2a9af64097c183f1de3c33a0e43f712323f24cc8388043d0c4096f96dc0203df"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CenteredQuadraticRoot.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (CenteredQuadraticRoot), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dd4b07691e33b1eb0673d94524058f3a9b74bde87daf7ae73a50bebd22dff8a5"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EndpointRootAllCosinePeriods.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (EndpointRootAllCosinePeriods), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "85e5aedd6b937c13945006055304a243447c9c96d90d6dfe83aa1865660630ba"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CenteredMeanFreePeriod.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (CenteredMeanFreePeriod), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bc3bc1c1eab8adec27a765efce160e443c2990cfbd51af6c480b7950afc3f9ba"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricQuadraticSolution.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (ParametricQuadraticSolution), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8fb756461c2fd961379cf30840c2bc9a2e714174334f813cab2d25521e1df27b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticCollapsedQuadraticSolution.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared actual Hill analytic regular-correction dependency (AnalyticCollapsedQuadraticSolution), reused byte-identically from the fixed estimates snapshot. Supports the genuine common complex tail, its actual quadratic terminal evaluation and physical matching; no abstract frequency or angle identity is assumed. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1c78b67f9bdeb36d31f081a7e3a873d9bb5f9c8b5d6376259cd74701ab25ea83"
+    },
+    {
+      "path": "NLS/KdV/HillClosedGapQuadraticChart.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Constructs the actual closed-gap regular differential quadratic chart. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0773cf21218d6a1121b7e619d6f152b64680c20161d4f6d5adc37062b5593c6d"
+    },
+    {
+      "path": "NLS/KdV/HillClosedGapAbelianCorrections.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Constructs actual closed-gap analytic regular Abelian corrections with physical matching to nearby open and collapsed gaps. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "44deed46b47c9eef3937d51f9601a509261af36ea1fddfbdcf6626bbfdec8c53"
+    },
+    {
+      "path": "NLS/KdV/HillGlobalRegularAnalytic.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Constructs actual open- and closed-gap analytic regular correction extensions at all positive indices, including the omitted own index. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d8b042f70a9703c23a45c622799c6b92fd0cd97b89fffd264c67daed9214b26d"
+    },
+    {
+      "path": "NLS/KdV/HillSummedRegularCorrection.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Proves absolute convergence, reality and a quantitative actual regular Abelian correction tail bound. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c53aeaa0ee87ad9a7fd97d1e498f7491dc95f36377eb2d8b1292975b9a890349"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NormalAnalyticSeries.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Proves analyticity of an actual scalar series under a common summable uniform bound by analytic realization in a Banach sequence space. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "248e2469a84663294e8e37a7cb8686c43ceb5982355bab02a7f3075cf1766bb6"
+    },
+    {
+      "path": "NLS/KdV/HillSummedRegularCorrectionAnalytic.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Constructs a genuine complex analytic extension of the actual infinite regular correction sum from its finite analytic head and common normally convergent analytic tail. Provenance: SHARED_ANALYTIC_CORRECTION_IMPORT.json, articles/kdv-estimates 82f5fd2f6d0bab28b0137a8ec3b59534d950c1e9; strictly compiled unchanged against the retained verified local interfaces.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "48d5452fa084f98bcdd6f4f5a445483945dc4d8d5214ef613010f4f635e2e954"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/BanachHolomorphicLimit.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Canonical actual uniform holomorphic limit theorem on complex normed spaces, reused byte-identically from main c5bcf6344cd2e2628ae537e98b85bb9ec1849dec and strictly compiled with default heartbeats. Uniform convergence on a complex ball gives operator-norm convergence of actual Frechet derivatives on a smaller ball.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "37f0f00d0c3913d2a768a69b80cc4c5bbefec3c1008a27965508025fdf53ad6a"
+    },
+    {
+      "path": "NLS/KdV/HillGardnerClosedCorrection.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Actual Delta times Delta-energy-derivative vanishes at a collapsed Dirichlet gap. The actual moving signed sheet has zero Gardner derivative there. Constructs a genuine stationary closed-gap analytic regular-correction model using its quadratic chart and transfers zero derivative to every differentiable extension agreeing near real potentials, including the omitted own gap.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bfd8cfb7ba02e3f6b4a648ce5c70d6bc111ab66851274d6972baf4d911220af5"
+    },
+    {
+      "path": "NLS/KdV/HillGardnerOpenCorrection.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Evaluates the Gardner derivative of every differentiable extension of the actual open-gap regular correction, including terminal bandedges and filled spectral diagonals. Proves the normalized numerator vanishes at closed other-gap Dirichlet energies, and obtains one per-index derivative formula for all gap indices when the selected angle gap is open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "af01a767ae8264c11178b2d733b08dbc0b561ffca6c0d46c24315c496892f5ff"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NormalAnalyticSeriesDerivative.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Proves operator-norm convergence of the finite derivative sums to the derivative of the actual analytic tsum under a common summable bound on an open complex neighborhood. The evaluated derivative limit is proved for every fixed source direction, without assuming summability of derivatives.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a841057354fa1c76d3c7ff545aa8bac652bab52ec976b45548c9f86db946faca"
+    },
+    {
+      "path": "NLS/KdV/HillGardnerSummedCorrection.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Constructs an actual analytic extension of the absolutely convergent physical regular correction sum and evaluates its Gardner derivative. A common complex neighborhood and summable analytic tail justify convergence of the partial source derivatives; the actual filled Dirichlet interpolation limit yields -psi_n(b)/2 minus the own-gap terminal-angle derivative. All other closed gaps and all complex b are included.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "16260319e0f1ecf3a411ca90c240ea278c6bfceaa563aba29b118020105e6cc9"
+    },
+    {
+      "path": "NLS/KdV/HillGardnerAbelianAngle.lean",
+      "source_labels": [
+        "Actual infinite Abelian angle variation used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Constructs the genuine local raw Abelian angle A=epsilon_n-pi+the actual infinite regular correction sum near every real period-one L2 potential whose selected gap n is open. Proves complex source analyticity, nearby-real physical terminal/sheet matching and reality, and D A[X_b]=-psi_n(b)/2 for every complex b. Does not identify its orientation with the article canonical Birkhoff angle.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "60408f81ab2b9ea3c448f220a3a574764fdd09993a3c9df183d736ac52c3c784"
     }
   ],
   "dependencies_needed": [
@@ -12977,15 +13949,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 8483,
-    "total_declarations_audited": 31027,
+    "candidate_declarations_audited": 8939,
+    "total_declarations_audited": 31478,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 884,
+    "selected_modules": 965,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -13010,7 +13982,8 @@
     "dirichlet_slope_validation_sequence": "Prior strict validation of all 862 unchanged selected sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 866 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 866-module rebuild is claimed.",
     "terminal_angle_validation_sequence": "Prior strict validation of all 866 unchanged selected sources; strict dependency-order compilation of one byte-identical canonical algebra helper and three new proof modules; then a fresh combined transitive axiom audit of all 870 selected modules. The reused helper precedes every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 870-module rebuild is claimed.",
     "dirichlet_exterior_validation_sequence": "Prior strict validation of all 870 unchanged selected sources; strict dependency-order compilation of one byte-identical canonical sine-exterior helper and five new proof modules; then a fresh combined transitive axiom audit of all 876 selected modules. The reused helper precedes every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 876-module rebuild is claimed.",
-    "dirichlet_interpolation_validation_sequence": "Prior strict validation of all 876 unchanged selected sources; strict dependency-order compilation of four byte-identical canonical pole/Cauchy helpers and four new proof modules; then a fresh combined transitive axiom audit of all 884 selected modules. The reused helpers precede every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 884-module rebuild is claimed."
+    "dirichlet_interpolation_validation_sequence": "Prior strict validation of all 876 unchanged selected sources; strict dependency-order compilation of four byte-identical canonical pole/Cauchy helpers and four new proof modules; then a fresh combined transitive axiom audit of all 884 selected modules. The reused helpers precede every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 884-module rebuild is claimed.",
+    "summed_abelian_angle_validation_sequence": "Prior strict validation of all 884 unchanged selected sources; strict dependency-order compilation of 75 byte-identical shared analytic correction dependencies; strict compilation of one byte-identical canonical holomorphic-limit helper and five new proof modules; then a fresh combined transitive axiom audit of all 965 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, all source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 965-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -13220,5 +14193,8 @@
   "dirichlet_interpolation_exterior_record": "DIRICHLET_INTERPOLATION_EXTERIOR.md",
   "canonical_sine_exterior_reuse_record": "CANONICAL_SINE_EXTERIOR_REUSE.json",
   "dirichlet_interpolation_record": "DIRICHLET_INTERPOLATION.md",
-  "canonical_dirichlet_interpolation_reuse_record": "CANONICAL_DIRICHLET_INTERPOLATION_REUSE.json"
+  "canonical_dirichlet_interpolation_reuse_record": "CANONICAL_DIRICHLET_INTERPOLATION_REUSE.json",
+  "summed_abelian_angle_record": "SUMMED_ABELIAN_ANGLE.md",
+  "shared_analytic_correction_import_record": "SHARED_ANALYTIC_CORRECTION_IMPORT.json",
+  "canonical_normal_derivative_reuse_record": "CANONICAL_NORMAL_DERIVATIVE_REUSE.json"
 }

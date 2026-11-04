@@ -5,7 +5,15 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual Dirichlet spectral exhaustion and interpolation
+## Latest actual infinite Abelian angle variation
+
+The actual regular correction sum is absolutely convergent and locally complex analytic, with its Gardner derivative now evaluated using a justified common-neighborhood derivative limit. Open and closed other gaps are included. Adding the actual own-gap terminal angle gives a local real physical Abelian angle A with D A[X_b] = -psi_n(b)/2 at every complex b, including filled spectral diagonals and terminal bandedges. See `SUMMED_ABELIAN_ANGLE.md`.
+
+Prior strict validation of all 884 unchanged selected sources; strict dependency-order compilation of 75 byte-identical shared analytic correction dependencies; strict compilation of one byte-identical canonical holomorphic-limit helper and five new proof modules; then a fresh combined transitive axiom audit of all 965 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, all source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 965-module rebuild is claimed.
+
+Fresh audit: 8939 selected and 31478 imported NLS declarations, permitted axioms only. Canonical Birkhoff angle orientation/identification, physical Hamiltonian frequency identities and the main theorem conclusions remain open. All eleven main inventory rows remain OPEN.
+
+## Earlier actual Dirichlet spectral exhaustion and interpolation
 
 The actual Dirichlet characteristic has no root at or below the periodic ground, and all its complex zeros are exactly the positive closed-gap Dirichlet labels. High energy circles select exactly the first N roots. The genuine filled positive-index interpolation sums now converge to -psi_n(w)/2 uniformly on every bounded complex energy disc, including all Dirichlet diagonals and collapsed physical gaps. See `DIRICHLET_INTERPOLATION.md`.
 
@@ -138,19 +146,20 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 884 selected modules compile with pinned **Lean 4.33.1**, commit
+All 965 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: 876 unchanged prior selected sources, four unchanged
-canonical pole/Cauchy helpers and four new proof modules strictly checked,
-then a fresh combined transitive axiom audit of all 884 selected modules:
+Validation output: 884 unchanged prior selected sources, 75 unchanged
+shared analytic correction dependencies, one unchanged canonical helper and
+five new proof modules strictly checked, then a fresh combined transitive
+axiom audit of all 965 selected modules:
 
 ```text
-# Prior strict evidence: 876 baseline sources, including one historical recompilation
+# Prior strict evidence: 884 baseline sources, including one historical recompilation
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -1028,7 +1037,6 @@ PASS NLS/KdV/ClassicalHillWeightedDirichletError
 PASS NLS/KdV/HillWeightedDirichletExterior
 PASS NLS/KdV/HillAnalyticDirichletGardnerKernel
 PASS NLS/KdV/HillDirichletInterpolationExterior
-# Final strict checks: four canonical helpers and four new proof modules
 PASS NLS/ComplexAnalysis/LogDerivativeLocal
 PASS NLS/ComplexAnalysis/FinitePoleRemoval
 PASS NLS/ComplexAnalysis/SimplePoleQuotient
@@ -1037,12 +1045,95 @@ PASS NLS/KdV/HillDirichletLowerExterior
 PASS NLS/KdV/HillDirichletSpectrumExhaustion
 PASS NLS/KdV/HillDirichletCircleSelection
 PASS NLS/KdV/HillDirichletInterpolation
-# Fresh combined transitive audit of all 884 selected modules
-Axiom audit passed: 8483 candidate declarations; 31027 declarations total.
+# Strict shared import checks: 75 byte-identical modules
+PASS NLS/KdV/HillScaledFreeContourGeometry
+PASS NLS/ComplexAnalysis/SineAnnulusInner
+PASS NLS/KdV/HillScaledFreeContourBounds
+PASS NLS/KdV/ClassicalHillDirichletError
+PASS NLS/KdV/HillL2DirichletError
+PASS NLS/KdV/HillScaledComplexRelativeBounds
+PASS NLS/KdV/HillScaledFreeZeroCounts
+PASS NLS/KdV/HillScaledComplexZeroCounts
+PASS NLS/ComplexAnalysis/LogarithmicSingleRootMoment
+PASS NLS/KdV/HillUniformComplexDirichlet
+PASS NLS/KdV/HillUniformComplexGapPairs
+PASS NLS/KdV/HillUniformComplexGapData
+PASS NLS/KdV/HillUniformComplexGapUnit
+PASS NLS/ComplexAnalysis/EqualZeroCountRestriction
+PASS NLS/KdV/HillLocalizedComplexGapPairs
+PASS NLS/KdV/HillFilledFreeGapUnit
+PASS NLS/KdV/HillFilledFreeGapAnalytic
+PASS NLS/KdV/HillFreeGapQuotient
+PASS NLS/KdV/HillFilledFreeGapBase
+PASS NLS/ComplexAnalysis/RelativeAnalyticUnitBound
+PASS NLS/ComplexAnalysis/RelativeQuadraticFactorBound
+PASS NLS/KdV/HillUniformComplexUnitRatio
+PASS NLS/KdV/HillFilledFreeGapRatio
+PASS NLS/KdV/HillFilledFreeGapRoot
+PASS NLS/KdV/HillFilledFreeGapFactorization
+PASS NLS/KdV/HillComplexDirichletTerminal
+PASS NLS/KdV/HillComplexGapQuadraticRoot
+PASS NLS/KdV/HillQuadraticRootFreeNormalization
+PASS NLS/KdV/HillComplexRootProductMatching
+PASS NLS/KdV/HillComplexRegularDensity
+PASS NLS/KdV/HillComplexRegularDensityBounds
+PASS NLS/KdV/HillAnalyticPeriodBranch
+PASS NLS/KdV/HillBoundedComplexPeriodChart
+PASS NLS/KdV/HillComplexHighPeriodZero
+PASS NLS/KdV/HillHighNormalizedContourBound
+PASS NLS/KdV/HillCollapsedAngularDifferential
+PASS NLS/ComplexAnalysis/EndpointRootCirclePeriod
+PASS NLS/ComplexAnalysis/EndpointRootCosinePeriod
+PASS NLS/KdV/HillAbelianCosinePeriods
+PASS NLS/ComplexAnalysis/RealAffineComplexPrimitive
+PASS NLS/KdV/HillAngularPeriods
+PASS NLS/KdV/HillRegularAngleCompatibility
+PASS NLS/KdV/HillGlobalRegularCorrection
+PASS NLS/KdV/HillGlobalRegularBound
+PASS NLS/KdV/HillRegularCorrectionContourBound
+PASS NLS/KdV/HillHighRegularCorrectionDecay
+PASS NLS/KdV/HillCommonComplexHighChart
+PASS NLS/KdV/HillCommonRegularAnnulusChart
+PASS NLS/ComplexAnalysis/BoundedParametricQuadraticSolution
+PASS NLS/KdV/HillBoundedAnalyticQuadraticSolutions
+PASS NLS/KdV/HillAnalyticQuadraticDirichletValue
+PASS NLS/ComplexAnalysis/RegularQuadraticCosinePrimitive
+PASS NLS/KdV/HillQuadraticCosineMatching
+PASS NLS/KdV/HillPhysicalQuadraticTerminal
+PASS NLS/KdV/HillQuadraticDirichletPhysicalMatching
+PASS NLS/KdV/HillUniformRealGapLocalization
+PASS NLS/KdV/HillUniformDirichletPhysical
+PASS NLS/KdV/HillCommonComplexDeflatedRoot
+PASS NLS/KdV/HillCommonDeflatedRootPhysical
+PASS NLS/KdV/HillFilledFreeGapPhysical
+PASS NLS/KdV/HillCommonAnalyticCorrectionTail
+PASS NLS/ComplexAnalysis/CosineGapNeighborhood
+PASS NLS/KdV/HillDeflatedCosineMean
+PASS NLS/ComplexAnalysis/CenteredMeanFree
+PASS NLS/ComplexAnalysis/CenteredQuadraticRoot
+PASS NLS/ComplexAnalysis/EndpointRootAllCosinePeriods
+PASS NLS/ComplexAnalysis/CenteredMeanFreePeriod
+PASS NLS/ComplexAnalysis/ParametricQuadraticSolution
+PASS NLS/ComplexAnalysis/AnalyticCollapsedQuadraticSolution
+PASS NLS/KdV/HillClosedGapQuadraticChart
+PASS NLS/KdV/HillClosedGapAbelianCorrections
+PASS NLS/KdV/HillGlobalRegularAnalytic
+PASS NLS/KdV/HillSummedRegularCorrection
+PASS NLS/ComplexAnalysis/NormalAnalyticSeries
+PASS NLS/KdV/HillSummedRegularCorrectionAnalytic
+# Final strict checks: one canonical helper and five new proof modules
+PASS NLS/ComplexAnalysis/BanachHolomorphicLimit
+PASS NLS/KdV/HillGardnerClosedCorrection
+PASS NLS/KdV/HillGardnerOpenCorrection
+PASS NLS/ComplexAnalysis/NormalAnalyticSeriesDerivative
+PASS NLS/KdV/HillGardnerSummedCorrection
+PASS NLS/KdV/HillGardnerAbelianAngle
+# Fresh combined transitive audit of all 965 selected modules
+Axiom audit passed: 8939 candidate declarations; 31478 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 884 selected modules (including generated and private declarations)
+the 965 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the

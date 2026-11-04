@@ -1,3 +1,9 @@
+import NLS.KdV.HillGardnerAbelianAngle
+import NLS.KdV.HillGardnerSummedCorrection
+import NLS.ComplexAnalysis.NormalAnalyticSeriesDerivative
+import NLS.KdV.HillGardnerOpenCorrection
+import NLS.KdV.HillGardnerClosedCorrection
+import NLS.KdV.HillSummedRegularCorrectionAnalytic
 import NLS.KdV.HillDirichletInterpolation
 import NLS.ComplexAnalysis.SimplePoleCauchyInterpolation
 import NLS.KdV.HillDirichletCircleSelection
@@ -152,7 +158,7 @@ This deliberately imports specific modules, not the aggregate NLS library.
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let modules := #[
+  let modules := #[`NLS.ComplexAnalysis.BanachHolomorphicLimit,
     `NLS.ComplexAnalysis.RealLineIdentity,
     `NLS.ComplexAnalysis.RealFormIdentity,
     `NLS.ComplexAnalysis.ContinuousRealFormIdentity,
@@ -1036,7 +1042,83 @@ run_cmd do
     `NLS.KdV.HillDirichletLowerExterior,
     `NLS.KdV.HillDirichletSpectrumExhaustion,
     `NLS.KdV.HillDirichletCircleSelection,
-    `NLS.KdV.HillDirichletInterpolation]
+    `NLS.KdV.HillDirichletInterpolation,
+    `NLS.KdV.HillScaledFreeContourGeometry,
+    `NLS.ComplexAnalysis.SineAnnulusInner,
+    `NLS.KdV.HillScaledFreeContourBounds,
+    `NLS.KdV.ClassicalHillDirichletError,
+    `NLS.KdV.HillL2DirichletError,
+    `NLS.KdV.HillScaledComplexRelativeBounds,
+    `NLS.KdV.HillScaledFreeZeroCounts,
+    `NLS.KdV.HillScaledComplexZeroCounts,
+    `NLS.ComplexAnalysis.LogarithmicSingleRootMoment,
+    `NLS.KdV.HillUniformComplexDirichlet,
+    `NLS.KdV.HillUniformComplexGapPairs,
+    `NLS.KdV.HillUniformComplexGapData,
+    `NLS.KdV.HillUniformComplexGapUnit,
+    `NLS.ComplexAnalysis.EqualZeroCountRestriction,
+    `NLS.KdV.HillLocalizedComplexGapPairs,
+    `NLS.KdV.HillFilledFreeGapUnit,
+    `NLS.KdV.HillFilledFreeGapAnalytic,
+    `NLS.KdV.HillFreeGapQuotient,
+    `NLS.KdV.HillFilledFreeGapBase,
+    `NLS.ComplexAnalysis.RelativeAnalyticUnitBound,
+    `NLS.ComplexAnalysis.RelativeQuadraticFactorBound,
+    `NLS.KdV.HillUniformComplexUnitRatio,
+    `NLS.KdV.HillFilledFreeGapRatio,
+    `NLS.KdV.HillFilledFreeGapRoot,
+    `NLS.KdV.HillFilledFreeGapFactorization,
+    `NLS.KdV.HillComplexDirichletTerminal,
+    `NLS.KdV.HillComplexGapQuadraticRoot,
+    `NLS.KdV.HillQuadraticRootFreeNormalization,
+    `NLS.KdV.HillComplexRootProductMatching,
+    `NLS.KdV.HillComplexRegularDensity,
+    `NLS.KdV.HillComplexRegularDensityBounds,
+    `NLS.KdV.HillAnalyticPeriodBranch,
+    `NLS.KdV.HillBoundedComplexPeriodChart,
+    `NLS.KdV.HillComplexHighPeriodZero,
+    `NLS.KdV.HillHighNormalizedContourBound,
+    `NLS.KdV.HillCollapsedAngularDifferential,
+    `NLS.ComplexAnalysis.EndpointRootCirclePeriod,
+    `NLS.ComplexAnalysis.EndpointRootCosinePeriod,
+    `NLS.KdV.HillAbelianCosinePeriods,
+    `NLS.ComplexAnalysis.RealAffineComplexPrimitive,
+    `NLS.KdV.HillAngularPeriods,
+    `NLS.KdV.HillRegularAngleCompatibility,
+    `NLS.KdV.HillGlobalRegularCorrection,
+    `NLS.KdV.HillGlobalRegularBound,
+    `NLS.KdV.HillRegularCorrectionContourBound,
+    `NLS.KdV.HillHighRegularCorrectionDecay,
+    `NLS.KdV.HillCommonComplexHighChart,
+    `NLS.KdV.HillCommonRegularAnnulusChart,
+    `NLS.ComplexAnalysis.BoundedParametricQuadraticSolution,
+    `NLS.KdV.HillBoundedAnalyticQuadraticSolutions,
+    `NLS.KdV.HillAnalyticQuadraticDirichletValue,
+    `NLS.ComplexAnalysis.RegularQuadraticCosinePrimitive,
+    `NLS.KdV.HillQuadraticCosineMatching,
+    `NLS.KdV.HillPhysicalQuadraticTerminal,
+    `NLS.KdV.HillQuadraticDirichletPhysicalMatching,
+    `NLS.KdV.HillUniformRealGapLocalization,
+    `NLS.KdV.HillUniformDirichletPhysical,
+    `NLS.KdV.HillCommonComplexDeflatedRoot,
+    `NLS.KdV.HillCommonDeflatedRootPhysical,
+    `NLS.KdV.HillFilledFreeGapPhysical,
+    `NLS.KdV.HillCommonAnalyticCorrectionTail,
+    `NLS.ComplexAnalysis.CosineGapNeighborhood,
+    `NLS.KdV.HillDeflatedCosineMean,
+    `NLS.ComplexAnalysis.CenteredMeanFree,
+    `NLS.ComplexAnalysis.CenteredQuadraticRoot,
+    `NLS.ComplexAnalysis.EndpointRootAllCosinePeriods,
+    `NLS.ComplexAnalysis.CenteredMeanFreePeriod,
+    `NLS.ComplexAnalysis.ParametricQuadraticSolution,
+    `NLS.ComplexAnalysis.AnalyticCollapsedQuadraticSolution,
+    `NLS.KdV.HillClosedGapQuadraticChart,
+    `NLS.KdV.HillClosedGapAbelianCorrections,
+    `NLS.KdV.HillGlobalRegularAnalytic,
+    `NLS.KdV.HillSummedRegularCorrection,
+    `NLS.ComplexAnalysis.NormalAnalyticSeries,
+    `NLS.KdV.HillSummedRegularCorrectionAnalytic,
+    `NLS.KdV.HillGardnerClosedCorrection, `NLS.KdV.HillGardnerOpenCorrection, `NLS.ComplexAnalysis.NormalAnalyticSeriesDerivative, `NLS.KdV.HillGardnerSummedCorrection, `NLS.KdV.HillGardnerAbelianAngle]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

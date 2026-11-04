@@ -17,7 +17,15 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual Dirichlet spectral exhaustion and interpolation
+## Latest actual infinite Abelian angle variation
+
+The actual regular correction sum is absolutely convergent and locally complex analytic, with its Gardner derivative now evaluated using a justified common-neighborhood derivative limit. Open and closed other gaps are included. Adding the actual own-gap terminal angle gives a local real physical Abelian angle A with D A[X_b] = -psi_n(b)/2 at every complex b, including filled spectral diagonals and terminal bandedges. See `SUMMED_ABELIAN_ANGLE.md`.
+
+Prior strict validation of all 884 unchanged selected sources; strict dependency-order compilation of 75 byte-identical shared analytic correction dependencies; strict compilation of one byte-identical canonical holomorphic-limit helper and five new proof modules; then a fresh combined transitive axiom audit of all 965 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, all source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 965-module rebuild is claimed.
+
+Fresh audit: 8939 selected and 31478 imported NLS declarations, permitted axioms only. Canonical Birkhoff angle orientation/identification, physical Hamiltonian frequency identities and the main theorem conclusions remain open. All eleven main inventory rows remain OPEN.
+
+## Earlier actual Dirichlet spectral exhaustion and interpolation
 
 The actual Dirichlet characteristic has no root at or below the periodic ground, and all its complex zeros are exactly the positive closed-gap Dirichlet labels. High energy circles select exactly the first N roots. The genuine filled positive-index interpolation sums now converge to -psi_n(w)/2 uniformly on every bounded complex energy disc, including all Dirichlet diagonals and collapsed physical gaps. See `DIRICHLET_INTERPOLATION.md`.
 
