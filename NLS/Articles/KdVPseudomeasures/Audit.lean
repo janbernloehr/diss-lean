@@ -966,6 +966,18 @@ import NLS.SequenceSpaces.PositiveOperatorDiagonal
 import NLS.SequenceSpaces.PositiveKernelCompactness
 import NLS.KdV.HillProductEquationCompactRemainder
 import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodCompactRemainder
+import NLS.ZakharovShabat.SourcePsiMovingRowRatios
+import NLS.KdV.HillWeightedColumnIndexRatios
+import NLS.KdV.HillColumnDiagonalAsymptotic
+import NLS.ZakharovShabat.SourcePsiQuotientMovingRows
+import NLS.KdV.HillProductEquationDiagonalLimit
+import NLS.FunctionalAnalysis.NonzeroSequenceLowerBound
+import NLS.SequenceSpaces.PositiveDiagonalEquiv
+import NLS.SequenceSpaces.PositiveDiagonalInverseBound
+import NLS.KdV.HillProductEquationInvertibleDiagonal
+import NLS.FunctionalAnalysis.CompactPerturbationEquiv
+import NLS.KdV.HillProductEquationFredholmAlternative
+import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodInvertibleDiagonal
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6547,3 +6559,20 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodCompactRemainder
 #print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_offDiagonal_compact
 #print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_diagonal_add_compact
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_diagonal_add_compact
+#print axioms NLS.ZakharovShabat.SourceIsolatingNeighborhoods.tendsto_indexRatio_of_spacing
+#print axioms NLS.ZakharovShabat.tendsto_norm_fixed_sub_positive_index
+#print axioms NLS.ZakharovShabat.tendsto_norm_negative_positive_index_spacing
+#print axioms NLS.KdV.hillWeightedColumnGapNumerator_eq_indexRatios
+#print axioms NLS.KdV.hillWeightedColumnGapNumerator_tendsto_of_quotient
+#print axioms NLS.ZakharovShabat.SourceCorollary10_6Data.tendsto_quotient_positive_rows
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_diagonal_tendsto_one
+#print axioms NLS.FunctionalAnalysis.exists_positive_lower_norm_on_finset
+#print axioms NLS.FunctionalAnalysis.exists_positive_lower_norm_of_tendsto
+#print axioms NLS.LpSequence.exists_positiveOperatorDiagonal_equiv_of_lowerBound
+#print axioms NLS.LpSequence.exists_positiveOperatorDiagonal_equiv_of_tendsto_one
+#print axioms NLS.LpSequence.norm_positive_diagonal_inverse_le
+#print axioms NLS.KdV.HillProductEquationPatch.exists_actual_real_diagonal_equiv
+#print axioms NLS.CompactSpectrum.bijective_of_injective_compact_sub_equiv
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_bijective_of_injective
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_invertible_diagonal_add_compact
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_bijective_of_injective

@@ -1000,6 +1000,18 @@ modules = [
     'NLS.SequenceSpaces.PositiveKernelCompactness',
     'NLS.KdV.HillProductEquationCompactRemainder',
     'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodCompactRemainder',
+    'NLS.ZakharovShabat.SourcePsiMovingRowRatios',
+    'NLS.KdV.HillWeightedColumnIndexRatios',
+    'NLS.KdV.HillColumnDiagonalAsymptotic',
+    'NLS.ZakharovShabat.SourcePsiQuotientMovingRows',
+    'NLS.KdV.HillProductEquationDiagonalLimit',
+    'NLS.FunctionalAnalysis.NonzeroSequenceLowerBound',
+    'NLS.SequenceSpaces.PositiveDiagonalEquiv',
+    'NLS.SequenceSpaces.PositiveDiagonalInverseBound',
+    'NLS.KdV.HillProductEquationInvertibleDiagonal',
+    'NLS.FunctionalAnalysis.CompactPerturbationEquiv',
+    'NLS.KdV.HillProductEquationFredholmAlternative',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodInvertibleDiagonal',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

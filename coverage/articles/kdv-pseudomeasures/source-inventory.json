@@ -756,6 +756,12 @@
       "status": "ONE bound before ALL n,m,r and ACTUAL compact off-diagonal remainder PROVED; bounded diagonal has nonzero entries but no proved positive lower bound. General inverse remains OPEN.",
       "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_diagonal_add_compact",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-period-compact-remainder-map.json"
+    },
+    {
+      "label": "Actual original real Hill period Jacobian invertible diagonal and conditional Fredholm reduction",
+      "status": "For EACH fixed n actual diagonal tends to ONE, is uniformly bounded below in its row index and is an ACTUAL Banach isomorphism with exact reciprocal-coordinate inverse and norm bound. Actual Jacobian is invertible-diagonal +COMPACT. Full bijectivity proved IF injective; that injectivity premise remains OPEN.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_invertible_diagonal_add_compact",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-period-invertible-diagonal-map.json"
     }
   ],
   "reuse_map": [
@@ -835,7 +841,7 @@
     }
   ],
   "remaining_obligations": [
-    "Prove a positive lower bound for the actual real Hill period Jacobian diagonal and prove full kernel injectivity, then the actual bounded inverse and locally uniform inverse bounds BEFORE ALL numerator indices. The FULL source-joint Banach period map, ONE common open placed-input domain, local all-n norm bounds, actual analytic bounded sequence Jacobian and ALL real diagonal entries nonzero are PROVED. NEW: quadratic energy separation, ONE all-n off-diagonal matrix bound with the continuous ORIGINAL inverse-index energy-gap-width lp2 majorant and uniformly l2-bounded free interaction kernel, and the ACTUAL compact off-diagonal remainder are NOW PROVED. Do NOT redo these estimates or the compactness argument. The diagonal is currently a bounded multiplier with nonzero entries, NOT YET a proved Banach isomorphism: high-diagonal asymptotics/positive lower bound remain OPEN. After the actual inverse, obtain a common complex SOURCE neighborhood for ALL actual zero coefficients, Banach source-to-zero SEQUENCE analyticity and the finer locally uniform ALL-index gamma_m^2/m bound. Complete arbitrary-input KMT Lemma10.2/global independent-data chart gluing and an n-independent free inverse neighborhood are not claimed.",
+    "Prove full kernel injectivity of the ACTUAL real Hill period lp sequence Jacobian. NEW: For EACH fixed numerator index, actual diagonal entries tend to ONE and have a positive lower bound. Its ACTUAL diagonal is now a Banach isomorphism with exact reciprocal-coordinate inverse and inverse norm bound, and the ACTUAL Jacobian is invertible-diagonal plus COMPACT remainder. The Fredholm alternative reduces full bijectivity to the remaining explicit injectivity premise. Do NOT redo fixed-n diagonal asymptotics, lower bound, diagonal inverse, all-n off-diagonal estimates or compactness. After the actual full inverse, obtain locally uniform FULL inverse bounds BEFORE ALL n, then one common complex SOURCE neighborhood for ALL actual zero coefficients, Banach source-to-zero SEQUENCE analyticity and the finer locally uniform ALL-index gamma_m^2/m bound. No n-independent diagonal lower bound is yet proved. The full source-joint Banach map and actual bounded analytic operator Jacobian are proved on ONE common open placed-input domain. Complete arbitrary-input KMT Lemma10.2/global independent-data chart gluing and an n-independent free inverse neighborhood are not claimed.",
     "Determine the universal 2/(pi*n) scalar in the ORIGINAL normalized Hill infinite product. The literal actual retained-zero product with a UNIQUE NONZERO scalar is NOW PROVED at EVERY original real H-minus-one source, with locally uniform convergence of products AND derivatives on the ENTIRE energy plane. Do NOT redo the product-up-to-scalar argument or infer the scalar from zeros/growth/analyticity plus its free value. A valid actual L2 normalization identity with a proved density transfer is one possible route. Complex-source product uniformity and exclusion of additional complex-source energy zeros are not proved. NEW: Jointly ENTIRE literal products in energy and independent inverse-index l2 data, locally UNIFORM joint cutoff convergence, actual real-source product/scalar continuity and a rigorous real L2-to-Hminus-one constant-normalization density transfer are NOW PROVED. The actual L2 identity itself remains OPEN. Do NOT redo these analytic-product/continuity/density dependencies, and do not assume the missing L2 normalization.",
     "Complete any required global complex energy-sheet/differential gluing, then construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Intrinsic numerator gluing, actual local roots/normalized periods and real-source root/differential overlap identities are proved. Formalize the literal KMT y-tilde integrating-factor gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint.",
     "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
@@ -2441,6 +2447,28 @@
     "full_Jacobian_kernel_injectivity_PROVED": false,
     "general_nonzero_source_PERIOD_Jacobian_inverse_proved": false,
     "locally_uniform_inverse_bounds_BEFORE_ALL_n_proved": false,
+    "COMMON_complex_actual_zero_SEQUENCE_Banach_analyticity_proved": false,
+    "fine_squared_gap_over_index_bound_proved": false,
+    "universal_2_over_pi_n_product_prefactor_proved": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_period_invertible_diagonal_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-period-invertible-diagonal-map.json",
+    "EXACT_weighted_diagonal_column_THREE_index_ratio_factorization_PROVED": true,
+    "moving_row_index_ratio_asymptotics_on_ORIGINAL_placed_domain_PROVED": true,
+    "literal_quotient_tends_to_one_along_original_positive_rows_at_FIXED_full_input_PROVED": true,
+    "ACTUAL_real_period_Jacobian_diagonal_tends_to_ONE_for_EACH_FIXED_n_PROVED": true,
+    "ACTUAL_positive_diagonal_lower_bound_at_EACH_real_source_and_EACH_FIXED_n_PROVED": true,
+    "ACTUAL_positive_lp2_diagonal_Banach_isomorphism_PROVED": true,
+    "EXACT_inverse_coordinate_division_by_actual_diagonal_PROVED": true,
+    "diagonal_inverse_operator_norm_le_reciprocal_lower_bound_PROVED": true,
+    "ACTUAL_invertible_diagonal_plus_COMPACT_remainder_PROVED": true,
+    "full_Hill_period_Jacobian_bijective_IF_injective_PROVED": true,
+    "full_Jacobian_kernel_injectivity_PROVED": false,
+    "full_Jacobian_inverse_without_injectivity_premise_PROVED": false,
+    "ONE_diagonal_lower_bound_BEFORE_ALL_n_PROVED": false,
+    "locally_uniform_full_inverse_bounds_BEFORE_ALL_n_proved": false,
     "COMMON_complex_actual_zero_SEQUENCE_Banach_analyticity_proved": false,
     "fine_squared_gap_over_index_bound_proved": false,
     "universal_2_over_pi_n_product_prefactor_proved": false,
