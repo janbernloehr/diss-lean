@@ -2494,6 +2494,70 @@ used as compiled imports and were not rebuilt in this incremental check.
 All actually used transitive axioms are covered by the cumulative audit;
 the direct library roots are additionally audited by module origin.
 
+## All-index Dirichlet source identification and global Hilbert coordinates
+
+`L2QuasiHillDirichletGauge.lean` uses the phase-rotated physical profile
+`(i*u,-i*u)` and the state map `(f1-f2,-i*z*(f1+f2))`. It intertwines the
+actual rough integral equations. The original NLS Dirichlet initial
+vector `(1,1)` maps to `(0,-2*i*z)`. Initial-data linearity gives the
+exact source-normalized identity `chi_D(z)=z*S_Hill(z^2)`, including
+zero frequency and without a trace of the rough profile at the endpoints.
+
+`HillHminusOneDirichletMiuraSource.lean` proves the literal Fourier-to-
+physical comparison and the exact shifted identity in every complex
+H^-1 Miura chart. At nonzero frequency the characteristic zero conditions
+are equivalent, with that nonzero hypothesis kept explicit. A physically
+real lift gives an original real-type NLS source.
+`HillDirichletMiuraZeroIndex.lean` proves that the added zero-frequency
+root has exactly canonical index zero. Along the real scalar homotopy,
+strictly ordered neighboring roots, continuity and exhaustion make this
+index fixed. Positive indices consequently give exactly positive
+frequencies.
+
+`HillHminusOneDirichletMiuraLabels.lean` squares those positive roots
+and subtracts the fixed real energy shift. The result is a strictly
+increasing enumeration of every actual Hill Dirichlet energy. Uniqueness
+of exhaustive ordered enumerations identifies it with `mu_n` at **every
+positive index**, including all central modes and closed gaps. No unknown
+index offset, high-tail-only matching or eigenvalue-model substitution
+enters this identification.
+
+`HillHminusOneDirichletCommonAnalytic.lean` pulls back the existing
+Banach-analytic NLS Dirichlet displacement sequence. Uniformly small
+high displacements and finitely many nonzero low roots give one complex
+H^-1-open neighborhood supporting all positive Dirichlet branches.
+Every branch is an actual complex Dirichlet zero throughout this common
+domain; on every nearby real input it is the actual indexed label.
+One analytic ell2 sequence `d` gives `mu_n=(pi*n+d_n)^2-c^2` with a fixed
+positive real `c`.
+
+`HilbertSampling.lean` proves contractivity and linear continuity of
+injective integer sampling. `DirichletSequenceCoordinates.lean` uses
+it to construct the normalized energy sequence
+
+```text
+E_n = (mu_n-pi^2*n^2)/(1+n).
+```
+
+Its linear part is a bounded Hilbert multiplier. The quadratic part is
+first constructed in ell1 by Holder multiplication and then continuously
+included in ell2. Thus the map is analytic in the Hilbert norm, not only
+coordinatewise. `GlobalDirichletCoordinates.lean` uses Banach-valued
+real-form uniqueness to glue these local maps on one complex-open
+neighborhood of the entire real H^-1 space. Every globally recovered
+scalar branch remains an actual Dirichlet zero on that same domain.
+The real coordinates are exactly the actual canonical labels with the
+stated normalization, and the entire sequence vanishes at the free
+potential. The logarithmic norming sequence, full Cartesian coordinates,
+analytic inverse realization and symplectic/action identities remain.
+
+The newly traversed inherited import closure contains 1184 source
+modules outside the preceding focused baseline, all byte-identical to
+the read-only compiled reference. Its hashes and direct roots are in
+`dirichlet-coordinate-library-reuse.json`. Those inherited modules were
+not rebuilt in this incremental check. The cumulative audit covers the
+actually used transitive axioms and all direct library-root declarations.
+
 ## Remaining essential KdV work
 
 1. Construct the closed intrinsic singular Hill operator domain from the
@@ -2559,16 +2623,16 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `4031299` contains 485 source modules, whose
-source hashes all remain unchanged. Six authored modules pass Lean
+The validated baseline at `7a12eee` contains 491 source modules, whose
+source hashes all remain unchanged. Eight authored modules pass Lean
 4.33.1/mathlib v4.33.1 with `warningAsError=true`. The full reproduction
-script lists 491 source modules. The positive-index example and all
-1150 coverage-name checks pass. Inherited reference imports are described
+script lists 499 source modules. The positive-index example and all
+1186 coverage-name checks pass. Inherited reference imports are described
 above; this is an incremental check, not a full repository rebuild.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 241 additional shared modules:
-4757 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 246 additional shared modules:
+4866 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

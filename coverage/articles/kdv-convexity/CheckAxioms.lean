@@ -1,3 +1,4 @@
+import NLS.Articles.KdVConvexity.GlobalDirichletCoordinates
 import NLS.Articles.KdVConvexity.GlobalSpectralActions
 import NLS.KdV.HillHminusOneDirichletSpectrumExhaustion
 import NLS.KdV.HillHminusOneArnoldGapUpperBound
@@ -86,6 +87,11 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.MKdV.L2QuasiHillDirichletGauge,
+    `NLS.SequenceSpaces.HilbertSampling,
+    `NLS.ZakharovShabat.SourceBoundaryDisplacementAnalytic,
+    `NLS.ZakharovShabat.L2SeparatedCharacteristics,
+    `NLS.ZakharovShabat.L2SourceCharacteristics,
     `NLS.SequenceSpaces.AnalyticSquareTailMajorant,
     `NLS.ZakharovShabat.UniformCanonicalPeriodicEndpoints,
     `NLS.ZakharovShabat.SourcePeriodicGapTails,
