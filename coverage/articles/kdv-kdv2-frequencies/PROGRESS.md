@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual action derivatives and all-gap coordinate variation
+## Latest unique physical action Hamiltonians and mixed coordinate identities
+
+The actual normalized contour tangent `Y_m` now satisfies the physical Gardner weak identity against every periodic AC test with continuous periodic derivative. Its bounded test pairing uses the actual source-to-physical L2 map. Verified unit Fourier waves and their actual derivatives separate the physical tangent space, so `Y_m` is the unique period-one mean-zero weak Hamiltonian vector of the actual action, including at a closed selected gap.
+
+Consequently, actual actions commute and `D z_n[X_(I_m)] = i delta_mn z_n` holds for every actual physical coordinate and every matching differentiable extension, including closed gaps. On an open selected gap, a genuine local analytic real angle has phase `exp(-i theta_n)` and `D theta_n[X_(I_m)] = -delta_mn`. This verifies the mixed action orientation; full angle-angle and coordinate-coordinate canonicality is not asserted. See `PHYSICAL_ACTION_HAMILTONIANS.md`.
+
+Prior strict evidence for all 996 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical wave calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1002 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1027 frozen source/checker/provenance hashes, 23 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1002-module rebuild is claimed.
+
+Fresh audit: 9274 selected and 31820 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier actual action derivatives and all-gap coordinate variation
 
 The actual action has a genuine local complex L2 analytic fixed-contour extension at every real source, including a closed selected gap. Every differentiable physical matching extension has the same derivative on period-one directions: `D I_n[h] = -1/pi contour_n D Delta[h]/R`. Compact-contour differentiation, the actual root equation, mixed derivative symmetry and integration by parts prove the formula; it is not a supplied action-gradient hypothesis.
 

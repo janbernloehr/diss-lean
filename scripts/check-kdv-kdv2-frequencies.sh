@@ -54,6 +54,7 @@ modules=(
   NLS/ComplexAnalysis/SquareProductConvergence
   NLS/ComplexAnalysis/RemovableFactorConvergence
   NLS/ComplexAnalysis/RationalCircleIntegrationByParts
+  NLS/Fourier/AbsoluteContinuousCoefficients
   NLS/ZakharovShabat/ContinuousPotentialL2Bound
   NLS/SequenceSpaces/FiniteModification
   NLS/ZakharovShabat/FreeSineExteriorBounds
@@ -1005,6 +1006,11 @@ modules=(
   NLS/KdV/HillLocalContourAction
   NLS/KdV/HillActionSourceVariation
   NLS/KdV/HillAbelianCoordinateVariation
+  NLS/KdV/HillPhysicalGradientPairing
+  NLS/KdV/HillActionHamiltonianDirections
+  NLS/Fourier/UnitWaveCurves
+  NLS/KdV/HillWeakHamiltonianUniqueness
+  NLS/KdV/HillActionCoordinateBrackets
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

@@ -1,0 +1,12 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "files": [
+    {
+      "path": "NLS/Fourier/AbsoluteContinuousCoefficients.lean",
+      "source_sha256": "45f6bb5c30534862e2785a38b43f16f66408acacbeb7d165e38989c874bc9f32",
+      "local_sha256": "45f6bb5c30534862e2785a38b43f16f66408acacbeb7d165e38989c874bc9f32",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "scope": "Unchanged canonical Fourier waves, actual real derivatives and absolutely continuous Fourier coefficient calculus. Strictly compiled at default heartbeats and used to verify that normalized unit Fourier waves and their actual derivatives belong to the full physical weak Hamiltonian test class."
+}

@@ -806,3 +806,14 @@ Every actual coordinate now satisfies `D z_n[X_b] = -i psi_n(b) z_n/2` at all re
 Prior strict evidence for all 988 unchanged selected baseline sources; strict dependency-order compilation of three byte-identical canonical calculus helpers and five new proof modules; then a fresh combined transitive axiom audit of all 996 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1020 frozen source/checker/provenance hashes, 22 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 996-module rebuild is claimed.
 
 Fresh audit: 9210 selected and 31761 imported NLS declarations, permitted axioms only. Physical Gardner action-gradient identification of `Y_m`, canonical brackets, full Banach analyticity, inverse/rough realization and all eleven main theorem rows remain OPEN.
+
+
+## Latest unique physical action Hamiltonians and mixed coordinate identities
+
+The actual normalized contour tangent `Y_m` now satisfies the physical Gardner weak identity against every periodic AC test with continuous periodic derivative. Its bounded test pairing uses the actual source-to-physical L2 map. Verified unit Fourier waves and their actual derivatives separate the physical tangent space, so `Y_m` is the unique period-one mean-zero weak Hamiltonian vector of the actual action, including at a closed selected gap.
+
+Consequently, actual actions commute and `D z_n[X_(I_m)] = i delta_mn z_n` holds for every actual physical coordinate and every matching differentiable extension, including closed gaps. On an open selected gap, a genuine local analytic real angle has phase `exp(-i theta_n)` and `D theta_n[X_(I_m)] = -delta_mn`. This verifies the mixed action orientation; full angle-angle and coordinate-coordinate canonicality is not asserted. See `PHYSICAL_ACTION_HAMILTONIANS.md`.
+
+Prior strict evidence for all 996 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical wave calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1002 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1027 frozen source/checker/provenance hashes, 23 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1002-module rebuild is claimed.
+
+Fresh audit: 9274 selected and 31820 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.

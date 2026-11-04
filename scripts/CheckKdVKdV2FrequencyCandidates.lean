@@ -1,3 +1,8 @@
+import NLS.KdV.HillActionCoordinateBrackets
+import NLS.KdV.HillWeakHamiltonianUniqueness
+import NLS.Fourier.UnitWaveCurves
+import NLS.KdV.HillActionHamiltonianDirections
+import NLS.KdV.HillPhysicalGradientPairing
 import NLS.KdV.HillAbelianCoordinateVariation
 import NLS.KdV.HillActionSourceVariation
 import NLS.KdV.HillLocalContourAction
@@ -219,6 +224,7 @@ run_cmd do
     `NLS.ComplexAnalysis.SquareProductConvergence,
     `NLS.ComplexAnalysis.RemovableFactorConvergence,
     `NLS.ComplexAnalysis.RationalCircleIntegrationByParts,
+    `NLS.Fourier.AbsoluteContinuousCoefficients,
     `NLS.ZakharovShabat.ContinuousPotentialL2Bound,
     `NLS.SequenceSpaces.FiniteModification,
     `NLS.ZakharovShabat.FreeSineExteriorBounds,
@@ -1169,7 +1175,12 @@ run_cmd do
     `NLS.ComplexAnalysis.TraceActionVariation,
     `NLS.KdV.HillLocalContourAction,
     `NLS.KdV.HillActionSourceVariation,
-    `NLS.KdV.HillAbelianCoordinateVariation]
+    `NLS.KdV.HillAbelianCoordinateVariation,
+    `NLS.KdV.HillPhysicalGradientPairing,
+    `NLS.KdV.HillActionHamiltonianDirections,
+    `NLS.Fourier.UnitWaveCurves,
+    `NLS.KdV.HillWeakHamiltonianUniqueness,
+    `NLS.KdV.HillActionCoordinateBrackets]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do
