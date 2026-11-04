@@ -70,6 +70,8 @@ modules=(NLS/ComplexAnalysis/RealLineIdentity
   NLS/KdV/ClassicalHillSpectrum
   NLS/KdV/ClassicalSourcePrimitive
   NLS/ComplexAnalysis/NestedCircleHomotopy
+  NLS/ZakharovShabat/ClassicalForcedKernel
+  NLS/ZakharovShabat/ClassicalDiscriminantGradient
   NLS/KdV/ClassicalSpectralEmbedding
   NLS/KdV/ClassicalContourCoverage
   NLS/KdV/ActionHamiltonianMoments
@@ -530,7 +532,9 @@ modules=(NLS/ComplexAnalysis/RealLineIdentity
   NLS/KdV/HillFiniteGapExterior
   NLS/KdV/HillFiniteGapQuarticEnergy
   NLS/KdV/ClassicalHillDirichletBoundaryPairing
-  NLS/KdV/ClassicalHillTracePairingKernel)
+  NLS/KdV/ClassicalHillTracePairingKernel
+  NLS/KdV/ClassicalHillDiscriminantGradient
+  NLS/KdV/ClassicalHillGardnerTraceInvolution)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

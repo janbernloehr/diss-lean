@@ -1,3 +1,5 @@
+import NLS.KdV.ClassicalHillGardnerTraceInvolution
+import NLS.KdV.ClassicalHillDiscriminantGradient
 import NLS.KdV.ClassicalHillTracePairingKernel
 import NLS.KdV.ClassicalHillDirichletBoundaryPairing
 import NLS.KdV.HillFiniteGapQuarticEnergy
@@ -176,6 +178,8 @@ run_cmd do
     `NLS.KdV.ClassicalHillSpectrum,
     `NLS.KdV.ClassicalSourcePrimitive,
     `NLS.ComplexAnalysis.NestedCircleHomotopy,
+    `NLS.ZakharovShabat.ClassicalForcedKernel,
+    `NLS.ZakharovShabat.ClassicalDiscriminantGradient,
     `NLS.KdV.ClassicalSpectralEmbedding,
     `NLS.KdV.ClassicalContourCoverage,
     `NLS.KdV.ActionHamiltonianMoments,
@@ -636,7 +640,9 @@ run_cmd do
     `NLS.KdV.HillFiniteGapExterior,
     `NLS.KdV.HillFiniteGapQuarticEnergy,
     `NLS.KdV.ClassicalHillDirichletBoundaryPairing,
-    `NLS.KdV.ClassicalHillTracePairingKernel]
+    `NLS.KdV.ClassicalHillTracePairingKernel,
+    `NLS.KdV.ClassicalHillDiscriminantGradient,
+    `NLS.KdV.ClassicalHillGardnerTraceInvolution]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

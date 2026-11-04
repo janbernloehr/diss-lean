@@ -11,7 +11,6 @@ spectral-gradient hypothesis.
 -/
 
 noncomputable section
-set_option maxHeartbeats 400000
 open Set Complex MeasureTheory intervalIntegral NLS.LinearVolterra
 namespace NLS.ZakharovShabat
 

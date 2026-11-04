@@ -1,5 +1,10 @@
 # Actual Dirichlet / monodromy-kernel boundary pairings
 
+Subsequent progress: `ACTUAL_GARDNER_TRACE_INVOLUTION.md` now records the
+proved actual potential-derivative representation and scalar Gardner trace
+involution. The remaining-step descriptions below record this earlier milestone;
+the normalized Dirichlet/angle and frequency identities still remain open.
+
 This is a necessary scalar Hill calculation toward the missing physical
 angle–discriminant bracket used before formula (69) in Lemma 3.2 (PDF page
 26). It does not yet identify the monodromy kernel with the potential

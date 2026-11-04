@@ -17,6 +17,12 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual Hill gradient and Gardner trace involution
+
+The actual complex potential derivative of the Hill discriminant is now represented by its literal scalar quadratic kernel. A proved closed differential system and an explicit concomitant give genuine scalar Gardner trace involution at every continuous complex potential and all pairs of energies. The trace directions have mean zero and every actual discriminant is infinitesimally stationary along them. Exact Dirichlet squared-state source variation is also proved. See `ACTUAL_GARDNER_TRACE_INVOLUTION.md`.
+
+Current validation: 527 selected modules (523 unchanged prior checks, two existing helpers with heartbeat overrides removed, and two new strict default-limit compilations); fresh combined transitive audit of 5903 selected and 28021 imported NLS declarations, permitted axioms only. Normalized Dirichlet and Abelian angle identities, physical frequency69 and all main theorem conclusions remain open.
+
 ## Latest actual Dirichlet / monodromy-kernel pairings
 
 The actual continuous scalar Hill IVP now gives squared and mixed boundary identities at arbitrary complex energies, including the diagonal. Determinant one and the proved spatial derivative of the literal quadratic monodromy kernel yield its exact Dirichlet pairing with all endpoint factors. See `DIRICHLET_TRACE_KERNEL_PAIRING.md`.

@@ -1,0 +1,18 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "source_kind": "Existing canonical dissertation library; already transitive dependencies before this milestone",
+  "files": [
+    {
+      "path": "NLS/ZakharovShabat/ClassicalForcedKernel.lean",
+      "source_sha256": "6ff5e6888d78b78d806799b89d8633313997e2dc5e3b52f7b506a5794ea3208a",
+      "local_sha256": "0fddb2dabc39ba876b978fc6b66d73a1f4fd64fced57a900171a55c22b05f100",
+      "disposition": "removed_only_existing_maxHeartbeats_400000_override; all mathematical declarations and proofs unchanged; explicitly selected and strictly compiled under default limits"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ClassicalDiscriminantGradient.lean",
+      "source_sha256": "3742e6ce09b0630e40238fcae6700bff4bf3655e98d2ee5333c63fe688ed5a5f",
+      "local_sha256": "7c0e09401d5695aba3be006fae621f2238e348eecdf10dd656b86c69753f544e",
+      "disposition": "removed_only_existing_maxHeartbeats_400000_override; all mathematical declarations and proofs unchanged; explicitly selected and strictly compiled under default limits"
+    }
+  ]
+}
