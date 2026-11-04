@@ -1541,6 +1541,12 @@ modules = [
     'NLS.SequenceSpaces.ZeroModeSingleDenseRange',
     'NLS.KdV.HillNativeMeanZeroDerivative',
     'NLS.Articles.KdVPseudomeasures.OriginalHillJacobianDenseRange',
+    'NLS.SequenceSpaces.WeightedSymbolGauge',
+    'NLS.SequenceSpaces.CompactGaugeDerivative',
+    'NLS.SequenceSpaces.ZeroModeExponentialSymbol',
+    'NLS.KdV.HillNativeDiagonalGauge',
+    'NLS.KdV.HillNativeOffIndexCompact',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillOffIndexJacobianCompact',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

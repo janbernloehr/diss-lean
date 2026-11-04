@@ -1507,6 +1507,12 @@ import NLS.Poisson.GardnerHamiltonianZeroMode
 import NLS.SequenceSpaces.ZeroModeSingleDenseRange
 import NLS.KdV.HillNativeMeanZeroDerivative
 import NLS.Articles.KdVPseudomeasures.OriginalHillJacobianDenseRange
+import NLS.SequenceSpaces.WeightedSymbolGauge
+import NLS.SequenceSpaces.CompactGaugeDerivative
+import NLS.SequenceSpaces.ZeroModeExponentialSymbol
+import NLS.KdV.HillNativeDiagonalGauge
+import NLS.KdV.HillNativeOffIndexCompact
+import NLS.Articles.KdVPseudomeasures.OriginalHillOffIndexJacobianCompact
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9222,3 +9228,46 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillJacobianDenseRange
 #print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeJacobian_single_preimage
 #print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeJacobian_denseRange
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Jacobian_denseRange
+#print axioms NLS.WeightedCoeff.boundedSymbol
+#print axioms NLS.WeightedCoeff.boundedSymbol_apply
+#print axioms NLS.WeightedCoeff.norm_boundedSymbol_le
+#print axioms NLS.WeightedCoeff.boundedSymbolBilinear
+#print axioms NLS.WeightedCoeff.boundedSymbolBilinear_apply
+#print axioms NLS.WeightedCoeff.isCompactOperator_boundedSymbol_fixed
+#print axioms NLS.WeightedCoeff.exponentialSymbolEquiv
+#print axioms NLS.WeightedCoeff.exponentialSymbolEquiv_apply
+#print axioms NLS.WeightedCoeff.exponentialSymbolEquiv_symm_apply
+#print axioms NLS.WeightedCoeff.removeExponentialSymbol
+#print axioms NLS.WeightedCoeff.analyticAt_removeExponentialSymbol
+#print axioms NLS.WeightedCoeff.fderiv_removeExponentialSymbol_remainder
+#print axioms NLS.WeightedCoeff.isCompactOperator_removeExponentialSymbol_remainder
+#print axioms NLS.WeightedCoeff.exponentialSymbolEquiv_map_zeroMode
+#print axioms NLS.WeightedCoeff.zeroModeExponentialSymbolEquiv
+#print axioms NLS.WeightedCoeff.zeroModeExponentialSymbolEquiv_coe
+#print axioms NLS.WeightedCoeff.zeroModeProjection_exponentialSymbolEquiv
+#print axioms NLS.KdV.hillHminusSignedOffIndexExponent
+#print axioms NLS.KdV.analyticOnNhd_hillHminusSignedOffIndexExponent
+#print axioms NLS.KdV.hillHminusOffIndexAbelianBoundedSequence_nonpositive
+#print axioms NLS.KdV.hillHminusSignedOffIndexExponent_positive
+#print axioms NLS.KdV.hillHminusSignedOffIndexExponent_negative
+#print axioms NLS.KdV.hillHminusActionAngleNativeDomain_subset_offIndexBounded
+#print axioms NLS.KdV.hillHminusNativeDiagonalMap
+#print axioms NLS.KdV.analyticOnNhd_hillHminusNativeDiagonalMap
+#print axioms NLS.KdV.hillHminusNativeDiagonalMap_positive
+#print axioms NLS.KdV.hillHminusNativeDiagonalMap_negative
+#print axioms NLS.KdV.hillHminusNativeDiagonalMap_zero_mode
+#print axioms NLS.KdV.hillHminusNativeComplexMap_from_diagonal
+#print axioms NLS.KdV.hillHminusOffIndexJacobianRemainder
+#print axioms NLS.KdV.hillHminusOffIndexJacobianRemainder_eq
+#print axioms NLS.KdV.hillHminusOffIndexJacobianRemainder_coordinate
+#print axioms NLS.KdV.isCompactOperator_hillHminusOffIndexJacobianRemainder
+#print axioms NLS.KdV.hillMeanZeroDiagonalMap
+#print axioms NLS.KdV.hillMeanZeroDiagonalMap_coe
+#print axioms NLS.KdV.analyticOnNhd_hillMeanZeroDiagonalMap
+#print axioms NLS.KdV.fderiv_hillMeanZeroDiagonalMap_eq_comp
+#print axioms NLS.KdV.hillMeanZeroOffIndexJacobianRemainder
+#print axioms NLS.KdV.hillMeanZeroOffIndexJacobianRemainder_eq_comp
+#print axioms NLS.KdV.isCompactOperator_hillMeanZeroOffIndexJacobianRemainder
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_offIndex_Jacobian_compact
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_meanZero_offIndex_Jacobian_compact
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_diagonal_coordinates
