@@ -576,7 +576,10 @@ modules=(NLS/ComplexAnalysis/RealLineIdentity
   NLS/KdV/HillDirichletGardnerBrackets
   NLS/KdV/HillL2TraceGradients
   NLS/ComplexAnalysis/QuadraticDividedDifference
-  NLS/KdV/HillDirichletDiscriminantBrackets)
+  NLS/KdV/HillDirichletDiscriminantBrackets
+  NLS/KdV/HillL2GardnerTraceInvolution
+  NLS/KdV/HillL2GardnerDirections
+  NLS/KdV/HillL2GardnerSpectralStationarity)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

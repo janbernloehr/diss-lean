@@ -17,6 +17,12 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual Gardner source tangents and spectral stationarity
+
+Actual rough trace involution now gives coefficient-space Gardner tangents with even support, zero mean and the exact physical Fourier representative. Actual trace and spectral-derivative source variations vanish along them; actual normalized Dirichlet branch variations recover the proved bracket. Continued primitive and root source variations vanish on their actual open continuation domain. See `ACTUAL_GARDNER_SOURCE_TANGENTS.md`.
+
+Current validation: 572 selected modules (569 unchanged prior checks and three new strict default-limit compilations); fresh combined transitive audit of 6246 selected and 28489 imported NLS declarations, permitted axioms only. Actual normalized numerator and Abelian-angle source variation, physical frequency69 and all main theorem conclusions remain open.
+
 ## Latest actual normalized Dirichlet / discriminant bracket
 
 The actual complex L2 Hill discriminant gradient and its spatial derivative are now identified. For every real period-one L2 source and positive Dirichlet index, the normalized physical Gardner bracket has the exact source quotient away from the energy diagonal and the exact filled value -r_D/2 on it. The actual mass, slope, sheet root, labelled energies and branch gradients are proved or selectively reused; real Fourier truncations justify the rough boundary identity. See `NORMALIZED_DIRICHLET_TRACE_BRACKET.md`.

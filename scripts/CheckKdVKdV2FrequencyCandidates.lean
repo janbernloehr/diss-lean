@@ -1,3 +1,6 @@
+import NLS.KdV.HillL2GardnerSpectralStationarity
+import NLS.KdV.HillL2GardnerDirections
+import NLS.KdV.HillL2GardnerTraceInvolution
 import NLS.KdV.HillDirichletDiscriminantBrackets
 import NLS.KdV.HillL2TraceGradients
 import NLS.KdV.HillDirichletGradients
@@ -688,7 +691,10 @@ run_cmd do
     `NLS.KdV.HillDirichletGardnerBrackets,
     `NLS.KdV.HillL2TraceGradients,
     `NLS.ComplexAnalysis.QuadraticDividedDifference,
-    `NLS.KdV.HillDirichletDiscriminantBrackets]
+    `NLS.KdV.HillDirichletDiscriminantBrackets,
+    `NLS.KdV.HillL2GardnerTraceInvolution,
+    `NLS.KdV.HillL2GardnerDirections,
+    `NLS.KdV.HillL2GardnerSpectralStationarity]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

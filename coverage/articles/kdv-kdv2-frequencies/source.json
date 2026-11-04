@@ -9166,6 +9166,42 @@
       "scope": "Actual normalized Dirichlet/discriminant scalar Gardner bracket at every real period-one L2 source, every positive Dirichlet index and all complex energies. Real Fourier truncations transfer the actual boundary identity; proved mass/slope normalization gives the exact cross-multiplied sheet-root identity, off-diagonal source quotient, and actual diagonal value minus one half the actual sheet root, including zero energy. Actual branch and trace gradients are proved or reused in the same physical normalization. No Abelian-angle identity, physical frequency theorem or main theorem asserted.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "990172895fdd50dd0b3137db215a9504c6b3b6099ecacb6a803ee4adabd1d334"
+    },
+    {
+      "path": "NLS/KdV/HillL2GardnerTraceInvolution.lean",
+      "source_labels": [
+        "Necessary actual Gardner source-tangent and spectral-stationarity input toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Actual scalar Gardner trace involution for every complex L2 Hill source and all frequency pairs, including the diagonal, with both explicit spatial curve and actual spatial deriv. Norm continuity and finite Fourier synthesis transfer the proved actual continuous identity. Actual spatial trace gradients have matching endpoints and zero mean; no source smoothness or real-type hypothesis assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "059f1d1c3342f87418342ff0409ae0db7a9cdccd6da397afdece2fbe1925b58e"
+    },
+    {
+      "path": "NLS/KdV/HillL2GardnerDirections.lean",
+      "source_labels": [
+        "Necessary actual Gardner source-tangent and spectral-stationarity input toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Actual Coeff2 Gardner tangents constructed from the physical unit-period Fourier coefficients of the spatial trace gradient. Proves exact Fourier representative, even period-two support, zero mean coefficient and correct source-to-physical derivative sign. Every actual Hill discriminant has zero source Frechet derivative along every such tangent. Actual normalized analytic Dirichlet branch derivatives reproduce the previously computed Gardner bracket in the same direction.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ac7e8dfbc2fed418f5fbdb7d383ecf2294e1689318b82e1dec681f958b1246b0"
+    },
+    {
+      "path": "NLS/KdV/HillL2GardnerSpectralStationarity.lean",
+      "source_labels": [
+        "Necessary actual Gardner source-tangent and spectral-stationarity input toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Actual joint discriminant and spectral-derivative source stationarity along constructed coefficient Gardner directions. Joint analyticity and second Frechet derivative symmetry justify mixed differentiation. Actual continued primitive and sign-normalized root have zero source variation on precisely the actual open continuation domain, in both joint and source-section formulations. No presumed isospectral path, normalization derivative, enlarged global domain or angle/frequency identity assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b095c41b27af6a263f0fa4460aea4a42b91b66a3b9bfabc50f1f151427e46ea4"
     }
   ],
   "dependencies_needed": [
@@ -9197,15 +9233,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 6223,
-    "total_declarations_audited": 28466,
+    "candidate_declarations_audited": 6246,
+    "total_declarations_audited": 28489,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 569,
+    "selected_modules": 572,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -9222,7 +9258,8 @@
     "finite_gap_quartic_identity_validation_sequence": "Prior strict validation of 509 unchanged selected sources, strict compilation of ten unchanged selected shared imports and two new proof modules, then a fresh full combined transitive axiom audit of all 521 selected modules. Selected dependency order is checked transitively. No repeated full 521-module build is claimed. Source hashes, selections, private fresh outputs, nine provenance records and canonical main verified.",
     "dirichlet_trace_kernel_validation_sequence": "Prior strict validation of 521 unchanged selected sources, strict compilation of two new scalar Hill boundary/kernel proof modules, then a fresh full combined transitive axiom audit of all 523 selected modules. Selected dependency order is checked transitively. No repeated full 523-module build is claimed. Source hashes, selections, private fresh outputs, nine unchanged provenance records and canonical main verified.",
     "actual_gardner_trace_validation_sequence": "Prior strict validation of 523 unchanged selected sources, strict default-limit compilation of two existing helper files with only their old heartbeat overrides removed and two new actual scalar Hill gradient/involution modules, then a fresh full combined transitive axiom audit of all 527 selected modules. Selected dependency order is checked transitively, with the helpers before existing consumers. No repeated full 527-module build is claimed. Source hashes, selections, private fresh outputs, nine unchanged shared-import records, canonical helper reuse hashes and clean unchanged canonical main verified.",
-    "normalized_dirichlet_trace_bracket_validation_sequence": "Prior strict validation of 527 unchanged selected sources, strict dependency-order compilation of 39 unchanged selected shared imports and three new proof modules, then a fresh full combined transitive axiom audit of all 569 selected modules. Existing compatible local variants retained unchanged. The shared strict checks and new-module checks are separate phases; no repeated full 569-module build is claimed. Exact selections, transitive selected dependency order, source hashes, private fresh outputs, ten shared-import records, canonical reuse hashes and clean unchanged canonical main verified."
+    "normalized_dirichlet_trace_bracket_validation_sequence": "Prior strict validation of 527 unchanged selected sources, strict dependency-order compilation of 39 unchanged selected shared imports and three new proof modules, then a fresh full combined transitive axiom audit of all 569 selected modules. Existing compatible local variants retained unchanged. The shared strict checks and new-module checks are separate phases; no repeated full 569-module build is claimed. Exact selections, transitive selected dependency order, source hashes, private fresh outputs, ten shared-import records, canonical reuse hashes and clean unchanged canonical main verified.",
+    "actual_gardner_source_tangents_validation_sequence": "Prior strict validation of 569 unchanged selected sources, strict compilation of three new actual rough Hill source-tangent/stationarity modules, then a fresh full combined transitive axiom audit of all 572 selected modules. No new branch imports or changes to existing source/reuse records. Exact selections, transitive selected dependency order, source hashes, private fresh outputs, ten shared-import records, canonical helper reuse hashes and clean unchanged canonical main verified. No repeated full 572-module build is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -9399,5 +9436,6 @@
   "actual_gardner_trace_record": "ACTUAL_GARDNER_TRACE_INVOLUTION.md",
   "canonical_trace_gradient_reuse_record": "CANONICAL_TRACE_GRADIENT_REUSE.json",
   "normalized_dirichlet_trace_bracket_record": "NORMALIZED_DIRICHLET_TRACE_BRACKET.md",
-  "shared_dirichlet_normalization_import_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json"
+  "shared_dirichlet_normalization_import_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+  "actual_gardner_source_tangents_record": "ACTUAL_GARDNER_SOURCE_TANGENTS.md"
 }
