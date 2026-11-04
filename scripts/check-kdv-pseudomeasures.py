@@ -1490,6 +1490,17 @@ modules = [
     'NLS.KdV.HillFunctionalActionPrescribedContour',
     'NLS.KdV.HillAnglePairDiscriminantPeriods',
     'NLS.Articles.KdVPseudomeasures.OriginalHillAngleDiscriminant',
+    'NLS.ComplexAnalysis.RealFormDifferential',
+    'NLS.Poisson.GardnerRealForm',
+    'NLS.KdV.HillCompletePhaseReality',
+    'NLS.KdV.HillDiscriminantRealForm',
+    'NLS.KdV.HillAnglePairSpectralReality',
+    'NLS.SequenceSpaces.OddPositiveScalarExtension',
+    'NLS.KdV.HillAnglePairGapZeroSequence',
+    'NLS.ZakharovShabat.SourceOddPsiVariationInterpolation',
+    'NLS.KdV.HillPsiFrequencySourceVariation',
+    'NLS.KdV.HillAnglePairDiscriminantStationarity',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillAnglePairIsospectral',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
