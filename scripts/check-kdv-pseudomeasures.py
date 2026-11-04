@@ -1518,6 +1518,12 @@ modules = [
     'NLS.KdV.HillDirichletSpectralLocalFlow',
     'NLS.KdV.HillDirichletSpectralCurveInvariants',
     'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralLocalFlow',
+    'NLS.FunctionalAnalysis.CompactInvariantCurveContinuation',
+    'NLS.FunctionalAnalysis.CompactInvariantTrajectories',
+    'NLS.FunctionalAnalysis.CompactInvariantGlobalCurve',
+    'NLS.KdV.HillRealSpectralInvariants',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeCompactFibers',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralGlobalFlow',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
