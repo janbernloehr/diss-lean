@@ -743,6 +743,15 @@ import NLS.KdV.HillDirichletFourierSequence
 import NLS.Fourier.ZeroExtensionConvolution
 import NLS.KdV.HillDirichletConvolutionEquation
 import NLS.KdV.HillDirichletParityForcing
+import NLS.SequenceSpaces.TwoPoleReciprocalEnvelope
+import NLS.KdV.HillFreeBoundaryGreen
+import NLS.KdV.HillUnitWeightLift
+import NLS.KdV.HillCorrectedBoundaryGreen
+import NLS.KdV.HillForcedFourierReduction
+import NLS.Fourier.UnitIntervalParityUniqueness
+import NLS.KdV.HillDirichletGreenReconstruction
+import NLS.KdV.HillDirichletGreenBoundary
+import NLS.KdV.HillDirichletBoundaryOperator
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1198,7 +1207,12 @@ run_cmd do
     ``NLS.Fourier.memlp_sobolev_halfCoefficient_of_ac_zero_boundary,
     ``NLS.Fourier.exists_halfCoefficient_l1_of_ac_zero_boundary,
     ``NLS.Fourier.continuousSynthesis_halfCoefficients_eq_zeroExtension_ae,
-    ``NLS.Fourier.convolution_halfCoefficients_eq_physical_product]
+    ``NLS.Fourier.convolution_halfCoefficients_eq_physical_product,
+    ``NLS.Coeff.twoPoleReciprocalEnvelope,
+    ``NLS.Coeff.twoPoleReciprocalEnvelope_apply,
+    ``NLS.Coeff.norm_twoPoleReciprocalEnvelope_le,
+    ``NLS.Fourier.unitFourierCoefficient_eq_two_halfCoefficient_parity,
+    ``NLS.Fourier.eq_zero_on_unitInterval_of_halfCoefficient_parity_zero]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

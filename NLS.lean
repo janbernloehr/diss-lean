@@ -5666,3 +5666,12 @@ import NLS.KdV.HillDirichletFourierSequence
 import NLS.Fourier.ZeroExtensionConvolution
 import NLS.KdV.HillDirichletConvolutionEquation
 import NLS.KdV.HillDirichletParityForcing
+import NLS.SequenceSpaces.TwoPoleReciprocalEnvelope
+import NLS.KdV.HillFreeBoundaryGreen
+import NLS.KdV.HillUnitWeightLift
+import NLS.KdV.HillCorrectedBoundaryGreen
+import NLS.KdV.HillForcedFourierReduction
+import NLS.Fourier.UnitIntervalParityUniqueness
+import NLS.KdV.HillDirichletGreenReconstruction
+import NLS.KdV.HillDirichletGreenBoundary
+import NLS.KdV.HillDirichletBoundaryOperator

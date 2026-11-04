@@ -135,6 +135,7 @@ modules+=(NLS/ComplexAnalysis/QuadraticGapActionRatioDisc NLS/KdV/HillUniformCom
 modules+=(NLS/KdV/HillComplexWeightedEmbedding NLS/SequenceSpaces/NatL1AnalyticRealization NLS/KdV/HillComplexWeightedGapSquares NLS/KdV/HillComplexWeightedGapTails NLS/KdV/HillComplexGapActions NLS/KdV/HillComplexWeightedActionTails NLS/KdV/HillComplexWeightedActionSequence NLS/KdV/HillRealActionAnalytic NLS/KdV/HillFullWeightedActionAnalytic)
 modules+=(NLS/KdV/HillReconstructionBounds NLS/KdV/HillReconstructionBoundary NLS/KdV/HillBoundaryCoordinates)
 modules+=(NLS/Fourier/UnitIntervalHillBoundaryForcing NLS/KdV/HillRoughScalarEquation NLS/Fourier/ZeroBoundarySummableCoefficients NLS/KdV/HillDirichletForcedFourier NLS/KdV/HillDirichletFourierSequence NLS/Fourier/ZeroExtensionConvolution NLS/KdV/HillDirichletConvolutionEquation NLS/KdV/HillDirichletParityForcing)
+modules+=(NLS/SequenceSpaces/TwoPoleReciprocalEnvelope NLS/KdV/HillFreeBoundaryGreen NLS/KdV/HillUnitWeightLift NLS/KdV/HillCorrectedBoundaryGreen NLS/KdV/HillForcedFourierReduction NLS/Fourier/UnitIntervalParityUniqueness NLS/KdV/HillDirichletGreenReconstruction NLS/KdV/HillDirichletGreenBoundary NLS/KdV/HillDirichletBoundaryOperator)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
