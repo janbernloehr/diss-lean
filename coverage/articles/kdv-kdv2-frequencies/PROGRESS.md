@@ -17,6 +17,12 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest canonical roots on all original contours
+
+Actual real trace and strict negative radicand signs exclude all canonical cuts at original real crossings. Every original positive frequency circle is in the canonical energy-root domain. One constructed normalized real chart and one ball precede all real inputs, indices and contour points, with exact root and full complex germ agreement. See `ORIGINAL_CONTOUR_ROOTS.md`.
+
+Current validation: 419 selected modules, 417 unchanged previously checked plus two new strict incremental compilations; fresh combined transitive audit of 4860 selected and 27020 imported NLS declarations, permitted axioms only. Actual period transfer, normalized-family identification and all main theorem rows remain open.
+
 ## Latest canonical and earlier period-data Hilbert compatibility
 
 The complete actual free critical set fixes every canonical free label. Complex analytic uniqueness along real radial path images identifies the earlier branches and their full complex germs. Their filled scalar and Hilbert bases agree at every energy. On one ball chosen before all real inputs and indices, the actual descended Miura numerator is represented by genuine residue coefficients in the earlier period-data Hilbert basis. See `CANONICAL_CRITICAL_COMPATIBILITY.md`.

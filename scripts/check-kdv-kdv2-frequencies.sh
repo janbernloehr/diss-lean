@@ -424,7 +424,9 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/HillHminusOneCriticalChartIndependence
   NLS/KdV/HillHminusOneCriticalChartGerms
   NLS/KdV/FreeHillCriticalEnergies
-  NLS/KdV/HillHminusOneCanonicalCriticalCompatibility)
+  NLS/KdV/HillHminusOneCanonicalCriticalCompatibility
+  NLS/KdV/HillHminusOneRealContinuationBands
+  NLS/KdV/HillHminusOneOriginalContourRoots)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys
