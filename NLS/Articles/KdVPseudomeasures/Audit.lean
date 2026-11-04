@@ -1249,6 +1249,15 @@ import NLS.KdV.HillNativeDirichletFirstVariation
 import NLS.KdV.HillNativeNormingFirstVariation
 import NLS.KdV.HillNativeDirichletSheetFirstVariation
 import NLS.Articles.KdVPseudomeasures.OriginalHillNativeSpectralFirstVariation
+import NLS.SequenceSpaces.PeriodOneConstantCoefficients
+import NLS.KdV.HillNativeTraceFirstVariation
+import NLS.KdV.HillNativeConstantShiftLabels
+import NLS.ComplexAnalysis.QuadraticCoordinateVariation
+import NLS.KdV.HillMiuraFreeIsospectral
+import NLS.KdV.HillNativeMidpointStationarity
+import NLS.KdV.HillNativeMidpointFirstVariation
+import NLS.KdV.HillNativeDirichletDisplacementFirstVariation
+import NLS.Articles.KdVPseudomeasures.OriginalHillNativeMidpointFirstVariation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7940,3 +7949,38 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNativeSpectralFirstVariation
 #print axioms NLS.Articles.KdVPseudomeasures.originalPeriodOneCoefficients_mean_zero
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Dirichlet_differential_even_modes
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_norming_differential_even_modes
+#print axioms NLS.periodOneConstantCLM
+#print axioms NLS.periodOneConstantCLM_eq_L2_single
+#print axioms NLS.periodOneConstantCLM_apply
+#print axioms NLS.isReal_periodOneConstantCLM
+#print axioms NLS.KdV.hillHminusDiscriminant_eq_classical_L1
+#print axioms NLS.KdV.fderiv_hillHminusDiscriminant_L1
+#print axioms NLS.KdV.fderiv_hillHminusDiscriminant_free_sq_L1
+#print axioms NLS.KdV.fderiv_hillHminusDiscriminant_free_sq
+#print axioms NLS.KdV.continuous_hillHminusDiscriminant_free_variation
+#print axioms NLS.KdV.fderiv_hillHminusDiscriminant_free_mean_zero
+#print axioms NLS.KdV.hillHminusRadicand_add_constant
+#print axioms NLS.KdV.analyticOrderNatAt_hillHminusRadicand_add_constant
+#print axioms NLS.KdV.hillHminusLabels_add_constant
+#print axioms NLS.ComplexAnalysis.fderiv_quadratic_coordinate_apply
+#print axioms NLS.KdV.HillHminusMiuraActionBall.diracSource
+#print axioms NLS.KdV.HillHminusMiuraActionBall.analytic_diracSource
+#print axioms NLS.KdV.HillHminusMiuraActionBall.diracSource_real
+#print axioms NLS.KdV.HillHminusMiuraActionBall.diracSource_discriminant_eq
+#print axioms NLS.KdV.HillHminusMiuraActionBall.fderiv_diracSource_free_isospectral
+#print axioms NLS.KdV.HillHminusMiuraActionBall.fderiv_diracSource_free_symmetric_mean_zero
+#print axioms NLS.KdV.HillHminusMiuraGapBall.fderiv_energyMidpoint_free_mean_zero
+#print axioms NLS.KdV.HillHminusMiuraGapBall.canonical_energyMidpoint_eq_locally_zero
+#print axioms NLS.KdV.fderiv_hillHminusCanonicalEnergyMidpoint_zero_mean_zero
+#print axioms NLS.KdV.hillHminusCanonicalEnergyMidpoint_add_constant_real
+#print axioms NLS.KdV.hillHminusCanonicalEnergyMidpoint_constant_real
+#print axioms NLS.KdV.fderiv_hillHminusCanonicalEnergyMidpoint_zero_constant
+#print axioms NLS.KdV.fderiv_hillHminusCanonicalEnergyMidpoint_zero_apply
+#print axioms NLS.KdV.fderiv_hillHminusCanonicalEnergyMidpoint_zero
+#print axioms NLS.KdV.fderiv_hillHminusDirichlet_sub_midpoint_zero
+#print axioms NLS.KdV.fderiv_hillHminusDirichlet_sub_midpoint_zero_apply
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_midpoint_differential
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_midpoint_differential_mean_zero
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_centered_Dirichlet_differential
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_centered_Dirichlet_differential_even_modes
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_mean_zero_trace_stationarity

@@ -1283,6 +1283,15 @@ modules = [
     'NLS.KdV.HillNativeNormingFirstVariation',
     'NLS.KdV.HillNativeDirichletSheetFirstVariation',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNativeSpectralFirstVariation',
+    'NLS.SequenceSpaces.PeriodOneConstantCoefficients',
+    'NLS.KdV.HillNativeTraceFirstVariation',
+    'NLS.KdV.HillNativeConstantShiftLabels',
+    'NLS.ComplexAnalysis.QuadraticCoordinateVariation',
+    'NLS.KdV.HillMiuraFreeIsospectral',
+    'NLS.KdV.HillNativeMidpointStationarity',
+    'NLS.KdV.HillNativeMidpointFirstVariation',
+    'NLS.KdV.HillNativeDirichletDisplacementFirstVariation',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeMidpointFirstVariation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
