@@ -5788,3 +5788,6 @@ import NLS.KdV.HillHighOwnPeriodLowerBound
 import NLS.KdV.HillMixedOwnPeriod
 import NLS.KdV.HillCommonOwnPeriodLowerBound
 import NLS.KdV.HillCommonMixedNormalizedPsi
+import NLS.KdV.HillMixedPeriodPhysicalMatching
+import NLS.KdV.HillNormalizedNumeratorBounds
+import NLS.KdV.HillCommonPhysicalNumeratorBounds

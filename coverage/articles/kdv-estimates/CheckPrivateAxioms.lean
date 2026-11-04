@@ -865,6 +865,9 @@ import NLS.KdV.HillHighOwnPeriodLowerBound
 import NLS.KdV.HillMixedOwnPeriod
 import NLS.KdV.HillCommonOwnPeriodLowerBound
 import NLS.KdV.HillCommonMixedNormalizedPsi
+import NLS.KdV.HillMixedPeriodPhysicalMatching
+import NLS.KdV.HillNormalizedNumeratorBounds
+import NLS.KdV.HillCommonPhysicalNumeratorBounds
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
