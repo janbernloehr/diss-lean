@@ -5807,3 +5807,10 @@ import NLS.KdV.HillGeneralSeparatedPrimitives
 import NLS.KdV.HillGeneralCenteredPrimitives
 import NLS.KdV.HillGeneralKernelCorrections
 import NLS.KdV.HillGeneralOwnCorrections
+import NLS.KdV.HillNativeKernelSeries
+import NLS.KdV.HillGeneralOffDiagonalPhase
+import NLS.KdV.HillGeneralFullRegularPhase
+import NLS.KdV.HillGeneralCartesianTails
+import NLS.SequenceSpaces.NatL2AnalyticGermHeadTail
+import NLS.KdV.HillDirichletDarbouxCotangents
+import NLS.KdV.HillGeneralWeightedCartesianAnalytic

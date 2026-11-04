@@ -170,6 +170,7 @@ modules+=(NLS/KdV/HillFreeOwnPeriodProduct NLS/KdV/HillBoundedOwnPeriodError NLS
 modules+=(NLS/KdV/HillMixedPeriodPhysicalMatching NLS/KdV/HillNormalizedNumeratorBounds NLS/KdV/HillCommonPhysicalNumeratorBounds)
 modules+=(NLS/ComplexAnalysis/CompactNeighborhoodBounds NLS/KdV/HillUniformDeflatedGapCharts NLS/ComplexAnalysis/ParametricPrimitiveBounds NLS/KdV/HillUniformOpenGapPrimitives NLS/KdV/HillUniformOpenGapCorrections NLS/KdV/HillClosedGapCenteredData NLS/KdV/HillCenteredDeflatedMeanPhysical NLS/KdV/HillUniformClosedGapCorrections NLS/KdV/HillUniformFiniteGapCorrections)
 modules+=(NLS/KdV/HillBoundedNormalizedContourBounds NLS/KdV/HillGeneralHighContourCharts NLS/KdV/HillGeneralDeflatedDiscCharts NLS/KdV/HillGeneralSeparatedPrimitives NLS/KdV/HillGeneralCenteredPrimitives NLS/KdV/HillGeneralKernelCorrections NLS/KdV/HillGeneralOwnCorrections)
+modules+=(NLS/KdV/HillNativeKernelSeries NLS/KdV/HillGeneralOffDiagonalPhase NLS/KdV/HillGeneralFullRegularPhase NLS/KdV/HillGeneralCartesianTails NLS/SequenceSpaces/NatL2AnalyticGermHeadTail NLS/KdV/HillDirichletDarbouxCotangents NLS/KdV/HillGeneralWeightedCartesianAnalytic)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
