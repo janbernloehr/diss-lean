@@ -5606,3 +5606,11 @@ import NLS.KdV.HillFilledFreeGapRatio
 import NLS.KdV.HillFilledFreeGapRoot
 import NLS.KdV.HillFilledFreeGapFactorization
 import NLS.KdV.HillFilledFreeGapPhysical
+import NLS.KdV.HillComplexGapQuadraticRoot
+import NLS.KdV.HillQuadraticRootFreeNormalization
+import NLS.KdV.HillComplexRootProductMatching
+import NLS.KdV.HillComplexRegularDensity
+import NLS.KdV.HillComplexRegularDensityBounds
+import NLS.KdV.HillCommonRegularAnnulusChart
+import NLS.ComplexAnalysis.BoundedParametricQuadraticSolution
+import NLS.KdV.HillBoundedAnalyticQuadraticSolutions

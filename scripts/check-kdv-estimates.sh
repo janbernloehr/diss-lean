@@ -127,6 +127,7 @@ modules+=(NLS/KdV/HillAnalyticPeriodBranch NLS/KdV/HillBoundedComplexPeriodChart
 modules+=(NLS/ComplexAnalysis/SineAnnulusInner NLS/KdV/HillScaledFreeContourGeometry NLS/KdV/ClassicalHillDirichletError NLS/KdV/HillL2DirichletError NLS/KdV/HillScaledFreeContourBounds NLS/KdV/HillScaledFreeZeroCounts NLS/KdV/HillScaledComplexRelativeBounds NLS/ComplexAnalysis/LogarithmicSingleRootMoment NLS/KdV/HillScaledComplexZeroCounts NLS/KdV/HillUniformComplexDirichlet NLS/KdV/HillUniformDirichletPhysical)
 modules+=(NLS/ComplexAnalysis/RelativeAnalyticUnitBound NLS/ComplexAnalysis/EqualZeroCountRestriction NLS/ComplexAnalysis/RelativeQuadraticFactorBound NLS/KdV/HillLocalizedComplexGapPairs NLS/KdV/HillFreeGapQuotient NLS/KdV/HillUniformComplexUnitRatio NLS/KdV/HillCommonComplexDeflatedRoot NLS/KdV/HillCommonDeflatedRootPhysical)
 modules+=(NLS/KdV/HillFilledFreeGapUnit NLS/KdV/HillFilledFreeGapAnalytic NLS/KdV/HillFilledFreeGapBase NLS/KdV/HillFilledFreeGapRatio NLS/KdV/HillFilledFreeGapRoot NLS/KdV/HillFilledFreeGapFactorization NLS/KdV/HillFilledFreeGapPhysical)
+modules+=(NLS/KdV/HillComplexGapQuadraticRoot NLS/KdV/HillQuadraticRootFreeNormalization NLS/KdV/HillComplexRootProductMatching NLS/KdV/HillComplexRegularDensity NLS/KdV/HillComplexRegularDensityBounds NLS/KdV/HillCommonRegularAnnulusChart NLS/ComplexAnalysis/BoundedParametricQuadraticSolution NLS/KdV/HillBoundedAnalyticQuadraticSolutions)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
