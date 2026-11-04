@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 6742,
+    "declarations": 6794,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -559,10 +559,13 @@
       "NLS.FunctionalAnalysis.curve_eq_constant_add_unitComplexCurvePrimitive",
       "NLS.FunctionalAnalysis.circleIntegral_curve_spatial_derivative",
       "NLS.ComplexAnalysis.TracePrimitiveFamily.fderiv_primitive_potential_apply",
-      "NLS.ComplexAnalysis.TracePrimitiveFamily.fderiv_contourMoment_apply"
+      "NLS.ComplexAnalysis.TracePrimitiveFamily.fderiv_contourMoment_apply",
+      "NLS.ComplexAnalysis.continuousSquareRoots_eqOn",
+      "NLS.ComplexAnalysis.continuousCoshPrimitives_eqOn",
+      "NLS.ComplexAnalysis.circleIntegral_eq_of_eq_on_nonreal"
     ]
   },
-  "full_repository_validation": "All 906 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 897-module base has strict validation recorded at commit 7272c0ae21f6d638ad1e60d0d573fb8ad154e814 (complete 583-module strict focused run plus 314 isolated additions, all 897 source hashes unchanged, 6684-declaration audit and successful aggregate), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6742-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 906-module focused script, full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 914 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 906-module base has strict validation recorded at commit 0d248a976282bf90ecbe9525520c111ae7f96223 (complete 583-module strict focused run plus 323 isolated additions, all 906 source hashes unchanged, 6742-declaration audit and successful aggregate), and all 8 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6794-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 914-module focused script, full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -1470,10 +1473,18 @@
     "NLS/FunctionalAnalysis/CurveSpatialContour.lean": "e4bb9dd6d51e846fda80a73d2670072762014bbb687ccd1b241ce8f967028fdf",
     "NLS/ComplexAnalysis/TracePrimitiveMomentDifferential.lean": "6e079b783e8e0f4dd9998eb5157b454aa6350cdcc4fcbbd90bc2f18e60aeb1db",
     "NLS/KdV/HillEnergyGradientContours.lean": "f00dc6ad35fde9e67eefa5dc447079ac1de6afd0223ebbb03cf874c21bfac0fe",
-    "NLS/KdV/HillContinuedMomentGradients.lean": "da3cf25ceac03eff416d25a1d4291dc3625f2d9a10f55f8af5919dabb1939ef8"
+    "NLS/KdV/HillContinuedMomentGradients.lean": "da3cf25ceac03eff416d25a1d4291dc3625f2d9a10f55f8af5919dabb1939ef8",
+    "NLS/ComplexAnalysis/ContinuousTracePrimitiveUniqueness.lean": "de93d15b1d69100bce56d0aae997ba49a806417771438bc5170c655f853d133e",
+    "NLS/KdV/HillRealPeriodOneAffinePath.lean": "30d0f1b8c2fd1c0e67c03b47e6c0921ec7dd29f0b07f35eb71b49fef20ee684b",
+    "NLS/KdV/HillRecenteredTracePrimitives.lean": "b429f02b06cb38002b2b8345e49d357bd26c754892163dede1d41470f71788b4",
+    "NLS/ComplexAnalysis/NonrealCircleIntegralComparison.lean": "db8e16e0a5691054292c353d5d24014684d233f63abe2d9d7edbbe3f2467f17d",
+    "NLS/KdV/HillRecenteredPhysicalMatching.lean": "af1372f6e812c5cdbfe92c3c9c0ba0a7080d0c89f3227f0ff0af3b9d323773bf",
+    "NLS/KdV/HillFixedPhysicalMoments.lean": "e2cd5d2ae5b2c9a65240f8b76ffb8d13be7d18396ceaa865025119b7dd6f4c1a",
+    "NLS/KdV/HillRealSourceMomentGerms.lean": "08f8de4f14c9125b6a7aeb0505bbd66a2074b0f461fa59ade34b5c21c4526a3b",
+    "NLS/KdV/HillPhysicalActionGradients.lean": "6a0a9c0360a77696f5e1abc9a2ec18d64087f79a8b77ab120d210b6c01552f39"
   },
-  "remaining": "The full actual weighted Cartesian Hilbert sequence has complex analytic extensions at every real native source. The actual discriminant cotangent now descends jointly continuously to energy, including zero and the square-root cut. Weighted energy contours have genuine H1 gradients and vanishing integral Gardner brackets. The actual normalized primitive moments have their exact physical gradient representation; at every real source these give analytic germs of all sufficiently high original Arnold actions, with the original normalization and commuting physical cotangents. Still required: identify the genuine gradients of every low action at arbitrary real sources, compute the actual Abelian phase differential and action/phase and Cartesian Gardner brackets, establish a global inverse on the mean-zero real space and identify the fixed physical KdV Birkhoff map. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
-  "milestone": "Energy cotangents and actual commuting Hill action-tail gradients",
+  "remaining": "The full actual weighted Cartesian Hilbert sequence has complex analytic extensions at every real native source. At every original real period-one source, every physical gap moment, including every low or collapsed gap, now has an analytic complex source germ, an exact physical H1 gradient and zero mutual integral Gardner brackets. Still required: compute the actual Abelian phase differential and action/phase and Cartesian Gardner brackets, establish a global inverse on the mean-zero real space and identify the fixed physical KdV Birkhoff map. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+  "milestone": "All-gap physical Hill action gradients and Gardner commutation",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -2382,7 +2393,15 @@
     "NLS.FunctionalAnalysis.CurveSpatialContour",
     "NLS.ComplexAnalysis.TracePrimitiveMomentDifferential",
     "NLS.KdV.HillEnergyGradientContours",
-    "NLS.KdV.HillContinuedMomentGradients"
+    "NLS.KdV.HillContinuedMomentGradients",
+    "NLS.ComplexAnalysis.ContinuousTracePrimitiveUniqueness",
+    "NLS.KdV.HillRealPeriodOneAffinePath",
+    "NLS.KdV.HillRecenteredTracePrimitives",
+    "NLS.ComplexAnalysis.NonrealCircleIntegralComparison",
+    "NLS.KdV.HillRecenteredPhysicalMatching",
+    "NLS.KdV.HillFixedPhysicalMoments",
+    "NLS.KdV.HillRealSourceMomentGerms",
+    "NLS.KdV.HillPhysicalActionGradients"
   ],
   "proof_commits": [
     {
@@ -3089,6 +3108,11 @@
       "commit": "7272c0ae21f6d638ad1e60d0d573fb8ad154e814",
       "scope": "Actual rough Hill discriminant cotangent, H1 regularity, periodic quadratic system and all-frequency Gardner commutation: five strict additions, 6684-declaration audit and successful 897-module aggregate.",
       "pushed": false
+    },
+    {
+      "commit": "0d248a976282bf90ecbe9525520c111ae7f96223",
+      "scope": "Energy-state and cotangent descent through zero and the square-root cut, exact normalized primitive-moment gradients and high Arnold action germs: nine strict additions, 6742-declaration audit and successful 906-module aggregate.",
+      "pushed": false
     }
   ],
   "aggregate_check": {
@@ -3105,54 +3129,52 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "906 focused modules covered by the unchanged 897-module strictly validated base plus 9 isolated strict module checks; no fresh complete focused-script run is claimed.",
+    "focused_modules": "914 focused modules covered by the unchanged 906-module strictly validated base plus 8 isolated strict module checks; no fresh complete focused-script run is claimed.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 6742 declarations. Includes even-square energy descent, actual energy state and discriminant cotangent continuity, complex-linear curve integral and bilinear pairing, bounded primitive and genuine contour spatial differentiation, weighted-energy contour Gardner commutation, normalized primitive-moment source variation and actual Hill high Arnold action gradient germs.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 6794 declarations. Includes continuous trace primitive uniqueness, actual recentered physical branch matching, every low and collapsed physical gap moment germ, exact normalized source-gradient representation, H1 regularity and all physical moment Gardner brackets.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 906 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 897-module base has strict validation recorded at commit 7272c0ae21f6d638ad1e60d0d573fb8ad154e814 (complete 583-module strict focused run plus 314 isolated additions, all 897 source hashes unchanged, 6684-declaration audit and successful aggregate), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6742-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 906-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 914 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 906-module base has strict validation recorded at commit 0d248a976282bf90ecbe9525520c111ae7f96223 (complete 583-module strict focused run plus 323 isolated additions, all 906 source hashes unchanged, 6742-declaration audit and successful aggregate), and all 8 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6794-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 914-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified. The existing ParametricTrigonometricTerminal, ParametricSineTerminal, ParametricCosineTerminal, ParametricCosineChart, ParametricCosinePrimitive and LocalAnalyticSquareRoot sources were read and reused with bytes equal to the pinned prebuilt reference; their actual uses are covered transitively by the new Hill declaration audit. The endpoint-root continuity and arbitrary real-angle cosine-chart results are new shared proofs with explicit audit seeds. Generic parametric annular primitives, quadratic Cauchy projection and root primitives, quadratic cosine primitives and the segment-only analytic cosine mean were read and reused unchanged from the pinned prebuilt reference. Their SHA256 values are recorded in the analytic_regular_hill_abelian_corrections_through_closed_gaps source-map section. The actual uses are covered transitively by the expanded audit.",
-    "mathematical_scope": "Prove continuous even-square descent for arbitrary topological target spaces and Banach parameters, including zero and arbitrary square-root cuts. Prove that both components of the actual rough Hill state are even in frequency and obtain joint energy/source continuity. Establish joint continuity and evenness of the actual discriminant cotangent and spatial derivative; descend them to energy and retain the exact physical source derivative representation, H1 regularity and zero Gardner bracket at every pair of energies. Construct the bounded complex-linear unit curve integral and bilinear physical pairing, and a bounded primitive operator. Prove the actual closed spatial derivative graph and transport it through Banach-valued contours, so weighted energy-gradient contours have genuine derivatives and H1 regularity. Transport the verified discriminant commutation through both contour integrals and prove the actual integral Gardner bracket vanishes. Differentiate every original normalized trace-primitive moment in an arbitrary Banach parameter with the exact factor -1/pi and energy moment weight. Apply this to the actual Hill continuation family and prove its physical gradient representation, H1 regularity and moment-gradient commutation. At every original real source, choose one high cutoff before the index and establish analytic germs matching every original high Arnold action, with the genuine source derivative represented by the constructed physical cotangent.",
-    "scope": "All 906 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 897-module base has strict validation recorded at commit 7272c0ae21f6d638ad1e60d0d573fb8ad154e814 (complete 583-module strict focused run plus 314 isolated additions, all 897 source hashes unchanged, 6684-declaration audit and successful aggregate), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6742-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 906-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Prove uniqueness of continuous noncritical cosh primitives on connected sets from their common base value. Recenter the actual trace family at an arbitrary original real source and use real affine source paths to identify its root and primitive with the original physical branches at every nonreal energy. Compare real-centered circle integrals using finite real-axis exceptions. Deform every isolating physical circle to the original intrinsic gap contour, preserving the exact -1/pi normalization, including collapsed gaps. Construct analytic source germs for every original physical moment, with one real matching neighborhood per gap before all hierarchy orders. Identify the exact full complex coefficient derivative with the original physical energy-contour cotangent, prove its actual H1 regularity, and establish zero Gardner brackets for every pair of gaps and every pair of hierarchy orders.",
+    "scope": "All 914 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 906-module base has strict validation recorded at commit 0d248a976282bf90ecbe9525520c111ae7f96223 (complete 583-module strict focused run plus 323 isolated additions, all 906 source hashes unchanged, 6742-declaration audit and successful aggregate), and all 8 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6794-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 914-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "615ff8077fec0c6e87d303946fb93f11cbd4030cc396f6be415469a30666c7dd",
-      "scripts/check-kdv-estimates.sh": "ff1537b3c3f94ff0e86888152c35dbdd40b2d8054806bcbb33eb1431b9129661",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "4242dbedc2828214c537b7966361a250b6992291da6498b54189d4aa1b1c8e0e"
+      "NLS.lean": "6f0b2a68a563dd838dd554ea37d0c59b7109cd80688cc9f8e583ccaeb11cd95d",
+      "scripts/check-kdv-estimates.sh": "93276735165afb388ed695c3fe40549c58f61dc248027c90e7bc43dee32acc66",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "eac3459df7e01878989284be031b16d60f7198b23d06ad35652d009cac6a8882"
     },
     "focused_build_execution": {
       "mode": "strict_delta",
-      "base_commit": "7272c0ae21f6d638ad1e60d0d573fb8ad154e814",
-      "base_focused_modules": 897,
-      "base_verification_sha256": "9b3e605fb8e829519fa3da8ce5f456f329176c70ab0d7a68e10091bc7485194d",
+      "base_commit": "0d248a976282bf90ecbe9525520c111ae7f96223",
+      "base_focused_modules": 906,
+      "base_verification_sha256": "6eea2a61e7eb3d2564de098c3e604a577ecdd61fbea174f3f4d8a7b470aa7fb4",
       "base_sources_unchanged": true,
-      "base_validation_description": "complete 583-module strict focused run plus 314 isolated additions, all 897 source hashes unchanged, 6684-declaration audit and successful aggregate",
+      "base_validation_description": "complete 583-module strict focused run plus 323 isolated additions, all 906 source hashes unchanged, 6742-declaration audit and successful aggregate",
       "new_modules": [
-        "NLS/ComplexAnalysis/ContinuousEvenSquareDescent.lean",
-        "NLS/KdV/HillL2EnergyStateCurves.lean",
-        "NLS/KdV/HillEnergyDiscriminantGradients.lean",
-        "NLS/FunctionalAnalysis/UnitComplexCurvePairing.lean",
-        "NLS/FunctionalAnalysis/UnitComplexCurvePrimitive.lean",
-        "NLS/FunctionalAnalysis/CurveSpatialContour.lean",
-        "NLS/ComplexAnalysis/TracePrimitiveMomentDifferential.lean",
-        "NLS/KdV/HillEnergyGradientContours.lean",
-        "NLS/KdV/HillContinuedMomentGradients.lean"
+        "NLS/ComplexAnalysis/ContinuousTracePrimitiveUniqueness.lean",
+        "NLS/KdV/HillRealPeriodOneAffinePath.lean",
+        "NLS/KdV/HillRecenteredTracePrimitives.lean",
+        "NLS/ComplexAnalysis/NonrealCircleIntegralComparison.lean",
+        "NLS/KdV/HillRecenteredPhysicalMatching.lean",
+        "NLS/KdV/HillFixedPhysicalMoments.lean",
+        "NLS/KdV/HillRealSourceMomentGerms.lean",
+        "NLS/KdV/HillPhysicalActionGradients.lean"
       ],
       "new_source_sha256": {
-        "NLS/ComplexAnalysis/ContinuousEvenSquareDescent.lean": "98aa9439e540b73d1dc0318ae0d556ec73593eedf202821414575b2baddc82a3",
-        "NLS/KdV/HillL2EnergyStateCurves.lean": "f923d4b869602cfb9adfb7313c78830bded62c27064227c95a8e70302e086c01",
-        "NLS/KdV/HillEnergyDiscriminantGradients.lean": "c9c65cdfa8ad0adb04d172876c9c82a401e5fdab09585f8b97e618c2b9829780",
-        "NLS/FunctionalAnalysis/UnitComplexCurvePairing.lean": "5928e8691a713389ccbdb96542fa9c435c66878f24567e22f6bb489ec06ff7bb",
-        "NLS/FunctionalAnalysis/UnitComplexCurvePrimitive.lean": "9b5735752e103364619da70e9528c4e496797c167d7cf067a1c1241190551823",
-        "NLS/FunctionalAnalysis/CurveSpatialContour.lean": "e4bb9dd6d51e846fda80a73d2670072762014bbb687ccd1b241ce8f967028fdf",
-        "NLS/ComplexAnalysis/TracePrimitiveMomentDifferential.lean": "6e079b783e8e0f4dd9998eb5157b454aa6350cdcc4fcbbd90bc2f18e60aeb1db",
-        "NLS/KdV/HillEnergyGradientContours.lean": "f00dc6ad35fde9e67eefa5dc447079ac1de6afd0223ebbb03cf874c21bfac0fe",
-        "NLS/KdV/HillContinuedMomentGradients.lean": "da3cf25ceac03eff416d25a1d4291dc3625f2d9a10f55f8af5919dabb1939ef8"
+        "NLS/ComplexAnalysis/ContinuousTracePrimitiveUniqueness.lean": "de93d15b1d69100bce56d0aae997ba49a806417771438bc5170c655f853d133e",
+        "NLS/KdV/HillRealPeriodOneAffinePath.lean": "30d0f1b8c2fd1c0e67c03b47e6c0921ec7dd29f0b07f35eb71b49fef20ee684b",
+        "NLS/KdV/HillRecenteredTracePrimitives.lean": "b429f02b06cb38002b2b8345e49d357bd26c754892163dede1d41470f71788b4",
+        "NLS/ComplexAnalysis/NonrealCircleIntegralComparison.lean": "db8e16e0a5691054292c353d5d24014684d233f63abe2d9d7edbbe3f2467f17d",
+        "NLS/KdV/HillRecenteredPhysicalMatching.lean": "af1372f6e812c5cdbfe92c3c9c0ba0a7080d0c89f3227f0ff0af3b9d323773bf",
+        "NLS/KdV/HillFixedPhysicalMoments.lean": "e2cd5d2ae5b2c9a65240f8b76ffb8d13be7d18396ceaa865025119b7dd6f4c1a",
+        "NLS/KdV/HillRealSourceMomentGerms.lean": "08f8de4f14c9125b6a7aeb0505bbd66a2074b0f461fa59ade34b5c21c4526a3b",
+        "NLS/KdV/HillPhysicalActionGradients.lean": "6a0a9c0360a77696f5e1abc9a2ec18d64087f79a8b77ab120d210b6c01552f39"
       },
       "isolated_stage_exit_code": 0,
       "isolated_stage_source_matches_integrated": true,
       "expanded_axiom_audit_exit_code": 0,
-      "transitive_axiom_audit_declarations": 6742,
+      "transitive_axiom_audit_declarations": 6794,
       "complete_current_focused_script_rerun": false
     },
     "additional_shared_source_checks": [
@@ -3483,9 +3505,9 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Energy cotangents and actual commuting Hill action-tail gradients",
-    "focused_modules": 906,
-    "scope": "All 906 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 897-module base has strict validation recorded at commit 7272c0ae21f6d638ad1e60d0d573fb8ad154e814 (complete 583-module strict focused run plus 314 isolated additions, all 897 source hashes unchanged, 6684-declaration audit and successful aggregate), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6742-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 906-module focused script, full Lake rebuild and full repository examples were not rerun."
+    "milestone": "All-gap physical Hill action gradients and Gardner commutation",
+    "focused_modules": 914,
+    "scope": "All 914 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 906-module base has strict validation recorded at commit 0d248a976282bf90ecbe9525520c111ae7f96223 (complete 583-module strict focused run plus 323 isolated additions, all 906 source hashes unchanged, 6742-declaration audit and successful aggregate), and all 8 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6794-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 914-module focused script, full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",
@@ -3821,6 +3843,12 @@
       "milestone": "Physical rough Hill discriminant gradients and Gardner commutation",
       "focused_modules": 897,
       "scope": "All 897 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 892-module base has strict validation recorded at commit 56fac99007a4d61ec30243e0b0ea1ff46013346b (complete 583-module strict focused run plus 309 isolated additions, all 892 source hashes unchanged, 6645-declaration audit and successful aggregate), and all 5 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6684-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 897-module focused script, full Lake rebuild and full repository examples were not rerun."
+    },
+    {
+      "status": "passed",
+      "milestone": "Energy cotangents and actual commuting Hill action-tail gradients",
+      "focused_modules": 906,
+      "scope": "All 906 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 897-module base has strict validation recorded at commit 7272c0ae21f6d638ad1e60d0d573fb8ad154e814 (complete 583-module strict focused run plus 314 isolated additions, all 897 source hashes unchanged, 6684-declaration audit and successful aggregate), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6742-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 906-module focused script, full Lake rebuild and full repository examples were not rerun."
     }
   ]
 }

@@ -5828,3 +5828,11 @@ import NLS.FunctionalAnalysis.CurveSpatialContour
 import NLS.ComplexAnalysis.TracePrimitiveMomentDifferential
 import NLS.KdV.HillEnergyGradientContours
 import NLS.KdV.HillContinuedMomentGradients
+import NLS.ComplexAnalysis.ContinuousTracePrimitiveUniqueness
+import NLS.KdV.HillRealPeriodOneAffinePath
+import NLS.KdV.HillRecenteredTracePrimitives
+import NLS.ComplexAnalysis.NonrealCircleIntegralComparison
+import NLS.KdV.HillRecenteredPhysicalMatching
+import NLS.KdV.HillFixedPhysicalMoments
+import NLS.KdV.HillRealSourceMomentGerms
+import NLS.KdV.HillPhysicalActionGradients

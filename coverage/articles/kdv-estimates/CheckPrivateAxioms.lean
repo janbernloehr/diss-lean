@@ -905,6 +905,14 @@ import NLS.FunctionalAnalysis.CurveSpatialContour
 import NLS.ComplexAnalysis.TracePrimitiveMomentDifferential
 import NLS.KdV.HillEnergyGradientContours
 import NLS.KdV.HillContinuedMomentGradients
+import NLS.ComplexAnalysis.ContinuousTracePrimitiveUniqueness
+import NLS.KdV.HillRealPeriodOneAffinePath
+import NLS.KdV.HillRecenteredTracePrimitives
+import NLS.ComplexAnalysis.NonrealCircleIntegralComparison
+import NLS.KdV.HillRecenteredPhysicalMatching
+import NLS.KdV.HillFixedPhysicalMoments
+import NLS.KdV.HillRealSourceMomentGerms
+import NLS.KdV.HillPhysicalActionGradients
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1436,7 +1444,10 @@ run_cmd do
     ``NLS.FunctionalAnalysis.curve_eq_constant_add_unitComplexCurvePrimitive,
     ``NLS.FunctionalAnalysis.circleIntegral_curve_spatial_derivative,
     ``NLS.ComplexAnalysis.TracePrimitiveFamily.fderiv_primitive_potential_apply,
-    ``NLS.ComplexAnalysis.TracePrimitiveFamily.fderiv_contourMoment_apply]
+    ``NLS.ComplexAnalysis.TracePrimitiveFamily.fderiv_contourMoment_apply,
+    ``NLS.ComplexAnalysis.continuousSquareRoots_eqOn,
+    ``NLS.ComplexAnalysis.continuousCoshPrimitives_eqOn,
+    ``NLS.ComplexAnalysis.circleIntegral_eq_of_eq_on_nonreal]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

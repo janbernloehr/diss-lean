@@ -173,6 +173,7 @@ modules+=(NLS/KdV/HillBoundedNormalizedContourBounds NLS/KdV/HillGeneralHighCont
 modules+=(NLS/KdV/HillNativeKernelSeries NLS/KdV/HillGeneralOffDiagonalPhase NLS/KdV/HillGeneralFullRegularPhase NLS/KdV/HillGeneralCartesianTails NLS/SequenceSpaces/NatL2AnalyticGermHeadTail NLS/KdV/HillDirichletDarbouxCotangents NLS/KdV/HillGeneralWeightedCartesianAnalytic)
 modules+=(NLS/KdV/HillDiscriminantGradient NLS/KdV/HillDiscriminantGradientRegularity NLS/ComplexAnalysis/QuadraticHillSystemPairing NLS/KdV/HillDiscriminantQuadraticSystem NLS/KdV/HillDiscriminantGardnerCommutation)
 modules+=(NLS/ComplexAnalysis/ContinuousEvenSquareDescent NLS/KdV/HillL2EnergyStateCurves NLS/KdV/HillEnergyDiscriminantGradients NLS/FunctionalAnalysis/UnitComplexCurvePairing NLS/FunctionalAnalysis/UnitComplexCurvePrimitive NLS/FunctionalAnalysis/CurveSpatialContour NLS/ComplexAnalysis/TracePrimitiveMomentDifferential NLS/KdV/HillEnergyGradientContours NLS/KdV/HillContinuedMomentGradients)
+modules+=(NLS/ComplexAnalysis/ContinuousTracePrimitiveUniqueness NLS/KdV/HillRealPeriodOneAffinePath NLS/KdV/HillRecenteredTracePrimitives NLS/ComplexAnalysis/NonrealCircleIntegralComparison NLS/KdV/HillRecenteredPhysicalMatching NLS/KdV/HillFixedPhysicalMoments NLS/KdV/HillRealSourceMomentGerms NLS/KdV/HillPhysicalActionGradients)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
