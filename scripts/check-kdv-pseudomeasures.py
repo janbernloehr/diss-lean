@@ -1537,6 +1537,10 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillNativeOpenGardner',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNativeGardnerCanonicality',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNativeSignedGardner',
+    'NLS.Poisson.GardnerHamiltonianZeroMode',
+    'NLS.SequenceSpaces.ZeroModeSingleDenseRange',
+    'NLS.KdV.HillNativeMeanZeroDerivative',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillJacobianDenseRange',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

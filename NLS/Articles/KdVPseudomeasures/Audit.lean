@@ -1503,6 +1503,10 @@ import NLS.KdV.HillNativeZeroGardner
 import NLS.Articles.KdVPseudomeasures.OriginalHillNativeOpenGardner
 import NLS.Articles.KdVPseudomeasures.OriginalHillNativeGardnerCanonicality
 import NLS.Articles.KdVPseudomeasures.OriginalHillNativeSignedGardner
+import NLS.Poisson.GardnerHamiltonianZeroMode
+import NLS.SequenceSpaces.ZeroModeSingleDenseRange
+import NLS.KdV.HillNativeMeanZeroDerivative
+import NLS.Articles.KdVPseudomeasures.OriginalHillJacobianDenseRange
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9207,3 +9211,14 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNativeSignedGardner
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Gardner_canonical_matrix
 #print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeGardner_signed_canonical
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Gardner_signed_canonical
+#print axioms NLS.Poisson.gardnerHamiltonianDirection_zero_mode
+#print axioms NLS.WeightedCoeff.zeroModeProjection_surjective
+#print axioms NLS.WeightedCoeff.denseRange_zeroModeProjection_ofFinsupp
+#print axioms NLS.WeightedCoeff.ofFinsupp_eq_sum_weighted_single
+#print axioms NLS.WeightedCoeff.denseRange_of_zeroModeSingle_mem_range
+#print axioms NLS.KdV.fderiv_hillMeanZeroComplexMap_eq_comp
+#print axioms NLS.KdV.fderiv_hillMeanZeroComplexMap_coe
+#print axioms NLS.KdV.fderiv_hillMeanZeroComplexMap_coordinate
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeJacobian_single_preimage
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeJacobian_denseRange
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Jacobian_denseRange
