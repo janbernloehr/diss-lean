@@ -828,6 +828,10 @@ import NLS.ComplexAnalysis.HilbertProductWeakDerivative
 import NLS.KdV.HillFullProductRootVariation
 import NLS.KdV.HillFullVariationDecay
 import NLS.KdV.HillFullPeriodKernelInjectivity
+import NLS.KdV.HillFreeFullPeriodSequence
+import NLS.KdV.HillProductPeriodParameterLimit
+import NLS.KdV.HillFreeFullPeriodMatching
+import NLS.KdV.HillFullComplexPeriodError
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
