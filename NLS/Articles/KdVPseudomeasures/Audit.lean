@@ -1164,6 +1164,20 @@ import NLS.SequenceSpaces.PositiveSignedReciprocalSummability
 import NLS.KdV.HillOffIndexAbsoluteSummability
 import NLS.KdV.HillCanonicalOffIndexAbsoluteSum
 import NLS.Articles.KdVPseudomeasures.OriginalHillOffIndexAbsoluteSum
+import NLS.SequenceSpaces.PositiveScalarExtension
+import NLS.SequenceSpaces.EventualAbsoluteTails
+import NLS.SequenceSpaces.UniformTwoKernelHolderTails
+import NLS.SequenceSpaces.UniformPositiveReciprocalSeries
+import NLS.KdV.HillAbelianWeightNormBound
+import NLS.KdV.HillOffIndexUniformSeries
+import NLS.KdV.HillOffIndexAnalyticCorrection
+import NLS.KdV.HillCanonicalOffIndexPartialSums
+import NLS.KdV.HillCanonicalOffIndexAnalyticDomain
+import NLS.KdV.HillCanonicalOffIndexAnalyticCorrection
+import NLS.KdV.HillAbelianCartesian
+import NLS.KdV.HillAbelianPhaseSquare
+import NLS.KdV.HillAbelianPhysicalPhaseFormula
+import NLS.Articles.KdVPseudomeasures.OriginalHillAnalyticAbelianCorrection
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7506,3 +7520,62 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillOffIndexAbsoluteSum
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_offIndex_absolute_sum_common_domain
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_offIndex_infinite_correction_hasSum
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_offIndex_infinite_correction_real
+#print axioms NLS.LpSequence.positiveScalarExtension
+#print axioms NLS.LpSequence.positiveScalarExtension_apply
+#print axioms NLS.LpSequence.positiveScalarExtension_zero_of_not_mem_range
+#print axioms NLS.LpSequence.summable_norm_positiveScalarExtension
+#print axioms NLS.LpSequence.tsum_positiveScalarExtension
+#print axioms NLS.Coeff.uniformCauchySeqOn_sum_of_eventual_absolute_tails
+#print axioms NLS.Coeff.uniformCauchySeqOn_two_kernel_holder_tail_sums
+#print axioms NLS.Coeff.norm_positive_signed_reciprocal_kernels
+#print axioms NLS.Coeff.tendstoUniformlyOn_positive_series_of_signed_reciprocal_tail
+#print axioms NLS.KdV.HillProductEquationPatch.physicalAbelianMidpointDisplacement
+#print axioms NLS.KdV.HillProductEquationPatch.physicalAbelianMidpointDisplacement_apply
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_abelianWeight_norm_bound
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianTerm
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianPartialSum
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianCorrection
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_physicalOffIndexAbelianTerm
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_physicalOffIndexAbelianPartialSum
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_uniform_physicalOffIndexAbelianCorrection
+#print axioms NLS.KdV.HillProductEquationPatch.localUniformAnalyticApproximation_physicalOffIndexAbelianCorrection
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_physicalOffIndexAbelianCorrection
+#print axioms NLS.KdV.HillProductEquationPatch.exists_uniform_fderiv_physicalOffIndexAbelianCorrection
+#print axioms NLS.KdV.hillHminusOffIndexAbelianPartialSum
+#print axioms NLS.KdV.analyticOnNhd_hillHminusOffIndexAbelianTerm
+#print axioms NLS.KdV.analyticOnNhd_hillHminusOffIndexAbelianPartialSum
+#print axioms NLS.KdV.exists_common_offIndex_correction_patch_ball
+#print axioms NLS.KdV.exists_hillAbelianAnalyticNeighborhood_of_real
+#print axioms NLS.KdV.hillHminusOffIndexAnalyticDomain
+#print axioms NLS.KdV.isOpen_hillHminusOffIndexAnalyticDomain
+#print axioms NLS.KdV.real_mem_hillHminusOffIndexAnalyticDomain
+#print axioms NLS.KdV.hillHminusOffIndexAnalyticDomain_subset_summability
+#print axioms NLS.KdV.hillHminusOffIndexAnalyticDomain_subset_physical
+#print axioms NLS.KdV.exists_locally_uniform_hillHminusOffIndexAbelianCorrection
+#print axioms NLS.KdV.isConnected_hillHminusOffIndexAnalyticDomain
+#print axioms NLS.KdV.localUniformAnalyticApproximation_hillHminusOffIndexAbelianCorrection
+#print axioms NLS.KdV.analyticOnNhd_hillHminusOffIndexAbelianCorrection
+#print axioms NLS.KdV.exists_uniform_fderiv_hillHminusOffIndexAbelianCorrection
+#print axioms NLS.KdV.hillHminusAbelianCartesianPlus
+#print axioms NLS.KdV.hillHminusAbelianCartesianMinus
+#print axioms NLS.KdV.analyticOnNhd_hillHminusAbelianCartesianPlus
+#print axioms NLS.KdV.analyticOnNhd_hillHminusAbelianCartesianMinus
+#print axioms NLS.KdV.hillHminusAbelianCartesian_product
+#print axioms NLS.KdV.hillHminusAbelianCartesian_conjugate_of_real
+#print axioms NLS.KdV.norm_hillHminusAbelianCartesian_of_real
+#print axioms NLS.KdV.hillHminusAbelianCartesian_zero_of_real_closed_gap
+#print axioms NLS.KdV.hillHminusAbelianPhaseSquare
+#print axioms NLS.KdV.hillHminusAbelianCartesian_ne_zero_of_gap
+#print axioms NLS.KdV.isOpen_hillHminusAbelianPhaseDomain
+#print axioms NLS.KdV.analyticOnNhd_hillHminusAbelianPhaseSquare
+#print axioms NLS.KdV.hillHminusAbelianPhaseSquare_ne_zero
+#print axioms NLS.KdV.hillHminusAbelianPhaseSquare_eq_diagonal_mul_correction
+#print axioms NLS.KdV.norm_hillHminusAbelianPhaseSquare_of_real
+#print axioms NLS.KdV.exists_common_complete_Abelian_patch_ball
+#print axioms NLS.KdV.complete_Abelian_phase_formula_at_physical_terminal
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complete_Abelian_analytic_common_domain
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_infinite_correction_locally_uniform_BEFORE_ALL_n
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complete_Abelian_factor_product
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complete_Abelian_real_conjugacy
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complete_Abelian_original_gap_moduli
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complete_Abelian_phase_mod_pi

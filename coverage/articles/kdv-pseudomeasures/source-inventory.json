@@ -876,6 +876,12 @@
       "status": "Construct the absolutely convergent infinite ACTUAL off-index Hill Abelian correction on one common open connected complex neighborhood of the entire native real form. Signed reciprocal tail bounds suffice for absolute convergence. Sharp literal original-energy kernel, sum analyticity and uniform all-n bounds remain OPEN.",
       "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_offIndex_absolute_sum_common_domain",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-offindex-absolute-sum-map.json"
+    },
+    {
+      "label": "Analytic ACTUAL infinite correction and complete Abelian phase factors",
+      "status": "Prove locally uniform convergence and full Banach-source analyticity of the ACTUAL infinite off-index Hill correction, and construct the complete Abelian gap-times-phase factors. Uniform convergence source neighborhood precedes ALL n; rate may depend on n. Corrected factors retain exact original gaps and physical sheet sign, but still need action-ratio amplitude and uniform all-n estimates for full coordinates.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_complete_Abelian_analytic_common_domain",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-analytic-abelian-correction-map.json"
     }
   ],
   "reuse_map": [
@@ -957,7 +963,7 @@
   "remaining_obligations": [
     "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete physical Abelian phases and Cartesian coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
     "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "Prove locally uniform convergence and ANALYTICITY of the now ABSOLUTELY CONVERGENT infinite ACTUAL off-index correction, with local bounds UNIFORM IN ALL n on ONE native complex neighborhood of ENTIRE real form. Then apply normalized action-ratio amplitude and exp(plus/minus i times this correction) to intrinsic diagonal factors and prove FULL Birkhoff coordinates with locally uniform source3.2 bound (abs ORIGINAL gamma_n+abs ORIGINAL mu_n minus ORIGINAL tau_n)/sqrt(n). New actual signed reciprocal TAIL estimate is C*(norm frequency gap_m+norm ACTUAL AUXILIARY frequency_m minus frequency midpoint_m)*(1/abs(n-m)+1/(n+m)), ONE constant/source shrink BEFORE ALL n,m and all selected m above ONE cutoff. Derived from actual odd numerator, original regular-factor estimates for EXACTLY same roots/domains, actual auxiliary full-l2 displacement, and gap/sheet-independent enclosing-circle bound. A stronger-family native patch factory supplies these data at EVERY real source; no extra bound hypotheses remain in the common-domain absolute-sum theorem. Generic signed reciprocal/full-l2 Holder summability plus finite low terms constructs ONE OPEN CONNECTED summability domain containing ENTIRE real form BEFORE ALL n, genuine HasSum and REAL sum at real sources. The SHARPER literal KMT Lemma4.2 original-energy kernel n/(m*abs(m squared-n squared)) is NOT proved or inferred; signed-tail bound suffices for absolute convergence. Uniform convergence and ALL-n local boundedness are NOT inferred from pointwise summability. Prior real phase reality, exact real gap moduli/conjugacy, whole complex on/off-index gluing, physical sheet SIGN and AUXILIARY sourcePhase identification remain COMPLETE. No ordinary NLS divisor substitution; no repeated qualitative gluing work. Full action amplitude, quantitative Cartesian estimates, universal actual product scalar and Gardner/flow still OPEN.",
+    "Prove local bounds on the ACTUAL infinite off-index correction UNIFORM IN ALL n, apply the normalized action-ratio Birkhoff amplitude to the now COMPLETE Abelian gap-times-phase factors, and establish FULL Birkhoff coordinates with locally uniform source3.2 bound (abs ORIGINAL gamma_n+abs ORIGINAL mu_n minus ORIGINAL tau_n)/sqrt(n). LOCAL UNIFORM CONVERGENCE AND FULL NATIVE BANACH-SOURCE ANALYTICITY OF THE ACTUAL INFINITE CORRECTION ARE NOW PROVED. One OPEN CONNECTED complex analytic domain contains ENTIRE native real form BEFORE ALL n, contained in prior summability/physical domains; at every complex point ONE source neighborhood supports convergence for ALL n (rate may depend on n). Full Frechet derivatives of partial sums converge locally uniformly for each n. Constructed strong actual psi families and original quantitative signed-tail bounds plus locally bounded full-l2 gap and AUXILIARY displacement weights supply genuine uniform Holder tails. Intrinsic/physical total corrections agree on ONE full complex ball per real point of ANY patch BEFORE ALL indices. Complete Abelian factors NOW INCLUDE exp(plus/minus i times actual infinite correction), are analytic through complex collapse on common domain, product EXACT original canonical gap square, real conjugate with EXACT original energy-gap moduli and BOTH zero at REAL closed gaps. Quotient is analytic NONZERO complete doubled phase on OPEN original-gap subset, equals diagonal doubled phase times exp(2i correction), real unit modulus. Full physical phase is actual onIndex cosine phase PLUS literal infinite physical correction, with AUXILIARY frequency and ACTUAL norming sheet sign retained. Do NOT redo convergence/analyticity, qualitative on/off-index gluing or physical normalization. These gap-times-phase factors still lack the normalized action-ratio amplitude; uniform all-n correction and source3.2 bounds are NOT inferred. Signed reciprocal tail kernel is NOT the sharper literal KMT Lemma4.2 original-energy n/(m*abs(m squared-n squared)) kernel. Universal actual product scalar, Gardner/flow and all main theorems remain OPEN.",
     "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
@@ -3011,6 +3017,32 @@
     "infinite_correction_analytic_PROVED": false,
     "uniform_ALL_n_correction_bound_PROVED": false,
     "uniform_source3_2_Cartesian_bound_PROVED": false,
+    "full_Birkhoff_coordinates_constructed": false,
+    "universal_2_over_pi_n_ACTUAL_product_prefactor_proved": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_analytic_complete_Abelian_correction_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-analytic-abelian-correction-map.json",
+    "ACTUAL_full_l2_auxiliary_weights_locally_norm_bounded_PROVED": true,
+    "uniform_Holder_tails_with_two_fixed_signed_kernels_PROVED": true,
+    "locally_uniform_ACTUAL_infinite_correction_on_ONE_source_neighborhood_BEFORE_ALL_n_PROVED": true,
+    "convergence_rate_uniform_in_n_claimed": false,
+    "full_native_Banach_source_analyticity_of_ACTUAL_infinite_correction_PROVED": true,
+    "common_analytic_domain_OPEN_CONNECTED_contains_ENTIRE_real_form_BEFORE_ALL_n_PROVED": true,
+    "common_analytic_domain_subset_prior_summability_and_physical_domains_PROVED": true,
+    "full_Frechet_derivative_partial_sums_locally_uniformly_converge_for_each_n_PROVED": true,
+    "intrinsic_total_correction_equals_actual_physical_total_on_ONE_complex_ball_BEFORE_ALL_indices_PROVED": true,
+    "complete_Abelian_factors_INCLUDE_actual_infinite_correction_exponential_PROVED": true,
+    "complete_Abelian_factors_analytic_through_COMPLEX_collapse_PROVED": true,
+    "complete_Abelian_factor_product_EXACT_original_canonical_gap_square_PROVED": true,
+    "complete_real_Abelian_conjugacy_and_EXACT_original_gap_moduli_PROVED": true,
+    "complete_Abelian_phase_mod_pi_analytic_NONZERO_on_OPEN_original_gap_domain_PROVED": true,
+    "actual_auxiliary_frequency_AND_physical_norming_sheet_sign_retained": true,
+    "complete_phase_equals_actual_cosine_onIndex_phase_PLUS_literal_infinite_physical_correction_PROVED": true,
+    "normalized_action_ratio_amplitude_applied": false,
+    "uniform_ALL_n_local_correction_bound_PROVED": false,
+    "uniform_source3_2_Cartesian_bound_PROVED": false,
+    "sharp_literal_KMT_Lemma4_2_energy_kernel_PROVED": false,
     "full_Birkhoff_coordinates_constructed": false,
     "universal_2_over_pi_n_ACTUAL_product_prefactor_proved": false,
     "all_five_main_theorems_proved": false
