@@ -2558,6 +2558,53 @@ the read-only compiled reference. Its hashes and direct roots are in
 not rebuilt in this incremental check. The cumulative audit covers the
 actually used transitive axioms and all direct library-root declarations.
 
+## Global analytic logarithmic Dirichlet norming sequence
+
+`L2QuasiHillNormingGauge.lean` identifies the actual terminal NLS
+Dirichlet eigenfunction factor with the normalized rough Hill
+quasi-derivative. Determinant one gives the literal anti-discriminant
+identity `Delta_minus(nu_n)=gamma_n-gamma_n^-1`.
+`HillHminusOneDirichletAntiNorming.lean` transports it to every positive
+actual Hill label with the exact Miura energy shift. The signed half
+sample equals `sinh(kappa_n)` for the intrinsic norming logarithm
+`kappa_n=log((-1)^n Re(gamma_n))`. No open-gap or simple-root hypothesis
+is added.
+
+`RealArsinhExtension.lean` constructs the principal complex inverse sinh,
+proves agreement with real inverse sinh and analyticity at every real
+scalar, and supplies a linear bound near zero.
+`AnalyticSuperposition.lean` proves the reusable finite-exponent lp
+superposition theorem: exact finite-head coordinates and a common small
+tail neighborhood give actual sequence membership, local norm bounds
+and Banach analyticity. `ArsinhSuperposition.lean` specializes it near
+every real lp sequence and provides analytic parameter pullback.
+
+`SourceDirichletAntiSamplesAnalytic.lean` assembles the actual NLS
+Dirichlet anti-discriminant sample sequence as one Banach analytic map
+on a common neighborhood of all real sources, using the existing
+Lemma 9.2 full sequence bounds. `LogNormingSequenceCoordinates.lean`
+uses signed injective positive-index sampling and inverse-sinh
+superposition. `GlobalLogNormingCoordinates.lean` glues the resulting
+ell2 maps by Banach-valued real-form uniqueness. It proves one
+complex-open neighborhood of the entire real H^-1 space supports an
+analytic map `K` with **every** real coordinate equal to the actual
+intrinsic logarithmic norming constant and `K(0)=0`.
+
+The normalized Dirichlet energies and logarithmic norming sequences
+are therefore both globally Banach analytic near all real H^-1 inputs.
+The full Cartesian KdV coordinate map, its analytic inverse, quadratic
+Arnold-action identification and action-fiber/discriminant identity
+remain essential inputs to the positive-ell2 extension of Theorem 1.1.
+
+The inherited closure for this milestone contains 2297 sources outside
+the 499-module baseline, all byte-identical to the read-only compiled
+reference. These cached imports were not rebuilt; their hashes are in
+`log-norming-library-reuse.json`. The pinned mathlib Arsinh source was
+additionally compiled into private output. The reproduction script
+mirrors mathlib imports with read-only file links and refuses writes
+through linked output directories. All canonical sources and build
+products remain untouched.
+
 ## Remaining essential KdV work
 
 1. Construct the closed intrinsic singular Hill operator domain from the
@@ -2623,12 +2670,14 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `7a12eee` contains 491 source modules, whose
-source hashes all remain unchanged. Eight authored modules pass Lean
-4.33.1/mathlib v4.33.1 with `warningAsError=true`. The full reproduction
-script lists 499 source modules. The positive-index example and all
-1186 coverage-name checks pass. Inherited reference imports are described
-above; this is an incremental check, not a full repository rebuild.
+The validated baseline at `b4f4688` contains 499 source modules, whose
+source hashes remain unchanged. Eight authored modules pass Lean
+4.33.1/mathlib v4.33.1 with `warningAsError=true`; the complete
+reproduction script lists 507 NLS modules and one private pinned mathlib
+compilation. The positive-index example, cumulative transitive axiom
+audit and 1210 coverage-declaration checks pass. This is incremental
+validation, not a full repository rebuild.
+
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
 helpers and all declarations originating in 246 additional shared modules:
