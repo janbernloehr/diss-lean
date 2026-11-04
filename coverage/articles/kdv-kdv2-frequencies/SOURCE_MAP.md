@@ -642,3 +642,8 @@ are in `CANONICAL_NUMERATOR_REPRESENTATION.md`. All main rows remain OPEN.
 ## Indexed band geometry for contour period transfer
 
 `SourceContourAdjacentBands.lean` identifies bands between actual critical frequencies and at actual period-circle crossings. `HillHminusOneOriginalContourBands.lean` proves actual uniform critical energy separation, shifted-square order and a common-neighborhood identification of all original crossings with bands k-1/k. This supplies the band hypotheses for contour homotopy; actual integral equality and all main theorem conclusions remain open. See `ORIGINAL_CONTOUR_BANDS.md`.
+
+
+## Actual normalized periods on the original contours
+
+`ShiftedSquaredCircleBandHomotopy.lean` proves actual integral equality through a domain-preserving homotopy. `HillHminusOneEnergyBands.lean` proves its real energy-band hypotheses inside the actual canonical root domain. `HillHminusOneOriginalNormalizedPeriods.lean` transfers the actual mapped NLS normalization to the literal original contour Kronecker periods, with one data set and ball before all real rough inputs and positive mode pairs. This proves the necessary original period normalization; weighted inverse-column identification and all main theorem conclusions remain open. See `ORIGINAL_NORMALIZED_PERIODS.md`.

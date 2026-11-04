@@ -17,6 +17,12 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual original normalized contour periods
+
+The actual Miura numerator now has the literal Kronecker periods on the original frequency circles. A proved homotopy inside the canonical root domain transfers the actual mapped NLS periods, with the correct shifted-square Jacobian and boundary root branch. One constructed normalized data set and norm ball precede all real rough inputs and positive mode pairs. See `ORIGINAL_NORMALIZED_PERIODS.md`.
+
+Current validation: 424 selected modules, 421 unchanged previously checked plus three strict incremental compilations; fresh combined transitive audit of 4907 selected and 27063 imported NLS declarations, permitted axioms only. Applying the verified inverse to identify the actual coefficients with its normalized columns remains next; no main theorem is closed.
+
 ## Latest indexed adjacent-band geometry
 
 Actual critical confinement and shifted-square order identify the original contour crossings with canonical bands k-1 and k, on one common complex open neighborhood before all real inputs and positive indices. Actual normalized NLS period circles cross those same indexed bands, including collapsed gaps and the first-mode central case. See `ORIGINAL_CONTOUR_BANDS.md`.

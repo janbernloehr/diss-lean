@@ -7016,6 +7016,51 @@
       "scope": "Actual uniform critical confinement gives quadratic bounds and separation from every original contour crossing. Positive real shifted-square order and actual canonical root-domain membership identify the left/right crossings with bands k-1/k. One actual common complex open neighborhood precedes all real rough inputs and positive indices, including the first mode and collapsed gaps. Actual contour homotopy and normalized period transfer remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "5edc8b0a001b34d74a86970f984670034dacffce25559487e8c40af7f40b0e63"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ShiftedSquaredCircleBandHomotopy.lean",
+      "source_labels": [
+        "Actual original normalized contour periods; necessary spectral construction"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Actual affine homotopy of two shifted squared positive-frequency circles stays nonreal or in their matched real bands. Analytic functions have equal actual smooth loop integrals, from a proved domain-preserving homotopy.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4f252b5f159f2cc1267c1df37d0417040987c95b8c507513022d301411df5923"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneEnergyBands.lean",
+      "source_labels": [
+        "Actual original normalized contour periods; necessary spectral construction"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "The actual canonical real energy bands belong to the canonical energy-root domain. Nonnegative endpoint order and positive squared-frequency order map the indexed source bands and shifted original crossings into these energy intervals.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c80c718de73f1db5b8118ea0b6649f29a2170b8b04e6e637ff992384c824252c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneOriginalNormalizedPeriods.lean",
+      "source_labels": [
+        "Actual original normalized contour periods; necessary spectral construction"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Actual original and mapped energy loops have equal analytic integrals. The actual normalized mapped NLS periods and boundary root agreement give literal original Kronecker periods. One constructed normalized data set and norm ball precede all physically real rough inputs and positive mode pairs, with actual source membership and joint complex numerator analyticity retained. Weighted inverse-column identification and main theorems remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "576ee4029fd7f5f9b85cfa17f72df5534c1954d3b577329aebc5ae973f22a2d5"
     }
   ],
   "dependencies_needed": [
@@ -7047,22 +7092,23 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4886,
-    "total_declarations_audited": 27042,
+    "candidate_declarations_audited": 4907,
+    "total_declarations_audited": 27063,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 421,
+    "selected_modules": 424,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "critical_chart_germs_validation_sequence": "All 415 selected modules strictly rebuilt, followed by the combined transitive axiom audit. All 412 previous selected Lean sources unchanged; private fresh outputs. Full complex critical germ compatibility, not normalized-family identification.",
     "canonical_critical_compatibility_validation_sequence": "Prior full strict rebuild of the unchanged 415 modules, strict incremental compilation of the two new modules in dependency order, then a fresh full combined transitive axiom audit of all 417 selected modules. Source bytes, exact selections, private fresh outputs and seven provenance records verified. No claim of a repeated full 417-module rebuild.",
     "original_contour_roots_validation_sequence": "Prior strict validation of the unchanged 417 modules (415-module full baseline and two incremental compilations), two new strict incremental compilations, then a fresh full combined transitive axiom audit of all 419 selected modules. Source bytes, exact selections, private fresh outputs and seven provenance records verified. No claim of a repeated full 419-module rebuild.",
-    "original_contour_bands_validation_sequence": "Prior strict validation of the unchanged 419 modules (415-module full baseline and four incremental compilations), two new strict incremental compilations, then a fresh full combined transitive axiom audit of all 421 selected modules. Source bytes, exact selections, private fresh outputs and seven provenance records verified. No claim of a repeated full 421-module rebuild."
+    "original_contour_bands_validation_sequence": "Prior strict validation of the unchanged 419 modules (415-module full baseline and four incremental compilations), two new strict incremental compilations, then a fresh full combined transitive axiom audit of all 421 selected modules. Source bytes, exact selections, private fresh outputs and seven provenance records verified. No claim of a repeated full 421-module rebuild.",
+    "original_normalized_periods_validation_sequence": "Prior strict validation of 421 unchanged modules (415-module full baseline and six incremental compilations), three new strict incremental compilations in dependency order, then a fresh full combined transitive axiom audit of all 424 selected modules. No repeated full 424-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -7207,5 +7253,6 @@
   "critical_chart_germs_record": "CRITICAL_CHART_GERMS.md",
   "canonical_critical_compatibility_record": "CANONICAL_CRITICAL_COMPATIBILITY.md",
   "original_contour_roots_record": "ORIGINAL_CONTOUR_ROOTS.md",
-  "original_contour_bands_record": "ORIGINAL_CONTOUR_BANDS.md"
+  "original_contour_bands_record": "ORIGINAL_CONTOUR_BANDS.md",
+  "original_normalized_periods_record": "ORIGINAL_NORMALIZED_PERIODS.md"
 }

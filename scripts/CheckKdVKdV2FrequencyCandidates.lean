@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneOriginalNormalizedPeriods
 import NLS.KdV.HillHminusOneOriginalContourBands
 import NLS.KdV.HillHminusOneOriginalContourRoots
 import NLS.KdV.HillHminusOneCanonicalCriticalCompatibility
@@ -518,7 +519,10 @@ run_cmd do
     `NLS.KdV.HillHminusOneRealContinuationBands,
     `NLS.KdV.HillHminusOneOriginalContourRoots,
     `NLS.ZakharovShabat.SourceContourAdjacentBands,
-    `NLS.KdV.HillHminusOneOriginalContourBands]
+    `NLS.KdV.HillHminusOneOriginalContourBands,
+    `NLS.ComplexAnalysis.ShiftedSquaredCircleBandHomotopy,
+    `NLS.KdV.HillHminusOneEnergyBands,
+    `NLS.KdV.HillHminusOneOriginalNormalizedPeriods]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

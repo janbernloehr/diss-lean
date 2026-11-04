@@ -428,7 +428,10 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/KdV/HillHminusOneRealContinuationBands
   NLS/KdV/HillHminusOneOriginalContourRoots
   NLS/ZakharovShabat/SourceContourAdjacentBands
-  NLS/KdV/HillHminusOneOriginalContourBands)
+  NLS/KdV/HillHminusOneOriginalContourBands
+  NLS/ComplexAnalysis/ShiftedSquaredCircleBandHomotopy
+  NLS/KdV/HillHminusOneEnergyBands
+  NLS/KdV/HillHminusOneOriginalNormalizedPeriods)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys
