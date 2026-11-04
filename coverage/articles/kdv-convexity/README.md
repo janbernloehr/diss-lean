@@ -2438,6 +2438,62 @@ spectral coordinates needed by the global positive-ell2 extension.
 Constructing those coordinates, their inverse and Arnold-action identity
 remains required; no unconditional Theorem 1.1 extension is claimed.
 
+## Global analytic weighted Arnold-action sequence
+
+`HillHminusOneMiuraGapComparison.lean` identifies the translated principal
+square roots of the actual Hill endpoints as original diagonal NLS
+periodic energies. Once the index is large relative to the fixed energy
+shift, both lie in the same complete NLS spectral strip. Its two endpoint
+values control their difference without choosing an analytic ordering.
+The exact energy factorization then gives
+
+```text
+abs(lambda_plus-lambda_minus) <= 3*pi*n*abs(diagonal_NLS_gap_n).
+```
+
+`HillHminusOneGapMajorant.lean` uses the existing canonical endpoint
+cutoff and the actual NLS gap sequence to make this estimate uniform on
+one complex H^-1 neighborhood. That ell2 sequence has a locally bounded
+norm. Unordered-pair uniqueness makes the bound independent of which
+Hill energy radius was used to construct the high pair.
+`HillHminusOneArnoldMajorant.lean` combines this with the proved actual
+Arnold upper bound, retaining the exact base weight:
+
+```text
+abs(A_n)/(1+n) <= C*abs(g_n)^2,   g in ell2, norm(g) locally bounded.
+```
+
+`AnalyticSquareTailMajorant.lean` proves a reusable Banach-valued analytic
+realization theorem. A sampled ell2 square controls the complete ell1
+tail; the finite analytic head has its own local bound. The majorant
+itself need not be analytic. Injective sampling cannot increase its
+squared norm. This proves actual ell1 membership, the exact coefficient
+values and analyticity in the Banach norm, excluding the total
+constructor's zero fallback throughout the analytic domain.
+
+`SpectralActionSequence.lean` applies this realization to the actual
+canonical periods with raw action coefficients preserved.
+`GlobalSpectralActions.lean` constructs one weighted ell1 Arnold-action
+map on a single complex-open neighborhood of the entire real H^-1
+space. At every real input all raw coordinates are the original
+canonical contour periods. The sequence is real and nonnegative, each
+coordinate vanishes exactly at its corresponding closed gap, and the
+whole sequence vanishes at the free potential. Equality of the entire
+real discriminants implies equality of these full action sequences.
+
+This is an actual global analytic **action map**, not an invertible
+Cartesian spectral coordinate map. No injectivity, inverse potential
+realization, or converse action-fiber/discriminant identity is inferred.
+Those remain necessary to instantiate the positive-ell2 extension theorem.
+
+The newly traversed inherited import closure has 650 source modules
+outside the prior focused baseline; all match the read-only compiled
+reference byte-for-byte. Its source hashes and direct roots are recorded
+in `action-sequence-library-reuse.json`. Those reference modules were
+used as compiled imports and were not rebuilt in this incremental check.
+All actually used transitive axioms are covered by the cumulative audit;
+the direct library roots are additionally audited by module origin.
+
 ## Remaining essential KdV work
 
 1. Construct the closed intrinsic singular Hill operator domain from the
@@ -2503,15 +2559,16 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `f86473d` contains 473 source modules, whose
-source hashes all remain unchanged. Three exact shared imports and nine
-authored modules pass Lean 4.33.1/mathlib v4.33.1 with
-`warningAsError=true`. The full reproduction script lists 485 source
-modules. The positive-index example and all 1142 coverage-name checks pass.
+The validated baseline at `4031299` contains 485 source modules, whose
+source hashes all remain unchanged. Six authored modules pass Lean
+4.33.1/mathlib v4.33.1 with `warningAsError=true`. The full reproduction
+script lists 491 source modules. The positive-index example and all
+1150 coverage-name checks pass. Inherited reference imports are described
+above; this is an incremental check, not a full repository rebuild.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 237 additional shared modules:
-4716 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 241 additional shared modules:
+4757 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
