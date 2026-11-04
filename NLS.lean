@@ -5781,3 +5781,10 @@ import NLS.KdV.HillMixedPeriodBoundedRoots
 import NLS.KdV.HillSelectedJointPeriodBounds
 import NLS.KdV.HillCommonMixedPeriodRoots
 import NLS.KdV.HillCommonMixedRootCoordinates
+import NLS.KdV.HillFreeOwnPeriodProduct
+import NLS.KdV.HillBoundedOwnPeriodError
+import NLS.ComplexAnalysis.FiniteFamilyLowerBound
+import NLS.KdV.HillHighOwnPeriodLowerBound
+import NLS.KdV.HillMixedOwnPeriod
+import NLS.KdV.HillCommonOwnPeriodLowerBound
+import NLS.KdV.HillCommonMixedNormalizedPsi

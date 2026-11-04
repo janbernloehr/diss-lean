@@ -858,6 +858,13 @@ import NLS.KdV.HillMixedPeriodBoundedRoots
 import NLS.KdV.HillSelectedJointPeriodBounds
 import NLS.KdV.HillCommonMixedPeriodRoots
 import NLS.KdV.HillCommonMixedRootCoordinates
+import NLS.KdV.HillFreeOwnPeriodProduct
+import NLS.KdV.HillBoundedOwnPeriodError
+import NLS.ComplexAnalysis.FiniteFamilyLowerBound
+import NLS.KdV.HillHighOwnPeriodLowerBound
+import NLS.KdV.HillMixedOwnPeriod
+import NLS.KdV.HillCommonOwnPeriodLowerBound
+import NLS.KdV.HillCommonMixedNormalizedPsi
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1371,7 +1378,8 @@ run_cmd do
     ``NLS.Coeff.positiveProjection_fixed_of_positiveDeleted,
     ``NLS.Coeff.positiveDeletedToPositive,
     ``NLS.Coeff.positiveDeletedToPositive_coe,
-    ``NLS.Coeff.norm_positiveDeletedToPositive]
+    ``NLS.Coeff.norm_positiveDeletedToPositive,
+    ``NLS.ComplexAnalysis.exists_finite_family_norm_lower_bound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
