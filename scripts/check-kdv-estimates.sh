@@ -172,6 +172,7 @@ modules+=(NLS/ComplexAnalysis/CompactNeighborhoodBounds NLS/KdV/HillUniformDefla
 modules+=(NLS/KdV/HillBoundedNormalizedContourBounds NLS/KdV/HillGeneralHighContourCharts NLS/KdV/HillGeneralDeflatedDiscCharts NLS/KdV/HillGeneralSeparatedPrimitives NLS/KdV/HillGeneralCenteredPrimitives NLS/KdV/HillGeneralKernelCorrections NLS/KdV/HillGeneralOwnCorrections)
 modules+=(NLS/KdV/HillNativeKernelSeries NLS/KdV/HillGeneralOffDiagonalPhase NLS/KdV/HillGeneralFullRegularPhase NLS/KdV/HillGeneralCartesianTails NLS/SequenceSpaces/NatL2AnalyticGermHeadTail NLS/KdV/HillDirichletDarbouxCotangents NLS/KdV/HillGeneralWeightedCartesianAnalytic)
 modules+=(NLS/KdV/HillDiscriminantGradient NLS/KdV/HillDiscriminantGradientRegularity NLS/ComplexAnalysis/QuadraticHillSystemPairing NLS/KdV/HillDiscriminantQuadraticSystem NLS/KdV/HillDiscriminantGardnerCommutation)
+modules+=(NLS/ComplexAnalysis/ContinuousEvenSquareDescent NLS/KdV/HillL2EnergyStateCurves NLS/KdV/HillEnergyDiscriminantGradients NLS/FunctionalAnalysis/UnitComplexCurvePairing NLS/FunctionalAnalysis/UnitComplexCurvePrimitive NLS/FunctionalAnalysis/CurveSpatialContour NLS/ComplexAnalysis/TracePrimitiveMomentDifferential NLS/KdV/HillEnergyGradientContours NLS/KdV/HillContinuedMomentGradients)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

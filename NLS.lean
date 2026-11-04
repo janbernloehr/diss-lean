@@ -5819,3 +5819,12 @@ import NLS.KdV.HillDiscriminantGradientRegularity
 import NLS.ComplexAnalysis.QuadraticHillSystemPairing
 import NLS.KdV.HillDiscriminantQuadraticSystem
 import NLS.KdV.HillDiscriminantGardnerCommutation
+import NLS.ComplexAnalysis.ContinuousEvenSquareDescent
+import NLS.KdV.HillL2EnergyStateCurves
+import NLS.KdV.HillEnergyDiscriminantGradients
+import NLS.FunctionalAnalysis.UnitComplexCurvePairing
+import NLS.FunctionalAnalysis.UnitComplexCurvePrimitive
+import NLS.FunctionalAnalysis.CurveSpatialContour
+import NLS.ComplexAnalysis.TracePrimitiveMomentDifferential
+import NLS.KdV.HillEnergyGradientContours
+import NLS.KdV.HillContinuedMomentGradients

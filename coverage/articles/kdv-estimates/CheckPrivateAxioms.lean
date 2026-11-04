@@ -896,6 +896,15 @@ import NLS.KdV.HillDiscriminantGradientRegularity
 import NLS.ComplexAnalysis.QuadraticHillSystemPairing
 import NLS.KdV.HillDiscriminantQuadraticSystem
 import NLS.KdV.HillDiscriminantGardnerCommutation
+import NLS.ComplexAnalysis.ContinuousEvenSquareDescent
+import NLS.KdV.HillL2EnergyStateCurves
+import NLS.KdV.HillEnergyDiscriminantGradients
+import NLS.FunctionalAnalysis.UnitComplexCurvePairing
+import NLS.FunctionalAnalysis.UnitComplexCurvePrimitive
+import NLS.FunctionalAnalysis.CurveSpatialContour
+import NLS.ComplexAnalysis.TracePrimitiveMomentDifferential
+import NLS.KdV.HillEnergyGradientContours
+import NLS.KdV.HillContinuedMomentGradients
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1414,7 +1423,20 @@ run_cmd do
     ``NLS.ComplexAnalysis.exists_local_uniform_bound_near_compact_of_continuousOn,
     ``NLS.ComplexAnalysis.norm_parametricConvexPrimitive_le,
     ``NLS.Coeff.exists_natL2_analytic_germ_of_head_tail_matching,
-    ``NLS.ComplexAnalysis.quadraticHillSystem_pairing_eq_zero]
+    ``NLS.ComplexAnalysis.quadraticHillSystem_pairing_eq_zero,
+    ``NLS.ComplexAnalysis.continuous_even_square_descent,
+    ``NLS.FunctionalAnalysis.unitComplexCurveIntegralCLM,
+    ``NLS.FunctionalAnalysis.unitComplexCurveIntegralCLM_apply,
+    ``NLS.FunctionalAnalysis.unitComplexCurvePairing,
+    ``NLS.FunctionalAnalysis.unitComplexCurvePairing_apply,
+    ``NLS.FunctionalAnalysis.unitComplexCurvePrimitive,
+    ``NLS.FunctionalAnalysis.unitComplexCurvePrimitive_apply,
+    ``NLS.FunctionalAnalysis.absolutelyContinuousOnInterval_unitComplexCurvePrimitive,
+    ``NLS.FunctionalAnalysis.ae_hasDerivAt_unitComplexCurvePrimitive,
+    ``NLS.FunctionalAnalysis.curve_eq_constant_add_unitComplexCurvePrimitive,
+    ``NLS.FunctionalAnalysis.circleIntegral_curve_spatial_derivative,
+    ``NLS.ComplexAnalysis.TracePrimitiveFamily.fderiv_primitive_potential_apply,
+    ``NLS.ComplexAnalysis.TracePrimitiveFamily.fderiv_contourMoment_apply]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
