@@ -1,3 +1,5 @@
+import NLS.KdV.HillDirichletSheetVariation
+import NLS.KdV.HillDirichletGardnerSlope
 import NLS.KdV.HillGardnerAbelianPrimitive
 import NLS.ComplexAnalysis.ParametricCosineStationarity
 import NLS.KdV.HillGardnerFilledDifferential
@@ -997,7 +999,11 @@ run_cmd do
     `NLS.KdV.HillGardnerDeflatedRoot,
     `NLS.KdV.HillGardnerFilledDifferential,
     `NLS.ComplexAnalysis.ParametricCosineStationarity,
-    `NLS.KdV.HillGardnerAbelianPrimitive]
+    `NLS.KdV.HillGardnerAbelianPrimitive,
+    `NLS.KdV.ClassicalHillDirichletSlopePairing,
+    `NLS.KdV.HillDirichletSlopeVariation,
+    `NLS.KdV.HillDirichletGardnerSlope,
+    `NLS.KdV.HillDirichletSheetVariation]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

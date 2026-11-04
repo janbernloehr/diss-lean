@@ -17,7 +17,15 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual Abelian source stationarity
+## Latest actual moving Dirichlet sheet variation
+
+Actual Dirichlet slope and moving sheet-root Gardner derivatives are proved, including filled spectral-diagonal values, zero energy and terminal bandedges. The moving-sheet formula uses the genuine source chain rule and actual differentiated monodromy determinant; it does not divide by the sheet value. See `DIRICHLET_SHEET_VARIATION.md`. Terminal-phase evaluation and the final angle/frequency identities remain open.
+
+Prior strict validation of all 862 unchanged selected sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 866 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 866-module rebuild is claimed.
+
+Fresh audit: 8299 selected and 30885 imported NLS declarations, permitted axioms only. All main theorem inventory rows remain OPEN.
+
+## Earlier actual Abelian source stationarity
 
 Actual symmetric gap data, filled Cauchy unit/root, normalized deflated differential and normalized cosine primitive are stationary along every complex Gardner direction. Actual analytic sheeted Dirichlet integral branches now satisfy the exact remaining terminal-phase chain rule, including terminal bandedges without dividing by a vanishing sine. See `ABELIAN_SOURCE_STATIONARITY.md`.
 

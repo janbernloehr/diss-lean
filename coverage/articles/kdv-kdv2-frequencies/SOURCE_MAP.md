@@ -724,3 +724,12 @@ Actual symmetric gap data, filled Cauchy unit/root, normalized deflated differen
 Prior strict validation of all 828 unchanged selected sources; strict dependency-order validation of 27 shared sources (26 byte-identical imports and one compatibility import reusing an already proved local spectral-derivative theorem); strict final compilation of seven new proof modules; then a fresh combined transitive axiom audit of all 862 selected modules. Twelve compatible local variants retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 862-module rebuild is claimed.
 
 Fresh audit: 8254 selected and 30841 imported NLS declarations, permitted axioms only. Terminal-phase evaluation, canonical orientation, full angle variation and the physical frequencies/main theorem conclusions remain open.
+
+
+## Latest actual moving Dirichlet sheet variation
+
+Actual Dirichlet slope and moving sheet-root Gardner derivatives are proved, including filled spectral-diagonal values, zero energy and terminal bandedges. The moving-sheet formula uses the genuine source chain rule and actual differentiated monodromy determinant; it does not divide by the sheet value. See `DIRICHLET_SHEET_VARIATION.md`. Terminal-phase evaluation and the final angle/frequency identities remain open.
+
+Prior strict validation of all 862 unchanged selected sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 866 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 866-module rebuild is claimed.
+
+Fresh audit: 8299 selected and 30885 imported NLS declarations, permitted axioms only. All main theorem inventory rows remain OPEN.
