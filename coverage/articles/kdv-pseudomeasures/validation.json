@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "Prove the actual off-index phase contribution to the native Jacobian is compact, including on the exact mean-zero Banach source and target.",
+  "phase": "Prove actual normalized-amplitude Jacobian compactness and reduce the native derivative to the intrinsic diagonal sequence with its fixed original normalization.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1521,13 +1521,20 @@
     "NLS/KdV/HillNativeDiagonalGauge.lean",
     "NLS/KdV/HillNativeOffIndexCompact.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillOffIndexJacobianCompact.lean",
+    "NLS/ComplexAnalysis/UniformUnitInverseBounds.lean",
+    "NLS/SequenceSpaces/EvenUnitExtension.lean",
+    "NLS/SequenceSpaces/CompactUnitSymbolDerivative.lean",
+    "NLS/KdV/HillNormalizedAmplitudeSymbols.lean",
+    "NLS/KdV/HillIntrinsicDiagonalSequence.lean",
+    "NLS/KdV/HillMeanZeroIntrinsicCompact.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillIntrinsicJacobianCompact.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 6527,
-  "definitions": 1228,
+  "proved_theorems": 6563,
+  "definitions": 1234,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 7755,
+    "declarations": 7797,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -2913,8 +2920,8 @@
     "OriginalHillSpectralDarboux exports the SAMEoriginal physical potential, actual multipliers and local logarithmic normalization; their literal unit-period physical Gardner integral is zero, their closed-mean-zero cotangent bracket is intrinsic, and the full local spectral matrix holds at every original potential.",
     "NEXT derive the Gardner brackets of the ACTUAL Abelian angles, retaining the complete infinite off-index correction and normalized differentials, from the now-complete local spectral Darboux identities and actual action/Dirichlet contours. The article signed-coordinate canonicality away fromzero, all-source derivative inversion, remaining original nonlinear scales/global Birkhoff boundedness/bijection/weak-star/flow, universal actual numerator scalar and sharp KMT remain OPEN. AppendixB, local inverses and all preceding involution results remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE."
   ],
-  "source_correspondence": "Prove the actual off-index phase contribution to the native Jacobian is compact, including on the exact mean-zero Banach source and target. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NEXT prove the remaining ACTUAL action-amplitude/on-index DIAGONAL Jacobian has the required compact half-Fourier remainder or another genuine Fredholm/inverse property. The ENTIRE actual off-index phase contribution is NOW PROVED COMPACT on the FULL native complex domain and the EXACT complex mean-zero source/signed Sobolev -1/2 zero-mode target. The exact decomposition is D(native)=M_exp(theta)*D(actualDiagonal)+K, with M an ACTUAL bounded invertible zero-mode diagonal multiplier and K ACTUALLY COMPACT. The actualDiagonal raw coordinates are canonicalActionAmplitude*intrinsicDiagonalCartesianMinus/Plus divided by sqrt2; its sequence map is analytic in the same weighted norm. Full native compact-Fourier remainder, all-source DF closed range/injectivity/bijectivity remain OPEN. Prior ACTUAL dense complex derivative range at EVERY physical source, explicit Hamiltonian raw single-mode preimages, full signed Poisson canonicality and intrinsic angle-pair zero remain PROVED. Do not infer the missing diagonal/Fourier estimates from compactness of the phase contribution or transfer NLS finite-gap density. ALL FIVE MAIN THEOREMS remain UNPROVED. Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff map: derivative invertibility at EVERY source, remaining nonlinear source/target scales, global bijectivity/boundedness and bounded-set weak-star homeomorphism. FULL actual signed-coordinate Gardner Poisson canonicality is NOW PROVED on the ENTIRE original physical real mean-zero Hminus-one domain, including collapsed gaps andzero. Full complex-source cotangents are used at those real sources; no arbitrary-complex-source claim is made. Exact Fourier DF0, native Hminus-one sequence analyticity and native/endpoint real-complex local inverses at0 remain complete. Do not infer a strong symplectic Banach isomorphism or global diffeomorphism from scalar canonical brackets alone, or substitute ordinary NLS coordinates/componentwise-real targets. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. ALL1509 baseline non-audit registered sources byte-identical to902b219. All6 new modules (33theorems+10definitions), 5 canonical-byte-identical shared modules, 6 unchanged PRIVATE dependencies and EXACT7755-declaration transitive standard-axiom audit freshly compiled privately. Actual OFF-INDEX phase Jacobian contribution is compact; remaining diagonal and full Fourier remainders and all-source inverse are NOT assumed or proved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1516-module build.",
+  "source_correspondence": "Prove actual normalized-amplitude Jacobian compactness and reduce the native derivative to the intrinsic diagonal sequence with its fixed original normalization. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NEXT prove the remaining ACTUAL INTRINSIC DIAGONAL Jacobian has the needed compact half-Fourier remainder, or another genuine Fredholm/inverse property. The ACTUAL normalized action-amplitude derivative difference is NOW PROVED COMPACT, as is the entire off-index phase contribution. The resulting exact compact reduction is D(native)=M_exp(theta)*D(intrinsicDiagonal)+K, with M an ACTUAL bounded invertible zero-mode diagonal multiplier and K ACTUALLY COMPACT on the FULL complex native domain and EXACT complex mean-zero source/signed Sobolev -1/2 zero-mode target. IntrinsicDiagonal raw positive/negative coordinates are intrinsicDiagonalCartesianMinus/Plus divided by (2*sqrt(pi)*sqrt(n))*sqrt(2); analytic in the same norm, central coefficient0. The normalized principal action-ratio sqrt and its reciprocal are actual analytic bounded signed sequences, and sqrt has the verified unit tail. Full intrinsic/Fourier and native/Fourier remainder compactness, all-source DF closedrange/injectivity/bijectivity remain OPEN. Prior actual dense derivative range, Hamiltonian raw mode preimages, full signed Gardner canonicality and anglepairzero remain PROVED. Do not infer missing intrinsic diagonal/Fourier estimates from removal of amplitude and off-index phase, or transfer NLS finite-gap density. ALL FIVE MAIN THEOREMS remain UNPROVED. Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff map: derivative invertibility at EVERY source, remaining nonlinear source/target scales, global bijectivity/boundedness and bounded-set weak-star homeomorphism. FULL actual signed-coordinate Gardner Poisson canonicality is NOW PROVED on the ENTIRE original physical real mean-zero Hminus-one domain, including collapsed gaps andzero. Full complex-source cotangents are used at those real sources; no arbitrary-complex-source claim is made. Exact Fourier DF0, native Hminus-one sequence analyticity and native/endpoint real-complex local inverses at0 remain complete. Do not infer a strong symplectic Banach isomorphism or global diffeomorphism from scalar canonical brackets alone, or substitute ordinary NLS coordinates/componentwise-real targets. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. ALL1515 baseline non-audit registered sources byte-identical toc81cc73. All7 new modules (36theorems+6definitions), 4 canonical-byte-identical shared modules, 7 unchanged PRIVATE dependencies and EXACT7797-declaration transitive standard-axiom audit freshly compiled privately. Actual normalized-amplitude derivative difference and combined native/intrinsic Jacobian remainder are compact. The intrinsic Fourier estimate and all-source inverse remain UNPROVED. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1523-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -4434,7 +4441,14 @@
     "NLS/SequenceSpaces/ZeroModeExponentialSymbol.lean": "f27e00a70750445a8bce5e39084c3e526a1098d9a6766ae596e4c97453adc251",
     "NLS/KdV/HillNativeDiagonalGauge.lean": "f23ea0a032fa94394a8834e4af5ad3319d93f65492cba8d144672394ff6990d1",
     "NLS/KdV/HillNativeOffIndexCompact.lean": "2e5c761ddef8cb50999f7049957b10ba10b6da9818ff820fb3dc1ca165c248d6",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillOffIndexJacobianCompact.lean": "a94e960fbed284c0ec50c54bee5d774a88d4bd1257df2686e21668fe7bb10560"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillOffIndexJacobianCompact.lean": "a94e960fbed284c0ec50c54bee5d774a88d4bd1257df2686e21668fe7bb10560",
+    "NLS/ComplexAnalysis/UniformUnitInverseBounds.lean": "620d536684c66ff44c36d22cff8e886624fb3ece9fc07203ba197c25e00b2fb3",
+    "NLS/SequenceSpaces/EvenUnitExtension.lean": "7a03c94e953d59073a49a4e0f766a301a0abdc18b7b9236165d7ffc69525eb26",
+    "NLS/SequenceSpaces/CompactUnitSymbolDerivative.lean": "114cc2aa96793dd52250ddbc35663af7d4d7a12e89cee956d3848ed39fb38674",
+    "NLS/KdV/HillNormalizedAmplitudeSymbols.lean": "d0bcd7adf48f4da34d0d4f7d8c30183c22e023255a865297b0b3e7fe1531bd51",
+    "NLS/KdV/HillIntrinsicDiagonalSequence.lean": "1122d20910e70cf20840b6929c3bd75acf52a7e07b247ce76fb1d865b9df8901",
+    "NLS/KdV/HillMeanZeroIntrinsicCompact.lean": "8062d22cd8dd3d9564ffa5132983fa19592bf1ec663ed594d15c208b2c1ff48a",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillIntrinsicJacobianCompact.lean": "bff9d26e781a187c6a33185935ca509a22c7a2993e6569a949c7bc535b9d116c"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -4442,11 +4456,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 7712,
-    "newly_checked_declarations_this_continuation": 43,
-    "new_theorems": 33,
-    "new_definitions": 10,
-    "total_checked_declarations": 7755
+    "previous_checked_declarations": 7755,
+    "newly_checked_declarations_this_continuation": 42,
+    "new_theorems": 36,
+    "new_definitions": 6,
+    "total_checked_declarations": 7797
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -4475,7 +4489,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-offindex-jacobian-compact.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-amplitude-jacobian-compact.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -4799,13 +4813,14 @@
     "All writes private; canonical checkout/shared metadata read-only. All1492 baseline non-audit registered sources byte-identical to5d919ef. All7 new modules,4 canonical-byte-identical shared real-sheet/calculus modules,8 unchanged PRIVATE dependencies and exact7685-declaration transitive standard-axiom audit freshly compiled privately. Actual native endpoint hitting is constructed; compact FIP proves general original-source angle-pair zero without any finite-gap density. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1500-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata read-only. All1499 baseline non-audit registered sources byte-identical toc091f9e. All6 new modules,3 canonical-byte-identical Sobolev duality/bivector modules,9 unchanged PRIVATE dependencies and exact7701-declaration transitive standard-axiom audit freshly compiled privately. Actual signed-coordinate canonicality covers ALL original physical real mean-zero Hminus-one sources and ALL integer modes, including closed gaps andzero. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1506-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata read-only. All1505 baseline non-audit registered sources byte-identical toef5939d. All4 new modules,5 canonical-byte-identical Sobolev/finite-coefficient/single-mode shared modules,7 unchanged PRIVATE dependencies and exact7712-declaration transitive standard-axiom audit freshly compiled privately. Actual derivative range is dense at every original physical source; no unproved closed-range, compact-Fourier or inverse hypothesis is assumed. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1510-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata read-only. ALL1509 baseline non-audit registered sources byte-identical to902b219. All6 new modules (33theorems+10definitions), 5 canonical-byte-identical shared modules, 6 unchanged PRIVATE dependencies and EXACT7755-declaration transitive standard-axiom audit freshly compiled privately. Actual OFF-INDEX phase Jacobian contribution is compact; remaining diagonal and full Fourier remainders and all-source inverse are NOT assumed or proved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1516-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata read-only. ALL1509 baseline non-audit registered sources byte-identical to902b219. All6 new modules (33theorems+10definitions), 5 canonical-byte-identical shared modules, 6 unchanged PRIVATE dependencies and EXACT7755-declaration transitive standard-axiom audit freshly compiled privately. Actual OFF-INDEX phase Jacobian contribution is compact; remaining diagonal and full Fourier remainders and all-source inverse are NOT assumed or proved. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1516-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata read-only. ALL1515 baseline non-audit registered sources byte-identical toc81cc73. All7 new modules (36theorems+6definitions), 4 canonical-byte-identical shared modules, 7 unchanged PRIVATE dependencies and EXACT7797-declaration transitive standard-axiom audit freshly compiled privately. Actual normalized-amplitude derivative difference and combined native/intrinsic Jacobian remainder are compact. The intrinsic Fourier estimate and all-source inverse remain UNPROVED. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1523-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-offindex-jacobian-compact-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-amplitude-jacobian-compact-map.json",
   "baseline_validated_snapshot": {
-    "commit": "902b219d2ff4b124c94ccac9e216d84fe9c693e9",
-    "modules": 1510,
-    "audited_declarations": 7712,
+    "commit": "c81cc732d11e0a086d52c2156a086aedde206601",
+    "modules": 1516,
+    "audited_declarations": 7755,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -6959,6 +6974,26 @@
     "actual_mean_zero_offIndex_Jacobian_remainder_COMPACT_PROVED": true,
     "scope": "EVERY point of the existing complex native domain, including EVERY original physical Hminus-one source and arbitrary collapsed gaps; exact full complex Banach derivatives and unchanged signed Sobolev -1/2 target norm.",
     "actual_diagonal_Jacobian_Fourier_remainder_COMPACT_PROVED": false,
+    "native_compact_Fourier_derivative_remainder_PROVED": false,
+    "all_source_Birkhoff_derivative_closed_range_PROVED": false,
+    "all_source_Birkhoff_derivative_invertibility_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "actual_Hill_amplitude_Jacobian_compact": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-amplitude-jacobian-compact-map.json",
+    "reusable_uniform_nonzero_unit_tail_inverse_bounds_PROVED": true,
+    "reusable_even_unit_analytic_infinity_realization_PROVED": true,
+    "reusable_weighted_unit_tail_multiplier_minus_identity_COMPACT_PROVED": true,
+    "reusable_analytic_unit_symbol_derivative_difference_COMPACT_PROVED": true,
+    "actual_normalized_amplitude_AND_reciprocal_bounded_sequence_analytic_PROVED": true,
+    "actual_normalized_amplitude_UNIT_TAIL_PROVED": true,
+    "actual_intrinsic_diagonal_sequence_exact_original_normalization_PROVED": true,
+    "actual_intrinsic_diagonal_sequence_same_weighted_target_analytic_PROVED": true,
+    "actual_normalized_amplitude_Jacobian_difference_COMPACT_PROVED": true,
+    "actual_native_minus_phase_times_intrinsic_Jacobian_COMPACT_PROVED": true,
+    "actual_mean_zero_combined_intrinsic_Jacobian_remainder_COMPACT_PROVED": true,
+    "scope": "EVERY point of the existing complex native domain, including EVERY original physical Hminus-one source and arbitrary collapsed gaps; actual full complex Banach derivatives, exact mean-zero restrictions, original constants and unchanged signed Sobolev -1/2 target norm.",
+    "actual_intrinsic_diagonal_Jacobian_Fourier_remainder_COMPACT_PROVED": false,
     "native_compact_Fourier_derivative_remainder_PROVED": false,
     "all_source_Birkhoff_derivative_closed_range_PROVED": false,
     "all_source_Birkhoff_derivative_invertibility_PROVED": false,

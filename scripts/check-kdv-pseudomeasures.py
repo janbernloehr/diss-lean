@@ -1547,6 +1547,13 @@ modules = [
     'NLS.KdV.HillNativeDiagonalGauge',
     'NLS.KdV.HillNativeOffIndexCompact',
     'NLS.Articles.KdVPseudomeasures.OriginalHillOffIndexJacobianCompact',
+    'NLS.ComplexAnalysis.UniformUnitInverseBounds',
+    'NLS.SequenceSpaces.EvenUnitExtension',
+    'NLS.SequenceSpaces.CompactUnitSymbolDerivative',
+    'NLS.KdV.HillNormalizedAmplitudeSymbols',
+    'NLS.KdV.HillIntrinsicDiagonalSequence',
+    'NLS.KdV.HillMeanZeroIntrinsicCompact',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillIntrinsicJacobianCompact',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

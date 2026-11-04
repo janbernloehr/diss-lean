@@ -1513,6 +1513,13 @@ import NLS.SequenceSpaces.ZeroModeExponentialSymbol
 import NLS.KdV.HillNativeDiagonalGauge
 import NLS.KdV.HillNativeOffIndexCompact
 import NLS.Articles.KdVPseudomeasures.OriginalHillOffIndexJacobianCompact
+import NLS.ComplexAnalysis.UniformUnitInverseBounds
+import NLS.SequenceSpaces.EvenUnitExtension
+import NLS.SequenceSpaces.CompactUnitSymbolDerivative
+import NLS.KdV.HillNormalizedAmplitudeSymbols
+import NLS.KdV.HillIntrinsicDiagonalSequence
+import NLS.KdV.HillMeanZeroIntrinsicCompact
+import NLS.Articles.KdVPseudomeasures.OriginalHillIntrinsicJacobianCompact
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9271,3 +9278,45 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillOffIndexJacobianCompact
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_offIndex_Jacobian_compact
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_meanZero_offIndex_Jacobian_compact
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_diagonal_coordinates
+#print axioms NLS.ComplexAnalysis.exists_local_uniform_unit_inverse_bounds
+#print axioms NLS.Coeff.evenUnitExtension
+#print axioms NLS.Coeff.evenUnitExtension_zero
+#print axioms NLS.Coeff.evenUnitExtension_positive
+#print axioms NLS.Coeff.evenUnitExtension_negative
+#print axioms NLS.Coeff.norm_evenUnitExtension_le
+#print axioms NLS.Coeff.evenUnitExtension_inv
+#print axioms NLS.Coeff.analyticOnNhd_evenUnitExtension
+#print axioms NLS.Coeff.analytic_evenUnit_realization_of_local_bounds
+#print axioms NLS.WeightedCoeff.isCompactOperator_boundedSymbol_sub_id
+#print axioms NLS.WeightedCoeff.fderiv_boundedSymbol_sub
+#print axioms NLS.WeightedCoeff.isCompactOperator_fderiv_boundedSymbol_sub
+#print axioms NLS.KdV.hillHminusActionRatioSqrt_ne_zero
+#print axioms NLS.KdV.exists_hillHminusActionRatioSqrt_uniform_high
+#print axioms NLS.KdV.exists_local_uniform_hillHminusActionRatioSqrt_inverse_bounds
+#print axioms NLS.KdV.hillHminusNormalizedAmplitudeSymbol
+#print axioms NLS.KdV.hillHminusInverseAmplitudeSymbol
+#print axioms NLS.KdV.hillHminusNormalizedAmplitudeSymbol_data
+#print axioms NLS.KdV.hillHminusInverseAmplitudeSymbol_data
+#print axioms NLS.KdV.hillHminusNormalizedAmplitudeSymbol_positive
+#print axioms NLS.KdV.hillHminusNormalizedAmplitudeSymbol_negative
+#print axioms NLS.KdV.hillHminusAmplitudeSymbols_product
+#print axioms NLS.KdV.hillHminusNormalizedAmplitudeSymbol_unit_tail
+#print axioms NLS.KdV.hillHminusActionAngleNativeDomain_subset_amplitude
+#print axioms NLS.KdV.hillHminusIntrinsicDiagonalMap
+#print axioms NLS.KdV.analyticOnNhd_hillHminusIntrinsicDiagonalMap
+#print axioms NLS.KdV.hillHminusNativeDiagonalMap_from_intrinsic
+#print axioms NLS.KdV.hillHminusIntrinsicDiagonalMap_positive
+#print axioms NLS.KdV.hillHminusIntrinsicDiagonalMap_negative
+#print axioms NLS.KdV.hillHminusIntrinsicDiagonalMap_zero_mode
+#print axioms NLS.KdV.isCompactOperator_hillHminusAmplitudeJacobianDifference
+#print axioms NLS.KdV.isCompactOperator_hillHminusIntrinsicJacobianRemainder
+#print axioms NLS.KdV.hillMeanZeroIntrinsicDiagonalMap
+#print axioms NLS.KdV.hillMeanZeroIntrinsicDiagonalMap_coe
+#print axioms NLS.KdV.analyticOnNhd_hillMeanZeroIntrinsicDiagonalMap
+#print axioms NLS.KdV.fderiv_hillMeanZeroIntrinsicDiagonalMap_eq_comp
+#print axioms NLS.KdV.isCompactOperator_hillMeanZeroAmplitudeJacobianDifference
+#print axioms NLS.KdV.hillMeanZeroIntrinsicJacobianRemainder
+#print axioms NLS.KdV.isCompactOperator_hillMeanZeroIntrinsicJacobianRemainder
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_normalized_amplitude_Jacobian_compact
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_intrinsic_Jacobian_remainder_compact
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_intrinsic_diagonal_coordinates
