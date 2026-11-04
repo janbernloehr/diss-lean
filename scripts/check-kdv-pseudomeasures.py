@@ -1155,6 +1155,16 @@ modules = [
     'NLS.KdV.HillPhysicalAbelianSourceBalls',
     'NLS.KdV.HillCanonicalPhysicalAbelianValue',
     'NLS.Articles.KdVPseudomeasures.OriginalHillIntrinsicAbelianDivisor',
+    'NLS.KdV.HillOnIndexAbelianRemainder',
+    'NLS.KdV.HillOnIndexAbelianCauchyCharts',
+    'NLS.KdV.HillOnIndexAbelianCauchyCompatibility',
+    'NLS.KdV.HillOnIndexAbelianFilledRemainder',
+    'NLS.KdV.HillOnIndexAbelianCosinePhase',
+    'NLS.KdV.HillOnIndexPhysicalCorrection',
+    'NLS.KdV.HillOnIndexPhysicalPhaseCharts',
+    'NLS.KdV.HillOnIndexPhysicalPhaseExponential',
+    'NLS.KdV.HillOnIndexPhysicalPhaseSquare',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillOnIndexAbelianPhase',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

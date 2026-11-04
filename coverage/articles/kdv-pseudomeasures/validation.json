@@ -1,7 +1,7 @@
 {
   "date": "2026-11-04",
   "article_main_theorems_verified": false,
-  "phase": "Glue intrinsic physical off-index Hill Abelian divisor values across different Miura patches and shifts on one open connected complex native source domain containing the entire real form.",
+  "phase": "Construct actual local on-index Hill Abelian cosine phase charts, phase modulo pi, and gap-times-phase Cartesian factors analytic through complex gap collapse, retaining physical auxiliary terminals and sheet sign.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1129,13 +1129,23 @@
     "NLS/KdV/HillPhysicalAbelianSourceBalls.lean",
     "NLS/KdV/HillCanonicalPhysicalAbelianValue.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillIntrinsicAbelianDivisor.lean",
+    "NLS/KdV/HillOnIndexAbelianRemainder.lean",
+    "NLS/KdV/HillOnIndexAbelianCauchyCharts.lean",
+    "NLS/KdV/HillOnIndexAbelianCauchyCompatibility.lean",
+    "NLS/KdV/HillOnIndexAbelianFilledRemainder.lean",
+    "NLS/KdV/HillOnIndexAbelianCosinePhase.lean",
+    "NLS/KdV/HillOnIndexPhysicalCorrection.lean",
+    "NLS/KdV/HillOnIndexPhysicalPhaseCharts.lean",
+    "NLS/KdV/HillOnIndexPhysicalPhaseExponential.lean",
+    "NLS/KdV/HillOnIndexPhysicalPhaseSquare.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillOnIndexAbelianPhase.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 5155,
-  "definitions": 1014,
+  "proved_theorems": 5194,
+  "definitions": 1022,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 6169,
+    "declarations": 6216,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -2287,10 +2297,22 @@
     "ONE intrinsic physical off-index Abelian divisor family is glued on the union of ALL these source balls. That domain is OPEN and CONNECTED, contains the ENTIRE real native domain, is chosen BEFORE ALL n,m, and lies in the actual canonical Dirichlet and Psi domains. The family is analytic for EVERY off-index pair and is zero wherever the ACTUAL Dirichlet norming sheet is zero. Its local representative is the exact physical family with the original sheet sign.",
     "The intrinsic value equals EVERY original patch value at EVERY real point of that patch. Moreover around each such point ONE source ball works BEFORE ALL indices and the intrinsic value equals that patch physical formula on the ENTIRE complex ball. Arbitrary distant complex components of an unrefined parent patch are not asserted to coincide with the glued representative.",
     "Eight new modules (36 theorems and 7 definitions), three byte-identical canonical analytic-order/quadratic-uniqueness/ALL-index-placement dependencies and the exact 6169-declaration transitive axiom audit compiled privately without warnings, tactic suggestions or added axioms. All 1115 baseline non-audit registered sources remain unchanged. No heartbeat increase. Canonical checkout and shared Git metadata read-only.",
-    "Cross-patch physical off-index divisor compatibility and an intrinsic analytic family on ONE open connected neighborhood of the ENTIRE real form are NOW PROVED. The ON-INDEX angle/log gauge, infinite off-index sums, collapsed Cartesian extension and locally uniform source3.2 bound, universal ACTUAL product scalar, Gardner/Birkhoff/flow and ALL FIVE MAIN remain OPEN; goal ACTIVE."
+    "Cross-patch physical off-index divisor compatibility and an intrinsic analytic family on ONE open connected neighborhood of the ENTIRE real form are NOW PROVED. The ON-INDEX angle/log gauge, infinite off-index sums, collapsed Cartesian extension and locally uniform source3.2 bound, universal ACTUAL product scalar, Gardner/Birkhoff/flow and ALL FIVE MAIN remain OPEN; goal ACTIVE.",
+    "The ACTUAL diagonal Hill frequency differential has period 2*pi. Subtracting I divided by the ACTUAL selected standard root removes EXACTLY that period, using its exact inverse-root contour value -2*pi*I. Only the REMAINDER is declared zero-period; the diagonal differential itself retains its nonzero period.",
+    "The existing original annular charts and literal parametric annular/Cauchy construction give diagonal remainder solutions with right-hand side ACTUAL diagonal gap numerator MINUS I. Analytic quadratic uniqueness proves WHOLE complex chart-overlap equality, including multiple endpoints, cuts and complex collapse.",
+    "ONE intrinsic diagonal remainder quotient per original patch is jointly analytic across the ENTIRE assigned frequency disc times the UNCHANGED native complex source patch, chosen BEFORE ALL n. Its exact quadratic equation holds at EVERY point, including ON the cut and all complex collapsed gaps.",
+    "The cosine-cover phase is theta-pi plus (-i*delta*sin(theta)) times the ACTUAL filled remainder at tau+delta*cos(theta). Its exact derivative is -i times the ACTUAL diagonal gap numerator, INCLUDING both branch points. It is zero at theta=pi and -pi at theta=0. These are tau-delta and tau+delta; choosing the ACTUAL half-gap identifies them with the ORIGINAL left and right periodic endpoints, respectively.",
+    "Every smooth angle-cover path whose spectral image stays in the original assigned disc has literal curve integral equal to the phase difference. At regular points the derivative is the EXACT pullback of 2z*canonical Hill Psi divided by the full spectral root K*(-i*delta*sin(theta)). That root squares to the ORIGINAL native Hill radicand at z squared minus shift, without an unspecified sign or normalization.",
+    "At EVERY complex physical auxiliary Dirichlet divisor with an OPEN original energy gap, a proved local analytic half-gap and moving cosine angle fix BOTH the ACTUAL auxiliary frequency and ACTUAL physical root coefficient. Zero-sheet Dirichlet endpoints are included. The analytic phase equals the normalized cosine phase and the moving angle minus pi plus the ACTUAL physical remainder correction.",
+    "The physical correction is the ACTUAL root coefficient times the filled diagonal remainder at the ACTUAL auxiliary frequency. It is analytic on the SAME common physical source domain BEFORE ALL n, including zero-sheet points, and is zero whenever the ACTUAL Hill norming sheet is zero.",
+    "The two local diagonal Cartesian factors are explicit functions of the ACTUAL frequency, symmetric midpoint, physical root coefficient and exponential of the correction. They use NO division by a gap or physical sheet. Both are analytic on the ENTIRE common physical source domain BEFORE ALL n, including arbitrary COMPLEX collapsed gaps. No complex collapsed Dirichlet endpoint identity is inferred.",
+    "On EVERY physical cosine chart these factors equal (4*tau*delta) times exp(plus or minus i*ACTUAL cosine phase). For the ACTUAL half-gap at real sources, 4*tau*delta is EXACTLY the ORIGINAL Hill energy gap. Their product is the ACTUAL canonical Hill gap square at EVERY complex source in the common domain, including closed gaps.",
+    "The quotient of these two factors is analytic and nonzero on the OPEN actual original-gap domain and equals exp(2*i*physical phase) on EVERY matching cosine chart. Different half-gap and angle choices fixing the SAME physical divisor/sheet give phases differing by an INTEGER multiple of pi. This proves a LOCAL complex on-index phase modulo pi; cross-Miura-patch equality/gluing of these new on-index quantities is NOT claimed.",
+    "Ten new modules (39 theorems and 8 definitions), three byte-identical canonical circle-terminal/root-period/quadratic-uniqueness dependencies, one privately lint-fixed shared cosine-primitive dependency and the exact 6216-declaration transitive axiom audit compiled without warnings, tactic suggestions or added axioms. All 1123 baseline non-audit REGISTERED sources remain unchanged. The unregistered shared fix changes only tactic sequencing from convert! hd using 1 <;> try rfl to convert! hd using 1; try rfl, with no statement or proof-step change. No heartbeat increase. Canonical checkout/shared metadata read-only.",
+    "Local ACTUAL diagonal angle cover, physical analytic phase charts modulo pi, exact spectral derivative/path integral and local gap-times-phase Cartesian extension through complex collapse are NOW PROVED. Global cross-patch on-index phase/Cartesian gluing, real modulo2pi normalization/reality, infinite off-index sums, locally uniform source3.2 bounds, completed Birkhoff coordinates, universal ACTUAL product scalar, Gardner/flow and ALL FIVE MAIN remain OPEN; goal ACTIVE."
   ],
-  "source_correspondence": "Glue intrinsic physical off-index Hill Abelian divisor values across different Miura patches and shifts on one open connected complex native source domain containing the entire real form. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete physical Abelian phases and Cartesian coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. Construct the ON-INDEX Hill angle with its NONZERO period and physical norming/log gauge, sum the infinitely many ACTUAL off-index Abelian divisor contributions, and prove collapsed-gap Cartesian extension for source3.2(ii), retaining the locally uniform before ALL n bound (abs(original gamma_n)+abs(original mu_n-original tau_n))/sqrt(n). INTRINSIC PHYSICAL OFF-INDEX DIVISOR FAMILY IS NOW PROVED on ONE OPEN CONNECTED native complex source domain containing the ENTIRE real form, chosen BEFORE ALL n,m. The actual filled frequency quotient divided by its nonzero omitted-root multiplier descends to a JOINT analytic filled ORIGINAL-energy quotient satisfying the EXACT equation D_q*Gprime+(D_qprime/2)*G=canonical Hill Psi_n for EVERY complex source/energy in its domain. At ALL real sources the ENTIRE original gap lies in EVERY patch energy domain; two patches have a common convex energy tube containing the ORIGINAL left endpoint. General analytic-radicand uniqueness with finite orders proves WHOLE tube equality, including cut/multiple/collapsed zeros. Physical value equals ACTUAL norming sheet times filled energy quotient at ACTUAL canonical Dirichlet energy. Thus ANY Miura patches/lifts/shifts agree at ALL real overlaps, and native real-form identity proves WHOLE complex overlaps of real-centered source balls. Gluing gives the intrinsic analytic off-index family; it equals EVERY patch at its real points and on ONE complex ball about each such point BEFORE ALL indices, including zero-sheet values. Do NOT redo cross-patch physical gluing, terminal sheet/phase identification, common source placement, endpoint family normalization/analyticity or collapse removal. This does NOT yet sum off-index terms or construct the on-index phase. Current qualitative frequency-gap/displacement times quotient bounds are NOT the uniform source3.2 estimate. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint. Do not substitute ordinary NLS angles or coordinates. Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. All 1115 baseline non-audit registered sources byte-identical to 3d1e28d. Eight new modules, three byte-identical canonical analytic-order/quadratic-uniqueness/ALL-index-placement dependencies and exact 6169-declaration audit freshly compiled privately. Prior unregistered CompactInverseBound one-line lint fix unchanged. No heartbeat increase.",
+  "source_correspondence": "Construct actual local on-index Hill Abelian cosine phase charts, phase modulo pi, and gap-times-phase Cartesian factors analytic through complex gap collapse, retaining physical auxiliary terminals and sheet sign. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete physical Abelian phases and Cartesian coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. Glue the newly proved LOCAL on-index Hill phase modulo pi and its diagonal gap-times-phase Cartesian factors across DIFFERENT original Miura patches/lifts/shifts; prove real-source phase reality/modulo2pi normalization; sum the infinitely many intrinsic ACTUAL off-index Abelian divisor values; then construct FULL Birkhoff coordinates with the action-ratio factor and locally uniform before ALL n source3.2 bound (abs(original gamma_n)+abs(original mu_n-original tau_n))/sqrt(n). LOCAL ON-INDEX CONSTRUCTION IS NOW PROVED: exact diagonal period2pi is canceled by subtracting I/selectedRoot, only for the REMAINDER. A unique JOINT analytic filled diagonal remainder quotient exists on ENTIRE original assigned discs times UNCHANGED complex patch BEFORE ALL n, including cut and complex collapse, with right side ACTUAL diagonal gap numerator MINUS I. The cosine-cover phase theta-pi+(-I*delta*sin theta)*H has EXACT regularized Hill derivative at branch points and literal path-integral identity; ACTUAL half-gap gives ORIGINAL endpoint frequencies. Analytic terminal charts on the ACTUAL original open-gap domain fix BOTH actual AUXILIARY frequency and physical root coefficient/sign, including zero-sheet Dirichlet endpoints. Physical correction r*H(mu,q) is analytic on common physical source through sheet zero. Explicit local diagonal Cartesian factors WITHOUT gap/sheet division are analytic through ALL complex collapses, equal (4*tau*delta)*exp(plus or minus I*physical phase) on EVERY matching chart and multiply to ACTUAL canonical Hill gap square. With ACTUAL half-gap at real source, 4*tau*delta is the ORIGINAL ENERGY gap. Their quotient is analytic NONZERO doubled phase exponential on OPEN original-gap domain; half-gap/terminal choices change phase by INTEGER pi. These LOCAL quantities have NOT yet been glued across different Miura patches; they are NOT full Birkhoff coordinates and the uniform source3.2 bound is NOT inferred. Prior intrinsic OFF-INDEX family gluing on ONE OPEN CONNECTED native source neighborhood of ENTIRE real form is already complete. Do NOT redo local on-index remainder/cosine/physical terminal construction, off-index gluing, endpoint-family normalization/analyticity, actual divisor sign or collapse removal. Never infer a COMPLEX collapsed Dirichlet point equals an endpoint. Do not substitute ordinary NLS angles/coordinates. Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. All 1123 baseline non-audit REGISTERED sources byte-identical to 8df39c7. Ten new modules, three byte-identical canonical circle-terminal/root-period/quadratic-uniqueness dependencies, one privately lint-fixed unregistered cosine-primitive shared dependency and exact 6216-declaration audit freshly compiled privately. Prior unregistered CompactInverseBound one-line lint fix unchanged. No heartbeat increase.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -2692,7 +2714,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "fad8201326a4797543836c6c3e9140a371d8109ce2103241594b41f087fc8a88",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "2d828e97b4920a111d9f716ce1d07e14327edc0f918c34a7bf2719fb7dac04b5",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -3420,7 +3442,18 @@
     "NLS/KdV/HillAbelianRealPatchCompatibility.lean": "d94e4c5e4f60b665b55cecb3243de45a2c0c5dde1ac543d60f5d4cc1db1d2885",
     "NLS/KdV/HillPhysicalAbelianSourceBalls.lean": "9eed9b92e64d5ab535d258f7d34f85ede8f5a134d2f6c1939e18f14e7227e6df",
     "NLS/KdV/HillCanonicalPhysicalAbelianValue.lean": "bdf71d73025cc2c306d7462f1a5c5ca4cfaa0e7f32b2d8e391afcc1b4cf698d4",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillIntrinsicAbelianDivisor.lean": "e74c61075a5cb122178874a9c365b4428138021547474a518850c292e38bc9ce"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillIntrinsicAbelianDivisor.lean": "e74c61075a5cb122178874a9c365b4428138021547474a518850c292e38bc9ce",
+    "NLS/KdV/HillOnIndexAbelianRemainder.lean": "ab2838dbcbd11910ec16ef23784fbbdd82e4595e5d415074aa99971f5d6478ac",
+    "NLS/KdV/HillOnIndexAbelianCauchyCharts.lean": "64e3eeb8e1eb5714866b857888c036541485f8eab673a9bdccb74cd4a38941f3",
+    "NLS/KdV/HillOnIndexAbelianCauchyCompatibility.lean": "17eb7371ba7899a28032ab261f842f5fb56a9f07882e93108527508ab8e5e200",
+    "NLS/KdV/HillOnIndexAbelianFilledRemainder.lean": "f06e126c46196a98c5f744c38635429f9a91e9dfa1540322d20de1f963cdb1e6",
+    "NLS/KdV/HillOnIndexAbelianCosinePhase.lean": "a1d04ec1941a959904d4d2ce6b22e099cd622e6e464dd746f23818292daec6e3",
+    "NLS/KdV/HillOnIndexPhysicalCorrection.lean": "0fd4fe6cd1fa50e1c2728cd1cad1181529446146c0cc736e7bc1b988996eee9b",
+    "NLS/KdV/HillOnIndexPhysicalPhaseCharts.lean": "b640bbd6a08300bec62f6c4bfe4fe6b44b242897a284a0c05f508c813ab764a1",
+    "NLS/KdV/HillOnIndexPhysicalPhaseExponential.lean": "3d49c1022c231ca5d0f93bb7b0705ac89b094e4422a3be8b86299f7fa09e8a51",
+    "NLS/KdV/HillOnIndexPhysicalPhaseSquare.lean": "b671b287a9308a16a934484ff6121d804f93a93381ac13f25bd414d8d434409d",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillOnIndexAbelianPhase.lean": "b5ac0fb98c66951439d87a59b35eba18114c7eba6a38904750397bf8cf9905f5",
+    "NLS/ComplexAnalysis/QuadraticCosinePrimitive.lean": "98f2c1e4dfef7d71b8a417ef33cf6186702fc3f9608813562566e1844361be33"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -3428,11 +3461,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 6126,
-    "newly_checked_declarations_this_continuation": 43,
-    "new_theorems": 36,
-    "new_definitions": 7,
-    "total_checked_declarations": 6169
+    "previous_checked_declarations": 6169,
+    "newly_checked_declarations_this_continuation": 47,
+    "new_theorems": 39,
+    "new_definitions": 8,
+    "total_checked_declarations": 6216
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -3461,7 +3494,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-intrinsic-abelian-divisor.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-onindex-physical-phase.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -3745,15 +3778,16 @@
     "Prove actual off-index Hill Abelian normalization at both complex gap endpoints, including collapsed cuts, with literal improper integrals and exact physical energy pullback.",
     "Prove joint native-source analyticity of the actual normalized off-index Abelian endpoint integrals via filled quadratic Cauchy solutions on the unchanged original patches.",
     "Evaluate the actual Hill off-index Abelian family at the physical auxiliary Dirichlet divisor with the exact native energy and norming-sheet sign on one common complex source domain.",
-    "Glue intrinsic physical off-index Hill Abelian divisor values across different Miura patches and shifts on one open connected complex native source domain containing the entire real form."
+    "Glue intrinsic physical off-index Hill Abelian divisor values across different Miura patches and shifts on one open connected complex native source domain containing the entire real form.",
+    "Construct actual local on-index Hill Abelian cosine phase charts, phase modulo pi, and gap-times-phase Cartesian factors analytic through complex gap collapse, retaining physical auxiliary terminals and sheet sign."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-intrinsic-abelian-divisor-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-onindex-physical-phase-map.json",
   "baseline_validated_snapshot": {
-    "commit": "3d1e28d634b52d968da948bc13194b7b9f6b8ef7",
-    "modules": 1116,
-    "audited_declarations": 6126,
+    "commit": "8df39c71f0381ce4d95054e3c9caa5c90434cb34",
+    "modules": 1124,
+    "audited_declarations": 6169,
     "directory": ".lake/full-original-label-check-20261103",
-    "source_hashes_verified_unchanged": true
+    "registered_source_hashes_verified_unchanged": true
   },
   "appendix_b_current_private_recheck": {
     "report": "coverage/articles/kdv-pseudomeasures/appendix-b-current-recheck.json",
@@ -5062,5 +5096,47 @@
     "universal_2_over_pi_n_ACTUAL_product_prefactor_proved": false,
     "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
     "all_five_main_theorems_proved": false
-  }
+  },
+  "actual_Hill_LOCAL_onIndex_physical_phase": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-onindex-physical-phase-map.json",
+    "EXACT_diagonal_2pi_period_and_I_over_selected_root_subtraction_PROVED": true,
+    "diagonal_REM_ainder_only_zero_period_not_full_diagonal": true,
+    "filled_diagonal_remainder_JOINT_analytic_ENTIRE_original_discs_times_UNCHANGED_patch_PROVED": true,
+    "WHOLE_complex_Cauchy_chart_compatibility_including_COLLAPSE_PROVED": true,
+    "EXACT_remainder_quadratic_equation_ACTUAL_gap_numerator_MINUS_I_PROVED": true,
+    "cosine_cover_phase_EXACT_derivative_including_BOTH_branch_points_PROVED": true,
+    "literal_cosine_cover_path_integral_equals_normalized_phase_difference_PROVED": true,
+    "ACTUAL_full_root_Hill_radicand_and_regular_differential_pullback_PROVED": true,
+    "ACTUAL_half_gap_matches_ORIGINAL_left_and_right_frequency_endpoints_PROVED": true,
+    "analytic_local_physical_terminal_fixes_BOTH_auxiliary_frequency_and_norming_root_SIGN_PROVED": true,
+    "open_gap_phase_charts_include_ZERO_sheet_Dirichlet_endpoints_PROVED": true,
+    "physical_diagonal_remainder_correction_analytic_on_common_source_through_ZERO_sheet_PROVED": true,
+    "local_diagonal_gap_times_phase_Cartesian_factors_analytic_through_COMPLEX_collapses_PROVED": true,
+    "EXACT_phase_exponential_identity_and_ORIGINAL_energy_gap_normalization_PROVED": true,
+    "local_Cartesian_factor_product_equals_ACTUAL_original_gap_square_PROVED": true,
+    "LOCAL_complex_phase_mod_pi_via_analytic_NONZERO_doubled_exponential_PROVED": true,
+    "half_gap_and_terminal_angle_choice_changes_phase_by_INTEGER_pi_PROVED": true,
+    "complex_collapsed_Dirichlet_endpoint_identity_assumed": false,
+    "on_index_phase_glued_across_DIFFERENT_Miura_patches": false,
+    "on_index_Cartesian_factors_glued_across_DIFFERENT_Miura_patches": false,
+    "real_phase_reality_and_mod_2pi_normalization_proved": false,
+    "off_index_infinite_Abelian_sums_constructed": false,
+    "uniform_source3_2_Cartesian_bound_proved": false,
+    "full_Birkhoff_Cartesian_coordinates_constructed": false,
+    "universal_2_over_pi_n_ACTUAL_product_prefactor_proved": false,
+    "all_five_main_theorems_proved": false
+  },
+  "private_shared_lint_only_fixes_this_increment": [
+    {
+      "module": "NLS.ComplexAnalysis.QuadraticCosinePrimitive",
+      "source": "NLS/ComplexAnalysis/QuadraticCosinePrimitive.lean",
+      "baseline_sha256": "7e82ec5022f767962b77f0a0a0d355dd4cb54db34339759a10bf36aaaa1f4742",
+      "canonical_source_sha256": "7e82ec5022f767962b77f0a0a0d355dd4cb54db34339759a10bf36aaaa1f4742",
+      "edit_from": "  convert! hd using 1 <;> try rfl",
+      "edit_to": "  convert! hd using 1; try rfl",
+      "edit_kind": "private one-line tactic sequencing lint fix; statements and proof steps unchanged",
+      "registered": false,
+      "source_sha256": "98f2c1e4dfef7d71b8a417ef33cf6186702fc3f9608813562566e1844361be33"
+    }
+  ]
 }
