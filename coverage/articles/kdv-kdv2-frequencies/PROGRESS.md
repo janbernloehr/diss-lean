@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest physical KdV and KdV2 spectral/action stationarity
+## Latest actual Dirichlet and moving-sheet PDE velocities
+
+The actual KdV and KdV2 Fourier fields now have their exact Dirichlet velocities `D mu=r_D*K` and moving signed-sheet velocities `D r_D=Delta*Delta_E*K`. The coefficients are computed from the literal PDE fields and actual characteristic derivative, with the physical mass normalization proved. Every analytic actual Dirichlet branch is covered, including terminal band edges and closed selected gaps. Source mean zero is not required.
+
+The mixed-state boundary pairing gives the actual slope derivative directly; the moving-sheet proof uses the actual Wronskian energy identity and never divides by the sheet value. These are the two endpoint velocities needed by the actual Abelian angle calculation. Full coordinate phase/frequency identification and solution-flow existence remain open. See `PHYSICAL_DIRICHLET_MOTION.md`.
+
+Prior strict evidence for all 1030 unchanged selected baseline sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 1034 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1061 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1034-module rebuild is claimed.
+
+Fresh audit: 9483 selected and 31928 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier physical KdV and KdV2 spectral/action stationarity
 
 Both actual smooth PDE fields now have explicit Fourier velocities that reconstruct their literal physical right sides, are real on real sources and have zero mean. A reusable actual trace-kernel concomitant proves each actual L2 Hill discriminant has zero source differential along these fields, at every complex energy and smooth complex period-one source. For real sources, every differentiable matching actual action extension has zero derivative along either PDE field, at open or closed selected gaps. Source mean zero is not required.
 

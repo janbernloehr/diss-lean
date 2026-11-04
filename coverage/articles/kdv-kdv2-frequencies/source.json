@@ -14867,9 +14867,74 @@
       "scope": "For both actual printed KdV and KdV2 PDE right sides, computes exact spectral-parameter-dependent Lenard seeds and proves the resulting polynomial field is independent of that parameter. Constructs actual Fourier velocities, proves they reconstruct the literal physical PDE fields, have zero mean and are real at every real smooth source. Proves the actual L2 Hill discriminant has zero full source derivative along either PDE field at every complex energy, for every smooth complex period-one source. For real sources, proves every differentiable nearby-real physical matching action extension has zero derivative along either actual PDE direction, including all closed selected gaps. No mean-zero assumption on the source, gap-opening assumption, flow existence, coordinate phase frequency or Hamiltonian-frequency formula is supplied or inferred.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "534442182b431605ac7bf349538e925980d4c6a21487d810f31345741d0db7e9"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillDirichletLenard.lean",
+      "source_labels": [
+        "Physical equations (1)-(3); actual Dirichlet/action-angle input (19); necessary physical frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Actual scalar Dirichlet square-state and mixed-state Lenard pairings for every smooth complex period-one source, every complex energy and every differential polynomial at an actual Dirichlet zero. The same genuine concomitant retains exact nonzero boundary terms: integral(s^2 L_E(P))=-2 P(0)(beta^2-1) and integral(c s L_E(P))=-2 P(0)chi beta. Includes band edges and closed gaps; no division by the sheet value or isospectral assumption.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1375053ac5c4abbc0c0726ac865060e038f51e3a08f97f6b384559f8d3201537"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletLenardVariation.lean",
+      "source_labels": [
+        "Physical equations (1)-(3); actual Dirichlet/action-angle input (19); necessary physical frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Promotes the actual rough physical Fourier branch derivative and mass formula, using the constructed scalar state boundary pairing. Proves beta*r_D=beta^2-1 directly from actual Wronskian and trace, then actual M=D_char_prime*beta and nonzero slope/characteristic derivative give Dmu=r_D*(-2 P(0)/D_char_prime) for every analytic actual Dirichlet branch at every real smooth period-one source, including closed gaps. No velocity is supplied as a hypothesis.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e5e52126fac944051146ba3922f7ce85197b28a507f8b80b62c04b836337d234"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletLenardSheetVariation.lean",
+      "source_labels": [
+        "Physical equations (1)-(3); actual Dirichlet/action-angle input (19); necessary physical frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Actual scalar forcing pairings along physical polynomial Fourier fields identify the exact fixed-energy Dirichlet slope derivative D beta=-2 P(0)chi. A generic actual trace-stationary tangent gives fixed sheet derivative twice that slope derivative. The genuine moving-parameter chain rule and proved actual Wronskian energy factor yield moving D r_D=(Delta*Delta_E)*(-2 P(0)/D_char_prime). This includes terminal band edges where r_D=0; the proof never divides by r_D or differentiates its square to infer its derivative there.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "28200a667709157568897f617f2cb95083b84bb43ca0cb9b2ad656b16dfa44f4"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/SmoothDirichletMotion.lean",
+      "source_labels": [
+        "Physical equations (1)-(3); actual Dirichlet/action-angle input (19); necessary physical frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "The actual printed KdV and KdV2 Fourier fields have explicit Dirichlet branch and moving signed-sheet velocities. Uses the proved seeds P1=q+2E and P2=-q_xx+3q^2+4Eq+8E^2 to compute actual coefficients K1=-2(q(0)+2mu)/D_char_prime(mu) and K2=-2(-q_xx(0)+3q(0)^2+4mu q(0)+8mu^2)/D_char_prime(mu). Proves Dmu=r_D*K and moving D r_D=Delta*Delta_E*K for every analytic physical Dirichlet branch at every smooth real period-one source, including band edges and closed gaps. No source mean-zero condition, coordinate frequency, solution flow or canonicality is assumed or claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "54fab7f58ff16f6355dc993cbe23519b33e49220fa7beb3a26273f5b857b82cf"
     }
   ],
   "dependencies_needed": [
+    "Actual Dirichlet branch and moving signed-sheet velocities of BOTH printed PDE fields are NOW proved, with exact physical normalization and terminal band edges/closed gaps included. All five former private DirichletLenardTest results are promoted or subsumed. Remaining: generalize trace-stationary local/root/normalized/angle derivatives to actual PDE directions, sum actual Abelian phase velocities and identify actual frequencies69/84; full canonicality/Fourier zero jet/Banach coordinate analyticity/inverse/rough W compatibility and PDE flow existence remain open. All eleven main theorem rows remain OPEN.",
     "The literal smooth KdV and KdV2 Fourier vector fields are NOW proved real, mean-zero, physically reconstructed and stationary for every actual Hill discriminant and actual action, including arbitrary closed selected gaps. The source need not have zero mean. Remaining: actual coordinate phase velocities/frequency69/84 and Hamiltonian identification, full canonicality, Fourier differential at zero, full Banach coordinate analyticity/inverse and rough W/PDE flow realization. All eleven main theorem rows remain OPEN.",
     "Negative scalar coordinate power-series analyticity is NOW proved through every closed selected gap. Actual action product differentials are proved on the entire physical complexified tangent. The actual action critical locus and actual action Hamiltonian-vector zero locus are exactly the closed-gap locus. Remaining: full Banach-valued coordinate analyticity, canonical coordinate/angle brackets, Fourier differential at zero, global inverse/rough W compatibility and actual Hamiltonian frequencies69/84/PDE identification. All eleven main theorem rows remain OPEN.",
     "Actual action Hamiltonian vectors are NOW proved real in the physical conjugate-Fourier sense at every real source, including closed gaps. Actual real action differentials commute with conjugate reflection. Genuine complex differentiable negative-coordinate physical matching germs and universal opposite signed infinitesimal action laws are proved. Remaining: full negative-germ power-series analyticity, canonical coordinate/angle brackets, Fourier differential at zero, full Banach analytic map/inverse/rough W compatibility and actual Hamiltonian frequency69/84/PDE identities. All main theorem conclusions remain open.",
@@ -14905,15 +14970,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 9454,
-    "total_declarations_audited": 31899,
+    "candidate_declarations_audited": 9483,
+    "total_declarations_audited": 31928,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1030,
+    "selected_modules": 1034,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -14946,7 +15011,8 @@
     "hamiltonian_identification_validation_sequence": "Prior strict evidence for all 996 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical wave calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1002 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1027 frozen source/checker/provenance hashes, 23 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1002-module rebuild is claimed.",
     "real_signed_hamiltonian_validation_sequence": "Prior strict evidence for all 1002 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical real-axis calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1008 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1034 frozen source/checker/provenance hashes, 24 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1008-module rebuild is claimed.",
     "conjugate_analytic_validation_sequence": "Prior strict evidence for all 1008 unchanged selected baseline sources; strict dependency-order compilation of sixteen byte-identical canonical holomorphic calculus dependencies and three new proof modules; then a fresh combined transitive axiom audit of all 1027 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1054 frozen source/checker/provenance hashes, 25 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1027-module rebuild is claimed.",
-    "physical_pde_stationarity_validation_sequence": "Prior strict evidence for all 1027 unchanged selected baseline sources; strict dependency-order compilation of three new proof modules; then a fresh combined transitive axiom audit of all 1030 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1057 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1030-module rebuild is claimed."
+    "physical_pde_stationarity_validation_sequence": "Prior strict evidence for all 1027 unchanged selected baseline sources; strict dependency-order compilation of three new proof modules; then a fresh combined transitive axiom audit of all 1030 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1057 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1030-module rebuild is claimed.",
+    "dirichlet_motion_validation_sequence": "Prior strict evidence for all 1030 unchanged selected baseline sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 1034 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1061 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1034-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -15191,5 +15257,6 @@
   "hamiltonian_identification_record": "PHYSICAL_ACTION_HAMILTONIANS.md",
   "real_signed_hamiltonian_record": "REAL_SIGNED_ACTION_FIELDS.md",
   "conjugate_analytic_record": "SIGNED_ANALYTIC_ACTION_CRITICAL_LOCUS.md",
-  "physical_pde_stationarity_record": "PHYSICAL_PDE_STATIONARITY.md"
+  "physical_pde_stationarity_record": "PHYSICAL_PDE_STATIONARITY.md",
+  "dirichlet_motion_record": "PHYSICAL_DIRICHLET_MOTION.md"
 }

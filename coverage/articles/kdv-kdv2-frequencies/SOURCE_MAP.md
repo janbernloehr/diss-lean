@@ -850,3 +850,14 @@ The proof computes the two exact Lenard seeds and uses actual scalar fundamental
 Prior strict evidence for all 1027 unchanged selected baseline sources; strict dependency-order compilation of three new proof modules; then a fresh combined transitive axiom audit of all 1030 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1057 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1030-module rebuild is claimed.
 
 Fresh audit: 9454 selected and 31899 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+
+## Latest actual Dirichlet and moving-sheet PDE velocities
+
+The actual KdV and KdV2 Fourier fields now have their exact Dirichlet velocities `D mu=r_D*K` and moving signed-sheet velocities `D r_D=Delta*Delta_E*K`. The coefficients are computed from the literal PDE fields and actual characteristic derivative, with the physical mass normalization proved. Every analytic actual Dirichlet branch is covered, including terminal band edges and closed selected gaps. Source mean zero is not required.
+
+The mixed-state boundary pairing gives the actual slope derivative directly; the moving-sheet proof uses the actual Wronskian energy identity and never divides by the sheet value. These are the two endpoint velocities needed by the actual Abelian angle calculation. Full coordinate phase/frequency identification and solution-flow existence remain open. See `PHYSICAL_DIRICHLET_MOTION.md`.
+
+Prior strict evidence for all 1030 unchanged selected baseline sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 1034 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1061 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1034-module rebuild is claimed.
+
+Fresh audit: 9483 selected and 31928 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.

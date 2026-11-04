@@ -177,6 +177,8 @@ import NLS.SequenceSpaces.HilbertEnergyDivergence
 import NLS.KdV.HillActionCoordinateDifferential
 import NLS.KdV.HillPolynomialDirections
 import NLS.Articles.KdVKdV2Frequencies.SmoothSpectralStationarity
+import NLS.Articles.KdVKdV2Frequencies.SmoothDirichletMotion
+import NLS.KdV.HillDirichletLenardSheetVariation
 import Lean.Util.CollectAxioms
 
 /-! Transitive axiom audit of the candidate and its imported NLS dependencies.
@@ -1216,7 +1218,11 @@ run_cmd do
     `NLS.KdV.HillActionCoordinateDifferential,
     `NLS.KdV.ClassicalHillLenardIdentity,
     `NLS.KdV.HillPolynomialDirections,
-    `NLS.Articles.KdVKdV2Frequencies.SmoothSpectralStationarity
+    `NLS.Articles.KdVKdV2Frequencies.SmoothSpectralStationarity,
+    `NLS.KdV.ClassicalHillDirichletLenard,
+    `NLS.KdV.HillDirichletLenardVariation,
+    `NLS.KdV.HillDirichletLenardSheetVariation,
+    `NLS.Articles.KdVKdV2Frequencies.SmoothDirichletMotion
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

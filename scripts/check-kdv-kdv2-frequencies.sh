@@ -1039,6 +1039,10 @@ modules=(
   NLS/KdV/ClassicalHillLenardIdentity
   NLS/KdV/HillPolynomialDirections
   NLS/Articles/KdVKdV2Frequencies/SmoothSpectralStationarity
+  NLS/KdV/ClassicalHillDirichletLenard
+  NLS/KdV/HillDirichletLenardVariation
+  NLS/KdV/HillDirichletLenardSheetVariation
+  NLS/Articles/KdVKdV2Frequencies/SmoothDirichletMotion
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
