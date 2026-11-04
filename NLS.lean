@@ -5840,3 +5840,10 @@ import NLS.ComplexAnalysis.QuadraticHillSystemBoundaryPairing
 import NLS.KdV.HillDirichletQuadraticSystem
 import NLS.KdV.HillDiscriminantDirichletBrackets
 import NLS.KdV.HillActionDirichletBrackets
+import NLS.ComplexAnalysis.WeightedDuhamelIntegralBounds
+import NLS.KdV.ClassicalHillWeightedDirichletError
+import NLS.KdV.HillL2WeightedDirichletError
+import NLS.KdV.HillDirichletCharacteristicExterior
+import NLS.KdV.HillDirichletNumeratorExteriorDecay
+import NLS.ComplexAnalysis.SimplePoleInterpolationLimit
+import NLS.KdV.HillDirichletAbelianInterpolation

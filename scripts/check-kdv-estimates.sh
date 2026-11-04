@@ -175,6 +175,7 @@ modules+=(NLS/KdV/HillDiscriminantGradient NLS/KdV/HillDiscriminantGradientRegul
 modules+=(NLS/ComplexAnalysis/ContinuousEvenSquareDescent NLS/KdV/HillL2EnergyStateCurves NLS/KdV/HillEnergyDiscriminantGradients NLS/FunctionalAnalysis/UnitComplexCurvePairing NLS/FunctionalAnalysis/UnitComplexCurvePrimitive NLS/FunctionalAnalysis/CurveSpatialContour NLS/ComplexAnalysis/TracePrimitiveMomentDifferential NLS/KdV/HillEnergyGradientContours NLS/KdV/HillContinuedMomentGradients)
 modules+=(NLS/ComplexAnalysis/ContinuousTracePrimitiveUniqueness NLS/KdV/HillRealPeriodOneAffinePath NLS/KdV/HillRecenteredTracePrimitives NLS/ComplexAnalysis/NonrealCircleIntegralComparison NLS/KdV/HillRecenteredPhysicalMatching NLS/KdV/HillFixedPhysicalMoments NLS/KdV/HillRealSourceMomentGerms NLS/KdV/HillPhysicalActionGradients)
 modules+=(NLS/ComplexAnalysis/QuadraticHillSystemBoundaryPairing NLS/KdV/HillDirichletQuadraticSystem NLS/KdV/HillDiscriminantDirichletBrackets NLS/KdV/HillActionDirichletBrackets)
+modules+=(NLS/ComplexAnalysis/WeightedDuhamelIntegralBounds NLS/KdV/ClassicalHillWeightedDirichletError NLS/KdV/HillL2WeightedDirichletError NLS/KdV/HillDirichletCharacteristicExterior NLS/KdV/HillDirichletNumeratorExteriorDecay NLS/ComplexAnalysis/SimplePoleInterpolationLimit NLS/KdV/HillDirichletAbelianInterpolation)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

@@ -917,6 +917,13 @@ import NLS.ComplexAnalysis.QuadraticHillSystemBoundaryPairing
 import NLS.KdV.HillDirichletQuadraticSystem
 import NLS.KdV.HillDiscriminantDirichletBrackets
 import NLS.KdV.HillActionDirichletBrackets
+import NLS.ComplexAnalysis.WeightedDuhamelIntegralBounds
+import NLS.KdV.ClassicalHillWeightedDirichletError
+import NLS.KdV.HillL2WeightedDirichletError
+import NLS.KdV.HillDirichletCharacteristicExterior
+import NLS.KdV.HillDirichletNumeratorExteriorDecay
+import NLS.ComplexAnalysis.SimplePoleInterpolationLimit
+import NLS.KdV.HillDirichletAbelianInterpolation
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1453,7 +1460,14 @@ run_cmd do
     ``NLS.ComplexAnalysis.continuousCoshPrimitives_eqOn,
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_eq_on_nonreal,
     ``NLS.ComplexAnalysis.quadraticHillSystem_pairing_boundary_identity,
-    ``NLS.ComplexAnalysis.quadraticHillSystem_pairing_dirichlet_boundary]
+    ``NLS.ComplexAnalysis.quadraticHillSystem_pairing_dirichlet_boundary,
+    ``NLS.ComplexAnalysis.norm_trig_mul_real_le_exp,
+    ``NLS.ComplexAnalysis.exp_mul_cancel_weight,
+    ``NLS.ComplexAnalysis.le_exp_mul_of_weight_le,
+    ``NLS.ComplexAnalysis.norm_sine_duhamel_integral_le_weighted,
+    ``NLS.ComplexAnalysis.exists_finite_zero_circle_sets,
+    ``NLS.ComplexAnalysis.tendsto_simpleQuotientPrincipalParts_of_circle_decay,
+    ``NLS.ComplexAnalysis.eventually_simpleQuotientPrincipalParts_error_on_ball]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
