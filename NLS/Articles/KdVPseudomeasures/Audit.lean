@@ -942,6 +942,12 @@ import NLS.KdV.HillRetainedPeriodSequences
 import NLS.KdV.HillProductPlacementDomain
 import NLS.Articles.KdVPseudomeasures.OriginalHillFrequencyCoordinates
 import NLS.KdV.HillPeriodSequenceMidpointFill
+import NLS.KdV.HillProductEquationPatches
+import NLS.KdV.HillProductEquationSequence
+import NLS.KdV.HillProductEquationLocalBounds
+import NLS.KdV.HillProductEquationAnalytic
+import NLS.KdV.HillProductEquationDerivative
+import NLS.Articles.KdVPseudomeasures.OriginalBanachHillPeriodMap
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6452,3 +6458,27 @@ import NLS.KdV.HillPeriodSequenceMidpointFill
 #print axioms NLS.KdV.hillProductPeriodEquationRow_eq_native
 #print axioms NLS.KdV.exists_hillProductPeriodEquationSequence
 #print axioms NLS.KdV.HillHminusPsiBall.exists_productEquationSequence
+#print axioms NLS.KdV.exists_hillProductEquationPatch
+#print axioms NLS.KdV.HillProductEquationPatch.sourcePsi
+#print axioms NLS.KdV.HillProductEquationPatch.inputDomain
+#print axioms NLS.KdV.HillProductEquationPatch.inputDomain_open
+#print axioms NLS.KdV.HillProductEquationPatch.actual_real_graph_mem
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_sourcePsi
+#print axioms NLS.KdV.HillProductEquationPatch.row
+#print axioms NLS.KdV.HillProductEquationPatch.row_eq_native
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_row
+#print axioms NLS.KdV.HillProductEquationPatch.equation
+#print axioms NLS.KdV.HillProductEquationPatch.equation_exists
+#print axioms NLS.KdV.HillProductEquationPatch.equation_apply
+#print axioms NLS.KdV.HillProductEquationPatch.equation_eq_retained_add_single
+#print axioms NLS.KdV.HillProductEquationPatch.norm_equation_le_of_quotient_bound
+#print axioms NLS.KdV.HillProductEquationPatch.frequencySource
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_frequencySource
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_uniform_equation_bound
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_equation
+#print axioms NLS.KdV.HillProductEquationPatch.equation_actual_real_zeros
+#print axioms NLS.KdV.HillProductEquationPatch.fderiv_equation_apply
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_sequenceJacobian
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_coordinate
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_common_Banach_Hill_period_map

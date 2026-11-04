@@ -976,6 +976,12 @@ modules = [
     'NLS.KdV.HillProductPlacementDomain',
     'NLS.Articles.KdVPseudomeasures.OriginalHillFrequencyCoordinates',
     'NLS.KdV.HillPeriodSequenceMidpointFill',
+    'NLS.KdV.HillProductEquationPatches',
+    'NLS.KdV.HillProductEquationSequence',
+    'NLS.KdV.HillProductEquationLocalBounds',
+    'NLS.KdV.HillProductEquationAnalytic',
+    'NLS.KdV.HillProductEquationDerivative',
+    'NLS.Articles.KdVPseudomeasures.OriginalBanachHillPeriodMap',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
