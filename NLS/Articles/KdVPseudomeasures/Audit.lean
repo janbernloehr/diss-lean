@@ -1030,6 +1030,19 @@ import NLS.FunctionalAnalysis.EscapingClosureProperty
 import NLS.KdV.HillPeriodJacobianClosureInverse
 import NLS.KdV.HillPeriodJacobianUniformInverse
 import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodUniformFullInverse
+import NLS.ComplexAnalysis.CompactFamilyNeighborhoodBounds
+import NLS.KdV.HillProductEquationCompactBounds
+import NLS.ComplexAnalysis.UniformNormalizedAnalyticInverse
+import NLS.ComplexAnalysis.BanachTriangularInverseBound
+import NLS.ComplexAnalysis.UniformAnalyticImplicitBall
+import NLS.KdV.HillProductEquationCommonAnalyticZeros
+import NLS.SequenceSpaces.PeriodOneHminusOneRealGermIdentity
+import NLS.KdV.HillCommonZeroCanonicalRoots
+import NLS.KdV.HillCommonZeroRealAgreement
+import NLS.KdV.HillCommonActualZeroSequences
+import NLS.KdV.HillCommonZeroSequenceBalls
+import NLS.KdV.HminusOneCanonicalHillZeroSequences
+import NLS.Articles.KdVPseudomeasures.OriginalHillCommonAnalyticZeroSequences
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6804,3 +6817,38 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodUniformFullInverse
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_uniform_Banach_inverse_bound
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_uniform_bounded_inverse
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_uniform_Hill_period_inverse_patch
+#print axioms NLS.ComplexAnalysis.exists_open_uniform_bound_near_compact
+#print axioms NLS.ComplexAnalysis.exists_cthickening_uniform_bound_near_compact
+#print axioms NLS.KdV.HillProductEquationPatch.real_energyGapData_graph_mem_inputDomain
+#print axioms NLS.KdV.HillProductEquationPatch.exists_real_gapData_uniform_equation_thickening
+#print axioms NLS.KdV.HillProductEquationPatch.exists_actual_real_uniform_equation_balls
+#print axioms NLS.ComplexAnalysis.exists_uniform_normalized_analytic_inverse_radii
+#print axioms NLS.ComplexAnalysis.banachTriangularInverseCLM
+#print axioms NLS.ComplexAnalysis.banachTriangularInverseCLM_apply
+#print axioms NLS.ComplexAnalysis.banachTriangular_derivative_decompose
+#print axioms NLS.ComplexAnalysis.banachTriangular_derivative_comp_inverse
+#print axioms NLS.ComplexAnalysis.banachTriangular_inverse_comp_derivative
+#print axioms NLS.ComplexAnalysis.norm_banachTriangularInverseCLM_le
+#print axioms NLS.ComplexAnalysis.exists_uniform_analytic_implicit_ball
+#print axioms NLS.KdV.HillProductEquationPatch.exists_common_analytic_zero_sequence_ball
+#print axioms NLS.analytic_eqOn_of_real_periodOneHminus_germ
+#print axioms NLS.KdV.HillProductEquationPatch.common_analytic_sequence_canonical_root
+#print axioms NLS.KdV.HillProductEquationPatch.placed_canonical_zero_sequence_eq_actual
+#print axioms NLS.KdV.HillProductEquationPatch.common_analytic_sequence_real_agreement
+#print axioms NLS.KdV.HillProductEquationPatch.exists_common_actual_analytic_zero_sequences
+#print axioms NLS.KdV.HillHminusZeroSequenceBall.source
+#print axioms NLS.KdV.HillHminusZeroSequenceBall.source_open
+#print axioms NLS.KdV.HillHminusZeroSequenceBall.value_eq_on_overlap
+#print axioms NLS.KdV.exists_hillHminusZeroSequenceBall
+#print axioms NLS.KdV.hillHminusCanonicalZeroSequenceDomain
+#print axioms NLS.KdV.isOpen_hillHminusCanonicalZeroSequenceDomain
+#print axioms NLS.KdV.hillHminusCanonicalZeroSequenceDomain_subset_psiDomain
+#print axioms NLS.KdV.real_mem_hillHminusCanonicalZeroSequenceDomain
+#print axioms NLS.KdV.isConnected_hillHminusCanonicalZeroSequenceDomain
+#print axioms NLS.KdV.hillHminusCanonicalZeroSequence
+#print axioms NLS.KdV.HillHminusZeroSequenceBall.canonical_value_eq
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalZeroSequence
+#print axioms NLS.KdV.hillHminusCanonicalZeroSequence_real
+#print axioms NLS.KdV.hillHminusCanonicalZeroSequence_retained_root
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_common_complex_analytic_zero_sequences
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_common_Hill_zero_sequence_period_patch
