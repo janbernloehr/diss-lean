@@ -1241,6 +1241,14 @@ modules = [
     'NLS.KdV.HillOnIndexUniformCorrectionBound',
     'NLS.KdV.HillOnIndexUniformCartesianBound',
     'NLS.Articles.KdVPseudomeasures.OriginalHillUniformDiagonalCorrection',
+    'NLS.ComplexAnalysis.QuadraticEnergyWeightBound',
+    'NLS.KdV.HillAuxiliaryMidpointSumLowerBound',
+    'NLS.KdV.HillAuxiliaryEnergyWeightBound',
+    'NLS.KdV.HillCanonicalCartesianWeight',
+    'NLS.KdV.HillOnIndexUniformEnergyBound',
+    'NLS.KdV.HillActionAngleOriginalEnergyBound',
+    'NLS.KdV.HillActionAngleEnergyDomain',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillCartesianSpectralEstimate',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -900,6 +900,12 @@
       "status": "Prove local bounds UNIFORM IN ALL n for the ACTUAL diagonal correction and both phase multipliers, at EVERY complex physical patch point, with a diagonal Cartesian frequency-weight estimate. Original-energy conversion and the full sequence map remain OPEN.",
       "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_diagonal_correction_UNIFORM_ALL_n_bound",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-uniform-diagonal-correction-map.json"
+    },
+    {
+      "label": "ACTUAL scalar Cartesian original-energy spectral estimate on a common native domain",
+      "status": "Prove the ORIGINAL Hill energy-weight spectral estimate for the ACTUAL scalar Cartesian coordinates, locally uniformly ALL n on ONE common OPEN CONNECTED native complex domain containing the ENTIRE real form. Target sequence map and canonicality remain OPEN.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_energy_estimate_common_domain",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-cartesian-energy-estimate-map.json"
     }
   ],
   "reuse_map": [
@@ -979,10 +985,10 @@
     }
   ],
   "remaining_obligations": [
-    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete diagonal estimates, target sequence regularity and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete target sequence regularity and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
     "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "NEXT convert the PROVED actual diagonal frequency-weight bound C*norm frequency midpoint*(norm frequency gap+norm ACTUAL AUX midpoint displacement) into the ORIGINAL Hill energy weight norm ORIGINAL gamma_n+norm ORIGINAL mu_n minus ORIGINAL tau_n, on ONE native complex neighborhood BEFORE ALL n. The actual diagonal correction and BOTH exponential multipliers are NOW locally bounded UNIFORMLY IN ALL n at EVERY COMPLEX physical patch point carrying the retained original estimates. The signed diagonal forcing tail circle estimate, ANY-terminal gap-independent filled remainder bound and finite low analytic continuity are COMPLETE; do NOT redo them or assume ordinary NLS terminal equality. Every original real source has a certified strong patch. The positive normalized action amplitude is already APPLIED, analytic/nonzero on ONE OPEN CONNECTED domain of ENTIRE real form, positive at real closed gaps and locally O(1/sqrt n) UNIFORMLY ALL n. Complete scalar factors/X/Y are analytic through complex collapse and satisfy product/sum-squares EXACTLY 2*actualAction, real conjugacy/realness and REAL closed-gap zeros. Their uniform bound by C/sqrt n times intrinsic diagonal-factor norms is already proved. Combine the remaining energy-weight conversion with these bounds for source3.2, then prove target sequence regularity and canonicality. Infinite off-index correction convergence/absolute sums, scalar/full-l-infinity analyticity, ALL-n bounds, physical signs/gluing and amplitude branch are COMPLETE. Literal sharper KMT energy kernel n/(m*abs(m squared-n squared)), universal ACTUAL product scalar, Gardner/Fourier/flow/bijection/weak-star homeomorphism and ALL FIVE MAIN remain UNPROVED.",
-    "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
+    "NEXT prove target sequence regularity and full Banach-source analyticity of the ACTUAL Cartesian sequence, starting at native H-minus-one -> h-minus-one-half, then all required original source/target Sobolev and pseudomeasure scales including infinity. Scalar ACTUAL X,Y and complete factors are now analytic through complex collapse on ONE OPEN CONNECTED hillHminusActionAngleEnergyDomain containing ENTIRE native real form BEFORE ALL n. At EVERY COMPLEX point ONE local U,C before ALL n gives norm BOTH complete factors and BOTH X,Y <=(C/sqrt n)*(sqrt(norm ACTUAL original canonicalGapSquare)+norm(ACTUAL original canonicalDirichlet-ACTUAL original canonicalEnergyMidpoint)). This weight equals literal original gap width+abs(original mu-original tau) at EVERY real source. Frequency-to-original-energy conversion is COMPLETE, including all low/closed/complex collapsed gaps: ACTUAL AUXmu+tau has common a*n lower bound by real positive gap placement and full-l2 sum continuity; midpoint scales and full-l2 gap weights supply uniform conversion constants. ACTUAL diagonal correction/phase and off-index infinite correction bounds, positive action amplitude branch, physical sign/gluing and scalar original-energy estimate are COMPLETE; do NOT redo them. Product and X squared+Y squared EXACTLY 2*actualAction, real conjugacy/realness and REAL closed-gap zeros are already proved. Native target sequence assembly must be justified, not inferred from scalar analyticity. Then Gardner/Fourier canonicality, full Birkhoff map/bijection/weak-star homeomorphism/KdV flow and ALL FIVE MAIN. Literal sharper KMT energy kernel and universal ACTUAL product scalar remain OPEN.",
+    "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions and native complex ACTUAL scalar Cartesian formula analyticity/ORIGINAL-energy estimate are proved. The full target sequence map, its Gardner/Fourier identification and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
   "workspace": {
@@ -3121,6 +3127,26 @@
     "normalized_action_ratio_amplitude_previously_applied": true,
     "frequency_to_ORIGINAL_Hill_energy_weight_conversion_PROVED": false,
     "uniform_source3_2_Cartesian_spectral_bound_PROVED": false,
+    "target_sequence_regularity_PROVED": false,
+    "Gardner_canonicality_PROVED": false,
+    "full_Birkhoff_coordinates_constructed": false,
+    "universal_2_over_pi_n_ACTUAL_product_prefactor_proved": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_Cartesian_energy_estimate_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-cartesian-energy-estimate-map.json",
+    "ACTUAL_AUXILIARY_frequency_plus_midpoint_uniform_index_lower_bound_PROVED": true,
+    "ONE_complex_source_ball_before_ALL_n_including_low_closed_gaps_PROVED": true,
+    "frequency_to_ORIGINAL_Hill_energy_weight_conversion_PROVED": true,
+    "canonical_weight_exact_original_real_gap_and_Dirichlet_midpoint_displacement_PROVED": true,
+    "ACTUAL_diagonal_Cartesian_ORIGINAL_energy_weight_bound_UNIFORMLY_ALL_n_PROVED": true,
+    "complete_ACTUAL_scalar_Cartesian_ORIGINAL_energy_over_sqrt_n_bound_PROVED": true,
+    "ONE_OPEN_CONNECTED_energy_domain_contains_ENTIRE_native_real_form_before_ALL_n_PROVED": true,
+    "local_uniform_energy_bound_at_EVERY_COMPLEX_energy_domain_point_PROVED": true,
+    "scalar_formula_source3_2_ii_analyticity_and_spectral_estimate_PROVED": true,
+    "ACTUAL_AUXILIARY_divisor_and_norming_sheet_preserved": true,
+    "ordinary_NLS_Dirichlet_divisor_substituted": false,
+    "normalized_action_ratio_amplitude_previously_applied": true,
     "target_sequence_regularity_PROVED": false,
     "Gardner_canonicality_PROVED": false,
     "full_Birkhoff_coordinates_constructed": false,

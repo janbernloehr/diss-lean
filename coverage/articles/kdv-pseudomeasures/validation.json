@@ -1,7 +1,7 @@
 {
   "date": "2026-11-04",
   "article_main_theorems_verified": false,
-  "phase": "Prove local bounds UNIFORM IN ALL n for the ACTUAL diagonal correction and both phase multipliers, at EVERY complex physical patch point, with a diagonal Cartesian frequency-weight estimate.",
+  "phase": "Prove the ORIGINAL Hill energy-weight spectral estimate for the ACTUAL scalar Cartesian coordinates, locally uniformly ALL n on ONE common OPEN CONNECTED native complex domain containing the ENTIRE real form.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1215,13 +1215,21 @@
     "NLS/KdV/HillOnIndexUniformCorrectionBound.lean",
     "NLS/KdV/HillOnIndexUniformCartesianBound.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillUniformDiagonalCorrection.lean",
+    "NLS/ComplexAnalysis/QuadraticEnergyWeightBound.lean",
+    "NLS/KdV/HillAuxiliaryMidpointSumLowerBound.lean",
+    "NLS/KdV/HillAuxiliaryEnergyWeightBound.lean",
+    "NLS/KdV/HillCanonicalCartesianWeight.lean",
+    "NLS/KdV/HillOnIndexUniformEnergyBound.lean",
+    "NLS/KdV/HillActionAngleOriginalEnergyBound.lean",
+    "NLS/KdV/HillActionAngleEnergyDomain.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillCartesianSpectralEstimate.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 5430,
-  "definitions": 1058,
+  "proved_theorems": 5452,
+  "definitions": 1061,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 6488,
+    "declarations": 6513,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -2453,10 +2461,17 @@
     "Finite low-index analytic continuity combines with the common tail: at EVERY COMPLEX point of ANY physical patch carrying the proved original family estimates, ONE open source neighborhood and ONE constant precede ALL n and bound the ACTUAL physicalOnIndexAbelianCorrection. BOTH diagonal exponential multipliers have the same all-index local control. Real-type hypotheses are not needed for this patch-level local theorem.",
     "The ACTUAL physical diagonal Cartesian factors satisfy a local bound UNIFORM IN ALL n by C*norm actual frequency midpoint*(norm actual frequency gap+norm ACTUAL AUXILIARY midpoint displacement). This retains the actual norming-sheet sign and includes every complex collapsed gap. Conversion to ORIGINAL Hill ENERGY weights is still OPEN; the frequency estimate is not reported as source3.2.",
     "The strong actual family factory and its exact retained original estimates give a certified physical patch and one uniform diagonal correction neighborhood at EVERY original real H-minus-one potential. No additional estimate is postulated by the article interface.",
-    "Seven new modules and 12 theorems, three canonical-byte-identical shared dependencies, one unchanged private shared dependency and the exact 6488-declaration transitive axiom audit compile CLEAN. All 1202 baseline non-audit registered sources are unchanged. Canonical checkout/shared metadata read-only; no heartbeat increase or new axiom. Original-energy conversion, target sequence map, Gardner/Fourier/flow/bijection and ALL FIVE MAIN remain OPEN; goal ACTIVE."
+    "Seven new modules and 12 theorems, three canonical-byte-identical shared dependencies, one unchanged private shared dependency and the exact 6488-declaration transitive axiom audit compile CLEAN. All 1202 baseline non-audit registered sources are unchanged. Canonical checkout/shared metadata read-only; no heartbeat increase or new axiom. Original-energy conversion, target sequence map, Gardner/Fourier/flow/bijection and ALL FIVE MAIN remain OPEN; goal ACTIVE.",
+    "Reusable quadratic energy-weight algebra: if normtau<=K*norm(mu+tau) and normgamma<=G*normtau, then normtau*(normgamma+norm(mu-tau))<=(1+K+K*G)*(norm(2*tau*gamma)+norm(mu squared-tau squared-gamma squared/4)). No gap, action or sheet is divided by, and collapse is included.",
+    "At every real native patch point, the ACTUAL AUXILIARY frequency lies in its positive selected periodic gap. Thus norm(ACTUAL AUXmu+tau)>=normtau, at ALL positive indices including low/closed gaps. The existing positive midpoint index lower bound transfers to this sum. FULL-l2 continuity of AUX displacement plus midpoint displacement preserves a lower bound a*n on ONE native complex ball BEFORE ALL n, without a new cutoff or disc-label assumption.",
+    "Uniform midpoint upper/lower index bounds, the actual sum lower bound and the local full-l2 gap norm bound give ONE neighborhood and constants BEFORE ALL n for the reusable quadratic weight conversion. The physical AUXILIARY divisor is retained. The canonical original energy midpoint is identified by its verified full period equation, the actual original Dirichlet energy by its squared AUX frequency minus shift, and the original squared energy gap by (2*tau*gamma) squared.",
+    "hillHminusCanonicalCartesianWeight is exactly sqrt(norm ACTUAL canonicalGapSquare)+norm(ACTUAL canonicalDirichlet-ACTUAL canonicalEnergyMidpoint). It is independent of ordering complex endpoints. At EVERY real source it equals the literal original periodic gap width plus abs(original Dirichlet energy-original periodic energy midpoint). The actual frequency weight is bounded by ONE constant times this original energy weight before ALL n, including complex collapse.",
+    "The ACTUAL physical diagonal Cartesian factors now obey a local C*originalEnergyWeight bound before ALL n. Applying the already proved uniform normalized amplitude and full infinite phase multiplier bounds yields BOTH complete factors and BOTH scalar Cartesian X,Y bounded by (C/sqrt n)*originalEnergyWeight. ONE complex neighborhood and constant precede ALL n. Actual original spectral normalization, AUX divisor, physical norming sheet and complete infinite phase are preserved.",
+    "hillHminusActionAngleEnergyDomain is ONE OPEN CONNECTED complex native neighborhood of the ENTIRE real form BEFORE ALL n, contained in the positive-amplitude, canonical zero-sequence and canonical Dirichlet domains. The scalar X,Y are analytic there. At EVERY COMPLEX point there is ONE local source neighborhood/constant BEFORE ALL n giving the original-energy/sqrt(n) estimate for BOTH factors and BOTH X,Y. The article interface includes the exact real original-label estimate.",
+    "Eight new modules (22 theorems and 3 definitions), three canonical-byte-identical shared dependencies, one unchanged private shared dependency and the exact 6513-declaration transitive axiom audit compile CLEAN. All 1209 baseline non-audit registered sources unchanged. Canonical checkout/shared metadata read-only; no heartbeat increase or new axiom. The full target sequence map, Gardner/Fourier/flow/bijection and ALL FIVE MAIN remain OPEN; goal ACTIVE."
   ],
-  "source_correspondence": "Prove local bounds UNIFORM IN ALL n for the ACTUAL diagonal correction and both phase multipliers, at EVERY complex physical patch point, with a diagonal Cartesian frequency-weight estimate. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete diagonal estimates, target sequence regularity and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NEXT convert the PROVED actual diagonal frequency-weight bound C*norm frequency midpoint*(norm frequency gap+norm ACTUAL AUX midpoint displacement) into the ORIGINAL Hill energy weight norm ORIGINAL gamma_n+norm ORIGINAL mu_n minus ORIGINAL tau_n, on ONE native complex neighborhood BEFORE ALL n. The actual diagonal correction and BOTH exponential multipliers are NOW locally bounded UNIFORMLY IN ALL n at EVERY COMPLEX physical patch point carrying the retained original estimates. The signed diagonal forcing tail circle estimate, ANY-terminal gap-independent filled remainder bound and finite low analytic continuity are COMPLETE; do NOT redo them or assume ordinary NLS terminal equality. Every original real source has a certified strong patch. The positive normalized action amplitude is already APPLIED, analytic/nonzero on ONE OPEN CONNECTED domain of ENTIRE real form, positive at real closed gaps and locally O(1/sqrt n) UNIFORMLY ALL n. Complete scalar factors/X/Y are analytic through complex collapse and satisfy product/sum-squares EXACTLY 2*actualAction, real conjugacy/realness and REAL closed-gap zeros. Their uniform bound by C/sqrt n times intrinsic diagonal-factor norms is already proved. Combine the remaining energy-weight conversion with these bounds for source3.2, then prove target sequence regularity and canonicality. Infinite off-index correction convergence/absolute sums, scalar/full-l-infinity analyticity, ALL-n bounds, physical signs/gluing and amplitude branch are COMPLETE. Literal sharper KMT energy kernel n/(m*abs(m squared-n squared)), universal ACTUAL product scalar, Gardner/Fourier/flow/bijection/weak-star homeomorphism and ALL FIVE MAIN remain UNPROVED. Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. All 1202 baseline non-audit registered sources byte-identical to 5dec717. Seven new modules, three byte-identical canonical dependencies, one unchanged private shared odd-square-descent dependency and exact 6488-declaration audit freshly compiled privately. Prior shared private lint fixes unchanged. No heartbeat increase.",
+  "source_correspondence": "Prove the ORIGINAL Hill energy-weight spectral estimate for the ACTUAL scalar Cartesian coordinates, locally uniformly ALL n on ONE common OPEN CONNECTED native complex domain containing the ENTIRE real form. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete target sequence regularity and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NEXT prove target sequence regularity and full Banach-source analyticity of the ACTUAL Cartesian sequence, starting at native H-minus-one -> h-minus-one-half, then all required original source/target Sobolev and pseudomeasure scales including infinity. Scalar ACTUAL X,Y and complete factors are now analytic through complex collapse on ONE OPEN CONNECTED hillHminusActionAngleEnergyDomain containing ENTIRE native real form BEFORE ALL n. At EVERY COMPLEX point ONE local U,C before ALL n gives norm BOTH complete factors and BOTH X,Y <=(C/sqrt n)*(sqrt(norm ACTUAL original canonicalGapSquare)+norm(ACTUAL original canonicalDirichlet-ACTUAL original canonicalEnergyMidpoint)). This weight equals literal original gap width+abs(original mu-original tau) at EVERY real source. Frequency-to-original-energy conversion is COMPLETE, including all low/closed/complex collapsed gaps: ACTUAL AUXmu+tau has common a*n lower bound by real positive gap placement and full-l2 sum continuity; midpoint scales and full-l2 gap weights supply uniform conversion constants. ACTUAL diagonal correction/phase and off-index infinite correction bounds, positive action amplitude branch, physical sign/gluing and scalar original-energy estimate are COMPLETE; do NOT redo them. Product and X squared+Y squared EXACTLY 2*actualAction, real conjugacy/realness and REAL closed-gap zeros are already proved. Native target sequence assembly must be justified, not inferred from scalar analyticity. Then Gardner/Fourier canonicality, full Birkhoff map/bijection/weak-star homeomorphism/KdV flow and ALL FIVE MAIN. Literal sharper KMT energy kernel and universal ACTUAL product scalar remain OPEN. Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions and native complex ACTUAL scalar Cartesian formula analyticity/ORIGINAL-energy estimate are proved. The full target sequence map, its Gardner/Fourier identification and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. All 1209 baseline non-audit registered sources byte-identical to ab156c0. Eight new modules, three byte-identical canonical dependencies, one unchanged private shared odd-square-descent dependency and exact 6513-declaration audit freshly compiled privately. Prior shared private lint fixes unchanged. No heartbeat increase.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -2858,7 +2873,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "14dec27faca0924f967451cdc89b75a0d0cb707ab88134fcf255e8681ce442d8",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "556898bfc0a6c7e4779fcf69cf9f4079217f49dea6f4c4e0d0effa91918329a5",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -3673,7 +3688,15 @@
     "NLS/KdV/HillOnIndexUniformCorrectionTail.lean": "621ee2214c167ece6b0e015dea7ba35ce26380f717390036a4518b77cf88e5de",
     "NLS/KdV/HillOnIndexUniformCorrectionBound.lean": "55a20490badefaff2a2e1243dd3428fe12733aa648f004fb43e231e89afbcc4b",
     "NLS/KdV/HillOnIndexUniformCartesianBound.lean": "7d1b6f0876f0a9e30e129765c5cde215e413b39490612c8895e82e08e63fbbf3",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillUniformDiagonalCorrection.lean": "aa6c22074cb0262e9c204add17457479cd51ef63f261ffefc606479e93e2b542"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillUniformDiagonalCorrection.lean": "aa6c22074cb0262e9c204add17457479cd51ef63f261ffefc606479e93e2b542",
+    "NLS/ComplexAnalysis/QuadraticEnergyWeightBound.lean": "060add12fd23c294700eeac840ae75a41d574a3e3a415875caf9681f255b791d",
+    "NLS/KdV/HillAuxiliaryMidpointSumLowerBound.lean": "9592a3f947eb19678d86a0bae0bf7d90a8ac4985d68507dd6db91ebd5d817dca",
+    "NLS/KdV/HillAuxiliaryEnergyWeightBound.lean": "0396fa6a24ff15fd2b39d6f709991b519bed0c102765ccbdb83b4f582c25d8d0",
+    "NLS/KdV/HillCanonicalCartesianWeight.lean": "94ce8c5ce17e6fc4e7d6b997578400c6f9a86a17785d8e670e2ed1acaf0ad5de",
+    "NLS/KdV/HillOnIndexUniformEnergyBound.lean": "5f678f5d0b30c21a2f73b529cac7956cc479d88baefb87c0e13878a59833eb47",
+    "NLS/KdV/HillActionAngleOriginalEnergyBound.lean": "db160c77aa23f90cc442d775dd688099914e9cad332d4b4e46c7c9eef27c1af9",
+    "NLS/KdV/HillActionAngleEnergyDomain.lean": "8601d6701f7fc88219b24259f80b891c573c0c630a73305430c5c4d26d798278",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillCartesianSpectralEstimate.lean": "8ec1697946a30abe5a2b3ea7ead91f7940943a74decf2b40bf5f0350eac9335a"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -3681,11 +3704,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 6476,
-    "newly_checked_declarations_this_continuation": 12,
-    "new_theorems": 12,
-    "new_definitions": 0,
-    "total_checked_declarations": 6488
+    "previous_checked_declarations": 6488,
+    "newly_checked_declarations_this_continuation": 25,
+    "new_theorems": 22,
+    "new_definitions": 3,
+    "total_checked_declarations": 6513
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -3714,7 +3737,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-uniform-diagonal-correction.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-cartesian-energy-estimate.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -4006,13 +4029,14 @@
     "Prove locally uniform convergence and full Banach-source analyticity of the ACTUAL infinite off-index Hill correction, and construct the complete Abelian gap-times-phase factors.",
     "Prove local bounds UNIFORM IN ALL n for the ACTUAL infinite Hill correction, with whole correction-sequence analyticity into l-infinity and uniform phase multiplier bounds.",
     "Construct the positive ACTUAL normalized-action amplitude and complete scalar action-angle Cartesian factors through complex collapse, on ONE common native domain before ALL n.",
-    "Prove local bounds UNIFORM IN ALL n for the ACTUAL diagonal correction and both phase multipliers, at EVERY complex physical patch point, with a diagonal Cartesian frequency-weight estimate."
+    "Prove local bounds UNIFORM IN ALL n for the ACTUAL diagonal correction and both phase multipliers, at EVERY complex physical patch point, with a diagonal Cartesian frequency-weight estimate.",
+    "Prove the ORIGINAL Hill energy-weight spectral estimate for the ACTUAL scalar Cartesian coordinates, locally uniformly ALL n on ONE common OPEN CONNECTED native complex domain containing the ENTIRE real form."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-uniform-diagonal-correction-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-cartesian-energy-estimate-map.json",
   "baseline_validated_snapshot": {
-    "commit": "5dec71748d244372e51ae8c36cc0a70b513f06cb",
-    "modules": 1203,
-    "audited_declarations": 6476,
+    "commit": "ab156c0e4178a6f2961acf8cc566d8a8671197ec",
+    "modules": 1210,
+    "audited_declarations": 6488,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -5527,6 +5551,26 @@
     "normalized_action_ratio_amplitude_previously_applied": true,
     "frequency_to_ORIGINAL_Hill_energy_weight_conversion_PROVED": false,
     "uniform_source3_2_Cartesian_spectral_bound_PROVED": false,
+    "target_sequence_regularity_PROVED": false,
+    "Gardner_canonicality_PROVED": false,
+    "full_Birkhoff_coordinates_constructed": false,
+    "universal_2_over_pi_n_ACTUAL_product_prefactor_proved": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_Cartesian_energy_estimate": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-cartesian-energy-estimate-map.json",
+    "ACTUAL_AUXILIARY_frequency_plus_midpoint_uniform_index_lower_bound_PROVED": true,
+    "ONE_complex_source_ball_before_ALL_n_including_low_closed_gaps_PROVED": true,
+    "frequency_to_ORIGINAL_Hill_energy_weight_conversion_PROVED": true,
+    "canonical_weight_exact_original_real_gap_and_Dirichlet_midpoint_displacement_PROVED": true,
+    "ACTUAL_diagonal_Cartesian_ORIGINAL_energy_weight_bound_UNIFORMLY_ALL_n_PROVED": true,
+    "complete_ACTUAL_scalar_Cartesian_ORIGINAL_energy_over_sqrt_n_bound_PROVED": true,
+    "ONE_OPEN_CONNECTED_energy_domain_contains_ENTIRE_native_real_form_before_ALL_n_PROVED": true,
+    "local_uniform_energy_bound_at_EVERY_COMPLEX_energy_domain_point_PROVED": true,
+    "scalar_formula_source3_2_ii_analyticity_and_spectral_estimate_PROVED": true,
+    "ACTUAL_AUXILIARY_divisor_and_norming_sheet_preserved": true,
+    "ordinary_NLS_Dirichlet_divisor_substituted": false,
+    "normalized_action_ratio_amplitude_previously_applied": true,
     "target_sequence_regularity_PROVED": false,
     "Gardner_canonicality_PROVED": false,
     "full_Birkhoff_coordinates_constructed": false,

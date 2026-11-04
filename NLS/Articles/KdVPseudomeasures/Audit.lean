@@ -1207,6 +1207,14 @@ import NLS.KdV.HillOnIndexUniformCorrectionTail
 import NLS.KdV.HillOnIndexUniformCorrectionBound
 import NLS.KdV.HillOnIndexUniformCartesianBound
 import NLS.Articles.KdVPseudomeasures.OriginalHillUniformDiagonalCorrection
+import NLS.ComplexAnalysis.QuadraticEnergyWeightBound
+import NLS.KdV.HillAuxiliaryMidpointSumLowerBound
+import NLS.KdV.HillAuxiliaryEnergyWeightBound
+import NLS.KdV.HillCanonicalCartesianWeight
+import NLS.KdV.HillOnIndexUniformEnergyBound
+import NLS.KdV.HillActionAngleOriginalEnergyBound
+import NLS.KdV.HillActionAngleEnergyDomain
+import NLS.Articles.KdVPseudomeasures.OriginalHillCartesianSpectralEstimate
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7698,3 +7706,28 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillUniformDiagonalCorrection
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_diagonal_correction_UNIFORM_ALL_n_bound
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_diagonal_phase_UNIFORM_ALL_n_bound
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_Hill_uniform_diagonal_correction_patch
+#print axioms NLS.ComplexAnalysis.norm_frequency_weight_le_quadratic_energy_weight
+#print axioms NLS.KdV.HillProductEquationPatch.norm_physicalDirichletFrequency_add_midpoint_ge_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.exists_real_physicalDirichletFrequency_add_midpoint_index_lower_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_uniform_physicalDirichletFrequency_add_midpoint_index_lower_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_uniform_physicalDirichlet_quadratic_energy_weight_bound
+#print axioms NLS.KdV.hillHminusCanonicalCartesianWeight
+#print axioms NLS.KdV.hillHminusCanonicalCartesianWeight_nonneg
+#print axioms NLS.KdV.hillHminusCanonicalCartesianWeight_eq_real
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_uniform_physicalDirichlet_original_energy_weight_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_uniform_physicalOnIndexCartesian_original_energy_bound
+#print axioms NLS.KdV.norm_hillHminusActionAngleXY_le_of_factor_bounds
+#print axioms NLS.KdV.exists_local_uniform_actionAngle_original_energy_bound
+#print axioms NLS.KdV.HillActionAngleEnergyBall.source
+#print axioms NLS.KdV.HillActionAngleEnergyBall.source_open
+#print axioms NLS.KdV.exists_hillActionAngleEnergyBall
+#print axioms NLS.KdV.hillHminusActionAngleEnergyDomain
+#print axioms NLS.KdV.isOpen_hillHminusActionAngleEnergyDomain
+#print axioms NLS.KdV.real_mem_hillHminusActionAngleEnergyDomain
+#print axioms NLS.KdV.hillHminusActionAngleEnergyDomain_subset
+#print axioms NLS.KdV.analyticOnNhd_hillHminusActionAngle_on_energy_domain
+#print axioms NLS.KdV.exists_locally_uniform_actionAngle_original_energy_bound
+#print axioms NLS.KdV.isConnected_hillHminusActionAngleEnergyDomain
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_energy_estimate_common_domain
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_energy_estimate_UNIFORM_ALL_n
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_energy_estimate_real
