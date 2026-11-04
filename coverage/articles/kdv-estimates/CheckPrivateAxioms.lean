@@ -800,6 +800,9 @@ import NLS.KdV.HillUniformNativeDirichletTerminal
 import NLS.KdV.HillUniformPointwiseDirichletValue
 import NLS.KdV.HillUniformKernelCorrectionTerms
 import NLS.KdV.HillUniformOffDiagonalPhases
+import NLS.ComplexAnalysis.BoundedCenteredMeanFreeQuadratic
+import NLS.KdV.HillUniformAllContourBounds
+import NLS.KdV.HillUniformDeflatedDiscBounds
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1282,7 +1285,10 @@ run_cmd do
     ``NLS.Coeff.separatedReciprocalEnvelope_apply,
     ``NLS.Coeff.norm_separatedReciprocalEnvelope_le,
     ``NLS.Coeff.norm_separatedReciprocalEnvelope_eq_pairing,
-    ``NLS.Coeff.tendsto_norm_separatedReciprocalEnvelope_zero]
+    ``NLS.Coeff.tendsto_norm_separatedReciprocalEnvelope_zero,
+    ``NLS.ComplexAnalysis.analyticOnNhd_centeredMeanFree_of_disc,
+    ``NLS.ComplexAnalysis.norm_centeredMeanFree_le_of_disc_bound,
+    ``NLS.ComplexAnalysis.exists_bounded_analytic_centered_mean_free_quadratic_solution]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
