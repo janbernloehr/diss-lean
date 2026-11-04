@@ -1303,6 +1303,27 @@ import NLS.KdV.HillNativeRealSignedMap
 import NLS.FunctionalAnalysis.AnalyticEquivalenceInverse
 import NLS.KdV.HillNativeRealLocalInverse
 import NLS.Articles.KdVPseudomeasures.OriginalHillRealSignedCoordinates
+import NLS.KdV.HillHminusHighPairStrip
+import NLS.ComplexAnalysis.UnorderedPairSupport
+import NLS.Articles.KdVPseudomeasures.OriginalHighPairCompatibility
+import NLS.KdV.PeriodOneEndpointOriginal
+import NLS.Articles.KdVPseudomeasures.OriginalEndpointNativeCompatibility
+import NLS.KdV.HillCanonicalHighSymmetricComparison
+import NLS.RealAnalysis.SqrtSublinearLattice
+import NLS.Articles.KdVPseudomeasures.OriginalUniformHighSpectralCompatibility
+import NLS.KdV.HillCanonicalCartesianWeightContinuity
+import NLS.Topology.FiniteContinuousUpperBound
+import NLS.Articles.KdVPseudomeasures.OriginalCanonicalEndpointWeightBound
+import NLS.Articles.KdVPseudomeasures.NativeEndpointLocalWeightBound
+import NLS.SequenceSpaces.SignedEndpointSquareRootBound
+import NLS.KdV.HillSignedEndpointBound
+import NLS.Articles.KdVPseudomeasures.NativeEndpointSignedBound
+import NLS.Articles.KdVPseudomeasures.NativeEndpointAnalyticCoordinates
+import NLS.ComplexAnalysis.AnalyticFactorNontrivial
+import NLS.SequenceSpaces.FourierRealZeroCoordinates
+import NLS.KdV.HillRealCoordinateNontrivial
+import NLS.KdV.HillRealOpenGapDensity
+import NLS.KdV.HillCanonicalGapNontrivial
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -8217,3 +8238,75 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillRealSignedCoordinates
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_derivative_equiv
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_derivative_even_modes
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_localInverse
+#print axioms NLS.KdV.hillHminusGapSquareDisc_subset_reducedHillStrip
+#print axioms NLS.ComplexAnalysis.eq_or_swap_of_pair_support
+#print axioms NLS.Articles.KdVPseudomeasures.sourceNativePeriodOneCLM
+#print axioms NLS.Articles.KdVPseudomeasures.sourceNativePeriodOneCLM_apply
+#print axioms NLS.Articles.KdVPseudomeasures.sourceNativePeriodOneCLM_distribution
+#print axioms NLS.Articles.KdVPseudomeasures.sourceNativePeriodOne_spectral_iff
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillComplexPair.eq_or_swap_native_high_pair
+#print axioms NLS.Articles.KdVPseudomeasures.SourceHillComplexPair.native_high_midpoint_and_gap
+#print axioms NLS.KdV.periodOneEndpointWeight
+#print axioms NLS.KdV.periodOneEndpointWeight_le
+#print axioms NLS.KdV.periodOneEndpointCoefficients
+#print axioms NLS.KdV.periodOneEndpointCoefficients_even
+#print axioms NLS.KdV.periodOneEndpointCoefficients_odd
+#print axioms NLS.KdV.periodOneEndpointOriginal
+#print axioms NLS.KdV.periodOneEndpointOriginal_even
+#print axioms NLS.KdV.periodOneEndpointOriginal_odd
+#print axioms NLS.KdV.periodOneEndpointOriginal_periodic
+#print axioms NLS.KdV.norm_periodOneEndpointOriginal_le
+#print axioms NLS.Articles.KdVPseudomeasures.exists_endpointNativeInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.endpointNativeInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.endpointNativeInclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.endpointNativeInclusion_eq_lowerInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.sourceNativePeriodOneCLM_endpointOriginal
+#print axioms NLS.KdV.exists_uniform_hillHminusLabels_real_high_pairs
+#print axioms NLS.KdV.exists_common_canonical_high_symmetric_comparison
+#print axioms NLS.RealAnalysis.exists_nat_sqrt_div_four_lt_linear
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_original_high_canonical_spectral_comparison
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_original_high_canonical_weight_comparison
+#print axioms NLS.KdV.continuousAt_hillHminusCanonicalCartesianWeight_real
+#print axioms NLS.Topology.exists_open_finite_continuous_upper_bound
+#print axioms NLS.Articles.KdVPseudomeasures.exists_uniform_source_gap_midpoint_bound
+#print axioms NLS.Articles.KdVPseudomeasures.exists_local_uniform_canonical_endpoint_weight_bound
+#print axioms NLS.Articles.KdVPseudomeasures.exists_endpoint_local_uniform_native_weight_bound
+#print axioms NLS.Weight.positive_rpow_neg_le_sobolev
+#print axioms NLS.Weight.signed_endpoint_mul_le
+#print axioms NLS.KdV.norm_div_sqrt_two_le
+#print axioms NLS.KdV.hillHminusNativeComplexMap_positive_endpoint_bound
+#print axioms NLS.KdV.hillHminusNativeComplexMap_negative_endpoint_bound
+#print axioms NLS.KdV.hillHminusNativeComplexMap_signed_endpoint_bound
+#print axioms NLS.Articles.KdVPseudomeasures.endpoint_signed_bound_on_intersection
+#print axioms NLS.Articles.KdVPseudomeasures.exists_endpoint_local_uniform_signed_bound
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointSignedMap
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillEndpointSignedMap_analytic_neighborhood
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillEndpointSignedMap_real
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointSignedMap_real_coordinate
+#print axioms NLS.ComplexAnalysis.analytic_exists_nonzero_on_nonempty_open
+#print axioms NLS.WeightedCoeff.fourierRealZeroEvalCLM
+#print axioms NLS.WeightedCoeff.fourierRealZeroEvalCLM_apply
+#print axioms NLS.WeightedCoeff.zeroModeSingle
+#print axioms NLS.WeightedCoeff.zeroModeSingle_apply
+#print axioms NLS.WeightedCoeff.realCosineDirection
+#print axioms NLS.WeightedCoeff.realCosineDirection_positive
+#print axioms NLS.WeightedCoeff.realCosineDirection_negative
+#print axioms NLS.WeightedCoeff.halfFourierSymbol_ne_zero
+#print axioms NLS.KdV.hillRealPositiveCoordinate
+#print axioms NLS.KdV.analyticAt_hillRealPositiveCoordinate
+#print axioms NLS.KdV.fderiv_hillRealPositiveCoordinate_zero_apply
+#print axioms NLS.KdV.fderiv_hillRealPositiveCoordinate_cosine_ne_zero
+#print axioms NLS.KdV.exists_hillRealPositiveCoordinate_ne_zero
+#print axioms NLS.KdV.dense_hillRealPositiveCoordinate_ne_zero
+#print axioms NLS.KdV.hillRealSignedMap_native_coe
+#print axioms NLS.KdV.hillRealPositiveCoordinate_eq_zero_iff_gap
+#print axioms NLS.KdV.isOpen_hillReal_open_gap
+#print axioms NLS.KdV.dense_hillReal_open_gap
+#print axioms NLS.KdV.dense_hillReal_finitely_many_open_gaps
+#print axioms NLS.KdV.exists_arbitrarily_near_hillReal_finitely_many_open_gaps
+#print axioms NLS.KdV.exists_real_mean_zero_native_gap_ne_zero
+#print axioms NLS.KdV.exists_hillHminusCanonicalGapSquare_ne_zero
+#print axioms NLS.KdV.exists_hillHminusCanonicalGapSquare_ne_zero_in_ratioDomain
+#print axioms NLS.KdV.hillHminusCanonicalGapSquare_not_identically_zero
+#print axioms NLS.KdV.exists_hillHminusCanonicalGapSquare_ne_zero_on_open
+#print axioms NLS.KdV.exists_arbitrarily_near_hillHminusCanonicalGapSquare_ne_zero
