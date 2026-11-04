@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 6336,
+    "declarations": 6358,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -527,10 +527,13 @@
       "NLS.ComplexAnalysis.norm_fderiv_hilbertWeightedProduct_le",
       "NLS.ComplexAnalysis.tendsto_fderiv_hilbertWeightedProduct_of_bounded_weak_weights",
       "NLS.ComplexAnalysis.tendsto_holderProduct_of_bounded_weak_weights_of_tendsto",
-      "NLS.ComplexAnalysis.tendsto_hilbertWeightedProduct_of_bounded_weak_weights_of_tendsto"
+      "NLS.ComplexAnalysis.tendsto_hilbertWeightedProduct_of_bounded_weak_weights_of_tendsto",
+      "NLS.Coeff.norm_outputTail_operator_mono",
+      "NLS.Coeff.norm_outputTail_operator_le_of_tailRowMajorant",
+      "NLS.Coeff.exists_uniform_outputTail_operator_of_compact_rowMajorants"
     ]
   },
-  "full_repository_validation": "All 841 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 839-module base has strict validation recorded at commit 3f5495faa967898e3bfc5f6ed57ddf648dfec908 (complete 583-module strict focused run plus 256 isolated additions, all 839 source hashes unchanged, 6328-declaration axiom audit and successful aggregate), and all 2 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6336-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 841-module focused script, full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 844 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 841-module base has strict validation recorded at commit f75564c1be88c3b5fec00971f8d3d72285e80662 (complete 583-module strict focused run plus 258 isolated additions, all 841 source hashes unchanged, 6336-declaration axiom audit and successful aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6358-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 844-module focused script, full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -1373,10 +1376,13 @@
     "NLS/KdV/HillFullMixedPeriodCompact.lean": "f9aba193b04252bfdda426613f3514cb5f40f3450ca5e23bae32b513488077d8",
     "NLS/KdV/HillFullMixedSupportedFredholm.lean": "ff88680b66223511dbb6b92ed0a288b71ff5ee1a877ba2ee92c3574f1b93d113",
     "NLS/ComplexAnalysis/HilbertWeakMovingInput.lean": "03d8999bd02e39d7972242b849af9c35ce916698f8ee80008181a21b7e0aa5ed",
-    "NLS/KdV/HillFreeUniformDiagonalTail.lean": "9e2c40255e7f75f480c7523f9428b5a713be869bf102b3706e3e13184e5595e4"
+    "NLS/KdV/HillFreeUniformDiagonalTail.lean": "9e2c40255e7f75f480c7523f9428b5a713be869bf102b3706e3e13184e5595e4",
+    "NLS/SequenceSpaces/UniformOperatorOutputTails.lean": "3f0242a1d7f95abd6af89b844d0100fc227f3d0a389fe2d857ca08a25bdff457",
+    "NLS/KdV/HillFreeUniformDerivativeTail.lean": "d27a06aae1070ff1f2e104cdc89987f30177ca76088aff1e629ce6ceb5789246",
+    "NLS/KdV/HillMixedUniformDerivativeTail.lean": "6e79dbcf669e3fa81c3ca9c48dd881513f27d90b30e5311742f3d5a30390450f"
   },
-  "remaining": "The actual full mixed scaled period map is jointly complex Banach analytic on one original source neighborhood and has its exact -2*pi original physical period coordinates, a positive root derivative equal to minus identity plus compact, and Fredholm bijectivity at every original real gap-box vector. A regular zero comes from the original selected-root subsequence. The original free diagonal compact remainders now have output tails uniformly small in operator norm on every compact root set, simultaneously for all deleted differential indices, including zero. Still required: combine uniform tails of the remaining free and complex high derivative rows with finite-row limits to prove operator-norm convergence of the full extended scaled mixed-period Jacobians and uniform inverse bounds; construct common normalized root and full-phase neighborhoods around arbitrary real potentials; prove source-normalized Gardner brackets and a global inverse; establish the fixed physical KdV Birkhoff identification. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
-  "milestone": "Uniform free diagonal output tails on compact root sets for arbitrary deleted index",
+  "remaining": "The actual full mixed Hilbert period map has exact -2*pi original physical coordinates and Fredholm-bijective positive derivatives at every original real gap-box vector, with a regular zero from the selected-root subsequence. The actual finite-deleted scaled mixed-period derivative remainders now have uniformly small output tails in operator norm on every compact complex root set and one original common complex potential neighborhood, simultaneously in every positive deleted differential index. This includes the original free diagonal and off-diagonal derivative remainders and the genuine complex-minus-free high derivative rows, with bounds obtained from the original contour estimates. Still required: combine these uniform operator output tails with actual whole finite-row functional limits to prove operator-norm convergence of the full extended scaled mixed-period Jacobians and uniform inverse bounds; construct common normalized root and full-phase neighborhoods around arbitrary real potentials; prove source-normalized Gardner brackets and a global inverse; establish the fixed physical KdV Birkhoff identification. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+  "milestone": "Uniform output tails of the actual scaled mixed-period Jacobian remainders",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -2220,7 +2226,10 @@
     "NLS.KdV.HillFullMixedPeriodCompact",
     "NLS.KdV.HillFullMixedSupportedFredholm",
     "NLS.ComplexAnalysis.HilbertWeakMovingInput",
-    "NLS.KdV.HillFreeUniformDiagonalTail"
+    "NLS.KdV.HillFreeUniformDiagonalTail",
+    "NLS.SequenceSpaces.UniformOperatorOutputTails",
+    "NLS.KdV.HillFreeUniformDerivativeTail",
+    "NLS.KdV.HillMixedUniformDerivativeTail"
   ],
   "proof_commits": [
     {
@@ -2867,6 +2876,11 @@
       "commit": "3f5495faa967898e3bfc5f6ed57ddf648dfec908",
       "scope": "Actual full mixed positive Hilbert period map and Fredholm bijectivity at every original real gap-box vector, with common source neighborhood and actual regular zero; six strict isolated modules, 6328-declaration audit and successful 839-module aggregate.",
       "pushed": false
+    },
+    {
+      "commit": "f75564c1be88c3b5fec00971f8d3d72285e80662",
+      "scope": "Uniform free diagonal operator output tails on compact root sets for every deleted index, with shared moving-input weak-weight limits; two isolated checks, 6336-declaration audit and successful 841-module aggregate.",
+      "pushed": false
     }
   ],
   "aggregate_check": {
@@ -2883,86 +2897,86 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "841 focused modules covered by the unchanged 839-module strictly validated base plus 2 isolated strict module checks; no fresh complete focused-script run is claimed.",
+    "focused_modules": "844 focused modules covered by the unchanged 841-module strictly validated base plus 3 isolated strict module checks; no fresh complete focused-script run is claimed.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 6336 declarations. Includes moving-input shared weak-weight Holder and entire-product limits, arbitrary-index separated-weight decay, compact-root uniform product limits and actual free diagonal coefficient and operator-norm output tail bounds.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 6358 declarations. Includes shared output truncation norm and compact-majorant uniformity, actual free off-diagonal and full remainder uniform output tails, original mixed-minus-free high coordinate derivative bounds and full actual mixed Jacobian remainder uniform tails on a common original complex source neighborhood.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 841 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 839-module base has strict validation recorded at commit 3f5495faa967898e3bfc5f6ed57ddf648dfec908 (complete 583-module strict focused run plus 256 isolated additions, all 839 source hashes unchanged, 6328-declaration axiom audit and successful aggregate), and all 2 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6336-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 841-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 844 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 841-module base has strict validation recorded at commit f75564c1be88c3b5fec00971f8d3d72285e80662 (complete 583-module strict focused run plus 258 isolated additions, all 841 source hashes unchanged, 6336-declaration axiom audit and successful aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6358-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 844-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified. The existing ParametricTrigonometricTerminal, ParametricSineTerminal, ParametricCosineTerminal, ParametricCosineChart, ParametricCosinePrimitive and LocalAnalyticSquareRoot sources were read and reused with bytes equal to the pinned prebuilt reference; their actual uses are covered transitively by the new Hill declaration audit. The endpoint-root continuity and arbitrary real-angle cosine-chart results are new shared proofs with explicit audit seeds. Generic parametric annular primitives, quadratic Cauchy projection and root primitives, quadratic cosine primitives and the segment-only analytic cosine mean were read and reused unchanged from the pinned prebuilt reference. Their SHA256 values are recorded in the analytic_regular_hill_abelian_corrections_through_closed_gaps source-map section. The actual uses are covered transitively by the expanded audit.",
-    "mathematical_scope": "Extend the shared bounded weak-weight Holder and entire-product limit theorems to norm-convergent moving Hilbert inputs. Generalize the original separated free-weight coefficient decay to arbitrary varying deleted indices and any output row tending to infinity along an arbitrary filter. Apply the shared moving-input limit to the actual separated products. A compact-root subsequence contradiction yields one cutoff uniformly in all deleted indices and every root vector of a compact set. Deduce uniform smallness of the actual free diagonal correction coefficients outside that cutoff and, by the actual multiplier norm bound, uniform output truncation in operator norm for those original compact diagonal remainders.",
-    "scope": "All 841 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 839-module base has strict validation recorded at commit 3f5495faa967898e3bfc5f6ed57ddf648dfec908 (complete 583-module strict focused run plus 256 isolated additions, all 839 source hashes unchanged, 6328-declaration axiom audit and successful aggregate), and all 2 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6336-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 841-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Prove shared monotonicity and norm estimates for operator output truncation from a common Hilbert row majorant outside an arbitrary finite head, and uniform operator output approximation for compact families of row majorants. Extract the actual original free off-diagonal derivative remainder and prove its coordinate row bound with constant 2*exp((2/pi^2)*(norm(a)+2)), independent of the deleted index. Compactness of the continuously varying root majorants gives uniform output tails; combining with the checked uniform diagonal correction tails yields uniform output approximation of the entire free derivative plus its positive-deleted projection. For the actual original complex-minus-free mixed period error, use the original reciprocal-index value estimate and a root-ball Cauchy derivative estimate to prove the common high-row bound 2*D*exp((8/pi^2)*(R+2))*B times the positive reciprocal lattice, uniformly in the deleted index and bounded roots and potentials. This gives uniform operator output tails outside the fixed finite low head. Add the free and genuine error derivative remainders to obtain uniform output approximation for the actual scaled mixed-period derivative plus its positive-deleted projection. The existing common original analytic neighborhood supplies all source hypotheses, yielding one complex source neighborhood for these uniform tails on every prescribed compact complex root set.",
+    "scope": "All 844 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 841-module base has strict validation recorded at commit f75564c1be88c3b5fec00971f8d3d72285e80662 (complete 583-module strict focused run plus 258 isolated additions, all 841 source hashes unchanged, 6336-declaration axiom audit and successful aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6358-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 844-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "0501fc43616c0bec6cfd9c17c13033238744e510a19e16b2e013bacdbf48c3cd",
-      "scripts/check-kdv-estimates.sh": "cad90d83e921135801a74e7e506008e0689536e165548c1a5cbff8ffe43c8322",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "95c3aa37ea08f4829b24078f07e496e2e0bb3d2b9aeddd9d34fcaf66a796beb3"
+      "NLS.lean": "10461f5c65d4d928259ecd8fd57779a0c7c9524b43d40f1bbf995a3584e6cf04",
+      "scripts/check-kdv-estimates.sh": "b5ec9c45dd89706e24310a0c31929a0c24167567917b5eff0310e1248590ad86",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "9edcfcb6fdcd45cf0e1a2286505f5bc7393f63762835880e541a80893ac8dfc5"
     },
     "focused_build_execution": {
       "mode": "strict_delta",
-      "base_commit": "3f5495faa967898e3bfc5f6ed57ddf648dfec908",
-      "base_focused_modules": 839,
-      "base_verification_sha256": "1a7ea8e7fc5ffe3adf3f5e9cb708333be617228ab1dbd99ec89609a82df2b0cc",
+      "base_commit": "f75564c1be88c3b5fec00971f8d3d72285e80662",
+      "base_focused_modules": 841,
+      "base_verification_sha256": "cf383f470112ff6ced913049a40302e1b5a43509a92f9b5bad442e149b42d626",
       "base_sources_unchanged": true,
-      "base_validation_description": "complete 583-module strict focused run plus 256 isolated additions, all 839 source hashes unchanged, 6328-declaration axiom audit and successful aggregate",
+      "base_validation_description": "complete 583-module strict focused run plus 258 isolated additions, all 841 source hashes unchanged, 6336-declaration axiom audit and successful aggregate",
       "new_modules": [
-        "NLS/ComplexAnalysis/HilbertWeakMovingInput.lean",
-        "NLS/KdV/HillFreeUniformDiagonalTail.lean"
+        "NLS/SequenceSpaces/UniformOperatorOutputTails.lean",
+        "NLS/KdV/HillFreeUniformDerivativeTail.lean",
+        "NLS/KdV/HillMixedUniformDerivativeTail.lean"
       ],
       "new_source_sha256": {
-        "NLS/ComplexAnalysis/HilbertWeakMovingInput.lean": "03d8999bd02e39d7972242b849af9c35ce916698f8ee80008181a21b7e0aa5ed",
-        "NLS/KdV/HillFreeUniformDiagonalTail.lean": "9e2c40255e7f75f480c7523f9428b5a713be869bf102b3706e3e13184e5595e4"
+        "NLS/SequenceSpaces/UniformOperatorOutputTails.lean": "3f0242a1d7f95abd6af89b844d0100fc227f3d0a389fe2d857ca08a25bdff457",
+        "NLS/KdV/HillFreeUniformDerivativeTail.lean": "d27a06aae1070ff1f2e104cdc89987f30177ca76088aff1e629ce6ceb5789246",
+        "NLS/KdV/HillMixedUniformDerivativeTail.lean": "6e79dbcf669e3fa81c3ca9c48dd881513f27d90b30e5311742f3d5a30390450f"
       },
       "isolated_stage_exit_code": 0,
       "isolated_stage_source_matches_integrated": true,
       "expanded_axiom_audit_exit_code": 0,
-      "transitive_axiom_audit_declarations": 6336,
+      "transitive_axiom_audit_declarations": 6358,
       "complete_current_focused_script_rerun": false
     },
     "additional_shared_source_checks": [
       {
-        "module": "NLS/ComplexAnalysis/HilbertWeakWeightLimits.lean",
-        "sha256": "2c6d5bad120dfd7e4cb86c5752a1ace43a9d8432a4cd66a2320795e2b8e80a02",
-        "committed_base": "3f5495faa967898e3bfc5f6ed57ddf648dfec908",
+        "module": "NLS/SequenceSpaces/TotalBoundedTails.lean",
+        "sha256": "29fd4936576e17c2c64c1fff31248acfe506171dd2c54e5cbce9b673d4941a10",
+        "committed_base": "f75564c1be88c3b5fec00971f8d3d72285e80662",
         "declarations_used": [
-          "NLS.ComplexAnalysis.tendsto_holderProduct_of_bounded_weak_weights"
+          "NLS.Coeff.tendstoUniformlyOn_norm_tail_of_isCompact"
         ],
         "fresh_strict_source_check": {
           "exit_code": 0,
-          "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/ComplexAnalysis/HilbertWeakWeightLimits.lean",
-          "log": "check/reuse-uniform-diagonal-weak-weights.log"
+          "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/SequenceSpaces/TotalBoundedTails.lean",
+          "log": "check/reuse-uniform-jacobian-compact-tails.log"
         },
-        "purpose": "Reuse the proved fixed-input weak-weight Holder limit before controlling the moving-input difference by the original Holder norm estimate."
+        "purpose": "Uniform Hilbert output tails on the compact set of actual free derivative row majorants."
       },
       {
-        "module": "NLS/KdV/HillFreeSeparatedWeights.lean",
-        "sha256": "0b89e9cfda0936ccb4527d00d5fb68f627d321de719800367c7061d3f3c5cadc",
-        "committed_base": "3f5495faa967898e3bfc5f6ed57ddf648dfec908",
+        "module": "NLS/ComplexAnalysis/BanachTaylorBounds.lean",
+        "sha256": "e75db211483525ebd1e8b3cd673015782257db2ba25a3597db30c5d4b0ebaa90",
+        "committed_base": "f75564c1be88c3b5fec00971f8d3d72285e80662",
         "declarations_used": [
-          "NLS.KdV.hillFreeSeparatedWeightSymbol_bound",
-          "NLS.KdV.norm_hillFreeSeparatedWeight_le"
+          "NLS.ComplexAnalysis.norm_fderiv_le_of_ball_bound"
         ],
         "fresh_strict_source_check": {
           "exit_code": 0,
-          "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/KdV/HillFreeSeparatedWeights.lean",
-          "log": "check/reuse-uniform-diagonal-separated.log"
+          "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/ComplexAnalysis/BanachTaylorBounds.lean",
+          "log": "check/reuse-uniform-jacobian-Cauchy.log"
         },
-        "purpose": "Use the original pointwise weight majorant independent of the deleted index, with its actual uniform Hilbert norm bound."
+        "purpose": "Obtain actual uniform high derivative rows from the original contour value estimate on root balls."
       },
       {
-        "module": "NLS/SequenceSpaces/Multiplier.lean",
-        "sha256": "9f2942f6993033fad92fab256b1398cfb59c5a6273e8c8c55e21a501a1073d36",
-        "committed_base": "3f5495faa967898e3bfc5f6ed57ddf648dfec908",
+        "module": "NLS/KdV/HillMixedPeriodErrorBound.lean",
+        "sha256": "594e4455a582861625f8c3b3d4773f97e423e09e19633b0791540ecfee8d77d8",
+        "committed_base": "f75564c1be88c3b5fec00971f8d3d72285e80662",
         "declarations_used": [
-          "NLS.Coeff.multiplierCLM_apply",
-          "NLS.Coeff.multiplier_apply"
+          "NLS.KdV.norm_hillMixedComplexPeriodSequence_sub_free_high_coordinate_le"
         ],
         "fresh_strict_source_check": {
           "exit_code": 0,
-          "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/SequenceSpaces/Multiplier.lean",
-          "log": "check/reuse-uniform-diagonal-multiplier.log"
+          "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/KdV/HillMixedPeriodErrorBound.lean",
+          "log": "check/reuse-uniform-jacobian-original-error.log"
         },
-        "purpose": "Convert uniform small diagonal correction coefficients into operator-norm output tail bounds for the actual Hilbert multipliers."
+        "purpose": "Preserve the original actual mixed-minus-free scaled contour value estimate uniformly in the omitted differential index."
       }
     ]
   },
@@ -3186,13 +3200,18 @@
       "milestone": "Fixed-gap original centered and Dirichlet analytic data",
       "exit_code": 75,
       "reason": "Actual shared-lock timeout; preserved attempt-1 status and log. Retried the same shared-lock command successfully."
+    },
+    {
+      "milestone": "Uniform output tails of the actual scaled mixed-period Jacobian remainders",
+      "exit_code": 75,
+      "reason": "Actual first aggregate attempt deferred at the shared build lock; preserved attempt-1 status/log. Subsequent identical lock command succeeded."
     }
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Uniform free diagonal output tails on compact root sets for arbitrary deleted index",
-    "focused_modules": 841,
-    "scope": "All 841 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 839-module base has strict validation recorded at commit 3f5495faa967898e3bfc5f6ed57ddf648dfec908 (complete 583-module strict focused run plus 256 isolated additions, all 839 source hashes unchanged, 6328-declaration axiom audit and successful aggregate), and all 2 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6336-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 841-module focused script, full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Uniform output tails of the actual scaled mixed-period Jacobian remainders",
+    "focused_modules": 844,
+    "scope": "All 844 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 841-module base has strict validation recorded at commit f75564c1be88c3b5fec00971f8d3d72285e80662 (complete 583-module strict focused run plus 258 isolated additions, all 841 source hashes unchanged, 6336-declaration axiom audit and successful aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6358-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 844-module focused script, full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",
@@ -3462,6 +3481,12 @@
       "milestone": "Actual full mixed positive Hilbert period map and Fredholm bijectivity",
       "focused_modules": 839,
       "scope": "All 839 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 833-module base has strict validation recorded at commit ec57bd7ccd1fd55b2d3df30c0410fd324e28b0cf (complete 583-module strict focused run plus 250 isolated additions, all 833 source hashes unchanged, 6265-declaration axiom audit and successful aggregate), and all 6 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6328-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 839-module focused script, full Lake rebuild and full repository examples were not rerun."
+    },
+    {
+      "status": "passed",
+      "milestone": "Uniform free diagonal output tails on compact root sets for arbitrary deleted index",
+      "focused_modules": 841,
+      "scope": "All 841 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 839-module base has strict validation recorded at commit 3f5495faa967898e3bfc5f6ed57ddf648dfec908 (complete 583-module strict focused run plus 256 isolated additions, all 839 source hashes unchanged, 6328-declaration axiom audit and successful aggregate), and all 2 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6336-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 841-module focused script, full Lake rebuild and full repository examples were not rerun."
     }
   ]
 }

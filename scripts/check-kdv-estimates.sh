@@ -162,6 +162,7 @@ modules+=(NLS/ComplexAnalysis/HilbertProductWeakDerivative NLS/KdV/HillFullProdu
 modules+=(NLS/KdV/HillFreeFullPeriodSequence NLS/KdV/HillProductPeriodParameterLimit NLS/KdV/HillFreeFullPeriodMatching NLS/KdV/HillFullComplexPeriodError)
 modules+=(NLS/KdV/HillFullLowPeriodMap NLS/KdV/HillHighProductPeriodMatching NLS/KdV/HillFullMixedPeriodMap NLS/KdV/HillFullMixedPeriodPhysical NLS/KdV/HillFullMixedPeriodCompact NLS/KdV/HillFullMixedSupportedFredholm)
 modules+=(NLS/ComplexAnalysis/HilbertWeakMovingInput NLS/KdV/HillFreeUniformDiagonalTail)
+modules+=(NLS/SequenceSpaces/UniformOperatorOutputTails NLS/KdV/HillFreeUniformDerivativeTail NLS/KdV/HillMixedUniformDerivativeTail)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

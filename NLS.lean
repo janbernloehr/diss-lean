@@ -5763,3 +5763,6 @@ import NLS.KdV.HillFullMixedPeriodCompact
 import NLS.KdV.HillFullMixedSupportedFredholm
 import NLS.ComplexAnalysis.HilbertWeakMovingInput
 import NLS.KdV.HillFreeUniformDiagonalTail
+import NLS.SequenceSpaces.UniformOperatorOutputTails
+import NLS.KdV.HillFreeUniformDerivativeTail
+import NLS.KdV.HillMixedUniformDerivativeTail
