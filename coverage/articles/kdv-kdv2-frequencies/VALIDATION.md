@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual normalized differential stationarity for both PDEs
+## Latest actual PDE derivatives of the physical Abelian angle
+
+The checked terminal-angle patch is promoted. Both actual physical PDE fields now have proved terminal-angle velocities, including terminal bandedges. The same actual first-variation data compute genuine Abelian integral derivatives and every matching regular correction derivative at both open and closed terminal gaps.
+
+Normal analytic convergence justifies differentiation of the infinite physical correction sum. Adding the own terminal angle cancels its single subtraction. For ONE genuinely complex-L2-analytic raw physical angle germ A=epsilon-pi+S, partial sums of psi_n(mu_k)*K_k converge to DA[V] for BOTH literal physical KdV/KdV2 fields. The own selected angle gap must be open; arbitrary other gaps may be closed. No source mean-zero assumption. See `ACTUAL_ABELIAN_PDE_MOTION.md`.
+
+Prior strict evidence for all 1043 unchanged selected baseline sources; strict dependency-order compilation of eleven new modules; then a fresh combined transitive axiom audit of all 1054 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1081 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1054-module rebuild is claimed.
+
+Fresh audit: 9590 selected and 32035 imported NLS declarations, permitted axioms only. The actual spectral sums still need evaluation as the Hamiltonian frequencies (69)/(84). All eleven main theorem rows remain OPEN.
+
+## Earlier actual normalized differential stationarity for both PDEs
 
 Every fixed tangent annihilating all actual Hill traces now has proved stationarity of the actual continued primitive, local roots, gap data and deflation, intrinsic and free-tail periods, and the full Hilbert-valued normalization equation. Its invertible implicit derivative constructs ONE analytic normalized root branch stationary in every such tangent. ONE genuinely analytic canonical numerator germ matches the physical family near the real base, at all energies, with the same stationarity.
 
@@ -236,14 +246,14 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1043 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1054 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: prior 1034-module strict evidence; all nine additions
+Earlier validation output: prior 1034-module strict evidence; all nine additions
 strictly compiled in dependency order; then a fresh combined transitive axiom
 audit of all 1043 selected modules:
 
@@ -1305,7 +1315,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1043 selected modules (including generated and private declarations)
+the 1054 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -2498,3 +2508,20 @@ Audit: 6223 selected declarations; 28466 imported NLS declarations, permitted st
 See `ACTUAL_GARDNER_SOURCE_TANGENTS.md`. Prior strict validation of 569 unchanged selected sources, strict compilation of three new actual rough Hill source-tangent/stationarity modules, then a fresh full combined transitive axiom audit of all 572 selected modules. No new branch imports or changes to existing source/reuse records. Exact selections, transitive selected dependency order, source hashes, private fresh outputs, ten shared-import records, canonical helper reuse hashes and clean unchanged canonical main verified. No repeated full 572-module build is claimed.
 
 Audit: 6246 selected declarations; 28489 imported NLS declarations, permitted standard axioms only. Actual rough trace involution, coefficient-space mean-zero even Fourier tangents, zero actual trace and spectral-derivative source variations, actual Dirichlet branch variations, and primitive/root stationarity on the actual continuation domain are proved. Normalized numerator and angle variations, physical frequency69, and all main rows remain open.
+
+Latest strict additions and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillTraceStationaryTerminalAngle
+PASS NLS/Articles/KdVKdV2Frequencies/SmoothTerminalAngleMotion
+PASS NLS/KdV/HillDirichletVelocityData
+PASS NLS/KdV/HillDirichletVelocityAbelianIntegral
+PASS NLS/KdV/HillDirichletVelocityOpenCorrection
+PASS NLS/Articles/KdVKdV2Frequencies/SmoothDirichletVelocityData
+PASS NLS/KdV/HillDirichletVelocityClosedCorrection
+PASS NLS/KdV/HillDirichletVelocityCorrection
+PASS NLS/KdV/HillDirichletVelocitySummedCorrection
+PASS NLS/KdV/HillDirichletVelocityAbelianAngle
+PASS NLS/Articles/KdVKdV2Frequencies/SmoothAbelianAngleMotion
+Axiom audit passed: 9590 candidate declarations; 32035 declarations total.
+```

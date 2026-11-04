@@ -15075,9 +15075,186 @@
       "scope": "Discharges trace stationarity using the proved literal physical KdV and KdV2 Fourier fields. For every real smooth period-one potential and every selected numerator index, chooses ONE genuine analytic normalized differential germ with both actual PDE source derivatives zero and ONE nearby-real physical matching neighborhood valid at all complex energies. The source may have nonzero mean and all gaps may be closed. Zero-source parity/reality facts are proved internally; no supplied normalized stationary family is required.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "1c7dc6d3436147a0fd096f7c92014e0cdbbddd00c93aa5a0c12eb60204d44db6"
+    },
+    {
+      "path": "NLS/KdV/HillTraceStationaryTerminalAngle.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual Abelian coordinate dynamics; physical equations (1)-(3); necessary frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Promotes both checked general terminal-angle proofs. For an even tangent annihilating every actual Hill trace, the actual Dirichlet root and moving signed-sheet first variations determine the derivative of every differentiable physical matching terminal angle. Uses both trigonometric coordinate variations and actual deflated energy factor; includes terminal bandedges without division by sine. Selected angle gap open, arbitrary other gaps closed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "606436aa5ae60fb9433fcd76fa3b6ac2f9d11a02e12d96828951effca886987e"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/SmoothTerminalAngleMotion.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual Abelian coordinate dynamics; physical equations (1)-(3); necessary frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Computes terminal-angle derivatives of the actual physical KdV and KdV2 Fourier fields, discharging both endpoint velocities using the published actual Dirichlet and signed-sheet theorems. Exact coefficients are -2(q(0)+2mu)/Dprime(mu) and -2(-qxx(0)+3q(0)^2+4mu q(0)+8mu^2)/Dprime(mu). Every differentiable nearby-real physical matching angle is covered, including terminal bandedges. No source mean-zero hypothesis.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "91d93fcc4b2741a680e8ae47d579e1c307e7d3167f430f1bceb862f09cc60ead"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletVelocityData.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual Abelian coordinate dynamics; physical equations (1)-(3); necessary frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Packages only proved first-derivative properties of actual maps: even tangent, actual trace stationarity at every energy, actual analytic Dirichlet root and moving signed-sheet velocities. Deduces the derivative of any matching terminal angle. No spectral model, angle velocity or frequency is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "534f7fb9fb910e945ba6c15cc767d10e88eda8d2429423105790182e133c924c"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletVelocityAbelianIntegral.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual Abelian coordinate dynamics; physical equations (1)-(3); necessary frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "One genuine analytic sheeted Dirichlet integral germ works for every tangent with the actual Dirichlet velocity data. Its derivative is the actual selected normalized numerator at the physical Dirichlet energy times the velocity coefficient. Source contribution vanishes by actual trace-stationary primitive calculus. Selected terminal gap open; terminal bandedges and arbitrary other closed gaps included.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3b9518d756814dfe6dbd9fc82a8573b8a21f678553225a47cd75b8cea78d337a"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletVelocityOpenCorrection.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual Abelian coordinate dynamics; physical equations (1)-(3); necessary frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "For every differentiable physical matching regular correction at an open terminal gap, proves the actual normalized numerator contribution minus the own-gap terminal-angle contribution. Tangent hypotheses concern only actual trace/root/sheet first variations. Includes terminal bandedges.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "16f626ac0318a8140c703b71ebde6660fe640942600889494ea9717aa47cff2f"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/SmoothDirichletVelocityData.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual Abelian coordinate dynamics; physical equations (1)-(3); necessary frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Proves the full shared actual Dirichlet first-variation data for both literal physical Fourier PDE fields at every positive label, including closed gaps. Supplies actual parity and universal trace stationarity, root and moving signed-sheet velocities; no normalized spectral/angle flow is postulated.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4497c89f11dd3348b83d5a168833aaa1adb887749eea7c8187bdd21f1781e703"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletVelocityClosedCorrection.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual Abelian coordinate dynamics; physical equations (1)-(3); necessary frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Constructs an actual analytic quadratic closed-gap correction germ stationary in every tangent with the actual Dirichlet velocity data, and transfers its zero derivative to every differentiable nearby-real physical matching extension. Uses the actual zero signed sheet and zero Delta*Delta_E at a collapsed gap. No open terminal angle is chosen at a closed gap.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bbf416181d4bc0668e7cb44c5a7a162738edbd22be6096dc7811630053cd7496"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletVelocityCorrection.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual Abelian coordinate dynamics; physical equations (1)-(3); necessary frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Combines open and closed terminal gaps into one per-index first-variation formula for actual regular Abelian corrections. Only the own selected angle gap must be open; any index in the infinite sum may be closed. Actual normalized numerator vanishing at other closed gaps is used.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "367e8d43e8c50fef0f5ac8d0d494ec6d1b5b84ecd554cd661acdd68414d731bc"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletVelocitySummedCorrection.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual Abelian coordinate dynamics; physical equations (1)-(3); necessary frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Constructs one analytic germ of the actual physical infinite regular correction sum. For every actual trace/root/sheet velocity profile, proves its derivative equals the limit of the corresponding differentiated finite sums. Uses proved common analytic tail bounds and operator-norm derivative convergence. Does not assume a polynomial-growth interpolation limit or claim its evaluation as a frequency.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2b6896b149b73d8a20bbfdfdc37a7a1d99c7c8fce541758d575b34c387051474"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletVelocityAbelianAngle.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual Abelian coordinate dynamics; physical equations (1)-(3); necessary frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Constructs one genuine analytic raw physical Abelian angle A=epsilon-pi+S, with physical nearby-real matching and real values. For every actual Dirichlet velocity profile proves partial sums of psi_n(mu_k)*K_k converge to DA[V]. The own terminal contribution cancels the single regular-correction subtraction. Selected own gap open; arbitrary other closed gaps included.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "75b16a2357e55016883d90e9fdf69fa1640c4b7469c318c319bfc496f70aa1a8"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/SmoothAbelianAngleMotion.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual Abelian coordinate dynamics; physical equations (1)-(3); necessary frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Defines the exact actual KdV/KdV2 Dirichlet velocity coefficient profiles and proves both satisfy the shared actual first-variation data at all positive indices. For every real smooth period-one source with the selected gap open, constructs ONE genuinely complex-L2-analytic physical Abelian angle germ whose derivatives in BOTH literal PDE Fourier directions are the respective convergent actual Dirichlet sums. Includes terminal bandedges, arbitrary other closed gaps and nonzero mean. Does not identify the sums with the Hamiltonian frequency formulas (69)/(84).",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "49dc912d8a3d733f81806530eca3ea40cf43f20caee58f15b6e0a545b49b5ecb"
     }
   ],
   "dependencies_needed": [
+    "Actual terminal-angle velocities, open/closed regular correction variations and differentiated infinite physical Abelian angle sums are NOW proved. ONE physical analytic angle germ has both actual PDE derivatives given by the convergent Dirichlet spectral sums. Remaining: evaluate these sums and identify actual Hamiltonian frequencies (69)/(84); full canonicality/Fourier zero jet/native Banach map and inverse/rough W realization/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
     "All TWELVE former private TraceStationaryRootTest proofs are NOW promoted, audited and published. Arbitrary fixed tangents annihilating all actual traces have proved primitive/root/gap/deflation/period/implicit-normalization/canonical numerator/filled differential/Abelian primitive source stationarity. ONE genuine canonical numerator germ is proved stationary in BOTH actual physical PDE fields. Remaining: actual terminal-angle velocities from the proved endpoint pair, summed actual Abelian phase velocities/frequency69/84, full canonicality/Fourier zero jet/native Banach coordinate analyticity/inverse/rough W realization/PDE flow existence. All eleven main rows remain OPEN.",
     "Actual Dirichlet branch and moving signed-sheet velocities of BOTH printed PDE fields are NOW proved, with exact physical normalization and terminal band edges/closed gaps included. All five former private DirichletLenardTest results are promoted or subsumed. Remaining: generalize trace-stationary local/root/normalized/angle derivatives to actual PDE directions, sum actual Abelian phase velocities and identify actual frequencies69/84; full canonicality/Fourier zero jet/Banach coordinate analyticity/inverse/rough W compatibility and PDE flow existence remain open. All eleven main theorem rows remain OPEN.",
     "The literal smooth KdV and KdV2 Fourier vector fields are NOW proved real, mean-zero, physically reconstructed and stationary for every actual Hill discriminant and actual action, including arbitrary closed selected gaps. The source need not have zero mean. Remaining: actual coordinate phase velocities/frequency69/84 and Hamiltonian identification, full canonicality, Fourier differential at zero, full Banach coordinate analyticity/inverse and rough W/PDE flow realization. All eleven main theorem rows remain OPEN.",
@@ -15115,15 +15292,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 9523,
-    "total_declarations_audited": 31968,
+    "candidate_declarations_audited": 9590,
+    "total_declarations_audited": 32035,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1043,
+    "selected_modules": 1054,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -15158,7 +15335,8 @@
     "conjugate_analytic_validation_sequence": "Prior strict evidence for all 1008 unchanged selected baseline sources; strict dependency-order compilation of sixteen byte-identical canonical holomorphic calculus dependencies and three new proof modules; then a fresh combined transitive axiom audit of all 1027 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1054 frozen source/checker/provenance hashes, 25 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1027-module rebuild is claimed.",
     "physical_pde_stationarity_validation_sequence": "Prior strict evidence for all 1027 unchanged selected baseline sources; strict dependency-order compilation of three new proof modules; then a fresh combined transitive axiom audit of all 1030 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1057 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1030-module rebuild is claimed.",
     "dirichlet_motion_validation_sequence": "Prior strict evidence for all 1030 unchanged selected baseline sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 1034 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1061 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1034-module rebuild is claimed.",
-    "trace_normalization_validation_sequence": "Prior strict evidence for all 1034 unchanged selected baseline sources; strict dependency-order compilation of nine new proof modules; then a fresh combined transitive axiom audit of all 1043 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1070 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1043-module rebuild is claimed."
+    "trace_normalization_validation_sequence": "Prior strict evidence for all 1034 unchanged selected baseline sources; strict dependency-order compilation of nine new proof modules; then a fresh combined transitive axiom audit of all 1043 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1070 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1043-module rebuild is claimed.",
+    "abelian_pde_motion_validation_sequence": "Prior strict evidence for all 1043 unchanged selected baseline sources; strict dependency-order compilation of eleven new modules; then a fresh combined transitive axiom audit of all 1054 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1081 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1054-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -15405,5 +15583,6 @@
   "conjugate_analytic_record": "SIGNED_ANALYTIC_ACTION_CRITICAL_LOCUS.md",
   "physical_pde_stationarity_record": "PHYSICAL_PDE_STATIONARITY.md",
   "dirichlet_motion_record": "PHYSICAL_DIRICHLET_MOTION.md",
-  "trace_normalization_record": "TRACE_STATIONARY_NORMALIZATION.md"
+  "trace_normalization_record": "TRACE_STATIONARY_NORMALIZATION.md",
+  "abelian_pde_motion_record": "ACTUAL_ABELIAN_PDE_MOTION.md"
 }

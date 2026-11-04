@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual normalized differential stationarity for both PDEs
+## Latest actual PDE derivatives of the physical Abelian angle
+
+The checked terminal-angle patch is promoted. Both actual physical PDE fields now have proved terminal-angle velocities, including terminal bandedges. The same actual first-variation data compute genuine Abelian integral derivatives and every matching regular correction derivative at both open and closed terminal gaps.
+
+Normal analytic convergence justifies differentiation of the infinite physical correction sum. Adding the own terminal angle cancels its single subtraction. For ONE genuinely complex-L2-analytic raw physical angle germ A=epsilon-pi+S, partial sums of psi_n(mu_k)*K_k converge to DA[V] for BOTH literal physical KdV/KdV2 fields. The own selected angle gap must be open; arbitrary other gaps may be closed. No source mean-zero assumption. See `ACTUAL_ABELIAN_PDE_MOTION.md`.
+
+Prior strict evidence for all 1043 unchanged selected baseline sources; strict dependency-order compilation of eleven new modules; then a fresh combined transitive axiom audit of all 1054 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1081 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1054-module rebuild is claimed.
+
+Fresh audit: 9590 selected and 32035 imported NLS declarations, permitted axioms only. The actual spectral sums still need evaluation as the Hamiltonian frequencies (69)/(84). All eleven main theorem rows remain OPEN.
+
+## Earlier actual normalized differential stationarity for both PDEs
 
 Every fixed tangent annihilating all actual Hill traces now has proved stationarity of the actual continued primitive, local roots, gap data and deflation, intrinsic and free-tail periods, and the full Hilbert-valued normalization equation. Its invertible implicit derivative constructs ONE analytic normalized root branch stationary in every such tangent. ONE genuinely analytic canonical numerator germ matches the physical family near the real base, at all energies, with the same stationarity.
 

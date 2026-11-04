@@ -184,11 +184,26 @@ import NLS.KdV.HillTraceStationaryPeriods
 import NLS.KdV.HillTraceStationaryCanonicalDifferential
 import NLS.KdV.HillTraceStationaryAbelianPrimitive
 import NLS.Articles.KdVKdV2Frequencies.NormalizedSpectralStationarity
+import NLS.KdV.HillTraceStationaryTerminalAngle
+import NLS.Articles.KdVKdV2Frequencies.SmoothTerminalAngleMotion
+import NLS.KdV.HillDirichletVelocityData
+import NLS.KdV.HillDirichletVelocityAbelianIntegral
+import NLS.KdV.HillDirichletVelocityOpenCorrection
+import NLS.Articles.KdVKdV2Frequencies.SmoothDirichletVelocityData
+import NLS.KdV.HillDirichletVelocityClosedCorrection
+import NLS.KdV.HillDirichletVelocityCorrection
+import NLS.KdV.HillDirichletVelocitySummedCorrection
+import NLS.KdV.HillDirichletVelocityAbelianAngle
+import NLS.Articles.KdVKdV2Frequencies.SmoothAbelianAngleMotion
 import Lean.Util.CollectAxioms
 
 /-! Transitive axiom audit of the candidate and its imported NLS dependencies.
 This deliberately imports specific modules, not the aggregate NLS library.
 -/
+
+
+
+
 
 open Lean in
 run_cmd do
@@ -1236,7 +1251,18 @@ run_cmd do
     `NLS.KdV.HillTraceStationaryCanonicalDifferential,
     `NLS.KdV.HillTraceStationaryFilledDifferential,
     `NLS.KdV.HillTraceStationaryAbelianPrimitive,
-    `NLS.Articles.KdVKdV2Frequencies.NormalizedSpectralStationarity
+    `NLS.Articles.KdVKdV2Frequencies.NormalizedSpectralStationarity,
+    `NLS.KdV.HillTraceStationaryTerminalAngle,
+    `NLS.Articles.KdVKdV2Frequencies.SmoothTerminalAngleMotion,
+    `NLS.KdV.HillDirichletVelocityData,
+    `NLS.KdV.HillDirichletVelocityAbelianIntegral,
+    `NLS.KdV.HillDirichletVelocityOpenCorrection,
+    `NLS.Articles.KdVKdV2Frequencies.SmoothDirichletVelocityData,
+    `NLS.KdV.HillDirichletVelocityClosedCorrection,
+    `NLS.KdV.HillDirichletVelocityCorrection,
+    `NLS.KdV.HillDirichletVelocitySummedCorrection,
+    `NLS.KdV.HillDirichletVelocityAbelianAngle,
+    `NLS.Articles.KdVKdV2Frequencies.SmoothAbelianAngleMotion
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
