@@ -913,6 +913,10 @@ import NLS.KdV.HillRecenteredPhysicalMatching
 import NLS.KdV.HillFixedPhysicalMoments
 import NLS.KdV.HillRealSourceMomentGerms
 import NLS.KdV.HillPhysicalActionGradients
+import NLS.ComplexAnalysis.QuadraticHillSystemBoundaryPairing
+import NLS.KdV.HillDirichletQuadraticSystem
+import NLS.KdV.HillDiscriminantDirichletBrackets
+import NLS.KdV.HillActionDirichletBrackets
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1447,7 +1451,9 @@ run_cmd do
     ``NLS.ComplexAnalysis.TracePrimitiveFamily.fderiv_contourMoment_apply,
     ``NLS.ComplexAnalysis.continuousSquareRoots_eqOn,
     ``NLS.ComplexAnalysis.continuousCoshPrimitives_eqOn,
-    ``NLS.ComplexAnalysis.circleIntegral_eq_of_eq_on_nonreal]
+    ``NLS.ComplexAnalysis.circleIntegral_eq_of_eq_on_nonreal,
+    ``NLS.ComplexAnalysis.quadraticHillSystem_pairing_boundary_identity,
+    ``NLS.ComplexAnalysis.quadraticHillSystem_pairing_dirichlet_boundary]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

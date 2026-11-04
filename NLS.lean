@@ -5836,3 +5836,7 @@ import NLS.KdV.HillRecenteredPhysicalMatching
 import NLS.KdV.HillFixedPhysicalMoments
 import NLS.KdV.HillRealSourceMomentGerms
 import NLS.KdV.HillPhysicalActionGradients
+import NLS.ComplexAnalysis.QuadraticHillSystemBoundaryPairing
+import NLS.KdV.HillDirichletQuadraticSystem
+import NLS.KdV.HillDiscriminantDirichletBrackets
+import NLS.KdV.HillActionDirichletBrackets
