@@ -839,3 +839,14 @@ The actual action product `I_n=z_n*z_-n` determines its differential on every co
 Prior strict evidence for all 1008 unchanged selected baseline sources; strict dependency-order compilation of sixteen byte-identical canonical holomorphic calculus dependencies and three new proof modules; then a fresh combined transitive axiom audit of all 1027 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1054 frozen source/checker/provenance hashes, 25 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1027-module rebuild is claimed.
 
 Fresh audit: 9402 selected and 31847 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+
+## Latest physical KdV and KdV2 spectral/action stationarity
+
+Both actual smooth PDE fields now have explicit Fourier velocities that reconstruct their literal physical right sides, are real on real sources and have zero mean. A reusable actual trace-kernel concomitant proves each actual L2 Hill discriminant has zero source differential along these fields, at every complex energy and smooth complex period-one source. For real sources, every differentiable matching actual action extension has zero derivative along either PDE field, at open or closed selected gaps. Source mean zero is not required.
+
+The proof computes the two exact Lenard seeds and uses actual scalar fundamental solutions, bounded physical Fourier analysis, the actual trace gradient and the previously proved universal action contour derivative. No isospectral evolution or frequency formula is assumed. See `PHYSICAL_PDE_STATIONARITY.md`. Coordinate phase velocities, actual Hamiltonian frequency identities and flow existence remain open.
+
+Prior strict evidence for all 1027 unchanged selected baseline sources; strict dependency-order compilation of three new proof modules; then a fresh combined transitive axiom audit of all 1030 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1057 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1030-module rebuild is claimed.
+
+Fresh audit: 9454 selected and 31899 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.

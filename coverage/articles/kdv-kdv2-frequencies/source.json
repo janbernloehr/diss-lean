@@ -14813,9 +14813,64 @@
       "scope": "Proves the actual action product differential on every complexified physical period-one tangent, independent of every matching differentiable action/positive/negative extension. Closed selected gaps force the full physical action differential to vanish. Every physical weak action Hamiltonian vector then vanishes at a closed gap. Conversely the actual normalized action contour vector is nonzero at every open selected gap, by its proved coordinate phase derivative and actual coordinate zero locus. Thus both the action critical locus and normalized action Hamiltonian-vector zero locus equal precisely the actual closed-gap locus.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "be540da4be581177095366be71f8bb2351581045791c3bef9e26ce00234f4b2d"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillLenardIdentity.lean",
+      "source_labels": [
+        "Physical equations (1)-(3); Theorem 1.1 necessary actual PDE spectral/action bridge; Theorems 1.12 and 3.10 necessary smooth flow identities"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        36,
+        37
+      ],
+      "scope": "Reusable actual trace-kernel identity at every smooth complex period-one potential and every complex spectral parameter. Constructs an explicit concomitant using the actual fundamental-state trace kernel, its spatial derivative and velocity flux, and proves its genuine derivative equals the kernel times the evaluated Lenard differential expression. Actual periodic endpoints force the period integral to vanish. No Lax or spectral-stationarity hypothesis is supplied.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7e105ebfc235a69a984053c07cd49a47347785d239a3b951e6b9e9b5a42d3dac"
+    },
+    {
+      "path": "NLS/KdV/HillPolynomialDirections.lean",
+      "source_labels": [
+        "Physical equations (1)-(3); Theorem 1.1 necessary actual PDE spectral/action bridge; Theorems 1.12 and 3.10 necessary smooth flow identities"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        36,
+        37
+      ],
+      "scope": "Constructs actual source directions of smooth evaluated differential polynomials using the bounded unit-interval Fourier analysis map and canonical even insertion. Proves physical almost-everywhere reconstruction, exact mean coefficient and physical conjugate Fourier reality for real evaluated fields. Identifies their actual L2 Hill discriminant derivative with the literal scalar trace-kernel integral. Applies the proved concomitant to show every actual Lenard direction annihilates the actual trace at its spectral parameter.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7fabc1fb701663d542d5beeeccf50fddf5a404c13b2d18791ec3dabed230d075"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/SmoothSpectralStationarity.lean",
+      "source_labels": [
+        "Physical equations (1)-(3); Theorem 1.1 necessary actual PDE spectral/action bridge; Theorems 1.12 and 3.10 necessary smooth flow identities"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        36,
+        37
+      ],
+      "scope": "For both actual printed KdV and KdV2 PDE right sides, computes exact spectral-parameter-dependent Lenard seeds and proves the resulting polynomial field is independent of that parameter. Constructs actual Fourier velocities, proves they reconstruct the literal physical PDE fields, have zero mean and are real at every real smooth source. Proves the actual L2 Hill discriminant has zero full source derivative along either PDE field at every complex energy, for every smooth complex period-one source. For real sources, proves every differentiable nearby-real physical matching action extension has zero derivative along either actual PDE direction, including all closed selected gaps. No mean-zero assumption on the source, gap-opening assumption, flow existence, coordinate phase frequency or Hamiltonian-frequency formula is supplied or inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "534442182b431605ac7bf349538e925980d4c6a21487d810f31345741d0db7e9"
     }
   ],
   "dependencies_needed": [
+    "The literal smooth KdV and KdV2 Fourier vector fields are NOW proved real, mean-zero, physically reconstructed and stationary for every actual Hill discriminant and actual action, including arbitrary closed selected gaps. The source need not have zero mean. Remaining: actual coordinate phase velocities/frequency69/84 and Hamiltonian identification, full canonicality, Fourier differential at zero, full Banach coordinate analyticity/inverse and rough W/PDE flow realization. All eleven main theorem rows remain OPEN.",
     "Negative scalar coordinate power-series analyticity is NOW proved through every closed selected gap. Actual action product differentials are proved on the entire physical complexified tangent. The actual action critical locus and actual action Hamiltonian-vector zero locus are exactly the closed-gap locus. Remaining: full Banach-valued coordinate analyticity, canonical coordinate/angle brackets, Fourier differential at zero, global inverse/rough W compatibility and actual Hamiltonian frequencies69/84/PDE identification. All eleven main theorem rows remain OPEN.",
     "Actual action Hamiltonian vectors are NOW proved real in the physical conjugate-Fourier sense at every real source, including closed gaps. Actual real action differentials commute with conjugate reflection. Genuine complex differentiable negative-coordinate physical matching germs and universal opposite signed infinitesimal action laws are proved. Remaining: full negative-germ power-series analyticity, canonical coordinate/angle brackets, Fourier differential at zero, full Banach analytic map/inverse/rough W compatibility and actual Hamiltonian frequency69/84/PDE identities. All main theorem conclusions remain open.",
     "The actual contour tangent Y_m is NOW proved to be the unique period-one mean-zero physical weak Gardner Hamiltonian vector of the actual action I_m, through actual Fourier/L2 test pairings, integration by parts and separating wave tests. Actual actions commute, and all-gap mixed D z_n[X_(I_m)]=i*delta_mn*z_n is proved. Local actual phase has action-conjugate theta=-rawA with exp(-i theta) and derivative -delta_mn. Next: explicit reality and further canonical coordinate/angle brackets, exact Fourier differential at zero, full Banach analytic map/inverse/rough compatibility and actual Hamiltonian frequency/PDE identities. All main conclusions remain open.",
@@ -14850,15 +14905,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 9402,
-    "total_declarations_audited": 31847,
+    "candidate_declarations_audited": 9454,
+    "total_declarations_audited": 31899,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1027,
+    "selected_modules": 1030,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -14890,7 +14945,8 @@
     "action_variation_validation_sequence": "Prior strict evidence for all 988 unchanged selected baseline sources; strict dependency-order compilation of three byte-identical canonical calculus helpers and five new proof modules; then a fresh combined transitive axiom audit of all 996 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1020 frozen source/checker/provenance hashes, 22 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 996-module rebuild is claimed.",
     "hamiltonian_identification_validation_sequence": "Prior strict evidence for all 996 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical wave calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1002 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1027 frozen source/checker/provenance hashes, 23 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1002-module rebuild is claimed.",
     "real_signed_hamiltonian_validation_sequence": "Prior strict evidence for all 1002 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical real-axis calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1008 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1034 frozen source/checker/provenance hashes, 24 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1008-module rebuild is claimed.",
-    "conjugate_analytic_validation_sequence": "Prior strict evidence for all 1008 unchanged selected baseline sources; strict dependency-order compilation of sixteen byte-identical canonical holomorphic calculus dependencies and three new proof modules; then a fresh combined transitive axiom audit of all 1027 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1054 frozen source/checker/provenance hashes, 25 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1027-module rebuild is claimed."
+    "conjugate_analytic_validation_sequence": "Prior strict evidence for all 1008 unchanged selected baseline sources; strict dependency-order compilation of sixteen byte-identical canonical holomorphic calculus dependencies and three new proof modules; then a fresh combined transitive axiom audit of all 1027 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1054 frozen source/checker/provenance hashes, 25 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1027-module rebuild is claimed.",
+    "physical_pde_stationarity_validation_sequence": "Prior strict evidence for all 1027 unchanged selected baseline sources; strict dependency-order compilation of three new proof modules; then a fresh combined transitive axiom audit of all 1030 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1057 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1030-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -15134,5 +15190,6 @@
   "action_variation_record": "ACTION_COORDINATE_VARIATION.md",
   "hamiltonian_identification_record": "PHYSICAL_ACTION_HAMILTONIANS.md",
   "real_signed_hamiltonian_record": "REAL_SIGNED_ACTION_FIELDS.md",
-  "conjugate_analytic_record": "SIGNED_ANALYTIC_ACTION_CRITICAL_LOCUS.md"
+  "conjugate_analytic_record": "SIGNED_ANALYTIC_ACTION_CRITICAL_LOCUS.md",
+  "physical_pde_stationarity_record": "PHYSICAL_PDE_STATIONARITY.md"
 }

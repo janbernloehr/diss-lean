@@ -1036,6 +1036,9 @@ modules=(
   NLS/ComplexAnalysis/ConjugateAnalytic
   NLS/KdV/HillSignedAbelianAnalytic
   NLS/KdV/HillActionCoordinateDifferential
+  NLS/KdV/ClassicalHillLenardIdentity
+  NLS/KdV/HillPolynomialDirections
+  NLS/Articles/KdVKdV2Frequencies/SmoothSpectralStationarity
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

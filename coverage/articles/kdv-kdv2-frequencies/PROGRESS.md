@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest signed scalar analyticity and action critical locus
+## Latest physical KdV and KdV2 spectral/action stationarity
+
+Both actual smooth PDE fields now have explicit Fourier velocities that reconstruct their literal physical right sides, are real on real sources and have zero mean. A reusable actual trace-kernel concomitant proves each actual L2 Hill discriminant has zero source differential along these fields, at every complex energy and smooth complex period-one source. For real sources, every differentiable matching actual action extension has zero derivative along either PDE field, at open or closed selected gaps. Source mean zero is not required.
+
+The proof computes the two exact Lenard seeds and uses actual scalar fundamental solutions, bounded physical Fourier analysis, the actual trace gradient and the previously proved universal action contour derivative. No isospectral evolution or frequency formula is assumed. See `PHYSICAL_PDE_STATIONARITY.md`. Coordinate phase velocities, actual Hamiltonian frequency identities and flow existence remain open.
+
+Prior strict evidence for all 1027 unchanged selected baseline sources; strict dependency-order compilation of three new proof modules; then a fresh combined transitive axiom audit of all 1030 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1057 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1030-module rebuild is claimed.
+
+Fresh audit: 9454 selected and 31899 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier signed scalar analyticity and action critical locus
 
 The actual negative scalar coordinate now has a genuine complex L2 analytic matching extension through every closed selected gap. The previously recorded power-series gap for this scalar coordinate is closed: conjugating source and target preserves analyticity on a genuine complex neighborhood, using the verified canonical Banach holomorphic calculus. Full Banach-valued coordinate-map analyticity remains open.
 

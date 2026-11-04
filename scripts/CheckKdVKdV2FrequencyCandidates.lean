@@ -175,6 +175,8 @@ import NLS.Articles.KdVKdV2Frequencies.SignedMassInsertion
 import NLS.Articles.KdVKdV2Frequencies.FixedTimeNonextension
 import NLS.SequenceSpaces.HilbertEnergyDivergence
 import NLS.KdV.HillActionCoordinateDifferential
+import NLS.KdV.HillPolynomialDirections
+import NLS.Articles.KdVKdV2Frequencies.SmoothSpectralStationarity
 import Lean.Util.CollectAxioms
 
 /-! Transitive axiom audit of the candidate and its imported NLS dependencies.
@@ -1211,7 +1213,10 @@ run_cmd do
     `NLS.KdV.HillSignedAbelianHamiltonianVariation,
     `NLS.ComplexAnalysis.ConjugateAnalytic,
     `NLS.KdV.HillSignedAbelianAnalytic,
-    `NLS.KdV.HillActionCoordinateDifferential
+    `NLS.KdV.HillActionCoordinateDifferential,
+    `NLS.KdV.ClassicalHillLenardIdentity,
+    `NLS.KdV.HillPolynomialDirections,
+    `NLS.Articles.KdVKdV2Frequencies.SmoothSpectralStationarity
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
