@@ -1329,6 +1329,14 @@ modules = [
     'NLS.ComplexAnalysis.AnalyticEquivDerivativeInverse',
     'NLS.KdV.HillNativeComplexLocalInverse',
     'NLS.Articles.KdVPseudomeasures.OriginalHillSignedComplexCoordinates',
+    'NLS.FunctionalAnalysis.ComplexEquivRealRestriction',
+    'NLS.SequenceSpaces.FourierRealZeroSubmodule',
+    'NLS.SequenceSpaces.FourierRealZeroProjection',
+    'NLS.SequenceSpaces.RealMeanZeroHalfFourierEquiv',
+    'NLS.KdV.HillNativeRealSignedMap',
+    'NLS.FunctionalAnalysis.AnalyticEquivalenceInverse',
+    'NLS.KdV.HillNativeRealLocalInverse',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillRealSignedCoordinates',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -1295,6 +1295,14 @@ import NLS.KdV.HillNativeMeanZeroComplexMap
 import NLS.ComplexAnalysis.AnalyticEquivDerivativeInverse
 import NLS.KdV.HillNativeComplexLocalInverse
 import NLS.Articles.KdVPseudomeasures.OriginalHillSignedComplexCoordinates
+import NLS.FunctionalAnalysis.ComplexEquivRealRestriction
+import NLS.SequenceSpaces.FourierRealZeroSubmodule
+import NLS.SequenceSpaces.FourierRealZeroProjection
+import NLS.SequenceSpaces.RealMeanZeroHalfFourierEquiv
+import NLS.KdV.HillNativeRealSignedMap
+import NLS.FunctionalAnalysis.AnalyticEquivalenceInverse
+import NLS.KdV.HillNativeRealLocalInverse
+import NLS.Articles.KdVPseudomeasures.OriginalHillRealSignedCoordinates
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -8164,3 +8172,48 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillSignedComplexCoordinates
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_signed_Fourier_differential_even_modes
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_signed_mean_zero_derivative_equiv
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_signed_analytic_localInverse
+#print axioms NLS.FunctionalAnalysis.complexEquivRealRestriction
+#print axioms NLS.FunctionalAnalysis.complexEquivRealRestriction_apply
+#print axioms NLS.FunctionalAnalysis.complexEquivRealRestriction_symm_apply
+#print axioms NLS.WeightedCoeff.fourierRealZeroSubmodule
+#print axioms NLS.WeightedCoeff.mem_fourierRealZeroSubmodule
+#print axioms NLS.WeightedCoeff.isClosed_fourierRealZeroSubmodule
+#print axioms NLS.WeightedCoeff.zeroMode_add_val
+#print axioms NLS.WeightedCoeff.zeroMode_real_smul_val
+#print axioms NLS.WeightedCoeff.zeroModeConjugation
+#print axioms NLS.WeightedCoeff.zeroModeConjugation_apply
+#print axioms NLS.WeightedCoeff.zeroModeConjugationCLM
+#print axioms NLS.WeightedCoeff.zeroModeSymmetricPartCLM
+#print axioms NLS.WeightedCoeff.zeroModeSymmetricPartCLM_apply
+#print axioms NLS.WeightedCoeff.zeroModeSymmetricPartCLM_mem
+#print axioms NLS.WeightedCoeff.fourierRealZeroProjection
+#print axioms NLS.WeightedCoeff.fourierRealZeroProjection_coe
+#print axioms NLS.WeightedCoeff.fourierRealZeroProjection_inclusion
+#print axioms NLS.WeightedCoeff.halfFourierSymbol_conj
+#print axioms NLS.WeightedCoeff.halfFourierInverseSymbol_neg
+#print axioms NLS.WeightedCoeff.halfFourierInverseSymbol_conj
+#print axioms NLS.WeightedCoeff.meanZeroHalfFourierEquiv_real
+#print axioms NLS.WeightedCoeff.meanZeroHalfFourierEquiv_symm_real
+#print axioms NLS.WeightedCoeff.meanZeroHalfFourierEquiv_map_real
+#print axioms NLS.WeightedCoeff.realMeanZeroHalfFourierEquiv
+#print axioms NLS.WeightedCoeff.realMeanZeroHalfFourierEquiv_apply
+#print axioms NLS.WeightedCoeff.realMeanZeroHalfFourierEquiv_symm_apply
+#print axioms NLS.KdV.hillMeanZeroComplexMap_mem_real
+#print axioms NLS.KdV.hillRealSignedMap
+#print axioms NLS.KdV.hillRealSignedMap_coe
+#print axioms NLS.KdV.analyticAt_hillRealSignedMap
+#print axioms NLS.KdV.analyticOnNhd_hillRealSignedMap
+#print axioms NLS.KdV.hillRealSignedMap_zero
+#print axioms NLS.KdV.fderiv_hillRealSignedMap_zero
+#print axioms NLS.FunctionalAnalysis.exists_localInverse_of_equiv_fderiv
+#print axioms NLS.KdV.fderiv_hillRealSignedMap_zero_apply
+#print axioms NLS.KdV.exists_hillRealSignedMap_localInverse
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillRealSource
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillRealSource_same_distribution
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillRealSignedCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_matches_complex
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_analytic
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_action
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_derivative_equiv
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_derivative_even_modes
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_signed_localInverse
