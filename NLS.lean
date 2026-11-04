@@ -5731,3 +5731,5 @@ import NLS.KdV.HillUniformCenteredMeanFreePrimitives
 import NLS.KdV.HillCenteredMeanFreePhysicalMatching
 import NLS.KdV.HillCenteredQuadraticDirichletValue
 import NLS.KdV.HillUniformOwnRegularPhase
+import NLS.KdV.HillFixedGapNumeratorBounds
+import NLS.KdV.HillFixedGapFilledRootChart
