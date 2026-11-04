@@ -1267,6 +1267,19 @@ import NLS.KdV.HillFreeMiuraCriticalRatio
 import NLS.KdV.HillFreeFilledCriticalRatio
 import NLS.KdV.HillFreeCanonicalActionAmplitude
 import NLS.Articles.KdVPseudomeasures.OriginalHillFreeAmplitudeNormalization
+import NLS.ComplexAnalysis.CollapsedLinearFactorDerivative
+import NLS.KdV.HillFreeMiuraTraceCurvature
+import NLS.ZakharovShabat.SourceCollapsedRootMultiplier
+import NLS.KdV.HillFreeRootMultiplier
+import NLS.KdV.HillPhysicalFreeRootMultiplier
+import NLS.KdV.HillPhysicalFreeDirichletDerivative
+import NLS.KdV.HillPhysicalFreeRootCoefficientDerivative
+import NLS.KdV.HillPhysicalDiagonalFirstVariation
+import NLS.KdV.HillCanonicalCartesianFirstVariation
+import NLS.KdV.HillActionAngleFirstVariation
+import NLS.FunctionalAnalysis.LinearTargetDerivative
+import NLS.KdV.HillNativeCartesianFirstVariation
+import NLS.Articles.KdVPseudomeasures.OriginalHillCartesianFirstVariation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -8020,3 +8033,45 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillFreeAmplitudeNormalization
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_action_ratio
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_action_amplitude
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_normalized_Miura_ratio
+#print axioms NLS.ComplexAnalysis.hasDerivAt_comp_quadratic_shift
+#print axioms NLS.ComplexAnalysis.deriv_eq_of_collapsed_linear_factor
+#print axioms NLS.ComplexAnalysis.fderiv_square_energy_apply
+#print axioms NLS.ComplexAnalysis.fderiv_div_apply_of_zero
+#print axioms NLS.ComplexAnalysis.fderiv_three_factors_apply_of_middle_zero
+#print axioms NLS.ComplexAnalysis.fderiv_mul_apply_of_left_zero
+#print axioms NLS.ComplexAnalysis.fderiv_mul_apply_of_right_zero
+#print axioms NLS.KdV.classicalHillDirichlet_free_energy
+#print axioms NLS.KdV.deriv_discriminant_shifted_free_miura_eq_dirichlet
+#print axioms NLS.KdV.HillHminusMiuraGapBall.hasDerivAt_free_trace_deriv
+#print axioms NLS.ZakharovShabat.sourceGapRootMultiplier
+#print axioms NLS.ZakharovShabat.analyticOnNhd_sourceGapRootMultiplier_of_realType
+#print axioms NLS.ZakharovShabat.sourceGapRootMultiplier_collapsed_factor
+#print axioms NLS.ZakharovShabat.sourceGapRootMultiplier_collapsed_curvature
+#print axioms NLS.KdV.HillHminusMiuraGapBall.freeRootMultiplier_value
+#print axioms NLS.KdV.HillHminusMiuraGapBall.freeOmittedRootProduct_value
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletFrequency_zero_eq_midpoint
+#print axioms NLS.KdV.HillProductEquationPatch.abelianGapRootMultiplier_zero_midpoint
+#print axioms NLS.KdV.HillProductEquationPatch.abelianGapRootMultiplier_zero_divisor
+#print axioms NLS.KdV.HillProductEquationPatch.fderiv_physicalDirichletFrequency_zero_apply
+#print axioms NLS.KdV.HillProductEquationPatch.fderiv_physicalDirichletFrequency_zero_mean_zero
+#print axioms NLS.KdV.HillProductEquationPatch.fderiv_physicalFrequencyMidpoint_zero_mean_zero
+#print axioms NLS.KdV.HillProductEquationPatch.fderiv_physicalDirichletRootCoefficient_zero_apply
+#print axioms NLS.KdV.HillProductEquationPatch.fderiv_physicalOnIndexCartesianPlus_zero_mean_zero
+#print axioms NLS.KdV.HillProductEquationPatch.fderiv_physicalOnIndexCartesianMinus_zero_mean_zero
+#print axioms NLS.KdV.fderiv_hillHminusDiagonalCartesianPlus_zero_mean_zero
+#print axioms NLS.KdV.fderiv_hillHminusDiagonalCartesianMinus_zero_mean_zero
+#print axioms NLS.KdV.fderiv_hillHminusAbelianCartesianPlus_zero_mean_zero
+#print axioms NLS.KdV.fderiv_hillHminusAbelianCartesianMinus_zero_mean_zero
+#print axioms NLS.KdV.fderiv_hillHminusActionAngleFactorPlus_zero_mean_zero
+#print axioms NLS.KdV.fderiv_hillHminusActionAngleFactorMinus_zero_mean_zero
+#print axioms NLS.KdV.fderiv_hillHminusActionAngleX_zero_mean_zero
+#print axioms NLS.KdV.fderiv_hillHminusActionAngleY_zero_mean_zero
+#print axioms NLS.FunctionalAnalysis.fderiv_comp_clm_apply
+#print axioms NLS.KdV.fderiv_hillHminusNativeCartesianMap_fst_coordinate
+#print axioms NLS.KdV.fderiv_hillHminusNativeCartesianMap_snd_coordinate
+#print axioms NLS.KdV.fderiv_hillHminusNativeCartesianMap_positive_mean_zero
+#print axioms NLS.KdV.fderiv_hillHminusNativeCartesianMap_nonpositive
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_deleted_multiplier
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_differential
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_differential_even_modes
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_differential_nonpositive
