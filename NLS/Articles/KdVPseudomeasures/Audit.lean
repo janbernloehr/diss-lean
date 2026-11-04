@@ -1385,6 +1385,16 @@ import NLS.KdV.HillDirichletGardnerCommutation
 import NLS.KdV.HillCanonicalDirichletGardner
 import NLS.KdV.HillMixedDirichletGardner
 import NLS.Articles.KdVPseudomeasures.OriginalHillDirichletGardner
+import NLS.ComplexAnalysis.MovingCenterDSlope
+import NLS.KdV.HillDirichletFilledQuotient
+import NLS.KdV.HillFilledMixedGardner
+import NLS.ComplexAnalysis.AnalyticProductCancellation
+import NLS.KdV.HillDirichletSheetNontrivial
+import NLS.Poisson.GardnerSpectralCalculus
+import NLS.KdV.HillDirichletNormingGardner
+import NLS.KdV.HillLocalLogNormingGardner
+import NLS.KdV.HillActionDirichletContour
+import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCrossBrackets
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -8668,3 +8678,36 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillDirichletGardner
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Dirichlet_eigenvalues_Gardner_commute
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Dirichlet_eigenvalues_intrinsic_Gardner_commute
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_discriminant_Dirichlet_Gardner
+#print axioms NLS.ComplexAnalysis.dslope_translate_center
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_dslope_at_analytic_center
+#print axioms NLS.KdV.hillHminusDirichletFilledQuotient
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDirichletFilledQuotient
+#print axioms NLS.KdV.hillHminusDirichletFilledQuotient_at_root
+#print axioms NLS.KdV.hillHminusDirichletFilledQuotient_off_root
+#print axioms NLS.KdV.hillHminusDirichletFilledQuotient_factor
+#print axioms NLS.KdV.continuous_hillHminus_discriminant_Dirichlet_bracket_energy
+#print axioms NLS.KdV.hillHminus_filled_discriminant_Dirichlet_Gardner
+#print axioms NLS.KdV.hillHminus_resonant_discriminant_Dirichlet_Gardner
+#print axioms NLS.KdV.hillHminus_discriminant_at_Dirichlet_Gardner_matrix
+#print axioms NLS.ComplexAnalysis.analytic_eqOn_of_mul_sub_eq_zero
+#print axioms NLS.KdV.exists_hillHminusDirichletSheet_ne_zero
+#print axioms NLS.Poisson.hminusGardnerBracket_moving_spectral_right
+#print axioms NLS.Poisson.hminusGardnerBracket_inv_add_right
+#print axioms NLS.KdV.hillHminus_Dirichlet_norming_Gardner_trace_relation
+#print axioms NLS.KdV.hillHminusDirichletNorming_trace_coefficient
+#print axioms NLS.KdV.hillHminus_Dirichlet_norming_Gardner_matrix
+#print axioms NLS.KdV.hillHminusLocalLogNorming
+#print axioms NLS.KdV.hillHminusLocalLogNorming_base
+#print axioms NLS.KdV.analyticAt_hillHminusLocalLogNorming
+#print axioms NLS.KdV.analyticAt_hillHminusLocalLogNorming_base
+#print axioms NLS.KdV.fderiv_hillHminusLocalLogNorming
+#print axioms NLS.KdV.hillHminus_Dirichlet_localLogNorming_Gardner_matrix
+#print axioms NLS.KdV.hillHminus_Dirichlet_localLogNorming_Gardner_at_base
+#print axioms NLS.KdV.hillMiuraActionDirichletIntegrand
+#print axioms NLS.KdV.analyticOnNhd_hillMiuraActionDirichletIntegrand
+#print axioms NLS.KdV.HillHminusMiuraActionBall.exists_action_Dirichlet_bracket_circle
+#print axioms NLS.KdV.exists_hillHminus_action_Dirichlet_bracket_contour
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Dirichlet_norming_Gardner_matrix
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Dirichlet_localLogNorming_Gardner_matrix
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_resonant_discriminant_Dirichlet_Gardner
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_Hill_action_Dirichlet_bracket_contour

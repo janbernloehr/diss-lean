@@ -1419,6 +1419,16 @@ modules = [
     'NLS.KdV.HillCanonicalDirichletGardner',
     'NLS.KdV.HillMixedDirichletGardner',
     'NLS.Articles.KdVPseudomeasures.OriginalHillDirichletGardner',
+    'NLS.ComplexAnalysis.MovingCenterDSlope',
+    'NLS.KdV.HillDirichletFilledQuotient',
+    'NLS.KdV.HillFilledMixedGardner',
+    'NLS.ComplexAnalysis.AnalyticProductCancellation',
+    'NLS.KdV.HillDirichletSheetNontrivial',
+    'NLS.Poisson.GardnerSpectralCalculus',
+    'NLS.KdV.HillDirichletNormingGardner',
+    'NLS.KdV.HillLocalLogNormingGardner',
+    'NLS.KdV.HillActionDirichletContour',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCrossBrackets',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

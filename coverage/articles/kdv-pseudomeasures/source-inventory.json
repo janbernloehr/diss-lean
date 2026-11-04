@@ -996,6 +996,12 @@
       "status": "Prove actual Dirichlet characteristic and labelled eigenvalue involution, and the mixed discriminant/Dirichlet Gardner identity with original sheet sign on the entire common complex domain. Gardner/global and ALL FIVE MAIN remain OPEN.",
       "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_discriminant_Dirichlet_Gardner",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-dirichlet-gardner-relations-map.json"
+    },
+    {
+      "label": "ACTUAL filled spectral cross brackets and action/Dirichlet contour",
+      "status": "Fill the actual Dirichlet energy quotient, prove the resonant and eigenvalue/multiplier cross brackets with exact local logarithmic normalization, and compute the actual action/Dirichlet contour formula. Gardner/global and ALL FIVE MAIN remain OPEN.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_Dirichlet_norming_Gardner_matrix",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-spectral-cross-brackets-map.json"
     }
   ],
   "reuse_map": [
@@ -1077,7 +1083,7 @@
   "remaining_obligations": [
     "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
     "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "NEXT integrate the ACTUAL mixed discriminant/Dirichlet Gardner identity against the ACTUAL action cotangent contours, derive the action/Dirichlet and action-angle brackets, and prove signed-coordinate canonicality away fromzero. Dirichlet characteristics commute at ALLcomplex sources/energies, labelled Dirichlet eigenvalues commute on their entire common complex domain, and the mixed discriminant/eigenvalue identity with exact factor2 and prescribed sheet sign is NOWPROVED. Action gradients and action involution are already COMPLETE. Then all-source derivative invertibility, remaining ORIGINAL nonlinear scales, global Birkhoff bijection/boundedness/weak-star/flow, universal numerator scalar and sharp KMT kernel remain OPEN. AppendixB and native/endpoint local inverses remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE.",
+    "NEXT prove actual multiplier/multiplier Gardner commutation and evaluate the ACTUAL action/Dirichlet contour formula using the retained normalized differentials to derive action-angle brackets and signed-coordinate canonicality away fromzero. Actual resonant discriminant/Dirichlet brackets, the eigenvalue/multiplier cross matrix -rho_m/2*delta_nm, and the local logarithmic cross normalization delta_nm are NOWPROVED on the common complex Dirichlet domain, including closed gaps. The ACTUAL action/Dirichlet bracket contour formula is NOWPROVED at every real Hminus-one potential. It does not yet establish the article Abelian angle brackets or the full spectral Darboux matrix. All-source derivative inversion, remaining ORIGINAL scales, global Birkhoff bijection/boundedness/weak-star/flow, universal numerator scalar and sharp KMT remain OPEN. AppendixB, local inverses and all preceding involution results remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE.",
     "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates: prove signed-coordinate Gardner canonicality away fromzero, derivative invertibility at every source, remaining nonlinear source/target scales, global bijectivity and boundedness, and bounded-set weak-star homeomorphism. The exact Fourier differential atzero, native Hminus-one sequence analyticity and native/endpoint real-complex local inverses atzero are COMPLETE, as are the nonlinear infinity endpoint analytic maps and original endpoint norm-topology adapters. Actual action-gradient contours and action involution on the common complex action domain are NOWPROVED. The remaining coordinate brackets and global conclusions are OPEN. Do not substitute ordinary NLS coordinates or componentwise-real sequences for the actual signed-conjugate KdV target.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
@@ -3553,7 +3559,33 @@
     "original_physical_Dirichlet_data_and_intrinsic_mean_zero_bracket_retained_PROVED": true,
     "actual_action_gradient_contour_identification_PROVED": true,
     "actual_action_involution_PROVED": true,
-    "actual_action_Dirichlet_Gardner_contour_formula_PROVED": false,
+    "actual_action_Dirichlet_Gardner_contour_formula_PROVED": true,
+    "actual_action_angle_Gardner_relations_PROVED": false,
+    "Gardner_canonicality_PROVED": false,
+    "Gardner_canonicality_away_from_zero_PROVED": false,
+    "invertibility_at_every_source_PROVED": false,
+    "full_Birkhoff_bijection_PROVED": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_spectral_cross_brackets_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-spectral-cross-brackets-map.json",
+    "moving_center_divided_difference_jointly_Banach_analytic_PROVED": true,
+    "actual_Dirichlet_filled_quotient_jointly_analytic_in_energy_and_source_PROVED": true,
+    "actual_filled_mixed_Gardner_identity_at_all_energies_including_resonance_PROVED": true,
+    "actual_resonant_mixed_bracket_negative_sheet_over_two_PROVED": true,
+    "actual_fixed_energy_Dirichlet_bracket_matrix_PROVED": true,
+    "actual_sheet_nontriviality_derived_from_verified_free_derivative_PROVED": true,
+    "actual_Dirichlet_norming_cross_matrix_negative_rho_over_two_PROVED": true,
+    "actual_Dirichlet_norming_cross_matrix_entire_common_complex_domain_including_closed_gaps_PROVED": true,
+    "actual_local_log_norming_normalization_negative_two_PROVED": true,
+    "actual_local_log_norming_Dirichlet_cross_bracket_delta_PROVED": true,
+    "actual_action_Dirichlet_Gardner_contour_formula_PROVED": true,
+    "actual_action_Dirichlet_contour_formula_every_real_Hminus_source_including_closed_gaps_PROVED": true,
+    "actual_action_gradient_contour_identification_PROVED": true,
+    "actual_action_involution_PROVED": true,
+    "actual_norming_norming_Gardner_commutation_PROVED": false,
+    "actual_full_spectral_Darboux_matrix_PROVED": false,
+    "local_log_norming_substituted_for_article_Abelian_angle": false,
     "actual_action_angle_Gardner_relations_PROVED": false,
     "Gardner_canonicality_PROVED": false,
     "Gardner_canonicality_away_from_zero_PROVED": false,
