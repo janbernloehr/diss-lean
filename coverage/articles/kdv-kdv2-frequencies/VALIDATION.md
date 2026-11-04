@@ -84,19 +84,19 @@ its existing Hilbert specialization and a transitive audit.
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 521 selected modules compile with pinned **Lean 4.33.1**, commit
+All 523 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: 509 unchanged previously checked sources, ten unchanged
-selected shared imports and two new modules compiled strictly, then a fresh
-combined transitive axiom audit of all 521 selected modules:
+Validation output: 521 unchanged previously checked sources and two new
+modules compiled strictly, then a fresh combined transitive axiom audit
+of all 523 selected modules:
 
 ```text
-# Prior strict checks: 509 unchanged selected sources
+# Prior strict checks: 521 unchanged selected sources
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -606,7 +606,6 @@ PASS NLS/ComplexAnalysis/UpperReflectionCircleIntegrability
 PASS NLS/ComplexAnalysis/QuarticContourCoefficient
 PASS NLS/KdV/HillSmoothQuarticEnergyCoefficient
 PASS NLS/KdV/HillSmoothPhysicalQuartic
-# Incremental strict checks: 12 newly selected modules
 PASS NLS/ComplexAnalysis/RealCutConjugation
 PASS NLS/ComplexAnalysis/RealGapEllipse
 PASS NLS/ComplexAnalysis/RealGapDiscIsolation
@@ -619,12 +618,15 @@ PASS NLS/KdV/HillL2GroundSquare
 PASS NLS/KdV/HillFiniteBandCover
 PASS NLS/KdV/HillFiniteGapExterior
 PASS NLS/KdV/HillFiniteGapQuarticEnergy
-# Fresh combined transitive audit of all 521 selected modules
-Axiom audit passed: 5842 candidate declarations; 27984 declarations total.
+# Incremental strict checks: two newly selected modules
+PASS NLS/KdV/ClassicalHillDirichletBoundaryPairing
+PASS NLS/KdV/ClassicalHillTracePairingKernel
+# Fresh combined transitive audit of all 523 selected modules
+Axiom audit passed: 5852 candidate declarations; 27994 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 521 selected modules (including generated and private declarations)
+the 523 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1789,3 +1791,10 @@ Audit: 5750 selected declarations; 27892 imported NLS declarations, permitted st
 See `FINITE_GAP_QUARTIC_IDENTITY.md` and `SHARED_FINITE_GAP_EXTERIOR_IMPORT.json`. Prior strict validation of 509 unchanged selected sources, strict compilation of ten unchanged selected shared imports and two new proof modules, then a fresh full combined transitive axiom audit of all 521 selected modules. Selected dependency order is checked transitively. No repeated full 521-module build is claimed. Source hashes, selections, private fresh outputs, nine provenance records and canonical main verified.
 
 Audit: 5842 selected declarations; 27984 imported NLS declarations, permitted standard axioms only. Actual finite-gap even-power exterior analyticity and centered-circle radius independence turn the proved physical quartic limit into the exact contour value -H1/4 on every sufficiently large centered circle, with the actual period-one Hamiltonian recovered by -4. Real L2 and physical smoothness hypotheses remain explicit. Angle-Poisson/frequency identity69, action descent, global source domains and all main rows remain open.
+
+
+## Actual Dirichlet / monodromy-kernel pairings
+
+See `DIRICHLET_TRACE_KERNEL_PAIRING.md`. Prior strict validation of 521 unchanged selected sources, strict compilation of two new scalar Hill boundary/kernel proof modules, then a fresh full combined transitive axiom audit of all 523 selected modules. Selected dependency order is checked transitively. No repeated full 523-module build is claimed. Source hashes, selections, private fresh outputs, nine unchanged provenance records and canonical main verified.
+
+Audit: 5852 selected declarations; 27994 imported NLS declarations, permitted standard axioms only. The actual scalar Hill fundamental states give exact squared/mixed boundary pairings, determinant one, the spatial derivative of the quadratic monodromy kernel, and its exact Dirichlet pairing. The kernel has not yet been identified with the actual potential derivative of the discriminant. Angle-Poisson/frequency identity69 and all main rows remain open.

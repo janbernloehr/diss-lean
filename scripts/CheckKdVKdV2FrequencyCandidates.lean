@@ -1,3 +1,5 @@
+import NLS.KdV.ClassicalHillTracePairingKernel
+import NLS.KdV.ClassicalHillDirichletBoundaryPairing
 import NLS.KdV.HillFiniteGapQuarticEnergy
 import NLS.KdV.HillFiniteBandCover
 import NLS.KdV.HillSmoothPhysicalQuartic
@@ -632,7 +634,9 @@ run_cmd do
     `NLS.KdV.HillL2GroundSquare,
     `NLS.KdV.HillFiniteBandCover,
     `NLS.KdV.HillFiniteGapExterior,
-    `NLS.KdV.HillFiniteGapQuarticEnergy]
+    `NLS.KdV.HillFiniteGapQuarticEnergy,
+    `NLS.KdV.ClassicalHillDirichletBoundaryPairing,
+    `NLS.KdV.ClassicalHillTracePairingKernel]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

@@ -528,7 +528,9 @@ modules=(NLS/ComplexAnalysis/RealLineIdentity
   NLS/KdV/HillL2GroundSquare
   NLS/KdV/HillFiniteBandCover
   NLS/KdV/HillFiniteGapExterior
-  NLS/KdV/HillFiniteGapQuarticEnergy)
+  NLS/KdV/HillFiniteGapQuarticEnergy
+  NLS/KdV/ClassicalHillDirichletBoundaryPairing
+  NLS/KdV/ClassicalHillTracePairingKernel)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys
