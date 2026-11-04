@@ -1212,6 +1212,17 @@ modules = [
     'NLS.KdV.HillAbelianPhaseSquare',
     'NLS.KdV.HillAbelianPhysicalPhaseFormula',
     'NLS.Articles.KdVPseudomeasures.OriginalHillAnalyticAbelianCorrection',
+    'NLS.ComplexAnalysis.RealSegmentCommonCircle',
+    'NLS.KdV.HillAbelianReflectedCircleChart',
+    'NLS.KdV.HillAbelianUniformSelectedValue',
+    'NLS.KdV.HillAbelianUniformValueBound',
+    'NLS.SequenceSpaces.PositiveReciprocalSumBound',
+    'NLS.KdV.HillOffIndexUniformCorrectionBound',
+    'NLS.KdV.HillCanonicalOffIndexBoundedDomain',
+    'NLS.SequenceSpaces.PositiveScalarInfinity',
+    'NLS.KdV.HillOffIndexBoundedSequence',
+    'NLS.KdV.HillAbelianUniformExponentialBound',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillUniformAbelianCorrection',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
