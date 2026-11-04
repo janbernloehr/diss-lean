@@ -1099,6 +1099,14 @@ import NLS.KdV.HillAbelianCollapsedGapExtension
 import NLS.KdV.HillAbelianPhysicalEnergyPullback
 import NLS.KdV.HillOffIndexAbelianEndpointIntegrals
 import NLS.Articles.KdVPseudomeasures.OriginalHillOffIndexAbelianEndpoints
+import NLS.ComplexAnalysis.ParametricQuadraticCauchySolution
+import NLS.KdV.HillAbelianJointFrequencyDomain
+import NLS.KdV.HillAbelianCauchyCharts
+import NLS.KdV.HillAbelianCauchyCompatibility
+import NLS.KdV.HillAbelianFilledQuotient
+import NLS.KdV.HillAbelianNormalizedJointPrimitive
+import NLS.KdV.HillAbelianRegularRootSheets
+import NLS.Articles.KdVPseudomeasures.OriginalHillAnalyticAbelianFamily
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7157,3 +7165,44 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillOffIndexAbelianEndpoints
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_common_offIndex_Abelian_endpoint_normalization
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Abelian_physical_energy_pullback
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Abelian_endpoint_energies
+#print axioms NLS.ComplexAnalysis.parametricQuadraticCauchySolution
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_parametricQuadraticCauchySolution
+#print axioms NLS.ComplexAnalysis.parametricQuadraticCauchySolution_equation
+#print axioms NLS.KdV.HillProductEquationPatch.abelianJointFrequencyDomain
+#print axioms NLS.KdV.HillProductEquationPatch.abelianJointFrequencyDomain_open
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_abelianSelectedRoot
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_abelianFrequencyRoot
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_abelianFrequencyDifferential_joint
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_abelianGapNumerator_on_patch
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_abelianGapMidpoint
+#print axioms NLS.KdV.HillProductEquationPatch.eventually_abelian_gap_subset_ball
+#print axioms NLS.KdV.HillAbelianCauchyChart.solution
+#print axioms NLS.KdV.HillAbelianCauchyChart.closed_annulus_mem_rootDomain
+#print axioms NLS.KdV.HillAbelianCauchyChart.analytic_differential_annulus
+#print axioms NLS.KdV.HillAbelianCauchyChart.analytic_root_annulus
+#print axioms NLS.KdV.HillAbelianCauchyChart.analytic_solution
+#print axioms NLS.KdV.HillAbelianCauchyChart.solution_equation
+#print axioms NLS.KdV.exists_hillAbelianCauchyChart
+#print axioms NLS.KdV.HillAbelianCauchyChart.solution_eq_on_overlap
+#print axioms NLS.KdV.nonempty_hillAbelianCauchyEvaluation
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianFilledQuotient
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianFilledQuotient_eq_chart
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_offIndexAbelianFilledQuotient
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianFilledQuotient_equation
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianJointDomain
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianJointDomain_open
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianJointDomain_mem_iff
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianNormalizedPrimitive
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_offIndexAbelianNormalizedPrimitive
+#print axioms NLS.KdV.HillProductEquationPatch.hasDerivAt_offIndexAbelianNormalizedPrimitive
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianNormalizedPrimitive_endpoint_limit
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianEndpointIntegral_eq_filled_root_product
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_offIndexAbelianEndpointIntegral_joint
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianRegularSheetPrimitive
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_offIndexAbelianRegularSheetPrimitive
+#print axioms NLS.KdV.HillProductEquationPatch.hasDerivAt_offIndexAbelianRegularSheetPrimitive
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianRegularSheetPrimitive_root_ratio
+#print axioms NLS.KdV.HillProductEquationPatch.analyticAt_offIndexAbelian_filled_terminal_value
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_filled_Abelian_quotient_joint_analytic
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_improper_Abelian_integral_joint_analytic
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Abelian_prescribed_root_sheet_analytic

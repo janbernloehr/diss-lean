@@ -1133,6 +1133,14 @@ modules = [
     'NLS.KdV.HillAbelianPhysicalEnergyPullback',
     'NLS.KdV.HillOffIndexAbelianEndpointIntegrals',
     'NLS.Articles.KdVPseudomeasures.OriginalHillOffIndexAbelianEndpoints',
+    'NLS.ComplexAnalysis.ParametricQuadraticCauchySolution',
+    'NLS.KdV.HillAbelianJointFrequencyDomain',
+    'NLS.KdV.HillAbelianCauchyCharts',
+    'NLS.KdV.HillAbelianCauchyCompatibility',
+    'NLS.KdV.HillAbelianFilledQuotient',
+    'NLS.KdV.HillAbelianNormalizedJointPrimitive',
+    'NLS.KdV.HillAbelianRegularRootSheets',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillAnalyticAbelianFamily',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
