@@ -5,7 +5,15 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest canonical normalized differential stationarity
+## Latest actual Abelian source stationarity
+
+Actual symmetric gap data, filled Cauchy unit/root, normalized deflated differential and normalized cosine primitive are stationary along every complex Gardner direction. Actual analytic sheeted Dirichlet integral branches now satisfy the exact remaining terminal-phase chain rule, including terminal bandedges without dividing by a vanishing sine. See `ABELIAN_SOURCE_STATIONARITY.md`.
+
+Prior strict validation of all 828 unchanged selected sources; strict dependency-order validation of 27 shared sources (26 byte-identical imports and one compatibility import reusing an already proved local spectral-derivative theorem); strict final compilation of seven new proof modules; then a fresh combined transitive axiom audit of all 862 selected modules. Twelve compatible local variants retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 862-module rebuild is claimed.
+
+Fresh audit: 8254 selected and 30841 imported NLS declarations, permitted axioms only. Terminal-phase evaluation, canonical orientation, full angle variation and the physical frequencies/main theorem conclusions remain open.
+
+## Earlier canonical normalized differential stationarity
 
 Every differentiable extension agreeing with the genuine normalized differential at nearby real period-one L2 potentials is stationary along every actual complex Gardner direction. The same constructed analytic family now has exact nearby-real canonical agreement; actual real affine curves and complex Fourier decomposition prove extension independence. See `CANONICAL_GARDNER_STATIONARITY.md`.
 
@@ -98,19 +106,19 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 828 selected modules compile with pinned **Lean 4.33.1**, commit
+All 862 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: 817 prior selected sources (816 unchanged), eight shared
-imports and four final strict compilations, then a fresh combined transitive
-axiom audit of all 828 selected modules:
+Validation output: 828 unchanged prior selected sources, 27 shared sources
+and seven new modules strictly checked, then a fresh combined transitive
+axiom audit of all 862 selected modules:
 
 ```text
-# Prior strict checks: 817 baseline sources; one extended source recompiled below
+# Prior strict evidence: 828 baseline sources, including one historical recompilation
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -928,7 +936,6 @@ PASS NLS/KdV/HillAbelianGardnerPeriods
 PASS NLS/KdV/HillMixedGardnerVariation
 PASS NLS/ComplexAnalysis/ImplicitRootStationarity
 PASS NLS/KdV/HillNormalizedGardnerStationarity
-# Strict shared checks: eight byte-identical imports
 PASS NLS/KdV/HillLocalNonrealRootMatching
 PASS NLS/KdV/HillLocalPhysicalRootMatching
 PASS NLS/KdV/HillLocalContourGeometry
@@ -937,17 +944,52 @@ PASS NLS/KdV/HillLocalPhysicalPeriodMatching
 PASS NLS/KdV/HillMixedNearbyPhysicalPeriods
 PASS NLS/KdV/HillComplexHilbertNormalizedUniqueness
 PASS NLS/KdV/HillGlobalDifferentialAnalyticExtension
-# Final strict checks: one extended source and three new modules
 PASS NLS/KdV/HillNormalizedGardnerStationarity
 PASS NLS/ComplexAnalysis/RealLineDerivativeUniqueness
 PASS NLS/KdV/HillRealSourceJetUniqueness
 PASS NLS/KdV/HillCanonicalGardnerStationarity
-# Fresh combined transitive audit of all 828 selected modules
-Axiom audit passed: 8090 candidate declarations; 30674 declarations total.
+# Strict shared successes: 26 unchanged imports and one compatibility import
+PASS NLS/ComplexAnalysis/EndpointRootContinuity
+PASS NLS/KdV/HillGlobalDifferentialContinuity
+PASS NLS/KdV/HillDeflatedRootNonrealContinuity
+PASS NLS/KdV/HillDeflatedRadicandFactorization
+PASS NLS/KdV/HillAllGapMultiplicities
+PASS NLS/KdV/HillComplexLowGapPairs
+PASS NLS/ComplexAnalysis/JointSpectralDerivativeAnalytic
+PASS NLS/ComplexAnalysis/AnalyticLogarithmicMoments
+PASS NLS/KdV/HillAllGapSymmetricData
+PASS NLS/ComplexAnalysis/TwoZeroCauchyDeflation
+PASS NLS/KdV/HillLocalGapUnit
+PASS NLS/KdV/HillLocalGapPhysicalMatching
+PASS NLS/KdV/HillLocalGapUnitPhysical
+PASS NLS/KdV/HillLocalDeflatedComplexRoot
+PASS NLS/KdV/HillDeflatedLocalPhysicalMatching
+PASS NLS/KdV/HillDeflatedGapPhysicalMatching
+PASS NLS/KdV/HillDeflatedDifferentialAnalyticCharts
+PASS NLS/KdV/HillOpenGapHalfLength
+PASS NLS/KdV/HillAbelianCosineDifferential
+PASS NLS/KdV/HillAbelianCosinePrimitive
+PASS NLS/ComplexAnalysis/ParametricCosineRealAngleChart
+PASS NLS/KdV/HillAbelianOpenGapPrimitiveCharts
+PASS NLS/KdV/HillDirichletGapTrigonometry
+PASS NLS/KdV/HillDirichletTerminalAngle
+PASS NLS/KdV/HillDirichletAnalyticCircleData
+PASS NLS/KdV/HillDirichletAnalyticAngles
+PASS NLS/KdV/HillDirichletAbelianIntegralAnalytic
+# Final strict checks: seven new proof modules
+PASS NLS/ComplexAnalysis/IntegralSourceStationarity
+PASS NLS/ComplexAnalysis/StationarySquareRoot
+PASS NLS/KdV/HillGardnerGapMoments
+PASS NLS/KdV/HillGardnerDeflatedRoot
+PASS NLS/KdV/HillGardnerFilledDifferential
+PASS NLS/ComplexAnalysis/ParametricCosineStationarity
+PASS NLS/KdV/HillGardnerAbelianPrimitive
+# Fresh combined transitive audit of all 862 selected modules
+Axiom audit passed: 8254 candidate declarations; 30841 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 828 selected modules (including generated and private declarations)
+the 862 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the

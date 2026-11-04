@@ -715,3 +715,12 @@ Every differentiable extension agreeing with the genuine normalized differential
 Prior strict validation of 817 selected sources, of which 816 are unchanged; strict dependency-order compilation of eight byte-identical shared nearby-matching sources; strict final compilation of the extended stationary-branch module and three new proof modules; then a fresh combined transitive axiom audit of all 828 selected modules. Twelve compatible local variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 828-module rebuild is claimed.
 
 Fresh audit: 8090 selected and 30674 imported NLS declarations, permitted axioms only. Abelian-angle variation, physical frequency identities and all main theorem conclusions remain open.
+
+
+## Latest actual Abelian source stationarity
+
+Actual symmetric gap data, filled Cauchy unit/root, normalized deflated differential and normalized cosine primitive are stationary along every complex Gardner direction. Actual analytic sheeted Dirichlet integral branches now satisfy the exact remaining terminal-phase chain rule, including terminal bandedges without dividing by a vanishing sine. See `ABELIAN_SOURCE_STATIONARITY.md`.
+
+Prior strict validation of all 828 unchanged selected sources; strict dependency-order validation of 27 shared sources (26 byte-identical imports and one compatibility import reusing an already proved local spectral-derivative theorem); strict final compilation of seven new proof modules; then a fresh combined transitive axiom audit of all 862 selected modules. Twelve compatible local variants retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 862-module rebuild is claimed.
+
+Fresh audit: 8254 selected and 30841 imported NLS declarations, permitted axioms only. Terminal-phase evaluation, canonical orientation, full angle variation and the physical frequencies/main theorem conclusions remain open.

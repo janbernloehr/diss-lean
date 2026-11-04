@@ -12274,6 +12274,414 @@
       "scope": "The same stationary analytic branch is identified with the genuine canonical normalized differential at every nearby real period-one L2 potential, using actual mixed physical period matching, nonzero own period and entire normalized Hilbert numerator uniqueness. Consequently EVERY differentiable source extension with this nearby physical agreement has zero derivative along every actual complex Gardner direction, at every real period-one L2 base, positive index and complex spectral energy. This does not yet compute actual Abelian-angle variation or identify physical frequencies.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "b8d0f1a0d5b5887f5d8da64b8ae37cbaaf87e0839f2df51ce28909b3f4be145f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EndpointRootContinuity.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ec17427698c66c36e001dd0289d9e34336c7b05c6333589fde8daa6e523bc65a"
+    },
+    {
+      "path": "NLS/KdV/HillGlobalDifferentialContinuity.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7fdcdec482b9d8d5ac7db1048328fa0c236a63873ed1389b00247eb8428d8bc7"
+    },
+    {
+      "path": "NLS/KdV/HillDeflatedRootNonrealContinuity.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2ce8e0e0082399fb87ad9dc7562c52e061986f904bc2b568e3c8bff1397f9153"
+    },
+    {
+      "path": "NLS/KdV/HillDeflatedRadicandFactorization.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a1b19a6d9297a5d144af47704626fb9ca5232d9c3b19695d7d2c2abb975a89fd"
+    },
+    {
+      "path": "NLS/KdV/HillAllGapMultiplicities.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c0e9fb2856f8ed050693e01978e5ad702e9eb379024749755cbbcff15459727f"
+    },
+    {
+      "path": "NLS/KdV/HillComplexLowGapPairs.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2e026ee2caf137ad4599c12c55b619c79082abe545607a869f952feecf792b34"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/JointSpectralDerivativeAnalytic.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Compatibility import for the shared split helper: its analytic spectral derivative theorem is already proved, with the same statement, in the retained local JointSpectralDerivative. Removes only the duplicate declaration while preserving both imports; downstream shared proofs compile against the retained verified theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "19ea0201c2b9eebffceca4ed8a184961f5f1993577e9a6be6b39c6ec3c548d76"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticLogarithmicMoments.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "95419da806b0cc770fa28720824cb9bafa4b7351bd5815259171e33640f9f87b"
+    },
+    {
+      "path": "NLS/KdV/HillAllGapSymmetricData.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "223c9b5fbc5220224e3b423b446c6a9816b9607df24e5ab3d6e4818e53a599ea"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TwoZeroCauchyDeflation.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "725335fd89eba037b9095cd2cd540a05254b11e69ef3694cdda96586e4e23a58"
+    },
+    {
+      "path": "NLS/KdV/HillLocalGapUnit.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "107bc6064cc8106911999d4cb6904729c17b67e4f5b8d1ddffb64c2ca15d4d3f"
+    },
+    {
+      "path": "NLS/KdV/HillLocalGapPhysicalMatching.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dbfa3cb33eb7a28f67cd9337d40d8311fefbad322a33f065eb8f8328eab785f8"
+    },
+    {
+      "path": "NLS/KdV/HillLocalGapUnitPhysical.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8a1749ae56e277aeeb15f51b1265b157f90e4c6d2656368fc3fdeebb1555ff24"
+    },
+    {
+      "path": "NLS/KdV/HillLocalDeflatedComplexRoot.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "716dd74803b4e09bd7a5e0f9c311dd8efbdae6da975e127fa86cdf463b23c30e"
+    },
+    {
+      "path": "NLS/KdV/HillDeflatedLocalPhysicalMatching.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "817bc21530853b9a72103a9c0f5b33e8bdbf92e3a142bdb4793485f5d585b880"
+    },
+    {
+      "path": "NLS/KdV/HillDeflatedGapPhysicalMatching.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "aa4296a25f3f837cc03d0951d38ee7b64aa8f2ec9b802bd4f7ba908ca6b36d63"
+    },
+    {
+      "path": "NLS/KdV/HillDeflatedDifferentialAnalyticCharts.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bc01feddce1738661d44d4201b27e6918ba752107ee31d6ca205d5c2edb8a9df"
+    },
+    {
+      "path": "NLS/KdV/HillOpenGapHalfLength.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d8fb9973b24f2940f58e70c3ad4012fa083f6c2751c0ad1a38cb58b45a12c1c4"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianCosineDifferential.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "665f71332951711ebbb70005a63886c4ddb924781918d16999e2387483721cdf"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianCosinePrimitive.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e080cdefcab0eea6a22e8ccac581476fad84b86d0e5324eccccaafb440e613d9"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricCosineRealAngleChart.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f16c46ecc30a1a4d779a552c67c3a94fdcd1721c6baebf292065d4744df8febb"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianOpenGapPrimitiveCharts.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5d704f0401fda2820a0e4bced51c9802135c7a966703b34d5bac76c1acfaa790"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletGapTrigonometry.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "01c70743bbc61b4ffba02629848da822382b125714575ac830b722515deb75c6"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletTerminalAngle.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "40551db2ea517e7db5d4a6eb9d99b4e9662941864436290e294308c428247ba0"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletAnalyticCircleData.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "efe2662246d68f5c18da0f02b6161b10c1fca9b5f3ad420fd5b452eb8e5ded8d"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletAnalyticAngles.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6fd09df49e53f46fb3efd4c85487ce94cfb3f5fe9aa3f3f16e3ca0c919de892d"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletAbelianIntegralAnalytic.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared dependency of actual symmetric gap data, Cauchy deflation, filled normalized differential and sheeted Dirichlet Abelian charts. Imported unchanged from fixed estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; source/local hashes and retained variants appear in SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json. Necessary angle-variation input, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cb8344d034d01f73d7bf4d38ae5cff001c05ed172fef23b94233b69df3850371"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/IntegralSourceStationarity.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Actual compact contour and interval differentiation passes vanishing source derivatives through the literal Cauchy transform and normalized affine-segment primitive. Joint analyticity and actual domain/compactness hypotheses supply genuine derivative bounds and existence.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8a5c4f113ed30edf4c333b7d34b46908c26d598f5b05ccd5820d1351c3efd1af"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/StationarySquareRoot.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "A differentiable nonzero local root is stationary when its actual square is stationary, from a proved eventual square identity. Applies to actual deflated roots and open-gap half-length roots; no assertion at a zero root.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c29fe2de756b5abb0ebe6517bcaa1c09df48e904d8984300b279bece4fb7c90d"
+    },
+    {
+      "path": "NLS/KdV/HillGardnerGapMoments.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Actual spectral radicand derivative source stationarity, all-order actual logarithmic contour moment stationarity, and genuine midpoint/full squared-gap source stationarity along every constructed Gardner direction. The midpoint and squared-gap results include collapsed gaps without selecting simple endpoint branches.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9a38f1a2c371a572e625b9a93dd95985af867ec2c054a4b64cc8d7f3331a3f25"
+    },
+    {
+      "path": "NLS/KdV/HillGardnerDeflatedRoot.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Actual gap polynomial and contour Cauchy-density stationarity; the literal deflated Cauchy unit and its nonzero actual local root are stationary throughout the filled intrinsic disc, including original endpoints and collapsed gaps. Open-gap half-length roots are stationary, and every differentiable extension agreeing with the physical half-length nearby inherits this result. No analytic half-length at a closed gap is asserted.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e9b72ae73ee6f742cada5a8fb3848aec1a6fdba58b83db650ad97a152e3831a2"
+    },
+    {
+      "path": "NLS/KdV/HillGardnerFilledDifferential.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Constructs an actual jointly analytic normalized deflated differential chart covering the full closed physical gap, retaining exact agreement on nearby real potentials. Source derivatives vanish throughout the open filled chart for every complex Gardner direction, including endpoints. Uses the actual canonical normalized numerator and actual stationary deflated root.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3b4ea69ab708432db71c57f958b1e420afb41ba556ba7fa22a1b347beb9d42bb"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricCosineStationarity.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "The actual normalized cosine primitive has zero source derivative from stationary midpoint, half-length and filled numerator. Also proves the genuine moving-terminal chain rule when the actual source section is stationary.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d8f489ac5bccbdfb81930aa1c5631f04a140d9b2e6f06b9bdaeb0809e61c4b9e"
+    },
+    {
+      "path": "NLS/KdV/HillGardnerAbelianPrimitive.lean",
+      "source_labels": [
+        "Necessary actual gap and Abelian-integral variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Constructs a genuine stationary jointly analytic open-gap cosine primitive chart containing the full real angle segment, anchored exactly at pi and agreeing with the physical primitive for nearby real potentials, with the exact physical cosine differential as angle derivative. Constructs actual analytic sheeted Dirichlet terminal/integral branches and proves their source derivative equals cosine differential times actual terminal-phase derivative, including terminal bandedges without division by a vanishing sine. Terminal-phase evaluation, closed-gap/infinite-tail angle variation, canonical orientation and the final angle/discriminant identity remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "06978e35393d6ad4aa0b52e0f969720eef2e7ee93ca3a4393d91d04bbfd67702"
     }
   ],
   "dependencies_needed": [
@@ -12305,15 +12713,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 8090,
-    "total_declarations_audited": 30674,
+    "candidate_declarations_audited": 8254,
+    "total_declarations_audited": 30841,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 828,
+    "selected_modules": 862,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -12333,7 +12741,8 @@
     "normalized_dirichlet_trace_bracket_validation_sequence": "Prior strict validation of 527 unchanged selected sources, strict dependency-order compilation of 39 unchanged selected shared imports and three new proof modules, then a fresh full combined transitive axiom audit of all 569 selected modules. Existing compatible local variants retained unchanged. The shared strict checks and new-module checks are separate phases; no repeated full 569-module build is claimed. Exact selections, transitive selected dependency order, source hashes, private fresh outputs, ten shared-import records, canonical reuse hashes and clean unchanged canonical main verified.",
     "actual_gardner_source_tangents_validation_sequence": "Prior strict validation of 569 unchanged selected sources, strict compilation of three new actual rough Hill source-tangent/stationarity modules, then a fresh full combined transitive axiom audit of all 572 selected modules. No new branch imports or changes to existing source/reuse records. Exact selections, transitive selected dependency order, source hashes, private fresh outputs, ten shared-import records, canonical helper reuse hashes and clean unchanged canonical main verified. No repeated full 572-module build is claimed.",
     "normalized_gardner_stationarity_validation_sequence": "Prior strict validation of 572 unchanged selected sources; strict default-limit dependency-order compilation of 239 byte-identical shared normalization dependencies; strict compilation of six new stationarity modules; then a fresh combined transitive axiom audit of all 817 selected modules. Twelve compatible local shared variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 817-module rebuild is claimed.",
-    "canonical_normalized_stationarity_validation_sequence": "Prior strict validation of 817 selected sources, of which 816 are unchanged; strict dependency-order compilation of eight byte-identical shared nearby-matching sources; strict final compilation of the extended stationary-branch module and three new proof modules; then a fresh combined transitive axiom audit of all 828 selected modules. Twelve compatible local variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 828-module rebuild is claimed."
+    "canonical_normalized_stationarity_validation_sequence": "Prior strict validation of 817 selected sources, of which 816 are unchanged; strict dependency-order compilation of eight byte-identical shared nearby-matching sources; strict final compilation of the extended stationary-branch module and three new proof modules; then a fresh combined transitive axiom audit of all 828 selected modules. Twelve compatible local variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 828-module rebuild is claimed.",
+    "abelian_source_stationarity_validation_sequence": "Prior strict validation of all 828 unchanged selected sources; strict dependency-order validation of 27 shared sources (26 byte-identical imports and one compatibility import reusing an already proved local spectral-derivative theorem); strict final compilation of seven new proof modules; then a fresh combined transitive axiom audit of all 862 selected modules. Twelve compatible local variants retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 862-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -12481,6 +12890,12 @@
       "commit": "e36a0443e127c72527458d1970ad66ecbef091f2",
       "record": "coverage/articles/kdv-kdv2-frequencies/SHARED_NEARBY_NORMALIZATION_IMPORT.json",
       "kind": "Eight unchanged proved nearby-real contour matching and canonical normalized numerator uniqueness sources; twelve existing local variants retained unchanged. Full branch not merged."
+    },
+    {
+      "branch": "articles/kdv-estimates",
+      "commit": "e36a0443e127c72527458d1970ad66ecbef091f2",
+      "record": "coverage/articles/kdv-kdv2-frequencies/SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json",
+      "kind": "26 unchanged actual gap/deflated-root/normalized-differential/sheeted-terminal Abelian chart dependencies plus one compatibility import removing an already-proved duplicate theorem; twelve local variants retained unchanged. Full branch not merged."
     }
   ],
   "normalized_collapsed_moments_record": "NORMALIZED_COLLAPSED_MOMENTS.md",
@@ -12528,5 +12943,7 @@
   "normalized_gardner_stationarity_record": "NORMALIZED_GARDNER_STATIONARITY.md",
   "shared_normalized_differential_import_record": "SHARED_NORMALIZED_DIFFERENTIAL_IMPORT.json",
   "canonical_normalized_stationarity_record": "CANONICAL_GARDNER_STATIONARITY.md",
-  "shared_nearby_normalization_import_record": "SHARED_NEARBY_NORMALIZATION_IMPORT.json"
+  "shared_nearby_normalization_import_record": "SHARED_NEARBY_NORMALIZATION_IMPORT.json",
+  "abelian_source_stationarity_record": "ABELIAN_SOURCE_STATIONARITY.md",
+  "shared_dirichlet_angle_chart_import_record": "SHARED_DIRICHLET_ANGLE_CHART_IMPORT.json"
 }

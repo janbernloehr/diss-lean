@@ -17,7 +17,15 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest canonical normalized differential stationarity
+## Latest actual Abelian source stationarity
+
+Actual symmetric gap data, filled Cauchy unit/root, normalized deflated differential and normalized cosine primitive are stationary along every complex Gardner direction. Actual analytic sheeted Dirichlet integral branches now satisfy the exact remaining terminal-phase chain rule, including terminal bandedges without dividing by a vanishing sine. See `ABELIAN_SOURCE_STATIONARITY.md`.
+
+Prior strict validation of all 828 unchanged selected sources; strict dependency-order validation of 27 shared sources (26 byte-identical imports and one compatibility import reusing an already proved local spectral-derivative theorem); strict final compilation of seven new proof modules; then a fresh combined transitive axiom audit of all 862 selected modules. Twelve compatible local variants retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 862-module rebuild is claimed.
+
+Fresh audit: 8254 selected and 30841 imported NLS declarations, permitted axioms only. Terminal-phase evaluation, canonical orientation, full angle variation and the physical frequencies/main theorem conclusions remain open.
+
+## Earlier canonical normalized differential stationarity
 
 Every differentiable extension agreeing with the genuine normalized differential at nearby real period-one L2 potentials is stationary along every actual complex Gardner direction. The same constructed analytic family now has exact nearby-real canonical agreement; actual real affine curves and complex Fourier decomposition prove extension independence. See `CANONICAL_GARDNER_STATIONARITY.md`.
 

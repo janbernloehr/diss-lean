@@ -1,3 +1,8 @@
+import NLS.KdV.HillGardnerAbelianPrimitive
+import NLS.ComplexAnalysis.ParametricCosineStationarity
+import NLS.KdV.HillGardnerFilledDifferential
+import NLS.KdV.HillGardnerGapMoments
+import NLS.KdV.HillDirichletAbelianIntegralAnalytic
 import NLS.KdV.HillCanonicalGardnerStationarity
 import NLS.KdV.HillRealSourceJetUniqueness
 import NLS.KdV.HillGlobalDifferentialAnalyticExtension
@@ -950,6 +955,33 @@ run_cmd do
     `NLS.KdV.HillMixedNearbyPhysicalPeriods,
     `NLS.KdV.HillComplexHilbertNormalizedUniqueness,
     `NLS.KdV.HillGlobalDifferentialAnalyticExtension,
+    `NLS.ComplexAnalysis.EndpointRootContinuity,
+    `NLS.KdV.HillGlobalDifferentialContinuity,
+    `NLS.KdV.HillDeflatedRootNonrealContinuity,
+    `NLS.KdV.HillDeflatedRadicandFactorization,
+    `NLS.KdV.HillAllGapMultiplicities,
+    `NLS.KdV.HillComplexLowGapPairs,
+    `NLS.ComplexAnalysis.JointSpectralDerivativeAnalytic,
+    `NLS.ComplexAnalysis.AnalyticLogarithmicMoments,
+    `NLS.KdV.HillAllGapSymmetricData,
+    `NLS.ComplexAnalysis.TwoZeroCauchyDeflation,
+    `NLS.KdV.HillLocalGapUnit,
+    `NLS.KdV.HillLocalGapPhysicalMatching,
+    `NLS.KdV.HillLocalGapUnitPhysical,
+    `NLS.KdV.HillLocalDeflatedComplexRoot,
+    `NLS.KdV.HillDeflatedLocalPhysicalMatching,
+    `NLS.KdV.HillDeflatedGapPhysicalMatching,
+    `NLS.KdV.HillDeflatedDifferentialAnalyticCharts,
+    `NLS.KdV.HillOpenGapHalfLength,
+    `NLS.KdV.HillAbelianCosineDifferential,
+    `NLS.KdV.HillAbelianCosinePrimitive,
+    `NLS.ComplexAnalysis.ParametricCosineRealAngleChart,
+    `NLS.KdV.HillAbelianOpenGapPrimitiveCharts,
+    `NLS.KdV.HillDirichletGapTrigonometry,
+    `NLS.KdV.HillDirichletTerminalAngle,
+    `NLS.KdV.HillDirichletAnalyticCircleData,
+    `NLS.KdV.HillDirichletAnalyticAngles,
+    `NLS.KdV.HillDirichletAbelianIntegralAnalytic,
     `NLS.KdV.HillGardnerLocalRootVariation,
     `NLS.ComplexAnalysis.ParametricCircleStationarity,
     `NLS.KdV.HillAbelianGardnerPeriods,
@@ -958,7 +990,14 @@ run_cmd do
     `NLS.KdV.HillNormalizedGardnerStationarity,
     `NLS.ComplexAnalysis.RealLineDerivativeUniqueness,
     `NLS.KdV.HillRealSourceJetUniqueness,
-    `NLS.KdV.HillCanonicalGardnerStationarity]
+    `NLS.KdV.HillCanonicalGardnerStationarity,
+    `NLS.ComplexAnalysis.IntegralSourceStationarity,
+    `NLS.ComplexAnalysis.StationarySquareRoot,
+    `NLS.KdV.HillGardnerGapMoments,
+    `NLS.KdV.HillGardnerDeflatedRoot,
+    `NLS.KdV.HillGardnerFilledDifferential,
+    `NLS.ComplexAnalysis.ParametricCosineStationarity,
+    `NLS.KdV.HillGardnerAbelianPrimitive]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do
