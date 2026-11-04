@@ -1012,6 +1012,18 @@ modules = [
     'NLS.FunctionalAnalysis.CompactPerturbationEquiv',
     'NLS.KdV.HillProductEquationFredholmAlternative',
     'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodInvertibleDiagonal',
+    'NLS.KdV.HillProductDataVariation',
+    'NLS.KdV.HillProductDataPeriodDerivative',
+    'NLS.ComplexAnalysis.LinearFactorCircleDecay',
+    'NLS.KdV.HillFrequencyDataVariation',
+    'NLS.KdV.HillProductEquationDataDirection',
+    'NLS.KdV.HillProductVariationGrowth',
+    'NLS.KdV.HillEnergyNumeratorPeriods',
+    'NLS.KdV.HillRetainedPeriodUniqueness',
+    'NLS.KdV.HillProductEquationKernelInjectivity',
+    'NLS.KdV.HillProductEquationRealInverse',
+    'NLS.KdV.HillProductEquationAnalyticZeroSequence',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodInverse',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

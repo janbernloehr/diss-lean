@@ -978,6 +978,18 @@ import NLS.KdV.HillProductEquationInvertibleDiagonal
 import NLS.FunctionalAnalysis.CompactPerturbationEquiv
 import NLS.KdV.HillProductEquationFredholmAlternative
 import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodInvertibleDiagonal
+import NLS.KdV.HillProductDataVariation
+import NLS.KdV.HillProductDataPeriodDerivative
+import NLS.ComplexAnalysis.LinearFactorCircleDecay
+import NLS.KdV.HillFrequencyDataVariation
+import NLS.KdV.HillProductEquationDataDirection
+import NLS.KdV.HillProductVariationGrowth
+import NLS.KdV.HillEnergyNumeratorPeriods
+import NLS.KdV.HillRetainedPeriodUniqueness
+import NLS.KdV.HillProductEquationKernelInjectivity
+import NLS.KdV.HillProductEquationRealInverse
+import NLS.KdV.HillProductEquationAnalyticZeroSequence
+import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodInverse
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6576,3 +6588,36 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodInvertibleDiagonal
 #print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_bijective_of_injective
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_invertible_diagonal_add_compact
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_bijective_of_injective
+#print axioms NLS.KdV.hillEnergyProductDataVariation
+#print axioms NLS.KdV.hillEnergyProductDataVariation_eq_section
+#print axioms NLS.KdV.analyticOnNhd_hillEnergyProductDataVariation
+#print axioms NLS.KdV.hasDerivAt_hillEnergyDataLine
+#print axioms NLS.KdV.hasDerivAt_hillEnergyProductDataLine
+#print axioms NLS.KdV.hillEnergyProductDataVariation_at_retained_root
+#print axioms NLS.KdV.fderiv_hillEnergyProductPeriodIntegrand_data
+#print axioms NLS.KdV.fderiv_hillEnergyProductFixedPeriod_data
+#print axioms NLS.ComplexAnalysis.linearFactor_circle_decay
+#print axioms NLS.KdV.hillIndependentFrequencyDataVariation
+#print axioms NLS.KdV.hasDerivAt_hillFrequencyDataLine
+#print axioms NLS.KdV.hasDerivAt_hillFrequencyScalarDataLine
+#print axioms NLS.KdV.hillFrequencyDataVariation_omitted_zero
+#print axioms NLS.KdV.hillEnergyProductDataVariation_frequency_filled
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_data_direction
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_kernel_omitted_zero
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_kernel_retained_period_zero
+#print axioms NLS.KdV.hillEnergySequenceProduct_pullback_sub_sine
+#print axioms NLS.KdV.hillEnergyProductDataVariation_pullback_sub_sine
+#print axioms NLS.KdV.hillEnergyNumeratorPeriod
+#print axioms NLS.KdV.circleIntegrable_hillEnergyNumerator
+#print axioms NLS.KdV.hillEnergyNumeratorPeriod_sub
+#print axioms NLS.KdV.hillEnergyNumeratorPeriod_const_mul
+#print axioms NLS.KdV.hillEnergyNumerator_eq_zero_of_positive_periods
+#print axioms NLS.KdV.hillEnergyNumerator_eq_scalar_of_retained_periods
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_kernel_eq_zero
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_injective
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_bijective
+#print axioms NLS.KdV.HillProductEquationPatch.exists_actual_real_sequenceJacobian_equiv
+#print axioms NLS.KdV.HillProductEquationPatch.exists_actual_real_sequenceJacobian_inverse
+#print axioms NLS.KdV.HillProductEquationPatch.exists_actual_analytic_zero_sequence
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_Banach_inverse
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_local_analytic_Hill_zero_sequence
