@@ -924,6 +924,15 @@ import NLS.KdV.HillDirichletCharacteristicExterior
 import NLS.KdV.HillDirichletNumeratorExteriorDecay
 import NLS.ComplexAnalysis.SimplePoleInterpolationLimit
 import NLS.KdV.HillDirichletAbelianInterpolation
+import NLS.KdV.HillFreeDirichletCentralCount
+import NLS.ComplexAnalysis.SimpleZeroCountExhaustion
+import NLS.KdV.HillDirichletCentralCount
+import NLS.KdV.HillDirichletCentralGeometry
+import NLS.KdV.HillDirichletPoleIdentification
+import NLS.KdV.HillLabelledAbelianInterpolation
+import NLS.KdV.HillDirichletFlowResidues
+import NLS.KdV.HillAbelianInterpolationContours
+import NLS.KdV.HillAbelianActionResiduePeriods
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1467,7 +1476,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.norm_sine_duhamel_integral_le_weighted,
     ``NLS.ComplexAnalysis.exists_finite_zero_circle_sets,
     ``NLS.ComplexAnalysis.tendsto_simpleQuotientPrincipalParts_of_circle_decay,
-    ``NLS.ComplexAnalysis.eventually_simpleQuotientPrincipalParts_error_on_ball]
+    ``NLS.ComplexAnalysis.eventually_simpleQuotientPrincipalParts_error_on_ball,
+    ``NLS.ComplexAnalysis.zero_iff_mem_of_simple_zero_count]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

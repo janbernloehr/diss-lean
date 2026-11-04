@@ -176,6 +176,7 @@ modules+=(NLS/ComplexAnalysis/ContinuousEvenSquareDescent NLS/KdV/HillL2EnergySt
 modules+=(NLS/ComplexAnalysis/ContinuousTracePrimitiveUniqueness NLS/KdV/HillRealPeriodOneAffinePath NLS/KdV/HillRecenteredTracePrimitives NLS/ComplexAnalysis/NonrealCircleIntegralComparison NLS/KdV/HillRecenteredPhysicalMatching NLS/KdV/HillFixedPhysicalMoments NLS/KdV/HillRealSourceMomentGerms NLS/KdV/HillPhysicalActionGradients)
 modules+=(NLS/ComplexAnalysis/QuadraticHillSystemBoundaryPairing NLS/KdV/HillDirichletQuadraticSystem NLS/KdV/HillDiscriminantDirichletBrackets NLS/KdV/HillActionDirichletBrackets)
 modules+=(NLS/ComplexAnalysis/WeightedDuhamelIntegralBounds NLS/KdV/ClassicalHillWeightedDirichletError NLS/KdV/HillL2WeightedDirichletError NLS/KdV/HillDirichletCharacteristicExterior NLS/KdV/HillDirichletNumeratorExteriorDecay NLS/ComplexAnalysis/SimplePoleInterpolationLimit NLS/KdV/HillDirichletAbelianInterpolation)
+modules+=(NLS/KdV/HillFreeDirichletCentralCount NLS/ComplexAnalysis/SimpleZeroCountExhaustion NLS/KdV/HillDirichletCentralCount NLS/KdV/HillDirichletCentralGeometry NLS/KdV/HillDirichletPoleIdentification NLS/KdV/HillLabelledAbelianInterpolation NLS/KdV/HillDirichletFlowResidues NLS/KdV/HillAbelianInterpolationContours NLS/KdV/HillAbelianActionResiduePeriods)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
