@@ -676,6 +676,13 @@ import NLS.KdV.HillFreeGapQuotient
 import NLS.KdV.HillUniformComplexUnitRatio
 import NLS.KdV.HillCommonComplexDeflatedRoot
 import NLS.KdV.HillCommonDeflatedRootPhysical
+import NLS.KdV.HillFilledFreeGapUnit
+import NLS.KdV.HillFilledFreeGapAnalytic
+import NLS.KdV.HillFilledFreeGapBase
+import NLS.KdV.HillFilledFreeGapRatio
+import NLS.KdV.HillFilledFreeGapRoot
+import NLS.KdV.HillFilledFreeGapFactorization
+import NLS.KdV.HillFilledFreeGapPhysical
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
