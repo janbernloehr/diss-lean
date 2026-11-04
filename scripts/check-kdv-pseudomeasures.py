@@ -988,6 +988,18 @@ modules = [
     'NLS.KdV.HillProductRealGapColumns',
     'NLS.KdV.HillProductEquationRealDiagonal',
     'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodRealDiagonal',
+    'NLS.KdV.HillProductColumnFactorization',
+    'NLS.KdV.HillWeightedColumnNumeratorBound',
+    'NLS.KdV.HillPlacedEnergySeparation',
+    'NLS.KdV.HillRealGapWidthDisplacement',
+    'NLS.KdV.HillProductOffDiagonalNumerator',
+    'NLS.ZakharovShabat.SourcePsiGapProductAllDiscBound',
+    'NLS.KdV.HillRealOffDiagonalPeriods',
+    'NLS.KdV.HillProductEquationOffDiagonal',
+    'NLS.SequenceSpaces.PositiveOperatorDiagonal',
+    'NLS.SequenceSpaces.PositiveKernelCompactness',
+    'NLS.KdV.HillProductEquationCompactRemainder',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodCompactRemainder',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

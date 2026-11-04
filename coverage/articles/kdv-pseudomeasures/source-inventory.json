@@ -750,6 +750,12 @@
       "status": "ALL positive numerator and row indices, omitted midpoint and low/collapsed gaps PROVED. Full operator inverse remains OPEN.",
       "declaration": "NLS.Articles.KdVPseudomeasures.exists_original_Hill_period_patch_nonzero_real_diagonal",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-real-period-diagonal-map.json"
+    },
+    {
+      "label": "Actual original real Hill period Jacobian quadratic off-diagonal bound and compact remainder",
+      "status": "ONE bound before ALL n,m,r and ACTUAL compact off-diagonal remainder PROVED; bounded diagonal has nonzero entries but no proved positive lower bound. General inverse remains OPEN.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_diagonal_add_compact",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-period-compact-remainder-map.json"
     }
   ],
   "reuse_map": [
@@ -829,7 +835,7 @@
     }
   ],
   "remaining_obligations": [
-    "Prove bounded INVERTIBILITY of the ACTUAL sequenceJacobian of the FULL original lp-valued Hill period equation at the actual real zero data for EVERY real native H-minus-one potential, retaining all low/collapsed gaps, and obtain locally uniform inverse bounds BEFORE ALL numerator indices. NEW: The actual source-joint FULL lp map is NOW constructed and BANACH analytic on ONE OPEN placed-input domain before ALL n, with ONE joint local sequence norm bound before ALL n, genuine fixed contours, exact original midpoint row, ALL actual real zero-sequence graphs contained and solving the equation, and the actual bounded sequence Jacobian jointly analytic with literal Frechet contour columns. Independent frequency lifting/product reduction/pointwise and local uniform norm bounds/Banach assembly are PROVED; do NOT redo them. Need the general nonzero-source period inverse to apply an actual uniform implicit function argument, obtain a common complex SOURCE neighborhood for ALL actual zero coefficients, Banach source-to-zero SEQUENCE analyticity and the finer locally uniform ALL-index gamma_m^2/m estimate. The common INDEPENDENT-INPUT equation domain is not itself an analytic complex actual zero SEQUENCE. Complete arbitrary-input KMT Lemma10.2/global independent-data period chart gluing and an n-independent free inverse neighborhood are not claimed. NEW: Nonzero diagonal entries of this ACTUAL operator are now proved at ALL original real sources and ALL positive indices, including low/collapsed gaps and exact omitted midpoint. Do NOT redo the real gap nonvanishing or exact period mean-value argument. Off-diagonal compactness/high diagonal asymptotics and full kernel injectivity remain to prove; diagonal nonvanishing alone does not give an inverse.",
+    "Prove a positive lower bound for the actual real Hill period Jacobian diagonal and prove full kernel injectivity, then the actual bounded inverse and locally uniform inverse bounds BEFORE ALL numerator indices. The FULL source-joint Banach period map, ONE common open placed-input domain, local all-n norm bounds, actual analytic bounded sequence Jacobian and ALL real diagonal entries nonzero are PROVED. NEW: quadratic energy separation, ONE all-n off-diagonal matrix bound with the continuous ORIGINAL inverse-index energy-gap-width lp2 majorant and uniformly l2-bounded free interaction kernel, and the ACTUAL compact off-diagonal remainder are NOW PROVED. Do NOT redo these estimates or the compactness argument. The diagonal is currently a bounded multiplier with nonzero entries, NOT YET a proved Banach isomorphism: high-diagonal asymptotics/positive lower bound remain OPEN. After the actual inverse, obtain a common complex SOURCE neighborhood for ALL actual zero coefficients, Banach source-to-zero SEQUENCE analyticity and the finer locally uniform ALL-index gamma_m^2/m bound. Complete arbitrary-input KMT Lemma10.2/global independent-data chart gluing and an n-independent free inverse neighborhood are not claimed.",
     "Determine the universal 2/(pi*n) scalar in the ORIGINAL normalized Hill infinite product. The literal actual retained-zero product with a UNIQUE NONZERO scalar is NOW PROVED at EVERY original real H-minus-one source, with locally uniform convergence of products AND derivatives on the ENTIRE energy plane. Do NOT redo the product-up-to-scalar argument or infer the scalar from zeros/growth/analyticity plus its free value. A valid actual L2 normalization identity with a proved density transfer is one possible route. Complex-source product uniformity and exclusion of additional complex-source energy zeros are not proved. NEW: Jointly ENTIRE literal products in energy and independent inverse-index l2 data, locally UNIFORM joint cutoff convergence, actual real-source product/scalar continuity and a rigorous real L2-to-Hminus-one constant-normalization density transfer are NOW PROVED. The actual L2 identity itself remains OPEN. Do NOT redo these analytic-product/continuity/density dependencies, and do not assume the missing L2 normalization.",
     "Complete any required global complex energy-sheet/differential gluing, then construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Intrinsic numerator gluing, actual local roots/normalized periods and real-source root/differential overlap identities are proved. Formalize the literal KMT y-tilde integrating-factor gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint.",
     "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
@@ -2412,6 +2418,31 @@
     "COMMON_complex_SOURCE_neighborhood_BEFORE_ALL_actual_zero_pairs_proved": false,
     "Banach_hminus_one_SEQUENCE_analyticity_of_actual_source_to_zero_family_proved": false,
     "locally_uniform_COMPLEX_ALL_index_squared_gap_over_index_zero_bound_proved": false,
+    "universal_2_over_pi_n_product_prefactor_proved": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_period_compact_remainder_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-period-compact-remainder-map.json",
+    "filled_frequency_product_column_factorization_at_collisions_PROVED": true,
+    "quadratic_energy_separation_on_ORIGINAL_closed_discs_PROVED": true,
+    "EXACT_inverse_index_column_weight_and_quadratic_interaction_kernel_retained": true,
+    "weighted_regular_diagonal_numerator_uniform_bound_BEFORE_ALL_indices_PROVED": true,
+    "ACTUAL_original_energy_gap_width_divided_by_index_CONTINUOUS_lp2_sequence_PROVED": true,
+    "ALL_actual_real_product_period_columns_real_PROVED": true,
+    "ONE_allDisc_quotient_bound_over_ENTIRE_compact_reference_gap_product_PROVED": true,
+    "ONE_off_diagonal_bound_BEFORE_ALL_n_m_r_at_EACH_actual_real_source_PROVED": true,
+    "ACTUAL_full_Hill_period_Jacobian_off_diagonal_remainder_COMPACT_PROVED": true,
+    "ACTUAL_bounded_diagonal_plus_COMPACT_decomposition_PROVED": true,
+    "ALL_low_collapsed_and_omitted_rows_columns_retained": true,
+    "diagonal_entries_NONZERO_PROVED": true,
+    "positive_uniform_lower_bound_for_diagonal_PROVED": false,
+    "diagonal_Banach_isomorphism_PROVED": false,
+    "full_Jacobian_kernel_injectivity_PROVED": false,
+    "general_nonzero_source_PERIOD_Jacobian_inverse_proved": false,
+    "locally_uniform_inverse_bounds_BEFORE_ALL_n_proved": false,
+    "COMMON_complex_actual_zero_SEQUENCE_Banach_analyticity_proved": false,
+    "fine_squared_gap_over_index_bound_proved": false,
     "universal_2_over_pi_n_product_prefactor_proved": false,
     "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
     "all_five_main_theorems_proved": false

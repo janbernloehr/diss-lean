@@ -954,6 +954,18 @@ import NLS.KdV.HillProductColumnMeanValue
 import NLS.KdV.HillProductRealGapColumns
 import NLS.KdV.HillProductEquationRealDiagonal
 import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodRealDiagonal
+import NLS.KdV.HillProductColumnFactorization
+import NLS.KdV.HillWeightedColumnNumeratorBound
+import NLS.KdV.HillPlacedEnergySeparation
+import NLS.KdV.HillRealGapWidthDisplacement
+import NLS.KdV.HillProductOffDiagonalNumerator
+import NLS.ZakharovShabat.SourcePsiGapProductAllDiscBound
+import NLS.KdV.HillRealOffDiagonalPeriods
+import NLS.KdV.HillProductEquationOffDiagonal
+import NLS.SequenceSpaces.PositiveOperatorDiagonal
+import NLS.SequenceSpaces.PositiveKernelCompactness
+import NLS.KdV.HillProductEquationCompactRemainder
+import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodCompactRemainder
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6502,3 +6514,36 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodRealDiagonal
 #print axioms NLS.KdV.hillPeriodEquationWeight_ne_zero
 #print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_diagonal_ne_zero
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_Hill_period_patch_nonzero_real_diagonal
+#print axioms NLS.KdV.hillEnergyProductCoordinateDerivative_cross
+#print axioms NLS.KdV.hillEnergyProductCoordinateDerivative_frequency_filled
+#print axioms NLS.KdV.hillIndependent_sum_index_ratio_bound
+#print axioms NLS.KdV.hillIndependent_row_index_ratio_bound
+#print axioms NLS.KdV.hillWeightedColumnGapNumerator_bound
+#print axioms NLS.KdV.hillPlacedEnergy_difference_ne_zero
+#print axioms NLS.KdV.hillPlacedEnergy_quadratic_ratio_bound
+#print axioms NLS.KdV.hillPlacedEnergy_inverse_index_kernel_bound
+#print axioms NLS.KdV.hillHminusGapWidthDisplacement
+#print axioms NLS.KdV.hillHminusGapWidthDisplacement_apply
+#print axioms NLS.KdV.continuous_hillHminusGapWidthDisplacement
+#print axioms NLS.KdV.hillHminusGapWidthDisplacement_gap_difference_bound
+#print axioms NLS.KdV.hillWeightedColumnGapNumerator_cross
+#print axioms NLS.KdV.hillWeightedColumnGapNumerator_off_diagonal_bound
+#print axioms NLS.ZakharovShabat.SourceCorollary10_6Data.gap_product_allDisc_quotient_bound
+#print axioms NLS.KdV.hillProductColumnGapNumerator_actual_column_real
+#print axioms NLS.KdV.hillEnergyProductPeriodColumn_actual_im_eq_zero
+#print axioms NLS.KdV.hillWeightedProductPeriodColumn_actual_off_diagonal_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_actual_real_allDisc_quotient_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_uniform_actual_real_off_diagonal_bound
+#print axioms NLS.LpSequence.positiveRestriction_single
+#print axioms NLS.LpSequence.positiveLiftOperator
+#print axioms NLS.LpSequence.positiveOperatorDiagonal
+#print axioms NLS.LpSequence.positiveOperatorDiagonal_apply
+#print axioms NLS.LpSequence.positiveOperatorOffDiagonal
+#print axioms NLS.LpSequence.positiveOperatorOffDiagonal_entry
+#print axioms NLS.LpSequence.positiveOperator_eq_diagonal_add_offDiagonal
+#print axioms NLS.LpSequence.isCompactOperator_positive_of_rowMajorant
+#print axioms NLS.LpSequence.positive_operator_row_bound_of_kernel_entries
+#print axioms NLS.LpSequence.isCompactOperator_positive_of_kernel_entries
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_offDiagonal_compact
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_diagonal_add_compact
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_diagonal_add_compact
