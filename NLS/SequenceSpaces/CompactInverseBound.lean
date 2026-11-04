@@ -29,7 +29,7 @@ theorem exists_uniform_inverse_norm_on_compact
     (hRQ : ∀ x : K, (R x).comp (Q x) =
       ContinuousLinearMap.id ℂ E) :
     ∃ M : ℝ, 0 ≤ M ∧ ∀ x : K, ‖R x‖ ≤ M := by
-  letI : CompactSpace K := isCompact_iff_compactSpace.mp hK
+  let : CompactSpace K := isCompact_iff_compactSpace.mp hK
   have hlocal (x : K) : ∃ t ∈ 𝓝 x,
       Bornology.IsBounded (R '' t) := by
     let δ : ℝ := 1 / (2 * (‖R x‖ + 1))

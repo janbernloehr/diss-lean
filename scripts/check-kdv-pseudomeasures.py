@@ -1053,6 +1053,17 @@ modules = [
     'NLS.SequenceSpaces.LpOperatorBasisExt',
     'NLS.KdV.HillProductEquationEscapingLimit',
     'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodEscapingLimit',
+    'NLS.KdV.HillFullProductDataVariation',
+    'NLS.KdV.HillFullProductPeriodDerivative',
+    'NLS.KdV.HillFullFrequencyDataVariation',
+    'NLS.KdV.HillFullProductVariationGrowth',
+    'NLS.KdV.HillFullPeriodKernelInjectivity',
+    'NLS.SequenceSpaces.PositiveOperatorDiagonalContinuity',
+    'NLS.KdV.HillPeriodJacobianLimitFredholm',
+    'NLS.FunctionalAnalysis.EscapingClosureProperty',
+    'NLS.KdV.HillPeriodJacobianClosureInverse',
+    'NLS.KdV.HillPeriodJacobianUniformInverse',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodUniformFullInverse',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
