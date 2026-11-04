@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhasePeriods
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhaseMotion
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianInterpolation
 import NLS.Articles.MKdVNLSHierarchies.OriginalDirichletCharacteristic
@@ -3519,11 +3520,57 @@ private def mkdvNLSAuditPrefixes53 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhaseMotion,
 ]
 
+private def mkdvNLSAuditPrefixes54 : Array Lean.Name := #[
+  `NLS.ComplexAnalysis.ordered_real_gap_circle_bounds,
+  `_private.NLS.ComplexAnalysis.OrderedRealGapCircleBounds,
+  `NLS.ComplexAnalysis.lineMap_squared_circle_mem_real_bands,
+  `NLS.ComplexAnalysis.affine_squared_circle_mem_real_bands,
+  `NLS.ComplexAnalysis.circleIntegral_square_eq_of_real_bands,
+  `_private.NLS.ComplexAnalysis.SquaredCircleBandHomotopy,
+  `NLS.MKdV.miuraCauchy_circle_real_band_bounds,
+  `NLS.MKdV.miuraHillLabels_even,
+  `NLS.MKdV.miuraCauchy_squared_circle_band_bounds,
+  `_private.NLS.MKdV.MiuraCauchyCircleBands,
+  `NLS.KdV.hillTwoBands_subset_realCutDomain,
+  `NLS.KdV.hillIntrinsicCircle_band_crossings,
+  `NLS.KdV.analyticOnNhd_hillEntireNumerator_div_root,
+  `NLS.KdV.hillSquaredCircle_period_eq_intrinsic,
+  `NLS.KdV.hillSelectedPsi_squared_circle_period,
+  `_private.NLS.KdV.HillSquaredCirclePeriods,
+  `NLS.MKdV.miuraSelectedAbelianPsi_original_circle_period,
+  `_private.NLS.MKdV.MiuraIndependentAbelianActionPeriods,
+  `NLS.MKdV.hasDerivAt_miuraNativeFullAbelianPhase_actionFlow_finiteGap_generator,
+  `_private.NLS.MKdV.MiuraIndependentPhaseKroneckerGenerator,
+  `NLS.MKdV.miuraNativeOppositeAbelianPhase,
+  `NLS.MKdV.norm_miuraNativeOppositeAbelianPhase,
+  `NLS.MKdV.norm_miuraNativeOppositeAbelianPhase_le_one,
+  `NLS.MKdV.miuraNativeOppositeAbelianPhase_closed,
+  `NLS.MKdV.continuousOn_miuraNativeOppositeAbelianPhase,
+  `NLS.MKdV.hasDerivAt_miuraNativeOppositeAbelianPhase_actionFlow_finiteGap_generator,
+  `_private.NLS.MKdV.MiuraOppositeAbelianPhase,
+  `NLS.KdV.differentiableAt_hillFiniteAbelianPhase_family,
+  `_private.NLS.KdV.HillFinitePhaseFamilyRegularity,
+  `NLS.MKdV.miuraNativeFullAbelianPhase_actionFlow_closed,
+  `NLS.MKdV.differentiableAt_miuraNativeFullAbelianPhase_actionFlow_finiteGap,
+  `NLS.MKdV.differentiableAt_miuraNativeOppositeAbelianPhase_actionFlow_finiteGap,
+  `_private.NLS.MKdV.MiuraFiniteGapPhaseTerminalRegularity,
+  `NLS.Articles.MKdVNLSHierarchies.independent_Abelian_original_action_circle_normalization,
+  `NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_finite_gap_generator,
+  `NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_finite_gap_terminal_regularity,
+  `NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_native_data,
+  `_private.NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhasePeriods,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.independent_Abelian_original_action_circle_normalization,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_finite_gap_generator,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_finite_gap_terminal_regularity,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_native_data,
+
     ``NLS.Articles.MKdVNLSHierarchies.independent_Abelian_differential_complete_action_invariance,
     ``NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_finite_gap_derivative,
     ``NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_original_action_circle,

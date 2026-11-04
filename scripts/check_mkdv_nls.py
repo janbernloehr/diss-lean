@@ -1113,6 +1113,16 @@ modules = [
     'NLS/MKdV/MiuraAbelianActionCircleContraction.lean',
     'NLS/MKdV/MiuraIndependentPhaseActionCircle.lean',
     'NLS/Articles/MKdVNLSHierarchies/IndependentAbelianPhaseMotion.lean',
+    'NLS/ComplexAnalysis/OrderedRealGapCircleBounds.lean',
+    'NLS/ComplexAnalysis/SquaredCircleBandHomotopy.lean',
+    'NLS/MKdV/MiuraCauchyCircleBands.lean',
+    'NLS/KdV/HillSquaredCirclePeriods.lean',
+    'NLS/MKdV/MiuraIndependentAbelianActionPeriods.lean',
+    'NLS/MKdV/MiuraIndependentPhaseKroneckerGenerator.lean',
+    'NLS/MKdV/MiuraOppositeAbelianPhase.lean',
+    'NLS/KdV/HillFinitePhaseFamilyRegularity.lean',
+    'NLS/MKdV/MiuraFiniteGapPhaseTerminalRegularity.lean',
+    'NLS/Articles/MKdVNLSHierarchies/IndependentAbelianPhasePeriods.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

@@ -30,29 +30,15 @@ holomorphically extends each frequency through all closed actions. At m=1
 both frequencies equal +2*pi*n, and a checked zero-profile counterexample
 refutes the printed (-1)^m factor. Independent canonical angles/final angle
 sums remain open.
-Current independent-phase progress: the actual regular Abelian correction
-series converges locally uniformly at EVERY real L2 Hill potential, including
-infinite-gap profiles and all closed contributing gaps. Its full independent
-unit phase is constructed and continuous on the exact original real H1
-own-open-action locus, for arbitrary signed mean. Only the negative original
-physical-action rotation law and the resulting final factorization remain
-unproved. No full complex analytic phase extension is asserted.
-The original globally labeled Dirichlet energies now have their actual
-contour generator under every physical action, and their derivatives along
-complete native Hs action flows are proved at every time. The original independent sheet normalization is now proved. The missing
-phase rotation still requires the normalized Abelian action-circle period
-evaluation and terminal continuation.
-The actual scalar Dirichlet characteristic now has its exact indexed entire
-product, with locally uniform convergence of the product and its energy
-derivative even at zero. Its positive and negative source roots and residue
-normalizations are identified on the full original real H1 domain.
-Finite-gap interpolation of the independently normalized Hill numerator is
-now proved at every complex energy, including divisor nodes and closed gaps.
-The independent canonical root agrees with the physical Miura root, and the
-original sheet/mass normalization gives an exact interior trace contraction.
-The independent full finite-gap phase now has its actual derivative on the
-physical action circle at interior contributing divisors, with coefficient
-positive i/pi. Its contour period evaluation and terminal continuation remain open.
+Current independent-phase progress: the full independent Hill Abelian phase
+is constructed and continuous on its exact own-open domain for arbitrary
+support. Its spectral conjugate has the source-oriented negative Kronecker
+action generators at interior finite-gap divisors. The actual physical
+Abelian period is proved pi times the Kronecker delta for every original
+real H1 profile, including collapsed gaps and arbitrary signed mean. The
+full finite-gap phase is differentiable through all terminal and closed
+configurations. The canonical value of that terminal derivative, the full
+rotation law for arbitrary support and the final factorization remain open.
 See the latest milestone below.
 
 Prepared 2026-11-02 against canonical commit
@@ -2633,3 +2619,60 @@ modules add 41 public declarations: 39 theorems and two definitions. All
 1,061 earlier mathematical sources are unchanged.
 
 Validation: all 1,077 article/shared NLS modules have validated private outputs. Sixteen new NLS modules and the aggregate compiled with autoImplicit=false and warnings as errors under default limits. The full audit was rerun after restoring one omitted old block reference; all 54 audit blocks are referenced exactly once. All 1,061 earlier mathematical source hashes and private compiled-output hashes match the frozen pushed d25fdb5 baseline. The complete targeted audit passed for 9,400 declarations/auxiliaries and the combined audit for 54,285 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All 1,080 frozen source/checker/aggregate hashes and the additional pinned mathlib source hash match. Public inventory: 4,833 declarations (4,039 theorems and 794 definitions). All 3,231 old audit scopes are preserved and 57 new scopes added in one array of at most 64, for 54 blocks total. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source.
+
+## 2026-11-04 — exact physical Abelian periods and source-oriented phase generators
+
+The independent normalized Hill differential now has its exact period on
+the ORIGINAL physical frequency circle for EVERY real H1 Miura profile:
+
+`integral_Cj z*psi_n(z^2)/R_ZS(z) = pi*delta_(j,n)`.
+
+This has arbitrary support and arbitrary signed mean. Both indices are any
+positive integers. Collapsed indexed gaps and closed other gaps are included;
+no finite-gap or interior-divisor hypothesis enters this period identity.
+The circle may be any intermediate circle in an actual all-index physical
+Cauchy family containing that source, including the original Laurent atlas
+circle used in the checked action generator.
+
+The enclosing original source disc and its exclusion of adjacent segments
+put the squared real crossings in the two adjacent independent Hill bands.
+The lower band at index one is included using the actual central gap and
+its nonnegative right endpoint. Squaring the original frequency-circle path
+and comparing it directly with the intrinsic energy-circle path gives a
+smooth affine loop homotopy. Its imaginary part has the sign of the same
+sine with a strictly positive coefficient. If that sine vanishes, cosine
+is plus or minus one and the real interpolation lies in one open band.
+Thus the entire homotopy stays in the full Hill real-cut domain. The already
+checked independent canonical root agrees with the original physical root
+there. The literal Jacobian2*z and the intrinsic (2*pi)^(-1) period yield
+positive pi, with NO extra imaginary unit.
+
+Consequently the original exp(+i*sum) full independent phase has actual
+positive i*delta action generators at interior finite-gap divisors. Its
+spectral conjugate, miuraNativeOppositeAbelianPhase, has the source-oriented
+negative i*delta generators. It uses only the independent Hill spectral
+construction. No NLS angle enters its definition. On every native real Hs
+class, s>=1, it has norm at most one globally, unit norm on the exact own-open
+angular domain, zero on its own closed domain and continuity on its own-open
+domain, with arbitrary support.
+
+The actual finite-gap full phase and its spectral conjugate are also now
+DIFFERENTIABLE through every terminal and closed configuration along every
+positive physical action flow. This follows from the local complex analytic
+extension of the actual finite partial phase and the actual differentiable
+rough Hill action curve. Isospectrality identifies the finite and full phases
+along the entire finite-gap orbit. An own closed gap makes the full phase
+zero on the entire orbit. No contributing sheet nonvanishing hypothesis is
+needed for differentiability.
+
+Differentiability alone does not prove the negative canonical derivative
+value at terminals. Extending that value through terminal divisors and
+closed contributing gaps, integrating the all-configuration finite-gap ODE,
+passing rotation to arbitrary support and instantiating full phase-product
+descent remain essential. Final Theorem4iii remains incomplete.
+
+The article interface is IndependentAbelianPhasePeriods.lean. Ten new modules
+add 28 public declarations: 27 theorems and one definition. All 1,077 earlier
+mathematical sources are unchanged.
+
+Validation: all 1,087 article/shared NLS modules have validated private outputs. Ten new NLS modules and the aggregate compiled with autoImplicit=false and warnings as errors under default limits. All 1,077 earlier mathematical source hashes and private compiled-output hashes match the frozen pushed c941fe9 baseline. The complete targeted audit passed for 9,462 declarations/auxiliaries and the combined audit for 54,345 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All 1,090 frozen source/checker/aggregate hashes and the additional pinned mathlib source/private-output hashes match. Public inventory: 4,861 declarations (4,066 theorems and 795 definitions). All 3,288 old audit scopes are byte-preserved and 38 new scopes added in one array of at most 64, for 55 blocks total, each referenced exactly once. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source.

@@ -343,7 +343,11 @@
         "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_interior_trace_contraction",
         "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_differential_complete_action_invariance",
         "NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_finite_gap_derivative",
-        "NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_original_action_circle"
+        "NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_original_action_circle",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_original_action_circle_normalization",
+        "NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_finite_gap_generator",
+        "NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_finite_gap_terminal_regularity",
+        "NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_native_data"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -352,9 +356,9 @@
       "angle_definition": "The actual NLS theta phase is supplied by the checked original normalized psi/common-domain construction and pulled back along the literal L2 diagonal. Its logarithmic differential is proved equal to the pullback of the original local NLS angle differential.",
       "Gardner_definition": "The scalar gradient is constructed from the actual L2 Frechet derivative; its spatial Fourier multiplier is 2*pi*i*m. Square summability of that derivative and equality with the actual period-one tempered distribution derivative are proved at every original real H1 input.",
       "limits": [
-        "The printed angle-action bracket clause is proved with the original +delta_mn sign. The independent original Hill Abelian phase now exists for every real H1 profile, with locally uniform correction convergence and continuity on exactly its own open physical action. Its actual negative physical-action rotation law remains unproved. The final angle-sum factorization and Theorem4iii as a whole remain incomplete."
+        "The printed NLS angle-action bracket is proved with its original positive Kronecker sign. The independently spectral Hill phase now has its source-oriented conjugate on every original real H1 profile. The actual physical Abelian circle period is proved pi times the Kronecker delta, on arbitrary support, including collapsed gaps. The source-oriented full phase has negative Kronecker action generators at interior finite-gap divisors and is differentiable at every finite-gap terminal or closed configuration. The canonical generator value through terminals and closed contributing gaps, and then the actual full opposite rotation law for arbitrary support, remain unproved. The final angle-sum factorization and Theorem4iii as a whole remain incomplete."
       ],
-      "conditional_descent_proved": "Any independently specified bounded phase continuous on its selected physical open-action locus and rotating oppositely under every complete original physical action flow has a global full phase-product factor through the entire native action sequence and literal signed mean. The actual full independent Hill phase now satisfies the continuity and boundedness inputs. Its opposite rotation law is the remaining mathematical input; no law is assumed."
+      "conditional_descent_proved": "Any independently specified bounded phase continuous on its selected physical open-action locus and rotating oppositely under every complete original physical action flow has a global full phase-product factor through the entire native action sequence and literal signed mean. The conjugate of the actual independent Hill phase now satisfies the exact continuity, boundedness, own-open unit norm and own-closed zero inputs, and has the required negative generators at interior finite-gap divisors. Its full opposite rotation law, including terminal configurations and arbitrary support, remains the missing mathematical input."
     }
   ],
   "dependency_labels": [
@@ -514,9 +518,9 @@
     "remaining": "Independent original mKdV angle identification and final Theorem 4(iii) angle-sum factorization. Corrected all-order frequency comparison is complete."
   },
   "remaining_essential_dependencies": [
-    "Evaluate the actual physical frequency-circle period integral z*psi(z^2)/R_ZS(z) as pi times the Kronecker delta, comparing the squared physical frequency contour with the independently normalized Hill energy contour. The actual full finite-gap phase derivative at interior contributing divisors is now proved with coefficient positive i/pi times this original contour period.",
-    "Extend the actual finite-gap phase calculation through terminal divisors and closed contributing gaps, then pass rotation to arbitrary support using the already checked full-phase continuity and native finite-support approximation. The new finite-gap derivative allows arbitrary finite gap support with holes, but requires nonzero sheet roots at every contributing index in that finite support.",
-    "Fix the source-canonical orientation of the independently constructed phase after evaluating its period. The checked exp(+i*sum) convention has positive i/pi in its generator; if the normalized period has its expected positive value, conjugate this independently spectral phase to obtain the opposite-flow phase. Instantiate exists_opposite_unit_phase_action_factor only after proving the actual opposite rotation on the full own-open domain. Final Theorem4iii remains incomplete; corrected Theorem3 and earlier completed clauses stay complete."
+    "Extend the checked source-oriented negative Kronecker generator identity from interior finite-gap divisors to terminal divisors and closed contributing gaps. Actual finite/full finite-gap phase differentiability at every terminal and closed configuration is now proved; the canonical value of that derivative still requires continuation or density evidence. The physical frequency-circle period is fully evaluated as pi times the Kronecker delta on every original real H1 profile and is no longer an open obligation.",
+    "Integrate the resulting all-configuration finite-gap differential equation to the actual complete physical action-flow law, then pass rotation to arbitrary support using the checked full-phase continuity and native finite-support approximation.",
+    "Instantiate exists_opposite_unit_phase_action_factor with miuraNativeOppositeAbelianPhase, the spectral conjugate of the independently constructed full Hill Abelian phase, only after its full actual negative rotation law is proved. Continuity on the exact own-open domain, global norm bound, own-open unit norm, own-closed zero convention, and the negative interior finite-gap generators are all checked. No NLS angle is used to define this phase. Final Theorem4iii remains incomplete; corrected Theorem3 and earlier completed clauses stay complete."
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -1572,8 +1576,8 @@
     "sheet_normalization": "The determinant-one scalar monodromy gives d*sheetRoot=d^2-1 at every complex characteristic zero. At real Dirichlet energies M=s_prime(mu)*d, so(d^2-1)/M=sheetRoot/s_prime(mu). Thus2*(mu-E)*integral(f_mu*G_E_prime)=sheetRoot(mu)*s(E)/s_prime(mu), including coincident energies and closed gaps.",
     "interior_contraction": "If all K retained original sheet roots are nonzero and E differs from the retained Dirichlet energies, sum_(k<K) psi(mu_(k+1))*integral(f_(k+1)*G_E_prime)/sheetRoot(mu_(k+1))=-psi(E)/2. The minus one half is proved with actual gradients, actual sheets and actual characteristic derivatives.",
     "limits": [
-      "The trace contraction has explicit interior-sheet and noncoincident-energy hypotheses. It is not asserted as the full phase derivative at terminal divisors.",
-      "Differentiation of the actual independent phase along the actual isospectral physical action flows and evaluation of the resulting action contour periods remain to be proved. The current phase canonical sign and its opposite rotation are still unproved.",
+      "The original trace contraction has its stated interior-sheet and noncoincident-energy hypotheses. Supported interpolation now permits closed holes.",
+      "The actual phase derivative, physical period evaluation and source orientation are now checked at interior finite-gap divisors. Canonical generator continuation through terminals and closed contributing gaps remains open.",
       "Theorem4iii final angle-sum factorization is incomplete. No spectral phase is defined from a negative NLS phase."
     ]
   },
@@ -1589,9 +1593,28 @@
     "chain_rule": "Compatible local real Dirichlet angle lifts represent the actual finite phase as exp(i*sum_F fullCosinePrimitive). Differentiation uses the actual Hill coefficient curve induced by the complete physical action flow, the checked scalar primitive FTC and the original Dirichlet energy velocities.",
     "generator": "The actual full phase derivative at interior finite-gap divisors is (i/pi)*phase*integral_(original certified physical frequency circle) z*psi(z^2)/R_ZS(z). The positive sign is proved. The finite interpolation omits closed holes using actual vanishing numerator values. Every contour point avoids every actual Dirichlet energy, and analytic trace kernels justify exchanging the finite sum with the integral.",
     "limits": [
-      "The contour period has not yet been evaluated as a Kronecker delta. This is an actual derivative identity, not yet a canonical rotation law.",
-      "Terminal-divisor continuation and passage of rotation to arbitrary support remain open. The full arbitrary-support phase itself and its continuity are already proved.",
-      "No final canonical orientation or Theorem4iii angle-sum factorization is claimed. The phase is independently spectral, never defined from a negative NLS phase."
+      "The original physical period is now evaluated as pi times the Kronecker delta on arbitrary support; see independent_Abelian_original_action_periods.",
+      "The full finite-gap phase is now differentiable at terminal configurations. The negative canonical generator value there and rotation on arbitrary support remain open.",
+      "The source orientation is fixed by spectral conjugation with a checked negative interior finite-gap generator. Final Theorem4iii factorization is still open."
+    ]
+  },
+  "independent_Abelian_original_action_periods": {
+    "status": "proved_original_physical_circle_period_on_arbitrary_support_source_orientation_and_interior_finite_gap_generators_terminal_differentiability",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_original_action_circle_normalization",
+      "NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_finite_gap_generator",
+      "NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_finite_gap_terminal_regularity",
+      "NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_native_data"
+    ],
+    "period_domain": "Every original real H1 Miura profile, arbitrary signed mean and arbitrary support, every positive j,n, and every intermediate circle in any actual all-index physical Cauchy family containing that source. Collapsed indexed gaps and all collapsed other gaps are included. No finite-gap, interior-divisor or nonzero-sheet hypothesis enters the contour period identity.",
+    "period": "Integral_(original certified frequency circle j) z*psi_n(z^2)/R_ZS(z) = pi*(if j=n then1 else0). The factor is pi, with positive sign and without an extra imaginary unit.",
+    "proof": "The original source disc encloses its own real segment and excludes its two neighboring segments and zero. Its two squared real crossings consequently lie in the two adjacent original Hill bands, including the lower band at j=1. An affine smooth loop homotopy from the squared frequency circle to the intrinsic energy circle preserves the imaginary-part sign. If its sine is zero, cosine is plus or minus one and both real crossings lie in the same convex open band. The entire homotopy therefore lies in the full Hill real-cut domain. The independent canonical root equals the actual physical root there. The literal squaring Jacobian2*z and the intrinsic (2*pi)^(-1) normalization give the exact positive pi.",
+    "orientation": "The existing exp(+i*sum) independent phase has actual positive i*delta generators at interior finite-gap divisors. Define miuraNativeOppositeAbelianPhase as its complex conjugate, using no NLS phase. The resulting actual generator is negative i*delta. The conjugated phase has norm at most1 everywhere, norm1 on exactly its own native NLS angular-open locus, zero on its own closed locus and continuity on that open locus, for all native real Hs classes s>=1 and arbitrary support.",
+    "terminal_regularity": "The actual full finite-gap phase and its spectral conjugate are differentiable along every positive physical action flow at every real time without any nonzero contributing-sheet assumption. A finite partial phase has a local complex analytic Hill coefficient extension, which differentiates along the actual rough Hill action curve. Isospectrality identifies this with the literal full phase on each finite-gap orbit. If the own gap is closed, the full phase vanishes on the entire orbit. This proves existence of the derivative at terminal and closed configurations, not its canonical value.",
+    "limits": [
+      "Negative Kronecker generator values are proved with interior nonzero sheets on the contributing finite support, with closed holes allowed. Differentiability at all terminal configurations does not by itself prove the generator values there.",
+      "The all-configuration finite-gap ODE, its full action-flow law and passage of rotation to arbitrary support remain open.",
+      "Final Theorem4iii angle-sum factorization is incomplete. The independently spectral phase is never defined from an original NLS angle."
     ]
   }
 }
