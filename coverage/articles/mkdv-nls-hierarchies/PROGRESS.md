@@ -3223,3 +3223,69 @@ add 28 public declarations: 27 theorems and one definition. All 1,077 earlier
 mathematical sources are unchanged.
 
 Validation: all 1,087 article/shared NLS modules have validated private outputs. Ten new NLS modules and the aggregate compiled with autoImplicit=false and warnings as errors under default limits. All 1,077 earlier mathematical source hashes and private compiled-output hashes match the frozen pushed c941fe9 baseline. The complete targeted audit passed for 9,462 declarations/auxiliaries and the combined audit for 54,345 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All 1,090 frozen source/checker/aggregate hashes and the additional pinned mathlib source/private-output hashes match. Public inventory: 4,861 declarations (4,066 theorems and 795 definitions). All 3,288 old audit scopes are byte-preserved and 38 new scopes added in one array of at most 64, for 55 blocks total, each referenced exactly once. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source.
+
+## 2026-11-04 — full-phase Lie continuity and actual terminal-translation geometry
+
+The SOURCE-ORIENTED FULL independent Abelian phase now has a continuous
+actual physical-action Lie derivative on every fixed finite-gap stratum,
+in every native real Hs norm, s>=1. Its own action must be open; every other
+action may be closed, every contributing Dirichlet point may be terminal,
+and the finite set F may contain closed gaps. The Lie derivative is the
+literal derivative at zero of the original complete J_j action flow.
+
+The actual native action velocity has a local complex holomorphic extension
+from the checked native Cartesian inverse charts. Uniqueness identifies it
+with the original complete-flow velocity. Therefore the actual Lie derivative
+of any locally analytically extended functional has its own local holomorphic
+extension. Applying this to the original finite partial Abelian phase and
+using full/finite equality along every orbit in a fixed closed complement
+proves full-phase Lie continuity. Conjugation gives the source orientation.
+
+The actual period-one Fourier translation is norm continuous in every native
+real Hs class and preserves the original source spectrum and multiplicities.
+The checked source-translation theorem then fixes EVERY indexed independent
+Hill label. Thus the same finite-gap stratum is preserved by every translate.
+
+The original physical whole-line L2 solution for a continuous periodic profile
+now satisfies its continuous ODE at EVERY real time, including all integer
+seams. Its original propagator conjugates the actual translated unit-interval
+classical monodromy for arbitrary real shifts. The independent quasi-Hill
+fundamental matrix is constructed from its actual Volterra columns and has
+Wronskian/determinant one at every complex energy, including zero. Its literal
+Miura basis matrix has determinant -2*z, intertwines the actual ZS matrices,
+and gives conjugacy for z nonzero. The corresponding translated independent
+quasi-Hill monodromy intertwines with the original monodromy through the
+original whole-line propagator in that basis.
+
+There is now an actual terminal-release formula. If the ORIGINAL quasi-Hill
+monodromy at E=z^2, z nonzero, is the parabolic matrix [[epsilon,0],[c,epsilon]],
+then its translated scalar Dirichlet characteristic equals
+
+`-c*(original fundamental Dirichlet position at the shift)^2`.
+
+The original Dirichlet position has derivative one at zero, so it is nonzero
+at all sufficiently small positive shifts. If c is nonzero, the translated
+characteristic is consequently nonzero at that endpoint. The actual-matrix
+hypothesis is explicit: it has NOT yet been derived at every original open
+Hill endpoint or counted as a completed density theorem.
+
+For every actual real period-one L2 Hill potential, the original energy
+trace has nonzero derivative at BOTH endpoints of EVERY positive open gap.
+The checked all-index multiplicity formula makes these radicand zeros simple;
+the original trace derivative cannot vanish there. No finite-gap or high-index
+restriction is used.
+
+The next bridge is to derive the nontrivial parabolic monodromy at every
+actual open endpoint from determinant one, the original terminal data and
+the now checked nonzero trace derivative. Then identify actual native Miura
+translations with the continuous quasi-Hill coefficient translates. The
+resulting actual interior-density statement, together with full-phase Lie
+continuity, will give canonical terminal generator values. Integration of
+the finite-gap ODE, rotation for arbitrary support and full phase-product
+descent still remain. Final Theorem4iii is incomplete.
+
+The article interface is IndependentAbelianTerminalGeometry.lean. Fourteen
+new modules add 69 public declarations: 55 theorems and 14 definitions.
+All 1,087 earlier mathematical sources are unchanged.
+
+Validation: all1,101 article/shared NLS modules have validated private outputs. Fourteen new NLS modules and the aggregate compiled with autoImplicit=false and warnings as errors under default limits. All1,087 earlier mathematical source hashes and private compiled-output hashes match the frozen pushed49d2806 baseline. The complete targeted audit passed for 9,550 declarations/auxiliaries and the combined audit for 54,430 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All1,104 frozen source/checker/aggregate hashes and the additional pinned mathlib source/private-output hashes match. Public inventory:4,930 declarations(4,121 theorems and809 definitions). All3,326 old audit scopes are byte-preserved and83 new scopes added in two arrays of at most64, for57 blocks total, each referenced exactly once. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source.

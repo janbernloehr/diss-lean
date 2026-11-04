@@ -5476,3 +5476,17 @@ import NLS.MKdV.MiuraOppositeAbelianPhase
 import NLS.KdV.HillFinitePhaseFamilyRegularity
 import NLS.MKdV.MiuraFiniteGapPhaseTerminalRegularity
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhasePeriods
+import NLS.MKdV.MiuraNativeActionVelocityContinuity
+import NLS.MKdV.MiuraNativeAnalyticLieDerivative
+import NLS.MKdV.MiuraFinitePhaseLieContinuity
+import NLS.MKdV.MiuraFiniteGapFullPhaseLieContinuity
+import NLS.SequenceSpaces.WeightedSpatialTranslationContinuity
+import NLS.MKdV.MiuraNativeSpatialTranslation
+import NLS.ZakharovShabat.ClassicalPeriodicWholeLine
+import NLS.ZakharovShabat.ClassicalPeriodicMonodromyShift
+import NLS.MKdV.QuasiHillFundamentalMatrix
+import NLS.MKdV.QuasiHillZSMatrixComparison
+import NLS.MKdV.QuasiHillPeriodicBasepoint
+import NLS.MKdV.QuasiHillTerminalTranslation
+import NLS.KdV.HillOpenEndpointTraceDerivative
+import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianTerminalGeometry

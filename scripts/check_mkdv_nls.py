@@ -1123,6 +1123,20 @@ modules = [
     'NLS/KdV/HillFinitePhaseFamilyRegularity.lean',
     'NLS/MKdV/MiuraFiniteGapPhaseTerminalRegularity.lean',
     'NLS/Articles/MKdVNLSHierarchies/IndependentAbelianPhasePeriods.lean',
+    'NLS/MKdV/MiuraNativeActionVelocityContinuity.lean',
+    'NLS/MKdV/MiuraNativeAnalyticLieDerivative.lean',
+    'NLS/MKdV/MiuraFinitePhaseLieContinuity.lean',
+    'NLS/MKdV/MiuraFiniteGapFullPhaseLieContinuity.lean',
+    'NLS/SequenceSpaces/WeightedSpatialTranslationContinuity.lean',
+    'NLS/MKdV/MiuraNativeSpatialTranslation.lean',
+    'NLS/ZakharovShabat/ClassicalPeriodicWholeLine.lean',
+    'NLS/ZakharovShabat/ClassicalPeriodicMonodromyShift.lean',
+    'NLS/MKdV/QuasiHillFundamentalMatrix.lean',
+    'NLS/MKdV/QuasiHillZSMatrixComparison.lean',
+    'NLS/MKdV/QuasiHillPeriodicBasepoint.lean',
+    'NLS/MKdV/QuasiHillTerminalTranslation.lean',
+    'NLS/KdV/HillOpenEndpointTraceDerivative.lean',
+    'NLS/Articles/MKdVNLSHierarchies/IndependentAbelianTerminalGeometry.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")
