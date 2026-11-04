@@ -1,3 +1,7 @@
+import NLS.SequenceSpaces.HilbertMatrixTransposeAnalytic
+import NLS.KdV.HillHminusOneNormalizedNumeratorSequence
+import NLS.KdV.HillHminusOneNormalizedSequencePeriods
+import NLS.Articles.KdVKdV2Frequencies.NativeNormalizedNumerators
 import NLS.KdV.HillFiniteGapDirichletNormalization
 import NLS.KdV.HillLinearDirichletContourComparison
 import NLS.KdV.HillIntrinsicOddFrequencyPeriods
@@ -263,6 +267,8 @@ open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let modules := #[
+    `NLS.SequenceSpaces.Basic,
+    `NLS.SequenceSpaces.Truncation,
     `NLS.SequenceSpaces.UniformTailContinuity,
     `NLS.ComplexAnalysis.BanachHolomorphicLimit,
     `NLS.ComplexAnalysis.RealLineIdentity,
@@ -270,9 +276,14 @@ run_cmd do
     `NLS.ComplexAnalysis.ContinuousRealFormIdentity,
     `NLS.ComplexAnalysis.BanachTaylorBounds,
     `NLS.SequenceSpaces.Convolution,
+    `NLS.SequenceSpaces.Weighted,
     `NLS.SequenceSpaces.Reflection,
     `NLS.SequenceSpaces.Multiplier,
     `NLS.SequenceSpaces.PositiveOddMultiplier,
+    `NLS.SequenceSpaces.Embedding,
+    `NLS.SequenceSpaces.SobolevEmbedding,
+    `NLS.ZakharovShabat.Potential,
+    `NLS.ZakharovShabat.Domain,
     `NLS.ZakharovShabat.ClassicalHorizontalStripBounds,
     `NLS.SequenceSpaces.PositiveIndexWeight,
     `NLS.SequenceSpaces.PuncturedLattice,
@@ -281,6 +292,9 @@ run_cmd do
     `NLS.SequenceSpaces.DiagonalIntertwining,
     `NLS.SequenceSpaces.BoundedCoordinateDifferentiable,
     `NLS.SequenceSpaces.CoordinateQuadraticDerivative,
+    `NLS.SequenceSpaces.WeightedMultiplier,
+    `NLS.SequenceSpaces.SobolevDerivative,
+    `NLS.SequenceSpaces.ExponentEmbedding,
     `NLS.SequenceSpaces.HolderEmbedding,
     `NLS.ComplexAnalysis.BanachSmoothAnalytic,
     `NLS.ComplexAnalysis.BanachTaylorBoundsOn,
@@ -340,6 +354,7 @@ run_cmd do
     `NLS.ZakharovShabat.ClassicalForcedKernel,
     `NLS.ZakharovShabat.ClassicalDiscriminantGradient,
     `NLS.ComplexAnalysis.QuotientDerivative,
+    `NLS.SequenceSpaces.HilbertCotangent,
     `NLS.KdV.ClassicalSpectralEmbedding,
     `NLS.KdV.ClassicalContourCoverage,
     `NLS.KdV.ActionHamiltonianMoments,
@@ -1370,7 +1385,12 @@ run_cmd do
     `NLS.KdV.HillFreeDirichletDifferential,
     `NLS.KdV.HillFreeTerminalDifferential,
     `NLS.KdV.HillFreeAbelianDifferential,
-    `NLS.Articles.KdVKdV2Frequencies.FreeFourierDifferential
+    `NLS.Articles.KdVKdV2Frequencies.FreeFourierDifferential,
+    `NLS.SequenceSpaces.HilbertMatrixTranspose,
+    `NLS.SequenceSpaces.HilbertMatrixTransposeAnalytic,
+    `NLS.KdV.HillHminusOneNormalizedNumeratorSequence,
+    `NLS.KdV.HillHminusOneNormalizedSequencePeriods,
+    `NLS.Articles.KdVKdV2Frequencies.NativeNormalizedNumerators
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

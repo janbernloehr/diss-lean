@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual scalar Fourier differentials at zero
+## Latest native normalized differential numerator family
+
+The actual Miura-normalized entire differential numerators now admit one jointly complex analytic realization in the full output-index Hilbert norm on a common complex Hminus-one source ball. All positive components equal the existing actual Miura family at every complex source, all nonpositive components vanish, and the entire free slice is retained. A single local neighborhood and constant control the full norm and every positive component together. The literal Hilbert-valued Bochner contour integral equals the exact Kronecker basis vector for every contour and source in that ball.
+
+See `NATIVE_NORMALIZED_NUMERATORS.md`. This is a normalized differential dependency. The globally selected physical differential matching and moving-contour/regular-phase bounds, native physical Abelian-coordinate analyticity, full weighted Sobolev scale, canonicality, global inverse and Hamiltonian/action-frequency identification remain open.
+
+Prior strict evidence for all 1108 unchanged selected baseline sources; strict dependency-order compilation of twelve byte-identical canonical Hilbert-transpose dependencies and four new proof modules; then a fresh combined transitive axiom audit of all 1124 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1154 frozen source/checker/provenance hashes, 27 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1124-module rebuild is claimed.
+
+Fresh audit: 10386 selected and 32558 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier actual scalar Fourier differentials at zero
 
 The actual free critical/root products, action-gap ratio, positive amplitude and regular phase now fix the coordinate normalization. The deflated canonical root at the selected free energy is i*(-1)^n/(n*pi). Actual free state/trace calculations and Dirichlet first variations give the terminal derivative h(2*n); multiplication by the actual amplitude gives h(2*n)/sqrt(2*n*pi). Conjugating source and target gives the negative component on every complex tangent as well.
 
@@ -336,7 +346,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1108 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1124 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1405,7 +1415,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1108 selected modules (including generated and private declarations)
+the 1124 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -2722,4 +2732,26 @@ PASS NLS/KdV/HillFreeTerminalDifferential
 PASS NLS/KdV/HillFreeAbelianDifferential
 PASS NLS/Articles/KdVKdV2Frequencies/FreeFourierDifferential
 Axiom audit passed: 10067 candidate declarations; 32498 declarations total.
+```
+
+Latest native normalized numerator strict additions and fresh combined audit:
+
+```text
+PASS NLS/SequenceSpaces/Basic
+PASS NLS/SequenceSpaces/Truncation
+PASS NLS/SequenceSpaces/Weighted
+PASS NLS/SequenceSpaces/Embedding
+PASS NLS/SequenceSpaces/SobolevEmbedding
+PASS NLS/ZakharovShabat/Potential
+PASS NLS/ZakharovShabat/Domain
+PASS NLS/SequenceSpaces/WeightedMultiplier
+PASS NLS/SequenceSpaces/SobolevDerivative
+PASS NLS/SequenceSpaces/ExponentEmbedding
+PASS NLS/SequenceSpaces/HilbertCotangent
+PASS NLS/SequenceSpaces/HilbertMatrixTranspose
+PASS NLS/SequenceSpaces/HilbertMatrixTransposeAnalytic
+PASS NLS/KdV/HillHminusOneNormalizedNumeratorSequence
+PASS NLS/KdV/HillHminusOneNormalizedSequencePeriods
+PASS NLS/Articles/KdVKdV2Frequencies/NativeNormalizedNumerators
+Axiom audit passed: 10386 candidate declarations; 32558 declarations total.
 ```

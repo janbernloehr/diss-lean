@@ -9,6 +9,8 @@ export MATHLIB_CACHE_DIR="${MATHLIB_CACHE_DIR:-/home/janbernloehr/Documents/Code
 article_build="$article_root/.lake/build/lib/lean"
 article_imports="$article_root/.lake/article-imports"
 modules=(
+  NLS/SequenceSpaces/Basic
+  NLS/SequenceSpaces/Truncation
   NLS/SequenceSpaces/UniformTailContinuity
   NLS/ComplexAnalysis/BanachHolomorphicLimit
   NLS/ComplexAnalysis/RealLineIdentity
@@ -16,9 +18,14 @@ modules=(
   NLS/ComplexAnalysis/ContinuousRealFormIdentity
   NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/SequenceSpaces/Convolution
+  NLS/SequenceSpaces/Weighted
   NLS/SequenceSpaces/Reflection
   NLS/SequenceSpaces/Multiplier
   NLS/SequenceSpaces/PositiveOddMultiplier
+  NLS/SequenceSpaces/Embedding
+  NLS/SequenceSpaces/SobolevEmbedding
+  NLS/ZakharovShabat/Potential
+  NLS/ZakharovShabat/Domain
   NLS/ZakharovShabat/ClassicalHorizontalStripBounds
   NLS/SequenceSpaces/PositiveIndexWeight
   NLS/SequenceSpaces/PuncturedLattice
@@ -27,6 +34,9 @@ modules=(
   NLS/SequenceSpaces/DiagonalIntertwining
   NLS/SequenceSpaces/BoundedCoordinateDifferentiable
   NLS/SequenceSpaces/CoordinateQuadraticDerivative
+  NLS/SequenceSpaces/WeightedMultiplier
+  NLS/SequenceSpaces/SobolevDerivative
+  NLS/SequenceSpaces/ExponentEmbedding
   NLS/SequenceSpaces/HolderEmbedding
   NLS/ComplexAnalysis/BanachSmoothAnalytic
   NLS/ComplexAnalysis/BanachTaylorBoundsOn
@@ -86,6 +96,7 @@ modules=(
   NLS/ZakharovShabat/ClassicalForcedKernel
   NLS/ZakharovShabat/ClassicalDiscriminantGradient
   NLS/ComplexAnalysis/QuotientDerivative
+  NLS/SequenceSpaces/HilbertCotangent
   NLS/KdV/ClassicalSpectralEmbedding
   NLS/KdV/ClassicalContourCoverage
   NLS/KdV/ActionHamiltonianMoments
@@ -1117,6 +1128,11 @@ modules=(
   NLS/KdV/HillFreeTerminalDifferential
   NLS/KdV/HillFreeAbelianDifferential
   NLS/Articles/KdVKdV2Frequencies/FreeFourierDifferential
+  NLS/SequenceSpaces/HilbertMatrixTranspose
+  NLS/SequenceSpaces/HilbertMatrixTransposeAnalytic
+  NLS/KdV/HillHminusOneNormalizedNumeratorSequence
+  NLS/KdV/HillHminusOneNormalizedSequencePeriods
+  NLS/Articles/KdVKdV2Frequencies/NativeNormalizedNumerators
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

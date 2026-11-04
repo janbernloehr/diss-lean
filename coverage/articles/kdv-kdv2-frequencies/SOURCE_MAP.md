@@ -982,3 +982,14 @@ After explicit period-one transport, EVERY signed scalar coefficient of the exis
 Prior strict evidence for all 1102 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1108 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1137 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1108-module rebuild is claimed.
 
 Fresh audit: 10067 selected and 32498 imported NLS declarations, permitted axioms only. Full Hamiltonian/action-frequency identification, canonicality, native Banach map and global inverse, rough-space compatibility and sharp estimates remain open. All eleven main theorem rows remain OPEN.
+
+
+## Latest native normalized differential numerator family
+
+The actual Miura-normalized entire differential numerators now admit one jointly complex analytic realization in the full output-index Hilbert norm on a common complex Hminus-one source ball. All positive components equal the existing actual Miura family at every complex source, all nonpositive components vanish, and the entire free slice is retained. A single local neighborhood and constant control the full norm and every positive component together. The literal Hilbert-valued Bochner contour integral equals the exact Kronecker basis vector for every contour and source in that ball.
+
+See `NATIVE_NORMALIZED_NUMERATORS.md`. This is a normalized differential dependency. The globally selected physical differential matching and moving-contour/regular-phase bounds, native physical Abelian-coordinate analyticity, full weighted Sobolev scale, canonicality, global inverse and Hamiltonian/action-frequency identification remain open.
+
+Prior strict evidence for all 1108 unchanged selected baseline sources; strict dependency-order compilation of twelve byte-identical canonical Hilbert-transpose dependencies and four new proof modules; then a fresh combined transitive axiom audit of all 1124 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1154 frozen source/checker/provenance hashes, 27 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1124-module rebuild is claimed.
+
+Fresh audit: 10386 selected and 32558 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.

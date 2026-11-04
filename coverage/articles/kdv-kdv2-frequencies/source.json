@@ -37,6 +37,11 @@
           "source_clause": "Fourier normalization at zero, actual scalar L2 realization",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillPhysicalAbelianMap_scalar_fourier_differential",
           "qualification": "All signed scalar complex L2 germs and mean-zero tangent derivatives match the actual physical map. A common sequence-valued analytic extension, native Frechet differentiability and the full s>=-1 Birkhoff theorem are not asserted."
+        },
+        {
+          "source_clause": "Common-neighborhood normalized differential dependency",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_actual_native_normalized_numerators",
+          "qualification": "Actual Miura-normalized differential numerators are assembled in the native output-index Hilbert norm on one complex Hminus-one ball, with exact Bochner periods and local uniform bounds. This is a dependency, not a native physical Abelian-coordinate or full Birkhoff theorem."
         }
       ]
     },
@@ -16160,12 +16165,180 @@
       "scope": "For EVERY signed integer k, including zero, constructs a genuine complex scalar germ on the native period-one Coeff2 source, matching the literal k-th coefficient of the existing actual hillPhysicalAbelianMap one on a real L2 neighborhood of zero. Its value at zero is zero and its derivative on every complex mean-zero tangent h is h(k)/sqrt(2*abs(k)*pi), with zero inverse at k=0. Period doubling is explicitly removed. This proves the actual scalar L2 Fourier normalization toward Theorem1.1, not existence of a native sequence-valued Frechet derivative/analytic extension or the full Sobolev-scale Birkhoff theorem.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "07b18937db337cb1d458aecd53afa22b6a665d0072b2cb04f1e165827dc411d3"
+    },
+    {
+      "path": "NLS/SequenceSpaces/Basic.lean",
+      "source_labels": [
+        "Canonical Hilbert transpose dependency closure"
+      ],
+      "source_pages": [],
+      "scope": "Byte-identical canonical dependency selected for strict private compilation and transitive audit of the native normalized differential numerator construction. Provenance: CANONICAL_HILBERT_TRANSPOSE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f1b989451df969b52a17c1e2ff5f98899a492750ca32bee2291029dfe2c3eff3"
+    },
+    {
+      "path": "NLS/SequenceSpaces/Truncation.lean",
+      "source_labels": [
+        "Canonical Hilbert transpose dependency closure"
+      ],
+      "source_pages": [],
+      "scope": "Byte-identical canonical dependency selected for strict private compilation and transitive audit of the native normalized differential numerator construction. Provenance: CANONICAL_HILBERT_TRANSPOSE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dae8620477806a1538d3a2d6ecadf0d9a4c3fe3d39298097b0459d0a8f0f5074"
+    },
+    {
+      "path": "NLS/SequenceSpaces/Weighted.lean",
+      "source_labels": [
+        "Canonical Hilbert transpose dependency closure"
+      ],
+      "source_pages": [],
+      "scope": "Byte-identical canonical dependency selected for strict private compilation and transitive audit of the native normalized differential numerator construction. Provenance: CANONICAL_HILBERT_TRANSPOSE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a8c59185e90c1b1b4346ff35ad8ee754ee084cc3a0894c664d01a02ef12732d9"
+    },
+    {
+      "path": "NLS/SequenceSpaces/Embedding.lean",
+      "source_labels": [
+        "Canonical Hilbert transpose dependency closure"
+      ],
+      "source_pages": [],
+      "scope": "Byte-identical canonical dependency selected for strict private compilation and transitive audit of the native normalized differential numerator construction. Provenance: CANONICAL_HILBERT_TRANSPOSE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f10d399a5facbbcaf2c98a6d8ebfa68e6bfecf9ada49727b8f48b0026ddea086"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SobolevEmbedding.lean",
+      "source_labels": [
+        "Canonical Hilbert transpose dependency closure"
+      ],
+      "source_pages": [],
+      "scope": "Byte-identical canonical dependency selected for strict private compilation and transitive audit of the native normalized differential numerator construction. Provenance: CANONICAL_HILBERT_TRANSPOSE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a1cdba6082d1d6b73c6af1eed06a02e2403e5419a5ad538dbdf12198e283f7d8"
+    },
+    {
+      "path": "NLS/ZakharovShabat/Potential.lean",
+      "source_labels": [
+        "Canonical Hilbert transpose dependency closure"
+      ],
+      "source_pages": [],
+      "scope": "Byte-identical canonical dependency selected for strict private compilation and transitive audit of the native normalized differential numerator construction. Provenance: CANONICAL_HILBERT_TRANSPOSE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "71413fd8e1d6e7fde7612f0e712c7253a502c4f59a5b2a75c46404250bc2723f"
+    },
+    {
+      "path": "NLS/ZakharovShabat/Domain.lean",
+      "source_labels": [
+        "Canonical Hilbert transpose dependency closure"
+      ],
+      "source_pages": [],
+      "scope": "Byte-identical canonical dependency selected for strict private compilation and transitive audit of the native normalized differential numerator construction. Provenance: CANONICAL_HILBERT_TRANSPOSE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cae9717aec0ac1c2f1c033be53b1add53249b7371e0ec6c18f3c2896cc208b36"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedMultiplier.lean",
+      "source_labels": [
+        "Canonical Hilbert transpose dependency closure"
+      ],
+      "source_pages": [],
+      "scope": "Byte-identical canonical dependency selected for strict private compilation and transitive audit of the native normalized differential numerator construction. Provenance: CANONICAL_HILBERT_TRANSPOSE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f3c9c977eff213926904f5db8b27bf03b7b85b47fcba5eb1baa4973beee52807"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SobolevDerivative.lean",
+      "source_labels": [
+        "Canonical Hilbert transpose dependency closure"
+      ],
+      "source_pages": [],
+      "scope": "Byte-identical canonical dependency selected for strict private compilation and transitive audit of the native normalized differential numerator construction. Provenance: CANONICAL_HILBERT_TRANSPOSE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9914cfaa0a6cb724eea5acf21998fe1a03ad4059c91a9eb0c639c5b882f5937a"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ExponentEmbedding.lean",
+      "source_labels": [
+        "Canonical Hilbert transpose dependency closure"
+      ],
+      "source_pages": [],
+      "scope": "Byte-identical canonical dependency selected for strict private compilation and transitive audit of the native normalized differential numerator construction. Provenance: CANONICAL_HILBERT_TRANSPOSE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3c0c0e8a67076ce71ee4c609535b970d8519ac54ff6e03e6218759ff70fcac10"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertCotangent.lean",
+      "source_labels": [
+        "Canonical Hilbert transpose dependency closure"
+      ],
+      "source_pages": [],
+      "scope": "Byte-identical canonical dependency selected for strict private compilation and transitive audit of the native normalized differential numerator construction. Provenance: CANONICAL_HILBERT_TRANSPOSE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "58388f06cb74cff863b26adbfd8ca767c187d0cf28f31fcbbd8ec3446daa32b5"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertMatrixTranspose.lean",
+      "source_labels": [
+        "Canonical Hilbert transpose dependency closure"
+      ],
+      "source_pages": [],
+      "scope": "Byte-identical canonical dependency selected for strict private compilation and transitive audit of the native normalized differential numerator construction. Provenance: CANONICAL_HILBERT_TRANSPOSE_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "861b39ac18e60d669607b5756f8ec08de85a256fbcb39db5801fa86786068174"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertMatrixTransposeAnalytic.lean",
+      "source_labels": [
+        "Common-neighborhood normalized differential dependency toward Theorem1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Proves the full Hilbert vector bound for the canonical bilinear matrix transpose, and native analyticity of its evaluation on analytic bounded-operator and vector families by the Hilbert cotangent isometry and bounded composition. No scalar-to-norm inference.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4d588c02e9ef761b4a9dee0dffc637e21584f375a922e3c9dca88c40dfd19db3"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneNormalizedNumeratorSequence.lean",
+      "source_labels": [
+        "Common-neighborhood normalized differential dependency toward Theorem1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Constructs the normalized entire numerator family in the native output-index Hilbert space using the actual period inverse transpose. Identifies all positive components, proves the exact full norm bound, joint complex Banach analyticity and energy-entireness on the common source domain, and one local neighborhood and bound before all positive output indices.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9154b220d3bf75c2b89f7f697b8139656a27d025f298b6cfd1960b3e19bc75d4"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneNormalizedSequencePeriods.lean",
+      "source_labels": [
+        "Common-neighborhood normalized differential dependency toward Theorem1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Proves genuine Bochner integrability and the literal full Hilbert-valued Kronecker contour normalization for the constructed family. The actual period matrix identity block and its inverse force all nonpositive components to vanish, so the native realization is precisely the positive-family zero extension.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4a7255ec381412d427d2b2fe18991e4134c1cbb868096a09878ef74d6f0cc3bd"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeNormalizedNumerators.lean",
+      "source_labels": [
+        "Common-neighborhood normalized differential dependency toward Theorem1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Constructs an actual SourceTheorem12_1 Miura-normalized differential data set on one complex Hminus-one ball, with a native jointly analytic output-index Hilbert realization equal to the actual Miura numerator at every positive component and complex source. Retains exact free values, zero nonpositive components, genuine Bochner Kronecker periods and local full norm bounds before every output index. This is a normalized differential dependency; it does not prove Banach analyticity of the physical Abelian coordinate map or the full Birkhoff theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9197554b07061c71b6d94f59b3568db62d0c84342a3df4228cea4f865fb73b9b"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The actual scalar L2 Fourier normalization at zero is NOW proved at every signed output index, with genuine complex scalar germs matching the existing actual physical Abelian map and exact derivative h_k/sqrt(2*abs(k)*pi) on every complex mean-zero period-one L2 tangent. Complete canonical coordinate/angle brackets beyond action involution and mixed action-coordinate laws, prove native sequence-valued Frechet differentiability and full complex Banach analyticity, extend to the full required Sobolev scale s>=-1, and prove the global inverse/bijective Birkhoff realization in the stated weighted topologies.",
+    "The actual scalar L2 Fourier normalization at zero is NOW proved at every signed output index, with genuine complex scalar germs matching the existing actual physical Abelian map and exact derivative h_k/sqrt(2*abs(k)*pi) on every complex mean-zero period-one L2 tangent. Complete canonical coordinate/angle brackets beyond action involution and mixed action-coordinate laws, prove native sequence-valued Frechet differentiability and full complex Banach analyticity, extend to the full required Sobolev scale s>=-1, and prove the global inverse/bijective Birkhoff realization in the stated weighted topologies. The actual Miura-normalized differential numerator family NOW has a native jointly analytic Hilbert-valued realization on one complex Hminus-one ball before all positive output indices, exact zero extension and Bochner Kronecker contour normalization, and full local norm bounds. Identification with the globally selected physical differentials and estimates uniform in moving contour index/regular phases are still required before using this as an actual native Abelian-coordinate analytic extension.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
@@ -16191,15 +16364,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 10067,
-    "total_declarations_audited": 32498,
+    "candidate_declarations_audited": 10386,
+    "total_declarations_audited": 32558,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1108,
+    "selected_modules": 1124,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -16244,7 +16417,8 @@
     "intrinsic_kdv_moments_validation_sequence": "Prior strict evidence for all 1085 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1091 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1120 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1091-module rebuild is claimed.",
     "odd_period_normalization_validation_sequence": "Prior strict evidence for all 1091 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1097 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1126 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1097-module rebuild is claimed.",
     "physical_quintic_moments_validation_sequence": "Prior strict evidence for all 1097 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1102 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1131 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1102-module rebuild is claimed.",
-    "free_fourier_differential_validation_sequence": "Prior strict evidence for all 1102 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1108 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1137 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1108-module rebuild is claimed."
+    "free_fourier_differential_validation_sequence": "Prior strict evidence for all 1102 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1108 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1137 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1108-module rebuild is claimed.",
+    "native_normalized_numerator_validation_sequence": "Prior strict evidence for all 1108 unchanged selected baseline sources; strict dependency-order compilation of twelve byte-identical canonical Hilbert-transpose dependencies and four new proof modules; then a fresh combined transitive axiom audit of all 1124 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1154 frozen source/checker/provenance hashes, 27 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1124-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -16574,10 +16748,24 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "57b2a20a9b7ef931e74796b55c9ae2fb0ecd7fa3",
+      "description": "Prior dependencies; actual Miura-normalized numerators now additionally have a native Hilbert-valued analytic common-ball realization and exact Bochner contour periods.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The actual scalar L2 Fourier normalization at zero is NOW proved at every signed output index, with genuine complex scalar germs matching the existing actual physical Abelian map and exact derivative h_k/sqrt(2*abs(k)*pi) on every complex mean-zero period-one L2 tangent. Complete canonical coordinate/angle brackets beyond action involution and mixed action-coordinate laws, prove native sequence-valued Frechet differentiability and full complex Banach analyticity, extend to the full required Sobolev scale s>=-1, and prove the global inverse/bijective Birkhoff realization in the stated weighted topologies.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
   "odd_period_dirichlet_normalization_record": "ODD_PERIOD_DIRICHLET_NORMALIZATION.md",
   "physical_quintic_moment_record": "FINITE_GAP_KDV2_MOMENT_IDENTITY.md",
-  "free_fourier_differential_record": "FREE_FOURIER_DIFFERENTIAL.md"
+  "free_fourier_differential_record": "FREE_FOURIER_DIFFERENTIAL.md",
+  "native_normalized_numerators_record": "NATIVE_NORMALIZED_NUMERATORS.md",
+  "canonical_hilbert_transpose_reuse_record": "CANONICAL_HILBERT_TRANSPOSE_REUSE.json"
 }

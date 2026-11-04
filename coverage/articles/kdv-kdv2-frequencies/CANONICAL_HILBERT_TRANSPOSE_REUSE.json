@@ -1,0 +1,79 @@
+{
+  "source_branch": "main",
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "scope": "Byte-identical Hilbert bilinear transpose and dependency closure, selected for strict private compilation and transitive audit to construct the actual native normalized numerator family. No canonical checkout modification.",
+  "files": [
+    {
+      "path": "NLS/SequenceSpaces/Basic.lean",
+      "source_sha256": "f1b989451df969b52a17c1e2ff5f98899a492750ca32bee2291029dfe2c3eff3",
+      "local_sha256": "f1b989451df969b52a17c1e2ff5f98899a492750ca32bee2291029dfe2c3eff3",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/Truncation.lean",
+      "source_sha256": "dae8620477806a1538d3a2d6ecadf0d9a4c3fe3d39298097b0459d0a8f0f5074",
+      "local_sha256": "dae8620477806a1538d3a2d6ecadf0d9a4c3fe3d39298097b0459d0a8f0f5074",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/Weighted.lean",
+      "source_sha256": "a8c59185e90c1b1b4346ff35ad8ee754ee084cc3a0894c664d01a02ef12732d9",
+      "local_sha256": "a8c59185e90c1b1b4346ff35ad8ee754ee084cc3a0894c664d01a02ef12732d9",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/WeightedMultiplier.lean",
+      "source_sha256": "f3c9c977eff213926904f5db8b27bf03b7b85b47fcba5eb1baa4973beee52807",
+      "local_sha256": "f3c9c977eff213926904f5db8b27bf03b7b85b47fcba5eb1baa4973beee52807",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/Embedding.lean",
+      "source_sha256": "f10d399a5facbbcaf2c98a6d8ebfa68e6bfecf9ada49727b8f48b0026ddea086",
+      "local_sha256": "f10d399a5facbbcaf2c98a6d8ebfa68e6bfecf9ada49727b8f48b0026ddea086",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SobolevEmbedding.lean",
+      "source_sha256": "a1cdba6082d1d6b73c6af1eed06a02e2403e5419a5ad538dbdf12198e283f7d8",
+      "local_sha256": "a1cdba6082d1d6b73c6af1eed06a02e2403e5419a5ad538dbdf12198e283f7d8",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/Potential.lean",
+      "source_sha256": "71413fd8e1d6e7fde7612f0e712c7253a502c4f59a5b2a75c46404250bc2723f",
+      "local_sha256": "71413fd8e1d6e7fde7612f0e712c7253a502c4f59a5b2a75c46404250bc2723f",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/Domain.lean",
+      "source_sha256": "cae9717aec0ac1c2f1c033be53b1add53249b7371e0ec6c18f3c2896cc208b36",
+      "local_sha256": "cae9717aec0ac1c2f1c033be53b1add53249b7371e0ec6c18f3c2896cc208b36",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SobolevDerivative.lean",
+      "source_sha256": "9914cfaa0a6cb724eea5acf21998fe1a03ad4059c91a9eb0c639c5b882f5937a",
+      "local_sha256": "9914cfaa0a6cb724eea5acf21998fe1a03ad4059c91a9eb0c639c5b882f5937a",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ExponentEmbedding.lean",
+      "source_sha256": "3c0c0e8a67076ce71ee4c609535b970d8519ac54ff6e03e6218759ff70fcac10",
+      "local_sha256": "3c0c0e8a67076ce71ee4c609535b970d8519ac54ff6e03e6218759ff70fcac10",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertCotangent.lean",
+      "source_sha256": "58388f06cb74cff863b26adbfd8ca767c187d0cf28f31fcbbd8ec3446daa32b5",
+      "local_sha256": "58388f06cb74cff863b26adbfd8ca767c187d0cf28f31fcbbd8ec3446daa32b5",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertMatrixTranspose.lean",
+      "source_sha256": "861b39ac18e60d669607b5756f8ec08de85a256fbcb39db5801fa86786068174",
+      "local_sha256": "861b39ac18e60d669607b5756f8ec08de85a256fbcb39db5801fa86786068174",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}
