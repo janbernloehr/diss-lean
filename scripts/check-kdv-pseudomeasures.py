@@ -1480,6 +1480,16 @@ modules = [
     'NLS.KdV.HillActionVelocitySumNormalization',
     'NLS.KdV.HillCompletePhaseActionKronecker',
     'NLS.Articles.KdVPseudomeasures.OriginalHillAngleActionKronecker',
+    'NLS.Poisson.GardnerConstantBracketStationarity',
+    'NLS.KdV.HillDiscriminantDirichletVelocity',
+    'NLS.KdV.HillAbelianDiscriminantVariation',
+    'NLS.KdV.HillCompletePhaseFunctionalSeries',
+    'NLS.KdV.HillAnglePairActionStationarity',
+    'NLS.KdV.HillCompletePhaseDiscriminant',
+    'NLS.KdV.HillAnglePairDiscriminantVariation',
+    'NLS.KdV.HillFunctionalActionPrescribedContour',
+    'NLS.KdV.HillAnglePairDiscriminantPeriods',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillAngleDiscriminant',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
