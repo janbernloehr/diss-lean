@@ -8584,6 +8584,588 @@
       "scope": "Actual trace gradient, its spatial derivative and its velocity quadratic form satisfy a proved closed first-order system with matching endpoints. An explicit concomitant proves the actual scalar Gardner trace pairing vanishes for every continuous complex source and all energy pairs, including diagonal. Actual trace Gardner directions have mean zero, and every Hill discriminant has zero potential Frechet derivative along each such direction. No spatial derivative of the potential, NLS bracket substitution, or existence of an isospectral integral curve is assumed.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "157477d6a362061f54b7d3d04ce540b1fa70a87762643cb9eb3d208bb9aff2a5"
+    },
+    {
+      "path": "NLS/KdV/HillL2DirichletCharacteristic.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a8907e46c53674f5a8673ef1923626564e3c3da6e5adbe3faf0b12ad55a80f9b",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/UnitCurveIntegral.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "41211aa0bfaac36b349a9bed78e761ff975e1ffc2eb70fa4fb647fce5524c513",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScalarStateMass.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a4bf6bf494919a24bfb2e6236a5e3a71df299a408a1d3e61d1474388c450fb6c",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillL2StateCurve.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "454ae2a28cd61dc83bd5c0306abf8418f98055c4e6e59c4bf307d4afb5762a35",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillL2GreenIdentity.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e66233bab908abe570fc00f8b4873219be19e0684a243ae61b2386c656c1410f",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/ZakharovShabat/L2SolutionNonvanishing.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a2a7e3982e17dba92cf32daaf533735001e8fdcb3837cce7c8aaf8bbd88b283c",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletReality.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3d650863cb1393dec99725c13840d8c9b4f91645fda2c0b1dc02eb96ef2c5316",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillStateMonodromy.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7ec6517ad007eb0c831267d0717387afb21bced911752d502a5570e669e1b731",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletBands.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9f60d02a61ec5a00e8a766789ec1ddd6c674574d8b81935afce6376b4c557e20",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/UnitComplexCurveIntegral.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ed8cdcef3dec539c5f60871c6c8ffbc05f7ce464dcfb334f66eb91e0527a7f30",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScalarStateCrossMass.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0014103bc3084b7447050cd58a0ae6e6deb011fb27460980fed8a4209641128e",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletLagrange.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "803d52411ed49ab6d9a3c6f432c9612d0753bc34badcffd3e9e9c895f6d37e3c",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticPuncturedLimit.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "39894438de36641ec17fe8346b32ba756782fd8d7269277d7d63f900afe9fdbb",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletSimplicity.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a49a408424f1eca609131808b7cf50dd900c74bfce83092b4f636de387dc5f48",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletRootBranches.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0762efeb2621a3309c09a7880aa386c6794b0b1e3f6cb3df58f2dc2fe7ee2faa",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillFreeDirichlet.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9051fb4061736982a304e7767c58f90f1a60f77f92ece8ed750e862f4b4d1ef7",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ClosedIntervalRoots.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7093d3831577947ff947ea4742e5d0b9dc8051efb8e9cd516896b4ea62b7b557",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletGapExistence.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b582a2e34aa6f2d3eb659f83b0ca952a055022e65f29372cd6347d67d5b767f5",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/PositiveZeroUniqueness.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "669be0342571d7d0c6289e9e2c96ff07003be84a3d6cf844eea3c7038e95df18",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletGapUniqueness.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4b2e2303a739a519942b3c5780caa1f24ec92a397843b744a8551fef7da40a01",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletLabels.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "746cde4ef20a9770c36c77d103578981212c300fc6bff319f61a694f809ddd0d",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletLabelContinuity.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "478c7e4403862be57abb5941180b3b6975b1177fc93206399ec925e54a097843",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletSlope.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d539eef43e3997a75d8021bf919d9ad25b0fa05debc3fc81933473ded48e5aa8",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletNormingData.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3a6976e111ede766127496977a5ab94f4b1245aafae1da0d0140b035584cbaec",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletAnalyticLabels.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6180dffbcfaeee404799c6916a13d58f968a86197eb7a8f833664c489e46f285",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletAnalyticNorming.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ad357e3373ebb76fd6c5be35591499d34a51f5c9792cf34b41d7a1d6ef9451e7",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletBranchDerivatives.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "db2d8be3e20600a65c45163ff5e8df95619b1be40a1de011e132a90bd4c94bff",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletPotentialDerivative.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9bbb3c875b1e900efa6f4327ce5e775547af7214f5b4e4cbab43f55cdf3df9c4",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletKernelNormalization.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6a145272e6b0b1fb8ee01bfdfc4acf317ec29511ced7117d9cd29b9c2c931d37",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletGradients.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "53af8d881ccb6d4a4951c61fd27b936472157df40d8f17d4ae9fe1c7bfae20b7",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealEnergySquareRoot.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "742026d723830ca1b4452e16dea2f26a6b9cb43670bd3f48498716219475ef65",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillStateJointContinuity.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a6bcf2fed35da908f31ef6e222f27d7b3441b6846e9c6f436a3c3c8158a4a34d",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillRealPeriodOneTruncation.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7b737504ca5b65e7535a0263f01449d59a11c418755eec57302d2ab665fa113d",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScalarStateSquaredPairing.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c12e7f97d500ced8ad33bfbc5db48a8f29a527d8b4c87e1d442cff57e4f82da2",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillDirichletBrackets.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3e496e0259ad4e4d6dedbc44c538bf01fa3542f6c8089e2634914e4bba309bd7",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletSquaredPairing.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "15a6657edb287069a7307d4ce6c4dd21016502452acc73a50a4fdd2ae7319324",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletGradientCurves.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3368b97cbf137ad3e162120bb0809cb97022cdab86490c3c71df4bac2d6c04a5",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletGardnerBrackets.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b5ae51d2f04adcb63642fa62c4ac38c9259c703220fbbc071d63811d2b160e2d",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletSheetRoot.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Selected actual Dirichlet normalization dependency reused byte for byte from the fixed shared estimates snapshot. Actual labelled Dirichlet energies, simplicity, physical mass and slope normalization, branch derivatives, normalized physical gradients, real period-one truncations or sheet root; see SHARED_DIRICHLET_NORMALIZATION_IMPORT.json for exact hashes and retained local variants. No angle or main frequency theorem inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "88ca8a6d9e4153aa5d2e4d6282afe1de434e654c66173973a8cdca3876f37792",
+      "shared_source_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "shared_source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f"
+    },
+    {
+      "path": "NLS/KdV/HillL2TraceGradients.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "For arbitrary complex L2 coefficient sources and directions, the actual Hill discriminant Frechet derivative is represented by the literal scalar quadratic trace-gradient curve paired with the actual physical direction. Proved from actual L2 monodromy gradient, scalar-state bridge and source chain rule. Actual spatial derivative almost everywhere, source norm continuity, frequency norm continuity and exact continuous-Fourier compatibility are proved.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "08b5926aca6a190ab90ffa174c81ef7f96cc61a9f6fb2f7bd049f9a370d74e10"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticDividedDifference.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Reusable punctured-square divided-difference filling from an actual derivative, zero value and continuous left-hand side. Handles the ramification at zero without assuming a nonzero square coordinate or a diagonal value. Applied to the actual Dirichlet characteristic and scalar boundary identity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "34fc1079fd27f5d8b7a5f2cd349f8b7cc11ca8796af9b9def528789cef7a82de"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletDiscriminantBrackets.lean",
+      "source_labels": [
+        "Necessary actual normalized Dirichlet-discriminant bracket toward the angle identity preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Actual normalized Dirichlet/discriminant scalar Gardner bracket at every real period-one L2 source, every positive Dirichlet index and all complex energies. Real Fourier truncations transfer the actual boundary identity; proved mass/slope normalization gives the exact cross-multiplied sheet-root identity, off-diagonal source quotient, and actual diagonal value minus one half the actual sheet root, including zero energy. Actual branch and trace gradients are proved or reused in the same physical normalization. No Abelian-angle identity, physical frequency theorem or main theorem asserted.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "990172895fdd50dd0b3137db215a9504c6b3b6099ecacb6a803ee4adabd1d334"
     }
   ],
   "dependencies_needed": [
@@ -8615,15 +9197,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 5903,
-    "total_declarations_audited": 28021,
+    "candidate_declarations_audited": 6223,
+    "total_declarations_audited": 28466,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 527,
+    "selected_modules": 569,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -8639,7 +9221,8 @@
     "physical_quartic_coefficient_validation_sequence": "Prior strict validation of 436 unchanged selected sources, strict compilation of 67 selectively imported sources, two unchanged existing dependencies and four new proof modules, then a fresh full combined transitive axiom audit of all 509 selected modules. Selected dependency order is checked transitively. No repeated full 509-module build is claimed. Source hashes, selections, private fresh outputs, eight provenance records and canonical main verified.",
     "finite_gap_quartic_identity_validation_sequence": "Prior strict validation of 509 unchanged selected sources, strict compilation of ten unchanged selected shared imports and two new proof modules, then a fresh full combined transitive axiom audit of all 521 selected modules. Selected dependency order is checked transitively. No repeated full 521-module build is claimed. Source hashes, selections, private fresh outputs, nine provenance records and canonical main verified.",
     "dirichlet_trace_kernel_validation_sequence": "Prior strict validation of 521 unchanged selected sources, strict compilation of two new scalar Hill boundary/kernel proof modules, then a fresh full combined transitive axiom audit of all 523 selected modules. Selected dependency order is checked transitively. No repeated full 523-module build is claimed. Source hashes, selections, private fresh outputs, nine unchanged provenance records and canonical main verified.",
-    "actual_gardner_trace_validation_sequence": "Prior strict validation of 523 unchanged selected sources, strict default-limit compilation of two existing helper files with only their old heartbeat overrides removed and two new actual scalar Hill gradient/involution modules, then a fresh full combined transitive axiom audit of all 527 selected modules. Selected dependency order is checked transitively, with the helpers before existing consumers. No repeated full 527-module build is claimed. Source hashes, selections, private fresh outputs, nine unchanged shared-import records, canonical helper reuse hashes and clean unchanged canonical main verified."
+    "actual_gardner_trace_validation_sequence": "Prior strict validation of 523 unchanged selected sources, strict default-limit compilation of two existing helper files with only their old heartbeat overrides removed and two new actual scalar Hill gradient/involution modules, then a fresh full combined transitive axiom audit of all 527 selected modules. Selected dependency order is checked transitively, with the helpers before existing consumers. No repeated full 527-module build is claimed. Source hashes, selections, private fresh outputs, nine unchanged shared-import records, canonical helper reuse hashes and clean unchanged canonical main verified.",
+    "normalized_dirichlet_trace_bracket_validation_sequence": "Prior strict validation of 527 unchanged selected sources, strict dependency-order compilation of 39 unchanged selected shared imports and three new proof modules, then a fresh full combined transitive axiom audit of all 569 selected modules. Existing compatible local variants retained unchanged. The shared strict checks and new-module checks are separate phases; no repeated full 569-module build is claimed. Exact selections, transitive selected dependency order, source hashes, private fresh outputs, ten shared-import records, canonical reuse hashes and clean unchanged canonical main verified."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -8768,6 +9351,12 @@
       "commit": "8bd9dcba2c439828221e11c08918ee632d16556e",
       "record": "coverage/articles/kdv-kdv2-frequencies/SHARED_FINITE_GAP_EXTERIOR_IMPORT.json",
       "kind": "Ten unchanged actual collapsed-gap/lowest-cut filling and finite-band coverage sources; seven local compatible variants retained. Full branch not merged."
+    },
+    {
+      "branch": "articles/kdv-estimates",
+      "commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f",
+      "record": "coverage/articles/kdv-kdv2-frequencies/SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
+      "kind": "39 unchanged actual Dirichlet labels, physical mass/branch gradients, real truncation and sheet-root sources; seven compatible local variants retained unchanged. Full branch not merged."
     }
   ],
   "normalized_collapsed_moments_record": "NORMALIZED_COLLAPSED_MOMENTS.md",
@@ -8808,5 +9397,7 @@
   "shared_finite_gap_exterior_import_record": "SHARED_FINITE_GAP_EXTERIOR_IMPORT.json",
   "dirichlet_trace_kernel_record": "DIRICHLET_TRACE_KERNEL_PAIRING.md",
   "actual_gardner_trace_record": "ACTUAL_GARDNER_TRACE_INVOLUTION.md",
-  "canonical_trace_gradient_reuse_record": "CANONICAL_TRACE_GRADIENT_REUSE.json"
+  "canonical_trace_gradient_reuse_record": "CANONICAL_TRACE_GRADIENT_REUSE.json",
+  "normalized_dirichlet_trace_bracket_record": "NORMALIZED_DIRICHLET_TRACE_BRACKET.md",
+  "shared_dirichlet_normalization_import_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json"
 }

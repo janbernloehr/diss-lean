@@ -1,5 +1,10 @@
 # Actual Hill discriminant gradient and Gardner trace involution
 
+Subsequent progress: `NORMALIZED_DIRICHLET_TRACE_BRACKET.md` records the
+actual rough normalized Dirichlet/discriminant bracket, its source quotient
+and filled diagonal. The remaining-step descriptions below record this
+earlier milestone; the Abelian-angle and frequency identities remain open.
+
 This step proves necessary physical variational input toward the angle–
 discriminant bracket used before Lemma 3.2 (69), PDF page 26. It does not
 assert that angle identity, the Hamiltonian frequency formula, or any main

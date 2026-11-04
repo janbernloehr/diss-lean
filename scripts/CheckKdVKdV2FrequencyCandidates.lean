@@ -1,3 +1,7 @@
+import NLS.KdV.HillDirichletDiscriminantBrackets
+import NLS.KdV.HillL2TraceGradients
+import NLS.KdV.HillDirichletGradients
+import NLS.KdV.HillDirichletGradientCurves
 import NLS.KdV.ClassicalHillGardnerTraceInvolution
 import NLS.KdV.ClassicalHillDiscriminantGradient
 import NLS.KdV.ClassicalHillTracePairingKernel
@@ -642,7 +646,49 @@ run_cmd do
     `NLS.KdV.ClassicalHillDirichletBoundaryPairing,
     `NLS.KdV.ClassicalHillTracePairingKernel,
     `NLS.KdV.ClassicalHillDiscriminantGradient,
-    `NLS.KdV.ClassicalHillGardnerTraceInvolution]
+    `NLS.KdV.ClassicalHillGardnerTraceInvolution,
+    `NLS.KdV.HillL2DirichletCharacteristic,
+    `NLS.FunctionalAnalysis.UnitCurveIntegral,
+    `NLS.ComplexAnalysis.ScalarStateMass,
+    `NLS.KdV.HillL2StateCurve,
+    `NLS.KdV.HillL2GreenIdentity,
+    `NLS.ZakharovShabat.L2SolutionNonvanishing,
+    `NLS.KdV.HillDirichletReality,
+    `NLS.KdV.HillStateMonodromy,
+    `NLS.KdV.HillDirichletBands,
+    `NLS.FunctionalAnalysis.UnitComplexCurveIntegral,
+    `NLS.ComplexAnalysis.ScalarStateCrossMass,
+    `NLS.KdV.HillDirichletLagrange,
+    `NLS.ComplexAnalysis.QuadraticPuncturedLimit,
+    `NLS.KdV.HillDirichletSimplicity,
+    `NLS.KdV.HillDirichletRootBranches,
+    `NLS.KdV.HillFreeDirichlet,
+    `NLS.ComplexAnalysis.ClosedIntervalRoots,
+    `NLS.KdV.HillDirichletGapExistence,
+    `NLS.ComplexAnalysis.PositiveZeroUniqueness,
+    `NLS.KdV.HillDirichletGapUniqueness,
+    `NLS.KdV.HillDirichletLabels,
+    `NLS.KdV.HillDirichletLabelContinuity,
+    `NLS.KdV.HillDirichletSlope,
+    `NLS.KdV.HillDirichletNormingData,
+    `NLS.KdV.HillDirichletAnalyticLabels,
+    `NLS.KdV.HillDirichletAnalyticNorming,
+    `NLS.KdV.HillDirichletBranchDerivatives,
+    `NLS.KdV.HillDirichletPotentialDerivative,
+    `NLS.KdV.HillDirichletKernelNormalization,
+    `NLS.KdV.HillDirichletGradients,
+    `NLS.ComplexAnalysis.RealEnergySquareRoot,
+    `NLS.KdV.HillStateJointContinuity,
+    `NLS.KdV.HillRealPeriodOneTruncation,
+    `NLS.ComplexAnalysis.ScalarStateSquaredPairing,
+    `NLS.KdV.ClassicalHillDirichletBrackets,
+    `NLS.KdV.HillDirichletSquaredPairing,
+    `NLS.KdV.HillDirichletGradientCurves,
+    `NLS.KdV.HillDirichletSheetRoot,
+    `NLS.KdV.HillDirichletGardnerBrackets,
+    `NLS.KdV.HillL2TraceGradients,
+    `NLS.ComplexAnalysis.QuadraticDividedDifference,
+    `NLS.KdV.HillDirichletDiscriminantBrackets]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

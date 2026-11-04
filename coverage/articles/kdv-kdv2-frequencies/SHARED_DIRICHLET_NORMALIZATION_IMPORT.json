@@ -1,0 +1,283 @@
+{
+  "source_branch": "articles/kdv-estimates",
+  "source_commit": "07d27aaa9471905c4e832ba2229bb75ac79a8c5f",
+  "scope": "Minimal missing dependency closure for actual Dirichlet branch gradients, mass normalization, state continuity and real period-one truncations. Existing local variants retained; no full branch merge.",
+  "files": [
+    {
+      "path": "NLS/KdV/HillL2DirichletCharacteristic.lean",
+      "source_sha256": "a8907e46c53674f5a8673ef1923626564e3c3da6e5adbe3faf0b12ad55a80f9b",
+      "local_sha256": "a8907e46c53674f5a8673ef1923626564e3c3da6e5adbe3faf0b12ad55a80f9b",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/UnitCurveIntegral.lean",
+      "source_sha256": "41211aa0bfaac36b349a9bed78e761ff975e1ffc2eb70fa4fb647fce5524c513",
+      "local_sha256": "41211aa0bfaac36b349a9bed78e761ff975e1ffc2eb70fa4fb647fce5524c513",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScalarStateMass.lean",
+      "source_sha256": "a4bf6bf494919a24bfb2e6236a5e3a71df299a408a1d3e61d1474388c450fb6c",
+      "local_sha256": "a4bf6bf494919a24bfb2e6236a5e3a71df299a408a1d3e61d1474388c450fb6c",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2StateCurve.lean",
+      "source_sha256": "454ae2a28cd61dc83bd5c0306abf8418f98055c4e6e59c4bf307d4afb5762a35",
+      "local_sha256": "454ae2a28cd61dc83bd5c0306abf8418f98055c4e6e59c4bf307d4afb5762a35",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2GreenIdentity.lean",
+      "source_sha256": "e66233bab908abe570fc00f8b4873219be19e0684a243ae61b2386c656c1410f",
+      "local_sha256": "e66233bab908abe570fc00f8b4873219be19e0684a243ae61b2386c656c1410f",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/L2SolutionNonvanishing.lean",
+      "source_sha256": "a2a7e3982e17dba92cf32daaf533735001e8fdcb3837cce7c8aaf8bbd88b283c",
+      "local_sha256": "a2a7e3982e17dba92cf32daaf533735001e8fdcb3837cce7c8aaf8bbd88b283c",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletReality.lean",
+      "source_sha256": "3d650863cb1393dec99725c13840d8c9b4f91645fda2c0b1dc02eb96ef2c5316",
+      "local_sha256": "3d650863cb1393dec99725c13840d8c9b4f91645fda2c0b1dc02eb96ef2c5316",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillStateMonodromy.lean",
+      "source_sha256": "7ec6517ad007eb0c831267d0717387afb21bced911752d502a5570e669e1b731",
+      "local_sha256": "7ec6517ad007eb0c831267d0717387afb21bced911752d502a5570e669e1b731",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletBands.lean",
+      "source_sha256": "9f60d02a61ec5a00e8a766789ec1ddd6c674574d8b81935afce6376b4c557e20",
+      "local_sha256": "9f60d02a61ec5a00e8a766789ec1ddd6c674574d8b81935afce6376b4c557e20",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/UnitComplexCurveIntegral.lean",
+      "source_sha256": "ed8cdcef3dec539c5f60871c6c8ffbc05f7ce464dcfb334f66eb91e0527a7f30",
+      "local_sha256": "ed8cdcef3dec539c5f60871c6c8ffbc05f7ce464dcfb334f66eb91e0527a7f30",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScalarStateCrossMass.lean",
+      "source_sha256": "0014103bc3084b7447050cd58a0ae6e6deb011fb27460980fed8a4209641128e",
+      "local_sha256": "0014103bc3084b7447050cd58a0ae6e6deb011fb27460980fed8a4209641128e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletLagrange.lean",
+      "source_sha256": "803d52411ed49ab6d9a3c6f432c9612d0753bc34badcffd3e9e9c895f6d37e3c",
+      "local_sha256": "803d52411ed49ab6d9a3c6f432c9612d0753bc34badcffd3e9e9c895f6d37e3c",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticPuncturedLimit.lean",
+      "source_sha256": "39894438de36641ec17fe8346b32ba756782fd8d7269277d7d63f900afe9fdbb",
+      "local_sha256": "39894438de36641ec17fe8346b32ba756782fd8d7269277d7d63f900afe9fdbb",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletSimplicity.lean",
+      "source_sha256": "a49a408424f1eca609131808b7cf50dd900c74bfce83092b4f636de387dc5f48",
+      "local_sha256": "a49a408424f1eca609131808b7cf50dd900c74bfce83092b4f636de387dc5f48",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletRootBranches.lean",
+      "source_sha256": "0762efeb2621a3309c09a7880aa386c6794b0b1e3f6cb3df58f2dc2fe7ee2faa",
+      "local_sha256": "0762efeb2621a3309c09a7880aa386c6794b0b1e3f6cb3df58f2dc2fe7ee2faa",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillFreeDirichlet.lean",
+      "source_sha256": "9051fb4061736982a304e7767c58f90f1a60f77f92ece8ed750e862f4b4d1ef7",
+      "local_sha256": "9051fb4061736982a304e7767c58f90f1a60f77f92ece8ed750e862f4b4d1ef7",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ClosedIntervalRoots.lean",
+      "source_sha256": "7093d3831577947ff947ea4742e5d0b9dc8051efb8e9cd516896b4ea62b7b557",
+      "local_sha256": "7093d3831577947ff947ea4742e5d0b9dc8051efb8e9cd516896b4ea62b7b557",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletGapExistence.lean",
+      "source_sha256": "b582a2e34aa6f2d3eb659f83b0ca952a055022e65f29372cd6347d67d5b767f5",
+      "local_sha256": "b582a2e34aa6f2d3eb659f83b0ca952a055022e65f29372cd6347d67d5b767f5",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/PositiveZeroUniqueness.lean",
+      "source_sha256": "669be0342571d7d0c6289e9e2c96ff07003be84a3d6cf844eea3c7038e95df18",
+      "local_sha256": "669be0342571d7d0c6289e9e2c96ff07003be84a3d6cf844eea3c7038e95df18",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletGapUniqueness.lean",
+      "source_sha256": "4b2e2303a739a519942b3c5780caa1f24ec92a397843b744a8551fef7da40a01",
+      "local_sha256": "4b2e2303a739a519942b3c5780caa1f24ec92a397843b744a8551fef7da40a01",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletLabels.lean",
+      "source_sha256": "746cde4ef20a9770c36c77d103578981212c300fc6bff319f61a694f809ddd0d",
+      "local_sha256": "746cde4ef20a9770c36c77d103578981212c300fc6bff319f61a694f809ddd0d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletLabelContinuity.lean",
+      "source_sha256": "478c7e4403862be57abb5941180b3b6975b1177fc93206399ec925e54a097843",
+      "local_sha256": "478c7e4403862be57abb5941180b3b6975b1177fc93206399ec925e54a097843",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletSlope.lean",
+      "source_sha256": "d539eef43e3997a75d8021bf919d9ad25b0fa05debc3fc81933473ded48e5aa8",
+      "local_sha256": "d539eef43e3997a75d8021bf919d9ad25b0fa05debc3fc81933473ded48e5aa8",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletNormingData.lean",
+      "source_sha256": "3a6976e111ede766127496977a5ab94f4b1245aafae1da0d0140b035584cbaec",
+      "local_sha256": "3a6976e111ede766127496977a5ab94f4b1245aafae1da0d0140b035584cbaec",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletAnalyticLabels.lean",
+      "source_sha256": "6180dffbcfaeee404799c6916a13d58f968a86197eb7a8f833664c489e46f285",
+      "local_sha256": "6180dffbcfaeee404799c6916a13d58f968a86197eb7a8f833664c489e46f285",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletAnalyticNorming.lean",
+      "source_sha256": "ad357e3373ebb76fd6c5be35591499d34a51f5c9792cf34b41d7a1d6ef9451e7",
+      "local_sha256": "ad357e3373ebb76fd6c5be35591499d34a51f5c9792cf34b41d7a1d6ef9451e7",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletBranchDerivatives.lean",
+      "source_sha256": "db2d8be3e20600a65c45163ff5e8df95619b1be40a1de011e132a90bd4c94bff",
+      "local_sha256": "db2d8be3e20600a65c45163ff5e8df95619b1be40a1de011e132a90bd4c94bff",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletPotentialDerivative.lean",
+      "source_sha256": "9bbb3c875b1e900efa6f4327ce5e775547af7214f5b4e4cbab43f55cdf3df9c4",
+      "local_sha256": "9bbb3c875b1e900efa6f4327ce5e775547af7214f5b4e4cbab43f55cdf3df9c4",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletKernelNormalization.lean",
+      "source_sha256": "6a145272e6b0b1fb8ee01bfdfc4acf317ec29511ced7117d9cd29b9c2c931d37",
+      "local_sha256": "6a145272e6b0b1fb8ee01bfdfc4acf317ec29511ced7117d9cd29b9c2c931d37",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletGradients.lean",
+      "source_sha256": "53af8d881ccb6d4a4951c61fd27b936472157df40d8f17d4ae9fe1c7bfae20b7",
+      "local_sha256": "53af8d881ccb6d4a4951c61fd27b936472157df40d8f17d4ae9fe1c7bfae20b7",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealEnergySquareRoot.lean",
+      "source_sha256": "742026d723830ca1b4452e16dea2f26a6b9cb43670bd3f48498716219475ef65",
+      "local_sha256": "742026d723830ca1b4452e16dea2f26a6b9cb43670bd3f48498716219475ef65",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillStateJointContinuity.lean",
+      "source_sha256": "a6bcf2fed35da908f31ef6e222f27d7b3441b6846e9c6f436a3c3c8158a4a34d",
+      "local_sha256": "a6bcf2fed35da908f31ef6e222f27d7b3441b6846e9c6f436a3c3c8158a4a34d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRealPeriodOneTruncation.lean",
+      "source_sha256": "7b737504ca5b65e7535a0263f01449d59a11c418755eec57302d2ab665fa113d",
+      "local_sha256": "7b737504ca5b65e7535a0263f01449d59a11c418755eec57302d2ab665fa113d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ScalarStateSquaredPairing.lean",
+      "source_sha256": "c12e7f97d500ced8ad33bfbc5db48a8f29a527d8b4c87e1d442cff57e4f82da2",
+      "local_sha256": "c12e7f97d500ced8ad33bfbc5db48a8f29a527d8b4c87e1d442cff57e4f82da2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillDirichletBrackets.lean",
+      "source_sha256": "3e496e0259ad4e4d6dedbc44c538bf01fa3542f6c8089e2634914e4bba309bd7",
+      "local_sha256": "3e496e0259ad4e4d6dedbc44c538bf01fa3542f6c8089e2634914e4bba309bd7",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletSquaredPairing.lean",
+      "source_sha256": "15a6657edb287069a7307d4ce6c4dd21016502452acc73a50a4fdd2ae7319324",
+      "local_sha256": "15a6657edb287069a7307d4ce6c4dd21016502452acc73a50a4fdd2ae7319324",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletGradientCurves.lean",
+      "source_sha256": "3368b97cbf137ad3e162120bb0809cb97022cdab86490c3c71df4bac2d6c04a5",
+      "local_sha256": "3368b97cbf137ad3e162120bb0809cb97022cdab86490c3c71df4bac2d6c04a5",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillBilinearSymmetry.lean",
+      "source_sha256": "6cda4cd258aff982accd9383c415b763a1e455899ea30ede6408ff73d5149cff",
+      "local_sha256": "2b0e7f9ae07056c448603bbcb086776fcbbef4c4c90d3e870963e00bd3dc665b",
+      "disposition": "retained_compatible_local_variant_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ClassicalDiscriminantGradient.lean",
+      "source_sha256": "3742e6ce09b0630e40238fcae6700bff4bf3655e98d2ee5333c63fe688ed5a5f",
+      "local_sha256": "7c0e09401d5695aba3be006fae621f2238e348eecdf10dd656b86c69753f544e",
+      "disposition": "retained_compatible_local_variant_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ClassicalForcedKernel.lean",
+      "source_sha256": "6ff5e6888d78b78d806799b89d8633313997e2dc5e3b52f7b506a5794ea3208a",
+      "local_sha256": "0fddb2dabc39ba876b978fc6b66d73a1f4fd64fced57a900171a55c22b05f100",
+      "disposition": "retained_compatible_local_variant_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/JointSpectralDerivative.lean",
+      "source_sha256": "f988cb9c979c851d34ce56925c72b86e3a54ad88d2bd75f3bfdd856e1212147c",
+      "local_sha256": "615f051c204758d1ec0b4a9197560b0e779b6aed4d8926d6125f7a98cba6b541",
+      "disposition": "retained_compatible_local_variant_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDiscriminantNecessity.lean",
+      "source_sha256": "b4dd08b58e8856e661f54bc478d525d71debb584fc4687ecee85302f1cdf1897",
+      "local_sha256": "c78b4bc2057447032ab29705cb0bb9255e15d87f330acc73e8e344ffd1b5675e",
+      "disposition": "retained_compatible_local_variant_unchanged"
+    },
+    {
+      "path": "NLS/KdV/ClassicalDiscriminant.lean",
+      "source_sha256": "79ec8e092e84ead44b69b25b1fb7a25e1ad74971d78d3c287194b23c4716f2b2",
+      "local_sha256": "a6f78abd90ddefc24cba3b6d958f4709364368cf00b1b84fdb830049a8361531",
+      "disposition": "retained_compatible_local_variant_unchanged"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillConjugation.lean",
+      "source_sha256": "1d6040cff5bf6aa03b0b16de145469b29ca84fcb17668be161747f601b8a7f89",
+      "local_sha256": "ffc639b592eceeca6524e069dae7020800eb034b83338121e78ebb8e302cf659",
+      "disposition": "retained_compatible_local_variant_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletGardnerBrackets.lean",
+      "source_sha256": "b5ae51d2f04adcb63642fa62c4ac38c9259c703220fbbc071d63811d2b160e2d",
+      "local_sha256": "b5ae51d2f04adcb63642fa62c4ac38c9259c703220fbbc071d63811d2b160e2d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletSheetRoot.lean",
+      "source_sha256": "88ca8a6d9e4153aa5d2e4d6282afe1de434e654c66173973a8cdca3876f37792",
+      "local_sha256": "88ca8a6d9e4153aa5d2e4d6282afe1de434e654c66173973a8cdca3876f37792",
+      "disposition": "imported_unchanged"
+    }
+  ]
+}

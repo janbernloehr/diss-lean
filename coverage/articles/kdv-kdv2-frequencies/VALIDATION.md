@@ -84,19 +84,19 @@ its existing Hilbert specialization and a transitive audit.
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 527 selected modules compile with pinned **Lean 4.33.1**, commit
+All 569 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: 523 unchanged previously checked sources, two existing
-helper files with resource overrides removed and two new modules compiled
-strictly, then a fresh combined transitive axiom audit of all 527 selections:
+Validation output: 527 unchanged previously checked sources, 39 unchanged
+selected shared imports and three new modules compiled strictly in separate
+phases, then a fresh combined transitive axiom audit of all 569 selections:
 
 ```text
-# Prior strict checks: 523 unchanged selected sources
+# Prior strict checks: 527 unchanged selected sources
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -620,17 +620,59 @@ PASS NLS/KdV/HillFiniteGapExterior
 PASS NLS/KdV/HillFiniteGapQuarticEnergy
 PASS NLS/KdV/ClassicalHillDirichletBoundaryPairing
 PASS NLS/KdV/ClassicalHillTracePairingKernel
-# Incremental strict default-limit checks: four newly selected modules
 PASS NLS/ZakharovShabat/ClassicalForcedKernel
 PASS NLS/ZakharovShabat/ClassicalDiscriminantGradient
 PASS NLS/KdV/ClassicalHillDiscriminantGradient
 PASS NLS/KdV/ClassicalHillGardnerTraceInvolution
-# Fresh combined transitive audit of all 527 selected modules
-Axiom audit passed: 5903 candidate declarations; 28021 declarations total.
+# Incremental strict default-limit checks: 39 shared imports and three new modules
+PASS NLS/KdV/HillL2DirichletCharacteristic
+PASS NLS/FunctionalAnalysis/UnitCurveIntegral
+PASS NLS/ComplexAnalysis/ScalarStateMass
+PASS NLS/KdV/HillL2StateCurve
+PASS NLS/KdV/HillL2GreenIdentity
+PASS NLS/ZakharovShabat/L2SolutionNonvanishing
+PASS NLS/KdV/HillDirichletReality
+PASS NLS/KdV/HillStateMonodromy
+PASS NLS/KdV/HillDirichletBands
+PASS NLS/FunctionalAnalysis/UnitComplexCurveIntegral
+PASS NLS/ComplexAnalysis/ScalarStateCrossMass
+PASS NLS/KdV/HillDirichletLagrange
+PASS NLS/ComplexAnalysis/QuadraticPuncturedLimit
+PASS NLS/KdV/HillDirichletSimplicity
+PASS NLS/KdV/HillDirichletRootBranches
+PASS NLS/KdV/HillFreeDirichlet
+PASS NLS/ComplexAnalysis/ClosedIntervalRoots
+PASS NLS/KdV/HillDirichletGapExistence
+PASS NLS/ComplexAnalysis/PositiveZeroUniqueness
+PASS NLS/KdV/HillDirichletGapUniqueness
+PASS NLS/KdV/HillDirichletLabels
+PASS NLS/KdV/HillDirichletLabelContinuity
+PASS NLS/KdV/HillDirichletSlope
+PASS NLS/KdV/HillDirichletNormingData
+PASS NLS/KdV/HillDirichletAnalyticLabels
+PASS NLS/KdV/HillDirichletAnalyticNorming
+PASS NLS/KdV/HillDirichletBranchDerivatives
+PASS NLS/KdV/HillDirichletPotentialDerivative
+PASS NLS/KdV/HillDirichletKernelNormalization
+PASS NLS/KdV/HillDirichletGradients
+PASS NLS/ComplexAnalysis/RealEnergySquareRoot
+PASS NLS/KdV/HillStateJointContinuity
+PASS NLS/KdV/HillRealPeriodOneTruncation
+PASS NLS/ComplexAnalysis/ScalarStateSquaredPairing
+PASS NLS/KdV/ClassicalHillDirichletBrackets
+PASS NLS/KdV/HillDirichletSquaredPairing
+PASS NLS/KdV/HillDirichletGradientCurves
+PASS NLS/KdV/HillDirichletGardnerBrackets
+PASS NLS/KdV/HillDirichletSheetRoot
+PASS NLS/KdV/HillL2TraceGradients
+PASS NLS/ComplexAnalysis/QuadraticDividedDifference
+PASS NLS/KdV/HillDirichletDiscriminantBrackets
+# Fresh combined transitive audit of all 569 selected modules
+Axiom audit passed: 6223 candidate declarations; 28466 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 527 selected modules (including generated and private declarations)
+the 569 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1809,3 +1851,10 @@ Audit: 5852 selected declarations; 27994 imported NLS declarations, permitted st
 See `ACTUAL_GARDNER_TRACE_INVOLUTION.md` and `CANONICAL_TRACE_GRADIENT_REUSE.json`. Prior strict validation of 523 unchanged selected sources, strict default-limit compilation of two existing helper files with only their old heartbeat overrides removed and two new actual scalar Hill gradient/involution modules, then a fresh full combined transitive axiom audit of all 527 selected modules. Selected dependency order is checked transitively, with the helpers before existing consumers. No repeated full 527-module build is claimed. Source hashes, selections, private fresh outputs, nine unchanged shared-import records, canonical helper reuse hashes and clean unchanged canonical main verified.
 
 Audit: 5903 selected declarations; 28021 imported NLS declarations, permitted standard axioms only. The literal quadratic scalar kernel is now proved to represent the actual potential Frechet derivative at every continuous complex source and energy. Actual scalar Gardner trace involution and infinitesimal stationarity hold at all energy pairs, with mean-zero directions; exact Dirichlet squared-state source variation retains boundary factors. Normalized Dirichlet/angle identities, physical frequency69, and all main rows remain open.
+
+
+## Actual normalized Dirichlet / discriminant bracket
+
+See `NORMALIZED_DIRICHLET_TRACE_BRACKET.md` and `SHARED_DIRICHLET_NORMALIZATION_IMPORT.json`. Prior strict validation of 527 unchanged selected sources, strict dependency-order compilation of 39 unchanged selected shared imports and three new proof modules, then a fresh full combined transitive axiom audit of all 569 selected modules. Existing compatible local variants retained unchanged. The shared strict checks and new-module checks are separate phases; no repeated full 569-module build is claimed. Exact selections, transitive selected dependency order, source hashes, private fresh outputs, ten shared-import records, canonical reuse hashes and clean unchanged canonical main verified.
+
+Audit: 6223 selected declarations; 28466 imported NLS declarations, permitted standard axioms only. The actual complex L2 Hill trace gradient, almost-everywhere spatial derivative and physical Fourier compatibility are proved. Actual real period-one L2 Dirichlet gradients then give the exact sheet-root cross identity, off-diagonal source quotient and diagonal value -r_D/2, including zero energy. Abelian-angle variation, physical frequency69 and all main rows remain open.

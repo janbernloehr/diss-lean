@@ -17,6 +17,12 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual normalized Dirichlet / discriminant bracket
+
+The actual complex L2 Hill discriminant gradient and its spatial derivative are now identified. For every real period-one L2 source and positive Dirichlet index, the normalized physical Gardner bracket has the exact source quotient away from the energy diagonal and the exact filled value -r_D/2 on it. The actual mass, slope, sheet root, labelled energies and branch gradients are proved or selectively reused; real Fourier truncations justify the rough boundary identity. See `NORMALIZED_DIRICHLET_TRACE_BRACKET.md`.
+
+Current validation: 569 selected modules (527 unchanged prior checks, 39 unchanged shared imports and three new strict default-limit compilations); fresh combined transitive audit of 6223 selected and 28466 imported NLS declarations, permitted axioms only. The normalized Abelian-angle/discriminant identity, physical frequency69 and all main theorem conclusions remain open.
+
 ## Latest actual Hill gradient and Gardner trace involution
 
 The actual complex potential derivative of the Hill discriminant is now represented by its literal scalar quadratic kernel. A proved closed differential system and an explicit concomitant give genuine scalar Gardner trace involution at every continuous complex potential and all pairs of energies. The trace directions have mean zero and every actual discriminant is infinitesimally stationary along them. Exact Dirichlet squared-state source variation is also proved. See `ACTUAL_GARDNER_TRACE_INVOLUTION.md`.
