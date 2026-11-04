@@ -1,0 +1,19 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "source_branch": "main",
+  "purpose": "Already transitively audited canonical signed-swap solution covariance and exact opposite WKB endpoint phases, now explicitly selected for the actual two-column full-plane WKB/local diagonal-resolvent frequency proof. No spatial-reflection helper is needed.",
+  "files": [
+    {
+      "path": "NLS/ZakharovShabat/ClassicalSwapSymmetry.lean",
+      "source_sha256": "209882dec17615df42d689804b33feeebc767767960c2205d75638addeb0ae89",
+      "local_sha256": "209882dec17615df42d689804b33feeebc767767960c2205d75638addeb0ae89",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NLSHamiltonianPhaseReflection.lean",
+      "source_sha256": "3989492448a13668bbc32715789566b4978ccef430c71f4bb233603816ca4705",
+      "local_sha256": "3989492448a13668bbc32715789566b4978ccef430c71f4bb233603816ca4705",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}

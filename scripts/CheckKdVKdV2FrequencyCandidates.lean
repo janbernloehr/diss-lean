@@ -205,6 +205,16 @@ import NLS.KdV.HillFiniteGapDirichletInterpolation
 import NLS.KdV.HillFiniteGapDirichletMoments
 import NLS.Articles.KdVKdV2Frequencies.FiniteGapDirichletVelocityContours
 import NLS.KdV.HillFiniteGapDirichletLaurent
+import NLS.ZakharovShabat.ClassicalSwapSymmetry
+import NLS.ZakharovShabat.NLSHamiltonianPhaseReflection
+import NLS.ZakharovShabat.NLSWKBFullPlaneComparison
+import NLS.ZakharovShabat.NLSWKBTwoColumnComparison
+import NLS.KdV.HillWKBDirichletComparison
+import NLS.KdV.HillRiccatiDirichletJet
+import NLS.KdV.HillWKBRootComparison
+import NLS.KdV.HillWKBLocalResolventModel
+import NLS.KdV.HillLocalDiagonalResolvent
+import NLS.KdV.HillCubicFrequencyKernel
 import Lean.Util.CollectAxioms
 
 /-! Transitive axiom audit of the candidate and its imported NLS dependencies.
@@ -472,6 +482,8 @@ run_cmd do
     `NLS.ComplexAnalysis.SimplePoleCauchyInterpolation,
     `NLS.ZakharovShabat.SourceIsospectralSet,
     `NLS.ComplexAnalysis.CirclePolynomialIntegrationByParts,
+    `NLS.ZakharovShabat.ClassicalSwapSymmetry,
+    `NLS.ZakharovShabat.NLSHamiltonianPhaseReflection,
     `NLS.ZakharovShabat.SobolevHierarchySymmetries,
     `NLS.MKdV.HierarchyRestriction,
     `NLS.DifferentialPolynomial.RiccatiResolventParity,
@@ -1282,7 +1294,15 @@ run_cmd do
     `NLS.KdV.HillFiniteGapDirichletInterpolation,
     `NLS.KdV.HillFiniteGapDirichletMoments,
     `NLS.Articles.KdVKdV2Frequencies.FiniteGapDirichletVelocityContours,
-    `NLS.KdV.HillFiniteGapDirichletLaurent
+    `NLS.KdV.HillFiniteGapDirichletLaurent,
+    `NLS.ZakharovShabat.NLSWKBFullPlaneComparison,
+    `NLS.ZakharovShabat.NLSWKBTwoColumnComparison,
+    `NLS.KdV.HillWKBDirichletComparison,
+    `NLS.KdV.HillRiccatiDirichletJet,
+    `NLS.KdV.HillWKBRootComparison,
+    `NLS.KdV.HillWKBLocalResolventModel,
+    `NLS.KdV.HillLocalDiagonalResolvent,
+    `NLS.KdV.HillCubicFrequencyKernel
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

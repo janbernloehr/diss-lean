@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual finite-gap Dirichlet frequency contours
+## Latest actual local resolvent and cubic frequency kernel
+
+Both actual WKB columns now have proved all-order errors on the entire complex frequency plane, with exact reciprocal physical phase multipliers and controlled initial basis. Their actual monodromy entry is the scalar Hill Dirichlet characteristic with its verified factor i. Independently proved actual primitive bounds give actual root separation and all-order root comparison on upper energy arcs.
+
+Combining those actual estimates with the genuine local Riccati jet proves D/R=i/(2z)+iQ(0)/(4z^3)+O(r^-4). For mean-zero sources the actual primitive then gives F^3*D/R=-z^2/2-Q(0)/4+O(r^-1). These are quantitative actual spectral estimates, with no supplied resolvent expansion or fixed leading scalar. See `LOCAL_DIAGONAL_RESOLVENT.md`.
+
+Prior strict evidence for all 1064 unchanged selected baseline sources; strict dependency-order compilation of ten additions (two unchanged canonical symmetry/phase helpers and eight new proof modules); then a fresh combined transitive axiom audit of all 1074 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1102 frozen source/checker/provenance hashes, all 25 unchanged provenance records plus one new verified two-file canonical WKB reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1074-module rebuild is claimed.
+
+Fresh audit: 9731 selected and 32167 imported NLS declarations, permitted axioms only. Full-circle and exterior contour comparison to identify the actual Hamiltonian frequencies (69)/(84) remains open. All eleven main theorem rows remain OPEN.
+
+## Earlier actual finite-gap Dirichlet frequency contours
 
 The actual normalized numerator divided by the actual Dirichlet characteristic now has a proved finite principal-part representation. Its own index is retained even at a closed gap. Analytic test functions give exact residue contour coefficients on common actual zero-free energy circles; all polynomial residue moments are independent of a valid cutoff containing that index.
 

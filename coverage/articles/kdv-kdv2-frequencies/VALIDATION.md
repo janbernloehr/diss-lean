@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual finite-gap Dirichlet frequency contours
+## Latest actual local resolvent and cubic frequency kernel
+
+Both actual WKB columns now have proved all-order errors on the entire complex frequency plane, with exact reciprocal physical phase multipliers and controlled initial basis. Their actual monodromy entry is the scalar Hill Dirichlet characteristic with its verified factor i. Independently proved actual primitive bounds give actual root separation and all-order root comparison on upper energy arcs.
+
+Combining those actual estimates with the genuine local Riccati jet proves D/R=i/(2z)+iQ(0)/(4z^3)+O(r^-4). For mean-zero sources the actual primitive then gives F^3*D/R=-z^2/2-Q(0)/4+O(r^-1). These are quantitative actual spectral estimates, with no supplied resolvent expansion or fixed leading scalar. See `LOCAL_DIAGONAL_RESOLVENT.md`.
+
+Prior strict evidence for all 1064 unchanged selected baseline sources; strict dependency-order compilation of ten additions (two unchanged canonical symmetry/phase helpers and eight new proof modules); then a fresh combined transitive axiom audit of all 1074 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1102 frozen source/checker/provenance hashes, all 25 unchanged provenance records plus one new verified two-file canonical WKB reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1074-module rebuild is claimed.
+
+Fresh audit: 9731 selected and 32167 imported NLS declarations, permitted axioms only. Full-circle and exterior contour comparison to identify the actual Hamiltonian frequencies (69)/(84) remains open. All eleven main theorem rows remain OPEN.
+
+## Earlier actual finite-gap Dirichlet frequency contours
 
 The actual normalized numerator divided by the actual Dirichlet characteristic now has a proved finite principal-part representation. Its own index is retained even at a closed gap. Analytic test functions give exact residue contour coefficients on common actual zero-free energy circles; all polynomial residue moments are independent of a valid cutoff containing that index.
 
@@ -266,7 +276,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1064 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1074 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1335,7 +1345,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1064 selected modules (including generated and private declarations)
+the 1074 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -2566,4 +2576,20 @@ PASS NLS/KdV/HillFiniteGapDirichletMoments
 PASS NLS/Articles/KdVKdV2Frequencies/FiniteGapDirichletVelocityContours
 PASS NLS/KdV/HillFiniteGapDirichletLaurent
 Axiom audit passed: 9678 candidate declarations; 32123 declarations total.
+```
+
+Latest actual local resolvent strict additions and fresh combined audit:
+
+```text
+PASS NLS/ZakharovShabat/ClassicalSwapSymmetry
+PASS NLS/ZakharovShabat/NLSHamiltonianPhaseReflection
+PASS NLS/ZakharovShabat/NLSWKBFullPlaneComparison
+PASS NLS/ZakharovShabat/NLSWKBTwoColumnComparison
+PASS NLS/KdV/HillWKBDirichletComparison
+PASS NLS/KdV/HillRiccatiDirichletJet
+PASS NLS/KdV/HillWKBRootComparison
+PASS NLS/KdV/HillWKBLocalResolventModel
+PASS NLS/KdV/HillLocalDiagonalResolvent
+PASS NLS/KdV/HillCubicFrequencyKernel
+Axiom audit passed: 9731 candidate declarations; 32167 declarations total.
 ```

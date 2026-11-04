@@ -905,3 +905,14 @@ The two actual physical PDE velocity sums have exact expressions in those moment
 Prior strict evidence for all 1060 unchanged selected baseline sources; strict dependency-order compilation of four new modules; then a fresh combined transitive axiom audit of all 1064 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1091 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1064-module rebuild is claimed.
 
 Fresh audit: 9678 selected and 32123 imported NLS declarations, permitted axioms only. Comparison with the article F^3/F^5 contours and actual Hamiltonian frequency identities (69)/(84) remains open. All eleven main theorem rows remain OPEN.
+
+
+## Latest actual local resolvent and cubic frequency kernel
+
+Both actual WKB columns now have proved all-order errors on the entire complex frequency plane, with exact reciprocal physical phase multipliers and controlled initial basis. Their actual monodromy entry is the scalar Hill Dirichlet characteristic with its verified factor i. Independently proved actual primitive bounds give actual root separation and all-order root comparison on upper energy arcs.
+
+Combining those actual estimates with the genuine local Riccati jet proves D/R=i/(2z)+iQ(0)/(4z^3)+O(r^-4). For mean-zero sources the actual primitive then gives F^3*D/R=-z^2/2-Q(0)/4+O(r^-1). These are quantitative actual spectral estimates, with no supplied resolvent expansion or fixed leading scalar. See `LOCAL_DIAGONAL_RESOLVENT.md`.
+
+Prior strict evidence for all 1064 unchanged selected baseline sources; strict dependency-order compilation of ten additions (two unchanged canonical symmetry/phase helpers and eight new proof modules); then a fresh combined transitive axiom audit of all 1074 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1102 frozen source/checker/provenance hashes, all 25 unchanged provenance records plus one new verified two-file canonical WKB reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1074-module rebuild is claimed.
+
+Fresh audit: 9731 selected and 32167 imported NLS declarations, permitted axioms only. Full-circle and exterior contour comparison to identify the actual Hamiltonian frequencies (69)/(84) remains open. All eleven main theorem rows remain OPEN.

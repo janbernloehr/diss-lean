@@ -15411,9 +15411,170 @@
       "scope": "Proves exact two-term and three-term Laurent remainder identities for the actual finite Dirichlet principal parts and uniform complex large-energy weighted remainder bounds. The actual numerator/Dirichlet quotient at finite-gap sources therefore has coefficients S0,S1,S2 with inverse-cubic and inverse-quartic error bounds wherever the actual denominator is nonzero. Includes closed own gaps and a selected-index cutoff. No prescribed normalized leading scalar, Dirichlet product representation or local diagonal-resolvent expansion is assumed.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "3efd61c412e77a1af2f8f4e9f1b61b75dfbf71c7ef6ecdba9839a91f577f8bc6"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ClassicalSwapSymmetry.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Byte-identical canonical main helper now explicitly selected: signed swap of the two actual ZS potentials and reversal of the spectral frequency exchange actual solution components by ODE uniqueness. Already transitively imported and audited at the baseline. Reused unchanged, strictly compiled as a selected root, with canonical source/local hashes recorded.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "209882dec17615df42d689804b33feeebc767767960c2205d75638addeb0ae89"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NLSHamiltonianPhaseReflection.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Byte-identical canonical main helper now explicitly selected: the actual finite physical Hamiltonian phases cancel exactly under signed swap and spectral reversal, and the second actual WKB endpoint multiplier is the inverse of the first at every order. Already transitively imported/audited; unchanged canonical hashes and strict root compilation recorded.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3989492448a13668bbc32715789566b4978ccef430c71f4bb233603816ca4705"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NLSWKBFullPlaneComparison.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Generalizes the proved actual WKB-versus-IVP weighted error to the ENTIRE complex frequency plane, at every order, uniformly over one physical interval, with exp(abs(Im z)*t) growth. Proves the actual periodic endpoint approximate eigenvector bound. Constants depend on the smooth potentials and truncation order; no prescribed spectral family is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "22167d3211f019789c947952e80a675b74d4a8a3ff47877d040f3c24aab7f559"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NLSWKBTwoColumnComparison.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Both actual WKB initial vectors give actual endpoint errors with reciprocal physical Hamiltonian phase multipliers on the whole complex frequency plane. Proves a common large-frequency initial-basis bound and inverse determinant bound. Exact two-column first-row algebra and the actual IVP errors prove an all-order approximation of the actual upper-right monodromy entry with its true exponential weight.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "80846e20745bc4c248ebb1c79bc5c4b2ff854e828681b31517fe483fc805c0f8"
+    },
+    {
+      "path": "NLS/KdV/HillWKBDirichletComparison.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Identifies the ACTUAL scalar Hill Dirichlet characteristic with i times the actual constant-upper ZS monodromy entry at energy z^2. Specializing both proved actual WKB columns then gives all-order weighted approximations of the actual physical Fourier Dirichlet characteristic, for every smooth complex period-one potential and every complex frequency. No reality, mean-zero, spectral product or high-energy gradient hypothesis is required.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6904d80f85738ff63a0f3a94d8086900616be340bcb29902bb1a4fb4d59c97a6"
+    },
+    {
+      "path": "NLS/KdV/HillRiccatiDirichletJet.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Derives the actual order-four original and partner Riccati initial polynomials. Exact division shows the bounded local factor -s/(1+r*s) equals -w+2Q(0)w^3 plus a uniform order-four remainder, with w=(2iz)^-1. The genuine initial-basis inverse bound and an explicit polynomial remainder give the estimate. This is actual Riccati data, not a supplied diagonal resolvent expansion.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bc3f772158f5c5f18aac56cccd205f82d9ea2e124cc6d932966b3cd83b667fa5"
+    },
+    {
+      "path": "NLS/KdV/HillWKBRootComparison.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Proves uniform actual spectral-root separation and all-order comparison with the actual WKB multiplier difference on selected upper energy arcs, for any real smooth period-one Hill source and any positive order. Uses the independently verified actual primitive/phase comparison, free sinh separation and proved weighted sinh estimates. No source mean-zero assumption; the root is the actual 2*sinh(F) and includes the closed arc endpoints.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a456b9a2be9cf240c2e361a3bd3f80dcd5e0860a581fa4f8efb756480b03e463"
+    },
+    {
+      "path": "NLS/KdV/HillWKBLocalResolventModel.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Defines the actual bounded local Riccati factor and proves that it exactly factors the actual WKB Dirichlet approximation into this factor times the two reciprocal multipliers difference. Proves its uniform bound from the actual initial Riccati basis. No spectral-root comparison is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bdaa6cf7702435d182a60da35e7f0e6bfa438fdb171f673c29d0e50c931ad1d8"
+    },
+    {
+      "path": "NLS/KdV/HillLocalDiagonalResolvent.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Combines the proved actual Dirichlet characteristic approximation, actual root comparison and lower bound, and actual bounded Riccati factor to prove an all-order approximation of D(z^2)/R(z^2) on upper energy arcs. The computed genuine local Riccati jet gives the actual uniform bound r^4*|D/R-i/(2z)-iQ(0)/(4z^3)|<=C. Real smooth period-one sources; no mean-zero or finite-gap assumption. R is the actual real-cut root 2*sinh(F), with existing energy-product matching on the actual common cut domain.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c34161eb4c398ad7b7a8caaeaff362f920342754161ce909d5c15abba78fc312"
+    },
+    {
+      "path": "NLS/KdV/HillCubicFrequencyKernel.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "For mean-zero real smooth period-one sources, proves the actual primitive differs from -iz by O(r^-3). The ACTUAL local diagonal-resolvent expansion then proves the uniform actual cubic kernel estimate r*|F(z^2)^3*D(z^2)/R(z^2)+z^2/2+Q(0)/4|<=C on selected upper energy arcs. This supplies the formerly missing local quantitative coefficient for source formula (69). Full-circle contour comparison, exterior analyticity and Hamiltonian frequency identification remain separate obligations.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6fde0ee96fa25c5f2de7288c7aa316e08d150debfed4d6cdc44b8f247b5fa229"
     }
   ],
   "dependencies_needed": [
+    "The actual local diagonal Hill resolvent expansion and actual cubic frequency-kernel estimate are NOW proved. Both full-plane actual WKB columns, exact scalar Dirichlet normalization, actual root separation/comparison and genuine local Riccati jet give D/R=i/(2z)+iQ(0)/(4z^3)+O(r^-4); mean-zero actual F then gives F^3*D/R=-z^2/2-Q(0)/4+O(r^-1). Remaining: full-circle integrability/reflection and exterior/finite-hole contour comparison to identify actual Hamiltonian frequency (69); quintic local coefficient and translation/mass renormalization for (84); closed-frequency identification and all other main canonical/map/rough W/estimate/action/PDE flow obligations. All eleven main rows remain OPEN.",
     "Actual finite-gap Dirichlet partial fractions, analytic-test contour coefficients, cutoff-independent residue moments and three-term uniform quotient Laurent estimates are NOW proved, including closed own gaps. Both actual PDE velocity sums equal genuine Dirichlet polynomial contours and give both physical coordinate derivatives. Remaining: local diagonal-resolvent D/R high-energy expansion and comparison with actual F^3/F^5 contours, actual Hamiltonian frequency identities (69)/(84), closed-frequency identification, full canonicality/Fourier zero jet/native Banach map and inverse/rough W/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
     "Actual all-gap coordinate first variations in BOTH physical PDE fields are NOW proved for every physical matching extension, including zero velocity at closed own gaps. ONE genuine analytic scalar coordinate germ has both actual PDE derivative limits. For finite-gap sources both actual derivatives equal the proved finite Dirichlet sums. Remaining: evaluate those sums and identify actual Hamiltonian frequencies (69)/(84); full canonicality/Fourier zero jet/native Banach map and inverse/rough W compatibility/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
     "Actual terminal-angle velocities, open/closed regular correction variations and differentiated infinite physical Abelian angle sums are NOW proved. ONE physical analytic angle germ has both actual PDE derivatives given by the convergent Dirichlet spectral sums. Remaining: evaluate these sums and identify actual Hamiltonian frequencies (69)/(84); full canonicality/Fourier zero jet/native Banach map and inverse/rough W realization/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
@@ -15454,15 +15615,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 9678,
-    "total_declarations_audited": 32123,
+    "candidate_declarations_audited": 9731,
+    "total_declarations_audited": 32167,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1064,
+    "selected_modules": 1074,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -15500,7 +15661,8 @@
     "trace_normalization_validation_sequence": "Prior strict evidence for all 1034 unchanged selected baseline sources; strict dependency-order compilation of nine new proof modules; then a fresh combined transitive axiom audit of all 1043 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1070 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1043-module rebuild is claimed.",
     "abelian_pde_motion_validation_sequence": "Prior strict evidence for all 1043 unchanged selected baseline sources; strict dependency-order compilation of eleven new modules; then a fresh combined transitive axiom audit of all 1054 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1081 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1054-module rebuild is claimed.",
     "coordinate_pde_motion_validation_sequence": "Prior strict evidence for all 1054 unchanged selected baseline sources; strict dependency-order compilation of six new modules; then a fresh combined transitive axiom audit of all 1060 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1087 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1060-module rebuild is claimed.",
-    "dirichlet_frequency_contours_validation_sequence": "Prior strict evidence for all 1060 unchanged selected baseline sources; strict dependency-order compilation of four new modules; then a fresh combined transitive axiom audit of all 1064 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1091 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1064-module rebuild is claimed."
+    "dirichlet_frequency_contours_validation_sequence": "Prior strict evidence for all 1060 unchanged selected baseline sources; strict dependency-order compilation of four new modules; then a fresh combined transitive axiom audit of all 1064 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1091 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1064-module rebuild is claimed.",
+    "local_diagonal_resolvent_validation_sequence": "Prior strict evidence for all 1064 unchanged selected baseline sources; strict dependency-order compilation of ten additions (two unchanged canonical symmetry/phase helpers and eight new proof modules); then a fresh combined transitive axiom audit of all 1074 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1102 frozen source/checker/provenance hashes, all 25 unchanged provenance records plus one new verified two-file canonical WKB reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1074-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -15750,5 +15912,7 @@
   "trace_normalization_record": "TRACE_STATIONARY_NORMALIZATION.md",
   "abelian_pde_motion_record": "ACTUAL_ABELIAN_PDE_MOTION.md",
   "coordinate_pde_motion_record": "ACTUAL_ALL_GAP_PDE_COORDINATES.md",
-  "dirichlet_frequency_contours_record": "FINITE_GAP_DIRICHLET_FREQUENCY_CONTOURS.md"
+  "dirichlet_frequency_contours_record": "FINITE_GAP_DIRICHLET_FREQUENCY_CONTOURS.md",
+  "local_diagonal_resolvent_record": "LOCAL_DIAGONAL_RESOLVENT.md",
+  "canonical_wkb_swap_phase_record": "CANONICAL_WKB_SWAP_PHASE_REUSE.json"
 }

@@ -262,6 +262,8 @@ modules=(
   NLS/ComplexAnalysis/SimplePoleCauchyInterpolation
   NLS/ZakharovShabat/SourceIsospectralSet
   NLS/ComplexAnalysis/CirclePolynomialIntegrationByParts
+  NLS/ZakharovShabat/ClassicalSwapSymmetry
+  NLS/ZakharovShabat/NLSHamiltonianPhaseReflection
   NLS/ZakharovShabat/SobolevHierarchySymmetries
   NLS/MKdV/HierarchyRestriction
   NLS/DifferentialPolynomial/RiccatiResolventParity
@@ -1073,6 +1075,14 @@ modules=(
   NLS/KdV/HillFiniteGapDirichletMoments
   NLS/Articles/KdVKdV2Frequencies/FiniteGapDirichletVelocityContours
   NLS/KdV/HillFiniteGapDirichletLaurent
+  NLS/ZakharovShabat/NLSWKBFullPlaneComparison
+  NLS/ZakharovShabat/NLSWKBTwoColumnComparison
+  NLS/KdV/HillWKBDirichletComparison
+  NLS/KdV/HillRiccatiDirichletJet
+  NLS/KdV/HillWKBRootComparison
+  NLS/KdV/HillWKBLocalResolventModel
+  NLS/KdV/HillLocalDiagonalResolvent
+  NLS/KdV/HillCubicFrequencyKernel
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
