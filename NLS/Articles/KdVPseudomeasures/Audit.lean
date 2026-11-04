@@ -1533,6 +1533,12 @@ import NLS.SequenceSpaces.PeriodOneMiuraCompactDerivative
 import NLS.SequenceSpaces.PeriodOneMiuraLiftDerivative
 import NLS.KdV.HillMiuraLiftDerivative
 import NLS.Articles.KdVPseudomeasures.OriginalHillMiuraDerivative
+import NLS.ZakharovShabat.SourcePhaseMonodromy
+import NLS.ZakharovShabat.SourceStandardRootPhase
+import NLS.KdV.HillDiracTerminalSheet
+import NLS.KdV.HillDiracSpectralTerminal
+import NLS.KdV.HillRotatedDiracSource
+import NLS.Articles.KdVPseudomeasures.OriginalHillDiracSpectralCore
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9393,3 +9399,25 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillMiuraDerivative
 #print axioms NLS.KdV.HillProductEquationPatch.fderiv_sourcePsi_eq_lift_comp
 #print axioms NLS.KdV.HillProductEquationPatch.isCompactOperator_sourcePsiDerivative_sub_massInverse
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Miura_derivative_equivalence
+#print axioms NLS.ZakharovShabat.l2Monodromy_sourcePhase_entry
+#print axioms NLS.ZakharovShabat.sourceAntiDiscriminant_sourcePhase_eq_monodromy
+#print axioms NLS.ZakharovShabat.canonicalDiscriminant_sourcePhase
+#print axioms NLS.ZakharovShabat.canonicalPeriodicMidpoint_sourcePhase
+#print axioms NLS.ZakharovShabat.canonicalPeriodicGap_sourcePhase
+#print axioms NLS.ZakharovShabat.sourcePeriodicSegment_sourcePhase
+#print axioms NLS.ZakharovShabat.sourceStandardRoot_sourcePhase
+#print axioms NLS.ZakharovShabat.sourceStandardRootOmittedProduct_sourcePhase
+#print axioms NLS.ZakharovShabat.sourceStandardRootOmittedDomain_sourcePhase
+#print axioms NLS.KdV.quasiHillL2DirichletSheet_eq_rotatedAntiDiscriminant
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletSheet_eq_rotatedAntiDiscriminant
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletFrequency_eq_rotatedDirichlet
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletRootCoefficient_eq_rotatedSineNumerator
+#print axioms NLS.KdV.HillProductEquationPatch.physicalSpectralFactorMinus_eq_rotatedTerminal
+#print axioms NLS.KdV.HillProductEquationPatch.physicalSpectralFactorPlus_eq_rotatedTerminal
+#print axioms NLS.KdV.HillProductEquationPatch.rotatedDiracSource
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_rotatedDiracSource
+#print axioms NLS.KdV.HillProductEquationPatch.isRealType_rotatedDiracSource
+#print axioms NLS.KdV.HillProductEquationPatch.fderiv_rotatedDiracSource
+#print axioms NLS.KdV.HillProductEquationPatch.isCompactOperator_rotatedDiracSourceDerivative_sub_massInverse
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Dirac_terminal_sheet
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Dirac_spectral_core

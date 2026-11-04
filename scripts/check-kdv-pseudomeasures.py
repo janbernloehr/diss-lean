@@ -1567,6 +1567,12 @@ modules = [
     'NLS.SequenceSpaces.PeriodOneMiuraLiftDerivative',
     'NLS.KdV.HillMiuraLiftDerivative',
     'NLS.Articles.KdVPseudomeasures.OriginalHillMiuraDerivative',
+    'NLS.ZakharovShabat.SourcePhaseMonodromy',
+    'NLS.ZakharovShabat.SourceStandardRootPhase',
+    'NLS.KdV.HillDiracTerminalSheet',
+    'NLS.KdV.HillDiracSpectralTerminal',
+    'NLS.KdV.HillRotatedDiracSource',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillDiracSpectralCore',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

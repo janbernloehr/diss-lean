@@ -1633,6 +1633,35 @@
         "NLS.Articles.KdVPseudomeasures.original_Hill_Miura_derivative_equivalence"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-miura-jacobian-principal-map.json"
+    },
+    {
+      "label": "Actual negative Hill/rotated-Dirac sheet and exact spectral-core terminal identification",
+      "status": "proved dependency; Dirac terminal/Fourier estimates and native weighted transfer, all-source Birkhoff derivative invertibility, remaining nonlinear scales, global map/flow and main theorems unproved",
+      "declarations": [
+        "NLS.ZakharovShabat.l2Monodromy_sourcePhase_entry",
+        "NLS.ZakharovShabat.sourceAntiDiscriminant_sourcePhase_eq_monodromy",
+        "NLS.ZakharovShabat.canonicalDiscriminant_sourcePhase",
+        "NLS.ZakharovShabat.canonicalPeriodicMidpoint_sourcePhase",
+        "NLS.ZakharovShabat.canonicalPeriodicGap_sourcePhase",
+        "NLS.ZakharovShabat.sourcePeriodicSegment_sourcePhase",
+        "NLS.ZakharovShabat.sourceStandardRoot_sourcePhase",
+        "NLS.ZakharovShabat.sourceStandardRootOmittedProduct_sourcePhase",
+        "NLS.ZakharovShabat.sourceStandardRootOmittedDomain_sourcePhase",
+        "NLS.KdV.quasiHillL2DirichletSheet_eq_rotatedAntiDiscriminant",
+        "NLS.KdV.HillProductEquationPatch.physicalDirichletSheet_eq_rotatedAntiDiscriminant",
+        "NLS.KdV.HillProductEquationPatch.physicalDirichletFrequency_eq_rotatedDirichlet",
+        "NLS.KdV.HillProductEquationPatch.physicalDirichletRootCoefficient_eq_rotatedSineNumerator",
+        "NLS.KdV.HillProductEquationPatch.physicalSpectralFactorMinus_eq_rotatedTerminal",
+        "NLS.KdV.HillProductEquationPatch.physicalSpectralFactorPlus_eq_rotatedTerminal",
+        "NLS.KdV.HillProductEquationPatch.rotatedDiracSource",
+        "NLS.KdV.HillProductEquationPatch.analytic_rotatedDiracSource",
+        "NLS.KdV.HillProductEquationPatch.isRealType_rotatedDiracSource",
+        "NLS.KdV.HillProductEquationPatch.fderiv_rotatedDiracSource",
+        "NLS.KdV.HillProductEquationPatch.isCompactOperator_rotatedDiracSourceDerivative_sub_massInverse",
+        "NLS.Articles.KdVPseudomeasures.original_Hill_Dirac_terminal_sheet",
+        "NLS.Articles.KdVPseudomeasures.original_Hill_Dirac_spectral_core"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-dirac-terminal-identification-map.json"
     }
   ],
   "reuse_map": [
@@ -1714,7 +1743,7 @@
   "remaining_obligations": [
     "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
     "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "NEXT finish the ACTUAL SPECTRAL CORE/Fourier Jacobian estimate or another genuine all-source Birkhoff inverse argument. The ACTUAL source-change derivative is NOW VERIFIED: every actual analytic Miura lift has a GENUINE Banach derivative equivalence Hminus-one->L2, exact inverse hprime+2*u*h, a true local inverse germ, and Dlift-massInverse0 ACTUALLY COMPACT. Actual DsourcePsi-hillMiuraDiagonal composed with massInverse0 is COMPACT on the full native source norm. The actual divisor frequency is literally the canonical auxiliary Dirac root of that same source, but the needed ACTUAL Hill/Dirac terminal-sheet identification remains OPEN; no Poisson identification is asserted. Prior off/on-index phase and normalized-amplitude derivative reductions, signed zero tails and common exact spectral-core neighborhoods remain verified: meanNativeDF=M_exp(offIndexExponent)*DFmeanCore+K with invertible M and actuallycompact K. Core raw coordinates are -4*tau*(muFreq-tau +/- rootCoeff) with fixed original 2*sqrt(pi)*sqrt(n)*sqrt(2) denominator. Full core/Fourier estimates, nativeDF closedrange/injectivity/bijectivity remain OPEN. Prior actual denseRange/Hamiltonian raw mode preimages, full signed Gardner matrix, anglepairzero remain proved. ALL FIVE MAIN THEOREMS remain UNPROVED.",
+    "NEXT prove the ACTUAL Dirac spectral-terminal/Fourier operator estimate and transfer it through the NOW VERIFIED exact Hill core coordinate identity and Miura derivative principal part, or another genuine all-source Birkhoff inverse argument. ACTUAL Hill terminal sheet is NOW PROVED NEGATIVE antiDiscriminant of sourcePhase(sourcePsi), at EVERY complex frequency including0 and every native complex source/index. Physical Dirichlet divisor is the ORDINARY canonical Dirichlet root of that SAME ROTATED source, and actual rootCoeff=+i*DiracEtaSineNumerator. The exact core positive/negative coordinates are 2*actualMidpoint*DiracTerminal(sign+1/-1,rotatedSource)/[(2*sqrt(pi)*sqrt(n))*sqrt(2)], on ONE constructed common COMPLEX neighborhood at EVERY original physical source, beforeALLn. Actual omitted-product normalization and signed labels are unchanged by phase. The rotated Dirac source is physically real-type and its derivative minus sourcePhase*hillMiuraDiagonal*massInverse0 is ACTUALLY COMPACT. Prior actual Miura derivative Banach equivalence/local inverse, phase/amplitude compact reductions, meanNativeDF=M_exp(offIndexExponent)*DFmeanCore+K with invertibleM/compactK, nativeDFdenseRange, fullGardnermatrix and anglepairzero remain PROVED. DiracTerminal/core/native Fourier derivative estimates and all-source nativeDFclosedrange/injectivity/bijectivity remain OPEN. ALL FIVE MAIN THEOREMS remain UNPROVED.",
     "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff map: derivative invertibility at EVERY source, remaining nonlinear source/target scales, global bijectivity/boundedness and bounded-set weak-star homeomorphism. FULL actual signed-coordinate Gardner Poisson canonicality is NOW PROVED on the ENTIRE original physical real mean-zero Hminus-one domain, including collapsed gaps andzero. Full complex-source cotangents are used at those real sources; no arbitrary-complex-source claim is made. Exact Fourier DF0, native Hminus-one sequence analyticity and native/endpoint real-complex local inverses at0 remain complete. Do not infer a strong symplectic Banach isomorphism or global diffeomorphism from scalar canonical brackets alone, or substitute ordinary NLS coordinates/componentwise-real targets.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
@@ -4555,10 +4584,30 @@
     "actual_Miura_lift_FULL_local_inverse_germ_PROVED": true,
     "actual_Dirac_sourcePsi_derivative_minus_diagonal_massInverse0_COMPACT_PROVED": true,
     "scope": "EVERY complex point of EVERY existing actual analytic Hill Miura chart; verified patch factory supplies a chart at EVERY original physical Hminus-one source. Full native Hminus-one source and L2 scalar/Dirac-pair target norms, fixed actual energy shift, literal 2*pi*i*k derivative convention.",
-    "actual_Hill_Dirac_terminal_sheet_identification_PROVED": false,
+    "actual_Hill_Dirac_terminal_sheet_identification_PROVED": true,
     "actual_spectral_core_Jacobian_Fourier_remainder_COMPACT_PROVED": false,
     "native_compact_Fourier_derivative_remainder_PROVED": false,
     "all_source_Birkhoff_derivative_closed_range_PROVED": false,
+    "all_source_Birkhoff_derivative_invertibility_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "actual_Hill_Dirac_terminal_identification_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-dirac-terminal-identification-map.json",
+    "actual_L2_monodromy_sourcePhase_entry_identity_PROVED": true,
+    "actual_rotated_antiDiscriminant_EXACT_i_times_M01_minus_M10_PROVED": true,
+    "actual_canonical_midpoint_gap_root_omitted_product_phase_invariance_PROVED": true,
+    "actual_Hill_terminal_sheet_NEGATIVE_rotated_Dirac_antiDiscriminant_PROVED": true,
+    "sheet_scope": "EVERY complex L2 lift and EVERY complex frequency including0; every actual native complex patch source and EVERY original positive signed index. Actual IVP and trace proof fixes sign without dividing by frequency or selecting a squared-root sign.",
+    "actual_physical_divisor_EQ_ordinary_Dirichlet_at_rotated_source_PROVED": true,
+    "actual_Hill_root_coefficient_EQ_PLUS_i_times_rotated_eta_sine_numerator_PROVED": true,
+    "actual_Hill_spectral_polynomials_EQ_2_midpoint_times_rotated_Dirac_terminal_PROVED": true,
+    "actual_rotated_Dirac_source_same_input_analytic_realType_PROVED": true,
+    "actual_rotated_source_derivative_COMPACT_massive_principal_remainder_PROVED": true,
+    "actual_ALL_source_common_complex_core_Dirac_terminal_coordinate_identity_PROVED": true,
+    "core_scope": "ONE constructed open complex neighborhood at EVERY original physical Hminus-one source, before ALL indices; exact sourcePhase rotation, positive terminal sign+1 and negative sign-1, original 2*sqrt(pi)*sqrt(n)*sqrt(2) denominator, unchanged signed Sobolev -1/2 target and actual mean-zero compact remainder.",
+    "actual_Dirac_spectral_terminal_Jacobian_Fourier_remainder_COMPACT_PROVED": false,
+    "actual_spectral_core_Jacobian_Fourier_remainder_COMPACT_PROVED": false,
+    "native_compact_Fourier_derivative_remainder_PROVED": false,
     "all_source_Birkhoff_derivative_invertibility_PROVED": false,
     "global_Birkhoff_theorem_PROVED": false
   }
