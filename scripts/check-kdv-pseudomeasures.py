@@ -1141,6 +1141,12 @@ modules = [
     'NLS.KdV.HillAbelianNormalizedJointPrimitive',
     'NLS.KdV.HillAbelianRegularRootSheets',
     'NLS.Articles.KdVPseudomeasures.OriginalHillAnalyticAbelianFamily',
+    'NLS.ZakharovShabat.AuxiliaryGapSegmentPlacement',
+    'NLS.KdV.HillPhysicalDirichletPlacement',
+    'NLS.KdV.HillPhysicalDirichletSheetCoefficient',
+    'NLS.KdV.HillPhysicalOffIndexAbelianValue',
+    'NLS.KdV.HillPhysicalAbelianRegularGerm',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalAbelianDivisor',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

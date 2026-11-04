@@ -1107,6 +1107,12 @@ import NLS.KdV.HillAbelianFilledQuotient
 import NLS.KdV.HillAbelianNormalizedJointPrimitive
 import NLS.KdV.HillAbelianRegularRootSheets
 import NLS.Articles.KdVPseudomeasures.OriginalHillAnalyticAbelianFamily
+import NLS.ZakharovShabat.AuxiliaryGapSegmentPlacement
+import NLS.KdV.HillPhysicalDirichletPlacement
+import NLS.KdV.HillPhysicalDirichletSheetCoefficient
+import NLS.KdV.HillPhysicalOffIndexAbelianValue
+import NLS.KdV.HillPhysicalAbelianRegularGerm
+import NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalAbelianDivisor
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7206,3 +7212,33 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillAnalyticAbelianFamily
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_filled_Abelian_quotient_joint_analytic
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_improper_Abelian_integral_joint_analytic
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Abelian_prescribed_root_sheet_analytic
+#print axioms NLS.ZakharovShabat.canonicalAuxiliaryPeriodOneRoots_mem_sourcePeriodicSegment_of_realType
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletFrequency
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletSource
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_physicalDirichletFrequency
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichlet_displacement_restores_frequency
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletSource_open
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletFrequency_mem_disc
+#print axioms NLS.KdV.HillProductEquationPatch.real_mem_physicalDirichletSource
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletFrequency_energy
+#print axioms NLS.KdV.HillProductEquationPatch.abelianGapRootMultiplier
+#print axioms NLS.KdV.HillProductEquationPatch.abelianGapRootMultiplier_ne_zero
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_abelianGapRootMultiplier
+#print axioms NLS.KdV.HillProductEquationPatch.abelianGapRootMultiplier_sq_mul_polynomial
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletRootCoefficient
+#print axioms NLS.KdV.HillProductEquationPatch.source_subset_canonicalDirichlet
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_physicalDirichletRootCoefficient
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletSheet_sq_frequency
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletRootCoefficient_sq
+#print axioms NLS.KdV.HillProductEquationPatch.norm_physicalDirichletRootCoefficient_le
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianValue
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_physicalOffIndexAbelianValue
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletRootCoefficient_preserves_sheet
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianValue_zero_of_sheet_zero
+#print axioms NLS.KdV.HillProductEquationPatch.physicalDirichletRootCoefficient_zero_iff_endpoint
+#print axioms NLS.KdV.HillProductEquationPatch.norm_physicalOffIndexAbelianValue_le
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianValue_eq_improper_integral_on_cut_complement
+#print axioms NLS.KdV.HillProductEquationPatch.exists_physicalAbelian_regular_germ
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_common_physical_divisor_source
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_actual_Dirichlet_root_sheet
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_physical_offIndex_Abelian_value_analytic
