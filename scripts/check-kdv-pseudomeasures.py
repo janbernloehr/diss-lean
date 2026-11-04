@@ -1562,6 +1562,11 @@ modules = [
     'NLS.KdV.HillMeanZeroSpectralCore',
     'NLS.KdV.HillSpectralCoreNeighborhood',
     'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCoreReduction',
+    'NLS.FunctionalAnalysis.CompactPerturbationRightInverse',
+    'NLS.SequenceSpaces.PeriodOneMiuraCompactDerivative',
+    'NLS.SequenceSpaces.PeriodOneMiuraLiftDerivative',
+    'NLS.KdV.HillMiuraLiftDerivative',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillMiuraDerivative',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -1528,6 +1528,11 @@ import NLS.KdV.HillSpectralCoreSequence
 import NLS.KdV.HillMeanZeroSpectralCore
 import NLS.KdV.HillSpectralCoreNeighborhood
 import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCoreReduction
+import NLS.FunctionalAnalysis.CompactPerturbationRightInverse
+import NLS.SequenceSpaces.PeriodOneMiuraCompactDerivative
+import NLS.SequenceSpaces.PeriodOneMiuraLiftDerivative
+import NLS.KdV.HillMiuraLiftDerivative
+import NLS.Articles.KdVPseudomeasures.OriginalHillMiuraDerivative
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9360,3 +9365,31 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCoreReduction
 #print axioms NLS.KdV.HillProductEquationPatch.isCompactOperator_physicalMeanZeroSpectralCoreRemainder
 #print axioms NLS.KdV.exists_hillSpectralCoreNeighborhood
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_spectral_core_reduction
+#print axioms NLS.CompactSpectrum.bijective_of_compact_sub_equiv_rightInverse
+#print axioms NLS.CompactSpectrum.equivOfCompactRightInverse
+#print axioms NLS.CompactSpectrum.equivOfCompactRightInverse_symm
+#print axioms NLS.CompactSpectrum.isCompactOperator_rightInverse_sub_equiv_inverse
+#print axioms NLS.isCompactOperator_boundedCoefficientsHminusOne
+#print axioms NLS.isCompactOperator_periodOneL2Inclusion
+#print axioms NLS.isCompactOperator_periodOneMiuraProduct_fixed
+#print axioms NLS.periodOneMiuraLinearization
+#print axioms NLS.periodOneMiuraLinearization_apply
+#print axioms NLS.hasFDerivAt_periodOneMiura
+#print axioms NLS.fderiv_periodOneMiura
+#print axioms NLS.isCompactOperator_periodOneMiuraLinearization_sub_mass
+#print axioms NLS.periodOneMiuraLinearization_comp_fderiv_lift
+#print axioms NLS.periodOneMiuraLiftDerivativeEquiv
+#print axioms NLS.periodOneMiuraLiftDerivativeEquiv_toCLM
+#print axioms NLS.periodOneMiuraLiftDerivativeEquiv_symm_toCLM
+#print axioms NLS.fderiv_lift_comp_periodOneMiuraLinearization
+#print axioms NLS.isCompactOperator_fderiv_Miura_lift_sub_massInverse
+#print axioms NLS.eventually_Miura_lift_left_inverse
+#print axioms NLS.KdV.HillHminusMiuraActionBall.eventually_lift_Miura_identity
+#print axioms NLS.KdV.HillHminusMiuraActionBall.liftDerivativeEquiv
+#print axioms NLS.KdV.HillHminusMiuraActionBall.liftDerivativeEquiv_toCLM
+#print axioms NLS.KdV.HillHminusMiuraActionBall.liftDerivativeEquiv_symm_toCLM
+#print axioms NLS.KdV.HillHminusMiuraActionBall.isCompactOperator_liftDerivative_sub_massInverse
+#print axioms NLS.KdV.HillHminusMiuraActionBall.eventually_lift_left_inverse
+#print axioms NLS.KdV.HillProductEquationPatch.fderiv_sourcePsi_eq_lift_comp
+#print axioms NLS.KdV.HillProductEquationPatch.isCompactOperator_sourcePsiDerivative_sub_massInverse
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Miura_derivative_equivalence
