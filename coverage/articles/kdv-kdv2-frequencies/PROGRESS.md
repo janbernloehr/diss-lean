@@ -17,6 +17,12 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest indexed adjacent-band geometry
+
+Actual critical confinement and shifted-square order identify the original contour crossings with canonical bands k-1 and k, on one common complex open neighborhood before all real inputs and positive indices. Actual normalized NLS period circles cross those same indexed bands, including collapsed gaps and the first-mode central case. See `ORIGINAL_CONTOUR_BANDS.md`.
+
+Current validation: 421 selected modules (419 unchanged previously checked plus two strict incremental compilations); fresh combined transitive audit of 4886 selected and 27042 imported NLS declarations, permitted axioms only. Actual homotopy, normalized period equality and all main theorem rows remain open.
+
 ## Latest canonical roots on all original contours
 
 Actual real trace and strict negative radicand signs exclude all canonical cuts at original real crossings. Every original positive frequency circle is in the canonical energy-root domain. One constructed normalized real chart and one ball precede all real inputs, indices and contour points, with exact root and full complex germ agreement. See `ORIGINAL_CONTOUR_ROOTS.md`.

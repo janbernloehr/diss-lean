@@ -84,19 +84,19 @@ its existing Hilbert specialization and a transitive audit.
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 419 selected modules compile with pinned **Lean 4.33.1**, commit
+All 421 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: the 415-module full strict baseline, two previously
+Validation output: the 415-module full strict baseline, four previously
 checked incremental modules, two new strict incremental compilations, and
-a fresh combined transitive axiom audit of all 419 selected modules:
+a fresh combined transitive axiom audit of all 421 selected modules:
 
 ```text
-# Prior strict checks: 417 unchanged modules (415 full baseline plus two incremental)
+# Prior strict checks: 419 unchanged modules (415 full baseline plus four incremental)
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -514,15 +514,17 @@ PASS NLS/KdV/HillHminusOneCriticalChartIndependence
 PASS NLS/KdV/HillHminusOneCriticalChartGerms
 PASS NLS/KdV/FreeHillCriticalEnergies
 PASS NLS/KdV/HillHminusOneCanonicalCriticalCompatibility
-# Strict incremental compilation: two new modules
 PASS NLS/KdV/HillHminusOneRealContinuationBands
 PASS NLS/KdV/HillHminusOneOriginalContourRoots
-# Fresh combined audit: all 419 selected modules
-Axiom audit passed: 4860 candidate declarations; 27020 declarations total.
+# Strict incremental compilation: two new modules
+PASS NLS/ZakharovShabat/SourceContourAdjacentBands
+PASS NLS/KdV/HillHminusOneOriginalContourBands
+# Fresh combined audit: all 421 selected modules
+Axiom audit passed: 4886 candidate declarations; 27042 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 419 selected modules (including generated and private declarations)
+the 421 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1631,3 +1633,10 @@ Audit: 4854 selected declarations; 27013 declarations including imported NLS dep
 See `ORIGINAL_CONTOUR_ROOTS.md`. Prior strict validation of the unchanged 417 modules (415-module full baseline and two incremental compilations), two new strict incremental compilations, then a fresh full combined transitive axiom audit of all 419 selected modules. Source bytes, exact selections, private fresh outputs and seven provenance records verified. No claim of a repeated full 419-module rebuild.
 
 Audit: 4860 selected declarations; 27020 declarations including imported NLS dependencies. Only propext, Classical.choice and Quot.sound are permitted. Actual real trace and negative radicand signs exclude canonical cuts at original real crossings. Every original contour lies in the canonical energy-root domain; one chart and ball give exact root and full complex germ agreement for all contour indices and real rough inputs. Original contour normalization, normalized-family identification, physical frequency(69) and all main theorem rows remain open.
+
+
+## Indexed adjacent bands of actual original contour crossings
+
+See `ORIGINAL_CONTOUR_BANDS.md`. Prior strict validation of the unchanged 419 modules (415-module full baseline and four incremental compilations), two new strict incremental compilations, then a fresh full combined transitive axiom audit of all 421 selected modules. Source bytes, exact selections, private fresh outputs and seven provenance records verified. No claim of a repeated full 421-module rebuild.
+
+Audit: 4886 selected declarations; 27042 declarations including imported NLS dependencies. Only propext, Classical.choice and Quot.sound are permitted. Actual critical energy separation, shifted-square order and canonical cut exclusion identify every original crossing with the specific adjacent bands k-1/k on one common complex open neighborhood before all real inputs and indices. Actual NLS period circles cross those same indexed bands. The homotopy and normalized period equality remain open. Original contour normalization, normalized-family identification, physical frequency(69) and all main theorem rows remain open.

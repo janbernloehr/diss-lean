@@ -637,3 +637,8 @@ are in `CANONICAL_NUMERATOR_REPRESENTATION.md`. All main rows remain OPEN.
 ## Canonical roots on original contours
 
 `HillHminusOneRealContinuationBands.lean` proves actual real trace and negative radicand signs on the original continued domain. `HillHminusOneOriginalContourRoots.lean` uses the closed canonical gap discriminant bound to prove canonical root-domain membership of all original frequency circles, including real crossings, and constructs a common-ball exact root/full complex germ agreement. Actual period transfer and every main theorem remain open. See `ORIGINAL_CONTOUR_ROOTS.md`.
+
+
+## Indexed band geometry for contour period transfer
+
+`SourceContourAdjacentBands.lean` identifies bands between actual critical frequencies and at actual period-circle crossings. `HillHminusOneOriginalContourBands.lean` proves actual uniform critical energy separation, shifted-square order and a common-neighborhood identification of all original crossings with bands k-1/k. This supplies the band hypotheses for contour homotopy; actual integral equality and all main theorem conclusions remain open. See `ORIGINAL_CONTOUR_BANDS.md`.

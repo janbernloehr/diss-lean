@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneOriginalContourBands
 import NLS.KdV.HillHminusOneOriginalContourRoots
 import NLS.KdV.HillHminusOneCanonicalCriticalCompatibility
 import NLS.KdV.HillHminusOneCriticalChartGerms
@@ -515,7 +516,9 @@ run_cmd do
     `NLS.KdV.FreeHillCriticalEnergies,
     `NLS.KdV.HillHminusOneCanonicalCriticalCompatibility,
     `NLS.KdV.HillHminusOneRealContinuationBands,
-    `NLS.KdV.HillHminusOneOriginalContourRoots]
+    `NLS.KdV.HillHminusOneOriginalContourRoots,
+    `NLS.ZakharovShabat.SourceContourAdjacentBands,
+    `NLS.KdV.HillHminusOneOriginalContourBands]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do
