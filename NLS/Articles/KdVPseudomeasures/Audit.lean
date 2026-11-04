@@ -1008,6 +1008,17 @@ import NLS.SequenceSpaces.PositiveDiagonalFamilyCompact
 import NLS.KdV.HillProductEquationUniformDiagonalUpper
 import NLS.KdV.HillProductEquationFamilyCompact
 import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodFamilyCompact
+import NLS.SequenceSpaces.EscapingCoordinateProjection
+import NLS.KdV.HillEnergyFullProduct
+import NLS.KdV.HillEnergyAffineParameters
+import NLS.KdV.HillAffineEnergyPeriods
+import NLS.SequenceSpaces.PositiveDominatedCompactness
+import NLS.KdV.HillRealEnergyGapDataCompact
+import NLS.KdV.HillPeriodWeightLimit
+import NLS.KdV.HillRealEnergyGapDataPlacement
+import NLS.SequenceSpaces.LpOperatorBasisExt
+import NLS.KdV.HillProductEquationEscapingLimit
+import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodEscapingLimit
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6685,3 +6696,67 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodFamilyCompact
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_family_compact_closure
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_Hill_period_Jacobian_uniform_operator_norm_bound
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_Hill_period_Jacobian_norm_convergent_subseq
+#print axioms NLS.Coeff.tendsto_escaping_singleton_projection
+#print axioms NLS.Coeff.tendsto_moving_escaping_singleton_projection
+#print axioms NLS.Coeff.tendsto_remove_moving_escaping_coordinate
+#print axioms NLS.KdV.hillEnergySequenceFullPartialProduct
+#print axioms NLS.KdV.hillEnergySequenceFullProduct
+#print axioms NLS.KdV.analyticAt_hillEnergySequenceFullProduct
+#print axioms NLS.KdV.hillEnergySequenceFullPartialProduct_eq_embedding
+#print axioms NLS.KdV.tendsto_hillEnergySequenceFullPartialProduct
+#print axioms NLS.KdV.hillEnergySequenceFullPartialProduct_restore
+#print axioms NLS.KdV.hillEnergySequenceFullProduct_restore
+#print axioms NLS.KdV.jointSingleSpectralProduct_eq_full_Hill_product
+#print axioms NLS.KdV.hillEnergySequenceFullProduct_at_root
+#print axioms NLS.KdV.hillEnergySequenceFullProduct_coordinate_affine
+#print axioms NLS.KdV.hillAffineEnergyProduct
+#print axioms NLS.KdV.hillFullEnergyProductParameters
+#print axioms NLS.KdV.hillDeletedEnergyProductParameters
+#print axioms NLS.KdV.analyticAt_hillAffineEnergyProduct
+#print axioms NLS.KdV.analyticAt_hillFullEnergyProductParameters
+#print axioms NLS.KdV.hillEnergyRawProductEmbedding_eq_affine
+#print axioms NLS.KdV.hillEnergyProductEmbedding_eq_affine
+#print axioms NLS.KdV.hillEnergySequenceProduct_eq_affine
+#print axioms NLS.KdV.hillEnergySequenceFullProduct_eq_affine
+#print axioms NLS.KdV.tendsto_hillDeletedEnergyProductParameters
+#print axioms NLS.KdV.tendsto_hillEnergySequenceProduct_escaping
+#print axioms NLS.KdV.hillAffineEnergyPeriodIntegrand
+#print axioms NLS.KdV.hillAffineEnergyPeriod
+#print axioms NLS.KdV.hillEnergyFullProductFixedPeriod
+#print axioms NLS.KdV.hillEnergyFullProductPeriodColumn
+#print axioms NLS.KdV.analyticOnNhd_hillAffineEnergyPeriodIntegrand
+#print axioms NLS.KdV.analyticOnNhd_hillAffineEnergyPeriod
+#print axioms NLS.KdV.analyticOnNhd_hillEnergyFullProductFixedPeriod
+#print axioms NLS.KdV.hillEnergyProductFixedPeriod_eq_affinePeriod
+#print axioms NLS.KdV.hillEnergyFullProductFixedPeriod_eq_numeratorPeriod
+#print axioms NLS.KdV.hillEnergyFullProductFixedPeriod_coordinate_affine
+#print axioms NLS.KdV.hasDerivAt_hillEnergyFullProductFixedPeriod_coordinate
+#print axioms NLS.KdV.fderiv_hillEnergyFullProductFixedPeriod_coordinate
+#print axioms NLS.KdV.tendsto_hillEnergyProductFixedPeriod_escaping
+#print axioms NLS.KdV.tendsto_hillEnergyProductPeriodColumn_escaping
+#print axioms NLS.LpSequence.positiveRestriction_positiveInsert
+#print axioms NLS.LpSequence.isCompact_positive_of_isClosed_of_majorant
+#print axioms NLS.KdV.hillHminusEnergyGapData
+#print axioms NLS.KdV.exists_real_hill_energy_gap_selection
+#print axioms NLS.KdV.isClosed_hillHminusEnergyGapData
+#print axioms NLS.KdV.norm_hillHminusEnergyGapData_le_endpoint_majorant
+#print axioms NLS.KdV.isCompact_hillHminusEnergyGapData
+#print axioms NLS.KdV.actual_hill_zero_sequence_mem_energyGapData
+#print axioms NLS.KdV.exists_actual_hill_zero_sequence_convergent_subseq
+#print axioms NLS.KdV.eventually_fixed_pnat_ne_escaping
+#print axioms NLS.KdV.hillPeriodEquationWeight_eq_inverse
+#print axioms NLS.KdV.tendsto_hillPeriodEquationWeight_escaping
+#print axioms NLS.KdV.HillHminusPsiBall.energyGapData_mem_frequencyDomain
+#print axioms NLS.KdV.HillHminusPsiBall.energyGapData_independentFrequency_mem_signed_gap
+#print axioms NLS.LpSequence.continuousLinearMap_eq_of_single
+#print axioms NLS.KdV.HillProductEquationPatch.canonicalPeriodCircle
+#print axioms NLS.KdV.HillProductEquationPatch.fullEnergyPeriodJacobianEntries
+#print axioms NLS.KdV.HillProductEquationPatch.fullEnergyPeriodJacobian_apply
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_escaping_entry_tendsto
+#print axioms NLS.KdV.HillProductEquationPatch.fullEnergyPeriodJacobianEntries_of_escaping_limit
+#print axioms NLS.KdV.HillProductEquationPatch.fullEnergyPeriod_zero_of_escaping_actual_data
+#print axioms NLS.KdV.HillProductEquationPatch.exists_full_energy_gap_data_of_actual_real_escaping_limit
+#print axioms NLS.KdV.HillProductEquationPatch.exists_actual_real_joint_escaping_limit
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_full_energy_gap_data_compact
+#print axioms NLS.Articles.KdVPseudomeasures.original_escaping_Hill_period_Jacobian_limit_identification
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_joint_escaping_Hill_period_limit

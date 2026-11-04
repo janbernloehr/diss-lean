@@ -1042,6 +1042,17 @@ modules = [
     'NLS.KdV.HillProductEquationUniformDiagonalUpper',
     'NLS.KdV.HillProductEquationFamilyCompact',
     'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodFamilyCompact',
+    'NLS.SequenceSpaces.EscapingCoordinateProjection',
+    'NLS.KdV.HillEnergyFullProduct',
+    'NLS.KdV.HillEnergyAffineParameters',
+    'NLS.KdV.HillAffineEnergyPeriods',
+    'NLS.SequenceSpaces.PositiveDominatedCompactness',
+    'NLS.KdV.HillRealEnergyGapDataCompact',
+    'NLS.KdV.HillPeriodWeightLimit',
+    'NLS.KdV.HillRealEnergyGapDataPlacement',
+    'NLS.SequenceSpaces.LpOperatorBasisExt',
+    'NLS.KdV.HillProductEquationEscapingLimit',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodEscapingLimit',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
