@@ -1435,6 +1435,17 @@ import NLS.KdV.HillOnIndexActionVelocity
 import NLS.KdV.HillOnIndexActionContour
 import NLS.KdV.HillCompletePhaseActionSeries
 import NLS.Articles.KdVPseudomeasures.OriginalHillCompletePhaseActionVariation
+import NLS.SequenceSpaces.SymmetricPositiveCutoff
+import NLS.ComplexAnalysis.QuadraticSimplePolePair
+import NLS.KdV.HillAuxiliaryPsiInterpolation
+import NLS.KdV.HillAuxiliaryDirichletSlope
+import NLS.KdV.HillPairedDirichletInterpolation
+import NLS.KdV.HillEnergyDirichletInterpolation
+import NLS.KdV.HillPrescribedActionCircle
+import NLS.KdV.HillPrescribedActionVelocity
+import NLS.KdV.HillActionVelocitySumNormalization
+import NLS.KdV.HillCompletePhaseActionKronecker
+import NLS.Articles.KdVPseudomeasures.OriginalHillAngleActionKronecker
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -8882,3 +8893,29 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillCompletePhaseActionVariation
 #print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.tendsto_completePhase_action_series
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_onIndex_phase_action_bracket_contour
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complete_local_phase_action_velocity_series
+#print axioms NLS.LpSequence.positiveScalarExtension_eq_zero_of_nonpos
+#print axioms NLS.LpSequence.sum_symmetricCutoff_succ
+#print axioms NLS.LpSequence.positiveScalarExtension_const_mul
+#print axioms NLS.LpSequence.sum_symmetricCutoff_eq_central_add_positive_pairs
+#print axioms NLS.LpSequence.sum_positive_symmetricCutoff_reinsert_diagonal
+#print axioms NLS.ComplexAnalysis.sum_opposite_evaluations_simple_pole
+#print axioms NLS.ComplexAnalysis.weighted_opposite_simple_pole_pairs
+#print axioms NLS.KdV.hillAuxiliaryPsiInterpolationTerm
+#print axioms NLS.KdV.tendstoUniformlyOn_hillAuxiliaryPsiInterpolation
+#print axioms NLS.KdV.deriv_auxiliaryDirichlet_at_Hill_root
+#print axioms NLS.KdV.HillProductEquationPatch.canonicalPsi_frequency_identity
+#print axioms NLS.KdV.hillHminusPsiDirichletInterpolationTerm
+#print axioms NLS.KdV.analyticOnNhd_hillHminusPsiDirichletInterpolationTerm
+#print axioms NLS.KdV.HillProductEquationPatch.weighted_auxiliary_interpolation_pair
+#print axioms NLS.KdV.HillProductEquationPatch.finite_Hill_Dirichlet_interpolation_eq_weighted_auxiliary
+#print axioms NLS.KdV.HillProductEquationPatch.tendstoUniformlyOn_Hill_Dirichlet_interpolation
+#print axioms NLS.KdV.HillProductEquationPatch.prescribedActionDirichletVelocity
+#print axioms NLS.KdV.HillProductEquationPatch.action_cotangent_prescribed_circle_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.Dirichlet_action_prescribed_velocity_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_prescribed_action_velocity
+#print axioms NLS.KdV.HillProductEquationPatch.auxiliaryDirichlet_ne_of_rootDomain
+#print axioms NLS.KdV.HillProductEquationPatch.tendsto_prescribed_action_velocity_sums
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_action_Gardner_of_real
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.action_completePhase_Gardner_of_real
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.exists_local_completePhase_action_Gardner
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_local_Abelian_angle_action_Kronecker
