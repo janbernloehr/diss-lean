@@ -144,6 +144,7 @@ modules+=(NLS/KdV/HillFreeUniformPeriodJacobian)
 modules+=(NLS/KdV/HillFreeUniformInverseChart NLS/SequenceSpaces/PositiveDeletedContraction NLS/ComplexAnalysis/QuantitativeNeumannAnalyticInverse NLS/KdV/HillComplexFreeSupportedPeriodMap NLS/KdV/HillUniformComplexPeriodRoot NLS/ComplexAnalysis/BanachAnalyticZeroBound NLS/KdV/HillUniformComplexPeriodRootBounds)
 modules+=(NLS/KdV/HillSmallRealRootBox)
 modules+=(NLS/KdV/HillDeletedPeriodIdentification NLS/KdV/HillNearFreePhysicalPeriodRoots)
+modules+=(NLS/KdV/HillUniformComplexOwnPeriods NLS/KdV/HillUniformPeriodNormalization)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

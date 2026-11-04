@@ -788,6 +788,8 @@ import NLS.KdV.HillUniformComplexPeriodRootBounds
 import NLS.KdV.HillSmallRealRootBox
 import NLS.KdV.HillDeletedPeriodIdentification
 import NLS.KdV.HillNearFreePhysicalPeriodRoots
+import NLS.KdV.HillUniformComplexOwnPeriods
+import NLS.KdV.HillUniformPeriodNormalization
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
