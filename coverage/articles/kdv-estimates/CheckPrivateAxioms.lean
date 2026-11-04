@@ -806,6 +806,8 @@ import NLS.KdV.HillUniformDeflatedDiscBounds
 import NLS.KdV.HillUniformCenteredGapData
 import NLS.KdV.HillUniformCenteredMeanFreePrimitives
 import NLS.KdV.HillCenteredMeanFreePhysicalMatching
+import NLS.KdV.HillCenteredQuadraticDirichletValue
+import NLS.KdV.HillUniformOwnRegularPhase
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/

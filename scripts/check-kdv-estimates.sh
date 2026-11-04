@@ -150,6 +150,7 @@ modules+=(NLS/KdV/HillActiveRegularAnnulus NLS/KdV/HillUniformPointwiseQuadratic
 modules+=(NLS/KdV/HillUniformNativeDirichletTerminal NLS/KdV/HillUniformPointwiseDirichletValue NLS/KdV/HillUniformKernelCorrectionTerms NLS/KdV/HillUniformOffDiagonalPhases)
 modules+=(NLS/ComplexAnalysis/BoundedCenteredMeanFreeQuadratic NLS/KdV/HillUniformAllContourBounds NLS/KdV/HillUniformDeflatedDiscBounds)
 modules+=(NLS/KdV/HillUniformCenteredGapData NLS/KdV/HillUniformCenteredMeanFreePrimitives NLS/KdV/HillCenteredMeanFreePhysicalMatching)
+modules+=(NLS/KdV/HillCenteredQuadraticDirichletValue NLS/KdV/HillUniformOwnRegularPhase)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

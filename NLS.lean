@@ -5729,3 +5729,5 @@ import NLS.KdV.HillUniformDeflatedDiscBounds
 import NLS.KdV.HillUniformCenteredGapData
 import NLS.KdV.HillUniformCenteredMeanFreePrimitives
 import NLS.KdV.HillCenteredMeanFreePhysicalMatching
+import NLS.KdV.HillCenteredQuadraticDirichletValue
+import NLS.KdV.HillUniformOwnRegularPhase
