@@ -817,6 +817,9 @@ import NLS.SequenceSpaces.FiniteHeadOwnTail
 import NLS.KdV.HillUniformFullRegularPhase
 import NLS.SequenceSpaces.NatL2BoundedMultipliers
 import NLS.KdV.HillUniformCriticalCartesianTails
+import NLS.SequenceSpaces.NatL2HeadTailAssembly
+import NLS.KdV.HillFiniteCartesianAnalyticHead
+import NLS.KdV.HillFullWeightedCartesianAnalytic
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1305,7 +1308,10 @@ run_cmd do
     ``NLS.ComplexAnalysis.exists_bounded_analytic_centered_mean_free_quadratic_solution,
     ``NLS.sum_head_add_own_add_tsum_tail,
     ``NLS.Coeff.summable_sq_mul_of_bounded,
-    ``NLS.Coeff.analyticOnNhd_natL2OfFunction_mul_of_uniform_bound]
+    ``NLS.Coeff.analyticOnNhd_natL2OfFunction_mul_of_uniform_bound,
+    ``NLS.Coeff.natL2Decode,
+    ``NLS.Coeff.natL2Decode_apply,
+    ``NLS.Coeff.exists_natL2_analytic_head_tail]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

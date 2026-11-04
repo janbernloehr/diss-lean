@@ -5740,3 +5740,6 @@ import NLS.SequenceSpaces.FiniteHeadOwnTail
 import NLS.KdV.HillUniformFullRegularPhase
 import NLS.SequenceSpaces.NatL2BoundedMultipliers
 import NLS.KdV.HillUniformCriticalCartesianTails
+import NLS.SequenceSpaces.NatL2HeadTailAssembly
+import NLS.KdV.HillFiniteCartesianAnalyticHead
+import NLS.KdV.HillFullWeightedCartesianAnalytic
