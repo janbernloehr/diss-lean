@@ -3340,3 +3340,23 @@ essential mathematical obligations. Full aggregate compilation and both transiti
 final evidence is recorded below.
 
 Final validation: all1,113 article/shared NLS modules have validated private outputs. Twelve new NLS modules and the aggregate compiled with autoImplicit=false and warnings as errors under default limits. All1,101 earlier mathematical source hashes and private compiled-output hashes match the frozen pushedfdb5ac0 baseline. The complete targeted audit passed for 9,615 declarations/auxiliaries and the combined audit for 54,495 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All1,116 frozen source/checker/aggregate hashes and the additional pinned mathlib source/private-output hashes match. Public inventory:4,973 declarations(4,161 theorems and812 definitions). All3,409 old audit scopes are byte-preserved and55 new scopes added in one array of at most64, for58 blocks total, each referenced exactly once. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source. All main source claims are complete with the three documented corrections.
+
+## 2026-11-04 — PR3 merge conflict resolved against main
+
+Merged main 84370cf54a96 into the article branch. The only conflict
+was the final import block in NLS.lean; the resolution preserves the exact
+union of both parents' imports. No mathematical proof source changed. The
+focused checker now also compiles the dNLS article module imported by main.
+
+The additional dNLS module and merged aggregate compiled with strict
+default options. All 1,113 existing article source/private-output hashes
+were verified. Fresh transitive axiom audits passed for 9,615 article
+declarations and auxiliaries and 54,506 NLS declarations. All 219 incoming
+main modules were also imported together with the merged aggregate using
+their source-hash-verified private outputs; that fresh compatibility audit
+passed for 55,356 NLS declarations. Only propext, Classical.choice
+and Quot.sound are allowed. All 1,117 frozen inputs and pinned import hashes
+match. This reuses validated dependencies and is not a full source rebuild.
+
+The main theorem coverage and the three documented source corrections are
+unchanged. See merge-validation.json for exact parents, hashes and scope.

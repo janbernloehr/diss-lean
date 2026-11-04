@@ -1,0 +1,97 @@
+{
+  "objective": "Verify the three main theorems of arXiv:1606.07052v1 in the existing private diss-lean worktree and branch.",
+  "proof_and_validation_status": "complete_under_recorded_reference_and_normalization_qualifications",
+  "source_pdf_sha256": "7ac1baa898365f4a556aec4d2e3182e82a9dbe782d8a183114ae81acb486e8c1",
+  "main_declarations": [
+    "NLS.Articles.MKdVBelowL2.theorem1_1",
+    "NLS.Articles.MKdVBelowL2.theorem1_2_at_exponent",
+    "NLS.Articles.MKdVBelowL2.theorem1_2_compatible",
+    "NLS.Articles.MKdVBelowL2.theorem1_2_hilbert",
+    "NLS.Articles.MKdVBelowL2.theorem1_2_hilbert_globalInverse",
+    "NLS.Articles.MKdVBelowL2.theorem1_3_hilbert",
+    "NLS.Articles.MKdVBelowL2.theorem1_3_extension",
+    "NLS.Articles.MKdVBelowL2.theorem1_3_asymptotic"
+  ],
+  "requirements": [
+    {
+      "requirement": "Every main theorem has a precise statement matching the pinned source domains, hypotheses, quantifiers, topology and normalization.",
+      "status": "verified",
+      "evidence": [
+        "NLS/Articles/MKdVBelowL2/Theorem11.lean",
+        "NLS/Articles/MKdVBelowL2/Theorem12.lean",
+        "NLS/Articles/MKdVBelowL2/Theorem13.lean",
+        "theorem-1.1.json",
+        "theorem-1.2.json",
+        "theorem-1.3.json",
+        "main-theorem-checks.txt"
+      ],
+      "detail": "Theorem 1.1 quantifies over every finite p>2, all original real scalar inputs, every smooth real initial-data sequence, one open local neighborhood and positive common time, and one invariant open zero neighborhood before all T>0. Its global clause explicitly supplies the single continuous all-real-time flow and approximation at every real time, with uniform compact-path norm continuity. The ordinary fixed-time consequence holds at every original real datum outside literal physical L2 and every selected t>0, even relative to smooth data plus that point. Theorems 1.2 and 1.3 retain the full compatible family and weighted-target/asymptotic quantifiers. The local and compact global conclusions explicitly assert that the named continuous fourthScalarTrajectoryOn path is the unique smooth-approximation solution, closing the exported-statement gap identified in PR #1 review."
+    },
+    {
+      "requirement": "All essential mathematical dependencies are proved or imported from verified results, without proof holes or additional axioms.",
+      "status": "verified",
+      "evidence": [
+        "NLS/Articles/MKdVBelowL2/AxiomAudit.lean",
+        "validation.txt",
+        "validation.json",
+        "main-theorem-checks.txt"
+      ],
+      "detail": "Fresh full transitive audits of all 1007 named declarations, including every main theorem, use only propext, Classical.choice and Quot.sound. All 219 focused source files are hash-checked and scanned for proof holes or axiom declarations. Physical PDE existence, uniqueness, arbitrary smooth-data realization, original distribution identification, frequency normalization, genuine smooth mass-phase approximants and fixed-time physical nonextension are established; no main mathematical obligation remains."
+    },
+    {
+      "requirement": "Relevant strict builds, theorem checks and transitive axiom audits pass.",
+      "status": "verified",
+      "evidence": [
+        "check.sh",
+        "validation.json",
+        "validation.txt",
+        "main-theorem-checks.txt"
+      ],
+      "detail": "PR #1 statement-fix incremental validation: 2 changed modules compiled strictly with Lean 4.33.1, autoImplicit=false and warningAsError=true; 217 unchanged focused modules reused after byte comparison with 36684a081de4d6c069d34f30ddd33c1d7704d064. Fresh full transitive audit of 1007 named declarations and direct main-theorem import/type checks passed with only propext, Classical.choice and Quot.sound. Canonical compiled dependencies imported read-only; not a fresh whole-repository rebuild."
+    },
+    {
+      "requirement": "Coverage maps each main source theorem to declarations and records corrections and qualifications.",
+      "status": "verified",
+      "evidence": [
+        "source.json",
+        "README.md",
+        "theorem-1.1.json",
+        "theorem-1.2.json",
+        "theorem-1.3.json"
+      ],
+      "detail": "All three main theorems are marked verified. The accepted intrinsic Hilbert Birkhoff reference, pinned served-PDF version/date discrepancy, Hamiltonian first-phase sign, source translation-prose sign inconsistency, missing Corollary 7.2 reference item, nonzero-index asymptotic qualification, exact zero-mode singleton, and p/3 quasi-norm are recorded. No source qualification has been silently removed."
+    },
+    {
+      "requirement": "Reusable proofs are in the shared library and article-specific statements in the assigned article directory.",
+      "status": "verified",
+      "evidence": [
+        "NLS/Dynamics/FixedTimeMassPhaseTuning.lean",
+        "NLS/FunctionalAnalysis/ContinuousMapTimeDerivative.lean",
+        "NLS/MKdV/ClassicalUniqueness.lean",
+        "NLS/ZakharovShabat/SourceHilbertMassActionInvariance.lean",
+        "NLS/Articles/MKdVBelowL2/Theorem11.lean"
+      ],
+      "detail": "Shared analytic, PDE, spectral and sequence proofs reside in the existing NLS library namespaces; the chosen article families and all main theorem packages reside in NLS/Articles/MKdVBelowL2."
+    }
+  ],
+  "mathematical_obligations_remaining": [],
+  "delivery": {
+    "branch": "articles/mkdv-below-l2",
+    "canonical_checkout_policy": "read_only",
+    "integration": "Private branch prepared for integration; canonical workspace decision remains separate.",
+    "version_control_evidence": "Final git commit, successful push and matching branch/origin HEAD are checked at delivery. The exact final commit is recorded in the delivered completion manifest."
+  },
+  "validation": {
+    "focused_modules": 219,
+    "unchanged_modules_reused": 217,
+    "full_transitive_audits": 1007,
+    "basis_commit": "36684a081de4d6c069d34f30ddd33c1d7704d064",
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "scope": "PR #1 statement-fix incremental validation: 2 changed modules compiled strictly with Lean 4.33.1, autoImplicit=false and warningAsError=true; 217 unchanged focused modules reused after byte comparison with 36684a081de4d6c069d34f30ddd33c1d7704d064. Fresh full transitive audit of 1007 named declarations and direct main-theorem import/type checks passed with only propext, Classical.choice and Quot.sound. Canonical compiled dependencies imported read-only; not a fresh whole-repository rebuild.",
+    "changed_modules_checked_strictly": 2
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "source": {
+    "article": "arXiv:1606.07052v1",
+    "lemma": "5.2",
+    "pages": [
+      21,
+      22
+    ],
+    "sha256": "7ac1baa898365f4a556aec4d2e3182e82a9dbe782d8a183114ae81acb486e8c1"
+  },
+  "verified": true,
+  "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGap_lemma5_2",
+  "file": "NLS/ZakharovShabat/SourceLemma5_2.lean",
+  "scope": "Every real finite-gap Hilbert source and every selected integer, including closed actions. The all-exponent identity uses the unique coefficient-preserving Hilbert representative of the same physical potential.",
+  "normalization": "physical H4 frequency − 6H2 − 12πnH1 − (2πn)^3 = −12 Σ_k k Ω²_nk",
+  "clauses": [
+    {
+      "source": "Physical open-action frequency",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthOpenFrequency",
+      "details": "Negative derivative of the independently defined physical fourth Hamiltonian along the actual Birkhoff action-reduction curve; no moment sum occurs in this definition."
+    },
+    {
+      "source": "Quartic contour action derivative",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasDerivAt_physicalActionReductionHamiltonian_four",
+      "details": "Fixed local contour and actual H1,H2 derivatives give the physical H4 derivative with the exact two renormalization terms."
+    },
+    {
+      "source": "Weighted moment and free-frequency conversion",
+      "declaration": "NLS.ZakharovShabat.SourceAbelianMomentAtlas.cubic_contour_sum_renormalization",
+      "details": "Exact F0=Fk−iπk cubic expansion, vanishing odd moments, normalized zeroth period, and finite actual gap support."
+    },
+    {
+      "source": "Closed selected action",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteGapFourthClosedFrequency_eq_limit_and_moments",
+      "details": "Frequency is independently defined as the second physical amplitude derivative. Analyticity of physical H4 on the opening line, its exact action t²/2 and the fixed-support weighted sum limit give the same formula."
+    },
+    {
+      "source": "All source exponents",
+      "declaration": "NLS.ZakharovShabat.SourceAbelianMomentAtlas.weighted_moments_eq_physical_fourth_finiteGap",
+      "details": "Every finite p>1. The unique Hilbert realization preserves the actual smooth physical pair and every hierarchy Hamiltonian; actual normalized moments preserve coefficients across exponents."
+    },
+    {
+      "source": "Chosen physical distribution family",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalFourthFrequencyCandidate_eq_finiteGap_actionDerivative",
+      "details": "The chosen candidate agrees at every real finite-gap input with the independently defined normalized physical H4 frequency of the same fixed Hilbert Birkhoff family."
+    }
+  ],
+  "does_not_establish": [
+    "Identification at all non-finite-gap points of the original H^(3/2) classical domain.",
+    "Real-coefficient realization of the Hilbert frequency in each stated weighted real target.",
+    "Main Theorem 1.3 or the flow statements of Theorem 1.1."
+  ]
+}

@@ -12,7 +12,16 @@
       "module_directory": "NLS/Articles/DNLSEstimates",
       "coverage_directory": "coverage/articles/dnls-estimates",
       "initial_responsibility": "Closest dissertation overlap: compare every main article estimate with Section 23 and Theorem 0.1 before proving anything new.",
-      "status": "not_yet_verified"
+      "status": "main_theorems_verified",
+      "verification_record": "coverage/articles/dnls-estimates/validation.json",
+      "source_inventory": "coverage/articles/dnls-estimates/source-map.json",
+      "main_theorem_module": "NLS/Articles/DNLSEstimates/MainEstimates.lean",
+      "verified_source_statements": [
+        "Theorem 1",
+        "Theorem 2 and common-constant remark",
+        "Theorem 3",
+        "Corollary 1"
+      ]
     },
     {
       "id": "kdv-estimates",

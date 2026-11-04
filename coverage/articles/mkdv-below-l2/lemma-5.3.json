@@ -1,0 +1,44 @@
+{
+  "source": {
+    "article": "arXiv:1606.07052v1",
+    "lemma": "5.3",
+    "pages": [
+      23,
+      24,
+      25
+    ],
+    "sha256": "7ac1baa898365f4a556aec4d2e3182e82a9dbe782d8a183114ae81acb486e8c1"
+  },
+  "verified": true,
+  "declaration": "NLS.ZakharovShabat.sourceLemma5_3",
+  "file": "NLS/ZakharovShabat/SourceLemma5_3.lean",
+  "scope": "Every finite p≥2; original normalized psi family, squared-gap extension and actual contour-moment atlas constructed together. One connected open complex neighborhood containing the full real source locus.",
+  "clauses": [
+    {
+      "source": "Off-diagonal Ω²_nk = γ_k³/(n−k) α^n_k",
+      "declaration": "NLS.ZakharovShabat.SourceLemma5_3Data.sharp_rows",
+      "details": "Exact factorization at every k≠n, including collapsed gaps. Actual canonical coefficient is fixed independently of q, zero at k=n, in every finite ℓq with q>1; norm bound uniform in n and locally uniform at every complex source."
+    },
+    {
+      "source": "Literal uniform q-power sum bound",
+      "declaration": "NLS.ZakharovShabat.SourceLemma5_3Data.row_power_sum",
+      "details": "Positive bound selected before source and deleted index; summability and q-power sum of the actual coefficient sequence."
+    },
+    {
+      "source": "Diagonal Ω²_nn = γ_n²/4 (π + ℓ^(p/2)_n + ℓ^(1+)_n)",
+      "declaration": "NLS.ZakharovShabat.SourceLemma5_3Data.mixed",
+      "details": "SourceSecondMomentMixedData.diagonal provides fixed maps into ℓ^(p/2) and the algebraic intersection of every finite ℓq, q>1; local norm bounds for all projections. Both maps chosen before q."
+    },
+    {
+      "source": "p=2 endpoint",
+      "declaration": "NLS.ZakharovShabat.SourceAbelianMomentAtlas.exists_offDiagonal_onePlus_of_two_le",
+      "details": "Consumes the verified refined estimate, whose half-exponent lower bound equals one at p=2."
+    }
+  ],
+  "quantifiers": "The common source domain, and the local neighborhood at each complex source, precede every auxiliary exponent. The same atlas supplies all clauses.",
+  "does_not_establish": [
+    "Physical normalized H4 derivative identification.",
+    "Analyticity of the infinite weighted moment sum or its weighted frequency-sequence maps.",
+    "Main Theorem 1.3 or the flow statements of Theorem 1.1."
+  ]
+}

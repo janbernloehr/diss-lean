@@ -5502,3 +5502,4 @@ import NLS.MKdV.MiuraNativeFiniteGapApproximation
 import NLS.MKdV.MiuraFullPhaseRotation
 import NLS.MKdV.MiuraFullPhaseGenerator
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianAngleSum
+import NLS.Articles.DNLSEstimates.MainEstimates

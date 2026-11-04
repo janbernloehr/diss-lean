@@ -1,0 +1,61 @@
+{
+  "article": "arXiv:1606.07052v1",
+  "theorem": "1.2",
+  "printed_page": 5,
+  "source_sha256": "7ac1baa898365f4a556aec4d2e3182e82a9dbe782d8a183114ae81acb486e8c1",
+  "status": "verified_under_accepted_reference",
+  "declared_family": "NLS.Articles.MKdVBelowL2.compatibleBirkhoff",
+  "domain": "NLS.Articles.MKdVBelowL2.compatibleBirkhoffDomain",
+  "source_space": "Original period-one distributions, pair of FourierLebesgue spaces with Weight.one; physicalRealSubspace has a complete real Banach structure",
+  "target_space": "Coeff p × Coeff p, with real target Birkhoff.conjugatePairSubmodule p; complete in the inherited norm",
+  "quantifiers": "One chosen original spectral chart at every finite p≥2; all compatibility and geometry statements use this fixed family",
+  "clauses": [
+    {
+      "source": "Zero normalization and (i)",
+      "declarations": [
+        "NLS.Articles.MKdVBelowL2.theorem1_2_at_exponent"
+      ]
+    },
+    {
+      "source": "(ii), both exponent orders",
+      "declarations": [
+        "NLS.Articles.MKdVBelowL2.theorem1_2_compatible"
+      ]
+    },
+    {
+      "source": "(iii), canonical on the whole complex domain",
+      "declarations": [
+        "NLS.Articles.MKdVBelowL2.theorem1_2_at_exponent",
+        "NLS.Articles.MKdVBelowL2.compatibleBirkhoff_canonical_complex",
+        "NLS.Articles.MKdVBelowL2.physicalFLBracket_eq_integral_bracket"
+      ]
+    },
+    {
+      "source": "(iv), injectivity, local diffeomorphism, open dense image",
+      "declarations": [
+        "NLS.Articles.MKdVBelowL2.theorem1_2_at_exponent",
+        "NLS.Articles.MKdVBelowL2.realBirkhoffFamily_localInverse"
+      ]
+    },
+    {
+      "source": "(v), accepted Hilbert map and onto bi-real-analytic diffeomorphism",
+      "declarations": [
+        "NLS.Articles.MKdVBelowL2.theorem1_2_hilbert",
+        "NLS.Articles.MKdVBelowL2.theorem1_2_hilbert_globalInverse",
+        "NLS.Articles.MKdVBelowL2.physicalHilbertRealization_coefficients"
+      ]
+    }
+  ],
+  "normalization": "Complex coordinates z-=(x-iy)/sqrt(2), z+=(x+iy)/sqrt(2); mixed Poisson bracket -i delta, physical Fourier reversal retained. physicalFLBracket matches the existing physical integral bracket at p=2.",
+  "topology": "Norm topology on original physical Fourier coefficients; full Banach analyticity, not merely coordinatewise analyticity",
+  "qualification": "The theorem is proved under the accepted Grébert–Kappeler manuscript reference. PDF edition identity is outside the agreed scope. Real and complex product-norm models are connected by explicit continuous linear equivalences.",
+  "other_main_theorems": {
+    "1.1": "verified_under_accepted_reference",
+    "1.3": "verified_under_accepted_reference"
+  },
+  "validation": {
+    "modules_checked": 219,
+    "audited_declarations": 1007,
+    "evidence": "validation.json"
+  }
+}

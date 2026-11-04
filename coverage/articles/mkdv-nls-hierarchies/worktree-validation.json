@@ -24889,9 +24889,9 @@
   "public_declaration_count": 4973,
   "theorem_count": 4161,
   "definition_count": 812,
-  "full_build": "1113 article/shared NLS modules have validated private outputs. All 1,101 unchanged mathematical prefix source hashes match pushedfdb5ac0. Their private compiled outputs were hash-frozen and reused unchanged. All twelve new NLS modules and the NLS aggregate compiled with autoImplicit=false and warnings as errors under the full-audit lock and default limits. All58 prefix blocks appear exactly once, preserving all3,409 old prefixes byte-for-byte and appending55 scopes in one block of at most64. The complete targeted and combined transitive axiom audits passed. The original pinned mathlib Lagrange source compiled privately with upstream implicit-variable conventions and warnings as errors; its source and private output hashes are unchanged. Cached imports remained read only. The entire dependency tree was not rebuilt from source.",
-  "aggregate_imports": "compiled_and_full_transitive_axiom_audits_passed",
-  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/MKdV/QuasiHillMonodromyEnergy.lean",
+  "full_build": "1113 unchanged article/shared modules reused after source and private-output hash checks, plus the additional upstream dNLS module and merged aggregate compiled strictly. All219 incoming main modules additionally checked together via source-hash-verified private cached imports and a fresh transitive axiom audit.",
+  "aggregate_imports": "merged_main_aggregate_compiled_and_full_transitive_axiom_audits_passed",
+  "validation_command": "python3 scripts/check_mkdv_nls.py --imports-from CANONICAL_CHECKOUT --full-audit --resume-from NLS/Articles/DNLSEstimates/MainEstimates.lean",
   "sha256": {
     "NLS/ComplexAnalysis/SourceDiscriminantPrimitive.lean": "2469ad5f4ead7acf64c3738361da5971c10ce9116caed49363ddebd30306e728",
     "NLS/KdV/FreeHill.lean": "55147a4f32b826a07da1ea4b6641ce5be98d3f9b3a09eeca624fc592df1b8498",
@@ -26006,12 +26006,13 @@
     "NLS/MKdV/MiuraFullPhaseRotation.lean": "b97caacaa6f2c94c8e3e01686b490d9647ddabeb3b1529d22139339ec772104b",
     "NLS/MKdV/MiuraFullPhaseGenerator.lean": "8373c81b9742ee515274c8ef31c04f3a0a167057e45f2f211aa9d13d02ac68dc",
     "NLS/Articles/MKdVNLSHierarchies/IndependentAbelianAngleSum.lean": "213e4c6f50ed37b1d62d58adcb9fc07b41cf833c760168d9f21067967b116e20",
-    "NLS.lean": "fd564c090a57a946db807a2b0afd61684f3a1da24e7cf3dc35f171faa06ebac2",
-    "scripts/check_mkdv_nls.py": "173567f49ffaf5874b4366a3419b90a023142b36789ab37bd96ed2e5aaee0672",
-    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "0e5f156b6798a734553e21d1ff4c039b3c9c439035f380788687611af5ca422b"
+    "NLS.lean": "e636c8b9cf8d5193c5699cd4e906fd8b9f1082106bc7ebd95fea862e264eafb9",
+    "scripts/check_mkdv_nls.py": "77034eba4f2fc0b3d8c636f75c59150d7d4bf459985c6ff37950c68a18ac5ac3",
+    "scripts/CheckMKdVNLSHierarchiesAxioms.lean": "0e5f156b6798a734553e21d1ff4c039b3c9c439035f380788687611af5ca422b",
+    "NLS/Articles/DNLSEstimates/MainEstimates.lean": "55170c5d842a92fcd12c03487df7e9035c9dccd35f99332dab01d1106c8a9b0b"
   },
   "smooth_flow_commit": "09fa657",
-  "focused_module_count": 1113,
+  "focused_module_count": 1114,
   "validation_history": [
     {
       "milestone": "initial hierarchy restrictions",
@@ -26664,12 +26665,35 @@
       "public_declaration_count": 4973,
       "theorem_count": 4161,
       "definition_count": 812
+    },
+    {
+      "date": "2026-11-04",
+      "status": "passed",
+      "article_parent": "a7be483018ff0a4d0f890272b9bbf154dba5ab60",
+      "main_parent": "84370cf54a96ed3cb8363576b33f568230bbb55c",
+      "resolution": "Preserve the exact union of both parents aggregate imports. No mathematical proof source changed. Add main DNLSEstimates/MainEstimates.lean to the focused checker so the merged aggregate remains reproducibly buildable against the pinned cache.",
+      "strict_compilation": {
+        "options": [
+          "autoImplicit=false",
+          "warningAsError=true"
+        ],
+        "fresh_modules": [
+          "NLS/Articles/DNLSEstimates/MainEstimates.lean",
+          "NLS.lean"
+        ],
+        "reused_article_modules_after_hash_checks": 1113,
+        "targeted_transitive_axiom_audit": 9615,
+        "combined_NLS_transitive_axiom_audit": 54506,
+        "merged_main_and_article_transitive_axiom_audit": 55356,
+        "unchanged_main_modules_reused_for_compatibility_import": 219,
+        "scope": "All219 incoming main modules are source-hash-checked against main validation metadata and their original validated private outputs. A separate private import overlay and fresh transitive audit check all of them together with the merged NLS aggregate. The full dependency tree is not rebuilt from source."
+      }
     }
   ],
   "generic_flow_commit": "9614f057851ac672c1b22f108953752c4f95da61",
   "aggregate_compilation_passed": true,
   "combined_aggregate_article_axiom_audit_passed": true,
-  "combined_audited_NLS_declarations": 54495,
+  "combined_audited_NLS_declarations": 54506,
   "combined_audit_log": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-mkdv-nls-hierarchies/outputs/dnls/.lake/build/article-logs/mkdv-nls-hierarchies/CombinedAxioms.log",
   "shared_primitive_source": {
     "branch": "articles/kdv-convexity",
@@ -26677,7 +26701,7 @@
     "module_count": 19,
     "all_copied_sources_identical": true
   },
-  "last_run_notes": "All 1,101 unchanged mathematical prefix source hashes match pushedfdb5ac0. Their private compiled outputs were hash-frozen and reused unchanged. All twelve new NLS modules and the NLS aggregate compiled with autoImplicit=false and warnings as errors under the full-audit lock and default limits. All58 prefix blocks appear exactly once, preserving all3,409 old prefixes byte-for-byte and appending55 scopes in one block of at most64. The complete targeted and combined transitive axiom audits passed. The original pinned mathlib Lagrange source compiled privately with upstream implicit-variable conventions and warnings as errors; its source and private output hashes are unchanged. Cached imports remained read only. The entire dependency tree was not rebuilt from source. Targeted audit passed for 9615 declarations/auxiliaries and combined audit for 54495 NLS declarations. All1,116 frozen mathematical source/checker/aggregate hashes, one additional pinned mathlib source/private output and1,101 unchanged prefix outputs match. No kernel, recursion or heartbeat limit was raised.",
+  "last_run_notes": "PR3 main merge validation: fresh strict compilation of the additional main dNLS module and merged aggregate; all1113 unchanged article private outputs hash-checked. Targeted audit9615, combined audit54506, and all219 incoming main modules imported together with the merged aggregate and audited for55356 NLS declarations. All1117 frozen inputs and original pinned mathlib import hashes match. No mathematical proof source or audit scope changed. Full dependency tree not rebuilt.",
   "shared_Hill_L2_source": {
     "branch": "articles/kdv-estimates",
     "commit": "5da8934e019a8a08f314988c311661754b89e925",
@@ -38124,5 +38148,6 @@
     "new_count": 55,
     "block_count": 58,
     "total_count": 3464
-  }
+  },
+  "merge_validation": "merge-validation.json"
 }

@@ -1,0 +1,379 @@
+{
+  "main_theorem": "1.1",
+  "source_page": 3,
+  "verified": true,
+  "checked_dependencies": [
+    {
+      "source": "Hamiltonian time orientation for the renormalized mKdV frequency",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_eq_physical_derivative",
+      "scope": "The actual cubic-plus-normalized fourth frequency equals the independently defined H4 action derivative minus 6H2 and 12*pi*n*H1 on the full original fractional source, at every index. The first Hamiltonian phase has the negative sign. H2 vanishing on the mKdV diagonal is not assumed by this declaration."
+    },
+    {
+      "source": "Local existence in the fixed physical Birkhoff image",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_local_fourthPhysicalTrajectory",
+      "scope": "Every finite p>1 and every original physical real-type pair has one open neighborhood and one positive common time interval. The actual H4 phase rotation lifts through the actual image inverse of the fixed Theorem 1.2 map. The lift is continuous into C([-T,T],FL_r^p) in the uniform norm. This is a rotation-lift result, not yet a mKdV PDE wellposedness theorem."
+    },
+    {
+      "source": "One small neighborhood before all time intervals",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_global_small_fourthPhysicalTrajectory",
+      "scope": "A single open physical real-type source neighborhood of zero is invariant under every real time step. On this same neighborhood the actual rotation lift has continuous uniform-norm trajectory maps for every compact time interval. No global Birkhoff surjectivity at p>2 is assumed. The actual lift now separately preserves the physical mKdV diagonal at every admissible time; the scalar trajectory construction and smooth PDE calibration remain to be packaged."
+    },
+    {
+      "source": "Exact physical coordinates and local flow algebra",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_coordinates",
+      "scope": "The actual original period-one distribution pair maps under the fixed Theorem 1.2 Birkhoff family to precisely the Hamiltonian rotation with cubic-plus-normalized physical H4 frequency. Separate verified declarations preserve coordinate products, add time parameters and reverse admissible steps. Image conditions are explicit."
+    },
+    {
+      "source": "Uniform convergence of source trajectories",
+      "declaration": "NLS.Articles.MKdVBelowL2.tendstoUniformly_fourthPhysicalImageFlow",
+      "scope": "Every convergent sequence or filtered family of original physical real-type inputs has uniformly convergent actual inverse-lift trajectories on any common admissible compact interval. Openness gives eventual admissibility without an extra assumption on the approximants. Identifying these lifts with smooth mKdV solutions is still required."
+    },
+    {
+      "source": "Nonzero signed mode required by the fixed-time obstruction",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_nonzero_physical_birkhoff_index",
+      "scope": "Every actual physical real-type pair outside the physical Hilbert domain has a nonzero first complex Birkhoff coordinate at some n!=0. The Hilbert domain is defined by existence of a real FL² pair representing exactly the same two original distributions. Finite first-coordinate support forces actual finite-gap regularity and a coefficient-preserving physical Hilbert representative. The mass-dependent phase at n=0 is not used."
+    },
+    {
+      "source": "Actual mKdV diagonal and physical Fourier approximation",
+      "declaration": "NLS.Articles.MKdVBelowL2.mem_physicalMKdVSubspace_iff_componentSwap",
+      "scope": "The closed complete physical mKdV subspace is exactly equality of the two original period-one distributions, and exactly the unsigned-component-swap fixed source slice. Symmetric Fourier truncations preserve this same diagonal, have finite actual Fourier support and converge in the full physical norm at every finite exponent. This does not assert spectral finite-gap support for a Fourier truncation."
+    },
+    {
+      "source": "Physical ODE covariance underlying the spectral symmetry",
+      "declaration": "NLS.ZakharovShabat.classicalSolution_componentSwap",
+      "scope": "Unsigned exchange of the physical potential fields intertwines the actual first-order equation with spectral reflection and the signed solution-vector exchange (y2,-y1). The full monodromy, discriminant, anti-discriminant and Dirichlet/Neumann characteristic transformations are verified. The two boundary conditions exchange with a minus sign in the characteristic."
+    },
+    {
+      "source": "Full Fourier-Lebesgue source symmetry",
+      "declaration": "NLS.ZakharovShabat.sourceDiscriminant_componentSwap",
+      "scope": "Every finite p>1, every original complex source pair and every spectral parameter. Actual finite-Fourier classical agreement and continuity prove covariance of the original discriminant and both boundary characteristics, retaining the anti-discriminant sheet sign."
+    },
+    {
+      "source": "Exact signed periodic endpoint labels",
+      "declaration": "NLS.ZakharovShabat.sourceCanonicalPeriodicEndpoints_componentSwap",
+      "scope": "Every finite p>1 and every original complex source. The n-th left endpoint of the swapped source is the negative of the (-n)-th original right endpoint, and conversely. Algebraic multiplicities, central root counts, distant discs and strips, lp displacements and complete lexicographic ordering are retained; all collisions and closed gaps are included."
+    },
+    {
+      "source": "Canonical square-root branch parity",
+      "declaration": "NLS.ZakharovShabat.sourceCanonicalRoot_componentSwap",
+      "scope": "Every complex source and spectral parameter at every finite p>1. Midpoint and gap identities give exact principal standard-root reflection, paired factors are unchanged and the central factor supplies the full root minus sign. The actual mKdV canonical root is odd and its signed gaps are even."
+    },
+    {
+      "source": "Actual original action parity on the physical diagonal",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalMKdV_birkhoff_actions_even",
+      "scope": "The real gap profile reflects by theta -> pi-theta. All original real higher actions have their spectral-power parity, and the original contour-defined ordinary complex actions reflect n -> -n. Thus the actual action products of the fixed Theorem 1.2 physical family are even on every physical mKdV input. No Birkhoff phase-angle identity is assumed or inferred from even actions alone."
+    },
+    {
+      "source": "Vanishing H2 shift in the original mKdV normalization",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_eq_mKdV_derivative",
+      "scope": "Physical H1 momentum is antisymmetric under exchange of its actual fields and vanishes on the whole H1 diagonal. The native H^(3/2) inclusion preserves equality of the original fields, so the constructed rotation frequency equals the independent physical H4 action derivative minus only 12*pi*n*H1 on every original fractional mKdV datum."
+    },
+    {
+      "source": "Independent physical Hamiltonian covariance on the native fractional domain",
+      "declaration": "NLS.ZakharovShabat.sourceSobolevFourthHamiltonian_componentSwap",
+      "scope": "The all-order physical finite-gap trace and exact higher-action reflection prove the physical hierarchy parity. A bounded original weighted component swap and native weighted finite-gap density extend physical H4 antisymmetry to all original H^(3/2) sources. The physical Hamiltonian is not defined by the trace sum."
+    },
+    {
+      "source": "Independent physical H4 derivatives, including every closed action",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sobolevFourthFrequency_componentSwap",
+      "scope": "Full-domain action dependence compares actual reflected unit-speed action-reduction curves and the exact I=t²/2 opening curves. Differentiation gives omega4(S a,n)=-omega4(a,-n) on every original real H^(3/2) source. Both original derivative branches, not a surrogate frequency, are included. No Birkhoff angle correspondence is assumed."
+    },
+    {
+      "source": "Original-distribution native representatives of diagonal Fourier approximants",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_nativeFourth_physicalMKdVTruncate",
+      "scope": "Every symmetric diagonal Fourier cutoff has a genuine H^(3/2) representative of the same two original period-one distribution functionals. Its fields are equal. General shared weighted finite-support transport retains coefficients at every Banach exponent and spectral weight. No spectral finite-gap property is claimed for these cutoffs."
+    },
+    {
+      "source": "Corollary 6.1: odd normalized physical frequency on the full mKdV domain",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalMKdV_fourthFrequencyCandidate_odd",
+      "scope": "Every finite p>1, every actual equal-distribution physical mKdV pair and every signed index. Independent native derivative parity, the fixed original-domain adapter, the same-distribution exponent compatibility, diagonal-preserving Fourier truncation and norm continuity prove the full normalized frequency identity. The zero-index value vanishes and both actual real and complex weighted sequence realizations retain the symmetry."
+    },
+    {
+      "source": "Odd cubic-plus-normalized Hamiltonian phase frequency",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalMKdV_fourthSourcePhaseFrequency_odd",
+      "scope": "The exact rotation frequency used by the physical image lift is odd on every original physical real mKdV datum at every finite p>1. Full off-diagonal reflected covariance and a separate original-Hamiltonian argument now prove actual source-flow preservation; parity alone was not substituted for that argument."
+    },
+    {
+      "source": "Full action cotangent reflection and original anti-Poisson covariance",
+      "declaration": "NLS.ZakharovShabat.sourceActionHamiltonianVector_componentSwap",
+      "scope": "Real action reflection determines the full complex analytic action germ at every real source. Differentiation transports the complete complex cotangent, including closed gaps. The original source Poisson operator changes sign under unsigned component exchange, so the actual action Hamiltonian field maps to minus the field at the reflected index."
+    },
+    {
+      "source": "Full off-diagonal fourth-frequency covariance",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthSourcePhaseFrequency_componentSwap",
+      "scope": "The independently defined native physical mass is swap-invariant and momentum is swap-antisymmetric, giving the exact normalized physical H4 reflected sign at arbitrary native sources. Coefficient-preserving Fourier approximation extends this covariance, not just diagonal oddness, to every finite p>1 original real source. Actual phase frequencies retain the value under exponent inclusion."
+    },
+    {
+      "source": "Generic original finite-action ODE and uniqueness",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.complex_map_eq_phase_of_finiteAction_ode",
+      "scope": "An arbitrary action-invariant frequency family has a full source-norm derivative at finite coordinate support in the proven global Hilbert range. Injectivity of the actual Birkhoff differential identifies its original finite action Hamiltonian field. Scalar integrating-factor uniqueness in both time directions recovers precisely the original Birkhoff phase trajectory from this ODE and support."
+    },
+    {
+      "source": "Actual Hilbert source-flow component covariance",
+      "declaration": "NLS.ZakharovShabat.SourceActionFrequency.imageFlow_componentSwap",
+      "scope": "For a family with the proved reflected frequency sign, the anti-Poisson swap transports the actual finite Hamiltonian ODE. Original actions and closed-gap coordinate vanishing reflect its finite support; ODE uniqueness identifies the swapped source trajectory. Actual spectral finite-gap density extends covariance to every original real Hilbert source. No phase-angle equality is assumed."
+    },
+    {
+      "source": "Actual finite-p physical mKdV diagonal preservation",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_preserves_mKdV",
+      "scope": "Every finite p>1 and every physical real equal-distribution mKdV input. At every time in the actual open image domain, the fixed Theorem 1.2 Birkhoff inverse lift remains in the same closed physical mKdV subspace. Native finite Fourier representatives and exact phase/exponent compatibility transfer Hilbert preservation to finite Fourier inputs at arbitrary p; diagonal Fourier approximation and source-norm continuity on the actual open image domain prove the full rough-data result. Spectral finite-gap status is not asserted for Fourier truncations. This is actual source-flow preservation, with smooth physical PDE agreement still open."
+    },
+    {
+      "source": "Full weighted real-form determination of complex physical cotangents",
+      "declaration": "NLS.ZakharovShabat.weightedSourceCLM_ext_real",
+      "scope": "Every finite Banach source exponent and every spectral weight. The original weighted real subspace determines an entire complex continuous linear map. Abstract complex-coordinate transport and the verified source real-form identity theorem prove the full weighted germ identity; no complexification assumption is added."
+    },
+    {
+      "source": "Finite-gap full complex physical H4 cotangent",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.sourceComplexSobolevFourthHamiltonian_fderiv_eq_finite_sum",
+      "scope": "At any native H^(3/2) real source with finite action-cotangent support, the entire independent complex physical H4 derivative is the restriction of a bounded original Hilbert cotangent. Its coefficients are the independently defined physical H4 frequencies. Original weighted ell^(3,1) action differentiation, exact coordinate derivatives, closed-gap full cotangent vanishing, the actual local action factor and weighted real-form determination prove equality on arbitrary complex native directions."
+    },
+    {
+      "source": "Certified physical H4 first variation and source Poisson field",
+      "declaration": "NLS.ZakharovShabat.sourceHamiltonianDirection_physicalFourth_coordinates",
+      "scope": "Every smooth period-one physical pair represented by the native complex Fourier source, and every original Hilbert cotangent calibrated on the full independent native H4 derivative. Actual complex Fourier-mode variations identify both reflected gradient coefficients. The original Poisson direction has exactly both Fourier coefficients of the certified third-order physical fourth vector field, retaining the 2*pi Fourier convention and Hamiltonian time orientation."
+    },
+    {
+      "source": "Actual finite-gap physical fourth field as an original Hilbert source",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finiteActionHamiltonianVector_eq_physicalFourth",
+      "scope": "Every native real finite-gap source and every finite cutoff supporting all action cotangents. The actual finite sum of original action Hamiltonian fields weighted by independent physical H4 frequencies equals the actual Fourier realization of the smooth physical fourth field. The Hilbert constructor recovers every original Fourier integral. Independent frequency reality is proved directly from real physical Hamiltonian curves, including the closed-action second derivative."
+    },
+    {
+      "source": "Finite-gap preservation and the fixed-family corrected cotangent ODE",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_fourthFiniteGap_physical_cotangent_ODE",
+      "scope": "Every original real Hilbert finite-gap datum and every real time. The actual fixed fourth-frequency image lift remains finite-gap and has a native representative of the same raw fields. Its full source-norm time derivative is the original Poisson direction of L4 - 6H2*dH1 - 6H1*LP, where L4 restricts exactly to the full independent physical H4 derivative, dH1 is the independently calibrated physical mass cotangent, and LP is explicitly the finite sum of 2*pi*n times the original action cotangent on one fixed original cutoff. The separate physical momentum calibration now identifies LP with the independent H2 cotangent; the derived pointwise finite-gap PDE theorem supplies the equation."
+    },
+    {
+      "source": "Actual physical H2 momentum cotangent calibration",
+      "declaration": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.finite_action_sum_eq_physicalMomentumCotangent",
+      "scope": "At every native real finite-gap source and every cutoff supporting all action cotangents, the signed sum of 2*pi*n times dI_n equals the independently defined physical H2 Hilbert cotangent. Native analytic action dependence and original angle-momentum calibration give the open derivatives; closed actions have zero full cotangent. Equality holds on all complex Hilbert directions."
+    },
+    {
+      "source": "Pointwise renormalized mKdV on the actual fixed finite-gap flow",
+      "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthFiniteGapPhysicalFlow_mKdV",
+      "scope": "Every original Hilbert finite-gap datum with equal physical fields, every real time and every spatial point. The actual fixed fourth trajectory has pointwise velocity -u_xxx+6*(u^2-M)*u_x, with the original period-one constants. The physical field is real at all times and M equals the integral over [0,1] of the square of its initial physical field. Strong H1 time differentiability and Fourier uniqueness establish the equation. Arbitrary smooth non-finite-gap data are not yet covered."
+    },
+    {
+      "source": "Scalar real physical Fourier-Lebesgue phase space",
+      "declaration": "NLS.Articles.MKdVBelowL2.physicalScalarDiagonal",
+      "scope": "The input is a single original period-one distribution, with conjugate-reflection reality on its Fourier modes and the inherited physical Fourier norm. The equal-pair map is a real linear isometry equivalence onto the closed physical mKdV diagonal. The scalar space is complete."
+    },
+    {
+      "source": "Scalar local and invariant small-data trajectories",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_global_small_fourthScalarTrajectory",
+      "scope": "Actual scalar fourth inverse-lift trajectories on the proved image domain. A common positive time and open neighborhood exist at every scalar datum. One invariant open neighborhood of zero is selected before every compact time interval. Complete scalar trajectories vary continuously in the original uniform norm, not merely pointwise in time. Arbitrary smooth PDE identification remains open."
+    },
+    {
+      "source": "Scalar approximation and uniqueness of actual lift limits",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_limit_unique",
+      "scope": "Symmetric scalar real Fourier cutoffs have finite actual physical Fourier support and converge in the original norm. Their actual scalar lift trajectories converge uniformly on every common admissible interval. Every convergent family of scalar inputs has the same uniform lift limit, and any asserted pointwise limit agrees with it. This does not assume that arbitrary smooth PDE solutions have already been identified with the lift."
+    },
+    {
+      "source": "Full physical corrected fourth ODE away from the smaller diagonal",
+      "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthFiniteGapSourceFlow_fullPhysical",
+      "scope": "Every finite-gap original real-type pair and every real time. The actual source-norm time derivative is the independent physical H4 field plus 6 times physical H2 times the original phase direction, minus 6 times conserved physical H1 times the positive spatial derivative. Both corrections from H4 - 6H1H2 are retained. No scalar diagonal hypothesis is required."
+    },
+    {
+      "source": "All nonnegative Sobolev orders of the fixed actual physical fourth flow",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthSobolevTrajectoryOn_physical",
+      "scope": "Every nonnegative native Sobolev order and every compact real time interval. Forgetting the weighted path gives exactly the same original physical distribution pair under the same fixed Birkhoff family. Initial-data dependence is continuous in the full uniform weighted norm. Every given convergent family, including any given spectral finite-gap approximating family, has convergent whole trajectories in this norm. Weighted spectral finite-gap density is verified separately. No diagonal-preservation assertion for spectral approximants is made. Smooth PDE passage to this limit remains required."
+    },
+    {
+      "source": "Dense-parameter passage of the actual physical time equation",
+      "declaration": "NLS.FunctionalAnalysis.hasDerivAt_of_dense_parameters",
+      "scope": "For arbitrary topological initial parameters and real-time Banach-valued paths, joint continuity of the paths and their asserted velocities extends HasDerivAt from a dense set of parameters to all parameters. Locally uniform velocity convergence follows from the compact-open topology. The neighborhood filter is used directly; no chosen approximating sequence or additional differentiability hypothesis is required."
+    },
+    {
+      "source": "Classical spatial jets throughout each original native Sobolev source",
+      "declaration": "NLS.ZakharovShabat.iteratedDeriv_nativeSobolevPhysicalJet",
+      "scope": "Every integer source order s and lower jet k<s. Bounded physical synthesis retains the original coefficients; at actual finite gaps it equals the independent classical physical derivative. Normalized source coordinates, native weighted finite-gap density and the shared derivative-limit theorem identify all consecutive jets as actual classical spatial derivatives for every real native source."
+    },
+    {
+      "source": "Full physical corrected pointwise fourth equation, beyond finite gaps",
+      "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalValue",
+      "scope": "Every original real-type native H⁴ datum, every real time and every spatial point. The actual fixed-family Sobolev lift has both pointwise time derivatives equal to the continuous independent physical corrected field H4 - 6H1H2. The positive 6H2 phase and negative 6H1 spatial translation terms are both retained. Joint continuity and normalized dense-parameter passage extend the actual finite-gap equation. No finite-gap or diagonal approximation hypothesis is assumed."
+    },
+    {
+      "source": "Original physical-distribution identification of the full H4 time equation",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthClassicalPhysicalValue_physical_coefficients",
+      "scope": "Every original real-type native H⁴ datum and every real time. Every signed period-one Fourier integral of the synthesized physical fields equals the corresponding original distribution functional of the actual fourth physical image lift of the same fixed Theorem 1.2 family. No frequency, exponent or physical Fourier normalization is changed."
+    },
+    {
+      "source": "Scalar renormalized mKdV on the entire native H4 diagonal",
+      "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalValue_mKdV",
+      "scope": "Every real native H⁴ source with equal original fields, every real time and every spatial point. The actual constructed scalar field is real and satisfies u_t=-u_xxx+6*(u^2-M)*u_x. Its classical third derivative is the bounded physical third jet, and M equals the original integral over [0,1] of the square of the initial physical field. Actual full-source diagonal preservation removes physical momentum. This is the constructed flow equation, not an assumption or proof of uniqueness for arbitrary classical PDE trajectories."
+    },
+    {
+      "source": "All-order native representations of arbitrary smooth real physical fields",
+      "declaration": "NLS.ZakharovShabat.exists_nativeSobolevSource_of_smooth_real",
+      "scope": "Every integer Sobolev order and every smooth real period-one physical function. Its original Fourier integrals define a native real source with exactly equal raw fields; native lower jets recover the classical physical derivatives. The construction is not restricted to finite Fourier or finite-gap sources."
+    },
+    {
+      "source": "Actual admissibility transfer under exponent inclusion",
+      "declaration": "NLS.ZakharovShabat.SourceActionFrequency.mem_imageDomain_exponent",
+      "scope": "Any compatible actual action-frequency families, any increasing finite source exponents, and any admissible lower-exponent time. The included actual source trajectory supplies a point in the larger Birkhoff image. The larger image is not assumed surjective, and its image condition is discharged rather than assumed."
+    },
+    {
+      "source": "Global physical Hilbert lifts in larger finite exponents",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthPhysicalImageFlow_of_hilbert",
+      "scope": "Every actual physical Hilbert pair, every larger finite exponent p, and every p-pair representing the same two original distributions. Every real time is admissible in the larger exponent, and both evolved original distributions equal the Hilbert flow distributions. No arbitrary rough-data global inverse is asserted."
+    },
+    {
+      "source": "Spatially smooth actual mKdV trajectory for every smooth real initial field",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_spatially_smooth_mKdV_of_smooth_initial",
+      "scope": "Every smooth real period-one physical field. One actual native H⁴ input gives the exact initial physical function and a globally defined trajectory, spatially C∞, periodic and real at every time. Its pointwise time derivative satisfies renormalized mKdV with the original initial square integral. All-order native representatives and fixed-family source-flow equality prove spatial smoothness. This is a constructed-flow existence result, not uniqueness against every classical PDE trajectory."
+    },
+    {
+      "source": "Exact smooth scalar finite-p physical PDE adapter",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_smooth_fourthScalarImageFlow_coefficients",
+      "scope": "Every smooth original real scalar distribution at every finite p>=2. Its actual scalar inverse lift is admissible at every real time and every compact interval. Each signed Fourier coefficient equals that of one fixed globally defined spatially smooth physical mKdV trajectory, with its actual initial mass and pointwise PDE. The scalar lift is the same fixed Theorem 1.2 family used throughout."
+    },
+    {
+      "source": "Genuine smooth real Fourier approximants in the original scalar norm",
+      "declaration": "NLS.Articles.MKdVBelowL2.isSmoothPhysicalScalarInput_truncate",
+      "scope": "Every finite physical Fourier-support scalar real input has a smooth real periodic representative of exactly the same original distribution coefficients. Actual symmetric scalar cutoffs are therefore smooth, and they converge in the original norm at every finite exponent. Smooth scalar data are dense and a smooth approximation sequence exists at every input. Finite Fourier support is not replaced by a finite-gap claim."
+    },
+    {
+      "source": "Uniform smooth-approximation limits and their uniqueness for the constructed physical flow",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_unique_smooth_approximation",
+      "scope": "On every common admissible compact interval, every norm-convergent smooth scalar family has uniformly convergent actual scalar trajectories; smooth approximant times are globally admissible. Any curve with the all-smooth-sequences pointwise limit property for these actual smooth physical lifts is uniquely the fixed scalar lift. Smooth approximation sequences exist, so the property is not vacuous. Classical PDE uniqueness is still needed to identify this constructed smooth map with the source canonical smooth solution map."
+    },
+    {
+      "source": "Periodic physical mKdV difference-energy bound",
+      "declaration": "NLS.MKdV.abs_scalarClassicalMKdV_difference_energy_le",
+      "scope": "Two smooth real period-one fields and any fixed complex mass. Periodic integration by parts removes the full third-order and translation terms. Uniform bounds R for both fields and their first spatial derivatives give the exact bound 36*R^2 times the original unit-period squared L2 distance."
+    },
+    {
+      "source": "Uniqueness against classical physical PDE trajectories",
+      "declaration": "NLS.MKdV.IsClassicalMKdVTrajectory.eq_of_eq_at",
+      "scope": "Any real periodic classical trajectories with the same fixed mass and equal values at one time agree at every real time. The actual PDE supplies the L2 energy derivative. Continuity in the uniform norm of the fields and of their first spatial derivative families supplies all compact-time bounds. Two-sided Gronwall handles both time directions. No energy bound is a solution hypothesis."
+    },
+    {
+      "source": "Ordinary jointly smooth solutions satisfy classical uniqueness regularity",
+      "declaration": "NLS.MKdV.IsClassicalMKdVTrajectory.of_jointly_smooth",
+      "scope": "Joint C-infinity regularity of the physical time-space cover gives norm-continuous circle families for both partial derivatives by the open spatial quotient and compact-open topology. The continuous velocity and pointwise time derivative imply uniform-norm differentiability by the Banach fundamental theorem of calculus. Thus arbitrary ordinary smooth real periodic solutions of the actual PDE belong to the uniqueness class."
+    },
+    {
+      "source": "Uniform time derivative of the actual full H4 physical trajectory",
+      "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_fourthClassicalPhysicalFlow_fst",
+      "scope": "Every native real-type H4 source. The actual fixed Birkhoff trajectory has the original corrected continuous physical velocity as its derivative in C(AddCircle 2, C) with the uniform norm. It is derived from pointwise derivatives and velocity continuity, not assumed and not restricted to finite-gap data."
+    },
+    {
+      "source": "The actual smooth-data fourth flow is the unique global classical mKdV solution",
+      "declaration": "NLS.Articles.MKdVBelowL2.existsUnique_classicalMKdVTrajectory",
+      "scope": "Every smooth real period-one original physical initial field. There is exactly one real periodic classical global trajectory with that initial field and the original initial square integral. The fixed native H4 fourth flow satisfies the uniform time, spatial smoothness, continuous first derivative family and actual PDE hypotheses. All assumptions of classical uniqueness are proved for the constructed flow."
+    },
+    {
+      "source": "Identification with any canonical smooth scalar physical map",
+      "declaration": "NLS.Articles.MKdVBelowL2.fourthScalarImageFlow_eq_of_classical",
+      "scope": "Every smooth original real scalar distribution and every finite exponent p>=2. Any classical physical scalar trajectory with the exact initial Fourier coefficients and initial physical square mass equals the fixed scalar Birkhoff lift as an original distribution at every real time. Uniqueness is a consequence of the physical PDE and Fourier uniqueness. It does not merely assert uniqueness of a chosen approximation limit."
+    },
+    {
+      "source": "Exact all-smooth-sequences solution characterization",
+      "declaration": "NLS.Articles.MKdVBelowL2.isMKdVSolutionBySmoothApproximation_iff",
+      "scope": "Any canonical classical scalar smooth solution map, any nonnegative compact time interval, every original datum in the actual common trajectory domain, and every continuous path. The path starts at the datum and is the pointwise-time limit for every smooth real sequence converging in the original norm if and only if it is the actual fixed scalar trajectory. The canonical classical map exists, so the hypothesis is discharged by verified classical existence. All convergent smooth sequences in fact converge uniformly on the interval."
+    },
+    {
+      "source": "Theorem 1.1 local C0 wellposedness clause",
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation",
+      "scope": "For every finite p>2, any canonical classical smooth solution map and every original real FLp datum, there is a positive time and one open neighborhood. Every datum in that neighborhood has exactly one continuous path in the all-smooth-sequences solution sense, and the actual solution map is continuous in the full uniform trajectory norm. The smooth map is available by the verified isClassicalScalarSolutionMap_fourthScalarImageFlow."
+    },
+    {
+      "source": "Theorem 1.1 global small-data C0 wellposedness clause",
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation",
+      "scope": "For every finite p>2 and any canonical classical smooth solution map, one invariant open neighborhood of zero is chosen before all T>0. On that same neighborhood every compact interval has the unique all-smooth-sequences solution, with continuous dependence in the full uniform trajectory norm. All compact paths are restrictions of the same actual scalar flow, which preserves the neighborhood at every real time."
+    },
+    {
+      "source": "Arbitrary Hilbert approximants have divergent original physical mass",
+      "declaration": "NLS.ZakharovShabat.tendsto_sourceHilbertMass_real_atTop",
+      "scope": "Every original real source outside the embedded Hilbert locus and every converging Hilbert-source family at an increasing exponent. Every finite Fourier energy sum is bounded by the actual Hilbert mass. Nonsummability of the limit coefficients forces mass to positive infinity. No finite-gap or smoothness hypothesis is required."
+    },
+    {
+      "source": "Exact prescribed mass phase with vanishing amplitude adjustment",
+      "declaration": "NLS.Dynamics.exists_mass_phase_scales",
+      "scope": "Any diverging positive mass family, positive fixed phase scale c and nonnegative offset delta. Target mass (ceil(cM)+delta)/c differs by a bounded amount. The square-root amplitude factor tends to one and its rescaled quadratic mass has exactly the phase exp(2*pi*i*delta). A sign-reversal lemma handles both one and minus one for signed mass coefficients."
+    },
+    {
+      "source": "Controlled native smooth real approximants",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_fourthClassicalSource_sequence_mass_phase",
+      "scope": "Every original real scalar input outside the physical Hilbert locus, at every finite p>=2. Native H4 representatives of actual smooth scalar cutoffs retain equal raw fields and genuinely smooth real periodic physical fields. After a tail shift and real amplitude adjustments tending to one, their included original sources converge in the original p-norm and every mass phase is exactly the prescribed offset. The original physical mass is its independently defined Hilbert mass and scales quadratically."
+    },
+    {
+      "source": "Prescribed-phase approximants in the actual physical scalar norm",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_smooth_scalar_mass_phase_sequence",
+      "scope": "Every non-Hilbert original real scalar datum, every finite p>=2, and every positive phase scale with nonnegative offset. The controlled native sources give genuine smooth original scalar distributions. All signed coefficients are retained, the physical scalar inputs converge in their original norm, and their actual physical masses have the exact prescribed phase. This is not a mere formal spectral approximation."
+    },
+    {
+      "source": "Fixed-time physical mass-phase extension obstruction",
+      "declaration": "NLS.Articles.MKdVBelowL2.not_continuousAt_fixed_scalar_mass_phase_extension",
+      "scope": "Every non-Hilbert original real scalar datum, any nonzero signed fixed mass frequency, and any scalar amplitude continuous and nonzero at the datum. Any function agreeing on the genuine smooth controlled native inputs with the actual physical mass exponential times that amplitude is discontinuous there. Two norm-convergent smooth sequences give the exact phases one and minus one at the same selected time. This does not merely exclude uniform convergence of whole trajectories."
+    },
+    {
+      "source": "Actual normalized fourth coordinate continuity without source inversion",
+      "declaration": "NLS.Articles.MKdVBelowL2.continuous_fourthScalarRenormalizedCoordinate",
+      "scope": "Every signed mode, every real time, and every finite source exponent greater than one. The coordinate phase of the fixed normalized H4 family is continuous at all original real scalar inputs before applying a source inverse. No admissibility of the rough source inverse at the selected time is assumed."
+    },
+    {
+      "source": "Fixed-time obstruction for the mass-restored fourth coordinate phase",
+      "declaration": "NLS.Articles.MKdVBelowL2.exists_obstructed_fourthScalarOrdinaryCoordinate",
+      "scope": "Every non-Hilbert real scalar datum at every finite p>=2 and every fixed t>0. Some actual signed nonzero Birkhoff mode has no continuous scalar extension agreeing on smooth controlled native inputs with the normalized coordinate phase times exp(-12*pi*i*n*t*M). The proof uses the exact physical mass and the independently fixed normalized coordinate family. Identification of this restored coordinate formula with arbitrary ordinary physical mKdV PDE solutions is still a separate remaining obligation; the full physical nonextension theorem is not claimed from this declaration alone."
+    },
+    {
+      "source": "The mass-restored frequency family on the actual Hilbert source",
+      "declaration": "NLS.Articles.MKdVBelowL2.ordinaryFourthSourcePhaseFrequency_eq_physical_derivative",
+      "scope": "The actual normalized fourth frequency plus 12*pi*n times the independently defined real Hilbert mass is a continuous action-invariant Hilbert family. Its complex value equals the independent original H4 action derivative minus 6 times physical momentum, on the full native H^(3/2) domain. Component-swap covariance and global Hilbert source inversion preserve the original equal-field diagonal."
+    },
+    {
+      "source": "The actual ordinary physical equation at every native H4 input",
+      "declaration": "NLS.Articles.MKdVBelowL2.hasDerivAt_ordinaryFourthClassicalPhysicalValue_mKdV",
+      "scope": "The restored finite-gap source cotangent is the physical H4 cotangent minus 6*P times the mass cotangent; the mass-dependent spatial term cancels. The independent physical Hamiltonian direction and strong H1 derivative give the actual finite-gap pointwise equation. Joint native path and velocity continuity pass it to every H4 real-type input. On the original scalar diagonal the remaining physical momentum is zero, giving u_t=-u_xxx+6*u^2*u_x at every real time and space, with no finite-gap assumption."
+    },
+    {
+      "source": "Global ordinary classical PDE existence and uniqueness",
+      "declaration": "NLS.Articles.MKdVBelowL2.existsUnique_classicalOrdinaryMKdVTrajectory",
+      "scope": "Every smooth real period-one physical field has exactly one ordinary classical global solution with its exact original initial field. All-order native Sobolev representations and fixed-family source equality prove spatial C-infinity at every time. The actual norm-continuous velocity gives the full uniform-norm time derivative; the first actual Sobolev jet is a continuous first spatial derivative family. Classical uniqueness at zero translation parameter identifies arbitrary ordinary classical solutions, including every ordinary jointly smooth solution."
+    },
+    {
+      "source": "Exact original scalar Birkhoff coordinates of the ordinary physical flow",
+      "declaration": "NLS.Articles.MKdVBelowL2.compatibleBirkhoff_ordinaryFourthClassicalSourceFlow",
+      "scope": "For every finite p>=2, every native H4 diagonal datum, every signed mode and every real time, the actual scalar physical distribution has exactly the normalized fourth coordinate phase multiplied by exp(-12*pi*i*n*t*M). The same fixed Theorem 1.2 family is used at both Hilbert and p exponents. All source images needed here are discharged by the actual Hilbert source flow; no global rough-data inverse is assumed."
+    },
+    {
+      "source": "Canonical ordinary smooth scalar physical map and its coordinates",
+      "declaration": "NLS.Articles.MKdVBelowL2.classicalOrdinaryScalarSolutionMap_coordinates",
+      "scope": "A classical ordinary scalar physical solution map exists for every finite p>=2. Physical PDE uniqueness and Fourier uniqueness make the smooth choice unique. Any such map has precisely the calibrated mass-restored fourth coordinates on every genuine smooth native original scalar input. Thus the previously proved coordinate obstruction now applies to arbitrary canonical ordinary smooth PDE solutions."
+    },
+    {
+      "source": "The literal original L2 domain",
+      "declaration": "NLS.Articles.MKdVBelowL2.mem_physicalScalarL2Locus_iff_l2_function",
+      "scope": "The original real scalar distribution belongs to physicalScalarL2Locus exactly when the same original distribution functional is represented by an actual physical period-one L2 function. The construction uses the verified physical Fourier isometry and actual circle integral representation. A physical Hilbert pair representing both original scalar distributions implies this literal L2 condition; this discharges the non-Hilbert premise of the mass-phase obstruction at every datum outside L2."
+    },
+    {
+      "source": "Local relative-continuity fixed-time obstruction",
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_nonextension_within",
+      "scope": "Every finite p>2, every original real scalar datum outside physical L2, every selected t>0, any ordinary canonical smooth physical map, and every candidate physical extension. Agreement with smooth classical values is required only on a neighborhood of the datum. The candidate cannot be continuous there even relative to any set containing those nearby smooth data. Two genuine smooth sequences eventually enter that neighborhood and give opposite exact mass phases; composing with the fixed actual Birkhoff coordinate gives the contradiction."
+    },
+    {
+      "source": "Even a one-point smooth extension is impossible at each fixed time",
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_no_smooth_extension",
+      "scope": "Every finite p>2, every original real datum outside literal physical L2 and every t>0. Any candidate map agreeing with the canonical ordinary smooth physical values on all smooth data fails relative continuity on the union of smooth data with that one rough datum. This is the fixed-time claim, not only a uniform trajectory-norm obstruction."
+    },
+    {
+      "source": "Full main Theorem 1.1",
+      "declaration": "NLS.Articles.MKdVBelowL2.theorem1_1",
+      "scope": "For every finite p>2, actual canonical renormalized and ordinary classical smooth physical maps exist. The renormalized flow is locally C0 wellposed at every original real scalar datum in the all-smooth-sequences sense, with one positive common time and one open initial-data neighborhood and full uniform trajectory-norm continuity. One invariant open zero neighborhood is chosen before all positive compact time intervals for global C0 wellposedness. At every original real datum outside actual physical L2 and every selected t>0, the original ordinary smooth map has no continuous extension, even on smooth data plus that point. All physical PDE and Birkhoff calibration premises are discharged."
+    }
+  ],
+  "remaining": [],
+  "validation": "PR #1 statement-fix incremental validation: 2 changed modules compiled strictly with Lean 4.33.1, autoImplicit=false and warningAsError=true; 217 unchanged focused modules reused after byte comparison with 36684a081de4d6c069d34f30ddd33c1d7704d064. Fresh full transitive audit of 1007 named declarations and direct main-theorem import/type checks passed with only propext, Classical.choice and Quot.sound. Canonical compiled dependencies imported read-only; not a fresh whole-repository rebuild.",
+  "verified_clauses": {
+    "local_C0_wellposedness": "NLS.Articles.MKdVBelowL2.theorem1_1_local_classical_approximation",
+    "global_small_data_C0_wellposedness": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_classical_approximation",
+    "fixed_time_nonextension": "NLS.Articles.MKdVBelowL2.theorem1_1_fixed_time_no_smooth_extension",
+    "global_continuous_solution_curves": "NLS.Articles.MKdVBelowL2.theorem1_1_small_global_curves"
+  },
+  "completed_by": [
+    "NLS.Articles.MKdVBelowL2.theorem1_1"
+  ],
+  "history_note": "Earlier dependency scopes record what was established at their respective checkpoints; later entries discharge their then-open obligations. Current complete clause mapping is theorem-1.1.json."
+}

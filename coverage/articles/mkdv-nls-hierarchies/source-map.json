@@ -1644,7 +1644,7 @@
       "The explicit parabolic hypotheses of the terminal-release lemma are now derived at every actual open Dirichlet endpoint in MiuraOpenEndpointMonodromy.lean. The actual native profile translation is identified in MiuraNativePeriodicProfile.lean. Subsequent modules prove simultaneous interior divisors, canonical terminal generator values and the full final angle sum."
     ]
   },
-  "latest_validation": "Full audit52658 terminal PASS: targeted9615, combined54495;1113 article/shared NLS modules,1116 frozen inputs and1101 unchanged prefix outputs. Strict default compilation and transitive axiom audits passed. No essential mathematical obligations remain.",
+  "latest_validation": "PR3 main merge validation: fresh strict compilation of the additional main dNLS module and merged aggregate; all1113 unchanged article private outputs hash-checked. Targeted audit9615, combined audit54506, and all219 incoming main modules imported together with the merged aggregate and audited for55356 NLS declarations. All1117 frozen inputs and original pinned mathlib import hashes match. No mathematical proof source or audit scope changed. Full dependency tree not rebuilt.",
   "independent_Abelian_full_rotation_and_angle_sum": {
     "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
     "declarations": [
@@ -1666,5 +1666,6 @@
       "No full cross-mode Cartesian canonicity or rough L2 inverse is asserted or needed.",
       "The three documented source corrections remain: Theorem2(ii) matrix, Theorem3 positive sign and Theorem4(ii) reverse mean squared."
     ]
-  }
+  },
+  "integration_validation": "merge-validation.json"
 }

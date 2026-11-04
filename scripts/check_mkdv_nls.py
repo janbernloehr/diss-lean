@@ -1149,6 +1149,7 @@ modules = [
     'NLS/MKdV/MiuraFullPhaseRotation.lean',
     'NLS/MKdV/MiuraFullPhaseGenerator.lean',
     'NLS/Articles/MKdVNLSHierarchies/IndependentAbelianAngleSum.lean',
+    'NLS/Articles/DNLSEstimates/MainEstimates.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")
