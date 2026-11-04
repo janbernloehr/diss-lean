@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 5978,
+    "declarations": 6008,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -513,7 +513,7 @@
       "NLS.Coeff.tendsto_norm_separatedReciprocalEnvelope_zero"
     ]
   },
-  "full_repository_validation": "All 794 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 791-module base has strict validation recorded at commit 89e43006844d5be74cc7b6355497df2d5a933018 (complete 583-module strict focused run plus 208 isolated additions, all 791 base source hashes unchanged, 5938-declaration audit and successful 791-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5978-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 794-module focused script, full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 797 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 794-module base has strict validation recorded at commit 95f855a370a5d18d8acf9bf9c2e0c40cab9c1343 (complete 583-module strict focused run plus 211 isolated additions, all 794 base source hashes unchanged, 5978-declaration audit and successful 794-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6008-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 797-module focused script, full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -1309,10 +1309,13 @@
     "NLS/KdV/HillUniformPeriodNormalization.lean": "b763e1b6b93d61150b9096538a08d58656f44039a4c24983c13a8efed99a5da9",
     "NLS/SequenceSpaces/SeparatedReciprocalEnvelope.lean": "21a902021b34b14b43499b9b4ecd5b514a3ca4c148f3cc8bc6f3de5322b75a45",
     "NLS/KdV/HillSeparatedPeriodKernel.lean": "b382f6cf80d736004c0d590df413d445a8ca22567c72ebde5d81ae4001241d57",
-    "NLS/KdV/HillUniformNormalizedPeriodContours.lean": "355d55047810329125735eb73d2e73f77860f45c1e6e07d9a45a1e0d01032ad3"
+    "NLS/KdV/HillUniformNormalizedPeriodContours.lean": "355d55047810329125735eb73d2e73f77860f45c1e6e07d9a45a1e0d01032ad3",
+    "NLS/KdV/HillActiveRegularAnnulus.lean": "721680fefedd57fe8bf4fb3b6ce04a4cbfa5ec4074d1e7c1e1b40b41fe78918e",
+    "NLS/KdV/HillUniformPointwiseQuadraticSolution.lean": "49c6c0e3bdc92e1b2521afa0ee896acd743e0bc04b43a3983f69a4b5f4edfd97",
+    "NLS/KdV/HillUniformSeparatedQuadraticPrimitives.lean": "05fc9eb6042b1afd8c75a1d130ea868ee1265b5590c5f93431771689d781c3ad"
   },
-  "remaining": "The original normalized physical Hill differentials now have jointly analytic complex charts on one common near-free source ball, with a scaled contour bound S/k uniform in both the differential index n and every off-diagonal gap k. Removing the original free scaling yields the complete kernel n/(k*abs(free_k-free_n)), including k close to n. Its full positive-gap sum is bounded by 4/pi^2 for every n and tends to zero as n grows, using a shared reciprocal Hilbert-pairing envelope. The very same charts retain all original normalized period identities and match the original globally selected real normalized numerator on the common real source ball. The original own normalization periods have uniform lower bound 1/2 there, and the original complex period roots have common analytic charts and linear Hilbert bounds with actual physical matching. The critical weighted complex own-amplitude tails remain Hilbert analytic with exact w(2*n)*sqrt(2*pi*n) normalization. Still required: transfer the complete separation kernel through the actual regular annulus and quadratic primitive constructions, combine it with the checked uniform original Dirichlet terminal estimates to control the summed regular Abelian phases and complex phase multipliers, extend uniform charts around general real potentials, assemble the finite head and full physical weighted Cartesian Banach analytic map, prove source-normalized Gardner brackets and a global inverse, and establish the fixed physical KdV Birkhoff identification. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
-  "milestone": "Uniform normalized physical Hill contour charts and complete separation kernels",
+  "remaining": "The actual normalized physical Hill differentials now have common complex contour charts and actual quadratic primitives on every sufficiently high off-diagonal gap, with source radius, geometric cutoff and constant chosen before the differential index n. The primitives satisfy the original local gap quadratic differential equation, joint energy/potential analyticity, and norm<=36*pi*S*kernel(n,k) on the fixed-fraction inner gap disc. The underlying original numerator is matched to the original globally selected real normalized differential on the common source ball. The active-gap annulus construction preserves any excluded own index and accepts a variable gap majorant, so it does not require moving the cutoff beyond 2*n or replacing the original physical differential. The complete kernel n/(k*abs(free_k-free_n)) has full sum<=4/pi^2 uniformly in n and full-sum decay as n grows. Original common complex roots, physical root matching, own-period lower bounds and critical weighted Hilbert analytic own-amplitude tails remain checked. Still required: evaluate the actual quadratic primitives at original complex Dirichlet terminals with the checked uniform native terminal bounds, prove common analytic and uniformly bounded summed off-diagonal phase tails and phase multipliers, handle the finite low-gap geometry and the own-gap regular correction uniformly, extend all necessary uniform charts around general real potentials, assemble the full physical weighted Cartesian Banach analytic map, prove source-normalized Gardner brackets and a global inverse, and establish the fixed physical KdV Birkhoff identification. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+  "milestone": "Uniform active-gap annuli and actual separated quadratic primitives",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -2109,7 +2112,10 @@
     "NLS.KdV.HillUniformPeriodNormalization",
     "NLS.SequenceSpaces.SeparatedReciprocalEnvelope",
     "NLS.KdV.HillSeparatedPeriodKernel",
-    "NLS.KdV.HillUniformNormalizedPeriodContours"
+    "NLS.KdV.HillUniformNormalizedPeriodContours",
+    "NLS.KdV.HillActiveRegularAnnulus",
+    "NLS.KdV.HillUniformPointwiseQuadraticSolution",
+    "NLS.KdV.HillUniformSeparatedQuadraticPrimitives"
   ],
   "proof_commits": [
     {
@@ -2676,6 +2682,11 @@
       "commit": "89e43006844d5be74cc7b6355497df2d5a933018",
       "scope": "Uniform original own-period lower bounds and jointly analytic normalized differential charts on one common near-free complex source ball, with exact original physical root and normalized numerator matching. Two strict isolated modules, 5938-declaration audit and successful 791-module aggregate; committed locally.",
       "pushed": false
+    },
+    {
+      "commit": "95f855a370a5d18d8acf9bf9c2e0c40cab9c1343",
+      "scope": "Uniform normalized physical Hill contour charts, complete separation kernel with full sum<=4/pi^2 and high-index decay. Three strict isolated additions including a reusable shared envelope, 5978-declaration audit and successful 794-module aggregate; committed locally.",
+      "pushed": false
     }
   ],
   "aggregate_check": {
@@ -2692,58 +2703,58 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "794 focused modules covered by the unchanged 791-module strictly validated base plus 3 isolated strict module checks; no fresh complete focused-script run is claimed.",
+    "focused_modules": "797 focused modules covered by the unchanged 794-module strictly validated base plus 3 isolated strict module checks; no fresh complete focused-script run is claimed.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 5978 declarations. Includes the five new shared reciprocal-envelope declarations, the complete off-diagonal separation kernel and its uniform summability and high-index decay, removal of the original period scaling, uniform actual normalized contour bounds and original physical numerator matching.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 6008 declarations. Includes uniform-before-n active-gap annulus geometry, original zero-period transfer, maximum-principle bounds with a variable gap majorant, the actual pointwise bounded parametric quadratic construction, and common original-normalized-differential primitives with complete separation-kernel estimates.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 794 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 791-module base has strict validation recorded at commit 89e43006844d5be74cc7b6355497df2d5a933018 (complete 583-module strict focused run plus 208 isolated additions, all 791 base source hashes unchanged, 5938-declaration audit and successful 791-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5978-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 794-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 797 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 794-module base has strict validation recorded at commit 95f855a370a5d18d8acf9bf9c2e0c40cab9c1343 (complete 583-module strict focused run plus 211 isolated additions, all 794 base source hashes unchanged, 5978-declaration audit and successful 794-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6008-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 797-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified. The existing ParametricTrigonometricTerminal, ParametricSineTerminal, ParametricCosineTerminal, ParametricCosineChart, ParametricCosinePrimitive and LocalAnalyticSquareRoot sources were read and reused with bytes equal to the pinned prebuilt reference; their actual uses are covered transitively by the new Hill declaration audit. The endpoint-root continuity and arbitrary real-angle cosine-chart results are new shared proofs with explicit audit seeds. Generic parametric annular primitives, quadratic Cauchy projection and root primitives, quadratic cosine primitives and the segment-only analytic cosine mean were read and reused unchanged from the pinned prebuilt reference. Their SHA256 values are recorded in the analytic_regular_hill_abelian_corrections_through_closed_gaps source-map section. The actual uses are covered transitively by the expanded audit.",
-    "mathematical_scope": "Construct a reusable l1 sequence from the product of the punctured reciprocal Hilbert lattice and its translation. Prove its exact coordinates, norm<=4, equality of the norm with the absolute Hilbert pairing, and decay of its complete norm as the separation tends to infinity. Define the actual complete off-diagonal free-energy separation kernel n/(k*abs(free_k-free_n)) at positive integer gaps excluding n, with zero at all inactive indices. Factor the original free energies to dominate this kernel by pi^-2 times the shared translated reciprocal envelope; obtain absolute summability, a full sum <=4/pi^2 independent of n, and decay of the full sum as n tends to infinity. Prove removal of the original complex free-period scaling gives precisely this kernel bound for any scaled contour estimate. Use the actual Hilbert numerator contour factorization, original inverse-root ratio bounds and the checked own normalization-period lower bound to bound every original normalized complex integrand by a common scaled S/k. Intersect the actual normalized root-chart and contour-control radii before n, keeping the verified common linear root bound. Obtain jointly analytic original normalized differentials G_n, their original normalized period identities, scaled S/k and unscaled S*kernel bounds on every off-diagonal contour, including k arbitrarily close to n. Prove these same G_n equal the original globally selected real normalized physical numerator on one common real source ball by actual selected-root matching and the checked projected-real normalized numerator identity.",
-    "scope": "All 794 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 791-module base has strict validation recorded at commit 89e43006844d5be74cc7b6355497df2d5a933018 (complete 583-module strict focused run plus 208 isolated additions, all 791 base source hashes unchanged, 5938-declaration audit and successful 791-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5978-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 794-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Generalize the original complex regular-gap annulus argument so its geometric cutoff is chosen before the analytic numerator and an arbitrary predicate of active gaps. Original filled-gap and quadratic-root charts give joint analytic numerator and annular density; the original root-product comparison and actual zero contour period give both outer and inner zero periods at each active gap. Generalize the original maximum-principle annulus estimate to any nonnegative gap majorant b(k), retaining a geometry cutoff before the numerator, majorant and active predicate. Prove disc numerator bounds 2*R*b(k) and inner-circle density bounds 8*b(k). Expose the original bounded parametric quadratic primitive construction pointwise, choosing its cutoff before the source domain, numerator, gap and numerical bound. Apply all three original geometric constructions on the common actual normalized differential charts with active predicate k!=n and b(k)=S*the complete separation kernel. Choose a common cutoff before n. For each active high gap, obtain an actual jointly analytic H satisfying localGapPolynomial*deriv(H)+(E-localGapMidpoint)*H=the original complex regular-gap numerator, and norm(H)<=36*pi*S*kernel(n,k) on the inner quarter disc. Retain exact original globally selected normalized physical numerator matching for the same G_n on the common real source ball.",
+    "scope": "All 797 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 794-module base has strict validation recorded at commit 95f855a370a5d18d8acf9bf9c2e0c40cab9c1343 (complete 583-module strict focused run plus 211 isolated additions, all 794 base source hashes unchanged, 5978-declaration audit and successful 794-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6008-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 797-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "76846aaca00f628bb1d79fb7990324677d1a9374a658840f6cd4ccce2d47f799",
-      "scripts/check-kdv-estimates.sh": "3ee5177944a707de8d905bc000cce44b2aa439c65501a05a34c9c037ef8e1ea4",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "c68349467eb2b607c5e0f71429ee09c1b7fc11b25d260e9019364983b6f18fa7"
+      "NLS.lean": "cc9597f27b17b82238cccc9959897238857abd0dc452e457dc7283b31d9d907b",
+      "scripts/check-kdv-estimates.sh": "2b8ad7c99186ba0e351fc1751371d09016eec751a76dfbacbaa3b99f9f751c99",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "2cfd1764eeb874ec51a02fcb23ada3aadfa447958f42f0c10319f4c85f19f006"
     },
     "focused_build_execution": {
       "mode": "strict_delta",
-      "base_commit": "89e43006844d5be74cc7b6355497df2d5a933018",
-      "base_focused_modules": 791,
-      "base_verification_sha256": "a9f7e33c564870d7d7c4d337e6435ad6bf66faa0b8cdf8e6ff2dbbfecd82d4a3",
+      "base_commit": "95f855a370a5d18d8acf9bf9c2e0c40cab9c1343",
+      "base_focused_modules": 794,
+      "base_verification_sha256": "8de17f44f82062aed72f60ded33c40c4b1a858f80b6d85930a8f649e4826ba4f",
       "base_sources_unchanged": true,
-      "base_validation_description": "complete 583-module strict focused run plus 208 isolated additions, all 791 base source hashes unchanged, 5938-declaration audit and successful 791-module aggregate",
+      "base_validation_description": "complete 583-module strict focused run plus 211 isolated additions, all 794 base source hashes unchanged, 5978-declaration audit and successful 794-module aggregate",
       "new_modules": [
-        "NLS/SequenceSpaces/SeparatedReciprocalEnvelope.lean",
-        "NLS/KdV/HillSeparatedPeriodKernel.lean",
-        "NLS/KdV/HillUniformNormalizedPeriodContours.lean"
+        "NLS/KdV/HillActiveRegularAnnulus.lean",
+        "NLS/KdV/HillUniformPointwiseQuadraticSolution.lean",
+        "NLS/KdV/HillUniformSeparatedQuadraticPrimitives.lean"
       ],
       "new_source_sha256": {
-        "NLS/SequenceSpaces/SeparatedReciprocalEnvelope.lean": "21a902021b34b14b43499b9b4ecd5b514a3ca4c148f3cc8bc6f3de5322b75a45",
-        "NLS/KdV/HillSeparatedPeriodKernel.lean": "b382f6cf80d736004c0d590df413d445a8ca22567c72ebde5d81ae4001241d57",
-        "NLS/KdV/HillUniformNormalizedPeriodContours.lean": "355d55047810329125735eb73d2e73f77860f45c1e6e07d9a45a1e0d01032ad3"
+        "NLS/KdV/HillActiveRegularAnnulus.lean": "721680fefedd57fe8bf4fb3b6ce04a4cbfa5ec4074d1e7c1e1b40b41fe78918e",
+        "NLS/KdV/HillUniformPointwiseQuadraticSolution.lean": "49c6c0e3bdc92e1b2521afa0ee896acd743e0bc04b43a3983f69a4b5f4edfd97",
+        "NLS/KdV/HillUniformSeparatedQuadraticPrimitives.lean": "05fc9eb6042b1afd8c75a1d130ea868ee1265b5590c5f93431771689d781c3ad"
       },
       "isolated_stage_exit_code": 0,
       "isolated_stage_source_matches_integrated": true,
       "expanded_axiom_audit_exit_code": 0,
-      "transitive_axiom_audit_declarations": 5978,
+      "transitive_axiom_audit_declarations": 6008,
       "complete_current_focused_script_rerun": false
     },
     "additional_shared_source_checks": [
       {
-        "module": "NLS/SequenceSpaces/ShiftedHolderDecay.lean",
-        "sha256": "40622952d8b9af822c354e65a11dd1ca19c782d1ed110d6d991d2d39e992f48c",
-        "committed_base": "89e43006844d5be74cc7b6355497df2d5a933018",
+        "module": "NLS/ComplexAnalysis/BoundedParametricQuadraticSolution.lean",
+        "sha256": "b08caeefa64facc2609ebdb7d7f9df8f491380f7e3ffb7954e2e988fe8e08f79",
+        "committed_base": "95f855a370a5d18d8acf9bf9c2e0c40cab9c1343",
         "declarations_used": [
-          "NLS.Coeff.tendsto_tsum_norm_mul_shift_zero"
+          "NLS.ComplexAnalysis.exists_bounded_analytic_parametric_quadratic_solution_of_zero_period"
         ],
         "fresh_strict_source_check": {
           "exit_code": 0,
-          "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/SequenceSpaces/ShiftedHolderDecay.lean",
-          "log": "check/reuse-uniform-separated-period-shifted-holder.log"
+          "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/ComplexAnalysis/BoundedParametricQuadraticSolution.lean",
+          "log": "check/reuse-uniform-regular-primitives-parametric-solution.log"
         },
-        "purpose": "Use the verified complete absolute Hilbert-pairing decay to prove that the full off-diagonal spectral separation-kernel mass vanishes at high index."
+        "purpose": "Reuse the verified bounded parametric quadratic Cauchy-transform construction to build the actual jointly analytic primitive satisfying the original quadratic differential equation and the complete separation-kernel bound."
       }
     ]
   },
@@ -2942,13 +2953,23 @@
       "milestone": "Uniform original own-period lower bounds and actual normalized differential charts",
       "exit_code": 75,
       "reason": "Second actual shared build lock timeout; compilation did not begin. Retrying the same locked aggregate command."
+    },
+    {
+      "milestone": "Uniform active-gap annuli and actual separated quadratic primitives",
+      "exit_code": 75,
+      "reason": "Actual shared build lock timeout; no aggregate compilation began. Retrying the same locked command."
+    },
+    {
+      "milestone": "Uniform active-gap annuli and actual separated quadratic primitives",
+      "exit_code": 75,
+      "reason": "Second actual shared build lock timeout; no aggregate compilation began. Retrying the same locked command."
     }
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Uniform normalized physical Hill contour charts and complete separation kernels",
-    "focused_modules": 794,
-    "scope": "All 794 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 791-module base has strict validation recorded at commit 89e43006844d5be74cc7b6355497df2d5a933018 (complete 583-module strict focused run plus 208 isolated additions, all 791 base source hashes unchanged, 5938-declaration audit and successful 791-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5978-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 794-module focused script, full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Uniform active-gap annuli and actual separated quadratic primitives",
+    "focused_modules": 797,
+    "scope": "All 797 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 794-module base has strict validation recorded at commit 95f855a370a5d18d8acf9bf9c2e0c40cab9c1343 (complete 583-module strict focused run plus 211 isolated additions, all 794 base source hashes unchanged, 5978-declaration audit and successful 794-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6008-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 797-module focused script, full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",
@@ -3122,6 +3143,12 @@
       "milestone": "Uniform original own-period lower bounds and actual normalized differential charts",
       "focused_modules": 791,
       "scope": "All 791 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 789-module base has strict validation recorded at commit 4ef507ec0fd8f2ffc1a7bcd81711986f9986212d (complete 583-module strict focused run plus 206 isolated additions, all 789 base source hashes unchanged, 5919-declaration audit and successful 789-module aggregate), and all 2 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5938-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 791-module focused script, full Lake rebuild and full repository examples were not rerun."
+    },
+    {
+      "status": "passed",
+      "milestone": "Uniform normalized physical Hill contour charts and complete separation kernels",
+      "focused_modules": 794,
+      "scope": "All 794 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 791-module base has strict validation recorded at commit 89e43006844d5be74cc7b6355497df2d5a933018 (complete 583-module strict focused run plus 208 isolated additions, all 791 base source hashes unchanged, 5938-declaration audit and successful 791-module aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5978-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 794-module focused script, full Lake rebuild and full repository examples were not rerun."
     }
   ]
 }

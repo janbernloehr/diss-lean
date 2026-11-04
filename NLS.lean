@@ -5716,3 +5716,6 @@ import NLS.KdV.HillUniformPeriodNormalization
 import NLS.SequenceSpaces.SeparatedReciprocalEnvelope
 import NLS.KdV.HillSeparatedPeriodKernel
 import NLS.KdV.HillUniformNormalizedPeriodContours
+import NLS.KdV.HillActiveRegularAnnulus
+import NLS.KdV.HillUniformPointwiseQuadraticSolution
+import NLS.KdV.HillUniformSeparatedQuadraticPrimitives

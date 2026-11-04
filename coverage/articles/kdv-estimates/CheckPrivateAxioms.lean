@@ -793,6 +793,9 @@ import NLS.KdV.HillUniformPeriodNormalization
 import NLS.SequenceSpaces.SeparatedReciprocalEnvelope
 import NLS.KdV.HillSeparatedPeriodKernel
 import NLS.KdV.HillUniformNormalizedPeriodContours
+import NLS.KdV.HillActiveRegularAnnulus
+import NLS.KdV.HillUniformPointwiseQuadraticSolution
+import NLS.KdV.HillUniformSeparatedQuadraticPrimitives
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
