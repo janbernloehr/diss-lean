@@ -804,6 +804,12 @@
       "status": "FULL-l2 norm and FULL derivative bounds locally uniform before ALL n on one OPEN CONNECTED complex neighborhood of ENTIRE real form; common complex FULL two-sided Jacobian inverse bounds and actual physical zero-period/regular quotient bounds PROVED. Fine original squared-gap estimate, universal ACTUAL scalar and ALL FIVE MAIN remain OPEN.",
       "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_locally_uniform_complex_zero_sequence_bounds",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-uniform-complex-zero-controls-map.json"
+    },
+    {
+      "label": "Fine ACTUAL original Hill energy zero offsets locally uniform on a common complex native domain",
+      "status": "ONE OPEN CONNECTED complex domain of ENTIRE real Hminus-one form with locally uniform ORIGINAL energy zero-minus-energy-midpoint O(norm(original squared gap_m)/m), BEFORE ALL n,m, including low/collapsed/omitted rows, and intrinsic analytic original energy midpoints PROVED. Universal ACTUAL scalar, physical coordinates/flow and ALL FIVE MAIN remain OPEN.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_common_complex_fine_zero_offset_domain",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-fine-energy-zero-offsets-map.json"
     }
   ],
   "reuse_map": [
@@ -883,7 +889,7 @@
     }
   ],
   "remaining_obligations": [
-    "Prove the finer locally uniform ALL-index gamma_m^2/m energy-zero-minus-original-midpoint estimate using the NOW PROVED common complex graph stability, positive regular-quotient midpoint lower bound, all-original-disc quotient upper bound, and actual FULL complex period equations. ONE smaller open connected native complex domain contains the ENTIRE real Hminus-one form with FULL-l2 analytic actual zero sequences and locally uniform norms and FULL Frechet derivatives at EVERY complex point. Uniform joint FULL Jacobian Lipschitz bounds and FULL two-sided inverse bounds on common complex data/source balls before ALL n are NOW PROVED. Do NOT redo common sequence gluing, Schwarz stability, frequency gap-product transport, quotient bounds or common complex inverse perturbation. Next construct the balanced midpoint-normalized Hill regular factor, apply the verified quadratic standard-root zero-period estimate, handle finite head/collapsed gaps and the uniform tail, then convert frequency offsets to original energy offsets. Universal ACTUAL numerator scalar 2/(pi*n), actual KdV Birkhoff coordinates/flow and ALL FIVE MAIN remain essential.",
+    "Determine the universal ACTUAL normalized Hill numerator scalar 2/(pi*n) and complete the required complex-source product normalization/completeness. The fine ORIGINAL energy-zero-minus-energy-midpoint bound O(norm(original squared energy gap_m)/m) is NOW PROVED on ONE OPEN CONNECTED complex native domain containing the ENTIRE real Hminus-one form, locally uniformly at EVERY complex point and BEFORE ALL n,m, including low/collapsed/omitted rows. Intrinsic original energy midpoints are analytic and agree exactly with original real endpoint averages and local Miura formulas. Do NOT redo balanced two-pole period normalization, nested-circle transfer, finite-head/tail frequency estimates, midpoint scale lower bounds or quadratic energy conversion. Actual Abelian phases, Cartesian coordinates with their source3.2 bound, Gardner identities, KdV Birkhoff map/flow and ALL FIVE MAIN remain essential.",
     "Determine the universal 2/(pi*n) scalar in the ORIGINAL normalized Hill infinite product. The literal actual retained-zero product with a UNIQUE NONZERO scalar is NOW PROVED at EVERY original real H-minus-one source, with locally uniform convergence of products AND derivatives on the ENTIRE energy plane. Do NOT redo the product-up-to-scalar argument or infer the scalar from zeros/growth/analyticity plus its free value. A valid actual L2 normalization identity with a proved density transfer is one possible route. Complex-source product uniformity and exclusion of additional complex-source energy zeros are not proved. NEW: Jointly ENTIRE literal products in energy and independent inverse-index l2 data, locally UNIFORM joint cutoff convergence, actual real-source product/scalar continuity and a rigorous real L2-to-Hminus-one constant-normalization density transfer are NOW PROVED. The actual L2 identity itself remains OPEN. Do NOT redo these analytic-product/continuity/density dependencies, and do not assume the missing L2 normalization.",
     "Complete any required global complex energy-sheet/differential gluing, then construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Intrinsic numerator gluing, actual local roots/normalized periods and real-source root/differential overlap identities are proved. Formalize the literal KMT y-tilde integrating-factor gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint.",
     "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
@@ -2662,6 +2668,26 @@
     "ALL_n_ALL_signed_rows_ALL_original_disc_points_ACTUAL_regular_quotient_upper_bound_PROVED": true,
     "canonical_FULL_l2_zero_sequences_solve_ACTUAL_full_period_equations_on_COMMON_complex_ball_PROVED": true,
     "fine_locally_uniform_ALL_index_squared_gap_over_index_bound_proved": false,
+    "universal_2_over_pi_n_ACTUAL_numerator_product_prefactor_proved": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_fine_energy_zero_offsets_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-fine-energy-zero-offsets-map.json",
+    "balanced_midpoint_factor_removes_BOTH_omitted_frequencies_EXACT_period_identity_PROVED": true,
+    "ORIGINAL_signed_disc_uniform_pole_distance_and_diameter_bounds_PROVED": true,
+    "ACTUAL_FULL_Hill_zero_period_on_ANY_smaller_genuine_enclosing_circle_PROVED": true,
+    "ALL_n_uniform_tail_quadratic_physical_frequency_gap_zero_offset_PROVED": true,
+    "ALL_n_low_and_collapsed_finite_head_quadratic_frequency_gap_offset_PROVED": true,
+    "ONE_complex_ball_and_constant_BEFORE_ALL_n_m_quadratic_frequency_gap_offset_PROVED": true,
+    "midpoint_positive_index_lower_bound_and_root_upper_scale_locally_uniform_complex_PROVED": true,
+    "intrinsic_ORIGINAL_filled_energy_midpoints_analytic_and_exact_Miura_formula_PROVED": true,
+    "EXACT_frequency_to_ORIGINAL_energy_offset_and_squared_gap_conversion_PROVED": true,
+    "fine_locally_uniform_ALL_index_squared_gap_over_index_bound_proved": true,
+    "ONE_OPEN_CONNECTED_complex_native_domain_ENTIRE_real_form_ALL_n_m_FINE_energy_offset_PROVED": true,
+    "fine_energy_estimate_locally_uniform_at_EVERY_complex_domain_point_PROVED": true,
+    "low_collapsed_and_omitted_ORIGINAL_energy_rows_included_PROVED": true,
+    "ORIGINAL_physical_real_zero_minus_actual_endpoint_average_inequality_PROVED": true,
     "universal_2_over_pi_n_ACTUAL_numerator_product_prefactor_proved": false,
     "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
     "all_five_main_theorems_proved": false

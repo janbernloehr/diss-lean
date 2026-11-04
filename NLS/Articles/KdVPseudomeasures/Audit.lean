@@ -1051,6 +1051,22 @@ import NLS.KdV.HillCommonZeroQuotientLowerBound
 import NLS.KdV.HillCommonZeroQuotientUpperBound
 import NLS.KdV.HillCanonicalZeroSequencePeriods
 import NLS.Articles.KdVPseudomeasures.OriginalHillUniformZeroSequenceBounds
+import NLS.ComplexAnalysis.PairedPoleNormalizedFactor
+import NLS.KdV.HillBalancedRegularFactor
+import NLS.ZakharovShabat.SourceIsolatingUniformPoleBounds
+import NLS.KdV.HillBalancedRegularFactorBounds
+import NLS.KdV.HillBalancedQuadraticOffset
+import NLS.KdV.HillActualZeroTailQuadraticOffset
+import NLS.KdV.HillSourceMidpointGapContinuity
+import NLS.KdV.HillActualZeroFiniteHeadQuadraticOffset
+import NLS.KdV.HillActualZeroUniformQuadraticOffset
+import NLS.KdV.HillFrequencyMidpointUniformLowerBound
+import NLS.KdV.HillFrequencyScaleBounds
+import NLS.KdV.HillQuadraticFrequencyEnergyOffset
+import NLS.KdV.HillCanonicalEnergyMidpoints
+import NLS.KdV.HillActualZeroUniformEnergyGapOffset
+import NLS.KdV.HillUniformEnergyGapOffsetDomain
+import NLS.Articles.KdVPseudomeasures.OriginalHillFineEnergyZeroOffsets
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6887,3 +6903,52 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillUniformZeroSequenceBounds
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_locally_uniform_complex_zero_sequence_bounds
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_common_complex_zero_sequence_inverse_bound
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_common_complex_zero_sequence_quotient_bounds
+#print axioms NLS.ComplexAnalysis.pairedPoleNormalizedFactor
+#print axioms NLS.ComplexAnalysis.pairedPoleNormalizedFactor_eq_quadratic
+#print axioms NLS.ComplexAnalysis.pairedPoleNormalizedFactor_midpoint
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_pairedPoleNormalizedFactor
+#print axioms NLS.ComplexAnalysis.norm_ratio_le_of_midpoint_distance
+#print axioms NLS.ComplexAnalysis.norm_pairedPoleNormalizedFactor_le
+#print axioms NLS.KdV.hillBalancedMidpointRegularFactor
+#print axioms NLS.KdV.hillBalancedMidpointRegularFactor_midpoint
+#print axioms NLS.KdV.hillWeightedProductIntegrand_eq_balanced_gap_factor
+#print axioms NLS.KdV.hillBalancedMidpointRegularFactor_period
+#print axioms NLS.ZakharovShabat.SourceIsolatingNeighborhoods.uniform_pole_distance
+#print axioms NLS.ZakharovShabat.SourceIsolatingNeighborhoods.uniform_disc_diameter
+#print axioms NLS.KdV.hillIndependent_uniform_paired_pole_distance
+#print axioms NLS.KdV.analyticOnNhd_hillBalancedMidpointRegularFactor
+#print axioms NLS.KdV.norm_hillBalancedMidpointRegularFactor_le
+#print axioms NLS.KdV.hillBalancedMidpointRegularFactor_midpoint_eq_quotient
+#print axioms NLS.KdV.HillProductEquationPatch.balancedRegularFactor_zero_period_on_inner_circle
+#print axioms NLS.KdV.HillProductEquationPatch.norm_balanced_zero_sequence_frequency_offset_le
+#print axioms NLS.KdV.HillProductEquationPatch.exists_common_actual_zero_tail_quadratic_frequency_offset
+#print axioms NLS.KdV.HillProductEquationPatch.sourcePsi_real
+#print axioms NLS.KdV.HillProductEquationPatch.continuousAt_source_frequency_midpoint
+#print axioms NLS.KdV.HillProductEquationPatch.continuousAt_source_frequency_gap
+#print axioms NLS.KdV.HillProductEquationPatch.exists_fixed_row_actual_zero_quadratic_frequency_offset
+#print axioms NLS.KdV.HillProductEquationPatch.exists_finite_head_actual_zero_quadratic_frequency_offset
+#print axioms NLS.KdV.HillProductEquationPatch.exists_common_actual_zero_uniform_quadratic_frequency_offset
+#print axioms NLS.KdV.HillProductEquationPatch.source_frequency_midpoint_ne_zero_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.exists_real_source_frequency_midpoint_index_lower_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_uniform_source_frequency_midpoint_index_lower_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_uniform_source_frequency_midpoint_index_upper_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_common_actual_frequency_scale_bounds
+#print axioms NLS.KdV.norm_quadratic_energy_offset_le
+#print axioms NLS.KdV.hillHminusCanonicalEnergyMidpoint
+#print axioms NLS.KdV.analyticOnNhd_hillHminusCanonicalEnergyMidpoint
+#print axioms NLS.KdV.hillHminusCanonicalEnergyMidpoint_real
+#print axioms NLS.KdV.HillProductEquationPatch.equation_zero_omitted_energy_midpoint
+#print axioms NLS.KdV.HillProductEquationPatch.canonical_energyMidpoint_eq_local
+#print axioms NLS.KdV.HillProductEquationPatch.exists_common_actual_zero_uniform_squared_energy_gap_offset
+#print axioms NLS.KdV.HillHminusEnergyGapOffsetBall.source
+#print axioms NLS.KdV.HillHminusEnergyGapOffsetBall.source_open
+#print axioms NLS.KdV.exists_hillHminusEnergyGapOffsetBall
+#print axioms NLS.KdV.hillHminusFineZeroSequenceDomain
+#print axioms NLS.KdV.isOpen_hillHminusFineZeroSequenceDomain
+#print axioms NLS.KdV.hillHminusFineZeroSequenceDomain_subset
+#print axioms NLS.KdV.real_mem_hillHminusFineZeroSequenceDomain
+#print axioms NLS.KdV.isConnected_hillHminusFineZeroSequenceDomain
+#print axioms NLS.KdV.exists_locally_uniform_hillHminus_zero_squared_energy_gap_offset
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_common_complex_fine_zero_offset_domain
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_real_fine_zero_offset_bound
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_filled_energy_midpoint_analytic
