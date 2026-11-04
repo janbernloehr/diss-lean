@@ -652,3 +652,8 @@ are in `CANONICAL_NUMERATOR_REPRESENTATION.md`. All main rows remain OPEN.
 ## Actual candidate and weighted normalized-family identification
 
 `HillHminusOneMiuraNormalizedIdentification.lean` uses the actual Kronecker periods and genuine Hilbert coefficients to determine the inverse column and identify the entire Miura numerator with the earlier weighted normalized family on one physical-real ball. Its existence theorem supplies the analytic two-weighted inverse families, their free values, norm bounds and exact compatibility from the verified construction. Global and complex-source extensions and every main theorem conclusion remain open. See `MIURA_NORMALIZED_IDENTIFICATION.md`.
+
+
+## Actual complex-source normalized-family identification
+
+`PeriodOneRealFormIdentity.lean` proves the physical real-form hypotheses and reuses the canonical connected identity principle. `HillHminusOneComplexNormalizedIdentification.lean` identifies the actual Miura family with the constructed weighted normalized family on the whole common complex ball, retaining the actual weighted analytic inverse data. The three canonical real-line/real-form helper modules are source-base identical and newly selected for explicit validation. This is a local complex-source result; global and all main physical frequency conclusions remain open. See `COMPLEX_NORMALIZED_IDENTIFICATION.md`.

@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneComplexNormalizedIdentification
 import NLS.KdV.HillHminusOneMiuraNormalizedIdentification
 import NLS.KdV.HillHminusOneOriginalNormalizedPeriods
 import NLS.KdV.HillHminusOneOriginalContourBands
@@ -100,7 +101,10 @@ This deliberately imports specific modules, not the aggregate NLS library.
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let modules := #[`NLS.ComplexAnalysis.BanachTaylorBounds,
+  let modules := #[`NLS.ComplexAnalysis.RealLineIdentity,
+    `NLS.ComplexAnalysis.RealFormIdentity,
+    `NLS.ComplexAnalysis.ContinuousRealFormIdentity,
+    `NLS.ComplexAnalysis.BanachTaylorBounds,
     `NLS.SequenceSpaces.Convolution,
     `NLS.SequenceSpaces.Reflection,
     `NLS.SequenceSpaces.Multiplier,
@@ -524,7 +528,9 @@ run_cmd do
     `NLS.ComplexAnalysis.ShiftedSquaredCircleBandHomotopy,
     `NLS.KdV.HillHminusOneEnergyBands,
     `NLS.KdV.HillHminusOneOriginalNormalizedPeriods,
-    `NLS.KdV.HillHminusOneMiuraNormalizedIdentification]
+    `NLS.KdV.HillHminusOneMiuraNormalizedIdentification,
+    `NLS.SequenceSpaces.PeriodOneRealFormIdentity,
+    `NLS.KdV.HillHminusOneComplexNormalizedIdentification]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

@@ -7076,6 +7076,81 @@
       "scope": "Actual original Kronecker periods and genuine old-basis Hilbert representation identify the residue coefficient vector with the constructed inverse column. One normalized data set and ball precede all physical real rough inputs, positive indices and energies in actual Miura/weighted normalized-family equality. An existence theorem supplies both weighted analytic inverse families, their free values, uniform bounds and exact weighted compatibility from the verified construction. Global/complex-source and main physical-frequency conclusions remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "a6e9f4edc4303b379a0862ea5fe1a585979ce66956acef1cfa9d3a09f7819d20"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealLineIdentity.lean",
+      "source_labels": [
+        "Complex-source normalized-family identification and verified physical real-form uniqueness"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Canonical-base module reused unchanged: local complex analytic uniqueness from a real interval.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f990506c93271aeea8152a06c3f40ca2629676bfef289e052012ec825dbebf0c"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealFormIdentity.lean",
+      "source_labels": [
+        "Complex-source normalized-family identification and verified physical real-form uniqueness"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Canonical-base module reused unchanged: local real-form uniqueness from a norm-controlled decomposition.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b097b7daa40dac7bc212d202bad93068edde795d516ffc6f9fce540787bcba48"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ContinuousRealFormIdentity.lean",
+      "source_labels": [
+        "Complex-source normalized-family identification and verified physical real-form uniqueness"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Canonical-base module reused unchanged: connected open real-form uniqueness from continuous real/imaginary parts, without projection norm bounds.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2cfbde66aad3945a94a5bcdbbd6d9e5470ef67dba4d8dd8babcd4d6e310d2c60"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneRealFormIdentity.lean",
+      "source_labels": [
+        "Complex-source normalized-family identification and verified physical real-form uniqueness"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Actual physical conjugation algebra, continuity, fixed real/imaginary parts and exact decomposition in the rough potential space. These instantiate the verified connected real-form identity principle for analytic functions.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3a4d03b1b952ca207c5b6ef216a43ab981b86b03b5876bf0e97e73816f4fd167"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneComplexNormalizedIdentification.lean",
+      "source_labels": [
+        "Complex-source normalized-family identification and verified physical real-form uniqueness"
+      ],
+      "source_pages": [
+        4,
+        6,
+        21,
+        26
+      ],
+      "scope": "Actual Miura and weighted normalized-family equality extends to ALL complex inputs on the SAME near-zero ball, for every positive index and energy. An actual existence theorem retains normalized NLS data and both analytic weighted inverse families, free values, norm bounds and exact compatibility. Global/arbitrary-base and physical frequency claims remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "06edefa7ca5edc68dff29a85f039240640e7248a3cc732c467afec02d72eca09"
     }
   ],
   "dependencies_needed": [
@@ -7107,15 +7182,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4912,
-    "total_declarations_audited": 27068,
+    "candidate_declarations_audited": 4940,
+    "total_declarations_audited": 27090,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 425,
+    "selected_modules": 430,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -7124,7 +7199,8 @@
     "original_contour_roots_validation_sequence": "Prior strict validation of the unchanged 417 modules (415-module full baseline and two incremental compilations), two new strict incremental compilations, then a fresh full combined transitive axiom audit of all 419 selected modules. Source bytes, exact selections, private fresh outputs and seven provenance records verified. No claim of a repeated full 419-module rebuild.",
     "original_contour_bands_validation_sequence": "Prior strict validation of the unchanged 419 modules (415-module full baseline and four incremental compilations), two new strict incremental compilations, then a fresh full combined transitive axiom audit of all 421 selected modules. Source bytes, exact selections, private fresh outputs and seven provenance records verified. No claim of a repeated full 421-module rebuild.",
     "original_normalized_periods_validation_sequence": "Prior strict validation of 421 unchanged modules (415-module full baseline and six incremental compilations), three new strict incremental compilations in dependency order, then a fresh full combined transitive axiom audit of all 424 selected modules. No repeated full 424-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified.",
-    "miura_normalized_identification_validation_sequence": "Prior strict validation of 424 unchanged modules (415-module full baseline and nine incremental compilations), one new strict incremental compilation, then a fresh full combined transitive axiom audit of all 425 selected modules. No repeated full 425-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified."
+    "miura_normalized_identification_validation_sequence": "Prior strict validation of 424 unchanged modules (415-module full baseline and nine incremental compilations), one new strict incremental compilation, then a fresh full combined transitive axiom audit of all 425 selected modules. No repeated full 425-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified.",
+    "complex_normalized_identification_validation_sequence": "Prior strict validation of 425 unchanged selected modules, strict recompilation of three unchanged canonical identity modules and strict compilation of two new modules, then a fresh full combined transitive axiom audit of all 430 selected modules. The canonical helpers precede their consumers in the reordered selection. No repeated full 430-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -7271,5 +7347,6 @@
   "original_contour_roots_record": "ORIGINAL_CONTOUR_ROOTS.md",
   "original_contour_bands_record": "ORIGINAL_CONTOUR_BANDS.md",
   "original_normalized_periods_record": "ORIGINAL_NORMALIZED_PERIODS.md",
-  "miura_normalized_identification_record": "MIURA_NORMALIZED_IDENTIFICATION.md"
+  "miura_normalized_identification_record": "MIURA_NORMALIZED_IDENTIFICATION.md",
+  "complex_normalized_identification_record": "COMPLEX_NORMALIZED_IDENTIFICATION.md"
 }

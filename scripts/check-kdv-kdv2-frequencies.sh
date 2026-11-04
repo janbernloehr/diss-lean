@@ -8,7 +8,10 @@ export PATH="$ELAN_HOME/bin:$PATH"
 export MATHLIB_CACHE_DIR="${MATHLIB_CACHE_DIR:-/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/cache/mathlib}"
 article_build="$article_root/.lake/build/lib/lean"
 article_imports="$article_root/.lake/article-imports"
-modules=(NLS/ComplexAnalysis/BanachTaylorBounds
+modules=(NLS/ComplexAnalysis/RealLineIdentity
+  NLS/ComplexAnalysis/RealFormIdentity
+  NLS/ComplexAnalysis/ContinuousRealFormIdentity
+  NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/SequenceSpaces/Convolution
   NLS/SequenceSpaces/Reflection
   NLS/SequenceSpaces/Multiplier
@@ -432,7 +435,9 @@ modules=(NLS/ComplexAnalysis/BanachTaylorBounds
   NLS/ComplexAnalysis/ShiftedSquaredCircleBandHomotopy
   NLS/KdV/HillHminusOneEnergyBands
   NLS/KdV/HillHminusOneOriginalNormalizedPeriods
-  NLS/KdV/HillHminusOneMiuraNormalizedIdentification)
+  NLS/KdV/HillHminusOneMiuraNormalizedIdentification
+  NLS/SequenceSpaces/PeriodOneRealFormIdentity
+  NLS/KdV/HillHminusOneComplexNormalizedIdentification)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys
