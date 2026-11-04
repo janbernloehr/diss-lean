@@ -1215,6 +1215,16 @@ import NLS.KdV.HillOnIndexUniformEnergyBound
 import NLS.KdV.HillActionAngleOriginalEnergyBound
 import NLS.KdV.HillActionAngleEnergyDomain
 import NLS.Articles.KdVPseudomeasures.OriginalHillCartesianSpectralEstimate
+import NLS.SequenceSpaces.WeightedRawDomination
+import NLS.SequenceSpaces.PositiveWeightedDomination
+import NLS.SequenceSpaces.PositiveSobolevWeight
+import NLS.SequenceSpaces.PositiveHalfWeightBound
+import NLS.SequenceSpaces.PositiveWeightedAnalyticRealization
+import NLS.KdV.HillActionAngleNativeRealization
+import NLS.KdV.HillActionAngleNativeDomain
+import NLS.KdV.HillActionAngleNativeAnalytic
+import NLS.KdV.HillActionAngleNativeNorm
+import NLS.Articles.KdVPseudomeasures.OriginalHillNativeCartesianMap
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7731,3 +7741,43 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillCartesianSpectralEstimate
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_energy_estimate_common_domain
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_energy_estimate_UNIFORM_ALL_n
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Cartesian_energy_estimate_real
+#print axioms NLS.WeightedCoeff.exists_of_weighted_norm_le
+#print axioms NLS.WeightedCoeff.exists_positiveScalarExtension_of_weighted_norm_le
+#print axioms NLS.Weight.positiveSobolev
+#print axioms NLS.Weight.positiveSobolev_positive
+#print axioms NLS.Weight.positiveSobolev_neg_half_positive
+#print axioms NLS.Weight.sobolev_neg_half_positive_le
+#print axioms NLS.Weight.norm_sobolev_neg_half_mul_le_of_frequency_bound
+#print axioms NLS.Weight.norm_positiveSobolev_neg_half_mul_le_of_frequency_bound
+#print axioms NLS.WeightedCoeff.analytic_positive_realization_of_bound
+#print axioms NLS.KdV.exists_local_uniform_actionAngle_native_realizations
+#print axioms NLS.KdV.hillHminusActionAngleXSequence
+#print axioms NLS.KdV.hillHminusActionAngleYSequence
+#print axioms NLS.KdV.HillActionAngleNativeBall.source
+#print axioms NLS.KdV.HillActionAngleNativeBall.source_open
+#print axioms NLS.KdV.exists_hillActionAngleNativeBall
+#print axioms NLS.KdV.hillHminusActionAngleNativeDomain
+#print axioms NLS.KdV.isOpen_hillHminusActionAngleNativeDomain
+#print axioms NLS.KdV.real_mem_hillHminusActionAngleNativeDomain
+#print axioms NLS.KdV.hillHminusActionAngleNativeDomain_subset
+#print axioms NLS.KdV.hillHminusActionAngle_sequences_coordinates
+#print axioms NLS.KdV.hillHminusActionAngle_sequences_positive
+#print axioms NLS.KdV.hillHminusActionAngle_sequences_nonpositive
+#print axioms NLS.KdV.exists_locally_uniform_actionAngle_native_norm_bound
+#print axioms NLS.KdV.isConnected_hillHminusActionAngleNativeDomain
+#print axioms NLS.KdV.analyticOnNhd_hillHminusActionAngleXSequence
+#print axioms NLS.KdV.analyticOnNhd_hillHminusActionAngleYSequence
+#print axioms NLS.KdV.hillHminusNativeCartesianMap
+#print axioms NLS.KdV.analyticOnNhd_hillHminusNativeCartesianMap
+#print axioms NLS.KdV.hillHminusNativeCartesianMap_positive
+#print axioms NLS.KdV.hillHminusNativeCartesianMap_nonpositive
+#print axioms NLS.KdV.hillHminusNativeCartesianMap_real
+#print axioms NLS.KdV.hillHminusNativeCartesianMap_action_identity
+#print axioms NLS.KdV.exists_locally_uniform_hillHminusNativeCartesianMap_norm_bound
+#print axioms NLS.KdV.hillHminusNativeCartesianMap_norm_sq
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_map_common_domain
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_map_positive_coordinates
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_map_real
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_map_action_identity
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_map_locally_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_map_exact_norm

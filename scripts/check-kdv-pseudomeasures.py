@@ -1249,6 +1249,16 @@ modules = [
     'NLS.KdV.HillActionAngleOriginalEnergyBound',
     'NLS.KdV.HillActionAngleEnergyDomain',
     'NLS.Articles.KdVPseudomeasures.OriginalHillCartesianSpectralEstimate',
+    'NLS.SequenceSpaces.WeightedRawDomination',
+    'NLS.SequenceSpaces.PositiveWeightedDomination',
+    'NLS.SequenceSpaces.PositiveSobolevWeight',
+    'NLS.SequenceSpaces.PositiveHalfWeightBound',
+    'NLS.SequenceSpaces.PositiveWeightedAnalyticRealization',
+    'NLS.KdV.HillActionAngleNativeRealization',
+    'NLS.KdV.HillActionAngleNativeDomain',
+    'NLS.KdV.HillActionAngleNativeAnalytic',
+    'NLS.KdV.HillActionAngleNativeNorm',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeCartesianMap',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
