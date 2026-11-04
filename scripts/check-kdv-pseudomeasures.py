@@ -1034,6 +1034,14 @@ modules = [
     'NLS.KdV.HillWeightedColumnUniformGapLower',
     'NLS.KdV.HillProductEquationUniformDiagonalInverse',
     'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodUniformDiagonal',
+    'NLS.FunctionalAnalysis.CompactApproximationTotalBounded',
+    'NLS.SequenceSpaces.FiniteBlockOperatorCompact',
+    'NLS.SequenceSpaces.KernelFamilyCompact',
+    'NLS.SequenceSpaces.PositiveOperatorFamilyCompact',
+    'NLS.SequenceSpaces.PositiveDiagonalFamilyCompact',
+    'NLS.KdV.HillProductEquationUniformDiagonalUpper',
+    'NLS.KdV.HillProductEquationFamilyCompact',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodFamilyCompact',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

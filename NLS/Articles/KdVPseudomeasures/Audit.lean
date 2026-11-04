@@ -1000,6 +1000,14 @@ import NLS.ZakharovShabat.SourcePsiGapQuotientUniformLower
 import NLS.KdV.HillWeightedColumnUniformGapLower
 import NLS.KdV.HillProductEquationUniformDiagonalInverse
 import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodUniformDiagonal
+import NLS.FunctionalAnalysis.CompactApproximationTotalBounded
+import NLS.SequenceSpaces.FiniteBlockOperatorCompact
+import NLS.SequenceSpaces.KernelFamilyCompact
+import NLS.SequenceSpaces.PositiveOperatorFamilyCompact
+import NLS.SequenceSpaces.PositiveDiagonalFamilyCompact
+import NLS.KdV.HillProductEquationUniformDiagonalUpper
+import NLS.KdV.HillProductEquationFamilyCompact
+import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodFamilyCompact
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6650,3 +6658,30 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodUniformDiagonal
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_uniform_diagonal_tail
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_uniform_diagonal_lower
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_uniform_diagonal_inverse
+#print axioms NLS.totallyBounded_of_bounded_compact_approximations
+#print axioms NLS.Coeff.matrixEntryCLM
+#print axioms NLS.Coeff.finiteBlockOperatorCLM
+#print axioms NLS.Coeff.finiteBlockOperatorCLM_apply
+#print axioms NLS.Coeff.isCompactOperator_finiteBlockOperatorCLM
+#print axioms NLS.Coeff.totallyBounded_operators_of_uniform_finiteBlocks
+#print axioms NLS.Coeff.row_bound_of_l2_kernel_entries
+#print axioms NLS.Coeff.norm_operator_le_of_l2_kernel_entries
+#print axioms NLS.Coeff.exists_uniform_finiteOutput_inputTail_of_l2_kernel_entries
+#print axioms NLS.Coeff.exists_uniform_finiteBlocks_of_l2_kernel_entries
+#print axioms NLS.Coeff.totallyBounded_operators_of_l2_kernel_entries
+#print axioms NLS.LpSequence.positiveSandwichOperatorCLM
+#print axioms NLS.LpSequence.positiveSandwich_lift_operator
+#print axioms NLS.LpSequence.positiveLiftOperator_entry
+#print axioms NLS.LpSequence.positiveLiftOperator_entry_nonpos_output
+#print axioms NLS.LpSequence.positiveLiftOperator_entry_nonpos_input
+#print axioms NLS.LpSequence.totallyBounded_positive_operators_of_l2_kernel_entries
+#print axioms NLS.LpSequence.totallyBounded_positive_diagonal_family
+#print axioms NLS.LpSequence.totallyBounded_positive_operators_of_diagonal_tail_and_kernel_entries
+#print axioms NLS.KdV.HillProductEquationPatch.exists_actual_real_uniform_diagonal_upper
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_family_totallyBounded
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_family_compact_closure
+#print axioms NLS.KdV.HillProductEquationPatch.exists_actual_real_uniform_operator_norm_bound
+#print axioms NLS.KdV.HillProductEquationPatch.exists_actual_real_sequenceJacobian_norm_convergent_subseq
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_family_compact_closure
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_Hill_period_Jacobian_uniform_operator_norm_bound
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_Hill_period_Jacobian_norm_convergent_subseq
