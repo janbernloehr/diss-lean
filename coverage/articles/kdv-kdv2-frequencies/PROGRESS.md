@@ -17,6 +17,12 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual Miura moments and analytic correction series
+
+Literal original-circle moments now use the actual Miura numerator directly. One actual normalized NLS family and one complex rough ball work before all indices and moment orders. Every moment is analytic; zeroth periods are exact and every odd moment vanishes. Each second-moment series converges absolutely and locally uniformly, and its correction is analytic. See `MIURA_FREQUENCY_SERIES.md`.
+
+Current validation: 431 selected modules (430 unchanged prior strict checks and one new strict compilation); fresh combined transitive audit of 4950 selected and 27100 imported NLS declarations, permitted axioms only. The physical identity (69), action descent, global source domains and all main theorem conclusions remain open.
+
 ## Latest full complex-source normalized-family identification near zero
 
 The actual physical conjugation and continuous real/imaginary decomposition instantiate the canonical connected real-form identity theorem. The actual Miura numerator now agrees with the constructed weighted normalized family for every complex input on the same local ball, every positive index and every energy. The actual two-weighted data retain analytic R/Q, free values, norm bounds and exact compatibility. See `COMPLEX_NORMALIZED_IDENTIFICATION.md`.

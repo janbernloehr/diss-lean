@@ -437,7 +437,8 @@ modules=(NLS/ComplexAnalysis/RealLineIdentity
   NLS/KdV/HillHminusOneOriginalNormalizedPeriods
   NLS/KdV/HillHminusOneMiuraNormalizedIdentification
   NLS/SequenceSpaces/PeriodOneRealFormIdentity
-  NLS/KdV/HillHminusOneComplexNormalizedIdentification)
+  NLS/KdV/HillHminusOneComplexNormalizedIdentification
+  NLS/KdV/HillHminusOneMiuraFrequencySeries)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

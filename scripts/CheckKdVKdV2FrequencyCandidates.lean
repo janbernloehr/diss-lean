@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneMiuraFrequencySeries
 import NLS.KdV.HillHminusOneComplexNormalizedIdentification
 import NLS.KdV.HillHminusOneMiuraNormalizedIdentification
 import NLS.KdV.HillHminusOneOriginalNormalizedPeriods
@@ -530,7 +531,8 @@ run_cmd do
     `NLS.KdV.HillHminusOneOriginalNormalizedPeriods,
     `NLS.KdV.HillHminusOneMiuraNormalizedIdentification,
     `NLS.SequenceSpaces.PeriodOneRealFormIdentity,
-    `NLS.KdV.HillHminusOneComplexNormalizedIdentification]
+    `NLS.KdV.HillHminusOneComplexNormalizedIdentification,
+    `NLS.KdV.HillHminusOneMiuraFrequencySeries]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

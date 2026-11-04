@@ -7151,6 +7151,22 @@
       "scope": "Actual Miura and weighted normalized-family equality extends to ALL complex inputs on the SAME near-zero ball, for every positive index and energy. An actual existence theorem retains normalized NLS data and both analytic weighted inverse families, free values, norm bounds and exact compatibility. Global/arbitrary-base and physical frequency claims remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "06edefa7ca5edc68dff29a85f039240640e7248a3cc732c467afec02d72eca09"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMiuraFrequencySeries.lean",
+      "source_labels": [
+        "Lemma 3.1 local actual moments; Theorem 3.4 formula (73) local actual-numerator spectral series"
+      ],
+      "source_pages": [
+        23,
+        24,
+        25,
+        26,
+        31
+      ],
+      "scope": "Literal actual Miura numerator moments on original Hill frequency circles, full all-order comparison with the constructed weighted family, and one common complex rough-input ball before all indices and orders. Actual normalized NLS data, source membership and joint numerator analyticity are retained. All moments are analytic, zeroth periods exact and all odd moments zero. Each actual second-moment series is absolutely and locally uniformly convergent and its correction is analytic. Physical identity (69), action descent, global source domains and all main theorem conclusions remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "320a2e657d8321ac301ea8a069d59b11d2c9d07e92056ad823046bc944024a05"
     }
   ],
   "dependencies_needed": [
@@ -7182,15 +7198,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4940,
-    "total_declarations_audited": 27090,
+    "candidate_declarations_audited": 4950,
+    "total_declarations_audited": 27100,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 430,
+    "selected_modules": 431,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -7200,7 +7216,8 @@
     "original_contour_bands_validation_sequence": "Prior strict validation of the unchanged 419 modules (415-module full baseline and four incremental compilations), two new strict incremental compilations, then a fresh full combined transitive axiom audit of all 421 selected modules. Source bytes, exact selections, private fresh outputs and seven provenance records verified. No claim of a repeated full 421-module rebuild.",
     "original_normalized_periods_validation_sequence": "Prior strict validation of 421 unchanged modules (415-module full baseline and six incremental compilations), three new strict incremental compilations in dependency order, then a fresh full combined transitive axiom audit of all 424 selected modules. No repeated full 424-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified.",
     "miura_normalized_identification_validation_sequence": "Prior strict validation of 424 unchanged modules (415-module full baseline and nine incremental compilations), one new strict incremental compilation, then a fresh full combined transitive axiom audit of all 425 selected modules. No repeated full 425-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified.",
-    "complex_normalized_identification_validation_sequence": "Prior strict validation of 425 unchanged selected modules, strict recompilation of three unchanged canonical identity modules and strict compilation of two new modules, then a fresh full combined transitive axiom audit of all 430 selected modules. The canonical helpers precede their consumers in the reordered selection. No repeated full 430-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified."
+    "complex_normalized_identification_validation_sequence": "Prior strict validation of 425 unchanged selected modules, strict recompilation of three unchanged canonical identity modules and strict compilation of two new modules, then a fresh full combined transitive axiom audit of all 430 selected modules. The canonical helpers precede their consumers in the reordered selection. No repeated full 430-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified.",
+    "miura_frequency_series_validation_sequence": "Prior strict validation of 430 unchanged selected sources, strict compilation of one new actual Miura moment/series module, then a fresh full combined transitive axiom audit of all 431 selected modules. No repeated full 431-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -7348,5 +7365,6 @@
   "original_contour_bands_record": "ORIGINAL_CONTOUR_BANDS.md",
   "original_normalized_periods_record": "ORIGINAL_NORMALIZED_PERIODS.md",
   "miura_normalized_identification_record": "MIURA_NORMALIZED_IDENTIFICATION.md",
-  "complex_normalized_identification_record": "COMPLEX_NORMALIZED_IDENTIFICATION.md"
+  "complex_normalized_identification_record": "COMPLEX_NORMALIZED_IDENTIFICATION.md",
+  "miura_frequency_series_record": "MIURA_FREQUENCY_SERIES.md"
 }

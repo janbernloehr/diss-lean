@@ -657,3 +657,8 @@ are in `CANONICAL_NUMERATOR_REPRESENTATION.md`. All main rows remain OPEN.
 ## Actual complex-source normalized-family identification
 
 `PeriodOneRealFormIdentity.lean` proves the physical real-form hypotheses and reuses the canonical connected identity principle. `HillHminusOneComplexNormalizedIdentification.lean` identifies the actual Miura family with the constructed weighted normalized family on the whole common complex ball, retaining the actual weighted analytic inverse data. The three canonical real-line/real-form helper modules are source-base identical and newly selected for explicit validation. This is a local complex-source result; global and all main physical frequency conclusions remain open. See `COMPLEX_NORMALIZED_IDENTIFICATION.md`.
+
+
+## Actual Miura moments and analytic correction series
+
+`HillHminusOneMiuraFrequencySeries.lean` defines literal original-circle actual numerator moments, their signed second-moment terms and correction. Full complex numerator identification transfers all-order analytic moments, exact zeroth periods, odd cancellation, absolute convergence, analytic correction and locally uniform positive partial sums on one common rough ball around zero. This advances Lemma 3.1 and the spectral-series part of Theorem 3.4 (73), PDF pages 23–26 and 31. Physical identity (69), global W, action descent and every main theorem remain open. See `MIURA_FREQUENCY_SERIES.md`.
