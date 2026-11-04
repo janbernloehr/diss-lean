@@ -1514,6 +1514,10 @@ modules = [
     'NLS.KdV.HillIntrinsicAngleEndpointZero',
     'NLS.KdV.HillDirichletSpectralVectorField',
     'NLS.Articles.KdVPseudomeasures.OriginalHillIntrinsicAngleEndpoint',
+    'NLS.KdV.HillDirichletSpectralTerminalVelocity',
+    'NLS.KdV.HillDirichletSpectralLocalFlow',
+    'NLS.KdV.HillDirichletSpectralCurveInvariants',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralLocalFlow',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -1304,6 +1304,37 @@
         "NLS.Articles.KdVPseudomeasures.original_Hill_complete_angle_pair_zero_at_all_endpoints"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-intrinsic-angle-endpoint-map.json"
+    },
+    {
+      "label": "Actual native terminal velocities and local real isospectral curves",
+      "status": "proved dependency; global flows, endpoint hitting, general-source angle/angle, signed canonicality and main theorems unproved",
+      "declarations": [
+        "NLS.KdV.analyticOnNhd_hillHminusDiscriminantEnergyDerivative_joint",
+        "NLS.KdV.analyticOnNhd_hillHminusDiscriminantEnergyDerivative_at_Dirichlet",
+        "NLS.KdV.fderiv_hillHminusMovingDiscriminant_spectralVector",
+        "NLS.KdV.hillHminusDirichletNorming_spectralVector_cleared",
+        "NLS.KdV.fderiv_hillHminusDirichletNorming_spectralVector",
+        "NLS.KdV.fderiv_hillHminusDirichletSheet_spectralVector",
+        "NLS.KdV.hillRealMeanZeroInclusion",
+        "NLS.KdV.hillRealMeanZeroInclusion_apply",
+        "NLS.KdV.hillRealMeanZeroProjection",
+        "NLS.KdV.hillRealMeanZeroProjection_inclusion",
+        "NLS.KdV.hillRealDirichletSpectralVector",
+        "NLS.KdV.hillRealDirichletSpectralVector_inclusion",
+        "NLS.KdV.contDiff_hillRealDirichletSpectralVector",
+        "NLS.KdV.exists_hillRealDirichletSpectral_localFlow",
+        "NLS.KdV.hillHminusDiscriminant_eq_on_spectral_integralCurve",
+        "NLS.KdV.exists_hillHminusDirichletSpectral_isospectral_integralCurve",
+        "NLS.KdV.hasDerivAt_hillHminusDirichlet_on_spectralCurve",
+        "NLS.KdV.hasDerivAt_hillHminusNorming_on_spectralCurve",
+        "NLS.KdV.hasDerivAt_hillHminusSheet_on_spectralCurve",
+        "NLS.KdV.hillHminus_other_terminal_eq_on_spectralCurve",
+        "NLS.KdV.hillHminusCompletePhasePair_eq_on_spectralCurve",
+        "NLS.Articles.KdVPseudomeasures.originalHillRealMeanZeroSource",
+        "NLS.Articles.KdVPseudomeasures.originalHillRealMeanZeroSource_inclusion",
+        "NLS.Articles.KdVPseudomeasures.exists_original_Hill_spectral_isospectral_localCurve"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-spectral-local-flow-map.json"
     }
   ],
   "reuse_map": [
@@ -1385,7 +1416,7 @@
   "remaining_obligations": [
     "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
     "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "NEXT construct actual native indexed spectral integral curves/global flows, move each actual Dirichlet terminal to an endpoint, and use the ALREADY PROVED full ORIGINAL Hminus-one isospectral NORM compactness to transport the intrinsic angle-pair ZERO VALUE from all-endpoint data to EVERY real source. NOW PROVED: actual global branch-independent complete angle cotangent and pair scalar; actual pair ZERO VALUE at every real all-endpoint source with selected ORIGINAL gaps open; native indexed fields analytic/real/zero-mean/isospectral with own lambda velocity actualSheet/2 and all other lambda velocities zero; intrinsic pair scalar stationary in every indexed field. The full pair/discriminant variation remains identically zero. General-source angle/angle zero value and signed canonicality remain OPEN. No finite-open-gap density or Poisson Miura identification is assumed.",
+    "NEXT complete the ACTUAL native indexed local curves to GLOBAL flows using the ALREADY PROVED NORM compactness of the ENTIRE original Hminus-one isospectral set. Actual native terminal velocity laws through ALL zero sheets, local real mean-zero Picard-Lindelof curves, fixed-energy discriminant conservation, other-terminal preservation and intrinsic pair scalar transport on its open selected-gap locus are NOW PROVED. Move actual terminals to endpoints and use a compact infinite endpoint limit to transport the ALREADY PROVED all-endpoint pair ZERO VALUE to GENERAL real sources. Endpoint hitting/global existence/general-source angle-angle zero/signed canonicality remain OPEN. No finite-open-gap density or Poisson Miura identification is assumed.",
     "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates: prove signed-coordinate Gardner canonicality away fromzero, derivative invertibility at every source, remaining nonlinear source/target scales, global bijectivity and boundedness, and bounded-set weak-star homeomorphism. The exact Fourier differential atzero, native Hminus-one sequence analyticity and native/endpoint real-complex local inverses atzero are COMPLETE, as are the nonlinear infinity endpoint analytic maps and original endpoint norm-topology adapters. Actual action-gradient contours and action involution on the common complex action domain are NOWPROVED. The remaining coordinate brackets and global conclusions are OPEN. Do not substitute ordinary NLS coordinates or componentwise-real sequences for the actual signed-conjugate KdV target.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
@@ -4052,6 +4083,26 @@
     "native_indexed_endpoint_moves_and_infinite_endpoint_transport_PROVED": false,
     "actual_angle_angle_Gardner_commutation_PROVED": false,
     "onIndex_original_selected_gaps_required": true,
+    "signed_coordinate_canonicality_away_from_zero_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "actual_Hill_spectral_local_flow_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-spectral-local-flow-map.json",
+    "native_actual_norming_spectral_velocity_through_ALL_zero_sheets_PROVED": true,
+    "native_actual_sheet_spectral_velocity_through_ALL_zero_sheets_PROVED": true,
+    "velocity_domain": "ENTIRE existing connected complex Dirichlet domain; fixed energy differentiated before moving actual lambda is evaluated.",
+    "exact_native_real_mean_zero_Banach_field_PROVED": true,
+    "native_local_flow_Picard_Lindelof_PROVED": true,
+    "native_local_real_mean_zero_isospectral_integral_curve_existence_PROVED": true,
+    "every_fixed_energy_discriminant_constant_along_actual_indexed_curves_PROVED": true,
+    "all_other_actual_terminal_triples_constant_PROVED": true,
+    "intrinsic_complete_angle_pair_constant_along_actual_indexed_curves_PROVED": true,
+    "angle_pair_curve_scope": "Real curve interval with BOTH selected ORIGINAL gap squares nonzero; actual complete intrinsic cotangents and infinite corrections retained.",
+    "original_HminusOne_local_curves_in_exact_original_isospectral_set_PROVED": true,
+    "actual_native_global_flow_existence_PROVED": false,
+    "actual_native_endpoint_hitting_PROVED": false,
+    "infinite_endpoint_transport_PROVED": false,
+    "actual_angle_angle_Gardner_commutation_PROVED": false,
     "signed_coordinate_canonicality_away_from_zero_PROVED": false,
     "global_Birkhoff_theorem_PROVED": false
   }

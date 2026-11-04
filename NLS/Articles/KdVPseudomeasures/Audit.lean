@@ -1480,6 +1480,10 @@ import NLS.KdV.HillIntrinsicAngleBrackets
 import NLS.KdV.HillIntrinsicAngleEndpointZero
 import NLS.KdV.HillDirichletSpectralVectorField
 import NLS.Articles.KdVPseudomeasures.OriginalHillIntrinsicAngleEndpoint
+import NLS.KdV.HillDirichletSpectralTerminalVelocity
+import NLS.KdV.HillDirichletSpectralLocalFlow
+import NLS.KdV.HillDirichletSpectralCurveInvariants
+import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralLocalFlow
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9074,3 +9078,27 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillIntrinsicAngleEndpoint
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_intrinsic_complete_angle_mixed_brackets
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_intrinsic_angle_pair_discriminant_stationarity
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complete_angle_pair_zero_at_all_endpoints
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDiscriminantEnergyDerivative_joint
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDiscriminantEnergyDerivative_at_Dirichlet
+#print axioms NLS.KdV.fderiv_hillHminusMovingDiscriminant_spectralVector
+#print axioms NLS.KdV.hillHminusDirichletNorming_spectralVector_cleared
+#print axioms NLS.KdV.fderiv_hillHminusDirichletNorming_spectralVector
+#print axioms NLS.KdV.fderiv_hillHminusDirichletSheet_spectralVector
+#print axioms NLS.KdV.hillRealMeanZeroInclusion
+#print axioms NLS.KdV.hillRealMeanZeroInclusion_apply
+#print axioms NLS.KdV.hillRealMeanZeroProjection
+#print axioms NLS.KdV.hillRealMeanZeroProjection_inclusion
+#print axioms NLS.KdV.hillRealDirichletSpectralVector
+#print axioms NLS.KdV.hillRealDirichletSpectralVector_inclusion
+#print axioms NLS.KdV.contDiff_hillRealDirichletSpectralVector
+#print axioms NLS.KdV.exists_hillRealDirichletSpectral_localFlow
+#print axioms NLS.KdV.hillHminusDiscriminant_eq_on_spectral_integralCurve
+#print axioms NLS.KdV.exists_hillHminusDirichletSpectral_isospectral_integralCurve
+#print axioms NLS.KdV.hasDerivAt_hillHminusDirichlet_on_spectralCurve
+#print axioms NLS.KdV.hasDerivAt_hillHminusNorming_on_spectralCurve
+#print axioms NLS.KdV.hasDerivAt_hillHminusSheet_on_spectralCurve
+#print axioms NLS.KdV.hillHminus_other_terminal_eq_on_spectralCurve
+#print axioms NLS.KdV.hillHminusCompletePhasePair_eq_on_spectralCurve
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillRealMeanZeroSource
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillRealMeanZeroSource_inclusion
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_Hill_spectral_isospectral_localCurve
