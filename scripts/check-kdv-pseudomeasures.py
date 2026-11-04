@@ -1119,6 +1119,11 @@ modules = [
     'NLS.KdV.HillPositivePatchCircles',
     'NLS.KdV.HillCanonicalEnergyLoopPeriods',
     'NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalEnergySheets',
+    'NLS.ComplexAnalysis.ParametricConvexPrimitivePathIntegral',
+    'NLS.KdV.HillLocalAbelianPrimitives',
+    'NLS.ComplexAnalysis.ParametricPolygonalIntegral',
+    'NLS.KdV.HillAbelianPathContinuation',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillLocalAbelianIntegrals',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

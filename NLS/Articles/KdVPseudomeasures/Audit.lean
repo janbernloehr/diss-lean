@@ -1085,6 +1085,11 @@ import NLS.KdV.HillEnergyDifferentialCompactTransport
 import NLS.KdV.HillPositivePatchCircles
 import NLS.KdV.HillCanonicalEnergyLoopPeriods
 import NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalEnergySheets
+import NLS.ComplexAnalysis.ParametricConvexPrimitivePathIntegral
+import NLS.KdV.HillLocalAbelianPrimitives
+import NLS.ComplexAnalysis.ParametricPolygonalIntegral
+import NLS.KdV.HillAbelianPathContinuation
+import NLS.Articles.KdVPseudomeasures.OriginalHillLocalAbelianIntegrals
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7070,3 +7075,41 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillCanonicalEnergySheets
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_canonical_energy_sheet_physical_sign
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_canonical_energy_compact_complex_transport
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_canonical_energy_cycle_complex_periods
+#print axioms NLS.ComplexAnalysis.parametricConvexPrimitive_eq_curveIntegral
+#print axioms NLS.ComplexAnalysis.curveIntegral_eq_parametricConvexPrimitive_sub
+#print axioms NLS.ComplexAnalysis.polygonalIntegral_eq_parametricConvexPrimitive_sub
+#print axioms NLS.KdV.HillHminusEnergyRootBox.abelianPrimitive
+#print axioms NLS.KdV.HillHminusEnergyRootBox.energy_segment_inside
+#print axioms NLS.KdV.HillHminusEnergyRootBox.analytic_abelianPrimitive
+#print axioms NLS.KdV.HillHminusEnergyRootBox.abelianPrimitive_at_center
+#print axioms NLS.KdV.HillHminusEnergyRootBox.abelianPrimitive_eq_curveIntegral
+#print axioms NLS.KdV.HillHminusEnergyRootBox.analytic_energyDifferential
+#print axioms NLS.KdV.HillHminusEnergyRootBox.hasDerivAt_abelianPrimitive
+#print axioms NLS.KdV.HillHminusEnergyRootBox.curveIntegral_eq_abelianPrimitive_sub
+#print axioms NLS.KdV.HillHminusEnergyRootBox.abelianPrimitive_eq_local_segment
+#print axioms NLS.KdV.HillHminusEnergyRootBox.abelianPrimitive_overlap_difference
+#print axioms NLS.KdV.HillHminusEnergyRootBox.analytic_abelianPrimitive_overlap_transition
+#print axioms NLS.ComplexAnalysis.exists_convex_segment_parameter_chart
+#print axioms NLS.ComplexAnalysis.analyticAt_parametric_fixed_segment_integral
+#print axioms NLS.ComplexAnalysis.parametricPolygonalDomain
+#print axioms NLS.ComplexAnalysis.parametricPolygonalIntegral
+#print axioms NLS.ComplexAnalysis.isOpen_parametricPolygonalDomain
+#print axioms NLS.ComplexAnalysis.analyticOnNhd_parametricPolygonalIntegral
+#print axioms NLS.KdV.hillHminusAbelianPathDomain
+#print axioms NLS.KdV.hillHminusAbelianPathIntegral
+#print axioms NLS.KdV.isOpen_hillHminusAbelianPathDomain
+#print axioms NLS.KdV.analyticOnNhd_hillHminusAbelianPathIntegral
+#print axioms NLS.KdV.real_mem_hillHminusAbelianPathDomain_of_nonreal_segments
+#print axioms NLS.KdV.exists_common_complex_abelian_path_ball
+#print axioms NLS.KdV.hillHminusAbelianPathContinuation
+#print axioms NLS.KdV.analyticOnNhd_hillHminusAbelianPathContinuation
+#print axioms NLS.KdV.hillHminusAbelianPathContinuation_at_terminal
+#print axioms NLS.KdV.hasDerivAt_hillHminusAbelianPathContinuation
+#print axioms NLS.KdV.hillHminusAbelianPathContinuation_eq_appended_segment
+#print axioms NLS.KdV.analyticAt_hillHminusAbelianPathContinuation_moving_terminal
+#print axioms NLS.KdV.hillHminusAbelianPathIntegral_eq_physical_of_real
+#print axioms NLS.KdV.exists_common_abelian_path_continuation_chart
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_local_Abelian_primitive_chart
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_nonreal_polygonal_Abelian_integrals
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Abelian_path_continuation_near_real
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_local_Abelian_transition
