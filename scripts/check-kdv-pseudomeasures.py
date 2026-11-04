@@ -1444,6 +1444,14 @@ modules = [
     'NLS.KdV.HillCanonicalEnergyRootIsospectral',
     'NLS.KdV.HillCanonicalDifferentialIsospectral',
     'NLS.Articles.KdVPseudomeasures.OriginalHillDifferentialActionInvariance',
+    'NLS.ComplexAnalysis.StationaryScalarQuotient',
+    'NLS.KdV.HillAbelianIsospectralData',
+    'NLS.KdV.HillAbelianCauchyIsospectral',
+    'NLS.ComplexAnalysis.MovingQuadraticSheetTerminalFDeriv',
+    'NLS.KdV.HillPhysicalAbelianIsospectralVariation',
+    'NLS.KdV.HillCanonicalAbelianActionVariation',
+    'NLS.KdV.HillOffIndexCorrectionGardnerLimit',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillAbelianActionVariation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
