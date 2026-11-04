@@ -868,6 +868,15 @@ import NLS.KdV.HillCommonMixedNormalizedPsi
 import NLS.KdV.HillMixedPeriodPhysicalMatching
 import NLS.KdV.HillNormalizedNumeratorBounds
 import NLS.KdV.HillCommonPhysicalNumeratorBounds
+import NLS.ComplexAnalysis.CompactNeighborhoodBounds
+import NLS.KdV.HillUniformDeflatedGapCharts
+import NLS.ComplexAnalysis.ParametricPrimitiveBounds
+import NLS.KdV.HillUniformOpenGapPrimitives
+import NLS.KdV.HillUniformOpenGapCorrections
+import NLS.KdV.HillClosedGapCenteredData
+import NLS.KdV.HillCenteredDeflatedMeanPhysical
+import NLS.KdV.HillUniformClosedGapCorrections
+import NLS.KdV.HillUniformFiniteGapCorrections
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1382,7 +1391,9 @@ run_cmd do
     ``NLS.Coeff.positiveDeletedToPositive,
     ``NLS.Coeff.positiveDeletedToPositive_coe,
     ``NLS.Coeff.norm_positiveDeletedToPositive,
-    ``NLS.ComplexAnalysis.exists_finite_family_norm_lower_bound]
+    ``NLS.ComplexAnalysis.exists_finite_family_norm_lower_bound,
+    ``NLS.ComplexAnalysis.exists_local_uniform_bound_near_compact_of_continuousOn,
+    ``NLS.ComplexAnalysis.norm_parametricConvexPrimitive_le]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
