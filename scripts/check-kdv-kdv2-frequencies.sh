@@ -239,6 +239,7 @@ modules=(NLS/ComplexAnalysis/RealLineIdentity
   NLS/DifferentialPolynomial/RiccatiResolventNaturality
   NLS/DifferentialPolynomial/MultiJet
   NLS/ZakharovShabat/SourcePsiLemma12_11
+  NLS/ZakharovShabat/SourceIsospectralSet
   NLS/ZakharovShabat/SobolevHierarchySymmetries
   NLS/MKdV/HierarchyRestriction
   NLS/DifferentialPolynomial/RiccatiResolventParity
@@ -438,7 +439,11 @@ modules=(NLS/ComplexAnalysis/RealLineIdentity
   NLS/KdV/HillHminusOneMiuraNormalizedIdentification
   NLS/SequenceSpaces/PeriodOneRealFormIdentity
   NLS/KdV/HillHminusOneComplexNormalizedIdentification
-  NLS/KdV/HillHminusOneMiuraFrequencySeries)
+  NLS/KdV/HillHminusOneMiuraFrequencySeries
+  NLS/ZakharovShabat/SourcePsiGapRootIsospectral
+  NLS/KdV/HillHminusOneMiuraSpectralInvariance
+  NLS/KdV/HillHminusOneIsospectralSheets
+  NLS/KdV/HillHminusOneSpectralMiuraFrequencySeries)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

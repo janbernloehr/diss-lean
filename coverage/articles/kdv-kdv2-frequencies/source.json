@@ -7167,6 +7167,86 @@
       "scope": "Literal actual Miura numerator moments on original Hill frequency circles, full all-order comparison with the constructed weighted family, and one common complex rough-input ball before all indices and orders. Actual normalized NLS data, source membership and joint numerator analyticity are retained. All moments are analytic, zeroth periods exact and all odd moments zero. Each actual second-moment series is absolutely and locally uniformly convergent and its correction is analytic. Physical identity (69), action descent, global source domains and all main theorem conclusions remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "320a2e657d8321ac301ea8a069d59b11d2c9d07e92056ad823046bc944024a05"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceIsospectralSet.lean",
+      "source_labels": [
+        "Theorem 3.4 (73) and Remark 3.5: spectral-invariance ingredient of actual correction/action descent"
+      ],
+      "source_pages": [
+        4,
+        21,
+        26,
+        31,
+        32
+      ],
+      "scope": "Canonical-base module reused unchanged: discriminant/spectral-data equivalence including multiplicities and canonical-root invariance. Its explicit selection is moved before existing transitive consumers.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d829150b833f3fe97ef7b84e69b7fb1bb29179f04e52affcdc20a7a2b59eda62"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourcePsiGapRootIsospectral.lean",
+      "source_labels": [
+        "Theorem 3.4 (73) and Remark 3.5: spectral-invariance ingredient of actual correction/action descent"
+      ],
+      "source_pages": [
+        4,
+        21,
+        26,
+        31,
+        32
+      ],
+      "scope": "Canonical-base module reused unchanged: normalized real psi-root invariance from actual gap-contained solution uniqueness.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a03a14bfecb0dde45c4b325b43e420d72df417750c53eb2c08b79915b6bc503e"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMiuraSpectralInvariance.lean",
+      "source_labels": [
+        "Theorem 3.4 (73) and Remark 3.5: spectral-invariance ingredient of actual correction/action descent"
+      ],
+      "source_pages": [
+        4,
+        21,
+        26,
+        31,
+        32
+      ],
+      "scope": "Within one fixed Miura chart, equal intrinsic Hill discriminants at real-type inputs give actual NLS isospectrality and equality of entire actual energy numerators and canonical root products. An actual jointly analytic normalized family is constructed at every real rough base and is invariant on the whole real slice of its chart domain.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "854d95b2b574239e4103a0a73c32af638a47e3a8f09ebaf6389e96515a6eb331"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIsospectralSheets.lean",
+      "source_labels": [
+        "Theorem 3.4 (73) and Remark 3.5: spectral-invariance ingredient of actual correction/action descent"
+      ],
+      "source_pages": [
+        4,
+        21,
+        26,
+        31,
+        32
+      ],
+      "scope": "One uniform imaginary strip for all original contours, including the finite head. A common rough ball before both real inputs and all contour indices gives literal continued-root and primitive equality from equal intrinsic discriminants, fixing root signs and logarithmic phases.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1f24b9af7e1b3bb6efc28df959e1b865d2769e6e8ac782af34d31f3ee32e9139"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneSpectralMiuraFrequencySeries.lean",
+      "source_labels": [
+        "Theorem 3.4 (73) and Remark 3.5: spectral-invariance ingredient of actual correction/action descent"
+      ],
+      "source_pages": [
+        4,
+        21,
+        26,
+        31,
+        32
+      ],
+      "scope": "One actual real-preserving chart, normalized NLS family and complex rough ball retain all-order analytic moments, exact zeroth periods, odd cancellation, absolute and locally uniform second-moment convergence and analytic correction. On that SAME ball all actual moments and corrections agree at real inputs with equal Hill discriminants. Action-coordinate realization, physical frequency identity69, global domains and all main theorems remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "853fb6a61ecfa51297abce259a6d60f473ea0254227ebe1c228d23e2b349a50d"
     }
   ],
   "dependencies_needed": [
@@ -7198,15 +7278,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4950,
-    "total_declarations_audited": 27100,
+    "candidate_declarations_audited": 4977,
+    "total_declarations_audited": 27116,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 431,
+    "selected_modules": 436,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -7217,7 +7297,8 @@
     "original_normalized_periods_validation_sequence": "Prior strict validation of 421 unchanged modules (415-module full baseline and six incremental compilations), three new strict incremental compilations in dependency order, then a fresh full combined transitive axiom audit of all 424 selected modules. No repeated full 424-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified.",
     "miura_normalized_identification_validation_sequence": "Prior strict validation of 424 unchanged modules (415-module full baseline and nine incremental compilations), one new strict incremental compilation, then a fresh full combined transitive axiom audit of all 425 selected modules. No repeated full 425-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified.",
     "complex_normalized_identification_validation_sequence": "Prior strict validation of 425 unchanged selected modules, strict recompilation of three unchanged canonical identity modules and strict compilation of two new modules, then a fresh full combined transitive axiom audit of all 430 selected modules. The canonical helpers precede their consumers in the reordered selection. No repeated full 430-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified.",
-    "miura_frequency_series_validation_sequence": "Prior strict validation of 430 unchanged selected sources, strict compilation of one new actual Miura moment/series module, then a fresh full combined transitive axiom audit of all 431 selected modules. No repeated full 431-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified."
+    "miura_frequency_series_validation_sequence": "Prior strict validation of 430 unchanged selected sources, strict compilation of one new actual Miura moment/series module, then a fresh full combined transitive axiom audit of all 431 selected modules. No repeated full 431-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified.",
+    "spectral_invariance_validation_sequence": "Prior strict validation of 431 unchanged selected sources, strict compilation of two unchanged canonical modules and three new modules, then a fresh full combined transitive axiom audit of all 436 selected modules. The canonical isospectral-set helper precedes existing consumers in the reordered selection. No repeated full 436-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -7366,5 +7447,6 @@
   "original_normalized_periods_record": "ORIGINAL_NORMALIZED_PERIODS.md",
   "miura_normalized_identification_record": "MIURA_NORMALIZED_IDENTIFICATION.md",
   "complex_normalized_identification_record": "COMPLEX_NORMALIZED_IDENTIFICATION.md",
-  "miura_frequency_series_record": "MIURA_FREQUENCY_SERIES.md"
+  "miura_frequency_series_record": "MIURA_FREQUENCY_SERIES.md",
+  "spectral_invariance_record": "SPECTRAL_INVARIANCE.md"
 }

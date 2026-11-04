@@ -662,3 +662,8 @@ are in `CANONICAL_NUMERATOR_REPRESENTATION.md`. All main rows remain OPEN.
 ## Actual Miura moments and analytic correction series
 
 `HillHminusOneMiuraFrequencySeries.lean` defines literal original-circle actual numerator moments, their signed second-moment terms and correction. Full complex numerator identification transfers all-order analytic moments, exact zeroth periods, odd cancellation, absolute convergence, analytic correction and locally uniform positive partial sums on one common rough ball around zero. This advances Lemma 3.1 and the spectral-series part of Theorem 3.4 (73), PDF pages 23–26 and 31. Physical identity (69), global W, action descent and every main theorem remain open. See `MIURA_FREQUENCY_SERIES.md`.
+
+
+## Actual spectral invariance toward action descent
+
+`HillHminusOneMiuraSpectralInvariance.lean` transports intrinsic Hill discriminant equality to actual normalized numerator and canonical-root invariance on a fixed real-type chart at any real rough base. `HillHminusOneIsospectralSheets.lean` fixes continued-root signs and logarithmic phases on all original contours in one common near-zero ball. `HillHminusOneSpectralMiuraFrequencySeries.lean` constructs ONE actual analytic convergent moment/series family that is spectrally invariant on the SAME ball. The two canonical NLS isospectral modules are reused unchanged. This advances the spectral-invariance ingredient following Theorem 3.4 (73), Remark 3.5, PDF pages 31–32; physical frequency identity (69), action-coordinate realization/descent, global W and every main theorem remain open. See `SPECTRAL_INVARIANCE.md`.

@@ -17,6 +17,12 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual spectral invariance toward action descent
+
+Equal intrinsic Hill discriminants now give equal actual normalized numerators in a fixed real-type chart around every real rough base. One common ball fixes root signs and logarithmic phases on every original contour. On that same ball a single constructed actual family retains analytic moments, exact zeroth periods, odd cancellation and the absolutely/locally uniformly convergent analytic correction series, and all its moments/corrections are spectral invariants. See `SPECTRAL_INVARIANCE.md`.
+
+Current validation: 436 selected modules (431 unchanged prior checks, two unchanged canonical compilations and three new strict compilations); fresh combined transitive audit of 4977 selected and 27116 imported NLS declarations, permitted axioms only. Physical frequency identity, action realization/descent, global source domains and all main theorem conclusions remain open.
+
 ## Latest actual Miura moments and analytic correction series
 
 Literal original-circle moments now use the actual Miura numerator directly. One actual normalized NLS family and one complex rough ball work before all indices and moment orders. Every moment is analytic; zeroth periods are exact and every odd moment vanishes. Each second-moment series converges absolutely and locally uniformly, and its correction is analytic. See `MIURA_FREQUENCY_SERIES.md`.

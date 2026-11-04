@@ -1,3 +1,6 @@
+import NLS.KdV.HillHminusOneSpectralMiuraFrequencySeries
+import NLS.KdV.HillHminusOneIsospectralSheets
+import NLS.KdV.HillHminusOneMiuraSpectralInvariance
 import NLS.KdV.HillHminusOneMiuraFrequencySeries
 import NLS.KdV.HillHminusOneComplexNormalizedIdentification
 import NLS.KdV.HillHminusOneMiuraNormalizedIdentification
@@ -333,6 +336,7 @@ run_cmd do
     `NLS.DifferentialPolynomial.RiccatiResolventNaturality,
     `NLS.DifferentialPolynomial.MultiJet,
     `NLS.ZakharovShabat.SourcePsiLemma12_11,
+    `NLS.ZakharovShabat.SourceIsospectralSet,
     `NLS.ZakharovShabat.SobolevHierarchySymmetries,
     `NLS.MKdV.HierarchyRestriction,
     `NLS.DifferentialPolynomial.RiccatiResolventParity,
@@ -532,7 +536,11 @@ run_cmd do
     `NLS.KdV.HillHminusOneMiuraNormalizedIdentification,
     `NLS.SequenceSpaces.PeriodOneRealFormIdentity,
     `NLS.KdV.HillHminusOneComplexNormalizedIdentification,
-    `NLS.KdV.HillHminusOneMiuraFrequencySeries]
+    `NLS.KdV.HillHminusOneMiuraFrequencySeries,
+    `NLS.ZakharovShabat.SourcePsiGapRootIsospectral,
+    `NLS.KdV.HillHminusOneMiuraSpectralInvariance,
+    `NLS.KdV.HillHminusOneIsospectralSheets,
+    `NLS.KdV.HillHminusOneSpectralMiuraFrequencySeries]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do
