@@ -1147,6 +1147,14 @@ modules = [
     'NLS.KdV.HillPhysicalOffIndexAbelianValue',
     'NLS.KdV.HillPhysicalAbelianRegularGerm',
     'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalAbelianDivisor',
+    'NLS.ComplexAnalysis.AnalyticRadicandEquation',
+    'NLS.KdV.HillAbelianEnergyQuotient',
+    'NLS.KdV.HillAbelianNativeEnergyEquation',
+    'NLS.KdV.HillAbelianRealEnergyGap',
+    'NLS.KdV.HillAbelianRealPatchCompatibility',
+    'NLS.KdV.HillPhysicalAbelianSourceBalls',
+    'NLS.KdV.HillCanonicalPhysicalAbelianValue',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillIntrinsicAbelianDivisor',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

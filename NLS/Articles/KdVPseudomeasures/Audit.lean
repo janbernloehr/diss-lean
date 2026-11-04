@@ -1113,6 +1113,14 @@ import NLS.KdV.HillPhysicalDirichletSheetCoefficient
 import NLS.KdV.HillPhysicalOffIndexAbelianValue
 import NLS.KdV.HillPhysicalAbelianRegularGerm
 import NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalAbelianDivisor
+import NLS.ComplexAnalysis.AnalyticRadicandEquation
+import NLS.KdV.HillAbelianEnergyQuotient
+import NLS.KdV.HillAbelianNativeEnergyEquation
+import NLS.KdV.HillAbelianRealEnergyGap
+import NLS.KdV.HillAbelianRealPatchCompatibility
+import NLS.KdV.HillPhysicalAbelianSourceBalls
+import NLS.KdV.HillCanonicalPhysicalAbelianValue
+import NLS.Articles.KdVPseudomeasures.OriginalHillIntrinsicAbelianDivisor
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7242,3 +7250,46 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalAbelianDivisor
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_common_physical_divisor_source
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_actual_Dirichlet_root_sheet
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_physical_offIndex_Abelian_value_analytic
+#print axioms NLS.ComplexAnalysis.radicand_equation_homogeneous_eq_zero
+#print axioms NLS.ComplexAnalysis.radicand_equation_solution_unique
+#print axioms NLS.ComplexAnalysis.radicand_equation_divide_multiplier
+#print axioms NLS.KdV.HillProductEquationPatch.abelianEnergyCoordinates
+#print axioms NLS.KdV.HillProductEquationPatch.abelianFilledEnergyDomain
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianEnergyQuotient
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_abelianEnergyCoordinates
+#print axioms NLS.KdV.HillProductEquationPatch.abelianFilledEnergyDomain_open
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_offIndexAbelianEnergyQuotient
+#print axioms NLS.KdV.HillProductEquationPatch.abelianFilledEnergyDomain_mem_of_positive_frequency
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianEnergyQuotient_at_positive_frequency
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianEnergyQuotient_equation_at_positive_frequency
+#print axioms NLS.KdV.HillProductEquationPatch.principal_sqrt_re_pos_of_slit
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianEnergyQuotient_equation
+#print axioms NLS.KdV.HillProductEquationPatch.real_energy_mem_abelianFilledEnergyDomain
+#print axioms NLS.KdV.HillProductEquationPatch.original_energy_segment_mem_filled_domain
+#print axioms NLS.KdV.HillProductEquationPatch.exists_common_original_energy_gap_neighborhood
+#print axioms NLS.KdV.HillProductEquationPatch.offIndexAbelianEnergyQuotient_eq_on_original_gap_neighborhood
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianValue_eq_actual_sheet_mul_energy_quotient_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.physicalOffIndexAbelianValue_eq_of_real_overlap
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.source
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.value
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.source_open
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.analytic_value
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.value_eq_on_overlap
+#print axioms NLS.KdV.exists_hillPhysicalAbelianSourceBall_of_patch
+#print axioms NLS.KdV.exists_hillPhysicalAbelianSourceBall
+#print axioms NLS.KdV.hillHminusPhysicalAbelianDomain
+#print axioms NLS.KdV.isOpen_hillHminusPhysicalAbelianDomain
+#print axioms NLS.KdV.real_mem_hillHminusPhysicalAbelianDomain
+#print axioms NLS.KdV.hillHminusPhysicalOffIndexAbelianValue
+#print axioms NLS.KdV.HillPhysicalAbelianSourceBall.canonical_value_eq
+#print axioms NLS.KdV.analyticOnNhd_hillHminusPhysicalOffIndexAbelianValue
+#print axioms NLS.KdV.hillHminusPhysicalAbelianDomain_subset_Dirichlet
+#print axioms NLS.KdV.hillHminusPhysicalAbelianDomain_subset_Psi
+#print axioms NLS.KdV.hillHminusPhysicalOffIndexAbelianValue_eq_patch_of_real
+#print axioms NLS.KdV.hillHminusPhysicalOffIndexAbelianValue_zero_of_sheet_zero
+#print axioms NLS.KdV.exists_common_canonical_physical_Abelian_patch_ball
+#print axioms NLS.KdV.isConnected_hillHminusPhysicalAbelianDomain
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_intrinsic_physical_Abelian_domain
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_intrinsic_offIndex_Abelian_analytic
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_intrinsic_Abelian_value_eq_EVERY_real_patch
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_physical_Abelian_WHOLE_complex_chart_overlap
