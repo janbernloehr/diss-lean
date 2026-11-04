@@ -5776,3 +5776,8 @@ import NLS.KdV.HillPositiveUniformLowerBound
 import NLS.SequenceSpaces.PositiveDeletedInclusion
 import NLS.KdV.HillDeletedJacobianTransfer
 import NLS.KdV.HillSelectedJacobianUniformInverse
+import NLS.KdV.HillProductPeriodBoundedRoots
+import NLS.KdV.HillMixedPeriodBoundedRoots
+import NLS.KdV.HillSelectedJointPeriodBounds
+import NLS.KdV.HillCommonMixedPeriodRoots
+import NLS.KdV.HillCommonMixedRootCoordinates

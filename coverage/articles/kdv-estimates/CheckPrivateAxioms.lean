@@ -853,6 +853,11 @@ import NLS.KdV.HillPositiveUniformLowerBound
 import NLS.SequenceSpaces.PositiveDeletedInclusion
 import NLS.KdV.HillDeletedJacobianTransfer
 import NLS.KdV.HillSelectedJacobianUniformInverse
+import NLS.KdV.HillProductPeriodBoundedRoots
+import NLS.KdV.HillMixedPeriodBoundedRoots
+import NLS.KdV.HillSelectedJointPeriodBounds
+import NLS.KdV.HillCommonMixedPeriodRoots
+import NLS.KdV.HillCommonMixedRootCoordinates
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
