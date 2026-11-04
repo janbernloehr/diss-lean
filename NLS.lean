@@ -5814,3 +5814,8 @@ import NLS.KdV.HillGeneralCartesianTails
 import NLS.SequenceSpaces.NatL2AnalyticGermHeadTail
 import NLS.KdV.HillDirichletDarbouxCotangents
 import NLS.KdV.HillGeneralWeightedCartesianAnalytic
+import NLS.KdV.HillDiscriminantGradient
+import NLS.KdV.HillDiscriminantGradientRegularity
+import NLS.ComplexAnalysis.QuadraticHillSystemPairing
+import NLS.KdV.HillDiscriminantQuadraticSystem
+import NLS.KdV.HillDiscriminantGardnerCommutation

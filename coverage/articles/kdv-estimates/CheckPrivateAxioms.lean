@@ -891,6 +891,11 @@ import NLS.KdV.HillGeneralCartesianTails
 import NLS.SequenceSpaces.NatL2AnalyticGermHeadTail
 import NLS.KdV.HillDirichletDarbouxCotangents
 import NLS.KdV.HillGeneralWeightedCartesianAnalytic
+import NLS.KdV.HillDiscriminantGradient
+import NLS.KdV.HillDiscriminantGradientRegularity
+import NLS.ComplexAnalysis.QuadraticHillSystemPairing
+import NLS.KdV.HillDiscriminantQuadraticSystem
+import NLS.KdV.HillDiscriminantGardnerCommutation
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1408,7 +1413,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.exists_finite_family_norm_lower_bound,
     ``NLS.ComplexAnalysis.exists_local_uniform_bound_near_compact_of_continuousOn,
     ``NLS.ComplexAnalysis.norm_parametricConvexPrimitive_le,
-    ``NLS.Coeff.exists_natL2_analytic_germ_of_head_tail_matching]
+    ``NLS.Coeff.exists_natL2_analytic_germ_of_head_tail_matching,
+    ``NLS.ComplexAnalysis.quadraticHillSystem_pairing_eq_zero]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
