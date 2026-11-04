@@ -928,6 +928,20 @@ import NLS.KdV.HminusOneJointHillProductPeriods
 import NLS.KdV.HminusOneHillProductEquationRows
 import NLS.KdV.HminusOneHillProductJointColumns
 import NLS.Articles.KdVPseudomeasures.OriginalJointHillPeriodEquations
+import NLS.SequenceSpaces.QuadraticFrequencyBounds
+import NLS.SequenceSpaces.QuadraticFrequencyDomain
+import NLS.SequenceSpaces.QuadraticFrequencyAnalytic
+import NLS.SequenceSpaces.BalancedQuadraticFrequencyLifting
+import NLS.KdV.HillIndependentFrequencyLifting
+import NLS.KdV.HillIndependentProductRestoration
+import NLS.KdV.HillIndependentPsiPullback
+import NLS.KdV.HminusOneIndependentHillFrequencies
+import NLS.KdV.HillIndependentMultiplierBound
+import NLS.KdV.HillProductCoordinateBounds
+import NLS.KdV.HillRetainedPeriodSequences
+import NLS.KdV.HillProductPlacementDomain
+import NLS.Articles.KdVPseudomeasures.OriginalHillFrequencyCoordinates
+import NLS.KdV.HillPeriodSequenceMidpointFill
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6365,3 +6379,76 @@ import NLS.Articles.KdVPseudomeasures.OriginalJointHillPeriodEquations
 #print axioms NLS.KdV.HillHminusPsiBall.fderiv_productEquationRow_coordinate
 #print axioms NLS.KdV.HillHminusPsiBall.analytic_productEquationRow_column
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_joint_Hill_period_equations
+#print axioms NLS.LpSequence.norm_magnitude
+#print axioms NLS.LpSequence.positiveReciprocal
+#print axioms NLS.LpSequence.positiveReciprocal_apply
+#print axioms NLS.LpSequence.norm_positiveReciprocal_le
+#print axioms NLS.LpSequence.quadraticLatticeEnergy
+#print axioms NLS.LpSequence.positiveFrequencyError
+#print axioms NLS.LpSequence.norm_positiveFrequencyError_le
+#print axioms NLS.LpSequence.positiveFrequencyMajorant
+#print axioms NLS.LpSequence.norm_positiveFrequencyMajorant_apply
+#print axioms NLS.LpSequence.memlp_positiveFrequencyError
+#print axioms NLS.LpSequence.positiveFrequencyDisplacement
+#print axioms NLS.LpSequence.positiveFrequencyDisplacement_apply
+#print axioms NLS.LpSequence.norm_positiveFrequencyDisplacement_le
+#print axioms NLS.LpSequence.analyticAt_quadraticLatticeEnergy
+#print axioms NLS.LpSequence.continuous_quadraticLatticeEnergy
+#print axioms NLS.LpSequence.quadraticLatticeEnergy_re_pos_of_norm_bound
+#print axioms NLS.LpSequence.quadraticFrequencyDomain
+#print axioms NLS.LpSequence.exists_quadraticFrequencyDomain_neighborhood
+#print axioms NLS.LpSequence.isOpen_quadraticFrequencyDomain
+#print axioms NLS.LpSequence.analyticAt_positiveFrequencyError
+#print axioms NLS.LpSequence.analyticOnNhd_positiveFrequencyDisplacement
+#print axioms NLS.LpSequence.positiveFrequencyDisplacement_sq
+#print axioms NLS.LpSequence.positiveOddInsert
+#print axioms NLS.LpSequence.positiveOddInsert_positive
+#print axioms NLS.LpSequence.positiveOddInsert_zero
+#print axioms NLS.LpSequence.positiveOddInsert_neg
+#print axioms NLS.LpSequence.positiveOddInsertCLM
+#print axioms NLS.LpSequence.positiveOddInsertCLM_apply
+#print axioms NLS.LpSequence.norm_positiveOddInsert_le
+#print axioms NLS.LpSequence.balancedFrequencyDisplacement
+#print axioms NLS.LpSequence.balancedFrequency
+#print axioms NLS.LpSequence.balancedFrequency_zero
+#print axioms NLS.LpSequence.balancedFrequency_neg
+#print axioms NLS.LpSequence.balancedFrequency_positive
+#print axioms NLS.LpSequence.balancedFrequency_positive_sq
+#print axioms NLS.LpSequence.norm_balancedFrequencyDisplacement_le
+#print axioms NLS.LpSequence.memlp_balancedFrequency_displacement
+#print axioms NLS.LpSequence.analyticOnNhd_balancedFrequencyDisplacement
+#print axioms NLS.KdV.hillIndependentFrequencyDisplacement
+#print axioms NLS.KdV.hillIndependentFrequency
+#print axioms NLS.KdV.hillIndependentFrequency_zero
+#print axioms NLS.KdV.hillIndependentFrequency_neg
+#print axioms NLS.KdV.hillIndependentFrequency_positive
+#print axioms NLS.KdV.hillIndependentFrequency_positive_sq
+#print axioms NLS.KdV.norm_hillIndependentFrequencyDisplacement_le
+#print axioms NLS.KdV.analyticOnNhd_hillIndependentFrequencyDisplacement
+#print axioms NLS.KdV.singleSpectralPartialProduct_independent_Hill_restore
+#print axioms NLS.KdV.jointSingleSpectralProduct_independent_Hill_restore
+#print axioms NLS.KdV.hillEnergyProduct_independent_candidate_filled
+#print axioms NLS.KdV.hillEnergyProduct_independent_candidate_quotient
+#print axioms NLS.KdV.hillWeightedProductIntegrand_independent_candidate
+#print axioms NLS.KdV.hillIndependentFrequency_eq_real_balanced
+#print axioms NLS.KdV.HillHminusPsiBall.actual_zero_data_mem_frequencyDomain
+#print axioms NLS.KdV.HillHminusPsiBall.actual_independentFrequency_mem_signed_gap
+#print axioms NLS.KdV.hillIndependent_multiplier_bound
+#print axioms NLS.KdV.hillWeightedProductPeriod_coordinate_bound
+#print axioms NLS.KdV.hillProductFrequencyMajorant
+#print axioms NLS.KdV.norm_hillProductFrequencyMajorant_apply
+#print axioms NLS.KdV.norm_hillProductFrequencyMajorant_le
+#print axioms NLS.KdV.hillRetainedProductPeriodRow
+#print axioms NLS.KdV.norm_hillRetainedProductPeriodRow_le
+#print axioms NLS.KdV.exists_hillRetainedProductPeriodSequence_of_quotient_bound
+#print axioms NLS.KdV.exists_hillRetainedProductPeriodSequence
+#print axioms NLS.KdV.hillProductPlacementDomain
+#print axioms NLS.KdV.isOpen_hillProductPlacementDomain
+#print axioms NLS.KdV.HillHminusPsiBall.actual_zero_data_mem_productPlacementDomain
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_common_Hill_frequency_coordinates
+#print axioms NLS.KdV.hillEnergyMidpointDisplacement
+#print axioms NLS.KdV.norm_hillEnergyMidpointDisplacement_le
+#print axioms NLS.KdV.hillProductPeriodEquationRow
+#print axioms NLS.KdV.hillProductPeriodEquationRow_eq_native
+#print axioms NLS.KdV.exists_hillProductPeriodEquationSequence
+#print axioms NLS.KdV.HillHminusPsiBall.exists_productEquationSequence
