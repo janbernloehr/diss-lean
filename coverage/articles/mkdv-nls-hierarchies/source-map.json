@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "article_id": "mkdv-nls-hierarchies",
-  "status": "partial_theorems_1_2_3_4i_and_corrected_4ii_proved_4iii_independent_angles_and_angle_sum_incomplete",
+  "status": "all_main_theorems_proved_with_documented_source_corrections",
   "source": {
     "abstract_url": "https://arxiv.org/abs/1601.07580v1",
     "pdf_url": "https://arxiv.org/pdf/1601.07580v1",
@@ -258,7 +258,7 @@
     {
       "label": "Theorem 4(iii)",
       "page": 4,
-      "status": "partial_original_angle_action_clause_proved_angle_sum_factorization_open",
+      "status": "proved_original_real_H1_angle_action_bracket_and_independent_full_angle_sum_with_arbitrary_support",
       "quantifiers": "Every original real H1 input; every positive m,n; the angle at m is defined when its own actual mKdV action J_m is nonzero. No nonzero/open-gap hypothesis is imposed on the action J_n.",
       "target": "Gardner bracket of theta_m# and J_n equals delta_mn; angle sum depends on actions and mean.",
       "proved_dependencies": [
@@ -351,18 +351,33 @@
         "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_finite_gap_Lie_continuity",
         "NLS.Articles.MKdVNLSHierarchies.independent_finite_gap_stratum_spatial_translation",
         "NLS.Articles.MKdVNLSHierarchies.independent_quasi_Hill_terminal_release",
-        "NLS.Articles.MKdVNLSHierarchies.independent_Hill_open_endpoint_trace_derivative"
+        "NLS.Articles.MKdVNLSHierarchies.independent_Hill_open_endpoint_trace_derivative",
+        "NLS.MKdV.miuraQuasiHillMonodromy_open_Dirichlet_endpoint",
+        "NLS.MKdV.miuraNativePeriodicProfile_spatialTranslation",
+        "NLS.MKdV.miuraNativeFiniteDirichletSheets_spatialTranslation_eventually_ne_zero",
+        "NLS.MKdV.miuraNativeOppositeAbelianPhase_Lie_finiteGap",
+        "NLS.MKdV.miuraNativeOppositeAbelianPhase_actionFlow_finiteGap",
+        "NLS.MKdV.tendsto_miuraNativeFiniteGapApproximation",
+        "NLS.MKdV.miuraNativeOppositeAbelianPhase_actionFlow",
+        "NLS.MKdV.exists_miuraIndependentAbelianPhase_action_factor"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
-        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_actual_Gardner_derivative"
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_actual_Gardner_derivative",
+        "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_complete_action_rotation",
+        "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_actual_action_generator",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_phase_sum",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_angle_sum",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_sum_representatives"
       ],
-      "angle_definition": "The actual NLS theta phase is supplied by the checked original normalized psi/common-domain construction and pulled back along the literal L2 diagonal. Its logarithmic differential is proved equal to the pullback of the original local NLS angle differential.",
+      "angle_definition": "The actual NLS theta phase is supplied by the checked original normalized psi/common-domain construction and pulled back along the literal L2 diagonal. Its logarithmic differential is proved equal to the pullback of the original local NLS angle differential. The independent source-oriented mKdV phase is miuraNativeOppositeAbelianPhase, the complex conjugate of the full Hill Abelian phase constructed from actual independent Dirichlet data and normalized Abelian integrals. No NLS angle occurs in that definition.",
       "Gardner_definition": "The scalar gradient is constructed from the actual L2 Frechet derivative; its spatial Fourier multiplier is 2*pi*i*m. Square summability of that derivative and equality with the actual period-one tempered distribution derivative are proved at every original real H1 input.",
       "limits": [
-        "The original NLS angle-action bracket is proved. The spectral conjugate of the independently constructed full Hill phase has negative Kronecker generators at interior finite-gap divisors, and the exact original physical Abelian period is pi times the Kronecker delta on arbitrary support. Its actual Lie derivative is now continuous on every fixed finite-gap stratum, through terminal and closed contributing configurations; actual native spatial translations preserve that stratum and every actual Hill label. Under the explicitly stated nontrivial parabolic-monodromy hypothesis, the actual quasi-Hill translated characteristic releases a terminal for every sufficiently small positive shift. Actual open Hill endpoints have nonzero energy trace derivative. The endpoint monodromy hypotheses and original Miura translation identifications still need to be connected to prove interior density and extend the canonical generator value. The full rotation law on arbitrary support and final angle-sum factorization remain incomplete."
+        "The angle sum is understood modulo exactly 2*pi, as full unit-phase multiplication. Theorem4_iii_angle_sum_representatives gives the same factor for every real representative of both actual phases; no squaring or loss modulo pi occurs.",
+        "Only the selected angle requires its own original physical action nonzero. Arbitrary other closed actions, terminal contributing divisors, zero or arbitrary signed mean and infinite support are included. Native statements hold for every integer Hs, s>=1; theorem4_iii_independent_angle_sum specializes to the full original real H1 domain.",
+        "The factor is a function of the entire physical action sequence and literal signed mean. The source final clause does not require an analytic angle-sum factor, and none is asserted. Full Cartesian cross-mode canonicity and arbitrary rough L2 inversion are not used or inferred."
       ],
-      "conditional_descent_proved": "Any independently specified bounded phase continuous on its selected physical open-action locus and rotating oppositely under every complete original physical action flow has a global full phase-product factor through the entire native action sequence and literal signed mean. The conjugate of the actual independent Hill phase now satisfies the exact continuity, boundedness, own-open unit norm and own-closed zero inputs, and has the required negative generators at interior finite-gap divisors. Its full opposite rotation law, including terminal configurations and arbitrary support, remains the missing mathematical input."
+      "conditional_descent_proved": "The previously conditional full phase-product descent is now instantiated with the actual independent spectral conjugate miuraNativeOppositeAbelianPhase. Its full opposite rotation law is proved at every real time, including all terminal/closed configurations and arbitrary support. No mathematical input remains conditional."
     }
   ],
   "dependency_labels": [
@@ -521,11 +536,7 @@
     "library_classicalODECoefficient_upper_right": "i*phi.1",
     "remaining": "Independent original mKdV angle identification and final Theorem 4(iii) angle-sum factorization. Corrected all-order frequency comparison is complete."
   },
-  "remaining_essential_dependencies": [
-    "Complete actual finite-gap interior-divisor density by spatial translation. The full phase Lie derivative is now continuous on every fixed finite-gap stratum and native translation preserves it. The actual quasi-Hill translated characteristic is minus c times the squared original Dirichlet column under the explicit nontrivial parabolic-monodromy hypothesis, and is nonzero for all sufficiently small positive shifts. Prove that hypothesis at every actual open-gap endpoint: determinant one plus zero Dirichlet entry and trace plus/minus2 gives the parabolic matrix; the now checked nonzero open-endpoint energy trace derivative rules out a scalar monodromy and hence forces c nonzero. Identify the actual native translated Miura profile with the translated continuous quasi-Hill coefficient, then conclude that both actual endpoint characteristics are nonzero and all retained Dirichlet sheets are interior for small shifts.",
-    "Use the checked full phase Lie continuity and this actual density to extend the negative Kronecker generator through every finite-gap terminal or closed contributing configuration. Integrate the resulting all-configuration finite-gap ODE to the actual complete action-flow law.",
-    "Pass rotation to arbitrary support using full-phase continuity and native finite-support approximation, then instantiate exists_opposite_unit_phase_action_factor with the actual spectral conjugate miuraNativeOppositeAbelianPhase. Exact own-open continuity, norm data and negative interior finite-gap generators are checked. No NLS angle defines the independent phase. Final Theorem4iii remains incomplete; corrected Theorem3 and earlier completed clauses stay complete."
-  ],
+  "remaining_essential_dependencies": [],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
     "physical_first_variation": "NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler",
@@ -776,7 +787,7 @@
     "isospectral_Sobolev_membership": "NLS.ZakharovShabat.source_sobolev_mem_iff_of_isospectral",
     "construction": "Opposite original NLS action rotations at n and -n solve the actual analytic source Hamiltonian difference field. Actual ODE uniqueness gives component-swap covariance, preservation of the original diagonal and independence of the chosen normalized NLS Birkhoff family. Gardner transfer identifies the scalar H1 equation with the independently defined physical J_n action.",
     "scope": "Complete commuting 2*pi-periodic real action flows on each full native integer H^s, s>=0, continuous in its native norm. The actual Gardner equation, intrinsic uniqueness, all physical J_m and signed NLS I_m invariants, and signed-mean conservation are proved on the entire original real H1 domain. Closed gaps and zero mean are included. No global signed-mean factor through NLS actions is claimed.",
-    "remaining": "This is action-torus machinery needed by Theorems 3 and 4(ii)-(iii). The independent mKdV Birkhoff chart, forward factorization through J and mean, final angle-sum factorization and frequency comparison remain open."
+    "remaining": "The remaining main-theorem obligations from this checkpoint are discharged by independent_Abelian_full_rotation_and_angle_sum and IndependentAbelianAngleSum.lean. The original real H1 angle-sum clause and corrected all-order frequency comparison are complete."
   },
   "global_spectral_angle_transport": {
     "general_source_angle_flow": "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.phase_pairedActionFlow",
@@ -790,7 +801,7 @@
     "ambient_L2_cotangent_independence": "NLS.MKdV.miuraActionCotangent_coefficients_unique",
     "original_H1_cotangent_independence": "NLS.Articles.MKdVNLSHierarchies.theorem4_H1_action_differentials_independent",
     "cotangent_scope": "Every finite linear combination of the open physical action Frechet differentials and the actual mean differential has unique complex coefficients. All other gaps may close; zero mean is included. The ambient L2 statement uses the checked physical analytic action extensions, and density transfers it to their actual original H1 Frechet derivatives.",
-    "remaining": "These are local regularity and global action-angle transport ingredients, not an independent mKdV Birkhoff chart. Forward factorization, the final independent-angle sum factorization and the corrected frequency comparison remain open."
+    "remaining": "The remaining main-theorem obligations from this checkpoint are discharged by independent_Abelian_full_rotation_and_angle_sum and IndependentAbelianAngleSum.lean. The original real H1 angle-sum clause and corrected all-order frequency comparison are complete."
   },
   "finite_local_physical_action_sections": {
     "finite_projection": "NLS.MKdV.miuraFiniteActionCoordinates",
@@ -806,7 +817,7 @@
     "generic_analytic_section": "NLS.ComplexAnalysis.exists_analytic_section_of_derivative_rightInverse",
     "scope": "Every original real H1 base point; any finite collection of its positive open physical actions together with the literal mean. Other gaps may close and zero mean is allowed. The actual complex H1 analytic extensions have surjective derivative. A constructed holomorphic section passes through the base point, realizes all nearby selected complex action and mean values exactly, has the constructed right inverse as its actual derivative, and stays inside any prescribed open complex H1 neighborhood of the base point.",
     "construction": "Cotangent independence proves surjectivity by injectivity of the algebraic dual map. A linear right inverse is bounded because its domain is finite dimensional. The affine H1 slice through that right inverse has identity actual derivative under the physical projection; the analytic inverse theorem constructs the section on that slice.",
-    "limits": "The full native weighted l1 action map is now constructed separately. These finite local sections do not construct the independent global mKdV Birkhoff chart or its inverse action-coordinate geometry. Collapsed selected-action Cartesian coordinates, forward factorization through J and mean, independent mKdV angles and final angle-sum factorization, and corrected full frequency comparison remain open."
+    "limits": "These finite local sections are supplemented by the later global native Sobolev Cartesian inverse, global physical-action factors, independent spectral phase rotation and final angle-sum proof. They alone do not assert global inversion."
   },
   "real_finite_physical_action_sections": {
     "physical_real_Banach_space": "NLS.WeightedCoeff.physicalRealSubmodule",
@@ -825,7 +836,7 @@
     "scope": "Every original real H1 base point, including zero mean; any finite collection of its open positive physical actions; arbitrary other gaps may close. A constructed real analytic section into the closed physical real H1 space passes through that point, remains inside any prescribed real H1 neighborhood, realizes the literal signed mean and independent physical Hill contour actions exactly, keeps selected actions positive and has the constructed bounded real right inverse as its actual derivative.",
     "physical_reality_convention": "Fourier conjugate reflection a_j=conj(a_-j), not coordinatewise real Fourier coefficients. The real form is a closed real Banach subspace with the original H1 norm.",
     "construction": "Real gap formulas prove the physical action values real. Differentiating their imaginary parts along original real H1 lines proves reality of the actual complex cotangents. Exact physical real/imaginary decomposition shows that projecting any complex derivative lift to its physical real part preserves the real target. The real analytic inverse theorem on this constructed affine slice supplies the section.",
-    "limits": "The full native weighted l1 action map is now constructed separately. These finite local sections do not construct the independent global mKdV Birkhoff chart or its inverse action-coordinate geometry. Collapsed selected-action Cartesian coordinates, forward factorization through J and mean, independent mKdV angles and final angle-sum factorization, and corrected full frequency comparison remain open."
+    "limits": "These finite local sections are supplemented by the later global native Sobolev Cartesian inverse, global physical-action factors, independent spectral phase rotation and final angle-sum proof. They alone do not assert global inversion."
   },
   "native_mKdV_action_sequence": {
     "integer_Laurent_complex_boundary": "NLS.ZakharovShabat.SourceDiagonalLaurentAtlas.exists_ball_all_laurent_actions_eq_boundaryIntegral",
@@ -1172,7 +1183,7 @@
     ],
     "mechanism": "Scaled roots are analytic as one bounded sequence; their real-profile free difference vanishes at infinity. The NLS Jacobian remainder is compact. The symbol-derivative term factors through compact multiplication of bounded symbols by the fixed l2 NLS coordinate sequence. Weight normalization has a bounded left inverse.",
     "limits": [
-      "This compactness reduction alone does not prove injectivity. The subsequent H1-basepoint milestone proves Jacobian bijectivity and unconditional local inverse charts there. Global inversion, distinct NLS action-fiber identification, arbitrary action-data realization and cross-mode Gardner canonicity remain open.",
+      "This compactness reduction alone does not prove injectivity. The later H1-basepoint theorem proves Jacobian bijectivity and unconditional local charts; the global native inverse, action-data realization and final angle sum are proved separately. Cross-mode Cartesian canonicity is not inferred.",
       "The compactness theorem here is on original L2, not all native Sobolev orders."
     ]
   },
@@ -1194,7 +1205,7 @@
     "analyticity": "All selected Cartesian-Cartesian brackets admit complex analytic H1 extensions near every physical real H1 profile and agree there with the literal Gardner brackets.",
     "mechanism": "The convergent physical action-field trace yields the translation generator. Differentiating on the real H1 form and complexifying variations gives a bounded cotangent generator extension, whose Fourier coefficients prove actual gradient-domain membership. The physical action radius and mixed brackets force X_n times the plane-bracket error to vanish. A nonzero free Fourier differential and real analytic continuation prove the plane bracket equals one everywhere.",
     "limits": [
-      "Cross-mode zero brackets, full Gardner canonicity and global inversion remain open. The subsequent general-H1 local inverse milestone proves derivative kernel triviality at every original real H1 basepoint.",
+      "Cross-mode Cartesian zero brackets and full Gardner canonicity are not asserted or needed for the main source claims. Global native Sobolev inversion and all main-theorem obligations are completed separately.",
       "The gradient-domain and bracket statements here are on original real H1; no actual L2 Gardner representative is claimed at every rough L2 profile."
     ]
   },
@@ -1218,7 +1229,7 @@
     "limits": [
       "The subsequent global native Sobolev inverse milestone proves global bijectivity in every integer H^s, s>=1, and uniqueness among all original-L2 preimages of native data. Arbitrary rough L2 target inversion remains unproved.",
       "Charts use L2 and native half-order topologies, not native H1 and three-half-order topologies. No invertibility theorem at every rough real L2 basepoint is claimed.",
-      "Full canonicity, global forward analytic factorization, independent angles and full corrected frequency comparison remain essential. Distinct NLS action fibers at equal physical J/mean are identified on H^s, s>=1; arbitrary native nonnegative action realization is now proved."
+      "The remaining main-theorem obligations from this checkpoint are discharged by independent_Abelian_full_rotation_and_angle_sum and IndependentAbelianAngleSum.lean. The original real H1 angle-sum clause and corrected all-order frequency comparison are complete. Cross-mode Cartesian canonicity is not used; native nonnegative action realization and equality of full action fibers are proved."
     ]
   },
   "global_native_Sobolev_Cartesian_inverse": {
@@ -1331,8 +1342,8 @@
     "method": "The checked weighted NLS Jacobian compact remainder pulls back along the literal scalar Sobolev diagonal. Compact symbol multiplication controls the differentiated scaling root. Coefficient-preserving complex germ compatibility transports L2 derivative injectivity to the native spaces; the compact Fredholm alternative then gives complex and real native inverses. Global set bijectivity identifies each local inverse with the global inverse, yielding native inverse analyticity. The actual sharp higher-action traces, isospectral invariance of their real gap integrands and the independently proved factor-two restriction give Hamiltonian conservation, including the mass endpoint.",
     "qualifications": [
       "No global Gardner canonicity or cross-mode zero Cartesian brackets are inferred from inverse analyticity.",
-      "The Hamiltonian Cartesian representation is not yet an action normal form or an independent mKdV frequency definition.",
-      "Theorem 3 and the final angle-sum clause of Theorem 4(iii) remain incomplete.",
+      "The later native physical Hamiltonian normal-form and frequency theorems identify the full action representation and corrected NLS frequency comparison.",
+      "The remaining main-theorem obligations from this checkpoint are discharged by independent_Abelian_full_rotation_and_angle_sum and IndependentAbelianAngleSum.lean. The original real H1 angle-sum clause and corrected all-order frequency comparison are complete.",
       "No global rough L2 target inverse is asserted. Native complex charts are local at physical H^s profiles for s>=1."
     ]
   },
@@ -1354,10 +1365,10 @@
     ],
     "method": "Transport native Cartesian targets by their exact weight equivalences to a fixed half-order target. The genuine complex inverse germ preserves physical reality by the checked global native real inverse. Actual Gardner action-flow conservation gives rotation stationarity on the real slice; the physical real-form identity theorem gives full holomorphic stationarity. Entire isotropic mean parameters and the verified infinite-dimensional sequence action descent give local factors. Physical J and signed mean fix the original NLS action fiber, whose sharp higher-action traces fix the independent K_m; nearby real Cartesian action lifts yield recovery on every native representative. Every nonnegative encoded normalized datum has a native real profile, even with infinite support, so local factors agree on all nonnegative overlaps and glue holomorphically. Pullback through exponential mean encoding and native weight coordinates yields one physical action/mean domain. The full original L2 mass trace supplies m=1 directly. Nonnegative one-sided raw-action increments are realized in H^s for s>=1, so uniqueness of the derivative on the real half-line proves factor-independent positive action derivatives even at closed actions.",
     "qualifications": [
-      "This proves the independent physical mKdV-side action normal forms and derivatives, not their comparison with the original restricted NLS hierarchy frequencies.",
-      "Normal-form derivative choice independence is proved for m>=2; the m=1 physical derivative is obtained explicitly from the mass normal form.",
+      "The later corrected Theorem3 proves equality with the actual original restricted NLS frequencies on all real H^(m-1) inputs, including closed actions.",
+      "Normal-form derivative choice independence holds at every m>=1, including the explicit physical mass endpoint.",
       "No global Gardner canonicity or cross-mode Cartesian zero brackets are assumed or inferred.",
-      "Theorem 3 and the final independent-angle/angle-sum clause of Theorem 4(iii) remain incomplete.",
+      "The remaining main-theorem obligations from this checkpoint are discharged by independent_Abelian_full_rotation_and_angle_sum and IndependentAbelianAngleSum.lean. The original real H1 angle-sum clause and corrected all-order frequency comparison are complete.",
       "No global inverse on arbitrary rough original L2 Cartesian target data is used or asserted."
     ]
   },
@@ -1372,30 +1383,35 @@
     ],
     "scope": "For every complex H1 source and actual Hill functionals with H2 gradients, actual pullback Gardner brackets equal the independently defined weak Hill Magri bivector. Any actual gradient representatives agree. Native positive-index action flows have Hs derivatives for all integer s>=1 at every real profile, retaining the original L2 Gardner coefficients; H1 functional chain rules follow without L2 extension.",
     "limits": [
-      "Independent original mKdV angles and final angle-sum factorization remain open.",
+      "The remaining main-theorem obligations from this checkpoint are discharged by independent_Abelian_full_rotation_and_angle_sum and IndependentAbelianAngleSum.lean. The original real H1 angle-sum clause and corrected all-order frequency comparison are complete.",
       "No arbitrary-potential weak-Magri Jacobi identity or cross-mode Cartesian canonicity is inferred."
     ]
   },
   "global_full_phase_sum_descent_implication": {
-    "status": "proved_global_continuous_action_descent_and_full_open_domain_phase_sum_implication_independent_mKdV_phase_still_required",
+    "status": "proved_and_instantiated_with_actual_full_independent_spectral_phase_on_exact_original_domain",
     "declarations": [
       "NLS.Articles.MKdVNLSHierarchies.physical_complete_action_flow_invariant_factor",
       "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_phase_sum_descent_of_independent_Gardner_phase",
       "NLS.MKdV.exists_independent_open_Gardner_phase_action_factor",
       "NLS.MKdV.miuraNativeNLSAngularCoordinate_zero_iff_physical_action_zero",
-      "NLS.MKdV.hasDerivAt_independent_functional_miuraActionFlow_allTimes"
+      "NLS.MKdV.hasDerivAt_independent_functional_miuraActionFlow_allTimes",
+      "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_complete_action_rotation",
+      "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_actual_action_generator",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_phase_sum",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_angle_sum",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_sum_representatives"
     ],
     "domain": "Every integer s>=1, original real Hs profiles; the selected physical J_m alone must be nonzero for the unit phase. Every other action may be zero; infinite support, zero mean and arbitrary signed mean are included.",
     "method": "Real normalized parameter decoding; full native Cartesian homeomorphism; density of finite coordinate rotations on the complete sequence action torus; actual native derivatives at every time and physical Gardner H1 chain rules; scalar exponential ODE uniqueness; bounded phase times vanishing amplitude extends continuously; invariant amplitude division recovers full unit phases.",
     "qualifications": [
-      "The full original independent Hill Abelian phase is now constructed below and satisfies the boundedness and exact own-open-domain continuity inputs. Its actual opposite physical-action rotation law remains unproved; the original main theorem is not claimed complete.",
+      "The full original independent spectral conjugate now has the required actual negative action rotation on every native real Hs space, s>=1, arbitrary support and all terminal configurations. The conditional descent is instantiated; Theorem4iii is complete.",
       "The general continuous factor is only a function; no extra analyticity is asserted.",
       "The source angle sum is represented by full unit-phase multiplication, with no squaring or loss modulo pi.",
       "No independent angle is defined as the negative NLS angle."
     ]
   },
   "independent_Hill_separated_coordinate_Magri_geometry": {
-    "status": "proved_actual_physical_weak_Magri_matrix_and_periodic_second_cotangent_regularity_independent_Abelian_phase_still_required",
+    "status": "proved_actual_physical_weak_Magri_matrix_and_periodic_second_cotangent_regularity",
     "declarations": [
       "NLS.Articles.MKdVNLSHierarchies.independent_Hill_weak_Magri_spectral_brackets",
       "NLS.Articles.MKdVNLSHierarchies.independent_Hill_logEnergy_unit_Magri_bracket",
@@ -1413,8 +1429,8 @@
     "regularity": "Both independent gradients and first derivatives are AC; second derivatives L2; periodic gradient endpoint values zero; energy first-derivative endpoints zero; log-norming first-derivative endpoints ONE. Exact weak Lenard boundary term and antisymmetry proved.",
     "limits": [
       "No derivative of a rough L2 potential is taken.",
-      "The physical-to-coefficient bridge, actual H1 Miura pullback brackets and the full continuous independent Abelian phase are now proved below. The negative original physical-action generators remain unproved.",
-      "These separated-coordinate brackets do not alone complete Theorem4iii or establish full Cartesian canonicity."
+      "The physical-to-coefficient bridge, actual H1 Miura pullback brackets, full continuous independent Abelian phase and its negative original physical-action generators are proved in later modules.",
+      "These separated-coordinate brackets do not alone establish full Cartesian canonicity; the independent full phase and final Theorem4iii are proved separately."
     ]
   },
   "native_independent_spectral_Gardner_geometry": {
@@ -1434,12 +1450,12 @@
     "positivity": "Every original Dirichlet energy is strictly positive on every real H1 Miura profile, including closed gaps. Half-log-energy gradients require no extra positivity hypothesis.",
     "matrix": "{mu_n,mu_m}=0; {mu_n,kappa_m}=-2mu_n delta; {kappa_n,mu_m}=+2mu_n delta; {kappa_n,kappa_m}=0; {(1/2)log(mu_n),kappa_m}=-delta, reverse+delta, half-log/half-log=0.",
     "limits": [
-      "The independent regular correction series now converges locally uniformly at every original real L2 Hill potential. Its full unit phase is continuous on the exact original real H1 own-open-action domain. Negative generators for the original physical actions remain unproved.",
-      "Final Theorem4iii remains incomplete; instantiate the existing full phase-product descent after identifying the original phase. The printed final angle-sum claim is dependence as a function of actions and mean, without an additional analyticity claim."
+      "The independent regular correction series converges locally uniformly. Its spectral conjugate has the actual negative physical-action generators on every original real H1 input with arbitrary support.",
+      "The printed final angle-sum conclusion is now proved as dependence on all physical actions and literal signed mean, without an additional analyticity claim."
     ]
   },
   "independent_Abelian_divisor_phase_construction": {
-    "status": "proved_actual_full_phase_and_locally_uniform_correction_convergence_all_original_H1_profiles_negative_physical_action_rotation_open",
+    "status": "proved_actual_full_phase_locally_uniform_convergence_and_completed_negative_physical_action_rotation",
     "declarations": [
       "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_partial_Abelian_phase_original_H1",
       "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_finiteGap_Abelian_phase",
@@ -1461,9 +1477,8 @@
     "partial_phase_domain": "EVERY original real H1 Miura profile with its own actual original physical mKdV action nonzero. Arbitrary signed mean and arbitrary spectral support; other gaps may all be closed. Each finite partial phase has normone and a local fullcomplexH1 analytic representative agreeing on the entire realH1 neighborhood.",
     "finiteGap_full_phase": "On EVERY original finite-gap Miura profile, support of all open gaps is selected from original physical contour actions. The full correction series converges because all terms off that support vanish exactly. Its phase is unit on its own open-action locus and independent of any finite support set containing the open gaps.",
     "limits": [
-      "Full correction convergence and real continuity are proved below. No additional full complex analytic phase extension is asserted or needed for the printed final angle-sum claim.",
-      "Negative Gardner generators and opposite action-flow rotation for the original physical mKdV actions remain unproved, including for the constructed finite-gap phase.",
-      "Final Theorem4iii remains incomplete until the actual opposite rotation law is proved and the checked full phase-product descent is instantiated. No negative NLS phase is assigned as the definition."
+      "No full complex analytic extension of the infinite phase is asserted or needed.",
+      "The spectral conjugate has negative generators and complete action rotation; the checked full phase-product descent is instantiated. No NLS angle defines the independent phase."
     ]
   },
   "full_independent_Abelian_phase_locally_uniform_convergence": {
@@ -1489,14 +1504,12 @@
     "local_uniform_estimate": "For every fixed normalized mode n and real Hill base potential q there exist N>=1,C>0 and a real L2 neighborhood on which the original kth regular correction has norm <=C/(k+1)^2 for all k>=N. The summed tail from M>=N is bounded by2*C/(M+1).",
     "proof": "Combine the free-contour Hilbert numerator bound, bounded complex inverse-root comparison, actual physical root matching, endpoint-root norm <=k*pi^2 and quadratic free spectral separation. The maximum modulus principle extends the deflated quotient estimate to the physical gap. Local analytic Hilbert parameters and a nonzero analytic normalization make the constants uniform near the real base potential. Integration over the actual chosen terminal in[-pi,pi] gives the correction bound; reciprocal-square tail summation and individual term continuity give full sum continuity.",
     "limits": [
-      "No opposite action-flow rotation or negative physical-action Gardner generator has yet been proved.",
       "No full complex analytic extension of the infinite phase is claimed.",
-      "The final printed angle-sum conclusion remains incomplete until opposite rotation and the already checked descent are combined.",
-      "The current independent phase uses the explicit exp(+i*sum) convention. Its orientation relative to the source canonical vartheta has not yet been identified. The new actual generator formula must fix that sign; conjugating the independently constructed spectral phase may be necessary. No negative NLS phase may be assigned as its definition."
+      "The raw phase uses exp(+i*sum). Its spectral conjugate gives the source orientation and has checked negative generators and full opposite rotation on arbitrary support. The final full angle-sum factorization is complete."
     ]
   },
   "original_Dirichlet_motion_under_physical_actions": {
-    "status": "proved_actual_trace_cotangent_and_contour_generators_all_time_original_Dirichlet_motion_full_phase_rotation_still_open",
+    "status": "proved_actual_trace_cotangent_and_contour_generators_all_time_original_Dirichlet_motion",
     "declarations": [
       "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_discriminant_physical_Gardner",
       "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_action_contour",
@@ -1521,10 +1534,7 @@
     "physical_action_formula": "The actual Gardner direction of original J_n is the bounded source cotangent difference applied to the actual original NLS action differential. On the zero-excluding Laurent circle, the independent Dirichlet-energy generator is exactly -(2/pi)*circleIntegral(z*integral(f_m*G_(z^2)_prime)/R_ZS(z)). Every coefficient, contour, canonical root and index is supplied by checked original spectral constructions.",
     "motion": "Local original branch agreement transfers the actual native Hs Gardner chain rule to the globally labeled independent Dirichlet energy. The final all-time derivative statement contains no arbitrary choice of local branch.",
     "limits": [
-      "This does not yet prove negative unit generators or opposite flow rotation of the full independent Abelian phase.",
-      "The independent sheet and normalized Abelian period/interpolation reduction are still needed. General infinite-gap phase continuity is already proved.",
-      "Final Theorem4iii remains incomplete. No angle is defined as a negative NLS angle, and no divisor velocity or bracket is prescribed as an axiom.",
-      "The current independent phase uses the explicit exp(+i*sum) convention. Its orientation relative to the source canonical vartheta has not yet been identified. The new actual generator formula must fix that sign; conjugating the independently constructed spectral phase may be necessary. No negative NLS phase may be assigned as its definition."
+      "The normalized physical Abelian period, actual root and sheet normalization, terminal continuation and full independent phase rotation are proved in subsequent modules. No divisor velocity is prescribed as an axiom and no phase is defined using a negative NLS angle."
     ]
   },
   "original_Dirichlet_characteristic_product": {
@@ -1551,8 +1561,7 @@
     "entire_product": "The literal products prod_(j=0)^(N-1) ((mu_(j+1)-E)/(pi*(j+1))^2) converge locally uniformly to the actual scalar Dirichlet characteristic at every complex energy. Their energy derivatives also converge locally uniformly. A general shared maximum-principle lemma transfers convergence from odd frequency characteristics z*H_N(z^2) to the energy functions H_N, filling E=0 without a continuous global square-root choice.",
     "derivative_normalization": "At every positive divisor frequency r_n, chi_prime(r_n)=2*mu_n*s_Hill_prime(mu_n). At zero, chi_prime(0)=s_Hill(0), and the latter is nonzero for every original real H1 input.",
     "limits": [
-      "These are actual characteristic, divisor and product identities. No Abelian phase is defined using a negative NLS phase.",
-      "The finite-gap Lagrange interpolation and the canonical angle orientation/actual rotation are not yet proved. Final Theorem4iii remains incomplete."
+      "These are actual characteristic, divisor and product identities. The later finite-gap interpolation, canonical source orientation, complete rotation and full angle-sum proof are checked. No Abelian phase is defined using an NLS angle."
     ]
   },
   "independent_Abelian_finite_gap_interpolation": {
@@ -1580,9 +1589,8 @@
     "sheet_normalization": "The determinant-one scalar monodromy gives d*sheetRoot=d^2-1 at every complex characteristic zero. At real Dirichlet energies M=s_prime(mu)*d, so(d^2-1)/M=sheetRoot/s_prime(mu). Thus2*(mu-E)*integral(f_mu*G_E_prime)=sheetRoot(mu)*s(E)/s_prime(mu), including coincident energies and closed gaps.",
     "interior_contraction": "If all K retained original sheet roots are nonzero and E differs from the retained Dirichlet energies, sum_(k<K) psi(mu_(k+1))*integral(f_(k+1)*G_E_prime)/sheetRoot(mu_(k+1))=-psi(E)/2. The minus one half is proved with actual gradients, actual sheets and actual characteristic derivatives.",
     "limits": [
-      "The original trace contraction has its stated interior-sheet and noncoincident-energy hypotheses. Supported interpolation now permits closed holes.",
-      "The actual phase derivative, physical period evaluation and source orientation are now checked at interior finite-gap divisors. Canonical generator continuation through terminals and closed contributing gaps remains open.",
-      "Theorem4iii final angle-sum factorization is incomplete. No spectral phase is defined from a negative NLS phase."
+      "The original interior trace contraction retains its stated sheet and noncoincident-energy hypotheses. Supported interpolation permits closed holes.",
+      "Subsequent modules prove canonical generator continuation through every terminal/closed configuration, full rotation on arbitrary support and final Theorem4iii."
     ]
   },
   "independent_Abelian_physical_phase_motion": {
@@ -1597,9 +1605,7 @@
     "chain_rule": "Compatible local real Dirichlet angle lifts represent the actual finite phase as exp(i*sum_F fullCosinePrimitive). Differentiation uses the actual Hill coefficient curve induced by the complete physical action flow, the checked scalar primitive FTC and the original Dirichlet energy velocities.",
     "generator": "The actual full phase derivative at interior finite-gap divisors is (i/pi)*phase*integral_(original certified physical frequency circle) z*psi(z^2)/R_ZS(z). The positive sign is proved. The finite interpolation omits closed holes using actual vanishing numerator values. Every contour point avoids every actual Dirichlet energy, and analytic trace kernels justify exchanging the finite sum with the integral.",
     "limits": [
-      "The original physical period is now evaluated as pi times the Kronecker delta on arbitrary support; see independent_Abelian_original_action_periods.",
-      "The full finite-gap phase is now differentiable at terminal configurations. The negative canonical generator value there and rotation on arbitrary support remain open.",
-      "The source orientation is fixed by spectral conjugation with a checked negative interior finite-gap generator. Final Theorem4iii factorization is still open."
+      "The original physical period is pi times the Kronecker delta on arbitrary support. Subsequent actual spatial-translation density and full Lie continuity extend the source-oriented generator to terminals; the complete action-flow rotation and angle-sum factorization are proved."
     ]
   },
   "independent_Abelian_original_action_periods": {
@@ -1616,9 +1622,8 @@
     "orientation": "The existing exp(+i*sum) independent phase has actual positive i*delta generators at interior finite-gap divisors. Define miuraNativeOppositeAbelianPhase as its complex conjugate, using no NLS phase. The resulting actual generator is negative i*delta. The conjugated phase has norm at most1 everywhere, norm1 on exactly its own native NLS angular-open locus, zero on its own closed locus and continuity on that open locus, for all native real Hs classes s>=1 and arbitrary support.",
     "terminal_regularity": "The actual full finite-gap phase and its spectral conjugate are differentiable along every positive physical action flow at every real time without any nonzero contributing-sheet assumption. A finite partial phase has a local complex analytic Hill coefficient extension, which differentiates along the actual rough Hill action curve. Isospectrality identifies this with the literal full phase on each finite-gap orbit. If the own gap is closed, the full phase vanishes on the entire orbit. This proves existence of the derivative at terminal and closed configurations, not its canonical value.",
     "limits": [
-      "Negative Kronecker generator values are proved at interior finite-gap divisors. Full finite-gap differentiability and continuity of the actual Lie derivative on each own-open finite-gap stratum are now proved through terminals and closed contributing gaps. The canonical value there still needs the actual translated interior-density argument.",
-      "Original physical contour-period normalization is complete on arbitrary support. The all-configuration rotation law and final factorization remain open.",
-      "The independent phase is spectral and is never defined from an original NLS angle."
+      "The original physical contour-period normalization is complete on arbitrary support. Subsequent modules extend its negative source-oriented generator through terminals and closed contributing gaps and prove full rotation and final angle-sum factorization.",
+      "The independent phase is spectral and never defined from an original NLS angle."
     ]
   },
   "independent_Abelian_terminal_geometry": {
@@ -1636,9 +1641,30 @@
     "parabolic_release": "If the actual original quasi-Hill monodromy at E=z^2, z nonzero, is [[epsilon,0],[c,epsilon]], then the actual translated scalar Dirichlet characteristic is minus c times the square of the original fundamental Dirichlet position at the shift. The original position has derivative1 at zero. If c is nonzero, every sufficiently small positive shift makes that characteristic nonzero. This statement retains its explicit actual-monodromy hypothesis and is not yet asserted as density at all open spectral endpoints.",
     "open_endpoints": "For every real period-one L2 Hill potential, every positive open gap index and either actual original endpoint, the derivative of the actual energy discriminant is nonzero. This follows from the checked all-index radicand multiplicity formula and simple-zero derivative criterion, without a high-index or finite-gap hypothesis.",
     "limits": [
-      "The nontrivial parabolic-monodromy hypothesis still must be derived from the original open-endpoint data; it is not assumed as a completed article theorem.",
-      "The original native Miura spatial translate must still be identified with the continuous coefficient translate used in the actual quasi-Hill basepoint identity.",
-      "Interior density, canonical generator values at terminals, global rotation for arbitrary support and final Theorem4iii angle-sum factorization remain open."
+      "The explicit parabolic hypotheses of the terminal-release lemma are now derived at every actual open Dirichlet endpoint in MiuraOpenEndpointMonodromy.lean. The actual native profile translation is identified in MiuraNativePeriodicProfile.lean. Subsequent modules prove simultaneous interior divisors, canonical terminal generator values and the full final angle sum."
+    ]
+  },
+  "latest_validation": "Full audit52658 terminal PASS: targeted9615, combined54495;1113 article/shared NLS modules,1116 frozen inputs and1101 unchanged prefix outputs. Strict default compilation and transitive axiom audits passed. No essential mathematical obligations remain.",
+  "independent_Abelian_full_rotation_and_angle_sum": {
+    "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_complete_action_rotation",
+      "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_actual_action_generator",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_phase_sum",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_angle_sum",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_sum_representatives"
+    ],
+    "domain": "All native real Hs spaces s>=1; the final source theorem is specialized to the original full real H1 space. All physical action supports and signed means are permitted. Only the selected angle requires its own action open.",
+    "endpoint_monodromy": "The original energy-entire Volterra columns have determinant one. At an actual open Dirichlet endpoint the upper-right entry vanishes and the trace is twice (-1)^k. The matrix is therefore parabolic. A scalar monodromy would force zero energy trace derivative by differentiating its unit determinant, contradicting the checked all-index simple open-endpoint derivative. Thus its lower entry is nonzero, without an added monodromy hypothesis.",
+    "translation_density": "Positive Fourier translation is exactly translation of the literal period-one Sobolev synthesis. The original translated Hill characteristic equals the independently translated quasi-Hill characteristic at every complex energy. Every positive gap endpoint is strictly positive, so the earlier nonzero-frequency transfer applies. Both endpoint characteristics are nonzero at all sufficiently small positive shifts; the actual Dirichlet root lies strictly inside its fixed gap and its actual sheet is nonzero. A finite intersection handles all contributing open gaps simultaneously; closed contributors are filtered out.",
+    "terminal_generator": "The native translation curve converges in Hs, retains the exact closed complement and own-open domain, and has interior contributing sheets for all sufficiently small positive shifts. The actual full phase Lie derivative is continuous on that stratum. Right-limit uniqueness gives its negative Kronecker value at every finite-gap terminal configuration.",
+    "finite_gap_rotation": "The actual group law transports the generator at zero to every real time. Everywhere differentiability, including terminals, is checked. The scalar constant-coefficient ODE integrates to exp(-i*delta*t) times the actual independent phase. Own-closed phases vanish along the entire orbit.",
+    "arbitrary_support": "Finite normalized Cartesian truncations decode through the actual global native homeomorphism to genuine finite-gap profiles and converge in Hs. Conjugacy to the fixed bounded linear Cartesian rotation proves initial-profile continuity of the actual action flow. Own-open phase continuity passes the exact full rotation identity to arbitrary support.",
+    "factorization": "The actual independent spectral conjugate is supplied to exists_opposite_unit_phase_action_factor. The full product with the actual NLS unit phase depends only on the entire physical action sequence and literal signed mean. Unit norm holds on the exact own-open locus. Every real angle representative gives this same full exponential of the angle sum, modulo exactly2*pi.",
+    "scope_limits": [
+      "No additional analyticity of the angle-sum factor is asserted.",
+      "No full cross-mode Cartesian canonicity or rough L2 inverse is asserted or needed.",
+      "The three documented source corrections remain: Theorem2(ii) matrix, Theorem3 positive sign and Theorem4(ii) reverse mean squared."
     ]
   }
 }

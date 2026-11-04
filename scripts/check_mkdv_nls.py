@@ -1137,6 +1137,18 @@ modules = [
     'NLS/MKdV/QuasiHillTerminalTranslation.lean',
     'NLS/KdV/HillOpenEndpointTraceDerivative.lean',
     'NLS/Articles/MKdVNLSHierarchies/IndependentAbelianTerminalGeometry.lean',
+    'NLS/MKdV/QuasiHillMonodromyEnergy.lean',
+    'NLS/MKdV/MiuraOpenEndpointMonodromy.lean',
+    'NLS/MKdV/MiuraNativePeriodicProfile.lean',
+    'NLS/MKdV/MiuraNativeEndpointRelease.lean',
+    'NLS/KdV/HillDirichletInteriorSheet.lean',
+    'NLS/MKdV/MiuraNativeInteriorTranslation.lean',
+    'NLS/MKdV/MiuraFiniteGapTerminalGenerator.lean',
+    'NLS/MKdV/MiuraFiniteGapPhaseRotation.lean',
+    'NLS/MKdV/MiuraNativeFiniteGapApproximation.lean',
+    'NLS/MKdV/MiuraFullPhaseRotation.lean',
+    'NLS/MKdV/MiuraFullPhaseGenerator.lean',
+    'NLS/Articles/MKdVNLSHierarchies/IndependentAbelianAngleSum.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

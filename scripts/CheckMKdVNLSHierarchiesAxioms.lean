@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianAngleSum
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianTerminalGeometry
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhasePeriods
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhaseMotion
@@ -3651,11 +3652,75 @@ private def mkdvNLSAuditPrefixes56 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.IndependentAbelianTerminalGeometry,
 ]
 
+private def mkdvNLSAuditPrefixes57 : Array Lean.Name := #[
+  `NLS.MKdV.analyticAt_quasiHillFundamentalMatrix_entry,
+  `NLS.MKdV.deriv_quasiHillDiscriminant_eq_zero_of_scalar_monodromy,
+  `NLS.MKdV.quasiHillMonodromy_parabolic_of_Dirichlet_trace,
+  `NLS.MKdV.quasiHillMonodromy_lower_ne_zero_of_Dirichlet_trace_deriv,
+  `_private.NLS.MKdV.QuasiHillMonodromyEnergy,
+  `NLS.MKdV.miuraQuasiHillDiscriminant_open_endpoint,
+  `NLS.MKdV.miuraQuasiHillMonodromy_open_Dirichlet_endpoint,
+  `_private.NLS.MKdV.MiuraOpenEndpointMonodromy,
+  `NLS.MKdV.miuraNativePeriodicProfile,
+  `NLS.MKdV.miuraNativePeriodicProfile_periodic,
+  `NLS.MKdV.miuraNativePeriodicProfile_unit,
+  `NLS.MKdV.miuraNativePeriodicProfile_spatialTranslation,
+  `NLS.MKdV.miuraNativeHillDirichletCharacteristic_spatialTranslation,
+  `_private.NLS.MKdV.MiuraNativePeriodicProfile,
+  `NLS.MKdV.miuraHillLabels_pos,
+  `NLS.MKdV.continuous_miuraNativeDirichletCharacteristic_spatialTranslation,
+  `NLS.MKdV.miuraNativeDirichletCharacteristic_open_endpoint_eventually_ne_zero,
+  `_private.NLS.MKdV.MiuraNativeEndpointRelease,
+  `NLS.KdV.hillDirichletSheetRoot_ne_zero_of_endpoint_characteristics,
+  `_private.NLS.KdV.HillDirichletInteriorSheet,
+  `NLS.MKdV.miuraNativeHillPotential,
+  `NLS.MKdV.miuraNativeDirichletSheetRoot_spatialTranslation_eventually_ne_zero,
+  `NLS.MKdV.miuraNativeFiniteDirichletSheets_spatialTranslation_eventually_ne_zero,
+  `_private.NLS.MKdV.MiuraNativeInteriorTranslation,
+  `NLS.MKdV.miuraNativeRealActionFlow_zero,
+  `NLS.MKdV.miuraNativeHillActionCurve_zero,
+  `NLS.MKdV.miuraNativeHill_halfLength_zero_iff_angular_zero,
+  `NLS.MKdV.miuraNativeHill_halfLength_spatialTranslation,
+  `NLS.MKdV.miuraNativeNLSAngularCoordinate_spatialTranslation_ne_zero,
+  `NLS.MKdV.miuraNativeOppositeAbelianPhase_Lie_finiteGap,
+  `_private.NLS.MKdV.MiuraFiniteGapTerminalGenerator,
+  `NLS.MKdV.miuraNativeRealActionFlow_add,
+  `NLS.MKdV.miuraNativeClosedComplement_actionFlow,
+  `NLS.MKdV.miuraNativeNLSAngularCoordinate_actionFlow_ne_zero,
+  `NLS.MKdV.hasDerivAt_miuraNativeOppositeAbelianPhase_actionFlow_finiteGap_allConfigurations,
+  `NLS.MKdV.miuraNativeOppositeAbelianPhase_actionFlow_finiteGap,
+  `_private.NLS.MKdV.MiuraFiniteGapPhaseRotation,
+  `NLS.MKdV.miuraNativeFiniteGapApproximation,
+  `NLS.MKdV.tendsto_miuraNativeFiniteGapApproximation,
+  `NLS.MKdV.miuraNativeFiniteGapApproximation_closedComplement,
+  `NLS.MKdV.continuous_miuraNativeRealActionFlow_initial,
+  `_private.NLS.MKdV.MiuraNativeFiniteGapApproximation,
+  `NLS.MKdV.continuousAt_miuraNativeOppositeAbelianPhase,
+  `NLS.MKdV.miuraNativeOppositeAbelianPhase_actionFlow_open,
+  `NLS.MKdV.miuraNativeOppositeAbelianPhase_actionFlow,
+  `NLS.MKdV.exists_miuraIndependentAbelianPhase_action_factor,
+  `_private.NLS.MKdV.MiuraFullPhaseRotation,
+  `NLS.MKdV.hasDerivAt_miuraNativeOppositeAbelianPhase_actionFlow,
+  `_private.NLS.MKdV.MiuraFullPhaseGenerator,
+  `NLS.Articles.MKdVNLSHierarchies.independent_full_phase_complete_action_rotation,
+  `NLS.Articles.MKdVNLSHierarchies.independent_full_phase_actual_action_generator,
+  `NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_phase_sum,
+  `NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_angle_sum,
+  `NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_sum_representatives,
+  `_private.NLS.Articles.MKdVNLSHierarchies.IndependentAbelianAngleSum,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50, mkdvNLSAuditPrefixes51, mkdvNLSAuditPrefixes52, mkdvNLSAuditPrefixes53, mkdvNLSAuditPrefixes54, mkdvNLSAuditPrefixes55, mkdvNLSAuditPrefixes56, mkdvNLSAuditPrefixes57] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.independent_full_phase_complete_action_rotation,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_full_phase_actual_action_generator,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_phase_sum,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_angle_sum,
+    ``NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_sum_representatives,
+
     ``NLS.Articles.MKdVNLSHierarchies.independent_full_phase_finite_gap_Lie_continuity,
     ``NLS.Articles.MKdVNLSHierarchies.independent_finite_gap_stratum_spatial_translation,
     ``NLS.Articles.MKdVNLSHierarchies.independent_quasi_Hill_terminal_release,

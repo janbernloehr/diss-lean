@@ -5490,3 +5490,15 @@ import NLS.MKdV.QuasiHillPeriodicBasepoint
 import NLS.MKdV.QuasiHillTerminalTranslation
 import NLS.KdV.HillOpenEndpointTraceDerivative
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianTerminalGeometry
+import NLS.MKdV.QuasiHillMonodromyEnergy
+import NLS.MKdV.MiuraOpenEndpointMonodromy
+import NLS.MKdV.MiuraNativePeriodicProfile
+import NLS.MKdV.MiuraNativeEndpointRelease
+import NLS.KdV.HillDirichletInteriorSheet
+import NLS.MKdV.MiuraNativeInteriorTranslation
+import NLS.MKdV.MiuraFiniteGapTerminalGenerator
+import NLS.MKdV.MiuraFiniteGapPhaseRotation
+import NLS.MKdV.MiuraNativeFiniteGapApproximation
+import NLS.MKdV.MiuraFullPhaseRotation
+import NLS.MKdV.MiuraFullPhaseGenerator
+import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianAngleSum

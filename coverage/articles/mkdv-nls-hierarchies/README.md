@@ -1,10 +1,13 @@
 # The mKdV and NLS hierarchies revisited — verification coverage
 
-Status: **Theorems 1 and 2 proved on their original complex Sobolev domains
-(with the matrix correction in Theorem 2(ii)); Theorem 4(i) and corrected
-Theorem 4(ii) proved on the full original real H1 domain. Theorem 4(iii)'s
-angle-action bracket clause is proved on its original angle domain.
-Theorem 3 is proved at every order with the corrected positive sign on the full real H^(m-1) domain, including closed actions. Theorem 4(iii)'s independent canonical angles and final angle-sum clause remain incomplete**.
+Status: **All main theorems are proved with the documented source corrections.
+Theorems 1 and 2 hold on their original complex Sobolev domains (with the
+matrix correction in Theorem2(ii)). Theorem3 holds at every order on the
+full real H^(m-1) domain, including closed actions, with the corrected
+positive frequency sign. Theorem4 holds on the original full real H1
+domain, with mean squared in its reverse clause. Its final independent
+angle-sum factorization now holds for arbitrary support and all terminal
+configurations.**
 
 One common open complex native physical-action/signed-mean domain and one
 holomorphic l1-valued factor recover all original signed NLS actions for
@@ -28,22 +31,14 @@ is uniquely specified by its actual original angle bracket and continuous
 sharp-domain continuation. A common open complex H^(m-1) neighborhood
 holomorphically extends each frequency through all closed actions. At m=1
 both frequencies equal +2*pi*n, and a checked zero-profile counterexample
-refutes the printed (-1)^m factor. Independent canonical angles/final angle
-sums remain open.
-Current independent-phase progress: the independent full spectral phase has
-its source-oriented conjugate and checked negative Kronecker generators at
-interior finite-gap divisors. The original physical Abelian period is pi
-times the Kronecker delta for every real H1 profile, with arbitrary support
-and collapsed gaps. The full finite-gap phase is differentiable through all
-terminal configurations, and its actual Lie derivative is now continuous on
-each fixed finite-gap stratum. Actual native spatial translations preserve
-those strata and every original Hill label. The actual quasi-Hill IVP gives
-a terminal-release formula under an explicit nontrivial parabolic-monodromy
-hypothesis, and every actual open endpoint has nonzero energy trace
-derivative. Connecting these endpoint and translation identities to prove
-interior density, then extending the canonical generator and the global
-rotation law to arbitrary support, remains essential for final factorization.
-See the latest milestone below.
+refutes the printed (-1)^m factor. The final independent angle-sum clause is now proved.
+The independent full spectral conjugate now has its exact negative
+Kronecker generators and complete physical action-flow rotation at every
+real time, through all terminal configurations and with arbitrary support.
+Its full product with the actual NLS unit phase factors through the entire
+physical action sequence and literal signed mean. No negative NLS angle
+enters the independent phase definition. No extra analyticity of the
+angle-sum factor is asserted. See the final milestone and validation below.
 
 Prepared 2026-11-02 against canonical commit
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`.
@@ -109,10 +104,10 @@ The higher-action trace has factor `1/2^(k-1)` at Hamiltonian order k.
 | Theorem 1, p. 3 | For each integer m>=1, all complex u in H^m: `X_(S_(2m))#=(Y_(K_m),Y_(K_m))` and `S_(2m)#=0`. | **Proved** by `theorem1`, with the actual native Frechet gradient and Gardner distribution derivative. `smoothMiuraSpectralHamiltonian` extracts K_m from the independent physical Hill discriminant through recursive coefficient limits on all smooth complex profiles. Its unique continuous extension to the complete complex H^(m-1) domain exists and is entire analytic; `miuraSpectralHillHamiltonian_eq_native` identifies it with the independent scalar Riccati hierarchy. `proposition6` gives the full native factor-two identity, including the L2 mass endpoint. | None for Theorem 1. The source's actual finite-gap primitive Laurent series also has exactly these spectral Hamiltonians as its coefficients. |
 | Theorem 2(i), p. 3 | For every k>=1, every pair phi in H^(k-1), every real alpha: swap and phase-gradient identities, then the induced vector-field covariance. | **Proved.** `theorem2_i_swap_gradients`, `theorem2_i_phase_gradients`, `theorem2_i_swap_vector_fields` and `theorem2_i_phase_vector_fields` give all four printed identities on exactly H^(k-1), including H0 when k=1. The analytic L2 gradient represents the actual physical Hamiltonian's Frechet derivative. | None. |
 | Theorem 2(ii), p. 3 | For each m>=1 and pair in H^(2m-1), assuming `P phi=R_alpha phi` for some real alpha, the even/odd gradient recurrence. | **Proved with the matrix corrected to R=diag(i,-i).** `theorem2_ii_corrected` uses Mathlib's actual distribution derivative of the physical period-one L2 fields; its value is represented by the certified even L2 gradient. `theorem2_ii_corrected_coefficients` gives the equivalent 2*pi*i*j Fourier identity. Both retain the exact complex source domain and phase hypothesis. | None for the corrected assertion; the printed matrix typo is recorded below. |
-| Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted original NLS frequency and independent mKdV frequency on ALL real H^(m-1), including collapsed actions by analytic extension; the printed parity factor is false. | **COMPLETE with corrected positive sign.** `FrequencyIdentification.lean`: `theorem3_corrected` and `theorem3_corrected_for_any_original_frequency_extension`; `theorem3_original_bracket_agreement` identifies the actual original S_(2m) angle bracket before sharp continuation. `theorem3_original_frequency_extension_certificate` proves unique continuous extension; `theorem3_frequency_holomorphic_extension` supplies one common open complex neighborhood containing all real profiles. The mass benchmark and printed-parity counterexample are checked separately. | No remaining obligation for corrected Theorem 3. Independent canonical angles and the final angle-sum statement belong to Theorem 4(iii). |
-| Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | **Proved** by `theorem4_i` on the full real H1 domain, including collapsed gaps and zero mean. The mKdV action is the literal inverse-energy-weighted integral of the independent physical Hill primitive on a proved isolating contour; its equality with a positive real-gap integral and contour independence are checked. | None for part (i). Corrected part (ii) is proved; the final angle-sum clause of part (iii) remains open. |
+| Theorem 3, p. 4 | For every n>=1 and m>=1, equality of the restricted original NLS frequency and independent mKdV frequency on ALL real H^(m-1), including collapsed actions by analytic extension; the printed parity factor is false. | **COMPLETE with corrected positive sign.** `FrequencyIdentification.lean`: `theorem3_corrected` and `theorem3_corrected_for_any_original_frequency_extension`; `theorem3_original_bracket_agreement` identifies the actual original S_(2m) angle bracket before sharp continuation. `theorem3_original_frequency_extension_certificate` proves unique continuous extension; `theorem3_frequency_holomorphic_extension` supplies one common open complex neighborhood containing all real profiles. The mass benchmark and printed-parity counterexample are checked separately. | None for corrected Theorem 3. The final independent angle-sum clause of Theorem 4(iii) is also complete. |
+| Theorem 4(i), p. 4 | For all real u in H^1: central NLS action zero iff mean zero; for each n>=1, restricted I_n zero iff J_n zero; restricted I_(-n)=I_n. | **Proved** by `theorem4_i` on the full real H1 domain, including collapsed gaps and zero mean. The mKdV action is the literal inverse-energy-weighted integral of the independent physical Hill primitive on a proved isolating contour; its equality with a positive real-gap integral and contour independence are checked. | None for part (i). Parts (ii) and (iii) are complete with the documented correction to the reverse mean clause. |
 | Theorem 4(ii), p. 4 | On real H^1, each I_n# is analytic in the mKdV actions and mean; conversely each J_n and the printed mean are analytic in NLS actions alone. | **Proved with the converse mean corrected to mean squared.** `theorem4_ii_nls_actions_of_mkdv_actions_mean` supplies one common global holomorphic l1-valued forward factor on an open complex native action/mean domain containing every original real H1 profile. `theorem4_ii_mkdv_actions_of_nls_actions` and `theorem4_ii_mean_square_of_nls_actions` supply the global converse factors, including zero mean and closed gaps. | None for the corrected statement. The printed global signed-mean converse is false; its obstruction is checked. |
-| Theorem 4(iii), p. 4 | For all positive n,m, the angle-action Gardner bracket is delta_mn where the relevant angle is defined; angle sums then depend on actions and mean. | **The angle-action bracket clause is proved** by `theorem4_iii_angle_action` on every real H1 input where the angle is defined. The action index may have a closed gap. The actual Gardner distribution derivative and original NLS angle differential are identified. | Construct the independent mKdV angle and prove the final angle-sum factorization through J and mean. |
+| Theorem 4(iii), p. 4 | For all positive n,m and every original real H1 profile, the angle-action Gardner bracket is delta_mn where its own angle is defined; the full angle sum depends only on all physical actions and signed mean. | **COMPLETE.** `theorem4_iii_angle_action` proves the actual restricted NLS angle bracket. `IndependentAbelianAngleSum.lean`: `theorem4_iii_independent_angle_sum` and `theorem4_iii_angle_sum_representatives` prove the full independent angle sum modulo exactly 2*pi. `independent_full_phase_complete_action_rotation` and `independent_full_phase_actual_action_generator` give the actual negative independent generators on arbitrary support, including all terminal configurations. | None. Only the selected own action must be open. No extra analytic angle-sum factor is asserted. |
 
 The main dependencies singled out by the article are Theorem 5 (p. 9,
 Miura/Hill versus diagonal ZS discriminants), Proposition 6 (p. 12,
@@ -120,6 +115,12 @@ Miura/Hill versus diagonal ZS discriminants), Proposition 6 (p. 12,
 Theorem 6 (pp. 13–14, discriminant symmetries), Lemma 10 (pp. 16–17,
 action-gradient identities) and Proposition 11 (pp. 17–18, hierarchy gradients).
 These are dependencies of the four main theorems, not extra completion targets.
+
+## Proof-development checkpoints
+
+The following notes preserve the successive proof checkpoints. Statements
+about work remaining at an earlier checkpoint are superseded by the current
+coverage table and the final completion milestone.
 
 The all-order Riccati resolvent bridge proving Theorem 2(ii) is now checked.
 `constructed_riccati_resolvent_identities` proves its coupled coefficient
@@ -2746,3 +2747,54 @@ new modules add 69 public declarations: 55 theorems and 14 definitions.
 All 1,087 earlier mathematical sources are unchanged.
 
 Validation: all1,101 article/shared NLS modules have validated private outputs. Fourteen new NLS modules and the aggregate compiled with autoImplicit=false and warnings as errors under default limits. All1,087 earlier mathematical source hashes and private compiled-output hashes match the frozen pushed49d2806 baseline. The complete targeted audit passed for 9,550 declarations/auxiliaries and the combined audit for 54,430 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All1,104 frozen source/checker/aggregate hashes and the additional pinned mathlib source/private-output hashes match. Public inventory:4,930 declarations(4,121 theorems and809 definitions). All3,326 old audit scopes are byte-preserved and83 new scopes added in two arrays of at most64, for57 blocks total, each referenced exactly once. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source.
+
+## 2026-11-04 — final independent phase rotation and angle-sum theorem
+
+The remaining clause of Theorem4(iii) is proved on the full original real
+H1 domain. The independent source-oriented phase is the spectral conjugate
+of the original full Hill Abelian phase, defined from actual Dirichlet data
+and normalized Abelian integrals. It rotates by exp(-i*delta*t) under every
+complete physical action flow, for every real time and arbitrary action
+support. Its product with the actual restricted NLS unit phase is a function
+of all physical actions and literal signed mean alone. Only its own angle
+must be open; every other action may be closed. The full unit phases retain
+angles modulo exactly 2*pi. No analytic angle-sum factor is assumed or claimed.
+
+The endpoint argument is now unconditional at actual open Dirichlet
+endpoints. Original energy-entire monodromy columns and determinant one
+force the parabolic form. Scalar monodromy would force zero energy trace
+derivative; actual simple open endpoints exclude it, proving that the lower
+entry is nonzero. Literal Sobolev synthesis identifies native spatial
+translation with the original coefficient translate. The translated actual
+Dirichlet characteristic is nonzero at both fixed endpoints for every
+sufficiently small positive shift. Finite intersections give simultaneous
+interior divisors for all open contributing gaps. Closed contributors are
+filtered out without changing the finite closed-gap complement.
+
+Norm continuity of the actual full phase Lie derivative on that stratum
+extends its checked negative Kronecker value to every finite-gap terminal.
+The actual action group law and scalar ODE uniqueness give the complete
+finite-gap rotation. Finite normalized Cartesian truncations decode to
+actual finite-gap profiles and converge in native Hs. Conjugacy to a fixed
+bounded Cartesian rotation gives continuity of the action flow in its
+initial profile. Phase continuity on its exact own-open domain passes the
+rotation law to arbitrary support. The checked full phase-product descent
+is instantiated with this actual independent spectral phase.
+
+The final article interface is IndependentAbelianAngleSum.lean:
+
+- independent_full_phase_complete_action_rotation
+- independent_full_phase_actual_action_generator
+- theorem4_iii_independent_phase_sum (all native integer Hs, s>=1)
+- theorem4_iii_independent_angle_sum (original full real H1 domain)
+- theorem4_iii_angle_sum_representatives (any real phase representatives)
+
+Twelve new modules add 43 public declarations: 40 theorems and three
+definitions. All 1,101 earlier mathematical sources are unchanged. The
+main source theorems are complete with the already documented corrections:
+Theorem2(ii)'s matrix, the positive frequency sign in Theorem3, and mean
+squared in the reverse clause of Theorem4(ii). There are no remaining
+essential mathematical obligations. Full aggregate compilation and both transitive axiom audits passed; the
+final evidence is recorded below.
+
+Final validation: all1,113 article/shared NLS modules have validated private outputs. Twelve new NLS modules and the aggregate compiled with autoImplicit=false and warnings as errors under default limits. All1,101 earlier mathematical source hashes and private compiled-output hashes match the frozen pushedfdb5ac0 baseline. The complete targeted audit passed for 9,615 declarations/auxiliaries and the combined audit for 54,495 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All1,116 frozen source/checker/aggregate hashes and the additional pinned mathlib source/private-output hashes match. Public inventory:4,973 declarations(4,161 theorems and812 definitions). All3,409 old audit scopes are byte-preserved and55 new scopes added in one array of at most64, for58 blocks total, each referenced exactly once. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source. All main source claims are complete with the three documented corrections.

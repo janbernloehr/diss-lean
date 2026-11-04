@@ -3289,3 +3289,54 @@ new modules add 69 public declarations: 55 theorems and 14 definitions.
 All 1,087 earlier mathematical sources are unchanged.
 
 Validation: all1,101 article/shared NLS modules have validated private outputs. Fourteen new NLS modules and the aggregate compiled with autoImplicit=false and warnings as errors under default limits. All1,087 earlier mathematical source hashes and private compiled-output hashes match the frozen pushed49d2806 baseline. The complete targeted audit passed for 9,550 declarations/auxiliaries and the combined audit for 54,430 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All1,104 frozen source/checker/aggregate hashes and the additional pinned mathlib source/private-output hashes match. Public inventory:4,930 declarations(4,121 theorems and809 definitions). All3,326 old audit scopes are byte-preserved and83 new scopes added in two arrays of at most64, for57 blocks total, each referenced exactly once. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source.
+
+## 2026-11-04 — final independent phase rotation and angle-sum theorem
+
+The remaining clause of Theorem4(iii) is proved on the full original real
+H1 domain. The independent source-oriented phase is the spectral conjugate
+of the original full Hill Abelian phase, defined from actual Dirichlet data
+and normalized Abelian integrals. It rotates by exp(-i*delta*t) under every
+complete physical action flow, for every real time and arbitrary action
+support. Its product with the actual restricted NLS unit phase is a function
+of all physical actions and literal signed mean alone. Only its own angle
+must be open; every other action may be closed. The full unit phases retain
+angles modulo exactly 2*pi. No analytic angle-sum factor is assumed or claimed.
+
+The endpoint argument is now unconditional at actual open Dirichlet
+endpoints. Original energy-entire monodromy columns and determinant one
+force the parabolic form. Scalar monodromy would force zero energy trace
+derivative; actual simple open endpoints exclude it, proving that the lower
+entry is nonzero. Literal Sobolev synthesis identifies native spatial
+translation with the original coefficient translate. The translated actual
+Dirichlet characteristic is nonzero at both fixed endpoints for every
+sufficiently small positive shift. Finite intersections give simultaneous
+interior divisors for all open contributing gaps. Closed contributors are
+filtered out without changing the finite closed-gap complement.
+
+Norm continuity of the actual full phase Lie derivative on that stratum
+extends its checked negative Kronecker value to every finite-gap terminal.
+The actual action group law and scalar ODE uniqueness give the complete
+finite-gap rotation. Finite normalized Cartesian truncations decode to
+actual finite-gap profiles and converge in native Hs. Conjugacy to a fixed
+bounded Cartesian rotation gives continuity of the action flow in its
+initial profile. Phase continuity on its exact own-open domain passes the
+rotation law to arbitrary support. The checked full phase-product descent
+is instantiated with this actual independent spectral phase.
+
+The final article interface is IndependentAbelianAngleSum.lean:
+
+- independent_full_phase_complete_action_rotation
+- independent_full_phase_actual_action_generator
+- theorem4_iii_independent_phase_sum (all native integer Hs, s>=1)
+- theorem4_iii_independent_angle_sum (original full real H1 domain)
+- theorem4_iii_angle_sum_representatives (any real phase representatives)
+
+Twelve new modules add 43 public declarations: 40 theorems and three
+definitions. All 1,101 earlier mathematical sources are unchanged. The
+main source theorems are complete with the already documented corrections:
+Theorem2(ii)'s matrix, the positive frequency sign in Theorem3, and mean
+squared in the reverse clause of Theorem4(ii). There are no remaining
+essential mathematical obligations. Full aggregate compilation and both transitive axiom audits passed; the
+final evidence is recorded below.
+
+Final validation: all1,113 article/shared NLS modules have validated private outputs. Twelve new NLS modules and the aggregate compiled with autoImplicit=false and warnings as errors under default limits. All1,101 earlier mathematical source hashes and private compiled-output hashes match the frozen pushedfdb5ac0 baseline. The complete targeted audit passed for 9,615 declarations/auxiliaries and the combined audit for 54,495 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All1,116 frozen source/checker/aggregate hashes and the additional pinned mathlib source/private-output hashes match. Public inventory:4,973 declarations(4,161 theorems and812 definitions). All3,409 old audit scopes are byte-preserved and55 new scopes added in one array of at most64, for58 blocks total, each referenced exactly once. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source. All main source claims are complete with the three documented corrections.
