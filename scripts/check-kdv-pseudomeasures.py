@@ -1234,6 +1234,13 @@ modules = [
     'NLS.KdV.HillActionAngleCartesian',
     'NLS.KdV.HillActionAngleUniformBound',
     'NLS.Articles.KdVPseudomeasures.OriginalHillActionAngleAmplitude',
+    'NLS.ZakharovShabat.SourceEnclosedGapDisplacementBound',
+    'NLS.KdV.HillOnIndexCircleBound',
+    'NLS.KdV.HillOnIndexUniformNumeratorTail',
+    'NLS.KdV.HillOnIndexUniformCorrectionTail',
+    'NLS.KdV.HillOnIndexUniformCorrectionBound',
+    'NLS.KdV.HillOnIndexUniformCartesianBound',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillUniformDiagonalCorrection',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
