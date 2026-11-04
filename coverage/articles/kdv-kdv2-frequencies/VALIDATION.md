@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest exact actual cubic frequency contours
+## Latest actual finite-gap KdV moment identity
+
+Every actual real period-one L2 source now has genuine filled shifted differentials on every intrinsic gap disc. The literal normalized moments have zeroth value 2*pi*delta_nk, every odd moment vanishes, and every positive moment vanishes at a collapsed gap, including the own index. Filled analytic circle extensions handle branch points; no false analyticity of literal total-division values is assumed.
+
+Actual band geometry gives disjoint enlarged intrinsic discs and complete finite-hole coverage. Cauchy's theorem now deforms the actual cubic outer contour into the actual gap contours, retaining every first-N index, including a closed selected index. Exact cubic algebra gives the leading cube and -12 weighted second moments. At physical real smooth mean-zero finite-gap sources, the actual KdV velocity coefficient and coordinate derivative have this formula, with a genuine finite-support HasSum for the countable source sum. See `FINITE_GAP_KDV_MOMENT_IDENTITY.md`.
+
+Prior strict evidence for all 1085 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1091 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1120 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1091-module rebuild is claimed.
+
+Fresh audit: 9857 selected and 32287 imported NLS declarations, permitted axioms only. The actual Hamiltonian/action-frequency realization of (69), full complex rough-W moment scope and sharp bounds, quintic route (84) and complete main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier exact actual cubic frequency contours
 
 The actual cubic kernel now has genuine local analytic charts through the ground cut and every nonselected closed gap. A byte-identical canonical dense-limit helper joins those charts into ONE analytic filled kernel. The selected own gap remains a hole even if closed. Codiscrete circle congruence proves that filling the real cuts changes neither the genuine circle integral nor integrability.
 
@@ -296,7 +306,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1085 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1091 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1365,7 +1375,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1085 selected modules (including generated and private declarations)
+the 1091 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -2635,4 +2645,16 @@ PASS NLS/KdV/HillCubicKernelFilledDomain
 PASS NLS/KdV/HillCubicKernelExterior
 PASS NLS/Articles/KdVKdV2Frequencies/FiniteGapCubicVelocityContours
 Axiom audit passed: 9798 candidate declarations; 32228 declarations total.
+```
+
+Latest actual intrinsic KdV moment strict additions and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillShiftedDifferentialContinuation
+PASS NLS/KdV/HillIntrinsicFrequencyMoments
+PASS NLS/KdV/HillIntrinsicCubicFrequency
+PASS NLS/KdV/HillIntrinsicGapGeometry
+PASS NLS/KdV/HillFiniteGapIntrinsicDecomposition
+PASS NLS/Articles/KdVKdV2Frequencies/FiniteGapKdVMomentIdentity
+Axiom audit passed: 9857 candidate declarations; 32287 declarations total.
 ```

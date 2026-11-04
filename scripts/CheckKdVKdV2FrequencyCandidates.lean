@@ -1,3 +1,9 @@
+import NLS.Articles.KdVKdV2Frequencies.FiniteGapKdVMomentIdentity
+import NLS.KdV.HillFiniteGapIntrinsicDecomposition
+import NLS.KdV.HillIntrinsicCubicFrequency
+import NLS.KdV.HillIntrinsicGapGeometry
+import NLS.KdV.HillIntrinsicFrequencyMoments
+import NLS.KdV.HillShiftedDifferentialContinuation
 import NLS.Articles.KdVKdV2Frequencies.FiniteGapCubicVelocityContours
 import NLS.KdV.HillCubicKernelExterior
 import NLS.ComplexAnalysis.NonrealCircleCongruence
@@ -1324,7 +1330,13 @@ run_cmd do
     `NLS.KdV.HillCubicKernelLocalContinuation,
     `NLS.KdV.HillCubicKernelFilledDomain,
     `NLS.KdV.HillCubicKernelExterior,
-    `NLS.Articles.KdVKdV2Frequencies.FiniteGapCubicVelocityContours
+    `NLS.Articles.KdVKdV2Frequencies.FiniteGapCubicVelocityContours,
+    `NLS.KdV.HillShiftedDifferentialContinuation,
+    `NLS.KdV.HillIntrinsicFrequencyMoments,
+    `NLS.KdV.HillIntrinsicCubicFrequency,
+    `NLS.KdV.HillIntrinsicGapGeometry,
+    `NLS.KdV.HillFiniteGapIntrinsicDecomposition,
+    `NLS.Articles.KdVKdV2Frequencies.FiniteGapKdVMomentIdentity
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

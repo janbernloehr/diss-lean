@@ -1094,6 +1094,12 @@ modules=(
   NLS/KdV/HillCubicKernelFilledDomain
   NLS/KdV/HillCubicKernelExterior
   NLS/Articles/KdVKdV2Frequencies/FiniteGapCubicVelocityContours
+  NLS/KdV/HillShiftedDifferentialContinuation
+  NLS/KdV/HillIntrinsicFrequencyMoments
+  NLS/KdV/HillIntrinsicCubicFrequency
+  NLS/KdV/HillIntrinsicGapGeometry
+  NLS/KdV/HillFiniteGapIntrinsicDecomposition
+  NLS/Articles/KdVKdV2Frequencies/FiniteGapKdVMomentIdentity
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest exact actual cubic frequency contours
+## Latest actual finite-gap KdV moment identity
+
+Every actual real period-one L2 source now has genuine filled shifted differentials on every intrinsic gap disc. The literal normalized moments have zeroth value 2*pi*delta_nk, every odd moment vanishes, and every positive moment vanishes at a collapsed gap, including the own index. Filled analytic circle extensions handle branch points; no false analyticity of literal total-division values is assumed.
+
+Actual band geometry gives disjoint enlarged intrinsic discs and complete finite-hole coverage. Cauchy's theorem now deforms the actual cubic outer contour into the actual gap contours, retaining every first-N index, including a closed selected index. Exact cubic algebra gives the leading cube and -12 weighted second moments. At physical real smooth mean-zero finite-gap sources, the actual KdV velocity coefficient and coordinate derivative have this formula, with a genuine finite-support HasSum for the countable source sum. See `FINITE_GAP_KDV_MOMENT_IDENTITY.md`.
+
+Prior strict evidence for all 1085 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1091 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1120 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1091-module rebuild is claimed.
+
+Fresh audit: 9857 selected and 32287 imported NLS declarations, permitted axioms only. The actual Hamiltonian/action-frequency realization of (69), full complex rough-W moment scope and sharp bounds, quintic route (84) and complete main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier exact actual cubic frequency contours
 
 The actual cubic kernel now has genuine local analytic charts through the ground cut and every nonselected closed gap. A byte-identical canonical dense-limit helper joins those charts into ONE analytic filled kernel. The selected own gap remains a hole even if closed. Codiscrete circle congruence proves that filling the real cuts changes neither the genuine circle integral nor integrability.
 
