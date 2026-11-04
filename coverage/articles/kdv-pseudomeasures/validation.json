@@ -1,7 +1,7 @@
 {
   "date": "2026-11-04",
   "article_main_theorems_verified": false,
-  "phase": "Prove the exact endpoint Fourier derivative equivalence and both complex and real analytic local inverses, including the literal original potential norm topology.",
+  "phase": "Construct the literal unit-period Gardner Poisson bracket and actual analytic coordinate cotangents, prove physical integral, Jacobi, mean-zero extension independence and exact canonical matrix at zero.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1347,13 +1347,23 @@
     "NLS/Articles/KdVPseudomeasures/OriginalEndpointRealCoordinates.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalEndpointSourceTopology.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalEndpointLocalInverse.lean",
+    "NLS/Poisson/GardnerBivector.lean",
+    "NLS/Poisson/HminusGardnerBracket.lean",
+    "NLS/KdV/HillNativeGardnerCoordinates.lean",
+    "NLS/Poisson/GardnerModePairing.lean",
+    "NLS/KdV/HillNativeFreeGardnerRelations.lean",
+    "NLS/Poisson/GardnerPhysicalIntegral.lean",
+    "NLS/Poisson/GardnerHamiltonianDirection.lean",
+    "NLS/Poisson/GardnerBracketJacobi.lean",
+    "NLS/Poisson/GardnerZeroModeRestriction.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillGardnerBrackets.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 5924,
-  "definitions": 1136,
+  "proved_theorems": 5981,
+  "definitions": 1151,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 7060,
+    "declarations": 7132,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -2680,10 +2690,19 @@
     "WeightedReindexInfinity supplies contractive arbitrary reindexing with the EXACT pullback weight. PeriodOneEndpointExtract proves bounded extraction of original even physical modes with norm<=2^r, inverse to the previous insertion at exponent infinity. Extraction followed by insertion recovers EVERYoriginal physically period-one distribution on EVERYsmooth test. PeriodOneEndpointRealSource proves original reality and mean-zero equivalences and both exact norm comparisons.",
     "OriginalEndpointRealCoordinates identifies EVERYoriginal real mean-zero physically period-one Potential r with the closed physical real endpoint source by a genuine bijection, retaining the SAMEoriginal distribution. It exports actual native whole-coordinate equality, exact action identity and original positive/negative even-mode Fourier derivative normalization sqrt(2*pi*n). OriginalEndpointSourceTopology defines explicitly the subspace topology from the ORIGINAL Fourier-Lebesgue NORM, proves a homeomorphism to the closed coefficient Banach model and retains both bounded-linear ambient maps.",
     "OriginalEndpointLocalInverse proves BOTHlocal inverse identities on the LITERAL ORIGINALpotential space in its ORIGINALnorm topology, centered at a potential PROVED to be the zero distribution. The inverse is REALanalytic as a map into ORIGINALdistributions, has exact bounded Fourier inverse derivative followed by original even-mode insertion, and takes values in the actual original physical real mean-zero period-one locus.",
-    "This milestone proves endpoint local inversion at0, not Gardner canonicality or global bijectivity. All-source derivative invertibility, global inverse/boundedness/weak-star/flow, remaining nonlinear scales, universal actual numerator scalar and sharp KMT kernel remain OPEN. ALL FIVE MAIN THEOREMS remain UNPROVED. Earlier AppendixB and native Hminus-one real/complex local inverses remain complete."
+    "This milestone proves endpoint local inversion at0, not Gardner canonicality or global bijectivity. All-source derivative invertibility, global inverse/boundedness/weak-star/flow, remaining nonlinear scales, universal actual numerator scalar and sharp KMT kernel remain OPEN. ALL FIVE MAIN THEOREMS remain UNPROVED. Earlier AppendixB and native Hminus-one real/complex local inverses remain complete.",
+    "GardnerBivector defines the LITERAL scalar unit-period spatial derivative with multiplier2*pi*i*k and its bounded action from H1 cotangents to Hminus-one. The continuous bilinear Gardner pairing has the actual reversed-frequency Fourier formula over ALLsigned integers, absolute convergence, antisymmetry, self-bracket0, norm bound2*pi*norm(a)*norm(b), and analytic dependence on both analytic cotangent fields. This is NOT the two-field NLS -iJ bivector.",
+    "HminusGardnerBracket reuses the verified FULL Sobolev duality and existing negNegIsometry. EVERYcontinuous complex Hminus-one derivative has its actual unique H1 cotangent, with coefficient at k equal to evaluation on the RAWunit mode-k, EXACToperator norm and representation of the ENTIREfunctional. Actual analytic scalar maps have FULLBanach analytic H1 gradient fields and analytic Gardner brackets throughout the SAMEdomain.",
+    "GardnerHamiltonianDirection constructs the actual bounded source direction spatialDerivative(gradient), norm<=2*pi*norm(cotangent). EVERYsource cotangent evaluates on this direction to EXACTLY the Gardner bivector. GardnerBracketJacobi derives the complete bracket derivative from the two actual Hessian terms and proves JACOBI for arbitrary analytic scalar functionals on Hminus-one. No global coordinate canonicality is assumed.",
+    "GardnerPhysicalIntegral proves the Fourier bivector is EXACTLY the printed integral from0to1 of the first H1 gradient representative times the actual spatial derivative of the second. The product is integrable for ARBITRARYH1cotangents. No C-infinity or finite-support hypothesis is imposed, and the unit-period factor2 is retained.",
+    "GardnerZeroModeRestriction proves changes of constant cotangent coefficients do not alter the bracket; full cotangents agreeing on EVERYmean-zero tangent have identical pairings. It constructs a bounded extension of closed-source cotangents by the actual zero-mode projection and the intrinsic continuous bilinear bracket on the CLOSEDmean-zero source dual, agreeing EXACTLY with ambient restrictions. Thus the physical H0minus-one bracket is independent of ambient extension.",
+    "HillNativeGardnerCoordinates defines the ACTUALsigned native coordinate functions, their actual H1 gradients and their Gardner brackets. It proves full derivative evaluation and physical-duality representation, exact gradient/operator-norm equality and FULLBanach analyticity of gradients and brackets on ONEcommon native complex domain before ALLindices. Their nonzero Fourier-gradient modes at the free potential are EXACTLY the previously verified native Fourier differential.",
+    "GardnerModePairing evaluates the actual pairing for cotangents with prescribed nonzero modes without assuming anything about their constant modes. HillNativeFreeGardnerRelations applies this to the ACTUALnative coordinate gradients, proving at0 the exact printed canonical matrix: {z_n,z_-m}=i*delta_nm, {z_n,z_m}=0 and {z_-n,z_-m}=0, for ALLpositive n,m. This is canonicality ATTHEFREEPOTENTIALONLY; it does not imply relations away from0.",
+    "OriginalHillGardnerBrackets retains every actual original signed coordinate and original physical potential, exports its physical unit-interval Gardner bracket, analyticity on the common complex domain, intrinsic closed-mean-zero interpretation, Jacobi and the exact free canonical matrix. SourceTheorem3.1(i) away from0 remains OPEN.",
+    "NEXT prove ACTUALsmooth/L2coordinate canonicality and extend by verified density/analyticity, then all-source derivative invertibility and global Birkhoff bijection. Remaining original nonlinear scales, global boundedness/weak-star/flow, universal actual numerator scalar and sharp KMT kernel remain OPEN. ALLFIVEMAIN remain UNPROVED. AppendixB and both native/endpoint real-complex local inverses remain COMPLETE."
   ],
-  "source_correspondence": "Prove the exact endpoint Fourier derivative equivalence and both complex and real analytic local inverses, including the literal original potential norm topology. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NEXT prove actual Gardner canonicality and all-source derivative invertibility, remaining ORIGINAL nonlinear scales and global bijection/boundedness/weak-star/flow. The ACTUAL nonlinear infinity-scale restriction is now FULLcomplex Banach analytic near EVERYreal source, its full derivative at0 is EXACTLY the bounded Fourier equivalence at sourceorder-r/targetorder1/2-r, and BOTHcomplex and real analytic local inverses at0 with EXACTFourier inverse derivatives are PROVED for0<=r<1/2. Every original Potential r is the SAMEphysical distribution, is homeomorphic in its ORIGINALNORMtopology to the closed real coefficient Banach source, and the actual original coordinate map has BOTHlocal inverse identities, a REALanalytic original-distribution-valued inverse and exact inverse derivative. AppendixB/nativeHminus realcomplexlocalinverses remain COMPLETE. Local inversion at0 doesNOTprove Gardner/global or ANYofFIVE MAIN. Universal actual numerator scalar and sharp KMT kernel remain OPEN. Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions and native complex ACTUAL scalar Cartesian formula analyticity/ORIGINAL-energy estimate are proved. The ACTUAL native Cartesian H-minus-one -> exact positive h-minus-one-half sequence map is constructed and FULL Banach-analytic, with exact source norm/action identities and real coefficients. Exact Fourier/Gardner identification, the remaining scales and global Birkhoff map remain OPEN. Do not substitute an NLS Birkhoff map for KdV. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. All1326 baseline non-audit registered sources byte-identical to6f91df4. All15 new modules, three byte-identical canonical shared dependencies, one unchanged private OddSquareDescent and exact7060-declaration audit freshly compiled privately. Prior private lint fixes and historical shared heartbeat options unchanged. No new heartbeat option or increase.",
+  "source_correspondence": "Construct the literal unit-period Gardner Poisson bracket and actual analytic coordinate cotangents, prove physical integral, Jacobi, mean-zero extension independence and exact canonical matrix at zero. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NEXT prove the ACTUALcoordinate Gardner canonical relations at smooth/L2 potentials and extend by the NOWverified analytic H1gradient/Gardner bracket fields to the common Hminus-one domain. The literal physical integral, exact unit-period2*pi*i*k multiplier, full duality gradients, bounded Hamiltonian directions, Jacobi and intrinsic closed-mean-zero bracket are NOWPROVED. The actual coordinate matrix is canonical ATZEROONLY, not at other sources. Then prove all-source derivative invertibility, other ORIGINALnonlinear scales and global Birkhoff bijection/boundedness/weak-star/flow. Every native/endpoint real-complex local inverse at0, original endpoint NORMtopology and AppendixB remain COMPLETE. Universal actual numerator scalar and sharp KMT kernel remain OPEN. ALLFIVEMAIN remain UNPROVED. Density of finitely many OPENgaps cannot substitute for finite-GAP-potential density. Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions and native complex ACTUAL scalar Cartesian formula analyticity/ORIGINAL-energy estimate are proved. The ACTUAL native Cartesian H-minus-one -> exact positive h-minus-one-half sequence map is constructed and FULL Banach-analytic, with exact source norm/action identities and real coefficients. Exact Fourier/Gardner identification, the remaining scales and global Birkhoff map remain OPEN. Do not substitute an NLS Birkhoff map for KdV. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. All1341 baseline non-audit registered sources byte-identical tob198735. All10 new modules, three byte-identical canonical shared dependencies, one unchanged private OddSquareDescent and exact7132-declaration audit freshly compiled privately. Prior private lint fixes and historical shared heartbeat options unchanged. No new heartbeat option or increase.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -3085,7 +3104,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "36685fd115f594367db819773c355a4ed292ea095d32569aa97636c1da767403",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "e5eb8b1a7b5bb6bcc533f9a19e8653958db302c6a6bc67ada424c5ddec2bce4b",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -4032,7 +4051,17 @@
     "NLS/KdV/PeriodOneEndpointRealSource.lean": "1604a62e7289607073824f0f76e0647c91a0d501292c50b695cd09b4f2ddecdf",
     "NLS/Articles/KdVPseudomeasures/OriginalEndpointRealCoordinates.lean": "c892482f6d716cf1aca6d749d0e64823fc1a180b6cc75f6ffaf424c5280b79fe",
     "NLS/Articles/KdVPseudomeasures/OriginalEndpointSourceTopology.lean": "2201f15d48c27e2a7b3f742f37eec465e01aae60ab9ed674762f64e10c497eff",
-    "NLS/Articles/KdVPseudomeasures/OriginalEndpointLocalInverse.lean": "376dcb757c59db3c23cada671af402ce33a9b271a6a665823070034575312ef1"
+    "NLS/Articles/KdVPseudomeasures/OriginalEndpointLocalInverse.lean": "376dcb757c59db3c23cada671af402ce33a9b271a6a665823070034575312ef1",
+    "NLS/Poisson/GardnerBivector.lean": "026574503a2e2861fca6e7915752e7ddfaedac97610515baa5d0fcb4dc40a1fc",
+    "NLS/Poisson/HminusGardnerBracket.lean": "0c2ec3465cdc823ef7364a1bd601c1faac22e9d37b1e0e8ac44a54d055423285",
+    "NLS/KdV/HillNativeGardnerCoordinates.lean": "1099f139385654f8add2fba392f0baf51553373f29a2545c01c3b97cda87cb2a",
+    "NLS/Poisson/GardnerModePairing.lean": "691a4b5d7c37e883842b0b044978dc726ada33ba44f9080a8b9e1367f122cacf",
+    "NLS/KdV/HillNativeFreeGardnerRelations.lean": "d60b1a00aabf8886687cdc025b1263a54eba3713875c33d9324aa13fd9127d2e",
+    "NLS/Poisson/GardnerPhysicalIntegral.lean": "9fe9b1b58255234455a2900b172bc296595ba3798639852afec393494d18c62b",
+    "NLS/Poisson/GardnerHamiltonianDirection.lean": "4d6fc9539616ee5b64afb4145e8ad96fd27c80b11a1bda150cd33ecb73c136da",
+    "NLS/Poisson/GardnerBracketJacobi.lean": "d68b64f5d3da935fa0ff31a327caab5cd19aef1b7a8a7dac3b3e6471e81bb936",
+    "NLS/Poisson/GardnerZeroModeRestriction.lean": "cc595251c53d2ba6e0fcbf5f151bd24fb6bef349521c9724d5ea8e9f2aeb48f4",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillGardnerBrackets.lean": "c3aef2082dbea1ad0e73bf4eb0fcfeb0d0071613ab7c24141594f544f95d6889"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -4040,11 +4069,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 6983,
-    "newly_checked_declarations_this_continuation": 77,
-    "new_theorems": 62,
+    "previous_checked_declarations": 7060,
+    "newly_checked_declarations_this_continuation": 72,
+    "new_theorems": 57,
     "new_definitions": 15,
-    "total_checked_declarations": 7060
+    "total_checked_declarations": 7132
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -4073,7 +4102,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-endpoint-local-inversion.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-gardner-bracket-foundation.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -4377,13 +4406,14 @@
     "Construct the ACTUAL signed complex H-minus-one map with exact square-root-two normalization, identify its FULL Banach Fourier derivative, and prove analytic local inversion on the exact mean-zero source and signed zero-mode target.",
     "Construct the ACTUAL signed coordinate map on the closed physical real mean-zero Banach source and target, prove real analyticity everywhere, exact real Fourier derivative equivalence and analytic local inversion at0.",
     "Prove actual open-gap density, uniform original/native high spectral compatibility and full nonlinear infinity-scale analyticity near every real endpoint source.",
-    "Prove the exact endpoint Fourier derivative equivalence and both complex and real analytic local inverses, including the literal original potential norm topology."
+    "Prove the exact endpoint Fourier derivative equivalence and both complex and real analytic local inverses, including the literal original potential norm topology.",
+    "Construct the literal unit-period Gardner Poisson bracket and actual analytic coordinate cotangents, prove physical integral, Jacobi, mean-zero extension independence and exact canonical matrix at zero."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-endpoint-local-inversion-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-gardner-bracket-foundation-map.json",
   "baseline_validated_snapshot": {
-    "commit": "6f91df4ea93ceab6bc05bf0b52cf85a6f36fd7d3",
-    "modules": 1327,
-    "audited_declarations": 6983,
+    "commit": "b1987359d22c68237a4bd69df6a17a66a50977ef",
+    "modules": 1342,
+    "audited_declarations": 7060,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -6154,6 +6184,24 @@
     "original_potential_local_inverse_BOTH_identities_PROVED": true,
     "original_distribution_valued_inverse_real_analytic_and_exact_derivative_PROVED": true,
     "Gardner_canonicality_PROVED": false,
+    "invertibility_at_every_source_PROVED": false,
+    "full_Birkhoff_bijection_PROVED": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_Gardner_bracket_foundation": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-gardner-bracket-foundation-map.json",
+    "literal_unit_period_Gardner_multiplier_2_pi_i_k_PROVED": true,
+    "actual_FULL_Hminus_differentials_have_H1_cotangents_with_exact_norm_PROVED": true,
+    "actual_H1_gradient_fields_FULL_Banach_analytic_PROVED": true,
+    "Gardner_pairing_absolutely_convergent_and_continuous_bilinear_PROVED": true,
+    "Gardner_pairing_EQUALS_physical_unit_interval_integral_ALL_H1_cotangents_PROVED": true,
+    "actual_Gardner_Hamiltonian_directions_and_FULL_Jacobi_PROVED": true,
+    "Gardner_pairing_intrinsic_to_closed_mean_zero_source_PROVED": true,
+    "actual_signed_native_coordinate_brackets_analytic_on_COMMON_complex_domain_PROVED": true,
+    "actual_signed_coordinate_canonical_matrix_AT_ZERO_PROVED": true,
+    "original_physical_potential_and_signed_coordinates_retained_PROVED": true,
+    "Gardner_canonicality_PROVED": false,
+    "Gardner_canonicality_away_from_zero_PROVED": false,
     "invertibility_at_every_source_PROVED": false,
     "full_Birkhoff_bijection_PROVED": false,
     "all_five_main_theorems_proved": false

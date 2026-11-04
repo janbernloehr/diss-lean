@@ -1373,6 +1373,16 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalEndpointRealCoordinates',
     'NLS.Articles.KdVPseudomeasures.OriginalEndpointSourceTopology',
     'NLS.Articles.KdVPseudomeasures.OriginalEndpointLocalInverse',
+    'NLS.Poisson.GardnerBivector',
+    'NLS.Poisson.HminusGardnerBracket',
+    'NLS.KdV.HillNativeGardnerCoordinates',
+    'NLS.Poisson.GardnerModePairing',
+    'NLS.KdV.HillNativeFreeGardnerRelations',
+    'NLS.Poisson.GardnerPhysicalIntegral',
+    'NLS.Poisson.GardnerHamiltonianDirection',
+    'NLS.Poisson.GardnerBracketJacobi',
+    'NLS.Poisson.GardnerZeroModeRestriction',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillGardnerBrackets',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

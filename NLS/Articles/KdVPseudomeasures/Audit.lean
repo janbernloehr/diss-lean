@@ -1339,6 +1339,16 @@ import NLS.KdV.PeriodOneEndpointRealSource
 import NLS.Articles.KdVPseudomeasures.OriginalEndpointRealCoordinates
 import NLS.Articles.KdVPseudomeasures.OriginalEndpointSourceTopology
 import NLS.Articles.KdVPseudomeasures.OriginalEndpointLocalInverse
+import NLS.Poisson.GardnerBivector
+import NLS.Poisson.HminusGardnerBracket
+import NLS.KdV.HillNativeGardnerCoordinates
+import NLS.Poisson.GardnerModePairing
+import NLS.KdV.HillNativeFreeGardnerRelations
+import NLS.Poisson.GardnerPhysicalIntegral
+import NLS.Poisson.GardnerHamiltonianDirection
+import NLS.Poisson.GardnerBracketJacobi
+import NLS.Poisson.GardnerZeroModeRestriction
+import NLS.Articles.KdVPseudomeasures.OriginalHillGardnerBrackets
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -8402,3 +8412,75 @@ import NLS.Articles.KdVPseudomeasures.OriginalEndpointLocalInverse
 #print axioms NLS.Articles.KdVPseudomeasures.originalEndpointRealInclusionCLM_apply
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_originalEndpointRealSignedCoordinates
 #print axioms NLS.Articles.KdVPseudomeasures.exists_originalEndpointRealSignedCoordinates_localInverse
+#print axioms NLS.Poisson.gardnerDerivative_weight_bound
+#print axioms NLS.Poisson.gardnerDerivative
+#print axioms NLS.Poisson.gardnerDerivative_apply
+#print axioms NLS.Poisson.norm_gardnerDerivative_le
+#print axioms NLS.Poisson.gardnerBivector
+#print axioms NLS.Poisson.gardnerBivector_eq_tsum
+#print axioms NLS.Poisson.summable_norm_gardnerBivector
+#print axioms NLS.Poisson.norm_gardnerBivector_le
+#print axioms NLS.Poisson.gardnerBivector_antisymm
+#print axioms NLS.Poisson.gardnerBivector_self
+#print axioms NLS.Poisson.analyticOnNhd_gardnerBivector
+#print axioms NLS.Poisson.hminusCotangentCLM
+#print axioms NLS.Poisson.hminusCotangentCLM_apply
+#print axioms NLS.Poisson.norm_hminusCotangentCLM
+#print axioms NLS.Poisson.hminusCotangentCLM_represents
+#print axioms NLS.Poisson.hminusScalarGradient
+#print axioms NLS.Poisson.hminusScalarGradient_apply
+#print axioms NLS.Poisson.hminusScalarGradient_represents
+#print axioms NLS.Poisson.norm_hminusScalarGradient
+#print axioms NLS.Poisson.analyticOnNhd_hminusScalarGradient
+#print axioms NLS.Poisson.hminusGardnerBracket
+#print axioms NLS.Poisson.hminusGardnerBracket_antisymm
+#print axioms NLS.Poisson.hminusGardnerBracket_self
+#print axioms NLS.Poisson.norm_hminusGardnerBracket_le
+#print axioms NLS.Poisson.analyticOnNhd_hminusGardnerBracket
+#print axioms NLS.KdV.hillHminusNativeCoordinate
+#print axioms NLS.KdV.analyticOnNhd_hillHminusNativeCoordinate
+#print axioms NLS.KdV.fderiv_hillHminusNativeCoordinate
+#print axioms NLS.KdV.hillHminusNativeCoordinateGradient
+#print axioms NLS.KdV.hillHminusNativeCoordinateGradient_represents
+#print axioms NLS.KdV.analyticOnNhd_hillHminusNativeCoordinateGradient
+#print axioms NLS.KdV.norm_hillHminusNativeCoordinateGradient
+#print axioms NLS.KdV.hillHminusNativeCoordinateGradient_apply
+#print axioms NLS.KdV.hillHminusNativeCoordinateGradient_zero_nonzero_mode
+#print axioms NLS.KdV.hillHminusNativeGardnerBracket
+#print axioms NLS.KdV.analyticOnNhd_hillHminusNativeGardnerBracket
+#print axioms NLS.KdV.hillHminusNativeGardnerBracket_antisymm
+#print axioms NLS.KdV.hillHminusNativeGardnerBracket_self
+#print axioms NLS.Poisson.gardnerBivector_of_nonzero_modes
+#print axioms NLS.KdV.hillHminusNativeGardnerBracket_zero
+#print axioms NLS.KdV.halfFourierSymbol_Gardner_positive_normalization
+#print axioms NLS.KdV.hillHminusNativeGardnerBracket_positive_negative_zero
+#print axioms NLS.KdV.hillHminusNativeGardnerBracket_positive_positive_zero
+#print axioms NLS.KdV.hillHminusNativeGardnerBracket_negative_negative_zero
+#print axioms NLS.Poisson.intervalIntegrable_gardner_product
+#print axioms NLS.Poisson.gardnerBivector_eq_physical_integral
+#print axioms NLS.Poisson.gardnerCotangentBivector
+#print axioms NLS.Poisson.gardnerCotangentBivector_antisymm
+#print axioms NLS.Poisson.gardnerHamiltonianDirection
+#print axioms NLS.Poisson.apply_gardnerHamiltonianDirection
+#print axioms NLS.Poisson.norm_gardnerHamiltonianDirection_le
+#print axioms NLS.Poisson.gardnerHamiltonianVector
+#print axioms NLS.Poisson.fderiv_apply_gardnerHamiltonianVector
+#print axioms NLS.Poisson.gardnerHamiltonianVector_apply
+#print axioms NLS.Poisson.analyticOnNhd_gardnerHamiltonianVector
+#print axioms NLS.Poisson.fderiv_hminusGardnerBracket_apply
+#print axioms NLS.Poisson.hminusGardnerBracket_jacobi
+#print axioms NLS.Poisson.gardnerBivector_congr_nonzero_coefficients
+#print axioms NLS.Poisson.hminusCotangentCLM_eq_nonzero_of_eq_on_mean_zero
+#print axioms NLS.Poisson.gardnerCotangentBivector_eq_of_eq_on_mean_zero
+#print axioms NLS.Poisson.gardnerZeroModeCotangentExtension
+#print axioms NLS.Poisson.gardnerZeroModeCotangentExtension_restrict
+#print axioms NLS.Poisson.gardnerZeroModeCotangentExtensionCLM
+#print axioms NLS.Poisson.gardnerMeanZeroCotangentBivector
+#print axioms NLS.Poisson.gardnerMeanZeroCotangentBivector_restrict
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_signed_coordinate_native
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillGardnerBracket
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Gardner_bracket_physical
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Gardner_bracket_analytic
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Gardner_bracket_intrinsic
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Gardner_bracket_jacobi
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Gardner_brackets_at_zero
