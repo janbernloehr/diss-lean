@@ -785,6 +785,7 @@ import NLS.KdV.HillComplexFreeSupportedPeriodMap
 import NLS.KdV.HillUniformComplexPeriodRoot
 import NLS.ComplexAnalysis.BanachAnalyticZeroBound
 import NLS.KdV.HillUniformComplexPeriodRootBounds
+import NLS.KdV.HillSmallRealRootBox
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
