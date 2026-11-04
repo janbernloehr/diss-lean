@@ -62,8 +62,10 @@ variable
 
 /-- A genuine normalized global differential has an actual jointly analytic
 local extension stationary along every constructed complex Gardner direction. -/
-theorem exists_hillBaseNormalizedComplexPsi_stationary_analytic_branch (n : ℕ) (hn : 1≤n) :
-    ∃ N : ℕ, ∃ a : Coeff 2 → Coeff 2,
+theorem exists_hillBaseNormalizedComplexPsi_stationary_analytic_branch_with_tail_control (n : ℕ) (hn : 1≤n) :
+    ∃ N : ℕ, ∃ B D : ℝ, ∃ a : Coeff 2 → Coeff 2,
+      1≤N ∧ 0<D ∧ HillComplexTailPeriodControl h0q h0r N B D ∧
+      ‖SpectralWeight.one.toCoeff q‖<B ∧
       AnalyticAt ℂ a (SpectralWeight.one.toCoeff q) ∧
       a (SpectralWeight.one.toCoeff q)=hillGapRootHilbertCoordinates q hq hr
         (hillAbelianSelectedGlobalRoots q hq hr n hn).val (hillAbelianSelectedGlobalRoots q hq hr n hn).property ∧
@@ -119,7 +121,7 @@ theorem exists_hillBaseNormalizedComplexPsi_stationary_analytic_branch (n : ℕ)
   have hown : hillAbelianHilbertPeriod q hq hr n n (a (SpectralWeight.one.toCoeff q))≠0 := by
     rw [ha0,hillAbelianHilbertPeriod_eq_genuine_period]
     exact hillAbelianCandidatePeriod_own_ne_zero q hq hr roots hroots n hn
-  refine ⟨N,a,ha,ha0,haX,?_,?_,?_,?_⟩
+  refine ⟨N,B,D,a,hN,hD,hc,hp,ha,ha0,haX,?_,?_,?_,?_⟩
   · intro E
     exact analyticAt_hillBaseNormalizedComplexPsi_root_germ q hq hr n hn a ha hown E
   · intro E
@@ -138,5 +140,28 @@ theorem exists_hillBaseNormalizedComplexPsi_stationary_analytic_branch (n : ℕ)
         (fun m hm => hillMixedComplexPeriodSequence_apply_unsupported q hq hr h0q h0r N n hn _ m hm)
     rw [hfixed] at hprojection
     exact hprojection
+
+/-- The stationary normalized germ, with the auxiliary tail-control data hidden. -/
+theorem exists_hillBaseNormalizedComplexPsi_stationary_analytic_branch (n : ℕ) (hn : 1≤n) :
+    ∃ N : ℕ, ∃ a : Coeff 2 → Coeff 2,
+      AnalyticAt ℂ a (SpectralWeight.one.toCoeff q) ∧
+      a (SpectralWeight.one.toCoeff q)=hillGapRootHilbertCoordinates q hq hr
+        (hillAbelianSelectedGlobalRoots q hq hr n hn).val (hillAbelianSelectedGlobalRoots q hq hr n hn).property ∧
+      (∀ b : ℂ, (fderiv ℂ a (SpectralWeight.one.toCoeff q))
+        (hillL2DiscriminantGardnerDirection (SpectralWeight.one.toCoeff q) b)=0) ∧
+      (∀ E : ℂ, AnalyticAt ℂ
+        (fun t : ℂ × Coeff 2 => hillBaseNormalizedComplexPsi q hq hr n (a t.2,t.2) t.1)
+          (E,SpectralWeight.one.toCoeff q)) ∧
+      (∀ E : ℂ, hillBaseNormalizedComplexPsi q hq hr n
+        (a (SpectralWeight.one.toCoeff q),SpectralWeight.one.toCoeff q) E=
+          hillAbelianSelectedGlobalPsi q hq hr n hn E) ∧
+      (∀ b E : ℂ, (fderiv ℂ (fun p : Coeff 2 => hillBaseNormalizedComplexPsi q hq hr n (a p,p) E)
+        (SpectralWeight.one.toCoeff q))
+          (hillL2DiscriminantGardnerDirection (SpectralWeight.one.toCoeff q) b)=0) ∧
+      ∀ᶠ p in 𝓝 (SpectralWeight.one.toCoeff q),
+        hillMixedComplexPeriodSequence q hq hr h0q h0r N n (a p,p)=0 := by
+  obtain ⟨N,B,D,a,_hN,_hD,_hc,_hp,ha,ha0,haX,hjoint,hbase,hstat,hzeros⟩ :=
+    exists_hillBaseNormalizedComplexPsi_stationary_analytic_branch_with_tail_control q hq hr h0q h0r n hn
+  exact ⟨N,a,ha,ha0,haX,hjoint,hbase,hstat,hzeros⟩
 
 end NLS.KdV

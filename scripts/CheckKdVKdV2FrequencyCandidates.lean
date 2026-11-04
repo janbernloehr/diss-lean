@@ -1,3 +1,6 @@
+import NLS.KdV.HillCanonicalGardnerStationarity
+import NLS.KdV.HillRealSourceJetUniqueness
+import NLS.KdV.HillGlobalDifferentialAnalyticExtension
 import NLS.KdV.HillNormalizedGardnerStationarity
 import NLS.KdV.HillMixedGardnerVariation
 import NLS.ComplexAnalysis.ImplicitRootStationarity
@@ -939,12 +942,23 @@ run_cmd do
     `NLS.KdV.HillBijectivePeriodChart,
     `NLS.KdV.HillBaseNormalizedComplexPsi,
     `NLS.KdV.HillAnalyticNormalizedCandidateBranch,
+    `NLS.KdV.HillLocalNonrealRootMatching,
+    `NLS.KdV.HillLocalPhysicalRootMatching,
+    `NLS.KdV.HillLocalContourGeometry,
+    `NLS.KdV.HillBaseContourPeriodComparison,
+    `NLS.KdV.HillLocalPhysicalPeriodMatching,
+    `NLS.KdV.HillMixedNearbyPhysicalPeriods,
+    `NLS.KdV.HillComplexHilbertNormalizedUniqueness,
+    `NLS.KdV.HillGlobalDifferentialAnalyticExtension,
     `NLS.KdV.HillGardnerLocalRootVariation,
     `NLS.ComplexAnalysis.ParametricCircleStationarity,
     `NLS.KdV.HillAbelianGardnerPeriods,
     `NLS.KdV.HillMixedGardnerVariation,
     `NLS.ComplexAnalysis.ImplicitRootStationarity,
-    `NLS.KdV.HillNormalizedGardnerStationarity]
+    `NLS.KdV.HillNormalizedGardnerStationarity,
+    `NLS.ComplexAnalysis.RealLineDerivativeUniqueness,
+    `NLS.KdV.HillRealSourceJetUniqueness,
+    `NLS.KdV.HillCanonicalGardnerStationarity]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

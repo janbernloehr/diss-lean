@@ -17,7 +17,15 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual normalized differential stationarity
+## Latest canonical normalized differential stationarity
+
+Every differentiable extension agreeing with the genuine normalized differential at nearby real period-one L2 potentials is stationary along every actual complex Gardner direction. The same constructed analytic family now has exact nearby-real canonical agreement; actual real affine curves and complex Fourier decomposition prove extension independence. See `CANONICAL_GARDNER_STATIONARITY.md`.
+
+Prior strict validation of 817 selected sources, of which 816 are unchanged; strict dependency-order compilation of eight byte-identical shared nearby-matching sources; strict final compilation of the extended stationary-branch module and three new proof modules; then a fresh combined transitive axiom audit of all 828 selected modules. Twelve compatible local variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 828-module rebuild is claimed.
+
+Fresh audit: 8090 selected and 30674 imported NLS declarations, permitted axioms only. Abelian-angle variation, physical frequency identities and all main theorem conclusions remain open.
+
+## Earlier actual normalized differential stationarity
 
 See `NORMALIZED_GARDNER_STATIONARITY.md`. Prior strict validation of 572 unchanged selected sources; strict default-limit dependency-order compilation of 239 byte-identical shared normalization dependencies; strict compilation of six new stationarity modules; then a fresh combined transitive axiom audit of all 817 selected modules. Twelve compatible local shared variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 817-module rebuild is claimed.
 

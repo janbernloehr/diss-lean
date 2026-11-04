@@ -706,3 +706,12 @@ See `NORMALIZED_GARDNER_STATIONARITY.md`. Prior strict validation of 572 unchang
 Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permitted standard axioms only. The actual implicit normalized differential germ is stationary along every constructed Gardner direction. Abelian-angle variation, physical frequencies and all main theorem rows remain open.
 
 The six new proof modules are `HillGardnerLocalRootVariation`, `ParametricCircleStationarity`, `HillAbelianGardnerPeriods`, `HillMixedGardnerVariation`, `ImplicitRootStationarity` and `HillNormalizedGardnerStationarity`. The existence theorem constructs a genuine analytic local family at every real period-one L2 base and n>0, retains all actual mixed normalization periods, agrees with the global normalized differential at the base, and proves all complex Gardner source variations vanish. It does not yet identify actual Abelian angles or prove the physical frequency identities (69)/(84). All main source statements remain open.
+
+
+## Latest canonical normalized differential stationarity
+
+Every differentiable extension agreeing with the genuine normalized differential at nearby real period-one L2 potentials is stationary along every actual complex Gardner direction. The same constructed analytic family now has exact nearby-real canonical agreement; actual real affine curves and complex Fourier decomposition prove extension independence. See `CANONICAL_GARDNER_STATIONARITY.md`.
+
+Prior strict validation of 817 selected sources, of which 816 are unchanged; strict dependency-order compilation of eight byte-identical shared nearby-matching sources; strict final compilation of the extended stationary-branch module and three new proof modules; then a fresh combined transitive axiom audit of all 828 selected modules. Twelve compatible local variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 828-module rebuild is claimed.
+
+Fresh audit: 8090 selected and 30674 imported NLS declarations, permitted axioms only. Abelian-angle variation, physical frequency identities and all main theorem conclusions remain open.

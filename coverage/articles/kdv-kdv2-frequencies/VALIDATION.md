@@ -5,7 +5,15 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual normalized differential stationarity
+## Latest canonical normalized differential stationarity
+
+Every differentiable extension agreeing with the genuine normalized differential at nearby real period-one L2 potentials is stationary along every actual complex Gardner direction. The same constructed analytic family now has exact nearby-real canonical agreement; actual real affine curves and complex Fourier decomposition prove extension independence. See `CANONICAL_GARDNER_STATIONARITY.md`.
+
+Prior strict validation of 817 selected sources, of which 816 are unchanged; strict dependency-order compilation of eight byte-identical shared nearby-matching sources; strict final compilation of the extended stationary-branch module and three new proof modules; then a fresh combined transitive axiom audit of all 828 selected modules. Twelve compatible local variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 828-module rebuild is claimed.
+
+Fresh audit: 8090 selected and 30674 imported NLS declarations, permitted axioms only. Abelian-angle variation, physical frequency identities and all main theorem conclusions remain open.
+
+## Earlier actual normalized differential stationarity
 
 See `NORMALIZED_GARDNER_STATIONARITY.md`. Prior strict validation of 572 unchanged selected sources; strict default-limit dependency-order compilation of 239 byte-identical shared normalization dependencies; strict compilation of six new stationarity modules; then a fresh combined transitive axiom audit of all 817 selected modules. Twelve compatible local shared variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 817-module rebuild is claimed.
 
@@ -90,19 +98,19 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 817 selected modules compile with pinned **Lean 4.33.1**, commit
+All 828 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: 572 unchanged previously checked sources, 239 shared
-dependencies and six new modules compiled strictly, then a fresh combined
-transitive axiom audit of all 817 selected modules:
+Validation output: 817 prior selected sources (816 unchanged), eight shared
+imports and four final strict compilations, then a fresh combined transitive
+axiom audit of all 828 selected modules:
 
 ```text
-# Prior strict checks: 572 unchanged selected sources
+# Prior strict checks: 817 baseline sources; one extended source recompiled below
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -675,7 +683,6 @@ PASS NLS/KdV/HillDirichletDiscriminantBrackets
 PASS NLS/KdV/HillL2GardnerTraceInvolution
 PASS NLS/KdV/HillL2GardnerDirections
 PASS NLS/KdV/HillL2GardnerSpectralStationarity
-# Strict shared dependency checks: 239 byte-identical imports
 PASS NLS/ComplexAnalysis/RealGapEllipseHomotopy
 PASS NLS/ComplexAnalysis/RealGapEllipseIntegral
 PASS NLS/ComplexAnalysis/RealGapEllipseLimit
@@ -915,19 +922,32 @@ PASS NLS/KdV/HillSupportedPeriodFredholm
 PASS NLS/KdV/HillBijectivePeriodChart
 PASS NLS/KdV/HillBaseNormalizedComplexPsi
 PASS NLS/KdV/HillAnalyticNormalizedCandidateBranch
-# Final strict default-limit checks: six new modules
 PASS NLS/KdV/HillGardnerLocalRootVariation
 PASS NLS/ComplexAnalysis/ParametricCircleStationarity
 PASS NLS/KdV/HillAbelianGardnerPeriods
 PASS NLS/KdV/HillMixedGardnerVariation
 PASS NLS/ComplexAnalysis/ImplicitRootStationarity
 PASS NLS/KdV/HillNormalizedGardnerStationarity
-# Fresh combined transitive audit of all 817 selected modules
-Axiom audit passed: 8045 candidate declarations; 30623 declarations total.
+# Strict shared checks: eight byte-identical imports
+PASS NLS/KdV/HillLocalNonrealRootMatching
+PASS NLS/KdV/HillLocalPhysicalRootMatching
+PASS NLS/KdV/HillLocalContourGeometry
+PASS NLS/KdV/HillBaseContourPeriodComparison
+PASS NLS/KdV/HillLocalPhysicalPeriodMatching
+PASS NLS/KdV/HillMixedNearbyPhysicalPeriods
+PASS NLS/KdV/HillComplexHilbertNormalizedUniqueness
+PASS NLS/KdV/HillGlobalDifferentialAnalyticExtension
+# Final strict checks: one extended source and three new modules
+PASS NLS/KdV/HillNormalizedGardnerStationarity
+PASS NLS/ComplexAnalysis/RealLineDerivativeUniqueness
+PASS NLS/KdV/HillRealSourceJetUniqueness
+PASS NLS/KdV/HillCanonicalGardnerStationarity
+# Fresh combined transitive audit of all 828 selected modules
+Axiom audit passed: 8090 candidate declarations; 30674 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 817 selected modules (including generated and private declarations)
+the 828 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the

@@ -12139,9 +12139,141 @@
       "source_pages": [
         26
       ],
-      "scope": "Constructs an actual analytic numerator-coordinate branch at every real period-one L2 base and positive n, using genuine selected global roots and the verified bijective normalization derivative. Proves zero coefficient and normalized-differential source derivatives along every complex Gardner direction, joint analyticity at every complex energy, exact agreement with the genuine normalized global differential at the base, and all actual mixed periods zero on a source neighborhood. This is a stationary local normalized germ; Abelian-angle orientation/variation and physical Hamiltonian frequencies are not asserted.",
+      "scope": "Constructs an actual analytic numerator-coordinate branch at every real period-one L2 base and positive n, using genuine selected global roots and the verified bijective normalization derivative. Proves zero coefficient and normalized-differential source derivatives along every complex Gardner direction, joint analyticity at every complex energy, exact agreement with the genuine normalized global differential at the base, and all actual mixed periods zero on a source neighborhood. This is a stationary local normalized germ; Abelian-angle orientation/variation and physical Hamiltonian frequencies are not asserted. Also exposes actual tail-control certificates from the same stationary construction for nearby physical contour matching, while preserving the original existence theorem API.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "d1ac352dcae995297663db3d337f43f3852fe22408a90f191fb2622db00dda98"
+      "sha256": "b90fb7ff729cfd442594be8b8e1a7e29e792a38a6b422a87896d76eb5d6f8a96"
+    },
+    {
+      "path": "NLS/KdV/HillLocalNonrealRootMatching.lean",
+      "source_labels": [
+        "Necessary canonical normalized differential variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared nearby-real contour/root/period matching or canonical normalized Hilbert numerator uniqueness. Imported byte-identically from estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; exact source/local hashes and twelve retained variants are in SHARED_NEARBY_NORMALIZATION_IMPORT.json. These are necessary canonical-family variation dependencies, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "31eded0041ab934905742a273b86ede26e3778f8845661e67d3dfde2343376b8"
+    },
+    {
+      "path": "NLS/KdV/HillLocalPhysicalRootMatching.lean",
+      "source_labels": [
+        "Necessary canonical normalized differential variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared nearby-real contour/root/period matching or canonical normalized Hilbert numerator uniqueness. Imported byte-identically from estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; exact source/local hashes and twelve retained variants are in SHARED_NEARBY_NORMALIZATION_IMPORT.json. These are necessary canonical-family variation dependencies, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "09ed5b8ff83a92fdc46330d9617a363129ab0750b8e991b90fe0b2ef7940eadb"
+    },
+    {
+      "path": "NLS/KdV/HillLocalContourGeometry.lean",
+      "source_labels": [
+        "Necessary canonical normalized differential variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared nearby-real contour/root/period matching or canonical normalized Hilbert numerator uniqueness. Imported byte-identically from estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; exact source/local hashes and twelve retained variants are in SHARED_NEARBY_NORMALIZATION_IMPORT.json. These are necessary canonical-family variation dependencies, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e60dcc951a86893a42c2ebf522c556b2ce98f24bc93fa4894308d5af60f0020f"
+    },
+    {
+      "path": "NLS/KdV/HillBaseContourPeriodComparison.lean",
+      "source_labels": [
+        "Necessary canonical normalized differential variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared nearby-real contour/root/period matching or canonical normalized Hilbert numerator uniqueness. Imported byte-identically from estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; exact source/local hashes and twelve retained variants are in SHARED_NEARBY_NORMALIZATION_IMPORT.json. These are necessary canonical-family variation dependencies, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "893d8c92c309078cfbe5a0db80b9718d4f028a90f370f44bb9e10f42fa148080"
+    },
+    {
+      "path": "NLS/KdV/HillLocalPhysicalPeriodMatching.lean",
+      "source_labels": [
+        "Necessary canonical normalized differential variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared nearby-real contour/root/period matching or canonical normalized Hilbert numerator uniqueness. Imported byte-identically from estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; exact source/local hashes and twelve retained variants are in SHARED_NEARBY_NORMALIZATION_IMPORT.json. These are necessary canonical-family variation dependencies, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7005c3cbc96dd26f8e980a94e11c05370045d3edaf4f6cf78d90f92e4d5ce1f3"
+    },
+    {
+      "path": "NLS/KdV/HillMixedNearbyPhysicalPeriods.lean",
+      "source_labels": [
+        "Necessary canonical normalized differential variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared nearby-real contour/root/period matching or canonical normalized Hilbert numerator uniqueness. Imported byte-identically from estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; exact source/local hashes and twelve retained variants are in SHARED_NEARBY_NORMALIZATION_IMPORT.json. These are necessary canonical-family variation dependencies, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "12a3b2a751f4d8d30ffd910fc0f4a8dd863f967713e1ced87581dc1f8efca209"
+    },
+    {
+      "path": "NLS/KdV/HillComplexHilbertNormalizedUniqueness.lean",
+      "source_labels": [
+        "Necessary canonical normalized differential variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared nearby-real contour/root/period matching or canonical normalized Hilbert numerator uniqueness. Imported byte-identically from estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; exact source/local hashes and twelve retained variants are in SHARED_NEARBY_NORMALIZATION_IMPORT.json. These are necessary canonical-family variation dependencies, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4c97593156eac7b9e3236743ed3dab4cd7e8c44ccff24ab7981551699ac3099d"
+    },
+    {
+      "path": "NLS/KdV/HillGlobalDifferentialAnalyticExtension.lean",
+      "source_labels": [
+        "Necessary canonical normalized differential variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Verified shared nearby-real contour/root/period matching or canonical normalized Hilbert numerator uniqueness. Imported byte-identically from estimates snapshot e36a0443e127c72527458d1970ad66ecbef091f2; exact source/local hashes and twelve retained variants are in SHARED_NEARBY_NORMALIZATION_IMPORT.json. These are necessary canonical-family variation dependencies, not an article main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dabec6a83048bfc3f06b876480cf07a41e0b3cc2708fdf0e7cc541c8d954e35b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealLineDerivativeUniqueness.lean",
+      "source_labels": [
+        "Necessary canonical normalized differential variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Complex Frechet derivatives agree in a direction if the functions agree along its real affine line near the base. The actual complex line chain rule and real derivative uniqueness prove this under differentiability alone.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8f9c8c7787734294cb28637e8f8f16b467d5eac2e9fed059690ee99183eaf458"
+    },
+    {
+      "path": "NLS/KdV/HillRealSourceJetUniqueness.lean",
+      "source_labels": [
+        "Necessary canonical normalized differential variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "Agreement on a neighborhood in the genuine real period-one L2 potential space determines complex source derivatives in every even Fourier direction. Uses actual continuous physical real affine curves, the unit-weight coefficient isometry, conjugate Fourier reflection and a proved real/imaginary decomposition. Differentiability at the base suffices; no assumed complex-germ equality.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dea216b0a80f5afd30c0d329f9e463a163082db47b0622f6a686a872f0918944"
+    },
+    {
+      "path": "NLS/KdV/HillCanonicalGardnerStationarity.lean",
+      "source_labels": [
+        "Necessary canonical normalized differential variation toward the angle identity used before Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        26
+      ],
+      "scope": "The same stationary analytic branch is identified with the genuine canonical normalized differential at every nearby real period-one L2 potential, using actual mixed physical period matching, nonzero own period and entire normalized Hilbert numerator uniqueness. Consequently EVERY differentiable source extension with this nearby physical agreement has zero derivative along every actual complex Gardner direction, at every real period-one L2 base, positive index and complex spectral energy. This does not yet compute actual Abelian-angle variation or identify physical frequencies.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b8d0f1a0d5b5887f5d8da64b8ae37cbaaf87e0839f2df51ce28909b3f4be145f"
     }
   ],
   "dependencies_needed": [
@@ -12173,15 +12305,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 8045,
-    "total_declarations_audited": 30623,
+    "candidate_declarations_audited": 8090,
+    "total_declarations_audited": 30674,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 817,
+    "selected_modules": 828,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -12200,7 +12332,8 @@
     "actual_gardner_trace_validation_sequence": "Prior strict validation of 523 unchanged selected sources, strict default-limit compilation of two existing helper files with only their old heartbeat overrides removed and two new actual scalar Hill gradient/involution modules, then a fresh full combined transitive axiom audit of all 527 selected modules. Selected dependency order is checked transitively, with the helpers before existing consumers. No repeated full 527-module build is claimed. Source hashes, selections, private fresh outputs, nine unchanged shared-import records, canonical helper reuse hashes and clean unchanged canonical main verified.",
     "normalized_dirichlet_trace_bracket_validation_sequence": "Prior strict validation of 527 unchanged selected sources, strict dependency-order compilation of 39 unchanged selected shared imports and three new proof modules, then a fresh full combined transitive axiom audit of all 569 selected modules. Existing compatible local variants retained unchanged. The shared strict checks and new-module checks are separate phases; no repeated full 569-module build is claimed. Exact selections, transitive selected dependency order, source hashes, private fresh outputs, ten shared-import records, canonical reuse hashes and clean unchanged canonical main verified.",
     "actual_gardner_source_tangents_validation_sequence": "Prior strict validation of 569 unchanged selected sources, strict compilation of three new actual rough Hill source-tangent/stationarity modules, then a fresh full combined transitive axiom audit of all 572 selected modules. No new branch imports or changes to existing source/reuse records. Exact selections, transitive selected dependency order, source hashes, private fresh outputs, ten shared-import records, canonical helper reuse hashes and clean unchanged canonical main verified. No repeated full 572-module build is claimed.",
-    "normalized_gardner_stationarity_validation_sequence": "Prior strict validation of 572 unchanged selected sources; strict default-limit dependency-order compilation of 239 byte-identical shared normalization dependencies; strict compilation of six new stationarity modules; then a fresh combined transitive axiom audit of all 817 selected modules. Twelve compatible local shared variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 817-module rebuild is claimed."
+    "normalized_gardner_stationarity_validation_sequence": "Prior strict validation of 572 unchanged selected sources; strict default-limit dependency-order compilation of 239 byte-identical shared normalization dependencies; strict compilation of six new stationarity modules; then a fresh combined transitive axiom audit of all 817 selected modules. Twelve compatible local shared variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 817-module rebuild is claimed.",
+    "canonical_normalized_stationarity_validation_sequence": "Prior strict validation of 817 selected sources, of which 816 are unchanged; strict dependency-order compilation of eight byte-identical shared nearby-matching sources; strict final compilation of the extended stationary-branch module and three new proof modules; then a fresh combined transitive axiom audit of all 828 selected modules. Twelve compatible local variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 828-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -12342,6 +12475,12 @@
       "commit": "e36a0443e127c72527458d1970ad66ecbef091f2",
       "record": "coverage/articles/kdv-kdv2-frequencies/SHARED_NORMALIZED_DIFFERENTIAL_IMPORT.json",
       "kind": "239 byte-identical proved normalization dependencies; twelve compatible local variants retained unchanged. Actual global normalized roots, intrinsic and free-tail periods, and bijective implicit normalization chart. Full branch not merged."
+    },
+    {
+      "branch": "articles/kdv-estimates",
+      "commit": "e36a0443e127c72527458d1970ad66ecbef091f2",
+      "record": "coverage/articles/kdv-kdv2-frequencies/SHARED_NEARBY_NORMALIZATION_IMPORT.json",
+      "kind": "Eight unchanged proved nearby-real contour matching and canonical normalized numerator uniqueness sources; twelve existing local variants retained unchanged. Full branch not merged."
     }
   ],
   "normalized_collapsed_moments_record": "NORMALIZED_COLLAPSED_MOMENTS.md",
@@ -12387,5 +12526,7 @@
   "shared_dirichlet_normalization_import_record": "SHARED_DIRICHLET_NORMALIZATION_IMPORT.json",
   "actual_gardner_source_tangents_record": "ACTUAL_GARDNER_SOURCE_TANGENTS.md",
   "normalized_gardner_stationarity_record": "NORMALIZED_GARDNER_STATIONARITY.md",
-  "shared_normalized_differential_import_record": "SHARED_NORMALIZED_DIFFERENTIAL_IMPORT.json"
+  "shared_normalized_differential_import_record": "SHARED_NORMALIZED_DIFFERENTIAL_IMPORT.json",
+  "canonical_normalized_stationarity_record": "CANONICAL_GARDNER_STATIONARITY.md",
+  "shared_nearby_normalization_import_record": "SHARED_NEARBY_NORMALIZATION_IMPORT.json"
 }

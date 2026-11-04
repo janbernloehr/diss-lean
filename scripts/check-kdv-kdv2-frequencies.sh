@@ -819,12 +819,23 @@ modules=(NLS/ComplexAnalysis/RealLineIdentity
   NLS/KdV/HillBijectivePeriodChart
   NLS/KdV/HillBaseNormalizedComplexPsi
   NLS/KdV/HillAnalyticNormalizedCandidateBranch
+  NLS/KdV/HillLocalNonrealRootMatching
+  NLS/KdV/HillLocalPhysicalRootMatching
+  NLS/KdV/HillLocalContourGeometry
+  NLS/KdV/HillBaseContourPeriodComparison
+  NLS/KdV/HillLocalPhysicalPeriodMatching
+  NLS/KdV/HillMixedNearbyPhysicalPeriods
+  NLS/KdV/HillComplexHilbertNormalizedUniqueness
+  NLS/KdV/HillGlobalDifferentialAnalyticExtension
   NLS/KdV/HillGardnerLocalRootVariation
   NLS/ComplexAnalysis/ParametricCircleStationarity
   NLS/KdV/HillAbelianGardnerPeriods
   NLS/KdV/HillMixedGardnerVariation
   NLS/ComplexAnalysis/ImplicitRootStationarity
-  NLS/KdV/HillNormalizedGardnerStationarity)
+  NLS/KdV/HillNormalizedGardnerStationarity
+  NLS/ComplexAnalysis/RealLineDerivativeUniqueness
+  NLS/KdV/HillRealSourceJetUniqueness
+  NLS/KdV/HillCanonicalGardnerStationarity)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys
