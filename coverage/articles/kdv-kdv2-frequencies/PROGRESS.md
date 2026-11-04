@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest odd periods and actual Dirichlet normalization
+## Latest actual finite-gap KdV2 moment identity
+
+The actual sixth-order Riccati calculation gives D/R=i/(2z)+i*Q(0)/(4z^3)+i*(3Q(0)^2-Qsecond(0))/(16z^5)+O(r^-6). Combining it with the actual primitive yields the whole-circle quintic kernel polynomial with constant mass term -5H0/8 and an O(r^-1) remainder. Genuine contour comparison, the proved actual S0=-2*n*pi and exterior radius independence identify the source-factor fifth contour exactly with V2_n-20*(2*n*pi)*H0.
+
+Consequently, at real smooth period-one mean-zero actual finite-gap physical sources, the actual KdV2 velocity sum satisfies V2_n-20*(2*n*pi)*H0-(2*n*pi)^5=-160*pi^2*sum(k^3*Omega_nk^2)+80*sum(k*Omega_nk^4). Both countable sums are genuine finite-support sums. The literal physical scalar coordinate derivative has this exact coefficient times i*z_n, including a closed selected gap. See `FINITE_GAP_KDV2_MOMENT_IDENTITY.md`.
+
+Prior strict evidence for all 1097 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1102 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1131 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1102-module rebuild is claimed.
+
+Fresh audit: 9981 selected and 32412 imported NLS declarations, permitted axioms only. Full Hamiltonian/action-frequency identification, rough-space compatibility and sharp bounds, native Banach Birkhoff realization and complete main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier odd periods and actual Dirichlet normalization
 
 The actual filled kernel F^(2*m+1)*psi_n/R now has exterior analyticity, genuine circle integrability, radius independence and finite-hole deformation for every nonnegative m at actual real period-one L2 finite-gap sources. The own index remains a hole even when closed. The exact linear outer period is -2*i*n*pi^2. The fifth outer source factor -16/(i*pi), minus (2*n*pi)^5, equals -160*pi^2*sum(k^3*Omega_nk^2)+80*sum(k*Omega_nk^4).
 

@@ -239,6 +239,11 @@ import NLS.KdV.HillWKBLocalResolventModel
 import NLS.KdV.HillLocalDiagonalResolvent
 import NLS.KdV.HillCubicFrequencyKernel
 import Lean.Util.CollectAxioms
+import NLS.KdV.HillQuinticLocalResolvent
+import NLS.KdV.HillQuinticFrequencyKernel
+import NLS.KdV.HillQuinticFrequencyContourComparison
+import NLS.Articles.KdVKdV2Frequencies.FiniteGapQuinticVelocityContours
+import NLS.Articles.KdVKdV2Frequencies.FiniteGapKdV2MomentIdentity
 
 /-! Transitive axiom audit of the candidate and its imported NLS dependencies.
 This deliberately imports specific modules, not the aggregate NLS library.
@@ -1348,7 +1353,12 @@ run_cmd do
     `NLS.KdV.HillLinearFrequencyKernel,
     `NLS.KdV.HillIntrinsicOddFrequencyPeriods,
     `NLS.KdV.HillLinearDirichletContourComparison,
-    `NLS.KdV.HillFiniteGapDirichletNormalization
+    `NLS.KdV.HillFiniteGapDirichletNormalization,
+    `NLS.KdV.HillQuinticLocalResolvent,
+    `NLS.KdV.HillQuinticFrequencyKernel,
+    `NLS.KdV.HillQuinticFrequencyContourComparison,
+    `NLS.Articles.KdVKdV2Frequencies.FiniteGapQuinticVelocityContours,
+    `NLS.Articles.KdVKdV2Frequencies.FiniteGapKdV2MomentIdentity
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
