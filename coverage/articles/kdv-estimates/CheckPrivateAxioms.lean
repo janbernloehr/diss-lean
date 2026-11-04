@@ -708,6 +708,21 @@ import NLS.KdV.HillHomogeneousSpectralSequence
 import NLS.Articles.KdVEstimates.IntegerSpectralEstimates
 import NLS.KdV.HillCommonComplexOwnFactors
 import NLS.KdV.HillCommonOwnFactorsPhysical
+import NLS.ComplexAnalysis.QuadraticGapActionRatioDisc
+import NLS.KdV.HillUniformComplexGapLocalization
+import NLS.KdV.HillCommonComplexDeflatedTrace
+import NLS.KdV.HillCommonComplexActionGapRatio
+import NLS.KdV.HillCommonActionGapRatioPhysical
+import NLS.KdV.HillFreeActionGapRatio
+import NLS.KdV.HillUniformDeflatedInverseBounds
+import NLS.KdV.HillUniformComplexTraceBounds
+import NLS.ComplexAnalysis.QuadraticGapActionRatioBounds
+import NLS.KdV.HillUniformComplexDeflatedTraceBounds
+import NLS.KdV.HillUniformComplexActionRatioBounds
+import NLS.KdV.HillComplexActionRatioNearFree
+import NLS.KdV.HillCommonComplexActionPrefactor
+import NLS.KdV.HillCommonActionPrefactorPhysical
+import NLS.KdV.HillCommonComplexOwnAmplitudes
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1149,7 +1164,10 @@ run_cmd do
     ``NLS.ComplexAnalysis.norm_two_root_factor_div_center_sq_sub_one_le,
     ``NLS.ComplexAnalysis.exists_bounded_analytic_parametric_quadratic_solution_of_zero_period,
     ``NLS.ComplexAnalysis.analyticOnNhd_tsum_of_summable_uniform_bound,
-    ``NLS.SequenceSpaces.continuousAt_lp_two_of_coordinatewise_of_norm]
+    ``NLS.SequenceSpaces.continuousAt_lp_two_of_coordinatewise_of_norm,
+    ``NLS.ComplexAnalysis.analyticAt_quadraticGapActionRatio_of_disc,
+    ``NLS.ComplexAnalysis.norm_deriv_le_of_analytic_closedDisc_bound,
+    ``NLS.ComplexAnalysis.norm_quadraticGapActionRatio_le_of_disc_bound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
