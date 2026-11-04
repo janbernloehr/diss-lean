@@ -978,6 +978,12 @@
       "status": "Construct the literal unit-period Gardner Poisson bracket and actual analytic coordinate cotangents, prove physical integral, Jacobi, mean-zero extension independence and exact canonical matrix at zero. Gardner/global and ALL FIVE MAIN remain OPEN.",
       "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_Gardner_bracket_physical",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-gardner-bracket-foundation-map.json"
+    },
+    {
+      "label": "ACTUAL Hill discriminant Gardner involution and source-dual contour cotangents",
+      "status": "Prove actual Hill discriminant Gardner involution for every complex Hminus-one potential and energy pair, with full trace-gradient derivation and genuine source-dual contour integrals. Gardner/global and ALL FIVE MAIN remain OPEN.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.original_Hill_discriminants_Gardner_commute",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-discriminant-gardner-involution-map.json"
     }
   ],
   "reuse_map": [
@@ -1059,7 +1065,7 @@
   "remaining_obligations": [
     "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
     "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "NEXT prove the ACTUALcoordinate Gardner canonical relations at smooth/L2 potentials and extend by the NOWverified analytic H1gradient/Gardner bracket fields to the common Hminus-one domain. The literal physical integral, exact unit-period2*pi*i*k multiplier, full duality gradients, bounded Hamiltonian directions, Jacobi and intrinsic closed-mean-zero bracket are NOWPROVED. The actual coordinate matrix is canonical ATZEROONLY, not at other sources. Then prove all-source derivative invertibility, other ORIGINALnonlinear scales and global Birkhoff bijection/boundedness/weak-star/flow. Every native/endpoint real-complex local inverse at0, original endpoint NORMtopology and AppendixB remain COMPLETE. Universal actual numerator scalar and sharp KMT kernel remain OPEN. ALLFIVEMAIN remain UNPROVED. Density of finitely many OPENgaps cannot substitute for finite-GAP-potential density.",
+    "NEXT identify the ACTUAL action source gradients with weighted contours of the actual discriminant cotangents, then deduce action involution from the NOWproved all-complex-source spectral Gardner commutation. Continue with actual action-angle brackets and signed-coordinate canonicality away fromzero. The free coordinate canonical matrix, literal physical Gardner integral, Jacobi and intrinsic mean-zero restriction are already proved. All-source derivative invertibility, other ORIGINAL nonlinear scales, global Birkhoff bijection/boundedness/weak-star/flow, universal actual numerator scalar and sharp KMT kernel remain OPEN. AppendixB and both native/endpoint real-complex local inverses remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED. Finite Fourier support density used here does not assert finite-GAP-potential density.",
     "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions and native complex ACTUAL scalar Cartesian formula analyticity/ORIGINAL-energy estimate are proved. The ACTUAL native Cartesian H-minus-one -> exact positive h-minus-one-half sequence map is constructed and FULL Banach-analytic, with exact source norm/action identities and real coefficients. Exact Fourier/Gardner identification, the remaining scales and global Birkhoff map remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
@@ -3471,6 +3477,27 @@
     "actual_signed_native_coordinate_brackets_analytic_on_COMMON_complex_domain_PROVED": true,
     "actual_signed_coordinate_canonical_matrix_AT_ZERO_PROVED": true,
     "original_physical_potential_and_signed_coordinates_retained_PROVED": true,
+    "Gardner_canonicality_PROVED": false,
+    "Gardner_canonicality_away_from_zero_PROVED": false,
+    "invertibility_at_every_source_PROVED": false,
+    "full_Birkhoff_bijection_PROVED": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_discriminant_Gardner_involution_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-discriminant-gardner-involution-map.json",
+    "actual_full_classical_potential_variation_integral_kernels_PROVED": true,
+    "actual_discriminant_gradient_trace_formula_every_complex_potential_PROVED": true,
+    "actual_trace_gradient_third_order_equation_and_periodic_boundary_PROVED": true,
+    "periodic_third_order_Green_identity_and_equal_energy_case_PROVED": true,
+    "actual_native_H1_gradient_has_original_trace_kernel_Fourier_coefficients_PROVED": true,
+    "actual_discriminants_Gardner_commute_every_complex_Hminus_source_PROVED": true,
+    "actual_discriminants_Gardner_commute_every_complex_energy_pair_PROVED": true,
+    "actual_source_cotangent_jointly_entire_in_energy_and_source_PROVED": true,
+    "actual_weighted_source_dual_contour_cotangents_Gardner_commute_PROVED": true,
+    "actual_contour_Hamiltonian_directions_first_order_isospectral_PROVED": true,
+    "original_physical_potential_and_intrinsic_mean_zero_bracket_retained_PROVED": true,
+    "actual_action_gradient_contour_identification_PROVED": false,
+    "actual_action_involution_PROVED": false,
     "Gardner_canonicality_PROVED": false,
     "Gardner_canonicality_away_from_zero_PROVED": false,
     "invertibility_at_every_source_PROVED": false,
