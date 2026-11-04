@@ -1,3 +1,4 @@
+import NLS.KdV.HillHminusOneDirichletNormingTrace
 import NLS.KdV.HillHminusOneDirichletGapLabels
 import NLS.KdV.HillHminusOneDirichletRootBranches
 import NLS.KdV.HillHminusOneIntrinsicWeakConverse

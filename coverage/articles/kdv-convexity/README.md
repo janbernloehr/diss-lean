@@ -2336,6 +2336,53 @@ A common complex domain for sequence-valued Dirichlet/norming data and
 the actual global KdV coordinate realization are still required. The
 physical Hamiltonian/frequency bridge and all main theorems remain open.
 
+## Intrinsic entire Dirichlet column and actual norming data
+
+`HillHminusOneDirichletColumnCharts.lean` recovers the normalized actual
+Dirichlet position from its intrinsic weak equation in every Miura chart.
+An H1 test with endpoints one and zero fixes its initial quasi-derivative
+to one. Thus all charts give the same entire scalar interval curve at
+every complex energy and potential. At a Dirichlet root, a second H1
+endpoint test proves equality of the terminal quasi-derivatives as well.
+Unrestricted terminal momentum equality away from roots is not claimed.
+
+`HillHminusOneIntrinsicDirichletColumn.lean` constructs one intrinsic
+normalized scalar curve. It is jointly entire in energy and original
+complex H^-1 potential with values in the full continuous-curve Banach
+space and its uniform norm. It is a nonzero H1 curve, starts at zero,
+and its terminal value is the original Dirichlet characteristic. At real
+inputs and real energies the entire interval position is real.
+
+`HillHminusOneDirichletNorming.lean` evaluates the actual endpoint
+quasi-derivative at every positive-gap Dirichlet label. These factors
+are independent of the chart, real, nonzero and of exact sign `(-1)^n`.
+They satisfy the actual discriminant's multiplier quadratic. Each has a
+local complex analytic extension in the original H^-1 norm and is
+continuous on the whole real H^-1 space. On a collapsed gap and at the
+free potential the factor is exactly `(-1)^n`.
+
+`HillHminusOneDirichletLogNorming.lean` defines
+`kappa_n=log((-1)^n*Re(gamma_n))` using the strictly positive signed
+endpoint factor. Its real logarithm is the principal complex logarithm
+of that positive factor. Each logarithmic coordinate has a local complex
+analytic H^-1 extension and global real norm continuity, recovers the
+factor under the exponential, and is zero on collapsed gaps and at zero.
+
+`HillHminusOneDirichletNormingTrace.lean` proves the exact physical trace
+and already constructed source-profile identities:
+
+```text
+(-1)^n*Re(D(q,mu_n)) = 2*cosh(kappa_n)
+hillHminusRealGapProfile(q,n,mu_n) = abs(kappa_n).
+```
+
+The logarithm is zero exactly when the Dirichlet label is at one of its
+canonical gap endpoints. This includes endpoints of open gaps as well
+as collapsed gaps; vanishing is not identified with gap closure alone.
+These are actual intrinsic spectral quantities. A common sequence-valued
+analytic norming map, tail estimates, global inverse and the KdV
+symplectic/action identities remain to be proved, as do all main theorems.
+
 ## Remaining essential KdV work
 
 1. Construct the closed intrinsic singular Hill operator domain from the
@@ -2400,16 +2447,15 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `8b8ff89` contains 456 source modules, whose
-source hashes all remain unchanged. Two exact shared modules, one shared
-module with adapted imports and verbatim proof bodies, and nine authored
-modules pass Lean 4.33.1/mathlib v4.33.1 with `warningAsError=true`.
-The full reproduction script lists 468 source modules. The positive-index
-example and all 1069 coverage-name checks pass.
+The validated baseline at `23fb8b7` contains 468 source modules, whose
+source hashes all remain unchanged. Five authored modules pass Lean
+4.33.1/mathlib v4.33.1 with `warningAsError=true`. The full reproduction
+script lists 473 source modules. The positive-index example and all
+1103 coverage-name checks pass.
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
 helpers and all declarations originating in 233 additional shared modules:
-4623 declarations in total, transitively. Only `propext`,
+4662 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly
