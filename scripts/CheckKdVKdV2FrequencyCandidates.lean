@@ -201,6 +201,10 @@ import NLS.KdV.HillDirichletVelocityPhase
 import NLS.KdV.HillDirichletVelocityCoordinate
 import NLS.KdV.HillDirichletVelocityFiniteGap
 import NLS.Articles.KdVKdV2Frequencies.SmoothAbelianCoordinateMotion
+import NLS.KdV.HillFiniteGapDirichletInterpolation
+import NLS.KdV.HillFiniteGapDirichletMoments
+import NLS.Articles.KdVKdV2Frequencies.FiniteGapDirichletVelocityContours
+import NLS.KdV.HillFiniteGapDirichletLaurent
 import Lean.Util.CollectAxioms
 
 /-! Transitive axiom audit of the candidate and its imported NLS dependencies.
@@ -1274,7 +1278,11 @@ run_cmd do
     `NLS.KdV.HillDirichletVelocityPhase,
     `NLS.KdV.HillDirichletVelocityCoordinate,
     `NLS.KdV.HillDirichletVelocityFiniteGap,
-    `NLS.Articles.KdVKdV2Frequencies.SmoothAbelianCoordinateMotion
+    `NLS.Articles.KdVKdV2Frequencies.SmoothAbelianCoordinateMotion,
+    `NLS.KdV.HillFiniteGapDirichletInterpolation,
+    `NLS.KdV.HillFiniteGapDirichletMoments,
+    `NLS.Articles.KdVKdV2Frequencies.FiniteGapDirichletVelocityContours,
+    `NLS.KdV.HillFiniteGapDirichletLaurent
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

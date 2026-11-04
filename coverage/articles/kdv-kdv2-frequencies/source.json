@@ -15347,9 +15347,74 @@
       "scope": "Discharges the shared hypotheses with the actual literal physical KdV and KdV2 Fourier velocities and their exact proved coefficient profiles. Every differentiable matching physical coordinate extension has BOTH actual PDE derivatives given by the convergent spectral partial sums, with no own-gap opening hypothesis. Proves both actual PDE derivatives zero at a closed own gap and exact finite sums when all gaps above N are closed. Constructs ONE actual complex-L2-analytic scalar coordinate germ with BOTH PDE derivative limits and ONE nearby-real matching neighborhood. Real smooth period-one sources, including nonzero mean and arbitrary closed gaps. Spectral finite-sum evaluation as Hamiltonian frequencies (69)/(84) remains open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "78c994df7ffc6bd1f29c5f7a0c6b537eba8e5a88704b5ae24f960cffa28533d1"
+    },
+    {
+      "path": "NLS/KdV/HillFiniteGapDirichletInterpolation.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Every actual finite-gap source supplies a cutoff including the selected index even if its gap is closed. Proves eventual equality of the actual filled interpolation sums with that finite cutoff, exact interpolation at EVERY complex energy, and the actual normalized numerator divided by the actual Dirichlet characteristic equal to the finite simple-root principal parts where the characteristic is nonzero. Uses actual complete Dirichlet interpolation and actual numerator zeros at other closed gaps. Does not assume a Dirichlet canonical product or normalized leading coefficient.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "07327d76058f247526c72d350b7f356d7210a5911addeb741d76db7118c99942"
+    },
+    {
+      "path": "NLS/KdV/HillFiniteGapDirichletMoments.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Defines actual finite Dirichlet residue moments, retaining the own index at a closed gap. Proves the exact Cauchy pairing of any analytic test function with the actual normalized numerator/Dirichlet quotient on an enclosing zero-free circle. Actual complete spectrum circle selection supplies a common sequence of genuine zero-free energy circles. Every polynomial moment is exactly its residue sum, eventually on those circles; all moments are independent of the valid finite-gap cutoff if it includes the own index.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7cd38614dbe895de95db460b5d06588d056e11faac89ce91e45fcb7d40c1c031"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/FiniteGapDirichletVelocityContours.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Defines the two actual Dirichlet velocity sums using the already proved literal physical PDE coefficient profiles. Proves their exact simple-root residue formulas and moment combinations: KdV=-2Q(0)S0-4S1 and KdV2=(2Qxx(0)-6Q(0)^2)S0-8Q(0)S1-16S2. Both sums equal their genuine normalized Dirichlet polynomial contour integrals on the same sufficiently large actual energy circles, including closed own gaps. For every differentiable physical matching coordinate extension of a real smooth period-one potential, proves BOTH actual PDE derivatives equal those actual contour coefficients multiplied by i*z_n. No mean-zero assumption; identification with the F^3/F^5 source contours or Hamiltonian frequencies (69)/(84) remains open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "83ab6f91b922ce3e5252e7460f8bb216c3a6a98a0313cfb25a60906ad5b60227"
+    },
+    {
+      "path": "NLS/KdV/HillFiniteGapDirichletLaurent.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; physical equations (1)-(3); finite-gap reduction toward frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Proves exact two-term and three-term Laurent remainder identities for the actual finite Dirichlet principal parts and uniform complex large-energy weighted remainder bounds. The actual numerator/Dirichlet quotient at finite-gap sources therefore has coefficients S0,S1,S2 with inverse-cubic and inverse-quartic error bounds wherever the actual denominator is nonzero. Includes closed own gaps and a selected-index cutoff. No prescribed normalized leading scalar, Dirichlet product representation or local diagonal-resolvent expansion is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3efd61c412e77a1af2f8f4e9f1b61b75dfbf71c7ef6ecdba9839a91f577f8bc6"
     }
   ],
   "dependencies_needed": [
+    "Actual finite-gap Dirichlet partial fractions, analytic-test contour coefficients, cutoff-independent residue moments and three-term uniform quotient Laurent estimates are NOW proved, including closed own gaps. Both actual PDE velocity sums equal genuine Dirichlet polynomial contours and give both physical coordinate derivatives. Remaining: local diagonal-resolvent D/R high-energy expansion and comparison with actual F^3/F^5 contours, actual Hamiltonian frequency identities (69)/(84), closed-frequency identification, full canonicality/Fourier zero jet/native Banach map and inverse/rough W/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
     "Actual all-gap coordinate first variations in BOTH physical PDE fields are NOW proved for every physical matching extension, including zero velocity at closed own gaps. ONE genuine analytic scalar coordinate germ has both actual PDE derivative limits. For finite-gap sources both actual derivatives equal the proved finite Dirichlet sums. Remaining: evaluate those sums and identify actual Hamiltonian frequencies (69)/(84); full canonicality/Fourier zero jet/native Banach map and inverse/rough W compatibility/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
     "Actual terminal-angle velocities, open/closed regular correction variations and differentiated infinite physical Abelian angle sums are NOW proved. ONE physical analytic angle germ has both actual PDE derivatives given by the convergent Dirichlet spectral sums. Remaining: evaluate these sums and identify actual Hamiltonian frequencies (69)/(84); full canonicality/Fourier zero jet/native Banach map and inverse/rough W realization/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
     "All TWELVE former private TraceStationaryRootTest proofs are NOW promoted, audited and published. Arbitrary fixed tangents annihilating all actual traces have proved primitive/root/gap/deflation/period/implicit-normalization/canonical numerator/filled differential/Abelian primitive source stationarity. ONE genuine canonical numerator germ is proved stationary in BOTH actual physical PDE fields. Remaining: actual terminal-angle velocities from the proved endpoint pair, summed actual Abelian phase velocities/frequency69/84, full canonicality/Fourier zero jet/native Banach coordinate analyticity/inverse/rough W realization/PDE flow existence. All eleven main rows remain OPEN.",
@@ -15389,15 +15454,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 9613,
-    "total_declarations_audited": 32058,
+    "candidate_declarations_audited": 9678,
+    "total_declarations_audited": 32123,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1060,
+    "selected_modules": 1064,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -15434,7 +15499,8 @@
     "dirichlet_motion_validation_sequence": "Prior strict evidence for all 1030 unchanged selected baseline sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 1034 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1061 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1034-module rebuild is claimed.",
     "trace_normalization_validation_sequence": "Prior strict evidence for all 1034 unchanged selected baseline sources; strict dependency-order compilation of nine new proof modules; then a fresh combined transitive axiom audit of all 1043 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1070 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1043-module rebuild is claimed.",
     "abelian_pde_motion_validation_sequence": "Prior strict evidence for all 1043 unchanged selected baseline sources; strict dependency-order compilation of eleven new modules; then a fresh combined transitive axiom audit of all 1054 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1081 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1054-module rebuild is claimed.",
-    "coordinate_pde_motion_validation_sequence": "Prior strict evidence for all 1054 unchanged selected baseline sources; strict dependency-order compilation of six new modules; then a fresh combined transitive axiom audit of all 1060 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1087 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1060-module rebuild is claimed."
+    "coordinate_pde_motion_validation_sequence": "Prior strict evidence for all 1054 unchanged selected baseline sources; strict dependency-order compilation of six new modules; then a fresh combined transitive axiom audit of all 1060 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1087 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1060-module rebuild is claimed.",
+    "dirichlet_frequency_contours_validation_sequence": "Prior strict evidence for all 1060 unchanged selected baseline sources; strict dependency-order compilation of four new modules; then a fresh combined transitive axiom audit of all 1064 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1091 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1064-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -15683,5 +15749,6 @@
   "dirichlet_motion_record": "PHYSICAL_DIRICHLET_MOTION.md",
   "trace_normalization_record": "TRACE_STATIONARY_NORMALIZATION.md",
   "abelian_pde_motion_record": "ACTUAL_ABELIAN_PDE_MOTION.md",
-  "coordinate_pde_motion_record": "ACTUAL_ALL_GAP_PDE_COORDINATES.md"
+  "coordinate_pde_motion_record": "ACTUAL_ALL_GAP_PDE_COORDINATES.md",
+  "dirichlet_frequency_contours_record": "FINITE_GAP_DIRICHLET_FREQUENCY_CONTOURS.md"
 }

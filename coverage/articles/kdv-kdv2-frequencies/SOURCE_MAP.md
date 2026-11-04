@@ -894,3 +894,14 @@ ONE actual complex-L2-analytic scalar coordinate germ has BOTH physical PDE deri
 Prior strict evidence for all 1054 unchanged selected baseline sources; strict dependency-order compilation of six new modules; then a fresh combined transitive axiom audit of all 1060 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1087 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1060-module rebuild is claimed.
 
 Fresh audit: 9613 selected and 32058 imported NLS declarations, permitted axioms only. The finite spectral sums still need evaluation as the Hamiltonian frequencies (69)/(84). All eleven main theorem rows remain OPEN.
+
+
+## Latest actual finite-gap Dirichlet frequency contours
+
+The actual normalized numerator divided by the actual Dirichlet characteristic now has a proved finite principal-part representation. Its own index is retained even at a closed gap. Analytic test functions give exact residue contour coefficients on common actual zero-free energy circles; all polynomial residue moments are independent of a valid cutoff containing that index.
+
+The two actual physical PDE velocity sums have exact expressions in those moments and exact Dirichlet polynomial contour formulas. Both actual coordinate derivatives equal the resulting contour coefficients times i*z_n. The actual quotient also has its first three Laurent coefficients with uniform complex large-energy remainder bounds. See `FINITE_GAP_DIRICHLET_FREQUENCY_CONTOURS.md`.
+
+Prior strict evidence for all 1060 unchanged selected baseline sources; strict dependency-order compilation of four new modules; then a fresh combined transitive axiom audit of all 1064 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1091 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1064-module rebuild is claimed.
+
+Fresh audit: 9678 selected and 32123 imported NLS declarations, permitted axioms only. Comparison with the article F^3/F^5 contours and actual Hamiltonian frequency identities (69)/(84) remains open. All eleven main theorem rows remain OPEN.
