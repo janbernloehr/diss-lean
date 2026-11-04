@@ -820,6 +820,10 @@ import NLS.KdV.HillUniformCriticalCartesianTails
 import NLS.SequenceSpaces.NatL2HeadTailAssembly
 import NLS.KdV.HillFiniteCartesianAnalyticHead
 import NLS.KdV.HillFullWeightedCartesianAnalytic
+import NLS.ComplexAnalysis.HilbertProductDeletion
+import NLS.KdV.HillFullProductUniformLimit
+import NLS.KdV.HillProductPeriodUniformLimit
+import NLS.KdV.HillFullPeriodRootLimit
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1311,7 +1315,9 @@ run_cmd do
     ``NLS.Coeff.analyticOnNhd_natL2OfFunction_mul_of_uniform_bound,
     ``NLS.Coeff.natL2Decode,
     ``NLS.Coeff.natL2Decode_apply,
-    ``NLS.Coeff.exists_natL2_analytic_head_tail]
+    ``NLS.Coeff.exists_natL2_analytic_head_tail,
+    ``NLS.ComplexAnalysis.hilbertWeightedProduct_eq_factor_mul_deleted,
+    ``NLS.ComplexAnalysis.norm_hilbertWeightedProduct_deleted_sub_le]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

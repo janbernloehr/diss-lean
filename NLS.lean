@@ -5743,3 +5743,7 @@ import NLS.KdV.HillUniformCriticalCartesianTails
 import NLS.SequenceSpaces.NatL2HeadTailAssembly
 import NLS.KdV.HillFiniteCartesianAnalyticHead
 import NLS.KdV.HillFullWeightedCartesianAnalytic
+import NLS.ComplexAnalysis.HilbertProductDeletion
+import NLS.KdV.HillFullProductUniformLimit
+import NLS.KdV.HillProductPeriodUniformLimit
+import NLS.KdV.HillFullPeriodRootLimit
