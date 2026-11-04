@@ -1524,6 +1524,13 @@ modules = [
     'NLS.KdV.HillRealSpectralInvariants',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNativeCompactFibers',
     'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralGlobalFlow',
+    'NLS.KdV.HillOnIndexRightSimpleEndpoint',
+    'NLS.KdV.HillRealGapSheetGeometry',
+    'NLS.FunctionalAnalysis.ComplexSpectralSheetEndpoint',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralTerminalCurve',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralEndpointHitting',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCompactTransport',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillAnglePairCommutation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

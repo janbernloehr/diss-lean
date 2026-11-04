@@ -1392,6 +1392,33 @@
         "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_completePhasePair"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-spectral-global-flow-map.json"
+    },
+    {
+      "label": "Full actual complete angle-pair commutation by native endpoint hitting and compact FIP",
+      "status": "proved dependency; signed coordinate canonicality, all-source derivative invertibility, global map/flow and main theorems unproved",
+      "declarations": [
+        "NLS.KdV.HillProductEquationPatch.native_radicand_deriv_at_real_open_gap_right_ne_zero",
+        "NLS.KdV.hillHminusRadicand_zero_in_gap_iff_endpoint",
+        "NLS.KdV.hillHminusRadicand_deriv_at_open_gap_endpoints_ne_zero",
+        "NLS.KdV.analyticOnNhd_hillHminusDiscriminant_energy",
+        "NLS.KdV.continuous_deriv_hillHminusDiscriminant",
+        "NLS.KdV.deriv_hillHminusRadicand",
+        "NLS.KdV.hillHminusDiscriminant_energy_derivative_im_eq_zero",
+        "NLS.FunctionalAnalysis.exists_endpoint_of_bounded_complex_sheetODE",
+        "NLS.Articles.KdVPseudomeasures.hasDerivAt_originalHillSpectralFlow_terminal",
+        "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_dirichlet_im_eq_zero",
+        "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_dirichlet_mem_initial_gap",
+        "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_sheet_im_eq_zero",
+        "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_sheet_sq_fixed",
+        "NLS.Articles.KdVPseudomeasures.exists_originalHillSpectralFlow_endpoint",
+        "NLS.Articles.KdVPseudomeasures.continuous_originalPeriodOneCoefficients",
+        "NLS.Articles.KdVPseudomeasures.originalHillGapSquare_eq_of_isospectral",
+        "NLS.Articles.KdVPseudomeasures.continuous_originalHillDirichletSheet",
+        "NLS.Articles.KdVPseudomeasures.continuousOn_originalHillCompletePhasePair",
+        "NLS.Articles.KdVPseudomeasures.exists_originalHill_finite_endpoints_same_pair",
+        "NLS.Articles.KdVPseudomeasures.original_Hill_complete_angle_pair_Gardner_commute"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-angle-pair-commutation-map.json"
     }
   ],
   "reuse_map": [
@@ -1473,7 +1500,7 @@
   "remaining_obligations": [
     "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
     "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "NEXT prove ACTUAL native endpoint hitting, compose indexed endpoint moves and take an infinite endpoint limit in the ALREADY PROVED NORM compact ENTIRE original Hminus-one isospectral set. NOW PROVED: complete ACTUAL native indexed flows at ALL REAL TIMES; exact original isospectral membership; time addition/inverse; ALL original gap squares fixed; ALL other actual terminal triples fixed; intrinsic COMPLETE angle-pair scalar fixed with only its two selected ORIGINAL gaps open INITIALLY. Terminal velocities through ALL zero sheets are already proved. Establish native open-gap endpoint simplicity/nonzero acceleration and actual bounded sheet ODE, then reuse RealSheetEndpoint. General-source angle/angle ZERO VALUE, infinite endpoint transport and signed canonicality remain OPEN. No finite-open-gap density or Poisson Miura identification is assumed.",
+    "NEXT derive the ACTUAL signed-coordinate native Gardner matrix on the jointly open selected ORIGINAL gaps using the NOW PROVED full intrinsic angle/angle ZERO VALUE on the ENTIRE original physical real mean-zero source, the proved mixed angle/action Kronecker matrix and actual action-factor product/phase-square identities. Extend through closed gaps by the ALREADY PROVED physical mean-zero finite-open-gap DENSITY and actual bracket continuity; no FINITE-GAP density is needed. Native endpoint hitting, actual finite endpoint transport and compact FIP all-endpoint pair transport are NOW PROVED. Signed-coordinate canonicality away from zero, DF invertibility at EVERY source, remaining nonlinear source/target scales, global bijectivity/boundedness, bounded-set weak-star homeomorphism and actual KdV flow remain OPEN. ALL FIVE MAIN THEOREMS remain UNPROVED.",
     "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates: prove signed-coordinate Gardner canonicality away fromzero, derivative invertibility at every source, remaining nonlinear source/target scales, global bijectivity and boundedness, and bounded-set weak-star homeomorphism. The exact Fourier differential atzero, native Hminus-one sequence analyticity and native/endpoint real-complex local inverses atzero are COMPLETE, as are the nonlinear infinity endpoint analytic maps and original endpoint norm-topology adapters. Actual action-gradient contours and action involution on the common complex action domain are NOWPROVED. The remaining coordinate brackets and global conclusions are OPEN. Do not substitute ordinary NLS coordinates or componentwise-real sequences for the actual signed-conjugate KdV target.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
@@ -4184,6 +4211,24 @@
     "infinite_endpoint_transport_PROVED": false,
     "actual_angle_angle_Gardner_commutation_PROVED": false,
     "signed_coordinate_canonicality_away_from_zero_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "actual_Hill_angle_pair_commutation_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-angle-pair-commutation-map.json",
+    "actual_native_open_gap_BOTH_endpoints_simple_PROVED": true,
+    "actual_native_gap_radicand_zero_only_at_endpoints_PROVED": true,
+    "actual_native_fixed_initial_spectral_curve_ODE_PROVED": true,
+    "actual_complete_native_flow_endpoint_hitting_PROVED": true,
+    "endpoint_hitting_scope": "EVERY original physical real mean-zero Hminus-one potential and EVERY positive index, including collapsed gaps; some finite REAL time.",
+    "actual_finite_native_endpoint_moves_preserving_pair_PROVED": true,
+    "compact_FIP_all_actual_endpoints_same_pair_PROVED": true,
+    "actual_angle_angle_Gardner_commutation_on_original_physical_source_PROVED": true,
+    "angle_pair_scope": "EVERY original physical real mean-zero Hminus-one source with TWO selected ORIGINAL gaps open. ALL other gaps may be closed. Full ambient complex cotangents and complete intrinsic infinite Abelian correction retained.",
+    "finite_open_gap_density_assumed": false,
+    "Poisson_Miura_identification_assumed": false,
+    "supplied_endpoint_or_convergence_premise": false,
+    "signed_coordinate_canonicality_away_from_zero_PROVED": false,
+    "all_source_Birkhoff_derivative_invertibility_PROVED": false,
     "global_Birkhoff_theorem_PROVED": false
   }
 }

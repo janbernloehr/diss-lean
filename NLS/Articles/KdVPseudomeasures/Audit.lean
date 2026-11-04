@@ -1490,6 +1490,13 @@ import NLS.FunctionalAnalysis.CompactInvariantGlobalCurve
 import NLS.KdV.HillRealSpectralInvariants
 import NLS.Articles.KdVPseudomeasures.OriginalHillNativeCompactFibers
 import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralGlobalFlow
+import NLS.KdV.HillOnIndexRightSimpleEndpoint
+import NLS.KdV.HillRealGapSheetGeometry
+import NLS.FunctionalAnalysis.ComplexSpectralSheetEndpoint
+import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralTerminalCurve
+import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralEndpointHitting
+import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralCompactTransport
+import NLS.Articles.KdVPseudomeasures.OriginalHillAnglePairCommutation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9158,3 +9165,23 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillSpectralGlobalFlow
 #print axioms NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_gapSquare
 #print axioms NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_other_terminal
 #print axioms NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_completePhasePair
+#print axioms NLS.KdV.HillProductEquationPatch.native_radicand_deriv_at_real_open_gap_right_ne_zero
+#print axioms NLS.KdV.hillHminusRadicand_zero_in_gap_iff_endpoint
+#print axioms NLS.KdV.hillHminusRadicand_deriv_at_open_gap_endpoints_ne_zero
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDiscriminant_energy
+#print axioms NLS.KdV.continuous_deriv_hillHminusDiscriminant
+#print axioms NLS.KdV.deriv_hillHminusRadicand
+#print axioms NLS.KdV.hillHminusDiscriminant_energy_derivative_im_eq_zero
+#print axioms NLS.FunctionalAnalysis.exists_endpoint_of_bounded_complex_sheetODE
+#print axioms NLS.Articles.KdVPseudomeasures.hasDerivAt_originalHillSpectralFlow_terminal
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_dirichlet_im_eq_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_dirichlet_mem_initial_gap
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_sheet_im_eq_zero
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_sheet_sq_fixed
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalHillSpectralFlow_endpoint
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalPeriodOneCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillGapSquare_eq_of_isospectral
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalHillDirichletSheet
+#print axioms NLS.Articles.KdVPseudomeasures.continuousOn_originalHillCompletePhasePair
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalHill_finite_endpoints_same_pair
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_complete_angle_pair_Gardner_commute

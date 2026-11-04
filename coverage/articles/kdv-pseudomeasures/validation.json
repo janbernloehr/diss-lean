@@ -1,7 +1,7 @@
 {
   "date": "2026-11-04",
   "article_main_theorems_verified": false,
-  "phase": "Construct complete actual native indexed spectral flows from compact original isospectral fibers.",
+  "phase": "Prove actual native endpoint hitting and full complete angle-pair Gardner commutation on the original physical source.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1498,13 +1498,20 @@
     "NLS/KdV/HillRealSpectralInvariants.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillNativeCompactFibers.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillSpectralGlobalFlow.lean",
+    "NLS/KdV/HillOnIndexRightSimpleEndpoint.lean",
+    "NLS/KdV/HillRealGapSheetGeometry.lean",
+    "NLS/FunctionalAnalysis/ComplexSpectralSheetEndpoint.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillSpectralTerminalCurve.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillSpectralEndpointHitting.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillSpectralCompactTransport.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillAnglePairCommutation.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 6447,
+  "proved_theorems": 6467,
   "definitions": 1218,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 7665,
+    "declarations": 7685,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -2890,8 +2897,8 @@
     "OriginalHillSpectralDarboux exports the SAMEoriginal physical potential, actual multipliers and local logarithmic normalization; their literal unit-period physical Gardner integral is zero, their closed-mean-zero cotangent bracket is intrinsic, and the full local spectral matrix holds at every original potential.",
     "NEXT derive the Gardner brackets of the ACTUAL Abelian angles, retaining the complete infinite off-index correction and normalized differentials, from the now-complete local spectral Darboux identities and actual action/Dirichlet contours. The article signed-coordinate canonicality away fromzero, all-source derivative inversion, remaining original nonlinear scales/global Birkhoff boundedness/bijection/weak-star/flow, universal actual numerator scalar and sharp KMT remain OPEN. AppendixB, local inverses and all preceding involution results remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE."
   ],
-  "source_correspondence": "Construct complete actual native indexed spectral flows from compact original isospectral fibers. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NEXT prove ACTUAL native endpoint hitting, compose indexed endpoint moves and take an infinite endpoint limit in the ALREADY PROVED NORM compact ENTIRE original Hminus-one isospectral set. NOW PROVED: complete ACTUAL native indexed flows at ALL REAL TIMES; exact original isospectral membership; time addition/inverse; ALL original gap squares fixed; ALL other actual terminal triples fixed; intrinsic COMPLETE angle-pair scalar fixed with only its two selected ORIGINAL gaps open INITIALLY. Terminal velocities through ALL zero sheets are already proved. Establish native open-gap endpoint simplicity/nonzero acceleration and actual bounded sheet ODE, then reuse RealSheetEndpoint. General-source angle/angle ZERO VALUE, infinite endpoint transport and signed canonicality remain OPEN. No finite-open-gap density or Poisson Miura identification is assumed. Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates: prove signed-coordinate Gardner canonicality away fromzero, derivative invertibility at every source, remaining nonlinear source/target scales, global bijectivity and boundedness, and bounded-set weak-star homeomorphism. The exact Fourier differential atzero, native Hminus-one sequence analyticity and native/endpoint real-complex local inverses atzero are COMPLETE, as are the nonlinear infinity endpoint analytic maps and original endpoint norm-topology adapters. Actual action-gradient contours and action involution on the common complex action domain are NOWPROVED. The remaining coordinate brackets and global conclusions are OPEN. Do not substitute ordinary NLS coordinates or componentwise-real sequences for the actual signed-conjugate KdV target. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. All1486 baseline non-audit registered sources byte-identical toe18e2b6. All6 new modules,4 canonical-byte-identical shared joining/uniqueness/calculus modules,10 unchanged PRIVATE dependencies and exact7665-declaration transitive standard-axiom audit freshly compiled privately. Compactness is the existing FULL original Hminus-one NORM compactness; source norm conservation is not assumed. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1493-module build.",
+  "source_correspondence": "Prove actual native endpoint hitting and full complete angle-pair Gardner commutation on the original physical source. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NEXT derive the ACTUAL signed-coordinate native Gardner matrix on the jointly open selected ORIGINAL gaps using the NOW PROVED full intrinsic angle/angle ZERO VALUE on the ENTIRE original physical real mean-zero source, the proved mixed angle/action Kronecker matrix and actual action-factor product/phase-square identities. Extend through closed gaps by the ALREADY PROVED physical mean-zero finite-open-gap DENSITY and actual bracket continuity; no FINITE-GAP density is needed. Native endpoint hitting, actual finite endpoint transport and compact FIP all-endpoint pair transport are NOW PROVED. Signed-coordinate canonicality away from zero, DF invertibility at EVERY source, remaining nonlinear source/target scales, global bijectivity/boundedness, bounded-set weak-star homeomorphism and actual KdV flow remain OPEN. ALL FIVE MAIN THEOREMS remain UNPROVED. Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates: prove signed-coordinate Gardner canonicality away fromzero, derivative invertibility at every source, remaining nonlinear source/target scales, global bijectivity and boundedness, and bounded-set weak-star homeomorphism. The exact Fourier differential atzero, native Hminus-one sequence analyticity and native/endpoint real-complex local inverses atzero are COMPLETE, as are the nonlinear infinity endpoint analytic maps and original endpoint norm-topology adapters. Actual action-gradient contours and action involution on the common complex action domain are NOWPROVED. The remaining coordinate brackets and global conclusions are OPEN. Do not substitute ordinary NLS coordinates or componentwise-real sequences for the actual signed-conjugate KdV target. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. All1492 baseline non-audit registered sources byte-identical to5d919ef. All7 new modules,4 canonical-byte-identical shared real-sheet/calculus modules,8 unchanged PRIVATE dependencies and exact7685-declaration transitive standard-axiom audit freshly compiled privately. Actual native endpoint hitting is constructed; compact FIP proves general original-source angle-pair zero without any finite-gap density. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1500-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -4388,7 +4395,14 @@
     "NLS/FunctionalAnalysis/CompactInvariantGlobalCurve.lean": "99d98c89a1b8aa963217a1ac3d23fe1b7b732eef43bd0c0d20699347a9f3692e",
     "NLS/KdV/HillRealSpectralInvariants.lean": "ed6313d7b75c19b65d70ce703a9532e2e60bd10005e9c8955524c9a4396ab171",
     "NLS/Articles/KdVPseudomeasures/OriginalHillNativeCompactFibers.lean": "370dd95993e677648896a9b5e42b07c232c36aa90d2e387d29cf198d633b55fa",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillSpectralGlobalFlow.lean": "531b90ad6f2ca65303d89032f182999b3d73c9ad21b307bed593db7a75dfa40c"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillSpectralGlobalFlow.lean": "531b90ad6f2ca65303d89032f182999b3d73c9ad21b307bed593db7a75dfa40c",
+    "NLS/KdV/HillOnIndexRightSimpleEndpoint.lean": "b6914035f61a49408da0fe6938b158777d4259f10100b1d4047be5ef8e573fae",
+    "NLS/KdV/HillRealGapSheetGeometry.lean": "6ce392dfbf180426ef1a757baa04de57401eb88246977063ea6167696b77d368",
+    "NLS/FunctionalAnalysis/ComplexSpectralSheetEndpoint.lean": "4cf8f3349688cce3de18b60529950e07063b7708c4f5e43cc3286f3d61444aaa",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillSpectralTerminalCurve.lean": "00c476b96042a257246ab10eac02f8975c97c16396528316eae3a0ec51f253ca",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillSpectralEndpointHitting.lean": "827420f7187b09d8c7ce666d35c51c7b600c716d0a3cba2c2cd68e29ec16e17e",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillSpectralCompactTransport.lean": "e644d50116bcc1d3199d259b5db995be40cfa4707f8f6bcedd9cf0c8857b81a2",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillAnglePairCommutation.lean": "976d8824adaab21d662b7b2a268d50cc8db569776be1f98c3f6fad078c93a4bb"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -4396,11 +4410,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 7615,
-    "newly_checked_declarations_this_continuation": 50,
-    "new_theorems": 43,
-    "new_definitions": 7,
-    "total_checked_declarations": 7665
+    "previous_checked_declarations": 7665,
+    "newly_checked_declarations_this_continuation": 20,
+    "new_theorems": 20,
+    "new_definitions": 0,
+    "total_checked_declarations": 7685
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -4429,7 +4443,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-spectral-global-flow.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-angle-pair-commutation.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -4749,13 +4763,14 @@
     "All writes private; canonical checkout/shared metadata read-only. All1458 baseline non-audit registered sources byte-identical to 17d1064. All11 new modules,9 canonical-byte-identical shared modules,9 unchanged PRIVATE shared dependencies and exact7540-declaration transitive axiom audit freshly compiled privately. Private shared dependencies: ConjugationRealForm, GardnerHamiltonianDirection, PeriodOneHminusOneRealForm, BalancedSingleSpectralProducts, OddSquareDescent, PositiveScalarExtension, AnalyticProductCancellation, SourceHigherActionCircleGradient and SourceIndexedHigherActionGradient. They are not claimed canonical-byte-identical. Historical imported heartbeat settings and old private lint fixes unchanged. No new options/increases. Not a full fresh1470-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata read-only. All1469 baseline non-audit registered sources byte-identical to 6766f7b. All13 new modules,9 canonical-byte-identical shared modules,10 unchanged PRIVATE shared dependencies and exact7591-declaration transitive axiom audit freshly compiled privately. Private shared dependencies: ConjugationRealForm, GardnerHamiltonianDirection, PeriodOneHminusOneRealForm, BalancedSingleSpectralProducts, OddSquareDescent, PositiveScalarExtension, AnalyticProductCancellation, SourceHigherActionCircleGradient, SourceIndexedHigherActionGradient and QuadraticCosinePrimitive. They are not claimed canonical-byte-identical. Historical imported heartbeat settings and old private lint fixes unchanged. No new options/increases. Not a full fresh1483-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata read-only. All1482 baseline non-audit registered sources byte-identical to8500b08. All4 new modules,3 canonical-byte-identical shared calculus modules,11 unchanged PRIVATE dependencies and exact7615-declaration transitive axiom audit freshly compiled privately. Private dependencies include Fourier real/zero-mode spaces and projections, native Hamiltonian direction, original/native physical source and original norm compactness. Historical imported heartbeat settings and old private lint fixes unchanged. No new options/increases. Not a full fresh1487-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata read-only. All1486 baseline non-audit registered sources byte-identical toe18e2b6. All6 new modules,4 canonical-byte-identical shared joining/uniqueness/calculus modules,10 unchanged PRIVATE dependencies and exact7665-declaration transitive standard-axiom audit freshly compiled privately. Compactness is the existing FULL original Hminus-one NORM compactness; source norm conservation is not assumed. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1493-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata read-only. All1486 baseline non-audit registered sources byte-identical toe18e2b6. All6 new modules,4 canonical-byte-identical shared joining/uniqueness/calculus modules,10 unchanged PRIVATE dependencies and exact7665-declaration transitive standard-axiom audit freshly compiled privately. Compactness is the existing FULL original Hminus-one NORM compactness; source norm conservation is not assumed. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1493-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata read-only. All1492 baseline non-audit registered sources byte-identical to5d919ef. All7 new modules,4 canonical-byte-identical shared real-sheet/calculus modules,8 unchanged PRIVATE dependencies and exact7685-declaration transitive standard-axiom audit freshly compiled privately. Actual native endpoint hitting is constructed; compact FIP proves general original-source angle-pair zero without any finite-gap density. Historical settings and old private lint fixes unchanged. No new heartbeat options/increases. Not a full fresh1500-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-spectral-global-flow-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-angle-pair-commutation-map.json",
   "baseline_validated_snapshot": {
-    "commit": "e18e2b6a3d14d639cda884cd3681e81c33fb5ef0",
-    "modules": 1487,
-    "audited_declarations": 7615,
+    "commit": "5d919ef3a1569a9b65dc44bebeb8295eff7d65df",
+    "modules": 1493,
+    "audited_declarations": 7665,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -6841,6 +6856,24 @@
     "infinite_endpoint_transport_PROVED": false,
     "actual_angle_angle_Gardner_commutation_PROVED": false,
     "signed_coordinate_canonicality_away_from_zero_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "actual_Hill_angle_pair_commutation": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-angle-pair-commutation-map.json",
+    "actual_native_open_gap_BOTH_endpoints_simple_PROVED": true,
+    "actual_native_gap_radicand_zero_only_at_endpoints_PROVED": true,
+    "actual_native_fixed_initial_spectral_curve_ODE_PROVED": true,
+    "actual_complete_native_flow_endpoint_hitting_PROVED": true,
+    "endpoint_hitting_scope": "EVERY original physical real mean-zero Hminus-one potential and EVERY positive index, including collapsed gaps; some finite REAL time.",
+    "actual_finite_native_endpoint_moves_preserving_pair_PROVED": true,
+    "compact_FIP_all_actual_endpoints_same_pair_PROVED": true,
+    "actual_angle_angle_Gardner_commutation_on_original_physical_source_PROVED": true,
+    "angle_pair_scope": "EVERY original physical real mean-zero Hminus-one source with TWO selected ORIGINAL gaps open. ALL other gaps may be closed. Full ambient complex cotangents and complete intrinsic infinite Abelian correction retained.",
+    "finite_open_gap_density_assumed": false,
+    "Poisson_Miura_identification_assumed": false,
+    "supplied_endpoint_or_convergence_premise": false,
+    "signed_coordinate_canonicality_away_from_zero_PROVED": false,
+    "all_source_Birkhoff_derivative_invertibility_PROVED": false,
     "global_Birkhoff_theorem_PROVED": false
   }
 }

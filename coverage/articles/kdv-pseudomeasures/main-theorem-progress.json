@@ -3880,7 +3880,27 @@
       "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_mem_isospectral",
       "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_gapSquare",
       "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_other_terminal",
-      "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_completePhasePair"
+      "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_completePhasePair",
+      "NLS.KdV.HillProductEquationPatch.native_radicand_deriv_at_real_open_gap_right_ne_zero",
+      "NLS.KdV.hillHminusRadicand_zero_in_gap_iff_endpoint",
+      "NLS.KdV.hillHminusRadicand_deriv_at_open_gap_endpoints_ne_zero",
+      "NLS.KdV.analyticOnNhd_hillHminusDiscriminant_energy",
+      "NLS.KdV.continuous_deriv_hillHminusDiscriminant",
+      "NLS.KdV.deriv_hillHminusRadicand",
+      "NLS.KdV.hillHminusDiscriminant_energy_derivative_im_eq_zero",
+      "NLS.FunctionalAnalysis.exists_endpoint_of_bounded_complex_sheetODE",
+      "NLS.Articles.KdVPseudomeasures.hasDerivAt_originalHillSpectralFlow_terminal",
+      "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_dirichlet_im_eq_zero",
+      "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_dirichlet_mem_initial_gap",
+      "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_sheet_im_eq_zero",
+      "NLS.Articles.KdVPseudomeasures.originalHillSpectralFlow_sheet_sq_fixed",
+      "NLS.Articles.KdVPseudomeasures.exists_originalHillSpectralFlow_endpoint",
+      "NLS.Articles.KdVPseudomeasures.continuous_originalPeriodOneCoefficients",
+      "NLS.Articles.KdVPseudomeasures.originalHillGapSquare_eq_of_isospectral",
+      "NLS.Articles.KdVPseudomeasures.continuous_originalHillDirichletSheet",
+      "NLS.Articles.KdVPseudomeasures.continuousOn_originalHillCompletePhasePair",
+      "NLS.Articles.KdVPseudomeasures.exists_originalHill_finite_endpoints_same_pair",
+      "NLS.Articles.KdVPseudomeasures.original_Hill_complete_angle_pair_Gardner_commute"
     ],
     "5.1": [
       "NLS.KdV.analyticOnNhd_hillHminusDirichlet_joint",
@@ -3890,7 +3910,7 @@
   "essential_open_obligations": [
     "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
     "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "NEXT prove ACTUAL native endpoint hitting, compose indexed endpoint moves and take an infinite endpoint limit in the ALREADY PROVED NORM compact ENTIRE original Hminus-one isospectral set. NOW PROVED: complete ACTUAL native indexed flows at ALL REAL TIMES; exact original isospectral membership; time addition/inverse; ALL original gap squares fixed; ALL other actual terminal triples fixed; intrinsic COMPLETE angle-pair scalar fixed with only its two selected ORIGINAL gaps open INITIALLY. Terminal velocities through ALL zero sheets are already proved. Establish native open-gap endpoint simplicity/nonzero acceleration and actual bounded sheet ODE, then reuse RealSheetEndpoint. General-source angle/angle ZERO VALUE, infinite endpoint transport and signed canonicality remain OPEN. No finite-open-gap density or Poisson Miura identification is assumed.",
+    "NEXT derive the ACTUAL signed-coordinate native Gardner matrix on the jointly open selected ORIGINAL gaps using the NOW PROVED full intrinsic angle/angle ZERO VALUE on the ENTIRE original physical real mean-zero source, the proved mixed angle/action Kronecker matrix and actual action-factor product/phase-square identities. Extend through closed gaps by the ALREADY PROVED physical mean-zero finite-open-gap DENSITY and actual bracket continuity; no FINITE-GAP density is needed. Native endpoint hitting, actual finite endpoint transport and compact FIP all-endpoint pair transport are NOW PROVED. Signed-coordinate canonicality away from zero, DF invertibility at EVERY source, remaining nonlinear source/target scales, global bijectivity/boundedness, bounded-set weak-star homeomorphism and actual KdV flow remain OPEN. ALL FIVE MAIN THEOREMS remain UNPROVED.",
     "Complete source3.1/main1.4 for the ACTUAL ORIGINAL KdV Birkhoff coordinates: prove signed-coordinate Gardner canonicality away fromzero, derivative invertibility at every source, remaining nonlinear source/target scales, global bijectivity and boundedness, and bounded-set weak-star homeomorphism. The exact Fourier differential atzero, native Hminus-one sequence analyticity and native/endpoint real-complex local inverses atzero are COMPLETE, as are the nonlinear infinity endpoint analytic maps and original endpoint norm-topology adapters. Actual action-gradient contours and action involution on the common complex action domain are NOWPROVED. The remaining coordinate brackets and global conclusions are OPEN. Do not substitute ordinary NLS coordinates or componentwise-real sequences for the actual signed-conjugate KdV target.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
@@ -5222,7 +5242,13 @@
     "OriginalHillNativeCompactFibers constructs inverse ORIGINAL physical potential/native physical real mean-zero maps, proves their exact coefficients and original-to-native continuity. EVERY native full discriminant fiber is EXACTLY the continuous image of the ENTIRE original isospectral set. Existing full original Hminus-one NORM compactness therefore proves native compact fibers, retaining all algebraic multiplicities, with NO endpoint membership hypothesis. This is a verified geometric transfer, NOT a Poisson Miura identification.",
     "originalHillNativeSpectralSystem PROVES all CompactInvariantVectorField hypotheses with the ACTUAL C1 indexed native field, full actual discriminant, compact fibers and actual conservation. OriginalHillSpectralGlobalFlow CONSTRUCTS complete native curves through EVERY original physical real mean-zero Hminus-one source, for ALL REAL TIMES. The ambient derivative is the ACTUAL fixed-energy discriminant Hamiltonian direction evaluated only AFTER source differentiation at the actual moving Dirichlet energy. Reality and exact zero mean are retained.",
     "The ORIGINAL potential flow starts at q, has the ACTUAL native-coordinate derivative at EVERY real time, stays in the EXACT original isospectral set and obeys time addition and inverse time. ALL original gap squares and ALL OTHER actual terminal triples (lambda_j,rho_j,sheet_j) are fixed, including endpoints and collapsed gaps. For ANY two selected ORIGINAL gaps open INITIALLY, the ACTUAL branch-independent COMPLETE intrinsic angle-pair scalar stays fixed for ALL real times. No additive angle chart continuation or gap-openness trajectory premise is supplied.",
-    "Remaining: actual native endpoint hitting, indexed endpoint moves and an infinite endpoint limit in the proved isospectral NORM compact set. All-endpoint intrinsic angle-pair ZERO VALUE is already proved, but GENERAL-source zero value, signed canonicality away from zero and ALL FIVE MAIN THEOREMS remain UNPROVED. Pure RealSheetEndpoint provides a verified bounded-sheet ODE hitting lemma; its actual native open-gap endpoint acceleration hypotheses still need proof."
+    "Remaining: actual native endpoint hitting, indexed endpoint moves and an infinite endpoint limit in the proved isospectral NORM compact set. All-endpoint intrinsic angle-pair ZERO VALUE is already proved, but GENERAL-source zero value, signed canonicality away from zero and ALL FIVE MAIN THEOREMS remain UNPROVED. Pure RealSheetEndpoint provides a verified bounded-sheet ODE hitting lemma; its actual native open-gap endpoint acceleration hypotheses still need proof.",
+    "HillOnIndexRightSimpleEndpoint proves the RIGHT ORIGINAL endpoint of EVERY real open native Hill gap is a simple native radicand zero, using the actual omitted-root factorization and original endpoint-energy bridge. Together with the existing LEFT theorem, HillRealGapSheetGeometry proves simplicity at BOTH endpoints. Monotonicity of the complete actual ordered spectral labels proves the ONLY radicand zeros in the closed indexed gap are its two endpoints. All low gaps and arbitrary Miura shifts are retained.",
+    "HillRealGapSheetGeometry also proves actual discriminant energy analyticity, continuity of its energy derivative, exact native radicand derivative 2*Delta*DeltaPrime and reality of the discriminant derivative at real energy. OriginalHillSpectralTerminalCurve proves the actual complete native flow obeys lambdaDot=sheet/2 and sheetDot=FIXED_INITIAL_Delta(lambda)*DeltaPrime(lambda)/2 at ALL real times, with lambda in its FIXED original real indexed gap and the prescribed actual sheet REAL. The exact moving-energy sheet square is the FIXED initial spectral curve.",
+    "ComplexSpectralSheetEndpoint reuses the VERIFIED RealSheetEndpoint bounded real ODE theorem to prove endpoint hitting for complete bounded complex spectral-sheet trajectories with actual two-coordinate ODE, real coordinates, fixed sheet identity and simple open endpoints. OriginalHillSpectralEndpointHitting PROVES ALL hypotheses for the ACTUAL complete native flow and constructs a finite REAL hitting time for EVERY original Hminus-one physical potential and EVERY positive index. The actual prescribed sheet is zero there and the actual Dirichlet energy equals one of its ORIGINAL periodic endpoints. Collapsed gaps are already terminal. No finite-gap, trajectory-existence, endpoint-time or nonzero-source assumption is supplied.",
+    "OriginalHillSpectralCompactTransport proves full original coefficient and actual sheet continuity, actual complete pair continuity on the ENTIRE original isospectral set with its selected original gaps open, and equality of ALL original gap squares on that set. Finset induction composes ACTUAL native endpoint moves: for EVERY finite set of positive indices it constructs an original isospectral potential with ALL those actual sheets zero and the SAME ACTUAL COMPLETE intrinsic angle-pair value. Every earlier terminal remains placed by the proved other-terminal flow invariance.",
+    "OriginalHillAnglePairCommutation uses the finite intersection property on the ALREADY PROVED NORM COMPACT ENTIRE original isospectral set. For each positive index the relative closed set imposes that actual sheet zero AND the fixed complete pair value. The preceding actual finite moves prove EVERY finite intersection nonempty. Compactness therefore constructs a source with ALL actual physical sheets zero and the SAME pair value. Its selected ORIGINAL gaps stay open by exact spectral invariance. The independently verified actual all-endpoint pair ZERO VALUE forces the initial pair ZERO VALUE. No sequence convergence, finite-open-gap density or Poisson Miura map is assumed.",
+    "original_Hill_complete_angle_pair_Gardner_commute proves {Theta_n,Theta_m}=0 for the ACTUAL complete intrinsic Abelian cotangents at EVERY ORIGINAL physical real mean-zero Hminus-one potential with the TWO selected ORIGINAL gaps open; ALL other gaps may be closed. Full complex-source cotangents and actual infinite Abelian corrections are retained. The existing mixed actual angle/action Kronecker matrix and angle/discriminant law remain proved. Next derive the ACTUAL signed-coordinate Gardner matrix away from zero, extend through collapsed gaps by the verified finite-open-gap DENSITY in the physical mean-zero source, then prove all-source derivative invertibility and remaining scales/global map/flow results. ALL FIVE MAIN THEOREMS remain UNPROVED."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -9313,6 +9339,24 @@
     "infinite_endpoint_transport_PROVED": false,
     "actual_angle_angle_Gardner_commutation_PROVED": false,
     "signed_coordinate_canonicality_away_from_zero_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "verified_actual_Hill_angle_pair_commutation": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-angle-pair-commutation-map.json",
+    "actual_native_open_gap_BOTH_endpoints_simple_PROVED": true,
+    "actual_native_gap_radicand_zero_only_at_endpoints_PROVED": true,
+    "actual_native_fixed_initial_spectral_curve_ODE_PROVED": true,
+    "actual_complete_native_flow_endpoint_hitting_PROVED": true,
+    "endpoint_hitting_scope": "EVERY original physical real mean-zero Hminus-one potential and EVERY positive index, including collapsed gaps; some finite REAL time.",
+    "actual_finite_native_endpoint_moves_preserving_pair_PROVED": true,
+    "compact_FIP_all_actual_endpoints_same_pair_PROVED": true,
+    "actual_angle_angle_Gardner_commutation_on_original_physical_source_PROVED": true,
+    "angle_pair_scope": "EVERY original physical real mean-zero Hminus-one source with TWO selected ORIGINAL gaps open. ALL other gaps may be closed. Full ambient complex cotangents and complete intrinsic infinite Abelian correction retained.",
+    "finite_open_gap_density_assumed": false,
+    "Poisson_Miura_identification_assumed": false,
+    "supplied_endpoint_or_convergence_premise": false,
+    "signed_coordinate_canonicality_away_from_zero_PROVED": false,
+    "all_source_Birkhoff_derivative_invertibility_PROVED": false,
     "global_Birkhoff_theorem_PROVED": false
   }
 }
