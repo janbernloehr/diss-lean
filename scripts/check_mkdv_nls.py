@@ -1061,6 +1061,23 @@ modules = [
     'NLS/MKdV/MiuraFullAbelianPhase.lean',
     'NLS/MKdV/MiuraNativeAbelianPhase.lean',
     'NLS/Articles/MKdVNLSHierarchies/FullIndependentAbelianPhase.lean',
+    'NLS/KdV/HillDiscriminantGradient.lean',
+    'NLS/ComplexAnalysis/ScalarHillProductPairing.lean',
+    'NLS/KdV/HillSolutionProducts.lean',
+    'NLS/KdV/HillDiscriminantGradientRegularity.lean',
+    'NLS/KdV/HillDirichletProductPairings.lean',
+    'NLS/KdV/HillDiscriminantNativeGradient.lean',
+    'NLS/KdV/HillDiscriminantDirichletPairing.lean',
+    'NLS/KdV/HillDirichletMagriBoundary.lean',
+    'NLS/KdV/HillDirichletDiscriminantMagri.lean',
+    'NLS/MKdV/MiuraDiscriminantGradient.lean',
+    'NLS/Poisson/SobolevGardnerGradientPullback.lean',
+    'NLS/MKdV/MiuraDiscriminantSourceGradient.lean',
+    'NLS/ZakharovShabat/SourceOrdinaryLaurentCotangentCircle.lean',
+    'NLS/MKdV/MiuraDirichletDiscriminantDirection.lean',
+    'NLS/MKdV/MiuraDirichletActionContour.lean',
+    'NLS/MKdV/MiuraDirichletActionMotion.lean',
+    'NLS/Articles/MKdVNLSHierarchies/OriginalDivisorActionMotion.lean',
 ]
 if args.full_audit:
     modules.append("NLS.lean")

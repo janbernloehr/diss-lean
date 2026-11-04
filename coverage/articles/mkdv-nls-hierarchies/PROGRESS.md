@@ -2951,3 +2951,69 @@ Fifteen new modules add 47 public declarations (43 theorems and four
 definitions). All 1,012 previous mathematical source files are unchanged.
 
 Validation: all 1,027 article/shared modules have validated private outputs. The fifteen new modules and aggregate compiled under strict default limits with warnings as errors. All 1,012 old mathematical prefix sources and private compiled-output hashes match the frozen pushed 8af7d58 baseline. The full targeted transitive audit passed for 9,072 declarations/auxiliaries and the combined audit for 53,960 NLS declarations, with only propext, Classical.choice and Quot.sound allowed. All 1,030 frozen mathematical source/checker/aggregate hashes match. Public inventory: 4,669 declarations (3,896 theorems and 773 definitions). The audit preserves every old scope and adds 62 scopes in a 49th array block of at most 64; no limits or linters were weakened. Canonical HEAD remains c5bcf63; cached dependencies were read only. The entire dependency tree was not rebuilt from source.
+
+## 2026-11-04 — original Dirichlet motion under the physical action flows
+
+The independent original Dirichlet energy now has its actual generator
+under every original physical mKdV action. The generator is a proved
+spectral circle integral. Its equality with the derivative of the original
+globally labeled energy holds at EVERY real time along every complete
+native integer Hs action flow, s>=1. All original real H1 profiles,
+infinite action support, closed gaps and arbitrary signed mean are included.
+
+- `independent_Dirichlet_discriminant_physical_Gardner` identifies the
+  actual H1 Miura-pullback gradient and its physical bracket with the
+  independent Dirichlet gradient.
+- `independent_Dirichlet_original_action_contour` gives the actual
+  original physical-action generator as a spectral circle integral.
+- `independent_Dirichlet_energy_complete_action_motion` gives that same
+  formula as the all-time derivative of the original labeled energy,
+  with no chosen local branch in its statement.
+
+The trace cotangent is proved on the full complex L2 Hill potential and
+energy domain. It is the scalar cosine/sine product expression for the
+actual trace derivative, with periodic value and first-derivative traces,
+actual L2 second derivative, and native H2 Fourier representative. The
+full complex Frechet derivative pulls back to an actual original H1
+Gardner gradient. Fourier uniqueness identifies its entire native
+cotangent with the original source discriminant cotangent.
+
+An endpoint term is essential. If f_m is the original Dirichlet gradient,
+mu_m its energy, d_m its terminal slope and M_m its squared-state mass,
+then the physical weak Magri pairing with g is
+
+`4*mu_m*integral(f_m*g_prime)-2*(d_m^2*g(1)-g(0))/M_m`.
+
+For the actual trace cotangent G_E, its matching endpoint value is the
+Dirichlet characteristic s(1,E). A proved mixed-product identity gives
+`2*(mu_m-E)*integral(f_m*G_E_prime)=(d_m^2-1)*s(1,E)/M_m`.
+The endpoint contribution therefore converts the factor mu_m to the
+running contour energy E: the actual Magri trace bracket is
+`4*E*integral(f_m*G_E_prime)`. This identity includes coincident energies;
+no division by their difference or by a gap length is needed.
+
+The original action field is then obtained from its actual source
+cotangent, rather than from a proposed divisor velocity. The independent
+energy's physical-action generator is exactly
+`-(2/pi)*circleIntegral(z*integral(f_m*G_(z^2)_prime)/R_ZS(z))`
+on the certified zero-excluding Laurent circle. Local analytic branches
+agree with the globally labeled original Dirichlet energy along the
+complete real Hs flow, so the native chain rule proves its stated motion.
+
+The negative rotation law of the full independent Abelian phase remains
+unproved. The next step is the original-sheet and normalized Abelian
+period/interpolation reduction of this actual divisor motion, followed
+by the already checked full phase-product descent. Theorem 4(iii) is still
+incomplete; the new contour generator is not asserted to be a canonical
+angle generator by itself.
+
+Seventeen new modules add 51 public declarations (39 theorems and twelve
+definitions). All 1,027 earlier mathematical sources are unchanged.
+
+Orientation qualification: the current independent spectral phase uses
+`exp(+i*sum)`. Its unit norm and continuity do not identify its orientation
+with the source canonical angle vartheta. The actual generator calculation
+must fix that sign; conjugating the independently constructed Hill phase
+may be necessary. No negative NLS phase is used to prescribe an angle.
+
+Validation: all 1,044 article/shared modules have validated private outputs. Seventeen new modules and the aggregate compiled with warnings as errors under default limits. All 1,027 earlier mathematical source hashes and private compiled-output hashes match the frozen pushed 3496ba0 baseline. The complete targeted audit passed for 9,183 declarations/auxiliaries and the combined audit for 54,068 NLS declarations, allowing only propext, Classical.choice and Quot.sound. All 1,047 frozen source/checker/aggregate hashes match. Public inventory: 4,720 declarations (3,935 theorems and 785 definitions). All 3,074 old audit scopes are preserved and 68 new scopes added in two arrays of at most 64, for 51 blocks total. No limits or linters were weakened. Canonical HEAD remains c5bcf63; cached imports were read only. The entire dependency tree was not rebuilt from source.

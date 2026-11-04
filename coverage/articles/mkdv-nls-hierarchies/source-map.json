@@ -329,7 +329,10 @@
         "NLS.MKdV.miuraFiniteGapAbelianPhase_independent_support",
         "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_original_H1",
         "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_continuous_original_H1",
-        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_native"
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_native",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_discriminant_physical_Gardner",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_action_contour",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_energy_complete_action_motion"
       ],
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
@@ -500,8 +503,8 @@
     "remaining": "Independent original mKdV angle identification and final Theorem 4(iii) angle-sum factorization. Corrected all-order frequency comparison is complete."
   },
   "remaining_essential_dependencies": [
-    "Prove the actual full independent Abelian phase opposite rotation law under every complete original physical mKdV action flow, or derive it from its negative physical Gardner generators. This is still unproved even on finite-gap profiles. The actual full phase is now constructed, bounded and continuous on the exact own-open-action locus of every original real H1 profile, including arbitrary infinite-gap support.",
-    "Instantiate exists_opposite_unit_phase_action_factor with the now constructed miuraNativeFullAbelianPhase after proving its opposite action-flow rotation. The printed final Theorem4iii claim is dependence as a function of all original physical actions and literal signed mean. Corrected all-order Theorem3 and all other previously completed clauses remain complete."
+    "Prove the actual full independent Abelian phase opposite rotation law under every complete original physical mKdV action flow. The original Dirichlet energies now have actual contour generators and all-time physical-action derivatives. Use this divisor motion, its original sheet and normalized Abelian periods to obtain the full phase law. This law is still unproved even on finite-gap profiles. Verify the phase orientation relative to the source canonical vartheta; the current exp(+i*sum) construction has not yet been proved to carry the required negative generator.",
+    "Instantiate exists_opposite_unit_phase_action_factor with miuraNativeFullAbelianPhase after proving its opposite action-flow rotation. The phase already has the required unit bound and continuity on every original real H1 own-open-action locus, including arbitrary infinite-gap support and signed mean. No extra complex analytic infinite-phase extension is required by the source conclusion. Corrected Theorem3 and all previously completed main clauses remain complete."
   ],
   "shared_variational_calculus": {
     "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
@@ -1468,7 +1471,40 @@
     "limits": [
       "No opposite action-flow rotation or negative physical-action Gardner generator has yet been proved.",
       "No full complex analytic extension of the infinite phase is claimed.",
-      "The final printed angle-sum conclusion remains incomplete until opposite rotation and the already checked descent are combined."
+      "The final printed angle-sum conclusion remains incomplete until opposite rotation and the already checked descent are combined.",
+      "The current independent phase uses the explicit exp(+i*sum) convention. Its orientation relative to the source canonical vartheta has not yet been identified. The new actual generator formula must fix that sign; conjugating the independently constructed spectral phase may be necessary. No negative NLS phase may be assigned as its definition."
+    ]
+  },
+  "original_Dirichlet_motion_under_physical_actions": {
+    "status": "proved_actual_trace_cotangent_and_contour_generators_all_time_original_Dirichlet_motion_full_phase_rotation_still_open",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_discriminant_physical_Gardner",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_action_contour",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_energy_complete_action_motion",
+      "NLS.KdV.fderiv_hillL2Discriminant_potential_integral",
+      "NLS.KdV.hillDiscriminantH2Data",
+      "NLS.KdV.hasFDerivAt_hillDiscriminant_unit",
+      "NLS.ComplexAnalysis.integral_scalarHill_squared_product_derivative",
+      "NLS.KdV.hillWeakGradientMagri_Dirichlet_boundary",
+      "NLS.KdV.hillDirichletDiscriminantMagriBracket_eq_energy_first",
+      "NLS.KdV.hillDirichletDiscriminantMagriBracket_div_energy",
+      "NLS.KdV.hillDirichletDiscriminantMagriBracket_resolvent",
+      "NLS.MKdV.miuraHillDiscriminantGradient",
+      "NLS.MKdV.miuraHillDiscriminantGradient_fourier",
+      "NLS.MKdV.miuraActionGardnerDirection_eq_sourceDifference",
+      "NLS.ZakharovShabat.fderiv_sourceComplexAction_eq_Laurent_cotangent_circle",
+      "NLS.MKdV.hasDerivAt_miuraNativeDirichletEnergy_actionFlow_circle"
+    ],
+    "domain": "Actual Hill trace gradient at every complex L2 potential and every complex energy, including zero. Dirichlet trace Magri identity at every original real period-one L2 Hill potential and every complex energy, including coincident energies and closed gaps. Physical action contour generator at every original real H1 profile, all positive action and Dirichlet indices. The actual labeled-energy derivative holds at every real time along every complete native integer Hs action flow, s>=1, with arbitrary support and signed mean.",
+    "normalizations": "The actual position/derivative trace cotangent is G_E=s(1,E)c(x,E)^2+(s_prime(1,E)-c(1,E))*c(x,E)*s(x,E)-c_prime(1,E)*s(x,E)^2. Both its value and first spatial derivative have matching endpoint traces. Its full complex L2 derivative is the physical unconjugated integral; the lower first-order component minus sign and literal unit Fourier coefficients are preserved.",
+    "boundary_identity": "For Dirichlet gradient f_m, energy mu_m, endpoint slope d_m and squared-state mass M_m, the weak Magri pairing with any AC g,dg is4*mu_m*integral(f_m*dg)-2*(d_m^2*g(1)-g(0))/M_m. For the actual periodic trace gradient,2*(mu_m-E)*integral(f_m*G_E_prime)=(d_m^2-1)*s(1,E)/M_m. Thus the actual trace Magri bracket is4*E*integral(f_m*G_E_prime), at all E without spectral-difference division.",
+    "physical_action_formula": "The actual Gardner direction of original J_n is the bounded source cotangent difference applied to the actual original NLS action differential. On the zero-excluding Laurent circle, the independent Dirichlet-energy generator is exactly -(2/pi)*circleIntegral(z*integral(f_m*G_(z^2)_prime)/R_ZS(z)). Every coefficient, contour, canonical root and index is supplied by checked original spectral constructions.",
+    "motion": "Local original branch agreement transfers the actual native Hs Gardner chain rule to the globally labeled independent Dirichlet energy. The final all-time derivative statement contains no arbitrary choice of local branch.",
+    "limits": [
+      "This does not yet prove negative unit generators or opposite flow rotation of the full independent Abelian phase.",
+      "The independent sheet and normalized Abelian period/interpolation reduction are still needed. General infinite-gap phase continuity is already proved.",
+      "Final Theorem4iii remains incomplete. No angle is defined as a negative NLS angle, and no divisor velocity or bracket is prescribed as an axiom.",
+      "The current independent phase uses the explicit exp(+i*sum) convention. Its orientation relative to the source canonical vartheta has not yet been identified. The new actual generator formula must fix that sign; conjugating the independently constructed spectral phase may be necessary. No negative NLS phase may be assigned as its definition."
     ]
   }
 }

@@ -1,3 +1,4 @@
+import NLS.Articles.MKdVNLSHierarchies.OriginalDivisorActionMotion
 import NLS.Articles.MKdVNLSHierarchies.FullIndependentAbelianPhase
 import NLS.Articles.MKdVNLSHierarchies.IndependentAbelianPhaseConstruction
 import NLS.Articles.MKdVNLSHierarchies.IndependentSpectralGardnerGeometry
@@ -3286,11 +3287,89 @@ private def mkdvNLSAuditPrefixes48 : Array Lean.Name := #[
   `_private.NLS.Articles.MKdVNLSHierarchies.FullIndependentAbelianPhase,
 ]
 
+private def mkdvNLSAuditPrefixes49 : Array Lean.Name := #[
+  `NLS.KdV.hillDiscriminantGradientCurve,
+  `NLS.KdV.hillDiscriminantGradientCurve_eq_l2,
+  `NLS.KdV.fderiv_hillL2Discriminant_potential_integral,
+  `_private.NLS.KdV.HillDiscriminantGradient,
+  `NLS.ComplexAnalysis.integral_scalarHill_squared_product_derivative,
+  `_private.NLS.ComplexAnalysis.ScalarHillProductPairing,
+  `NLS.KdV.hillSolutionProductCurve,
+  `NLS.KdV.hillSolutionProductSpatialCurve,
+  `NLS.KdV.hillSolutionProductSecond,
+  `NLS.KdV.absolutelyContinuousOnInterval_hillSolutionProductCurve,
+  `NLS.KdV.absolutelyContinuousOnInterval_hillSolutionProductSpatialCurve,
+  `NLS.KdV.ae_hasDerivAt_hillSolutionProductCurve,
+  `NLS.KdV.ae_hasDerivAt_hillSolutionProductSpatialCurve,
+  `NLS.KdV.memLp_hillSolutionProductSecond,
+  `_private.NLS.KdV.HillSolutionProducts,
+  `NLS.KdV.hillDiscriminantGradientCurve_eq_products,
+  `NLS.KdV.hillDiscriminantGradientSpatialCurve,
+  `NLS.KdV.hillDiscriminantGradientSecond,
+  `NLS.KdV.absolutelyContinuousOnInterval_hillDiscriminantGradientCurve,
+  `NLS.KdV.absolutelyContinuousOnInterval_hillDiscriminantGradientSpatialCurve,
+  `NLS.KdV.ae_hasDerivAt_hillDiscriminantGradientCurve,
+  `NLS.KdV.ae_hasDerivAt_hillDiscriminantGradientSpatialCurve,
+  `NLS.KdV.memLp_hillDiscriminantGradientSecond,
+  `NLS.KdV.hillDiscriminantGradientCurve_endpoints,
+  `NLS.KdV.hillDiscriminantGradientSpatialCurve_endpoints,
+  `_private.NLS.KdV.HillDiscriminantGradientRegularity,
+  `NLS.KdV.integral_hillDirichletGradient_productSpatial_energy,
+  `_private.NLS.KdV.HillDirichletProductPairings,
+  `NLS.KdV.hillDiscriminantH2Data,
+  `NLS.KdV.hillDiscriminantNativeGradient,
+  `NLS.KdV.hillDiscriminantNativeGradient_apply,
+  `NLS.KdV.hasFDerivAt_hillDiscriminant_unit,
+  `_private.NLS.KdV.HillDiscriminantNativeGradient,
+  `NLS.KdV.integral_hillDirichletGradient_discriminantSpatial_energy,
+  `_private.NLS.KdV.HillDiscriminantDirichletPairing,
+  `NLS.KdV.hillWeakGradientMagri_Dirichlet_boundary,
+  `_private.NLS.KdV.HillDirichletMagriBoundary,
+  `NLS.KdV.hillDirichletDiscriminantMagriBracket,
+  `NLS.KdV.hillDirichletDiscriminantMagriBracket_eq_energy_first,
+  `NLS.KdV.hillDirichletDiscriminantMagriBracket_div_energy,
+  `NLS.KdV.hillDirichletDiscriminantMagriBracket_resolvent,
+  `_private.NLS.KdV.HillDirichletDiscriminantMagri,
+  `NLS.MKdV.miuraHillDiscriminantGradient,
+  `NLS.MKdV.miuraHillDiscriminantGradient_bracket,
+  `NLS.MKdV.miuraHillDiscriminantGradient_bracket_eq_energy_first,
+  `_private.NLS.MKdV.MiuraDiscriminantGradient,
+  `NLS.Poisson.SobolevGardnerGradientAt.gradient_eval_of_pullback,
+  `_private.NLS.Poisson.SobolevGardnerGradientPullback,
+  `NLS.MKdV.miuraSourceDifferenceCLM,
+  `NLS.MKdV.miuraSourceDifferenceCLM_apply,
+  `NLS.MKdV.miuraHillDiscriminantGradient_fourier,
+  `NLS.MKdV.periodOneDerivative_miuraHillDiscriminantGradient,
+  `NLS.MKdV.miuraActionGardnerDirection_eq_sourceDifference,
+  `_private.NLS.MKdV.MiuraDiscriminantSourceGradient,
+  `NLS.ZakharovShabat.fderiv_sourceComplexAction_eq_Laurent_cotangent_circle,
+  `_private.NLS.ZakharovShabat.SourceOrdinaryLaurentCotangentCircle,
+  `NLS.MKdV.miuraDirichletGradient_discriminant_difference,
+  `_private.NLS.MKdV.MiuraDirichletDiscriminantDirection,
+  `NLS.MKdV.miuraDirichlet_physicalAction_generator_circle,
+  `_private.NLS.MKdV.MiuraDirichletActionContour,
+  `NLS.MKdV.miuraNativeDirichletEnergy,
+  `NLS.MKdV.hasDerivAt_miuraNativeDirichletEnergy_actionFlow,
+  `NLS.MKdV.hasDerivAt_miuraNativeDirichletEnergy_actionFlow_circle,
+  `_private.NLS.MKdV.MiuraDirichletActionMotion,
+]
+
+private def mkdvNLSAuditPrefixes50 : Array Lean.Name := #[
+  `NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_discriminant_physical_Gardner,
+  `NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_action_contour,
+  `NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_energy_complete_action_motion,
+  `_private.NLS.Articles.MKdVNLSHierarchies.OriginalDivisorActionMotion,
+]
+
 open Lean in
 run_cmd do
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
-  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48] : Array (Array Name)).flatten
+  let prefixes := (#[mkdvNLSAuditPrefixes0, mkdvNLSAuditPrefixes1, mkdvNLSAuditPrefixes2, mkdvNLSAuditPrefixes3, mkdvNLSAuditPrefixes4, mkdvNLSAuditPrefixes5, mkdvNLSAuditPrefixes6, mkdvNLSAuditPrefixes7, mkdvNLSAuditPrefixes8, mkdvNLSAuditPrefixes9, mkdvNLSAuditPrefixes10, mkdvNLSAuditPrefixes11, mkdvNLSAuditPrefixes12, mkdvNLSAuditPrefixes13, mkdvNLSAuditPrefixes14, mkdvNLSAuditPrefixes15, mkdvNLSAuditPrefixes16, mkdvNLSAuditPrefixes17, mkdvNLSAuditPrefixes18, mkdvNLSAuditPrefixes19, mkdvNLSAuditPrefixes20, mkdvNLSAuditPrefixes21, mkdvNLSAuditPrefixes22, mkdvNLSAuditPrefixes23, mkdvNLSAuditPrefixes24, mkdvNLSAuditPrefixes25, mkdvNLSAuditPrefixes26, mkdvNLSAuditPrefixes27, mkdvNLSAuditPrefixes28, mkdvNLSAuditPrefixes29, mkdvNLSAuditPrefixes30, mkdvNLSAuditPrefixes31, mkdvNLSAuditPrefixes32, mkdvNLSAuditPrefixes33, mkdvNLSAuditPrefixes34, mkdvNLSAuditPrefixes35, mkdvNLSAuditPrefixes36, mkdvNLSAuditPrefixes37, mkdvNLSAuditPrefixes38, mkdvNLSAuditPrefixes39, mkdvNLSAuditPrefixes40, mkdvNLSAuditPrefixes41, mkdvNLSAuditPrefixes42, mkdvNLSAuditPrefixes43, mkdvNLSAuditPrefixes44, mkdvNLSAuditPrefixes45, mkdvNLSAuditPrefixes46, mkdvNLSAuditPrefixes47, mkdvNLSAuditPrefixes48, mkdvNLSAuditPrefixes49, mkdvNLSAuditPrefixes50] : Array (Array Name)).flatten
   let expected := #[
+    ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_discriminant_physical_Gardner,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_action_contour,
+    ``NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_energy_complete_action_motion,
+
     ``NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_original_H1,
     ``NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_continuous_original_H1,
     ``NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_native,
