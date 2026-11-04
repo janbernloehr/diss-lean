@@ -1,7 +1,7 @@
 {
   "date": "2026-11-04",
   "article_main_theorems_verified": false,
-  "phase": "Prove the ACTUAL native Cartesian map sends zero to zero, with the ENTIRE original free periodic enumeration, exact free norming multiplier sign and vanishing literal physical phase corrections.",
+  "phase": "Prove the ACTUAL whole-state Hill potential Frechet variation, explicit free Fourier kernels, simple original-energy Dirichlet derivative, zero terminal energy derivative and exact physical trace variation.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1239,13 +1239,22 @@
     "NLS/KdV/HillNativeFreeSpectralData.lean",
     "NLS/KdV/HillAbelianFreeCorrections.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillCartesianOrigin.lean",
+    "NLS/ComplexAnalysis/SecondOrderDuhamel.lean",
+    "NLS/ComplexAnalysis/SquarePullbackDerivative.lean",
+    "NLS/KdV/ClassicalHillStateAnalytic.lean",
+    "NLS/KdV/ClassicalHillPotentialVariation.lean",
+    "NLS/KdV/ClassicalHillFreeVariation.lean",
+    "NLS/KdV/ClassicalHillFourierVariation.lean",
+    "NLS/KdV/ClassicalHillFreeEnergyDerivative.lean",
+    "NLS/KdV/ClassicalHillFreeTraceVariation.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFreeFirstVariation.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 5519,
-  "definitions": 1068,
+  "proved_theorems": 5559,
+  "definitions": 1074,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 6587,
+    "declarations": 6633,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -2499,10 +2508,17 @@
     "Every intrinsic free original energy midpoint and canonical Dirichlet energy equals the SAME free energy pi squared*n squared. Thus the actual original-energy Cartesian weight vanishes at zero, for EVERY positive index. These are exact canonical values, not high-frequency asymptotics or choices of a Miura representation.",
     "The ACTUAL canonical free Dirichlet norming multiplier is EXACTLY (-1)^n, from its independently constructed physical terminal derivative. Hence the prescribed norming sheet is zero. For every physical patch, the actual selected terminal root coefficient, on-index correction, EVERY individual off-index value and its zero-diagonal term all vanish at zero. The literal complete PNat correction is therefore zero.",
     "Common intrinsic/physical correction agreement identifies the intrinsic infinite correction with that actual free zero sum. BOTH full off-index exponential multipliers are EXACTLY 1. The norming sign and free phase values needed for the Fourier first variation are now fixed. The value of the positively normalized action ratio/amplitude at zero has NOT yet been computed; it is not inferred from vanishing action and gap.",
-    "Six new modules (33 theorems and 1 definition), three canonical-byte-identical shared dependencies, one unchanged private shared dependency and the exact 6587-declaration transitive axiom audit compile CLEAN. All 1227 baseline non-audit registered sources unchanged. Canonical checkout/shared metadata read-only; no heartbeat increase or added axiom. Exact Fourier differential, Gardner canonicality, remaining scales/global/flow and ALL FIVE MAIN remain OPEN; goal ACTIVE."
+    "Six new modules (33 theorems and 1 definition), three canonical-byte-identical shared dependencies, one unchanged private shared dependency and the exact 6587-declaration transitive axiom audit compile CLEAN. All 1227 baseline non-audit registered sources unchanged. Canonical checkout/shared metadata read-only; no heartbeat increase or added axiom. Exact Fourier differential, Gardner canonicality, remaining scales/global/flow and ALL FIVE MAIN remain OPEN; goal ACTIVE.",
+    "ClassicalHillStateAnalytic constructs the literal potential-entry continuous-linear coefficient map, with pointwise coefficient (G,(q-energy)*F). The ACTUAL scalar Hill whole state curve is entire Banach-analytic in the entire continuous-potential space at every complex energy and every initial position/derivative. Its fixed-time evaluation agrees with the independently normalized physical Hill IVP.",
+    "ClassicalHillPotentialVariation identifies the ACTUAL Frechet derivative of the entire whole state and its physical point evaluation as the zero-initial forced solution with source (0,h*F). The resulting literal differential equation is deltaF prime=deltaG, deltaG prime=(q-energy)*deltaF+h*F. ACTUAL Dirichlet characteristic and terminal physical derivative are its first/second components at time1, with initial vector(0,1). No NLS Dirichlet divisor or Birkhoff map is substituted.",
+    "SecondOrderDuhamel is a reusable zero-initial sine/cosine variation-of-constants theorem for F prime=G, G prime=-z squared*F+g, every nonzero complex z and nonnegative time. It requires globally continuous F,G,g and only interior first derivatives. It follows from the two characteristic exponential Duhamel equations; there is no smallness condition. ClassicalHillFreeVariation applies it to the ACTUAL forced Hill state, for ANY physical initial vector and EVERY unit-interval time.",
+    "ClassicalHillFourierVariation gives exact physical potential Frechet kernels at EVERY positive free eigenvalue (pi*n) squared. The Dirichlet characteristic derivative is -(-1)^n/(pi*n)^2 times integral h*sin(pi*n*t)^2. The physical terminal derivative is (-1)^n/(2*pi*n) times integral h*sin(2*pi*n*t). These are whole continuous-potential Banach Frechet derivatives, with the ACTUAL physical initial and terminal normalization, including every low index.",
+    "SquarePullbackDerivative is a reusable local calculus lemma recovering the energy derivative from an eventual square-frequency pullback at nonzero frequency. ClassicalHillFreeEnergyDerivative proves the ACTUAL free scalar characteristic and terminal are entire in energy via verified L2 comparison. It computes the characteristic energy derivative at every positive free eigenvalue as (-1)^n/(2*(pi*n)^2), which is NONZERO. The ACTUAL terminal energy derivative there is exactly ZERO. No square-root branch is differentiated, no heartbeat limit increased.",
+    "ClassicalHillFreeTraceVariation proves the ACTUAL potential Frechet derivative of the physical discriminant is the sum of the correctly normalized state variations. At EVERY nonzero complex free frequency z it is EXACTLY sin(z)/z times integral h. OriginalHillFreeFirstVariation exports these physical characteristic, energy, norming-terminal and trace first-variation INPUTS. The native canonical Dirichlet-root/norming/midpoint gradients and actual Cartesian Fourier differential have NOT yet been identified.",
+    "Nine new modules (40 theorems and 6 definitions), three canonical-byte-identical shared dependencies (ScalarDuhamel, ComplexVolterraAnalytic, ComplexVolterraVariation), one unchanged private shared OddSquareDescent dependency and the exact 6633-declaration transitive axiom audit compile CLEAN. All 1233 baseline non-audit registered sources unchanged. Canonical checkout/shared metadata read-only, no added axiom or heartbeat increase. ALL FIVE MAIN remain UNPROVED and goal ACTIVE."
   ],
-  "source_correspondence": "Prove the ACTUAL native Cartesian map sends zero to zero, with the ENTIRE original free periodic enumeration, exact free norming multiplier sign and vanishing literal physical phase corrections. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NEXT exact Fourier differential, Gardner canonicality, remaining original source/target scales including infinity and global Birkhoff/weak-star/flow properties. The ACTUAL native Cartesian map origin value is NOW PROVED: hillHminusNativeCartesianMap 0=0. Entire actual original free labeling is identified by full analytic multiplicity and ordered-enumeration uniqueness: one simple bottom 0 and every positive pair at pi squared*n squared. All canonical gaps/actions, scalar X/Y and the complete native map vanish at0. Canonical free Dirichlet energy equals original energy midpoint; physical norming multiplier EXACTLY (-1)^n, prescribed sheet0, actual on-index correction and every off-index value0, literal infinite correction0 and both full off-index exponential multipliers1. Exact scalar free Hill flow/Dirichlet terminal formulas are proved as first-variation inputs. The actual positive normalized action ratio/amplitude value at0 remains OPEN; zero gap/action do not determine it. Native Banach analyticity into exact positive h-minus-one-half, exact pair norm/action identities, real coefficients/support, scalar original-energy bound, amplitude branch, all diagonal/off-index corrections and gluing remain COMPLETE; do NOT redo. The full real/positive target corestriction can use proved support/realness/norm. Exact Fourier/Gardner identification, all remaining scales/global/flow, universal ACTUAL product scalar, sharp KMT energy kernel and ALL FIVE MAIN remain UNPROVED. Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions and native complex ACTUAL scalar Cartesian formula analyticity/ORIGINAL-energy estimate are proved. The ACTUAL native Cartesian H-minus-one -> exact positive h-minus-one-half sequence map is constructed and FULL Banach-analytic, with exact source norm/action identities and real coefficients. Exact Fourier/Gardner identification, the remaining scales and global Birkhoff map remain OPEN. Do not substitute an NLS Birkhoff map for KdV. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. All 1227 baseline non-audit registered sources byte-identical to 2c4a01c. Six new modules, three byte-identical canonical dependencies, one unchanged private shared odd-square-descent dependency and exact 6587-declaration audit freshly compiled privately. Prior shared private lint fixes unchanged. No heartbeat increase.",
+  "source_correspondence": "Prove the ACTUAL whole-state Hill potential Frechet variation, explicit free Fourier kernels, simple original-energy Dirichlet derivative, zero terminal energy derivative and exact physical trace variation. Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates. Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value. NEXT identify the ACTUAL native canonical Dirichlet-root/norming/midpoint gradients, prove free normalized action ratio/amplitude value and conclude the exact Cartesian Fourier differential. Physical IVP inputs NOW COMPLETE: whole continuous-potential Banach state analyticity and Frechet variation are the ACTUAL forced scalar Hill equation with source h*F; arbitrary-initial-vector free sine/cosine kernels; exact all-positive-index characteristic and physical norming-terminal Fourier kernels; simple NONZERO original-energy characteristic derivative (-1)^n/(2*(pi*n)^2); terminal energy derivative ZERO; free physical trace derivative sin(z)/z times mean h. These are physical IVP derivatives, not yet identification of native canonical spectral-coordinate derivatives. Native full Banach analyticity into exact positive h-minus-one-half, actual map(0)=0, entire original free labels, norming signs, all free phase corrections, exact action/norm identities and original-energy estimates remain COMPLETE. Free normalized action ratio/amplitude at0 remains OPEN; vanishing action/gap do not determine it. Gardner canonicality, remaining original scales including infinity, Birkhoff bijection/boundedness/weak-star/flow, universal ACTUAL product scalar, sharp KMT energy kernel and ALL FIVE MAIN remain UNPROVED. Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions and native complex ACTUAL scalar Cartesian formula analyticity/ORIGINAL-energy estimate are proved. The ACTUAL native Cartesian H-minus-one -> exact positive h-minus-one-half sequence map is constructed and FULL Banach-analytic, with exact source norm/action identities and real coefficients. Exact Fourier/Gardner identification, the remaining scales and global Birkhoff map remain OPEN. Do not substitute an NLS Birkhoff map for KdV. Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata read-only. All 1233 baseline non-audit registered sources byte-identical to c594bdc. Nine new modules, three byte-identical canonical dependencies, one unchanged private shared odd-square-descent dependency and exact 6633-declaration audit freshly compiled privately. Prior shared private lint fixes unchanged. No heartbeat increase.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -2904,7 +2920,7 @@
     "NLS/Articles/KdVPseudomeasures/OriginalIsospectralMiura.lean": "809909787dac13672f81a09d763e2797946f938866e5c368976a0196da1f9183",
     "NLS/Fourier/PeriodicPhysicalSourceClosed.lean": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
     "NLS/Articles/KdVPseudomeasures/OriginalHminusOneCompactness.lean": "aa53fc8849580588d71e724f301fcbde69b1bf02e105c1115bf0406257cb6946",
-    "NLS/Articles/KdVPseudomeasures/Audit.lean": "ae5b2b9b26af80cc35d465c5efd8e4181d4b0f83d2cef2eee2d02fd41f087ec6",
+    "NLS/Articles/KdVPseudomeasures/Audit.lean": "b189278486fe549a02b6bd8bd8b279b1be8c3d19186f592fb7b8227d0ea85192",
     "NLS/FunctionalAnalysis/UniformCauchyLimit.lean": "b66f6520b7e17f44b3ea07a2ceb44ce710acde02ce1a50da7a62afda4f16e71f",
     "NLS/Articles/KdVPseudomeasures/SourceWeakStarCauchy.lean": "7b4358c9c889b25d59c716e124ccd847833356e41d86ef7daebf9ef41e0b9373",
     "NLS/FunctionalAnalysis/CompactThreshold.lean": "164413694158fb0a56e41dddd7ee64a1a5e4b6426a49ac5793a0b78843574bfb",
@@ -3743,7 +3759,16 @@
     "NLS/KdV/ClassicalHillFreeFlow.lean": "58caaebcf62da3eb143cc1cb94b0b2c1d0ea15c9d6973270897210521736e6be",
     "NLS/KdV/HillNativeFreeSpectralData.lean": "d2eb918eca31815efa27b351063b33b3c2727650ee485d99906871d88d0ad776",
     "NLS/KdV/HillAbelianFreeCorrections.lean": "59a73956c30997f97ca65240b7e509bf89706f9c5614c375ac2e62b67fcf81ed",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillCartesianOrigin.lean": "1fc9a4eeea25fc4c224f0a7964d13e25e0b31a0b04dc407ce15facb08aa989ad"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillCartesianOrigin.lean": "1fc9a4eeea25fc4c224f0a7964d13e25e0b31a0b04dc407ce15facb08aa989ad",
+    "NLS/ComplexAnalysis/SecondOrderDuhamel.lean": "9ae7c89f41e7ef0246903d7b33b1f0b3f5bd715768bf6b3480fdf86b031da712",
+    "NLS/ComplexAnalysis/SquarePullbackDerivative.lean": "9b1f282b0a87db59aef1f7038f5dbd5c1d16d643f678746ef547eb56eab43cf7",
+    "NLS/KdV/ClassicalHillStateAnalytic.lean": "79b58ab4aab3f7727893943a73c0e4ccfc595ba80ed752080dafa3a088ce96c7",
+    "NLS/KdV/ClassicalHillPotentialVariation.lean": "a15a053c776c697a6cc8d383e4a68ce89ec3660049bd8dfbe6569caaae25131b",
+    "NLS/KdV/ClassicalHillFreeVariation.lean": "a2096e661cc31f0a1e36e9180dbad8f1c9d6bd5a3b7adc38084298368bc9cce3",
+    "NLS/KdV/ClassicalHillFourierVariation.lean": "7efbbcf271275da4504d1c6ffbc16fda9ed38387c0ed89f060b29a50f1c57665",
+    "NLS/KdV/ClassicalHillFreeEnergyDerivative.lean": "d9bb4bce5b774ae0ba363cda93cd7fb270871eb66807a1fa220ec525a35f0e3c",
+    "NLS/KdV/ClassicalHillFreeTraceVariation.lean": "a71368340a3d27b75c9d3c95e36db6aed4e19854772898f6241fc1e9aef38bb4",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFreeFirstVariation.lean": "6ac9fd50d09dfeec2fdb1e8c38599ecb80c48eb715759f808ac832d03dac6c56"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -3751,11 +3776,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 6553,
-    "newly_checked_declarations_this_continuation": 34,
-    "new_theorems": 33,
-    "new_definitions": 1,
-    "total_checked_declarations": 6587
+    "previous_checked_declarations": 6587,
+    "newly_checked_declarations_this_continuation": 46,
+    "new_theorems": 40,
+    "new_definitions": 6,
+    "total_checked_declarations": 6633
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -3784,7 +3809,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-cartesian-origin.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-free-physical-variations.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -4079,13 +4104,14 @@
     "Prove local bounds UNIFORM IN ALL n for the ACTUAL diagonal correction and both phase multipliers, at EVERY complex physical patch point, with a diagonal Cartesian frequency-weight estimate.",
     "Prove the ORIGINAL Hill energy-weight spectral estimate for the ACTUAL scalar Cartesian coordinates, locally uniformly ALL n on ONE common OPEN CONNECTED native complex domain containing the ENTIRE real form.",
     "Construct the ACTUAL Cartesian native H-minus-one sequence map into the EXACT positive h-minus-one-half Hilbert pair, with full Banach-source analyticity on a common complex neighborhood of the ENTIRE real form.",
-    "Prove the ACTUAL native Cartesian map sends zero to zero, with the ENTIRE original free periodic enumeration, exact free norming multiplier sign and vanishing literal physical phase corrections."
+    "Prove the ACTUAL native Cartesian map sends zero to zero, with the ENTIRE original free periodic enumeration, exact free norming multiplier sign and vanishing literal physical phase corrections.",
+    "Prove the ACTUAL whole-state Hill potential Frechet variation, explicit free Fourier kernels, simple original-energy Dirichlet derivative, zero terminal energy derivative and exact physical trace variation."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-cartesian-origin-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-free-physical-variations-map.json",
   "baseline_validated_snapshot": {
-    "commit": "2c4a01c1d1319f8d27a0749cea96b497d41bc323",
-    "modules": 1228,
-    "audited_declarations": 6553,
+    "commit": "c594bdc27c404f71dfcaae9afba4a5337018f823",
+    "modules": 1234,
+    "audited_declarations": 6587,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -5666,6 +5692,26 @@
     "all_other_original_source_target_scales_PROVED": false,
     "full_Birkhoff_bijection_PROVED": false,
     "universal_2_over_pi_n_ACTUAL_product_prefactor_proved": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_free_physical_first_variations": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-free-physical-variations-map.json",
+    "ACTUAL_Hill_whole_state_Banach_potential_analyticity_PROVED": true,
+    "ACTUAL_whole_state_Frechet_derivative_forced_Hill_ODE_PROVED": true,
+    "arbitrary_initial_vector_free_sine_cosine_variation_kernels_PROVED": true,
+    "ALL_positive_free_physical_Dirichlet_potential_Fourier_kernels_PROVED": true,
+    "ALL_positive_free_norming_terminal_potential_Fourier_kernels_PROVED": true,
+    "original_energy_Dirichlet_derivative_exact_and_NONZERO_PROVED": true,
+    "free_norming_terminal_energy_derivative_ZERO_PROVED": true,
+    "free_physical_trace_potential_derivative_exact_mean_kernel_PROVED": true,
+    "native_canonical_Dirichlet_root_gradient_identified_PROVED": false,
+    "native_canonical_norming_gradient_identified_PROVED": false,
+    "original_periodic_midpoint_gradient_identified_PROVED": false,
+    "free_normalized_action_ratio_value_PROVED": false,
+    "exact_native_Cartesian_Fourier_differential_PROVED": false,
+    "Gardner_canonicality_PROVED": false,
+    "all_other_original_source_target_scales_PROVED": false,
+    "full_Birkhoff_bijection_PROVED": false,
     "all_five_main_theorems_proved": false
   }
 }

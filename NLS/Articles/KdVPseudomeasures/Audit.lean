@@ -1231,6 +1231,15 @@ import NLS.KdV.ClassicalHillFreeFlow
 import NLS.KdV.HillNativeFreeSpectralData
 import NLS.KdV.HillAbelianFreeCorrections
 import NLS.Articles.KdVPseudomeasures.OriginalHillCartesianOrigin
+import NLS.ComplexAnalysis.SecondOrderDuhamel
+import NLS.ComplexAnalysis.SquarePullbackDerivative
+import NLS.KdV.ClassicalHillStateAnalytic
+import NLS.KdV.ClassicalHillPotentialVariation
+import NLS.KdV.ClassicalHillFreeVariation
+import NLS.KdV.ClassicalHillFourierVariation
+import NLS.KdV.ClassicalHillFreeEnergyDerivative
+import NLS.KdV.ClassicalHillFreeTraceVariation
+import NLS.Articles.KdVPseudomeasures.OriginalHillFreeFirstVariation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -7821,3 +7830,49 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillCartesianOrigin
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_map_zero
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Cartesian_map_of_zero
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_norming_sheet_and_infinite_correction
+#print axioms NLS.ComplexAnalysis.secondOrder_characteristic_duhamel
+#print axioms NLS.ComplexAnalysis.secondOrder_duhamel
+#print axioms NLS.ComplexAnalysis.deriv_eq_of_square_pullback
+#print axioms NLS.KdV.classicalHillSourceCurveCLM
+#print axioms NLS.KdV.classicalHillSourceCurveCLM_apply
+#print axioms NLS.KdV.classicalHillComplexCoefficientCurve
+#print axioms NLS.KdV.classicalHillComplexCoefficientCurve_apply
+#print axioms NLS.KdV.realCoefficient_classicalHillComplexCoefficientCurve
+#print axioms NLS.KdV.classicalHillStateCurve
+#print axioms NLS.KdV.classicalHillStateCurve_apply
+#print axioms NLS.KdV.hasFDerivAt_classicalHillComplexCoefficientCurve
+#print axioms NLS.KdV.analyticOnNhd_classicalHillStateCurve_potential
+#print axioms NLS.KdV.analyticOnNhd_classicalHillFlow_potential
+#print axioms NLS.KdV.classicalHillPotentialVariationSource
+#print axioms NLS.KdV.classicalHillPotentialVariationSource_apply
+#print axioms NLS.KdV.classicalHillPotentialVariationCurve
+#print axioms NLS.KdV.classicalHillPotentialVariation
+#print axioms NLS.KdV.classicalHillPotentialVariation_coe
+#print axioms NLS.KdV.contDiff_classicalHillPotentialVariation
+#print axioms NLS.KdV.classicalHillPotentialVariation_zero
+#print axioms NLS.KdV.hasDerivAt_classicalHillPotentialVariation
+#print axioms NLS.KdV.fderiv_classicalHillStateCurve_potential
+#print axioms NLS.KdV.fderiv_classicalHillFlow_potential
+#print axioms NLS.KdV.fderiv_classicalHillDirichlet_potential
+#print axioms NLS.KdV.fderiv_classicalHillDirichletTerminal_potential
+#print axioms NLS.KdV.classicalHillPotentialVariation_free_sq
+#print axioms NLS.KdV.fderiv_classicalHillDirichlet_free
+#print axioms NLS.KdV.fderiv_classicalHillDirichletTerminal_free
+#print axioms NLS.KdV.complex_cos_nat_pi
+#print axioms NLS.KdV.complex_sin_nat_pi
+#print axioms NLS.KdV.fderiv_classicalHillDirichlet_free_fourier
+#print axioms NLS.KdV.fderiv_classicalHillDirichletTerminal_free_fourier
+#print axioms NLS.KdV.hillL2Dirichlet_zero_eq_classical
+#print axioms NLS.KdV.analyticOnNhd_classicalHillDirichlet_free
+#print axioms NLS.KdV.deriv_classicalHillDirichlet_free_sq
+#print axioms NLS.KdV.hasDerivAt_classicalHillDirichlet_free_eigenvalue
+#print axioms NLS.KdV.deriv_classicalHillDirichlet_free_eigenvalue_ne_zero
+#print axioms NLS.KdV.hillL2DirichletTerminal_zero_eq_classical
+#print axioms NLS.KdV.analyticOnNhd_classicalHillDirichletTerminal_free
+#print axioms NLS.KdV.deriv_classicalHillDirichletTerminal_free_sq
+#print axioms NLS.KdV.hasDerivAt_classicalHillDirichletTerminal_free_eigenvalue
+#print axioms NLS.KdV.fderiv_classicalHillDiscriminant_potential
+#print axioms NLS.KdV.fderiv_classicalHillDiscriminant_free
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_physical_Dirichlet_first_variation
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_physical_norming_first_variation
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_free_physical_trace_first_variation

@@ -1265,6 +1265,15 @@ modules = [
     'NLS.KdV.HillNativeFreeSpectralData',
     'NLS.KdV.HillAbelianFreeCorrections',
     'NLS.Articles.KdVPseudomeasures.OriginalHillCartesianOrigin',
+    'NLS.ComplexAnalysis.SecondOrderDuhamel',
+    'NLS.ComplexAnalysis.SquarePullbackDerivative',
+    'NLS.KdV.ClassicalHillStateAnalytic',
+    'NLS.KdV.ClassicalHillPotentialVariation',
+    'NLS.KdV.ClassicalHillFreeVariation',
+    'NLS.KdV.ClassicalHillFourierVariation',
+    'NLS.KdV.ClassicalHillFreeEnergyDerivative',
+    'NLS.KdV.ClassicalHillFreeTraceVariation',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFreeFirstVariation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
