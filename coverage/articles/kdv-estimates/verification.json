@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 6174,
+    "declarations": 6212,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -521,10 +521,14 @@
       "NLS.Coeff.natL2Decode_apply",
       "NLS.Coeff.exists_natL2_analytic_head_tail",
       "NLS.ComplexAnalysis.hilbertWeightedProduct_eq_factor_mul_deleted",
-      "NLS.ComplexAnalysis.norm_hilbertWeightedProduct_deleted_sub_le"
+      "NLS.ComplexAnalysis.norm_hilbertWeightedProduct_deleted_sub_le",
+      "NLS.ComplexAnalysis.hilbertWeightedProduct_add_single",
+      "NLS.ComplexAnalysis.fderiv_hilbertWeightedProduct_single",
+      "NLS.ComplexAnalysis.norm_fderiv_hilbertWeightedProduct_le",
+      "NLS.ComplexAnalysis.tendsto_fderiv_hilbertWeightedProduct_of_bounded_weak_weights"
     ]
   },
-  "full_repository_validation": "All 825 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 821-module base has strict validation recorded at commit b680f3a16fb49b6a5ce023a89ee3763c86dc2da7 (complete 583-module strict focused run plus 238 isolated additions, all 821 source hashes unchanged, 6133-declaration axiom audit and successful aggregate), and all 4 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6174-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 825-module focused script, full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 829 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 825-module base has strict validation recorded at commit ca49b8de2f845edd7525767743922c9051f0b2a6 (complete 583-module strict focused run plus 242 isolated additions, all 825 source hashes unchanged, 6174-declaration axiom audit and successful aggregate), and all 4 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6212-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 829-module focused script, full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -1351,10 +1355,14 @@
     "NLS/ComplexAnalysis/HilbertProductDeletion.lean": "3a3c9840f9f4427d1bbef97ca4bdc15c45ee2e3c5e4588b351d779061a182992",
     "NLS/KdV/HillFullProductUniformLimit.lean": "27bbaf0f842138cab266d5fa7588419bdbf25d04d27affe618d20adc8636e33c",
     "NLS/KdV/HillProductPeriodUniformLimit.lean": "f15e46fd1a63ad7c02ac062f85d5b5d0298e08c7702ba04024f1ba049185ad5d",
-    "NLS/KdV/HillFullPeriodRootLimit.lean": "9a9719681b43b34f0f9d8d3d8587258598febda395b6da596ed6d999a629f677"
+    "NLS/KdV/HillFullPeriodRootLimit.lean": "9a9719681b43b34f0f9d8d3d8587258598febda395b6da596ed6d999a629f677",
+    "NLS/ComplexAnalysis/HilbertProductWeakDerivative.lean": "766648c3277c8702dc8fe9a559b98f67781c374f49c7b36097f01536ddd774e7",
+    "NLS/KdV/HillFullProductRootVariation.lean": "6b0ac84034d5f48fe8e219e6ed136c0e48d1f953f4f76118d1e0fa946a1c297d",
+    "NLS/KdV/HillFullVariationDecay.lean": "957e5a4d87b965fb4a2336c95c53a2e23af88308305f83d1748a9ff53b9ed712",
+    "NLS/KdV/HillFullPeriodKernelInjectivity.lean": "9979f5390388cdf517b46ee4ea2b5c32f5b3b0ad298d7eda42365dee1b8cb8d0"
   },
-  "remaining": "For arbitrary real source potentials, the actual omitted entire products now converge to the genuine full product uniformly on bounded joint energy/root balls at rate O(1/n), and their joint Frechet derivatives converge in operator norm with the same rate. Each fixed original contour product-period and its root derivative also converge uniformly on bounded root balls on one complex source neighborhood chosen before n, retaining exact rescaling to the original candidate differential periods and exact physical base-period matching. Some subsequence of the original selected real root vectors converges to an actual gap-root-box vector whose full product has zero original period on every positive gap. The full original weighted Cartesian map remains checked near zero. Still required: prove the operator-norm limit for the full extended scaled mixed-period Jacobians, prove invertibility of the full positive limit-period derivative and uniform inverse bounds over the selected roots, construct common normalized root and full-phase neighborhoods around arbitrary real potentials, prove source-normalized Gardner brackets and a global inverse, and establish the fixed physical KdV Birkhoff identification. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
-  "milestone": "Actual full-product and original fixed-period limits around arbitrary real potentials",
+  "remaining": "The actual full-product positive-period root derivative is now proved to have zero kernel at every original real gap-root-box vector, with the original intrinsic and complex contour periods and the actual positive-supported Hilbert root directions. The proof includes exact affine coordinate derivative formulas for entire Hilbert products, uniform derivative bounds and strong directional derivative decay for bounded coefficient-null weight families, actual full root variations and nonzero root slopes, uniform central-circle decay relative to every original real gap-box full product, and the original entire-period interpolation criterion. Still required: construct the full positive Hilbert limit-period map and its Fredholm derivative, establish operator-norm convergence of the full extended scaled mixed-period Jacobians and uniform inverse bounds, construct common normalized root and full-phase neighborhoods around arbitrary real potentials, prove source-normalized Gardner brackets and a global inverse, and establish the fixed physical KdV Birkhoff identification. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+  "milestone": "Original full-product positive-period root derivative kernel injectivity",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -2182,7 +2190,11 @@
     "NLS.ComplexAnalysis.HilbertProductDeletion",
     "NLS.KdV.HillFullProductUniformLimit",
     "NLS.KdV.HillProductPeriodUniformLimit",
-    "NLS.KdV.HillFullPeriodRootLimit"
+    "NLS.KdV.HillFullPeriodRootLimit",
+    "NLS.ComplexAnalysis.HilbertProductWeakDerivative",
+    "NLS.KdV.HillFullProductRootVariation",
+    "NLS.KdV.HillFullVariationDecay",
+    "NLS.KdV.HillFullPeriodKernelInjectivity"
   ],
   "proof_commits": [
     {
@@ -2809,6 +2821,11 @@
       "commit": "b680f3a16fb49b6a5ce023a89ee3763c86dc2da7",
       "scope": "Full original weighted Cartesian Hilbert analytic map on one near-zero native source ball before every spectral weight, finite original Cartesian heads around every real source and reusable exact head-tail assembly; three isolated checks, 6133-declaration audit and successful 821-module aggregate.",
       "pushed": false
+    },
+    {
+      "commit": "ca49b8de2f845edd7525767743922c9051f0b2a6",
+      "scope": "Actual omitted/full product and original fixed-period value/root derivative O(1/n) limits around arbitrary real sources, and an actual selected-root subsequence solving all full-product periods; four isolated checks, 6174-declaration audit and successful 825-module aggregate.",
+      "pushed": false
     }
   ],
   "aggregate_check": {
@@ -2825,88 +2842,88 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "825 focused modules covered by the unchanged 821-module strictly validated base plus 4 isolated strict module checks; no fresh complete focused-script run is claimed.",
+    "focused_modules": "829 focused modules covered by the unchanged 825-module strictly validated base plus 4 isolated strict module checks; no fresh complete focused-script run is claimed.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 6174 declarations. Includes exact Hilbert product deletion/restoration, actual full Hill product and joint derivative bounds, original general-real-source contour period limits and root derivative bounds, exact original rescaling and physical base matching, and an actual selected-root subsequence solving every full-product period.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 6212 declarations. Includes affine entire product derivatives, bounded weak-weight strong derivative decay, actual full root variations and nonzero slopes, uniform exterior/central-circle decay, original entire-period interpolation and original full physical/complex period root derivative kernel injectivity.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 825 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 821-module base has strict validation recorded at commit b680f3a16fb49b6a5ce023a89ee3763c86dc2da7 (complete 583-module strict focused run plus 238 isolated additions, all 821 source hashes unchanged, 6133-declaration axiom audit and successful aggregate), and all 4 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6174-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 825-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 829 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 825-module base has strict validation recorded at commit ca49b8de2f845edd7525767743922c9051f0b2a6 (complete 583-module strict focused run plus 242 isolated additions, all 825 source hashes unchanged, 6174-declaration axiom audit and successful aggregate), and all 4 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6212-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 829-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified. The existing ParametricTrigonometricTerminal, ParametricSineTerminal, ParametricCosineTerminal, ParametricCosineChart, ParametricCosinePrimitive and LocalAnalyticSquareRoot sources were read and reused with bytes equal to the pinned prebuilt reference; their actual uses are covered transitively by the new Hill declaration audit. The endpoint-root continuity and arbitrary real-angle cosine-chart results are new shared proofs with explicit audit seeds. Generic parametric annular primitives, quadratic Cauchy projection and root primitives, quadratic cosine primitives and the segment-only analytic cosine mean were read and reused unchanged from the pinned prebuilt reference. Their SHA256 values are recorded in the analytic_regular_hill_abelian_corrections_through_closed_gaps source-map section. The actual uses are covered transitively by the expanded audit.",
-    "mathematical_scope": "Prove exact restoration of one missing factor in an entire Hilbert weighted product and a deletion error bound linear in the omitted weight. Apply it to the actual original Hill reciprocal weights, identifying the zero-deletion weight with the full positive weight. Derive uniform O(1/n) full-product convergence on every bounded joint energy/root ball. Apply the verified Banach Cauchy estimate to obtain actual joint Frechet derivative convergence in operator norm at the same rate. Define original contour periods of these actual products; positive n equals n*pi/2 times the original candidate differential period, while n=0 is the genuine full-product period. Around any real source, compact-contour inverse-root bounds and the original joint contour analytic theorem give a common source neighborhood before all n. The actual original contour product-period values and their root derivatives converge uniformly at O(1/n) on bounded root balls. At the original real source these are exactly the original intrinsic physical periods. Finally use the verified compact original real gap-root-box image and original selected-root period identities to extract a strictly increasing subsequence of the actual selected roots converging to an actual gap-box vector whose full-product period vanishes on every positive gap.",
-    "scope": "All 825 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 821-module base has strict validation recorded at commit b680f3a16fb49b6a5ce023a89ee3763c86dc2da7 (complete 583-module strict focused run plus 238 isolated additions, all 821 source hashes unchanged, 6133-declaration axiom audit and successful aggregate), and all 4 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6174-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 825-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Prove division-free exact affine coordinate formulas and coordinate derivatives for the actual entire Hilbert weighted product. Bound its actual derivative operators uniformly on bounded weight families and use convergence on coordinate vectors plus finite-support density to prove strong directional derivative convergence to zero for bounded coefficient-null weights. Define the actual full Hill product root variation, prove its energy analyticity and exact derivative/root-factor identities, and show the original full root slope is nonzero on each real spectral gap at any original real gap-box vector. Prove coefficient-null exterior weights for escaping spectral parameters and transfer the weighted-product derivative limit to the actual full variation. A contradiction sequence of central-circle energies proves genuinely uniform central-circle decay relative to the original free full product; original mixed gap-box product ratio bounds transfer it to every original real gap-box full product. Use the verified original complex entire-period interpolation criterion to annihilate the full variation when all original periods vanish. Recover each positive Hilbert root coordinate by the nonzero slope identity. Finally differentiate the original full-product physical contour period under its original integral and identify the actual complex-period root derivative at the real base source. This gives zero kernel on positive-supported root directions at every original real gap-box vector.",
+    "scope": "All 829 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 825-module base has strict validation recorded at commit ca49b8de2f845edd7525767743922c9051f0b2a6 (complete 583-module strict focused run plus 242 isolated additions, all 825 source hashes unchanged, 6174-declaration axiom audit and successful aggregate), and all 4 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6212-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 829-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "cea1099d39409983219d6f8e1114f543c35b3605b80d50110e9e3768125a9150",
-      "scripts/check-kdv-estimates.sh": "31c9349972f4564b3c7fccfee6c8e85025dde2ed05886b9e36f57df932a3bc50",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "b04d153fe4ea815456259152be74cef8a6555552682696cece9c681d15e8b996"
+      "NLS.lean": "5edf8a7d85b42627b4b33c28c7c7dab9bfbadd94f118c4c245279c16c1f37e66",
+      "scripts/check-kdv-estimates.sh": "fe93994dc43a6f84e7d23bb84128cabc96a372741d5fac8f763be139433a19a8",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "0862cbb6b268fc8f371e989cd90a692639f0745deb831e514a942e1b45d0b582"
     },
     "focused_build_execution": {
       "mode": "strict_delta",
-      "base_commit": "b680f3a16fb49b6a5ce023a89ee3763c86dc2da7",
-      "base_focused_modules": 821,
-      "base_verification_sha256": "7508d44b9513057dd443184ab637a40cdf61ea6cd34d390d5729ce4f23507d9e",
+      "base_commit": "ca49b8de2f845edd7525767743922c9051f0b2a6",
+      "base_focused_modules": 825,
+      "base_verification_sha256": "71a90d8bb666d870e5d27aee800db0d93ab9e86b37e3c930258d8065e227f2f4",
       "base_sources_unchanged": true,
-      "base_validation_description": "complete 583-module strict focused run plus 238 isolated additions, all 821 source hashes unchanged, 6133-declaration axiom audit and successful aggregate",
+      "base_validation_description": "complete 583-module strict focused run plus 242 isolated additions, all 825 source hashes unchanged, 6174-declaration axiom audit and successful aggregate",
       "new_modules": [
-        "NLS/ComplexAnalysis/HilbertProductDeletion.lean",
-        "NLS/KdV/HillFullProductUniformLimit.lean",
-        "NLS/KdV/HillProductPeriodUniformLimit.lean",
-        "NLS/KdV/HillFullPeriodRootLimit.lean"
+        "NLS/ComplexAnalysis/HilbertProductWeakDerivative.lean",
+        "NLS/KdV/HillFullProductRootVariation.lean",
+        "NLS/KdV/HillFullVariationDecay.lean",
+        "NLS/KdV/HillFullPeriodKernelInjectivity.lean"
       ],
       "new_source_sha256": {
-        "NLS/ComplexAnalysis/HilbertProductDeletion.lean": "3a3c9840f9f4427d1bbef97ca4bdc15c45ee2e3c5e4588b351d779061a182992",
-        "NLS/KdV/HillFullProductUniformLimit.lean": "27bbaf0f842138cab266d5fa7588419bdbf25d04d27affe618d20adc8636e33c",
-        "NLS/KdV/HillProductPeriodUniformLimit.lean": "f15e46fd1a63ad7c02ac062f85d5b5d0298e08c7702ba04024f1ba049185ad5d",
-        "NLS/KdV/HillFullPeriodRootLimit.lean": "9a9719681b43b34f0f9d8d3d8587258598febda395b6da596ed6d999a629f677"
+        "NLS/ComplexAnalysis/HilbertProductWeakDerivative.lean": "766648c3277c8702dc8fe9a559b98f67781c374f49c7b36097f01536ddd774e7",
+        "NLS/KdV/HillFullProductRootVariation.lean": "6b0ac84034d5f48fe8e219e6ed136c0e48d1f953f4f76118d1e0fa946a1c297d",
+        "NLS/KdV/HillFullVariationDecay.lean": "957e5a4d87b965fb4a2336c95c53a2e23af88308305f83d1748a9ff53b9ed712",
+        "NLS/KdV/HillFullPeriodKernelInjectivity.lean": "9979f5390388cdf517b46ee4ea2b5c32f5b3b0ad298d7eda42365dee1b8cb8d0"
       },
       "isolated_stage_exit_code": 0,
       "isolated_stage_source_matches_integrated": true,
       "expanded_axiom_audit_exit_code": 0,
-      "transitive_axiom_audit_declarations": 6174,
+      "transitive_axiom_audit_declarations": 6212,
       "complete_current_focused_script_rerun": false
     },
     "additional_shared_source_checks": [
       {
-        "module": "NLS/ComplexAnalysis/HilbertWeightedProduct.lean",
-        "sha256": "9d2f0e5a5826bc3ed75d4000a813b1f06aa8ebe173332667fa70993f8515008d",
-        "committed_base": "b680f3a16fb49b6a5ce023a89ee3763c86dc2da7",
-        "declarations_used": [
-          "NLS.ComplexAnalysis.norm_hilbertWeightedProduct_le"
-        ],
-        "fresh_strict_source_check": {
-          "exit_code": 0,
-          "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/ComplexAnalysis/HilbertWeightedProduct.lean",
-          "log": "check/reuse-full-product-limit-hilbert-product.log"
-        },
-        "purpose": "Reuse the actual entire Hilbert products, multipliability and exponential norm bound in the exact deleted-factor completion and error proof."
-      },
-      {
         "module": "NLS/ComplexAnalysis/BanachTaylorBounds.lean",
         "sha256": "e75db211483525ebd1e8b3cd673015782257db2ba25a3597db30c5d4b0ebaa90",
-        "committed_base": "b680f3a16fb49b6a5ce023a89ee3763c86dc2da7",
+        "committed_base": "ca49b8de2f845edd7525767743922c9051f0b2a6",
         "declarations_used": [
           "NLS.ComplexAnalysis.norm_fderiv_le_of_ball_bound"
         ],
         "fresh_strict_source_check": {
           "exit_code": 0,
           "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/ComplexAnalysis/BanachTaylorBounds.lean",
-          "log": "check/reuse-full-product-limit-Cauchy-bound.log"
+          "log": "check/reuse-full-kernel-Cauchy-bound.log"
         },
-        "purpose": "Upgrade actual uniform product and original contour-period error bounds to Frechet derivative operator-norm bounds on bounded root/energy balls."
+        "purpose": "Bound the actual weighted product derivative operators uniformly before using finite-support density for strong derivative convergence."
       },
       {
-        "module": "NLS/ComplexAnalysis/CompactParameterBounds.lean",
-        "sha256": "2ed949fdf0bcc00f462615dd1c45f1bb58a8a7c90d02c0352f97ac7faa758449",
-        "committed_base": "b680f3a16fb49b6a5ce023a89ee3763c86dc2da7",
+        "module": "NLS/KdV/HillComplexEntirePeriodInterpolation.lean",
+        "sha256": "9cd05ea09955abbe76484bb9e44b3172ee64ca3965e42050b917c66fcab5dd2c",
+        "committed_base": "ca49b8de2f845edd7525767743922c9051f0b2a6",
         "declarations_used": [
-          "NLS.ComplexAnalysis.exists_local_uniform_bound_on_compact_of_continuousOn"
+          "NLS.KdV.complex_entire_eq_zero_of_hill_periods_and_product_decay"
         ],
         "fresh_strict_source_check": {
           "exit_code": 0,
-          "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/ComplexAnalysis/CompactParameterBounds.lean",
-          "log": "check/reuse-full-product-limit-compact-bound.log"
+          "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/KdV/HillComplexEntirePeriodInterpolation.lean",
+          "log": "check/reuse-full-kernel-entire-criterion.log"
         },
-        "purpose": "Choose one complex potential neighborhood of any original real source with a uniform inverse canonical-root bound on the original fixed contour, before every deleted index."
+        "purpose": "Apply the proved original complex entire period criterion to the actual full-product root variation after proving its full original uniform central-circle decay."
+      },
+      {
+        "module": "NLS/KdV/HillMixedGapProductDecay.lean",
+        "sha256": "7e86b6b89e45275d3fb31f4216050f6db173f9d7b7da7d1c1524fd353f09cc8e",
+        "committed_base": "ca49b8de2f845edd7525767743922c9051f0b2a6",
+        "declarations_used": [
+          "NLS.KdV.exists_hillGapFullEnergyProduct_mixed_ratio_bound"
+        ],
+        "fresh_strict_source_check": {
+          "exit_code": 0,
+          "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/KdV/HillMixedGapProductDecay.lean",
+          "log": "check/reuse-full-kernel-product-ratio.log"
+        },
+        "purpose": "Transfer actual free full-product variation decay to every original real gap-box full product without adding a growth or uniqueness assumption."
       }
     ]
   },
@@ -3134,9 +3151,9 @@
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Actual full-product and original fixed-period limits around arbitrary real potentials",
-    "focused_modules": 825,
-    "scope": "All 825 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 821-module base has strict validation recorded at commit b680f3a16fb49b6a5ce023a89ee3763c86dc2da7 (complete 583-module strict focused run plus 238 isolated additions, all 821 source hashes unchanged, 6133-declaration axiom audit and successful aggregate), and all 4 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6174-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 825-module focused script, full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Original full-product positive-period root derivative kernel injectivity",
+    "focused_modules": 829,
+    "scope": "All 829 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 825-module base has strict validation recorded at commit ca49b8de2f845edd7525767743922c9051f0b2a6 (complete 583-module strict focused run plus 242 isolated additions, all 825 source hashes unchanged, 6174-declaration axiom audit and successful aggregate), and all 4 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6212-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 829-module focused script, full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",
@@ -3382,6 +3399,12 @@
       "milestone": "Full original weighted Cartesian Banach analytic map near zero",
       "focused_modules": 821,
       "scope": "All 821 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 818-module base has strict validation recorded at commit 5a8ca5be280c2c422d143b04dbc62af74a0e7768 (complete 583-module strict focused run plus 235 isolated additions, all 818 source hashes unchanged, 6123-declaration axiom audit and successful aggregate), and all 3 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6133-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 821-module focused script, full Lake rebuild and full repository examples were not rerun."
+    },
+    {
+      "status": "passed",
+      "milestone": "Actual full-product and original fixed-period limits around arbitrary real potentials",
+      "focused_modules": 825,
+      "scope": "All 825 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 821-module base has strict validation recorded at commit b680f3a16fb49b6a5ce023a89ee3763c86dc2da7 (complete 583-module strict focused run plus 238 isolated additions, all 821 source hashes unchanged, 6133-declaration axiom audit and successful aggregate), and all 4 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 6174-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 825-module focused script, full Lake rebuild and full repository examples were not rerun."
     }
   ]
 }

@@ -5747,3 +5747,7 @@ import NLS.ComplexAnalysis.HilbertProductDeletion
 import NLS.KdV.HillFullProductUniformLimit
 import NLS.KdV.HillProductPeriodUniformLimit
 import NLS.KdV.HillFullPeriodRootLimit
+import NLS.ComplexAnalysis.HilbertProductWeakDerivative
+import NLS.KdV.HillFullProductRootVariation
+import NLS.KdV.HillFullVariationDecay
+import NLS.KdV.HillFullPeriodKernelInjectivity

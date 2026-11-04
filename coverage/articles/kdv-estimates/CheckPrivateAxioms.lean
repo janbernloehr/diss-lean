@@ -824,6 +824,10 @@ import NLS.ComplexAnalysis.HilbertProductDeletion
 import NLS.KdV.HillFullProductUniformLimit
 import NLS.KdV.HillProductPeriodUniformLimit
 import NLS.KdV.HillFullPeriodRootLimit
+import NLS.ComplexAnalysis.HilbertProductWeakDerivative
+import NLS.KdV.HillFullProductRootVariation
+import NLS.KdV.HillFullVariationDecay
+import NLS.KdV.HillFullPeriodKernelInjectivity
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1317,7 +1321,11 @@ run_cmd do
     ``NLS.Coeff.natL2Decode_apply,
     ``NLS.Coeff.exists_natL2_analytic_head_tail,
     ``NLS.ComplexAnalysis.hilbertWeightedProduct_eq_factor_mul_deleted,
-    ``NLS.ComplexAnalysis.norm_hilbertWeightedProduct_deleted_sub_le]
+    ``NLS.ComplexAnalysis.norm_hilbertWeightedProduct_deleted_sub_le,
+    ``NLS.ComplexAnalysis.hilbertWeightedProduct_add_single,
+    ``NLS.ComplexAnalysis.fderiv_hilbertWeightedProduct_single,
+    ``NLS.ComplexAnalysis.norm_fderiv_hilbertWeightedProduct_le,
+    ``NLS.ComplexAnalysis.tendsto_fderiv_hilbertWeightedProduct_of_bounded_weak_weights]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
