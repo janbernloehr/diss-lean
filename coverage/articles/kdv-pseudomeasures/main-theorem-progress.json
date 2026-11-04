@@ -1843,7 +1843,26 @@
       "NLS.KdV.HillProductEquationPatch.exists_actual_real_sequenceJacobian_inverse",
       "NLS.KdV.HillProductEquationPatch.exists_actual_analytic_zero_sequence",
       "NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_Banach_inverse",
-      "NLS.Articles.KdVPseudomeasures.exists_original_local_analytic_Hill_zero_sequence"
+      "NLS.Articles.KdVPseudomeasures.exists_original_local_analytic_Hill_zero_sequence",
+      "NLS.Coeff.reciprocal_pair_le_shifted_holder_majorant",
+      "NLS.Coeff.exists_uniform_reciprocal_pair_tail",
+      "NLS.ZakharovShabat.sourceGapRootErrorMajorant",
+      "NLS.ZakharovShabat.norm_sourceGapRootErrorMajorant_apply",
+      "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.gap_indexRatio_uniform_tail",
+      "NLS.ComplexAnalysis.exists_fourFactor_tolerance",
+      "NLS.KdV.hillWeightedColumnGapNumerator_uniform_gap_tail",
+      "NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_uniform_diagonal_tail",
+      "NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_uniform_high_diagonal_lower",
+      "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.indexRatio_uniform_lower",
+      "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.gap_quotient_lower_at_index",
+      "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.gap_quotient_finiteHead_lower",
+      "NLS.ZakharovShabat.SourceIsolatingNeighborhoods.gap_quotient_uniform_lower",
+      "NLS.KdV.hillWeightedColumnGapNumerator_uniform_gap_lower",
+      "NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_uniform_diagonal_lower",
+      "NLS.KdV.HillProductEquationPatch.exists_actual_real_uniform_diagonal_inverse",
+      "NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_uniform_diagonal_tail",
+      "NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_uniform_diagonal_lower",
+      "NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_uniform_diagonal_inverse"
     ],
     "5.1": [
       "NLS.KdV.analyticOnNhd_hillHminusDirichlet_joint",
@@ -1851,7 +1870,7 @@
     ]
   },
   "essential_open_obligations": [
-    "Prove locally uniform FULL inverse bounds BEFORE ALL numerator indices for the ACTUAL real Hill period sequence Jacobians, then a COMMON complex SOURCE neighborhood for ALL actual zero SEQUENCES and the finer locally uniform ALL-index gamma_m^2/m bound. NEW: FULL actual real kernel injectivity and unconditional full Banach period-Jacobian inverses are NOW PROVED for EVERY real native source and EACH n, with BOTH operator inverse identities. EACH fixed n also has an ACTUAL full-lp analytic local zero branch whose nearby real values agree with the ENTIRE actual indexed real zero sequence in its original inverse-index lp norm. ONE patch is chosen before all n, but the analytic source neighborhoods may depend on n. Do NOT redo arbitrary-direction period differentiation, variation growth, all-positive-period uniqueness, full real injectivity, actual real inverses or these fixed-n sequence germs. Uniform inverse bounds before ALL n/operator-limit compactness and common source-neighborhood/gluing/fine estimates remain essential. No full inverse at arbitrary complex placed data is claimed; complete arbitrary-input KMT Lemma10.2/global independent-data period chart gluing and n-independent free inverse neighborhoods remain unclaimed.",
+    "Prove locally uniform FULL inverse bounds BEFORE ALL numerator indices for the ACTUAL real Hill period sequence Jacobians, then a COMMON complex SOURCE neighborhood for ALL actual zero SEQUENCES and the finer locally uniform ALL-index gamma_m^2/m bound. NEW: ONE high-row cutoff before ALL n gives ACTUAL diagonal convergence to one, and ONE positive lower bound before ALL n,m gives a UNIFORM DIAGONAL inverse operator norm at each real source. Do NOT confuse this with uniform FULL inverses. Earlier FULL actual real kernel injectivity, unconditional Banach inverses for EACH n and EACH-fixed-n full-lp analytic zero germs with entire nearby real-sequence agreement remain PROVED. The common offdiagonal row-kernel majorant and uniform diagonal tail now support operator-family compactness; escaping-n limit identification and injectivity still require proof. Source-local uniformity, common complex source neighborhoods/gluing, fine estimates, universal product normalization, KdV coordinates/flow and all five main theorems remain essential.",
     "Determine the universal 2/(pi*n) scalar in the ORIGINAL normalized Hill infinite product. The literal actual retained-zero product with a UNIQUE NONZERO scalar is NOW PROVED at EVERY original real H-minus-one source, with locally uniform convergence of products AND derivatives on the ENTIRE energy plane. Do NOT redo the product-up-to-scalar argument or infer the scalar from zeros/growth/analyticity plus its free value. A valid actual L2 normalization identity with a proved density transfer is one possible route. Complex-source product uniformity and exclusion of additional complex-source energy zeros are not proved. NEW: Jointly ENTIRE literal products in energy and independent inverse-index l2 data, locally UNIFORM joint cutoff convergence, actual real-source product/scalar continuity and a rigorous real L2-to-Hminus-one constant-normalization density transfer are NOW PROVED. The actual L2 identity itself remains OPEN. Do NOT redo these analytic-product/continuity/density dependencies, and do not assume the missing L2 normalization.",
     "Complete any required global complex energy-sheet/differential gluing, then construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Intrinsic numerator gluing, actual local roots/normalized periods and real-source root/differential overlap identities are proved. Formalize the literal KMT y-tilde integrating-factor gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint.",
     "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
@@ -2735,7 +2754,16 @@
     "For EACH fixed numerator index, the actual full source-joint Banach period equation has a complex lp-valued analytic local zero branch near EVERY original real source. Its graph stays in the actual common placed-input domain and solves the literal full equation. Banach local uniqueness and the PROVED norm continuity of the real indexed zero SEQUENCE identify the entire branch with ALL actual real zero coefficients nearby, simultaneously in the whole lp norm.",
     "The article interface retains unchanged original physical source potentials and exposes the ACTUAL full real period-Jacobian Banach inverse. ONE concrete patch is chosen before ALL numerator indices, then EACH index has its analytic lp-valued zero germ with nearby real-sequence agreement. These source neighborhoods may depend on the numerator index; a common complex neighborhood BEFORE ALL n is NOT asserted.",
     "Twelve new modules, four reused byte-identical canonical growth/period-uniqueness/contour-derivative/Banach-implicit dependencies and the exact 5628-declaration transitive axiom audit compiled privately without warnings or added axioms. Canonical checkout remains clean and read-only.",
-    "Uniform FULL inverse bounds before ALL numerator indices, a common complex source-to-zero SEQUENCE domain before ALL n, the finer locally uniform ALL-index squared-gap-over-index bound, universal product prefactor normalization, global energy sheets/angles/actual KdV Birkhoff coordinates/flow and ALL FIVE MAIN theorems remain OPEN; goal ACTIVE."
+    "Uniform FULL inverse bounds before ALL numerator indices, a common complex source-to-zero SEQUENCE domain before ALL n, the finer locally uniform ALL-index squared-gap-over-index bound, universal product prefactor normalization, global energy sheets/angles/actual KdV Birkhoff coordinates/flow and ALL FIVE MAIN theorems remain OPEN; goal ACTIVE.",
+    "A reusable shifted Holder majorant bounds reciprocal off-diagonal pairs of a fixed l2 sequence, uniformly in every other index including nearest neighbors. The bound vanishes as the signed row index escapes. No uniform tail convergence is inferred from norm boundedness alone.",
+    "The literal original index ratios tend to one on actual high selected gaps with ONE cutoff before ALL signed other indices and ALL root vectors in the full actual gap product. The majorant is the original endpoint displacement plus gap displacement in l2.",
+    "The exact THREE-index-ratio times omitted-root quotient factorization gives convergence of the weighted regular diagonal numerator to minus one uniformly before ALL positive numerator indices and ALL balanced independent gap inputs. The PROVED quotient tail on a neighborhood of the compact actual gap product is reused.",
+    "Exact physical real mean-value periods transfer this to convergence of every ACTUAL real Hill period Jacobian diagonal entry to one with ONE row cutoff BEFORE ALL numerator indices. The omitted midpoint diagonal is exactly one. Consequently the entire high diagonal has a uniform positive one-half lower bound.",
+    "Every nontrivial original index ratio has a positive lower norm bound uniform over all signed pairs and all placed inputs. The literal omitted-root quotient has a positive lower bound on the full compact gap product times every selected gap; a finite-head compactness argument plus the common high tail gives ONE bound before ALL signed indices, including central, low and collapsed gaps.",
+    "These literal lower bounds and the exact filled factorization give ONE strictly positive lower bound on every ACTUAL real Hill period Jacobian diagonal entry, BEFORE ALL numerator and row indices. This improves the preceding fixed-n nonzero diagonal bound.",
+    "The actual diagonal parts are Banach isomorphisms whose inverses divide coordinatewise by the original diagonal entries. Their inverse operator norms have ONE bound BEFORE ALL positive numerator indices at every real native source. The article interface retains the original physical Hminus-one potential.",
+    "Ten new modules, five reused byte-identical canonical dependencies and the exact 5647-declaration transitive axiom audit compiled privately without warnings, tactic suggestions or added axioms. All 992 baseline non-audit registered sources are unchanged. Canonical checkout and its shared Git metadata remain read-only.",
+    "A uniform bound on the DIAGONAL inverses does not establish a uniform bound on the FULL period Jacobian inverses. Uniform FULL inverse bounds, a common complex source neighborhood before all actual zero sequences, fine squared-gap estimates, universal scalar normalization and ALL FIVE MAIN theorems remain OPEN; goal ACTIVE."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -5769,6 +5797,24 @@
     "fine_locally_uniform_ALL_index_squared_gap_over_index_bound_proved": false,
     "universal_2_over_pi_n_product_prefactor_proved": false,
     "ACTUAL_global_complex_energy_sheet_and_differential_gluing_proved": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "all_five_main_theorems_proved": false
+  },
+  "verified_actual_Hill_period_uniform_diagonal": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-period-uniform-diagonal-map.json",
+    "reciprocal_pair_uniform_vanishing_row_majorant_PROVED": true,
+    "ALL_other_signed_indices_original_index_ratio_uniform_actual_gap_tail_PROVED": true,
+    "ONE_high_row_cutoff_BEFORE_ALL_n_ACTUAL_real_period_diagonal_tends_to_one_PROVED": true,
+    "omitted_midpoint_diagonal_exactly_one_retained": true,
+    "original_index_ratio_uniform_positive_lower_bound_PROVED": true,
+    "ALL_gap_product_ALL_signed_gap_quotient_uniform_positive_lower_bound_PROVED": true,
+    "ONE_positive_lower_bound_BEFORE_ALL_n_m_ACTUAL_real_period_diagonal_PROVED": true,
+    "ONE_diagonal_inverse_operator_norm_bound_BEFORE_ALL_n_at_EACH_real_source_PROVED": true,
+    "actual_diagonal_inverse_coordinate_division_PROVED": true,
+    "locally_uniform_FULL_inverse_bounds_BEFORE_ALL_n_proved": false,
+    "COMMON_complex_SOURCE_neighborhood_BEFORE_ALL_n_actual_zero_SEQUENCES_proved": false,
+    "fine_locally_uniform_ALL_index_squared_gap_over_index_bound_proved": false,
+    "universal_2_over_pi_n_product_prefactor_proved": false,
     "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
     "all_five_main_theorems_proved": false
   }

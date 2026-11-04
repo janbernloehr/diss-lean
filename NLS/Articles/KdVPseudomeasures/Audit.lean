@@ -990,6 +990,16 @@ import NLS.KdV.HillProductEquationKernelInjectivity
 import NLS.KdV.HillProductEquationRealInverse
 import NLS.KdV.HillProductEquationAnalyticZeroSequence
 import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodInverse
+import NLS.SequenceSpaces.UniformReciprocalTail
+import NLS.ZakharovShabat.SourcePsiGapIndexRatioUniformTail
+import NLS.ComplexAnalysis.FourFactorNearOne
+import NLS.KdV.HillWeightedColumnUniformGapTail
+import NLS.KdV.HillProductEquationUniformDiagonalTail
+import NLS.ZakharovShabat.SourcePsiIndexRatioUniformLower
+import NLS.ZakharovShabat.SourcePsiGapQuotientUniformLower
+import NLS.KdV.HillWeightedColumnUniformGapLower
+import NLS.KdV.HillProductEquationUniformDiagonalInverse
+import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodUniformDiagonal
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6621,3 +6631,22 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodInverse
 #print axioms NLS.KdV.HillProductEquationPatch.exists_actual_analytic_zero_sequence
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_Banach_inverse
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_local_analytic_Hill_zero_sequence
+#print axioms NLS.Coeff.reciprocal_pair_le_shifted_holder_majorant
+#print axioms NLS.Coeff.exists_uniform_reciprocal_pair_tail
+#print axioms NLS.ZakharovShabat.sourceGapRootErrorMajorant
+#print axioms NLS.ZakharovShabat.norm_sourceGapRootErrorMajorant_apply
+#print axioms NLS.ZakharovShabat.SourceIsolatingNeighborhoods.gap_indexRatio_uniform_tail
+#print axioms NLS.ComplexAnalysis.exists_fourFactor_tolerance
+#print axioms NLS.KdV.hillWeightedColumnGapNumerator_uniform_gap_tail
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_uniform_diagonal_tail
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_uniform_high_diagonal_lower
+#print axioms NLS.ZakharovShabat.SourceIsolatingNeighborhoods.indexRatio_uniform_lower
+#print axioms NLS.ZakharovShabat.SourceIsolatingNeighborhoods.gap_quotient_lower_at_index
+#print axioms NLS.ZakharovShabat.SourceIsolatingNeighborhoods.gap_quotient_finiteHead_lower
+#print axioms NLS.ZakharovShabat.SourceIsolatingNeighborhoods.gap_quotient_uniform_lower
+#print axioms NLS.KdV.hillWeightedColumnGapNumerator_uniform_gap_lower
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_uniform_diagonal_lower
+#print axioms NLS.KdV.HillProductEquationPatch.exists_actual_real_uniform_diagonal_inverse
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_uniform_diagonal_tail
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_uniform_diagonal_lower
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_period_Jacobian_uniform_diagonal_inverse

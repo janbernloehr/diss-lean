@@ -1024,6 +1024,16 @@ modules = [
     'NLS.KdV.HillProductEquationRealInverse',
     'NLS.KdV.HillProductEquationAnalyticZeroSequence',
     'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodInverse',
+    'NLS.SequenceSpaces.UniformReciprocalTail',
+    'NLS.ZakharovShabat.SourcePsiGapIndexRatioUniformTail',
+    'NLS.ComplexAnalysis.FourFactorNearOne',
+    'NLS.KdV.HillWeightedColumnUniformGapTail',
+    'NLS.KdV.HillProductEquationUniformDiagonalTail',
+    'NLS.ZakharovShabat.SourcePsiIndexRatioUniformLower',
+    'NLS.ZakharovShabat.SourcePsiGapQuotientUniformLower',
+    'NLS.KdV.HillWeightedColumnUniformGapLower',
+    'NLS.KdV.HillProductEquationUniformDiagonalInverse',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPeriodUniformDiagonal',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
