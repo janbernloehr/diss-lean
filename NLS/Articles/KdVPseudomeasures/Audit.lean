@@ -948,6 +948,12 @@ import NLS.KdV.HillProductEquationLocalBounds
 import NLS.KdV.HillProductEquationAnalytic
 import NLS.KdV.HillProductEquationDerivative
 import NLS.Articles.KdVPseudomeasures.OriginalBanachHillPeriodMap
+import NLS.KdV.HillEnergyProductReality
+import NLS.KdV.HillProductSelectedGapNonvanishing
+import NLS.KdV.HillProductColumnMeanValue
+import NLS.KdV.HillProductRealGapColumns
+import NLS.KdV.HillProductEquationRealDiagonal
+import NLS.Articles.KdVPseudomeasures.OriginalHillPeriodRealDiagonal
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -6482,3 +6488,17 @@ import NLS.Articles.KdVPseudomeasures.OriginalBanachHillPeriodMap
 #print axioms NLS.KdV.HillProductEquationPatch.analytic_sequenceJacobian
 #print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_coordinate
 #print axioms NLS.Articles.KdVPseudomeasures.exists_original_common_Banach_Hill_period_map
+#print axioms NLS.KdV.hillEnergySequenceProduct_im_eq_zero
+#print axioms NLS.KdV.hillEnergyProductCoordinateDerivative_im_eq_zero
+#print axioms NLS.KdV.hillHminusPsiZeroDisplacement_im_eq_zero
+#print axioms NLS.KdV.hillEnergySequenceProduct_real_gap_zero_iff
+#print axioms NLS.KdV.hillEnergyProductCoordinateDerivative_ne_zero_on_real_gap
+#print axioms NLS.KdV.hillProductColumnGapNumerator
+#print axioms NLS.KdV.analytic_hillProductColumnGapNumerator
+#print axioms NLS.KdV.hillEnergyProductPeriodColumn_real_mean_value
+#print axioms NLS.KdV.hillProductColumnGapNumerator_actual_real
+#print axioms NLS.KdV.hillProductColumnGapNumerator_actual_ne_zero
+#print axioms NLS.KdV.hillEnergyProductPeriodColumn_actual_diagonal_ne_zero
+#print axioms NLS.KdV.hillPeriodEquationWeight_ne_zero
+#print axioms NLS.KdV.HillProductEquationPatch.sequenceJacobian_actual_real_diagonal_ne_zero
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_Hill_period_patch_nonzero_real_diagonal

@@ -744,6 +744,12 @@
       "status": "FULL lp map BANACH analytic on ONE common OPEN placed-input domain before ALL n, one joint local norm bound before ALL n, exact original rows/real zero solutions and actual analytic bounded lp sequence Jacobian with literal contour columns PROVED. General nonzero-source period inverse/uniform inverse, complex actual zero sequence/fine estimate/universal normalization and MAIN theorems OPEN.",
       "declaration": "NLS.Articles.KdVPseudomeasures.exists_original_common_Banach_Hill_period_map",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-native-Banach-period-map-map.json"
+    },
+    {
+      "label": "Actual original real Hill period Jacobian diagonal nonvanishing",
+      "status": "ALL positive numerator and row indices, omitted midpoint and low/collapsed gaps PROVED. Full operator inverse remains OPEN.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.exists_original_Hill_period_patch_nonzero_real_diagonal",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-real-period-diagonal-map.json"
     }
   ],
   "reuse_map": [
@@ -823,7 +829,7 @@
     }
   ],
   "remaining_obligations": [
-    "Prove bounded INVERTIBILITY of the ACTUAL sequenceJacobian of the FULL original lp-valued Hill period equation at the actual real zero data for EVERY real native H-minus-one potential, retaining all low/collapsed gaps, and obtain locally uniform inverse bounds BEFORE ALL numerator indices. NEW: The actual source-joint FULL lp map is NOW constructed and BANACH analytic on ONE OPEN placed-input domain before ALL n, with ONE joint local sequence norm bound before ALL n, genuine fixed contours, exact original midpoint row, ALL actual real zero-sequence graphs contained and solving the equation, and the actual bounded sequence Jacobian jointly analytic with literal Frechet contour columns. Independent frequency lifting/product reduction/pointwise and local uniform norm bounds/Banach assembly are PROVED; do NOT redo them. Need the general nonzero-source period inverse to apply an actual uniform implicit function argument, obtain a common complex SOURCE neighborhood for ALL actual zero coefficients, Banach source-to-zero SEQUENCE analyticity and the finer locally uniform ALL-index gamma_m^2/m estimate. The common INDEPENDENT-INPUT equation domain is not itself an analytic complex actual zero SEQUENCE. Complete arbitrary-input KMT Lemma10.2/global independent-data period chart gluing and an n-independent free inverse neighborhood are not claimed.",
+    "Prove bounded INVERTIBILITY of the ACTUAL sequenceJacobian of the FULL original lp-valued Hill period equation at the actual real zero data for EVERY real native H-minus-one potential, retaining all low/collapsed gaps, and obtain locally uniform inverse bounds BEFORE ALL numerator indices. NEW: The actual source-joint FULL lp map is NOW constructed and BANACH analytic on ONE OPEN placed-input domain before ALL n, with ONE joint local sequence norm bound before ALL n, genuine fixed contours, exact original midpoint row, ALL actual real zero-sequence graphs contained and solving the equation, and the actual bounded sequence Jacobian jointly analytic with literal Frechet contour columns. Independent frequency lifting/product reduction/pointwise and local uniform norm bounds/Banach assembly are PROVED; do NOT redo them. Need the general nonzero-source period inverse to apply an actual uniform implicit function argument, obtain a common complex SOURCE neighborhood for ALL actual zero coefficients, Banach source-to-zero SEQUENCE analyticity and the finer locally uniform ALL-index gamma_m^2/m estimate. The common INDEPENDENT-INPUT equation domain is not itself an analytic complex actual zero SEQUENCE. Complete arbitrary-input KMT Lemma10.2/global independent-data period chart gluing and an n-independent free inverse neighborhood are not claimed. NEW: Nonzero diagonal entries of this ACTUAL operator are now proved at ALL original real sources and ALL positive indices, including low/collapsed gaps and exact omitted midpoint. Do NOT redo the real gap nonvanishing or exact period mean-value argument. Off-diagonal compactness/high diagonal asymptotics and full kernel injectivity remain to prove; diagonal nonvanishing alone does not give an inverse.",
     "Determine the universal 2/(pi*n) scalar in the ORIGINAL normalized Hill infinite product. The literal actual retained-zero product with a UNIQUE NONZERO scalar is NOW PROVED at EVERY original real H-minus-one source, with locally uniform convergence of products AND derivatives on the ENTIRE energy plane. Do NOT redo the product-up-to-scalar argument or infer the scalar from zeros/growth/analyticity plus its free value. A valid actual L2 normalization identity with a proved density transfer is one possible route. Complex-source product uniformity and exclusion of additional complex-source energy zeros are not proved. NEW: Jointly ENTIRE literal products in energy and independent inverse-index l2 data, locally UNIFORM joint cutoff convergence, actual real-source product/scalar continuity and a rigorous real L2-to-Hminus-one constant-normalization density transfer are NOW PROVED. The actual L2 identity itself remains OPEN. Do NOT redo these analytic-product/continuity/density dependencies, and do not assume the missing L2 normalization.",
     "Complete any required global complex energy-sheet/differential gluing, then construct admissible-path Abelian phases, off-index sums and collapsed-gap Cartesian extensions for source3.2(ii), retaining the locally uniform bound(abs(gamma_n)+abs(mu_n-tau_n))/sqrt(n). Intrinsic numerator gluing, actual local roots/normalized periods and real-source root/differential overlap identities are proved. Formalize the literal KMT y-tilde integrating-factor gauge if used. Never infer a COMPLEX collapsed-gap Dirichlet point equals its endpoint.",
     "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions are proved; coordinate assertions and actual Birkhoff Phi(0)=0 remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
@@ -2386,6 +2392,27 @@
     "L2_nonzero_source_diagonal_product_period_normalization_identity_proved": false,
     "ACTUAL_global_complex_energy_sheet_and_differential_gluing_proved": false,
     "ACTUAL_KdV_angles_constructed": false,
+    "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_period_real_diagonal_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-real-period-diagonal-map.json",
+    "literal_Hill_product_and_filled_variation_reality_PROVED": true,
+    "filled_variation_nonzero_on_ENTIRE_actual_selected_original_gap_PROVED": true,
+    "regular_column_numerator_analytic_on_WHOLE_filled_circle_PROVED": true,
+    "EXACT_one_over_two_pi_mean_value_column_formula_PROVED": true,
+    "actual_retained_PERIOD_diagonal_column_nonzero_PROVED": true,
+    "ACTUAL_bounded_period_Jacobian_ALL_real_diagonal_entries_nonzero_PROVED": true,
+    "ALL_positive_indices_low_and_collapsed_gaps_retained": true,
+    "omitted_midpoint_diagonal_exactly_one": true,
+    "ONE_source_patch_BEFORE_ALL_n_m": true,
+    "diagonal_matrix_OR_off_diagonal_vanishing_asserted": false,
+    "general_nonzero_source_PERIOD_Jacobian_inverse_proved": false,
+    "locally_uniform_inverse_bounds_BEFORE_ALL_n_proved": false,
+    "COMMON_complex_SOURCE_neighborhood_BEFORE_ALL_actual_zero_pairs_proved": false,
+    "Banach_hminus_one_SEQUENCE_analyticity_of_actual_source_to_zero_family_proved": false,
+    "locally_uniform_COMPLEX_ALL_index_squared_gap_over_index_zero_bound_proved": false,
+    "universal_2_over_pi_n_product_prefactor_proved": false,
     "ACTUAL_KdV_Birkhoff_coordinates_constructed": false,
     "all_five_main_theorems_proved": false
   }

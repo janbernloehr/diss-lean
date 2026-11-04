@@ -1,7 +1,7 @@
 {
-  "date": "2026-11-03",
-  "baseline_commit": "e48efd39dddfe2ec9bfd9ea8573296fe93987111",
-  "baseline_modules_verified_unchanged": 812,
+  "date": "2026-11-04",
+  "baseline_commit": "a9493b3457b2ce8e24ffe9ae736aadefad42ad88",
+  "baseline_modules_verified_unchanged": 950,
   "freshly_compiled_modules": [
     "NLS.SequenceSpaces.WeightedWeakStarCompactness",
     "NLS.SequenceSpaces.WeightedWeakStarLowerTopology",
@@ -24,7 +24,7 @@
     "NLS.Articles.KdVPseudomeasures.SourceWeakStarInverse",
     "NLS.Articles.KdVPseudomeasures.Audit"
   ],
-  "axiom_audited_declarations": 4942,
+  "axiom_audited_declarations": 5545,
   "warnings": 0,
   "tactic_suggestions": 0,
   "allowed_axioms": [
@@ -40,9 +40,9 @@
     "status": ""
   },
   "source_text_sha256": "1e1a9238da5d4b0fbe16d6e7e8df1b8698ae35f0b81df612cc6af910c16e1b7e",
-  "validation_log_sha256": "cf2d55fddd75f6f52fe5458c135792f17f659a73bc9f63d4295186f01f585686",
+  "validation_log_sha256": "079ec1ec5c13a53a17baea34e730b0c0dcff24ff45de49b4de17f2c83377f1c6",
   "fresh_full_build_this_increment": false,
-  "scope": "Focused fresh compilation of nineteen existing Appendix B weak-star compactness/topology modules and the current complete declaration audit. All source Lemma B.1(i)-(iv) clauses remain proved; no new Lean declaration or remaining Appendix B obligation was identified.",
+  "scope": "Focused fresh compilation of nineteen existing Appendix B weak-star compactness/topology modules and the full current 5545-declaration audit; six new Hill period diagonal modules also compiled. All B.1(i)-(iv) clauses remain proved; no new Appendix B declaration or remaining Appendix B obligation identified.",
   "source_clauses": {
     "B.1(i)": [
       "isCompact_sourceNormBall",
