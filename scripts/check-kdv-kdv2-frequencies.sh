@@ -1043,6 +1043,15 @@ modules=(
   NLS/KdV/HillDirichletLenardVariation
   NLS/KdV/HillDirichletLenardSheetVariation
   NLS/Articles/KdVKdV2Frequencies/SmoothDirichletMotion
+  NLS/KdV/HillTraceStationaryData
+  NLS/KdV/HillTraceStationaryDeflatedRoot
+  NLS/KdV/HillTraceStationaryPeriods
+  NLS/KdV/HillTraceStationaryMixedPeriods
+  NLS/KdV/HillTraceStationaryNormalization
+  NLS/KdV/HillTraceStationaryCanonicalDifferential
+  NLS/KdV/HillTraceStationaryFilledDifferential
+  NLS/KdV/HillTraceStationaryAbelianPrimitive
+  NLS/Articles/KdVKdV2Frequencies/NormalizedSpectralStationarity
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

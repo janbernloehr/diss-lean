@@ -179,6 +179,11 @@ import NLS.KdV.HillPolynomialDirections
 import NLS.Articles.KdVKdV2Frequencies.SmoothSpectralStationarity
 import NLS.Articles.KdVKdV2Frequencies.SmoothDirichletMotion
 import NLS.KdV.HillDirichletLenardSheetVariation
+import NLS.KdV.HillTraceStationaryDeflatedRoot
+import NLS.KdV.HillTraceStationaryPeriods
+import NLS.KdV.HillTraceStationaryCanonicalDifferential
+import NLS.KdV.HillTraceStationaryAbelianPrimitive
+import NLS.Articles.KdVKdV2Frequencies.NormalizedSpectralStationarity
 import Lean.Util.CollectAxioms
 
 /-! Transitive axiom audit of the candidate and its imported NLS dependencies.
@@ -1222,7 +1227,16 @@ run_cmd do
     `NLS.KdV.ClassicalHillDirichletLenard,
     `NLS.KdV.HillDirichletLenardVariation,
     `NLS.KdV.HillDirichletLenardSheetVariation,
-    `NLS.Articles.KdVKdV2Frequencies.SmoothDirichletMotion
+    `NLS.Articles.KdVKdV2Frequencies.SmoothDirichletMotion,
+    `NLS.KdV.HillTraceStationaryData,
+    `NLS.KdV.HillTraceStationaryDeflatedRoot,
+    `NLS.KdV.HillTraceStationaryPeriods,
+    `NLS.KdV.HillTraceStationaryMixedPeriods,
+    `NLS.KdV.HillTraceStationaryNormalization,
+    `NLS.KdV.HillTraceStationaryCanonicalDifferential,
+    `NLS.KdV.HillTraceStationaryFilledDifferential,
+    `NLS.KdV.HillTraceStationaryAbelianPrimitive,
+    `NLS.Articles.KdVKdV2Frequencies.NormalizedSpectralStationarity
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual Dirichlet and moving-sheet PDE velocities
+## Latest actual normalized differential stationarity for both PDEs
+
+Every fixed tangent annihilating all actual Hill traces now has proved stationarity of the actual continued primitive, local roots, gap data and deflation, intrinsic and free-tail periods, and the full Hilbert-valued normalization equation. Its invertible implicit derivative constructs ONE analytic normalized root branch stationary in every such tangent. ONE genuinely analytic canonical numerator germ matches the physical family near the real base, at all energies, with the same stationarity.
+
+The actual physical KdV and KdV2 directions discharge the trace condition. The article adapter constructs ONE genuine normalized numerator germ stationary in both fields, through closed selected gaps as well. Filled-gap normalized differential charts and actual Abelian primitives inherit the source stationarity. At an open selected gap only the moving terminal phase contributes to the actual Abelian integral derivative, including terminal band edges. See `TRACE_STATIONARY_NORMALIZATION.md`.
+
+Prior strict evidence for all 1034 unchanged selected baseline sources; strict dependency-order compilation of nine new proof modules; then a fresh combined transitive axiom audit of all 1043 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1070 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1043-module rebuild is claimed.
+
+Fresh audit: 9523 selected and 31968 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier actual Dirichlet and moving-sheet PDE velocities
 
 The actual KdV and KdV2 Fourier fields now have their exact Dirichlet velocities `D mu=r_D*K` and moving signed-sheet velocities `D r_D=Delta*Delta_E*K`. The coefficients are computed from the literal PDE fields and actual characteristic derivative, with the physical mass normalization proved. Every analytic actual Dirichlet branch is covered, including terminal band edges and closed selected gaps. Source mean zero is not required.
 

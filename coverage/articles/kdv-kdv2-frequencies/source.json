@@ -14931,9 +14931,154 @@
       "scope": "The actual printed KdV and KdV2 Fourier fields have explicit Dirichlet branch and moving signed-sheet velocities. Uses the proved seeds P1=q+2E and P2=-q_xx+3q^2+4Eq+8E^2 to compute actual coefficients K1=-2(q(0)+2mu)/D_char_prime(mu) and K2=-2(-q_xx(0)+3q(0)^2+4mu q(0)+8mu^2)/D_char_prime(mu). Proves Dmu=r_D*K and moving D r_D=Delta*Delta_E*K for every analytic physical Dirichlet branch at every smooth real period-one source, including band edges and closed gaps. No source mean-zero condition, coordinate frequency, solution flow or canonicality is assumed or claimed.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "54fab7f58ff16f6355dc993cbe23519b33e49220fa7beb3a26273f5b857b82cf"
+    },
+    {
+      "path": "NLS/KdV/HillTraceStationaryData.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary normalized spectral/action-angle calculus; physical equations (1)-(3); necessary actual frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Promotes all twelve previously private proofs. Every fixed complex tangent annihilating the actual discriminant at every complex energy also annihilates the joint trace source section, spectral trace derivative, actual continued primitive/root on their true domain, any actual nonzero local radicand root, radicand and its energy derivative, all actual logarithmic gap moments, midpoint and squared gap length. Includes closed gaps. Uses actual mixed derivative symmetry and literal contour differentiation; no isospectral path or prescribed spectral gradient is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "20a7ed4ccb5be06fd9db4cdc1a2574c14ff704d44b09f113f8474ada1c532a3b"
+    },
+    {
+      "path": "NLS/KdV/HillTraceStationaryDeflatedRoot.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary normalized spectral/action-angle calculus; physical equations (1)-(3); necessary actual frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Generalizes actual gap deflation and half-gap source derivatives to arbitrary trace-stationary tangents. Proves the actual gap polynomial, Cauchy quotient/unit, nonzero local deflated root and open half-gap roots stationary. A differentiable real matching half-gap extension has the same derivative on even physical tangents. Closed gap endpoints are retained by deflation; only the half-gap angle chart requires its selected gap open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4cc5d4b2d77b8f1dafcadc9c9465832a1dac3dd79b50100e8b825c30d6ef66ce"
+    },
+    {
+      "path": "NLS/KdV/HillTraceStationaryPeriods.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary normalized spectral/action-angle calculus; physical equations (1)-(3); necessary actual frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "With actual numerator coefficients held fixed, any trace-stationary source tangent has zero actual local contour-root, normalized integrand and intrinsic-period derivatives. The source base can differ from the fixed contour chart base, so this also covers the verified free-tail contours. Uses actual analytic contour differentiation and actual radicand-root identities.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7afea5cbbdbbbb8364a4f6dfe6258c1242a3cff35dc26dea10a275c864086605"
+    },
+    {
+      "path": "NLS/KdV/HillTraceStationaryMixedPeriods.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary normalized spectral/action-angle calculus; physical equations (1)-(3); necessary actual frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Both finite intrinsic periods and the controlled infinite free-tail periods are stationary in an arbitrary fixed tangent annihilating all traces. Actual coordinate evaluation identifies this with zero derivative of the genuine Hilbert-valued mixed period sequence and supported normalization equation. Existing analytic source-section and tail factories are reused.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7d9f4bf16211028bd00f51d4c62dd1d05f39f6e8f5fefc4a2a9c6302e65f3240"
+    },
+    {
+      "path": "NLS/KdV/HillTraceStationaryNormalization.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary normalized spectral/action-angle calculus; physical equations (1)-(3); necessary actual frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Constructs one actual analytic implicit normalized-root branch independent of the tangent. The proved bijective derivative of the actual period equation forces its derivative to vanish for EVERY trace-stationary tangent. Actual own-period division then gives the genuine jointly analytic normalized differential germ with the same universal stationarity. No root-branch stationarity or normalized-differential derivative is supplied as a hypothesis.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d8d38a515e8c021ef1e52133ab17746d94234b2bd25b9334d035e2d677801ba9"
+    },
+    {
+      "path": "NLS/KdV/HillTraceStationaryCanonicalDifferential.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary normalized spectral/action-angle calculus; physical equations (1)-(3); necessary actual frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Matches that single jointly analytic germ to the actual globally normalized numerator on ONE nearby-real physical neighborhood, simultaneously at all complex energies. The same germ is stationary in every trace-stationary tangent. Every differentiable real matching extension therefore has zero source derivative on even physical trace-stationary tangents. Actual normalization, uniqueness and physical matching factories are used, not an abstract spectral family.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e5b1cd55eb9b7b7245653ea977b258e1060f0ab1bfc3d06c0ea79f7128df1ef7"
+    },
+    {
+      "path": "NLS/KdV/HillTraceStationaryFilledDifferential.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary normalized spectral/action-angle calculus; physical equations (1)-(3); necessary actual frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "The actual normalized deflated differential has one jointly analytic chart across the whole closed selected gap and its endpoints, with actual nearby-real physical matching and zero source derivative for every trace-stationary tangent. Uses the proved generic canonical numerator and actual deflated-root stationarity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9ab873ff15ff6ac79c86a63dca2001d670af55e747c164c874e6ed50dd796917"
+    },
+    {
+      "path": "NLS/KdV/HillTraceStationaryAbelianPrimitive.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary normalized spectral/action-angle calculus; physical equations (1)-(3); necessary actual frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Constructs a genuine complex analytic cosine primitive chart with one physical matching germ, stationary at fixed angle in EVERY trace-stationary tangent. The actual sheeted Dirichlet Abelian integral then has only the moving terminal-angle contribution to its derivative. Includes terminal band edges and arbitrary other closed gaps; the selected gap is open for this angle chart. No terminal angle velocity or frequency is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5504702e37999e8ec9f13cdebd47674e494065f2bf188b527750973620d839c4"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NormalizedSpectralStationarity.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary normalized spectral/action-angle calculus; physical equations (1)-(3); necessary actual frequency identities (69)/(84)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        11,
+        26
+      ],
+      "scope": "Discharges trace stationarity using the proved literal physical KdV and KdV2 Fourier fields. For every real smooth period-one potential and every selected numerator index, chooses ONE genuine analytic normalized differential germ with both actual PDE source derivatives zero and ONE nearby-real physical matching neighborhood valid at all complex energies. The source may have nonzero mean and all gaps may be closed. Zero-source parity/reality facts are proved internally; no supplied normalized stationary family is required.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1c7dc6d3436147a0fd096f7c92014e0cdbbddd00c93aa5a0c12eb60204d44db6"
     }
   ],
   "dependencies_needed": [
+    "All TWELVE former private TraceStationaryRootTest proofs are NOW promoted, audited and published. Arbitrary fixed tangents annihilating all actual traces have proved primitive/root/gap/deflation/period/implicit-normalization/canonical numerator/filled differential/Abelian primitive source stationarity. ONE genuine canonical numerator germ is proved stationary in BOTH actual physical PDE fields. Remaining: actual terminal-angle velocities from the proved endpoint pair, summed actual Abelian phase velocities/frequency69/84, full canonicality/Fourier zero jet/native Banach coordinate analyticity/inverse/rough W realization/PDE flow existence. All eleven main rows remain OPEN.",
     "Actual Dirichlet branch and moving signed-sheet velocities of BOTH printed PDE fields are NOW proved, with exact physical normalization and terminal band edges/closed gaps included. All five former private DirichletLenardTest results are promoted or subsumed. Remaining: generalize trace-stationary local/root/normalized/angle derivatives to actual PDE directions, sum actual Abelian phase velocities and identify actual frequencies69/84; full canonicality/Fourier zero jet/Banach coordinate analyticity/inverse/rough W compatibility and PDE flow existence remain open. All eleven main theorem rows remain OPEN.",
     "The literal smooth KdV and KdV2 Fourier vector fields are NOW proved real, mean-zero, physically reconstructed and stationary for every actual Hill discriminant and actual action, including arbitrary closed selected gaps. The source need not have zero mean. Remaining: actual coordinate phase velocities/frequency69/84 and Hamiltonian identification, full canonicality, Fourier differential at zero, full Banach coordinate analyticity/inverse and rough W/PDE flow realization. All eleven main theorem rows remain OPEN.",
     "Negative scalar coordinate power-series analyticity is NOW proved through every closed selected gap. Actual action product differentials are proved on the entire physical complexified tangent. The actual action critical locus and actual action Hamiltonian-vector zero locus are exactly the closed-gap locus. Remaining: full Banach-valued coordinate analyticity, canonical coordinate/angle brackets, Fourier differential at zero, global inverse/rough W compatibility and actual Hamiltonian frequencies69/84/PDE identification. All eleven main theorem rows remain OPEN.",
@@ -14970,15 +15115,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 9483,
-    "total_declarations_audited": 31928,
+    "candidate_declarations_audited": 9523,
+    "total_declarations_audited": 31968,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1034,
+    "selected_modules": 1043,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -15012,7 +15157,8 @@
     "real_signed_hamiltonian_validation_sequence": "Prior strict evidence for all 1002 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical real-axis calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1008 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1034 frozen source/checker/provenance hashes, 24 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1008-module rebuild is claimed.",
     "conjugate_analytic_validation_sequence": "Prior strict evidence for all 1008 unchanged selected baseline sources; strict dependency-order compilation of sixteen byte-identical canonical holomorphic calculus dependencies and three new proof modules; then a fresh combined transitive axiom audit of all 1027 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1054 frozen source/checker/provenance hashes, 25 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1027-module rebuild is claimed.",
     "physical_pde_stationarity_validation_sequence": "Prior strict evidence for all 1027 unchanged selected baseline sources; strict dependency-order compilation of three new proof modules; then a fresh combined transitive axiom audit of all 1030 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1057 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1030-module rebuild is claimed.",
-    "dirichlet_motion_validation_sequence": "Prior strict evidence for all 1030 unchanged selected baseline sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 1034 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1061 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1034-module rebuild is claimed."
+    "dirichlet_motion_validation_sequence": "Prior strict evidence for all 1030 unchanged selected baseline sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 1034 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1061 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1034-module rebuild is claimed.",
+    "trace_normalization_validation_sequence": "Prior strict evidence for all 1034 unchanged selected baseline sources; strict dependency-order compilation of nine new proof modules; then a fresh combined transitive axiom audit of all 1043 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1070 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1043-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -15258,5 +15404,6 @@
   "real_signed_hamiltonian_record": "REAL_SIGNED_ACTION_FIELDS.md",
   "conjugate_analytic_record": "SIGNED_ANALYTIC_ACTION_CRITICAL_LOCUS.md",
   "physical_pde_stationarity_record": "PHYSICAL_PDE_STATIONARITY.md",
-  "dirichlet_motion_record": "PHYSICAL_DIRICHLET_MOTION.md"
+  "dirichlet_motion_record": "PHYSICAL_DIRICHLET_MOTION.md",
+  "trace_normalization_record": "TRACE_STATIONARY_NORMALIZATION.md"
 }

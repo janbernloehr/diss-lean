@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual Dirichlet and moving-sheet PDE velocities
+## Latest actual normalized differential stationarity for both PDEs
+
+Every fixed tangent annihilating all actual Hill traces now has proved stationarity of the actual continued primitive, local roots, gap data and deflation, intrinsic and free-tail periods, and the full Hilbert-valued normalization equation. Its invertible implicit derivative constructs ONE analytic normalized root branch stationary in every such tangent. ONE genuinely analytic canonical numerator germ matches the physical family near the real base, at all energies, with the same stationarity.
+
+The actual physical KdV and KdV2 directions discharge the trace condition. The article adapter constructs ONE genuine normalized numerator germ stationary in both fields, through closed selected gaps as well. Filled-gap normalized differential charts and actual Abelian primitives inherit the source stationarity. At an open selected gap only the moving terminal phase contributes to the actual Abelian integral derivative, including terminal band edges. See `TRACE_STATIONARY_NORMALIZATION.md`.
+
+Prior strict evidence for all 1034 unchanged selected baseline sources; strict dependency-order compilation of nine new proof modules; then a fresh combined transitive axiom audit of all 1043 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1070 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1043-module rebuild is claimed.
+
+Fresh audit: 9523 selected and 31968 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier actual Dirichlet and moving-sheet PDE velocities
 
 The actual KdV and KdV2 Fourier fields now have their exact Dirichlet velocities `D mu=r_D*K` and moving signed-sheet velocities `D r_D=Delta*Delta_E*K`. The coefficients are computed from the literal PDE fields and actual characteristic derivative, with the physical mass normalization proved. Every analytic actual Dirichlet branch is covered, including terminal band edges and closed selected gaps. Source mean zero is not required.
 
@@ -226,19 +236,19 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1034 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1043 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: prior 1030-module strict evidence; all four additions
+Validation output: prior 1034-module strict evidence; all nine additions
 strictly compiled in dependency order; then a fresh combined transitive axiom
-audit of all 1034 selected modules:
+audit of all 1043 selected modules:
 
 ```text
-# Prior strict evidence for 1030 unchanged baseline sources
+# Prior strict evidence for 1034 unchanged baseline sources
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -1276,17 +1286,26 @@ PASS NLS/KdV/HillActionCoordinateDifferential
 PASS NLS/KdV/ClassicalHillLenardIdentity
 PASS NLS/KdV/HillPolynomialDirections
 PASS NLS/Articles/KdVKdV2Frequencies/SmoothSpectralStationarity
-# Final strict checks: four new proof modules
 PASS NLS/KdV/ClassicalHillDirichletLenard
 PASS NLS/KdV/HillDirichletLenardVariation
 PASS NLS/KdV/HillDirichletLenardSheetVariation
 PASS NLS/Articles/KdVKdV2Frequencies/SmoothDirichletMotion
-# Fresh combined transitive audit of all 1034 selected modules
-Axiom audit passed: 9483 candidate declarations; 31928 declarations total.
+# Final strict checks: nine new proof modules
+PASS NLS/KdV/HillTraceStationaryData
+PASS NLS/KdV/HillTraceStationaryDeflatedRoot
+PASS NLS/KdV/HillTraceStationaryPeriods
+PASS NLS/KdV/HillTraceStationaryMixedPeriods
+PASS NLS/KdV/HillTraceStationaryNormalization
+PASS NLS/KdV/HillTraceStationaryCanonicalDifferential
+PASS NLS/KdV/HillTraceStationaryFilledDifferential
+PASS NLS/KdV/HillTraceStationaryAbelianPrimitive
+PASS NLS/Articles/KdVKdV2Frequencies/NormalizedSpectralStationarity
+# Fresh combined transitive audit of all 1043 selected modules
+Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1034 selected modules (including generated and private declarations)
+the 1043 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
