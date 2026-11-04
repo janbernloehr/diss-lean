@@ -943,6 +943,7 @@ import NLS.KdV.HillIsospectralAbelianPeriods
 import NLS.KdV.HillIsospectralMixedPeriods
 import NLS.KdV.HillIsospectralImplicitRoots
 import NLS.KdV.HillIsospectralNormalizedDifferentials
+import NLS.KdV.HillHamiltonianDirichletSourceFlows
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
