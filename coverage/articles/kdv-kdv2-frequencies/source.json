@@ -14255,9 +14255,122 @@
       "scope": "Uses locally uniform tails of the actual physical weighted actions to prove continuity of the summed squared coordinate amplitudes. Exact signed Parseval and the Hilbert criterion prove full native weighted norm continuity of the actual Abelian coordinate map at every real source, including arbitrary closed gaps. Exposes hillPhysicalAbelianMap with no supplied hypotheses and proves its continuity, signed reality and actual action identity. Full norm analyticity, canonicality, Fourier differential at zero, inverse and rough negative-regularity extension remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "e83a5a6e3ed8d537d6e97654495d2728e625480e7519d3d9ea69f5fc59b3caa5"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/MixedSpectralSourceDerivative.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary canonical/action-coordinate identities; actual action formula (19) and Arnold contour differentiation"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Unchanged canonical mixed spectral/source derivative symmetry for jointly analytic Banach-parameter families, strictly compiled at default heartbeats; reused for the actual trace differential variation.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cbfe3ec7dfef0447932b8cb751870eba10b1dd4993f456a0b0f35aef508bf141"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuotientDerivative.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary canonical/action-coordinate identities; actual action formula (19) and Arnold contour differentiation"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Unchanged canonical evaluated scalar quotient derivative, strictly compiled at default heartbeats; reused for the variation of the actual trace differential divided by its root.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9925d7c39029df381cb6718063243d59ed35ee7532f304362e89044a8850b92e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CirclePolynomialIntegrationByParts.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary canonical/action-coordinate identities; actual action formula (19) and Arnold contour differentiation"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Unchanged canonical closed-circle polynomial integration by parts, strictly compiled at default heartbeats; gives the negative unweighted source variation of the Arnold action period.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d9d70fd4ffc49c2ac98d40eb98f1267d9c9541d2129f8f93a6a94cc09b5ff401"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TraceRootVariation.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary canonical/action-coordinate identities; actual action formula (19) and Arnold contour differentiation"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Derives the nonzero root derivative solely from the actual radicand relation R^2=Delta^2-4. Proves energy analyticity of evaluated source derivatives and the exact mixed identity D_p(Delta_E/R)[h]=d_E(D_pDelta[h]/R) on every open joint analytic domain. No primitive or action derivative is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5ff0964bfccc7e1501b6076228b2546208c6c0ab2e32909bebcdfe0b66f0ea9c"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TraceActionVariation.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary canonical/action-coordinate identities; actual action formula (19) and Arnold contour differentiation"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Uses compact-contour differentiation and the proved exact energy differential to compute D_p integral(E Delta_E/R)[h] = -integral(D_pDelta[h]/R). Retains the specified root branch and works for complex Banach source spaces. The action factor 1/pi is supplied explicitly in the physical application.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "715f314ef62735ebfd313989a73c3f7e16bd343555268aaccd6b96253d6b8963"
+    },
+    {
+      "path": "NLS/KdV/HillLocalContourAction.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary canonical/action-coordinate identities; actual action formula (19) and Arnold contour differentiation"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Defines the literal Arnold action on the base actual intrinsic gap contour using the actual analytic complex root. Constructs an open complex L2 analytic neighborhood and proves one nearby-real germ matches the actual physical action, including a closed selected gap, by physical root matching and contour comparison. Its exact source derivative in every complex L2 direction is -1/pi times the actual unweighted trace-variation period.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a8e8529e79f99286b7db7aa0f74dc753500d8f434feaf9de54d0884642ffa6a5"
+    },
+    {
+      "path": "NLS/KdV/HillActionSourceVariation.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary canonical/action-coordinate identities; actual action formula (19) and Arnold contour differentiation"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Proves the same actual action derivative for every differentiable nearby-real matching extension on every period-one Fourier tangent, including closed gaps. Actual actions are stationary along all trace directions and all normalized contour directions. Proves the latter tangents have even support and zero mean. Identifying these tangents with the physical Gardner Hamiltonian directions is still a separate required step.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "07aead4b6d0496c1ea1ba5b0a1912f1abce98eaf96238ba83f5b6f0f0ba76bf0"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianCoordinateVariation.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary canonical/action-coordinate identities; actual action formula (19) and Arnold contour differentiation"
+      ],
+      "source_pages": [
+        3,
+        11,
+        26
+      ],
+      "scope": "Combines the actual action stationarity and the actual physical phase variation to prove one universal trace law DZ_n[X_b]=-i*psi_n(b)*z_n/2 for every differentiable nearby-real matching coordinate extension, including closed selected gaps. Normalized contour directions act as exact diagonal infinitesimal rotations DZ_n[Y_m]=i*delta_mn*z_n at every real source. No canonical-action Hamiltonian identification or actual PDE/frequency realization is silently assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bd91971870102b18cf32e5ca24ff081b040f6628877f1419e4d4b035a72918ee"
     }
   ],
   "dependencies_needed": [
+    "Actual physical actions now have genuine locally complex analytic fixed-contour extensions at every real source including closed selected gaps, with universal derivative -1/pi integral(DDelta[h]/R) on period-one directions. Every actual coordinate now obeys the all-gap trace and normalized-contour infinitesimal rotation identities. Next identify the contour tangent Y_m as the physical action Gardner Hamiltonian vector via actual gradient/Fourier/spatial derivative pairings; then canonical source orientation, Fourier differential at zero, full Banach analyticity/inverse/rough extension and physical frequency identities69/84 remain required.",
     "Actual scalar Abelian coordinates now extend analytically through closed own gaps, and their literal signed sequence is constructed and continuous in the native weighted half-shift norm with z_n*z_-n=I_n. Next: identify actual action Hamiltonian directions, establish canonical Birkhoff orientation, full Banach analyticity and exact Fourier differential at zero, inverse and negative-regularity rough extension, then physical frequency identities (69)/(84), action descent and PDE realization. Scalar analyticity and real norm continuity alone do not prove full complex Banach analyticity.",
     "Identify the actual normalized coefficient contour tangents with the physical action Hamiltonian directions, orient the constructed physical Abelian phase relative to the canonical Birkhoff angle, construct the amplitude-weighted coordinates through collapsed own gaps, and prove the global action/Birkhoff/PDE realization. The raw infinite angle derivative and branch-independent open-gap phase are proved. Physical time orientation is corrected to the positive Fourier exponent.",
     "canonical zero/product identification, globally prescribed spectral-cycle compatibility and rough-space normalization; the local actual infinite entire family, convergent positive-index sums and every fixed frequency/energy contour period are constructed",
@@ -14288,15 +14401,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 9180,
-    "total_declarations_audited": 31737,
+    "candidate_declarations_audited": 9210,
+    "total_declarations_audited": 31761,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 988,
+    "selected_modules": 996,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -14324,7 +14437,8 @@
     "dirichlet_interpolation_validation_sequence": "Prior strict validation of all 876 unchanged selected sources; strict dependency-order compilation of four byte-identical canonical pole/Cauchy helpers and four new proof modules; then a fresh combined transitive axiom audit of all 884 selected modules. The reused helpers precede every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 884-module rebuild is claimed.",
     "summed_abelian_angle_validation_sequence": "Prior strict validation of all 884 unchanged selected sources; strict dependency-order compilation of 75 byte-identical shared analytic correction dependencies; strict compilation of one byte-identical canonical holomorphic-limit helper and five new proof modules; then a fresh combined transitive axiom audit of all 965 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, all source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 965-module rebuild is claimed.",
     "period_phase_validation_sequence": "Prior strict evidence for the 965-module baseline; all 960 unaffected source files and nineteen provenance records remain unchanged. Strict dependency-order rebuild of all six affected prior selected modules, including five changed source files, and all five new modules; then a fresh combined transitive axiom audit of all 970 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, frozen source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No full 970-module rebuild is claimed.",
-    "abelian_coordinate_validation_sequence": "Prior strict evidence for all 970 unchanged selected baseline sources; strict dependency-order compilation of eleven byte-identical shared action-prefactor sources, one byte-identical canonical continuity criterion and six new proof modules; then a fresh combined transitive axiom audit of all 988 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1011 frozen source/checker/provenance hashes, 21 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 988-module rebuild is claimed."
+    "abelian_coordinate_validation_sequence": "Prior strict evidence for all 970 unchanged selected baseline sources; strict dependency-order compilation of eleven byte-identical shared action-prefactor sources, one byte-identical canonical continuity criterion and six new proof modules; then a fresh combined transitive axiom audit of all 988 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1011 frozen source/checker/provenance hashes, 21 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 988-module rebuild is claimed.",
+    "action_variation_validation_sequence": "Prior strict evidence for all 988 unchanged selected baseline sources; strict dependency-order compilation of three byte-identical canonical calculus helpers and five new proof modules; then a fresh combined transitive axiom audit of all 996 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1020 frozen source/checker/provenance hashes, 22 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 996-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -14564,5 +14678,6 @@
     ],
     "physical_identification_status": "open; the generic coordinate-flow interface is corrected, but the actual spectral frequencies and physical Birkhoff evolution are not yet identified"
   },
-  "abelian_coordinate_record": "ABELIAN_COORDINATES.md"
+  "abelian_coordinate_record": "ABELIAN_COORDINATES.md",
+  "action_variation_record": "ACTION_COORDINATE_VARIATION.md"
 }

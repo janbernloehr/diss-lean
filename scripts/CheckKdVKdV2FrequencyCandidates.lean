@@ -1,3 +1,8 @@
+import NLS.KdV.HillAbelianCoordinateVariation
+import NLS.KdV.HillActionSourceVariation
+import NLS.KdV.HillLocalContourAction
+import NLS.ComplexAnalysis.TraceActionVariation
+import NLS.ComplexAnalysis.TraceRootVariation
 import NLS.KdV.HillAbelianCoordinateContinuity
 import NLS.KdV.HillAbelianCoordinateSequence
 import NLS.KdV.HillAbelianCoordinateAnalytic
@@ -203,6 +208,7 @@ run_cmd do
     `NLS.SequenceSpaces.MixedMajorantMatrix,
     `NLS.SequenceSpaces.ReciprocalSquareKernel,
     `NLS.ComplexAnalysis.AffineLoopHomotopy,
+    `NLS.ComplexAnalysis.MixedSpectralSourceDerivative,
     `NLS.ComplexAnalysis.ParametricDividedDifference,
     `NLS.ComplexAnalysis.AnalyticImplicitBanachRoot,
     `NLS.ComplexAnalysis.AnalyticFinitePeriodNormalization,
@@ -238,6 +244,7 @@ run_cmd do
     `NLS.ComplexAnalysis.NestedCircleHomotopy,
     `NLS.ZakharovShabat.ClassicalForcedKernel,
     `NLS.ZakharovShabat.ClassicalDiscriminantGradient,
+    `NLS.ComplexAnalysis.QuotientDerivative,
     `NLS.KdV.ClassicalSpectralEmbedding,
     `NLS.KdV.ClassicalContourCoverage,
     `NLS.KdV.ActionHamiltonianMoments,
@@ -411,6 +418,7 @@ run_cmd do
     `NLS.ComplexAnalysis.SimplePoleQuotient,
     `NLS.ComplexAnalysis.SimplePoleCauchyInterpolation,
     `NLS.ZakharovShabat.SourceIsospectralSet,
+    `NLS.ComplexAnalysis.CirclePolynomialIntegrationByParts,
     `NLS.ZakharovShabat.SobolevHierarchySymmetries,
     `NLS.MKdV.HierarchyRestriction,
     `NLS.DifferentialPolynomial.RiccatiResolventParity,
@@ -1156,7 +1164,12 @@ run_cmd do
     `NLS.KdV.HillAbelianCoordinateAnalytic,
     `NLS.KdV.HillAbelianCoordinateSequence,
     `NLS.SequenceSpaces.HilbertCoordinateContinuity,
-    `NLS.KdV.HillAbelianCoordinateContinuity]
+    `NLS.KdV.HillAbelianCoordinateContinuity,
+    `NLS.ComplexAnalysis.TraceRootVariation,
+    `NLS.ComplexAnalysis.TraceActionVariation,
+    `NLS.KdV.HillLocalContourAction,
+    `NLS.KdV.HillActionSourceVariation,
+    `NLS.KdV.HillAbelianCoordinateVariation]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

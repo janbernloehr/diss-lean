@@ -43,6 +43,7 @@ modules=(
   NLS/SequenceSpaces/MixedMajorantMatrix
   NLS/SequenceSpaces/ReciprocalSquareKernel
   NLS/ComplexAnalysis/AffineLoopHomotopy
+  NLS/ComplexAnalysis/MixedSpectralSourceDerivative
   NLS/ComplexAnalysis/ParametricDividedDifference
   NLS/ComplexAnalysis/AnalyticImplicitBanachRoot
   NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
@@ -78,6 +79,7 @@ modules=(
   NLS/ComplexAnalysis/NestedCircleHomotopy
   NLS/ZakharovShabat/ClassicalForcedKernel
   NLS/ZakharovShabat/ClassicalDiscriminantGradient
+  NLS/ComplexAnalysis/QuotientDerivative
   NLS/KdV/ClassicalSpectralEmbedding
   NLS/KdV/ClassicalContourCoverage
   NLS/KdV/ActionHamiltonianMoments
@@ -251,6 +253,7 @@ modules=(
   NLS/ComplexAnalysis/SimplePoleQuotient
   NLS/ComplexAnalysis/SimplePoleCauchyInterpolation
   NLS/ZakharovShabat/SourceIsospectralSet
+  NLS/ComplexAnalysis/CirclePolynomialIntegrationByParts
   NLS/ZakharovShabat/SobolevHierarchySymmetries
   NLS/MKdV/HierarchyRestriction
   NLS/DifferentialPolynomial/RiccatiResolventParity
@@ -997,6 +1000,11 @@ modules=(
   NLS/KdV/HillAbelianCoordinateSequence
   NLS/SequenceSpaces/HilbertCoordinateContinuity
   NLS/KdV/HillAbelianCoordinateContinuity
+  NLS/ComplexAnalysis/TraceRootVariation
+  NLS/ComplexAnalysis/TraceActionVariation
+  NLS/KdV/HillLocalContourAction
+  NLS/KdV/HillActionSourceVariation
+  NLS/KdV/HillAbelianCoordinateVariation
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

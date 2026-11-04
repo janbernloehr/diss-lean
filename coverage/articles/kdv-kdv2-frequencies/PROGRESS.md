@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual Abelian coordinates through closed gaps and weighted continuity
+## Latest actual action derivatives and all-gap coordinate variation
+
+The actual action has a genuine local complex L2 analytic fixed-contour extension at every real source, including a closed selected gap. Every differentiable physical matching extension has the same derivative on period-one directions: `D I_n[h] = -1/pi contour_n D Delta[h]/R`. Compact-contour differentiation, the actual root equation, mixed derivative symmetry and integration by parts prove the formula; it is not a supplied action-gradient hypothesis.
+
+Every actual coordinate now satisfies `D z_n[X_b] = -i psi_n(b) z_n/2` at all real sources, and `D z_n[Y_m] = i delta_mn z_n` for the actual normalized contour tangents. Closed selected gaps are included, and the formulas are independent of the differentiable nearby-real matching extension. The actions are stationary along both families of directions. See `ACTION_COORDINATE_VARIATION.md`.
+
+Prior strict evidence for all 988 unchanged selected baseline sources; strict dependency-order compilation of three byte-identical canonical calculus helpers and five new proof modules; then a fresh combined transitive axiom audit of all 996 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1020 frozen source/checker/provenance hashes, 22 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 996-module rebuild is claimed.
+
+Fresh audit: 9210 selected and 31761 imported NLS declarations, permitted axioms only. Physical Gardner action-gradient identification of `Y_m`, canonical brackets, full Banach analyticity, inverse/rough realization and all eleven main theorem rows remain OPEN.
+
+## Earlier actual Abelian coordinates through closed gaps and weighted continuity
 
 The literal physical coordinates `z_n = sqrt(I_n) P_n` now have genuine complex L2 analytic scalar extensions at every real source, including where their own gap is closed. Their exact normalization is `abs(z_n)^2 = I_n`; they vanish precisely at closed gaps. The signed sequence lies in the actual weighted target `w(2n)*(1+abs(n))^(1/2)`, has zero mode and signed conjugation, and satisfies `z_n*z_-n=I_n`.
 

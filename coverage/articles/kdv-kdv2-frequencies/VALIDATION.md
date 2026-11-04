@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual Abelian coordinates through closed gaps and weighted continuity
+## Latest actual action derivatives and all-gap coordinate variation
+
+The actual action has a genuine local complex L2 analytic fixed-contour extension at every real source, including a closed selected gap. Every differentiable physical matching extension has the same derivative on period-one directions: `D I_n[h] = -1/pi contour_n D Delta[h]/R`. Compact-contour differentiation, the actual root equation, mixed derivative symmetry and integration by parts prove the formula; it is not a supplied action-gradient hypothesis.
+
+Every actual coordinate now satisfies `D z_n[X_b] = -i psi_n(b) z_n/2` at all real sources, and `D z_n[Y_m] = i delta_mn z_n` for the actual normalized contour tangents. Closed selected gaps are included, and the formulas are independent of the differentiable nearby-real matching extension. The actions are stationary along both families of directions. See `ACTION_COORDINATE_VARIATION.md`.
+
+Prior strict evidence for all 988 unchanged selected baseline sources; strict dependency-order compilation of three byte-identical canonical calculus helpers and five new proof modules; then a fresh combined transitive axiom audit of all 996 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1020 frozen source/checker/provenance hashes, 22 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 996-module rebuild is claimed.
+
+Fresh audit: 9210 selected and 31761 imported NLS declarations, permitted axioms only. Physical Gardner action-gradient identification of `Y_m`, canonical brackets, full Banach analyticity, inverse/rough realization and all eleven main theorem rows remain OPEN.
+
+## Earlier actual Abelian coordinates through closed gaps and weighted continuity
 
 The literal physical coordinates `z_n = sqrt(I_n) P_n` now have genuine complex L2 analytic scalar extensions at every real source, including where their own gap is closed. Their exact normalization is `abs(z_n)^2 = I_n`; they vanish precisely at closed gaps. The signed sequence lies in the actual weighted target `w(2n)*(1+abs(n))^(1/2)`, has zero mode and signed conjugation, and satisfies `z_n*z_-n=I_n`.
 
@@ -166,19 +176,19 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 988 selected modules compile with pinned **Lean 4.33.1**, commit
+All 996 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: prior 970-module strict evidence; all eighteen additions
+Validation output: prior 988-module strict evidence; all eight additions
 strictly compiled in dependency order; then a fresh combined transitive axiom
-audit of all 988 selected modules:
+audit of all 996 selected modules:
 
 ```text
-# Prior strict evidence for 970 unchanged baseline sources
+# Prior strict evidence for 988 unchanged baseline sources
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -1156,7 +1166,6 @@ PASS NLS/KdV/HillGardnerEnergyContinuity
 PASS NLS/KdV/HillGardnerPeriodDirections
 PASS NLS/Articles/KdVKdV2Frequencies/TimeOrientation
 PASS NLS/KdV/HillAbelianPhase
-# Final strict checks: eleven shared imports, one canonical criterion and six new modules
 PASS NLS/SequenceSpaces/UniformTailContinuity
 PASS NLS/KdV/HillDeflatedTraceCharts
 PASS NLS/ComplexAnalysis/ParametricSineSquareCosineMean
@@ -1175,12 +1184,21 @@ PASS NLS/KdV/HillAbelianCoordinateAnalytic
 PASS NLS/KdV/HillAbelianCoordinateSequence
 PASS NLS/SequenceSpaces/HilbertCoordinateContinuity
 PASS NLS/KdV/HillAbelianCoordinateContinuity
-# Fresh combined transitive audit of all 988 selected modules
-Axiom audit passed: 9180 candidate declarations; 31737 declarations total.
+# Final strict checks: three unchanged canonical helpers and five new modules
+PASS NLS/ComplexAnalysis/MixedSpectralSourceDerivative
+PASS NLS/ComplexAnalysis/QuotientDerivative
+PASS NLS/ComplexAnalysis/CirclePolynomialIntegrationByParts
+PASS NLS/ComplexAnalysis/TraceRootVariation
+PASS NLS/ComplexAnalysis/TraceActionVariation
+PASS NLS/KdV/HillLocalContourAction
+PASS NLS/KdV/HillActionSourceVariation
+PASS NLS/KdV/HillAbelianCoordinateVariation
+# Fresh combined transitive audit of all 996 selected modules
+Axiom audit passed: 9210 candidate declarations; 31761 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 988 selected modules (including generated and private declarations)
+the 996 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the

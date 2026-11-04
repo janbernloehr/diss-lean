@@ -1,0 +1,24 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/MixedSpectralSourceDerivative.lean",
+      "source_sha256": "cbfe3ec7dfef0447932b8cb751870eba10b1dd4993f456a0b0f35aef508bf141",
+      "local_sha256": "cbfe3ec7dfef0447932b8cb751870eba10b1dd4993f456a0b0f35aef508bf141",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuotientDerivative.lean",
+      "source_sha256": "9925d7c39029df381cb6718063243d59ed35ee7532f304362e89044a8850b92e",
+      "local_sha256": "9925d7c39029df381cb6718063243d59ed35ee7532f304362e89044a8850b92e",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CirclePolynomialIntegrationByParts.lean",
+      "source_sha256": "d9d70fd4ffc49c2ac98d40eb98f1267d9c9541d2129f8f93a6a94cc09b5ff401",
+      "local_sha256": "d9d70fd4ffc49c2ac98d40eb98f1267d9c9541d2129f8f93a6a94cc09b5ff401",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "scope": "Unchanged canonical mixed spectral/source derivative symmetry, evaluated scalar quotient derivative, and closed-circle polynomial integration by parts. Strictly compiled at default heartbeats and used to compute the actual physical action derivative from its Arnold contour integral."
+}
