@@ -17,7 +17,13 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual Gardner source tangents and spectral stationarity
+## Latest actual normalized differential stationarity
+
+See `NORMALIZED_GARDNER_STATIONARITY.md`. Prior strict validation of 572 unchanged selected sources; strict default-limit dependency-order compilation of 239 byte-identical shared normalization dependencies; strict compilation of six new stationarity modules; then a fresh combined transitive axiom audit of all 817 selected modules. Twelve compatible local shared variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 817-module rebuild is claimed.
+
+Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permitted standard axioms only. The actual implicit normalized differential germ is stationary along every constructed Gardner direction. Abelian-angle variation, physical frequencies and all main theorem rows remain open.
+
+## Earlier actual Gardner source tangents and spectral stationarity
 
 Actual rough trace involution now gives coefficient-space Gardner tangents with even support, zero mean and the exact physical Fourier representative. Actual trace and spectral-derivative source variations vanish along them; actual normalized Dirichlet branch variations recover the proved bracket. Continued primitive and root source variations vanish on their actual open continuation domain. See `ACTUAL_GARDNER_SOURCE_TANGENTS.md`.
 

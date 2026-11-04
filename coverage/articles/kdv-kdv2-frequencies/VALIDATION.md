@@ -5,6 +5,12 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
+## Latest actual normalized differential stationarity
+
+See `NORMALIZED_GARDNER_STATIONARITY.md`. Prior strict validation of 572 unchanged selected sources; strict default-limit dependency-order compilation of 239 byte-identical shared normalization dependencies; strict compilation of six new stationarity modules; then a fresh combined transitive axiom audit of all 817 selected modules. Twelve compatible local shared variants are retained unchanged. Exact selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 817-module rebuild is claimed.
+
+Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permitted standard axioms only. The actual implicit normalized differential germ is stationary along every constructed Gardner direction. Abelian-angle variation, physical frequencies and all main theorem rows remain open.
+
 ## Results
 
 | Source | Checked content |
@@ -84,19 +90,19 @@ its existing Hilbert specialization and a transitive audit.
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 572 selected modules compile with pinned **Lean 4.33.1**, commit
+All 817 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: 569 unchanged previously checked sources and three new
-modules compiled strictly, then a fresh combined transitive axiom audit
-of all 572 selected modules:
+Validation output: 572 unchanged previously checked sources, 239 shared
+dependencies and six new modules compiled strictly, then a fresh combined
+transitive axiom audit of all 817 selected modules:
 
 ```text
-# Prior strict checks: 569 unchanged selected sources
+# Prior strict checks: 572 unchanged selected sources
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -666,16 +672,262 @@ PASS NLS/KdV/HillDirichletSheetRoot
 PASS NLS/KdV/HillL2TraceGradients
 PASS NLS/ComplexAnalysis/QuadraticDividedDifference
 PASS NLS/KdV/HillDirichletDiscriminantBrackets
-# Incremental strict default-limit checks: three new modules
 PASS NLS/KdV/HillL2GardnerTraceInvolution
 PASS NLS/KdV/HillL2GardnerDirections
 PASS NLS/KdV/HillL2GardnerSpectralStationarity
-# Fresh combined transitive audit of all 572 selected modules
-Axiom audit passed: 6246 candidate declarations; 28489 declarations total.
+# Strict shared dependency checks: 239 byte-identical imports
+PASS NLS/ComplexAnalysis/RealGapEllipseHomotopy
+PASS NLS/ComplexAnalysis/RealGapEllipseIntegral
+PASS NLS/ComplexAnalysis/RealGapEllipseLimit
+PASS NLS/ComplexAnalysis/RealCutCircleIntegral
+PASS NLS/ComplexAnalysis/BoundedPuncturedCircleIntegral
+PASS NLS/KdV/HillL2AllGapContourIntegrals
+PASS NLS/KdV/HillL2GapCutRoots
+PASS NLS/KdV/HillL2GapCutPrimitives
+PASS NLS/KdV/HillL2NormalizedCutPrimitive
+PASS NLS/KdV/HillL2CutPrimitiveReflection
+PASS NLS/KdV/HillL2RealSourcePhase
+PASS NLS/KdV/HillL2CutRealPhase
+PASS NLS/ComplexAnalysis/TwoZeroRootEndpointBound
+PASS NLS/KdV/HillL2GapCutBoundary
+PASS NLS/KdV/HillL2CutPrimitiveEndpointValues
+PASS NLS/KdV/HillL2CutEndpointNormalization
+PASS NLS/KdV/HillL2CutPrimitiveSquare
+PASS NLS/KdV/HillL2CutSquareTrace
+PASS NLS/KdV/HillL2CutSquareDeflation
+PASS NLS/ComplexAnalysis/RealTwoZeroUnit
+PASS NLS/KdV/HillL2CutPrimitiveUnit
+PASS NLS/KdV/HillL2CutUnitOrientation
+PASS NLS/ComplexAnalysis/RealEndpointRootBoundary
+PASS NLS/KdV/HillL2GapBoundaryValues
+PASS NLS/KdV/HillL2GapContourIntegral
+PASS NLS/KdV/HillL2CollapsedGapMoments
+PASS NLS/KdV/HillL2HighGapMoments
+PASS NLS/KdV/HillL2HighGapPairs
+PASS NLS/KdV/HillL2GapSquareIdentification
+PASS NLS/KdV/HillRealGapUnitBound
+PASS NLS/KdV/HillL2TraceControl
+PASS NLS/KdV/HillL2PrimitiveStrip
+PASS NLS/KdV/HillL2WholeGapSquares
+PASS NLS/KdV/HillL2FreeSquareComparison
+PASS NLS/KdV/HillL2SmallGapCoverage
+PASS NLS/KdV/HillL2GapSquareFamilies
+PASS NLS/KdV/HillL2GapQuotients
+PASS NLS/KdV/HillL2GapQuotientAsymptotics
+PASS NLS/KdV/HillEventualActionGapBound
+PASS NLS/SequenceSpaces/PositiveFourierTail
+PASS NLS/SequenceSpaces/ReciprocalSquareTail
+PASS NLS/KdV/HillGapTail
+PASS NLS/KdV/HillPhysicalGapBounds
+PASS NLS/KdV/HillCanonicalGapBounds
+PASS NLS/KdV/HillWeightedRealActions
+PASS NLS/KdV/HillL2RealContourMoments
+PASS NLS/KdV/HillHighMomentSigns
+PASS NLS/KdV/HillRealActionContinuity
+PASS NLS/KdV/HillActionTailBudget
+PASS NLS/SequenceSpaces/LocalSeriesContinuity
+PASS NLS/KdV/HillLocallyUniformActionTails
+PASS NLS/KdV/HillWeightedActionContinuity
+PASS NLS/KdV/HillHierarchyMomentContinuity
+PASS NLS/KdV/HillGlobalMomentBounds
+PASS NLS/ComplexAnalysis/EndpointRootBounds
+PASS NLS/KdV/HillCanonicalEnergyRootProduct
+PASS NLS/ComplexAnalysis/ComplexSquareRootShift
+PASS NLS/KdV/HillEnergyFrequencyBounds
+PASS NLS/ComplexAnalysis/AnalyticSquarePullback
+PASS NLS/KdV/HillSignedEnergyLabels
+PASS NLS/SequenceSpaces/IntegerSymmetricSums
+PASS NLS/ComplexAnalysis/RealSquareRootCensus
+PASS NLS/KdV/HillCentralEnergyLabeling
+PASS NLS/ZakharovShabat/PeriodicEndpointCandidates
+PASS NLS/KdV/HillEnergyEndpointLabeling
+PASS NLS/KdV/HillEnergyRootAnalytic
+PASS NLS/KdV/HillEnergyRadicandProduct
+PASS NLS/ComplexAnalysis/RealCutConnected
+PASS NLS/ComplexAnalysis/RealEndpointRootSigns
+PASS NLS/KdV/HillEnergyRootIdentification
+PASS NLS/KdV/HillAbelianComplexRoot
+PASS NLS/ComplexAnalysis/HilbertWeightedProduct
+PASS NLS/SequenceSpaces/PositiveReciprocalLattice
+PASS NLS/KdV/HillAbelianHilbertInput
+PASS NLS/KdV/HillEnergyPolynomialLimits
+PASS NLS/KdV/HillGapCriticalPoints
+PASS NLS/ComplexAnalysis/DerivativeSquarePullbackOrder
+PASS NLS/KdV/HillCriticalFrequencyBridge
+PASS NLS/KdV/HillCriticalCentralCensus
+PASS NLS/KdV/HillSignedCriticalFrequencies
+PASS NLS/KdV/HillEnergyCriticalProduct
+PASS NLS/KdV/HillAbelianRootBox
+PASS NLS/KdV/HillAbelianNumeratorProduct
+PASS NLS/KdV/HillAbelianProductContinuity
+PASS NLS/KdV/HillAbelianProductZeros
+PASS NLS/KdV/HillAbelianHilbertProduct
+PASS NLS/KdV/HillGapRootHilbertCoordinates
+PASS NLS/ComplexAnalysis/ContinuousCircleIntegral
+PASS NLS/KdV/HillAbelianCandidatePeriods
+PASS NLS/KdV/HillAbelianNormalizationProblem
+PASS NLS/KdV/HillAbelianHilbertPeriods
+PASS NLS/KdV/HillAbelianComplexPeriods
+PASS NLS/KdV/HillComplexPeriodDomainAnalytic
+PASS NLS/KdV/HillFreeAbelianRoots
+PASS NLS/KdV/HillFreeAbelianQuotient
+PASS NLS/KdV/HillCriticalEnergyZeros
+PASS NLS/KdV/HillEnergyLogarithmicProduct
+PASS NLS/ComplexAnalysis/EndpointCriticalRatioBounds
+PASS NLS/KdV/HillOmittedEnergyCriticalProduct
+PASS NLS/KdV/HillRealGapContourDiscs
+PASS NLS/KdV/HillFreeAbelianNormalization
+PASS NLS/KdV/HillFreeGapContourGeometry
+PASS NLS/ComplexAnalysis/SineAnnulusLowerBound
+PASS NLS/KdV/HillFreeContourRadicandBound
+PASS NLS/ComplexAnalysis/ScalarSineDuhamel
+PASS NLS/KdV/ClassicalHillDuhamel
+PASS NLS/ComplexAnalysis/DuhamelIntegralBounds
+PASS NLS/KdV/ClassicalHillSmallPotential
+PASS NLS/ComplexAnalysis/UnitIntervalNormEnergy
+PASS NLS/KdV/HillContinuousPotentialMass
+PASS NLS/KdV/HillL2SmallPotentialTrace
+PASS NLS/ComplexAnalysis/InverseSquareRootBounds
+PASS NLS/KdV/HillSmallPotentialRadicand
+PASS NLS/KdV/HillCommonComplexContourDomain
+PASS NLS/KdV/HillBoundedComplexTailDomain
+PASS NLS/KdV/HillFreeSeparatedWeights
+PASS NLS/KdV/HillFreeContourSeparation
+PASS NLS/KdV/HillFreeContourWeights
+PASS NLS/ComplexAnalysis/HilbertPositiveProducts
+PASS NLS/KdV/HillContourHilbertProductSeparation
+PASS NLS/KdV/HillScaledFreeContourQuotient
+PASS NLS/KdV/HillContourHilbertPsiBounds
+PASS NLS/KdV/HillComplexContourInverseRoot
+PASS NLS/KdV/HillComplexPeriodIntegrandBounds
+PASS NLS/ComplexAnalysis/NormalizedCircleIntegralBounds
+PASS NLS/KdV/HillCommonComplexPeriods
+PASS NLS/KdV/HillComplexPeriodErrorBounds
+PASS NLS/KdV/HillBoundedComplexTailPeriodControl
+PASS NLS/KdV/HillComplexPeriodControl
+PASS NLS/KdV/HillAbelianCircleIntegrability
+PASS NLS/KdV/HillFreeAbelianRootVariation
+PASS NLS/KdV/HillFreeAbelianPeriodJacobian
+PASS NLS/KdV/HillFreeAbelianResidue
+PASS NLS/KdV/HillFreeAbelianProductSeparation
+PASS NLS/KdV/HillFreeScaledPeriodIdentity
+PASS NLS/KdV/HillFreePeriodSequence
+PASS NLS/KdV/HillComplexPeriodCoordinates
+PASS NLS/KdV/HillComplexPeriodSequence
+PASS NLS/KdV/HillGlobalComplexPeriodSummability
+PASS NLS/KdV/HillComplexTailPeriodSequence
+PASS NLS/KdV/HillComplexTailPeriodAnalytic
+PASS NLS/KdV/HillFiniteIntrinsicPeriodMap
+PASS NLS/ComplexAnalysis/DenseNonreal
+PASS NLS/KdV/HillPhysicalRootSourceIdentification
+PASS NLS/KdV/HillSourceRealBandPreservation
+PASS NLS/KdV/HillSourceBandLabelPreservation
+PASS NLS/ComplexAnalysis/TraceRootBranchUniqueness
+PASS NLS/KdV/HillComplexRootSourceMatching
+PASS NLS/KdV/HillFreeContourPhysicalRoot
+PASS NLS/KdV/HillFreeContourSpectralGapIsolation
+PASS NLS/KdV/HillFreeContourPhysicalBandBounds
+PASS NLS/KdV/HillHighCanonicalRootMatching
+PASS NLS/KdV/HillHighFreeContourGapContainment
+PASS NLS/KdV/HillHighFreeContourBandBounds
+PASS NLS/ComplexAnalysis/ConvexCutCirclePeriod
+PASS NLS/KdV/HillFilledGapCutDomain
+PASS NLS/KdV/HillPhysicalContourPeriods
+PASS NLS/KdV/HillHighIntrinsicPeriodComparison
+PASS NLS/KdV/HillMixedHilbertPeriodMap
+PASS NLS/KdV/HillMixedPhysicalPeriodCoordinates
+PASS NLS/KdV/HillMixedPeriodErrorBound
+PASS NLS/ComplexAnalysis/HilbertWeakWeightLimits
+PASS NLS/KdV/HillFreePeriodDiagonalLimit
+PASS NLS/KdV/HillFreePeriodCompactDiagonal
+PASS NLS/SequenceSpaces/PositiveDeletedProjection
+PASS NLS/KdV/HillFreePeriodDerivative
+PASS NLS/KdV/HillFreePeriodDerivativeRows
+PASS NLS/KdV/HillFreePeriodCompactRemainder
+PASS NLS/SequenceSpaces/CompactGeneralTailRows
+PASS NLS/SequenceSpaces/CompactTailCoordinateDerivative
+PASS NLS/KdV/HillMixedPeriodCompactError
+PASS NLS/SequenceSpaces/PositiveDeletedSpace
+PASS NLS/KdV/HillMixedSupportedPeriodMap
+PASS NLS/KdV/HillGapSignedRootFrequencies
+PASS NLS/KdV/HillGapRootEnergyProduct
+PASS NLS/KdV/HillGapProductExteriorBounds
+PASS NLS/ComplexAnalysis/RealCriticalProducts
+PASS NLS/KdV/HillEnergyChiPositivity
+PASS NLS/KdV/HillOmittedEnergyRootProduct
+PASS NLS/KdV/HillOmittedEnergyRootNonvanishing
+PASS NLS/KdV/HillDeflatedCanonicalRoot
+PASS NLS/KdV/HillDeflatedCanonicalRootPhase
+PASS NLS/KdV/HillGapBoxNumeratorReality
+PASS NLS/KdV/HillGapEnergyProductSimpleZeros
+PASS NLS/KdV/HillGapNumeratorDecay
+PASS NLS/KdV/HillMixedGapProductDecay
+PASS NLS/KdV/HillExteriorEnergyWeights
+PASS NLS/KdV/HillComplexPeriodAnalytic
+PASS NLS/KdV/HillFreeSupportedPeriodMap
+PASS NLS/KdV/HillComplexSupportedPeriodMap
+PASS NLS/KdV/HillComplexImplicitPeriodRoots
+PASS NLS/KdV/HillComplexPeriodLocalRootGerm
+PASS NLS/KdV/HillComplexNormalizedPeriodGerm
+PASS NLS/KdV/HillComplexNumeratorZeros
+PASS NLS/KdV/HillHilbertRootCoordinates
+PASS NLS/KdV/HillAbelianRootUpdate
+PASS NLS/KdV/HillAbelianPeriodConjugation
+PASS NLS/KdV/HillAbelianRootSlope
+PASS NLS/ComplexAnalysis/RealIntegralZero
+PASS NLS/ComplexAnalysis/CosineZeroPeriod
+PASS NLS/ComplexAnalysis/RealGapZeroPeriod
+PASS NLS/KdV/HillGlobalGapPeriodCriterion
+PASS NLS/KdV/HillRootSlopeNonvanishing
+PASS NLS/KdV/HillCanonicalRootConjugation
+PASS NLS/ComplexAnalysis/CompactNonzeroNormLowerBound
+PASS NLS/KdV/HillGapBoxPeriodNonvanishing
+PASS NLS/KdV/HillIntrinsicPeriodReality
+PASS NLS/KdV/HillIntrinsicPeriodLinearity
+PASS NLS/KdV/HillRootPeriodAffineFormula
+PASS NLS/KdV/HillRootCoordinateAffineVariation
+PASS NLS/KdV/HillIntrinsicPeriodRootJacobian
+PASS NLS/KdV/HillEntireNumeratorRootVariation
+PASS NLS/KdV/HillExteriorNumeratorVariationBound
+PASS NLS/KdV/HillEnergyCircleFrequencySeparation
+PASS NLS/KdV/HillEntireRootVariationDecay
+PASS NLS/KdV/HillIntrinsicNumeratorVariationPeriod
+PASS NLS/KdV/HillEntirePeriodInterpolation
+PASS NLS/FunctionalAnalysis/CountableIntervalBox
+PASS NLS/FunctionalAnalysis/FiniteIntervalBoxFixedPoint
+PASS NLS/FunctionalAnalysis/CountableIntervalBoxFixedPoint
+PASS NLS/KdV/HillHilbertNumeratorReality
+PASS NLS/KdV/HillRootPeriodGapLocation
+PASS NLS/KdV/HillRootCandidateUpdate
+PASS NLS/KdV/HillRootPeriodContinuity
+PASS NLS/KdV/HillContinuousGapRootMap
+PASS NLS/KdV/HillGlobalPeriodRoots
+PASS NLS/KdV/HillGlobalNormalizedDifferentials
+PASS NLS/KdV/HillGlobalDifferentialReality
+PASS NLS/KdV/HillIntrinsicPeriodReflection
+PASS NLS/KdV/HillComplexEntirePeriodInterpolation
+PASS NLS/KdV/HillPeriodKernelNumeratorProportionality
+PASS NLS/KdV/HillNumeratorVariationRootValues
+PASS NLS/KdV/HillGlobalPeriodDerivativeInjectivity
+PASS NLS/KdV/HillMixedPeriodRootDerivativeInjectivity
+PASS NLS/KdV/HillMixedPeriodAnalyticInjectiveChart
+PASS NLS/KdV/HillSupportedPeriodFredholm
+PASS NLS/KdV/HillBijectivePeriodChart
+PASS NLS/KdV/HillBaseNormalizedComplexPsi
+PASS NLS/KdV/HillAnalyticNormalizedCandidateBranch
+# Final strict default-limit checks: six new modules
+PASS NLS/KdV/HillGardnerLocalRootVariation
+PASS NLS/ComplexAnalysis/ParametricCircleStationarity
+PASS NLS/KdV/HillAbelianGardnerPeriods
+PASS NLS/KdV/HillMixedGardnerVariation
+PASS NLS/ComplexAnalysis/ImplicitRootStationarity
+PASS NLS/KdV/HillNormalizedGardnerStationarity
+# Fresh combined transitive audit of all 817 selected modules
+Axiom audit passed: 8045 candidate declarations; 30623 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 572 selected modules (including generated and private declarations)
+the 817 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
