@@ -84,20 +84,19 @@ its existing Hilbert specialization and a transitive audit.
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 509 selected modules compile with pinned **Lean 4.33.1**, commit
+All 521 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: 436 unchanged previously checked sources, 67 selectively
-imported sources, two unchanged existing dependencies and four new modules
-compiled strictly, then a fresh combined transitive axiom audit of all 509
-selected modules:
+Validation output: 509 unchanged previously checked sources, ten unchanged
+selected shared imports and two new modules compiled strictly, then a fresh
+combined transitive axiom audit of all 521 selected modules:
 
 ```text
-# Prior strict checks: 436 unchanged selected sources
+# Prior strict checks: 509 unchanged selected sources
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -534,7 +533,6 @@ PASS NLS/ZakharovShabat/SourcePsiGapRootIsospectral
 PASS NLS/KdV/HillHminusOneMiuraSpectralInvariance
 PASS NLS/KdV/HillHminusOneIsospectralSheets
 PASS NLS/KdV/HillHminusOneSpectralMiuraFrequencySeries
-# Incremental strict checks: 73 newly selected modules
 PASS NLS/ComplexAnalysis/TracePrimitiveMoments
 PASS NLS/KdV/HillL2HighContourMoments
 PASS NLS/KdV/ClassicalL2PrimitiveAgreement
@@ -608,12 +606,25 @@ PASS NLS/ComplexAnalysis/UpperReflectionCircleIntegrability
 PASS NLS/ComplexAnalysis/QuarticContourCoefficient
 PASS NLS/KdV/HillSmoothQuarticEnergyCoefficient
 PASS NLS/KdV/HillSmoothPhysicalQuartic
-# Fresh combined transitive audit of all 509 selected modules
-Axiom audit passed: 5750 candidate declarations; 27892 declarations total.
+# Incremental strict checks: 12 newly selected modules
+PASS NLS/ComplexAnalysis/RealCutConjugation
+PASS NLS/ComplexAnalysis/RealGapEllipse
+PASS NLS/ComplexAnalysis/RealGapDiscIsolation
+PASS NLS/KdV/HillRealGapContours
+PASS NLS/ComplexAnalysis/BoundaryAnalyticCoordinate
+PASS NLS/ComplexAnalysis/CoshSquareLocalCoordinate
+PASS NLS/KdV/HillL2AllGapSquares
+PASS NLS/KdV/HillL2EndpointContinuity
+PASS NLS/KdV/HillL2GroundSquare
+PASS NLS/KdV/HillFiniteBandCover
+PASS NLS/KdV/HillFiniteGapExterior
+PASS NLS/KdV/HillFiniteGapQuarticEnergy
+# Fresh combined transitive audit of all 521 selected modules
+Axiom audit passed: 5842 candidate declarations; 27984 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 509 selected modules (including generated and private declarations)
+the 521 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1771,3 +1782,10 @@ Audit: 4977 selected declarations; 27116 imported NLS declarations, permitted st
 See `PHYSICAL_QUARTIC_COEFFICIENT.md` and `SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json`. Prior strict validation of 436 unchanged selected sources, strict compilation of 67 selectively imported sources, two unchanged existing dependencies and four new proof modules, then a fresh full combined transitive axiom audit of all 509 selected modules. Selected dependency order is checked transitively. No repeated full 509-module build is claimed. Source hashes, selections, private fresh outputs, eight provenance records and canonical main verified.
 
 Audit: 5750 selected declarations; 27892 imported NLS declarations, permitted standard axioms only. The actual smooth real period-one mean-zero quartic Hill contour converges to -H1/4 with explicit error, and multiplying by -4 recovers the physical Hamiltonian. The physical corollaries derive Fourier parity/reality from the actual function assumptions. This proves the smooth physical coefficient input, not exact finite-gap contour independence, the stronger displayed remainder or physical frequency identity69. All main rows remain open.
+
+
+## Actual finite-gap exterior and exact physical quartic identity
+
+See `FINITE_GAP_QUARTIC_IDENTITY.md` and `SHARED_FINITE_GAP_EXTERIOR_IMPORT.json`. Prior strict validation of 509 unchanged selected sources, strict compilation of ten unchanged selected shared imports and two new proof modules, then a fresh full combined transitive axiom audit of all 521 selected modules. Selected dependency order is checked transitively. No repeated full 521-module build is claimed. Source hashes, selections, private fresh outputs, nine provenance records and canonical main verified.
+
+Audit: 5842 selected declarations; 27984 imported NLS declarations, permitted standard axioms only. Actual finite-gap even-power exterior analyticity and centered-circle radius independence turn the proved physical quartic limit into the exact contour value -H1/4 on every sufficiently large centered circle, with the actual period-one Hamiltonian recovered by -4. Real L2 and physical smoothness hypotheses remain explicit. Angle-Poisson/frequency identity69, action descent, global source domains and all main rows remain open.

@@ -8334,6 +8334,182 @@
       "scope": "Actual smooth real period-one mean-zero physical KdV Hamiltonian coefficient on full energy circles, with actual Fourier parity/reality explicit: every even primitive power integrable, uniform third-order frequency quartic remainder, contour error C/R_N, limit -H1/4 and recovery of H1 by -4 times the period. The stronger displayed O(lambda^-2), finite-gap exact contour independence, physical frequency69 and all main theorems remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "d0a37dbaeb2ac3d568ed5c20bd13d6dfa5c9a2158e20869078209284991d6dcb"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealCutConjugation.lean",
+      "source_labels": [
+        "Lemma 2.6(i) real L2 finite-gap exterior; physical quartic contour input preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        15,
+        26
+      ],
+      "scope": "Selected actual finite-gap exterior dependency, reused unchanged from the fixed shared snapshot: imported_unchanged. Actual intrinsic gap geometry, all-gap squares, collapsed primitive removal, lowest-cut filling or finite band coverage; see provenance for exact hashes. No physical frequency theorem is inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "33967652635990b516d85750c516522c08b20cf62bd2b95a1319e313a663132d",
+      "shared_source_record": "SHARED_FINITE_GAP_EXTERIOR_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealGapEllipse.lean",
+      "source_labels": [
+        "Lemma 2.6(i) real L2 finite-gap exterior; physical quartic contour input preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        15,
+        26
+      ],
+      "scope": "Selected actual finite-gap exterior dependency, reused unchanged from the fixed shared snapshot: imported_unchanged. Actual intrinsic gap geometry, all-gap squares, collapsed primitive removal, lowest-cut filling or finite band coverage; see provenance for exact hashes. No physical frequency theorem is inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b0391686c068cc73429e035038d196ff351ddd0f13df25184d65541ef7396640",
+      "shared_source_record": "SHARED_FINITE_GAP_EXTERIOR_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealGapDiscIsolation.lean",
+      "source_labels": [
+        "Lemma 2.6(i) real L2 finite-gap exterior; physical quartic contour input preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        15,
+        26
+      ],
+      "scope": "Selected actual finite-gap exterior dependency, reused unchanged from the fixed shared snapshot: imported_unchanged. Actual intrinsic gap geometry, all-gap squares, collapsed primitive removal, lowest-cut filling or finite band coverage; see provenance for exact hashes. No physical frequency theorem is inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d3048b12cecb62308521385d36fef1d03ba6e1b86ea416db3c0c09f0b62230b2",
+      "shared_source_record": "SHARED_FINITE_GAP_EXTERIOR_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillRealGapContours.lean",
+      "source_labels": [
+        "Lemma 2.6(i) real L2 finite-gap exterior; physical quartic contour input preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        15,
+        26
+      ],
+      "scope": "Selected actual finite-gap exterior dependency, reused unchanged from the fixed shared snapshot: imported_unchanged. Actual intrinsic gap geometry, all-gap squares, collapsed primitive removal, lowest-cut filling or finite band coverage; see provenance for exact hashes. No physical frequency theorem is inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "eb17feeb7c55c2cc7b1ab84da8064bb877e74cfd059efb36bb6d8c60c26a0fec",
+      "shared_source_record": "SHARED_FINITE_GAP_EXTERIOR_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/BoundaryAnalyticCoordinate.lean",
+      "source_labels": [
+        "Lemma 2.6(i) real L2 finite-gap exterior; physical quartic contour input preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        15,
+        26
+      ],
+      "scope": "Selected actual finite-gap exterior dependency, reused unchanged from the fixed shared snapshot: imported_unchanged. Actual intrinsic gap geometry, all-gap squares, collapsed primitive removal, lowest-cut filling or finite band coverage; see provenance for exact hashes. No physical frequency theorem is inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b41dc971223cc6ec6b57dc79806f244b35adbf4f2a0c3d35dcf0570f5962df12",
+      "shared_source_record": "SHARED_FINITE_GAP_EXTERIOR_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CoshSquareLocalCoordinate.lean",
+      "source_labels": [
+        "Lemma 2.6(i) real L2 finite-gap exterior; physical quartic contour input preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        15,
+        26
+      ],
+      "scope": "Selected actual finite-gap exterior dependency, reused unchanged from the fixed shared snapshot: imported_unchanged. Actual intrinsic gap geometry, all-gap squares, collapsed primitive removal, lowest-cut filling or finite band coverage; see provenance for exact hashes. No physical frequency theorem is inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4bd06c278aaf50c57ad517383a8ab9e2d694157b02fd10a9c060045ea5dd6fb8",
+      "shared_source_record": "SHARED_FINITE_GAP_EXTERIOR_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2AllGapSquares.lean",
+      "source_labels": [
+        "Lemma 2.6(i) real L2 finite-gap exterior; physical quartic contour input preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        15,
+        26
+      ],
+      "scope": "Selected actual finite-gap exterior dependency, reused unchanged from the fixed shared snapshot: imported_unchanged. Actual intrinsic gap geometry, all-gap squares, collapsed primitive removal, lowest-cut filling or finite band coverage; see provenance for exact hashes. No physical frequency theorem is inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fea09d7733325d3bc7d7eaf3a1320c6bcd67eef987cdf6d2eee22abfcef1f711",
+      "shared_source_record": "SHARED_FINITE_GAP_EXTERIOR_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2EndpointContinuity.lean",
+      "source_labels": [
+        "Lemma 2.6(i) real L2 finite-gap exterior; physical quartic contour input preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        15,
+        26
+      ],
+      "scope": "Selected actual finite-gap exterior dependency, reused unchanged from the fixed shared snapshot: imported_unchanged. Actual intrinsic gap geometry, all-gap squares, collapsed primitive removal, lowest-cut filling or finite band coverage; see provenance for exact hashes. No physical frequency theorem is inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e8b9c02cf82e64294d29da3367c5ae099096307620dd394940d9f8f9c7ac1cd3",
+      "shared_source_record": "SHARED_FINITE_GAP_EXTERIOR_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2GroundSquare.lean",
+      "source_labels": [
+        "Lemma 2.6(i) real L2 finite-gap exterior; physical quartic contour input preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        15,
+        26
+      ],
+      "scope": "Selected actual finite-gap exterior dependency, reused unchanged from the fixed shared snapshot: imported_unchanged. Actual intrinsic gap geometry, all-gap squares, collapsed primitive removal, lowest-cut filling or finite band coverage; see provenance for exact hashes. No physical frequency theorem is inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "adce5d43026a8ab8ec7df817d914e92c03a1ffb2f52e416c81e3c4e17839c8fc",
+      "shared_source_record": "SHARED_FINITE_GAP_EXTERIOR_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillFiniteBandCover.lean",
+      "source_labels": [
+        "Lemma 2.6(i) real L2 finite-gap exterior; physical quartic contour input preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        15,
+        26
+      ],
+      "scope": "Selected actual finite-gap exterior dependency, reused unchanged from the fixed shared snapshot: imported_unchanged. Actual intrinsic gap geometry, all-gap squares, collapsed primitive removal, lowest-cut filling or finite band coverage; see provenance for exact hashes. No physical frequency theorem is inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "60b1b1e7b0325359aa5fd63a9a97da49a033e8551eb728cedd2489a798092764",
+      "shared_source_record": "SHARED_FINITE_GAP_EXTERIOR_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillFiniteGapExterior.lean",
+      "source_labels": [
+        "Lemma 2.6(i) real L2 finite-gap exterior; physical quartic contour input preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        15,
+        26
+      ],
+      "scope": "Actual real L2 finite-gap condition is finiteness of noncollapsed positive intrinsic characteristic gaps, equivalent to a collapsed tail. Actual label unboundedness and finite band coverage prove one exterior radius inside the filled-square domain. Every even actual primitive power is analytic there and all centered circle periods with both radii above that one cutoff agree, before all exponents and radii.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7f63773dadedb6ee24e2a68ba9a7223057d30e662e47988754b43e75f7e639e2"
+    },
+    {
+      "path": "NLS/KdV/HillFiniteGapQuarticEnergy.lean",
+      "source_labels": [
+        "Lemma 2.6(i) real L2 finite-gap exterior; physical quartic contour input preceding Lemma 3.2 (69)"
+      ],
+      "source_pages": [
+        15,
+        26
+      ],
+      "scope": "For every actual real smooth period-one mean-zero finite-gap physical potential, one R>0 precedes every centered circle radius r>R and the literal normalized quartic contour equals -H1/4 exactly. Equivalently, the physical period-one Hamiltonian is -4 times that contour. Physical Fourier conditions are derived. No angle-Poisson/frequency identity, rough finite-gap regularity or main theorem is asserted.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b23afaab1783446c82ece224748ed0869378060778591e86ac785b5f51789b11"
     }
   ],
   "dependencies_needed": [
@@ -8365,15 +8541,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 5750,
-    "total_declarations_audited": 27892,
+    "candidate_declarations_audited": 5842,
+    "total_declarations_audited": 27984,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 509,
+    "selected_modules": 521,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -8386,7 +8562,8 @@
     "complex_normalized_identification_validation_sequence": "Prior strict validation of 425 unchanged selected modules, strict recompilation of three unchanged canonical identity modules and strict compilation of two new modules, then a fresh full combined transitive axiom audit of all 430 selected modules. The canonical helpers precede their consumers in the reordered selection. No repeated full 430-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified.",
     "miura_frequency_series_validation_sequence": "Prior strict validation of 430 unchanged selected sources, strict compilation of one new actual Miura moment/series module, then a fresh full combined transitive axiom audit of all 431 selected modules. No repeated full 431-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified.",
     "spectral_invariance_validation_sequence": "Prior strict validation of 431 unchanged selected sources, strict compilation of two unchanged canonical modules and three new modules, then a fresh full combined transitive axiom audit of all 436 selected modules. The canonical isospectral-set helper precedes existing consumers in the reordered selection. No repeated full 436-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified.",
-    "physical_quartic_coefficient_validation_sequence": "Prior strict validation of 436 unchanged selected sources, strict compilation of 67 selectively imported sources, two unchanged existing dependencies and four new proof modules, then a fresh full combined transitive axiom audit of all 509 selected modules. Selected dependency order is checked transitively. No repeated full 509-module build is claimed. Source hashes, selections, private fresh outputs, eight provenance records and canonical main verified."
+    "physical_quartic_coefficient_validation_sequence": "Prior strict validation of 436 unchanged selected sources, strict compilation of 67 selectively imported sources, two unchanged existing dependencies and four new proof modules, then a fresh full combined transitive axiom audit of all 509 selected modules. Selected dependency order is checked transitively. No repeated full 509-module build is claimed. Source hashes, selections, private fresh outputs, eight provenance records and canonical main verified.",
+    "finite_gap_quartic_identity_validation_sequence": "Prior strict validation of 509 unchanged selected sources, strict compilation of ten unchanged selected shared imports and two new proof modules, then a fresh full combined transitive axiom audit of all 521 selected modules. Selected dependency order is checked transitively. No repeated full 521-module build is claimed. Source hashes, selections, private fresh outputs, nine provenance records and canonical main verified."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -8509,6 +8686,12 @@
       "commit": "8bd9dcba2c439828221e11c08918ee632d16556e",
       "record": "coverage/articles/kdv-kdv2-frequencies/SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
       "kind": "Selected actual physical smooth full-circle energy coefficient dependency closure: 67 new sources, two unchanged existing dependencies; six local compatible sources retained and one newly imported compatibility proof adapted. Full branch not merged."
+    },
+    {
+      "branch": "articles/kdv-estimates",
+      "commit": "8bd9dcba2c439828221e11c08918ee632d16556e",
+      "record": "coverage/articles/kdv-kdv2-frequencies/SHARED_FINITE_GAP_EXTERIOR_IMPORT.json",
+      "kind": "Ten unchanged actual collapsed-gap/lowest-cut filling and finite-band coverage sources; seven local compatible variants retained. Full branch not merged."
     }
   ],
   "normalized_collapsed_moments_record": "NORMALIZED_COLLAPSED_MOMENTS.md",
@@ -8544,5 +8727,7 @@
   "miura_frequency_series_record": "MIURA_FREQUENCY_SERIES.md",
   "spectral_invariance_record": "SPECTRAL_INVARIANCE.md",
   "physical_quartic_coefficient_record": "PHYSICAL_QUARTIC_COEFFICIENT.md",
-  "shared_physical_energy_coefficient_import_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json"
+  "shared_physical_energy_coefficient_import_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+  "finite_gap_quartic_identity_record": "FINITE_GAP_QUARTIC_IDENTITY.md",
+  "shared_finite_gap_exterior_import_record": "SHARED_FINITE_GAP_EXTERIOR_IMPORT.json"
 }

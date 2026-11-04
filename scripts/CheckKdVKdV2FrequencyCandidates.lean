@@ -1,3 +1,5 @@
+import NLS.KdV.HillFiniteGapQuarticEnergy
+import NLS.KdV.HillFiniteBandCover
 import NLS.KdV.HillSmoothPhysicalQuartic
 import NLS.KdV.HillSmoothQuarticEnergyCoefficient
 import NLS.ComplexAnalysis.UpperReflectionCircleIntegrability
@@ -618,7 +620,19 @@ run_cmd do
     `NLS.ComplexAnalysis.UpperReflectionCircleIntegrability,
     `NLS.ComplexAnalysis.QuarticContourCoefficient,
     `NLS.KdV.HillSmoothQuarticEnergyCoefficient,
-    `NLS.KdV.HillSmoothPhysicalQuartic]
+    `NLS.KdV.HillSmoothPhysicalQuartic,
+    `NLS.ComplexAnalysis.RealCutConjugation,
+    `NLS.ComplexAnalysis.RealGapEllipse,
+    `NLS.ComplexAnalysis.RealGapDiscIsolation,
+    `NLS.KdV.HillRealGapContours,
+    `NLS.ComplexAnalysis.BoundaryAnalyticCoordinate,
+    `NLS.ComplexAnalysis.CoshSquareLocalCoordinate,
+    `NLS.KdV.HillL2AllGapSquares,
+    `NLS.KdV.HillL2EndpointContinuity,
+    `NLS.KdV.HillL2GroundSquare,
+    `NLS.KdV.HillFiniteBandCover,
+    `NLS.KdV.HillFiniteGapExterior,
+    `NLS.KdV.HillFiniteGapQuarticEnergy]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

@@ -17,6 +17,12 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest exact physical finite-gap quartic contour
+
+The actual finite-gap condition now gives one exterior radius before all even primitive powers and both centered contour radii. All these powers are analytic there and their circle integrals are independent of radius. For actual real smooth period-one mean-zero finite-gap potentials, the normalized quartic contour is therefore exactly -H1/4 on every sufficiently large centered circle, recovering the physical Hamiltonian with factor -4. See `FINITE_GAP_QUARTIC_IDENTITY.md`.
+
+Current validation: 521 selected modules (509 unchanged prior checks and 12 strict incremental compilations); fresh combined transitive audit of 5842 selected and 27984 imported NLS declarations, permitted axioms only. Actual angle-Poisson/frequency identification, action descent, global source domains and all main theorem conclusions remain open.
+
 ## Latest actual physical quartic Hamiltonian coefficient
 
 The actual normalized smooth Hill primitive now gives a full-circle quartic remainder and the literal counterclockwise contour limit -H1/4, with explicit inverse-frequency error. Multiplying by -4 recovers the physical KdV Hamiltonian. Even powers are integrable across both real contour crossings. The shared actual squared-primitive expansion is selectively reused; existing local extensions are preserved. See `PHYSICAL_QUARTIC_COEFFICIENT.md`.

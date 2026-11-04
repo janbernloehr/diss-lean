@@ -516,7 +516,19 @@ modules=(NLS/ComplexAnalysis/RealLineIdentity
   NLS/ComplexAnalysis/UpperReflectionCircleIntegrability
   NLS/ComplexAnalysis/QuarticContourCoefficient
   NLS/KdV/HillSmoothQuarticEnergyCoefficient
-  NLS/KdV/HillSmoothPhysicalQuartic)
+  NLS/KdV/HillSmoothPhysicalQuartic
+  NLS/ComplexAnalysis/RealCutConjugation
+  NLS/ComplexAnalysis/RealGapEllipse
+  NLS/ComplexAnalysis/RealGapDiscIsolation
+  NLS/KdV/HillRealGapContours
+  NLS/ComplexAnalysis/BoundaryAnalyticCoordinate
+  NLS/ComplexAnalysis/CoshSquareLocalCoordinate
+  NLS/KdV/HillL2AllGapSquares
+  NLS/KdV/HillL2EndpointContinuity
+  NLS/KdV/HillL2GroundSquare
+  NLS/KdV/HillFiniteBandCover
+  NLS/KdV/HillFiniteGapExterior
+  NLS/KdV/HillFiniteGapQuarticEnergy)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys
