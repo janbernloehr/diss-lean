@@ -1,3 +1,9 @@
+import NLS.KdV.HillFiniteGapDirichletNormalization
+import NLS.KdV.HillLinearDirichletContourComparison
+import NLS.KdV.HillIntrinsicOddFrequencyPeriods
+import NLS.KdV.HillLinearFrequencyKernel
+import NLS.KdV.HillOddKernelFiniteGapContours
+import NLS.KdV.HillOddKernelContinuation
 import NLS.Articles.KdVKdV2Frequencies.FiniteGapKdVMomentIdentity
 import NLS.KdV.HillFiniteGapIntrinsicDecomposition
 import NLS.KdV.HillIntrinsicCubicFrequency
@@ -1336,7 +1342,13 @@ run_cmd do
     `NLS.KdV.HillIntrinsicCubicFrequency,
     `NLS.KdV.HillIntrinsicGapGeometry,
     `NLS.KdV.HillFiniteGapIntrinsicDecomposition,
-    `NLS.Articles.KdVKdV2Frequencies.FiniteGapKdVMomentIdentity
+    `NLS.Articles.KdVKdV2Frequencies.FiniteGapKdVMomentIdentity,
+    `NLS.KdV.HillOddKernelContinuation,
+    `NLS.KdV.HillOddKernelFiniteGapContours,
+    `NLS.KdV.HillLinearFrequencyKernel,
+    `NLS.KdV.HillIntrinsicOddFrequencyPeriods,
+    `NLS.KdV.HillLinearDirichletContourComparison,
+    `NLS.KdV.HillFiniteGapDirichletNormalization
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

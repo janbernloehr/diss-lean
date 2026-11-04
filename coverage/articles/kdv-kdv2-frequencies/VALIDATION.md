@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual finite-gap KdV moment identity
+## Latest odd periods and actual Dirichlet normalization
+
+The actual filled kernel F^(2*m+1)*psi_n/R now has exterior analyticity, genuine circle integrability, radius independence and finite-hole deformation for every nonnegative m at actual real period-one L2 finite-gap sources. The own index remains a hole even when closed. The exact linear outer period is -2*i*n*pi^2. The fifth outer source factor -16/(i*pi), minus (2*n*pi)^5, equals -160*pi^2*sum(k^3*Omega_nk^2)+80*sum(k*Omega_nk^4).
+
+At actual real smooth period-one mean-zero physical sources, the proved quantitative comparison F*(D/R)=1/2+O(r^-2) and its genuine contour limit establish the actual zeroth Dirichlet residue moment S0=-2*n*pi, including a closed selected gap. No fixed leading product scalar or prescribed translation law is assumed. See `ODD_PERIOD_DIRICHLET_NORMALIZATION.md`.
+
+Prior strict evidence for all 1091 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1097 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1126 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1097-module rebuild is claimed.
+
+Fresh audit: 9920 selected and 32351 imported NLS declarations; permitted axioms only. The quintic local jet, physical mass-renormalized KdV2 contour comparison, full Hamiltonian/action-frequency identification and remaining main conclusions are open. All eleven main theorem rows remain OPEN.
+
+## Earlier actual finite-gap KdV moment identity
 
 Every actual real period-one L2 source now has genuine filled shifted differentials on every intrinsic gap disc. The literal normalized moments have zeroth value 2*pi*delta_nk, every odd moment vanishes, and every positive moment vanishes at a collapsed gap, including the own index. Filled analytic circle extensions handle branch points; no false analyticity of literal total-division values is assumed.
 
@@ -306,7 +316,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1091 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1097 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1375,7 +1385,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1091 selected modules (including generated and private declarations)
+the 1097 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -2657,4 +2667,16 @@ PASS NLS/KdV/HillIntrinsicGapGeometry
 PASS NLS/KdV/HillFiniteGapIntrinsicDecomposition
 PASS NLS/Articles/KdVKdV2Frequencies/FiniteGapKdVMomentIdentity
 Axiom audit passed: 9857 candidate declarations; 32287 declarations total.
+```
+
+Latest odd-period normalization strict additions and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillOddKernelContinuation
+PASS NLS/KdV/HillOddKernelFiniteGapContours
+PASS NLS/KdV/HillLinearFrequencyKernel
+PASS NLS/KdV/HillIntrinsicOddFrequencyPeriods
+PASS NLS/KdV/HillLinearDirichletContourComparison
+PASS NLS/KdV/HillFiniteGapDirichletNormalization
+Axiom audit passed: 9920 candidate declarations; 32351 declarations total.
 ```

@@ -15855,11 +15855,137 @@
       "scope": "For real smooth period-one mean-zero physical Q with every gap above a finite cutoff closed and the selected index included, the ACTUAL KdV Dirichlet velocity sum minus(2*n*pi)^3 equals -12 times the finite intrinsic second-moment sum and its genuine countable HasSum/tsum. The literal physical KdV scalar coordinate derivative has that exact moment coefficient times i*z_n for every differentiable nearby-real matching germ, including a closed selected gap. This establishes the physical spectral-velocity/coefficient version of source(69). Actual Hamiltonian frequency/action identification, finite-gap regularity representation if extending beyond the stated smooth physical hypotheses, complex rough-W compatibility and complete main-theorem conclusions remain separate.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "9678570d017044524272b699883668c3a7d02fbd81ac4751fd41e43a2ad854ce"
+    },
+    {
+      "path": "NLS/KdV/HillOddKernelContinuation.lean",
+      "source_labels": [
+        "Necessary actual finite-gap normalization and spectral contour identity toward source(84)"
+      ],
+      "source_pages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "scope": "For every actual real period-one L2 source, every nonnegative m and every entire P, constructs the actual filled odd kernel F^(2*m+1)*P/R on the established filled domain. Ground charts use analytic F^2 and the verified squared-cosh derivative; nonselected closed-gap charts use the actual numerator zero. For the actual globally normalized psi_n, proves analytic filling away from the retained own segment and genuine circle integral/integrability agreement with the literal kernel. No false analyticity of total division at branch points is asserted.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "aef631ae7dd4e3d1b864e6822365c9b797fc5a26d59f5f59dd283479c8fa4b36"
+    },
+    {
+      "path": "NLS/KdV/HillOddKernelFiniteGapContours.lean",
+      "source_labels": [
+        "Necessary actual finite-gap normalization and spectral contour identity toward source(84)"
+      ],
+      "source_pages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "scope": "At every actual real period-one L2 finite-gap source and each nonnegative m, gives an exterior threshold, genuine actual odd-kernel circle integrability and exact radius independence. With N>=n and every gap above N closed, the actual outer odd contour equals the sum of all first-N intrinsic gap contours. The selected index remains a hole even if closed. The existential threshold is quantified after m in the exposed theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "895186b7a2c54bcf05b360cc8438b08d299d8baeb96ad0f4ade47d501bc894c3"
+    },
+    {
+      "path": "NLS/KdV/HillLinearFrequencyKernel.lean",
+      "source_labels": [
+        "Necessary actual finite-gap normalization and spectral contour identity toward source(84)"
+      ],
+      "source_pages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "scope": "At actual real smooth period-one mean-zero physical Q, proves the quantitative actual F*(D/R)-1/2 error bound O(r^-2) on the chosen large upper energy arcs and entire energy circles. Combines the proved actual primitive expansion and local Dirichlet/root jet, with actual conjugation to cross the lower half-circle.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "afb7736b97fd055dfeda0afbaa2f4491c06d4a2e6d599a06e28e1716388483b2"
+    },
+    {
+      "path": "NLS/KdV/HillIntrinsicOddFrequencyPeriods.lean",
+      "source_labels": [
+        "Necessary actual finite-gap normalization and spectral contour identity toward source(84)"
+      ],
+      "source_pages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "scope": "For every actual real period-one L2 source, computes actual linear and fifth intrinsic gap contributions. The fifth source factor -16/(i*pi) gives 80*k*Omega_nk^4-160*pi^2*k^3*Omega_nk^2+(2*k*pi)^5*delta_nk. At every actual closed tail with cutoff N>=n, obtains the exact actual linear outer period -2*i*n*pi^2 and fifth outer moment formula. This is an actual spectral contour identity; physical KdV2 mass correction and Hamiltonian frequency identification remain separate.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bc61d263625131f40c6eaa8fcd342c1802194a8bcbd6284a4b06adc917717fbc"
+    },
+    {
+      "path": "NLS/KdV/HillLinearDirichletContourComparison.lean",
+      "source_labels": [
+        "Necessary actual finite-gap normalization and spectral contour identity toward source(84)"
+      ],
+      "source_pages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "scope": "At actual real smooth period-one mean-zero physical Q with a closed tail, proves genuine integrability of the actual linear odd kernel and half the actual normalized Dirichlet quotient on the chosen large energy circles, an O(r^-2) contour-difference bound and convergence of that difference to zero. Uses actual quotient exterior bounds, not a prescribed leading product scalar.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3222ee72e48ee57772f49a89d2b1578f29c886199ca50f3ec26491a8e8eafe1f"
+    },
+    {
+      "path": "NLS/KdV/HillFiniteGapDirichletNormalization.lean",
+      "source_labels": [
+        "Necessary actual finite-gap normalization and spectral contour identity toward source(84)"
+      ],
+      "source_pages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "scope": "For actual real smooth period-one mean-zero physical Q, n>=1, N>=n and every gap above N closed, proves the actual zeroth Dirichlet residue moment equals -2*n*pi. Compares the independently computed actual linear period with the genuine half-Dirichlet contour and its vanishing error. Includes a closed selected gap. No assumed translation flow, fixed leading product prefactor or Hamiltonian frequency enters; full rough-source normalization is not claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a9f1a99aec7b0edb26df5342ad30b3c82aa826eae8b9b396bf6d3b0c7bba8876"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
-    "For (84), prove the actual quintic local diagonal-resolvent coefficient and actual translation residue coefficient S0=-2*n*pi, then the mass renormalization and KdV2 outer/gap-moment contour identity. Identify the resulting actual Hamiltonian frequencies with the source normalization.",
+    "For (84), actual all-odd kernel filling/deformation, the pure fifth spectral outer/gap-moment identity, and actual finite-gap Dirichlet S0=-2*n*pi at real smooth mean-zero physical sources are NOW proved. Prove the actual quintic local diagonal-resolvent coefficient and quantitative quintic physical comparison, then the KdV2 mass-renormalized spectral velocity/moment identity. Identify the resulting coefficient with actual Hamiltonian/action frequencies in the full source scope.",
     "Complete canonical coordinate/angle brackets beyond the proved action involution and mixed action-coordinate laws, the exact Fourier differential at zero, full native complex Banach-valued coordinate analyticity, and the global inverse/bijective Birkhoff realization in the required weighted topologies.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
@@ -15886,15 +16012,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 9857,
-    "total_declarations_audited": 32287,
+    "candidate_declarations_audited": 9920,
+    "total_declarations_audited": 32351,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1091,
+    "selected_modules": 1097,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -15936,7 +16062,8 @@
     "local_diagonal_resolvent_validation_sequence": "Prior strict evidence for all 1064 unchanged selected baseline sources; strict dependency-order compilation of ten additions (two unchanged canonical symmetry/phase helpers and eight new proof modules); then a fresh combined transitive axiom audit of all 1074 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1102 frozen source/checker/provenance hashes, all 25 unchanged provenance records plus one new verified two-file canonical WKB reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1074-module rebuild is claimed.",
     "cubic_contour_validation_sequence": "Prior strict evidence for all 1074 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1079 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1107 frozen source/checker/provenance hashes, all 26 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1079-module rebuild is claimed.",
     "cubic_exterior_validation_sequence": "Prior strict evidence for all 1079 unchanged selected baseline sources; strict dependency-order compilation of six additions (one unchanged canonical dense-extension helper and five new proof modules); then a fresh combined transitive axiom audit of all 1085 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1114 frozen source/checker/provenance hashes, all 26 unchanged provenance records plus one new verified canonical dense-extension record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1085-module rebuild is claimed.",
-    "intrinsic_kdv_moments_validation_sequence": "Prior strict evidence for all 1085 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1091 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1120 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1091-module rebuild is claimed."
+    "intrinsic_kdv_moments_validation_sequence": "Prior strict evidence for all 1085 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1091 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1120 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1091-module rebuild is claimed.",
+    "odd_period_normalization_validation_sequence": "Prior strict evidence for all 1091 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1097 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1126 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1097-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -16230,7 +16357,20 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "e16be60f85e49ebc764a21cbd96ca6aa43e0da26",
+      "description": "Prior dependencies, superseded in part by actual all-odd contour filling, fifth spectral moments and finite-gap zeroth Dirichlet residue normalization.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "For (84), prove the actual quintic local diagonal-resolvent coefficient and actual translation residue coefficient S0=-2*n*pi, then the mass renormalization and KdV2 outer/gap-moment contour identity. Identify the resulting actual Hamiltonian frequencies with the source normalization.",
+        "Complete canonical coordinate/angle brackets beyond the proved action involution and mixed action-coordinate laws, the exact Fourier differential at zero, full native complex Banach-valued coordinate analyticity, and the global inverse/bijective Birkhoff realization in the required weighted topologies.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
-  "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md"
+  "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
+  "odd_period_dirichlet_normalization_record": "ODD_PERIOD_DIRICHLET_NORMALIZATION.md"
 }

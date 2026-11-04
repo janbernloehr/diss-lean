@@ -1100,6 +1100,12 @@ modules=(
   NLS/KdV/HillIntrinsicGapGeometry
   NLS/KdV/HillFiniteGapIntrinsicDecomposition
   NLS/Articles/KdVKdV2Frequencies/FiniteGapKdVMomentIdentity
+  NLS/KdV/HillOddKernelContinuation
+  NLS/KdV/HillOddKernelFiniteGapContours
+  NLS/KdV/HillLinearFrequencyKernel
+  NLS/KdV/HillIntrinsicOddFrequencyPeriods
+  NLS/KdV/HillLinearDirichletContourComparison
+  NLS/KdV/HillFiniteGapDirichletNormalization
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

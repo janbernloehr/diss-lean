@@ -949,3 +949,14 @@ Actual band geometry gives disjoint enlarged intrinsic discs and complete finite
 Prior strict evidence for all 1085 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1091 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1120 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1091-module rebuild is claimed.
 
 Fresh audit: 9857 selected and 32287 imported NLS declarations, permitted axioms only. The actual Hamiltonian/action-frequency realization of (69), full complex rough-W moment scope and sharp bounds, quintic route (84) and complete main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+
+## Latest odd periods and actual Dirichlet normalization
+
+The actual filled kernel F^(2*m+1)*psi_n/R now has exterior analyticity, genuine circle integrability, radius independence and finite-hole deformation for every nonnegative m at actual real period-one L2 finite-gap sources. The own index remains a hole even when closed. The exact linear outer period is -2*i*n*pi^2. The fifth outer source factor -16/(i*pi), minus (2*n*pi)^5, equals -160*pi^2*sum(k^3*Omega_nk^2)+80*sum(k*Omega_nk^4).
+
+At actual real smooth period-one mean-zero physical sources, the proved quantitative comparison F*(D/R)=1/2+O(r^-2) and its genuine contour limit establish the actual zeroth Dirichlet residue moment S0=-2*n*pi, including a closed selected gap. No fixed leading product scalar or prescribed translation law is assumed. See `ODD_PERIOD_DIRICHLET_NORMALIZATION.md`.
+
+Prior strict evidence for all 1091 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1097 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1126 frozen source/checker/provenance hashes, all 27 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1097-module rebuild is claimed.
+
+Fresh audit: 9920 selected and 32351 imported NLS declarations; permitted axioms only. The quintic local jet, physical mass-renormalized KdV2 contour comparison, full Hamiltonian/action-frequency identification and remaining main conclusions are open. All eleven main theorem rows remain OPEN.
