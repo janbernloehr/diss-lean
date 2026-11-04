@@ -179,6 +179,7 @@ modules+=(NLS/ComplexAnalysis/WeightedDuhamelIntegralBounds NLS/KdV/ClassicalHil
 modules+=(NLS/KdV/HillFreeDirichletCentralCount NLS/ComplexAnalysis/SimpleZeroCountExhaustion NLS/KdV/HillDirichletCentralCount NLS/KdV/HillDirichletCentralGeometry NLS/KdV/HillDirichletPoleIdentification NLS/KdV/HillLabelledAbelianInterpolation NLS/KdV/HillDirichletFlowResidues NLS/KdV/HillAbelianInterpolationContours NLS/KdV/HillAbelianActionResiduePeriods)
 modules+=(NLS/FunctionalAnalysis/ClosedUnitCurvePeriodic NLS/KdV/HillIsospectralGradientContours NLS/ComplexAnalysis/TraceRootIsospectralDerivative NLS/KdV/HillClosedCurveDirections NLS/ComplexAnalysis/ImplicitRootIsospectralDerivative NLS/KdV/HillContourHamiltonianSources NLS/KdV/HillIsospectralAbelianPeriods NLS/KdV/HillIsospectralMixedPeriods NLS/KdV/HillIsospectralImplicitRoots NLS/KdV/HillIsospectralNormalizedDifferentials)
 modules+=(NLS/KdV/HillHamiltonianDirichletSourceFlows)
+modules+=(NLS/KdV/HillIsospectralPhysicalDifferentials)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

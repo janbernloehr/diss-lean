@@ -5867,3 +5867,4 @@ import NLS.KdV.HillIsospectralMixedPeriods
 import NLS.KdV.HillIsospectralImplicitRoots
 import NLS.KdV.HillIsospectralNormalizedDifferentials
 import NLS.KdV.HillHamiltonianDirichletSourceFlows
+import NLS.KdV.HillIsospectralPhysicalDifferentials
