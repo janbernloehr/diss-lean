@@ -59,9 +59,12 @@ page numbers in this file.
   `diag(-20(2nπ)²) = diag(-80n²π²)` respectively.
 - Page 3 gives the Hamiltonian velocities `z_n' = -i ω_n z_n`,
   `z_(-n)' = +i ω_n z_(-n)`. Equations (80) and (91) later print a positive
-  exponential with an odd frequency extension. The candidate uses the page-3
-  Hamiltonian time orientation: negative exponential at positive modes.
-  The final PDE identification must check this convention explicitly.
+  exponential with an odd frequency extension. The actual PDE linearizations
+  and the stated Fourier transform prove the positive-mode physical sign is
+  positive: `+i omega_n`, with negative sign at negative modes. The p.3
+  evolution display has the opposite time orientation and is corrected in
+  the candidate and nonextension adapters. See `TimeOrientation.lean` and
+  `ABELIAN_PHASE_PERIODS.md`; actual Birkhoff/PDE identification remains open.
 - A low-regularity solution is defined on p. 7 by convergence of solutions
   from **every** smooth approximating sequence, pointwise in time in the
   native norm, together with a continuous limiting curve attaining its data.
@@ -124,7 +127,8 @@ Search base: canonical `NLS/SequenceSpaces`, `NLS/Dynamics`,
   state-dependent frequencies is asserted.
 - New article `SignedPhaseFlow` restricts to the actual signed real locus,
   proves zero-mode/reality preservation, identifies `z_n z_(-n)=|z_n|²`,
-  and supplies the negative-positive Hamiltonian phase signs. Its `Ω` is an
+  and supplies the positive-negative physical Fourier phase signs after the
+  proved time-orientation correction. Its `Ω` is an
   explicitly supplied generic function. Constructing actual spectral
   `ω_1,ω_2` and proving their analytic estimates remain open.
 - Existing `NLS.Dynamics.HamiltonianPhaseObstruction` already proves the
@@ -769,3 +773,14 @@ The actual regular correction sum is absolutely convergent and locally complex a
 Prior strict validation of all 884 unchanged selected sources; strict dependency-order compilation of 75 byte-identical shared analytic correction dependencies; strict compilation of one byte-identical canonical holomorphic-limit helper and five new proof modules; then a fresh combined transitive axiom audit of all 965 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, all source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 965-module rebuild is claimed.
 
 Fresh audit: 8939 selected and 31478 imported NLS declarations, permitted axioms only. Canonical Birkhoff angle orientation/identification, physical Hamiltonian frequency identities and the main theorem conclusions remain open. All eleven main inventory rows remain OPEN.
+
+
+## Latest physical Abelian phase, period duality and corrected time sign
+
+A branch-independent actual Abelian phase is constructed on every open selected gap, with unit norm on real data, local complex L2 analyticity, continuity across terminal angle cuts and exact trace/normalized-contour derivative formulas. The actual Fourier contour tangents have proved L2 norm integrability and exact period duality. See `ABELIAN_PHASE_PERIODS.md`.
+
+The physical PDE linearizations prove positive imaginary cubic/fifth-order Fourier frequencies. The signed coordinate flow and both nonextension adapters are corrected to the positive exponent at positive modes, consistent with (80)/(91); the negative p.3 evolution sign is recorded as a source inconsistency. Actual Birkhoff/PDE identification remains open.
+
+Prior strict evidence for the 965-module baseline; all 960 unaffected source files and nineteen provenance records remain unchanged. Strict dependency-order rebuild of all six affected prior selected modules, including five changed source files, and all five new modules; then a fresh combined transitive axiom audit of all 970 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, frozen source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No full 970-module rebuild is claimed.
+
+Fresh audit: 8988 selected and 31527 imported NLS declarations, permitted axioms only. Physical action-gradient/canonical angle/Birkhoff identification and all eleven main theorem rows remain OPEN.

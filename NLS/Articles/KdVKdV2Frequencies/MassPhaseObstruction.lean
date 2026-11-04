@@ -1,4 +1,4 @@
-import NLS.Dynamics.HamiltonianPhaseObstruction
+import NLS.Dynamics.UnboundedPhaseObstruction
 
 /-! # The mass term in the KdV2 frequency obstruction
 
@@ -38,10 +38,10 @@ theorem not_tendsto_kdv2Mass_phaseTrajectories {ι : Type*} {l : Filter ι} [NeB
     (amp : ι → ℂ) (a : ℂ) (ha : a ≠ 0) (hamp : Tendsto amp l (𝓝 a))
     (g : ι → C(Icc (0 : ℝ) T, ℂ))
     (he : ∀ j (τ : Icc (0 : ℝ) T), g j τ =
-      Complex.exp (((-τ.val * kdv2FrequencyFromMass n (mass j) (correction j) : ℝ) : ℂ) *
+      Complex.exp (((τ.val * kdv2FrequencyFromMass n (mass j) (correction j) : ℝ) : ℂ) *
         Complex.I) * amp j)
     (G : C(Icc (0 : ℝ) T, ℂ)) : ¬ Tendsto g l (𝓝 G) :=
-  Dynamics.not_tendsto_hamiltonian_phase_trajectories T hT
+  Dynamics.not_tendsto_phase_trajectories T hT
     (fun j => kdv2FrequencyFromMass n (mass j) (correction j)) amp a ha
     (tendsto_kdv2FrequencyFromMass_atTop n hn mass correction r hmass hcorrection)
     hamp g he G

@@ -146,9 +146,9 @@
         51,
         52
       ],
-      "scope": "Signed real locus and generic conserved-action flow; actual frequencies unsupplied",
+      "scope": "Signed real locus and generic conserved-action flow, corrected to the physical positive Fourier time exponent at positive modes and negative exponent at negative modes. All group, topology, reality and action-conservation results retained; actual frequencies remain unsupplied.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "2b71472e98028e5d38cd636e6d5dc7afd7cb6dec7185ebe1d37130bb690c2b73"
+      "sha256": "fcf67097a974b6910bffbdf70da0abaea357e9e32c28a3b78719081695cd9638"
     },
     {
       "path": "NLS/Articles/KdVKdV2Frequencies/MassPhaseObstruction.lean",
@@ -160,9 +160,9 @@
         8,
         51
       ],
-      "scope": "Diverging specified mass and convergent correction obstruct uniform compact-time phase convergence; no physical approximation construction",
+      "scope": "Diverging specified mass and convergent correction obstruct uniform compact-time positive-exponent physical phase convergence. Uses the already verified positive-sign unbounded-frequency obstruction; no actual spectral frequency or physical approximation identification is assumed.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "3d7368648e6831133235443cd20c4cfcc6e42a99e66b8f91502ceabbf6a727f8"
+      "sha256": "58df2556107fe6567d193ca80efe307f8c14d393785be48753df9b1798aa4278"
     },
     {
       "path": "NLS/Articles/KdVKdV2Frequencies/SmoothKdVIdentities.lean",
@@ -218,9 +218,9 @@
         51,
         54
       ],
-      "scope": "Endpoint equivalence and mass-divergent signed norm approximants proved; spectral correction and physical identification still required",
+      "scope": "Endpoint equivalence and mass-divergent signed norm approximants proved; compact-time mode nonextension adapters now use the physical positive Fourier phase. The spectral correction and physical Birkhoff/PDE transfer remain explicit required inputs.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "c319e8501d57cada89ae5a6011b152622352101b31df7189bcdb69fa64857014"
+      "sha256": "51108a38d90b7786b6772b34b623edb23300c259a64d3ac3053a3bc5708d1843"
     },
     {
       "path": "NLS/Dynamics/FixedTimePhaseObstruction.lean",
@@ -230,9 +230,9 @@
       "source_pages": [
         52
       ],
-      "scope": "Relative phase pi prevents a common fixed-time limit, without convergence of individual frequencies",
+      "scope": "Relative phase pi prevents a common fixed-time limit, without convergence of individual frequencies. Retains the existing negative-sign theorem and proves its positive-sign counterpart by time reversal and swapping frequency families.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "ebafe028f7a6e183c899d3bb05f31d178393a796d47ab8a674324678a0707934"
+      "sha256": "8f00377cad49f0feb3cf2bc08718346dbfd89e4538c8dfcc4835d07a94463dbd"
     },
     {
       "path": "NLS/Articles/KdVKdV2Frequencies/SignedMassInsertion.lean",
@@ -255,9 +255,9 @@
       "source_pages": [
         52
       ],
-      "scope": "Fixed-time obstruction proved given the actual correction continuity and endpoint phase identity; physical main theorem remains open",
+      "scope": "Fixed-time obstruction with the corrected physical positive Fourier phase is proved from continuity of the actual correction and the endpoint phase identity. Uses the proved positive-sign generic phase-gap theorem. The physical main theorem remains open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
-      "sha256": "282c44242a07a92387bbc708bfa91665b6f655807b011777ea153ceda49bfa27"
+      "sha256": "7898a7f70e341cdd3d877db212e42e83d217681666c58dad0e75ef0536ae89b5"
     },
     {
       "path": "NLS/KdV/FrequencyMoments.lean",
@@ -13918,9 +13918,95 @@
       "scope": "Constructs the genuine local raw Abelian angle A=epsilon_n-pi+the actual infinite regular correction sum near every real period-one L2 potential whose selected gap n is open. Proves complex source analyticity, nearby-real physical terminal/sheet matching and reality, and D A[X_b]=-psi_n(b)/2 for every complex b. Does not identify its orientation with the article canonical Birkhoff angle.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "60408f81ab2b9ea3c448f220a3a574764fdd09993a3c9df183d736ac52c3c784"
+    },
+    {
+      "path": "NLS/Fourier/UnitCurveCoefficients.lean",
+      "source_labels": [
+        "Physical Abelian phase, normalized period directions and time-orientation correction for equations (1)-(3), (80)/(91)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11,
+        26,
+        33,
+        51
+      ],
+      "scope": "Constructs the bounded complex-linear map taking every continuous unit-interval curve to its actual unit-period L2 Fourier coefficients, with norm at most one and exact Parseval. No endpoint matching is needed. Proves it is exactly the existing coefficient realization when endpoints match, so subsequent contour integrals are actual coefficient-space tangents.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f34e5b47dc91dd838f083793c63dfe466620ee815499aaeb0ebe7f59f857bc7c"
+    },
+    {
+      "path": "NLS/KdV/HillGardnerEnergyContinuity.lean",
+      "source_labels": [
+        "Physical Abelian phase, normalized period directions and time-orientation correction for equations (1)-(3), (80)/(91)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11,
+        26,
+        33,
+        51
+      ],
+      "scope": "Proves that the actual physical spatial trace-gradient curve depends only on squared frequency by real period-one rough-source approximation. Closed-map descent through z squared proves its norm continuity on the entire complex energy plane, including zero and the principal square-root cut. Bounded physical Fourier analysis then proves norm continuity of the actual coefficient Gardner direction at every complex energy.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6c55f68706d8b8ce8d737f5caf841aba92e30c677dcf30667fa64fdc5ab7aeca"
+    },
+    {
+      "path": "NLS/KdV/HillGardnerPeriodDirections.lean",
+      "source_labels": [
+        "Physical Abelian phase, normalized period directions and time-orientation correction for equations (1)-(3), (80)/(91)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11,
+        26,
+        33,
+        51
+      ],
+      "scope": "Constructs the genuine normalized Bochner contour integral of actual Gardner directions divided by the actual canonical root, proves its circle integrability and exact continuous-linear-functional pairing formula, and proves stationarity of every actual discriminant along it. Evaluates the proved raw Abelian angle derivative as the Kronecker delta using the genuine normalized periods. Identification of this tangent with the physical action gradient remains open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f9841dd172c31c7211e39e5d248a4f4e9fc7382db1e3c8442afb564b66ef4581"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/TimeOrientation.lean",
+      "source_labels": [
+        "Physical Abelian phase, normalized period directions and time-orientation correction for equations (1)-(3), (80)/(91)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11,
+        26,
+        33,
+        51
+      ],
+      "scope": "Proves the positive imaginary cubic and fifth-order Fourier eigenvalues of the actual PDE linearizations, including differentiation of the full nonlinear KdV and KdV2 fields along zero-source Fourier perturbations. A first-mode inequality disproves the negative sign printed in the unnumbered p.3 flow display. Proves the corrected signed coordinate flow has a positive exponent and its exact positive scalar time derivative; no actual spectral frequency or Birkhoff realization is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f9acb578e66500b8578d29cb6b0c83ca85068738f2e0f4fcc3b8fcd7ed5a82c1"
+    },
+    {
+      "path": "NLS/KdV/HillAbelianPhase.lean",
+      "source_labels": [
+        "Physical Abelian phase, normalized period directions and time-orientation correction for equations (1)-(3), (80)/(91)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11,
+        26,
+        33,
+        51
+      ],
+      "scope": "Defines the actual branch-independent physical Abelian phase from the Dirichlet gap cosine/sine and the actual infinite regular correction sum. Every sheeted terminal angle gives the same exponential. Proves unit norm on real open-selected-gap data, genuine locally analytic complex extensions with simultaneous trace- and normalized-contour-direction derivatives, universal trace derivative for every differentiable matching extension, and continuity throughout the real open-gap locus across terminal angle cuts. Other gaps may be closed; global Birkhoff/action identification remains open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "022362d6e01b09d5f9587d03a17df171969764e65affbc97d9b1555da1cfece0"
     }
   ],
   "dependencies_needed": [
+    "Identify the actual normalized coefficient contour tangents with the physical action Hamiltonian directions, orient the constructed physical Abelian phase relative to the canonical Birkhoff angle, construct the amplitude-weighted coordinates through collapsed own gaps, and prove the global action/Birkhoff/PDE realization. The raw infinite angle derivative and branch-independent open-gap phase are proved. Physical time orientation is corrected to the positive Fourier exponent.",
     "canonical zero/product identification, globally prescribed spectral-cycle compatibility and rough-space normalization; the local actual infinite entire family, convergent positive-index sums and every fixed frequency/energy contour period are constructed",
     "shared rough Hill/KdV spectral and Birkhoff foundations; global gap and canonical sheet normalization",
     "shared KdV action Hamiltonians",
@@ -13949,15 +14035,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 8939,
-    "total_declarations_audited": 31478,
+    "candidate_declarations_audited": 8988,
+    "total_declarations_audited": 31527,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 965,
+    "selected_modules": 970,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -13983,7 +14069,8 @@
     "terminal_angle_validation_sequence": "Prior strict validation of all 866 unchanged selected sources; strict dependency-order compilation of one byte-identical canonical algebra helper and three new proof modules; then a fresh combined transitive axiom audit of all 870 selected modules. The reused helper precedes every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 870-module rebuild is claimed.",
     "dirichlet_exterior_validation_sequence": "Prior strict validation of all 870 unchanged selected sources; strict dependency-order compilation of one byte-identical canonical sine-exterior helper and five new proof modules; then a fresh combined transitive axiom audit of all 876 selected modules. The reused helper precedes every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 876-module rebuild is claimed.",
     "dirichlet_interpolation_validation_sequence": "Prior strict validation of all 876 unchanged selected sources; strict dependency-order compilation of four byte-identical canonical pole/Cauchy helpers and four new proof modules; then a fresh combined transitive axiom audit of all 884 selected modules. The reused helpers precede every selected transitive consumer. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 884-module rebuild is claimed.",
-    "summed_abelian_angle_validation_sequence": "Prior strict validation of all 884 unchanged selected sources; strict dependency-order compilation of 75 byte-identical shared analytic correction dependencies; strict compilation of one byte-identical canonical holomorphic-limit helper and five new proof modules; then a fresh combined transitive axiom audit of all 965 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, all source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 965-module rebuild is claimed."
+    "summed_abelian_angle_validation_sequence": "Prior strict validation of all 884 unchanged selected sources; strict dependency-order compilation of 75 byte-identical shared analytic correction dependencies; strict compilation of one byte-identical canonical holomorphic-limit helper and five new proof modules; then a fresh combined transitive axiom audit of all 965 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, all source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No repeated full 965-module rebuild is claimed.",
+    "period_phase_validation_sequence": "Prior strict evidence for the 965-module baseline; all 960 unaffected source files and nineteen provenance records remain unchanged. Strict dependency-order rebuild of all six affected prior selected modules, including five changed source files, and all five new modules; then a fresh combined transitive axiom audit of all 970 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, frozen source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No full 970-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -14196,5 +14283,31 @@
   "canonical_dirichlet_interpolation_reuse_record": "CANONICAL_DIRICHLET_INTERPOLATION_REUSE.json",
   "summed_abelian_angle_record": "SUMMED_ABELIAN_ANGLE.md",
   "shared_analytic_correction_import_record": "SHARED_ANALYTIC_CORRECTION_IMPORT.json",
-  "canonical_normal_derivative_reuse_record": "CANONICAL_NORMAL_DERIVATIVE_REUSE.json"
+  "canonical_normal_derivative_reuse_record": "CANONICAL_NORMAL_DERIVATIVE_REUSE.json",
+  "abelian_phase_period_record": "ABELIAN_PHASE_PERIODS.md",
+  "physical_time_orientation_correction": {
+    "source_pages": [
+      2,
+      3,
+      33,
+      51
+    ],
+    "source_displays": [
+      "equations (1)-(3)",
+      "Theorem 1.1(ii),(iv)",
+      "unnumbered p.3 evolution display",
+      "(80)",
+      "(91)"
+    ],
+    "correction": "Use z_n(t)=exp(+i t omega_n) z_n(0) at positive Fourier modes, with odd extension to negative modes, for the physical PDEs and the stated Fourier transform. The negative exponent printed on p.3 and the positive theta evolution statement are inconsistent with the stated Gardner bracket and physical PDE convention. No correction to the defined positive frequency dH/dI or to its leading constants is made.",
+    "lean_evidence": [
+      "NLS.Articles.KdVKdV2Frequencies.linearKdV_unit_wave",
+      "NLS.Articles.KdVKdV2Frequencies.linearKdV2_unit_wave",
+      "NLS.Articles.KdVKdV2Frequencies.hasDerivAt_kdvRHS_zero_unit_wave",
+      "NLS.Articles.KdVKdV2Frequencies.hasDerivAt_kdv2RHS_zero_unit_wave",
+      "NLS.Articles.KdVKdV2Frequencies.linearKdV_first_wave_ne_negative",
+      "NLS.Articles.KdVKdV2Frequencies.hasDerivAt_coordinateFlow_positive_component"
+    ],
+    "physical_identification_status": "open; the generic coordinate-flow interface is corrected, but the actual spectral frequencies and physical Birkhoff evolution are not yet identified"
+  }
 }

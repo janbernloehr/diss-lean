@@ -4,7 +4,10 @@ import NLS.Dynamics.ActionDependentWeightedPhaseFlow
 
 The source uses one sequence indexed by ℤ with zero coordinate zero and
 `z (-n) = conj (z n)`. It does not use the dNLS pair of independent ℤ-sequences.
-The frequency sign below agrees with the Hamiltonian equations on PDF p. 3.
+The positive-mode sign agrees with the actual PDE linearization and the
+positive exponent in (80)/(91). The negative exponent on PDF p. 3 is
+inconsistent with (1)-(3) and the stated Fourier convention; see
+`TimeOrientation.lean` for the checked linearized calculation.
 Actual KdV/KdV2 frequencies and their physical identification remain to be proved.
 -/
 
@@ -32,10 +35,10 @@ theorem IsSignedReal.add {w : Weight} {a b : WeightedCoeff w p}
 abbrev SignedCoordinates (w : Weight) (p : ℝ≥0∞) :=
   {a : WeightedCoeff w p // IsSignedReal a}
 
-/-- Positive modes have Hamiltonian sign `-i ω_n`; negative modes have `+i ω_n`.
+/-- Positive modes have physical sign `+i ω_n`; negative modes have `-i ω_n`.
 The value of the input at natural index zero is deliberately unused. -/
 def signedHamiltonianFrequency (ω : ℕ → ℝ) (n : ℤ) : ℝ :=
-  if 0 < n then -ω n.natAbs else if n < 0 then ω n.natAbs else 0
+  if 0 < n then ω n.natAbs else if n < 0 then -ω n.natAbs else 0
 
 @[simp] theorem signedHamiltonianFrequency_zero (ω : ℕ → ℝ) :
     signedHamiltonianFrequency ω 0 = 0 := by simp [signedHamiltonianFrequency]
@@ -118,8 +121,8 @@ theorem continuous_coordinateFlow (w : Weight) (hp : p ≠ ⊤)
       signedHamiltonianFrequency (Ω (WeightedCoeff.squaredAmplitudes a.val)) n) := by
     unfold signedHamiltonianFrequency
     split_ifs
-    · exact (hΩ n.natAbs).neg
     · exact hΩ n.natAbs
+    · exact (hΩ n.natAbs).neg
     · exact continuous_const
   apply Continuous.subtype_mk
   exact WeightedCoeff.continuous_phaseFlow_family (p := p) w hp

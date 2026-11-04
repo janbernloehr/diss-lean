@@ -193,7 +193,7 @@ theorem not_tendsto_kdv2_signedTruncate_phaseTrajectories (w : Weight)
     (hc : ContinuousAt correction a)
     (g : ℕ → C(Icc (0 : ℝ) T, ℂ))
     (he : ∀ N (τ : Icc (0 : ℝ) T), g N τ =
-      Complex.exp (((-τ.val * kdv2FrequencyFromMass n
+      Complex.exp (((τ.val * kdv2FrequencyFromMass n
         (kdvFiniteMass (signedTruncate w N a)) (correction (signedTruncate w N a)) : ℝ) : ℂ) *
           Complex.I) * (signedTruncate w N a).val.val (n : ℤ))
     (G : C(Icc (0 : ℝ) T, ℂ)) : ¬ Tendsto g atTop (𝓝 G) :=
@@ -216,7 +216,7 @@ theorem not_continuousAt_kdv2_modeTrajectory_extension (w : Weight)
     (hc : ContinuousAt correction a)
     (Q : SignedCoordinates w 2 → C(Icc (0 : ℝ) T, ℂ))
     (he : ∀ N (τ : Icc (0 : ℝ) T), Q (signedTruncate w N a) τ =
-      Complex.exp (((-τ.val * kdv2FrequencyFromMass n
+      Complex.exp (((τ.val * kdv2FrequencyFromMass n
         (kdvFiniteMass (signedTruncate w N a)) (correction (signedTruncate w N a)) : ℝ) : ℂ) *
           Complex.I) * (signedTruncate w N a).val.val (n : ℤ)) :
     ¬ ContinuousAt Q a := by

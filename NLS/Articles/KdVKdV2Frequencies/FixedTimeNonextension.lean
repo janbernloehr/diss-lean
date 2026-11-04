@@ -15,11 +15,11 @@ set_option autoImplicit false
 open Set Filter Topology
 namespace NLS.Articles.KdVKdV2Frequencies
 
-/-- The source positive-mode endpoint phase value, with the Hamiltonian sign.
+/-- The source positive-mode endpoint phase value, with the physical Fourier sign.
 This is used only on data with proved finite mass. -/
 def kdv2EndpointModeValue {w : Weight} (n : ℕ) (t : ℝ)
     (correction : SignedCoordinates w 2 → ℝ) (z : SignedCoordinates w 2) : ℂ :=
-  Complex.exp (((-t * kdv2FrequencyFromMass n (kdvFiniteMass z) (correction z) : ℝ) : ℂ) *
+  Complex.exp (((t * kdv2FrequencyFromMass n (kdvFiniteMass z) (correction z) : ℝ) : ℂ) *
     Complex.I) * z.val.val (n : ℤ)
 
 /-- For every subcritical signed Sobolev datum with a nonzero positive mode,
@@ -68,16 +68,16 @@ theorem not_continuousAt_kdv2_fixedTime_mode_extension
     have h := (((hc.tendsto.comp hq).sub (hc.tendsto.comp hp)).const_mul t).const_add Real.pi
     simpa only [he, sub_self, mul_zero, add_zero, Function.comp_def] using! h
   intro hcont
-  apply Dynamics.not_tendsto_same_limit_of_phase_gap t f g
+  apply Dynamics.not_tendsto_same_limit_of_positive_phase_gap t f g
     (fun N => (p N).val.val (n : ℤ)) (a.val.val (n : ℤ)) ha
     (tendsto_signedTruncate_coefficient (Weight.sobolev σ) a (n : ℤ)) hgap (Q a)
   constructor
   · exact (hcont.tendsto.comp hp).congr' (Eventually.of_forall (fun N => hQ (p N) (hpreg N)))
   · apply (hcont.tendsto.comp hq).congr'
     filter_upwards [eventually_ge_atTop n] with N hN
-    change Q (q N) = Complex.exp (((-t * g N : ℝ) : ℂ) * Complex.I) * (p N).val.val (n : ℤ)
+    change Q (q N) = Complex.exp (((t * g N : ℝ) : ℂ) * Complex.I) * (p N).val.val (n : ℤ)
     rw [hQ (q N) (hqreg N)]
-    change Complex.exp (((-t * g N : ℝ) : ℂ) * Complex.I) * (q N).val.val (n : ℤ) = _
+    change Complex.exp (((t * g N : ℝ) : ℂ) * Complex.I) * (q N).val.val (n : ℤ) = _
     rw [hcoord N hN]
 
 end NLS.Articles.KdVKdV2Frequencies

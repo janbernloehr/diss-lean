@@ -1,3 +1,7 @@
+import NLS.KdV.HillAbelianPhase
+import NLS.Articles.KdVKdV2Frequencies.TimeOrientation
+import NLS.KdV.HillGardnerPeriodDirections
+import NLS.KdV.HillGardnerEnergyContinuity
 import NLS.KdV.HillGardnerAbelianAngle
 import NLS.KdV.HillGardnerSummedCorrection
 import NLS.ComplexAnalysis.NormalAnalyticSeriesDerivative
@@ -1118,7 +1122,7 @@ run_cmd do
     `NLS.KdV.HillSummedRegularCorrection,
     `NLS.ComplexAnalysis.NormalAnalyticSeries,
     `NLS.KdV.HillSummedRegularCorrectionAnalytic,
-    `NLS.KdV.HillGardnerClosedCorrection, `NLS.KdV.HillGardnerOpenCorrection, `NLS.ComplexAnalysis.NormalAnalyticSeriesDerivative, `NLS.KdV.HillGardnerSummedCorrection, `NLS.KdV.HillGardnerAbelianAngle]
+    `NLS.KdV.HillGardnerClosedCorrection, `NLS.KdV.HillGardnerOpenCorrection, `NLS.ComplexAnalysis.NormalAnalyticSeriesDerivative, `NLS.KdV.HillGardnerSummedCorrection, `NLS.KdV.HillGardnerAbelianAngle, `NLS.Fourier.UnitCurveCoefficients, `NLS.KdV.HillGardnerEnergyContinuity, `NLS.KdV.HillGardnerPeriodDirections, `NLS.Articles.KdVKdV2Frequencies.TimeOrientation, `NLS.KdV.HillAbelianPhase]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

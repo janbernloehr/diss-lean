@@ -973,7 +973,12 @@ modules=(
   NLS/KdV/HillGardnerOpenCorrection
   NLS/ComplexAnalysis/NormalAnalyticSeriesDerivative
   NLS/KdV/HillGardnerSummedCorrection
-  NLS/KdV/HillGardnerAbelianAngle)
+  NLS/KdV/HillGardnerAbelianAngle
+  NLS/Fourier/UnitCurveCoefficients
+  NLS/KdV/HillGardnerEnergyContinuity
+  NLS/KdV/HillGardnerPeriodDirections
+  NLS/Articles/KdVKdV2Frequencies/TimeOrientation
+  NLS/KdV/HillAbelianPhase)
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
 import sys

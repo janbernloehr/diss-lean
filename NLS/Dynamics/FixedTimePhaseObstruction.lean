@@ -49,4 +49,20 @@ theorem not_tendsto_same_limit_of_phase_gap {ι : Type*} {l : Filter ι} [NeBot 
   have heq := tendsto_nhds_unique hdist hz
   exact ha (norm_eq_zero.mp (by linarith [norm_nonneg a]))
 
+/-- The same obstruction with the physical positive Fourier exponent.
+Swapping the frequency families and reversing the scalar time in the
+proved negative-sign identity retains the same positive phase gap. -/
+theorem not_tendsto_same_limit_of_positive_phase_gap {ι : Type*} {l : Filter ι} [NeBot l]
+    (t : ℝ) (f g : ι → ℝ) (amp : ι → ℂ) (a : ℂ) (ha : a≠0)
+    (hamp : Tendsto amp l (𝓝 a))
+    (hgap : Tendsto (fun j => t*(g j-f j)) l (𝓝 Real.pi)) (b : ℂ) :
+    ¬ (Tendsto (fun j => Complex.exp (((t*f j:ℝ):ℂ)*Complex.I)*amp j) l (𝓝 b) ∧
+      Tendsto (fun j => Complex.exp (((t*g j:ℝ):ℂ)*Complex.I)*amp j) l (𝓝 b)) := by
+  have hg : Tendsto (fun j => (-t)*(f j-g j)) l (𝓝 Real.pi) := by
+    convert hgap using 1
+    funext j
+    ring
+  have h := not_tendsto_same_limit_of_phase_gap (-t) g f amp a ha hamp hg b
+  simpa only [neg_neg,and_comm] using h
+
 end NLS.Dynamics

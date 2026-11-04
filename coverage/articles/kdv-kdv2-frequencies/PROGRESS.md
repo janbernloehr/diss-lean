@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual infinite Abelian angle variation
+## Latest physical Abelian phase, period duality and corrected time sign
+
+A branch-independent actual Abelian phase is constructed on every open selected gap, with unit norm on real data, local complex L2 analyticity, continuity across terminal angle cuts and exact trace/normalized-contour derivative formulas. The actual Fourier contour tangents have proved L2 norm integrability and exact period duality. See `ABELIAN_PHASE_PERIODS.md`.
+
+The physical PDE linearizations prove positive imaginary cubic/fifth-order Fourier frequencies. The signed coordinate flow and both nonextension adapters are corrected to the positive exponent at positive modes, consistent with (80)/(91); the negative p.3 evolution sign is recorded as a source inconsistency. Actual Birkhoff/PDE identification remains open.
+
+Prior strict evidence for the 965-module baseline; all 960 unaffected source files and nineteen provenance records remain unchanged. Strict dependency-order rebuild of all six affected prior selected modules, including five changed source files, and all five new modules; then a fresh combined transitive axiom audit of all 970 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order, frozen source/provenance hashes, private fresh outputs and clean unchanged canonical main verified. No full 970-module rebuild is claimed.
+
+Fresh audit: 8988 selected and 31527 imported NLS declarations, permitted axioms only. Physical action-gradient/canonical angle/Birkhoff identification and all eleven main theorem rows remain OPEN.
+
+## Earlier actual infinite Abelian angle variation
 
 The actual regular correction sum is absolutely convergent and locally complex analytic, with its Gardner derivative now evaluated using a justified common-neighborhood derivative limit. Open and closed other gaps are included. Adding the actual own-gap terminal angle gives a local real physical Abelian angle A with D A[X_b] = -psi_n(b)/2 at every complex b, including filled spectral diagonals and terminal bandedges. See `SUMMED_ABELIAN_ANGLE.md`.
 
