@@ -15571,9 +15571,90 @@
       "scope": "For mean-zero real smooth period-one sources, proves the actual primitive differs from -iz by O(r^-3). The ACTUAL local diagonal-resolvent expansion then proves the uniform actual cubic kernel estimate r*|F(z^2)^3*D(z^2)/R(z^2)+z^2/2+Q(0)/4|<=C on selected upper energy arcs. This supplies the formerly missing local quantitative coefficient for source formula (69). Full-circle contour comparison, exterior analyticity and Hamiltonian frequency identification remain separate obligations.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "6fde0ee96fa25c5f2de7288c7aa316e08d150debfed4d6cdc44b8f247b5fa229"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UpperArcReflectionIntegrability.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; finite-gap reduction toward frequency identity (69)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        26,
+        27
+      ],
+      "scope": "A positive-radius circle is genuinely integrable when the actual parametrized closed upper arc is continuous and the lower sheet obeys conjugate reflection off the real axis. Proves the reflected circle parametrization identity. No continuity across the two real crossings or through interior spectral cuts is assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c977d82892573e756cca42d61cf0651e7f68aa3004cf57084c32bdc54bafd06a"
+    },
+    {
+      "path": "NLS/KdV/HillL2RealCutReflection.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; finite-gap reduction toward frequency identity (69)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        26,
+        27
+      ],
+      "scope": "Actual continued Hill primitive and real-cut root are minus-conjugate under energy conjugation off the real axis. The actual Dirichlet characteristic of every real continuous physical potential respects conjugation at all energies, proved from actual scalar IVP conjugation. No ZS real-type assumption is used.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3a61e78e359179833ddcecfeede12bd817c5b36691a27e87b582aa9e8e20a822"
+    },
+    {
+      "path": "NLS/KdV/HillCubicFrequencyCircle.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; finite-gap reduction toward frequency identity (69)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        26,
+        27
+      ],
+      "scope": "The genuine upper-arc cubic kernel estimate extends to whole expanding energy circles by actual conjugation. The actual spectral root is nonzero on every sufficiently large selected circle, including the real crossings. The actual cubic normalized-numerator integrand is genuinely circle integrable by upper-arc continuity and off-real reflection; the actual Dirichlet polynomial integrand is integrable whenever its actual entire denominator is zero-free on the circle.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "59e300ad209319fb213e66108bef60c956fb7b19c59948465f5bbf1775705f78"
+    },
+    {
+      "path": "NLS/KdV/HillCubicFrequencyContourComparison.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; finite-gap reduction toward frequency identity (69)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        26,
+        27
+      ],
+      "scope": "For each normalized numerator and every actual real smooth period-one mean-zero source, both cubic spectral and Dirichlet polynomial contour integrals are genuinely integrable on the same large selected circles. The actual cubic kernel bound and actual psi/D exterior decay prove an O(1/r) bound for their difference, where r is frequency radius. That difference tends to zero. No finite-gap assumption, assumed exterior analytic filling, prescribed resolvent coefficient or frequency identity is used.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6a8513833c3f8e6e846e4377436e76e19f09b4d32098c8fd02f8b4bbe67ab5b9"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/FiniteGapCubicVelocityLimit.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary actual coordinate dynamics; finite-gap reduction toward frequency identity (69)"
+      ],
+      "source_pages": [
+        1,
+        2,
+        3,
+        26,
+        27
+      ],
+      "scope": "At every real smooth period-one mean-zero potential with all gaps above a finite cutoff closed, the actual cubic spectral outer contour, with exact source factor 4/(i*pi), converges to the actual finite-gap KdV Dirichlet velocity sum. The selected index is included in the cutoff, even when its own gap is closed. This bridges the actual physical scalar coordinate jet coefficient to the cubic contour LIMIT. Exact contour independence, finite-hole gap-moment deformation and actual Hamiltonian frequency identity (69) remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "94bd07cfa051b68dd016940fdf0cdf7264ea9e3cb88e71e1da7265ae6cb600a8"
     }
   ],
   "dependencies_needed": [
+    "The actual full-circle cubic contour comparison is NOW proved: genuine integrability, actual root nonvanishing at both real crossings and an O(1/r) contour difference give the actual finite-gap KdV Dirichlet velocity sum as the LIMIT of the actual cubic outer contour with exact factor4/(i*pi), including closed own gaps. Remaining for69: exterior/finite-hole contour filling and gap-moment decomposition, plus actual Hamiltonian frequency identification. Quintic coefficient/mass renormalization for84 and all main canonical/map/rough W/estimate/action/PDE flow obligations remain. All eleven main rows OPEN.",
     "The actual local diagonal Hill resolvent expansion and actual cubic frequency-kernel estimate are NOW proved. Both full-plane actual WKB columns, exact scalar Dirichlet normalization, actual root separation/comparison and genuine local Riccati jet give D/R=i/(2z)+iQ(0)/(4z^3)+O(r^-4); mean-zero actual F then gives F^3*D/R=-z^2/2-Q(0)/4+O(r^-1). Remaining: full-circle integrability/reflection and exterior/finite-hole contour comparison to identify actual Hamiltonian frequency (69); quintic local coefficient and translation/mass renormalization for (84); closed-frequency identification and all other main canonical/map/rough W/estimate/action/PDE flow obligations. All eleven main rows remain OPEN.",
     "Actual finite-gap Dirichlet partial fractions, analytic-test contour coefficients, cutoff-independent residue moments and three-term uniform quotient Laurent estimates are NOW proved, including closed own gaps. Both actual PDE velocity sums equal genuine Dirichlet polynomial contours and give both physical coordinate derivatives. Remaining: local diagonal-resolvent D/R high-energy expansion and comparison with actual F^3/F^5 contours, actual Hamiltonian frequency identities (69)/(84), closed-frequency identification, full canonicality/Fourier zero jet/native Banach map and inverse/rough W/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
     "Actual all-gap coordinate first variations in BOTH physical PDE fields are NOW proved for every physical matching extension, including zero velocity at closed own gaps. ONE genuine analytic scalar coordinate germ has both actual PDE derivative limits. For finite-gap sources both actual derivatives equal the proved finite Dirichlet sums. Remaining: evaluate those sums and identify actual Hamiltonian frequencies (69)/(84); full canonicality/Fourier zero jet/native Banach map and inverse/rough W compatibility/sharp estimates/action descent/PDE flow existence. All eleven main rows remain OPEN.",
@@ -15615,15 +15696,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 9731,
-    "total_declarations_audited": 32167,
+    "candidate_declarations_audited": 9760,
+    "total_declarations_audited": 32197,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1074,
+    "selected_modules": 1079,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -15662,7 +15743,8 @@
     "abelian_pde_motion_validation_sequence": "Prior strict evidence for all 1043 unchanged selected baseline sources; strict dependency-order compilation of eleven new modules; then a fresh combined transitive axiom audit of all 1054 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1081 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1054-module rebuild is claimed.",
     "coordinate_pde_motion_validation_sequence": "Prior strict evidence for all 1054 unchanged selected baseline sources; strict dependency-order compilation of six new modules; then a fresh combined transitive axiom audit of all 1060 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1087 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1060-module rebuild is claimed.",
     "dirichlet_frequency_contours_validation_sequence": "Prior strict evidence for all 1060 unchanged selected baseline sources; strict dependency-order compilation of four new modules; then a fresh combined transitive axiom audit of all 1064 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1091 frozen source/checker/provenance hashes, all 25 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1064-module rebuild is claimed.",
-    "local_diagonal_resolvent_validation_sequence": "Prior strict evidence for all 1064 unchanged selected baseline sources; strict dependency-order compilation of ten additions (two unchanged canonical symmetry/phase helpers and eight new proof modules); then a fresh combined transitive axiom audit of all 1074 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1102 frozen source/checker/provenance hashes, all 25 unchanged provenance records plus one new verified two-file canonical WKB reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1074-module rebuild is claimed."
+    "local_diagonal_resolvent_validation_sequence": "Prior strict evidence for all 1064 unchanged selected baseline sources; strict dependency-order compilation of ten additions (two unchanged canonical symmetry/phase helpers and eight new proof modules); then a fresh combined transitive axiom audit of all 1074 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1102 frozen source/checker/provenance hashes, all 25 unchanged provenance records plus one new verified two-file canonical WKB reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1074-module rebuild is claimed.",
+    "cubic_contour_validation_sequence": "Prior strict evidence for all 1074 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1079 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1107 frozen source/checker/provenance hashes, all 26 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1079-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -15914,5 +15996,6 @@
   "coordinate_pde_motion_record": "ACTUAL_ALL_GAP_PDE_COORDINATES.md",
   "dirichlet_frequency_contours_record": "FINITE_GAP_DIRICHLET_FREQUENCY_CONTOURS.md",
   "local_diagonal_resolvent_record": "LOCAL_DIAGONAL_RESOLVENT.md",
-  "canonical_wkb_swap_phase_record": "CANONICAL_WKB_SWAP_PHASE_REUSE.json"
+  "canonical_wkb_swap_phase_record": "CANONICAL_WKB_SWAP_PHASE_REUSE.json",
+  "cubic_contour_record": "CUBIC_VELOCITY_CONTOUR_LIMIT.md"
 }

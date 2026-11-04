@@ -1,3 +1,8 @@
+import NLS.Articles.KdVKdV2Frequencies.FiniteGapCubicVelocityLimit
+import NLS.KdV.HillCubicFrequencyContourComparison
+import NLS.ComplexAnalysis.UpperArcReflectionIntegrability
+import NLS.KdV.HillL2RealCutReflection
+import NLS.KdV.HillCubicFrequencyCircle
 import NLS.KdV.HillSignedAbelianHamiltonianVariation
 import NLS.ComplexAnalysis.RealLineConjugateDerivative
 import NLS.KdV.HillRealActionHamiltonians
@@ -1302,7 +1307,12 @@ run_cmd do
     `NLS.KdV.HillWKBRootComparison,
     `NLS.KdV.HillWKBLocalResolventModel,
     `NLS.KdV.HillLocalDiagonalResolvent,
-    `NLS.KdV.HillCubicFrequencyKernel
+    `NLS.KdV.HillCubicFrequencyKernel,
+    `NLS.ComplexAnalysis.UpperArcReflectionIntegrability,
+    `NLS.KdV.HillL2RealCutReflection,
+    `NLS.KdV.HillCubicFrequencyCircle,
+    `NLS.KdV.HillCubicFrequencyContourComparison,
+    `NLS.Articles.KdVKdV2Frequencies.FiniteGapCubicVelocityLimit
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

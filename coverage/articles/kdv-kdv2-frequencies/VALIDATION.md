@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual local resolvent and cubic frequency kernel
+## Latest actual cubic velocity contour limit
+
+The actual primitive, root and scalar Dirichlet characteristic now have the proved conjugation identities needed for full-circle estimates. Upper-arc continuity and off-real reflection give genuine circle integrability without assuming continuity through spectral cuts or matching values at the two real crossings. The actual root is nonzero on every sufficiently large selected energy circle.
+
+The actual cubic kernel estimate and actual normalized numerator quotient bound give an O(1/r) difference between the actual cubic spectral contour and the actual polynomial Dirichlet contour, where r is the frequency radius. Thus their difference tends to zero even without a finite-gap assumption. At a finite-gap source the exact Dirichlet contour identity identifies the cubic contour LIMIT, with factor 4/(i*pi), with the actual KdV Dirichlet velocity sum. The selected closed-gap index is retained. See `CUBIC_VELOCITY_CONTOUR_LIMIT.md`.
+
+Prior strict evidence for all 1074 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1079 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1107 frozen source/checker/provenance hashes, all 26 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1079-module rebuild is claimed.
+
+Fresh audit: 9760 selected and 32197 imported NLS declarations, permitted axioms only. Exact exterior/finite-hole contour filling and gap-moment decomposition, actual Hamiltonian frequency identity (69), and the quintic route (84) remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier actual local resolvent and cubic frequency kernel
 
 Both actual WKB columns now have proved all-order errors on the entire complex frequency plane, with exact reciprocal physical phase multipliers and controlled initial basis. Their actual monodromy entry is the scalar Hill Dirichlet characteristic with its verified factor i. Independently proved actual primitive bounds give actual root separation and all-order root comparison on upper energy arcs.
 
@@ -276,7 +286,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1074 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1079 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1345,7 +1355,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1074 selected modules (including generated and private declarations)
+the 1079 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -2592,4 +2602,15 @@ PASS NLS/KdV/HillWKBLocalResolventModel
 PASS NLS/KdV/HillLocalDiagonalResolvent
 PASS NLS/KdV/HillCubicFrequencyKernel
 Axiom audit passed: 9731 candidate declarations; 32167 declarations total.
+```
+
+Latest actual cubic contour strict additions and fresh combined audit:
+
+```text
+PASS NLS/ComplexAnalysis/UpperArcReflectionIntegrability
+PASS NLS/KdV/HillL2RealCutReflection
+PASS NLS/KdV/HillCubicFrequencyCircle
+PASS NLS/KdV/HillCubicFrequencyContourComparison
+PASS NLS/Articles/KdVKdV2Frequencies/FiniteGapCubicVelocityLimit
+Axiom audit passed: 9760 candidate declarations; 32197 declarations total.
 ```

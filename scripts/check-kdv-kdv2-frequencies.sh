@@ -1083,6 +1083,11 @@ modules=(
   NLS/KdV/HillWKBLocalResolventModel
   NLS/KdV/HillLocalDiagonalResolvent
   NLS/KdV/HillCubicFrequencyKernel
+  NLS/ComplexAnalysis/UpperArcReflectionIntegrability
+  NLS/KdV/HillL2RealCutReflection
+  NLS/KdV/HillCubicFrequencyCircle
+  NLS/KdV/HillCubicFrequencyContourComparison
+  NLS/Articles/KdVKdV2Frequencies/FiniteGapCubicVelocityLimit
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

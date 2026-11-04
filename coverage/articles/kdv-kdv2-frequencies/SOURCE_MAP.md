@@ -916,3 +916,14 @@ Combining those actual estimates with the genuine local Riccati jet proves D/R=i
 Prior strict evidence for all 1064 unchanged selected baseline sources; strict dependency-order compilation of ten additions (two unchanged canonical symmetry/phase helpers and eight new proof modules); then a fresh combined transitive axiom audit of all 1074 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1102 frozen source/checker/provenance hashes, all 25 unchanged provenance records plus one new verified two-file canonical WKB reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1074-module rebuild is claimed.
 
 Fresh audit: 9731 selected and 32167 imported NLS declarations, permitted axioms only. Full-circle and exterior contour comparison to identify the actual Hamiltonian frequencies (69)/(84) remains open. All eleven main theorem rows remain OPEN.
+
+
+## Latest actual cubic velocity contour limit
+
+The actual primitive, root and scalar Dirichlet characteristic now have the proved conjugation identities needed for full-circle estimates. Upper-arc continuity and off-real reflection give genuine circle integrability without assuming continuity through spectral cuts or matching values at the two real crossings. The actual root is nonzero on every sufficiently large selected energy circle.
+
+The actual cubic kernel estimate and actual normalized numerator quotient bound give an O(1/r) difference between the actual cubic spectral contour and the actual polynomial Dirichlet contour, where r is the frequency radius. Thus their difference tends to zero even without a finite-gap assumption. At a finite-gap source the exact Dirichlet contour identity identifies the cubic contour LIMIT, with factor 4/(i*pi), with the actual KdV Dirichlet velocity sum. The selected closed-gap index is retained. See `CUBIC_VELOCITY_CONTOUR_LIMIT.md`.
+
+Prior strict evidence for all 1074 unchanged selected baseline sources; strict dependency-order compilation of five new proof modules; then a fresh combined transitive axiom audit of all 1079 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1107 frozen source/checker/provenance hashes, all 26 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1079-module rebuild is claimed.
+
+Fresh audit: 9760 selected and 32197 imported NLS declarations, permitted axioms only. Exact exterior/finite-hole contour filling and gap-moment decomposition, actual Hamiltonian frequency identity (69), and the quintic route (84) remain open. All eleven main theorem rows remain OPEN.
