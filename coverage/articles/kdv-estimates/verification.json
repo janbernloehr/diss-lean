@@ -13,7 +13,7 @@
   "focused_command": "ELAN_HOME and PATH set to pinned Lean 4.33.1 tooling; DISS_LEAN_REFERENCE_CHECKOUT set to the read-only prebuilt base; bash scripts/check-kdv-estimates.sh",
   "focused_exit_code": 0,
   "transitive_axiom_audit": {
-    "declarations": 5794,
+    "declarations": 5825,
     "namespaces": [
       "NLS.KdV",
       "NLS.Articles.KdVEstimates",
@@ -494,10 +494,11 @@
       "NLS.ComplexAnalysis.norm_le_two_mul_norm_sin_of_half",
       "NLS.ComplexAnalysis.augmented_boundary_diagonal_balance",
       "NLS.ComplexAnalysis.weighted_diagonal_le_of_augmented_boundary_balance",
-      "NLS.ComplexAnalysis.norm_augmented_boundary_denominator_ge_one"
+      "NLS.ComplexAnalysis.norm_augmented_boundary_denominator_ge_one",
+      "NLS.Fourier.norm_halfCoefficient_le_of_bound"
     ]
   },
-  "full_repository_validation": "All 764 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 762-module base has strict validation recorded at commit 81dfab529133ed7461f6cf6828481d41f1511258 (complete 583-module strict focused run plus 179 isolated additions, all 762 base source hashes unchanged, 5784-declaration audit and successful 762-module aggregate), and all 2 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5794-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 764-module focused script, full Lake rebuild and full repository examples were not rerun.",
+  "full_repository_validation": "All 773 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 764-module base has strict validation recorded at commit 87b3c931a2773c3333d2c983e5815b5cce53e60a (complete 583-module strict focused run plus 181 isolated additions, all 764 base source hashes unchanged, 5794-declaration audit and successful 764-module aggregate), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5825-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 773-module focused script, full Lake rebuild and full repository examples were not rerun.",
   "canonical_build_outputs_modified": false,
   "files": {
     "NLS/KdV/FreeHill.lean": "a62b5eea30e41b25b3bdd66f5b18afe9a11e2c3a0f974b1b94d114251c1b40b1",
@@ -1263,10 +1264,19 @@
     "NLS/KdV/HillWeightedDirichletDiagonal.lean": "a886611819f0938ea76230221f63eafbb641f2c1f86234e85f96031fc7303270",
     "NLS/KdV/HillNativeDirichletDefect.lean": "2081952b39bede6400641d3d5ef0ff31e9a5d3710d2c5d54fb33efa665236473",
     "NLS/KdV/HillDirichletPeriodicDistance.lean": "ab2ff0b168bd665603cb0eebfa41ccbe3c0c5af97539379ed8c0d66f8dd106d9",
-    "NLS/KdV/HillNativeDirichletMidpoint.lean": "1fe8a8c441b150173eb5e9757640e370be067e7f200a7c47f141e9db39c36faf"
+    "NLS/KdV/HillNativeDirichletMidpoint.lean": "1fe8a8c441b150173eb5e9757640e370be067e7f200a7c47f141e9db39c36faf",
+    "NLS/Fourier/HalfCoefficientBounds.lean": "fabf0f0b3cf9c0c6e219d7f3c5740b9e275c2166461ae03e2d78ec3959ccefcf",
+    "NLS/KdV/HillRoughSmallPotentialPosition.lean": "11fb5262b450de9c2baf3727483b9c5c08719dfb31bd9da437747d02b41cf184",
+    "NLS/KdV/HillDirichletCoefficientBounds.lean": "fe89c79d35a827383febdfd8f036fd52290b5ea908fd2cb2b2852289889867b6",
+    "NLS/KdV/HillWeightedDirichletJump.lean": "f688d08a9ad7a1eec52d0d11b1fa792b2df2f46dcc4135d4615d3025f0638059",
+    "NLS/KdV/HillNativeDirichletJump.lean": "b3547ff7129b605617bff17d08a7f793ed5724fd99e97e34d9df77e517843741",
+    "NLS/KdV/HillDirichletSheetJump.lean": "1f1efa903098001a424295ac783771da794e8368a23bb79e45dd9dd9d96452fd",
+    "NLS/KdV/HillFilledRootIndexInverseBound.lean": "e520f4b6b56507deda9fe383dc59a7d616004991708f37b9d55c0c66cfaeb270",
+    "NLS/KdV/HillNativeWeightedNormingSheet.lean": "11f95bb0dd62a2aaf281bd5ce1bcad093332bb4d517c175710109c9cae1d3659",
+    "NLS/KdV/HillNativeWeightedOwnFactors.lean": "6043cf889985c0de916040d0bf98186ae1e7bac7be968d2bb875ce9145953d5e"
   },
-  "remaining": "The actual complex high Dirichlet Schur defect and the original periodic midpoint minus the actual Dirichlet root now both satisfy genuine weighted Fourier bounds on every bounded complex weighted source ball, with cutoffs independent of the weight. In native period-one form, w(2*n)*norm(M_n-mu_n)<=(4*B+10)*(w(2*n)*norm(q_n)+w(2*n)*norm(q_-n)+16*norm(q)^2/n). The actual midpoint difference has a common scalar complex analytic chart. These results use the original contour-defined periodic midpoint and original normalized Dirichlet characteristic root, include collapsed complex periodic pairs, and require no complex interlacing. The weighted action sequence/mass analytic extensions, scalar spectral-coordinate germs, actual real weighted sequences and numerical coordinate bounds remain checked. Still required: prove a weighted bound for the actual scaled norming sheet using the resonant source equation and normalized Dirichlet coefficient bounds, then bound the individual complex own-gap factors and complete critical weighted Cartesian l2 bounds. Uniform normalized differential/regular-phase charts in the coordinate index, Banach-valued spectral-map analyticity, source-normalized Gardner brackets, a global inverse and fixed physical KdV Birkhoff identification also remain essential. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
-  "milestone": "Weighted original complex periodic midpoint minus Dirichlet root",
+  "remaining": "The actual complex Dirichlet Schur defect, original periodic midpoint minus actual Dirichlet root, scaled actual norming sheet and both individual original complex own-gap factors now satisfy genuine weighted Fourier bounds on every bounded complex source-native weighted coefficient ball. All common cutoffs precede the weight quantifier. The actual derivative jump J=slope*wave(-n,1)-1 satisfies n*w(2*n)*norm(J)<=8*exp(1/2)*(2*B+5)*(w(2*n)*norm(q_n)+w(2*n)*norm(q_-n)+16*norm(q)^2/n). Its common scalar analytic chart and uniform smallness follow. The original Wronskian gives norm(sheet)<=5*norm(J) at small jumps, and the existing filled-root inverse bound gives the required O(n) factor. Combine the separately controlled midpoint and sheet to bound each own-gap factor by C(B) times the same weighted Fourier budget. The weighted action-sequence/mass analytic extensions, scalar spectral-coordinate germs, actual real weighted sequences and numerical coordinate bounds remain checked. Still required: combine these individual complex factor bounds with the checked inverse-index action prefactor to prove critical weighted own-amplitude l2 bounds and analytic extensions; establish uniform normalized differential/regular-phase charts in the coordinate index for the full Cartesian coordinates, Banach-valued spectral-map analyticity, source-normalized Gardner brackets, a global inverse and fixed physical KdV Birkhoff identification. Main Theorems 1 and 3(i) remain unverified; Theorem 2 and Theorem 3(ii) remain verified.",
+  "milestone": "Genuine weighted original complex norming sheet and individual own-gap factors",
   "foundation_commit": "ae26edc",
   "foundation_pushed": true,
   "focused_modules": [
@@ -2033,7 +2043,16 @@
     "NLS.KdV.HillWeightedDirichletDiagonal",
     "NLS.KdV.HillNativeDirichletDefect",
     "NLS.KdV.HillDirichletPeriodicDistance",
-    "NLS.KdV.HillNativeDirichletMidpoint"
+    "NLS.KdV.HillNativeDirichletMidpoint",
+    "NLS.Fourier.HalfCoefficientBounds",
+    "NLS.KdV.HillRoughSmallPotentialPosition",
+    "NLS.KdV.HillDirichletCoefficientBounds",
+    "NLS.KdV.HillWeightedDirichletJump",
+    "NLS.KdV.HillNativeDirichletJump",
+    "NLS.KdV.HillDirichletSheetJump",
+    "NLS.KdV.HillFilledRootIndexInverseBound",
+    "NLS.KdV.HillNativeWeightedNormingSheet",
+    "NLS.KdV.HillNativeWeightedOwnFactors"
   ],
   "proof_commits": [
     {
@@ -2560,6 +2579,11 @@
       "commit": "81dfab529133ed7461f6cf6828481d41f1511258",
       "scope": "Genuine weighted complex Dirichlet Schur defect bounds, uniform Green and denominator control, bounded actual Dirichlet displacement and common scalar analytic defect chart. Nine isolated strict additions, 5784-declaration audit and successful 762-module aggregate; committed locally.",
       "pushed": false
+    },
+    {
+      "commit": "87b3c931a2773c3333d2c983e5815b5cce53e60a",
+      "scope": "Original weighted complex periodic-root to Dirichlet comparison, source-native original midpoint-minus-Dirichlet bound and common scalar analytic chart. Two isolated strict additions, 5794-declaration audit and successful 764-module aggregate; committed locally.",
+      "pushed": false
     }
   ],
   "aggregate_check": {
@@ -2576,43 +2600,73 @@
     "future_commands": "Use active_path explicitly; current app working directory was not changed by attachment."
   },
   "latest_validation": {
-    "focused_modules": "764 focused modules covered by the unchanged 762-module strictly validated base plus 2 isolated strict module checks; no fresh complete focused-script run is claimed.",
+    "focused_modules": "773 focused modules covered by the unchanged 764-module strictly validated base plus 9 isolated strict module checks; no fresh complete focused-script run is claimed.",
     "audit_command": "lean -DautoImplicit=false coverage/articles/kdv-estimates/CheckPrivateAxioms.lean",
     "audit_exit_code": 0,
-    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 5794 declarations. Includes the original weighted periodic-root to Dirichlet distance comparison, source-native original contour-midpoint difference, genuine weighted Fourier bound and common scalar analytic chart.",
+    "axiom_audit_result": "KdV foundation: transitive axiom audit passed for 5825 declarations. Includes the shared half-coefficient normalization bound, rough original small-potential state estimate, actual normalized resonant coefficient estimates, forced weighted boundary jump, source-native common analytic jump and uniform smallness, original Wronskian sheet estimate, reused filled-root inverse, weighted actual scaled norming sheet and both individual original complex own-gap factor bounds.",
     "new_module_warnings": [],
-    "aggregate_scope": "All 764 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 762-module base has strict validation recorded at commit 81dfab529133ed7461f6cf6828481d41f1511258 (complete 583-module strict focused run plus 179 isolated additions, all 762 base source hashes unchanged, 5784-declaration audit and successful 762-module aggregate), and all 2 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5794-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 764-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "aggregate_scope": "All 773 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 764-module base has strict validation recorded at commit 87b3c931a2773c3333d2c983e5815b5cce53e60a (complete 583-module strict focused run plus 181 isolated additions, all 764 base source hashes unchanged, 5794-declaration audit and successful 764-module aggregate), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5825-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 773-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "private_overlay": "Private real build directories include Fourier as well as KdV, Articles/KdVEstimates, FunctionalAnalysis, SequenceSpaces and ComplexAnalysis. Prebuilt imports are read-only symlinks; focused targets are private. Canonical outputs are not compilation targets.",
     "reused_source_check": "The earlier constant-upper bridge and spectral-symmetry reuse remains unchanged; ClassicalDiscriminant keeps its shared descent refactoring. ClassicalLocalPrimitive and ClassicalFreePrimitive are byte-identical to articles/kdv-convexity commit 84cae568525bd9909405a8add2beca105e01bbce. Exact source blob provenance and current SHA256 file hashes are recorded. The source-log construction in ClassicalSourcePrimitive (blob 7885ecb19ca33beb55138da03787ce99e3c18315, commit ecd010969f63e6b8af8f6ed5aaa1dc571fa7e503) was read and factored into the generic shared TracePrimitiveFamily; ParametricSourceLogDomain and ContinuousLogarithmUnique are reused. ClassicalHillConjugation is reused from articles/kdv-convexity commit 15182450397dfd2fd3a4ab64840488e3e1ff5a16 (blob d807d6eea932f8384d76f8b4117716101d05212b), with the Green import reduced to its actual scalar flow/derivative-star dependencies. Its source-path reflection proof (blob 5b6b2acb0ddcf30b0f3b84d56b7fed62bf625750) is generalized to shared SourceSchwarzData. Existing polynomial circle integration by parts and real-circle reflection are unchanged, with source hashes equal to the pinned reference. The existing weighted interval-integral mean-value theorem in Mathlib is used directly for the actual signed arcosh profile, including collapsed gaps. The existing quadratic-root cut and segment boundary-limit libraries were inspected for the next contour-to-gap bridge; they have not yet been imported or used to claim that bridge. The complete AnalyticDiscSquareRoot, AnalyticTwoZeroRoot and TwoZeroDeflation modules are byte-identical to articles/kdv-convexity commit 7e066ef5a1d4576a3b1ae2db33dc46fb9422e677 and were read before reuse. Existing PrimitiveOnDiscComplement and SegmentPrimitiveBoundary are reused with hashes equal to the pinned prebuilt reference. The existing NormalizedLogarithmicPrimitive, ContinuousLogarithmUnique, ComplexSegmentComplementConnected and DenseSegmentComplement sources were read in full and reused unchanged, with reference-equal hashes recorded in the source map. The logarithmic integrating factor is applied at a regular source anchor; no endpoint normalization is assumed. The real intermediate-value phase-barrier argument of the continuous ClassicalHillHighPrimitiveStrip proof was read and generalized into LogarithmStripNormalization, then applied directly to the actual rough source path and full real cut bands. The source-strip proof here uses nonzero roots at admissible real energies, retaining cutoff eight. The continuous-potential trace-phase neighborhood theorem and its unspecified cutoff are not assumed. Actual endpoint trace parity is reused through canonical ordered-pair uniqueness. The complete existing GapPrimitiveSquare proof was read and is reused unchanged with a pinned-reference-equal source hash. Its pure quadratic root hypothesis is supplied by dividing the actual characteristic root by the analytic deflated-unit root; its zero endpoint hypotheses are the previously checked exact indexed limits. The existing entire even square-descent theorem constructs the scalar cosh-square coordinate. The simple-zero derivative argument has been extracted from the checked RealSimpleZeroSigns proof and is reused there and for the actual endpoints. The real-cut conjugation geometry is extracted unchanged from the previously checked private Hill cut-reflection helper. The existing two-zero deflation theorem is reused for the filled primitive square. Existing standard-root real-exterior sign and joint gap-side limit APIs were inspected for the next oriented boundary-value step but are not imported or claimed as that bridge in this milestone. The existing standard-root real-exterior sign and joint gap-side boundary proofs were read and reused unchanged through their unconditional algebraic/complex-analytic theorems. Their source hashes match the pinned prebuilt reference and are recorded in the source map. No NLS canonical-product or real-type spectral conclusion is reused for the Hill pair. The actual cut sign is fixed by the already checked real Hill phase and nonvanishing deflated unit. A shared two-zero quotient reflection theorem and endpoint-coordinate boundary wrapper are new generic library results. The complete NestedCircleHomotopy and AnalyticCutContour proofs from articles/kdv-convexity at 4b8896cdfc0e7fabc3b75df7db287ee472c532fe were read. The former matches the already tracked source byte for byte; the latter is integrated unchanged. Both are freshly strict-compiled and their public declarations are transitive audit seeds. Generic smooth homotopy and circle integral foundations are reused directly. The NLS-specific weighted cosine boundary theorem was read only as a dominated-convergence API example; no such spectral theorem is imported as a Hill fact. The 35-module missing dependency closure of HillL2GapQuotientAsymptotics from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was integrated unchanged, freshly strict-compiled and checked by the expanded transitive audit. TwoZeroDeflation is expanded by the source branch's compatible analytic disc quotient comparison; its whole source now matches that pin. The existing ClassicalHillConjugation proof remains unchanged; the new modules do not require overwriting its compatible statement/proof. The complete public generic/ZS sources, relevant square inverse, chart factorization, near-free unit statements/proofs and compatibility interfaces were inspected. Source hashes of all 36 reused/expanded modules are recorded in the source map. The two new ZS outputs were built only after replacing the worktree ZS build-directory symlink with a private directory of imports; the pinned reference was not modified. The three-module missing closure of ClassicalL2PrimitiveAgreement from articles/kdv-convexity at 9d1741ce0f47d05e6bc63deaa43b5cdd043e7848 was read and integrated unchanged. All three sources match that pin byte for byte. TracePrimitiveFunctoriality is covered by the existing family namespace audit; the continuous/L2 and contour models are covered by the KdV namespace audit. New generic maximum-modulus, trace continuation, half-plane approach, hyperbolic trace and constant phase results are explicit audit seeds. The continuous scalar Green sheet theorem is reused from the prior strict milestone; no NLS real-type hypothesis is imposed on (-1,-q). The pinned prebuilt reference is not modified. The existing ParametricTrigonometricTerminal, ParametricSineTerminal, ParametricCosineTerminal, ParametricCosineChart, ParametricCosinePrimitive and LocalAnalyticSquareRoot sources were read and reused with bytes equal to the pinned prebuilt reference; their actual uses are covered transitively by the new Hill declaration audit. The endpoint-root continuity and arbitrary real-angle cosine-chart results are new shared proofs with explicit audit seeds. Generic parametric annular primitives, quadratic Cauchy projection and root primitives, quadratic cosine primitives and the segment-only analytic cosine mean were read and reused unchanged from the pinned prebuilt reference. Their SHA256 values are recorded in the analytic_regular_hill_abelian_corrections_through_closed_gaps source-map section. The actual uses are covered transitively by the expanded audit.",
-    "mathematical_scope": "Use the checked quadratic determinant factorization and weighted coupling errors to bound the weighted Schur defect of every periodic root by the sum of the two weighted raw coefficients plus 16*norm(q)^2/n. Apply the actual effective diagonal spectral Lipschitz constant 1/4, absorb this term, and compare any periodic root with any energy having a controlled actual Schur defect. At actual high complex Dirichlet zeros the previous genuine defect bound yields w(2*n)*norm(z-mu_n)<=(4*B+10)*(weighted raw pair+16*norm(q)^2/n). Use the original bounded complex periodic pair with multiplicities, localize both roots in the true reduced strip, identify each as a zero of the original weighted Schur determinant by the physical discriminant criterion, and recover the original contour-defined midpoint by its logarithmic moment identity. Averaging the two checked distances gives the same bound for the original midpoint minus original Dirichlet root. Pass through the source period-one linear isometry to retain native q_n and q_-n, the source weight w(2*n) and exact source norm. Prove a common complex scalar analytic chart for this original midpoint difference by composing the existing common midpoint and Dirichlet-root analytic charts with the native coefficient map.",
-    "scope": "All 764 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 762-module base has strict validation recorded at commit 81dfab529133ed7461f6cf6828481d41f1511258 (complete 583-module strict focused run plus 179 isolated additions, all 762 base source hashes unchanged, 5784-declaration audit and successful 762-module aggregate), and all 2 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5794-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 764-module focused script, full Lake rebuild and full repository examples were not rerun.",
+    "mathematical_scope": "Prove the exact factor-one-half uniform bound for a normalized unit-interval half Fourier coefficient. Extend the original classical small-potential Volterra position estimate to the actual rough scalar Hill frequency-state curve using finite Fourier truncation and its verified continuity in the original coefficient Hilbert topology, retaining initial data (0,1). Principal-square-root localization on the original free energy neighborhood gives imaginary frequency <=1/2 and norm >=n/2. Deduce n*norm(actual half coefficient)<=2*exp(1/2), and n*norm(actual resonant coordinate)<=4*exp(1/2) for each of the two original parity-adapted coefficients at actual Dirichlet zeros. Uniform corrected Green potential decay bounds the actual source entry away from zero by 1/2. Use the genuine forced resonant row d*u-bplus*v=-J*(1+P_n), the actual weighted Schur defect and weighted upper coupling to prove the original fixed-phase boundary-jump estimate n*w(2*n)*norm(J)<=8*exp(1/2)*(2*B+5)*(weighted raw pair+16*norm(q)^2/n). Pass isometrically to the native period-one convention, prove its common scalar analytic chart, and use genuine coefficient norm bounds to obtain uniform jump smallness. The original scalar-state Wronskian and trace imply norm(actual sheet)<=5*norm(J) when norm(J)<=1/2. Reuse the previously proved uniform filled-root inverse estimate and the exact free collar radius <=8*n to obtain an O(n) inverse bound. Multiplying the sheet estimate with this inverse cancels the inverse-index gain of J, yielding a genuine weighted bound for the original scaled norming sheet, with a common scalar analytic chart. Finally combine that separate sheet bound with the separately proved original midpoint-minus-Dirichlet bound to bound both original complex own-gap factors individually by C(B) times the weighted raw pair plus 16*norm(q)^2/n. No ordering of complex roots or product-to-individual-factor inference is used.",
+    "scope": "All 773 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 764-module base has strict validation recorded at commit 87b3c931a2773c3333d2c983e5815b5cce53e60a (complete 583-module strict focused run plus 181 isolated additions, all 764 base source hashes unchanged, 5794-declaration audit and successful 764-module aggregate), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5825-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 773-module focused script, full Lake rebuild and full repository examples were not rerun.",
     "validation_input_sha256": {
-      "NLS.lean": "276f96a36848f8b9bbc8acb373b2c818a40093d124e5e52890e64f0b88fdaf85",
-      "scripts/check-kdv-estimates.sh": "1e3c3106bd50f1daa79ebfb2dd1461dd2f57e335d32bc1056a57bdfd97857479",
-      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "bf5f7370b8050acabf6dee57f5c21be7263309d6861092842e41799b988c39ad"
+      "NLS.lean": "d92af2016fe67df78ed409fd318f6e607843122f78cb687e11252e1b362130eb",
+      "scripts/check-kdv-estimates.sh": "302a41009ef81b7d0736719325dc80e0ea4a85f7dfd17cd69df8c3beb44c6f2a",
+      "coverage/articles/kdv-estimates/CheckPrivateAxioms.lean": "264ef1d542a62e18dccc0db16e3d46d2f3a0f17be275678c5b3467c35ef0a6e0"
     },
     "focused_build_execution": {
       "mode": "strict_delta",
-      "base_commit": "81dfab529133ed7461f6cf6828481d41f1511258",
-      "base_focused_modules": 762,
-      "base_verification_sha256": "119c6139d2b7b811948914be8417d73368820a45bfbd2f7eeb1f378c2aee19a2",
+      "base_commit": "87b3c931a2773c3333d2c983e5815b5cce53e60a",
+      "base_focused_modules": 764,
+      "base_verification_sha256": "0366838b5978e4342a41ecb436b4cdcbe07308adaaef52b0e9a9a6bc0dd1d5ba",
       "base_sources_unchanged": true,
-      "base_validation_description": "complete 583-module strict focused run plus 179 isolated additions, all 762 base source hashes unchanged, 5784-declaration audit and successful 762-module aggregate",
+      "base_validation_description": "complete 583-module strict focused run plus 181 isolated additions, all 764 base source hashes unchanged, 5794-declaration audit and successful 764-module aggregate",
       "new_modules": [
-        "NLS/KdV/HillDirichletPeriodicDistance.lean",
-        "NLS/KdV/HillNativeDirichletMidpoint.lean"
+        "NLS/Fourier/HalfCoefficientBounds.lean",
+        "NLS/KdV/HillRoughSmallPotentialPosition.lean",
+        "NLS/KdV/HillDirichletCoefficientBounds.lean",
+        "NLS/KdV/HillWeightedDirichletJump.lean",
+        "NLS/KdV/HillNativeDirichletJump.lean",
+        "NLS/KdV/HillDirichletSheetJump.lean",
+        "NLS/KdV/HillFilledRootIndexInverseBound.lean",
+        "NLS/KdV/HillNativeWeightedNormingSheet.lean",
+        "NLS/KdV/HillNativeWeightedOwnFactors.lean"
       ],
       "new_source_sha256": {
-        "NLS/KdV/HillDirichletPeriodicDistance.lean": "ab2ff0b168bd665603cb0eebfa41ccbe3c0c5af97539379ed8c0d66f8dd106d9",
-        "NLS/KdV/HillNativeDirichletMidpoint.lean": "1fe8a8c441b150173eb5e9757640e370be067e7f200a7c47f141e9db39c36faf"
+        "NLS/Fourier/HalfCoefficientBounds.lean": "fabf0f0b3cf9c0c6e219d7f3c5740b9e275c2166461ae03e2d78ec3959ccefcf",
+        "NLS/KdV/HillRoughSmallPotentialPosition.lean": "11fb5262b450de9c2baf3727483b9c5c08719dfb31bd9da437747d02b41cf184",
+        "NLS/KdV/HillDirichletCoefficientBounds.lean": "fe89c79d35a827383febdfd8f036fd52290b5ea908fd2cb2b2852289889867b6",
+        "NLS/KdV/HillWeightedDirichletJump.lean": "f688d08a9ad7a1eec52d0d11b1fa792b2df2f46dcc4135d4615d3025f0638059",
+        "NLS/KdV/HillNativeDirichletJump.lean": "b3547ff7129b605617bff17d08a7f793ed5724fd99e97e34d9df77e517843741",
+        "NLS/KdV/HillDirichletSheetJump.lean": "1f1efa903098001a424295ac783771da794e8368a23bb79e45dd9dd9d96452fd",
+        "NLS/KdV/HillFilledRootIndexInverseBound.lean": "e520f4b6b56507deda9fe383dc59a7d616004991708f37b9d55c0c66cfaeb270",
+        "NLS/KdV/HillNativeWeightedNormingSheet.lean": "11f95bb0dd62a2aaf281bd5ce1bcad093332bb4d517c175710109c9cae1d3659",
+        "NLS/KdV/HillNativeWeightedOwnFactors.lean": "6043cf889985c0de916040d0bf98186ae1e7bac7be968d2bb875ce9145953d5e"
       },
       "isolated_stage_exit_code": 0,
       "isolated_stage_source_matches_integrated": true,
       "expanded_axiom_audit_exit_code": 0,
-      "transitive_axiom_audit_declarations": 5794,
+      "transitive_axiom_audit_declarations": 5825,
       "complete_current_focused_script_rerun": false
     },
-    "additional_shared_source_checks": []
+    "additional_shared_source_checks": [
+      {
+        "module": "NLS/KdV/HillUniformDeflatedInverseBounds.lean",
+        "sha256": "96ad56623c6829f8cf624e5d645b9e97d64dabab4408df8aba8edb3db2e11be8",
+        "committed_base": "87b3c931a2773c3333d2c983e5815b5cce53e60a",
+        "declarations_used": [
+          "NLS.KdV.exists_hillFreeDeflatedRoot_uniform_inverse_bound",
+          "NLS.KdV.exists_hillFilledFreeGapRoot_uniform_inverse_bound"
+        ],
+        "fresh_strict_source_check": {
+          "exit_code": 0,
+          "command": "bash work/lean-worktree.sh -DwarningAsError=true NLS/KdV/HillUniformDeflatedInverseBounds.lean",
+          "log": "check/reuse-dirichlet-jump-uniform-deflated-inverse.log"
+        },
+        "purpose": "Reuse the existing uniform inverse estimate and convert its exact free contour radius to the coordinate index bound."
+      }
+    ]
   },
   "warningAsError": true,
   "previous_aggregate_attempts": [
@@ -2794,13 +2848,18 @@
       "milestone": "Genuine weighted complex Dirichlet Schur defect bound",
       "exit_code": 75,
       "reason": "First bounded aggregate attempt deferred by the shared lock; the saved second attempt passed actual exit 0."
+    },
+    {
+      "milestone": "Genuine weighted original complex norming sheet and individual own-gap factors",
+      "exit_code": 75,
+      "reason": "First bounded aggregate attempt deferred by the shared lock; saved second attempt passed actual exit 0."
     }
   ],
   "last_successful_aggregate_check": {
     "status": "passed",
-    "milestone": "Weighted original complex periodic midpoint minus Dirichlet root",
-    "focused_modules": 764,
-    "scope": "All 764 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 762-module base has strict validation recorded at commit 81dfab529133ed7461f6cf6828481d41f1511258 (complete 583-module strict focused run plus 179 isolated additions, all 762 base source hashes unchanged, 5784-declaration audit and successful 762-module aggregate), and all 2 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5794-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 764-module focused script, full Lake rebuild and full repository examples were not rerun."
+    "milestone": "Genuine weighted original complex norming sheet and individual own-gap factors",
+    "focused_modules": 773,
+    "scope": "All 773 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 764-module base has strict validation recorded at commit 87b3c931a2773c3333d2c983e5815b5cce53e60a (complete 583-module strict focused run plus 181 isolated additions, all 764 base source hashes unchanged, 5794-declaration audit and successful 764-module aggregate), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5825-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 773-module focused script, full Lake rebuild and full repository examples were not rerun."
   },
   "main_theorem_statuses": {
     "Theorem 1": "not_verified",
@@ -2910,6 +2969,14 @@
       "scope": "All 762 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 753-module base has strict validation recorded at commit ba58180a96d3fa19baf3f732e7116dbbede8e81a (complete 583-module strict focused run plus 170 isolated additions, all 753 base source hashes unchanged, 5747-declaration audit and successful 753-module aggregate), and all 9 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5784-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 762-module focused script, full Lake rebuild and full repository examples were not rerun.",
       "recorded_date": "2026-11-04",
       "parent": "81dfab529133ed7461f6cf6828481d41f1511258"
+    },
+    {
+      "status": "passed",
+      "milestone": "Weighted original complex periodic midpoint minus Dirichlet root",
+      "focused_modules": 764,
+      "scope": "All 764 focused source modules have strict validation with autoImplicit=false and warningAsError=true: the unchanged 762-module base has strict validation recorded at commit 81dfab529133ed7461f6cf6828481d41f1511258 (complete 583-module strict focused run plus 179 isolated additions, all 762 base source hashes unchanged, 5784-declaration audit and successful 762-module aggregate), and all 2 added modules passed isolated strict compilation with source bytes equal to the integrated files. The expanded 5794-declaration transitive axiom audit passed. The complete current NLS.lean aggregate import check passed with exit 0 under the shared build lock. The full 764-module focused script, full Lake rebuild and full repository examples were not rerun.",
+      "recorded_date": "2026-11-04",
+      "parent": "87b3c931a2773c3333d2c983e5815b5cce53e60a"
     }
   ]
 }

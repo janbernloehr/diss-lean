@@ -5686,3 +5686,12 @@ import NLS.KdV.HillWeightedDirichletDiagonal
 import NLS.KdV.HillNativeDirichletDefect
 import NLS.KdV.HillDirichletPeriodicDistance
 import NLS.KdV.HillNativeDirichletMidpoint
+import NLS.Fourier.HalfCoefficientBounds
+import NLS.KdV.HillRoughSmallPotentialPosition
+import NLS.KdV.HillDirichletCoefficientBounds
+import NLS.KdV.HillWeightedDirichletJump
+import NLS.KdV.HillNativeDirichletJump
+import NLS.KdV.HillDirichletSheetJump
+import NLS.KdV.HillFilledRootIndexInverseBound
+import NLS.KdV.HillNativeWeightedNormingSheet
+import NLS.KdV.HillNativeWeightedOwnFactors

@@ -763,6 +763,15 @@ import NLS.KdV.HillWeightedDirichletDiagonal
 import NLS.KdV.HillNativeDirichletDefect
 import NLS.KdV.HillDirichletPeriodicDistance
 import NLS.KdV.HillNativeDirichletMidpoint
+import NLS.Fourier.HalfCoefficientBounds
+import NLS.KdV.HillRoughSmallPotentialPosition
+import NLS.KdV.HillDirichletCoefficientBounds
+import NLS.KdV.HillWeightedDirichletJump
+import NLS.KdV.HillNativeDirichletJump
+import NLS.KdV.HillDirichletSheetJump
+import NLS.KdV.HillFilledRootIndexInverseBound
+import NLS.KdV.HillNativeWeightedNormingSheet
+import NLS.KdV.HillNativeWeightedOwnFactors
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1229,7 +1238,8 @@ run_cmd do
     ``NLS.ComplexAnalysis.norm_le_two_mul_norm_sin_of_half,
     ``NLS.ComplexAnalysis.augmented_boundary_diagonal_balance,
     ``NLS.ComplexAnalysis.weighted_diagonal_le_of_augmented_boundary_balance,
-    ``NLS.ComplexAnalysis.norm_augmented_boundary_denominator_ge_one]
+    ``NLS.ComplexAnalysis.norm_augmented_boundary_denominator_ge_one,
+    ``NLS.Fourier.norm_halfCoefficient_le_of_bound]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
