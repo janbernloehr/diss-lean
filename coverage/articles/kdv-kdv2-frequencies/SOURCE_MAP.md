@@ -828,3 +828,14 @@ The negative physical coordinates have genuine complex differentiable matching g
 Prior strict evidence for all 1002 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical real-axis calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1008 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1034 frozen source/checker/provenance hashes, 24 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1008-module rebuild is claimed.
 
 Fresh audit: 9295 selected and 31840 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+
+## Latest signed scalar analyticity and action critical locus
+
+The actual negative scalar coordinate now has a genuine complex L2 analytic matching extension through every closed selected gap. The previously recorded power-series gap for this scalar coordinate is closed: conjugating source and target preserves analyticity on a genuine complex neighborhood, using the verified canonical Banach holomorphic calculus. Full Banach-valued coordinate-map analyticity remains open.
+
+The actual action product `I_n=z_n*z_-n` determines its differential on every complexified physical period-one tangent, for every differentiable matching extension. At a closed selected gap that entire differential vanishes, so the physical weak action Hamiltonian vector vanishes. Conversely, the proved mixed coordinate identity forces the actual normalized contour vector to be nonzero at an open selected gap. Both the actual action critical locus and the actual action Hamiltonian-vector zero locus are exactly the closed-gap locus. See `SIGNED_ANALYTIC_ACTION_CRITICAL_LOCUS.md`.
+
+Prior strict evidence for all 1008 unchanged selected baseline sources; strict dependency-order compilation of sixteen byte-identical canonical holomorphic calculus dependencies and three new proof modules; then a fresh combined transitive axiom audit of all 1027 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1054 frozen source/checker/provenance hashes, 25 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1027-module rebuild is claimed.
+
+Fresh audit: 9402 selected and 31847 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.

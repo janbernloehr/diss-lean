@@ -174,6 +174,7 @@ import NLS.Articles.KdVKdV2Frequencies.SignedMassDivergence
 import NLS.Articles.KdVKdV2Frequencies.SignedMassInsertion
 import NLS.Articles.KdVKdV2Frequencies.FixedTimeNonextension
 import NLS.SequenceSpaces.HilbertEnergyDivergence
+import NLS.KdV.HillActionCoordinateDifferential
 import Lean.Util.CollectAxioms
 
 /-! Transitive axiom audit of the candidate and its imported NLS dependencies.
@@ -203,6 +204,9 @@ run_cmd do
     `NLS.SequenceSpaces.BoundedCoordinateDifferentiable,
     `NLS.SequenceSpaces.CoordinateQuadraticDerivative,
     `NLS.SequenceSpaces.HolderEmbedding,
+    `NLS.ComplexAnalysis.BanachSmoothAnalytic,
+    `NLS.ComplexAnalysis.BanachTaylorBoundsOn,
+    `NLS.ComplexAnalysis.BanachSmoothAnalyticOn,
     `NLS.SequenceSpaces.BoundedCoordinateAnalytic,
     `NLS.ComplexAnalysis.JointSpectralDerivative,
     `NLS.ComplexAnalysis.AnalyticOperatorInverse,
@@ -219,6 +223,8 @@ run_cmd do
     `NLS.SequenceSpaces.ReciprocalSquareKernel,
     `NLS.ComplexAnalysis.AffineLoopHomotopy,
     `NLS.ComplexAnalysis.MixedSpectralSourceDerivative,
+    `NLS.ComplexAnalysis.UniformJointDerivativeCircle,
+    `NLS.ComplexAnalysis.ParametricCircleIntegral,
     `NLS.ComplexAnalysis.ParametricDividedDifference,
     `NLS.ComplexAnalysis.AnalyticImplicitBanachRoot,
     `NLS.ComplexAnalysis.AnalyticFinitePeriodNormalization,
@@ -413,6 +419,7 @@ run_cmd do
     `NLS.MKdV.QuasiHillJointAnalytic,
     `NLS.ComplexAnalysis.SourceDiscriminantPrimitive,
     `NLS.ComplexAnalysis.LocalRealAxisDerivative,
+    `NLS.ComplexAnalysis.BanachHolomorphicC1,
     `NLS.ZakharovShabat.ContinuousPotentialSource,
     `NLS.ZakharovShabat.SourceCanonicalRootRealBand,
     `NLS.MKdV.QuasiHillSourcePrimitive,
@@ -587,6 +594,16 @@ run_cmd do
     `NLS.ZakharovShabat.EvenDiscriminantCanonicalRoot,
     `NLS.ComplexAnalysis.NegatedCircleIntegral,
     `NLS.KdV.HillHminusOneMiuraRootSymmetry,
+    `NLS.ComplexAnalysis.HolomorphicCircleIntegral,
+    `NLS.ComplexAnalysis.FDerivCauchyFormula,
+    `NLS.ComplexAnalysis.AnalyticLineLimit,
+    `NLS.ComplexAnalysis.AnalyticLineDerivative,
+    `NLS.ComplexAnalysis.AnalyticLineDerivativeLinear,
+    `NLS.ComplexAnalysis.AnalyticLineDerivativeBounds,
+    `NLS.ComplexAnalysis.AnalyticLineRemainder,
+    `NLS.ComplexAnalysis.AnalyticLineFrechet,
+    `NLS.ComplexAnalysis.FDerivAnalyticLine,
+    `NLS.ComplexAnalysis.BanachHolomorphicAnalytic,
     `NLS.ZakharovShabat.SourceTheorem12_1,
     `NLS.ZakharovShabat.EvenPsiAntisymmetricPeriods,
     `NLS.KdV.HillHminusOneMiuraEnergyPeriods,
@@ -1191,7 +1208,11 @@ run_cmd do
     `NLS.Fourier.UnitCurveConjugation,
     `NLS.KdV.HillRealActionHamiltonians,
     `NLS.ComplexAnalysis.RealLineConjugateDerivative,
-    `NLS.KdV.HillSignedAbelianHamiltonianVariation]
+    `NLS.KdV.HillSignedAbelianHamiltonianVariation,
+    `NLS.ComplexAnalysis.ConjugateAnalytic,
+    `NLS.KdV.HillSignedAbelianAnalytic,
+    `NLS.KdV.HillActionCoordinateDifferential
+  ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
   for (name, _) in (← getEnv).constants do

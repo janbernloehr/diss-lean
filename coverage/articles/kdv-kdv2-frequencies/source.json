@@ -14547,9 +14547,276 @@
       "scope": "Pulls nearby-real conjugate physical matching through genuine real affine source curves to prove the universal conjugate derivative identity on every real period-one direction. Constructs actual complex differentiable negative-coordinate matching germs through closed gaps by conjugating the positive extension and physical source involution. Proves universal negative-mode derivative -i*delta_mn*conj(z_n) along the actual real action Hamiltonian vector, complementing the positive-mode +i law. No negative-germ power-series analyticity or full Banach-valued analyticity is claimed here.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "05a1ac9201f3f9368388648dd61017a85934e95a3819ae2ef8aa830adc47d362"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/BanachSmoothAnalytic.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f01ee14ea0eeb5a7c33eeeec45b15373b5691c8ca5168a1b9504afdc5cbb7744"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/BanachTaylorBoundsOn.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "be38ee3a9dee070ff8d51bfe22c9623836a8005cb4edb0454b59abe520f8d5e6"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/BanachSmoothAnalyticOn.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "941e4df7dab89354a3c04993e820f47bcc99a932f3e42d9f9ac713a5c4e63c30"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UniformJointDerivativeCircle.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d9198039ddefe06218bd93d270a18fb29a7432f965649c40a0e48e0e47d950ae"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricCircleIntegral.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "649f3ce837ea47a6443bddaf97058e1337106b1fee5117645542574dd5fd0180"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/BanachHolomorphicC1.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ae512dcbf24195d4a8029eb047c5329d836bf74489a2b0a7096194d06900f08f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/HolomorphicCircleIntegral.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f8952d0a8640a05f1eea98627bb8b808580cd523195633622a8b36d43916cce3"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/FDerivCauchyFormula.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "402e8e6ddd8d097c1392f6995632fbb84a9424b6ddcee6750f421e25cd08e9ec"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticLineLimit.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c38d4186e59203824befe161636054d7e5502230893d52c7cca10464891f8358"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticLineDerivative.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "806823e2a99ec67f53b3640959d342ec856e79a866aa4cc70601b03a52d44aad"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticLineDerivativeLinear.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6d9ed02c1ccc313ec65427a06c3d38ae052cc60e374661b6d8a34ca09a4f063b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticLineDerivativeBounds.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6df72924cfef184103223f843cefb71bcf4b684af70acd96cbf8a860d62a0679"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticLineRemainder.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "87f34211695f895de03cd92785336c9482d26384067af8f63524338bb26ff2ee"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticLineFrechet.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f20e3dac38a975bb6efc9f9a1d680d3a63c60e4013768d8bc1edf07a389b70ae"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/FDerivAnalyticLine.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "30686d106f3470794f91e45cd8ef1a2aa7c8b1c2610880b71c5f01f7e360e7ae"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/BanachHolomorphicAnalytic.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Byte-identical canonical dependency in the verified complex Frechet holomorphicity-to-Banach-power-series closure. Selected in full dependency order, strictly compiled privately at default heartbeats and transitively axiom-audited. Reused without replacing any existing article variant; see CANONICAL_CONJUGATE_ANALYTIC_REUSE.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f69c5918e49f27083517670ae6300b2809716d7bac5932790dbec44d937d73f4"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ConjugateAnalytic.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Conjugating both source and target preserves genuine local complex Banach analyticity. The source involution is continuous and conjugate-linear, and the target involution is likewise conjugate-linear. Their scalar reversals cancel. A genuine open source neighborhood and the verified holomorphic-to-power-series theorem supply AnalyticAt; no differentiability-to-analyticity assertion at a single point is used.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3776c99d98957cfebac567719486637b1a1d3474dbd37a8ae411f7b3dddb6566"
+    },
+    {
+      "path": "NLS/KdV/HillSignedAbelianAnalytic.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "The actual negative physical Abelian coordinate has a genuine complex L2 power-series matching extension at every real period-one source, including a closed selected gap. Applies double conjugation analyticity to the existing actual positive-coordinate extension and bounded Fourier reflection. A single nearby-real physical matching germ is retained. This closes the previously recorded negative scalar power-series gap, without claiming the full Banach-valued coordinate map analytic.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d94d70efcb07ae9bb375f35b52d60d59cc65bf185c23a5b942e75da5d2a58b5f"
+    },
+    {
+      "path": "NLS/KdV/HillActionCoordinateDifferential.lean",
+      "source_labels": [
+        "Theorem 1.1 necessary scalar Birkhoff-coordinate analyticity through closed gaps; action normalization (19) and physical Hamiltonian convention (3)"
+      ],
+      "source_pages": [
+        2,
+        3,
+        11
+      ],
+      "scope": "Proves the actual action product differential on every complexified physical period-one tangent, independent of every matching differentiable action/positive/negative extension. Closed selected gaps force the full physical action differential to vanish. Every physical weak action Hamiltonian vector then vanishes at a closed gap. Conversely the actual normalized action contour vector is nonzero at every open selected gap, by its proved coordinate phase derivative and actual coordinate zero locus. Thus both the action critical locus and normalized action Hamiltonian-vector zero locus equal precisely the actual closed-gap locus.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "be540da4be581177095366be71f8bb2351581045791c3bef9e26ce00234f4b2d"
     }
   ],
   "dependencies_needed": [
+    "Negative scalar coordinate power-series analyticity is NOW proved through every closed selected gap. Actual action product differentials are proved on the entire physical complexified tangent. The actual action critical locus and actual action Hamiltonian-vector zero locus are exactly the closed-gap locus. Remaining: full Banach-valued coordinate analyticity, canonical coordinate/angle brackets, Fourier differential at zero, global inverse/rough W compatibility and actual Hamiltonian frequencies69/84/PDE identification. All eleven main theorem rows remain OPEN.",
     "Actual action Hamiltonian vectors are NOW proved real in the physical conjugate-Fourier sense at every real source, including closed gaps. Actual real action differentials commute with conjugate reflection. Genuine complex differentiable negative-coordinate physical matching germs and universal opposite signed infinitesimal action laws are proved. Remaining: full negative-germ power-series analyticity, canonical coordinate/angle brackets, Fourier differential at zero, full Banach analytic map/inverse/rough W compatibility and actual Hamiltonian frequency69/84/PDE identities. All main theorem conclusions remain open.",
     "The actual contour tangent Y_m is NOW proved to be the unique period-one mean-zero physical weak Gardner Hamiltonian vector of the actual action I_m, through actual Fourier/L2 test pairings, integration by parts and separating wave tests. Actual actions commute, and all-gap mixed D z_n[X_(I_m)]=i*delta_mn*z_n is proved. Local actual phase has action-conjugate theta=-rawA with exp(-i theta) and derivative -delta_mn. Next: explicit reality and further canonical coordinate/angle brackets, exact Fourier differential at zero, full Banach analytic map/inverse/rough compatibility and actual Hamiltonian frequency/PDE identities. All main conclusions remain open.",
     "Actual physical actions now have genuine locally complex analytic fixed-contour extensions at every real source including closed selected gaps, with universal derivative -1/pi integral(DDelta[h]/R) on period-one directions. Every actual coordinate now obeys the all-gap trace and normalized-contour infinitesimal rotation identities. Next identify the contour tangent Y_m as the physical action Gardner Hamiltonian vector via actual gradient/Fourier/spatial derivative pairings; then canonical source orientation, Fourier differential at zero, full Banach analyticity/inverse/rough extension and physical frequency identities69/84 remain required.",
@@ -14583,15 +14850,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 9295,
-    "total_declarations_audited": 31840,
+    "candidate_declarations_audited": 9402,
+    "total_declarations_audited": 31847,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1008,
+    "selected_modules": 1027,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -14622,7 +14889,8 @@
     "abelian_coordinate_validation_sequence": "Prior strict evidence for all 970 unchanged selected baseline sources; strict dependency-order compilation of eleven byte-identical shared action-prefactor sources, one byte-identical canonical continuity criterion and six new proof modules; then a fresh combined transitive axiom audit of all 988 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1011 frozen source/checker/provenance hashes, 21 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 988-module rebuild is claimed.",
     "action_variation_validation_sequence": "Prior strict evidence for all 988 unchanged selected baseline sources; strict dependency-order compilation of three byte-identical canonical calculus helpers and five new proof modules; then a fresh combined transitive axiom audit of all 996 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1020 frozen source/checker/provenance hashes, 22 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 996-module rebuild is claimed.",
     "hamiltonian_identification_validation_sequence": "Prior strict evidence for all 996 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical wave calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1002 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1027 frozen source/checker/provenance hashes, 23 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1002-module rebuild is claimed.",
-    "real_signed_hamiltonian_validation_sequence": "Prior strict evidence for all 1002 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical real-axis calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1008 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1034 frozen source/checker/provenance hashes, 24 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1008-module rebuild is claimed."
+    "real_signed_hamiltonian_validation_sequence": "Prior strict evidence for all 1002 unchanged selected baseline sources; strict dependency-order compilation of one byte-identical canonical real-axis calculus helper and five new proof modules; then a fresh combined transitive axiom audit of all 1008 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1034 frozen source/checker/provenance hashes, 24 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1008-module rebuild is claimed.",
+    "conjugate_analytic_validation_sequence": "Prior strict evidence for all 1008 unchanged selected baseline sources; strict dependency-order compilation of sixteen byte-identical canonical holomorphic calculus dependencies and three new proof modules; then a fresh combined transitive axiom audit of all 1027 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1054 frozen source/checker/provenance hashes, 25 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1027-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -14865,5 +15133,6 @@
   "abelian_coordinate_record": "ABELIAN_COORDINATES.md",
   "action_variation_record": "ACTION_COORDINATE_VARIATION.md",
   "hamiltonian_identification_record": "PHYSICAL_ACTION_HAMILTONIANS.md",
-  "real_signed_hamiltonian_record": "REAL_SIGNED_ACTION_FIELDS.md"
+  "real_signed_hamiltonian_record": "REAL_SIGNED_ACTION_FIELDS.md",
+  "conjugate_analytic_record": "SIGNED_ANALYTIC_ACTION_CRITICAL_LOCUS.md"
 }

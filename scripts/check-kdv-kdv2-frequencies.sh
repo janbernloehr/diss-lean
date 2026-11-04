@@ -28,6 +28,9 @@ modules=(
   NLS/SequenceSpaces/BoundedCoordinateDifferentiable
   NLS/SequenceSpaces/CoordinateQuadraticDerivative
   NLS/SequenceSpaces/HolderEmbedding
+  NLS/ComplexAnalysis/BanachSmoothAnalytic
+  NLS/ComplexAnalysis/BanachTaylorBoundsOn
+  NLS/ComplexAnalysis/BanachSmoothAnalyticOn
   NLS/SequenceSpaces/BoundedCoordinateAnalytic
   NLS/ComplexAnalysis/JointSpectralDerivative
   NLS/ComplexAnalysis/AnalyticOperatorInverse
@@ -44,6 +47,8 @@ modules=(
   NLS/SequenceSpaces/ReciprocalSquareKernel
   NLS/ComplexAnalysis/AffineLoopHomotopy
   NLS/ComplexAnalysis/MixedSpectralSourceDerivative
+  NLS/ComplexAnalysis/UniformJointDerivativeCircle
+  NLS/ComplexAnalysis/ParametricCircleIntegral
   NLS/ComplexAnalysis/ParametricDividedDifference
   NLS/ComplexAnalysis/AnalyticImplicitBanachRoot
   NLS/ComplexAnalysis/AnalyticFinitePeriodNormalization
@@ -238,6 +243,7 @@ modules=(
   NLS/MKdV/QuasiHillJointAnalytic
   NLS/ComplexAnalysis/SourceDiscriminantPrimitive
   NLS/ComplexAnalysis/LocalRealAxisDerivative
+  NLS/ComplexAnalysis/BanachHolomorphicC1
   NLS/ZakharovShabat/ContinuousPotentialSource
   NLS/ZakharovShabat/SourceCanonicalRootRealBand
   NLS/MKdV/QuasiHillSourcePrimitive
@@ -412,6 +418,16 @@ modules=(
   NLS/ZakharovShabat/EvenDiscriminantCanonicalRoot
   NLS/ComplexAnalysis/NegatedCircleIntegral
   NLS/KdV/HillHminusOneMiuraRootSymmetry
+  NLS/ComplexAnalysis/HolomorphicCircleIntegral
+  NLS/ComplexAnalysis/FDerivCauchyFormula
+  NLS/ComplexAnalysis/AnalyticLineLimit
+  NLS/ComplexAnalysis/AnalyticLineDerivative
+  NLS/ComplexAnalysis/AnalyticLineDerivativeLinear
+  NLS/ComplexAnalysis/AnalyticLineDerivativeBounds
+  NLS/ComplexAnalysis/AnalyticLineRemainder
+  NLS/ComplexAnalysis/AnalyticLineFrechet
+  NLS/ComplexAnalysis/FDerivAnalyticLine
+  NLS/ComplexAnalysis/BanachHolomorphicAnalytic
   NLS/ZakharovShabat/SourceTheorem12_1
   NLS/ZakharovShabat/EvenPsiAntisymmetricPeriods
   NLS/KdV/HillHminusOneMiuraEnergyPeriods
@@ -1017,6 +1033,9 @@ modules=(
   NLS/KdV/HillRealActionHamiltonians
   NLS/ComplexAnalysis/RealLineConjugateDerivative
   NLS/KdV/HillSignedAbelianHamiltonianVariation
+  NLS/ComplexAnalysis/ConjugateAnalytic
+  NLS/KdV/HillSignedAbelianAnalytic
+  NLS/KdV/HillActionCoordinateDifferential
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

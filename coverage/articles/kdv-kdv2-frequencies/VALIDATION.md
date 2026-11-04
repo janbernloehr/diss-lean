@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest real action fields and negative-mode physical variation
+## Latest signed scalar analyticity and action critical locus
+
+The actual negative scalar coordinate now has a genuine complex L2 analytic matching extension through every closed selected gap. The previously recorded power-series gap for this scalar coordinate is closed: conjugating source and target preserves analyticity on a genuine complex neighborhood, using the verified canonical Banach holomorphic calculus. Full Banach-valued coordinate-map analyticity remains open.
+
+The actual action product `I_n=z_n*z_-n` determines its differential on every complexified physical period-one tangent, for every differentiable matching extension. At a closed selected gap that entire differential vanishes, so the physical weak action Hamiltonian vector vanishes. Conversely, the proved mixed coordinate identity forces the actual normalized contour vector to be nonzero at an open selected gap. Both the actual action critical locus and the actual action Hamiltonian-vector zero locus are exactly the closed-gap locus. See `SIGNED_ANALYTIC_ACTION_CRITICAL_LOCUS.md`.
+
+Prior strict evidence for all 1008 unchanged selected baseline sources; strict dependency-order compilation of sixteen byte-identical canonical holomorphic calculus dependencies and three new proof modules; then a fresh combined transitive axiom audit of all 1027 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected dependency order and audit reachability, 1054 frozen source/checker/provenance hashes, 25 provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1027-module rebuild is claimed.
+
+Fresh audit: 9402 selected and 31847 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier real action fields and negative-mode physical variation
 
 The actual physical action Hamiltonian vector is now proved real in the conjugate Fourier sense, with no gap-opening assumption. The proof uses actual real-source action differentials, physical Fourier conjugation, verified wave tests and the physical weak Hamiltonian identity. Every weak Hamiltonian vector matching the actual action has that real symmetry; no vector reality is supplied as a hypothesis.
 
@@ -196,19 +206,19 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1008 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1027 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: prior 1002-module strict evidence; all six additions
+Validation output: prior 1008-module strict evidence; all nineteen additions
 strictly compiled in dependency order; then a fresh combined transitive axiom
-audit of all 1008 selected modules:
+audit of all 1027 selected modules:
 
 ```text
-# Prior strict evidence for 1002 unchanged baseline sources
+# Prior strict evidence for 1008 unchanged baseline sources
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -1218,19 +1228,38 @@ PASS NLS/KdV/HillActionHamiltonianDirections
 PASS NLS/Fourier/UnitWaveCurves
 PASS NLS/KdV/HillWeakHamiltonianUniqueness
 PASS NLS/KdV/HillActionCoordinateBrackets
-# Final strict checks: one unchanged canonical helper and five new modules
 PASS NLS/ComplexAnalysis/LocalRealAxisDerivative
 PASS NLS/KdV/HillRealActionDifferential
 PASS NLS/Fourier/UnitCurveConjugation
 PASS NLS/KdV/HillRealActionHamiltonians
 PASS NLS/ComplexAnalysis/RealLineConjugateDerivative
 PASS NLS/KdV/HillSignedAbelianHamiltonianVariation
-# Fresh combined transitive audit of all 1008 selected modules
-Axiom audit passed: 9295 candidate declarations; 31840 declarations total.
+# Final strict checks: sixteen unchanged canonical dependencies and three new modules
+PASS NLS/ComplexAnalysis/BanachSmoothAnalytic
+PASS NLS/ComplexAnalysis/BanachTaylorBoundsOn
+PASS NLS/ComplexAnalysis/BanachSmoothAnalyticOn
+PASS NLS/ComplexAnalysis/UniformJointDerivativeCircle
+PASS NLS/ComplexAnalysis/ParametricCircleIntegral
+PASS NLS/ComplexAnalysis/BanachHolomorphicC1
+PASS NLS/ComplexAnalysis/HolomorphicCircleIntegral
+PASS NLS/ComplexAnalysis/FDerivCauchyFormula
+PASS NLS/ComplexAnalysis/AnalyticLineLimit
+PASS NLS/ComplexAnalysis/AnalyticLineDerivative
+PASS NLS/ComplexAnalysis/AnalyticLineDerivativeLinear
+PASS NLS/ComplexAnalysis/AnalyticLineDerivativeBounds
+PASS NLS/ComplexAnalysis/AnalyticLineRemainder
+PASS NLS/ComplexAnalysis/AnalyticLineFrechet
+PASS NLS/ComplexAnalysis/FDerivAnalyticLine
+PASS NLS/ComplexAnalysis/BanachHolomorphicAnalytic
+PASS NLS/ComplexAnalysis/ConjugateAnalytic
+PASS NLS/KdV/HillSignedAbelianAnalytic
+PASS NLS/KdV/HillActionCoordinateDifferential
+# Fresh combined transitive audit of all 1027 selected modules
+Axiom audit passed: 9402 candidate declarations; 31847 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1008 selected modules (including generated and private declarations)
+the 1027 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
