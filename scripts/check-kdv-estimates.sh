@@ -136,6 +136,7 @@ modules+=(NLS/KdV/HillComplexWeightedEmbedding NLS/SequenceSpaces/NatL1AnalyticR
 modules+=(NLS/KdV/HillReconstructionBounds NLS/KdV/HillReconstructionBoundary NLS/KdV/HillBoundaryCoordinates)
 modules+=(NLS/Fourier/UnitIntervalHillBoundaryForcing NLS/KdV/HillRoughScalarEquation NLS/Fourier/ZeroBoundarySummableCoefficients NLS/KdV/HillDirichletForcedFourier NLS/KdV/HillDirichletFourierSequence NLS/Fourier/ZeroExtensionConvolution NLS/KdV/HillDirichletConvolutionEquation NLS/KdV/HillDirichletParityForcing)
 modules+=(NLS/SequenceSpaces/TwoPoleReciprocalEnvelope NLS/KdV/HillFreeBoundaryGreen NLS/KdV/HillUnitWeightLift NLS/KdV/HillCorrectedBoundaryGreen NLS/KdV/HillForcedFourierReduction NLS/Fourier/UnitIntervalParityUniqueness NLS/KdV/HillDirichletGreenReconstruction NLS/KdV/HillDirichletGreenBoundary NLS/KdV/HillDirichletBoundaryOperator)
+modules+=(NLS/SequenceSpaces/TwoPoleReciprocalDecay NLS/ComplexAnalysis/LocalSineInverse NLS/ComplexAnalysis/AugmentedBoundaryBalance NLS/KdV/HillDirichletEnergyDisplacement NLS/KdV/HillBoundaryGreenDecay NLS/KdV/HillDirichletScalarBalance NLS/KdV/HillBoundaryDenominator NLS/KdV/HillWeightedDirichletDiagonal NLS/KdV/HillNativeDirichletDefect)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

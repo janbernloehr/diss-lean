@@ -752,6 +752,15 @@ import NLS.Fourier.UnitIntervalParityUniqueness
 import NLS.KdV.HillDirichletGreenReconstruction
 import NLS.KdV.HillDirichletGreenBoundary
 import NLS.KdV.HillDirichletBoundaryOperator
+import NLS.SequenceSpaces.TwoPoleReciprocalDecay
+import NLS.ComplexAnalysis.LocalSineInverse
+import NLS.ComplexAnalysis.AugmentedBoundaryBalance
+import NLS.KdV.HillDirichletEnergyDisplacement
+import NLS.KdV.HillBoundaryGreenDecay
+import NLS.KdV.HillDirichletScalarBalance
+import NLS.KdV.HillBoundaryDenominator
+import NLS.KdV.HillWeightedDirichletDiagonal
+import NLS.KdV.HillNativeDirichletDefect
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1212,7 +1221,13 @@ run_cmd do
     ``NLS.Coeff.twoPoleReciprocalEnvelope_apply,
     ``NLS.Coeff.norm_twoPoleReciprocalEnvelope_le,
     ``NLS.Fourier.unitFourierCoefficient_eq_two_halfCoefficient_parity,
-    ``NLS.Fourier.eq_zero_on_unitInterval_of_halfCoefficient_parity_zero]
+    ``NLS.Fourier.eq_zero_on_unitInterval_of_halfCoefficient_parity_zero,
+    ``NLS.Coeff.norm_twoPoleReciprocalEnvelope_eq_shifted_pairing,
+    ``NLS.Coeff.tendsto_norm_twoPoleReciprocalEnvelope_zero,
+    ``NLS.ComplexAnalysis.norm_le_two_mul_norm_sin_of_half,
+    ``NLS.ComplexAnalysis.augmented_boundary_diagonal_balance,
+    ``NLS.ComplexAnalysis.weighted_diagonal_le_of_augmented_boundary_balance,
+    ``NLS.ComplexAnalysis.norm_augmented_boundary_denominator_ge_one]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

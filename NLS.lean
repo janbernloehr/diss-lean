@@ -5675,3 +5675,12 @@ import NLS.Fourier.UnitIntervalParityUniqueness
 import NLS.KdV.HillDirichletGreenReconstruction
 import NLS.KdV.HillDirichletGreenBoundary
 import NLS.KdV.HillDirichletBoundaryOperator
+import NLS.SequenceSpaces.TwoPoleReciprocalDecay
+import NLS.ComplexAnalysis.LocalSineInverse
+import NLS.ComplexAnalysis.AugmentedBoundaryBalance
+import NLS.KdV.HillDirichletEnergyDisplacement
+import NLS.KdV.HillBoundaryGreenDecay
+import NLS.KdV.HillDirichletScalarBalance
+import NLS.KdV.HillBoundaryDenominator
+import NLS.KdV.HillWeightedDirichletDiagonal
+import NLS.KdV.HillNativeDirichletDefect
