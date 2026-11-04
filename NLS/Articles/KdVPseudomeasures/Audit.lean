@@ -1374,6 +1374,17 @@ import NLS.KdV.HillCanonicalActionGradient
 import NLS.KdV.HillCanonicalActionInvolution
 import NLS.KdV.HillCanonicalActionIsospectral
 import NLS.Articles.KdVPseudomeasures.OriginalHillActionInvolution
+import NLS.KdV.ClassicalHillQuadraticKernels
+import NLS.ComplexAnalysis.QuadraticKernelLagrange
+import NLS.KdV.ClassicalHillQuadraticLagrange
+import NLS.KdV.ClassicalHillDirichletGradient
+import NLS.KdV.ClassicalHillMixedGradientBracket
+import NLS.KdV.HillDirichletGardnerGradient
+import NLS.KdV.ClassicalHillDirichletCommutation
+import NLS.KdV.HillDirichletGardnerCommutation
+import NLS.KdV.HillCanonicalDirichletGardner
+import NLS.KdV.HillMixedDirichletGardner
+import NLS.Articles.KdVPseudomeasures.OriginalHillDirichletGardner
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -8608,3 +8619,52 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillActionInvolution
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_actions_physical_Gardner_integral_zero
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_action_discriminant_Gardner_commute
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_action_Hamiltonian_direction_isospectral
+#print axioms NLS.KdV.classicalHillQuadraticKernel
+#print axioms NLS.KdV.classicalHillQuadraticKernelPrime
+#print axioms NLS.KdV.classicalHillQuadraticKernelKinetic
+#print axioms NLS.KdV.continuous_classicalHillQuadraticKernel
+#print axioms NLS.KdV.continuous_classicalHillQuadraticKernelPrime
+#print axioms NLS.KdV.continuous_classicalHillQuadraticKernelKinetic
+#print axioms NLS.KdV.hasDerivAt_classicalHillQuadraticKernel
+#print axioms NLS.KdV.hasDerivAt_classicalHillQuadraticKernelPrime
+#print axioms NLS.KdV.hasDerivAt_classicalHillQuadraticKernelKinetic
+#print axioms NLS.ComplexAnalysis.quadraticKernel_boundary_lagrange_integral
+#print axioms NLS.ComplexAnalysis.quadraticKernel_dirichlet_lagrange_integral
+#print axioms NLS.KdV.classicalHillQuadraticBoundary
+#print axioms NLS.KdV.classicalHillQuadratic_lagrange_integral
+#print axioms NLS.KdV.classicalHillDirichletGradient
+#print axioms NLS.KdV.classicalHillDirichletGradientPrime
+#print axioms NLS.KdV.classicalHillDirichletGradientKinetic
+#print axioms NLS.KdV.continuous_classicalHillDirichletGradient
+#print axioms NLS.KdV.continuous_classicalHillDirichletGradientPrime
+#print axioms NLS.KdV.continuous_classicalHillDirichletGradientKinetic
+#print axioms NLS.KdV.hasDerivAt_classicalHillDirichletGradient
+#print axioms NLS.KdV.hasDerivAt_classicalHillDirichletGradientPrime
+#print axioms NLS.KdV.hasDerivAt_classicalHillDirichletGradientKinetic
+#print axioms NLS.KdV.classicalHillDirichletGradient_initial
+#print axioms NLS.KdV.classicalHillDirichletGradient_terminal
+#print axioms NLS.KdV.classicalHillDirichletGradient_boundary
+#print axioms NLS.KdV.fderiv_classicalHillDirichlet_eq_integral_gradient
+#print axioms NLS.KdV.classicalHill_mixed_gradient_bracket
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDirichlet_source
+#print axioms NLS.KdV.hillHminusDirichletGradient
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDirichletGradient
+#print axioms NLS.KdV.fderiv_hillHminusDirichlet_potential_L1
+#print axioms NLS.KdV.hillHminusDirichletGradient_L1_coefficients
+#print axioms NLS.KdV.classicalHillDirichletGradients_lagrange
+#print axioms NLS.KdV.integral_classicalHillDirichletGradients_eq_zero
+#print axioms NLS.KdV.hillHminusDirichletGardnerBracket
+#print axioms NLS.KdV.analyticOnNhd_hillHminusDirichletGardnerBracket
+#print axioms NLS.KdV.hillHminusDirichletGardnerBracket_L1_eq_integral
+#print axioms NLS.KdV.hillHminusDirichletGardnerBracket_L1_eq_zero
+#print axioms NLS.KdV.hillHminusDirichletGardnerBracket_eq_zero
+#print axioms NLS.KdV.hillHminusDirichletCharacteristics_Gardner_commute
+#print axioms NLS.KdV.fderiv_hillHminusCanonicalDirichlet_eq_characteristic
+#print axioms NLS.KdV.hillHminusCanonicalDirichlets_Gardner_commute
+#print axioms NLS.KdV.hillHminus_mixed_Gardner_L1
+#print axioms NLS.KdV.hillHminus_discriminant_Dirichlet_Gardner_L1
+#print axioms NLS.KdV.hillHminus_discriminant_Dirichlet_Gardner
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Dirichlet_characteristics_Gardner_commute
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Dirichlet_eigenvalues_Gardner_commute
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_Dirichlet_eigenvalues_intrinsic_Gardner_commute
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_discriminant_Dirichlet_Gardner

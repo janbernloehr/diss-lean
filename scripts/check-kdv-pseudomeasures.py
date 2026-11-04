@@ -1408,6 +1408,17 @@ modules = [
     'NLS.KdV.HillCanonicalActionInvolution',
     'NLS.KdV.HillCanonicalActionIsospectral',
     'NLS.Articles.KdVPseudomeasures.OriginalHillActionInvolution',
+    'NLS.KdV.ClassicalHillQuadraticKernels',
+    'NLS.ComplexAnalysis.QuadraticKernelLagrange',
+    'NLS.KdV.ClassicalHillQuadraticLagrange',
+    'NLS.KdV.ClassicalHillDirichletGradient',
+    'NLS.KdV.ClassicalHillMixedGradientBracket',
+    'NLS.KdV.HillDirichletGardnerGradient',
+    'NLS.KdV.ClassicalHillDirichletCommutation',
+    'NLS.KdV.HillDirichletGardnerCommutation',
+    'NLS.KdV.HillCanonicalDirichletGardner',
+    'NLS.KdV.HillMixedDirichletGardner',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillDirichletGardner',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
