@@ -17,6 +17,12 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
+## Latest actual physical quartic Hamiltonian coefficient
+
+The actual normalized smooth Hill primitive now gives a full-circle quartic remainder and the literal counterclockwise contour limit -H1/4, with explicit inverse-frequency error. Multiplying by -4 recovers the physical KdV Hamiltonian. Even powers are integrable across both real contour crossings. The shared actual squared-primitive expansion is selectively reused; existing local extensions are preserved. See `PHYSICAL_QUARTIC_COEFFICIENT.md`.
+
+Current validation: 508 selected modules (436 unchanged prior checks and 73 strict incremental compilations); fresh combined transitive audit of 5750 selected and 27892 imported NLS declarations, permitted axioms only. Exact finite-gap contour independence, angle-Poisson/frequency identification, action descent, global source domains and all main theorem conclusions remain open.
+
 ## Latest actual spectral invariance toward action descent
 
 Equal intrinsic Hill discriminants now give equal actual normalized numerators in a fixed real-type chart around every real rough base. One common ball fixes root signs and logarithmic phases on every original contour. On that same ball a single constructed actual family retains analytic moments, exact zeroth periods, odd cancellation and the absolutely/locally uniformly convergent analytic correction series, and all its moments/corrections are spectral invariants. See `SPECTRAL_INVARIANCE.md`.

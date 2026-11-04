@@ -7247,6 +7247,1093 @@
       "scope": "One actual real-preserving chart, normalized NLS family and complex rough ball retain all-order analytic moments, exact zeroth periods, odd cancellation, absolute and locally uniform second-moment convergence and analytic correction. On that SAME ball all actual moments and corrections agree at real inputs with equal Hill discriminants. Action-coordinate realization, physical frequency identity69, global domains and all main theorems remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "853fb6a61ecfa51297abce259a6d60f473ea0254227ebe1c228d23e2b349a50d"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TracePrimitiveMoments.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "214de92b4daf02a9ce95ead6111039d2ab69fcab3f416a4e59cd6386230e9acb",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2HighContourMoments.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "72dea2e27d21264cb4902896ebd4fb36a8694e7c37d02b3331fb9c9100835a28",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_with_local_compatibility_proof. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4a4edcf113081745705519dd833b936c772bfd2aaa9f1a34f3b9bdad4ef9556b",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/Fourier/ContinuousConjugation.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5e4f809136c6c885be366072a09d40618856a5f9096589a04c2b1c9601509f9b",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2Conjugation.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9f60336f9dd4e6394501ed3bd9529be74b7194e2b46925272dd8f3b07376adb2",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2ContourDeformation.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "459dd87f37c8ec230aa61ea921304f19a9e7085bd786fb798dc6d83e461e1a49",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TracePrimitiveReflection.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7fb5b83b83f8558d01480d2aee5ad09f24bb127123a67f7642c90043b050190a",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2PrimitiveReflection.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c8cd3618f737f85ac73095969665dd9be6ccc3842a9b626c8888baf207c250a6",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillFreeSpectrum.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2a6be7ef571cfb498f910ef641b614a21d432ed691e035fe14c8c8056147f6d3",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillWideLocalization.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5c318e26a1ba5048003efedb77d11dab9dda0cab983f146c346527af0f2a2032",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealDiameterDisc.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9c1ee677380624e534b243b093793234d1e9fc9f3653a23356fe838c04869c6d",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillCentralCounting.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5af6c7f9008cf7cfe969850c047915d3600632019b91c7daa0eb39cf14447831",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillCentralRoots.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2b7290d28ba637cd574d4e81929046ca8e8ec383b1438e58f104ffa573b083a2",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillRealGapPairs.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a16154e566916fcc08648aa818ff44a6af29fa5b8b16836a8732b70b46822af7",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3e4071aef6c8357dc5249cd8c807847792cce838965828a4e392c3e342592c26",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillGlobalRealLabels.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "35cee3753ff96bb5d4184f4025e2b97996d90d01ef8cbca42edb1584b7d2ec2d",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillRealLabelingUniqueness.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a26842c436b4a0a5b2857f87495bf3636bd52e1aa1d7c99e1570a4b5192a95b8",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillCanonicalRealLabels.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9f583a7f78e80c1aa766ea9f586241cb4d30c00c65af9ddc85b34dc3954ab032",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/SequenceSpaces/OrderedFiniteContinuity.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "845306a62ca86b944046d35727a675c24419dee39a0436e4b234dd317d9ebe6b",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillCumulativeCounts.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9b37dc9bb7f4daab48b42187b5c193cdf0ec8e7eed70597383d808fe5f2dbe61",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillLabelContinuity.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0a44f93d606d839f8c512024e2c1bfa1a743b2c4b74a5b6bc8a866c0b7ca1167",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillCanonicalFreeLabels.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "034965a15a5980b5fd1740e3e8dcecc83ee407e3ab876132d834148dc8b125ac",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillRealTraceParity.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c7652fa3faa8246f3ce8b968199101f9cc586215ce687aa9927a7f546f2dae82",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/PositiveRealPart.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ea765bc189af3af91a9da85e528be14c2577d39ccac0fac5098e5fc2af5c7d45",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2HalfPlaneSheets.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a0b8167afcc575e93cf313fede81e0831cce666d3188b9e3847f95ec73b80d56",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TraceRootPrimitive.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e0ff985d98cdd5e7a638b433eea946856064debbc9d42ea7e4c9cbe2d9b6eefc",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UpperTracePrimitiveExtension.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1899e1d60c2c17b7d9411c9badd85939323e3387bdd9118f1e896a2215ba716d",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2RegularBoundary.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d8a8a1dc617a566631d806056580c55457ffd81a598ce618005173b9575449d4",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UpperLogarithmBoundary.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fb33728b53d4c38522f8f890fcccd0636f0856df739d14fc4d912aacca94f67f",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2AllBoundaryLimits.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3f960cda11dbecf32bc82934c0864266ee0f5711a8cc5cca44028b2deb737708",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricUpperLogarithmBoundary.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8e3e3a0980a9c9a86ffb72da0061345ae02fbaf47745dead0728dd83309a042d",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2BoundaryLabelContinuity.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "158f75e52cb6711482c3de0b6577f3b46ffec45d50d519d7cff23d9d3140b391",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2AllEndpointNormalization.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "da4e3b627e96f13038e3ce44158fb8858bec897e6d1448850a602b1685b596e3",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillRealBands.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "583ca2dd1a3b461f8ddcb3521e74a53ba9e72baf100066216be0edfc05f0b326",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealSimpleZeroSigns.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "361f20f8dd30a62fc010f661e37ee24a1a31f8e06933c2bedb1ba4ab1905ad1b",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillRealGapSigns.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3d780ed7d305c355e3f54fcbd47bca4d75c7c1c902ca876f2b10bf77bbc068e2",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillRealGapIntegrals.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9a39660f71fe855a20f2a715dd71500369614227ee94e6040c2ecac44b38585f",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CoshSquareCoordinate.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "acbb58293a0ce8e938052be3f82c3e908d75356e289a7f73e050e13fcf3b8567",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealCoshTrace.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c1fdefc714ecde9a5d6c1dc7585ab392a09cd6e985dad89dc6ef5bcf9f3ec89d",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2BoundaryGapProfile.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6fb46a3d71adf3cda1206fe476cae4d2d19b6bca004e190f7cf94a8907a19db4",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2GlobalGapBoundaryValues.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fe60df2cd0a9abbf836d9044bbb481629326e3311c124015389721776f611636",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2BandContinuation.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b88dea4864ace28e73fc71a60cc5f425d610fbeaf49c1e725722a0417996f1e7",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2RealCutDifferential.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ac5aa9b7d015d175bc2256776c9fb95d5f540a938fc1680ab599dec16a24b97e",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ContinuousIntervalBranch.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0d2e70da12ad5fa92fde78cc3140e92ccd5eec469dcb0c990f06d98334fbb84f",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2BandPhase.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "52aaf6c0d151b37bb972a3f524de01daeed38c184d16093f6d7d629289b8f593",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ImaginaryCoshInverse.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f8491eb4c1b2a93aeafb868a5df248c6e9b4ad28ffbd6709e08192e726705812",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2DiscAsymptotics.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "800ccd8f77de8989b527dc70a3e71404c40802c2da5a61e38f0a24765063ee37",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2BandAnchors.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8ed4a0ce12d800d0101e2843676739cc782cd5e516852359383fbf1f3fe7ab21",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ClosedUpperExtension.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6fdd26aba946e7a6b8be44d54a6d4523864230102772f6a60537ba7e5594b1bf",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2CutBounds.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "33928b79dcc4c7857444cb7b159c431f271f25bea3899d7d71405c1b8fa742f3",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillFreeUpperArcs.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1798aac8d1c18c88409f12c57c7259c72627e0f04d1052475eb9c763f6bb742c",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/WeightedCoshInverse.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "680052fedf487d2dcb4f149fb14f9e8214b9ed6a626a1fb97d7e45b162fe9c8b",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ConnectedPhaseControl.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e66a0454d926e82f163c4161a1e328d55c0666cb4cca85fbc121bc009fc41307",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ClassicalWeightedResidualStability.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4193f029ac24df4bb7ca8fc482ffbfd1d45bf4d1bde0d60b8234e30ccb565db4",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NLSWKBCarrierWeightedBounds.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "598627c6fdfe298720a1bdaf13f12fecc481348881d3f4fbb5aca3edd05bdcb9",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NLSWKBWeightedComparison.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f2c462bd99522f7ce2f3c33807ba05e132dc1adfc3fd93021de9d5ac0c5ec95e",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UnimodularWeightedTraceError.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9108e8df6f28a8d9adb6cd1d5e23cd5715a68c64daf2b89d48941f4dcb341edc",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NLSHamiltonianWeightedAsymptotics.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "95a898e5714820c95510228a50913701bbbea451709e5b5fb7bc3cfa327276fb",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/ClassicalWeightedTraceAsymptotics.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c6b8cc6cc0f5f8f5936a01a713d113de399702e74a1128a7e36ad026139d7c29",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2UpperArcAsymptotics.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3aa03944043f05140f240e8768f3de3d95535d7773682161d552a532f2ed5506",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LaurentSquareRemainder.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ef2e52f913ad29d917411b9b8e756ce59433a7e284ee7c8f0ef66aba0e844695",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/WeightedSquareRemainder.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a5e3427fa87d4c716f8c3290c62df9f0fbe07b4ebd547f2c7abd63ba8512b410",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2UpperEnergySquareAsymptotics.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3e56660a7b683c7c5095fad6e87f7a9b55ac55c5b8792321d0b3ac4d1758e425",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2UpperSquareAsymptotics.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "28405ff20e43f5d92d2f2d15287d2b681577d9746a2dbc2c6b18909266ea209a",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UpperCircleReflection.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2eaf24258d99416418fbc825900be0a11a07baee2b4ee64547fd05f2c682c6fc",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2SquareCircleAsymptotics.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "574b845d717a5963033cee9b708e4abe24f9a08f9da44ec04c39a04a89f79b2e",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/HillL2EnergySquareCircleAsymptotics.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: imported_unchanged. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f0fceb40aab375c96f24a4a53300b6fa658f6b95991c513f860f6b9a1eb41a2e",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/RiccatiEnergy.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: existing_identical_now_explicitly_selected. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9161a7fd1215485b207cb6b2f07efa86183f31016cba2346c40f1e2dc797d34a",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/KdV/ClassicalTraceAsymptotics.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Selected actual physical smooth energy-coefficient dependency: existing_identical_now_explicitly_selected. Actual L2 Hill boundary/sheet/label/weighted trace or physical Riccati proof, reused from the fixed shared estimates snapshot; see the provenance record for source/local hashes and adaptations. Physical angle bracket and main frequency theorems are not inferred.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "74c68e8196148c2ac4e5b7638f4e36b54bdbc8ee78257518c65d1eaced975e49",
+      "shared_source_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "shared_source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UpperReflectionCircleIntegrability.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Circle integrability from continuous upper-sheet values and off-real conjugate reflection, via the two semicircles and finite boundary discrepancies. No analytic continuation through real cuts is required.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "70a46b84da91495a6f294cf1be2637ec204caa2e497c1234f65df4aa700ad1af"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuarticContourCoefficient.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Proved scalar weighted square-to-quartic remainder estimates and literal counterclockwise coefficient extraction, including the source factor 1/(2*pi*i), sign -B/4 and explicit inverse-frequency contour error.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "68c449955e8b66d4a0163f7fba921b8e7cf7006b9d85509cc040e46a3b00bfc9"
+    },
+    {
+      "path": "NLS/KdV/HillSmoothPhysicalQuartic.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Physical real smooth period-one mean-zero potential statements without independent spectral hypotheses: conjugate-reflected Fourier reality is proved from the function and even support from period-one periodicity. Actual full-circle quartic remainder, contour error, limit -H1/4 and physical Hamiltonian recovery by -4 times the contour follow.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e1292df57c814a610a177bbfb6c1683193ceaf6f6fa9753ba8c8c4be3ee5f204"
+    },
+    {
+      "path": "NLS/KdV/HillSmoothQuarticEnergyCoefficient.lean",
+      "source_labels": [
+        "Lemma 3.2 proof input: actual physical quartic contour coefficient preceding formula (69)"
+      ],
+      "source_pages": [
+        26,
+        27
+      ],
+      "scope": "Actual smooth real period-one mean-zero physical KdV Hamiltonian coefficient on full energy circles, with actual Fourier parity/reality explicit: every even primitive power integrable, uniform third-order frequency quartic remainder, contour error C/R_N, limit -H1/4 and recovery of H1 by -4 times the period. The stronger displayed O(lambda^-2), finite-gap exact contour independence, physical frequency69 and all main theorems remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d0a37dbaeb2ac3d568ed5c20bd13d6dfa5c9a2158e20869078209284991d6dcb"
     }
   ],
   "dependencies_needed": [
@@ -7278,15 +8365,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 4977,
-    "total_declarations_audited": 27116,
+    "candidate_declarations_audited": 5750,
+    "total_declarations_audited": 27892,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 436,
+    "selected_modules": 509,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -7298,7 +8385,8 @@
     "miura_normalized_identification_validation_sequence": "Prior strict validation of 424 unchanged modules (415-module full baseline and nine incremental compilations), one new strict incremental compilation, then a fresh full combined transitive axiom audit of all 425 selected modules. No repeated full 425-module rebuild is claimed. Exact selections, source hashes, private fresh outputs, seven provenance records and canonical main verified.",
     "complex_normalized_identification_validation_sequence": "Prior strict validation of 425 unchanged selected modules, strict recompilation of three unchanged canonical identity modules and strict compilation of two new modules, then a fresh full combined transitive axiom audit of all 430 selected modules. The canonical helpers precede their consumers in the reordered selection. No repeated full 430-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified.",
     "miura_frequency_series_validation_sequence": "Prior strict validation of 430 unchanged selected sources, strict compilation of one new actual Miura moment/series module, then a fresh full combined transitive axiom audit of all 431 selected modules. No repeated full 431-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified.",
-    "spectral_invariance_validation_sequence": "Prior strict validation of 431 unchanged selected sources, strict compilation of two unchanged canonical modules and three new modules, then a fresh full combined transitive axiom audit of all 436 selected modules. The canonical isospectral-set helper precedes existing consumers in the reordered selection. No repeated full 436-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified."
+    "spectral_invariance_validation_sequence": "Prior strict validation of 431 unchanged selected sources, strict compilation of two unchanged canonical modules and three new modules, then a fresh full combined transitive axiom audit of all 436 selected modules. The canonical isospectral-set helper precedes existing consumers in the reordered selection. No repeated full 436-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified.",
+    "physical_quartic_coefficient_validation_sequence": "Prior strict validation of 436 unchanged selected sources, strict compilation of 67 selectively imported sources, two unchanged existing dependencies and four new proof modules, then a fresh full combined transitive axiom audit of all 509 selected modules. Selected dependency order is checked transitively. No repeated full 509-module build is claimed. Source hashes, selections, private fresh outputs, eight provenance records and canonical main verified."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -7415,6 +8503,12 @@
       "commit": "08db7a5b181084e4436959d1e84b2596bd5d9338",
       "record": "SHARED_HMINUS_GAP_QUOTIENT_IMPORT.json",
       "kind": "six unchanged proved actual rough whole-gap square/root cluster/normalized quotient dependencies; compatible local whole-gap extension retained; two unused cut-root/scale sources omitted; full branch not merged"
+    },
+    {
+      "branch": "articles/kdv-estimates",
+      "commit": "8bd9dcba2c439828221e11c08918ee632d16556e",
+      "record": "coverage/articles/kdv-kdv2-frequencies/SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json",
+      "kind": "Selected actual physical smooth full-circle energy coefficient dependency closure: 67 new sources, two unchanged existing dependencies; six local compatible sources retained and one newly imported compatibility proof adapted. Full branch not merged."
     }
   ],
   "normalized_collapsed_moments_record": "NORMALIZED_COLLAPSED_MOMENTS.md",
@@ -7448,5 +8542,7 @@
   "miura_normalized_identification_record": "MIURA_NORMALIZED_IDENTIFICATION.md",
   "complex_normalized_identification_record": "COMPLEX_NORMALIZED_IDENTIFICATION.md",
   "miura_frequency_series_record": "MIURA_FREQUENCY_SERIES.md",
-  "spectral_invariance_record": "SPECTRAL_INVARIANCE.md"
+  "spectral_invariance_record": "SPECTRAL_INVARIANCE.md",
+  "physical_quartic_coefficient_record": "PHYSICAL_QUARTIC_COEFFICIENT.md",
+  "shared_physical_energy_coefficient_import_record": "SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json"
 }

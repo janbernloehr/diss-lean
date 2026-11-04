@@ -84,19 +84,20 @@ its existing Hilbert specialization and a transitive audit.
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 436 selected modules compile with pinned **Lean 4.33.1**, commit
+All 509 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
 `-DautoImplicit=false -DwarningAsError=true`. The default heartbeat budget is retained.
 No linters are disabled; no `sorry`, `admit` or new axioms are introduced.
 
-Validation output: 431 unchanged previously checked sources, two unchanged
-canonical modules and three new modules compiled strictly, and a fresh combined
-transitive axiom audit of all 436 selected modules:
+Validation output: 436 unchanged previously checked sources, 67 selectively
+imported sources, two unchanged existing dependencies and four new modules
+compiled strictly, then a fresh combined transitive axiom audit of all 509
+selected modules:
 
 ```text
-# Prior strict checks: 431 unchanged selected sources
+# Prior strict checks: 436 unchanged selected sources
 PASS NLS/ComplexAnalysis/BanachTaylorBounds
 PASS NLS/SequenceSpaces/Convolution
 PASS NLS/SequenceSpaces/Reflection
@@ -528,18 +529,91 @@ PASS NLS/ComplexAnalysis/ContinuousRealFormIdentity
 PASS NLS/SequenceSpaces/PeriodOneRealFormIdentity
 PASS NLS/KdV/HillHminusOneComplexNormalizedIdentification
 PASS NLS/KdV/HillHminusOneMiuraFrequencySeries
-# Incremental checks: two canonical modules and three new modules
 PASS NLS/ZakharovShabat/SourceIsospectralSet
 PASS NLS/ZakharovShabat/SourcePsiGapRootIsospectral
 PASS NLS/KdV/HillHminusOneMiuraSpectralInvariance
 PASS NLS/KdV/HillHminusOneIsospectralSheets
 PASS NLS/KdV/HillHminusOneSpectralMiuraFrequencySeries
-# Fresh combined transitive audit of all 436 selected modules
-Axiom audit passed: 4977 candidate declarations; 27116 declarations total.
+# Incremental strict checks: 73 newly selected modules
+PASS NLS/ComplexAnalysis/TracePrimitiveMoments
+PASS NLS/KdV/HillL2HighContourMoments
+PASS NLS/KdV/ClassicalL2PrimitiveAgreement
+PASS NLS/Fourier/ContinuousConjugation
+PASS NLS/KdV/HillL2Conjugation
+PASS NLS/KdV/HillL2ContourDeformation
+PASS NLS/ComplexAnalysis/TracePrimitiveReflection
+PASS NLS/KdV/HillL2PrimitiveReflection
+PASS NLS/KdV/HillFreeSpectrum
+PASS NLS/KdV/HillWideLocalization
+PASS NLS/ComplexAnalysis/RealDiameterDisc
+PASS NLS/KdV/HillCentralCounting
+PASS NLS/KdV/HillCentralRoots
+PASS NLS/KdV/HillRealGapPairs
+PASS NLS/SequenceSpaces/OrderedOneSidedEnumeration
+PASS NLS/KdV/HillGlobalRealLabels
+PASS NLS/KdV/HillRealLabelingUniqueness
+PASS NLS/KdV/HillCanonicalRealLabels
+PASS NLS/SequenceSpaces/OrderedFiniteContinuity
+PASS NLS/KdV/HillCumulativeCounts
+PASS NLS/KdV/HillLabelContinuity
+PASS NLS/KdV/HillCanonicalFreeLabels
+PASS NLS/KdV/HillRealTraceParity
+PASS NLS/ComplexAnalysis/PositiveRealPart
+PASS NLS/KdV/HillL2HalfPlaneSheets
+PASS NLS/ComplexAnalysis/TraceRootPrimitive
+PASS NLS/ComplexAnalysis/UpperTracePrimitiveExtension
+PASS NLS/KdV/HillL2RegularBoundary
+PASS NLS/ComplexAnalysis/UpperLogarithmBoundary
+PASS NLS/KdV/HillL2AllBoundaryLimits
+PASS NLS/ComplexAnalysis/ParametricUpperLogarithmBoundary
+PASS NLS/KdV/HillL2BoundaryLabelContinuity
+PASS NLS/KdV/HillL2AllEndpointNormalization
+PASS NLS/KdV/HillRealBands
+PASS NLS/ComplexAnalysis/RealSimpleZeroSigns
+PASS NLS/KdV/HillRealGapSigns
+PASS NLS/KdV/HillRealGapIntegrals
+PASS NLS/ComplexAnalysis/CoshSquareCoordinate
+PASS NLS/ComplexAnalysis/RealCoshTrace
+PASS NLS/KdV/HillL2BoundaryGapProfile
+PASS NLS/KdV/HillL2GlobalGapBoundaryValues
+PASS NLS/KdV/HillL2BandContinuation
+PASS NLS/KdV/HillL2RealCutDifferential
+PASS NLS/ComplexAnalysis/ContinuousIntervalBranch
+PASS NLS/KdV/HillL2BandPhase
+PASS NLS/ComplexAnalysis/ImaginaryCoshInverse
+PASS NLS/KdV/HillL2DiscAsymptotics
+PASS NLS/KdV/HillL2BandAnchors
+PASS NLS/ComplexAnalysis/ClosedUpperExtension
+PASS NLS/KdV/HillL2CutBounds
+PASS NLS/KdV/HillFreeUpperArcs
+PASS NLS/ComplexAnalysis/WeightedCoshInverse
+PASS NLS/ComplexAnalysis/ConnectedPhaseControl
+PASS NLS/ZakharovShabat/ClassicalWeightedResidualStability
+PASS NLS/ZakharovShabat/NLSWKBCarrierWeightedBounds
+PASS NLS/ZakharovShabat/NLSWKBWeightedComparison
+PASS NLS/ComplexAnalysis/UnimodularWeightedTraceError
+PASS NLS/ZakharovShabat/NLSHamiltonianWeightedAsymptotics
+PASS NLS/KdV/RiccatiEnergy
+PASS NLS/KdV/ClassicalTraceAsymptotics
+PASS NLS/KdV/ClassicalWeightedTraceAsymptotics
+PASS NLS/KdV/HillL2UpperArcAsymptotics
+PASS NLS/ComplexAnalysis/LaurentSquareRemainder
+PASS NLS/ComplexAnalysis/WeightedSquareRemainder
+PASS NLS/KdV/HillL2UpperEnergySquareAsymptotics
+PASS NLS/KdV/HillL2UpperSquareAsymptotics
+PASS NLS/ComplexAnalysis/UpperCircleReflection
+PASS NLS/KdV/HillL2SquareCircleAsymptotics
+PASS NLS/KdV/HillL2EnergySquareCircleAsymptotics
+PASS NLS/ComplexAnalysis/UpperReflectionCircleIntegrability
+PASS NLS/ComplexAnalysis/QuarticContourCoefficient
+PASS NLS/KdV/HillSmoothQuarticEnergyCoefficient
+PASS NLS/KdV/HillSmoothPhysicalQuartic
+# Fresh combined transitive audit of all 509 selected modules
+Axiom audit passed: 5750 candidate declarations; 27892 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 436 selected modules (including generated and private declarations)
+the 509 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -1690,3 +1764,10 @@ Audit: 4950 selected declarations; 27100 imported NLS declarations, permitted st
 See `SPECTRAL_INVARIANCE.md`. Prior strict validation of 431 unchanged selected sources, strict compilation of two unchanged canonical modules and three new modules, then a fresh full combined transitive axiom audit of all 436 selected modules. The canonical isospectral-set helper precedes existing consumers in the reordered selection. No repeated full 436-module build is claimed. Source hashes, selections, private fresh outputs, seven provenance records and canonical main verified.
 
 Audit: 4977 selected declarations; 27116 imported NLS declarations, permitted standard axioms only. Actual normalized numerators are spectral invariants within a fixed real-type chart at every real rough base. Root signs and logarithmic phases agree on all original contours in one common near-zero ball. One actual family retains the complete analytic and convergent moment/series construction and is spectrally invariant on that SAME ball. Actual action-coordinate descent, physical frequency identification, global source domains and all main conclusions remain open.
+
+
+## Actual physical quartic Hamiltonian coefficient
+
+See `PHYSICAL_QUARTIC_COEFFICIENT.md` and `SHARED_PHYSICAL_ENERGY_COEFFICIENT_IMPORT.json`. Prior strict validation of 436 unchanged selected sources, strict compilation of 67 selectively imported sources, two unchanged existing dependencies and four new proof modules, then a fresh full combined transitive axiom audit of all 509 selected modules. Selected dependency order is checked transitively. No repeated full 509-module build is claimed. Source hashes, selections, private fresh outputs, eight provenance records and canonical main verified.
+
+Audit: 5750 selected declarations; 27892 imported NLS declarations, permitted standard axioms only. The actual smooth real period-one mean-zero quartic Hill contour converges to -H1/4 with explicit error, and multiplying by -4 recovers the physical Hamiltonian. The physical corollaries derive Fourier parity/reality from the actual function assumptions. This proves the smooth physical coefficient input, not exact finite-gap contour independence, the stronger displayed remainder or physical frequency identity69. All main rows remain open.

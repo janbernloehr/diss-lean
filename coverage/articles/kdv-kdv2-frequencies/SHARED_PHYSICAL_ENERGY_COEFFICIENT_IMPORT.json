@@ -1,0 +1,471 @@
+{
+  "source_branch": "articles/kdv-estimates",
+  "source_commit": "8bd9dcba2c439828221e11c08918ee632d16556e",
+  "kind": "Selected dependency closure of the actual smooth full-circle physical squared-primitive energy expansion. No full branch merge.",
+  "new_source_count": 67,
+  "existing_identical_explicitly_selected_count": 2,
+  "retained_local_source_count": 6,
+  "shared_transitive_source_closure_count": 1177,
+  "adaptations": {
+    "NLS/KdV/ClassicalL2PrimitiveAgreement.lean": "Only the final shifted primitive-action compatibility proof changes: prove the constant circle integral vanishes directly using its linear primitive, preserving the existing local ActionHamiltonianMoments module and all its declarations.",
+    "NLS/ComplexAnalysis/JointSpectralDerivative.lean": "Existing local analytic extensions retained unchanged.",
+    "NLS/KdV/ClassicalDiscriminant.lean": "Existing compatible local source retained unchanged.",
+    "NLS/KdV/HillBilinearSymmetry.lean": "Existing compatible local default-resource proof retained unchanged; source snapshot heartbeat override is not imported.",
+    "NLS/KdV/HillDiscriminantNecessity.lean": "Existing compatible local default-resource proof retained unchanged; source snapshot heartbeat override is not imported.",
+    "NLS/KdV/ActionHamiltonianMoments.lean": "Existing local source retained unchanged; additional shared helper declarations are not imported or assumed.",
+    "NLS/KdV/ClassicalHillConjugation.lean": "Existing compatible local source retained unchanged."
+  },
+  "scope": "Actual normalized L2 Hill sheets, full real boundary normalization, weighted WKB trace estimates and physical smooth full-circle squared-primitive error. Real smooth period-one mean-zero physical Hamiltonian assumptions remain explicit. No physical angle bracket, action inverse/descent or main frequency theorem is inferred.",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/TracePrimitiveMoments.lean",
+      "source_sha256": "214de92b4daf02a9ce95ead6111039d2ab69fcab3f416a4e59cd6386230e9acb",
+      "local_sha256": "214de92b4daf02a9ce95ead6111039d2ab69fcab3f416a4e59cd6386230e9acb",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2HighContourMoments.lean",
+      "source_sha256": "72dea2e27d21264cb4902896ebd4fb36a8694e7c37d02b3331fb9c9100835a28",
+      "local_sha256": "72dea2e27d21264cb4902896ebd4fb36a8694e7c37d02b3331fb9c9100835a28",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean",
+      "source_sha256": "e7a68da9bccb85a5555f97f41c187de235f966cbcfa86c6fda5bec9d6eea9416",
+      "local_sha256": "4a4edcf113081745705519dd833b936c772bfd2aaa9f1a34f3b9bdad4ef9556b",
+      "disposition": "imported_with_local_compatibility_proof"
+    },
+    {
+      "path": "NLS/Fourier/ContinuousConjugation.lean",
+      "source_sha256": "5e4f809136c6c885be366072a09d40618856a5f9096589a04c2b1c9601509f9b",
+      "local_sha256": "5e4f809136c6c885be366072a09d40618856a5f9096589a04c2b1c9601509f9b",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2Conjugation.lean",
+      "source_sha256": "9f60336f9dd4e6394501ed3bd9529be74b7194e2b46925272dd8f3b07376adb2",
+      "local_sha256": "9f60336f9dd4e6394501ed3bd9529be74b7194e2b46925272dd8f3b07376adb2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2ContourDeformation.lean",
+      "source_sha256": "459dd87f37c8ec230aa61ea921304f19a9e7085bd786fb798dc6d83e461e1a49",
+      "local_sha256": "459dd87f37c8ec230aa61ea921304f19a9e7085bd786fb798dc6d83e461e1a49",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TracePrimitiveReflection.lean",
+      "source_sha256": "7fb5b83b83f8558d01480d2aee5ad09f24bb127123a67f7642c90043b050190a",
+      "local_sha256": "7fb5b83b83f8558d01480d2aee5ad09f24bb127123a67f7642c90043b050190a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2PrimitiveReflection.lean",
+      "source_sha256": "c8cd3618f737f85ac73095969665dd9be6ccc3842a9b626c8888baf207c250a6",
+      "local_sha256": "c8cd3618f737f85ac73095969665dd9be6ccc3842a9b626c8888baf207c250a6",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillFreeSpectrum.lean",
+      "source_sha256": "2a6be7ef571cfb498f910ef641b614a21d432ed691e035fe14c8c8056147f6d3",
+      "local_sha256": "2a6be7ef571cfb498f910ef641b614a21d432ed691e035fe14c8c8056147f6d3",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillWideLocalization.lean",
+      "source_sha256": "5c318e26a1ba5048003efedb77d11dab9dda0cab983f146c346527af0f2a2032",
+      "local_sha256": "5c318e26a1ba5048003efedb77d11dab9dda0cab983f146c346527af0f2a2032",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealDiameterDisc.lean",
+      "source_sha256": "9c1ee677380624e534b243b093793234d1e9fc9f3653a23356fe838c04869c6d",
+      "local_sha256": "9c1ee677380624e534b243b093793234d1e9fc9f3653a23356fe838c04869c6d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillCentralCounting.lean",
+      "source_sha256": "5af6c7f9008cf7cfe969850c047915d3600632019b91c7daa0eb39cf14447831",
+      "local_sha256": "5af6c7f9008cf7cfe969850c047915d3600632019b91c7daa0eb39cf14447831",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillCentralRoots.lean",
+      "source_sha256": "2b7290d28ba637cd574d4e81929046ca8e8ec383b1438e58f104ffa573b083a2",
+      "local_sha256": "2b7290d28ba637cd574d4e81929046ca8e8ec383b1438e58f104ffa573b083a2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRealGapPairs.lean",
+      "source_sha256": "a16154e566916fcc08648aa818ff44a6af29fa5b8b16836a8732b70b46822af7",
+      "local_sha256": "a16154e566916fcc08648aa818ff44a6af29fa5b8b16836a8732b70b46822af7",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/OrderedOneSidedEnumeration.lean",
+      "source_sha256": "3e4071aef6c8357dc5249cd8c807847792cce838965828a4e392c3e342592c26",
+      "local_sha256": "3e4071aef6c8357dc5249cd8c807847792cce838965828a4e392c3e342592c26",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillGlobalRealLabels.lean",
+      "source_sha256": "35cee3753ff96bb5d4184f4025e2b97996d90d01ef8cbca42edb1584b7d2ec2d",
+      "local_sha256": "35cee3753ff96bb5d4184f4025e2b97996d90d01ef8cbca42edb1584b7d2ec2d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRealLabelingUniqueness.lean",
+      "source_sha256": "a26842c436b4a0a5b2857f87495bf3636bd52e1aa1d7c99e1570a4b5192a95b8",
+      "local_sha256": "a26842c436b4a0a5b2857f87495bf3636bd52e1aa1d7c99e1570a4b5192a95b8",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillCanonicalRealLabels.lean",
+      "source_sha256": "9f583a7f78e80c1aa766ea9f586241cb4d30c00c65af9ddc85b34dc3954ab032",
+      "local_sha256": "9f583a7f78e80c1aa766ea9f586241cb4d30c00c65af9ddc85b34dc3954ab032",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/OrderedFiniteContinuity.lean",
+      "source_sha256": "845306a62ca86b944046d35727a675c24419dee39a0436e4b234dd317d9ebe6b",
+      "local_sha256": "845306a62ca86b944046d35727a675c24419dee39a0436e4b234dd317d9ebe6b",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillCumulativeCounts.lean",
+      "source_sha256": "9b37dc9bb7f4daab48b42187b5c193cdf0ec8e7eed70597383d808fe5f2dbe61",
+      "local_sha256": "9b37dc9bb7f4daab48b42187b5c193cdf0ec8e7eed70597383d808fe5f2dbe61",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillLabelContinuity.lean",
+      "source_sha256": "0a44f93d606d839f8c512024e2c1bfa1a743b2c4b74a5b6bc8a866c0b7ca1167",
+      "local_sha256": "0a44f93d606d839f8c512024e2c1bfa1a743b2c4b74a5b6bc8a866c0b7ca1167",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillCanonicalFreeLabels.lean",
+      "source_sha256": "034965a15a5980b5fd1740e3e8dcecc83ee407e3ab876132d834148dc8b125ac",
+      "local_sha256": "034965a15a5980b5fd1740e3e8dcecc83ee407e3ab876132d834148dc8b125ac",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRealTraceParity.lean",
+      "source_sha256": "c7652fa3faa8246f3ce8b968199101f9cc586215ce687aa9927a7f546f2dae82",
+      "local_sha256": "c7652fa3faa8246f3ce8b968199101f9cc586215ce687aa9927a7f546f2dae82",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/PositiveRealPart.lean",
+      "source_sha256": "ea765bc189af3af91a9da85e528be14c2577d39ccac0fac5098e5fc2af5c7d45",
+      "local_sha256": "ea765bc189af3af91a9da85e528be14c2577d39ccac0fac5098e5fc2af5c7d45",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2HalfPlaneSheets.lean",
+      "source_sha256": "a0b8167afcc575e93cf313fede81e0831cce666d3188b9e3847f95ec73b80d56",
+      "local_sha256": "a0b8167afcc575e93cf313fede81e0831cce666d3188b9e3847f95ec73b80d56",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TraceRootPrimitive.lean",
+      "source_sha256": "e0ff985d98cdd5e7a638b433eea946856064debbc9d42ea7e4c9cbe2d9b6eefc",
+      "local_sha256": "e0ff985d98cdd5e7a638b433eea946856064debbc9d42ea7e4c9cbe2d9b6eefc",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UpperTracePrimitiveExtension.lean",
+      "source_sha256": "1899e1d60c2c17b7d9411c9badd85939323e3387bdd9118f1e896a2215ba716d",
+      "local_sha256": "1899e1d60c2c17b7d9411c9badd85939323e3387bdd9118f1e896a2215ba716d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2RegularBoundary.lean",
+      "source_sha256": "d8a8a1dc617a566631d806056580c55457ffd81a598ce618005173b9575449d4",
+      "local_sha256": "d8a8a1dc617a566631d806056580c55457ffd81a598ce618005173b9575449d4",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UpperLogarithmBoundary.lean",
+      "source_sha256": "fb33728b53d4c38522f8f890fcccd0636f0856df739d14fc4d912aacca94f67f",
+      "local_sha256": "fb33728b53d4c38522f8f890fcccd0636f0856df739d14fc4d912aacca94f67f",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2AllBoundaryLimits.lean",
+      "source_sha256": "3f960cda11dbecf32bc82934c0864266ee0f5711a8cc5cca44028b2deb737708",
+      "local_sha256": "3f960cda11dbecf32bc82934c0864266ee0f5711a8cc5cca44028b2deb737708",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricUpperLogarithmBoundary.lean",
+      "source_sha256": "8e3e3a0980a9c9a86ffb72da0061345ae02fbaf47745dead0728dd83309a042d",
+      "local_sha256": "8e3e3a0980a9c9a86ffb72da0061345ae02fbaf47745dead0728dd83309a042d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2BoundaryLabelContinuity.lean",
+      "source_sha256": "158f75e52cb6711482c3de0b6577f3b46ffec45d50d519d7cff23d9d3140b391",
+      "local_sha256": "158f75e52cb6711482c3de0b6577f3b46ffec45d50d519d7cff23d9d3140b391",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2AllEndpointNormalization.lean",
+      "source_sha256": "da4e3b627e96f13038e3ce44158fb8858bec897e6d1448850a602b1685b596e3",
+      "local_sha256": "da4e3b627e96f13038e3ce44158fb8858bec897e6d1448850a602b1685b596e3",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRealBands.lean",
+      "source_sha256": "583ca2dd1a3b461f8ddcb3521e74a53ba9e72baf100066216be0edfc05f0b326",
+      "local_sha256": "583ca2dd1a3b461f8ddcb3521e74a53ba9e72baf100066216be0edfc05f0b326",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealSimpleZeroSigns.lean",
+      "source_sha256": "361f20f8dd30a62fc010f661e37ee24a1a31f8e06933c2bedb1ba4ab1905ad1b",
+      "local_sha256": "361f20f8dd30a62fc010f661e37ee24a1a31f8e06933c2bedb1ba4ab1905ad1b",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRealGapSigns.lean",
+      "source_sha256": "3d780ed7d305c355e3f54fcbd47bca4d75c7c1c902ca876f2b10bf77bbc068e2",
+      "local_sha256": "3d780ed7d305c355e3f54fcbd47bca4d75c7c1c902ca876f2b10bf77bbc068e2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillRealGapIntegrals.lean",
+      "source_sha256": "9a39660f71fe855a20f2a715dd71500369614227ee94e6040c2ecac44b38585f",
+      "local_sha256": "9a39660f71fe855a20f2a715dd71500369614227ee94e6040c2ecac44b38585f",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CoshSquareCoordinate.lean",
+      "source_sha256": "acbb58293a0ce8e938052be3f82c3e908d75356e289a7f73e050e13fcf3b8567",
+      "local_sha256": "acbb58293a0ce8e938052be3f82c3e908d75356e289a7f73e050e13fcf3b8567",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealCoshTrace.lean",
+      "source_sha256": "c1fdefc714ecde9a5d6c1dc7585ab392a09cd6e985dad89dc6ef5bcf9f3ec89d",
+      "local_sha256": "c1fdefc714ecde9a5d6c1dc7585ab392a09cd6e985dad89dc6ef5bcf9f3ec89d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2BoundaryGapProfile.lean",
+      "source_sha256": "6fb46a3d71adf3cda1206fe476cae4d2d19b6bca004e190f7cf94a8907a19db4",
+      "local_sha256": "6fb46a3d71adf3cda1206fe476cae4d2d19b6bca004e190f7cf94a8907a19db4",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2GlobalGapBoundaryValues.lean",
+      "source_sha256": "fe60df2cd0a9abbf836d9044bbb481629326e3311c124015389721776f611636",
+      "local_sha256": "fe60df2cd0a9abbf836d9044bbb481629326e3311c124015389721776f611636",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2BandContinuation.lean",
+      "source_sha256": "b88dea4864ace28e73fc71a60cc5f425d610fbeaf49c1e725722a0417996f1e7",
+      "local_sha256": "b88dea4864ace28e73fc71a60cc5f425d610fbeaf49c1e725722a0417996f1e7",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2RealCutDifferential.lean",
+      "source_sha256": "ac5aa9b7d015d175bc2256776c9fb95d5f540a938fc1680ab599dec16a24b97e",
+      "local_sha256": "ac5aa9b7d015d175bc2256776c9fb95d5f540a938fc1680ab599dec16a24b97e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ContinuousIntervalBranch.lean",
+      "source_sha256": "0d2e70da12ad5fa92fde78cc3140e92ccd5eec469dcb0c990f06d98334fbb84f",
+      "local_sha256": "0d2e70da12ad5fa92fde78cc3140e92ccd5eec469dcb0c990f06d98334fbb84f",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2BandPhase.lean",
+      "source_sha256": "52aaf6c0d151b37bb972a3f524de01daeed38c184d16093f6d7d629289b8f593",
+      "local_sha256": "52aaf6c0d151b37bb972a3f524de01daeed38c184d16093f6d7d629289b8f593",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ImaginaryCoshInverse.lean",
+      "source_sha256": "f8491eb4c1b2a93aeafb868a5df248c6e9b4ad28ffbd6709e08192e726705812",
+      "local_sha256": "f8491eb4c1b2a93aeafb868a5df248c6e9b4ad28ffbd6709e08192e726705812",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2DiscAsymptotics.lean",
+      "source_sha256": "800ccd8f77de8989b527dc70a3e71404c40802c2da5a61e38f0a24765063ee37",
+      "local_sha256": "800ccd8f77de8989b527dc70a3e71404c40802c2da5a61e38f0a24765063ee37",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2BandAnchors.lean",
+      "source_sha256": "8ed4a0ce12d800d0101e2843676739cc782cd5e516852359383fbf1f3fe7ab21",
+      "local_sha256": "8ed4a0ce12d800d0101e2843676739cc782cd5e516852359383fbf1f3fe7ab21",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ClosedUpperExtension.lean",
+      "source_sha256": "6fdd26aba946e7a6b8be44d54a6d4523864230102772f6a60537ba7e5594b1bf",
+      "local_sha256": "6fdd26aba946e7a6b8be44d54a6d4523864230102772f6a60537ba7e5594b1bf",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2CutBounds.lean",
+      "source_sha256": "33928b79dcc4c7857444cb7b159c431f271f25bea3899d7d71405c1b8fa742f3",
+      "local_sha256": "33928b79dcc4c7857444cb7b159c431f271f25bea3899d7d71405c1b8fa742f3",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillFreeUpperArcs.lean",
+      "source_sha256": "1798aac8d1c18c88409f12c57c7259c72627e0f04d1052475eb9c763f6bb742c",
+      "local_sha256": "1798aac8d1c18c88409f12c57c7259c72627e0f04d1052475eb9c763f6bb742c",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/WeightedCoshInverse.lean",
+      "source_sha256": "680052fedf487d2dcb4f149fb14f9e8214b9ed6a626a1fb97d7e45b162fe9c8b",
+      "local_sha256": "680052fedf487d2dcb4f149fb14f9e8214b9ed6a626a1fb97d7e45b162fe9c8b",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ConnectedPhaseControl.lean",
+      "source_sha256": "e66a0454d926e82f163c4161a1e328d55c0666cb4cca85fbc121bc009fc41307",
+      "local_sha256": "e66a0454d926e82f163c4161a1e328d55c0666cb4cca85fbc121bc009fc41307",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ClassicalWeightedResidualStability.lean",
+      "source_sha256": "4193f029ac24df4bb7ca8fc482ffbfd1d45bf4d1bde0d60b8234e30ccb565db4",
+      "local_sha256": "4193f029ac24df4bb7ca8fc482ffbfd1d45bf4d1bde0d60b8234e30ccb565db4",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NLSWKBCarrierWeightedBounds.lean",
+      "source_sha256": "598627c6fdfe298720a1bdaf13f12fecc481348881d3f4fbb5aca3edd05bdcb9",
+      "local_sha256": "598627c6fdfe298720a1bdaf13f12fecc481348881d3f4fbb5aca3edd05bdcb9",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NLSWKBWeightedComparison.lean",
+      "source_sha256": "f2c462bd99522f7ce2f3c33807ba05e132dc1adfc3fd93021de9d5ac0c5ec95e",
+      "local_sha256": "f2c462bd99522f7ce2f3c33807ba05e132dc1adfc3fd93021de9d5ac0c5ec95e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UnimodularWeightedTraceError.lean",
+      "source_sha256": "9108e8df6f28a8d9adb6cd1d5e23cd5715a68c64daf2b89d48941f4dcb341edc",
+      "local_sha256": "9108e8df6f28a8d9adb6cd1d5e23cd5715a68c64daf2b89d48941f4dcb341edc",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/NLSHamiltonianWeightedAsymptotics.lean",
+      "source_sha256": "95a898e5714820c95510228a50913701bbbea451709e5b5fb7bc3cfa327276fb",
+      "local_sha256": "95a898e5714820c95510228a50913701bbbea451709e5b5fb7bc3cfa327276fb",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/ClassicalWeightedTraceAsymptotics.lean",
+      "source_sha256": "c6b8cc6cc0f5f8f5936a01a713d113de399702e74a1128a7e36ad026139d7c29",
+      "local_sha256": "c6b8cc6cc0f5f8f5936a01a713d113de399702e74a1128a7e36ad026139d7c29",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2UpperArcAsymptotics.lean",
+      "source_sha256": "3aa03944043f05140f240e8768f3de3d95535d7773682161d552a532f2ed5506",
+      "local_sha256": "3aa03944043f05140f240e8768f3de3d95535d7773682161d552a532f2ed5506",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LaurentSquareRemainder.lean",
+      "source_sha256": "ef2e52f913ad29d917411b9b8e756ce59433a7e284ee7c8f0ef66aba0e844695",
+      "local_sha256": "ef2e52f913ad29d917411b9b8e756ce59433a7e284ee7c8f0ef66aba0e844695",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/WeightedSquareRemainder.lean",
+      "source_sha256": "a5e3427fa87d4c716f8c3290c62df9f0fbe07b4ebd547f2c7abd63ba8512b410",
+      "local_sha256": "a5e3427fa87d4c716f8c3290c62df9f0fbe07b4ebd547f2c7abd63ba8512b410",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2UpperEnergySquareAsymptotics.lean",
+      "source_sha256": "3e56660a7b683c7c5095fad6e87f7a9b55ac55c5b8792321d0b3ac4d1758e425",
+      "local_sha256": "3e56660a7b683c7c5095fad6e87f7a9b55ac55c5b8792321d0b3ac4d1758e425",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2UpperSquareAsymptotics.lean",
+      "source_sha256": "28405ff20e43f5d92d2f2d15287d2b681577d9746a2dbc2c6b18909266ea209a",
+      "local_sha256": "28405ff20e43f5d92d2f2d15287d2b681577d9746a2dbc2c6b18909266ea209a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/UpperCircleReflection.lean",
+      "source_sha256": "2eaf24258d99416418fbc825900be0a11a07baee2b4ee64547fd05f2c682c6fc",
+      "local_sha256": "2eaf24258d99416418fbc825900be0a11a07baee2b4ee64547fd05f2c682c6fc",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2SquareCircleAsymptotics.lean",
+      "source_sha256": "574b845d717a5963033cee9b708e4abe24f9a08f9da44ec04c39a04a89f79b2e",
+      "local_sha256": "574b845d717a5963033cee9b708e4abe24f9a08f9da44ec04c39a04a89f79b2e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2EnergySquareCircleAsymptotics.lean",
+      "source_sha256": "f0fceb40aab375c96f24a4a53300b6fa658f6b95991c513f860f6b9a1eb41a2e",
+      "local_sha256": "f0fceb40aab375c96f24a4a53300b6fa658f6b95991c513f860f6b9a1eb41a2e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/RiccatiEnergy.lean",
+      "source_sha256": "9161a7fd1215485b207cb6b2f07efa86183f31016cba2346c40f1e2dc797d34a",
+      "local_sha256": "9161a7fd1215485b207cb6b2f07efa86183f31016cba2346c40f1e2dc797d34a",
+      "disposition": "existing_identical_now_explicitly_selected"
+    },
+    {
+      "path": "NLS/KdV/ClassicalTraceAsymptotics.lean",
+      "source_sha256": "74c68e8196148c2ac4e5b7638f4e36b54bdbc8ee78257518c65d1eaced975e49",
+      "local_sha256": "74c68e8196148c2ac4e5b7638f4e36b54bdbc8ee78257518c65d1eaced975e49",
+      "disposition": "existing_identical_now_explicitly_selected"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/JointSpectralDerivative.lean",
+      "source_sha256": "f988cb9c979c851d34ce56925c72b86e3a54ad88d2bd75f3bfdd856e1212147c",
+      "local_sha256": "615f051c204758d1ec0b4a9197560b0e779b6aed4d8926d6125f7a98cba6b541",
+      "disposition": "retained_local_compatible_source"
+    },
+    {
+      "path": "NLS/KdV/ClassicalDiscriminant.lean",
+      "source_sha256": "79ec8e092e84ead44b69b25b1fb7a25e1ad74971d78d3c287194b23c4716f2b2",
+      "local_sha256": "a6f78abd90ddefc24cba3b6d958f4709364368cf00b1b84fdb830049a8361531",
+      "disposition": "retained_local_compatible_source"
+    },
+    {
+      "path": "NLS/KdV/HillBilinearSymmetry.lean",
+      "source_sha256": "6cda4cd258aff982accd9383c415b763a1e455899ea30ede6408ff73d5149cff",
+      "local_sha256": "2b0e7f9ae07056c448603bbcb086776fcbbef4c4c90d3e870963e00bd3dc665b",
+      "disposition": "retained_local_compatible_source"
+    },
+    {
+      "path": "NLS/KdV/HillDiscriminantNecessity.lean",
+      "source_sha256": "b4dd08b58e8856e661f54bc478d525d71debb584fc4687ecee85302f1cdf1897",
+      "local_sha256": "c78b4bc2057447032ab29705cb0bb9255e15d87f330acc73e8e344ffd1b5675e",
+      "disposition": "retained_local_compatible_source"
+    },
+    {
+      "path": "NLS/KdV/ActionHamiltonianMoments.lean",
+      "source_sha256": "3706e6c81dae7c2076ad6f9ad605b7a056671f2de2ce150c7e6a2764cff462e8",
+      "local_sha256": "2bb6abfa6e912decb75ebf991312566b32d371680c1a44257ac73289e2e51feb",
+      "disposition": "retained_local_compatible_source"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillConjugation.lean",
+      "source_sha256": "1d6040cff5bf6aa03b0b16de145469b29ca84fcb17668be161747f601b8a7f89",
+      "local_sha256": "ffc639b592eceeca6524e069dae7020800eb034b83338121e78ebb8e302cf659",
+      "disposition": "retained_local_compatible_source"
+    }
+  ]
+}
