@@ -966,6 +966,12 @@
       "status": "Prove actual open-gap density, uniform original/native high spectral compatibility and full nonlinear infinity-scale analyticity near every real endpoint source. Endpoint inverse/Gardner/global and ALL FIVE MAIN remain OPEN.",
       "declaration": "NLS.Articles.KdVPseudomeasures.exists_hillEndpointSignedMap_analytic_neighborhood",
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-endpoint-analytic-coordinates-map.json"
+    },
+    {
+      "label": "ACTUAL endpoint Fourier derivative and local inverse in original potential norm topology",
+      "status": "Prove the exact endpoint Fourier derivative equivalence and both complex and real analytic local inverses, including the literal original potential norm topology. Gardner/global and ALL FIVE MAIN remain OPEN.",
+      "declaration": "NLS.Articles.KdVPseudomeasures.exists_originalEndpointRealSignedCoordinates_localInverse",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-endpoint-local-inversion-map.json"
     }
   ],
   "reuse_map": [
@@ -1047,7 +1053,7 @@
   "remaining_obligations": [
     "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), then complete the remaining source/target scales and canonicality for the constructed scalar action-angle coordinates, Gardner identities, actual KdV Birkhoff map/flow and ALL FIVE MAIN theorems. Complex product proportionality with UNIQUE NONZERO ANALYTIC scalar, JOINT locally uniform SAME cutoffs, whole-plane energy-derivative convergence, exhaustive complex zero set and ONE common OPEN CONNECTED domain of ENTIRE real form with ALL numerator zeros SIMPLE and uniquely retained-labelled are NOW PROVED. The omitted midpoint is nonzero and gives a concrete scalar ratio. The fine ORIGINAL energy-zero-minus-midpoint O(norm(original squared energy gap_m)/m) estimate persists locally uniformly before ALL n,m on that same simple domain. Do NOT redo complex product/scalar/exhaustion/simplicity, uniform full inverses or fine estimates.",
     "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "NEXT prove the exact Fourier derivative equivalence at the NEW source orders -r and signed target orders 1/2-r, exponent infinity, and the corresponding actual endpoint local inverse. The ACTUAL nonlinear endpoint restriction, FULL complex Banach analyticity and local target-norm bounds near EVERY real source are NOW PROVED for every r in [0,1/2), with WHOLE signed coordinate agreement with the native Hminus-one map. Gardner canonicality, invertibility away from0, remaining nonlinear scales, global bijection/boundedness/weak-star/flow, universal actual numerator scalar, sharp KMT kernel and ALL FIVE MAIN remain OPEN. Real/complex Hminus-one local inverses at0 and AppendixB remain COMPLETE.",
+    "NEXT prove actual Gardner canonicality and all-source derivative invertibility, remaining ORIGINAL nonlinear scales and global bijection/boundedness/weak-star/flow. The ACTUAL nonlinear infinity-scale restriction is now FULLcomplex Banach analytic near EVERYreal source, its full derivative at0 is EXACTLY the bounded Fourier equivalence at sourceorder-r/targetorder1/2-r, and BOTHcomplex and real analytic local inverses at0 with EXACTFourier inverse derivatives are PROVED for0<=r<1/2. Every original Potential r is the SAMEphysical distribution, is homeomorphic in its ORIGINALNORMtopology to the closed real coefficient Banach source, and the actual original coordinate map has BOTHlocal inverse identities, a REALanalytic original-distribution-valued inverse and exact inverse derivative. AppendixB/nativeHminus realcomplexlocalinverses remain COMPLETE. Local inversion at0 doesNOTprove Gardner/global or ANYofFIVE MAIN. Universal actual numerator scalar and sharp KMT kernel remain OPEN.",
     "Complete source3.1/main1.4 for ACTUAL ORIGINAL KdV Birkhoff coordinates and map: Gardner brackets, exact differential q_(2n)/sqrt(2*pi*abs(n)), exact target s+1/2, Banach analyticity including infinity, bijectivity, boundedness and bounded-set weak-star homeomorphism. Source3.2 ACTION assertions and native complex ACTUAL scalar Cartesian formula analyticity/ORIGINAL-energy estimate are proved. The ACTUAL native Cartesian H-minus-one -> exact positive h-minus-one-half sequence map is constructed and FULL Banach-analytic, with exact source norm/action identities and real coefficients. Exact Fourier/Gardner identification, the remaining scales and global Birkhoff map remain OPEN. Do not substitute an NLS Birkhoff map for KdV.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
@@ -3419,9 +3425,31 @@
     "actual_NONLINEAR_infinity_scale_FULL_complex_Banach_analytic_near_EVERY_real_source_PROVED": true,
     "actual_NONLINEAR_infinity_scale_locally_bounded_in_literal_target_norm_PROVED": true,
     "nonlinear_endpoint_coordinates_equal_actual_native_coordinates_PROVED": true,
-    "endpoint_Fourier_derivative_equivalence_PROVED": false,
-    "endpoint_local_inverse_PROVED": false,
+    "endpoint_Fourier_derivative_equivalence_PROVED": true,
+    "endpoint_local_inverse_PROVED": true,
     "Gardner_canonicality_PROVED": false,
+    "full_Birkhoff_bijection_PROVED": false,
+    "all_five_main_theorems_proved": false
+  },
+  "actual_Hill_endpoint_local_inverse_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-endpoint-local-inversion-map.json",
+    "exact_Fourier_Banach_equivalence_ALL_negative_source_orders_ALL_exponents_PROVED": true,
+    "Fourier_equivalence_and_inverse_preserve_physical_real_form_ALL_exponents_PROVED": true,
+    "actual_endpoint_FULL_Banach_derivative_EQUALS_exact_Fourier_equivalence_PROVED": true,
+    "endpoint_Fourier_derivative_equivalence_PROVED": true,
+    "actual_COMPLEX_endpoint_local_inverse_BOTH_identities_PROVED": true,
+    "actual_REAL_endpoint_local_inverse_BOTH_identities_PROVED": true,
+    "endpoint_local_inverse_PROVED": true,
+    "actual_endpoint_inverse_derivative_EXACT_bounded_Fourier_inverse_PROVED": true,
+    "actual_REAL_endpoint_map_FULL_real_Banach_analytic_EVERY_source_PROVED": true,
+    "original_distribution_endpoint_extraction_insertion_EXACT_inverse_PROVED": true,
+    "original_real_potential_closed_Banach_model_bijection_PROVED": true,
+    "original_NORM_topology_homeomorphism_PROVED": true,
+    "original_even_mode_Fourier_derivative_normalization_EXACT_PROVED": true,
+    "original_potential_local_inverse_BOTH_identities_PROVED": true,
+    "original_distribution_valued_inverse_real_analytic_and_exact_derivative_PROVED": true,
+    "Gardner_canonicality_PROVED": false,
+    "invertibility_at_every_source_PROVED": false,
     "full_Birkhoff_bijection_PROVED": false,
     "all_five_main_theorems_proved": false
   }

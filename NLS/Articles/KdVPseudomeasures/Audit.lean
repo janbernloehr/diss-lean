@@ -1324,6 +1324,21 @@ import NLS.SequenceSpaces.FourierRealZeroCoordinates
 import NLS.KdV.HillRealCoordinateNontrivial
 import NLS.KdV.HillRealOpenGapDensity
 import NLS.KdV.HillCanonicalGapNontrivial
+import NLS.SequenceSpaces.WeightedCoordinateDerivativeTransfer
+import NLS.SequenceSpaces.NegativeOrderHalfFourierEquiv
+import NLS.Articles.KdVPseudomeasures.NativeEndpointFirstVariation
+import NLS.SequenceSpaces.MeanZeroNegativeOrderHalfFourierEquiv
+import NLS.Articles.KdVPseudomeasures.NativeEndpointMeanZeroMap
+import NLS.Articles.KdVPseudomeasures.NativeEndpointLocalInverse
+import NLS.SequenceSpaces.RealNegativeOrderHalfFourierEquiv
+import NLS.Articles.KdVPseudomeasures.NativeEndpointRealSignedMap
+import NLS.Articles.KdVPseudomeasures.NativeEndpointRealLocalInverse
+import NLS.SequenceSpaces.WeightedReindexInfinity
+import NLS.KdV.PeriodOneEndpointExtract
+import NLS.KdV.PeriodOneEndpointRealSource
+import NLS.Articles.KdVPseudomeasures.OriginalEndpointRealCoordinates
+import NLS.Articles.KdVPseudomeasures.OriginalEndpointSourceTopology
+import NLS.Articles.KdVPseudomeasures.OriginalEndpointLocalInverse
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -8310,3 +8325,80 @@ import NLS.KdV.HillCanonicalGapNontrivial
 #print axioms NLS.KdV.hillHminusCanonicalGapSquare_not_identically_zero
 #print axioms NLS.KdV.exists_hillHminusCanonicalGapSquare_ne_zero_on_open
 #print axioms NLS.KdV.exists_arbitrarily_near_hillHminusCanonicalGapSquare_ne_zero
+#print axioms NLS.WeightedCoeff.fderiv_coordinates_comp_linear
+#print axioms NLS.Weight.signedSobolev_half_sub
+#print axioms NLS.Weight.signedSobolev_negative_bounds
+#print axioms NLS.WeightedCoeff.halfFourierSymbol_negative_order_bound
+#print axioms NLS.WeightedCoeff.halfFourierInverseSymbol_negative_order_bound
+#print axioms NLS.WeightedCoeff.negativeOrderHalfFourierEquiv
+#print axioms NLS.WeightedCoeff.negativeOrderHalfFourierEquiv_apply
+#print axioms NLS.WeightedCoeff.negativeOrderHalfFourierEquiv_symm_apply
+#print axioms NLS.Articles.KdVPseudomeasures.endpointNativeInclusion_zero_real
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointSignedMap_zero
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillEndpointSignedMap_coordinates
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillEndpointSignedMap_eq_Fourier_on_mean_zero
+#print axioms NLS.WeightedCoeff.negativeOrderHalfFourierEquiv_map_zeroMode
+#print axioms NLS.WeightedCoeff.meanZeroNegativeOrderHalfFourierEquiv
+#print axioms NLS.WeightedCoeff.meanZeroNegativeOrderHalfFourierEquiv_apply
+#print axioms NLS.WeightedCoeff.meanZeroNegativeOrderHalfFourierEquiv_symm_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointMeanZeroMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointMeanZeroMap_real_coe
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointMeanZeroMap_real_coordinate
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillEndpointMeanZeroMap_real
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointMeanZeroMap_zero
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillEndpointMeanZeroMap_zero
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillEndpointMeanZeroMap_localInverse
+#print axioms NLS.WeightedCoeff.meanZeroNegativeOrderHalfFourierEquiv_real
+#print axioms NLS.WeightedCoeff.meanZeroNegativeOrderHalfFourierEquiv_symm_real
+#print axioms NLS.WeightedCoeff.meanZeroNegativeOrderHalfFourierEquiv_map_real
+#print axioms NLS.WeightedCoeff.realMeanZeroNegativeOrderHalfFourierEquiv
+#print axioms NLS.WeightedCoeff.realMeanZeroNegativeOrderHalfFourierEquiv_apply
+#print axioms NLS.WeightedCoeff.realMeanZeroNegativeOrderHalfFourierEquiv_symm_apply
+#print axioms NLS.Articles.KdVPseudomeasures.endpointNativeInclusion_real_source
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointMeanZeroMap_mem_real
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointRealSignedMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointRealSignedMap_coe
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillEndpointRealSignedMap
+#print axioms NLS.Articles.KdVPseudomeasures.analyticOnNhd_hillEndpointRealSignedMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillEndpointRealSignedMap_zero
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillEndpointRealSignedMap_zero
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillEndpointRealSignedMap_zero_apply
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillEndpointRealSignedMap_localInverse
+#print axioms NLS.Coeff.reindexInfinity
+#print axioms NLS.Coeff.norm_reindexInfinity_le
+#print axioms NLS.Coeff.reindexInfinityCLM
+#print axioms NLS.WeightedCoeff.reindexInfinityCLM
+#print axioms NLS.WeightedCoeff.reindexInfinityCLM_apply
+#print axioms NLS.WeightedCoeff.norm_reindexInfinityCLM_le
+#print axioms NLS.KdV.periodOneEndpointWeight_reverse
+#print axioms NLS.KdV.periodOneEndpointExtract
+#print axioms NLS.KdV.periodOneEndpointExtract_apply
+#print axioms NLS.KdV.norm_periodOneEndpointExtract_le
+#print axioms NLS.KdV.periodOneEndpointExtract_original
+#print axioms NLS.KdV.periodOneEndpointOriginal_extract
+#print axioms NLS.KdV.periodOneEndpointOriginal_real_iff
+#print axioms NLS.KdV.periodOneEndpointOriginal_mean_zero_iff
+#print axioms NLS.KdV.periodOneEndpointOriginal_source_iff
+#print axioms NLS.KdV.periodOneEndpointExtract_real
+#print axioms NLS.KdV.norm_periodOneEndpointOriginal_bounds
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointRealSource
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointRealSource_same_distribution
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointPotential
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointRealSourceEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.norm_originalEndpointRealSource_le
+#print axioms NLS.Articles.KdVPseudomeasures.norm_originalEndpointPotential_le
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointRealSource_native
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointRealSignedCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.original_endpoint_real_coordinate_matches_native
+#print axioms NLS.Articles.KdVPseudomeasures.original_endpoint_real_action
+#print axioms NLS.Articles.KdVPseudomeasures.original_endpoint_real_derivative_even_modes
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointPotential_zero_val
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointRealSource_potential
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointPotential_source
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalEndpointRealSource
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalEndpointPotential
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointRealSourceHomeomorph
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointRealInclusionCLM
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointRealInclusionCLM_apply
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalEndpointRealSignedCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalEndpointRealSignedCoordinates_localInverse
