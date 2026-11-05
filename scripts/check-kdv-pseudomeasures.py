@@ -1848,6 +1848,12 @@ modules = [
     'NLS.KdV.HillQuarticEnergyContourPhase',
     'NLS.KdV.HillFiniteGapQuarticPhase',
     'NLS.Articles.KdVPseudomeasures.OriginalHillQuarticPhaseVariation',
+    'NLS.ComplexAnalysis.SelectedPhaseCotangent',
+    'NLS.KdV.HillNativeSelectedPhaseCotangent',
+    'NLS.KdV.HillCompletePhaseHamiltonianVector',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSelectedActionDirection',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionCurve',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionTangent',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

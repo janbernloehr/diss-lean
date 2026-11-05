@@ -1814,6 +1814,12 @@ import NLS.KdV.HillCompletePhasePrimitive
 import NLS.KdV.HillQuarticEnergyContourPhase
 import NLS.KdV.HillFiniteGapQuarticPhase
 import NLS.Articles.KdVPseudomeasures.OriginalHillQuarticPhaseVariation
+import NLS.ComplexAnalysis.SelectedPhaseCotangent
+import NLS.KdV.HillNativeSelectedPhaseCotangent
+import NLS.KdV.HillCompletePhaseHamiltonianVector
+import NLS.Articles.KdVPseudomeasures.OriginalHillSelectedActionDirection
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionCurve
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionTangent
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10749,3 +10755,25 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillQuarticPhaseVariation
 #print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.exists_finiteGap_quarticEnergyContour_phase_moment_formula
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1_exists_quarticEnergyContour_eq_physical
 #print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_quartic_contour_phase_formula
+#print axioms NLS.ComplexAnalysis.phaseCotangent_eq_of_signed_pair
+#print axioms NLS.KdV.hillHminusCompletePhaseCotangent_eq_selected_pair
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_fderiv_eq_selected_pair
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_HamiltonianVector_real
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_HamiltonianVector_zero_mode
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_HamiltonianVector_action_velocity
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeCoordinate_completePhase_Gardner
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeCoordinate_phase_Hamiltonian_velocity
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ActionDirection
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ActionCurve
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ActionCurve_zero
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1ActionCurve
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ActionCurve_native_image
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_positive_eq_zero_iff_gapSquare
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ActionCurve_finiteGap
+#print axioms NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1ActionCurve_energy
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_eq_nativeCoordinate
+#print axioms NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1ActionCurve_rough_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ActionCurve_native_velocity
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ActionDirection_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ActionCurve_tangent_eq_phase_HamiltonianVector
+#print axioms NLS.Articles.KdVPseudomeasures.phase_HamiltonianVector_has_genuine_H1_representative
