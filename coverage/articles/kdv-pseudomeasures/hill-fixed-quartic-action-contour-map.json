@@ -1,0 +1,142 @@
+{
+  "source": "arXiv:1610.00278v1 Lemma3.9/5.7 frequency dependencies for main1.1,1.3,5.9; physical energy contour ingredient of arXiv:1605.06690v1 Section3.1 Lemma3.2 proof; actual frequency identification now proved at finite-gap OPEN modes",
+  "reference": "https://arxiv.org/html/1605.06690v1#S3.SS1",
+  "status": "Actual physical H1 KdV frequencies equal free cubic minus twelve times the exact moment series at every open mode of every actual finite-gap source.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-fixed-quartic-action-contour-map.json",
+    "weighted_quartic_physical_energy_on_ANY_circle_enclosing_OPEN_cuts_PROVED": true,
+    "physical_complex_H1_energy_reality_PROVED": true,
+    "fixed_signed_finite_gap_support_on_genuine_action_curve_PROVED": true,
+    "common_exterior_radius_energy_identity_on_action_curve_germ_PROVED": true,
+    "ACTUAL_finiteGap_OPEN_mode_physical_H1_frequency_eq_moment_sum_PROVED": true,
+    "same_actual_product_Cauchy_patch_BEFORE_ALL_OPEN_modes_PROVED": true,
+    "finiteGap_CLOSED_mode_physical_frequency_formula_PROVED": false,
+    "ALL_H1_physical_frequency_formula_PROVED": false,
+    "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "OriginalHillQuarticContourEnclosing proves the actual weighted quartic physical energy identity on ANY positive circle enclosing ALL open Dirac cuts, by annular Cauchy deformation and actual primitive analyticity across collapsed gaps. No claim that every sufficiently large circle avoids all infinitely many closed endpoints is needed.",
+    "PeriodOneRealKdVHamiltonian proves conjugation invariance and zero imaginary part of the genuine complex physical Hamiltonian on every conjugate-reflected real H1 source. It uses the actual Fourier synthesis, real-domain derivative conjugation and interval integral; no extra smoothness or energy reality assumption is introduced.",
+    "OriginalHillActionCurveGapSupport proves every nonselected closed original gap stays closed along the genuine H1 action curve for EVERY real parameter. The actual Dirac open-gap support along this curve is contained in ONE fixed finite signed set whenever the curve lies in the same product patch, using actual original/Dirac gap transfer and reflection.",
+    "OriginalHillFixedQuarticActionCurve combines the actual finite signed support, continuous spectral endpoints and an actual admissible enclosing circle to prove ONE fixed positive radius gives the genuine physical energy/weighted quartic contour identity on a WHOLE germ of the actual selected H1 action curve. The radius can exceed ANY prescribed threshold; root-domain admissibility at the base is retained.",
+    "OriginalHillPhysicalEnergyReality identifies genuine complex physical energy with the real physical energy and proves its complex derivative along the actual selected H1 action curve is EXACTLY the actual normalized hillH1KdVFrequency at every original open selected mode.",
+    "OriginalHillFiniteGapPhysicalFrequency differentiates the fixed-radius contour identity along this genuine curve, whose source tangent was already proved equal to the ACTUAL phase Hamiltonian vector. Equality of derivatives identifies the actual physical H1 frequency with the exact quartic contour phase bracket. The verified cubic contour decomposition then gives ACTUAL omega_n=(2*pi*n)^3-12*sum_m m*Omega_nm^(2) for EVERY open selected mode at EVERY original finite-gap H1 source. One actual product/Cauchy patch is chosen BEFORE quantifying over all open n.",
+    "Closed selected modes, arbitrary H1 sources, cross-Miura gluing and actual rough KdV frequencies/evolution remain UNPROVED. Appendix B/Main1.4 are complete; main1.1,1.3,5.1,5.9 remain UNPROVED and the goal stays ACTIVE."
+  ],
+  "declarations": [
+    "NLS.Articles.KdVPseudomeasures.hillH1_quarticEnergyContour_eq_physical_of_enclosing",
+    "NLS.KdV.periodOneKdVHamiltonian_conj_eq_of_real",
+    "NLS.KdV.periodOneKdVHamiltonian_im_eq_zero_of_real",
+    "NLS.Articles.KdVPseudomeasures.hillH1ActionCurve_gap_zero_of_base_gap_zero",
+    "NLS.Articles.KdVPseudomeasures.exists_hillH1ActionCurve_signed_gap_support",
+    "NLS.Articles.KdVPseudomeasures.exists_fixed_quarticEnergyContour_on_actionCurve",
+    "NLS.Articles.KdVPseudomeasures.hillH1_complexEnergy_eq_realEnergy",
+    "NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1ActionCurve_complex_energy",
+    "NLS.Articles.KdVPseudomeasures.exists_quarticEnergyContour_phase_bracket_eq_physical_frequency",
+    "NLS.Articles.KdVPseudomeasures.hillH1_finiteGap_physical_frequency_eq_moment_series",
+    "NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_open_physical_frequency_formula"
+  ],
+  "files": [
+    "NLS/Articles/KdVPseudomeasures/OriginalHillQuarticContourEnclosing.lean",
+    "NLS/KdV/PeriodOneRealKdVHamiltonian.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillActionCurveGapSupport.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFixedQuarticActionCurve.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillPhysicalEnergyReality.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapPhysicalFrequency.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "19edef8a19f59bbd1e9fa8984852a2975911583d",
+    "baseline_modules": 1823,
+    "baseline_non_audit_sources_verified_unchanged": 1822,
+    "new_modules_compiled": 6,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.SourceFullAbelianPhysicalContourLocal",
+        "source": "NLS/ZakharovShabat/SourceFullAbelianPhysicalContourLocal.lean",
+        "source_sha256": "5478744985dbdfe0ccf5bce6a1215cdbc5bea61e3c5cd2174b749e46224adc07"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.KdV.PeriodOneHamiltonian",
+        "source": "NLS/KdV/PeriodOneHamiltonian.lean",
+        "source_sha256": "389833b3229dbaa24944a23450faa44577294053034002a4199e98378db405a9",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillOnIndexRealClosedGap",
+        "source": "NLS/KdV/HillOnIndexRealClosedGap.lean",
+        "source_sha256": "2bff04105b5525656c06b9ca603dc8949c64ed75c963206b258c82d4223908d8",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillQuarticPhaseVariation",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillQuarticPhaseVariation.lean",
+        "source_sha256": "0a70cd95cb018d7e28d04541d8c14f6f8e97907c888ea8ff9cebeee1937465b7",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionCurve",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1ActionCurve.lean",
+        "source_sha256": "ba310547c49ba9f39af91a0e5f4dca11bcfe897870ac23520e0116013ad40816",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionTangent",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1ActionTangent.lean",
+        "source_sha256": "3fa39a3874e35098056101c18038cc38e3d0ceea21722e869ef89cf2413b7163",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1829,
+    "audited_declarations": 8965,
+    "theorems": 7557,
+    "definitions": 1408,
+    "new_theorems": 11,
+    "new_definitions": 0,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-fixed-quartic-action-contour.log",
+    "log_sha256": "e3f8d5843e59906755ac45e1215e3d911decaa123d1f2306b83816a65e6d90d9"
+  },
+  "remaining_obligations": [
+    "Extend the NOW PROVED actual finite-gap physical frequency formula from OPEN selected modes to CLOSED selected modes using an actual finite-gap-preserving selected-coordinate opening curve and continuity of actual H1 frequencies and the same local exact moment sum. The existing selected ACTION curve is constant at a closed selected mode and cannot open it.",
+    "Extend the actual physical frequency formula to ALL H1 sources by the verified genuine strong finite-gap approximation and continuity of actual H1 frequencies and the SAME local moment series. Glue ALREADY weighted-Banach-analytic local rough moment sums across DIFFERENT Miura/product patches using genuine dense H1 agreement. Actual rough KdV frequencies remain UNPROVED.",
+    "Establish ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for Wiener regularity. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}

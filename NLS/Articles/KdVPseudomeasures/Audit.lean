@@ -1820,6 +1820,12 @@ import NLS.KdV.HillCompletePhaseHamiltonianVector
 import NLS.Articles.KdVPseudomeasures.OriginalHillSelectedActionDirection
 import NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionCurve
 import NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionTangent
+import NLS.Articles.KdVPseudomeasures.OriginalHillQuarticContourEnclosing
+import NLS.KdV.PeriodOneRealKdVHamiltonian
+import NLS.Articles.KdVPseudomeasures.OriginalHillActionCurveGapSupport
+import NLS.Articles.KdVPseudomeasures.OriginalHillFixedQuarticActionCurve
+import NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalEnergyReality
+import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapPhysicalFrequency
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10777,3 +10783,14 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionTangent
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1ActionDirection_apply
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1ActionCurve_tangent_eq_phase_HamiltonianVector
 #print axioms NLS.Articles.KdVPseudomeasures.phase_HamiltonianVector_has_genuine_H1_representative
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1_quarticEnergyContour_eq_physical_of_enclosing
+#print axioms NLS.KdV.periodOneKdVHamiltonian_conj_eq_of_real
+#print axioms NLS.KdV.periodOneKdVHamiltonian_im_eq_zero_of_real
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ActionCurve_gap_zero_of_base_gap_zero
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillH1ActionCurve_signed_gap_support
+#print axioms NLS.Articles.KdVPseudomeasures.exists_fixed_quarticEnergyContour_on_actionCurve
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1_complexEnergy_eq_realEnergy
+#print axioms NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1ActionCurve_complex_energy
+#print axioms NLS.Articles.KdVPseudomeasures.exists_quarticEnergyContour_phase_bracket_eq_physical_frequency
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1_finiteGap_physical_frequency_eq_moment_series
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_open_physical_frequency_formula

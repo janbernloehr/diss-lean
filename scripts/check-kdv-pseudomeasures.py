@@ -1854,6 +1854,12 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillSelectedActionDirection',
     'NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionCurve',
     'NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionTangent',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillQuarticContourEnclosing',
+    'NLS.KdV.PeriodOneRealKdVHamiltonian',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillActionCurveGapSupport',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFixedQuarticActionCurve',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalEnergyReality',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapPhysicalFrequency',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
