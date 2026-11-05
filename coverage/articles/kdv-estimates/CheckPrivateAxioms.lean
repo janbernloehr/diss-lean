@@ -1474,6 +1474,17 @@ import NLS.FunctionalAnalysis.SurjectiveOperatorConnectedFamily
 import NLS.KdV.HillOriginalDerivativeBijectivity
 import NLS.KdV.HillOriginalLocalInverse
 import NLS.KdV.HillOriginalGlobalInverse
+import NLS.KdV.HillOriginalRealBirkhoffCoordinates
+import NLS.Poisson.RealCartesianSignedMatrix
+import NLS.KdV.HillOriginalRealCartesianGardner
+import NLS.SequenceSpaces.RealWeightedNatPair
+import NLS.KdV.HillBirkhoffTargetSpaces
+import NLS.KdV.HillOriginalBirkhoffMap
+import NLS.KdV.HillOriginalWeightedMeanZeroSource
+import NLS.KdV.HillOriginalBirkhoffWeightedRestriction
+import NLS.KdV.HillOriginalBirkhoffSobolevRestriction
+import NLS.KdV.HillOriginalBirkhoffActions
+import NLS.Articles.KdVEstimates.MainBirkhoffEstimates
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2706,7 +2717,25 @@ run_cmd do
     ``NLS.FunctionalAnalysis.eventually_not_injective_of_surjective,
     ``NLS.FunctionalAnalysis.exists_hilbert_rightInverse_of_surjective,
     ``NLS.FunctionalAnalysis.exists_inverse_norm_le_two_mul_of_composition_near,
-    ``NLS.FunctionalAnalysis.inverse_norm_le_two_mul_of_composition_near]
+    ``NLS.FunctionalAnalysis.inverse_norm_le_two_mul_of_composition_near,
+    ``NLS.Poisson.realCartesianMatrix_of_signed,
+    ``NLS.RealWeightedNatPair,
+    ``NLS.RealWeightedNatPair.instAddCommGroup,
+    ``NLS.RealWeightedNatPair.instCompleteSpace,
+    ``NLS.RealWeightedNatPair.instModuleReal,
+    ``NLS.RealWeightedNatPair.instNormedAddCommGroup,
+    ``NLS.RealWeightedNatPair.instNormedSpaceReal,
+    ``NLS.RealWeightedNatPair.norm_sq_eq_tsum,
+    ``NLS.RealWeightedNatPair.normalizationEquiv,
+    ``NLS.RealWeightedNatPair.normalizationIsometry,
+    ``NLS.RealWeightedNatPair.normalization_apply,
+    ``NLS.RealWeightedNatPair.normalization_coordinate_norm_sq,
+    ``NLS.RealWeightedNatPair.normalization_symm_apply,
+    ``NLS.RealWeightedNatPair.normalization_symm_apply_of_mul,
+    ``NLS.RealWeightedNatPair.summable_weighted_sq,
+    ``NLS.realNatPairNormalization,
+    ``NLS.realNatPairNormalization.eq_1,
+    ``NLS.realWeightedNatPairSubmodule]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -6397,3 +6397,14 @@ import NLS.FunctionalAnalysis.SurjectiveOperatorConnectedFamily
 import NLS.KdV.HillOriginalDerivativeBijectivity
 import NLS.KdV.HillOriginalLocalInverse
 import NLS.KdV.HillOriginalGlobalInverse
+import NLS.KdV.HillOriginalRealBirkhoffCoordinates
+import NLS.Poisson.RealCartesianSignedMatrix
+import NLS.KdV.HillOriginalRealCartesianGardner
+import NLS.SequenceSpaces.RealWeightedNatPair
+import NLS.KdV.HillBirkhoffTargetSpaces
+import NLS.KdV.HillOriginalBirkhoffMap
+import NLS.KdV.HillOriginalWeightedMeanZeroSource
+import NLS.KdV.HillOriginalBirkhoffWeightedRestriction
+import NLS.KdV.HillOriginalBirkhoffSobolevRestriction
+import NLS.KdV.HillOriginalBirkhoffActions
+import NLS.Articles.KdVEstimates.MainBirkhoffEstimates
