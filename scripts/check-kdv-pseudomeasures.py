@@ -1577,6 +1577,16 @@ modules = [
     'NLS.ZakharovShabat.SourceDirichletTerminalSequence',
     'NLS.ZakharovShabat.SourceDirichletTerminalDifferential',
     'NLS.ZakharovShabat.SourceDirichletTerminalJacobianCompact',
+    'NLS.SequenceSpaces.SignedPositiveSplice',
+    'NLS.ZakharovShabat.SourceNormalizedMidpointSymbol',
+    'NLS.ZakharovShabat.SourceSignedTerminalSequence',
+    'NLS.SequenceSpaces.SignedHalfTerminalNormalization',
+    'NLS.ZakharovShabat.SourceHillWeightedTerminalModel',
+    'NLS.KdV.HillSpectralCoreDiracModel',
+    'NLS.KdV.HillSpectralCoreFourierPrincipal',
+    'NLS.KdV.HillNativeJacobianFredholm',
+    'NLS.FunctionalAnalysis.CompactPerturbationDenseRange',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeJacobianInverse',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

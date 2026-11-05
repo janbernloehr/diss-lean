@@ -1543,6 +1543,16 @@ import NLS.ZakharovShabat.SourceDirichletOmittedInverseSequence
 import NLS.ZakharovShabat.SourceDirichletTerminalSequence
 import NLS.ZakharovShabat.SourceDirichletTerminalDifferential
 import NLS.ZakharovShabat.SourceDirichletTerminalJacobianCompact
+import NLS.SequenceSpaces.SignedPositiveSplice
+import NLS.ZakharovShabat.SourceNormalizedMidpointSymbol
+import NLS.ZakharovShabat.SourceSignedTerminalSequence
+import NLS.SequenceSpaces.SignedHalfTerminalNormalization
+import NLS.ZakharovShabat.SourceHillWeightedTerminalModel
+import NLS.KdV.HillSpectralCoreDiracModel
+import NLS.KdV.HillSpectralCoreFourierPrincipal
+import NLS.KdV.HillNativeJacobianFredholm
+import NLS.FunctionalAnalysis.CompactPerturbationDenseRange
+import NLS.Articles.KdVPseudomeasures.OriginalHillNativeJacobianInverse
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9447,3 +9457,49 @@ import NLS.ZakharovShabat.SourceDirichletTerminalJacobianCompact
 #print axioms NLS.ZakharovShabat.SourceLemma12_12Data.memlp_dirichlet_omitted_inverse_sub_free
 #print axioms NLS.ZakharovShabat.SourceLemma12_12Data.memlp_terminal_closed_sub_free_of_gradient_estimates
 #print axioms NLS.ZakharovShabat.exists_gapWeightedEtaTerminalSequence_compact_derivative_domain
+#print axioms NLS.Coeff.positiveFrequencySymbol
+#print axioms NLS.Coeff.positiveFrequencyProjection
+#print axioms NLS.Coeff.positiveFrequencyProjection_apply
+#print axioms NLS.Coeff.signedPositiveSplice
+#print axioms NLS.Coeff.signedPositiveSplice_apply
+#print axioms NLS.Coeff.signedPositiveSplice_zero
+#print axioms NLS.Coeff.signedPositiveSplice_positive
+#print axioms NLS.Coeff.signedPositiveSplice_negative
+#print axioms NLS.ZakharovShabat.sourcePositiveNormalizedMidpoint
+#print axioms NLS.ZakharovShabat.sourceNormalizedMidpointSymbol
+#print axioms NLS.ZakharovShabat.norm_sourcePositiveNormalizedMidpoint_sub_one_le
+#print axioms NLS.ZakharovShabat.SourceLemma12_12Data.normalized_midpoint_symbol_data
+#print axioms NLS.ZakharovShabat.SourceLemma12_12Data.normalized_midpoint_symbol_unit_tail
+#print axioms NLS.ZakharovShabat.sourceSignedTerminalSequence
+#print axioms NLS.ZakharovShabat.sourceSignedTerminalFourier
+#print axioms NLS.ZakharovShabat.sourceSignedTerminalFourier_positive
+#print axioms NLS.ZakharovShabat.sourceSignedTerminalFourier_negative
+#print axioms NLS.ZakharovShabat.sourceSignedTerminalSequence_zero
+#print axioms NLS.ZakharovShabat.exists_sourceSignedTerminalSequence_compact_derivative_domain
+#print axioms NLS.WeightedCoeff.signedHalf_terminal_normalization
+#print axioms NLS.WeightedCoeff.signedHalf_terminal_normalization_negative
+#print axioms NLS.WeightedCoeff.signedHalf_halfFourier_derivative_normalization
+#print axioms NLS.WeightedCoeff.signedHalf_halfFourier_derivative_normalization_negative
+#print axioms NLS.ZakharovShabat.sourceHillTerminalScale
+#print axioms NLS.ZakharovShabat.sourceHillTerminalFourier
+#print axioms NLS.ZakharovShabat.sourceHillTerminalFourier_weighted_apply
+#print axioms NLS.ZakharovShabat.sourceHillTerminalModel
+#print axioms NLS.ZakharovShabat.sourceHillTerminalModel_weighted_apply
+#print axioms NLS.ZakharovShabat.sourceHillTerminalModel_zero_mode
+#print axioms NLS.ZakharovShabat.exists_sourceHillTerminalModel_compact_derivative_domain
+#print axioms NLS.KdV.hillSpectralCoreDiracPrincipal
+#print axioms NLS.KdV.exists_hillSpectralCore_Dirac_model
+#print axioms NLS.KdV.hillSpectralCoreDiracPrincipal_eq_halfFourier
+#print axioms NLS.KdV.isCompactOperator_hillSpectralCoreDiracPrincipal_sub_halfFourier
+#print axioms NLS.KdV.exists_hillSpectralCore_compact_halfFourier_neighborhood
+#print axioms NLS.KdV.hillMeanZeroJacobianReference
+#print axioms NLS.KdV.isCompactOperator_hillMeanZeroJacobian_sub_reference
+#print axioms NLS.CompactSpectrum.bijective_of_compact_sub_equiv_denseRange
+#print axioms NLS.CompactSpectrum.equivOfCompactDenseRange
+#print axioms NLS.CompactSpectrum.equivOfCompactDenseRange_toContinuousLinearMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeJacobian_bijective
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeJacobianEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeJacobianEquiv_toContinuousLinearMap
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Jacobian_equivalence
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeMap_localInverse
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_localInverse
