@@ -1132,6 +1132,9 @@ import NLS.MKdV.QuasiHillL2Sobolev
 import NLS.MKdV.MiuraL2HillDirichlet
 import NLS.KdV.HillHminusOneDirichlet
 import NLS.KdV.HillHminusOriginalSource
+import NLS.KdV.HillHminusSpectralDifferentials
+import NLS.KdV.HillHminusSpectralInvolution
+import NLS.KdV.HillHminusDirichletCharts
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
