@@ -1021,6 +1021,8 @@ import NLS.KdV.HillFullIndexedPhase
 import NLS.KdV.HillRegularIndexedCartesian
 import NLS.KdV.HillIndexedCartesian
 import NLS.KdV.HillIndexedFlowCartesianDynamics
+import NLS.KdV.HillOwnDirichletNumerator
+import NLS.KdV.HillNonstationaryIndexedFlows
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/

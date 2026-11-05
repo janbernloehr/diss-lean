@@ -5944,3 +5944,5 @@ import NLS.KdV.HillFullIndexedPhase
 import NLS.KdV.HillRegularIndexedCartesian
 import NLS.KdV.HillIndexedCartesian
 import NLS.KdV.HillIndexedFlowCartesianDynamics
+import NLS.KdV.HillOwnDirichletNumerator
+import NLS.KdV.HillNonstationaryIndexedFlows
