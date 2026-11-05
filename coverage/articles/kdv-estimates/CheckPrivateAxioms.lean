@@ -1363,6 +1363,17 @@ import NLS.KdV.HillHminusEndpointCartesianCommutation
 import NLS.KdV.HillHminusEndpointCartesianMixed
 import NLS.KdV.HillHminusEndpointConjugateCommutation
 import NLS.KdV.HillHminusEndpointCartesianMatrix
+import NLS.Poisson.HminusGardnerWeightedEvolution
+import NLS.KdV.HillHminusActionRotationDifferentials
+import NLS.KdV.HillHminusConjugateActionRotation
+import NLS.KdV.HillHminusSignedBracketEvolution
+import NLS.Poisson.HminusGardnerNormalizedEvolution
+import NLS.KdV.HillHminusNormalizedCartesianBrackets
+import NLS.KdV.HillHminusTraceHamiltonianVector
+import NLS.KdV.HillHminusIndexedBracketDerivative
+import NLS.KdV.HillHminusIndexedBracketCurve
+import NLS.KdV.HillHminusCartesianDefectEvolution
+import NLS.KdV.HillHminusActionDefectCurve
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2550,7 +2561,9 @@ run_cmd do
     ``NLS.Poisson.hminusGardnerBracket_mul_right,
     ``NLS.Poisson.hminusGardnerBracket_of_fderiv_smul_left,
     ``NLS.Poisson.hminusGardnerBracket_of_fderiv_smul_right,
-    ``NLS.Poisson.hminusGardnerBracket_products_zero]
+    ``NLS.Poisson.hminusGardnerBracket_products_zero,
+    ``NLS.Poisson.hminusGardnerBracket_normalized_hamiltonian_derivative_zero,
+    ``NLS.Poisson.hminusGardnerBracket_weighted_hamiltonian_derivative]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

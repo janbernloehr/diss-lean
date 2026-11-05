@@ -6286,3 +6286,14 @@ import NLS.KdV.HillHminusEndpointCartesianCommutation
 import NLS.KdV.HillHminusEndpointCartesianMixed
 import NLS.KdV.HillHminusEndpointConjugateCommutation
 import NLS.KdV.HillHminusEndpointCartesianMatrix
+import NLS.Poisson.HminusGardnerWeightedEvolution
+import NLS.KdV.HillHminusActionRotationDifferentials
+import NLS.KdV.HillHminusConjugateActionRotation
+import NLS.KdV.HillHminusSignedBracketEvolution
+import NLS.Poisson.HminusGardnerNormalizedEvolution
+import NLS.KdV.HillHminusNormalizedCartesianBrackets
+import NLS.KdV.HillHminusTraceHamiltonianVector
+import NLS.KdV.HillHminusIndexedBracketDerivative
+import NLS.KdV.HillHminusIndexedBracketCurve
+import NLS.KdV.HillHminusCartesianDefectEvolution
+import NLS.KdV.HillHminusActionDefectCurve
