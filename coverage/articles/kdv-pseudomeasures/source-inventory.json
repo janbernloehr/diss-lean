@@ -3029,6 +3029,29 @@
         "NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_cubic_contour"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-finite-gap-cubic-decomposition-map.json"
+    },
+    {
+      "label": "Actual primitive phase variation and physical-normalized quartic contour bracket equals exact moment series",
+      "status": "proved contour functional phase derivative with same-patch original finite-gap complex physical energy value; physical energy derivative along action curves unproved; four main theorems unproved",
+      "declarations": [
+        "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.source_hasFDerivAt_of_real",
+        "NLS.KdV.HillProductEquationPatch.liftedAbelianPrimitive",
+        "NLS.KdV.HillProductEquationPatch.analytic_liftedAbelianPrimitive",
+        "NLS.KdV.HillProductEquationPatch.liftedAbelianPrimitive_source_hasFDerivAt_of_real",
+        "NLS.Poisson.gardnerCotangentBivector_circleIntegral_of_jointAnalytic",
+        "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_liftedPrimitive_Gardner_of_real",
+        "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_weightedQuarticIntegrand_Gardner_of_real",
+        "NLS.KdV.HillProductEquationPatch.weightedQuarticPrimitiveCircle",
+        "NLS.KdV.HillProductEquationPatch.quarticEnergyContour",
+        "NLS.KdV.HillProductEquationPatch.analyticAt_weightedQuarticPrimitiveCircle",
+        "NLS.KdV.HillProductEquationPatch.analyticAt_quarticEnergyContour",
+        "NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_weightedQuarticCircle_Gardner_of_real",
+        "NLS.KdV.HillPhysicalOnIndexPhaseChart.quarticEnergyContour_completePhase_Gardner_of_real",
+        "NLS.KdV.HillPhysicalOnIndexPhaseChart.exists_finiteGap_quarticEnergyContour_phase_moment_formula",
+        "NLS.Articles.KdVPseudomeasures.hillH1_exists_quarticEnergyContour_eq_physical",
+        "NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_quartic_contour_phase_formula"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-physical-quartic-phase-variation-map.json"
     }
   ],
   "reuse_map": [
@@ -3108,8 +3131,8 @@
     }
   ],
   "remaining_obligations": [
-    "Identify the NOW PROVED actual finite-gap cubic outer contour with the GENUINE physical Hamiltonian frequency. Transfer the normalized phase-discriminant bracket to the actual primitive and justify the physical quartic energy contour derivative along genuine finite-gap canonical action directions with a common outer circle and exact factor 2/(i*pi). Central zero, negative-gap doubling, closed-gap filling, finite-hole deformation and the free-minus12 actual moment-series CONTOUR identity are COMPLETE. The finite-gap energy identity cannot be differentiated as an ambient Hminus identity or along arbitrary H1 perturbations opening high gaps.",
-    "After physical finite-gap frequency identification at OPEN selected modes, extend to collapsed selected modes by actual finite-gap action perturbations and continuity, then to ALL H1 by verified strong finite-gap approximation. Glue the ALREADY weighted-Banach-analytic local rough sums across DIFFERENT Miura/product patches by genuine dense H1 agreement, or prove cross-patch independence directly. Actual rough KdV frequencies remain UNPROVED.",
+    "Prove the GENUINE physical frequency equals the NOW VERIFIED actual quartic contour phase bracket. Construct true finite-gap canonical action curves preserving finite coordinate support, identify the actual phase Hamiltonian direction with their source tangent, and justify SAME-radius physical energy/contour equality on a whole curve germ before differentiating. The primitive source derivative, normalized phase-to-primitive variation, weighted quartic Gardner derivative, exact2/(i*pi) cubic contour, finite-hole deformation and free-minus12 series formula are COMPLETE. Pointwise finite-gap energy equality cannot be differentiated as an ambient Hminus identity or along arbitrary H1 perturbations opening high gaps.",
+    "After physical finite-gap frequency identification at OPEN selected modes, extend to collapsed selected modes by actual finite-gap action perturbations and continuity, then to ALL H1 by verified strong finite-gap approximation. Glue the ALREADY weighted-Banach-analytic local rough moment sums across DIFFERENT Miura/product patches by genuine dense H1 agreement, or prove cross-patch independence directly. Actual rough KdV frequencies remain UNPROVED.",
     "Establish ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
   ],
   "workspace": {
@@ -6926,6 +6949,32 @@
     "outer_radius_threshold_BEFORE_ALL_open_selected_indices_PROVED": true,
     "outer_sphere_canonical_root_domain_hypothesis_RETAINED": true,
     "genuine_original_finite_gap_rough_source_factory_and_original_open_gap_condition_PROVED": true,
+    "finite_gap_physical_energy_phase_bracket_differentiation_PROVED": false,
+    "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
+    "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "actual_Hill_quartic_phase_variation": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-physical-quartic-phase-variation-map.json",
+    "ANY_actual_Cauchy_family_exact_source_differential_at_real_sources_PROVED": true,
+    "actual_fixed_shift_Hill_lifted_primitive_joint_analytic_and_source_cotangent_PROVED": true,
+    "actual_Hminus_Gardner_bivector_commutes_with_analytic_circle_integration_PROVED": true,
+    "ACTUAL_complete_phase_primitive_bracket_Psi_over_two_root_PROVED": true,
+    "ALL_primitive_normalization_indices_and_divisor_resonances_INCLUDED": true,
+    "ACTUAL_weighted_quartic_chain_rule_retains_TWO_z_Jacobian_PROVED": true,
+    "actual_quartic_energy_CONTOUR_phase_bracket_EXACT_two_over_i_pi_cubic_PROVED": true,
+    "finite_gap_energy_CONTOUR_phase_bracket_eq_free_minus12_actual_series_PROVED": true,
+    "SAME_original_finite_gap_H1_patch_and_contour_physical_complex_energy_VALUE_PROVED": true,
+    "ONE_threshold_before_ALL_open_original_selected_modes_with_actual_phase_charts_PROVED": true,
+    "outer_sphere_canonical_root_domain_hypothesis_RETAINED": true,
     "finite_gap_physical_energy_phase_bracket_differentiation_PROVED": false,
     "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
     "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,

@@ -1807,6 +1807,13 @@ import NLS.KdV.HillCentralCubicContour
 import NLS.KdV.HillCubicContourReflection
 import NLS.KdV.HillFiniteGapCubicContour
 import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapCubicContour
+import NLS.ZakharovShabat.SourceUniformAbelianSourceDifferential
+import NLS.KdV.HillLiftedPrimitiveDifferential
+import NLS.Poisson.GardnerBracketCircleIntegral
+import NLS.KdV.HillCompletePhasePrimitive
+import NLS.KdV.HillQuarticEnergyContourPhase
+import NLS.KdV.HillFiniteGapQuarticPhase
+import NLS.Articles.KdVPseudomeasures.OriginalHillQuarticPhaseVariation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10726,3 +10733,19 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapCubicContour
 #print axioms NLS.KdV.HillProductEquationPatch.filledCubic_positive_circle_reduction
 #print axioms NLS.KdV.HillProductEquationPatch.exists_finiteGap_cubic_contour_moment_formula
 #print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_cubic_contour
+#print axioms NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.source_hasFDerivAt_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.liftedAbelianPrimitive
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_liftedAbelianPrimitive
+#print axioms NLS.KdV.HillProductEquationPatch.liftedAbelianPrimitive_source_hasFDerivAt_of_real
+#print axioms NLS.Poisson.gardnerCotangentBivector_circleIntegral_of_jointAnalytic
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_liftedPrimitive_Gardner_of_real
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_weightedQuarticIntegrand_Gardner_of_real
+#print axioms NLS.KdV.HillProductEquationPatch.weightedQuarticPrimitiveCircle
+#print axioms NLS.KdV.HillProductEquationPatch.quarticEnergyContour
+#print axioms NLS.KdV.HillProductEquationPatch.analyticAt_weightedQuarticPrimitiveCircle
+#print axioms NLS.KdV.HillProductEquationPatch.analyticAt_quarticEnergyContour
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.completePhase_weightedQuarticCircle_Gardner_of_real
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.quarticEnergyContour_completePhase_Gardner_of_real
+#print axioms NLS.KdV.HillPhysicalOnIndexPhaseChart.exists_finiteGap_quarticEnergyContour_phase_moment_formula
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1_exists_quarticEnergyContour_eq_physical
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_quartic_contour_phase_formula

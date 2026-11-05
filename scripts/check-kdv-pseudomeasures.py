@@ -1841,6 +1841,13 @@ modules = [
     'NLS.KdV.HillCubicContourReflection',
     'NLS.KdV.HillFiniteGapCubicContour',
     'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapCubicContour',
+    'NLS.ZakharovShabat.SourceUniformAbelianSourceDifferential',
+    'NLS.KdV.HillLiftedPrimitiveDifferential',
+    'NLS.Poisson.GardnerBracketCircleIntegral',
+    'NLS.KdV.HillCompletePhasePrimitive',
+    'NLS.KdV.HillQuarticEnergyContourPhase',
+    'NLS.KdV.HillFiniteGapQuarticPhase',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillQuarticPhaseVariation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
