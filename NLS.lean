@@ -6199,3 +6199,12 @@ import NLS.ComplexAnalysis.CloseShiftedFrequency
 import NLS.ZakharovShabat.ShiftedSineExteriorBounds
 import NLS.KdV.HillHminusNumeratorDecay
 import NLS.KdV.HillHminusFixedPhysicalNumerators
+import NLS.KdV.HminusOneMiuraDirichlet
+import NLS.KdV.MiuraL2DirichletAuxiliary
+import NLS.KdV.HillHminusAuxiliaryDirichlet
+import NLS.KdV.MiuraDirichletCoordinates
+import NLS.KdV.HillHminusDirichletCoordinateCharts
+import NLS.SequenceSpaces.UniformPositiveFrequencyNonzero
+import NLS.KdV.HillHminusCommonDirichletFamily
+import NLS.KdV.HillHminusCommonDirichletSheets
+import NLS.KdV.HillHminusCommonPhysicalDirichlet

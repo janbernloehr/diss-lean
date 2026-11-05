@@ -1276,6 +1276,15 @@ import NLS.ComplexAnalysis.CloseShiftedFrequency
 import NLS.ZakharovShabat.ShiftedSineExteriorBounds
 import NLS.KdV.HillHminusNumeratorDecay
 import NLS.KdV.HillHminusFixedPhysicalNumerators
+import NLS.KdV.HminusOneMiuraDirichlet
+import NLS.KdV.MiuraL2DirichletAuxiliary
+import NLS.KdV.HillHminusAuxiliaryDirichlet
+import NLS.KdV.MiuraDirichletCoordinates
+import NLS.KdV.HillHminusDirichletCoordinateCharts
+import NLS.SequenceSpaces.UniformPositiveFrequencyNonzero
+import NLS.KdV.HillHminusCommonDirichletFamily
+import NLS.KdV.HillHminusCommonDirichletSheets
+import NLS.KdV.HillHminusCommonPhysicalDirichlet
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2377,7 +2386,8 @@ run_cmd do
     ``NLS.ZakharovShabat.exists_bound_sine_quotient_near_separated,
     ``NLS.ZakharovShabat.exists_threshold_free_div_entireSingleSpectralProduct_le_two,
     ``NLS.ZakharovShabat.exists_threshold_sourceOddPsiCandidate_sub_sine,
-    ``NLS.ZakharovShabat.exists_threshold_sourcePsiCandidate_sub_sine]
+    ``NLS.ZakharovShabat.exists_threshold_sourcePsiCandidate_sub_sine,
+    ``NLS.exists_local_uniform_positive_frequencies_ne_zero]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

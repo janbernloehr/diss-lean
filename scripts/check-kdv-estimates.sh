@@ -211,6 +211,7 @@ modules+=(NLS/KdV/MiuraCanonicalEndpoints NLS/SequenceSpaces/OrderedPairedReflec
 modules+=(NLS/KdV/HillHminusOneNLSMovingSheets NLS/SequenceSpaces/PeriodOneMiuraReality NLS/KdV/HillHminusOneMiuraSheets NLS/ComplexAnalysis/PiecewiseLoopPullback NLS/ComplexAnalysis/QuadraticEnergyLoop NLS/KdV/HillHminusOneMiuraContour NLS/ComplexAnalysis/QuadraticEnergySheet NLS/KdV/MiuraHillPsiEnergyRoot NLS/KdV/HillMiuraPeriodCircleGeometry NLS/KdV/HillMiuraOriginalContourGeometry NLS/KdV/HillHminusPhysicalDifferentials NLS/KdV/HillHminusEnergyPeriods)
 modules+=(NLS/ComplexAnalysis/QuadraticCircleHomotopyGeometry NLS/KdV/HillIntrinsicCircleEndpoints NLS/ComplexAnalysis/QuadraticCirclePeriodTransfer NLS/KdV/HillHminusIntrinsicPeriods NLS/KdV/HillHminusNumeratorReality NLS/KdV/HillHminusPhysicalNumeratorIdentification)
 modules+=(NLS/ZakharovShabat/SourcePsiSeparatedGrowth NLS/ComplexAnalysis/CloseShiftedFrequency NLS/ZakharovShabat/ShiftedSineExteriorBounds NLS/KdV/HillHminusNumeratorDecay NLS/KdV/HillHminusFixedPhysicalNumerators)
+modules+=(NLS/KdV/HminusOneMiuraDirichlet NLS/KdV/MiuraL2DirichletAuxiliary NLS/KdV/HillHminusAuxiliaryDirichlet NLS/KdV/MiuraDirichletCoordinates NLS/KdV/HillHminusDirichletCoordinateCharts NLS/SequenceSpaces/UniformPositiveFrequencyNonzero NLS/KdV/HillHminusCommonDirichletFamily NLS/KdV/HillHminusCommonDirichletSheets NLS/KdV/HillHminusCommonPhysicalDirichlet)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
