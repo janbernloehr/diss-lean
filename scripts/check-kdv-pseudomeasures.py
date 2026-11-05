@@ -1727,6 +1727,18 @@ modules = [
     'NLS.ZakharovShabat.SourceFullAbelianInverseGapCircle',
     'NLS.ZakharovShabat.SourceFiniteGapInverseMoment',
     'NLS.KdV.HillMiuraInverseMoment',
+    'NLS.KdV.HillMiuraActionReflection',
+    'NLS.ZakharovShabat.SourceWeightedPrimitiveBoundaryIntegral',
+    'NLS.ZakharovShabat.SourceRealInverseAction',
+    'NLS.RealAnalysis.InverseMomentCauchySchwarz',
+    'NLS.ZakharovShabat.SourceInverseActionCauchySchwarz',
+    'NLS.KdV.HillMiuraInverseCauchySchwarz',
+    'NLS.ZakharovShabat.SourceFiniteGapRealInverseMoment',
+    'NLS.KdV.HillMiuraFiniteGapInverseBound',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapRiccatiBound',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillInverseActionCoercivity',
+    'NLS.FunctionalAnalysis.BoundedPreimagesOfNormControl',
+    'NLS.Articles.KdVPseudomeasures.MainTheorem14',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

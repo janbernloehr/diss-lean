@@ -4748,7 +4748,35 @@
       "NLS.KdV.hillMiura_mean_zero_central_data",
       "NLS.KdV.hillMiura_fullPrimitive_zero_of_mean_zero",
       "NLS.KdV.analytic_hillMiura_filled_inverse_square",
-      "NLS.KdV.hillMiura_finiteGap_inverse_moment_norm_sq"
+      "NLS.KdV.hillMiura_finiteGap_inverse_moment_norm_sq",
+      "NLS.KdV.hillMiura_realGapAffinePoint_neg",
+      "NLS.KdV.hillMiura_realGapArcoshProfile_neg",
+      "NLS.KdV.hillMiura_realGapCosineProfile_neg",
+      "NLS.KdV.hillMiura_realHigherAction_neg",
+      "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.weighted_primitive_circle_eq_boundaryIntegral",
+      "NLS.ZakharovShabat.sourceRealInverseAction",
+      "NLS.ZakharovShabat.sourceRealInverseAction_of_collapsed",
+      "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.inverse_primitive_circle_eq_real_inverseAction",
+      "NLS.RealAnalysis.integral_inverse_moment_cauchySchwarz",
+      "NLS.ZakharovShabat.source_inverseAction_CauchySchwarz",
+      "NLS.ZakharovShabat.source_inverseAction_nonneg",
+      "NLS.KdV.hillMiura_gap_coordinate_div_index_pos",
+      "NLS.KdV.hillMiura_inverseAction_CauchySchwarz",
+      "NLS.KdV.hillMiura_inverseAction_nonneg",
+      "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.zero_not_mem_selected_disc_of_central_zero",
+      "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.inverse_primitive_circle_eq_neg_pi_inverseAction",
+      "NLS.ZakharovShabat.sourceFiniteGap_real_inverse_moment_balance",
+      "NLS.KdV.norm_sq_hillMiura_finiteGap_le_signed_inverse_actions",
+      "NLS.Articles.KdVPseudomeasures.hillMiura_signed_inverse_actions_eq_mass",
+      "NLS.Articles.KdVPseudomeasures.norm_sq_mean_zero_finiteGap_lift_le_inverseActionMass",
+      "NLS.Articles.KdVPseudomeasures.continuous_hillNativeInverseActionMass",
+      "NLS.Articles.KdVPseudomeasures.norm_hillReal_finiteGap_le_inverseActionMass",
+      "NLS.Articles.KdVPseudomeasures.norm_hillReal_le_inverseActionMass",
+      "NLS.FunctionalAnalysis.bounded_preimage_of_continuous_norm_control",
+      "NLS.Articles.KdVPseudomeasures.bounded_hillRealSignedMap_preimage_of_isCompact",
+      "NLS.Articles.KdVPseudomeasures.isProperMap_hillRealSignedMap",
+      "NLS.Articles.KdVPseudomeasures.surjective_hillRealSignedMap",
+      "NLS.Articles.KdVPseudomeasures.sourceTheorem1_4"
     ],
     "5.1": [
       "NLS.KdV.analyticOnNhd_hillHminusDirichlet_joint",
@@ -4756,15 +4784,10 @@
     ]
   },
   "essential_open_obligations": [
-    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
-    "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "NOW PROVED actual L2 global REAL-ANALYTIC homeomorphism/properness, FULL native Hminus/original/endpoint injectivity and bounded literal Wiener weak-star inverse topology. NEW actual bounded-source action compactness on ENTIRE original distribution domain: ONE source realizes simultaneous limits of ALL indexed actual actions along ONE subsequence. Uniform shifted real Miura lifts, all-level Dirac higher-action coefficient continuity, central spectral separation and explicit mean normalization are VERIFIED. NEW bounded-source convergent FULL native outputs have actual preimages and the WHOLE source sequence converges STRONGLY Hminus. Native properness IFF norm-bounded preimages of EVERY compact target set is NOW PROVED. That varying-action NORM BOUND remains OPEN. Extended reference Lemma8.3 supplies it using universal action-gap min estimate + actual Hminus norm-vs-gap coercivity (Theorem2.3); BOTH estimates still require faithful Lean proofs. Native onto/closedness/properness, actual KdV and ALL FIVE MAIN remain OPEN; goal ACTIVE.",
-    "FULL sourceTheorem1.4 remains UNPROVED because actual native SURJECTIVITY and equivalent native compact-preimage norm bound remain OPEN. NEW sourceTheorem1_4_of_bounded_compact_native_preimages proves the FULL precise main conclusion CONDITIONAL on that PURE NORM obligation; sourceTheorem1_4_of_native_surjective remains proved. Full native/original/endpoint INJECTIVITY and literal physical REAL Wiener weak-star homeomorphism onto EXACT IMAGE on EVERY bounded endpoint subset (including nonclosed) and full original isospectral endpoint sets are UNCONDITIONAL. Forward analytic mapping, original norm bounds, full-isoset bounds and inverse endpoint regularity for ANY actual native preimage remain proved. Do NOT promote conditional norm-bound/surjectivity reductions to completed main statements.",
-    "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-    "NOW PROVED exact zero-frequency Dirac trace/mean criterion, actual Hill/Miura action comparison INCLUDING central collapse, exact inverse-frequency native action normalization, universal original Hminus source bound from a lift, and GLOBAL genuine MEAN-ZERO real L2 Riccati lift existence for EVERY original rough source. Remaining direct coercivity obligation: actual inverse-frequency quasimomentum/action estimate for the mean-zero lift L2 norm. Native varying-action source coercivity/onto/properness and ALL FIVE MAIN remain UNPROVED.",
-    "NOW PROVED exact zero-frequency Dirac trace/mean criterion, actual Hill/Miura action comparison INCLUDING central collapse, exact inverse-frequency native action normalization, universal original Hminus source bound from a lift, and GLOBAL genuine MEAN-ZERO real L2 Riccati lift existence for EVERY original rough source. Remaining direct coercivity obligation: actual inverse-frequency quasimomentum/action estimate for the mean-zero lift L2 norm. Native varying-action source coercivity/onto/properness and ALL FIVE MAIN remain UNPROVED.",
-    "NEW global mean-zero real Riccati lift existence is PROVED on the ENTIRE original distribution domain. Strong compactness of bounded actual lift families, attained global minimum energy, actual nonzero-mean Miura derivative inverse, real-preserving genuine two-sided analytic inverse and energy-lowering contradiction are VERIFIED. SAME lift retains ALL actual Hill actions and inverse-frequency sum, and its removed energy is an actual original periodic spectral point. The actual quasimomentum/action mass bound for its L2 norm remains OPEN; no native global Birkhoff surjectivity or main theorem completion follows yet.",
-    "NEW ACTUAL finite-gap inverse-frequency CONTOUR moment balance PROVED: physicalMass=-sum_signed_open_gaps n*integral(F_n/z), and for every mean-zero real diagonal finite-gap lift this mass is EXACT original L2 squared norm. The outer 2*pi*i mass coefficient, analytic central pole filling, exclusion of0 from other selected discs, actual local shifted-square identity and finite-hole decomposition are VERIFIED. Remaining actual norm estimate still needs inverse gap-boundary integral conversion and Cauchy-Schwarz, followed by finite-gap approximation to general rough sources. Native onto/properness/ALL FIVE MAIN remain UNPROVED."
+    "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n); retain original domains, labels, roots and normalization. Existing scalar uniqueness/analyticity and actual numerator zero/product/period results do not determine that constant.",
+    "Prove remaining nonlinear source/target scales, especially the full Wiener global real analytic diffeomorphism and Birkhoff clauses of main5.1.",
+    "Construct and identify ACTUAL original Hminus KdV evolution from EVERY original smooth approximation, with the original equation, Hamiltonian and frequency normalization. Indexed periodic action flows alone are not the KdV flow.",
+    "Prove main1.1,1.3,5.9 using the actual KdV evolution and its required topology/analyticity. Main1.4 is proved unconditionally; these FOUR main theorems remain UNPROVED and the goal remains ACTIVE."
   ],
   "no_completion_claim": "The generic frequency functional Ω is arbitrary and is not asserted to be a constructed KdV frequency. Conditional continuity of realized frequencies is an explicit generic theorem hypothesis, never a substitute for proving that hypothesis for KdV.",
   "shared_module_moves": {
@@ -6344,7 +6367,14 @@
     "ShiftedSquareWeightedCircle proves that a holomorphic weight annihilates the filled square and constant terms of a shifted square. SourceFullAbelianInverseGapCircle applies this to the ACTUAL indexed primitive with literal weight1/z on EVERY selected circle whose WHOLE filled disc excludes0. It proves EXACTLY integral(F_0^2/z)=(-2*i*pi*n)*integral(F_n/z), retaining original signed index n and normalization. The filled selected square, root-domain circle and analytic inverse weight are all VERIFIED.",
     "SourceFiniteGapInverseMoment proves the ACTUAL finite-gap contour moment balance: physicalMass = -sum_over_original_open_signed_gaps n*integral(F_n(z)/z). The selected radii are the genuine intermediate uniform isolating radii. A central collapsed gap at0 is omitted because it is closed; the original disjoint isolating discs prove0 is outside EVERY other selected disc. Finite-hole Cauchy decomposition is applied to the analytic FILLED inverse square, and the verified outer physical mass and local circle identities give the exact finite sum. No contour hypothesis or missing pole is hidden in the conclusion.",
     "HillMiuraInverseMoment verifies the central zero endpoint/collapse data for EVERY physical real MEAN-ZERO L2 lift and proves its actual full primitive value0 and whole-domain filled inverse-square analyticity. At EVERY genuine finite-gap such lift, the COMPLETE original signed inverse contour moment is EXACTLY the ORIGINAL lift L2 squared norm. The mass identification uses the physical opposite-index Hilbert pairing, not a generic NLS action or differently normalized trace.",
-    "The actual finite-gap CONTOUR moment balance is NOW PROVED. Still OPEN: convert its local inverse primitive contours to literal real inverse gap integrals; prove the resulting Cauchy-Schwarz action bound; transfer that genuine estimate to arbitrary rough sources through verified finite-gap approximation. Global mean-zero Riccati lift existence, source polynomial bound from a lift and exact inverse-action/native norm identity remain PROVED. Native coercivity/onto/properness, actualKdV and ALL FIVE MAIN remain UNPROVED; goal ACTIVE."
+    "The actual finite-gap CONTOUR moment balance is NOW PROVED. Still OPEN: convert its local inverse primitive contours to literal real inverse gap integrals; prove the resulting Cauchy-Schwarz action bound; transfer that genuine estimate to arbitrary rough sources through verified finite-gap approximation. Global mean-zero Riccati lift existence, source polynomial bound from a lift and exact inverse-action/native norm identity remain PROVED. Native coercivity/onto/properness, actualKdV and ALL FIVE MAIN remain UNPROVED; goal ACTIVE.",
+    "Actual weighted primitive contour boundary formula with arbitrary analytic spectral weight, retaining the original operator, branch and normalization. Its inverse-frequency specialization includes collapsed gaps and proves integral(F_n/z)=-pi*J_n,-1 on every selected filled disc excluding zero.",
+    "The finite-gap real inverse moment is physicalMass=pi*sum_signed n*J_n,-1. The original nonzero signed gap coordinates have sign n for every real scalar diagonal lift. Weighted integral Cauchy-Schwarz gives J_n,0^2 <= (n*J_n,-1)*(J_n,1/n), with both factors nonnegative.",
+    "All actual diagonal real higher actions obey J_-n,k=(-1)^k*J_n,k. The finite-gap physical mass and Cauchy-Schwarz imply norm(u)^2<=sum_signed J_n,1/(pi*n). Closed gaps vanish, reflection doubles the positive sum, and the exact Hill I_n=2*J_n,1 converts this to the literal native inverse-action mass P(q).",
+    "Every original rough real mean-zero source q satisfies norm(q)<=C*(sqrt(P(q))+P(q)), where P(q)=norm(Phi(q))^2/(2*pi) and C is the verified universal rough Miura polynomial constant. The finite-gap bound uses actual global mean-zero lifts and the actual finite-gap Hill-to-Dirac transfer; strong native finite-gap approximation and continuity of P pass the SOURCE inequality to the entire domain.",
+    "Continuous scalar norm control bounds preimages of every compact native target set. The verified native bounded-limit theorem yields properness, and native local homeomorphism plus closedness yields surjectivity.",
+    "MainTheorem14.sourceTheorem1_4 proves ALL precise original clauses for every -1/2<s<=0: bijectivity, original norm boundedness, real analyticity, local inverse at zero with exact differential, literal physical Wiener weak-star homeomorphism onto the exact image on EVERY bounded subset, and full original Hminus isospectral membership/bounds/topology. Printed first codomain corrected to s+1/2 as already documented in the source inventory. No native closedness/onto/coercivity premise remains.",
+    "Appendix B B.1(i)-(iv) remains complete. Main 1.4 is now proved; main 1.1,1.3,5.1,5.9 remain unproved. Actual KdV evolution, normalized Hamiltonian/frequencies and convergence from every smooth approximation remain essential open work; goal ACTIVE."
   ],
   "verified_appendix_b_additions": [
     "Literal existential lower-exponent sequence convergence and compactness equivalences, with all boundedness conjuncts and strict thresholds.",
@@ -11177,5 +11207,36 @@
     "actual_native_global_surjectivity_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
     "actual_KdV_evolution_PROVED": false
-  }
+  },
+  "verified_actual_Hill_inverse_action_coercivity": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-inverse-action-coercivity-map.json",
+    "actual_inverse_primitive_real_boundary_PROVED": true,
+    "actual_signed_higher_action_reflection_PROVED": true,
+    "finiteGap_inverse_action_Cauchy_Schwarz_lift_bound_PROVED": true,
+    "actual_native_varying_action_norm_coercivity_PROVED": true,
+    "actual_native_global_properness_PROVED": true,
+    "actual_native_global_surjectivity_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "actual_KdV_evolution_PROVED": false,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "verified_main_theorems": {
+    "1.4": {
+      "status": "proved",
+      "declaration": "NLS.Articles.KdVPseudomeasures.sourceTheorem1_4",
+      "statement": "NLS.Articles.KdVPseudomeasures.sourceTheorem1_4Statement",
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-inverse-action-coercivity-map.json"
+    }
+  },
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ]
 }

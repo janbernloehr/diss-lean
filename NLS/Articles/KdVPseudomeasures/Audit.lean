@@ -1693,6 +1693,18 @@ import NLS.ZakharovShabat.SourceFullAbelianInverseMassContour
 import NLS.ZakharovShabat.SourceFullAbelianInverseGapCircle
 import NLS.ZakharovShabat.SourceFiniteGapInverseMoment
 import NLS.KdV.HillMiuraInverseMoment
+import NLS.KdV.HillMiuraActionReflection
+import NLS.ZakharovShabat.SourceWeightedPrimitiveBoundaryIntegral
+import NLS.ZakharovShabat.SourceRealInverseAction
+import NLS.RealAnalysis.InverseMomentCauchySchwarz
+import NLS.ZakharovShabat.SourceInverseActionCauchySchwarz
+import NLS.KdV.HillMiuraInverseCauchySchwarz
+import NLS.ZakharovShabat.SourceFiniteGapRealInverseMoment
+import NLS.KdV.HillMiuraFiniteGapInverseBound
+import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapRiccatiBound
+import NLS.Articles.KdVPseudomeasures.OriginalHillInverseActionCoercivity
+import NLS.FunctionalAnalysis.BoundedPreimagesOfNormControl
+import NLS.Articles.KdVPseudomeasures.MainTheorem14
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10229,3 +10241,31 @@ import NLS.KdV.HillMiuraInverseMoment
 #print axioms NLS.KdV.hillMiura_fullPrimitive_zero_of_mean_zero
 #print axioms NLS.KdV.analytic_hillMiura_filled_inverse_square
 #print axioms NLS.KdV.hillMiura_finiteGap_inverse_moment_norm_sq
+#print axioms NLS.KdV.hillMiura_realGapAffinePoint_neg
+#print axioms NLS.KdV.hillMiura_realGapArcoshProfile_neg
+#print axioms NLS.KdV.hillMiura_realGapCosineProfile_neg
+#print axioms NLS.KdV.hillMiura_realHigherAction_neg
+#print axioms NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.weighted_primitive_circle_eq_boundaryIntegral
+#print axioms NLS.ZakharovShabat.sourceRealInverseAction
+#print axioms NLS.ZakharovShabat.sourceRealInverseAction_of_collapsed
+#print axioms NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.inverse_primitive_circle_eq_real_inverseAction
+#print axioms NLS.RealAnalysis.integral_inverse_moment_cauchySchwarz
+#print axioms NLS.ZakharovShabat.source_inverseAction_CauchySchwarz
+#print axioms NLS.ZakharovShabat.source_inverseAction_nonneg
+#print axioms NLS.KdV.hillMiura_gap_coordinate_div_index_pos
+#print axioms NLS.KdV.hillMiura_inverseAction_CauchySchwarz
+#print axioms NLS.KdV.hillMiura_inverseAction_nonneg
+#print axioms NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.zero_not_mem_selected_disc_of_central_zero
+#print axioms NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.inverse_primitive_circle_eq_neg_pi_inverseAction
+#print axioms NLS.ZakharovShabat.sourceFiniteGap_real_inverse_moment_balance
+#print axioms NLS.KdV.norm_sq_hillMiura_finiteGap_le_signed_inverse_actions
+#print axioms NLS.Articles.KdVPseudomeasures.hillMiura_signed_inverse_actions_eq_mass
+#print axioms NLS.Articles.KdVPseudomeasures.norm_sq_mean_zero_finiteGap_lift_le_inverseActionMass
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillNativeInverseActionMass
+#print axioms NLS.Articles.KdVPseudomeasures.norm_hillReal_finiteGap_le_inverseActionMass
+#print axioms NLS.Articles.KdVPseudomeasures.norm_hillReal_le_inverseActionMass
+#print axioms NLS.FunctionalAnalysis.bounded_preimage_of_continuous_norm_control
+#print axioms NLS.Articles.KdVPseudomeasures.bounded_hillRealSignedMap_preimage_of_isCompact
+#print axioms NLS.Articles.KdVPseudomeasures.isProperMap_hillRealSignedMap
+#print axioms NLS.Articles.KdVPseudomeasures.surjective_hillRealSignedMap
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem1_4
