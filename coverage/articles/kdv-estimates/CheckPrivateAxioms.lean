@@ -1396,6 +1396,22 @@ import NLS.KdV.HillIntrinsicCartesianBracketContinuity
 import NLS.KdV.HillCartesianAllPeriodicInvariant
 import NLS.KdV.HillCartesianMatrixNormalization
 import NLS.KdV.HillHminusOriginalOpenCartesianMatrix
+import NLS.KdV.HillHminusIntrinsicGapPairs
+import NLS.KdV.HillHminusIntrinsicGapSymmetricData
+import NLS.KdV.HillHminusIntrinsicGapUnit
+import NLS.KdV.HillHminusIntrinsicDeflatedRoot
+import NLS.KdV.HillHminusOriginalDirichletSheetGerm
+import NLS.KdV.HillHminusOriginalOwnGapFactor
+import NLS.KdV.HillHminusIntrinsicActionGapRatio
+import NLS.KdV.HillHminusOriginalOwnAmplitude
+import NLS.KdV.HillHminusDeflatedPhysicalDifferential
+import NLS.KdV.HillHminusDeflatedDifferentialMean
+import NLS.KdV.HillHminusClosedGapQuadraticChart
+import NLS.KdV.HillHminusClosedGapRegularCorrection
+import NLS.KdV.HillHminusOriginalAllGapCartesianGerms
+import NLS.KdV.HillOriginalOwnFactorConjugation
+import NLS.KdV.HillHminusOriginalAllGapConjugateGerms
+import NLS.KdV.HillOriginalAllGapCartesianGardner
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2592,7 +2608,8 @@ run_cmd do
     ``NLS.Poisson.gardnerHamiltonianHilbertDirection_zero_mode,
     ``NLS.Poisson.gardnerHilbertDerivative,
     ``NLS.Poisson.gardnerHilbertDerivative_apply,
-    ``NLS.Poisson.gardnerHilbertDerivative_weight_bound]
+    ``NLS.Poisson.gardnerHilbertDerivative_weight_bound,
+    ``NLS.ComplexAnalysis.parametricCircleCauchyTransform.eq_1]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
