@@ -5958,3 +5958,8 @@ import NLS.KdV.HillFiniteEndpointPrimitives
 import NLS.KdV.HillZeroNormingSheetFactors
 import NLS.KdV.HillClosedGapEndpointCotangent
 import NLS.KdV.HillClosedRegularCotangents
+import NLS.KdV.HillEndpointAngleGerms
+import NLS.KdV.HillOpenRegularEndpointCotangents
+import NLS.KdV.HillNormingTransversePairing
+import NLS.KdV.HillAllEndpointRegularCotangents
+import NLS.KdV.HillAllEndpointNormingFamily

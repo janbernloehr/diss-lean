@@ -1035,6 +1035,11 @@ import NLS.KdV.HillFiniteEndpointPrimitives
 import NLS.KdV.HillZeroNormingSheetFactors
 import NLS.KdV.HillClosedGapEndpointCotangent
 import NLS.KdV.HillClosedRegularCotangents
+import NLS.KdV.HillEndpointAngleGerms
+import NLS.KdV.HillOpenRegularEndpointCotangents
+import NLS.KdV.HillNormingTransversePairing
+import NLS.KdV.HillAllEndpointRegularCotangents
+import NLS.KdV.HillAllEndpointNormingFamily
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
