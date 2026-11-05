@@ -1705,6 +1705,16 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapRiccatiBound
 import NLS.Articles.KdVPseudomeasures.OriginalHillInverseActionCoercivity
 import NLS.FunctionalAnalysis.BoundedPreimagesOfNormControl
 import NLS.Articles.KdVPseudomeasures.MainTheorem14
+import NLS.SequenceSpaces.SignedSobolevRealScale
+import NLS.SequenceSpaces.SignedSobolevSpatialLift
+import NLS.SequenceSpaces.SignedSobolevAnalyticEquiv
+import NLS.SequenceSpaces.SignedSobolevAnalyticLadder
+import NLS.Articles.KdVPseudomeasures.OriginalHillSobolevDiffeomorph
+import NLS.Articles.KdVPseudomeasures.OriginalHillIntegerRegularity
+import NLS.KdV.PeriodOneHamiltonian
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1Hamiltonian
+import NLS.Articles.KdVPseudomeasures.OriginalHillIntegerFiniteGapApproximation
+import NLS.KdV.PeriodOneHamiltonianVariation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10269,3 +10279,67 @@ import NLS.Articles.KdVPseudomeasures.MainTheorem14
 #print axioms NLS.Articles.KdVPseudomeasures.isProperMap_hillRealSignedMap
 #print axioms NLS.Articles.KdVPseudomeasures.surjective_hillRealSignedMap
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem1_4
+#print axioms NLS.WeightedCoeff.signedRealInclusion
+#print axioms NLS.WeightedCoeff.signedRealSpatialRecovery
+#print axioms NLS.WeightedCoeff.signedRealInclusion_apply
+#print axioms NLS.WeightedCoeff.signedRealSpatialRecovery_apply
+#print axioms NLS.WeightedCoeff.signedRealInclusion_injective
+#print axioms NLS.WeightedCoeff.signedRealSpatialRecovery_generator
+#print axioms NLS.WeightedCoeff.signedRealInclusion_recovery
+#print axioms NLS.WeightedCoeff.fourierRealZeroSpatialTranslation
+#print axioms NLS.WeightedCoeff.fourierRealZeroSpatialTranslation_apply
+#print axioms NLS.WeightedCoeff.fourierRealZeroSpatialTranslation_zero
+#print axioms NLS.WeightedCoeff.signedSpatialLift
+#print axioms NLS.WeightedCoeff.analyticAt_signedSpatialLift
+#print axioms NLS.WeightedCoeff.signedSpatialLift_inclusion
+#print axioms NLS.WeightedCoeff.signedSpatialLift_apply
+#print axioms NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.spatial_apply
+#print axioms NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.spatial_symm
+#print axioms NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.spatial_symm_apply
+#print axioms NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.succEquiv
+#print axioms NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.succEquiv_inclusion
+#print axioms NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.succEquiv_apply
+#print axioms NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.succ
+#print axioms NLS.WeightedCoeff.signedStepOrder
+#print axioms NLS.WeightedCoeff.signedStepOrder_eq
+#print axioms NLS.WeightedCoeff.signedIteratedInclusion
+#print axioms NLS.WeightedCoeff.signedIteratedInclusion_apply
+#print axioms NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.iterate
+#print axioms NLS.WeightedCoeff.SignedSpatialAnalyticEquiv.iterate_inclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2NativeMap_spatial_covariance
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2SpatialAnalyticEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSobolev_source_order
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSobolev_target_order
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_apply
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillIntegerSobolevEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillIntegerSobolevEquiv_symm
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSourceInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerTargetInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSourceInclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerTargetInclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSourceInclusion_injective
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerTargetInclusion_injective
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_inclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_symm_inclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillReal_integer_source_iff_native
+#print axioms NLS.KdV.periodOneKdVHamiltonian
+#print axioms NLS.KdV.analyticAt_periodOneKdVHamiltonian
+#print axioms NLS.KdV.periodOneKdVHamiltonian_eq_integral
+#print axioms NLS.KdV.periodOneSobolevKinetic_symm
+#print axioms NLS.KdV.hasDerivAt_periodOneKdVHamiltonian
+#print axioms NLS.Articles.KdVPseudomeasures.signedOneRealToScalarDomain
+#print axioms NLS.Articles.KdVPseudomeasures.signedOneRealToScalarDomain_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1KdVHamiltonian
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1CanonicalHamiltonian
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_actual_coordinates
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_physical
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation_tendsto
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation_native
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerFiniteGapApproximation_mem
+#print axioms NLS.Articles.KdVPseudomeasures.dense_hillIntegerFiniteGapLocus
+#print axioms NLS.KdV.periodOneKdVHamiltonian_variation_eq_integral
+#print axioms NLS.KdV.hasDerivAt_periodOneKdVHamiltonian_integral

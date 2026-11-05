@@ -1739,6 +1739,16 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillInverseActionCoercivity',
     'NLS.FunctionalAnalysis.BoundedPreimagesOfNormControl',
     'NLS.Articles.KdVPseudomeasures.MainTheorem14',
+    'NLS.SequenceSpaces.SignedSobolevRealScale',
+    'NLS.SequenceSpaces.SignedSobolevSpatialLift',
+    'NLS.SequenceSpaces.SignedSobolevAnalyticEquiv',
+    'NLS.SequenceSpaces.SignedSobolevAnalyticLadder',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSobolevDiffeomorph',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillIntegerRegularity',
+    'NLS.KdV.PeriodOneHamiltonian',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1Hamiltonian',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillIntegerFiniteGapApproximation',
+    'NLS.KdV.PeriodOneHamiltonianVariation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
