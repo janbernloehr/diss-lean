@@ -1,0 +1,174 @@
+{
+  "source": "arXiv:1610.00278v1 Section5, Main5.1/Lemma5.6 dependencies: actual local Miura normalized action-ratio one-order scalar TAIL estimate on common complex L2 neighborhoods. Global canonical ratio and stronger amplitude norm analyticity remain open",
+  "status": "ACTUAL local Miura normalized action ratio has one-order weighted scalar TAIL decay on ONE complex L2 neighborhood for ANY retained Miura gap ball at EVERY real source. Original first higher-action contour and filled complex collapsed-gap values retained. Canonical global ratio identification, finite head, amplitude weighted-norm analyticity, OFF-index phase, Main5.1/5.9 remain OPEN.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.1",
+    "1.3",
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "actual_positive_H1_Dirichlet_midpoint_and_gap_common_weight_bounds_PROVED": true,
+    "SAME_Hill_auxiliary_divisor_and_phase_rotated_Dirichlet_midpoint_identity_PROVED": true,
+    "actual_on_index_correction_FULL_head_and_tail_one_order_bound_PROVED": true,
+    "ACTUAL_on_index_signed_exponent_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "ACTUAL_on_index_exponential_factor_minus_one_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "actual_on_index_patch_and_original_family_estimates_FACTORY_UNCONDITIONAL": true,
+    "original_signed_coefficients_central_zero_and_complex_collapsed_gaps_retained_PROVED": true,
+    "generic_weighted_infinity_exponential_remainder_analytic_PROVED": true,
+    "ACTUAL_physical_Hill_spectral_core_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "SAME_patch_core_on_index_assembly_COMPLETE": true,
+    "ACTUAL_native_normalized_ACTION_amplitude_one_order_estimate_PROVED": false,
+    "ACTUAL_native_off_index_exponent_one_order_estimate_PROVED": false,
+    "ACTUAL_L2_native_one_smoothing_base_estimate_PROVED": false,
+    "literal_Wiener_native_diffeomorphism_UNCONDITIONALLY_PROVED": false,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "ACTUAL_intrinsic_diagonal_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "GLOBAL_patch_independent_intrinsic_Fourier_remainder_Hthreehalves_analytic_PROVED": true,
+    "GLOBAL_actual_intrinsic_diagonal_Hhalf_analytic_realization_PROVED": true,
+    "ALL_original_intrinsic_coefficients_on_ONE_complex_neighborhood_PROVED": true,
+    "generic_weighted_infinity_Hilbert_signed_order_product_PROVED": true,
+    "ACTUAL_first_higher_action_common_free_circle_complex_agreement_PROVED": true,
+    "ACTUAL_filled_first_higher_action_centered_moment_uniform_tail_bound_PROVED": true,
+    "ACTUAL_local_Miura_normalized_action_ratio_complex_H1_one_order_scalar_TAIL_PROVED": true,
+    "ACTUAL_retained_Miura_gap_ball_ratio_complex_L2_one_order_scalar_TAIL_PROVED": true,
+    "GLOBAL_canonical_ratio_equals_local_Miura_formula_on_ONE_complex_L2_neighborhood_before_ALL_high_n_PROVED": false,
+    "GLOBAL_canonical_action_ratio_FULL_one_order_weighted_norm_analytic_PROVED": false,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Miura-action-ratio-tail-map.json"
+  },
+  "results": [
+    "SourceHigherActionOneUniformCircle constructs actual original period circles centered at pi*n with radius pi/8 on ONE complex source neighborhood BEFORE ALL sufficiently distant signed indices, by shrinking original real-centered isolating discs while retaining every other gap separation. On those SAME circles the chart-independent filled first higher action equals its actual weighted rationalized contour quotient, and the original indexed higher action factors through the squared gap. Complex collapsed gaps are included with their prescribed midpoint-times-ordinary-quotient value.",
+    "SourceCenteredActionCircleBound proves a quantitative bound for the original rationalized action kernel from fixed-circle separation, bounded critical squared-gap quotient and small squared gap. A contour moment estimate recenters the ACTUAL spectral weight z+critical at twice the periodic midpoint; its bound depends on the fixed radius and centered integrand, without the growing pi*n weight.",
+    "SourceHigherActionOneCenteredTail proves UNCONDITIONALLY near EVERY real original Dirac L2 source that the ACTUAL filled first higher-action quotient minus ACTUAL periodic midpoint times ACTUAL normalized ordinary action is uniformly bounded BEFORE ALL distant signed labels on ONE complex neighborhood. The proof retains exact original contours, quotient periods and complex collapsed-gap normalization, using no analytic choice of a real mean-value spectral sample.",
+    "SourceHigherActionOneSobolevRatio combines this centered moment bound, the verified ordinary normalized-action complex H1 decay and original periodic midpoint geometry. On ONE complex normalized H1 source neighborhood BEFORE ALL high positive n it proves (1+n)*norm(4*pi*n*sourceHigherActionOneNormalized_n/midpoint_n^2 -1) <= C. This is exactly the scalar formula underlying the local Miura normalized Hill action ratio, with no stronger norm analyticity inferred from the scalar bound.",
+    "HillL2MiuraActionRatioTail constructs a complex analytic H1 representative of the SAME original diagonal Miura source from the actual L2 lift, including every raw coefficient. Its exists_local_l2Miura_normalizedRatio_tail_bound proves for ANY retained actual Miura gap ball B and EVERY real L2 source in B.source that ONE complex L2 neighborhood and constants precede ALL high positive n, with (1+n)*norm(B.normalizedRatio_n(L2r)-1)<=C. The exact original 16*pi*n first-higher-action divided by diracSum^2 formula is retained.",
+    "This closes the quantitative local Miura action-ratio TAIL estimate. It does NOT yet identify that formula with the GLOBAL canonical Hill ratio on a SINGLE complex L2 neighborhood BEFORE ALL n, control the finite head there, or construct a weighted-infinity analytic normalized ACTION amplitude. Those steps and the actual OFF-index phase one-order estimate remain required for full native smoothing. Main1.1/1.3/1.4 proved; Main5.1/5.9 unproved; goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.ZakharovShabat.exists_local_source_free_eighth_periodCircles",
+    "NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized_uniform_circle",
+    "NLS.ZakharovShabat.norm_normalizedActionCircleKernel_le_of_separation",
+    "NLS.ZakharovShabat.norm_centeredActionCircle_le",
+    "NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized_centered_tail_bound",
+    "NLS.ZakharovShabat.exists_local_normalizedSobolevHigherActionOneRatio_decay",
+    "NLS.KdV.HillHminusMiuraActionBall.l2DiracLift",
+    "NLS.KdV.HillHminusMiuraActionBall.analytic_l2DiracLift",
+    "NLS.KdV.HillHminusMiuraActionBall.sobolevSourceInclusion_l2DiracLift",
+    "NLS.KdV.HillHminusMiuraGapBall.exists_local_l2Miura_normalizedRatio_tail_bound"
+  ],
+  "files": [
+    "NLS/ZakharovShabat/SourceHigherActionOneUniformCircle.lean",
+    "NLS/ZakharovShabat/SourceCenteredActionCircleBound.lean",
+    "NLS/ZakharovShabat/SourceHigherActionOneCenteredTail.lean",
+    "NLS/ZakharovShabat/SourceHigherActionOneSobolevRatio.lean",
+    "NLS/KdV/HillL2MiuraActionRatioTail.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "99292acf5f9b1f76a40a2378cc06c1b6499f9710",
+    "baseline_modules": 1931,
+    "baseline_non_audit_sources_verified_unchanged": 1930,
+    "new_modules_compiled": 5,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.SourceNormalizedActionComplexSobolevDecay",
+        "source": "NLS/ZakharovShabat/SourceNormalizedActionComplexSobolevDecay.lean",
+        "source_sha256": "16e26d19d6c96782367960d5c861b85727bea88d53d3eb48db5209be936ff71c"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceNormalizedActionUniformCircleComplexAgreement",
+        "source": "NLS/ZakharovShabat/SourceNormalizedActionUniformCircleComplexAgreement.lean",
+        "source_sha256": "02cdd88cd3c89a3f72ddfa01230a5dedeef9b339ba03fce90182f8b3c755bbea"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceNormalizedActionCircleCorrectionBound",
+        "source": "NLS/ZakharovShabat/SourceNormalizedActionCircleCorrectionBound.lean",
+        "source_sha256": "47651992f29face81f465b7fe08c51aec9876a8decad48c76621b91ea8440faf"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceSobolevNormalizedCoordinates",
+        "source": "NLS/ZakharovShabat/SourceSobolevNormalizedCoordinates.lean",
+        "source_sha256": "b907afa53355a021e98e73b37b2d9a14d91e4c0dee85968502d9cd62073ce93f"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem11",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean",
+        "source_sha256": "0c1a0eff8f5a0437e3cae7ea7429155d86c27be6342242f48316b799bbf9d6e9",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem13",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean",
+        "source_sha256": "10bd9ba667095fee022b323b39432c50805af58a4a83b374363c6434594c9de3",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillL2IntrinsicFourierRemainder",
+        "source": "NLS/KdV/HillL2IntrinsicFourierRemainder.lean",
+        "source_sha256": "b6ee6efb5a4db524f488691e5665cd411260762aaa59ea7a86dc61215e7ce323",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillMiuraNormalizedRatioLocalData",
+        "source": "NLS/KdV/HillMiuraNormalizedRatioLocalData.lean",
+        "source_sha256": "90cfe7e423be9dbf2456ac8ee259c5062b84db9685613f8f76595357aec183d6",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillMiuraL2AnalyticRegularity",
+        "source": "NLS/KdV/HillMiuraL2AnalyticRegularity.lean",
+        "source_sha256": "2c7010c104e2cb5de6f188c1ff7f27b6e82fa34c9a73715e252bc89954fa435b",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceHigherActionOneNormalized",
+        "source": "NLS/ZakharovShabat/SourceHigherActionOneNormalized.lean",
+        "source_sha256": "1f5db10053845376c239025ef6765d2cdf5f3e28720b42c80acff08120827b92",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1936,
+    "audited_declarations": 9429,
+    "theorems": 7917,
+    "definitions": 1512,
+    "new_theorems": 9,
+    "new_definitions": 1,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-L2-Miura-action-ratio-tail.log",
+    "log_sha256": "d03a0248d8bbc5f7fde970a596e70625943b60675cb04a9a05874399948163ab"
+  },
+  "remaining_obligations": [
+    "Prove ACTUAL HillIntegerNativeOneSmoothing0 with SAME original native e0 and halfFourierSymbol at EVERY signed mode. ALREADY PROVED: patch-independent actual intrinsic diagonal H3/2 Fourier remainder and H1/2 analytic realization; SAME-patch core/on-index assembly. NEW: exact local Miura normalized action ratio B.normalizedRatio has (1+n)-weighted TAIL bound on ONE complex L2 neighborhood for ANY retained actual B at EVERY real source. SourceHigherActionOneUniformCircle and CenteredTail retain original filled higher actions and complex collapsed-gap values; SourceHigherActionOneSobolevRatio supplies quantitative scalar H1 tail. NEXT identify the GLOBAL hillHminusCanonicalActionRatio with the local Miura formula on ONE complex L2 neighborhood BEFORE ALL high n, handle the possible globally identically collapsed-gap convention, add finite-head bounds, then use principal sqrt and weighted-infinity analytic realization to prove hillHminusNormalizedAmplitudeSymbol minus1 one-order WEIGHTED-NORM analyticity. Do not infer this from the local scalar tail alone. ALSO prove actual hillHminusSignedOffIndexExponent / exponential-minus1 one-order weighted norm estimates. Combine both actual factors with hillL2StrongIntrinsicDiagonal using WeightedInfinityPointwiseProduct and exact original native/real coefficient adapters. The normalized ACTION amplitude differs from the already-handled Dirac MIDPOINT symbol.",
+    "Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates.",
+    "For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement.",
+    "Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE."
+  ]
+}

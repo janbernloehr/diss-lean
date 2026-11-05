@@ -1962,6 +1962,11 @@ modules = [
     'NLS.KdV.HillRetainedL2CoreOnIndexData',
     'NLS.KdV.HillL2IntrinsicDiagonalOneSmoothing',
     'NLS.KdV.HillL2IntrinsicFourierRemainder',
+    'NLS.ZakharovShabat.SourceHigherActionOneUniformCircle',
+    'NLS.ZakharovShabat.SourceCenteredActionCircleBound',
+    'NLS.ZakharovShabat.SourceHigherActionOneCenteredTail',
+    'NLS.ZakharovShabat.SourceHigherActionOneSobolevRatio',
+    'NLS.KdV.HillL2MiuraActionRatioTail',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

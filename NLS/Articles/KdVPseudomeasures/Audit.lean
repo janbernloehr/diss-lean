@@ -1928,6 +1928,11 @@ import NLS.KdV.HillRetainedSpectralCoreDiracIdentity
 import NLS.KdV.HillRetainedL2CoreOnIndexData
 import NLS.KdV.HillL2IntrinsicDiagonalOneSmoothing
 import NLS.KdV.HillL2IntrinsicFourierRemainder
+import NLS.ZakharovShabat.SourceHigherActionOneUniformCircle
+import NLS.ZakharovShabat.SourceCenteredActionCircleBound
+import NLS.ZakharovShabat.SourceHigherActionOneCenteredTail
+import NLS.ZakharovShabat.SourceHigherActionOneSobolevRatio
+import NLS.KdV.HillL2MiuraActionRatioTail
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11350,3 +11355,13 @@ import NLS.KdV.HillL2IntrinsicFourierRemainder
 #print axioms NLS.KdV.analyticAt_hillL2StrongIntrinsicDiagonal
 #print axioms NLS.KdV.eventually_hillL2StrongIntrinsicDiagonal_apply
 #print axioms NLS.KdV.hillL2StrongIntrinsicDiagonal_apply
+#print axioms NLS.ZakharovShabat.exists_local_source_free_eighth_periodCircles
+#print axioms NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized_uniform_circle
+#print axioms NLS.ZakharovShabat.norm_normalizedActionCircleKernel_le_of_separation
+#print axioms NLS.ZakharovShabat.norm_centeredActionCircle_le
+#print axioms NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized_centered_tail_bound
+#print axioms NLS.ZakharovShabat.exists_local_normalizedSobolevHigherActionOneRatio_decay
+#print axioms NLS.KdV.HillHminusMiuraActionBall.l2DiracLift
+#print axioms NLS.KdV.HillHminusMiuraActionBall.analytic_l2DiracLift
+#print axioms NLS.KdV.HillHminusMiuraActionBall.sobolevSourceInclusion_l2DiracLift
+#print axioms NLS.KdV.HillHminusMiuraGapBall.exists_local_l2Miura_normalizedRatio_tail_bound

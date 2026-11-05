@@ -418,9 +418,19 @@
         "NLS.KdV.hillL2StrongIntrinsicDiagonal",
         "NLS.KdV.analyticAt_hillL2StrongIntrinsicDiagonal",
         "NLS.KdV.eventually_hillL2StrongIntrinsicDiagonal_apply",
-        "NLS.KdV.hillL2StrongIntrinsicDiagonal_apply"
+        "NLS.KdV.hillL2StrongIntrinsicDiagonal_apply",
+        "NLS.ZakharovShabat.exists_local_source_free_eighth_periodCircles",
+        "NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized_uniform_circle",
+        "NLS.ZakharovShabat.norm_normalizedActionCircleKernel_le_of_separation",
+        "NLS.ZakharovShabat.norm_centeredActionCircle_le",
+        "NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized_centered_tail_bound",
+        "NLS.ZakharovShabat.exists_local_normalizedSobolevHigherActionOneRatio_decay",
+        "NLS.KdV.HillHminusMiuraActionBall.l2DiracLift",
+        "NLS.KdV.HillHminusMiuraActionBall.analytic_l2DiracLift",
+        "NLS.KdV.HillHminusMiuraActionBall.sobolevSourceInclusion_l2DiracLift",
+        "NLS.KdV.HillHminusMiuraGapBall.exists_local_l2Miura_normalizedRatio_tail_bound"
       ],
-      "qualification": "UNPROVED. Actual intrinsic diagonal L2 one-smoothing and patch-independent strong analytic realization are proved, with SAME retained patch for physical core and on-index factor. Stronger normalized ACTION amplitude and OFF-index phase estimates, final original physical Wiener transport and main statement remain required."
+      "qualification": "UNPROVED. Actual intrinsic diagonal L2 one-smoothing and local Miura action-ratio one-order scalar TAIL estimates are proved. Global canonical ratio identification on one complex neighborhood before all indices, finite head, normalized ACTION amplitude and OFF-index weighted-norm analyticity, physical Wiener transport and final main statement remain required."
     },
     {
       "label": "5.9",
@@ -624,7 +634,17 @@
         "NLS.KdV.hillL2StrongIntrinsicDiagonal",
         "NLS.KdV.analyticAt_hillL2StrongIntrinsicDiagonal",
         "NLS.KdV.eventually_hillL2StrongIntrinsicDiagonal_apply",
-        "NLS.KdV.hillL2StrongIntrinsicDiagonal_apply"
+        "NLS.KdV.hillL2StrongIntrinsicDiagonal_apply",
+        "NLS.ZakharovShabat.exists_local_source_free_eighth_periodCircles",
+        "NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized_uniform_circle",
+        "NLS.ZakharovShabat.norm_normalizedActionCircleKernel_le_of_separation",
+        "NLS.ZakharovShabat.norm_centeredActionCircle_le",
+        "NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized_centered_tail_bound",
+        "NLS.ZakharovShabat.exists_local_normalizedSobolevHigherActionOneRatio_decay",
+        "NLS.KdV.HillHminusMiuraActionBall.l2DiracLift",
+        "NLS.KdV.HillHminusMiuraActionBall.analytic_l2DiracLift",
+        "NLS.KdV.HillHminusMiuraActionBall.sobolevSourceInclusion_l2DiracLift",
+        "NLS.KdV.HillHminusMiuraGapBall.exists_local_l2Miura_normalizedRatio_tail_bound"
       ]
     }
   ],
@@ -4126,6 +4146,23 @@
         "NLS.KdV.hillL2StrongIntrinsicDiagonal_apply"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-intrinsic-diagonal-smoothing-map.json"
+    },
+    {
+      "label": "ACTUAL local Miura action ratio scalar TAIL decay; common original first higher-action contours and centered moment bound",
+      "status": "ACTUAL local Miura normalized action ratio has one-order weighted scalar TAIL decay on ONE complex L2 neighborhood for ANY retained Miura gap ball at EVERY real source. Original first higher-action contour and filled complex collapsed-gap values retained. Canonical global ratio identification, finite head, amplitude weighted-norm analyticity, OFF-index phase, Main5.1/5.9 remain OPEN.",
+      "declarations": [
+        "NLS.ZakharovShabat.exists_local_source_free_eighth_periodCircles",
+        "NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized_uniform_circle",
+        "NLS.ZakharovShabat.norm_normalizedActionCircleKernel_le_of_separation",
+        "NLS.ZakharovShabat.norm_centeredActionCircle_le",
+        "NLS.ZakharovShabat.exists_local_sourceHigherActionOneNormalized_centered_tail_bound",
+        "NLS.ZakharovShabat.exists_local_normalizedSobolevHigherActionOneRatio_decay",
+        "NLS.KdV.HillHminusMiuraActionBall.l2DiracLift",
+        "NLS.KdV.HillHminusMiuraActionBall.analytic_l2DiracLift",
+        "NLS.KdV.HillHminusMiuraActionBall.sobolevSourceInclusion_l2DiracLift",
+        "NLS.KdV.HillHminusMiuraGapBall.exists_local_l2Miura_normalizedRatio_tail_bound"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Miura-action-ratio-tail-map.json"
     }
   ],
   "reuse_map": [
@@ -4205,7 +4242,7 @@
     }
   ],
   "remaining_obligations": [
-    "Prove ACTUAL HillIntegerNativeOneSmoothing0 with SAME original native e0 and halfFourierSymbol at EVERY signed mode. ALREADY PROVED: actual intrinsic diagonal Fourier remainder hillL2IntrinsicFourierRemainder is complex analytic into native H3/2 near EVERY real L2 source, with an analytic native-H1/2 realization hillL2StrongIntrinsicDiagonal and ALL original intrinsic coefficients on ONE complex neighborhood. Physical spectral-core and actual on-index exponential are assembled on SAME retained P/H patch. NEXT prove TWO remaining actual factor estimates: hillHminusNormalizedAmplitudeSymbol minus1 (normalized ACTION amplitude, DIFFERENT from the already-handled Dirac MIDPOINT symbol), and hillHminusSignedOffIndexExponent / its exponential factor minus1, analytic in one-order weighted infinity norm near EVERY real L2 source. Existing rough bounded/unit-tail/compact assertions do NOT imply these stronger estimates. Exact identities: nativeDiagonal=actionAmplitude*intrinsicDiagonal; nativeComplex=exp(signedOffIndex)*nativeDiagonal. Combine these with the now-proved intrinsic strong map via WeightedInfinityPointwiseProduct, preserving all signed/zero-mode normalizations and verified original real coefficient adapters.",
+    "Prove ACTUAL HillIntegerNativeOneSmoothing0 with SAME original native e0 and halfFourierSymbol at EVERY signed mode. ALREADY PROVED: patch-independent actual intrinsic diagonal H3/2 Fourier remainder and H1/2 analytic realization; SAME-patch core/on-index assembly. NEW: exact local Miura normalized action ratio B.normalizedRatio has (1+n)-weighted TAIL bound on ONE complex L2 neighborhood for ANY retained actual B at EVERY real source. SourceHigherActionOneUniformCircle and CenteredTail retain original filled higher actions and complex collapsed-gap values; SourceHigherActionOneSobolevRatio supplies quantitative scalar H1 tail. NEXT identify the GLOBAL hillHminusCanonicalActionRatio with the local Miura formula on ONE complex L2 neighborhood BEFORE ALL high n, handle the possible globally identically collapsed-gap convention, add finite-head bounds, then use principal sqrt and weighted-infinity analytic realization to prove hillHminusNormalizedAmplitudeSymbol minus1 one-order WEIGHTED-NORM analyticity. Do not infer this from the local scalar tail alone. ALSO prove actual hillHminusSignedOffIndexExponent / exponential-minus1 one-order weighted norm estimates. Combine both actual factors with hillL2StrongIntrinsicDiagonal using WeightedInfinityPointwiseProduct and exact original native/real coefficient adapters. The normalized ACTION amplitude differs from the already-handled Dirac MIDPOINT symbol.",
     "Complete the coefficient-preserving original physical distribution realization of the Wiener source, formulate the precise final source Main5.1 statement and combine it with the actual base estimate. Do not substitute integer Hilbert strata or the infinity endpoint. The current HillWienerBirkhoffDiffeomorphism property is the literal signed ell-one coefficient-model conclusion with SAME actual native coordinates.",
     "For source Main5.9, prove an unweighted bounded analytic correction sequence for the GENUINE KdV frequencies on the literal Wiener/L2 domain, on common complex neighborhoods. Existing rough signed-order-minus-one frequency bounds alone do not suffice. Reuse NLS.SequenceSpaces.AnalyticPhaseTrajectory.analyticAt_analyticPhaseTrajectory for actual ell-one uniform compact-time phase trajectories, then the proved Wiener inverse once the base estimate is closed. Supply the precise final original-distribution Main5.9 statement.",
     "Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN wherever needed by the Wiener proof. Main1.1,1.3,1.4 are proved; Main5.1,5.9 unproved; goalACTIVE."
@@ -8469,5 +8506,40 @@
     "ALL_original_intrinsic_coefficients_on_ONE_complex_neighborhood_PROVED": true,
     "generic_weighted_infinity_Hilbert_signed_order_product_PROVED": true,
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-intrinsic-diagonal-smoothing-map.json"
+  },
+  "actual_Hill_L2_local_Miura_action_ratio_tail": {
+    "actual_positive_H1_Dirichlet_midpoint_and_gap_common_weight_bounds_PROVED": true,
+    "SAME_Hill_auxiliary_divisor_and_phase_rotated_Dirichlet_midpoint_identity_PROVED": true,
+    "actual_on_index_correction_FULL_head_and_tail_one_order_bound_PROVED": true,
+    "ACTUAL_on_index_signed_exponent_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "ACTUAL_on_index_exponential_factor_minus_one_one_order_WEIGHTED_NORM_analytic_PROVED": true,
+    "actual_on_index_patch_and_original_family_estimates_FACTORY_UNCONDITIONAL": true,
+    "original_signed_coefficients_central_zero_and_complex_collapsed_gaps_retained_PROVED": true,
+    "generic_weighted_infinity_exponential_remainder_analytic_PROVED": true,
+    "ACTUAL_physical_Hill_spectral_core_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "SAME_patch_core_on_index_assembly_COMPLETE": true,
+    "ACTUAL_native_normalized_ACTION_amplitude_one_order_estimate_PROVED": false,
+    "ACTUAL_native_off_index_exponent_one_order_estimate_PROVED": false,
+    "ACTUAL_L2_native_one_smoothing_base_estimate_PROVED": false,
+    "literal_Wiener_native_diffeomorphism_UNCONDITIONALLY_PROVED": false,
+    "sourceTheorem1_1_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_3_UNCONDITIONALLY_PROVED": true,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "5.1",
+      "5.9"
+    ],
+    "ACTUAL_intrinsic_diagonal_L2_one_smoothing_UNCONDITIONALLY_PROVED": true,
+    "GLOBAL_patch_independent_intrinsic_Fourier_remainder_Hthreehalves_analytic_PROVED": true,
+    "GLOBAL_actual_intrinsic_diagonal_Hhalf_analytic_realization_PROVED": true,
+    "ALL_original_intrinsic_coefficients_on_ONE_complex_neighborhood_PROVED": true,
+    "generic_weighted_infinity_Hilbert_signed_order_product_PROVED": true,
+    "ACTUAL_first_higher_action_common_free_circle_complex_agreement_PROVED": true,
+    "ACTUAL_filled_first_higher_action_centered_moment_uniform_tail_bound_PROVED": true,
+    "ACTUAL_local_Miura_normalized_action_ratio_complex_H1_one_order_scalar_TAIL_PROVED": true,
+    "ACTUAL_retained_Miura_gap_ball_ratio_complex_L2_one_order_scalar_TAIL_PROVED": true,
+    "GLOBAL_canonical_ratio_equals_local_Miura_formula_on_ONE_complex_L2_neighborhood_before_ALL_high_n_PROVED": false,
+    "GLOBAL_canonical_action_ratio_FULL_one_order_weighted_norm_analytic_PROVED": false,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-L2-Miura-action-ratio-tail-map.json"
   }
 }
