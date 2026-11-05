@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest uniform full Hilbert normalized density bound
+## Latest native physical normalized energy contours
+
+One common complex period-one L2 source ball now supports the actual native normalized family on every radius-k free energy disc and circle. Full output-index Hilbert numerator norm on the complete disc and density norm on its boundary are at most C/k, before all sources, contour/output indices and energies. Boundary densities have genuine Bochner Kronecker vector periods. The same family retains its exact globally selected physical components, free/zero components and original frequency periods. At every real physical source in the ball, each boundary root is exactly canonical and the circle lies in its physical cut domain. Includes means and first/own/closed modes.
+
+See `NATIVE_ENERGY_CONTOURS.md`. Radius k is distinct from the larger old intrinsic free collar. Uniform own regular-phase filling, genuine complex divisor/amplitude bounds, native physical coordinate analyticity, full Sobolev-scale canonicality/global inverse and Hamiltonian/action-frequency conclusions remain open.
+
+Prior strict evidence for all 1142 unchanged selected baseline sources; strict dependency-order compilation of nine new proof modules; then a fresh combined transitive axiom audit of all 1151 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1182 frozen source/checker/provenance hashes, all 29 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1151-module rebuild is claimed.
+
+Fresh audit: 10488 selected and 32652 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier uniform full Hilbert normalized density bound
 
 One native jointly complex analytic output-index Hilbert family on all energies times a common complex period-one L2 source ball now has density norm at most K/k on every squared inner frequency circle |z-k*pi|=pi/8. The same ball precedes all complex sources, contour/output indices and points; actual source-root coverage is proved there. Every positive component equals the globally selected physical normalized numerator at every real source in the ball and every energy. Exact free/zero components and genuine Bochner Kronecker periods on the original pi/4 circles are retained. Includes first/own/closed modes and means.
 

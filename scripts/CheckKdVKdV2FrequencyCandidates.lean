@@ -1,3 +1,12 @@
+import NLS.Articles.KdVKdV2Frequencies.PhysicalEnergyContours
+import NLS.KdV.HillRadiusEnergyCirclePhysicalRoot
+import NLS.KdV.HillHminusOneEnergyPeriodTransfer
+import NLS.ComplexAnalysis.SquaredCircleAffineIntegral
+import NLS.KdV.HillFreeEnergyHomotopyGeometry
+import NLS.KdV.HillNativeEnergyDensityTransfer
+import NLS.KdV.FreeEnergyCircleFrequencyBounds
+import NLS.ComplexAnalysis.SquaredDiscNormBound
+import NLS.KdV.HillHminusOneUniformAnnularRoot
 import NLS.ComplexAnalysis.DiscBounds
 import NLS.Articles.KdVKdV2Frequencies.PhysicalNormalizedDensity
 import NLS.Articles.KdVKdV2Frequencies.NativeNormalizedDensity
@@ -1419,7 +1428,16 @@ run_cmd do
     `NLS.KdV.InnerFrequencyCircleResolvent,
     `NLS.KdV.HillHminusOneUniformNormalizedDensity,
     `NLS.Articles.KdVKdV2Frequencies.NativeNormalizedDensity,
-    `NLS.Articles.KdVKdV2Frequencies.PhysicalNormalizedDensity
+    `NLS.Articles.KdVKdV2Frequencies.PhysicalNormalizedDensity,
+    `NLS.KdV.HillHminusOneUniformAnnularRoot,
+    `NLS.KdV.FreeEnergyCircleFrequencyBounds,
+    `NLS.ComplexAnalysis.SquaredDiscNormBound,
+    `NLS.KdV.HillNativeEnergyDensityTransfer,
+    `NLS.ComplexAnalysis.SquaredCircleAffineIntegral,
+    `NLS.KdV.HillFreeEnergyHomotopyGeometry,
+    `NLS.KdV.HillHminusOneEnergyPeriodTransfer,
+    `NLS.KdV.HillRadiusEnergyCirclePhysicalRoot,
+    `NLS.Articles.KdVKdV2Frequencies.PhysicalEnergyContours
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

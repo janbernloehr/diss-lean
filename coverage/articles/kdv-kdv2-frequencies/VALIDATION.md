@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest uniform full Hilbert normalized density bound
+## Latest native physical normalized energy contours
+
+One common complex period-one L2 source ball now supports the actual native normalized family on every radius-k free energy disc and circle. Full output-index Hilbert numerator norm on the complete disc and density norm on its boundary are at most C/k, before all sources, contour/output indices and energies. Boundary densities have genuine Bochner Kronecker vector periods. The same family retains its exact globally selected physical components, free/zero components and original frequency periods. At every real physical source in the ball, each boundary root is exactly canonical and the circle lies in its physical cut domain. Includes means and first/own/closed modes.
+
+See `NATIVE_ENERGY_CONTOURS.md`. Radius k is distinct from the larger old intrinsic free collar. Uniform own regular-phase filling, genuine complex divisor/amplitude bounds, native physical coordinate analyticity, full Sobolev-scale canonicality/global inverse and Hamiltonian/action-frequency conclusions remain open.
+
+Prior strict evidence for all 1142 unchanged selected baseline sources; strict dependency-order compilation of nine new proof modules; then a fresh combined transitive axiom audit of all 1151 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1182 frozen source/checker/provenance hashes, all 29 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1151-module rebuild is claimed.
+
+Fresh audit: 10488 selected and 32652 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier uniform full Hilbert normalized density bound
 
 One native jointly complex analytic output-index Hilbert family on all energies times a common complex period-one L2 source ball now has density norm at most K/k on every squared inner frequency circle |z-k*pi|=pi/8. The same ball precedes all complex sources, contour/output indices and points; actual source-root coverage is proved there. Every positive component equals the globally selected physical normalized numerator at every real source in the ball and every energy. Exact free/zero components and genuine Bochner Kronecker periods on the original pi/4 circles are retained. Includes first/own/closed modes and means.
 
@@ -376,7 +386,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1142 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1151 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1445,7 +1455,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1142 selected modules (including generated and private declarations)
+the 1151 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -2820,4 +2830,19 @@ PASS NLS/KdV/HillHminusOneUniformNormalizedDensity
 PASS NLS/Articles/KdVKdV2Frequencies/NativeNormalizedDensity
 PASS NLS/Articles/KdVKdV2Frequencies/PhysicalNormalizedDensity
 Axiom audit passed: 10465 candidate declarations; 32629 declarations total.
+```
+
+Latest native energy contour strict additions and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillHminusOneUniformAnnularRoot
+PASS NLS/KdV/FreeEnergyCircleFrequencyBounds
+PASS NLS/ComplexAnalysis/SquaredDiscNormBound
+PASS NLS/KdV/HillNativeEnergyDensityTransfer
+PASS NLS/ComplexAnalysis/SquaredCircleAffineIntegral
+PASS NLS/KdV/HillFreeEnergyHomotopyGeometry
+PASS NLS/KdV/HillHminusOneEnergyPeriodTransfer
+PASS NLS/KdV/HillRadiusEnergyCirclePhysicalRoot
+PASS NLS/Articles/KdVKdV2Frequencies/PhysicalEnergyContours
+Axiom audit passed: 10488 candidate declarations; 32652 declarations total.
 ```

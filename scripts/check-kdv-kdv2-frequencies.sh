@@ -1151,6 +1151,15 @@ modules=(
   NLS/KdV/HillHminusOneUniformNormalizedDensity
   NLS/Articles/KdVKdV2Frequencies/NativeNormalizedDensity
   NLS/Articles/KdVKdV2Frequencies/PhysicalNormalizedDensity
+  NLS/KdV/HillHminusOneUniformAnnularRoot
+  NLS/KdV/FreeEnergyCircleFrequencyBounds
+  NLS/ComplexAnalysis/SquaredDiscNormBound
+  NLS/KdV/HillNativeEnergyDensityTransfer
+  NLS/ComplexAnalysis/SquaredCircleAffineIntegral
+  NLS/KdV/HillFreeEnergyHomotopyGeometry
+  NLS/KdV/HillHminusOneEnergyPeriodTransfer
+  NLS/KdV/HillRadiusEnergyCirclePhysicalRoot
+  NLS/Articles/KdVKdV2Frequencies/PhysicalEnergyContours
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
