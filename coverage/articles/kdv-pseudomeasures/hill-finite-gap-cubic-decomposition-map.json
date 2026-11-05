@@ -1,0 +1,171 @@
+{
+  "source": "arXiv:1610.00278v1 Lemma3.9/5.7 frequency dependencies for main1.1,1.3,5.9; physical energy contour ingredient of arXiv:1605.06690v1 Section3.1 Lemma3.2 proof, with actual frequency identification still unproved",
+  "reference": "https://arxiv.org/html/1605.06690v1#S3.SS1",
+  "status": "The ACTUAL finite-gap outer cubic Hill contour equals the exact positive second-moment series, with central cancellation and negative-gap reflection factor two proved.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-finite-gap-cubic-decomposition-map.json",
+    "actual_primitive_reflection_with_endpoint_fixed_log_period_PROVED": true,
+    "ACTUAL_filled_Hill_differential_even_and_analytic_off_open_gaps_PROVED": true,
+    "ALL_signed_complex_odd_Hill_moments_ZERO_PROVED": true,
+    "central_cubic_contour_ZERO_without_central_collapse_PROVED": true,
+    "opposite_ASSIGNED_gap_contours_EQUAL_without_equal_radii_assumption_PROVED": true,
+    "closed_gap_cubic_contours_ZERO_PROVED": true,
+    "actual_finite_gap_outer_contour_decomposition_with_reflection_factor_TWO_PROVED": true,
+    "EXACT_two_over_i_pi_outer_cubic_contour_eq_free_minus_twelve_actual_series_PROVED": true,
+    "outer_radius_threshold_BEFORE_ALL_open_selected_indices_PROVED": true,
+    "outer_sphere_canonical_root_domain_hypothesis_RETAINED": true,
+    "genuine_original_finite_gap_rough_source_factory_and_original_open_gap_condition_PROVED": true,
+    "finite_gap_physical_energy_phase_bracket_differentiation_PROVED": false,
+    "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
+    "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "SourceOpenGapReflection preserves the entire open-gap complement under actual periodic endpoint reflection. SourceRealPsiFilledQuotient fills the ACTUAL real normalized Dirac psi quotient through every collapsed gap when its selected gap is open, directly from its actual root family.",
+    "SourceAbelianPeriodicReflection proves evenness of the actual discriminant derivative/root quotient and fixes primitive reflection by the genuine central endpoint normalization on both half-planes. Continuity extends exact oddness of the ACTUAL full zero-index primitive to real bands and collapsed gaps in the whole open-gap complement. No new principal logarithm or unproved period choice is used.",
+    "HillFilledFrequencyDifferential constructs the sum of the SAME actual filled Dirac psi quotient at z and -z. It is exactly the ACTUAL canonical Hill differential on the canonical root domain, with the original numerator, root sign and full two-z Jacobian. It is even for all complex sources and analytic off open gaps at real sources with open selected numerator gap.",
+    "HillCentralCubicContour proves zero odd centered actual Hill contours at EVERY SIGNED selected gap, including zero, for all complex local sources. In particular the actual unshifted central cubic contour vanishes without a zero-mean lift or central-collapse assumption.",
+    "HillCubicContourReflection proves analyticity and exact odd reflection of F_0^3 times the actual filled Hill differential. Real-centered homotopy compares the actual opposite assigned circles with reflected circles, retaining the negation derivative sign. Opposite gap integrals are equal even if their assigned centers/radii are unrelated; the central integral is zero.",
+    "HillFiniteGapCubicContour fills every closed-gap circle, applies the existing finite-hole Cauchy theorem on precisely the actual open gaps, proves finite support/summability of the full signed contour family and its equality to twice the positive sum, and applies the exact cubic reduction. ONE threshold BEFORE ALL open selected n gives, for EVERY larger R whose sphere is in the canonical root domain, (2/(i*pi))*integral_circle(0,R) F_0^3*ACTUAL_HillDifferential_n=(2*pi*n)^3-12*ACTUAL_raw_positive_weighted_secondMomentSeries_n.",
+    "originalHill_exists_finiteGap_cubic_contour constructs P,W,C and the exterior threshold at EVERY ORIGINAL finite-gap rough real mean-zero source. The SAME P Miura lift is genuinely Dirac finite-gap by the original Hill-to-Dirac transfer. An OPEN ORIGINAL canonical gap square supplies the required open selected Dirac gap. The original assigned contours, literal raw integrand and actual local moment series retain all constants. The outer-sphere root-domain hypothesis is explicit.",
+    "The physical Hamiltonian-frequency identification remains UNPROVED: finite-gap physical energy differentiation along genuine canonical action directions and the normalized phase-to-primitive variation still require proof. Finite-gap contour deformation, central/reflection factors and the exact -12 moment-series contour formula are now COMPLETE. Appendix B/Main1.4 COMPLETE; Main1.1,1.3,5.1,5.9 UNPROVED; goalACTIVE."
+  ],
+  "declarations": [
+    "NLS.ZakharovShabat.SourcePeriodicReflection.neg_mem_openGapComplement_iff",
+    "NLS.ZakharovShabat.sourcePsiFilledQuotient_analytic_real",
+    "NLS.ZakharovShabat.sourceAbelianHalfPlane_neg_mem",
+    "NLS.ZakharovShabat.SourcePeriodicReflection.criticalRootRatio_neg",
+    "NLS.ZakharovShabat.sourceAbelianHalfPlanePrimitive_periodicReflection",
+    "NLS.ZakharovShabat.sourceFullAbelianPrimitive_zero_periodicReflection",
+    "NLS.KdV.HillProductEquationPatch.filledAbelianFrequencyDifferential",
+    "NLS.KdV.HillProductEquationPatch.filledAbelianFrequencyDifferential_neg",
+    "NLS.KdV.HillProductEquationPatch.filledAbelianFrequencyDifferential_eq_actual",
+    "NLS.KdV.HillProductEquationPatch.analytic_filledAbelianFrequencyDifferential",
+    "NLS.KdV.HillProductEquationPatch.signed_odd_centeredMoment_eq_zero",
+    "NLS.KdV.HillProductEquationPatch.central_cubic_primitive_contour_eq_zero",
+    "NLS.KdV.HillProductEquationPatch.filledCubicFrequencyIntegrand",
+    "NLS.KdV.HillProductEquationPatch.filledCubicFrequencyIntegrand_eq_actual",
+    "NLS.KdV.HillProductEquationPatch.analytic_filledCubicFrequencyIntegrand",
+    "NLS.KdV.HillProductEquationPatch.filledCubicFrequencyIntegrand_neg",
+    "NLS.KdV.HillProductEquationPatch.filledCubic_central_circle_eq_zero",
+    "NLS.KdV.HillProductEquationPatch.filledCubic_opposite_circle_eq",
+    "NLS.KdV.HillProductEquationPatch.filledCubic_circle_eq_zero_of_gap_zero",
+    "NLS.KdV.HillProductEquationPatch.filledCubic_positive_circle_reduction",
+    "NLS.KdV.HillProductEquationPatch.exists_finiteGap_cubic_contour_moment_formula",
+    "NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_cubic_contour"
+  ],
+  "files": [
+    "NLS/ZakharovShabat/SourceOpenGapReflection.lean",
+    "NLS/ZakharovShabat/SourceRealPsiFilledQuotient.lean",
+    "NLS/ZakharovShabat/SourceAbelianPeriodicReflection.lean",
+    "NLS/KdV/HillFilledFrequencyDifferential.lean",
+    "NLS/KdV/HillCentralCubicContour.lean",
+    "NLS/KdV/HillCubicContourReflection.lean",
+    "NLS/KdV/HillFiniteGapCubicContour.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapCubicContour.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "486eb9edfb8d6e65b3a206ef68efc880929fef4b",
+    "baseline_modules": 1802,
+    "baseline_non_audit_sources_verified_unchanged": 1801,
+    "new_modules_compiled": 8,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.SourceFullAbelianPrimitive",
+        "source": "NLS/ZakharovShabat/SourceFullAbelianPrimitive.lean",
+        "source_sha256": "bb4900fea5fc42861e334c9a10989a228b7e27acaf55e45d2622fa71e5d751a5"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourcePsiOpenGapQuotient",
+        "source": "NLS/ZakharovShabat/SourcePsiOpenGapQuotient.lean",
+        "source_sha256": "76ffe84c213f2f258ca98d233576ad1fa5bf7452cecc2592070497197d3c8271"
+      },
+      {
+        "module": "NLS.ZakharovShabat.SourceFiniteGapContourDecomposition",
+        "source": "NLS/ZakharovShabat/SourceFiniteGapContourDecomposition.lean",
+        "source_sha256": "f86d60de2b004e3c1b62481b5c91d60b5be9db7175cc18d4005229b6ec1bb676"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.ZakharovShabat.SourceCanonicalRootReflection",
+        "source": "NLS/ZakharovShabat/SourceCanonicalRootReflection.lean",
+        "source_sha256": "08e5e5ad1279ddc8d7d146e58c68f86771d5fcbee4aba02f3c6446817e664453",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillAbelianOddGapNumerator",
+        "source": "NLS/KdV/HillAbelianOddGapNumerator.lean",
+        "source_sha256": "21873d8951a3fac2c96b293cb4d769c8fbc5bc2abf1fd3d42b51daac432d7c07",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillCubicPrimitiveMomentReduction",
+        "source": "NLS/KdV/HillCubicPrimitiveMomentReduction.lean",
+        "source_sha256": "b744d3636ac0fa6e373e5daa44a8425b13e4bc84bf42b0ae059b0097f0b360de",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.KdV.HillPrimitiveMomentSeriesNeighborhood",
+        "source": "NLS/KdV/HillPrimitiveMomentSeriesNeighborhood.lean",
+        "source_sha256": "5a06e73c1ad33e97f7fadd8ea1c7108e68d36cf6756caa9dde28b4781ad95c72",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMiura",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillFiniteGapMiura.lean",
+        "source_sha256": "c30dfffdb1bf7b60c0ebca466c1ab90892629fad4cfda981c18ae455572eae63",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1810,
+    "audited_declarations": 8916,
+    "theorems": 7513,
+    "definitions": 1403,
+    "new_theorems": 20,
+    "new_definitions": 2,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-finite-gap-cubic-decomposition.log",
+    "log_sha256": "f2a6482c37f675728aed1c21603cf2e743206f2369fb84864386dec3feb99fe6"
+  },
+  "remaining_obligations": [
+    "Identify the NOW PROVED actual finite-gap cubic outer contour with the GENUINE physical Hamiltonian frequency. Transfer the normalized phase-discriminant bracket to the actual primitive and justify the physical quartic energy contour derivative along genuine finite-gap canonical action directions with a common outer circle and exact factor 2/(i*pi). Central zero, negative-gap doubling, closed-gap filling, finite-hole deformation and the free-minus12 actual moment-series CONTOUR identity are COMPLETE. The finite-gap energy identity cannot be differentiated as an ambient Hminus identity or along arbitrary H1 perturbations opening high gaps.",
+    "After physical finite-gap frequency identification at OPEN selected modes, extend to collapsed selected modes by actual finite-gap action perturbations and continuity, then to ALL H1 by verified strong finite-gap approximation. Glue the ALREADY weighted-Banach-analytic local rough sums across DIFFERENT Miura/product patches by genuine dense H1 agreement, or prove cross-patch independence directly. Actual rough KdV frequencies remain UNPROVED.",
+    "Establish ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}

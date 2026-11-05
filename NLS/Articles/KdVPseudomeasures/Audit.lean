@@ -1799,6 +1799,14 @@ import NLS.ComplexAnalysis.ShiftedCubicWeightedCircle
 import NLS.KdV.HillOddCenteredPrimitiveMoments
 import NLS.KdV.HillCubicPrimitiveMomentReduction
 import NLS.Articles.KdVPseudomeasures.OriginalHillOddMomentCancellation
+import NLS.ZakharovShabat.SourceOpenGapReflection
+import NLS.ZakharovShabat.SourceRealPsiFilledQuotient
+import NLS.ZakharovShabat.SourceAbelianPeriodicReflection
+import NLS.KdV.HillFilledFrequencyDifferential
+import NLS.KdV.HillCentralCubicContour
+import NLS.KdV.HillCubicContourReflection
+import NLS.KdV.HillFiniteGapCubicContour
+import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapCubicContour
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10696,3 +10704,25 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillOddMomentCancellation
 #print axioms NLS.KdV.HillProductEquationPatch.cubic_primitive_contour_eq_centeredMoment
 #print axioms NLS.KdV.HillProductEquationPatch.normalized_cubic_primitive_contour
 #print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_odd_moment_cancellation
+#print axioms NLS.ZakharovShabat.SourcePeriodicReflection.neg_mem_openGapComplement_iff
+#print axioms NLS.ZakharovShabat.sourcePsiFilledQuotient_analytic_real
+#print axioms NLS.ZakharovShabat.sourceAbelianHalfPlane_neg_mem
+#print axioms NLS.ZakharovShabat.SourcePeriodicReflection.criticalRootRatio_neg
+#print axioms NLS.ZakharovShabat.sourceAbelianHalfPlanePrimitive_periodicReflection
+#print axioms NLS.ZakharovShabat.sourceFullAbelianPrimitive_zero_periodicReflection
+#print axioms NLS.KdV.HillProductEquationPatch.filledAbelianFrequencyDifferential
+#print axioms NLS.KdV.HillProductEquationPatch.filledAbelianFrequencyDifferential_neg
+#print axioms NLS.KdV.HillProductEquationPatch.filledAbelianFrequencyDifferential_eq_actual
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_filledAbelianFrequencyDifferential
+#print axioms NLS.KdV.HillProductEquationPatch.signed_odd_centeredMoment_eq_zero
+#print axioms NLS.KdV.HillProductEquationPatch.central_cubic_primitive_contour_eq_zero
+#print axioms NLS.KdV.HillProductEquationPatch.filledCubicFrequencyIntegrand
+#print axioms NLS.KdV.HillProductEquationPatch.filledCubicFrequencyIntegrand_eq_actual
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_filledCubicFrequencyIntegrand
+#print axioms NLS.KdV.HillProductEquationPatch.filledCubicFrequencyIntegrand_neg
+#print axioms NLS.KdV.HillProductEquationPatch.filledCubic_central_circle_eq_zero
+#print axioms NLS.KdV.HillProductEquationPatch.filledCubic_opposite_circle_eq
+#print axioms NLS.KdV.HillProductEquationPatch.filledCubic_circle_eq_zero_of_gap_zero
+#print axioms NLS.KdV.HillProductEquationPatch.filledCubic_positive_circle_reduction
+#print axioms NLS.KdV.HillProductEquationPatch.exists_finiteGap_cubic_contour_moment_formula
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_cubic_contour

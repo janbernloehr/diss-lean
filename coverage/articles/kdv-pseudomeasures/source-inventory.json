@@ -3000,6 +3000,35 @@
         "NLS.Articles.KdVPseudomeasures.originalHill_exists_odd_moment_cancellation"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-odd-centered-moments-map.json"
+    },
+    {
+      "label": "Actual finite-gap cubic outer contour equals exact free-minus12 moment series with central/reflection factors",
+      "status": "proved actual contour deformation and series identity at every original finite-gap rough source and open selected gap; physical Hamiltonian differentiation unproved; four main theorems unproved",
+      "declarations": [
+        "NLS.ZakharovShabat.SourcePeriodicReflection.neg_mem_openGapComplement_iff",
+        "NLS.ZakharovShabat.sourcePsiFilledQuotient_analytic_real",
+        "NLS.ZakharovShabat.sourceAbelianHalfPlane_neg_mem",
+        "NLS.ZakharovShabat.SourcePeriodicReflection.criticalRootRatio_neg",
+        "NLS.ZakharovShabat.sourceAbelianHalfPlanePrimitive_periodicReflection",
+        "NLS.ZakharovShabat.sourceFullAbelianPrimitive_zero_periodicReflection",
+        "NLS.KdV.HillProductEquationPatch.filledAbelianFrequencyDifferential",
+        "NLS.KdV.HillProductEquationPatch.filledAbelianFrequencyDifferential_neg",
+        "NLS.KdV.HillProductEquationPatch.filledAbelianFrequencyDifferential_eq_actual",
+        "NLS.KdV.HillProductEquationPatch.analytic_filledAbelianFrequencyDifferential",
+        "NLS.KdV.HillProductEquationPatch.signed_odd_centeredMoment_eq_zero",
+        "NLS.KdV.HillProductEquationPatch.central_cubic_primitive_contour_eq_zero",
+        "NLS.KdV.HillProductEquationPatch.filledCubicFrequencyIntegrand",
+        "NLS.KdV.HillProductEquationPatch.filledCubicFrequencyIntegrand_eq_actual",
+        "NLS.KdV.HillProductEquationPatch.analytic_filledCubicFrequencyIntegrand",
+        "NLS.KdV.HillProductEquationPatch.filledCubicFrequencyIntegrand_neg",
+        "NLS.KdV.HillProductEquationPatch.filledCubic_central_circle_eq_zero",
+        "NLS.KdV.HillProductEquationPatch.filledCubic_opposite_circle_eq",
+        "NLS.KdV.HillProductEquationPatch.filledCubic_circle_eq_zero_of_gap_zero",
+        "NLS.KdV.HillProductEquationPatch.filledCubic_positive_circle_reduction",
+        "NLS.KdV.HillProductEquationPatch.exists_finiteGap_cubic_contour_moment_formula",
+        "NLS.Articles.KdVPseudomeasures.originalHill_exists_finiteGap_cubic_contour"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-finite-gap-cubic-decomposition-map.json"
     }
   ],
   "reuse_map": [
@@ -3079,8 +3108,8 @@
     }
   ],
   "remaining_obligations": [
-    "Identify the NOW PROVED normalized cubic contour and centered-moment reduction with the GENUINE physical Hamiltonian frequency. Transfer the normalized phase-discriminant bracket to the actual primitive, justify the physical energy contour derivative along genuine finite-gap canonical action directions with a common outer circle, and deform the outer frequency contour to the actual positive gap contours retaining central and negative-gap reflection factors. A pointwise finite-gap energy contour identity cannot be differentiated as an ambient Hminus identity or along arbitrary H1 perturbations opening high gaps.",
-    "After physical finite-gap frequency identification, extend to collapsed selected modes by actual finite-gap action perturbations and continuity, then to ALL H1 by the verified strong finite-gap approximation. Glue the ALREADY weighted-Banach-analytic rough local moment sums across DIFFERENT Miura/product patches using genuine dense H1 agreement, or prove cross-patch independence directly. Same-patch primitive-ambient independence, all-index moment estimates, absolute convergence and weighted Banach analyticity for EVERY p>1 including infinity are COMPLETE. Actual rough KdV frequencies remain UNPROVED.",
+    "Identify the NOW PROVED actual finite-gap cubic outer contour with the GENUINE physical Hamiltonian frequency. Transfer the normalized phase-discriminant bracket to the actual primitive and justify the physical quartic energy contour derivative along genuine finite-gap canonical action directions with a common outer circle and exact factor 2/(i*pi). Central zero, negative-gap doubling, closed-gap filling, finite-hole deformation and the free-minus12 actual moment-series CONTOUR identity are COMPLETE. The finite-gap energy identity cannot be differentiated as an ambient Hminus identity or along arbitrary H1 perturbations opening high gaps.",
+    "After physical finite-gap frequency identification at OPEN selected modes, extend to collapsed selected modes by actual finite-gap action perturbations and continuity, then to ALL H1 by verified strong finite-gap approximation. Glue the ALREADY weighted-Banach-analytic local rough sums across DIFFERENT Miura/product patches by genuine dense H1 agreement, or prove cross-patch independence directly. Actual rough KdV frequencies remain UNPROVED.",
     "Establish ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
   ],
   "workspace": {
@@ -6872,6 +6901,32 @@
     "genuine_original_rough_source_factory_BEFORE_ALL_indices_and_complex_sources_PROVED": true,
     "finite_gap_physical_energy_phase_bracket_differentiation_PROVED": false,
     "outer_contour_gap_deformation_for_actual_frequency_integrand_PROVED": false,
+    "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
+    "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "actual_Hill_finite_gap_cubic_decomposition": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-finite-gap-cubic-decomposition-map.json",
+    "actual_primitive_reflection_with_endpoint_fixed_log_period_PROVED": true,
+    "ACTUAL_filled_Hill_differential_even_and_analytic_off_open_gaps_PROVED": true,
+    "ALL_signed_complex_odd_Hill_moments_ZERO_PROVED": true,
+    "central_cubic_contour_ZERO_without_central_collapse_PROVED": true,
+    "opposite_ASSIGNED_gap_contours_EQUAL_without_equal_radii_assumption_PROVED": true,
+    "closed_gap_cubic_contours_ZERO_PROVED": true,
+    "actual_finite_gap_outer_contour_decomposition_with_reflection_factor_TWO_PROVED": true,
+    "EXACT_two_over_i_pi_outer_cubic_contour_eq_free_minus_twelve_actual_series_PROVED": true,
+    "outer_radius_threshold_BEFORE_ALL_open_selected_indices_PROVED": true,
+    "outer_sphere_canonical_root_domain_hypothesis_RETAINED": true,
+    "genuine_original_finite_gap_rough_source_factory_and_original_open_gap_condition_PROVED": true,
+    "finite_gap_physical_energy_phase_bracket_differentiation_PROVED": false,
     "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
     "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,

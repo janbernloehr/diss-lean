@@ -1833,6 +1833,14 @@ modules = [
     'NLS.KdV.HillOddCenteredPrimitiveMoments',
     'NLS.KdV.HillCubicPrimitiveMomentReduction',
     'NLS.Articles.KdVPseudomeasures.OriginalHillOddMomentCancellation',
+    'NLS.ZakharovShabat.SourceOpenGapReflection',
+    'NLS.ZakharovShabat.SourceRealPsiFilledQuotient',
+    'NLS.ZakharovShabat.SourceAbelianPeriodicReflection',
+    'NLS.KdV.HillFilledFrequencyDifferential',
+    'NLS.KdV.HillCentralCubicContour',
+    'NLS.KdV.HillCubicContourReflection',
+    'NLS.KdV.HillFiniteGapCubicContour',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapCubicContour',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
