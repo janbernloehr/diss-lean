@@ -1923,6 +1923,30 @@
         "NLS.Articles.KdVPseudomeasures.continuous_articleEndpointWeakStarCoordinates_on_bounded"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/endpoint-isospectral-article-norm-map.json"
+    },
+    {
+      "label": "Actual native Hill finite-gap Miura/Dirac transfer, all original Sobolev orders, exact real smooth representatives and globalinjectivityIFFordinaryphysicalL2injectivity",
+      "status": "proved dependency; actual L2/smooth injectivity, global bijection, actualKdV/main unproved",
+      "declarations": [
+        "NLS.memlp_one_sobolev_of_all_hilbert",
+        "NLS.periodOneMiura_mem_all_sobolev",
+        "NLS.KdV.sobolev_even_weight_le_two_rpow",
+        "NLS.KdV.exists_periodOneOriginal_positive_regular_realization",
+        "NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_original_gap_tail",
+        "NLS.Articles.KdVPseudomeasures.hillMiuraRealSource_finiteGap_of_hillRealFiniteGap",
+        "NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_miura_mem_all_sobolev",
+        "NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_mem_all_sobolev",
+        "NLS.Articles.KdVPseudomeasures.exists_originalHillFiniteGap_regular_realization",
+        "NLS.Articles.KdVPseudomeasures.exists_hillRealFiniteGap_smooth_representative",
+        "NLS.Articles.KdVPseudomeasures.hillRealSmoothLocus",
+        "NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_subset_smooth",
+        "NLS.Articles.KdVPseudomeasures.dense_hillRealSmoothLocus",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalNative_injective_iff_injOn_smooth",
+        "NLS.Articles.KdVPseudomeasures.hillRealL2Locus",
+        "NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_subset_L2",
+        "NLS.Articles.KdVPseudomeasures.hillPhysicalNative_injective_iff_injOn_L2"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/native-finite-gap-smooth-regularity-map.json"
     }
   ],
   "reuse_map": [
@@ -2004,8 +2028,8 @@
   "remaining_obligations": [
     "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
     "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "NOW PROVED actual complete canonical-action flows/exact unit-speed native rotations/full native isospectral-image/action-torus equality. NOW ALSO FULL endpoint sourceLemma3.5(i)-(ii), ENTIRE original isoset endpoint regularity, coefficient-preserving source/target native inclusions and literal article1+abs(n) target norm equivalence with explicit2^(1/2-r) bound. Actual endpoint analytic/free derivative/two-sided local inverse at0, source3.6 norm-ball boundedness,3.7 sequential preservation and full bounded-set FORWARD weak-star continuity exported with LITERAL article norm/predual. Global finite-gap/native injectivity, arbitrary action realization/global surjectivity, source3.4,3.5iii, inverse/full weak-star homeomorphism, remaining scales, actualKdV/allmain OPEN.",
-    "Complete source3.1/main1.4: genuine global native/endpoint bijectivity, remaining nonlinear scales and inverse/full bounded-set weak-star homeomorphism. Source3.5(i)-(ii) full original endpoint isoset bound and torus image NOW PROVED WITHOUT global inverse. Native signedmax(1,abs(n)) and literal article1+abs(n) target norms are connected by PROVED raw coefficient identity, explicit forward2^(1/2-r), reverse1. Endpoint analyticity/exact free derivative/local inverse at0,3.6 boundedness and3.7/full bounded-set forward weak-star continuity now have LITERAL article norm/predual exports. Global injectivity/onto/source3.4 and actualKdV remain OPEN.",
+    "NOW ALSO PROVED: ACTUAL native Hill finite-gap data imply ACTUAL signed Dirac finite-gap data for EVERY genuine real Miura lift; the SAME lift and actual original Hill potential have ALL Sobolev orders. Every actual finite-gap source has an EXACT real C-infinity period-one representative, and every original positive-order realization keeps the ENTIRE physical distribution. Global ACTUAL native injectivity is now IFF injectivity of the SAME actual map on ordinary physical L2 or smooth sources, by actual finite-gap collision reduction+PROVED regularity. L2/smooth injectivity, arbitrary-action realization/global onto, allmain remain OPEN. Prior actual all-source complex/real local inverse, complete action flows/torusimage, endpoint3.5i/ii, literalnorm/localinverse/boundedness/forwardweakstar remain PROVED.",
+    "Complete source3.1/main1.4: genuine actual native/endpoint global bijection, remaining nonlinear scales and inverse/full bounded-set weak-star homeomorphism. NEW ACTUAL finite-gap smooth regularity and rigorous globalinjectivityIFFordinaryphysicalL2injectivity now bridge the reference classical-to-rough step; actual L2 injectivity itself still OPEN. Arbitrary action realization/global onto/source3.4, source3.5iii, actualKdV and ALL main statements remain OPEN. Preserve SAME native map and original distributions; do not substitute NLS injectivity or infer connected scalar-diagonal slices from connected full Dirac fibers.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
   "workspace": {
@@ -5012,6 +5036,31 @@
     "actual_native_global_surjectivity_PROVED": false,
     "source_Lemma3_4_onto_PROVED": false,
     "source_Lemma3_5_iii_noncompactness_PROVED": false,
+    "full_bounded_set_weak_star_homeomorphism_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "actual_native_finite_gap_smooth_regularity_followup": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/native-finite-gap-smooth-regularity-map.json",
+    "reusable_actual_Miura_all_order_Sobolev_regularity_PROVED": true,
+    "positive_Sobolev_original_distribution_even_insertion_with_factor_2_pow_s_PROVED": true,
+    "actual_native_Hill_finite_gap_IMPLIES_actual_signed_original_Dirac_finite_gap_for_EVERY_real_Miura_lift_PROVED": true,
+    "actual_signed_gap_tail_transfer_keeps_finite_low_and_central_block_PROVED": true,
+    "SAME_actual_real_Miura_lift_ALL_nonnegative_Sobolev_orders_PROVED": true,
+    "actual_native_Hill_finite_gap_ALL_nonnegative_Sobolev_orders_PROVED": true,
+    "actual_original_Hill_finite_gap_SAME_distribution_positive_Sobolev_realizations_PROVED": true,
+    "actual_Hill_finite_gap_REAL_C_infinity_period_one_representative_EXACT_ALL_coefficients_PROVED": true,
+    "actual_native_finite_gap_subset_ACTUAL_smooth_and_L2_loci_PROVED": true,
+    "actual_smooth_physical_locus_dense_ORIGINAL_HminusOne_norm_PROVED": true,
+    "actual_native_GLOBAL_injectivity_IFF_injOn_ACTUAL_smooth_locus_PROVED": true,
+    "actual_native_GLOBAL_injectivity_IFF_injOn_ACTUAL_ordinary_physical_L2_locus_PROVED": true,
+    "scope": "Every ACTUAL physical Fourier-real zero-mean Hminus-one source with eventual vanishing of the ACTUAL original canonical gap squares, arbitrary actual low/central/collapsed gaps retained. EVERY actual scalar real Miura lift at any genuine real shift has actual signed Dirac finite-gap data. SAME full original coefficient/distribution, EVERY nonnegative Sobolev order, actual real C-infinity period-one representative. L2/smooth/global injectivity reduction concerns the SAME actual native map.",
+    "ordinary_physical_L2_native_injectivity_PROVED": false,
+    "actual_smooth_native_injectivity_PROVED": false,
+    "Borg_zero_potential_uniqueness_PROVED": false,
+    "connectedness_scalar_diagonal_Dirac_isospectral_slice_inferred_from_full_Dirac_connectedness": false,
+    "actual_native_global_injectivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
     "full_bounded_set_weak_star_homeomorphism_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
     "global_Birkhoff_theorem_PROVED": false

@@ -1583,6 +1583,10 @@ import NLS.Articles.KdVPseudomeasures.EndpointPhysicalNativeInclusions
 import NLS.Articles.KdVPseudomeasures.EndpointIsospectralTorusImage
 import NLS.Articles.KdVPseudomeasures.ArticleEndpointTargetNorm
 import NLS.Articles.KdVPseudomeasures.ArticleEndpointWeakStarContinuity
+import NLS.SequenceSpaces.PeriodOneMiuraSobolevRegularity
+import NLS.KdV.PeriodOneOriginalPositiveRegularity
+import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMiura
+import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapRegularity
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9676,3 +9680,20 @@ import NLS.Articles.KdVPseudomeasures.ArticleEndpointWeakStarContinuity
 #print axioms NLS.Articles.KdVPseudomeasures.tendsto_articleEndpointWeakStarCoordinates_of_bounded
 #print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_7_articleNorm
 #print axioms NLS.Articles.KdVPseudomeasures.continuous_articleEndpointWeakStarCoordinates_on_bounded
+#print axioms NLS.memlp_one_sobolev_of_all_hilbert
+#print axioms NLS.periodOneMiura_mem_all_sobolev
+#print axioms NLS.KdV.sobolev_even_weight_le_two_rpow
+#print axioms NLS.KdV.exists_periodOneOriginal_positive_regular_realization
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_original_gap_tail
+#print axioms NLS.Articles.KdVPseudomeasures.hillMiuraRealSource_finiteGap_of_hillRealFiniteGap
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_miura_mem_all_sobolev
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_mem_all_sobolev
+#print axioms NLS.Articles.KdVPseudomeasures.exists_originalHillFiniteGap_regular_realization
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillRealFiniteGap_smooth_representative
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSmoothLocus
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_subset_smooth
+#print axioms NLS.Articles.KdVPseudomeasures.dense_hillRealSmoothLocus
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNative_injective_iff_injOn_smooth
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealL2Locus
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_subset_L2
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNative_injective_iff_injOn_L2

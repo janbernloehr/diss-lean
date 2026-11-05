@@ -1617,6 +1617,10 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.EndpointIsospectralTorusImage',
     'NLS.Articles.KdVPseudomeasures.ArticleEndpointTargetNorm',
     'NLS.Articles.KdVPseudomeasures.ArticleEndpointWeakStarContinuity',
+    'NLS.SequenceSpaces.PeriodOneMiuraSobolevRegularity',
+    'NLS.KdV.PeriodOneOriginalPositiveRegularity',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapMiura',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapRegularity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
