@@ -198,6 +198,7 @@ modules+=(NLS/KdV/HillQuadraticEndpointCotangentBound NLS/KdV/HillCommonEndpoint
 modules+=(NLS/KdV/ClassicalHillStateErrors NLS/ComplexAnalysis/SineApproximationMass NLS/KdV/HillRoughStateErrors NLS/KdV/HillRealFrequencyStateBounds NLS/KdV/HillHighDirichletFrequency NLS/KdV/HillUniformNormingGradients NLS/KdV/HillInfiniteNormingGradients NLS/KdV/HillInfiniteNormingGardner NLS/KdV/HillInfiniteEndpointCorrectionCotangent)
 modules+=(NLS/KdV/HillInfiniteNormingSingle NLS/KdV/HillFullEndpointPhase NLS/KdV/HillFullEndpointPhaseFamily)
 modules+=(NLS/KdV/HillPeriodOneRestrictionInverse NLS/KdV/HillOriginalQuadraticTrace NLS/KdV/HillIndexedFlowNorm NLS/KdV/HillStateGrowthBounds NLS/KdV/HillDiscriminantSourceBounds NLS/KdV/HillIndexedGapConservation NLS/KdV/HillIndexedFlowSpeed NLS/FunctionalAnalysis/RelativeUniformLimit NLS/KdV/HillIndexedFlowEndpointLimits NLS/KdV/HillIndexedFlowExtension NLS/FunctionalAnalysis/AutonomousTrajectoryAssembly NLS/FunctionalAnalysis/AutonomousGlobalContinuation NLS/KdV/HillIndexedGlobalFlows)
+modules+=(NLS/KdV/HillGlobalIndexedSheet NLS/KdV/HillEndpointSheetFacts NLS/KdV/HillEndpointReachability NLS/KdV/HillSingleEndpointTransport NLS/KdV/HillFiniteEndpointTransport)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

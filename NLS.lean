@@ -5991,3 +5991,8 @@ import NLS.KdV.HillIndexedFlowExtension
 import NLS.FunctionalAnalysis.AutonomousTrajectoryAssembly
 import NLS.FunctionalAnalysis.AutonomousGlobalContinuation
 import NLS.KdV.HillIndexedGlobalFlows
+import NLS.KdV.HillGlobalIndexedSheet
+import NLS.KdV.HillEndpointSheetFacts
+import NLS.KdV.HillEndpointReachability
+import NLS.KdV.HillSingleEndpointTransport
+import NLS.KdV.HillFiniteEndpointTransport

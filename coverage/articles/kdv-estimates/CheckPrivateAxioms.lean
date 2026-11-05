@@ -1068,6 +1068,11 @@ import NLS.KdV.HillIndexedFlowExtension
 import NLS.FunctionalAnalysis.AutonomousTrajectoryAssembly
 import NLS.FunctionalAnalysis.AutonomousGlobalContinuation
 import NLS.KdV.HillIndexedGlobalFlows
+import NLS.KdV.HillGlobalIndexedSheet
+import NLS.KdV.HillEndpointSheetFacts
+import NLS.KdV.HillEndpointReachability
+import NLS.KdV.HillSingleEndpointTransport
+import NLS.KdV.HillFiniteEndpointTransport
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1671,7 +1676,8 @@ run_cmd do
     ``NLS.FunctionalAnalysis.hasDerivAt_assembledAutonomousTrajectory_of_mem,
     ``NLS.FunctionalAnalysis.AutonomousEndpointExtensions,
     ``NLS.FunctionalAnalysis.autonomousTrajectoryTimeDomain_eq_univ_of_extensions,
-    ``NLS.FunctionalAnalysis.exists_global_autonomousTrajectory_of_endpointExtensions]
+    ``NLS.FunctionalAnalysis.exists_global_autonomousTrajectory_of_endpointExtensions,
+    ``NLS.FunctionalAnalysis.exists_zero_velocity_of_bounded_sheetODE]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
