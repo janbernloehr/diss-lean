@@ -1768,6 +1768,12 @@ modules = [
     'NLS.FunctionalAnalysis.HyperplaneDivision',
     'NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeSymmetry',
     'NLS.Articles.KdVPseudomeasures.OriginalHillH1TransverseSlope',
+    'NLS.FunctionalAnalysis.RealCircleDerivative',
+    'NLS.FunctionalAnalysis.ContinuousCoordinateCancellation',
+    'NLS.SequenceSpaces.FourierRealModeVariation',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1CircleStationarity',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeFrequency',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyActionFibers',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

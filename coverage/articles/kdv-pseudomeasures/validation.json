@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "Continuous filled transverse gradient quotient and collapsed-mode stationarity for the actual physical canonical H1 KdV Hamiltonian.",
+  "phase": "Actual normalized physical H1 KdV mode frequencies: full radial gradient, continuity through collapse, open-mode analyticity and constancy on entire native action fibers.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1742,13 +1742,19 @@
     "NLS/FunctionalAnalysis/HyperplaneDivision.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeSymmetry.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillH1TransverseSlope.lean",
+    "NLS/FunctionalAnalysis/RealCircleDerivative.lean",
+    "NLS/FunctionalAnalysis/ContinuousCoordinateCancellation.lean",
+    "NLS/SequenceSpaces/FourierRealModeVariation.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1CircleStationarity.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeFrequency.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1FrequencyActionFibers.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 7329,
-  "definitions": 1372,
+  "proved_theorems": 7353,
+  "definitions": 1376,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 8701,
+    "declarations": 8729,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -3134,8 +3140,8 @@
     "OriginalHillSpectralDarboux exports the SAMEoriginal physical potential, actual multipliers and local logarithmic normalization; their literal unit-period physical Gardner integral is zero, their closed-mean-zero cotangent bracket is intrinsic, and the full local spectral matrix holds at every original potential.",
     "NEXT derive the Gardner brackets of the ACTUAL Abelian angles, retaining the complete infinite off-index correction and normalized differentials, from the now-complete local spectral Darboux identities and actual action/Dirichlet contours. The article signed-coordinate canonicality away fromzero, all-source derivative inversion, remaining original nonlinear scales/global Birkhoff boundedness/bijection/weak-star/flow, universal actual numerator scalar and sharp KMT remain OPEN. AppendixB, local inverses and all preceding involution results remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE."
   ],
-  "source_correspondence": "Continuous filled transverse gradient quotient and collapsed-mode stationarity for the actual physical canonical H1 KdV Hamiltonian. Identify the full actual canonical KdV mode gradient with one normalized scalar frequency: the continuous real transverse quotient and collapsed-mode stationarity are NOW PROVED, but the imaginary gradient identity and action-fiber invariance of this filled scalar remain to be proved. Establish real analyticity of the filled frequency at x=0, particularly collapsed modes, and extend the genuine frequencies from signed H^(3/2) to the original rough domain. Preserve the original 2pi and native action normalizations. Construct ACTUAL original Hminus KdV evolution with convergence from EVERY original smooth approximation and required weak-star trajectory continuity/analyticity, then prove main1.1,1.3,5.9. An arbitrary frequency flow or indexed action flow is not a proof of physical KdV. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms remain necessary dependencies, not substitutes. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1731 baseline non-audit registered sources byte-identical to75ebcc3. All 5 new modules (26 theorems+8 definitions), 0 canonical-byte-identical shared modules, 5 unchanged private dependencies and EXACT 8701-declaration transitive standard-axiom audit freshly compiled privately. Literal physical mode insertions/reflections, all collapsed-mode energy directions stationary and continuous filled real transverse quotient with exact factor2 gradient identity PROVED. Full normalized frequencies and collapsed analyticity still OPEN. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1737-module build.",
+  "source_correspondence": "Actual normalized physical H1 KdV mode frequencies: full radial gradient, continuity through collapse, open-mode analyticity and constancy on entire native action fibers. Establish real analyticity of the NOW CONSTRUCTED actual normalized physical H1 KdV frequencies at collapsed modes. They are already continuous on ALL signed H^(3/2), satisfy the FULL original action-gradient normalization and are constant on ENTIRE action fibers including collapse, and are analytic at EVERY noncollapsed selected mode. Identify the original free frequency (2pi*n)^3 and extend the SAME genuine frequencies to the original rough signed H^(-1/2) domain, with required uniform estimates. Construct ACTUAL original Hminus KdV evolution with convergence from EVERY original smooth approximation and required weak-star trajectory continuity/analyticity, then prove main1.1,1.3,5.9. The actual H1 frequencies are now constructed; actual equation identification, physical evolution and rough extension remain necessary. An arbitrary frequency flow or indexed action flow is not a proof of physical KdV. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms remain necessary dependencies, not substitutes. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1736 baseline non-audit registered sources byte-identical to610166c. All 6 new modules (24 theorems+4 definitions), 0 canonical-byte-identical shared modules, 6 unchanged private dependencies and EXACT 8729-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL normalized H1 KdV frequencies constructed with FULL action-gradient identity, entire-domain continuity inclcollapse, noncollapsed analyticity and ENTIRE action-fiber invariance inclcollapse. Collapsed analyticity, free frequency identification, rough extension and actual original KdV evolution remain OPEN. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1743-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -4876,7 +4882,13 @@
     "NLS/FunctionalAnalysis/EvenLineDerivative.lean": "c7f3a0d3b0b5ad16376a9912890045801020aede460ebad45cbe4de4fd21e28c",
     "NLS/FunctionalAnalysis/HyperplaneDivision.lean": "8c5b3c04c94a26f7368ee7e6a62447608dd34530d1cff5cd0b27d10ccf323614",
     "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeSymmetry.lean": "51c0240d86aeba807c619826df61eb9fb0ea6d767b49c7693145afcaf41b448a",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillH1TransverseSlope.lean": "1964fe4674e1adacf6a875ffc1817fb4cd11a709e2c92d016032276e2f52c7a4"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1TransverseSlope.lean": "1964fe4674e1adacf6a875ffc1817fb4cd11a709e2c92d016032276e2f52c7a4",
+    "NLS/FunctionalAnalysis/RealCircleDerivative.lean": "b967a4e90fc1adbc43e051dd8766efb6e2d8e425094131b7640fa2a7393d5d82",
+    "NLS/FunctionalAnalysis/ContinuousCoordinateCancellation.lean": "33eb1c39bd23d778443a09e37c00320880484653d21c0ae43c66bb72a36a78d9",
+    "NLS/SequenceSpaces/FourierRealModeVariation.lean": "5f760fe63e1ce4c60174b67f6fcd53b7431778cbb5342e32f3a8a64949b6977a",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1CircleStationarity.lean": "370badccfd84d61cf69126ef0b16be7a5e2bfced7891e44d3083b6f0fa569672",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeFrequency.lean": "3678198af4dc79fa3c366fc11bef4a20cb0303cf964f8230b166dceba43aebab",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1FrequencyActionFibers.lean": "18b261e31b58e7b49f3f43ea0cdd58e113cc12e08d513ee5b760cf50d734f4e3"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -4884,11 +4896,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 8667,
-    "newly_checked_declarations_this_continuation": 34,
-    "new_theorems": 26,
-    "new_definitions": 8,
-    "total_checked_declarations": 8701
+    "previous_checked_declarations": 8701,
+    "newly_checked_declarations_this_continuation": 28,
+    "new_theorems": 24,
+    "new_definitions": 4,
+    "total_checked_declarations": 8729
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -4917,7 +4929,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-h1-filled-transverse-gradient.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-h1-normalized-mode-frequencies.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -5276,13 +5288,14 @@
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1707 baseline non-audit registered sources byte-identical to ef504ab. All 10 new modules (46 theorems+18 definitions), 2 canonical-byte-identical shared modules, 5 unchanged private dependencies and EXACT 8625-declaration transitive standard-axiom audit freshly compiled privately. ALL integer Hilbert canonical equivalences/finite-gap approximation and ACTUAL physical H1 KdV energy/first variation/native analytic transform PROVED. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1718-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1717 baseline non-audit registered sources byte-identical to2677cce. All 7 new modules (19 theorems+3 definitions), 3 canonical-byte-identical shared modules, 6 unchanged private dependencies and EXACT 8647-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL KdV gradient/Gardner field, centered Miura trace normalization and ALL finite-gap NLS hierarchy discriminant invariants PROVED. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1725-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1724 baseline non-audit registered sources byte-identical tocc6ff8f. All 7 new modules (19 theorems+1 definitions), 1 canonical-byte-identical shared modules, 8 unchanged private dependencies and EXACT 8667-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL original Fourier-centered Miura energy trace, finite-gap KdV isospectral invariance, shared strong action-preserving approximation and ENTIRE physical H1 KdV Hamiltonian action dependence PROVED. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1732-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1731 baseline non-audit registered sources byte-identical to75ebcc3. All 5 new modules (26 theorems+8 definitions), 0 canonical-byte-identical shared modules, 5 unchanged private dependencies and EXACT 8701-declaration transitive standard-axiom audit freshly compiled privately. Literal physical mode insertions/reflections, all collapsed-mode energy directions stationary and continuous filled real transverse quotient with exact factor2 gradient identity PROVED. Full normalized frequencies and collapsed analyticity still OPEN. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1737-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1731 baseline non-audit registered sources byte-identical to75ebcc3. All 5 new modules (26 theorems+8 definitions), 0 canonical-byte-identical shared modules, 5 unchanged private dependencies and EXACT 8701-declaration transitive standard-axiom audit freshly compiled privately. Literal physical mode insertions/reflections, all collapsed-mode energy directions stationary and continuous filled real transverse quotient with exact factor2 gradient identity PROVED. Full normalized frequencies and collapsed analyticity still OPEN. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1737-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1736 baseline non-audit registered sources byte-identical to610166c. All 6 new modules (24 theorems+4 definitions), 0 canonical-byte-identical shared modules, 6 unchanged private dependencies and EXACT 8729-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL normalized H1 KdV frequencies constructed with FULL action-gradient identity, entire-domain continuity inclcollapse, noncollapsed analyticity and ENTIRE action-fiber invariance inclcollapse. Collapsed analyticity, free frequency identification, rough extension and actual original KdV evolution remain OPEN. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1743-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-filled-transverse-gradient-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-normalized-mode-frequencies-map.json",
   "baseline_validated_snapshot": {
-    "commit": "75ebcc378b4e1c60ca0afb96d167a1491ba851e5",
-    "modules": 1732,
-    "audited_declarations": 8667,
+    "commit": "610166c0d344feb25a05e15d84c4a582d01e66e8",
+    "modules": 1737,
+    "audited_declarations": 8701,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -8210,6 +8223,29 @@
     "actual_transverse_slope_analytic_where_real_coordinate_nonzero_PROVED": true,
     "actual_full_normalized_KdV_mode_frequency_PROVED": false,
     "filled_frequency_analytic_at_collapsed_modes_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "actual_Hill_H1_normalized_mode_frequencies": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-normalized-mode-frequencies-map.json",
+    "actual_physical_H1_all_native_mode_circles_invariant_PROVED": true,
+    "actual_full_H1_mode_radial_gradient_relation_PROVED": true,
+    "actual_imaginary_gradient_eq_twice_coordinate_times_same_filled_slope_PROVED": true,
+    "actual_normalized_physical_H1_KdV_mode_frequencies_CONSTRUCTED": true,
+    "actual_normalized_H1_frequencies_CONTINUOUS_through_every_collapse_PROVED": true,
+    "actual_FULL_H1_energy_differential_eq_frequency_times_literal_action_differential_PROVED": true,
+    "actual_H1_frequency_analytic_at_every_noncollapsed_mode_PROVED": true,
+    "actual_H1_frequency_constant_on_ENTIRE_action_fibers_including_collapse_PROVED": true,
+    "actual_H1_frequency_invariant_under_FULL_original_Hill_isospectrality_PROVED": true,
+    "actual_H1_frequency_analytic_at_collapsed_modes_PROVED": false,
+    "actual_free_H1_frequency_2pi_n_cubed_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,

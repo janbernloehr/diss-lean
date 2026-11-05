@@ -1734,6 +1734,12 @@ import NLS.FunctionalAnalysis.EvenLineDerivative
 import NLS.FunctionalAnalysis.HyperplaneDivision
 import NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeSymmetry
 import NLS.Articles.KdVPseudomeasures.OriginalHillH1TransverseSlope
+import NLS.FunctionalAnalysis.RealCircleDerivative
+import NLS.FunctionalAnalysis.ContinuousCoordinateCancellation
+import NLS.SequenceSpaces.FourierRealModeVariation
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1CircleStationarity
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeFrequency
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyActionFibers
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10438,3 +10444,31 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillH1TransverseSlope
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1RealModeDerivative_eq_twice_coordinate_slope
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1TransverseSlope_eq_quotient
 #print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1TransverseSlope_of_real_coordinate_ne_zero
+#print axioms NLS.FunctionalAnalysis.realCirclePhase
+#print axioms NLS.FunctionalAnalysis.realCirclePhase_mul_conj
+#print axioms NLS.FunctionalAnalysis.realCirclePhase_zero
+#print axioms NLS.FunctionalAnalysis.hasDerivAt_realCirclePhase_zero
+#print axioms NLS.FunctionalAnalysis.hasDerivAt_differentiable_real_line
+#print axioms NLS.FunctionalAnalysis.fderiv_circle_tangent_eq_zero
+#print axioms NLS.FunctionalAnalysis.continuous_eq_zero_of_coordinate_mul
+#print axioms NLS.WeightedCoeff.fourierRealModeLine_apply
+#print axioms NLS.WeightedCoeff.fourierRealModeLine_products
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_mode_circle
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_fderiv_circle_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_radial_gradient_relation
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ImagModeCoordinate
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ImagModeCoordinate_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ImagModeDerivative
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1ImagModeDerivative
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ImagModeDerivative_eq_twice_coordinate_slope
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillH1KdVFrequency
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_mode_gradient
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_eq_imag_quotient
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1KdVFrequency_of_imag_coordinate_ne_zero
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1KdVFrequency_of_mode_ne_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1_normSq_eq_of_products
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_common_radial_lines
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_eq_of_products_of_mode_ne_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_eq_of_products
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_eq_of_original_isospectral
