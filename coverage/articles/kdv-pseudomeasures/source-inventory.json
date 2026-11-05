@@ -3120,6 +3120,31 @@
         "NLS.Articles.KdVPseudomeasures.hillReal_centeredSecondMomentSeries_independent_product_patch"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-physical-frequency-map.json"
+    },
+    {
+      "label": "Genuine global rough KdV frequencies and EVERY p>1 weighted Banach analytic renormalization",
+      "status": "Globally defined genuine rough KdV frequencies are real analytic, uniquely extend the actual physical H1 frequencies, and have an analytic renormalized sequence in the literal inverse-index weighted lp target for EVERY p>1 including infinity. Actual KdV evolution/PDE/trajectory dynamics remain open; four main theorems unproved.",
+      "declarations": [
+        "NLS.Articles.KdVPseudomeasures.hillRoughFrequencyPatch",
+        "NLS.Articles.KdVPseudomeasures.hillRoughFrequencyNeighborhood",
+        "NLS.Articles.KdVPseudomeasures.mem_hillRoughFrequencyNeighborhood",
+        "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency",
+        "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_eq_local",
+        "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_eq_physical_H1",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_hillRoughKdVFrequency",
+        "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_complex_eq_local",
+        "NLS.Articles.KdVPseudomeasures.hillRoughKdVRenormalizedFrequencySequence",
+        "NLS.Articles.KdVPseudomeasures.hillRoughFrequency_local_sequence_coefficients",
+        "NLS.Articles.KdVPseudomeasures.hillRoughFrequencySequence_eq_local",
+        "NLS.Articles.KdVPseudomeasures.originalHill_exists_weighted_rough_frequency_neighborhood",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_hillRoughKdVRenormalizedFrequencySequence",
+        "NLS.Articles.KdVPseudomeasures.hillRoughKdVRenormalizedFrequencySequence_coefficients",
+        "NLS.Articles.KdVPseudomeasures.continuous_hillRoughKdVFrequency",
+        "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_unique_continuous_extension",
+        "NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_zero",
+        "NLS.Articles.KdVPseudomeasures.tendsto_physical_H1_frequency_of_rough_convergence"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-global-rough-frequency-map.json"
     }
   ],
   "reuse_map": [
@@ -3199,8 +3224,8 @@
     }
   ],
   "remaining_obligations": [
-    "Construct the globally defined actual rough KdV frequency extension from the NOW PROVED cross-Miura/product-independent local raw moment SUMS. Prove exact local expressions, real analyticity, literal weighted target bounds for every p>1 including infinity, and agreement with the ACTUAL physical H1 frequency. All H1/ALL selected mode physical identities and rough local SUM gluing are now COMPLETE.",
-    "Establish ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for Main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for Wiener regularity. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+    "Construct ACTUAL original rough KdV evolution from the NOW DEFINED genuine rough frequencies and the verified actual native global inverse. Prove rough frequency invariance on action fibers (H1 physical action-fiber invariance and actual matched finite-gap approximations are available), actual flow group properties and smooth physical PDE identification. Prove convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for Main1.1,1.3,5.9. Genuine scalar rough frequencies, their uniqueness/H1 agreement, full complex free-minus12moments formula and EVERY p>1 including infinity weighted Banach analytic renormalization are NOW COMPLETE.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff Main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for Wiener regularity. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -7113,6 +7138,32 @@
     "individual_moment_cross_patch_identity_PROVED": false,
     "globally_defined_actual_KdV_rough_frequency_map_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "actual_Hill_global_rough_frequency": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-global-rough-frequency-map.json",
+    "globally_defined_genuine_rough_KdV_frequencies_PROVED": true,
+    "independence_of_ALL_local_Miura_product_Cauchy_choices_PROVED": true,
+    "ALL_rough_sources_FULL_COMPLEX_free_cubic_minus12_moment_SUM_formula_PROVED": true,
+    "real_analytic_actual_rough_mode_frequencies_PROVED": true,
+    "exact_ACTUAL_physical_H1_frequency_agreement_ALL_modes_PROVED": true,
+    "UNIQUE_continuous_extension_of_actual_physical_H1_frequency_PROVED": true,
+    "actual_free_cubic_at_zero_PROVED": true,
+    "frequency_convergence_from_EVERY_H1_family_converging_in_original_rough_norm_PROVED": true,
+    "literal_inverse_index_weighted_lp_renormalized_frequency_membership_EVERY_p_above_one_including_infinity_PROVED": true,
+    "exact_raw_renormalized_frequency_coefficients_PROVED": true,
+    "full_weighted_Banach_target_real_analyticity_PROVED": true,
+    "common_complex_neighborhood_BEFORE_ALL_p_and_local_gap_squared_norm_estimate_PROVED": true,
+    "rough_frequency_action_fiber_invariance_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "physical_smooth_PDE_flow_identification_PROVED": false,
+    "universal_smooth_approximation_TRAJECTORY_convergence_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
     "remaining_main_theorems": [
       "1.1",

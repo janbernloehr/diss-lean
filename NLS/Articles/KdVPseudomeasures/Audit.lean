@@ -1831,6 +1831,10 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapClosedFrequency
 import NLS.Articles.KdVPseudomeasures.OriginalHillH1PhysicalFrequency
 import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapH1Realization
 import NLS.Articles.KdVPseudomeasures.OriginalHillMomentPatchGluing
+import NLS.Articles.KdVPseudomeasures.OriginalHillRoughKdVFrequency
+import NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencyReality
+import NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencySequence
+import NLS.Articles.KdVPseudomeasures.OriginalHillRoughFrequencyExtension
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10813,3 +10817,21 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillMomentPatchGluing
 #print axioms NLS.Articles.KdVPseudomeasures.hillRealFiniteGap_has_H1_representative
 #print axioms NLS.Articles.KdVPseudomeasures.denseRange_hillIntegerSourceInclusion_one
 #print axioms NLS.Articles.KdVPseudomeasures.hillReal_centeredSecondMomentSeries_independent_product_patch
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughFrequencyPatch
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughFrequencyNeighborhood
+#print axioms NLS.Articles.KdVPseudomeasures.mem_hillRoughFrequencyNeighborhood
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_eq_local
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_eq_physical_H1
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillRoughKdVFrequency
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_complex_eq_local
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVRenormalizedFrequencySequence
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughFrequency_local_sequence_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughFrequencySequence_eq_local
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_weighted_rough_frequency_neighborhood
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillRoughKdVRenormalizedFrequencySequence
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVRenormalizedFrequencySequence_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillRoughKdVFrequency
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_unique_continuous_extension
+#print axioms NLS.Articles.KdVPseudomeasures.hillRoughKdVFrequency_zero
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_physical_H1_frequency_of_rough_convergence
