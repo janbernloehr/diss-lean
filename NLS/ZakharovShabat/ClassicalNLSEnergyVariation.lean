@@ -20,19 +20,8 @@ def classicalNLSEnergyGradient (a b : ℝ → ℂ) : (ℝ → ℂ) × (ℝ → �
 theorem integral_deriv_mul_periodic (a b : ℝ → ℂ)
     (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
     (hpa : Function.Periodic a 1) (hpb : Function.Periodic b 1) :
-    (∫ x in (0 : ℝ)..1, deriv a x*b x) = -(∫ x in (0 : ℝ)..1, a x*deriv b x) := by
-  have h := integral_mul_deriv_eq_deriv_mul_of_hasDerivAt
-    ha.continuous.continuousOn hb.continuous.continuousOn
-    (fun x _ => ((contDiff_infty_iff_deriv.mp ha).1 x).hasDerivAt)
-    (fun x _ => ((contDiff_infty_iff_deriv.mp hb).1 x).hasDerivAt)
-    ((contDiff_infty_iff_deriv.mp ha).2.continuous.intervalIntegrable 0 1)
-    ((contDiff_infty_iff_deriv.mp hb).2.continuous.intervalIntegrable 0 1)
-  have henda : a 1 = a 0 := by simpa using hpa 0
-  have hendb : b 1 = b 0 := by simpa using hpb 0
-  have he : (∫ x in (0 : ℝ)..1, a x*deriv b x) =
-      -(∫ x in (0 : ℝ)..1, deriv a x*b x) := by
-    simpa only [henda,hendb,sub_self,zero_sub] using h
-  rw [he,neg_neg]
+    (∫ x in (0 : ℝ)..1, deriv a x*b x) = -(∫ x in (0 : ℝ)..1, a x*deriv b x) :=
+  NLS.FunctionalAnalysis.integral_deriv_mul_periodic a b ha hb hpa hpb
 
 /-- The physical third Hamiltonian is symmetric in its two complex fields. -/
 theorem classicalNLSHamiltonian_three_comm (a b : ℝ → ℂ)

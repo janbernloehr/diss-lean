@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "article_id": "mkdv-nls-hierarchies",
-  "status": "partial_not_main_theorem_complete",
+  "status": "all_main_theorems_proved_with_documented_source_corrections",
   "source": {
     "abstract_url": "https://arxiv.org/abs/1601.07580v1",
     "pdf_url": "https://arxiv.org/pdf/1601.07580v1",
@@ -15,82 +15,418 @@
     {
       "label": "Theorem 1",
       "page": 3,
-      "status": "partial",
+      "status": "proved_original_complex_Hm_domains_for_uniquely_extended_physical_spectral_hierarchy",
       "quantifiers": "forall integer m>=1, forall complex u in H^m",
       "target": "X_(S_(2m))# = (Y_(K_m),Y_(K_m)); S_(2m)# = 0",
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_original_domain",
-        "NLS.Articles.MKdVNLSHierarchies.theorem1_m2_smooth"
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_m2_smooth",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_smooth_miura_hierarchy",
+        "NLS.Articles.MKdVNLSHierarchies.proposition6_smooth_miura",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_sharp",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_sharp_miura_hierarchy",
+        "NLS.Articles.MKdVNLSHierarchies.proposition6_native_miura",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_native_miura_hierarchy",
+        "NLS.Articles.MKdVNLSHierarchies.equation12_finiteGap_native_laurent",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1",
+        "NLS.Articles.MKdVNLSHierarchies.proposition6",
+        "NLS.Articles.MKdVNLSHierarchies.spectral_hierarchy_native_identification",
+        "NLS.Articles.MKdVNLSHierarchies.equation12_spectral_native_laurent"
       ],
       "limits": [
-        "Scalar vanishing only on H^(2m-1); equals the printed domain when m=1.",
-        "Physical vector-field identity and all-order independent K_m identification remain open.",
-        "Both clauses proved at m=2 for smooth complex period-one functions, using gradients certified by actual physical first variations; full H2 extension remains open."
-      ]
+        "Both source clauses hold for every integer m>=1 and every original complex H^m input. The scalar Hamiltonian K_m has its full native complex H^(m-1) domain, including the L2 mass endpoint. No finite-gap, smoothness, real-type or nonzero-mean hypothesis enters theorem1.",
+        "The scalar spectral Hamiltonians are extracted on every smooth complex periodic profile from literal samples of the independent physical Hill discriminant. A fixed local inverse of sinh recovers a small phase at r_j=pi*(j+1/2), and recursive scaled limits extract its coefficients. All those limits are proved to exist. The normalization is K_(s+1)=(-i/2) times the coefficient of (2*r)^(-(2*s+1)).",
+        "The extensions from all smooth complex profiles to the full native complex Sobolev domains are constructed and proved uniquely continuous there, using smooth density. The independent scalar Riccati hierarchy realizes them and proves they are entire analytic. No candidate extension, analyticity, gradient, spectral identification, or diagonal finite-gap density is an input assumption.",
+        "The scalar gradient comes from the actual Frechet derivative of the uniquely extended spectral Hamiltonian, through the certified native Sobolev bilinear duality. Its Gardner field is the actual period-one tempered distribution derivative. The field identity is proved as equality of those genuine distributions.",
+        "The source finite-gap physical Hill primitive has the convergent Laurent series with exactly these native spectral coefficients, retaining its factor 2, original intrinsic gap labels, zero mean and collapsed exterior gaps. General smooth complex coefficient extraction does not assert convergence of the infinite Laurent series outside the finite-gap setting."
+      ],
+      "scalar_clause_status": "proved_exact_complex_Hm_domain",
+      "weak_flow_status": "proved_exact_complex_Hm_inputs_for_actual_physical_spectral_hierarchy_with_actual_native_gradient_and_distribution_derivative",
+      "native_scalar_domain_status": "proved_exact_complex_Hm_minus_one_including_L2_mass",
+      "source_spectral_identification_status": "proved_unique_continuous_native_extension_of_actual_physical_trace_coefficient_limits_on_all_smooth_complex_profiles",
+      "flow_codomain": "Actual period-one tempered distributions; the scalar Frechet gradient is represented in its native opposite Sobolev space."
     },
     {
       "label": "Theorem 2(i)",
       "page": 3,
-      "status": "covector_symmetries_proved_gradient_identification_pending",
+      "status": "proved_on_original_complex_sobolev_domain",
       "quantifiers": "forall integer k>=1, forall phi in complex H^(k-1) pairs, forall real alpha",
       "proved": [
         "NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_covectors",
-        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_covectors"
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_covectors",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_gradients",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_gradients",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_phase_vector_fields",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_i_swap_vector_fields"
       ],
       "limits": [
-        "Complex Frechet-covector identities; not yet a physical L2-gradient/vector-field adapter."
-      ]
+        "The full printed complex Sobolev domain is included. Part (ii) is proved separately with the matrix correction recorded there."
+      ],
+      "gradient_dependency": {
+        "proved": "NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_eq_gradient",
+        "scope": "Every admissible hierarchy order on H^s with k<=s+1, including k=1 on H0; analytic L2 coefficients represent the actual complex Frechet derivative and agree with the physical first variation on smooth fields.",
+        "physical_identification": [
+          "NLS.ZakharovShabat.sobolevNLSHierarchyGradient_eq_classical",
+          "NLS.ZakharovShabat.hierarchyL2GradientCovector_eq_integral"
+        ],
+        "uniqueness": "NLS.ZakharovShabat.hierarchyL2GradientCovector_injective"
+      }
     },
     {
       "label": "Theorem 2(ii)",
       "page": 3,
-      "status": "unproved_source_matrix_correction_recorded",
+      "status": "proved_on_original_domain_with_corrected_matrix",
       "quantifiers": "forall integer m>=1, forall phi in complex H^(2m-1) pairs, if exists real alpha with P phi=R_alpha phi",
-      "candidate_corrected_target": "R partial S_(2m) = partial_x partial S_(2m-1), R=diag(i,-i)",
-      "source_issue": "The printed -iJ matrix differs from the R matrix obtained in the p.18 proof."
+      "source_issue": "The printed -iJ matrix differs from the R matrix obtained in the p.18 proof.",
+      "corrected_target": "R partial S_(2m) = partial_x partial S_(2m-1), R=diag(i,-i)",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected_coefficients",
+        "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected"
+      ],
+      "physical_derivative": "Mathlib TemperedDistribution.derivCLM of the actual period-one L2 field; the result is represented by R times the certified even L2 gradient. Exact physical Fourier multiplier 2*pi*i*j.",
+      "limits": [
+        "The printed -iJ is corrected to R=diag(i,-i), matching the p.18 summation proof. No smoothness or real-type restriction is imposed."
+      ]
     },
     {
       "label": "Theorem 3",
       "page": 4,
-      "status": "unproved_normalization_open",
+      "status": "proved_all_orders_corrected_positive_sign_full_original_real_Hm_minus_1_including_closed_actions",
       "quantifiers": "forall integers n>=1 and m>=1, on real H^(m-1)",
       "printed_target": "(-1)^m omega_(n,2m)# = eta_(n,m)",
-      "source_issue": "The p.18 proof gives eta=omega without this parity factor; reconcile the physical conventions before formalizing."
+      "source_issue": "Printed parity factor is false: checked m=1, zero-profile, n=1 counterexample; both original frequencies equal +2*pi*n at m=1.",
+      "proved_dependencies": [
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_free_jacobian_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_inverse_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_zero_inverse",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_local_inverse",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_global_unique_small_data",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_inverse_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_small_inverse_Sobolev_regularity",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_complete_action_rotation",
+        "NLS.Articles.MKdVNLSHierarchies.cartesian_action_Gardner_brackets_original_H1",
+        "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits",
+        "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_fiber_exact_image",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_Cartesian_homeomorphism",
+        "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_unique_phase_lift_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_Cartesian_homeomorphism",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_compact_remainder",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_bijective_iff_injective",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_actual_Gardner_fields",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_plane_Gardner_brackets",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_Gardner_bracket_analytic_extension",
+        "NLS.Articles.MKdVNLSHierarchies.physical_native_Cartesian_analytic_homeomorph",
+        "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_Cartesian_representation",
+        "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_action_flow_conservation",
+        "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_global_action_normal_form",
+        "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_action_frequency_intrinsic",
+        "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_action_frequency_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Hill_mass_action_frequency"
+      ],
+      "remaining_work": [],
+      "corrected_target": "omega_(n,2m)# = eta_(n,m)",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_corrected",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_corrected_for_any_original_frequency_extension",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_original_bracket_agreement",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_original_frequency_extension_certificate",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_frequency_holomorphic_extension",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_m1_frequency_normalization",
+        "NLS.Articles.MKdVNLSHierarchies.theorem3_printed_parity_counterexample"
+      ],
+      "limits": [
+        "Restricted original NLS frequency is specified by its actual S_(2m) angle bracket on real H^m with the selected gap open and its proved unique continuous extension to all real H^(m-1), including every closed action. A single open complex H^(m-1) neighborhood containing every real profile supplies a holomorphic extension. Equality holds with the raw J_n derivative of any independent physical Hill normal form."
+      ]
     },
     {
       "label": "Theorem 4(i)",
       "page": 4,
-      "status": "unproved",
+      "status": "proved_full_original_real_H1_domain_actual_NLS_and_mKdV_spectral_contours",
       "quantifiers": "forall real u in H1; forall positive n",
-      "target": "I_0#=0 iff mean=0; I_n#=0 iff J_n=0; I_(-n)#=I_n#"
+      "target": "I_0#=0 iff mean=0; I_n#=0 iff J_n=0; I_(-n)#=I_n#",
+      "dependencies_proved": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_collapsed_iff",
+        "NLS.Articles.MKdVNLSHierarchies.equation21_physical_mean_trace"
+      ],
+      "limits": [
+        "All three clauses are proved on every original real H1 input and every positive natural index, including zero mean and collapsed gaps.",
+        "The physical mKdV action contour exists for every such input; it lies in the actual Hill gap complement, has winding one about its intrinsic selected Hill gap, winding zero at other positive gaps and at the origin.",
+        "The action is independent of the checked contour family. Arbitrary close piecewise frequency circuits have the full integer-level winding formula after squaring; winding-one circuits give the same physical action.",
+        "The actual real-gap representation gives J_n=I_n/(2*zeta_n) for some positive zeta_n in the original positive frequency gap. This never divides by an action or gap length.",
+        "Complex L2 action extensions, the converse J_n analytic action factorization and corrected mean-squared recovery are proved. Forward mKdV action factorization, independent angles and frequency identities remain separate."
+      ],
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_central_action_zero",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_action_reflection",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_positive_action_zero_iff_hillGap_collapsed",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i_positive_actions",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_i"
+      ],
+      "action_definition": "NLS.MKdV.miuraNLSAction is the original sourceIndexedAction on sobolevSourceInclusion(a,a). NLS.MKdV.miuraMKdVAction is -(4*pi)^(-1) times the actual integral of mu^(-1)*canonicalMiuraHillPrimitive on a certified isolating energy loop. Neither is defined by the desired zero criterion.",
+      "mean_identification": "NLS.MKdV.unitIntervalMean_periodOneMiuraCurve",
+      "physical_mKdV_contour": "NLS.MKdV.miuraMKdVAction_physical_contour",
+      "contour_choice_independence": "NLS.MKdV.MiuraActionContourFamily.actionContour_eq_mul_winding",
+      "positive_gap_mean_value": "NLS.MKdV.miuraMKdVGapIntegral_eq_action_div_two_point",
+      "additional_dependencies": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma7"
+      ]
     },
     {
       "label": "Theorem 4(ii)",
       "page": 4,
-      "status": "unproved_signed_mean_branch_open",
+      "status": "proved_original_real_H1_global_forward_and_converse_action_factors_with_mean_squared_correction",
       "target": "Real analytic factorization of I# through J and mean; converse factorization of J and printed signed mean through I.",
-      "source_issue": "Global signed mean recovery from NLS actions alone needs a branch restriction or sign-invariant correction."
+      "source_issue": "The printed global signed mean cannot be recovered from NLS actions without a sign branch. The sign-invariant mean-squared replacement is now proved, including at zero mean.",
+      "proved_dependencies": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma7",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_restricted_action_invariance",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_complete_action_flows",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_H1_action_differentials_independent",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_submersion",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_sections",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_real_finite_action_submersion",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_real_finite_action_sections",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_mkdv_action_mean_map_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_weighted_action_summability",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_L2_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_radius",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_closed_iff",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_sequence_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_actions_recovered",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_mean_map_proper",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_allSobolev_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_allSobolev_action_sequence",
+        "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_Banach_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_free_jacobian_equivalence",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_local_inverse",
+        "NLS.Articles.MKdVNLSHierarchies.native_positive_cartesian_real_L2_map_proper",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_free_jacobian_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_inverse_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_zero_inverse",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_local_inverse",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_global_unique_small_data",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_inverse_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_small_inverse_Sobolev_regularity",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_complete_action_rotation",
+        "NLS.Articles.MKdVNLSHierarchies.cartesian_action_Gardner_brackets_original_H1",
+        "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits",
+        "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero",
+        "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_local_analytic_physical_action_mean_factor",
+        "NLS.Articles.MKdVNLSHierarchies.original_H1_NLS_actions_local_physical_action_mean_factor",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_fiber_exact_image",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_Cartesian_homeomorphism",
+        "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_unique_phase_lift_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_Cartesian_homeomorphism",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_compact_remainder",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_bijective_iff_injective",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_actual_Gardner_fields",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_plane_Gardner_brackets",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_Gardner_bracket_analytic_extension",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_complex_Jacobian_bijective_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_equivalence_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_local_inverse_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_inverse_global_Sobolev_regularity",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_global_unique_preimage_nativeSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_global_bijection_nativeSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_determined_by_mKdV_actions_mean",
+        "NLS.Articles.MKdVNLSHierarchies.physical_mKdV_native_action_data_realization",
+        "NLS.Articles.MKdVNLSHierarchies.physical_H1_Hill_action_data_realization",
+        "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_general_H1_Cartesian_chart",
+        "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_local_action_mean_factor_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.original_H1_NLS_actions_local_physical_factor_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_nls_actions_of_mkdv_actions_mean"
+      ],
+      "limits": [
+        "Every physical J_n, and more generally every integer action level J_(n,k), has an actual analytic action factor. The action-space neighborhood may depend on n,k. Its argument consists of the original NLS actions at all signed indices, including I_0.",
+        "The mean squared is the actual central continued primitive square at zero energy. Its analytic source extension survives a collapsed central gap, and its action factor is proved at zero mean as well as nonzero mean. The signed mean itself still requires a sign branch.",
+        "The whole original signed NLS action sequence now has ONE common global holomorphic forward factor on an open complex native physical-action/signed-mean domain containing every original real H1 profile. The domain and factor precede every source and every signed NLS/positive mKdV index. All clauses of the mean-squared-corrected Theorem 4(ii) are proved."
+      ],
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mkdv_actions_of_nls_actions",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mean_square_of_nls_actions",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_nls_actions_of_mkdv_actions_mean"
+      ],
+      "quantifiers": "Every original real period-one H1 input, every positive mKdV index, zero mean and arbitrary collapsed gaps included. The entire original signed NLS action sequence is assembled in complex l1, analytic on an ambient L2 source neighborhood of all real-type sources. Each J_n and the mean squared have holomorphic, hence real analytic, factors on open complex l1 neighborhoods containing the action image of the entire real L2 diagonal. The forward local factor exists at every original real H1 basepoint: open original-complex-L2 source and native weight-one complex-l1 action/complex-mean neighborhoods precede the l1-valued factor and all signed action indices. Recovery holds on every physical real L2 source in that source neighborhood. Globally, one open native complex physical-action/complex-mean domain V and one holomorphic l1-valued factor F work simultaneously for every original physical real H1 source and every original signed NLS action. Positive input entries are the independent physical Hill actions and the mean is literal signed Fourier mean.",
+      "signed_mean_nonrecoverability": "NLS.Articles.MKdVNLSHierarchies.no_global_signed_mean_NLS_action_factor",
+      "remaining_work": []
     },
     {
       "label": "Theorem 4(iii)",
       "page": 4,
-      "status": "unproved",
-      "quantifiers": "forall positive n,m on the domains of the relevant angle variables",
-      "target": "Gardner bracket of theta_m# and J_n equals delta_mn; angle sum depends on actions and mean."
+      "status": "proved_original_real_H1_angle_action_bracket_and_independent_full_angle_sum_with_arbitrary_support",
+      "quantifiers": "Every original real H1 input; every positive m,n; the angle at m is defined when its own actual mKdV action J_m is nonzero. No nonzero/open-gap hypothesis is imposed on the action J_n.",
+      "target": "Gardner bracket of theta_m# and J_n equals delta_mn; angle sum depends on actions and mean.",
+      "proved_dependencies": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma7",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_global_angle_transport",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_action_directions_independent",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_L2_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_radius",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_closed_iff",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_sequence_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_actions_recovered",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_mean_map_proper",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_allSobolev_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_allSobolev_action_sequence",
+        "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_Banach_analytic",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_free_jacobian_equivalence",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_local_inverse",
+        "NLS.Articles.MKdVNLSHierarchies.native_positive_cartesian_real_L2_map_proper",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_free_jacobian_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_inverse_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_zero_inverse",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_local_inverse",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_global_unique_small_data",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_inverse_allSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_small_inverse_Sobolev_regularity",
+        "NLS.Articles.MKdVNLSHierarchies.native_cartesian_complete_action_rotation",
+        "NLS.Articles.MKdVNLSHierarchies.cartesian_action_Gardner_brackets_original_H1",
+        "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_complex_Jacobian_bijective_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_equivalence_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_local_inverse_general_H1",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_inverse_global_Sobolev_regularity",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_global_unique_preimage_nativeSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_global_bijection_nativeSobolev",
+        "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_determined_by_mKdV_actions_mean",
+        "NLS.Articles.MKdVNLSHierarchies.physical_mKdV_native_action_data_realization",
+        "NLS.Articles.MKdVNLSHierarchies.physical_H1_Hill_action_data_realization",
+        "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_general_H1_Cartesian_chart",
+        "NLS.Articles.MKdVNLSHierarchies.physical_Miura_Gardner_Magri_transfer",
+        "NLS.Articles.MKdVNLSHierarchies.physical_action_flow_native_Gardner_tangent",
+        "NLS.MKdV.hasDerivAt_independent_functional_miuraActionFlow",
+        "NLS.Articles.MKdVNLSHierarchies.physical_complete_action_flow_invariant_factor",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_phase_sum_descent_of_independent_Gardner_phase",
+        "NLS.MKdV.hasDerivAt_miuraActionFlow_native",
+        "NLS.MKdV.exists_independent_open_Gardner_phase_action_factor",
+        "NLS.MKdV.miuraNativeNLSAngularCoordinate_zero_iff_physical_action_zero",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Hill_weak_Magri_spectral_brackets",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Hill_logEnergy_unit_Magri_bracket",
+        "NLS.KdV.hillLogEnergy_branch_fderiv",
+        "NLS.KdV.hillWeakGradientMagri_antisymm",
+        "NLS.ComplexAnalysis.integral_scalarHillProductMagri_eq",
+        "NLS.KdV.memLp_hillDirichletGradientSecond",
+        "NLS.KdV.memLp_hillLogNormingGradientSecond",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_Dirichlet_energy_positive",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_spectral_Gardner_geometry",
+        "NLS.MKdV.hillSobolevMagriBivector_eq_curve_integral",
+        "NLS.KdV.hasFDerivAt_hillDirichlet_unit_branch",
+        "NLS.KdV.hasFDerivAt_hillLogNorming_unit_branch",
+        "NLS.MKdV.MiuraDirichletBranch.eventually_real_family_match",
+        "NLS.MKdV.MiuraDirichletBranch.logEnergyGradient_logNormingGradient_bracket",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_partial_Abelian_phase_original_H1",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_finiteGap_Abelian_phase",
+        "NLS.KdV.exists_hillDirichletRegularAbelianTerm_analytic_extension",
+        "NLS.KdV.hillDirichletRegularAbelianTerm_eq_terminal",
+        "NLS.KdV.hillAbelianSelectedGlobalPsi_intrinsic_periods",
+        "NLS.KdV.exists_hillDirichlet_analytic_sheeted_angle",
+        "NLS.MKdV.miuraFiniteGapAbelianPhase_eq_full_series",
+        "NLS.MKdV.miuraFiniteGapAbelianPhase_independent_support",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_original_H1",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_continuous_original_H1",
+        "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_native",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_discriminant_physical_Gardner",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_action_contour",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_energy_complete_action_motion",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_original_complex_domain",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_divisor_original_indices",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_entire_product",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_derivative_normalization",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_finite_gap_Dirichlet_interpolation",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_physical_root_normalization",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_sheet_mass_normalization",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_interior_trace_contraction",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_differential_complete_action_invariance",
+        "NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_finite_gap_derivative",
+        "NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_original_action_circle",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_original_action_circle_normalization",
+        "NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_finite_gap_generator",
+        "NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_finite_gap_terminal_regularity",
+        "NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_native_data",
+        "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_finite_gap_Lie_continuity",
+        "NLS.Articles.MKdVNLSHierarchies.independent_finite_gap_stratum_spatial_translation",
+        "NLS.Articles.MKdVNLSHierarchies.independent_quasi_Hill_terminal_release",
+        "NLS.Articles.MKdVNLSHierarchies.independent_Hill_open_endpoint_trace_derivative",
+        "NLS.MKdV.miuraQuasiHillMonodromy_open_Dirichlet_endpoint",
+        "NLS.MKdV.miuraNativePeriodicProfile_spatialTranslation",
+        "NLS.MKdV.miuraNativeFiniteDirichletSheets_spatialTranslation_eventually_ne_zero",
+        "NLS.MKdV.miuraNativeOppositeAbelianPhase_Lie_finiteGap",
+        "NLS.MKdV.miuraNativeOppositeAbelianPhase_actionFlow_finiteGap",
+        "NLS.MKdV.tendsto_miuraNativeFiniteGapApproximation",
+        "NLS.MKdV.miuraNativeOppositeAbelianPhase_actionFlow",
+        "NLS.MKdV.exists_miuraIndependentAbelianPhase_action_factor"
+      ],
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_actual_Gardner_derivative",
+        "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_complete_action_rotation",
+        "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_actual_action_generator",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_phase_sum",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_angle_sum",
+        "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_sum_representatives"
+      ],
+      "angle_definition": "The actual NLS theta phase is supplied by the checked original normalized psi/common-domain construction and pulled back along the literal L2 diagonal. Its logarithmic differential is proved equal to the pullback of the original local NLS angle differential. The independent source-oriented mKdV phase is miuraNativeOppositeAbelianPhase, the complex conjugate of the full Hill Abelian phase constructed from actual independent Dirichlet data and normalized Abelian integrals. No NLS angle occurs in that definition.",
+      "Gardner_definition": "The scalar gradient is constructed from the actual L2 Frechet derivative; its spatial Fourier multiplier is 2*pi*i*m. Square summability of that derivative and equality with the actual period-one tempered distribution derivative are proved at every original real H1 input.",
+      "limits": [
+        "The angle sum is understood modulo exactly 2*pi, as full unit-phase multiplication. Theorem4_iii_angle_sum_representatives gives the same factor for every real representative of both actual phases; no squaring or loss modulo pi occurs.",
+        "Only the selected angle requires its own original physical action nonzero. Arbitrary other closed actions, terminal contributing divisors, zero or arbitrary signed mean and infinite support are included. Native statements hold for every integer Hs, s>=1; theorem4_iii_independent_angle_sum specializes to the full original real H1 domain.",
+        "The factor is a function of the entire physical action sequence and literal signed mean. The source final clause does not require an analytic angle-sum factor, and none is asserted. Full Cartesian cross-mode canonicity and arbitrary rough L2 inversion are not used or inferred."
+      ],
+      "conditional_descent_proved": "The previously conditional full phase-product descent is now instantiated with the actual independent spectral conjugate miuraNativeOppositeAbelianPhase. Its full opposite rotation law is proved at every real time, including all terminal/closed configurations and arbitrary support. No mathematical input remains conditional."
     }
   ],
   "dependency_labels": [
     {
       "label": "Theorem 5",
-      "page": 9
+      "page": 9,
+      "status": "verified_full_complex_H1_physical_L2_Hill_operator_discriminant_identity",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.theorem5_discriminant_identity",
+        "NLS.Articles.MKdVNLSHierarchies.hill_column_spec",
+        "NLS.MKdV.physicalMiuraSolution_unique",
+        "NLS.Articles.MKdVNLSHierarchies.theorem5_operator_discriminant_identity"
+      ],
+      "quantifiers": "forall original complex period-one H1 input a, forall complex z, including z=0",
+      "physical_identification": "Independent Hill columns have initial conditions (1,0) and (0,1) in position/derivative coordinates; both column and derivative are absolutely continuous; the actual equation -g_second+(u_prime+u_squared)*g=mu*g holds almost everywhere; physical uniqueness is proved. The literal Miura coefficients define an analytic H1-to-L2 potential map. The shared L2 Hill monodromy and H2 periodic Hill operator are identified with the original quasi-Hill IVP at all complex energies, including zero."
     },
     {
       "label": "Proposition 6",
-      "page": 12
+      "page": 12,
+      "status": "proved_full_native_complex_domains_for_physical_spectral_hierarchy",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.proposition6_native_miura",
+        "NLS.Articles.MKdVNLSHierarchies.theorem1_even_vanishing_sharp",
+        "NLS.Articles.MKdVNLSHierarchies.proposition6_finiteGap_native",
+        "NLS.Articles.MKdVNLSHierarchies.equation12_finiteGap_native_laurent",
+        "NLS.Articles.MKdVNLSHierarchies.proposition6",
+        "NLS.Articles.MKdVNLSHierarchies.spectral_hierarchy_native_identification"
+      ],
+      "limits": [
+        "The odd factor-two identity holds for every complex H^(m-1) input and m>=1, including H0 mass; even vanishing holds on all complex H^m inputs. The scalar spectral Hamiltonian is the uniquely constructed native continuous extension of the actual physical Hill trace coefficient limits. Its equality with the independent Riccati hierarchy and entire analyticity are proved."
+      ]
     },
     {
       "label": "Lemma 7",
-      "page": 12
+      "page": 12,
+      "status": "proved_original_real_H1_identity_and_common_ambient_complex_L2_extension",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma7_integer_levels_real_H1",
+        "NLS.MKdV.two_mul_miuraHillActionContour",
+        "NLS.MKdV.MiuraActionContourFamily.actionContour_eq_mul_winding",
+        "NLS.Articles.MKdVNLSHierarchies.lemma7",
+        "NLS.Articles.MKdVNLSHierarchies.lemma7_analytic_extension",
+        "NLS.MKdV.sourceDiagonalLaurentAction_eq_two_miuraActionLevel"
+      ],
+      "quantifiers": "Every original real H1 input; every positive gap index n; every integer level k, including k=1 mapping to NLS level zero. Actual positive isolating circuits and their squared energy images. A single open subset of the full complex L2 pair source space contains the entire real L2 diagonal before n and k are chosen; all positive n and all integer k are analytic there, with exact restriction to 2*J_(n,k) on every real H1 input.",
+      "normalization": "J_(n,k)=-(4*pi)^(-1) integral(mu^(k-2)*F_Hill dmu); I_(n,2k-2)=-pi^(-1) integral(z^(2k-3)*F_NLS dz); dmu=2*z dz, hence 2*J_(n,k)=I_(n,2k-2).",
+      "limits": [
+        "Complete: real contour identity, actual isolating geometry, integer Laurent weights, winding independence, and the ambient complex L2 extension clause. The central NLS index is not part of Lemma 7 and is not included in the Laurent atlas."
+      ]
     },
     {
       "label": "Theorem 6",
@@ -98,11 +434,88 @@
     },
     {
       "label": "Lemma 10",
-      "page": 16
+      "page": 16,
+      "status": "partial_exact_diagonal_integer_level_gradient_recurrence_proved",
+      "proved": [
+        "NLS.MKdV.miuraLaurentActionGradient_fourier",
+        "NLS.ZakharovShabat.SourceDiagonalLaurentLocalChart.fderiv_action"
+      ],
+      "scope": "Actual full source Frechet derivatives on every real H1 diagonal, all noncentral indices, all integer levels and every physical Fourier mode. The specialized sum/difference recurrence is sufficient for the proved Gardner transfer.",
+      "limits": [
+        "No claim of the full arbitrary-source phase/spatial-reflection variants of Lemma 10."
+      ]
     },
     {
       "label": "Proposition 11",
       "page": 17
+    },
+    {
+      "label": "Lemma 2",
+      "page": 10,
+      "proved": [
+        "NLS.MKdV.miura_equation_classicalSolution"
+      ],
+      "limits": [
+        "The scalar equation and actual IVP intertwining are proved; the independent physical discriminant comparison has now been proved on original H1 inputs.",
+        "The physical H2 Hill operator spectrum and fixed real gap labels are proved separately. The literal matrix-conjugacy formula and geometric eigenspace-multiplicity comparison are not claimed as completed separate declarations."
+      ]
+    },
+    {
+      "label": "Lemma 4",
+      "page": 11,
+      "status": "proved_full_original_real_H1_right_half_plane_closed_gap_complement",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma4_root_real_C1_right_halfPlane",
+        "NLS.Articles.MKdVNLSHierarchies.lemma4_root_real_H1_right_halfPlane",
+        "NLS.Articles.MKdVNLSHierarchies.lemma4_root_real_H1_gapComplement"
+      ],
+      "quantifiers": "forall original period-one H1 coefficient input a with a_n=conjugate(a_-n), forall complex z with Re z>0 outside every original closed canonical NLS gap; real spectral bands are included",
+      "limits": [
+        "The full physical Hill sheets are nonreal-energy limits of the independent quasi-Hill IVP/source-continuation constructions. Equality with the NLS sheets proves existence and analyticity of these limits across every real band, rather than defining the new values by NLS.",
+        "The actual Hill energy domain excludes the ray below its intrinsic ground label and every positive intrinsic closed gap. Squaring the right frequency half-plane matches exactly the original NLS cut complement. The physical trace, energy derivative, first-band root sign, zero ground-endpoint limit and normalized physical path integral are proved.",
+        "This completes the source real-H1 assertion. Joint complex-H1 source analyticity on arbitrary real-band neighborhoods and the weighted mKdV action contours remain separate later obligations."
+      ]
+    },
+    {
+      "label": "Lemma 5",
+      "page": 11,
+      "status": "proved_full_original_real_H1_right_half_plane_closed_gap_complement",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma5_primitive_real_C1_right_halfPlane",
+        "NLS.Articles.MKdVNLSHierarchies.lemma5_primitive_real_H1_right_halfPlane",
+        "NLS.Articles.MKdVNLSHierarchies.lemma5_primitive_real_H1_gapComplement"
+      ],
+      "quantifiers": "forall original period-one H1 coefficient input a with a_n=conjugate(a_-n), forall complex z with Re z>0 outside every original closed canonical NLS gap; real spectral bands are included",
+      "limits": [
+        "The full physical Hill sheets are nonreal-energy limits of the independent quasi-Hill IVP/source-continuation constructions. Equality with the NLS sheets proves existence and analyticity of these limits across every real band, rather than defining the new values by NLS.",
+        "The actual Hill energy domain excludes the ray below its intrinsic ground label and every positive intrinsic closed gap. Squaring the right frequency half-plane matches exactly the original NLS cut complement. The physical trace, energy derivative, first-band root sign, zero ground-endpoint limit and normalized physical path integral are proved.",
+        "This completes the source real-H1 assertion. Joint complex-H1 source analyticity on arbitrary real-band neighborhoods and the weighted mKdV action contours remain separate later obligations."
+      ]
+    },
+    {
+      "label": "Lemma 3",
+      "page": 10,
+      "status": "proved_fixed_index_endpoints_gap_square_image_and_collapse_equivalence_geometric_multiplicity_pending",
+      "proved": [
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_spectral_set",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_real_spectrum_nonnegative",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_multiplicity_nonzero",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_multiplicity_zero",
+        "NLS.MKdV.miuraHillLabels_root_iff",
+        "NLS.MKdV.miuraHillLabels_multiplicity",
+        "NLS.MKdV.miuraHillLabels_nonnegative",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_ground_endpoints",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_indexed_endpoints",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_square_image",
+        "NLS.Articles.MKdVNLSHierarchies.lemma3_gap_collapsed_iff"
+      ],
+      "quantifiers": "All original complex H1 inputs for spectral sets and analytic multiplicities; all conjugate-reflected real H1 inputs for nonnegativity, intrinsic labels, central endpoints and every natural index n>=1 in the fixed endpoint and gap identities.",
+      "limits": [
+        "Every actual H2 Hill eigenvalue condition is equivalent to the original ZS periodic spectral condition at squared frequency, including zero.",
+        "At nonzero frequency the energy characteristic order is the original ZS algebraic multiplicity; at zero the frequency multiplicity is exactly twice the energy order.",
+        "The intrinsic ordered real Hill labels have the exact characteristic zero set and analytic multiplicities and are nonnegative.",
+        "Every fixed positive Hill endpoint is the square of the corresponding original canonical NLS endpoint; the central Hill endpoint is the square of either central NLS endpoint. Closed gaps are exact square images and collapse simultaneously. The printed geometric-eigenspace multiplicity comparison remains open. No action-integral comparison is asserted."
+      ]
     }
   ],
   "normalization": {
@@ -113,13 +526,1146 @@
     "mkdv_energy": "K2=integral((u_prime)^2+u^4)/2",
     "higher_action_trace": "sum I_(j,k)=S_k/2^(k-1)",
     "nls_coordinate_bracket": -1,
-    "mkdv_coordinate_bracket": 1
+    "mkdv_coordinate_bracket": 1,
+    "mkdv_spectral_action": "Source (13): J_n=-(1/(4*pi))*contour_integral(mu^(-1)*F_mKdV(mu), Sigma_n), counterclockwise around the positive indexed Hill gap and excluding the origin. This is the Gardner/mKdV action, not the ordinary unweighted KdV primitive moment."
   },
   "canonical_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
   "workspace": "Separate standard Git worktree authorized and created; branch articles/mkdv-nls-hierarchies; app-managed attachment unavailable.",
   "spectral_adapter_pending": {
     "article_upper_right_potential": "phi2",
     "library_classicalODECoefficient_upper_right": "i*phi.1",
-    "remaining": "Reconcile physical field order, spectral reflection and integer gap labels before importing the spectral action trace as an article statement."
-  }
+    "remaining": "Independent original mKdV angle identification and final Theorem 4(iii) angle-sum factorization. Corrected all-order frequency comparison is complete."
+  },
+  "remaining_essential_dependencies": [],
+  "shared_variational_calculus": {
+    "euler_derivative": "NLS.DifferentialPolynomial.eulerDerivative",
+    "physical_first_variation": "NLS.DifferentialPolynomial.hasDerivAt_integral_evaluate_euler",
+    "riccati_adapter": "NLS.ZakharovShabat.hasDerivAt_classicalNLSHamiltonian",
+    "scope": "All polynomial and Hamiltonian orders on smooth complex periodic fields; analytic L2 hierarchy gradients on every admissible H^s domain, including H0 mass. No caller-supplied variation identity or gradient identification.",
+    "sobolev_gradient": "NLS.ZakharovShabat.fderiv_sobolevNLSHamiltonian_eq_gradient",
+    "resolvent_bridge": {
+      "canonical_input": "NLS.ZakharovShabat.nlsRiccatiPolynomial_eq_differentialRiccatiSequence",
+      "constructed_recurrence": "NLS.DifferentialPolynomial.constructed_riccati_resolvent_identities",
+      "all_order_variation": "NLS.DifferentialPolynomial.riccati_resolvent_coefficient_variation",
+      "diagonal_coupling_vanishes": "NLS.DifferentialPolynomial.coeff_riccatiResolventCoupling_even_diagonal",
+      "scope": "Constructed formal Riccati resolvent, arbitrary independent jet perturbations, actual physical Euler-gradient identification at every order, and corrected even/odd recurrence on the full complex H^(2m-1) domain.",
+      "physical_gradient": "NLS.ZakharovShabat.classicalNLSHierarchyGradient_eq_resolvent",
+      "independent_jet_variation": "NLS.DifferentialPolynomial.evaluate_independentJetVariation",
+      "physical_integral_variation": "NLS.ZakharovShabat.integral_firstVariationDensity_eq_resolvent",
+      "exact_domain_recurrence": "NLS.Articles.MKdVNLSHierarchies.theorem2_ii_corrected"
+    },
+    "miura_gauge_identity": "NLS.DifferentialPolynomial.differentialRiccatiSeries_miura",
+    "logarithmic_total_derivative": "NLS.DifferentialPolynomial.derivation_logarithmicPrimitiveCoefficient",
+    "scalar_Hill_physical_first_variation": "NLS.MKdV.hasDerivAt_classicalMiuraHillHamiltonian",
+    "endpoint_polynomial_first_variation": "NLS.ZakharovShabat.fderiv_sobolevPolynomialL2Mean",
+    "sharp_even_hamiltonian": "NLS.ZakharovShabat.sobolevEvenHamiltonian",
+    "weak_gradient": "NLS.ZakharovShabat.hierarchyWeakGradient",
+    "weak_gradient_representation": "NLS.ZakharovShabat.hierarchyWeakGradient_represents",
+    "period_one_negative_Sobolev_distribution": "NLS.Fourier.periodOneSobolevDistribution",
+    "actual_distribution_derivative": "NLS.Fourier.periodOneSobolevDistribution_derivative_eq",
+    "independent_Hm_scalar_Hamiltonian": "NLS.MKdV.sobolevMiuraHillHamiltonian",
+    "full_Hm_weak_flow": "NLS.MKdV.sobolevMiuraHillFlowRestriction",
+    "native_scalar_Hamiltonian": "NLS.MKdV.nativeMiuraHillHamiltonian",
+    "native_scalar_gradient": "NLS.MKdV.nativeMiuraHillGradient",
+    "native_weak_flow": "NLS.MKdV.nativeMiuraHillFlowRestriction",
+    "endpoint_two_top_factor_mean": "NLS.ZakharovShabat.sobolevPolynomialEndpointMean",
+    "actual_Hill_trace_calibration": "NLS.MKdV.exists_physicalMiuraDiscriminant_hamiltonian_error_bound"
+  },
+  "shared_hill_primitive_integration": {
+    "branch": "articles/kdv-convexity",
+    "commit": "d12831411f4ad00777304b6623dbb3226730b4eb",
+    "unchanged_source_modules": 19,
+    "physical_operator_bridge": "NLS.MKdV.physicalMiuraDiscriminant_eq_classicalHill",
+    "root_and_primitive_comparison": "NLS.MKdV.miuraHill_sheets_eq_NLS",
+    "path": "s*u maps to s*u_prime+s_squared*u_squared, rather than s*(u_prime+u_squared)",
+    "remaining": "Forward mKdV action factorization, independent mKdV angles and final angle-sum factorization, and corrected full frequency identification. The physical spectral scalar Hamiltonians are now uniquely identified on their complete native complex Sobolev domains."
+  },
+  "independent_H1_primitive": {
+    "construction": "NLS.MKdV.quasiHillPrimitiveData",
+    "definition_basis": "actual independent quasi-Hill IVP discriminant; two source logarithmic integrals anchored at -i*sqrt(energy)",
+    "generic_shared_construction": "NLS.ComplexAnalysis.SourceDiscriminantData",
+    "joint_discriminant_analyticity": "NLS.MKdV.analyticOnNhd_quasiHillDiscriminant_joint",
+    "original_H1_source_identification": "NLS.MKdV.miuraDiagonalSource_periodOneMiuraCurve",
+    "H1_norm_embedding": "NLS.MKdV.periodOneMiuraCurveCLM",
+    "H1_source_analyticity": "NLS.MKdV.analyticAt_sobolevMiuraPrimitive",
+    "physical_trace": "NLS.Articles.MKdVNLSHierarchies.hillPrimitive_physical_trace",
+    "physical_energy_derivative": "NLS.Articles.MKdVNLSHierarchies.hillPrimitive_hasDerivAt",
+    "scope": "full complex H1 physical trace and derivative wherever the source-continuation domain is admissible; full real H1 root/primitive comparison for Re z>0 and Im z!=0",
+    "remaining": "Forward mKdV action factorization, independent mKdV angles and final angle-sum factorization, and corrected full frequency identification. The physical spectral scalar Hamiltonians are now uniquely identified on their complete native complex Sobolev domains."
+  },
+  "shared_hill_L2_labels_integration": {
+    "branch": "articles/kdv-estimates",
+    "commit": "5da8934e019a8a08f314988c311661754b89e925",
+    "unchanged_source_modules": 41,
+    "actual_potential": "NLS.MKdV.sobolevMiuraUnitPotential_physical",
+    "actual_discriminant": "NLS.MKdV.hillL2Discriminant_miura",
+    "actual_spectrum": "NLS.MKdV.miuraHill_eigenvector_iff_ZS",
+    "actual_labels": "NLS.MKdV.miuraHillLabels",
+    "remaining": "Geometric eigenspace multiplicity, forward mKdV action factorization, independent angles and frequencies."
+  },
+  "indexed_gap_identification": {
+    "endpoint_reflection": "NLS.MKdV.miuraNLSEndpoints_reflection",
+    "enumeration_uniqueness": "NLS.ordered_natural_enumeration_unique",
+    "independent_labels_match": "NLS.MKdV.miuraHillLabels_eq_squaredNLS",
+    "domain": "full original real H1, no smoothness or nonzero-mean restriction",
+    "indexing": "mu0=hillLabels0; mu_n_minus=hillLabels(2*n-1), mu_n_plus=hillLabels(2*n); original NLS lambda_n_minus/plus at signed integer n",
+    "zero_ramification": "The positive NLS half-sequence has one central slot; original NLS multiplicity at zero is exactly twice its count. This equals twice the Hill energy characteristic order, so the independent ordered sequences also agree at zero.",
+    "limits": "Geometric eigenspace multiplicity and complex action/frequency identifications remain separate; the actual real-H1 weighted spectral action construction and Theorem 4(i) are proved."
+  },
+  "physical_zero_energy_and_actions": {
+    "continuous_IVP_solution": "NLS.ZakharovShabat.classicalSolution_diagonal_zero",
+    "continuous_physical_trace": "NLS.ZakharovShabat.classicalDiscriminant_diagonal_zero",
+    "original_H1_Hill_trace": "NLS.MKdV.hillL2Discriminant_miura_zero",
+    "original_H1_NLS_trace": "NLS.MKdV.canonicalDiscriminant_miura_zero",
+    "actual_action_gap_formula": "NLS.ZakharovShabat.sourceIndexedAction_eq_cosineIntegral",
+    "central_action": "NLS.MKdV.miuraNLSAction_zero_iff_mean_zero",
+    "reflected_actions": "NLS.MKdV.miuraNLSAction_reflection",
+    "scope": "mean/trace identity on all complex H1 profiles; actual action assertions on all real H1 profiles at all signed indices; no nonzero-mean or open-gap restriction",
+    "remaining": "Forward Theorem 4(ii) factorization, final Theorem 4(iii) angle-sum assertion and corrected frequency identification."
+  },
+  "full_real_H1_Hill_sheets": {
+    "independent_construction": "NLS.ComplexAnalysis.nonrealBoundaryExtension of the original physical quasi-Hill root/primitive; no NLS function appears in the definitions",
+    "root": "NLS.MKdV.canonicalMiuraHillRoot",
+    "primitive": "NLS.MKdV.canonicalMiuraHillPrimitive",
+    "physical_domain": "NLS.MKdV.miuraHillGapComplement: actual ground half-line removed, along with all intrinsic positive closed Hill gaps",
+    "square_domain_identification": "NLS.MKdV.miuraHillGapComplement_sq_iff",
+    "sqrt_domain_witness": "NLS.MKdV.miuraHillGapComplement_sqrt",
+    "spectral_analyticity": "NLS.MKdV.analyticOnNhd_canonicalMiuraHillSheets",
+    "physical_trace": "NLS.MKdV.canonicalMiuraHillSheets_physical_trace",
+    "physical_energy_derivative": "NLS.MKdV.hasDerivAt_canonicalMiuraHillPrimitive",
+    "source_branch_normalization": "NLS.Articles.MKdVNLSHierarchies.equation10_first_Hill_band",
+    "exact_endpoint_constants": "NLS.MKdV.canonicalMiuraHillPrimitive_endpoint_limit",
+    "ground_endpoint_normalization": "NLS.MKdV.canonicalMiuraHillPrimitive_ground_limit",
+    "actual_path_integral": "NLS.Articles.MKdVNLSHierarchies.equation11_physical_Hill_pathIntegral",
+    "scope": "every original real H1 profile and every energy in the full physical closed-gap complement; old complex-H1 source-continuation sheets are preserved on their admissible domain",
+    "limits": "Values on excluded cuts are not asserted. The actual native spectral Hamiltonian extensions, complex L2 action extensions, converse NLS-action factors and Gardner transfer are proved. Broader joint complex-source sheet continuation, forward mKdV action factorization and full angle/frequency identifications remain separate."
+  },
+  "actual_mKdV_spectral_actions": {
+    "definition": "NLS.MKdV.miuraMKdVAction",
+    "literal_physical_contour": "NLS.MKdV.miuraMKdVAction_physical_contour",
+    "all_integer_levels": "NLS.MKdV.miuraMKdVActionLevel",
+    "Jacobian_and_normalization": "NLS.MKdV.two_mul_miuraHillActionContour",
+    "contour_family_existence": "NLS.MKdV.nonempty_miuraActionContourFamily",
+    "physical_gap_winding": "NLS.MKdV.MiuraActionContourFamily.energyContour_winding_Hill_gap",
+    "other_gap_windings": "NLS.MKdV.MiuraActionContourFamily.energyContour_winding_other_Hill_gap",
+    "origin_winding": "NLS.MKdV.MiuraActionContourFamily.energyContour_winding_zero",
+    "real_gap_formula": "NLS.MKdV.miuraMKdVAction_eq_gapIntegral",
+    "family_independence": "NLS.MKdV.miuraMKdVAction_independent_family",
+    "close_piecewise_contours": "NLS.MKdV.MiuraActionContourFamily.actionContour_eq_mul_winding",
+    "positive_mean_value": "NLS.MKdV.miuraMKdVGapIntegral_eq_action_div_two_point",
+    "main_zero_criterion": "NLS.MKdV.miuraMKdVAction_nonnegative_and_zero_iff",
+    "scope": "all original real H1 inputs and every positive gap index, including zero mean and collapsed gaps; the actions use the independently constructed physical Hill primitive and actual oriented path integrals",
+    "remaining": "analytic action factorization, independent mKdV angle construction, final angle-sum factorization and frequency identification; the actual Gardner transfer and Theorem 4(iii) angle-action bracket clause are now proved",
+    "common_L2_analytic_extension": "NLS.Articles.MKdVNLSHierarchies.lemma7"
+  },
+  "finite_gap_spectral_Hamiltonian_calibration": {
+    "physical_finite_gap": "NLS.MKdV.miuraFiniteGap",
+    "finite_action_support": "NLS.Articles.MKdVNLSHierarchies.finiteGap_iff_mKdV_action_support",
+    "original_NLS_finite_gap": "NLS.Articles.MKdVNLSHierarchies.finiteGap_iff_diagonalNLS",
+    "smooth_profile": "NLS.MKdV.miuraFiniteGapProfile",
+    "original_coefficients": "NLS.MKdV.periodOneCoefficient_miuraFiniteGapProfile",
+    "all_native_domains": "NLS.MKdV.miuraFiniteGapSobolev",
+    "filled_primitive_comparison": "NLS.MKdV.canonicalMiuraHillPrimitive_eq_full",
+    "physical_NLS_coefficients": "NLS.Articles.MKdVNLSHierarchies.proposition6_finiteGap_native",
+    "convergent_Hill_Laurent_series": "NLS.Articles.MKdVNLSHierarchies.equation12_finiteGap_native_laurent",
+    "normalization": "F_Hill(z^2)=-i*z+sum_{k>=0} i*(2*K_(k+1))/(2*z)^(2*k+1)",
+    "scope": "every real H1 profile with finitely many open intrinsic physical Hill gaps; no supplied smoothness, finite Fourier support, nonzero mean or open-gap hypothesis; convergence at every sufficiently large right-half-plane frequency, including collapsed exterior gaps",
+    "remaining": "None for the spectral scalar Hamiltonian native-domain identification: actual coefficient extraction on all smooth complex profiles and unique native continuous extension are now proved.",
+    "native_spectral_series": "NLS.Articles.MKdVNLSHierarchies.equation12_spectral_native_laurent"
+  },
+  "complex_L2_Laurent_action_extension": {
+    "real_diagonal": "NLS.ZakharovShabat.realDiagonalSourceLocus",
+    "domain": "NLS.ZakharovShabat.sourceDiagonalLaurentDomain",
+    "definition": "NLS.ZakharovShabat.sourceDiagonalLaurentAction",
+    "actual_circle_representation": "NLS.ZakharovShabat.SourceDiagonalLaurentAtlas.circle_representation",
+    "analyticity": "NLS.ZakharovShabat.analyticOnNhd_sourceDiagonalLaurentAction",
+    "atlas_independence": "NLS.ZakharovShabat.SourceDiagonalLaurentAtlas.action_eqOn",
+    "existing_positive_levels": "NLS.ZakharovShabat.sourceDiagonalLaurentAction_nat",
+    "physical_H1_restriction": "NLS.MKdV.sourceDiagonalLaurentAction_eq_two_miuraActionLevel",
+    "complex_H1_mKdV_extension": "NLS.MKdV.miuraComplexActionLevel",
+    "complex_H1_common_domain": "NLS.MKdV.miuraComplexActionDomain",
+    "actual_Frechet_derivative": "NLS.MKdV.hasFDerivAt_miuraComplexActionLevel",
+    "scope": "common open full complex L2 pair-source neighborhood of every real L2 diagonal, all nonzero signed indices and all integer levels; generic construction works for all finite source exponents p>1; exact real H1 physical Hill-contour comparison at all positive indices, including closed gaps and zero mean",
+    "central_index": "excluded, consistently with the positive-index Lemma 7; no negative-weight assertion about a central contour enclosing zero",
+    "remaining": "Forward mKdV action factorization, independent mKdV angles and final angle-sum factorization, and corrected full frequency identification. The physical spectral scalar Hamiltonians are now uniquely identified on their complete native complex Sobolev domains."
+  },
+  "shared_component_swap_integration": {
+    "branch": "articles/mkdv-below-l2",
+    "commit": "40d1959bf83cadfd29557cf1a3035bec7db6028c",
+    "unchanged_source_modules": [
+      "NLS/ZakharovShabat/ClassicalComponentSwap.lean",
+      "NLS/ZakharovShabat/SourceComponentSwap.lean",
+      "NLS/ZakharovShabat/SourceComponentSwapSpectralData.lean",
+      "NLS/ZakharovShabat/SourceComponentSwapEndpoints.lean"
+    ],
+    "use": "original fixed-index endpoint reflection places zero in the central cut at every real diagonal source; all noncentral isolating discs then exclude zero simultaneously"
+  },
+  "actual_Gardner_bracket_transfer": {
+    "L2_extension": "NLS.MKdV.miuraL2Action",
+    "physical_contour_agreement": "NLS.MKdV.miuraL2Action_eq_physical",
+    "actual_scalar_gradient": "NLS.Poisson.l2ScalarGradient",
+    "full_differential_representation": "NLS.Poisson.l2ScalarGradient_represents",
+    "physical_discriminant_recurrence": "NLS.MKdV.miuraDiscriminantCotangent_fourier",
+    "actual_Laurent_action_derivative": "NLS.ZakharovShabat.SourceDiagonalLaurentLocalChart.fderiv_action",
+    "integer_level_recurrence": "NLS.MKdV.miuraLaurentActionGradient_fourier",
+    "Gardner_derivative_regular": "NLS.MKdV.miuraActionGardner_memlp",
+    "genuine_distribution_derivative": "NLS.MKdV.miuraActionGardner_distribution",
+    "NLS_direction_identification": "NLS.MKdV.miuraActionDifference_direction",
+    "arbitrary_cotangent_transfer": "NLS.MKdV.miuraGardner_cotangent_transfer",
+    "normalization": "Y_Jn is the actual spatial derivative of the gradient of J_n; its coefficientwise diagonal equals X_(I_n-I_-n) with NLS cross-gradient sign -i and period-one differentiation symbol 2*pi*i*m",
+    "restricted_NLS_phase": "NLS.MKdV.miuraThetaPhase",
+    "actual_angle_pullback": "NLS.MKdV.miuraThetaDifferential_eq_source",
+    "angle_action_bracket": "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_action",
+    "action_invariance": "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_restricted_action_invariance",
+    "scope": "all original real H1 inputs and every positive action index, including zero mean and closed action gaps; only the chosen angle action must be nonzero",
+    "remaining": "Forward mKdV action factorization, independent mKdV angles and final angle-sum factorization, and corrected full frequency identification. The physical spectral scalar Hamiltonians are now uniquely identified on their complete native complex Sobolev domains."
+  },
+  "shared_action_swap_integration": {
+    "branch": "articles/mkdv-below-l2",
+    "commit": "9a2d23c9f2cf513921eb89cdb69b9a57eed3a3fc",
+    "unchanged_source_modules": [
+      "NLS/ZakharovShabat/SourceComponentSwapRoots.lean",
+      "NLS/ZakharovShabat/SourceComponentSwapActions.lean",
+      "NLS/ZakharovShabat/SourceComponentSwapActionDifferential.lean",
+      "NLS/ZakharovShabat/SourceComponentSwapPoisson.lean"
+    ],
+    "use": "actual source action differential reflection at every real source, including closed gaps, and the original anti-Poisson swap sign"
+  },
+  "analytic_NLS_action_descent": {
+    "generic_local_descent": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_local_scalar_action_factor_on",
+    "real_lifts_and_recovery": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_scalar_realActionBalls_on",
+    "analytic_extension_and_uniqueness": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.exists_scalar_action_extension_on",
+    "source_domain_scope": "Only invariance between real sources in the actual open source domain is assumed. Inverse charts, real lifts and all recovery representatives stay inside that domain.",
+    "collapsed_actions": "Infinite-tail coordinate sign invariance and rotation stationarity give quadratic action descent without nonzero tail actions. Nonnegative points in local action balls have real source representatives; real-form analytic uniqueness gives complex overlap compatibility and uniqueness.",
+    "Laurent_isospectral_invariance": "NLS.ZakharovShabat.sourceRealLaurentAction_eq_of_isospectral",
+    "Laurent_action_invariance": "NLS.ZakharovShabat.sourceDiagonalLaurentAction_real_eq_of_actions",
+    "physical_integer_levels": "NLS.MKdV.exists_miuraActionLevel_action_extensions",
+    "physical_factor": "2*J_(n,k)=I_(n,2*k-2); the action factor retains 1/2 of the actual Laurent integral.",
+    "central_square_analyticity": "NLS.ZakharovShabat.exists_sourceDiagonalPrimitiveSquare",
+    "central_square_invariance": "NLS.ZakharovShabat.sourceAbelianSquare_eq_of_isospectral",
+    "literal_mean_squared": "NLS.MKdV.miuraPrimitiveSquare_eq_mean_sq",
+    "corrected_mean_action_factor": "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_mean_square_of_nls_actions",
+    "remaining": "Forward mKdV action factorization, independent mKdV angles and final angle-sum factorization, and corrected full frequency identification. The physical spectral scalar Hamiltonians are now uniquely identified on their complete native complex Sobolev domains."
+  },
+  "native_physical_spectral_hierarchy": {
+    "literal_physical_trace": "NLS.MKdV.physicalMiuraDiscriminant",
+    "free_cosine_zero_lattice": "NLS.ComplexAnalysis.sampleFrequency",
+    "actual_extracted_small_phase": "NLS.ComplexAnalysis.sampledTracePhase",
+    "recursive_scaled_limit_coefficients": "NLS.ComplexAnalysis.sampledPhaseCoefficient",
+    "general_smooth_complex_coefficient_identification": "NLS.ZakharovShabat.sampledPhaseCoefficient_classicalDiscriminant",
+    "general_smooth_complex_scalar_spectral_hamiltonian": "NLS.MKdV.smoothMiuraSpectralHamiltonian",
+    "smooth_scalar_identification": "NLS.MKdV.smoothMiuraSpectralHamiltonian_eq_classical",
+    "full_native_extension_existence_and_uniqueness": "NLS.MKdV.existsUnique_miuraSpectralHamiltonianExtension",
+    "full_native_spectral_hamiltonian": "NLS.MKdV.miuraSpectralHillHamiltonian",
+    "independent_Riccati_hierarchy_identification": "NLS.MKdV.miuraSpectralHillHamiltonian_eq_native",
+    "entire_analyticity": "NLS.MKdV.analyticAt_miuraSpectralHillHamiltonian",
+    "actual_native_Frechet_gradient": "NLS.MKdV.miuraSpectralHillGradient",
+    "gradient_representation": "NLS.MKdV.miuraSpectralHillGradient_represents",
+    "actual_Gardner_distribution_derivative": "NLS.MKdV.miuraSpectralHillVectorField",
+    "original_domain_Theorem1": "NLS.Articles.MKdVNLSHierarchies.theorem1",
+    "original_domain_Proposition6": "NLS.Articles.MKdVNLSHierarchies.proposition6",
+    "original_finite_gap_Hill_primitive_series": "NLS.Articles.MKdVNLSHierarchies.equation12_spectral_native_laurent",
+    "normalization": "Source K_(s+1), s>=0; coefficient number 2*s of the small phase equals i*S_(2*s+1)=2*i*K_(s+1). Multiplication by -i/2 fixes the literal physical Hill normalization.",
+    "scope": "All smooth complex periodic physical profiles for coefficient extraction; unique entire analytic extension to every full original complex H^s native domain; both Theorem 1 clauses on every complex H^(s+1) input. Source physical finite-gap primitive series uses exactly these same coefficients."
+  },
+  "complete_Gardner_action_flows": {
+    "article_package": "NLS.Articles.MKdVNLSHierarchies.theorem4_complete_action_flows",
+    "native_Sobolev_flow": "NLS.MKdV.miuraActionFlow",
+    "native_Sobolev_time_continuity": "NLS.MKdV.continuous_miuraActionFlow",
+    "original_H1_flow": "NLS.MKdV.miuraH1ActionFlow",
+    "actual_H1_Gardner_ODE": "NLS.MKdV.hasDerivAt_miuraH1ActionFlow_Gardner",
+    "intrinsic_uniqueness": "NLS.MKdV.miuraH1ActionFlow_unique",
+    "global_group": "NLS.MKdV.miuraH1ActionFlow_add",
+    "commutation": "NLS.MKdV.miuraH1ActionFlow_comm",
+    "period_2pi": "NLS.MKdV.miuraH1ActionFlow_periodic",
+    "signed_mean_conservation": "NLS.MKdV.miuraActionFlow_mean",
+    "original_NLS_action_conservation": "NLS.MKdV.miuraNLSAction_miuraActionFlow",
+    "physical_mKdV_action_conservation": "NLS.MKdV.miuraMKdVAction_miuraActionFlow",
+    "closed_action_stationarity": "NLS.MKdV.miuraH1ActionFlow_eq_self_of_action_zero",
+    "coordinate_family_independence": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertPairedActionFlow_independent",
+    "full_native_source_Sobolev_continuity": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.continuous_weightedPairedActionFlow",
+    "isospectral_Sobolev_membership": "NLS.ZakharovShabat.source_sobolev_mem_iff_of_isospectral",
+    "construction": "Opposite original NLS action rotations at n and -n solve the actual analytic source Hamiltonian difference field. Actual ODE uniqueness gives component-swap covariance, preservation of the original diagonal and independence of the chosen normalized NLS Birkhoff family. Gardner transfer identifies the scalar H1 equation with the independently defined physical J_n action.",
+    "scope": "Complete commuting 2*pi-periodic real action flows on each full native integer H^s, s>=0, continuous in its native norm. The actual Gardner equation, intrinsic uniqueness, all physical J_m and signed NLS I_m invariants, and signed-mean conservation are proved on the entire original real H1 domain. Closed gaps and zero mean are included. No global signed-mean factor through NLS actions is claimed.",
+    "remaining": "The remaining main-theorem obligations from this checkpoint are discharged by independent_Abelian_full_rotation_and_angle_sum and IndependentAbelianAngleSum.lean. The original real H1 angle-sum clause and corrected all-order frequency comparison are complete."
+  },
+  "global_spectral_angle_transport": {
+    "general_source_angle_flow": "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.phase_pairedActionFlow",
+    "actual_phase_velocity": "NLS.ZakharovShabat.SourceAngularThetaCommonDomainData.hasDerivAt_phase_pairedActionFlow",
+    "angular_family_scope": "The normalized angular family and the Birkhoff family constructing the physical flow may be chosen independently.",
+    "original_H1_transport": "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_global_angle_transport",
+    "normalization": "The single-valued phase is exp(2*i*theta_m). Along the complete physical J_n flow it is multiplied by exp(2*i*t) when m=n and is unchanged otherwise; the original angle velocity is delta_mn.",
+    "domain": "Every original real H1 input where the angle action J_m is nonzero, all positive m,n and every real time. The action index n may have a closed gap. Isospectrality preserves the entire selected angle domain.",
+    "physical_action_vector_independence": "NLS.Articles.MKdVNLSHierarchies.theorem4_action_directions_independent",
+    "closed_action_vector_characterization": "NLS.MKdV.miuraGardnerDirection_eq_zero_iff",
+    "ambient_L2_cotangent_independence": "NLS.MKdV.miuraActionCotangent_coefficients_unique",
+    "original_H1_cotangent_independence": "NLS.Articles.MKdVNLSHierarchies.theorem4_H1_action_differentials_independent",
+    "cotangent_scope": "Every finite linear combination of the open physical action Frechet differentials and the actual mean differential has unique complex coefficients. All other gaps may close; zero mean is included. The ambient L2 statement uses the checked physical analytic action extensions, and density transfers it to their actual original H1 Frechet derivatives.",
+    "remaining": "The remaining main-theorem obligations from this checkpoint are discharged by independent_Abelian_full_rotation_and_angle_sum and IndependentAbelianAngleSum.lean. The original real H1 angle-sum clause and corrected all-order frequency comparison are complete."
+  },
+  "finite_local_physical_action_sections": {
+    "finite_projection": "NLS.MKdV.miuraFiniteActionCoordinates",
+    "exact_physical_base_values": "NLS.MKdV.miuraFiniteActionCoordinates_base",
+    "analyticity": "NLS.MKdV.analyticAt_miuraFiniteActionCoordinates",
+    "actual_Frechet_derivative": "NLS.MKdV.hasFDerivAt_miuraFiniteActionCoordinates",
+    "proved_derivative_surjectivity": "NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_submersion",
+    "constructed_bounded_linear_right_inverse": "NLS.MKdV.exists_miuraFiniteActionDerivative_rightInverse",
+    "constructed_holomorphic_sections": "NLS.Articles.MKdVNLSHierarchies.theorem4_finite_action_sections",
+    "section_derivative": "NLS.MKdV.exists_miuraFiniteAction_section",
+    "generic_finite_cotangent_projection": "NLS.FunctionalAnalysis.surjective_pi_of_cotangent_independent",
+    "generic_bounded_linear_right_inverse": "NLS.FunctionalAnalysis.exists_continuousLinear_rightInverse_of_surjective",
+    "generic_analytic_section": "NLS.ComplexAnalysis.exists_analytic_section_of_derivative_rightInverse",
+    "scope": "Every original real H1 base point; any finite collection of its positive open physical actions together with the literal mean. Other gaps may close and zero mean is allowed. The actual complex H1 analytic extensions have surjective derivative. A constructed holomorphic section passes through the base point, realizes all nearby selected complex action and mean values exactly, has the constructed right inverse as its actual derivative, and stays inside any prescribed open complex H1 neighborhood of the base point.",
+    "construction": "Cotangent independence proves surjectivity by injectivity of the algebraic dual map. A linear right inverse is bounded because its domain is finite dimensional. The affine H1 slice through that right inverse has identity actual derivative under the physical projection; the analytic inverse theorem constructs the section on that slice.",
+    "limits": "These finite local sections are supplemented by the later global native Sobolev Cartesian inverse, global physical-action factors, independent spectral phase rotation and final angle-sum proof. They alone do not assert global inversion."
+  },
+  "real_finite_physical_action_sections": {
+    "physical_real_Banach_space": "NLS.WeightedCoeff.physicalRealSubmodule",
+    "closed_real_form": "NLS.WeightedCoeff.isClosed_physicalRealSubmodule",
+    "bounded_physical_real_projection": "NLS.WeightedCoeff.physicalRealPart",
+    "exact_complex_decomposition": "NLS.WeightedCoeff.physicalRealPart_complex_decomp",
+    "physical_action_reality": "NLS.MKdV.finiteActionCoordinates_real_values",
+    "actual_cotangent_reality": "NLS.MKdV.finiteActionRows_real_variations",
+    "actual_real_action_projection": "NLS.MKdV.miuraFiniteRealActionCoordinates",
+    "actual_real_derivative": "NLS.MKdV.hasFDerivAt_miuraFiniteRealActionCoordinates",
+    "constructed_real_bounded_right_inverse": "NLS.MKdV.exists_miuraFiniteRealActionDerivative_rightInverse",
+    "real_derivative_surjectivity": "NLS.Articles.MKdVNLSHierarchies.theorem4_real_finite_action_submersion",
+    "real_preserving_sections": "NLS.Articles.MKdVNLSHierarchies.theorem4_real_finite_action_sections",
+    "section_derivative": "NLS.MKdV.exists_miuraFiniteRealAction_section",
+    "generic_real_analytic_section": "NLS.FunctionalAnalysis.exists_realAnalytic_section_of_derivative_rightInverse",
+    "scope": "Every original real H1 base point, including zero mean; any finite collection of its open positive physical actions; arbitrary other gaps may close. A constructed real analytic section into the closed physical real H1 space passes through that point, remains inside any prescribed real H1 neighborhood, realizes the literal signed mean and independent physical Hill contour actions exactly, keeps selected actions positive and has the constructed bounded real right inverse as its actual derivative.",
+    "physical_reality_convention": "Fourier conjugate reflection a_j=conj(a_-j), not coordinatewise real Fourier coefficients. The real form is a closed real Banach subspace with the original H1 norm.",
+    "construction": "Real gap formulas prove the physical action values real. Differentiating their imaginary parts along original real H1 lines proves reality of the actual complex cotangents. Exact physical real/imaginary decomposition shows that projecting any complex derivative lift to its physical real part preserves the real target. The real analytic inverse theorem on this constructed affine slice supplies the section.",
+    "limits": "These finite local sections are supplemented by the later global native Sobolev Cartesian inverse, global physical-action factors, independent spectral phase rotation and final angle-sum proof. They alone do not assert global inversion."
+  },
+  "native_mKdV_action_sequence": {
+    "integer_Laurent_complex_boundary": "NLS.ZakharovShabat.SourceDiagonalLaurentAtlas.exists_ball_all_laurent_actions_eq_boundaryIntegral",
+    "zero_excluding_disc_geometry": "NLS.ComplexAnalysis.exists_latticeDisc_inverse_bound",
+    "uniform_reciprocal_gap_frequency": "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.exists_diagonal_gapPoint_inverse_bound",
+    "actual_Laurent_level_zero_bound": "NLS.ZakharovShabat.SourceDiagonalLaurentAtlas.exists_local_zeroLevel_inverse_frequency_bound",
+    "weighted_l1_norm_bound": "NLS.ZakharovShabat.exists_local_sourceWeightedZeroLaurent_bound",
+    "actual_weighted_l1_analytic_realization": "NLS.ZakharovShabat.exists_local_sourceWeightedZeroLaurentSequence_analytic",
+    "native_action_weight": "NLS.MKdV.miuraSpectralActionWeight",
+    "native_action_sequence": "NLS.MKdV.miuraSobolevActionSequence",
+    "one_complex_neighborhood_at_every_native_order": "NLS.Articles.MKdVNLSHierarchies.native_mkdv_action_sequence_analytic",
+    "original_H1_physical_sequence": "NLS.MKdV.miuraH1ActionSequence",
+    "literal_independent_Hill_action_coordinates": "NLS.MKdV.miuraH1ActionSequence_physical",
+    "original_H1_action_mean_map": "NLS.Articles.MKdVNLSHierarchies.theorem4_mkdv_action_mean_map_analytic",
+    "literal_positive_action_weighted_summability": "NLS.Articles.MKdVNLSHierarchies.theorem4_weighted_action_summability",
+    "whole_sequence_and_signed_mean_conservation": "NLS.Articles.MKdVNLSHierarchies.theorem4_action_mean_sequence_conserved",
+    "target_topology": "At each integer Sobolev order s>=0 the analytic action extensions take values in the literal paper-weighted l1 space with weight 1+|n|^(2*s+1). The equivalent normalized weight (1+|n|)^(2*s+1) is used for the spectral estimate; a proved coefficient-preserving continuous linear equivalence gives exactly the paper topology. Positive indices are represented inside Z with zero central and negative entries. Original H1 has action weight 1+n^3, equivalently (1+n)^3.",
+    "uniform_estimate": "One common complex source neighborhood gives |I_(n,0)| <= C*|gamma_n|^2/(1+|n|), every signed n!=0. Symmetric endpoint cosine means keep the formula analytic through collapsed gaps. Fixed zero-excluding lattice discs supply the reciprocal frequency bound; no action or gap length is divided out.",
+    "normalization": "The physical J_n is exactly one-half the actual original NLS Laurent level zero. The weighting equivalence is undone after taking the positive half of the signed sequence, so the raw returned coordinates are the physical actions, not their weighted multiples.",
+    "scope": "All nonnegative integer native complex Sobolev spaces have one open analytic action-sequence neighborhood containing their entire physical real form, with actual Laurent coordinates. On every original real H1 input the positive coordinates equal the independent physical Hill contour actions. The actual signed mean is included in the H1 analytic map. Zero mean and arbitrary closed gaps are included.",
+    "remaining": "The full native action map and its topology are now constructed. This does not prove global inverse action-coordinate geometry, collapsed selected-action Cartesian coordinates, forward NLS action factorization, independent mKdV angles and final angle-sum factorization, or the corrected frequency comparison.",
+    "paper_action_weight": "NLS.MKdV.miuraPaperActionWeight",
+    "coefficient_preserving_topology_equivalence": "NLS.MKdV.miuraActionTopologyEquiv",
+    "literal_paper_weighted_sequence": "NLS.MKdV.miuraPaperSobolevActionSequence",
+    "exact_paper_topology_interface": "NLS.Articles.MKdVNLSHierarchies.native_mkdv_action_sequence_paper_topology",
+    "printed_weight_comparison": "1+|n|^(2*s+1) <= (1+|n|)^(2*s+1) <= 2^(2*s)*(1+|n|^(2*s+1)); both bounded linear directions preserve every raw action coordinate."
+  },
+  "physical_mass_action_trace": {
+    "article_mass_trace": "NLS.Articles.MKdVNLSHierarchies.physical_mass_action_trace",
+    "actual_native_K1_identification": "NLS.MKdV.miuraH1Mass_eq_nativeMiuraMass",
+    "original_real_H1_convergent_contour_trace": "NLS.MKdV.hasSum_miuraMKdVActions_mass",
+    "exact_scalar_L2_norm": "NLS.Articles.MKdVNLSHierarchies.physical_actions_mean_determine_L2_norm",
+    "analytic_native_action_moment": "NLS.MKdV.analyticAt_miuraH1ActionMoment",
+    "actual_Banach_derivative_sum": "NLS.MKdV.hasSum_fderiv_miuraH1ActionMoment",
+    "nonconstant_Fourier_cotangent_trace": "NLS.MKdV.hasSum_miuraActionDifferentials_fourier",
+    "source_translation_action_invariance": "NLS.ZakharovShabat.sourceComplexAction_spatialTranslation",
+    "closed_gap_translation_velocity": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.map_coordinates_spatial_of_closed_gap",
+    "actual_signed_rectangular_translation_frequency": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.jacobian_spatialDerivative_coordinates",
+    "unconditional_source_L2_field_trace": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hasSum_actionHamiltonian_spatialDerivative",
+    "unconditional_physical_Gardner_L2_field_trace": "NLS.Articles.MKdVNLSHierarchies.physical_action_field_trace",
+    "constant_source_noncentral_gap_closure": "NLS.ZakharovShabat.sourcePeriodicGap_eq_zero_of_spatialDerivative_zero",
+    "physical_constant_action_vanishing": "NLS.MKdV.miuraMKdVAction_eq_zero_of_derivative_zero",
+    "zero_action_rigidity": "NLS.MKdV.eq_scalarMode_mean_of_miuraActions_zero",
+    "zero_action_characterization": "NLS.MKdV.miuraActions_zero_iff_derivative_zero",
+    "fixed_mean_zero_fiber_uniqueness": "NLS.Articles.MKdVNLSHierarchies.physical_zero_action_fiber_unique",
+    "formula": "K1(u) = [u]^2/2 + sum_(n>=1) 2*pi*n*J_n(u)",
+    "scope": "Every original real H1 scalar source, including zero mean and arbitrary collapsed gaps. Literal physical Hill contours, native K1 and original scalar L2 norm. Scalar series converges; action-field series converges unconditionally in original L2 norms. Only nonzero Fourier frequencies are divided out. No action or gap-length division.",
+    "limits": "Does not construct an independent global mKdV Birkhoff chart or prove general nonzero action-fiber inverse geometry, forward restricted-NLS-action factorization, final angle-sum factorization or the complete corrected frequency comparison."
+  },
+  "original_L2_action_geometry": {
+    "original_real_Banach_form": "NLS.Coeff.physicalRealSubmodule",
+    "closed_real_form": "NLS.Coeff.isClosed_physicalRealSubmodule",
+    "bounded_coefficient_subsequence": "NLS.Coeff.exists_physicalReal_coefficientwise_subseq",
+    "original_L2_action_sequence": "NLS.MKdV.miuraL2ActionSequence",
+    "complex_analytic_native_sequence": "NLS.MKdV.exists_miuraL2ActionSequence_domain",
+    "physical_H1_recovery": "NLS.Articles.MKdVNLSHierarchies.native_L2_action_sequence_physical_H1",
+    "full_L2_mass_trace": "NLS.MKdV.miuraL2Mass_eq_mean_sq_add_actionMoment",
+    "actual_native_K1_endpoint": "NLS.Articles.MKdVNLSHierarchies.native_L2_mass_action_trace",
+    "convergent_actual_action_moment": "NLS.MKdV.hasSum_miuraL2ActionMoment",
+    "original_L2_norm_identity": "NLS.MKdV.miuraL2_norm_sq_eq_action_mean",
+    "explicit_full_target_norm_bound": "NLS.MKdV.miuraL2_norm_sq_le_actionMeanMap",
+    "no_norm_loss_strong_limit": "NLS.MKdV.tendsto_miuraRealL2_of_coefficientwise_of_actionMean",
+    "actual_profile_weak_continuity": "NLS.ZakharovShabat.tendstoUniformlyOn_sourceRealGapCosineProfile_of_bounded_coefficientwise",
+    "positive_gap_separation_from_zero": "NLS.ZakharovShabat.sourceDiagonal_positive_leftEndpoint",
+    "actual_Laurent_zero_weak_continuity": "NLS.ZakharovShabat.tendsto_sourceDiagonalLaurentAction_zero_of_bounded_coefficientwise",
+    "actual_scalar_action_weak_continuity": "NLS.MKdV.tendsto_miuraL2Action_of_bounded_coefficientwise",
+    "properness": "NLS.Articles.MKdVNLSHierarchies.native_L2_action_mean_map_proper",
+    "compact_action_mean_fibers": "NLS.Articles.MKdVNLSHierarchies.native_L2_action_mean_fiber_compact",
+    "scope": "Entire original physical real L2 scalar Banach space, including zero mean and arbitrary collapsed positive actions. Original actual Laurent extensions, with exact independent Hill-contour recovery on every original real H1 input. The target is the full weighted l1 order-one action norm paired with the literal signed mean. Positive indices are encoded in Z with nonpositive entries zero.",
+    "limits": "Properness and compact fibers are proved in original L2. This does not assert compactness in H1, general action-fiber uniqueness, surjectivity of the positive action cone, an independent global mKdV inverse chart, forward restricted-NLS-action factorization, final angle-sum factorization or full corrected frequency comparison."
+  },
+  "collapsed_action_Cartesian_regularization": {
+    "squared_gap_contour_factor": "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.laurentPrimitiveCircle_eq_squaredGap_mul",
+    "Banach_analytic_contour_factor": "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.laurentSquaredGapCircle_analytic",
+    "exact_closed_gap_residue": "NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily.laurentSquaredGapCircle_zeroGap",
+    "ordinary_factor_identification": "NLS.ZakharovShabat.SourceDiagonalLaurentLocalChart.exists_normalizedAction_one_eq",
+    "normalized_inverse_frequency_action": "NLS.ZakharovShabat.sourceNormalizedDiagonalLaurentAction",
+    "chart_independent_analytic_factor": "NLS.ZakharovShabat.exists_local_sourceNormalizedDiagonalLaurentAction_analytic_factor",
+    "positive_spectral_mean_value": "NLS.ZakharovShabat.sourceRealLaurentAction_zero_eq_inverse_mul_action",
+    "actual_ratio_real_positive": "NLS.ZakharovShabat.sourceDiagonalActionRatio_real_positive",
+    "closed_ratio_calibration": "NLS.ZakharovShabat.sourceDiagonalActionRatio_zeroGap",
+    "analytic_square_root": "NLS.ZakharovShabat.exists_local_sourceDiagonalActionRoot_analytic_factor",
+    "actual_L2_Cartesian_pair": "NLS.MKdV.miuraL2CartesianCoordinates",
+    "original_L2_analyticity": "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_L2_analytic",
+    "independent_physical_H1_action_radius": "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_radius",
+    "closed_physical_action_iff_collapsed_pair": "NLS.Articles.MKdVNLSHierarchies.physical_action_cartesian_original_H1_closed_iff",
+    "scope": "Every physical real L2 profile and every selected positive index, including a closed selected action, zero mean, and arbitrary other closed gaps. The selected pair is complex Banach analytic on an ambient original L2 neighborhood, real on physical profiles, and has squared radius twice the actual physical mKdV action. Independent original H1 Hill-contour action identification is retained.",
+    "normalization": "Jn = one half of the actual inverse-frequency Laurent action. The regularized ratio Jn/In is positive; at a closed gap it is 1/(2*tau_n), with the true spectral midpoint tau_n. The normalized root has zero-gap baseline tau_n-z, so the residue factor is -i/4 times the holomorphic quotient.",
+    "limits": "Selected Cartesian regularity is now assembled into full native complex Cartesian maps at every integer Sobolev order, with exact actual action radii, and signed-mean properness in original L2. An independent Gardner-canonical mKdV chart and inverse, general nonzero-fiber geometry, surjectivity, forward action factorization, final angle-sum factorization and corrected frequency identification remain essential."
+  },
+  "native_L2_Cartesian_sequence": {
+    "common_normalized_factor_domain": "NLS.ZakharovShabat.exists_local_sourceNormalizedDiagonalLaurentAction_allIndices_analytic_factor",
+    "closed_gap_inverse_frequency_bound": "NLS.ZakharovShabat.exists_local_hilbert_normalizedDiagonalLaurent_inverse_bound",
+    "common_ratio_analytic_decay": "NLS.ZakharovShabat.exists_local_hilbert_diagonalActionRatio_analytic_inverse_bound",
+    "spectral_mean_value_ratio": "NLS.ZakharovShabat.sourceDiagonalActionRatio_eq_inverse_frequency",
+    "scaled_ratio_positive_lower_bound": "NLS.ZakharovShabat.exists_diagonalActionRatio_scaled_re_lower_bound",
+    "scaled_ratio_bounded_Banach_analytic_sequence": "NLS.ZakharovShabat.exists_local_sourceDiagonalActionRatioSequence_analytic",
+    "common_positive_root_domain_and_half_order_bound": "NLS.ZakharovShabat.exists_local_sourceDiagonalActionRoot_allIndices_analytic_bound",
+    "native_weighted_Cartesian_sequence": "NLS.MKdV.miuraL2CartesianSequence",
+    "full_Banach_analytic_domain": "NLS.MKdV.exists_miuraL2CartesianSequence_domain",
+    "article_analyticity": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_sequence_analytic",
+    "exact_positive_coordinate_recovery": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_sequence_positive",
+    "full_weighted_quadratic_action_projection": "NLS.MKdV.miuraL2CartesianActions",
+    "actual_action_sequence_recovered": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_actions_recovered",
+    "properness_with_signed_mean": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_mean_map_proper",
+    "compact_complete_Cartesian_fibers": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_L2_mean_fiber_compact",
+    "scope": "The entire physical real L2 scalar space, including zero mean and arbitrarily many closed actions. A common complex source neighborhood supports genuine Banach analyticity into the full native weighted Hilbert pair with weight (1+|n|)^(1/2). Every positive raw pair is exactly the actual selected Cartesian coordinate; nonpositive entries are zero only for positive-index encoding. The quadratic radius map recovers the entire actual weighted l1 action sequence. Adding the literal signed mean gives a proper real L2 map.",
+    "limits": "Full native Sobolev Cartesian sequence analyticity at every integer order, including the original H1 target of order three halves, is now also proved. Gardner canonicity, an independent global mKdV inverse, general nonzero-fiber uniqueness/surjectivity, forward action factorization, final angle-sum factorization and corrected frequency identification still require proof. Properness remains an original-L2 statement."
+  },
+  "native_Sobolev_Cartesian_family": {
+    "bounded_analytic_scaling_symbol": "NLS.ZakharovShabat.exists_local_sourceDiagonalActionRootSequence_analytic",
+    "original_weighted_NLS_pullback": "NLS.MKdV.exists_miuraSobolevNLSNormalizedCoordinates_domain",
+    "native_Cartesian_weight": "NLS.MKdV.miuraCartesianWeight",
+    "weight_factorization": "NLS.MKdV.miuraCartesianWeight_factor",
+    "all_integer_native_maps": "NLS.MKdV.miuraSobolevCartesianSequence",
+    "common_native_analytic_domain": "NLS.MKdV.exists_miuraSobolevCartesianSequence_domain",
+    "article_all_orders_Banach_analyticity": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_allSobolev_analytic",
+    "exact_original_positive_pairs": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_allSobolev_coordinates",
+    "same_L2_raw_family": "NLS.MKdV.miuraSobolevCartesianSequence_L2_coefficients",
+    "physical_real_output": "NLS.MKdV.miuraSobolevCartesianSequence_real",
+    "squared_weight_is_actual_action_weight": "NLS.MKdV.miuraCartesianWeight_squared",
+    "native_analytic_quadratic_projection": "NLS.MKdV.analyticOnNhd_miuraSobolevCartesianActions",
+    "actual_full_native_action_sequence": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_allSobolev_action_sequence",
+    "original_H1_full_map": "NLS.MKdV.miuraH1CartesianSequence",
+    "original_H1_native_Banach_analyticity": "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_Banach_analytic",
+    "original_H1_independent_physical_radii": "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_native_radius",
+    "H1_native_three_halves_weight": "NLS.MKdV.miuraCartesianWeight_one",
+    "scope": "For every integer s>=0 the actual original Cartesian family is complex Banach analytic on an open native H^s neighborhood containing the entire physical real subspace, into the full weighted Hilbert pair with weight (1+|n|)^(s+1/2). Every raw coefficient agrees with the L2 family, including closed selected actions and zero mean. Outputs are real on physical sources. The analytic quadratic projection recovers the complete actual weighted l1 action sequence of order 2*s+1. Original ScalarDomain 2 H1 has its full order-three-halves map and exact independent Hill-contour action radii.",
+    "limits": "At the free profile all actual native positive-index Cartesian/mean maps now have full complex analytic inverse charts, including the original H1 domain, with explicit bounded free Jacobian equivalences. Physical real-form inverse restrictions, Gardner canonicity, a global inverse at general profiles, general nonzero-fiber uniqueness/surjectivity, forward action factorization, final angle-sum factorization and full corrected frequency identification remain essential. Global properness is proved only in original real L2."
+  },
+  "native_zero_Cartesian_inverse": {
+    "free_ratio_normalization": "NLS.ZakharovShabat.sourceDiagonalActionRatio_zero",
+    "positive_free_scale": "NLS.ZakharovShabat.sourceDiagonalActionRoot_zero",
+    "bounded_inverse_scaling_all_real_diagonals": "NLS.ZakharovShabat.exists_diagonalActionRoot_scaled_inverse_bound",
+    "actual_inverse_scaling_symbol": "NLS.ZakharovShabat.sourceDiagonalActionRootInverseSequence_apply",
+    "closed_native_positive_Banach_target": "NLS.WeightedCoeff.positiveSubmodule",
+    "closedness": "NLS.WeightedCoeff.isClosed_positiveSubmodule",
+    "actual_free_selected_derivative": "NLS.MKdV.fderiv_miuraL2CartesianCoordinates_zero_explicit",
+    "native_positive_cartesian_mean_map": "NLS.MKdV.miuraPositiveCartesianMap",
+    "actual_bounded_free_jacobian": "NLS.MKdV.miuraCartesianFreeJacobian",
+    "explicit_bounded_inverse": "NLS.MKdV.miuraCartesianFreeInverse",
+    "left_inverse_on_entire_original_complex_L2": "NLS.MKdV.miuraCartesianFreeInverse_jacobian",
+    "right_inverse_on_entire_natural_native_target": "NLS.MKdV.miuraCartesianFreeJacobian_inverse",
+    "bounded_linear_equivalence": "NLS.MKdV.miuraCartesianFreeEquiv",
+    "article_free_jacobian_equivalence": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_free_jacobian_equivalence",
+    "nonlinear_native_analytic_inverse_at_zero": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_local_inverse",
+    "global_physical_properness_in_natural_target": "NLS.Articles.MKdVNLSHierarchies.native_positive_cartesian_real_L2_map_proper",
+    "scope": "Actual original complex L2 source and closed native positive-index half-order weighted Hilbert pair plus the literal complex mean. The free Jacobian and its explicit inverse are bounded operators, with both inverse identities on the whole spaces and no finite-mode or source-reality restriction. The original nonlinear Cartesian map is a bijection between full open source/target neighborhoods of zero with complex Banach analytic inverse and both exact inverse identities. On the entire original physical real L2 source its natural positive-target map is proper.",
+    "normalization": "The free ratio is 1/(2*pi*n); the positive scaling is sqrt(1/(2*pi*n)). The second Cartesian coordinate has the checked negative sign. The inverse combines the two signed Fourier modes and reconstructs the zero mode from the signed mean.",
+    "limits": "Physical real and complex zero-profile inverse charts are proved at every native integer Sobolev order, including the literal original H1 domain. The unique small physical L2 inverse has the native Sobolev regularity. General-profile Cartesian Jacobian/inverse and Gardner canonicity, global nonzero-fiber geometry and surjectivity, forward restricted-NLS-action factorization, independent angles/final angle-sum factorization and full corrected frequency comparison remain essential. Global properness is still proved only in original physical real L2."
+  },
+  "native_zero_Sobolev_Cartesian_inverse": {
+    "positive_native_weight_equivalences": "NLS.WeightedCoeff.positiveWeightEquiv",
+    "mean_preserving_transport": "NLS.ComplexAnalysis.trans_prodCongr_refl_symm_snd",
+    "actual_all_orders_positive_map": "NLS.MKdV.miuraSobolevPositiveCartesianMap",
+    "native_closed_target": "NLS.MKdV.MiuraPositiveSobolevTarget",
+    "actual_free_native_Jacobian": "NLS.MKdV.miuraSobolevCartesianFreeJacobian",
+    "explicit_native_free_equivalence": "NLS.MKdV.miuraSobolevCartesianFreeEquiv",
+    "actual_operator_identification": "NLS.MKdV.miuraSobolevCartesianFreeJacobian_eq_equiv",
+    "article_all_orders_equivalence": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_free_jacobian_allSobolev",
+    "all_orders_native_inverse_charts": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_zero_inverse_allSobolev",
+    "original_H1_positive_map": "NLS.MKdV.miuraH1PositiveCartesianMap",
+    "original_H1_actual_derivative_equivalence": "NLS.MKdV.fderiv_miuraH1PositiveCartesianMap_zero",
+    "original_H1_native_inverse_chart": "NLS.Articles.MKdVNLSHierarchies.physical_cartesian_original_H1_zero_inverse",
+    "scope": "For every integer s>=0, the actual original complex H^s Cartesian/mean map has an explicit bounded free Jacobian equivalence and a genuine nonlinear analytic inverse between full open native H^s and positive-index h^(s+1/2) times complex-mean neighborhoods of zero. The raw Cartesian family and literal mean are unchanged. The literal original complex H1 ScalarDomain 2 source also has its actual order-three-halves inverse chart, with exact inverse identities, image equality, bijectivity and analyticity in both full native norms.",
+    "kernel_validation": "No heartbeat, recursion, or kernel limits were increased. A generic mean-preserving transport lemma avoids expansion of concrete weighted-space instance data in the native operator equality.",
+    "limits": "Physical real and complex zero-profile inverse charts are proved at every native integer Sobolev order, including the literal original H1 domain. The unique small physical L2 inverse has the native Sobolev regularity. General-profile Cartesian Jacobian/inverse and Gardner canonicity, global nonzero-fiber geometry and surjectivity, forward restricted-NLS-action factorization, independent angles/final angle-sum factorization and full corrected frequency comparison remain essential. Global properness is still proved only in original physical real L2."
+  },
+  "physical_real_zero_Cartesian_inverse": {
+    "original_physical_real_projection": "NLS.Coeff.physicalRealPart",
+    "closed_real_native_target": "NLS.MKdV.isClosed_miuraCartesianRealSubmodule",
+    "forward_map_exact_inclusion": "NLS.MKdV.miuraPhysicalCartesianMap_inclusion",
+    "actual_real_Banach_analyticity": "NLS.MKdV.analyticAt_miuraPhysicalCartesianMap",
+    "explicit_free_Jacobian_real_form": "NLS.MKdV.miuraCartesianFreeJacobian_physicalReal",
+    "explicit_inverse_real_form": "NLS.MKdV.miuraCartesianFreeInverse_physicalReal",
+    "actual_real_free_equivalence": "NLS.MKdV.fderiv_miuraPhysicalCartesianMap_zero",
+    "article_real_native_inverse_chart": "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_local_inverse",
+    "complex_inverse_germ_preserves_physical_reality": "NLS.MKdV.miuraPositiveCartesian_complex_inverse_real_germ",
+    "properness_in_genuine_real_target": "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_map_proper",
+    "singleton_zero_fiber": "NLS.MKdV.miuraPhysicalCartesianMap_eq_zero_iff",
+    "generic_proper_local_chart_global_uniqueness": "NLS.FunctionalAnalysis.exists_open_global_unique_preimages_of_proper_local_chart",
+    "global_unique_preimages_for_small_real_data": "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_global_unique_small_data",
+    "scope": "Actual original physical real L2 source, positive half-order real Hilbert pair and literal real signed mean. The nonlinear map agrees exactly with the complex Cartesian family and is real Banach analytic on the whole physical source. Full open real source/target neighborhoods of zero admit an analytic inverse with exact left/right identities, image equality and bijectivity. Every complex left inverse germ preserves the physical source form on nearby real target data. The map is globally proper, its zero fiber is a singleton by the actual mass trace, and every sufficiently small real target point has a unique preimage in the entire physical real L2 space, including closed actions and zero mean.",
+    "limits": "Physical real and complex zero-profile inverse charts are proved at every native integer Sobolev order, including the literal original H1 domain. The unique small physical L2 inverse has the native Sobolev regularity. General-profile Cartesian Jacobian/inverse and Gardner canonicity, global nonzero-fiber geometry and surjectivity, forward restricted-NLS-action factorization, independent angles/final angle-sum factorization and full corrected frequency comparison remain essential. Global properness is still proved only in original physical real L2."
+  },
+  "physical_real_zero_Sobolev_Cartesian_inverse": {
+    "complex_equivalence_real_restriction": "NLS.FunctionalAnalysis.complexEquivReal",
+    "symmetric_source_weight_reality": "NLS.WeightedCoeff.physicalReal_iff_weight",
+    "bounded_physical_source_weight_equivalence": "NLS.WeightedCoeff.physicalRealWeightEquiv",
+    "positive_target_weight_reality": "NLS.WeightedCoeff.positiveWeightEquiv_im_zero_iff",
+    "closed_native_real_target": "NLS.MKdV.isClosed_miuraSobolevCartesianRealSubmodule",
+    "exact_raw_real_target_characterization": "NLS.MKdV.mem_miuraSobolevCartesianRealSubmodule_iff",
+    "native_actual_map_inclusion": "NLS.MKdV.miuraPhysicalSobolevCartesianMap_inclusion",
+    "native_real_Banach_analyticity": "NLS.MKdV.analyticAt_miuraPhysicalSobolevCartesianMap",
+    "actual_native_free_derivative": "NLS.MKdV.fderiv_miuraPhysicalSobolevCartesianMap_zero",
+    "all_orders_real_free_equivalence": "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_free_jacobian_allSobolev",
+    "all_orders_real_native_inverse_charts": "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_zero_inverse_allSobolev",
+    "complex_inverse_germs_preserve_native_reality": "NLS.MKdV.miuraSobolevPositiveCartesian_complex_inverse_real_germ",
+    "literal_original_real_H1_inverse_chart": "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_original_H1_zero_inverse",
+    "coefficient_preserving_bounded_source_inclusion": "NLS.MKdV.miuraPhysicalSobolevL2SourceInclusion_apply",
+    "coefficient_preserving_bounded_target_inclusion": "NLS.MKdV.miuraPositiveSobolevL2CartesianInclusion_eval",
+    "exact_nonlinear_L2_compatibility": "NLS.MKdV.miuraPhysicalSobolevCartesianMap_L2",
+    "generic_inverse_regularity_transfer": "NLS.ComplexAnalysis.exists_analytic_inverse_regularity_neighborhood",
+    "unique_small_L2_inverse_has_native_regularity": "NLS.Articles.MKdVNLSHierarchies.physical_real_cartesian_small_inverse_Sobolev_regularity",
+    "scope": "For every integer s>=0 the actual physical real H^s map admits a real analytic inverse between full open zero-profile source and positive-index native h^(s+1/2) times real-mean target neighborhoods. The inherited full native norms and every raw Cartesian coefficient are retained. The actual derivative is a bounded real Fourier equivalence. Both inverse identities, image equality and bijectivity hold. The literal original real H1 domain has the corresponding order-three-halves chart. Native complex left inverse germs preserve the physical real form. Bounded source and target inclusions commute with the nonlinear maps. For each s a full open native real target neighborhood has an analytic H^s inverse which is every possible physical L2 preimage of the included data; this proves native regularity and global L2 uniqueness for such small native data. Neighborhood size may depend on s. Closed actions and zero mean are included.",
+    "kernel_validation": "Heartbeat, recursion and kernel limits unchanged. Generic real-equivalence composition and analytic inverse-regularity lemmas keep concrete weighted-space instance data out of the central kernel reductions.",
+    "limits": "Physical real and complex zero-profile inverse charts are proved at every native integer Sobolev order, including the literal original H1 domain. The unique small physical L2 inverse has the native Sobolev regularity. General-profile Cartesian Jacobian/inverse and Gardner canonicity, global nonzero-fiber geometry and surjectivity, forward restricted-NLS-action factorization, independent angles/final angle-sum factorization and full corrected frequency comparison remain essential. Global properness is still proved only in original physical real L2."
+  },
+  "complete_native_Cartesian_action_transport": {
+    "actual_diagonal_Laurent_actions_spectral": "NLS.ZakharovShabat.sourceDiagonalLaurentAction_eq_of_isospectral",
+    "regularized_scaling_spectral_through_closed_gaps": "NLS.ZakharovShabat.sourceDiagonalActionRatio_eq_of_isospectral",
+    "chosen_principal_root_spectral": "NLS.ZakharovShabat.sourceDiagonalActionRoot_eq_of_isospectral",
+    "literal_paired_rectangular_NLS_transport": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.birkhoff_pairedActionFlow_coordinates_of_ne_second",
+    "clockwise_physical_sign": "NLS.ComplexAnalysis.cartesianPlaneRotation_scaled_reflection",
+    "complete_actual_physical_Cartesian_pair_rotation": "NLS.MKdV.miuraL2CartesianCoordinates_miuraActionFlow",
+    "original_H1_actual_Cartesian_time_derivative": "NLS.MKdV.hasDerivAt_miuraH1ActionFlow_Cartesian",
+    "actual_original_Cartesian_Frechet_derivative_on_Gardner_field": "NLS.MKdV.fderiv_miuraCartesian_apply_Gardner_action",
+    "literal_scalar_Gardner_brackets": "NLS.Articles.MKdVNLSHierarchies.cartesian_action_Gardner_brackets_original_H1",
+    "whole_original_complex_L2_zero_energy_trace": "NLS.Articles.MKdVNLSHierarchies.original_L2_zero_energy_trace",
+    "mean_square_constant_all_native_orbits": "NLS.MKdV.miuraActionFlow_mean_square_allSobolev",
+    "signed_mean_constant_all_native_orbits": "NLS.MKdV.miuraActionFlow_mean_allSobolev",
+    "whole_native_weighted_action_sequence_fixed": "NLS.MKdV.miuraSobolevActionSequence_miuraActionFlow",
+    "all_original_signed_NLS_actions_fixed": "NLS.Articles.MKdVNLSHierarchies.native_original_NLS_actions_constant_on_Gardner_orbits",
+    "full_native_positive_Cartesian_covariance": "NLS.Articles.MKdVNLSHierarchies.native_cartesian_complete_action_rotation",
+    "scope": "Every integer Sobolev order s>=0 and every real time. All actual positive Cartesian pairs rotate at unit speed in the selected plane and stay fixed in every other positive plane, with the literal signed mean and whole native weighted l1 action sequence fixed. Every original signed NLS action is invariant on the same complete physical orbit. Closed selected and unselected actions are included without extra hypotheses. The actual ratio and chosen principal root are spectral for every signed index n!=0 on real diagonal isospectral sets at every finite exponent p>1; positivity of that root is used only at positive physical indices. On original real H1 the actual scalar Gardner brackets are {X_m,J_n}=delta_mn Y_m and {Y_m,J_n}=-delta_mn X_m, for all positive m,n without any open-action assumption. The whole complex original L2 space has the exact zero-energy discriminant formula Delta(0)=2*cosh(original_mean).",
+    "normalization": "The physical rotation is (X,Y) -> (cos(t)*X+sin(t)*Y,-sin(t)*X+cos(t)*Y). Its velocity is (Y,-X), matching the checked second-coordinate sign and positive Gardner action convention. The source phase convention exp(2*i*theta) is unchanged.",
+    "limits": "General Cartesian-Cartesian brackets and Gardner canonicity, the general-profile Cartesian Jacobian/global inverse, global nonzero-fiber geometry and surjectivity, forward restricted-NLS-action factorization, independent angles/final angle-sum factorization and full corrected frequency comparison remain essential. Orbit invariance and mixed brackets do not by themselves supply these remaining claims."
+  },
+  "native_Cartesian_NLS_action_stationarity": {
+    "physical_L2_complex_decomposition": "NLS.Coeff.physicalRealPart_complex_decomp",
+    "genuine_real_target_complex_decomposition": "NLS.MKdV.miuraCartesianRealProjection_complex_decomp",
+    "target_real_form_identity_principle": "NLS.MKdV.analytic_cartesian_eq_zero_of_physical_real",
+    "bounded_native_mode_rotations": "NLS.WeightedCoeff.positiveCartesianRotation",
+    "actual_target_rotation_velocity": "NLS.MKdV.hasDerivAt_miuraCartesianRotation_zero",
+    "literal_original_L2_action_flow": "NLS.MKdV.miuraOriginalL2ActionFlow",
+    "original_L2_flow_continuity": "NLS.MKdV.continuous_miuraOriginalL2ActionFlow",
+    "entire_original_NLS_action_sequence_conserved": "NLS.MKdV.miuraOriginalL2ActionFlow_NLS_actionSequence",
+    "full_native_target_flow_conjugacy": "NLS.MKdV.miuraPositiveCartesianMap_originalActionFlow",
+    "generic_actual_inverse_coordinate_stationarity": "NLS.ComplexAnalysis.fderiv_inverse_coordinates_eq_zero_of_orbit",
+    "actual_original_l1_action_observable": "NLS.MKdV.miuraOriginalNLSActionSequence",
+    "literal_all_signed_action_coordinates": "NLS.MKdV.miuraOriginalNLSActionSequence_apply",
+    "common_actual_inverse_chart": "NLS.MKdV.nonempty_miuraCartesianNLSActionChart",
+    "inverse_action_sequence_analytic": "NLS.MKdV.MiuraCartesianNLSActionChart.observables_analytic",
+    "exact_recovery_of_entire_original_sequence": "NLS.MKdV.MiuraCartesianNLSActionChart.observables_recover",
+    "physical_real_rotation_stationarity": "NLS.MKdV.MiuraCartesianNLSActionChart.observables_rotation_stationary_real",
+    "holomorphic_whole_sequence_rotation_stationarity": "NLS.MKdV.MiuraCartesianNLSActionChart.observables_rotation_stationary",
+    "article_common_analytic_stationary_recovery": "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_cartesian_analytic_stationary_near_zero",
+    "scope": "One full open complex original scalar L2 source neighborhood is mapped by the actual nonlinear Cartesian/mean map onto a full native positive half-order Hilbert-pair/complex-mean ball at zero. The genuine inverse is complex Banach analytic, has both inverse identities, preserves the physical real form, and maps that entire ball into a common analytic source domain for all signed original NLS actions. The whole original action sequence is l1-valued analytic in these actual inverse coordinates and recovers every original signed action. Its actual Frechet derivative annihilates each positive Cartesian rotation direction on the whole common complex target ball. The chart and radius precede both selected action and signed output indices. No open selected/unselected action, finite-gap, or real-input restriction occurs in the final complex stationarity statement.",
+    "limits": "The subsequent local forward action factorization through native physical actions and signed mean is proved near zero. Global forward factorization, general Cartesian-Cartesian Gardner brackets/canonicity, general-profile inverse geometry, independent angles/final angle-sum factorization and the full corrected frequency comparison remain essential."
+  },
+  "local_forward_NLS_action_factor": {
+    "uniform_real_action_torus_bound": "NLS.RealCoeff.norm_le_two_mul_of_pairAction_eq",
+    "head_avoiding_finite_rotations": "NLS.RealCoeff.exists_tailRotationSequence_eqOn",
+    "whole_real_tail_action_fiber_invariance": "NLS.Coeff.eq_of_real_tail_actions_of_rotation_stationary",
+    "arbitrary_complex_tail_signs": "NLS.Coeff.pairSignChange_invariant_of_tail_rotation_stationary",
+    "tail_splitting_without_head_stationarity": "NLS.Coeff.fderiv_actionSplit_eq_zero_of_tail_stationarity",
+    "generic_linear_head_analytic_tail_factor": "NLS.Coeff.exists_local_tail_action_factor",
+    "bounded_normalized_parameters": "NLS.WeightedCoeff.positiveCartesianParameterMap",
+    "exact_bounded_right_inverse": "NLS.WeightedCoeff.positiveCartesianParameterMap_section",
+    "whole_original_NLS_sequence_parameter_factor": "NLS.MKdV.MiuraCartesianNLSActionChart.exists_parameterObservables_tail_factor",
+    "exact_physical_normalization": "NLS.MKdV.miuraCartesian_tail_parameters",
+    "actual_native_action_factor": "NLS.MKdV.exists_local_miura_original_NLS_action_factor",
+    "original_L2_article_factor": "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_local_analytic_physical_action_mean_factor",
+    "independent_original_H1_action_inputs": "NLS.Articles.MKdVNLSHierarchies.local_factor_input_original_H1_action",
+    "original_H1_article_factor": "NLS.Articles.MKdVNLSHierarchies.original_H1_NLS_actions_local_physical_action_mean_factor",
+    "scope": "One analytic map on an open complex native weighted l1 order-one action/complex-mean neighborhood of zero recovers the entire original signed NLS action sequence on one original physical real L2 source neighborhood of zero. Its restriction to one literal original real H1 neighborhood uses the independent physical Hill-contour actions at every positive index and the literal signed mean. Neighborhoods precede all indices. The factor is analytic in the full l1 output norm. Zero mean and all closed actions are included; the mean is retained linearly, never squared.",
+    "limits": "Local near the free profile only. Global forward factorization, global Cartesian inverse/Gardner canonicity, independent angles and full corrected frequency comparison remain essential.",
+    "original_H1_open_pullback": "NLS.Articles.MKdVNLSHierarchies.isOpen_original_H1_pullback",
+    "original_H1_zero_pullback": "NLS.Articles.MKdVNLSHierarchies.zero_mem_original_H1_pullback",
+    "original_H1_neighborhood_description": "The original-H1 source neighborhood is the preimage of the common open original-L2 source neighborhood under the bounded original H1 inclusion. Its openness and zero base point are proved separately, avoiding any change of checking limits."
+  },
+  "global_Cartesian_phase_lifting": {
+    "closed_tail_rotation_saturation": "NLS.RealCoeff.mem_of_isClosed_tail_rotation_invariant",
+    "real_normalized_parameters": "NLS.WeightedCoeff.positiveCartesianRealParameters",
+    "faithful_on_genuine_real_target": "NLS.WeightedCoeff.positiveCartesianRealParameters_injective_on_real",
+    "exact_rotation_orientation": "NLS.WeightedCoeff.positiveCartesianRealParameters_rotation",
+    "compact_joint_physical_NLS_action_fiber": "NLS.MKdV.isCompact_miuraJointActionFiber",
+    "global_original_L2_phase_lift": "NLS.MKdV.exists_miura_jointFiber_preimage_of_Cartesian_radii",
+    "exact_full_native_phase_fiber_image": "NLS.MKdV.miuraJointActionFiber_Cartesian_image",
+    "compact_native_phase_fiber": "NLS.MKdV.isCompact_miuraCartesianPhaseFiber",
+    "weighted_membership_constant_on_tori": "NLS.RealCoeff.weighted_mem_of_pairAction_eq",
+    "all_p_shared_source_Sobolev_regularities": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.source_sobolev_mem_iff_of_actions_eq",
+    "physical_scalar_all_real_Sobolev_orders": "NLS.MKdV.miuraSobolev_mem_iff_of_NLS_actions_eq",
+    "coefficient_preserving_native_joint_fiber_representative": "NLS.MKdV.exists_miuraJointFiber_Sobolev_representative",
+    "global_all_native_integer_Sobolev_phase_lift": "NLS.MKdV.exists_miuraSobolev_Cartesian_phase_preimage",
+    "article_original_L2_lift": "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_original_L2",
+    "article_exact_compact_fiber_image": "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_fiber_exact_image",
+    "article_all_native_orders": "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_phase_lifting_allSobolev",
+    "scope": "For every physical original L2 profile, every real native Cartesian target with the same actual physical radii and signed mean has an actual original L2 preimage retaining all original signed NLS actions. The image of the compact joint physical-action/mean and NLS-action fiber is exactly this complete native phase fiber. Equal original NLS actions preserve all nonnegative real Sobolev regularities; global phase lifting therefore holds in every actual native integer H^s space. Zero mean, closed gaps and infinitely many open modes are included, with no smallness hypothesis.",
+    "limits": "Action data must already be attained by a physical profile. No uniqueness of Cartesian preimages, arbitrary nonnegative action realization, or identification of an entire physical action fiber with a single joint NLS action fiber is asserted. General Cartesian Jacobians/global inverse/Gardner canonicity, global forward action factorization, independent angles and full corrected frequency comparison remain essential."
+  },
+  "zero_mean_NLS_action_fiber_faithfulness": {
+    "complete_action_flow_swap_covariance": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertActionRotation_componentSwap",
+    "coordinate_swap_conjugacy": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.coordinateComponentSwap_rotation",
+    "arbitrary_retained_index_set_density": "NLS.RealCoeff.mem_of_isClosed_rotation_invariant_avoiding_set",
+    "negative_coordinates_from_positive_fixed_coordinates": "NLS.RealCoeff.negative_coordinates_eq_of_reflection_fixed",
+    "only_central_half_turn_ambiguity": "NLS.RealCoeff.eq_or_central_halfTurn_of_reflection_fixed",
+    "original_diagonal_source_ambiguity": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.diagonal_eq_or_central_halfTurn",
+    "original_L2_zero_mean_central_action_closure": "NLS.MKdV.miuraOriginalNLSActionSequence_zero_of_mean_zero",
+    "physical_Cartesian_positive_NLS_faithfulness": "NLS.MKdV.positive_NLS_coordinates_eq_of_miuraCartesian_eq",
+    "global_zero_mean_joint_fiber_injectivity": "NLS.MKdV.miuraCartesian_jointFiber_injective_of_mean_zero",
+    "whole_physical_action_sequence_fixed_on_NLS_fiber": "NLS.MKdV.miuraL2ActionSequence_eq_of_NLS_actions_eq",
+    "original_L2_squared_mean_fixed_on_NLS_fiber": "NLS.MKdV.miuraMean_square_eq_of_NLS_actions_eq",
+    "zero_mean_joint_fiber_equals_full_diagonal_NLS_action_fiber": "NLS.MKdV.miuraJointActionFiber_eq_NLSActionFiber_of_mean_zero",
+    "actual_compact_fiber_homeomorphism": "NLS.MKdV.miuraZeroMeanJointFiberCartesianHomeomorph",
+    "global_native_all_Sobolev_unique_phase_lifting": "NLS.MKdV.existsUnique_miuraSobolev_zeroMean_phase_preimage",
+    "article_homeomorphism": "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_Cartesian_homeomorphism",
+    "article_unique_native_lift": "NLS.Articles.MKdVNLSHierarchies.physical_zero_mean_action_fiber_unique_phase_lift_allSobolev",
+    "scope": "Global injectivity of the actual physical Cartesian map within each zero-mean original signed NLS action fiber on the entire original real L2 diagonal. This fiber is exactly the compact joint physical J/mean and NLS action fiber, and maps homeomorphically onto its full native Cartesian phase fiber. The phase preimage within that NLS action fiber is unique in every native integer H^s class, including zero mean, collapsed gaps and infinitely many open modes. For general mean, equal original NLS actions and equal Cartesian maps leave at most the actual central NLS half-turn.",
+    "limits": "The subsequent signed-mean milestone removes the central half-turn ambiguity at every mean. Different NLS action fibers at the same physical J/mean, general-profile Cartesian Jacobians/global inverse, arbitrary nonnegative action realization, Gardner canonicity, global forward factorization, independent angles and corrected full frequency comparison remain essential."
+  },
+  "signed_mean_NLS_action_fiber_faithfulness": {
+    "actual_half_turn_diagonal_preservation": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbertCentralHalfTurn_diagonal",
+    "complete_single_action_sequence_conservation": "NLS.ZakharovShabat.SourceBirkhoffMapComplexData.hilbert_actionSequence_actionRotation",
+    "original_L2_zero_action_rigidity": "NLS.MKdV.eq_single_mean_of_miuraL2ActionSequence_zero",
+    "actual_continuous_physical_half_turn": "NLS.MKdV.miuraCentralHalfTurn",
+    "half_turn_constant_means": "NLS.MKdV.miuraCentralHalfTurn_constant_mean",
+    "global_literal_signed_mean_reversal": "NLS.MKdV.miuraCentralHalfTurn_mean",
+    "all_mean_original_NLS_fiber_Cartesian_injectivity": "NLS.MKdV.miuraCartesian_jointFiber_injective",
+    "global_compact_phase_fiber_homeomorphism": "NLS.MKdV.miuraJointFiberCartesianHomeomorph",
+    "exact_signed_mean_branch": "NLS.MKdV.miuraJointActionFiber_eq_signedMean_NLSActionFiber",
+    "all_native_integer_Sobolev_unique_phase_lifts": "NLS.MKdV.existsUnique_miuraSobolev_phase_preimage",
+    "article_homeomorphism": "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_Cartesian_homeomorphism",
+    "article_native_unique_lift": "NLS.Articles.MKdVNLSHierarchies.physical_action_fiber_unique_phase_lift_allSobolev",
+    "printed_global_signed_mean_obstruction": "NLS.Articles.MKdVNLSHierarchies.no_global_signed_mean_NLS_action_factor",
+    "scope": "At arbitrary signed mean, the actual original-L2 Cartesian map is injective within every original signed NLS action fiber. The compact joint physical J/mean and NLS action fiber is precisely the same-signed-mean branch of that full physical diagonal NLS action fiber, and maps homeomorphically onto its entire native Cartesian phase fiber. Every phase lift is unique in each actual native integer H^s source class. Zero mean, closed actions and infinite support are included. Actual central half-turn mean reversal is proved globally by a mean-leaf continuity argument. No arbitrary function of the entire NLS action sequence recovers signed mean globally.",
+    "limits": "Different original NLS action fibers at the same physical J and signed mean remain unclassified. General-profile Cartesian Jacobian/global inverse, Gardner canonicity, arbitrary nonnegative action realization, global forward I(J,mean) factorization, independent angles and corrected full frequency comparison remain essential."
+  },
+  "general_profile_Cartesian_Fredholm_reduction": {
+    "status": "proved_general_original_L2_compact_remainder_and_Fredholm_reduction_injectivity_now_discharged_at_all_original_real_H1_basepoints",
+    "domains": "Every physical real original L2 profile; full ambient complex derivative and genuine physical real derivative into the positive half-order Cartesian pair plus signed mean.",
+    "unconditional_declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_compact_remainder",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_bijective_iff_injective",
+      "NLS.MKdV.isCompactOperator_miuraCartesianJacobian_sub_free",
+      "NLS.MKdV.isCompactOperator_miuraCartesianNormalizedJacobian_sub_id"
+    ],
+    "conditional_analytic_inverse_declaration": "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_chart_of_derivative_injective",
+    "explicit_remaining_premise": "The old conditional chart requires derivative injectivity at an arbitrary real L2 point. This is now proved at every original real H1 basepoint by the later general_H1_Cartesian_local_inverse milestone; arbitrary rough L2 points remain open.",
+    "root_asymptotics": [
+      "NLS.ZakharovShabat.tendsto_sourceDiagonalScaledActionRatio_positive",
+      "NLS.ZakharovShabat.tendsto_sourceDiagonalActionRoot_scaled_positive",
+      "NLS.ZakharovShabat.isCompactOperator_sourceDiagonalActionRootSequence_sub_free"
+    ],
+    "mechanism": "Scaled roots are analytic as one bounded sequence; their real-profile free difference vanishes at infinity. The NLS Jacobian remainder is compact. The symbol-derivative term factors through compact multiplication of bounded symbols by the fixed l2 NLS coordinate sequence. Weight normalization has a bounded left inverse.",
+    "limits": [
+      "This compactness reduction alone does not prove injectivity. The later H1-basepoint theorem proves Jacobian bijectivity and unconditional local charts; the global native inverse, action-data realization and final angle sum are proved separately. Cross-mode Cartesian canonicity is not inferred.",
+      "The compactness theorem here is on original L2, not all native Sobolev orders."
+    ]
+  },
+  "actual_Cartesian_Gardner_fields_and_plane_brackets": {
+    "status": "proved_actual_Gardner_gradient_domain_analytic_brackets_and_canonical_same_plane_values_original_real_H1_cross_mode_zero_open",
+    "domains": "Every original physical real period-one H1 profile, each positive Cartesian index, zero mean and arbitrary selected or other closed gaps included.",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_actual_Gardner_fields",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_plane_Gardner_brackets",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_Gardner_bracket_analytic_extension"
+    ],
+    "core_domain_declarations": [
+      "NLS.MKdV.miuraCartesianObservable_Gardner_memlp",
+      "NLS.MKdV.miuraCartesianObservable_GardnerDirection",
+      "NLS.MKdV.miuraCartesianObservable_Gardner_distribution"
+    ],
+    "canonical_plane_declaration": "NLS.MKdV.miuraCartesianPlane_Gardner_canonical",
+    "canonical_values": "{X_n,X_n}=0, {X_n,Y_n}=1, {Y_n,X_n}=-1, {Y_n,Y_n}=0, including at a closed n-th gap.",
+    "analyticity": "All selected Cartesian-Cartesian brackets admit complex analytic H1 extensions near every physical real H1 profile and agree there with the literal Gardner brackets.",
+    "mechanism": "The convergent physical action-field trace yields the translation generator. Differentiating on the real H1 form and complexifying variations gives a bounded cotangent generator extension, whose Fourier coefficients prove actual gradient-domain membership. The physical action radius and mixed brackets force X_n times the plane-bracket error to vanish. A nonzero free Fourier differential and real analytic continuation prove the plane bracket equals one everywhere.",
+    "limits": [
+      "Cross-mode Cartesian zero brackets and full Gardner canonicity are not asserted or needed for the main source claims. Global native Sobolev inversion and all main-theorem obligations are completed separately.",
+      "The gradient-domain and bracket statements here are on original real H1; no actual L2 Gardner representative is claimed at every rough L2 profile."
+    ]
+  },
+  "general_H1_Cartesian_local_inverse": {
+    "status": "proved_unconditional_complex_Jacobian_bijective_and_physical_real_L2_analytic_local_charts_at_every_original_real_H1_basepoint",
+    "domains": "All original physical real period-one H1 basepoints, including zero mean, arbitrary collapsed gaps and infinite support. Derivatives and open inverse charts are on the original L2 source and native positive half-order Cartesian pair plus signed mean target.",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_complex_Jacobian_bijective_general_H1",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_derivative_equivalence_general_H1",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_analytic_local_inverse_general_H1"
+    ],
+    "core_declarations": [
+      "NLS.ComplexAnalysis.annihilator_rotation_of_stationary_equivariance",
+      "NLS.MKdV.miuraCartesianJacobian_annihilator_eq_zero",
+      "NLS.MKdV.miuraCartesianNormalizedJacobian_denseRange_H1",
+      "NLS.MKdV.miuraCartesianJacobian_bijective_H1",
+      "NLS.MKdV.miuraPhysicalCartesianJacobian_inclusion",
+      "NLS.MKdV.exists_miuraPhysicalCartesian_analytic_chart_H1"
+    ],
+    "mechanism": "Full target action-field covariance and differentiation at closed stationary actions kill closed modal annihilator coefficients. At open actions the coefficients are radial. Mixed brackets and skew symmetry cancel off-mode contributions, and norm-convergent native weighted modal expansion kills all modal coefficients; the source zero Fourier variation kills the mean coefficient. Dense range plus compact free remainder yields complex bijectivity. Physical inclusion gives real injectivity, and the checked real Fredholm alternative and analytic inverse theorem give physical local charts.",
+    "limits": [
+      "The subsequent global native Sobolev inverse milestone proves global bijectivity in every integer H^s, s>=1, and uniqueness among all original-L2 preimages of native data. Arbitrary rough L2 target inversion remains unproved.",
+      "Charts use L2 and native half-order topologies, not native H1 and three-half-order topologies. No invertibility theorem at every rough real L2 basepoint is claimed.",
+      "The remaining main-theorem obligations from this checkpoint are discharged by independent_Abelian_full_rotation_and_angle_sum and IndependentAbelianAngleSum.lean. The original real H1 angle-sum clause and corrected all-order frequency comparison are complete. Cross-mode Cartesian canonicity is not used; native nonnegative action realization and equality of full action fibers are proved."
+    ]
+  },
+  "global_native_Sobolev_Cartesian_inverse": {
+    "status": "proved_global_native_integer_Hs_bijection_s_ge_1_and_entire_L2_fiber_uniqueness_global_inverse_Sobolev_regularity_and_NLS_action_fiber_identification",
+    "domains": "Every native integer s>=1, full physical real H^s source and entire positive real weighted Cartesian pair of order s+1/2 plus arbitrary signed mean. Each such datum has exactly one preimage in the full physical real original-L2 space. Global inverse Sobolev regularity holds for all integers s>=0.",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_inverse_global_Sobolev_regularity",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_global_unique_preimage_nativeSobolev",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Cartesian_global_bijection_nativeSobolev",
+      "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_determined_by_mKdV_actions_mean"
+    ],
+    "core_declarations": [
+      "NLS.RealCoeff.weighted_mem_of_positive_of_even_action",
+      "NLS.MKdV.miuraPhysicalCartesian_preimage_Sobolev_range",
+      "NLS.ComplexAnalysis.exists_preimage_of_closedRange_of_charts",
+      "NLS.ComplexAnalysis.existsUnique_preimage_of_proper_of_charts",
+      "NLS.MKdV.existsUnique_miuraPhysicalCartesian_preimage_Sobolev",
+      "NLS.MKdV.miuraPhysicalSobolevCartesianMap_bijective",
+      "NLS.MKdV.miuraOriginalNLSActions_eq_of_Sobolev_actionMean_eq"
+    ],
+    "mechanism": "The bounded inverse scaled spectral root recovers weighted positive NLS coordinates. Even diagonal quadratic actions recover the negative-coordinate weight, and the checked NLS Sobolev characterization recovers the source weight. Proper closed range and H1-basepoint open charts make the attained native-data locus clopen. Properness makes singleton fibers stable, while distinct regular preimages have disjoint charts and persist locally. The connected native target and singleton zero fiber therefore give global uniqueness. Phase saturation followed by this injectivity identifies original NLS action fibers at equal physical action/mean data.",
+    "limits": [
+      "Global native bijectivity does not yet assert native inverse continuity or analyticity, full Gardner canonicity or cross-mode zero brackets.",
+      "Every native datum has unique preimage among all L2 sources, but no global existence or uniqueness theorem is asserted for arbitrary rough L2 Cartesian data.",
+      "Global determination of the NLS actions by physical J and signed mean is proved. The subsequent milestone also proves arbitrary native nonnegative action realization and general-profile holomorphic Cartesian inverse observables with rotation stationarity. Forward action-space analyticity, independent angles and corrected full frequency comparison remain essential."
+    ]
+  },
+  "native_action_realization_and_general_analytic_action_charts": {
+    "status": "proved_arbitrary_nonnegative_native_action_realization_and_whole_sequence_holomorphic_rotation_stationary_Cartesian_observables_at_every_original_real_H1_profile",
+    "action_realization_domains": "For each integer s>=1, every positive action sequence in weighted complex l1 of weight (1+|n|)^(2s+1), with real nonnegative entries, unused nonpositive entries zero, and arbitrary real signed mean. The source is the entire original physical real H^s class. Independent physical Hill actions are explicitly identified on literal original H1.",
+    "chart_domains": "At every original physical real H1 basepoint, one full open complex original-L2 source chart and a native positive half-order complex Cartesian target ball. Its inverse preserves the physical real form. The entire original signed NLS action sequence is holomorphic into actual l1 and stationary under every positive modal rotation on that one common ball.",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_mKdV_native_action_data_realization",
+      "NLS.Articles.MKdVNLSHierarchies.physical_H1_Hill_action_data_realization",
+      "NLS.Articles.MKdVNLSHierarchies.physical_NLS_actions_general_H1_Cartesian_chart"
+    ],
+    "shared_declarations": [
+      "NLS.WeightedCoeff.exists_real_quadratic_lift",
+      "NLS.MKdV.exists_miuraSobolev_profile_of_nonnegative_actions",
+      "NLS.MKdV.miuraSobolevActionSequence_one_eq_physical",
+      "NLS.MKdV.exists_miuraPositiveCartesian_analytic_chart_H1",
+      "NLS.MKdV.miuraPositiveCartesian_complex_inverse_real_germ_H1",
+      "NLS.MKdV.nonempty_miuraGeneralCartesianNLSActionChart",
+      "NLS.MKdV.MiuraGeneralCartesianNLSActionChart.observables_rotation_stationary",
+      "NLS.Coeff.exists_local_tail_action_factor_of_sign_invariance_at"
+    ],
+    "limits": [
+      "The subsequent general and global forward action milestones complete arbitrary-basepoint descent and gluing. A common open complex native action/signed-mean domain and a global l1-valued factor are now proved for all original real H1 profiles.",
+      "Complex inverse charts here use original L2/native half-order topologies. Native higher-Sobolev inverse analyticity and full canonicity are not asserted.",
+      "Independent canonical mKdV angles, final angle-sum factorization and corrected full frequency comparison remain essential."
+    ]
+  },
+  "general_forward_local_action_factors": {
+    "status": "proved_whole_original_NLS_action_sequence_local_holomorphic_native_action_signed_mean_factor_at_every_original_real_H1_profile_common_global_extension_open",
+    "domains": "Every original physical real H1 basepoint, arbitrary closed gaps, zero mean and infinite support included. Source neighborhoods are open in original complex L2; action neighborhoods are open in weight-one complex l1 mKdV actions plus complex literal signed mean. Factors take values in the entire original signed-NLS-action l1 space.",
+    "quantifier_order": "For every physical real H1 basepoint there exist source U, action V and one holomorphic l1-valued F. Both neighborhoods and F precede every nearby physical real source and every signed action index. Physical Hill J_n inputs and literal Fourier mean are explicitly identified on original H1 inputs.",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.original_NLS_actions_local_action_mean_factor_general_H1",
+      "NLS.Articles.MKdVNLSHierarchies.original_H1_NLS_actions_local_physical_factor_general_H1"
+    ],
+    "core_declarations": [
+      "NLS.Coeff.pairSignChange_invariant_of_tail_stationarity_at_head",
+      "NLS.Coeff.exists_local_sequence_action_factor_of_stationarity",
+      "NLS.WeightedCoeff.positiveCartesianQuadraticMeanMap_isotropicSection",
+      "NLS.MKdV.miuraCartesian_quadratic_parameters",
+      "NLS.MKdV.exists_local_miura_original_NLS_action_factor_at_H1"
+    ],
+    "signed_mean_mechanism": "The entire affine isotropic auxiliary pair (m+1/2,i*(m-1/2)) has quadratic action exactly m. Thus zero auxiliary action is the literal signed mean, with no branch choice or division by mean. Positive auxiliary actions are exactly the native normalized physical mKdV actions; unused negative entries vanish.",
+    "limits": [
+      "The subsequent global forward action factor milestone glues these local factors to one common open complex native action/signed-mean domain and proves global recovery for all original real H1 profiles.",
+      "Native higher-Sobolev inverse analyticity, independent canonical mKdV angles/full canonicity, final angle sums and corrected full frequency comparison remain essential."
+    ]
+  },
+  "global_forward_action_factor": {
+    "status": "proved_global_whole_original_NLS_action_sequence_factor_on_one_common_open_complex_native_physical_action_signed_mean_domain_original_real_H1",
+    "declaration": "NLS.Articles.MKdVNLSHierarchies.theorem4_ii_nls_actions_of_mkdv_actions_mean",
+    "domains": "The one common domain V is open in native weight-one complex l1 physical mKdV actions plus complex literal signed mean and contains the data of EVERY original physical real H1 profile. F is holomorphic and real analytic into the entire original signed NLS action l1 space. Every positive input is explicitly the independent Hill action; the mean is the literal zero Fourier coefficient. Zero mean, arbitrary closed actions and infinite support are included.",
+    "quantifier_order": "There exist one V and one F, before every original H1 profile, every signed NLS index and every positive mKdV index. Recovery is global on all those profiles, not restricted to a source chart.",
+    "core_declarations": [
+      "NLS.MKdV.exists_miuraCartesian_real_action_lift_neighborhood",
+      "NLS.MKdV.MiuraGeneralCartesianNLSActionChart.exists_action_factor_global_H1_recovery",
+      "NLS.MKdV.miuraLogActionParameters_exponential_physical",
+      "NLS.MKdV.exists_H1_profile_of_finite_encoded_actions",
+      "NLS.Coeff.eq_of_finite_nonnegative_agreement",
+      "NLS.MKdV.exists_global_miura_original_NLS_action_factor",
+      "NLS.MKdV.exists_global_miura_original_H1_NLS_action_factor"
+    ],
+    "mechanism": "Nearby real Cartesian lifts, phase saturation and entire-L2 uniqueness of native fibers give local factors global H1 representative recovery. Encoding signed mean by exp(c) gives nonnegative central action centers and principal-log local decoding for every real mean. Finite nonnegative encoded data have actual H1 representatives; finite truncation with the central entry retained gives agreement on full nonnegative overlaps. The checked nonnegative-action holomorphic gluing theorem supplies a factor on the union of balls; entire exponential pullback gives one global physical action/mean domain.",
+    "corrected_theorem4ii": "Together with the previously proved converse J_n and mean-squared factors, every clause of corrected Theorem 4(ii) is proved. The printed global signed-mean recovery from NLS actions is false and is not asserted.",
+    "limits": [
+      "Independent canonical mKdV angles/full Gardner canonicity, final angle-sum factorization and full corrected Theorem 3 frequency comparison remain essential.",
+      "No global inverse theorem for arbitrary rough L2 Cartesian target data is asserted."
+    ]
+  },
+  "native_global_Sobolev_Cartesian_analytic_inverse_and_Hamiltonian_conservation": {
+    "status": "proved_native_integer_s_ge_1_global_real_analytic_inverse_and_all_order_exact_domain_action_flow_conservation",
+    "scope": "For every integer s>=1 and every physical real H^s profile, the full complex Cartesian derivative is a compact perturbation of the explicit free equivalence and is bijective in H^s/native positive h^(s+1/2) plus literal mean norms. Genuine complex analytic local inverses exist at every such profile. The actual real Cartesian bijection is a global analytic homeomorphism, with a real analytic inverse on the entire native target. The independent physical Hill K_(s+1) is analytic in these coordinates. Every K_m is conserved along every complete physical action flow on the exact real H^(m-1) domain for all m>=1; the mass endpoint is proved separately using the original mass trace. Closed selected and unselected actions, arbitrary support and every signed mean are included.",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_native_Cartesian_analytic_homeomorph",
+      "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_Cartesian_representation",
+      "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_hamiltonian_action_flow_conservation",
+      "NLS.MKdV.miuraSobolevCartesianJacobian_bijective",
+      "NLS.MKdV.exists_miuraSobolevPositiveCartesian_analytic_chart",
+      "NLS.MKdV.analyticOnNhd_miuraPhysicalSobolevCartesianInverse",
+      "NLS.MKdV.analyticOnNhd_miuraSpectralCartesianHamiltonian",
+      "NLS.MKdV.miuraSpectralHillHamiltonian_allOrders_miuraActionFlow",
+      "NLS.ZakharovShabat.sourceComplexHigherAction_eq_of_isospectral",
+      "NLS.ZakharovShabat.sobolevOddHamiltonian_eq_of_isospectral"
+    ],
+    "method": "The checked weighted NLS Jacobian compact remainder pulls back along the literal scalar Sobolev diagonal. Compact symbol multiplication controls the differentiated scaling root. Coefficient-preserving complex germ compatibility transports L2 derivative injectivity to the native spaces; the compact Fredholm alternative then gives complex and real native inverses. Global set bijectivity identifies each local inverse with the global inverse, yielding native inverse analyticity. The actual sharp higher-action traces, isospectral invariance of their real gap integrands and the independently proved factor-two restriction give Hamiltonian conservation, including the mass endpoint.",
+    "qualifications": [
+      "No global Gardner canonicity or cross-mode zero Cartesian brackets are inferred from inverse analyticity.",
+      "The later native physical Hamiltonian normal-form and frequency theorems identify the full action representation and corrected NLS frequency comparison.",
+      "The remaining main-theorem obligations from this checkpoint are discharged by independent_Abelian_full_rotation_and_angle_sum and IndependentAbelianAngleSum.lean. The original real H1 angle-sum clause and corrected all-order frequency comparison are complete.",
+      "No global rough L2 target inverse is asserted. Native complex charts are local at physical H^s profiles for s>=1."
+    ]
+  },
+  "independent_native_Hill_global_action_normal_forms_and_intrinsic_frequencies": {
+    "status": "proved_all_orders_global_native_holomorphic_action_normal_forms_intrinsic_positive_derivatives_m_ge_2_and_explicit_mass_derivative",
+    "scope": "For each integer m>=1, one open complex native weight-(2m-1) summable physical-action/literal-signed-mean domain contains the data of every original real H^(m-1) profile, and one holomorphic scalar normal form F recovers the independently defined physical Hill K_m on all those profiles. The domain and F precede the profile and every action index. Real analyticity follows by restriction of scalars. For m>=2, positive raw-action derivatives of any two such normal forms agree at every physical profile, including a collapsed selected action. These derivatives are holomorphic on each common native domain. The full complex L2-mass action normal form has raw J_n derivative exactly 2*pi*n everywhere.",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_global_action_normal_form",
+      "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_action_frequency_intrinsic",
+      "NLS.Articles.MKdVNLSHierarchies.physical_native_Hill_action_frequency_analytic",
+      "NLS.Articles.MKdVNLSHierarchies.physical_Hill_mass_action_frequency",
+      "NLS.MKdV.exists_global_native_miuraHamiltonian_action_factor_allOrders",
+      "NLS.MKdV.MiuraNativeHamiltonianActionData.frequency_unique",
+      "NLS.MKdV.MiuraNativeHamiltonianActionData.frequency_analytic",
+      "NLS.MKdV.fderiv_miuraMassActionFactor_single",
+      "NLS.MKdV.exists_native_profile_on_positive_action_ray",
+      "NLS.MKdV.exists_native_profile_of_nonnegative_encoded",
+      "NLS.MKdV.miuraSpectralHillHamiltonian_eq_of_native_actionMean"
+    ],
+    "method": "Transport native Cartesian targets by their exact weight equivalences to a fixed half-order target. The genuine complex inverse germ preserves physical reality by the checked global native real inverse. Actual Gardner action-flow conservation gives rotation stationarity on the real slice; the physical real-form identity theorem gives full holomorphic stationarity. Entire isotropic mean parameters and the verified infinite-dimensional sequence action descent give local factors. Physical J and signed mean fix the original NLS action fiber, whose sharp higher-action traces fix the independent K_m; nearby real Cartesian action lifts yield recovery on every native representative. Every nonnegative encoded normalized datum has a native real profile, even with infinite support, so local factors agree on all nonnegative overlaps and glue holomorphically. Pullback through exponential mean encoding and native weight coordinates yields one physical action/mean domain. The full original L2 mass trace supplies m=1 directly. Nonnegative one-sided raw-action increments are realized in H^s for s>=1, so uniqueness of the derivative on the real half-line proves factor-independent positive action derivatives even at closed actions.",
+    "qualifications": [
+      "The later corrected Theorem3 proves equality with the actual original restricted NLS frequencies on all real H^(m-1) inputs, including closed actions.",
+      "Normal-form derivative choice independence holds at every m>=1, including the explicit physical mass endpoint.",
+      "No global Gardner canonicity or cross-mode Cartesian zero brackets are assumed or inferred.",
+      "The remaining main-theorem obligations from this checkpoint are discharged by independent_Abelian_full_rotation_and_angle_sum and IndependentAbelianAngleSum.lean. The original real H1 angle-sum clause and corrected all-order frequency comparison are complete.",
+      "No global inverse on arbitrary rough original L2 Cartesian target data is used or asserted."
+    ]
+  },
+  "milestone_history_note": "Older dependency milestone sections retain their original scope; the main_statements and remaining_essential_dependencies fields describe the current status.",
+  "actual_H1_Miura_Magri_transfer_and_native_action_flow_tangents": {
+    "status": "proved_full_complex_H1_transfer_and_all_native_positive_Sobolev_real_action_tangents",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_Miura_Gardner_Magri_transfer",
+      "NLS.Articles.MKdVNLSHierarchies.physical_action_flow_native_Gardner_tangent",
+      "NLS.MKdV.hasDerivAt_independent_functional_miuraActionFlow",
+      "NLS.MKdV.sobolevMiura_Magri_independent_of_representative"
+    ],
+    "scope": "For every complex H1 source and actual Hill functionals with H2 gradients, actual pullback Gardner brackets equal the independently defined weak Hill Magri bivector. Any actual gradient representatives agree. Native positive-index action flows have Hs derivatives for all integer s>=1 at every real profile, retaining the original L2 Gardner coefficients; H1 functional chain rules follow without L2 extension.",
+    "limits": [
+      "The remaining main-theorem obligations from this checkpoint are discharged by independent_Abelian_full_rotation_and_angle_sum and IndependentAbelianAngleSum.lean. The original real H1 angle-sum clause and corrected all-order frequency comparison are complete.",
+      "No arbitrary-potential weak-Magri Jacobi identity or cross-mode Cartesian canonicity is inferred."
+    ]
+  },
+  "global_full_phase_sum_descent_implication": {
+    "status": "proved_and_instantiated_with_actual_full_independent_spectral_phase_on_exact_original_domain",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.physical_complete_action_flow_invariant_factor",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_phase_sum_descent_of_independent_Gardner_phase",
+      "NLS.MKdV.exists_independent_open_Gardner_phase_action_factor",
+      "NLS.MKdV.miuraNativeNLSAngularCoordinate_zero_iff_physical_action_zero",
+      "NLS.MKdV.hasDerivAt_independent_functional_miuraActionFlow_allTimes",
+      "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_complete_action_rotation",
+      "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_actual_action_generator",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_phase_sum",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_angle_sum",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_sum_representatives"
+    ],
+    "domain": "Every integer s>=1, original real Hs profiles; the selected physical J_m alone must be nonzero for the unit phase. Every other action may be zero; infinite support, zero mean and arbitrary signed mean are included.",
+    "method": "Real normalized parameter decoding; full native Cartesian homeomorphism; density of finite coordinate rotations on the complete sequence action torus; actual native derivatives at every time and physical Gardner H1 chain rules; scalar exponential ODE uniqueness; bounded phase times vanishing amplitude extends continuously; invariant amplitude division recovers full unit phases.",
+    "qualifications": [
+      "The full original independent spectral conjugate now has the required actual negative action rotation on every native real Hs space, s>=1, arbitrary support and all terminal configurations. The conditional descent is instantiated; Theorem4iii is complete.",
+      "The general continuous factor is only a function; no extra analyticity is asserted.",
+      "The source angle sum is represented by full unit-phase multiplication, with no squaring or loss modulo pi.",
+      "No independent angle is defined as the negative NLS angle."
+    ]
+  },
+  "independent_Hill_separated_coordinate_Magri_geometry": {
+    "status": "proved_actual_physical_weak_Magri_matrix_and_periodic_second_cotangent_regularity",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_Hill_weak_Magri_spectral_brackets",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Hill_logEnergy_unit_Magri_bracket",
+      "NLS.KdV.hillLogEnergy_branch_fderiv",
+      "NLS.KdV.hillWeakGradientMagri_antisymm",
+      "NLS.ComplexAnalysis.integral_scalarHillProductMagri_eq",
+      "NLS.KdV.memLp_hillDirichletGradientSecond",
+      "NLS.KdV.memLp_hillLogNormingGradientSecond"
+    ],
+    "source_branch": "articles/kdv-estimates",
+    "source_commit": "62da59c8f580fac3a84b5fbee140a857c240df87",
+    "integration": "71 shared checked modules plus one extracted zero-count helper; four imported continuation/count proofs adapted to retained16*norm cutoff; original prefix unchanged.",
+    "domain": "Every original real period-one L2 Hill potential, all n,m>=1, closed periodic gaps and arbitrary support. Mixed logarithmic-energy normalization requires nonzero selected Dirichlet energy; actual half-log branch derivative proved for positive energy.",
+    "matrix": "{mu_n,mu_m}=0; {mu_n,kappa_m}=-2 mu_n delta_nm; {kappa_n,mu_m}=+2 mu_n delta_nm; {kappa_n,kappa_m}=0. Actual gradient integrals and actual second derivatives, not prescribed bracket values.",
+    "regularity": "Both independent gradients and first derivatives are AC; second derivatives L2; periodic gradient endpoint values zero; energy first-derivative endpoints zero; log-norming first-derivative endpoints ONE. Exact weak Lenard boundary term and antisymmetry proved.",
+    "limits": [
+      "No derivative of a rough L2 potential is taken.",
+      "The physical-to-coefficient bridge, actual H1 Miura pullback brackets, full continuous independent Abelian phase and its negative original physical-action generators are proved in later modules.",
+      "These separated-coordinate brackets do not alone establish full Cartesian canonicity; the independent full phase and final Theorem4iii are proved separately."
+    ]
+  },
+  "native_independent_spectral_Gardner_geometry": {
+    "status": "proved_actual_original_branch_derivatives_and_full_Gardner_matrix_on_every_real_H1_profile",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_Dirichlet_energy_positive",
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_spectral_Gardner_geometry",
+      "NLS.MKdV.hillSobolevMagriBivector_eq_curve_integral",
+      "NLS.KdV.hasFDerivAt_hillDirichlet_unit_branch",
+      "NLS.KdV.hasFDerivAt_hillLogNorming_unit_branch",
+      "NLS.MKdV.MiuraDirichletBranch.eventually_real_family_match",
+      "NLS.MKdV.MiuraDirichletBranch.logEnergyGradient_logNormingGradient_bracket"
+    ],
+    "domain": "Every original real H1 profile, all positive indices, arbitrary signed mean and spectral support, all closed gaps.",
+    "coefficient_bridge": "Literal unit Fourier coefficients give native H2 cotangents, recover their profile and spatial derivative pointwise, and identify the native Magri bivector with the actual rough integral. Physical potential and variations retain exact halved even coefficients and the physical lower-component minus sign.",
+    "actual_functionals": "Original independent Hill Dirichlet analytic branches and complex logs of signed Dirichlet multipliers. Local branch existence and agreement along continuous real H1 families are proved; actual full complex Frechet derivatives give H1 Gardner gradients after Miura pullback.",
+    "positivity": "Every original Dirichlet energy is strictly positive on every real H1 Miura profile, including closed gaps. Half-log-energy gradients require no extra positivity hypothesis.",
+    "matrix": "{mu_n,mu_m}=0; {mu_n,kappa_m}=-2mu_n delta; {kappa_n,mu_m}=+2mu_n delta; {kappa_n,kappa_m}=0; {(1/2)log(mu_n),kappa_m}=-delta, reverse+delta, half-log/half-log=0.",
+    "limits": [
+      "The independent regular correction series converges locally uniformly. Its spectral conjugate has the actual negative physical-action generators on every original real H1 input with arbitrary support.",
+      "The printed final angle-sum conclusion is now proved as dependence on all physical actions and literal signed mean, without an additional analyticity claim."
+    ]
+  },
+  "independent_Abelian_divisor_phase_construction": {
+    "status": "proved_actual_full_phase_locally_uniform_convergence_and_completed_negative_physical_action_rotation",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_partial_Abelian_phase_original_H1",
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_finiteGap_Abelian_phase",
+      "NLS.KdV.exists_hillDirichletRegularAbelianTerm_analytic_extension",
+      "NLS.KdV.hillDirichletRegularAbelianTerm_eq_terminal",
+      "NLS.KdV.hillAbelianSelectedGlobalPsi_intrinsic_periods",
+      "NLS.KdV.exists_hillDirichlet_analytic_sheeted_angle",
+      "NLS.MKdV.miuraFiniteGapAbelianPhase_eq_full_series",
+      "NLS.MKdV.miuraFiniteGapAbelianPhase_independent_support"
+    ],
+    "shared_source": {
+      "branch": "articles/kdv-estimates",
+      "commit": "62da59c8f580fac3a84b5fbee140a857c240df87",
+      "module_count": 342,
+      "byte_identical_count": 298,
+      "adapted_high_energy_cutoff_count": 44
+    },
+    "regular_terms": "Actual normalized Hill Abelian integrals at the independent sheeted Dirichlet terminal minus their normalized linear angular part. Chosen-real-lift independence, exact zero at a closed contributing gap, and local full complex L2 analytic representatives through every closed gap are proved.",
+    "partial_phase_domain": "EVERY original real H1 Miura profile with its own actual original physical mKdV action nonzero. Arbitrary signed mean and arbitrary spectral support; other gaps may all be closed. Each finite partial phase has normone and a local fullcomplexH1 analytic representative agreeing on the entire realH1 neighborhood.",
+    "finiteGap_full_phase": "On EVERY original finite-gap Miura profile, support of all open gaps is selected from original physical contour actions. The full correction series converges because all terms off that support vanish exactly. Its phase is unit on its own open-action locus and independent of any finite support set containing the open gaps.",
+    "limits": [
+      "No full complex analytic extension of the infinite phase is asserted or needed.",
+      "The spectral conjugate has negative generators and complete action rotation; the checked full phase-product descent is instantiated. No NLS angle defines the independent phase."
+    ]
+  },
+  "full_independent_Abelian_phase_locally_uniform_convergence": {
+    "status": "proved_all_real_L2_Hill_potentials_and_original_real_H1_Miura_profiles_including_infinite_gap_support",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_original_H1",
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_continuous_original_H1",
+      "NLS.Articles.MKdVNLSHierarchies.independent_mKdV_full_Abelian_phase_native",
+      "NLS.KdV.exists_hillHighContour_deflatedHilbertPsi_sq_decay",
+      "NLS.KdV.exists_hillHighGap_deflatedHilbertPsi_sq_decay",
+      "NLS.KdV.exists_hillAbelianSelectedGlobalPsi_local_Hilbert_parameters",
+      "NLS.KdV.exists_local_hillDirichletRegularAbelianTerm_sq_decay",
+      "NLS.KdV.summable_hillDirichletRegularAbelianTerm",
+      "NLS.KdV.norm_hillDirichletRegularAbelianTerm_tsum_tail_le",
+      "NLS.KdV.continuous_hillFullRegularAbelianSum",
+      "NLS.KdV.continuousOn_hillFullAbelianPhase",
+      "NLS.KdV.tendsto_hillFiniteAbelianPhase",
+      "NLS.MKdV.miuraFullAbelianPhase_eq_finiteGap",
+      "NLS.MKdV.continuousOn_miuraNativeFullAbelianPhase"
+    ],
+    "domain": "Every original real period-one L2 Hill potential and every original real H1 Miura profile, with arbitrary signed mean, infinite spectral support and closed contributing gaps. The full unit phase is continuous exactly where its own original physical action is nonzero. Native continuity and boundedness hold for every integer s>=1.",
+    "construction": "Literal sum of all independent sheeted Dirichlet regular Abelian corrections, multiplied by the original Dirichlet terminal unit phase. The sum has real values. Natural finite partial phases converge to the full phase, and finite-gap profiles agree with the earlier finite support construction.",
+    "local_uniform_estimate": "For every fixed normalized mode n and real Hill base potential q there exist N>=1,C>0 and a real L2 neighborhood on which the original kth regular correction has norm <=C/(k+1)^2 for all k>=N. The summed tail from M>=N is bounded by2*C/(M+1).",
+    "proof": "Combine the free-contour Hilbert numerator bound, bounded complex inverse-root comparison, actual physical root matching, endpoint-root norm <=k*pi^2 and quadratic free spectral separation. The maximum modulus principle extends the deflated quotient estimate to the physical gap. Local analytic Hilbert parameters and a nonzero analytic normalization make the constants uniform near the real base potential. Integration over the actual chosen terminal in[-pi,pi] gives the correction bound; reciprocal-square tail summation and individual term continuity give full sum continuity.",
+    "limits": [
+      "No full complex analytic extension of the infinite phase is claimed.",
+      "The raw phase uses exp(+i*sum). Its spectral conjugate gives the source orientation and has checked negative generators and full opposite rotation on arbitrary support. The final full angle-sum factorization is complete."
+    ]
+  },
+  "original_Dirichlet_motion_under_physical_actions": {
+    "status": "proved_actual_trace_cotangent_and_contour_generators_all_time_original_Dirichlet_motion",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_discriminant_physical_Gardner",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_action_contour",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_energy_complete_action_motion",
+      "NLS.KdV.fderiv_hillL2Discriminant_potential_integral",
+      "NLS.KdV.hillDiscriminantH2Data",
+      "NLS.KdV.hasFDerivAt_hillDiscriminant_unit",
+      "NLS.ComplexAnalysis.integral_scalarHill_squared_product_derivative",
+      "NLS.KdV.hillWeakGradientMagri_Dirichlet_boundary",
+      "NLS.KdV.hillDirichletDiscriminantMagriBracket_eq_energy_first",
+      "NLS.KdV.hillDirichletDiscriminantMagriBracket_div_energy",
+      "NLS.KdV.hillDirichletDiscriminantMagriBracket_resolvent",
+      "NLS.MKdV.miuraHillDiscriminantGradient",
+      "NLS.MKdV.miuraHillDiscriminantGradient_fourier",
+      "NLS.MKdV.miuraActionGardnerDirection_eq_sourceDifference",
+      "NLS.ZakharovShabat.fderiv_sourceComplexAction_eq_Laurent_cotangent_circle",
+      "NLS.MKdV.hasDerivAt_miuraNativeDirichletEnergy_actionFlow_circle"
+    ],
+    "domain": "Actual Hill trace gradient at every complex L2 potential and every complex energy, including zero. Dirichlet trace Magri identity at every original real period-one L2 Hill potential and every complex energy, including coincident energies and closed gaps. Physical action contour generator at every original real H1 profile, all positive action and Dirichlet indices. The actual labeled-energy derivative holds at every real time along every complete native integer Hs action flow, s>=1, with arbitrary support and signed mean.",
+    "normalizations": "The actual position/derivative trace cotangent is G_E=s(1,E)c(x,E)^2+(s_prime(1,E)-c(1,E))*c(x,E)*s(x,E)-c_prime(1,E)*s(x,E)^2. Both its value and first spatial derivative have matching endpoint traces. Its full complex L2 derivative is the physical unconjugated integral; the lower first-order component minus sign and literal unit Fourier coefficients are preserved.",
+    "boundary_identity": "For Dirichlet gradient f_m, energy mu_m, endpoint slope d_m and squared-state mass M_m, the weak Magri pairing with any AC g,dg is4*mu_m*integral(f_m*dg)-2*(d_m^2*g(1)-g(0))/M_m. For the actual periodic trace gradient,2*(mu_m-E)*integral(f_m*G_E_prime)=(d_m^2-1)*s(1,E)/M_m. Thus the actual trace Magri bracket is4*E*integral(f_m*G_E_prime), at all E without spectral-difference division.",
+    "physical_action_formula": "The actual Gardner direction of original J_n is the bounded source cotangent difference applied to the actual original NLS action differential. On the zero-excluding Laurent circle, the independent Dirichlet-energy generator is exactly -(2/pi)*circleIntegral(z*integral(f_m*G_(z^2)_prime)/R_ZS(z)). Every coefficient, contour, canonical root and index is supplied by checked original spectral constructions.",
+    "motion": "Local original branch agreement transfers the actual native Hs Gardner chain rule to the globally labeled independent Dirichlet energy. The final all-time derivative statement contains no arbitrary choice of local branch.",
+    "limits": [
+      "The normalized physical Abelian period, actual root and sheet normalization, terminal continuation and full independent phase rotation are proved in subsequent modules. No divisor velocity is prescribed as an axiom and no phase is defined using a negative NLS angle."
+    ]
+  },
+  "original_Dirichlet_characteristic_product": {
+    "status": "proved_original_complex_H1_characteristic_comparison_real_H1_indexed_divisor_and_entire_energy_product",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_original_complex_domain",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_divisor_original_indices",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_characteristic_entire_product",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_original_derivative_normalization",
+      "NLS.MKdV.quasiHillDirichletCharacteristic_eq_rotatedZS",
+      "NLS.MKdV.hillL2DirichletCharacteristic_miura",
+      "NLS.MKdV.miuraRotatedDirichletRoots_mem_gap",
+      "NLS.MKdV.miuraRotatedDirichletRoots_sq",
+      "NLS.MKdV.miuraRotatedDirichletRoots_neg_nat",
+      "NLS.MKdV.miuraRotatedDirichletRoots_zero",
+      "NLS.ComplexAnalysis.tendstoLocallyUniformlyOn_of_squared_characteristic",
+      "NLS.MKdV.tendstoLocallyUniformlyOn_miuraHillDirichletPartialProduct",
+      "NLS.MKdV.tendstoLocallyUniformlyOn_deriv_miuraHillDirichletPartialProduct",
+      "NLS.MKdV.hillL2DirichletCharacteristic_miura_zero_ne_zero"
+    ],
+    "domain": "The exact IVP characteristic comparison holds on every original complex H1 input and at every complex frequency, including zero. Indexed positive/negative/central root identification and the scalar entire product hold on every original real H1 input, with arbitrary signed mean, infinite support and closed periodic gaps. Product and first energy derivative converge locally uniformly on the whole complex energy plane.",
+    "characteristic_identity": "chi_(sourcePhase(u,u))(z)=z*s_Hill(z^2), with independently constructed actual physical IVPs on both sides. The sourcePhase rotates the original first component by i and the second by -i; it does not define the scalar characteristic.",
+    "indexed_divisor": "The positive rotated source root r_n lies in the original positive NLS gap and r_n^2=mu_n for the independently labeled Hill Dirichlet energy. The negative root r_-n=-r_n, and r_0=0. All statements include closed periodic gaps.",
+    "entire_product": "The literal products prod_(j=0)^(N-1) ((mu_(j+1)-E)/(pi*(j+1))^2) converge locally uniformly to the actual scalar Dirichlet characteristic at every complex energy. Their energy derivatives also converge locally uniformly. A general shared maximum-principle lemma transfers convergence from odd frequency characteristics z*H_N(z^2) to the energy functions H_N, filling E=0 without a continuous global square-root choice.",
+    "derivative_normalization": "At every positive divisor frequency r_n, chi_prime(r_n)=2*mu_n*s_Hill_prime(mu_n). At zero, chi_prime(0)=s_Hill(0), and the latter is nonzero for every original real H1 input.",
+    "limits": [
+      "These are actual characteristic, divisor and product identities. The later finite-gap interpolation, canonical source orientation, complete rotation and full angle-sum proof are checked. No Abelian phase is defined using an NLS angle."
+    ]
+  },
+  "independent_Abelian_finite_gap_interpolation": {
+    "status": "proved_actual_all_energy_finite_gap_interpolation_physical_root_agreement_and_sheet_normalization_interior_trace_contraction",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_finite_gap_Dirichlet_interpolation",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_physical_root_normalization",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Dirichlet_sheet_mass_normalization",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_interior_trace_contraction",
+      "NLS.ComplexAnalysis.finite_characteristic_dslope_interpolation",
+      "NLS.ComplexAnalysis.characteristic_residue_eq_nodal_weight",
+      "NLS.KdV.hillGapRoot_eq_Dirichlet_of_closed",
+      "NLS.MKdV.miuraAbelianNumerator_cross_dirichletPrefix",
+      "NLS.MKdV.miuraSelectedAbelianPsi_cross_nodal",
+      "NLS.MKdV.miuraSelectedAbelianPsi_Dirichlet_filled_interpolation",
+      "NLS.MKdV.hillEnergyCanonicalRootProduct_eq_canonicalMiuraHillRoot",
+      "NLS.KdV.hillDirichletSlope_mul_sheetRoot",
+      "NLS.KdV.integral_hillDirichletGradient_discriminantSpatial_sheet_energy",
+      "NLS.KdV.integral_hillDirichletGradient_discriminantSpatial_sheet_resolvent"
+    ],
+    "domain": "Actual scalar Dirichlet interpolation for every original real H1 Miura profile with a finite closed-gap tail, every positive normalized differential index n, and every complex energy E. A cutoff K>=n contains all possibly open gaps. Closed retained gaps, every Dirichlet node, zero energy and arbitrary signed mean are included. Physical canonical-root agreement holds on the complete independent Hill real-cut domain for every original real H1 profile, with arbitrary support. Sheet/mass normalization holds at every original positive-index Dirichlet energy of every real period-one L2 Hill potential, including closed gaps.",
+    "construction": "The actual entire scalar Dirichlet product and selected Abelian numerator have identical factors in the closed tail. Cross multiplication of their finite prefixes and the checked product limits cancels this tail even at its zeros. The omitted own numerator index gives a polynomial of degree less than the number of original Dirichlet nodes. Checked finite Lagrange interpolation applies to this polynomial.",
+    "interpolation": "Writing s for the actual scalar characteristic, mu_k for its original Dirichlet energies and psi for the independently normalized Hill numerator, sum_(k<K) psi(mu_(k+1))*dslope(s,mu_(k+1),E)/s_prime(mu_(k+1))=psi(E). At distinct evaluation energies this is sum psi(mu)*s(E)/(s_prime(mu)*(E-mu))=psi(E). The residues follow by differentiating the actual polynomial cross identity and using actual characteristic simplicity; they are not assumed.",
+    "root_normalization": "The independent energy canonical root product equals canonicalMiuraHillRoot on the original Hill real-cut domain. Its first-band negative imaginary sign and the physical Miura first-band sign choose the same root; connectedness propagates equality over both half-planes and every real open band.",
+    "sheet_normalization": "The determinant-one scalar monodromy gives d*sheetRoot=d^2-1 at every complex characteristic zero. At real Dirichlet energies M=s_prime(mu)*d, so(d^2-1)/M=sheetRoot/s_prime(mu). Thus2*(mu-E)*integral(f_mu*G_E_prime)=sheetRoot(mu)*s(E)/s_prime(mu), including coincident energies and closed gaps.",
+    "interior_contraction": "If all K retained original sheet roots are nonzero and E differs from the retained Dirichlet energies, sum_(k<K) psi(mu_(k+1))*integral(f_(k+1)*G_E_prime)/sheetRoot(mu_(k+1))=-psi(E)/2. The minus one half is proved with actual gradients, actual sheets and actual characteristic derivatives.",
+    "limits": [
+      "The original interior trace contraction retains its stated sheet and noncoincident-energy hypotheses. Supported interpolation permits closed holes.",
+      "Subsequent modules prove canonical generator continuation through every terminal/closed configuration, full rotation on arbitrary support and final Theorem4iii."
+    ]
+  },
+  "independent_Abelian_physical_phase_motion": {
+    "status": "proved_actual_isospectral_data_invariance_and_full_finite_gap_interior_action_circle_generator",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_differential_complete_action_invariance",
+      "NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_finite_gap_derivative",
+      "NLS.Articles.MKdVNLSHierarchies.independent_full_Abelian_phase_original_action_circle"
+    ],
+    "domain": "For every integer s>=1, every original real Hs source, every positive physical action index j, every positive independent differential index n, and every real time. Spectral data invariance has arbitrary support. The derivative statements assume a finite set F of possibly open gaps, containing n-1, all gaps outside F closed, and nonzero original Dirichlet sheet roots at indices in F at the evaluated time. F need not be an initial segment; other gaps may be closed.",
+    "invariance": "Actual original source isospectrality fixes every original Hill periodic label. Uniqueness of the independent normalized entire differential then fixes the selected numerator; the cosine differential and regular primitive are invariant as well. No arbitrary-choice invariance is assumed.",
+    "chain_rule": "Compatible local real Dirichlet angle lifts represent the actual finite phase as exp(i*sum_F fullCosinePrimitive). Differentiation uses the actual Hill coefficient curve induced by the complete physical action flow, the checked scalar primitive FTC and the original Dirichlet energy velocities.",
+    "generator": "The actual full phase derivative at interior finite-gap divisors is (i/pi)*phase*integral_(original certified physical frequency circle) z*psi(z^2)/R_ZS(z). The positive sign is proved. The finite interpolation omits closed holes using actual vanishing numerator values. Every contour point avoids every actual Dirichlet energy, and analytic trace kernels justify exchanging the finite sum with the integral.",
+    "limits": [
+      "The original physical period is pi times the Kronecker delta on arbitrary support. Subsequent actual spatial-translation density and full Lie continuity extend the source-oriented generator to terminals; the complete action-flow rotation and angle-sum factorization are proved."
+    ]
+  },
+  "independent_Abelian_original_action_periods": {
+    "status": "proved_original_physical_circle_period_on_arbitrary_support_source_orientation_and_interior_finite_gap_generators_terminal_differentiability",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_Abelian_original_action_circle_normalization",
+      "NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_finite_gap_generator",
+      "NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_finite_gap_terminal_regularity",
+      "NLS.Articles.MKdVNLSHierarchies.independent_source_oriented_phase_native_data"
+    ],
+    "period_domain": "Every original real H1 Miura profile, arbitrary signed mean and arbitrary support, every positive j,n, and every intermediate circle in any actual all-index physical Cauchy family containing that source. Collapsed indexed gaps and all collapsed other gaps are included. No finite-gap, interior-divisor or nonzero-sheet hypothesis enters the contour period identity.",
+    "period": "Integral_(original certified frequency circle j) z*psi_n(z^2)/R_ZS(z) = pi*(if j=n then1 else0). The factor is pi, with positive sign and without an extra imaginary unit.",
+    "proof": "The original source disc encloses its own real segment and excludes its two neighboring segments and zero. Its two squared real crossings consequently lie in the two adjacent original Hill bands, including the lower band at j=1. An affine smooth loop homotopy from the squared frequency circle to the intrinsic energy circle preserves the imaginary-part sign. If its sine is zero, cosine is plus or minus one and both real crossings lie in the same convex open band. The entire homotopy therefore lies in the full Hill real-cut domain. The independent canonical root equals the actual physical root there. The literal squaring Jacobian2*z and the intrinsic (2*pi)^(-1) normalization give the exact positive pi.",
+    "orientation": "The existing exp(+i*sum) independent phase has actual positive i*delta generators at interior finite-gap divisors. Define miuraNativeOppositeAbelianPhase as its complex conjugate, using no NLS phase. The resulting actual generator is negative i*delta. The conjugated phase has norm at most1 everywhere, norm1 on exactly its own native NLS angular-open locus, zero on its own closed locus and continuity on that open locus, for all native real Hs classes s>=1 and arbitrary support.",
+    "terminal_regularity": "The actual full finite-gap phase and its spectral conjugate are differentiable along every positive physical action flow at every real time without any nonzero contributing-sheet assumption. A finite partial phase has a local complex analytic Hill coefficient extension, which differentiates along the actual rough Hill action curve. Isospectrality identifies this with the literal full phase on each finite-gap orbit. If the own gap is closed, the full phase vanishes on the entire orbit. This proves existence of the derivative at terminal and closed configurations, not its canonical value.",
+    "limits": [
+      "The original physical contour-period normalization is complete on arbitrary support. Subsequent modules extend its negative source-oriented generator through terminals and closed contributing gaps and prove full rotation and final angle-sum factorization.",
+      "The independent phase is spectral and never defined from an original NLS angle."
+    ]
+  },
+  "independent_Abelian_terminal_geometry": {
+    "status": "proved_actual_full_phase_Lie_continuity_native_isospectral_translation_actual_monodromy_basepoint_identity_and_parabolic_terminal_release",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_finite_gap_Lie_continuity",
+      "NLS.Articles.MKdVNLSHierarchies.independent_finite_gap_stratum_spatial_translation",
+      "NLS.Articles.MKdVNLSHierarchies.independent_quasi_Hill_terminal_release",
+      "NLS.Articles.MKdVNLSHierarchies.independent_Hill_open_endpoint_trace_derivative"
+    ],
+    "Lie_domain": "All native real Hs spaces s>=1, every positive physical action index j, every positive phase index n, and every fixed finite set F of possibly open gaps. The full phase Lie derivative is the actual derivative at time zero of the complete physical J_j flow. It is continuous in the original native norm on the fixed closed-complement stratum intersected with the exact own-angular-open locus. F may contain closed gaps and every contributing divisor may be terminal.",
+    "Lie_proof": "The original physical native action velocity has a local complex analytic extension from its checked analytic Cartesian inverse charts; uniqueness identifies it with the actual complete-flow velocity. Any real functional with a local complex analytic native extension consequently has a local analytic extension of its actual Lie derivative. Apply this to the actual finite Abelian phase. Full and finite phases agree along the entire physical orbit on each fixed closed-complement stratum, so their actual Lie derivatives agree there. Spectral conjugation gives continuity for the source-oriented full phase as well.",
+    "translation": "The actual period-one Fourier translation in each native real Hs norm is continuous and preserves the original source spectrum and algebraic multiplicities. Reuse of the checked source spatial-translation invariance identifies every independent Hill periodic label, with no relabeling. Hence every fixed finite closed-gap complement is preserved.",
+    "basepoint_identity": "For every continuous complex period-one coefficient, the original L2 whole-line solution satisfies the actual continuous ODE at every real time, including all seams. Its propagator conjugates the actual translated classical monodromy at every real shift. The independently constructed quasi-Hill Volterra fundamental matrix has determinant one at every complex energy, including zero. Its literal Miura state matrix has determinant minus2*z and intertwines the actual ZS matrix at all z, giving conjugacy when z is nonzero. In that basis the actual translated quasi-Hill monodromy intertwines with the original monodromy through the actual original whole-line propagator.",
+    "parabolic_release": "If the actual original quasi-Hill monodromy at E=z^2, z nonzero, is [[epsilon,0],[c,epsilon]], then the actual translated scalar Dirichlet characteristic is minus c times the square of the original fundamental Dirichlet position at the shift. The original position has derivative1 at zero. If c is nonzero, every sufficiently small positive shift makes that characteristic nonzero. This statement retains its explicit actual-monodromy hypothesis and is not yet asserted as density at all open spectral endpoints.",
+    "open_endpoints": "For every real period-one L2 Hill potential, every positive open gap index and either actual original endpoint, the derivative of the actual energy discriminant is nonzero. This follows from the checked all-index radicand multiplicity formula and simple-zero derivative criterion, without a high-index or finite-gap hypothesis.",
+    "limits": [
+      "The explicit parabolic hypotheses of the terminal-release lemma are now derived at every actual open Dirichlet endpoint in MiuraOpenEndpointMonodromy.lean. The actual native profile translation is identified in MiuraNativePeriodicProfile.lean. Subsequent modules prove simultaneous interior divisors, canonical terminal generator values and the full final angle sum."
+    ]
+  },
+  "latest_validation": "PR3 main merge validation: fresh strict compilation of the additional main dNLS module and merged aggregate; all1113 unchanged article private outputs hash-checked. Targeted audit9615, combined audit54506, and all219 incoming main modules imported together with the merged aggregate and audited for55356 NLS declarations. All1117 frozen inputs and original pinned mathlib import hashes match. No mathematical proof source or audit scope changed. Full dependency tree not rebuilt.",
+  "independent_Abelian_full_rotation_and_angle_sum": {
+    "status": "proved_final_original_real_H1_clause_arbitrary_support_all_terminal_and_closed_configurations",
+    "declarations": [
+      "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_complete_action_rotation",
+      "NLS.Articles.MKdVNLSHierarchies.independent_full_phase_actual_action_generator",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_phase_sum",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_independent_angle_sum",
+      "NLS.Articles.MKdVNLSHierarchies.theorem4_iii_angle_sum_representatives"
+    ],
+    "domain": "All native real Hs spaces s>=1; the final source theorem is specialized to the original full real H1 space. All physical action supports and signed means are permitted. Only the selected angle requires its own action open.",
+    "endpoint_monodromy": "The original energy-entire Volterra columns have determinant one. At an actual open Dirichlet endpoint the upper-right entry vanishes and the trace is twice (-1)^k. The matrix is therefore parabolic. A scalar monodromy would force zero energy trace derivative by differentiating its unit determinant, contradicting the checked all-index simple open-endpoint derivative. Thus its lower entry is nonzero, without an added monodromy hypothesis.",
+    "translation_density": "Positive Fourier translation is exactly translation of the literal period-one Sobolev synthesis. The original translated Hill characteristic equals the independently translated quasi-Hill characteristic at every complex energy. Every positive gap endpoint is strictly positive, so the earlier nonzero-frequency transfer applies. Both endpoint characteristics are nonzero at all sufficiently small positive shifts; the actual Dirichlet root lies strictly inside its fixed gap and its actual sheet is nonzero. A finite intersection handles all contributing open gaps simultaneously; closed contributors are filtered out.",
+    "terminal_generator": "The native translation curve converges in Hs, retains the exact closed complement and own-open domain, and has interior contributing sheets for all sufficiently small positive shifts. The actual full phase Lie derivative is continuous on that stratum. Right-limit uniqueness gives its negative Kronecker value at every finite-gap terminal configuration.",
+    "finite_gap_rotation": "The actual group law transports the generator at zero to every real time. Everywhere differentiability, including terminals, is checked. The scalar constant-coefficient ODE integrates to exp(-i*delta*t) times the actual independent phase. Own-closed phases vanish along the entire orbit.",
+    "arbitrary_support": "Finite normalized Cartesian truncations decode through the actual global native homeomorphism to genuine finite-gap profiles and converge in Hs. Conjugacy to the fixed bounded linear Cartesian rotation proves initial-profile continuity of the actual action flow. Own-open phase continuity passes the exact full rotation identity to arbitrary support.",
+    "factorization": "The actual independent spectral conjugate is supplied to exists_opposite_unit_phase_action_factor. The full product with the actual NLS unit phase depends only on the entire physical action sequence and literal signed mean. Unit norm holds on the exact own-open locus. Every real angle representative gives this same full exponential of the angle sum, modulo exactly2*pi.",
+    "scope_limits": [
+      "No additional analyticity of the angle-sum factor is asserted.",
+      "No full cross-mode Cartesian canonicity or rough L2 inverse is asserted or needed.",
+      "The three documented source corrections remain: Theorem2(ii) matrix, Theorem3 positive sign and Theorem4(ii) reverse mean squared."
+    ]
+  },
+  "integration_validation": "merge-validation.json"
 }
