@@ -1696,6 +1696,14 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillInjectiveRestrictions',
     'NLS.Articles.KdVPseudomeasures.OriginalHillActionFlowTorus',
     'NLS.Articles.KdVPseudomeasures.MainTheorem14WeakStar',
+    'NLS.SequenceSpaces.RealCoefficientCompactness',
+    'NLS.ZakharovShabat.SourceHigherActionCoefficientContinuity',
+    'NLS.KdV.HillMiuraCoefficientContinuity',
+    'NLS.KdV.HillRealMeanZeroNormalization',
+    'NLS.KdV.HillMiuraCentralLowerBound',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillBoundedActionCompactness',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillActionSequentialCompactness',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillNativeBoundedLimits',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

@@ -1662,6 +1662,14 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNativeInjectivity
 import NLS.Articles.KdVPseudomeasures.OriginalHillInjectiveRestrictions
 import NLS.Articles.KdVPseudomeasures.OriginalHillActionFlowTorus
 import NLS.Articles.KdVPseudomeasures.MainTheorem14WeakStar
+import NLS.SequenceSpaces.RealCoefficientCompactness
+import NLS.ZakharovShabat.SourceHigherActionCoefficientContinuity
+import NLS.KdV.HillMiuraCoefficientContinuity
+import NLS.KdV.HillRealMeanZeroNormalization
+import NLS.KdV.HillMiuraCentralLowerBound
+import NLS.Articles.KdVPseudomeasures.OriginalHillBoundedActionCompactness
+import NLS.Articles.KdVPseudomeasures.OriginalHillActionSequentialCompactness
+import NLS.Articles.KdVPseudomeasures.OriginalHillNativeBoundedLimits
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10101,3 +10109,20 @@ import NLS.Articles.KdVPseudomeasures.MainTheorem14WeakStar
 #print axioms NLS.Articles.KdVPseudomeasures.articleEndpointWeakStarHomeomorphRange_apply
 #print axioms NLS.Articles.KdVPseudomeasures.isEmbedding_articleEndpointWeakStarCoordinates_on_full_isospectral_set
 #print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem1_4_of_native_surjective
+#print axioms NLS.exists_periodOneRealL2_coefficientwise_subseq
+#print axioms NLS.ZakharovShabat.tendsto_sourceHigherActionCircle_of_bounded_coefficientwise
+#print axioms NLS.ZakharovShabat.sourceIndexedHigherAction_eq_enclosingCircle
+#print axioms NLS.ZakharovShabat.tendsto_sourceIndexedHigherAction_of_bounded_coefficientwise
+#print axioms NLS.KdV.bounded_hillMiuraDiagonal
+#print axioms NLS.KdV.tendsto_hillHminusMiuraIndexedAction_of_bounded_coefficients
+#print axioms NLS.KdV.tendsto_hillMiuraDiracRight_of_bounded_coefficients
+#print axioms NLS.KdV.zero_not_mem_hillMiura_spectrum_of_central_right_pos
+#print axioms NLS.KdV.exists_hillRealMeanZero_normalization
+#print axioms NLS.KdV.hillMiura_central_right_ge_one_of_shifted_image
+#print axioms NLS.KdV.shift_outside_of_zero_not_mem_hillMiura_spectrum
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillReal_canonicalAction_subseq_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_subseq_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillReal_preimage_of_bounded_nativeMap_tendsto
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillReal_source_limit_of_bounded_nativeMap_tendsto
+#print axioms NLS.Articles.KdVPseudomeasures.isProperMap_hillRealSignedMap_iff_bounded_compact_preimages
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem1_4_of_bounded_compact_native_preimages
