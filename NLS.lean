@@ -5978,3 +5978,16 @@ import NLS.KdV.HillInfiniteEndpointCorrectionCotangent
 import NLS.KdV.HillInfiniteNormingSingle
 import NLS.KdV.HillFullEndpointPhase
 import NLS.KdV.HillFullEndpointPhaseFamily
+import NLS.KdV.HillPeriodOneRestrictionInverse
+import NLS.KdV.HillOriginalQuadraticTrace
+import NLS.KdV.HillIndexedFlowNorm
+import NLS.KdV.HillStateGrowthBounds
+import NLS.KdV.HillDiscriminantSourceBounds
+import NLS.KdV.HillIndexedGapConservation
+import NLS.KdV.HillIndexedFlowSpeed
+import NLS.FunctionalAnalysis.RelativeUniformLimit
+import NLS.KdV.HillIndexedFlowEndpointLimits
+import NLS.KdV.HillIndexedFlowExtension
+import NLS.FunctionalAnalysis.AutonomousTrajectoryAssembly
+import NLS.FunctionalAnalysis.AutonomousGlobalContinuation
+import NLS.KdV.HillIndexedGlobalFlows

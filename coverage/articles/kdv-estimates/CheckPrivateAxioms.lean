@@ -1055,6 +1055,19 @@ import NLS.KdV.HillInfiniteEndpointCorrectionCotangent
 import NLS.KdV.HillInfiniteNormingSingle
 import NLS.KdV.HillFullEndpointPhase
 import NLS.KdV.HillFullEndpointPhaseFamily
+import NLS.KdV.HillPeriodOneRestrictionInverse
+import NLS.KdV.HillOriginalQuadraticTrace
+import NLS.KdV.HillIndexedFlowNorm
+import NLS.KdV.HillStateGrowthBounds
+import NLS.KdV.HillDiscriminantSourceBounds
+import NLS.KdV.HillIndexedGapConservation
+import NLS.KdV.HillIndexedFlowSpeed
+import NLS.FunctionalAnalysis.RelativeUniformLimit
+import NLS.KdV.HillIndexedFlowEndpointLimits
+import NLS.KdV.HillIndexedFlowExtension
+import NLS.FunctionalAnalysis.AutonomousTrajectoryAssembly
+import NLS.FunctionalAnalysis.AutonomousGlobalContinuation
+import NLS.KdV.HillIndexedGlobalFlows
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1645,7 +1658,20 @@ run_cmd do
     ``NLS.FunctionalAnalysis.closedUnitCurveProjectionCLM,
     ``NLS.FunctionalAnalysis.closedUnitCurveProjectionCLM_fixed,
     ``NLS.ComplexAnalysis.sineTerminal_fderiv_eq_norming_of_zero,
-    ``NLS.ComplexAnalysis.scalarStateMass_lower_of_sine_approx]
+    ``NLS.ComplexAnalysis.scalarStateMass_lower_of_sine_approx,
+    ``NLS.FunctionalAnalysis.exists_tendsto_nhdsWithin_of_uniformContinuousOn,
+    ``NLS.FunctionalAnalysis.AutonomousTrajectory,
+    ``NLS.FunctionalAnalysis.autonomousTrajectoryTimeDomain,
+    ``NLS.FunctionalAnalysis.zero_mem_autonomousTrajectoryTimeDomain,
+    ``NLS.FunctionalAnalysis.isOpen_autonomousTrajectoryTimeDomain,
+    ``NLS.FunctionalAnalysis.ordConnected_autonomousTrajectoryTimeDomain,
+    ``NLS.FunctionalAnalysis.assembledAutonomousTrajectory,
+    ``NLS.FunctionalAnalysis.assembledAutonomousTrajectory_eqOn,
+    ``NLS.FunctionalAnalysis.assembledAutonomousTrajectory_zero,
+    ``NLS.FunctionalAnalysis.hasDerivAt_assembledAutonomousTrajectory_of_mem,
+    ``NLS.FunctionalAnalysis.AutonomousEndpointExtensions,
+    ``NLS.FunctionalAnalysis.autonomousTrajectoryTimeDomain_eq_univ_of_extensions,
+    ``NLS.FunctionalAnalysis.exists_global_autonomousTrajectory_of_endpointExtensions]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
