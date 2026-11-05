@@ -1,3 +1,11 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeRegularGapSolutions
+import NLS.KdV.HillNativeQuadraticSolution
+import NLS.ComplexAnalysis.NativeBoundedQuadraticSolution
+import NLS.ComplexAnalysis.NativeQuadraticCauchyEquation
+import NLS.ComplexAnalysis.NativeCirclePrimitiveBounds
+import NLS.ComplexAnalysis.NativeAnnularPrimitive
+import NLS.ComplexAnalysis.NativeCircleTransforms
+import NLS.ComplexAnalysis.NativeConvexPrimitive
 import NLS.Articles.KdVKdV2Frequencies.NativeRegularGapNumerators
 import NLS.KdV.HillNativeRegularGapNumerator
 import NLS.ComplexAnalysis.NativeOwnPeriodSubtraction
@@ -1463,7 +1471,15 @@ run_cmd do
     `NLS.KdV.HillRadiusRootProduct,
     `NLS.ComplexAnalysis.NativeOwnPeriodSubtraction,
     `NLS.KdV.HillNativeRegularGapNumerator,
-    `NLS.Articles.KdVKdV2Frequencies.NativeRegularGapNumerators
+    `NLS.Articles.KdVKdV2Frequencies.NativeRegularGapNumerators,
+    `NLS.ComplexAnalysis.NativeConvexPrimitive,
+    `NLS.ComplexAnalysis.NativeCircleTransforms,
+    `NLS.ComplexAnalysis.NativeAnnularPrimitive,
+    `NLS.ComplexAnalysis.NativeCirclePrimitiveBounds,
+    `NLS.ComplexAnalysis.NativeQuadraticCauchyEquation,
+    `NLS.ComplexAnalysis.NativeBoundedQuadraticSolution,
+    `NLS.KdV.HillNativeQuadraticSolution,
+    `NLS.Articles.KdVKdV2Frequencies.NativeRegularGapSolutions
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

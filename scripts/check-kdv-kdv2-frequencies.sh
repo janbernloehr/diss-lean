@@ -1173,6 +1173,14 @@ modules=(
   NLS/ComplexAnalysis/NativeOwnPeriodSubtraction
   NLS/KdV/HillNativeRegularGapNumerator
   NLS/Articles/KdVKdV2Frequencies/NativeRegularGapNumerators
+  NLS/ComplexAnalysis/NativeConvexPrimitive
+  NLS/ComplexAnalysis/NativeCircleTransforms
+  NLS/ComplexAnalysis/NativeAnnularPrimitive
+  NLS/ComplexAnalysis/NativeCirclePrimitiveBounds
+  NLS/ComplexAnalysis/NativeQuadraticCauchyEquation
+  NLS/ComplexAnalysis/NativeBoundedQuadraticSolution
+  NLS/KdV/HillNativeQuadraticSolution
+  NLS/Articles/KdVKdV2Frequencies/NativeRegularGapSolutions
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

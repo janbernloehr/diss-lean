@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual native own-period regularization
+## Latest actual native filled-gap quadratic solutions
+
+One common complex period-one L2 ball now supports actual regular differential solutions in the native output Hilbert space, jointly analytic on filled high-gap radius3k/4 energy discs. The actual symmetric gap equation retains the own unit subtraction. One full Hilbert bound18*pi*M/k holds throughout closed radiusk/4 inner discs. Exact globally selected physical numerator and regular-right-side matching is retained at every real source, including high own modes, collapsed pairs and means.
+
+See `NATIVE_QUADRATIC_SOLUTIONS.md`. The reusable construction uses genuine Bochner segment, logarithmic and Cauchy integrals, proves strong joint analyticity, and derives full Banach norm bounds. Physical terminal matching, finite-head regular completion, genuine complex divisor/amplitude/summable-phase estimates, native physical coordinate analyticity and full Birkhoff/Hamiltonian conclusions remain open.
+
+Prior strict evidence for all 1164 unchanged selected baseline sources; strict dependency-order compilation of eight new proof modules; then a fresh combined transitive axiom audit of all 1172 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1204 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1172-module rebuild is claimed.
+
+Fresh audit: 10601 selected and 32732 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier actual native own-period regularization
 
 One common complex period-one L2 source ball, cutoff and full Hilbert bound now support the actual filled-root regular numerator (-i/U_k)*G-e_k on every sufficiently high radius-k energy disc, before all complex sources, energies and output indices. The regular family is jointly native complex analytic, uniformly Hilbert bounded, nonpositive zero and has genuine zero Bochner quadratic density periods. Every positive component at every real source is exactly the globally selected physical deflated differential minus delta_kn. Own high modes, collapsed pairs and means are included. The original entire family retains its all-positive full Hilbert C/k energy estimates and native Kronecker periods.
 

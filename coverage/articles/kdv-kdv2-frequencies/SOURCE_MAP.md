@@ -1048,3 +1048,14 @@ See `NATIVE_OWN_REGULARIZATION.md`. This proves a filled regular numerator; the 
 Prior strict evidence for all 1151 unchanged selected baseline sources; strict dependency-order compilation of six unchanged explicitly selected canonical helpers and seven new proof modules; then a fresh combined transitive axiom audit of all 1164 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1196 frozen source/checker/provenance hashes, 29 unchanged verified provenance records plus one new verified six-file canonical reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1164-module rebuild is claimed.
 
 Fresh audit: 10548 selected and 32679 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+
+## Latest actual native filled-gap quadratic solutions
+
+One common complex period-one L2 ball now supports actual regular differential solutions in the native output Hilbert space, jointly analytic on filled high-gap radius3k/4 energy discs. The actual symmetric gap equation retains the own unit subtraction. One full Hilbert bound18*pi*M/k holds throughout closed radiusk/4 inner discs. Exact globally selected physical numerator and regular-right-side matching is retained at every real source, including high own modes, collapsed pairs and means.
+
+See `NATIVE_QUADRATIC_SOLUTIONS.md`. The reusable construction uses genuine Bochner segment, logarithmic and Cauchy integrals, proves strong joint analyticity, and derives full Banach norm bounds. Physical terminal matching, finite-head regular completion, genuine complex divisor/amplitude/summable-phase estimates, native physical coordinate analyticity and full Birkhoff/Hamiltonian conclusions remain open.
+
+Prior strict evidence for all 1164 unchanged selected baseline sources; strict dependency-order compilation of eight new proof modules; then a fresh combined transitive axiom audit of all 1172 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1204 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1172-module rebuild is claimed.
+
+Fresh audit: 10601 selected and 32732 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
