@@ -1707,6 +1707,10 @@ modules = [
     'NLS.ZakharovShabat.ClassicalDiagonalZeroTrace',
     'NLS.KdV.HillMiuraZeroFrequencyTrace',
     'NLS.KdV.HillMiuraCentralMean',
+    'NLS.SequenceSpaces.SignedHilbertActionTrace',
+    'NLS.KdV.HillMiuraActionAtCentralCollapse',
+    'NLS.KdV.HillMiuraMeanNormalization',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillInverseActionTrace',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

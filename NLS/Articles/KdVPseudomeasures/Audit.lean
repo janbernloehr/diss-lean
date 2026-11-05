@@ -1673,6 +1673,10 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNativeBoundedLimits
 import NLS.ZakharovShabat.ClassicalDiagonalZeroTrace
 import NLS.KdV.HillMiuraZeroFrequencyTrace
 import NLS.KdV.HillMiuraCentralMean
+import NLS.SequenceSpaces.SignedHilbertActionTrace
+import NLS.KdV.HillMiuraActionAtCentralCollapse
+import NLS.KdV.HillMiuraMeanNormalization
+import NLS.Articles.KdVPseudomeasures.OriginalHillInverseActionTrace
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10144,3 +10148,30 @@ import NLS.KdV.HillMiuraCentralMean
 #print axioms NLS.KdV.hillMiura_central_right_zero_iff_mean_zero
 #print axioms NLS.KdV.hillMiura_central_gap_collapsed_iff_mean_zero
 #print axioms NLS.KdV.hillMiura_central_right_pos_iff_mean_ne_zero
+#print axioms NLS.WeightedCoeff.fourierRealZeroHilbertPairing_signed_apply
+#print axioms NLS.WeightedCoeff.summable_norm_fourierRealZeroHilbertPairing_signed
+#print axioms NLS.WeightedCoeff.hasSum_positive_signedHilbert_pairing
+#print axioms NLS.WeightedCoeff.hasSum_positive_signedHilbert_norm_sq
+#print axioms NLS.WeightedCoeff.hasSum_positive_signedNegativeHalf_norm_sq
+#print axioms NLS.KdV.realL2AddConstant
+#print axioms NLS.KdV.tendsto_realL2AddConstant_zero
+#print axioms NLS.KdV.hillHminusCanonicalAction_eq_Miura_of_real_all
+#print axioms NLS.KdV.periodOneMiura_zero_eq_norm_sq
+#print axioms NLS.KdV.hillRealNormalizedMiura
+#print axioms NLS.KdV.hillRealNormalizedMiura_image
+#print axioms NLS.KdV.hillRealNormalizedMiura_canonicalAction
+#print axioms NLS.KdV.hillMiura_shift_eq_norm_sq
+#print axioms NLS.KdV.hillRealNormalizedMiura_eq_of_shifted_image
+#print axioms NLS.KdV.hillMiuraNormBoundConstant
+#print axioms NLS.KdV.hillMiuraNormBoundConstant_pos
+#print axioms NLS.KdV.norm_hillRealNormalizedMiura_le
+#print axioms NLS.KdV.norm_hillRealSource_le_of_shiftedMiura
+#print axioms NLS.Articles.KdVPseudomeasures.hillNativeInverseActionMass
+#print axioms NLS.Articles.KdVPseudomeasures.hasSum_hillReal_inverseAction
+#print axioms NLS.Articles.KdVPseudomeasures.hasSum_hillReal_inverseAction_re
+#print axioms NLS.Articles.KdVPseudomeasures.hasSum_hillNativeInverseActionMass
+#print axioms NLS.Articles.KdVPseudomeasures.hillNativeInverseActionMass_eq_norm_sq
+#print axioms NLS.Articles.KdVPseudomeasures.hillNativeInverseActionMass_nonneg
+#print axioms NLS.Articles.KdVPseudomeasures.hasSum_originalCanonicalHillAction_inverse
+#print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_eq_Miura_all
+#print axioms NLS.Articles.KdVPseudomeasures.hasSum_normalizedMiura_inverseAction
