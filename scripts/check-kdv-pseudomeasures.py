@@ -1979,6 +1979,13 @@ modules = [
     'NLS.KdV.HillL2OffIndexOneSmoothing',
     'NLS.KdV.HillL2NativeComplexOneSmoothing',
     'NLS.Articles.KdVPseudomeasures.OriginalHillL2OneSmoothing',
+    'NLS.SequenceSpaces.WeightedPeriodHalving',
+    'NLS.SequenceSpaces.FourierRealEquivalentWeights',
+    'NLS.Fourier.RealPeriodOneSobolevSpace',
+    'NLS.Fourier.RealPeriodOneSobolevCoefficients',
+    'NLS.FunctionalAnalysis.AnalyticLinearEquivalenceTransport',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillWienerPhysicalModels',
+    'NLS.Articles.KdVPseudomeasures.MainTheorem51',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

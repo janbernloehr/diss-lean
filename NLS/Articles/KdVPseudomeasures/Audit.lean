@@ -1945,6 +1945,13 @@ import NLS.KdV.HillL2OffIndexWeightedCorrection
 import NLS.KdV.HillL2OffIndexOneSmoothing
 import NLS.KdV.HillL2NativeComplexOneSmoothing
 import NLS.Articles.KdVPseudomeasures.OriginalHillL2OneSmoothing
+import NLS.SequenceSpaces.WeightedPeriodHalving
+import NLS.SequenceSpaces.FourierRealEquivalentWeights
+import NLS.Fourier.RealPeriodOneSobolevSpace
+import NLS.Fourier.RealPeriodOneSobolevCoefficients
+import NLS.FunctionalAnalysis.AnalyticLinearEquivalenceTransport
+import NLS.Articles.KdVPseudomeasures.OriginalHillWienerPhysicalModels
+import NLS.Articles.KdVPseudomeasures.MainTheorem51
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11412,3 +11419,53 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillL2OneSmoothing
 #print axioms NLS.Articles.KdVPseudomeasures.hillIntegerNativeOneSmoothing_zero
 #print axioms NLS.Articles.KdVPseudomeasures.hillIntegerNativeOneSmoothing_all
 #print axioms NLS.Articles.KdVPseudomeasures.hillWienerBirkhoffDiffeomorphism_all
+#print axioms NLS.Coeff.periodHalveCLM
+#print axioms NLS.Coeff.periodHalveCLM_apply
+#print axioms NLS.WeightedCoeff.periodHalveCLM
+#print axioms NLS.WeightedCoeff.periodHalveCLM_apply
+#print axioms NLS.WeightedCoeff.norm_periodHalveCLM_le
+#print axioms NLS.WeightedCoeff.periodHalveCLM_insertIsometry
+#print axioms NLS.WeightedCoeff.insertIsometry_periodHalveCLM
+#print axioms NLS.WeightedCoeff.fourierRealWeightEquiv
+#print axioms NLS.WeightedCoeff.fourierRealWeightEquiv_apply
+#print axioms NLS.WeightedCoeff.fourierRealWeightEquiv_symm_apply
+#print axioms NLS.WeightedCoeff.periodOneSobolevPullback
+#print axioms NLS.WeightedCoeff.periodOneSobolevPullback_neg
+#print axioms NLS.WeightedCoeff.periodOneSobolevPullback_signed_bounds
+#print axioms NLS.WeightedCoeff.periodOneSobolevSignedEquiv
+#print axioms NLS.WeightedCoeff.sobolev_signed_bounds
+#print axioms NLS.WeightedCoeff.sobolevSignedRealEquiv
+#print axioms NLS.WeightedCoeff.sobolevSignedRealEquiv_apply
+#print axioms NLS.WeightedCoeff.sobolevSignedRealEquiv_symm_apply
+#print axioms NLS.Fourier.realPeriodOneSobolevSubmodule
+#print axioms NLS.Fourier.isClosed_realPeriodOneSobolevSubmodule
+#print axioms NLS.Fourier.realPeriodOneSobolev_zero_coefficient
+#print axioms NLS.Fourier.realPeriodOneSobolev_real_coefficient
+#print axioms NLS.Fourier.realPeriodOneSobolev_odd_coefficient
+#print axioms NLS.Fourier.realPeriodOneSobolevCoefficients
+#print axioms NLS.Fourier.realPeriodOneSobolevCoefficients_apply
+#print axioms NLS.Fourier.realPeriodOneSobolevOriginal
+#print axioms NLS.Fourier.realPeriodOneSobolevOriginal_even
+#print axioms NLS.Fourier.realPeriodOneSobolevOriginal_odd
+#print axioms NLS.Fourier.realPeriodOneSobolevCoefficients_original
+#print axioms NLS.Fourier.realPeriodOneSobolevOriginal_coefficients
+#print axioms NLS.Fourier.realPeriodOneSobolevCoefficientsEquiv
+#print axioms NLS.Fourier.realPeriodOneSignedSobolevEquiv
+#print axioms NLS.Fourier.realPeriodOneSignedSobolevEquiv_apply
+#print axioms NLS.FunctionalAnalysis.analyticAt_linearEquiv_transport
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerSourceCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerSourceCoefficients_apply
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerTargetCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerTargetCoefficients_symm_apply
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerTarget_order
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerNativeSource
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerNativeSource_apply
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerOriginalPotential
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerOriginalPotential_same_distribution
+#print axioms NLS.Articles.KdVPseudomeasures.originalWienerOriginalPotential_native
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillWienerEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillWienerEquiv_apply
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerEquiv_symm
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_1Statement
+#print axioms NLS.Articles.KdVPseudomeasures.sourceTheorem5_1

@@ -1,0 +1,206 @@
+{
+  "source": "arXiv:1610.00278v1 Section5, Theorem5.1: global real analytic Birkhoff diffeomorphism on original physical FL^(N,1) for every N>=0",
+  "status": "Main5.1 PROVED on original physical period-one real mean-zero Wiener spaces for EVERY integer N>=0. Same original distribution and every actual native Birkhoff coordinate, ordinary ell-one norm topologies, global real analytic inverse and signed Gardner canonical matrix retained. Main1.1/1.3/1.4/5.1 PROVED; Main5.9 UNPROVED; goal ACTIVE.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.1",
+    "1.3",
+    "1.4",
+    "5.1"
+  ],
+  "unproved_main_theorems": [
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "final_original_physical_distribution_Main5_1_statement_PROVED": true,
+    "original_physical_FL_N_1_source_preserved": true,
+    "ordinary_ell_one_N_plus_half_target_preserved": true,
+    "same_entire_original_distribution_preserved": true,
+    "all_actual_native_Birkhoff_coefficients_preserved": true,
+    "all_nonnegative_integer_orders": true,
+    "global_forward_and_inverse_real_analytic": true,
+    "actual_signed_Gardner_canonical_matrix_PROVED": true,
+    "Main5_9_PROVED": false,
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/main-5-1-physical-wiener-map.json"
+  },
+  "results": [
+    "WeightedPeriodHalving proves bounded even restriction for EVERY Banach exponent, including ell-one and infinity. Its weighted version has exact raw 2n coefficients and inverse identities with the existing even insertion whenever all odd modes vanish.",
+    "FourierRealEquivalentWeights proves coefficient-preserving continuous real linear equivalences under explicit two-sided weight bounds. For every nonnegative real order, the pulled-back original physical weight (1+2|n|)^s and the ordinary target weight (1+|n|)^s are bounded above by 3^s times the signed max(1,|n|)^s weight and bounded below by that signed weight.",
+    "RealPeriodOneSobolevSpace realizes the actual original period-two Fourier-Lebesgue distributions with physical period-one, real and mean-zero constraints as a CLOSED complete real subspace in the ORIGINAL Sobolev norm. RealPeriodOneSobolevCoefficients proves the continuous real linear equivalence with the even pulled-back coefficient space. Both inverse identities hold, including equality of the ENTIRE original smooth-test distribution, not just selected coordinates.",
+    "OriginalHillWienerPhysicalModels retains the original physical FL^(N,1) source and ordinary ell_0^(N+1/2,1) target. Exact coefficient-preserving equivalences transport these actual norm topologies to the previously proved native signed Wiener models. The actual original rough potential has the SAME entire original physical distribution; its native source has EVERY original physical mode -2n coefficient.",
+    "MainTheorem51.originalHillWienerEquiv is a GLOBAL equivalence for EVERY nonnegative integer order, with EVERY actual original native Birkhoff coefficient. The generic AnalyticLinearEquivalenceTransport theorem transports the unconditional native Wiener forward and inverse analyticity through the proved continuous real linear physical equivalences.",
+    "MainTheorem51.sourceTheorem5_1 proves the precise final sourceTheorem5_1Statement: EVERY N>=0, actual original physical distribution preservation, ALL actual native coordinate identities, forward/inverse real analyticity on the full ordinary weighted ell-one spaces, and the original signed Gardner canonical matrix for ALL signed indices. Source Main5.1 now PROVED; Main1.1/1.3/1.4 remain PROVED. Main5.9 remains UNPROVED and goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.Coeff.periodHalveCLM",
+    "NLS.Coeff.periodHalveCLM_apply",
+    "NLS.WeightedCoeff.periodHalveCLM",
+    "NLS.WeightedCoeff.periodHalveCLM_apply",
+    "NLS.WeightedCoeff.norm_periodHalveCLM_le",
+    "NLS.WeightedCoeff.periodHalveCLM_insertIsometry",
+    "NLS.WeightedCoeff.insertIsometry_periodHalveCLM",
+    "NLS.WeightedCoeff.fourierRealWeightEquiv",
+    "NLS.WeightedCoeff.fourierRealWeightEquiv_apply",
+    "NLS.WeightedCoeff.fourierRealWeightEquiv_symm_apply",
+    "NLS.WeightedCoeff.periodOneSobolevPullback",
+    "NLS.WeightedCoeff.periodOneSobolevPullback_neg",
+    "NLS.WeightedCoeff.periodOneSobolevPullback_signed_bounds",
+    "NLS.WeightedCoeff.periodOneSobolevSignedEquiv",
+    "NLS.WeightedCoeff.sobolev_signed_bounds",
+    "NLS.WeightedCoeff.sobolevSignedRealEquiv",
+    "NLS.WeightedCoeff.sobolevSignedRealEquiv_apply",
+    "NLS.WeightedCoeff.sobolevSignedRealEquiv_symm_apply",
+    "NLS.Fourier.realPeriodOneSobolevSubmodule",
+    "NLS.Fourier.isClosed_realPeriodOneSobolevSubmodule",
+    "NLS.Fourier.realPeriodOneSobolev_zero_coefficient",
+    "NLS.Fourier.realPeriodOneSobolev_real_coefficient",
+    "NLS.Fourier.realPeriodOneSobolev_odd_coefficient",
+    "NLS.Fourier.realPeriodOneSobolevCoefficients",
+    "NLS.Fourier.realPeriodOneSobolevCoefficients_apply",
+    "NLS.Fourier.realPeriodOneSobolevOriginal",
+    "NLS.Fourier.realPeriodOneSobolevOriginal_even",
+    "NLS.Fourier.realPeriodOneSobolevOriginal_odd",
+    "NLS.Fourier.realPeriodOneSobolevCoefficients_original",
+    "NLS.Fourier.realPeriodOneSobolevOriginal_coefficients",
+    "NLS.Fourier.realPeriodOneSobolevCoefficientsEquiv",
+    "NLS.Fourier.realPeriodOneSignedSobolevEquiv",
+    "NLS.Fourier.realPeriodOneSignedSobolevEquiv_apply",
+    "NLS.FunctionalAnalysis.analyticAt_linearEquiv_transport",
+    "NLS.Articles.KdVPseudomeasures.originalWienerSourceCoefficients",
+    "NLS.Articles.KdVPseudomeasures.originalWienerSourceCoefficients_apply",
+    "NLS.Articles.KdVPseudomeasures.originalWienerTargetCoefficients",
+    "NLS.Articles.KdVPseudomeasures.originalWienerTargetCoefficients_symm_apply",
+    "NLS.Articles.KdVPseudomeasures.originalWienerTarget_order",
+    "NLS.Articles.KdVPseudomeasures.originalWienerNativeSource",
+    "NLS.Articles.KdVPseudomeasures.originalWienerNativeSource_apply",
+    "NLS.Articles.KdVPseudomeasures.originalWienerOriginalPotential",
+    "NLS.Articles.KdVPseudomeasures.originalWienerOriginalPotential_same_distribution",
+    "NLS.Articles.KdVPseudomeasures.originalWienerOriginalPotential_native",
+    "NLS.Articles.KdVPseudomeasures.originalHillWienerEquiv",
+    "NLS.Articles.KdVPseudomeasures.originalHillWienerEquiv_apply",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerEquiv",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_originalHillWienerEquiv_symm",
+    "NLS.Articles.KdVPseudomeasures.sourceTheorem5_1Statement",
+    "NLS.Articles.KdVPseudomeasures.sourceTheorem5_1"
+  ],
+  "files": [
+    "NLS/SequenceSpaces/WeightedPeriodHalving.lean",
+    "NLS/SequenceSpaces/FourierRealEquivalentWeights.lean",
+    "NLS/Fourier/RealPeriodOneSobolevSpace.lean",
+    "NLS/Fourier/RealPeriodOneSobolevCoefficients.lean",
+    "NLS/FunctionalAnalysis/AnalyticLinearEquivalenceTransport.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillWienerPhysicalModels.lean",
+    "NLS/Articles/KdVPseudomeasures/MainTheorem51.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "396021cf663c42604720f48b2c16121cab06857b",
+    "baseline_modules": 1948,
+    "baseline_non_audit_sources_verified_unchanged": 1947,
+    "new_modules_compiled": 7,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.Fourier.PeriodicSobolevDuality",
+        "source": "NLS/Fourier/PeriodicSobolevDuality.lean",
+        "source_sha256": "01e3b03b26c1deebdcb49cc882d4cb93a37fa8ac022fd8058582fcbbf4330e58"
+      },
+      {
+        "module": "NLS.SequenceSpaces.PeriodDoubling",
+        "source": "NLS/SequenceSpaces/PeriodDoubling.lean",
+        "source_sha256": "a21b9a0f06a51cd0dc3f6013a78ad1e9b2f76dfd724d29e56f702e697c4dbfd7"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem11",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem11.lean",
+        "source_sha256": "0c1a0eff8f5a0437e3cae7ea7429155d86c27be6342242f48316b799bbf9d6e9",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem13",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem13.lean",
+        "source_sha256": "10bd9ba667095fee022b323b39432c50805af58a4a83b374363c6434594c9de3",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillL2OneSmoothing",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillL2OneSmoothing.lean",
+        "source_sha256": "944d84047e97ea3c6ea04a6f8777705056075dc5fa127d85ffa9d136b766b4ed",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillWienerBaseSmoothing",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillWienerBaseSmoothing.lean",
+        "source_sha256": "d71f57ecc07f97cdace2b5a73951cf8aa46213457d66e0aa55f4482b681bce7c",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillWienerModels",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillWienerModels.lean",
+        "source_sha256": "35efa23d5b56650c79f24922d9481cdd89556cc0803424d32b50a36c45273838",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeSignedGardner",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeSignedGardner.lean",
+        "source_sha256": "e927a0911457f1a282f3bd686cad1efbcfa6ce39df9ab8d913e28f9d298254e0",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillNativeCompactFibers",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillNativeCompactFibers.lean",
+        "source_sha256": "370dd95993e677648896a9b5e42b07c232c36aa90d2e387d29cf198d633b55fa",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Fourier.PeriodicPhysicalSourceClosed",
+        "source": "NLS/Fourier/PeriodicPhysicalSourceClosed.lean",
+        "source_sha256": "5e766c1edf1abb4b19811fd49493dd10667b397c30672d918254ae9e50d6ccb1",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.WeightedInsertion",
+        "source": "NLS/SequenceSpaces/WeightedInsertion.lean",
+        "source_sha256": "a4aeffa707f59fb1ae02afacbb06963c9085a2b04601162b495faf0810eb20b6",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.FourierRealZeroMultiplier",
+        "source": "NLS/SequenceSpaces/FourierRealZeroMultiplier.lean",
+        "source_sha256": "230fdf6675bc3cfe2d46f4889837bca92d153b5a9ee5d64388526deb5514a52d",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1955,
+    "audited_declarations": 9514,
+    "theorems": 7979,
+    "definitions": 1535,
+    "new_theorems": 33,
+    "new_definitions": 17,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-main-5-1-physical-wiener.log",
+    "log_sha256": "e608c1fa9a268f5b8cda2982f1cf5815771d319b70bb2a779235d28a096a3ad0"
+  },
+  "remaining_obligations": [
+    "Main5.9: prove genuine unweighted bounded analytic correction to the actual frequency omega_n-8*pi^3*n^3 near every real L2/Wiener source. The existing rough signed order -1 infinity control is insufficient. Retain the SAME original frequencies, complex neighborhood before ALL n, and actual normalization. The stronger source Lemma5.7 ell^r statement need only be included if proved; a sufficient verified bounded analytic correction is enough for the main flow theorem.",
+    "Main5.9: use the bounded analytic correction with the existing analytic phase trajectory in finite weighted ell-one spaces, then prove analytic composition of the actual Wiener inverse with compact-time trajectories in the Banach C([-T,T], FL^(N,1)) norm for EVERY N>=0 and T>0. Pointwise-in-time analyticity alone does not prove this mapping property.",
+    "Main5.9: identify the resulting trajectory with the SAME actual KdV flow, transport to the original physical period-one real mean-zero Fourier-Lebesgue spaces using the now-proved Main5.1 equivalences, and formulate/prove the precise final source statement. Main1.1/1.3/1.4/5.1 are complete; only Main5.9 remains open. Canonical checkout/shared metadata read-only; preserve pending exact publication approval."
+  ]
+}
