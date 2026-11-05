@@ -5955,3 +5955,6 @@ import NLS.KdV.HillEndpointPrimitiveParameters
 import NLS.KdV.HillEndpointDirichletPrimitives
 import NLS.KdV.HillFiniteNormingGradients
 import NLS.KdV.HillFiniteEndpointPrimitives
+import NLS.KdV.HillZeroNormingSheetFactors
+import NLS.KdV.HillClosedGapEndpointCotangent
+import NLS.KdV.HillClosedRegularCotangents
