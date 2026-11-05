@@ -1801,6 +1801,13 @@ modules = [
     'NLS.KdV.HillPrimitiveMomentTailBound',
     'NLS.KdV.HillPrimitiveMomentAbsoluteSummability',
     'NLS.Articles.KdVPseudomeasures.OriginalHillMomentAbsoluteSummability',
+    'NLS.SequenceSpaces.PositiveSquaredGapMomentBound',
+    'NLS.SequenceSpaces.PositiveSummableAnalyticAssembly',
+    'NLS.KdV.HillPrimitiveMomentSeriesNeighborhood',
+    'NLS.KdV.HillPrimitiveMomentSeriesLocalBound',
+    'NLS.KdV.HillPrimitiveMomentSeriesAnalytic',
+    'NLS.KdV.HillPrimitiveMomentSeriesCompactConvergence',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillMomentSeriesAnalytic',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

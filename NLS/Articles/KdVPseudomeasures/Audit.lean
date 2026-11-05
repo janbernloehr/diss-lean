@@ -1767,6 +1767,13 @@ import NLS.KdV.HillMomentGapNumeratorTail
 import NLS.KdV.HillPrimitiveMomentTailBound
 import NLS.KdV.HillPrimitiveMomentAbsoluteSummability
 import NLS.Articles.KdVPseudomeasures.OriginalHillMomentAbsoluteSummability
+import NLS.SequenceSpaces.PositiveSquaredGapMomentBound
+import NLS.SequenceSpaces.PositiveSummableAnalyticAssembly
+import NLS.KdV.HillPrimitiveMomentSeriesNeighborhood
+import NLS.KdV.HillPrimitiveMomentSeriesLocalBound
+import NLS.KdV.HillPrimitiveMomentSeriesAnalytic
+import NLS.KdV.HillPrimitiveMomentSeriesCompactConvergence
+import NLS.Articles.KdVPseudomeasures.OriginalHillMomentSeriesAnalytic
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10592,3 +10599,27 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillMomentAbsoluteSummability
 #print axioms NLS.KdV.HillProductEquationPatch.exists_local_uniform_centeredSecondMoment_tail_bound
 #print axioms NLS.KdV.HillProductEquationPatch.exists_open_centeredSecondMoment_absolute_summability
 #print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_absolutely_summable_frequency_moments
+#print axioms NLS.Coeff.positive_weighted_signed_reciprocal_le_three
+#print axioms NLS.Coeff.sum_norm_positive_weighted_le_of_squared_gap_tail
+#print axioms NLS.Coeff.positiveSummableRealization
+#print axioms NLS.Coeff.positiveSummableRealization_apply
+#print axioms NLS.Coeff.norm_positiveSummableRealization
+#print axioms NLS.Coeff.tsum_positiveSummableRealization
+#print axioms NLS.Coeff.analyticOnNhd_positiveSummableRealization
+#print axioms NLS.Coeff.analyticOnNhd_positive_tsum_of_locally_bounded_absolute
+#print axioms NLS.KdV.HillProductEquationPatch.exists_momentSeriesNeighborhood
+#print axioms NLS.KdV.HillProductEquationPatch.normalizedWeightedSecondMoment
+#print axioms NLS.KdV.HillProductEquationPatch.centeredSecondMomentRow
+#print axioms NLS.KdV.HillProductEquationPatch.centeredSecondMomentSeries
+#print axioms NLS.KdV.HillProductEquationPatch.summable_normalizedWeightedSecondMoment
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_normalizedWeightedSecondMoment
+#print axioms NLS.KdV.HillProductEquationPatch.centeredSecondMomentSeries_eq_row_sum
+#print axioms NLS.KdV.HillProductEquationPatch.exists_local_normalizedWeightedSecondMoment_sum_bound
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_centeredSecondMomentRow
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_centeredSecondMomentSeries
+#print axioms NLS.KdV.HillProductEquationPatch.centeredSecondMomentSeries_independent_primitive_neighborhood
+#print axioms NLS.KdV.HillProductEquationPatch.centeredSecondMomentPartialSum
+#print axioms NLS.KdV.HillProductEquationPatch.two_pi_mul_centeredSecondMomentRow_apply
+#print axioms NLS.KdV.HillProductEquationPatch.centeredSecondMomentPartialSum_eq_row_sum
+#print axioms NLS.KdV.HillProductEquationPatch.tendstoUniformlyOn_centeredSecondMomentPartialSum_of_isCompact
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_exists_analytic_frequency_moment_series

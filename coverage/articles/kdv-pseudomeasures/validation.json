@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "article_main_theorems_verified": false,
-  "phase": "Actual rough Hill weighted second-moment rows converge absolutely on one open complex neighborhood before all numerator indices.",
+  "phase": "Actual weighted rough Hill second-moment l1 rows and literal infinite sums are Banach-source analytic on one common complex neighborhood before all rows, with uniform convergence of actual partial sums on compact source sets.",
   "toolchain": "Lean 4.33.1 / mathlib v4.33.1",
   "autoImplicit": false,
   "reproduce": "DISS_LEAN_CHECK_DIR=.lake/new-private-build python3 scripts/check-kdv-pseudomeasures.py",
@@ -1775,13 +1775,20 @@
     "NLS/KdV/HillPrimitiveMomentTailBound.lean",
     "NLS/KdV/HillPrimitiveMomentAbsoluteSummability.lean",
     "NLS/Articles/KdVPseudomeasures/OriginalHillMomentAbsoluteSummability.lean",
+    "NLS/SequenceSpaces/PositiveSquaredGapMomentBound.lean",
+    "NLS/SequenceSpaces/PositiveSummableAnalyticAssembly.lean",
+    "NLS/KdV/HillPrimitiveMomentSeriesNeighborhood.lean",
+    "NLS/KdV/HillPrimitiveMomentSeriesLocalBound.lean",
+    "NLS/KdV/HillPrimitiveMomentSeriesAnalytic.lean",
+    "NLS/KdV/HillPrimitiveMomentSeriesCompactConvergence.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillMomentSeriesAnalytic.lean",
     "NLS/Articles/KdVPseudomeasures/Audit.lean"
   ],
-  "proved_theorems": 7430,
-  "definitions": 1392,
+  "proved_theorems": 7449,
+  "definitions": 1397,
   "axiom_audit": {
     "method": "Exact source inventory and Lean #print axioms output matching for all public definitions/theorems, including nested namespaces. Nonempty axiom sets are allowlisted; Lean empty-axiom output is parsed explicitly. Imported private proofs are covered transitively.",
-    "declarations": 8822,
+    "declarations": 8846,
     "allowed_axioms": [
       "propext",
       "Classical.choice",
@@ -3167,8 +3174,8 @@
     "OriginalHillSpectralDarboux exports the SAMEoriginal physical potential, actual multipliers and local logarithmic normalization; their literal unit-period physical Gardner integral is zero, their closed-mean-zero cotangent bracket is intrinsic, and the full local spectral matrix holds at every original potential.",
     "NEXT derive the Gardner brackets of the ACTUAL Abelian angles, retaining the complete infinite off-index correction and normalized differentials, from the now-complete local spectral Darboux identities and actual action/Dirichlet contours. The article signed-coordinate canonicality away fromzero, all-source derivative inversion, remaining original nonlinear scales/global Birkhoff boundedness/bijection/weak-star/flow, universal actual numerator scalar and sharp KMT remain OPEN. AppendixB, local inverses and all preceding involution results remain COMPLETE. ALL FIVE MAIN THEOREMS remain UNPROVED; goal ACTIVE."
   ],
-  "source_correspondence": "Actual rough Hill weighted second-moment rows converge absolutely on one open complex neighborhood before all numerator indices. Use the NOW PROVED actual weighted second-moment absolute convergence on ONE common complex rough-source neighborhood to prove locally bounded Banach sequence assembly and full analyticity of each infinite row sum, then the required weighted all-row estimates. Absolute convergence alone is not an analyticity certificate. The actual full-l2 gap square and signed reciprocal-index tail estimate are PROVED, including complex/collapsed gaps. Prove the physical representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for the GENUINE finite-gap H1 Hamiltonian frequencies, then pass via the verified strong finite-gap approximation to ALL H1. Glue local rough sums by genuine H1 agreement/density, or prove cross-Miura/product-patch independence directly. Exact free H1 frequency, global H1 analyticity including collapse, original contour normalization/sheets and exact local moments remain PROVED. No actual rough frequency extension has yet been identified. Prove ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE.",
-  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1762 baseline non-audit registered sources byte-identical to6d5b743. All 7 new modules (10 theorems+0 definitions), 2 canonical-byte-identical shared modules, 5 unchanged private dependencies and EXACT 8822-declaration transitive standard-axiom audit freshly compiled privately. Actual centered even-moment cosine formula, squared-gap and signed reciprocal-index tail bounds, and absolute convergence of EVERY weighted second-moment row on ONE common complex source neighborhood PROVED at EVERY original real mean-zero rough source. Infinite row-sum analyticity, weighted all-row sequence bounds and physical H1 frequency equality remain OPEN. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1770-module build.",
+  "source_correspondence": "Actual weighted rough Hill second-moment l1 rows and literal infinite sums are Banach-source analytic on one common complex neighborhood before all rows, with uniform convergence of actual partial sums on compact source sets. Prove the required WEIGHTED ALL-row sequence bounds for the NOW ANALYTIC actual moment series, e.g. rough correction in ell(-1,r), r>1. Each gap-index-weighted row is already absolutely convergent and FULL Banach-source analytic on ONE common complex neighborhood before all rows, and actual partial sums converge uniformly on compact source sets. These completed facts must not be reproved or treated as assumptions. For all-row bounds, obtain actual diagonal gap numerator bounds and finite low-gap all-row bounds, then apply squared-gap ell1 and signed reciprocal convolution estimates. Prove the physical representation omega_n-(2*pi*n)^3=-12*sum_m m*Omega_nm^(2) for the GENUINE finite-gap H1 Hamiltonian frequencies, then pass via the verified strong finite-gap approximation to ALL H1. Glue the NOW ANALYTIC local rough sums by genuine H1 agreement/density, or prove cross-Miura/product-patch independence directly. Exact free H1 frequency, global H1 analyticity including collapse, actual original contour/sheet normalization, scalar moment analyticity and same-product-patch ambient independence remain PROVED. The analytic moment sums have NOT yet been identified as actual rough KdV frequencies. Prove ACTUAL original KdV evolution with convergence from EVERY smooth approximation and required weak-star trajectory continuity/analyticity for main1.1,1.3,5.9. Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms do not substitute for the Wiener result. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE.",
+  "build_isolation": "All writes private; canonical checkout/shared metadata READ ONLY. ALL1769 baseline non-audit registered sources byte-identical to33c65c5. All 7 new modules (19 theorems+5 definitions), 3 canonical-byte-identical shared modules, 4 unchanged private dependencies and EXACT 8846-declaration transitive standard-axiom audit freshly compiled privately. Actual weighted moment l1 rows and literal infinite sums FULL Banach-source analytic on ONE common complex neighborhood before ALL rows at EVERY original real mean-zero rough source; actual partial sums uniformly converge on EVERY compact source subset. Weighted all-row sequence bounds, cross-Miura-patch gluing and physical H1 frequency equality remain OPEN. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1777-module build.",
   "canonical_checkout_modified_by_this_task": false,
   "branch_or_worktree_created": true,
   "publication_status": "This milestone and private parents remain PRIVATE pending explicit new-payload export approval. Exact approved ecbdc5a already pushed. Automatic review rejected newer 4c22a5e as outside that specific approval; no push retry or workaround.",
@@ -4942,7 +4949,14 @@
     "NLS/KdV/HillMomentGapNumeratorTail.lean": "65732dbc4130815f44b1711d190392a834a54fe319a28bcda01b7fac4311d718",
     "NLS/KdV/HillPrimitiveMomentTailBound.lean": "5f928ebe7fcdc8171bbc18a7c01dccb214466f7f1ba6f71c34d8c95d562c3c28",
     "NLS/KdV/HillPrimitiveMomentAbsoluteSummability.lean": "5854a653f3a53e82f56f3d71e848cc071b06c282847dbe5b36985a108b590864",
-    "NLS/Articles/KdVPseudomeasures/OriginalHillMomentAbsoluteSummability.lean": "87bb67be0ae57e6cc4867b14a10989ea63809dcbadb440bd443e3e4299bbd29c"
+    "NLS/Articles/KdVPseudomeasures/OriginalHillMomentAbsoluteSummability.lean": "87bb67be0ae57e6cc4867b14a10989ea63809dcbadb440bd443e3e4299bbd29c",
+    "NLS/SequenceSpaces/PositiveSquaredGapMomentBound.lean": "dfc36445d9644c4bc30fcc64809cf6c7a7d4ca3e346c068aa43b300d1ca28bbc",
+    "NLS/SequenceSpaces/PositiveSummableAnalyticAssembly.lean": "948a2f91fc7269e440c66e8d13efd9f4652a09836bf5b828058e695704ee6905",
+    "NLS/KdV/HillPrimitiveMomentSeriesNeighborhood.lean": "5a06e73c1ad33e97f7fadd8ea1c7108e68d36cf6756caa9dde28b4781ad95c72",
+    "NLS/KdV/HillPrimitiveMomentSeriesLocalBound.lean": "9c77064bbf8e7533fac53da1e6c2b513298bdc508e82abb99dac8991f7610d1c",
+    "NLS/KdV/HillPrimitiveMomentSeriesAnalytic.lean": "52cc56a8e1e6fd585a658c1e392fc4210511fdbbec1476be7404bab1a406d6be",
+    "NLS/KdV/HillPrimitiveMomentSeriesCompactConvergence.lean": "11afaa6597ddd7ee34136b13b0e0114ed7d04a5bc4cbbfc1e6f396cadd3e4628",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillMomentSeriesAnalytic.lean": "983f968cfd46ada9af70f87b005ab72daec5210ccb13b7fa7f848a4d3be17a63"
   },
   "integration": "Keep article-specific modules on articles/kdv-pseudomeasures. Generic endpoint results should be shared once another consumer requires them. Shared foundations precede main integration.",
   "worktree": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -4950,11 +4964,11 @@
   "worktree_setup": "Managed create_worktree rejected sourceRoot as unregistered. Ordinary git worktree created from authorized pinned commit; no managed attachment attempted.",
   "goal_turn_classification": "progress",
   "authorship_counts": {
-    "previous_checked_declarations": 8812,
-    "newly_checked_declarations_this_continuation": 10,
-    "new_theorems": 10,
-    "new_definitions": 0,
-    "total_checked_declarations": 8822
+    "previous_checked_declarations": 8822,
+    "newly_checked_declarations_this_continuation": 24,
+    "new_theorems": 19,
+    "new_definitions": 5,
+    "total_checked_declarations": 8846
   },
   "shared_reuse": {
     "commit": "c794d144d9e58aa28e05833c4338bb050df607ef",
@@ -4983,7 +4997,7 @@
     "byte_identical": true,
     "rechecked_locally": true
   },
-  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-rough-moment-absolute-convergence.log",
+  "validation_log": ".lake/full-original-label-check-20261103/logs/validation-hill-rough-moment-series-analytic.log",
   "shared_Hill_reduction_reuse": [
     {
       "file": "NLS/KdV/HillComplement.lean",
@@ -5347,13 +5361,14 @@
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1742 baseline non-audit registered sources byte-identical to70ed2c3. All 8 new modules (28 theorems+9 definitions), 3 canonical-byte-identical shared modules, 4 unchanged private dependencies and EXACT 8766-declaration transitive standard-axiom audit freshly compiled privately. Actual normalized physical H1 KdV frequencies are REAL ANALYTIC on ENTIRE canonical signed H^(3/2), including EVERY collapsed mode, and in original physical H1 potentials. Generic real analytic Banach coordinate division and actual contractive Fourier real-form complexification PROVED. Freefrequency identification, rough extension and actual original KdV evolution remain OPEN. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1751-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1750 baseline non-audit registered sources byte-identical tob0e4d74. All 7 new modules (25 theorems+2 definitions), 1 canonical-byte-identical shared modules, 7 unchanged private dependencies and EXACT 8793-declaration transitive standard-axiom audit freshly compiled privately. ACTUAL original free KdV frequency omega_n(0)=(2*pi*n)^3 PROVED from physical energy second variation and SAME all-integer strong inverse free derivative. Globally real analytic H1 frequencies including collapse remain proved. Rough extension and actual original KdV evolution remain OPEN. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1758-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
     "All writes private; canonical checkout/shared metadata READ ONLY. ALL1757 baseline non-audit registered sources byte-identical toc2fb5a6. All 5 new modules (14 theorems+5 definitions), 3 canonical-byte-identical shared modules, 5 unchanged private dependencies and EXACT 8812-declaration transitive standard-axiom audit freshly compiled privately. Actual rough centered even moments, one common complex source neighborhood, ALL scalar Banach analyticity, exact original physical sheets/log periods/energy loops/zeroth periods and vanishing at ORIGINAL collapsed gaps/actions PROVED. Infinite moment series, cross-Miura-patch independence and physical H1 frequency equality remain OPEN. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1763-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
-    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1762 baseline non-audit registered sources byte-identical to6d5b743. All 7 new modules (10 theorems+0 definitions), 2 canonical-byte-identical shared modules, 5 unchanged private dependencies and EXACT 8822-declaration transitive standard-axiom audit freshly compiled privately. Actual centered even-moment cosine formula, squared-gap and signed reciprocal-index tail bounds, and absolute convergence of EVERY weighted second-moment row on ONE common complex source neighborhood PROVED at EVERY original real mean-zero rough source. Infinite row-sum analyticity, weighted all-row sequence bounds and physical H1 frequency equality remain OPEN. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1770-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1762 baseline non-audit registered sources byte-identical to6d5b743. All 7 new modules (10 theorems+0 definitions), 2 canonical-byte-identical shared modules, 5 unchanged private dependencies and EXACT 8822-declaration transitive standard-axiom audit freshly compiled privately. Actual centered even-moment cosine formula, squared-gap and signed reciprocal-index tail bounds, and absolute convergence of EVERY weighted second-moment row on ONE common complex source neighborhood PROVED at EVERY original real mean-zero rough source. Infinite row-sum analyticity, weighted all-row sequence bounds and physical H1 frequency equality remain OPEN. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1770-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist.",
+    "All writes private; canonical checkout/shared metadata READ ONLY. ALL1769 baseline non-audit registered sources byte-identical to33c65c5. All 7 new modules (19 theorems+5 definitions), 3 canonical-byte-identical shared modules, 4 unchanged private dependencies and EXACT 8846-declaration transitive standard-axiom audit freshly compiled privately. Actual weighted moment l1 rows and literal infinite sums FULL Banach-source analytic on ONE common complex neighborhood before ALL rows at EVERY original real mean-zero rough source; actual partial sums uniformly converge on EVERY compact source subset. Weighted all-row sequence bounds, cross-Miura-patch gluing and physical H1 frequency equality remain OPEN. Main1.4 remains PROVED and freshly recompiled; FOUR others remain UNPROVED. No new resource-limit settings, suppressions or extra axioms. Not a full fresh 1777-module build. Zero warnings or tactic suggestions; exact transitive axiom reports match the standard Lean allowlist."
   ],
-  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-absolute-convergence-map.json",
+  "current_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-series-analytic-map.json",
   "baseline_validated_snapshot": {
-    "commit": "6d5b74351e1fee4e4f4a6658de73a4204db6776b",
-    "modules": 1763,
-    "audited_declarations": 8812,
+    "commit": "33c65c5eb5a193c42c245f7196663ee413e81463",
+    "modules": 1770,
+    "audited_declarations": 8822,
     "directory": ".lake/full-original-label-check-20261103",
     "registered_source_hashes_verified_unchanged": true
   },
@@ -8373,7 +8388,7 @@
     "ALL_positive_even_moments_vanish_at_ORIGINAL_collapsed_gap_or_action_PROVED": true,
     "moment_factory_at_EVERY_original_real_mean_zero_rough_source_PROVED": true,
     "global_moment_independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
-    "absolute_convergent_analytic_infinite_weighted_second_moment_series_PROVED": false,
+    "absolute_convergent_analytic_infinite_weighted_second_moment_series_PROVED": true,
     "actual_H1_Hamiltonian_frequency_eq_weighted_moment_series_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
@@ -8383,7 +8398,8 @@
       "1.3",
       "5.1",
       "5.9"
-    ]
+    ],
+    "analytic_series_followup_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-series-analytic-map.json"
   },
   "actual_Hill_weighted_moment_absolute_convergence": {
     "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-absolute-convergence-map.json",
@@ -8395,9 +8411,35 @@
     "actual_weighted_second_moment_rows_ABSOLUTELY_CONVERGENT_PROVED": true,
     "ONE_common_open_complex_source_neighborhood_BEFORE_ALL_rows_PROVED": true,
     "factory_at_EVERY_ORIGINAL_real_mean_zero_rough_source_PROVED": true,
-    "infinite_row_sum_analyticity_PROVED": false,
+    "infinite_row_sum_analyticity_PROVED": true,
     "weighted_ALL_row_sequence_bound_PROVED": false,
     "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ],
+    "analytic_series_followup_coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-series-analytic-map.json"
+  },
+  "actual_Hill_weighted_moment_series_analytic": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-rough-moment-series-analytic-map.json",
+    "quantitative_finite_head_plus_full_l2_gap_square_absolute_row_bound_PROVED": true,
+    "ACTUAL_l1_row_with_exact_coefficients_norm_and_sum_PROVED": true,
+    "local_absolute_row_sum_bounds_at_EVERY_COMPLEX_source_PROVED": true,
+    "FULL_Banach_source_analyticity_of_ACTUAL_l1_moment_row_PROVED": true,
+    "FULL_Banach_source_analyticity_of_LITERAL_infinite_weighted_moment_series_PROVED": true,
+    "ONE_common_open_complex_neighborhood_BEFORE_ALL_rows_PROVED": true,
+    "exact_TWO_PI_normalization_between_l1_row_and_raw_series_PROVED": true,
+    "same_product_patch_primitive_ambient_independence_of_series_PROVED": true,
+    "ACTUAL_partial_sums_uniformly_converge_on_EVERY_COMPACT_source_subset_PROVED": true,
+    "factory_at_EVERY_ORIGINAL_real_mean_zero_rough_source_PROVED": true,
+    "weighted_ALL_row_sequence_bound_PROVED": false,
+    "physical_H1_Hamiltonian_frequency_eq_moment_sum_PROVED": false,
+    "independence_across_DIFFERENT_Miura_product_patches_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
