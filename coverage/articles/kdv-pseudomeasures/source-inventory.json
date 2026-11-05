@@ -2696,6 +2696,47 @@
         "NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_of_original_isospectral"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-physical-action-hamiltonian-map.json"
+    },
+    {
+      "label": "Physical H1 collapsed-mode stationarity and continuous filled transverse gradient quotient",
+      "status": "proved dependencies; full normalized frequencies and four remaining main theorems still unproved",
+      "declarations": [
+        "NLS.WeightedCoeff.realSineDirection",
+        "NLS.WeightedCoeff.realCosineDirection_apply",
+        "NLS.WeightedCoeff.realSineDirection_apply",
+        "NLS.WeightedCoeff.fourierRealModeCLM",
+        "NLS.WeightedCoeff.fourierRealModeCLM_apply",
+        "NLS.WeightedCoeff.fourierRealModeReplace",
+        "NLS.WeightedCoeff.fourierRealModeReplace_apply",
+        "NLS.WeightedCoeff.fourierRealModeReplace_products",
+        "NLS.FunctionalAnalysis.fderiv_apply_eq_zero_of_even_line",
+        "NLS.FunctionalAnalysis.analyticAt_fderiv_apply_const",
+        "NLS.FunctionalAnalysis.continuous_fderiv_of_analytic",
+        "NLS.FunctionalAnalysis.hyperplaneSlope",
+        "NLS.FunctionalAnalysis.continuous_hyperplaneSlope",
+        "NLS.FunctionalAnalysis.mul_hyperplaneSlope",
+        "NLS.Articles.KdVPseudomeasures.hillH1ModeCLM",
+        "NLS.Articles.KdVPseudomeasures.hillH1ModeCLM_apply",
+        "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_mode_replace",
+        "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_mode_real_reflection",
+        "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_mode_imag_reflection",
+        "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_even_real_mode",
+        "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_fderiv_real_mode_zero",
+        "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_even_imag_mode",
+        "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_fderiv_imag_mode_zero",
+        "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_fderiv_collapsed_mode_zero",
+        "NLS.Articles.KdVPseudomeasures.hillH1RealModeCoordinate",
+        "NLS.Articles.KdVPseudomeasures.hillH1RealModeCoordinate_apply",
+        "NLS.Articles.KdVPseudomeasures.hillH1RealModeCoordinate_direction",
+        "NLS.Articles.KdVPseudomeasures.hillH1RealModeDerivative",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1RealModeDerivative",
+        "NLS.Articles.KdVPseudomeasures.hillH1TransverseSlope",
+        "NLS.Articles.KdVPseudomeasures.continuous_hillH1TransverseSlope",
+        "NLS.Articles.KdVPseudomeasures.hillH1RealModeDerivative_eq_twice_coordinate_slope",
+        "NLS.Articles.KdVPseudomeasures.hillH1TransverseSlope_eq_quotient",
+        "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1TransverseSlope_of_real_coordinate_ne_zero"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-filled-transverse-gradient-map.json"
     }
   ],
   "reuse_map": [
@@ -2775,9 +2816,9 @@
     }
   ],
   "remaining_obligations": [
-    "Construct the ACTUAL normalized KdV frequencies from the NOW PROVED globally real-analytic action-dependent canonical physical H1 Hamiltonian on signed H^(3/2), including analytic treatment at collapsed modes. Prove their rough extension to the original Hminus domain and original KdV evolution with convergence from EVERY smooth approximation. Do not substitute arbitrary frequencies or indexed action flows.",
-    "Prove literal weighted ell-one forward/inverse spectral regularity and the full global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. All integer Hilbert scales/strong finite-gap approximants remain proved dependencies, not substitutes for ell-one estimates. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN.",
-    "Prove remaining main1.1,1.3,5.9 from the ACTUAL original KdV evolution and its required topologies/analyticity. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+    "Identify the full actual canonical KdV mode gradient with one normalized scalar frequency: the continuous real transverse quotient and collapsed-mode stationarity are NOW PROVED, but the imaginary gradient identity and action-fiber invariance of this filled scalar remain to be proved. Establish real analyticity of the filled frequency at x=0, particularly collapsed modes, and extend the genuine frequencies from signed H^(3/2) to the original rough domain. Preserve the original 2pi and native action normalizations.",
+    "Construct ACTUAL original Hminus KdV evolution with convergence from EVERY original smooth approximation and required weak-star trajectory continuity/analyticity, then prove main1.1,1.3,5.9. An arbitrary frequency flow or indexed action flow is not a proof of physical KdV.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms remain necessary dependencies, not substitutes. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -6298,6 +6339,27 @@
     "ENTIRE_H1_physical_KdV_energy_action_dependence_PROVED": true,
     "ENTIRE_signed_Hthreehalves_canonical_physical_KdV_Hamiltonian_action_dependence_PROVED": true,
     "actual_KdV_normalized_frequencies_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "actual_Hill_H1_filled_transverse_gradient": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-filled-transverse-gradient-map.json",
+    "literal_physical_mode_plane_and_action_preserving_replacement_PROVED": true,
+    "actual_physical_H1_mode_reflection_symmetries_PROVED": true,
+    "actual_physical_H1_all_collapsed_mode_directions_stationary_PROVED": true,
+    "real_Hadamard_division_entire_hyperplane_continuous_PROVED": true,
+    "actual_physical_H1_filled_transverse_half_quotient_CONTINUOUS_PROVED": true,
+    "actual_physical_H1_real_gradient_eq_twice_coordinate_times_slope_PROVED": true,
+    "actual_transverse_slope_analytic_where_real_coordinate_nonzero_PROVED": true,
+    "actual_full_normalized_KdV_mode_frequency_PROVED": false,
+    "filled_frequency_analytic_at_collapsed_modes_PROVED": false,
     "actual_KdV_rough_frequencies_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,

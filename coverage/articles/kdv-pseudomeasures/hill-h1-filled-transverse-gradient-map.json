@@ -1,0 +1,149 @@
+{
+  "source": "arXiv:1610.00278v1 actual canonical physical Hamiltonian dependencies for remaining KdV main1.1,1.3,5.9",
+  "status": "Continuous filled transverse gradient quotient and collapsed-mode stationarity for the actual physical canonical H1 KdV Hamiltonian.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-filled-transverse-gradient-map.json",
+    "literal_physical_mode_plane_and_action_preserving_replacement_PROVED": true,
+    "actual_physical_H1_mode_reflection_symmetries_PROVED": true,
+    "actual_physical_H1_all_collapsed_mode_directions_stationary_PROVED": true,
+    "real_Hadamard_division_entire_hyperplane_continuous_PROVED": true,
+    "actual_physical_H1_filled_transverse_half_quotient_CONTINUOUS_PROVED": true,
+    "actual_physical_H1_real_gradient_eq_twice_coordinate_times_slope_PROVED": true,
+    "actual_transverse_slope_analytic_where_real_coordinate_nonzero_PROVED": true,
+    "actual_full_normalized_KdV_mode_frequency_PROVED": false,
+    "filled_frequency_analytic_at_collapsed_modes_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "FourierRealModePlane constructs a bounded REAL-linear insertion of the literal complex coefficient c at positive n and conjugate c at negative n in EVERY symmetric weighted physical real zero-mode Banach space, including infinity. Every other coefficient is zero. Mode replacement retains every other coefficient exactly and preserves ALL native action products whenever the replacement coefficient has the same c*conjugate(c). No square-root-two or one-half action rescaling is used.",
+    "EvenLineDerivative proves a reusable real Banach-space derivative vanishes at the center of an even line. HyperplaneDivision proves real Hadamard division by a continuous linear coordinate using the integral of the ACTUAL transverse derivative. The filled quotient is continuous on the ENTIRE space when the derivative is continuous, and its product with the coordinate is EXACTLY the original scalar function, including the entire zero hyperplane. No division is performed on that hyperplane.",
+    "OriginalHillH1ModeSymmetry applies the NOW PROVED genuine physical H1 Hamiltonian action dependence to actual native mode replacements and both coordinate reflections. A zero REAL mode coordinate forces the real directional derivative to vanish; a zero IMAGINARY coordinate forces the imaginary directional derivative to vanish. At EVERY collapsed actual native mode, the physical energy differential annihilates EVERY complex mode direction, on the ENTIRE signed H^(3/2) domain.",
+    "OriginalHillH1TransverseSlope constructs the globally REAL-analytic actual real-mode energy derivative and a CONTINUOUS filled half-quotient S_n on ALL real signed H^(3/2). The exact identity D_x H = 2*x*S_n holds EVERYWHERE, including x=0 and closed gaps, using the literal positive coefficient x. Where x is nonzero, S_n equals D_x H/(2*x) and is real analytic. The factor2 is proved from the native action z_n*z_-n=x^2+y^2. This result alone does NOT identify the full normalized KdV frequency or prove analyticity of the filled quotient at x=0.",
+    "Main1.4 remains PROVED and freshly recompiled. Main1.1,1.3,5.1,5.9 remain UNPROVED. Full frequency/action-gradient identification, real analyticity of the filled scalar at collapsed modes, rough frequency extension, ACTUAL physical KdV evolution/every-smooth-approximation convergence and literal Wiener ell-one estimates remain OPEN. Appendix B B.1(i)-(iv) remains COMPLETE. Goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.WeightedCoeff.realSineDirection",
+    "NLS.WeightedCoeff.realCosineDirection_apply",
+    "NLS.WeightedCoeff.realSineDirection_apply",
+    "NLS.WeightedCoeff.fourierRealModeCLM",
+    "NLS.WeightedCoeff.fourierRealModeCLM_apply",
+    "NLS.WeightedCoeff.fourierRealModeReplace",
+    "NLS.WeightedCoeff.fourierRealModeReplace_apply",
+    "NLS.WeightedCoeff.fourierRealModeReplace_products",
+    "NLS.FunctionalAnalysis.fderiv_apply_eq_zero_of_even_line",
+    "NLS.FunctionalAnalysis.analyticAt_fderiv_apply_const",
+    "NLS.FunctionalAnalysis.continuous_fderiv_of_analytic",
+    "NLS.FunctionalAnalysis.hyperplaneSlope",
+    "NLS.FunctionalAnalysis.continuous_hyperplaneSlope",
+    "NLS.FunctionalAnalysis.mul_hyperplaneSlope",
+    "NLS.Articles.KdVPseudomeasures.hillH1ModeCLM",
+    "NLS.Articles.KdVPseudomeasures.hillH1ModeCLM_apply",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_mode_replace",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_mode_real_reflection",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_mode_imag_reflection",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_even_real_mode",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_fderiv_real_mode_zero",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_even_imag_mode",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_fderiv_imag_mode_zero",
+    "NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_fderiv_collapsed_mode_zero",
+    "NLS.Articles.KdVPseudomeasures.hillH1RealModeCoordinate",
+    "NLS.Articles.KdVPseudomeasures.hillH1RealModeCoordinate_apply",
+    "NLS.Articles.KdVPseudomeasures.hillH1RealModeCoordinate_direction",
+    "NLS.Articles.KdVPseudomeasures.hillH1RealModeDerivative",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1RealModeDerivative",
+    "NLS.Articles.KdVPseudomeasures.hillH1TransverseSlope",
+    "NLS.Articles.KdVPseudomeasures.continuous_hillH1TransverseSlope",
+    "NLS.Articles.KdVPseudomeasures.hillH1RealModeDerivative_eq_twice_coordinate_slope",
+    "NLS.Articles.KdVPseudomeasures.hillH1TransverseSlope_eq_quotient",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1TransverseSlope_of_real_coordinate_ne_zero"
+  ],
+  "files": [
+    "NLS/SequenceSpaces/FourierRealModePlane.lean",
+    "NLS/FunctionalAnalysis/EvenLineDerivative.lean",
+    "NLS/FunctionalAnalysis/HyperplaneDivision.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeSymmetry.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1TransverseSlope.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "75ebcc378b4e1c60ca0afb96d167a1491ba851e5",
+    "baseline_modules": 1732,
+    "baseline_non_audit_sources_verified_unchanged": 1731,
+    "new_modules_compiled": 5,
+    "reused_canonical_modules_freshly_compiled": [],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.FourierRealZeroCoordinates",
+        "source": "NLS/SequenceSpaces/FourierRealZeroCoordinates.lean",
+        "source_sha256": "164a95608f93683374aa31fa3688b8d134a5d1c0b52033892e455a0b6dd955f3",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.SequenceSpaces.FourierRealZeroDecomposition",
+        "source": "NLS/SequenceSpaces/FourierRealZeroDecomposition.lean",
+        "source_sha256": "f64cdc88b1c39b1f0cd36b0077ac483d01218d0b79d0f0fa8a446f2cfd8af0fa",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1Hamiltonian",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1Hamiltonian.lean",
+        "source_sha256": "69f87502c7b4a845d9bae75acea4e26b8bfe6a5e4fc10df78f8f3fa14f5ad69e",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionHamiltonian",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1ActionHamiltonian.lean",
+        "source_sha256": "cc90749a0a304f0889894f988109f722c88c2ad5e6831a0f8504b6099e10090a",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1737,
+    "audited_declarations": 8701,
+    "theorems": 7329,
+    "definitions": 1372,
+    "new_theorems": 26,
+    "new_definitions": 8,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-h1-filled-transverse-gradient.log",
+    "log_sha256": "7efb6dd456d0a119520e5694f7b85f9b448d16dcd9df46f1ccdc56ced4b92825"
+  },
+  "remaining_obligations": [
+    "Identify the full actual canonical KdV mode gradient with one normalized scalar frequency: the continuous real transverse quotient and collapsed-mode stationarity are NOW PROVED, but the imaginary gradient identity and action-fiber invariance of this filled scalar remain to be proved. Establish real analyticity of the filled frequency at x=0, particularly collapsed modes, and extend the genuine frequencies from signed H^(3/2) to the original rough domain. Preserve the original 2pi and native action normalizations.",
+    "Construct ACTUAL original Hminus KdV evolution with convergence from EVERY original smooth approximation and required weak-star trajectory continuity/analyticity, then prove main1.1,1.3,5.9. An arbitrary frequency flow or indexed action flow is not a proof of physical KdV.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms remain necessary dependencies, not substitutes. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}

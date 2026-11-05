@@ -1763,6 +1763,11 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillNativeActionFibers',
     'NLS.Articles.KdVPseudomeasures.OriginalHillIntegerActionTruncation',
     'NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionHamiltonian',
+    'NLS.SequenceSpaces.FourierRealModePlane',
+    'NLS.FunctionalAnalysis.EvenLineDerivative',
+    'NLS.FunctionalAnalysis.HyperplaneDivision',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeSymmetry',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1TransverseSlope',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

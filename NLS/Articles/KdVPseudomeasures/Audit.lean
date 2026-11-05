@@ -1729,6 +1729,11 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapEnergyIsospectral
 import NLS.Articles.KdVPseudomeasures.OriginalHillNativeActionFibers
 import NLS.Articles.KdVPseudomeasures.OriginalHillIntegerActionTruncation
 import NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionHamiltonian
+import NLS.SequenceSpaces.FourierRealModePlane
+import NLS.FunctionalAnalysis.EvenLineDerivative
+import NLS.FunctionalAnalysis.HyperplaneDivision
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeSymmetry
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1TransverseSlope
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10399,3 +10404,37 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillH1ActionHamiltonian
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_of_native_products
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_eq_of_products
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVHamiltonian_eq_of_original_isospectral
+#print axioms NLS.WeightedCoeff.realSineDirection
+#print axioms NLS.WeightedCoeff.realCosineDirection_apply
+#print axioms NLS.WeightedCoeff.realSineDirection_apply
+#print axioms NLS.WeightedCoeff.fourierRealModeCLM
+#print axioms NLS.WeightedCoeff.fourierRealModeCLM_apply
+#print axioms NLS.WeightedCoeff.fourierRealModeReplace
+#print axioms NLS.WeightedCoeff.fourierRealModeReplace_apply
+#print axioms NLS.WeightedCoeff.fourierRealModeReplace_products
+#print axioms NLS.FunctionalAnalysis.fderiv_apply_eq_zero_of_even_line
+#print axioms NLS.FunctionalAnalysis.analyticAt_fderiv_apply_const
+#print axioms NLS.FunctionalAnalysis.continuous_fderiv_of_analytic
+#print axioms NLS.FunctionalAnalysis.hyperplaneSlope
+#print axioms NLS.FunctionalAnalysis.continuous_hyperplaneSlope
+#print axioms NLS.FunctionalAnalysis.mul_hyperplaneSlope
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ModeCLM
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1ModeCLM_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_mode_replace
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_mode_real_reflection
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_mode_imag_reflection
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_even_real_mode
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_fderiv_real_mode_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_even_imag_mode
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_fderiv_imag_mode_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_fderiv_collapsed_mode_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1RealModeCoordinate
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1RealModeCoordinate_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1RealModeCoordinate_direction
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1RealModeDerivative
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1RealModeDerivative
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1TransverseSlope
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_hillH1TransverseSlope
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1RealModeDerivative_eq_twice_coordinate_slope
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1TransverseSlope_eq_quotient
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1TransverseSlope_of_real_coordinate_ne_zero
