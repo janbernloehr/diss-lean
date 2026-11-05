@@ -2702,12 +2702,61 @@ L(h)_n = (h_0-(h_n+h_-n)/2)/(1+n).
 The actual global analytic normalized Dirichlet energy map has this
 **entire bounded operator** as its derivative at zero. No finite-mode
 restriction or unproved passage from modewise derivatives is used.
-The corresponding logarithmic norming derivative, combined mean-zero
-inverse, full Cartesian KdV coordinates and action identities remain
-required for Theorem 1.1. The inherited import closure contains 2294
+The following milestone proves the corresponding logarithmic norming
+derivative and combined mean-zero local inverse. Global Cartesian KdV
+coordinates and action identities remain required for Theorem 1.1. The inherited import closure contains 2294
 byte-identical cached sources outside the 516-module baseline; these
 were not rebuilt. Its hashes and audit scope are recorded in
 `free-dirichlet-linearization-library-reuse.json`.
+
+## Actual logarithmic norming derivative and local Dirichlet inverse
+
+`HillHminusOneNormingPerturbation.lean` proves an exact Green identity
+for the actual terminal quasimomentum at complex Dirichlet roots.
+The free cosine test, literal sine-cosine Fourier integral and H^-1
+density determine its derivative without an open-gap assumption.
+Real-form uniqueness of analytic germs identifies the logarithm of
+this momentum with the previously constructed actual norming extension.
+`HillHminusOneFreeLogNormingDifferential.lean` proves, at every positive
+index and for every complex H^-1 direction,
+
+```text
+dkappa_n(0)[h] = (h_-n-h_n)/(4*i*n*pi).
+```
+
+`FreeLogNormingLinearization.lean` identifies the entire bounded
+H^-1-to-ell2 derivative of the actual global norming map. Together with
+the normalized energy derivative, it gives the continuous linear
+equivalence `freeDirichletFourierEquiv` on the closed mean-zero H^-1
+subspace. Its bounded inverse reconstructs the literal Fourier modes:
+
+```text
+h_n  = -(1+n)*E_n-2*i*pi*n*K_n
+h_-n = -(1+n)*E_n+2*i*pi*n*K_n
+h_0  = 0.
+```
+
+Both inverse identities hold for the full Hilbert spaces. The reusable
+`AnalyticEquivDerivativeInverse.lean` transports the analytic inverse
+function theorem between different Banach spaces and supplies open
+source and image sets with exact inverse identities.
+
+`DirichletLocalInverse.lean` constructs `DirichletHilbertCoordinates`
+from the actual global energy and norming extensions on one common
+complex open neighborhood of the entire real H^-1 space. All canonical
+real recovery formulas, actual complex Dirichlet root identities, zero
+normalizations and free derivatives are retained. On the mean-zero
+subspace the paired map has a two-sided complex analytic inverse on
+open neighborhoods of zero. The endpoint is
+`exists_actual_Dirichlet_local_analytic_inverse`.
+
+This proves a local Dirichlet spectral inverse. The global Cartesian
+KdV coordinate realization near all real normalized Hilbert pairs,
+symplecticity, quadratic Arnold action identities and action-fiber
+discriminant uniqueness remain required for the positive-ell2 extension
+in Theorem 1.1. The inherited import closure contains 2297 byte-identical
+cached sources outside the 522-module baseline; these were not rebuilt.
+See `dirichlet-local-inverse-library-reuse.json` for hashes and audit scope.
 
 ## Remaining essential KdV work
 
@@ -2774,18 +2823,18 @@ branch `articles/kdv-convexity`, based at
 because the canonical sourceRoot is not a registered folder in this chat;
 the ordinary-worktree fallback was explicitly authorized.
 
-The validated baseline at `3843c5f` contains 516 source modules, whose
-source hashes remain unchanged. Six authored modules pass Lean
+The validated baseline at `bb82c5f` contains 522 source modules, whose
+source hashes remain unchanged. Twelve authored modules pass Lean
 4.33.1/mathlib v4.33.1 with `warningAsError=true`; the complete
-reproduction script lists 522 NLS modules and the preceding private
+reproduction script lists 534 NLS modules and the preceding private
 pinned mathlib compilation. The positive-index example, cumulative
-transitive axiom audit and 1273 coverage-declaration checks pass. This
+transitive axiom audit and 1330 coverage-declaration checks pass. This
 is incremental validation, not a full repository rebuild.
 
 `CheckAxioms.lean` imports all article and new shared KdV modules and audits
 their namespaces, including generated declarations, plus explicit shared
-helpers and all declarations originating in 246 additional shared modules:
-4866 declarations in total, transitively. Only `propext`,
+helpers and all declarations originating in 272 additional shared modules:
+5366 declarations in total, transitively. Only `propext`,
 `Classical.choice` and `Quot.sound` occur; no sorry or project axiom is allowed.
 The three public declarations of the shared bounded physical-class
 inclusion and both new propagation injectivity theorems are explicitly

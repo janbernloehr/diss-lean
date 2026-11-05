@@ -1,3 +1,4 @@
+import NLS.Articles.KdVConvexity.DirichletLocalInverse
 import NLS.Articles.KdVConvexity.FreeDirichletLinearization
 import NLS.Articles.KdVConvexity.DirichletCoordinateDifferential
 import NLS.Articles.KdVConvexity.GlobalLogNormingCoordinates
@@ -90,6 +91,12 @@ run_cmd do
     ``NLS.ComplexAnalysis.circleIntegral_eq_of_analytic_cut_nestedCircles]
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let additionalModules := #[
+    `NLS.MKdV.L2QuasiHillFreeCosine,
+    `NLS.Fourier.SineCosinePairing,
+    `NLS.SequenceSpaces.PeriodOneHminusOneRealGerms,
+    `NLS.SequenceSpaces.PeriodOneHminusOneMeanZero,
+    `NLS.ComplexAnalysis.AnalyticEquivDerivativeInverse,
+    `NLS.SequenceSpaces.Insertion,
     `NLS.MKdV.L2QuasiHillFreeSolution,
     `NLS.Fourier.SineSquarePairing,
     `NLS.Fourier.UnitIntervalL2Equiv,
