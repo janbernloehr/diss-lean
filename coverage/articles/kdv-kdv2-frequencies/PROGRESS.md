@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest closed-gap action-ratio identification
+## Latest common all-index rough action amplitudes
+
+ONE complex Hminus-one ball now supports analytic extensions of the ORIGINAL physical action amplitudes before ALL positive indices, with a common bound for sqrt(1+n)*norm(B_n). The finite head and actual common contour-action tail are combined. At EVERY original real L2 source in that whole rough ball the amplitudes recover the exact original physical Abelian prefactors, including closed gaps and nonzero means; no small physical L2 norm is required. Their free values are exactly 1/sqrt(2*pi*n).
+
+The weighted positive amplitudes also form a genuine native ell-infinity analytic map M. Its positive component is sqrt(1+n)*B_n, its nonpositive components vanish, and its free symbol is exact. This supplies Banach analyticity rather than only separately analytic scalar components. See `ROUGH_UNIFORM_ACTION_AMPLITUDES.md`.
+
+Prior strict evidence retained for all 1450 unchanged selected baseline sources; all 54 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1504 selected modules. The new selections are 45 incoming sources, four own proof modules and five byte-identical canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1543 frozen source/checker/provenance/Mathlib-source hashes, 35 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 54 selections. No full 1504-module rebuild is claimed.
+
+Fresh audit: 12965 selected and 35032 imported NLS declarations; permitted axioms only. Full rough regular phase/terminal factor and Abelian-map assembly, canonicality, global inverse, the full regularity scale and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier closed-gap action-ratio identification
 
 For every fixed positive index, the actual physical gap opens arbitrarily near the zero potential. The exact free Fourier derivative rules out an identically collapsed gap germ. The actual squared-gap analytic germ in native complex L2 is consequently nontrivial, although its value at zero vanishes.
 

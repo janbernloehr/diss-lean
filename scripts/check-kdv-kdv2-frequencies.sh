@@ -1459,6 +1459,60 @@ modules=(
   NLS/KdV/HillPhysicalGapGermNontrivial
   NLS/KdV/HillPhysicalRealGermIdentity
   NLS/KdV/HillHminusActionRatioGermIdentification
+  NLS/KdV/HillHminusOriginalSourceAdapter
+  NLS/KdV/HillHminusOriginalSheets
+  NLS/KdV/ClassicalHillTraceFamily
+  NLS/KdV/HillContinuousPrimitiveComparison
+  NLS/Fourier/ContinuousSynthesisReality
+  NLS/SequenceSpaces/PeriodOneRealContinuousApprox
+  NLS/ComplexAnalysis/StrictTraceSheet
+  NLS/KdV/HillHminusOnePrimitiveSheets
+  NLS/ComplexAnalysis/TwoRootCircleMoments
+  NLS/KdV/HillHminusOneGapPolynomial
+  NLS/ComplexAnalysis/LocalTwoRootQuotient
+  NLS/ComplexAnalysis/QuadraticModelDeflation
+  NLS/KdV/HillHminusOneNormalizedGapSquares
+  NLS/ComplexAnalysis/NormalizedAnalyticSquareRoot
+  NLS/KdV/HillHminusOneNormalizedGapRoots
+  NLS/ComplexAnalysis/JointCircleCauchyTransform
+  NLS/KdV/HillHminusOneJointGapQuotient
+  NLS/KdV/HillHminusOneJointGapRoots
+  NLS/ComplexAnalysis/PrincipalSquareRootSheet
+  NLS/KdV/HillHminusOnePrimitiveSquareSheets
+  NLS/ComplexAnalysis/RealGapSquareRoot
+  NLS/KdV/HillHminusOneRealGapRoot
+  NLS/KdV/HillHminusOneGapBoundary
+  NLS/ComplexAnalysis/SemicircleMean
+  NLS/ComplexAnalysis/RealGapIntegralNormalization
+  NLS/KdV/HillHminusOneBoundaryAction
+  NLS/KdV/HillHminusOriginalActions
+  NLS/KdV/HillHminusOriginalGapPairs
+  NLS/ComplexAnalysis/TwoEndpointRoot
+  NLS/KdV/HillHminusOneOffGapPrimitive
+  NLS/KdV/HillHminusOneOffGapSheets
+  NLS/ComplexAnalysis/CoshTraceDerivative
+  NLS/KdV/HillHminusOneOffGapDerivative
+  NLS/ComplexAnalysis/PiecewisePolynomialIntegrationByParts
+  NLS/KdV/HillHminusOneHighContourAction
+  NLS/ZakharovShabat/SourceStandardRootJoukowski
+  NLS/ZakharovShabat/SourceStandardRootEllipseGeometry
+  NLS/ZakharovShabat/SourceStandardRootEllipsePath
+  NLS/ZakharovShabat/SourceStandardRootEllipsePeriod
+  NLS/ComplexAnalysis/EndpointRootLoopNormalization
+  NLS/ComplexAnalysis/EndpointPrimitivePeriod
+  NLS/ComplexAnalysis/PiecewiseOpenDiscPeriod
+  NLS/ComplexAnalysis/EndpointPrimitiveCircuitPeriod
+  NLS/KdV/HillHminusOneContourActionPeriod
+  NLS/KdV/HillHminusOneComplexContourActions
+  NLS/ComplexAnalysis/LocalEvenSquareFamily
+  NLS/ComplexAnalysis/ParametricSemicircleMean
+  NLS/KdV/HillHminusOneActionRatio
+  NLS/KdV/HillHminusOneUniformActionRatios
+  NLS/KdV/HillHminusLocalActions
+  NLS/KdV/HillHminusCommonPhysicalActions
+  NLS/KdV/HillHminusUniformPhysicalActionRatios
+  NLS/KdV/HillHminusUniformActionAmplitude
+  NLS/Articles/KdVKdV2Frequencies/RoughUniformActionAmplitudes
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

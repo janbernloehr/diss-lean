@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest closed-gap action-ratio identification
+## Latest common all-index rough action amplitudes
+
+ONE complex Hminus-one ball now supports analytic extensions of the ORIGINAL physical action amplitudes before ALL positive indices, with a common bound for sqrt(1+n)*norm(B_n). The finite head and actual common contour-action tail are combined. At EVERY original real L2 source in that whole rough ball the amplitudes recover the exact original physical Abelian prefactors, including closed gaps and nonzero means; no small physical L2 norm is required. Their free values are exactly 1/sqrt(2*pi*n).
+
+The weighted positive amplitudes also form a genuine native ell-infinity analytic map M. Its positive component is sqrt(1+n)*B_n, its nonpositive components vanish, and its free symbol is exact. This supplies Banach analyticity rather than only separately analytic scalar components. See `ROUGH_UNIFORM_ACTION_AMPLITUDES.md`.
+
+Prior strict evidence retained for all 1450 unchanged selected baseline sources; all 54 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1504 selected modules. The new selections are 45 incoming sources, four own proof modules and five byte-identical canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1543 frozen source/checker/provenance/Mathlib-source hashes, 35 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 54 selections. No full 1504-module rebuild is claimed.
+
+Fresh audit: 12965 selected and 35032 imported NLS declarations; permitted axioms only. Full rough regular phase/terminal factor and Abelian-map assembly, canonicality, global inverse, the full regularity scale and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier closed-gap action-ratio identification
 
 For every fixed positive index, the actual physical gap opens arbitrarily near the zero potential. The exact free Fourier derivative rules out an identically collapsed gap germ. The actual squared-gap analytic germ in native complex L2 is consequently nontrivial, although its value at zero vanishes.
 
@@ -546,7 +556,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1450 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1504 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1615,7 +1625,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1450 selected modules (including generated and private declarations)
+the 1504 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -3289,4 +3299,64 @@ PASS NLS/KdV/HillPhysicalGapGermNontrivial
 PASS NLS/KdV/HillPhysicalRealGermIdentity
 PASS NLS/KdV/HillHminusActionRatioGermIdentification
 Axiom audit passed: 12583 candidate declarations; 34650 declarations total.
+```
+
+Latest common rough amplitude strict checks and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillHminusOriginalSourceAdapter
+PASS NLS/KdV/HillHminusOriginalSheets
+PASS NLS/KdV/ClassicalHillTraceFamily
+PASS NLS/KdV/HillContinuousPrimitiveComparison
+PASS NLS/Fourier/ContinuousSynthesisReality
+PASS NLS/SequenceSpaces/PeriodOneRealContinuousApprox
+PASS NLS/ComplexAnalysis/StrictTraceSheet
+PASS NLS/KdV/HillHminusOnePrimitiveSheets
+PASS NLS/ComplexAnalysis/TwoRootCircleMoments
+PASS NLS/KdV/HillHminusOneGapPolynomial
+PASS NLS/ComplexAnalysis/LocalTwoRootQuotient
+PASS NLS/ComplexAnalysis/QuadraticModelDeflation
+PASS NLS/KdV/HillHminusOneNormalizedGapSquares
+PASS NLS/ComplexAnalysis/NormalizedAnalyticSquareRoot
+PASS NLS/KdV/HillHminusOneNormalizedGapRoots
+PASS NLS/ComplexAnalysis/JointCircleCauchyTransform
+PASS NLS/KdV/HillHminusOneJointGapQuotient
+PASS NLS/KdV/HillHminusOneJointGapRoots
+PASS NLS/ComplexAnalysis/PrincipalSquareRootSheet
+PASS NLS/KdV/HillHminusOnePrimitiveSquareSheets
+PASS NLS/ComplexAnalysis/RealGapSquareRoot
+PASS NLS/KdV/HillHminusOneRealGapRoot
+PASS NLS/KdV/HillHminusOneGapBoundary
+PASS NLS/ComplexAnalysis/SemicircleMean
+PASS NLS/ComplexAnalysis/RealGapIntegralNormalization
+PASS NLS/KdV/HillHminusOneBoundaryAction
+PASS NLS/KdV/HillHminusOriginalActions
+PASS NLS/KdV/HillHminusOriginalGapPairs
+PASS NLS/ComplexAnalysis/TwoEndpointRoot
+PASS NLS/KdV/HillHminusOneOffGapPrimitive
+PASS NLS/KdV/HillHminusOneOffGapSheets
+PASS NLS/ComplexAnalysis/CoshTraceDerivative
+PASS NLS/KdV/HillHminusOneOffGapDerivative
+PASS NLS/ComplexAnalysis/PiecewisePolynomialIntegrationByParts
+PASS NLS/KdV/HillHminusOneHighContourAction
+PASS NLS/ZakharovShabat/SourceStandardRootJoukowski
+PASS NLS/ZakharovShabat/SourceStandardRootEllipseGeometry
+PASS NLS/ZakharovShabat/SourceStandardRootEllipsePath
+PASS NLS/ZakharovShabat/SourceStandardRootEllipsePeriod
+PASS NLS/ComplexAnalysis/EndpointRootLoopNormalization
+PASS NLS/ComplexAnalysis/EndpointPrimitivePeriod
+PASS NLS/ComplexAnalysis/PiecewiseOpenDiscPeriod
+PASS NLS/ComplexAnalysis/EndpointPrimitiveCircuitPeriod
+PASS NLS/KdV/HillHminusOneContourActionPeriod
+PASS NLS/KdV/HillHminusOneComplexContourActions
+PASS NLS/ComplexAnalysis/LocalEvenSquareFamily
+PASS NLS/ComplexAnalysis/ParametricSemicircleMean
+PASS NLS/KdV/HillHminusOneActionRatio
+PASS NLS/KdV/HillHminusOneUniformActionRatios
+PASS NLS/KdV/HillHminusLocalActions
+PASS NLS/KdV/HillHminusCommonPhysicalActions
+PASS NLS/KdV/HillHminusUniformPhysicalActionRatios
+PASS NLS/KdV/HillHminusUniformActionAmplitude
+PASS NLS/Articles/KdVKdV2Frequencies/RoughUniformActionAmplitudes
+Axiom audit passed: 12965 candidate declarations; 35032 declarations total.
 ```

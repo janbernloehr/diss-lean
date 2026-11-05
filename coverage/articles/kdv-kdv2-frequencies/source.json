@@ -152,6 +152,16 @@
           "source_clause": "Closed-gap identification needed to match a constructed rough analytic action-ratio family with the original physical action normalization",
           "lean_declaration": "NLS.KdV.hillHminus_action_ratio_eq_on_ball_of_physical_action_germ",
           "qualification": "Equality of rough analytic candidates after multiplication by the actual physical squared HALF gap determines their native complex L2 and physical real germs, including the collapsed free base. Actual physical action factorization on an original L2 germ therefore identifies a rough analytic candidate with the original physical action ratio at every physical source in its whole rough ball. The candidate and its actual action germ identity remain explicit hypotheses; no infinite-tail family is constructed in this milestone."
+        },
+        {
+          "source_clause": "Common all-index complex Hminus-one analytic physical action amplitudes with uniform half-shift weight and exact free normalization",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_all_physical_action_amplitudes",
+          "qualification": "Unconditional article packets: ONE complex Hminus-one ball and weighted bound before ALL positive indices for actual analytic physical amplitude extensions, including the finite head and infinite tail, with exact free normalization and original physical recovery throughout the rough ball. The weighted positive amplitudes form a genuine Banach-analytic native ell-infinity map, zero on nonpositive indices, with the exact free symbol and exact original physical normalization. No full rough Abelian map or intrinsic rough action-integral identity is asserted."
+        },
+        {
+          "source_clause": "Native ell-infinity analytic weighted positive action-amplitude symbol on one complex Hminus-one ball",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_action_amplitude_symbol",
+          "qualification": "Unconditional article packets: ONE complex Hminus-one ball and weighted bound before ALL positive indices for actual analytic physical amplitude extensions, including the finite head and infinite tail, with exact free normalization and original physical recovery throughout the rough ball. The weighted positive amplitudes form a genuine Banach-analytic native ell-infinity map, zero on nonpositive indices, with the exact free symbol and exact original physical normalization. No full rough Abelian map or intrinsic rough action-integral identity is asserted."
         }
       ]
     },
@@ -20355,12 +20365,660 @@
       "scope": "Equality of rough analytic candidates after multiplication by the actual physical squared HALF gap determines their native complex L2 and physical real germs, including the collapsed free base. Actual physical action factorization on an original L2 germ therefore identifies a rough analytic candidate with the original physical action ratio at every physical source in its whole rough ball. The candidate and its actual action germ identity remain explicit hypotheses; no infinite-tail family is constructed in this milestone.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "bfd307a124fcae35419ee48112cc0f03039f57d220ce3424322349c376efe727"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOriginalSourceAdapter.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Literal original even Fourier sampling as a continuous linear Hminus-one source map. Exact raw coefficients q_(2k), definitional equality with the retained actual physical Hminus embedding and all-energy equality of the rough and original physical discriminants on the entire complex even L2 source domain.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6fa5dc4180fca07958a0e995f7cb5591a369cab25d8933081f716583d2f8e619"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOriginalSheets.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3885b3e8f4c3309c5470c888e2f2a513f2a1a4f30f51b2f7f33b1be6714168b2"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillTraceFamily.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0c8df5316fb50681b12afa15506dcb42d50961bc1844bc62f0e3ceca171a3bd0"
+    },
+    {
+      "path": "NLS/KdV/HillContinuousPrimitiveComparison.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b14fad1335f8d506491fdee2977fc333d8e27e300b58e8335d5940a4c18b5acd"
+    },
+    {
+      "path": "NLS/Fourier/ContinuousSynthesisReality.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cef8a4e80f93dd2615f4194e975cc0d5e9887b886132a1387fe7236735115eda"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneRealContinuousApprox.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a9ebc08eb169e2eda9a65334166b3a39250f9d8c31e46e6f4a7b8f1a9c2d3229"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/StrictTraceSheet.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cc5b370ba70ac8fea606a75af2ecba89e550f8aead54a5ac3bf7931c0b7ed5b8"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePrimitiveSheets.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8e2f60ead3c9cacd4b54306f02136e7d51538c3ba87faa203b957aba4477c1ec"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TwoRootCircleMoments.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "34a70293830df4e3a6db229704a7851964ed95d172585681e08b0c82f7bd3fbd"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapPolynomial.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5dd5a1f6f6226832b333426b01519a4205936ba7569ff9c8ed29901937e512ce"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LocalTwoRootQuotient.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "15dadcbf641651ced16d89b003b118d10b2f29713cc0a301b2180268b54a6fcf"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticModelDeflation.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0fc6953736aab205e2e897ab83b0e64996d714703c3b964dd4cbced298a33286"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneNormalizedGapSquares.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "49f0db9fb4d07fcd92f6b53aab791dfc6f547459f4d396f41362440b6174dfed"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NormalizedAnalyticSquareRoot.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8297f7a46046bab902dc9a1b98eb4b81a95cf0465e94c18a2155642702f8c37c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneNormalizedGapRoots.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "62f4698a0fefb5ff14a2486f89d56a7f6f7c00da7e81f92cfe401e7ed692b895"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/JointCircleCauchyTransform.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d47b579ac3847ca5f4d189995b9836f6dc3ff5b06c789ee2798648cc2d55b80e"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneJointGapQuotient.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e5e9a3c8d9439016af15a8dad3494a586e239c4f5033aa1a6f5e83e4b86fe350"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneJointGapRoots.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fab173ea4e681d55924de8922a37218d88d363f9ebcc06eeef8e9fd7db0cdb02"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/PrincipalSquareRootSheet.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d39fe39d58552c61d290e6932581e5e144f202dc2ba98988df1030d5ff614cae"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePrimitiveSquareSheets.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9423a724f059ca3d988f8a85c8189da4b61bea71d80b59d5fc616c97f0ca1046"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealGapSquareRoot.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5c52ed6e885b311a800c2793160223837faf3ea0297559717bdfbb3ee42c02df"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealGapRoot.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2bc9b14e9d3fce3a30ff324ea4248d3c26c3de7b9fd5df577816dc805391a89e"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapBoundary.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0d019380d2400fc9643c38ca959f2c17bb16acbf6d4099ce5978d6a50b8fc5db"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SemicircleMean.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d0a074b66f1ab510ff2087f4ee615ac123b235da9110365bcf4393693724c82b"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealGapIntegralNormalization.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7494e14e9c721ac459b2bdba10725b4300d6ace029043a651911eacfaa457295"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneBoundaryAction.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b03418632cdc6ec08088368d25d2bb442f01dce207fb5ae8a470ed11a2f9194f"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOriginalActions.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "27449b361283d1417180048b43488919d152c9abba66f2f9e4ad117b54ed7261"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOriginalGapPairs.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b9c149c3c4ad1ac254104235bd7c21fa55090df9b4814b86d05454ceca633e3a"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/TwoEndpointRoot.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "38bbfe6e0829a2d509cf55ecad8855897dc4e8b7aad171b64f88eafaf32332e7"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneOffGapPrimitive.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a499065fdcbbf5ecfdf4adf62afad842d3cf83952826884e5c193adbfe9c770c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneOffGapSheets.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fcf24f2ff72aff60a19a4060e49b48c48042e2ff4e6cf5a24c2b3b50ca0ae88f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/CoshTraceDerivative.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c37d1864d481e156b25b4122b2f7a0b87468eed85274e4c39ad39c6373b04da6"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneOffGapDerivative.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1b24b27f9f17f66117e008daa4787d556a1362366d44c515bb85ecce35bbabf6"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/PiecewisePolynomialIntegrationByParts.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared helper newly reached by the actual rough contour-action construction, selected for strict private compilation and explicit combined axiom auditing. Source bytes agree exactly with both canonical main and the pinned shared source commit; see SHARED_ROUGH_ACTION_TAIL_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "dc52fac6c7cded7253a1fad813e5b0d4931448893fdbc72bb9a0158100814aa9"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneHighContourAction.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5d69247480e60b137c64c310d500290ed66cc461ca5dd2fbfd7345739ab52257"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceStandardRootJoukowski.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared helper newly reached by the actual rough contour-action construction, selected for strict private compilation and explicit combined axiom auditing. Source bytes agree exactly with both canonical main and the pinned shared source commit; see SHARED_ROUGH_ACTION_TAIL_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3309b2beb2e79478292d15178df809457968ec799b4d901f2d6b3b8b06c98ad9"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceStandardRootEllipseGeometry.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared helper newly reached by the actual rough contour-action construction, selected for strict private compilation and explicit combined axiom auditing. Source bytes agree exactly with both canonical main and the pinned shared source commit; see SHARED_ROUGH_ACTION_TAIL_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "528e1142c65ecee8b1e513dbc9ef5f2e73133ca2702472058506124ef7ed9a8a"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceStandardRootEllipsePath.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared helper newly reached by the actual rough contour-action construction, selected for strict private compilation and explicit combined axiom auditing. Source bytes agree exactly with both canonical main and the pinned shared source commit; see SHARED_ROUGH_ACTION_TAIL_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "51eeeee0a99ff4ef32bda04d379731ce29e56626b891608e254d6ffc58d2376c"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceStandardRootEllipsePeriod.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared helper newly reached by the actual rough contour-action construction, selected for strict private compilation and explicit combined axiom auditing. Source bytes agree exactly with both canonical main and the pinned shared source commit; see SHARED_ROUGH_ACTION_TAIL_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "007e4e27b52263b732c05c7885b731323d0feb5253e8fef88ca9f9c47e5987f2"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EndpointRootLoopNormalization.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e8bc6e2588f11cc7ffcf3d44cf89d4d2cd725fa74fe0cc17c29e24b3683f7af4"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EndpointPrimitivePeriod.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e5b9ec0add1f6f4c724b99108fef12f4452059c08f7053c6ec7c86635aaf5f56"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/PiecewiseOpenDiscPeriod.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bd48deea9497b35eb7c65a705fe7a01ecf039a41c2ad582422c6939a140353df"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/EndpointPrimitiveCircuitPeriod.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "49dfa2dce8f37f48b5b83afc762918e6cef623ef54238103fe5f2099eca120e8"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneContourActionPeriod.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "de53d8e1b01acaf51d791f29272ca3ca509084b502dacda1f14eae579af662fb"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneComplexContourActions.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "357c8398e3083674fafb53c8e8de7e9c80a9797cdf88c328688368ffda3ad23a"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/LocalEvenSquareFamily.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "401983e19ef074231869cc664aa12c24fcdd7772f47074ecb90984306b49b178"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ParametricSemicircleMean.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a1bd705bbe37e7318f0c962cca85e4d80b68e577296944171dbf32d7343e1e0c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneActionRatio.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a4314b70f2719456f6363aaa5e415c30744e690dcf8b0d2ecdd3333595d7e14d"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneUniformActionRatios.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e9dadbd133e4ecefabdfbdfa2e62c7d9fb922d87d20d27f652560eab5744071c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusLocalActions.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2241f7b99828533ff7d900cf0581a0a740f60fee1127fd90031d79dcd60c6e9a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusCommonPhysicalActions.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Verified shared actual rough contour-action, boundary-sheet, normalization or analytic action-ratio dependency supporting the common all-index rough amplitude packet. Import or namespace/API adaptation is recorded with exact shared/local hashes in SHARED_ROUGH_ACTION_TAIL_IMPORT.json; all retained local dependencies remain unchanged.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d8641727d41d709a2dbb8132630ac4c6d1c9b3bb4c20a9d366e99c3a2791d15c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusUniformPhysicalActionRatios.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "One common complex Hminus-one ball before ALL sufficiently high positive indices supports analytic action-to-HALF-gap-square ratios with positive real part and norm<=2/n. Every original real L2 source in that WHOLE rough ball recovers the exact original physical ratio, including collapsed gaps and nonzero means, without a small physical L2 norm assumption. Constructed from actual common contour actions and original labelled half-gap data, using proved closed-gap analytic cancellation.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b39cf5b0897cdf9c9975fb03c453305bddeec5b80921d25d532e3ddc9bad4b16"
+    },
+    {
+      "path": "NLS/KdV/HillHminusUniformActionAmplitude.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "One common complex rough ball before ALL sufficiently high positive indices supports analytic principal Abelian amplitudes with sqrt(1+n)*norm<=2. Exact original physical amplitude recovery holds for every original real L2 source in the entire ball, including closed gaps/nonzero means. The exact squared amplitude norm is the action-ratio norm.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "40d6c2fa47b7a5ba79ba173ce1ac5b961f3436bb75222c801e235c8db4998343"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/RoughUniformActionAmplitudes.lean",
+      "source_labels": [
+        "Actual common all-index rough physical action amplitudes supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unconditional article packets: ONE complex Hminus-one ball and weighted bound before ALL positive indices for actual analytic physical amplitude extensions, including the finite head and infinite tail, with exact free normalization and original physical recovery throughout the rough ball. The weighted positive amplitudes form a genuine Banach-analytic native ell-infinity map, zero on nonpositive indices, with the exact free symbol and exact original physical normalization. No full rough Abelian map or intrinsic rough action-integral identity is asserted.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7ecb5d934ec731087a317861c83dfa87d88d653421e26fd487ab42540cfa4497"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "Native L2 Abelian map, local real inverse and simultaneous action fields are proved. Rough Dirichlet/periodic labels globally match original physical L2 data; native rough midpoint/divisor/log-norming and normalized ell1 energy gap squares are proved. NOW every fixed positive index has an actual rough action-to-half-gap-square ratio and principal amplitude germ with exact free normalization and physical matching on its ENTIRE rough ball; any prescribed finite gap set has a common ball and weighted amplitude bound. NEXT combine this finite head with a proved common high-tail amplitude family, construct the full rough regular phase and assemble the negative-half target Abelian map. Full coordinate-coordinate canonicality, arbitrary-base/global inverse, full s>=-1 regularity and Hamiltonian action-frequency/PDE main theorems remain. The closed-gap matching step for the next infinite-tail family is now proved: each selected physical gap opens arbitrarily near zero, the actual gap-square analytic germ is nontrivial, and physical action factorization identifies a rough analytic ratio on its whole ball without division at the collapsed base. The high-tail candidate and its actual action germ factorization must still be supplied.",
+    "Native L2 Abelian map, local real inverse and simultaneous action fields are proved. Rough Dirichlet/periodic labels globally match original physical L2 data; native rough midpoint/divisor/log-norming and normalized ell1 energy gap squares are proved. NOW the actual rough physical action amplitudes have ONE common complex Hminus-one ball and sqrt(1+n)-weighted bound before ALL positive indices, including the finite head, infinite tail, closed gaps and nonzero means. Exact original physical recovery holds throughout the rough ball without an L2 smallness assumption. The weighted amplitudes form a native ell-infinity analytic map with exact free normalization. NEXT construct common rough regular phases and terminal factors and assemble the negative-half target Abelian map. Full coordinate-coordinate canonicality, arbitrary-base/global inverse, full s>=-1 regularity and Hamiltonian action-frequency/PDE main theorems remain.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
@@ -20386,15 +21044,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 12583,
-    "total_declarations_audited": 34650,
+    "candidate_declarations_audited": 12965,
+    "total_declarations_audited": 35032,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1450,
+    "selected_modules": 1504,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -20460,7 +21118,8 @@
     "physical_dirichlet_validation_sequence": "Prior strict evidence retained for all 1407 unchanged selected baseline sources; all 11 new modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1418 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1455 frozen source/checker/provenance/Mathlib-source hashes, 33 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 11 selections. Eight shared sources are byte-identical imports and thirteen local API variants are retained unchanged. No full 1418-module rebuild is claimed.",
     "native_rough_divisor_validation_sequence": "Prior strict evidence retained for all 1418 unchanged selected baseline sources; all 21 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1439 selected modules. The new selections are twelve incoming sources, seven new/extracted proof modules and two unchanged canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1477 frozen source/checker/provenance/Mathlib-source hashes, 34 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 21 selections. No full 1439-module rebuild is claimed.",
     "rough_action_head_validation_sequence": "Prior strict evidence retained for all 1439 unchanged selected baseline sources; all seven new proof modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1446 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1484 frozen source/checker/provenance/Mathlib-source hashes, all 35 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these seven new proof modules. No full 1446-module rebuild is claimed.",
-    "rough_action_ratio_identification_validation_sequence": "Prior strict evidence retained for all 1446 unchanged selected baseline sources; all four new proof modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1450 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1488 frozen source/checker/provenance/Mathlib-source hashes, all 35 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these four new proof modules. No full 1450-module rebuild is claimed."
+    "rough_action_ratio_identification_validation_sequence": "Prior strict evidence retained for all 1446 unchanged selected baseline sources; all four new proof modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1450 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1488 frozen source/checker/provenance/Mathlib-source hashes, all 35 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these four new proof modules. No full 1450-module rebuild is claimed.",
+    "rough_uniform_action_amplitudes_validation_sequence": "Prior strict evidence retained for all 1450 unchanged selected baseline sources; all 54 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1504 selected modules. The new selections are 45 incoming sources, four own proof modules and five byte-identical canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1543 frozen source/checker/provenance/Mathlib-source hashes, 35 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 54 selections. No full 1504-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -21042,6 +21701,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "b09708225477f1b7eb6d1bace2b624680155f67f",
+      "description": "Prior finite-head rough amplitudes and closed-gap germ identification; now a common infinite-tail construction, one common ball before all positive amplitudes, and a native ell-infinity analytic weighted amplitude symbol.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "Native L2 Abelian map, local real inverse and simultaneous action fields are proved. Rough Dirichlet/periodic labels globally match original physical L2 data; native rough midpoint/divisor/log-norming and normalized ell1 energy gap squares are proved. NOW every fixed positive index has an actual rough action-to-half-gap-square ratio and principal amplitude germ with exact free normalization and physical matching on its ENTIRE rough ball; any prescribed finite gap set has a common ball and weighted amplitude bound. NEXT combine this finite head with a proved common high-tail amplitude family, construct the full rough regular phase and assemble the negative-half target Abelian map. Full coordinate-coordinate canonicality, arbitrary-base/global inverse, full s>=-1 regularity and Hamiltonian action-frequency/PDE main theorems remain. The closed-gap matching step for the next infinite-tail family is now proved: each selected physical gap opens arbitrarily near zero, the actual gap-square analytic germ is nontrivial, and physical action factorization identifies a rough analytic ratio on its whole ball without division at the collapsed base. The high-tail candidate and its actual action germ factorization must still be supplied.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -21071,5 +21742,6 @@
   "physical_dirichlet_record": "PHYSICAL_DIRICHLET_MATCHING.md",
   "native_rough_divisor_record": "NATIVE_ROUGH_DIVISOR_PACKET.md",
   "rough_action_head_record": "ROUGH_ACTION_AMPLITUDE_HEAD.md",
-  "rough_action_ratio_identification_record": "ROUGH_ACTION_RATIO_IDENTIFICATION.md"
+  "rough_action_ratio_identification_record": "ROUGH_ACTION_RATIO_IDENTIFICATION.md",
+  "rough_uniform_action_amplitudes_record": "ROUGH_UNIFORM_ACTION_AMPLITUDES.md"
 }

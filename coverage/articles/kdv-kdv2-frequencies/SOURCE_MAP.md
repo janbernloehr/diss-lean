@@ -1213,3 +1213,14 @@ This proves the needed cancellation step for rough analytic ratios: equality aft
 Prior strict evidence retained for all 1446 unchanged selected baseline sources; all four new proof modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1450 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1488 frozen source/checker/provenance/Mathlib-source hashes, all 35 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these four new proof modules. No full 1450-module rebuild is claimed.
 
 Fresh audit: 12583 selected and 34650 imported NLS declarations; permitted axioms only. The common infinite-tail amplitude family, full rough regular phase/Abelian map, canonicality, global inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+
+## Latest common all-index rough action amplitudes
+
+ONE complex Hminus-one ball now supports analytic extensions of the ORIGINAL physical action amplitudes before ALL positive indices, with a common bound for sqrt(1+n)*norm(B_n). The finite head and actual common contour-action tail are combined. At EVERY original real L2 source in that whole rough ball the amplitudes recover the exact original physical Abelian prefactors, including closed gaps and nonzero means; no small physical L2 norm is required. Their free values are exactly 1/sqrt(2*pi*n).
+
+The weighted positive amplitudes also form a genuine native ell-infinity analytic map M. Its positive component is sqrt(1+n)*B_n, its nonpositive components vanish, and its free symbol is exact. This supplies Banach analyticity rather than only separately analytic scalar components. See `ROUGH_UNIFORM_ACTION_AMPLITUDES.md`.
+
+Prior strict evidence retained for all 1450 unchanged selected baseline sources; all 54 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1504 selected modules. The new selections are 45 incoming sources, four own proof modules and five byte-identical canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1543 frozen source/checker/provenance/Mathlib-source hashes, 35 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 54 selections. No full 1504-module rebuild is claimed.
+
+Fresh audit: 12965 selected and 35032 imported NLS declarations; permitted axioms only. Full rough regular phase/terminal factor and Abelian-map assembly, canonicality, global inverse, the full regularity scale and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
