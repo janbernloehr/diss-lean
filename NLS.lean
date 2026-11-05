@@ -5917,3 +5917,11 @@ import NLS.KdV.HillClosedCurveCoefficientContinuity
 import NLS.KdV.HillMovingContourSourceNeighborhood
 import NLS.KdV.HillHamiltonianSourceContinuity
 import NLS.KdV.HillCartesianActionSourceVariations
+import NLS.KdV.HillDirichletTraceCotangent
+import NLS.KdV.HillIndexedDiscriminantSources
+import NLS.KdV.HillIndexedDirichletVariations
+import NLS.KdV.HillDiscriminantMeanShift
+import NLS.KdV.HillDirichletTraceCotangentRefined
+import NLS.KdV.HillIndexedNormingVariations
+import NLS.KdV.HillRealClosedCurveSources
+import NLS.KdV.HillIndexedSheetVariations
