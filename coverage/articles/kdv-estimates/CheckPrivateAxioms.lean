@@ -1052,6 +1052,9 @@ import NLS.KdV.HillUniformNormingGradients
 import NLS.KdV.HillInfiniteNormingGradients
 import NLS.KdV.HillInfiniteNormingGardner
 import NLS.KdV.HillInfiniteEndpointCorrectionCotangent
+import NLS.KdV.HillInfiniteNormingSingle
+import NLS.KdV.HillFullEndpointPhase
+import NLS.KdV.HillFullEndpointPhaseFamily
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/

@@ -5975,3 +5975,6 @@ import NLS.KdV.HillUniformNormingGradients
 import NLS.KdV.HillInfiniteNormingGradients
 import NLS.KdV.HillInfiniteNormingGardner
 import NLS.KdV.HillInfiniteEndpointCorrectionCotangent
+import NLS.KdV.HillInfiniteNormingSingle
+import NLS.KdV.HillFullEndpointPhase
+import NLS.KdV.HillFullEndpointPhaseFamily
