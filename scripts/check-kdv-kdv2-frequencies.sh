@@ -1291,6 +1291,131 @@ modules=(
   NLS/ComplexAnalysis/AnalyticInverseVectorFields
   NLS/KdV/HillNativeAbelianActionVector
   NLS/Articles/KdVKdV2Frequencies/NativeActionHamiltonianFields
+  NLS/KdV/ClassicalHillDirichlet
+  NLS/KdV/HillL2Dirichlet
+  NLS/MKdV/QuasiHillEnergyEmbedding
+  NLS/MKdV/QuasiHillL2Energy
+  NLS/MKdV/QuasiHillL2Sobolev
+  NLS/MKdV/MiuraL2HillDirichlet
+  NLS/KdV/HillHminusOneDirichlet
+  NLS/MKdV/QuasiHillAffineCoordinates
+  NLS/MKdV/L2QuasiHillPotential
+  NLS/MKdV/L2QuasiHillSolution
+  NLS/MKdV/L2QuasiHillDiscriminant
+  NLS/KdV/HillMiuraL2PhysicalQuasi
+  NLS/MKdV/L2QuasiHillUniqueness
+  NLS/KdV/HillHminusOnePhysicalQuasi
+  NLS/MKdV/L2QuasiHillRegularity
+  NLS/MKdV/L2QuasiHillWeakEquation
+  NLS/MKdV/L2QuasiHillScalarNontrivial
+  NLS/KdV/HillHminusOneWeakEquation
+  NLS/MKdV/SobolevMiuraPhysicalClass
+  NLS/MKdV/L2QuasiHillEnergyAgreement
+  NLS/KdV/HillHminusOnePhysicalDirichlet
+  NLS/Fourier/IntervalL2Products
+  NLS/MKdV/WeakMiuraFormAnalytic
+  NLS/FunctionalAnalysis/IntervalH1Product
+  NLS/MKdV/SobolevMiuraWeakForm
+  NLS/KdV/HillHminusOneWeakFormCharts
+  NLS/KdV/HillHminusOneIntrinsicWeakForm
+  NLS/FunctionalAnalysis/IntervalH1Conjugation
+  NLS/SequenceSpaces/PeriodOneHminusOneRealDensity
+  NLS/KdV/HillHminusOneWeakFormReality
+  NLS/MKdV/L2QuasiHillInitialLinearity
+  NLS/MKdV/L2QuasiHillDirichletGauge
+  NLS/KdV/HillHminusOneDirichletMiuraSource
+  NLS/KdV/HillDirichletMiuraZeroIndex
+  NLS/FunctionalAnalysis/IntervalCurveMass
+  NLS/MKdV/L2QuasiHillDirichletPositive
+  NLS/KdV/HillHminusRealPhysicalChart
+  NLS/KdV/HillHminusOneDirichletLowerBound
+  NLS/KdV/ClassicalHillFreeDirichlet
+  NLS/KdV/HillHminusOnePairUniqueness
+  NLS/ComplexAnalysis/ClosedZeroPersistence
+  NLS/KdV/HillHminusOneReality
+  NLS/KdV/HillHminusOneExteriorRoots
+  NLS/KdV/HillCentralRegionGeometry
+  NLS/KdV/HillHminusOneRootRegions
+  NLS/KdV/HillHminusOneCentralCounting
+  NLS/KdV/HillHminusOneCentralRoots
+  NLS/KdV/HillHminusOneReflection
+  NLS/KdV/HillHminusOneHalfPlaneSheets
+  NLS/KdV/HillL2CubicContourMoments
+  NLS/KdV/HillHminusOneHighMoments
+  NLS/KdV/ActionHamiltonianAnalyticShift
+  NLS/KdV/HillHminusOneMomentRadius
+  NLS/KdV/HillHminusOneGapScaleBounds
+  NLS/KdV/HillHminusOneGapCutRoots
+  NLS/KdV/HillHminusOneMomentCutRoot
+  NLS/ComplexAnalysis/SignedSquareBoundary
+  NLS/KdV/HillHminusOnePhysicalCut
+  NLS/ComplexAnalysis/NearImaginarySquare
+  NLS/ComplexAnalysis/QuadraticRootContourPeriod
+  NLS/KdV/HillHminusOneRealGapSquares
+  NLS/KdV/HillHminusOneRealPairs
+  NLS/KdV/HillHminusOneGlobalRealLabels
+  NLS/KdV/HillHminusOneLabelFamilies
+  NLS/KdV/HillHminusOneLabelUniqueness
+  NLS/KdV/HillHminusOneCanonicalRealLabels
+  NLS/KdV/HillHminusOneCanonicalFreeLabels
+  NLS/KdV/HillHminusOneFreeDirichlet
+  NLS/KdV/HillHminusOneFreeDirichletLower
+  NLS/KdV/HillHminusOneWeakPotentialFunctional
+  NLS/KdV/HillHminusOneCumulativeCounts
+  NLS/KdV/HillHminusOneLabelContinuity
+  NLS/KdV/HillHminusOneTraceParity
+  NLS/ZakharovShabat/FloquetQuadratic
+  NLS/ZakharovShabat/L2BoundaryMultipliers
+  NLS/MKdV/L2QuasiHillMultipliers
+  NLS/KdV/HillHminusOneWeakSpectrum
+  NLS/KdV/HillHminusOneIntrinsicWeakSolutions
+  NLS/FunctionalAnalysis/UnitIntervalPrimitive
+  NLS/FunctionalAnalysis/UnitIntervalWeakDerivativeConstant
+  NLS/FunctionalAnalysis/UnitIntervalWeakDerivativeAC
+  NLS/MKdV/L2QuasiHillWeakMomentum
+  NLS/MKdV/L2QuasiHillWeakReconstruction
+  NLS/MKdV/L2QuasiHillWeakFloquetConverse
+  NLS/KdV/HillHminusOneIntrinsicWeakConverse
+  NLS/KdV/HillHminusOneIntrinsicDirichletSpectrum
+  NLS/KdV/HillHminusOneWeakSpectrumReality
+  NLS/MKdV/L2QuasiHillDirichletDerivative
+  NLS/KdV/HillHminusOneDirichletSimplicity
+  NLS/KdV/HillHminusOneIntrinsicGreen
+  NLS/FunctionalAnalysis/IntervalEndpointTests
+  NLS/KdV/HillHminusOneDirichletRealColumn
+  NLS/KdV/HillHminusOneRealGapContours
+  NLS/KdV/HillHminusOneRegularBoundary
+  NLS/KdV/HillHminusOneRealBands
+  NLS/KdV/HillHminusOneDirichletBands
+  NLS/KdV/HillHminusOneDirichletRootBranches
+  NLS/KdV/HillHminusOneDirichletGapExistence
+  NLS/KdV/HillHminusOneDirichletLowerExterior
+  NLS/KdV/HillHminusOneRealGapSigns
+  NLS/KdV/HillHminusOneDirichletGapUniqueness
+  NLS/KdV/HillHminusOneDirichletGapLabels
+  NLS/KdV/HillHminusOneLabelCofinality
+  NLS/KdV/HillHminusOneDirichletSpectrumExhaustion
+  NLS/KdV/HillHminusOneDirichletMiuraLabels
+  NLS/KdV/HillHminusOneDirichletCommonAnalytic
+  NLS/KdV/HillHminusOneDirichletColumnCharts
+  NLS/KdV/HillHminusOneIntrinsicDirichletColumn
+  NLS/KdV/HillHminusOneDirichletNorming
+  NLS/KdV/HillHminusOneDirichletLogNorming
+  NLS/MKdV/L2QuasiHillNormingGauge
+  NLS/ComplexAnalysis/RealArsinhExtension
+  NLS/KdV/HillHminusOneDirichletAntiNorming
+  NLS/ZakharovShabat/SourceAntiDiscriminantCentralLp
+  NLS/ZakharovShabat/SourceLemma9_2
+  NLS/ZakharovShabat/SourceDirichletAntiSamplesAnalytic
+  NLS/SequenceSpaces/HilbertSampling
+  NLS/SequenceSpaces/AnalyticSuperposition
+  NLS/SequenceSpaces/ArsinhSuperposition
+  NLS/SequenceSpaces/PositiveEnergyDisplacements
+  NLS/KdV/HillHminusDirichletEnergySequence
+  NLS/KdV/HillHminusDirichletNormingSequence
+  NLS/ComplexAnalysis/AnalyticZeroLinearBound
+  NLS/KdV/HillHminusNormingSinhIdentity
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughDirichletPacket
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
@@ -1333,6 +1458,21 @@ for module in modules:
         raise SystemExit(f'Expected an import symlink: {link}')
     link.symlink_to(target)
 fill(reference, overlay / 'NLS')
+# A pinned Mathlib dependency absent from the reference compiled cache.
+module = 'Mathlib/Analysis/SpecialFunctions/Arsinh'
+for suffix in ['.olean', '.olean.server', '.olean.private', '.ir', '.ir.sig']:
+    target = build / (module + suffix)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if target.is_symlink() or not target.parent.resolve().is_relative_to(build.resolve()):
+        raise SystemExit(f'Expected a private Mathlib output: {target}')
+    link = overlay / (module + suffix)
+    local_directory(link.parent)
+    if link.is_symlink():
+        link.unlink()
+    elif link.exists():
+        raise SystemExit(f'Expected a Mathlib import symlink: {link}')
+    link.symlink_to(target)
+fill(Path(sys.argv[1]) / '.lake/packages/mathlib/.lake/build/lib/lean/Mathlib', overlay / 'Mathlib')
 PY
 if [[ "${1:-}" == --prepare-only ]]; then
   exit 0
@@ -1345,6 +1485,11 @@ for package in "$reference_root"/.lake/packages/*; do
 done
 article_lean="$ELAN_HOME/toolchains/leanprover--lean4---v4.33.1/bin/lean"
 "$article_lean" --version
+mathlib_root="$reference_root/.lake/packages/mathlib"
+"$article_lean" -DwarningAsError=true -R "$mathlib_root" \
+  -o "$article_build/Mathlib/Analysis/SpecialFunctions/Arsinh.olean" \
+  "$mathlib_root/Mathlib/Analysis/SpecialFunctions/Arsinh.lean"
+echo "PASS Mathlib/Analysis/SpecialFunctions/Arsinh"
 for module in "${modules[@]}"; do
   "$article_lean" -DautoImplicit=false -DwarningAsError=true -R "$article_root" \
     -o "$article_build/$module.olean" "$article_root/$module.lean"

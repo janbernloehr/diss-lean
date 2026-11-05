@@ -1,0 +1,833 @@
+{
+  "source_branch": "articles/kdv-convexity",
+  "source_commit": "ba0cf42ee4f2e37acfc7a239af566e11b9e583f2",
+  "scope": "Actual intrinsic Hminus-one Dirichlet spectrum and logarithmic norming development, including common complex analytic spectral data. Fourteen existing local variants are retained unchanged. Three incoming files only gain imports of separately extracted physical-real chart/action normalization compatibility lemmas; the incoming L2 Dirichlet API is adapted to reuse the existing original characteristic and avoid duplicate frequency declarations, preserving all prior selected sources and provenance hashes. Every new source is strictly compiled privately and transitively audited; no branch merge.",
+  "files": [
+    {
+      "path": "NLS/ZakharovShabat/ClassicalNLSHamiltonians.lean",
+      "source_sha256": "1ab05b74ffcd892bb75226b50d4517286a96f197100a7e86e453b3eecf82534b",
+      "local_sha256": "8ba49915bc9afb39744a9439c878af0c7d72d9c2a9c59a2aec7ae1c1ccc64398",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/JointSpectralDerivative.lean",
+      "source_sha256": "f988cb9c979c851d34ce56925c72b86e3a54ad88d2bd75f3bfdd856e1212147c",
+      "local_sha256": "615f051c204758d1ec0b4a9197560b0e779b6aed4d8926d6125f7a98cba6b541",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ClassicalForcedKernel.lean",
+      "source_sha256": "6ff5e6888d78b78d806799b89d8633313997e2dc5e3b52f7b506a5794ea3208a",
+      "local_sha256": "0fddb2dabc39ba876b978fc6b66d73a1f4fd64fced57a900171a55c22b05f100",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/ZakharovShabat/ClassicalDiscriminantGradient.lean",
+      "source_sha256": "3742e6ce09b0630e40238fcae6700bff4bf3655e98d2ee5333c63fe688ed5a5f",
+      "local_sha256": "7c0e09401d5695aba3be006fae621f2238e348eecdf10dd656b86c69753f544e",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SingleSpectralProductRatioExterior.lean",
+      "source_sha256": "f33956302e20772c3e6d45f802e4c525032d314afcdc7122f83b89def719bd3e",
+      "local_sha256": "2f2ad902240ef0e00567ca77fc939c12c3b2100ebafc9bf55c25c17a6b9c57aa",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceDistantCriticalPointsAnalyticNeighborhood.lean",
+      "source_sha256": "ce5f1a89973129f9e5388bac29944a84a09825e318b6b9cff79e2fc2e426046c",
+      "local_sha256": "cecc3f386d896d8221cb0f5b1260b73d1fafc2ce9cfbff8c47e99fbf1bce0a1b",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/DifferentialPolynomial/EulerLagrange.lean",
+      "source_sha256": "fabe9650f9f92958f3f3be77cf8511c6b205ee84b68b917fc7ffcb9402997d3c",
+      "local_sha256": "44318ffa3231616fcf936a7d98948482d15e533a6201e4198e8e6c8de81b9baa",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/KdV/HillBilinearSymmetry.lean",
+      "source_sha256": "6cda4cd258aff982accd9383c415b763a1e455899ea30ede6408ff73d5149cff",
+      "local_sha256": "2b0e7f9ae07056c448603bbcb086776fcbbef4c4c90d3e870963e00bd3dc665b",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/KdV/HillDiscriminantNecessity.lean",
+      "source_sha256": "b4dd08b58e8856e661f54bc478d525d71debb584fc4687ecee85302f1cdf1897",
+      "local_sha256": "c78b4bc2057447032ab29705cb0bb9255e15d87f330acc73e8e344ffd1b5675e",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillDirichlet.lean",
+      "source_sha256": "d76f479adcbb218250a72be50f88f0133610c92e1aa257416ecd651012e43741",
+      "local_sha256": "d76f479adcbb218250a72be50f88f0133610c92e1aa257416ecd651012e43741",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2Dirichlet.lean",
+      "source_sha256": "9ee79e1c78f80a018e486c6101cf5807fcd40ee71e44631c0d10f373462439bb",
+      "local_sha256": "6d779eb6d2edb92574bd27d5585e83379aaa75dd63f80ac79271dea36713c3bb",
+      "disposition": "adapted_import"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillEnergyEmbedding.lean",
+      "source_sha256": "753b0d8b1cee56d5df09ca94a6351397619c0699f900646ce6af947d8acba8e4",
+      "local_sha256": "753b0d8b1cee56d5df09ca94a6351397619c0699f900646ce6af947d8acba8e4",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillL2Energy.lean",
+      "source_sha256": "08e4f509bfda1952921d7e4575d3f2c43ce613eb2f042601a611cc25861a11a0",
+      "local_sha256": "08e4f509bfda1952921d7e4575d3f2c43ce613eb2f042601a611cc25861a11a0",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillL2Sobolev.lean",
+      "source_sha256": "7c838b57e9f06bfb5d5b43d822811c406d6417928fbe91ce94144b7d96e304ac",
+      "local_sha256": "7c838b57e9f06bfb5d5b43d822811c406d6417928fbe91ce94144b7d96e304ac",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/MiuraL2HillDirichlet.lean",
+      "source_sha256": "0afef64d764e284dda446271e5d1eb081e52715fd33d088a23df3809eb7af8df",
+      "local_sha256": "0afef64d764e284dda446271e5d1eb081e52715fd33d088a23df3809eb7af8df",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichlet.lean",
+      "source_sha256": "e3f7c0787cb4ea6a700800ce6984dfdaaaad297816455a357af456f73efeea9d",
+      "local_sha256": "e3f7c0787cb4ea6a700800ce6984dfdaaaad297816455a357af456f73efeea9d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillAffineCoordinates.lean",
+      "source_sha256": "c62356890ad31263c9fad05276dad7b625a226a1d097688b28f7dbfb40646816",
+      "local_sha256": "c62356890ad31263c9fad05276dad7b625a226a1d097688b28f7dbfb40646816",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillPotential.lean",
+      "source_sha256": "e99b31eb4893c518498bb3c5e6a566d787456f768806b295bbad32401e14d21e",
+      "local_sha256": "e99b31eb4893c518498bb3c5e6a566d787456f768806b295bbad32401e14d21e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillSolution.lean",
+      "source_sha256": "4630ee9885b95c343cad0bde61adcd633e72ae5a1eb5d2fb0dbd52004451a604",
+      "local_sha256": "4630ee9885b95c343cad0bde61adcd633e72ae5a1eb5d2fb0dbd52004451a604",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillDiscriminant.lean",
+      "source_sha256": "1d17038d6acd858004c8b0b6316374a000d333b646760579fd6d9be3632934aa",
+      "local_sha256": "1d17038d6acd858004c8b0b6316374a000d333b646760579fd6d9be3632934aa",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraL2PhysicalQuasi.lean",
+      "source_sha256": "185f0498e8480aaa9e662879c5561e15bc35f7ee1bee46982605b649b4b0ff7a",
+      "local_sha256": "185f0498e8480aaa9e662879c5561e15bc35f7ee1bee46982605b649b4b0ff7a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillUniqueness.lean",
+      "source_sha256": "daa1e6d895aa4e9e038cc983dd4b740582f001797935dd9471e502b6ea919c99",
+      "local_sha256": "daa1e6d895aa4e9e038cc983dd4b740582f001797935dd9471e502b6ea919c99",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePhysicalQuasi.lean",
+      "source_sha256": "10050b4fc0301037b50ad97b9749d51aefa97cd498d2c88e9cf89dba1b05a4d7",
+      "local_sha256": "10050b4fc0301037b50ad97b9749d51aefa97cd498d2c88e9cf89dba1b05a4d7",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillRegularity.lean",
+      "source_sha256": "d67414af7f9191f3a83a32bc9f1d5742bedbf3f6384be34da5cfd224090c2695",
+      "local_sha256": "d67414af7f9191f3a83a32bc9f1d5742bedbf3f6384be34da5cfd224090c2695",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillWeakEquation.lean",
+      "source_sha256": "88d6c121717afd561e38d200b4d0fbed881302bd082cb1e4b788c071399fbeaa",
+      "local_sha256": "88d6c121717afd561e38d200b4d0fbed881302bd082cb1e4b788c071399fbeaa",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillScalarNontrivial.lean",
+      "source_sha256": "18960a6081ffb38d4bf6b89b8eb4c7f6900f5efe771293fdb6355818b7194569",
+      "local_sha256": "18960a6081ffb38d4bf6b89b8eb4c7f6900f5efe771293fdb6355818b7194569",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWeakEquation.lean",
+      "source_sha256": "1010de8f92e608c3c8f7bef92e7dbf7963c4688240cdf7a638159c38c14d3ee8",
+      "local_sha256": "1010de8f92e608c3c8f7bef92e7dbf7963c4688240cdf7a638159c38c14d3ee8",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/SobolevMiuraPhysicalClass.lean",
+      "source_sha256": "4c5b85fd946e521392c500efa618fbe3fca76a597e1a0726efb6eb68ada37fdd",
+      "local_sha256": "4c5b85fd946e521392c500efa618fbe3fca76a597e1a0726efb6eb68ada37fdd",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillEnergyAgreement.lean",
+      "source_sha256": "b5b72b6d772ced081a2cd717310051637c3243eab2271832b72ecccff27a7903",
+      "local_sha256": "b5b72b6d772ced081a2cd717310051637c3243eab2271832b72ecccff27a7903",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePhysicalDirichlet.lean",
+      "source_sha256": "399b8de979781d5908910bd10b81a645bb84ca7cb31d550b1d529eda655f27c0",
+      "local_sha256": "399b8de979781d5908910bd10b81a645bb84ca7cb31d550b1d529eda655f27c0",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/Fourier/IntervalL2Products.lean",
+      "source_sha256": "58ee1c2f5419311b8c3e88057a7031d990ed095bb23009bf889ac4ded0b321ca",
+      "local_sha256": "58ee1c2f5419311b8c3e88057a7031d990ed095bb23009bf889ac4ded0b321ca",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/WeakMiuraFormAnalytic.lean",
+      "source_sha256": "54a5b276c38207b66ba71c86c750e4178cd4fa01c8adb47864ae8405b2133507",
+      "local_sha256": "54a5b276c38207b66ba71c86c750e4178cd4fa01c8adb47864ae8405b2133507",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/IntervalH1Product.lean",
+      "source_sha256": "55450931749ac4a0908ad724a2e4c559c2eff175c0725d73d7dd59e74f4a29c3",
+      "local_sha256": "55450931749ac4a0908ad724a2e4c559c2eff175c0725d73d7dd59e74f4a29c3",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/SobolevMiuraWeakForm.lean",
+      "source_sha256": "4e92c257583b8ba9d5ac6d54914e05b8d85fb2aa531db47247c8d435d5736761",
+      "local_sha256": "4e92c257583b8ba9d5ac6d54914e05b8d85fb2aa531db47247c8d435d5736761",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWeakFormCharts.lean",
+      "source_sha256": "88ae013d2cdd7bb63340d165bcd912858884b1b53c394eb1658a27b84c8421f2",
+      "local_sha256": "88ae013d2cdd7bb63340d165bcd912858884b1b53c394eb1658a27b84c8421f2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIntrinsicWeakForm.lean",
+      "source_sha256": "fe371a3ad54acff6e55594bbb12007c9d3439a91a8988ba31af7a4cc236fd851",
+      "local_sha256": "fe371a3ad54acff6e55594bbb12007c9d3439a91a8988ba31af7a4cc236fd851",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/IntervalH1Conjugation.lean",
+      "source_sha256": "cb15536b6bd5a7d13dbbbdc0cdef75186cca1fbea867f4899a91dadd2d2091ae",
+      "local_sha256": "cb15536b6bd5a7d13dbbbdc0cdef75186cca1fbea867f4899a91dadd2d2091ae",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneHminusOneRealDensity.lean",
+      "source_sha256": "2ad9733949942cfa7173ca23ced913e106ea4f074adb74f6569f355db7b39670",
+      "local_sha256": "2ad9733949942cfa7173ca23ced913e106ea4f074adb74f6569f355db7b39670",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWeakFormReality.lean",
+      "source_sha256": "f36b87fef0de711da37103e9dc7c621e5efec98008a46ddd0735287e99ca0e38",
+      "local_sha256": "f36b87fef0de711da37103e9dc7c621e5efec98008a46ddd0735287e99ca0e38",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealMiuraCharts.lean",
+      "source_sha256": "f85368d71c6f03ae2c0fa0f16d8025b79af8e85ee8e5a885a24be6428b066190",
+      "local_sha256": "52fb29455683b9163eafa29d2e7955b3f18cf9093002c58a1f89da17b5f18f34",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillInitialLinearity.lean",
+      "source_sha256": "ff3b2eb8231daa5cdecf620371d1d84df0b89b0c359f3b9ee63d1c12f6cf370e",
+      "local_sha256": "ff3b2eb8231daa5cdecf620371d1d84df0b89b0c359f3b9ee63d1c12f6cf370e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillDirichletGauge.lean",
+      "source_sha256": "8003685cc151e8ccf1a9e340e27274f2c7559108a9b3a03c9e107a08261a18c6",
+      "local_sha256": "8003685cc151e8ccf1a9e340e27274f2c7559108a9b3a03c9e107a08261a18c6",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletMiuraSource.lean",
+      "source_sha256": "5412cc70d65052e15a75baa18f7ec9744d395e0e4f9b00cb4f2e68549ebb181c",
+      "local_sha256": "5412cc70d65052e15a75baa18f7ec9744d395e0e4f9b00cb4f2e68549ebb181c",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletMiuraZeroIndex.lean",
+      "source_sha256": "b5f2f21c3ef46f77807eada2474ae75cedc9bb43ae9ed5b5cd68383d59c74a2a",
+      "local_sha256": "b5f2f21c3ef46f77807eada2474ae75cedc9bb43ae9ed5b5cd68383d59c74a2a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/IntervalCurveMass.lean",
+      "source_sha256": "47dbd88081ce890858465b7d831f590ef85eecf99021a9663c1851927625fbd0",
+      "local_sha256": "47dbd88081ce890858465b7d831f590ef85eecf99021a9663c1851927625fbd0",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillDirichletPositive.lean",
+      "source_sha256": "aea5cd0f5220c2c80a0326f29dc8ad708a033374f3e83eab9edfc3d3e3e3f158",
+      "local_sha256": "aea5cd0f5220c2c80a0326f29dc8ad708a033374f3e83eab9edfc3d3e3e3f158",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletLowerBound.lean",
+      "source_sha256": "d4538219fc65862cab3f14eb821ae57f75effa0cb9e583c5522d9417c5c28f26",
+      "local_sha256": "bdd0029192cc41f0d6d9e66bec6eb7451a7b77641b25edfc601a7753b0c6b165",
+      "disposition": "adapted_import"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillFreeDirichlet.lean",
+      "source_sha256": "9567e10f21873672522d567120968a37d5617c2420db1f3fc9fc32f0314ca452",
+      "local_sha256": "5fc987f982b391ca85c76726ee4eddd9c9b9101b69aad93c6147b2e211ec8994",
+      "disposition": "adapted_import"
+    },
+    {
+      "path": "NLS/KdV/ClassicalBranchPrimitive.lean",
+      "source_sha256": "9b23f82158ff2a6f4dc00d8fead2fa19601f40378c2de5bff6a7a7ec61f6759d",
+      "local_sha256": "f7107b18fc5df42b7525e38c6390d3d7b0113b039b4409270eaf3920fcafe72a",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillWholeGapSquares.lean",
+      "source_sha256": "054e7aefe03fbb3926743e7fdf76c43194a576670b2aeddab090635539f72350",
+      "local_sha256": "807f79c97cd5116cf11344cd0984f5b91db04768ea35f41ccf6518082d87bf43",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePairUniqueness.lean",
+      "source_sha256": "9978a3e9efdf97127c2e8748104417e45300c9dfa3f7618fe2af2599ec6ac7c3",
+      "local_sha256": "ae601fb414cdee0938abc223c75cf3e67a08de24ccf8c06cb9a4445c8e3f541c",
+      "disposition": "adapted_import"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ClosedZeroPersistence.lean",
+      "source_sha256": "a72baf8fa21e8eda949b0891275af6cb423afcf09c5c8d2f1ecbec036def0562",
+      "local_sha256": "a72baf8fa21e8eda949b0891275af6cb423afcf09c5c8d2f1ecbec036def0562",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneReality.lean",
+      "source_sha256": "10e72d25c3441afac7098a88b212137432c8a967f1404cc2279ae62b19afef98",
+      "local_sha256": "10e72d25c3441afac7098a88b212137432c8a967f1404cc2279ae62b19afef98",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneExteriorRoots.lean",
+      "source_sha256": "7177fa152885fb0bfadcdff4327311ff1ed753f6bb2a29f861c5ffa88c341273",
+      "local_sha256": "7177fa152885fb0bfadcdff4327311ff1ed753f6bb2a29f861c5ffa88c341273",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillCentralRegionGeometry.lean",
+      "source_sha256": "ba0f80a4b3836661c82ce935aaef92b4cd3b58c3da4cea6b26e17ba6b6667a97",
+      "local_sha256": "ba0f80a4b3836661c82ce935aaef92b4cd3b58c3da4cea6b26e17ba6b6667a97",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRootRegions.lean",
+      "source_sha256": "c58cdd4981f9ec4fa38188c073b8be01c537f4aed92dbba1a7778a426065c31f",
+      "local_sha256": "c58cdd4981f9ec4fa38188c073b8be01c537f4aed92dbba1a7778a426065c31f",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCentralCounting.lean",
+      "source_sha256": "f220fc6ffe30a29a8efb55cd1a1007199a31f44c82c004a15adebf701ab2c057",
+      "local_sha256": "f220fc6ffe30a29a8efb55cd1a1007199a31f44c82c004a15adebf701ab2c057",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCentralRoots.lean",
+      "source_sha256": "f95f6b76e8177149a0848248fa0c4f9de41f609e09d1260e39dda307f41de572",
+      "local_sha256": "f95f6b76e8177149a0848248fa0c4f9de41f609e09d1260e39dda307f41de572",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneReflection.lean",
+      "source_sha256": "8005980b4e7fa831018704438f26b6b9c85c54a499f357d247c331a2b9415f4a",
+      "local_sha256": "8005980b4e7fa831018704438f26b6b9c85c54a499f357d247c331a2b9415f4a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/ActionHamiltonianMoments.lean",
+      "source_sha256": "3706e6c81dae7c2076ad6f9ad605b7a056671f2de2ce150c7e6a2764cff462e8",
+      "local_sha256": "2bb6abfa6e912decb75ebf991312566b32d371680c1a44257ac73289e2e51feb",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/KdV/ClassicalL2PrimitiveAgreement.lean",
+      "source_sha256": "e7a68da9bccb85a5555f97f41c187de235f966cbcfa86c6fda5bec9d6eea9416",
+      "local_sha256": "4a4edcf113081745705519dd833b936c772bfd2aaa9f1a34f3b9bdad4ef9556b",
+      "disposition": "retained_local_variant"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneHalfPlaneSheets.lean",
+      "source_sha256": "a5e7463edbb352f4320d7ad401e561cf260ebe5009da22072b8f02467279c22d",
+      "local_sha256": "a5e7463edbb352f4320d7ad401e561cf260ebe5009da22072b8f02467279c22d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillL2CubicContourMoments.lean",
+      "source_sha256": "1c35b7e4fbbe8fef6bc1ed00b8a5ce1f2c8cc1996df8016a603056d3ea30f16e",
+      "local_sha256": "1c35b7e4fbbe8fef6bc1ed00b8a5ce1f2c8cc1996df8016a603056d3ea30f16e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneHighMoments.lean",
+      "source_sha256": "2a576d776b19c41323a8accc77cdb4108c802cb306c3161a52ef05c6b99cadef",
+      "local_sha256": "2a576d776b19c41323a8accc77cdb4108c802cb306c3161a52ef05c6b99cadef",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMomentRadius.lean",
+      "source_sha256": "9b8276a247239f9d2974cc0b3df7a41079209173646bd02c8432e78b6d68c87f",
+      "local_sha256": "9b04dccb5e0346d049e19f76eb3a42c1c439e3ffee97d8b98e206e17c0af9359",
+      "disposition": "adapted_import"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapScaleBounds.lean",
+      "source_sha256": "61855ec5141494a7c7fbe5d88b0e474b226f3de437d989d0cf6025d646bb04f7",
+      "local_sha256": "61855ec5141494a7c7fbe5d88b0e474b226f3de437d989d0cf6025d646bb04f7",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapCutRoots.lean",
+      "source_sha256": "a3abdc90c4f5c2f98a2f0a91bfc2260c00c64dccb2ce9187ed20b656a1cd5d08",
+      "local_sha256": "a3abdc90c4f5c2f98a2f0a91bfc2260c00c64dccb2ce9187ed20b656a1cd5d08",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMomentCutRoot.lean",
+      "source_sha256": "811cd5a06c309f105f6d955dc605cedb34c9fcbf8267535f9e166c3f7fa81ac8",
+      "local_sha256": "811cd5a06c309f105f6d955dc605cedb34c9fcbf8267535f9e166c3f7fa81ac8",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SignedSquareBoundary.lean",
+      "source_sha256": "c46092b84ee847660984d5f5cca1ced00651fc77b72e2681b97a17db611f32fe",
+      "local_sha256": "c46092b84ee847660984d5f5cca1ced00651fc77b72e2681b97a17db611f32fe",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePhysicalCut.lean",
+      "source_sha256": "eb3fa7232841695ce7c83a6784307603ac6d53036125faa9215127ec1fa42079",
+      "local_sha256": "eb3fa7232841695ce7c83a6784307603ac6d53036125faa9215127ec1fa42079",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NearImaginarySquare.lean",
+      "source_sha256": "17984a457423d56a33574b36475c42a5cb4c0eb086ea86dddb63c30739cb80f0",
+      "local_sha256": "17984a457423d56a33574b36475c42a5cb4c0eb086ea86dddb63c30739cb80f0",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticRootContourPeriod.lean",
+      "source_sha256": "897fcfbc64f02b6232e117913bb775ca6024cb4737ae5ba034bebb5787daa75d",
+      "local_sha256": "897fcfbc64f02b6232e117913bb775ca6024cb4737ae5ba034bebb5787daa75d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealGapSquares.lean",
+      "source_sha256": "fa5fb527da3c68fda9e03282fb848a08e45e27fe82baaeb02888c64bd75c324c",
+      "local_sha256": "fa5fb527da3c68fda9e03282fb848a08e45e27fe82baaeb02888c64bd75c324c",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealPairs.lean",
+      "source_sha256": "7f2a8ee2de7756fbf715de6a122918e32ce5872bd21bfae9389f936a5f290107",
+      "local_sha256": "7f2a8ee2de7756fbf715de6a122918e32ce5872bd21bfae9389f936a5f290107",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGlobalRealLabels.lean",
+      "source_sha256": "65fc3ea70e319ab2ed0a23b9f6dc9b9cabb71ad754a2b37381aa5d7c26752a44",
+      "local_sha256": "65fc3ea70e319ab2ed0a23b9f6dc9b9cabb71ad754a2b37381aa5d7c26752a44",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneLabelFamilies.lean",
+      "source_sha256": "6e109bfc0880762920b7d6633d8b33ba858ae17146560a3ade84aef91f582536",
+      "local_sha256": "6e109bfc0880762920b7d6633d8b33ba858ae17146560a3ade84aef91f582536",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneLabelUniqueness.lean",
+      "source_sha256": "316cd9f889a10dbca3d84b12063d4bcce5e2d471188b7b53130c5fea0a75304e",
+      "local_sha256": "b4095ecec3367865b80d003c1314325facd7757110fe7c20ae62576a34463010",
+      "disposition": "adapted_import"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCanonicalRealLabels.lean",
+      "source_sha256": "ff8fc0039535d49dd696d444c92c75048b0b409df88a975fc1eca6441d9ed3d0",
+      "local_sha256": "ff8fc0039535d49dd696d444c92c75048b0b409df88a975fc1eca6441d9ed3d0",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCanonicalFreeLabels.lean",
+      "source_sha256": "ebc9390ee490fc97a7fc9e19fc57c017ee625af8c1f87b0d853f168a38ebe3d6",
+      "local_sha256": "ebc9390ee490fc97a7fc9e19fc57c017ee625af8c1f87b0d853f168a38ebe3d6",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneFreeDirichlet.lean",
+      "source_sha256": "26437f12e0af0fbb221e6447c63f0298c2fc6757c12f1f441ddc2906eafe74fd",
+      "local_sha256": "26437f12e0af0fbb221e6447c63f0298c2fc6757c12f1f441ddc2906eafe74fd",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneFreeDirichletLower.lean",
+      "source_sha256": "01c8c7f288cbddc5bc3e1848de103ff648514553e8c48c2132be06ac5738c809",
+      "local_sha256": "01c8c7f288cbddc5bc3e1848de103ff648514553e8c48c2132be06ac5738c809",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWeakPotentialFunctional.lean",
+      "source_sha256": "254cabd70ddcfd1ad8a85f5002c2d98488e0c99e7b3a3a67f6264c2183dc166c",
+      "local_sha256": "254cabd70ddcfd1ad8a85f5002c2d98488e0c99e7b3a3a67f6264c2183dc166c",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCumulativeCounts.lean",
+      "source_sha256": "f34c423e385fccd9b64f1921c89510cd68a5f2197a6619f9267d0e0903df3256",
+      "local_sha256": "f34c423e385fccd9b64f1921c89510cd68a5f2197a6619f9267d0e0903df3256",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneLabelContinuity.lean",
+      "source_sha256": "faa6f16768b669c1d4b67921145f7a2f819894b26a90b414639a73a8c789eb75",
+      "local_sha256": "faa6f16768b669c1d4b67921145f7a2f819894b26a90b414639a73a8c789eb75",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTraceParity.lean",
+      "source_sha256": "2c30d53818db20dc7fc83b67c25f8f358765fa6139c1f5c5ad317258d0779296",
+      "local_sha256": "2c30d53818db20dc7fc83b67c25f8f358765fa6139c1f5c5ad317258d0779296",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/L2BoundaryMultipliers.lean",
+      "source_sha256": "3be41a68482d61a868a6169bc6e0fa56a94ef8cb1273bb507322a9e6d9e5e06b",
+      "local_sha256": "3be41a68482d61a868a6169bc6e0fa56a94ef8cb1273bb507322a9e6d9e5e06b",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillMultipliers.lean",
+      "source_sha256": "7c7cb3d094753a080e95e96114d093ce2701263d54c1d3e7c9e8d68fc8078955",
+      "local_sha256": "7c7cb3d094753a080e95e96114d093ce2701263d54c1d3e7c9e8d68fc8078955",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWeakSpectrum.lean",
+      "source_sha256": "ecc7907c683c16c9717cbf14c38f65b55239559fe370a044b575ddfd6cc46c3d",
+      "local_sha256": "ecc7907c683c16c9717cbf14c38f65b55239559fe370a044b575ddfd6cc46c3d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIntrinsicWeakSolutions.lean",
+      "source_sha256": "d1b4a0be2c36a5c9e55ceee55d14dcd87c9087962214f2fdd7dbfa1be7cb100f",
+      "local_sha256": "d1b4a0be2c36a5c9e55ceee55d14dcd87c9087962214f2fdd7dbfa1be7cb100f",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/UnitIntervalPrimitive.lean",
+      "source_sha256": "9482c4fbca347dd98782b3b3185dace68fd7cf0e0ef6db318ac85ef75a5ad664",
+      "local_sha256": "9482c4fbca347dd98782b3b3185dace68fd7cf0e0ef6db318ac85ef75a5ad664",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/UnitIntervalWeakDerivativeConstant.lean",
+      "source_sha256": "303a876608c5d18cb418389b96913b86ca7b75cd331dfa1896b4f9127c3316e7",
+      "local_sha256": "303a876608c5d18cb418389b96913b86ca7b75cd331dfa1896b4f9127c3316e7",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/UnitIntervalWeakDerivativeAC.lean",
+      "source_sha256": "df8752c4702685bb3472d55aeef93904b07fea55dc2e247ef760930a19f56845",
+      "local_sha256": "df8752c4702685bb3472d55aeef93904b07fea55dc2e247ef760930a19f56845",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillWeakMomentum.lean",
+      "source_sha256": "b800c0bd2431f41dda7db364c7ca104f1d36e3ab45639eaf437c85a0619bd6e1",
+      "local_sha256": "b800c0bd2431f41dda7db364c7ca104f1d36e3ab45639eaf437c85a0619bd6e1",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillWeakReconstruction.lean",
+      "source_sha256": "7a82343b70f718c4a247748090ce7617304ffdf6a3c0ea11f513802da1fa2790",
+      "local_sha256": "7a82343b70f718c4a247748090ce7617304ffdf6a3c0ea11f513802da1fa2790",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillWeakFloquetConverse.lean",
+      "source_sha256": "0743a105aacef2b3608f9f6b5aa063793ab06a1099d82a8d9e7395e1f8cbcf69",
+      "local_sha256": "0743a105aacef2b3608f9f6b5aa063793ab06a1099d82a8d9e7395e1f8cbcf69",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIntrinsicWeakConverse.lean",
+      "source_sha256": "d95296f2b6ae6471dd87a5db0da2609502188ca2407bbe31e180cd8bda49fa0e",
+      "local_sha256": "d95296f2b6ae6471dd87a5db0da2609502188ca2407bbe31e180cd8bda49fa0e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIntrinsicDirichletSpectrum.lean",
+      "source_sha256": "72dff4cf72881343f3a1ac6f94dbf3846991a816c1cac38aab44387a97cc001a",
+      "local_sha256": "72dff4cf72881343f3a1ac6f94dbf3846991a816c1cac38aab44387a97cc001a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWeakSpectrumReality.lean",
+      "source_sha256": "61929f836e793f1bf3f5427e9ac9b78177352dd6fc0ef5f2f66f62fcd476827d",
+      "local_sha256": "61929f836e793f1bf3f5427e9ac9b78177352dd6fc0ef5f2f66f62fcd476827d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillDirichletDerivative.lean",
+      "source_sha256": "540cc1dd37bbd7bee369fc938a0e7752e213a257fdd99457e568b844aab14a1e",
+      "local_sha256": "540cc1dd37bbd7bee369fc938a0e7752e213a257fdd99457e568b844aab14a1e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletSimplicity.lean",
+      "source_sha256": "b89e4f06d585831150fb5e04485045f2e15c35899517e67c0c705bd7e1d6422a",
+      "local_sha256": "b89e4f06d585831150fb5e04485045f2e15c35899517e67c0c705bd7e1d6422a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIntrinsicGreen.lean",
+      "source_sha256": "e526dcd8bc636aca293ed3dce62a08757649fd82db17e0a63e7d50a0d70a6ccd",
+      "local_sha256": "e526dcd8bc636aca293ed3dce62a08757649fd82db17e0a63e7d50a0d70a6ccd",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/IntervalEndpointTests.lean",
+      "source_sha256": "9010b3a17d0316d684a075c6ca604be2997de7d15e13c6452934794b203cab31",
+      "local_sha256": "9010b3a17d0316d684a075c6ca604be2997de7d15e13c6452934794b203cab31",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletRealColumn.lean",
+      "source_sha256": "9790ea91b13e536cc48df7fa837003e694de72cf0e1de942ba27cdea0edeb44e",
+      "local_sha256": "9790ea91b13e536cc48df7fa837003e694de72cf0e1de942ba27cdea0edeb44e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealGapContours.lean",
+      "source_sha256": "673cb28d4e344b283e41d1d5b2f53dec44c42fc2b27744dd11f7f8c845ba711a",
+      "local_sha256": "673cb28d4e344b283e41d1d5b2f53dec44c42fc2b27744dd11f7f8c845ba711a",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRegularBoundary.lean",
+      "source_sha256": "5bc7513b64540b11c3a8e6542155484ba634d85609d0e2677df618ebe4b1bf28",
+      "local_sha256": "5bc7513b64540b11c3a8e6542155484ba634d85609d0e2677df618ebe4b1bf28",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealBands.lean",
+      "source_sha256": "0808a547e2b4262390f13bdf2885006fafc9c76a4f4968e3507e2caddebb0dd9",
+      "local_sha256": "0808a547e2b4262390f13bdf2885006fafc9c76a4f4968e3507e2caddebb0dd9",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletBands.lean",
+      "source_sha256": "a7d8c95f265371459e401a3be34aaeb26774c710a0f76698d388ae7436a40a8f",
+      "local_sha256": "a7d8c95f265371459e401a3be34aaeb26774c710a0f76698d388ae7436a40a8f",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletRootBranches.lean",
+      "source_sha256": "efe15cb3e7bd873f89a7811f2dc589f10119e2178219c28c12d3afb5ed2842ec",
+      "local_sha256": "efe15cb3e7bd873f89a7811f2dc589f10119e2178219c28c12d3afb5ed2842ec",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletGapExistence.lean",
+      "source_sha256": "0e9507624b4ef1a58f0d7d1e0f1cb16e1e1bc42a6feb7fb07e9c6f23ac9512d6",
+      "local_sha256": "0e9507624b4ef1a58f0d7d1e0f1cb16e1e1bc42a6feb7fb07e9c6f23ac9512d6",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletLowerExterior.lean",
+      "source_sha256": "19147eda7e67022cbd0ab7c420ef4a26cddb589675a242b24bdfb09a1f39b2d8",
+      "local_sha256": "19147eda7e67022cbd0ab7c420ef4a26cddb589675a242b24bdfb09a1f39b2d8",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealGapSigns.lean",
+      "source_sha256": "b2857c56a2eb2fdde607314ed13be57089611c2e903dcd23de42d15677a17c60",
+      "local_sha256": "b2857c56a2eb2fdde607314ed13be57089611c2e903dcd23de42d15677a17c60",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletGapUniqueness.lean",
+      "source_sha256": "93e8438adf19d69e3fc8d51ed1a7fa7aa84e7581e37ba0a6f4a012c4a2eb543c",
+      "local_sha256": "93e8438adf19d69e3fc8d51ed1a7fa7aa84e7581e37ba0a6f4a012c4a2eb543c",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletGapLabels.lean",
+      "source_sha256": "4a0536bc04ed48ab27daefdc5bce2b1601de4b255cd4c6f62a54abbb8dbc929b",
+      "local_sha256": "4a0536bc04ed48ab27daefdc5bce2b1601de4b255cd4c6f62a54abbb8dbc929b",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneLabelCofinality.lean",
+      "source_sha256": "03a323836cee54f9a6cfaccaadf06ad70da684d26e78c47b2804af9870fa53b7",
+      "local_sha256": "03a323836cee54f9a6cfaccaadf06ad70da684d26e78c47b2804af9870fa53b7",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletSpectrumExhaustion.lean",
+      "source_sha256": "51bbb81dbab7bd1f77fc93a057be1be4be52e374284af03e843c9de243accd35",
+      "local_sha256": "51bbb81dbab7bd1f77fc93a057be1be4be52e374284af03e843c9de243accd35",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletMiuraLabels.lean",
+      "source_sha256": "89decb7c06a5ae069dd488e24b51a1afe19f9de8dadf99080a4f0c2eb32fad3d",
+      "local_sha256": "89decb7c06a5ae069dd488e24b51a1afe19f9de8dadf99080a4f0c2eb32fad3d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletCommonAnalytic.lean",
+      "source_sha256": "abdfd28bd4b36ff5dcfa515657425d24fbfa41704958c22ff48e6b6fede44e25",
+      "local_sha256": "b50410b9b8b90868c54ebef878bd7cb09894ef32357aad3f4901ffb84e085d05",
+      "disposition": "adapted_import"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletColumnCharts.lean",
+      "source_sha256": "ab30af8f947506da483fa22a06317369f84d8a425e08d83540aea2e555252938",
+      "local_sha256": "ab30af8f947506da483fa22a06317369f84d8a425e08d83540aea2e555252938",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIntrinsicDirichletColumn.lean",
+      "source_sha256": "4accd4c432e5d53236c12f4ce95f0fed88db2df5f5bdc132d700eae1a2b062e5",
+      "local_sha256": "4accd4c432e5d53236c12f4ce95f0fed88db2df5f5bdc132d700eae1a2b062e5",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletNorming.lean",
+      "source_sha256": "02a679d64bc1538a76d755a98905f0be81649e360ac5e8d83fb40afe37ce5712",
+      "local_sha256": "02a679d64bc1538a76d755a98905f0be81649e360ac5e8d83fb40afe37ce5712",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletLogNorming.lean",
+      "source_sha256": "ffa6cef4e7e14f60b5e368db293ee25db2975a5046a4452da8a03bd764dee514",
+      "local_sha256": "ffa6cef4e7e14f60b5e368db293ee25db2975a5046a4452da8a03bd764dee514",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillNormingGauge.lean",
+      "source_sha256": "0012b1e1010a5d0833100b8dbe30dd76a39f86e48cf6d43dd8fe54c0eb5c266d",
+      "local_sha256": "0012b1e1010a5d0833100b8dbe30dd76a39f86e48cf6d43dd8fe54c0eb5c266d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealArsinhExtension.lean",
+      "source_sha256": "975052bc0fb438bba0a22312d3d9998098d48e0420536d664a7a97940853c7f5",
+      "local_sha256": "975052bc0fb438bba0a22312d3d9998098d48e0420536d664a7a97940853c7f5",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletAntiNorming.lean",
+      "source_sha256": "cea6bc4cf5c6be6a3a8abe87fb28cb38731b1a6eb38997245024e06b117cd3bf",
+      "local_sha256": "cea6bc4cf5c6be6a3a8abe87fb28cb38731b1a6eb38997245024e06b117cd3bf",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceDirichletAntiSamplesAnalytic.lean",
+      "source_sha256": "d46e1211272cfa14ed59a35946ba07971d92e09205bd7cc412a746204495e719",
+      "local_sha256": "d46e1211272cfa14ed59a35946ba07971d92e09205bd7cc412a746204495e719",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertSampling.lean",
+      "source_sha256": "a97766f9683769f1fa2d34e618c39031679e7270b8dc6c65e9d207e5777fb055",
+      "local_sha256": "a97766f9683769f1fa2d34e618c39031679e7270b8dc6c65e9d207e5777fb055",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticSuperposition.lean",
+      "source_sha256": "041fc5483039d88798af8e8ad1ad15b31ddd940a23b710e6149e027ef0c88fe2",
+      "local_sha256": "041fc5483039d88798af8e8ad1ad15b31ddd940a23b710e6149e027ef0c88fe2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ArsinhSuperposition.lean",
+      "source_sha256": "6b4ee43b482ea023f66ad717183e9aee2568ed9852c97f59d5f7380d81a19fb0",
+      "local_sha256": "6b4ee43b482ea023f66ad717183e9aee2568ed9852c97f59d5f7380d81a19fb0",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/FloquetQuadratic.lean",
+      "source_sha256": "0a9d334fb613ec56b98af1d1ad491f0ad604e1f648d657cd69516e56a80101f5",
+      "local_sha256": "0a9d334fb613ec56b98af1d1ad491f0ad604e1f648d657cd69516e56a80101f5",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAntiDiscriminantCentralLp.lean",
+      "source_sha256": "4615e921f8f64b00185632977a8edf5088be0335fdfe86393e9a3e1bdd1d4405",
+      "local_sha256": "4615e921f8f64b00185632977a8edf5088be0335fdfe86393e9a3e1bdd1d4405",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceLemma9_2.lean",
+      "source_sha256": "7a5e91e8a98a5c11cd4d9ba97c2e55cc950bf74a67ff005107077b54ec67526c",
+      "local_sha256": "7a5e91e8a98a5c11cd4d9ba97c2e55cc950bf74a67ff005107077b54ec67526c",
+      "disposition": "reused_unchanged"
+    }
+  ],
+  "extracted_compatibility_declarations": [
+    {
+      "source_path": "NLS/KdV/HillHminusOneRealMiuraCharts.lean",
+      "local_path": "NLS/KdV/HillHminusRealPhysicalChart.lean",
+      "source_sha256": "f85368d71c6f03ae2c0fa0f16d8025b79af8e85ee8e5a885a24be6428b066190",
+      "local_sha256": "4fd7bdf3f53bbcdb3e37a6a854bae3e352fc9c8f856548b6e72e8a27fc6343aa",
+      "declarations": [
+        "exists_hillHminus_real_Miura_chart"
+      ]
+    },
+    {
+      "source_path": "NLS/KdV/ActionHamiltonianMoments.lean",
+      "local_path": "NLS/KdV/ActionHamiltonianAnalyticShift.lean",
+      "source_sha256": "3706e6c81dae7c2076ad6f9ad605b7a056671f2de2ce150c7e6a2764cff462e8",
+      "local_sha256": "362cbf650e49b180bf4e63d7a9b04c373e077f6242a165bbeb3bbfdfcce69e24",
+      "declarations": [
+        "norm_primitiveAction_le",
+        "primitiveAction_sub",
+        "primitiveAction_eq_zero_of_analyticOnNhd",
+        "primitiveAction_add_const_of_analyticOnNhd"
+      ]
+    }
+  ],
+  "additional_mathlib_dependencies": [
+    {
+      "module": "Mathlib/Analysis/SpecialFunctions/Arsinh",
+      "pinned_revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_relative_path": "Mathlib/Analysis/SpecialFunctions/Arsinh.lean",
+      "source_sha256": "e0ff613bb393d667b222f2ede52b356aa589d9eb4ff9f60e5e045aaa44024bf9",
+      "validation": "Compiled from pinned Mathlib4.33.1 source with warningAsError and default heartbeats into the article private output, exposed by a single private import symlink; reference source/cache unchanged."
+    }
+  ],
+  "integration_notes": [
+    "The incoming L2 Dirichlet API uses the existing original characteristic; four duplicate frequency declarations are removed and exact characteristic equality is exported.",
+    "The incoming free scalar-state module reuses the existing identical original IVP proofs through imports.",
+    "The incoming different-radius pair-swap theorem is named eq_or_swap_of_radii to coexist with the retained same-radius API; the incoming label-uniqueness consumer uses that name.",
+    "Three incoming files gain imports of separately extracted physical-real chart/action-period compatibility lemmas.",
+    "All old selected sources and all old provenance records remain byte-identical; all incoming source consumers are freshly rebuilt after integration adaptations."
+  ],
+  "canonical_reused_source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec"
+}

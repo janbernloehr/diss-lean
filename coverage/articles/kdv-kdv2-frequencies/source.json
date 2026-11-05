@@ -122,6 +122,11 @@
           "source_clause": "Simultaneous native analytic physical action Hamiltonian fields in one mean-zero local inverse chart, with exact signed rotation pushforward",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillPhysical_native_action_hamiltonian_fields",
           "qualification": "One complex mean-zero L2 source/actual half-shift target inverse chart before every action index supports analytic vector fields X_m. dF X_m equals the literal signed mode rotation on the whole complex chart; at every actual real source X_m is exactly the original physical action Hamiltonian direction, including closed gaps. No full coordinate-coordinate Poisson bracket, global canonicality, full regularity or main frequency/PDE result is claimed."
+        },
+        {
+          "source_clause": "Actual intrinsic rough Dirichlet spectral packet on one common complex Hminus-one ball, with native Hilbert analyticity and linear norm control",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_dirichlet_packet",
+          "qualification": "One common complex original Hminus-one ball before all positive Dirichlet indices supports actual normalized energy, log-norming and sinh maps into ell2, zero at zero, zero nonpositive outputs, joint norm<=C*norm(q), exact complex characteristic zeros and all-real intrinsic spectral recovery. Complex S=sinh K holds on that same ball. This is rough spectral input, not the full Abelian map, canonicality, global inverse or any complete main theorem."
         }
       ]
     },
@@ -18309,12 +18314,1512 @@
       "scope": "One complex mean-zero L2 source/actual half-shift target inverse chart before every action index supports analytic vector fields X_m. dF X_m equals the literal signed mode rotation on the whole complex chart; at every actual real source X_m is exactly the original physical action Hamiltonian direction, including closed gaps. No full coordinate-coordinate Poisson bracket, global canonicality, full regularity or main frequency/PDE result is claimed.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "610e2c92e09b6a1b7d3ee61df8009d4498e12b7af2adf649fda046ee9830a2cd"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillDirichlet.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: ClassicalHillDirichlet. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d76f479adcbb218250a72be50f88f0133610c92e1aa257416ecd651012e43741"
+    },
+    {
+      "path": "NLS/KdV/HillL2Dirichlet.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The shared Dirichlet API uses the original physical characteristic. Disposition adapted_import; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6d779eb6d2edb92574bd27d5585e83379aaa75dd63f80ac79271dea36713c3bb"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillEnergyEmbedding.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: QuasiHillEnergyEmbedding. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "753b0d8b1cee56d5df09ca94a6351397619c0699f900646ce6af947d8acba8e4"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillL2Energy.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: QuasiHillL2Energy. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "08e4f509bfda1952921d7e4575d3f2c43ce613eb2f042601a611cc25861a11a0"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillL2Sobolev.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: QuasiHillL2Sobolev. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7c838b57e9f06bfb5d5b43d822811c406d6417928fbe91ce94144b7d96e304ac"
+    },
+    {
+      "path": "NLS/MKdV/MiuraL2HillDirichlet.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: MiuraL2HillDirichlet. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0afef64d764e284dda446271e5d1eb081e52715fd33d088a23df3809eb7af8df"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichlet.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: HillHminusOneDirichlet. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e3f7c0787cb4ea6a700800ce6984dfdaaaad297816455a357af456f73efeea9d"
+    },
+    {
+      "path": "NLS/MKdV/QuasiHillAffineCoordinates.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: A fixed nonsingular coordinate system for every Hill energy. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c62356890ad31263c9fad05276dad7b625a226a1d097688b28f7dbfb40646816"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillPotential.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The affine physical L2 coefficient of the rough quasi-Hill system. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e99b31eb4893c518498bb3c5e6a566d787456f768806b295bbad32401e14d21e"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillSolution.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The actual rough quasi-derivative Hill initial-value solution. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4630ee9885b95c343cad0bde61adcd633e72ae5a1eb5d2fb0dbd52004451a604"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillDiscriminant.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The rough quasi-Hill monodromy trace at every energy. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1d17038d6acd858004c8b0b6316374a000d333b646760579fd6d9be3632934aa"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraL2PhysicalQuasi.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The original L2 Miura trace is the actual rough quasi-Hill trace. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "185f0498e8480aaa9e662879c5561e15bc35f7ee1bee46982605b649b4b0ff7a"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillUniqueness.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Uniqueness of the actual rough quasi-Hill integral problem. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "daa1e6d895aa4e9e038cc983dd4b740582f001797935dd9471e502b6ea919c99"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePhysicalQuasi.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Actual rough quasi-derivative monodromy behind the H^-1 discriminant. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "10050b4fc0301037b50ad97b9749d51aefa97cd498d2c88e9cf89dba1b05a4d7"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillRegularity.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Scalar H1 regularity of the actual rough quasi-Hill state. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d67414af7f9191f3a83a32bc9f1d5742bedbf3f6384be34da5cfd224090c2695"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillWeakEquation.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The actual rough Hill weak equation and its boundary term. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "88d6c121717afd561e38d200b4d0fbed881302bd082cb1e4b788c071399fbeaa"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillScalarNontrivial.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: A nonzero rough quasi-Hill state has a nonzero scalar position. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "18960a6081ffb38d4bf6b89b8eb4c7f6900f5efe771293fdb6355818b7194569"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWeakEquation.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Actual scalar weak Hill equations in every H^-1 Miura chart. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1010de8f92e608c3c8f7bef92e7dbf7963c4688240cdf7a638159c38c14d3ee8"
+    },
+    {
+      "path": "NLS/MKdV/SobolevMiuraPhysicalClass.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Literal physical L2 classes of H1 Miura profiles and images. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4c5b85fd946e521392c500efa618fbe3fca76a597e1a0726efb6eb68ada37fdd"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillEnergyAgreement.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Agreement of the two energy-affine rough Hill IVP realizations. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b5b72b6d772ced081a2cd717310051637c3243eab2271832b72ecccff27a7903"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePhysicalDirichlet.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The entire H^-1 Dirichlet characteristic is the actual normalized IVP. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "399b8de979781d5908910bd10b81a645bb84ca7cb31d550b1d529eda655f27c0"
+    },
+    {
+      "path": "NLS/Fourier/IntervalL2Products.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Bounded physical bilinear products on the unit interval. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "58ee1c2f5419311b8c3e88057a7031d990ed095bb23009bf889ac4ded0b321ca"
+    },
+    {
+      "path": "NLS/MKdV/WeakMiuraFormAnalytic.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Analytic dependence of the weak Miura form on the rough L2 lift. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "54a5b276c38207b66ba71c86c750e4178cd4fa01c8adb47864ae8405b2133507"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/IntervalH1Product.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Products of actual H1 interval curves. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "55450931749ac4a0908ad724a2e4c559c2eff175c0725d73d7dd59e74f4a29c3"
+    },
+    {
+      "path": "NLS/MKdV/SobolevMiuraWeakForm.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The weak Miura form equals the physical L2 Hill form on H1 lifts. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4e92c257583b8ba9d5ac6d54914e05b8d85fb2aa531db47247c8d435d5736761"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWeakFormCharts.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The weak Hill forms agree across all H^-1 Miura charts. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "88ae013d2cdd7bb63340d165bcd912858884b1b53c394eb1658a27b84c8421f2"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIntrinsicWeakForm.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The intrinsic weak Hill form at every complex H^-1 potential. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fe371a3ad54acff6e55594bbb12007c9d3439a91a8988ba31af7a4cc236fd851"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/IntervalH1Conjugation.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Conjugation of scalar interval H1 curves. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cb15536b6bd5a7d13dbbbdc0cdef75186cca1fbea867f4899a91dadd2d2091ae"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PeriodOneHminusOneRealDensity.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Real Fourier density in the full unit-period H^-1 space. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2ad9733949942cfa7173ca23ced913e106ea4f074adb74f6569f355db7b39670"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWeakFormReality.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Reality of the intrinsic weak Hill quadratic form. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f36b87fef0de711da37103e9dc7c621e5efec98008a46ddd0735287e99ca0e38"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillInitialLinearity.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Linear dependence of the rough scalar Hill IVP on initial data -/. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ff3b2eb8231daa5cdecf620371d1d84df0b89b0c359f3b9ee63d1c12f6cf370e"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillDirichletGauge.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The actual rough Hill Dirichlet problem in standard NLS boundary coordinates. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8003685cc151e8ccf1a9e340e27274f2c7559108a9b3a03c9e107a08261a18c6"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletMiuraSource.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Exact source Dirichlet coordinates for every rough Hill Miura chart. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5412cc70d65052e15a75baa18f7ec9744d395e0e4f9b00cb4f2e68549ebb181c"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletMiuraZeroIndex.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The added zero-frequency root has canonical NLS index zero. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b5f2f21c3ef46f77807eada2474ae75cedc9bb43ae9ed5b5cd68383d59c74a2a"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/IntervalCurveMass.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Strict positivity of the physical unit-interval scalar mass -/. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "47dbd88081ce890858465b7d831f590ef85eecf99021a9663c1851927625fbd0"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillDirichletPositive.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Strictly positive Dirichlet energies for a real physical Miura profile. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "aea5cd0f5220c2c80a0326f29dc8ad708a033374f3e83eab9edfc3d3e3e3f158"
+    },
+    {
+      "path": "NLS/KdV/HillHminusRealPhysicalChart.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Separate compatibility theorem for physical-real profiles in the retained local rough Miura charts, extracted from the shared source without changing the existing chart API.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4fd7bdf3f53bbcdb3e37a6a854bae3e352fc9c8f856548b6e72e8a27fc6343aa"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletLowerBound.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Locally uniform strict lower bounds for actual H^-1 Dirichlet roots. Disposition adapted_import; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bdd0029192cc41f0d6d9e66bec6eb7451a7b77641b25edfc601a7753b0c6b165"
+    },
+    {
+      "path": "NLS/KdV/ClassicalHillFreeDirichlet.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Free scalar Hill states in the original Dirichlet normalization. Disposition adapted_import; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5fc987f982b391ca85c76726ee4eddd9c9b9101b69aad93c6147b2e211ec8994"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePairUniqueness.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Intrinsic uniqueness of local H^-1 high pairs. Disposition adapted_import; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ae601fb414cdee0938abc223c75cf3e67a08de24ccf8c06cb9a4445c8e3f541c"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ClosedZeroPersistence.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Closed spectral constraints under dense parameter limits. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a72baf8fa21e8eda949b0891275af6cb423afcf09c5c8d2f1ecbec036def0562"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneReality.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Reality of the actual full H^-1 Hill characteristic. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "10e72d25c3441afac7098a88b212137432c8a967f1404cc2279ae62b19afef98"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneExteriorRoots.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Exterior confinement of every actual H^-1 characteristic root. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7177fa152885fb0bfadcdff4327311ff1ed753f6bb2a29f861c5ffa88c341273"
+    },
+    {
+      "path": "NLS/KdV/HillCentralRegionGeometry.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Central/tail separation from affine free-energy localization. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ba0f80a4b3836661c82ce935aaef92b4cd3b58c3da4cea6b26e17ba6b6667a97"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRootRegions.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Exhaustive central and high H^-1 root regions. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c58cdd4981f9ec4fa38188c073b8be01c537f4aed92dbba1a7778a426065c31f"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCentralCounting.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Exact central characteristic counts in H^-1. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f220fc6ffe30a29a8efb55cd1a1007199a31f44c82c004a15adebf701ab2c057"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCentralRoots.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Actual ordered central H^-1 Hill roots. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f95f6b76e8177149a0848248fa0c4f9de41f609e09d1260e39dda307f41de572"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneReflection.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Exact Schwarz symmetry of the actual H^-1 Hill sheets. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8005980b4e7fa831018704438f26b6b9c85c54a499f357d247c331a2b9415f4a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneHalfPlaneSheets.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Physical half-plane sheet signs for every real H^-1 potential. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a5e7463edbb352f4320d7ad401e561cf260ebe5009da22072b8f02467279c22d"
+    },
+    {
+      "path": "NLS/KdV/HillL2CubicContourMoments.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Cubic shifted-primitive moments in the L2 Hill realization. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1c35b7e4fbbe8fef6bc1ed00b8a5ce1f2c8cc1996df8016a603056d3ea30f16e"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneHighMoments.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The actual H^-1 high contour moments on one common complex neighborhood. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2a576d776b19c41323a8accc77cdb4108c802cb306c3161a52ef05c6b99cadef"
+    },
+    {
+      "path": "NLS/KdV/ActionHamiltonianAnalyticShift.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Separate compatibility proofs of primitive action bounds, subtraction, analytic vanishing and additive-normalization invariance, preserving the existing selected action-moment source.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "362cbf650e49b180bf4e63d7a9b04c373e077f6242a165bbeb3bbfdfcce69e24"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMomentRadius.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Uniform energy-radius independence of actual high H^-1 periods. Disposition adapted_import; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9b04dccb5e0346d049e19f76eb3a42c1c439e3ffee97d8b98e206e17c0af9359"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapScaleBounds.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Actual H^-1 primitive bounds on the gap-length scale. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "61855ec5141494a7c7fbe5d88b0e474b226f3de437d989d0cf6025d646bb04f7"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGapCutRoots.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Actual H^-1 Hill cut roots with uniform gap-length bounds. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a3abdc90c4f5c2f98a2f0a91bfc2260c00c64dccb2ce9187ed20b656a1cd5d08"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMomentCutRoot.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Matching actual Hminus periods to a cut-root circle. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "811cd5a06c309f105f6d955dc605cedb34c9fcbf8267535f9e166c3f7fa81ac8"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/SignedSquareBoundary.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Boundary limits of the physical sign of a square root. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c46092b84ee847660984d5f5cca1ced00651fc77b72e2681b97a17db611f32fe"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOnePhysicalCut.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Physical normalization of real H^-1 Hill cut roots. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "eb3fa7232841695ce7c83a6784307603ac6d53036125faa9215127ec1fa42079"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/NearImaginarySquare.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The sign of a square near a nonzero imaginary value -/. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "17984a457423d56a33574b36475c42a5cb4c0eb086ea86dddb63c30739cb80f0"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/QuadraticRootContourPeriod.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The oriented contour period of the normalized endpoint root. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "897fcfbc64f02b6232e117913bb775ca6024cb4737ae5ba034bebb5787daa75d"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealGapSquares.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Nonnegative filled squares along actual real H^-1 high gaps. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fa5fb527da3c68fda9e03282fb848a08e45e27fe82baaeb02888c64bd75c324c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealPairs.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Ordered real H^-1 high pairs and their global order. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7f2a8ee2de7756fbf715de6a122918e32ce5872bd21bfae9389f936a5f290107"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneGlobalRealLabels.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Global ordered characteristic labels for real H^-1 potentials. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "65fc3ea70e319ab2ed0a23b9f6dc9b9cabb71ad754a2b37381aa5d7c26752a44"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneLabelFamilies.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Common real H^-1 label families with arbitrarily large cutoffs. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6e109bfc0880762920b7d6633d8b33ba858ae17146560a3ade84aef91f582536"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneLabelUniqueness.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Intrinsic uniqueness of the real H^-1 characteristic labels. Disposition adapted_import; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b4095ecec3367865b80d003c1314325facd7757110fe7c20ae62576a34463010"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCanonicalRealLabels.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Canonical real characteristic labels in H^-1. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ff8fc0039535d49dd696d444c92c75048b0b409df88a975fc1eca6441d9ed3d0"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCanonicalFreeLabels.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Exact free normalization of the intrinsic H^-1 labels. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ebc9390ee490fc97a7fc9e19fc57c017ee625af8c1f87b0d853f168a38ebe3d6"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneFreeDirichlet.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Exact free normalization of the original H^-1 Dirichlet characteristic -/. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "26437f12e0af0fbb221e6447c63f0298c2fc6757c12f1f441ddc2906eafe74fd"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneFreeDirichletLower.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The free normalized Dirichlet characteristic has no nonpositive zero -/. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "01c8c7f288cbddc5bc3e1848de103ff648514553e8c48c2132be06ac5738c809"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWeakPotentialFunctional.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The intrinsic H^-1 potential term is a bounded complex-linear functional. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "254cabd70ddcfd1ad8a85f5002c2d98488e0c99e7b3a3a67f6264c2183dc166c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneCumulativeCounts.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Cumulative characteristic counts of intrinsic H^-1 labels. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f34c423e385fccd9b64f1921c89510cd68a5f2197a6619f9267d0e0903df3256"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneLabelContinuity.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: H^-1 continuity of every intrinsic real characteristic label. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "faa6f16768b669c1d4b67921145f7a2f819894b26a90b414639a73a8c789eb75"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneTraceParity.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Exact trace parity and strict bands for real H^-1 potentials. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2c30d53818db20dc7fc83b67c25f8f358765fa6139c1f5c5ad317258d0779296"
+    },
+    {
+      "path": "NLS/ZakharovShabat/FloquetQuadratic.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Unit-modulus roots of the unimodular monodromy polynomial. Disposition reused_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0a9d334fb613ec56b98af1d1ad491f0ad604e1f648d657cd69516e56a80101f5"
+    },
+    {
+      "path": "NLS/ZakharovShabat/L2BoundaryMultipliers.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Endpoint multipliers of the actual physical L2 initial-value problem. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3be41a68482d61a868a6169bc6e0fa56a94ef8cb1273bb507322a9e6d9e5e06b"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillMultipliers.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Actual rough Hill endpoint multipliers and characteristic roots. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7c7cb3d094753a080e95e96114d093ce2701263d54c1d3e7c9e8d68fc8078955"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWeakSpectrum.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Canonical H^-1 roots give actual nonzero scalar weak eigenfunctions. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ecc7907c683c16c9717cbf14c38f65b55239559fe370a044b575ddfd6cc46c3d"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIntrinsicWeakSolutions.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Intrinsic scalar weak Floquet solutions from the actual discriminant. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d1b4a0be2c36a5c9e55ceee55d14dcd87c9087962214f2fdd7dbfa1be7cb100f"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/UnitIntervalPrimitive.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Actual unit-interval primitives of integrable functions. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9482c4fbca347dd98782b3b3185dace68fd7cf0e0ef6db318ac85ef75a5ad664"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/UnitIntervalWeakDerivativeConstant.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Zero weak derivative detected by all H1 Dirichlet tests. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "303a876608c5d18cb418389b96913b86ca7b75cd331dfa1896b4f9127c3316e7"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/UnitIntervalWeakDerivativeAC.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Absolute continuity from the unit-interval H1 weak derivative. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "df8752c4702685bb3472d55aeef93904b07fea55dc2e247ef760930a19f56845"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillWeakMomentum.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Recovering the continuous quasi-derivative of a weak Hill solution. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b800c0bd2431f41dda7db364c7ca104f1d36e3ab45639eaf437c85a0619bd6e1"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillWeakReconstruction.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Arbitrary scalar weak solutions are actual rough Hill IVP solutions. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7a82343b70f718c4a247748090ce7617304ffdf6a3c0ea11f513802da1fa2790"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillWeakFloquetConverse.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The weak Floquet equation recovers both state endpoint conditions. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0743a105aacef2b3608f9f6b5aa063793ab06a1099d82a8d9e7395e1f8cbcf69"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIntrinsicWeakConverse.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Exact intrinsic weak Floquet spectrum of the H^-1 Hill discriminant. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d95296f2b6ae6471dd87a5db0da2609502188ca2407bbe31e180cd8bda49fa0e"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIntrinsicDirichletSpectrum.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Exact intrinsic H^-1 weak Dirichlet spectrum. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "72dff4cf72881343f3a1ac6f94dbf3846991a816c1cac38aab44387a97cc001a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneWeakSpectrumReality.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Reality of intrinsic rough Hill Dirichlet and unitary Floquet energies. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "61929f836e793f1bf3f5427e9ac9b78177352dd6fc0ef5f2f66f62fcd476827d"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillDirichletDerivative.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The actual rough Dirichlet energy derivative. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "540cc1dd37bbd7bee369fc938a0e7752e213a257fdd99457e568b844aab14a1e"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletSimplicity.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Every real H^-1 Dirichlet zero has analytic multiplicity one. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b89e4f06d585831150fb5e04485045f2e15c35899517e67c0c705bd7e1d6422a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIntrinsicGreen.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Intrinsic Green identity on every admissible H1 test pair -/. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e526dcd8bc636aca293ed3dce62a08757649fd82db17e0a63e7d50a0d70a6ccd"
+    },
+    {
+      "path": "NLS/FunctionalAnalysis/IntervalEndpointTests.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Actual H1 tests with prescribed unit-interval endpoint values -/. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9010b3a17d0316d684a075c6ca604be2997de7d15e13c6452934794b203cab31"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletRealColumn.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Reality of the actual normalized Dirichlet column. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9790ea91b13e536cc48df7fa837003e694de72cf0e1de942ba27cdea0edeb44e"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealGapContours.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Intrinsic isolating circles for every real H^-1 Hill gap. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "673cb28d4e344b283e41d1d5b2f53dec44c42fc2b27744dd11f7f8c845ba711a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRegularBoundary.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Actual upper boundary values at every regular real H^-1 Hill energy. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "5bc7513b64540b11c3a8e6542155484ba634d85609d0e2677df618ebe4b1bf28"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealBands.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The actual real H^-1 Hill trace in every open spectral band. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0808a547e2b4262390f13bdf2885006fafc9c76a4f4968e3507e2caddebb0dd9"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletBands.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Rough Dirichlet roots avoid every open canonical band. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a7d8c95f265371459e401a3be34aaeb26774c710a0f76698d388ae7436a40a8f"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletRootBranches.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Analytic original H^-1 Dirichlet root branches at every real potential. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "efe15cb3e7bd873f89a7811f2dc589f10119e2178219c28c12d3afb5ed2842ec"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletGapExistence.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Every canonical H^-1 gap contains an actual Dirichlet zero. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0e9507624b4ef1a58f0d7d1e0f1cb16e1e1bc42a6feb7fb07e9c6f23ac9512d6"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletLowerExterior.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The actual H^-1 Dirichlet spectrum lies strictly above the periodic ground. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "19147eda7e67022cbd0ab7c420ef4a26cddb589675a242b24bdfb09a1f39b2d8"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneRealGapSigns.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The actual Hill characteristic sign in gaps and the lower exterior. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b2857c56a2eb2fdde607314ed13be57089611c2e903dcd23de42d15677a17c60"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletGapUniqueness.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Exactly one simple Dirichlet root can lie in a canonical H^-1 gap. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "93e8438adf19d69e3fc8d51ed1a7fa7aa84e7581e37ba0a6f4a012c4a2eb543c"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletGapLabels.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Intrinsic Dirichlet labels in every positive canonical H^-1 gap. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4a0536bc04ed48ab27daefdc5bce2b1601de4b255cd4c6f62a54abbb8dbc929b"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneLabelCofinality.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Cofinality of the actual canonical H^-1 gap endpoints -/. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "03a323836cee54f9a6cfaccaadf06ad70da684d26e78c47b2804af9870fa53b7"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletSpectrumExhaustion.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: The positive-gap labels exhaust the actual intrinsic Dirichlet spectrum. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "51bbb81dbab7bd1f77fc93a057be1be4be52e374284af03e843c9de243accd35"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletMiuraLabels.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Exact all-index identification with squared canonical NLS Dirichlet roots. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "89decb7c06a5ae069dd488e24b51a1afe19f9de8dadf99080a4f0c2eb32fad3d"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletCommonAnalytic.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: One complex H^-1 neighborhood for all actual Dirichlet branches. Disposition adapted_import; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b50410b9b8b90868c54ebef878bd7cb09894ef32357aad3f4901ffb84e085d05"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletColumnCharts.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Every Miura chart gives the same normalized Dirichlet position. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ab30af8f947506da483fa22a06317369f84d8a425e08d83540aea2e555252938"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneIntrinsicDirichletColumn.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: One intrinsic entire normalized H^-1 Dirichlet scalar curve. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4accd4c432e5d53236c12f4ce95f0fed88db2df5f5bdc132d700eae1a2b062e5"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletNorming.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Intrinsic original H^-1 Dirichlet endpoint norming factors. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "02a679d64bc1538a76d755a98905f0be81649e360ac5e8d83fb40afe37ce5712"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletLogNorming.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Intrinsic logarithmic Dirichlet norming data in original H^-1. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ffa6cef4e7e14f60b5e368db293ee25db2975a5046a4452da8a03bd764dee514"
+    },
+    {
+      "path": "NLS/MKdV/L2QuasiHillNormingGauge.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Actual terminal norming factors in the rotated NLS Dirichlet problem. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0012b1e1010a5d0833100b8dbe30dd76a39f86e48cf6d43dd8fe54c0eb5c266d"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/RealArsinhExtension.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: A complex analytic extension of real inverse hyperbolic sine. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "975052bc0fb438bba0a22312d3d9998098d48e0420536d664a7a97940853c7f5"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneDirichletAntiNorming.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Actual anti-discriminant samples recover the logarithmic Hill norming data. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cea6bc4cf5c6be6a3a8abe87fb28cb38731b1a6eb38997245024e06b117cd3bf"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAntiDiscriminantCentralLp.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Uniform central source anti-discriminant bounds. Disposition reused_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4615e921f8f64b00185632977a8edf5088be0335fdfe86393e9a3e1bdd1d4405"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceLemma9_2.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Lemma 9.2: the anti-discriminant and its actual Dirichlet samples. Disposition reused_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7a5e91e8a98a5c11cd4d9ba97c2e55cc950bf74a67ff005107077b54ec67526c"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceDirichletAntiSamplesAnalytic.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Banach analytic actual Dirichlet anti-discriminant samples. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d46e1211272cfa14ed59a35946ba07971d92e09205bd7cc412a746204495e719"
+    },
+    {
+      "path": "NLS/SequenceSpaces/HilbertSampling.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Contractive injective sampling of Hilbert coefficient sequences -/. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a97766f9683769f1fa2d34e618c39031679e7270b8dc6c65e9d207e5777fb055"
+    },
+    {
+      "path": "NLS/SequenceSpaces/AnalyticSuperposition.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Analytic superposition on finite-exponent sequence spaces. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "041fc5483039d88798af8e8ad1ad15b31ddd940a23b710e6149e027ef0c88fe2"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ArsinhSuperposition.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual rough Dirichlet spectral dependency: Inverse hyperbolic sine acts analytically near every real lp sequence -/. Disposition imported_unchanged; exact source/local hashes and integration qualifications in SHARED_ROUGH_DIRICHLET_IMPORT.json. Strictly checked with the combined article dependencies; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "6b4ee43b482ea023f66ad717183e9aee2568ed9852c97f59d5f7380d81a19fb0"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveEnergyDisplacements.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Native positive ell2 quadratic construction of ((pi*n+d_n)^2-c^2-(pi*n)^2)/n, using the actual ell2-to-ell1 Holder product and bounded reciprocal; analytic with exact positive and zero nonpositive formulas.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "78c89b233bfa7223910f30bab2f09016d346a2cf925dffd55535513169ddd2ca"
+    },
+    {
+      "path": "NLS/KdV/HillHminusDirichletEnergySequence.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At every real original Hminus-one source, one common complex neighborhood supports native ell2 normalized actual Dirichlet energies, exact all-index complex characteristic zeros and real label recovery; no caller spectral family supplied.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4ee24408a1065c2b305e96070fbde43806b59d21fe93514d84fd673b90884949"
+    },
+    {
+      "path": "NLS/KdV/HillHminusDirichletNormingSequence.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At every real original Hminus-one source, one common complex neighborhood supports positive native ell2 log-norming and signed half anti-discriminant sample maps, recovering actual real log normings and their sinh, with zero nonpositive outputs.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bf7f6ab2a797f033fbceece35222635be1355bc8d04c326f889b939de2459cae"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticZeroLinearBound.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Reusable default-heartbeat analytic-zero estimate: one smaller Banach ball and positive constant bound the actual output norm by C times the input norm, from common-ball Cauchy variation.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ee0fa4a9ef32000754a7e5e63e3d5b48b112e532405fd866b29f16389de0d26b"
+    },
+    {
+      "path": "NLS/KdV/HillHminusNormingSinhIdentity.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Native rough norming and signed sample maps satisfy S_j=sinh(K_j) on one complete complex source ball by genuine physical real-form identity; no output-dependent shrink.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c56e622f48d9558c26813454b2a39fa95c9328bae572c3b1e9a1b6d93c36e977"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeRoughDirichletPacket.lean",
+      "source_labels": [
+        "Actual rough Hminus-one Dirichlet spectral packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "One common complex original Hminus-one ball before all positive Dirichlet indices supports actual normalized energy, log-norming and sinh maps into ell2, zero at zero, zero nonpositive outputs, joint norm<=C*norm(q), exact complex characteristic zeros and all-real intrinsic spectral recovery. Complex S=sinh K holds on that same ball. This is rough spectral input, not the full Abelian map, canonicality, global inverse or any complete main theorem.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "55a349f3d232846e4c1981e5a4758b6fca4a0ac9882774b522e865249d5bb5d1"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "Near zero in L2 the actual native weighted Abelian map, Fourier derivative and real-preserving analytic local inverse are proved. NOW one complex mean-zero inverse chart supports analytic vector fields for every action index simultaneously; its derivative sends them to exact signed coordinate rotations, and at every real source they equal the original physical action Hamiltonian directions, including closed gaps. NEXT prove actual rough coordinate/cotangent extensions, full coordinate-coordinate canonical brackets, arbitrary-base/global inverse and the full s>=-1 scale; then Hamiltonian action-frequency identities and remaining spectral/PDE main conclusions.",
+    "The actual near-zero L2 weighted Abelian map, real-preserving local inverse and simultaneous analytic physical action fields are proved. NOW one common complex original Hminus-one ball supports actual intrinsic normalized Dirichlet energies, log normings and sinh in ell2, with exact characteristic zeros, real spectral recovery and joint linear norm bound. NEXT construct rough symmetric midpoints/filled roots/amplitudes and regular phase, assemble the negative-half target map and identify all physical components; then full coordinate-coordinate canonical brackets, arbitrary-base/global inverse, full s>=-1 scale, Hamiltonian action-frequency identities and remaining spectral/PDE main conclusions.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
@@ -18340,15 +19845,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 11197,
-    "total_declarations_audited": 33265,
+    "candidate_declarations_audited": 12222,
+    "total_declarations_audited": 34293,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1282,
+    "selected_modules": 1407,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -18409,7 +19914,8 @@
     "native_gap_midpoint_validation_sequence": "Prior strict evidence for all 1221 unchanged selected baseline sources; strict dependency-order compilation of sixteen new proof modules; then a fresh combined transitive axiom audit of all 1237 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1269 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the sixteen new modules. No repeated full 1237-module rebuild is claimed.",
     "native_weighted_abelian_validation_sequence": "Prior strict evidence for all 1237 unchanged selected baseline sources; strict dependency-order compilation of twenty-one new proof modules; then a fresh combined transitive axiom audit of all 1258 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1290 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. Complete imported NLS source closure adds exactly the twenty-one new modules. No repeated full 1258-module rebuild is claimed.",
     "native_real_inverse_validation_sequence": "Prior strict evidence for all 1258 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules and four unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1272 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1305 frozen source/checker/provenance hashes, 30 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the ten new proof modules; the four canonical helpers were already in the imported closure. No repeated full 1272-module rebuild is claimed.",
-    "native_action_fields_validation_sequence": "Prior strict evidence for all 1272 unchanged selected baseline sources; strict dependency-order compilation of eight new proof modules and two unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1282 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1316 frozen source/checker/provenance hashes, 31 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the eight new proof modules; both canonical helpers were already in the imported closure. No repeated full 1282-module rebuild is claimed."
+    "native_action_fields_validation_sequence": "Prior strict evidence for all 1272 unchanged selected baseline sources; strict dependency-order compilation of eight new proof modules and two unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1282 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1316 frozen source/checker/provenance hashes, 31 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the eight new proof modules; both canonical helpers were already in the imported closure. No repeated full 1282-module rebuild is claimed.",
+    "native_rough_dirichlet_validation_sequence": "Prior strict evidence for all 1282 unchanged selected baseline sources; 125 new selections strictly checked: 114 incoming source files, eight new or extracted compatibility/proof modules, and three unchanged canonical helpers. A retained 112-module integrated source-check prefix is completed by 13 strict selections after the needed private canonical helper outputs are prepared, followed by a fresh combined transitive axiom audit of all 1407 selected modules. The original interrupted prefix log is retained: its sole error is a missing private SourceLemma9_2.olean; the final log contains the successful helper and consumer builds and no error or warning. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 1443 frozen source/checker/provenance/Mathlib-source hashes, 32 unchanged and one new verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS imported source closure adds exactly the 125 new selections. Pinned Mathlib Arsinh is compiled privately with warningAsError at default heartbeats. No full 1407-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -18448,15 +19954,15 @@
   "progress_record": "PROGRESS.md",
   "endpoint_mass_record": "MASS_NONEXTENSION.md",
   "shared_developments_inspected": {
-    "articles/kdv-convexity": "08db7a5b181084e4436959d1e84b2596bd5d9338",
-    "articles/kdv-estimates": "7a4fea39ed9ee1114b58dadf112a9acf2eb47ac8"
+    "articles/kdv-convexity": "ba0cf42ee4f2e37acfc7a239af566e11b9e583f2",
+    "articles/kdv-estimates": "91e0789978eb013d13e9c974ba362eef29eac4dd"
   },
   "fixed_time_record": "FIXED_TIME_NONEXTENSION.md",
   "frequency_moment_record": "FREQUENCY_MOMENTS.md",
   "frequency_series_record": "FREQUENCY_SERIES.md",
   "primitive_continuation_record": "PRIMITIVE_CONTINUATION.md",
   "shared_developments_imported": {
-    "articles/kdv-convexity": "963d5bb053684ec65427e0a319ffb729beaaa9f0",
+    "articles/kdv-convexity": "ba0cf42ee4f2e37acfc7a239af566e11b9e583f2",
     "articles/kdv-estimates": "e36a0443e127c72527458d1970ad66ecbef091f2"
   },
   "shared_integration_recheck": {
@@ -18931,6 +20437,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "1293519b20ee6e8b0e3f82f40b55e80fb2ad9608",
+      "description": "Prior native L2 action Hamiltonian fields; now actual intrinsic rough Dirichlet geometry reused and a common native complex Hminus-one Hilbert packet of normalized energies/log normings/sinh with linear norm control.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "Near zero in L2 the actual native weighted Abelian map, Fourier derivative and real-preserving analytic local inverse are proved. NOW one complex mean-zero inverse chart supports analytic vector fields for every action index simultaneously; its derivative sends them to exact signed coordinate rotations, and at every real source they equal the original physical action Hamiltonian directions, including closed gaps. NEXT prove actual rough coordinate/cotangent extensions, full coordinate-coordinate canonical brackets, arbitrary-base/global inverse and the full s>=-1 scale; then Hamiltonian action-frequency identities and remaining spectral/PDE main conclusions.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -18955,5 +20473,6 @@
   "native_gap_midpoint_record": "NATIVE_GAP_MIDPOINTS.md",
   "native_weighted_abelian_record": "NATIVE_WEIGHTED_ABELIAN_MAP.md",
   "native_real_inverse_record": "NATIVE_REAL_ABELIAN_INVERSE.md",
-  "native_action_fields_record": "NATIVE_ACTION_HAMILTONIAN_FIELDS.md"
+  "native_action_fields_record": "NATIVE_ACTION_HAMILTONIAN_FIELDS.md",
+  "native_rough_dirichlet_record": "NATIVE_ROUGH_DIRICHLET_PACKET.md"
 }

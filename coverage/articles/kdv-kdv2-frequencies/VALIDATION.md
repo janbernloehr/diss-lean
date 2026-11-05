@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest native physical action Hamiltonian fields
+## Latest actual rough Dirichlet Hilbert packet
+
+One complex ball in the original period-one Hminus-one source now supports native Hilbert analytic normalized Dirichlet energies D, log normings K and signed anti-discriminant samples S. All vanish at zero and satisfy the joint bound norm(Dq)+norm(Kq)+norm(Sq)<=C*norm(q). Before every positive index: the actual entire Dirichlet characteristic vanishes at (pi*n)^2+n*D_n, and at every real source the components recover the intrinsic actual labelled energy displacement divided by n, logarithmic norming and its sinh. Nonpositive outputs vanish, and S_j=sinh(K_j) holds throughout the same complex ball. First/closed gaps and nonzero means are included.
+
+See `NATIVE_ROUGH_DIRICHLET_PACKET.md` and `SHARED_ROUGH_DIRICHLET_IMPORT.json`. Rough Abelian amplitudes/regular phase/full map assembly, full canonical brackets, arbitrary-base/global inverse, full regularity and Hamiltonian/frequency/PDE main conclusions remain open.
+
+Prior strict evidence for all 1282 unchanged selected baseline sources; 125 new selections strictly checked: 114 incoming source files, eight new or extracted compatibility/proof modules, and three unchanged canonical helpers. A retained 112-module integrated source-check prefix is completed by 13 strict selections after the needed private canonical helper outputs are prepared, followed by a fresh combined transitive axiom audit of all 1407 selected modules. The original interrupted prefix log is retained: its sole error is a missing private SourceLemma9_2.olean; the final log contains the successful helper and consumer builds and no error or warning. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 1443 frozen source/checker/provenance/Mathlib-source hashes, 32 unchanged and one new verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS imported source closure adds exactly the 125 new selections. Pinned Mathlib Arsinh is compiled privately with warningAsError at default heartbeats. No full 1407-module rebuild is claimed.
+
+Fresh audit: 12222 selected and 34293 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier native physical action Hamiltonian fields
 
 One common complex mean-zero L2 Abelian inverse chart now supports analytic vector fields for EVERY positive action index. The actual native weighted derivative sends each field to its exact signed coordinate rotation, +i at the positive mode and -i at its negative partner. At EVERY actual real source in the chart, these fields are the original physical action Hamiltonian directions, including sources with closed gaps. The map, inverse and neighborhoods precede all action and output indices.
 
@@ -496,7 +506,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1282 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1407 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1565,7 +1575,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1282 selected modules (including generated and private declarations)
+the 1407 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -3152,4 +3162,24 @@ PASS NLS/ComplexAnalysis/AnalyticInverseVectorFields
 PASS NLS/KdV/HillNativeAbelianActionVector
 PASS NLS/Articles/KdVKdV2Frequencies/NativeActionHamiltonianFields
 Axiom audit passed: 11197 candidate declarations; 33265 declarations total.
+```
+
+Latest rough Dirichlet packet final strict completion and combined audit (the retained112-check prefix is recorded in the validation sequence above):
+
+```text
+PASS Mathlib/Analysis/SpecialFunctions/Arsinh
+PASS NLS/ZakharovShabat/FloquetQuadratic
+PASS NLS/ZakharovShabat/SourceAntiDiscriminantCentralLp
+PASS NLS/ZakharovShabat/SourceLemma9_2
+PASS NLS/ZakharovShabat/SourceDirichletAntiSamplesAnalytic
+PASS NLS/SequenceSpaces/HilbertSampling
+PASS NLS/SequenceSpaces/AnalyticSuperposition
+PASS NLS/SequenceSpaces/ArsinhSuperposition
+PASS NLS/SequenceSpaces/PositiveEnergyDisplacements
+PASS NLS/KdV/HillHminusDirichletEnergySequence
+PASS NLS/KdV/HillHminusDirichletNormingSequence
+PASS NLS/ComplexAnalysis/AnalyticZeroLinearBound
+PASS NLS/KdV/HillHminusNormingSinhIdentity
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughDirichletPacket
+Axiom audit passed: 12222 candidate declarations; 34293 declarations total.
 ```
