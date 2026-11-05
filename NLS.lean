@@ -6251,3 +6251,11 @@ import NLS.KdV.HillOwnNegativeBeta
 import NLS.KdV.HillOwnSeriesAssembly
 import NLS.KdV.HillOwnPhysicalPullback
 import NLS.KdV.HillFullSourceCartesian
+import NLS.KdV.HillOwnModelIntegrability
+import NLS.ZakharovShabat.SourceEtaPrescribedModelAngle
+import NLS.ZakharovShabat.SourceEtaPrescribedRepresentative
+import NLS.KdV.HillOwnCutEtaPhase
+import NLS.KdV.HillFullPhaseSquare
+import NLS.KdV.HillPhaseSquareEndpoints
+import NLS.KdV.HillPhaseOpenGap
+import NLS.KdV.HillPhaseLocalSign

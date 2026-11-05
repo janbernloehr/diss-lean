@@ -1328,6 +1328,14 @@ import NLS.KdV.HillOwnNegativeBeta
 import NLS.KdV.HillOwnSeriesAssembly
 import NLS.KdV.HillOwnPhysicalPullback
 import NLS.KdV.HillFullSourceCartesian
+import NLS.KdV.HillOwnModelIntegrability
+import NLS.ZakharovShabat.SourceEtaPrescribedModelAngle
+import NLS.ZakharovShabat.SourceEtaPrescribedRepresentative
+import NLS.KdV.HillOwnCutEtaPhase
+import NLS.KdV.HillFullPhaseSquare
+import NLS.KdV.HillPhaseSquareEndpoints
+import NLS.KdV.HillPhaseOpenGap
+import NLS.KdV.HillPhaseLocalSign
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2504,7 +2512,11 @@ run_cmd do
     ``NLS.ComplexAnalysis.quadraticEnergyPath_positiveRealEnergyLiftPath,
     ``NLS.ComplexAnalysis.curveIntegrable_of_quadratic_cosine_resolution,
     ``NLS.ZakharovShabat.SourceLemma12_12Data.beta_original_eq_zero_of_sheet_zero,
-    ``NLS.ZakharovShabat.sourceAngular_negative_pathIntegral_eq_beta]
+    ``NLS.ZakharovShabat.sourceAngular_negative_pathIntegral_eq_beta,
+    ``NLS.ZakharovShabat.SourceAngularEtaAnalyticChartData.exp_two_I_prescribed_pathIntegral_eq_phase,
+    ``NLS.ZakharovShabat.SourceAngularEtaAnalyticChartData.prescribed_pathIntegral_sub_representative_eq_int_pi,
+    ``NLS.ZakharovShabat.sourceAngularEtaModelSheetIntegrand.congr_simp,
+    ``NLS.ZakharovShabat.sourceAngularEta_prescribed_model_sub_angle_eq_int_pi]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

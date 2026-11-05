@@ -219,6 +219,7 @@ modules+=(NLS/ZakharovShabat/SourceAngularPairedPathBeta NLS/KdV/HillPrescribedC
 modules+=(NLS/ComplexAnalysis/RealPositiveEnergyLift NLS/KdV/HillPhysicalCosineFrequencyPath NLS/KdV/HillHminusOriginalCosineLift)
 modules+=(NLS/ComplexAnalysis/QuadraticCosinePathIntegrability NLS/KdV/HillCosineSourceGap NLS/KdV/HillSelectedCosineArc NLS/KdV/HillCosineSourceSheet NLS/KdV/HillCosineSourceIntegrability NLS/KdV/HillCosineSourceBeta NLS/KdV/HillOriginalTerminalBeta NLS/KdV/HillZeroTerminalCorrection NLS/ZakharovShabat/SourceBetaZeroSheet NLS/KdV/HillOriginalPairedBeta NLS/KdV/HillOriginalOffIndexSourceSeries)
 modules+=(NLS/KdV/HillOwnCosineEnergy NLS/ZakharovShabat/SourceNegativePathBeta NLS/KdV/HillOwnNegativeBeta NLS/KdV/HillOwnSeriesAssembly NLS/KdV/HillOwnPhysicalPullback NLS/KdV/HillFullSourceCartesian)
+modules+=(NLS/KdV/HillOwnModelIntegrability NLS/ZakharovShabat/SourceEtaPrescribedModelAngle NLS/ZakharovShabat/SourceEtaPrescribedRepresentative NLS/KdV/HillOwnCutEtaPhase NLS/KdV/HillFullPhaseSquare NLS/KdV/HillPhaseSquareEndpoints NLS/KdV/HillPhaseOpenGap NLS/KdV/HillPhaseLocalSign)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
