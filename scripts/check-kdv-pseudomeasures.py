@@ -1940,6 +1940,14 @@ modules = [
     'NLS.ZakharovShabat.SourceSignedTerminalOneSmoothing',
     'NLS.ZakharovShabat.SourceNormalizedMidpointOneSmoothing',
     'NLS.KdV.HillRotatedDiracTerminalSmoothing',
+    'NLS.SequenceSpaces.SobolevHilbertPointwiseProduct',
+    'NLS.SequenceSpaces.SobolevToSignedHalfLift',
+    'NLS.ZakharovShabat.SourceSignedTerminalH1Realization',
+    'NLS.ZakharovShabat.SourceHillH1TerminalOneSmoothing',
+    'NLS.KdV.HillL2MassivePrincipalSmoothing',
+    'NLS.KdV.HillMiuraH2TerminalFourier',
+    'NLS.KdV.HillL2TerminalModelOneSmoothing',
+    'NLS.KdV.HillL2SpectralCoreOneSmoothing',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

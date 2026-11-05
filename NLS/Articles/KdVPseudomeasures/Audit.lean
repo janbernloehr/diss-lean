@@ -1906,6 +1906,14 @@ import NLS.ZakharovShabat.SourceDirichletTerminalFourierSmoothing
 import NLS.ZakharovShabat.SourceSignedTerminalOneSmoothing
 import NLS.ZakharovShabat.SourceNormalizedMidpointOneSmoothing
 import NLS.KdV.HillRotatedDiracTerminalSmoothing
+import NLS.SequenceSpaces.SobolevHilbertPointwiseProduct
+import NLS.SequenceSpaces.SobolevToSignedHalfLift
+import NLS.ZakharovShabat.SourceSignedTerminalH1Realization
+import NLS.ZakharovShabat.SourceHillH1TerminalOneSmoothing
+import NLS.KdV.HillL2MassivePrincipalSmoothing
+import NLS.KdV.HillMiuraH2TerminalFourier
+import NLS.KdV.HillL2TerminalModelOneSmoothing
+import NLS.KdV.HillL2SpectralCoreOneSmoothing
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11253,3 +11261,32 @@ import NLS.KdV.HillRotatedDiracTerminalSmoothing
 #print axioms NLS.KdV.HillProductEquationPatch.l2TerminalFourierRemainder
 #print axioms NLS.KdV.HillProductEquationPatch.analytic_l2TerminalFourierRemainder
 #print axioms NLS.KdV.HillProductEquationPatch.eventually_l2TerminalFourierRemainder_apply
+#print axioms NLS.WeightedCoeff.sobolevHilbertPointwiseProduct
+#print axioms NLS.WeightedCoeff.sobolevHilbertPointwiseProduct_apply
+#print axioms NLS.WeightedCoeff.analyticAt_sobolevHilbertPointwiseProduct
+#print axioms NLS.WeightedCoeff.sobolevToSignedHalfLift_bound
+#print axioms NLS.WeightedCoeff.sobolevToSignedHalfLift
+#print axioms NLS.WeightedCoeff.sobolevToSignedHalfLift_apply
+#print axioms NLS.ZakharovShabat.sourceSignedSobolevTerminalFourier
+#print axioms NLS.ZakharovShabat.sourceSignedSobolevTerminalFourier_apply
+#print axioms NLS.ZakharovShabat.sourceSignedTerminalH2Remainder
+#print axioms NLS.ZakharovShabat.sourceSignedTerminalH2Remainder_apply
+#print axioms NLS.ZakharovShabat.sourceSignedTerminalH1Sequence
+#print axioms NLS.ZakharovShabat.sourceSignedTerminalH1Sequence_apply
+#print axioms NLS.ZakharovShabat.exists_local_sourceSignedTerminal_H1_H2_realization
+#print axioms NLS.ZakharovShabat.sourceHillH1TerminalRemainder
+#print axioms NLS.ZakharovShabat.exists_local_sourceHillH1TerminalRemainder_analytic
+#print axioms NLS.KdV.hillL2PrincipalFourierRemainder
+#print axioms NLS.KdV.hillL2PrincipalFourierRemainder_apply
+#print axioms NLS.KdV.hillL2PrincipalFourierRemainder_eq_actual
+#print axioms NLS.KdV.hillMiuraH2TerminalFourier
+#print axioms NLS.KdV.hillMiuraH2TerminalFourier_apply
+#print axioms NLS.KdV.hillMiuraH2TerminalFourier_eq_actual
+#print axioms NLS.KdV.hillMiuraH2TerminalFourier_eq_difference
+#print axioms NLS.KdV.HillProductEquationPatch.l2MiuraTerminalRemainder
+#print axioms NLS.KdV.HillProductEquationPatch.l2MiuraTerminalRemainder_apply
+#print axioms NLS.KdV.HillProductEquationPatch.l2TerminalModelFourierRemainder
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_l2TerminalModelFourierRemainder
+#print axioms NLS.KdV.HillProductEquationPatch.eventually_l2TerminalModelFourierRemainder_data
+#print axioms NLS.KdV.HillProductEquationPatch.eventually_l2TerminalModelFourierRemainder_apply
+#print axioms NLS.KdV.exists_hillL2SpectralCore_one_smoothing
