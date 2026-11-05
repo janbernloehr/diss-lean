@@ -1617,6 +1617,10 @@ import NLS.Topology.LocalConstancyAlong
 import NLS.KdV.HillRealSpatialTranslationContinuity
 import NLS.Articles.KdVPseudomeasures.OriginalHillActionInvariantTopology
 import NLS.Articles.KdVPseudomeasures.OriginalHillSpatialCharacter
+import NLS.ComplexAnalysis.PeriodicCharacterAveraging
+import NLS.FunctionalAnalysis.LinearSourceDerivative
+import NLS.KdV.HillNativeSpatialLinearization
+import NLS.Articles.KdVPseudomeasures.OriginalHillSpatialNormalization
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9862,3 +9866,16 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillSpatialCharacter
 #print axioms NLS.Articles.KdVPseudomeasures.hillRealSpatialCoordinateRatio_zero
 #print axioms NLS.Articles.KdVPseudomeasures.hillRealSpatialCoordinateRatio_add
 #print axioms NLS.Articles.KdVPseudomeasures.hillRealSpatialCoordinateRatio_periodic
+#print axioms NLS.ComplexAnalysis.periodic_character_eq_one_of_integral_ne_zero
+#print axioms NLS.ComplexAnalysis.periodic_characters_eq_of_correlation_ne_zero
+#print axioms NLS.ComplexAnalysis.exists_open_eq_periodic_character_family
+#print axioms NLS.FunctionalAnalysis.fderiv_clm_comp_apply
+#print axioms NLS.KdV.hillRealPositiveCoordinate_eq_native
+#print axioms NLS.KdV.fderiv_hillRealPositiveCoordinate_spatialTranslation_zero
+#print axioms NLS.Articles.KdVPseudomeasures.exists_open_hillRealSpatial_phase
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealPositiveCoordinate_spatialTranslation_eq_character
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSpatialCoordinateRatio_eq_exp
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealPositiveCoordinate_spatialTranslation
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSignedMap_spatialTranslation_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSignedMap_spatialTranslation
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_spatialTranslation

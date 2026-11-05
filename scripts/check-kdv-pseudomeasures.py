@@ -1651,6 +1651,10 @@ modules = [
     'NLS.KdV.HillRealSpatialTranslationContinuity',
     'NLS.Articles.KdVPseudomeasures.OriginalHillActionInvariantTopology',
     'NLS.Articles.KdVPseudomeasures.OriginalHillSpatialCharacter',
+    'NLS.ComplexAnalysis.PeriodicCharacterAveraging',
+    'NLS.FunctionalAnalysis.LinearSourceDerivative',
+    'NLS.KdV.HillNativeSpatialLinearization',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillSpatialNormalization',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
