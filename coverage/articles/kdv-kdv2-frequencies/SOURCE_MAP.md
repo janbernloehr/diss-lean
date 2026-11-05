@@ -1202,3 +1202,14 @@ The normalized actual ENERGY gap squares now form a native ell1 analytic map on 
 Prior strict evidence retained for all 1439 unchanged selected baseline sources; all seven new proof modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1446 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1484 frozen source/checker/provenance/Mathlib-source hashes, all 35 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these seven new proof modules. No full 1446-module rebuild is claimed.
 
 Fresh audit: 12566 selected and 34636 imported NLS declarations; permitted axioms only. The common infinite-tail amplitude estimate, full rough regular phase/Abelian map, canonicality, global inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+
+## Latest closed-gap action-ratio identification
+
+For every fixed positive index, the actual physical gap opens arbitrarily near the zero potential. The exact free Fourier derivative rules out an identically collapsed gap germ. The actual squared-gap analytic germ in native complex L2 is consequently nontrivial, although its value at zero vanishes.
+
+This proves the needed cancellation step for rough analytic ratios: equality after multiplication by the actual squared HALF gap determines the complex L2 and physical real germs. If a rough analytic candidate reproduces the actual physical action on an original L2 germ, it equals the original physical action-to-half-gap-square ratio at EVERY physical L2 source in its whole rough ball. No division at a closed gap and no smallness of the physical L2 norm are required. The high-tail candidate and its actual action factorization remain explicit construction obligations. See `ROUGH_ACTION_RATIO_IDENTIFICATION.md`.
+
+Prior strict evidence retained for all 1446 unchanged selected baseline sources; all four new proof modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1450 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1488 frozen source/checker/provenance/Mathlib-source hashes, all 35 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these four new proof modules. No full 1450-module rebuild is claimed.
+
+Fresh audit: 12583 selected and 34650 imported NLS declarations; permitted axioms only. The common infinite-tail amplitude family, full rough regular phase/Abelian map, canonicality, global inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.

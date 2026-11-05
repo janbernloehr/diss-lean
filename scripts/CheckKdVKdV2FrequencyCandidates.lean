@@ -1,3 +1,7 @@
+import NLS.KdV.HillHminusActionRatioGermIdentification
+import NLS.KdV.HillPhysicalRealGermIdentity
+import NLS.ComplexAnalysis.AnalyticGermCancellation
+import NLS.KdV.HillPhysicalGapGermNontrivial
 import NLS.Articles.KdVKdV2Frequencies.RoughActionAmplitudeHead
 import NLS.KdV.HillHminusLocalActionAmplitude
 import NLS.KdV.HillHminusLocalFilledTrace
@@ -2027,7 +2031,11 @@ run_cmd do
     `NLS.KdV.HillHminusLocalGapMoments,
     `NLS.KdV.HillHminusLocalFilledTrace,
     `NLS.KdV.HillHminusLocalActionAmplitude,
-    `NLS.Articles.KdVKdV2Frequencies.RoughActionAmplitudeHead
+    `NLS.Articles.KdVKdV2Frequencies.RoughActionAmplitudeHead,
+    `NLS.ComplexAnalysis.AnalyticGermCancellation,
+    `NLS.KdV.HillPhysicalGapGermNontrivial,
+    `NLS.KdV.HillPhysicalRealGermIdentity,
+    `NLS.KdV.HillHminusActionRatioGermIdentification
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

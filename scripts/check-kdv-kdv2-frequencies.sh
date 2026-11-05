@@ -1455,6 +1455,10 @@ modules=(
   NLS/KdV/HillHminusLocalFilledTrace
   NLS/KdV/HillHminusLocalActionAmplitude
   NLS/Articles/KdVKdV2Frequencies/RoughActionAmplitudeHead
+  NLS/ComplexAnalysis/AnalyticGermCancellation
+  NLS/KdV/HillPhysicalGapGermNontrivial
+  NLS/KdV/HillPhysicalRealGermIdentity
+  NLS/KdV/HillHminusActionRatioGermIdentification
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
