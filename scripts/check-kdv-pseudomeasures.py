@@ -1587,6 +1587,15 @@ modules = [
     'NLS.KdV.HillNativeJacobianFredholm',
     'NLS.FunctionalAnalysis.CompactPerturbationDenseRange',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNativeJacobianInverse',
+    'NLS.SequenceSpaces.FourierRealZeroDecomposition',
+    'NLS.FunctionalAnalysis.ComplexEquivRealForm',
+    'NLS.KdV.HillNativeRealDerivative',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalRealInverse',
+    'NLS.SequenceSpaces.FourierRealZeroTruncation',
+    'NLS.KdV.HillNativeFiniteGap',
+    'NLS.FunctionalAnalysis.AnalyticLocalHomeomorph',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalLocalHomeomorph',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapApproximation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

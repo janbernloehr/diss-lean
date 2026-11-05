@@ -1553,6 +1553,15 @@ import NLS.KdV.HillSpectralCoreFourierPrincipal
 import NLS.KdV.HillNativeJacobianFredholm
 import NLS.FunctionalAnalysis.CompactPerturbationDenseRange
 import NLS.Articles.KdVPseudomeasures.OriginalHillNativeJacobianInverse
+import NLS.SequenceSpaces.FourierRealZeroDecomposition
+import NLS.FunctionalAnalysis.ComplexEquivRealForm
+import NLS.KdV.HillNativeRealDerivative
+import NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalRealInverse
+import NLS.SequenceSpaces.FourierRealZeroTruncation
+import NLS.KdV.HillNativeFiniteGap
+import NLS.FunctionalAnalysis.AnalyticLocalHomeomorph
+import NLS.Articles.KdVPseudomeasures.OriginalHillPhysicalLocalHomeomorph
+import NLS.Articles.KdVPseudomeasures.OriginalHillFiniteGapApproximation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9503,3 +9512,33 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNativeJacobianInverse
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_Jacobian_equivalence
 #print axioms NLS.Articles.KdVPseudomeasures.hillRealNativeMap_localInverse
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_localInverse
+#print axioms NLS.WeightedCoeff.fourierRealZeroProjection_apply
+#print axioms NLS.WeightedCoeff.fourierRealZeroProjection_decomposition
+#print axioms NLS.WeightedCoeff.fourierRealZeroProjection_I_smul
+#print axioms NLS.FunctionalAnalysis.realForm_rightInverse
+#print axioms NLS.FunctionalAnalysis.equivOfComplexEquivRealForm
+#print axioms NLS.FunctionalAnalysis.equivOfComplexEquivRealForm_toContinuousLinearMap
+#print axioms NLS.FunctionalAnalysis.equivOfComplexEquivRealForm_symm_coe
+#print axioms NLS.KdV.fderiv_hillRealSignedMap_coe
+#print axioms NLS.KdV.fderiv_hillRealSignedMap_inclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNativeJacobianEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNativeJacobianEquiv_toContinuousLinearMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNativeJacobianEquiv_symm_coe
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNativeJacobian_bijective
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNativeMap_localInverse
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_physical_real_Jacobian_equivalence
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_physical_real_localInverse
+#print axioms NLS.WeightedCoeff.fourierRealZeroTruncate
+#print axioms NLS.WeightedCoeff.fourierRealZeroTruncate_apply
+#print axioms NLS.WeightedCoeff.tendsto_fourierRealZeroTruncate
+#print axioms NLS.KdV.hillRealFiniteGapLocus
+#print axioms NLS.KdV.hillRealSignedMap_positive_eq_zero_iff_gapSquare
+#print axioms NLS.KdV.hillRealFiniteGap_of_map_eq_truncate
+#print axioms NLS.FunctionalAnalysis.isLocalHomeomorph_of_analytic_equiv_fderiv
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNativeMap_isLocalHomeomorph
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNativeMap_isOpenMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNativeMap_open_range
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNativeFiniteGap_approximation
+#print axioms NLS.Articles.KdVPseudomeasures.dense_hillRealFiniteGapLocus
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNative_finiteGap_collision_mem_open
+#print axioms NLS.Articles.KdVPseudomeasures.hillPhysicalNative_injective_iff_injOn_finiteGap
