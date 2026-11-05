@@ -212,6 +212,7 @@ modules+=(NLS/KdV/HillHminusOneNLSMovingSheets NLS/SequenceSpaces/PeriodOneMiura
 modules+=(NLS/ComplexAnalysis/QuadraticCircleHomotopyGeometry NLS/KdV/HillIntrinsicCircleEndpoints NLS/ComplexAnalysis/QuadraticCirclePeriodTransfer NLS/KdV/HillHminusIntrinsicPeriods NLS/KdV/HillHminusNumeratorReality NLS/KdV/HillHminusPhysicalNumeratorIdentification)
 modules+=(NLS/ZakharovShabat/SourcePsiSeparatedGrowth NLS/ComplexAnalysis/CloseShiftedFrequency NLS/ZakharovShabat/ShiftedSineExteriorBounds NLS/KdV/HillHminusNumeratorDecay NLS/KdV/HillHminusFixedPhysicalNumerators)
 modules+=(NLS/KdV/HminusOneMiuraDirichlet NLS/KdV/MiuraL2DirichletAuxiliary NLS/KdV/HillHminusAuxiliaryDirichlet NLS/KdV/MiuraDirichletCoordinates NLS/KdV/HillHminusDirichletCoordinateCharts NLS/SequenceSpaces/UniformPositiveFrequencyNonzero NLS/KdV/HillHminusCommonDirichletFamily NLS/KdV/HillHminusCommonDirichletSheets NLS/KdV/HillHminusCommonPhysicalDirichlet)
+modules+=(NLS/ZakharovShabat/SourcePhaseHilbertMonodromy NLS/KdV/MiuraDirichletSourcePhase NLS/KdV/HillHminusDirichletSourcePhase NLS/ComplexAnalysis/OddSquareDescentCongruence NLS/ZakharovShabat/SourcePsiPhaseCompatibility NLS/KdV/HillHminusPhaseNumeratorCompatibility NLS/KdV/HillHminusDirichletSourceBetaSeries)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

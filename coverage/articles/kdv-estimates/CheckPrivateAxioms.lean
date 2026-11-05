@@ -1285,6 +1285,13 @@ import NLS.SequenceSpaces.UniformPositiveFrequencyNonzero
 import NLS.KdV.HillHminusCommonDirichletFamily
 import NLS.KdV.HillHminusCommonDirichletSheets
 import NLS.KdV.HillHminusCommonPhysicalDirichlet
+import NLS.ZakharovShabat.SourcePhaseHilbertMonodromy
+import NLS.KdV.MiuraDirichletSourcePhase
+import NLS.KdV.HillHminusDirichletSourcePhase
+import NLS.ComplexAnalysis.OddSquareDescentCongruence
+import NLS.ZakharovShabat.SourcePsiPhaseCompatibility
+import NLS.KdV.HillHminusPhaseNumeratorCompatibility
+import NLS.KdV.HillHminusDirichletSourceBetaSeries
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2387,7 +2394,17 @@ run_cmd do
     ``NLS.ZakharovShabat.exists_threshold_free_div_entireSingleSpectralProduct_le_two,
     ``NLS.ZakharovShabat.exists_threshold_sourceOddPsiCandidate_sub_sine,
     ``NLS.ZakharovShabat.exists_threshold_sourcePsiCandidate_sub_sine,
-    ``NLS.exists_local_uniform_positive_frequencies_ne_zero]
+    ``NLS.exists_local_uniform_positive_frequencies_ne_zero,
+    ``NLS.ComplexAnalysis.oddSquareDescent_congr_slice,
+    ``NLS.ZakharovShabat.SourceTheorem12_1Data.exists_common_sourcePhase_agreement,
+    ``NLS.ZakharovShabat.finiteSourceCurve_sourcePhase,
+    ``NLS.ZakharovShabat.l2Discriminant_sourcePhase,
+    ``NLS.ZakharovShabat.l2Monodromy_sourcePhase,
+    ``NLS.ZakharovShabat.sourceAntiDiscriminant_sourcePhase_eq_l2,
+    ``NLS.ZakharovShabat.sourcePhase_mem_sourceIsospectralSet,
+    ``NLS.ZakharovShabat.sourcePhase_ofFinsupp,
+    ``NLS.ZakharovShabat.sourcePsiDeletedCandidate.eq_1,
+    ``NLS.ZakharovShabat.sourceSelectedPsiNumerator.eq_1]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
