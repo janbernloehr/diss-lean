@@ -1,0 +1,167 @@
+{
+  "source": "arXiv:1610.00278v1 actual physical KdV frequency dependencies for remaining main1.1,1.3,5.9, including collapsed modes",
+  "status": "Actual normalized physical H1 KdV frequencies are real analytic on the ENTIRE canonical domain, including EVERY collapsed mode, by verified real analytic coordinate division on the original Fourier real form.",
+  "main_theorems_verified": false,
+  "verified_main_theorems": [
+    "1.4"
+  ],
+  "unproved_main_theorems": [
+    "1.1",
+    "1.3",
+    "5.1",
+    "5.9"
+  ],
+  "goal_status": "active",
+  "flags": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-h1-collapsed-frequency-analyticity-map.json",
+    "contractive_real_form_linear_complexification_bound2_PROVED": true,
+    "contractive_multilinear_complexification_bound2_pow_degree_PROVED": true,
+    "contractive_real_analytic_germ_holomorphic_extension_half_radius_PROVED": true,
+    "ORIGINAL_physical_Fourier_real_form_contractive_complexification_ALL_Banach_exponents_including_infinity_PROVED": true,
+    "real_Banach_analytic_coordinate_division_on_ENTIRE_zero_hyperplane_PROVED": true,
+    "actual_normalized_H1_KdV_frequencies_REAL_ANALYTIC_on_ENTIRE_signed_Hthreehalves_including_EVERY_collapsed_mode_PROVED": true,
+    "actual_normalized_KdV_frequencies_REAL_ANALYTIC_in_ORIGINAL_physical_H1_potential_PROVED": true,
+    "actual_FULL_H1_energy_differential_eq_frequency_times_literal_action_differential_PROVED": true,
+    "actual_H1_frequency_constant_on_ENTIRE_action_fibers_including_collapse_PROVED": true,
+    "actual_free_H1_frequency_2pi_n_cubed_PROVED": false,
+    "actual_KdV_rough_frequencies_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": true,
+    "remaining_main_theorems": [
+      "1.1",
+      "1.3",
+      "5.1",
+      "5.9"
+    ]
+  },
+  "results": [
+    "ContractiveComplexification generalizes the existing real coefficient extension to a genuine contractive real form with actual continuous real/imaginary projections, inclusion, complex-I identities and full decomposition. Real-linear maps extend COMPLEX linearly with norm at most2 times the original norm. ContractiveMultilinearComplexification extends degree-n coefficients with norm at most2^n and exact recovery on EVERY tuple of included real vectors. ContractiveAnalyticExtension preserves at least HALF the original power-series radius and extends EVERY real analytic germ to an actual holomorphic germ with FULL real-neighborhood agreement. No basis, finite-dimensionality or finite exponent is assumed in this extension machinery.",
+    "FourierRealContractiveComplexification proves the physical real Fourier projection is a CONTRACTION on EVERY symmetric weighted zero-mode Banach space, INCLUDING infinity. Its imaginary projection is the SAME real projection of -i times the original complex vector. These actual maps satisfy every contractive-complexification field, including the full ORIGINAL complex Fourier decomposition. This provides the genuine physical real-form instance, rather than assuming an auxiliary real coordinate realization.",
+    "ComplexHyperplaneSlope constructs the actual integral0..1 of the holomorphic transverse derivative and proves its EXACT coordinate-times-integral identity by FTC. It is holomorphic at EVERY zero-coordinate center because the selected complex segment is constant there and joint analyticity holds on one open neighborhood of that compact segment. LocalCoordinateCancellation proves continuous functions with equal products by a nonzero real linear coordinate agree on EVERY open domain, including its ENTIRE zero hyperplane.",
+    "RealAnalyticCoordinateDivision proves a REAL BANACH-SPACE Hadamard division theorem on the verified contractive real form: if S is continuous, l(e)=1, l*S=f everywhere, and f is REAL ANALYTIC at x, then S is REAL ANALYTIC at x, INCLUDING l(x)=0. Complexify the actual real Taylor coefficients, integrate the holomorphic derivative transversely, use one genuine tube neighborhood for all points of the real segment, prove the same original real product identity by FTC, then identify S by local continuous coordinate cancellation. No formal divisibility, nonzero-coordinate, complex-vanishing or analytic-extension hypothesis is left unproved.",
+    "OriginalHillH1FrequencyAnalytic.analyticAt_hillH1KdVFrequency proves the SAME genuine normalized physical KdV frequency omega_n is REAL ANALYTIC at EVERY point of the actual real signed H^(3/2) canonical domain, BEFORE any nonzero-gap assumption, including EVERY collapsed selected mode. Its original exact real-gradient identity, global continuity and actual Fourier contractive complexification supply all division hypotheses. _actual_coordinates proves REAL ANALYTICITY in the ORIGINAL physical H1 potential through the SAME actual canonical map. Full action-gradient normalization and ENTIRE action-fiber invariance including collapse remain proved.",
+    "Main1.4 remains PROVED and freshly recompiled. Main1.1,1.3,5.1,5.9 remain UNPROVED. Actual normalized H1 frequencies are now globally real analytic INCLUDING collapsed modes; this strong-domain obligation is COMPLETE. Original freefrequency(2pi*n)^3 identification, rough signed H^(-1/2) frequency extension, ACTUAL original KdV evolution/every-smooth-approximation convergence, literal Wiener ell-one spectral estimates and universal actual numerator scalar remain OPEN. No original rough KdV evolution is claimed. Appendix B B.1(i)-(iv) remains COMPLETE. Goal ACTIVE."
+  ],
+  "declarations": [
+    "NLS.ComplexAnalysis.ContractiveComplexification.re_smul",
+    "NLS.ComplexAnalysis.ContractiveComplexification.im_smul",
+    "NLS.ComplexAnalysis.ContractiveComplexification.extensionValue",
+    "NLS.ComplexAnalysis.ContractiveComplexification.norm_extensionValue_le",
+    "NLS.ComplexAnalysis.ContractiveComplexification.extensionValue_add",
+    "NLS.ComplexAnalysis.ContractiveComplexification.extensionValue_smul",
+    "NLS.ComplexAnalysis.ContractiveComplexification.complexifyLinear",
+    "NLS.ComplexAnalysis.ContractiveComplexification.complexifyLinear_apply",
+    "NLS.ComplexAnalysis.ContractiveComplexification.norm_complexifyLinear_le",
+    "NLS.ComplexAnalysis.ContractiveComplexification.complexifyLinear_real",
+    "NLS.ComplexAnalysis.ContractiveComplexification.complexifyCLM",
+    "NLS.ComplexAnalysis.ContractiveComplexification.norm_complexifyCLM_le",
+    "NLS.ComplexAnalysis.ContractiveComplexification.complexifyMultilinear",
+    "NLS.ComplexAnalysis.ContractiveComplexification.complexifyMultilinear_zero",
+    "NLS.ComplexAnalysis.ContractiveComplexification.complexifyMultilinear_succ",
+    "NLS.ComplexAnalysis.ContractiveComplexification.norm_complexifyMultilinear_apply_le",
+    "NLS.ComplexAnalysis.ContractiveComplexification.norm_complexifyMultilinear_le",
+    "NLS.ComplexAnalysis.ContractiveComplexification.complexifyMultilinear_real",
+    "NLS.ComplexAnalysis.ContractiveComplexification.complexifySeries",
+    "NLS.ComplexAnalysis.ContractiveComplexification.norm_complexifySeries_le",
+    "NLS.ComplexAnalysis.ContractiveComplexification.half_radius_le_complexifySeries",
+    "NLS.ComplexAnalysis.ContractiveComplexification.radius_complexifySeries_pos",
+    "NLS.ComplexAnalysis.ContractiveComplexification.complexifySeries_sum_real",
+    "NLS.ComplexAnalysis.ContractiveComplexification.exists_complex_extension_of_analyticAt",
+    "NLS.WeightedCoeff.norm_fourierRealZeroProjection_le",
+    "NLS.WeightedCoeff.fourierRealZeroImagProjection",
+    "NLS.WeightedCoeff.fourierRealZeroImagProjection_apply",
+    "NLS.WeightedCoeff.fourierRealContractiveComplexification",
+    "NLS.FunctionalAnalysis.eqOn_of_continuousOn_coordinate_mul",
+    "NLS.ComplexAnalysis.complexHyperplanePath",
+    "NLS.ComplexAnalysis.complexHyperplaneSlope",
+    "NLS.ComplexAnalysis.analyticAt_complexHyperplaneSlope",
+    "NLS.ComplexAnalysis.mul_complexHyperplaneSlope",
+    "NLS.ComplexAnalysis.analyticAt_of_coordinate_mul_zero",
+    "NLS.ComplexAnalysis.analyticAt_of_coordinate_mul",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1KdVFrequency",
+    "NLS.Articles.KdVPseudomeasures.analyticAt_hillH1KdVFrequency_actual_coordinates"
+  ],
+  "files": [
+    "NLS/ComplexAnalysis/ContractiveComplexification.lean",
+    "NLS/ComplexAnalysis/ContractiveMultilinearComplexification.lean",
+    "NLS/ComplexAnalysis/ContractiveAnalyticExtension.lean",
+    "NLS/SequenceSpaces/FourierRealContractiveComplexification.lean",
+    "NLS/FunctionalAnalysis/LocalCoordinateCancellation.lean",
+    "NLS/ComplexAnalysis/ComplexHyperplaneSlope.lean",
+    "NLS/ComplexAnalysis/RealAnalyticCoordinateDivision.lean",
+    "NLS/Articles/KdVPseudomeasures/OriginalHillH1FrequencyAnalytic.lean"
+  ],
+  "validation": {
+    "result": "passed",
+    "fresh_full_build_this_increment": false,
+    "baseline_commit": "70ed2c34a63aba0fd68e4dc19a7a776fbb66f12f",
+    "baseline_modules": 1743,
+    "baseline_non_audit_sources_verified_unchanged": 1742,
+    "new_modules_compiled": 8,
+    "reused_canonical_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.RealAnalyticComplexExtension",
+        "source": "NLS/SequenceSpaces/RealAnalyticComplexExtension.lean",
+        "source_sha256": "23666f4727ffa44e4274890c8d532e215913953fba0f318d3cf0c96ab75d54d8"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.ParametricIntervalIntegralAnalytic",
+        "source": "NLS/ComplexAnalysis/ParametricIntervalIntegralAnalytic.lean",
+        "source_sha256": "66fb170452e18fe0d909daeffacec1f55bfdf1e1ede22e47720530727ea1701a"
+      },
+      {
+        "module": "NLS.ComplexAnalysis.ParametricCosineMeanSegment",
+        "source": "NLS/ComplexAnalysis/ParametricCosineMeanSegment.lean",
+        "source_sha256": "b70224c5ca8bba359d2f67432779e2112e815c97f1dc07aca5977016786decd0"
+      }
+    ],
+    "unchanged_private_shared_modules_freshly_compiled": [
+      {
+        "module": "NLS.SequenceSpaces.FourierRealZeroDecomposition",
+        "source": "NLS/SequenceSpaces/FourierRealZeroDecomposition.lean",
+        "source_sha256": "f64cdc88b1c39b1f0cd36b0077ac483d01218d0b79d0f0fa8a446f2cfd8af0fa",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeFrequency",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1ModeFrequency.lean",
+        "source_sha256": "3678198af4dc79fa3c366fc11bef4a20cb0303cf964f8230b166dceba43aebab",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyActionFibers",
+        "source": "NLS/Articles/KdVPseudomeasures/OriginalHillH1FrequencyActionFibers.lean",
+        "source_sha256": "18b261e31b58e7b49f3f43ea0cdd58e113cc12e08d513ee5b760cf50d734f4e3",
+        "edit_kind": "unchanged private shared dependency"
+      },
+      {
+        "module": "NLS.Articles.KdVPseudomeasures.MainTheorem14",
+        "source": "NLS/Articles/KdVPseudomeasures/MainTheorem14.lean",
+        "source_sha256": "1ad6f7244ff0f7163e94dc7283a83caf86cfcb22db3e83aadabe36c586964d74",
+        "edit_kind": "unchanged private shared dependency"
+      }
+    ],
+    "modules_in_exact_inventory": 1751,
+    "audited_declarations": 8766,
+    "theorems": 7381,
+    "definitions": 1385,
+    "new_theorems": 28,
+    "new_definitions": 9,
+    "warnings": 0,
+    "tactic_suggestions": 0,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "empty_axiom_sets_allowed": true,
+    "directory": ".lake/full-original-label-check-20261103",
+    "log": ".lake/full-original-label-check-20261103/logs/validation-hill-h1-collapsed-frequency-analyticity.log",
+    "log_sha256": "8a521a51d04f14df860d0da9e83a1eff3ab0ae9aef0e2d9e29f8b26967738bbd"
+  },
+  "remaining_obligations": [
+    "Identify the original free frequency (2pi*n)^3 and extend the SAME genuine normalized KdV frequencies from the NOW COMPLETE globally real-analytic signed H^(3/2) domain to the original rough signed H^(-1/2) domain, with required uniform estimates. ENTIRE-domain H1 continuity, FULL literal native action-gradient identity, action-fiber invariance including collapse AND real analyticity at EVERY collapsed mode are PROVED; do not redo them.",
+    "Construct ACTUAL original Hminus KdV evolution with convergence from EVERY original smooth approximation and required weak-star trajectory continuity/analyticity, then prove main1.1,1.3,5.9. Actual physical H1 frequencies are globally analytic including collapse, but original equation identification, physical evolution and rough extension remain necessary. An arbitrary frequency flow or indexed action flow is not a proof of physical KdV.",
+    "Prove literal weighted ell-one forward/inverse spectral regularity and global real analytic Wiener/Birkhoff main5.1 for EVERY N>=0. Integer Hilbert diffeomorphisms remain necessary dependencies, not substitutes. Universal ACTUAL Hill numerator scalar2/(pi*n) remains OPEN. Main1.4 is complete; FOUR main theorems remain UNPROVED and goalACTIVE."
+  ]
+}

@@ -1740,6 +1740,14 @@ import NLS.SequenceSpaces.FourierRealModeVariation
 import NLS.Articles.KdVPseudomeasures.OriginalHillH1CircleStationarity
 import NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeFrequency
 import NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyActionFibers
+import NLS.ComplexAnalysis.ContractiveComplexification
+import NLS.ComplexAnalysis.ContractiveMultilinearComplexification
+import NLS.ComplexAnalysis.ContractiveAnalyticExtension
+import NLS.SequenceSpaces.FourierRealContractiveComplexification
+import NLS.FunctionalAnalysis.LocalCoordinateCancellation
+import NLS.ComplexAnalysis.ComplexHyperplaneSlope
+import NLS.ComplexAnalysis.RealAnalyticCoordinateDivision
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAnalytic
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10472,3 +10480,40 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyActionFibers
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_eq_of_products_of_mode_ne_zero
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_eq_of_products
 #print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_eq_of_original_isospectral
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.re_smul
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.im_smul
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.extensionValue
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.norm_extensionValue_le
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.extensionValue_add
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.extensionValue_smul
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.complexifyLinear
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.complexifyLinear_apply
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.norm_complexifyLinear_le
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.complexifyLinear_real
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.complexifyCLM
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.norm_complexifyCLM_le
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.complexifyMultilinear
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.complexifyMultilinear_zero
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.complexifyMultilinear_succ
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.norm_complexifyMultilinear_apply_le
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.norm_complexifyMultilinear_le
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.complexifyMultilinear_real
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.complexifySeries
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.norm_complexifySeries_le
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.half_radius_le_complexifySeries
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.radius_complexifySeries_pos
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.complexifySeries_sum_real
+#print axioms NLS.ComplexAnalysis.ContractiveComplexification.exists_complex_extension_of_analyticAt
+#print axioms NLS.WeightedCoeff.norm_fourierRealZeroProjection_le
+#print axioms NLS.WeightedCoeff.fourierRealZeroImagProjection
+#print axioms NLS.WeightedCoeff.fourierRealZeroImagProjection_apply
+#print axioms NLS.WeightedCoeff.fourierRealContractiveComplexification
+#print axioms NLS.FunctionalAnalysis.eqOn_of_continuousOn_coordinate_mul
+#print axioms NLS.ComplexAnalysis.complexHyperplanePath
+#print axioms NLS.ComplexAnalysis.complexHyperplaneSlope
+#print axioms NLS.ComplexAnalysis.analyticAt_complexHyperplaneSlope
+#print axioms NLS.ComplexAnalysis.mul_complexHyperplaneSlope
+#print axioms NLS.ComplexAnalysis.analyticAt_of_coordinate_mul_zero
+#print axioms NLS.ComplexAnalysis.analyticAt_of_coordinate_mul
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1KdVFrequency
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1KdVFrequency_actual_coordinates

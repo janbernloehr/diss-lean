@@ -1774,6 +1774,14 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillH1CircleStationarity',
     'NLS.Articles.KdVPseudomeasures.OriginalHillH1ModeFrequency',
     'NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyActionFibers',
+    'NLS.ComplexAnalysis.ContractiveComplexification',
+    'NLS.ComplexAnalysis.ContractiveMultilinearComplexification',
+    'NLS.ComplexAnalysis.ContractiveAnalyticExtension',
+    'NLS.SequenceSpaces.FourierRealContractiveComplexification',
+    'NLS.FunctionalAnalysis.LocalCoordinateCancellation',
+    'NLS.ComplexAnalysis.ComplexHyperplaneSlope',
+    'NLS.ComplexAnalysis.RealAnalyticCoordinateDivision',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAnalytic',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
