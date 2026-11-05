@@ -1513,6 +1513,17 @@ modules=(
   NLS/KdV/HillHminusUniformPhysicalActionRatios
   NLS/KdV/HillHminusUniformActionAmplitude
   NLS/Articles/KdVKdV2Frequencies/RoughUniformActionAmplitudes
+  NLS/KdV/HillHminusHighDeflatedRoot
+  NLS/ComplexAnalysis/DeflatedRootGerm
+  NLS/KdV/HillHminusContourGapPhysicalGerms
+  NLS/KdV/HillHminusHighRootNormalization
+  NLS/KdV/HillHminusHighRootPhysicalSquares
+  NLS/KdV/HillHminusHighRootPhysicalGerm
+  NLS/KdV/HillPhysicalRoughBallContinuation
+  NLS/KdV/HillHminusLocalDirichletRootInverse
+  NLS/KdV/HillHminusHighDirichletRootInverse
+  NLS/KdV/HillHminusDirichletInverseSequence
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughTerminalPacket
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

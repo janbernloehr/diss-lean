@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest common all-index rough action amplitudes
+## Latest native rough normalized Dirichlet terminal
+
+ONE complex Hminus-one ball now supports a genuine native ell2 analytic map Z with Z(0)=0, norm(Z(q))<=C*norm(q), and zero nonpositive components. At EVERY original real L2 source whose literal rough inclusion lies in this whole ball, Z_n equals the ORIGINAL `hillDirichletAbelianTerminalFactor` divided by n. The first gap, every closed gap and nonzero means are included, with no small physical L2 norm assumption.
+
+The proof constructs common bounded normalized inverse roots from the actual rough squared primitives and actual endpoint polynomials, fixes the original free sign, and combines the finite head with the infinite tail as a native ell-infinity analytic map. The already verified actual native divisor packet supplies A=(mu-tau)/n and S=sinh(log multiplier); the terminal is 2*(-1)^n*H_n*S_n-A_n. Physical germ matching extends throughout the whole rough ball along real scaling lines. See `NATIVE_ROUGH_TERMINAL_PACKET.md`.
+
+Prior strict evidence retained for all 1504 unchanged selected baseline sources; all eleven new own proof modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1515 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1554 frozen source/checker/provenance/Mathlib-source hashes, all 36 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these eleven proof modules. No full 1515-module rebuild is claimed.
+
+Fresh audit: 13014 selected and 35084 imported NLS declarations; permitted axioms only. The common rough regular phase and negative-half target Abelian-map assembly, canonicality, global inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier common all-index rough action amplitudes
 
 ONE complex Hminus-one ball now supports analytic extensions of the ORIGINAL physical action amplitudes before ALL positive indices, with a common bound for sqrt(1+n)*norm(B_n). The finite head and actual common contour-action tail are combined. At EVERY original real L2 source in that whole rough ball the amplitudes recover the exact original physical Abelian prefactors, including closed gaps and nonzero means; no small physical L2 norm is required. Their free values are exactly 1/sqrt(2*pi*n).
 

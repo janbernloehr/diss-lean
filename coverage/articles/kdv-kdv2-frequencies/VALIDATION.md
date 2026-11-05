@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest common all-index rough action amplitudes
+## Latest native rough normalized Dirichlet terminal
+
+ONE complex Hminus-one ball now supports a genuine native ell2 analytic map Z with Z(0)=0, norm(Z(q))<=C*norm(q), and zero nonpositive components. At EVERY original real L2 source whose literal rough inclusion lies in this whole ball, Z_n equals the ORIGINAL `hillDirichletAbelianTerminalFactor` divided by n. The first gap, every closed gap and nonzero means are included, with no small physical L2 norm assumption.
+
+The proof constructs common bounded normalized inverse roots from the actual rough squared primitives and actual endpoint polynomials, fixes the original free sign, and combines the finite head with the infinite tail as a native ell-infinity analytic map. The already verified actual native divisor packet supplies A=(mu-tau)/n and S=sinh(log multiplier); the terminal is 2*(-1)^n*H_n*S_n-A_n. Physical germ matching extends throughout the whole rough ball along real scaling lines. See `NATIVE_ROUGH_TERMINAL_PACKET.md`.
+
+Prior strict evidence retained for all 1504 unchanged selected baseline sources; all eleven new own proof modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1515 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1554 frozen source/checker/provenance/Mathlib-source hashes, all 36 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these eleven proof modules. No full 1515-module rebuild is claimed.
+
+Fresh audit: 13014 selected and 35084 imported NLS declarations; permitted axioms only. The common rough regular phase and negative-half target Abelian-map assembly, canonicality, global inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier common all-index rough action amplitudes
 
 ONE complex Hminus-one ball now supports analytic extensions of the ORIGINAL physical action amplitudes before ALL positive indices, with a common bound for sqrt(1+n)*norm(B_n). The finite head and actual common contour-action tail are combined. At EVERY original real L2 source in that whole rough ball the amplitudes recover the exact original physical Abelian prefactors, including closed gaps and nonzero means; no small physical L2 norm is required. Their free values are exactly 1/sqrt(2*pi*n).
 
@@ -556,7 +566,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1504 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1515 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1625,7 +1635,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1504 selected modules (including generated and private declarations)
+the 1515 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -3359,4 +3369,21 @@ PASS NLS/KdV/HillHminusUniformPhysicalActionRatios
 PASS NLS/KdV/HillHminusUniformActionAmplitude
 PASS NLS/Articles/KdVKdV2Frequencies/RoughUniformActionAmplitudes
 Axiom audit passed: 12965 candidate declarations; 35032 declarations total.
+```
+
+Latest native rough normalized terminal strict checks and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillHminusHighDeflatedRoot
+PASS NLS/ComplexAnalysis/DeflatedRootGerm
+PASS NLS/KdV/HillHminusContourGapPhysicalGerms
+PASS NLS/KdV/HillHminusHighRootNormalization
+PASS NLS/KdV/HillHminusHighRootPhysicalSquares
+PASS NLS/KdV/HillHminusHighRootPhysicalGerm
+PASS NLS/KdV/HillPhysicalRoughBallContinuation
+PASS NLS/KdV/HillHminusLocalDirichletRootInverse
+PASS NLS/KdV/HillHminusHighDirichletRootInverse
+PASS NLS/KdV/HillHminusDirichletInverseSequence
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughTerminalPacket
+Axiom audit passed: 13014 candidate declarations; 35084 declarations total.
 ```

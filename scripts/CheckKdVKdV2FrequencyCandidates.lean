@@ -1,3 +1,14 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughTerminalPacket
+import NLS.KdV.HillHminusDirichletInverseSequence
+import NLS.KdV.HillHminusHighDirichletRootInverse
+import NLS.KdV.HillHminusHighRootPhysicalSquares
+import NLS.KdV.HillHminusLocalDirichletRootInverse
+import NLS.KdV.HillPhysicalRoughBallContinuation
+import NLS.KdV.HillHminusHighRootPhysicalGerm
+import NLS.KdV.HillHminusHighRootNormalization
+import NLS.KdV.HillHminusContourGapPhysicalGerms
+import NLS.ComplexAnalysis.DeflatedRootGerm
+import NLS.KdV.HillHminusHighDeflatedRoot
 import NLS.ComplexAnalysis.PiecewisePolynomialIntegrationByParts
 import NLS.ZakharovShabat.SourceStandardRootEllipseGeometry
 import NLS.ZakharovShabat.SourceStandardRootJoukowski
@@ -2143,7 +2154,18 @@ run_cmd do
     `NLS.KdV.HillHminusCommonPhysicalActions,
     `NLS.KdV.HillHminusUniformPhysicalActionRatios,
     `NLS.KdV.HillHminusUniformActionAmplitude,
-    `NLS.Articles.KdVKdV2Frequencies.RoughUniformActionAmplitudes
+    `NLS.Articles.KdVKdV2Frequencies.RoughUniformActionAmplitudes,
+    `NLS.KdV.HillHminusHighDeflatedRoot,
+    `NLS.ComplexAnalysis.DeflatedRootGerm,
+    `NLS.KdV.HillHminusContourGapPhysicalGerms,
+    `NLS.KdV.HillHminusHighRootNormalization,
+    `NLS.KdV.HillHminusHighRootPhysicalSquares,
+    `NLS.KdV.HillHminusHighRootPhysicalGerm,
+    `NLS.KdV.HillPhysicalRoughBallContinuation,
+    `NLS.KdV.HillHminusLocalDirichletRootInverse,
+    `NLS.KdV.HillHminusHighDirichletRootInverse,
+    `NLS.KdV.HillHminusDirichletInverseSequence,
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughTerminalPacket
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
