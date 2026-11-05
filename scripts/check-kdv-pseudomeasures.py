@@ -1637,6 +1637,10 @@ modules = [
     'NLS.SequenceSpaces.PeriodOneMiuraSpatialTranslation',
     'NLS.KdV.HillSpatialTranslationDiscriminant',
     'NLS.Articles.KdVPseudomeasures.OriginalHillSpatialStationarity',
+    'NLS.Poisson.GardnerSpatialTranslation',
+    'NLS.KdV.HillActionSpatialTranslation',
+    'NLS.FunctionalAnalysis.CompactInvariantFlowEquivariance',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillActionSpatialCommutation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference

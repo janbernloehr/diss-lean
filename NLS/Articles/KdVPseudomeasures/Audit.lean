@@ -1603,6 +1603,10 @@ import NLS.SequenceSpaces.WeightedSpatialTranslationDerivative
 import NLS.SequenceSpaces.PeriodOneMiuraSpatialTranslation
 import NLS.KdV.HillSpatialTranslationDiscriminant
 import NLS.Articles.KdVPseudomeasures.OriginalHillSpatialStationarity
+import NLS.Poisson.GardnerSpatialTranslation
+import NLS.KdV.HillActionSpatialTranslation
+import NLS.FunctionalAnalysis.CompactInvariantFlowEquivariance
+import NLS.Articles.KdVPseudomeasures.OriginalHillActionSpatialCommutation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9787,3 +9791,29 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillSpatialStationarity
 #print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalGapValues_spatialTranslation
 #print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_spatialTranslation
 #print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_spatial_derivative_zero
+#print axioms NLS.Poisson.gardnerDerivative_spatialTranslation
+#print axioms NLS.Poisson.gardnerBivector_spatialTranslation
+#print axioms NLS.Poisson.hminusCotangentCLM_comp_spatialTranslation
+#print axioms NLS.Poisson.gardnerHamiltonianDirection_comp_spatialTranslation
+#print axioms NLS.Poisson.gardnerCotangentBivector_comp_spatialTranslation
+#print axioms NLS.Poisson.hminusScalarGradient_spatialTranslation_of_germ
+#print axioms NLS.Poisson.gardnerHamiltonianVector_spatialTranslation_of_germ
+#print axioms NLS.KdV.hillHminusLabels_eq_of_discriminant_eq
+#print axioms NLS.KdV.hillHminusCanonicalAction_spatialTranslation_real
+#print axioms NLS.KdV.exists_hillHminusCanonicalActions_spatialTranslation_germ
+#print axioms NLS.KdV.hillHminusActionHamiltonianVector_spatialTranslation
+#print axioms NLS.KdV.hillRealSpatialTranslation
+#print axioms NLS.KdV.hillRealSpatialTranslation_inclusion
+#print axioms NLS.KdV.norm_hillRealSpatialTranslation
+#print axioms NLS.KdV.hillRealSpatialTranslation_zero
+#print axioms NLS.KdV.hillRealSpatialTranslation_add
+#print axioms NLS.KdV.hillRealSpatialTranslation_one
+#print axioms NLS.KdV.hillRealSpatialTranslation_periodic
+#print axioms NLS.KdV.hillRealActionHamiltonianVector_spatialTranslation
+#print axioms NLS.FunctionalAnalysis.CompactInvariantVectorField.globalCurve_equivariant
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillNativeActionFlow_spatialTranslation
+#print axioms NLS.Articles.KdVPseudomeasures.originalHillRealMeanZeroSource_spatialTranslation
+#print axioms NLS.Articles.KdVPseudomeasures.original_Hill_action_flow_spatial_commutation
+#print axioms NLS.Articles.KdVPseudomeasures.originalHill_spatialCoordinateRatio_actionFlow_invariant
+#print axioms NLS.Articles.KdVPseudomeasures.norm_hillRealNativeCoordinate_spatialTranslation
+#print axioms NLS.Articles.KdVPseudomeasures.norm_hillRealSpatialCoordinateRatio
