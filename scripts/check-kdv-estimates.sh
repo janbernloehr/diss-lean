@@ -215,6 +215,7 @@ modules+=(NLS/KdV/HminusOneMiuraDirichlet NLS/KdV/MiuraL2DirichletAuxiliary NLS/
 modules+=(NLS/ZakharovShabat/SourcePhaseHilbertMonodromy NLS/KdV/MiuraDirichletSourcePhase NLS/KdV/HillHminusDirichletSourcePhase NLS/ComplexAnalysis/OddSquareDescentCongruence NLS/ZakharovShabat/SourcePsiPhaseCompatibility NLS/KdV/HillHminusPhaseNumeratorCompatibility NLS/KdV/HillHminusDirichletSourceBetaSeries)
 modules+=(NLS/ZakharovShabat/SourcePhaseCanonicalRoots NLS/ComplexAnalysis/QuadraticEnergyPath NLS/KdV/HillHminusPrescribedSheets NLS/KdV/HillHminusPrescribedPhasePullback NLS/KdV/HillHminusPhysicalPhasePaths NLS/SequenceSpaces/PairedPositiveOffIndexSeries NLS/KdV/HillHminusPairedSourceCorrection)
 modules+=(NLS/SequenceSpaces/OrderedSignedSimpleEnumeration NLS/KdV/MiuraDirichletSignedSymmetry NLS/KdV/HillHminusDirichletSignedReflection NLS/ZakharovShabat/SourceAngularRightEndpointPath)
+modules+=(NLS/ZakharovShabat/SourceAngularPairedPathBeta NLS/KdV/HillPrescribedCosineSheet NLS/ComplexAnalysis/RealCosineArc NLS/KdV/HillPhysicalCosinePath NLS/ZakharovShabat/SourceAngularPairedPrimitives)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then

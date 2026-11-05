@@ -6226,3 +6226,8 @@ import NLS.SequenceSpaces.OrderedSignedSimpleEnumeration
 import NLS.KdV.MiuraDirichletSignedSymmetry
 import NLS.KdV.HillHminusDirichletSignedReflection
 import NLS.ZakharovShabat.SourceAngularRightEndpointPath
+import NLS.ZakharovShabat.SourceAngularPairedPathBeta
+import NLS.KdV.HillPrescribedCosineSheet
+import NLS.ComplexAnalysis.RealCosineArc
+import NLS.KdV.HillPhysicalCosinePath
+import NLS.ZakharovShabat.SourceAngularPairedPrimitives

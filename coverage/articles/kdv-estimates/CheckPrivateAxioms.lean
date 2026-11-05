@@ -1303,6 +1303,11 @@ import NLS.SequenceSpaces.OrderedSignedSimpleEnumeration
 import NLS.KdV.MiuraDirichletSignedSymmetry
 import NLS.KdV.HillHminusDirichletSignedReflection
 import NLS.ZakharovShabat.SourceAngularRightEndpointPath
+import NLS.ZakharovShabat.SourceAngularPairedPathBeta
+import NLS.KdV.HillPrescribedCosineSheet
+import NLS.ComplexAnalysis.RealCosineArc
+import NLS.KdV.HillPhysicalCosinePath
+import NLS.ZakharovShabat.SourceAngularPairedPrimitives
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2437,7 +2442,37 @@ run_cmd do
     ``NLS.ZakharovShabat.SourceAngularDirichletPrimitiveData.right_pathIntegral_eq_terminal,
     ``NLS.ZakharovShabat.SourceAngularSheetPrimitiveData.right_endpoint_pathIntegral_eq_value,
     ``NLS.finsum_double_singleton_count_of_injective,
-    ``NLS.ordered_signed_simple_unique_of_l2]
+    ``NLS.ordered_signed_simple_unique_of_l2,
+    ``NLS.ComplexAnalysis.exists_regular_real_cosine_arc,
+    ``NLS.ComplexAnalysis.realCosineArcAnchor,
+    ``NLS.ComplexAnalysis.realCosineArcAnchor.eq_1,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.casesOn,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.ctorIdx,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.mk,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.mk.inj,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.mk.injEq,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.mk.noConfusion,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.mk.sizeOf_spec,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.negativeCenter,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.negativeConstant,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.negativeExterior,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.negativePrimitive,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.negativeRadius,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.negative_data,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.noConfusion,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.noConfusionType,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.pathIntegral_eq_beta_pair,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.positiveCenter,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.positiveConstant,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.positiveExterior,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.positivePrimitive,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.positiveRadius,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.positive_data,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.rec,
+    ``NLS.ZakharovShabat.SourceAngularPairedDirichletPrimitives.recOn,
+    ``NLS.ZakharovShabat.SourceLemma12_12Data.nonempty_pairedDirichletPrimitives,
+    ``NLS.ZakharovShabat.sourceAngular_signed_pair_pathIntegral_eq_beta]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
