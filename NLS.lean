@@ -6388,3 +6388,5 @@ import NLS.KdV.HillOriginalSourceHilbertStructure
 import NLS.KdV.HillOriginalScalarCompactHessian
 import NLS.FunctionalAnalysis.NormPreservingCompactDerivativeDefect
 import NLS.KdV.HillOriginalDerivativeCompactDefect
+import NLS.FunctionalAnalysis.ClosedRangeCompactNormal
+import NLS.KdV.HillOriginalDerivativeSurjectivity

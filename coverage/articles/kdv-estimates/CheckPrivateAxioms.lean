@@ -1465,6 +1465,8 @@ import NLS.KdV.HillOriginalSourceHilbertStructure
 import NLS.KdV.HillOriginalScalarCompactHessian
 import NLS.FunctionalAnalysis.NormPreservingCompactDerivativeDefect
 import NLS.KdV.HillOriginalDerivativeCompactDefect
+import NLS.FunctionalAnalysis.ClosedRangeCompactNormal
+import NLS.KdV.HillOriginalDerivativeSurjectivity
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2689,7 +2691,8 @@ run_cmd do
     ``NLS.FunctionalAnalysis.isCompactOperator_secondDerivative_of_dual_limit,
     ``NLS.FunctionalAnalysis.secondDerivative_pairing_of_norm_map,
     ``NLS.SequenceSpaces.denseRange_natL2_of_single_preimages,
-    ``NLS.SequenceSpaces.isCompactOperator_secondDerivative_natL2_inner]
+    ``NLS.SequenceSpaces.isCompactOperator_secondDerivative_natL2_inner,
+    ``NLS.FunctionalAnalysis.isClosed_range_of_compact_normal_defect]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
