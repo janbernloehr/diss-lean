@@ -132,6 +132,11 @@
           "source_clause": "Global equality of intrinsic rough Dirichlet labels/normings with original physical L2 data, and exact physical recovery on a common native Hminus-one Hilbert analytic ball",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_physical_dirichlet_packet",
           "qualification": "One common complex original Hminus-one ball before all indices supports native Hilbert analytic D,K,S vanishing at zero with joint linear norm bound, exact complex Dirichlet zeros, zero nonpositive components and S=sinh K. At every original real L2 source whose literal Hminus-one inclusion is in that same ball, the positive components equal the ORIGINAL physical Dirichlet energy displacement divided by n, logarithmic multiplier and its sinh. This is exact physical matching of rough spectral input, not the full rough Abelian map or a complete main theorem."
+        },
+        {
+          "source_clause": "Native Hilbert rough symmetric energy midpoints around every real base, and one common near-zero analytic Dirichlet divisor/norming packet with exact physical label normalization",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_divisor_packet",
+          "qualification": "ONE complex Hminus-one ball BEFORE every positive index supports native ell2 analytic T,A,K,S, all zero at zero, joint norm<=C*norm(q), with real T=(actual midpoint-(pi*n)^2)/n, A=(actual Dirichlet energy-actual midpoint)/n, K=actual log norming, S=its sinh. Exact complex Dirichlet zeros at (pi*n)^2+n*(A_n+T_n), nonpositive outputs zero and S=sinh K throughout the same complex ball. Full rough amplitudes, regular phase, Abelian map, canonicality, global inverse and main theorems remain open."
         }
       ]
     },
@@ -19951,12 +19956,264 @@
       "scope": "One common complex original Hminus-one ball before all indices supports native Hilbert analytic D,K,S vanishing at zero with joint linear norm bound, exact complex Dirichlet zeros, zero nonpositive components and S=sinh K. At every original real L2 source whose literal Hminus-one inclusion is in that same ball, the positive components equal the ORIGINAL physical Dirichlet energy displacement divided by n, logarithmic multiplier and its sinh. This is exact physical matching of rough spectral input, not the full rough Abelian map or a complete main theorem.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "84b6bfaf2aa7643f208d0527ee8450d3c7b60b72c4b691a3004e535adf775e48"
+    },
+    {
+      "path": "NLS/ZakharovShabat/PeriodicEndpointGlobalMultiplicity.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical helper, newly strictly selected for full multiplicity-preserving periodic labels or native midpoint sequence analyticity. Byte-identical in canonical main and shared source; provenance in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "334a2228be4e8294cb19fdd04fcf7d8bb0f9ee12e7103d76fdef15025f1af6cd"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceMidpointSequenceAnalytic.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical helper, newly strictly selected for full multiplicity-preserving periodic labels or native midpoint sequence analyticity. Byte-identical in canonical main and shared source; provenance in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e26f75236fde9b3293ab80e33a999dbfb7b605b9103a6421ac5a3eb2134bd394"
+    },
+    {
+      "path": "NLS/SequenceSpaces/OrderedNatEnumerationUnique.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual all-index squared Miura periodic enumeration dependency: OrderedNatEnumerationUnique. Disposition imported_unchanged; exact source/local hashes and retained original label API in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json. Strictly checked with combined article imports; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0f033f55911a635e745e405c65cd572c6ba63adc7c6f8d34b404c6ac70f53337"
+    },
+    {
+      "path": "NLS/KdV/MiuraCanonicalEndpoints.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual all-index squared Miura periodic enumeration dependency: MiuraCanonicalEndpoints. Disposition imported_unchanged; exact source/local hashes and retained original label API in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json. Strictly checked with combined article imports; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "35c581723b1f13a8f95f14135962098b123b72fc56f1a3fea68b290611417d59"
+    },
+    {
+      "path": "NLS/KdV/HminusOneMiuraTrace.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual all-index squared Miura periodic enumeration dependency: HminusOneMiuraTrace. Disposition imported_unchanged; exact source/local hashes and retained original label API in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json. Strictly checked with combined article imports; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "90385816106ca399fd4593ad5fe650214d1fe5c8e3772bd024292e6b6948f624"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraTraceOrder.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual all-index squared Miura periodic enumeration dependency: HillMiuraTraceOrder. Disposition imported_unchanged; exact source/local hashes and retained original label API in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json. Strictly checked with combined article imports; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "068194babf2f3a9cce8e098b728fef9fef83927eca7c3d9ea74ca1b57c81fbfa"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraRealEndpoints.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Extracted actual real/ordered Dirac endpoint theorems from shared HminusOneMiuraHighPairs, without importing its high-tail-only label adapter or replacing the retained local intrinsic label API.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d568eddbb8962f2d6dac738cb29b18bb21c1f798c024c7d7073139ff99978eba"
+    },
+    {
+      "path": "NLS/KdV/MiuraRealSource.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual all-index squared Miura periodic enumeration dependency: MiuraRealSource. Disposition adapted_import; exact source/local hashes and retained original label API in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json. Strictly checked with combined article imports; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "18ed0e4635e35aa3220b57ade923aebddaa0032257e937cc340a6dd991fa7ec4"
+    },
+    {
+      "path": "NLS/SequenceSpaces/ContinuousOrderedRootIndex.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual all-index squared Miura periodic enumeration dependency: ContinuousOrderedRootIndex. Disposition imported_unchanged; exact source/local hashes and retained original label API in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json. Strictly checked with combined article imports; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3ed65e2cb9e4ee9c5346027b2dccc02acbe377c9516fcf3d5ebec7712ba2a62b"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraPositiveGaps.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual all-index squared Miura periodic enumeration dependency: HillMiuraPositiveGaps. Disposition imported_unchanged; exact source/local hashes and retained original label API in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json. Strictly checked with combined article imports; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ba2d2494edf9cb5aac24ca8858c043626dea96391bf244e1a1ceb8025cd359fa"
+    },
+    {
+      "path": "NLS/SequenceSpaces/SingletonPairedEnumeration.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual all-index squared Miura periodic enumeration dependency: SingletonPairedEnumeration. Disposition imported_unchanged; exact source/local hashes and retained original label API in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json. Strictly checked with combined article imports; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d9aadeb8411a4d56b216c9972668688262f862a0347f723be309219bbd342418"
+    },
+    {
+      "path": "NLS/ZakharovShabat/RealGapEndpointMultiplicity.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual all-index squared Miura periodic enumeration dependency: RealGapEndpointMultiplicity. Disposition imported_unchanged; exact source/local hashes and retained original label API in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json. Strictly checked with combined article imports; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "34ea0ee21bff09f617db26775c9126d5029f5c94904aeb6a901f2d20ebfbf693"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraPositiveEnumeration.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual all-index squared Miura periodic enumeration dependency: HillMiuraPositiveEnumeration. Disposition imported_unchanged; exact source/local hashes and retained original label API in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json. Strictly checked with combined article imports; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7a1f795f0284fccf7c9af56ab52ed1357c7bf31b43675e7d33c402d37c467ec7"
+    },
+    {
+      "path": "NLS/KdV/HillMiuraSquaredEnumeration.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual all-index squared Miura periodic enumeration dependency: HillMiuraSquaredEnumeration. Disposition imported_unchanged; exact source/local hashes and retained original label API in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json. Strictly checked with combined article imports; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "97820d681c50a09eefa6399bd2d2d08d10cfef4abea0fd46e70d5662bacbc39d"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOneMiuraAllLabels.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Shared actual all-index squared Miura periodic enumeration dependency: HillHminusOneMiuraAllLabels. Disposition adapted_import; exact source/local hashes and retained original label API in SHARED_MIURA_PERIODIC_LABELS_IMPORT.json. Strictly checked with combined article imports; no full main theorem claimed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d027082c42fb9d4fb7a151fe314803d5f35c0971d14d9e8836b691ea3b950e04"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceHilbertSquaredGapAnalytic.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The actual entire signed squared NLS periodic gap sequence is native ell1 analytic on a common complex neighborhood of the full real-type source locus, including all low and collapsed gaps. Uniform ell2 gap bounds and scalar symmetric contour analyticity supply the proof.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1172e8f971b5c6f2f810b310a42fdd05ad26181a46c6a8672d74ceed42efd73b"
+    },
+    {
+      "path": "NLS/KdV/HillHminusOutsideMiuraChart.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At every actual real Hminus-one base, construct one complex-open analytic Miura chart preserving the physical real form at all real inputs, with fixed positive shift c squared and actual characteristic nonzero at minus that shift on the whole complex domain. Choose the mass after the proved rough spectral lower bound.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cdcfa17eba3ca3c66c642686bd9cc0f11286ef2ecd00f512099efdaa8cf5fdc4"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveEnergyMidpoints.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Reusable native positive Hilbert analytic quadratic symmetric-energy construction from frequency midpoint displacement d in ell2 and squared frequency gap g in ell1. Exact component ((pi*n+d_n)^2+g_n/4-c^2-(pi*n)^2)/n; zero nonpositive outputs.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9b9b03cad36febb6a36369fb507eaa82f7fa65d2a133ade769c7376cc1b2802e"
+    },
+    {
+      "path": "NLS/KdV/HillHminusPhysicalPeriodicLabels.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Global equality of EVERY intrinsic rough periodic characteristic label with the ORIGINAL physical L2 label, including the bottom and every repeated endpoint. Literal entire radicand equality and full finite algebraic multiplicities determine the ordered enumerations; no tail matching assumption.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "008af4ab44eef92e575f43b3afe0316f63819748eebdebe49008822413b973b6"
+    },
+    {
+      "path": "NLS/KdV/HillHminusGapMidpointSequence.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At EVERY actual real Hminus-one base, ONE common complex neighborhood supports a native ell2 analytic map recovering (actual symmetric energy midpoint_n-(pi*n)^2)/n at every real source and positive index. Actual all-index squared Miura enumeration and native symmetric frequency data, including collapsed gaps; zero nonpositive outputs. Exact free and ORIGINAL physical midpoint normalization also proved.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "476ece957be5792e4317ecb724daaae05a1d12fdaee8ac3a3e0157a2e234ddfc"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeRoughDivisorPacket.lean",
+      "source_labels": [
+        "Native rough symmetric midpoints and Dirichlet divisor data supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ONE complex Hminus-one ball BEFORE every positive index supports native ell2 analytic T,A,K,S, all zero at zero, joint norm<=C*norm(q), with real T=(actual midpoint-(pi*n)^2)/n, A=(actual Dirichlet energy-actual midpoint)/n, K=actual log norming, S=its sinh. Exact complex Dirichlet zeros at (pi*n)^2+n*(A_n+T_n), nonpositive outputs zero and S=sinh K throughout the same complex ball. Full rough amplitudes, regular phase, Abelian map, canonicality, global inverse and main theorems remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "670fe05d2e958cd0f439b50ad6f9fbe05bcd413278e79b57a01c260d00218344"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The actual native near-zero L2 Abelian map, real local inverse and simultaneous action Hamiltonian fields are proved. The native rough Dirichlet Hilbert packet now matches the ORIGINAL physical L2 labelled energies and logarithmic multipliers at all positive indices on its same Hminus-one ball; the shared label and norming comparisons are global in the real L2 source, with no mean/open-gap restriction. NEXT build rough symmetric midpoints, filled roots, action/gap amplitudes and regular phase, assemble the negative-half target map; then full coordinate-coordinate canonical brackets, arbitrary-base/global inverse, full s>=-1 scale and actual Hamiltonian action-frequency/PDE main theorems.",
+    "The actual native near-zero L2 Abelian map, real local inverse and simultaneous action Hamiltonian fields are proved. Rough Dirichlet and periodic labels now globally match ORIGINAL physical L2 data. At every real Hminus-one base one common complex neighborhood supports the native normalized symmetric midpoint sequence. Near zero ONE rough ball supports actual midpoint displacement, Dirichlet-minus-midpoint, log norming and sinh in ell2 with joint linear norm bound and exact complex characteristic zeros. NEXT rough filled roots, analytic action/gap amplitude ratios and full regular phase, then assemble the negative-half target Abelian map; full coordinate-coordinate canonical brackets, arbitrary-base/global inverse, full s>=-1 scale and actual Hamiltonian action-frequency/PDE main theorems remain.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
@@ -19982,15 +20239,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 12321,
-    "total_declarations_audited": 34391,
+    "candidate_declarations_audited": 12485,
+    "total_declarations_audited": 34552,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1418,
+    "selected_modules": 1439,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -20053,7 +20310,8 @@
     "native_real_inverse_validation_sequence": "Prior strict evidence for all 1258 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules and four unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1272 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1305 frozen source/checker/provenance hashes, 30 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the ten new proof modules; the four canonical helpers were already in the imported closure. No repeated full 1272-module rebuild is claimed.",
     "native_action_fields_validation_sequence": "Prior strict evidence for all 1272 unchanged selected baseline sources; strict dependency-order compilation of eight new proof modules and two unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1282 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1316 frozen source/checker/provenance hashes, 31 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the eight new proof modules; both canonical helpers were already in the imported closure. No repeated full 1282-module rebuild is claimed.",
     "native_rough_dirichlet_validation_sequence": "Prior strict evidence for all 1282 unchanged selected baseline sources; 125 new selections strictly checked: 114 incoming source files, eight new or extracted compatibility/proof modules, and three unchanged canonical helpers. A retained 112-module integrated source-check prefix is completed by 13 strict selections after the needed private canonical helper outputs are prepared, followed by a fresh combined transitive axiom audit of all 1407 selected modules. The original interrupted prefix log is retained: its sole error is a missing private SourceLemma9_2.olean; the final log contains the successful helper and consumer builds and no error or warning. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 1443 frozen source/checker/provenance/Mathlib-source hashes, 32 unchanged and one new verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS imported source closure adds exactly the 125 new selections. Pinned Mathlib Arsinh is compiled privately with warningAsError at default heartbeats. No full 1407-module rebuild is claimed.",
-    "physical_dirichlet_validation_sequence": "Prior strict evidence retained for all 1407 unchanged selected baseline sources; all 11 new modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1418 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1455 frozen source/checker/provenance/Mathlib-source hashes, 33 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 11 selections. Eight shared sources are byte-identical imports and thirteen local API variants are retained unchanged. No full 1418-module rebuild is claimed."
+    "physical_dirichlet_validation_sequence": "Prior strict evidence retained for all 1407 unchanged selected baseline sources; all 11 new modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1418 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1455 frozen source/checker/provenance/Mathlib-source hashes, 33 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 11 selections. Eight shared sources are byte-identical imports and thirteen local API variants are retained unchanged. No full 1418-module rebuild is claimed.",
+    "native_rough_divisor_validation_sequence": "Prior strict evidence retained for all 1418 unchanged selected baseline sources; all 21 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1439 selected modules. The new selections are twelve incoming sources, seven new/extracted proof modules and two unchanged canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1477 frozen source/checker/provenance/Mathlib-source hashes, 34 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 21 selections. No full 1439-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -20093,7 +20351,7 @@
   "endpoint_mass_record": "MASS_NONEXTENSION.md",
   "shared_developments_inspected": {
     "articles/kdv-convexity": "ba0cf42ee4f2e37acfc7a239af566e11b9e583f2",
-    "articles/kdv-estimates": "91e0789978eb013d13e9c974ba362eef29eac4dd"
+    "articles/kdv-estimates": "52ac67de59a28aee862bf8fe4903d15b246457b2"
   },
   "fixed_time_record": "FIXED_TIME_NONEXTENSION.md",
   "frequency_moment_record": "FREQUENCY_MOMENTS.md",
@@ -20101,7 +20359,7 @@
   "primitive_continuation_record": "PRIMITIVE_CONTINUATION.md",
   "shared_developments_imported": {
     "articles/kdv-convexity": "ba0cf42ee4f2e37acfc7a239af566e11b9e583f2",
-    "articles/kdv-estimates": "91e0789978eb013d13e9c974ba362eef29eac4dd"
+    "articles/kdv-estimates": "52ac67de59a28aee862bf8fe4903d15b246457b2"
   },
   "shared_integration_recheck": {
     "command": "env ELAN_HOME=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/work/tooling/elan NLS_REFERENCE_CHECKOUT=/home/janbernloehr/Documents/Codex/2026-09-11/test-01-5-2-test-02/outputs/dnls bash scripts/check-kdv-convexity.sh",
@@ -20599,6 +20857,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "aaf2504e4deb97be2fec0534de022505a5d3da69",
+      "description": "Prior rough Dirichlet packet and global physical Dirichlet matching; now global physical periodic label matching, native symmetric rough midpoint sequences around every real base, and a common near-zero native midpoint/Dirichlet divisor/norming packet.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The actual native near-zero L2 Abelian map, real local inverse and simultaneous action Hamiltonian fields are proved. The native rough Dirichlet Hilbert packet now matches the ORIGINAL physical L2 labelled energies and logarithmic multipliers at all positive indices on its same Hminus-one ball; the shared label and norming comparisons are global in the real L2 source, with no mean/open-gap restriction. NEXT build rough symmetric midpoints, filled roots, action/gap amplitudes and regular phase, assemble the negative-half target map; then full coordinate-coordinate canonical brackets, arbitrary-base/global inverse, full s>=-1 scale and actual Hamiltonian action-frequency/PDE main theorems.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -20625,5 +20895,6 @@
   "native_real_inverse_record": "NATIVE_REAL_ABELIAN_INVERSE.md",
   "native_action_fields_record": "NATIVE_ACTION_HAMILTONIAN_FIELDS.md",
   "native_rough_dirichlet_record": "NATIVE_ROUGH_DIRICHLET_PACKET.md",
-  "physical_dirichlet_record": "PHYSICAL_DIRICHLET_MATCHING.md"
+  "physical_dirichlet_record": "PHYSICAL_DIRICHLET_MATCHING.md",
+  "native_rough_divisor_record": "NATIVE_ROUGH_DIVISOR_PACKET.md"
 }

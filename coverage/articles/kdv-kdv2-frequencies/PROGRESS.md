@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest physical normalization of the rough Dirichlet packet
+## Latest native rough midpoint and divisor packet
+
+At EVERY real Hminus-one base, one common complex neighborhood now supports a native ell2 analytic sequence of actual symmetric energy midpoint displacements divided by n. All positive indices, first and collapsed gaps and nonzero means are included. Every intrinsic periodic label also agrees globally with the ORIGINAL physical L2 label, including the bottom and repeated endpoints.
+
+Near zero, ONE complex Hminus-one ball BEFORE all indices supports native Hilbert analytic T,A,K,S, all vanishing at zero, with joint norm bound C*norm(q). On the real slice T=(actual midpoint-(pi*n)^2)/n and A=(actual Dirichlet energy-actual midpoint)/n; K and S are the actual log norming and its sinh. The actual complex Dirichlet characteristic vanishes at (pi*n)^2+n*(A_n+T_n), nonpositive outputs are zero and S=sinh K holds on the whole same ball. See `NATIVE_ROUGH_DIVISOR_PACKET.md` and `SHARED_MIURA_PERIODIC_LABELS_IMPORT.json`.
+
+Prior strict evidence retained for all 1418 unchanged selected baseline sources; all 21 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1439 selected modules. The new selections are twelve incoming sources, seven new/extracted proof modules and two unchanged canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1477 frozen source/checker/provenance/Mathlib-source hashes, 34 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 21 selections. No full 1439-module rebuild is claimed.
+
+Fresh audit: 12485 selected and 34552 imported NLS declarations; permitted axioms only. Rough filled roots/amplitudes/regular phase/full Abelian map, full canonicality, global inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier physical normalization of the rough Dirichlet packet
 
 Every intrinsic rough Dirichlet energy and endpoint/log norming now agrees with its ORIGINAL physical L2 definition at every real source and positive index. The comparison includes first and collapsed gaps and nonzero means. It uses the literal unit-period Fourier inclusion and the actual derivative-one IVP, with no relabeling hypothesis supplied by the caller.
 

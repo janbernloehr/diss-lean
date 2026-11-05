@@ -1427,6 +1427,27 @@ modules=(
   NLS/KdV/HillHminusPhysicalDirichletLabels
   NLS/KdV/HillHminusPhysicalDirichletNorming
   NLS/Articles/KdVKdV2Frequencies/NativePhysicalDirichletPacket
+  NLS/ZakharovShabat/PeriodicEndpointGlobalMultiplicity
+  NLS/ZakharovShabat/SourceMidpointSequenceAnalytic
+  NLS/SequenceSpaces/OrderedNatEnumerationUnique
+  NLS/KdV/MiuraCanonicalEndpoints
+  NLS/KdV/HminusOneMiuraTrace
+  NLS/KdV/HillMiuraTraceOrder
+  NLS/KdV/HillMiuraRealEndpoints
+  NLS/KdV/MiuraRealSource
+  NLS/SequenceSpaces/ContinuousOrderedRootIndex
+  NLS/KdV/HillMiuraPositiveGaps
+  NLS/SequenceSpaces/SingletonPairedEnumeration
+  NLS/ZakharovShabat/RealGapEndpointMultiplicity
+  NLS/KdV/HillMiuraPositiveEnumeration
+  NLS/KdV/HillMiuraSquaredEnumeration
+  NLS/KdV/HillHminusOneMiuraAllLabels
+  NLS/ZakharovShabat/SourceHilbertSquaredGapAnalytic
+  NLS/KdV/HillHminusOutsideMiuraChart
+  NLS/SequenceSpaces/PositiveEnergyMidpoints
+  NLS/KdV/HillHminusPhysicalPeriodicLabels
+  NLS/KdV/HillHminusGapMidpointSequence
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughDivisorPacket
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

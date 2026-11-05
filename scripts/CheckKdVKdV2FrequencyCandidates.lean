@@ -1,3 +1,24 @@
+import NLS.ZakharovShabat.PeriodicEndpointGlobalMultiplicity
+import NLS.ZakharovShabat.SourceMidpointSequenceAnalytic
+import NLS.Articles.KdVKdV2Frequencies.NativeRoughDivisorPacket
+import NLS.KdV.HillHminusGapMidpointSequence
+import NLS.SequenceSpaces.PositiveEnergyMidpoints
+import NLS.KdV.HillHminusPhysicalPeriodicLabels
+import NLS.ZakharovShabat.SourceHilbertSquaredGapAnalytic
+import NLS.KdV.HillHminusOutsideMiuraChart
+import NLS.SequenceSpaces.OrderedNatEnumerationUnique
+import NLS.KdV.MiuraCanonicalEndpoints
+import NLS.KdV.HminusOneMiuraTrace
+import NLS.KdV.HillMiuraTraceOrder
+import NLS.KdV.HillMiuraRealEndpoints
+import NLS.KdV.MiuraRealSource
+import NLS.SequenceSpaces.ContinuousOrderedRootIndex
+import NLS.KdV.HillMiuraPositiveGaps
+import NLS.SequenceSpaces.SingletonPairedEnumeration
+import NLS.ZakharovShabat.RealGapEndpointMultiplicity
+import NLS.KdV.HillMiuraPositiveEnumeration
+import NLS.KdV.HillMiuraSquaredEnumeration
+import NLS.KdV.HillHminusOneMiuraAllLabels
 import NLS.Articles.KdVKdV2Frequencies.NativePhysicalDirichletPacket
 import NLS.KdV.HillHminusPhysicalDirichletNorming
 import NLS.KdV.HillL2DirichletTerminal
@@ -1971,7 +1992,28 @@ run_cmd do
     `NLS.MKdV.MiuraL2DirichletTerminal,
     `NLS.KdV.HillHminusPhysicalDirichletLabels,
     `NLS.KdV.HillHminusPhysicalDirichletNorming,
-    `NLS.Articles.KdVKdV2Frequencies.NativePhysicalDirichletPacket
+    `NLS.Articles.KdVKdV2Frequencies.NativePhysicalDirichletPacket,
+    `NLS.ZakharovShabat.PeriodicEndpointGlobalMultiplicity,
+    `NLS.ZakharovShabat.SourceMidpointSequenceAnalytic,
+    `NLS.SequenceSpaces.OrderedNatEnumerationUnique,
+    `NLS.KdV.MiuraCanonicalEndpoints,
+    `NLS.KdV.HminusOneMiuraTrace,
+    `NLS.KdV.HillMiuraTraceOrder,
+    `NLS.KdV.HillMiuraRealEndpoints,
+    `NLS.KdV.MiuraRealSource,
+    `NLS.SequenceSpaces.ContinuousOrderedRootIndex,
+    `NLS.KdV.HillMiuraPositiveGaps,
+    `NLS.SequenceSpaces.SingletonPairedEnumeration,
+    `NLS.ZakharovShabat.RealGapEndpointMultiplicity,
+    `NLS.KdV.HillMiuraPositiveEnumeration,
+    `NLS.KdV.HillMiuraSquaredEnumeration,
+    `NLS.KdV.HillHminusOneMiuraAllLabels,
+    `NLS.ZakharovShabat.SourceHilbertSquaredGapAnalytic,
+    `NLS.KdV.HillHminusOutsideMiuraChart,
+    `NLS.SequenceSpaces.PositiveEnergyMidpoints,
+    `NLS.KdV.HillHminusPhysicalPeriodicLabels,
+    `NLS.KdV.HillHminusGapMidpointSequence,
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughDivisorPacket
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
