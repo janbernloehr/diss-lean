@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest native rough midpoint and divisor packet
+## Latest actual rough action amplitude finite head
+
+Every fixed positive gap index now has an Hminus-one analytic actual action-to-half-gap-square ratio and principal amplitude near zero, with exact free values 1/(2*pi*n) and 1/sqrt(2*pi*n). Any prescribed FINITE collection has one complex rough ball and one bound for sqrt(1+n)*norm(amplitude). At EVERY original real L2 source in that rough ball the amplitude equals the existing physical Abelian amplitude, including collapsed gaps. No L2 norm smallness is required.
+
+The normalized actual ENERGY gap squares now form a native ell1 analytic map on common neighborhoods around EVERY real rough base. Near zero one ball before all indices gives G0=0, zero nonpositive outputs and norm(Gq)<=C*norm(q), with G_n=((actual upper energy_n-actual lower energy_n)/n)^2. See `ROUGH_ACTION_AMPLITUDE_HEAD.md`.
+
+Prior strict evidence retained for all 1439 unchanged selected baseline sources; all seven new proof modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1446 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1484 frozen source/checker/provenance/Mathlib-source hashes, all 35 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these seven new proof modules. No full 1446-module rebuild is claimed.
+
+Fresh audit: 12566 selected and 34636 imported NLS declarations; permitted axioms only. The common infinite-tail amplitude estimate, full rough regular phase/Abelian map, canonicality, global inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier native rough midpoint and divisor packet
 
 At EVERY real Hminus-one base, one common complex neighborhood now supports a native ell2 analytic sequence of actual symmetric energy midpoint displacements divided by n. All positive indices, first and collapsed gaps and nonzero means are included. Every intrinsic periodic label also agrees globally with the ORIGINAL physical L2 label, including the bottom and repeated endpoints.
 

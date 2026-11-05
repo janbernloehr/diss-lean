@@ -1448,6 +1448,13 @@ modules=(
   NLS/KdV/HillHminusPhysicalPeriodicLabels
   NLS/KdV/HillHminusGapMidpointSequence
   NLS/Articles/KdVKdV2Frequencies/NativeRoughDivisorPacket
+  NLS/SequenceSpaces/PositiveEnergyGapSquares
+  NLS/KdV/HillHminusGapSquareSequence
+  NLS/KdV/HillActionGapRatioRoughContinuation
+  NLS/KdV/HillHminusLocalGapMoments
+  NLS/KdV/HillHminusLocalFilledTrace
+  NLS/KdV/HillHminusLocalActionAmplitude
+  NLS/Articles/KdVKdV2Frequencies/RoughActionAmplitudeHead
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

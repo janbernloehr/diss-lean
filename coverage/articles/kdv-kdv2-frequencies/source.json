@@ -137,6 +137,16 @@
           "source_clause": "Native Hilbert rough symmetric energy midpoints around every real base, and one common near-zero analytic Dirichlet divisor/norming packet with exact physical label normalization",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_divisor_packet",
           "qualification": "ONE complex Hminus-one ball BEFORE every positive index supports native ell2 analytic T,A,K,S, all zero at zero, joint norm<=C*norm(q), with real T=(actual midpoint-(pi*n)^2)/n, A=(actual Dirichlet energy-actual midpoint)/n, K=actual log norming, S=its sinh. Exact complex Dirichlet zeros at (pi*n)^2+n*(A_n+T_n), nonpositive outputs zero and S=sinh K throughout the same complex ball. Full rough amplitudes, regular phase, Abelian map, canonicality, global inverse and main theorems remain open."
+        },
+        {
+          "source_clause": "Actual native rough action amplitudes on any prescribed finite collection of positive gaps, with common domain/weighted bound and exact physical matching throughout the rough ball",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_finite_physical_action_amplitudes",
+          "qualification": "For EVERY fixed positive index, construct Hminus-one analytic extensions of the ORIGINAL physical action-to-half-gap-square ratio and principal amplitude near zero. Ratio free value 1/(2*pi*n), amplitude free value 1/sqrt(2*pi*n), positive real part, weighted amplitude bound and EXACT original physical recovery at every real L2 source in the whole rough ball. This fixed-index/finitely-many-indices result does not supply a common ball for the infinite tail."
+        },
+        {
+          "source_clause": "Native ell1 normalized actual energy gap squares on one common complex Hminus-one ball before every positive index",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_gap_square_packet",
+          "qualification": "At every actual real Hminus-one base one common complex neighborhood carries a native ell1 analytic normalized ENERGY gap-square map: G_n=((actual upper energy_n-actual lower energy_n)/n)^2 at every real source and all positive indices, including low/collapsed gaps and means. No caller root labels supplied. Near zero this map vanishes at zero and has a genuine linear norm bound on one common ball; the infinite coordinate map is not asserted."
         }
       ]
     },
@@ -20208,12 +20218,96 @@
       "scope": "ONE complex Hminus-one ball BEFORE every positive index supports native ell2 analytic T,A,K,S, all zero at zero, joint norm<=C*norm(q), with real T=(actual midpoint-(pi*n)^2)/n, A=(actual Dirichlet energy-actual midpoint)/n, K=actual log norming, S=its sinh. Exact complex Dirichlet zeros at (pi*n)^2+n*(A_n+T_n), nonpositive outputs zero and S=sinh K throughout the same complex ball. Full rough amplitudes, regular phase, Abelian map, canonicality, global inverse and main theorems remain open.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "670fe05d2e958cd0f439b50ad6f9fbe05bcd413278e79b57a01c260d00218344"
+    },
+    {
+      "path": "NLS/SequenceSpaces/PositiveEnergyGapSquares.lean",
+      "source_labels": [
+        "Actual rough action amplitude finite head and normalized energy gap squares supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Reusable native ell1 analytic polynomial from frequency midpoint displacement d in ell2 and squared frequency gap g in ell1, with exact positive component (2*pi+2*d_n/n)^2*g_n and zero nonpositive outputs. Bounded reciprocal inclusion and Holder multiplication supply actual sequence norm analyticity.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7b9f8efdb8ba9f91141b7116eb1b3bf028db45a93fe872db94830fe0c8693654"
+    },
+    {
+      "path": "NLS/KdV/HillHminusGapSquareSequence.lean",
+      "source_labels": [
+        "Actual rough action amplitude finite head and normalized energy gap squares supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At every actual real Hminus-one base one common complex neighborhood carries a native ell1 analytic normalized ENERGY gap-square map: G_n=((actual upper energy_n-actual lower energy_n)/n)^2 at every real source and all positive indices, including low/collapsed gaps and means. No caller root labels supplied.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "600fb70fcb2e4c82056906a0d1ab427b1f7ba1caa3b8787ae3a59c794702156d"
+    },
+    {
+      "path": "NLS/KdV/HillActionGapRatioRoughContinuation.lean",
+      "source_labels": [
+        "Actual rough action amplitude finite head and normalized energy gap squares supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The original physical action ratio is real analytic on every real scaling line through zero, including collapsed gaps. A rough analytic candidate agreeing with the original L2 germ agrees with the actual physical ratio at EVERY original real L2 source in its whole rough ball, without an L2 norm smallness assumption.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cbdc625cdf1ac0a2d7873ded5325ca691aa17ad8d975743e9a6d58962679e9bc"
+    },
+    {
+      "path": "NLS/KdV/HillHminusLocalGapMoments.lean",
+      "source_labels": [
+        "Actual rough action amplitude finite head and normalized energy gap squares supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Actual scalar symmetric midpoint and squared-gap germs from logarithmic moments of the entire original rough characteristic on the original free contour, analytic near zero in Hminus-one at every fixed positive index. They agree exactly with the existing complex L2 formulas on every complex L2 inclusion; exact free values proved.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "42804f21843bade5f4e6d91af032a6e1c704ee02359dc9cd53db8df7d11b7d3a"
+    },
+    {
+      "path": "NLS/KdV/HillHminusLocalFilledTrace.lean",
+      "source_labels": [
+        "Actual rough action amplitude finite head and normalized energy gap squares supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Cauchy deflation of the actual rough characteristic and its free-normalized root/trace germs. The deflated unit is jointly analytic on an energy/source neighborhood; the trace is jointly analytic at the free collapsed gap. Every formula agrees with the existing original complex L2 formula on every complex L2 inclusion, including the entire energy variable.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a5432029040ae74ef2015c67affcd0ec42bd7cd1d576dd921f224c552ac8deca"
+    },
+    {
+      "path": "NLS/KdV/HillHminusLocalActionAmplitude.lean",
+      "source_labels": [
+        "Actual rough action amplitude finite head and normalized energy gap squares supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For EVERY fixed positive index, construct Hminus-one analytic extensions of the ORIGINAL physical action-to-half-gap-square ratio and principal amplitude near zero. Ratio free value 1/(2*pi*n), amplitude free value 1/sqrt(2*pi*n), positive real part, weighted amplitude bound and EXACT original physical recovery at every real L2 source in the whole rough ball. This fixed-index/finitely-many-indices result does not supply a common ball for the infinite tail.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "45e4d7b2c75773dfda94336616f922543561ec7f100aa17e2f42bea501193b2a"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/RoughActionAmplitudeHead.lean",
+      "source_labels": [
+        "Actual rough action amplitude finite head and normalized energy gap squares supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Two unconditional article results: every prescribed finite positive gap set has ONE complex Hminus-one ball and weighted bound for the actual analytic physical action amplitudes, with exact recovery at EVERY physical L2 source in that rough ball; and ONE ball BEFORE all positive indices supports native ell1 analytic normalized actual energy gap squares, zero at zero, zero nonpositive outputs and norm<=C*norm(q). Infinite-tail amplitude assembly, rough regular phase/full Abelian map and all main theorems remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d2a2935c56e34ce35934ed6d02a122532cf647cf38e1110fbf80a80a14b78b16"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "The actual native near-zero L2 Abelian map, real local inverse and simultaneous action Hamiltonian fields are proved. Rough Dirichlet and periodic labels now globally match ORIGINAL physical L2 data. At every real Hminus-one base one common complex neighborhood supports the native normalized symmetric midpoint sequence. Near zero ONE rough ball supports actual midpoint displacement, Dirichlet-minus-midpoint, log norming and sinh in ell2 with joint linear norm bound and exact complex characteristic zeros. NEXT rough filled roots, analytic action/gap amplitude ratios and full regular phase, then assemble the negative-half target Abelian map; full coordinate-coordinate canonical brackets, arbitrary-base/global inverse, full s>=-1 scale and actual Hamiltonian action-frequency/PDE main theorems remain.",
+    "Native L2 Abelian map, local real inverse and simultaneous action fields are proved. Rough Dirichlet/periodic labels globally match original physical L2 data; native rough midpoint/divisor/log-norming and normalized ell1 energy gap squares are proved. NOW every fixed positive index has an actual rough action-to-half-gap-square ratio and principal amplitude germ with exact free normalization and physical matching on its ENTIRE rough ball; any prescribed finite gap set has a common ball and weighted amplitude bound. NEXT combine this finite head with a proved common high-tail amplitude family, construct the full rough regular phase and assemble the negative-half target Abelian map. Full coordinate-coordinate canonicality, arbitrary-base/global inverse, full s>=-1 regularity and Hamiltonian action-frequency/PDE main theorems remain.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
@@ -20239,15 +20333,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 12485,
-    "total_declarations_audited": 34552,
+    "candidate_declarations_audited": 12566,
+    "total_declarations_audited": 34636,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1439,
+    "selected_modules": 1446,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -20311,7 +20405,8 @@
     "native_action_fields_validation_sequence": "Prior strict evidence for all 1272 unchanged selected baseline sources; strict dependency-order compilation of eight new proof modules and two unchanged canonical helpers; then a fresh combined transitive axiom audit of all 1282 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1316 frozen source/checker/provenance hashes, 31 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The old selected ordering is retained as an ordered subsequence. The imported NLS source closure adds exactly the eight new proof modules; both canonical helpers were already in the imported closure. No repeated full 1282-module rebuild is claimed.",
     "native_rough_dirichlet_validation_sequence": "Prior strict evidence for all 1282 unchanged selected baseline sources; 125 new selections strictly checked: 114 incoming source files, eight new or extracted compatibility/proof modules, and three unchanged canonical helpers. A retained 112-module integrated source-check prefix is completed by 13 strict selections after the needed private canonical helper outputs are prepared, followed by a fresh combined transitive axiom audit of all 1407 selected modules. The original interrupted prefix log is retained: its sole error is a missing private SourceLemma9_2.olean; the final log contains the successful helper and consumer builds and no error or warning. Exact checker/audit/coverage/evidence selections, transitive selected order and reachability, 1443 frozen source/checker/provenance/Mathlib-source hashes, 32 unchanged and one new verified provenance records, private fresh outputs and unchanged clean canonical main verified. The NLS imported source closure adds exactly the 125 new selections. Pinned Mathlib Arsinh is compiled privately with warningAsError at default heartbeats. No full 1407-module rebuild is claimed.",
     "physical_dirichlet_validation_sequence": "Prior strict evidence retained for all 1407 unchanged selected baseline sources; all 11 new modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1418 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1455 frozen source/checker/provenance/Mathlib-source hashes, 33 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 11 selections. Eight shared sources are byte-identical imports and thirteen local API variants are retained unchanged. No full 1418-module rebuild is claimed.",
-    "native_rough_divisor_validation_sequence": "Prior strict evidence retained for all 1418 unchanged selected baseline sources; all 21 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1439 selected modules. The new selections are twelve incoming sources, seven new/extracted proof modules and two unchanged canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1477 frozen source/checker/provenance/Mathlib-source hashes, 34 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 21 selections. No full 1439-module rebuild is claimed."
+    "native_rough_divisor_validation_sequence": "Prior strict evidence retained for all 1418 unchanged selected baseline sources; all 21 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1439 selected modules. The new selections are twelve incoming sources, seven new/extracted proof modules and two unchanged canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1477 frozen source/checker/provenance/Mathlib-source hashes, 34 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 21 selections. No full 1439-module rebuild is claimed.",
+    "rough_action_head_validation_sequence": "Prior strict evidence retained for all 1439 unchanged selected baseline sources; all seven new proof modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1446 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1484 frozen source/checker/provenance/Mathlib-source hashes, all 35 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these seven new proof modules. No full 1446-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -20869,6 +20964,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "34c56233dcd70afc02d9e8c0f708ac8e19c823bb",
+      "description": "Prior native rough symmetric midpoint/divisor packet; now native ell1 actual energy gap-square data and exact rough action-amplitude germs with common finite-head domains and physical matching throughout their rough balls.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "The actual native near-zero L2 Abelian map, real local inverse and simultaneous action Hamiltonian fields are proved. Rough Dirichlet and periodic labels now globally match ORIGINAL physical L2 data. At every real Hminus-one base one common complex neighborhood supports the native normalized symmetric midpoint sequence. Near zero ONE rough ball supports actual midpoint displacement, Dirichlet-minus-midpoint, log norming and sinh in ell2 with joint linear norm bound and exact complex characteristic zeros. NEXT rough filled roots, analytic action/gap amplitude ratios and full regular phase, then assemble the negative-half target Abelian map; full coordinate-coordinate canonical brackets, arbitrary-base/global inverse, full s>=-1 scale and actual Hamiltonian action-frequency/PDE main theorems remain.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -20896,5 +21003,6 @@
   "native_action_fields_record": "NATIVE_ACTION_HAMILTONIAN_FIELDS.md",
   "native_rough_dirichlet_record": "NATIVE_ROUGH_DIRICHLET_PACKET.md",
   "physical_dirichlet_record": "PHYSICAL_DIRICHLET_MATCHING.md",
-  "native_rough_divisor_record": "NATIVE_ROUGH_DIVISOR_PACKET.md"
+  "native_rough_divisor_record": "NATIVE_ROUGH_DIVISOR_PACKET.md",
+  "rough_action_head_record": "ROUGH_ACTION_AMPLITUDE_HEAD.md"
 }

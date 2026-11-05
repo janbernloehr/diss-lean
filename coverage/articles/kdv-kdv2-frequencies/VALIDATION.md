@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest native rough midpoint and divisor packet
+## Latest actual rough action amplitude finite head
+
+Every fixed positive gap index now has an Hminus-one analytic actual action-to-half-gap-square ratio and principal amplitude near zero, with exact free values 1/(2*pi*n) and 1/sqrt(2*pi*n). Any prescribed FINITE collection has one complex rough ball and one bound for sqrt(1+n)*norm(amplitude). At EVERY original real L2 source in that rough ball the amplitude equals the existing physical Abelian amplitude, including collapsed gaps. No L2 norm smallness is required.
+
+The normalized actual ENERGY gap squares now form a native ell1 analytic map on common neighborhoods around EVERY real rough base. Near zero one ball before all indices gives G0=0, zero nonpositive outputs and norm(Gq)<=C*norm(q), with G_n=((actual upper energy_n-actual lower energy_n)/n)^2. See `ROUGH_ACTION_AMPLITUDE_HEAD.md`.
+
+Prior strict evidence retained for all 1439 unchanged selected baseline sources; all seven new proof modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1446 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1484 frozen source/checker/provenance/Mathlib-source hashes, all 35 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these seven new proof modules. No full 1446-module rebuild is claimed.
+
+Fresh audit: 12566 selected and 34636 imported NLS declarations; permitted axioms only. The common infinite-tail amplitude estimate, full rough regular phase/Abelian map, canonicality, global inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier native rough midpoint and divisor packet
 
 At EVERY real Hminus-one base, one common complex neighborhood now supports a native ell2 analytic sequence of actual symmetric energy midpoint displacements divided by n. All positive indices, first and collapsed gaps and nonzero means are included. Every intrinsic periodic label also agrees globally with the ORIGINAL physical L2 label, including the bottom and repeated endpoints.
 
@@ -526,7 +536,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1439 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1446 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1595,7 +1605,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1439 selected modules (including generated and private declarations)
+the 1446 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -3246,4 +3256,17 @@ PASS NLS/KdV/HillHminusPhysicalPeriodicLabels
 PASS NLS/KdV/HillHminusGapMidpointSequence
 PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughDivisorPacket
 Axiom audit passed: 12485 candidate declarations; 34552 declarations total.
+```
+
+Latest rough action-head strict checks and fresh combined audit:
+
+```text
+PASS NLS/SequenceSpaces/PositiveEnergyGapSquares
+PASS NLS/KdV/HillHminusGapSquareSequence
+PASS NLS/KdV/HillActionGapRatioRoughContinuation
+PASS NLS/KdV/HillHminusLocalGapMoments
+PASS NLS/KdV/HillHminusLocalFilledTrace
+PASS NLS/KdV/HillHminusLocalActionAmplitude
+PASS NLS/Articles/KdVKdV2Frequencies/RoughActionAmplitudeHead
+Axiom audit passed: 12566 candidate declarations; 34636 declarations total.
 ```

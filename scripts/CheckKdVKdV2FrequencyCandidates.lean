@@ -1,3 +1,10 @@
+import NLS.Articles.KdVKdV2Frequencies.RoughActionAmplitudeHead
+import NLS.KdV.HillHminusLocalActionAmplitude
+import NLS.KdV.HillHminusLocalFilledTrace
+import NLS.KdV.HillHminusLocalGapMoments
+import NLS.KdV.HillHminusGapSquareSequence
+import NLS.KdV.HillActionGapRatioRoughContinuation
+import NLS.SequenceSpaces.PositiveEnergyGapSquares
 import NLS.ZakharovShabat.PeriodicEndpointGlobalMultiplicity
 import NLS.ZakharovShabat.SourceMidpointSequenceAnalytic
 import NLS.Articles.KdVKdV2Frequencies.NativeRoughDivisorPacket
@@ -2013,7 +2020,14 @@ run_cmd do
     `NLS.SequenceSpaces.PositiveEnergyMidpoints,
     `NLS.KdV.HillHminusPhysicalPeriodicLabels,
     `NLS.KdV.HillHminusGapMidpointSequence,
-    `NLS.Articles.KdVKdV2Frequencies.NativeRoughDivisorPacket
+    `NLS.Articles.KdVKdV2Frequencies.NativeRoughDivisorPacket,
+    `NLS.SequenceSpaces.PositiveEnergyGapSquares,
+    `NLS.KdV.HillHminusGapSquareSequence,
+    `NLS.KdV.HillActionGapRatioRoughContinuation,
+    `NLS.KdV.HillHminusLocalGapMoments,
+    `NLS.KdV.HillHminusLocalFilledTrace,
+    `NLS.KdV.HillHminusLocalActionAmplitude,
+    `NLS.Articles.KdVKdV2Frequencies.RoughActionAmplitudeHead
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
