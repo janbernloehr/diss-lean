@@ -1577,6 +1577,12 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillActionRotation
 import NLS.Topology.CompactCoordinateMatching
 import NLS.ComplexAnalysis.EqualNormRotation
 import NLS.Articles.KdVPseudomeasures.OriginalHillNativeTorusImage
+import NLS.SequenceSpaces.SignedSobolevPositiveEquivalence
+import NLS.SequenceSpaces.PhysicalSobolevWienerWeakStar
+import NLS.Articles.KdVPseudomeasures.EndpointPhysicalNativeInclusions
+import NLS.Articles.KdVPseudomeasures.EndpointIsospectralTorusImage
+import NLS.Articles.KdVPseudomeasures.ArticleEndpointTargetNorm
+import NLS.Articles.KdVPseudomeasures.ArticleEndpointWeakStarContinuity
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9616,3 +9622,57 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNativeTorusImage
 #print axioms NLS.Articles.KdVPseudomeasures.image_hillRealDiscriminant_fiber_eq_actionTorus
 #print axioms NLS.Articles.KdVPseudomeasures.isCompact_hillRealNativeActionTorus
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_native_isospectral_preimage
+#print axioms NLS.Weight.signedSobolev_le_sobolev
+#print axioms NLS.Weight.sobolev_le_two_rpow_mul_signedSobolev
+#print axioms NLS.WeightedCoeff.signedSobolevPositiveEquiv
+#print axioms NLS.WeightedCoeff.signedSobolevPositiveEquiv_apply
+#print axioms NLS.WeightedCoeff.signedSobolevPositiveEquiv_symm_apply
+#print axioms NLS.WeightedCoeff.signedSobolevPositiveEquiv_map_zeroMode
+#print axioms NLS.WeightedCoeff.zeroModeSignedSobolevPositiveEquiv
+#print axioms NLS.WeightedCoeff.zeroModeSignedSobolevPositiveEquiv_map_real
+#print axioms NLS.WeightedCoeff.physicalSignedSobolevPositiveEquiv
+#print axioms NLS.WeightedCoeff.physicalSignedSobolevPositiveEquiv_apply
+#print axioms NLS.WeightedCoeff.physicalSignedSobolevPositiveEquiv_symm_apply
+#print axioms NLS.WeightedCoeff.norm_physicalSignedSobolevPositiveEquiv_le
+#print axioms NLS.WeightedCoeff.norm_physicalSignedSobolevPositiveEquiv_symm_le
+#print axioms NLS.WeightedCoeff.physicalSobolevWienerFunctional
+#print axioms NLS.WeightedCoeff.physicalSobolevWeakStar
+#print axioms NLS.WeightedCoeff.physicalSobolevWeakStar_apply
+#print axioms NLS.WeightedCoeff.tendsto_physicalSobolevWeakStar_of_bounded_coefficients
+#print axioms NLS.Articles.KdVPseudomeasures.endpointPhysicalNativeSourceInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.endpointPhysicalNativeSourceInclusion_inclusion
+#print axioms NLS.Articles.KdVPseudomeasures.endpointPhysicalNativeSourceInclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.endpointPhysicalNativeTargetInclusion
+#print axioms NLS.Articles.KdVPseudomeasures.endpointPhysicalNativeTargetInclusion_apply
+#print axioms NLS.Articles.KdVPseudomeasures.endpointPhysicalNativeTargetInclusion_injective
+#print axioms NLS.Articles.KdVPseudomeasures.endpointPhysicalNativeTargetInclusion_map
+#print axioms NLS.Articles.KdVPseudomeasures.endpointPhysicalNativeSourceInclusion_original
+#print axioms NLS.Articles.KdVPseudomeasures.endpointPhysicalNativeTargetInclusion_originalMap
+#print axioms NLS.Articles.KdVPseudomeasures.endpointIsospectralSet
+#print axioms NLS.Articles.KdVPseudomeasures.mem_endpointIsospectralSet_iff_original
+#print axioms NLS.Articles.KdVPseudomeasures.endpointActionTorus
+#print axioms NLS.Articles.KdVPseudomeasures.mem_endpointActionTorus_iff_native
+#print axioms NLS.Articles.KdVPseudomeasures.exists_endpoint_representative_of_original_isospectral
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_5_i
+#print axioms NLS.Articles.KdVPseudomeasures.originalEndpointMap_mem_actionTorus_of_isospectral
+#print axioms NLS.Articles.KdVPseudomeasures.exists_endpoint_isospectral_preimage_of_mem_actionTorus
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_5_ii
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointTargetEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointTargetEquiv_apply
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointTargetEquiv_symm_apply
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointCoordinates_apply
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointPhysicalMap
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_articleEndpointPhysicalMap
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointPhysicalMap_original
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointFreeEquiv
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_articleEndpointPhysicalMap_zero
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointPhysicalMap_localInverse_zero
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointActionTorus
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointTargetEquiv_image_actionTorus
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_5_ii_articleNorm
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_6_articleNorm
+#print axioms NLS.Articles.KdVPseudomeasures.articleEndpointWeakStarCoordinates
+#print axioms NLS.Articles.KdVPseudomeasures.tendsto_articleEndpointWeakStarCoordinates_of_bounded
+#print axioms NLS.Articles.KdVPseudomeasures.sourceLemma3_7_articleNorm
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_articleEndpointWeakStarCoordinates_on_bounded

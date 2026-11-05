@@ -1611,6 +1611,12 @@ modules = [
     'NLS.Topology.CompactCoordinateMatching',
     'NLS.ComplexAnalysis.EqualNormRotation',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNativeTorusImage',
+    'NLS.SequenceSpaces.SignedSobolevPositiveEquivalence',
+    'NLS.SequenceSpaces.PhysicalSobolevWienerWeakStar',
+    'NLS.Articles.KdVPseudomeasures.EndpointPhysicalNativeInclusions',
+    'NLS.Articles.KdVPseudomeasures.EndpointIsospectralTorusImage',
+    'NLS.Articles.KdVPseudomeasures.ArticleEndpointTargetNorm',
+    'NLS.Articles.KdVPseudomeasures.ArticleEndpointWeakStarContinuity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
