@@ -1630,6 +1630,15 @@ import NLS.SequenceSpaces.SignedSobolevSpatialGenerator
 import NLS.SequenceSpaces.FourierRealZeroSpatialGenerator
 import NLS.KdV.HillRealSpatialGeneratorL2
 import NLS.Articles.KdVPseudomeasures.OriginalHillNativeL2Regularity
+import NLS.SequenceSpaces.FourierRealZeroMultiplier
+import NLS.SequenceSpaces.SpatialInverseSymbol
+import NLS.FunctionalAnalysis.AnalyticGeneratorRecovery
+import NLS.Topology.LiftLocalInverseGerms
+import NLS.Topology.DensePreimageApproximation
+import NLS.KdV.HillNativeL2Models
+import NLS.Articles.KdVPseudomeasures.OriginalHillL2NativeAnalytic
+import NLS.Articles.KdVPseudomeasures.OriginalHillL2NativeInverse
+import NLS.Articles.KdVPseudomeasures.OriginalHillL2FiniteGapApproximation
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9916,3 +9925,57 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillNativeL2Regularity
 #print axioms NLS.Articles.KdVPseudomeasures.exists_L2_source_of_native_signed_half
 #print axioms NLS.Articles.KdVPseudomeasures.hillReal_source_L2_iff_native_signed_half
 #print axioms NLS.Articles.KdVPseudomeasures.original_Hill_L2_iff_native_signed_half
+#print axioms NLS.WeightedCoeff.fourierRealZeroMultiplier
+#print axioms NLS.WeightedCoeff.fourierRealZeroMultiplier_apply
+#print axioms NLS.WeightedCoeff.norm_fourierRealZeroMultiplier_le
+#print axioms NLS.spatialInverseSymbol
+#print axioms NLS.spatialInverseSymbol_neg
+#print axioms NLS.spatialInverseSymbol_generator
+#print axioms NLS.Weight.signedSobolev_spatialInverse_bound
+#print axioms NLS.Weight.sobolev_spatialInverse_to_zero_bound
+#print axioms NLS.FunctionalAnalysis.analyticAt_derivative_generator_recovery
+#print axioms NLS.Topology.lift_two_sided_inverse_germs
+#print axioms NLS.Topology.dense_preimage_of_approximating_sequences
+#print axioms NLS.KdV.hillL2SourceInclusion
+#print axioms NLS.KdV.hillL2SourceSpatialGenerator
+#print axioms NLS.KdV.hillL2SourceSpatialRecovery
+#print axioms NLS.KdV.hillSignedHalfInclusion
+#print axioms NLS.KdV.hillSignedHalfSpatialGenerator
+#print axioms NLS.KdV.hillSignedHalfSpatialRecovery
+#print axioms NLS.KdV.hillL2SourceInclusion_apply
+#print axioms NLS.KdV.hillL2SourceSpatialGenerator_apply
+#print axioms NLS.KdV.hillL2SourceSpatialRecovery_apply
+#print axioms NLS.KdV.hillSignedHalfInclusion_apply
+#print axioms NLS.KdV.hillSignedHalfSpatialGenerator_apply
+#print axioms NLS.KdV.hillSignedHalfSpatialRecovery_apply
+#print axioms NLS.KdV.norm_hillL2SourceInclusion_le
+#print axioms NLS.KdV.norm_hillL2SourceSpatialGenerator_le
+#print axioms NLS.KdV.norm_hillL2SourceSpatialRecovery_le
+#print axioms NLS.KdV.norm_hillSignedHalfInclusion_le
+#print axioms NLS.KdV.norm_hillSignedHalfSpatialGenerator_le
+#print axioms NLS.KdV.norm_hillSignedHalfSpatialRecovery_le
+#print axioms NLS.KdV.hillL2SourceInclusion_injective
+#print axioms NLS.KdV.hillSignedHalfInclusion_injective
+#print axioms NLS.KdV.hillL2SourceSpatialRecovery_generator_eq
+#print axioms NLS.KdV.hillSignedHalfSpatialRecovery_generator_eq
+#print axioms NLS.KdV.hillL2SourceInclusion_recovery_eq
+#print axioms NLS.KdV.hillSignedHalfInclusion_recovery_eq
+#print axioms NLS.KdV.hillL2SourceCoefficients
+#print axioms NLS.KdV.hillL2SourceCoefficients_apply
+#print axioms NLS.KdV.norm_hillL2SourceCoefficients
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2NativeMap
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2NativeMap_inclusion
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2NativeMap_apply
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillL2NativeMap
+#print axioms NLS.Articles.KdVPseudomeasures.norm_hillL2NativeMap_le_DF
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2NativeMap_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2NativeMap_spatialGenerator
+#print axioms NLS.Articles.KdVPseudomeasures.exists_L2_source_of_native_signed_half_norm_bound
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2InverseRecovery
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillL2InverseRecovery
+#print axioms NLS.Articles.KdVPseudomeasures.norm_hillL2InverseRecovery_le_DF
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2InverseRecovery_inclusion_of_inverse_germ
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2InverseRecovery_eventually_inclusion
+#print axioms NLS.Articles.KdVPseudomeasures.exists_hillL2NativeMap_localInverse
+#print axioms NLS.Articles.KdVPseudomeasures.hillL2FiniteGap_approximation
+#print axioms NLS.Articles.KdVPseudomeasures.dense_hillL2FiniteGapLocus

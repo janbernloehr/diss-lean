@@ -1664,6 +1664,15 @@ modules = [
     'NLS.SequenceSpaces.FourierRealZeroSpatialGenerator',
     'NLS.KdV.HillRealSpatialGeneratorL2',
     'NLS.Articles.KdVPseudomeasures.OriginalHillNativeL2Regularity',
+    'NLS.SequenceSpaces.FourierRealZeroMultiplier',
+    'NLS.SequenceSpaces.SpatialInverseSymbol',
+    'NLS.FunctionalAnalysis.AnalyticGeneratorRecovery',
+    'NLS.Topology.LiftLocalInverseGerms',
+    'NLS.Topology.DensePreimageApproximation',
+    'NLS.KdV.HillNativeL2Models',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillL2NativeAnalytic',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillL2NativeInverse',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillL2FiniteGapApproximation',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
