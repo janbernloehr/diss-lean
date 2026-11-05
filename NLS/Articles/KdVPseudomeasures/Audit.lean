@@ -1607,6 +1607,12 @@ import NLS.Poisson.GardnerSpatialTranslation
 import NLS.KdV.HillActionSpatialTranslation
 import NLS.FunctionalAnalysis.CompactInvariantFlowEquivariance
 import NLS.Articles.KdVPseudomeasures.OriginalHillActionSpatialCommutation
+import NLS.ComplexAnalysis.ShortArcRotation
+import NLS.Topology.LocalInverseLift
+import NLS.SequenceSpaces.FourierRealZeroReplacement
+import NLS.FunctionalAnalysis.CompactInvariantCurveContinuity
+import NLS.Articles.KdVPseudomeasures.OriginalHillActionShortArc
+import NLS.Articles.KdVPseudomeasures.OriginalHillLocalIsospectralInverse
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -9817,3 +9823,20 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillActionSpatialCommutation
 #print axioms NLS.Articles.KdVPseudomeasures.originalHill_spatialCoordinateRatio_actionFlow_invariant
 #print axioms NLS.Articles.KdVPseudomeasures.norm_hillRealNativeCoordinate_spatialTranslation
 #print axioms NLS.Articles.KdVPseudomeasures.norm_hillRealSpatialCoordinateRatio
+#print axioms NLS.ComplexAnalysis.norm_exp_I_sub_one_le_of_abs_le
+#print axioms NLS.ComplexAnalysis.norm_short_rotation_sub_le
+#print axioms NLS.ComplexAnalysis.exists_short_rotation_of_norm_eq
+#print axioms NLS.Topology.eqOn_localInverse_lift
+#print axioms NLS.WeightedCoeff.fourierRealZero_norm_le_of_coordinates
+#print axioms NLS.WeightedCoeff.fourierRealZeroReplace
+#print axioms NLS.WeightedCoeff.fourierRealZeroReplace_apply
+#print axioms NLS.WeightedCoeff.norm_fourierRealZeroReplace_sub_le
+#print axioms NLS.WeightedCoeff.tendsto_fourierRealZeroReplace
+#print axioms NLS.FunctionalAnalysis.CompactInvariantVectorField.continuous_globalCurve
+#print axioms NLS.Articles.KdVPseudomeasures.continuous_originalHillNativeActionFlow
+#print axioms NLS.Articles.KdVPseudomeasures.hillRealSignedMap_actionFlow_apply
+#print axioms NLS.Articles.KdVPseudomeasures.norm_actionTorus_positive
+#print axioms NLS.Articles.KdVPseudomeasures.exists_short_action_output_path
+#print axioms NLS.Articles.KdVPseudomeasures.exists_isospectral_local_inverse_finite_replacement
+#print axioms NLS.Articles.KdVPseudomeasures.hillNative_local_inverse_isospectral
+#print axioms NLS.Articles.KdVPseudomeasures.exists_open_action_level_eq_isospectral

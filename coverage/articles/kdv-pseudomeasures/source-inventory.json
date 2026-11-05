@@ -2086,6 +2086,30 @@
         "NLS.Articles.KdVPseudomeasures.norm_hillRealSpatialCoordinateRatio"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-action-spatial-commutation-map.json"
+    },
+    {
+      "label": "Specified actual local native inverse preservation of full infinite-support action tori and local equality of action/discriminant fibers",
+      "status": "proved dependencies; specific native phase/winding/momentum trace/native closedness/globalinverse/actualKdV and ALL MAIN statements unproved",
+      "declarations": [
+        "NLS.ComplexAnalysis.norm_exp_I_sub_one_le_of_abs_le",
+        "NLS.ComplexAnalysis.norm_short_rotation_sub_le",
+        "NLS.ComplexAnalysis.exists_short_rotation_of_norm_eq",
+        "NLS.Topology.eqOn_localInverse_lift",
+        "NLS.WeightedCoeff.fourierRealZero_norm_le_of_coordinates",
+        "NLS.WeightedCoeff.fourierRealZeroReplace",
+        "NLS.WeightedCoeff.fourierRealZeroReplace_apply",
+        "NLS.WeightedCoeff.norm_fourierRealZeroReplace_sub_le",
+        "NLS.WeightedCoeff.tendsto_fourierRealZeroReplace",
+        "NLS.FunctionalAnalysis.CompactInvariantVectorField.continuous_globalCurve",
+        "NLS.Articles.KdVPseudomeasures.continuous_originalHillNativeActionFlow",
+        "NLS.Articles.KdVPseudomeasures.hillRealSignedMap_actionFlow_apply",
+        "NLS.Articles.KdVPseudomeasures.norm_actionTorus_positive",
+        "NLS.Articles.KdVPseudomeasures.exists_short_action_output_path",
+        "NLS.Articles.KdVPseudomeasures.exists_isospectral_local_inverse_finite_replacement",
+        "NLS.Articles.KdVPseudomeasures.hillNative_local_inverse_isospectral",
+        "NLS.Articles.KdVPseudomeasures.exists_open_action_level_eq_isospectral"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-local-isospectral-inverse-map.json"
     }
   ],
   "reuse_map": [
@@ -2167,7 +2191,7 @@
   "remaining_obligations": [
     "Determine the universal ACTUAL Hill numerator scalar 2/(pi*n), remaining nonlinear source/target scales, actual global KdV Birkhoff map/flow and ALL FIVE MAIN THEOREMS. Actual full intrinsic angle-pair zero and ENTIRE signed-coordinate Gardner matrix on EVERY original physical real mean-zero Hminus-one source are NOW PROVED, including closed gaps and zero. Complex numerator product proportionality with unique nonzero analytic scalar, joint locally uniform SAME cutoffs, entire energy-derivative convergence, exhaustive simple actual zero set and full uniform period inverses remain verified. Do not redo these dependencies; the universal scalar and remaining global conclusions are still OPEN.",
     "Determine the UNIVERSAL value 2/(pi*n) of the ACTUAL Hill numerator product scalar. The canonical complex scalar is now UNIQUE, NONZERO and ANALYTIC on the whole common zero-sequence domain, agrees with the original real scalar, and normalizes the literal actual retained-energy product with JOINT locally uniform SAME cutoffs. At every complex source its energy derivatives converge on the ENTIRE plane and its zero set is EXACTLY retained actual samples. A smaller common OPEN CONNECTED domain of ENTIRE real Hminus-one has ALL roots SIMPLE, retained labels distinct and nonzero omitted midpoint, where an explicit ratio computes the scalar. These facts do NOT establish its universal value. An actual real-L2 normalization identity remains a possible route; its real-L2-to-real-Hminus-one density transfer is already PROVED. Do NOT infer the universal scalar from zeros/growth/analyticity/free value.",
-    "NOW PROVED actual full real Hminus-one Hill BORG potential constancy for ALL canonical gaps closed, zero-mean uniqueness and EXACT singleton ACTUAL native zero fiber. Proof uses unconditional ACTUAL Dirac central-gap constancy from physical momentum/spatial translation+ACTUAL Dirac Jacobian injectivity, genuine all-index Miura gap comparison/reflection and SAME actual distributional Miura lift. GLOBAL actual native bijectivity IFF ACTUAL native map closedness now PROVED, using actual local homeomorphism+singletonzero. Actual closedness/properness/globalbijection, L2/smooth nativeinjectivity/arbitrary action realization and allmain still OPEN. Prior actual finite-gap smoothness/L2 reduction and full endpoint3.5i/ii/literalnorm/localinverse/forwardweakstar remain PROVED. NOW PROVED exact physical Miura spatial covariance, entire-complex native Hill discriminant spatial invariance, FULL original physical spectral/multiplicity/label/gap/action translation invariance and actual L2 spatial DF stationarity with2*pi factors. Actual Birkhoff spatial phase velocities and KdV momentum-action trace remain UNPROVED; stationarity alone supplies no varying-action properness bound. NOW additionally PROVED actual Gardner tensor spatial invariance; ONE common complex action-invariance ball before ALL indices; actual action-field covariance and COMPLETE indexed action-flow commutation with spatial translation on EVERY original physical real Hminus-one source. Actual native spatial quotients are unimodular at open coordinates and invariant under EVERY actual indexed action flow. Spatial source period1 proved; specific native spatial winding/speed, source action-flow periods and momentum trace remain UNPROVED.",
+    "NOW PROVED actual full real Hminus-one Hill BORG potential constancy for ALL canonical gaps closed, zero-mean uniqueness and EXACT singleton ACTUAL native zero fiber. Proof uses unconditional ACTUAL Dirac central-gap constancy from physical momentum/spatial translation+ACTUAL Dirac Jacobian injectivity, genuine all-index Miura gap comparison/reflection and SAME actual distributional Miura lift. GLOBAL actual native bijectivity IFF ACTUAL native map closedness now PROVED, using actual local homeomorphism+singletonzero. Actual closedness/properness/globalbijection, L2/smooth nativeinjectivity/arbitrary action realization and allmain still OPEN. Prior actual finite-gap smoothness/L2 reduction and full endpoint3.5i/ii/literalnorm/localinverse/forwardweakstar remain PROVED. NOW PROVED exact physical Miura spatial covariance, entire-complex native Hill discriminant spatial invariance, FULL original physical spectral/multiplicity/label/gap/action translation invariance and actual L2 spatial DF stationarity with2*pi factors. Actual Birkhoff spatial phase velocities and KdV momentum-action trace remain UNPROVED; stationarity alone supplies no varying-action properness bound. NOW additionally PROVED actual Gardner tensor spatial invariance; ONE common complex action-invariance ball before ALL indices; actual action-field covariance and COMPLETE indexed action-flow commutation with spatial translation on EVERY original physical real Hminus-one source. Actual native spatial quotients are unimodular at open coordinates and invariant under EVERY actual indexed action flow. Spatial source period1 proved; specific native spatial winding/speed, source action-flow periods and momentum trace remain UNPROVED. NOW PROVED the specified actual local native inverse preserves the FULL infinite-support action torus in the SAME original isospectral fiber near EVERY source. On an original Hminus-one open neighborhood, equality of ALL actions is EQUIVALENT to equality of the ENTIRE discriminant. Finite action arcs stay in the chosen target ball by full-norm short-arc control and lift uniqueness; actual compact-fiber closure supplies the infinite-support limit. Global connectedness/injectivity/closedness, spatial quotient character/winding and KdV momentum trace remain OPEN.",
     "FULL precise sourceTheorem1.4 is NOW declared as sourceTheorem1_4Statement and PROVED CONDITIONAL ONLY on IsClosedMap hillRealSignedMap by sourceTheorem1_4_of_native_isClosedMap. Actual endpoint inverse regularity is unconditional for ANY actual native preimage of endpoint output. Native onto/injectivity transfer to endpoints; native injectivity supplies full weak-star homeomorphism on EVERY bounded subset, including nonclosed subsets. Actual native CLOSEDNESS/PROPERNESS/GLOBALBIJECTION remains UNPROVED, so sourceTheorem1.4 remains UNPROVED. Actual native globalbijectionIFFactualclosedmap is already proved via actual localhomeomorphism+genuine singletonzero. Other nonlinear scales and actualKdV still required; ALL MAIN statements remain UNPROVED.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved."
   ],
@@ -5330,6 +5354,26 @@
     "actual_native_properness_PROVED": false,
     "actual_native_global_injectivity_PROVED": false,
     "actual_native_global_surjectivity_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
+    "actual_KdV_evolution_PROVED": false,
+    "global_Birkhoff_theorem_PROVED": false
+  },
+  "actual_Hill_local_isospectral_inverse": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-local-isospectral-inverse-map.json",
+    "principal_short_arc_full_chord_control_PROVED": true,
+    "physical_symmetric_finite_replacement_full_norm_bound_and_convergence_PROVED": true,
+    "specified_local_inverse_lift_uniqueness_preconnected_domain_PROVED": true,
+    "actual_complete_action_short_arc_FULL_output_distance_control_PROVED": true,
+    "EVERY_finite_target_replacement_has_SAME_isospectral_preimage_on_SPECIFIED_inverse_branch_PROVED": true,
+    "EVERY_source_local_inverse_preserves_FULL_infinite_support_actual_action_torus_in_SAME_isoset_PROVED": true,
+    "EVERY_source_open_original_Hminus_neighborhood_action_level_IFF_ENTIRE_discriminant_fiber_PROVED": true,
+    "actual_native_closed_map_PROVED": false,
+    "actual_native_properness_PROVED": false,
+    "actual_native_global_injectivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "actual_spatial_quotient_winding_number_n_PROVED": false,
+    "actual_Birkhoff_spatial_phase_velocity_2_pi_i_n_PROVED": false,
+    "actual_KdV_momentum_action_trace_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
     "actual_KdV_evolution_PROVED": false,
     "global_Birkhoff_theorem_PROVED": false
