@@ -1748,6 +1748,13 @@ import NLS.FunctionalAnalysis.LocalCoordinateCancellation
 import NLS.ComplexAnalysis.ComplexHyperplaneSlope
 import NLS.ComplexAnalysis.RealAnalyticCoordinateDivision
 import NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAnalytic
+import NLS.FunctionalAnalysis.DifferentialCommutingSquare
+import NLS.Articles.KdVPseudomeasures.OriginalHillIntegerFreeDerivative
+import NLS.KdV.PeriodOneHamiltonianCurveJet
+import NLS.SequenceSpaces.HalfFourierInverseNormalization
+import NLS.KdV.PeriodOneKineticModePair
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1CanonicalPotential
+import NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAtZero
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10517,3 +10524,30 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAnalytic
 #print axioms NLS.ComplexAnalysis.analyticAt_of_coordinate_mul
 #print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1KdVFrequency
 #print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1KdVFrequency_actual_coordinates
+#print axioms NLS.FunctionalAnalysis.fderiv_commuting_square
+#print axioms NLS.FunctionalAnalysis.fderiv_inverse_apply
+#print axioms NLS.FunctionalAnalysis.hasDerivAt_map_real_ray
+#print axioms NLS.FunctionalAnalysis.fderiv_clm_after_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillIntegerSobolevEquiv_symm_zero
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillIntegerSobolevEquiv_inclusion
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillIntegerSobolevEquiv_zero_apply
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillIntegerSobolevEquiv_symm_zero_apply
+#print axioms NLS.KdV.fderiv_periodOneKdVHamiltonian_apply
+#print axioms NLS.KdV.hasDerivAt_periodOneKdV_real_curve
+#print axioms NLS.KdV.hasDerivAt_periodOneKdV_real_curve_variation_zero
+#print axioms NLS.WeightedCoeff.halfFourierInverseSymbol_positive_sq
+#print axioms NLS.KdV.periodOneSobolevKinetic_mode_pair
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalPotential
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1CanonicalPotential
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalPotential_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1CanonicalHamiltonian_eq_physical
+#print axioms NLS.Articles.KdVPseudomeasures.fderiv_hillH1CanonicalPotential_zero_apply
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1PhysicalModeCurve
+#print axioms NLS.Articles.KdVPseudomeasures.analyticAt_hillH1PhysicalModeCurve
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1PhysicalModeCurve_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1PhysicalModeCurve_zero
+#print axioms NLS.Articles.KdVPseudomeasures.deriv_hillH1PhysicalModeCurve_zero_apply
+#print axioms NLS.Articles.KdVPseudomeasures.periodOneSobolevKinetic_hillH1PhysicalModeCurve_zero
+#print axioms NLS.Articles.KdVPseudomeasures.hasDerivAt_hillH1Canonical_mode_energy
+#print axioms NLS.Articles.KdVPseudomeasures.hillH1KdVFrequency_zero

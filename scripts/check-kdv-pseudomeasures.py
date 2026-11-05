@@ -1782,6 +1782,13 @@ modules = [
     'NLS.ComplexAnalysis.ComplexHyperplaneSlope',
     'NLS.ComplexAnalysis.RealAnalyticCoordinateDivision',
     'NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAnalytic',
+    'NLS.FunctionalAnalysis.DifferentialCommutingSquare',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillIntegerFreeDerivative',
+    'NLS.KdV.PeriodOneHamiltonianCurveJet',
+    'NLS.SequenceSpaces.HalfFourierInverseNormalization',
+    'NLS.KdV.PeriodOneKineticModePair',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1CanonicalPotential',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillH1FrequencyAtZero',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
