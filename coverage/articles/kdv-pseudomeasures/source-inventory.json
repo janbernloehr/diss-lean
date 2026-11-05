@@ -2451,6 +2451,36 @@
         "NLS.Articles.KdVPseudomeasures.hasSum_normalizedMiura_inverseAction"
       ],
       "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-inverse-action-miura-map.json"
+    },
+    {
+      "label": "GLOBAL genuine mean-zero real Riccati lift existence on entire original rough Hill domain",
+      "status": "proved strong bounded lift compactness, attained minimum shift, nonzero-mean derivative inverse and genuine real analytic local inverse, mean-zero minimizing lift, SAME all-index actual Hill actions and inverse-frequency sum; action-based lift bound/native coercivity/onto/actualKdV/ALL MAIN remain unproved",
+      "declarations": [
+        "NLS.FunctionalAnalysis.isCompact_preimage_inter_of_compact_remainders",
+        "NLS.CompactSpectrum.bijective_of_injective_compact_difference",
+        "NLS.CompactSpectrum.equivOfInjectiveCompactDifference",
+        "NLS.FunctionalAnalysis.eventually_localInverse_fixedPoints",
+        "NLS.isCompact_closure_periodOneMiuraProduct_image",
+        "NLS.isCompact_periodOneMiura_preimage_inter_closedBall",
+        "NLS.KdV.hillRealMiuraLiftSet",
+        "NLS.KdV.isClosed_hillRealMiuraLiftSet",
+        "NLS.KdV.isCompact_hillRealMiuraLiftSet_inter_closedBall",
+        "NLS.KdV.surjective_hillRealNormalizedMiura",
+        "NLS.KdV.exists_minimal_real_Miura_lift",
+        "NLS.KdV.exists_minimal_real_Miura_energy_shift",
+        "NLS.KdV.zero_mem_diagonalSpectrum_of_weakFirstOrder",
+        "NLS.KdV.periodOneMiuraLinearization_injective_of_real_mean_ne_zero",
+        "NLS.KdV.realMeanNonzeroMiuraLinearizationEquiv",
+        "NLS.KdV.periodOneMiura_realConjugation",
+        "NLS.KdV.exists_real_preserving_localInverse_periodOneMiura",
+        "NLS.KdV.mean_zero_of_minimal_real_Miura_energy_shift",
+        "NLS.KdV.exists_mean_zero_real_Miura_lift",
+        "NLS.KdV.surjective_hillRealNormalizedMiura_mean_zero",
+        "NLS.Articles.KdVPseudomeasures.exists_original_mean_zero_real_Miura_lift",
+        "NLS.Articles.KdVPseudomeasures.exists_original_mean_zero_Miura_action_lift",
+        "NLS.Articles.KdVPseudomeasures.original_mean_zero_Miura_shift_mem_spectrum"
+      ],
+      "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-mean-zero-riccati-map.json"
     }
   ],
   "reuse_map": [
@@ -2535,8 +2565,9 @@
     "NOW PROVED actual L2 global REAL-ANALYTIC homeomorphism/properness, FULL native Hminus/original/endpoint injectivity and bounded literal Wiener weak-star inverse topology. NEW actual bounded-source action compactness on ENTIRE original distribution domain: ONE source realizes simultaneous limits of ALL indexed actual actions along ONE subsequence. Uniform shifted real Miura lifts, all-level Dirac higher-action coefficient continuity, central spectral separation and explicit mean normalization are VERIFIED. NEW bounded-source convergent FULL native outputs have actual preimages and the WHOLE source sequence converges STRONGLY Hminus. Native properness IFF norm-bounded preimages of EVERY compact target set is NOW PROVED. That varying-action NORM BOUND remains OPEN. Extended reference Lemma8.3 supplies it using universal action-gap min estimate + actual Hminus norm-vs-gap coercivity (Theorem2.3); BOTH estimates still require faithful Lean proofs. Native onto/closedness/properness, actual KdV and ALL FIVE MAIN remain OPEN; goal ACTIVE.",
     "FULL sourceTheorem1.4 remains UNPROVED because actual native SURJECTIVITY and equivalent native compact-preimage norm bound remain OPEN. NEW sourceTheorem1_4_of_bounded_compact_native_preimages proves the FULL precise main conclusion CONDITIONAL on that PURE NORM obligation; sourceTheorem1_4_of_native_surjective remains proved. Full native/original/endpoint INJECTIVITY and literal physical REAL Wiener weak-star homeomorphism onto EXACT IMAGE on EVERY bounded endpoint subset (including nonclosed) and full original isospectral endpoint sets are UNCONDITIONAL. Forward analytic mapping, original norm bounds, full-isoset bounds and inverse endpoint regularity for ANY actual native preimage remain proved. Do NOT promote conditional norm-bound/surjectivity reductions to completed main statements.",
     "Construct ACTUAL original H-minus-one KdV flow from convergence of EVERY original smooth approximation, retaining equation and Hamiltonian/frequency normalization; derive main1.1,1.3,1.4 and Wiener5.1,5.9. ALL FIVE MAIN theorems remain UNPROVED; goal ACTIVE. AppendixB and preceding spectral/action/gap/quotient/Dirichlet-energy/norming-sheet dependencies remain proved.",
-    "NEW actual exact zero-frequency diagonal Dirac formula Delta_u(0)=2*cosh(u_0) for EVERY complex L2 lift, and physical real zero-frequency spectral membership/central collapse IFF mean zero, are PROVED. A proposed direct coercivity route still requires genuine global mean-zero Riccati lift existence and actual inverse-frequency quasimomentum moment/action bounds with verified Fourier normalization. Neither is asserted by this milestone. The existing universal actual action-gap min estimate + original Hminus norm-vs-gap coercivity route also remains OPEN. Native onto/properness and ALL FIVE MAIN remain UNPROVED.",
-    "NEW exact original inverse-frequency action mass P_-1=sum I_n/(pi*n)=norm(Phi(q))^2/(2*pi), full actual Hill/Miura action comparison INCLUDING zero central frequency, exact real Miura zero mode=norm(u)^2, explicit mean-normalized Miura image and universal ORIGINAL Hminus bound C*(norm(u)+norm(u)^2) from EVERY GIVEN lift are PROVED. Direct native coercivity still requires global MEAN-ZERO Riccati lift existence and actual inverse-frequency quasimomentum/action estimate for norm(u). Large-shift lifts alone do not provide the needed bound. Native onto/properness, actualKdV and ALL FIVE MAIN remain UNPROVED."
+    "NOW PROVED exact zero-frequency Dirac trace/mean criterion, actual Hill/Miura action comparison INCLUDING central collapse, exact inverse-frequency native action normalization, universal original Hminus source bound from a lift, and GLOBAL genuine MEAN-ZERO real L2 Riccati lift existence for EVERY original rough source. Remaining direct coercivity obligation: actual inverse-frequency quasimomentum/action estimate for the mean-zero lift L2 norm. Native varying-action source coercivity/onto/properness and ALL FIVE MAIN remain UNPROVED.",
+    "NOW PROVED exact zero-frequency Dirac trace/mean criterion, actual Hill/Miura action comparison INCLUDING central collapse, exact inverse-frequency native action normalization, universal original Hminus source bound from a lift, and GLOBAL genuine MEAN-ZERO real L2 Riccati lift existence for EVERY original rough source. Remaining direct coercivity obligation: actual inverse-frequency quasimomentum/action estimate for the mean-zero lift L2 norm. Native varying-action source coercivity/onto/properness and ALL FIVE MAIN remain UNPROVED.",
+    "NEW global mean-zero real Riccati lift existence is PROVED on the ENTIRE original distribution domain. Strong compactness of bounded actual lift families, attained global minimum energy, actual nonzero-mean Miura derivative inverse, real-preserving genuine two-sided analytic inverse and energy-lowering contradiction are VERIFIED. SAME lift retains ALL actual Hill actions and inverse-frequency sum, and its removed energy is an actual original periodic spectral point. The actual quasimomentum/action mass bound for its L2 norm remains OPEN; no native global Birkhoff surjectivity or main theorem completion follows yet."
   ],
   "workspace": {
     "path": "/home/janbernloehr/Documents/Codex/2026-11-02/diss-lean-kdv-pseudomeasures/outputs/diss-lean",
@@ -5944,6 +5975,27 @@
     "ACTUAL_normalized_Miura_inverse_frequency_higher_action_sum_PROVED": true,
     "global_mean_zero_Riccati_lift_existence_PROVED": false,
     "global_quasimomentum_inverse_frequency_moment_identity_PROVED": false,
+    "actual_native_varying_action_norm_coercivity_PROVED": false,
+    "actual_native_global_surjectivity_PROVED": false,
+    "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,
+    "actual_KdV_evolution_PROVED": false
+  },
+  "actual_Hill_global_mean_zero_Riccati": {
+    "coverage_map": "coverage/articles/kdv-pseudomeasures/hill-mean-zero-riccati-map.json",
+    "ACTUAL_complex_Miura_compact_preimages_after_L2_bound_PROVED": true,
+    "ENTIRE_real_Riccati_lift_family_strong_L2_compact_bounded_slices_PROVED": true,
+    "global_minimal_real_Miura_energy_shift_attained_PROVED": true,
+    "ACTUAL_Miura_linearization_injective_every_real_nonzero_mean_lift_PROVED": true,
+    "ACTUAL_Miura_linearization_Banach_equivalence_every_real_nonzero_mean_lift_PROVED": true,
+    "TRUE_real_preserving_two_sided_analytic_local_Miura_inverse_nonzero_mean_PROVED": true,
+    "minimal_real_Riccati_lift_MUST_have_mean_zero_PROVED": true,
+    "global_mean_zero_Riccati_lift_existence_ENTIRE_original_domain_PROVED": true,
+    "mean_zero_normalized_real_Miura_surjectivity_PROVED": true,
+    "SAME_mean_zero_lift_ALL_actual_Hill_actions_and_inverse_action_sum_PROVED": true,
+    "removed_energy_ACTUAL_original_periodic_spectral_point_PROVED": true,
+    "removed_energy_asserted_LOWEST_original_eigenvalue": false,
+    "global_quasimomentum_inverse_frequency_moment_identity_PROVED": false,
+    "mean_zero_lift_L2_bound_by_actual_inverse_action_mass_PROVED": false,
     "actual_native_varying_action_norm_coercivity_PROVED": false,
     "actual_native_global_surjectivity_PROVED": false,
     "sourceTheorem1_4_UNCONDITIONALLY_PROVED": false,

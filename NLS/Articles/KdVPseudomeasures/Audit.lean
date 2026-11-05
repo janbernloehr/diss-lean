@@ -1677,6 +1677,15 @@ import NLS.SequenceSpaces.SignedHilbertActionTrace
 import NLS.KdV.HillMiuraActionAtCentralCollapse
 import NLS.KdV.HillMiuraMeanNormalization
 import NLS.Articles.KdVPseudomeasures.OriginalHillInverseActionTrace
+import NLS.FunctionalAnalysis.CompactPerturbationBoundedPreimages
+import NLS.FunctionalAnalysis.CompactPerturbationInjectiveInverse
+import NLS.FunctionalAnalysis.LocalInverseFixedPoints
+import NLS.SequenceSpaces.PeriodOneMiuraBoundedCompactness
+import NLS.KdV.HillRiccatiMinimum
+import NLS.KdV.HillMiuraLinearizationKernel
+import NLS.KdV.HillMiuraRealLocalInverse
+import NLS.KdV.HillRiccatiMeanZeroLift
+import NLS.Articles.KdVPseudomeasures.OriginalHillMeanZeroMiuraLift
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -10175,3 +10184,26 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillInverseActionTrace
 #print axioms NLS.Articles.KdVPseudomeasures.hasSum_originalCanonicalHillAction_inverse
 #print axioms NLS.Articles.KdVPseudomeasures.originalCanonicalHillAction_eq_Miura_all
 #print axioms NLS.Articles.KdVPseudomeasures.hasSum_normalizedMiura_inverseAction
+#print axioms NLS.FunctionalAnalysis.isCompact_preimage_inter_of_compact_remainders
+#print axioms NLS.CompactSpectrum.bijective_of_injective_compact_difference
+#print axioms NLS.CompactSpectrum.equivOfInjectiveCompactDifference
+#print axioms NLS.FunctionalAnalysis.eventually_localInverse_fixedPoints
+#print axioms NLS.isCompact_closure_periodOneMiuraProduct_image
+#print axioms NLS.isCompact_periodOneMiura_preimage_inter_closedBall
+#print axioms NLS.KdV.hillRealMiuraLiftSet
+#print axioms NLS.KdV.isClosed_hillRealMiuraLiftSet
+#print axioms NLS.KdV.isCompact_hillRealMiuraLiftSet_inter_closedBall
+#print axioms NLS.KdV.surjective_hillRealNormalizedMiura
+#print axioms NLS.KdV.exists_minimal_real_Miura_lift
+#print axioms NLS.KdV.exists_minimal_real_Miura_energy_shift
+#print axioms NLS.KdV.zero_mem_diagonalSpectrum_of_weakFirstOrder
+#print axioms NLS.KdV.periodOneMiuraLinearization_injective_of_real_mean_ne_zero
+#print axioms NLS.KdV.realMeanNonzeroMiuraLinearizationEquiv
+#print axioms NLS.KdV.periodOneMiura_realConjugation
+#print axioms NLS.KdV.exists_real_preserving_localInverse_periodOneMiura
+#print axioms NLS.KdV.mean_zero_of_minimal_real_Miura_energy_shift
+#print axioms NLS.KdV.exists_mean_zero_real_Miura_lift
+#print axioms NLS.KdV.surjective_hillRealNormalizedMiura_mean_zero
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_mean_zero_real_Miura_lift
+#print axioms NLS.Articles.KdVPseudomeasures.exists_original_mean_zero_Miura_action_lift
+#print axioms NLS.Articles.KdVPseudomeasures.original_mean_zero_Miura_shift_mem_spectrum

@@ -1711,6 +1711,15 @@ modules = [
     'NLS.KdV.HillMiuraActionAtCentralCollapse',
     'NLS.KdV.HillMiuraMeanNormalization',
     'NLS.Articles.KdVPseudomeasures.OriginalHillInverseActionTrace',
+    'NLS.FunctionalAnalysis.CompactPerturbationBoundedPreimages',
+    'NLS.FunctionalAnalysis.CompactPerturbationInjectiveInverse',
+    'NLS.FunctionalAnalysis.LocalInverseFixedPoints',
+    'NLS.SequenceSpaces.PeriodOneMiuraBoundedCompactness',
+    'NLS.KdV.HillRiccatiMinimum',
+    'NLS.KdV.HillMiuraLinearizationKernel',
+    'NLS.KdV.HillMiuraRealLocalInverse',
+    'NLS.KdV.HillRiccatiMeanZeroLift',
+    'NLS.Articles.KdVPseudomeasures.OriginalHillMeanZeroMiuraLift',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
