@@ -5906,3 +5906,7 @@ import NLS.KdV.HillActionSourceStationarity
 import NLS.ComplexAnalysis.ActionPhaseSourceVariation
 import NLS.KdV.HillActionAmplitudeSources
 import NLS.KdV.HillRegularCartesianSourceVariations
+import NLS.KdV.HillDirichletHamiltonianSources
+import NLS.KdV.HillNormingSourceVariations
+import NLS.KdV.HillRealSourceCompleteness
+import NLS.KdV.HillRegularTerminalDensity
