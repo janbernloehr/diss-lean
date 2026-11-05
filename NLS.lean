@@ -5880,3 +5880,14 @@ import NLS.ComplexAnalysis.CosineSourceStationarity
 import NLS.KdV.HillIsospectralDeflatedDifferentials
 import NLS.KdV.HillIsospectralCosinePrimitives
 import NLS.KdV.HillIsospectralDirichletPrimitives
+import NLS.ComplexAnalysis.CosineTerminalVariation
+import NLS.KdV.HillCharacteristicCircleData
+import NLS.KdV.HillCharacteristicAngle
+import NLS.KdV.HillDirichletTerminalNormalization
+import NLS.KdV.HillCharacteristicDirichletPrimitives
+import NLS.KdV.HillCharacteristicTerminalVariation
+import NLS.KdV.HillRegularPrimitiveResidueVariations
+import NLS.KdV.HillPrimitivePartialSumVariations
+import NLS.ComplexAnalysis.RealLineGermDerivative
+import NLS.KdV.HillRealSourceDecomposition
+import NLS.KdV.HillPhysicalGermDerivativeUniqueness

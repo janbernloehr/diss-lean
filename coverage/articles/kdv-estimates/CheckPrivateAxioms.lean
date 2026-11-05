@@ -957,6 +957,17 @@ import NLS.ComplexAnalysis.CosineSourceStationarity
 import NLS.KdV.HillIsospectralDeflatedDifferentials
 import NLS.KdV.HillIsospectralCosinePrimitives
 import NLS.KdV.HillIsospectralDirichletPrimitives
+import NLS.ComplexAnalysis.CosineTerminalVariation
+import NLS.KdV.HillCharacteristicCircleData
+import NLS.KdV.HillCharacteristicAngle
+import NLS.KdV.HillDirichletTerminalNormalization
+import NLS.KdV.HillCharacteristicDirichletPrimitives
+import NLS.KdV.HillCharacteristicTerminalVariation
+import NLS.KdV.HillRegularPrimitiveResidueVariations
+import NLS.KdV.HillPrimitivePartialSumVariations
+import NLS.ComplexAnalysis.RealLineGermDerivative
+import NLS.KdV.HillRealSourceDecomposition
+import NLS.KdV.HillPhysicalGermDerivativeUniqueness
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -1521,7 +1532,9 @@ run_cmd do
     ``NLS.ComplexAnalysis.parametricConvexPrimitive_source_fderiv_eq_zero,
     ``NLS.ComplexAnalysis.parametricConvexPrimitive_moving_terminal_fderiv_of_source_kernel,
     ``NLS.ComplexAnalysis.parametricCosineNumerator_source_fderiv_eq_zero,
-    ``NLS.ComplexAnalysis.parametricCosinePrimitive_source_fderiv_eq_zero]
+    ``NLS.ComplexAnalysis.parametricCosinePrimitive_source_fderiv_eq_zero,
+    ``NLS.ComplexAnalysis.cosineTerminal_fderiv_of_stationary_gap,
+    ``NLS.ComplexAnalysis.fderiv_eq_of_eventuallyEq_real_affine_line]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||

@@ -181,6 +181,7 @@ modules+=(NLS/FunctionalAnalysis/ClosedUnitCurvePeriodic NLS/KdV/HillIsospectral
 modules+=(NLS/KdV/HillHamiltonianDirichletSourceFlows)
 modules+=(NLS/KdV/HillIsospectralPhysicalDifferentials)
 modules+=(NLS/ComplexAnalysis/SquareRootSourceStationarity NLS/ComplexAnalysis/CircleSourceStationarity NLS/ComplexAnalysis/LogarithmicMomentSourceStationarity NLS/ComplexAnalysis/CauchyTransformSourceStationarity NLS/KdV/HillIsospectralGapInvariants NLS/ComplexAnalysis/PrimitiveSourceStationarity NLS/KdV/HillIsospectralGapUnits NLS/KdV/HillIsospectralJointDifferentials NLS/ComplexAnalysis/CosineSourceStationarity NLS/KdV/HillIsospectralDeflatedDifferentials NLS/KdV/HillIsospectralCosinePrimitives NLS/KdV/HillIsospectralDirichletPrimitives)
+modules+=(NLS/ComplexAnalysis/CosineTerminalVariation NLS/KdV/HillCharacteristicCircleData NLS/KdV/HillCharacteristicAngle NLS/KdV/HillDirichletTerminalNormalization NLS/KdV/HillCharacteristicDirichletPrimitives NLS/KdV/HillCharacteristicTerminalVariation NLS/KdV/HillRegularPrimitiveResidueVariations NLS/KdV/HillPrimitivePartialSumVariations NLS/ComplexAnalysis/RealLineGermDerivative NLS/KdV/HillRealSourceDecomposition NLS/KdV/HillPhysicalGermDerivativeUniqueness)
 for module in "${modules[@]}"; do
   for suffix in olean olean.private olean.server; do
     if [[ -L "$build_root/$module.$suffix" ]]; then
