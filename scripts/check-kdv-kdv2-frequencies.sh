@@ -1133,6 +1133,10 @@ modules=(
   NLS/KdV/HillHminusOneNormalizedNumeratorSequence
   NLS/KdV/HillHminusOneNormalizedSequencePeriods
   NLS/Articles/KdVKdV2Frequencies/NativeNormalizedNumerators
+  NLS/ComplexAnalysis/SquareRootExteriorShift
+  NLS/KdV/HillMiuraNumeratorExterior
+  NLS/KdV/HillMiuraPhysicalProductDecay
+  NLS/Articles/KdVKdV2Frequencies/NativePhysicalNumeratorDecay
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

@@ -5,7 +5,17 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest native normalized differential numerator family
+## Latest physical gap-product decay of actual normalized numerators
+
+The actual Miura energy numerator/discriminant-derivative quotient now has a32/R_k bound over every sufficiently large complete energy circle, retaining the fixed complex energy translation and both square-root signs. The actual physical derivative/full-gap-product quotient is bounded by4. Consequently the actual common-ball native Hilbert numerator family satisfies the full physical gap-product exterior decay at every physical L2 source in that ball. The globally selected physical numerator has the same decay, and equality of these actual numerators is now equivalent to physical intrinsic Kronecker periods.
+
+See `PHYSICAL_NUMERATOR_PRODUCT_DECAY.md`. Physical intrinsic period transfer is still required; no full physical differential identification or native physical Abelian-coordinate analyticity is inferred.
+
+Prior strict evidence for all 1124 unchanged selected baseline sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 1128 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1158 frozen source/checker/provenance hashes, all 28 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1128-module rebuild is claimed.
+
+Fresh audit: 10409 selected and 32577 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier native normalized differential numerator family
 
 The actual Miura-normalized entire differential numerators now admit one jointly complex analytic realization in the full output-index Hilbert norm on a common complex Hminus-one source ball. All positive components equal the existing actual Miura family at every complex source, all nonpositive components vanish, and the entire free slice is retained. A single local neighborhood and constant control the full norm and every positive component together. The literal Hilbert-valued Bochner contour integral equals the exact Kronecker basis vector for every contour and source in that ball.
 
@@ -346,7 +356,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1124 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1128 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1415,7 +1425,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1124 selected modules (including generated and private declarations)
+the 1128 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -2754,4 +2764,14 @@ PASS NLS/KdV/HillHminusOneNormalizedNumeratorSequence
 PASS NLS/KdV/HillHminusOneNormalizedSequencePeriods
 PASS NLS/Articles/KdVKdV2Frequencies/NativeNormalizedNumerators
 Axiom audit passed: 10386 candidate declarations; 32558 declarations total.
+```
+
+Latest physical numerator decay strict additions and fresh combined audit:
+
+```text
+PASS NLS/ComplexAnalysis/SquareRootExteriorShift
+PASS NLS/KdV/HillMiuraNumeratorExterior
+PASS NLS/KdV/HillMiuraPhysicalProductDecay
+PASS NLS/Articles/KdVKdV2Frequencies/NativePhysicalNumeratorDecay
+Axiom audit passed: 10409 candidate declarations; 32577 declarations total.
 ```

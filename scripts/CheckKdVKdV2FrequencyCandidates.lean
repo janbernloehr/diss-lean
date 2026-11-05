@@ -1,3 +1,4 @@
+import NLS.Articles.KdVKdV2Frequencies.NativePhysicalNumeratorDecay
 import NLS.SequenceSpaces.HilbertMatrixTransposeAnalytic
 import NLS.KdV.HillHminusOneNormalizedNumeratorSequence
 import NLS.KdV.HillHminusOneNormalizedSequencePeriods
@@ -1390,7 +1391,11 @@ run_cmd do
     `NLS.SequenceSpaces.HilbertMatrixTransposeAnalytic,
     `NLS.KdV.HillHminusOneNormalizedNumeratorSequence,
     `NLS.KdV.HillHminusOneNormalizedSequencePeriods,
-    `NLS.Articles.KdVKdV2Frequencies.NativeNormalizedNumerators
+    `NLS.Articles.KdVKdV2Frequencies.NativeNormalizedNumerators,
+    `NLS.ComplexAnalysis.SquareRootExteriorShift,
+    `NLS.KdV.HillMiuraNumeratorExterior,
+    `NLS.KdV.HillMiuraPhysicalProductDecay,
+    `NLS.Articles.KdVKdV2Frequencies.NativePhysicalNumeratorDecay
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

@@ -993,3 +993,14 @@ See `NATIVE_NORMALIZED_NUMERATORS.md`. This is a normalized differential depende
 Prior strict evidence for all 1108 unchanged selected baseline sources; strict dependency-order compilation of twelve byte-identical canonical Hilbert-transpose dependencies and four new proof modules; then a fresh combined transitive axiom audit of all 1124 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1154 frozen source/checker/provenance hashes, 27 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1124-module rebuild is claimed.
 
 Fresh audit: 10386 selected and 32558 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+
+## Latest physical gap-product decay of actual normalized numerators
+
+The actual Miura energy numerator/discriminant-derivative quotient now has a32/R_k bound over every sufficiently large complete energy circle, retaining the fixed complex energy translation and both square-root signs. The actual physical derivative/full-gap-product quotient is bounded by4. Consequently the actual common-ball native Hilbert numerator family satisfies the full physical gap-product exterior decay at every physical L2 source in that ball. The globally selected physical numerator has the same decay, and equality of these actual numerators is now equivalent to physical intrinsic Kronecker periods.
+
+See `PHYSICAL_NUMERATOR_PRODUCT_DECAY.md`. Physical intrinsic period transfer is still required; no full physical differential identification or native physical Abelian-coordinate analyticity is inferred.
+
+Prior strict evidence for all 1124 unchanged selected baseline sources; strict dependency-order compilation of four new proof modules; then a fresh combined transitive axiom audit of all 1128 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1158 frozen source/checker/provenance hashes, all 28 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1128-module rebuild is claimed.
+
+Fresh audit: 10409 selected and 32577 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
