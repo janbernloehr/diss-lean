@@ -17,7 +17,21 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual rough phase and full Abelian scalar germs
+## Latest actual native rough Abelian packet
+
+ONE complex H-minus-one ball now supports a native ell-two analytic Z, zero at zero, with norm(Z(q))<=C*norm(q) and zero nonpositive entries. At EVERY original real L2 source p in that WHOLE rough ball and EVERY positive n:
+
+```text
+Z(embed(p))_n = ORIGINAL hillDirichletAbelianCoordinate(p,n) / sqrt(1+n).
+```
+
+This is the actual positive negative-half weighted packet, with the ORIGINAL sqrt(action) normalization and COMPLETE Abelian phase. First/closed gaps, zero endpoint sheets and nonzero means are included. There is no physical L2 smallness condition. The gap-weighted own eta absorbs the selected phase; exact midpoint normalization supplies the energy half-gap. A proved nontrivial sheet detector removes the regular-sheet restriction before a constant sign is fixed per index. Scaling continuation gives recovery throughout the whole rough ball. See `NATIVE_ROUGH_ABELIAN_PACKET.md`.
+
+Prior strict evidence retained for all 1767 unchanged selected baseline sources; all 39 new selections strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 1806 selected modules. New selections: 11 unchanged incoming sources, 17 unchanged canonical helpers and 11 own proof modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1847 frozen source/checker/provenance/Mathlib-source hashes, 37 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 39 selections. No full 1806-module rebuild is claimed.
+
+Fresh audit: 15117 selected and 37183 imported NLS declarations; permitted axioms only. Signed completion, actual Fourier derivative/local rough inverse, full canonicality, global/arbitrary-base rough inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier actual rough phase and full Abelian scalar germs
 
 ONE complex Hminus-one ball now supports the ORIGINAL off-index regular correction as a native ell-infinity analytic map B. It vanishes at zero, satisfies norm(B(q))<=C*norm(q), and has zero nonpositive components. At EVERY original real L2 source in that WHOLE rough ball, every positive component equals the ORIGINAL physical off-index correction. First/closed gaps, endpoint terminals and nonzero means are included, without physical L2 smallness. This common packet excludes the selected own-index regular term.
 

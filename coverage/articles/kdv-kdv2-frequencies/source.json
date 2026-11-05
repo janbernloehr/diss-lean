@@ -4,7 +4,7 @@
   "status": "not_yet_verified",
   "stage": "dedicated_worktree_validated_progress",
   "canonical_base_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
-  "checked_date": "2026-11-05",
+  "checked_date": "2026-11-06",
   "journal_title": "On the wellposedness of the KdV/KdV2 equations and their frequency maps",
   "preprint_title": "On the extension of the frequency maps of the KdV and the KdV2 equations",
   "authors": [
@@ -177,6 +177,11 @@
           "source_clause": "Actual full physical Abelian scalar coordinate germs in complex Hminus-one topology, including the own regular correction and collapsed free gap",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillDirichletAbelianCoordinate_rough_scalar_germ",
           "qualification": "For EVERY fixed positive index the ACTUAL original sqrt(action)-normalized Abelian coordinate has a complex Hminus-one analytic scalar germ at zero and vanishes there. Original physical real L2 germs match exactly, including the own regular phase and closed gaps. Uses constructed amplitudes, native normalized terminals and actual full phase germs. A common all-index radius, native rough Abelian sequence map and full Birkhoff theorem are not asserted."
+        },
+        {
+          "source_clause": "Actual common native H-minus-one Abelian packet in the positive Sobolev-minus-one-half weighted Hilbert norm, with whole-ball original physical recovery",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillHminus_native_normalized_abelian_packet",
+          "qualification": "Unconditional article theorem: ONE complex H-minus-one ball before EVERY positive index supports a native ell-two Banach analytic Z, zero at zero with norm(Zq)<=C*norm(q) and nonpositive entries zero. At EVERY original real L2 source in that WHOLE rough ball, Z(embed(p))_n equals the ORIGINAL sqrt(action) Abelian coordinate divided by sqrt(1+n), including first/closed gaps, zero endpoint sheets, means and the COMPLETE Abelian phase. This is the actual positive negative-half weighted packet; signed completion, full canonicality, global inverse and full regularity remain obligations."
         }
       ]
     },
@@ -24184,12 +24189,480 @@
       "scope": "For EVERY fixed positive index the ACTUAL original sqrt(action)-normalized Abelian coordinate has a complex Hminus-one analytic scalar germ at zero and vanishes there. Original physical real L2 germs match exactly, including the own regular phase and closed gaps. Uses constructed amplitudes, native normalized terminals and actual full phase germs. A common all-index radius, native rough Abelian sequence map and full Birkhoff theorem are not asserted.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "f54df1890349aaa190bf8960fbc7c330670ef72aca716fd5f260b70acfcb68c5"
+    },
+    {
+      "path": "NLS/KdV/HillOwnCosineEnergy.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged verified shared full original physical Abelian phase square, own prescribed-sheet path integral or negative-anchor/negative-selected beta comparison. Complete original correction terms and constants retained; exact source/local hashes in SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d64d684d6e121d401b22af55c541a640d3772300660d9f41bd35064915e5a9c0"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceNegativePathBeta.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged verified shared full original physical Abelian phase square, own prescribed-sheet path integral or negative-anchor/negative-selected beta comparison. Complete original correction terms and constants retained; exact source/local hashes in SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9a02177ff54e676f9509352e488b75c52a3dcf69065643d33b6833232d33e63c"
+    },
+    {
+      "path": "NLS/KdV/HillOwnNegativeBeta.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged verified shared full original physical Abelian phase square, own prescribed-sheet path integral or negative-anchor/negative-selected beta comparison. Complete original correction terms and constants retained; exact source/local hashes in SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "38592253af1d6be90acb586a258b95c472a818bebdebb58df9be08561ba9e71e"
+    },
+    {
+      "path": "NLS/KdV/HillOwnPhysicalPullback.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged verified shared full original physical Abelian phase square, own prescribed-sheet path integral or negative-anchor/negative-selected beta comparison. Complete original correction terms and constants retained; exact source/local hashes in SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e0f38474243fcfdbf45395708e80e045a838263516f66cb8ae4259a1301267a2"
+    },
+    {
+      "path": "NLS/KdV/HillSpectralCartesianTerminal.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged verified shared full original physical Abelian phase square, own prescribed-sheet path integral or negative-anchor/negative-selected beta comparison. Complete original correction terms and constants retained; exact source/local hashes in SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f770664dc87f5d753c6127961c1fbe0488266ebc081b51e3877bf6f4e6359ed1"
+    },
+    {
+      "path": "NLS/KdV/HillFullSourceCartesian.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged verified shared full original physical Abelian phase square, own prescribed-sheet path integral or negative-anchor/negative-selected beta comparison. Complete original correction terms and constants retained; exact source/local hashes in SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "38f0021615a9d2f939000e306af327dd99f5b51863de61c217fc9cf5b529f8bb"
+    },
+    {
+      "path": "NLS/KdV/HillOwnModelIntegrability.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged verified shared full original physical Abelian phase square, own prescribed-sheet path integral or negative-anchor/negative-selected beta comparison. Complete original correction terms and constants retained; exact source/local hashes in SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7d028353f402a7a448269377b715b7bfe910f4ad2df3cf1ea15b75c81e4460d9"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceEtaPrescribedModelAngle.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged verified shared full original physical Abelian phase square, own prescribed-sheet path integral or negative-anchor/negative-selected beta comparison. Complete original correction terms and constants retained; exact source/local hashes in SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "cb29a844512ecbff4df04a4d0d9c81869f432c93fc49646afbb9821dfd33c58d"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceEtaPrescribedRepresentative.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged verified shared full original physical Abelian phase square, own prescribed-sheet path integral or negative-anchor/negative-selected beta comparison. Complete original correction terms and constants retained; exact source/local hashes in SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fb033fc3b334bba0666f90da5906352734840daeacc27b180f7edbd27b6187bd"
+    },
+    {
+      "path": "NLS/KdV/HillOwnCutEtaPhase.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged verified shared full original physical Abelian phase square, own prescribed-sheet path integral or negative-anchor/negative-selected beta comparison. Complete original correction terms and constants retained; exact source/local hashes in SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fe64e6aa0e73f46b13acb0582a872467dffb3089817ab0a1c70dea3d4b7c5b24"
+    },
+    {
+      "path": "NLS/KdV/HillFullPhaseSquare.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged verified shared full original physical Abelian phase square, own prescribed-sheet path integral or negative-anchor/negative-selected beta comparison. Complete original correction terms and constants retained; exact source/local hashes in SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c23de1e4e4f79614cf36181b2ad6423eef31f05624d9ec586067b525c61868f5"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ImproperCurveIntegral.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4ccb6465a444bacb40495fbd2fffb8fdd0f9c03e74a8f764d574168525ec281c"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ImproperLogarithmicIntegral.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "bf010944a5c87e21cbb68c457dc519ac0a2998023fecfbfe02ddd1f5df46b95f"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ImproperQuadraticRootPathIntegral.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3cf041f145bb9fdc9565023e61d04e450d140d02f435c6bae8046fcc1256fdc1"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularBetaImproperPath.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f9e5cb92e3f7a9bb10e24ceb2a0f199308a3aacd31be3ccd63ab5847850c70d8"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularEtaImproperModel.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "83c385d370671dfd4c9e2eb8efb8f300d9b3033d4228f1f6f83ba92c79374d43"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularEtaImproperRemainder.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a69b3f3062b3195f5679dfc2934991f699b51bf960bc98c8447c7677e18a4f54"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalEtaComparison.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f4fa740b99f6b7848446e2e59879f1260e1a3d38eee4ce8ef1be6b562f66b6d8"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalEtaValues.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f3e0c5e54bf94039714a8103e1ab16eba40c58d7a91fce66ff26432dc5385ce0"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalEtaIntegral.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "fcea4ed8662e0ee979cffc454778c9d83c899cd2c0c3137b58cc892ada268090"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalTheta.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "d067767e0b6097c4bbe4de67a002c098a5de09b89b610e6d65721f34460e0fc3"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalThetaDomain.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b7e44e03355e7a70ac5949a79e3a274fc4a7e8c7f1674017817b8c40c09cb4e2"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalDiagonalBound.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "2603a04dd457dd9de3d41e69a77d52aa85144773ff045a98a64141d8a834c4d4"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalEtaImproperRemainder.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ac8fe04b02f26d3c8c7a72a6e31d71c167cc9ce91a5fff1b32e9b73c5099af31"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalEtaRemainderValue.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7cdab9d9074c5527e6db57ffc5529ae8b551176f7ea89976acfafe0aea902c4c"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedEtaOriginal.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "4709b37039213e8efedb5e80113abb5d3de07e0bb80161b50d9d5d80da2c962d"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalBound.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "8a942632841ac042488b758a7866e9680df72ca9ffce92392d41faa7a7c3e3cd"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalSequence.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unchanged canonical/shared original eta integral, improper path or native gap-weighted eta sequence dependency. Exact bytes agree with canonical main and pinned shared source; selected for strict private compilation and combined axiom audit, see SHARED_ROUGH_ABELIAN_IMPORT.json.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "45857554bb80ddacee0da4e6d1eab5f7b0a2793561c574b042c438ea92df7f34"
+    },
+    {
+      "path": "NLS/KdV/HillHminusNativeSourceFactors.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Actual gap-weighted original eta is a native Hilbert analytic map on the same rough source domain. One neighborhood and bound before all positive indices realize the normalized frequency midpoint and COMPLETE noncentral beta exponential as native ell-infinity analytic symbols, without open-gap restrictions.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e48615ef2e70c83bc76f299ab23e28ab2616bf67899e72ea8107fab2c2606dd2"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedEtaSquare.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The actual original gap-weighted eta square equals full frequency gap squared times the actual eta analytic phase on every complex open gap. Both signed original coordinates vanish at every real collapsed gap of the same normalized family.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9e70b08f87d6fc67139b97db61cdee1c30aba607e3a5454322b603b0b6ba478e"
+    },
+    {
+      "path": "NLS/KdV/HillHminusSourceEnergyGap.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "At EVERY original physical positive gap, the actual phase-rotated Dirac frequency midpoint times the FULL frequency gap equals HALF the original Hill ENERGY gap. Includes first/closed gaps and means. The positive midpoint is nonzero and closed/open gap labels agree.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "a8df769ba2a3cb87737729ab4479eba123cd2aff4e0000e5cab4d806307437f3"
+    },
+    {
+      "path": "NLS/KdV/HillHminusSourceAbelianSquare.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The literal amplitude/midpoint/gap-weighted eta/noncentral beta formula has EXACT square equal to the ORIGINAL sqrt(action) Abelian coordinate squared divided by 1+n, at every original physical source with nonzero selected sheet. All physical phase terms and the central beta subtraction are retained.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "47adfbbfc8ff851710e835620f2aafd575b035c50ac7b45e047b3f6640ec823e"
+    },
+    {
+      "path": "NLS/KdV/HillDirichletSheetDetectorGerm.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Constructed native complex L2 analytic detector equals terminal plus Dirichlet-minus-midpoint on physical germs and vanishes whenever the actual Dirichlet sheet does. Its free Fourier differential on a positive singleton is 1/2, proving its analytic germ nontrivial without division through a collapsed free gap or a caller hypothesis.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "135a289fd8e9cd1e0a5c8a235ea6147c858d59c802a6772430e10abaead8eb2a"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/RoughAbelianNativeSquare.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ONE complex rough ball supports an actual native Hilbert analytic positive Abelian candidate with common bound and zero nonpositive entries. At EVERY physical L2 source in the WHOLE rough ball and all positive indices with nonzero selected sheet, its square equals the ORIGINAL Abelian coordinate squared divided by 1+n. This intermediate candidate is subsequently sign-corrected by the original physical germs.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "7680d299a25a6bf0e93915163d4a7132ed6c6474ed95c2b5c16d94af055bc2ee"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/AnalyticGermSign.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Scalar complex Banach analytic germs with equal squares agree or differ by one constant minus sign. Derived by cancellation of nontrivial analytic germs, allowing vanishing at the base point.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "1de6b778de8a4176c0e8426f1e0f0ad25a2787c28e6fa00d2710f71f1c202e88"
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalSheetRegularGermIdentity.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Physical real-germ equal squares only on nonzero Dirichlet sheets already determine the native complex L2 germs up to one constant sign. The actual nontrivial sheet detector cancels the excluded zero-sheet locus, including the free collapsed gap.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "19df7a3e258c5863ebf8a90a9ab3bb5e28ce9c2e8cfee94961ad2abef46ffc76"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/RoughAbelianNativeGerms.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "ONE complex rough ball and native Hilbert analytic sequence Z with Z(0)=0 and linear norm bound recover the EXACT ORIGINAL Abelian coordinate divided by sqrt(1+n) as a physical real germ for EVERY positive n. A bounded fixed indexwise sign multiplier is chosen from actual scalar germs after removing the sheet restriction. No common physical L2 smallness is needed for the final continuation.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "ce9bc3438d02541c49af103ec93cba92a7ea615ac43b42db2e8c38178ec0ea17"
+    },
+    {
+      "path": "NLS/KdV/HillPhysicalAbelianRoughContinuation.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The ORIGINAL full physical Abelian coordinate is real analytic on EVERY real scaling line, including closed gaps. Any complex rough analytic normalized coordinate with the correct physical germ therefore recovers EVERY original physical source in its WHOLE rough ball, without physical L2 smallness.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "e95fafe6cefea1be000f4a9d72a08867fc47e9ef0284de19916ef73e6cd14801"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/NativeRoughAbelianPacket.lean",
+      "source_labels": [
+        "Actual common native rough Abelian packet supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Unconditional article theorem: ONE complex H-minus-one ball before EVERY positive index supports a native ell-two Banach analytic Z, zero at zero with norm(Zq)<=C*norm(q) and nonpositive entries zero. At EVERY original real L2 source in that WHOLE rough ball, Z(embed(p))_n equals the ORIGINAL sqrt(action) Abelian coordinate divided by sqrt(1+n), including first/closed gaps, zero endpoint sheets, means and the COMPLETE Abelian phase. This is the actual positive negative-half weighted packet; signed completion, full canonicality, global inverse and full regularity remain obligations.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9d0d1b7ab494b4d374aeb54e62290a6f707548006124bdbec71015af15bc4731"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "Actual rough labels, native divisor/terminal packets and common weighted amplitudes are proved. NOW the ORIGINAL off-index regular phase is a native ell-infinity analytic map on ONE rough ball, zero at zero with linear norm bound and exact original physical recovery throughout that whole ball without physical L2 smallness. EVERY fixed full regular phase and original sqrt(action) Abelian coordinate also has an actual complex rough scalar germ, including the own regular term and free collapsed gap. NEXT assemble the native negative-half rough Abelian map on a common all-index ball. The shared native gap-weighted eta sequence and exact full-phase square comparison offer a route that absorbs the own phase; full canonicality, global/arbitrary-base inverse, full s>=-1 regularity and actual Hamiltonian frequency/PDE main theorems remain obligations.",
+    "Actual common native rough Abelian packet NOW proved: ONE complex H-minus-one ball before all positive n supports native ell-two analytic Z, Z(0)=0, norm(Zq)<=C norm(q), nonpositive zero, and exact ORIGINAL physical sqrt(action) Abelian coordinate divided by sqrt(1+n) at EVERY real L2 source in the WHOLE rough ball. First/closed gaps, endpoint sheets, means and complete phases included; no physical L2 smallness. NEXT signed negative-half target completion, actual Fourier derivative and transported local rough inverse; global/arbitrary-base rough inverse, full canonicality, full s>=-1 regularity and actual Hamiltonian frequency/PDE main theorems remain obligations.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
@@ -24215,15 +24688,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 14943,
-    "total_declarations_audited": 37013,
+    "candidate_declarations_audited": 15117,
+    "total_declarations_audited": 37183,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1767,
+    "selected_modules": 1806,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -24292,7 +24765,8 @@
     "rough_action_ratio_identification_validation_sequence": "Prior strict evidence retained for all 1446 unchanged selected baseline sources; all four new proof modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1450 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1488 frozen source/checker/provenance/Mathlib-source hashes, all 35 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these four new proof modules. No full 1450-module rebuild is claimed.",
     "rough_uniform_action_amplitudes_validation_sequence": "Prior strict evidence retained for all 1450 unchanged selected baseline sources; all 54 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1504 selected modules. The new selections are 45 incoming sources, four own proof modules and five byte-identical canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1543 frozen source/checker/provenance/Mathlib-source hashes, 35 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 54 selections. No full 1504-module rebuild is claimed.",
     "native_rough_terminal_packet_validation_sequence": "Prior strict evidence retained for all 1504 unchanged selected baseline sources; all eleven new own proof modules strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1515 selected modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1554 frozen source/checker/provenance/Mathlib-source hashes, all 36 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these eleven proof modules. No full 1515-module rebuild is claimed.",
-    "rough_phase_and_abelian_germs_validation_sequence": "Prior strict evidence retained for all 1515 unchanged selected baseline sources; all 252 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1767 selected modules. The new selections are 116 incoming sources, seven own proof modules and 129 unchanged canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1807 frozen source/checker/provenance/Mathlib-source hashes, 36 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 252 selections. No full 1767-module rebuild is claimed."
+    "rough_phase_and_abelian_germs_validation_sequence": "Prior strict evidence retained for all 1515 unchanged selected baseline sources; all 252 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1767 selected modules. The new selections are 116 incoming sources, seven own proof modules and 129 unchanged canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1807 frozen source/checker/provenance/Mathlib-source hashes, 36 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 252 selections. No full 1767-module rebuild is claimed.",
+    "native_rough_abelian_validation_sequence": "Prior strict evidence retained for all 1767 unchanged selected baseline sources; all 39 new selections strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 1806 selected modules. New selections: 11 unchanged incoming sources, 17 unchanged canonical helpers and 11 own proof modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1847 frozen source/checker/provenance/Mathlib-source hashes, 37 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 39 selections. No full 1806-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -24910,6 +25384,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "3bd0fb30a4168c6d1294463fdeee7e337ff2884d",
+      "description": "Prior full rough physical scalar germs; now one common native rough Abelian packet with exact original physical recovery throughout the entire rough ball.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "Actual rough labels, native divisor/terminal packets and common weighted amplitudes are proved. NOW the ORIGINAL off-index regular phase is a native ell-infinity analytic map on ONE rough ball, zero at zero with linear norm bound and exact original physical recovery throughout that whole ball without physical L2 smallness. EVERY fixed full regular phase and original sqrt(action) Abelian coordinate also has an actual complex rough scalar germ, including the own regular term and free collapsed gap. NEXT assemble the native negative-half rough Abelian map on a common all-index ball. The shared native gap-weighted eta sequence and exact full-phase square comparison offer a route that absorbs the own phase; full canonicality, global/arbitrary-base inverse, full s>=-1 regularity and actual Hamiltonian frequency/PDE main theorems remain obligations.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -24942,5 +25428,6 @@
   "rough_action_ratio_identification_record": "ROUGH_ACTION_RATIO_IDENTIFICATION.md",
   "rough_uniform_action_amplitudes_record": "ROUGH_UNIFORM_ACTION_AMPLITUDES.md",
   "native_rough_terminal_packet_record": "NATIVE_ROUGH_TERMINAL_PACKET.md",
-  "rough_phase_and_abelian_germs_record": "ROUGH_PHASE_AND_ABELIAN_GERMS.md"
+  "rough_phase_and_abelian_germs_record": "ROUGH_PHASE_AND_ABELIAN_GERMS.md",
+  "native_rough_abelian_record": "NATIVE_ROUGH_ABELIAN_PACKET.md"
 }

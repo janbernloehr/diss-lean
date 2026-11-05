@@ -1,0 +1,175 @@
+{
+  "source_branch": "articles/kdv-estimates",
+  "source_commit": "25e906bba4584c1c1ffbf0d13cd15ce0dfeee814",
+  "purpose": "Reuse exact complete original physical phase squares and native original gap-weighted eta sequences to construct the actual common native H-minus-one Abelian packet. Preserve all previous API variants and selected sources.",
+  "files": [
+    {
+      "path": "NLS/KdV/HillOwnModelIntegrability.lean",
+      "source_sha256": "7d028353f402a7a448269377b715b7bfe910f4ad2df3cf1ea15b75c81e4460d9",
+      "local_sha256": "7d028353f402a7a448269377b715b7bfe910f4ad2df3cf1ea15b75c81e4460d9",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceEtaPrescribedModelAngle.lean",
+      "source_sha256": "cb29a844512ecbff4df04a4d0d9c81869f432c93fc49646afbb9821dfd33c58d",
+      "local_sha256": "cb29a844512ecbff4df04a4d0d9c81869f432c93fc49646afbb9821dfd33c58d",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceEtaPrescribedRepresentative.lean",
+      "source_sha256": "fb033fc3b334bba0666f90da5906352734840daeacc27b180f7edbd27b6187bd",
+      "local_sha256": "fb033fc3b334bba0666f90da5906352734840daeacc27b180f7edbd27b6187bd",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillOwnCutEtaPhase.lean",
+      "source_sha256": "fe64e6aa0e73f46b13acb0582a872467dffb3089817ab0a1c70dea3d4b7c5b24",
+      "local_sha256": "fe64e6aa0e73f46b13acb0582a872467dffb3089817ab0a1c70dea3d4b7c5b24",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillOwnCosineEnergy.lean",
+      "source_sha256": "d64d684d6e121d401b22af55c541a640d3772300660d9f41bd35064915e5a9c0",
+      "local_sha256": "d64d684d6e121d401b22af55c541a640d3772300660d9f41bd35064915e5a9c0",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceNegativePathBeta.lean",
+      "source_sha256": "9a02177ff54e676f9509352e488b75c52a3dcf69065643d33b6833232d33e63c",
+      "local_sha256": "9a02177ff54e676f9509352e488b75c52a3dcf69065643d33b6833232d33e63c",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillOwnNegativeBeta.lean",
+      "source_sha256": "38592253af1d6be90acb586a258b95c472a818bebdebb58df9be08561ba9e71e",
+      "local_sha256": "38592253af1d6be90acb586a258b95c472a818bebdebb58df9be08561ba9e71e",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillOwnPhysicalPullback.lean",
+      "source_sha256": "e0f38474243fcfdbf45395708e80e045a838263516f66cb8ae4259a1301267a2",
+      "local_sha256": "e0f38474243fcfdbf45395708e80e045a838263516f66cb8ae4259a1301267a2",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillSpectralCartesianTerminal.lean",
+      "source_sha256": "f770664dc87f5d753c6127961c1fbe0488266ebc081b51e3877bf6f4e6359ed1",
+      "local_sha256": "f770664dc87f5d753c6127961c1fbe0488266ebc081b51e3877bf6f4e6359ed1",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillFullSourceCartesian.lean",
+      "source_sha256": "38f0021615a9d2f939000e306af327dd99f5b51863de61c217fc9cf5b529f8bb",
+      "local_sha256": "38f0021615a9d2f939000e306af327dd99f5b51863de61c217fc9cf5b529f8bb",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/KdV/HillFullPhaseSquare.lean",
+      "source_sha256": "c23de1e4e4f79614cf36181b2ad6423eef31f05624d9ec586067b525c61868f5",
+      "local_sha256": "c23de1e4e4f79614cf36181b2ad6423eef31f05624d9ec586067b525c61868f5",
+      "disposition": "imported_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ImproperCurveIntegral.lean",
+      "source_sha256": "4ccb6465a444bacb40495fbd2fffb8fdd0f9c03e74a8f764d574168525ec281c",
+      "local_sha256": "4ccb6465a444bacb40495fbd2fffb8fdd0f9c03e74a8f764d574168525ec281c",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ImproperLogarithmicIntegral.lean",
+      "source_sha256": "bf010944a5c87e21cbb68c457dc519ac0a2998023fecfbfe02ddd1f5df46b95f",
+      "local_sha256": "bf010944a5c87e21cbb68c457dc519ac0a2998023fecfbfe02ddd1f5df46b95f",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ImproperQuadraticRootPathIntegral.lean",
+      "source_sha256": "3cf041f145bb9fdc9565023e61d04e450d140d02f435c6bae8046fcc1256fdc1",
+      "local_sha256": "3cf041f145bb9fdc9565023e61d04e450d140d02f435c6bae8046fcc1256fdc1",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularBetaImproperPath.lean",
+      "source_sha256": "f9e5cb92e3f7a9bb10e24ceb2a0f199308a3aacd31be3ccd63ab5847850c70d8",
+      "local_sha256": "f9e5cb92e3f7a9bb10e24ceb2a0f199308a3aacd31be3ccd63ab5847850c70d8",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularEtaImproperModel.lean",
+      "source_sha256": "83c385d370671dfd4c9e2eb8efb8f300d9b3033d4228f1f6f83ba92c79374d43",
+      "local_sha256": "83c385d370671dfd4c9e2eb8efb8f300d9b3033d4228f1f6f83ba92c79374d43",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularEtaImproperRemainder.lean",
+      "source_sha256": "a69b3f3062b3195f5679dfc2934991f699b51bf960bc98c8447c7677e18a4f54",
+      "local_sha256": "a69b3f3062b3195f5679dfc2934991f699b51bf960bc98c8447c7677e18a4f54",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalDiagonalBound.lean",
+      "source_sha256": "2603a04dd457dd9de3d41e69a77d52aa85144773ff045a98a64141d8a834c4d4",
+      "local_sha256": "2603a04dd457dd9de3d41e69a77d52aa85144773ff045a98a64141d8a834c4d4",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalEtaComparison.lean",
+      "source_sha256": "f4fa740b99f6b7848446e2e59879f1260e1a3d38eee4ce8ef1be6b562f66b6d8",
+      "local_sha256": "f4fa740b99f6b7848446e2e59879f1260e1a3d38eee4ce8ef1be6b562f66b6d8",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalEtaImproperRemainder.lean",
+      "source_sha256": "ac8fe04b02f26d3c8c7a72a6e31d71c167cc9ce91a5fff1b32e9b73c5099af31",
+      "local_sha256": "ac8fe04b02f26d3c8c7a72a6e31d71c167cc9ce91a5fff1b32e9b73c5099af31",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalEtaIntegral.lean",
+      "source_sha256": "fcea4ed8662e0ee979cffc454778c9d83c899cd2c0c3137b58cc892ada268090",
+      "local_sha256": "fcea4ed8662e0ee979cffc454778c9d83c899cd2c0c3137b58cc892ada268090",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalEtaRemainderValue.lean",
+      "source_sha256": "7cdab9d9074c5527e6db57ffc5529ae8b551176f7ea89976acfafe0aea902c4c",
+      "local_sha256": "7cdab9d9074c5527e6db57ffc5529ae8b551176f7ea89976acfafe0aea902c4c",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalEtaValues.lean",
+      "source_sha256": "f3e0c5e54bf94039714a8103e1ab16eba40c58d7a91fce66ff26432dc5385ce0",
+      "local_sha256": "f3e0c5e54bf94039714a8103e1ab16eba40c58d7a91fce66ff26432dc5385ce0",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalTheta.lean",
+      "source_sha256": "d067767e0b6097c4bbe4de67a002c098a5de09b89b610e6d65721f34460e0fc3",
+      "local_sha256": "d067767e0b6097c4bbe4de67a002c098a5de09b89b610e6d65721f34460e0fc3",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceAngularOriginalThetaDomain.lean",
+      "source_sha256": "b7e44e03355e7a70ac5949a79e3a274fc4a7e8c7f1674017817b8c40c09cb4e2",
+      "local_sha256": "b7e44e03355e7a70ac5949a79e3a274fc4a7e8c7f1674017817b8c40c09cb4e2",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedEtaOriginal.lean",
+      "source_sha256": "4709b37039213e8efedb5e80113abb5d3de07e0bb80161b50d9d5d80da2c962d",
+      "local_sha256": "4709b37039213e8efedb5e80113abb5d3de07e0bb80161b50d9d5d80da2c962d",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalBound.lean",
+      "source_sha256": "8a942632841ac042488b758a7866e9680df72ca9ffce92392d41faa7a7c3e3cd",
+      "local_sha256": "8a942632841ac042488b758a7866e9680df72ca9ffce92392d41faa7a7c3e3cd",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ZakharovShabat/SourceGapWeightedEtaOriginalSequence.lean",
+      "source_sha256": "45857554bb80ddacee0da4e6d1eab5f7b0a2793561c574b042c438ea92df7f34",
+      "local_sha256": "45857554bb80ddacee0da4e6d1eab5f7b0a2793561c574b042c438ea92df7f34",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}

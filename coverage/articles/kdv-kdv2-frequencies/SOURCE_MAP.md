@@ -1246,3 +1246,18 @@ The COMPLETE summed regular correction, including the selected own-index term, h
 Prior strict evidence retained for all 1515 unchanged selected baseline sources; all 252 new selections strictly compiled in dependency order, followed by a fresh combined transitive axiom audit of all 1767 selected modules. The new selections are 116 incoming sources, seven own proof modules and 129 unchanged canonical helpers. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1807 frozen source/checker/provenance/Mathlib-source hashes, 36 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 252 selections. No full 1767-module rebuild is claimed.
 
 Fresh audit: 14943 selected and 37013 imported NLS declarations; permitted axioms only. The common native negative-half rough Abelian map, canonicality, global inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+
+## Latest actual native rough Abelian packet
+
+ONE complex H-minus-one ball now supports a native ell-two analytic Z, zero at zero, with norm(Z(q))<=C*norm(q) and zero nonpositive entries. At EVERY original real L2 source p in that WHOLE rough ball and EVERY positive n:
+
+```text
+Z(embed(p))_n = ORIGINAL hillDirichletAbelianCoordinate(p,n) / sqrt(1+n).
+```
+
+This is the actual positive negative-half weighted packet, with the ORIGINAL sqrt(action) normalization and COMPLETE Abelian phase. First/closed gaps, zero endpoint sheets and nonzero means are included. There is no physical L2 smallness condition. The gap-weighted own eta absorbs the selected phase; exact midpoint normalization supplies the energy half-gap. A proved nontrivial sheet detector removes the regular-sheet restriction before a constant sign is fixed per index. Scaling continuation gives recovery throughout the whole rough ball. See `NATIVE_ROUGH_ABELIAN_PACKET.md`.
+
+Prior strict evidence retained for all 1767 unchanged selected baseline sources; all 39 new selections strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 1806 selected modules. New selections: 11 unchanged incoming sources, 17 unchanged canonical helpers and 11 own proof modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1847 frozen source/checker/provenance/Mathlib-source hashes, 37 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 39 selections. No full 1806-module rebuild is claimed.
+
+Fresh audit: 15117 selected and 37183 imported NLS declarations; permitted axioms only. Signed completion, actual Fourier derivative/local rough inverse, full canonicality, global/arbitrary-base rough inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.

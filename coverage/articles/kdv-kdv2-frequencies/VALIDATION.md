@@ -5,7 +5,21 @@ and the physical Birkhoff flow identification remain open. The checked step
 includes the article modules, the shared sequence divergence argument,
 its existing Hilbert specialization and a transitive audit.
 
-## Latest actual rough phase and full Abelian scalar germs
+## Latest actual native rough Abelian packet
+
+ONE complex H-minus-one ball now supports a native ell-two analytic Z, zero at zero, with norm(Z(q))<=C*norm(q) and zero nonpositive entries. At EVERY original real L2 source p in that WHOLE rough ball and EVERY positive n:
+
+```text
+Z(embed(p))_n = ORIGINAL hillDirichletAbelianCoordinate(p,n) / sqrt(1+n).
+```
+
+This is the actual positive negative-half weighted packet, with the ORIGINAL sqrt(action) normalization and COMPLETE Abelian phase. First/closed gaps, zero endpoint sheets and nonzero means are included. There is no physical L2 smallness condition. The gap-weighted own eta absorbs the selected phase; exact midpoint normalization supplies the energy half-gap. A proved nontrivial sheet detector removes the regular-sheet restriction before a constant sign is fixed per index. Scaling continuation gives recovery throughout the whole rough ball. See `NATIVE_ROUGH_ABELIAN_PACKET.md`.
+
+Prior strict evidence retained for all 1767 unchanged selected baseline sources; all 39 new selections strictly rebuilt in dependency order, followed by a fresh combined transitive axiom audit of all 1806 selected modules. New selections: 11 unchanged incoming sources, 17 unchanged canonical helpers and 11 own proof modules. Exact checker/audit/coverage/evidence selections, full transitive selected order and reachability, 1847 frozen source/checker/provenance/Mathlib-source hashes, 37 unchanged and one new verified provenance records, private fresh outputs and clean unchanged canonical main verified. The imported NLS source closure adds exactly these 39 selections. No full 1806-module rebuild is claimed.
+
+Fresh audit: 15117 selected and 37183 imported NLS declarations; permitted axioms only. Signed completion, actual Fourier derivative/local rough inverse, full canonicality, global/arbitrary-base rough inverse, full regularity and actual frequency/PDE main conclusions remain open. All eleven main theorem rows remain OPEN.
+
+## Earlier actual rough phase and full Abelian scalar germs
 
 ONE complex Hminus-one ball now supports the ORIGINAL off-index regular correction as a native ell-infinity analytic map B. It vanishes at zero, satisfies norm(B(q))<=C*norm(q), and has zero nonpositive components. At EVERY original real L2 source in that WHOLE rough ball, every positive component equals the ORIGINAL physical off-index correction. First/closed gaps, endpoint terminals and nonzero means are included, without physical L2 smallness. This common packet excludes the selected own-index regular term.
 
@@ -576,7 +590,7 @@ Fresh audit: 8045 selected declarations; 30623 imported NLS declarations, permit
 | Five complete critical-energy and genuine residue modules | All real rough Hill critical points are real and simple; actual complete positively indexed energy critical coordinates; exact signed residue transfer, genuine principal limits, analytic coefficient germs and central filling. Hilbert realization and main theorems remain open. |
 | Nine actual critical-interpolation, residue Hilbert and entire representation modules | Derived exterior decay, exact Cauchy interpolation, genuine l2 residues and energy coefficients, absolute energy principal series and full filled entire canonical Hilbert representation at real rough chart inputs. Old weighted-family/contour identification and main theorems remain open. |
 
-All 1767 selected modules compile with pinned **Lean 4.33.1**, commit
+All 1806 selected modules compile with pinned **Lean 4.33.1**, commit
 `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`, using canonical **mathlib
 v4.33.1** compiled imports at source base
 `c5bcf6344cd2e2628ae537e98b85bb9ec1849dec`. Options:
@@ -1645,7 +1659,7 @@ Axiom audit passed: 9523 candidate declarations; 31968 declarations total.
 ```
 
 `scripts/CheckKdVKdV2FrequencyCandidates.lean` checks every declaration from
-the 1767 selected modules (including generated and private declarations)
+the 1806 selected modules (including generated and private declarations)
 and all imported `NLS` declarations. Their axioms are collected transitively.
 Only `propext`, `Classical.choice` and `Quot.sound` are allowed. The audit
 rejects `sorryAx` and any other axiom. Its count does not replace the
@@ -3654,4 +3668,49 @@ PASS NLS/KdV/HillOwnSeriesAssembly
 PASS NLS/KdV/HillHminusRegularPhaseGerms
 PASS NLS/Articles/KdVKdV2Frequencies/RoughAbelianScalarGerms
 Axiom audit passed: 14943 candidate declarations; 37013 declarations total.
+```
+
+Latest actual native rough Abelian strict checks and fresh combined audit:
+
+```text
+PASS NLS/KdV/HillOwnCosineEnergy
+PASS NLS/ZakharovShabat/SourceNegativePathBeta
+PASS NLS/KdV/HillOwnNegativeBeta
+PASS NLS/KdV/HillOwnPhysicalPullback
+PASS NLS/KdV/HillSpectralCartesianTerminal
+PASS NLS/KdV/HillFullSourceCartesian
+PASS NLS/KdV/HillOwnModelIntegrability
+PASS NLS/ZakharovShabat/SourceEtaPrescribedModelAngle
+PASS NLS/ZakharovShabat/SourceEtaPrescribedRepresentative
+PASS NLS/KdV/HillOwnCutEtaPhase
+PASS NLS/KdV/HillFullPhaseSquare
+PASS NLS/ComplexAnalysis/ImproperCurveIntegral
+PASS NLS/ComplexAnalysis/ImproperLogarithmicIntegral
+PASS NLS/ComplexAnalysis/ImproperQuadraticRootPathIntegral
+PASS NLS/ZakharovShabat/SourceAngularBetaImproperPath
+PASS NLS/ZakharovShabat/SourceAngularEtaImproperModel
+PASS NLS/ZakharovShabat/SourceAngularEtaImproperRemainder
+PASS NLS/ZakharovShabat/SourceAngularOriginalEtaComparison
+PASS NLS/ZakharovShabat/SourceAngularOriginalEtaValues
+PASS NLS/ZakharovShabat/SourceAngularOriginalEtaIntegral
+PASS NLS/ZakharovShabat/SourceAngularOriginalTheta
+PASS NLS/ZakharovShabat/SourceAngularOriginalThetaDomain
+PASS NLS/ZakharovShabat/SourceAngularOriginalDiagonalBound
+PASS NLS/ZakharovShabat/SourceAngularOriginalEtaImproperRemainder
+PASS NLS/ZakharovShabat/SourceAngularOriginalEtaRemainderValue
+PASS NLS/ZakharovShabat/SourceGapWeightedEtaOriginal
+PASS NLS/ZakharovShabat/SourceGapWeightedEtaOriginalBound
+PASS NLS/ZakharovShabat/SourceGapWeightedEtaOriginalSequence
+PASS NLS/KdV/HillHminusNativeSourceFactors
+PASS NLS/ZakharovShabat/SourceGapWeightedEtaSquare
+PASS NLS/KdV/HillHminusSourceEnergyGap
+PASS NLS/KdV/HillHminusSourceAbelianSquare
+PASS NLS/KdV/HillDirichletSheetDetectorGerm
+PASS NLS/Articles/KdVKdV2Frequencies/RoughAbelianNativeSquare
+PASS NLS/ComplexAnalysis/AnalyticGermSign
+PASS NLS/KdV/HillPhysicalSheetRegularGermIdentity
+PASS NLS/Articles/KdVKdV2Frequencies/RoughAbelianNativeGerms
+PASS NLS/KdV/HillPhysicalAbelianRoughContinuation
+PASS NLS/Articles/KdVKdV2Frequencies/NativeRoughAbelianPacket
+Axiom audit passed: 15117 candidate declarations; 37183 declarations total.
 ```

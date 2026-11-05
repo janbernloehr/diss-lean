@@ -1776,6 +1776,45 @@ modules=(
   NLS/KdV/HillOwnSeriesAssembly
   NLS/KdV/HillHminusRegularPhaseGerms
   NLS/Articles/KdVKdV2Frequencies/RoughAbelianScalarGerms
+  NLS/KdV/HillOwnCosineEnergy
+  NLS/ZakharovShabat/SourceNegativePathBeta
+  NLS/KdV/HillOwnNegativeBeta
+  NLS/KdV/HillOwnPhysicalPullback
+  NLS/KdV/HillSpectralCartesianTerminal
+  NLS/KdV/HillFullSourceCartesian
+  NLS/KdV/HillOwnModelIntegrability
+  NLS/ZakharovShabat/SourceEtaPrescribedModelAngle
+  NLS/ZakharovShabat/SourceEtaPrescribedRepresentative
+  NLS/KdV/HillOwnCutEtaPhase
+  NLS/KdV/HillFullPhaseSquare
+  NLS/ComplexAnalysis/ImproperCurveIntegral
+  NLS/ComplexAnalysis/ImproperLogarithmicIntegral
+  NLS/ComplexAnalysis/ImproperQuadraticRootPathIntegral
+  NLS/ZakharovShabat/SourceAngularBetaImproperPath
+  NLS/ZakharovShabat/SourceAngularEtaImproperModel
+  NLS/ZakharovShabat/SourceAngularEtaImproperRemainder
+  NLS/ZakharovShabat/SourceAngularOriginalEtaComparison
+  NLS/ZakharovShabat/SourceAngularOriginalEtaValues
+  NLS/ZakharovShabat/SourceAngularOriginalEtaIntegral
+  NLS/ZakharovShabat/SourceAngularOriginalTheta
+  NLS/ZakharovShabat/SourceAngularOriginalThetaDomain
+  NLS/ZakharovShabat/SourceAngularOriginalDiagonalBound
+  NLS/ZakharovShabat/SourceAngularOriginalEtaImproperRemainder
+  NLS/ZakharovShabat/SourceAngularOriginalEtaRemainderValue
+  NLS/ZakharovShabat/SourceGapWeightedEtaOriginal
+  NLS/ZakharovShabat/SourceGapWeightedEtaOriginalBound
+  NLS/ZakharovShabat/SourceGapWeightedEtaOriginalSequence
+  NLS/KdV/HillHminusNativeSourceFactors
+  NLS/ZakharovShabat/SourceGapWeightedEtaSquare
+  NLS/KdV/HillHminusSourceEnergyGap
+  NLS/KdV/HillHminusSourceAbelianSquare
+  NLS/KdV/HillDirichletSheetDetectorGerm
+  NLS/Articles/KdVKdV2Frequencies/RoughAbelianNativeSquare
+  NLS/ComplexAnalysis/AnalyticGermSign
+  NLS/KdV/HillPhysicalSheetRegularGermIdentity
+  NLS/Articles/KdVKdV2Frequencies/RoughAbelianNativeGerms
+  NLS/KdV/HillPhysicalAbelianRoughContinuation
+  NLS/Articles/KdVKdV2Frequencies/NativeRoughAbelianPacket
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path
