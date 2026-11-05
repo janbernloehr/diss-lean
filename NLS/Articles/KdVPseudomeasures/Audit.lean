@@ -1894,6 +1894,12 @@ import NLS.SequenceSpaces.SignedSpatialAnalyticMapLadder
 import NLS.Articles.KdVPseudomeasures.OriginalHillWienerModels
 import NLS.Articles.KdVPseudomeasures.OriginalHillWienerSmoothingReduction
 import NLS.Articles.KdVPseudomeasures.OriginalHillWienerBaseSmoothing
+import NLS.SequenceSpaces.PeriodOneMassSobolevInverse
+import NLS.SequenceSpaces.AnalyticMiuraExponentRecovery
+import NLS.SequenceSpaces.AnalyticMiuraH1Recovery
+import NLS.SequenceSpaces.AnalyticMiuraSmoothingRemainder
+import NLS.KdV.HillMiuraL2AnalyticRegularity
+import NLS.KdV.HillRotatedDiracL2Regularity
 
 /-! Exact public declaration inventory; only standard Lean axioms are allowed. -/
 
@@ -11185,3 +11191,38 @@ import NLS.Articles.KdVPseudomeasures.OriginalHillWienerBaseSmoothing
 #print axioms NLS.Articles.KdVPseudomeasures.hillWienerBirkhoffDiffeomorphism_of_oneSmoothing
 #print axioms NLS.Articles.KdVPseudomeasures.hillIntegerNativeOneSmoothing_all_of_base
 #print axioms NLS.Articles.KdVPseudomeasures.hillWienerBirkhoffDiffeomorphism_all_of_baseSmoothing
+#print axioms NLS.periodOneMassInverse_sobolev_bound
+#print axioms NLS.periodOneMassSobolevInverse
+#print axioms NLS.periodOneMassSobolevInverse_apply
+#print axioms NLS.periodOneMassL2ToH1
+#print axioms NLS.periodOneMassL2ToH1_apply
+#print axioms NLS.periodOneMiuraExponentRecovery
+#print axioms NLS.periodOneMiuraExponentRecovery_apply
+#print axioms NLS.analyticAt_periodOneMiuraExponentRecovery
+#print axioms NLS.periodOneMiuraExponentRecovery_eq_of_equation
+#print axioms NLS.periodOneMiuraH1Recovery
+#print axioms NLS.analyticAt_periodOneMiuraH1Recovery
+#print axioms NLS.periodOneMiuraH1Recovery_apply_of_equation
+#print axioms NLS.scalarInclusion_periodOneMiuraH1Recovery_of_equation
+#print axioms NLS.periodOneMiura_equation_of_image
+#print axioms NLS.analyticAt_periodOneMiuraH1Recovery_comp
+#print axioms NLS.analyticAt_comp_periodOneL2Inclusion
+#print axioms NLS.periodOneMiuraSmoothingRemainder
+#print axioms NLS.analyticAt_periodOneMiuraSmoothingRemainder
+#print axioms NLS.periodOneMiuraSmoothingRemainder_apply
+#print axioms NLS.periodOneMiuraSmoothingRemainder_apply_of_equation
+#print axioms NLS.KdV.HillHminusMiuraActionBall.l2Source_open
+#print axioms NLS.KdV.HillHminusMiuraActionBall.l2Forcing
+#print axioms NLS.KdV.HillHminusMiuraActionBall.l2WeakEquation
+#print axioms NLS.KdV.HillHminusMiuraActionBall.l2Lift
+#print axioms NLS.KdV.HillHminusMiuraActionBall.analytic_l2Lift
+#print axioms NLS.KdV.HillHminusMiuraActionBall.l2Lift_apply
+#print axioms NLS.KdV.HillHminusMiuraActionBall.scalarInclusion_l2Lift
+#print axioms NLS.KdV.HillHminusMiuraActionBall.l2Lift_equation
+#print axioms NLS.KdV.HillHminusMiuraActionBall.l2SmoothingRemainder
+#print axioms NLS.KdV.HillHminusMiuraActionBall.analytic_l2SmoothingRemainder
+#print axioms NLS.KdV.HillHminusMiuraActionBall.l2SmoothingRemainder_apply
+#print axioms NLS.KdV.HillProductEquationPatch.l2Source_open
+#print axioms NLS.KdV.HillProductEquationPatch.rotatedDiracL2Lift
+#print axioms NLS.KdV.HillProductEquationPatch.analytic_rotatedDiracL2Lift
+#print axioms NLS.KdV.HillProductEquationPatch.sobolevSourceInclusion_rotatedDiracL2Lift

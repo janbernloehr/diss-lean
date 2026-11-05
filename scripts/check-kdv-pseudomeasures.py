@@ -1928,6 +1928,12 @@ modules = [
     'NLS.Articles.KdVPseudomeasures.OriginalHillWienerModels',
     'NLS.Articles.KdVPseudomeasures.OriginalHillWienerSmoothingReduction',
     'NLS.Articles.KdVPseudomeasures.OriginalHillWienerBaseSmoothing',
+    'NLS.SequenceSpaces.PeriodOneMassSobolevInverse',
+    'NLS.SequenceSpaces.AnalyticMiuraExponentRecovery',
+    'NLS.SequenceSpaces.AnalyticMiuraH1Recovery',
+    'NLS.SequenceSpaces.AnalyticMiuraSmoothingRemainder',
+    'NLS.KdV.HillMiuraL2AnalyticRegularity',
+    'NLS.KdV.HillRotatedDiracL2Regularity',
     'NLS.Articles.KdVPseudomeasures.Audit',
 ]
 # Expand only directories that need local compiled outputs. All reference
