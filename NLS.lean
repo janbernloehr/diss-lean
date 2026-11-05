@@ -6359,3 +6359,17 @@ import NLS.KdV.HillFreeHminusFourierDifferentials
 import NLS.KdV.HillFreeDirichletSheetDifferential
 import NLS.KdV.HillFreeDeflatedRootValue
 import NLS.KdV.HillFreeScaledDirichletSheetDifferential
+import NLS.ComplexAnalysis.ProductZeroDifferential
+import NLS.KdV.HillFreeActionGapPrefactorValue
+import NLS.KdV.HillFreeOwnAmplitudeDifference
+import NLS.KdV.HillHminusPhysicalConjugateDerivative
+import NLS.KdV.HillFreeCartesianDifference
+import NLS.Poisson.GardnerFourierModes
+import NLS.KdV.HillFreeSpectralImaginaryDerivative
+import NLS.KdV.HillFreeCartesianCosineDerivative
+import NLS.FunctionalAnalysis.NormPolarization
+import NLS.KdV.HillOriginalFourierDirections
+import NLS.KdV.HillFreeSpectralCosineDerivative
+import NLS.KdV.HillOriginalFourierDerivative
+import NLS.KdV.HillOriginalFourierSurjectivity
+import NLS.KdV.HillOriginalFreeLocalInverse

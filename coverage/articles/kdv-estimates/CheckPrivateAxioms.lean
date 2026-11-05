@@ -1436,6 +1436,20 @@ import NLS.KdV.HillFreeHminusFourierDifferentials
 import NLS.KdV.HillFreeDirichletSheetDifferential
 import NLS.KdV.HillFreeDeflatedRootValue
 import NLS.KdV.HillFreeScaledDirichletSheetDifferential
+import NLS.ComplexAnalysis.ProductZeroDifferential
+import NLS.KdV.HillFreeActionGapPrefactorValue
+import NLS.KdV.HillFreeOwnAmplitudeDifference
+import NLS.KdV.HillHminusPhysicalConjugateDerivative
+import NLS.KdV.HillFreeCartesianDifference
+import NLS.Poisson.GardnerFourierModes
+import NLS.KdV.HillFreeSpectralImaginaryDerivative
+import NLS.KdV.HillFreeCartesianCosineDerivative
+import NLS.FunctionalAnalysis.NormPolarization
+import NLS.KdV.HillOriginalFourierDirections
+import NLS.KdV.HillFreeSpectralCosineDerivative
+import NLS.KdV.HillOriginalFourierDerivative
+import NLS.KdV.HillOriginalFourierSurjectivity
+import NLS.KdV.HillOriginalFreeLocalInverse
 
 /-! Transitive audit of the shared KdV foundations and article adapters.
 The article's main theorems are not claimed by this audit. -/
@@ -2643,7 +2657,15 @@ run_cmd do
     ``NLS.Fourier.unitFourierCoefficient_sub,
     ``NLS.Fourier.unitFourierCoefficient_twice_sin_sq,
     ``NLS.Fourier.unitFourierCoefficient_wave,
-    ``NLS.Poisson.hminusScalarGradient.eq_1]
+    ``NLS.Poisson.hminusScalarGradient.eq_1,
+    ``NLS.ComplexAnalysis.fderiv_mul_of_left_zero,
+    ``NLS.ComplexAnalysis.fderiv_mul_of_left_zero_right_one,
+    ``NLS.FunctionalAnalysis.re_inner_map_eq_of_norm_map_eq,
+    ``NLS.Poisson.gardnerCotangentBivector_antisymmetric_fourier,
+    ``NLS.Poisson.gardnerHamiltonianDirection_of_antisymmetric_fourier,
+    ``NLS.Poisson.hminusCosineMode,
+    ``NLS.Poisson.hminusCosineMode.eq_1,
+    ``NLS.Poisson.hminusCosineMode_apply]
   let mut checked : Nat := 0
   for (name, _) in (← getEnv).constants do
     if (`NLS.KdV).isPrefixOf name || (`NLS.Articles.KdVEstimates).isPrefixOf name ||
