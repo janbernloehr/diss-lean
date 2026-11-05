@@ -17,7 +17,17 @@ checkout's files and branch remain unchanged. The path is also saved in the
 private chat's `work/worktree.json` for future turns. Commands must explicitly
 use this worktree directory.
 
-## Latest actual native physical regular corrections
+## Latest native regular filling for every positive gap
+
+One common complex period-one L2 ball now supports native regular numerators and filled quadratic solutions for EVERY positive gap, including the analytic finite head. The literal own-unit-subtracted numerator is jointly native Hilbert analytic and uniformly bounded on each closed radius-k disc, nonpositive zero, and its genuine Bochner quadratic density period is zero. The filled radius3k/4 solution satisfies the actual symmetric gap equation and has full norm18*pi*M/k on the closed radiusk/4 disc. The actual G retains exact globally selected physical matching at every real source and energy. No high-gap cutoff or output-dependent source ball occurs.
+
+See `NATIVE_ALL_GAP_FILLING.md`. Moving Dirichlet evaluation and physical correction identification for the remaining low gaps, genuine complex spectral/divisor/amplitude sequence and summable phase estimates, native physical coordinate analyticity and full Birkhoff/Hamiltonian conclusions remain open. The earlier high physical correction theorem remains proved.
+
+Prior strict evidence for all 1178 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules; then a fresh combined transitive axiom audit of all 1188 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1220 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1188-module rebuild is claimed.
+
+Fresh audit: 10675 selected and 32806 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+## Earlier actual native physical regular corrections
 
 One common complex period-one L2 ball now supports all actual high-gap regular corrections in a strongly analytic native output Hilbert family. Exact moving Dirichlet evaluation and the own-unit scalar comparison identify every positive component with the physical regular Abelian correction at every real source in the same ball, including own high modes, collapsed gaps and means. All nonpositive output components vanish. One cutoff precedes every output; no k>=2*n restriction or countable output-neighborhood intersection occurs. A full uniform Hilbert bound is proved.
 

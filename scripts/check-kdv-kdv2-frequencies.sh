@@ -1187,6 +1187,16 @@ modules=(
   NLS/KdV/HillNativeTerminalPhysical
   NLS/SequenceSpaces/PositiveDeletedProjectionBounds
   NLS/Articles/KdVKdV2Frequencies/NativeRegularCorrections
+  NLS/ComplexAnalysis/FiniteHeadUniformTail
+  NLS/KdV/HillLocalFreeGapPairs
+  NLS/KdV/HillLocalQuadraticRoot
+  NLS/KdV/HillLocalFilledGapRoot
+  NLS/KdV/HillAllRadiusQuadraticData
+  NLS/KdV/HillAllFilledGapRoots
+  NLS/KdV/HillAllRadiusRootProduct
+  NLS/KdV/HillAllNativeRegularGapNumerators
+  NLS/KdV/HillAllNativeQuadraticSolutions
+  NLS/Articles/KdVKdV2Frequencies/AllRegularGapSolutions
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

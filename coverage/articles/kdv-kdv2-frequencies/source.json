@@ -77,6 +77,11 @@
           "source_clause": "Actual physical regular corrections: common native complex high-gap Hilbert family and terminal identification including own modes",
           "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillPhysical_native_regular_corrections",
           "qualification": "One common near-zero complex period-one L2 ball, cutoff and full Hilbert bound precede every complex source, high gap and output index. Moving actual Dirichlet evaluation of the native gap solutions is strongly analytic; positive physical components equal every actual regular Abelian correction, including n=k and collapsed gaps, while nonpositive complex components vanish. No k>=2*n restriction or countable output intersection. This is a coarse uniformly bounded high-gap family, without gap-index decay or summability. Finite-head completion, genuine complex amplitude/sequence and phase bounds, native physical coordinate analyticity, the full Sobolev scale and global Birkhoff realization remain open."
+        },
+        {
+          "source_clause": "Native regular filling for every positive gap on one complex L2 ball, including the analytic finite head",
+          "lean_declaration": "NLS.Articles.KdVKdV2Frequencies.exists_hillPhysical_native_all_regular_gap_solutions",
+          "qualification": "The actual globally selected physical numerator G gives literal regular numerators with joint native Hilbert analyticity and uniform bounds on every closed radius-k energy disc, nonpositive zero and genuine zero Bochner quadratic density periods. Native filled quadratic solutions on radius3k/4 discs have full18*pi*M/k inner-disc bounds, with no high-gap cutoff or output-dependent source ball. First/own/closed gaps are included and G retains exact physical matching at every real source and every energy. This is analytic regular filling; low moving terminal evaluation and physical correction matching remain open, as do complex sequence/amplitude and phase estimates, native physical coordinate analyticity, the full Sobolev scale and global Birkhoff realization."
         }
       ]
     },
@@ -17016,12 +17021,132 @@
       "scope": "One common near-zero complex period-one L2 ball, cutoff and full Hilbert bound support all actual high-gap regular corrections in a native complex analytic positive-coordinate family. At every real source every positive output equals the physical regular Abelian correction, including the own output and collapsed gaps; all nonpositive outputs vanish throughout the complex ball. No cutoff depending on the output or countable intersection. No decay/summability, finite-head completion, native physical coordinate map or full main Birkhoff/Hamiltonian conclusion is asserted.",
       "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
       "sha256": "20abf4f21249140186047536c1c66a2c302fa01b9d33a8cc15c3c913d774fb41"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/FiniteHeadUniformTail.lean",
+      "source_labels": [
+        "Native all-gap regular filling supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "One metric source ball for all positive indices, from individual local neighborhoods and a uniform tail ball. Only the finite head is intersected; no countable intersection.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "9fd047b23513926ef07765cfe656c966f40c60ba1f74d6fde00dc179bfe208ce"
+    },
+    {
+      "path": "NLS/KdV/HillLocalFreeGapPairs.lean",
+      "source_labels": [
+        "Native all-gap regular filling supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "For each fixed positive free Hill gap, actual periodic pairs lie inside any prescribed positive collar fraction on one complex source neighborhood. Compact zero-free annulus stability excludes the actual pair from the exterior. Analytic individual endpoint labels are not assumed.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3f3dcd7f54c6ce833a875aac7d73ce51ddcd36dc51540cde96d2e182958d763d"
+    },
+    {
+      "path": "NLS/KdV/HillLocalQuadraticRoot.lean",
+      "source_labels": [
+        "Native all-gap regular filling supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Local source charts for the existing literal normalized quadratic root on arbitrary scaled exterior annuli, with exact square identity, nonvanishing and two-sided norm bounds, from actual confined pairs and local analytic symmetric data.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "f069eeeafab1021043a41a4c9a89c8051a3e46ed575a4bf6bd063081bc2d8c3f"
+    },
+    {
+      "path": "NLS/KdV/HillLocalFilledGapRoot.lean",
+      "source_labels": [
+        "Native all-gap regular filling supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "The old free collar strictly contains the radius-k disc. A compact tube for the entire closed radius-k disc in the existing local root domain yields one complex source neighborhood with literal filled-root joint analyticity, nonvanishing and actual radicand factorization.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b0e1c9f8a8da6008bf4a380d0d1e114cdb0ddcc583a0908f9c8ed76217ee96d6"
+    },
+    {
+      "path": "NLS/KdV/HillAllRadiusQuadraticData.lean",
+      "source_labels": [
+        "Native all-gap regular filling supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "One common complex coefficient ball for every positive quadratic gap root, exterior radiusk/2 analyticity, square identity, two-sided norm bounds and exact genuine reciprocal-root period -2*pi*i on every radius-k circle. Fixed-gap local charts and the uniform tail complete the finite head.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b17b07fc8c989718278f0674c4deeb9cbb98337ec846e0e556dc6096f5c64f02"
+    },
+    {
+      "path": "NLS/KdV/HillAllFilledGapRoots.lean",
+      "source_labels": [
+        "Native all-gap regular filling supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "One complex source ball before every positive gap gives filled-root analyticity and nonvanishing on complete closed radius-k discs, with the actual radicand polynomial/root-square factorization. Combines compact fixed-gap tubes with the verified uniform tail.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "3e53439771a452f1fd6de2cae0ec9c24867f9d089276eaf23996de68af343694"
+    },
+    {
+      "path": "NLS/KdV/HillAllRadiusRootProduct.lean",
+      "source_labels": [
+        "Native all-gap regular filling supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "On one covered complex source ball before every positive gap, the literal quadratic root times the literal filled root equals the actual continued rough/L2 boundary root. Actual square identities, source connectedness and the exact free anchor fix the sheet, including the finite head.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "0e5ded005fc5c048114d1ebf277c09d2d1c62f4d3ab6a7e2c891b11546931480"
+    },
+    {
+      "path": "NLS/KdV/HillAllNativeRegularGapNumerators.lean",
+      "source_labels": [
+        "Native all-gap regular filling supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Actual normalized native energy densities and genuine Bochner Kronecker periods give literal own-unit-subtracted regular numerators on every filled positive radius-k disc, jointly Hilbert analytic and uniformly norm bounded, with genuinely integrable zero Bochner quadratic periods. No cutoff remains.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "c05a4b4b0732ebc265004065a33a46f6c6cadc29f3d2d782fdb4ff4a49fa2bc5"
+    },
+    {
+      "path": "NLS/KdV/HillAllNativeQuadraticSolutions.lean",
+      "source_labels": [
+        "Native all-gap regular filling supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "One complex source ball before every positive gap and native numerator supports native jointly analytic filled quadratic solutions and full Hilbert18*pi*M/k inner-disc bounds. Applies the verified genuine Banach primitive/Cauchy construction to all-gap actual quadratic data.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "b91ed37f22d2ff13589bc892721cd3d13eb9fe2ef27db9105412b60dd8e4bb33"
+    },
+    {
+      "path": "NLS/Articles/KdVKdV2Frequencies/AllRegularGapSolutions.lean",
+      "source_labels": [
+        "Native all-gap regular filling supporting Theorem 1.1"
+      ],
+      "source_pages": [
+        3
+      ],
+      "scope": "Instantiates actual globally selected physical normalized numerators. One common complex period-one L2 ball precedes all positive gaps and outputs. The literal regular numerators are jointly native Hilbert analytic and uniformly bounded on closed radius-k discs, nonpositive zero and have genuine zero Bochner periods. Filled radius3k/4 solutions satisfy the actual symmetric gap equation and full18*pi*M/k bounds on closed radiusk/4 discs. G retains exact physical matching at every real source and every energy. Low moving terminal evaluation/physical correction matching, complex amplitude/sequence and phase estimates, native physical coordinates and full main Birkhoff/Hamiltonian conclusions remain open.",
+      "validation_status": "compiled_with_warningAsError_and_transitively_axiom_audited",
+      "sha256": "09a5e82737f19022927260a3d1ca2d310e803c07bb936cac09f1282a206cfa62"
     }
   ],
   "dependencies_needed": [
     "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
     "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
-    "Actual scalar Fourier normalization, common native physical normalized numerators, full Hilbert energy estimates, genuine complex periods, own-unit regularization and native filled high-gap quadratic solutions are proved near zero. NOW actual moving Dirichlet evaluation yields one common complex period-one L2 ball of native Hilbert regular correction vectors, with a uniform full norm bound and exact physical matching at every real source, including all positive outputs, own high modes and collapsed gaps; nonpositive outputs vanish. NEXT complete the finite regular head, prove genuine complex spectral/divisor/amplitude sequence bounds and summable phase control. The coarse uniform correction bound alone gives no summability. Then realize the actual physical Abelian coordinate map in weighted half-shift Hilbert norm and finish full s>=-1 scale, arbitrary-base/global neighborhoods, canonicality/global inverse and Hamiltonian/action-frequency conclusions.",
+    "Actual scalar Fourier normalization, common native physical normalized numerators, all-positive energy estimates and genuine periods, own-unit regularization, native quadratic solutions and high physical regular correction matching are proved near zero. NOW one common complex L2 ball supports native regular numerators and filled quadratic solutions for EVERY positive gap, with full Hilbert bounds and genuine zero Bochner periods, including the analytic finite head. NEXT apply the all-gap solutions to moving Dirichlet terminals and identify the remaining low physical corrections, then prove genuine complex spectral/divisor/amplitude sequence and summable phase estimates. The coarse terminal bound alone gives no summability. Actual native Abelian coordinates in weighted half-shift Hilbert norm, full s>=-1 scale, arbitrary-base/global neighborhoods, canonicality/global inverse and Hamiltonian/action-frequency conclusions remain essential.",
     "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
     "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
     "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
@@ -17047,15 +17172,15 @@
       "-DautoImplicit=false",
       "-DwarningAsError=true"
     ],
-    "candidate_declarations_audited": 10645,
-    "total_declarations_audited": 32776,
+    "candidate_declarations_audited": 10675,
+    "total_declarations_audited": 32806,
     "allowed_transitive_axioms": [
       "propext",
       "Classical.choice",
       "Quot.sound"
     ],
     "main_theorems_verified": [],
-    "selected_modules": 1178,
+    "selected_modules": 1188,
     "continuation_root_validation_sequence": "All 398 selected modules strictly compiled. Joint loading found a duplicate free-root theorem name; only the new sine lemma was renamed. Its module and sole selected consumer were strictly rebuilt, then the final combined transitive axiom audit passed. All 394 prior selected sources are unchanged and every selected output is private and fresh.",
     "critical_energy_residue_validation_sequence": "All 403 selected modules strictly rebuilt in dependency order, then the full combined transitive axiom audit passed. A combined import preflight also passed before the full rebuild. All 398 previous selected Lean sources are unchanged; every selected output is private and fresh.",
     "canonical_numerator_representation_validation_sequence": "All 412 selected modules strictly rebuilt in actual dependency order, followed by the full combined transitive axiom audit. Combined import preflight passed. All 403 previous selected Lean sources are unchanged; every selected output is private and fresh.",
@@ -17108,7 +17233,8 @@
     "native_energy_contours_validation_sequence": "Prior strict evidence for all 1142 unchanged selected baseline sources; strict dependency-order compilation of nine new proof modules; then a fresh combined transitive axiom audit of all 1151 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1182 frozen source/checker/provenance hashes, all 29 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1151-module rebuild is claimed.",
     "native_own_regularization_validation_sequence": "Prior strict evidence for all 1151 unchanged selected baseline sources; strict dependency-order compilation of six unchanged explicitly selected canonical helpers and seven new proof modules; then a fresh combined transitive axiom audit of all 1164 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1196 frozen source/checker/provenance hashes, 29 unchanged verified provenance records plus one new verified six-file canonical reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1164-module rebuild is claimed.",
     "native_quadratic_solution_validation_sequence": "Prior strict evidence for all 1164 unchanged selected baseline sources; strict dependency-order compilation of eight new proof modules; then a fresh combined transitive axiom audit of all 1172 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1204 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1172-module rebuild is claimed.",
-    "native_regular_corrections_validation_sequence": "Prior strict evidence for all 1172 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1178 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1210 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1178-module rebuild is claimed."
+    "native_regular_corrections_validation_sequence": "Prior strict evidence for all 1172 unchanged selected baseline sources; strict dependency-order compilation of six new proof modules; then a fresh combined transitive axiom audit of all 1178 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1210 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1178-module rebuild is claimed.",
+    "native_all_gap_filling_validation_sequence": "Prior strict evidence for all 1178 unchanged selected baseline sources; strict dependency-order compilation of ten new proof modules; then a fresh combined transitive axiom audit of all 1188 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1220 frozen source/checker/provenance hashes, all 30 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1188-module rebuild is claimed."
   },
   "supporting_source_pages": {
     "Theorem 3.4": [
@@ -17534,6 +17660,18 @@
         "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
         "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
       ]
+    },
+    {
+      "snapshot_commit": "1b8cd7ff148a60353df9bc004da371d119701f5f",
+      "description": "Prior native high-gap physical regular corrections; native regular numerator and quadratic filling now cover every positive gap on one source ball, including the analytic finite head.",
+      "entries": [
+        "The actual finite-hole cubic deformation, actual zeroth/odd/closed positive moment identities, genuine finite-gap weighted HasSum and the actual physical KdV spectral-velocity/coefficient formula with source -12 correction are NOW proved. For full(69), identify this spectral coefficient with the actual Hamiltonian/action frequency through the full Birkhoff realization, including closed indices, and discharge any finite-gap regularity representation beyond the explicitly stated smooth physical hypotheses. Complete the complex rough-W moment realization and sharp estimates in the source domains.",
+        "The actual quintic local diagonal-resolvent coefficient, quantitative whole-circle quintic comparison, S0=-2*n*pi mass correction, exact fifth physical contour and finite-gap KdV2 spectral velocity/coordinate moment identity with source constants -160*pi^2 and 80 are NOW proved at actual real smooth period-one mean-zero physical sources, including closed selected gaps. For full(84), identify this spectral coefficient with the actual Hamiltonian/action frequency through the complete Birkhoff realization and prove any regularity representation needed beyond the explicit smooth physical hypotheses. Complete the complex rough-W frequency realization and sharp estimates in the full source domains.",
+        "Actual scalar Fourier normalization, common native physical normalized numerators, full Hilbert energy estimates, genuine complex periods, own-unit regularization and native filled high-gap quadratic solutions are proved near zero. NOW actual moving Dirichlet evaluation yields one common complex period-one L2 ball of native Hilbert regular correction vectors, with a uniform full norm bound and exact physical matching at every real source, including all positive outputs, own high modes and collapsed gaps; nonpositive outputs vanish. NEXT complete the finite regular head, prove genuine complex spectral/divisor/amplitude sequence bounds and summable phase control. The coarse uniform correction bound alone gives no summability. Then realize the actual physical Abelian coordinate map in weighted half-shift Hilbert norm and finish full s>=-1 scale, arbitrary-base/global neighborhoods, canonicality/global inverse and Hamiltonian/action-frequency conclusions.",
+        "The actual intrinsic zeroth normalization, all odd cancellations and all positive collapsed moments are now proved at EVERY real period-one L2 source, with no high-index restriction. Complete their compatible complex rough-W realization/analyticity across all article admissible spaces, source product normalization where unsettled, and the sharp lp spectral remainders and moment/root bounds with every endpoint, uniformity and quantifier.",
+        "Beyond the proved genuine finite-gap finite-support weighted moment HasSum, prove the required infinite-gap summability and weighted analytic bounds for actual frequency corrections, exact action descent, compact weighted derivatives and fixed-mass estimates in every stated main-theorem space.",
+        "Prove actual PDE solution/flow identification, the all-smooth-approximation property and the required physical separating-sequence obstructions. All eleven main theorem rows remain OPEN; no complete main conclusion is claimed."
+      ]
     }
   ],
   "intrinsic_kdv_moment_record": "FINITE_GAP_KDV_MOMENT_IDENTITY.md",
@@ -17550,5 +17688,6 @@
   "native_own_regularization_record": "NATIVE_OWN_REGULARIZATION.md",
   "canonical_inversion_coefficient_reuse_record": "CANONICAL_INVERSION_COEFFICIENT_REUSE.json",
   "native_quadratic_solution_record": "NATIVE_QUADRATIC_SOLUTIONS.md",
-  "native_regular_corrections_record": "NATIVE_REGULAR_CORRECTIONS.md"
+  "native_regular_corrections_record": "NATIVE_REGULAR_CORRECTIONS.md",
+  "native_all_gap_filling_record": "NATIVE_ALL_GAP_FILLING.md"
 }

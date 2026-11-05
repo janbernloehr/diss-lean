@@ -1,3 +1,13 @@
+import NLS.Articles.KdVKdV2Frequencies.AllRegularGapSolutions
+import NLS.KdV.HillAllNativeQuadraticSolutions
+import NLS.KdV.HillAllNativeRegularGapNumerators
+import NLS.KdV.HillAllRadiusRootProduct
+import NLS.KdV.HillAllFilledGapRoots
+import NLS.KdV.HillAllRadiusQuadraticData
+import NLS.KdV.HillLocalFilledGapRoot
+import NLS.KdV.HillLocalQuadraticRoot
+import NLS.KdV.HillLocalFreeGapPairs
+import NLS.ComplexAnalysis.FiniteHeadUniformTail
 import NLS.SequenceSpaces.PositiveDeletedProjectionBounds
 import NLS.Articles.KdVKdV2Frequencies.NativeRegularCorrections
 import NLS.KdV.HillNativeTerminalPhysical
@@ -1491,7 +1501,17 @@ run_cmd do
     `NLS.KdV.HillNativeRegularTerminal,
     `NLS.KdV.HillNativeTerminalPhysical,
     `NLS.SequenceSpaces.PositiveDeletedProjectionBounds,
-    `NLS.Articles.KdVKdV2Frequencies.NativeRegularCorrections
+    `NLS.Articles.KdVKdV2Frequencies.NativeRegularCorrections,
+    `NLS.ComplexAnalysis.FiniteHeadUniformTail,
+    `NLS.KdV.HillLocalFreeGapPairs,
+    `NLS.KdV.HillLocalQuadraticRoot,
+    `NLS.KdV.HillLocalFilledGapRoot,
+    `NLS.KdV.HillAllRadiusQuadraticData,
+    `NLS.KdV.HillAllFilledGapRoots,
+    `NLS.KdV.HillAllRadiusRootProduct,
+    `NLS.KdV.HillAllNativeRegularGapNumerators,
+    `NLS.KdV.HillAllNativeQuadraticSolutions,
+    `NLS.Articles.KdVKdV2Frequencies.AllRegularGapSolutions
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0
