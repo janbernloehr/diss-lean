@@ -1,3 +1,16 @@
+import NLS.Articles.KdVKdV2Frequencies.NativeRegularGapNumerators
+import NLS.KdV.HillNativeRegularGapNumerator
+import NLS.ComplexAnalysis.NativeOwnPeriodSubtraction
+import NLS.KdV.HillRadiusRootProduct
+import NLS.KdV.HillRadiusQuadraticData
+import NLS.ComplexAnalysis.ConvexHolomorphicLoopIntegral
+import NLS.ComplexAnalysis.ConvexHolomorphicPathIntegral
+import NLS.ComplexAnalysis.InverseSqrtIntegral
+import NLS.ComplexAnalysis.IntegrableDerivativeBoundary
+import NLS.ComplexAnalysis.ConvexHolomorphicPrimitive
+import NLS.ComplexAnalysis.InversionCircleCoefficients
+import NLS.KdV.HillScaledComplexGapRoot
+import NLS.ComplexAnalysis.CenteredTwoRootPeriod
 import NLS.Articles.KdVKdV2Frequencies.PhysicalEnergyContours
 import NLS.KdV.HillRadiusEnergyCirclePhysicalRoot
 import NLS.KdV.HillHminusOneEnergyPeriodTransfer
@@ -335,6 +348,12 @@ run_cmd do
     `NLS.SequenceSpaces.MixedMajorantMatrix,
     `NLS.SequenceSpaces.ReciprocalSquareKernel,
     `NLS.ComplexAnalysis.AffineLoopHomotopy,
+    `NLS.ComplexAnalysis.ConvexHolomorphicLoopIntegral,
+    `NLS.ComplexAnalysis.ConvexHolomorphicPathIntegral,
+    `NLS.ComplexAnalysis.InverseSqrtIntegral,
+    `NLS.ComplexAnalysis.IntegrableDerivativeBoundary,
+    `NLS.ComplexAnalysis.ConvexHolomorphicPrimitive,
+    `NLS.ComplexAnalysis.InversionCircleCoefficients,
     `NLS.ComplexAnalysis.MixedSpectralSourceDerivative,
     `NLS.ComplexAnalysis.UniformJointDerivativeCircle,
     `NLS.ComplexAnalysis.ParametricCircleIntegral,
@@ -1437,7 +1456,14 @@ run_cmd do
     `NLS.KdV.HillFreeEnergyHomotopyGeometry,
     `NLS.KdV.HillHminusOneEnergyPeriodTransfer,
     `NLS.KdV.HillRadiusEnergyCirclePhysicalRoot,
-    `NLS.Articles.KdVKdV2Frequencies.PhysicalEnergyContours
+    `NLS.Articles.KdVKdV2Frequencies.PhysicalEnergyContours,
+    `NLS.KdV.HillScaledComplexGapRoot,
+    `NLS.ComplexAnalysis.CenteredTwoRootPeriod,
+    `NLS.KdV.HillRadiusQuadraticData,
+    `NLS.KdV.HillRadiusRootProduct,
+    `NLS.ComplexAnalysis.NativeOwnPeriodSubtraction,
+    `NLS.KdV.HillNativeRegularGapNumerator,
+    `NLS.Articles.KdVKdV2Frequencies.NativeRegularGapNumerators
   ]
   let mut checked : Nat := 0
   let mut candidates : Nat := 0

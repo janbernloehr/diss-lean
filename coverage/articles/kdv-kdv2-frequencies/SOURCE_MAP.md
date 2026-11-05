@@ -1037,3 +1037,14 @@ See `NATIVE_ENERGY_CONTOURS.md`. Radius k is distinct from the larger old intrin
 Prior strict evidence for all 1142 unchanged selected baseline sources; strict dependency-order compilation of nine new proof modules; then a fresh combined transitive axiom audit of all 1151 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1182 frozen source/checker/provenance hashes, all 29 unchanged verified provenance records, private fresh outputs and clean unchanged canonical main verified. No repeated full 1151-module rebuild is claimed.
 
 Fresh audit: 10488 selected and 32652 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.
+
+
+## Latest actual native own-period regularization
+
+One common complex period-one L2 source ball, cutoff and full Hilbert bound now support the actual filled-root regular numerator (-i/U_k)*G-e_k on every sufficiently high radius-k energy disc, before all complex sources, energies and output indices. The regular family is jointly native complex analytic, uniformly Hilbert bounded, nonpositive zero and has genuine zero Bochner quadratic density periods. Every positive component at every real source is exactly the globally selected physical deflated differential minus delta_kn. Own high modes, collapsed pairs and means are included. The original entire family retains its all-positive full Hilbert C/k energy estimates and native Kronecker periods.
+
+See `NATIVE_OWN_REGULARIZATION.md`. This proves a filled regular numerator; the regular primitive, finite-head regular completion, genuine complex divisor/amplitude/summable-phase bounds, native physical coordinate analyticity and full Sobolev-scale Birkhoff/Hamiltonian conclusions remain open.
+
+Prior strict evidence for all 1151 unchanged selected baseline sources; strict dependency-order compilation of six unchanged explicitly selected canonical helpers and seven new proof modules; then a fresh combined transitive axiom audit of all 1164 selected modules. Exact checker/audit/coverage/evidence selections, complete transitive selected dependency order and audit reachability, 1196 frozen source/checker/provenance hashes, 29 unchanged verified provenance records plus one new verified six-file canonical reuse record, private fresh outputs and clean unchanged canonical main verified. No repeated full 1164-module rebuild is claimed.
+
+Fresh audit: 10548 selected and 32679 imported NLS declarations, permitted axioms only. All eleven main theorem rows remain OPEN.

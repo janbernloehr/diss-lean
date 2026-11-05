@@ -57,6 +57,12 @@ modules=(
   NLS/SequenceSpaces/MixedMajorantMatrix
   NLS/SequenceSpaces/ReciprocalSquareKernel
   NLS/ComplexAnalysis/AffineLoopHomotopy
+  NLS/ComplexAnalysis/ConvexHolomorphicLoopIntegral
+  NLS/ComplexAnalysis/ConvexHolomorphicPathIntegral
+  NLS/ComplexAnalysis/InverseSqrtIntegral
+  NLS/ComplexAnalysis/IntegrableDerivativeBoundary
+  NLS/ComplexAnalysis/ConvexHolomorphicPrimitive
+  NLS/ComplexAnalysis/InversionCircleCoefficients
   NLS/ComplexAnalysis/MixedSpectralSourceDerivative
   NLS/ComplexAnalysis/UniformJointDerivativeCircle
   NLS/ComplexAnalysis/ParametricCircleIntegral
@@ -1160,6 +1166,13 @@ modules=(
   NLS/KdV/HillHminusOneEnergyPeriodTransfer
   NLS/KdV/HillRadiusEnergyCirclePhysicalRoot
   NLS/Articles/KdVKdV2Frequencies/PhysicalEnergyContours
+  NLS/KdV/HillScaledComplexGapRoot
+  NLS/ComplexAnalysis/CenteredTwoRootPeriod
+  NLS/KdV/HillRadiusQuadraticData
+  NLS/KdV/HillRadiusRootProduct
+  NLS/ComplexAnalysis/NativeOwnPeriodSubtraction
+  NLS/KdV/HillNativeRegularGapNumerator
+  NLS/Articles/KdVKdV2Frequencies/NativeRegularGapNumerators
 )
 python3 - "$reference_root" "$article_imports" "$article_build" "${modules[@]}" <<'PY'
 from pathlib import Path

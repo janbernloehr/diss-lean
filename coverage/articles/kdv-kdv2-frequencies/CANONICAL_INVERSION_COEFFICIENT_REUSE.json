@@ -1,0 +1,43 @@
+{
+  "source_commit": "c5bcf6344cd2e2628ae537e98b85bb9ec1849dec",
+  "source_branch": "main",
+  "purpose": "Previously transitively audited inverse-frequency circle coefficient extraction and its exact dependency closure, now explicitly selected and strictly compiled at default limits for the actual complex quadratic-root unit period.",
+  "files": [
+    {
+      "path": "NLS/ComplexAnalysis/ConvexHolomorphicLoopIntegral.lean",
+      "source_sha256": "993884f9942b71c20557e42593a8067df537cee2bb91526c421df1282a1c952d",
+      "local_sha256": "993884f9942b71c20557e42593a8067df537cee2bb91526c421df1282a1c952d",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ConvexHolomorphicPathIntegral.lean",
+      "source_sha256": "631f2a14fca14c1d21ce9166136a238ba548b20398b126d3793d50b4817d04d1",
+      "local_sha256": "631f2a14fca14c1d21ce9166136a238ba548b20398b126d3793d50b4817d04d1",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/InverseSqrtIntegral.lean",
+      "source_sha256": "b6e028611ded28f2b15366da1fb58a40a60beadc1bc1abe5fc55ab27f427efd4",
+      "local_sha256": "b6e028611ded28f2b15366da1fb58a40a60beadc1bc1abe5fc55ab27f427efd4",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/IntegrableDerivativeBoundary.lean",
+      "source_sha256": "3303f4b712955e7b56f124e8acccb46efb372f31422f8bc5da7e7e10797acf36",
+      "local_sha256": "3303f4b712955e7b56f124e8acccb46efb372f31422f8bc5da7e7e10797acf36",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/ConvexHolomorphicPrimitive.lean",
+      "source_sha256": "0afdee724416d77dbb385bd402264967573f9bd17377d57780b5567f641a8c44",
+      "local_sha256": "0afdee724416d77dbb385bd402264967573f9bd17377d57780b5567f641a8c44",
+      "disposition": "reused_unchanged"
+    },
+    {
+      "path": "NLS/ComplexAnalysis/InversionCircleCoefficients.lean",
+      "source_sha256": "ffc80bc1be3552cca130f642a6bfa098d4872e87c5d40a3e9788141568687c7d",
+      "local_sha256": "ffc80bc1be3552cca130f642a6bfa098d4872e87c5d40a3e9788141568687c7d",
+      "disposition": "reused_unchanged"
+    }
+  ]
+}
